@@ -77,7 +77,7 @@ class ConversationContentNotificationTemplate(object):
     def id(self) -> str:
         """
         Gets the id of this ConversationContentNotificationTemplate.
-        The messaging provider template ID. For WhatsApp, 'namespace@name'.
+        The identifier of the message template in 'your-namespace@your-template-id/name' format. For External vendor (e.g WhatsApp), 'your-namespace@your-template-name'. For GenesysCloud canned response message template use 'cannedresponse' as your-namespace and use response ID as your-template-id (e.g. response ID=1234 then 'cannedresponse@1234')
 
         :return: The id of this ConversationContentNotificationTemplate.
         :rtype: str
@@ -88,7 +88,7 @@ class ConversationContentNotificationTemplate(object):
     def id(self, id: str) -> None:
         """
         Sets the id of this ConversationContentNotificationTemplate.
-        The messaging provider template ID. For WhatsApp, 'namespace@name'.
+        The identifier of the message template in 'your-namespace@your-template-id/name' format. For External vendor (e.g WhatsApp), 'your-namespace@your-template-name'. For GenesysCloud canned response message template use 'cannedresponse' as your-namespace and use response ID as your-template-id (e.g. response ID=1234 then 'cannedresponse@1234')
 
         :param id: The id of this ConversationContentNotificationTemplate.
         :type: str

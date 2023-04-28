@@ -64,7 +64,9 @@ class OutboundDetailEventTopicOutboundInitEvent(object):
             'outbound_campaign_id': 'str',
             'division_id': 'str',
             'outbound_contact_list_id': 'str',
-            'outbound_contact_id': 'str'
+            'outbound_contact_id': 'str',
+            'conversation_external_contact_ids': 'list[str]',
+            'conversation_external_organization_ids': 'list[str]'
         }
 
         self.attribute_map = {
@@ -84,7 +86,9 @@ class OutboundDetailEventTopicOutboundInitEvent(object):
             'outbound_campaign_id': 'outboundCampaignId',
             'division_id': 'divisionId',
             'outbound_contact_list_id': 'outboundContactListId',
-            'outbound_contact_id': 'outboundContactId'
+            'outbound_contact_id': 'outboundContactId',
+            'conversation_external_contact_ids': 'conversationExternalContactIds',
+            'conversation_external_organization_ids': 'conversationExternalOrganizationIds'
         }
 
         self._event_time = None
@@ -104,6 +108,8 @@ class OutboundDetailEventTopicOutboundInitEvent(object):
         self._division_id = None
         self._outbound_contact_list_id = None
         self._outbound_contact_id = None
+        self._conversation_external_contact_ids = None
+        self._conversation_external_organization_ids = None
 
     @property
     def event_time(self) -> int:
@@ -527,6 +533,54 @@ class OutboundDetailEventTopicOutboundInitEvent(object):
         
 
         self._outbound_contact_id = outbound_contact_id
+
+    @property
+    def conversation_external_contact_ids(self) -> List[str]:
+        """
+        Gets the conversation_external_contact_ids of this OutboundDetailEventTopicOutboundInitEvent.
+
+
+        :return: The conversation_external_contact_ids of this OutboundDetailEventTopicOutboundInitEvent.
+        :rtype: list[str]
+        """
+        return self._conversation_external_contact_ids
+
+    @conversation_external_contact_ids.setter
+    def conversation_external_contact_ids(self, conversation_external_contact_ids: List[str]) -> None:
+        """
+        Sets the conversation_external_contact_ids of this OutboundDetailEventTopicOutboundInitEvent.
+
+
+        :param conversation_external_contact_ids: The conversation_external_contact_ids of this OutboundDetailEventTopicOutboundInitEvent.
+        :type: list[str]
+        """
+        
+
+        self._conversation_external_contact_ids = conversation_external_contact_ids
+
+    @property
+    def conversation_external_organization_ids(self) -> List[str]:
+        """
+        Gets the conversation_external_organization_ids of this OutboundDetailEventTopicOutboundInitEvent.
+
+
+        :return: The conversation_external_organization_ids of this OutboundDetailEventTopicOutboundInitEvent.
+        :rtype: list[str]
+        """
+        return self._conversation_external_organization_ids
+
+    @conversation_external_organization_ids.setter
+    def conversation_external_organization_ids(self, conversation_external_organization_ids: List[str]) -> None:
+        """
+        Sets the conversation_external_organization_ids of this OutboundDetailEventTopicOutboundInitEvent.
+
+
+        :param conversation_external_organization_ids: The conversation_external_organization_ids of this OutboundDetailEventTopicOutboundInitEvent.
+        :type: list[str]
+        """
+        
+
+        self._conversation_external_organization_ids = conversation_external_organization_ids
 
     def to_dict(self):
         """

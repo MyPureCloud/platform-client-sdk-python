@@ -32,8 +32,6 @@ from typing import TYPE_CHECKING
 from typing import List
 from typing import Dict
 
-if TYPE_CHECKING:
-    from . import KnowledgeGuestSessionApp
 
 class KnowledgeDocumentGuestSearchRequest(object):
     """
@@ -58,8 +56,7 @@ class KnowledgeDocumentGuestSearchRequest(object):
             'page_count': 'int',
             'query_type': 'str',
             'session_id': 'str',
-            'include_draft_documents': 'bool',
-            'app': 'KnowledgeGuestSessionApp'
+            'include_draft_documents': 'bool'
         }
 
         self.attribute_map = {
@@ -71,8 +68,7 @@ class KnowledgeDocumentGuestSearchRequest(object):
             'page_count': 'pageCount',
             'query_type': 'queryType',
             'session_id': 'sessionId',
-            'include_draft_documents': 'includeDraftDocuments',
-            'app': 'app'
+            'include_draft_documents': 'includeDraftDocuments'
         }
 
         self._query = None
@@ -84,7 +80,6 @@ class KnowledgeDocumentGuestSearchRequest(object):
         self._query_type = None
         self._session_id = None
         self._include_draft_documents = None
-        self._app = None
 
     @property
     def query(self) -> str:
@@ -312,30 +307,6 @@ class KnowledgeDocumentGuestSearchRequest(object):
         
 
         self._include_draft_documents = include_draft_documents
-
-    @property
-    def app(self) -> 'KnowledgeGuestSessionApp':
-        """
-        Gets the app of this KnowledgeDocumentGuestSearchRequest.
-        The app where the session is started.
-
-        :return: The app of this KnowledgeDocumentGuestSearchRequest.
-        :rtype: KnowledgeGuestSessionApp
-        """
-        return self._app
-
-    @app.setter
-    def app(self, app: 'KnowledgeGuestSessionApp') -> None:
-        """
-        Sets the app of this KnowledgeDocumentGuestSearchRequest.
-        The app where the session is started.
-
-        :param app: The app of this KnowledgeDocumentGuestSearchRequest.
-        :type: KnowledgeGuestSessionApp
-        """
-        
-
-        self._app = app
 
     def to_dict(self):
         """

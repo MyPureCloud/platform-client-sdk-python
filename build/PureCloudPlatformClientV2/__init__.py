@@ -1269,6 +1269,7 @@ from .models.evaluation_form_and_scoring_set import EvaluationFormAndScoringSet
 from .models.evaluation_form_entity_listing import EvaluationFormEntityListing
 from .models.evaluation_form_response import EvaluationFormResponse
 from .models.evaluation_quality_v2_topic_calibration import EvaluationQualityV2TopicCalibration
+from .models.evaluation_quality_v2_topic_evaluation_reference import EvaluationQualityV2TopicEvaluationReference
 from .models.evaluation_quality_v2_topic_evaluation_scoring_set import EvaluationQualityV2TopicEvaluationScoringSet
 from .models.evaluation_quality_v2_topic_evaluation_source import EvaluationQualityV2TopicEvaluationSource
 from .models.evaluation_quality_v2_topic_evaluation_v2 import EvaluationQualityV2TopicEvaluationV2
@@ -1311,6 +1312,8 @@ from .models.external_contacts_contact_changed_topic_contact import ExternalCont
 from .models.external_contacts_contact_changed_topic_contact_address import ExternalContactsContactChangedTopicContactAddress
 from .models.external_contacts_contact_changed_topic_facebook_id import ExternalContactsContactChangedTopicFacebookId
 from .models.external_contacts_contact_changed_topic_facebook_scoped_id import ExternalContactsContactChangedTopicFacebookScopedId
+from .models.external_contacts_contact_changed_topic_instagram_id import ExternalContactsContactChangedTopicInstagramId
+from .models.external_contacts_contact_changed_topic_instagram_scoped_id import ExternalContactsContactChangedTopicInstagramScopedId
 from .models.external_contacts_contact_changed_topic_line_id import ExternalContactsContactChangedTopicLineId
 from .models.external_contacts_contact_changed_topic_line_user_id import ExternalContactsContactChangedTopicLineUserId
 from .models.external_contacts_contact_changed_topic_phone_number import ExternalContactsContactChangedTopicPhoneNumber
@@ -1320,6 +1323,8 @@ from .models.external_contacts_unresolved_contact_changed_topic_contact import E
 from .models.external_contacts_unresolved_contact_changed_topic_contact_address import ExternalContactsUnresolvedContactChangedTopicContactAddress
 from .models.external_contacts_unresolved_contact_changed_topic_facebook_id import ExternalContactsUnresolvedContactChangedTopicFacebookId
 from .models.external_contacts_unresolved_contact_changed_topic_facebook_scoped_id import ExternalContactsUnresolvedContactChangedTopicFacebookScopedId
+from .models.external_contacts_unresolved_contact_changed_topic_instagram_id import ExternalContactsUnresolvedContactChangedTopicInstagramId
+from .models.external_contacts_unresolved_contact_changed_topic_instagram_scoped_id import ExternalContactsUnresolvedContactChangedTopicInstagramScopedId
 from .models.external_contacts_unresolved_contact_changed_topic_line_id import ExternalContactsUnresolvedContactChangedTopicLineId
 from .models.external_contacts_unresolved_contact_changed_topic_line_user_id import ExternalContactsUnresolvedContactChangedTopicLineUserId
 from .models.external_contacts_unresolved_contact_changed_topic_phone_number import ExternalContactsUnresolvedContactChangedTopicPhoneNumber
@@ -1527,6 +1532,23 @@ from .models.infrastructureascode_job import InfrastructureascodeJob
 from .models.initial_configuration import InitialConfiguration
 from .models.initiate_screen_recording import InitiateScreenRecording
 from .models.initiating_action import InitiatingAction
+from .models.insights_agent_item import InsightsAgentItem
+from .models.insights_agents import InsightsAgents
+from .models.insights_details import InsightsDetails
+from .models.insights_details_metric_item import InsightsDetailsMetricItem
+from .models.insights_details_metric_period_points import InsightsDetailsMetricPeriodPoints
+from .models.insights_details_overall_item import InsightsDetailsOverallItem
+from .models.insights_details_overall_period_points import InsightsDetailsOverallPeriodPoints
+from .models.insights_summary import InsightsSummary
+from .models.insights_summary_metric_item import InsightsSummaryMetricItem
+from .models.insights_summary_metric_period_points import InsightsSummaryMetricPeriodPoints
+from .models.insights_summary_overall_item import InsightsSummaryOverallItem
+from .models.insights_summary_overall_period_points import InsightsSummaryOverallPeriodPoints
+from .models.insights_summary_user_item import InsightsSummaryUserItem
+from .models.insights_trend import InsightsTrend
+from .models.insights_trend_metric_item import InsightsTrendMetricItem
+from .models.insights_trend_total_item import InsightsTrendTotalItem
+from .models.insights_trends import InsightsTrends
 from .models.instagram_id import InstagramId
 from .models.instagram_scoped_id import InstagramScopedId
 from .models.integration import Integration
@@ -2177,6 +2199,7 @@ from .models.presence_event_organization_presence import PresenceEventOrganizati
 from .models.presence_event_user_presence import PresenceEventUserPresence
 from .models.presence_settings import PresenceSettings
 from .models.process_schedule_update_upload_request import ProcessScheduleUpdateUploadRequest
+from .models.profile_with_date_range import ProfileWithDateRange
 from .models.program import Program
 from .models.program_job import ProgramJob
 from .models.program_job_request import ProgramJobRequest
@@ -2209,6 +2232,7 @@ from .models.quality_audit_log_message import QualityAuditLogMessage
 from .models.quality_audit_query_execution_results_response import QualityAuditQueryExecutionResultsResponse
 from .models.quality_audit_query_execution_status_response import QualityAuditQueryExecutionStatusResponse
 from .models.quality_audit_query_filter import QualityAuditQueryFilter
+from .models.quality_evaluation_score_item import QualityEvaluationScoreItem
 from .models.query_adherence_explanations_response import QueryAdherenceExplanationsResponse
 from .models.query_division import QueryDivision
 from .models.query_facet_info import QueryFacetInfo
@@ -2742,6 +2766,7 @@ from .models.site_entity_listing import SiteEntityListing
 from .models.skill_entity_listing import SkillEntityListing
 from .models.skill_group import SkillGroup
 from .models.skill_group_condition import SkillGroupCondition
+from .models.skill_group_definition import SkillGroupDefinition
 from .models.skill_group_entity_listing import SkillGroupEntityListing
 from .models.skill_group_language_condition import SkillGroupLanguageCondition
 from .models.skill_group_member_division_list import SkillGroupMemberDivisionList
@@ -2961,6 +2986,7 @@ from .models.transfer_destination import TransferDestination
 from .models.transfer_initiator import TransferInitiator
 from .models.transfer_request import TransferRequest
 from .models.transfer_response import TransferResponse
+from .models.trend_data import TrendData
 from .models.trigger import Trigger
 from .models.trigger_entity_listing import TriggerEntityListing
 from .models.trigger_target import TriggerTarget
@@ -3099,6 +3125,7 @@ from .models.user_greeting_event_greeting import UserGreetingEventGreeting
 from .models.user_greeting_event_greeting_audio_file import UserGreetingEventGreetingAudioFile
 from .models.user_greeting_event_greeting_owner import UserGreetingEventGreetingOwner
 from .models.user_image import UserImage
+from .models.user_insights_trend import UserInsightsTrend
 from .models.user_language_entity_listing import UserLanguageEntityListing
 from .models.user_licenses import UserLicenses
 from .models.user_licenses_entity_listing import UserLicensesEntityListing
@@ -3116,6 +3143,8 @@ from .models.user_presence_event import UserPresenceEvent
 from .models.user_primary_source import UserPrimarySource
 from .models.user_profile import UserProfile
 from .models.user_profile_entity_listing import UserProfileEntityListing
+from .models.user_profiles_in_date_range import UserProfilesInDateRange
+from .models.user_profiles_in_date_range_request import UserProfilesInDateRangeRequest
 from .models.user_queue import UserQueue
 from .models.user_queue_entity_listing import UserQueueEntityListing
 from .models.user_recording import UserRecording
@@ -3231,6 +3260,8 @@ from .models.value_wrapper_planning_period_settings import ValueWrapperPlanningP
 from .models.value_wrapper_string import ValueWrapperString
 from .models.verification_result import VerificationResult
 from .models.video import Video
+from .models.video_conference_update_topic_participant_info import VideoConferenceUpdateTopicParticipantInfo
+from .models.video_conference_update_topic_video_conference import VideoConferenceUpdateTopicVideoConference
 from .models.view_filter import ViewFilter
 from .models.visibility_condition import VisibilityCondition
 from .models.vm_pairing_info import VmPairingInfo
@@ -3490,6 +3521,7 @@ from .models.work_plan_validation_message_argument import WorkPlanValidationMess
 from .models.work_plan_validation_request import WorkPlanValidationRequest
 from .models.workday_metric import WorkdayMetric
 from .models.workday_metric_listing import WorkdayMetricListing
+from .models.workday_period import WorkdayPeriod
 from .models.workday_points_trend import WorkdayPointsTrend
 from .models.workday_points_trend_item import WorkdayPointsTrendItem
 from .models.workday_values_metric_item import WorkdayValuesMetricItem

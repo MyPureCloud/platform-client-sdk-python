@@ -58,6 +58,7 @@ class CallConversation(object):
             'recent_transfers': 'list[TransferResponse]',
             'recording_state': 'str',
             'max_participants': 'int',
+            'secure_pause': 'bool',
             'self_uri': 'str'
         }
 
@@ -69,6 +70,7 @@ class CallConversation(object):
             'recent_transfers': 'recentTransfers',
             'recording_state': 'recordingState',
             'max_participants': 'maxParticipants',
+            'secure_pause': 'securePause',
             'self_uri': 'selfUri'
         }
 
@@ -79,6 +81,7 @@ class CallConversation(object):
         self._recent_transfers = None
         self._recording_state = None
         self._max_participants = None
+        self._secure_pause = None
         self._self_uri = None
 
     @property
@@ -253,6 +256,30 @@ class CallConversation(object):
         
 
         self._max_participants = max_participants
+
+    @property
+    def secure_pause(self) -> bool:
+        """
+        Gets the secure_pause of this CallConversation.
+        True when the recording of this conversation is in secure pause status.
+
+        :return: The secure_pause of this CallConversation.
+        :rtype: bool
+        """
+        return self._secure_pause
+
+    @secure_pause.setter
+    def secure_pause(self, secure_pause: bool) -> None:
+        """
+        Sets the secure_pause of this CallConversation.
+        True when the recording of this conversation is in secure pause status.
+
+        :param secure_pause: The secure_pause of this CallConversation.
+        :type: bool
+        """
+        
+
+        self._secure_pause = secure_pause
 
     @property
     def self_uri(self) -> str:

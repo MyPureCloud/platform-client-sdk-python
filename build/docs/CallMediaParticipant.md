@@ -56,6 +56,7 @@ title: CallMediaParticipant
 | **consult_participant_id** | **str** | The ID of the consult transfer target participant when performing a consult transfer. | [optional] |
 | **uui_data** | **str** | User-to-User information which maps to a SIP header field defined in RFC7433. UUI data is used in the Public Switched Telephone Network (PSTN) for use cases described in RFC6567. | [optional] |
 | **barged_time** | **datetime** | The timestamp when this participant was connected to the barge conference in the provider clock. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
+| **secure_pause** | **bool** | True when the recording of this call is in secure pause status. | [optional] |
 {: class="table table-striped"}
 
 

@@ -103,7 +103,8 @@ class CallMediaParticipant(object):
             'barged_participant_id': 'str',
             'consult_participant_id': 'str',
             'uui_data': 'str',
-            'barged_time': 'datetime'
+            'barged_time': 'datetime',
+            'secure_pause': 'bool'
         }
 
         self.attribute_map = {
@@ -155,7 +156,8 @@ class CallMediaParticipant(object):
             'barged_participant_id': 'bargedParticipantId',
             'consult_participant_id': 'consultParticipantId',
             'uui_data': 'uuiData',
-            'barged_time': 'bargedTime'
+            'barged_time': 'bargedTime',
+            'secure_pause': 'securePause'
         }
 
         self._id = None
@@ -207,6 +209,7 @@ class CallMediaParticipant(object):
         self._consult_participant_id = None
         self._uui_data = None
         self._barged_time = None
+        self._secure_pause = None
 
     @property
     def id(self) -> str:
@@ -1408,6 +1411,30 @@ class CallMediaParticipant(object):
         
 
         self._barged_time = barged_time
+
+    @property
+    def secure_pause(self) -> bool:
+        """
+        Gets the secure_pause of this CallMediaParticipant.
+        True when the recording of this call is in secure pause status.
+
+        :return: The secure_pause of this CallMediaParticipant.
+        :rtype: bool
+        """
+        return self._secure_pause
+
+    @secure_pause.setter
+    def secure_pause(self, secure_pause: bool) -> None:
+        """
+        Sets the secure_pause of this CallMediaParticipant.
+        True when the recording of this call is in secure pause status.
+
+        :param secure_pause: The secure_pause of this CallMediaParticipant.
+        :type: bool
+        """
+        
+
+        self._secure_pause = secure_pause
 
     def to_dict(self):
         """

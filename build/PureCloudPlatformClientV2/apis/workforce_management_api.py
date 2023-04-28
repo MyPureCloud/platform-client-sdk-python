@@ -8359,7 +8359,7 @@ class WorkforceManagementApi(object):
 
     def post_workforcemanagement_adherence_historical(self, **kwargs) -> 'WfmHistoricalAdherenceResponse':
         """
-        Request a historical adherence report for users across management units
+        Deprecated. Use bulk routes instead (/adherence/historical/bulk)
         
 
         This method makes a synchronous HTTP request by default. To make an

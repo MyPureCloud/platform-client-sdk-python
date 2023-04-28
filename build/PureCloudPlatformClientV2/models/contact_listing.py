@@ -55,8 +55,8 @@ class ContactListing(object):
             'page_number': 'int',
             'total': 'int',
             'partial_results': 'bool',
-            'next_uri': 'str',
             'first_uri': 'str',
+            'next_uri': 'str',
             'self_uri': 'str',
             'previous_uri': 'str',
             'last_uri': 'str',
@@ -69,8 +69,8 @@ class ContactListing(object):
             'page_number': 'pageNumber',
             'total': 'total',
             'partial_results': 'partialResults',
-            'next_uri': 'nextUri',
             'first_uri': 'firstUri',
+            'next_uri': 'nextUri',
             'self_uri': 'selfUri',
             'previous_uri': 'previousUri',
             'last_uri': 'lastUri',
@@ -82,8 +82,8 @@ class ContactListing(object):
         self._page_number = None
         self._total = None
         self._partial_results = None
-        self._next_uri = None
         self._first_uri = None
+        self._next_uri = None
         self._self_uri = None
         self._previous_uri = None
         self._last_uri = None
@@ -210,30 +210,6 @@ class ContactListing(object):
         self._partial_results = partial_results
 
     @property
-    def next_uri(self) -> str:
-        """
-        Gets the next_uri of this ContactListing.
-
-
-        :return: The next_uri of this ContactListing.
-        :rtype: str
-        """
-        return self._next_uri
-
-    @next_uri.setter
-    def next_uri(self, next_uri: str) -> None:
-        """
-        Sets the next_uri of this ContactListing.
-
-
-        :param next_uri: The next_uri of this ContactListing.
-        :type: str
-        """
-        
-
-        self._next_uri = next_uri
-
-    @property
     def first_uri(self) -> str:
         """
         Gets the first_uri of this ContactListing.
@@ -256,6 +232,30 @@ class ContactListing(object):
         
 
         self._first_uri = first_uri
+
+    @property
+    def next_uri(self) -> str:
+        """
+        Gets the next_uri of this ContactListing.
+
+
+        :return: The next_uri of this ContactListing.
+        :rtype: str
+        """
+        return self._next_uri
+
+    @next_uri.setter
+    def next_uri(self, next_uri: str) -> None:
+        """
+        Sets the next_uri of this ContactListing.
+
+
+        :param next_uri: The next_uri of this ContactListing.
+        :type: str
+        """
+        
+
+        self._next_uri = next_uri
 
     @property
     def self_uri(self) -> str:

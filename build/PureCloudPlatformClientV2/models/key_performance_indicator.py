@@ -63,6 +63,7 @@ class KeyPerformanceIndicator(object):
             'outcome_config': 'OutcomeConfig',
             'status': 'str',
             'kpi_group': 'str',
+            'queues': 'list[str]',
             'self_uri': 'str'
         }
 
@@ -79,6 +80,7 @@ class KeyPerformanceIndicator(object):
             'outcome_config': 'outcomeConfig',
             'status': 'status',
             'kpi_group': 'kpiGroup',
+            'queues': 'queues',
             'self_uri': 'selfUri'
         }
 
@@ -94,6 +96,7 @@ class KeyPerformanceIndicator(object):
         self._outcome_config = None
         self._status = None
         self._kpi_group = None
+        self._queues = None
         self._self_uri = None
 
     @property
@@ -408,6 +411,30 @@ class KeyPerformanceIndicator(object):
             self._kpi_group = "outdated_sdk_version"
         else:
             self._kpi_group = kpi_group
+
+    @property
+    def queues(self) -> List[str]:
+        """
+        Gets the queues of this KeyPerformanceIndicator.
+        Queue IDs on which KPI specification is used.
+
+        :return: The queues of this KeyPerformanceIndicator.
+        :rtype: list[str]
+        """
+        return self._queues
+
+    @queues.setter
+    def queues(self, queues: List[str]) -> None:
+        """
+        Sets the queues of this KeyPerformanceIndicator.
+        Queue IDs on which KPI specification is used.
+
+        :param queues: The queues of this KeyPerformanceIndicator.
+        :type: list[str]
+        """
+        
+
+        self._queues = queues
 
     @property
     def self_uri(self) -> str:

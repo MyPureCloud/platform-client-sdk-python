@@ -33,7 +33,7 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
-    from . import SkillGroup
+    from . import SkillGroupDefinition
 
 class SkillGroupEntityListing(object):
     """
@@ -50,7 +50,7 @@ class SkillGroupEntityListing(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'entities': 'list[SkillGroup]',
+            'entities': 'list[SkillGroupDefinition]',
             'next_uri': 'str',
             'self_uri': 'str',
             'previous_uri': 'str'
@@ -69,24 +69,24 @@ class SkillGroupEntityListing(object):
         self._previous_uri = None
 
     @property
-    def entities(self) -> List['SkillGroup']:
+    def entities(self) -> List['SkillGroupDefinition']:
         """
         Gets the entities of this SkillGroupEntityListing.
 
 
         :return: The entities of this SkillGroupEntityListing.
-        :rtype: list[SkillGroup]
+        :rtype: list[SkillGroupDefinition]
         """
         return self._entities
 
     @entities.setter
-    def entities(self, entities: List['SkillGroup']) -> None:
+    def entities(self, entities: List['SkillGroupDefinition']) -> None:
         """
         Sets the entities of this SkillGroupEntityListing.
 
 
         :param entities: The entities of this SkillGroupEntityListing.
-        :type: list[SkillGroup]
+        :type: list[SkillGroupDefinition]
         """
         
 

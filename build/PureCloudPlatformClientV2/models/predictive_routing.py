@@ -48,14 +48,17 @@ class PredictiveRouting(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'respect_skills': 'bool'
+            'respect_skills': 'bool',
+            'enable_conversation_score_biasing': 'bool'
         }
 
         self.attribute_map = {
-            'respect_skills': 'respectSkills'
+            'respect_skills': 'respectSkills',
+            'enable_conversation_score_biasing': 'enableConversationScoreBiasing'
         }
 
         self._respect_skills = None
+        self._enable_conversation_score_biasing = None
 
     @property
     def respect_skills(self) -> bool:
@@ -80,6 +83,30 @@ class PredictiveRouting(object):
         
 
         self._respect_skills = respect_skills
+
+    @property
+    def enable_conversation_score_biasing(self) -> bool:
+        """
+        Gets the enable_conversation_score_biasing of this PredictiveRouting.
+        A switch used to determine if conversations are weighted by conversation score when the system attempts to assign an agent a new conversation.
+
+        :return: The enable_conversation_score_biasing of this PredictiveRouting.
+        :rtype: bool
+        """
+        return self._enable_conversation_score_biasing
+
+    @enable_conversation_score_biasing.setter
+    def enable_conversation_score_biasing(self, enable_conversation_score_biasing: bool) -> None:
+        """
+        Sets the enable_conversation_score_biasing of this PredictiveRouting.
+        A switch used to determine if conversations are weighted by conversation score when the system attempts to assign an agent a new conversation.
+
+        :param enable_conversation_score_biasing: The enable_conversation_score_biasing of this PredictiveRouting.
+        :type: bool
+        """
+        
+
+        self._enable_conversation_score_biasing = enable_conversation_score_biasing
 
     def to_dict(self):
         """

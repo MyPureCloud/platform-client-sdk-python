@@ -20,6 +20,7 @@ title: Conversation
 | **state** | **str** | The conversation&#39;s state | [optional] |
 | **divisions** | [**list[ConversationDivisionMembership]**](ConversationDivisionMembership.html) | Identifiers of divisions associated with this conversation | [optional] |
 | **recent_transfers** | [**list[TransferResponse]**](TransferResponse.html) | The list of the most recent 20 transfer commands applied to this conversation. | [optional] |
+| **secure_pause** | **bool** | True when the recording of this conversation is in secure pause status. | [optional] |
 | **self_uri** | **str** | The URI for this object | [optional] |
 {: class="table table-striped"}
 

@@ -28,6 +28,7 @@ title: ExternalContactsContactChangedTopicContact
 | **line_id** | [**ExternalContactsContactChangedTopicLineId**](ExternalContactsContactChangedTopicLineId.html) |  | [optional] |
 | **whats_app_id** | [**ExternalContactsContactChangedTopicWhatsAppId**](ExternalContactsContactChangedTopicWhatsAppId.html) |  | [optional] |
 | **facebook_id** | [**ExternalContactsContactChangedTopicFacebookId**](ExternalContactsContactChangedTopicFacebookId.html) |  | [optional] |
+| **instagram_id** | [**ExternalContactsContactChangedTopicInstagramId**](ExternalContactsContactChangedTopicInstagramId.html) |  | [optional] |
 {: class="table table-striped"}
 
 

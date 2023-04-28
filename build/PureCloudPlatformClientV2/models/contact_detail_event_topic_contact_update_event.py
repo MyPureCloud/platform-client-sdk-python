@@ -65,7 +65,9 @@ class ContactDetailEventTopicContactUpdateEvent(object):
             'callback_numbers': 'list[str]',
             'callback_scheduled_time': 'int',
             'subject': 'str',
-            'message_type': 'str'
+            'message_type': 'str',
+            'conversation_external_contact_ids': 'list[str]',
+            'conversation_external_organization_ids': 'list[str]'
         }
 
         self.attribute_map = {
@@ -86,7 +88,9 @@ class ContactDetailEventTopicContactUpdateEvent(object):
             'callback_numbers': 'callbackNumbers',
             'callback_scheduled_time': 'callbackScheduledTime',
             'subject': 'subject',
-            'message_type': 'messageType'
+            'message_type': 'messageType',
+            'conversation_external_contact_ids': 'conversationExternalContactIds',
+            'conversation_external_organization_ids': 'conversationExternalOrganizationIds'
         }
 
         self._event_time = None
@@ -107,6 +111,8 @@ class ContactDetailEventTopicContactUpdateEvent(object):
         self._callback_scheduled_time = None
         self._subject = None
         self._message_type = None
+        self._conversation_external_contact_ids = None
+        self._conversation_external_organization_ids = None
 
     @property
     def event_time(self) -> int:
@@ -554,6 +560,54 @@ class ContactDetailEventTopicContactUpdateEvent(object):
             self._message_type = "outdated_sdk_version"
         else:
             self._message_type = message_type
+
+    @property
+    def conversation_external_contact_ids(self) -> List[str]:
+        """
+        Gets the conversation_external_contact_ids of this ContactDetailEventTopicContactUpdateEvent.
+
+
+        :return: The conversation_external_contact_ids of this ContactDetailEventTopicContactUpdateEvent.
+        :rtype: list[str]
+        """
+        return self._conversation_external_contact_ids
+
+    @conversation_external_contact_ids.setter
+    def conversation_external_contact_ids(self, conversation_external_contact_ids: List[str]) -> None:
+        """
+        Sets the conversation_external_contact_ids of this ContactDetailEventTopicContactUpdateEvent.
+
+
+        :param conversation_external_contact_ids: The conversation_external_contact_ids of this ContactDetailEventTopicContactUpdateEvent.
+        :type: list[str]
+        """
+        
+
+        self._conversation_external_contact_ids = conversation_external_contact_ids
+
+    @property
+    def conversation_external_organization_ids(self) -> List[str]:
+        """
+        Gets the conversation_external_organization_ids of this ContactDetailEventTopicContactUpdateEvent.
+
+
+        :return: The conversation_external_organization_ids of this ContactDetailEventTopicContactUpdateEvent.
+        :rtype: list[str]
+        """
+        return self._conversation_external_organization_ids
+
+    @conversation_external_organization_ids.setter
+    def conversation_external_organization_ids(self, conversation_external_organization_ids: List[str]) -> None:
+        """
+        Sets the conversation_external_organization_ids of this ContactDetailEventTopicContactUpdateEvent.
+
+
+        :param conversation_external_organization_ids: The conversation_external_organization_ids of this ContactDetailEventTopicContactUpdateEvent.
+        :type: list[str]
+        """
+        
+
+        self._conversation_external_organization_ids = conversation_external_organization_ids
 
     def to_dict(self):
         """

@@ -49,16 +49,19 @@ class RecordingSettings(object):
         """
         self.swagger_types = {
             'max_simultaneous_streams': 'int',
-            'max_configurable_screen_recording_streams': 'int'
+            'max_configurable_screen_recording_streams': 'int',
+            'regional_recording_storage_enabled': 'bool'
         }
 
         self.attribute_map = {
             'max_simultaneous_streams': 'maxSimultaneousStreams',
-            'max_configurable_screen_recording_streams': 'maxConfigurableScreenRecordingStreams'
+            'max_configurable_screen_recording_streams': 'maxConfigurableScreenRecordingStreams',
+            'regional_recording_storage_enabled': 'regionalRecordingStorageEnabled'
         }
 
         self._max_simultaneous_streams = None
         self._max_configurable_screen_recording_streams = None
+        self._regional_recording_storage_enabled = None
 
     @property
     def max_simultaneous_streams(self) -> int:
@@ -107,6 +110,30 @@ class RecordingSettings(object):
         
 
         self._max_configurable_screen_recording_streams = max_configurable_screen_recording_streams
+
+    @property
+    def regional_recording_storage_enabled(self) -> bool:
+        """
+        Gets the regional_recording_storage_enabled of this RecordingSettings.
+        Store call recordings in the region where they are intended to be recorded, otherwise in the organization's home region
+
+        :return: The regional_recording_storage_enabled of this RecordingSettings.
+        :rtype: bool
+        """
+        return self._regional_recording_storage_enabled
+
+    @regional_recording_storage_enabled.setter
+    def regional_recording_storage_enabled(self, regional_recording_storage_enabled: bool) -> None:
+        """
+        Sets the regional_recording_storage_enabled of this RecordingSettings.
+        Store call recordings in the region where they are intended to be recorded, otherwise in the organization's home region
+
+        :param regional_recording_storage_enabled: The regional_recording_storage_enabled of this RecordingSettings.
+        :type: bool
+        """
+        
+
+        self._regional_recording_storage_enabled = regional_recording_storage_enabled
 
     def to_dict(self):
         """

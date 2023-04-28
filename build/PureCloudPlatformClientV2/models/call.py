@@ -65,6 +65,7 @@ class Call(object):
             'muted': 'bool',
             'confined': 'bool',
             'held': 'bool',
+            'secure_pause': 'bool',
             'recording_id': 'str',
             'segments': 'list[Segment]',
             'error_info': 'ErrorInfo',
@@ -98,6 +99,7 @@ class Call(object):
             'muted': 'muted',
             'confined': 'confined',
             'held': 'held',
+            'secure_pause': 'securePause',
             'recording_id': 'recordingId',
             'segments': 'segments',
             'error_info': 'errorInfo',
@@ -130,6 +132,7 @@ class Call(object):
         self._muted = None
         self._confined = None
         self._held = None
+        self._secure_pause = None
         self._recording_id = None
         self._segments = None
         self._error_info = None
@@ -387,6 +390,30 @@ class Call(object):
         
 
         self._held = held
+
+    @property
+    def secure_pause(self) -> bool:
+        """
+        Gets the secure_pause of this Call.
+        True when the recording of this call is in secure pause status.
+
+        :return: The secure_pause of this Call.
+        :rtype: bool
+        """
+        return self._secure_pause
+
+    @secure_pause.setter
+    def secure_pause(self, secure_pause: bool) -> None:
+        """
+        Sets the secure_pause of this Call.
+        True when the recording of this call is in secure pause status.
+
+        :param secure_pause: The secure_pause of this Call.
+        :type: bool
+        """
+        
+
+        self._secure_pause = secure_pause
 
     @property
     def recording_id(self) -> str:

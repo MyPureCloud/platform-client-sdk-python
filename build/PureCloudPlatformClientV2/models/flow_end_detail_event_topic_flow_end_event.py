@@ -66,7 +66,9 @@ class FlowEndDetailEventTopicFlowEndEvent(object):
             'flow_id': 'str',
             'division_id': 'str',
             'flow_version': 'str',
-            'connected_duration_ms': 'int'
+            'connected_duration_ms': 'int',
+            'conversation_external_contact_ids': 'list[str]',
+            'conversation_external_organization_ids': 'list[str]'
         }
 
         self.attribute_map = {
@@ -88,7 +90,9 @@ class FlowEndDetailEventTopicFlowEndEvent(object):
             'flow_id': 'flowId',
             'division_id': 'divisionId',
             'flow_version': 'flowVersion',
-            'connected_duration_ms': 'connectedDurationMs'
+            'connected_duration_ms': 'connectedDurationMs',
+            'conversation_external_contact_ids': 'conversationExternalContactIds',
+            'conversation_external_organization_ids': 'conversationExternalOrganizationIds'
         }
 
         self._event_time = None
@@ -110,6 +114,8 @@ class FlowEndDetailEventTopicFlowEndEvent(object):
         self._division_id = None
         self._flow_version = None
         self._connected_duration_ms = None
+        self._conversation_external_contact_ids = None
+        self._conversation_external_organization_ids = None
 
     @property
     def event_time(self) -> int:
@@ -591,6 +597,54 @@ class FlowEndDetailEventTopicFlowEndEvent(object):
         
 
         self._connected_duration_ms = connected_duration_ms
+
+    @property
+    def conversation_external_contact_ids(self) -> List[str]:
+        """
+        Gets the conversation_external_contact_ids of this FlowEndDetailEventTopicFlowEndEvent.
+
+
+        :return: The conversation_external_contact_ids of this FlowEndDetailEventTopicFlowEndEvent.
+        :rtype: list[str]
+        """
+        return self._conversation_external_contact_ids
+
+    @conversation_external_contact_ids.setter
+    def conversation_external_contact_ids(self, conversation_external_contact_ids: List[str]) -> None:
+        """
+        Sets the conversation_external_contact_ids of this FlowEndDetailEventTopicFlowEndEvent.
+
+
+        :param conversation_external_contact_ids: The conversation_external_contact_ids of this FlowEndDetailEventTopicFlowEndEvent.
+        :type: list[str]
+        """
+        
+
+        self._conversation_external_contact_ids = conversation_external_contact_ids
+
+    @property
+    def conversation_external_organization_ids(self) -> List[str]:
+        """
+        Gets the conversation_external_organization_ids of this FlowEndDetailEventTopicFlowEndEvent.
+
+
+        :return: The conversation_external_organization_ids of this FlowEndDetailEventTopicFlowEndEvent.
+        :rtype: list[str]
+        """
+        return self._conversation_external_organization_ids
+
+    @conversation_external_organization_ids.setter
+    def conversation_external_organization_ids(self, conversation_external_organization_ids: List[str]) -> None:
+        """
+        Sets the conversation_external_organization_ids of this FlowEndDetailEventTopicFlowEndEvent.
+
+
+        :param conversation_external_organization_ids: The conversation_external_organization_ids of this FlowEndDetailEventTopicFlowEndEvent.
+        :type: list[str]
+        """
+        
+
+        self._conversation_external_organization_ids = conversation_external_organization_ids
 
     def to_dict(self):
         """

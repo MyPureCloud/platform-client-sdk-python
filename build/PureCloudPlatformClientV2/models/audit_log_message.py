@@ -258,14 +258,9 @@ class AuditLogMessage(object):
         :param service_name: The service_name of this AuditLogMessage.
         :type: str
         """
-        if isinstance(service_name, int):
-            service_name = str(service_name)
-        allowed_values = ["AgentConfig", "AnalyticsReporting", "Architect", "Callback", "Coaching", "ContactCenter", "ContentManagement", "Datatables", "Directory", "DynamicSchema", "Emails", "EmployeePerformance", "ExternalContacts", "Gamification", "GDPR", "Groups", "Integrations", "Knowledge", "LanguageUnderstanding", "Learning", "Limits", "LogCapture", "Marketplace", "Messaging", "NumberPurchasing", "Outbound", "PeoplePermissions", "PredictiveEngagement", "Presence", "ProcessAutomation", "Quality", "ResponseManagement", "Routing", "SCIM", "Scripter", "SpeechAndTextAnalytics", "Supportability", "Telephony", "Triggers", "Voicemail", "WebDeployments", "Webhooks", "WorkforceManagement", "Workitems"]
-        if service_name.lower() not in map(str.lower, allowed_values):
-            # print("Invalid value for service_name -> " + service_name)
-            self._service_name = "outdated_sdk_version"
-        else:
-            self._service_name = service_name
+        
+
+        self._service_name = service_name
 
     @property
     def level(self) -> str:
@@ -364,14 +359,9 @@ class AuditLogMessage(object):
         :param action: The action of this AuditLogMessage.
         :type: str
         """
-        if isinstance(action, int):
-            action = str(action)
-        allowed_values = ["Create", "View", "Update", "Move", "Copy", "Delete", "DeleteAll", "Fax", "VersionCreate", "Download", "Upload", "MemberAdd", "MemberUpdate", "MemberRemove", "ShareAdd", "ShareRemove", "TagAdd", "TagRemove", "TagUpdate", "Read", "ReadAll", "Execute", "ApplyProtection", "RevokeProtection", "UpdateRetention", "Abandon", "Archive", "RestoreRequest", "RestoreComplete", "Promote", "Publish", "Unpublish", "Activate", "Checkin", "Checkout", "Deactivate", "Debug", "Save", "Revert", "Transcode", "Enable", "Disable", "Authorize", "Deauthorize", "Authenticate", "ChangePassword", "Revoke", "Export", "Append", "Recycle", "Open", "Approved", "Rejected", "Rollback", "ImplementingChange", "ChangeImplemented", "ImplementingRollback", "RollbackImplemented", "Write", "Purge", "Processed", "Remove", "Replace", "UpdateInService", "UpdateOutOfService", "Cycle", "Scale", "IpAllowlistClear", "AddPairingRole", "Add", "Verify", "Assign", "Unassign", "Reassign", "Reschedule", "Cancel", "SoftDelete", "HardDelete", "Reset", "Rotate", "Restore", "RestoreAll", "RestoreDeleted", "Unarchive", "EnableCapture", "DownloadCapture"]
-        if action.lower() not in map(str.lower, allowed_values):
-            # print("Invalid value for action -> " + action)
-            self._action = "outdated_sdk_version"
-        else:
-            self._action = action
+        
+
+        self._action = action
 
     @property
     def entity(self) -> 'DomainEntityRef':
@@ -417,14 +407,9 @@ class AuditLogMessage(object):
         :param entity_type: The entity_type of this AuditLogMessage.
         :type: str
         """
-        if isinstance(entity_type, int):
-            entity_type = str(entity_type)
-        allowed_values = ["AccessToken", "Action", "ActionDraft", "ActionMap", "ActionTemplate", "ActivityCode", "AdherenceExplanation", "AgentRoutingInfo", "AnalyticsReportingSettings", "Annotation", "Appointment", "Assignment", "AttemptLimits", "AuthOrganization", "AuthUser", "Bulk", "BulkActions", "BusinessUnit", "Calibration", "CallableTimeSet", "CallAnalysisResponseSet", "Campaign", "CampaignRule", "CampaignSchedule", "ChangeRequest", "ClickstreamSettings", "ComposerPage", "ComposerScript", "ComposerPublishedScript", "ComposerTemplate", "Configuration", "ConfigurationVersion", "ContactList", "ContactListFilter", "ContactSchema", "ConversationAttributes", "ConversationAccount", "ConversationDefaultSupportedContent", "ConversationPhoneNumber", "ConversationRecipient", "ConversationThreadingWindow", "Credential", "DashboardSettings", "DefaultPanelSettings", "DependencyTrackingBuild", "Deployment", "DID", "DIDPool", "DigitalRuleSet", "DirectoryGroup", "DNCList", "Document", "DynamicGroup", "DynamicSchema", "Edge", "EdgeGroup", "EdgeLog", "EdgeLogZip", "EdgePcaps", "EdgePreferences", "EdgeTraceLevel", "EmailCampaignSchedule", "EmergencyGroup", "EnterpriseAgreement", "Evaluation", "EvaluationForm", "EventType", "Exports", "Extension", "ExtensionPool", "ExternalMetricsData", "ExternalMetricsDefinition", "ExternalOrganizationSchema", "Feedback", "Flow", "FlowMilestone", "FlowOutcome", "Forecast", "GdprRequest", "Grammar", "GrammarLanguage", "Group", "HistoricalData", "InboundDomain", "InboundRoute", "InsightSettings", "Integration", "IntentMiner", "IVR", "KnowledgeBase", "KnowledgeCategory", "KnowledgeDocument", "KnowledgeDocumentVariation", "KnowledgeLabel", "KnowledgeSearchFeedback", "KnowledgeTraining", "Line", "LineBase", "Location", "ManagementUnit", "MaxOrgRoutingUtilizationCapacity", "MediaDiagnosticsTraceFile", "MessagingCampaign", "MessagingCampaignSchedule", "Metric", "Module", "NumberOrder", "NumberPlan", "OAuthClient", "OAuthClientAuthorization", "Organization", "OrganizationAuthorizationTrust", "OrganizationAuthorizationUserTrust", "OrganizationFeature", "OrganizationIntegrationsAccess", "OrganizationLimits", "OrganizationSettings", "OrphanedRecording", "OutboundDomain", "OutboundRoute", "Outcome", "Pcaps", "Phone", "PhoneBase", "PlanningGroup", "Policy", "Predictor", "Product", "Profile", "ProfileMembers", "Program", "Prompt", "PromptResource", "Public", "Queue", "Recording", "RecordingAnnotation", "RecordingKey", "RecordingKeyConfig", "RecordingSettings", "Response", "ResponseAsset", "Role", "RoleSettings", "Row", "RoutingTranscriptionSettings", "RoutingUtilizationTag", "Rule", "RuleSet", "Schedule", "ScheduledExports", "ScheduleGroup", "Schema", "ScreenRecording", "Segment", "SentimentFeedback", "Sequence", "SequenceSchedule", "ServiceGoalTemplate", "SessionType", "ShiftTrade", "Site", "SkillsGroup", "SkillGroupDefinition", "SpeechTextAnalyticsSettings", "StaffingGroup", "Status", "SupportedContent", "SupportFile", "Survey", "SurveyForm", "Tag", "Team", "TimeOffLimit", "TimeOffPlan", "TimeOffRequest", "Topic", "TopicMiner", "TranscriptionSettings", "Trigger", "Trunk", "TrunkBase", "User", "UserLanguage", "UserPresence", "UserSkill", "VoicemailPolicy", "VoicemailUserPolicy", "Webhook", "Workbin", "Workitem", "WorkPlan", "WorkPlanRotation", "Workspace", "Worktype", "WrapupCode", "WrapUpCodeMapping", "Participant"]
-        if entity_type.lower() not in map(str.lower, allowed_values):
-            # print("Invalid value for entity_type -> " + entity_type)
-            self._entity_type = "outdated_sdk_version"
-        else:
-            self._entity_type = entity_type
+        
+
+        self._entity_type = entity_type
 
     @property
     def status(self) -> str:

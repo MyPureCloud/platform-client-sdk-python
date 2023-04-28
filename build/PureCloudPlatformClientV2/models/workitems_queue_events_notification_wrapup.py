@@ -50,18 +50,21 @@ class WorkitemsQueueEventsNotificationWrapup(object):
         self.swagger_types = {
             'code': 'str',
             'user_id': 'str',
-            'op': 'str'
+            'op': 'str',
+            'action': 'str'
         }
 
         self.attribute_map = {
             'code': 'code',
             'user_id': 'userId',
-            'op': 'op'
+            'op': 'op',
+            'action': 'action'
         }
 
         self._code = None
         self._user_id = None
         self._op = None
+        self._action = None
 
     @property
     def code(self) -> str:
@@ -139,6 +142,35 @@ class WorkitemsQueueEventsNotificationWrapup(object):
             self._op = "outdated_sdk_version"
         else:
             self._op = op
+
+    @property
+    def action(self) -> str:
+        """
+        Gets the action of this WorkitemsQueueEventsNotificationWrapup.
+
+
+        :return: The action of this WorkitemsQueueEventsNotificationWrapup.
+        :rtype: str
+        """
+        return self._action
+
+    @action.setter
+    def action(self, action: str) -> None:
+        """
+        Sets the action of this WorkitemsQueueEventsNotificationWrapup.
+
+
+        :param action: The action of this WorkitemsQueueEventsNotificationWrapup.
+        :type: str
+        """
+        if isinstance(action, int):
+            action = str(action)
+        allowed_values = ["Unknown", "Add", "Remove"]
+        if action.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for action -> " + action)
+            self._action = "outdated_sdk_version"
+        else:
+            self._action = action
 
     def to_dict(self):
         """

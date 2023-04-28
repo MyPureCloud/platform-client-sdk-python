@@ -57,6 +57,7 @@ class ConversationBasic(object):
             'start_time': 'datetime',
             'end_time': 'datetime',
             'divisions': 'list[ConversationDivisionMembership]',
+            'secure_pause': 'bool',
             'self_uri': 'str',
             'participants': 'list[ParticipantBasic]'
         }
@@ -68,6 +69,7 @@ class ConversationBasic(object):
             'start_time': 'startTime',
             'end_time': 'endTime',
             'divisions': 'divisions',
+            'secure_pause': 'securePause',
             'self_uri': 'selfUri',
             'participants': 'participants'
         }
@@ -78,6 +80,7 @@ class ConversationBasic(object):
         self._start_time = None
         self._end_time = None
         self._divisions = None
+        self._secure_pause = None
         self._self_uri = None
         self._participants = None
 
@@ -224,6 +227,30 @@ class ConversationBasic(object):
         
 
         self._divisions = divisions
+
+    @property
+    def secure_pause(self) -> bool:
+        """
+        Gets the secure_pause of this ConversationBasic.
+        True when the recording of this conversation is in secure pause status.
+
+        :return: The secure_pause of this ConversationBasic.
+        :rtype: bool
+        """
+        return self._secure_pause
+
+    @secure_pause.setter
+    def secure_pause(self, secure_pause: bool) -> None:
+        """
+        Sets the secure_pause of this ConversationBasic.
+        True when the recording of this conversation is in secure pause status.
+
+        :param secure_pause: The secure_pause of this ConversationBasic.
+        :type: bool
+        """
+        
+
+        self._secure_pause = secure_pause
 
     @property
     def self_uri(self) -> str:

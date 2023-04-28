@@ -59,7 +59,9 @@ class VoicemailStartDetailEventTopicVoicemailStartEvent(object):
             'dnis': 'str',
             'user_id': 'str',
             'queue_id': 'str',
-            'division_id': 'str'
+            'division_id': 'str',
+            'conversation_external_contact_ids': 'list[str]',
+            'conversation_external_organization_ids': 'list[str]'
         }
 
         self.attribute_map = {
@@ -74,7 +76,9 @@ class VoicemailStartDetailEventTopicVoicemailStartEvent(object):
             'dnis': 'dnis',
             'user_id': 'userId',
             'queue_id': 'queueId',
-            'division_id': 'divisionId'
+            'division_id': 'divisionId',
+            'conversation_external_contact_ids': 'conversationExternalContactIds',
+            'conversation_external_organization_ids': 'conversationExternalOrganizationIds'
         }
 
         self._event_time = None
@@ -89,6 +93,8 @@ class VoicemailStartDetailEventTopicVoicemailStartEvent(object):
         self._user_id = None
         self._queue_id = None
         self._division_id = None
+        self._conversation_external_contact_ids = None
+        self._conversation_external_organization_ids = None
 
     @property
     def event_time(self) -> int:
@@ -387,6 +393,54 @@ class VoicemailStartDetailEventTopicVoicemailStartEvent(object):
         
 
         self._division_id = division_id
+
+    @property
+    def conversation_external_contact_ids(self) -> List[str]:
+        """
+        Gets the conversation_external_contact_ids of this VoicemailStartDetailEventTopicVoicemailStartEvent.
+
+
+        :return: The conversation_external_contact_ids of this VoicemailStartDetailEventTopicVoicemailStartEvent.
+        :rtype: list[str]
+        """
+        return self._conversation_external_contact_ids
+
+    @conversation_external_contact_ids.setter
+    def conversation_external_contact_ids(self, conversation_external_contact_ids: List[str]) -> None:
+        """
+        Sets the conversation_external_contact_ids of this VoicemailStartDetailEventTopicVoicemailStartEvent.
+
+
+        :param conversation_external_contact_ids: The conversation_external_contact_ids of this VoicemailStartDetailEventTopicVoicemailStartEvent.
+        :type: list[str]
+        """
+        
+
+        self._conversation_external_contact_ids = conversation_external_contact_ids
+
+    @property
+    def conversation_external_organization_ids(self) -> List[str]:
+        """
+        Gets the conversation_external_organization_ids of this VoicemailStartDetailEventTopicVoicemailStartEvent.
+
+
+        :return: The conversation_external_organization_ids of this VoicemailStartDetailEventTopicVoicemailStartEvent.
+        :rtype: list[str]
+        """
+        return self._conversation_external_organization_ids
+
+    @conversation_external_organization_ids.setter
+    def conversation_external_organization_ids(self, conversation_external_organization_ids: List[str]) -> None:
+        """
+        Sets the conversation_external_organization_ids of this VoicemailStartDetailEventTopicVoicemailStartEvent.
+
+
+        :param conversation_external_organization_ids: The conversation_external_organization_ids of this VoicemailStartDetailEventTopicVoicemailStartEvent.
+        :type: list[str]
+        """
+        
+
+        self._conversation_external_organization_ids = conversation_external_organization_ids
 
     def to_dict(self):
         """

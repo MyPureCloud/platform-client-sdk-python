@@ -3488,12 +3488,13 @@ class RoutingApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str kpi_group: The Group of Key Performance Indicators to return
+        :param list[str] expand: Parameter to request additional data to return in KPI payload
         :return: list[KeyPerformanceIndicator]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['kpi_group']
+        all_params = ['kpi_group', 'expand']
         all_params.append('callback')
 
         params = locals()
@@ -3514,6 +3515,8 @@ class RoutingApi(object):
         query_params = {}
         if 'kpi_group' in params:
             query_params['kpiGroup'] = params['kpi_group']
+        if 'expand' in params:
+            query_params['expand'] = params['expand']
 
         header_params = {}
 

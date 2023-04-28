@@ -2305,7 +2305,7 @@ except ApiException as e:
 
 <a name="get_routing_predictors_keyperformanceindicators"></a>
 
-## [**list[KeyPerformanceIndicator]**](KeyPerformanceIndicator.html) get_routing_predictors_keyperformanceindicators(kpi_group=kpi_group)
+## [**list[KeyPerformanceIndicator]**](KeyPerformanceIndicator.html) get_routing_predictors_keyperformanceindicators(kpi_group=kpi_group, expand=expand)
 
 
 
@@ -2333,10 +2333,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.RoutingApi()
 kpi_group = 'kpi_group_example' # str | The Group of Key Performance Indicators to return (optional)
+expand = ['expand_example'] # list[str] | Parameter to request additional data to return in KPI payload (optional)
 
 try:
     # Get a list of Key Performance Indicators
-    api_response = api_instance.get_routing_predictors_keyperformanceindicators(kpi_group=kpi_group)
+    api_response = api_instance.get_routing_predictors_keyperformanceindicators(kpi_group=kpi_group, expand=expand)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling RoutingApi->get_routing_predictors_keyperformanceindicators: %s\n" % e)
@@ -2348,6 +2349,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **kpi_group** | **str**| The Group of Key Performance Indicators to return | [optional] <br />**Values**: Standard, Custom |
+| **expand** | [**list[str]**](str.html)| Parameter to request additional data to return in KPI payload | [optional] <br />**Values**: queues |
 {: class="table table-striped"}
 
 ### Return type

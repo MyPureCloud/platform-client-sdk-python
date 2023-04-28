@@ -77,6 +77,7 @@ class Evaluation(object):
             'conversation_end_date': 'datetime',
             'never_release': 'bool',
             'assigned': 'bool',
+            'date_assignee_changed': 'datetime',
             'resource_id': 'str',
             'resource_type': 'str',
             'redacted': 'bool',
@@ -109,6 +110,7 @@ class Evaluation(object):
             'conversation_end_date': 'conversationEndDate',
             'never_release': 'neverRelease',
             'assigned': 'assigned',
+            'date_assignee_changed': 'dateAssigneeChanged',
             'resource_id': 'resourceId',
             'resource_type': 'resourceType',
             'redacted': 'redacted',
@@ -140,6 +142,7 @@ class Evaluation(object):
         self._conversation_end_date = None
         self._never_release = None
         self._assigned = None
+        self._date_assignee_changed = None
         self._resource_id = None
         self._resource_type = None
         self._redacted = None
@@ -657,6 +660,30 @@ class Evaluation(object):
         
 
         self._assigned = assigned
+
+    @property
+    def date_assignee_changed(self) -> datetime:
+        """
+        Gets the date_assignee_changed of this Evaluation.
+        Date when the assignee was last changed. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :return: The date_assignee_changed of this Evaluation.
+        :rtype: datetime
+        """
+        return self._date_assignee_changed
+
+    @date_assignee_changed.setter
+    def date_assignee_changed(self, date_assignee_changed: datetime) -> None:
+        """
+        Sets the date_assignee_changed of this Evaluation.
+        Date when the assignee was last changed. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :param date_assignee_changed: The date_assignee_changed of this Evaluation.
+        :type: datetime
+        """
+        
+
+        self._date_assignee_changed = date_assignee_changed
 
     @property
     def resource_id(self) -> str:

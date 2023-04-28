@@ -67,7 +67,9 @@ class WrapupDetailEventTopicWrapupEvent(object):
             'queue_id': 'str',
             'wrapup_code': 'str',
             'wrapup_notes': 'str',
-            'wrapup_duration_ms': 'int'
+            'wrapup_duration_ms': 'int',
+            'conversation_external_contact_ids': 'list[str]',
+            'conversation_external_organization_ids': 'list[str]'
         }
 
         self.attribute_map = {
@@ -90,7 +92,9 @@ class WrapupDetailEventTopicWrapupEvent(object):
             'queue_id': 'queueId',
             'wrapup_code': 'wrapupCode',
             'wrapup_notes': 'wrapupNotes',
-            'wrapup_duration_ms': 'wrapupDurationMs'
+            'wrapup_duration_ms': 'wrapupDurationMs',
+            'conversation_external_contact_ids': 'conversationExternalContactIds',
+            'conversation_external_organization_ids': 'conversationExternalOrganizationIds'
         }
 
         self._event_time = None
@@ -113,6 +117,8 @@ class WrapupDetailEventTopicWrapupEvent(object):
         self._wrapup_code = None
         self._wrapup_notes = None
         self._wrapup_duration_ms = None
+        self._conversation_external_contact_ids = None
+        self._conversation_external_organization_ids = None
 
     @property
     def event_time(self) -> int:
@@ -608,6 +614,54 @@ class WrapupDetailEventTopicWrapupEvent(object):
         
 
         self._wrapup_duration_ms = wrapup_duration_ms
+
+    @property
+    def conversation_external_contact_ids(self) -> List[str]:
+        """
+        Gets the conversation_external_contact_ids of this WrapupDetailEventTopicWrapupEvent.
+
+
+        :return: The conversation_external_contact_ids of this WrapupDetailEventTopicWrapupEvent.
+        :rtype: list[str]
+        """
+        return self._conversation_external_contact_ids
+
+    @conversation_external_contact_ids.setter
+    def conversation_external_contact_ids(self, conversation_external_contact_ids: List[str]) -> None:
+        """
+        Sets the conversation_external_contact_ids of this WrapupDetailEventTopicWrapupEvent.
+
+
+        :param conversation_external_contact_ids: The conversation_external_contact_ids of this WrapupDetailEventTopicWrapupEvent.
+        :type: list[str]
+        """
+        
+
+        self._conversation_external_contact_ids = conversation_external_contact_ids
+
+    @property
+    def conversation_external_organization_ids(self) -> List[str]:
+        """
+        Gets the conversation_external_organization_ids of this WrapupDetailEventTopicWrapupEvent.
+
+
+        :return: The conversation_external_organization_ids of this WrapupDetailEventTopicWrapupEvent.
+        :rtype: list[str]
+        """
+        return self._conversation_external_organization_ids
+
+    @conversation_external_organization_ids.setter
+    def conversation_external_organization_ids(self, conversation_external_organization_ids: List[str]) -> None:
+        """
+        Sets the conversation_external_organization_ids of this WrapupDetailEventTopicWrapupEvent.
+
+
+        :param conversation_external_organization_ids: The conversation_external_organization_ids of this WrapupDetailEventTopicWrapupEvent.
+        :type: list[str]
+        """
+        
+
+        self._conversation_external_organization_ids = conversation_external_organization_ids
 
     def to_dict(self):
         """

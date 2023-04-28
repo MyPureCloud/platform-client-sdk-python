@@ -34,6 +34,7 @@ from typing import Dict
 
 if TYPE_CHECKING:
     from . import EvaluationQualityV2TopicCalibration
+    from . import EvaluationQualityV2TopicEvaluationReference
     from . import EvaluationQualityV2TopicEvaluationScoringSet
     from . import EvaluationQualityV2TopicEvaluationSource
     from . import EvaluationQualityV2TopicUser
@@ -77,7 +78,13 @@ class EvaluationQualityV2TopicEvaluationV2(object):
             'calibration': 'EvaluationQualityV2TopicCalibration',
             'evaluation_source': 'EvaluationQualityV2TopicEvaluationSource',
             'assignee_user_id': 'str',
-            'previous_assignee_user_id': 'str'
+            'previous_assignee_user_id': 'str',
+            'evaluation_context_id': 'str',
+            'dispute_count': 'int',
+            'version': 'int',
+            'previous_status': 'str',
+            'declined_review': 'bool',
+            'retracted_evaluation': 'EvaluationQualityV2TopicEvaluationReference'
         }
 
         self.attribute_map = {
@@ -105,7 +112,13 @@ class EvaluationQualityV2TopicEvaluationV2(object):
             'calibration': 'calibration',
             'evaluation_source': 'evaluationSource',
             'assignee_user_id': 'assigneeUserId',
-            'previous_assignee_user_id': 'previousAssigneeUserId'
+            'previous_assignee_user_id': 'previousAssigneeUserId',
+            'evaluation_context_id': 'evaluationContextId',
+            'dispute_count': 'disputeCount',
+            'version': 'version',
+            'previous_status': 'previousStatus',
+            'declined_review': 'declinedReview',
+            'retracted_evaluation': 'retractedEvaluation'
         }
 
         self._id = None
@@ -133,6 +146,12 @@ class EvaluationQualityV2TopicEvaluationV2(object):
         self._evaluation_source = None
         self._assignee_user_id = None
         self._previous_assignee_user_id = None
+        self._evaluation_context_id = None
+        self._dispute_count = None
+        self._version = None
+        self._previous_status = None
+        self._declined_review = None
+        self._retracted_evaluation = None
 
     @property
     def id(self) -> str:
@@ -372,7 +391,7 @@ class EvaluationQualityV2TopicEvaluationV2(object):
         """
         if isinstance(status, int):
             status = str(status)
-        allowed_values = ["Pending", "InProgress", "Finished"]
+        allowed_values = ["Pending", "InProgress", "Finished", "InReview", "Retracted"]
         if status.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for status -> " + status)
             self._status = "outdated_sdk_version"
@@ -738,6 +757,155 @@ class EvaluationQualityV2TopicEvaluationV2(object):
         
 
         self._previous_assignee_user_id = previous_assignee_user_id
+
+    @property
+    def evaluation_context_id(self) -> str:
+        """
+        Gets the evaluation_context_id of this EvaluationQualityV2TopicEvaluationV2.
+
+
+        :return: The evaluation_context_id of this EvaluationQualityV2TopicEvaluationV2.
+        :rtype: str
+        """
+        return self._evaluation_context_id
+
+    @evaluation_context_id.setter
+    def evaluation_context_id(self, evaluation_context_id: str) -> None:
+        """
+        Sets the evaluation_context_id of this EvaluationQualityV2TopicEvaluationV2.
+
+
+        :param evaluation_context_id: The evaluation_context_id of this EvaluationQualityV2TopicEvaluationV2.
+        :type: str
+        """
+        
+
+        self._evaluation_context_id = evaluation_context_id
+
+    @property
+    def dispute_count(self) -> int:
+        """
+        Gets the dispute_count of this EvaluationQualityV2TopicEvaluationV2.
+
+
+        :return: The dispute_count of this EvaluationQualityV2TopicEvaluationV2.
+        :rtype: int
+        """
+        return self._dispute_count
+
+    @dispute_count.setter
+    def dispute_count(self, dispute_count: int) -> None:
+        """
+        Sets the dispute_count of this EvaluationQualityV2TopicEvaluationV2.
+
+
+        :param dispute_count: The dispute_count of this EvaluationQualityV2TopicEvaluationV2.
+        :type: int
+        """
+        
+
+        self._dispute_count = dispute_count
+
+    @property
+    def version(self) -> int:
+        """
+        Gets the version of this EvaluationQualityV2TopicEvaluationV2.
+
+
+        :return: The version of this EvaluationQualityV2TopicEvaluationV2.
+        :rtype: int
+        """
+        return self._version
+
+    @version.setter
+    def version(self, version: int) -> None:
+        """
+        Sets the version of this EvaluationQualityV2TopicEvaluationV2.
+
+
+        :param version: The version of this EvaluationQualityV2TopicEvaluationV2.
+        :type: int
+        """
+        
+
+        self._version = version
+
+    @property
+    def previous_status(self) -> str:
+        """
+        Gets the previous_status of this EvaluationQualityV2TopicEvaluationV2.
+
+
+        :return: The previous_status of this EvaluationQualityV2TopicEvaluationV2.
+        :rtype: str
+        """
+        return self._previous_status
+
+    @previous_status.setter
+    def previous_status(self, previous_status: str) -> None:
+        """
+        Sets the previous_status of this EvaluationQualityV2TopicEvaluationV2.
+
+
+        :param previous_status: The previous_status of this EvaluationQualityV2TopicEvaluationV2.
+        :type: str
+        """
+        if isinstance(previous_status, int):
+            previous_status = str(previous_status)
+        allowed_values = ["Pending", "InProgress", "Finished", "InReview", "Retracted"]
+        if previous_status.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for previous_status -> " + previous_status)
+            self._previous_status = "outdated_sdk_version"
+        else:
+            self._previous_status = previous_status
+
+    @property
+    def declined_review(self) -> bool:
+        """
+        Gets the declined_review of this EvaluationQualityV2TopicEvaluationV2.
+
+
+        :return: The declined_review of this EvaluationQualityV2TopicEvaluationV2.
+        :rtype: bool
+        """
+        return self._declined_review
+
+    @declined_review.setter
+    def declined_review(self, declined_review: bool) -> None:
+        """
+        Sets the declined_review of this EvaluationQualityV2TopicEvaluationV2.
+
+
+        :param declined_review: The declined_review of this EvaluationQualityV2TopicEvaluationV2.
+        :type: bool
+        """
+        
+
+        self._declined_review = declined_review
+
+    @property
+    def retracted_evaluation(self) -> 'EvaluationQualityV2TopicEvaluationReference':
+        """
+        Gets the retracted_evaluation of this EvaluationQualityV2TopicEvaluationV2.
+
+
+        :return: The retracted_evaluation of this EvaluationQualityV2TopicEvaluationV2.
+        :rtype: EvaluationQualityV2TopicEvaluationReference
+        """
+        return self._retracted_evaluation
+
+    @retracted_evaluation.setter
+    def retracted_evaluation(self, retracted_evaluation: 'EvaluationQualityV2TopicEvaluationReference') -> None:
+        """
+        Sets the retracted_evaluation of this EvaluationQualityV2TopicEvaluationV2.
+
+
+        :param retracted_evaluation: The retracted_evaluation of this EvaluationQualityV2TopicEvaluationV2.
+        :type: EvaluationQualityV2TopicEvaluationReference
+        """
+        
+
+        self._retracted_evaluation = retracted_evaluation
 
     def to_dict(self):
         """

@@ -95,7 +95,8 @@ class QueueConversationMessageEventTopicMessageMediaParticipant(object):
             'type': 'str',
             'recipient_country': 'str',
             'recipient_type': 'str',
-            'byo_sms_integration_id': 'str'
+            'byo_sms_integration_id': 'str',
+            'monitored_participant_id': 'str'
         }
 
         self.attribute_map = {
@@ -139,7 +140,8 @@ class QueueConversationMessageEventTopicMessageMediaParticipant(object):
             'type': 'type',
             'recipient_country': 'recipientCountry',
             'recipient_type': 'recipientType',
-            'byo_sms_integration_id': 'byoSmsIntegrationId'
+            'byo_sms_integration_id': 'byoSmsIntegrationId',
+            'monitored_participant_id': 'monitoredParticipantId'
         }
 
         self._id = None
@@ -183,6 +185,7 @@ class QueueConversationMessageEventTopicMessageMediaParticipant(object):
         self._recipient_country = None
         self._recipient_type = None
         self._byo_sms_integration_id = None
+        self._monitored_participant_id = None
 
     @property
     def id(self) -> str:
@@ -1197,6 +1200,30 @@ class QueueConversationMessageEventTopicMessageMediaParticipant(object):
         
 
         self._byo_sms_integration_id = byo_sms_integration_id
+
+    @property
+    def monitored_participant_id(self) -> str:
+        """
+        Gets the monitored_participant_id of this QueueConversationMessageEventTopicMessageMediaParticipant.
+
+
+        :return: The monitored_participant_id of this QueueConversationMessageEventTopicMessageMediaParticipant.
+        :rtype: str
+        """
+        return self._monitored_participant_id
+
+    @monitored_participant_id.setter
+    def monitored_participant_id(self, monitored_participant_id: str) -> None:
+        """
+        Sets the monitored_participant_id of this QueueConversationMessageEventTopicMessageMediaParticipant.
+
+
+        :param monitored_participant_id: The monitored_participant_id of this QueueConversationMessageEventTopicMessageMediaParticipant.
+        :type: str
+        """
+        
+
+        self._monitored_participant_id = monitored_participant_id
 
     def to_dict(self):
         """

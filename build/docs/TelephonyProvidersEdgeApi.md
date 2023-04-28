@@ -15,7 +15,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**delete_telephony_providers_edges_didpool**](TelephonyProvidersEdgeApi.html#delete_telephony_providers_edges_didpool) | Delete a DID Pool by ID.|
 |[**delete_telephony_providers_edges_edgegroup**](TelephonyProvidersEdgeApi.html#delete_telephony_providers_edges_edgegroup) | Delete an edge group.|
 |[**delete_telephony_providers_edges_extensionpool**](TelephonyProvidersEdgeApi.html#delete_telephony_providers_edges_extensionpool) | Delete an extension pool by ID|
-|[**delete_telephony_providers_edges_outboundroute**](TelephonyProvidersEdgeApi.html#delete_telephony_providers_edges_outboundroute) | Delete Outbound Route|
 |[**delete_telephony_providers_edges_phone**](TelephonyProvidersEdgeApi.html#delete_telephony_providers_edges_phone) | Delete a Phone by ID|
 |[**delete_telephony_providers_edges_phonebasesetting**](TelephonyProvidersEdgeApi.html#delete_telephony_providers_edges_phonebasesetting) | Delete a Phone Base Settings by ID|
 |[**delete_telephony_providers_edges_site**](TelephonyProvidersEdgeApi.html#delete_telephony_providers_edges_site) | Delete a Site by ID|
@@ -105,7 +104,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_telephony_providers_edges_didpools**](TelephonyProvidersEdgeApi.html#post_telephony_providers_edges_didpools) | Create a new DID pool|
 |[**post_telephony_providers_edges_edgegroups**](TelephonyProvidersEdgeApi.html#post_telephony_providers_edges_edgegroups) | Create an edge group.|
 |[**post_telephony_providers_edges_extensionpools**](TelephonyProvidersEdgeApi.html#post_telephony_providers_edges_extensionpools) | Create a new extension pool|
-|[**post_telephony_providers_edges_outboundroutes**](TelephonyProvidersEdgeApi.html#post_telephony_providers_edges_outboundroutes) | Create outbound rule|
 |[**post_telephony_providers_edges_phone_reboot**](TelephonyProvidersEdgeApi.html#post_telephony_providers_edges_phone_reboot) | Reboot a Phone|
 |[**post_telephony_providers_edges_phonebasesettings**](TelephonyProvidersEdgeApi.html#post_telephony_providers_edges_phonebasesettings) | Create a new Phone Base Settings object|
 |[**post_telephony_providers_edges_phones**](TelephonyProvidersEdgeApi.html#post_telephony_providers_edges_phones) | Create a new Phone|
@@ -120,7 +118,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**put_telephony_providers_edges_edgegroup**](TelephonyProvidersEdgeApi.html#put_telephony_providers_edges_edgegroup) | Update an edge group.|
 |[**put_telephony_providers_edges_edgegroup_edgetrunkbase**](TelephonyProvidersEdgeApi.html#put_telephony_providers_edges_edgegroup_edgetrunkbase) | Update the edge trunk base associated with the edge group|
 |[**put_telephony_providers_edges_extensionpool**](TelephonyProvidersEdgeApi.html#put_telephony_providers_edges_extensionpool) | Update an extension pool by ID|
-|[**put_telephony_providers_edges_outboundroute**](TelephonyProvidersEdgeApi.html#put_telephony_providers_edges_outboundroute) | Update outbound route|
 |[**put_telephony_providers_edges_phone**](TelephonyProvidersEdgeApi.html#put_telephony_providers_edges_phone) | Update a Phone by ID|
 |[**put_telephony_providers_edges_phonebasesetting**](TelephonyProvidersEdgeApi.html#put_telephony_providers_edges_phonebasesetting) | Update a Phone Base Settings by ID|
 |[**put_telephony_providers_edges_site**](TelephonyProvidersEdgeApi.html#put_telephony_providers_edges_site) | Update a Site by ID.|
@@ -474,58 +471,6 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **extension_pool_id** | **str**| Extension pool ID |  |
-{: class="table table-striped"}
-
-### Return type
-
-void (empty response body)
-
-<a name="delete_telephony_providers_edges_outboundroute"></a>
-
-##  delete_telephony_providers_edges_outboundroute(outbound_route_id)
-
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
-
-Delete Outbound Route
-
-This route is deprecated, use /telephony/providers/edges/sites/{siteId}/outboundroutes/{outboundRouteId} instead.
-
-
-
-Wraps DELETE /api/v2/telephony/providers/edges/outboundroutes/{outboundRouteId} 
-
-Requires ANY permissions: 
-
-* telephony:plugin:all
-
-### Example
-
-```{"language":"python"}
-import time
-import PureCloudPlatformClientV2
-from PureCloudPlatformClientV2.rest import ApiException
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: PureCloud OAuth
-PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
-outbound_route_id = 'outbound_route_id_example' # str | Outbound route ID
-
-try:
-    # Delete Outbound Route
-    api_instance.delete_telephony_providers_edges_outboundroute(outbound_route_id)
-except ApiException as e:
-    print("Exception when calling TelephonyProvidersEdgeApi->delete_telephony_providers_edges_outboundroute: %s\n" % e)
-```
-
-### Parameters
-
-
-|Name | Type | Description  | Notes|
-|------------- | ------------- | ------------- | -------------|
-| **outbound_route_id** | **str**| Outbound route ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -5320,59 +5265,6 @@ except ApiException as e:
 
 [**ExtensionPool**](ExtensionPool.html)
 
-<a name="post_telephony_providers_edges_outboundroutes"></a>
-
-## [**OutboundRoute**](OutboundRoute.html) post_telephony_providers_edges_outboundroutes(body)
-
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
-
-Create outbound rule
-
-This route is deprecated, use /telephony/providers/edges/sites/{siteId}/outboundroutes instead.
-
-
-
-Wraps POST /api/v2/telephony/providers/edges/outboundroutes 
-
-Requires ANY permissions: 
-
-* telephony:plugin:all
-
-### Example
-
-```{"language":"python"}
-import time
-import PureCloudPlatformClientV2
-from PureCloudPlatformClientV2.rest import ApiException
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: PureCloud OAuth
-PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
-body = PureCloudPlatformClientV2.OutboundRoute() # OutboundRoute | OutboundRoute
-
-try:
-    # Create outbound rule
-    api_response = api_instance.post_telephony_providers_edges_outboundroutes(body)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling TelephonyProvidersEdgeApi->post_telephony_providers_edges_outboundroutes: %s\n" % e)
-```
-
-### Parameters
-
-
-|Name | Type | Description  | Notes|
-|------------- | ------------- | ------------- | -------------|
-| **body** | [**OutboundRoute**](OutboundRoute.html)| OutboundRoute |  |
-{: class="table table-striped"}
-
-### Return type
-
-[**OutboundRoute**](OutboundRoute.html)
-
 <a name="post_telephony_providers_edges_phone_reboot"></a>
 
 ##  post_telephony_providers_edges_phone_reboot(phone_id)
@@ -6104,61 +5996,6 @@ except ApiException as e:
 ### Return type
 
 [**ExtensionPool**](ExtensionPool.html)
-
-<a name="put_telephony_providers_edges_outboundroute"></a>
-
-## [**OutboundRoute**](OutboundRoute.html) put_telephony_providers_edges_outboundroute(outbound_route_id, body)
-
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
-
-Update outbound route
-
-This route is deprecated, use /telephony/providers/edges/sites/{siteId}/outboundroutes/{outboundRouteId} instead.
-
-
-
-Wraps PUT /api/v2/telephony/providers/edges/outboundroutes/{outboundRouteId} 
-
-Requires ANY permissions: 
-
-* telephony:plugin:all
-
-### Example
-
-```{"language":"python"}
-import time
-import PureCloudPlatformClientV2
-from PureCloudPlatformClientV2.rest import ApiException
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: PureCloud OAuth
-PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
-outbound_route_id = 'outbound_route_id_example' # str | Outbound route ID
-body = PureCloudPlatformClientV2.OutboundRoute() # OutboundRoute | OutboundRoute
-
-try:
-    # Update outbound route
-    api_response = api_instance.put_telephony_providers_edges_outboundroute(outbound_route_id, body)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling TelephonyProvidersEdgeApi->put_telephony_providers_edges_outboundroute: %s\n" % e)
-```
-
-### Parameters
-
-
-|Name | Type | Description  | Notes|
-|------------- | ------------- | ------------- | -------------|
-| **outbound_route_id** | **str**| Outbound route ID |  |
-| **body** | [**OutboundRoute**](OutboundRoute.html)| OutboundRoute |  |
-{: class="table table-striped"}
-
-### Return type
-
-[**OutboundRoute**](OutboundRoute.html)
 
 <a name="put_telephony_providers_edges_phone"></a>
 

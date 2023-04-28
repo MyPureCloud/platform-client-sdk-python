@@ -16,6 +16,7 @@ title: Call
 | **muted** | **bool** | True if this call is muted so that remote participants can&#39;t hear any audio from this end. | [optional] |
 | **confined** | **bool** | True if this call is held and the person on this side hears hold music. | [optional] |
 | **held** | **bool** | True if this call is held and the person on this side hears silence. | [optional] |
+| **secure_pause** | **bool** | True when the recording of this call is in secure pause status. | [optional] |
 | **recording_id** | **str** | A globally unique identifier for the recording associated with this call. | [optional] |
 | **segments** | [**list[Segment]**](Segment.html) | The time line of the participant&#39;s call, divided into activity segments. | [optional] |
 | **error_info** | [**ErrorInfo**](ErrorInfo.html) |  | [optional] |

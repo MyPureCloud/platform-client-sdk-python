@@ -58,7 +58,7 @@ class DialerContact(object):
             'id': 'str',
             'name': 'str',
             'contact_list_id': 'str',
-            'data': 'dict(str, object)',
+            'data': 'dict(str, str)',
             'call_records': 'dict(str, CallRecord)',
             'latest_sms_evaluations': 'dict(str, MessageEvaluation)',
             'latest_email_evaluations': 'dict(str, MessageEvaluation)',
@@ -173,24 +173,24 @@ class DialerContact(object):
         self._contact_list_id = contact_list_id
 
     @property
-    def data(self) -> Dict[str, object]:
+    def data(self) -> Dict[str, str]:
         """
         Gets the data of this DialerContact.
         An ordered map of the contact's columns and corresponding values.
 
         :return: The data of this DialerContact.
-        :rtype: dict(str, object)
+        :rtype: dict(str, str)
         """
         return self._data
 
     @data.setter
-    def data(self, data: Dict[str, object]) -> None:
+    def data(self, data: Dict[str, str]) -> None:
         """
         Sets the data of this DialerContact.
         An ordered map of the contact's columns and corresponding values.
 
         :param data: The data of this DialerContact.
-        :type: dict(str, object)
+        :type: dict(str, str)
         """
         
 

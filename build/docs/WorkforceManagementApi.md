@@ -106,7 +106,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**patch_workforcemanagement_timeoffrequest**](WorkforceManagementApi.html#patch_workforcemanagement_timeoffrequest) | Update a time off request for the current user|
 |[**post_workforcemanagement_adherence_explanations**](WorkforceManagementApi.html#post_workforcemanagement_adherence_explanations) | Submit an adherence explanation for the current user|
 |[**post_workforcemanagement_adherence_explanations_query**](WorkforceManagementApi.html#post_workforcemanagement_adherence_explanations_query) | Query adherence explanations for the current user|
-|[**post_workforcemanagement_adherence_historical**](WorkforceManagementApi.html#post_workforcemanagement_adherence_historical) | Request a historical adherence report for users across management units|
+|[**post_workforcemanagement_adherence_historical**](WorkforceManagementApi.html#post_workforcemanagement_adherence_historical) | Deprecated. Use bulk routes instead (/adherence/historical/bulk)|
 |[**post_workforcemanagement_adherence_historical_bulk**](WorkforceManagementApi.html#post_workforcemanagement_adherence_historical_bulk) | Request a historical adherence report in bulk|
 |[**post_workforcemanagement_agent_adherence_explanations**](WorkforceManagementApi.html#post_workforcemanagement_agent_adherence_explanations) | Add an adherence explanation for the requested user|
 |[**post_workforcemanagement_agent_adherence_explanations_query**](WorkforceManagementApi.html#post_workforcemanagement_agent_adherence_explanations_query) | Query adherence explanations for the given agent across a specified range|
@@ -5707,7 +5707,7 @@ except ApiException as e:
 
 
 
-Request a historical adherence report for users across management units
+Deprecated. Use bulk routes instead (/adherence/historical/bulk)
 
 
 
@@ -5733,7 +5733,7 @@ api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
 body = PureCloudPlatformClientV2.WfmHistoricalAdherenceQueryForUsers() # WfmHistoricalAdherenceQueryForUsers | body (optional)
 
 try:
-    # Request a historical adherence report for users across management units
+    # Deprecated. Use bulk routes instead (/adherence/historical/bulk)
     api_response = api_instance.post_workforcemanagement_adherence_historical(body=body)
     pprint(api_response)
 except ApiException as e:

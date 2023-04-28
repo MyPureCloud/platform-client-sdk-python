@@ -63,6 +63,7 @@ class KnowledgeDocumentResponse(object):
             'state': 'str',
             'date_created': 'datetime',
             'date_modified': 'datetime',
+            'date_imported': 'datetime',
             'last_published_version_number': 'int',
             'date_published': 'datetime',
             'created_by': 'UserReference',
@@ -83,6 +84,7 @@ class KnowledgeDocumentResponse(object):
             'state': 'state',
             'date_created': 'dateCreated',
             'date_modified': 'dateModified',
+            'date_imported': 'dateImported',
             'last_published_version_number': 'lastPublishedVersionNumber',
             'date_published': 'datePublished',
             'created_by': 'createdBy',
@@ -102,6 +104,7 @@ class KnowledgeDocumentResponse(object):
         self._state = None
         self._date_created = None
         self._date_modified = None
+        self._date_imported = None
         self._last_published_version_number = None
         self._date_published = None
         self._created_by = None
@@ -285,6 +288,30 @@ class KnowledgeDocumentResponse(object):
         
 
         self._date_modified = date_modified
+
+    @property
+    def date_imported(self) -> datetime:
+        """
+        Gets the date_imported of this KnowledgeDocumentResponse.
+        Document import date-time, or null if was not imported. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :return: The date_imported of this KnowledgeDocumentResponse.
+        :rtype: datetime
+        """
+        return self._date_imported
+
+    @date_imported.setter
+    def date_imported(self, date_imported: datetime) -> None:
+        """
+        Sets the date_imported of this KnowledgeDocumentResponse.
+        Document import date-time, or null if was not imported. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :param date_imported: The date_imported of this KnowledgeDocumentResponse.
+        :type: datetime
+        """
+        
+
+        self._date_imported = date_imported
 
     @property
     def last_published_version_number(self) -> int:

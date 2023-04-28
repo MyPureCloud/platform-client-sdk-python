@@ -54,7 +54,7 @@ class WritableDialerContact(object):
         self.swagger_types = {
             'id': 'str',
             'contact_list_id': 'str',
-            'data': 'dict(str, object)',
+            'data': 'dict(str, str)',
             'latest_sms_evaluations': 'dict(str, MessageEvaluation)',
             'latest_email_evaluations': 'dict(str, MessageEvaluation)',
             'callable': 'bool',
@@ -131,24 +131,24 @@ class WritableDialerContact(object):
         self._contact_list_id = contact_list_id
 
     @property
-    def data(self) -> Dict[str, object]:
+    def data(self) -> Dict[str, str]:
         """
         Gets the data of this WritableDialerContact.
         An ordered map of the contact's columns and corresponding values.
 
         :return: The data of this WritableDialerContact.
-        :rtype: dict(str, object)
+        :rtype: dict(str, str)
         """
         return self._data
 
     @data.setter
-    def data(self, data: Dict[str, object]) -> None:
+    def data(self, data: Dict[str, str]) -> None:
         """
         Sets the data of this WritableDialerContact.
         An ordered map of the contact's columns and corresponding values.
 
         :param data: The data of this WritableDialerContact.
-        :type: dict(str, object)
+        :type: dict(str, str)
         """
         
 

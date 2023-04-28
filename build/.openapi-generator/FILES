@@ -1341,6 +1341,7 @@ PureCloudPlatformClientV2/models/evaluation_form_and_scoring_set.py
 PureCloudPlatformClientV2/models/evaluation_form_entity_listing.py
 PureCloudPlatformClientV2/models/evaluation_form_response.py
 PureCloudPlatformClientV2/models/evaluation_quality_v2_topic_calibration.py
+PureCloudPlatformClientV2/models/evaluation_quality_v2_topic_evaluation_reference.py
 PureCloudPlatformClientV2/models/evaluation_quality_v2_topic_evaluation_scoring_set.py
 PureCloudPlatformClientV2/models/evaluation_quality_v2_topic_evaluation_source.py
 PureCloudPlatformClientV2/models/evaluation_quality_v2_topic_evaluation_v2.py
@@ -1383,6 +1384,8 @@ PureCloudPlatformClientV2/models/external_contacts_contact_changed_topic_contact
 PureCloudPlatformClientV2/models/external_contacts_contact_changed_topic_contact_address.py
 PureCloudPlatformClientV2/models/external_contacts_contact_changed_topic_facebook_id.py
 PureCloudPlatformClientV2/models/external_contacts_contact_changed_topic_facebook_scoped_id.py
+PureCloudPlatformClientV2/models/external_contacts_contact_changed_topic_instagram_id.py
+PureCloudPlatformClientV2/models/external_contacts_contact_changed_topic_instagram_scoped_id.py
 PureCloudPlatformClientV2/models/external_contacts_contact_changed_topic_line_id.py
 PureCloudPlatformClientV2/models/external_contacts_contact_changed_topic_line_user_id.py
 PureCloudPlatformClientV2/models/external_contacts_contact_changed_topic_phone_number.py
@@ -1392,6 +1395,8 @@ PureCloudPlatformClientV2/models/external_contacts_unresolved_contact_changed_to
 PureCloudPlatformClientV2/models/external_contacts_unresolved_contact_changed_topic_contact_address.py
 PureCloudPlatformClientV2/models/external_contacts_unresolved_contact_changed_topic_facebook_id.py
 PureCloudPlatformClientV2/models/external_contacts_unresolved_contact_changed_topic_facebook_scoped_id.py
+PureCloudPlatformClientV2/models/external_contacts_unresolved_contact_changed_topic_instagram_id.py
+PureCloudPlatformClientV2/models/external_contacts_unresolved_contact_changed_topic_instagram_scoped_id.py
 PureCloudPlatformClientV2/models/external_contacts_unresolved_contact_changed_topic_line_id.py
 PureCloudPlatformClientV2/models/external_contacts_unresolved_contact_changed_topic_line_user_id.py
 PureCloudPlatformClientV2/models/external_contacts_unresolved_contact_changed_topic_phone_number.py
@@ -1597,6 +1602,23 @@ PureCloudPlatformClientV2/models/infrastructureascode_job.py
 PureCloudPlatformClientV2/models/initial_configuration.py
 PureCloudPlatformClientV2/models/initiate_screen_recording.py
 PureCloudPlatformClientV2/models/initiating_action.py
+PureCloudPlatformClientV2/models/insights_agent_item.py
+PureCloudPlatformClientV2/models/insights_agents.py
+PureCloudPlatformClientV2/models/insights_details.py
+PureCloudPlatformClientV2/models/insights_details_metric_item.py
+PureCloudPlatformClientV2/models/insights_details_metric_period_points.py
+PureCloudPlatformClientV2/models/insights_details_overall_item.py
+PureCloudPlatformClientV2/models/insights_details_overall_period_points.py
+PureCloudPlatformClientV2/models/insights_summary.py
+PureCloudPlatformClientV2/models/insights_summary_metric_item.py
+PureCloudPlatformClientV2/models/insights_summary_metric_period_points.py
+PureCloudPlatformClientV2/models/insights_summary_overall_item.py
+PureCloudPlatformClientV2/models/insights_summary_overall_period_points.py
+PureCloudPlatformClientV2/models/insights_summary_user_item.py
+PureCloudPlatformClientV2/models/insights_trend.py
+PureCloudPlatformClientV2/models/insights_trend_metric_item.py
+PureCloudPlatformClientV2/models/insights_trend_total_item.py
+PureCloudPlatformClientV2/models/insights_trends.py
 PureCloudPlatformClientV2/models/instagram_id.py
 PureCloudPlatformClientV2/models/instagram_scoped_id.py
 PureCloudPlatformClientV2/models/integration.py
@@ -2249,6 +2271,7 @@ PureCloudPlatformClientV2/models/presence_event_organization_presence.py
 PureCloudPlatformClientV2/models/presence_event_user_presence.py
 PureCloudPlatformClientV2/models/presence_settings.py
 PureCloudPlatformClientV2/models/process_schedule_update_upload_request.py
+PureCloudPlatformClientV2/models/profile_with_date_range.py
 PureCloudPlatformClientV2/models/program.py
 PureCloudPlatformClientV2/models/program_job.py
 PureCloudPlatformClientV2/models/program_job_request.py
@@ -2281,6 +2304,7 @@ PureCloudPlatformClientV2/models/quality_audit_log_message.py
 PureCloudPlatformClientV2/models/quality_audit_query_execution_results_response.py
 PureCloudPlatformClientV2/models/quality_audit_query_execution_status_response.py
 PureCloudPlatformClientV2/models/quality_audit_query_filter.py
+PureCloudPlatformClientV2/models/quality_evaluation_score_item.py
 PureCloudPlatformClientV2/models/query_adherence_explanations_response.py
 PureCloudPlatformClientV2/models/query_division.py
 PureCloudPlatformClientV2/models/query_facet_info.py
@@ -2813,6 +2837,7 @@ PureCloudPlatformClientV2/models/site_entity_listing.py
 PureCloudPlatformClientV2/models/skill_entity_listing.py
 PureCloudPlatformClientV2/models/skill_group.py
 PureCloudPlatformClientV2/models/skill_group_condition.py
+PureCloudPlatformClientV2/models/skill_group_definition.py
 PureCloudPlatformClientV2/models/skill_group_entity_listing.py
 PureCloudPlatformClientV2/models/skill_group_language_condition.py
 PureCloudPlatformClientV2/models/skill_group_member_division_list.py
@@ -3033,6 +3058,7 @@ PureCloudPlatformClientV2/models/transfer_destination.py
 PureCloudPlatformClientV2/models/transfer_initiator.py
 PureCloudPlatformClientV2/models/transfer_request.py
 PureCloudPlatformClientV2/models/transfer_response.py
+PureCloudPlatformClientV2/models/trend_data.py
 PureCloudPlatformClientV2/models/trigger.py
 PureCloudPlatformClientV2/models/trigger_entity_listing.py
 PureCloudPlatformClientV2/models/trigger_target.py
@@ -3171,6 +3197,7 @@ PureCloudPlatformClientV2/models/user_greeting_event_greeting.py
 PureCloudPlatformClientV2/models/user_greeting_event_greeting_audio_file.py
 PureCloudPlatformClientV2/models/user_greeting_event_greeting_owner.py
 PureCloudPlatformClientV2/models/user_image.py
+PureCloudPlatformClientV2/models/user_insights_trend.py
 PureCloudPlatformClientV2/models/user_language_entity_listing.py
 PureCloudPlatformClientV2/models/user_licenses.py
 PureCloudPlatformClientV2/models/user_licenses_entity_listing.py
@@ -3188,6 +3215,8 @@ PureCloudPlatformClientV2/models/user_presence_event.py
 PureCloudPlatformClientV2/models/user_primary_source.py
 PureCloudPlatformClientV2/models/user_profile.py
 PureCloudPlatformClientV2/models/user_profile_entity_listing.py
+PureCloudPlatformClientV2/models/user_profiles_in_date_range.py
+PureCloudPlatformClientV2/models/user_profiles_in_date_range_request.py
 PureCloudPlatformClientV2/models/user_queue.py
 PureCloudPlatformClientV2/models/user_queue_entity_listing.py
 PureCloudPlatformClientV2/models/user_recording.py
@@ -3303,6 +3332,8 @@ PureCloudPlatformClientV2/models/value_wrapper_planning_period_settings.py
 PureCloudPlatformClientV2/models/value_wrapper_string.py
 PureCloudPlatformClientV2/models/verification_result.py
 PureCloudPlatformClientV2/models/video.py
+PureCloudPlatformClientV2/models/video_conference_update_topic_participant_info.py
+PureCloudPlatformClientV2/models/video_conference_update_topic_video_conference.py
 PureCloudPlatformClientV2/models/view_filter.py
 PureCloudPlatformClientV2/models/visibility_condition.py
 PureCloudPlatformClientV2/models/vm_pairing_info.py
@@ -3562,6 +3593,7 @@ PureCloudPlatformClientV2/models/work_plan_validation_message_argument.py
 PureCloudPlatformClientV2/models/work_plan_validation_request.py
 PureCloudPlatformClientV2/models/workday_metric.py
 PureCloudPlatformClientV2/models/workday_metric_listing.py
+PureCloudPlatformClientV2/models/workday_period.py
 PureCloudPlatformClientV2/models/workday_points_trend.py
 PureCloudPlatformClientV2/models/workday_points_trend_item.py
 PureCloudPlatformClientV2/models/workday_values_metric_item.py
@@ -4893,6 +4925,7 @@ docs/EvaluationFormAndScoringSet.md
 docs/EvaluationFormEntityListing.md
 docs/EvaluationFormResponse.md
 docs/EvaluationQualityV2TopicCalibration.md
+docs/EvaluationQualityV2TopicEvaluationReference.md
 docs/EvaluationQualityV2TopicEvaluationScoringSet.md
 docs/EvaluationQualityV2TopicEvaluationSource.md
 docs/EvaluationQualityV2TopicEvaluationV2.md
@@ -4939,6 +4972,8 @@ docs/ExternalContactsContactChangedTopicContact.md
 docs/ExternalContactsContactChangedTopicContactAddress.md
 docs/ExternalContactsContactChangedTopicFacebookId.md
 docs/ExternalContactsContactChangedTopicFacebookScopedId.md
+docs/ExternalContactsContactChangedTopicInstagramId.md
+docs/ExternalContactsContactChangedTopicInstagramScopedId.md
 docs/ExternalContactsContactChangedTopicLineId.md
 docs/ExternalContactsContactChangedTopicLineUserId.md
 docs/ExternalContactsContactChangedTopicPhoneNumber.md
@@ -4948,6 +4983,8 @@ docs/ExternalContactsUnresolvedContactChangedTopicContact.md
 docs/ExternalContactsUnresolvedContactChangedTopicContactAddress.md
 docs/ExternalContactsUnresolvedContactChangedTopicFacebookId.md
 docs/ExternalContactsUnresolvedContactChangedTopicFacebookScopedId.md
+docs/ExternalContactsUnresolvedContactChangedTopicInstagramId.md
+docs/ExternalContactsUnresolvedContactChangedTopicInstagramScopedId.md
 docs/ExternalContactsUnresolvedContactChangedTopicLineId.md
 docs/ExternalContactsUnresolvedContactChangedTopicLineUserId.md
 docs/ExternalContactsUnresolvedContactChangedTopicPhoneNumber.md
@@ -5173,6 +5210,23 @@ docs/InfrastructureascodeJob.md
 docs/InitialConfiguration.md
 docs/InitiateScreenRecording.md
 docs/InitiatingAction.md
+docs/InsightsAgentItem.md
+docs/InsightsAgents.md
+docs/InsightsDetails.md
+docs/InsightsDetailsMetricItem.md
+docs/InsightsDetailsMetricPeriodPoints.md
+docs/InsightsDetailsOverallItem.md
+docs/InsightsDetailsOverallPeriodPoints.md
+docs/InsightsSummary.md
+docs/InsightsSummaryMetricItem.md
+docs/InsightsSummaryMetricPeriodPoints.md
+docs/InsightsSummaryOverallItem.md
+docs/InsightsSummaryOverallPeriodPoints.md
+docs/InsightsSummaryUserItem.md
+docs/InsightsTrend.md
+docs/InsightsTrendMetricItem.md
+docs/InsightsTrendTotalItem.md
+docs/InsightsTrends.md
 docs/InstagramId.md
 docs/InstagramScopedId.md
 docs/Integration.md
@@ -5859,6 +5913,7 @@ docs/PresenceSettings.md
 docs/ProcessAutomationApi.json
 docs/ProcessAutomationApi.md
 docs/ProcessScheduleUpdateUploadRequest.md
+docs/ProfileWithDateRange.md
 docs/Program.md
 docs/ProgramJob.md
 docs/ProgramJobRequest.md
@@ -5893,6 +5948,7 @@ docs/QualityAuditLogMessage.md
 docs/QualityAuditQueryExecutionResultsResponse.md
 docs/QualityAuditQueryExecutionStatusResponse.md
 docs/QualityAuditQueryFilter.md
+docs/QualityEvaluationScoreItem.md
 docs/QueryAdherenceExplanationsResponse.md
 docs/QueryDivision.md
 docs/QueryFacetInfo.md
@@ -6438,6 +6494,7 @@ docs/SiteEntityListing.md
 docs/SkillEntityListing.md
 docs/SkillGroup.md
 docs/SkillGroupCondition.md
+docs/SkillGroupDefinition.md
 docs/SkillGroupEntityListing.md
 docs/SkillGroupLanguageCondition.md
 docs/SkillGroupMemberDivisionList.md
@@ -6673,6 +6730,7 @@ docs/TransferDestination.md
 docs/TransferInitiator.md
 docs/TransferRequest.md
 docs/TransferResponse.md
+docs/TrendData.md
 docs/Trigger.md
 docs/TriggerEntityListing.md
 docs/TriggerTarget.md
@@ -6815,6 +6873,7 @@ docs/UserGreetingEventGreeting.md
 docs/UserGreetingEventGreetingAudioFile.md
 docs/UserGreetingEventGreetingOwner.md
 docs/UserImage.md
+docs/UserInsightsTrend.md
 docs/UserLanguageEntityListing.md
 docs/UserLicenses.md
 docs/UserLicensesEntityListing.md
@@ -6832,6 +6891,8 @@ docs/UserPresenceEvent.md
 docs/UserPrimarySource.md
 docs/UserProfile.md
 docs/UserProfileEntityListing.md
+docs/UserProfilesInDateRange.md
+docs/UserProfilesInDateRangeRequest.md
 docs/UserQueue.md
 docs/UserQueueEntityListing.md
 docs/UserRecording.md
@@ -6953,6 +7014,8 @@ docs/ValueWrapperPlanningPeriodSettings.md
 docs/ValueWrapperString.md
 docs/VerificationResult.md
 docs/Video.md
+docs/VideoConferenceUpdateTopicParticipantInfo.md
+docs/VideoConferenceUpdateTopicVideoConference.md
 docs/ViewFilter.md
 docs/VisibilityCondition.md
 docs/VmPairingInfo.md
@@ -7222,6 +7285,7 @@ docs/WorkPlanValidationMessageArgument.md
 docs/WorkPlanValidationRequest.md
 docs/WorkdayMetric.md
 docs/WorkdayMetricListing.md
+docs/WorkdayPeriod.md
 docs/WorkdayPointsTrend.md
 docs/WorkdayPointsTrendItem.md
 docs/WorkdayValuesMetricItem.md
@@ -7447,7 +7511,6 @@ docs/delete_telephony_providers_edges_certificateauthority-example.txt
 docs/delete_telephony_providers_edges_didpool-example.txt
 docs/delete_telephony_providers_edges_edgegroup-example.txt
 docs/delete_telephony_providers_edges_extensionpool-example.txt
-docs/delete_telephony_providers_edges_outboundroute-example.txt
 docs/delete_telephony_providers_edges_phone-example.txt
 docs/delete_telephony_providers_edges_phonebasesetting-example.txt
 docs/delete_telephony_providers_edges_site-example.txt
@@ -7758,6 +7821,14 @@ docs/get_flows_milestones_divisionviews-example.txt
 docs/get_flows_outcome-example.txt
 docs/get_flows_outcomes-example.txt
 docs/get_flows_outcomes_divisionviews-example.txt
+docs/get_gamification_insights-example.txt
+docs/get_gamification_insights_details-example.txt
+docs/get_gamification_insights_groups_trends-example.txt
+docs/get_gamification_insights_groups_trends_all-example.txt
+docs/get_gamification_insights_members-example.txt
+docs/get_gamification_insights_trends-example.txt
+docs/get_gamification_insights_user_details-example.txt
+docs/get_gamification_insights_user_trends-example.txt
 docs/get_gamification_leaderboard-example.txt
 docs/get_gamification_leaderboard_all-example.txt
 docs/get_gamification_leaderboard_all_bestpoints-example.txt
@@ -8788,6 +8859,8 @@ docs/post_gamification_profile_members_validate-example.txt
 docs/post_gamification_profile_metric_link-example.txt
 docs/post_gamification_profile_metrics-example.txt
 docs/post_gamification_profiles-example.txt
+docs/post_gamification_profiles_user_query-example.txt
+docs/post_gamification_profiles_users_me_query-example.txt
 docs/post_gdpr_requests-example.txt
 docs/post_greetings-example.txt
 docs/post_group_greetings-example.txt
@@ -8993,7 +9066,6 @@ docs/post_telephony_providers_edges_certificateauthorities-example.txt
 docs/post_telephony_providers_edges_didpools-example.txt
 docs/post_telephony_providers_edges_edgegroups-example.txt
 docs/post_telephony_providers_edges_extensionpools-example.txt
-docs/post_telephony_providers_edges_outboundroutes-example.txt
 docs/post_telephony_providers_edges_phone_reboot-example.txt
 docs/post_telephony_providers_edges_phonebasesettings-example.txt
 docs/post_telephony_providers_edges_phones-example.txt
@@ -9261,7 +9333,6 @@ docs/put_telephony_providers_edges_didpool-example.txt
 docs/put_telephony_providers_edges_edgegroup-example.txt
 docs/put_telephony_providers_edges_edgegroup_edgetrunkbase-example.txt
 docs/put_telephony_providers_edges_extensionpool-example.txt
-docs/put_telephony_providers_edges_outboundroute-example.txt
 docs/put_telephony_providers_edges_phone-example.txt
 docs/put_telephony_providers_edges_phonebasesetting-example.txt
 docs/put_telephony_providers_edges_site-example.txt

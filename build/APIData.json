@@ -11108,6 +11108,353 @@
     "return": "ExternalMetricDefinitionListing",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.GamificationApi();\npage_size = 25 # int | Page size (optional) (default to 25)\npage_number = 1 # int | Page number (optional) (default to 1)\n\ntry:\n    # Get a list of External Metric Definitions of an organization, sorted by name in ascending order\n    api_response = api_instance.get_employeeperformance_externalmetrics_definitions(page_size=page_size, page_number=page_number)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GamificationApi->get_employeeperformance_externalmetrics_definitions: %s\\n\" % e)"
   },
+  "get_gamification_insights": {
+    "operationId": "get_gamification_insights",
+    "functionName": "get_gamification_insights",
+    "signature": "get_gamification_insights(filter_type, filter_id, granularity, comparative_period_start_workday, primary_period_start_workday, page_size, page_number, sort_key, sort_metric_id, sort_order, user_ids)",
+    "parameters": [
+      {
+        "name": "filter_type",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "filter_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "granularity",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "comparative_period_start_workday",
+        "type": "date",
+        "required": "true"
+      },
+      {
+        "name": "primary_period_start_workday",
+        "type": "date",
+        "required": "true"
+      },
+      {
+        "name": "page_size",
+        "type": "int",
+        "required": "false"
+      },
+      {
+        "name": "page_number",
+        "type": "int",
+        "required": "false"
+      },
+      {
+        "name": "sort_key",
+        "type": "str",
+        "required": "false"
+      },
+      {
+        "name": "sort_metric_id",
+        "type": "str",
+        "required": "false"
+      },
+      {
+        "name": "sort_order",
+        "type": "str",
+        "required": "false"
+      },
+      {
+        "name": "user_ids",
+        "type": "str",
+        "required": "false"
+      }
+    ],
+    "return": "InsightsSummary",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.GamificationApi();\nfilter_type = 'filter_type_example' # str | Filter type for the query request.\nfilter_id = 'filter_id_example' # str | ID for the filter type.\ngranularity = 'granularity_example' # str | Granularity\ncomparative_period_start_workday = '2013-10-20' # date | The start work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\nprimary_period_start_workday = '2013-10-20' # date | The start work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\npage_size = 25 # int | Page size (optional) (default to 25)\npage_number = 1 # int | Page number (optional) (default to 1)\nsort_key = 'sort_key_example' # str | Sort key (optional)\nsort_metric_id = 'sort_metric_id_example' # str | Sort Metric Id (optional)\nsort_order = ''asc'' # str | Sort order (optional) (default to 'asc')\nuser_ids = 'user_ids_example' # str | A list of up to 100 comma-separated user Ids (optional)\n\ntry:\n    # Get insights summary\n    api_response = api_instance.get_gamification_insights(filter_type, filter_id, granularity, comparative_period_start_workday, primary_period_start_workday, page_size=page_size, page_number=page_number, sort_key=sort_key, sort_metric_id=sort_metric_id, sort_order=sort_order, user_ids=user_ids)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GamificationApi->get_gamification_insights: %s\\n\" % e)"
+  },
+  "get_gamification_insights_details": {
+    "operationId": "get_gamification_insights_details",
+    "functionName": "get_gamification_insights_details",
+    "signature": "get_gamification_insights_details(filter_type, filter_id, granularity, comparative_period_start_workday, primary_period_start_workday)",
+    "parameters": [
+      {
+        "name": "filter_type",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "filter_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "granularity",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "comparative_period_start_workday",
+        "type": "date",
+        "required": "true"
+      },
+      {
+        "name": "primary_period_start_workday",
+        "type": "date",
+        "required": "true"
+      }
+    ],
+    "return": "InsightsDetails",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.GamificationApi();\nfilter_type = 'filter_type_example' # str | Filter type for the query request.\nfilter_id = 'filter_id_example' # str | ID for the filter type.\ngranularity = 'granularity_example' # str | Granularity\ncomparative_period_start_workday = '2013-10-20' # date | The start work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\nprimary_period_start_workday = '2013-10-20' # date | The start work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\n\ntry:\n    # Get insights details for the current user\n    api_response = api_instance.get_gamification_insights_details(filter_type, filter_id, granularity, comparative_period_start_workday, primary_period_start_workday)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GamificationApi->get_gamification_insights_details: %s\\n\" % e)"
+  },
+  "get_gamification_insights_groups_trends": {
+    "operationId": "get_gamification_insights_groups_trends",
+    "functionName": "get_gamification_insights_groups_trends",
+    "signature": "get_gamification_insights_groups_trends(filter_type, filter_id, granularity, comparative_period_start_workday, comparative_period_end_workday, primary_period_start_workday, primary_period_end_workday)",
+    "parameters": [
+      {
+        "name": "filter_type",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "filter_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "granularity",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "comparative_period_start_workday",
+        "type": "date",
+        "required": "true"
+      },
+      {
+        "name": "comparative_period_end_workday",
+        "type": "date",
+        "required": "true"
+      },
+      {
+        "name": "primary_period_start_workday",
+        "type": "date",
+        "required": "true"
+      },
+      {
+        "name": "primary_period_end_workday",
+        "type": "date",
+        "required": "true"
+      }
+    ],
+    "return": "InsightsTrend",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.GamificationApi();\nfilter_type = 'filter_type_example' # str | Filter type for the query request.\nfilter_id = 'filter_id_example' # str | ID for the filter type.\ngranularity = 'granularity_example' # str | Granularity\ncomparative_period_start_workday = '2013-10-20' # date | The start work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\ncomparative_period_end_workday = '2013-10-20' # date | The end work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\nprimary_period_start_workday = '2013-10-20' # date | The start work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\nprimary_period_end_workday = '2013-10-20' # date | The end work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\n\ntry:\n    # Get insights overall trend for the current user\n    api_response = api_instance.get_gamification_insights_groups_trends(filter_type, filter_id, granularity, comparative_period_start_workday, comparative_period_end_workday, primary_period_start_workday, primary_period_end_workday)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GamificationApi->get_gamification_insights_groups_trends: %s\\n\" % e)"
+  },
+  "get_gamification_insights_groups_trends_all": {
+    "operationId": "get_gamification_insights_groups_trends_all",
+    "functionName": "get_gamification_insights_groups_trends_all",
+    "signature": "get_gamification_insights_groups_trends_all(filter_type, filter_id, granularity, comparative_period_start_workday, comparative_period_end_workday, primary_period_start_workday, primary_period_end_workday)",
+    "parameters": [
+      {
+        "name": "filter_type",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "filter_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "granularity",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "comparative_period_start_workday",
+        "type": "date",
+        "required": "true"
+      },
+      {
+        "name": "comparative_period_end_workday",
+        "type": "date",
+        "required": "true"
+      },
+      {
+        "name": "primary_period_start_workday",
+        "type": "date",
+        "required": "true"
+      },
+      {
+        "name": "primary_period_end_workday",
+        "type": "date",
+        "required": "true"
+      }
+    ],
+    "return": "InsightsTrend",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.GamificationApi();\nfilter_type = 'filter_type_example' # str | Filter type for the query request.\nfilter_id = 'filter_id_example' # str | ID for the filter type.\ngranularity = 'granularity_example' # str | Granularity\ncomparative_period_start_workday = '2013-10-20' # date | The start work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\ncomparative_period_end_workday = '2013-10-20' # date | The end work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\nprimary_period_start_workday = '2013-10-20' # date | The start work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\nprimary_period_end_workday = '2013-10-20' # date | The end work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\n\ntry:\n    # Get insights overall trend\n    api_response = api_instance.get_gamification_insights_groups_trends_all(filter_type, filter_id, granularity, comparative_period_start_workday, comparative_period_end_workday, primary_period_start_workday, primary_period_end_workday)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GamificationApi->get_gamification_insights_groups_trends_all: %s\\n\" % e)"
+  },
+  "get_gamification_insights_members": {
+    "operationId": "get_gamification_insights_members",
+    "functionName": "get_gamification_insights_members",
+    "signature": "get_gamification_insights_members(filter_type, filter_id, granularity, start_workday)",
+    "parameters": [
+      {
+        "name": "filter_type",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "filter_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "granularity",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "start_workday",
+        "type": "date",
+        "required": "true"
+      }
+    ],
+    "return": "InsightsAgents",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.GamificationApi();\nfilter_type = 'filter_type_example' # str | Filter type for the query request.\nfilter_id = 'filter_id_example' # str | ID for the filter type.\ngranularity = 'granularity_example' # str | Granularity\nstart_workday = '2013-10-20' # date | The start work day. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\n\ntry:\n    # Query users in a profile during a period of time\n    api_response = api_instance.get_gamification_insights_members(filter_type, filter_id, granularity, start_workday)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GamificationApi->get_gamification_insights_members: %s\\n\" % e)"
+  },
+  "get_gamification_insights_trends": {
+    "operationId": "get_gamification_insights_trends",
+    "functionName": "get_gamification_insights_trends",
+    "signature": "get_gamification_insights_trends(filter_type, filter_id, granularity, comparative_period_start_workday, comparative_period_end_workday, primary_period_start_workday, primary_period_end_workday)",
+    "parameters": [
+      {
+        "name": "filter_type",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "filter_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "granularity",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "comparative_period_start_workday",
+        "type": "date",
+        "required": "true"
+      },
+      {
+        "name": "comparative_period_end_workday",
+        "type": "date",
+        "required": "true"
+      },
+      {
+        "name": "primary_period_start_workday",
+        "type": "date",
+        "required": "true"
+      },
+      {
+        "name": "primary_period_end_workday",
+        "type": "date",
+        "required": "true"
+      }
+    ],
+    "return": "UserInsightsTrend",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.GamificationApi();\nfilter_type = 'filter_type_example' # str | Filter type for the query request.\nfilter_id = 'filter_id_example' # str | ID for the filter type.\ngranularity = 'granularity_example' # str | Granularity\ncomparative_period_start_workday = '2013-10-20' # date | The start work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\ncomparative_period_end_workday = '2013-10-20' # date | The end work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\nprimary_period_start_workday = '2013-10-20' # date | The start work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\nprimary_period_end_workday = '2013-10-20' # date | The end work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\n\ntry:\n    # Get insights user trend for the current user\n    api_response = api_instance.get_gamification_insights_trends(filter_type, filter_id, granularity, comparative_period_start_workday, comparative_period_end_workday, primary_period_start_workday, primary_period_end_workday)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GamificationApi->get_gamification_insights_trends: %s\\n\" % e)"
+  },
+  "get_gamification_insights_user_details": {
+    "operationId": "get_gamification_insights_user_details",
+    "functionName": "get_gamification_insights_user_details",
+    "signature": "get_gamification_insights_user_details(user_id, filter_type, filter_id, granularity, comparative_period_start_workday, primary_period_start_workday)",
+    "parameters": [
+      {
+        "name": "user_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "filter_type",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "filter_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "granularity",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "comparative_period_start_workday",
+        "type": "date",
+        "required": "true"
+      },
+      {
+        "name": "primary_period_start_workday",
+        "type": "date",
+        "required": "true"
+      }
+    ],
+    "return": "InsightsDetails",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.GamificationApi();\nuser_id = 'user_id_example' # str | The ID of a user.\nfilter_type = 'filter_type_example' # str | Filter type for the query request.\nfilter_id = 'filter_id_example' # str | ID for the filter type.\ngranularity = 'granularity_example' # str | Granularity\ncomparative_period_start_workday = '2013-10-20' # date | The start work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\nprimary_period_start_workday = '2013-10-20' # date | The start work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\n\ntry:\n    # Get insights details for the user\n    api_response = api_instance.get_gamification_insights_user_details(user_id, filter_type, filter_id, granularity, comparative_period_start_workday, primary_period_start_workday)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GamificationApi->get_gamification_insights_user_details: %s\\n\" % e)"
+  },
+  "get_gamification_insights_user_trends": {
+    "operationId": "get_gamification_insights_user_trends",
+    "functionName": "get_gamification_insights_user_trends",
+    "signature": "get_gamification_insights_user_trends(user_id, filter_type, filter_id, granularity, comparative_period_start_workday, comparative_period_end_workday, primary_period_start_workday, primary_period_end_workday)",
+    "parameters": [
+      {
+        "name": "user_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "filter_type",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "filter_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "granularity",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "comparative_period_start_workday",
+        "type": "date",
+        "required": "true"
+      },
+      {
+        "name": "comparative_period_end_workday",
+        "type": "date",
+        "required": "true"
+      },
+      {
+        "name": "primary_period_start_workday",
+        "type": "date",
+        "required": "true"
+      },
+      {
+        "name": "primary_period_end_workday",
+        "type": "date",
+        "required": "true"
+      }
+    ],
+    "return": "UserInsightsTrend",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.GamificationApi();\nuser_id = 'user_id_example' # str | The ID of a user.\nfilter_type = 'filter_type_example' # str | Filter type for the query request.\nfilter_id = 'filter_id_example' # str | ID for the filter type.\ngranularity = 'granularity_example' # str | Granularity\ncomparative_period_start_workday = '2013-10-20' # date | The start work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\ncomparative_period_end_workday = '2013-10-20' # date | The end work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\nprimary_period_start_workday = '2013-10-20' # date | The start work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\nprimary_period_end_workday = '2013-10-20' # date | The end work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\n\ntry:\n    # Get insights user trend for the user\n    api_response = api_instance.get_gamification_insights_user_trends(user_id, filter_type, filter_id, granularity, comparative_period_start_workday, comparative_period_end_workday, primary_period_start_workday, primary_period_end_workday)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GamificationApi->get_gamification_insights_user_trends: %s\\n\" % e)"
+  },
   "get_gamification_leaderboard": {
     "operationId": "get_gamification_leaderboard",
     "functionName": "get_gamification_leaderboard",
@@ -12068,6 +12415,39 @@
     ],
     "return": "PerformanceProfile",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.GamificationApi();\nbody = PureCloudPlatformClientV2.CreatePerformanceProfile() # CreatePerformanceProfile | performanceProfile\ncopy_metrics = True # bool | Flag to copy metrics. If set to false, there will be no metrics associated with the new profile. If set to true or is absent (the default behavior), all metrics from the default profile will be copied over into the new profile. (optional) (default to True)\n\ntry:\n    # Create a new custom performance profile\n    api_response = api_instance.post_gamification_profiles(body, copy_metrics=copy_metrics)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GamificationApi->post_gamification_profiles: %s\\n\" % e)"
+  },
+  "post_gamification_profiles_user_query": {
+    "operationId": "post_gamification_profiles_user_query",
+    "functionName": "post_gamification_profiles_user_query",
+    "signature": "post_gamification_profiles_user_query(user_id, body)",
+    "parameters": [
+      {
+        "name": "user_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "UserProfilesInDateRangeRequest",
+        "required": "true"
+      }
+    ],
+    "return": "UserProfilesInDateRange",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.GamificationApi();\nuser_id = 'user_id_example' # str | The ID of a user.\nbody = PureCloudPlatformClientV2.UserProfilesInDateRangeRequest() # UserProfilesInDateRangeRequest | The date range of work day.\n\ntry:\n    # Query performance profiles in date range for a user\n    api_response = api_instance.post_gamification_profiles_user_query(user_id, body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GamificationApi->post_gamification_profiles_user_query: %s\\n\" % e)"
+  },
+  "post_gamification_profiles_users_me_query": {
+    "operationId": "post_gamification_profiles_users_me_query",
+    "functionName": "post_gamification_profiles_users_me_query",
+    "signature": "post_gamification_profiles_users_me_query(body)",
+    "parameters": [
+      {
+        "name": "body",
+        "type": "UserProfilesInDateRangeRequest",
+        "required": "true"
+      }
+    ],
+    "return": "UserProfilesInDateRange",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.GamificationApi();\nbody = PureCloudPlatformClientV2.UserProfilesInDateRangeRequest() # UserProfilesInDateRangeRequest | The date range of work day.\n\ntry:\n    # Query performance profiles in date range for the current user\n    api_response = api_instance.post_gamification_profiles_users_me_query(body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling GamificationApi->post_gamification_profiles_users_me_query: %s\\n\" % e)"
   },
   "put_gamification_profile": {
     "operationId": "put_gamification_profile",
@@ -26912,16 +27292,21 @@
   "get_routing_predictors_keyperformanceindicators": {
     "operationId": "get_routing_predictors_keyperformanceindicators",
     "functionName": "get_routing_predictors_keyperformanceindicators",
-    "signature": "get_routing_predictors_keyperformanceindicators(kpi_group)",
+    "signature": "get_routing_predictors_keyperformanceindicators(kpi_group, expand)",
     "parameters": [
       {
         "name": "kpi_group",
         "type": "str",
         "required": "false"
+      },
+      {
+        "name": "expand",
+        "type": "list[str]",
+        "required": "false"
       }
     ],
     "return": "list[KeyPerformanceIndicator]",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.RoutingApi();\nkpi_group = 'kpi_group_example' # str | The Group of Key Performance Indicators to return (optional)\n\ntry:\n    # Get a list of Key Performance Indicators\n    api_response = api_instance.get_routing_predictors_keyperformanceindicators(kpi_group=kpi_group)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling RoutingApi->get_routing_predictors_keyperformanceindicators: %s\\n\" % e)"
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.RoutingApi();\nkpi_group = 'kpi_group_example' # str | The Group of Key Performance Indicators to return (optional)\nexpand = ['expand_example'] # list[str] | Parameter to request additional data to return in KPI payload (optional)\n\ntry:\n    # Get a list of Key Performance Indicators\n    api_response = api_instance.get_routing_predictors_keyperformanceindicators(kpi_group=kpi_group, expand=expand)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling RoutingApi->get_routing_predictors_keyperformanceindicators: %s\\n\" % e)"
   },
   "get_routing_queue": {
     "operationId": "get_routing_queue",
@@ -30958,19 +31343,6 @@
     ],
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi();\nextension_pool_id = 'extension_pool_id_example' # str | Extension pool ID\n\ntry:\n    # Delete an extension pool by ID\n    api_instance.delete_telephony_providers_edges_extensionpool(extension_pool_id)\nexcept ApiException as e:\n    print(\"Exception when calling TelephonyProvidersEdgeApi->delete_telephony_providers_edges_extensionpool: %s\\n\" % e)"
   },
-  "delete_telephony_providers_edges_outboundroute": {
-    "operationId": "delete_telephony_providers_edges_outboundroute",
-    "functionName": "delete_telephony_providers_edges_outboundroute",
-    "signature": "delete_telephony_providers_edges_outboundroute(outbound_route_id)",
-    "parameters": [
-      {
-        "name": "outbound_route_id",
-        "type": "str",
-        "required": "true"
-      }
-    ],
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi();\noutbound_route_id = 'outbound_route_id_example' # str | Outbound route ID\n\ntry:\n    # Delete Outbound Route\n    api_instance.delete_telephony_providers_edges_outboundroute(outbound_route_id)\nexcept ApiException as e:\n    print(\"Exception when calling TelephonyProvidersEdgeApi->delete_telephony_providers_edges_outboundroute: %s\\n\" % e)"
-  },
   "delete_telephony_providers_edges_phone": {
     "operationId": "delete_telephony_providers_edges_phone",
     "functionName": "delete_telephony_providers_edges_phone",
@@ -32818,20 +33190,6 @@
     "return": "ExtensionPool",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi();\nbody = PureCloudPlatformClientV2.ExtensionPool() # ExtensionPool | ExtensionPool\n\ntry:\n    # Create a new extension pool\n    api_response = api_instance.post_telephony_providers_edges_extensionpools(body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling TelephonyProvidersEdgeApi->post_telephony_providers_edges_extensionpools: %s\\n\" % e)"
   },
-  "post_telephony_providers_edges_outboundroutes": {
-    "operationId": "post_telephony_providers_edges_outboundroutes",
-    "functionName": "post_telephony_providers_edges_outboundroutes",
-    "signature": "post_telephony_providers_edges_outboundroutes(body)",
-    "parameters": [
-      {
-        "name": "body",
-        "type": "OutboundRoute",
-        "required": "true"
-      }
-    ],
-    "return": "OutboundRoute",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi();\nbody = PureCloudPlatformClientV2.OutboundRoute() # OutboundRoute | OutboundRoute\n\ntry:\n    # Create outbound rule\n    api_response = api_instance.post_telephony_providers_edges_outboundroutes(body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling TelephonyProvidersEdgeApi->post_telephony_providers_edges_outboundroutes: %s\\n\" % e)"
-  },
   "post_telephony_providers_edges_phone_reboot": {
     "operationId": "post_telephony_providers_edges_phone_reboot",
     "functionName": "post_telephony_providers_edges_phone_reboot",
@@ -33075,25 +33433,6 @@
     ],
     "return": "ExtensionPool",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi();\nextension_pool_id = 'extension_pool_id_example' # str | Extension pool ID\nbody = PureCloudPlatformClientV2.ExtensionPool() # ExtensionPool | ExtensionPool\n\ntry:\n    # Update an extension pool by ID\n    api_response = api_instance.put_telephony_providers_edges_extensionpool(extension_pool_id, body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling TelephonyProvidersEdgeApi->put_telephony_providers_edges_extensionpool: %s\\n\" % e)"
-  },
-  "put_telephony_providers_edges_outboundroute": {
-    "operationId": "put_telephony_providers_edges_outboundroute",
-    "functionName": "put_telephony_providers_edges_outboundroute",
-    "signature": "put_telephony_providers_edges_outboundroute(outbound_route_id, body)",
-    "parameters": [
-      {
-        "name": "outbound_route_id",
-        "type": "str",
-        "required": "true"
-      },
-      {
-        "name": "body",
-        "type": "OutboundRoute",
-        "required": "true"
-      }
-    ],
-    "return": "OutboundRoute",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi();\noutbound_route_id = 'outbound_route_id_example' # str | Outbound route ID\nbody = PureCloudPlatformClientV2.OutboundRoute() # OutboundRoute | OutboundRoute\n\ntry:\n    # Update outbound route\n    api_response = api_instance.put_telephony_providers_edges_outboundroute(outbound_route_id, body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling TelephonyProvidersEdgeApi->put_telephony_providers_edges_outboundroute: %s\\n\" % e)"
   },
   "put_telephony_providers_edges_phone": {
     "operationId": "put_telephony_providers_edges_phone",
@@ -37381,7 +37720,7 @@
       }
     ],
     "return": "WfmHistoricalAdherenceResponse",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.WorkforceManagementApi();\nbody = PureCloudPlatformClientV2.WfmHistoricalAdherenceQueryForUsers() # WfmHistoricalAdherenceQueryForUsers | body (optional)\n\ntry:\n    # Request a historical adherence report for users across management units\n    api_response = api_instance.post_workforcemanagement_adherence_historical(body=body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling WorkforceManagementApi->post_workforcemanagement_adherence_historical: %s\\n\" % e)"
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.WorkforceManagementApi();\nbody = PureCloudPlatformClientV2.WfmHistoricalAdherenceQueryForUsers() # WfmHistoricalAdherenceQueryForUsers | body (optional)\n\ntry:\n    # Deprecated. Use bulk routes instead (/adherence/historical/bulk)\n    api_response = api_instance.post_workforcemanagement_adherence_historical(body=body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling WorkforceManagementApi->post_workforcemanagement_adherence_historical: %s\\n\" % e)"
   },
   "post_workforcemanagement_adherence_historical_bulk": {
     "operationId": "post_workforcemanagement_adherence_historical_bulk",

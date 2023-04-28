@@ -209,6 +209,11 @@ class ViewFilter(object):
             'alert_rule_ids': 'list[str]',
             'evaluation_form_context_ids': 'list[str]',
             'evaluation_statuses': 'list[str]',
+            'workbin_ids': 'list[str]',
+            'worktype_ids': 'list[str]',
+            'workitem_ids': 'list[str]',
+            'workitem_assignee_ids': 'list[str]',
+            'workitem_statuses': 'list[str]',
             'is_analyzed_for_sensitive_data': 'bool',
             'has_sensitive_data': 'bool',
             'sub_path': 'str',
@@ -372,6 +377,11 @@ class ViewFilter(object):
             'alert_rule_ids': 'alertRuleIds',
             'evaluation_form_context_ids': 'evaluationFormContextIds',
             'evaluation_statuses': 'evaluationStatuses',
+            'workbin_ids': 'workbinIds',
+            'worktype_ids': 'worktypeIds',
+            'workitem_ids': 'workitemIds',
+            'workitem_assignee_ids': 'workitemAssigneeIds',
+            'workitem_statuses': 'workitemStatuses',
             'is_analyzed_for_sensitive_data': 'isAnalyzedForSensitiveData',
             'has_sensitive_data': 'hasSensitiveData',
             'sub_path': 'subPath',
@@ -534,6 +544,11 @@ class ViewFilter(object):
         self._alert_rule_ids = None
         self._evaluation_form_context_ids = None
         self._evaluation_statuses = None
+        self._workbin_ids = None
+        self._worktype_ids = None
+        self._workitem_ids = None
+        self._workitem_assignee_ids = None
+        self._workitem_statuses = None
         self._is_analyzed_for_sensitive_data = None
         self._has_sensitive_data = None
         self._sub_path = None
@@ -4287,6 +4302,126 @@ class ViewFilter(object):
         
 
         self._evaluation_statuses = evaluation_statuses
+
+    @property
+    def workbin_ids(self) -> List[str]:
+        """
+        Gets the workbin_ids of this ViewFilter.
+        The list of Workbin IDs
+
+        :return: The workbin_ids of this ViewFilter.
+        :rtype: list[str]
+        """
+        return self._workbin_ids
+
+    @workbin_ids.setter
+    def workbin_ids(self, workbin_ids: List[str]) -> None:
+        """
+        Sets the workbin_ids of this ViewFilter.
+        The list of Workbin IDs
+
+        :param workbin_ids: The workbin_ids of this ViewFilter.
+        :type: list[str]
+        """
+        
+
+        self._workbin_ids = workbin_ids
+
+    @property
+    def worktype_ids(self) -> List[str]:
+        """
+        Gets the worktype_ids of this ViewFilter.
+        The list of Worktype IDs
+
+        :return: The worktype_ids of this ViewFilter.
+        :rtype: list[str]
+        """
+        return self._worktype_ids
+
+    @worktype_ids.setter
+    def worktype_ids(self, worktype_ids: List[str]) -> None:
+        """
+        Sets the worktype_ids of this ViewFilter.
+        The list of Worktype IDs
+
+        :param worktype_ids: The worktype_ids of this ViewFilter.
+        :type: list[str]
+        """
+        
+
+        self._worktype_ids = worktype_ids
+
+    @property
+    def workitem_ids(self) -> List[str]:
+        """
+        Gets the workitem_ids of this ViewFilter.
+        The list of Workitem IDs
+
+        :return: The workitem_ids of this ViewFilter.
+        :rtype: list[str]
+        """
+        return self._workitem_ids
+
+    @workitem_ids.setter
+    def workitem_ids(self, workitem_ids: List[str]) -> None:
+        """
+        Sets the workitem_ids of this ViewFilter.
+        The list of Workitem IDs
+
+        :param workitem_ids: The workitem_ids of this ViewFilter.
+        :type: list[str]
+        """
+        
+
+        self._workitem_ids = workitem_ids
+
+    @property
+    def workitem_assignee_ids(self) -> List[str]:
+        """
+        Gets the workitem_assignee_ids of this ViewFilter.
+        The list of Workitem Assignee IDs
+
+        :return: The workitem_assignee_ids of this ViewFilter.
+        :rtype: list[str]
+        """
+        return self._workitem_assignee_ids
+
+    @workitem_assignee_ids.setter
+    def workitem_assignee_ids(self, workitem_assignee_ids: List[str]) -> None:
+        """
+        Sets the workitem_assignee_ids of this ViewFilter.
+        The list of Workitem Assignee IDs
+
+        :param workitem_assignee_ids: The workitem_assignee_ids of this ViewFilter.
+        :type: list[str]
+        """
+        
+
+        self._workitem_assignee_ids = workitem_assignee_ids
+
+    @property
+    def workitem_statuses(self) -> List[str]:
+        """
+        Gets the workitem_statuses of this ViewFilter.
+        The list of Workitem Statuses IDs
+
+        :return: The workitem_statuses of this ViewFilter.
+        :rtype: list[str]
+        """
+        return self._workitem_statuses
+
+    @workitem_statuses.setter
+    def workitem_statuses(self, workitem_statuses: List[str]) -> None:
+        """
+        Sets the workitem_statuses of this ViewFilter.
+        The list of Workitem Statuses IDs
+
+        :param workitem_statuses: The workitem_statuses of this ViewFilter.
+        :type: list[str]
+        """
+        
+
+        self._workitem_statuses = workitem_statuses
 
     @property
     def is_analyzed_for_sensitive_data(self) -> bool:

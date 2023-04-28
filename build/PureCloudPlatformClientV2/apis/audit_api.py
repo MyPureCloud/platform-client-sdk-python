@@ -373,7 +373,7 @@ class AuditApi(object):
     def post_audits_query(self, body: 'AuditQueryRequest', **kwargs) -> 'AuditQueryExecutionStatusResponse':
         """
         Create audit query execution
-        
+        Use /api/v2/audits/query/servicemapping endpoint for a list of valid values
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -451,7 +451,7 @@ class AuditApi(object):
     def post_audits_query_realtime(self, body: 'AuditRealtimeQueryRequest', **kwargs) -> 'AuditRealtimeQueryResultsResponse':
         """
         This endpoint will only retrieve 14 days worth of audits for certain services. Please use /query to get a full list and older audits.
-        
+        Use /api/v2/audits/query/realtime/servicemapping endpoint for a list of valid values
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

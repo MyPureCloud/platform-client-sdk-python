@@ -11,6 +11,14 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**delete_employeeperformance_externalmetrics_definition**](GamificationApi.html#delete_employeeperformance_externalmetrics_definition) | Delete an External Metric Definition|
 |[**get_employeeperformance_externalmetrics_definition**](GamificationApi.html#get_employeeperformance_externalmetrics_definition) | Get an External Metric Definition|
 |[**get_employeeperformance_externalmetrics_definitions**](GamificationApi.html#get_employeeperformance_externalmetrics_definitions) | Get a list of External Metric Definitions of an organization, sorted by name in ascending order|
+|[**get_gamification_insights**](GamificationApi.html#get_gamification_insights) | Get insights summary|
+|[**get_gamification_insights_details**](GamificationApi.html#get_gamification_insights_details) | Get insights details for the current user|
+|[**get_gamification_insights_groups_trends**](GamificationApi.html#get_gamification_insights_groups_trends) | Get insights overall trend for the current user|
+|[**get_gamification_insights_groups_trends_all**](GamificationApi.html#get_gamification_insights_groups_trends_all) | Get insights overall trend|
+|[**get_gamification_insights_members**](GamificationApi.html#get_gamification_insights_members) | Query users in a profile during a period of time|
+|[**get_gamification_insights_trends**](GamificationApi.html#get_gamification_insights_trends) | Get insights user trend for the current user|
+|[**get_gamification_insights_user_details**](GamificationApi.html#get_gamification_insights_user_details) | Get insights details for the user|
+|[**get_gamification_insights_user_trends**](GamificationApi.html#get_gamification_insights_user_trends) | Get insights user trend for the user|
 |[**get_gamification_leaderboard**](GamificationApi.html#get_gamification_leaderboard) | Leaderboard of the requesting user&#39;s division or performance profile|
 |[**get_gamification_leaderboard_all**](GamificationApi.html#get_gamification_leaderboard_all) | Leaderboard by filter type|
 |[**get_gamification_leaderboard_all_bestpoints**](GamificationApi.html#get_gamification_leaderboard_all_bestpoints) | Best Points by division or performance profile|
@@ -58,6 +66,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_gamification_profile_metric_link**](GamificationApi.html#post_gamification_profile_metric_link) | Creates a linked metric|
 |[**post_gamification_profile_metrics**](GamificationApi.html#post_gamification_profile_metrics) | Creates a gamified metric with a given metric definition and metric objective under in a performance profile|
 |[**post_gamification_profiles**](GamificationApi.html#post_gamification_profiles) | Create a new custom performance profile|
+|[**post_gamification_profiles_user_query**](GamificationApi.html#post_gamification_profiles_user_query) | Query performance profiles in date range for a user|
+|[**post_gamification_profiles_users_me_query**](GamificationApi.html#post_gamification_profiles_users_me_query) | Query performance profiles in date range for the current user|
 |[**put_gamification_profile**](GamificationApi.html#put_gamification_profile) | Updates a performance profile|
 |[**put_gamification_profile_metric**](GamificationApi.html#put_gamification_profile_metric) | Updates a metric in performance profile|
 |[**put_gamification_status**](GamificationApi.html#put_gamification_status) | Update gamification activation status|
@@ -216,6 +226,508 @@ except ApiException as e:
 ### Return type
 
 [**ExternalMetricDefinitionListing**](ExternalMetricDefinitionListing.html)
+
+<a name="get_gamification_insights"></a>
+
+## [**InsightsSummary**](InsightsSummary.html) get_gamification_insights(filter_type, filter_id, granularity, comparative_period_start_workday, primary_period_start_workday, page_size=page_size, page_number=page_number, sort_key=sort_key, sort_metric_id=sort_metric_id, sort_order=sort_order, user_ids=user_ids)
+
+
+
+Get insights summary
+
+
+
+Wraps GET /api/v2/gamification/insights 
+
+Requires ANY permissions: 
+
+* gamification:insights:viewAll
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.GamificationApi()
+filter_type = 'filter_type_example' # str | Filter type for the query request.
+filter_id = 'filter_id_example' # str | ID for the filter type.
+granularity = 'granularity_example' # str | Granularity
+comparative_period_start_workday = '2013-10-20' # date | The start work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+primary_period_start_workday = '2013-10-20' # date | The start work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+page_size = 25 # int | Page size (optional) (default to 25)
+page_number = 1 # int | Page number (optional) (default to 1)
+sort_key = 'sort_key_example' # str | Sort key (optional)
+sort_metric_id = 'sort_metric_id_example' # str | Sort Metric Id (optional)
+sort_order = ''asc'' # str | Sort order (optional) (default to 'asc')
+user_ids = 'user_ids_example' # str | A list of up to 100 comma-separated user Ids (optional)
+
+try:
+    # Get insights summary
+    api_response = api_instance.get_gamification_insights(filter_type, filter_id, granularity, comparative_period_start_workday, primary_period_start_workday, page_size=page_size, page_number=page_number, sort_key=sort_key, sort_metric_id=sort_metric_id, sort_order=sort_order, user_ids=user_ids)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GamificationApi->get_gamification_insights: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **filter_type** | **str**| Filter type for the query request. | <br />**Values**: PerformanceProfile, Division |
+| **filter_id** | **str**| ID for the filter type. |  |
+| **granularity** | **str**| Granularity | <br />**Values**: Weekly, Monthly |
+| **comparative_period_start_workday** | **date**| The start work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+| **primary_period_start_workday** | **date**| The start work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **sort_key** | **str**| Sort key | [optional] <br />**Values**: percentOfGoal, percentOfGoalChange, overallPercentOfGoal, overallPercentOfGoalChange, value, valueChange |
+| **sort_metric_id** | **str**| Sort Metric Id | [optional]  |
+| **sort_order** | **str**| Sort order | [optional] [default to &#39;asc&#39;]<br />**Values**: asc, desc |
+| **user_ids** | **str**| A list of up to 100 comma-separated user Ids | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**InsightsSummary**](InsightsSummary.html)
+
+<a name="get_gamification_insights_details"></a>
+
+## [**InsightsDetails**](InsightsDetails.html) get_gamification_insights_details(filter_type, filter_id, granularity, comparative_period_start_workday, primary_period_start_workday)
+
+
+
+Get insights details for the current user
+
+
+
+Wraps GET /api/v2/gamification/insights/details 
+
+Requires ANY permissions: 
+
+* gamification:insights:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.GamificationApi()
+filter_type = 'filter_type_example' # str | Filter type for the query request.
+filter_id = 'filter_id_example' # str | ID for the filter type.
+granularity = 'granularity_example' # str | Granularity
+comparative_period_start_workday = '2013-10-20' # date | The start work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+primary_period_start_workday = '2013-10-20' # date | The start work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+
+try:
+    # Get insights details for the current user
+    api_response = api_instance.get_gamification_insights_details(filter_type, filter_id, granularity, comparative_period_start_workday, primary_period_start_workday)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GamificationApi->get_gamification_insights_details: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **filter_type** | **str**| Filter type for the query request. | <br />**Values**: PerformanceProfile, Division |
+| **filter_id** | **str**| ID for the filter type. |  |
+| **granularity** | **str**| Granularity | <br />**Values**: Weekly, Monthly |
+| **comparative_period_start_workday** | **date**| The start work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+| **primary_period_start_workday** | **date**| The start work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**InsightsDetails**](InsightsDetails.html)
+
+<a name="get_gamification_insights_groups_trends"></a>
+
+## [**InsightsTrend**](InsightsTrend.html) get_gamification_insights_groups_trends(filter_type, filter_id, granularity, comparative_period_start_workday, comparative_period_end_workday, primary_period_start_workday, primary_period_end_workday)
+
+
+
+Get insights overall trend for the current user
+
+
+
+Wraps GET /api/v2/gamification/insights/groups/trends 
+
+Requires ANY permissions: 
+
+* gamification:insights:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.GamificationApi()
+filter_type = 'filter_type_example' # str | Filter type for the query request.
+filter_id = 'filter_id_example' # str | ID for the filter type.
+granularity = 'granularity_example' # str | Granularity
+comparative_period_start_workday = '2013-10-20' # date | The start work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+comparative_period_end_workday = '2013-10-20' # date | The end work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+primary_period_start_workday = '2013-10-20' # date | The start work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+primary_period_end_workday = '2013-10-20' # date | The end work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+
+try:
+    # Get insights overall trend for the current user
+    api_response = api_instance.get_gamification_insights_groups_trends(filter_type, filter_id, granularity, comparative_period_start_workday, comparative_period_end_workday, primary_period_start_workday, primary_period_end_workday)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GamificationApi->get_gamification_insights_groups_trends: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **filter_type** | **str**| Filter type for the query request. | <br />**Values**: PerformanceProfile, Division |
+| **filter_id** | **str**| ID for the filter type. |  |
+| **granularity** | **str**| Granularity | <br />**Values**: Daily, Weekly, Monthly |
+| **comparative_period_start_workday** | **date**| The start work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+| **comparative_period_end_workday** | **date**| The end work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+| **primary_period_start_workday** | **date**| The start work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+| **primary_period_end_workday** | **date**| The end work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**InsightsTrend**](InsightsTrend.html)
+
+<a name="get_gamification_insights_groups_trends_all"></a>
+
+## [**InsightsTrend**](InsightsTrend.html) get_gamification_insights_groups_trends_all(filter_type, filter_id, granularity, comparative_period_start_workday, comparative_period_end_workday, primary_period_start_workday, primary_period_end_workday)
+
+
+
+Get insights overall trend
+
+
+
+Wraps GET /api/v2/gamification/insights/groups/trends/all 
+
+Requires ANY permissions: 
+
+* gamification:insights:viewAll
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.GamificationApi()
+filter_type = 'filter_type_example' # str | Filter type for the query request.
+filter_id = 'filter_id_example' # str | ID for the filter type.
+granularity = 'granularity_example' # str | Granularity
+comparative_period_start_workday = '2013-10-20' # date | The start work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+comparative_period_end_workday = '2013-10-20' # date | The end work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+primary_period_start_workday = '2013-10-20' # date | The start work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+primary_period_end_workday = '2013-10-20' # date | The end work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+
+try:
+    # Get insights overall trend
+    api_response = api_instance.get_gamification_insights_groups_trends_all(filter_type, filter_id, granularity, comparative_period_start_workday, comparative_period_end_workday, primary_period_start_workday, primary_period_end_workday)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GamificationApi->get_gamification_insights_groups_trends_all: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **filter_type** | **str**| Filter type for the query request. | <br />**Values**: PerformanceProfile, Division |
+| **filter_id** | **str**| ID for the filter type. |  |
+| **granularity** | **str**| Granularity | <br />**Values**: Daily, Weekly, Monthly |
+| **comparative_period_start_workday** | **date**| The start work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+| **comparative_period_end_workday** | **date**| The end work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+| **primary_period_start_workday** | **date**| The start work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+| **primary_period_end_workday** | **date**| The end work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**InsightsTrend**](InsightsTrend.html)
+
+<a name="get_gamification_insights_members"></a>
+
+## [**InsightsAgents**](InsightsAgents.html) get_gamification_insights_members(filter_type, filter_id, granularity, start_workday)
+
+
+
+Query users in a profile during a period of time
+
+
+
+Wraps GET /api/v2/gamification/insights/members 
+
+Requires ANY permissions: 
+
+* gamification:insights:viewAll
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.GamificationApi()
+filter_type = 'filter_type_example' # str | Filter type for the query request.
+filter_id = 'filter_id_example' # str | ID for the filter type.
+granularity = 'granularity_example' # str | Granularity
+start_workday = '2013-10-20' # date | The start work day. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+
+try:
+    # Query users in a profile during a period of time
+    api_response = api_instance.get_gamification_insights_members(filter_type, filter_id, granularity, start_workday)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GamificationApi->get_gamification_insights_members: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **filter_type** | **str**| Filter type for the query request. | <br />**Values**: PerformanceProfile, Division |
+| **filter_id** | **str**| ID for the filter type. |  |
+| **granularity** | **str**| Granularity | <br />**Values**: Weekly, Monthly |
+| **start_workday** | **date**| The start work day. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**InsightsAgents**](InsightsAgents.html)
+
+<a name="get_gamification_insights_trends"></a>
+
+## [**UserInsightsTrend**](UserInsightsTrend.html) get_gamification_insights_trends(filter_type, filter_id, granularity, comparative_period_start_workday, comparative_period_end_workday, primary_period_start_workday, primary_period_end_workday)
+
+
+
+Get insights user trend for the current user
+
+
+
+Wraps GET /api/v2/gamification/insights/trends 
+
+Requires ANY permissions: 
+
+* gamification:insights:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.GamificationApi()
+filter_type = 'filter_type_example' # str | Filter type for the query request.
+filter_id = 'filter_id_example' # str | ID for the filter type.
+granularity = 'granularity_example' # str | Granularity
+comparative_period_start_workday = '2013-10-20' # date | The start work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+comparative_period_end_workday = '2013-10-20' # date | The end work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+primary_period_start_workday = '2013-10-20' # date | The start work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+primary_period_end_workday = '2013-10-20' # date | The end work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+
+try:
+    # Get insights user trend for the current user
+    api_response = api_instance.get_gamification_insights_trends(filter_type, filter_id, granularity, comparative_period_start_workday, comparative_period_end_workday, primary_period_start_workday, primary_period_end_workday)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GamificationApi->get_gamification_insights_trends: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **filter_type** | **str**| Filter type for the query request. | <br />**Values**: PerformanceProfile, Division |
+| **filter_id** | **str**| ID for the filter type. |  |
+| **granularity** | **str**| Granularity | <br />**Values**: Daily, Weekly |
+| **comparative_period_start_workday** | **date**| The start work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+| **comparative_period_end_workday** | **date**| The end work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+| **primary_period_start_workday** | **date**| The start work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+| **primary_period_end_workday** | **date**| The end work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**UserInsightsTrend**](UserInsightsTrend.html)
+
+<a name="get_gamification_insights_user_details"></a>
+
+## [**InsightsDetails**](InsightsDetails.html) get_gamification_insights_user_details(user_id, filter_type, filter_id, granularity, comparative_period_start_workday, primary_period_start_workday)
+
+
+
+Get insights details for the user
+
+
+
+Wraps GET /api/v2/gamification/insights/users/{userId}/details 
+
+Requires ANY permissions: 
+
+* gamification:insights:viewAll
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.GamificationApi()
+user_id = 'user_id_example' # str | The ID of a user.
+filter_type = 'filter_type_example' # str | Filter type for the query request.
+filter_id = 'filter_id_example' # str | ID for the filter type.
+granularity = 'granularity_example' # str | Granularity
+comparative_period_start_workday = '2013-10-20' # date | The start work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+primary_period_start_workday = '2013-10-20' # date | The start work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+
+try:
+    # Get insights details for the user
+    api_response = api_instance.get_gamification_insights_user_details(user_id, filter_type, filter_id, granularity, comparative_period_start_workday, primary_period_start_workday)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GamificationApi->get_gamification_insights_user_details: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **user_id** | **str**| The ID of a user. |  |
+| **filter_type** | **str**| Filter type for the query request. | <br />**Values**: PerformanceProfile, Division |
+| **filter_id** | **str**| ID for the filter type. |  |
+| **granularity** | **str**| Granularity | <br />**Values**: Weekly, Monthly |
+| **comparative_period_start_workday** | **date**| The start work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+| **primary_period_start_workday** | **date**| The start work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**InsightsDetails**](InsightsDetails.html)
+
+<a name="get_gamification_insights_user_trends"></a>
+
+## [**UserInsightsTrend**](UserInsightsTrend.html) get_gamification_insights_user_trends(user_id, filter_type, filter_id, granularity, comparative_period_start_workday, comparative_period_end_workday, primary_period_start_workday, primary_period_end_workday)
+
+
+
+Get insights user trend for the user
+
+
+
+Wraps GET /api/v2/gamification/insights/users/{userId}/trends 
+
+Requires ANY permissions: 
+
+* gamification:insights:viewAll
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.GamificationApi()
+user_id = 'user_id_example' # str | The ID of a user.
+filter_type = 'filter_type_example' # str | Filter type for the query request.
+filter_id = 'filter_id_example' # str | ID for the filter type.
+granularity = 'granularity_example' # str | Granularity
+comparative_period_start_workday = '2013-10-20' # date | The start work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+comparative_period_end_workday = '2013-10-20' # date | The end work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+primary_period_start_workday = '2013-10-20' # date | The start work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+primary_period_end_workday = '2013-10-20' # date | The end work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+
+try:
+    # Get insights user trend for the user
+    api_response = api_instance.get_gamification_insights_user_trends(user_id, filter_type, filter_id, granularity, comparative_period_start_workday, comparative_period_end_workday, primary_period_start_workday, primary_period_end_workday)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GamificationApi->get_gamification_insights_user_trends: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **user_id** | **str**| The ID of a user. |  |
+| **filter_type** | **str**| Filter type for the query request. | <br />**Values**: PerformanceProfile, Division |
+| **filter_id** | **str**| ID for the filter type. |  |
+| **granularity** | **str**| Granularity | <br />**Values**: Daily, Weekly |
+| **comparative_period_start_workday** | **date**| The start work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+| **comparative_period_end_workday** | **date**| The end work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+| **primary_period_start_workday** | **date**| The start work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+| **primary_period_end_workday** | **date**| The end work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**UserInsightsTrend**](UserInsightsTrend.html)
 
 <a name="get_gamification_leaderboard"></a>
 
@@ -2742,6 +3254,109 @@ except ApiException as e:
 ### Return type
 
 [**PerformanceProfile**](PerformanceProfile.html)
+
+<a name="post_gamification_profiles_user_query"></a>
+
+## [**UserProfilesInDateRange**](UserProfilesInDateRange.html) post_gamification_profiles_user_query(user_id, body)
+
+
+
+Query performance profiles in date range for a user
+
+
+
+Wraps POST /api/v2/gamification/profiles/users/{userId}/query 
+
+Requires ANY permissions: 
+
+* gamification:agentProfileMembership:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.GamificationApi()
+user_id = 'user_id_example' # str | The ID of a user.
+body = PureCloudPlatformClientV2.UserProfilesInDateRangeRequest() # UserProfilesInDateRangeRequest | The date range of work day.
+
+try:
+    # Query performance profiles in date range for a user
+    api_response = api_instance.post_gamification_profiles_user_query(user_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GamificationApi->post_gamification_profiles_user_query: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **user_id** | **str**| The ID of a user. |  |
+| **body** | [**UserProfilesInDateRangeRequest**](UserProfilesInDateRangeRequest.html)| The date range of work day. |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**UserProfilesInDateRange**](UserProfilesInDateRange.html)
+
+<a name="post_gamification_profiles_users_me_query"></a>
+
+## [**UserProfilesInDateRange**](UserProfilesInDateRange.html) post_gamification_profiles_users_me_query(body)
+
+
+
+Query performance profiles in date range for the current user
+
+
+
+Wraps POST /api/v2/gamification/profiles/users/me/query 
+
+Requires no permissions
+
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.GamificationApi()
+body = PureCloudPlatformClientV2.UserProfilesInDateRangeRequest() # UserProfilesInDateRangeRequest | The date range of work day.
+
+try:
+    # Query performance profiles in date range for the current user
+    api_response = api_instance.post_gamification_profiles_users_me_query(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GamificationApi->post_gamification_profiles_users_me_query: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**UserProfilesInDateRangeRequest**](UserProfilesInDateRangeRequest.html)| The date range of work day. |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**UserProfilesInDateRange**](UserProfilesInDateRange.html)
 
 <a name="put_gamification_profile"></a>
 

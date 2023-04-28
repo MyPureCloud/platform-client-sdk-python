@@ -35,6 +35,7 @@ from typing import Dict
 if TYPE_CHECKING:
     from . import ExternalContactsUnresolvedContactChangedTopicContactAddress
     from . import ExternalContactsUnresolvedContactChangedTopicFacebookId
+    from . import ExternalContactsUnresolvedContactChangedTopicInstagramId
     from . import ExternalContactsUnresolvedContactChangedTopicLineId
     from . import ExternalContactsUnresolvedContactChangedTopicPhoneNumber
     from . import ExternalContactsUnresolvedContactChangedTopicTwitterId
@@ -75,7 +76,8 @@ class ExternalContactsUnresolvedContactChangedTopicContact(object):
             'twitter_id': 'ExternalContactsUnresolvedContactChangedTopicTwitterId',
             'line_id': 'ExternalContactsUnresolvedContactChangedTopicLineId',
             'whats_app_id': 'ExternalContactsUnresolvedContactChangedTopicWhatsAppId',
-            'facebook_id': 'ExternalContactsUnresolvedContactChangedTopicFacebookId'
+            'facebook_id': 'ExternalContactsUnresolvedContactChangedTopicFacebookId',
+            'instagram_id': 'ExternalContactsUnresolvedContactChangedTopicInstagramId'
         }
 
         self.attribute_map = {
@@ -99,7 +101,8 @@ class ExternalContactsUnresolvedContactChangedTopicContact(object):
             'twitter_id': 'twitterId',
             'line_id': 'lineId',
             'whats_app_id': 'whatsAppId',
-            'facebook_id': 'facebookId'
+            'facebook_id': 'facebookId',
+            'instagram_id': 'instagramId'
         }
 
         self._id = None
@@ -123,6 +126,7 @@ class ExternalContactsUnresolvedContactChangedTopicContact(object):
         self._line_id = None
         self._whats_app_id = None
         self._facebook_id = None
+        self._instagram_id = None
 
     @property
     def id(self) -> str:
@@ -632,6 +636,30 @@ class ExternalContactsUnresolvedContactChangedTopicContact(object):
         
 
         self._facebook_id = facebook_id
+
+    @property
+    def instagram_id(self) -> 'ExternalContactsUnresolvedContactChangedTopicInstagramId':
+        """
+        Gets the instagram_id of this ExternalContactsUnresolvedContactChangedTopicContact.
+
+
+        :return: The instagram_id of this ExternalContactsUnresolvedContactChangedTopicContact.
+        :rtype: ExternalContactsUnresolvedContactChangedTopicInstagramId
+        """
+        return self._instagram_id
+
+    @instagram_id.setter
+    def instagram_id(self, instagram_id: 'ExternalContactsUnresolvedContactChangedTopicInstagramId') -> None:
+        """
+        Sets the instagram_id of this ExternalContactsUnresolvedContactChangedTopicContact.
+
+
+        :param instagram_id: The instagram_id of this ExternalContactsUnresolvedContactChangedTopicContact.
+        :type: ExternalContactsUnresolvedContactChangedTopicInstagramId
+        """
+        
+
+        self._instagram_id = instagram_id
 
     def to_dict(self):
         """

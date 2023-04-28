@@ -57,6 +57,10 @@ from ..models import GetMetricResponse
 from ..models import GetMetricsResponse
 from ..models import GetProfilesResponse
 from ..models import GetTemplatesResponse
+from ..models import InsightsAgents
+from ..models import InsightsDetails
+from ..models import InsightsSummary
+from ..models import InsightsTrend
 from ..models import Leaderboard
 from ..models import MemberListing
 from ..models import Metric
@@ -69,6 +73,9 @@ from ..models import SingleWorkdayAveragePoints
 from ..models import SingleWorkdayAverageValues
 from ..models import TargetPerformanceProfile
 from ..models import UserBestPoints
+from ..models import UserInsightsTrend
+from ..models import UserProfilesInDateRange
+from ..models import UserProfilesInDateRangeRequest
 from ..models import ValidateAssignUsers
 from ..models import WorkdayMetricListing
 from ..models import WorkdayPointsTrend
@@ -320,6 +327,894 @@ class GamificationApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='ExternalMetricDefinitionListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_gamification_insights(self, filter_type: str, filter_id: str, granularity: str, comparative_period_start_workday: date, primary_period_start_workday: date, **kwargs) -> 'InsightsSummary':
+        """
+        Get insights summary
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_gamification_insights(filter_type, filter_id, granularity, comparative_period_start_workday, primary_period_start_workday, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str filter_type: Filter type for the query request. (required)
+        :param str filter_id: ID for the filter type. (required)
+        :param str granularity: Granularity (required)
+        :param date comparative_period_start_workday: The start work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+        :param date primary_period_start_workday: The start work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+        :param int page_size: Page size
+        :param int page_number: Page number
+        :param str sort_key: Sort key
+        :param str sort_metric_id: Sort Metric Id
+        :param str sort_order: Sort order
+        :param str user_ids: A list of up to 100 comma-separated user Ids
+        :return: InsightsSummary
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['filter_type', 'filter_id', 'granularity', 'comparative_period_start_workday', 'primary_period_start_workday', 'page_size', 'page_number', 'sort_key', 'sort_metric_id', 'sort_order', 'user_ids']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_gamification_insights" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'filter_type' is set
+        if ('filter_type' not in params) or (params['filter_type'] is None):
+            raise ValueError("Missing the required parameter `filter_type` when calling `get_gamification_insights`")
+        # verify the required parameter 'filter_id' is set
+        if ('filter_id' not in params) or (params['filter_id'] is None):
+            raise ValueError("Missing the required parameter `filter_id` when calling `get_gamification_insights`")
+        # verify the required parameter 'granularity' is set
+        if ('granularity' not in params) or (params['granularity'] is None):
+            raise ValueError("Missing the required parameter `granularity` when calling `get_gamification_insights`")
+        # verify the required parameter 'comparative_period_start_workday' is set
+        if ('comparative_period_start_workday' not in params) or (params['comparative_period_start_workday'] is None):
+            raise ValueError("Missing the required parameter `comparative_period_start_workday` when calling `get_gamification_insights`")
+        # verify the required parameter 'primary_period_start_workday' is set
+        if ('primary_period_start_workday' not in params) or (params['primary_period_start_workday'] is None):
+            raise ValueError("Missing the required parameter `primary_period_start_workday` when calling `get_gamification_insights`")
+
+
+        resource_path = '/api/v2/gamification/insights'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'filter_type' in params:
+            query_params['filterType'] = params['filter_type']
+        if 'filter_id' in params:
+            query_params['filterId'] = params['filter_id']
+        if 'granularity' in params:
+            query_params['granularity'] = params['granularity']
+        if 'comparative_period_start_workday' in params:
+            query_params['comparativePeriodStartWorkday'] = params['comparative_period_start_workday']
+        if 'primary_period_start_workday' in params:
+            query_params['primaryPeriodStartWorkday'] = params['primary_period_start_workday']
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+        if 'page_number' in params:
+            query_params['pageNumber'] = params['page_number']
+        if 'sort_key' in params:
+            query_params['sortKey'] = params['sort_key']
+        if 'sort_metric_id' in params:
+            query_params['sortMetricId'] = params['sort_metric_id']
+        if 'sort_order' in params:
+            query_params['sortOrder'] = params['sort_order']
+        if 'user_ids' in params:
+            query_params['userIds'] = params['user_ids']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='InsightsSummary',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_gamification_insights_details(self, filter_type: str, filter_id: str, granularity: str, comparative_period_start_workday: date, primary_period_start_workday: date, **kwargs) -> 'InsightsDetails':
+        """
+        Get insights details for the current user
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_gamification_insights_details(filter_type, filter_id, granularity, comparative_period_start_workday, primary_period_start_workday, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str filter_type: Filter type for the query request. (required)
+        :param str filter_id: ID for the filter type. (required)
+        :param str granularity: Granularity (required)
+        :param date comparative_period_start_workday: The start work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+        :param date primary_period_start_workday: The start work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+        :return: InsightsDetails
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['filter_type', 'filter_id', 'granularity', 'comparative_period_start_workday', 'primary_period_start_workday']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_gamification_insights_details" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'filter_type' is set
+        if ('filter_type' not in params) or (params['filter_type'] is None):
+            raise ValueError("Missing the required parameter `filter_type` when calling `get_gamification_insights_details`")
+        # verify the required parameter 'filter_id' is set
+        if ('filter_id' not in params) or (params['filter_id'] is None):
+            raise ValueError("Missing the required parameter `filter_id` when calling `get_gamification_insights_details`")
+        # verify the required parameter 'granularity' is set
+        if ('granularity' not in params) or (params['granularity'] is None):
+            raise ValueError("Missing the required parameter `granularity` when calling `get_gamification_insights_details`")
+        # verify the required parameter 'comparative_period_start_workday' is set
+        if ('comparative_period_start_workday' not in params) or (params['comparative_period_start_workday'] is None):
+            raise ValueError("Missing the required parameter `comparative_period_start_workday` when calling `get_gamification_insights_details`")
+        # verify the required parameter 'primary_period_start_workday' is set
+        if ('primary_period_start_workday' not in params) or (params['primary_period_start_workday'] is None):
+            raise ValueError("Missing the required parameter `primary_period_start_workday` when calling `get_gamification_insights_details`")
+
+
+        resource_path = '/api/v2/gamification/insights/details'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'filter_type' in params:
+            query_params['filterType'] = params['filter_type']
+        if 'filter_id' in params:
+            query_params['filterId'] = params['filter_id']
+        if 'granularity' in params:
+            query_params['granularity'] = params['granularity']
+        if 'comparative_period_start_workday' in params:
+            query_params['comparativePeriodStartWorkday'] = params['comparative_period_start_workday']
+        if 'primary_period_start_workday' in params:
+            query_params['primaryPeriodStartWorkday'] = params['primary_period_start_workday']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='InsightsDetails',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_gamification_insights_groups_trends(self, filter_type: str, filter_id: str, granularity: str, comparative_period_start_workday: date, comparative_period_end_workday: date, primary_period_start_workday: date, primary_period_end_workday: date, **kwargs) -> 'InsightsTrend':
+        """
+        Get insights overall trend for the current user
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_gamification_insights_groups_trends(filter_type, filter_id, granularity, comparative_period_start_workday, comparative_period_end_workday, primary_period_start_workday, primary_period_end_workday, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str filter_type: Filter type for the query request. (required)
+        :param str filter_id: ID for the filter type. (required)
+        :param str granularity: Granularity (required)
+        :param date comparative_period_start_workday: The start work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+        :param date comparative_period_end_workday: The end work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+        :param date primary_period_start_workday: The start work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+        :param date primary_period_end_workday: The end work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+        :return: InsightsTrend
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['filter_type', 'filter_id', 'granularity', 'comparative_period_start_workday', 'comparative_period_end_workday', 'primary_period_start_workday', 'primary_period_end_workday']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_gamification_insights_groups_trends" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'filter_type' is set
+        if ('filter_type' not in params) or (params['filter_type'] is None):
+            raise ValueError("Missing the required parameter `filter_type` when calling `get_gamification_insights_groups_trends`")
+        # verify the required parameter 'filter_id' is set
+        if ('filter_id' not in params) or (params['filter_id'] is None):
+            raise ValueError("Missing the required parameter `filter_id` when calling `get_gamification_insights_groups_trends`")
+        # verify the required parameter 'granularity' is set
+        if ('granularity' not in params) or (params['granularity'] is None):
+            raise ValueError("Missing the required parameter `granularity` when calling `get_gamification_insights_groups_trends`")
+        # verify the required parameter 'comparative_period_start_workday' is set
+        if ('comparative_period_start_workday' not in params) or (params['comparative_period_start_workday'] is None):
+            raise ValueError("Missing the required parameter `comparative_period_start_workday` when calling `get_gamification_insights_groups_trends`")
+        # verify the required parameter 'comparative_period_end_workday' is set
+        if ('comparative_period_end_workday' not in params) or (params['comparative_period_end_workday'] is None):
+            raise ValueError("Missing the required parameter `comparative_period_end_workday` when calling `get_gamification_insights_groups_trends`")
+        # verify the required parameter 'primary_period_start_workday' is set
+        if ('primary_period_start_workday' not in params) or (params['primary_period_start_workday'] is None):
+            raise ValueError("Missing the required parameter `primary_period_start_workday` when calling `get_gamification_insights_groups_trends`")
+        # verify the required parameter 'primary_period_end_workday' is set
+        if ('primary_period_end_workday' not in params) or (params['primary_period_end_workday'] is None):
+            raise ValueError("Missing the required parameter `primary_period_end_workday` when calling `get_gamification_insights_groups_trends`")
+
+
+        resource_path = '/api/v2/gamification/insights/groups/trends'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'filter_type' in params:
+            query_params['filterType'] = params['filter_type']
+        if 'filter_id' in params:
+            query_params['filterId'] = params['filter_id']
+        if 'granularity' in params:
+            query_params['granularity'] = params['granularity']
+        if 'comparative_period_start_workday' in params:
+            query_params['comparativePeriodStartWorkday'] = params['comparative_period_start_workday']
+        if 'comparative_period_end_workday' in params:
+            query_params['comparativePeriodEndWorkday'] = params['comparative_period_end_workday']
+        if 'primary_period_start_workday' in params:
+            query_params['primaryPeriodStartWorkday'] = params['primary_period_start_workday']
+        if 'primary_period_end_workday' in params:
+            query_params['primaryPeriodEndWorkday'] = params['primary_period_end_workday']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='InsightsTrend',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_gamification_insights_groups_trends_all(self, filter_type: str, filter_id: str, granularity: str, comparative_period_start_workday: date, comparative_period_end_workday: date, primary_period_start_workday: date, primary_period_end_workday: date, **kwargs) -> 'InsightsTrend':
+        """
+        Get insights overall trend
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_gamification_insights_groups_trends_all(filter_type, filter_id, granularity, comparative_period_start_workday, comparative_period_end_workday, primary_period_start_workday, primary_period_end_workday, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str filter_type: Filter type for the query request. (required)
+        :param str filter_id: ID for the filter type. (required)
+        :param str granularity: Granularity (required)
+        :param date comparative_period_start_workday: The start work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+        :param date comparative_period_end_workday: The end work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+        :param date primary_period_start_workday: The start work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+        :param date primary_period_end_workday: The end work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+        :return: InsightsTrend
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['filter_type', 'filter_id', 'granularity', 'comparative_period_start_workday', 'comparative_period_end_workday', 'primary_period_start_workday', 'primary_period_end_workday']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_gamification_insights_groups_trends_all" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'filter_type' is set
+        if ('filter_type' not in params) or (params['filter_type'] is None):
+            raise ValueError("Missing the required parameter `filter_type` when calling `get_gamification_insights_groups_trends_all`")
+        # verify the required parameter 'filter_id' is set
+        if ('filter_id' not in params) or (params['filter_id'] is None):
+            raise ValueError("Missing the required parameter `filter_id` when calling `get_gamification_insights_groups_trends_all`")
+        # verify the required parameter 'granularity' is set
+        if ('granularity' not in params) or (params['granularity'] is None):
+            raise ValueError("Missing the required parameter `granularity` when calling `get_gamification_insights_groups_trends_all`")
+        # verify the required parameter 'comparative_period_start_workday' is set
+        if ('comparative_period_start_workday' not in params) or (params['comparative_period_start_workday'] is None):
+            raise ValueError("Missing the required parameter `comparative_period_start_workday` when calling `get_gamification_insights_groups_trends_all`")
+        # verify the required parameter 'comparative_period_end_workday' is set
+        if ('comparative_period_end_workday' not in params) or (params['comparative_period_end_workday'] is None):
+            raise ValueError("Missing the required parameter `comparative_period_end_workday` when calling `get_gamification_insights_groups_trends_all`")
+        # verify the required parameter 'primary_period_start_workday' is set
+        if ('primary_period_start_workday' not in params) or (params['primary_period_start_workday'] is None):
+            raise ValueError("Missing the required parameter `primary_period_start_workday` when calling `get_gamification_insights_groups_trends_all`")
+        # verify the required parameter 'primary_period_end_workday' is set
+        if ('primary_period_end_workday' not in params) or (params['primary_period_end_workday'] is None):
+            raise ValueError("Missing the required parameter `primary_period_end_workday` when calling `get_gamification_insights_groups_trends_all`")
+
+
+        resource_path = '/api/v2/gamification/insights/groups/trends/all'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'filter_type' in params:
+            query_params['filterType'] = params['filter_type']
+        if 'filter_id' in params:
+            query_params['filterId'] = params['filter_id']
+        if 'granularity' in params:
+            query_params['granularity'] = params['granularity']
+        if 'comparative_period_start_workday' in params:
+            query_params['comparativePeriodStartWorkday'] = params['comparative_period_start_workday']
+        if 'comparative_period_end_workday' in params:
+            query_params['comparativePeriodEndWorkday'] = params['comparative_period_end_workday']
+        if 'primary_period_start_workday' in params:
+            query_params['primaryPeriodStartWorkday'] = params['primary_period_start_workday']
+        if 'primary_period_end_workday' in params:
+            query_params['primaryPeriodEndWorkday'] = params['primary_period_end_workday']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='InsightsTrend',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_gamification_insights_members(self, filter_type: str, filter_id: str, granularity: str, start_workday: date, **kwargs) -> 'InsightsAgents':
+        """
+        Query users in a profile during a period of time
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_gamification_insights_members(filter_type, filter_id, granularity, start_workday, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str filter_type: Filter type for the query request. (required)
+        :param str filter_id: ID for the filter type. (required)
+        :param str granularity: Granularity (required)
+        :param date start_workday: The start work day. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+        :return: InsightsAgents
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['filter_type', 'filter_id', 'granularity', 'start_workday']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_gamification_insights_members" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'filter_type' is set
+        if ('filter_type' not in params) or (params['filter_type'] is None):
+            raise ValueError("Missing the required parameter `filter_type` when calling `get_gamification_insights_members`")
+        # verify the required parameter 'filter_id' is set
+        if ('filter_id' not in params) or (params['filter_id'] is None):
+            raise ValueError("Missing the required parameter `filter_id` when calling `get_gamification_insights_members`")
+        # verify the required parameter 'granularity' is set
+        if ('granularity' not in params) or (params['granularity'] is None):
+            raise ValueError("Missing the required parameter `granularity` when calling `get_gamification_insights_members`")
+        # verify the required parameter 'start_workday' is set
+        if ('start_workday' not in params) or (params['start_workday'] is None):
+            raise ValueError("Missing the required parameter `start_workday` when calling `get_gamification_insights_members`")
+
+
+        resource_path = '/api/v2/gamification/insights/members'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'filter_type' in params:
+            query_params['filterType'] = params['filter_type']
+        if 'filter_id' in params:
+            query_params['filterId'] = params['filter_id']
+        if 'granularity' in params:
+            query_params['granularity'] = params['granularity']
+        if 'start_workday' in params:
+            query_params['startWorkday'] = params['start_workday']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='InsightsAgents',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_gamification_insights_trends(self, filter_type: str, filter_id: str, granularity: str, comparative_period_start_workday: date, comparative_period_end_workday: date, primary_period_start_workday: date, primary_period_end_workday: date, **kwargs) -> 'UserInsightsTrend':
+        """
+        Get insights user trend for the current user
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_gamification_insights_trends(filter_type, filter_id, granularity, comparative_period_start_workday, comparative_period_end_workday, primary_period_start_workday, primary_period_end_workday, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str filter_type: Filter type for the query request. (required)
+        :param str filter_id: ID for the filter type. (required)
+        :param str granularity: Granularity (required)
+        :param date comparative_period_start_workday: The start work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+        :param date comparative_period_end_workday: The end work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+        :param date primary_period_start_workday: The start work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+        :param date primary_period_end_workday: The end work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+        :return: UserInsightsTrend
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['filter_type', 'filter_id', 'granularity', 'comparative_period_start_workday', 'comparative_period_end_workday', 'primary_period_start_workday', 'primary_period_end_workday']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_gamification_insights_trends" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'filter_type' is set
+        if ('filter_type' not in params) or (params['filter_type'] is None):
+            raise ValueError("Missing the required parameter `filter_type` when calling `get_gamification_insights_trends`")
+        # verify the required parameter 'filter_id' is set
+        if ('filter_id' not in params) or (params['filter_id'] is None):
+            raise ValueError("Missing the required parameter `filter_id` when calling `get_gamification_insights_trends`")
+        # verify the required parameter 'granularity' is set
+        if ('granularity' not in params) or (params['granularity'] is None):
+            raise ValueError("Missing the required parameter `granularity` when calling `get_gamification_insights_trends`")
+        # verify the required parameter 'comparative_period_start_workday' is set
+        if ('comparative_period_start_workday' not in params) or (params['comparative_period_start_workday'] is None):
+            raise ValueError("Missing the required parameter `comparative_period_start_workday` when calling `get_gamification_insights_trends`")
+        # verify the required parameter 'comparative_period_end_workday' is set
+        if ('comparative_period_end_workday' not in params) or (params['comparative_period_end_workday'] is None):
+            raise ValueError("Missing the required parameter `comparative_period_end_workday` when calling `get_gamification_insights_trends`")
+        # verify the required parameter 'primary_period_start_workday' is set
+        if ('primary_period_start_workday' not in params) or (params['primary_period_start_workday'] is None):
+            raise ValueError("Missing the required parameter `primary_period_start_workday` when calling `get_gamification_insights_trends`")
+        # verify the required parameter 'primary_period_end_workday' is set
+        if ('primary_period_end_workday' not in params) or (params['primary_period_end_workday'] is None):
+            raise ValueError("Missing the required parameter `primary_period_end_workday` when calling `get_gamification_insights_trends`")
+
+
+        resource_path = '/api/v2/gamification/insights/trends'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'filter_type' in params:
+            query_params['filterType'] = params['filter_type']
+        if 'filter_id' in params:
+            query_params['filterId'] = params['filter_id']
+        if 'granularity' in params:
+            query_params['granularity'] = params['granularity']
+        if 'comparative_period_start_workday' in params:
+            query_params['comparativePeriodStartWorkday'] = params['comparative_period_start_workday']
+        if 'comparative_period_end_workday' in params:
+            query_params['comparativePeriodEndWorkday'] = params['comparative_period_end_workday']
+        if 'primary_period_start_workday' in params:
+            query_params['primaryPeriodStartWorkday'] = params['primary_period_start_workday']
+        if 'primary_period_end_workday' in params:
+            query_params['primaryPeriodEndWorkday'] = params['primary_period_end_workday']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='UserInsightsTrend',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_gamification_insights_user_details(self, user_id: str, filter_type: str, filter_id: str, granularity: str, comparative_period_start_workday: date, primary_period_start_workday: date, **kwargs) -> 'InsightsDetails':
+        """
+        Get insights details for the user
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_gamification_insights_user_details(user_id, filter_type, filter_id, granularity, comparative_period_start_workday, primary_period_start_workday, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str user_id: The ID of a user. (required)
+        :param str filter_type: Filter type for the query request. (required)
+        :param str filter_id: ID for the filter type. (required)
+        :param str granularity: Granularity (required)
+        :param date comparative_period_start_workday: The start work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+        :param date primary_period_start_workday: The start work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+        :return: InsightsDetails
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['user_id', 'filter_type', 'filter_id', 'granularity', 'comparative_period_start_workday', 'primary_period_start_workday']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_gamification_insights_user_details" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'user_id' is set
+        if ('user_id' not in params) or (params['user_id'] is None):
+            raise ValueError("Missing the required parameter `user_id` when calling `get_gamification_insights_user_details`")
+        # verify the required parameter 'filter_type' is set
+        if ('filter_type' not in params) or (params['filter_type'] is None):
+            raise ValueError("Missing the required parameter `filter_type` when calling `get_gamification_insights_user_details`")
+        # verify the required parameter 'filter_id' is set
+        if ('filter_id' not in params) or (params['filter_id'] is None):
+            raise ValueError("Missing the required parameter `filter_id` when calling `get_gamification_insights_user_details`")
+        # verify the required parameter 'granularity' is set
+        if ('granularity' not in params) or (params['granularity'] is None):
+            raise ValueError("Missing the required parameter `granularity` when calling `get_gamification_insights_user_details`")
+        # verify the required parameter 'comparative_period_start_workday' is set
+        if ('comparative_period_start_workday' not in params) or (params['comparative_period_start_workday'] is None):
+            raise ValueError("Missing the required parameter `comparative_period_start_workday` when calling `get_gamification_insights_user_details`")
+        # verify the required parameter 'primary_period_start_workday' is set
+        if ('primary_period_start_workday' not in params) or (params['primary_period_start_workday'] is None):
+            raise ValueError("Missing the required parameter `primary_period_start_workday` when calling `get_gamification_insights_user_details`")
+
+
+        resource_path = '/api/v2/gamification/insights/users/{userId}/details'.replace('{format}', 'json')
+        path_params = {}
+        if 'user_id' in params:
+            path_params['userId'] = params['user_id']
+
+        query_params = {}
+        if 'filter_type' in params:
+            query_params['filterType'] = params['filter_type']
+        if 'filter_id' in params:
+            query_params['filterId'] = params['filter_id']
+        if 'granularity' in params:
+            query_params['granularity'] = params['granularity']
+        if 'comparative_period_start_workday' in params:
+            query_params['comparativePeriodStartWorkday'] = params['comparative_period_start_workday']
+        if 'primary_period_start_workday' in params:
+            query_params['primaryPeriodStartWorkday'] = params['primary_period_start_workday']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='InsightsDetails',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_gamification_insights_user_trends(self, user_id: str, filter_type: str, filter_id: str, granularity: str, comparative_period_start_workday: date, comparative_period_end_workday: date, primary_period_start_workday: date, primary_period_end_workday: date, **kwargs) -> 'UserInsightsTrend':
+        """
+        Get insights user trend for the user
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_gamification_insights_user_trends(user_id, filter_type, filter_id, granularity, comparative_period_start_workday, comparative_period_end_workday, primary_period_start_workday, primary_period_end_workday, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str user_id: The ID of a user. (required)
+        :param str filter_type: Filter type for the query request. (required)
+        :param str filter_id: ID for the filter type. (required)
+        :param str granularity: Granularity (required)
+        :param date comparative_period_start_workday: The start work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+        :param date comparative_period_end_workday: The end work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+        :param date primary_period_start_workday: The start work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+        :param date primary_period_end_workday: The end work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
+        :return: UserInsightsTrend
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['user_id', 'filter_type', 'filter_id', 'granularity', 'comparative_period_start_workday', 'comparative_period_end_workday', 'primary_period_start_workday', 'primary_period_end_workday']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_gamification_insights_user_trends" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'user_id' is set
+        if ('user_id' not in params) or (params['user_id'] is None):
+            raise ValueError("Missing the required parameter `user_id` when calling `get_gamification_insights_user_trends`")
+        # verify the required parameter 'filter_type' is set
+        if ('filter_type' not in params) or (params['filter_type'] is None):
+            raise ValueError("Missing the required parameter `filter_type` when calling `get_gamification_insights_user_trends`")
+        # verify the required parameter 'filter_id' is set
+        if ('filter_id' not in params) or (params['filter_id'] is None):
+            raise ValueError("Missing the required parameter `filter_id` when calling `get_gamification_insights_user_trends`")
+        # verify the required parameter 'granularity' is set
+        if ('granularity' not in params) or (params['granularity'] is None):
+            raise ValueError("Missing the required parameter `granularity` when calling `get_gamification_insights_user_trends`")
+        # verify the required parameter 'comparative_period_start_workday' is set
+        if ('comparative_period_start_workday' not in params) or (params['comparative_period_start_workday'] is None):
+            raise ValueError("Missing the required parameter `comparative_period_start_workday` when calling `get_gamification_insights_user_trends`")
+        # verify the required parameter 'comparative_period_end_workday' is set
+        if ('comparative_period_end_workday' not in params) or (params['comparative_period_end_workday'] is None):
+            raise ValueError("Missing the required parameter `comparative_period_end_workday` when calling `get_gamification_insights_user_trends`")
+        # verify the required parameter 'primary_period_start_workday' is set
+        if ('primary_period_start_workday' not in params) or (params['primary_period_start_workday'] is None):
+            raise ValueError("Missing the required parameter `primary_period_start_workday` when calling `get_gamification_insights_user_trends`")
+        # verify the required parameter 'primary_period_end_workday' is set
+        if ('primary_period_end_workday' not in params) or (params['primary_period_end_workday'] is None):
+            raise ValueError("Missing the required parameter `primary_period_end_workday` when calling `get_gamification_insights_user_trends`")
+
+
+        resource_path = '/api/v2/gamification/insights/users/{userId}/trends'.replace('{format}', 'json')
+        path_params = {}
+        if 'user_id' in params:
+            path_params['userId'] = params['user_id']
+
+        query_params = {}
+        if 'filter_type' in params:
+            query_params['filterType'] = params['filter_type']
+        if 'filter_id' in params:
+            query_params['filterId'] = params['filter_id']
+        if 'granularity' in params:
+            query_params['granularity'] = params['granularity']
+        if 'comparative_period_start_workday' in params:
+            query_params['comparativePeriodStartWorkday'] = params['comparative_period_start_workday']
+        if 'comparative_period_end_workday' in params:
+            query_params['comparativePeriodEndWorkday'] = params['comparative_period_end_workday']
+        if 'primary_period_start_workday' in params:
+            query_params['primaryPeriodStartWorkday'] = params['primary_period_start_workday']
+        if 'primary_period_end_workday' in params:
+            query_params['primaryPeriodEndWorkday'] = params['primary_period_end_workday']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='UserInsightsTrend',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -4271,6 +5166,168 @@ class GamificationApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='PerformanceProfile',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_gamification_profiles_user_query(self, user_id: str, body: 'UserProfilesInDateRangeRequest', **kwargs) -> 'UserProfilesInDateRange':
+        """
+        Query performance profiles in date range for a user
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_gamification_profiles_user_query(user_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str user_id: The ID of a user. (required)
+        :param UserProfilesInDateRangeRequest body: The date range of work day. (required)
+        :return: UserProfilesInDateRange
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['user_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_gamification_profiles_user_query" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'user_id' is set
+        if ('user_id' not in params) or (params['user_id'] is None):
+            raise ValueError("Missing the required parameter `user_id` when calling `post_gamification_profiles_user_query`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_gamification_profiles_user_query`")
+
+
+        resource_path = '/api/v2/gamification/profiles/users/{userId}/query'.replace('{format}', 'json')
+        path_params = {}
+        if 'user_id' in params:
+            path_params['userId'] = params['user_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='UserProfilesInDateRange',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_gamification_profiles_users_me_query(self, body: 'UserProfilesInDateRangeRequest', **kwargs) -> 'UserProfilesInDateRange':
+        """
+        Query performance profiles in date range for the current user
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_gamification_profiles_users_me_query(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param UserProfilesInDateRangeRequest body: The date range of work day. (required)
+        :return: UserProfilesInDateRange
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_gamification_profiles_users_me_query" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_gamification_profiles_users_me_query`")
+
+
+        resource_path = '/api/v2/gamification/profiles/users/me/query'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='UserProfilesInDateRange',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

@@ -65,6 +65,7 @@ class Conversation(object):
             'state': 'str',
             'divisions': 'list[ConversationDivisionMembership]',
             'recent_transfers': 'list[TransferResponse]',
+            'secure_pause': 'bool',
             'self_uri': 'str'
         }
 
@@ -82,6 +83,7 @@ class Conversation(object):
             'state': 'state',
             'divisions': 'divisions',
             'recent_transfers': 'recentTransfers',
+            'secure_pause': 'securePause',
             'self_uri': 'selfUri'
         }
 
@@ -98,6 +100,7 @@ class Conversation(object):
         self._state = None
         self._divisions = None
         self._recent_transfers = None
+        self._secure_pause = None
         self._self_uri = None
 
     @property
@@ -421,6 +424,30 @@ class Conversation(object):
         
 
         self._recent_transfers = recent_transfers
+
+    @property
+    def secure_pause(self) -> bool:
+        """
+        Gets the secure_pause of this Conversation.
+        True when the recording of this conversation is in secure pause status.
+
+        :return: The secure_pause of this Conversation.
+        :rtype: bool
+        """
+        return self._secure_pause
+
+    @secure_pause.setter
+    def secure_pause(self, secure_pause: bool) -> None:
+        """
+        Sets the secure_pause of this Conversation.
+        True when the recording of this conversation is in secure pause status.
+
+        :param secure_pause: The secure_pause of this Conversation.
+        :type: bool
+        """
+        
+
+        self._secure_pause = secure_pause
 
     @property
     def self_uri(self) -> str:

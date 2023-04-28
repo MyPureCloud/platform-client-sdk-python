@@ -156,7 +156,7 @@ class WrapupCode(object):
     def date_created(self) -> datetime:
         """
         Gets the date_created of this WrapupCode.
-        Date when the assistant wrap-up code was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+        Date when the wrap-up code was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The date_created of this WrapupCode.
         :rtype: datetime
@@ -167,7 +167,7 @@ class WrapupCode(object):
     def date_created(self, date_created: datetime) -> None:
         """
         Sets the date_created of this WrapupCode.
-        Date when the assistant wrap-up code was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+        Date when the wrap-up code was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param date_created: The date_created of this WrapupCode.
         :type: datetime
@@ -180,7 +180,7 @@ class WrapupCode(object):
     def date_modified(self) -> datetime:
         """
         Gets the date_modified of this WrapupCode.
-        Date when the wrapup-code was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+        Date when the wrap-up code was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The date_modified of this WrapupCode.
         :rtype: datetime
@@ -191,7 +191,7 @@ class WrapupCode(object):
     def date_modified(self, date_modified: datetime) -> None:
         """
         Sets the date_modified of this WrapupCode.
-        Date when the wrapup-code was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+        Date when the wrap-up code was last modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param date_modified: The date_modified of this WrapupCode.
         :type: datetime
@@ -204,7 +204,7 @@ class WrapupCode(object):
     def created_by(self) -> str:
         """
         Gets the created_by of this WrapupCode.
-        The wrap-up code name.
+        The ID of the user that created the wrap-up code.
 
         :return: The created_by of this WrapupCode.
         :rtype: str
@@ -215,7 +215,7 @@ class WrapupCode(object):
     def created_by(self, created_by: str) -> None:
         """
         Sets the created_by of this WrapupCode.
-        The wrap-up code name.
+        The ID of the user that created the wrap-up code.
 
         :param created_by: The created_by of this WrapupCode.
         :type: str
@@ -228,7 +228,7 @@ class WrapupCode(object):
     def modified_by(self) -> str:
         """
         Gets the modified_by of this WrapupCode.
-
+        The ID of the user that modified the wrap-up code.
 
         :return: The modified_by of this WrapupCode.
         :rtype: str
@@ -239,7 +239,7 @@ class WrapupCode(object):
     def modified_by(self, modified_by: str) -> None:
         """
         Sets the modified_by of this WrapupCode.
-
+        The ID of the user that modified the wrap-up code.
 
         :param modified_by: The modified_by of this WrapupCode.
         :type: str

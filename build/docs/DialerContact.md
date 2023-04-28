@@ -10,7 +10,7 @@ title: DialerContact
 | **id** | **str** | The globally unique identifier for the object. | [optional] |
 | **name** | **str** |  | [optional] |
 | **contact_list_id** | **str** | The identifier of the contact list containing this contact. | |
-| **data** | **dict(str, object)** | An ordered map of the contact&#39;s columns and corresponding values. | |
+| **data** | **dict(str, str)** | An ordered map of the contact&#39;s columns and corresponding values. | |
 | **call_records** | [**dict(str, CallRecord)**](CallRecord.html) | A map of call records for the contact phone columns. | [optional] |
 | **latest_sms_evaluations** | [**dict(str, MessageEvaluation)**](MessageEvaluation.html) | A map of SMS records for the contact phone columns. | [optional] |
 | **latest_email_evaluations** | [**dict(str, MessageEvaluation)**](MessageEvaluation.html) | A map of email records for the contact email columns. | [optional] |

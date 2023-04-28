@@ -51,20 +51,26 @@ class AttributeDetailEventTopicAttributeUpdateEvent(object):
             'event_time': 'int',
             'conversation_id': 'str',
             'participant_id': 'str',
-            'attributes': 'dict(str, str)'
+            'attributes': 'dict(str, str)',
+            'conversation_external_contact_ids': 'list[str]',
+            'conversation_external_organization_ids': 'list[str]'
         }
 
         self.attribute_map = {
             'event_time': 'eventTime',
             'conversation_id': 'conversationId',
             'participant_id': 'participantId',
-            'attributes': 'attributes'
+            'attributes': 'attributes',
+            'conversation_external_contact_ids': 'conversationExternalContactIds',
+            'conversation_external_organization_ids': 'conversationExternalOrganizationIds'
         }
 
         self._event_time = None
         self._conversation_id = None
         self._participant_id = None
         self._attributes = None
+        self._conversation_external_contact_ids = None
+        self._conversation_external_organization_ids = None
 
     @property
     def event_time(self) -> int:
@@ -161,6 +167,54 @@ class AttributeDetailEventTopicAttributeUpdateEvent(object):
         
 
         self._attributes = attributes
+
+    @property
+    def conversation_external_contact_ids(self) -> List[str]:
+        """
+        Gets the conversation_external_contact_ids of this AttributeDetailEventTopicAttributeUpdateEvent.
+
+
+        :return: The conversation_external_contact_ids of this AttributeDetailEventTopicAttributeUpdateEvent.
+        :rtype: list[str]
+        """
+        return self._conversation_external_contact_ids
+
+    @conversation_external_contact_ids.setter
+    def conversation_external_contact_ids(self, conversation_external_contact_ids: List[str]) -> None:
+        """
+        Sets the conversation_external_contact_ids of this AttributeDetailEventTopicAttributeUpdateEvent.
+
+
+        :param conversation_external_contact_ids: The conversation_external_contact_ids of this AttributeDetailEventTopicAttributeUpdateEvent.
+        :type: list[str]
+        """
+        
+
+        self._conversation_external_contact_ids = conversation_external_contact_ids
+
+    @property
+    def conversation_external_organization_ids(self) -> List[str]:
+        """
+        Gets the conversation_external_organization_ids of this AttributeDetailEventTopicAttributeUpdateEvent.
+
+
+        :return: The conversation_external_organization_ids of this AttributeDetailEventTopicAttributeUpdateEvent.
+        :rtype: list[str]
+        """
+        return self._conversation_external_organization_ids
+
+    @conversation_external_organization_ids.setter
+    def conversation_external_organization_ids(self, conversation_external_organization_ids: List[str]) -> None:
+        """
+        Sets the conversation_external_organization_ids of this AttributeDetailEventTopicAttributeUpdateEvent.
+
+
+        :param conversation_external_organization_ids: The conversation_external_organization_ids of this AttributeDetailEventTopicAttributeUpdateEvent.
+        :type: list[str]
+        """
+        
+
+        self._conversation_external_organization_ids = conversation_external_organization_ids
 
     def to_dict(self):
         """
