@@ -35,6 +35,7 @@ from typing import Dict
 if TYPE_CHECKING:
     from . import TransferDestination
     from . import TransferInitiator
+    from . import TransferResponseModifiedBy
 
 class TransferResponse(object):
     """
@@ -55,6 +56,7 @@ class TransferResponse(object):
             'state': 'str',
             'date_issued': 'datetime',
             'initiator': 'TransferInitiator',
+            'modified_by': 'TransferResponseModifiedBy',
             'destination': 'TransferDestination',
             'transfer_type': 'str'
         }
@@ -64,6 +66,7 @@ class TransferResponse(object):
             'state': 'state',
             'date_issued': 'dateIssued',
             'initiator': 'initiator',
+            'modified_by': 'modifiedBy',
             'destination': 'destination',
             'transfer_type': 'transferType'
         }
@@ -72,6 +75,7 @@ class TransferResponse(object):
         self._state = None
         self._date_issued = None
         self._initiator = None
+        self._modified_by = None
         self._destination = None
         self._transfer_type = None
 
@@ -175,6 +179,30 @@ class TransferResponse(object):
         
 
         self._initiator = initiator
+
+    @property
+    def modified_by(self) -> 'TransferResponseModifiedBy':
+        """
+        Gets the modified_by of this TransferResponse.
+        The user or entity that modified the command.
+
+        :return: The modified_by of this TransferResponse.
+        :rtype: TransferResponseModifiedBy
+        """
+        return self._modified_by
+
+    @modified_by.setter
+    def modified_by(self, modified_by: 'TransferResponseModifiedBy') -> None:
+        """
+        Sets the modified_by of this TransferResponse.
+        The user or entity that modified the command.
+
+        :param modified_by: The modified_by of this TransferResponse.
+        :type: TransferResponseModifiedBy
+        """
+        
+
+        self._modified_by = modified_by
 
     @property
     def destination(self) -> 'TransferDestination':

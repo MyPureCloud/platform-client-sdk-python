@@ -183,7 +183,7 @@ void (empty response body)
 
 <a name="get_responsemanagement_libraries"></a>
 
-## [**LibraryEntityListing**](LibraryEntityListing.html) get_responsemanagement_libraries(page_number=page_number, page_size=page_size, messaging_template_filter=messaging_template_filter)
+## [**LibraryEntityListing**](LibraryEntityListing.html) get_responsemanagement_libraries(page_number=page_number, page_size=page_size, messaging_template_filter=messaging_template_filter, library_prefix=library_prefix)
 
 
 
@@ -213,10 +213,11 @@ api_instance = PureCloudPlatformClientV2.ResponseManagementApi()
 page_number = 1 # int | Page number (optional) (default to 1)
 page_size = 25 # int | Page size (optional) (default to 25)
 messaging_template_filter = 'messaging_template_filter_example' # str | Returns a list of libraries that contain responses with at least one messaging template defined for a specific message channel (optional)
+library_prefix = 'library_prefix_example' # str | Returns a list of libraries that contain the prefix provided (optional)
 
 try:
     # Gets a list of existing response libraries.
-    api_response = api_instance.get_responsemanagement_libraries(page_number=page_number, page_size=page_size, messaging_template_filter=messaging_template_filter)
+    api_response = api_instance.get_responsemanagement_libraries(page_number=page_number, page_size=page_size, messaging_template_filter=messaging_template_filter, library_prefix=library_prefix)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ResponseManagementApi->get_responsemanagement_libraries: %s\n" % e)
@@ -230,6 +231,7 @@ except ApiException as e:
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **messaging_template_filter** | **str**| Returns a list of libraries that contain responses with at least one messaging template defined for a specific message channel | [optional] <br />**Values**: whatsapp |
+| **library_prefix** | **str**| Returns a list of libraries that contain the prefix provided | [optional]  |
 {: class="table table-striped"}
 
 ### Return type

@@ -38,6 +38,8 @@ from typing import Any
 
 from ..models import Empty
 from ..models import AcceleratorInput
+from ..models import AcceleratorList
+from ..models import AcceleratorSpecification
 from ..models import ErrorBody
 from ..models import InfrastructureascodeJob
 
@@ -56,6 +58,189 @@ class InfrastructureAsCodeApi(object):
             if not config.api_client:
                 config.api_client = ApiClient()
             self.api_client = config.api_client
+
+    def get_infrastructureascode_accelerator(self, accelerator_id: str, **kwargs) -> 'AcceleratorSpecification':
+        """
+        Get information about an accelerator
+        Get the complete metadata specification for an accelerator, including requirements and parameters.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_infrastructureascode_accelerator(accelerator_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str accelerator_id: Accelerator ID (required)
+        :param str preferred_language: Preferred Language
+        :return: AcceleratorSpecification
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['accelerator_id', 'preferred_language']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_infrastructureascode_accelerator" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'accelerator_id' is set
+        if ('accelerator_id' not in params) or (params['accelerator_id'] is None):
+            raise ValueError("Missing the required parameter `accelerator_id` when calling `get_infrastructureascode_accelerator`")
+
+
+        resource_path = '/api/v2/infrastructureascode/accelerators/{acceleratorId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'accelerator_id' in params:
+            path_params['acceleratorId'] = params['accelerator_id']
+
+        query_params = {}
+        if 'preferred_language' in params:
+            query_params['preferredLanguage'] = params['preferred_language']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='AcceleratorSpecification',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_infrastructureascode_accelerators(self, **kwargs) -> 'AcceleratorList':
+        """
+        Get a list of available accelerators
+        Search for accelerators that can be run.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_infrastructureascode_accelerators(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int page_size: The total page size requested
+        :param int page_number: The page number requested
+        :param str sort_by: variable name requested to sort by
+        :param str sort_order: Sort order
+        :param str name: Filter by name
+        :param str description: Filter by description
+        :param str origin: Filter by origin
+        :param str type: Filter by type
+        :param str classification: Filter by classification
+        :param str tags: Filter by tags
+        :return: AcceleratorList
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['page_size', 'page_number', 'sort_by', 'sort_order', 'name', 'description', 'origin', 'type', 'classification', 'tags']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_infrastructureascode_accelerators" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/infrastructureascode/accelerators'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+        if 'page_number' in params:
+            query_params['pageNumber'] = params['page_number']
+        if 'sort_by' in params:
+            query_params['sortBy'] = params['sort_by']
+        if 'sort_order' in params:
+            query_params['sortOrder'] = params['sort_order']
+        if 'name' in params:
+            query_params['name'] = params['name']
+        if 'description' in params:
+            query_params['description'] = params['description']
+        if 'origin' in params:
+            query_params['origin'] = params['origin']
+        if 'type' in params:
+            query_params['type'] = params['type']
+        if 'classification' in params:
+            query_params['classification'] = params['classification']
+        if 'tags' in params:
+            query_params['tags'] = params['tags']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='AcceleratorList',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
 
     def get_infrastructureascode_job(self, job_id: str, **kwargs) -> 'InfrastructureascodeJob':
         """
@@ -157,12 +342,15 @@ class InfrastructureAsCodeApi(object):
         :param bool include_errors: Include error messages
         :param str sort_by: Sort by
         :param str sort_order: Sort order
+        :param str accelerator_id: Find only jobs associated with this accelerator
+        :param str submitted_by: Find only jobs submitted by this user
+        :param str status: Find only jobs in this state
         :return: InfrastructureascodeJob
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['max_results', 'include_errors', 'sort_by', 'sort_order']
+        all_params = ['max_results', 'include_errors', 'sort_by', 'sort_order', 'accelerator_id', 'submitted_by', 'status']
         all_params.append('callback')
 
         params = locals()
@@ -189,6 +377,12 @@ class InfrastructureAsCodeApi(object):
             query_params['sortBy'] = params['sort_by']
         if 'sort_order' in params:
             query_params['sortOrder'] = params['sort_order']
+        if 'accelerator_id' in params:
+            query_params['acceleratorId'] = params['accelerator_id']
+        if 'submitted_by' in params:
+            query_params['submittedBy'] = params['submitted_by']
+        if 'status' in params:
+            query_params['status'] = params['status']
 
         header_params = {}
 

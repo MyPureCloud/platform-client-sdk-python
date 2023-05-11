@@ -273,7 +273,7 @@ class Session(object):
     def type(self) -> str:
         """
         Gets the type of this Session.
-        Session types indicate the type or category of sessions (e.g. web, ticket, delivery, atm).
+        Session types indicate the type or category of sessions (e.g. web, app).
 
         :return: The type of this Session.
         :rtype: str
@@ -284,7 +284,7 @@ class Session(object):
     def type(self, type: str) -> None:
         """
         Sets the type of this Session.
-        Session types indicate the type or category of sessions (e.g. web, ticket, delivery, atm).
+        Session types indicate the type or category of sessions (e.g. web, app).
 
         :param type: The type of this Session.
         :type: str

@@ -49,16 +49,19 @@ class Settings(object):
         """
         self.swagger_types = {
             'communication_based_acw': 'bool',
-            'include_non_agent_conversation_summary': 'bool'
+            'include_non_agent_conversation_summary': 'bool',
+            'allow_callback_queue_selection': 'bool'
         }
 
         self.attribute_map = {
             'communication_based_acw': 'communicationBasedACW',
-            'include_non_agent_conversation_summary': 'includeNonAgentConversationSummary'
+            'include_non_agent_conversation_summary': 'includeNonAgentConversationSummary',
+            'allow_callback_queue_selection': 'allowCallbackQueueSelection'
         }
 
         self._communication_based_acw = None
         self._include_non_agent_conversation_summary = None
+        self._allow_callback_queue_selection = None
 
     @property
     def communication_based_acw(self) -> bool:
@@ -107,6 +110,30 @@ class Settings(object):
         
 
         self._include_non_agent_conversation_summary = include_non_agent_conversation_summary
+
+    @property
+    def allow_callback_queue_selection(self) -> bool:
+        """
+        Gets the allow_callback_queue_selection of this Settings.
+        Allow Callback Queue Selection
+
+        :return: The allow_callback_queue_selection of this Settings.
+        :rtype: bool
+        """
+        return self._allow_callback_queue_selection
+
+    @allow_callback_queue_selection.setter
+    def allow_callback_queue_selection(self, allow_callback_queue_selection: bool) -> None:
+        """
+        Sets the allow_callback_queue_selection of this Settings.
+        Allow Callback Queue Selection
+
+        :param allow_callback_queue_selection: The allow_callback_queue_selection of this Settings.
+        :type: bool
+        """
+        
+
+        self._allow_callback_queue_selection = allow_callback_queue_selection
 
     def to_dict(self):
         """

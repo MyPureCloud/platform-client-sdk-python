@@ -4684,7 +4684,7 @@ class ExternalContactsApi(object):
     def post_externalcontacts_merge_contacts(self, body: 'MergeRequest', **kwargs) -> 'ExternalContact':
         """
         Merge two contacts into a new contact record
-        
+        Two curated contacts cannot be merged. Refer to the Contact Merging article on the Developer Center for details
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

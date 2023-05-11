@@ -118,6 +118,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**patch_conversations_cobrowsesession_participant_attributes**](ConversationsApi.html#patch_conversations_cobrowsesession_participant_attributes) | Update the attributes on a conversation participant.|
 |[**patch_conversations_cobrowsesession_participant_communication**](ConversationsApi.html#patch_conversations_cobrowsesession_participant_communication) | Update conversation participant&#39;s communication by disconnecting it.|
 |[**patch_conversations_email**](ConversationsApi.html#patch_conversations_email) | Update a conversation by disconnecting all of the participants|
+|[**patch_conversations_email_messages_draft**](ConversationsApi.html#patch_conversations_email_messages_draft) | Reset conversation draft to its initial state and/or auto-fill draft content|
 |[**patch_conversations_email_participant**](ConversationsApi.html#patch_conversations_email_participant) | Update conversation participant|
 |[**patch_conversations_email_participant_attributes**](ConversationsApi.html#patch_conversations_email_participant_attributes) | Update the attributes on a conversation participant.|
 |[**patch_conversations_email_participant_communication**](ConversationsApi.html#patch_conversations_email_participant_communication) | Update conversation participant&#39;s communication by disconnecting it.|
@@ -6008,6 +6009,62 @@ except ApiException as e:
 ### Return type
 
 [**Conversation**](Conversation.html)
+
+<a name="patch_conversations_email_messages_draft"></a>
+
+## [**EmailMessage**](EmailMessage.html) patch_conversations_email_messages_draft(conversation_id, auto_fill=auto_fill, discard=discard, body=body)
+
+
+
+Reset conversation draft to its initial state and/or auto-fill draft content
+
+
+
+Wraps PATCH /api/v2/conversations/emails/{conversationId}/messages/draft 
+
+Requires no permissions
+
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+conversation_id = 'conversation_id_example' # str | conversationId
+auto_fill = True # bool | autoFill (optional)
+discard = True # bool | discard (optional)
+body = PureCloudPlatformClientV2.DraftManipulationRequest() # DraftManipulationRequest | Draft Manipulation Request (optional)
+
+try:
+    # Reset conversation draft to its initial state and/or auto-fill draft content
+    api_response = api_instance.patch_conversations_email_messages_draft(conversation_id, auto_fill=auto_fill, discard=discard, body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->patch_conversations_email_messages_draft: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversation_id** | **str**| conversationId |  |
+| **auto_fill** | **bool**| autoFill | [optional]  |
+| **discard** | **bool**| discard | [optional]  |
+| **body** | [**DraftManipulationRequest**](DraftManipulationRequest.html)| Draft Manipulation Request | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**EmailMessage**](EmailMessage.html)
 
 <a name="patch_conversations_email_participant"></a>
 

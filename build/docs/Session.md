@@ -10,7 +10,7 @@ title: Session
 | **id** | **str** | The globally unique identifier for the object. | [optional] |
 | **customer_id** | **str** | Primary identifier of the customer in the source where the events for the session originate from. | [optional] |
 | **customer_id_type** | **str** | Type of source customer identifier (e.g. cookie, email, phone). | [optional] |
-| **type** | **str** | Session types indicate the type or category of sessions (e.g. web, ticket, delivery, atm). | [optional] |
+| **type** | **str** | Session types indicate the type or category of sessions (e.g. web, app). | [optional] |
 | **external_id** | **str** | Unique identifier in the external system where the events for the session originate from. | [optional] |
 | **external_url** | **str** | A URL that identifies an external system-of-record resource that may have more detailed information on the session. | [optional] |
 | **short_id** | **str** | Shortened numeric identifier of 4-6 digits. | [optional] |

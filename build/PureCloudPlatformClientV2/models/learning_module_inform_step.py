@@ -53,7 +53,9 @@ class LearningModuleInformStep(object):
             'value': 'str',
             'sharing_uri': 'str',
             'content_type': 'str',
-            'order': 'int'
+            'order': 'int',
+            'display_name': 'str',
+            'description': 'str'
         }
 
         self.attribute_map = {
@@ -62,7 +64,9 @@ class LearningModuleInformStep(object):
             'value': 'value',
             'sharing_uri': 'sharingUri',
             'content_type': 'contentType',
-            'order': 'order'
+            'order': 'order',
+            'display_name': 'displayName',
+            'description': 'description'
         }
 
         self._type = None
@@ -71,6 +75,8 @@ class LearningModuleInformStep(object):
         self._sharing_uri = None
         self._content_type = None
         self._order = None
+        self._display_name = None
+        self._description = None
 
     @property
     def type(self) -> str:
@@ -220,6 +226,54 @@ class LearningModuleInformStep(object):
         
 
         self._order = order
+
+    @property
+    def display_name(self) -> str:
+        """
+        Gets the display_name of this LearningModuleInformStep.
+        The display name for the inform step
+
+        :return: The display_name of this LearningModuleInformStep.
+        :rtype: str
+        """
+        return self._display_name
+
+    @display_name.setter
+    def display_name(self, display_name: str) -> None:
+        """
+        Sets the display_name of this LearningModuleInformStep.
+        The display name for the inform step
+
+        :param display_name: The display_name of this LearningModuleInformStep.
+        :type: str
+        """
+        
+
+        self._display_name = display_name
+
+    @property
+    def description(self) -> str:
+        """
+        Gets the description of this LearningModuleInformStep.
+        The description for the inform step
+
+        :return: The description of this LearningModuleInformStep.
+        :rtype: str
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description: str) -> None:
+        """
+        Sets the description of this LearningModuleInformStep.
+        The description for the inform step
+
+        :param description: The description of this LearningModuleInformStep.
+        :type: str
+        """
+        
+
+        self._description = description
 
     def to_dict(self):
         """

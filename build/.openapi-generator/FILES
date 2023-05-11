@@ -9,6 +9,7 @@ PureCloudPlatformClientV2/apis/architect_api.py
 PureCloudPlatformClientV2/apis/audit_api.py
 PureCloudPlatformClientV2/apis/authorization_api.py
 PureCloudPlatformClientV2/apis/billing_api.py
+PureCloudPlatformClientV2/apis/carrier_services_api.py
 PureCloudPlatformClientV2/apis/chat_api.py
 PureCloudPlatformClientV2/apis/coaching_api.py
 PureCloudPlatformClientV2/apis/content_management_api.py
@@ -74,7 +75,10 @@ PureCloudPlatformClientV2/configuration.py
 PureCloudPlatformClientV2/logger.py
 PureCloudPlatformClientV2/models/__init__.py
 PureCloudPlatformClientV2/models/accelerator_input.py
+PureCloudPlatformClientV2/models/accelerator_list.py
+PureCloudPlatformClientV2/models/accelerator_metadata.py
 PureCloudPlatformClientV2/models/accelerator_parameter.py
+PureCloudPlatformClientV2/models/accelerator_specification.py
 PureCloudPlatformClientV2/models/acd_end_detail_event_topic_acd_end_event.py
 PureCloudPlatformClientV2/models/acd_start_detail_event_topic_acd_start_event.py
 PureCloudPlatformClientV2/models/achieved_outcome.py
@@ -751,6 +755,7 @@ PureCloudPlatformClientV2/models/conversation_chat_event_topic_journey_customer_
 PureCloudPlatformClientV2/models/conversation_chat_event_topic_scored_agent.py
 PureCloudPlatformClientV2/models/conversation_chat_event_topic_uri_reference.py
 PureCloudPlatformClientV2/models/conversation_chat_event_topic_wrapup.py
+PureCloudPlatformClientV2/models/conversation_clear_settings.py
 PureCloudPlatformClientV2/models/conversation_cobrowse_event_topic_cobrowse_conversation.py
 PureCloudPlatformClientV2/models/conversation_cobrowse_event_topic_cobrowse_media_participant.py
 PureCloudPlatformClientV2/models/conversation_cobrowse_event_topic_conversation_routing_data.py
@@ -1238,6 +1243,7 @@ PureCloudPlatformClientV2/models/download_response.py
 PureCloudPlatformClientV2/models/draft.py
 PureCloudPlatformClientV2/models/draft_intents.py
 PureCloudPlatformClientV2/models/draft_listing.py
+PureCloudPlatformClientV2/models/draft_manipulation_request.py
 PureCloudPlatformClientV2/models/draft_request.py
 PureCloudPlatformClientV2/models/draft_topic_request.py
 PureCloudPlatformClientV2/models/draft_topics.py
@@ -1305,6 +1311,7 @@ PureCloudPlatformClientV2/models/embedded_integration.py
 PureCloudPlatformClientV2/models/emergency_call_flow.py
 PureCloudPlatformClientV2/models/emergency_group.py
 PureCloudPlatformClientV2/models/emergency_group_listing.py
+PureCloudPlatformClientV2/models/emergency_location.py
 PureCloudPlatformClientV2/models/employer_info.py
 PureCloudPlatformClientV2/models/empty.py
 PureCloudPlatformClientV2/models/encryption_key.py
@@ -1498,7 +1505,6 @@ PureCloudPlatformClientV2/models/forecast_service_level_response.py
 PureCloudPlatformClientV2/models/forecast_source_day_pointer.py
 PureCloudPlatformClientV2/models/format.py
 PureCloudPlatformClientV2/models/forms_track_trigger.py
-PureCloudPlatformClientV2/models/free_seating_configuration.py
 PureCloudPlatformClientV2/models/from_email_address.py
 PureCloudPlatformClientV2/models/full_day_time_off_marker.py
 PureCloudPlatformClientV2/models/g_suite.py
@@ -1573,6 +1579,7 @@ PureCloudPlatformClientV2/models/historical_shrinkage_aggregate_response.py
 PureCloudPlatformClientV2/models/historical_shrinkage_result.py
 PureCloudPlatformClientV2/models/historical_shrinkage_result_listing.py
 PureCloudPlatformClientV2/models/history_entry.py
+PureCloudPlatformClientV2/models/history_headers_translation.py
 PureCloudPlatformClientV2/models/history_listing.py
 PureCloudPlatformClientV2/models/hold_updated_event.py
 PureCloudPlatformClientV2/models/homer_record.py
@@ -1997,6 +2004,7 @@ PureCloudPlatformClientV2/models/message_sticker.py
 PureCloudPlatformClientV2/models/message_sticker_attachment.py
 PureCloudPlatformClientV2/models/message_typing_event_request.py
 PureCloudPlatformClientV2/models/messaging_campaign.py
+PureCloudPlatformClientV2/models/messaging_campaign_diagnostics.py
 PureCloudPlatformClientV2/models/messaging_campaign_division_view.py
 PureCloudPlatformClientV2/models/messaging_campaign_division_view_entity_listing.py
 PureCloudPlatformClientV2/models/messaging_campaign_entity_listing.py
@@ -2017,6 +2025,12 @@ PureCloudPlatformClientV2/models/messenger_settings.py
 PureCloudPlatformClientV2/models/messenger_styles.py
 PureCloudPlatformClientV2/models/meta_data.py
 PureCloudPlatformClientV2/models/metabase.py
+PureCloudPlatformClientV2/models/metadata_documentation.py
+PureCloudPlatformClientV2/models/metadata_presentation.py
+PureCloudPlatformClientV2/models/metadata_property.py
+PureCloudPlatformClientV2/models/metadata_result_entity.py
+PureCloudPlatformClientV2/models/metadata_results.py
+PureCloudPlatformClientV2/models/metadata_schema.py
 PureCloudPlatformClientV2/models/metered_assignment_by_agent.py
 PureCloudPlatformClientV2/models/metered_evaluation_assignment.py
 PureCloudPlatformClientV2/models/metric.py
@@ -2152,6 +2166,7 @@ PureCloudPlatformClientV2/models/outcome_achievement.py
 PureCloudPlatformClientV2/models/outcome_config.py
 PureCloudPlatformClientV2/models/outcome_event_score.py
 PureCloudPlatformClientV2/models/outcome_listing.py
+PureCloudPlatformClientV2/models/outcome_percentile_condition.py
 PureCloudPlatformClientV2/models/outcome_predictor.py
 PureCloudPlatformClientV2/models/outcome_predictor_listing.py
 PureCloudPlatformClientV2/models/outcome_predictor_request.py
@@ -2886,7 +2901,6 @@ PureCloudPlatformClientV2/models/stat_event_wrap_up_code_topic_metric_stats.py
 PureCloudPlatformClientV2/models/stat_event_wrap_up_code_topic_stats_notification.py
 PureCloudPlatformClientV2/models/station.py
 PureCloudPlatformClientV2/models/station_entity_listing.py
-PureCloudPlatformClientV2/models/station_settings.py
 PureCloudPlatformClientV2/models/statistical_response.py
 PureCloudPlatformClientV2/models/statistical_summary.py
 PureCloudPlatformClientV2/models/status_change.py
@@ -3058,6 +3072,7 @@ PureCloudPlatformClientV2/models/transfer_destination.py
 PureCloudPlatformClientV2/models/transfer_initiator.py
 PureCloudPlatformClientV2/models/transfer_request.py
 PureCloudPlatformClientV2/models/transfer_response.py
+PureCloudPlatformClientV2/models/transfer_response_modified_by.py
 PureCloudPlatformClientV2/models/trend_data.py
 PureCloudPlatformClientV2/models/trigger.py
 PureCloudPlatformClientV2/models/trigger_entity_listing.py
@@ -3635,7 +3650,10 @@ PureCloudPlatformClientV2/rest.py
 README.md
 docs/ADFS.md
 docs/AcceleratorInput.md
+docs/AcceleratorList.md
+docs/AcceleratorMetadata.md
 docs/AcceleratorParameter.md
+docs/AcceleratorSpecification.md
 docs/AcdEndDetailEventTopicAcdEndEvent.md
 docs/AcdStartDetailEventTopicAcdStartEvent.md
 docs/AchievedOutcome.md
@@ -4112,6 +4130,8 @@ docs/CampaignStats.md
 docs/CampaignTimeSlot.md
 docs/Card.md
 docs/CardAction.md
+docs/CarrierServicesApi.json
+docs/CarrierServicesApi.md
 docs/Category.md
 docs/CategoryEntityListing.md
 docs/CategoryListing.md
@@ -4329,6 +4349,7 @@ docs/ConversationChatEventTopicJourneyCustomerSession.md
 docs/ConversationChatEventTopicScoredAgent.md
 docs/ConversationChatEventTopicUriReference.md
 docs/ConversationChatEventTopicWrapup.md
+docs/ConversationClearSettings.md
 docs/ConversationCobrowseEventTopicCobrowseConversation.md
 docs/ConversationCobrowseEventTopicCobrowseMediaParticipant.md
 docs/ConversationCobrowseEventTopicConversationRoutingData.md
@@ -4822,6 +4843,7 @@ docs/DownloadsApi.md
 docs/Draft.md
 docs/DraftIntents.md
 docs/DraftListing.md
+docs/DraftManipulationRequest.md
 docs/DraftRequest.md
 docs/DraftTopicRequest.md
 docs/DraftTopics.md
@@ -4889,6 +4911,7 @@ docs/EmbeddedIntegration.md
 docs/EmergencyCallFlow.md
 docs/EmergencyGroup.md
 docs/EmergencyGroupListing.md
+docs/EmergencyLocation.md
 docs/EmployerInfo.md
 docs/Empty.md
 docs/EncryptionKey.md
@@ -5090,7 +5113,6 @@ docs/ForecastServiceLevelResponse.md
 docs/ForecastSourceDayPointer.md
 docs/Format.md
 docs/FormsTrackTrigger.md
-docs/FreeSeatingConfiguration.md
 docs/FromEmailAddress.md
 docs/FullDayTimeOffMarker.md
 docs/GDPRJourneyCustomer.md
@@ -5175,6 +5197,7 @@ docs/HistoricalShrinkageAggregateResponse.md
 docs/HistoricalShrinkageResult.md
 docs/HistoricalShrinkageResultListing.md
 docs/HistoryEntry.md
+docs/HistoryHeadersTranslation.md
 docs/HistoryListing.md
 docs/HoldUpdatedEvent.md
 docs/HomerRecord.md
@@ -5621,6 +5644,7 @@ docs/MessageTypingEventRequest.md
 docs/MessagingApi.json
 docs/MessagingApi.md
 docs/MessagingCampaign.md
+docs/MessagingCampaignDiagnostics.md
 docs/MessagingCampaignDivisionView.md
 docs/MessagingCampaignDivisionViewEntityListing.md
 docs/MessagingCampaignEntityListing.md
@@ -5641,6 +5665,12 @@ docs/MessengerSettings.md
 docs/MessengerStyles.md
 docs/MetaData.md
 docs/Metabase.md
+docs/MetadataDocumentation.md
+docs/MetadataPresentation.md
+docs/MetadataProperty.md
+docs/MetadataResultEntity.md
+docs/MetadataResults.md
+docs/MetadataSchema.md
 docs/MeteredAssignmentByAgent.md
 docs/MeteredEvaluationAssignment.md
 docs/Metric.md
@@ -5790,6 +5820,7 @@ docs/OutcomeAchievement.md
 docs/OutcomeConfig.md
 docs/OutcomeEventScore.md
 docs/OutcomeListing.md
+docs/OutcomePercentileCondition.md
 docs/OutcomePredictor.md
 docs/OutcomePredictorListing.md
 docs/OutcomePredictorRequest.md
@@ -6544,7 +6575,6 @@ docs/StatEventWrapUpCodeTopicMetricStats.md
 docs/StatEventWrapUpCodeTopicStatsNotification.md
 docs/Station.md
 docs/StationEntityListing.md
-docs/StationSettings.md
 docs/StationsApi.json
 docs/StationsApi.md
 docs/StatisticalResponse.md
@@ -6730,6 +6760,7 @@ docs/TransferDestination.md
 docs/TransferInitiator.md
 docs/TransferRequest.md
 docs/TransferResponse.md
+docs/TransferResponseModifiedBy.md
 docs/TrendData.md
 docs/Trigger.md
 docs/TriggerEntityListing.md
@@ -7646,6 +7677,7 @@ docs/get_authorization_subjects_me-example.txt
 docs/get_authorization_subjects_rolecounts-example.txt
 docs/get_billing_reports_billableusage-example.txt
 docs/get_billing_trusteebillingoverview_trustor_org_id-example.txt
+docs/get_carrierservices_integrations_emergencylocations_me-example.txt
 docs/get_chat_settings-example.txt
 docs/get_chats_settings-example.txt
 docs/get_coaching_appointment-example.txt
@@ -7895,6 +7927,8 @@ docs/get_identityproviders_ping-example.txt
 docs/get_identityproviders_purecloud-example.txt
 docs/get_identityproviders_pureengage-example.txt
 docs/get_identityproviders_salesforce-example.txt
+docs/get_infrastructureascode_accelerator-example.txt
+docs/get_infrastructureascode_accelerators-example.txt
 docs/get_infrastructureascode_job-example.txt
 docs/get_infrastructureascode_jobs-example.txt
 docs/get_integration-example.txt
@@ -8110,6 +8144,7 @@ docs/get_outbound_dnclists_divisionviews-example.txt
 docs/get_outbound_event-example.txt
 docs/get_outbound_events-example.txt
 docs/get_outbound_messagingcampaign-example.txt
+docs/get_outbound_messagingcampaign_diagnostics-example.txt
 docs/get_outbound_messagingcampaign_progress-example.txt
 docs/get_outbound_messagingcampaigns-example.txt
 docs/get_outbound_messagingcampaigns_divisionview-example.txt
@@ -8299,7 +8334,6 @@ docs/get_speechandtextanalytics_topics_general-example.txt
 docs/get_speechandtextanalytics_topics_publishjob-example.txt
 docs/get_station-example.txt
 docs/get_stations-example.txt
-docs/get_stations_settings-example.txt
 docs/get_systempresences-example.txt
 docs/get_team-example.txt
 docs/get_team_members-example.txt
@@ -8556,6 +8590,7 @@ docs/patch_conversations_cobrowsesession_participant-example.txt
 docs/patch_conversations_cobrowsesession_participant_attributes-example.txt
 docs/patch_conversations_cobrowsesession_participant_communication-example.txt
 docs/patch_conversations_email-example.txt
+docs/patch_conversations_email_messages_draft-example.txt
 docs/patch_conversations_email_participant-example.txt
 docs/patch_conversations_email_participant_attributes-example.txt
 docs/patch_conversations_email_participant_communication-example.txt
@@ -8623,7 +8658,6 @@ docs/patch_scim_user-example.txt
 docs/patch_scim_v2_group-example.txt
 docs/patch_scim_v2_user-example.txt
 docs/patch_speechandtextanalytics_settings-example.txt
-docs/patch_stations_settings-example.txt
 docs/patch_team-example.txt
 docs/patch_user-example.txt
 docs/patch_user_callforwarding-example.txt
@@ -8728,6 +8762,7 @@ docs/post_authorization_subject_bulkreplace-example.txt
 docs/post_authorization_subject_bulkreplace-example.txt
 docs/post_authorization_subject_division_role-example.txt
 docs/post_authorization_subject_division_role-example.txt
+docs/post_carrierservices_integrations_emergencylocations_me-example.txt
 docs/post_certificate_details-example.txt
 docs/post_coaching_appointment_annotations-example.txt
 docs/post_coaching_appointment_conversations-example.txt

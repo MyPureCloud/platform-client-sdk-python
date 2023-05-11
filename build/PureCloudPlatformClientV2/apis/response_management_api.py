@@ -320,12 +320,13 @@ class ResponseManagementApi(object):
         :param int page_number: Page number
         :param int page_size: Page size
         :param str messaging_template_filter: Returns a list of libraries that contain responses with at least one messaging template defined for a specific message channel
+        :param str library_prefix: Returns a list of libraries that contain the prefix provided
         :return: LibraryEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['page_number', 'page_size', 'messaging_template_filter']
+        all_params = ['page_number', 'page_size', 'messaging_template_filter', 'library_prefix']
         all_params.append('callback')
 
         params = locals()
@@ -350,6 +351,8 @@ class ResponseManagementApi(object):
             query_params['pageSize'] = params['page_size']
         if 'messaging_template_filter' in params:
             query_params['messagingTemplateFilter'] = params['messaging_template_filter']
+        if 'library_prefix' in params:
+            query_params['libraryPrefix'] = params['library_prefix']
 
         header_params = {}
 

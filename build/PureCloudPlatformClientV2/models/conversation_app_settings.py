@@ -34,6 +34,7 @@ from typing import Dict
 
 if TYPE_CHECKING:
     from . import AutoStart
+    from . import ConversationClearSettings
     from . import ConversationDisconnectSettings
     from . import Humanize
     from . import Markdown
@@ -59,6 +60,7 @@ class ConversationAppSettings(object):
             'auto_start': 'AutoStart',
             'markdown': 'Markdown',
             'conversation_disconnect': 'ConversationDisconnectSettings',
+            'conversation_clear': 'ConversationClearSettings',
             'humanize': 'Humanize'
         }
 
@@ -69,6 +71,7 @@ class ConversationAppSettings(object):
             'auto_start': 'autoStart',
             'markdown': 'markdown',
             'conversation_disconnect': 'conversationDisconnect',
+            'conversation_clear': 'conversationClear',
             'humanize': 'humanize'
         }
 
@@ -78,6 +81,7 @@ class ConversationAppSettings(object):
         self._auto_start = None
         self._markdown = None
         self._conversation_disconnect = None
+        self._conversation_clear = None
         self._humanize = None
 
     @property
@@ -228,6 +232,30 @@ class ConversationAppSettings(object):
         
 
         self._conversation_disconnect = conversation_disconnect
+
+    @property
+    def conversation_clear(self) -> 'ConversationClearSettings':
+        """
+        Gets the conversation_clear of this ConversationAppSettings.
+        The conversation clear settings for the messenger app
+
+        :return: The conversation_clear of this ConversationAppSettings.
+        :rtype: ConversationClearSettings
+        """
+        return self._conversation_clear
+
+    @conversation_clear.setter
+    def conversation_clear(self, conversation_clear: 'ConversationClearSettings') -> None:
+        """
+        Sets the conversation_clear of this ConversationAppSettings.
+        The conversation clear settings for the messenger app
+
+        :param conversation_clear: The conversation_clear of this ConversationAppSettings.
+        :type: ConversationClearSettings
+        """
+        
+
+        self._conversation_clear = conversation_clear
 
     @property
     def humanize(self) -> 'Humanize':

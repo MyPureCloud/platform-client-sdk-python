@@ -934,7 +934,7 @@ class RecordingApi(object):
 
     def get_conversation_recordingmetadata(self, conversation_id: str, **kwargs) -> List['RecordingMetadata']:
         """
-        Get recording metadata for a conversation. Does not return playable media. Annotations won't be included in the response if recording:recording:view permission is missing.
+        Get recording metadata for a conversation. Does not return playable media. Annotations won't be included in the response if either recording:recording:view or recording:annotation:view permission is missing.
         
 
         This method makes a synchronous HTTP request by default. To make an

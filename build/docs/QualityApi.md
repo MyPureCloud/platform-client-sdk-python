@@ -2849,7 +2849,7 @@ api_instance = PureCloudPlatformClientV2.QualityApi()
 conversation_id = 'conversation_id_example' # str | conversationId
 evaluation_id = 'evaluation_id_example' # str | evaluationId
 body = PureCloudPlatformClientV2.Evaluation() # Evaluation | evaluation
-expand = 'expand_example' # str | evaluatorId, evaluationForm (optional)
+expand = 'expand_example' # str | evaluatorId, evaluationForm, assignee (optional)
 
 try:
     # Update an evaluation
@@ -2867,7 +2867,7 @@ except ApiException as e:
 | **conversation_id** | **str**| conversationId |  |
 | **evaluation_id** | **str**| evaluationId |  |
 | **body** | [**Evaluation**](Evaluation.html)| evaluation |  |
-| **expand** | **str**| evaluatorId, evaluationForm | [optional]  |
+| **expand** | **str**| evaluatorId, evaluationForm, assignee | [optional]  |
 {: class="table table-striped"}
 
 ### Return type

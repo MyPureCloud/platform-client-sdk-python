@@ -56,7 +56,8 @@ class CampaignDiagnostics(object):
             'queue_utilization_diagnostic': 'QueueUtilizationDiagnostic',
             'rule_set_diagnostics': 'list[RuleSetDiagnostic]',
             'outstanding_interactions_count': 'int',
-            'scheduled_interactions_count': 'int'
+            'scheduled_interactions_count': 'int',
+            'time_zone_rescheduled_calls_count': 'int'
         }
 
         self.attribute_map = {
@@ -64,7 +65,8 @@ class CampaignDiagnostics(object):
             'queue_utilization_diagnostic': 'queueUtilizationDiagnostic',
             'rule_set_diagnostics': 'ruleSetDiagnostics',
             'outstanding_interactions_count': 'outstandingInteractionsCount',
-            'scheduled_interactions_count': 'scheduledInteractionsCount'
+            'scheduled_interactions_count': 'scheduledInteractionsCount',
+            'time_zone_rescheduled_calls_count': 'timeZoneRescheduledCallsCount'
         }
 
         self._callable_contacts = None
@@ -72,6 +74,7 @@ class CampaignDiagnostics(object):
         self._rule_set_diagnostics = None
         self._outstanding_interactions_count = None
         self._scheduled_interactions_count = None
+        self._time_zone_rescheduled_calls_count = None
 
     @property
     def callable_contacts(self) -> 'CallableContactsDiagnostic':
@@ -192,6 +195,30 @@ class CampaignDiagnostics(object):
         
 
         self._scheduled_interactions_count = scheduled_interactions_count
+
+    @property
+    def time_zone_rescheduled_calls_count(self) -> int:
+        """
+        Gets the time_zone_rescheduled_calls_count of this CampaignDiagnostics.
+        Current number of time zone rescheduled calls on the campaign
+
+        :return: The time_zone_rescheduled_calls_count of this CampaignDiagnostics.
+        :rtype: int
+        """
+        return self._time_zone_rescheduled_calls_count
+
+    @time_zone_rescheduled_calls_count.setter
+    def time_zone_rescheduled_calls_count(self, time_zone_rescheduled_calls_count: int) -> None:
+        """
+        Sets the time_zone_rescheduled_calls_count of this CampaignDiagnostics.
+        Current number of time zone rescheduled calls on the campaign
+
+        :param time_zone_rescheduled_calls_count: The time_zone_rescheduled_calls_count of this CampaignDiagnostics.
+        :type: int
+        """
+        
+
+        self._time_zone_rescheduled_calls_count = time_zone_rescheduled_calls_count
 
     def to_dict(self):
         """

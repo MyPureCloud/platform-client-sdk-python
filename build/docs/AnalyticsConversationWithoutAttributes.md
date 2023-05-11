@@ -7,6 +7,7 @@ title: AnalyticsConversationWithoutAttributes
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
+| **conference_start** | **datetime** | The start time of a conference call. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
 | **conversation_end** | **datetime** | The end time of a conversation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
 | **conversation_id** | **str** | Unique identifier for the conversation | [optional] |
 | **conversation_initiator** | **str** | Indicates the participant purpose of the participant initiating a message conversation | [optional] |

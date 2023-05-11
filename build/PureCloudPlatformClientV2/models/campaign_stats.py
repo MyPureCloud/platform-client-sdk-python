@@ -55,7 +55,8 @@ class CampaignStats(object):
             'effective_idle_agents': 'float',
             'adjusted_calls_per_agent': 'float',
             'outstanding_calls': 'int',
-            'scheduled_calls': 'int'
+            'scheduled_calls': 'int',
+            'time_zone_rescheduled_calls': 'int'
         }
 
         self.attribute_map = {
@@ -64,7 +65,8 @@ class CampaignStats(object):
             'effective_idle_agents': 'effectiveIdleAgents',
             'adjusted_calls_per_agent': 'adjustedCallsPerAgent',
             'outstanding_calls': 'outstandingCalls',
-            'scheduled_calls': 'scheduledCalls'
+            'scheduled_calls': 'scheduledCalls',
+            'time_zone_rescheduled_calls': 'timeZoneRescheduledCalls'
         }
 
         self._contact_rate = None
@@ -73,6 +75,7 @@ class CampaignStats(object):
         self._adjusted_calls_per_agent = None
         self._outstanding_calls = None
         self._scheduled_calls = None
+        self._time_zone_rescheduled_calls = None
 
     @property
     def contact_rate(self) -> 'ConnectRate':
@@ -217,6 +220,30 @@ class CampaignStats(object):
         
 
         self._scheduled_calls = scheduled_calls
+
+    @property
+    def time_zone_rescheduled_calls(self) -> int:
+        """
+        Gets the time_zone_rescheduled_calls of this CampaignStats.
+        Number of campaign calls currently timezone rescheduled
+
+        :return: The time_zone_rescheduled_calls of this CampaignStats.
+        :rtype: int
+        """
+        return self._time_zone_rescheduled_calls
+
+    @time_zone_rescheduled_calls.setter
+    def time_zone_rescheduled_calls(self, time_zone_rescheduled_calls: int) -> None:
+        """
+        Sets the time_zone_rescheduled_calls of this CampaignStats.
+        Number of campaign calls currently timezone rescheduled
+
+        :param time_zone_rescheduled_calls: The time_zone_rescheduled_calls of this CampaignStats.
+        :type: int
+        """
+        
+
+        self._time_zone_rescheduled_calls = time_zone_rescheduled_calls
 
     def to_dict(self):
         """

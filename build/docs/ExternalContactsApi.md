@@ -3102,6 +3102,8 @@ except ApiException as e:
 
 Merge two contacts into a new contact record
 
+Two curated contacts cannot be merged. Refer to the Contact Merging article on the Developer Center for details
+
 
 
 Wraps POST /api/v2/externalcontacts/merge/contacts 

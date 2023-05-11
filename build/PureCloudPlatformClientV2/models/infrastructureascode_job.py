@@ -53,6 +53,7 @@ class InfrastructureascodeJob(object):
         self.swagger_types = {
             'id': 'str',
             'dry_run': 'bool',
+            'accelerator_id': 'str',
             'date_submitted': 'datetime',
             'submitted_by': 'UserReference',
             'status': 'str',
@@ -64,6 +65,7 @@ class InfrastructureascodeJob(object):
         self.attribute_map = {
             'id': 'id',
             'dry_run': 'dryRun',
+            'accelerator_id': 'acceleratorId',
             'date_submitted': 'dateSubmitted',
             'submitted_by': 'submittedBy',
             'status': 'status',
@@ -74,6 +76,7 @@ class InfrastructureascodeJob(object):
 
         self._id = None
         self._dry_run = None
+        self._accelerator_id = None
         self._date_submitted = None
         self._submitted_by = None
         self._status = None
@@ -128,6 +131,30 @@ class InfrastructureascodeJob(object):
         
 
         self._dry_run = dry_run
+
+    @property
+    def accelerator_id(self) -> str:
+        """
+        Gets the accelerator_id of this InfrastructureascodeJob.
+        acceleratorId
+
+        :return: The accelerator_id of this InfrastructureascodeJob.
+        :rtype: str
+        """
+        return self._accelerator_id
+
+    @accelerator_id.setter
+    def accelerator_id(self, accelerator_id: str) -> None:
+        """
+        Sets the accelerator_id of this InfrastructureascodeJob.
+        acceleratorId
+
+        :param accelerator_id: The accelerator_id of this InfrastructureascodeJob.
+        :type: str
+        """
+        
+
+        self._accelerator_id = accelerator_id
 
     @property
     def date_submitted(self) -> datetime:

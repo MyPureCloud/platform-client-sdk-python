@@ -53,6 +53,7 @@ class AnalyticsConversation(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
+            'conference_start': 'datetime',
             'conversation_end': 'datetime',
             'conversation_id': 'str',
             'conversation_initiator': 'str',
@@ -72,6 +73,7 @@ class AnalyticsConversation(object):
         }
 
         self.attribute_map = {
+            'conference_start': 'conferenceStart',
             'conversation_end': 'conversationEnd',
             'conversation_id': 'conversationId',
             'conversation_initiator': 'conversationInitiator',
@@ -90,6 +92,7 @@ class AnalyticsConversation(object):
             'participants': 'participants'
         }
 
+        self._conference_start = None
         self._conversation_end = None
         self._conversation_id = None
         self._conversation_initiator = None
@@ -106,6 +109,30 @@ class AnalyticsConversation(object):
         self._surveys = None
         self._resolutions = None
         self._participants = None
+
+    @property
+    def conference_start(self) -> datetime:
+        """
+        Gets the conference_start of this AnalyticsConversation.
+        The start time of a conference call. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :return: The conference_start of this AnalyticsConversation.
+        :rtype: datetime
+        """
+        return self._conference_start
+
+    @conference_start.setter
+    def conference_start(self, conference_start: datetime) -> None:
+        """
+        Sets the conference_start of this AnalyticsConversation.
+        The start time of a conference call. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :param conference_start: The conference_start of this AnalyticsConversation.
+        :type: datetime
+        """
+        
+
+        self._conference_start = conference_start
 
     @property
     def conversation_end(self) -> datetime:

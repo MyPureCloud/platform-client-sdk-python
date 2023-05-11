@@ -217,7 +217,8 @@ class ViewFilter(object):
             'is_analyzed_for_sensitive_data': 'bool',
             'has_sensitive_data': 'bool',
             'sub_path': 'str',
-            'user_state': 'str'
+            'user_state': 'str',
+            'is_cleared_by_customer': 'bool'
         }
 
         self.attribute_map = {
@@ -385,7 +386,8 @@ class ViewFilter(object):
             'is_analyzed_for_sensitive_data': 'isAnalyzedForSensitiveData',
             'has_sensitive_data': 'hasSensitiveData',
             'sub_path': 'subPath',
-            'user_state': 'userState'
+            'user_state': 'userState',
+            'is_cleared_by_customer': 'isClearedByCustomer'
         }
 
         self._media_types = None
@@ -553,6 +555,7 @@ class ViewFilter(object):
         self._has_sensitive_data = None
         self._sub_path = None
         self._user_state = None
+        self._is_cleared_by_customer = None
 
     @property
     def media_types(self) -> List[str]:
@@ -4523,6 +4526,30 @@ class ViewFilter(object):
             self._user_state = "outdated_sdk_version"
         else:
             self._user_state = user_state
+
+    @property
+    def is_cleared_by_customer(self) -> bool:
+        """
+        Gets the is_cleared_by_customer of this ViewFilter.
+        Filter to indicate if the customer cleared the conversation.
+
+        :return: The is_cleared_by_customer of this ViewFilter.
+        :rtype: bool
+        """
+        return self._is_cleared_by_customer
+
+    @is_cleared_by_customer.setter
+    def is_cleared_by_customer(self, is_cleared_by_customer: bool) -> None:
+        """
+        Sets the is_cleared_by_customer of this ViewFilter.
+        Filter to indicate if the customer cleared the conversation.
+
+        :param is_cleared_by_customer: The is_cleared_by_customer of this ViewFilter.
+        :type: bool
+        """
+        
+
+        self._is_cleared_by_customer = is_cleared_by_customer
 
     def to_dict(self):
         """

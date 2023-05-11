@@ -61,6 +61,7 @@ class OutboundSettings(object):
             'abandon_seconds': 'float',
             'compliance_abandon_rate_denominator': 'str',
             'automatic_time_zone_mapping': 'AutomaticTimeZoneMappingSettings',
+            'reschedule_time_zone_skipped_contacts': 'bool',
             'self_uri': 'str'
         }
 
@@ -76,6 +77,7 @@ class OutboundSettings(object):
             'abandon_seconds': 'abandonSeconds',
             'compliance_abandon_rate_denominator': 'complianceAbandonRateDenominator',
             'automatic_time_zone_mapping': 'automaticTimeZoneMapping',
+            'reschedule_time_zone_skipped_contacts': 'rescheduleTimeZoneSkippedContacts',
             'self_uri': 'selfUri'
         }
 
@@ -90,6 +92,7 @@ class OutboundSettings(object):
         self._abandon_seconds = None
         self._compliance_abandon_rate_denominator = None
         self._automatic_time_zone_mapping = None
+        self._reschedule_time_zone_skipped_contacts = None
         self._self_uri = None
 
     @property
@@ -360,6 +363,30 @@ class OutboundSettings(object):
         
 
         self._automatic_time_zone_mapping = automatic_time_zone_mapping
+
+    @property
+    def reschedule_time_zone_skipped_contacts(self) -> bool:
+        """
+        Gets the reschedule_time_zone_skipped_contacts of this OutboundSettings.
+        Whether or not to reschedule time-zone blocked contacts
+
+        :return: The reschedule_time_zone_skipped_contacts of this OutboundSettings.
+        :rtype: bool
+        """
+        return self._reschedule_time_zone_skipped_contacts
+
+    @reschedule_time_zone_skipped_contacts.setter
+    def reschedule_time_zone_skipped_contacts(self, reschedule_time_zone_skipped_contacts: bool) -> None:
+        """
+        Sets the reschedule_time_zone_skipped_contacts of this OutboundSettings.
+        Whether or not to reschedule time-zone blocked contacts
+
+        :param reschedule_time_zone_skipped_contacts: The reschedule_time_zone_skipped_contacts of this OutboundSettings.
+        :type: bool
+        """
+        
+
+        self._reschedule_time_zone_skipped_contacts = reschedule_time_zone_skipped_contacts
 
     @property
     def self_uri(self) -> str:

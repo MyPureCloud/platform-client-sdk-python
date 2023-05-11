@@ -72,6 +72,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_outbound_event**](OutboundApi.html#get_outbound_event) | Get Dialer Event|
 |[**get_outbound_events**](OutboundApi.html#get_outbound_events) | Query Event Logs|
 |[**get_outbound_messagingcampaign**](OutboundApi.html#get_outbound_messagingcampaign) | Get an Outbound Messaging Campaign|
+|[**get_outbound_messagingcampaign_diagnostics**](OutboundApi.html#get_outbound_messagingcampaign_diagnostics) | Get messaging campaign diagnostics|
 |[**get_outbound_messagingcampaign_progress**](OutboundApi.html#get_outbound_messagingcampaign_progress) | Get messaging campaign&#39;s progress|
 |[**get_outbound_messagingcampaigns**](OutboundApi.html#get_outbound_messagingcampaigns) | Query a list of Messaging Campaigns|
 |[**get_outbound_messagingcampaigns_divisionview**](OutboundApi.html#get_outbound_messagingcampaigns_divisionview) | Get a basic Messaging Campaign information object|
@@ -3661,6 +3662,58 @@ except ApiException as e:
 ### Return type
 
 [**MessagingCampaign**](MessagingCampaign.html)
+
+<a name="get_outbound_messagingcampaign_diagnostics"></a>
+
+## [**MessagingCampaignDiagnostics**](MessagingCampaignDiagnostics.html) get_outbound_messagingcampaign_diagnostics(messaging_campaign_id)
+
+
+
+Get messaging campaign diagnostics
+
+
+
+Wraps GET /api/v2/outbound/messagingcampaigns/{messagingCampaignId}/diagnostics 
+
+Requires ANY permissions: 
+
+* outbound:messagingCampaign:view
+* outbound:emailCampaign:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.OutboundApi()
+messaging_campaign_id = 'messaging_campaign_id_example' # str | The Messaging Campaign ID
+
+try:
+    # Get messaging campaign diagnostics
+    api_response = api_instance.get_outbound_messagingcampaign_diagnostics(messaging_campaign_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling OutboundApi->get_outbound_messagingcampaign_diagnostics: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **messaging_campaign_id** | **str**| The Messaging Campaign ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**MessagingCampaignDiagnostics**](MessagingCampaignDiagnostics.html)
 
 <a name="get_outbound_messagingcampaign_progress"></a>
 

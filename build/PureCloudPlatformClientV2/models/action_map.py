@@ -37,6 +37,7 @@ if TYPE_CHECKING:
     from . import ActionMapScheduleGroups
     from . import Activation
     from . import EventCondition
+    from . import OutcomePercentileCondition
     from . import OutcomeProbabilityCondition
     from . import UrlCondition
 
@@ -62,6 +63,7 @@ class ActionMap(object):
             'trigger_with_segments': 'list[str]',
             'trigger_with_event_conditions': 'list[EventCondition]',
             'trigger_with_outcome_probability_conditions': 'list[OutcomeProbabilityCondition]',
+            'trigger_with_outcome_percentile_conditions': 'list[OutcomePercentileCondition]',
             'page_url_conditions': 'list[UrlCondition]',
             'activation': 'Activation',
             'weight': 'int',
@@ -83,6 +85,7 @@ class ActionMap(object):
             'trigger_with_segments': 'triggerWithSegments',
             'trigger_with_event_conditions': 'triggerWithEventConditions',
             'trigger_with_outcome_probability_conditions': 'triggerWithOutcomeProbabilityConditions',
+            'trigger_with_outcome_percentile_conditions': 'triggerWithOutcomePercentileConditions',
             'page_url_conditions': 'pageUrlConditions',
             'activation': 'activation',
             'weight': 'weight',
@@ -103,6 +106,7 @@ class ActionMap(object):
         self._trigger_with_segments = None
         self._trigger_with_event_conditions = None
         self._trigger_with_outcome_probability_conditions = None
+        self._trigger_with_outcome_percentile_conditions = None
         self._page_url_conditions = None
         self._activation = None
         self._weight = None
@@ -282,6 +286,30 @@ class ActionMap(object):
         
 
         self._trigger_with_outcome_probability_conditions = trigger_with_outcome_probability_conditions
+
+    @property
+    def trigger_with_outcome_percentile_conditions(self) -> List['OutcomePercentileCondition']:
+        """
+        Gets the trigger_with_outcome_percentile_conditions of this ActionMap.
+        Percentile conditions for outcomes that must be satisfied to trigger the action map.
+
+        :return: The trigger_with_outcome_percentile_conditions of this ActionMap.
+        :rtype: list[OutcomePercentileCondition]
+        """
+        return self._trigger_with_outcome_percentile_conditions
+
+    @trigger_with_outcome_percentile_conditions.setter
+    def trigger_with_outcome_percentile_conditions(self, trigger_with_outcome_percentile_conditions: List['OutcomePercentileCondition']) -> None:
+        """
+        Sets the trigger_with_outcome_percentile_conditions of this ActionMap.
+        Percentile conditions for outcomes that must be satisfied to trigger the action map.
+
+        :param trigger_with_outcome_percentile_conditions: The trigger_with_outcome_percentile_conditions of this ActionMap.
+        :type: list[OutcomePercentileCondition]
+        """
+        
+
+        self._trigger_with_outcome_percentile_conditions = trigger_with_outcome_percentile_conditions
 
     @property
     def page_url_conditions(self) -> List['UrlCondition']:
