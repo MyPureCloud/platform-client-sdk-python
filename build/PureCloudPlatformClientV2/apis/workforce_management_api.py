@@ -177,10 +177,12 @@ from ..models import WfmAgent
 from ..models import WfmHistoricalAdherenceBulkQuery
 from ..models import WfmHistoricalAdherenceBulkResponse
 from ..models import WfmHistoricalAdherenceQuery
+from ..models import WfmHistoricalAdherenceQueryForTeams
 from ..models import WfmHistoricalAdherenceQueryForUsers
 from ..models import WfmHistoricalAdherenceResponse
 from ..models import WfmHistoricalShrinkageRequest
 from ..models import WfmHistoricalShrinkageResponse
+from ..models import WfmHistoricalShrinkageTeamsRequest
 from ..models import WfmIntradayPlanningGroupListing
 from ..models import WfmProcessUploadRequest
 from ..models import WfmUserEntityListing
@@ -2004,7 +2006,7 @@ class WorkforceManagementApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str business_unit_id: The ID of the business unit, or 'mine' for the business unit of the logged-in user. (required)
-        :param list[str] expand: 
+        :param list[str] expand: Include to access additional data on the business unit
         :return: BusinessUnitResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -3461,7 +3463,7 @@ class WorkforceManagementApi(object):
         :param str business_unit_id: The ID of the business unit to which the forecast belongs (required)
         :param date week_date_id: The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
         :param str forecast_id: The ID of the forecast (required)
-        :param list[str] expand: 
+        :param list[str] expand: Include to access additional data on the forecast
         :return: BuShortTermForecast
                  If the method is called asynchronously,
                  returns the request thread.
@@ -6216,7 +6218,7 @@ class WorkforceManagementApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str management_unit_id: The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
-        :param list[str] expand: 
+        :param list[str] expand: Include to access additional data on the work plans
         :return: WorkPlanListResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -10300,7 +10302,7 @@ class WorkforceManagementApi(object):
             for asynchronous request. (optional)
         :param str business_unit_id: The ID of the business unit to which the forecast belongs (required)
         :param date week_date_id: The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
-        :param GenerateBuForecastRequest body:  (required)
+        :param GenerateBuForecastRequest body: body (required)
         :param bool force_async: Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes
         :return: AsyncForecastOperationResult
                  If the method is called asynchronously,
@@ -10393,7 +10395,7 @@ class WorkforceManagementApi(object):
             for asynchronous request. (optional)
         :param str business_unit_id: The ID of the business unit to which the forecast belongs (required)
         :param date week_date_id: First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required)
-        :param WfmProcessUploadRequest body:  (required)
+        :param WfmProcessUploadRequest body: body (required)
         :return: ImportForecastResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -12949,6 +12951,168 @@ class WorkforceManagementApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='UserScheduleContainer',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_workforcemanagement_team_adherence_historical(self, team_id: str, **kwargs) -> 'WfmHistoricalAdherenceResponse':
+        """
+        Request a teams historical adherence report
+        The maximum supported range for historical adherence queries is 31 days, or 7 days with includeExceptions = true
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_workforcemanagement_team_adherence_historical(team_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str team_id: The ID of the team (required)
+        :param WfmHistoricalAdherenceQueryForTeams body: body
+        :return: WfmHistoricalAdherenceResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['team_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_workforcemanagement_team_adherence_historical" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'team_id' is set
+        if ('team_id' not in params) or (params['team_id'] is None):
+            raise ValueError("Missing the required parameter `team_id` when calling `post_workforcemanagement_team_adherence_historical`")
+
+
+        resource_path = '/api/v2/workforcemanagement/teams/{teamId}/adherence/historical'.replace('{format}', 'json')
+        path_params = {}
+        if 'team_id' in params:
+            path_params['teamId'] = params['team_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='WfmHistoricalAdherenceResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_workforcemanagement_team_shrinkage_jobs(self, team_id: str, **kwargs) -> 'WfmHistoricalShrinkageResponse':
+        """
+        Request a historical shrinkage report
+        The maximum supported range for historical shrinkage queries is up to 32 days
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_workforcemanagement_team_shrinkage_jobs(team_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str team_id: The ID of the team (required)
+        :param WfmHistoricalShrinkageTeamsRequest body: body
+        :return: WfmHistoricalShrinkageResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['team_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_workforcemanagement_team_shrinkage_jobs" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'team_id' is set
+        if ('team_id' not in params) or (params['team_id'] is None):
+            raise ValueError("Missing the required parameter `team_id` when calling `post_workforcemanagement_team_shrinkage_jobs`")
+
+
+        resource_path = '/api/v2/workforcemanagement/teams/{teamId}/shrinkage/jobs'.replace('{format}', 'json')
+        path_params = {}
+        if 'team_id' in params:
+            path_params['teamId'] = params['team_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='WfmHistoricalShrinkageResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

@@ -54,6 +54,7 @@ class KeyPerformanceIndicator(object):
             'id': 'str',
             'name': 'str',
             'optimization_type': 'str',
+            'problem_type': 'str',
             'date_created': 'datetime',
             'date_modified': 'datetime',
             'description': 'str',
@@ -71,6 +72,7 @@ class KeyPerformanceIndicator(object):
             'id': 'id',
             'name': 'name',
             'optimization_type': 'optimizationType',
+            'problem_type': 'problemType',
             'date_created': 'dateCreated',
             'date_modified': 'dateModified',
             'description': 'description',
@@ -87,6 +89,7 @@ class KeyPerformanceIndicator(object):
         self._id = None
         self._name = None
         self._optimization_type = None
+        self._problem_type = None
         self._date_created = None
         self._date_modified = None
         self._description = None
@@ -175,6 +178,35 @@ class KeyPerformanceIndicator(object):
             self._optimization_type = "outdated_sdk_version"
         else:
             self._optimization_type = optimization_type
+
+    @property
+    def problem_type(self) -> str:
+        """
+        Gets the problem_type of this KeyPerformanceIndicator.
+        The problem type of the Key Performance Indicator.
+
+        :return: The problem_type of this KeyPerformanceIndicator.
+        :rtype: str
+        """
+        return self._problem_type
+
+    @problem_type.setter
+    def problem_type(self, problem_type: str) -> None:
+        """
+        Sets the problem_type of this KeyPerformanceIndicator.
+        The problem type of the Key Performance Indicator.
+
+        :param problem_type: The problem_type of this KeyPerformanceIndicator.
+        :type: str
+        """
+        if isinstance(problem_type, int):
+            problem_type = str(problem_type)
+        allowed_values = ["Classification", "Regression"]
+        if problem_type.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for problem_type -> " + problem_type)
+            self._problem_type = "outdated_sdk_version"
+        else:
+            self._problem_type = problem_type
 
     @property
     def date_created(self) -> datetime:

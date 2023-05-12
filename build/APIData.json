@@ -36330,7 +36330,7 @@
       }
     ],
     "return": "BusinessUnitResponse",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.WorkforceManagementApi();\nbusiness_unit_id = 'business_unit_id_example' # str | The ID of the business unit, or 'mine' for the business unit of the logged-in user.\nexpand = ['expand_example'] # list[str] |  (optional)\n\ntry:\n    # Get business unit\n    api_response = api_instance.get_workforcemanagement_businessunit(business_unit_id, expand=expand)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit: %s\\n\" % e)"
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.WorkforceManagementApi();\nbusiness_unit_id = 'business_unit_id_example' # str | The ID of the business unit, or 'mine' for the business unit of the logged-in user.\nexpand = ['expand_example'] # list[str] | Include to access additional data on the business unit (optional)\n\ntry:\n    # Get business unit\n    api_response = api_instance.get_workforcemanagement_businessunit(business_unit_id, expand=expand)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit: %s\\n\" % e)"
   },
   "get_workforcemanagement_businessunit_activitycode": {
     "operationId": "get_workforcemanagement_businessunit_activitycode",
@@ -36703,7 +36703,7 @@
       }
     ],
     "return": "BuShortTermForecast",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.WorkforceManagementApi();\nbusiness_unit_id = 'business_unit_id_example' # str | The ID of the business unit to which the forecast belongs\nweek_date_id = '2013-10-20' # date | The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\nforecast_id = 'forecast_id_example' # str | The ID of the forecast\nexpand = ['expand_example'] # list[str] |  (optional)\n\ntry:\n    # Get a short term forecast\n    api_response = api_instance.get_workforcemanagement_businessunit_week_shorttermforecast(business_unit_id, week_date_id, forecast_id, expand=expand)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_week_shorttermforecast: %s\\n\" % e)"
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.WorkforceManagementApi();\nbusiness_unit_id = 'business_unit_id_example' # str | The ID of the business unit to which the forecast belongs\nweek_date_id = '2013-10-20' # date | The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\nforecast_id = 'forecast_id_example' # str | The ID of the forecast\nexpand = ['expand_example'] # list[str] | Include to access additional data on the forecast (optional)\n\ntry:\n    # Get a short term forecast\n    api_response = api_instance.get_workforcemanagement_businessunit_week_shorttermforecast(business_unit_id, week_date_id, forecast_id, expand=expand)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_week_shorttermforecast: %s\\n\" % e)"
   },
   "get_workforcemanagement_businessunit_week_shorttermforecast_data": {
     "operationId": "get_workforcemanagement_businessunit_week_shorttermforecast_data",
@@ -37349,7 +37349,7 @@
       }
     ],
     "return": "WorkPlanListResponse",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.WorkforceManagementApi();\nmanagement_unit_id = 'management_unit_id_example' # str | The ID of the management unit, or 'mine' for the management unit of the logged-in user.\nexpand = ['expand_example'] # list[str] |  (optional)\n\ntry:\n    # Get work plans\n    api_response = api_instance.get_workforcemanagement_managementunit_workplans(management_unit_id, expand=expand)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling WorkforceManagementApi->get_workforcemanagement_managementunit_workplans: %s\\n\" % e)"
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.WorkforceManagementApi();\nmanagement_unit_id = 'management_unit_id_example' # str | The ID of the management unit, or 'mine' for the management unit of the logged-in user.\nexpand = ['expand_example'] # list[str] | Include to access additional data on the work plans (optional)\n\ntry:\n    # Get work plans\n    api_response = api_instance.get_workforcemanagement_managementunit_workplans(management_unit_id, expand=expand)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling WorkforceManagementApi->get_workforcemanagement_managementunit_workplans: %s\\n\" % e)"
   },
   "get_workforcemanagement_managementunits": {
     "operationId": "get_workforcemanagement_managementunits",
@@ -38411,7 +38411,7 @@
       }
     ],
     "return": "AsyncForecastOperationResult",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.WorkforceManagementApi();\nbusiness_unit_id = 'business_unit_id_example' # str | The ID of the business unit to which the forecast belongs\nweek_date_id = '2013-10-20' # date | The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\nbody = PureCloudPlatformClientV2.GenerateBuForecastRequest() # GenerateBuForecastRequest | \nforce_async = True # bool | Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes (optional)\n\ntry:\n    # Generate a short term forecast\n    api_response = api_instance.post_workforcemanagement_businessunit_week_shorttermforecasts_generate(business_unit_id, week_date_id, body, force_async=force_async)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling WorkforceManagementApi->post_workforcemanagement_businessunit_week_shorttermforecasts_generate: %s\\n\" % e)"
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.WorkforceManagementApi();\nbusiness_unit_id = 'business_unit_id_example' # str | The ID of the business unit to which the forecast belongs\nweek_date_id = '2013-10-20' # date | The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\nbody = PureCloudPlatformClientV2.GenerateBuForecastRequest() # GenerateBuForecastRequest | body\nforce_async = True # bool | Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes (optional)\n\ntry:\n    # Generate a short term forecast\n    api_response = api_instance.post_workforcemanagement_businessunit_week_shorttermforecasts_generate(business_unit_id, week_date_id, body, force_async=force_async)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling WorkforceManagementApi->post_workforcemanagement_businessunit_week_shorttermforecasts_generate: %s\\n\" % e)"
   },
   "post_workforcemanagement_businessunit_week_shorttermforecasts_import": {
     "operationId": "post_workforcemanagement_businessunit_week_shorttermforecasts_import",
@@ -38435,7 +38435,7 @@
       }
     ],
     "return": "ImportForecastResponse",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.WorkforceManagementApi();\nbusiness_unit_id = 'business_unit_id_example' # str | The ID of the business unit to which the forecast belongs\nweek_date_id = '2013-10-20' # date | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\nbody = PureCloudPlatformClientV2.WfmProcessUploadRequest() # WfmProcessUploadRequest | \n\ntry:\n    # Starts importing the uploaded short term forecast\n    api_response = api_instance.post_workforcemanagement_businessunit_week_shorttermforecasts_import(business_unit_id, week_date_id, body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling WorkforceManagementApi->post_workforcemanagement_businessunit_week_shorttermforecasts_import: %s\\n\" % e)"
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.WorkforceManagementApi();\nbusiness_unit_id = 'business_unit_id_example' # str | The ID of the business unit to which the forecast belongs\nweek_date_id = '2013-10-20' # date | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd\nbody = PureCloudPlatformClientV2.WfmProcessUploadRequest() # WfmProcessUploadRequest | body\n\ntry:\n    # Starts importing the uploaded short term forecast\n    api_response = api_instance.post_workforcemanagement_businessunit_week_shorttermforecasts_import(business_unit_id, week_date_id, body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling WorkforceManagementApi->post_workforcemanagement_businessunit_week_shorttermforecasts_import: %s\\n\" % e)"
   },
   "post_workforcemanagement_businessunit_week_shorttermforecasts_import_uploadurl": {
     "operationId": "post_workforcemanagement_businessunit_week_shorttermforecasts_import_uploadurl",
@@ -39043,6 +39043,44 @@
     ],
     "return": "UserScheduleContainer",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.WorkforceManagementApi();\nbody = PureCloudPlatformClientV2.CurrentUserScheduleRequestBody() # CurrentUserScheduleRequestBody | body (optional)\n\ntry:\n    # Get published schedule for the current user\n    api_response = api_instance.post_workforcemanagement_schedules(body=body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling WorkforceManagementApi->post_workforcemanagement_schedules: %s\\n\" % e)"
+  },
+  "post_workforcemanagement_team_adherence_historical": {
+    "operationId": "post_workforcemanagement_team_adherence_historical",
+    "functionName": "post_workforcemanagement_team_adherence_historical",
+    "signature": "post_workforcemanagement_team_adherence_historical(team_id, body)",
+    "parameters": [
+      {
+        "name": "team_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "WfmHistoricalAdherenceQueryForTeams",
+        "required": "false"
+      }
+    ],
+    "return": "WfmHistoricalAdherenceResponse",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.WorkforceManagementApi();\nteam_id = 'team_id_example' # str | The ID of the team\nbody = PureCloudPlatformClientV2.WfmHistoricalAdherenceQueryForTeams() # WfmHistoricalAdherenceQueryForTeams | body (optional)\n\ntry:\n    # Request a teams historical adherence report\n    api_response = api_instance.post_workforcemanagement_team_adherence_historical(team_id, body=body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling WorkforceManagementApi->post_workforcemanagement_team_adherence_historical: %s\\n\" % e)"
+  },
+  "post_workforcemanagement_team_shrinkage_jobs": {
+    "operationId": "post_workforcemanagement_team_shrinkage_jobs",
+    "functionName": "post_workforcemanagement_team_shrinkage_jobs",
+    "signature": "post_workforcemanagement_team_shrinkage_jobs(team_id, body)",
+    "parameters": [
+      {
+        "name": "team_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "WfmHistoricalShrinkageTeamsRequest",
+        "required": "false"
+      }
+    ],
+    "return": "WfmHistoricalShrinkageResponse",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.WorkforceManagementApi();\nteam_id = 'team_id_example' # str | The ID of the team\nbody = PureCloudPlatformClientV2.WfmHistoricalShrinkageTeamsRequest() # WfmHistoricalShrinkageTeamsRequest | body (optional)\n\ntry:\n    # Request a historical shrinkage report\n    api_response = api_instance.post_workforcemanagement_team_shrinkage_jobs(team_id, body=body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling WorkforceManagementApi->post_workforcemanagement_team_shrinkage_jobs: %s\\n\" % e)"
   },
   "post_workforcemanagement_timeofflimits_available_query": {
     "operationId": "post_workforcemanagement_timeofflimits_available_query",

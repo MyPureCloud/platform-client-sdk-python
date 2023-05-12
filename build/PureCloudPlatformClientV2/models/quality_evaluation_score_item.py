@@ -253,7 +253,7 @@ class QualityEvaluationScoreItem(object):
     def max_points(self) -> int:
         """
         Gets the max_points of this QualityEvaluationScoreItem.
-        Gamification max points for this metric
+        The maximum Gamification points a user may earn for this metric
 
         :return: The max_points of this QualityEvaluationScoreItem.
         :rtype: int
@@ -264,7 +264,7 @@ class QualityEvaluationScoreItem(object):
     def max_points(self, max_points: int) -> None:
         """
         Sets the max_points of this QualityEvaluationScoreItem.
-        Gamification max points for this metric
+        The maximum Gamification points a user may earn for this metric
 
         :param max_points: The max_points of this QualityEvaluationScoreItem.
         :type: int

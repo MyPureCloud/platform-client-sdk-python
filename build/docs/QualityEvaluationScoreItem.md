@@ -14,7 +14,7 @@ title: QualityEvaluationScoreItem
 | **form_name** | **str** | The name of form | [optional] |
 | **points** | **int** | Gamification points earned for this metric | [optional] |
 | **evaluation_score** | **float** | The quality score of evaluation as a percentage | [optional] |
-| **max_points** | **int** | Gamification max points for this metric | [optional] |
+| **max_points** | **int** | The maximum Gamification points a user may earn for this metric | [optional] |
 | **media_types** | **list[str]** | A list of media types for the metric | [optional] |
 {: class="table table-striped"}
 

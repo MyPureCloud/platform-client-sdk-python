@@ -218,7 +218,9 @@ class ViewFilter(object):
             'has_sensitive_data': 'bool',
             'sub_path': 'str',
             'user_state': 'str',
-            'is_cleared_by_customer': 'bool'
+            'is_cleared_by_customer': 'bool',
+            'evaluation_assignee_ids': 'list[str]',
+            'evaluation_assigned': 'bool'
         }
 
         self.attribute_map = {
@@ -387,7 +389,9 @@ class ViewFilter(object):
             'has_sensitive_data': 'hasSensitiveData',
             'sub_path': 'subPath',
             'user_state': 'userState',
-            'is_cleared_by_customer': 'isClearedByCustomer'
+            'is_cleared_by_customer': 'isClearedByCustomer',
+            'evaluation_assignee_ids': 'evaluationAssigneeIds',
+            'evaluation_assigned': 'evaluationAssigned'
         }
 
         self._media_types = None
@@ -556,6 +560,8 @@ class ViewFilter(object):
         self._sub_path = None
         self._user_state = None
         self._is_cleared_by_customer = None
+        self._evaluation_assignee_ids = None
+        self._evaluation_assigned = None
 
     @property
     def media_types(self) -> List[str]:
@@ -4550,6 +4556,54 @@ class ViewFilter(object):
         
 
         self._is_cleared_by_customer = is_cleared_by_customer
+
+    @property
+    def evaluation_assignee_ids(self) -> List[str]:
+        """
+        Gets the evaluation_assignee_ids of this ViewFilter.
+        The evaluation assignee ids that are used to filter the view.
+
+        :return: The evaluation_assignee_ids of this ViewFilter.
+        :rtype: list[str]
+        """
+        return self._evaluation_assignee_ids
+
+    @evaluation_assignee_ids.setter
+    def evaluation_assignee_ids(self, evaluation_assignee_ids: List[str]) -> None:
+        """
+        Sets the evaluation_assignee_ids of this ViewFilter.
+        The evaluation assignee ids that are used to filter the view.
+
+        :param evaluation_assignee_ids: The evaluation_assignee_ids of this ViewFilter.
+        :type: list[str]
+        """
+        
+
+        self._evaluation_assignee_ids = evaluation_assignee_ids
+
+    @property
+    def evaluation_assigned(self) -> bool:
+        """
+        Gets the evaluation_assigned of this ViewFilter.
+        Filter to indicate that the user has no assigned evaluation.
+
+        :return: The evaluation_assigned of this ViewFilter.
+        :rtype: bool
+        """
+        return self._evaluation_assigned
+
+    @evaluation_assigned.setter
+    def evaluation_assigned(self, evaluation_assigned: bool) -> None:
+        """
+        Sets the evaluation_assigned of this ViewFilter.
+        Filter to indicate that the user has no assigned evaluation.
+
+        :param evaluation_assigned: The evaluation_assigned of this ViewFilter.
+        :type: bool
+        """
+        
+
+        self._evaluation_assigned = evaluation_assigned
 
     def to_dict(self):
         """

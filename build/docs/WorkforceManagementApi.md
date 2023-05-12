@@ -160,6 +160,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_workforcemanagement_managementunits**](WorkforceManagementApi.html#post_workforcemanagement_managementunits) | Add a management unit|
 |[**post_workforcemanagement_notifications_update**](WorkforceManagementApi.html#post_workforcemanagement_notifications_update) | Mark a list of notifications as read or unread|
 |[**post_workforcemanagement_schedules**](WorkforceManagementApi.html#post_workforcemanagement_schedules) | Get published schedule for the current user|
+|[**post_workforcemanagement_team_adherence_historical**](WorkforceManagementApi.html#post_workforcemanagement_team_adherence_historical) | Request a teams historical adherence report|
+|[**post_workforcemanagement_team_shrinkage_jobs**](WorkforceManagementApi.html#post_workforcemanagement_team_shrinkage_jobs) | Request a historical shrinkage report|
 |[**post_workforcemanagement_timeofflimits_available_query**](WorkforceManagementApi.html#post_workforcemanagement_timeofflimits_available_query) | Queries available time off for the current user|
 |[**post_workforcemanagement_timeoffrequests**](WorkforceManagementApi.html#post_workforcemanagement_timeoffrequests) | Create a time off request for the current user|
 |[**put_workforcemanagement_managementunit_timeofflimit_values**](WorkforceManagementApi.html#put_workforcemanagement_managementunit_timeofflimit_values) | Sets daily values for a date range of time off limit object|
@@ -1458,7 +1460,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
 business_unit_id = 'business_unit_id_example' # str | The ID of the business unit, or 'mine' for the business unit of the logged-in user.
-expand = ['expand_example'] # list[str] |  (optional)
+expand = ['expand_example'] # list[str] | Include to access additional data on the business unit (optional)
 
 try:
     # Get business unit
@@ -1474,7 +1476,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **business_unit_id** | **str**| The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. |  |
-| **expand** | [**list[str]**](str.html)|  | [optional] <br />**Values**: settings, settings.timeZone, settings.startDayOfWeek, settings.shortTermForecasting, settings.scheduling |
+| **expand** | [**list[str]**](str.html)| Include to access additional data on the business unit | [optional] <br />**Values**: settings, settings.timeZone, settings.startDayOfWeek, settings.shortTermForecasting, settings.scheduling |
 {: class="table table-striped"}
 
 ### Return type
@@ -2451,7 +2453,7 @@ api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
 business_unit_id = 'business_unit_id_example' # str | The ID of the business unit to which the forecast belongs
 week_date_id = '2013-10-20' # date | The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 forecast_id = 'forecast_id_example' # str | The ID of the forecast
-expand = ['expand_example'] # list[str] |  (optional)
+expand = ['expand_example'] # list[str] | Include to access additional data on the forecast (optional)
 
 try:
     # Get a short term forecast
@@ -2469,7 +2471,7 @@ except ApiException as e:
 | **business_unit_id** | **str**| The ID of the business unit to which the forecast belongs |  |
 | **week_date_id** | **date**| The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
 | **forecast_id** | **str**| The ID of the forecast |  |
-| **expand** | [**list[str]**](str.html)|  | [optional] <br />**Values**: planningGroups, generationResults |
+| **expand** | [**list[str]**](str.html)| Include to access additional data on the forecast | [optional] <br />**Values**: planningGroups, generationResults |
 {: class="table table-striped"}
 
 ### Return type
@@ -4339,7 +4341,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
 management_unit_id = 'management_unit_id_example' # str | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
-expand = ['expand_example'] # list[str] |  (optional)
+expand = ['expand_example'] # list[str] | Include to access additional data on the work plans (optional)
 
 try:
     # Get work plans
@@ -4355,7 +4357,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **management_unit_id** | **str**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
-| **expand** | [**list[str]**](str.html)|  | [optional] <br />**Values**: agentCount, agents, optionalDays, shifts, shiftStartVariances, details |
+| **expand** | [**list[str]**](str.html)| Include to access additional data on the work plans | [optional] <br />**Values**: agentCount, agents, optionalDays, shifts, shiftStartVariances, details |
 {: class="table table-striped"}
 
 ### Return type
@@ -6952,7 +6954,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
 business_unit_id = 'business_unit_id_example' # str | The ID of the business unit to which the forecast belongs
 week_date_id = '2013-10-20' # date | The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
-body = PureCloudPlatformClientV2.GenerateBuForecastRequest() # GenerateBuForecastRequest | 
+body = PureCloudPlatformClientV2.GenerateBuForecastRequest() # GenerateBuForecastRequest | body
 force_async = True # bool | Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes (optional)
 
 try:
@@ -6970,7 +6972,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **business_unit_id** | **str**| The ID of the business unit to which the forecast belongs |  |
 | **week_date_id** | **date**| The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
-| **body** | [**GenerateBuForecastRequest**](GenerateBuForecastRequest.html)|  |  |
+| **body** | [**GenerateBuForecastRequest**](GenerateBuForecastRequest.html)| body |  |
 | **force_async** | **bool**| Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes | [optional]  |
 {: class="table table-striped"}
 
@@ -7011,7 +7013,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
 business_unit_id = 'business_unit_id_example' # str | The ID of the business unit to which the forecast belongs
 week_date_id = '2013-10-20' # date | First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
-body = PureCloudPlatformClientV2.WfmProcessUploadRequest() # WfmProcessUploadRequest | 
+body = PureCloudPlatformClientV2.WfmProcessUploadRequest() # WfmProcessUploadRequest | body
 
 try:
     # Starts importing the uploaded short term forecast
@@ -7028,7 +7030,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **business_unit_id** | **str**| The ID of the business unit to which the forecast belongs |  |
 | **week_date_id** | **date**| First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
-| **body** | [**WfmProcessUploadRequest**](WfmProcessUploadRequest.html)|  |  |
+| **body** | [**WfmProcessUploadRequest**](WfmProcessUploadRequest.html)| body |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -8659,6 +8661,116 @@ except ApiException as e:
 ### Return type
 
 [**UserScheduleContainer**](UserScheduleContainer.html)
+
+<a name="post_workforcemanagement_team_adherence_historical"></a>
+
+## [**WfmHistoricalAdherenceResponse**](WfmHistoricalAdherenceResponse.html) post_workforcemanagement_team_adherence_historical(team_id, body=body)
+
+
+
+Request a teams historical adherence report
+
+The maximum supported range for historical adherence queries is 31 days, or 7 days with includeExceptions = true
+
+
+
+Wraps POST /api/v2/workforcemanagement/teams/{teamId}/adherence/historical 
+
+Requires ANY permissions: 
+
+* wfm:historicalAdherence:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+team_id = 'team_id_example' # str | The ID of the team
+body = PureCloudPlatformClientV2.WfmHistoricalAdherenceQueryForTeams() # WfmHistoricalAdherenceQueryForTeams | body (optional)
+
+try:
+    # Request a teams historical adherence report
+    api_response = api_instance.post_workforcemanagement_team_adherence_historical(team_id, body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_team_adherence_historical: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **team_id** | **str**| The ID of the team |  |
+| **body** | [**WfmHistoricalAdherenceQueryForTeams**](WfmHistoricalAdherenceQueryForTeams.html)| body | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**WfmHistoricalAdherenceResponse**](WfmHistoricalAdherenceResponse.html)
+
+<a name="post_workforcemanagement_team_shrinkage_jobs"></a>
+
+## [**WfmHistoricalShrinkageResponse**](WfmHistoricalShrinkageResponse.html) post_workforcemanagement_team_shrinkage_jobs(team_id, body=body)
+
+
+
+Request a historical shrinkage report
+
+The maximum supported range for historical shrinkage queries is up to 32 days
+
+
+
+Wraps POST /api/v2/workforcemanagement/teams/{teamId}/shrinkage/jobs 
+
+Requires ANY permissions: 
+
+* wfm:shrinkage:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+team_id = 'team_id_example' # str | The ID of the team
+body = PureCloudPlatformClientV2.WfmHistoricalShrinkageTeamsRequest() # WfmHistoricalShrinkageTeamsRequest | body (optional)
+
+try:
+    # Request a historical shrinkage report
+    api_response = api_instance.post_workforcemanagement_team_shrinkage_jobs(team_id, body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_team_shrinkage_jobs: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **team_id** | **str**| The ID of the team |  |
+| **body** | [**WfmHistoricalShrinkageTeamsRequest**](WfmHistoricalShrinkageTeamsRequest.html)| body | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**WfmHistoricalShrinkageResponse**](WfmHistoricalShrinkageResponse.html)
 
 <a name="post_workforcemanagement_timeofflimits_available_query"></a>
 

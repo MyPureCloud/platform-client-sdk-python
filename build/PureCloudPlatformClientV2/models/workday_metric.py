@@ -55,6 +55,7 @@ class WorkdayMetric(object):
             'metric': 'Metric',
             'objective': 'Objective',
             'points': 'int',
+            'max_points': 'int',
             'value': 'float',
             'punctuality_events': 'list[PunctualityEvent]'
         }
@@ -63,6 +64,7 @@ class WorkdayMetric(object):
             'metric': 'metric',
             'objective': 'objective',
             'points': 'points',
+            'max_points': 'maxPoints',
             'value': 'value',
             'punctuality_events': 'punctualityEvents'
         }
@@ -70,6 +72,7 @@ class WorkdayMetric(object):
         self._metric = None
         self._objective = None
         self._points = None
+        self._max_points = None
         self._value = None
         self._punctuality_events = None
 
@@ -144,6 +147,30 @@ class WorkdayMetric(object):
         
 
         self._points = points
+
+    @property
+    def max_points(self) -> int:
+        """
+        Gets the max_points of this WorkdayMetric.
+        The maximum Gamification points a user may earn for this metric
+
+        :return: The max_points of this WorkdayMetric.
+        :rtype: int
+        """
+        return self._max_points
+
+    @max_points.setter
+    def max_points(self, max_points: int) -> None:
+        """
+        Sets the max_points of this WorkdayMetric.
+        The maximum Gamification points a user may earn for this metric
+
+        :param max_points: The max_points of this WorkdayMetric.
+        :type: int
+        """
+        
+
+        self._max_points = max_points
 
     @property
     def value(self) -> float:
