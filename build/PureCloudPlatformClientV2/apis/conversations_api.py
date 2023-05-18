@@ -169,7 +169,6 @@ class ConversationsApi(object):
             if not config.api_client:
                 config.api_client = ApiClient()
             self.api_client = config.api_client
-
     def delete_analytics_conversations_details_job(self, job_id: str, **kwargs) -> None:
         """
         Delete/cancel an async details job
@@ -247,7 +246,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def delete_conversation_participant_code(self, conversation_id: str, participant_id: str, add_communication_code: str, **kwargs) -> None:
         """
         Delete a code used to add a communication to this participant
@@ -337,7 +335,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def delete_conversation_participant_flaggedreason(self, conversation_id: str, participant_id: str, **kwargs) -> None:
         """
         Remove flagged reason from conversation participant.
@@ -421,7 +418,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def delete_conversations_call_participant_consult(self, conversation_id: str, participant_id: str, **kwargs) -> None:
         """
         Cancel the transfer
@@ -505,7 +501,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def delete_conversations_email_messages_draft_attachment(self, conversation_id: str, attachment_id: str, **kwargs) -> None:
         """
         Delete attachment from draft
@@ -589,7 +584,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def delete_conversations_messaging_integrations_facebook_integration_id(self, integration_id: str, **kwargs) -> None:
         """
         Delete a Facebook messaging integration
@@ -667,7 +661,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def delete_conversations_messaging_integrations_line_integration_id(self, integration_id: str, **kwargs) -> None:
         """
         Delete a LINE messenger integration
@@ -745,7 +738,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def delete_conversations_messaging_integrations_open_integration_id(self, integration_id: str, **kwargs) -> None:
         """
         Delete an Open messaging integration
@@ -823,7 +815,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def delete_conversations_messaging_integrations_twitter_integration_id(self, integration_id: str, **kwargs) -> None:
         """
         Delete a Twitter messaging integration
@@ -901,7 +892,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def delete_conversations_messaging_integrations_whatsapp_integration_id(self, integration_id: str, **kwargs) -> 'WhatsAppIntegration':
         """
         Delete a WhatsApp messaging integration
@@ -979,7 +969,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def delete_conversations_messaging_supportedcontent_supported_content_id(self, supported_content_id: str, **kwargs) -> None:
         """
         Delete a supported content profile
@@ -1057,7 +1046,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_analytics_conversation_details(self, conversation_id: str, **kwargs) -> 'AnalyticsConversationWithoutAttributes':
         """
         Get a conversation by id
@@ -1135,7 +1123,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_analytics_conversations_details(self, **kwargs) -> 'AnalyticsConversationWithoutAttributesMultiGetResponse':
         """
         Gets multiple conversations by id
@@ -1210,7 +1197,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_analytics_conversations_details_job(self, job_id: str, **kwargs) -> 'AsyncQueryStatus':
         """
         Get status for async query for conversation details
@@ -1288,7 +1274,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_analytics_conversations_details_job_results(self, job_id: str, **kwargs) -> 'AnalyticsConversationAsyncQueryResponse':
         """
         Fetch a page of results for an async details job
@@ -1372,7 +1357,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_analytics_conversations_details_jobs_availability(self, **kwargs) -> 'DataAvailabilityResponse':
         """
         Lookup the datalake availability date and time
@@ -1444,7 +1428,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_conversation(self, conversation_id: str, **kwargs) -> 'Conversation':
         """
         Get conversation
@@ -1522,7 +1505,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_conversation_participant_secureivrsession(self, conversation_id: str, participant_id: str, secure_session_id: str, **kwargs) -> 'SecureSession':
         """
         Fetch info on a secure session
@@ -1612,7 +1594,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_conversation_participant_secureivrsessions(self, conversation_id: str, participant_id: str, **kwargs) -> 'SecureSessionEntityListing':
         """
         Get a list of secure sessions for this participant.
@@ -1696,7 +1677,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_conversation_participant_wrapup(self, conversation_id: str, participant_id: str, **kwargs) -> 'AssignedWrapupCode':
         """
         Get the wrap-up for this conversation participant. 
@@ -1783,7 +1763,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_conversation_participant_wrapupcodes(self, conversation_id: str, participant_id: str, **kwargs) -> List['WrapupCode']:
         """
         Get list of wrapup codes for this conversation participant
@@ -1867,7 +1846,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_conversation_secureattributes(self, conversation_id: str, **kwargs) -> 'ConversationSecureAttributes':
         """
         Get the secure attributes on a conversation.
@@ -1945,7 +1923,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_conversations(self, **kwargs) -> 'ConversationEntityListing':
         """
         Get active conversations for the logged in user
@@ -2020,7 +1997,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_conversations_call(self, conversation_id: str, **kwargs) -> 'CallConversation':
         """
         Get call conversation
@@ -2098,7 +2074,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_conversations_call_participant_communication_wrapup(self, conversation_id: str, participant_id: str, communication_id: str, **kwargs) -> 'AssignedWrapupCode':
         """
         Get the wrap-up for this conversation communication. 
@@ -2191,7 +2166,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_conversations_call_participant_wrapup(self, conversation_id: str, participant_id: str, **kwargs) -> 'AssignedWrapupCode':
         """
         Get the wrap-up for this conversation participant. 
@@ -2278,7 +2252,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_conversations_call_participant_wrapupcodes(self, conversation_id: str, participant_id: str, **kwargs) -> List['WrapupCode']:
         """
         Get list of wrapup codes for this conversation participant
@@ -2362,7 +2335,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_conversations_callback(self, conversation_id: str, **kwargs) -> 'CallbackConversation':
         """
         Get callback conversation
@@ -2440,7 +2412,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_conversations_callback_participant_communication_wrapup(self, conversation_id: str, participant_id: str, communication_id: str, **kwargs) -> 'AssignedWrapupCode':
         """
         Get the wrap-up for this conversation communication. 
@@ -2533,7 +2504,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_conversations_callback_participant_wrapup(self, conversation_id: str, participant_id: str, **kwargs) -> 'AssignedWrapupCode':
         """
         Get the wrap-up for this conversation participant. 
@@ -2620,7 +2590,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_conversations_callback_participant_wrapupcodes(self, conversation_id: str, participant_id: str, **kwargs) -> List['WrapupCode']:
         """
         Get list of wrapup codes for this conversation participant
@@ -2704,7 +2673,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_conversations_callbacks(self, **kwargs) -> 'CallbackConversationEntityListing':
         """
         Get active callback conversations for the logged in user
@@ -2776,7 +2744,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_conversations_calls(self, **kwargs) -> 'CallConversationEntityListing':
         """
         Get active call conversations for the logged in user
@@ -2848,7 +2815,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_conversations_calls_history(self, **kwargs) -> 'CallHistoryConversationEntityListing':
         """
         Get call history
@@ -2932,7 +2898,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_conversations_calls_maximumconferenceparties(self, **kwargs) -> 'MaxParticipants':
         """
         Get the maximum number of participants that this user can have on a conference
@@ -3004,7 +2969,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_conversations_chat(self, conversation_id: str, **kwargs) -> 'ChatConversation':
         """
         Get chat conversation
@@ -3082,7 +3046,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_conversations_chat_message(self, conversation_id: str, message_id: str, **kwargs) -> 'WebChatMessage':
         """
         Get a web chat conversation message
@@ -3166,7 +3129,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_conversations_chat_messages(self, conversation_id: str, **kwargs) -> 'WebChatMessageEntityList':
         """
         Get the messages of a chat conversation.
@@ -3256,7 +3218,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_conversations_chat_participant_communication_wrapup(self, conversation_id: str, participant_id: str, communication_id: str, **kwargs) -> 'AssignedWrapupCode':
         """
         Get the wrap-up for this conversation communication. 
@@ -3349,7 +3310,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_conversations_chat_participant_wrapup(self, conversation_id: str, participant_id: str, **kwargs) -> 'AssignedWrapupCode':
         """
         Get the wrap-up for this conversation participant. 
@@ -3436,7 +3396,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_conversations_chat_participant_wrapupcodes(self, conversation_id: str, participant_id: str, **kwargs) -> List['WrapupCode']:
         """
         Get list of wrapup codes for this conversation participant
@@ -3520,7 +3479,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_conversations_chats(self, **kwargs) -> 'ChatConversationEntityListing':
         """
         Get active chat conversations for the logged in user
@@ -3592,7 +3550,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_conversations_cobrowsesession(self, conversation_id: str, **kwargs) -> 'CobrowseConversation':
         """
         Get cobrowse conversation
@@ -3670,7 +3627,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_conversations_cobrowsesession_participant_communication_wrapup(self, conversation_id: str, participant_id: str, communication_id: str, **kwargs) -> 'AssignedWrapupCode':
         """
         Get the wrap-up for this conversation communication. 
@@ -3763,7 +3719,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_conversations_cobrowsesession_participant_wrapup(self, conversation_id: str, participant_id: str, **kwargs) -> 'AssignedWrapupCode':
         """
         Get the wrap-up for this conversation participant. 
@@ -3850,7 +3805,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_conversations_cobrowsesession_participant_wrapupcodes(self, conversation_id: str, participant_id: str, **kwargs) -> List['WrapupCode']:
         """
         Get list of wrapup codes for this conversation participant
@@ -3934,7 +3888,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_conversations_cobrowsesessions(self, **kwargs) -> 'CobrowseConversationEntityListing':
         """
         Get active cobrowse conversations for the logged in user
@@ -4006,7 +3959,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_conversations_email(self, conversation_id: str, **kwargs) -> 'EmailConversation':
         """
         Get email conversation
@@ -4084,7 +4036,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_conversations_email_message(self, conversation_id: str, message_id: str, **kwargs) -> 'EmailMessage':
         """
         Get conversation message
@@ -4168,7 +4119,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_conversations_email_messages(self, conversation_id: str, **kwargs) -> 'EmailMessageListing':
         """
         Get conversation messages
@@ -4246,7 +4196,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_conversations_email_messages_draft(self, conversation_id: str, **kwargs) -> 'EmailMessage':
         """
         Get conversation draft reply
@@ -4324,7 +4273,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_conversations_email_participant_communication_wrapup(self, conversation_id: str, participant_id: str, communication_id: str, **kwargs) -> 'AssignedWrapupCode':
         """
         Get the wrap-up for this conversation communication. 
@@ -4417,7 +4365,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_conversations_email_participant_wrapup(self, conversation_id: str, participant_id: str, **kwargs) -> 'AssignedWrapupCode':
         """
         Get the wrap-up for this conversation participant. 
@@ -4504,7 +4451,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_conversations_email_participant_wrapupcodes(self, conversation_id: str, participant_id: str, **kwargs) -> List['WrapupCode']:
         """
         Get list of wrapup codes for this conversation participant
@@ -4588,7 +4534,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_conversations_email_settings(self, conversation_id: str, **kwargs) -> 'EmailsSettings':
         """
         Get emails settings for a given conversation
@@ -4666,7 +4611,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_conversations_emails(self, **kwargs) -> 'EmailConversationEntityListing':
         """
         Get active email conversations for the logged in user
@@ -4738,7 +4682,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_conversations_keyconfiguration(self, keyconfigurations_id: str, **kwargs) -> 'ConversationEncryptionConfiguration':
         """
         Get the encryption key configurations
@@ -4816,7 +4759,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_conversations_keyconfigurations(self, **kwargs) -> 'ConversationEncryptionConfigurationListing':
         """
         Get a list of key configurations data
@@ -4888,7 +4830,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_conversations_message(self, conversation_id: str, **kwargs) -> 'MessageConversation':
         """
         Get message conversation
@@ -4966,7 +4907,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_conversations_message_communication_messages_media_media_id(self, conversation_id: str, communication_id: str, media_id: str, **kwargs) -> 'MessageMediaData':
         """
         Get media
@@ -5056,7 +4996,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_conversations_message_details(self, message_id: str, **kwargs) -> 'MessageData':
         """
         Get message
@@ -5137,7 +5076,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_conversations_message_message(self, conversation_id: str, message_id: str, **kwargs) -> 'MessageData':
         """
         Get conversation message
@@ -5224,7 +5162,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_conversations_message_participant_communication_wrapup(self, conversation_id: str, participant_id: str, communication_id: str, **kwargs) -> 'AssignedWrapupCode':
         """
         Get the wrap-up for this conversation communication. 
@@ -5317,7 +5254,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_conversations_message_participant_wrapup(self, conversation_id: str, participant_id: str, **kwargs) -> 'AssignedWrapupCode':
         """
         Get the wrap-up for this conversation participant. 
@@ -5404,7 +5340,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_conversations_message_participant_wrapupcodes(self, conversation_id: str, participant_id: str, **kwargs) -> List['WrapupCode']:
         """
         Get list of wrapup codes for this conversation participant
@@ -5488,7 +5423,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_conversations_messages(self, **kwargs) -> 'MessageConversationEntityListing':
         """
         Get active message conversations for the logged in user
@@ -5560,7 +5494,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_conversations_messaging_facebook_app(self, **kwargs) -> 'FacebookAppCredentials':
         """
         Get Genesys Facebook App Id
@@ -5632,7 +5565,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_conversations_messaging_integrations(self, **kwargs) -> 'MessagingIntegrationEntityListing':
         """
         Get a list of Integrations
@@ -5719,7 +5651,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_conversations_messaging_integrations_facebook(self, **kwargs) -> 'FacebookIntegrationEntityListing':
         """
         Get a list of Facebook Integrations
@@ -5806,7 +5737,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_conversations_messaging_integrations_facebook_integration_id(self, integration_id: str, **kwargs) -> 'FacebookIntegration':
         """
         Get a Facebook messaging integration
@@ -5887,7 +5817,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_conversations_messaging_integrations_line(self, **kwargs) -> 'LineIntegrationEntityListing':
         """
         Get a list of LINE messenger Integrations
@@ -5974,7 +5903,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_conversations_messaging_integrations_line_integration_id(self, integration_id: str, **kwargs) -> 'LineIntegration':
         """
         Get a LINE messenger integration
@@ -6055,7 +5983,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_conversations_messaging_integrations_open(self, **kwargs) -> 'OpenIntegrationEntityListing':
         """
         Get a list of Open messaging integrations
@@ -6142,7 +6069,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_conversations_messaging_integrations_open_integration_id(self, integration_id: str, **kwargs) -> 'OpenIntegration':
         """
         Get an Open messaging integration
@@ -6223,7 +6149,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_conversations_messaging_integrations_twitter(self, **kwargs) -> 'TwitterIntegrationEntityListing':
         """
         Get a list of Twitter Integrations
@@ -6310,7 +6235,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_conversations_messaging_integrations_twitter_integration_id(self, integration_id: str, **kwargs) -> 'TwitterIntegration':
         """
         Get a Twitter messaging integration
@@ -6391,7 +6315,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_conversations_messaging_integrations_whatsapp(self, **kwargs) -> 'WhatsAppIntegrationEntityListing':
         """
         Get a list of WhatsApp Integrations
@@ -6478,7 +6401,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_conversations_messaging_integrations_whatsapp_integration_id(self, integration_id: str, **kwargs) -> 'WhatsAppIntegration':
         """
         Get a WhatsApp messaging integration
@@ -6559,7 +6481,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_conversations_messaging_sticker(self, messenger_type: str, **kwargs) -> 'MessagingStickerEntityListing':
         """
         Get a list of Messaging Stickers
@@ -6643,7 +6564,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_conversations_messaging_supportedcontent(self, **kwargs) -> 'SupportedContentListing':
         """
         Get a list of Supported Content profiles
@@ -6721,7 +6641,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_conversations_messaging_supportedcontent_default(self, **kwargs) -> 'SupportedContent':
         """
         Get the organization's default supported content profile that will be used as the default when creating an integration.
@@ -6793,7 +6712,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_conversations_messaging_supportedcontent_supported_content_id(self, supported_content_id: str, **kwargs) -> 'SupportedContent':
         """
         Get a supported content profile
@@ -6871,7 +6789,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_conversations_messaging_threadingtimeline(self, **kwargs) -> 'ConversationThreadingWindow':
         """
         Get conversation threading window timeline for each messaging type
@@ -6943,7 +6860,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_conversations_screenshare_participant_communication_wrapup(self, conversation_id: str, participant_id: str, communication_id: str, **kwargs) -> 'AssignedWrapupCode':
         """
         Get the wrap-up for this conversation communication. 
@@ -7036,7 +6952,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_conversations_settings(self, **kwargs) -> 'Settings':
         """
         Get Settings
@@ -7108,7 +7023,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_conversations_social_participant_communication_wrapup(self, conversation_id: str, participant_id: str, communication_id: str, **kwargs) -> 'AssignedWrapupCode':
         """
         Get the wrap-up for this conversation communication. 
@@ -7201,7 +7115,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_conversations_video_participant_communication_wrapup(self, conversation_id: str, participant_id: str, communication_id: str, **kwargs) -> 'AssignedWrapupCode':
         """
         Get the wrap-up for this conversation communication. 
@@ -7294,7 +7207,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def patch_conversation_participant(self, conversation_id: str, participant_id: str, body: 'MediaParticipantRequest', **kwargs) -> None:
         """
         Update a participant.
@@ -7384,7 +7296,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def patch_conversation_participant_attributes(self, conversation_id: str, participant_id: str, body: 'ParticipantAttributes', **kwargs) -> None:
         """
         Update the attributes on a conversation participant.
@@ -7474,7 +7385,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def patch_conversation_secureattributes(self, conversation_id: str, body: 'ConversationSecureAttributes', **kwargs) -> str:
         """
         Update the secure attributes on a conversation.
@@ -7558,7 +7468,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def patch_conversations_aftercallwork_conversation_id_participant_communication(self, conversation_id: str, participant_id: str, communication_id: str, body: 'AfterCallWorkUpdate', **kwargs) -> 'AfterCallWorkUpdate':
         """
         Update after-call work for this conversation communication.
@@ -7654,7 +7563,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def patch_conversations_call(self, conversation_id: str, body: 'Conversation', **kwargs) -> 'Conversation':
         """
         Update a conversation by setting its recording state, merging in other conversations to create a conference, or disconnecting all of the participants
@@ -7738,7 +7646,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def patch_conversations_call_participant(self, conversation_id: str, participant_id: str, body: 'MediaParticipantRequest', **kwargs) -> None:
         """
         Update conversation participant
@@ -7828,7 +7735,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def patch_conversations_call_participant_attributes(self, conversation_id: str, participant_id: str, body: 'ParticipantAttributes', **kwargs) -> None:
         """
         Update the attributes on a conversation participant.
@@ -7918,7 +7824,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def patch_conversations_call_participant_communication(self, conversation_id: str, participant_id: str, communication_id: str, body: 'MediaParticipantRequest', **kwargs) -> object:
         """
         Update conversation participant's communication by disconnecting it.
@@ -8014,7 +7919,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def patch_conversations_call_participant_consult(self, conversation_id: str, participant_id: str, body: 'ConsultTransferUpdate', **kwargs) -> 'ConsultTransferResponse':
         """
         Change who can speak
@@ -8104,7 +8008,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def patch_conversations_callback(self, conversation_id: str, body: 'Conversation', **kwargs) -> 'Conversation':
         """
         Update a conversation by disconnecting all of the participants
@@ -8188,7 +8091,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def patch_conversations_callback_participant(self, conversation_id: str, participant_id: str, body: 'MediaParticipantRequest', **kwargs) -> None:
         """
         Update conversation participant
@@ -8278,7 +8180,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def patch_conversations_callback_participant_attributes(self, conversation_id: str, participant_id: str, body: 'ParticipantAttributes', **kwargs) -> None:
         """
         Update the attributes on a conversation participant.
@@ -8368,7 +8269,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def patch_conversations_callback_participant_communication(self, conversation_id: str, participant_id: str, communication_id: str, body: 'MediaParticipantRequest', **kwargs) -> object:
         """
         Update conversation participant's communication by disconnecting it.
@@ -8464,7 +8364,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def patch_conversations_callbacks(self, body: 'PatchCallbackRequest', **kwargs) -> 'PatchCallbackResponse':
         """
         Update a scheduled callback
@@ -8542,7 +8441,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def patch_conversations_chat(self, conversation_id: str, body: 'Conversation', **kwargs) -> 'Conversation':
         """
         Update a conversation by disconnecting all of the participants
@@ -8626,7 +8524,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def patch_conversations_chat_participant(self, conversation_id: str, participant_id: str, body: 'MediaParticipantRequest', **kwargs) -> None:
         """
         Update conversation participant
@@ -8716,7 +8613,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def patch_conversations_chat_participant_attributes(self, conversation_id: str, participant_id: str, body: 'ParticipantAttributes', **kwargs) -> None:
         """
         Update the attributes on a conversation participant.
@@ -8806,7 +8702,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def patch_conversations_chat_participant_communication(self, conversation_id: str, participant_id: str, communication_id: str, body: 'MediaParticipantRequest', **kwargs) -> object:
         """
         Update conversation participant's communication by disconnecting it.
@@ -8902,7 +8797,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def patch_conversations_cobrowsesession(self, conversation_id: str, body: 'Conversation', **kwargs) -> 'Conversation':
         """
         Update a conversation by disconnecting all of the participants
@@ -8986,7 +8880,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def patch_conversations_cobrowsesession_participant(self, conversation_id: str, participant_id: str, **kwargs) -> None:
         """
         Update conversation participant
@@ -9073,7 +8966,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def patch_conversations_cobrowsesession_participant_attributes(self, conversation_id: str, participant_id: str, **kwargs) -> None:
         """
         Update the attributes on a conversation participant.
@@ -9160,7 +9052,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def patch_conversations_cobrowsesession_participant_communication(self, conversation_id: str, participant_id: str, communication_id: str, body: 'MediaParticipantRequest', **kwargs) -> object:
         """
         Update conversation participant's communication by disconnecting it.
@@ -9256,7 +9147,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def patch_conversations_email(self, conversation_id: str, body: 'Conversation', **kwargs) -> 'Conversation':
         """
         Update a conversation by disconnecting all of the participants
@@ -9340,7 +9230,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def patch_conversations_email_messages_draft(self, conversation_id: str, **kwargs) -> 'EmailMessage':
         """
         Reset conversation draft to its initial state and/or auto-fill draft content
@@ -9427,7 +9316,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def patch_conversations_email_participant(self, conversation_id: str, participant_id: str, body: 'MediaParticipantRequest', **kwargs) -> None:
         """
         Update conversation participant
@@ -9517,7 +9405,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def patch_conversations_email_participant_attributes(self, conversation_id: str, participant_id: str, body: 'ParticipantAttributes', **kwargs) -> None:
         """
         Update the attributes on a conversation participant.
@@ -9607,7 +9494,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def patch_conversations_email_participant_communication(self, conversation_id: str, participant_id: str, communication_id: str, body: 'MediaParticipantRequest', **kwargs) -> object:
         """
         Update conversation participant's communication by disconnecting it.
@@ -9703,7 +9589,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def patch_conversations_message(self, conversation_id: str, body: 'Conversation', **kwargs) -> 'Conversation':
         """
         Update a conversation by disconnecting all of the participants
@@ -9787,7 +9672,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def patch_conversations_message_participant(self, conversation_id: str, participant_id: str, **kwargs) -> None:
         """
         Update conversation participant
@@ -9874,7 +9758,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def patch_conversations_message_participant_attributes(self, conversation_id: str, participant_id: str, **kwargs) -> None:
         """
         Update the attributes on a conversation participant.
@@ -9961,7 +9844,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def patch_conversations_message_participant_communication(self, conversation_id: str, participant_id: str, communication_id: str, body: 'MediaParticipantRequest', **kwargs) -> object:
         """
         Update conversation participant's communication by disconnecting it.
@@ -10057,7 +9939,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def patch_conversations_messaging_integrations_facebook_integration_id(self, integration_id: str, body: 'FacebookIntegrationUpdateRequest', **kwargs) -> 'FacebookIntegration':
         """
         Update Facebook messaging integration
@@ -10141,7 +10022,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def patch_conversations_messaging_integrations_open_integration_id(self, integration_id: str, body: 'OpenIntegrationUpdateRequest', **kwargs) -> 'OpenIntegration':
         """
         Update an Open messaging integration
@@ -10225,7 +10105,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def patch_conversations_messaging_integrations_twitter_integration_id(self, integration_id: str, body: 'TwitterIntegrationRequest', **kwargs) -> 'TwitterIntegration':
         """
         Update Twitter messaging integration
@@ -10309,7 +10188,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def patch_conversations_messaging_integrations_whatsapp_integration_id(self, integration_id: str, body: 'WhatsAppIntegrationUpdateRequest', **kwargs) -> 'WhatsAppIntegration':
         """
         Update or activate a WhatsApp messaging integration
@@ -10393,7 +10271,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def patch_conversations_messaging_supportedcontent_supported_content_id(self, supported_content_id: str, body: 'SupportedContent', **kwargs) -> 'SupportedContent':
         """
         Update a supported content profile
@@ -10477,7 +10354,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def patch_conversations_settings(self, body: 'Settings', **kwargs) -> None:
         """
         Update Settings
@@ -10555,7 +10431,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def post_analytics_conversation_details_properties(self, conversation_id: str, body: 'PropertyIndexRequest', **kwargs) -> 'PropertyIndexRequest':
         """
         Index conversation properties
@@ -10639,7 +10514,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def post_analytics_conversations_aggregates_query(self, body: 'ConversationAggregationQuery', **kwargs) -> 'ConversationAggregateQueryResponse':
         """
         Query for conversation aggregates
@@ -10717,7 +10591,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def post_analytics_conversations_details_jobs(self, body: 'AsyncConversationQuery', **kwargs) -> 'AsyncQueryResponse':
         """
         Query for conversation details asynchronously
@@ -10795,7 +10668,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def post_analytics_conversations_details_query(self, body: 'ConversationQuery', **kwargs) -> 'AnalyticsConversationQueryResponse':
         """
         Query for conversation details
@@ -10873,7 +10745,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def post_conversation_assign(self, conversation_id: str, body: 'ConversationUser', **kwargs) -> str:
         """
         Attempts to manually assign a specified conversation to a specified user.  Ignores bullseye ring, PAR score, skills, and languages.
@@ -10957,7 +10828,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def post_conversation_cobrowse(self, conversation_id: str, **kwargs) -> 'CobrowseWebMessagingSession':
         """
         Creates a cobrowse session. Requires \"conversation:cobrowse:add\" (for web messaging) or \"conversation:cobrowsevoice:add\" permission.
@@ -11035,7 +10905,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def post_conversation_disconnect(self, conversation_id: str, **kwargs) -> str:
         """
         Performs a full conversation teardown. Issues disconnect requests for any connected media. Applies a system wrap-up code to any participants that are pending wrap-up. This is not intended to be the normal way of ending interactions but is available in the event of problems with the application to allow a resynchronization of state across all components. It is recommended that users submit a support case if they are relying on this endpoint systematically as there is likely something that needs investigation.
@@ -11113,7 +10982,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def post_conversation_participant_callbacks(self, conversation_id: str, participant_id: str, **kwargs) -> None:
         """
         Create a new callback for the specified participant on the conversation.
@@ -11200,7 +11068,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def post_conversation_participant_digits(self, conversation_id: str, participant_id: str, **kwargs) -> None:
         """
         Sends DTMF to the participant
@@ -11287,7 +11154,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def post_conversation_participant_replace(self, conversation_id: str, participant_id: str, body: 'TransferRequest', **kwargs) -> None:
         """
         Replace this participant with the specified user and/or address
@@ -11377,7 +11243,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def post_conversation_participant_secureivrsessions(self, conversation_id: str, participant_id: str, **kwargs) -> 'SecureSession':
         """
         Create secure IVR session. Only a participant in the conversation can invoke a secure IVR.
@@ -11464,7 +11329,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def post_conversations_call(self, conversation_id: str, body: 'CallCommand', **kwargs) -> 'Conversation':
         """
         Place a new call as part of a callback conversation.
@@ -11548,7 +11412,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def post_conversations_call_participant_coach(self, conversation_id: str, participant_id: str, **kwargs) -> None:
         """
         Listen in on the conversation from the point of view of a given participant while speaking to just the given participant.
@@ -11632,7 +11495,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def post_conversations_call_participant_communication_wrapup(self, conversation_id: str, participant_id: str, communication_id: str, **kwargs) -> None:
         """
         Apply wrap-up for this conversation communication
@@ -11725,7 +11587,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def post_conversations_call_participant_consult(self, conversation_id: str, participant_id: str, body: 'ConsultTransfer', **kwargs) -> 'ConsultTransferResponse':
         """
         Initiate and update consult transfer
@@ -11815,7 +11676,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def post_conversations_call_participant_monitor(self, conversation_id: str, participant_id: str, **kwargs) -> None:
         """
         Listen in on the conversation from the point of view of a given participant.
@@ -11899,7 +11759,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def post_conversations_call_participant_replace(self, conversation_id: str, participant_id: str, body: 'TransferRequest', **kwargs) -> None:
         """
         Replace this participant with the specified user and/or address
@@ -11989,7 +11848,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def post_conversations_call_participants(self, conversation_id: str, body: 'Conversation', **kwargs) -> 'Conversation':
         """
         Add participants to a conversation
@@ -12073,7 +11931,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def post_conversations_callback_participant_communication_wrapup(self, conversation_id: str, participant_id: str, communication_id: str, **kwargs) -> None:
         """
         Apply wrap-up for this conversation communication
@@ -12166,7 +12023,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def post_conversations_callback_participant_replace(self, conversation_id: str, participant_id: str, body: 'TransferRequest', **kwargs) -> None:
         """
         Replace this participant with the specified user and/or address
@@ -12256,7 +12112,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def post_conversations_callbacks(self, body: 'CreateCallbackCommand', **kwargs) -> 'CreateCallbackResponse':
         """
         Create a Callback
@@ -12334,7 +12189,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def post_conversations_callbacks_bulk_disconnect(self, body: 'BulkCallbackDisconnectRequest', **kwargs) -> None:
         """
         Disconnect multiple scheduled callbacks
@@ -12412,7 +12266,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def post_conversations_callbacks_bulk_update(self, body: 'BulkCallbackPatchRequest', **kwargs) -> 'BulkCallbackPatchResponse':
         """
         Update multiple scheduled callbacks
@@ -12490,7 +12343,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def post_conversations_calls(self, body: 'CreateCallRequest', **kwargs) -> 'CreateCallResponse':
         """
         Create a call conversation
@@ -12568,7 +12420,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def post_conversations_chat_communication_messages(self, conversation_id: str, communication_id: str, body: 'CreateWebChatMessageRequest', **kwargs) -> 'WebChatMessage':
         """
         Send a message on behalf of a communication in a chat conversation.
@@ -12658,7 +12509,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def post_conversations_chat_communication_typing(self, conversation_id: str, communication_id: str, **kwargs) -> 'WebChatTyping':
         """
         Send a typing-indicator on behalf of a communication in a chat conversation.
@@ -12742,7 +12592,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def post_conversations_chat_participant_communication_wrapup(self, conversation_id: str, participant_id: str, communication_id: str, **kwargs) -> None:
         """
         Apply wrap-up for this conversation communication
@@ -12835,7 +12684,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def post_conversations_chat_participant_replace(self, conversation_id: str, participant_id: str, body: 'TransferRequest', **kwargs) -> None:
         """
         Replace this participant with the specified user and/or address
@@ -12925,7 +12773,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def post_conversations_chats(self, body: 'CreateWebChatRequest', **kwargs) -> 'ChatConversation':
         """
         Create a web chat conversation
@@ -13003,7 +12850,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def post_conversations_cobrowsesession_participant_communication_wrapup(self, conversation_id: str, participant_id: str, communication_id: str, **kwargs) -> None:
         """
         Apply wrap-up for this conversation communication
@@ -13096,7 +12942,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def post_conversations_cobrowsesession_participant_replace(self, conversation_id: str, participant_id: str, **kwargs) -> None:
         """
         Replace this participant with the specified user and/or address
@@ -13183,7 +13028,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def post_conversations_email_inboundmessages(self, conversation_id: str, body: 'InboundMessageRequest', **kwargs) -> 'EmailConversation':
         """
         Send an email to an external conversation. An external conversation is one where the provider is not PureCloud based. This endpoint allows the sender of the external email to reply or send a new message to the existing conversation. The new message will be treated as part of the existing conversation and chained to it.
@@ -13267,7 +13111,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def post_conversations_email_messages(self, conversation_id: str, body: 'EmailMessage', **kwargs) -> 'EmailMessageReply':
         """
         Send an email reply
@@ -13351,7 +13194,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def post_conversations_email_messages_draft_attachments_copy(self, conversation_id: str, body: 'CopyAttachmentsRequest', **kwargs) -> 'EmailMessage':
         """
         Copy attachments from an email message to the current draft.
@@ -13435,7 +13277,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def post_conversations_email_participant_communication_wrapup(self, conversation_id: str, participant_id: str, communication_id: str, **kwargs) -> None:
         """
         Apply wrap-up for this conversation communication
@@ -13528,7 +13369,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def post_conversations_email_participant_replace(self, conversation_id: str, participant_id: str, body: 'TransferRequest', **kwargs) -> None:
         """
         Replace this participant with the specified user and/or address
@@ -13618,7 +13458,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def post_conversations_emails(self, body: 'CreateEmailRequest', **kwargs) -> 'EmailConversation':
         """
         Create an email conversation
@@ -13696,7 +13535,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def post_conversations_emails_agentless(self, body: 'AgentlessEmailSendRequestDto', **kwargs) -> 'AgentlessEmailSendResponseDto':
         """
         Create an email conversation, per API
@@ -13774,7 +13612,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def post_conversations_faxes(self, body: 'FaxSendRequest', **kwargs) -> 'FaxSendResponse':
         """
         Create Fax Conversation
@@ -13852,7 +13689,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def post_conversations_keyconfigurations(self, body: 'ConversationEncryptionConfiguration', **kwargs) -> 'ConversationEncryptionConfiguration':
         """
         Setup configurations for encryption key creation
@@ -13930,7 +13766,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def post_conversations_keyconfigurations_validate(self, body: 'ConversationEncryptionConfiguration', **kwargs) -> 'ConversationEncryptionConfiguration':
         """
         Validate encryption key configurations without saving it
@@ -14008,7 +13843,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def post_conversations_message_communication_messages(self, conversation_id: str, communication_id: str, body: 'AdditionalMessage', **kwargs) -> 'MessageData':
         """
         Send message
@@ -14101,7 +13935,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def post_conversations_message_communication_messages_media(self, conversation_id: str, communication_id: str, **kwargs) -> 'MessageMediaData':
         """
         Create media
@@ -14185,7 +14018,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def post_conversations_message_communication_typing(self, conversation_id: str, communication_id: str, body: 'MessageTypingEventRequest', **kwargs) -> None:
         """
         Send message typing event
@@ -14275,7 +14107,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def post_conversations_message_messages_bulk(self, conversation_id: str, **kwargs) -> 'TextMessageListing':
         """
         Get messages in batch
@@ -14359,7 +14190,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def post_conversations_message_participant_communication_wrapup(self, conversation_id: str, participant_id: str, communication_id: str, **kwargs) -> None:
         """
         Apply wrap-up for this conversation communication
@@ -14452,7 +14282,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def post_conversations_message_participant_replace(self, conversation_id: str, participant_id: str, body: 'TransferRequest', **kwargs) -> None:
         """
         Replace this participant with the specified user and/or address
@@ -14542,7 +14371,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def post_conversations_messages(self, body: 'CreateOutboundMessagingConversationRequest', **kwargs) -> 'MessageConversation':
         """
         Create an outbound messaging conversation.
@@ -14620,7 +14448,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def post_conversations_messages_agentless(self, body: 'SendAgentlessOutboundMessageRequest', **kwargs) -> 'SendAgentlessOutboundMessageResponse':
         """
         Send an agentless outbound message
@@ -14698,7 +14525,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def post_conversations_messages_inbound_open(self, body: 'OpenNormalizedMessage', **kwargs) -> 'OpenNormalizedMessage':
         """
         Send an inbound Open Message
@@ -14776,7 +14602,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def post_conversations_messaging_integrations_facebook(self, body: 'FacebookIntegrationRequest', **kwargs) -> 'FacebookIntegration':
         """
         Create a Facebook Integration
@@ -14854,7 +14679,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def post_conversations_messaging_integrations_line(self, body: 'LineIntegrationRequest', **kwargs) -> 'LineIntegration':
         """
         Create a LINE messenger Integration
@@ -14932,7 +14756,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def post_conversations_messaging_integrations_open(self, body: 'OpenIntegrationRequest', **kwargs) -> 'OpenIntegration':
         """
         Create an Open messaging integration
@@ -15010,7 +14833,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def post_conversations_messaging_integrations_twitter(self, body: 'TwitterIntegrationRequest', **kwargs) -> 'TwitterIntegration':
         """
         Create a Twitter Integration
@@ -15088,7 +14910,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def post_conversations_messaging_integrations_whatsapp(self, body: 'WhatsAppIntegrationRequest', **kwargs) -> 'WhatsAppIntegration':
         """
         Create a WhatsApp Integration
@@ -15166,7 +14987,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def post_conversations_messaging_supportedcontent(self, body: 'SupportedContent', **kwargs) -> 'SupportedContent':
         """
         Create a Supported Content profile
@@ -15244,7 +15064,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def post_conversations_participants_attributes_search(self, body: 'ConversationParticipantSearchRequest', **kwargs) -> 'JsonCursorSearchResponse':
         """
         Search conversations
@@ -15322,7 +15141,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def post_conversations_screenshare_participant_communication_wrapup(self, conversation_id: str, participant_id: str, communication_id: str, **kwargs) -> None:
         """
         Apply wrap-up for this conversation communication
@@ -15415,7 +15233,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def post_conversations_social_participant_communication_wrapup(self, conversation_id: str, participant_id: str, communication_id: str, **kwargs) -> None:
         """
         Apply wrap-up for this conversation communication
@@ -15508,7 +15325,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def post_conversations_video_participant_communication_wrapup(self, conversation_id: str, participant_id: str, communication_id: str, **kwargs) -> None:
         """
         Apply wrap-up for this conversation communication
@@ -15601,7 +15417,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def put_conversation_participant_flaggedreason(self, conversation_id: str, participant_id: str, **kwargs) -> None:
         """
         Set flagged reason on conversation participant to indicate bad conversation quality.
@@ -15685,7 +15500,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def put_conversation_secureattributes(self, conversation_id: str, body: 'ConversationSecureAttributes', **kwargs) -> str:
         """
         Set the secure attributes on a conversation.
@@ -15769,7 +15583,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def put_conversation_tags(self, conversation_id: str, body: 'ConversationTagsUpdate', **kwargs) -> str:
         """
         Update the tags on a conversation.
@@ -15853,7 +15666,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def put_conversations_call_participant_communication_uuidata(self, conversation_id: str, participant_id: str, communication_id: str, body: 'SetUuiDataRequest', **kwargs) -> object:
         """
         Set uuiData to be sent on future commands.
@@ -15949,7 +15761,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def put_conversations_call_recordingstate(self, conversation_id: str, body: 'SetRecordingState', **kwargs) -> str:
         """
         Update a conversation by setting its recording state
@@ -16033,7 +15844,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def put_conversations_callback_recordingstate(self, conversation_id: str, body: 'SetRecordingState', **kwargs) -> str:
         """
         Update a conversation by setting its recording state
@@ -16117,7 +15927,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def put_conversations_chat_recordingstate(self, conversation_id: str, body: 'SetRecordingState', **kwargs) -> str:
         """
         Update a conversation by setting its recording state
@@ -16201,7 +16010,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def put_conversations_cobrowsesession_recordingstate(self, conversation_id: str, body: 'SetRecordingState', **kwargs) -> str:
         """
         Update a conversation by setting its recording state
@@ -16285,7 +16093,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def put_conversations_email_messages_draft(self, conversation_id: str, body: 'EmailMessage', **kwargs) -> 'EmailMessage':
         """
         Update conversation draft reply
@@ -16369,7 +16176,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def put_conversations_email_recordingstate(self, conversation_id: str, body: 'SetRecordingState', **kwargs) -> str:
         """
         Update a conversation by setting its recording state
@@ -16453,7 +16259,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def put_conversations_keyconfiguration(self, keyconfigurations_id: str, body: 'ConversationEncryptionConfiguration', **kwargs) -> 'ConversationEncryptionConfiguration':
         """
         Update the encryption key configurations
@@ -16537,7 +16342,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def put_conversations_message_recordingstate(self, conversation_id: str, body: 'SetRecordingState', **kwargs) -> str:
         """
         Update a conversation by setting its recording state
@@ -16621,7 +16425,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def put_conversations_messaging_integrations_line_integration_id(self, integration_id: str, body: 'LineIntegrationRequest', **kwargs) -> 'LineIntegration':
         """
         Update a LINE messenger integration
@@ -16705,7 +16508,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def put_conversations_messaging_supportedcontent_default(self, body: 'SupportedContentReference', **kwargs) -> 'SupportedContent':
         """
         Set the organization's default supported content profile that may be assigned to an integration when it is created.
@@ -16783,7 +16585,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def put_conversations_messaging_threadingtimeline(self, body: 'ConversationThreadingWindow', **kwargs) -> 'ConversationThreadingWindow':
         """
         Update conversation threading window timeline for each messaging type
@@ -16861,7 +16662,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def put_conversations_screenshare_recordingstate(self, conversation_id: str, body: 'SetRecordingState', **kwargs) -> str:
         """
         Update a conversation by setting its recording state
@@ -16945,7 +16745,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def put_conversations_social_recordingstate(self, conversation_id: str, body: 'SetRecordingState', **kwargs) -> str:
         """
         Update a conversation by setting its recording state
@@ -17029,7 +16828,6 @@ class ConversationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def put_conversations_video_recordingstate(self, conversation_id: str, body: 'SetRecordingState', **kwargs) -> str:
         """
         Update a conversation by setting its recording state

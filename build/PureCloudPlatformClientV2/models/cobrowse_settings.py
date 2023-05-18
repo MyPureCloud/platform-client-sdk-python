@@ -50,18 +50,24 @@ class CobrowseSettings(object):
         self.swagger_types = {
             'enabled': 'bool',
             'allow_agent_control': 'bool',
-            'mask_selectors': 'list[str]'
+            'mask_selectors': 'list[str]',
+            'channels': 'list[str]',
+            'readonly_selectors': 'list[str]'
         }
 
         self.attribute_map = {
             'enabled': 'enabled',
             'allow_agent_control': 'allowAgentControl',
-            'mask_selectors': 'maskSelectors'
+            'mask_selectors': 'maskSelectors',
+            'channels': 'channels',
+            'readonly_selectors': 'readonlySelectors'
         }
 
         self._enabled = None
         self._allow_agent_control = None
         self._mask_selectors = None
+        self._channels = None
+        self._readonly_selectors = None
 
     @property
     def enabled(self) -> bool:
@@ -134,6 +140,54 @@ class CobrowseSettings(object):
         
 
         self._mask_selectors = mask_selectors
+
+    @property
+    def channels(self) -> List[str]:
+        """
+        Gets the channels of this CobrowseSettings.
+        Cobrowse channels for web messenger
+
+        :return: The channels of this CobrowseSettings.
+        :rtype: list[str]
+        """
+        return self._channels
+
+    @channels.setter
+    def channels(self, channels: List[str]) -> None:
+        """
+        Sets the channels of this CobrowseSettings.
+        Cobrowse channels for web messenger
+
+        :param channels: The channels of this CobrowseSettings.
+        :type: list[str]
+        """
+        
+
+        self._channels = channels
+
+    @property
+    def readonly_selectors(self) -> List[str]:
+        """
+        Gets the readonly_selectors of this CobrowseSettings.
+        Readonly patterns that will apply to pages being shared
+
+        :return: The readonly_selectors of this CobrowseSettings.
+        :rtype: list[str]
+        """
+        return self._readonly_selectors
+
+    @readonly_selectors.setter
+    def readonly_selectors(self, readonly_selectors: List[str]) -> None:
+        """
+        Sets the readonly_selectors of this CobrowseSettings.
+        Readonly patterns that will apply to pages being shared
+
+        :param readonly_selectors: The readonly_selectors of this CobrowseSettings.
+        :type: list[str]
+        """
+        
+
+        self._readonly_selectors = readonly_selectors
 
     def to_dict(self):
         """

@@ -7,6 +7,7 @@ title: ConversationAppSettings
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
+| **enabled** | **bool** | The toggle to enable or disable conversations | [optional] |
 | **show_agent_typing_indicator** | **bool** | The toggle to enable or disable typing indicator for messenger | [optional] |
 | **show_user_typing_indicator** | **bool** | The toggle to enable or disable typing indicator for messenger | [optional] |
 | **auto_start_type** | **str** | Deprecated. The auto start type for the messenger conversation | [optional] |

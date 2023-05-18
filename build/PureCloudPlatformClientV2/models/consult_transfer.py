@@ -84,7 +84,7 @@ class ConsultTransfer(object):
         """
         if isinstance(speak_to, int):
             speak_to = str(speak_to)
-        allowed_values = ["DESTINATION", "OBJECT", "BOTH"]
+        allowed_values = ["DESTINATION", "OBJECT", "BOTH", "CONFERENCE"]
         if speak_to.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for speak_to -> " + speak_to)
             self._speak_to = "outdated_sdk_version"

@@ -35,6 +35,7 @@ from typing import Dict
 if TYPE_CHECKING:
     from . import ConversationEventTopicDestination
     from . import ConversationEventTopicInitiator
+    from . import ConversationEventTopicModifiedBy
 
 class ConversationEventTopicRecentTransfer(object):
     """
@@ -55,6 +56,7 @@ class ConversationEventTopicRecentTransfer(object):
             'state': 'str',
             'date_issued': 'datetime',
             'initiator': 'ConversationEventTopicInitiator',
+            'modified_by': 'ConversationEventTopicModifiedBy',
             'destination': 'ConversationEventTopicDestination',
             'transfer_type': 'str'
         }
@@ -64,6 +66,7 @@ class ConversationEventTopicRecentTransfer(object):
             'state': 'state',
             'date_issued': 'dateIssued',
             'initiator': 'initiator',
+            'modified_by': 'modifiedBy',
             'destination': 'destination',
             'transfer_type': 'transferType'
         }
@@ -72,6 +75,7 @@ class ConversationEventTopicRecentTransfer(object):
         self._state = None
         self._date_issued = None
         self._initiator = None
+        self._modified_by = None
         self._destination = None
         self._transfer_type = None
 
@@ -175,6 +179,30 @@ class ConversationEventTopicRecentTransfer(object):
         
 
         self._initiator = initiator
+
+    @property
+    def modified_by(self) -> 'ConversationEventTopicModifiedBy':
+        """
+        Gets the modified_by of this ConversationEventTopicRecentTransfer.
+
+
+        :return: The modified_by of this ConversationEventTopicRecentTransfer.
+        :rtype: ConversationEventTopicModifiedBy
+        """
+        return self._modified_by
+
+    @modified_by.setter
+    def modified_by(self, modified_by: 'ConversationEventTopicModifiedBy') -> None:
+        """
+        Sets the modified_by of this ConversationEventTopicRecentTransfer.
+
+
+        :param modified_by: The modified_by of this ConversationEventTopicRecentTransfer.
+        :type: ConversationEventTopicModifiedBy
+        """
+        
+
+        self._modified_by = modified_by
 
     @property
     def destination(self) -> 'ConversationEventTopicDestination':

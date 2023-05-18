@@ -64,7 +64,6 @@ class VoicemailApi(object):
             if not config.api_client:
                 config.api_client = ApiClient()
             self.api_client = config.api_client
-
     def delete_voicemail_message(self, message_id: str, **kwargs) -> None:
         """
         Delete a voicemail message.
@@ -142,7 +141,6 @@ class VoicemailApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def delete_voicemail_messages(self, **kwargs) -> None:
         """
         Delete all voicemail messages
@@ -214,7 +212,6 @@ class VoicemailApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_voicemail_group_mailbox(self, group_id: str, **kwargs) -> 'VoicemailMailboxInfo':
         """
         Get the group's mailbox information
@@ -292,7 +289,6 @@ class VoicemailApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_voicemail_group_messages(self, group_id: str, **kwargs) -> 'VoicemailMessageEntityListing':
         """
         List voicemail messages
@@ -376,7 +372,6 @@ class VoicemailApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_voicemail_group_policy(self, group_id: str, **kwargs) -> 'VoicemailGroupPolicy':
         """
         Get a group's voicemail policy
@@ -454,7 +449,6 @@ class VoicemailApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_voicemail_mailbox(self, **kwargs) -> 'VoicemailMailboxInfo':
         """
         Get the current user's mailbox information
@@ -526,7 +520,6 @@ class VoicemailApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_voicemail_me_mailbox(self, **kwargs) -> 'VoicemailMailboxInfo':
         """
         Get the current user's mailbox information
@@ -598,7 +591,6 @@ class VoicemailApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_voicemail_me_messages(self, **kwargs) -> 'VoicemailMessageEntityListing':
         """
         List voicemail messages
@@ -676,7 +668,6 @@ class VoicemailApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_voicemail_me_policy(self, **kwargs) -> 'VoicemailUserPolicy':
         """
         Get the current user's voicemail policy
@@ -748,7 +739,6 @@ class VoicemailApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_voicemail_message(self, message_id: str, **kwargs) -> 'VoicemailMessage':
         """
         Get a voicemail message
@@ -829,7 +819,6 @@ class VoicemailApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_voicemail_message_media(self, message_id: str, **kwargs) -> 'VoicemailMediaInfo':
         """
         Get media playback URI for this voicemail message
@@ -910,7 +899,6 @@ class VoicemailApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_voicemail_messages(self, **kwargs) -> 'VoicemailMessageEntityListing':
         """
         List voicemail messages
@@ -988,7 +976,6 @@ class VoicemailApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_voicemail_policy(self, **kwargs) -> 'VoicemailOrganizationPolicy':
         """
         Get a policy
@@ -1060,7 +1047,6 @@ class VoicemailApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_voicemail_queue_messages(self, queue_id: str, **kwargs) -> 'VoicemailMessageEntityListing':
         """
         List voicemail messages
@@ -1144,7 +1130,6 @@ class VoicemailApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_voicemail_search(self, q64: str, **kwargs) -> 'VoicemailsSearchResponse':
         """
         Search voicemails using the q64 value returned from a previous search
@@ -1225,7 +1210,6 @@ class VoicemailApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_voicemail_userpolicy(self, user_id: str, **kwargs) -> 'VoicemailUserPolicy':
         """
         Get a user's voicemail policy
@@ -1303,7 +1287,6 @@ class VoicemailApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def patch_voicemail_group_policy(self, group_id: str, body: 'VoicemailGroupPolicy', **kwargs) -> 'VoicemailGroupPolicy':
         """
         Update a group's voicemail policy
@@ -1387,7 +1370,6 @@ class VoicemailApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def patch_voicemail_me_policy(self, body: 'VoicemailUserPolicy', **kwargs) -> 'VoicemailUserPolicy':
         """
         Update the current user's voicemail policy
@@ -1465,7 +1447,6 @@ class VoicemailApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def patch_voicemail_message(self, message_id: str, body: 'VoicemailMessage', **kwargs) -> 'VoicemailMessage':
         """
         Update a voicemail message
@@ -1549,7 +1530,6 @@ class VoicemailApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def patch_voicemail_userpolicy(self, user_id: str, body: 'VoicemailUserPolicy', **kwargs) -> 'VoicemailUserPolicy':
         """
         Update a user's voicemail policy
@@ -1633,7 +1613,6 @@ class VoicemailApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def post_voicemail_messages(self, **kwargs) -> 'VoicemailMessage':
         """
         Copy a voicemail message to a user or group
@@ -1708,7 +1687,6 @@ class VoicemailApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def post_voicemail_search(self, body: 'VoicemailSearchRequest', **kwargs) -> 'VoicemailsSearchResponse':
         """
         Search voicemails
@@ -1786,7 +1764,6 @@ class VoicemailApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def put_voicemail_message(self, message_id: str, body: 'VoicemailMessage', **kwargs) -> 'VoicemailMessage':
         """
         Update a voicemail message
@@ -1870,7 +1847,6 @@ class VoicemailApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def put_voicemail_policy(self, body: 'VoicemailOrganizationPolicy', **kwargs) -> 'VoicemailOrganizationPolicy':
         """
         Update a policy
@@ -1948,7 +1924,6 @@ class VoicemailApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def put_voicemail_userpolicy(self, user_id: str, body: 'VoicemailUserPolicy', **kwargs) -> 'VoicemailUserPolicy':
         """
         Update a user's voicemail policy

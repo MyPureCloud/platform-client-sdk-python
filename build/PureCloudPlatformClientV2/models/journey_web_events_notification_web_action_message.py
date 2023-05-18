@@ -69,7 +69,8 @@ class JourneyWebEventsNotificationWebActionMessage(object):
             'device': 'JourneyWebEventsNotificationDevice',
             'geolocation': 'JourneyWebEventsNotificationGeoLocation',
             'mkt_campaign': 'JourneyWebEventsNotificationMktCampaign',
-            'visit_referrer': 'JourneyWebEventsNotificationReferrer'
+            'visit_referrer': 'JourneyWebEventsNotificationReferrer',
+            'time_to_disposition': 'int'
         }
 
         self.attribute_map = {
@@ -85,7 +86,8 @@ class JourneyWebEventsNotificationWebActionMessage(object):
             'device': 'device',
             'geolocation': 'geolocation',
             'mkt_campaign': 'mktCampaign',
-            'visit_referrer': 'visitReferrer'
+            'visit_referrer': 'visitReferrer',
+            'time_to_disposition': 'timeToDisposition'
         }
 
         self._action = None
@@ -101,6 +103,7 @@ class JourneyWebEventsNotificationWebActionMessage(object):
         self._geolocation = None
         self._mkt_campaign = None
         self._visit_referrer = None
+        self._time_to_disposition = None
 
     @property
     def action(self) -> 'JourneyWebEventsNotificationEventAction':
@@ -413,6 +416,30 @@ class JourneyWebEventsNotificationWebActionMessage(object):
         
 
         self._visit_referrer = visit_referrer
+
+    @property
+    def time_to_disposition(self) -> int:
+        """
+        Gets the time_to_disposition of this JourneyWebEventsNotificationWebActionMessage.
+
+
+        :return: The time_to_disposition of this JourneyWebEventsNotificationWebActionMessage.
+        :rtype: int
+        """
+        return self._time_to_disposition
+
+    @time_to_disposition.setter
+    def time_to_disposition(self, time_to_disposition: int) -> None:
+        """
+        Sets the time_to_disposition of this JourneyWebEventsNotificationWebActionMessage.
+
+
+        :param time_to_disposition: The time_to_disposition of this JourneyWebEventsNotificationWebActionMessage.
+        :type: int
+        """
+        
+
+        self._time_to_disposition = time_to_disposition
 
     def to_dict(self):
         """

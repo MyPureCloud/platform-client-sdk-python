@@ -55,6 +55,7 @@ class QueueConversationCallEventTopicCallConversation(object):
             'participants': 'list[QueueConversationCallEventTopicCallMediaParticipant]',
             'other_media_uris': 'list[str]',
             'recording_state': 'str',
+            'secure_pause': 'bool',
             'max_participants': 'int'
         }
 
@@ -64,6 +65,7 @@ class QueueConversationCallEventTopicCallConversation(object):
             'participants': 'participants',
             'other_media_uris': 'otherMediaUris',
             'recording_state': 'recordingState',
+            'secure_pause': 'securePause',
             'max_participants': 'maxParticipants'
         }
 
@@ -72,6 +74,7 @@ class QueueConversationCallEventTopicCallConversation(object):
         self._participants = None
         self._other_media_uris = None
         self._recording_state = None
+        self._secure_pause = None
         self._max_participants = None
 
     @property
@@ -198,6 +201,30 @@ class QueueConversationCallEventTopicCallConversation(object):
             self._recording_state = "outdated_sdk_version"
         else:
             self._recording_state = recording_state
+
+    @property
+    def secure_pause(self) -> bool:
+        """
+        Gets the secure_pause of this QueueConversationCallEventTopicCallConversation.
+
+
+        :return: The secure_pause of this QueueConversationCallEventTopicCallConversation.
+        :rtype: bool
+        """
+        return self._secure_pause
+
+    @secure_pause.setter
+    def secure_pause(self, secure_pause: bool) -> None:
+        """
+        Sets the secure_pause of this QueueConversationCallEventTopicCallConversation.
+
+
+        :param secure_pause: The secure_pause of this QueueConversationCallEventTopicCallConversation.
+        :type: bool
+        """
+        
+
+        self._secure_pause = secure_pause
 
     @property
     def max_participants(self) -> int:

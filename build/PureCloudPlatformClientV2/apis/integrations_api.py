@@ -91,7 +91,6 @@ class IntegrationsApi(object):
             if not config.api_client:
                 config.api_client = ApiClient()
             self.api_client = config.api_client
-
     def delete_integration(self, integration_id: str, **kwargs) -> 'Integration':
         """
         Delete integration.
@@ -169,7 +168,6 @@ class IntegrationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def delete_integrations_action(self, action_id: str, **kwargs) -> None:
         """
         Delete an Action
@@ -247,7 +245,6 @@ class IntegrationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def delete_integrations_action_draft(self, action_id: str, **kwargs) -> None:
         """
         Delete a Draft
@@ -325,7 +322,6 @@ class IntegrationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def delete_integrations_credential(self, credential_id: str, **kwargs) -> None:
         """
         Delete a set of credentials
@@ -403,7 +399,6 @@ class IntegrationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_integration(self, integration_id: str, **kwargs) -> 'Integration':
         """
         Get integration.
@@ -499,7 +494,6 @@ class IntegrationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_integration_config_current(self, integration_id: str, **kwargs) -> 'IntegrationConfiguration':
         """
         Get integration configuration.
@@ -577,7 +571,6 @@ class IntegrationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_integrations(self, **kwargs) -> 'IntegrationEntityListing':
         """
         List integrations
@@ -667,7 +660,6 @@ class IntegrationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_integrations_action(self, action_id: str, **kwargs) -> 'Action':
         """
         Retrieves a single Action matching id.
@@ -751,7 +743,6 @@ class IntegrationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_integrations_action_draft(self, action_id: str, **kwargs) -> 'Action':
         """
         Retrieve a Draft
@@ -835,7 +826,6 @@ class IntegrationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_integrations_action_draft_schema(self, action_id: str, file_name: str, **kwargs) -> 'JsonSchemaDocument':
         """
         Retrieve schema for a Draft based on filename.
@@ -919,7 +909,6 @@ class IntegrationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_integrations_action_draft_template(self, action_id: str, file_name: str, **kwargs) -> str:
         """
         Retrieve templates for a Draft based on filename.
@@ -1003,7 +992,6 @@ class IntegrationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_integrations_action_draft_validation(self, action_id: str, **kwargs) -> 'DraftValidationResult':
         """
         Validate current Draft configuration.
@@ -1081,7 +1069,6 @@ class IntegrationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_integrations_action_schema(self, action_id: str, file_name: str, **kwargs) -> 'JsonSchemaDocument':
         """
         Retrieve schema for an action based on filename.
@@ -1165,7 +1152,6 @@ class IntegrationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_integrations_action_template(self, action_id: str, file_name: str, **kwargs) -> str:
         """
         Retrieve text of templates for an action based on filename.
@@ -1249,7 +1235,6 @@ class IntegrationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_integrations_actions(self, **kwargs) -> 'ActionEntityListing':
         """
         Retrieves all actions associated with filters passed in via query param.
@@ -1354,7 +1339,6 @@ class IntegrationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_integrations_actions_categories(self, **kwargs) -> 'CategoryEntityListing':
         """
         Retrieves all categories of available Actions
@@ -1447,7 +1431,6 @@ class IntegrationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_integrations_actions_drafts(self, **kwargs) -> 'ActionEntityListing':
         """
         Retrieves all action drafts associated with the filters passed in via query param.
@@ -1552,7 +1535,6 @@ class IntegrationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_integrations_botconnector_integration_id_bot(self, integration_id: str, bot_id: str, **kwargs) -> 'BotConnectorBot':
         """
         Get a specific botConnector bot, plus versions, for this integration
@@ -1639,7 +1621,6 @@ class IntegrationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_integrations_botconnector_integration_id_bot_versions(self, integration_id: str, bot_id: str, **kwargs) -> 'BotConnectorBotVersionSummaryEntityListing':
         """
         Get a list of bot versions for a bot
@@ -1729,7 +1710,6 @@ class IntegrationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_integrations_botconnector_integration_id_bots(self, integration_id: str, **kwargs) -> 'BotList':
         """
         Get a list of botConnector bots for this integration
@@ -1807,7 +1787,6 @@ class IntegrationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_integrations_botconnector_integration_id_bots_summaries(self, integration_id: str, **kwargs) -> 'BotConnectorBotSummaryEntityListing':
         """
         Get a summary list of botConnector bots for this integration
@@ -1891,7 +1870,6 @@ class IntegrationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_integrations_clientapps(self, **kwargs) -> 'ClientAppEntityListing':
         """
         List permitted client app integrations for the logged in user
@@ -1981,7 +1959,6 @@ class IntegrationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_integrations_clientapps_unifiedcommunications(self, **kwargs) -> 'UCIntegrationListing':
         """
         UC integration client application configuration.
@@ -2071,7 +2048,6 @@ class IntegrationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_integrations_credential(self, credential_id: str, **kwargs) -> 'Credential':
         """
         Get a single credential with sensitive fields redacted
@@ -2149,7 +2125,6 @@ class IntegrationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_integrations_credentials(self, **kwargs) -> 'CredentialInfoListing':
         """
         List multiple sets of credentials
@@ -2227,7 +2202,6 @@ class IntegrationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_integrations_credentials_types(self, **kwargs) -> 'CredentialTypeListing':
         """
         List all credential types
@@ -2299,7 +2273,6 @@ class IntegrationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_integrations_speech_dialogflow_agent(self, agent_id: str, **kwargs) -> 'DialogflowAgent':
         """
         Get details about a Dialogflow agent
@@ -2377,7 +2350,6 @@ class IntegrationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_integrations_speech_dialogflow_agents(self, **kwargs) -> 'DialogflowAgentSummaryEntityListing':
         """
         Get a list of Dialogflow agents in the customers' Google accounts
@@ -2458,7 +2430,6 @@ class IntegrationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_integrations_speech_lex_bot_alias(self, alias_id: str, **kwargs) -> 'LexBotAlias':
         """
         Get details about a Lex bot alias
@@ -2536,7 +2507,6 @@ class IntegrationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_integrations_speech_lex_bot_bot_id_aliases(self, bot_id: str, **kwargs) -> 'LexBotAliasEntityListing':
         """
         Get a list of aliases for a bot in the customer's AWS accounts
@@ -2626,7 +2596,6 @@ class IntegrationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_integrations_speech_lex_bots(self, **kwargs) -> 'LexBotEntityListing':
         """
         Get a list of Lex bots in the customers' AWS accounts
@@ -2707,7 +2676,6 @@ class IntegrationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_integrations_speech_tts_engine(self, engine_id: str, **kwargs) -> 'TtsEngineEntity':
         """
         Get details about a TTS engine
@@ -2788,7 +2756,6 @@ class IntegrationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_integrations_speech_tts_engine_voice(self, engine_id: str, voice_id: str, **kwargs) -> 'TtsVoiceEntity':
         """
         Get details about a specific voice for a TTS engine
@@ -2872,7 +2839,6 @@ class IntegrationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_integrations_speech_tts_engine_voices(self, engine_id: str, **kwargs) -> 'TtsVoiceEntityListing':
         """
         Get a list of voices for a TTS engine
@@ -2956,7 +2922,6 @@ class IntegrationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_integrations_speech_tts_engines(self, **kwargs) -> 'TtsEngineEntityListing':
         """
         Get a list of TTS engines enabled for org
@@ -3043,7 +3008,6 @@ class IntegrationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_integrations_speech_tts_settings(self, **kwargs) -> 'TtsSettings':
         """
         Get TTS settings for an org
@@ -3115,7 +3079,6 @@ class IntegrationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_integrations_type(self, type_id: str, **kwargs) -> 'IntegrationType':
         """
         Get integration type.
@@ -3193,7 +3156,6 @@ class IntegrationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_integrations_type_configschema(self, type_id: str, config_type: str, **kwargs) -> 'JsonSchemaDocument':
         """
         Get properties config schema for an integration type.
@@ -3277,7 +3239,6 @@ class IntegrationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_integrations_types(self, **kwargs) -> 'IntegrationTypeEntityListing':
         """
         List integration types
@@ -3367,7 +3328,6 @@ class IntegrationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_integrations_userapps(self, **kwargs) -> 'UserAppEntityListing':
         """
         List permitted user app integrations for the logged in user
@@ -3460,7 +3420,6 @@ class IntegrationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def patch_integration(self, integration_id: str, **kwargs) -> 'Integration':
         """
         Update an integration.
@@ -3559,7 +3518,6 @@ class IntegrationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def patch_integrations_action(self, action_id: str, body: 'UpdateActionInput', **kwargs) -> 'Action':
         """
         Patch an Action
@@ -3643,7 +3601,6 @@ class IntegrationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def patch_integrations_action_draft(self, action_id: str, body: 'UpdateDraftInput', **kwargs) -> 'Action':
         """
         Update an existing Draft
@@ -3727,7 +3684,6 @@ class IntegrationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def post_integrations(self, **kwargs) -> 'Integration':
         """
         Create an integration.
@@ -3802,7 +3758,6 @@ class IntegrationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def post_integrations_action_draft(self, action_id: str, **kwargs) -> 'Action':
         """
         Create a new Draft from existing Action
@@ -3880,7 +3835,6 @@ class IntegrationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def post_integrations_action_draft_publish(self, action_id: str, body: 'PublishDraftInput', **kwargs) -> 'Action':
         """
         Publish a Draft and make it the active Action configuration
@@ -3964,7 +3918,6 @@ class IntegrationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def post_integrations_action_draft_test(self, action_id: str, body: object, **kwargs) -> 'TestExecutionResult':
         """
         Test the execution of a draft. Responses will show execution steps broken out with intermediate results to help in debugging.
@@ -4048,7 +4001,6 @@ class IntegrationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def post_integrations_action_execute(self, action_id: str, body: object, **kwargs) -> object:
         """
         Execute Action and return response from 3rd party.  Responses will follow the schemas defined on the Action for success and error.
@@ -4132,7 +4084,6 @@ class IntegrationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def post_integrations_action_test(self, action_id: str, body: object, **kwargs) -> 'TestExecutionResult':
         """
         Test the execution of an action. Responses will show execution steps broken out with intermediate results to help in debugging.
@@ -4216,7 +4167,6 @@ class IntegrationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def post_integrations_actions(self, body: 'PostActionInput', **kwargs) -> 'Action':
         """
         Create a new Action
@@ -4294,7 +4244,6 @@ class IntegrationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def post_integrations_actions_drafts(self, body: 'PostActionInput', **kwargs) -> 'Action':
         """
         Create a new Draft
@@ -4372,7 +4321,6 @@ class IntegrationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def post_integrations_credentials(self, **kwargs) -> 'CredentialInfo':
         """
         Create a set of credentials
@@ -4447,7 +4395,6 @@ class IntegrationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def put_integration_config_current(self, integration_id: str, **kwargs) -> 'IntegrationConfiguration':
         """
         Update integration configuration.
@@ -4528,7 +4475,6 @@ class IntegrationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def put_integrations_botconnector_integration_id_bots(self, integration_id: str, bot_list: 'BotList', **kwargs) -> None:
         """
         Set a list of botConnector bots plus versions for this integration
@@ -4612,7 +4558,6 @@ class IntegrationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def put_integrations_credential(self, credential_id: str, **kwargs) -> 'CredentialInfo':
         """
         Update a set of credentials
@@ -4693,7 +4638,6 @@ class IntegrationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def put_integrations_speech_tts_settings(self, body: 'TtsSettings', **kwargs) -> 'TtsSettings':
         """
         Update TTS settings for an org

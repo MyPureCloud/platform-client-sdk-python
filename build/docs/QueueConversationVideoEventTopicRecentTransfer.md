@@ -11,6 +11,7 @@ title: QueueConversationVideoEventTopicRecentTransfer
 | **state** | **str** |  | [optional] |
 | **date_issued** | **datetime** | The date/time that this command was issued. | [optional] |
 | **initiator** | [**QueueConversationVideoEventTopicInitiator**](QueueConversationVideoEventTopicInitiator.html) |  | [optional] |
+| **modified_by** | [**QueueConversationVideoEventTopicModifiedBy**](QueueConversationVideoEventTopicModifiedBy.html) |  | [optional] |
 | **destination** | [**QueueConversationVideoEventTopicDestination**](QueueConversationVideoEventTopicDestination.html) |  | [optional] |
 | **transfer_type** | **str** | The type of transfer to perform. | [optional] |
 {: class="table table-striped"}

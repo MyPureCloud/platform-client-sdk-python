@@ -20,6 +20,7 @@ title: JourneyWebEventsNotificationWebActionMessage
 | **geolocation** | [**JourneyWebEventsNotificationGeoLocation**](JourneyWebEventsNotificationGeoLocation.html) |  | [optional] |
 | **mkt_campaign** | [**JourneyWebEventsNotificationMktCampaign**](JourneyWebEventsNotificationMktCampaign.html) |  | [optional] |
 | **visit_referrer** | [**JourneyWebEventsNotificationReferrer**](JourneyWebEventsNotificationReferrer.html) |  | [optional] |
+| **time_to_disposition** | **int** |  | [optional] |
 {: class="table table-striped"}
 
 

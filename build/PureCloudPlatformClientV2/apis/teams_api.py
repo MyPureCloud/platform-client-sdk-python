@@ -61,7 +61,6 @@ class TeamsApi(object):
             if not config.api_client:
                 config.api_client = ApiClient()
             self.api_client = config.api_client
-
     def delete_team(self, team_id: str, **kwargs) -> None:
         """
         Delete team
@@ -139,7 +138,6 @@ class TeamsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def delete_team_members(self, team_id: str, id: str, **kwargs) -> None:
         """
         Delete team members
@@ -223,7 +221,6 @@ class TeamsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_team(self, team_id: str, **kwargs) -> 'Team':
         """
         Get team
@@ -301,7 +298,6 @@ class TeamsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_team_members(self, team_id: str, **kwargs) -> 'TeamMemberEntityListing':
         """
         Get team membership
@@ -391,7 +387,6 @@ class TeamsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_teams(self, **kwargs) -> 'TeamEntityListing':
         """
         Get Team listing
@@ -478,7 +473,6 @@ class TeamsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def patch_team(self, team_id: str, body: 'Team', **kwargs) -> 'Team':
         """
         Update team
@@ -562,7 +556,6 @@ class TeamsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def post_team_members(self, team_id: str, body: 'TeamMembers', **kwargs) -> 'TeamMemberAddListingResponse':
         """
         Add team members
@@ -646,7 +639,6 @@ class TeamsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def post_teams(self, body: 'Team', **kwargs) -> 'Team':
         """
         Create a team
@@ -724,7 +716,6 @@ class TeamsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def post_teams_search(self, body: 'TeamSearchRequest', **kwargs) -> 'TeamsSearchResponse':
         """
         Search resources.

@@ -57,7 +57,8 @@ class QueueConversationSocialExpressionEventTopicConversation(object):
             'recent_transfers': 'list[QueueConversationSocialExpressionEventTopicRecentTransfer]',
             'recording_state': 'str',
             'address': 'str',
-            'external_tag': 'str'
+            'external_tag': 'str',
+            'secure_pause': 'bool'
         }
 
         self.attribute_map = {
@@ -67,7 +68,8 @@ class QueueConversationSocialExpressionEventTopicConversation(object):
             'recent_transfers': 'recentTransfers',
             'recording_state': 'recordingState',
             'address': 'address',
-            'external_tag': 'externalTag'
+            'external_tag': 'externalTag',
+            'secure_pause': 'securePause'
         }
 
         self._id = None
@@ -77,6 +79,7 @@ class QueueConversationSocialExpressionEventTopicConversation(object):
         self._recording_state = None
         self._address = None
         self._external_tag = None
+        self._secure_pause = None
 
     @property
     def id(self) -> str:
@@ -245,6 +248,30 @@ class QueueConversationSocialExpressionEventTopicConversation(object):
         
 
         self._external_tag = external_tag
+
+    @property
+    def secure_pause(self) -> bool:
+        """
+        Gets the secure_pause of this QueueConversationSocialExpressionEventTopicConversation.
+
+
+        :return: The secure_pause of this QueueConversationSocialExpressionEventTopicConversation.
+        :rtype: bool
+        """
+        return self._secure_pause
+
+    @secure_pause.setter
+    def secure_pause(self, secure_pause: bool) -> None:
+        """
+        Sets the secure_pause of this QueueConversationSocialExpressionEventTopicConversation.
+
+
+        :param secure_pause: The secure_pause of this QueueConversationSocialExpressionEventTopicConversation.
+        :type: bool
+        """
+        
+
+        self._secure_pause = secure_pause
 
     def to_dict(self):
         """

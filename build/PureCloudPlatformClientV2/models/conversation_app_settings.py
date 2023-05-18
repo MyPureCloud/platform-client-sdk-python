@@ -54,6 +54,7 @@ class ConversationAppSettings(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
+            'enabled': 'bool',
             'show_agent_typing_indicator': 'bool',
             'show_user_typing_indicator': 'bool',
             'auto_start_type': 'str',
@@ -65,6 +66,7 @@ class ConversationAppSettings(object):
         }
 
         self.attribute_map = {
+            'enabled': 'enabled',
             'show_agent_typing_indicator': 'showAgentTypingIndicator',
             'show_user_typing_indicator': 'showUserTypingIndicator',
             'auto_start_type': 'autoStartType',
@@ -75,6 +77,7 @@ class ConversationAppSettings(object):
             'humanize': 'humanize'
         }
 
+        self._enabled = None
         self._show_agent_typing_indicator = None
         self._show_user_typing_indicator = None
         self._auto_start_type = None
@@ -83,6 +86,30 @@ class ConversationAppSettings(object):
         self._conversation_disconnect = None
         self._conversation_clear = None
         self._humanize = None
+
+    @property
+    def enabled(self) -> bool:
+        """
+        Gets the enabled of this ConversationAppSettings.
+        The toggle to enable or disable conversations
+
+        :return: The enabled of this ConversationAppSettings.
+        :rtype: bool
+        """
+        return self._enabled
+
+    @enabled.setter
+    def enabled(self, enabled: bool) -> None:
+        """
+        Sets the enabled of this ConversationAppSettings.
+        The toggle to enable or disable conversations
+
+        :param enabled: The enabled of this ConversationAppSettings.
+        :type: bool
+        """
+        
+
+        self._enabled = enabled
 
     @property
     def show_agent_typing_indicator(self) -> bool:

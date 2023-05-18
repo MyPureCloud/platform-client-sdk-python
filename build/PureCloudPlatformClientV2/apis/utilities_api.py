@@ -59,7 +59,6 @@ class UtilitiesApi(object):
             if not config.api_client:
                 config.api_client = ApiClient()
             self.api_client = config.api_client
-
     def get_date(self, **kwargs) -> 'ServerDate':
         """
         Get the current system date/time
@@ -131,7 +130,6 @@ class UtilitiesApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_ipranges(self, **kwargs) -> 'IpAddressRangeListing':
         """
         Get public ip address ranges for Genesys Cloud
@@ -203,7 +201,6 @@ class UtilitiesApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_timezones(self, **kwargs) -> 'TimeZoneEntityListing':
         """
         Get time zones list
@@ -281,7 +278,6 @@ class UtilitiesApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def post_certificate_details(self, body: 'Certificate', **kwargs) -> 'ParsedCertificate':
         """
         Returns the information about an X509 PEM encoded certificate or certificate chain.

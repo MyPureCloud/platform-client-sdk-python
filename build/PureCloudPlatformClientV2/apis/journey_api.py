@@ -79,7 +79,6 @@ class JourneyApi(object):
             if not config.api_client:
                 config.api_client = ApiClient()
             self.api_client = config.api_client
-
     def delete_journey_actionmap(self, action_map_id: str, **kwargs) -> None:
         """
         Delete single action map.
@@ -157,7 +156,6 @@ class JourneyApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def delete_journey_actiontemplate(self, action_template_id: str, **kwargs) -> None:
         """
         Delete a single action template.
@@ -238,7 +236,6 @@ class JourneyApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def delete_journey_outcome(self, outcome_id: str, **kwargs) -> None:
         """
         Delete an outcome.
@@ -316,7 +313,6 @@ class JourneyApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def delete_journey_outcomes_predictor(self, predictor_id: str, **kwargs) -> None:
         """
         Delete an outcome predictor.
@@ -394,7 +390,6 @@ class JourneyApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def delete_journey_segment(self, segment_id: str, **kwargs) -> None:
         """
         Delete a segment.
@@ -472,7 +467,6 @@ class JourneyApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_journey_actionmap(self, action_map_id: str, **kwargs) -> 'ActionMap':
         """
         Retrieve a single action map.
@@ -550,7 +544,6 @@ class JourneyApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_journey_actionmaps(self, **kwargs) -> 'ActionMapListing':
         """
         Retrieve all action maps.
@@ -646,7 +639,6 @@ class JourneyApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_journey_actionmaps_estimates_job(self, job_id: str, **kwargs) -> str:
         """
         Get status of job.
@@ -724,7 +716,6 @@ class JourneyApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_journey_actionmaps_estimates_job_results(self, job_id: str, **kwargs) -> 'ActionMapEstimateResult':
         """
         Get estimates from completed job.
@@ -802,7 +793,6 @@ class JourneyApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_journey_actiontarget(self, action_target_id: str, **kwargs) -> 'ActionTarget':
         """
         Retrieve a single action target.
@@ -880,7 +870,6 @@ class JourneyApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_journey_actiontargets(self, **kwargs) -> 'ActionTargetListing':
         """
         Retrieve all action targets.
@@ -958,7 +947,6 @@ class JourneyApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_journey_actiontemplate(self, action_template_id: str, **kwargs) -> 'ActionTemplate':
         """
         Retrieve a single action template.
@@ -1036,7 +1024,6 @@ class JourneyApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_journey_actiontemplates(self, **kwargs) -> 'ActionTemplateListing':
         """
         Retrieve all action templates.
@@ -1129,7 +1116,6 @@ class JourneyApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_journey_outcome(self, outcome_id: str, **kwargs) -> 'Outcome':
         """
         Retrieve a single outcome.
@@ -1207,7 +1193,6 @@ class JourneyApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_journey_outcomes(self, **kwargs) -> 'OutcomeListing':
         """
         Retrieve all outcomes.
@@ -1297,7 +1282,6 @@ class JourneyApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_journey_outcomes_predictor(self, predictor_id: str, **kwargs) -> 'OutcomePredictor':
         """
         Retrieve a single outcome predictor.
@@ -1375,7 +1359,6 @@ class JourneyApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_journey_outcomes_predictors(self, **kwargs) -> 'OutcomePredictorListing':
         """
         Retrieve all outcome predictors.
@@ -1447,7 +1430,6 @@ class JourneyApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_journey_segment(self, segment_id: str, **kwargs) -> 'JourneySegment':
         """
         Retrieve a single segment.
@@ -1525,7 +1507,6 @@ class JourneyApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_journey_segments(self, **kwargs) -> 'SegmentListing':
         """
         Retrieve all segments.
@@ -1618,7 +1599,6 @@ class JourneyApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_journey_session(self, session_id: str, **kwargs) -> 'Session':
         """
         Retrieve a single session.
@@ -1696,7 +1676,6 @@ class JourneyApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_journey_session_outcomescores(self, session_id: str, **kwargs) -> 'OutcomeScoresResult':
         """
         Retrieve latest outcome score associated with a session for all outcomes.
@@ -1774,7 +1753,6 @@ class JourneyApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def patch_journey_actionmap(self, action_map_id: str, **kwargs) -> 'ActionMap':
         """
         Update single action map.
@@ -1855,7 +1833,6 @@ class JourneyApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def patch_journey_actiontarget(self, action_target_id: str, **kwargs) -> 'ActionTarget':
         """
         Update a single action target.
@@ -1936,7 +1913,6 @@ class JourneyApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def patch_journey_actiontemplate(self, action_template_id: str, **kwargs) -> 'ActionTemplate':
         """
         Update a single action template.
@@ -2017,7 +1993,6 @@ class JourneyApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def patch_journey_outcome(self, outcome_id: str, **kwargs) -> 'Outcome':
         """
         Update an outcome.
@@ -2098,7 +2073,6 @@ class JourneyApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def patch_journey_segment(self, segment_id: str, **kwargs) -> 'JourneySegment':
         """
         Update a segment.
@@ -2179,7 +2153,6 @@ class JourneyApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def post_analytics_journeys_aggregates_query(self, body: 'JourneyAggregationQuery', **kwargs) -> 'JourneyAggregateQueryResponse':
         """
         Query for journey aggregates
@@ -2257,7 +2230,6 @@ class JourneyApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def post_journey_actionmaps(self, **kwargs) -> 'ActionMap':
         """
         Create an action map.
@@ -2332,7 +2304,6 @@ class JourneyApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def post_journey_actionmaps_estimates_jobs(self, body: 'ActionMapEstimateRequest', **kwargs) -> 'EstimateJobAsyncResponse':
         """
         Query for estimates
@@ -2410,7 +2381,6 @@ class JourneyApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def post_journey_actiontemplates(self, **kwargs) -> 'ActionTemplate':
         """
         Create a single action template.
@@ -2485,7 +2455,6 @@ class JourneyApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def post_journey_outcomes(self, **kwargs) -> 'Outcome':
         """
         Create an outcome.
@@ -2560,7 +2529,6 @@ class JourneyApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def post_journey_outcomes_predictors(self, **kwargs) -> 'OutcomePredictor':
         """
         Create an outcome predictor.
@@ -2635,7 +2603,6 @@ class JourneyApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def post_journey_segments(self, **kwargs) -> 'JourneySegment':
         """
         Create a segment.

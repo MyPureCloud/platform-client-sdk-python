@@ -63,6 +63,7 @@ class QueueConversationVideoEventTopicCall(object):
             'muted': 'bool',
             'confined': 'bool',
             'held': 'bool',
+            'secure_pause': 'bool',
             'error_info': 'QueueConversationVideoEventTopicErrorDetails',
             'disconnect_type': 'str',
             'start_hold_time': 'datetime',
@@ -94,6 +95,7 @@ class QueueConversationVideoEventTopicCall(object):
             'muted': 'muted',
             'confined': 'confined',
             'held': 'held',
+            'secure_pause': 'securePause',
             'error_info': 'errorInfo',
             'disconnect_type': 'disconnectType',
             'start_hold_time': 'startHoldTime',
@@ -124,6 +126,7 @@ class QueueConversationVideoEventTopicCall(object):
         self._muted = None
         self._confined = None
         self._held = None
+        self._secure_pause = None
         self._error_info = None
         self._disconnect_type = None
         self._start_hold_time = None
@@ -351,6 +354,30 @@ class QueueConversationVideoEventTopicCall(object):
         
 
         self._held = held
+
+    @property
+    def secure_pause(self) -> bool:
+        """
+        Gets the secure_pause of this QueueConversationVideoEventTopicCall.
+        True when the recording of this call is in secure pause status.
+
+        :return: The secure_pause of this QueueConversationVideoEventTopicCall.
+        :rtype: bool
+        """
+        return self._secure_pause
+
+    @secure_pause.setter
+    def secure_pause(self, secure_pause: bool) -> None:
+        """
+        Sets the secure_pause of this QueueConversationVideoEventTopicCall.
+        True when the recording of this call is in secure pause status.
+
+        :param secure_pause: The secure_pause of this QueueConversationVideoEventTopicCall.
+        :type: bool
+        """
+        
+
+        self._secure_pause = secure_pause
 
     @property
     def error_info(self) -> 'QueueConversationVideoEventTopicErrorDetails':

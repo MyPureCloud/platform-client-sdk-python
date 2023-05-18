@@ -58,7 +58,6 @@ class EventsApi(object):
             if not config.api_client:
                 config.api_client = ApiClient()
             self.api_client = config.api_client
-
     def post_events_conversations(self, body: 'BatchConversationEventRequest', **kwargs) -> 'BatchEventResponse':
         """
         Publish Conversation Batch Events
@@ -136,7 +135,6 @@ class EventsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def post_events_users_presence(self, body: 'BatchUserPresenceEventRequest', **kwargs) -> 'BatchEventResponse':
         """
         Publish User Presence Status Batch Events
@@ -214,7 +212,6 @@ class EventsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def post_events_users_routingstatus(self, body: 'BatchUserRoutingStatusEventRequest', **kwargs) -> 'BatchEventResponse':
         """
         Publish Agent Routing Status Batch Events

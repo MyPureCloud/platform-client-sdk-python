@@ -95,6 +95,7 @@ class QueueConversationCallEventTopicCallMediaParticipant(object):
             'confined': 'bool',
             'recording': 'bool',
             'recording_state': 'str',
+            'secure_pause': 'bool',
             'group': 'QueueConversationCallEventTopicUriReference',
             'ani': 'str',
             'dnis': 'str',
@@ -148,6 +149,7 @@ class QueueConversationCallEventTopicCallMediaParticipant(object):
             'confined': 'confined',
             'recording': 'recording',
             'recording_state': 'recordingState',
+            'secure_pause': 'securePause',
             'group': 'group',
             'ani': 'ani',
             'dnis': 'dnis',
@@ -200,6 +202,7 @@ class QueueConversationCallEventTopicCallMediaParticipant(object):
         self._confined = None
         self._recording = None
         self._recording_state = None
+        self._secure_pause = None
         self._group = None
         self._ani = None
         self._dnis = None
@@ -1200,6 +1203,30 @@ class QueueConversationCallEventTopicCallMediaParticipant(object):
             self._recording_state = "outdated_sdk_version"
         else:
             self._recording_state = recording_state
+
+    @property
+    def secure_pause(self) -> bool:
+        """
+        Gets the secure_pause of this QueueConversationCallEventTopicCallMediaParticipant.
+
+
+        :return: The secure_pause of this QueueConversationCallEventTopicCallMediaParticipant.
+        :rtype: bool
+        """
+        return self._secure_pause
+
+    @secure_pause.setter
+    def secure_pause(self, secure_pause: bool) -> None:
+        """
+        Sets the secure_pause of this QueueConversationCallEventTopicCallMediaParticipant.
+
+
+        :param secure_pause: The secure_pause of this QueueConversationCallEventTopicCallMediaParticipant.
+        :type: bool
+        """
+        
+
+        self._secure_pause = secure_pause
 
     @property
     def group(self) -> 'QueueConversationCallEventTopicUriReference':

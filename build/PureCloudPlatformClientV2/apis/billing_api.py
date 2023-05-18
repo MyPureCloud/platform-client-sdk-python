@@ -56,7 +56,6 @@ class BillingApi(object):
             if not config.api_client:
                 config.api_client = ApiClient()
             self.api_client = config.api_client
-
     def get_billing_reports_billableusage(self, start_date: datetime, end_date: datetime, **kwargs) -> 'BillingUsageReport':
         """
         Get a report of the billable license usages
@@ -140,7 +139,6 @@ class BillingApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_billing_trusteebillingoverview_trustor_org_id(self, trustor_org_id: str, **kwargs) -> 'TrusteeBillingOverview':
         """
         Get the billing overview for an organization that is managed by a partner.

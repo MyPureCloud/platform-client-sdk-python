@@ -76,7 +76,6 @@ class LanguageUnderstandingApi(object):
             if not config.api_client:
                 config.api_client = ApiClient()
             self.api_client = config.api_client
-
     def delete_languageunderstanding_domain(self, domain_id: str, **kwargs) -> None:
         """
         Delete an NLU Domain.
@@ -154,7 +153,6 @@ class LanguageUnderstandingApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def delete_languageunderstanding_domain_feedback_feedback_id(self, domain_id: str, feedback_id: str, **kwargs) -> None:
         """
         Delete the feedback on the NLU Domain Version.
@@ -238,7 +236,6 @@ class LanguageUnderstandingApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def delete_languageunderstanding_domain_version(self, domain_id: str, domain_version_id: str, **kwargs) -> None:
         """
         Delete an NLU Domain Version
@@ -322,7 +319,6 @@ class LanguageUnderstandingApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def delete_languageunderstanding_miner(self, miner_id: str, **kwargs) -> None:
         """
         Delete a miner.
@@ -400,7 +396,6 @@ class LanguageUnderstandingApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def delete_languageunderstanding_miner_draft(self, miner_id: str, draft_id: str, **kwargs) -> None:
         """
         Delete a draft
@@ -484,7 +479,6 @@ class LanguageUnderstandingApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_languageunderstanding_domain(self, domain_id: str, **kwargs) -> 'NluDomain':
         """
         Find an NLU Domain.
@@ -562,7 +556,6 @@ class LanguageUnderstandingApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_languageunderstanding_domain_feedback(self, domain_id: str, **kwargs) -> 'NluFeedbackListing':
         """
         Get all feedback in the given NLU Domain Version.
@@ -676,7 +669,6 @@ class LanguageUnderstandingApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_languageunderstanding_domain_feedback_feedback_id(self, domain_id: str, feedback_id: str, **kwargs) -> 'NluFeedbackResponse':
         """
         Find a Feedback
@@ -763,7 +755,6 @@ class LanguageUnderstandingApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_languageunderstanding_domain_version(self, domain_id: str, domain_version_id: str, **kwargs) -> 'NluDomainVersion':
         """
         Find an NLU Domain Version.
@@ -850,7 +841,6 @@ class LanguageUnderstandingApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_languageunderstanding_domain_version_report(self, domain_id: str, domain_version_id: str, **kwargs) -> 'NluDomainVersionQualityReport':
         """
         Retrieved quality report for the specified NLU Domain Version
@@ -934,7 +924,6 @@ class LanguageUnderstandingApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_languageunderstanding_domain_versions(self, domain_id: str, **kwargs) -> 'NluDomainVersionListing':
         """
         Get all NLU Domain Versions for a given Domain.
@@ -1021,7 +1010,6 @@ class LanguageUnderstandingApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_languageunderstanding_domains(self, **kwargs) -> 'NluDomainListing':
         """
         Get all NLU Domains.
@@ -1099,7 +1087,6 @@ class LanguageUnderstandingApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_languageunderstanding_miner(self, miner_id: str, **kwargs) -> 'Miner':
         """
         Get information about a miner.
@@ -1177,7 +1164,6 @@ class LanguageUnderstandingApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_languageunderstanding_miner_draft(self, miner_id: str, draft_id: str, **kwargs) -> 'Draft':
         """
         Get information about a draft.
@@ -1267,7 +1253,6 @@ class LanguageUnderstandingApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_languageunderstanding_miner_drafts(self, miner_id: str, **kwargs) -> 'DraftListing':
         """
         Retrieve the list of drafts created.
@@ -1345,7 +1330,6 @@ class LanguageUnderstandingApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_languageunderstanding_miner_intent(self, miner_id: str, intent_id: str, **kwargs) -> 'MinerIntent':
         """
         Get information about a mined intent
@@ -1432,7 +1416,6 @@ class LanguageUnderstandingApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_languageunderstanding_miner_intents(self, miner_id: str, **kwargs) -> 'MinedIntentsListing':
         """
         Retrieve a list of mined intents.
@@ -1513,7 +1496,6 @@ class LanguageUnderstandingApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_languageunderstanding_miner_topic(self, miner_id: str, topic_id: str, **kwargs) -> 'MinerTopic':
         """
         Retrieves details of a particular topic.
@@ -1600,7 +1582,6 @@ class LanguageUnderstandingApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_languageunderstanding_miner_topic_phrase(self, miner_id: str, topic_id: str, phrase_id: str, **kwargs) -> 'MinerTopicPhrase':
         """
         Retrieves utterances related to a phrase in a topic.
@@ -1690,7 +1671,6 @@ class LanguageUnderstandingApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_languageunderstanding_miner_topics(self, miner_id: str, **kwargs) -> 'MinerTopicsListing':
         """
         Retrieve a list of mined topics.
@@ -1768,7 +1748,6 @@ class LanguageUnderstandingApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_languageunderstanding_miners(self, **kwargs) -> 'MinerListing':
         """
         Retrieve the list of miners created.
@@ -1843,7 +1822,6 @@ class LanguageUnderstandingApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def patch_languageunderstanding_domain(self, domain_id: str, body: 'NluDomain', **kwargs) -> 'NluDomain':
         """
         Update an NLU Domain.
@@ -1927,7 +1905,6 @@ class LanguageUnderstandingApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def patch_languageunderstanding_miner_draft(self, miner_id: str, draft_id: str, **kwargs) -> 'Draft':
         """
         Save information for the draft. Either topic draft or intent draft should be sent.
@@ -2014,7 +1991,6 @@ class LanguageUnderstandingApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def post_languageunderstanding_domain_feedback(self, domain_id: str, body: 'NluFeedbackRequest', **kwargs) -> 'NluFeedbackResponse':
         """
         Create feedback for the NLU Domain Version.
@@ -2098,7 +2074,6 @@ class LanguageUnderstandingApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def post_languageunderstanding_domain_version_detect(self, domain_id: str, domain_version_id: str, body: 'NluDetectionRequest', **kwargs) -> 'NluDetectionResponse':
         """
         Detect intent, entities, etc. in the submitted text using the specified NLU domain version.
@@ -2188,7 +2163,6 @@ class LanguageUnderstandingApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def post_languageunderstanding_domain_version_publish(self, domain_id: str, domain_version_id: str, **kwargs) -> 'NluDomainVersion':
         """
         Publish the draft NLU Domain Version.
@@ -2272,7 +2246,6 @@ class LanguageUnderstandingApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def post_languageunderstanding_domain_version_train(self, domain_id: str, domain_version_id: str, **kwargs) -> 'NluDomainVersionTrainingResponse':
         """
         Train the draft NLU Domain Version.
@@ -2356,7 +2329,6 @@ class LanguageUnderstandingApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def post_languageunderstanding_domain_versions(self, domain_id: str, body: 'NluDomainVersion', **kwargs) -> 'NluDomainVersion':
         """
         Create an NLU Domain Version.
@@ -2443,7 +2415,6 @@ class LanguageUnderstandingApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def post_languageunderstanding_domains(self, body: 'NluDomain', **kwargs) -> 'NluDomain':
         """
         Create an NLU Domain.
@@ -2521,7 +2492,6 @@ class LanguageUnderstandingApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def post_languageunderstanding_miner_drafts(self, miner_id: str, body: 'Draft', **kwargs) -> 'Draft':
         """
         Create a new draft resource.
@@ -2605,7 +2575,6 @@ class LanguageUnderstandingApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def post_languageunderstanding_miner_execute(self, miner_id: str, **kwargs) -> 'Miner':
         """
         Start the mining process. Specify date range pair with mediaType, queueIds, participantType for mining data from Genesys Cloud. Specify only uploadKey for mining through an external file.
@@ -2686,7 +2655,6 @@ class LanguageUnderstandingApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def post_languageunderstanding_miners(self, body: 'Miner', **kwargs) -> 'Miner':
         """
         Create a unique miner.
@@ -2764,7 +2732,6 @@ class LanguageUnderstandingApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def put_languageunderstanding_domain_version(self, domain_id: str, domain_version_id: str, body: 'NluDomainVersion', **kwargs) -> 'NluDomainVersion':
         """
         Update an NLU Domain Version.

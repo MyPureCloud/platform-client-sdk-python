@@ -55,7 +55,8 @@ class HistoryHeadersTranslation(object):
             'reply_prefix': 'str',
             'forward_prefix': 'str',
             'sent': 'str',
-            'language': 'str'
+            'language': 'str',
+            'time_zone': 'str'
         }
 
         self.attribute_map = {
@@ -66,7 +67,8 @@ class HistoryHeadersTranslation(object):
             'reply_prefix': 'replyPrefix',
             'forward_prefix': 'forwardPrefix',
             'sent': 'sent',
-            'language': 'language'
+            'language': 'language',
+            'time_zone': 'timeZone'
         }
 
         self._pcFrom = None
@@ -77,6 +79,7 @@ class HistoryHeadersTranslation(object):
         self._forward_prefix = None
         self._sent = None
         self._language = None
+        self._time_zone = None
 
     @property
     def pcFrom(self) -> str:
@@ -269,6 +272,30 @@ class HistoryHeadersTranslation(object):
         
 
         self._language = language
+
+    @property
+    def time_zone(self) -> str:
+        """
+        Gets the time_zone of this HistoryHeadersTranslation.
+        Timezone used by the agent, used to format the sent email date and time. If not defined, will default to UTC. Time zones are represented as a string of the zone name as found in the IANA time zone database. For example: UTC, Etc/UTC, or Europe/London
+
+        :return: The time_zone of this HistoryHeadersTranslation.
+        :rtype: str
+        """
+        return self._time_zone
+
+    @time_zone.setter
+    def time_zone(self, time_zone: str) -> None:
+        """
+        Sets the time_zone of this HistoryHeadersTranslation.
+        Timezone used by the agent, used to format the sent email date and time. If not defined, will default to UTC. Time zones are represented as a string of the zone name as found in the IANA time zone database. For example: UTC, Etc/UTC, or Europe/London
+
+        :param time_zone: The time_zone of this HistoryHeadersTranslation.
+        :type: str
+        """
+        
+
+        self._time_zone = time_zone
 
     def to_dict(self):
         """

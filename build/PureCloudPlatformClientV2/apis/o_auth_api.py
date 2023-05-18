@@ -64,7 +64,6 @@ class OAuthApi(object):
             if not config.api_client:
                 config.api_client = ApiClient()
             self.api_client = config.api_client
-
     def delete_oauth_client(self, client_id: str, **kwargs) -> None:
         """
         Delete OAuth Client
@@ -142,7 +141,6 @@ class OAuthApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_oauth_authorization(self, client_id: str, **kwargs) -> 'OAuthAuthorization':
         """
         Get a client that is authorized by the resource owner
@@ -223,7 +221,6 @@ class OAuthApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_oauth_authorizations(self, **kwargs) -> 'OAuthAuthorizationListing':
         """
         List clients that have been authorized, requested, or revoked by the resource owner
@@ -298,7 +295,6 @@ class OAuthApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_oauth_client(self, client_id: str, **kwargs) -> 'OAuthClient':
         """
         Get OAuth Client
@@ -376,7 +372,6 @@ class OAuthApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_oauth_client_usage_query_result(self, execution_id: str, client_id: str, **kwargs) -> 'ApiUsageQueryResult':
         """
         Get the results of a usage query
@@ -460,7 +455,6 @@ class OAuthApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_oauth_client_usage_summary(self, client_id: str, **kwargs) -> 'UsageExecutionResult':
         """
         Get a summary of OAuth client API usage
@@ -541,7 +535,6 @@ class OAuthApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_oauth_clients(self, **kwargs) -> 'OAuthClientEntityListing':
         """
         The list of OAuth clients
@@ -613,7 +606,6 @@ class OAuthApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_oauth_scope(self, scope_id: str, **kwargs) -> 'OAuthScope':
         """
         An OAuth scope
@@ -694,7 +686,6 @@ class OAuthApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_oauth_scopes(self, **kwargs) -> 'OAuthScopeListing':
         """
         The list of OAuth scopes
@@ -769,7 +760,6 @@ class OAuthApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def post_oauth_client_secret(self, client_id: str, **kwargs) -> 'OAuthClient':
         """
         Regenerate Client Secret
@@ -847,7 +837,6 @@ class OAuthApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def post_oauth_client_usage_query(self, client_id: str, body: 'ApiUsageQuery', **kwargs) -> 'UsageExecutionResult':
         """
         Query for OAuth client API usage
@@ -931,7 +920,6 @@ class OAuthApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def post_oauth_clients(self, body: 'OAuthClientRequest', **kwargs) -> 'OAuthClient':
         """
         Create OAuth client
@@ -1009,7 +997,6 @@ class OAuthApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def put_oauth_client(self, client_id: str, body: 'OAuthClientRequest', **kwargs) -> 'OAuthClient':
         """
         Update OAuth Client

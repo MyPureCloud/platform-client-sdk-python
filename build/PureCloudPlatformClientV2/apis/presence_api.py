@@ -62,7 +62,6 @@ class PresenceApi(object):
             if not config.api_client:
                 config.api_client = ApiClient()
             self.api_client = config.api_client
-
     def delete_presence_source(self, source_id: str, **kwargs) -> None:
         """
         Delete a Presence Source
@@ -140,7 +139,6 @@ class PresenceApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def delete_presencedefinition(self, presence_id: str, **kwargs) -> None:
         """
         Delete a Presence Definition
@@ -218,7 +216,6 @@ class PresenceApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_presence_settings(self, **kwargs) -> 'PresenceSettings':
         """
         Get the presence settings
@@ -290,7 +287,6 @@ class PresenceApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_presence_source(self, source_id: str, **kwargs) -> 'Source':
         """
         Get a Presence Source
@@ -368,7 +364,6 @@ class PresenceApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_presence_sources(self, **kwargs) -> 'SourceEntityListing':
         """
         Get a list of Presence Sources
@@ -443,7 +438,6 @@ class PresenceApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_presence_user_primarysource(self, user_id: str, **kwargs) -> 'UserPrimarySource':
         """
         Get a user's Primary Presence Source
@@ -521,7 +515,6 @@ class PresenceApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_presencedefinition(self, presence_id: str, **kwargs) -> 'OrganizationPresence':
         """
         Get a Presence Definition
@@ -602,7 +595,6 @@ class PresenceApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_presencedefinitions(self, **kwargs) -> 'OrganizationPresenceEntityListing':
         """
         Get an Organization's list of Presence Definitions
@@ -686,7 +678,6 @@ class PresenceApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_systempresences(self, **kwargs) -> List['SystemPresence']:
         """
         Get the list of SystemPresences
@@ -758,7 +749,6 @@ class PresenceApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_user_presence(self, user_id: str, source_id: str, **kwargs) -> 'UserPresence':
         """
         Get a user's Presence
@@ -842,7 +832,6 @@ class PresenceApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_user_presences_purecloud(self, user_id: str, **kwargs) -> 'UserPresence':
         """
         Get a user's Genesys Cloud presence.
@@ -920,7 +909,6 @@ class PresenceApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def patch_user_presence(self, user_id: str, source_id: str, body: 'UserPresence', **kwargs) -> 'UserPresence':
         """
         Patch a user's Presence
@@ -1010,7 +998,6 @@ class PresenceApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def patch_user_presences_purecloud(self, user_id: str, body: 'UserPresence', **kwargs) -> 'UserPresence':
         """
         Patch a Genesys Cloud user's presence
@@ -1094,7 +1081,6 @@ class PresenceApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def post_presence_sources(self, body: 'Source', **kwargs) -> 'Source':
         """
         Create a Presence Source
@@ -1172,7 +1158,6 @@ class PresenceApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def post_presencedefinitions(self, body: 'OrganizationPresence', **kwargs) -> 'OrganizationPresence':
         """
         Create a Presence Definition
@@ -1250,7 +1235,6 @@ class PresenceApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def put_presence_settings(self, body: 'PresenceSettings', **kwargs) -> 'PresenceSettings':
         """
         Update the presence settings
@@ -1328,7 +1312,6 @@ class PresenceApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def put_presence_source(self, source_id: str, body: 'Source', **kwargs) -> 'Source':
         """
         Update a Presence Source
@@ -1412,7 +1395,6 @@ class PresenceApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def put_presence_user_primarysource(self, user_id: str, body: 'UserPrimarySource', **kwargs) -> 'UserPrimarySource':
         """
         Update a user's Primary Presence Source
@@ -1496,7 +1478,6 @@ class PresenceApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def put_presencedefinition(self, presence_id: str, body: 'OrganizationPresence', **kwargs) -> 'OrganizationPresence':
         """
         Update a Presence Definition
@@ -1580,7 +1561,6 @@ class PresenceApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def put_users_presences_bulk(self, body: List['UserPresence'], **kwargs) -> List['UserPresence']:
         """
         Update bulk user Presences

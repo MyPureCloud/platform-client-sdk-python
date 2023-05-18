@@ -56,7 +56,6 @@ class ObjectsApi(object):
             if not config.api_client:
                 config.api_client = ApiClient()
             self.api_client = config.api_client
-
     def delete_authorization_division(self, division_id: str, **kwargs) -> None:
         """
         Delete a division.
@@ -137,7 +136,6 @@ class ObjectsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_authorization_division(self, division_id: str, **kwargs) -> 'AuthzDivision':
         """
         Returns an authorization division.
@@ -218,7 +216,6 @@ class ObjectsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_authorization_divisions(self, **kwargs) -> 'AuthzDivisionEntityListing':
         """
         Retrieve a list of all divisions defined for the organization
@@ -317,7 +314,6 @@ class ObjectsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_authorization_divisions_home(self, **kwargs) -> 'AuthzDivision':
         """
         Retrieve the home division for the organization.
@@ -389,7 +385,6 @@ class ObjectsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_authorization_divisions_limit(self, **kwargs) -> int:
         """
         Returns the maximum allowed number of divisions.
@@ -461,7 +456,6 @@ class ObjectsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def post_authorization_division_object(self, division_id: str, object_type: str, body: List['str'], **kwargs) -> None:
         """
         Assign a list of objects to a division
@@ -551,7 +545,6 @@ class ObjectsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def post_authorization_division_restore(self, division_id: str, body: 'AuthzDivision', **kwargs) -> 'AuthzDivision':
         """
         Recreate a previously deleted division.
@@ -635,7 +628,6 @@ class ObjectsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def post_authorization_divisions(self, body: 'AuthzDivision', **kwargs) -> 'AuthzDivision':
         """
         Create a division.
@@ -713,7 +705,6 @@ class ObjectsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def put_authorization_division(self, division_id: str, body: 'AuthzDivision', **kwargs) -> 'AuthzDivision':
         """
         Update a division.

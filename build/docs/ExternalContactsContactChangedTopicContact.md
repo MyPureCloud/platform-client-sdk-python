@@ -8,6 +8,7 @@ title: ExternalContactsContactChangedTopicContact
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
 | **id** | **str** |  | [optional] |
+| **external_organization** | [**ExternalContactsContactChangedTopicExternalOrganization**](ExternalContactsContactChangedTopicExternalOrganization.html) |  | [optional] |
 | **type** | **str** |  | [optional] |
 | **first_name** | **str** |  | [optional] |
 | **middle_name** | **str** |  | [optional] |
@@ -29,6 +30,8 @@ title: ExternalContactsContactChangedTopicContact
 | **whats_app_id** | [**ExternalContactsContactChangedTopicWhatsAppId**](ExternalContactsContactChangedTopicWhatsAppId.html) |  | [optional] |
 | **facebook_id** | [**ExternalContactsContactChangedTopicFacebookId**](ExternalContactsContactChangedTopicFacebookId.html) |  | [optional] |
 | **instagram_id** | [**ExternalContactsContactChangedTopicInstagramId**](ExternalContactsContactChangedTopicInstagramId.html) |  | [optional] |
+| **schema** | [**ExternalContactsContactChangedTopicDataSchema**](ExternalContactsContactChangedTopicDataSchema.html) |  | [optional] |
+| **custom_fields** | **dict(str, object)** |  | [optional] |
 {: class="table table-striped"}
 
 

@@ -56,7 +56,6 @@ class MobileDevicesApi(object):
             if not config.api_client:
                 config.api_client = ApiClient()
             self.api_client = config.api_client
-
     def delete_mobiledevice(self, device_id: str, **kwargs) -> None:
         """
         Delete device
@@ -134,7 +133,6 @@ class MobileDevicesApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_mobiledevice(self, device_id: str, **kwargs) -> 'UserDevice':
         """
         Get device
@@ -212,7 +210,6 @@ class MobileDevicesApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_mobiledevices(self, **kwargs) -> 'DirectoryUserDevicesListing':
         """
         Get a list of all devices.
@@ -293,7 +290,6 @@ class MobileDevicesApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def post_mobiledevices(self, body: 'UserDevice', **kwargs) -> 'UserDevice':
         """
         Create User device
@@ -371,7 +367,6 @@ class MobileDevicesApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def put_mobiledevice(self, device_id: str, **kwargs) -> 'UserDevice':
         """
         Update device

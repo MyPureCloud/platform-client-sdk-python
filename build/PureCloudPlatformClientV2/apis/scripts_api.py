@@ -60,7 +60,6 @@ class ScriptsApi(object):
             if not config.api_client:
                 config.api_client = ApiClient()
             self.api_client = config.api_client
-
     def get_script(self, script_id: str, **kwargs) -> 'Script':
         """
         Get a script
@@ -138,7 +137,6 @@ class ScriptsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_script_page(self, script_id: str, page_id: str, **kwargs) -> 'Page':
         """
         Get a page
@@ -225,7 +223,6 @@ class ScriptsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_script_pages(self, script_id: str, **kwargs) -> List['Page']:
         """
         Get the list of pages
@@ -306,7 +303,6 @@ class ScriptsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_scripts(self, **kwargs) -> 'ScriptEntityListing':
         """
         Get the list of scripts
@@ -408,7 +404,6 @@ class ScriptsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_scripts_divisionviews(self, **kwargs) -> 'ScriptEntityListing':
         """
         Get the metadata for a list of scripts
@@ -510,7 +505,6 @@ class ScriptsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_scripts_published(self, **kwargs) -> 'ScriptEntityListing':
         """
         Get the published scripts.
@@ -606,7 +600,6 @@ class ScriptsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_scripts_published_divisionviews(self, **kwargs) -> 'ScriptEntityListing':
         """
         Get the published scripts metadata.
@@ -702,7 +695,6 @@ class ScriptsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_scripts_published_script_id(self, script_id: str, **kwargs) -> 'Script':
         """
         Get the published script.
@@ -783,7 +775,6 @@ class ScriptsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_scripts_published_script_id_page(self, script_id: str, page_id: str, **kwargs) -> 'Page':
         """
         Get the published page.
@@ -870,7 +861,6 @@ class ScriptsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_scripts_published_script_id_pages(self, script_id: str, **kwargs) -> List['Page']:
         """
         Get the list of published pages
@@ -951,7 +941,6 @@ class ScriptsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_scripts_published_script_id_variables(self, script_id: str, **kwargs) -> object:
         """
         Get the published variables
@@ -1041,7 +1030,6 @@ class ScriptsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_scripts_upload_status(self, upload_id: str, **kwargs) -> 'ImportScriptStatusResponse':
         """
         Get the upload status of an imported script
@@ -1122,7 +1110,6 @@ class ScriptsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def post_script_export(self, script_id: str, **kwargs) -> 'ExportScriptResponse':
         """
         Export a script via download service.

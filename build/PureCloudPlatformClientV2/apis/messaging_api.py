@@ -56,7 +56,6 @@ class MessagingApi(object):
             if not config.api_client:
                 config.api_client = ApiClient()
             self.api_client = config.api_client
-
     def delete_messaging_supportedcontent_supported_content_id(self, supported_content_id: str, **kwargs) -> None:
         """
         Delete a supported content profile
@@ -134,7 +133,6 @@ class MessagingApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_messaging_supportedcontent(self, **kwargs) -> 'SupportedContentListing':
         """
         Get a list of Supported Content profiles
@@ -212,7 +210,6 @@ class MessagingApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_messaging_supportedcontent_supported_content_id(self, supported_content_id: str, **kwargs) -> 'SupportedContent':
         """
         Get a supported content profile
@@ -290,7 +287,6 @@ class MessagingApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def patch_messaging_supportedcontent_supported_content_id(self, supported_content_id: str, body: 'SupportedContent', **kwargs) -> 'SupportedContent':
         """
         Update a supported content profile
@@ -374,7 +370,6 @@ class MessagingApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def post_messaging_supportedcontent(self, body: 'SupportedContent', **kwargs) -> 'SupportedContent':
         """
         Create a Supported Content profile

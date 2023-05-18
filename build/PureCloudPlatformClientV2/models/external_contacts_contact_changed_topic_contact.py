@@ -34,6 +34,8 @@ from typing import Dict
 
 if TYPE_CHECKING:
     from . import ExternalContactsContactChangedTopicContactAddress
+    from . import ExternalContactsContactChangedTopicDataSchema
+    from . import ExternalContactsContactChangedTopicExternalOrganization
     from . import ExternalContactsContactChangedTopicFacebookId
     from . import ExternalContactsContactChangedTopicInstagramId
     from . import ExternalContactsContactChangedTopicLineId
@@ -57,6 +59,7 @@ class ExternalContactsContactChangedTopicContact(object):
         """
         self.swagger_types = {
             'id': 'str',
+            'external_organization': 'ExternalContactsContactChangedTopicExternalOrganization',
             'type': 'str',
             'first_name': 'str',
             'middle_name': 'str',
@@ -77,11 +80,14 @@ class ExternalContactsContactChangedTopicContact(object):
             'line_id': 'ExternalContactsContactChangedTopicLineId',
             'whats_app_id': 'ExternalContactsContactChangedTopicWhatsAppId',
             'facebook_id': 'ExternalContactsContactChangedTopicFacebookId',
-            'instagram_id': 'ExternalContactsContactChangedTopicInstagramId'
+            'instagram_id': 'ExternalContactsContactChangedTopicInstagramId',
+            'schema': 'ExternalContactsContactChangedTopicDataSchema',
+            'custom_fields': 'dict(str, object)'
         }
 
         self.attribute_map = {
             'id': 'id',
+            'external_organization': 'externalOrganization',
             'type': 'type',
             'first_name': 'firstName',
             'middle_name': 'middleName',
@@ -102,10 +108,13 @@ class ExternalContactsContactChangedTopicContact(object):
             'line_id': 'lineId',
             'whats_app_id': 'whatsAppId',
             'facebook_id': 'facebookId',
-            'instagram_id': 'instagramId'
+            'instagram_id': 'instagramId',
+            'schema': 'schema',
+            'custom_fields': 'customFields'
         }
 
         self._id = None
+        self._external_organization = None
         self._type = None
         self._first_name = None
         self._middle_name = None
@@ -127,6 +136,8 @@ class ExternalContactsContactChangedTopicContact(object):
         self._whats_app_id = None
         self._facebook_id = None
         self._instagram_id = None
+        self._schema = None
+        self._custom_fields = None
 
     @property
     def id(self) -> str:
@@ -151,6 +162,30 @@ class ExternalContactsContactChangedTopicContact(object):
         
 
         self._id = id
+
+    @property
+    def external_organization(self) -> 'ExternalContactsContactChangedTopicExternalOrganization':
+        """
+        Gets the external_organization of this ExternalContactsContactChangedTopicContact.
+
+
+        :return: The external_organization of this ExternalContactsContactChangedTopicContact.
+        :rtype: ExternalContactsContactChangedTopicExternalOrganization
+        """
+        return self._external_organization
+
+    @external_organization.setter
+    def external_organization(self, external_organization: 'ExternalContactsContactChangedTopicExternalOrganization') -> None:
+        """
+        Sets the external_organization of this ExternalContactsContactChangedTopicContact.
+
+
+        :param external_organization: The external_organization of this ExternalContactsContactChangedTopicContact.
+        :type: ExternalContactsContactChangedTopicExternalOrganization
+        """
+        
+
+        self._external_organization = external_organization
 
     @property
     def type(self) -> str:
@@ -660,6 +695,54 @@ class ExternalContactsContactChangedTopicContact(object):
         
 
         self._instagram_id = instagram_id
+
+    @property
+    def schema(self) -> 'ExternalContactsContactChangedTopicDataSchema':
+        """
+        Gets the schema of this ExternalContactsContactChangedTopicContact.
+
+
+        :return: The schema of this ExternalContactsContactChangedTopicContact.
+        :rtype: ExternalContactsContactChangedTopicDataSchema
+        """
+        return self._schema
+
+    @schema.setter
+    def schema(self, schema: 'ExternalContactsContactChangedTopicDataSchema') -> None:
+        """
+        Sets the schema of this ExternalContactsContactChangedTopicContact.
+
+
+        :param schema: The schema of this ExternalContactsContactChangedTopicContact.
+        :type: ExternalContactsContactChangedTopicDataSchema
+        """
+        
+
+        self._schema = schema
+
+    @property
+    def custom_fields(self) -> Dict[str, object]:
+        """
+        Gets the custom_fields of this ExternalContactsContactChangedTopicContact.
+
+
+        :return: The custom_fields of this ExternalContactsContactChangedTopicContact.
+        :rtype: dict(str, object)
+        """
+        return self._custom_fields
+
+    @custom_fields.setter
+    def custom_fields(self, custom_fields: Dict[str, object]) -> None:
+        """
+        Sets the custom_fields of this ExternalContactsContactChangedTopicContact.
+
+
+        :param custom_fields: The custom_fields of this ExternalContactsContactChangedTopicContact.
+        :type: dict(str, object)
+        """
+        
+
+        self._custom_fields = custom_fields
 
     def to_dict(self):
         """

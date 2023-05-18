@@ -68,6 +68,7 @@ class Metrics(object):
             'source_performance_profile': 'PerformanceProfile',
             'unit_definition': 'str',
             'precision': 'int',
+            'time_display_unit': 'str',
             'self_uri': 'str'
         }
 
@@ -89,6 +90,7 @@ class Metrics(object):
             'source_performance_profile': 'sourcePerformanceProfile',
             'unit_definition': 'unitDefinition',
             'precision': 'precision',
+            'time_display_unit': 'timeDisplayUnit',
             'self_uri': 'selfUri'
         }
 
@@ -109,6 +111,7 @@ class Metrics(object):
         self._source_performance_profile = None
         self._unit_definition = None
         self._precision = None
+        self._time_display_unit = None
         self._self_uri = None
 
     @property
@@ -523,6 +526,35 @@ class Metrics(object):
         
 
         self._precision = precision
+
+    @property
+    def time_display_unit(self) -> str:
+        """
+        Gets the time_display_unit of this Metrics.
+        The time unit in which the metric should be displayed -- this parameter is ignored when displaying non-time values
+
+        :return: The time_display_unit of this Metrics.
+        :rtype: str
+        """
+        return self._time_display_unit
+
+    @time_display_unit.setter
+    def time_display_unit(self, time_display_unit: str) -> None:
+        """
+        Sets the time_display_unit of this Metrics.
+        The time unit in which the metric should be displayed -- this parameter is ignored when displaying non-time values
+
+        :param time_display_unit: The time_display_unit of this Metrics.
+        :type: str
+        """
+        if isinstance(time_display_unit, int):
+            time_display_unit = str(time_display_unit)
+        allowed_values = ["None", "Seconds", "Minutes", "Hours"]
+        if time_display_unit.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for time_display_unit -> " + time_display_unit)
+            self._time_display_unit = "outdated_sdk_version"
+        else:
+            self._time_display_unit = time_display_unit
 
     @property
     def self_uri(self) -> str:

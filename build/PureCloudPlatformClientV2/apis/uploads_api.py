@@ -57,7 +57,6 @@ class UploadsApi(object):
             if not config.api_client:
                 config.api_client = ApiClient()
             self.api_client = config.api_client
-
     def post_knowledge_documentuploads(self, body: 'UploadUrlRequest', **kwargs) -> 'UploadUrlResponse':
         """
         Creates a presigned URL for uploading a knowledge import file with a set of documents
@@ -135,7 +134,6 @@ class UploadsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def post_languageunderstanding_miner_uploads(self, miner_id: str, body: 'Empty', **kwargs) -> 'UploadUrlResponse':
         """
         Creates a presigned URL for uploading a chat corpus which will be used for mining by intent miner
@@ -219,7 +217,6 @@ class UploadsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def post_uploads_learning_coverart(self, body: 'LearningCoverArtUploadUrlRequest', **kwargs) -> 'UploadUrlResponse':
         """
         Generates pre-signed URL to upload cover art for learning modules
@@ -297,7 +294,6 @@ class UploadsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def post_uploads_publicassets_images(self, body: 'UploadUrlRequest', **kwargs) -> 'UploadUrlResponse':
         """
         Creates presigned url for uploading a public asset image
@@ -375,7 +371,6 @@ class UploadsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def post_uploads_recordings(self, body: 'UploadUrlRequest', **kwargs) -> 'UploadUrlResponse':
         """
         Creates presigned url for uploading a recording file
@@ -453,7 +448,6 @@ class UploadsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def post_uploads_workforcemanagement_historicaldata_csv(self, body: 'UploadUrlRequest', **kwargs) -> 'UploadUrlResponse':
         """
         Creates presigned url for uploading WFM historical data file. Requires data in csv format.

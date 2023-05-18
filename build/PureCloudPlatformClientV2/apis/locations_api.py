@@ -60,7 +60,6 @@ class LocationsApi(object):
             if not config.api_client:
                 config.api_client = ApiClient()
             self.api_client = config.api_client
-
     def delete_location(self, location_id: str, **kwargs) -> None:
         """
         Delete a location
@@ -138,7 +137,6 @@ class LocationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_location(self, location_id: str, **kwargs) -> 'LocationDefinition':
         """
         Get Location by ID.
@@ -219,7 +217,6 @@ class LocationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_location_sublocations(self, location_id: str, **kwargs) -> 'LocationEntityListing':
         """
         Get sublocations for location ID.
@@ -297,7 +294,6 @@ class LocationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_locations(self, **kwargs) -> 'LocationEntityListing':
         """
         Get a list of all locations.
@@ -381,7 +377,6 @@ class LocationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_locations_search(self, q64: str, **kwargs) -> 'LocationsSearchResponse':
         """
         Search locations using the q64 value returned from a previous search
@@ -462,7 +457,6 @@ class LocationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def patch_location(self, location_id: str, body: 'LocationUpdateDefinition', **kwargs) -> 'LocationDefinition':
         """
         Update a location
@@ -546,7 +540,6 @@ class LocationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def post_locations(self, body: 'LocationCreateDefinition', **kwargs) -> 'LocationDefinition':
         """
         Create a location
@@ -624,7 +617,6 @@ class LocationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def post_locations_search(self, body: 'LocationSearchRequest', **kwargs) -> 'LocationsSearchResponse':
         """
         Search locations

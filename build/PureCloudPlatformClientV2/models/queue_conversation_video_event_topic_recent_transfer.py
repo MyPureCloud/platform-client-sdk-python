@@ -35,6 +35,7 @@ from typing import Dict
 if TYPE_CHECKING:
     from . import QueueConversationVideoEventTopicDestination
     from . import QueueConversationVideoEventTopicInitiator
+    from . import QueueConversationVideoEventTopicModifiedBy
 
 class QueueConversationVideoEventTopicRecentTransfer(object):
     """
@@ -55,6 +56,7 @@ class QueueConversationVideoEventTopicRecentTransfer(object):
             'state': 'str',
             'date_issued': 'datetime',
             'initiator': 'QueueConversationVideoEventTopicInitiator',
+            'modified_by': 'QueueConversationVideoEventTopicModifiedBy',
             'destination': 'QueueConversationVideoEventTopicDestination',
             'transfer_type': 'str'
         }
@@ -64,6 +66,7 @@ class QueueConversationVideoEventTopicRecentTransfer(object):
             'state': 'state',
             'date_issued': 'dateIssued',
             'initiator': 'initiator',
+            'modified_by': 'modifiedBy',
             'destination': 'destination',
             'transfer_type': 'transferType'
         }
@@ -72,6 +75,7 @@ class QueueConversationVideoEventTopicRecentTransfer(object):
         self._state = None
         self._date_issued = None
         self._initiator = None
+        self._modified_by = None
         self._destination = None
         self._transfer_type = None
 
@@ -175,6 +179,30 @@ class QueueConversationVideoEventTopicRecentTransfer(object):
         
 
         self._initiator = initiator
+
+    @property
+    def modified_by(self) -> 'QueueConversationVideoEventTopicModifiedBy':
+        """
+        Gets the modified_by of this QueueConversationVideoEventTopicRecentTransfer.
+
+
+        :return: The modified_by of this QueueConversationVideoEventTopicRecentTransfer.
+        :rtype: QueueConversationVideoEventTopicModifiedBy
+        """
+        return self._modified_by
+
+    @modified_by.setter
+    def modified_by(self, modified_by: 'QueueConversationVideoEventTopicModifiedBy') -> None:
+        """
+        Sets the modified_by of this QueueConversationVideoEventTopicRecentTransfer.
+
+
+        :param modified_by: The modified_by of this QueueConversationVideoEventTopicRecentTransfer.
+        :type: QueueConversationVideoEventTopicModifiedBy
+        """
+        
+
+        self._modified_by = modified_by
 
     @property
     def destination(self) -> 'QueueConversationVideoEventTopicDestination':

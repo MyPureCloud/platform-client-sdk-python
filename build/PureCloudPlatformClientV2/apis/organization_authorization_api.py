@@ -73,7 +73,6 @@ class OrganizationAuthorizationApi(object):
             if not config.api_client:
                 config.api_client = ApiClient()
             self.api_client = config.api_client
-
     def delete_orgauthorization_trustee(self, trustee_org_id: str, **kwargs) -> None:
         """
         Delete Org Trust
@@ -151,7 +150,6 @@ class OrganizationAuthorizationApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def delete_orgauthorization_trustee_cloneduser(self, trustee_org_id: str, trustee_user_id: str, **kwargs) -> None:
         """
         Deletes cloned user
@@ -235,7 +233,6 @@ class OrganizationAuthorizationApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def delete_orgauthorization_trustee_group(self, trustee_org_id: str, trustee_group_id: str, **kwargs) -> None:
         """
         Delete Trustee Group
@@ -319,7 +316,6 @@ class OrganizationAuthorizationApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def delete_orgauthorization_trustee_group_roles(self, trustee_org_id: str, trustee_group_id: str, **kwargs) -> None:
         """
         Delete Trustee Group Roles
@@ -403,7 +399,6 @@ class OrganizationAuthorizationApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def delete_orgauthorization_trustee_user(self, trustee_org_id: str, trustee_user_id: str, **kwargs) -> None:
         """
         Delete Trustee User
@@ -487,7 +482,6 @@ class OrganizationAuthorizationApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def delete_orgauthorization_trustee_user_roles(self, trustee_org_id: str, trustee_user_id: str, **kwargs) -> None:
         """
         Delete Trustee User Roles
@@ -571,7 +565,6 @@ class OrganizationAuthorizationApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def delete_orgauthorization_trustor(self, trustor_org_id: str, **kwargs) -> None:
         """
         Delete Org Trust
@@ -649,7 +642,6 @@ class OrganizationAuthorizationApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def delete_orgauthorization_trustor_cloneduser(self, trustor_org_id: str, trustee_user_id: str, **kwargs) -> None:
         """
         Delete Cloned User
@@ -733,7 +725,6 @@ class OrganizationAuthorizationApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def delete_orgauthorization_trustor_group(self, trustor_org_id: str, trustor_group_id: str, **kwargs) -> None:
         """
         Delete Trustee Group
@@ -817,7 +808,6 @@ class OrganizationAuthorizationApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def delete_orgauthorization_trustor_user(self, trustor_org_id: str, trustee_user_id: str, **kwargs) -> None:
         """
         Delete Trustee User
@@ -901,7 +891,6 @@ class OrganizationAuthorizationApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_orgauthorization_pairing(self, pairing_id: str, **kwargs) -> 'TrustRequest':
         """
         Get Pairing Info
@@ -979,7 +968,6 @@ class OrganizationAuthorizationApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_orgauthorization_trustee(self, trustee_org_id: str, **kwargs) -> 'Trustee':
         """
         Get Org Trust
@@ -1057,7 +1045,6 @@ class OrganizationAuthorizationApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_orgauthorization_trustee_clonedusers(self, trustee_org_id: str, **kwargs) -> 'ClonedUserEntityListing':
         """
         The list of cloned users from the trustee organization (i.e. users with a native user record).
@@ -1135,7 +1122,6 @@ class OrganizationAuthorizationApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_orgauthorization_trustee_group(self, trustee_org_id: str, trustee_group_id: str, **kwargs) -> 'TrustGroup':
         """
         Get Trustee Group
@@ -1219,7 +1205,6 @@ class OrganizationAuthorizationApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_orgauthorization_trustee_group_roles(self, trustee_org_id: str, trustee_group_id: str, **kwargs) -> 'UserAuthorization':
         """
         Get Trustee Group Roles
@@ -1303,7 +1288,6 @@ class OrganizationAuthorizationApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_orgauthorization_trustee_groups(self, trustee_org_id: str, **kwargs) -> 'TrustGroupEntityListing':
         """
         The list of trustee groups for this organization (i.e. groups granted access to this organization).
@@ -1387,7 +1371,6 @@ class OrganizationAuthorizationApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_orgauthorization_trustee_user(self, trustee_org_id: str, trustee_user_id: str, **kwargs) -> 'TrustUser':
         """
         Get Trustee User
@@ -1471,7 +1454,6 @@ class OrganizationAuthorizationApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_orgauthorization_trustee_user_roles(self, trustee_org_id: str, trustee_user_id: str, **kwargs) -> 'UserAuthorization':
         """
         Get Trustee User Roles
@@ -1555,7 +1537,6 @@ class OrganizationAuthorizationApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_orgauthorization_trustee_users(self, trustee_org_id: str, **kwargs) -> 'TrustUserEntityListing':
         """
         The list of trustee users for this organization (i.e. users granted access to this organization).
@@ -1639,7 +1620,6 @@ class OrganizationAuthorizationApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_orgauthorization_trustees(self, **kwargs) -> 'TrustEntityListing':
         """
         The list of trustees for this organization (i.e. organizations granted access to this organization).
@@ -1717,7 +1697,6 @@ class OrganizationAuthorizationApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_orgauthorization_trustees_default(self, **kwargs) -> 'Trustee':
         """
         Get organization authorization trust with Customer Care, if one exists.
@@ -1789,7 +1768,6 @@ class OrganizationAuthorizationApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_orgauthorization_trustor(self, trustor_org_id: str, **kwargs) -> 'Trustor':
         """
         Get Org Trust
@@ -1867,7 +1845,6 @@ class OrganizationAuthorizationApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_orgauthorization_trustor_cloneduser(self, trustor_org_id: str, trustee_user_id: str, **kwargs) -> 'ClonedUser':
         """
         Get Cloned User
@@ -1951,7 +1928,6 @@ class OrganizationAuthorizationApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_orgauthorization_trustor_clonedusers(self, trustor_org_id: str, **kwargs) -> 'ClonedUserEntityListing':
         """
         The list of cloned users in the trustor organization (i.e. users with a native user record).
@@ -2029,7 +2005,6 @@ class OrganizationAuthorizationApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_orgauthorization_trustor_group(self, trustor_org_id: str, trustor_group_id: str, **kwargs) -> 'TrustGroup':
         """
         Get Trustee Group
@@ -2113,7 +2088,6 @@ class OrganizationAuthorizationApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_orgauthorization_trustor_groups(self, trustor_org_id: str, **kwargs) -> 'TrustGroupEntityListing':
         """
         The list of groups in the trustor organization (i.e. groups granted access).
@@ -2197,7 +2171,6 @@ class OrganizationAuthorizationApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_orgauthorization_trustor_user(self, trustor_org_id: str, trustee_user_id: str, **kwargs) -> 'TrustUser':
         """
         Get Trustee User
@@ -2281,7 +2254,6 @@ class OrganizationAuthorizationApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_orgauthorization_trustor_users(self, trustor_org_id: str, **kwargs) -> 'TrustUserEntityListing':
         """
         The list of users in the trustor organization (i.e. users granted access).
@@ -2365,7 +2337,6 @@ class OrganizationAuthorizationApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_orgauthorization_trustors(self, **kwargs) -> 'TrustorEntityListing':
         """
         The list of organizations that have authorized/trusted your organization.
@@ -2443,7 +2414,6 @@ class OrganizationAuthorizationApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def post_orgauthorization_pairings(self, body: 'TrustRequestCreate', **kwargs) -> 'TrustRequest':
         """
         A pairing id is created by the trustee and given to the trustor to create a trust.
@@ -2521,7 +2491,6 @@ class OrganizationAuthorizationApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def post_orgauthorization_trustee_groups(self, trustee_org_id: str, body: 'TrustMemberCreate', **kwargs) -> 'TrustGroup':
         """
         Add a group to the trust.
@@ -2605,7 +2574,6 @@ class OrganizationAuthorizationApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def post_orgauthorization_trustee_users(self, trustee_org_id: str, body: 'TrustMemberCreate', **kwargs) -> 'TrustUser':
         """
         Add a user to the trust.
@@ -2689,7 +2657,6 @@ class OrganizationAuthorizationApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def post_orgauthorization_trustees(self, body: 'TrustCreate', **kwargs) -> 'Trustee':
         """
         Create a new organization authorization trust. This is required to grant other organizations access to your organization.
@@ -2767,7 +2734,6 @@ class OrganizationAuthorizationApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def post_orgauthorization_trustees_audits(self, body: 'TrusteeAuditQueryRequest', **kwargs) -> object:
         """
         Get Org Trustee Audits
@@ -2857,7 +2823,6 @@ class OrganizationAuthorizationApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def post_orgauthorization_trustees_default(self, **kwargs) -> 'Trustee':
         """
         Create a new organization authorization trust with Customer Care. This is required to grant your regional Customer Care organization access to your organization.
@@ -2935,7 +2900,6 @@ class OrganizationAuthorizationApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def post_orgauthorization_trustor_audits(self, body: 'TrustorAuditQueryRequest', **kwargs) -> object:
         """
         Get Org Trustor Audits
@@ -3025,7 +2989,6 @@ class OrganizationAuthorizationApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def put_orgauthorization_trustee(self, trustee_org_id: str, body: 'TrustUpdate', **kwargs) -> 'Trustee':
         """
         Update Org Trust
@@ -3109,7 +3072,6 @@ class OrganizationAuthorizationApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def put_orgauthorization_trustee_group_roledivisions(self, trustee_org_id: str, trustee_group_id: str, body: 'RoleDivisionGrants', **kwargs) -> 'UserAuthorization':
         """
         Update Trustee Group Roles
@@ -3199,7 +3161,6 @@ class OrganizationAuthorizationApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def put_orgauthorization_trustee_group_roles(self, trustee_org_id: str, trustee_group_id: str, body: List['str'], **kwargs) -> 'UserAuthorization':
         """
         Update Trustee Group Roles
@@ -3289,7 +3250,6 @@ class OrganizationAuthorizationApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def put_orgauthorization_trustee_user_roledivisions(self, trustee_org_id: str, trustee_user_id: str, body: 'RoleDivisionGrants', **kwargs) -> 'UserAuthorization':
         """
         Update Trustee User Roles
@@ -3379,7 +3339,6 @@ class OrganizationAuthorizationApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def put_orgauthorization_trustee_user_roles(self, trustee_org_id: str, trustee_user_id: str, body: List['str'], **kwargs) -> 'UserAuthorization':
         """
         Update Trustee User Roles
@@ -3469,7 +3428,6 @@ class OrganizationAuthorizationApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def put_orgauthorization_trustor_cloneduser(self, trustor_org_id: str, trustee_user_id: str, **kwargs) -> 'ClonedUser':
         """
         Creates a clone of the trustee user in the trustor org.
@@ -3553,7 +3511,6 @@ class OrganizationAuthorizationApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def put_orgauthorization_trustor_group(self, trustor_org_id: str, trustor_group_id: str, **kwargs) -> 'TrustGroup':
         """
         Add a Trustee Group to the trust.
@@ -3637,7 +3594,6 @@ class OrganizationAuthorizationApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def put_orgauthorization_trustor_user(self, trustor_org_id: str, trustee_user_id: str, **kwargs) -> 'TrustUser':
         """
         Add a Trustee user to the trust.

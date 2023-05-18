@@ -11,6 +11,7 @@ title: ConversationEventTopicRecentTransfer
 | **state** | **str** |  | [optional] |
 | **date_issued** | **datetime** | The date/time that this command was issued. | [optional] |
 | **initiator** | [**ConversationEventTopicInitiator**](ConversationEventTopicInitiator.html) |  | [optional] |
+| **modified_by** | [**ConversationEventTopicModifiedBy**](ConversationEventTopicModifiedBy.html) |  | [optional] |
 | **destination** | [**ConversationEventTopicDestination**](ConversationEventTopicDestination.html) |  | [optional] |
 | **transfer_type** | **str** | The type of transfer to perform. | [optional] |
 {: class="table table-striped"}

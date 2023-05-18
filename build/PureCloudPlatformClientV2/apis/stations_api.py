@@ -56,7 +56,6 @@ class StationsApi(object):
             if not config.api_client:
                 config.api_client = ApiClient()
             self.api_client = config.api_client
-
     def delete_station_associateduser(self, station_id: str, **kwargs) -> None:
         """
         Unassigns the user assigned to this station
@@ -134,7 +133,6 @@ class StationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_station(self, station_id: str, **kwargs) -> 'Station':
         """
         Get station.
@@ -212,7 +210,6 @@ class StationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_stations(self, **kwargs) -> 'StationEntityListing':
         """
         Get the list of available stations.

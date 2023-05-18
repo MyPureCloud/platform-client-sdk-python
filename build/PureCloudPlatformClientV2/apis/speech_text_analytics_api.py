@@ -83,7 +83,6 @@ class SpeechTextAnalyticsApi(object):
             if not config.api_client:
                 config.api_client = ApiClient()
             self.api_client = config.api_client
-
     def delete_speechandtextanalytics_program(self, program_id: str, **kwargs) -> None:
         """
         Delete a Speech & Text Analytics program by id
@@ -164,7 +163,6 @@ class SpeechTextAnalyticsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def delete_speechandtextanalytics_sentimentfeedback(self, **kwargs) -> None:
         """
         Delete All Speech & Text Analytics SentimentFeedback
@@ -236,7 +234,6 @@ class SpeechTextAnalyticsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def delete_speechandtextanalytics_sentimentfeedback_sentiment_feedback_id(self, sentiment_feedback_id: str, **kwargs) -> None:
         """
         Delete a Speech & Text Analytics SentimentFeedback by Id
@@ -314,7 +311,6 @@ class SpeechTextAnalyticsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def delete_speechandtextanalytics_topic(self, topic_id: str, **kwargs) -> None:
         """
         Delete a Speech & Text Analytics topic by id
@@ -392,7 +388,6 @@ class SpeechTextAnalyticsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_speechandtextanalytics_conversation(self, conversation_id: str, **kwargs) -> 'ConversationMetrics':
         """
         Get Speech and Text Analytics for a specific conversation
@@ -470,7 +465,6 @@ class SpeechTextAnalyticsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_speechandtextanalytics_conversation_communication_transcripturl(self, conversation_id: str, communication_id: str, **kwargs) -> 'TranscriptUrl':
         """
         Get the pre-signed S3 URL for the transcript of a specific communication of a conversation
@@ -554,7 +548,6 @@ class SpeechTextAnalyticsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_speechandtextanalytics_program(self, program_id: str, **kwargs) -> 'Program':
         """
         Get a Speech & Text Analytics program by id
@@ -632,7 +625,6 @@ class SpeechTextAnalyticsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_speechandtextanalytics_program_mappings(self, program_id: str, **kwargs) -> 'ProgramMappings':
         """
         Get Speech & Text Analytics program mappings to queues and flows by id
@@ -710,7 +702,6 @@ class SpeechTextAnalyticsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_speechandtextanalytics_program_transcriptionengines(self, program_id: str, **kwargs) -> 'ProgramTranscriptionEngines':
         """
         Get transcription engine settings of a program
@@ -788,7 +779,6 @@ class SpeechTextAnalyticsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_speechandtextanalytics_programs(self, **kwargs) -> 'ProgramsEntityListing':
         """
         Get the list of Speech & Text Analytics programs
@@ -869,7 +859,6 @@ class SpeechTextAnalyticsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_speechandtextanalytics_programs_general_job(self, job_id: str, **kwargs) -> 'GeneralProgramJob':
         """
         Get a Speech & Text Analytics general program job by id
@@ -947,7 +936,6 @@ class SpeechTextAnalyticsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_speechandtextanalytics_programs_mappings(self, **kwargs) -> 'ProgramsMappingsEntityListing':
         """
         Get the list of Speech & Text Analytics programs mappings to queues and flows
@@ -1025,7 +1013,6 @@ class SpeechTextAnalyticsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_speechandtextanalytics_programs_publishjob(self, job_id: str, **kwargs) -> 'ProgramJob':
         """
         Get a Speech & Text Analytics publish programs job by id
@@ -1103,7 +1090,6 @@ class SpeechTextAnalyticsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_speechandtextanalytics_programs_transcriptionengines_dialects(self, **kwargs) -> 'SupportedDialectsEntityListing':
         """
         Get supported dialects for each transcription engine
@@ -1175,7 +1161,6 @@ class SpeechTextAnalyticsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_speechandtextanalytics_programs_unpublished(self, **kwargs) -> 'UnpublishedProgramsEntityListing':
         """
         Get the list of Speech & Text Analytics unpublished programs
@@ -1253,7 +1238,6 @@ class SpeechTextAnalyticsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_speechandtextanalytics_sentiment_dialects(self, **kwargs) -> 'EntityListing':
         """
         Get the list of Speech & Text Analytics sentiment supported dialects
@@ -1325,7 +1309,6 @@ class SpeechTextAnalyticsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_speechandtextanalytics_sentimentfeedback(self, **kwargs) -> 'SentimentFeedbackEntityListing':
         """
         Get the list of Speech & Text Analytics SentimentFeedback
@@ -1400,7 +1383,6 @@ class SpeechTextAnalyticsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_speechandtextanalytics_settings(self, **kwargs) -> 'SpeechTextAnalyticsSettingsResponse':
         """
         Get Speech And Text Analytics Settings
@@ -1472,7 +1454,6 @@ class SpeechTextAnalyticsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_speechandtextanalytics_topic(self, topic_id: str, **kwargs) -> 'Topic':
         """
         Get a Speech & Text Analytics topic by id
@@ -1550,7 +1531,6 @@ class SpeechTextAnalyticsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_speechandtextanalytics_topics(self, **kwargs) -> 'TopicsEntityListing':
         """
         Get the list of Speech & Text Analytics topics
@@ -1643,7 +1623,6 @@ class SpeechTextAnalyticsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_speechandtextanalytics_topics_dialects(self, **kwargs) -> 'EntityListing':
         """
         Get list of supported Speech & Text Analytics topics dialects
@@ -1715,7 +1694,6 @@ class SpeechTextAnalyticsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_speechandtextanalytics_topics_general(self, **kwargs) -> 'GeneralTopicsEntityListing':
         """
         Get the Speech & Text Analytics general topics for a given dialect
@@ -1790,7 +1768,6 @@ class SpeechTextAnalyticsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_speechandtextanalytics_topics_publishjob(self, job_id: str, **kwargs) -> 'TopicJob':
         """
         Get a Speech & Text Analytics publish topics job by id
@@ -1868,7 +1845,6 @@ class SpeechTextAnalyticsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def patch_speechandtextanalytics_settings(self, body: 'SpeechTextAnalyticsSettingsRequest', **kwargs) -> 'SpeechTextAnalyticsSettingsResponse':
         """
         Patch Speech And Text Analytics Settings
@@ -1946,7 +1922,6 @@ class SpeechTextAnalyticsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def post_speechandtextanalytics_programs(self, body: 'ProgramRequest', **kwargs) -> 'Program':
         """
         Create new Speech & Text Analytics program
@@ -2024,7 +1999,6 @@ class SpeechTextAnalyticsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def post_speechandtextanalytics_programs_general_jobs(self, body: 'GeneralProgramJobRequest', **kwargs) -> 'GeneralProgramJob':
         """
         Create new Speech & Text Analytics general program job
@@ -2102,7 +2076,6 @@ class SpeechTextAnalyticsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def post_speechandtextanalytics_programs_publishjobs(self, body: 'ProgramJobRequest', **kwargs) -> 'ProgramJob':
         """
         Create new Speech & Text Analytics publish programs job
@@ -2180,7 +2153,6 @@ class SpeechTextAnalyticsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def post_speechandtextanalytics_sentimentfeedback(self, body: 'SentimentFeedback', **kwargs) -> 'SentimentFeedback':
         """
         Create a Speech & Text Analytics SentimentFeedback
@@ -2258,7 +2230,6 @@ class SpeechTextAnalyticsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def post_speechandtextanalytics_topics(self, body: 'TopicRequest', **kwargs) -> 'Topic':
         """
         Create new Speech & Text Analytics topic
@@ -2336,7 +2307,6 @@ class SpeechTextAnalyticsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def post_speechandtextanalytics_topics_publishjobs(self, body: 'TopicJobRequest', **kwargs) -> 'TopicJob':
         """
         Create new Speech & Text Analytics publish topics job
@@ -2414,7 +2384,6 @@ class SpeechTextAnalyticsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def post_speechandtextanalytics_transcripts_search(self, body: 'TranscriptSearchRequest', **kwargs) -> 'JsonSearchResponse':
         """
         Search resources.
@@ -2492,7 +2461,6 @@ class SpeechTextAnalyticsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def put_speechandtextanalytics_program(self, program_id: str, body: 'ProgramRequest', **kwargs) -> 'Program':
         """
         Update existing Speech & Text Analytics program
@@ -2576,7 +2544,6 @@ class SpeechTextAnalyticsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def put_speechandtextanalytics_program_mappings(self, program_id: str, body: 'ProgramMappingsRequest', **kwargs) -> 'ProgramMappings':
         """
         Set Speech & Text Analytics program mappings to queues and flows
@@ -2660,7 +2627,6 @@ class SpeechTextAnalyticsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def put_speechandtextanalytics_program_transcriptionengines(self, program_id: str, body: 'TranscriptionEnginesRequest', **kwargs) -> 'ProgramTranscriptionEngines':
         """
         Update transcription engine settings of a program
@@ -2744,7 +2710,6 @@ class SpeechTextAnalyticsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def put_speechandtextanalytics_settings(self, body: 'SpeechTextAnalyticsSettingsRequest', **kwargs) -> 'SpeechTextAnalyticsSettingsResponse':
         """
         Update Speech And Text Analytics Settings
@@ -2822,7 +2787,6 @@ class SpeechTextAnalyticsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def put_speechandtextanalytics_topic(self, topic_id: str, body: 'TopicRequest', **kwargs) -> 'Topic':
         """
         Update existing Speech & Text Analytics topic

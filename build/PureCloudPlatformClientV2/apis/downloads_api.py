@@ -55,7 +55,6 @@ class DownloadsApi(object):
             if not config.api_client:
                 config.api_client = ApiClient()
             self.api_client = config.api_client
-
     def get_download(self, download_id: str, **kwargs) -> 'UrlResponse':
         """
         Issues a redirect to a signed secure download URL for specified download

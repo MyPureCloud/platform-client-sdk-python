@@ -62,6 +62,7 @@ class WorkitemsUserEventsNotificationWorkitem(object):
             'date_modified': 'str',
             'date_due': 'str',
             'date_expires': 'str',
+            'date_assignment_state_changed': 'str',
             'duration_seconds': 'int',
             'ttl': 'int',
             'status_id': 'str',
@@ -95,6 +96,7 @@ class WorkitemsUserEventsNotificationWorkitem(object):
             'date_modified': 'dateModified',
             'date_due': 'dateDue',
             'date_expires': 'dateExpires',
+            'date_assignment_state_changed': 'dateAssignmentStateChanged',
             'duration_seconds': 'durationSeconds',
             'ttl': 'ttl',
             'status_id': 'statusId',
@@ -127,6 +129,7 @@ class WorkitemsUserEventsNotificationWorkitem(object):
         self._date_modified = None
         self._date_due = None
         self._date_expires = None
+        self._date_assignment_state_changed = None
         self._duration_seconds = None
         self._ttl = None
         self._status_id = None
@@ -387,6 +390,30 @@ class WorkitemsUserEventsNotificationWorkitem(object):
         
 
         self._date_expires = date_expires
+
+    @property
+    def date_assignment_state_changed(self) -> str:
+        """
+        Gets the date_assignment_state_changed of this WorkitemsUserEventsNotificationWorkitem.
+
+
+        :return: The date_assignment_state_changed of this WorkitemsUserEventsNotificationWorkitem.
+        :rtype: str
+        """
+        return self._date_assignment_state_changed
+
+    @date_assignment_state_changed.setter
+    def date_assignment_state_changed(self, date_assignment_state_changed: str) -> None:
+        """
+        Sets the date_assignment_state_changed of this WorkitemsUserEventsNotificationWorkitem.
+
+
+        :param date_assignment_state_changed: The date_assignment_state_changed of this WorkitemsUserEventsNotificationWorkitem.
+        :type: str
+        """
+        
+
+        self._date_assignment_state_changed = date_assignment_state_changed
 
     @property
     def duration_seconds(self) -> int:

@@ -35,6 +35,7 @@ from typing import Dict
 if TYPE_CHECKING:
     from . import QueueConversationEventTopicDestination
     from . import QueueConversationEventTopicInitiator
+    from . import QueueConversationEventTopicModifiedBy
 
 class QueueConversationEventTopicRecentTransfer(object):
     """
@@ -55,6 +56,7 @@ class QueueConversationEventTopicRecentTransfer(object):
             'state': 'str',
             'date_issued': 'datetime',
             'initiator': 'QueueConversationEventTopicInitiator',
+            'modified_by': 'QueueConversationEventTopicModifiedBy',
             'destination': 'QueueConversationEventTopicDestination',
             'transfer_type': 'str'
         }
@@ -64,6 +66,7 @@ class QueueConversationEventTopicRecentTransfer(object):
             'state': 'state',
             'date_issued': 'dateIssued',
             'initiator': 'initiator',
+            'modified_by': 'modifiedBy',
             'destination': 'destination',
             'transfer_type': 'transferType'
         }
@@ -72,6 +75,7 @@ class QueueConversationEventTopicRecentTransfer(object):
         self._state = None
         self._date_issued = None
         self._initiator = None
+        self._modified_by = None
         self._destination = None
         self._transfer_type = None
 
@@ -175,6 +179,30 @@ class QueueConversationEventTopicRecentTransfer(object):
         
 
         self._initiator = initiator
+
+    @property
+    def modified_by(self) -> 'QueueConversationEventTopicModifiedBy':
+        """
+        Gets the modified_by of this QueueConversationEventTopicRecentTransfer.
+
+
+        :return: The modified_by of this QueueConversationEventTopicRecentTransfer.
+        :rtype: QueueConversationEventTopicModifiedBy
+        """
+        return self._modified_by
+
+    @modified_by.setter
+    def modified_by(self, modified_by: 'QueueConversationEventTopicModifiedBy') -> None:
+        """
+        Sets the modified_by of this QueueConversationEventTopicRecentTransfer.
+
+
+        :param modified_by: The modified_by of this QueueConversationEventTopicRecentTransfer.
+        :type: QueueConversationEventTopicModifiedBy
+        """
+        
+
+        self._modified_by = modified_by
 
     @property
     def destination(self) -> 'QueueConversationEventTopicDestination':

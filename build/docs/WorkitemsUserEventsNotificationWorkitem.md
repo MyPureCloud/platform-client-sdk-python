@@ -17,6 +17,7 @@ title: WorkitemsUserEventsNotificationWorkitem
 | **date_modified** | **str** |  | [optional] |
 | **date_due** | **str** |  | [optional] |
 | **date_expires** | **str** |  | [optional] |
+| **date_assignment_state_changed** | **str** |  | [optional] |
 | **duration_seconds** | **int** |  | [optional] |
 | **ttl** | **int** |  | [optional] |
 | **status_id** | **str** |  | [optional] |

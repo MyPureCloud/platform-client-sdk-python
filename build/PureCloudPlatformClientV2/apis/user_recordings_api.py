@@ -58,7 +58,6 @@ class UserRecordingsApi(object):
             if not config.api_client:
                 config.api_client = ApiClient()
             self.api_client = config.api_client
-
     def delete_userrecording(self, recording_id: str, **kwargs) -> None:
         """
         Delete a user recording.
@@ -136,7 +135,6 @@ class UserRecordingsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_userrecording(self, recording_id: str, **kwargs) -> 'UserRecording':
         """
         Get a user recording.
@@ -217,7 +215,6 @@ class UserRecordingsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_userrecording_media(self, recording_id: str, **kwargs) -> 'DownloadResponse':
         """
         Download a user recording.
@@ -301,7 +298,6 @@ class UserRecordingsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_userrecordings(self, **kwargs) -> 'UserRecordingEntityListing':
         """
         Get a list of user recordings.
@@ -382,7 +378,6 @@ class UserRecordingsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_userrecordings_summary(self, **kwargs) -> 'FaxSummary':
         """
         Get user recording summary
@@ -454,7 +449,6 @@ class UserRecordingsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def put_userrecording(self, recording_id: str, body: 'UserRecording', **kwargs) -> 'UserRecording':
         """
         Update a user recording.

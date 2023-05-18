@@ -59,7 +59,6 @@ class NotificationsApi(object):
             if not config.api_client:
                 config.api_client = ApiClient()
             self.api_client = config.api_client
-
     def delete_notifications_channel_subscriptions(self, channel_id: str, **kwargs) -> None:
         """
         Remove all subscriptions
@@ -137,7 +136,6 @@ class NotificationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_notifications_availabletopics(self, **kwargs) -> 'AvailableTopicEntityListing':
         """
         Get available notification topics.
@@ -215,7 +213,6 @@ class NotificationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_notifications_channel_subscriptions(self, channel_id: str, **kwargs) -> 'ChannelTopicEntityListing':
         """
         The list of all subscriptions for this channel
@@ -293,7 +290,6 @@ class NotificationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_notifications_channels(self, **kwargs) -> 'ChannelEntityListing':
         """
         The list of existing channels
@@ -368,7 +364,6 @@ class NotificationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def head_notifications_channel(self, channel_id: str, **kwargs) -> None:
         """
         Verify a channel still exists and is valid
@@ -446,7 +441,6 @@ class NotificationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def post_notifications_channel_subscriptions(self, channel_id: str, body: List['ChannelTopic'], **kwargs) -> 'ChannelTopicEntityListing':
         """
         Add a list of subscriptions to the existing list of subscriptions
@@ -533,7 +527,6 @@ class NotificationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def post_notifications_channels(self, **kwargs) -> 'Channel':
         """
         Create a new channel
@@ -605,7 +598,6 @@ class NotificationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def put_notifications_channel_subscriptions(self, channel_id: str, body: List['ChannelTopic'], **kwargs) -> 'ChannelTopicEntityListing':
         """
         Replace the current list of subscriptions with a new list.

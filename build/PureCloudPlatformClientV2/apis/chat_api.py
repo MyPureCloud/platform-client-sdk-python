@@ -55,7 +55,6 @@ class ChatApi(object):
             if not config.api_client:
                 config.api_client = ApiClient()
             self.api_client = config.api_client
-
     def get_chat_settings(self, **kwargs) -> 'ChatSettings':
         """
         Get Chat Settings.
@@ -127,7 +126,6 @@ class ChatApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def get_chats_settings(self, **kwargs) -> 'ChatSettings':
         """
         Get Chat Settings.
@@ -199,7 +197,6 @@ class ChatApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def patch_chat_settings(self, body: 'ChatSettings', **kwargs) -> 'ChatSettings':
         """
         Patch Chat Settings.
@@ -277,7 +274,6 @@ class ChatApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def patch_chats_settings(self, body: 'ChatSettings', **kwargs) -> 'ChatSettings':
         """
         Patch Chat Settings.
@@ -355,7 +351,6 @@ class ChatApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def put_chat_settings(self, body: 'ChatSettings', **kwargs) -> 'ChatSettings':
         """
         Update Chat Settings.
@@ -433,7 +428,6 @@ class ChatApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-
     def put_chats_settings(self, body: 'ChatSettings', **kwargs) -> 'ChatSettings':
         """
         Update Chat Settings.
