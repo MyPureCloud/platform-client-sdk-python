@@ -31,6 +31,7 @@ from six import iteritems
 
 from ..configuration import Configuration
 from ..api_client import ApiClient
+from ..utils import deprecated
 
 from typing import List
 from typing import Dict
@@ -57,6 +58,7 @@ class DataExtensionsApi(object):
             if not config.api_client:
                 config.api_client = ApiClient()
             self.api_client = config.api_client
+    
     def get_dataextensions_coretype(self, coretype_name: str, **kwargs) -> 'Coretype':
         """
         Get a specific named core type.
@@ -134,6 +136,7 @@ class DataExtensionsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_dataextensions_coretypes(self, **kwargs) -> 'CoretypeListing':
         """
         Get the core types from which all schemas are built.
@@ -205,6 +208,7 @@ class DataExtensionsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_dataextensions_limits(self, **kwargs) -> 'SchemaQuantityLimits':
         """
         Get quantitative limits on schemas

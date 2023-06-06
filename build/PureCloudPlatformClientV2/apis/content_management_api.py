@@ -31,6 +31,7 @@ from six import iteritems
 
 from ..configuration import Configuration
 from ..api_client import ApiClient
+from ..utils import deprecated
 
 from typing import List
 from typing import Dict
@@ -83,6 +84,7 @@ class ContentManagementApi(object):
             if not config.api_client:
                 config.api_client = ApiClient()
             self.api_client = config.api_client
+    
     def delete_contentmanagement_document(self, document_id: str, **kwargs) -> None:
         """
         Delete a document.
@@ -163,6 +165,7 @@ class ContentManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def delete_contentmanagement_share(self, share_id: str, **kwargs) -> None:
         """
         Deletes an existing share.
@@ -240,6 +243,7 @@ class ContentManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def delete_contentmanagement_status_status_id(self, status_id: str, **kwargs) -> None:
         """
         Cancel the command for this status
@@ -317,6 +321,7 @@ class ContentManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def delete_contentmanagement_workspace(self, workspace_id: str, **kwargs) -> None:
         """
         Delete a workspace
@@ -397,6 +402,7 @@ class ContentManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def delete_contentmanagement_workspace_member(self, workspace_id: str, member_id: str, **kwargs) -> None:
         """
         Delete a member from a workspace
@@ -480,6 +486,7 @@ class ContentManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def delete_contentmanagement_workspace_tagvalue(self, workspace_id: str, tag_id: str, **kwargs) -> None:
         """
         Delete workspace tag
@@ -563,6 +570,7 @@ class ContentManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_contentmanagement_document(self, document_id: str, **kwargs) -> 'Document':
         """
         Get a document.
@@ -643,6 +651,7 @@ class ContentManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_contentmanagement_document_audits(self, document_id: str, **kwargs) -> 'DocumentAuditEntityListing':
         """
         Get a list of audits for a document.
@@ -738,6 +747,7 @@ class ContentManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_contentmanagement_document_content(self, document_id: str, **kwargs) -> 'DownloadResponse':
         """
         Download a document.
@@ -821,6 +831,7 @@ class ContentManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    @deprecated("get_contentmanagement_documents is deprecated")
     def get_contentmanagement_documents(self, workspace_id: str, **kwargs) -> 'DocumentEntityListing':
         """
         Get a list of documents.
@@ -916,6 +927,7 @@ class ContentManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_contentmanagement_query(self, query_phrase: str, **kwargs) -> 'QueryResults':
         """
         Query content
@@ -1008,6 +1020,7 @@ class ContentManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_contentmanagement_securityprofile(self, security_profile_id: str, **kwargs) -> 'SecurityProfile':
         """
         Get a Security Profile
@@ -1085,6 +1098,7 @@ class ContentManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_contentmanagement_securityprofiles(self, **kwargs) -> 'SecurityProfileEntityListing':
         """
         Get a List of Security Profiles
@@ -1156,6 +1170,7 @@ class ContentManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_contentmanagement_share(self, share_id: str, **kwargs) -> 'Share':
         """
         Retrieve details about an existing share.
@@ -1236,6 +1251,7 @@ class ContentManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_contentmanagement_shared_shared_id(self, shared_id: str, **kwargs) -> 'SharedResponse':
         """
         Get shared documents. Securely download a shared document.
@@ -1325,6 +1341,7 @@ class ContentManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_contentmanagement_shares(self, **kwargs) -> 'ShareEntityListing':
         """
         Gets a list of shares.  You must specify at least one filter (e.g. entityId).
@@ -1408,6 +1425,7 @@ class ContentManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_contentmanagement_status(self, **kwargs) -> 'CommandStatusEntityListing':
         """
         Get a list of statuses for pending operations
@@ -1485,6 +1503,7 @@ class ContentManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_contentmanagement_status_status_id(self, status_id: str, **kwargs) -> 'CommandStatus':
         """
         Get a status.
@@ -1562,6 +1581,7 @@ class ContentManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_contentmanagement_usage(self, **kwargs) -> 'Usage':
         """
         Get usage details.
@@ -1633,6 +1653,7 @@ class ContentManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_contentmanagement_workspace(self, workspace_id: str, **kwargs) -> 'Workspace':
         """
         Get a workspace.
@@ -1713,6 +1734,7 @@ class ContentManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_contentmanagement_workspace_documents(self, workspace_id: str, **kwargs) -> 'DocumentEntityListing':
         """
         Get a list of documents.
@@ -1805,6 +1827,7 @@ class ContentManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_contentmanagement_workspace_member(self, workspace_id: str, member_id: str, **kwargs) -> 'WorkspaceMember':
         """
         Get a workspace member
@@ -1891,6 +1914,7 @@ class ContentManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_contentmanagement_workspace_members(self, workspace_id: str, **kwargs) -> 'WorkspaceMemberEntityListing':
         """
         Get a list workspace members
@@ -1977,6 +2001,7 @@ class ContentManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_contentmanagement_workspace_tagvalue(self, workspace_id: str, tag_id: str, **kwargs) -> 'TagValue':
         """
         Get a workspace tag
@@ -2063,6 +2088,7 @@ class ContentManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_contentmanagement_workspace_tagvalues(self, workspace_id: str, **kwargs) -> 'TagValueEntityListing':
         """
         Get a list of workspace tags
@@ -2152,6 +2178,7 @@ class ContentManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_contentmanagement_workspaces(self, **kwargs) -> 'WorkspaceEntityListing':
         """
         Get a list of workspaces.
@@ -2235,6 +2262,7 @@ class ContentManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_contentmanagement_auditquery(self, body: 'ContentQueryRequest', **kwargs) -> 'QueryResults':
         """
         Query audits
@@ -2312,6 +2340,7 @@ class ContentManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_contentmanagement_document(self, document_id: str, body: 'DocumentUpdate', **kwargs) -> 'Document':
         """
         Update a document.
@@ -2401,6 +2430,7 @@ class ContentManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_contentmanagement_document_content(self, document_id: str, body: 'ReplaceRequest', **kwargs) -> 'ReplaceResponse':
         """
         Replace the contents of a document.
@@ -2487,6 +2517,7 @@ class ContentManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_contentmanagement_documents(self, body: 'DocumentUpload', **kwargs) -> 'Document':
         """
         Add a document.
@@ -2573,6 +2604,7 @@ class ContentManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_contentmanagement_query(self, body: 'QueryRequest', **kwargs) -> 'QueryResults':
         """
         Query content
@@ -2653,6 +2685,7 @@ class ContentManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_contentmanagement_shares(self, body: 'CreateShareRequest', **kwargs) -> 'CreateShareResponse':
         """
         Creates a new share or updates an existing share if the entity has already been shared
@@ -2730,6 +2763,7 @@ class ContentManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_contentmanagement_workspace_tagvalues(self, workspace_id: str, body: 'TagValue', **kwargs) -> 'TagValue':
         """
         Create a workspace tag
@@ -2813,6 +2847,7 @@ class ContentManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_contentmanagement_workspace_tagvalues_query(self, workspace_id: str, body: 'TagQueryRequest', **kwargs) -> 'TagValueEntityListing':
         """
         Perform a prefix query on tags in the workspace
@@ -2899,6 +2934,7 @@ class ContentManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_contentmanagement_workspaces(self, body: 'WorkspaceCreate', **kwargs) -> 'Workspace':
         """
         Create a group workspace
@@ -2976,6 +3012,7 @@ class ContentManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def put_contentmanagement_workspace(self, workspace_id: str, body: 'Workspace', **kwargs) -> 'Workspace':
         """
         Update a workspace
@@ -3059,6 +3096,7 @@ class ContentManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def put_contentmanagement_workspace_member(self, workspace_id: str, member_id: str, body: 'WorkspaceMember', **kwargs) -> 'WorkspaceMember':
         """
         Add a member to a workspace
@@ -3148,6 +3186,7 @@ class ContentManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def put_contentmanagement_workspace_tagvalue(self, workspace_id: str, tag_id: str, body: 'TagValue', **kwargs) -> 'TagValue':
         """
         Update a workspace tag. Will update all documents with the new tag value.

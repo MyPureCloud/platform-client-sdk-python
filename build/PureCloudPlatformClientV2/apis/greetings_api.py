@@ -31,6 +31,7 @@ from six import iteritems
 
 from ..configuration import Configuration
 from ..api_client import ApiClient
+from ..utils import deprecated
 
 from typing import List
 from typing import Dict
@@ -59,6 +60,7 @@ class GreetingsApi(object):
             if not config.api_client:
                 config.api_client = ApiClient()
             self.api_client = config.api_client
+    
     def delete_greeting(self, greeting_id: str, **kwargs) -> None:
         """
         Deletes a Greeting with the given GreetingId
@@ -136,6 +138,7 @@ class GreetingsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_greeting(self, greeting_id: str, **kwargs) -> 'Greeting':
         """
         Get a Greeting with the given GreetingId
@@ -213,6 +216,7 @@ class GreetingsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_greeting_media(self, greeting_id: str, **kwargs) -> 'GreetingMediaInfo':
         """
         Get media playback URI for this greeting
@@ -293,6 +297,7 @@ class GreetingsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_greetings(self, **kwargs) -> 'DomainEntityListing':
         """
         Gets an Organization's Greetings
@@ -370,6 +375,7 @@ class GreetingsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_greetings_defaults(self, **kwargs) -> 'DefaultGreetingList':
         """
         Get an Organization's DefaultGreetingList
@@ -441,6 +447,7 @@ class GreetingsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_group_greetings(self, group_id: str, **kwargs) -> 'GreetingListing':
         """
         Get a list of the Group's Greetings
@@ -524,6 +531,7 @@ class GreetingsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_group_greetings_defaults(self, group_id: str, **kwargs) -> 'DefaultGreetingList':
         """
         Grabs the list of Default Greetings given a Group's ID
@@ -601,6 +609,7 @@ class GreetingsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_user_greetings(self, user_id: str, **kwargs) -> 'DomainEntityListing':
         """
         Get a list of the User's Greetings
@@ -684,6 +693,7 @@ class GreetingsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_user_greetings_defaults(self, user_id: str, **kwargs) -> 'DefaultGreetingList':
         """
         Grabs the list of Default Greetings given a User's ID
@@ -761,6 +771,7 @@ class GreetingsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_greetings(self, body: 'Greeting', **kwargs) -> 'Greeting':
         """
         Create a Greeting for an Organization
@@ -838,6 +849,7 @@ class GreetingsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_group_greetings(self, group_id: str, body: 'Greeting', **kwargs) -> 'Greeting':
         """
         Creates a Greeting for a Group
@@ -921,6 +933,7 @@ class GreetingsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_user_greetings(self, user_id: str, body: 'Greeting', **kwargs) -> 'Greeting':
         """
         Creates a Greeting for a User
@@ -1004,6 +1017,7 @@ class GreetingsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def put_greeting(self, greeting_id: str, body: 'Greeting', **kwargs) -> 'Greeting':
         """
         Updates the Greeting with the given GreetingId
@@ -1087,6 +1101,7 @@ class GreetingsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def put_greetings_defaults(self, body: 'DefaultGreetingList', **kwargs) -> 'DefaultGreetingList':
         """
         Update an Organization's DefaultGreetingList
@@ -1164,6 +1179,7 @@ class GreetingsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def put_group_greetings_defaults(self, group_id: str, body: 'DefaultGreetingList', **kwargs) -> 'DefaultGreetingList':
         """
         Updates the DefaultGreetingList of the specified Group
@@ -1247,6 +1263,7 @@ class GreetingsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def put_user_greetings_defaults(self, user_id: str, body: 'DefaultGreetingList', **kwargs) -> 'DefaultGreetingList':
         """
         Updates the DefaultGreetingList of the specified User

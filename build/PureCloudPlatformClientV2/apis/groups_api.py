@@ -31,6 +31,7 @@ from six import iteritems
 
 from ..configuration import Configuration
 from ..api_client import ApiClient
+from ..utils import deprecated
 
 from typing import List
 from typing import Dict
@@ -65,6 +66,7 @@ class GroupsApi(object):
             if not config.api_client:
                 config.api_client = ApiClient()
             self.api_client = config.api_client
+    
     def delete_group(self, group_id: str, **kwargs) -> None:
         """
         Delete group
@@ -142,6 +144,7 @@ class GroupsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def delete_group_members(self, group_id: str, ids: str, **kwargs) -> object:
         """
         Remove members
@@ -225,6 +228,7 @@ class GroupsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    @deprecated("get_fieldconfig is deprecated")
     def get_fieldconfig(self, type: str, **kwargs) -> 'FieldConfig':
         """
         Fetch field config for an entity type
@@ -302,6 +306,7 @@ class GroupsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_group(self, group_id: str, **kwargs) -> 'Group':
         """
         Get group
@@ -379,6 +384,7 @@ class GroupsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_group_individuals(self, group_id: str, **kwargs) -> 'UserEntityListing':
         """
         Get all individuals associated with the group
@@ -456,6 +462,7 @@ class GroupsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_group_members(self, group_id: str, **kwargs) -> 'UserEntityListing':
         """
         Get group members, includes individuals, owners, and dynamically included people
@@ -545,6 +552,7 @@ class GroupsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    @deprecated("get_group_profile is deprecated")
     def get_group_profile(self, group_id: str, **kwargs) -> 'GroupProfile':
         """
         Get group profile
@@ -625,6 +633,7 @@ class GroupsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_groups(self, **kwargs) -> 'GroupEntityListing':
         """
         Get a group list
@@ -711,6 +720,7 @@ class GroupsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_groups_search(self, q64: str, **kwargs) -> 'GroupsSearchResponse':
         """
         Search groups using the q64 value returned from a previous search
@@ -791,6 +801,7 @@ class GroupsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    @deprecated("get_profiles_groups is deprecated")
     def get_profiles_groups(self, **kwargs) -> 'GroupProfileEntityListing':
         """
         Get group profile listing
@@ -877,6 +888,7 @@ class GroupsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_group_members(self, group_id: str, body: 'GroupMembersUpdate', **kwargs) -> object:
         """
         Add members
@@ -960,6 +972,7 @@ class GroupsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_groups(self, body: 'GroupCreate', **kwargs) -> 'Group':
         """
         Create a group
@@ -1037,6 +1050,7 @@ class GroupsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_groups_search(self, body: 'GroupSearchRequest', **kwargs) -> 'GroupsSearchResponse':
         """
         Search groups
@@ -1114,6 +1128,7 @@ class GroupsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def put_group(self, group_id: str, **kwargs) -> 'Group':
         """
         Update group

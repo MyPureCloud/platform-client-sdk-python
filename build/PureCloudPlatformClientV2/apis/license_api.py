@@ -31,6 +31,7 @@ from six import iteritems
 
 from ..configuration import Configuration
 from ..api_client import ApiClient
+from ..utils import deprecated
 
 from typing import List
 from typing import Dict
@@ -60,6 +61,7 @@ class LicenseApi(object):
             if not config.api_client:
                 config.api_client = ApiClient()
             self.api_client = config.api_client
+    
     def get_license_definition(self, license_id: str, **kwargs) -> 'LicenseDefinition':
         """
         Get PureCloud license definition.
@@ -137,6 +139,7 @@ class LicenseApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_license_definitions(self, **kwargs) -> List['LicenseDefinition']:
         """
         Get all PureCloud license definitions available for the organization.
@@ -208,6 +211,7 @@ class LicenseApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_license_toggle(self, feature_name: str, **kwargs) -> 'LicenseOrgToggle':
         """
         Get PureCloud license feature toggle value.
@@ -285,6 +289,7 @@ class LicenseApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_license_user(self, user_id: str, **kwargs) -> 'LicenseUser':
         """
         Get licenses for specified user.
@@ -362,6 +367,7 @@ class LicenseApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_license_users(self, **kwargs) -> 'UserLicensesEntityListing':
         """
         Get a page of users and their licenses
@@ -439,6 +445,7 @@ class LicenseApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_license_infer(self, **kwargs) -> List[str]:
         """
         Get a list of licenses inferred based on a list of roleIds
@@ -513,6 +520,7 @@ class LicenseApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_license_organization(self, **kwargs) -> List['LicenseUpdateStatus']:
         """
         Update the organization's license assignments in a batch.
@@ -587,6 +595,7 @@ class LicenseApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_license_toggle(self, feature_name: str, **kwargs) -> 'LicenseOrgToggle':
         """
         Switch PureCloud license feature toggle value.
@@ -664,6 +673,7 @@ class LicenseApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_license_users(self, **kwargs) -> Dict[str, object]:
         """
         Fetch user licenses in a batch.

@@ -31,6 +31,7 @@ from six import iteritems
 
 from ..configuration import Configuration
 from ..api_client import ApiClient
+from ..utils import deprecated
 
 from typing import List
 from typing import Dict
@@ -58,6 +59,7 @@ class InfrastructureAsCodeApi(object):
             if not config.api_client:
                 config.api_client = ApiClient()
             self.api_client = config.api_client
+    
     def get_infrastructureascode_accelerator(self, accelerator_id: str, **kwargs) -> 'AcceleratorSpecification':
         """
         Get information about an accelerator
@@ -138,6 +140,7 @@ class InfrastructureAsCodeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_infrastructureascode_accelerators(self, **kwargs) -> 'AcceleratorList':
         """
         Get a list of available accelerators
@@ -239,6 +242,7 @@ class InfrastructureAsCodeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_infrastructureascode_job(self, job_id: str, **kwargs) -> 'InfrastructureascodeJob':
         """
         Get job status and results
@@ -319,6 +323,7 @@ class InfrastructureAsCodeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_infrastructureascode_jobs(self, **kwargs) -> 'InfrastructureascodeJob':
         """
         Get job history
@@ -411,6 +416,7 @@ class InfrastructureAsCodeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_infrastructureascode_jobs(self, body: 'AcceleratorInput', **kwargs) -> 'InfrastructureascodeJob':
         """
         Create a Job

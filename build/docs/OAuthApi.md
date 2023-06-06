@@ -573,7 +573,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.OAuthApi()
 client_id = 'client_id_example' # str | Client ID
-body = PureCloudPlatformClientV2.ApiUsageQuery() # ApiUsageQuery | Query
+body = PureCloudPlatformClientV2.ApiUsageClientQuery() # ApiUsageClientQuery | Query
 
 try:
     # Query for OAuth client API usage
@@ -589,7 +589,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **client_id** | **str**| Client ID |  |
-| **body** | [**ApiUsageQuery**](ApiUsageQuery.html)| Query |  |
+| **body** | [**ApiUsageClientQuery**](ApiUsageClientQuery.html)| Query |  |
 {: class="table table-striped"}
 
 ### Return type

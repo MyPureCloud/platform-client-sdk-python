@@ -31,6 +31,7 @@ from six import iteritems
 
 from ..configuration import Configuration
 from ..api_client import ApiClient
+from ..utils import deprecated
 
 from typing import List
 from typing import Dict
@@ -60,6 +61,7 @@ class AuditApi(object):
             if not config.api_client:
                 config.api_client = ApiClient()
             self.api_client = config.api_client
+    
     def get_audits_query_realtime_servicemapping(self, **kwargs) -> 'AuditQueryServiceMapping':
         """
         Get service mapping information used in realtime audits.
@@ -131,6 +133,7 @@ class AuditApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_audits_query_servicemapping(self, **kwargs) -> 'AuditQueryServiceMapping':
         """
         Get service mapping information used in audits.
@@ -202,6 +205,7 @@ class AuditApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_audits_query_transaction_id(self, transaction_id: str, **kwargs) -> 'AuditQueryExecutionStatusResponse':
         """
         Get status of audit query execution
@@ -279,6 +283,7 @@ class AuditApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_audits_query_transaction_id_results(self, transaction_id: str, **kwargs) -> 'AuditQueryExecutionResultsResponse':
         """
         Get results of audit query
@@ -365,6 +370,7 @@ class AuditApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_audits_query(self, body: 'AuditQueryRequest', **kwargs) -> 'AuditQueryExecutionStatusResponse':
         """
         Create audit query execution
@@ -442,6 +448,7 @@ class AuditApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_audits_query_realtime(self, body: 'AuditRealtimeQueryRequest', **kwargs) -> 'AuditRealtimeQueryResultsResponse':
         """
         This endpoint will only retrieve 14 days worth of audits for certain services. Please use /query to get a full list and older audits.

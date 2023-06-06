@@ -31,6 +31,7 @@ from six import iteritems
 
 from ..configuration import Configuration
 from ..api_client import ApiClient
+from ..utils import deprecated
 
 from typing import List
 from typing import Dict
@@ -61,6 +62,7 @@ class TextbotsApi(object):
             if not config.api_client:
                 config.api_client = ApiClient()
             self.api_client = config.api_client
+    
     def get_textbots_bots_search(self, **kwargs) -> 'BotSearchResponseEntityListing':
         """
         Find bots using the currently configured friendly name or ID.
@@ -144,6 +146,7 @@ class TextbotsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_textbots_botflows_session_turns(self, session_id: str, turn_request: 'TextBotFlowTurnRequest', **kwargs) -> 'TextBotFlowTurnResponse':
         """
         Issue a bot flow turn event
@@ -227,6 +230,7 @@ class TextbotsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_textbots_botflows_sessions(self, launch_request: 'TextBotFlowLaunchRequest', **kwargs) -> 'TextBotFlowLaunchResponse':
         """
         Create an execution instance of a bot flow definition.
@@ -304,6 +308,7 @@ class TextbotsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_textbots_bots_execute(self, post_text_request: 'PostTextRequest', **kwargs) -> 'PostTextResponse':
         """
         Send an intent to a bot to start a dialog/interact with it via text

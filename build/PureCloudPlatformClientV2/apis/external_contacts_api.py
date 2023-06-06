@@ -31,6 +31,7 @@ from six import iteritems
 
 from ..configuration import Configuration
 from ..api_client import ApiClient
+from ..utils import deprecated
 
 from typing import List
 from typing import Dict
@@ -90,6 +91,7 @@ class ExternalContactsApi(object):
             if not config.api_client:
                 config.api_client = ApiClient()
             self.api_client = config.api_client
+    
     def delete_externalcontacts_contact(self, contact_id: str, **kwargs) -> object:
         """
         Delete an external contact
@@ -167,6 +169,7 @@ class ExternalContactsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def delete_externalcontacts_contact_note(self, contact_id: str, note_id: str, **kwargs) -> object:
         """
         Delete a note for an external contact
@@ -250,6 +253,7 @@ class ExternalContactsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def delete_externalcontacts_contacts_schema(self, schema_id: str, **kwargs) -> None:
         """
         Delete a schema
@@ -327,6 +331,7 @@ class ExternalContactsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def delete_externalcontacts_organization(self, external_organization_id: str, **kwargs) -> object:
         """
         Delete an external organization
@@ -404,6 +409,7 @@ class ExternalContactsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def delete_externalcontacts_organization_note(self, external_organization_id: str, note_id: str, **kwargs) -> object:
         """
         Delete a note for an external organization
@@ -487,6 +493,7 @@ class ExternalContactsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def delete_externalcontacts_organization_trustor(self, external_organization_id: str, **kwargs) -> None:
         """
         Unlink the Trustor for this External Organization
@@ -564,6 +571,7 @@ class ExternalContactsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def delete_externalcontacts_relationship(self, relationship_id: str, **kwargs) -> object:
         """
         Delete a relationship
@@ -641,6 +649,7 @@ class ExternalContactsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_externalcontacts_contact(self, contact_id: str, **kwargs) -> 'ExternalContact':
         """
         Fetch an external contact
@@ -721,6 +730,7 @@ class ExternalContactsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_externalcontacts_contact_identifiers(self, contact_id: str, **kwargs) -> 'EntityListing':
         """
         List the identifiers for a contact
@@ -798,6 +808,7 @@ class ExternalContactsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_externalcontacts_contact_journey_sessions(self, contact_id: str, **kwargs) -> 'SessionListing':
         """
         Retrieve all sessions for a given external contact.
@@ -884,6 +895,7 @@ class ExternalContactsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_externalcontacts_contact_note(self, contact_id: str, note_id: str, **kwargs) -> 'Note':
         """
         Fetch a note for an external contact
@@ -970,6 +982,7 @@ class ExternalContactsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_externalcontacts_contact_notes(self, contact_id: str, **kwargs) -> 'NoteListing':
         """
         List notes for an external contact
@@ -1059,6 +1072,7 @@ class ExternalContactsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_externalcontacts_contact_unresolved(self, contact_id: str, **kwargs) -> 'ExternalContact':
         """
         Fetch an unresolved external contact
@@ -1139,6 +1153,7 @@ class ExternalContactsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_externalcontacts_contacts(self, **kwargs) -> 'ContactListing':
         """
         Search for external contacts
@@ -1225,6 +1240,7 @@ class ExternalContactsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_externalcontacts_contacts_schema(self, schema_id: str, **kwargs) -> 'DataSchema':
         """
         Get a schema
@@ -1302,6 +1318,7 @@ class ExternalContactsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_externalcontacts_contacts_schema_version(self, schema_id: str, version_id: str, **kwargs) -> 'DataSchema':
         """
         Get a specific version of a schema
@@ -1385,6 +1402,7 @@ class ExternalContactsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_externalcontacts_contacts_schema_versions(self, schema_id: str, **kwargs) -> 'DataSchema':
         """
         Get all versions of an external contact's schema
@@ -1462,6 +1480,7 @@ class ExternalContactsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_externalcontacts_contacts_schemas(self, **kwargs) -> 'DataSchemaListing':
         """
         Get a list of schemas.
@@ -1533,6 +1552,7 @@ class ExternalContactsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_externalcontacts_organization(self, external_organization_id: str, **kwargs) -> 'ExternalOrganization':
         """
         Fetch an external organization
@@ -1616,6 +1636,7 @@ class ExternalContactsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_externalcontacts_organization_contacts(self, external_organization_id: str, **kwargs) -> 'ContactListing':
         """
         Search for external contacts in an external organization
@@ -1708,6 +1729,7 @@ class ExternalContactsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_externalcontacts_organization_note(self, external_organization_id: str, note_id: str, **kwargs) -> 'Note':
         """
         Fetch a note for an external organization
@@ -1794,6 +1816,7 @@ class ExternalContactsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_externalcontacts_organization_notes(self, external_organization_id: str, **kwargs) -> 'NoteListing':
         """
         List notes for an external organization
@@ -1883,6 +1906,7 @@ class ExternalContactsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_externalcontacts_organization_relationships(self, external_organization_id: str, **kwargs) -> 'RelationshipListing':
         """
         Fetch a relationship for an external organization
@@ -1972,6 +1996,7 @@ class ExternalContactsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_externalcontacts_organizations(self, **kwargs) -> 'ExternalOrganizationListing':
         """
         Search for external organizations
@@ -2064,6 +2089,7 @@ class ExternalContactsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_externalcontacts_organizations_schema(self, schema_id: str, **kwargs) -> 'DataSchema':
         """
         Get a schema
@@ -2141,6 +2167,7 @@ class ExternalContactsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_externalcontacts_organizations_schema_version(self, schema_id: str, version_id: str, **kwargs) -> 'DataSchema':
         """
         Get a specific version of a schema
@@ -2224,6 +2251,7 @@ class ExternalContactsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_externalcontacts_organizations_schema_versions(self, schema_id: str, **kwargs) -> 'DataSchema':
         """
         Get all versions of an external organization's schema
@@ -2301,6 +2329,7 @@ class ExternalContactsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_externalcontacts_organizations_schemas(self, **kwargs) -> 'DataSchemaListing':
         """
         Get a list of schemas.
@@ -2372,6 +2401,7 @@ class ExternalContactsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_externalcontacts_relationship(self, relationship_id: str, **kwargs) -> 'Relationship':
         """
         Fetch a relationship
@@ -2452,6 +2482,7 @@ class ExternalContactsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_externalcontacts_reversewhitepageslookup(self, lookup_val: str, **kwargs) -> 'ReverseWhitepagesLookupResult':
         """
         Look up contacts and externalOrganizations based on an attribute. Maximum of 25 values returned.
@@ -2532,6 +2563,7 @@ class ExternalContactsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_externalcontacts_scan_contacts(self, **kwargs) -> 'CursorContactListing':
         """
         Scan for external contacts using paging
@@ -2609,6 +2641,7 @@ class ExternalContactsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_externalcontacts_scan_notes(self, **kwargs) -> 'CursorNoteListing':
         """
         Scan for notes using paging
@@ -2686,6 +2719,7 @@ class ExternalContactsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_externalcontacts_scan_organizations(self, **kwargs) -> 'CursorOrganizationListing':
         """
         Scan for external organizations using paging
@@ -2763,6 +2797,7 @@ class ExternalContactsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_externalcontacts_scan_relationships(self, **kwargs) -> 'CursorRelationshipListing':
         """
         Scan for relationships
@@ -2840,6 +2875,7 @@ class ExternalContactsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def patch_externalcontacts_contact_identifiers(self, contact_id: str, body: 'IdentifierClaimRequest', **kwargs) -> 'ContactIdentifier':
         """
         Claim or release identifiers for a contact
@@ -2923,6 +2959,7 @@ class ExternalContactsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_externalcontacts_bulk_contacts(self, body: 'BulkIdsRequest', **kwargs) -> 'BulkFetchContactsResponse':
         """
         Bulk fetch contacts
@@ -3000,6 +3037,7 @@ class ExternalContactsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_externalcontacts_bulk_contacts_add(self, body: 'BulkContactsRequest', **kwargs) -> 'BulkContactsResponse':
         """
         Bulk add contacts
@@ -3077,6 +3115,7 @@ class ExternalContactsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_externalcontacts_bulk_contacts_remove(self, body: 'BulkIdsRequest', **kwargs) -> 'BulkDeleteResponse':
         """
         Bulk remove contacts
@@ -3154,6 +3193,7 @@ class ExternalContactsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_externalcontacts_bulk_contacts_unresolved(self, body: 'BulkIdsRequest', **kwargs) -> 'BulkFetchContactsResponse':
         """
         Bulk fetch unresolved ancestor contacts
@@ -3231,6 +3271,7 @@ class ExternalContactsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_externalcontacts_bulk_contacts_update(self, body: 'BulkContactsRequest', **kwargs) -> 'BulkContactsResponse':
         """
         Bulk update contacts
@@ -3308,6 +3349,7 @@ class ExternalContactsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_externalcontacts_bulk_notes(self, body: 'BulkIdsRequest', **kwargs) -> 'BulkFetchNotesResponse':
         """
         Bulk fetch notes
@@ -3385,6 +3427,7 @@ class ExternalContactsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_externalcontacts_bulk_notes_add(self, body: 'BulkNotesRequest', **kwargs) -> 'BulkNotesResponse':
         """
         Bulk add notes
@@ -3462,6 +3505,7 @@ class ExternalContactsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_externalcontacts_bulk_notes_remove(self, body: 'BulkIdsRequest', **kwargs) -> 'BulkDeleteResponse':
         """
         Bulk remove notes
@@ -3539,6 +3583,7 @@ class ExternalContactsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_externalcontacts_bulk_notes_update(self, body: 'BulkNotesRequest', **kwargs) -> 'BulkNotesResponse':
         """
         Bulk update notes
@@ -3616,6 +3661,7 @@ class ExternalContactsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_externalcontacts_bulk_organizations(self, body: 'BulkIdsRequest', **kwargs) -> 'BulkFetchOrganizationsResponse':
         """
         Bulk fetch organizations
@@ -3693,6 +3739,7 @@ class ExternalContactsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_externalcontacts_bulk_organizations_add(self, body: 'BulkOrganizationsRequest', **kwargs) -> 'BulkOrganizationsResponse':
         """
         Bulk add organizations
@@ -3770,6 +3817,7 @@ class ExternalContactsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_externalcontacts_bulk_organizations_remove(self, body: 'BulkIdsRequest', **kwargs) -> 'BulkDeleteResponse':
         """
         Bulk remove organizations
@@ -3847,6 +3895,7 @@ class ExternalContactsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_externalcontacts_bulk_organizations_update(self, body: 'BulkOrganizationsRequest', **kwargs) -> 'BulkOrganizationsResponse':
         """
         Bulk update organizations
@@ -3924,6 +3973,7 @@ class ExternalContactsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_externalcontacts_bulk_relationships(self, body: 'BulkIdsRequest', **kwargs) -> 'BulkFetchRelationshipsResponse':
         """
         Bulk fetch relationships
@@ -4001,6 +4051,7 @@ class ExternalContactsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_externalcontacts_bulk_relationships_add(self, body: 'BulkRelationshipsRequest', **kwargs) -> 'BulkRelationshipsResponse':
         """
         Bulk add relationships
@@ -4078,6 +4129,7 @@ class ExternalContactsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_externalcontacts_bulk_relationships_remove(self, body: 'BulkIdsRequest', **kwargs) -> 'BulkDeleteResponse':
         """
         Bulk remove relationships
@@ -4155,6 +4207,7 @@ class ExternalContactsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_externalcontacts_bulk_relationships_update(self, body: 'BulkRelationshipsRequest', **kwargs) -> 'BulkRelationshipsResponse':
         """
         Bulk update relationships
@@ -4232,6 +4285,7 @@ class ExternalContactsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_externalcontacts_contact_notes(self, contact_id: str, body: 'Note', **kwargs) -> 'Note':
         """
         Create a note for an external contact
@@ -4315,6 +4369,7 @@ class ExternalContactsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_externalcontacts_contact_promotion(self, contact_id: str, **kwargs) -> 'ExternalContact':
         """
         Promote an observed contact (ephemeral or identified) to a curated contact
@@ -4392,6 +4447,7 @@ class ExternalContactsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_externalcontacts_contacts(self, body: 'ExternalContact', **kwargs) -> 'ExternalContact':
         """
         Create an external contact
@@ -4469,6 +4525,7 @@ class ExternalContactsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_externalcontacts_contacts_schemas(self, body: 'DataSchema', **kwargs) -> 'DataSchema':
         """
         Create a schema
@@ -4546,6 +4603,7 @@ class ExternalContactsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_externalcontacts_identifierlookup(self, identifier: 'ContactIdentifier', **kwargs) -> 'ExternalContact':
         """
         Fetch a contact using an identifier type and value.
@@ -4623,6 +4681,7 @@ class ExternalContactsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_externalcontacts_merge_contacts(self, body: 'MergeRequest', **kwargs) -> 'ExternalContact':
         """
         Merge two contacts into a new contact record
@@ -4700,6 +4759,7 @@ class ExternalContactsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_externalcontacts_organization_notes(self, external_organization_id: str, body: 'Note', **kwargs) -> 'Note':
         """
         Create a note for an external organization
@@ -4783,6 +4843,7 @@ class ExternalContactsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_externalcontacts_organizations(self, body: 'ExternalOrganization', **kwargs) -> 'ExternalOrganization':
         """
         Create an external organization
@@ -4860,6 +4921,7 @@ class ExternalContactsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_externalcontacts_organizations_schemas(self, body: 'DataSchema', **kwargs) -> 'DataSchema':
         """
         Create a schema
@@ -4937,6 +4999,7 @@ class ExternalContactsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_externalcontacts_relationships(self, body: 'Relationship', **kwargs) -> 'Relationship':
         """
         Create a relationship
@@ -5014,6 +5077,7 @@ class ExternalContactsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def put_externalcontacts_contact(self, contact_id: str, body: 'ExternalContact', **kwargs) -> 'ExternalContact':
         """
         Update an external contact
@@ -5097,6 +5161,7 @@ class ExternalContactsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def put_externalcontacts_contact_note(self, contact_id: str, note_id: str, body: 'Note', **kwargs) -> 'Note':
         """
         Update a note for an external contact
@@ -5186,6 +5251,7 @@ class ExternalContactsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def put_externalcontacts_contacts_schema(self, schema_id: str, body: 'DataSchema', **kwargs) -> 'DataSchema':
         """
         Update a schema
@@ -5269,6 +5335,7 @@ class ExternalContactsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def put_externalcontacts_conversation(self, conversation_id: str, body: 'ConversationAssociation', **kwargs) -> None:
         """
         Associate/disassociate an external contact with a conversation
@@ -5352,6 +5419,7 @@ class ExternalContactsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def put_externalcontacts_organization(self, external_organization_id: str, body: 'ExternalOrganization', **kwargs) -> 'ExternalOrganization':
         """
         Update an external organization
@@ -5435,6 +5503,7 @@ class ExternalContactsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def put_externalcontacts_organization_note(self, external_organization_id: str, note_id: str, body: 'Note', **kwargs) -> 'Note':
         """
         Update a note for an external organization
@@ -5524,6 +5593,7 @@ class ExternalContactsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def put_externalcontacts_organization_trustor_trustor_id(self, external_organization_id: str, trustor_id: str, **kwargs) -> 'ExternalOrganizationTrustorLink':
         """
         Links a Trustor with an External Organization
@@ -5607,6 +5677,7 @@ class ExternalContactsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def put_externalcontacts_organizations_schema(self, schema_id: str, body: 'DataSchema', **kwargs) -> 'DataSchema':
         """
         Update a schema
@@ -5690,6 +5761,7 @@ class ExternalContactsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def put_externalcontacts_relationship(self, relationship_id: str, body: 'Relationship', **kwargs) -> 'Relationship':
         """
         Update a relationship

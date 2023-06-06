@@ -31,6 +31,7 @@ from six import iteritems
 
 from ..configuration import Configuration
 from ..api_client import ApiClient
+from ..utils import deprecated
 
 from typing import List
 from typing import Dict
@@ -107,6 +108,7 @@ class UsersApi(object):
             if not config.api_client:
                 config.api_client = ApiClient()
             self.api_client = config.api_client
+    
     def delete_analytics_users_details_job(self, job_id: str, **kwargs) -> None:
         """
         Delete/cancel an async request
@@ -184,6 +186,7 @@ class UsersApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def delete_authorization_subject_division_role(self, subject_id: str, division_id: str, role_id: str, **kwargs) -> None:
         """
         Delete a grant of a role in a division
@@ -273,6 +276,7 @@ class UsersApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def delete_routing_user_utilization(self, user_id: str, **kwargs) -> None:
         """
         Delete the user's max utilization settings and revert to the organization-wide default.
@@ -350,6 +354,7 @@ class UsersApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def delete_user(self, user_id: str, **kwargs) -> object:
         """
         Delete user
@@ -427,6 +432,7 @@ class UsersApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def delete_user_routinglanguage(self, user_id: str, language_id: str, **kwargs) -> None:
         """
         Remove routing language from user
@@ -510,6 +516,7 @@ class UsersApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def delete_user_routingskill(self, user_id: str, skill_id: str, **kwargs) -> None:
         """
         Remove routing skill from user
@@ -593,6 +600,7 @@ class UsersApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def delete_user_station_associatedstation(self, user_id: str, **kwargs) -> None:
         """
         Clear associated station
@@ -670,6 +678,7 @@ class UsersApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def delete_user_station_defaultstation(self, user_id: str, **kwargs) -> None:
         """
         Clear default station
@@ -747,6 +756,7 @@ class UsersApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_analytics_users_details_job(self, job_id: str, **kwargs) -> 'AsyncQueryStatus':
         """
         Get status for async query for user details
@@ -824,6 +834,7 @@ class UsersApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_analytics_users_details_job_results(self, job_id: str, **kwargs) -> 'AnalyticsUserDetailsAsyncQueryResponse':
         """
         Fetch a page of results for an async query
@@ -907,6 +918,7 @@ class UsersApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_analytics_users_details_jobs_availability(self, **kwargs) -> 'DataAvailabilityResponse':
         """
         Lookup the datalake availability date and time
@@ -978,6 +990,7 @@ class UsersApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    @deprecated("get_authorization_divisionspermitted_me is deprecated")
     def get_authorization_divisionspermitted_me(self, permission: str, **kwargs) -> List['AuthzDivision']:
         """
         Returns which divisions the current user has the given permission in.
@@ -1058,6 +1071,7 @@ class UsersApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_authorization_divisionspermitted_paged_me(self, permission: str, **kwargs) -> 'DivsPermittedEntityListing':
         """
         Returns which divisions the current user has the given permission in.
@@ -1141,6 +1155,7 @@ class UsersApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    @deprecated("get_authorization_divisionspermitted_paged_subject_id is deprecated")
     def get_authorization_divisionspermitted_paged_subject_id(self, subject_id: str, permission: str, **kwargs) -> 'DivsPermittedEntityListing':
         """
         Returns which divisions the specified user has the given permission in.
@@ -1230,6 +1245,7 @@ class UsersApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_authorization_subject(self, subject_id: str, **kwargs) -> 'AuthzSubject':
         """
         Returns a listing of roles and permissions for a user.
@@ -1307,6 +1323,7 @@ class UsersApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_authorization_subjects_me(self, **kwargs) -> 'AuthzSubject':
         """
         Returns a listing of roles and permissions for the currently authenticated user.
@@ -1378,6 +1395,7 @@ class UsersApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    @deprecated("get_fieldconfig is deprecated")
     def get_fieldconfig(self, type: str, **kwargs) -> 'FieldConfig':
         """
         Fetch field config for an entity type
@@ -1455,6 +1473,7 @@ class UsersApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    @deprecated("get_profiles_users is deprecated")
     def get_profiles_users(self, **kwargs) -> 'UserProfileEntityListing':
         """
         Get a user profile listing
@@ -1547,6 +1566,7 @@ class UsersApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_routing_user_utilization(self, user_id: str, **kwargs) -> 'AgentMaxUtilization':
         """
         Get the user's max utilization settings.  If not configured, the organization-wide default is returned.
@@ -1624,6 +1644,7 @@ class UsersApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_user(self, user_id: str, **kwargs) -> 'User':
         """
         Get user.
@@ -1710,6 +1731,7 @@ class UsersApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_user_adjacents(self, user_id: str, **kwargs) -> 'Adjacents':
         """
         Get adjacents
@@ -1790,6 +1812,7 @@ class UsersApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_user_callforwarding(self, user_id: str, **kwargs) -> 'CallForwarding':
         """
         Get a user's CallForwarding
@@ -1867,6 +1890,7 @@ class UsersApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_user_directreports(self, user_id: str, **kwargs) -> List['User']:
         """
         Get direct reports
@@ -1947,6 +1971,7 @@ class UsersApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    @deprecated("get_user_favorites is deprecated")
     def get_user_favorites(self, user_id: str, **kwargs) -> 'UserEntityListing':
         """
         Deprecated; will be revived with new contract
@@ -2036,6 +2061,7 @@ class UsersApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_user_geolocation(self, user_id: str, client_id: str, **kwargs) -> 'Geolocation':
         """
         Get a user's Geolocation
@@ -2119,6 +2145,7 @@ class UsersApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_user_outofoffice(self, user_id: str, **kwargs) -> 'OutOfOffice':
         """
         Get a OutOfOffice
@@ -2196,6 +2223,7 @@ class UsersApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    @deprecated("get_user_profile is deprecated")
     def get_user_profile(self, user_id: str, **kwargs) -> 'UserProfile':
         """
         Get user profile
@@ -2279,6 +2307,7 @@ class UsersApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_user_profileskills(self, user_id: str, **kwargs) -> List[str]:
         """
         List profile skills for a user
@@ -2356,6 +2385,7 @@ class UsersApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_user_queues(self, user_id: str, **kwargs) -> 'UserQueueEntityListing':
         """
         Get queues for user
@@ -2445,6 +2475,7 @@ class UsersApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_user_roles(self, subject_id: str, **kwargs) -> 'UserAuthorization':
         """
         Returns a listing of roles and permissions for a user.
@@ -2522,6 +2553,7 @@ class UsersApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_user_routinglanguages(self, user_id: str, **kwargs) -> 'UserLanguageEntityListing':
         """
         List routing language for user
@@ -2608,6 +2640,7 @@ class UsersApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_user_routingskills(self, user_id: str, **kwargs) -> 'UserSkillEntityListing':
         """
         List routing skills for user
@@ -2694,6 +2727,7 @@ class UsersApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_user_routingstatus(self, user_id: str, **kwargs) -> 'RoutingStatus':
         """
         Fetch the routing status of a user
@@ -2771,6 +2805,7 @@ class UsersApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_user_skillgroups(self, user_id: str, **kwargs) -> 'UserSkillGroupEntityListing':
         """
         Get skill groups for a user
@@ -2857,6 +2892,7 @@ class UsersApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_user_state(self, user_id: str, **kwargs) -> 'UserState':
         """
         Get user state information.
@@ -2934,6 +2970,7 @@ class UsersApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_user_station(self, user_id: str, **kwargs) -> 'UserStations':
         """
         Get station information for user
@@ -3011,6 +3048,7 @@ class UsersApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_user_superiors(self, user_id: str, **kwargs) -> List['User']:
         """
         Get superiors
@@ -3091,6 +3129,7 @@ class UsersApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_user_trustors(self, user_id: str, **kwargs) -> 'TrustorEntityListing':
         """
         List the organizations that have authorized/trusted the user.
@@ -3174,6 +3213,7 @@ class UsersApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_users(self, **kwargs) -> 'UserEntityListing':
         """
         Get the list of available users.
@@ -3269,6 +3309,7 @@ class UsersApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_users_development_activities(self, **kwargs) -> 'DevelopmentActivityListing':
         """
         Get list of Development Activities
@@ -3376,6 +3417,7 @@ class UsersApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_users_development_activities_me(self, **kwargs) -> 'DevelopmentActivityListing':
         """
         Get list of Development Activities for current user
@@ -3480,6 +3522,7 @@ class UsersApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_users_development_activity(self, activity_id: str, type: str, **kwargs) -> 'DevelopmentActivity':
         """
         Get a Development Activity
@@ -3563,6 +3606,7 @@ class UsersApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_users_me(self, **kwargs) -> 'UserMe':
         """
         Get current user details.
@@ -3640,6 +3684,7 @@ class UsersApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_users_search(self, q64: str, **kwargs) -> 'UsersSearchResponse':
         """
         Search users using the q64 value returned from a previous search
@@ -3723,6 +3768,7 @@ class UsersApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def patch_user(self, user_id: str, body: 'UpdateUser', **kwargs) -> 'User':
         """
         Update user
@@ -3806,6 +3852,7 @@ class UsersApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def patch_user_callforwarding(self, user_id: str, body: 'CallForwarding', **kwargs) -> 'CallForwarding':
         """
         Patch a user's CallForwarding
@@ -3889,6 +3936,7 @@ class UsersApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def patch_user_geolocation(self, user_id: str, client_id: str, body: 'Geolocation', **kwargs) -> 'Geolocation':
         """
         Patch a user's Geolocation
@@ -3978,6 +4026,7 @@ class UsersApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def patch_user_queue(self, queue_id: str, user_id: str, body: 'UserQueue', **kwargs) -> 'UserQueue':
         """
         Join or unjoin a queue for a user
@@ -4067,6 +4116,7 @@ class UsersApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def patch_user_queues(self, user_id: str, body: List['UserQueue'], **kwargs) -> 'UserQueueEntityListing':
         """
         Join or unjoin a set of queues for a user
@@ -4153,6 +4203,7 @@ class UsersApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def patch_user_routinglanguage(self, user_id: str, language_id: str, body: 'UserRoutingLanguage', **kwargs) -> 'UserRoutingLanguage':
         """
         Update routing language proficiency or state.
@@ -4242,6 +4293,7 @@ class UsersApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def patch_user_routinglanguages_bulk(self, user_id: str, body: List['UserRoutingLanguagePost'], **kwargs) -> 'UserLanguageEntityListing':
         """
         Add bulk routing language to user. Max limit 50 languages
@@ -4325,6 +4377,7 @@ class UsersApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def patch_user_routingskills_bulk(self, user_id: str, body: List['UserRoutingSkillPost'], **kwargs) -> 'UserSkillEntityListing':
         """
         Bulk add routing skills to user
@@ -4408,6 +4461,7 @@ class UsersApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def patch_users_bulk(self, body: List['PatchUser'], **kwargs) -> 'UserEntityListing':
         """
         Update bulk acd autoanswer on users
@@ -4485,6 +4539,7 @@ class UsersApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_analytics_users_aggregates_query(self, body: 'UserAggregationQuery', **kwargs) -> 'UserAggregateQueryResponse':
         """
         Query for user aggregates
@@ -4562,6 +4617,7 @@ class UsersApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_analytics_users_details_jobs(self, body: 'AsyncUserDetailsQuery', **kwargs) -> 'AsyncQueryResponse':
         """
         Query for user details asynchronously
@@ -4639,6 +4695,7 @@ class UsersApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_analytics_users_details_query(self, body: 'UserDetailsQuery', **kwargs) -> 'AnalyticsUserDetailsQueryResponse':
         """
         Query for user details
@@ -4716,6 +4773,7 @@ class UsersApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_analytics_users_observations_query(self, body: 'UserObservationQuery', **kwargs) -> 'UserObservationQueryResponse':
         """
         Query for user observations
@@ -4793,6 +4851,7 @@ class UsersApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_authorization_subject_bulkadd(self, subject_id: str, body: 'RoleDivisionGrants', **kwargs) -> None:
         """
         Bulk-grant roles and divisions to a subject.
@@ -4879,6 +4938,7 @@ class UsersApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_authorization_subject_bulkremove(self, subject_id: str, body: 'RoleDivisionGrants', **kwargs) -> None:
         """
         Bulk-remove grants from a subject.
@@ -4962,6 +5022,7 @@ class UsersApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_authorization_subject_bulkreplace(self, subject_id: str, body: 'RoleDivisionGrants', **kwargs) -> None:
         """
         Replace subject's roles and divisions with the exact list supplied in the request.
@@ -5048,6 +5109,7 @@ class UsersApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_authorization_subject_division_role(self, subject_id: str, division_id: str, role_id: str, **kwargs) -> None:
         """
         Make a grant of a role in a division
@@ -5140,6 +5202,7 @@ class UsersApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_user_externalid(self, user_id: str, body: 'UserExternalIdentifier', **kwargs) -> List['UserExternalIdentifier']:
         """
         Create mapping between external identifier and user. Limit 100 per entity.
@@ -5223,6 +5286,7 @@ class UsersApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_user_invite(self, user_id: str, **kwargs) -> None:
         """
         Send an activation email to the user
@@ -5303,6 +5367,7 @@ class UsersApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_user_password(self, user_id: str, body: 'ChangePasswordRequest', **kwargs) -> None:
         """
         Change a users password
@@ -5386,6 +5451,7 @@ class UsersApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_user_routinglanguages(self, user_id: str, body: 'UserRoutingLanguagePost', **kwargs) -> 'UserRoutingLanguage':
         """
         Add routing language to user
@@ -5469,6 +5535,7 @@ class UsersApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_user_routingskills(self, user_id: str, body: 'UserRoutingSkillPost', **kwargs) -> 'UserRoutingSkill':
         """
         Add routing skill to user
@@ -5552,6 +5619,7 @@ class UsersApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_users(self, body: 'CreateUser', **kwargs) -> 'User':
         """
         Create user
@@ -5629,6 +5697,7 @@ class UsersApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_users_development_activities_aggregates_query(self, body: 'DevelopmentActivityAggregateParam', **kwargs) -> 'DevelopmentActivityAggregateResponse':
         """
         Retrieve aggregated development activity data
@@ -5706,6 +5775,7 @@ class UsersApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_users_me_password(self, body: 'ChangeMyPasswordRequest', **kwargs) -> None:
         """
         Change your password
@@ -5783,6 +5853,7 @@ class UsersApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_users_search(self, body: 'UserSearchRequest', **kwargs) -> 'UsersSearchResponse':
         """
         Search users
@@ -5860,6 +5931,7 @@ class UsersApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_users_search_teams_assign(self, body: 'UserSearchRequest', **kwargs) -> 'UsersSearchResponse':
         """
         Search users assigned to teams
@@ -5937,6 +6009,7 @@ class UsersApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def put_routing_user_utilization(self, user_id: str, body: 'Utilization', **kwargs) -> 'AgentMaxUtilization':
         """
         Update the user's max utilization settings.  Include only those media types requiring custom configuration.
@@ -6020,6 +6093,7 @@ class UsersApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def put_user_callforwarding(self, user_id: str, body: 'CallForwarding', **kwargs) -> 'CallForwarding':
         """
         Update a user's CallForwarding
@@ -6103,6 +6177,7 @@ class UsersApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def put_user_outofoffice(self, user_id: str, body: 'OutOfOffice', **kwargs) -> 'OutOfOffice':
         """
         Update an OutOfOffice
@@ -6186,6 +6261,7 @@ class UsersApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def put_user_profileskills(self, user_id: str, body: List['str'], **kwargs) -> List[str]:
         """
         Update profile skills for a user
@@ -6269,6 +6345,7 @@ class UsersApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def put_user_roles(self, subject_id: str, body: List['str'], **kwargs) -> 'UserAuthorization':
         """
         Sets the user's roles
@@ -6352,6 +6429,7 @@ class UsersApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def put_user_routingskill(self, user_id: str, skill_id: str, body: 'UserRoutingSkill', **kwargs) -> 'UserRoutingSkill':
         """
         Update routing skill proficiency or state.
@@ -6441,6 +6519,7 @@ class UsersApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def put_user_routingskills_bulk(self, user_id: str, body: List['UserRoutingSkillPost'], **kwargs) -> 'UserSkillEntityListing':
         """
         Replace all routing skills assigned to a user
@@ -6524,6 +6603,7 @@ class UsersApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def put_user_routingstatus(self, user_id: str, body: 'RoutingStatus', **kwargs) -> 'RoutingStatus':
         """
         Update the routing status of a user
@@ -6607,6 +6687,7 @@ class UsersApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def put_user_state(self, user_id: str, body: 'UserState', **kwargs) -> 'UserState':
         """
         Update user state information.
@@ -6690,6 +6771,7 @@ class UsersApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def put_user_station_associatedstation_station_id(self, user_id: str, station_id: str, **kwargs) -> None:
         """
         Set associated station
@@ -6773,6 +6855,7 @@ class UsersApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def put_user_station_defaultstation_station_id(self, user_id: str, station_id: str, **kwargs) -> None:
         """
         Set default station

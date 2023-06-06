@@ -31,6 +31,7 @@ from six import iteritems
 
 from ..configuration import Configuration
 from ..api_client import ApiClient
+from ..utils import deprecated
 
 from typing import List
 from typing import Dict
@@ -117,6 +118,7 @@ class TelephonyProvidersEdgeApi(object):
             if not config.api_client:
                 config.api_client = ApiClient()
             self.api_client = config.api_client
+    
     def delete_telephony_providers_edge(self, edge_id: str, **kwargs) -> None:
         """
         Delete a edge.
@@ -194,6 +196,7 @@ class TelephonyProvidersEdgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def delete_telephony_providers_edge_logicalinterface(self, edge_id: str, interface_id: str, **kwargs) -> None:
         """
         Delete an edge logical interface
@@ -277,6 +280,7 @@ class TelephonyProvidersEdgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def delete_telephony_providers_edge_softwareupdate(self, edge_id: str, **kwargs) -> None:
         """
         Cancels any in-progress update for this edge.
@@ -354,6 +358,7 @@ class TelephonyProvidersEdgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def delete_telephony_providers_edges_certificateauthority(self, certificate_id: str, **kwargs) -> None:
         """
         Delete a certificate authority.
@@ -431,6 +436,7 @@ class TelephonyProvidersEdgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def delete_telephony_providers_edges_didpool(self, did_pool_id: str, **kwargs) -> None:
         """
         Delete a DID Pool by ID.
@@ -508,6 +514,7 @@ class TelephonyProvidersEdgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def delete_telephony_providers_edges_edgegroup(self, edge_group_id: str, **kwargs) -> None:
         """
         Delete an edge group.
@@ -585,6 +592,7 @@ class TelephonyProvidersEdgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def delete_telephony_providers_edges_extensionpool(self, extension_pool_id: str, **kwargs) -> None:
         """
         Delete an extension pool by ID
@@ -662,6 +670,7 @@ class TelephonyProvidersEdgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def delete_telephony_providers_edges_phone(self, phone_id: str, **kwargs) -> None:
         """
         Delete a Phone by ID
@@ -739,6 +748,7 @@ class TelephonyProvidersEdgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def delete_telephony_providers_edges_phonebasesetting(self, phone_base_id: str, **kwargs) -> None:
         """
         Delete a Phone Base Settings by ID
@@ -816,6 +826,7 @@ class TelephonyProvidersEdgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def delete_telephony_providers_edges_site(self, site_id: str, **kwargs) -> None:
         """
         Delete a Site by ID
@@ -893,6 +904,7 @@ class TelephonyProvidersEdgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def delete_telephony_providers_edges_site_outboundroute(self, site_id: str, outbound_route_id: str, **kwargs) -> None:
         """
         Delete Outbound Route
@@ -976,6 +988,7 @@ class TelephonyProvidersEdgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def delete_telephony_providers_edges_trunkbasesetting(self, trunk_base_settings_id: str, **kwargs) -> None:
         """
         Delete a Trunk Base Settings object by ID
@@ -1053,6 +1066,7 @@ class TelephonyProvidersEdgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_telephony_providers_edge(self, edge_id: str, **kwargs) -> 'Edge':
         """
         Get edge.
@@ -1133,6 +1147,7 @@ class TelephonyProvidersEdgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_telephony_providers_edge_diagnostic_nslookup(self, edge_id: str, **kwargs) -> 'EdgeNetworkDiagnosticResponse':
         """
         Get networking-related information from an Edge for a target IP or host.
@@ -1210,6 +1225,7 @@ class TelephonyProvidersEdgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_telephony_providers_edge_diagnostic_ping(self, edge_id: str, **kwargs) -> 'EdgeNetworkDiagnosticResponse':
         """
         Get networking-related information from an Edge for a target IP or host.
@@ -1287,6 +1303,7 @@ class TelephonyProvidersEdgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_telephony_providers_edge_diagnostic_route(self, edge_id: str, **kwargs) -> 'EdgeNetworkDiagnosticResponse':
         """
         Get networking-related information from an Edge for a target IP or host.
@@ -1364,6 +1381,7 @@ class TelephonyProvidersEdgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_telephony_providers_edge_diagnostic_tracepath(self, edge_id: str, **kwargs) -> 'EdgeNetworkDiagnosticResponse':
         """
         Get networking-related information from an Edge for a target IP or host.
@@ -1441,6 +1459,7 @@ class TelephonyProvidersEdgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_telephony_providers_edge_logicalinterface(self, edge_id: str, interface_id: str, **kwargs) -> 'DomainLogicalInterface':
         """
         Get an edge logical interface
@@ -1527,6 +1546,7 @@ class TelephonyProvidersEdgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_telephony_providers_edge_logicalinterfaces(self, edge_id: str, **kwargs) -> 'LogicalInterfaceEntityListing':
         """
         Get edge logical interfaces.
@@ -1607,6 +1627,7 @@ class TelephonyProvidersEdgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_telephony_providers_edge_logs_job(self, edge_id: str, job_id: str, **kwargs) -> 'EdgeLogsJob':
         """
         Get an Edge logs job.
@@ -1690,6 +1711,7 @@ class TelephonyProvidersEdgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_telephony_providers_edge_metrics(self, edge_id: str, **kwargs) -> 'EdgeMetrics':
         """
         Get the edge metrics.
@@ -1767,6 +1789,7 @@ class TelephonyProvidersEdgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_telephony_providers_edge_physicalinterface(self, edge_id: str, interface_id: str, **kwargs) -> 'DomainPhysicalInterface':
         """
         Get edge physical interface.
@@ -1850,6 +1873,7 @@ class TelephonyProvidersEdgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_telephony_providers_edge_physicalinterfaces(self, edge_id: str, **kwargs) -> 'PhysicalInterfaceEntityListing':
         """
         Retrieve a list of all configured physical interfaces from a specific edge.
@@ -1927,6 +1951,7 @@ class TelephonyProvidersEdgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_telephony_providers_edge_setuppackage(self, edge_id: str, **kwargs) -> 'VmPairingInfo':
         """
         Get the setup package for a locally deployed edge device. This is needed to complete the setup process for the virtual edge.
@@ -2004,6 +2029,7 @@ class TelephonyProvidersEdgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_telephony_providers_edge_softwareupdate(self, edge_id: str, **kwargs) -> 'DomainEdgeSoftwareUpdateDto':
         """
         Gets software update status information about any edge.
@@ -2081,6 +2107,7 @@ class TelephonyProvidersEdgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_telephony_providers_edge_softwareversions(self, edge_id: str, **kwargs) -> 'DomainEdgeSoftwareVersionDtoEntityListing':
         """
         Gets all the available software versions for this edge.
@@ -2158,6 +2185,7 @@ class TelephonyProvidersEdgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_telephony_providers_edge_trunks(self, edge_id: str, **kwargs) -> 'TrunkEntityListing':
         """
         Get the list of available trunks for the given Edge.
@@ -2253,6 +2281,7 @@ class TelephonyProvidersEdgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_telephony_providers_edges(self, **kwargs) -> 'EdgeEntityListing':
         """
         Get the list of edges.
@@ -2348,6 +2377,7 @@ class TelephonyProvidersEdgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_telephony_providers_edges_availablelanguages(self, **kwargs) -> 'AvailableLanguageList':
         """
         Get the list of available languages.
@@ -2419,6 +2449,7 @@ class TelephonyProvidersEdgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_telephony_providers_edges_certificateauthorities(self, **kwargs) -> 'CertificateAuthorityEntityListing':
         """
         Get the list of certificate authorities.
@@ -2490,6 +2521,7 @@ class TelephonyProvidersEdgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_telephony_providers_edges_certificateauthority(self, certificate_id: str, **kwargs) -> 'DomainCertificateAuthority':
         """
         Get a certificate authority.
@@ -2567,6 +2599,7 @@ class TelephonyProvidersEdgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_telephony_providers_edges_did(self, did_id: str, **kwargs) -> 'DID':
         """
         Get a DID by ID.
@@ -2644,6 +2677,7 @@ class TelephonyProvidersEdgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_telephony_providers_edges_didpool(self, did_pool_id: str, **kwargs) -> 'DIDPool':
         """
         Get a DID Pool by ID.
@@ -2721,6 +2755,7 @@ class TelephonyProvidersEdgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_telephony_providers_edges_didpools(self, **kwargs) -> 'DIDPoolEntityListing':
         """
         Get a listing of DID Pools
@@ -2804,6 +2839,7 @@ class TelephonyProvidersEdgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_telephony_providers_edges_didpools_dids(self, type: str, **kwargs) -> 'DIDNumberEntityListing':
         """
         Get a listing of unassigned and/or assigned numbers in a set of DID Pools.
@@ -2896,6 +2932,7 @@ class TelephonyProvidersEdgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_telephony_providers_edges_dids(self, **kwargs) -> 'DIDEntityListing':
         """
         Get a listing of DIDs
@@ -2991,6 +3028,7 @@ class TelephonyProvidersEdgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_telephony_providers_edges_edgegroup(self, edge_group_id: str, **kwargs) -> 'EdgeGroup':
         """
         Get edge group.
@@ -3071,6 +3109,7 @@ class TelephonyProvidersEdgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_telephony_providers_edges_edgegroup_edgetrunkbase(self, edgegroup_id: str, edgetrunkbase_id: str, **kwargs) -> 'EdgeTrunkBase':
         """
         Gets the edge trunk base associated with the edge group
@@ -3154,6 +3193,7 @@ class TelephonyProvidersEdgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_telephony_providers_edges_edgegroups(self, **kwargs) -> 'EdgeGroupEntityListing':
         """
         Get the list of edge groups.
@@ -3240,6 +3280,7 @@ class TelephonyProvidersEdgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_telephony_providers_edges_edgeversionreport(self, **kwargs) -> 'EdgeVersionReport':
         """
         Get the edge version report.
@@ -3311,6 +3352,7 @@ class TelephonyProvidersEdgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_telephony_providers_edges_expired(self, **kwargs) -> 'ExpiredEdgeListing':
         """
         List of edges more than 4 edge versions behind the latest software.
@@ -3382,6 +3424,7 @@ class TelephonyProvidersEdgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_telephony_providers_edges_extension(self, extension_id: str, **kwargs) -> 'Extension':
         """
         Get an extension by ID.
@@ -3459,6 +3502,7 @@ class TelephonyProvidersEdgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_telephony_providers_edges_extensionpool(self, extension_pool_id: str, **kwargs) -> 'ExtensionPool':
         """
         Get an extension pool by ID
@@ -3536,6 +3580,7 @@ class TelephonyProvidersEdgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_telephony_providers_edges_extensionpools(self, **kwargs) -> 'ExtensionPoolEntityListing':
         """
         Get a listing of extension pools
@@ -3619,6 +3664,7 @@ class TelephonyProvidersEdgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_telephony_providers_edges_extensions(self, **kwargs) -> 'ExtensionEntityListing':
         """
         Get a listing of extensions
@@ -3705,6 +3751,7 @@ class TelephonyProvidersEdgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_telephony_providers_edges_line(self, line_id: str, **kwargs) -> 'Line':
         """
         Get a Line by ID
@@ -3782,6 +3829,7 @@ class TelephonyProvidersEdgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_telephony_providers_edges_linebasesetting(self, line_base_id: str, **kwargs) -> 'LineBase':
         """
         Get a line base settings object by ID
@@ -3859,6 +3907,7 @@ class TelephonyProvidersEdgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_telephony_providers_edges_linebasesettings(self, **kwargs) -> 'LineBaseEntityListing':
         """
         Get a listing of line base settings objects
@@ -3945,6 +3994,7 @@ class TelephonyProvidersEdgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_telephony_providers_edges_lines(self, **kwargs) -> 'LineEntityListing':
         """
         Get a list of Lines
@@ -4031,6 +4081,7 @@ class TelephonyProvidersEdgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_telephony_providers_edges_lines_template(self, line_base_settings_id: str, **kwargs) -> 'Line':
         """
         Get a Line instance template based on a Line Base Settings object. This object can then be modified and saved as a new Line instance
@@ -4108,6 +4159,7 @@ class TelephonyProvidersEdgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_telephony_providers_edges_logicalinterfaces(self, edge_ids: str, **kwargs) -> 'LogicalInterfaceEntityListing':
         """
         Get edge logical interfaces.
@@ -4188,6 +4240,7 @@ class TelephonyProvidersEdgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_telephony_providers_edges_metrics(self, edge_ids: str, **kwargs) -> List['EdgeMetrics']:
         """
         Get the metrics for a list of edges.
@@ -4265,6 +4318,7 @@ class TelephonyProvidersEdgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    @deprecated("get_telephony_providers_edges_outboundroute is deprecated")
     def get_telephony_providers_edges_outboundroute(self, outbound_route_id: str, **kwargs) -> 'OutboundRoute':
         """
         Get outbound route
@@ -4342,6 +4396,7 @@ class TelephonyProvidersEdgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_telephony_providers_edges_outboundroutes(self, **kwargs) -> 'OutboundRouteEntityListing':
         """
         Get outbound routes
@@ -4431,6 +4486,7 @@ class TelephonyProvidersEdgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_telephony_providers_edges_phone(self, phone_id: str, **kwargs) -> 'Phone':
         """
         Get a Phone by ID
@@ -4508,6 +4564,7 @@ class TelephonyProvidersEdgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_telephony_providers_edges_phonebasesetting(self, phone_base_id: str, **kwargs) -> 'PhoneBase':
         """
         Get a Phone Base Settings object by ID
@@ -4585,6 +4642,7 @@ class TelephonyProvidersEdgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_telephony_providers_edges_phonebasesettings(self, **kwargs) -> 'PhoneBaseEntityListing':
         """
         Get a list of Phone Base Settings objects
@@ -4674,6 +4732,7 @@ class TelephonyProvidersEdgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_telephony_providers_edges_phonebasesettings_availablemetabases(self, **kwargs) -> 'PhoneMetaBaseEntityListing':
         """
         Get a list of available makes and models to create a new Phone Base Settings
@@ -4751,6 +4810,7 @@ class TelephonyProvidersEdgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_telephony_providers_edges_phonebasesettings_template(self, phone_metabase_id: str, **kwargs) -> 'PhoneBase':
         """
         Get a Phone Base Settings instance template from a given make and model. This object can then be modified and saved as a new Phone Base Settings instance
@@ -4828,6 +4888,7 @@ class TelephonyProvidersEdgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_telephony_providers_edges_phones(self, **kwargs) -> 'PhoneEntityListing':
         """
         Get a list of Phone Instances
@@ -4950,6 +5011,7 @@ class TelephonyProvidersEdgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_telephony_providers_edges_phones_template(self, phone_base_settings_id: str, **kwargs) -> 'Phone':
         """
         Get a Phone instance template based on a Phone Base Settings object. This object can then be modified and saved as a new Phone instance
@@ -5027,6 +5089,7 @@ class TelephonyProvidersEdgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_telephony_providers_edges_physicalinterfaces(self, edge_ids: str, **kwargs) -> 'PhysicalInterfaceEntityListing':
         """
         Get physical interfaces for edges.
@@ -5104,6 +5167,7 @@ class TelephonyProvidersEdgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_telephony_providers_edges_site(self, site_id: str, **kwargs) -> 'Site':
         """
         Get a Site by ID.
@@ -5181,6 +5245,7 @@ class TelephonyProvidersEdgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_telephony_providers_edges_site_numberplan(self, site_id: str, number_plan_id: str, **kwargs) -> 'NumberPlan':
         """
         Get a Number Plan by ID.
@@ -5264,6 +5329,7 @@ class TelephonyProvidersEdgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_telephony_providers_edges_site_numberplans(self, site_id: str, **kwargs) -> List['NumberPlan']:
         """
         Get the list of Number Plans for this Site. Only fetches the first 200 records.
@@ -5341,6 +5407,7 @@ class TelephonyProvidersEdgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_telephony_providers_edges_site_numberplans_classifications(self, site_id: str, **kwargs) -> List[str]:
         """
         Get a list of Classifications for this Site
@@ -5421,6 +5488,7 @@ class TelephonyProvidersEdgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_telephony_providers_edges_site_outboundroute(self, site_id: str, outbound_route_id: str, **kwargs) -> 'OutboundRouteBase':
         """
         Get an outbound route
@@ -5504,6 +5572,7 @@ class TelephonyProvidersEdgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_telephony_providers_edges_site_outboundroutes(self, site_id: str, **kwargs) -> 'OutboundRouteBaseEntityListing':
         """
         Get outbound routes
@@ -5596,6 +5665,7 @@ class TelephonyProvidersEdgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_telephony_providers_edges_sites(self, **kwargs) -> 'SiteEntityListing':
         """
         Get the list of Sites.
@@ -5688,6 +5758,7 @@ class TelephonyProvidersEdgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_telephony_providers_edges_timezones(self, **kwargs) -> 'TimeZoneEntityListing':
         """
         Get a list of Edge-compatible time zones
@@ -5765,6 +5836,7 @@ class TelephonyProvidersEdgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_telephony_providers_edges_trunk(self, trunk_id: str, **kwargs) -> 'Trunk':
         """
         Get a Trunk by ID
@@ -5842,6 +5914,7 @@ class TelephonyProvidersEdgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_telephony_providers_edges_trunk_metrics(self, trunk_id: str, **kwargs) -> 'TrunkMetrics':
         """
         Get the trunk metrics.
@@ -5919,6 +5992,7 @@ class TelephonyProvidersEdgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_telephony_providers_edges_trunkbasesetting(self, trunk_base_settings_id: str, **kwargs) -> 'TrunkBase':
         """
         Get a Trunk Base Settings object by ID
@@ -5999,6 +6073,7 @@ class TelephonyProvidersEdgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_telephony_providers_edges_trunkbasesettings(self, **kwargs) -> 'TrunkBaseEntityListing':
         """
         Get Trunk Base Settings listing
@@ -6097,6 +6172,7 @@ class TelephonyProvidersEdgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_telephony_providers_edges_trunkbasesettings_availablemetabases(self, **kwargs) -> 'TrunkMetabaseEntityListing':
         """
         Get a list of available makes and models to create a new Trunk Base Settings
@@ -6177,6 +6253,7 @@ class TelephonyProvidersEdgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_telephony_providers_edges_trunkbasesettings_template(self, trunk_metabase_id: str, **kwargs) -> 'TrunkBase':
         """
         Get a Trunk Base Settings instance template from a given make and model. This object can then be modified and saved as a new Trunk Base Settings instance
@@ -6254,6 +6331,7 @@ class TelephonyProvidersEdgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_telephony_providers_edges_trunks(self, **kwargs) -> 'TrunkEntityListing':
         """
         Get the list of available trunks.
@@ -6346,6 +6424,7 @@ class TelephonyProvidersEdgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_telephony_providers_edges_trunks_metrics(self, trunk_ids: str, **kwargs) -> List['TrunkMetrics']:
         """
         Get the metrics for a list of trunks.
@@ -6423,6 +6502,7 @@ class TelephonyProvidersEdgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_telephony_providers_edges_trunkswithrecording(self, **kwargs) -> 'TrunkRecordingEnabledCount':
         """
         Get Counts of trunks that have recording disabled or enabled
@@ -6497,6 +6577,7 @@ class TelephonyProvidersEdgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_telephony_providers_edge_diagnostic_nslookup(self, edge_id: str, body: 'EdgeNetworkDiagnosticRequest', **kwargs) -> 'EdgeNetworkDiagnostic':
         """
         Nslookup request command to collect networking-related information from an Edge for a target IP or host.
@@ -6580,6 +6661,7 @@ class TelephonyProvidersEdgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_telephony_providers_edge_diagnostic_ping(self, edge_id: str, body: 'EdgeNetworkDiagnosticRequest', **kwargs) -> 'EdgeNetworkDiagnostic':
         """
         Ping Request command to collect networking-related information from an Edge for a target IP or host.
@@ -6663,6 +6745,7 @@ class TelephonyProvidersEdgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_telephony_providers_edge_diagnostic_route(self, edge_id: str, body: 'EdgeNetworkDiagnosticRequest', **kwargs) -> 'EdgeNetworkDiagnostic':
         """
         Route request command to collect networking-related information from an Edge for a target IP or host.
@@ -6746,6 +6829,7 @@ class TelephonyProvidersEdgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_telephony_providers_edge_diagnostic_tracepath(self, edge_id: str, body: 'EdgeNetworkDiagnosticRequest', **kwargs) -> 'EdgeNetworkDiagnostic':
         """
         Tracepath request command to collect networking-related information from an Edge for a target IP or host.
@@ -6829,6 +6913,7 @@ class TelephonyProvidersEdgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_telephony_providers_edge_logicalinterfaces(self, edge_id: str, body: 'DomainLogicalInterface', **kwargs) -> 'DomainLogicalInterface':
         """
         Create an edge logical interface.
@@ -6912,6 +6997,7 @@ class TelephonyProvidersEdgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_telephony_providers_edge_logs_job_upload(self, edge_id: str, job_id: str, body: 'EdgeLogsJobUploadRequest', **kwargs) -> None:
         """
         Request that the specified fileIds be uploaded from the Edge.
@@ -7001,6 +7087,7 @@ class TelephonyProvidersEdgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_telephony_providers_edge_logs_jobs(self, edge_id: str, body: 'EdgeLogsJobRequest', **kwargs) -> 'EdgeLogsJobResponse':
         """
         Create a job to upload a list of Edge logs.
@@ -7084,6 +7171,7 @@ class TelephonyProvidersEdgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_telephony_providers_edge_reboot(self, edge_id: str, **kwargs) -> str:
         """
         Reboot an Edge
@@ -7164,6 +7252,7 @@ class TelephonyProvidersEdgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_telephony_providers_edge_softwareupdate(self, edge_id: str, body: 'DomainEdgeSoftwareUpdateDto', **kwargs) -> 'DomainEdgeSoftwareUpdateDto':
         """
         Starts a software update for this edge.
@@ -7247,6 +7336,7 @@ class TelephonyProvidersEdgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_telephony_providers_edge_statuscode(self, edge_id: str, **kwargs) -> str:
         """
         Take an Edge in or out of service
@@ -7327,6 +7417,7 @@ class TelephonyProvidersEdgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_telephony_providers_edge_unpair(self, edge_id: str, **kwargs) -> str:
         """
         Unpair an Edge
@@ -7404,6 +7495,7 @@ class TelephonyProvidersEdgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_telephony_providers_edges(self, body: 'Edge', **kwargs) -> 'Edge':
         """
         Create an edge.
@@ -7481,6 +7573,7 @@ class TelephonyProvidersEdgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_telephony_providers_edges_addressvalidation(self, body: 'ValidateAddressRequest', **kwargs) -> 'ValidateAddressResponse':
         """
         Validates a street address
@@ -7558,6 +7651,7 @@ class TelephonyProvidersEdgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_telephony_providers_edges_certificateauthorities(self, body: 'DomainCertificateAuthority', **kwargs) -> 'DomainCertificateAuthority':
         """
         Create a certificate authority.
@@ -7635,6 +7729,7 @@ class TelephonyProvidersEdgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_telephony_providers_edges_didpools(self, body: 'DIDPool', **kwargs) -> 'DIDPool':
         """
         Create a new DID pool
@@ -7712,6 +7807,7 @@ class TelephonyProvidersEdgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_telephony_providers_edges_edgegroups(self, body: 'EdgeGroup', **kwargs) -> 'EdgeGroup':
         """
         Create an edge group.
@@ -7789,6 +7885,7 @@ class TelephonyProvidersEdgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_telephony_providers_edges_extensionpools(self, body: 'ExtensionPool', **kwargs) -> 'ExtensionPool':
         """
         Create a new extension pool
@@ -7866,6 +7963,7 @@ class TelephonyProvidersEdgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_telephony_providers_edges_phone_reboot(self, phone_id: str, **kwargs) -> None:
         """
         Reboot a Phone
@@ -7943,6 +8041,7 @@ class TelephonyProvidersEdgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_telephony_providers_edges_phonebasesettings(self, body: 'PhoneBase', **kwargs) -> 'PhoneBase':
         """
         Create a new Phone Base Settings object
@@ -8020,6 +8119,7 @@ class TelephonyProvidersEdgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_telephony_providers_edges_phones(self, body: 'Phone', **kwargs) -> 'Phone':
         """
         Create a new Phone
@@ -8097,6 +8197,7 @@ class TelephonyProvidersEdgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_telephony_providers_edges_phones_reboot(self, body: 'PhonesReboot', **kwargs) -> None:
         """
         Reboot Multiple Phones
@@ -8174,6 +8275,7 @@ class TelephonyProvidersEdgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_telephony_providers_edges_site_outboundroutes(self, site_id: str, body: 'OutboundRouteBase', **kwargs) -> 'OutboundRouteBase':
         """
         Create outbound route
@@ -8257,6 +8359,7 @@ class TelephonyProvidersEdgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_telephony_providers_edges_sites(self, body: 'Site', **kwargs) -> 'Site':
         """
         Create a Site.
@@ -8334,6 +8437,7 @@ class TelephonyProvidersEdgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_telephony_providers_edges_trunkbasesettings(self, body: 'TrunkBase', **kwargs) -> 'TrunkBase':
         """
         Create a Trunk Base Settings object
@@ -8411,6 +8515,7 @@ class TelephonyProvidersEdgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def put_telephony_providers_edge(self, edge_id: str, body: 'Edge', **kwargs) -> 'Edge':
         """
         Update a edge.
@@ -8494,6 +8599,7 @@ class TelephonyProvidersEdgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def put_telephony_providers_edge_logicalinterface(self, edge_id: str, interface_id: str, body: 'DomainLogicalInterface', **kwargs) -> 'DomainLogicalInterface':
         """
         Update an edge logical interface.
@@ -8583,6 +8689,7 @@ class TelephonyProvidersEdgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def put_telephony_providers_edges_certificateauthority(self, certificate_id: str, body: 'DomainCertificateAuthority', **kwargs) -> 'DomainCertificateAuthority':
         """
         Update a certificate authority.
@@ -8666,6 +8773,7 @@ class TelephonyProvidersEdgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def put_telephony_providers_edges_didpool(self, did_pool_id: str, body: 'DIDPool', **kwargs) -> 'DIDPool':
         """
         Update a DID Pool by ID.
@@ -8749,6 +8857,7 @@ class TelephonyProvidersEdgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def put_telephony_providers_edges_edgegroup(self, edge_group_id: str, body: 'EdgeGroup', **kwargs) -> 'EdgeGroup':
         """
         Update an edge group.
@@ -8832,6 +8941,7 @@ class TelephonyProvidersEdgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def put_telephony_providers_edges_edgegroup_edgetrunkbase(self, edgegroup_id: str, edgetrunkbase_id: str, body: 'EdgeTrunkBase', **kwargs) -> 'EdgeTrunkBase':
         """
         Update the edge trunk base associated with the edge group
@@ -8921,6 +9031,7 @@ class TelephonyProvidersEdgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def put_telephony_providers_edges_extensionpool(self, extension_pool_id: str, body: 'ExtensionPool', **kwargs) -> 'ExtensionPool':
         """
         Update an extension pool by ID
@@ -9004,6 +9115,7 @@ class TelephonyProvidersEdgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def put_telephony_providers_edges_phone(self, phone_id: str, body: 'Phone', **kwargs) -> 'Phone':
         """
         Update a Phone by ID
@@ -9087,6 +9199,7 @@ class TelephonyProvidersEdgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def put_telephony_providers_edges_phonebasesetting(self, phone_base_id: str, body: 'PhoneBase', **kwargs) -> 'PhoneBase':
         """
         Update a Phone Base Settings by ID
@@ -9170,6 +9283,7 @@ class TelephonyProvidersEdgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def put_telephony_providers_edges_site(self, site_id: str, body: 'Site', **kwargs) -> 'Site':
         """
         Update a Site by ID.
@@ -9253,6 +9367,7 @@ class TelephonyProvidersEdgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def put_telephony_providers_edges_site_numberplans(self, site_id: str, body: List['NumberPlan'], **kwargs) -> List['NumberPlan']:
         """
         Update the list of Number Plans. A user can update maximum 200 number plans at a time.
@@ -9336,6 +9451,7 @@ class TelephonyProvidersEdgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def put_telephony_providers_edges_site_outboundroute(self, site_id: str, outbound_route_id: str, body: 'OutboundRouteBase', **kwargs) -> 'OutboundRouteBase':
         """
         Update outbound route
@@ -9425,6 +9541,7 @@ class TelephonyProvidersEdgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def put_telephony_providers_edges_trunkbasesetting(self, trunk_base_settings_id: str, body: 'TrunkBase', **kwargs) -> 'TrunkBase':
         """
         Update a Trunk Base Settings object by ID

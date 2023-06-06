@@ -50,18 +50,24 @@ class Settings(object):
         self.swagger_types = {
             'communication_based_acw': 'bool',
             'include_non_agent_conversation_summary': 'bool',
-            'allow_callback_queue_selection': 'bool'
+            'allow_callback_queue_selection': 'bool',
+            'complete_acw_when_agent_transitions_offline': 'bool',
+            'total_active_callback': 'bool'
         }
 
         self.attribute_map = {
             'communication_based_acw': 'communicationBasedACW',
             'include_non_agent_conversation_summary': 'includeNonAgentConversationSummary',
-            'allow_callback_queue_selection': 'allowCallbackQueueSelection'
+            'allow_callback_queue_selection': 'allowCallbackQueueSelection',
+            'complete_acw_when_agent_transitions_offline': 'completeAcwWhenAgentTransitionsOffline',
+            'total_active_callback': 'totalActiveCallback'
         }
 
         self._communication_based_acw = None
         self._include_non_agent_conversation_summary = None
         self._allow_callback_queue_selection = None
+        self._complete_acw_when_agent_transitions_offline = None
+        self._total_active_callback = None
 
     @property
     def communication_based_acw(self) -> bool:
@@ -134,6 +140,54 @@ class Settings(object):
         
 
         self._allow_callback_queue_selection = allow_callback_queue_selection
+
+    @property
+    def complete_acw_when_agent_transitions_offline(self) -> bool:
+        """
+        Gets the complete_acw_when_agent_transitions_offline of this Settings.
+        Complete ACW When Agent Transitions Offline
+
+        :return: The complete_acw_when_agent_transitions_offline of this Settings.
+        :rtype: bool
+        """
+        return self._complete_acw_when_agent_transitions_offline
+
+    @complete_acw_when_agent_transitions_offline.setter
+    def complete_acw_when_agent_transitions_offline(self, complete_acw_when_agent_transitions_offline: bool) -> None:
+        """
+        Sets the complete_acw_when_agent_transitions_offline of this Settings.
+        Complete ACW When Agent Transitions Offline
+
+        :param complete_acw_when_agent_transitions_offline: The complete_acw_when_agent_transitions_offline of this Settings.
+        :type: bool
+        """
+        
+
+        self._complete_acw_when_agent_transitions_offline = complete_acw_when_agent_transitions_offline
+
+    @property
+    def total_active_callback(self) -> bool:
+        """
+        Gets the total_active_callback of this Settings.
+        Exclude the 'interacting' duration from the handle calculations of callbacks
+
+        :return: The total_active_callback of this Settings.
+        :rtype: bool
+        """
+        return self._total_active_callback
+
+    @total_active_callback.setter
+    def total_active_callback(self, total_active_callback: bool) -> None:
+        """
+        Sets the total_active_callback of this Settings.
+        Exclude the 'interacting' duration from the handle calculations of callbacks
+
+        :param total_active_callback: The total_active_callback of this Settings.
+        :type: bool
+        """
+        
+
+        self._total_active_callback = total_active_callback
 
     def to_dict(self):
         """

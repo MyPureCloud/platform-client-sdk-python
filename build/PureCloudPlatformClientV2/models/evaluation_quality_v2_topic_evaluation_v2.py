@@ -84,7 +84,10 @@ class EvaluationQualityV2TopicEvaluationV2(object):
             'version': 'int',
             'previous_status': 'str',
             'declined_review': 'bool',
-            'retracted_evaluation': 'EvaluationQualityV2TopicEvaluationReference'
+            'retracted_evaluation': 'EvaluationQualityV2TopicEvaluationReference',
+            'rescore_count': 'int',
+            'evaluator_comment_has_updated': 'bool',
+            'agent_comment_has_updated': 'bool'
         }
 
         self.attribute_map = {
@@ -118,7 +121,10 @@ class EvaluationQualityV2TopicEvaluationV2(object):
             'version': 'version',
             'previous_status': 'previousStatus',
             'declined_review': 'declinedReview',
-            'retracted_evaluation': 'retractedEvaluation'
+            'retracted_evaluation': 'retractedEvaluation',
+            'rescore_count': 'rescoreCount',
+            'evaluator_comment_has_updated': 'evaluatorCommentHasUpdated',
+            'agent_comment_has_updated': 'agentCommentHasUpdated'
         }
 
         self._id = None
@@ -152,6 +158,9 @@ class EvaluationQualityV2TopicEvaluationV2(object):
         self._previous_status = None
         self._declined_review = None
         self._retracted_evaluation = None
+        self._rescore_count = None
+        self._evaluator_comment_has_updated = None
+        self._agent_comment_has_updated = None
 
     @property
     def id(self) -> str:
@@ -906,6 +915,78 @@ class EvaluationQualityV2TopicEvaluationV2(object):
         
 
         self._retracted_evaluation = retracted_evaluation
+
+    @property
+    def rescore_count(self) -> int:
+        """
+        Gets the rescore_count of this EvaluationQualityV2TopicEvaluationV2.
+
+
+        :return: The rescore_count of this EvaluationQualityV2TopicEvaluationV2.
+        :rtype: int
+        """
+        return self._rescore_count
+
+    @rescore_count.setter
+    def rescore_count(self, rescore_count: int) -> None:
+        """
+        Sets the rescore_count of this EvaluationQualityV2TopicEvaluationV2.
+
+
+        :param rescore_count: The rescore_count of this EvaluationQualityV2TopicEvaluationV2.
+        :type: int
+        """
+        
+
+        self._rescore_count = rescore_count
+
+    @property
+    def evaluator_comment_has_updated(self) -> bool:
+        """
+        Gets the evaluator_comment_has_updated of this EvaluationQualityV2TopicEvaluationV2.
+
+
+        :return: The evaluator_comment_has_updated of this EvaluationQualityV2TopicEvaluationV2.
+        :rtype: bool
+        """
+        return self._evaluator_comment_has_updated
+
+    @evaluator_comment_has_updated.setter
+    def evaluator_comment_has_updated(self, evaluator_comment_has_updated: bool) -> None:
+        """
+        Sets the evaluator_comment_has_updated of this EvaluationQualityV2TopicEvaluationV2.
+
+
+        :param evaluator_comment_has_updated: The evaluator_comment_has_updated of this EvaluationQualityV2TopicEvaluationV2.
+        :type: bool
+        """
+        
+
+        self._evaluator_comment_has_updated = evaluator_comment_has_updated
+
+    @property
+    def agent_comment_has_updated(self) -> bool:
+        """
+        Gets the agent_comment_has_updated of this EvaluationQualityV2TopicEvaluationV2.
+
+
+        :return: The agent_comment_has_updated of this EvaluationQualityV2TopicEvaluationV2.
+        :rtype: bool
+        """
+        return self._agent_comment_has_updated
+
+    @agent_comment_has_updated.setter
+    def agent_comment_has_updated(self, agent_comment_has_updated: bool) -> None:
+        """
+        Sets the agent_comment_has_updated of this EvaluationQualityV2TopicEvaluationV2.
+
+
+        :param agent_comment_has_updated: The agent_comment_has_updated of this EvaluationQualityV2TopicEvaluationV2.
+        :type: bool
+        """
+        
+
+        self._agent_comment_has_updated = agent_comment_has_updated
 
     def to_dict(self):
         """

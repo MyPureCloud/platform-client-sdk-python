@@ -31,6 +31,7 @@ from six import iteritems
 
 from ..configuration import Configuration
 from ..api_client import ApiClient
+from ..utils import deprecated
 
 from typing import List
 from typing import Dict
@@ -64,6 +65,7 @@ class WebDeploymentsApi(object):
             if not config.api_client:
                 config.api_client = ApiClient()
             self.api_client = config.api_client
+    
     def delete_webdeployments_configuration(self, configuration_id: str, **kwargs) -> None:
         """
         Delete all versions of a configuration
@@ -141,6 +143,7 @@ class WebDeploymentsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def delete_webdeployments_deployment(self, deployment_id: str, **kwargs) -> None:
         """
         Delete a deployment
@@ -218,6 +221,7 @@ class WebDeploymentsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def delete_webdeployments_deployment_cobrowse_session_id(self, deployment_id: str, session_id: str, **kwargs) -> object:
         """
         Deletes a cobrowse session
@@ -301,6 +305,7 @@ class WebDeploymentsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def delete_webdeployments_token_revoke(self, **kwargs) -> None:
         """
         Invalidate JWT
@@ -378,6 +383,7 @@ class WebDeploymentsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_webdeployments_configuration_version(self, configuration_id: str, version_id: str, **kwargs) -> 'WebDeploymentConfigurationVersion':
         """
         Get a configuration version
@@ -461,6 +467,7 @@ class WebDeploymentsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_webdeployments_configuration_versions(self, configuration_id: str, **kwargs) -> 'WebDeploymentConfigurationVersionEntityListing':
         """
         Get the versions of a configuration
@@ -538,6 +545,7 @@ class WebDeploymentsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_webdeployments_configuration_versions_draft(self, configuration_id: str, **kwargs) -> 'WebDeploymentConfigurationVersion':
         """
         Get the configuration draft
@@ -615,6 +623,7 @@ class WebDeploymentsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_webdeployments_configurations(self, **kwargs) -> 'WebDeploymentConfigurationVersionEntityListing':
         """
         View configuration drafts
@@ -689,6 +698,7 @@ class WebDeploymentsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_webdeployments_deployment(self, deployment_id: str, **kwargs) -> 'WebDeployment':
         """
         Get a deployment
@@ -766,6 +776,7 @@ class WebDeploymentsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_webdeployments_deployment_cobrowse_session_id(self, deployment_id: str, session_id: str, **kwargs) -> 'CobrowseWebMessagingSession':
         """
         Retrieves a cobrowse session
@@ -849,6 +860,7 @@ class WebDeploymentsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_webdeployments_deployment_configurations(self, deployment_id: str, **kwargs) -> 'WebDeploymentActiveConfigurationOnDeployment':
         """
         Get active configuration for a given deployment
@@ -929,6 +941,7 @@ class WebDeploymentsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_webdeployments_deployments(self, **kwargs) -> 'ExpandableWebDeploymentEntityListing':
         """
         Get deployments
@@ -1003,6 +1016,7 @@ class WebDeploymentsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_webdeployments_configuration_versions_draft_publish(self, configuration_id: str, **kwargs) -> 'WebDeploymentConfigurationVersion':
         """
         Publish the configuration draft and create a new version
@@ -1080,6 +1094,7 @@ class WebDeploymentsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_webdeployments_configurations(self, configuration_version: 'WebDeploymentConfigurationVersion', **kwargs) -> 'WebDeploymentConfigurationVersion':
         """
         Create a configuration draft
@@ -1157,6 +1172,7 @@ class WebDeploymentsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_webdeployments_deployments(self, deployment: 'WebDeployment', **kwargs) -> 'WebDeployment':
         """
         Create a deployment
@@ -1234,6 +1250,7 @@ class WebDeploymentsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_webdeployments_token_oauthcodegrantjwtexchange(self, body: 'WebDeploymentsOAuthExchangeRequest', **kwargs) -> 'WebDeploymentsAuthorizationResponse':
         """
         Exchange an oAuth code (obtained using the Authorization Code Flow) for a JWT that can be used by webdeployments.
@@ -1311,6 +1328,7 @@ class WebDeploymentsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_webdeployments_token_refresh(self, **kwargs) -> 'SignedData':
         """
         Refresh a JWT.
@@ -1385,6 +1403,7 @@ class WebDeploymentsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def put_webdeployments_configuration_versions_draft(self, configuration_id: str, configuration_version: 'WebDeploymentConfigurationVersion', **kwargs) -> 'WebDeploymentConfigurationVersion':
         """
         Update the configuration draft
@@ -1468,6 +1487,7 @@ class WebDeploymentsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def put_webdeployments_deployment(self, deployment_id: str, deployment: 'WebDeployment', **kwargs) -> 'WebDeployment':
         """
         Update a deployment

@@ -71,6 +71,8 @@ class FlowVersion(object):
             'publish_result_uri': 'str',
             'input_schema': 'JsonSchemaDocument',
             'output_schema': 'JsonSchemaDocument',
+            'date_published': 'datetime',
+            'date_published_end': 'datetime',
             'nlu_info': 'NluInfo',
             'supported_languages': 'list[SupportedLanguage]',
             'compatible_flow_types': 'list[str]',
@@ -95,6 +97,8 @@ class FlowVersion(object):
             'publish_result_uri': 'publishResultUri',
             'input_schema': 'inputSchema',
             'output_schema': 'outputSchema',
+            'date_published': 'datePublished',
+            'date_published_end': 'datePublishedEnd',
             'nlu_info': 'nluInfo',
             'supported_languages': 'supportedLanguages',
             'compatible_flow_types': 'compatibleFlowTypes',
@@ -118,6 +122,8 @@ class FlowVersion(object):
         self._publish_result_uri = None
         self._input_schema = None
         self._output_schema = None
+        self._date_published = None
+        self._date_published_end = None
         self._nlu_info = None
         self._supported_languages = None
         self._compatible_flow_types = None
@@ -535,6 +541,54 @@ class FlowVersion(object):
         
 
         self._output_schema = output_schema
+
+    @property
+    def date_published(self) -> datetime:
+        """
+        Gets the date_published of this FlowVersion.
+        The date this version became the published version of the flow. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :return: The date_published of this FlowVersion.
+        :rtype: datetime
+        """
+        return self._date_published
+
+    @date_published.setter
+    def date_published(self, date_published: datetime) -> None:
+        """
+        Sets the date_published of this FlowVersion.
+        The date this version became the published version of the flow. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :param date_published: The date_published of this FlowVersion.
+        :type: datetime
+        """
+        
+
+        self._date_published = date_published
+
+    @property
+    def date_published_end(self) -> datetime:
+        """
+        Gets the date_published_end of this FlowVersion.
+        The date this version was no longer the published version of the flow. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :return: The date_published_end of this FlowVersion.
+        :rtype: datetime
+        """
+        return self._date_published_end
+
+    @date_published_end.setter
+    def date_published_end(self, date_published_end: datetime) -> None:
+        """
+        Sets the date_published_end of this FlowVersion.
+        The date this version was no longer the published version of the flow. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :param date_published_end: The date_published_end of this FlowVersion.
+        :type: datetime
+        """
+        
+
+        self._date_published_end = date_published_end
 
     @property
     def nlu_info(self) -> 'NluInfo':

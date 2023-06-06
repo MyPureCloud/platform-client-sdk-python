@@ -32,6 +32,8 @@ from typing import TYPE_CHECKING
 from typing import List
 from typing import Dict
 
+if TYPE_CHECKING:
+    from . import DocumentBodyImageProperties
 
 class DocumentBodyImage(object):
     """
@@ -49,16 +51,19 @@ class DocumentBodyImage(object):
         """
         self.swagger_types = {
             'url': 'str',
-            'hyperlink': 'str'
+            'hyperlink': 'str',
+            'properties': 'DocumentBodyImageProperties'
         }
 
         self.attribute_map = {
             'url': 'url',
-            'hyperlink': 'hyperlink'
+            'hyperlink': 'hyperlink',
+            'properties': 'properties'
         }
 
         self._url = None
         self._hyperlink = None
+        self._properties = None
 
     @property
     def url(self) -> str:
@@ -107,6 +112,30 @@ class DocumentBodyImage(object):
         
 
         self._hyperlink = hyperlink
+
+    @property
+    def properties(self) -> 'DocumentBodyImageProperties':
+        """
+        Gets the properties of this DocumentBodyImage.
+        The properties for the image.
+
+        :return: The properties of this DocumentBodyImage.
+        :rtype: DocumentBodyImageProperties
+        """
+        return self._properties
+
+    @properties.setter
+    def properties(self, properties: 'DocumentBodyImageProperties') -> None:
+        """
+        Sets the properties of this DocumentBodyImage.
+        The properties for the image.
+
+        :param properties: The properties of this DocumentBodyImage.
+        :type: DocumentBodyImageProperties
+        """
+        
+
+        self._properties = properties
 
     def to_dict(self):
         """

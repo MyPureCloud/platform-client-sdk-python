@@ -36,6 +36,7 @@ title: ReportingExportJobResponse
 | **email_statuses** | **dict(str, str)** | The status of individual email addresses as a map | [optional] |
 | **email_error_description** | **str** | The optional error message in case the export fail to email | [optional] |
 | **include_duration_format_in_header** | **bool** | Indicates whether to include selected duration format to the column headers | [optional] |
+| **duration_format** | **str** | Indicates the duration format for the exports | [optional] |
 | **enabled** | **bool** |  | [optional] |
 | **self_uri** | **str** | The URI for this object | [optional] |
 {: class="table table-striped"}

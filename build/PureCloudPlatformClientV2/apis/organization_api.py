@@ -31,6 +31,7 @@ from six import iteritems
 
 from ..configuration import Configuration
 from ..api_client import ApiClient
+from ..utils import deprecated
 
 from typing import List
 from typing import Dict
@@ -45,6 +46,7 @@ from ..models import IpAddressAuthentication
 from ..models import LimitChangeRequestDetails
 from ..models import LimitChangeRequestsEntityListing
 from ..models import LimitsEntityListing
+from ..models import OrgAuthSettings
 from ..models import OrgWhitelistSettings
 from ..models import Organization
 from ..models import OrganizationFeatures
@@ -65,6 +67,7 @@ class OrganizationApi(object):
             if not config.api_client:
                 config.api_client = ApiClient()
             self.api_client = config.api_client
+    @deprecated("get_fieldconfig is deprecated")
     def get_fieldconfig(self, type: str, **kwargs) -> 'FieldConfig':
         """
         Fetch field config for an entity type
@@ -142,10 +145,83 @@ class OrganizationApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
+    def get_organizations_authentication_settings(self, **kwargs) -> 'OrgAuthSettings':
+        """
+        Gets the organization's settings
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_organizations_authentication_settings(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :return: OrgAuthSettings
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = []
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_organizations_authentication_settings" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/organizations/authentication/settings'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='OrgAuthSettings',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+    @deprecated("get_organizations_embeddedintegration is deprecated")
     def get_organizations_embeddedintegration(self, **kwargs) -> 'EmbeddedIntegration':
         """
         Get the list of domains that will be allowed to embed PureCloud applications
-        
+        This route is deprecated, please use /api/v2/organizations/authentication/settings instead
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -213,10 +289,11 @@ class OrganizationApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    @deprecated("get_organizations_ipaddressauthentication is deprecated")
     def get_organizations_ipaddressauthentication(self, **kwargs) -> 'IpAddressAuthentication':
         """
         Get organization IP address whitelist settings
-        
+        This route is deprecated, please use /api/v2/organizations/authentication/settings instead
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -284,6 +361,7 @@ class OrganizationApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_organizations_limits_changerequest(self, request_id: str, **kwargs) -> 'LimitChangeRequestDetails':
         """
         Get a limit change request
@@ -361,6 +439,7 @@ class OrganizationApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_organizations_limits_changerequests(self, **kwargs) -> 'LimitChangeRequestsEntityListing':
         """
         Get the available limit change requests
@@ -447,6 +526,7 @@ class OrganizationApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_organizations_limits_docs(self, **kwargs) -> 'UrlResponse':
         """
         Get a link to the limit documentation
@@ -518,6 +598,7 @@ class OrganizationApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_organizations_limits_namespace(self, namespace_name: str, **kwargs) -> 'LimitsEntityListing':
         """
         Get the effective limits in a namespace for an organization
@@ -595,6 +676,7 @@ class OrganizationApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_organizations_limits_namespace_defaults(self, namespace_name: str, **kwargs) -> 'LimitsEntityListing':
         """
         Get the default limits in a namespace for an organization
@@ -672,6 +754,7 @@ class OrganizationApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_organizations_limits_namespaces(self, **kwargs) -> object:
         """
         Get the available limit namespaces
@@ -749,6 +832,7 @@ class OrganizationApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_organizations_me(self, **kwargs) -> 'Organization':
         """
         Get organization.
@@ -820,9 +904,10 @@ class OrganizationApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    @deprecated("get_organizations_whitelist is deprecated")
     def get_organizations_whitelist(self, **kwargs) -> 'OrgWhitelistSettings':
         """
-        Use PUT /api/v2/organizations/embeddedintegration instead
+        This route is deprecated, please use /api/v2/organizations/authentication/settings instead
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -891,6 +976,85 @@ class OrganizationApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
+    def patch_organizations_authentication_settings(self, body: 'OrgAuthSettings', **kwargs) -> 'OrgAuthSettings':
+        """
+        Update the organization's settings
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.patch_organizations_authentication_settings(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param OrgAuthSettings body: Org settings (required)
+        :return: OrgAuthSettings
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method patch_organizations_authentication_settings" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `patch_organizations_authentication_settings`")
+
+
+        resource_path = '/api/v2/organizations/authentication/settings'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PATCH',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='OrgAuthSettings',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+    
     def patch_organizations_feature(self, feature_name: str, enabled: 'FeatureState', **kwargs) -> 'OrganizationFeatures':
         """
         Update organization
@@ -974,10 +1138,11 @@ class OrganizationApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    @deprecated("put_organizations_embeddedintegration is deprecated")
     def put_organizations_embeddedintegration(self, body: 'EmbeddedIntegration', **kwargs) -> 'EmbeddedIntegration':
         """
         Update the list of domains that will be allowed to embed PureCloud applications
-        
+        This route is deprecated, please use /api/v2/organizations/authentication/settings instead
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -1051,10 +1216,11 @@ class OrganizationApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    @deprecated("put_organizations_ipaddressauthentication is deprecated")
     def put_organizations_ipaddressauthentication(self, body: 'IpAddressAuthentication', **kwargs) -> 'IpAddressAuthentication':
         """
         Update organization IP address whitelist settings
-        
+        This route is deprecated, please use /api/v2/organizations/authentication/settings instead
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -1128,6 +1294,7 @@ class OrganizationApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def put_organizations_me(self, **kwargs) -> 'Organization':
         """
         Update organization.
@@ -1202,9 +1369,10 @@ class OrganizationApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    @deprecated("put_organizations_whitelist is deprecated")
     def put_organizations_whitelist(self, body: 'OrgWhitelistSettings', **kwargs) -> 'OrgWhitelistSettings':
         """
-        Use PUT /api/v2/organizations/embeddedintegration instead
+        This route is deprecated, please use /api/v2/organizations/authentication/settings instead
         
 
         This method makes a synchronous HTTP request by default. To make an

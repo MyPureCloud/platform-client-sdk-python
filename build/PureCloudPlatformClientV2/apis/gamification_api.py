@@ -31,6 +31,7 @@ from six import iteritems
 
 from ..configuration import Configuration
 from ..api_client import ApiClient
+from ..utils import deprecated
 
 from typing import List
 from typing import Dict
@@ -96,6 +97,7 @@ class GamificationApi(object):
             if not config.api_client:
                 config.api_client = ApiClient()
             self.api_client = config.api_client
+    
     def delete_employeeperformance_externalmetrics_definition(self, metric_id: str, **kwargs) -> None:
         """
         Delete an External Metric Definition
@@ -173,6 +175,7 @@ class GamificationApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_employeeperformance_externalmetrics_definition(self, metric_id: str, **kwargs) -> 'ExternalMetricDefinition':
         """
         Get an External Metric Definition
@@ -250,6 +253,7 @@ class GamificationApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_employeeperformance_externalmetrics_definitions(self, **kwargs) -> 'ExternalMetricDefinitionListing':
         """
         Get a list of External Metric Definitions of an organization, sorted by name in ascending order
@@ -327,6 +331,7 @@ class GamificationApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_gamification_insights(self, filter_type: str, filter_id: str, granularity: str, comparative_period_start_workday: date, primary_period_start_workday: date, **kwargs) -> 'InsightsSummary':
         """
         Get insights summary
@@ -446,6 +451,7 @@ class GamificationApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_gamification_insights_details(self, filter_type: str, filter_id: str, granularity: str, comparative_period_start_workday: date, primary_period_start_workday: date, **kwargs) -> 'InsightsDetails':
         """
         Get insights details for the current user
@@ -547,6 +553,7 @@ class GamificationApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_gamification_insights_groups_trends(self, filter_type: str, filter_id: str, granularity: str, comparative_period_start_workday: date, comparative_period_end_workday: date, primary_period_start_workday: date, primary_period_end_workday: date, **kwargs) -> 'InsightsTrend':
         """
         Get insights overall trend for the current user
@@ -660,6 +667,7 @@ class GamificationApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_gamification_insights_groups_trends_all(self, filter_type: str, filter_id: str, granularity: str, comparative_period_start_workday: date, comparative_period_end_workday: date, primary_period_start_workday: date, primary_period_end_workday: date, **kwargs) -> 'InsightsTrend':
         """
         Get insights overall trend
@@ -773,6 +781,7 @@ class GamificationApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_gamification_insights_members(self, filter_type: str, filter_id: str, granularity: str, start_workday: date, **kwargs) -> 'InsightsAgents':
         """
         Query users in a profile during a period of time
@@ -868,6 +877,7 @@ class GamificationApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_gamification_insights_trends(self, filter_type: str, filter_id: str, granularity: str, comparative_period_start_workday: date, comparative_period_end_workday: date, primary_period_start_workday: date, primary_period_end_workday: date, **kwargs) -> 'UserInsightsTrend':
         """
         Get insights user trend for the current user
@@ -981,6 +991,7 @@ class GamificationApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_gamification_insights_user_details(self, user_id: str, filter_type: str, filter_id: str, granularity: str, comparative_period_start_workday: date, primary_period_start_workday: date, **kwargs) -> 'InsightsDetails':
         """
         Get insights details for the user
@@ -1088,6 +1099,7 @@ class GamificationApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_gamification_insights_user_trends(self, user_id: str, filter_type: str, filter_id: str, granularity: str, comparative_period_start_workday: date, comparative_period_end_workday: date, primary_period_start_workday: date, primary_period_end_workday: date, **kwargs) -> 'UserInsightsTrend':
         """
         Get insights user trend for the user
@@ -1207,6 +1219,7 @@ class GamificationApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_gamification_leaderboard(self, start_workday: date, end_workday: date, **kwargs) -> 'Leaderboard':
         """
         Leaderboard of the requesting user's division or performance profile
@@ -1293,6 +1306,7 @@ class GamificationApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_gamification_leaderboard_all(self, filter_type: str, filter_id: str, start_workday: date, end_workday: date, **kwargs) -> 'Leaderboard':
         """
         Leaderboard by filter type
@@ -1391,6 +1405,7 @@ class GamificationApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_gamification_leaderboard_all_bestpoints(self, filter_type: str, filter_id: str, **kwargs) -> 'OverallBestPoints':
         """
         Best Points by division or performance profile
@@ -1474,6 +1489,7 @@ class GamificationApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_gamification_leaderboard_bestpoints(self, **kwargs) -> 'OverallBestPoints':
         """
         Best Points of the requesting user's current performance profile or division
@@ -1545,6 +1561,7 @@ class GamificationApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_gamification_metricdefinition(self, metric_definition_id: str, **kwargs) -> 'MetricDefinition':
         """
         Metric definition by id
@@ -1622,6 +1639,7 @@ class GamificationApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_gamification_metricdefinitions(self, **kwargs) -> 'GetMetricDefinitionsResponse':
         """
         All metric definitions
@@ -1693,6 +1711,7 @@ class GamificationApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_gamification_profile(self, profile_id: str, **kwargs) -> 'PerformanceProfile':
         """
         Performance profile by id
@@ -1770,6 +1789,7 @@ class GamificationApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_gamification_profile_members(self, profile_id: str, **kwargs) -> 'MemberListing':
         """
         Members of a given performance profile
@@ -1847,6 +1867,7 @@ class GamificationApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_gamification_profile_metric(self, profile_id: str, metric_id: str, **kwargs) -> 'Metric':
         """
         Performance profile gamified metric by id
@@ -1933,6 +1954,7 @@ class GamificationApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_gamification_profile_metrics(self, profile_id: str, **kwargs) -> 'GetMetricResponse':
         """
         All gamified metrics for a given performance profile
@@ -2019,6 +2041,7 @@ class GamificationApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_gamification_profile_metrics_objectivedetails(self, profile_id: str, **kwargs) -> 'GetMetricsResponse':
         """
         All metrics for a given performance profile with objective details such as order and maxPoints
@@ -2099,6 +2122,7 @@ class GamificationApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_gamification_profiles(self, **kwargs) -> 'GetProfilesResponse':
         """
         All performance profiles
@@ -2170,6 +2194,7 @@ class GamificationApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_gamification_profiles_user(self, user_id: str, **kwargs) -> 'PerformanceProfile':
         """
         Performance profile of a user
@@ -2250,6 +2275,7 @@ class GamificationApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_gamification_profiles_users_me(self, **kwargs) -> 'PerformanceProfile':
         """
         Performance profile of the requesting user
@@ -2324,6 +2350,7 @@ class GamificationApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_gamification_scorecards(self, workday: date, **kwargs) -> 'WorkdayMetricListing':
         """
         Workday performance metrics of the requesting user
@@ -2404,6 +2431,7 @@ class GamificationApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_gamification_scorecards_attendance(self, start_workday: date, end_workday: date, **kwargs) -> 'AttendanceStatusListing':
         """
         Attendance status metrics of the requesting user
@@ -2487,6 +2515,7 @@ class GamificationApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_gamification_scorecards_bestpoints(self, **kwargs) -> 'UserBestPoints':
         """
         Best points of the requesting user
@@ -2558,6 +2587,7 @@ class GamificationApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_gamification_scorecards_points_alltime(self, end_workday: date, **kwargs) -> 'AllTimePoints':
         """
         All-time points of the requesting user
@@ -2635,6 +2665,7 @@ class GamificationApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_gamification_scorecards_points_average(self, workday: date, **kwargs) -> 'SingleWorkdayAveragePoints':
         """
         Average points of the requesting user's division or performance profile
@@ -2712,6 +2743,7 @@ class GamificationApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_gamification_scorecards_points_trends(self, start_workday: date, end_workday: date, **kwargs) -> 'WorkdayPointsTrend':
         """
         Points trends of the requesting user
@@ -2798,6 +2830,7 @@ class GamificationApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_gamification_scorecards_profile_metric_user_values_trends(self, profile_id: str, metric_id: str, user_id: str, start_workday: date, end_workday: date, **kwargs) -> 'MetricValueTrendAverage':
         """
         Average performance values trends by metric of a user
@@ -2905,6 +2938,7 @@ class GamificationApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_gamification_scorecards_profile_metric_users_values_trends(self, profile_id: str, metric_id: str, filter_type: str, start_workday: date, end_workday: date, **kwargs) -> 'MetricValueTrendAverage':
         """
         Average performance values trends by metric of a division or a performance profile
@@ -3015,6 +3049,7 @@ class GamificationApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_gamification_scorecards_profile_metric_values_trends(self, profile_id: str, metric_id: str, start_workday: date, end_workday: date, **kwargs) -> 'MetricValueTrendAverage':
         """
         Average performance values trends by metric of the requesting user
@@ -3119,6 +3154,7 @@ class GamificationApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_gamification_scorecards_user(self, user_id: str, workday: date, **kwargs) -> 'WorkdayMetricListing':
         """
         Workday performance metrics for a user
@@ -3205,6 +3241,7 @@ class GamificationApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_gamification_scorecards_user_attendance(self, user_id: str, start_workday: date, end_workday: date, **kwargs) -> 'AttendanceStatusListing':
         """
         Attendance status metrics for a user
@@ -3294,6 +3331,7 @@ class GamificationApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_gamification_scorecards_user_bestpoints(self, user_id: str, **kwargs) -> 'UserBestPoints':
         """
         Best points of a user
@@ -3371,6 +3409,7 @@ class GamificationApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_gamification_scorecards_user_points_alltime(self, user_id: str, end_workday: date, **kwargs) -> 'AllTimePoints':
         """
         All-time points for a user
@@ -3454,6 +3493,7 @@ class GamificationApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_gamification_scorecards_user_points_trends(self, user_id: str, start_workday: date, end_workday: date, **kwargs) -> 'WorkdayPointsTrend':
         """
         Points trend for a user
@@ -3546,6 +3586,7 @@ class GamificationApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_gamification_scorecards_user_values_trends(self, user_id: str, start_workday: date, end_workday: date, **kwargs) -> 'WorkdayValuesTrend':
         """
         Values trends of a user
@@ -3638,6 +3679,7 @@ class GamificationApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_gamification_scorecards_users_points_average(self, filter_type: str, filter_id: str, workday: date, **kwargs) -> 'SingleWorkdayAveragePoints':
         """
         Workday average points by target group
@@ -3727,6 +3769,7 @@ class GamificationApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_gamification_scorecards_users_values_average(self, filter_type: str, filter_id: str, workday: date, **kwargs) -> 'SingleWorkdayAverageValues':
         """
         Workday average values by target group
@@ -3819,6 +3862,7 @@ class GamificationApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_gamification_scorecards_users_values_trends(self, filter_type: str, filter_id: str, start_workday: date, end_workday: date, **kwargs) -> 'WorkdayValuesTrend':
         """
         Values trend by target group
@@ -3917,6 +3961,7 @@ class GamificationApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_gamification_scorecards_values_average(self, workday: date, **kwargs) -> 'SingleWorkdayAverageValues':
         """
         Average values of the requesting user's division or performance profile
@@ -3997,6 +4042,7 @@ class GamificationApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_gamification_scorecards_values_trends(self, start_workday: date, end_workday: date, **kwargs) -> 'WorkdayValuesTrend':
         """
         Values trends of the requesting user or group
@@ -4089,6 +4135,7 @@ class GamificationApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_gamification_status(self, **kwargs) -> 'GamificationStatus':
         """
         Gamification activation status
@@ -4160,6 +4207,7 @@ class GamificationApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_gamification_template(self, template_id: str, **kwargs) -> 'ObjectiveTemplate':
         """
         Objective template by id
@@ -4237,6 +4285,7 @@ class GamificationApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_gamification_templates(self, **kwargs) -> 'GetTemplatesResponse':
         """
         All objective templates
@@ -4308,6 +4357,7 @@ class GamificationApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def patch_employeeperformance_externalmetrics_definition(self, metric_id: str, body: 'ExternalMetricDefinitionUpdateRequest', **kwargs) -> 'ExternalMetricDefinition':
         """
         Update External Metric Definition
@@ -4391,6 +4441,7 @@ class GamificationApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_employeeperformance_externalmetrics_data(self, **kwargs) -> 'ExternalMetricDataWriteResponse':
         """
         Write External Metric Data
@@ -4465,6 +4516,7 @@ class GamificationApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_employeeperformance_externalmetrics_definitions(self, **kwargs) -> 'ExternalMetricDefinition':
         """
         Create External Metric Definition
@@ -4539,6 +4591,7 @@ class GamificationApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_gamification_profile_activate(self, profile_id: str, **kwargs) -> 'PerformanceProfile':
         """
         Activate a performance profile
@@ -4616,6 +4669,7 @@ class GamificationApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_gamification_profile_deactivate(self, profile_id: str, **kwargs) -> 'PerformanceProfile':
         """
         Deactivate a performance profile
@@ -4693,6 +4747,7 @@ class GamificationApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_gamification_profile_members(self, profile_id: str, body: 'AssignUsers', **kwargs) -> 'Assignment':
         """
         Assign members to a given performance profile
@@ -4776,6 +4831,7 @@ class GamificationApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_gamification_profile_members_validate(self, profile_id: str, body: 'ValidateAssignUsers', **kwargs) -> 'AssignmentValidation':
         """
         Validate member assignment
@@ -4859,6 +4915,7 @@ class GamificationApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_gamification_profile_metric_link(self, source_profile_id: str, source_metric_id: str, body: 'TargetPerformanceProfile', **kwargs) -> 'Metric':
         """
         Creates a linked metric
@@ -4948,6 +5005,7 @@ class GamificationApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_gamification_profile_metrics(self, profile_id: str, body: 'CreateMetric', **kwargs) -> 'Metric':
         """
         Creates a gamified metric with a given metric definition and metric objective under in a performance profile
@@ -5031,6 +5089,7 @@ class GamificationApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_gamification_profiles(self, body: 'CreatePerformanceProfile', **kwargs) -> 'PerformanceProfile':
         """
         Create a new custom performance profile
@@ -5111,6 +5170,7 @@ class GamificationApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_gamification_profiles_user_query(self, user_id: str, body: 'UserProfilesInDateRangeRequest', **kwargs) -> 'UserProfilesInDateRange':
         """
         Query performance profiles in date range for a user
@@ -5194,6 +5254,7 @@ class GamificationApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_gamification_profiles_users_me_query(self, body: 'UserProfilesInDateRangeRequest', **kwargs) -> 'UserProfilesInDateRange':
         """
         Query performance profiles in date range for the current user
@@ -5271,6 +5332,7 @@ class GamificationApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def put_gamification_profile(self, profile_id: str, **kwargs) -> 'PerformanceProfile':
         """
         Updates a performance profile
@@ -5351,6 +5413,7 @@ class GamificationApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def put_gamification_profile_metric(self, profile_id: str, metric_id: str, body: 'CreateMetric', **kwargs) -> 'Metric':
         """
         Updates a metric in performance profile
@@ -5440,6 +5503,7 @@ class GamificationApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def put_gamification_status(self, status: 'GamificationStatus', **kwargs) -> 'GamificationStatus':
         """
         Update gamification activation status

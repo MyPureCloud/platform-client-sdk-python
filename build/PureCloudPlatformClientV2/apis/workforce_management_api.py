@@ -31,6 +31,7 @@ from six import iteritems
 
 from ..configuration import Configuration
 from ..api_client import ApiClient
+from ..utils import deprecated
 
 from typing import List
 from typing import Dict
@@ -207,6 +208,7 @@ class WorkforceManagementApi(object):
             if not config.api_client:
                 config.api_client = ApiClient()
             self.api_client = config.api_client
+    
     def delete_workforcemanagement_businessunit(self, business_unit_id: str, **kwargs) -> None:
         """
         Delete business unit
@@ -284,6 +286,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def delete_workforcemanagement_businessunit_activitycode(self, business_unit_id: str, activity_code_id: str, **kwargs) -> None:
         """
         Deletes an activity code
@@ -367,6 +370,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def delete_workforcemanagement_businessunit_planninggroup(self, business_unit_id: str, planning_group_id: str, **kwargs) -> None:
         """
         Deletes the planning group
@@ -450,6 +454,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def delete_workforcemanagement_businessunit_scheduling_run(self, business_unit_id: str, run_id: str, **kwargs) -> None:
         """
         Cancel a scheduling run
@@ -533,6 +538,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def delete_workforcemanagement_businessunit_servicegoaltemplate(self, business_unit_id: str, service_goal_template_id: str, **kwargs) -> None:
         """
         Delete a service goal template
@@ -616,6 +622,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def delete_workforcemanagement_businessunit_week_schedule(self, business_unit_id: str, week_id: date, schedule_id: str, **kwargs) -> 'BuAsyncScheduleResponse':
         """
         Delete a schedule
@@ -705,6 +712,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def delete_workforcemanagement_businessunit_week_shorttermforecast(self, business_unit_id: str, week_date_id: date, forecast_id: str, **kwargs) -> None:
         """
         Delete a short term forecast
@@ -794,6 +802,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def delete_workforcemanagement_calendar_url_ics(self, **kwargs) -> None:
         """
         Disable generated calendar link for the current user
@@ -865,6 +874,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def delete_workforcemanagement_managementunit(self, management_unit_id: str, **kwargs) -> None:
         """
         Delete management unit
@@ -942,6 +952,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def delete_workforcemanagement_managementunit_timeofflimit(self, management_unit_id: str, time_off_limit_id: str, **kwargs) -> None:
         """
         Deletes a time off limit object
@@ -1025,6 +1036,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def delete_workforcemanagement_managementunit_timeoffplan(self, management_unit_id: str, time_off_plan_id: str, **kwargs) -> None:
         """
         Deletes a time off plan
@@ -1108,6 +1120,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def delete_workforcemanagement_managementunit_workplan(self, management_unit_id: str, work_plan_id: str, **kwargs) -> None:
         """
         Delete a work plan
@@ -1191,6 +1204,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def delete_workforcemanagement_managementunit_workplanrotation(self, management_unit_id: str, work_plan_rotation_id: str, **kwargs) -> None:
         """
         Delete a work plan rotation
@@ -1274,6 +1288,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_workforcemanagement_adherence(self, user_id: List['str'], **kwargs) -> List['UserScheduleAdherence']:
         """
         Get a list of UserScheduleAdherence records for the requested users
@@ -1351,6 +1366,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_workforcemanagement_adherence_explanation(self, explanation_id: str, **kwargs) -> 'AdherenceExplanationResponse':
         """
         Get an adherence explanation for the current user
@@ -1428,6 +1444,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_workforcemanagement_adherence_explanations_job(self, job_id: str, **kwargs) -> 'AdherenceExplanationJob':
         """
         Query the status of an adherence explanation operation. Only the user who started the operation can query the status
@@ -1505,6 +1522,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_workforcemanagement_adherence_historical_bulk_job(self, job_id: str, **kwargs) -> 'WfmHistoricalAdherenceBulkResponse':
         """
         Request to fetch the status of the historical adherence bulk job. Only the user who started the operation can query the status
@@ -1582,6 +1600,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_workforcemanagement_adherence_historical_job(self, job_id: str, **kwargs) -> 'WfmHistoricalAdherenceResponse':
         """
         Query the status of a historical adherence request operation. Only the user who started the operation can query the status
@@ -1659,6 +1678,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_workforcemanagement_adhocmodelingjob(self, job_id: str, **kwargs) -> 'ModelingStatusResponse':
         """
         Get status of the modeling job
@@ -1736,6 +1756,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_workforcemanagement_agent_adherence_explanation(self, agent_id: str, explanation_id: str, **kwargs) -> 'AdherenceExplanationResponse':
         """
         Get an adherence explanation
@@ -1819,6 +1840,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_workforcemanagement_agent_managementunit(self, agent_id: str, **kwargs) -> 'AgentManagementUnitReference':
         """
         Get the management unit to which the agent belongs
@@ -1896,6 +1918,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_workforcemanagement_agents_me_managementunit(self, **kwargs) -> 'AgentManagementUnitReference':
         """
         Get the management unit to which the currently logged in agent belongs
@@ -1967,6 +1990,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_workforcemanagement_businessunit(self, business_unit_id: str, **kwargs) -> 'BusinessUnitResponse':
         """
         Get business unit
@@ -2047,6 +2071,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_workforcemanagement_businessunit_activitycode(self, business_unit_id: str, activity_code_id: str, **kwargs) -> 'BusinessUnitActivityCode':
         """
         Get an activity code
@@ -2130,6 +2155,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_workforcemanagement_businessunit_activitycodes(self, business_unit_id: str, **kwargs) -> 'BusinessUnitActivityCodeListing':
         """
         Get activity codes
@@ -2207,6 +2233,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_workforcemanagement_businessunit_intraday_planninggroups(self, business_unit_id: str, date: date, **kwargs) -> 'WfmIntradayPlanningGroupListing':
         """
         Get intraday planning groups for the given date
@@ -2290,6 +2317,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_workforcemanagement_businessunit_managementunits(self, business_unit_id: str, **kwargs) -> 'ManagementUnitListing':
         """
         Get all authorized management units in the business unit
@@ -2373,6 +2401,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_workforcemanagement_businessunit_planninggroup(self, business_unit_id: str, planning_group_id: str, **kwargs) -> 'PlanningGroup':
         """
         Get a planning group
@@ -2456,6 +2485,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_workforcemanagement_businessunit_planninggroups(self, business_unit_id: str, **kwargs) -> 'PlanningGroupList':
         """
         Gets list of planning groups
@@ -2533,6 +2563,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_workforcemanagement_businessunit_scheduling_run(self, business_unit_id: str, run_id: str, **kwargs) -> 'BuScheduleRun':
         """
         Get a scheduling run
@@ -2616,6 +2647,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_workforcemanagement_businessunit_scheduling_run_result(self, business_unit_id: str, run_id: str, management_unit_ids: List['str'], expand: List['str'], **kwargs) -> 'BuRescheduleResult':
         """
         Get the result of a rescheduling operation
@@ -2711,6 +2743,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_workforcemanagement_businessunit_scheduling_runs(self, business_unit_id: str, **kwargs) -> 'BuScheduleRunListing':
         """
         Get the list of scheduling runs
@@ -2788,6 +2821,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_workforcemanagement_businessunit_servicegoaltemplate(self, business_unit_id: str, service_goal_template_id: str, **kwargs) -> 'ServiceGoalTemplate':
         """
         Get a service goal template
@@ -2871,6 +2905,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_workforcemanagement_businessunit_servicegoaltemplates(self, business_unit_id: str, **kwargs) -> 'ServiceGoalTemplateList':
         """
         Gets list of service goal templates
@@ -2948,6 +2983,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_workforcemanagement_businessunit_week_schedule(self, business_unit_id: str, week_id: date, schedule_id: str, **kwargs) -> 'BuScheduleMetadata':
         """
         Get the metadata for the schedule, describing which management units and agents are in the scheduleSchedule data can then be loaded with the query route
@@ -3040,6 +3076,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_workforcemanagement_businessunit_week_schedule_generationresults(self, business_unit_id: str, week_id: date, schedule_id: str, **kwargs) -> 'ScheduleGenerationResult':
         """
         Get the generation results for a generated schedule
@@ -3129,6 +3166,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_workforcemanagement_businessunit_week_schedule_headcountforecast(self, business_unit_id: str, week_id: date, schedule_id: str, **kwargs) -> 'BuHeadcountForecastResponse':
         """
         Get the headcount forecast by planning group for the schedule
@@ -3221,6 +3259,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_workforcemanagement_businessunit_week_schedule_history_agent(self, business_unit_id: str, week_id: date, schedule_id: str, agent_id: str, **kwargs) -> 'BuAgentScheduleHistoryResponse':
         """
         Loads agent's schedule history.
@@ -3316,6 +3355,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_workforcemanagement_businessunit_week_schedules(self, business_unit_id: str, week_id: str, **kwargs) -> 'BuScheduleListing':
         """
         Get the list of week schedules for the specified week
@@ -3405,6 +3445,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_workforcemanagement_businessunit_week_shorttermforecast(self, business_unit_id: str, week_date_id: date, forecast_id: str, **kwargs) -> 'BuShortTermForecast':
         """
         Get a short term forecast
@@ -3497,6 +3538,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_workforcemanagement_businessunit_week_shorttermforecast_data(self, business_unit_id: str, week_date_id: date, forecast_id: str, **kwargs) -> 'BuForecastResultResponse':
         """
         Get the result of a short term forecast calculation
@@ -3592,6 +3634,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_workforcemanagement_businessunit_week_shorttermforecast_generationresults(self, business_unit_id: str, week_date_id: date, forecast_id: str, **kwargs) -> 'BuForecastGenerationResult':
         """
         Gets the forecast generation results
@@ -3681,6 +3724,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_workforcemanagement_businessunit_week_shorttermforecast_longtermforecastdata(self, business_unit_id: str, week_date_id: date, forecast_id: str, **kwargs) -> 'LongTermForecastResultResponse':
         """
         Get the result of a long term forecast calculation
@@ -3773,6 +3817,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_workforcemanagement_businessunit_week_shorttermforecast_planninggroups(self, business_unit_id: str, week_date_id: date, forecast_id: str, **kwargs) -> 'ForecastPlanningGroupsResponse':
         """
         Gets the forecast planning group snapshot
@@ -3862,6 +3907,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_workforcemanagement_businessunit_week_shorttermforecasts(self, business_unit_id: str, week_date_id: str, **kwargs) -> 'BuShortTermForecastListing':
         """
         Get short term forecasts
@@ -3945,6 +3991,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_workforcemanagement_businessunits(self, **kwargs) -> 'BusinessUnitListing':
         """
         Get business units
@@ -4022,6 +4069,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_workforcemanagement_businessunits_divisionviews(self, **kwargs) -> 'BusinessUnitListing':
         """
         Get business units across divisions
@@ -4096,6 +4144,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_workforcemanagement_calendar_data_ics(self, calendar_id: str, **kwargs) -> str:
         """
         Get ics formatted calendar based on shareable link
@@ -4173,6 +4222,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_workforcemanagement_calendar_url_ics(self, **kwargs) -> 'CalendarUrlResponse':
         """
         Get existing calendar link for the current user
@@ -4244,6 +4294,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_workforcemanagement_historicaldata_deletejob(self, **kwargs) -> 'HistoricalImportDeleteJobResponse':
         """
         Retrieves delete job status for historical data imports of the organization
@@ -4315,6 +4366,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_workforcemanagement_historicaldata_importstatus(self, **kwargs) -> 'HistoricalImportStatusListing':
         """
         Retrieves status of the historical data imports of the organization
@@ -4386,6 +4438,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_workforcemanagement_managementunit(self, management_unit_id: str, **kwargs) -> 'ManagementUnit':
         """
         Get management unit
@@ -4466,6 +4519,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    @deprecated("get_workforcemanagement_managementunit_activitycodes is deprecated")
     def get_workforcemanagement_managementunit_activitycodes(self, management_unit_id: str, **kwargs) -> 'ActivityCodeContainer':
         """
         Get activity codes
@@ -4543,6 +4597,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_workforcemanagement_managementunit_adherence(self, management_unit_id: str, **kwargs) -> 'UserScheduleAdherenceListing':
         """
         Get a list of user schedule adherence records for the requested management unit
@@ -4623,6 +4678,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_workforcemanagement_managementunit_agent(self, management_unit_id: str, agent_id: str, **kwargs) -> 'WfmAgent':
         """
         Get data for agent in the management unit
@@ -4709,6 +4765,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_workforcemanagement_managementunit_agent_shifttrades(self, management_unit_id: str, agent_id: str, **kwargs) -> 'ShiftTradeListResponse':
         """
         Gets all the shift trades for a given agent
@@ -4792,6 +4849,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_workforcemanagement_managementunit_shifttrades_matched(self, management_unit_id: str, **kwargs) -> 'ShiftTradeMatchesSummaryResponse':
         """
         Gets a summary of all shift trades in the matched state
@@ -4869,6 +4927,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_workforcemanagement_managementunit_shifttrades_users(self, management_unit_id: str, **kwargs) -> 'WfmUserEntityListing':
         """
         Gets list of users available for whom you can send direct shift trade requests
@@ -4946,6 +5005,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_workforcemanagement_managementunit_timeofflimit(self, management_unit_id: str, time_off_limit_id: str, **kwargs) -> 'TimeOffLimit':
         """
         Gets a time off limit object
@@ -5029,6 +5089,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_workforcemanagement_managementunit_timeofflimits(self, management_unit_id: str, **kwargs) -> 'TimeOffLimitListing':
         """
         Gets a list of time off limit objects under management unit.
@@ -5106,6 +5167,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_workforcemanagement_managementunit_timeoffplan(self, management_unit_id: str, time_off_plan_id: str, **kwargs) -> 'TimeOffPlan':
         """
         Gets a time off plan
@@ -5189,6 +5251,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_workforcemanagement_managementunit_timeoffplans(self, management_unit_id: str, **kwargs) -> 'TimeOffPlanListing':
         """
         Gets a list of time off plans
@@ -5266,6 +5329,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_workforcemanagement_managementunit_user_timeoffrequest(self, management_unit_id: str, user_id: str, time_off_request_id: str, **kwargs) -> 'TimeOffRequestResponse':
         """
         Get a time off request
@@ -5355,6 +5419,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_workforcemanagement_managementunit_user_timeoffrequest_timeofflimits(self, management_unit_id: str, user_id: str, time_off_request_id: str, **kwargs) -> 'QueryTimeOffLimitValuesResponse':
         """
         Retrieves time off limit, allocated and waitlisted values according to specific time off request
@@ -5444,6 +5509,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_workforcemanagement_managementunit_user_timeoffrequests(self, management_unit_id: str, user_id: str, **kwargs) -> 'TimeOffRequestList':
         """
         Get a list of time off requests for a given user
@@ -5530,6 +5596,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_workforcemanagement_managementunit_users(self, management_unit_id: str, **kwargs) -> 'WfmUserEntityListing':
         """
         Get users in the management unit
@@ -5607,6 +5674,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    @deprecated("get_workforcemanagement_managementunit_week_schedule is deprecated")
     def get_workforcemanagement_managementunit_week_schedule(self, management_unit_id: str, week_id: str, schedule_id: str, **kwargs) -> 'WeekScheduleResponse':
         """
         Deprecated.  Use the equivalent business unit resource instead. Get a week schedule
@@ -5702,6 +5770,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    @deprecated("get_workforcemanagement_managementunit_week_schedules is deprecated")
     def get_workforcemanagement_managementunit_week_schedules(self, management_unit_id: str, week_id: str, **kwargs) -> 'WeekScheduleListResponse':
         """
         Deprecated.  Use the equivalent business unit resource instead. Get the list of schedules in a week in management unit
@@ -5794,6 +5863,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_workforcemanagement_managementunit_week_shifttrades(self, management_unit_id: str, week_date_id: date, **kwargs) -> 'WeekShiftTradeListResponse':
         """
         Gets all the shift trades for a given week
@@ -5880,6 +5950,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_workforcemanagement_managementunit_workplan(self, management_unit_id: str, work_plan_id: str, **kwargs) -> 'WorkPlan':
         """
         Get a work plan
@@ -5966,6 +6037,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_workforcemanagement_managementunit_workplanrotation(self, management_unit_id: str, work_plan_rotation_id: str, **kwargs) -> 'WorkPlanRotationResponse':
         """
         Get a work plan rotation
@@ -6049,6 +6121,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_workforcemanagement_managementunit_workplanrotations(self, management_unit_id: str, **kwargs) -> 'WorkPlanRotationListResponse':
         """
         Get work plan rotations
@@ -6129,6 +6202,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_workforcemanagement_managementunit_workplans(self, management_unit_id: str, **kwargs) -> 'WorkPlanListResponse':
         """
         Get work plans
@@ -6209,6 +6283,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_workforcemanagement_managementunits(self, **kwargs) -> 'ManagementUnitListing':
         """
         Get management units
@@ -6295,6 +6370,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_workforcemanagement_managementunits_divisionviews(self, **kwargs) -> 'ManagementUnitListing':
         """
         Get management units across divisions
@@ -6369,6 +6445,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_workforcemanagement_notifications(self, **kwargs) -> 'NotificationsResponse':
         """
         Get a list of notifications for the current user
@@ -6440,6 +6517,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_workforcemanagement_schedulingjob(self, job_id: str, **kwargs) -> 'SchedulingStatusResponse':
         """
         Get status of the scheduling job
@@ -6517,6 +6595,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_workforcemanagement_shifttrades(self, **kwargs) -> 'ShiftTradeListResponse':
         """
         Gets all of my shift trades
@@ -6588,6 +6667,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_workforcemanagement_shrinkage_job(self, job_id: str, **kwargs) -> 'WfmHistoricalShrinkageResponse':
         """
         Request to fetch the status of the historical shrinkage query
@@ -6665,6 +6745,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_workforcemanagement_timeoffrequest(self, time_off_request_id: str, **kwargs) -> 'TimeOffRequestResponse':
         """
         Get a time off request for the current user
@@ -6742,6 +6823,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_workforcemanagement_timeoffrequest_waitlistpositions(self, time_off_request_id: str, **kwargs) -> 'WaitlistPositionListing':
         """
         Get the daily waitlist positions of a time off request for the current user
@@ -6819,6 +6901,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_workforcemanagement_timeoffrequests(self, **kwargs) -> 'TimeOffRequestList':
         """
         Get a list of time off requests for the current user
@@ -6893,6 +6976,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def patch_workforcemanagement_agent_adherence_explanation(self, agent_id: str, explanation_id: str, body: 'UpdateAdherenceExplanationStatusRequest', **kwargs) -> 'AdherenceExplanationAsyncResponse':
         """
         Update an adherence explanation
@@ -6982,6 +7066,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def patch_workforcemanagement_businessunit(self, business_unit_id: str, **kwargs) -> 'BusinessUnitResponse':
         """
         Update business unit
@@ -7062,6 +7147,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def patch_workforcemanagement_businessunit_activitycode(self, business_unit_id: str, activity_code_id: str, **kwargs) -> 'BusinessUnitActivityCode':
         """
         Update an activity code
@@ -7148,6 +7234,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def patch_workforcemanagement_businessunit_planninggroup(self, business_unit_id: str, planning_group_id: str, **kwargs) -> 'PlanningGroup':
         """
         Updates the planning group
@@ -7234,6 +7321,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def patch_workforcemanagement_businessunit_scheduling_run(self, business_unit_id: str, run_id: str, **kwargs) -> None:
         """
         Mark a schedule run as applied
@@ -7320,6 +7408,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def patch_workforcemanagement_businessunit_servicegoaltemplate(self, business_unit_id: str, service_goal_template_id: str, **kwargs) -> 'ServiceGoalTemplate':
         """
         Updates a service goal template
@@ -7406,6 +7495,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def patch_workforcemanagement_managementunit(self, management_unit_id: str, **kwargs) -> 'ManagementUnit':
         """
         Update the requested management unit
@@ -7486,6 +7576,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def patch_workforcemanagement_managementunit_timeofflimit(self, management_unit_id: str, time_off_limit_id: str, **kwargs) -> 'TimeOffLimit':
         """
         Updates a time off limit object.
@@ -7572,6 +7663,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def patch_workforcemanagement_managementunit_timeoffplan(self, management_unit_id: str, time_off_plan_id: str, **kwargs) -> 'TimeOffPlan':
         """
         Updates a time off plan
@@ -7658,6 +7750,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def patch_workforcemanagement_managementunit_user_timeoffrequest(self, management_unit_id: str, user_id: str, time_off_request_id: str, **kwargs) -> 'TimeOffRequestResponse':
         """
         Update a time off request
@@ -7750,6 +7843,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def patch_workforcemanagement_managementunit_week_shifttrade(self, management_unit_id: str, week_date_id: date, trade_id: str, body: 'PatchShiftTradeRequest', **kwargs) -> 'ShiftTradeResponse':
         """
         Updates a shift trade. This route can only be called by the initiating agent
@@ -7845,6 +7939,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def patch_workforcemanagement_managementunit_workplan(self, management_unit_id: str, work_plan_id: str, **kwargs) -> 'WorkPlan':
         """
         Update a work plan
@@ -7934,6 +8029,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def patch_workforcemanagement_managementunit_workplanrotation(self, management_unit_id: str, work_plan_rotation_id: str, **kwargs) -> 'WorkPlanRotationResponse':
         """
         Update a work plan rotation
@@ -8020,6 +8116,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def patch_workforcemanagement_timeoffrequest(self, time_off_request_id: str, **kwargs) -> 'TimeOffRequestResponse':
         """
         Update a time off request for the current user
@@ -8100,6 +8197,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_workforcemanagement_adherence_explanations(self, body: 'AddAdherenceExplanationAgentRequest', **kwargs) -> 'AdherenceExplanationAsyncResponse':
         """
         Submit an adherence explanation for the current user
@@ -8177,6 +8275,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_workforcemanagement_adherence_explanations_query(self, body: 'AgentQueryAdherenceExplanationsRequest', **kwargs) -> 'QueryAdherenceExplanationsResponse':
         """
         Query adherence explanations for the current user
@@ -8260,6 +8359,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_workforcemanagement_adherence_historical(self, **kwargs) -> 'WfmHistoricalAdherenceResponse':
         """
         Deprecated. Use bulk routes instead (/adherence/historical/bulk)
@@ -8334,6 +8434,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_workforcemanagement_adherence_historical_bulk(self, **kwargs) -> 'WfmHistoricalAdherenceBulkResponse':
         """
         Request a historical adherence report in bulk
@@ -8408,6 +8509,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_workforcemanagement_agent_adherence_explanations(self, agent_id: str, body: 'AddAdherenceExplanationAdminRequest', **kwargs) -> 'AdherenceExplanationAsyncResponse':
         """
         Add an adherence explanation for the requested user
@@ -8491,6 +8593,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_workforcemanagement_agent_adherence_explanations_query(self, agent_id: str, body: 'AgentQueryAdherenceExplanationsRequest', **kwargs) -> 'AgentQueryAdherenceExplanationsResponse':
         """
         Query adherence explanations for the given agent across a specified range
@@ -8580,6 +8683,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_workforcemanagement_agents_me_possibleworkshifts(self, body: 'AgentPossibleWorkShiftsRequest', **kwargs) -> 'AgentPossibleWorkShiftsResponse':
         """
         Get agent possible work shifts for requested time frame
@@ -8657,6 +8761,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_workforcemanagement_agentschedules_mine(self, **kwargs) -> 'BuCurrentAgentScheduleSearchResponse':
         """
         Get published schedule for the current user
@@ -8731,6 +8836,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_workforcemanagement_businessunit_activitycodes(self, business_unit_id: str, **kwargs) -> 'BusinessUnitActivityCode':
         """
         Create a new activity code
@@ -8811,6 +8917,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_workforcemanagement_businessunit_adherence_explanations_query(self, business_unit_id: str, body: 'BuQueryAdherenceExplanationsRequest', **kwargs) -> 'BuQueryAdherenceExplanationsResponse':
         """
         Query adherence explanations across an entire business unit for the requested period
@@ -8900,6 +9007,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_workforcemanagement_businessunit_agentschedules_search(self, business_unit_id: str, **kwargs) -> 'BuAsyncAgentSchedulesSearchResponse':
         """
         Search published schedules
@@ -8986,6 +9094,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_workforcemanagement_businessunit_intraday(self, business_unit_id: str, **kwargs) -> 'AsyncIntradayResponse':
         """
         Get intraday data for the given date for the requested planningGroupIds
@@ -9069,6 +9178,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_workforcemanagement_businessunit_planninggroups(self, business_unit_id: str, **kwargs) -> 'PlanningGroup':
         """
         Adds a new planning group
@@ -9149,6 +9259,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_workforcemanagement_businessunit_servicegoaltemplates(self, business_unit_id: str, **kwargs) -> 'ServiceGoalTemplate':
         """
         Adds a new service goal template
@@ -9229,6 +9340,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_workforcemanagement_businessunit_week_schedule_agentschedules_query(self, business_unit_id: str, week_id: date, schedule_id: str, body: 'BuQueryAgentSchedulesRequest', **kwargs) -> 'BuAsyncAgentSchedulesQueryResponse':
         """
         Loads agent schedule data from the schedule. Used in combination with the metadata route
@@ -9330,6 +9442,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_workforcemanagement_businessunit_week_schedule_copy(self, business_unit_id: str, week_id: date, schedule_id: str, body: 'BuCopyScheduleRequest', **kwargs) -> 'BuAsyncScheduleResponse':
         """
         Copy a schedule
@@ -9425,6 +9538,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_workforcemanagement_businessunit_week_schedule_reschedule(self, business_unit_id: str, week_id: date, schedule_id: str, body: 'BuRescheduleRequest', **kwargs) -> 'BuAsyncScheduleRunResponse':
         """
         Start a rescheduling run
@@ -9520,6 +9634,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_workforcemanagement_businessunit_week_schedule_update(self, business_unit_id: str, week_id: date, schedule_id: str, body: 'ProcessScheduleUpdateUploadRequest', **kwargs) -> 'BuAsyncScheduleResponse':
         """
         Starts processing a schedule update
@@ -9615,6 +9730,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_workforcemanagement_businessunit_week_schedule_update_uploadurl(self, business_unit_id: str, week_id: date, schedule_id: str, body: 'UploadUrlRequestBody', **kwargs) -> 'UpdateScheduleUploadResponse':
         """
         Creates a signed upload URL for updating a schedule
@@ -9710,6 +9826,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_workforcemanagement_businessunit_week_schedules(self, business_unit_id: str, week_id: date, body: 'BuCreateBlankScheduleRequest', **kwargs) -> 'BuScheduleMetadata':
         """
         Create a blank schedule
@@ -9799,6 +9916,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_workforcemanagement_businessunit_week_schedules_generate(self, business_unit_id: str, week_id: date, body: 'BuGenerateScheduleRequest', **kwargs) -> 'BuAsyncScheduleRunResponse':
         """
         Generate a schedule
@@ -9888,6 +10006,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_workforcemanagement_businessunit_week_schedules_import(self, business_unit_id: str, week_id: date, body: 'WfmProcessUploadRequest', **kwargs) -> 'ScheduleUploadProcessingResponse':
         """
         Starts processing a schedule import
@@ -9977,6 +10096,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_workforcemanagement_businessunit_week_schedules_import_uploadurl(self, business_unit_id: str, week_id: date, body: 'UploadUrlRequestBody', **kwargs) -> 'ImportScheduleUploadResponse':
         """
         Creates a signed upload URL for importing a schedule
@@ -10066,6 +10186,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_workforcemanagement_businessunit_week_shorttermforecast_copy(self, business_unit_id: str, week_date_id: date, forecast_id: str, body: 'CopyBuForecastRequest', **kwargs) -> 'AsyncForecastOperationResult':
         """
         Copy a short term forecast
@@ -10164,6 +10285,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_workforcemanagement_businessunit_week_shorttermforecasts_generate(self, business_unit_id: str, week_date_id: date, body: 'GenerateBuForecastRequest', **kwargs) -> 'AsyncForecastOperationResult':
         """
         Generate a short term forecast
@@ -10256,6 +10378,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_workforcemanagement_businessunit_week_shorttermforecasts_import(self, business_unit_id: str, week_date_id: date, body: 'WfmProcessUploadRequest', **kwargs) -> 'ImportForecastResponse':
         """
         Starts importing the uploaded short term forecast
@@ -10345,6 +10468,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_workforcemanagement_businessunit_week_shorttermforecasts_import_uploadurl(self, business_unit_id: str, week_date_id: date, body: 'UploadUrlRequestBody', **kwargs) -> 'ImportForecastUploadResponse':
         """
         Creates a signed upload URL for importing a short term forecast
@@ -10434,6 +10558,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_workforcemanagement_businessunits(self, **kwargs) -> 'BusinessUnitResponse':
         """
         Add a new business unit
@@ -10508,6 +10633,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_workforcemanagement_calendar_url_ics(self, **kwargs) -> 'CalendarUrlResponse':
         """
         Create a newly generated calendar link for the current user; if the current user has previously generated one, the generated link will be returned
@@ -10582,6 +10708,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_workforcemanagement_historicaldata_deletejob(self, **kwargs) -> 'HistoricalImportDeleteJobResponse':
         """
         Delete the entries of the historical data imports in the organization
@@ -10653,6 +10780,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_workforcemanagement_historicaldata_validate(self, **kwargs) -> None:
         """
         Trigger validation process for historical import
@@ -10727,6 +10855,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_workforcemanagement_managementunit_agentschedules_search(self, management_unit_id: str, **kwargs) -> 'BuAsyncAgentSchedulesSearchResponse':
         """
         Query published schedules for given given time range for set of users
@@ -10813,6 +10942,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_workforcemanagement_managementunit_historicaladherencequery(self, management_unit_id: str, **kwargs) -> 'WfmHistoricalAdherenceResponse':
         """
         Request a historical adherence report
@@ -10893,6 +11023,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_workforcemanagement_managementunit_move(self, management_unit_id: str, **kwargs) -> 'MoveManagementUnitResponse':
         """
         Move the requested management unit to a new business unit
@@ -10973,6 +11104,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    @deprecated("post_workforcemanagement_managementunit_schedules_search is deprecated")
     def post_workforcemanagement_managementunit_schedules_search(self, management_unit_id: str, **kwargs) -> 'UserScheduleContainer':
         """
         Query published schedules for given given time range for set of users
@@ -11053,6 +11185,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_workforcemanagement_managementunit_shrinkage_jobs(self, management_unit_id: str, **kwargs) -> 'WfmHistoricalShrinkageResponse':
         """
         Request a historical shrinkage report
@@ -11133,6 +11266,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_workforcemanagement_managementunit_timeofflimits(self, management_unit_id: str, **kwargs) -> 'TimeOffLimit':
         """
         Creates a new time off limit object under management unit.
@@ -11213,6 +11347,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_workforcemanagement_managementunit_timeofflimits_values_query(self, management_unit_id: str, **kwargs) -> 'QueryTimeOffLimitValuesResponse':
         """
         Retrieves time off limit related values based on a given set of filters.
@@ -11293,6 +11428,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_workforcemanagement_managementunit_timeoffplans(self, management_unit_id: str, **kwargs) -> 'TimeOffPlan':
         """
         Creates a new time off plan
@@ -11373,6 +11509,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_workforcemanagement_managementunit_timeoffrequests(self, management_unit_id: str, **kwargs) -> 'TimeOffRequestList':
         """
         Create a new time off request
@@ -11453,6 +11590,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_workforcemanagement_managementunit_timeoffrequests_query(self, management_unit_id: str, **kwargs) -> 'TimeOffRequestListing':
         """
         Fetches time off requests matching the conditions specified in the request body
@@ -11533,6 +11671,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_workforcemanagement_managementunit_timeoffrequests_waitlistpositions_query(self, management_unit_id: str, **kwargs) -> 'WaitlistPositionListing':
         """
         Retrieves daily waitlist position for a list of time off requests
@@ -11613,6 +11752,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_workforcemanagement_managementunit_user_timeoffbalance_jobs(self, management_unit_id: str, user_id: str, body: 'TimeOffBalanceRequest', **kwargs) -> 'TimeOffBalancesResponse':
         """
         Query time off balances for a given user for specified activity code and dates
@@ -11702,6 +11842,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_workforcemanagement_managementunit_user_timeoffrequest_timeoffbalance_jobs(self, management_unit_id: str, user_id: str, time_off_request_id: str, **kwargs) -> 'TimeOffBalancesResponse':
         """
         Query time off balances for dates spanned by a given time off request
@@ -11791,6 +11932,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_workforcemanagement_managementunit_week_shifttrade_match(self, management_unit_id: str, week_date_id: date, trade_id: str, body: 'MatchShiftTradeRequest', **kwargs) -> 'MatchShiftTradeResponse':
         """
         Matches a shift trade. This route can only be called by the receiving agent
@@ -11886,6 +12028,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_workforcemanagement_managementunit_week_shifttrades(self, management_unit_id: str, week_date_id: date, body: 'AddShiftTradeRequest', **kwargs) -> 'ShiftTradeResponse':
         """
         Adds a shift trade
@@ -11975,6 +12118,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_workforcemanagement_managementunit_week_shifttrades_search(self, management_unit_id: str, week_date_id: date, body: 'SearchShiftTradesRequest', **kwargs) -> 'SearchShiftTradesResponse':
         """
         Searches for potential shift trade matches for the current agent
@@ -12064,6 +12208,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_workforcemanagement_managementunit_week_shifttrades_state_bulk(self, management_unit_id: str, week_date_id: date, body: 'BulkShiftTradeStateUpdateRequest', **kwargs) -> 'BulkUpdateShiftTradeStateResponse':
         """
         Updates the state of a batch of shift trades
@@ -12156,6 +12301,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_workforcemanagement_managementunit_workplan_copy(self, management_unit_id: str, work_plan_id: str, **kwargs) -> 'WorkPlan':
         """
         Create a copy of work plan
@@ -12242,6 +12388,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_workforcemanagement_managementunit_workplan_validate(self, management_unit_id: str, work_plan_id: str, **kwargs) -> 'ValidateWorkPlanResponse':
         """
         Validate Work Plan
@@ -12331,6 +12478,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_workforcemanagement_managementunit_workplanrotation_copy(self, management_unit_id: str, work_plan_rotation_id: str, **kwargs) -> 'WorkPlanRotationResponse':
         """
         Create a copy of work plan rotation
@@ -12417,6 +12565,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_workforcemanagement_managementunit_workplanrotations(self, management_unit_id: str, **kwargs) -> 'WorkPlanRotationResponse':
         """
         Create a new work plan rotation
@@ -12497,6 +12646,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_workforcemanagement_managementunit_workplans(self, management_unit_id: str, **kwargs) -> 'WorkPlan':
         """
         Create a new work plan
@@ -12580,6 +12730,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_workforcemanagement_managementunits(self, **kwargs) -> 'ManagementUnit':
         """
         Add a management unit
@@ -12654,6 +12805,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_workforcemanagement_notifications_update(self, **kwargs) -> 'UpdateNotificationsResponse':
         """
         Mark a list of notifications as read or unread
@@ -12728,6 +12880,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    @deprecated("post_workforcemanagement_schedules is deprecated")
     def post_workforcemanagement_schedules(self, **kwargs) -> 'UserScheduleContainer':
         """
         Get published schedule for the current user
@@ -12802,6 +12955,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_workforcemanagement_team_adherence_historical(self, team_id: str, **kwargs) -> 'WfmHistoricalAdherenceResponse':
         """
         Request a teams historical adherence report
@@ -12882,6 +13036,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_workforcemanagement_team_shrinkage_jobs(self, team_id: str, **kwargs) -> 'WfmHistoricalShrinkageResponse':
         """
         Request a historical shrinkage report
@@ -12962,6 +13117,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_workforcemanagement_timeofflimits_available_query(self, **kwargs) -> 'AvailableTimeOffResponse':
         """
         Queries available time off for the current user
@@ -13036,6 +13192,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_workforcemanagement_timeoffrequests(self, **kwargs) -> 'TimeOffRequestResponse':
         """
         Create a time off request for the current user
@@ -13110,6 +13267,7 @@ class WorkforceManagementApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def put_workforcemanagement_managementunit_timeofflimit_values(self, management_unit_id: str, time_off_limit_id: str, **kwargs) -> 'TimeOffLimit':
         """
         Sets daily values for a date range of time off limit object

@@ -50,14 +50,17 @@ class QueueMessagingAddresses(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'sms_address': 'DomainEntityRef'
+            'sms_address': 'DomainEntityRef',
+            'open_messaging_recipient': 'DomainEntityRef'
         }
 
         self.attribute_map = {
-            'sms_address': 'smsAddress'
+            'sms_address': 'smsAddress',
+            'open_messaging_recipient': 'openMessagingRecipient'
         }
 
         self._sms_address = None
+        self._open_messaging_recipient = None
 
     @property
     def sms_address(self) -> 'DomainEntityRef':
@@ -82,6 +85,30 @@ class QueueMessagingAddresses(object):
         
 
         self._sms_address = sms_address
+
+    @property
+    def open_messaging_recipient(self) -> 'DomainEntityRef':
+        """
+        Gets the open_messaging_recipient of this QueueMessagingAddresses.
+
+
+        :return: The open_messaging_recipient of this QueueMessagingAddresses.
+        :rtype: DomainEntityRef
+        """
+        return self._open_messaging_recipient
+
+    @open_messaging_recipient.setter
+    def open_messaging_recipient(self, open_messaging_recipient: 'DomainEntityRef') -> None:
+        """
+        Sets the open_messaging_recipient of this QueueMessagingAddresses.
+
+
+        :param open_messaging_recipient: The open_messaging_recipient of this QueueMessagingAddresses.
+        :type: DomainEntityRef
+        """
+        
+
+        self._open_messaging_recipient = open_messaging_recipient
 
     def to_dict(self):
         """

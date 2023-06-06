@@ -31,14 +31,17 @@ from six import iteritems
 
 from ..configuration import Configuration
 from ..api_client import ApiClient
+from ..utils import deprecated
 
 from typing import List
 from typing import Dict
 from typing import Any
 
 from ..models import Empty
-from ..models import ApiUsageQuery
+from ..models import ApiUsageClientQuery
+from ..models import ApiUsageOrganizationQuery
 from ..models import ApiUsageQueryResult
+from ..models import ApiUsageSimpleSearch
 from ..models import ErrorBody
 from ..models import UsageExecutionResult
 
@@ -57,6 +60,7 @@ class UsageApi(object):
             if not config.api_client:
                 config.api_client = ApiClient()
             self.api_client = config.api_client
+    
     def get_oauth_client_usage_query_result(self, execution_id: str, client_id: str, **kwargs) -> 'ApiUsageQueryResult':
         """
         Get the results of a usage query
@@ -140,6 +144,7 @@ class UsageApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_oauth_client_usage_summary(self, client_id: str, **kwargs) -> 'UsageExecutionResult':
         """
         Get a summary of OAuth client API usage
@@ -220,6 +225,7 @@ class UsageApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_usage_query_execution_id_results(self, execution_id: str, **kwargs) -> 'ApiUsageQueryResult':
         """
         Get the results of a usage query
@@ -297,7 +303,86 @@ class UsageApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    def post_oauth_client_usage_query(self, client_id: str, body: 'ApiUsageQuery', **kwargs) -> 'UsageExecutionResult':
+    
+    def get_usage_simplesearch_execution_id_results(self, execution_id: str, **kwargs) -> 'ApiUsageQueryResult':
+        """
+        Get the results of a usage search
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_usage_simplesearch_execution_id_results(execution_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str execution_id: ID of the search execution (required)
+        :return: ApiUsageQueryResult
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['execution_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_usage_simplesearch_execution_id_results" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'execution_id' is set
+        if ('execution_id' not in params) or (params['execution_id'] is None):
+            raise ValueError("Missing the required parameter `execution_id` when calling `get_usage_simplesearch_execution_id_results`")
+
+
+        resource_path = '/api/v2/usage/simplesearch/{executionId}/results'.replace('{format}', 'json')
+        path_params = {}
+        if 'execution_id' in params:
+            path_params['executionId'] = params['execution_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ApiUsageQueryResult',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+    
+    def post_oauth_client_usage_query(self, client_id: str, body: 'ApiUsageClientQuery', **kwargs) -> 'UsageExecutionResult':
         """
         Query for OAuth client API usage
         After calling this method, you will then need to poll for the query results based on the returned execution Id
@@ -313,7 +398,7 @@ class UsageApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str client_id: Client ID (required)
-        :param ApiUsageQuery body: Query (required)
+        :param ApiUsageClientQuery body: Query (required)
         :return: UsageExecutionResult
                  If the method is called asynchronously,
                  returns the request thread.
@@ -380,7 +465,8 @@ class UsageApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    def post_usage_query(self, body: 'ApiUsageQuery', **kwargs) -> 'UsageExecutionResult':
+    
+    def post_usage_query(self, body: 'ApiUsageOrganizationQuery', **kwargs) -> 'UsageExecutionResult':
         """
         Query organization API Usage - 
         After calling this method, you will then need to poll for the query results based on the returned execution Id
@@ -395,7 +481,7 @@ class UsageApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param ApiUsageQuery body: Query (required)
+        :param ApiUsageOrganizationQuery body: Query (required)
         :return: UsageExecutionResult
                  If the method is called asynchronously,
                  returns the request thread.
@@ -420,6 +506,84 @@ class UsageApi(object):
 
 
         resource_path = '/api/v2/usage/query'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='UsageExecutionResult',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+    
+    def post_usage_simplesearch(self, body: 'ApiUsageSimpleSearch', **kwargs) -> 'UsageExecutionResult':
+        """
+        Search organization API Usage - 
+        After calling this method, you will then need to poll for the query results based on the returned execution Id
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_usage_simplesearch(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param ApiUsageSimpleSearch body: SimpleSearch (required)
+        :return: UsageExecutionResult
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_usage_simplesearch" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_usage_simplesearch`")
+
+
+        resource_path = '/api/v2/usage/simplesearch'.replace('{format}', 'json')
         path_params = {}
 
         query_params = {}

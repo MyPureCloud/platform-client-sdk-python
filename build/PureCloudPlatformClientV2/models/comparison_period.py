@@ -54,6 +54,7 @@ class ComparisonPeriod(object):
             'kpi': 'str',
             'date_started': 'datetime',
             'date_ended': 'datetime',
+            'percentage_benefit': 'float',
             'kpi_results': 'list[KpiResult]',
             'self_uri': 'str'
         }
@@ -63,6 +64,7 @@ class ComparisonPeriod(object):
             'kpi': 'kpi',
             'date_started': 'dateStarted',
             'date_ended': 'dateEnded',
+            'percentage_benefit': 'percentageBenefit',
             'kpi_results': 'kpiResults',
             'self_uri': 'selfUri'
         }
@@ -71,6 +73,7 @@ class ComparisonPeriod(object):
         self._kpi = None
         self._date_started = None
         self._date_ended = None
+        self._percentage_benefit = None
         self._kpi_results = None
         self._self_uri = None
 
@@ -169,6 +172,30 @@ class ComparisonPeriod(object):
         
 
         self._date_ended = date_ended
+
+    @property
+    def percentage_benefit(self) -> float:
+        """
+        Gets the percentage_benefit of this ComparisonPeriod.
+        The percentage benefit on this queue for the duration of the comparison period
+
+        :return: The percentage_benefit of this ComparisonPeriod.
+        :rtype: float
+        """
+        return self._percentage_benefit
+
+    @percentage_benefit.setter
+    def percentage_benefit(self, percentage_benefit: float) -> None:
+        """
+        Sets the percentage_benefit of this ComparisonPeriod.
+        The percentage benefit on this queue for the duration of the comparison period
+
+        :param percentage_benefit: The percentage_benefit of this ComparisonPeriod.
+        :type: float
+        """
+        
+
+        self._percentage_benefit = percentage_benefit
 
     @property
     def kpi_results(self) -> List['KpiResult']:

@@ -30,6 +30,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_speechandtextanalytics_topics**](SpeechTextAnalyticsApi.html#get_speechandtextanalytics_topics) | Get the list of Speech &amp; Text Analytics topics|
 |[**get_speechandtextanalytics_topics_dialects**](SpeechTextAnalyticsApi.html#get_speechandtextanalytics_topics_dialects) | Get list of supported Speech &amp; Text Analytics topics dialects|
 |[**get_speechandtextanalytics_topics_general**](SpeechTextAnalyticsApi.html#get_speechandtextanalytics_topics_general) | Get the Speech &amp; Text Analytics general topics for a given dialect|
+|[**get_speechandtextanalytics_topics_general_status**](SpeechTextAnalyticsApi.html#get_speechandtextanalytics_topics_general_status) | Get the list of general topics from the org and the system with their current status|
 |[**get_speechandtextanalytics_topics_publishjob**](SpeechTextAnalyticsApi.html#get_speechandtextanalytics_topics_publishjob) | Get a Speech &amp; Text Analytics publish topics job by id|
 |[**patch_speechandtextanalytics_settings**](SpeechTextAnalyticsApi.html#patch_speechandtextanalytics_settings) | Patch Speech And Text Analytics Settings|
 |[**post_speechandtextanalytics_programs**](SpeechTextAnalyticsApi.html#post_speechandtextanalytics_programs) | Create new Speech &amp; Text Analytics program|
@@ -1161,12 +1162,63 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **dialect** | **str**| The dialect of the general topics, dialect format is {language}-{country} where language follows ISO 639-1 standard and country follows ISO 3166-1 alpha 2 standard | [optional] <br />**Values**: en-US, es-US, en-AU, en-GB, en-ZA, es-ES, en-IN, fr-FR, fr-CA, it-IT, de-DE, pt-BR, pl-PL, pt-PT, nl-NL, ko-KR, ja-JP |
+| **dialect** | **str**| The dialect of the general topics, dialect format is {language}-{country} where language follows ISO 639-1 standard and country follows ISO 3166-1 alpha 2 standard | [optional] <br />**Values**: ar-001, ar-AE, ar-BH, ar-EG, ar-IL, ar-SA, ar-TN, de-DE, en-AU, en-GB, en-IN, en-US, en-ZA, es-ES, es-US, fr-CA, fr-FR, it-IT, ja-JP, ko-KR, nl-NL, pl-PL, pt-BR, pt-PT |
 {: class="table table-striped"}
 
 ### Return type
 
 [**GeneralTopicsEntityListing**](GeneralTopicsEntityListing.html)
+
+<a name="get_speechandtextanalytics_topics_general_status"></a>
+
+## [**UnifiedGeneralTopicEntityListing**](UnifiedGeneralTopicEntityListing.html) get_speechandtextanalytics_topics_general_status(dialect=dialect)
+
+
+
+Get the list of general topics from the org and the system with their current status
+
+
+
+Wraps GET /api/v2/speechandtextanalytics/topics/general/status 
+
+Requires ALL permissions: 
+
+* speechAndTextAnalytics:topic:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.SpeechTextAnalyticsApi()
+dialect = 'dialect_example' # str | The dialect of the general topics, dialect format is {language}-{country} where language follows ISO 639-1 standard and country follows ISO 3166-1 alpha 2 standard (optional)
+
+try:
+    # Get the list of general topics from the org and the system with their current status
+    api_response = api_instance.get_speechandtextanalytics_topics_general_status(dialect=dialect)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling SpeechTextAnalyticsApi->get_speechandtextanalytics_topics_general_status: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **dialect** | **str**| The dialect of the general topics, dialect format is {language}-{country} where language follows ISO 639-1 standard and country follows ISO 3166-1 alpha 2 standard | [optional] <br />**Values**: ar-001, ar-AE, ar-BH, ar-EG, ar-IL, ar-SA, ar-TN, de-DE, en-AU, en-GB, en-IN, en-US, en-ZA, es-ES, es-US, fr-CA, fr-FR, it-IT, ja-JP, ko-KR, nl-NL, pl-PL, pt-BR, pt-PT |
+{: class="table table-striped"}
+
+### Return type
+
+[**UnifiedGeneralTopicEntityListing**](UnifiedGeneralTopicEntityListing.html)
 
 <a name="get_speechandtextanalytics_topics_publishjob"></a>
 

@@ -34,6 +34,7 @@ from typing import Dict
 
 if TYPE_CHECKING:
     from . import DocumentBodyListBlock
+    from . import DocumentBodyListBlockProperties
 
 class DocumentBodyList(object):
     """
@@ -50,14 +51,17 @@ class DocumentBodyList(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'blocks': 'list[DocumentBodyListBlock]'
+            'blocks': 'list[DocumentBodyListBlock]',
+            'properties': 'DocumentBodyListBlockProperties'
         }
 
         self.attribute_map = {
-            'blocks': 'blocks'
+            'blocks': 'blocks',
+            'properties': 'properties'
         }
 
         self._blocks = None
+        self._properties = None
 
     @property
     def blocks(self) -> List['DocumentBodyListBlock']:
@@ -82,6 +86,30 @@ class DocumentBodyList(object):
         
 
         self._blocks = blocks
+
+    @property
+    def properties(self) -> 'DocumentBodyListBlockProperties':
+        """
+        Gets the properties of this DocumentBodyList.
+        Properties for the UnorderedList or OrderedList.
+
+        :return: The properties of this DocumentBodyList.
+        :rtype: DocumentBodyListBlockProperties
+        """
+        return self._properties
+
+    @properties.setter
+    def properties(self, properties: 'DocumentBodyListBlockProperties') -> None:
+        """
+        Sets the properties of this DocumentBodyList.
+        Properties for the UnorderedList or OrderedList.
+
+        :param properties: The properties of this DocumentBodyList.
+        :type: DocumentBodyListBlockProperties
+        """
+        
+
+        self._properties = properties
 
     def to_dict(self):
         """

@@ -454,7 +454,7 @@ except ApiException as e:
 
 ## [**KnowledgeCategory**](KnowledgeCategory.html) delete_knowledge_knowledgebase_language_category(category_id, knowledge_base_id, language_code)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 Delete category
 
@@ -509,7 +509,7 @@ except ApiException as e:
 
 ## [**KnowledgeDocument**](KnowledgeDocument.html) delete_knowledge_knowledgebase_language_document(document_id, knowledge_base_id, language_code)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 Delete document
 
@@ -564,7 +564,7 @@ except ApiException as e:
 
 ##  delete_knowledge_knowledgebase_language_documents_import(knowledge_base_id, language_code, import_id)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 Delete import operation
 
@@ -1658,7 +1658,7 @@ except ApiException as e:
 
 ## [**CategoryListing**](CategoryListing.html) get_knowledge_knowledgebase_language_categories(knowledge_base_id, language_code, before=before, after=after, limit=limit, page_size=page_size, name=name)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 Get categories
 
@@ -1721,7 +1721,7 @@ except ApiException as e:
 
 ## [**KnowledgeExtendedCategory**](KnowledgeExtendedCategory.html) get_knowledge_knowledgebase_language_category(category_id, knowledge_base_id, language_code)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 Get category
 
@@ -1776,7 +1776,7 @@ except ApiException as e:
 
 ## [**KnowledgeDocument**](KnowledgeDocument.html) get_knowledge_knowledgebase_language_document(document_id, knowledge_base_id, language_code)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 Get document
 
@@ -1831,7 +1831,7 @@ except ApiException as e:
 
 ## [**DocumentListing**](DocumentListing.html) get_knowledge_knowledgebase_language_documents(knowledge_base_id, language_code, before=before, after=after, limit=limit, page_size=page_size, categories=categories, title=title, sort_by=sort_by, sort_order=sort_order, document_ids=document_ids)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 Get documents
 
@@ -1902,7 +1902,7 @@ except ApiException as e:
 
 ## [**KnowledgeImport**](KnowledgeImport.html) get_knowledge_knowledgebase_language_documents_import(knowledge_base_id, language_code, import_id)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 Get import operation report
 
@@ -1957,7 +1957,7 @@ except ApiException as e:
 
 ## [**KnowledgeTraining**](KnowledgeTraining.html) get_knowledge_knowledgebase_language_training(knowledge_base_id, language_code, training_id)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 Get training detail
 
@@ -2012,7 +2012,7 @@ except ApiException as e:
 
 ## [**TrainingListing**](TrainingListing.html) get_knowledge_knowledgebase_language_trainings(knowledge_base_id, language_code, before=before, after=after, limit=limit, page_size=page_size, knowledge_documents_state=knowledge_documents_state)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 Get all trainings information for a knowledgebase
 
@@ -2267,8 +2267,8 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.KnowledgeApi()
 before = 'before_example' # str | The cursor that points to the start of the set of entities that has been returned. (optional)
 after = 'after_example' # str | The cursor that points to the end of the set of entities that has been returned. (optional)
-limit = 'limit_example' # str | Number of entities to return. Maximum of 200. Deprecated in favour of pageSize (optional)
-page_size = 'page_size_example' # str | Number of entities to return. Maximum of 200. (optional)
+limit = 'limit_example' # str | Number of entities to return. Maximum of 100. Deprecated in favour of pageSize (optional)
+page_size = 'page_size_example' # str | Number of entities to return. Maximum of 100. (optional)
 name = 'name_example' # str | Filter by Name. (optional)
 core_language = 'core_language_example' # str | Filter by core language. (optional)
 published = True # bool | Filter by published status. (optional)
@@ -2290,8 +2290,8 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **before** | **str**| The cursor that points to the start of the set of entities that has been returned. | [optional]  |
 | **after** | **str**| The cursor that points to the end of the set of entities that has been returned. | [optional]  |
-| **limit** | **str**| Number of entities to return. Maximum of 200. Deprecated in favour of pageSize | [optional]  |
-| **page_size** | **str**| Number of entities to return. Maximum of 200. | [optional]  |
+| **limit** | **str**| Number of entities to return. Maximum of 100. Deprecated in favour of pageSize | [optional]  |
+| **page_size** | **str**| Number of entities to return. Maximum of 100. | [optional]  |
 | **name** | **str**| Filter by Name. | [optional]  |
 | **core_language** | **str**| Filter by core language. | [optional] <br />**Values**: en-US, en-UK, en-AU, en-CA, en-HK, en-IN, en-IE, en-NZ, en-PH, en-SG, en-ZA, de-DE, de-AT, de-CH, es-AR, es-CO, es-MX, es-US, es-ES, fr-FR, fr-BE, fr-CA, fr-CH, pt-BR, pt-PT, nl-NL, nl-BE, it-IT |
 | **published** | **bool**| Filter by published status. | [optional]  |
@@ -2741,7 +2741,7 @@ except ApiException as e:
 
 ## [**KnowledgeExtendedCategory**](KnowledgeExtendedCategory.html) patch_knowledge_knowledgebase_language_category(category_id, knowledge_base_id, language_code, body)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 Update category
 
@@ -2798,7 +2798,7 @@ except ApiException as e:
 
 ## [**KnowledgeDocument**](KnowledgeDocument.html) patch_knowledge_knowledgebase_language_document(document_id, knowledge_base_id, language_code, body)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 Update document
 
@@ -2855,7 +2855,7 @@ except ApiException as e:
 
 ## [**DocumentListing**](DocumentListing.html) patch_knowledge_knowledgebase_language_documents(knowledge_base_id, language_code, body)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 Update documents collection
 
@@ -2910,7 +2910,7 @@ except ApiException as e:
 
 ## [**KnowledgeImport**](KnowledgeImport.html) patch_knowledge_knowledgebase_language_documents_import(knowledge_base_id, language_code, import_id, body)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 Start import operation
 
@@ -3708,7 +3708,7 @@ except ApiException as e:
 
 ## [**KnowledgeExtendedCategory**](KnowledgeExtendedCategory.html) post_knowledge_knowledgebase_language_categories(knowledge_base_id, language_code, body)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 Create new category
 
@@ -3763,7 +3763,7 @@ except ApiException as e:
 
 ## [**KnowledgeDocument**](KnowledgeDocument.html) post_knowledge_knowledgebase_language_documents(knowledge_base_id, language_code, body)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 Create document
 
@@ -3818,7 +3818,7 @@ except ApiException as e:
 
 ## [**KnowledgeImport**](KnowledgeImport.html) post_knowledge_knowledgebase_language_documents_imports(knowledge_base_id, language_code, body)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 Create import operation
 
@@ -3873,7 +3873,7 @@ except ApiException as e:
 
 ## [**KnowledgeTraining**](KnowledgeTraining.html) post_knowledge_knowledgebase_language_training_promote(knowledge_base_id, language_code, training_id)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 Promote trained documents from draft state to active.
 
@@ -3928,7 +3928,7 @@ except ApiException as e:
 
 ## [**KnowledgeTraining**](KnowledgeTraining.html) post_knowledge_knowledgebase_language_trainings(knowledge_base_id, language_code)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 Trigger training
 
@@ -3981,7 +3981,7 @@ except ApiException as e:
 
 ## [**KnowledgeSearchResponse**](KnowledgeSearchResponse.html) post_knowledge_knowledgebase_search(knowledge_base_id, body=body)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 Search Documents
 

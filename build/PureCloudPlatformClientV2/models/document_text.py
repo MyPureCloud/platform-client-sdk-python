@@ -32,6 +32,8 @@ from typing import TYPE_CHECKING
 from typing import List
 from typing import Dict
 
+if TYPE_CHECKING:
+    from . import DocumentTextProperties
 
 class DocumentText(object):
     """
@@ -50,18 +52,21 @@ class DocumentText(object):
         self.swagger_types = {
             'text': 'str',
             'marks': 'list[str]',
-            'hyperlink': 'str'
+            'hyperlink': 'str',
+            'properties': 'DocumentTextProperties'
         }
 
         self.attribute_map = {
             'text': 'text',
             'marks': 'marks',
-            'hyperlink': 'hyperlink'
+            'hyperlink': 'hyperlink',
+            'properties': 'properties'
         }
 
         self._text = None
         self._marks = None
         self._hyperlink = None
+        self._properties = None
 
     @property
     def text(self) -> str:
@@ -134,6 +139,30 @@ class DocumentText(object):
         
 
         self._hyperlink = hyperlink
+
+    @property
+    def properties(self) -> 'DocumentTextProperties':
+        """
+        Gets the properties of this DocumentText.
+        The properties for the text.
+
+        :return: The properties of this DocumentText.
+        :rtype: DocumentTextProperties
+        """
+        return self._properties
+
+    @properties.setter
+    def properties(self, properties: 'DocumentTextProperties') -> None:
+        """
+        Sets the properties of this DocumentText.
+        The properties for the text.
+
+        :param properties: The properties of this DocumentText.
+        :type: DocumentTextProperties
+        """
+        
+
+        self._properties = properties
 
     def to_dict(self):
         """

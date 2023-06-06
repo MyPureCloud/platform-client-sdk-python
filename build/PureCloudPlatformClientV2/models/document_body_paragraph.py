@@ -33,6 +33,7 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
+    from . import DocumentBodyParagraphProperties
     from . import DocumentContentBlock
 
 class DocumentBodyParagraph(object):
@@ -50,14 +51,17 @@ class DocumentBodyParagraph(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'blocks': 'list[DocumentContentBlock]'
+            'blocks': 'list[DocumentContentBlock]',
+            'properties': 'DocumentBodyParagraphProperties'
         }
 
         self.attribute_map = {
-            'blocks': 'blocks'
+            'blocks': 'blocks',
+            'properties': 'properties'
         }
 
         self._blocks = None
+        self._properties = None
 
     @property
     def blocks(self) -> List['DocumentContentBlock']:
@@ -82,6 +86,30 @@ class DocumentBodyParagraph(object):
         
 
         self._blocks = blocks
+
+    @property
+    def properties(self) -> 'DocumentBodyParagraphProperties':
+        """
+        Gets the properties of this DocumentBodyParagraph.
+        The properties for the paragraph.
+
+        :return: The properties of this DocumentBodyParagraph.
+        :rtype: DocumentBodyParagraphProperties
+        """
+        return self._properties
+
+    @properties.setter
+    def properties(self, properties: 'DocumentBodyParagraphProperties') -> None:
+        """
+        Sets the properties of this DocumentBodyParagraph.
+        The properties for the paragraph.
+
+        :param properties: The properties of this DocumentBodyParagraph.
+        :type: DocumentBodyParagraphProperties
+        """
+        
+
+        self._properties = properties
 
     def to_dict(self):
         """

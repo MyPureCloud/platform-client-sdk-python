@@ -31,6 +31,7 @@ from six import iteritems
 
 from ..configuration import Configuration
 from ..api_client import ApiClient
+from ..utils import deprecated
 
 from typing import List
 from typing import Dict
@@ -56,6 +57,7 @@ class CarrierServicesApi(object):
             if not config.api_client:
                 config.api_client = ApiClient()
             self.api_client = config.api_client
+    
     def get_carrierservices_integrations_emergencylocations_me(self, phone_number: str, **kwargs) -> 'EmergencyLocation':
         """
         Get location for the logged in user
@@ -133,6 +135,7 @@ class CarrierServicesApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_carrierservices_integrations_emergencylocations_me(self, **kwargs) -> 'EmergencyLocation':
         """
         Set current location for the logged in user

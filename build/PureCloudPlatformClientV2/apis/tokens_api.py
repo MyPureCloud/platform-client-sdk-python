@@ -31,6 +31,7 @@ from six import iteritems
 
 from ..configuration import Configuration
 from ..api_client import ApiClient
+from ..utils import deprecated
 
 from typing import List
 from typing import Dict
@@ -55,6 +56,7 @@ class TokensApi(object):
             if not config.api_client:
                 config.api_client = ApiClient()
             self.api_client = config.api_client
+    
     def delete_token(self, user_id: str, **kwargs) -> None:
         """
         Delete all auth tokens for the specified user.
@@ -132,6 +134,7 @@ class TokensApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def delete_tokens_me(self, **kwargs) -> None:
         """
         Delete auth token used to make the request.
@@ -203,6 +206,7 @@ class TokensApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_tokens_me(self, **kwargs) -> 'TokenInfo':
         """
         Fetch information about the current token
@@ -274,6 +278,7 @@ class TokensApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def head_tokens_me(self, **kwargs) -> None:
         """
         Verify user token

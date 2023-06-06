@@ -38,6 +38,9 @@ title: EvaluationQualityV2TopicEvaluationV2
 | **previous_status** | **str** |  | [optional] |
 | **declined_review** | **bool** |  | [optional] |
 | **retracted_evaluation** | [**EvaluationQualityV2TopicEvaluationReference**](EvaluationQualityV2TopicEvaluationReference.html) |  | [optional] |
+| **rescore_count** | **int** |  | [optional] |
+| **evaluator_comment_has_updated** | **bool** |  | [optional] |
+| **agent_comment_has_updated** | **bool** |  | [optional] |
 {: class="table table-striped"}
 
 

@@ -31,6 +31,7 @@ from six import iteritems
 
 from ..configuration import Configuration
 from ..api_client import ApiClient
+from ..utils import deprecated
 
 from typing import List
 from typing import Dict
@@ -58,6 +59,7 @@ class FaxApi(object):
             if not config.api_client:
                 config.api_client = ApiClient()
             self.api_client = config.api_client
+    
     def delete_fax_document(self, document_id: str, **kwargs) -> None:
         """
         Delete a fax document.
@@ -135,6 +137,7 @@ class FaxApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_fax_document(self, document_id: str, **kwargs) -> 'FaxDocument':
         """
         Get a document.
@@ -212,6 +215,7 @@ class FaxApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_fax_document_content(self, document_id: str, **kwargs) -> 'DownloadResponse':
         """
         Download a fax document.
@@ -289,6 +293,7 @@ class FaxApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_fax_documents(self, **kwargs) -> 'FaxDocumentEntityListing':
         """
         Get a list of fax documents.
@@ -366,6 +371,7 @@ class FaxApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_fax_summary(self, **kwargs) -> 'FaxSummary':
         """
         Get fax summary
@@ -437,6 +443,7 @@ class FaxApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def put_fax_document(self, document_id: str, body: 'FaxDocument', **kwargs) -> 'FaxDocument':
         """
         Update a fax document.

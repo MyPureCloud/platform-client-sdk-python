@@ -11,8 +11,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_oauth_client_usage_query_result**](UsageApi.html#get_oauth_client_usage_query_result) | Get the results of a usage query|
 |[**get_oauth_client_usage_summary**](UsageApi.html#get_oauth_client_usage_summary) | Get a summary of OAuth client API usage|
 |[**get_usage_query_execution_id_results**](UsageApi.html#get_usage_query_execution_id_results) | Get the results of a usage query|
+|[**get_usage_simplesearch_execution_id_results**](UsageApi.html#get_usage_simplesearch_execution_id_results) | Get the results of a usage search|
 |[**post_oauth_client_usage_query**](UsageApi.html#post_oauth_client_usage_query) | Query for OAuth client API usage|
 |[**post_usage_query**](UsageApi.html#post_usage_query) | Query organization API Usage - |
+|[**post_usage_simplesearch**](UsageApi.html#post_usage_simplesearch) | Search organization API Usage - |
 {: class="table table-striped"}
 
 <a name="get_oauth_client_usage_query_result"></a>
@@ -177,6 +179,58 @@ except ApiException as e:
 
 [**ApiUsageQueryResult**](ApiUsageQueryResult.html)
 
+<a name="get_usage_simplesearch_execution_id_results"></a>
+
+## [**ApiUsageQueryResult**](ApiUsageQueryResult.html) get_usage_simplesearch_execution_id_results(execution_id)
+
+
+
+Get the results of a usage search
+
+
+
+Wraps GET /api/v2/usage/simplesearch/{executionId}/results 
+
+Requires ANY permissions: 
+
+* oauth:client:view
+* usage:simpleSearch:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.UsageApi()
+execution_id = 'execution_id_example' # str | ID of the search execution
+
+try:
+    # Get the results of a usage search
+    api_response = api_instance.get_usage_simplesearch_execution_id_results(execution_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling UsageApi->get_usage_simplesearch_execution_id_results: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **execution_id** | **str**| ID of the search execution |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**ApiUsageQueryResult**](ApiUsageQueryResult.html)
+
 <a name="post_oauth_client_usage_query"></a>
 
 ## [**UsageExecutionResult**](UsageExecutionResult.html) post_oauth_client_usage_query(client_id, body)
@@ -210,7 +264,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.UsageApi()
 client_id = 'client_id_example' # str | Client ID
-body = PureCloudPlatformClientV2.ApiUsageQuery() # ApiUsageQuery | Query
+body = PureCloudPlatformClientV2.ApiUsageClientQuery() # ApiUsageClientQuery | Query
 
 try:
     # Query for OAuth client API usage
@@ -226,7 +280,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **client_id** | **str**| Client ID |  |
-| **body** | [**ApiUsageQuery**](ApiUsageQuery.html)| Query |  |
+| **body** | [**ApiUsageClientQuery**](ApiUsageClientQuery.html)| Query |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -265,7 +319,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.UsageApi()
-body = PureCloudPlatformClientV2.ApiUsageQuery() # ApiUsageQuery | Query
+body = PureCloudPlatformClientV2.ApiUsageOrganizationQuery() # ApiUsageOrganizationQuery | Query
 
 try:
     # Query organization API Usage - 
@@ -280,7 +334,61 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**ApiUsageQuery**](ApiUsageQuery.html)| Query |  |
+| **body** | [**ApiUsageOrganizationQuery**](ApiUsageOrganizationQuery.html)| Query |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**UsageExecutionResult**](UsageExecutionResult.html)
+
+<a name="post_usage_simplesearch"></a>
+
+## [**UsageExecutionResult**](UsageExecutionResult.html) post_usage_simplesearch(body)
+
+
+
+Search organization API Usage - 
+
+After calling this method, you will then need to poll for the query results based on the returned execution Id
+
+
+
+Wraps POST /api/v2/usage/simplesearch 
+
+Requires ANY permissions: 
+
+* oauth:client:view
+* usage:simpleSearch:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.UsageApi()
+body = PureCloudPlatformClientV2.ApiUsageSimpleSearch() # ApiUsageSimpleSearch | SimpleSearch
+
+try:
+    # Search organization API Usage - 
+    api_response = api_instance.post_usage_simplesearch(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling UsageApi->post_usage_simplesearch: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**ApiUsageSimpleSearch**](ApiUsageSimpleSearch.html)| SimpleSearch |  |
 {: class="table table-striped"}
 
 ### Return type

@@ -31,6 +31,7 @@ from six import iteritems
 
 from ..configuration import Configuration
 from ..api_client import ApiClient
+from ..utils import deprecated
 
 from typing import List
 from typing import Dict
@@ -59,6 +60,7 @@ class TelephonyApi(object):
             if not config.api_client:
                 config.api_client = ApiClient()
             self.api_client = config.api_client
+    
     def get_telephony_mediaregions(self, **kwargs) -> 'MediaRegions':
         """
         Retrieve the list of AWS regions media can stream through.
@@ -130,6 +132,7 @@ class TelephonyApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_telephony_siptraces(self, date_start: datetime, date_end: datetime, **kwargs) -> 'SipSearchResult':
         """
         Fetch SIP metadata
@@ -225,6 +228,7 @@ class TelephonyApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_telephony_siptraces_download_download_id(self, download_id: str, **kwargs) -> 'SignedUrlResponse':
         """
         Get signed S3 URL for a pcap download
@@ -302,6 +306,7 @@ class TelephonyApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_telephony_siptraces_download(self, sip_search_public_request: 'SIPSearchPublicRequest', **kwargs) -> 'SipDownloadResponse':
         """
         Request a download of a pcap file to S3

@@ -31,6 +31,7 @@ from six import iteritems
 
 from ..configuration import Configuration
 from ..api_client import ApiClient
+from ..utils import deprecated
 
 from typing import List
 from typing import Dict
@@ -56,10 +57,11 @@ class MessagingApi(object):
             if not config.api_client:
                 config.api_client = ApiClient()
             self.api_client = config.api_client
+    @deprecated("delete_messaging_supportedcontent_supported_content_id is deprecated")
     def delete_messaging_supportedcontent_supported_content_id(self, supported_content_id: str, **kwargs) -> None:
         """
         Delete a supported content profile
-        
+        Deprecated - use DELETE /api/v2/conversations/messaging/supportedcontent/{supportedContentId} as replacement
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -133,10 +135,11 @@ class MessagingApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    @deprecated("get_messaging_supportedcontent is deprecated")
     def get_messaging_supportedcontent(self, **kwargs) -> 'SupportedContentListing':
         """
         Get a list of Supported Content profiles
-        
+        Deprecated - use GET /api/v2/conversations/messaging/supportedcontent as replacement
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -210,10 +213,11 @@ class MessagingApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    @deprecated("get_messaging_supportedcontent_supported_content_id is deprecated")
     def get_messaging_supportedcontent_supported_content_id(self, supported_content_id: str, **kwargs) -> 'SupportedContent':
         """
         Get a supported content profile
-        
+        Deprecated - use GET /api/v2/conversations/messaging/supportedcontent/{supportedContentId} as replacement
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -287,10 +291,11 @@ class MessagingApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    @deprecated("patch_messaging_supportedcontent_supported_content_id is deprecated")
     def patch_messaging_supportedcontent_supported_content_id(self, supported_content_id: str, body: 'SupportedContent', **kwargs) -> 'SupportedContent':
         """
         Update a supported content profile
-        
+        Deprecated - use PATCH /api/v2/conversations/messaging/supportedcontent/{supportedContentId} as replacement
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -370,10 +375,11 @@ class MessagingApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    @deprecated("post_messaging_supportedcontent is deprecated")
     def post_messaging_supportedcontent(self, body: 'SupportedContent', **kwargs) -> 'SupportedContent':
         """
         Create a Supported Content profile
-        
+        Deprecated - use POST /api/v2/conversations/messaging/supportedcontent as replacement
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

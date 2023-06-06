@@ -32,6 +32,8 @@ from typing import TYPE_CHECKING
 from typing import List
 from typing import Dict
 
+if TYPE_CHECKING:
+    from . import DocumentBodyVideoProperties
 
 class DocumentBodyVideo(object):
     """
@@ -48,14 +50,17 @@ class DocumentBodyVideo(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'url': 'str'
+            'url': 'str',
+            'properties': 'DocumentBodyVideoProperties'
         }
 
         self.attribute_map = {
-            'url': 'url'
+            'url': 'url',
+            'properties': 'properties'
         }
 
         self._url = None
+        self._properties = None
 
     @property
     def url(self) -> str:
@@ -80,6 +85,30 @@ class DocumentBodyVideo(object):
         
 
         self._url = url
+
+    @property
+    def properties(self) -> 'DocumentBodyVideoProperties':
+        """
+        Gets the properties of this DocumentBodyVideo.
+        The properties for the video.
+
+        :return: The properties of this DocumentBodyVideo.
+        :rtype: DocumentBodyVideoProperties
+        """
+        return self._properties
+
+    @properties.setter
+    def properties(self, properties: 'DocumentBodyVideoProperties') -> None:
+        """
+        Sets the properties of this DocumentBodyVideo.
+        The properties for the video.
+
+        :param properties: The properties of this DocumentBodyVideo.
+        :type: DocumentBodyVideoProperties
+        """
+        
+
+        self._properties = properties
 
     def to_dict(self):
         """

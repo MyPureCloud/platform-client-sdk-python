@@ -149,6 +149,7 @@ PureCloudPlatformClientV2/models/adhoc_recording_topic_recording_data_v2.py
 PureCloudPlatformClientV2/models/adhoc_recording_topic_user_data.py
 PureCloudPlatformClientV2/models/adhoc_recording_topic_workspace_data.py
 PureCloudPlatformClientV2/models/adjacents.py
+PureCloudPlatformClientV2/models/adjustable_live_speaker_detection.py
 PureCloudPlatformClientV2/models/admin_time_off_request_patch.py
 PureCloudPlatformClientV2/models/after_call_work.py
 PureCloudPlatformClientV2/models/after_call_work_update.py
@@ -210,9 +211,11 @@ PureCloudPlatformClientV2/models/analytics_user_details_query_response.py
 PureCloudPlatformClientV2/models/analytics_user_presence_record.py
 PureCloudPlatformClientV2/models/annotation.py
 PureCloudPlatformClientV2/models/answer_option.py
-PureCloudPlatformClientV2/models/api_usage_query.py
+PureCloudPlatformClientV2/models/api_usage_client_query.py
+PureCloudPlatformClientV2/models/api_usage_organization_query.py
 PureCloudPlatformClientV2/models/api_usage_query_result.py
 PureCloudPlatformClientV2/models/api_usage_row.py
+PureCloudPlatformClientV2/models/api_usage_simple_search.py
 PureCloudPlatformClientV2/models/append_to_dnc_action_settings.py
 PureCloudPlatformClientV2/models/approval_namespace.py
 PureCloudPlatformClientV2/models/architect_dependency_tracking_build_notification_client.py
@@ -1162,6 +1165,8 @@ PureCloudPlatformClientV2/models/directory_user_devices_listing.py
 PureCloudPlatformClientV2/models/disallowed_entity_learning_assignment_item.py
 PureCloudPlatformClientV2/models/disallowed_entity_learning_assignment_reference.py
 PureCloudPlatformClientV2/models/disconnect_reason.py
+PureCloudPlatformClientV2/models/disposition.py
+PureCloudPlatformClientV2/models/disposition_parameters.py
 PureCloudPlatformClientV2/models/division.py
 PureCloudPlatformClientV2/models/division_reference.py
 PureCloudPlatformClientV2/models/divs_permitted_entity_listing.py
@@ -1187,14 +1192,20 @@ PureCloudPlatformClientV2/models/document_audit_entity_listing.py
 PureCloudPlatformClientV2/models/document_body.py
 PureCloudPlatformClientV2/models/document_body_block.py
 PureCloudPlatformClientV2/models/document_body_image.py
+PureCloudPlatformClientV2/models/document_body_image_properties.py
 PureCloudPlatformClientV2/models/document_body_list.py
 PureCloudPlatformClientV2/models/document_body_list_block.py
+PureCloudPlatformClientV2/models/document_body_list_block_properties.py
+PureCloudPlatformClientV2/models/document_body_list_item_properties.py
 PureCloudPlatformClientV2/models/document_body_paragraph.py
+PureCloudPlatformClientV2/models/document_body_paragraph_properties.py
 PureCloudPlatformClientV2/models/document_body_video.py
+PureCloudPlatformClientV2/models/document_body_video_properties.py
 PureCloudPlatformClientV2/models/document_category_input.py
 PureCloudPlatformClientV2/models/document_content_block.py
 PureCloudPlatformClientV2/models/document_entity_listing.py
 PureCloudPlatformClientV2/models/document_faq.py
+PureCloudPlatformClientV2/models/document_list_content_block.py
 PureCloudPlatformClientV2/models/document_listing.py
 PureCloudPlatformClientV2/models/document_query.py
 PureCloudPlatformClientV2/models/document_query_clause.py
@@ -1202,6 +1213,7 @@ PureCloudPlatformClientV2/models/document_query_interval.py
 PureCloudPlatformClientV2/models/document_query_predicate.py
 PureCloudPlatformClientV2/models/document_reference.py
 PureCloudPlatformClientV2/models/document_text.py
+PureCloudPlatformClientV2/models/document_text_properties.py
 PureCloudPlatformClientV2/models/document_thumbnail.py
 PureCloudPlatformClientV2/models/document_update.py
 PureCloudPlatformClientV2/models/document_upload.py
@@ -2130,6 +2142,7 @@ PureCloudPlatformClientV2/models/open_messaging_to_recipient.py
 PureCloudPlatformClientV2/models/open_normalized_message.py
 PureCloudPlatformClientV2/models/operation.py
 PureCloudPlatformClientV2/models/opt_in_settings.py
+PureCloudPlatformClientV2/models/org_auth_settings.py
 PureCloudPlatformClientV2/models/org_o_auth_client.py
 PureCloudPlatformClientV2/models/org_user.py
 PureCloudPlatformClientV2/models/org_whitelist_settings.py
@@ -2194,6 +2207,7 @@ PureCloudPlatformClientV2/models/participant.py
 PureCloudPlatformClientV2/models/participant_attributes.py
 PureCloudPlatformClientV2/models/participant_basic.py
 PureCloudPlatformClientV2/models/participant_metrics.py
+PureCloudPlatformClientV2/models/password_requirements.py
 PureCloudPlatformClientV2/models/patch_action.py
 PureCloudPlatformClientV2/models/patch_action_map.py
 PureCloudPlatformClientV2/models/patch_action_map_schedule_groups.py
@@ -3154,6 +3168,8 @@ PureCloudPlatformClientV2/models/unanswered_phrase.py
 PureCloudPlatformClientV2/models/unanswered_phrase_group.py
 PureCloudPlatformClientV2/models/unanswered_phrase_group_patch_request_body.py
 PureCloudPlatformClientV2/models/unanswered_phrase_group_update_response.py
+PureCloudPlatformClientV2/models/unified_general_topic.py
+PureCloudPlatformClientV2/models/unified_general_topic_entity_listing.py
 PureCloudPlatformClientV2/models/unpublished_programs_entity_listing.py
 PureCloudPlatformClientV2/models/unread_metric.py
 PureCloudPlatformClientV2/models/unread_status.py
@@ -3730,6 +3746,7 @@ docs/AdhocRecordingTopicRecordingDataV2.md
 docs/AdhocRecordingTopicUserData.md
 docs/AdhocRecordingTopicWorkspaceData.md
 docs/Adjacents.md
+docs/AdjustableLiveSpeakerDetection.md
 docs/AdminTimeOffRequestPatch.md
 docs/AfterCallWork.md
 docs/AfterCallWorkUpdate.md
@@ -3795,9 +3812,11 @@ docs/AnalyticsUserDetailsQueryResponse.md
 docs/AnalyticsUserPresenceRecord.md
 docs/Annotation.md
 docs/AnswerOption.md
-docs/ApiUsageQuery.md
+docs/ApiUsageClientQuery.md
+docs/ApiUsageOrganizationQuery.md
 docs/ApiUsageQueryResult.md
 docs/ApiUsageRow.md
+docs/ApiUsageSimpleSearch.md
 docs/AppendToDncActionSettings.md
 docs/ApprovalNamespace.md
 docs/ArchitectApi.json
@@ -4767,6 +4786,8 @@ docs/DirectoryUserDevicesListing.md
 docs/DisallowedEntityLearningAssignmentItem.md
 docs/DisallowedEntityLearningAssignmentReference.md
 docs/DisconnectReason.md
+docs/Disposition.md
+docs/DispositionParameters.md
 docs/Division.md
 docs/DivisionReference.md
 docs/DivsPermittedEntityListing.md
@@ -4792,14 +4813,20 @@ docs/DocumentAuditEntityListing.md
 docs/DocumentBody.md
 docs/DocumentBodyBlock.md
 docs/DocumentBodyImage.md
+docs/DocumentBodyImageProperties.md
 docs/DocumentBodyList.md
 docs/DocumentBodyListBlock.md
+docs/DocumentBodyListBlockProperties.md
+docs/DocumentBodyListItemProperties.md
 docs/DocumentBodyParagraph.md
+docs/DocumentBodyParagraphProperties.md
 docs/DocumentBodyVideo.md
+docs/DocumentBodyVideoProperties.md
 docs/DocumentCategoryInput.md
 docs/DocumentContentBlock.md
 docs/DocumentEntityListing.md
 docs/DocumentFaq.md
+docs/DocumentListContentBlock.md
 docs/DocumentListing.md
 docs/DocumentQuery.md
 docs/DocumentQueryClause.md
@@ -4807,6 +4834,7 @@ docs/DocumentQueryInterval.md
 docs/DocumentQueryPredicate.md
 docs/DocumentReference.md
 docs/DocumentText.md
+docs/DocumentTextProperties.md
 docs/DocumentThumbnail.md
 docs/DocumentUpdate.md
 docs/DocumentUpload.md
@@ -5785,6 +5813,7 @@ docs/OpenMessagingToRecipient.md
 docs/OpenNormalizedMessage.md
 docs/Operation.md
 docs/OptInSettings.md
+docs/OrgAuthSettings.md
 docs/OrgOAuthClient.md
 docs/OrgUser.md
 docs/OrgWhitelistSettings.md
@@ -5856,6 +5885,7 @@ docs/Participant.md
 docs/ParticipantAttributes.md
 docs/ParticipantBasic.md
 docs/ParticipantMetrics.md
+docs/PasswordRequirements.md
 docs/PatchAction.md
 docs/PatchActionMap.md
 docs/PatchActionMapScheduleGroups.md
@@ -6849,6 +6879,8 @@ docs/UnansweredPhrase.md
 docs/UnansweredPhraseGroup.md
 docs/UnansweredPhraseGroupPatchRequestBody.md
 docs/UnansweredPhraseGroupUpdateResponse.md
+docs/UnifiedGeneralTopic.md
+docs/UnifiedGeneralTopicEntityListing.md
 docs/UnpublishedProgramsEntityListing.md
 docs/UnreadMetric.md
 docs/UnreadStatus.md
@@ -8086,6 +8118,7 @@ docs/get_oauth_client_usage_summary-example.txt
 docs/get_oauth_clients-example.txt
 docs/get_oauth_scope-example.txt
 docs/get_oauth_scopes-example.txt
+docs/get_organizations_authentication_settings-example.txt
 docs/get_organizations_embeddedintegration-example.txt
 docs/get_organizations_ipaddressauthentication-example.txt
 docs/get_organizations_limits_changerequest-example.txt
@@ -8345,6 +8378,7 @@ docs/get_speechandtextanalytics_topic-example.txt
 docs/get_speechandtextanalytics_topics-example.txt
 docs/get_speechandtextanalytics_topics_dialects-example.txt
 docs/get_speechandtextanalytics_topics_general-example.txt
+docs/get_speechandtextanalytics_topics_general_status-example.txt
 docs/get_speechandtextanalytics_topics_publishjob-example.txt
 docs/get_station-example.txt
 docs/get_stations-example.txt
@@ -8426,6 +8460,7 @@ docs/get_textbots_bots_search-example.txt
 docs/get_timezones-example.txt
 docs/get_tokens_me-example.txt
 docs/get_usage_query_execution_id_results-example.txt
+docs/get_usage_simplesearch_execution_id_results-example.txt
 docs/get_user-example.txt
 docs/get_user_adjacents-example.txt
 docs/get_user_callforwarding-example.txt
@@ -8648,6 +8683,7 @@ docs/patch_learning_assignment-example.txt
 docs/patch_learning_assignment_reschedule-example.txt
 docs/patch_location-example.txt
 docs/patch_messaging_supportedcontent_supported_content_id-example.txt
+docs/patch_organizations_authentication_settings-example.txt
 docs/patch_organizations_feature-example.txt
 docs/patch_outbound_dnclist_customexclusioncolumns-example.txt
 docs/patch_outbound_dnclist_emailaddresses-example.txt
@@ -9131,6 +9167,7 @@ docs/post_uploads_publicassets_images-example.txt
 docs/post_uploads_recordings-example.txt
 docs/post_uploads_workforcemanagement_historicaldata_csv-example.txt
 docs/post_usage_query-example.txt
+docs/post_usage_simplesearch-example.txt
 docs/post_user_externalid-example.txt
 docs/post_user_greetings-example.txt
 docs/post_user_invite-example.txt

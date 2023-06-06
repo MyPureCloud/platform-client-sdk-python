@@ -16770,7 +16770,7 @@
       }
     ],
     "return": "KnowledgeBaseListing",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.KnowledgeApi();\nbefore = 'before_example' # str | The cursor that points to the start of the set of entities that has been returned. (optional)\nafter = 'after_example' # str | The cursor that points to the end of the set of entities that has been returned. (optional)\nlimit = 'limit_example' # str | Number of entities to return. Maximum of 200. Deprecated in favour of pageSize (optional)\npage_size = 'page_size_example' # str | Number of entities to return. Maximum of 200. (optional)\nname = 'name_example' # str | Filter by Name. (optional)\ncore_language = 'core_language_example' # str | Filter by core language. (optional)\npublished = True # bool | Filter by published status. (optional)\nsort_by = 'sort_by_example' # str | Sort by. (optional)\nsort_order = 'sort_order_example' # str | Sort Order. (optional)\n\ntry:\n    # Get knowledge bases\n    api_response = api_instance.get_knowledge_knowledgebases(before=before, after=after, limit=limit, page_size=page_size, name=name, core_language=core_language, published=published, sort_by=sort_by, sort_order=sort_order)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling KnowledgeApi->get_knowledge_knowledgebases: %s\\n\" % e)"
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.KnowledgeApi();\nbefore = 'before_example' # str | The cursor that points to the start of the set of entities that has been returned. (optional)\nafter = 'after_example' # str | The cursor that points to the end of the set of entities that has been returned. (optional)\nlimit = 'limit_example' # str | Number of entities to return. Maximum of 100. Deprecated in favour of pageSize (optional)\npage_size = 'page_size_example' # str | Number of entities to return. Maximum of 100. (optional)\nname = 'name_example' # str | Filter by Name. (optional)\ncore_language = 'core_language_example' # str | Filter by core language. (optional)\npublished = True # bool | Filter by published status. (optional)\nsort_by = 'sort_by_example' # str | Sort by. (optional)\nsort_order = 'sort_order_example' # str | Sort Order. (optional)\n\ntry:\n    # Get knowledge bases\n    api_response = api_instance.get_knowledge_knowledgebases(before=before, after=after, limit=limit, page_size=page_size, name=name, core_language=core_language, published=published, sort_by=sort_by, sort_order=sort_order)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling KnowledgeApi->get_knowledge_knowledgebases: %s\\n\" % e)"
   },
   "patch_knowledge_guest_session_documents_search_search_id": {
     "operationId": "patch_knowledge_guest_session_documents_search_search_id",
@@ -19703,12 +19703,12 @@
       },
       {
         "name": "body",
-        "type": "ApiUsageQuery",
+        "type": "ApiUsageClientQuery",
         "required": "true"
       }
     ],
     "return": "UsageExecutionResult",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.UsageApi();\nclient_id = 'client_id_example' # str | Client ID\nbody = PureCloudPlatformClientV2.ApiUsageQuery() # ApiUsageQuery | Query\n\ntry:\n    # Query for OAuth client API usage\n    api_response = api_instance.post_oauth_client_usage_query(client_id, body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling UsageApi->post_oauth_client_usage_query: %s\\n\" % e)"
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.UsageApi();\nclient_id = 'client_id_example' # str | Client ID\nbody = PureCloudPlatformClientV2.ApiUsageClientQuery() # ApiUsageClientQuery | Query\n\ntry:\n    # Query for OAuth client API usage\n    api_response = api_instance.post_oauth_client_usage_query(client_id, body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling UsageApi->post_oauth_client_usage_query: %s\\n\" % e)"
   },
   "post_oauth_clients": {
     "operationId": "post_oauth_clients",
@@ -19742,6 +19742,13 @@
     ],
     "return": "OAuthClient",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.OAuthApi();\nclient_id = 'client_id_example' # str | Client ID\nbody = PureCloudPlatformClientV2.OAuthClientRequest() # OAuthClientRequest | Client\n\ntry:\n    # Update OAuth Client\n    api_response = api_instance.put_oauth_client(client_id, body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling OAuthApi->put_oauth_client: %s\\n\" % e)"
+  },
+  "get_organizations_authentication_settings": {
+    "operationId": "get_organizations_authentication_settings",
+    "functionName": "get_organizations_authentication_settings",
+    "signature": "get_organizations_authentication_settings()",
+    "return": "OrgAuthSettings",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.OrganizationApi();\n\ntry:\n    # Gets the organization's settings\n    api_response = api_instance.get_organizations_authentication_settings()\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling OrganizationApi->get_organizations_authentication_settings: %s\\n\" % e)"
   },
   "get_organizations_embeddedintegration": {
     "operationId": "get_organizations_embeddedintegration",
@@ -19871,7 +19878,21 @@
     "functionName": "get_organizations_whitelist",
     "signature": "get_organizations_whitelist()",
     "return": "OrgWhitelistSettings",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.OrganizationApi();\n\ntry:\n    # Use PUT /api/v2/organizations/embeddedintegration instead\n    api_response = api_instance.get_organizations_whitelist()\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling OrganizationApi->get_organizations_whitelist: %s\\n\" % e)"
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.OrganizationApi();\n\ntry:\n    # This route is deprecated, please use /api/v2/organizations/authentication/settings instead\n    api_response = api_instance.get_organizations_whitelist()\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling OrganizationApi->get_organizations_whitelist: %s\\n\" % e)"
+  },
+  "patch_organizations_authentication_settings": {
+    "operationId": "patch_organizations_authentication_settings",
+    "functionName": "patch_organizations_authentication_settings",
+    "signature": "patch_organizations_authentication_settings(body)",
+    "parameters": [
+      {
+        "name": "body",
+        "type": "OrgAuthSettings",
+        "required": "true"
+      }
+    ],
+    "return": "OrgAuthSettings",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.OrganizationApi();\nbody = PureCloudPlatformClientV2.OrgAuthSettings() # OrgAuthSettings | Org settings\n\ntry:\n    # Update the organization's settings\n    api_response = api_instance.patch_organizations_authentication_settings(body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling OrganizationApi->patch_organizations_authentication_settings: %s\\n\" % e)"
   },
   "patch_organizations_feature": {
     "operationId": "patch_organizations_feature",
@@ -19946,7 +19967,7 @@
       }
     ],
     "return": "OrgWhitelistSettings",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.OrganizationApi();\nbody = PureCloudPlatformClientV2.OrgWhitelistSettings() # OrgWhitelistSettings | Whitelist settings\n\ntry:\n    # Use PUT /api/v2/organizations/embeddedintegration instead\n    api_response = api_instance.put_organizations_whitelist(body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling OrganizationApi->put_organizations_whitelist: %s\\n\" % e)"
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.OrganizationApi();\nbody = PureCloudPlatformClientV2.OrgWhitelistSettings() # OrgWhitelistSettings | Whitelist settings\n\ntry:\n    # This route is deprecated, please use /api/v2/organizations/authentication/settings instead\n    api_response = api_instance.put_organizations_whitelist(body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling OrganizationApi->put_organizations_whitelist: %s\\n\" % e)"
   },
   "delete_orgauthorization_trustee": {
     "operationId": "delete_orgauthorization_trustee",
@@ -30878,6 +30899,20 @@
     "return": "GeneralTopicsEntityListing",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.SpeechTextAnalyticsApi();\ndialect = 'dialect_example' # str | The dialect of the general topics, dialect format is {language}-{country} where language follows ISO 639-1 standard and country follows ISO 3166-1 alpha 2 standard (optional)\n\ntry:\n    # Get the Speech & Text Analytics general topics for a given dialect\n    api_response = api_instance.get_speechandtextanalytics_topics_general(dialect=dialect)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling SpeechTextAnalyticsApi->get_speechandtextanalytics_topics_general: %s\\n\" % e)"
   },
+  "get_speechandtextanalytics_topics_general_status": {
+    "operationId": "get_speechandtextanalytics_topics_general_status",
+    "functionName": "get_speechandtextanalytics_topics_general_status",
+    "signature": "get_speechandtextanalytics_topics_general_status(dialect)",
+    "parameters": [
+      {
+        "name": "dialect",
+        "type": "str",
+        "required": "false"
+      }
+    ],
+    "return": "UnifiedGeneralTopicEntityListing",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.SpeechTextAnalyticsApi();\ndialect = 'dialect_example' # str | The dialect of the general topics, dialect format is {language}-{country} where language follows ISO 639-1 standard and country follows ISO 3166-1 alpha 2 standard (optional)\n\ntry:\n    # Get the list of general topics from the org and the system with their current status\n    api_response = api_instance.get_speechandtextanalytics_topics_general_status(dialect=dialect)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling SpeechTextAnalyticsApi->get_speechandtextanalytics_topics_general_status: %s\\n\" % e)"
+  },
   "get_speechandtextanalytics_topics_publishjob": {
     "operationId": "get_speechandtextanalytics_topics_publishjob",
     "functionName": "get_speechandtextanalytics_topics_publishjob",
@@ -33898,6 +33933,20 @@
     "return": "ApiUsageQueryResult",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.UsageApi();\nexecution_id = 'execution_id_example' # str | ID of the query execution\n\ntry:\n    # Get the results of a usage query\n    api_response = api_instance.get_usage_query_execution_id_results(execution_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling UsageApi->get_usage_query_execution_id_results: %s\\n\" % e)"
   },
+  "get_usage_simplesearch_execution_id_results": {
+    "operationId": "get_usage_simplesearch_execution_id_results",
+    "functionName": "get_usage_simplesearch_execution_id_results",
+    "signature": "get_usage_simplesearch_execution_id_results(execution_id)",
+    "parameters": [
+      {
+        "name": "execution_id",
+        "type": "str",
+        "required": "true"
+      }
+    ],
+    "return": "ApiUsageQueryResult",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.UsageApi();\nexecution_id = 'execution_id_example' # str | ID of the search execution\n\ntry:\n    # Get the results of a usage search\n    api_response = api_instance.get_usage_simplesearch_execution_id_results(execution_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling UsageApi->get_usage_simplesearch_execution_id_results: %s\\n\" % e)"
+  },
   "post_usage_query": {
     "operationId": "post_usage_query",
     "functionName": "post_usage_query",
@@ -33905,12 +33954,26 @@
     "parameters": [
       {
         "name": "body",
-        "type": "ApiUsageQuery",
+        "type": "ApiUsageOrganizationQuery",
         "required": "true"
       }
     ],
     "return": "UsageExecutionResult",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.UsageApi();\nbody = PureCloudPlatformClientV2.ApiUsageQuery() # ApiUsageQuery | Query\n\ntry:\n    # Query organization API Usage - \n    api_response = api_instance.post_usage_query(body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling UsageApi->post_usage_query: %s\\n\" % e)"
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.UsageApi();\nbody = PureCloudPlatformClientV2.ApiUsageOrganizationQuery() # ApiUsageOrganizationQuery | Query\n\ntry:\n    # Query organization API Usage - \n    api_response = api_instance.post_usage_query(body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling UsageApi->post_usage_query: %s\\n\" % e)"
+  },
+  "post_usage_simplesearch": {
+    "operationId": "post_usage_simplesearch",
+    "functionName": "post_usage_simplesearch",
+    "signature": "post_usage_simplesearch(body)",
+    "parameters": [
+      {
+        "name": "body",
+        "type": "ApiUsageSimpleSearch",
+        "required": "true"
+      }
+    ],
+    "return": "UsageExecutionResult",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.UsageApi();\nbody = PureCloudPlatformClientV2.ApiUsageSimpleSearch() # ApiUsageSimpleSearch | SimpleSearch\n\ntry:\n    # Search organization API Usage - \n    api_response = api_instance.post_usage_simplesearch(body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling UsageApi->post_usage_simplesearch: %s\\n\" % e)"
   },
   "delete_userrecording": {
     "operationId": "delete_userrecording",

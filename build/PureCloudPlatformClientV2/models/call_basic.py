@@ -36,6 +36,7 @@ if TYPE_CHECKING:
     from . import Address
     from . import AfterCallWork
     from . import DisconnectReason
+    from . import Disposition
     from . import ErrorInfo
     from . import FaxStatus
     from . import Segment
@@ -86,7 +87,8 @@ class CallBasic(object):
             'wrapup': 'Wrapup',
             'after_call_work': 'AfterCallWork',
             'after_call_work_required': 'bool',
-            'agent_assistant_id': 'str'
+            'agent_assistant_id': 'str',
+            'disposition': 'Disposition'
         }
 
         self.attribute_map = {
@@ -120,7 +122,8 @@ class CallBasic(object):
             'wrapup': 'wrapup',
             'after_call_work': 'afterCallWork',
             'after_call_work_required': 'afterCallWorkRequired',
-            'agent_assistant_id': 'agentAssistantId'
+            'agent_assistant_id': 'agentAssistantId',
+            'disposition': 'disposition'
         }
 
         self._state = None
@@ -154,6 +157,7 @@ class CallBasic(object):
         self._after_call_work = None
         self._after_call_work_required = None
         self._agent_assistant_id = None
+        self._disposition = None
 
     @property
     def state(self) -> str:
@@ -923,6 +927,30 @@ class CallBasic(object):
         
 
         self._agent_assistant_id = agent_assistant_id
+
+    @property
+    def disposition(self) -> 'Disposition':
+        """
+        Gets the disposition of this CallBasic.
+        Call resolution data for Dialer bulk make calls commands.
+
+        :return: The disposition of this CallBasic.
+        :rtype: Disposition
+        """
+        return self._disposition
+
+    @disposition.setter
+    def disposition(self, disposition: 'Disposition') -> None:
+        """
+        Sets the disposition of this CallBasic.
+        Call resolution data for Dialer bulk make calls commands.
+
+        :param disposition: The disposition of this CallBasic.
+        :type: Disposition
+        """
+        
+
+        self._disposition = disposition
 
     def to_dict(self):
         """

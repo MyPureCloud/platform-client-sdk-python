@@ -76,6 +76,7 @@ from .models.adhoc_recording_topic_recording_data_v2 import AdhocRecordingTopicR
 from .models.adhoc_recording_topic_user_data import AdhocRecordingTopicUserData
 from .models.adhoc_recording_topic_workspace_data import AdhocRecordingTopicWorkspaceData
 from .models.adjacents import Adjacents
+from .models.adjustable_live_speaker_detection import AdjustableLiveSpeakerDetection
 from .models.admin_time_off_request_patch import AdminTimeOffRequestPatch
 from .models.after_call_work import AfterCallWork
 from .models.after_call_work_update import AfterCallWorkUpdate
@@ -137,9 +138,11 @@ from .models.analytics_user_details_query_response import AnalyticsUserDetailsQu
 from .models.analytics_user_presence_record import AnalyticsUserPresenceRecord
 from .models.annotation import Annotation
 from .models.answer_option import AnswerOption
-from .models.api_usage_query import ApiUsageQuery
+from .models.api_usage_client_query import ApiUsageClientQuery
+from .models.api_usage_organization_query import ApiUsageOrganizationQuery
 from .models.api_usage_query_result import ApiUsageQueryResult
 from .models.api_usage_row import ApiUsageRow
+from .models.api_usage_simple_search import ApiUsageSimpleSearch
 from .models.append_to_dnc_action_settings import AppendToDncActionSettings
 from .models.approval_namespace import ApprovalNamespace
 from .models.architect_dependency_tracking_build_notification_client import ArchitectDependencyTrackingBuildNotificationClient
@@ -1089,6 +1092,8 @@ from .models.directory_user_devices_listing import DirectoryUserDevicesListing
 from .models.disallowed_entity_learning_assignment_item import DisallowedEntityLearningAssignmentItem
 from .models.disallowed_entity_learning_assignment_reference import DisallowedEntityLearningAssignmentReference
 from .models.disconnect_reason import DisconnectReason
+from .models.disposition import Disposition
+from .models.disposition_parameters import DispositionParameters
 from .models.division import Division
 from .models.division_reference import DivisionReference
 from .models.divs_permitted_entity_listing import DivsPermittedEntityListing
@@ -1114,14 +1119,20 @@ from .models.document_audit_entity_listing import DocumentAuditEntityListing
 from .models.document_body import DocumentBody
 from .models.document_body_block import DocumentBodyBlock
 from .models.document_body_image import DocumentBodyImage
+from .models.document_body_image_properties import DocumentBodyImageProperties
 from .models.document_body_list import DocumentBodyList
 from .models.document_body_list_block import DocumentBodyListBlock
+from .models.document_body_list_block_properties import DocumentBodyListBlockProperties
+from .models.document_body_list_item_properties import DocumentBodyListItemProperties
 from .models.document_body_paragraph import DocumentBodyParagraph
+from .models.document_body_paragraph_properties import DocumentBodyParagraphProperties
 from .models.document_body_video import DocumentBodyVideo
+from .models.document_body_video_properties import DocumentBodyVideoProperties
 from .models.document_category_input import DocumentCategoryInput
 from .models.document_content_block import DocumentContentBlock
 from .models.document_entity_listing import DocumentEntityListing
 from .models.document_faq import DocumentFaq
+from .models.document_list_content_block import DocumentListContentBlock
 from .models.document_listing import DocumentListing
 from .models.document_query import DocumentQuery
 from .models.document_query_clause import DocumentQueryClause
@@ -1129,6 +1140,7 @@ from .models.document_query_interval import DocumentQueryInterval
 from .models.document_query_predicate import DocumentQueryPredicate
 from .models.document_reference import DocumentReference
 from .models.document_text import DocumentText
+from .models.document_text_properties import DocumentTextProperties
 from .models.document_thumbnail import DocumentThumbnail
 from .models.document_update import DocumentUpdate
 from .models.document_upload import DocumentUpload
@@ -2057,6 +2069,7 @@ from .models.open_messaging_to_recipient import OpenMessagingToRecipient
 from .models.open_normalized_message import OpenNormalizedMessage
 from .models.operation import Operation
 from .models.opt_in_settings import OptInSettings
+from .models.org_auth_settings import OrgAuthSettings
 from .models.org_o_auth_client import OrgOAuthClient
 from .models.org_user import OrgUser
 from .models.org_whitelist_settings import OrgWhitelistSettings
@@ -2122,6 +2135,7 @@ from .models.participant import Participant
 from .models.participant_attributes import ParticipantAttributes
 from .models.participant_basic import ParticipantBasic
 from .models.participant_metrics import ParticipantMetrics
+from .models.password_requirements import PasswordRequirements
 from .models.patch_action import PatchAction
 from .models.patch_action_map import PatchActionMap
 from .models.patch_action_map_schedule_groups import PatchActionMapScheduleGroups
@@ -3081,6 +3095,8 @@ from .models.unanswered_phrase import UnansweredPhrase
 from .models.unanswered_phrase_group import UnansweredPhraseGroup
 from .models.unanswered_phrase_group_patch_request_body import UnansweredPhraseGroupPatchRequestBody
 from .models.unanswered_phrase_group_update_response import UnansweredPhraseGroupUpdateResponse
+from .models.unified_general_topic import UnifiedGeneralTopic
+from .models.unified_general_topic_entity_listing import UnifiedGeneralTopicEntityListing
 from .models.unpublished_programs_entity_listing import UnpublishedProgramsEntityListing
 from .models.unread_metric import UnreadMetric
 from .models.unread_status import UnreadStatus

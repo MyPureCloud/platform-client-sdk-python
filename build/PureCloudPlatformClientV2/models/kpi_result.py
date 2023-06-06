@@ -52,7 +52,8 @@ class KpiResult(object):
             'kpi_total_off': 'int',
             'interaction_count_on': 'int',
             'interaction_count_off': 'int',
-            'media_type': 'str'
+            'media_type': 'str',
+            'percentage_benefit': 'float'
         }
 
         self.attribute_map = {
@@ -60,7 +61,8 @@ class KpiResult(object):
             'kpi_total_off': 'kpiTotalOff',
             'interaction_count_on': 'interactionCountOn',
             'interaction_count_off': 'interactionCountOff',
-            'media_type': 'mediaType'
+            'media_type': 'mediaType',
+            'percentage_benefit': 'percentageBenefit'
         }
 
         self._kpi_total_on = None
@@ -68,6 +70,7 @@ class KpiResult(object):
         self._interaction_count_on = None
         self._interaction_count_off = None
         self._media_type = None
+        self._percentage_benefit = None
 
     @property
     def kpi_total_on(self) -> int:
@@ -193,6 +196,30 @@ class KpiResult(object):
             self._media_type = "outdated_sdk_version"
         else:
             self._media_type = media_type
+
+    @property
+    def percentage_benefit(self) -> float:
+        """
+        Gets the percentage_benefit of this KpiResult.
+        The percentage benefit for this media type for the duration of the comparison period
+
+        :return: The percentage_benefit of this KpiResult.
+        :rtype: float
+        """
+        return self._percentage_benefit
+
+    @percentage_benefit.setter
+    def percentage_benefit(self, percentage_benefit: float) -> None:
+        """
+        Sets the percentage_benefit of this KpiResult.
+        The percentage benefit for this media type for the duration of the comparison period
+
+        :param percentage_benefit: The percentage_benefit of this KpiResult.
+        :type: float
+        """
+        
+
+        self._percentage_benefit = percentage_benefit
 
     def to_dict(self):
         """

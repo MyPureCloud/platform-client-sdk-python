@@ -76,6 +76,7 @@ from .adhoc_recording_topic_recording_data_v2 import AdhocRecordingTopicRecordin
 from .adhoc_recording_topic_user_data import AdhocRecordingTopicUserData
 from .adhoc_recording_topic_workspace_data import AdhocRecordingTopicWorkspaceData
 from .adjacents import Adjacents
+from .adjustable_live_speaker_detection import AdjustableLiveSpeakerDetection
 from .admin_time_off_request_patch import AdminTimeOffRequestPatch
 from .after_call_work import AfterCallWork
 from .after_call_work_update import AfterCallWorkUpdate
@@ -137,9 +138,11 @@ from .analytics_user_details_query_response import AnalyticsUserDetailsQueryResp
 from .analytics_user_presence_record import AnalyticsUserPresenceRecord
 from .annotation import Annotation
 from .answer_option import AnswerOption
-from .api_usage_query import ApiUsageQuery
+from .api_usage_client_query import ApiUsageClientQuery
+from .api_usage_organization_query import ApiUsageOrganizationQuery
 from .api_usage_query_result import ApiUsageQueryResult
 from .api_usage_row import ApiUsageRow
+from .api_usage_simple_search import ApiUsageSimpleSearch
 from .append_to_dnc_action_settings import AppendToDncActionSettings
 from .approval_namespace import ApprovalNamespace
 from .architect_dependency_tracking_build_notification_client import ArchitectDependencyTrackingBuildNotificationClient
@@ -1089,6 +1092,8 @@ from .directory_user_devices_listing import DirectoryUserDevicesListing
 from .disallowed_entity_learning_assignment_item import DisallowedEntityLearningAssignmentItem
 from .disallowed_entity_learning_assignment_reference import DisallowedEntityLearningAssignmentReference
 from .disconnect_reason import DisconnectReason
+from .disposition import Disposition
+from .disposition_parameters import DispositionParameters
 from .division import Division
 from .division_reference import DivisionReference
 from .divs_permitted_entity_listing import DivsPermittedEntityListing
@@ -1114,14 +1119,20 @@ from .document_audit_entity_listing import DocumentAuditEntityListing
 from .document_body import DocumentBody
 from .document_body_block import DocumentBodyBlock
 from .document_body_image import DocumentBodyImage
+from .document_body_image_properties import DocumentBodyImageProperties
 from .document_body_list import DocumentBodyList
 from .document_body_list_block import DocumentBodyListBlock
+from .document_body_list_block_properties import DocumentBodyListBlockProperties
+from .document_body_list_item_properties import DocumentBodyListItemProperties
 from .document_body_paragraph import DocumentBodyParagraph
+from .document_body_paragraph_properties import DocumentBodyParagraphProperties
 from .document_body_video import DocumentBodyVideo
+from .document_body_video_properties import DocumentBodyVideoProperties
 from .document_category_input import DocumentCategoryInput
 from .document_content_block import DocumentContentBlock
 from .document_entity_listing import DocumentEntityListing
 from .document_faq import DocumentFaq
+from .document_list_content_block import DocumentListContentBlock
 from .document_listing import DocumentListing
 from .document_query import DocumentQuery
 from .document_query_clause import DocumentQueryClause
@@ -1129,6 +1140,7 @@ from .document_query_interval import DocumentQueryInterval
 from .document_query_predicate import DocumentQueryPredicate
 from .document_reference import DocumentReference
 from .document_text import DocumentText
+from .document_text_properties import DocumentTextProperties
 from .document_thumbnail import DocumentThumbnail
 from .document_update import DocumentUpdate
 from .document_upload import DocumentUpload
@@ -2057,6 +2069,7 @@ from .open_messaging_to_recipient import OpenMessagingToRecipient
 from .open_normalized_message import OpenNormalizedMessage
 from .operation import Operation
 from .opt_in_settings import OptInSettings
+from .org_auth_settings import OrgAuthSettings
 from .org_o_auth_client import OrgOAuthClient
 from .org_user import OrgUser
 from .org_whitelist_settings import OrgWhitelistSettings
@@ -2122,6 +2135,7 @@ from .participant import Participant
 from .participant_attributes import ParticipantAttributes
 from .participant_basic import ParticipantBasic
 from .participant_metrics import ParticipantMetrics
+from .password_requirements import PasswordRequirements
 from .patch_action import PatchAction
 from .patch_action_map import PatchActionMap
 from .patch_action_map_schedule_groups import PatchActionMapScheduleGroups
@@ -3081,6 +3095,8 @@ from .unanswered_phrase import UnansweredPhrase
 from .unanswered_phrase_group import UnansweredPhraseGroup
 from .unanswered_phrase_group_patch_request_body import UnansweredPhraseGroupPatchRequestBody
 from .unanswered_phrase_group_update_response import UnansweredPhraseGroupUpdateResponse
+from .unified_general_topic import UnifiedGeneralTopic
+from .unified_general_topic_entity_listing import UnifiedGeneralTopicEntityListing
 from .unpublished_programs_entity_listing import UnpublishedProgramsEntityListing
 from .unread_metric import UnreadMetric
 from .unread_status import UnreadStatus

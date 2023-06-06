@@ -31,6 +31,7 @@ from six import iteritems
 
 from ..configuration import Configuration
 from ..api_client import ApiClient
+from ..utils import deprecated
 
 from typing import List
 from typing import Dict
@@ -57,6 +58,7 @@ class LanguagesApi(object):
             if not config.api_client:
                 config.api_client = ApiClient()
             self.api_client = config.api_client
+    @deprecated("delete_language is deprecated")
     def delete_language(self, language_id: str, **kwargs) -> None:
         """
         Delete Language (Deprecated)
@@ -134,6 +136,7 @@ class LanguagesApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    @deprecated("get_language is deprecated")
     def get_language(self, language_id: str, **kwargs) -> 'Language':
         """
         Get Language (Deprecated)
@@ -211,6 +214,7 @@ class LanguagesApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    @deprecated("get_languages is deprecated")
     def get_languages(self, **kwargs) -> 'LanguageEntityListing':
         """
         Get the list of supported languages. (Deprecated)
@@ -294,6 +298,7 @@ class LanguagesApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_languages_translations(self, **kwargs) -> 'AvailableTranslations':
         """
         Get all available languages for translation
@@ -365,6 +370,7 @@ class LanguagesApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_languages_translations_builtin(self, language: str, **kwargs) -> Dict[str, object]:
         """
         Get the builtin translation for a language
@@ -442,6 +448,7 @@ class LanguagesApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_languages_translations_organization(self, language: str, **kwargs) -> Dict[str, object]:
         """
         Get effective translation for an organization by language
@@ -519,6 +526,7 @@ class LanguagesApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_languages_translations_user(self, user_id: str, **kwargs) -> Dict[str, object]:
         """
         Get effective language translation for a user
@@ -596,6 +604,7 @@ class LanguagesApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    @deprecated("post_languages is deprecated")
     def post_languages(self, body: 'Language', **kwargs) -> 'Language':
         """
         Create Language (Deprecated)

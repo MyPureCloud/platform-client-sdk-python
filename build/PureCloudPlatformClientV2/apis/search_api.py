@@ -31,6 +31,7 @@ from six import iteritems
 
 from ..configuration import Configuration
 from ..api_client import ApiClient
+from ..utils import deprecated
 
 from typing import List
 from typing import Dict
@@ -79,6 +80,7 @@ class SearchApi(object):
             if not config.api_client:
                 config.api_client = ApiClient()
             self.api_client = config.api_client
+    
     def get_documentation_gkn_search(self, q64: str, **kwargs) -> 'GKNDocumentationSearchResponse':
         """
         Search gkn documentation using the q64 value returned from a previous search
@@ -156,6 +158,7 @@ class SearchApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_documentation_search(self, q64: str, **kwargs) -> 'DocumentationSearchResponse':
         """
         Search documentation using the q64 value returned from a previous search
@@ -233,6 +236,7 @@ class SearchApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_groups_search(self, q64: str, **kwargs) -> 'GroupsSearchResponse':
         """
         Search groups using the q64 value returned from a previous search
@@ -313,6 +317,7 @@ class SearchApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_locations_search(self, q64: str, **kwargs) -> 'LocationsSearchResponse':
         """
         Search locations using the q64 value returned from a previous search
@@ -393,6 +398,7 @@ class SearchApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_search(self, q64: str, **kwargs) -> 'JsonNodeSearchResponse':
         """
         Search using the q64 value returned from a previous search.
@@ -476,6 +482,7 @@ class SearchApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_search_suggest(self, q64: str, **kwargs) -> 'JsonNodeSearchResponse':
         """
         Suggest resources using the q64 value returned from a previous suggest query.
@@ -559,6 +566,7 @@ class SearchApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_users_search(self, q64: str, **kwargs) -> 'UsersSearchResponse':
         """
         Search users using the q64 value returned from a previous search
@@ -642,6 +650,7 @@ class SearchApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def get_voicemail_search(self, q64: str, **kwargs) -> 'VoicemailsSearchResponse':
         """
         Search voicemails using the q64 value returned from a previous search
@@ -722,6 +731,7 @@ class SearchApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_analytics_conversations_transcripts_query(self, body: 'TranscriptConversationDetailSearchRequest', **kwargs) -> 'AnalyticsConversationWithoutAttributesMultiGetResponse':
         """
         Search resources.
@@ -799,6 +809,7 @@ class SearchApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_conversations_participants_attributes_search(self, body: 'ConversationParticipantSearchRequest', **kwargs) -> 'JsonCursorSearchResponse':
         """
         Search conversations
@@ -876,6 +887,7 @@ class SearchApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_documentation_gkn_search(self, body: 'GKNDocumentationSearchRequest', **kwargs) -> 'GKNDocumentationSearchResponse':
         """
         Search gkn documentation
@@ -953,6 +965,7 @@ class SearchApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_documentation_search(self, body: 'DocumentationSearchRequest', **kwargs) -> 'DocumentationSearchResponse':
         """
         Search documentation
@@ -1030,6 +1043,7 @@ class SearchApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_groups_search(self, body: 'GroupSearchRequest', **kwargs) -> 'GroupsSearchResponse':
         """
         Search groups
@@ -1107,6 +1121,7 @@ class SearchApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    @deprecated("post_knowledge_knowledgebase_search is deprecated")
     def post_knowledge_knowledgebase_search(self, knowledge_base_id: str, **kwargs) -> 'KnowledgeSearchResponse':
         """
         Search Documents
@@ -1187,6 +1202,7 @@ class SearchApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_locations_search(self, body: 'LocationSearchRequest', **kwargs) -> 'LocationsSearchResponse':
         """
         Search locations
@@ -1264,6 +1280,7 @@ class SearchApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_search(self, body: 'SearchRequest', **kwargs) -> 'JsonNodeSearchResponse':
         """
         Search resources.
@@ -1344,6 +1361,7 @@ class SearchApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_search_suggest(self, body: 'SuggestSearchRequest', **kwargs) -> 'JsonNodeSearchResponse':
         """
         Suggest resources.
@@ -1424,6 +1442,7 @@ class SearchApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_speechandtextanalytics_transcripts_search(self, body: 'TranscriptSearchRequest', **kwargs) -> 'JsonSearchResponse':
         """
         Search resources.
@@ -1501,6 +1520,7 @@ class SearchApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_teams_search(self, body: 'TeamSearchRequest', **kwargs) -> 'TeamsSearchResponse':
         """
         Search resources.
@@ -1578,6 +1598,7 @@ class SearchApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_users_search(self, body: 'UserSearchRequest', **kwargs) -> 'UsersSearchResponse':
         """
         Search users
@@ -1655,6 +1676,7 @@ class SearchApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_users_search_teams_assign(self, body: 'UserSearchRequest', **kwargs) -> 'UsersSearchResponse':
         """
         Search users assigned to teams
@@ -1732,6 +1754,7 @@ class SearchApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+    
     def post_voicemail_search(self, body: 'VoicemailSearchRequest', **kwargs) -> 'VoicemailsSearchResponse':
         """
         Search voicemails
