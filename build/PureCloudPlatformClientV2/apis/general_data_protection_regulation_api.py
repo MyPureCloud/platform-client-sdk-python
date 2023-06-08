@@ -58,7 +58,7 @@ class GeneralDataProtectionRegulationApi(object):
             if not config.api_client:
                 config.api_client = ApiClient()
             self.api_client = config.api_client
-    
+
     def get_gdpr_request(self, request_id: str, **kwargs) -> 'GDPRRequest':
         """
         Get an existing GDPR request
@@ -136,7 +136,7 @@ class GeneralDataProtectionRegulationApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_gdpr_requests(self, **kwargs) -> 'GDPRRequestEntityListing':
         """
         Get all GDPR requests
@@ -214,7 +214,7 @@ class GeneralDataProtectionRegulationApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_gdpr_subjects(self, search_type: str, search_value: str, **kwargs) -> 'GDPRSubjectEntityListing':
         """
         Get GDPR subjects
@@ -298,7 +298,7 @@ class GeneralDataProtectionRegulationApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def post_gdpr_requests(self, body: 'GDPRRequest', **kwargs) -> 'GDPRRequest':
         """
         Submit a new GDPR request

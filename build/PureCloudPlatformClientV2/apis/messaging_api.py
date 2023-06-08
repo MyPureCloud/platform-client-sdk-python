@@ -57,6 +57,7 @@ class MessagingApi(object):
             if not config.api_client:
                 config.api_client = ApiClient()
             self.api_client = config.api_client
+
     @deprecated("delete_messaging_supportedcontent_supported_content_id is deprecated")
     def delete_messaging_supportedcontent_supported_content_id(self, supported_content_id: str, **kwargs) -> None:
         """
@@ -135,6 +136,7 @@ class MessagingApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+
     @deprecated("get_messaging_supportedcontent is deprecated")
     def get_messaging_supportedcontent(self, **kwargs) -> 'SupportedContentListing':
         """
@@ -213,6 +215,7 @@ class MessagingApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+
     @deprecated("get_messaging_supportedcontent_supported_content_id is deprecated")
     def get_messaging_supportedcontent_supported_content_id(self, supported_content_id: str, **kwargs) -> 'SupportedContent':
         """
@@ -291,6 +294,7 @@ class MessagingApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+
     @deprecated("patch_messaging_supportedcontent_supported_content_id is deprecated")
     def patch_messaging_supportedcontent_supported_content_id(self, supported_content_id: str, body: 'SupportedContent', **kwargs) -> 'SupportedContent':
         """
@@ -375,6 +379,7 @@ class MessagingApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+
     @deprecated("post_messaging_supportedcontent is deprecated")
     def post_messaging_supportedcontent(self, body: 'SupportedContent', **kwargs) -> 'SupportedContent':
         """

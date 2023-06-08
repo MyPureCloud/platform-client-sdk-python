@@ -13,6 +13,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**delete_quality_form**](QualityApi.html#delete_quality_form) | Delete an evaluation form.|
 |[**delete_quality_forms_evaluation**](QualityApi.html#delete_quality_forms_evaluation) | Delete an evaluation form.|
 |[**delete_quality_forms_survey**](QualityApi.html#delete_quality_forms_survey) | Delete a survey form.|
+|[**get_analytics_evaluations_aggregates_job**](QualityApi.html#get_analytics_evaluations_aggregates_job) | Get status for async query for evaluation aggregates|
+|[**get_analytics_evaluations_aggregates_job_results**](QualityApi.html#get_analytics_evaluations_aggregates_job_results) | Fetch a page of results for an async aggregates query|
+|[**get_analytics_surveys_aggregates_job**](QualityApi.html#get_analytics_surveys_aggregates_job) | Get status for async query for survey aggregates|
+|[**get_analytics_surveys_aggregates_job_results**](QualityApi.html#get_analytics_surveys_aggregates_job_results) | Fetch a page of results for an async aggregates query|
 |[**get_quality_agents_activity**](QualityApi.html#get_quality_agents_activity) | Gets a list of Agent Activities|
 |[**get_quality_calibration**](QualityApi.html#get_quality_calibration) | Get a calibration by id.  Requires either calibrator id or conversation id|
 |[**get_quality_calibrations**](QualityApi.html#get_quality_calibrations) | Get the list of calibrations|
@@ -43,7 +47,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_quality_survey**](QualityApi.html#get_quality_survey) | Get a survey for a conversation|
 |[**get_quality_surveys_scorable**](QualityApi.html#get_quality_surveys_scorable) | Get a survey as an end-customer, for the purposes of scoring it.|
 |[**patch_quality_forms_survey**](QualityApi.html#patch_quality_forms_survey) | Disable a particular version of a survey form and invalidates any invitations that have already been sent to customers using this version of the form.|
+|[**post_analytics_evaluations_aggregates_jobs**](QualityApi.html#post_analytics_evaluations_aggregates_jobs) | Query for evaluation aggregates asynchronously|
 |[**post_analytics_evaluations_aggregates_query**](QualityApi.html#post_analytics_evaluations_aggregates_query) | Query for evaluation aggregates|
+|[**post_analytics_surveys_aggregates_jobs**](QualityApi.html#post_analytics_surveys_aggregates_jobs) | Query for survey aggregates asynchronously|
 |[**post_analytics_surveys_aggregates_query**](QualityApi.html#post_analytics_surveys_aggregates_query) | Query for survey aggregates|
 |[**post_quality_calibrations**](QualityApi.html#post_quality_calibrations) | Create a calibration|
 |[**post_quality_conversation_evaluations**](QualityApi.html#post_quality_conversation_evaluations) | Create an evaluation|
@@ -322,6 +328,214 @@ except ApiException as e:
 ### Return type
 
 void (empty response body)
+
+<a name="get_analytics_evaluations_aggregates_job"></a>
+
+## [**AsyncQueryStatus**](AsyncQueryStatus.html) get_analytics_evaluations_aggregates_job(job_id)
+
+
+
+Get status for async query for evaluation aggregates
+
+
+
+Wraps GET /api/v2/analytics/evaluations/aggregates/jobs/{jobId} 
+
+Requires ANY permissions: 
+
+* analytics:evaluationAggregate:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.QualityApi()
+job_id = 'job_id_example' # str | jobId
+
+try:
+    # Get status for async query for evaluation aggregates
+    api_response = api_instance.get_analytics_evaluations_aggregates_job(job_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling QualityApi->get_analytics_evaluations_aggregates_job: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **job_id** | **str**| jobId |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**AsyncQueryStatus**](AsyncQueryStatus.html)
+
+<a name="get_analytics_evaluations_aggregates_job_results"></a>
+
+## [**EvaluationAsyncAggregateQueryResponse**](EvaluationAsyncAggregateQueryResponse.html) get_analytics_evaluations_aggregates_job_results(job_id, cursor=cursor)
+
+
+
+Fetch a page of results for an async aggregates query
+
+
+
+Wraps GET /api/v2/analytics/evaluations/aggregates/jobs/{jobId}/results 
+
+Requires ANY permissions: 
+
+* analytics:evaluationAggregate:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.QualityApi()
+job_id = 'job_id_example' # str | jobId
+cursor = 'cursor_example' # str | Cursor token to retrieve next page (optional)
+
+try:
+    # Fetch a page of results for an async aggregates query
+    api_response = api_instance.get_analytics_evaluations_aggregates_job_results(job_id, cursor=cursor)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling QualityApi->get_analytics_evaluations_aggregates_job_results: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **job_id** | **str**| jobId |  |
+| **cursor** | **str**| Cursor token to retrieve next page | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**EvaluationAsyncAggregateQueryResponse**](EvaluationAsyncAggregateQueryResponse.html)
+
+<a name="get_analytics_surveys_aggregates_job"></a>
+
+## [**AsyncQueryStatus**](AsyncQueryStatus.html) get_analytics_surveys_aggregates_job(job_id)
+
+
+
+Get status for async query for survey aggregates
+
+
+
+Wraps GET /api/v2/analytics/surveys/aggregates/jobs/{jobId} 
+
+Requires ANY permissions: 
+
+* analytics:surveyAggregate:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.QualityApi()
+job_id = 'job_id_example' # str | jobId
+
+try:
+    # Get status for async query for survey aggregates
+    api_response = api_instance.get_analytics_surveys_aggregates_job(job_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling QualityApi->get_analytics_surveys_aggregates_job: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **job_id** | **str**| jobId |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**AsyncQueryStatus**](AsyncQueryStatus.html)
+
+<a name="get_analytics_surveys_aggregates_job_results"></a>
+
+## [**SurveyAsyncAggregateQueryResponse**](SurveyAsyncAggregateQueryResponse.html) get_analytics_surveys_aggregates_job_results(job_id, cursor=cursor)
+
+
+
+Fetch a page of results for an async aggregates query
+
+
+
+Wraps GET /api/v2/analytics/surveys/aggregates/jobs/{jobId}/results 
+
+Requires ANY permissions: 
+
+* analytics:surveyAggregate:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.QualityApi()
+job_id = 'job_id_example' # str | jobId
+cursor = 'cursor_example' # str | Cursor token to retrieve next page (optional)
+
+try:
+    # Fetch a page of results for an async aggregates query
+    api_response = api_instance.get_analytics_surveys_aggregates_job_results(job_id, cursor=cursor)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling QualityApi->get_analytics_surveys_aggregates_job_results: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **job_id** | **str**| jobId |  |
+| **cursor** | **str**| Cursor token to retrieve next page | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**SurveyAsyncAggregateQueryResponse**](SurveyAsyncAggregateQueryResponse.html)
 
 <a name="get_quality_agents_activity"></a>
 
@@ -2043,6 +2257,57 @@ except ApiException as e:
 
 [**SurveyForm**](SurveyForm.html)
 
+<a name="post_analytics_evaluations_aggregates_jobs"></a>
+
+## [**AsyncQueryResponse**](AsyncQueryResponse.html) post_analytics_evaluations_aggregates_jobs(body)
+
+
+
+Query for evaluation aggregates asynchronously
+
+
+
+Wraps POST /api/v2/analytics/evaluations/aggregates/jobs 
+
+Requires ANY permissions: 
+
+* analytics:evaluationAggregate:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.QualityApi()
+body = PureCloudPlatformClientV2.EvaluationAsyncAggregationQuery() # EvaluationAsyncAggregationQuery | query
+
+try:
+    # Query for evaluation aggregates asynchronously
+    api_response = api_instance.post_analytics_evaluations_aggregates_jobs(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling QualityApi->post_analytics_evaluations_aggregates_jobs: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**EvaluationAsyncAggregationQuery**](EvaluationAsyncAggregationQuery.html)| query |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**AsyncQueryResponse**](AsyncQueryResponse.html)
+
 <a name="post_analytics_evaluations_aggregates_query"></a>
 
 ## [**EvaluationAggregateQueryResponse**](EvaluationAggregateQueryResponse.html) post_analytics_evaluations_aggregates_query(body)
@@ -2093,6 +2358,57 @@ except ApiException as e:
 ### Return type
 
 [**EvaluationAggregateQueryResponse**](EvaluationAggregateQueryResponse.html)
+
+<a name="post_analytics_surveys_aggregates_jobs"></a>
+
+## [**AsyncQueryResponse**](AsyncQueryResponse.html) post_analytics_surveys_aggregates_jobs(body)
+
+
+
+Query for survey aggregates asynchronously
+
+
+
+Wraps POST /api/v2/analytics/surveys/aggregates/jobs 
+
+Requires ANY permissions: 
+
+* analytics:surveyAggregate:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.QualityApi()
+body = PureCloudPlatformClientV2.SurveyAsyncAggregationQuery() # SurveyAsyncAggregationQuery | query
+
+try:
+    # Query for survey aggregates asynchronously
+    api_response = api_instance.post_analytics_surveys_aggregates_jobs(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling QualityApi->post_analytics_surveys_aggregates_jobs: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**SurveyAsyncAggregationQuery**](SurveyAsyncAggregationQuery.html)| query |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**AsyncQueryResponse**](AsyncQueryResponse.html)
 
 <a name="post_analytics_surveys_aggregates_query"></a>
 

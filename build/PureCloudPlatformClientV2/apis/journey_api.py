@@ -46,12 +46,21 @@ from ..models import ActionTarget
 from ..models import ActionTargetListing
 from ..models import ActionTemplate
 from ..models import ActionTemplateListing
+from ..models import AsyncQueryResponse
+from ..models import AsyncQueryStatus
 from ..models import ErrorBody
 from ..models import EstimateJobAsyncResponse
+from ..models import EventListing
 from ..models import JourneyAggregateQueryResponse
 from ..models import JourneyAggregationQuery
+from ..models import JourneyAsyncAggregateQueryResponse
+from ..models import JourneyAsyncAggregationQuery
 from ..models import JourneySegment
 from ..models import Outcome
+from ..models import OutcomeAttributionAsyncResponse
+from ..models import OutcomeAttributionJobStateResponse
+from ..models import OutcomeAttributionListing
+from ..models import OutcomeAttributionResponseListing
 from ..models import OutcomeListing
 from ..models import OutcomePredictor
 from ..models import OutcomePredictorListing
@@ -62,8 +71,10 @@ from ..models import PatchActionTarget
 from ..models import PatchActionTemplate
 from ..models import PatchOutcome
 from ..models import PatchSegment
+from ..models import SegmentAssignmentListing
 from ..models import SegmentListing
 from ..models import Session
+from ..models import SessionListing
 
 class JourneyApi(object):
     """
@@ -80,7 +91,7 @@ class JourneyApi(object):
             if not config.api_client:
                 config.api_client = ApiClient()
             self.api_client = config.api_client
-    
+
     def delete_journey_actionmap(self, action_map_id: str, **kwargs) -> None:
         """
         Delete single action map.
@@ -158,7 +169,7 @@ class JourneyApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def delete_journey_actiontemplate(self, action_template_id: str, **kwargs) -> None:
         """
         Delete a single action template.
@@ -239,7 +250,7 @@ class JourneyApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def delete_journey_outcome(self, outcome_id: str, **kwargs) -> None:
         """
         Delete an outcome.
@@ -317,7 +328,7 @@ class JourneyApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def delete_journey_outcomes_predictor(self, predictor_id: str, **kwargs) -> None:
         """
         Delete an outcome predictor.
@@ -395,7 +406,7 @@ class JourneyApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def delete_journey_segment(self, segment_id: str, **kwargs) -> None:
         """
         Delete a segment.
@@ -473,7 +484,168 @@ class JourneyApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
+	# Preview Endpoint
+    def get_analytics_journeys_aggregates_job(self, job_id: str, **kwargs) -> 'AsyncQueryStatus':
+        """
+        Get status for async query for journey aggregates
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_analytics_journeys_aggregates_job(job_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str job_id: jobId (required)
+        :return: AsyncQueryStatus
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['job_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_analytics_journeys_aggregates_job" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'job_id' is set
+        if ('job_id' not in params) or (params['job_id'] is None):
+            raise ValueError("Missing the required parameter `job_id` when calling `get_analytics_journeys_aggregates_job`")
+
+
+        resource_path = '/api/v2/analytics/journeys/aggregates/jobs/{jobId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'job_id' in params:
+            path_params['jobId'] = params['job_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='AsyncQueryStatus',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+	# Preview Endpoint
+    def get_analytics_journeys_aggregates_job_results(self, job_id: str, **kwargs) -> 'JourneyAsyncAggregateQueryResponse':
+        """
+        Fetch a page of results for an async aggregates query
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_analytics_journeys_aggregates_job_results(job_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str job_id: jobId (required)
+        :param str cursor: Cursor token to retrieve next page
+        :return: JourneyAsyncAggregateQueryResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['job_id', 'cursor']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_analytics_journeys_aggregates_job_results" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'job_id' is set
+        if ('job_id' not in params) or (params['job_id'] is None):
+            raise ValueError("Missing the required parameter `job_id` when calling `get_analytics_journeys_aggregates_job_results`")
+
+
+        resource_path = '/api/v2/analytics/journeys/aggregates/jobs/{jobId}/results'.replace('{format}', 'json')
+        path_params = {}
+        if 'job_id' in params:
+            path_params['jobId'] = params['job_id']
+
+        query_params = {}
+        if 'cursor' in params:
+            query_params['cursor'] = params['cursor']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='JourneyAsyncAggregateQueryResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def get_journey_actionmap(self, action_map_id: str, **kwargs) -> 'ActionMap':
         """
         Retrieve a single action map.
@@ -551,7 +723,7 @@ class JourneyApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_journey_actionmaps(self, **kwargs) -> 'ActionMapListing':
         """
         Retrieve all action maps.
@@ -647,7 +819,7 @@ class JourneyApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_journey_actionmaps_estimates_job(self, job_id: str, **kwargs) -> str:
         """
         Get status of job.
@@ -725,7 +897,7 @@ class JourneyApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_journey_actionmaps_estimates_job_results(self, job_id: str, **kwargs) -> 'ActionMapEstimateResult':
         """
         Get estimates from completed job.
@@ -803,7 +975,7 @@ class JourneyApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_journey_actiontarget(self, action_target_id: str, **kwargs) -> 'ActionTarget':
         """
         Retrieve a single action target.
@@ -881,7 +1053,7 @@ class JourneyApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_journey_actiontargets(self, **kwargs) -> 'ActionTargetListing':
         """
         Retrieve all action targets.
@@ -959,7 +1131,7 @@ class JourneyApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_journey_actiontemplate(self, action_template_id: str, **kwargs) -> 'ActionTemplate':
         """
         Retrieve a single action template.
@@ -1037,7 +1209,7 @@ class JourneyApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_journey_actiontemplates(self, **kwargs) -> 'ActionTemplateListing':
         """
         Retrieve all action templates.
@@ -1130,7 +1302,98 @@ class JourneyApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
+	# Preview Endpoint
+    def get_journey_customer_customer_id_sessions(self, customer_id_type: str, customer_id: str, **kwargs) -> 'SessionListing':
+        """
+        Retrieve all sessions for a given customer.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_journey_customer_customer_id_sessions(customer_id_type, customer_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str customer_id_type: Type of ID used to identify customer (e.g. email, cookie, and phone). (required)
+        :param str customer_id: Primary identifier of the customer in the source of the session. (required)
+        :param str page_size: Number of entities to return. Maximum of 200.
+        :param str after: The cursor that points to the end of the set of entities that has been returned.
+        :return: SessionListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['customer_id_type', 'customer_id', 'page_size', 'after']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_journey_customer_customer_id_sessions" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'customer_id_type' is set
+        if ('customer_id_type' not in params) or (params['customer_id_type'] is None):
+            raise ValueError("Missing the required parameter `customer_id_type` when calling `get_journey_customer_customer_id_sessions`")
+        # verify the required parameter 'customer_id' is set
+        if ('customer_id' not in params) or (params['customer_id'] is None):
+            raise ValueError("Missing the required parameter `customer_id` when calling `get_journey_customer_customer_id_sessions`")
+
+
+        resource_path = '/api/v2/journey/customers/{customerIdType}/{customerId}/sessions'.replace('{format}', 'json')
+        path_params = {}
+        if 'customer_id_type' in params:
+            path_params['customerIdType'] = params['customer_id_type']
+        if 'customer_id' in params:
+            path_params['customerId'] = params['customer_id']
+
+        query_params = {}
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+        if 'after' in params:
+            query_params['after'] = params['after']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='SessionListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def get_journey_outcome(self, outcome_id: str, **kwargs) -> 'Outcome':
         """
         Retrieve a single outcome.
@@ -1208,7 +1471,7 @@ class JourneyApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_journey_outcomes(self, **kwargs) -> 'OutcomeListing':
         """
         Retrieve all outcomes.
@@ -1298,7 +1561,165 @@ class JourneyApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
+	# Preview Endpoint
+    def get_journey_outcomes_attributions_job(self, job_id: str, **kwargs) -> 'OutcomeAttributionJobStateResponse':
+        """
+        Get job status.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_journey_outcomes_attributions_job(job_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str job_id: ID of the job. (required)
+        :return: OutcomeAttributionJobStateResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['job_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_journey_outcomes_attributions_job" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'job_id' is set
+        if ('job_id' not in params) or (params['job_id'] is None):
+            raise ValueError("Missing the required parameter `job_id` when calling `get_journey_outcomes_attributions_job`")
+
+
+        resource_path = '/api/v2/journey/outcomes/attributions/jobs/{jobId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'job_id' in params:
+            path_params['jobId'] = params['job_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='OutcomeAttributionJobStateResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+	# Preview Endpoint
+    def get_journey_outcomes_attributions_job_results(self, job_id: str, **kwargs) -> 'OutcomeAttributionResponseListing':
+        """
+        Get outcome attribution entities from completed job.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_journey_outcomes_attributions_job_results(job_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str job_id: ID of the job. (required)
+        :return: OutcomeAttributionResponseListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['job_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_journey_outcomes_attributions_job_results" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'job_id' is set
+        if ('job_id' not in params) or (params['job_id'] is None):
+            raise ValueError("Missing the required parameter `job_id` when calling `get_journey_outcomes_attributions_job_results`")
+
+
+        resource_path = '/api/v2/journey/outcomes/attributions/jobs/{jobId}/results'.replace('{format}', 'json')
+        path_params = {}
+        if 'job_id' in params:
+            path_params['jobId'] = params['job_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='OutcomeAttributionResponseListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def get_journey_outcomes_predictor(self, predictor_id: str, **kwargs) -> 'OutcomePredictor':
         """
         Retrieve a single outcome predictor.
@@ -1376,7 +1797,7 @@ class JourneyApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_journey_outcomes_predictors(self, **kwargs) -> 'OutcomePredictorListing':
         """
         Retrieve all outcome predictors.
@@ -1448,7 +1869,7 @@ class JourneyApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_journey_segment(self, segment_id: str, **kwargs) -> 'JourneySegment':
         """
         Retrieve a single segment.
@@ -1526,7 +1947,7 @@ class JourneyApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_journey_segments(self, **kwargs) -> 'SegmentListing':
         """
         Retrieve all segments.
@@ -1619,7 +2040,7 @@ class JourneyApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_journey_session(self, session_id: str, **kwargs) -> 'Session':
         """
         Retrieve a single session.
@@ -1697,7 +2118,92 @@ class JourneyApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
+	# Preview Endpoint
+    def get_journey_session_events(self, session_id: str, **kwargs) -> 'EventListing':
+        """
+        Retrieve all events for a given session.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_journey_session_events(session_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str session_id: System-generated UUID that represents the session the event is a part of. (required)
+        :param str page_size: Number of entities to return. Maximum of 200.
+        :param str after: The cursor that points to the end of the set of entities that has been returned.
+        :return: EventListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['session_id', 'page_size', 'after']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_journey_session_events" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'session_id' is set
+        if ('session_id' not in params) or (params['session_id'] is None):
+            raise ValueError("Missing the required parameter `session_id` when calling `get_journey_session_events`")
+
+
+        resource_path = '/api/v2/journey/sessions/{sessionId}/events'.replace('{format}', 'json')
+        path_params = {}
+        if 'session_id' in params:
+            path_params['sessionId'] = params['session_id']
+
+        query_params = {}
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+        if 'after' in params:
+            query_params['after'] = params['after']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='EventListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def get_journey_session_outcomescores(self, session_id: str, **kwargs) -> 'OutcomeScoresResult':
         """
         Retrieve latest outcome score associated with a session for all outcomes.
@@ -1775,7 +2281,98 @@ class JourneyApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
+	# Preview Endpoint
+    def get_journey_session_segments(self, session_id: str, **kwargs) -> 'SegmentAssignmentListing':
+        """
+        Retrieve segment assignments by session ID.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_journey_session_segments(session_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str session_id: ID of the session to query for segment assignments. (required)
+        :param str page_size: Number of entities to return. Maximum of 200.
+        :param str after: The cursor that points to the end of the set of entities that has been returned.
+        :param str segment_scope: Scope to filter on. If not specified, both session-scoped and customer-scoped assignments are returned.
+        :param str assignment_state: Assignment state to filter on. If not specified, both assigned and unassigned assignments are returned.
+        :return: SegmentAssignmentListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['session_id', 'page_size', 'after', 'segment_scope', 'assignment_state']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_journey_session_segments" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'session_id' is set
+        if ('session_id' not in params) or (params['session_id'] is None):
+            raise ValueError("Missing the required parameter `session_id` when calling `get_journey_session_segments`")
+
+
+        resource_path = '/api/v2/journey/sessions/{sessionId}/segments'.replace('{format}', 'json')
+        path_params = {}
+        if 'session_id' in params:
+            path_params['sessionId'] = params['session_id']
+
+        query_params = {}
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+        if 'after' in params:
+            query_params['after'] = params['after']
+        if 'segment_scope' in params:
+            query_params['segmentScope'] = params['segment_scope']
+        if 'assignment_state' in params:
+            query_params['assignmentState'] = params['assignment_state']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='SegmentAssignmentListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def patch_journey_actionmap(self, action_map_id: str, **kwargs) -> 'ActionMap':
         """
         Update single action map.
@@ -1856,7 +2453,7 @@ class JourneyApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def patch_journey_actiontarget(self, action_target_id: str, **kwargs) -> 'ActionTarget':
         """
         Update a single action target.
@@ -1937,7 +2534,7 @@ class JourneyApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def patch_journey_actiontemplate(self, action_template_id: str, **kwargs) -> 'ActionTemplate':
         """
         Update a single action template.
@@ -2018,7 +2615,7 @@ class JourneyApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def patch_journey_outcome(self, outcome_id: str, **kwargs) -> 'Outcome':
         """
         Update an outcome.
@@ -2099,7 +2696,7 @@ class JourneyApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def patch_journey_segment(self, segment_id: str, **kwargs) -> 'JourneySegment':
         """
         Update a segment.
@@ -2180,7 +2777,86 @@ class JourneyApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
+	# Preview Endpoint
+    def post_analytics_journeys_aggregates_jobs(self, body: 'JourneyAsyncAggregationQuery', **kwargs) -> 'AsyncQueryResponse':
+        """
+        Query for journey aggregates asynchronously
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_analytics_journeys_aggregates_jobs(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param JourneyAsyncAggregationQuery body: query (required)
+        :return: AsyncQueryResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_analytics_journeys_aggregates_jobs" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_analytics_journeys_aggregates_jobs`")
+
+
+        resource_path = '/api/v2/analytics/journeys/aggregates/jobs'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='AsyncQueryResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def post_analytics_journeys_aggregates_query(self, body: 'JourneyAggregationQuery', **kwargs) -> 'JourneyAggregateQueryResponse':
         """
         Query for journey aggregates
@@ -2258,7 +2934,7 @@ class JourneyApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def post_journey_actionmaps(self, **kwargs) -> 'ActionMap':
         """
         Create an action map.
@@ -2333,7 +3009,7 @@ class JourneyApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def post_journey_actionmaps_estimates_jobs(self, body: 'ActionMapEstimateRequest', **kwargs) -> 'EstimateJobAsyncResponse':
         """
         Query for estimates
@@ -2411,7 +3087,7 @@ class JourneyApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def post_journey_actiontemplates(self, **kwargs) -> 'ActionTemplate':
         """
         Create a single action template.
@@ -2486,7 +3162,7 @@ class JourneyApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def post_journey_outcomes(self, **kwargs) -> 'Outcome':
         """
         Create an outcome.
@@ -2561,7 +3237,83 @@ class JourneyApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
+	# Preview Endpoint
+    def post_journey_outcomes_attributions_jobs(self, **kwargs) -> 'OutcomeAttributionAsyncResponse':
+        """
+        Create Outcome Attributions
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_journey_outcomes_attributions_jobs(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param OutcomeAttributionListing body: outcome attribution request
+        :return: OutcomeAttributionAsyncResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_journey_outcomes_attributions_jobs" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/journey/outcomes/attributions/jobs'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='OutcomeAttributionAsyncResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def post_journey_outcomes_predictors(self, **kwargs) -> 'OutcomePredictor':
         """
         Create an outcome predictor.
@@ -2636,7 +3388,7 @@ class JourneyApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def post_journey_segments(self, **kwargs) -> 'JourneySegment':
         """
         Create a segment.

@@ -14,6 +14,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_team_members**](TeamsApi.html#get_team_members) | Get team membership|
 |[**get_teams**](TeamsApi.html#get_teams) | Get Team listing|
 |[**patch_team**](TeamsApi.html#patch_team) | Update team|
+|[**post_analytics_teams_activity_query**](TeamsApi.html#post_analytics_teams_activity_query) | Query for team activity observations|
 |[**post_team_members**](TeamsApi.html#post_team_members) | Add team members|
 |[**post_teams**](TeamsApi.html#post_teams) | Create a team|
 |[**post_teams_search**](TeamsApi.html#post_teams_search) | Search resources.|
@@ -342,6 +343,61 @@ except ApiException as e:
 ### Return type
 
 [**Team**](Team.html)
+
+<a name="post_analytics_teams_activity_query"></a>
+
+## [**TeamActivityResponse**](TeamActivityResponse.html) post_analytics_teams_activity_query(body, page_size=page_size, page_number=page_number)
+
+
+
+Query for team activity observations
+
+
+
+Wraps POST /api/v2/analytics/teams/activity/query 
+
+Requires ANY permissions: 
+
+* analytics:teamObservation:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TeamsApi()
+body = PureCloudPlatformClientV2.TeamActivityQuery() # TeamActivityQuery | query
+page_size = 56 # int | The desired page size (optional)
+page_number = 56 # int | The desired page number (optional)
+
+try:
+    # Query for team activity observations
+    api_response = api_instance.post_analytics_teams_activity_query(body, page_size=page_size, page_number=page_number)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling TeamsApi->post_analytics_teams_activity_query: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**TeamActivityQuery**](TeamActivityQuery.html)| query |  |
+| **page_size** | **int**| The desired page size | [optional]  |
+| **page_number** | **int**| The desired page number | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**TeamActivityResponse**](TeamActivityResponse.html)
 
 <a name="post_team_members"></a>
 

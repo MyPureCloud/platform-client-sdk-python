@@ -68,7 +68,7 @@ class IdentityProviderApi(object):
             if not config.api_client:
                 config.api_client = ApiClient()
             self.api_client = config.api_client
-    
+
     def delete_identityproviders_adfs(self, **kwargs) -> object:
         """
         Delete ADFS Identity Provider
@@ -140,7 +140,7 @@ class IdentityProviderApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def delete_identityproviders_cic(self, **kwargs) -> object:
         """
         Delete Customer Interaction Center (CIC) Identity Provider
@@ -212,7 +212,7 @@ class IdentityProviderApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def delete_identityproviders_generic(self, **kwargs) -> object:
         """
         Delete Generic SAML Identity Provider
@@ -284,7 +284,7 @@ class IdentityProviderApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def delete_identityproviders_gsuite(self, **kwargs) -> object:
         """
         Delete G Suite Identity Provider
@@ -356,7 +356,7 @@ class IdentityProviderApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def delete_identityproviders_identitynow(self, **kwargs) -> object:
         """
         Delete IdentityNow Provider
@@ -428,7 +428,7 @@ class IdentityProviderApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def delete_identityproviders_okta(self, **kwargs) -> object:
         """
         Delete Okta Identity Provider
@@ -500,7 +500,7 @@ class IdentityProviderApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def delete_identityproviders_onelogin(self, **kwargs) -> object:
         """
         Delete OneLogin Identity Provider
@@ -572,7 +572,7 @@ class IdentityProviderApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def delete_identityproviders_ping(self, **kwargs) -> object:
         """
         Delete Ping Identity Provider
@@ -644,7 +644,7 @@ class IdentityProviderApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def delete_identityproviders_purecloud(self, **kwargs) -> object:
         """
         Delete PureCloud Identity Provider
@@ -716,7 +716,7 @@ class IdentityProviderApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def delete_identityproviders_pureengage(self, **kwargs) -> object:
         """
         Delete PureEngage Identity Provider
@@ -788,7 +788,7 @@ class IdentityProviderApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def delete_identityproviders_salesforce(self, **kwargs) -> object:
         """
         Delete Salesforce Identity Provider
@@ -860,7 +860,7 @@ class IdentityProviderApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_identityproviders(self, **kwargs) -> 'OAuthProviderEntityListing':
         """
         The list of identity providers
@@ -932,7 +932,7 @@ class IdentityProviderApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_identityproviders_adfs(self, **kwargs) -> 'ADFS':
         """
         Get ADFS Identity Provider
@@ -1004,7 +1004,7 @@ class IdentityProviderApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_identityproviders_cic(self, **kwargs) -> 'CustomerInteractionCenter':
         """
         Get Customer Interaction Center (CIC) Identity Provider
@@ -1076,7 +1076,7 @@ class IdentityProviderApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_identityproviders_generic(self, **kwargs) -> 'GenericSAML':
         """
         Get Generic SAML Identity Provider
@@ -1148,7 +1148,7 @@ class IdentityProviderApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_identityproviders_gsuite(self, **kwargs) -> 'GSuite':
         """
         Get G Suite Identity Provider
@@ -1220,7 +1220,7 @@ class IdentityProviderApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_identityproviders_identitynow(self, **kwargs) -> 'IdentityNow':
         """
         Get IdentityNow Provider
@@ -1292,7 +1292,7 @@ class IdentityProviderApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_identityproviders_okta(self, **kwargs) -> 'Okta':
         """
         Get Okta Identity Provider
@@ -1364,7 +1364,7 @@ class IdentityProviderApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_identityproviders_onelogin(self, **kwargs) -> 'OneLogin':
         """
         Get OneLogin Identity Provider
@@ -1436,7 +1436,7 @@ class IdentityProviderApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_identityproviders_ping(self, **kwargs) -> 'PingIdentity':
         """
         Get Ping Identity Provider
@@ -1508,7 +1508,7 @@ class IdentityProviderApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_identityproviders_purecloud(self, **kwargs) -> 'PureCloud':
         """
         Get PureCloud Identity Provider
@@ -1580,7 +1580,7 @@ class IdentityProviderApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_identityproviders_pureengage(self, **kwargs) -> 'PureEngage':
         """
         Get PureEngage Identity Provider
@@ -1652,7 +1652,7 @@ class IdentityProviderApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_identityproviders_salesforce(self, **kwargs) -> 'Salesforce':
         """
         Get Salesforce Identity Provider
@@ -1724,7 +1724,7 @@ class IdentityProviderApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def put_identityproviders_adfs(self, body: 'ADFS', **kwargs) -> 'OAuthProvider':
         """
         Update/Create ADFS Identity Provider
@@ -1802,7 +1802,7 @@ class IdentityProviderApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def put_identityproviders_cic(self, body: 'CustomerInteractionCenter', **kwargs) -> 'OAuthProvider':
         """
         Update/Create Customer Interaction Center (CIC) Identity Provider
@@ -1880,7 +1880,7 @@ class IdentityProviderApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def put_identityproviders_generic(self, body: 'GenericSAML', **kwargs) -> 'OAuthProvider':
         """
         Update/Create Generic SAML Identity Provider
@@ -1958,7 +1958,7 @@ class IdentityProviderApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def put_identityproviders_gsuite(self, body: 'GSuite', **kwargs) -> 'OAuthProvider':
         """
         Update/Create G Suite Identity Provider
@@ -2036,7 +2036,7 @@ class IdentityProviderApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def put_identityproviders_identitynow(self, body: 'IdentityNow', **kwargs) -> 'IdentityNow':
         """
         Update/Create IdentityNow Provider
@@ -2114,7 +2114,7 @@ class IdentityProviderApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def put_identityproviders_okta(self, body: 'Okta', **kwargs) -> 'OAuthProvider':
         """
         Update/Create Okta Identity Provider
@@ -2192,7 +2192,7 @@ class IdentityProviderApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def put_identityproviders_onelogin(self, body: 'OneLogin', **kwargs) -> 'OAuthProvider':
         """
         Update/Create OneLogin Identity Provider
@@ -2270,7 +2270,7 @@ class IdentityProviderApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def put_identityproviders_ping(self, body: 'PingIdentity', **kwargs) -> 'OAuthProvider':
         """
         Update/Create Ping Identity Provider
@@ -2348,7 +2348,7 @@ class IdentityProviderApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def put_identityproviders_purecloud(self, body: 'PureCloud', **kwargs) -> 'OAuthProvider':
         """
         Update/Create PureCloud Identity Provider
@@ -2426,7 +2426,7 @@ class IdentityProviderApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def put_identityproviders_pureengage(self, body: 'PureEngage', **kwargs) -> 'OAuthProvider':
         """
         Update/Create PureEngage Identity Provider
@@ -2504,7 +2504,7 @@ class IdentityProviderApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def put_identityproviders_salesforce(self, body: 'Salesforce', **kwargs) -> 'OAuthProvider':
         """
         Update/Create Salesforce Identity Provider

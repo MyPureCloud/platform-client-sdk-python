@@ -52,6 +52,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_telephony_providers_edges_extension**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_extension) | Get an extension by ID.|
 |[**get_telephony_providers_edges_extensionpool**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_extensionpool) | Get an extension pool by ID|
 |[**get_telephony_providers_edges_extensionpools**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_extensionpools) | Get a listing of extension pools|
+|[**get_telephony_providers_edges_extensionpools_divisionviews**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_extensionpools_divisionviews) | Get a pageable list of basic extension pool objects filterable by query parameters.|
 |[**get_telephony_providers_edges_extensions**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_extensions) | Get a listing of extensions|
 |[**get_telephony_providers_edges_line**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_line) | Get a Line by ID|
 |[**get_telephony_providers_edges_linebasesetting**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_linebasesetting) | Get a line base settings object by ID|
@@ -2435,6 +2436,71 @@ except ApiException as e:
 ### Return type
 
 [**ExtensionPoolEntityListing**](ExtensionPoolEntityListing.html)
+
+<a name="get_telephony_providers_edges_extensionpools_divisionviews"></a>
+
+## [**ExtensionPoolDivisionViewEntityListing**](ExtensionPoolDivisionViewEntityListing.html) get_telephony_providers_edges_extensionpools_divisionviews(page_number=page_number, page_size=page_size, sort_by=sort_by, sort_order=sort_order, id=id, name=name, division_id=division_id)
+
+
+
+Get a pageable list of basic extension pool objects filterable by query parameters.
+
+This returns extension pools consisting of name and division. If one or more IDs are specified, the search will fetch flow outcomes that match the given ID(s) and not use any additional supplied query parameters in the search.
+
+
+
+Wraps GET /api/v2/telephony/providers/edges/extensionpools/divisionviews 
+
+Requires ALL permissions: 
+
+* telephony:extensionPool:search
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+page_number = 1 # int | Page number (optional) (default to 1)
+page_size = 25 # int | Page size (optional) (default to 25)
+sort_by = ''name'' # str | Sort by (optional) (default to 'name')
+sort_order = ''ASC'' # str | Sort order (optional) (default to 'ASC')
+id = ['id_example'] # list[str] | ID of the Extension Pools to filter by. (optional)
+name = 'name_example' # str | Name of the Extension Pools to filter by. (optional)
+division_id = ['division_id_example'] # list[str] | List of divisionIds on which to filter. (optional)
+
+try:
+    # Get a pageable list of basic extension pool objects filterable by query parameters.
+    api_response = api_instance.get_telephony_providers_edges_extensionpools_divisionviews(page_number=page_number, page_size=page_size, sort_by=sort_by, sort_order=sort_order, id=id, name=name, division_id=division_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_extensionpools_divisionviews: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **sort_by** | **str**| Sort by | [optional] [default to &#39;name&#39;] |
+| **sort_order** | **str**| Sort order | [optional] [default to &#39;ASC&#39;] |
+| **id** | [**list[str]**](str.html)| ID of the Extension Pools to filter by. | [optional]  |
+| **name** | **str**| Name of the Extension Pools to filter by. | [optional]  |
+| **division_id** | [**list[str]**](str.html)| List of divisionIds on which to filter. | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**ExtensionPoolDivisionViewEntityListing**](ExtensionPoolDivisionViewEntityListing.html)
 
 <a name="get_telephony_providers_edges_extensions"></a>
 

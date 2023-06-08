@@ -67,6 +67,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_flows_datatables_divisionviews**](ArchitectApi.html#get_flows_datatables_divisionviews) | Retrieve a list of datatables for the org|
 |[**get_flows_divisionviews**](ArchitectApi.html#get_flows_divisionviews) | Get a pageable list of basic flow information objects filterable by query parameters.|
 |[**get_flows_execution**](ArchitectApi.html#get_flows_execution) | Get a flow execution&#39;s details. Flow execution details are available for several days after the flow is started.|
+|[**get_flows_instance**](ArchitectApi.html#get_flows_instance) | Start a process (job) to prepare a download of a singular flow execution data instance by Id|
+|[**get_flows_instances_job**](ArchitectApi.html#get_flows_instances_job) | Get the status and/or results of an asynchronous flow execution data retrieval job|
+|[**get_flows_instances_querycapabilities**](ArchitectApi.html#get_flows_instances_querycapabilities) | Retrieve a list of capabilities that the org can use to query for execution data|
 |[**get_flows_job**](ArchitectApi.html#get_flows_job) | Fetch Architect Job Status|
 |[**get_flows_milestone**](ArchitectApi.html#get_flows_milestone) | Get a flow milestone|
 |[**get_flows_milestones**](ArchitectApi.html#get_flows_milestones) | Get a pageable list of flow milestones, filtered by query parameters|
@@ -98,6 +101,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_flows_datatable_rows**](ArchitectApi.html#post_flows_datatable_rows) | Create a new row entry for the datatable.|
 |[**post_flows_datatables**](ArchitectApi.html#post_flows_datatables) | Create a new datatable with the specified json-schema definition|
 |[**post_flows_executions**](ArchitectApi.html#post_flows_executions) | Launch an instance of a flow definition, for flow types that support it such as the &#39;workflow&#39; type.|
+|[**post_flows_instances_jobs**](ArchitectApi.html#post_flows_instances_jobs) | Start a process (job) that will prepare a list of execution data IDs for download.|
+|[**post_flows_instances_query**](ArchitectApi.html#post_flows_instances_query) | Query the database of existing flow histories to look for particular flow criteria|
 |[**post_flows_jobs**](ArchitectApi.html#post_flows_jobs) | Register Architect Job. Returns a URL where a file, such as an Architect flow YAML file, can be PUT which will then initiate the job.|
 |[**post_flows_milestones**](ArchitectApi.html#post_flows_milestones) | Create a flow milestone|
 |[**post_flows_outcomes**](ArchitectApi.html#post_flows_outcomes) | Create a flow outcome|
@@ -3477,6 +3482,165 @@ except ApiException as e:
 
 [**FlowRuntimeExecution**](FlowRuntimeExecution.html)
 
+<a name="get_flows_instance"></a>
+
+## [**GetFlowExecutionDataJobResult**](GetFlowExecutionDataJobResult.html) get_flows_instance(instance_id, expand=expand)
+
+
+
+Start a process (job) to prepare a download of a singular flow execution data instance by Id
+
+Returns a JobResult object that contains an ID that can be used to check status and/or download links when the process (job) is complete.
+
+
+
+Wraps GET /api/v2/flows/instances/{instanceId} 
+
+Requires ANY permissions: 
+
+* architect:flowInstance:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ArchitectApi()
+instance_id = 'instance_id_example' # str | Instance ID
+expand = 'expand_example' # str | Expand various details. (optional)
+
+try:
+    # Start a process (job) to prepare a download of a singular flow execution data instance by Id
+    api_response = api_instance.get_flows_instance(instance_id, expand=expand)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ArchitectApi->get_flows_instance: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **instance_id** | **str**| Instance ID |  |
+| **expand** | **str**| Expand various details. | [optional] <br />**Values**: bots, data |
+{: class="table table-striped"}
+
+### Return type
+
+[**GetFlowExecutionDataJobResult**](GetFlowExecutionDataJobResult.html)
+
+<a name="get_flows_instances_job"></a>
+
+## [**GetFlowExecutionDataJobResult**](GetFlowExecutionDataJobResult.html) get_flows_instances_job(job_id)
+
+
+
+Get the status and/or results of an asynchronous flow execution data retrieval job
+
+
+
+Wraps GET /api/v2/flows/instances/jobs/{jobId} 
+
+Requires ANY permissions: 
+
+* architect:flowInstance:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ArchitectApi()
+job_id = 'job_id_example' # str | The asynchronous job ID
+
+try:
+    # Get the status and/or results of an asynchronous flow execution data retrieval job
+    api_response = api_instance.get_flows_instances_job(job_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ArchitectApi->get_flows_instances_job: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **job_id** | **str**| The asynchronous job ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**GetFlowExecutionDataJobResult**](GetFlowExecutionDataJobResult.html)
+
+<a name="get_flows_instances_querycapabilities"></a>
+
+## [**FlowsQueryCriteriaResponse**](FlowsQueryCriteriaResponse.html) get_flows_instances_querycapabilities(expand=expand)
+
+
+
+Retrieve a list of capabilities that the org can use to query for execution data
+
+Returns the queryable parameters that can be used to build a query for execution data.
+
+
+
+Wraps GET /api/v2/flows/instances/querycapabilities 
+
+Requires ANY permissions: 
+
+* architect:flowInstance:search
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ArchitectApi()
+expand = 'expand_example' # str | Expand various query types. (optional)
+
+try:
+    # Retrieve a list of capabilities that the org can use to query for execution data
+    api_response = api_instance.get_flows_instances_querycapabilities(expand=expand)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ArchitectApi->get_flows_instances_querycapabilities: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **expand** | **str**| Expand various query types. | [optional] <br />**Values**: flow, action |
+{: class="table table-striped"}
+
+### Return type
+
+[**FlowsQueryCriteriaResponse**](FlowsQueryCriteriaResponse.html)
+
 <a name="get_flows_job"></a>
 
 ## [**ArchitectJobStateResponse**](ArchitectJobStateResponse.html) get_flows_job(job_id, expand=expand)
@@ -5165,6 +5329,116 @@ except ApiException as e:
 ### Return type
 
 [**FlowExecutionLaunchResponse**](FlowExecutionLaunchResponse.html)
+
+<a name="post_flows_instances_jobs"></a>
+
+## [**GetFlowExecutionDataJobResult**](GetFlowExecutionDataJobResult.html) post_flows_instances_jobs(body, expand=expand)
+
+
+
+Start a process (job) that will prepare a list of execution data IDs for download.
+
+Returns a JobResult object that contains an ID that can be used to check status and/or download links when the process (job) is complete.
+
+
+
+Wraps POST /api/v2/flows/instances/jobs 
+
+Requires ANY permissions: 
+
+* architect:flowInstance:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ArchitectApi()
+body = PureCloudPlatformClientV2.ExecutionDataRequest() # ExecutionDataRequest | Requested Flow Ids
+expand = 'expand_example' # str | Expand various query types. (optional)
+
+try:
+    # Start a process (job) that will prepare a list of execution data IDs for download.
+    api_response = api_instance.post_flows_instances_jobs(body, expand=expand)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ArchitectApi->post_flows_instances_jobs: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**ExecutionDataRequest**](ExecutionDataRequest.html)| Requested Flow Ids |  |
+| **expand** | **str**| Expand various query types. | [optional] <br />**Values**: bots, data |
+{: class="table table-striped"}
+
+### Return type
+
+[**GetFlowExecutionDataJobResult**](GetFlowExecutionDataJobResult.html)
+
+<a name="post_flows_instances_query"></a>
+
+## [**FlowResultEntityListing**](FlowResultEntityListing.html) post_flows_instances_query(body, index_only=index_only)
+
+
+
+Query the database of existing flow histories to look for particular flow criteria
+
+Returns a list of matching flow histories up to 200 max.
+
+
+
+Wraps POST /api/v2/flows/instances/query 
+
+Requires ANY permissions: 
+
+* architect:flowInstance:search
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ArchitectApi()
+body = PureCloudPlatformClientV2.CriteriaQuery() # CriteriaQuery | query
+index_only = True # bool | indexes only (optional)
+
+try:
+    # Query the database of existing flow histories to look for particular flow criteria
+    api_response = api_instance.post_flows_instances_query(body, index_only=index_only)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ArchitectApi->post_flows_instances_query: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**CriteriaQuery**](CriteriaQuery.html)| query |  |
+| **index_only** | **bool**| indexes only | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**FlowResultEntityListing**](FlowResultEntityListing.html)
 
 <a name="post_flows_jobs"></a>
 

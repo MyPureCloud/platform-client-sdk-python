@@ -42,6 +42,7 @@ from ..models import AnalyticsConversationWithoutAttributesMultiGetResponse
 from ..models import ConversationParticipantSearchRequest
 from ..models import DocumentationSearchRequest
 from ..models import DocumentationSearchResponse
+from ..models import DocumentationV2SearchRequest
 from ..models import ErrorBody
 from ..models import GKNDocumentationSearchRequest
 from ..models import GKNDocumentationSearchResponse
@@ -80,7 +81,7 @@ class SearchApi(object):
             if not config.api_client:
                 config.api_client = ApiClient()
             self.api_client = config.api_client
-    
+
     def get_documentation_gkn_search(self, q64: str, **kwargs) -> 'GKNDocumentationSearchResponse':
         """
         Search gkn documentation using the q64 value returned from a previous search
@@ -158,7 +159,7 @@ class SearchApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_documentation_search(self, q64: str, **kwargs) -> 'DocumentationSearchResponse':
         """
         Search documentation using the q64 value returned from a previous search
@@ -236,7 +237,7 @@ class SearchApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_groups_search(self, q64: str, **kwargs) -> 'GroupsSearchResponse':
         """
         Search groups using the q64 value returned from a previous search
@@ -317,7 +318,7 @@ class SearchApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_locations_search(self, q64: str, **kwargs) -> 'LocationsSearchResponse':
         """
         Search locations using the q64 value returned from a previous search
@@ -398,7 +399,7 @@ class SearchApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_search(self, q64: str, **kwargs) -> 'JsonNodeSearchResponse':
         """
         Search using the q64 value returned from a previous search.
@@ -482,7 +483,7 @@ class SearchApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_search_suggest(self, q64: str, **kwargs) -> 'JsonNodeSearchResponse':
         """
         Suggest resources using the q64 value returned from a previous suggest query.
@@ -566,7 +567,7 @@ class SearchApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_users_search(self, q64: str, **kwargs) -> 'UsersSearchResponse':
         """
         Search users using the q64 value returned from a previous search
@@ -650,7 +651,7 @@ class SearchApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_voicemail_search(self, q64: str, **kwargs) -> 'VoicemailsSearchResponse':
         """
         Search voicemails using the q64 value returned from a previous search
@@ -731,7 +732,7 @@ class SearchApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def post_analytics_conversations_transcripts_query(self, body: 'TranscriptConversationDetailSearchRequest', **kwargs) -> 'AnalyticsConversationWithoutAttributesMultiGetResponse':
         """
         Search resources.
@@ -809,7 +810,7 @@ class SearchApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def post_conversations_participants_attributes_search(self, body: 'ConversationParticipantSearchRequest', **kwargs) -> 'JsonCursorSearchResponse':
         """
         Search conversations
@@ -887,7 +888,86 @@ class SearchApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
+	# Preview Endpoint
+    def post_documentation_all_search(self, body: 'DocumentationV2SearchRequest', **kwargs) -> 'JsonNodeSearchResponse':
+        """
+        Search all documents
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_documentation_all_search(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param DocumentationV2SearchRequest body: Search request options (required)
+        :return: JsonNodeSearchResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_documentation_all_search" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_documentation_all_search`")
+
+
+        resource_path = '/api/v2/documentation/all/search'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = []
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='JsonNodeSearchResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def post_documentation_gkn_search(self, body: 'GKNDocumentationSearchRequest', **kwargs) -> 'GKNDocumentationSearchResponse':
         """
         Search gkn documentation
@@ -965,7 +1045,7 @@ class SearchApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def post_documentation_search(self, body: 'DocumentationSearchRequest', **kwargs) -> 'DocumentationSearchResponse':
         """
         Search documentation
@@ -1043,7 +1123,7 @@ class SearchApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def post_groups_search(self, body: 'GroupSearchRequest', **kwargs) -> 'GroupsSearchResponse':
         """
         Search groups
@@ -1121,6 +1201,7 @@ class SearchApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+
     @deprecated("post_knowledge_knowledgebase_search is deprecated")
     def post_knowledge_knowledgebase_search(self, knowledge_base_id: str, **kwargs) -> 'KnowledgeSearchResponse':
         """
@@ -1202,7 +1283,7 @@ class SearchApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def post_locations_search(self, body: 'LocationSearchRequest', **kwargs) -> 'LocationsSearchResponse':
         """
         Search locations
@@ -1280,7 +1361,7 @@ class SearchApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def post_search(self, body: 'SearchRequest', **kwargs) -> 'JsonNodeSearchResponse':
         """
         Search resources.
@@ -1361,7 +1442,7 @@ class SearchApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def post_search_suggest(self, body: 'SuggestSearchRequest', **kwargs) -> 'JsonNodeSearchResponse':
         """
         Suggest resources.
@@ -1442,7 +1523,7 @@ class SearchApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def post_speechandtextanalytics_transcripts_search(self, body: 'TranscriptSearchRequest', **kwargs) -> 'JsonSearchResponse':
         """
         Search resources.
@@ -1520,7 +1601,7 @@ class SearchApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def post_teams_search(self, body: 'TeamSearchRequest', **kwargs) -> 'TeamsSearchResponse':
         """
         Search resources.
@@ -1598,7 +1679,7 @@ class SearchApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def post_users_search(self, body: 'UserSearchRequest', **kwargs) -> 'UsersSearchResponse':
         """
         Search users
@@ -1676,7 +1757,165 @@ class SearchApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
+	# Preview Endpoint
+    def post_users_search_conversation_target(self, body: 'UserSearchRequest', **kwargs) -> 'UsersSearchResponse':
+        """
+        Search users as conversation targets
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_users_search_conversation_target(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param UserSearchRequest body: Search request options (required)
+        :return: UsersSearchResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_users_search_conversation_target" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_users_search_conversation_target`")
+
+
+        resource_path = '/api/v2/users/search/conversation/target'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='UsersSearchResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+	# Preview Endpoint
+    def post_users_search_queuemembers_manage(self, body: 'UserSearchRequest', **kwargs) -> 'UsersSearchResponse':
+        """
+        Search manage queue member
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_users_search_queuemembers_manage(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param UserSearchRequest body: Search request options (required)
+        :return: UsersSearchResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_users_search_queuemembers_manage" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_users_search_queuemembers_manage`")
+
+
+        resource_path = '/api/v2/users/search/queuemembers/manage'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='UsersSearchResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def post_users_search_teams_assign(self, body: 'UserSearchRequest', **kwargs) -> 'UsersSearchResponse':
         """
         Search users assigned to teams
@@ -1754,7 +1993,7 @@ class SearchApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def post_voicemail_search(self, body: 'VoicemailSearchRequest', **kwargs) -> 'VoicemailsSearchResponse':
         """
         Search voicemails

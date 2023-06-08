@@ -67,7 +67,7 @@ class SCIMApi(object):
             if not config.api_client:
                 config.api_client = ApiClient()
             self.api_client = config.api_client
-    
+
     def delete_scim_user(self, user_id: str, **kwargs) -> object:
         """
         Delete a user
@@ -148,7 +148,7 @@ class SCIMApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def delete_scim_v2_user(self, user_id: str, **kwargs) -> object:
         """
         Delete a user
@@ -229,7 +229,7 @@ class SCIMApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_scim_group(self, group_id: str, **kwargs) -> 'ScimV2Group':
         """
         Get a group
@@ -316,7 +316,7 @@ class SCIMApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_scim_groups(self, **kwargs) -> 'ScimGroupListResponse':
         """
         Get a list of groups
@@ -403,7 +403,7 @@ class SCIMApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_scim_resourcetype(self, resource_type: str, **kwargs) -> 'ScimConfigResourceType':
         """
         Get a resource type
@@ -481,7 +481,7 @@ class SCIMApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_scim_resourcetypes(self, **kwargs) -> 'ScimConfigResourceTypesListResponse':
         """
         Get a list of resource types
@@ -553,7 +553,7 @@ class SCIMApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_scim_schema(self, schema_id: str, **kwargs) -> 'ScimV2SchemaDefinition':
         """
         Get a SCIM schema
@@ -631,7 +631,7 @@ class SCIMApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_scim_schemas(self, **kwargs) -> 'ScimV2SchemaListResponse':
         """
         Get a list of SCIM schemas
@@ -706,7 +706,7 @@ class SCIMApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_scim_serviceproviderconfig(self, **kwargs) -> 'ScimServiceProviderConfig':
         """
         Get a service provider's configuration
@@ -781,7 +781,7 @@ class SCIMApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_scim_user(self, user_id: str, **kwargs) -> 'ScimV2User':
         """
         Get a user
@@ -868,7 +868,7 @@ class SCIMApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_scim_users(self, **kwargs) -> 'ScimUserListResponse':
         """
         Get a list of users
@@ -955,7 +955,7 @@ class SCIMApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_scim_v2_group(self, group_id: str, **kwargs) -> 'ScimV2Group':
         """
         Get a group
@@ -1042,7 +1042,7 @@ class SCIMApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_scim_v2_groups(self, filter: str, **kwargs) -> 'ScimGroupListResponse':
         """
         Get a list of groups
@@ -1132,7 +1132,7 @@ class SCIMApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_scim_v2_resourcetype(self, resource_type: str, **kwargs) -> 'ScimConfigResourceType':
         """
         Get a resource type
@@ -1210,7 +1210,7 @@ class SCIMApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_scim_v2_resourcetypes(self, **kwargs) -> 'ScimConfigResourceTypesListResponse':
         """
         Get a list of resource types
@@ -1282,7 +1282,7 @@ class SCIMApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_scim_v2_schema(self, schema_id: str, **kwargs) -> 'ScimV2SchemaDefinition':
         """
         Get a SCIM schema
@@ -1360,7 +1360,7 @@ class SCIMApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_scim_v2_schemas(self, **kwargs) -> 'ScimV2SchemaListResponse':
         """
         Get a list of SCIM schemas
@@ -1435,7 +1435,7 @@ class SCIMApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_scim_v2_serviceproviderconfig(self, **kwargs) -> 'ScimServiceProviderConfig':
         """
         Get a service provider's configuration
@@ -1510,7 +1510,7 @@ class SCIMApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_scim_v2_user(self, user_id: str, **kwargs) -> 'ScimV2User':
         """
         Get a user
@@ -1597,7 +1597,7 @@ class SCIMApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_scim_v2_users(self, **kwargs) -> 'ScimUserListResponse':
         """
         Get a list of users
@@ -1684,7 +1684,7 @@ class SCIMApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def patch_scim_group(self, group_id: str, body: 'ScimV2PatchRequest', **kwargs) -> 'ScimV2Group':
         """
         Modify a group
@@ -1771,7 +1771,7 @@ class SCIMApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def patch_scim_user(self, user_id: str, body: 'ScimV2PatchRequest', **kwargs) -> 'ScimV2User':
         """
         Modify a user
@@ -1858,7 +1858,7 @@ class SCIMApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def patch_scim_v2_group(self, group_id: str, body: 'ScimV2PatchRequest', **kwargs) -> 'ScimV2Group':
         """
         Modify a group
@@ -1945,7 +1945,7 @@ class SCIMApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def patch_scim_v2_user(self, user_id: str, body: 'ScimV2PatchRequest', **kwargs) -> 'ScimV2User':
         """
         Modify a user
@@ -2032,7 +2032,7 @@ class SCIMApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def post_scim_users(self, body: 'ScimV2CreateUser', **kwargs) -> 'ScimV2User':
         """
         Create a user
@@ -2110,7 +2110,7 @@ class SCIMApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def post_scim_v2_users(self, body: 'ScimV2CreateUser', **kwargs) -> 'ScimV2User':
         """
         Create a user
@@ -2188,7 +2188,7 @@ class SCIMApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def put_scim_group(self, group_id: str, body: 'ScimV2Group', **kwargs) -> 'ScimV2Group':
         """
         Replace a group
@@ -2275,7 +2275,7 @@ class SCIMApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def put_scim_user(self, user_id: str, body: 'ScimV2User', **kwargs) -> 'ScimV2User':
         """
         Replace a user
@@ -2362,7 +2362,7 @@ class SCIMApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def put_scim_v2_group(self, group_id: str, body: 'ScimV2Group', **kwargs) -> 'ScimV2Group':
         """
         Replace a group
@@ -2449,7 +2449,7 @@ class SCIMApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def put_scim_v2_user(self, user_id: str, body: 'ScimV2User', **kwargs) -> 'ScimV2User':
         """
         Replace a user

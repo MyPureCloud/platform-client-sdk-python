@@ -9,9 +9,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 |Method | Description|
 |------------- | -------------|
 |[**delete_group**](GroupsApi.html#delete_group) | Delete group|
+|[**delete_group_dynamicsettings**](GroupsApi.html#delete_group_dynamicsettings) | Remove dynamic group definition|
 |[**delete_group_members**](GroupsApi.html#delete_group_members) | Remove members|
 |[**get_fieldconfig**](GroupsApi.html#get_fieldconfig) | Fetch field config for an entity type|
 |[**get_group**](GroupsApi.html#get_group) | Get group|
+|[**get_group_dynamicsettings**](GroupsApi.html#get_group_dynamicsettings) | Get dynamic group definition|
 |[**get_group_individuals**](GroupsApi.html#get_group_individuals) | Get all individuals associated with the group|
 |[**get_group_members**](GroupsApi.html#get_group_members) | Get group members, includes individuals, owners, and dynamically included people|
 |[**get_group_profile**](GroupsApi.html#get_group_profile) | Get group profile|
@@ -20,8 +22,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_profiles_groups**](GroupsApi.html#get_profiles_groups) | Get group profile listing|
 |[**post_group_members**](GroupsApi.html#post_group_members) | Add members|
 |[**post_groups**](GroupsApi.html#post_groups) | Create a group|
+|[**post_groups_dynamicsettings_preview**](GroupsApi.html#post_groups_dynamicsettings_preview) | Preview the number of users selected for a dynamic group definition query|
 |[**post_groups_search**](GroupsApi.html#post_groups_search) | Search groups|
 |[**put_group**](GroupsApi.html#put_group) | Update group|
+|[**put_group_dynamicsettings**](GroupsApi.html#put_group_dynamicsettings) | Create / Update dynamic group definition|
 {: class="table table-striped"}
 
 <a name="delete_group"></a>
@@ -60,6 +64,56 @@ try:
     api_instance.delete_group(group_id)
 except ApiException as e:
     print("Exception when calling GroupsApi->delete_group: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **group_id** | **str**| Group ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
+
+<a name="delete_group_dynamicsettings"></a>
+
+##  delete_group_dynamicsettings(group_id)
+
+
+
+Remove dynamic group definition
+
+
+
+Wraps DELETE /api/v2/groups/{groupId}/dynamicsettings 
+
+Requires ANY permissions: 
+
+* directory:group:delete
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.GroupsApi()
+group_id = 'group_id_example' # str | Group ID
+
+try:
+    # Remove dynamic group definition
+    api_instance.delete_group_dynamicsettings(group_id)
+except ApiException as e:
+    print("Exception when calling GroupsApi->delete_group_dynamicsettings: %s\n" % e)
 ```
 
 ### Parameters
@@ -225,6 +279,57 @@ except ApiException as e:
 ### Return type
 
 [**Group**](Group.html)
+
+<a name="get_group_dynamicsettings"></a>
+
+## [**DynamicGroupDefinition**](DynamicGroupDefinition.html) get_group_dynamicsettings(group_id)
+
+
+
+Get dynamic group definition
+
+
+
+Wraps GET /api/v2/groups/{groupId}/dynamicsettings 
+
+Requires ANY permissions: 
+
+* directory:group:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.GroupsApi()
+group_id = 'group_id_example' # str | Group ID
+
+try:
+    # Get dynamic group definition
+    api_response = api_instance.get_group_dynamicsettings(group_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GroupsApi->get_group_dynamicsettings: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **group_id** | **str**| Group ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**DynamicGroupDefinition**](DynamicGroupDefinition.html)
 
 <a name="get_group_individuals"></a>
 
@@ -661,6 +766,57 @@ except ApiException as e:
 
 [**Group**](Group.html)
 
+<a name="post_groups_dynamicsettings_preview"></a>
+
+## [**DynamicGroupQueryPreview**](DynamicGroupQueryPreview.html) post_groups_dynamicsettings_preview(body)
+
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+
+Preview the number of users selected for a dynamic group definition query
+
+
+
+Wraps POST /api/v2/groups/dynamicsettings/preview 
+
+Requires ANY permissions: 
+
+* directory:group:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.GroupsApi()
+body = PureCloudPlatformClientV2.DynamicGroupQuery() # DynamicGroupQuery | Group query to preview
+
+try:
+    # Preview the number of users selected for a dynamic group definition query
+    api_response = api_instance.post_groups_dynamicsettings_preview(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GroupsApi->post_groups_dynamicsettings_preview: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**DynamicGroupQuery**](DynamicGroupQuery.html)| Group query to preview |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**DynamicGroupQueryPreview**](DynamicGroupQueryPreview.html)
+
 <a name="post_groups_search"></a>
 
 ## [**GroupsSearchResponse**](GroupsSearchResponse.html) post_groups_search(body)
@@ -763,4 +919,56 @@ except ApiException as e:
 ### Return type
 
 [**Group**](Group.html)
+
+<a name="put_group_dynamicsettings"></a>
+
+##  put_group_dynamicsettings(group_id, body)
+
+
+
+Create / Update dynamic group definition
+
+
+
+Wraps PUT /api/v2/groups/{groupId}/dynamicsettings 
+
+Requires ANY permissions: 
+
+* directory:group:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.GroupsApi()
+group_id = 'group_id_example' # str | Group ID
+body = PureCloudPlatformClientV2.DynamicGroupQuery() # DynamicGroupQuery | Create/Update dynamic groups
+
+try:
+    # Create / Update dynamic group definition
+    api_instance.put_group_dynamicsettings(group_id, body)
+except ApiException as e:
+    print("Exception when calling GroupsApi->put_group_dynamicsettings: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **group_id** | **str**| Group ID |  |
+| **body** | [**DynamicGroupQuery**](DynamicGroupQuery.html)| Create/Update dynamic groups |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
 

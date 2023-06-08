@@ -18,6 +18,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_voicemail_search**](SearchApi.html#get_voicemail_search) | Search voicemails using the q64 value returned from a previous search|
 |[**post_analytics_conversations_transcripts_query**](SearchApi.html#post_analytics_conversations_transcripts_query) | Search resources.|
 |[**post_conversations_participants_attributes_search**](SearchApi.html#post_conversations_participants_attributes_search) | Search conversations|
+|[**post_documentation_all_search**](SearchApi.html#post_documentation_all_search) | Search all documents|
 |[**post_documentation_gkn_search**](SearchApi.html#post_documentation_gkn_search) | Search gkn documentation|
 |[**post_documentation_search**](SearchApi.html#post_documentation_search) | Search documentation|
 |[**post_groups_search**](SearchApi.html#post_groups_search) | Search groups|
@@ -28,6 +29,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_speechandtextanalytics_transcripts_search**](SearchApi.html#post_speechandtextanalytics_transcripts_search) | Search resources.|
 |[**post_teams_search**](SearchApi.html#post_teams_search) | Search resources.|
 |[**post_users_search**](SearchApi.html#post_users_search) | Search users|
+|[**post_users_search_conversation_target**](SearchApi.html#post_users_search_conversation_target) | Search users as conversation targets|
+|[**post_users_search_queuemembers_manage**](SearchApi.html#post_users_search_queuemembers_manage) | Search manage queue member|
 |[**post_users_search_teams_assign**](SearchApi.html#post_users_search_teams_assign) | Search users assigned to teams|
 |[**post_voicemail_search**](SearchApi.html#post_voicemail_search) | Search voicemails|
 {: class="table table-striped"}
@@ -549,6 +552,53 @@ except ApiException as e:
 
 [**JsonCursorSearchResponse**](JsonCursorSearchResponse.html)
 
+<a name="post_documentation_all_search"></a>
+
+## [**JsonNodeSearchResponse**](JsonNodeSearchResponse.html) post_documentation_all_search(body)
+
+
+
+Search all documents
+
+
+
+Wraps POST /api/v2/documentation/all/search 
+
+Requires no permissions
+
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.SearchApi()
+body = PureCloudPlatformClientV2.DocumentationV2SearchRequest() # DocumentationV2SearchRequest | Search request options
+
+try:
+    # Search all documents
+    api_response = api_instance.post_documentation_all_search(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling SearchApi->post_documentation_all_search: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**DocumentationV2SearchRequest**](DocumentationV2SearchRequest.html)| Search request options |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**JsonNodeSearchResponse**](JsonNodeSearchResponse.html)
+
 <a name="post_documentation_gkn_search"></a>
 
 ## [**GKNDocumentationSearchResponse**](GKNDocumentationSearchResponse.html) post_documentation_gkn_search(body)
@@ -1042,6 +1092,109 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SearchApi->post_users_search: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**UserSearchRequest**](UserSearchRequest.html)| Search request options |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**UsersSearchResponse**](UsersSearchResponse.html)
+
+<a name="post_users_search_conversation_target"></a>
+
+## [**UsersSearchResponse**](UsersSearchResponse.html) post_users_search_conversation_target(body)
+
+
+
+Search users as conversation targets
+
+
+
+Wraps POST /api/v2/users/search/conversation/target 
+
+Requires ANY permissions: 
+
+* conversation:communication:target
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.SearchApi()
+body = PureCloudPlatformClientV2.UserSearchRequest() # UserSearchRequest | Search request options
+
+try:
+    # Search users as conversation targets
+    api_response = api_instance.post_users_search_conversation_target(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling SearchApi->post_users_search_conversation_target: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**UserSearchRequest**](UserSearchRequest.html)| Search request options |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**UsersSearchResponse**](UsersSearchResponse.html)
+
+<a name="post_users_search_queuemembers_manage"></a>
+
+## [**UsersSearchResponse**](UsersSearchResponse.html) post_users_search_queuemembers_manage(body)
+
+
+
+Search manage queue member
+
+
+
+Wraps POST /api/v2/users/search/queuemembers/manage 
+
+Requires ANY permissions: 
+
+* routing:queueMember:manage
+* routing:queue:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.SearchApi()
+body = PureCloudPlatformClientV2.UserSearchRequest() # UserSearchRequest | Search request options
+
+try:
+    # Search manage queue member
+    api_response = api_instance.post_users_search_queuemembers_manage(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling SearchApi->post_users_search_queuemembers_manage: %s\n" % e)
 ```
 
 ### Parameters

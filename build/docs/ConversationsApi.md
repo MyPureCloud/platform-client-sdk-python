@@ -20,6 +20,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**delete_conversations_messaging_integrations_whatsapp_integration_id**](ConversationsApi.html#delete_conversations_messaging_integrations_whatsapp_integration_id) | Delete a WhatsApp messaging integration|
 |[**delete_conversations_messaging_supportedcontent_supported_content_id**](ConversationsApi.html#delete_conversations_messaging_supportedcontent_supported_content_id) | Delete a supported content profile|
 |[**get_analytics_conversation_details**](ConversationsApi.html#get_analytics_conversation_details) | Get a conversation by id|
+|[**get_analytics_conversations_aggregates_job**](ConversationsApi.html#get_analytics_conversations_aggregates_job) | Get status for async query for conversation aggregates|
+|[**get_analytics_conversations_aggregates_job_results**](ConversationsApi.html#get_analytics_conversations_aggregates_job_results) | Fetch a page of results for an async aggregates query|
 |[**get_analytics_conversations_details**](ConversationsApi.html#get_analytics_conversations_details) | Gets multiple conversations by id|
 |[**get_analytics_conversations_details_job**](ConversationsApi.html#get_analytics_conversations_details_job) | Get status for async query for conversation details|
 |[**get_analytics_conversations_details_job_results**](ConversationsApi.html#get_analytics_conversations_details_job_results) | Fetch a page of results for an async details job|
@@ -94,6 +96,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_conversations_screenshare_participant_communication_wrapup**](ConversationsApi.html#get_conversations_screenshare_participant_communication_wrapup) | Get the wrap-up for this conversation communication. |
 |[**get_conversations_settings**](ConversationsApi.html#get_conversations_settings) | Get Settings|
 |[**get_conversations_social_participant_communication_wrapup**](ConversationsApi.html#get_conversations_social_participant_communication_wrapup) | Get the wrap-up for this conversation communication. |
+|[**get_conversations_video_details**](ConversationsApi.html#get_conversations_video_details) | Get video conference details (e.g. the current number of active participants).|
 |[**get_conversations_video_participant_communication_wrapup**](ConversationsApi.html#get_conversations_video_participant_communication_wrapup) | Get the wrap-up for this conversation communication. |
 |[**patch_conversation_participant**](ConversationsApi.html#patch_conversation_participant) | Update a participant.|
 |[**patch_conversation_participant_attributes**](ConversationsApi.html#patch_conversation_participant_attributes) | Update the attributes on a conversation participant.|
@@ -133,6 +136,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**patch_conversations_messaging_supportedcontent_supported_content_id**](ConversationsApi.html#patch_conversations_messaging_supportedcontent_supported_content_id) | Update a supported content profile|
 |[**patch_conversations_settings**](ConversationsApi.html#patch_conversations_settings) | Update Settings|
 |[**post_analytics_conversation_details_properties**](ConversationsApi.html#post_analytics_conversation_details_properties) | Index conversation properties|
+|[**post_analytics_conversations_activity_query**](ConversationsApi.html#post_analytics_conversations_activity_query) | Query for conversation activity observations|
+|[**post_analytics_conversations_aggregates_jobs**](ConversationsApi.html#post_analytics_conversations_aggregates_jobs) | Query for conversation aggregates asynchronously|
 |[**post_analytics_conversations_aggregates_query**](ConversationsApi.html#post_analytics_conversations_aggregates_query) | Query for conversation aggregates|
 |[**post_analytics_conversations_details_jobs**](ConversationsApi.html#post_analytics_conversations_details_jobs) | Query for conversation details asynchronously|
 |[**post_analytics_conversations_details_query**](ConversationsApi.html#post_analytics_conversations_details_query) | Query for conversation details|
@@ -178,6 +183,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_conversations_message_communication_typing**](ConversationsApi.html#post_conversations_message_communication_typing) | Send message typing event|
 |[**post_conversations_message_messages_bulk**](ConversationsApi.html#post_conversations_message_messages_bulk) | Get messages in batch|
 |[**post_conversations_message_participant_communication_wrapup**](ConversationsApi.html#post_conversations_message_participant_communication_wrapup) | Apply wrap-up for this conversation communication|
+|[**post_conversations_message_participant_monitor**](ConversationsApi.html#post_conversations_message_participant_monitor) | Listen in on the conversation from the point of view of a given participant.|
 |[**post_conversations_message_participant_replace**](ConversationsApi.html#post_conversations_message_participant_replace) | Replace this participant with the specified user and/or address|
 |[**post_conversations_messages**](ConversationsApi.html#post_conversations_messages) | Create an outbound messaging conversation.|
 |[**post_conversations_messages_agentless**](ConversationsApi.html#post_conversations_messages_agentless) | Send an agentless outbound message|
@@ -823,6 +829,110 @@ except ApiException as e:
 ### Return type
 
 [**AnalyticsConversationWithoutAttributes**](AnalyticsConversationWithoutAttributes.html)
+
+<a name="get_analytics_conversations_aggregates_job"></a>
+
+## [**AsyncQueryStatus**](AsyncQueryStatus.html) get_analytics_conversations_aggregates_job(job_id)
+
+
+
+Get status for async query for conversation aggregates
+
+
+
+Wraps GET /api/v2/analytics/conversations/aggregates/jobs/{jobId} 
+
+Requires ANY permissions: 
+
+* analytics:conversationAggregate:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+job_id = 'job_id_example' # str | jobId
+
+try:
+    # Get status for async query for conversation aggregates
+    api_response = api_instance.get_analytics_conversations_aggregates_job(job_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->get_analytics_conversations_aggregates_job: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **job_id** | **str**| jobId |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**AsyncQueryStatus**](AsyncQueryStatus.html)
+
+<a name="get_analytics_conversations_aggregates_job_results"></a>
+
+## [**ConversationAsyncAggregateQueryResponse**](ConversationAsyncAggregateQueryResponse.html) get_analytics_conversations_aggregates_job_results(job_id, cursor=cursor)
+
+
+
+Fetch a page of results for an async aggregates query
+
+
+
+Wraps GET /api/v2/analytics/conversations/aggregates/jobs/{jobId}/results 
+
+Requires ANY permissions: 
+
+* analytics:conversationAggregate:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+job_id = 'job_id_example' # str | jobId
+cursor = 'cursor_example' # str | Cursor token to retrieve next page (optional)
+
+try:
+    # Fetch a page of results for an async aggregates query
+    api_response = api_instance.get_analytics_conversations_aggregates_job_results(job_id, cursor=cursor)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->get_analytics_conversations_aggregates_job_results: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **job_id** | **str**| jobId |  |
+| **cursor** | **str**| Cursor token to retrieve next page | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**ConversationAsyncAggregateQueryResponse**](ConversationAsyncAggregateQueryResponse.html)
 
 <a name="get_analytics_conversations_details"></a>
 
@@ -4713,6 +4823,57 @@ except ApiException as e:
 
 [**AssignedWrapupCode**](AssignedWrapupCode.html)
 
+<a name="get_conversations_video_details"></a>
+
+## [**VideoConferenceDetails**](VideoConferenceDetails.html) get_conversations_video_details(conference_id)
+
+
+
+Get video conference details (e.g. the current number of active participants).
+
+
+
+Wraps GET /api/v2/conversations/videos/{conferenceId}/details 
+
+Requires ANY permissions: 
+
+* video:video:access
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+conference_id = 'conference_id_example' # str | conferenceId
+
+try:
+    # Get video conference details (e.g. the current number of active participants).
+    api_response = api_instance.get_conversations_video_details(conference_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->get_conversations_video_details: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conference_id** | **str**| conferenceId |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**VideoConferenceDetails**](VideoConferenceDetails.html)
+
 <a name="get_conversations_video_participant_communication_wrapup"></a>
 
 ## [**AssignedWrapupCode**](AssignedWrapupCode.html) get_conversations_video_participant_communication_wrapup(conversation_id, participant_id, communication_id, provisional=provisional)
@@ -6816,6 +6977,112 @@ except ApiException as e:
 ### Return type
 
 [**PropertyIndexRequest**](PropertyIndexRequest.html)
+
+<a name="post_analytics_conversations_activity_query"></a>
+
+## [**ConversationActivityResponse**](ConversationActivityResponse.html) post_analytics_conversations_activity_query(body, page_size=page_size, page_number=page_number)
+
+
+
+Query for conversation activity observations
+
+
+
+Wraps POST /api/v2/analytics/conversations/activity/query 
+
+Requires ANY permissions: 
+
+* analytics:queueObservation:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+body = PureCloudPlatformClientV2.ConversationActivityQuery() # ConversationActivityQuery | query
+page_size = 56 # int | The desired page size (optional)
+page_number = 56 # int | The desired page number (optional)
+
+try:
+    # Query for conversation activity observations
+    api_response = api_instance.post_analytics_conversations_activity_query(body, page_size=page_size, page_number=page_number)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->post_analytics_conversations_activity_query: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**ConversationActivityQuery**](ConversationActivityQuery.html)| query |  |
+| **page_size** | **int**| The desired page size | [optional]  |
+| **page_number** | **int**| The desired page number | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**ConversationActivityResponse**](ConversationActivityResponse.html)
+
+<a name="post_analytics_conversations_aggregates_jobs"></a>
+
+## [**AsyncQueryResponse**](AsyncQueryResponse.html) post_analytics_conversations_aggregates_jobs(body)
+
+
+
+Query for conversation aggregates asynchronously
+
+
+
+Wraps POST /api/v2/analytics/conversations/aggregates/jobs 
+
+Requires ANY permissions: 
+
+* analytics:conversationAggregate:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+body = PureCloudPlatformClientV2.ConversationAsyncAggregationQuery() # ConversationAsyncAggregationQuery | query
+
+try:
+    # Query for conversation aggregates asynchronously
+    api_response = api_instance.post_analytics_conversations_aggregates_jobs(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->post_analytics_conversations_aggregates_jobs: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**ConversationAsyncAggregationQuery**](ConversationAsyncAggregationQuery.html)| query |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**AsyncQueryResponse**](AsyncQueryResponse.html)
 
 <a name="post_analytics_conversations_aggregates_query"></a>
 
@@ -9212,6 +9479,58 @@ except ApiException as e:
 | **participant_id** | **str**| participantId |  |
 | **communication_id** | **str**| communicationId |  |
 | **body** | [**WrapupInput**](WrapupInput.html)| Wrap-up | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
+
+<a name="post_conversations_message_participant_monitor"></a>
+
+##  post_conversations_message_participant_monitor(conversation_id, participant_id)
+
+
+
+Listen in on the conversation from the point of view of a given participant.
+
+
+
+Wraps POST /api/v2/conversations/messages/{conversationId}/participants/{participantId}/monitor 
+
+Requires ANY permissions: 
+
+* conversation:message:monitor
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+conversation_id = 'conversation_id_example' # str | conversationId
+participant_id = 'participant_id_example' # str | participantId
+
+try:
+    # Listen in on the conversation from the point of view of a given participant.
+    api_instance.post_conversations_message_participant_monitor(conversation_id, participant_id)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->post_conversations_message_participant_monitor: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversation_id** | **str**| conversationId |  |
+| **participant_id** | **str**| participantId |  |
 {: class="table table-striped"}
 
 ### Return type

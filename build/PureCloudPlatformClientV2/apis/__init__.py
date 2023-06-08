@@ -53,6 +53,7 @@ from .search_api import SearchApi
 from .speech_text_analytics_api import SpeechTextAnalyticsApi
 from .stations_api import StationsApi
 from .suggest_api import SuggestApi
+from .task_management_api import TaskManagementApi
 from .teams_api import TeamsApi
 from .telephony_api import TelephonyApi
 from .telephony_providers_edge_api import TelephonyProvidersEdgeApi
@@ -121,6 +122,7 @@ from .search_api import SearchApi
 from .speech_text_analytics_api import SpeechTextAnalyticsApi
 from .stations_api import StationsApi
 from .suggest_api import SuggestApi
+from .task_management_api import TaskManagementApi
 from .teams_api import TeamsApi
 from .telephony_api import TelephonyApi
 from .telephony_providers_edge_api import TelephonyProvidersEdgeApi

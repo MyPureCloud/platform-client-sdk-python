@@ -38,6 +38,7 @@ from typing import Dict
 from typing import Any
 
 from ..models import Empty
+from ..models import BulkResponse
 from ..models import CategoryListing
 from ..models import CategoryRequest
 from ..models import CategoryResponse
@@ -53,7 +54,11 @@ from ..models import KnowledgeBaseListing
 from ..models import KnowledgeCategory
 from ..models import KnowledgeCategoryRequest
 from ..models import KnowledgeDocument
+from ..models import KnowledgeDocumentBulkRemoveRequest
 from ..models import KnowledgeDocumentBulkRequest
+from ..models import KnowledgeDocumentBulkUpdateRequest
+from ..models import KnowledgeDocumentBulkVersionAddRequest
+from ..models import KnowledgeDocumentContentUpload
 from ..models import KnowledgeDocumentGuestSearch
 from ..models import KnowledgeDocumentGuestSearchRequest
 from ..models import KnowledgeDocumentReq
@@ -111,7 +116,7 @@ class KnowledgeApi(object):
             if not config.api_client:
                 config.api_client = ApiClient()
             self.api_client = config.api_client
-    
+
     def delete_knowledge_knowledgebase(self, knowledge_base_id: str, **kwargs) -> 'KnowledgeBase':
         """
         Delete knowledge base
@@ -189,7 +194,7 @@ class KnowledgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def delete_knowledge_knowledgebase_category(self, knowledge_base_id: str, category_id: str, **kwargs) -> 'CategoryResponse':
         """
         Delete category
@@ -273,7 +278,7 @@ class KnowledgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def delete_knowledge_knowledgebase_document(self, knowledge_base_id: str, document_id: str, **kwargs) -> None:
         """
         Delete document.
@@ -357,7 +362,7 @@ class KnowledgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def delete_knowledge_knowledgebase_document_variation(self, document_variation_id: str, document_id: str, knowledge_base_id: str, **kwargs) -> None:
         """
         Delete a variation for a document.
@@ -447,7 +452,7 @@ class KnowledgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def delete_knowledge_knowledgebase_export_job(self, knowledge_base_id: str, export_job_id: str, **kwargs) -> None:
         """
         Delete export job
@@ -531,7 +536,7 @@ class KnowledgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def delete_knowledge_knowledgebase_import_job(self, knowledge_base_id: str, import_job_id: str, **kwargs) -> None:
         """
         Delete import job
@@ -615,7 +620,7 @@ class KnowledgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def delete_knowledge_knowledgebase_label(self, knowledge_base_id: str, label_id: str, **kwargs) -> 'LabelResponse':
         """
         Delete label
@@ -699,6 +704,7 @@ class KnowledgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+
     @deprecated("delete_knowledge_knowledgebase_language_category is deprecated")
     def delete_knowledge_knowledgebase_language_category(self, category_id: str, knowledge_base_id: str, language_code: str, **kwargs) -> 'KnowledgeCategory':
         """
@@ -789,6 +795,7 @@ class KnowledgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+
     @deprecated("delete_knowledge_knowledgebase_language_document is deprecated")
     def delete_knowledge_knowledgebase_language_document(self, document_id: str, knowledge_base_id: str, language_code: str, **kwargs) -> 'KnowledgeDocument':
         """
@@ -879,6 +886,7 @@ class KnowledgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+
     @deprecated("delete_knowledge_knowledgebase_language_documents_import is deprecated")
     def delete_knowledge_knowledgebase_language_documents_import(self, knowledge_base_id: str, language_code: str, import_id: str, **kwargs) -> None:
         """
@@ -969,7 +977,7 @@ class KnowledgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_knowledge_guest_session_categories(self, session_id: str, **kwargs) -> 'GuestCategoryResponseListing':
         """
         Get categories
@@ -1074,7 +1082,7 @@ class KnowledgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_knowledge_guest_session_document(self, session_id: str, document_id: str, **kwargs) -> 'KnowledgeGuestDocument':
         """
         Get a knowledge document by ID.
@@ -1158,7 +1166,7 @@ class KnowledgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_knowledge_guest_session_documents(self, session_id: str, **kwargs) -> 'KnowledgeGuestDocumentResponseListing':
         """
         Get documents.
@@ -1242,7 +1250,7 @@ class KnowledgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_knowledge_knowledgebase(self, knowledge_base_id: str, **kwargs) -> 'KnowledgeBase':
         """
         Get knowledge base
@@ -1320,7 +1328,7 @@ class KnowledgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_knowledge_knowledgebase_categories(self, knowledge_base_id: str, **kwargs) -> 'CategoryResponseListing':
         """
         Get categories
@@ -1425,7 +1433,7 @@ class KnowledgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_knowledge_knowledgebase_category(self, knowledge_base_id: str, category_id: str, **kwargs) -> 'CategoryResponse':
         """
         Get category
@@ -1509,7 +1517,7 @@ class KnowledgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_knowledge_knowledgebase_document(self, knowledge_base_id: str, document_id: str, **kwargs) -> 'KnowledgeDocumentResponse':
         """
         Get document.
@@ -1599,7 +1607,7 @@ class KnowledgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_knowledge_knowledgebase_document_variation(self, document_variation_id: str, document_id: str, knowledge_base_id: str, **kwargs) -> 'DocumentVariation':
         """
         Get a variation for a document.
@@ -1692,7 +1700,7 @@ class KnowledgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_knowledge_knowledgebase_document_variations(self, knowledge_base_id: str, document_id: str, **kwargs) -> 'DocumentVariationListing':
         """
         Get variations for a document.
@@ -1788,7 +1796,7 @@ class KnowledgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_knowledge_knowledgebase_document_version(self, knowledge_base_id: str, document_id: str, version_id: str, **kwargs) -> 'KnowledgeDocumentVersion':
         """
         Get document version.
@@ -1881,7 +1889,7 @@ class KnowledgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_knowledge_knowledgebase_document_version_variation(self, knowledge_base_id: str, document_id: str, version_id: str, variation_id: str, **kwargs) -> 'KnowledgeDocumentVersionVariation':
         """
         Get variation for the given document version.
@@ -1977,7 +1985,7 @@ class KnowledgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_knowledge_knowledgebase_document_version_variations(self, knowledge_base_id: str, document_id: str, version_id: str, **kwargs) -> 'KnowledgeDocumentVersionVariationListing':
         """
         Get variations for the given document version.
@@ -2076,7 +2084,7 @@ class KnowledgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_knowledge_knowledgebase_document_versions(self, knowledge_base_id: str, document_id: str, **kwargs) -> 'KnowledgeDocumentVersionListing':
         """
         Get document versions.
@@ -2172,7 +2180,7 @@ class KnowledgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_knowledge_knowledgebase_documents(self, knowledge_base_id: str, **kwargs) -> 'KnowledgeDocumentResponseListing':
         """
         Get documents.
@@ -2280,7 +2288,7 @@ class KnowledgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_knowledge_knowledgebase_export_job(self, knowledge_base_id: str, export_job_id: str, **kwargs) -> 'KnowledgeExportJobResponse':
         """
         Get export job report
@@ -2364,7 +2372,7 @@ class KnowledgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_knowledge_knowledgebase_import_job(self, knowledge_base_id: str, import_job_id: str, **kwargs) -> 'KnowledgeImportJobResponse':
         """
         Get import job report
@@ -2448,7 +2456,7 @@ class KnowledgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_knowledge_knowledgebase_label(self, knowledge_base_id: str, label_id: str, **kwargs) -> 'LabelResponse':
         """
         Get label
@@ -2532,7 +2540,7 @@ class KnowledgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_knowledge_knowledgebase_labels(self, knowledge_base_id: str, **kwargs) -> 'LabelListing':
         """
         Get labels
@@ -2625,6 +2633,7 @@ class KnowledgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+
     @deprecated("get_knowledge_knowledgebase_language_categories is deprecated")
     def get_knowledge_knowledgebase_language_categories(self, knowledge_base_id: str, language_code: str, **kwargs) -> 'CategoryListing':
         """
@@ -2724,6 +2733,7 @@ class KnowledgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+
     @deprecated("get_knowledge_knowledgebase_language_category is deprecated")
     def get_knowledge_knowledgebase_language_category(self, category_id: str, knowledge_base_id: str, language_code: str, **kwargs) -> 'KnowledgeExtendedCategory':
         """
@@ -2814,6 +2824,7 @@ class KnowledgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+
     @deprecated("get_knowledge_knowledgebase_language_document is deprecated")
     def get_knowledge_knowledgebase_language_document(self, document_id: str, knowledge_base_id: str, language_code: str, **kwargs) -> 'KnowledgeDocument':
         """
@@ -2904,6 +2915,105 @@ class KnowledgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+
+    @deprecated("get_knowledge_knowledgebase_language_document_upload is deprecated")
+	# Preview Endpoint
+    def get_knowledge_knowledgebase_language_document_upload(self, document_id: str, knowledge_base_id: str, language_code: str, upload_id: str, **kwargs) -> 'KnowledgeDocumentContentUpload':
+        """
+        Get document content upload status
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_knowledge_knowledgebase_language_document_upload(document_id, knowledge_base_id, language_code, upload_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str document_id: Document ID (required)
+        :param str knowledge_base_id: Knowledge base ID (required)
+        :param str language_code: Language code, format: iso2-LOCALE (required)
+        :param str upload_id: UploadId (required)
+        :return: KnowledgeDocumentContentUpload
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['document_id', 'knowledge_base_id', 'language_code', 'upload_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_knowledge_knowledgebase_language_document_upload" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'document_id' is set
+        if ('document_id' not in params) or (params['document_id'] is None):
+            raise ValueError("Missing the required parameter `document_id` when calling `get_knowledge_knowledgebase_language_document_upload`")
+        # verify the required parameter 'knowledge_base_id' is set
+        if ('knowledge_base_id' not in params) or (params['knowledge_base_id'] is None):
+            raise ValueError("Missing the required parameter `knowledge_base_id` when calling `get_knowledge_knowledgebase_language_document_upload`")
+        # verify the required parameter 'language_code' is set
+        if ('language_code' not in params) or (params['language_code'] is None):
+            raise ValueError("Missing the required parameter `language_code` when calling `get_knowledge_knowledgebase_language_document_upload`")
+        # verify the required parameter 'upload_id' is set
+        if ('upload_id' not in params) or (params['upload_id'] is None):
+            raise ValueError("Missing the required parameter `upload_id` when calling `get_knowledge_knowledgebase_language_document_upload`")
+
+
+        resource_path = '/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/{documentId}/uploads/{uploadId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'document_id' in params:
+            path_params['documentId'] = params['document_id']
+        if 'knowledge_base_id' in params:
+            path_params['knowledgeBaseId'] = params['knowledge_base_id']
+        if 'language_code' in params:
+            path_params['languageCode'] = params['language_code']
+        if 'upload_id' in params:
+            path_params['uploadId'] = params['upload_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='KnowledgeDocumentContentUpload',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     @deprecated("get_knowledge_knowledgebase_language_documents is deprecated")
     def get_knowledge_knowledgebase_language_documents(self, knowledge_base_id: str, language_code: str, **kwargs) -> 'DocumentListing':
         """
@@ -3015,6 +3125,7 @@ class KnowledgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+
     @deprecated("get_knowledge_knowledgebase_language_documents_import is deprecated")
     def get_knowledge_knowledgebase_language_documents_import(self, knowledge_base_id: str, language_code: str, import_id: str, **kwargs) -> 'KnowledgeImport':
         """
@@ -3105,6 +3216,7 @@ class KnowledgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+
     @deprecated("get_knowledge_knowledgebase_language_training is deprecated")
     def get_knowledge_knowledgebase_language_training(self, knowledge_base_id: str, language_code: str, training_id: str, **kwargs) -> 'KnowledgeTraining':
         """
@@ -3195,6 +3307,7 @@ class KnowledgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+
     @deprecated("get_knowledge_knowledgebase_language_trainings is deprecated")
     def get_knowledge_knowledgebase_language_trainings(self, knowledge_base_id: str, language_code: str, **kwargs) -> 'TrainingListing':
         """
@@ -3294,7 +3407,7 @@ class KnowledgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_knowledge_knowledgebase_unanswered_group(self, knowledge_base_id: str, group_id: str, **kwargs) -> 'UnansweredGroup':
         """
         Get knowledge base unanswered group for a particular groupId
@@ -3381,7 +3494,7 @@ class KnowledgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_knowledge_knowledgebase_unanswered_group_phrasegroup(self, knowledge_base_id: str, group_id: str, phrase_group_id: str, **kwargs) -> 'UnansweredPhraseGroup':
         """
         Get knowledge base unanswered phrase group for a particular phraseGroupId
@@ -3474,7 +3587,7 @@ class KnowledgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_knowledge_knowledgebase_unanswered_groups(self, knowledge_base_id: str, **kwargs) -> 'UnansweredGroups':
         """
         Get knowledge base unanswered groups
@@ -3555,7 +3668,7 @@ class KnowledgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_knowledge_knowledgebases(self, **kwargs) -> 'KnowledgeBaseListing':
         """
         Get knowledge bases
@@ -3654,7 +3767,7 @@ class KnowledgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def patch_knowledge_guest_session_documents_search_search_id(self, session_id: str, search_id: str, body: 'SearchUpdateRequest', **kwargs) -> None:
         """
         Update search result.
@@ -3744,7 +3857,7 @@ class KnowledgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def patch_knowledge_knowledgebase(self, knowledge_base_id: str, body: 'KnowledgeBase', **kwargs) -> 'KnowledgeBase':
         """
         Update knowledge base
@@ -3828,7 +3941,7 @@ class KnowledgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def patch_knowledge_knowledgebase_category(self, knowledge_base_id: str, category_id: str, body: 'CategoryRequest', **kwargs) -> 'CategoryResponse':
         """
         Update category
@@ -3918,7 +4031,7 @@ class KnowledgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def patch_knowledge_knowledgebase_document(self, knowledge_base_id: str, document_id: str, body: 'KnowledgeDocumentReq', **kwargs) -> 'KnowledgeDocumentResponse':
         """
         Update document.
@@ -4008,7 +4121,7 @@ class KnowledgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def patch_knowledge_knowledgebase_document_variation(self, document_variation_id: str, document_id: str, knowledge_base_id: str, body: 'DocumentVariation', **kwargs) -> 'DocumentVariation':
         """
         Update a variation for a document.
@@ -4104,7 +4217,7 @@ class KnowledgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def patch_knowledge_knowledgebase_documents_search_search_id(self, knowledge_base_id: str, search_id: str, **kwargs) -> None:
         """
         Update search result.
@@ -4191,7 +4304,7 @@ class KnowledgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def patch_knowledge_knowledgebase_import_job(self, knowledge_base_id: str, import_job_id: str, body: 'ImportStatusRequest', **kwargs) -> 'KnowledgeImportJobResponse':
         """
         Start import job
@@ -4281,7 +4394,7 @@ class KnowledgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def patch_knowledge_knowledgebase_label(self, knowledge_base_id: str, label_id: str, body: 'LabelUpdateRequest', **kwargs) -> 'LabelResponse':
         """
         Update label
@@ -4371,6 +4484,7 @@ class KnowledgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+
     @deprecated("patch_knowledge_knowledgebase_language_category is deprecated")
     def patch_knowledge_knowledgebase_language_category(self, category_id: str, knowledge_base_id: str, language_code: str, body: 'KnowledgeCategoryRequest', **kwargs) -> 'KnowledgeExtendedCategory':
         """
@@ -4467,6 +4581,7 @@ class KnowledgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+
     @deprecated("patch_knowledge_knowledgebase_language_document is deprecated")
     def patch_knowledge_knowledgebase_language_document(self, document_id: str, knowledge_base_id: str, language_code: str, body: 'KnowledgeDocumentRequest', **kwargs) -> 'KnowledgeDocument':
         """
@@ -4563,6 +4678,7 @@ class KnowledgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+
     @deprecated("patch_knowledge_knowledgebase_language_documents is deprecated")
     def patch_knowledge_knowledgebase_language_documents(self, knowledge_base_id: str, language_code: str, body: List['KnowledgeDocumentBulkRequest'], **kwargs) -> 'DocumentListing':
         """
@@ -4653,6 +4769,7 @@ class KnowledgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+
     @deprecated("patch_knowledge_knowledgebase_language_documents_import is deprecated")
     def patch_knowledge_knowledgebase_language_documents_import(self, knowledge_base_id: str, language_code: str, import_id: str, body: 'ImportStatusRequest', **kwargs) -> 'KnowledgeImport':
         """
@@ -4749,7 +4866,7 @@ class KnowledgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def patch_knowledge_knowledgebase_unanswered_group_phrasegroup(self, knowledge_base_id: str, group_id: str, phrase_group_id: str, body: 'UnansweredPhraseGroupPatchRequestBody', **kwargs) -> 'UnansweredPhraseGroupUpdateResponse':
         """
         Update a Knowledge base unanswered phrase group
@@ -4845,7 +4962,7 @@ class KnowledgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def post_knowledge_documentuploads(self, body: 'UploadUrlRequest', **kwargs) -> 'UploadUrlResponse':
         """
         Creates a presigned URL for uploading a knowledge import file with a set of documents
@@ -4923,7 +5040,7 @@ class KnowledgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def post_knowledge_guest_session_documents_search(self, session_id: str, **kwargs) -> 'KnowledgeDocumentGuestSearch':
         """
         Search the documents in a guest session.
@@ -5007,7 +5124,7 @@ class KnowledgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def post_knowledge_guest_session_documents_search_suggestions(self, session_id: str, **kwargs) -> 'KnowledgeGuestDocumentSuggestion':
         """
         Query the knowledge documents to provide suggestions for auto completion.
@@ -5088,7 +5205,7 @@ class KnowledgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def post_knowledge_guest_sessions(self, body: 'KnowledgeGuestSession', **kwargs) -> 'KnowledgeGuestSession':
         """
         Create guest session
@@ -5166,7 +5283,7 @@ class KnowledgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def post_knowledge_knowledgebase_categories(self, knowledge_base_id: str, body: 'CategoryRequest', **kwargs) -> 'CategoryResponse':
         """
         Create new category
@@ -5250,7 +5367,7 @@ class KnowledgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def post_knowledge_knowledgebase_document_variations(self, knowledge_base_id: str, document_id: str, body: 'DocumentVariation', **kwargs) -> 'DocumentVariation':
         """
         Create a variation for a document.
@@ -5340,7 +5457,7 @@ class KnowledgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def post_knowledge_knowledgebase_document_versions(self, knowledge_base_id: str, document_id: str, body: 'KnowledgeDocumentVersion', **kwargs) -> 'KnowledgeDocumentVersion':
         """
         Creates or restores a document version.
@@ -5430,7 +5547,7 @@ class KnowledgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def post_knowledge_knowledgebase_documents(self, knowledge_base_id: str, body: 'KnowledgeDocumentReq', **kwargs) -> 'KnowledgeDocumentResponse':
         """
         Create document.
@@ -5514,7 +5631,177 @@ class KnowledgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
+	# Preview Endpoint
+    def post_knowledge_knowledgebase_documents_bulk_remove(self, knowledge_base_id: str, body: 'KnowledgeDocumentBulkRemoveRequest', **kwargs) -> 'BulkResponse':
+        """
+        Bulk remove documents.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_knowledge_knowledgebase_documents_bulk_remove(knowledge_base_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str knowledge_base_id: Knowledge base ID (required)
+        :param KnowledgeDocumentBulkRemoveRequest body:  (required)
+        :return: BulkResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['knowledge_base_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_knowledge_knowledgebase_documents_bulk_remove" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'knowledge_base_id' is set
+        if ('knowledge_base_id' not in params) or (params['knowledge_base_id'] is None):
+            raise ValueError("Missing the required parameter `knowledge_base_id` when calling `post_knowledge_knowledgebase_documents_bulk_remove`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_knowledge_knowledgebase_documents_bulk_remove`")
+
+
+        resource_path = '/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/bulk/remove'.replace('{format}', 'json')
+        path_params = {}
+        if 'knowledge_base_id' in params:
+            path_params['knowledgeBaseId'] = params['knowledge_base_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='BulkResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+	# Preview Endpoint
+    def post_knowledge_knowledgebase_documents_bulk_update(self, knowledge_base_id: str, body: 'KnowledgeDocumentBulkUpdateRequest', **kwargs) -> 'BulkResponse':
+        """
+        Bulk update documents.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_knowledge_knowledgebase_documents_bulk_update(knowledge_base_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str knowledge_base_id: Knowledge base ID (required)
+        :param KnowledgeDocumentBulkUpdateRequest body:  (required)
+        :return: BulkResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['knowledge_base_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_knowledge_knowledgebase_documents_bulk_update" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'knowledge_base_id' is set
+        if ('knowledge_base_id' not in params) or (params['knowledge_base_id'] is None):
+            raise ValueError("Missing the required parameter `knowledge_base_id` when calling `post_knowledge_knowledgebase_documents_bulk_update`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_knowledge_knowledgebase_documents_bulk_update`")
+
+
+        resource_path = '/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/bulk/update'.replace('{format}', 'json')
+        path_params = {}
+        if 'knowledge_base_id' in params:
+            path_params['knowledgeBaseId'] = params['knowledge_base_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='BulkResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def post_knowledge_knowledgebase_documents_search(self, knowledge_base_id: str, **kwargs) -> 'KnowledgeDocumentSearch':
         """
         Search the documents in a knowledge base.
@@ -5598,7 +5885,7 @@ class KnowledgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def post_knowledge_knowledgebase_documents_search_suggestions(self, knowledge_base_id: str, **kwargs) -> 'KnowledgeDocumentSuggestion':
         """
         Query the knowledge documents to provide suggestions for auto completion.
@@ -5679,7 +5966,92 @@ class KnowledgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
+	# Preview Endpoint
+    def post_knowledge_knowledgebase_documents_versions_bulk_add(self, knowledge_base_id: str, body: 'KnowledgeDocumentBulkVersionAddRequest', **kwargs) -> 'BulkResponse':
+        """
+        Bulk add document versions.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_knowledge_knowledgebase_documents_versions_bulk_add(knowledge_base_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str knowledge_base_id: Knowledge base ID (required)
+        :param KnowledgeDocumentBulkVersionAddRequest body:  (required)
+        :return: BulkResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['knowledge_base_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_knowledge_knowledgebase_documents_versions_bulk_add" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'knowledge_base_id' is set
+        if ('knowledge_base_id' not in params) or (params['knowledge_base_id'] is None):
+            raise ValueError("Missing the required parameter `knowledge_base_id` when calling `post_knowledge_knowledgebase_documents_versions_bulk_add`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_knowledge_knowledgebase_documents_versions_bulk_add`")
+
+
+        resource_path = '/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/versions/bulk/add'.replace('{format}', 'json')
+        path_params = {}
+        if 'knowledge_base_id' in params:
+            path_params['knowledgeBaseId'] = params['knowledge_base_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='BulkResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def post_knowledge_knowledgebase_export_jobs(self, knowledge_base_id: str, body: 'KnowledgeExportJobRequest', **kwargs) -> 'KnowledgeExportJobResponse':
         """
         Create export job
@@ -5763,7 +6135,7 @@ class KnowledgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def post_knowledge_knowledgebase_import_jobs(self, knowledge_base_id: str, body: 'KnowledgeImportJobRequest', **kwargs) -> 'KnowledgeImportJobResponse':
         """
         Create import job
@@ -5847,7 +6219,7 @@ class KnowledgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def post_knowledge_knowledgebase_labels(self, knowledge_base_id: str, body: 'LabelCreateRequest', **kwargs) -> 'LabelResponse':
         """
         Create new label
@@ -5931,6 +6303,7 @@ class KnowledgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+
     @deprecated("post_knowledge_knowledgebase_language_categories is deprecated")
     def post_knowledge_knowledgebase_language_categories(self, knowledge_base_id: str, language_code: str, body: 'KnowledgeCategoryRequest', **kwargs) -> 'KnowledgeExtendedCategory':
         """
@@ -6021,6 +6394,105 @@ class KnowledgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+
+    @deprecated("post_knowledge_knowledgebase_language_document_uploads is deprecated")
+	# Preview Endpoint
+    def post_knowledge_knowledgebase_language_document_uploads(self, document_id: str, knowledge_base_id: str, language_code: str, body: 'KnowledgeDocumentContentUpload', **kwargs) -> 'KnowledgeDocumentContentUpload':
+        """
+        Upload Article Content
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_knowledge_knowledgebase_language_document_uploads(document_id, knowledge_base_id, language_code, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str document_id: Document ID (required)
+        :param str knowledge_base_id: Knowledge base ID (required)
+        :param str language_code: Language code, format: iso2-LOCALE (required)
+        :param KnowledgeDocumentContentUpload body:  (required)
+        :return: KnowledgeDocumentContentUpload
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['document_id', 'knowledge_base_id', 'language_code', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_knowledge_knowledgebase_language_document_uploads" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'document_id' is set
+        if ('document_id' not in params) or (params['document_id'] is None):
+            raise ValueError("Missing the required parameter `document_id` when calling `post_knowledge_knowledgebase_language_document_uploads`")
+        # verify the required parameter 'knowledge_base_id' is set
+        if ('knowledge_base_id' not in params) or (params['knowledge_base_id'] is None):
+            raise ValueError("Missing the required parameter `knowledge_base_id` when calling `post_knowledge_knowledgebase_language_document_uploads`")
+        # verify the required parameter 'language_code' is set
+        if ('language_code' not in params) or (params['language_code'] is None):
+            raise ValueError("Missing the required parameter `language_code` when calling `post_knowledge_knowledgebase_language_document_uploads`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_knowledge_knowledgebase_language_document_uploads`")
+
+
+        resource_path = '/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/{documentId}/uploads'.replace('{format}', 'json')
+        path_params = {}
+        if 'document_id' in params:
+            path_params['documentId'] = params['document_id']
+        if 'knowledge_base_id' in params:
+            path_params['knowledgeBaseId'] = params['knowledge_base_id']
+        if 'language_code' in params:
+            path_params['languageCode'] = params['language_code']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='KnowledgeDocumentContentUpload',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     @deprecated("post_knowledge_knowledgebase_language_documents is deprecated")
     def post_knowledge_knowledgebase_language_documents(self, knowledge_base_id: str, language_code: str, body: 'KnowledgeDocumentRequest', **kwargs) -> 'KnowledgeDocument':
         """
@@ -6111,6 +6583,7 @@ class KnowledgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+
     @deprecated("post_knowledge_knowledgebase_language_documents_imports is deprecated")
     def post_knowledge_knowledgebase_language_documents_imports(self, knowledge_base_id: str, language_code: str, body: 'KnowledgeImport', **kwargs) -> 'KnowledgeImport':
         """
@@ -6201,6 +6674,7 @@ class KnowledgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+
     @deprecated("post_knowledge_knowledgebase_language_training_promote is deprecated")
     def post_knowledge_knowledgebase_language_training_promote(self, knowledge_base_id: str, language_code: str, training_id: str, **kwargs) -> 'KnowledgeTraining':
         """
@@ -6291,6 +6765,7 @@ class KnowledgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+
     @deprecated("post_knowledge_knowledgebase_language_trainings is deprecated")
     def post_knowledge_knowledgebase_language_trainings(self, knowledge_base_id: str, language_code: str, **kwargs) -> 'KnowledgeTraining':
         """
@@ -6375,6 +6850,7 @@ class KnowledgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+
     @deprecated("post_knowledge_knowledgebase_search is deprecated")
     def post_knowledge_knowledgebase_search(self, knowledge_base_id: str, **kwargs) -> 'KnowledgeSearchResponse':
         """
@@ -6456,7 +6932,7 @@ class KnowledgeApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def post_knowledge_knowledgebases(self, body: 'KnowledgeBase', **kwargs) -> 'KnowledgeBase':
         """
         Create new knowledge base

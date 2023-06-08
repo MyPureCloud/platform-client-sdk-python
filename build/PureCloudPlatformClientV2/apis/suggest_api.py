@@ -58,7 +58,7 @@ class SuggestApi(object):
             if not config.api_client:
                 config.api_client = ApiClient()
             self.api_client = config.api_client
-    
+
     def get_search(self, q64: str, **kwargs) -> 'JsonNodeSearchResponse':
         """
         Search using the q64 value returned from a previous search.
@@ -142,7 +142,7 @@ class SuggestApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_search_suggest(self, q64: str, **kwargs) -> 'JsonNodeSearchResponse':
         """
         Suggest resources using the q64 value returned from a previous suggest query.
@@ -226,7 +226,7 @@ class SuggestApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def post_search(self, body: 'SearchRequest', **kwargs) -> 'JsonNodeSearchResponse':
         """
         Search resources.
@@ -307,7 +307,7 @@ class SuggestApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def post_search_suggest(self, body: 'SuggestSearchRequest', **kwargs) -> 'JsonNodeSearchResponse':
         """
         Suggest resources.

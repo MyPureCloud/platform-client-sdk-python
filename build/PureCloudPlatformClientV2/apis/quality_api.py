@@ -39,6 +39,8 @@ from typing import Any
 
 from ..models import Empty
 from ..models import AgentActivityEntityListing
+from ..models import AsyncQueryResponse
+from ..models import AsyncQueryStatus
 from ..models import Calibration
 from ..models import CalibrationCreate
 from ..models import CalibrationEntityListing
@@ -47,6 +49,8 @@ from ..models import Evaluation
 from ..models import EvaluationAggregateQueryResponse
 from ..models import EvaluationAggregationQuery
 from ..models import EvaluationAggregationQueryMe
+from ..models import EvaluationAsyncAggregateQueryResponse
+from ..models import EvaluationAsyncAggregationQuery
 from ..models import EvaluationEntityListing
 from ..models import EvaluationForm
 from ..models import EvaluationFormAndScoringSet
@@ -62,6 +66,8 @@ from ..models import ScorableSurvey
 from ..models import Survey
 from ..models import SurveyAggregateQueryResponse
 from ..models import SurveyAggregationQuery
+from ..models import SurveyAsyncAggregateQueryResponse
+from ..models import SurveyAsyncAggregationQuery
 from ..models import SurveyForm
 from ..models import SurveyFormAndScoringSet
 from ..models import SurveyFormEntityListing
@@ -82,7 +88,7 @@ class QualityApi(object):
             if not config.api_client:
                 config.api_client = ApiClient()
             self.api_client = config.api_client
-    
+
     def delete_quality_calibration(self, calibration_id: str, calibrator_id: str, **kwargs) -> 'Calibration':
         """
         Delete a calibration by id.
@@ -166,7 +172,7 @@ class QualityApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def delete_quality_conversation_evaluation(self, conversation_id: str, evaluation_id: str, **kwargs) -> 'EvaluationResponse':
         """
         Delete an evaluation
@@ -253,6 +259,7 @@ class QualityApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+
     @deprecated("delete_quality_form is deprecated")
     def delete_quality_form(self, form_id: str, **kwargs) -> None:
         """
@@ -331,7 +338,7 @@ class QualityApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def delete_quality_forms_evaluation(self, form_id: str, **kwargs) -> None:
         """
         Delete an evaluation form.
@@ -409,7 +416,7 @@ class QualityApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def delete_quality_forms_survey(self, form_id: str, **kwargs) -> None:
         """
         Delete a survey form.
@@ -487,7 +494,329 @@ class QualityApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
+	# Preview Endpoint
+    def get_analytics_evaluations_aggregates_job(self, job_id: str, **kwargs) -> 'AsyncQueryStatus':
+        """
+        Get status for async query for evaluation aggregates
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_analytics_evaluations_aggregates_job(job_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str job_id: jobId (required)
+        :return: AsyncQueryStatus
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['job_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_analytics_evaluations_aggregates_job" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'job_id' is set
+        if ('job_id' not in params) or (params['job_id'] is None):
+            raise ValueError("Missing the required parameter `job_id` when calling `get_analytics_evaluations_aggregates_job`")
+
+
+        resource_path = '/api/v2/analytics/evaluations/aggregates/jobs/{jobId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'job_id' in params:
+            path_params['jobId'] = params['job_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='AsyncQueryStatus',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+	# Preview Endpoint
+    def get_analytics_evaluations_aggregates_job_results(self, job_id: str, **kwargs) -> 'EvaluationAsyncAggregateQueryResponse':
+        """
+        Fetch a page of results for an async aggregates query
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_analytics_evaluations_aggregates_job_results(job_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str job_id: jobId (required)
+        :param str cursor: Cursor token to retrieve next page
+        :return: EvaluationAsyncAggregateQueryResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['job_id', 'cursor']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_analytics_evaluations_aggregates_job_results" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'job_id' is set
+        if ('job_id' not in params) or (params['job_id'] is None):
+            raise ValueError("Missing the required parameter `job_id` when calling `get_analytics_evaluations_aggregates_job_results`")
+
+
+        resource_path = '/api/v2/analytics/evaluations/aggregates/jobs/{jobId}/results'.replace('{format}', 'json')
+        path_params = {}
+        if 'job_id' in params:
+            path_params['jobId'] = params['job_id']
+
+        query_params = {}
+        if 'cursor' in params:
+            query_params['cursor'] = params['cursor']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='EvaluationAsyncAggregateQueryResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+	# Preview Endpoint
+    def get_analytics_surveys_aggregates_job(self, job_id: str, **kwargs) -> 'AsyncQueryStatus':
+        """
+        Get status for async query for survey aggregates
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_analytics_surveys_aggregates_job(job_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str job_id: jobId (required)
+        :return: AsyncQueryStatus
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['job_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_analytics_surveys_aggregates_job" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'job_id' is set
+        if ('job_id' not in params) or (params['job_id'] is None):
+            raise ValueError("Missing the required parameter `job_id` when calling `get_analytics_surveys_aggregates_job`")
+
+
+        resource_path = '/api/v2/analytics/surveys/aggregates/jobs/{jobId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'job_id' in params:
+            path_params['jobId'] = params['job_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='AsyncQueryStatus',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+	# Preview Endpoint
+    def get_analytics_surveys_aggregates_job_results(self, job_id: str, **kwargs) -> 'SurveyAsyncAggregateQueryResponse':
+        """
+        Fetch a page of results for an async aggregates query
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_analytics_surveys_aggregates_job_results(job_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str job_id: jobId (required)
+        :param str cursor: Cursor token to retrieve next page
+        :return: SurveyAsyncAggregateQueryResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['job_id', 'cursor']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_analytics_surveys_aggregates_job_results" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'job_id' is set
+        if ('job_id' not in params) or (params['job_id'] is None):
+            raise ValueError("Missing the required parameter `job_id` when calling `get_analytics_surveys_aggregates_job_results`")
+
+
+        resource_path = '/api/v2/analytics/surveys/aggregates/jobs/{jobId}/results'.replace('{format}', 'json')
+        path_params = {}
+        if 'job_id' in params:
+            path_params['jobId'] = params['job_id']
+
+        query_params = {}
+        if 'cursor' in params:
+            query_params['cursor'] = params['cursor']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='SurveyAsyncAggregateQueryResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def get_quality_agents_activity(self, **kwargs) -> 'AgentActivityEntityListing':
         """
         Gets a list of Agent Activities
@@ -595,7 +924,7 @@ class QualityApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_quality_calibration(self, calibration_id: str, **kwargs) -> 'Calibration':
         """
         Get a calibration by id.  Requires either calibrator id or conversation id
@@ -679,7 +1008,7 @@ class QualityApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_quality_calibrations(self, calibrator_id: str, **kwargs) -> 'CalibrationEntityListing':
         """
         Get the list of calibrations
@@ -784,7 +1113,7 @@ class QualityApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_quality_conversation_evaluation(self, conversation_id: str, evaluation_id: str, **kwargs) -> 'EvaluationResponse':
         """
         Get an evaluation
@@ -871,7 +1200,7 @@ class QualityApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_quality_conversation_surveys(self, conversation_id: str, **kwargs) -> List['Survey']:
         """
         Get the surveys for a conversation
@@ -949,7 +1278,7 @@ class QualityApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_quality_conversations_audits_query_transaction_id(self, transaction_id: str, **kwargs) -> 'QualityAuditQueryExecutionStatusResponse':
         """
         Get status of audit query execution
@@ -1027,7 +1356,7 @@ class QualityApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_quality_conversations_audits_query_transaction_id_results(self, transaction_id: str, **kwargs) -> 'QualityAuditQueryExecutionResultsResponse':
         """
         Get results of audit query
@@ -1114,7 +1443,7 @@ class QualityApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_quality_evaluations_query(self, **kwargs) -> 'EvaluationEntityListing':
         """
         Queries Evaluations and returns a paged list
@@ -1243,7 +1572,7 @@ class QualityApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_quality_evaluators_activity(self, **kwargs) -> 'EvaluatorActivityEntityListing':
         """
         Get an evaluator activity
@@ -1348,6 +1677,7 @@ class QualityApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+
     @deprecated("get_quality_form is deprecated")
     def get_quality_form(self, form_id: str, **kwargs) -> 'EvaluationForm':
         """
@@ -1426,6 +1756,7 @@ class QualityApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+
     @deprecated("get_quality_form_versions is deprecated")
     def get_quality_form_versions(self, form_id: str, **kwargs) -> 'EvaluationFormEntityListing':
         """
@@ -1510,6 +1841,7 @@ class QualityApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+
     @deprecated("get_quality_forms is deprecated")
     def get_quality_forms(self, **kwargs) -> 'EvaluationFormEntityListing':
         """
@@ -1606,7 +1938,7 @@ class QualityApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_quality_forms_evaluation(self, form_id: str, **kwargs) -> 'EvaluationForm':
         """
         Get an evaluation form
@@ -1684,7 +2016,7 @@ class QualityApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_quality_forms_evaluation_versions(self, form_id: str, **kwargs) -> 'EvaluationFormEntityListing':
         """
         Gets all the revisions for a specific evaluation.
@@ -1771,7 +2103,7 @@ class QualityApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_quality_forms_evaluations(self, **kwargs) -> 'EvaluationFormEntityListing':
         """
         Get the list of evaluation forms
@@ -1867,7 +2199,7 @@ class QualityApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_quality_forms_evaluations_bulk_contexts(self, context_id: List['str'], **kwargs) -> List['EvaluationForm']:
         """
         Retrieve a list of the latest published evaluation form versions by context ids
@@ -1945,7 +2277,7 @@ class QualityApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_quality_forms_survey(self, form_id: str, **kwargs) -> 'SurveyForm':
         """
         Get a survey form
@@ -2023,7 +2355,7 @@ class QualityApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_quality_forms_survey_versions(self, form_id: str, **kwargs) -> 'SurveyFormEntityListing':
         """
         Gets all the revisions for a specific survey.
@@ -2107,7 +2439,7 @@ class QualityApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_quality_forms_surveys(self, **kwargs) -> 'SurveyFormEntityListing':
         """
         Get the list of survey forms
@@ -2203,7 +2535,7 @@ class QualityApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_quality_forms_surveys_bulk(self, id: List['str'], **kwargs) -> 'SurveyFormEntityListing':
         """
         Retrieve a list of survey forms by their ids
@@ -2281,7 +2613,7 @@ class QualityApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_quality_forms_surveys_bulk_contexts(self, context_id: List['str'], **kwargs) -> List['SurveyForm']:
         """
         Retrieve a list of the latest form versions by context ids
@@ -2362,6 +2694,7 @@ class QualityApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+
     @deprecated("get_quality_publishedform is deprecated")
     def get_quality_publishedform(self, form_id: str, **kwargs) -> 'EvaluationForm':
         """
@@ -2440,6 +2773,7 @@ class QualityApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+
     @deprecated("get_quality_publishedforms is deprecated")
     def get_quality_publishedforms(self, **kwargs) -> 'EvaluationFormEntityListing':
         """
@@ -2524,7 +2858,7 @@ class QualityApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_quality_publishedforms_evaluation(self, form_id: str, **kwargs) -> 'EvaluationForm':
         """
         Get the most recent published version of an evaluation form.
@@ -2602,7 +2936,7 @@ class QualityApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_quality_publishedforms_evaluations(self, **kwargs) -> 'EvaluationFormEntityListing':
         """
         Get the published evaluation forms.
@@ -2686,7 +3020,7 @@ class QualityApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_quality_publishedforms_survey(self, form_id: str, **kwargs) -> 'SurveyForm':
         """
         Get the most recent published version of a survey form.
@@ -2764,7 +3098,7 @@ class QualityApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_quality_publishedforms_surveys(self, **kwargs) -> 'SurveyFormEntityListing':
         """
         Get the published survey forms.
@@ -2848,7 +3182,7 @@ class QualityApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_quality_survey(self, survey_id: str, **kwargs) -> 'Survey':
         """
         Get a survey for a conversation
@@ -2926,7 +3260,7 @@ class QualityApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_quality_surveys_scorable(self, customer_survey_url: str, **kwargs) -> 'ScorableSurvey':
         """
         Get a survey as an end-customer, for the purposes of scoring it.
@@ -3004,7 +3338,7 @@ class QualityApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def patch_quality_forms_survey(self, form_id: str, body: 'SurveyForm', **kwargs) -> 'SurveyForm':
         """
         Disable a particular version of a survey form and invalidates any invitations that have already been sent to customers using this version of the form.
@@ -3088,7 +3422,86 @@ class QualityApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
+	# Preview Endpoint
+    def post_analytics_evaluations_aggregates_jobs(self, body: 'EvaluationAsyncAggregationQuery', **kwargs) -> 'AsyncQueryResponse':
+        """
+        Query for evaluation aggregates asynchronously
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_analytics_evaluations_aggregates_jobs(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param EvaluationAsyncAggregationQuery body: query (required)
+        :return: AsyncQueryResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_analytics_evaluations_aggregates_jobs" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_analytics_evaluations_aggregates_jobs`")
+
+
+        resource_path = '/api/v2/analytics/evaluations/aggregates/jobs'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='AsyncQueryResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def post_analytics_evaluations_aggregates_query(self, body: 'EvaluationAggregationQuery', **kwargs) -> 'EvaluationAggregateQueryResponse':
         """
         Query for evaluation aggregates
@@ -3166,7 +3579,86 @@ class QualityApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
+	# Preview Endpoint
+    def post_analytics_surveys_aggregates_jobs(self, body: 'SurveyAsyncAggregationQuery', **kwargs) -> 'AsyncQueryResponse':
+        """
+        Query for survey aggregates asynchronously
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_analytics_surveys_aggregates_jobs(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param SurveyAsyncAggregationQuery body: query (required)
+        :return: AsyncQueryResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_analytics_surveys_aggregates_jobs" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_analytics_surveys_aggregates_jobs`")
+
+
+        resource_path = '/api/v2/analytics/surveys/aggregates/jobs'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='AsyncQueryResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def post_analytics_surveys_aggregates_query(self, body: 'SurveyAggregationQuery', **kwargs) -> 'SurveyAggregateQueryResponse':
         """
         Query for survey aggregates
@@ -3244,7 +3736,7 @@ class QualityApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def post_quality_calibrations(self, body: 'CalibrationCreate', **kwargs) -> 'Calibration':
         """
         Create a calibration
@@ -3325,7 +3817,7 @@ class QualityApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def post_quality_conversation_evaluations(self, conversation_id: str, body: 'Evaluation', **kwargs) -> 'Evaluation':
         """
         Create an evaluation
@@ -3412,7 +3904,7 @@ class QualityApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def post_quality_conversations_audits_query(self, body: 'QMAuditQueryRequest', **kwargs) -> 'QualityAuditQueryExecutionStatusResponse':
         """
         Create audit query execution
@@ -3490,7 +3982,7 @@ class QualityApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def post_quality_evaluations_aggregates_query_me(self, body: 'EvaluationAggregationQueryMe', **kwargs) -> 'EvaluationAggregateQueryResponse':
         """
         Query for evaluation aggregates for the current user
@@ -3568,7 +4060,7 @@ class QualityApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def post_quality_evaluations_scoring(self, body: 'EvaluationFormAndScoringSet', **kwargs) -> 'EvaluationScoringSet':
         """
         Score evaluation
@@ -3646,6 +4138,7 @@ class QualityApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+
     @deprecated("post_quality_forms is deprecated")
     def post_quality_forms(self, body: 'EvaluationForm', **kwargs) -> 'EvaluationForm':
         """
@@ -3724,7 +4217,7 @@ class QualityApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def post_quality_forms_evaluations(self, body: 'EvaluationForm', **kwargs) -> 'EvaluationForm':
         """
         Create an evaluation form.
@@ -3802,7 +4295,7 @@ class QualityApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def post_quality_forms_surveys(self, body: 'SurveyForm', **kwargs) -> 'SurveyForm':
         """
         Create a survey form.
@@ -3880,6 +4373,7 @@ class QualityApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+
     @deprecated("post_quality_publishedforms is deprecated")
     def post_quality_publishedforms(self, body: 'PublishForm', **kwargs) -> 'EvaluationForm':
         """
@@ -3958,7 +4452,7 @@ class QualityApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def post_quality_publishedforms_evaluations(self, body: 'PublishForm', **kwargs) -> 'EvaluationForm':
         """
         Publish an evaluation form.
@@ -4036,7 +4530,7 @@ class QualityApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def post_quality_publishedforms_surveys(self, body: 'PublishForm', **kwargs) -> 'SurveyForm':
         """
         Publish a survey form.
@@ -4114,7 +4608,7 @@ class QualityApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def post_quality_surveys_scoring(self, body: 'SurveyFormAndScoringSet', **kwargs) -> 'SurveyScoringSet':
         """
         Score survey
@@ -4192,7 +4686,7 @@ class QualityApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def put_quality_calibration(self, calibration_id: str, body: 'Calibration', **kwargs) -> 'Calibration':
         """
         Update a calibration to the specified calibration via PUT.  Editable fields include: evaluators, expertEvaluator, and scoringIndex
@@ -4276,7 +4770,7 @@ class QualityApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def put_quality_conversation_evaluation(self, conversation_id: str, evaluation_id: str, body: 'Evaluation', **kwargs) -> 'EvaluationResponse':
         """
         Update an evaluation
@@ -4369,6 +4863,7 @@ class QualityApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+
     @deprecated("put_quality_form is deprecated")
     def put_quality_form(self, form_id: str, body: 'EvaluationForm', **kwargs) -> 'EvaluationForm':
         """
@@ -4453,7 +4948,7 @@ class QualityApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def put_quality_forms_evaluation(self, form_id: str, body: 'EvaluationForm', **kwargs) -> 'EvaluationForm':
         """
         Update an evaluation form.
@@ -4537,7 +5032,7 @@ class QualityApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def put_quality_forms_survey(self, form_id: str, body: 'SurveyForm', **kwargs) -> 'SurveyForm':
         """
         Update a survey form.
@@ -4621,7 +5116,7 @@ class QualityApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def put_quality_surveys_scorable(self, customer_survey_url: str, body: 'ScorableSurvey', **kwargs) -> 'ScorableSurvey':
         """
         Update a survey as an end-customer, for the purposes of scoring it.

@@ -119,7 +119,7 @@ class OutboundApi(object):
             if not config.api_client:
                 config.api_client = ApiClient()
             self.api_client = config.api_client
-    
+
     def delete_outbound_attemptlimit(self, attempt_limits_id: str, **kwargs) -> None:
         """
         Delete attempt limits
@@ -197,7 +197,7 @@ class OutboundApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def delete_outbound_callabletimeset(self, callable_time_set_id: str, **kwargs) -> None:
         """
         Delete callable time set
@@ -275,7 +275,7 @@ class OutboundApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def delete_outbound_callanalysisresponseset(self, call_analysis_set_id: str, **kwargs) -> None:
         """
         Delete a dialer call analysis response set.
@@ -353,7 +353,7 @@ class OutboundApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def delete_outbound_campaign(self, campaign_id: str, **kwargs) -> 'Campaign':
         """
         Delete a campaign.
@@ -431,7 +431,7 @@ class OutboundApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def delete_outbound_campaign_progress(self, campaign_id: str, **kwargs) -> None:
         """
         Reset campaign progress and recycle the campaign
@@ -509,7 +509,7 @@ class OutboundApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def delete_outbound_campaignrule(self, campaign_rule_id: str, **kwargs) -> None:
         """
         Delete Campaign Rule
@@ -587,7 +587,7 @@ class OutboundApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def delete_outbound_contactlist(self, contact_list_id: str, **kwargs) -> None:
         """
         Delete a contact list.
@@ -665,7 +665,7 @@ class OutboundApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def delete_outbound_contactlist_contact(self, contact_list_id: str, contact_id: str, **kwargs) -> None:
         """
         Delete a contact.
@@ -749,7 +749,7 @@ class OutboundApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def delete_outbound_contactlist_contacts(self, contact_list_id: str, contact_ids: List['str'], **kwargs) -> None:
         """
         Delete contacts from a contact list.
@@ -833,7 +833,7 @@ class OutboundApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def delete_outbound_contactlistfilter(self, contact_list_filter_id: str, **kwargs) -> None:
         """
         Delete Contact List Filter
@@ -911,7 +911,7 @@ class OutboundApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def delete_outbound_contactlists(self, id: List['str'], **kwargs) -> None:
         """
         Delete multiple contact lists.
@@ -989,7 +989,7 @@ class OutboundApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def delete_outbound_digitalruleset(self, digital_rule_set_id: str, **kwargs) -> None:
         """
         Delete an Outbound Digital Rule Set
@@ -1067,7 +1067,7 @@ class OutboundApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def delete_outbound_dnclist(self, dnc_list_id: str, **kwargs) -> None:
         """
         Delete dialer DNC list
@@ -1145,7 +1145,7 @@ class OutboundApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def delete_outbound_dnclist_customexclusioncolumns(self, dnc_list_id: str, **kwargs) -> None:
         """
         Deletes all or expired custom exclusion column entries from a DNC list.
@@ -1226,7 +1226,7 @@ class OutboundApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def delete_outbound_dnclist_emailaddresses(self, dnc_list_id: str, **kwargs) -> None:
         """
         Deletes all or expired email addresses from a DNC list.
@@ -1307,7 +1307,7 @@ class OutboundApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def delete_outbound_dnclist_phonenumbers(self, dnc_list_id: str, **kwargs) -> None:
         """
         Deletes all or expired phone numbers from a DNC list.
@@ -1388,7 +1388,7 @@ class OutboundApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def delete_outbound_messagingcampaign(self, messaging_campaign_id: str, **kwargs) -> 'MessagingCampaign':
         """
         Delete an Outbound Messaging Campaign
@@ -1466,7 +1466,7 @@ class OutboundApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def delete_outbound_messagingcampaign_progress(self, messaging_campaign_id: str, **kwargs) -> None:
         """
         Reset messaging campaign progress and recycle the messaging campaign
@@ -1544,7 +1544,7 @@ class OutboundApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def delete_outbound_ruleset(self, rule_set_id: str, **kwargs) -> None:
         """
         Delete a Rule Set.
@@ -1622,7 +1622,7 @@ class OutboundApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def delete_outbound_schedules_campaign(self, campaign_id: str, **kwargs) -> None:
         """
         Delete a dialer campaign schedule.
@@ -1700,7 +1700,7 @@ class OutboundApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def delete_outbound_schedules_emailcampaign(self, email_campaign_id: str, **kwargs) -> None:
         """
         Delete an email campaign schedule.
@@ -1778,7 +1778,7 @@ class OutboundApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def delete_outbound_schedules_messagingcampaign(self, messaging_campaign_id: str, **kwargs) -> None:
         """
         Delete a messaging campaign schedule.
@@ -1856,7 +1856,7 @@ class OutboundApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def delete_outbound_schedules_sequence(self, sequence_id: str, **kwargs) -> None:
         """
         Delete a dialer sequence schedule.
@@ -1934,7 +1934,7 @@ class OutboundApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def delete_outbound_sequence(self, sequence_id: str, **kwargs) -> None:
         """
         Delete a dialer campaign sequence.
@@ -2012,7 +2012,7 @@ class OutboundApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_outbound_attemptlimit(self, attempt_limits_id: str, **kwargs) -> 'AttemptLimits':
         """
         Get attempt limits
@@ -2090,7 +2090,7 @@ class OutboundApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_outbound_attemptlimits(self, **kwargs) -> 'AttemptLimitsEntityListing':
         """
         Query attempt limits list
@@ -2183,7 +2183,7 @@ class OutboundApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_outbound_callabletimeset(self, callable_time_set_id: str, **kwargs) -> 'CallableTimeSet':
         """
         Get callable time set
@@ -2261,7 +2261,7 @@ class OutboundApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_outbound_callabletimesets(self, **kwargs) -> 'CallableTimeSetEntityListing':
         """
         Query callable time set list
@@ -2354,7 +2354,7 @@ class OutboundApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_outbound_callanalysisresponseset(self, call_analysis_set_id: str, **kwargs) -> 'ResponseSet':
         """
         Get a dialer call analysis response set.
@@ -2432,7 +2432,7 @@ class OutboundApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_outbound_callanalysisresponsesets(self, **kwargs) -> 'ResponseSetEntityListing':
         """
         Query a list of dialer call analysis response sets.
@@ -2525,7 +2525,7 @@ class OutboundApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_outbound_campaign(self, campaign_id: str, **kwargs) -> 'Campaign':
         """
         Get dialer campaign.
@@ -2603,7 +2603,7 @@ class OutboundApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_outbound_campaign_agentownedmappingpreview_results(self, campaign_id: str, **kwargs) -> 'AgentOwnedMappingPreviewListing':
         """
         Get a preview of how agents will be mapped to this campaign's contact list.
@@ -2681,7 +2681,7 @@ class OutboundApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_outbound_campaign_diagnostics(self, campaign_id: str, **kwargs) -> 'CampaignDiagnostics':
         """
         Get campaign diagnostics
@@ -2759,7 +2759,7 @@ class OutboundApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_outbound_campaign_interactions(self, campaign_id: str, **kwargs) -> 'CampaignInteractions':
         """
         Get dialer campaign interactions.
@@ -2837,7 +2837,7 @@ class OutboundApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_outbound_campaign_progress(self, campaign_id: str, **kwargs) -> 'CampaignProgress':
         """
         Get campaign progress
@@ -2915,7 +2915,7 @@ class OutboundApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_outbound_campaign_stats(self, campaign_id: str, **kwargs) -> 'CampaignStats':
         """
         Get statistics about a Dialer Campaign
@@ -2993,7 +2993,7 @@ class OutboundApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_outbound_campaignrule(self, campaign_rule_id: str, **kwargs) -> 'CampaignRule':
         """
         Get Campaign Rule
@@ -3071,7 +3071,7 @@ class OutboundApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_outbound_campaignrules(self, **kwargs) -> 'CampaignRuleEntityListing':
         """
         Query Campaign Rule list
@@ -3164,7 +3164,7 @@ class OutboundApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_outbound_campaigns(self, **kwargs) -> 'CampaignEntityListing':
         """
         Query a list of dialer campaigns.
@@ -3275,7 +3275,7 @@ class OutboundApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_outbound_campaigns_all(self, **kwargs) -> 'CommonCampaignEntityListing':
         """
         Query across all types of campaigns by division
@@ -3368,7 +3368,7 @@ class OutboundApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_outbound_campaigns_all_divisionviews(self, **kwargs) -> 'CommonCampaignDivisionViewEntityListing':
         """
         Query across all types of campaigns
@@ -3461,7 +3461,7 @@ class OutboundApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_outbound_campaigns_divisionview(self, campaign_id: str, **kwargs) -> 'CampaignDivisionView':
         """
         Get a basic Campaign information object
@@ -3539,7 +3539,7 @@ class OutboundApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_outbound_campaigns_divisionviews(self, **kwargs) -> 'CampaignDivisionViewListing':
         """
         Query a list of basic Campaign information objects
@@ -3632,7 +3632,7 @@ class OutboundApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_outbound_contactlist(self, contact_list_id: str, **kwargs) -> 'ContactList':
         """
         Get a dialer contact list.
@@ -3716,7 +3716,7 @@ class OutboundApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_outbound_contactlist_contact(self, contact_list_id: str, contact_id: str, **kwargs) -> 'DialerContact':
         """
         Get a contact.
@@ -3800,7 +3800,7 @@ class OutboundApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_outbound_contactlist_export(self, contact_list_id: str, **kwargs) -> 'ExportUri':
         """
         Get the URI of a contact list export.
@@ -3881,7 +3881,7 @@ class OutboundApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_outbound_contactlist_importstatus(self, contact_list_id: str, **kwargs) -> 'ImportStatus':
         """
         Get dialer contactList import status.
@@ -3959,7 +3959,7 @@ class OutboundApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_outbound_contactlist_timezonemappingpreview(self, contact_list_id: str, **kwargs) -> 'TimeZoneMappingPreview':
         """
         Preview the result of applying Automatic Time Zone Mapping to a contact list
@@ -4037,7 +4037,7 @@ class OutboundApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_outbound_contactlistfilter(self, contact_list_filter_id: str, **kwargs) -> 'ContactListFilter':
         """
         Get Contact list filter
@@ -4115,7 +4115,7 @@ class OutboundApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_outbound_contactlistfilters(self, **kwargs) -> 'ContactListFilterEntityListing':
         """
         Query Contact list filters
@@ -4211,7 +4211,7 @@ class OutboundApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_outbound_contactlists(self, **kwargs) -> 'ContactListEntityListing':
         """
         Query a list of contact lists.
@@ -4316,7 +4316,7 @@ class OutboundApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_outbound_contactlists_divisionview(self, contact_list_id: str, **kwargs) -> 'ContactListDivisionView':
         """
         Get a basic ContactList information object
@@ -4400,7 +4400,7 @@ class OutboundApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_outbound_contactlists_divisionviews(self, **kwargs) -> 'ContactListDivisionViewListing':
         """
         Query a list of simplified contact list objects.
@@ -4499,7 +4499,7 @@ class OutboundApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_outbound_digitalruleset(self, digital_rule_set_id: str, **kwargs) -> 'DigitalRuleSet':
         """
         Get an Outbound Digital Rule Set
@@ -4577,7 +4577,7 @@ class OutboundApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_outbound_digitalrulesets(self, **kwargs) -> 'DigitalRuleSetEntityListing':
         """
         Query a list of Outbound Digital Rule Sets
@@ -4667,7 +4667,7 @@ class OutboundApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_outbound_dnclist(self, dnc_list_id: str, **kwargs) -> 'DncList':
         """
         Get dialer DNC list
@@ -4751,7 +4751,7 @@ class OutboundApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_outbound_dnclist_export(self, dnc_list_id: str, **kwargs) -> 'ExportUri':
         """
         Get the URI of a DNC list export.
@@ -4832,7 +4832,7 @@ class OutboundApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_outbound_dnclist_importstatus(self, dnc_list_id: str, **kwargs) -> 'ImportStatus':
         """
         Get dialer dncList import status.
@@ -4910,7 +4910,7 @@ class OutboundApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_outbound_dnclists(self, **kwargs) -> 'DncListEntityListing':
         """
         Query dialer DNC lists
@@ -5015,7 +5015,7 @@ class OutboundApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_outbound_dnclists_divisionview(self, dnc_list_id: str, **kwargs) -> 'DncListDivisionView':
         """
         Get a basic DncList information object
@@ -5099,7 +5099,7 @@ class OutboundApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_outbound_dnclists_divisionviews(self, **kwargs) -> 'DncListDivisionViewListing':
         """
         Query a list of simplified dnc list objects.
@@ -5201,7 +5201,7 @@ class OutboundApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_outbound_event(self, event_id: str, **kwargs) -> 'EventLog':
         """
         Get Dialer Event
@@ -5279,7 +5279,7 @@ class OutboundApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_outbound_events(self, **kwargs) -> 'DialerEventEntityListing':
         """
         Query Event Logs
@@ -5372,7 +5372,7 @@ class OutboundApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_outbound_messagingcampaign(self, messaging_campaign_id: str, **kwargs) -> 'MessagingCampaign':
         """
         Get an Outbound Messaging Campaign
@@ -5450,7 +5450,7 @@ class OutboundApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_outbound_messagingcampaign_diagnostics(self, messaging_campaign_id: str, **kwargs) -> 'MessagingCampaignDiagnostics':
         """
         Get messaging campaign diagnostics
@@ -5528,7 +5528,7 @@ class OutboundApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_outbound_messagingcampaign_progress(self, messaging_campaign_id: str, **kwargs) -> 'CampaignProgress':
         """
         Get messaging campaign's progress
@@ -5606,7 +5606,7 @@ class OutboundApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_outbound_messagingcampaigns(self, **kwargs) -> 'MessagingCampaignEntityListing':
         """
         Query a list of Messaging Campaigns
@@ -5708,7 +5708,7 @@ class OutboundApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_outbound_messagingcampaigns_divisionview(self, messaging_campaign_id: str, **kwargs) -> 'MessagingCampaignDivisionView':
         """
         Get a basic Messaging Campaign information object
@@ -5786,7 +5786,7 @@ class OutboundApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_outbound_messagingcampaigns_divisionviews(self, **kwargs) -> 'MessagingCampaignDivisionViewEntityListing':
         """
         Query a list of basic Messaging Campaign information objects
@@ -5879,7 +5879,7 @@ class OutboundApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_outbound_ruleset(self, rule_set_id: str, **kwargs) -> 'RuleSet':
         """
         Get a Rule Set by ID.
@@ -5957,7 +5957,7 @@ class OutboundApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_outbound_rulesets(self, **kwargs) -> 'RuleSetEntityListing':
         """
         Query a list of Rule Sets.
@@ -6050,7 +6050,7 @@ class OutboundApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_outbound_schedules_campaign(self, campaign_id: str, **kwargs) -> 'CampaignSchedule':
         """
         Get a dialer campaign schedule.
@@ -6128,7 +6128,7 @@ class OutboundApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_outbound_schedules_campaigns(self, **kwargs) -> List['CampaignSchedule']:
         """
         Query for a list of dialer campaign schedules.
@@ -6200,7 +6200,7 @@ class OutboundApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_outbound_schedules_emailcampaign(self, email_campaign_id: str, **kwargs) -> 'EmailCampaignSchedule':
         """
         Get an email campaign schedule.
@@ -6278,7 +6278,7 @@ class OutboundApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_outbound_schedules_emailcampaigns(self, **kwargs) -> 'MessagingCampaignScheduleEntityListing':
         """
         Query for a list of email campaign schedules.
@@ -6350,7 +6350,7 @@ class OutboundApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_outbound_schedules_messagingcampaign(self, messaging_campaign_id: str, **kwargs) -> 'MessagingCampaignSchedule':
         """
         Get a messaging campaign schedule.
@@ -6428,7 +6428,7 @@ class OutboundApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_outbound_schedules_messagingcampaigns(self, **kwargs) -> 'MessagingCampaignScheduleEntityListing':
         """
         Query for a list of messaging campaign schedules.
@@ -6500,7 +6500,7 @@ class OutboundApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_outbound_schedules_sequence(self, sequence_id: str, **kwargs) -> 'SequenceSchedule':
         """
         Get a dialer sequence schedule.
@@ -6578,7 +6578,7 @@ class OutboundApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_outbound_schedules_sequences(self, **kwargs) -> List['SequenceSchedule']:
         """
         Query for a list of dialer sequence schedules.
@@ -6650,7 +6650,7 @@ class OutboundApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_outbound_sequence(self, sequence_id: str, **kwargs) -> 'CampaignSequence':
         """
         Get a dialer campaign sequence.
@@ -6728,7 +6728,7 @@ class OutboundApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_outbound_sequences(self, **kwargs) -> 'CampaignSequenceEntityListing':
         """
         Query a list of dialer campaign sequences.
@@ -6821,7 +6821,7 @@ class OutboundApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_outbound_settings(self, **kwargs) -> 'OutboundSettings':
         """
         Get the outbound settings for this organization
@@ -6893,7 +6893,7 @@ class OutboundApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_outbound_wrapupcodemappings(self, **kwargs) -> 'WrapUpCodeMapping':
         """
         Get the Dialer wrap up code mapping.
@@ -6965,7 +6965,7 @@ class OutboundApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def patch_outbound_dnclist_customexclusioncolumns(self, dnc_list_id: str, body: 'DncPatchCustomExclusionColumnsRequest', **kwargs) -> None:
         """
         Add entries to or delete entries from a DNC list.
@@ -7049,7 +7049,7 @@ class OutboundApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def patch_outbound_dnclist_emailaddresses(self, dnc_list_id: str, body: 'DncPatchEmailsRequest', **kwargs) -> None:
         """
         Add emails to or Delete emails from a DNC list.
@@ -7133,7 +7133,7 @@ class OutboundApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def patch_outbound_dnclist_phonenumbers(self, dnc_list_id: str, body: 'DncPatchPhoneNumbersRequest', **kwargs) -> None:
         """
         Add numbers to or delete numbers from a DNC list.
@@ -7217,7 +7217,7 @@ class OutboundApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def patch_outbound_settings(self, body: 'OutboundSettings', **kwargs) -> None:
         """
         Update the outbound settings for this organization
@@ -7295,7 +7295,7 @@ class OutboundApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def post_outbound_attemptlimits(self, body: 'AttemptLimits', **kwargs) -> 'AttemptLimits':
         """
         Create attempt limits
@@ -7373,7 +7373,7 @@ class OutboundApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def post_outbound_audits(self, body: 'DialerAuditRequest', **kwargs) -> 'AuditSearchResult':
         """
         Retrieves audits for dialer.
@@ -7466,7 +7466,7 @@ class OutboundApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def post_outbound_callabletimesets(self, body: 'CallableTimeSet', **kwargs) -> 'CallableTimeSet':
         """
         Create callable time set
@@ -7544,7 +7544,7 @@ class OutboundApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def post_outbound_callanalysisresponsesets(self, body: 'ResponseSet', **kwargs) -> 'ResponseSet':
         """
         Create a dialer call analysis response set.
@@ -7622,7 +7622,7 @@ class OutboundApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def post_outbound_campaign_agentownedmappingpreview(self, campaign_id: str, **kwargs) -> object:
         """
         Initiate request for a preview of how agents will be mapped to this campaign's contact list.
@@ -7700,6 +7700,7 @@ class OutboundApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+
     @deprecated("post_outbound_campaign_callback_schedule is deprecated")
     def post_outbound_campaign_callback_schedule(self, campaign_id: str, body: 'ContactCallbackRequest', **kwargs) -> 'ContactCallbackRequest':
         """
@@ -7784,7 +7785,7 @@ class OutboundApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def post_outbound_campaignrules(self, body: 'CampaignRule', **kwargs) -> 'CampaignRule':
         """
         Create Campaign Rule
@@ -7862,7 +7863,7 @@ class OutboundApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def post_outbound_campaigns(self, body: 'Campaign', **kwargs) -> 'Campaign':
         """
         Create a campaign.
@@ -7940,7 +7941,7 @@ class OutboundApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def post_outbound_campaigns_progress(self, body: List['str'], **kwargs) -> List['CampaignProgress']:
         """
         Get progress for a list of campaigns
@@ -8018,7 +8019,7 @@ class OutboundApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def post_outbound_contactlist_clear(self, contact_list_id: str, **kwargs) -> None:
         """
         Deletes all contacts out of a list. All outstanding recalls or rule-scheduled callbacks for non-preview campaigns configured with the contactlist will be cancelled.
@@ -8096,7 +8097,7 @@ class OutboundApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def post_outbound_contactlist_contacts(self, contact_list_id: str, body: List['WritableDialerContact'], **kwargs) -> List['DialerContact']:
         """
         Add contacts to a contact list.
@@ -8189,7 +8190,7 @@ class OutboundApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def post_outbound_contactlist_contacts_bulk(self, contact_list_id: str, body: List['str'], **kwargs) -> List['DialerContact']:
         """
         Get contacts from a contact list.
@@ -8273,7 +8274,7 @@ class OutboundApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def post_outbound_contactlist_export(self, contact_list_id: str, **kwargs) -> 'DomainEntityRef':
         """
         Initiate the export of a contact list.
@@ -8351,7 +8352,7 @@ class OutboundApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def post_outbound_contactlistfilters(self, body: 'ContactListFilter', **kwargs) -> 'ContactListFilter':
         """
         Create Contact List Filter
@@ -8429,7 +8430,7 @@ class OutboundApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def post_outbound_contactlistfilters_preview(self, body: 'ContactListFilter', **kwargs) -> 'FilterPreviewResponse':
         """
         Get a preview of the output of a contact list filter
@@ -8507,7 +8508,7 @@ class OutboundApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def post_outbound_contactlists(self, body: 'ContactList', **kwargs) -> 'ContactList':
         """
         Create a contact List.
@@ -8585,7 +8586,7 @@ class OutboundApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def post_outbound_conversation_dnc(self, conversation_id: str, **kwargs) -> None:
         """
         Add phone numbers to a Dialer DNC list.
@@ -8663,7 +8664,7 @@ class OutboundApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def post_outbound_digitalrulesets(self, body: 'DigitalRuleSet', **kwargs) -> 'DigitalRuleSet':
         """
         Create an Outbound Digital Rule Set
@@ -8741,7 +8742,7 @@ class OutboundApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def post_outbound_dnclist_emailaddresses(self, dnc_list_id: str, body: List['str'], **kwargs) -> None:
         """
         Add email addresses to a DNC list.
@@ -8825,7 +8826,7 @@ class OutboundApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def post_outbound_dnclist_export(self, dnc_list_id: str, **kwargs) -> 'DomainEntityRef':
         """
         Initiate the export of a dnc list.
@@ -8903,7 +8904,7 @@ class OutboundApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def post_outbound_dnclist_phonenumbers(self, dnc_list_id: str, body: List['str'], **kwargs) -> None:
         """
         Add phone numbers to a DNC list.
@@ -8990,7 +8991,7 @@ class OutboundApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def post_outbound_dnclists(self, body: 'DncListCreate', **kwargs) -> 'DncList':
         """
         Create dialer DNC list
@@ -9068,7 +9069,7 @@ class OutboundApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def post_outbound_messagingcampaigns(self, body: 'MessagingCampaign', **kwargs) -> 'MessagingCampaign':
         """
         Create a Messaging Campaign
@@ -9146,7 +9147,7 @@ class OutboundApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def post_outbound_messagingcampaigns_progress(self, body: List['str'], **kwargs) -> List['CampaignProgress']:
         """
         Get progress for a list of messaging campaigns
@@ -9224,7 +9225,7 @@ class OutboundApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def post_outbound_rulesets(self, body: 'RuleSet', **kwargs) -> 'RuleSet':
         """
         Create a Rule Set.
@@ -9302,7 +9303,7 @@ class OutboundApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def post_outbound_sequences(self, body: 'CampaignSequence', **kwargs) -> 'CampaignSequence':
         """
         Create a new campaign sequence.
@@ -9380,7 +9381,7 @@ class OutboundApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def put_outbound_attemptlimit(self, attempt_limits_id: str, body: 'AttemptLimits', **kwargs) -> 'AttemptLimits':
         """
         Update attempt limits
@@ -9464,7 +9465,7 @@ class OutboundApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def put_outbound_callabletimeset(self, callable_time_set_id: str, body: 'CallableTimeSet', **kwargs) -> 'CallableTimeSet':
         """
         Update callable time set
@@ -9548,7 +9549,7 @@ class OutboundApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def put_outbound_callanalysisresponseset(self, call_analysis_set_id: str, body: 'ResponseSet', **kwargs) -> 'ResponseSet':
         """
         Update a dialer call analysis response set.
@@ -9632,7 +9633,7 @@ class OutboundApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def put_outbound_campaign(self, campaign_id: str, body: 'Campaign', **kwargs) -> 'Campaign':
         """
         Update a campaign.
@@ -9716,7 +9717,7 @@ class OutboundApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def put_outbound_campaign_agent(self, campaign_id: str, user_id: str, body: 'Agent', **kwargs) -> str:
         """
         Send notification that an agent's state changed 
@@ -9806,7 +9807,7 @@ class OutboundApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def put_outbound_campaignrule(self, campaign_rule_id: str, body: 'CampaignRule', **kwargs) -> 'CampaignRule':
         """
         Update Campaign Rule
@@ -9890,7 +9891,7 @@ class OutboundApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def put_outbound_contactlist(self, contact_list_id: str, body: 'ContactList', **kwargs) -> 'ContactList':
         """
         Update a contact list.
@@ -9974,7 +9975,7 @@ class OutboundApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def put_outbound_contactlist_contact(self, contact_list_id: str, contact_id: str, body: 'DialerContact', **kwargs) -> 'DialerContact':
         """
         Update a contact.
@@ -10064,7 +10065,7 @@ class OutboundApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def put_outbound_contactlistfilter(self, contact_list_filter_id: str, body: 'ContactListFilter', **kwargs) -> 'ContactListFilter':
         """
         Update Contact List Filter
@@ -10148,7 +10149,7 @@ class OutboundApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def put_outbound_digitalruleset(self, digital_rule_set_id: str, body: 'DigitalRuleSet', **kwargs) -> 'DigitalRuleSet':
         """
         Update an Outbound Digital Rule Set
@@ -10232,7 +10233,7 @@ class OutboundApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def put_outbound_dnclist(self, dnc_list_id: str, body: 'DncList', **kwargs) -> 'DncList':
         """
         Update dialer DNC list
@@ -10316,7 +10317,7 @@ class OutboundApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def put_outbound_messagingcampaign(self, messaging_campaign_id: str, body: 'MessagingCampaign', **kwargs) -> 'MessagingCampaign':
         """
         Update an Outbound Messaging Campaign
@@ -10400,7 +10401,7 @@ class OutboundApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def put_outbound_ruleset(self, rule_set_id: str, body: 'RuleSet', **kwargs) -> 'RuleSet':
         """
         Update a Rule Set.
@@ -10484,7 +10485,7 @@ class OutboundApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def put_outbound_schedules_campaign(self, campaign_id: str, body: 'CampaignSchedule', **kwargs) -> 'CampaignSchedule':
         """
         Update a new campaign schedule.
@@ -10568,7 +10569,7 @@ class OutboundApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def put_outbound_schedules_emailcampaign(self, email_campaign_id: str, body: 'EmailCampaignSchedule', **kwargs) -> 'EmailCampaignSchedule':
         """
         Update an email campaign schedule.
@@ -10652,7 +10653,7 @@ class OutboundApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def put_outbound_schedules_messagingcampaign(self, messaging_campaign_id: str, body: 'MessagingCampaignSchedule', **kwargs) -> 'MessagingCampaignSchedule':
         """
         Update a new messaging campaign schedule.
@@ -10736,7 +10737,7 @@ class OutboundApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def put_outbound_schedules_sequence(self, sequence_id: str, body: 'SequenceSchedule', **kwargs) -> 'SequenceSchedule':
         """
         Update a new sequence schedule.
@@ -10820,7 +10821,7 @@ class OutboundApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def put_outbound_sequence(self, sequence_id: str, body: 'CampaignSequence', **kwargs) -> 'CampaignSequence':
         """
         Update a new campaign sequence.
@@ -10904,7 +10905,7 @@ class OutboundApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def put_outbound_wrapupcodemappings(self, body: 'WrapUpCodeMapping', **kwargs) -> 'WrapUpCodeMapping':
         """
         Update the Dialer wrap up code mapping.

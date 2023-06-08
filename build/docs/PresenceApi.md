@@ -8,8 +8,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 |Method | Description|
 |------------- | -------------|
+|[**delete_presence_definition**](PresenceApi.html#delete_presence_definition) | Delete a Presence Definition|
 |[**delete_presence_source**](PresenceApi.html#delete_presence_source) | Delete a Presence Source|
 |[**delete_presencedefinition**](PresenceApi.html#delete_presencedefinition) | Delete a Presence Definition|
+|[**get_presence_definition**](PresenceApi.html#get_presence_definition) | Get a Presence Definition|
+|[**get_presence_definitions**](PresenceApi.html#get_presence_definitions) | Get a list of Presence Definitions|
 |[**get_presence_settings**](PresenceApi.html#get_presence_settings) | Get the presence settings|
 |[**get_presence_source**](PresenceApi.html#get_presence_source) | Get a Presence Source|
 |[**get_presence_sources**](PresenceApi.html#get_presence_sources) | Get a list of Presence Sources|
@@ -21,14 +24,67 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_user_presences_purecloud**](PresenceApi.html#get_user_presences_purecloud) | Get a user&#39;s Genesys Cloud presence.|
 |[**patch_user_presence**](PresenceApi.html#patch_user_presence) | Patch a user&#39;s Presence|
 |[**patch_user_presences_purecloud**](PresenceApi.html#patch_user_presences_purecloud) | Patch a Genesys Cloud user&#39;s presence|
+|[**post_presence_definitions**](PresenceApi.html#post_presence_definitions) | Create a Presence Definition|
 |[**post_presence_sources**](PresenceApi.html#post_presence_sources) | Create a Presence Source|
 |[**post_presencedefinitions**](PresenceApi.html#post_presencedefinitions) | Create a Presence Definition|
+|[**put_presence_definition**](PresenceApi.html#put_presence_definition) | Update a Presence Definition|
 |[**put_presence_settings**](PresenceApi.html#put_presence_settings) | Update the presence settings|
 |[**put_presence_source**](PresenceApi.html#put_presence_source) | Update a Presence Source|
 |[**put_presence_user_primarysource**](PresenceApi.html#put_presence_user_primarysource) | Update a user&#39;s Primary Presence Source|
 |[**put_presencedefinition**](PresenceApi.html#put_presencedefinition) | Update a Presence Definition|
 |[**put_users_presences_bulk**](PresenceApi.html#put_users_presences_bulk) | Update bulk user Presences|
 {: class="table table-striped"}
+
+<a name="delete_presence_definition"></a>
+
+##  delete_presence_definition(definition_id)
+
+
+
+Delete a Presence Definition
+
+
+
+Wraps DELETE /api/v2/presence/definitions/{definitionId} 
+
+Requires ANY permissions: 
+
+* presence:presenceDefinition:delete
+* presence:presenceDefinition:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.PresenceApi()
+definition_id = 'definition_id_example' # str | Presence Definition ID
+
+try:
+    # Delete a Presence Definition
+    api_instance.delete_presence_definition(definition_id)
+except ApiException as e:
+    print("Exception when calling PresenceApi->delete_presence_definition: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **definition_id** | **str**| Presence Definition ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
 
 <a name="delete_presence_source"></a>
 
@@ -130,6 +186,110 @@ except ApiException as e:
 ### Return type
 
 void (empty response body)
+
+<a name="get_presence_definition"></a>
+
+## [**OrganizationPresenceDefinition**](OrganizationPresenceDefinition.html) get_presence_definition(definition_id)
+
+
+
+Get a Presence Definition
+
+
+
+Wraps GET /api/v2/presence/definitions/{definitionId} 
+
+Requires ALL permissions: 
+
+* presence:presenceDefinition:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.PresenceApi()
+definition_id = 'definition_id_example' # str | Presence Definition ID
+
+try:
+    # Get a Presence Definition
+    api_response = api_instance.get_presence_definition(definition_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling PresenceApi->get_presence_definition: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **definition_id** | **str**| Presence Definition ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**OrganizationPresenceDefinition**](OrganizationPresenceDefinition.html)
+
+<a name="get_presence_definitions"></a>
+
+## [**OrganizationPresenceDefinitionEntityListing**](OrganizationPresenceDefinitionEntityListing.html) get_presence_definitions(deactivated=deactivated, division_id=division_id)
+
+
+
+Get a list of Presence Definitions
+
+
+
+Wraps GET /api/v2/presence/definitions 
+
+Requires ALL permissions: 
+
+* presence:presenceDefinition:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.PresenceApi()
+deactivated = ''false'' # str | Deactivated query can be TRUE or FALSE (optional) (default to 'false')
+division_id = ['division_id_example'] # list[str] | One or more division IDs. If nothing is provided, the definitions associated withthe list of divisions that the user has access to will be returned. (optional)
+
+try:
+    # Get a list of Presence Definitions
+    api_response = api_instance.get_presence_definitions(deactivated=deactivated, division_id=division_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling PresenceApi->get_presence_definitions: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **deactivated** | **str**| Deactivated query can be TRUE or FALSE | [optional] [default to &#39;false&#39;] |
+| **division_id** | [**list[str]**](str.html)| One or more division IDs. If nothing is provided, the definitions associated withthe list of divisions that the user has access to will be returned. | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**OrganizationPresenceDefinitionEntityListing**](OrganizationPresenceDefinitionEntityListing.html)
 
 <a name="get_presence_settings"></a>
 
@@ -702,6 +862,57 @@ except ApiException as e:
 
 [**UserPresence**](UserPresence.html)
 
+<a name="post_presence_definitions"></a>
+
+## [**OrganizationPresenceDefinition**](OrganizationPresenceDefinition.html) post_presence_definitions(body)
+
+
+
+Create a Presence Definition
+
+
+
+Wraps POST /api/v2/presence/definitions 
+
+Requires ALL permissions: 
+
+* presence:presenceDefinition:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.PresenceApi()
+body = PureCloudPlatformClientV2.OrganizationPresenceDefinition() # OrganizationPresenceDefinition | The Presence Definition to create
+
+try:
+    # Create a Presence Definition
+    api_response = api_instance.post_presence_definitions(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling PresenceApi->post_presence_definitions: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**OrganizationPresenceDefinition**](OrganizationPresenceDefinition.html)| The Presence Definition to create |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**OrganizationPresenceDefinition**](OrganizationPresenceDefinition.html)
+
 <a name="post_presence_sources"></a>
 
 ## [**Source**](Source.html) post_presence_sources(body)
@@ -803,6 +1014,59 @@ except ApiException as e:
 ### Return type
 
 [**OrganizationPresence**](OrganizationPresence.html)
+
+<a name="put_presence_definition"></a>
+
+## [**OrganizationPresenceDefinition**](OrganizationPresenceDefinition.html) put_presence_definition(definition_id, body)
+
+
+
+Update a Presence Definition
+
+
+
+Wraps PUT /api/v2/presence/definitions/{definitionId} 
+
+Requires ALL permissions: 
+
+* presence:presenceDefinition:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.PresenceApi()
+definition_id = 'definition_id_example' # str | Presence Definition ID
+body = PureCloudPlatformClientV2.OrganizationPresenceDefinition() # OrganizationPresenceDefinition | The updated Presence Definition
+
+try:
+    # Update a Presence Definition
+    api_response = api_instance.put_presence_definition(definition_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling PresenceApi->put_presence_definition: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **definition_id** | **str**| Presence Definition ID |  |
+| **body** | [**OrganizationPresenceDefinition**](OrganizationPresenceDefinition.html)| The updated Presence Definition |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**OrganizationPresenceDefinition**](OrganizationPresenceDefinition.html)
 
 <a name="put_presence_settings"></a>
 

@@ -39,6 +39,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_integrations_speech_lex_bot_alias**](IntegrationsApi.html#get_integrations_speech_lex_bot_alias) | Get details about a Lex bot alias|
 |[**get_integrations_speech_lex_bot_bot_id_aliases**](IntegrationsApi.html#get_integrations_speech_lex_bot_bot_id_aliases) | Get a list of aliases for a bot in the customer&#39;s AWS accounts|
 |[**get_integrations_speech_lex_bots**](IntegrationsApi.html#get_integrations_speech_lex_bots) | Get a list of Lex bots in the customers&#39; AWS accounts|
+|[**get_integrations_speech_nuance_nuance_integration_id_bot**](IntegrationsApi.html#get_integrations_speech_nuance_nuance_integration_id_bot) | Get a Nuance bot in the specified Integration|
+|[**get_integrations_speech_nuance_nuance_integration_id_bot_job**](IntegrationsApi.html#get_integrations_speech_nuance_nuance_integration_id_bot_job) | Get the status of an asynchronous Nuance bot GET job|
+|[**get_integrations_speech_nuance_nuance_integration_id_bot_job_results**](IntegrationsApi.html#get_integrations_speech_nuance_nuance_integration_id_bot_job_results) | Get the result of an asynchronous Nuance bot GET job|
+|[**get_integrations_speech_nuance_nuance_integration_id_bots**](IntegrationsApi.html#get_integrations_speech_nuance_nuance_integration_id_bots) | Get a list of Nuance bots available in the specified Integration|
+|[**get_integrations_speech_nuance_nuance_integration_id_bots_job**](IntegrationsApi.html#get_integrations_speech_nuance_nuance_integration_id_bots_job) | Get the status of an asynchronous Nuance bots GET job|
+|[**get_integrations_speech_nuance_nuance_integration_id_bots_job_results**](IntegrationsApi.html#get_integrations_speech_nuance_nuance_integration_id_bots_job_results) | Get the result of an asynchronous Nuance bots GET job|
 |[**get_integrations_speech_tts_engine**](IntegrationsApi.html#get_integrations_speech_tts_engine) | Get details about a TTS engine|
 |[**get_integrations_speech_tts_engine_voice**](IntegrationsApi.html#get_integrations_speech_tts_engine_voice) | Get details about a specific voice for a TTS engine|
 |[**get_integrations_speech_tts_engine_voices**](IntegrationsApi.html#get_integrations_speech_tts_engine_voices) | Get a list of voices for a TTS engine|
@@ -60,9 +66,13 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_integrations_actions**](IntegrationsApi.html#post_integrations_actions) | Create a new Action|
 |[**post_integrations_actions_drafts**](IntegrationsApi.html#post_integrations_actions_drafts) | Create a new Draft|
 |[**post_integrations_credentials**](IntegrationsApi.html#post_integrations_credentials) | Create a set of credentials|
+|[**post_integrations_speech_nuance_nuance_integration_id_bot_jobs**](IntegrationsApi.html#post_integrations_speech_nuance_nuance_integration_id_bot_jobs) | Get a Nuance bot in the specified Integration asynchronously|
+|[**post_integrations_speech_nuance_nuance_integration_id_bots_jobs**](IntegrationsApi.html#post_integrations_speech_nuance_nuance_integration_id_bots_jobs) | Get a list of Nuance bots in the specified Integration asynchronously|
+|[**post_integrations_speech_nuance_nuance_integration_id_bots_launch_validate**](IntegrationsApi.html#post_integrations_speech_nuance_nuance_integration_id_bots_launch_validate) | Try out a single credential for a Nuance bot to know if the secret is correct|
 |[**put_integration_config_current**](IntegrationsApi.html#put_integration_config_current) | Update integration configuration.|
 |[**put_integrations_botconnector_integration_id_bots**](IntegrationsApi.html#put_integrations_botconnector_integration_id_bots) | Set a list of botConnector bots plus versions for this integration|
 |[**put_integrations_credential**](IntegrationsApi.html#put_integrations_credential) | Update a set of credentials|
+|[**put_integrations_speech_nuance_nuance_integration_id_bots_launch_settings**](IntegrationsApi.html#put_integrations_speech_nuance_nuance_integration_id_bots_launch_settings) | Update the Nuance bot list for the specific bots made available to Genesys Cloud in the specified Integration|
 |[**put_integrations_speech_tts_settings**](IntegrationsApi.html#put_integrations_speech_tts_settings) | Update TTS settings for an org|
 {: class="table table-striped"}
 
@@ -1788,6 +1798,338 @@ except ApiException as e:
 
 [**LexBotEntityListing**](LexBotEntityListing.html)
 
+<a name="get_integrations_speech_nuance_nuance_integration_id_bot"></a>
+
+## [**NuanceBot**](NuanceBot.html) get_integrations_speech_nuance_nuance_integration_id_bot(nuance_integration_id, bot_id, expand=expand, target_channel=target_channel)
+
+
+
+Get a Nuance bot in the specified Integration
+
+
+
+Wraps GET /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/{botId} 
+
+Requires ANY permissions: 
+
+* integrations:integration:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.IntegrationsApi()
+nuance_integration_id = 'nuance_integration_id_example' # str | The integration ID for this group of bots
+bot_id = 'bot_id_example' # str | The Nuance bot ID to get
+expand = ['expand_example'] # list[str] | expand (optional)
+target_channel = 'target_channel_example' # str | targetChannel (optional)
+
+try:
+    # Get a Nuance bot in the specified Integration
+    api_response = api_instance.get_integrations_speech_nuance_nuance_integration_id_bot(nuance_integration_id, bot_id, expand=expand, target_channel=target_channel)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling IntegrationsApi->get_integrations_speech_nuance_nuance_integration_id_bot: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **nuance_integration_id** | **str**| The integration ID for this group of bots |  |
+| **bot_id** | **str**| The Nuance bot ID to get |  |
+| **expand** | [**list[str]**](str.html)| expand | [optional] <br />**Values**: variables, transferNodes, channels, locales |
+| **target_channel** | **str**| targetChannel | [optional] <br />**Values**: digital, voice |
+{: class="table table-striped"}
+
+### Return type
+
+[**NuanceBot**](NuanceBot.html)
+
+<a name="get_integrations_speech_nuance_nuance_integration_id_bot_job"></a>
+
+## [**AsyncJob**](AsyncJob.html) get_integrations_speech_nuance_nuance_integration_id_bot_job(nuance_integration_id, bot_id, job_id)
+
+
+
+Get the status of an asynchronous Nuance bot GET job
+
+
+
+Wraps GET /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/{botId}/jobs/{jobId} 
+
+Requires ANY permissions: 
+
+* integrations:integration:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.IntegrationsApi()
+nuance_integration_id = 'nuance_integration_id_example' # str | The integration ID for this group of bots
+bot_id = 'bot_id_example' # str | The Nuance bot ID
+job_id = 'job_id_example' # str | The asynchronous job ID
+
+try:
+    # Get the status of an asynchronous Nuance bot GET job
+    api_response = api_instance.get_integrations_speech_nuance_nuance_integration_id_bot_job(nuance_integration_id, bot_id, job_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling IntegrationsApi->get_integrations_speech_nuance_nuance_integration_id_bot_job: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **nuance_integration_id** | **str**| The integration ID for this group of bots |  |
+| **bot_id** | **str**| The Nuance bot ID |  |
+| **job_id** | **str**| The asynchronous job ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**AsyncJob**](AsyncJob.html)
+
+<a name="get_integrations_speech_nuance_nuance_integration_id_bot_job_results"></a>
+
+## [**NuanceBot**](NuanceBot.html) get_integrations_speech_nuance_nuance_integration_id_bot_job_results(nuance_integration_id, bot_id, job_id)
+
+
+
+Get the result of an asynchronous Nuance bot GET job
+
+
+
+Wraps GET /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/{botId}/jobs/{jobId}/results 
+
+Requires ANY permissions: 
+
+* integrations:integration:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.IntegrationsApi()
+nuance_integration_id = 'nuance_integration_id_example' # str | The integration ID for this group of bots
+bot_id = 'bot_id_example' # str | The Nuance bot ID
+job_id = 'job_id_example' # str | The asynchronous job ID
+
+try:
+    # Get the result of an asynchronous Nuance bot GET job
+    api_response = api_instance.get_integrations_speech_nuance_nuance_integration_id_bot_job_results(nuance_integration_id, bot_id, job_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling IntegrationsApi->get_integrations_speech_nuance_nuance_integration_id_bot_job_results: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **nuance_integration_id** | **str**| The integration ID for this group of bots |  |
+| **bot_id** | **str**| The Nuance bot ID |  |
+| **job_id** | **str**| The asynchronous job ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**NuanceBot**](NuanceBot.html)
+
+<a name="get_integrations_speech_nuance_nuance_integration_id_bots"></a>
+
+## [**NuanceBotEntityListing**](NuanceBotEntityListing.html) get_integrations_speech_nuance_nuance_integration_id_bots(nuance_integration_id, page_number=page_number, page_size=page_size, only_registered_bots=only_registered_bots)
+
+
+
+Get a list of Nuance bots available in the specified Integration
+
+If the 'onlyRegisteredBots' param is set, the returned data will only include the Nuance bots which have configured client secrets within the Integration,  otherwise all of the Nuance bots available to the Integration's configured discovery credentials are returned.
+
+
+
+Wraps GET /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots 
+
+Requires ANY permissions: 
+
+* integrations:integration:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.IntegrationsApi()
+nuance_integration_id = 'nuance_integration_id_example' # str | The integration ID for this group of bots
+page_number = 1 # int | Page number (optional) (default to 1)
+page_size = 25 # int | Page size (optional) (default to 25)
+only_registered_bots = True # bool | Limit bots to the ones configured for Genesys Cloud usage (optional) (default to True)
+
+try:
+    # Get a list of Nuance bots available in the specified Integration
+    api_response = api_instance.get_integrations_speech_nuance_nuance_integration_id_bots(nuance_integration_id, page_number=page_number, page_size=page_size, only_registered_bots=only_registered_bots)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling IntegrationsApi->get_integrations_speech_nuance_nuance_integration_id_bots: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **nuance_integration_id** | **str**| The integration ID for this group of bots |  |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **only_registered_bots** | **bool**| Limit bots to the ones configured for Genesys Cloud usage | [optional] [default to True] |
+{: class="table table-striped"}
+
+### Return type
+
+[**NuanceBotEntityListing**](NuanceBotEntityListing.html)
+
+<a name="get_integrations_speech_nuance_nuance_integration_id_bots_job"></a>
+
+## [**AsyncJob**](AsyncJob.html) get_integrations_speech_nuance_nuance_integration_id_bots_job(nuance_integration_id, job_id)
+
+
+
+Get the status of an asynchronous Nuance bots GET job
+
+
+
+Wraps GET /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/jobs/{jobId} 
+
+Requires ANY permissions: 
+
+* integrations:integration:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.IntegrationsApi()
+nuance_integration_id = 'nuance_integration_id_example' # str | The integration ID for this group of bots
+job_id = 'job_id_example' # str | The asynchronous job ID
+
+try:
+    # Get the status of an asynchronous Nuance bots GET job
+    api_response = api_instance.get_integrations_speech_nuance_nuance_integration_id_bots_job(nuance_integration_id, job_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling IntegrationsApi->get_integrations_speech_nuance_nuance_integration_id_bots_job: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **nuance_integration_id** | **str**| The integration ID for this group of bots |  |
+| **job_id** | **str**| The asynchronous job ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**AsyncJob**](AsyncJob.html)
+
+<a name="get_integrations_speech_nuance_nuance_integration_id_bots_job_results"></a>
+
+## [**NuanceBotEntityListing**](NuanceBotEntityListing.html) get_integrations_speech_nuance_nuance_integration_id_bots_job_results(nuance_integration_id, job_id)
+
+
+
+Get the result of an asynchronous Nuance bots GET job
+
+
+
+Wraps GET /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/jobs/{jobId}/results 
+
+Requires ANY permissions: 
+
+* integrations:integration:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.IntegrationsApi()
+nuance_integration_id = 'nuance_integration_id_example' # str | The integration ID for this group of bots
+job_id = 'job_id_example' # str | The asynchronous job ID
+
+try:
+    # Get the result of an asynchronous Nuance bots GET job
+    api_response = api_instance.get_integrations_speech_nuance_nuance_integration_id_bots_job_results(nuance_integration_id, job_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling IntegrationsApi->get_integrations_speech_nuance_nuance_integration_id_bots_job_results: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **nuance_integration_id** | **str**| The integration ID for this group of bots |  |
+| **job_id** | **str**| The asynchronous job ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**NuanceBotEntityListing**](NuanceBotEntityListing.html)
+
 <a name="get_integrations_speech_tts_engine"></a>
 
 ## [**TtsEngineEntity**](TtsEngineEntity.html) get_integrations_speech_tts_engine(engine_id, include_voices=include_voices)
@@ -2921,6 +3263,172 @@ except ApiException as e:
 
 [**CredentialInfo**](CredentialInfo.html)
 
+<a name="post_integrations_speech_nuance_nuance_integration_id_bot_jobs"></a>
+
+## [**AsyncJob**](AsyncJob.html) post_integrations_speech_nuance_nuance_integration_id_bot_jobs(nuance_integration_id, bot_id, expand=expand, body=body)
+
+
+
+Get a Nuance bot in the specified Integration asynchronously
+
+
+
+Wraps POST /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/{botId}/jobs 
+
+Requires ANY permissions: 
+
+* integrations:integration:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.IntegrationsApi()
+nuance_integration_id = 'nuance_integration_id_example' # str | The integration ID for this group of bots
+bot_id = 'bot_id_example' # str | The Nuance bot ID
+expand = ['expand_example'] # list[str] | expand (optional)
+body = 'body_example' # str | targetChannel (optional)
+
+try:
+    # Get a Nuance bot in the specified Integration asynchronously
+    api_response = api_instance.post_integrations_speech_nuance_nuance_integration_id_bot_jobs(nuance_integration_id, bot_id, expand=expand, body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling IntegrationsApi->post_integrations_speech_nuance_nuance_integration_id_bot_jobs: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **nuance_integration_id** | **str**| The integration ID for this group of bots |  |
+| **bot_id** | **str**| The Nuance bot ID |  |
+| **expand** | [**list[str]**](str.html)| expand | [optional] <br />**Values**: variables, transferNodes, channels, locales |
+| **body** | **str**| targetChannel | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**AsyncJob**](AsyncJob.html)
+
+<a name="post_integrations_speech_nuance_nuance_integration_id_bots_jobs"></a>
+
+## [**AsyncJob**](AsyncJob.html) post_integrations_speech_nuance_nuance_integration_id_bots_jobs(nuance_integration_id, page_number=page_number, page_size=page_size, only_registered_bots=only_registered_bots)
+
+
+
+Get a list of Nuance bots in the specified Integration asynchronously
+
+
+
+Wraps POST /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/jobs 
+
+Requires ANY permissions: 
+
+* integrations:integration:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.IntegrationsApi()
+nuance_integration_id = 'nuance_integration_id_example' # str | The integration ID for this group of bots
+page_number = 1 # int | Page number (optional) (default to 1)
+page_size = 25 # int | Page size (optional) (default to 25)
+only_registered_bots = True # bool | Limit bots to the ones configured for Genesys Cloud usage (optional) (default to True)
+
+try:
+    # Get a list of Nuance bots in the specified Integration asynchronously
+    api_response = api_instance.post_integrations_speech_nuance_nuance_integration_id_bots_jobs(nuance_integration_id, page_number=page_number, page_size=page_size, only_registered_bots=only_registered_bots)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling IntegrationsApi->post_integrations_speech_nuance_nuance_integration_id_bots_jobs: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **nuance_integration_id** | **str**| The integration ID for this group of bots |  |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **only_registered_bots** | **bool**| Limit bots to the ones configured for Genesys Cloud usage | [optional] [default to True] |
+{: class="table table-striped"}
+
+### Return type
+
+[**AsyncJob**](AsyncJob.html)
+
+<a name="post_integrations_speech_nuance_nuance_integration_id_bots_launch_validate"></a>
+
+##  post_integrations_speech_nuance_nuance_integration_id_bots_launch_validate(nuance_integration_id, settings)
+
+
+
+Try out a single credential for a Nuance bot to know if the secret is correct
+
+
+
+Wraps POST /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/launch/validate 
+
+Requires ANY permissions: 
+
+* integrations:integration:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.IntegrationsApi()
+nuance_integration_id = 'nuance_integration_id_example' # str | The integration ID for this group of bots
+settings = PureCloudPlatformClientV2.BotExecutionConfiguration() # BotExecutionConfiguration | 
+
+try:
+    # Try out a single credential for a Nuance bot to know if the secret is correct
+    api_instance.post_integrations_speech_nuance_nuance_integration_id_bots_launch_validate(nuance_integration_id, settings)
+except ApiException as e:
+    print("Exception when calling IntegrationsApi->post_integrations_speech_nuance_nuance_integration_id_bots_launch_validate: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **nuance_integration_id** | **str**| The integration ID for this group of bots |  |
+| **settings** | [**BotExecutionConfiguration**](BotExecutionConfiguration.html)|  |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
+
 <a name="put_integration_config_current"></a>
 
 ## [**IntegrationConfiguration**](IntegrationConfiguration.html) put_integration_config_current(integration_id, body=body)
@@ -3077,6 +3585,58 @@ except ApiException as e:
 ### Return type
 
 [**CredentialInfo**](CredentialInfo.html)
+
+<a name="put_integrations_speech_nuance_nuance_integration_id_bots_launch_settings"></a>
+
+##  put_integrations_speech_nuance_nuance_integration_id_bots_launch_settings(nuance_integration_id, settings)
+
+
+
+Update the Nuance bot list for the specific bots made available to Genesys Cloud in the specified Integration
+
+
+
+Wraps PUT /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/launch/settings 
+
+Requires ANY permissions: 
+
+* integrations:integration:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.IntegrationsApi()
+nuance_integration_id = 'nuance_integration_id_example' # str | The integration ID for this group of bots
+settings = PureCloudPlatformClientV2.NuanceBotLaunchSettings() # NuanceBotLaunchSettings | 
+
+try:
+    # Update the Nuance bot list for the specific bots made available to Genesys Cloud in the specified Integration
+    api_instance.put_integrations_speech_nuance_nuance_integration_id_bots_launch_settings(nuance_integration_id, settings)
+except ApiException as e:
+    print("Exception when calling IntegrationsApi->put_integrations_speech_nuance_nuance_integration_id_bots_launch_settings: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **nuance_integration_id** | **str**| The integration ID for this group of bots |  |
+| **settings** | [**NuanceBotLaunchSettings**](NuanceBotLaunchSettings.html)|  |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
 
 <a name="put_integrations_speech_tts_settings"></a>
 

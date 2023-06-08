@@ -74,7 +74,7 @@ class CoachingApi(object):
             if not config.api_client:
                 config.api_client = ApiClient()
             self.api_client = config.api_client
-    
+
     def delete_coaching_appointment(self, appointment_id: str, **kwargs) -> 'CoachingAppointmentReference':
         """
         Delete an existing appointment
@@ -152,7 +152,7 @@ class CoachingApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def delete_coaching_appointment_annotation(self, appointment_id: str, annotation_id: str, **kwargs) -> None:
         """
         Delete an existing annotation
@@ -236,7 +236,7 @@ class CoachingApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_coaching_appointment(self, appointment_id: str, **kwargs) -> 'CoachingAppointmentResponse':
         """
         Retrieve an appointment
@@ -314,7 +314,7 @@ class CoachingApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_coaching_appointment_annotation(self, appointment_id: str, annotation_id: str, **kwargs) -> 'CoachingAnnotation':
         """
         Retrieve an annotation.
@@ -398,7 +398,7 @@ class CoachingApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_coaching_appointment_annotations(self, appointment_id: str, **kwargs) -> 'CoachingAnnotationList':
         """
         Get a list of annotations.
@@ -482,7 +482,7 @@ class CoachingApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_coaching_appointment_statuses(self, appointment_id: str, **kwargs) -> 'CoachingAppointmentStatusResponseList':
         """
         Get the list of status changes for a coaching appointment.
@@ -566,7 +566,7 @@ class CoachingApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_coaching_appointments(self, user_ids: List['str'], **kwargs) -> 'CoachingAppointmentResponseList':
         """
         Get appointments for users and optional date range
@@ -674,7 +674,7 @@ class CoachingApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_coaching_appointments_me(self, **kwargs) -> 'CoachingAppointmentResponseList':
         """
         Get my appointments for a given date range
@@ -776,7 +776,7 @@ class CoachingApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_coaching_notification(self, notification_id: str, **kwargs) -> 'CoachingNotification':
         """
         Get an existing notification
@@ -857,7 +857,7 @@ class CoachingApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_coaching_notifications(self, **kwargs) -> 'CoachingNotificationList':
         """
         Retrieve the list of your notifications.
@@ -938,7 +938,7 @@ class CoachingApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def patch_coaching_appointment(self, appointment_id: str, body: 'UpdateCoachingAppointmentRequest', **kwargs) -> 'CoachingAppointmentResponse':
         """
         Update an existing appointment
@@ -1022,7 +1022,7 @@ class CoachingApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def patch_coaching_appointment_annotation(self, appointment_id: str, annotation_id: str, body: 'CoachingAnnotation', **kwargs) -> 'CoachingAnnotation':
         """
         Update an existing annotation.
@@ -1112,7 +1112,7 @@ class CoachingApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def patch_coaching_appointment_status(self, appointment_id: str, body: 'CoachingAppointmentStatusRequest', **kwargs) -> 'CoachingAppointmentStatusResponse':
         """
         Update the status of a coaching appointment
@@ -1196,7 +1196,7 @@ class CoachingApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def patch_coaching_notification(self, notification_id: str, body: 'CoachingNotification', **kwargs) -> 'CoachingNotification':
         """
         Update an existing notification.
@@ -1280,7 +1280,7 @@ class CoachingApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def post_coaching_appointment_annotations(self, appointment_id: str, body: 'CoachingAnnotationCreateRequest', **kwargs) -> 'CoachingAnnotation':
         """
         Create a new annotation.
@@ -1364,7 +1364,7 @@ class CoachingApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def post_coaching_appointment_conversations(self, appointment_id: str, body: 'AddConversationRequest', **kwargs) -> 'AddConversationResponse':
         """
         Add a conversation to an appointment
@@ -1448,7 +1448,7 @@ class CoachingApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def post_coaching_appointments(self, body: 'CreateCoachingAppointmentRequest', **kwargs) -> 'CoachingAppointmentResponse':
         """
         Create a new appointment
@@ -1526,7 +1526,7 @@ class CoachingApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def post_coaching_appointments_aggregates_query(self, body: 'CoachingAppointmentAggregateRequest', **kwargs) -> 'CoachingAppointmentAggregateResponse':
         """
         Retrieve aggregated appointment data
@@ -1604,7 +1604,7 @@ class CoachingApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def post_coaching_scheduleslots_query(self, body: 'CoachingSlotsRequest', **kwargs) -> 'CoachingSlotsResponse':
         """
         Get list of possible slots where a coaching appointment can be scheduled.

@@ -16,6 +16,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**delete_user_routingskill**](UsersApi.html#delete_user_routingskill) | Remove routing skill from user|
 |[**delete_user_station_associatedstation**](UsersApi.html#delete_user_station_associatedstation) | Clear associated station|
 |[**delete_user_station_defaultstation**](UsersApi.html#delete_user_station_defaultstation) | Clear default station|
+|[**get_analytics_users_aggregates_job**](UsersApi.html#get_analytics_users_aggregates_job) | Get status for async query for user aggregates|
+|[**get_analytics_users_aggregates_job_results**](UsersApi.html#get_analytics_users_aggregates_job_results) | Fetch a page of results for an async aggregates query|
 |[**get_analytics_users_details_job**](UsersApi.html#get_analytics_users_details_job) | Get status for async query for user details|
 |[**get_analytics_users_details_job_results**](UsersApi.html#get_analytics_users_details_job_results) | Fetch a page of results for an async query|
 |[**get_analytics_users_details_jobs_availability**](UsersApi.html#get_analytics_users_details_jobs_availability) | Lookup the datalake availability date and time|
@@ -61,6 +63,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**patch_user_routinglanguages_bulk**](UsersApi.html#patch_user_routinglanguages_bulk) | Add bulk routing language to user. Max limit 50 languages|
 |[**patch_user_routingskills_bulk**](UsersApi.html#patch_user_routingskills_bulk) | Bulk add routing skills to user|
 |[**patch_users_bulk**](UsersApi.html#patch_users_bulk) | Update bulk acd autoanswer on users|
+|[**post_analytics_users_activity_query**](UsersApi.html#post_analytics_users_activity_query) | Query for user activity observations|
+|[**post_analytics_users_aggregates_jobs**](UsersApi.html#post_analytics_users_aggregates_jobs) | Query for user aggregates asynchronously|
 |[**post_analytics_users_aggregates_query**](UsersApi.html#post_analytics_users_aggregates_query) | Query for user aggregates|
 |[**post_analytics_users_details_jobs**](UsersApi.html#post_analytics_users_details_jobs) | Query for user details asynchronously|
 |[**post_analytics_users_details_query**](UsersApi.html#post_analytics_users_details_query) | Query for user details|
@@ -78,6 +82,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_users_development_activities_aggregates_query**](UsersApi.html#post_users_development_activities_aggregates_query) | Retrieve aggregated development activity data|
 |[**post_users_me_password**](UsersApi.html#post_users_me_password) | Change your password|
 |[**post_users_search**](UsersApi.html#post_users_search) | Search users|
+|[**post_users_search_conversation_target**](UsersApi.html#post_users_search_conversation_target) | Search users as conversation targets|
+|[**post_users_search_queuemembers_manage**](UsersApi.html#post_users_search_queuemembers_manage) | Search manage queue member|
 |[**post_users_search_teams_assign**](UsersApi.html#post_users_search_teams_assign) | Search users assigned to teams|
 |[**put_routing_user_utilization**](UsersApi.html#put_routing_user_utilization) | Update the user&#39;s max utilization settings.  Include only those media types requiring custom configuration.|
 |[**put_user_callforwarding**](UsersApi.html#put_user_callforwarding) | Update a user&#39;s CallForwarding|
@@ -502,6 +508,110 @@ except ApiException as e:
 ### Return type
 
 void (empty response body)
+
+<a name="get_analytics_users_aggregates_job"></a>
+
+## [**AsyncQueryStatus**](AsyncQueryStatus.html) get_analytics_users_aggregates_job(job_id)
+
+
+
+Get status for async query for user aggregates
+
+
+
+Wraps GET /api/v2/analytics/users/aggregates/jobs/{jobId} 
+
+Requires ANY permissions: 
+
+* analytics:userAggregate:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.UsersApi()
+job_id = 'job_id_example' # str | jobId
+
+try:
+    # Get status for async query for user aggregates
+    api_response = api_instance.get_analytics_users_aggregates_job(job_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling UsersApi->get_analytics_users_aggregates_job: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **job_id** | **str**| jobId |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**AsyncQueryStatus**](AsyncQueryStatus.html)
+
+<a name="get_analytics_users_aggregates_job_results"></a>
+
+## [**UserAsyncAggregateQueryResponse**](UserAsyncAggregateQueryResponse.html) get_analytics_users_aggregates_job_results(job_id, cursor=cursor)
+
+
+
+Fetch a page of results for an async aggregates query
+
+
+
+Wraps GET /api/v2/analytics/users/aggregates/jobs/{jobId}/results 
+
+Requires ANY permissions: 
+
+* analytics:userAggregate:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.UsersApi()
+job_id = 'job_id_example' # str | jobId
+cursor = 'cursor_example' # str | Cursor token to retrieve next page (optional)
+
+try:
+    # Fetch a page of results for an async aggregates query
+    api_response = api_instance.get_analytics_users_aggregates_job_results(job_id, cursor=cursor)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling UsersApi->get_analytics_users_aggregates_job_results: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **job_id** | **str**| jobId |  |
+| **cursor** | **str**| Cursor token to retrieve next page | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**UserAsyncAggregateQueryResponse**](UserAsyncAggregateQueryResponse.html)
 
 <a name="get_analytics_users_details_job"></a>
 
@@ -2967,6 +3077,112 @@ except ApiException as e:
 
 [**UserEntityListing**](UserEntityListing.html)
 
+<a name="post_analytics_users_activity_query"></a>
+
+## [**UserActivityResponse**](UserActivityResponse.html) post_analytics_users_activity_query(body, page_size=page_size, page_number=page_number)
+
+
+
+Query for user activity observations
+
+
+
+Wraps POST /api/v2/analytics/users/activity/query 
+
+Requires ANY permissions: 
+
+* analytics:userObservation:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.UsersApi()
+body = PureCloudPlatformClientV2.UserActivityQuery() # UserActivityQuery | query
+page_size = 56 # int | The desired page size (optional)
+page_number = 56 # int | The desired page number (optional)
+
+try:
+    # Query for user activity observations
+    api_response = api_instance.post_analytics_users_activity_query(body, page_size=page_size, page_number=page_number)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling UsersApi->post_analytics_users_activity_query: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**UserActivityQuery**](UserActivityQuery.html)| query |  |
+| **page_size** | **int**| The desired page size | [optional]  |
+| **page_number** | **int**| The desired page number | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**UserActivityResponse**](UserActivityResponse.html)
+
+<a name="post_analytics_users_aggregates_jobs"></a>
+
+## [**AsyncQueryResponse**](AsyncQueryResponse.html) post_analytics_users_aggregates_jobs(body)
+
+
+
+Query for user aggregates asynchronously
+
+
+
+Wraps POST /api/v2/analytics/users/aggregates/jobs 
+
+Requires ANY permissions: 
+
+* analytics:userAggregate:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.UsersApi()
+body = PureCloudPlatformClientV2.UserAsyncAggregationQuery() # UserAsyncAggregationQuery | query
+
+try:
+    # Query for user aggregates asynchronously
+    api_response = api_instance.post_analytics_users_aggregates_jobs(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling UsersApi->post_analytics_users_aggregates_jobs: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**UserAsyncAggregationQuery**](UserAsyncAggregationQuery.html)| query |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**AsyncQueryResponse**](AsyncQueryResponse.html)
+
 <a name="post_analytics_users_aggregates_query"></a>
 
 ## [**UserAggregateQueryResponse**](UserAggregateQueryResponse.html) post_analytics_users_aggregates_query(body)
@@ -3849,6 +4065,109 @@ try:
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UsersApi->post_users_search: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**UserSearchRequest**](UserSearchRequest.html)| Search request options |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**UsersSearchResponse**](UsersSearchResponse.html)
+
+<a name="post_users_search_conversation_target"></a>
+
+## [**UsersSearchResponse**](UsersSearchResponse.html) post_users_search_conversation_target(body)
+
+
+
+Search users as conversation targets
+
+
+
+Wraps POST /api/v2/users/search/conversation/target 
+
+Requires ANY permissions: 
+
+* conversation:communication:target
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.UsersApi()
+body = PureCloudPlatformClientV2.UserSearchRequest() # UserSearchRequest | Search request options
+
+try:
+    # Search users as conversation targets
+    api_response = api_instance.post_users_search_conversation_target(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling UsersApi->post_users_search_conversation_target: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**UserSearchRequest**](UserSearchRequest.html)| Search request options |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**UsersSearchResponse**](UsersSearchResponse.html)
+
+<a name="post_users_search_queuemembers_manage"></a>
+
+## [**UsersSearchResponse**](UsersSearchResponse.html) post_users_search_queuemembers_manage(body)
+
+
+
+Search manage queue member
+
+
+
+Wraps POST /api/v2/users/search/queuemembers/manage 
+
+Requires ANY permissions: 
+
+* routing:queueMember:manage
+* routing:queue:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.UsersApi()
+body = PureCloudPlatformClientV2.UserSearchRequest() # UserSearchRequest | Search request options
+
+try:
+    # Search manage queue member
+    api_response = api_instance.post_users_search_queuemembers_manage(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling UsersApi->post_users_search_queuemembers_manage: %s\n" % e)
 ```
 
 ### Parameters

@@ -57,7 +57,7 @@ class WidgetsApi(object):
             if not config.api_client:
                 config.api_client = ApiClient()
             self.api_client = config.api_client
-    
+
     def delete_widgets_deployment(self, deployment_id: str, **kwargs) -> None:
         """
         Delete a Widget deployment
@@ -135,7 +135,7 @@ class WidgetsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_widgets_deployment(self, deployment_id: str, **kwargs) -> 'WidgetDeployment':
         """
         Get a Widget deployment
@@ -213,7 +213,7 @@ class WidgetsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_widgets_deployments(self, **kwargs) -> 'WidgetDeploymentEntityListing':
         """
         List Widget deployments
@@ -285,7 +285,7 @@ class WidgetsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def post_widgets_deployments(self, body: 'WidgetDeployment', **kwargs) -> 'WidgetDeployment':
         """
         Create Widget deployment
@@ -363,7 +363,7 @@ class WidgetsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def put_widgets_deployment(self, deployment_id: str, body: 'WidgetDeployment', **kwargs) -> 'WidgetDeployment':
         """
         Update a Widget deployment

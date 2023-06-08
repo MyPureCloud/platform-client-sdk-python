@@ -56,7 +56,7 @@ class WebMessagingApi(object):
             if not config.api_client:
                 config.api_client = ApiClient()
             self.api_client = config.api_client
-    
+
     def get_webmessaging_messages(self, **kwargs) -> 'WebMessagingMessageEntityList':
         """
         Get the messages for a web messaging session.

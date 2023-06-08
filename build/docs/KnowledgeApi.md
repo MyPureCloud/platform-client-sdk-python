@@ -39,6 +39,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_knowledge_knowledgebase_language_categories**](KnowledgeApi.html#get_knowledge_knowledgebase_language_categories) | Get categories|
 |[**get_knowledge_knowledgebase_language_category**](KnowledgeApi.html#get_knowledge_knowledgebase_language_category) | Get category|
 |[**get_knowledge_knowledgebase_language_document**](KnowledgeApi.html#get_knowledge_knowledgebase_language_document) | Get document|
+|[**get_knowledge_knowledgebase_language_document_upload**](KnowledgeApi.html#get_knowledge_knowledgebase_language_document_upload) | Get document content upload status|
 |[**get_knowledge_knowledgebase_language_documents**](KnowledgeApi.html#get_knowledge_knowledgebase_language_documents) | Get documents|
 |[**get_knowledge_knowledgebase_language_documents_import**](KnowledgeApi.html#get_knowledge_knowledgebase_language_documents_import) | Get import operation report|
 |[**get_knowledge_knowledgebase_language_training**](KnowledgeApi.html#get_knowledge_knowledgebase_language_training) | Get training detail|
@@ -68,12 +69,16 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_knowledge_knowledgebase_document_variations**](KnowledgeApi.html#post_knowledge_knowledgebase_document_variations) | Create a variation for a document.|
 |[**post_knowledge_knowledgebase_document_versions**](KnowledgeApi.html#post_knowledge_knowledgebase_document_versions) | Creates or restores a document version.|
 |[**post_knowledge_knowledgebase_documents**](KnowledgeApi.html#post_knowledge_knowledgebase_documents) | Create document.|
+|[**post_knowledge_knowledgebase_documents_bulk_remove**](KnowledgeApi.html#post_knowledge_knowledgebase_documents_bulk_remove) | Bulk remove documents.|
+|[**post_knowledge_knowledgebase_documents_bulk_update**](KnowledgeApi.html#post_knowledge_knowledgebase_documents_bulk_update) | Bulk update documents.|
 |[**post_knowledge_knowledgebase_documents_search**](KnowledgeApi.html#post_knowledge_knowledgebase_documents_search) | Search the documents in a knowledge base.|
 |[**post_knowledge_knowledgebase_documents_search_suggestions**](KnowledgeApi.html#post_knowledge_knowledgebase_documents_search_suggestions) | Query the knowledge documents to provide suggestions for auto completion.|
+|[**post_knowledge_knowledgebase_documents_versions_bulk_add**](KnowledgeApi.html#post_knowledge_knowledgebase_documents_versions_bulk_add) | Bulk add document versions.|
 |[**post_knowledge_knowledgebase_export_jobs**](KnowledgeApi.html#post_knowledge_knowledgebase_export_jobs) | Create export job|
 |[**post_knowledge_knowledgebase_import_jobs**](KnowledgeApi.html#post_knowledge_knowledgebase_import_jobs) | Create import job|
 |[**post_knowledge_knowledgebase_labels**](KnowledgeApi.html#post_knowledge_knowledgebase_labels) | Create new label|
 |[**post_knowledge_knowledgebase_language_categories**](KnowledgeApi.html#post_knowledge_knowledgebase_language_categories) | Create new category|
+|[**post_knowledge_knowledgebase_language_document_uploads**](KnowledgeApi.html#post_knowledge_knowledgebase_language_document_uploads) | Upload Article Content|
 |[**post_knowledge_knowledgebase_language_documents**](KnowledgeApi.html#post_knowledge_knowledgebase_language_documents) | Create document|
 |[**post_knowledge_knowledgebase_language_documents_imports**](KnowledgeApi.html#post_knowledge_knowledgebase_language_documents_imports) | Create import operation|
 |[**post_knowledge_knowledgebase_language_training_promote**](KnowledgeApi.html#post_knowledge_knowledgebase_language_training_promote) | Promote trained documents from draft state to active.|
@@ -1827,6 +1832,63 @@ except ApiException as e:
 
 [**KnowledgeDocument**](KnowledgeDocument.html)
 
+<a name="get_knowledge_knowledgebase_language_document_upload"></a>
+
+## [**KnowledgeDocumentContentUpload**](KnowledgeDocumentContentUpload.html) get_knowledge_knowledgebase_language_document_upload(document_id, knowledge_base_id, language_code, upload_id)
+
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+
+Get document content upload status
+
+
+
+Wraps GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/{documentId}/uploads/{uploadId} 
+
+Requires ALL permissions: 
+
+* knowledge:document:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.KnowledgeApi()
+document_id = 'document_id_example' # str | Document ID
+knowledge_base_id = 'knowledge_base_id_example' # str | Knowledge base ID
+language_code = 'en-US' # str | Language code, format: iso2-LOCALE
+upload_id = 'upload_id_example' # str | UploadId
+
+try:
+    # Get document content upload status
+    api_response = api_instance.get_knowledge_knowledgebase_language_document_upload(document_id, knowledge_base_id, language_code, upload_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling KnowledgeApi->get_knowledge_knowledgebase_language_document_upload: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **document_id** | **str**| Document ID |  |
+| **knowledge_base_id** | **str**| Knowledge base ID |  |
+| **language_code** | **str**| Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, en-CA, en-HK, en-IN, en-IE, en-NZ, en-PH, en-SG, en-ZA, de-DE, de-AT, de-CH, es-AR, es-CO, es-MX, es-US, es-ES, fr-FR, fr-BE, fr-CA, fr-CH, pt-BR, pt-PT, nl-NL, nl-BE, it-IT |
+| **upload_id** | **str**| UploadId |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**KnowledgeDocumentContentUpload**](KnowledgeDocumentContentUpload.html)
+
 <a name="get_knowledge_knowledgebase_language_documents"></a>
 
 ## [**DocumentListing**](DocumentListing.html) get_knowledge_knowledgebase_language_documents(knowledge_base_id, language_code, before=before, after=after, limit=limit, page_size=page_size, categories=categories, title=title, sort_by=sort_by, sort_order=sort_order, document_ids=document_ids)
@@ -3437,6 +3499,112 @@ except ApiException as e:
 
 [**KnowledgeDocumentResponse**](KnowledgeDocumentResponse.html)
 
+<a name="post_knowledge_knowledgebase_documents_bulk_remove"></a>
+
+## [**BulkResponse**](BulkResponse.html) post_knowledge_knowledgebase_documents_bulk_remove(knowledge_base_id, body)
+
+
+
+Bulk remove documents.
+
+
+
+Wraps POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/bulk/remove 
+
+Requires ALL permissions: 
+
+* knowledge:document:delete
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.KnowledgeApi()
+knowledge_base_id = 'knowledge_base_id_example' # str | Knowledge base ID
+body = PureCloudPlatformClientV2.KnowledgeDocumentBulkRemoveRequest() # KnowledgeDocumentBulkRemoveRequest | 
+
+try:
+    # Bulk remove documents.
+    api_response = api_instance.post_knowledge_knowledgebase_documents_bulk_remove(knowledge_base_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling KnowledgeApi->post_knowledge_knowledgebase_documents_bulk_remove: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **knowledge_base_id** | **str**| Knowledge base ID |  |
+| **body** | [**KnowledgeDocumentBulkRemoveRequest**](KnowledgeDocumentBulkRemoveRequest.html)|  |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**BulkResponse**](BulkResponse.html)
+
+<a name="post_knowledge_knowledgebase_documents_bulk_update"></a>
+
+## [**BulkResponse**](BulkResponse.html) post_knowledge_knowledgebase_documents_bulk_update(knowledge_base_id, body)
+
+
+
+Bulk update documents.
+
+
+
+Wraps POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/bulk/update 
+
+Requires ALL permissions: 
+
+* knowledge:document:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.KnowledgeApi()
+knowledge_base_id = 'knowledge_base_id_example' # str | Knowledge base ID
+body = PureCloudPlatformClientV2.KnowledgeDocumentBulkUpdateRequest() # KnowledgeDocumentBulkUpdateRequest | 
+
+try:
+    # Bulk update documents.
+    api_response = api_instance.post_knowledge_knowledgebase_documents_bulk_update(knowledge_base_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling KnowledgeApi->post_knowledge_knowledgebase_documents_bulk_update: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **knowledge_base_id** | **str**| Knowledge base ID |  |
+| **body** | [**KnowledgeDocumentBulkUpdateRequest**](KnowledgeDocumentBulkUpdateRequest.html)|  |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**BulkResponse**](BulkResponse.html)
+
 <a name="post_knowledge_knowledgebase_documents_search"></a>
 
 ## [**KnowledgeDocumentSearch**](KnowledgeDocumentSearch.html) post_knowledge_knowledgebase_documents_search(knowledge_base_id, expand=expand, body=body)
@@ -3544,6 +3712,59 @@ except ApiException as e:
 ### Return type
 
 [**KnowledgeDocumentSuggestion**](KnowledgeDocumentSuggestion.html)
+
+<a name="post_knowledge_knowledgebase_documents_versions_bulk_add"></a>
+
+## [**BulkResponse**](BulkResponse.html) post_knowledge_knowledgebase_documents_versions_bulk_add(knowledge_base_id, body)
+
+
+
+Bulk add document versions.
+
+
+
+Wraps POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/versions/bulk/add 
+
+Requires ALL permissions: 
+
+* knowledge:documentVersion:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.KnowledgeApi()
+knowledge_base_id = 'knowledge_base_id_example' # str | Knowledge base ID
+body = PureCloudPlatformClientV2.KnowledgeDocumentBulkVersionAddRequest() # KnowledgeDocumentBulkVersionAddRequest | 
+
+try:
+    # Bulk add document versions.
+    api_response = api_instance.post_knowledge_knowledgebase_documents_versions_bulk_add(knowledge_base_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling KnowledgeApi->post_knowledge_knowledgebase_documents_versions_bulk_add: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **knowledge_base_id** | **str**| Knowledge base ID |  |
+| **body** | [**KnowledgeDocumentBulkVersionAddRequest**](KnowledgeDocumentBulkVersionAddRequest.html)|  |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**BulkResponse**](BulkResponse.html)
 
 <a name="post_knowledge_knowledgebase_export_jobs"></a>
 
@@ -3758,6 +3979,63 @@ except ApiException as e:
 ### Return type
 
 [**KnowledgeExtendedCategory**](KnowledgeExtendedCategory.html)
+
+<a name="post_knowledge_knowledgebase_language_document_uploads"></a>
+
+## [**KnowledgeDocumentContentUpload**](KnowledgeDocumentContentUpload.html) post_knowledge_knowledgebase_language_document_uploads(document_id, knowledge_base_id, language_code, body)
+
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+
+Upload Article Content
+
+
+
+Wraps POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/{documentId}/uploads 
+
+Requires ALL permissions: 
+
+* knowledge:document:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.KnowledgeApi()
+document_id = 'document_id_example' # str | Document ID
+knowledge_base_id = 'knowledge_base_id_example' # str | Knowledge base ID
+language_code = 'en-US' # str | Language code, format: iso2-LOCALE
+body = PureCloudPlatformClientV2.KnowledgeDocumentContentUpload() # KnowledgeDocumentContentUpload | 
+
+try:
+    # Upload Article Content
+    api_response = api_instance.post_knowledge_knowledgebase_language_document_uploads(document_id, knowledge_base_id, language_code, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling KnowledgeApi->post_knowledge_knowledgebase_language_document_uploads: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **document_id** | **str**| Document ID |  |
+| **knowledge_base_id** | **str**| Knowledge base ID |  |
+| **language_code** | **str**| Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, en-CA, en-HK, en-IN, en-IE, en-NZ, en-PH, en-SG, en-ZA, de-DE, de-AT, de-CH, es-AR, es-CO, es-MX, es-US, es-ES, fr-FR, fr-BE, fr-CA, fr-CH, pt-BR, pt-PT, nl-NL, nl-BE, it-IT |
+| **body** | [**KnowledgeDocumentContentUpload**](KnowledgeDocumentContentUpload.html)|  |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**KnowledgeDocumentContentUpload**](KnowledgeDocumentContentUpload.html)
 
 <a name="post_knowledge_knowledgebase_language_documents"></a>
 

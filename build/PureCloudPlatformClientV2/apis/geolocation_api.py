@@ -57,7 +57,7 @@ class GeolocationApi(object):
             if not config.api_client:
                 config.api_client = ApiClient()
             self.api_client = config.api_client
-    
+
     def get_geolocations_settings(self, **kwargs) -> 'GeolocationSettings':
         """
         Get a organization's GeolocationSettings
@@ -129,7 +129,7 @@ class GeolocationApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_user_geolocation(self, user_id: str, client_id: str, **kwargs) -> 'Geolocation':
         """
         Get a user's Geolocation
@@ -213,7 +213,7 @@ class GeolocationApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def patch_geolocations_settings(self, body: 'GeolocationSettings', **kwargs) -> 'GeolocationSettings':
         """
         Patch a organization's GeolocationSettings
@@ -291,7 +291,7 @@ class GeolocationApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def patch_user_geolocation(self, user_id: str, client_id: str, body: 'Geolocation', **kwargs) -> 'Geolocation':
         """
         Patch a user's Geolocation

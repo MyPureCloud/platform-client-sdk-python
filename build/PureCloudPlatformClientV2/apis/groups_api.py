@@ -38,6 +38,9 @@ from typing import Dict
 from typing import Any
 
 from ..models import Empty
+from ..models import DynamicGroupDefinition
+from ..models import DynamicGroupQuery
+from ..models import DynamicGroupQueryPreview
 from ..models import ErrorBody
 from ..models import FieldConfig
 from ..models import Group
@@ -66,7 +69,7 @@ class GroupsApi(object):
             if not config.api_client:
                 config.api_client = ApiClient()
             self.api_client = config.api_client
-    
+
     def delete_group(self, group_id: str, **kwargs) -> None:
         """
         Delete group
@@ -144,7 +147,86 @@ class GroupsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
+	# Preview Endpoint
+    def delete_group_dynamicsettings(self, group_id: str, **kwargs) -> None:
+        """
+        Remove dynamic group definition
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_group_dynamicsettings(group_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str group_id: Group ID (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['group_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_group_dynamicsettings" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'group_id' is set
+        if ('group_id' not in params) or (params['group_id'] is None):
+            raise ValueError("Missing the required parameter `group_id` when calling `delete_group_dynamicsettings`")
+
+
+        resource_path = '/api/v2/groups/{groupId}/dynamicsettings'.replace('{format}', 'json')
+        path_params = {}
+        if 'group_id' in params:
+            path_params['groupId'] = params['group_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def delete_group_members(self, group_id: str, ids: str, **kwargs) -> object:
         """
         Remove members
@@ -228,6 +310,7 @@ class GroupsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+
     @deprecated("get_fieldconfig is deprecated")
     def get_fieldconfig(self, type: str, **kwargs) -> 'FieldConfig':
         """
@@ -306,7 +389,7 @@ class GroupsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_group(self, group_id: str, **kwargs) -> 'Group':
         """
         Get group
@@ -384,7 +467,86 @@ class GroupsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
+	# Preview Endpoint
+    def get_group_dynamicsettings(self, group_id: str, **kwargs) -> 'DynamicGroupDefinition':
+        """
+        Get dynamic group definition
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_group_dynamicsettings(group_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str group_id: Group ID (required)
+        :return: DynamicGroupDefinition
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['group_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_group_dynamicsettings" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'group_id' is set
+        if ('group_id' not in params) or (params['group_id'] is None):
+            raise ValueError("Missing the required parameter `group_id` when calling `get_group_dynamicsettings`")
+
+
+        resource_path = '/api/v2/groups/{groupId}/dynamicsettings'.replace('{format}', 'json')
+        path_params = {}
+        if 'group_id' in params:
+            path_params['groupId'] = params['group_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='DynamicGroupDefinition',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def get_group_individuals(self, group_id: str, **kwargs) -> 'UserEntityListing':
         """
         Get all individuals associated with the group
@@ -462,7 +624,7 @@ class GroupsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_group_members(self, group_id: str, **kwargs) -> 'UserEntityListing':
         """
         Get group members, includes individuals, owners, and dynamically included people
@@ -552,6 +714,7 @@ class GroupsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+
     @deprecated("get_group_profile is deprecated")
     def get_group_profile(self, group_id: str, **kwargs) -> 'GroupProfile':
         """
@@ -633,7 +796,7 @@ class GroupsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_groups(self, **kwargs) -> 'GroupEntityListing':
         """
         Get a group list
@@ -720,7 +883,7 @@ class GroupsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_groups_search(self, q64: str, **kwargs) -> 'GroupsSearchResponse':
         """
         Search groups using the q64 value returned from a previous search
@@ -801,6 +964,7 @@ class GroupsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
+
     @deprecated("get_profiles_groups is deprecated")
     def get_profiles_groups(self, **kwargs) -> 'GroupProfileEntityListing':
         """
@@ -888,7 +1052,7 @@ class GroupsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def post_group_members(self, group_id: str, body: 'GroupMembersUpdate', **kwargs) -> object:
         """
         Add members
@@ -972,7 +1136,7 @@ class GroupsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def post_groups(self, body: 'GroupCreate', **kwargs) -> 'Group':
         """
         Create a group
@@ -1050,7 +1214,87 @@ class GroupsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
+    @deprecated("post_groups_dynamicsettings_preview is deprecated")
+	# Preview Endpoint
+    def post_groups_dynamicsettings_preview(self, body: 'DynamicGroupQuery', **kwargs) -> 'DynamicGroupQueryPreview':
+        """
+        Preview the number of users selected for a dynamic group definition query
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_groups_dynamicsettings_preview(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param DynamicGroupQuery body: Group query to preview (required)
+        :return: DynamicGroupQueryPreview
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_groups_dynamicsettings_preview" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_groups_dynamicsettings_preview`")
+
+
+        resource_path = '/api/v2/groups/dynamicsettings/preview'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='DynamicGroupQueryPreview',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def post_groups_search(self, body: 'GroupSearchRequest', **kwargs) -> 'GroupsSearchResponse':
         """
         Search groups
@@ -1128,7 +1372,7 @@ class GroupsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def put_group(self, group_id: str, **kwargs) -> 'Group':
         """
         Update group
@@ -1206,6 +1450,91 @@ class GroupsApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='Group',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+	# Preview Endpoint
+    def put_group_dynamicsettings(self, group_id: str, body: 'DynamicGroupQuery', **kwargs) -> None:
+        """
+        Create / Update dynamic group definition
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.put_group_dynamicsettings(group_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str group_id: Group ID (required)
+        :param DynamicGroupQuery body: Create/Update dynamic groups (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['group_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method put_group_dynamicsettings" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'group_id' is set
+        if ('group_id' not in params) or (params['group_id'] is None):
+            raise ValueError("Missing the required parameter `group_id` when calling `put_group_dynamicsettings`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `put_group_dynamicsettings`")
+
+
+        resource_path = '/api/v2/groups/{groupId}/dynamicsettings'.replace('{format}', 'json')
+        path_params = {}
+        if 'group_id' in params:
+            path_params['groupId'] = params['group_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

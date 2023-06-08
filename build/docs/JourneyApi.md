@@ -13,6 +13,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**delete_journey_outcome**](JourneyApi.html#delete_journey_outcome) | Delete an outcome.|
 |[**delete_journey_outcomes_predictor**](JourneyApi.html#delete_journey_outcomes_predictor) | Delete an outcome predictor.|
 |[**delete_journey_segment**](JourneyApi.html#delete_journey_segment) | Delete a segment.|
+|[**get_analytics_journeys_aggregates_job**](JourneyApi.html#get_analytics_journeys_aggregates_job) | Get status for async query for journey aggregates|
+|[**get_analytics_journeys_aggregates_job_results**](JourneyApi.html#get_analytics_journeys_aggregates_job_results) | Fetch a page of results for an async aggregates query|
 |[**get_journey_actionmap**](JourneyApi.html#get_journey_actionmap) | Retrieve a single action map.|
 |[**get_journey_actionmaps**](JourneyApi.html#get_journey_actionmaps) | Retrieve all action maps.|
 |[**get_journey_actionmaps_estimates_job**](JourneyApi.html#get_journey_actionmaps_estimates_job) | Get status of job.|
@@ -21,24 +23,31 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_journey_actiontargets**](JourneyApi.html#get_journey_actiontargets) | Retrieve all action targets.|
 |[**get_journey_actiontemplate**](JourneyApi.html#get_journey_actiontemplate) | Retrieve a single action template.|
 |[**get_journey_actiontemplates**](JourneyApi.html#get_journey_actiontemplates) | Retrieve all action templates.|
+|[**get_journey_customer_customer_id_sessions**](JourneyApi.html#get_journey_customer_customer_id_sessions) | Retrieve all sessions for a given customer.|
 |[**get_journey_outcome**](JourneyApi.html#get_journey_outcome) | Retrieve a single outcome.|
 |[**get_journey_outcomes**](JourneyApi.html#get_journey_outcomes) | Retrieve all outcomes.|
+|[**get_journey_outcomes_attributions_job**](JourneyApi.html#get_journey_outcomes_attributions_job) | Get job status.|
+|[**get_journey_outcomes_attributions_job_results**](JourneyApi.html#get_journey_outcomes_attributions_job_results) | Get outcome attribution entities from completed job.|
 |[**get_journey_outcomes_predictor**](JourneyApi.html#get_journey_outcomes_predictor) | Retrieve a single outcome predictor.|
 |[**get_journey_outcomes_predictors**](JourneyApi.html#get_journey_outcomes_predictors) | Retrieve all outcome predictors.|
 |[**get_journey_segment**](JourneyApi.html#get_journey_segment) | Retrieve a single segment.|
 |[**get_journey_segments**](JourneyApi.html#get_journey_segments) | Retrieve all segments.|
 |[**get_journey_session**](JourneyApi.html#get_journey_session) | Retrieve a single session.|
+|[**get_journey_session_events**](JourneyApi.html#get_journey_session_events) | Retrieve all events for a given session.|
 |[**get_journey_session_outcomescores**](JourneyApi.html#get_journey_session_outcomescores) | Retrieve latest outcome score associated with a session for all outcomes.|
+|[**get_journey_session_segments**](JourneyApi.html#get_journey_session_segments) | Retrieve segment assignments by session ID.|
 |[**patch_journey_actionmap**](JourneyApi.html#patch_journey_actionmap) | Update single action map.|
 |[**patch_journey_actiontarget**](JourneyApi.html#patch_journey_actiontarget) | Update a single action target.|
 |[**patch_journey_actiontemplate**](JourneyApi.html#patch_journey_actiontemplate) | Update a single action template.|
 |[**patch_journey_outcome**](JourneyApi.html#patch_journey_outcome) | Update an outcome.|
 |[**patch_journey_segment**](JourneyApi.html#patch_journey_segment) | Update a segment.|
+|[**post_analytics_journeys_aggregates_jobs**](JourneyApi.html#post_analytics_journeys_aggregates_jobs) | Query for journey aggregates asynchronously|
 |[**post_analytics_journeys_aggregates_query**](JourneyApi.html#post_analytics_journeys_aggregates_query) | Query for journey aggregates|
 |[**post_journey_actionmaps**](JourneyApi.html#post_journey_actionmaps) | Create an action map.|
 |[**post_journey_actionmaps_estimates_jobs**](JourneyApi.html#post_journey_actionmaps_estimates_jobs) | Query for estimates|
 |[**post_journey_actiontemplates**](JourneyApi.html#post_journey_actiontemplates) | Create a single action template.|
 |[**post_journey_outcomes**](JourneyApi.html#post_journey_outcomes) | Create an outcome.|
+|[**post_journey_outcomes_attributions_jobs**](JourneyApi.html#post_journey_outcomes_attributions_jobs) | Create Outcome Attributions|
 |[**post_journey_outcomes_predictors**](JourneyApi.html#post_journey_outcomes_predictors) | Create an outcome predictor.|
 |[**post_journey_segments**](JourneyApi.html#post_journey_segments) | Create a segment.|
 {: class="table table-striped"}
@@ -294,6 +303,110 @@ except ApiException as e:
 ### Return type
 
 void (empty response body)
+
+<a name="get_analytics_journeys_aggregates_job"></a>
+
+## [**AsyncQueryStatus**](AsyncQueryStatus.html) get_analytics_journeys_aggregates_job(job_id)
+
+
+
+Get status for async query for journey aggregates
+
+
+
+Wraps GET /api/v2/analytics/journeys/aggregates/jobs/{jobId} 
+
+Requires ANY permissions: 
+
+* analytics:journeyAggregate:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.JourneyApi()
+job_id = 'job_id_example' # str | jobId
+
+try:
+    # Get status for async query for journey aggregates
+    api_response = api_instance.get_analytics_journeys_aggregates_job(job_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling JourneyApi->get_analytics_journeys_aggregates_job: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **job_id** | **str**| jobId |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**AsyncQueryStatus**](AsyncQueryStatus.html)
+
+<a name="get_analytics_journeys_aggregates_job_results"></a>
+
+## [**JourneyAsyncAggregateQueryResponse**](JourneyAsyncAggregateQueryResponse.html) get_analytics_journeys_aggregates_job_results(job_id, cursor=cursor)
+
+
+
+Fetch a page of results for an async aggregates query
+
+
+
+Wraps GET /api/v2/analytics/journeys/aggregates/jobs/{jobId}/results 
+
+Requires ANY permissions: 
+
+* analytics:journeyAggregate:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.JourneyApi()
+job_id = 'job_id_example' # str | jobId
+cursor = 'cursor_example' # str | Cursor token to retrieve next page (optional)
+
+try:
+    # Fetch a page of results for an async aggregates query
+    api_response = api_instance.get_analytics_journeys_aggregates_job_results(job_id, cursor=cursor)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling JourneyApi->get_analytics_journeys_aggregates_job_results: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **job_id** | **str**| jobId |  |
+| **cursor** | **str**| Cursor token to retrieve next page | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**JourneyAsyncAggregateQueryResponse**](JourneyAsyncAggregateQueryResponse.html)
 
 <a name="get_journey_actionmap"></a>
 
@@ -731,6 +844,63 @@ except ApiException as e:
 
 [**ActionTemplateListing**](ActionTemplateListing.html)
 
+<a name="get_journey_customer_customer_id_sessions"></a>
+
+## [**SessionListing**](SessionListing.html) get_journey_customer_customer_id_sessions(customer_id_type, customer_id, page_size=page_size, after=after)
+
+
+
+Retrieve all sessions for a given customer.
+
+
+
+Wraps GET /api/v2/journey/customers/{customerIdType}/{customerId}/sessions 
+
+Requires ANY permissions: 
+
+* journey:session:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.JourneyApi()
+customer_id_type = 'customer_id_type_example' # str | Type of ID used to identify customer (e.g. email, cookie, and phone).
+customer_id = 'customer_id_example' # str | Primary identifier of the customer in the source of the session.
+page_size = 'page_size_example' # str | Number of entities to return. Maximum of 200. (optional)
+after = 'after_example' # str | The cursor that points to the end of the set of entities that has been returned. (optional)
+
+try:
+    # Retrieve all sessions for a given customer.
+    api_response = api_instance.get_journey_customer_customer_id_sessions(customer_id_type, customer_id, page_size=page_size, after=after)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling JourneyApi->get_journey_customer_customer_id_sessions: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **customer_id_type** | **str**| Type of ID used to identify customer (e.g. email, cookie, and phone). |  |
+| **customer_id** | **str**| Primary identifier of the customer in the source of the session. |  |
+| **page_size** | **str**| Number of entities to return. Maximum of 200. | [optional]  |
+| **after** | **str**| The cursor that points to the end of the set of entities that has been returned. | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**SessionListing**](SessionListing.html)
+
 <a name="get_journey_outcome"></a>
 
 ## [**Outcome**](Outcome.html) get_journey_outcome(outcome_id)
@@ -842,6 +1012,108 @@ except ApiException as e:
 ### Return type
 
 [**OutcomeListing**](OutcomeListing.html)
+
+<a name="get_journey_outcomes_attributions_job"></a>
+
+## [**OutcomeAttributionJobStateResponse**](OutcomeAttributionJobStateResponse.html) get_journey_outcomes_attributions_job(job_id)
+
+
+
+Get job status.
+
+
+
+Wraps GET /api/v2/journey/outcomes/attributions/jobs/{jobId} 
+
+Requires ALL permissions: 
+
+* journey:outcomeAttributionJob:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.JourneyApi()
+job_id = 'job_id_example' # str | ID of the job.
+
+try:
+    # Get job status.
+    api_response = api_instance.get_journey_outcomes_attributions_job(job_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling JourneyApi->get_journey_outcomes_attributions_job: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **job_id** | **str**| ID of the job. |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**OutcomeAttributionJobStateResponse**](OutcomeAttributionJobStateResponse.html)
+
+<a name="get_journey_outcomes_attributions_job_results"></a>
+
+## [**OutcomeAttributionResponseListing**](OutcomeAttributionResponseListing.html) get_journey_outcomes_attributions_job_results(job_id)
+
+
+
+Get outcome attribution entities from completed job.
+
+
+
+Wraps GET /api/v2/journey/outcomes/attributions/jobs/{jobId}/results 
+
+Requires ALL permissions: 
+
+* journey:outcomeAttribution:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.JourneyApi()
+job_id = 'job_id_example' # str | ID of the job.
+
+try:
+    # Get outcome attribution entities from completed job.
+    api_response = api_instance.get_journey_outcomes_attributions_job_results(job_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling JourneyApi->get_journey_outcomes_attributions_job_results: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **job_id** | **str**| ID of the job. |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**OutcomeAttributionResponseListing**](OutcomeAttributionResponseListing.html)
 
 <a name="get_journey_outcomes_predictor"></a>
 
@@ -1107,6 +1379,61 @@ except ApiException as e:
 
 [**Session**](Session.html)
 
+<a name="get_journey_session_events"></a>
+
+## [**EventListing**](EventListing.html) get_journey_session_events(session_id, page_size=page_size, after=after)
+
+
+
+Retrieve all events for a given session.
+
+
+
+Wraps GET /api/v2/journey/sessions/{sessionId}/events 
+
+Requires ANY permissions: 
+
+* journey:event:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.JourneyApi()
+session_id = 'session_id_example' # str | System-generated UUID that represents the session the event is a part of.
+page_size = 'page_size_example' # str | Number of entities to return. Maximum of 200. (optional)
+after = 'after_example' # str | The cursor that points to the end of the set of entities that has been returned. (optional)
+
+try:
+    # Retrieve all events for a given session.
+    api_response = api_instance.get_journey_session_events(session_id, page_size=page_size, after=after)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling JourneyApi->get_journey_session_events: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **session_id** | **str**| System-generated UUID that represents the session the event is a part of. |  |
+| **page_size** | **str**| Number of entities to return. Maximum of 200. | [optional]  |
+| **after** | **str**| The cursor that points to the end of the set of entities that has been returned. | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**EventListing**](EventListing.html)
+
 <a name="get_journey_session_outcomescores"></a>
 
 ## [**OutcomeScoresResult**](OutcomeScoresResult.html) get_journey_session_outcomescores(session_id)
@@ -1157,6 +1484,65 @@ except ApiException as e:
 ### Return type
 
 [**OutcomeScoresResult**](OutcomeScoresResult.html)
+
+<a name="get_journey_session_segments"></a>
+
+## [**SegmentAssignmentListing**](SegmentAssignmentListing.html) get_journey_session_segments(session_id, page_size=page_size, after=after, segment_scope=segment_scope, assignment_state=assignment_state)
+
+
+
+Retrieve segment assignments by session ID.
+
+
+
+Wraps GET /api/v2/journey/sessions/{sessionId}/segments 
+
+Requires ANY permissions: 
+
+* journey:segmentassignment:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.JourneyApi()
+session_id = 'session_id_example' # str | ID of the session to query for segment assignments.
+page_size = 'page_size_example' # str | Number of entities to return. Maximum of 200. (optional)
+after = 'after_example' # str | The cursor that points to the end of the set of entities that has been returned. (optional)
+segment_scope = 'segment_scope_example' # str | Scope to filter on. If not specified, both session-scoped and customer-scoped assignments are returned. (optional)
+assignment_state = 'assignment_state_example' # str | Assignment state to filter on. If not specified, both assigned and unassigned assignments are returned. (optional)
+
+try:
+    # Retrieve segment assignments by session ID.
+    api_response = api_instance.get_journey_session_segments(session_id, page_size=page_size, after=after, segment_scope=segment_scope, assignment_state=assignment_state)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling JourneyApi->get_journey_session_segments: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **session_id** | **str**| ID of the session to query for segment assignments. |  |
+| **page_size** | **str**| Number of entities to return. Maximum of 200. | [optional]  |
+| **after** | **str**| The cursor that points to the end of the set of entities that has been returned. | [optional]  |
+| **segment_scope** | **str**| Scope to filter on. If not specified, both session-scoped and customer-scoped assignments are returned. | [optional] <br />**Values**: Session, Customer |
+| **assignment_state** | **str**| Assignment state to filter on. If not specified, both assigned and unassigned assignments are returned. | [optional] <br />**Values**: Assigned, Unassigned |
+{: class="table table-striped"}
+
+### Return type
+
+[**SegmentAssignmentListing**](SegmentAssignmentListing.html)
 
 <a name="patch_journey_actionmap"></a>
 
@@ -1423,6 +1809,57 @@ except ApiException as e:
 
 [**JourneySegment**](JourneySegment.html)
 
+<a name="post_analytics_journeys_aggregates_jobs"></a>
+
+## [**AsyncQueryResponse**](AsyncQueryResponse.html) post_analytics_journeys_aggregates_jobs(body)
+
+
+
+Query for journey aggregates asynchronously
+
+
+
+Wraps POST /api/v2/analytics/journeys/aggregates/jobs 
+
+Requires ANY permissions: 
+
+* analytics:journeyAggregate:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.JourneyApi()
+body = PureCloudPlatformClientV2.JourneyAsyncAggregationQuery() # JourneyAsyncAggregationQuery | query
+
+try:
+    # Query for journey aggregates asynchronously
+    api_response = api_instance.post_analytics_journeys_aggregates_jobs(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling JourneyApi->post_analytics_journeys_aggregates_jobs: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**JourneyAsyncAggregationQuery**](JourneyAsyncAggregationQuery.html)| query |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**AsyncQueryResponse**](AsyncQueryResponse.html)
+
 <a name="post_analytics_journeys_aggregates_query"></a>
 
 ## [**JourneyAggregateQueryResponse**](JourneyAggregateQueryResponse.html) post_analytics_journeys_aggregates_query(body)
@@ -1677,6 +2114,57 @@ except ApiException as e:
 ### Return type
 
 [**Outcome**](Outcome.html)
+
+<a name="post_journey_outcomes_attributions_jobs"></a>
+
+## [**OutcomeAttributionAsyncResponse**](OutcomeAttributionAsyncResponse.html) post_journey_outcomes_attributions_jobs(body=body)
+
+
+
+Create Outcome Attributions
+
+
+
+Wraps POST /api/v2/journey/outcomes/attributions/jobs 
+
+Requires ANY permissions: 
+
+* journey:outcomeAttributionJob:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.JourneyApi()
+body = PureCloudPlatformClientV2.OutcomeAttributionListing() # OutcomeAttributionListing | outcome attribution request (optional)
+
+try:
+    # Create Outcome Attributions
+    api_response = api_instance.post_journey_outcomes_attributions_jobs(body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling JourneyApi->post_journey_outcomes_attributions_jobs: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**OutcomeAttributionListing**](OutcomeAttributionListing.html)| outcome attribution request | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**OutcomeAttributionAsyncResponse**](OutcomeAttributionAsyncResponse.html)
 
 <a name="post_journey_outcomes_predictors"></a>
 

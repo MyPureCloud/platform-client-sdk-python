@@ -14,10 +14,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**delete_orgauthorization_trustee_group_roles**](OrganizationAuthorizationApi.html#delete_orgauthorization_trustee_group_roles) | Delete Trustee Group Roles|
 |[**delete_orgauthorization_trustee_user**](OrganizationAuthorizationApi.html#delete_orgauthorization_trustee_user) | Delete Trustee User|
 |[**delete_orgauthorization_trustee_user_roles**](OrganizationAuthorizationApi.html#delete_orgauthorization_trustee_user_roles) | Delete Trustee User Roles|
+|[**delete_orgauthorization_trustees**](OrganizationAuthorizationApi.html#delete_orgauthorization_trustees) | Delete Bulk Org Trustees|
 |[**delete_orgauthorization_trustor**](OrganizationAuthorizationApi.html#delete_orgauthorization_trustor) | Delete Org Trust|
 |[**delete_orgauthorization_trustor_cloneduser**](OrganizationAuthorizationApi.html#delete_orgauthorization_trustor_cloneduser) | Delete Cloned User|
 |[**delete_orgauthorization_trustor_group**](OrganizationAuthorizationApi.html#delete_orgauthorization_trustor_group) | Delete Trustee Group|
 |[**delete_orgauthorization_trustor_user**](OrganizationAuthorizationApi.html#delete_orgauthorization_trustor_user) | Delete Trustee User|
+|[**delete_orgauthorization_trustors**](OrganizationAuthorizationApi.html#delete_orgauthorization_trustors) | Delete Bulk Org Trustors|
 |[**get_orgauthorization_pairing**](OrganizationAuthorizationApi.html#get_orgauthorization_pairing) | Get Pairing Info|
 |[**get_orgauthorization_trustee**](OrganizationAuthorizationApi.html#get_orgauthorization_trustee) | Get Org Trust|
 |[**get_orgauthorization_trustee_clonedusers**](OrganizationAuthorizationApi.html#get_orgauthorization_trustee_clonedusers) | The list of cloned users from the trustee organization (i.e. users with a native user record).|
@@ -364,6 +366,56 @@ except ApiException as e:
 
 void (empty response body)
 
+<a name="delete_orgauthorization_trustees"></a>
+
+##  delete_orgauthorization_trustees(id)
+
+
+
+Delete Bulk Org Trustees
+
+
+
+Wraps DELETE /api/v2/orgauthorization/trustees 
+
+Requires ANY permissions: 
+
+* authorization:orgTrustee:delete
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.OrganizationAuthorizationApi()
+id = ['id_example'] # list[str] | Comma separated list of trustee ids to remove
+
+try:
+    # Delete Bulk Org Trustees
+    api_instance.delete_orgauthorization_trustees(id)
+except ApiException as e:
+    print("Exception when calling OrganizationAuthorizationApi->delete_orgauthorization_trustees: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **id** | [**list[str]**](str.html)| Comma separated list of trustee ids to remove |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
+
 <a name="delete_orgauthorization_trustor"></a>
 
 ##  delete_orgauthorization_trustor(trustor_org_id)
@@ -564,6 +616,56 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **trustor_org_id** | **str**| Trustor Organization Id |  |
 | **trustee_user_id** | **str**| Trustee User Id |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
+
+<a name="delete_orgauthorization_trustors"></a>
+
+##  delete_orgauthorization_trustors(id)
+
+
+
+Delete Bulk Org Trustors
+
+
+
+Wraps DELETE /api/v2/orgauthorization/trustors 
+
+Requires ANY permissions: 
+
+* authorization:orgTrustor:delete
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.OrganizationAuthorizationApi()
+id = ['id_example'] # list[str] | Comma separated list of trustor ids to remove
+
+try:
+    # Delete Bulk Org Trustors
+    api_instance.delete_orgauthorization_trustors(id)
+except ApiException as e:
+    print("Exception when calling OrganizationAuthorizationApi->delete_orgauthorization_trustors: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **id** | [**list[str]**](str.html)| Comma separated list of trustor ids to remove |  |
 {: class="table table-striped"}
 
 ### Return type

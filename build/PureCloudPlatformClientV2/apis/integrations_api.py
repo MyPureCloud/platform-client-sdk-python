@@ -40,9 +40,11 @@ from typing import Any
 from ..models import Empty
 from ..models import Action
 from ..models import ActionEntityListing
+from ..models import AsyncJob
 from ..models import BotConnectorBot
 from ..models import BotConnectorBotSummaryEntityListing
 from ..models import BotConnectorBotVersionSummaryEntityListing
+from ..models import BotExecutionConfiguration
 from ..models import BotList
 from ..models import CategoryEntityListing
 from ..models import ClientAppEntityListing
@@ -64,6 +66,9 @@ from ..models import JsonSchemaDocument
 from ..models import LexBotAlias
 from ..models import LexBotAliasEntityListing
 from ..models import LexBotEntityListing
+from ..models import NuanceBot
+from ..models import NuanceBotEntityListing
+from ..models import NuanceBotLaunchSettings
 from ..models import PostActionInput
 from ..models import PublishDraftInput
 from ..models import TestExecutionResult
@@ -92,7 +97,7 @@ class IntegrationsApi(object):
             if not config.api_client:
                 config.api_client = ApiClient()
             self.api_client = config.api_client
-    
+
     def delete_integration(self, integration_id: str, **kwargs) -> 'Integration':
         """
         Delete integration.
@@ -170,7 +175,7 @@ class IntegrationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def delete_integrations_action(self, action_id: str, **kwargs) -> None:
         """
         Delete an Action
@@ -248,7 +253,7 @@ class IntegrationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def delete_integrations_action_draft(self, action_id: str, **kwargs) -> None:
         """
         Delete a Draft
@@ -326,7 +331,7 @@ class IntegrationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def delete_integrations_credential(self, credential_id: str, **kwargs) -> None:
         """
         Delete a set of credentials
@@ -404,7 +409,7 @@ class IntegrationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_integration(self, integration_id: str, **kwargs) -> 'Integration':
         """
         Get integration.
@@ -500,7 +505,7 @@ class IntegrationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_integration_config_current(self, integration_id: str, **kwargs) -> 'IntegrationConfiguration':
         """
         Get integration configuration.
@@ -578,7 +583,7 @@ class IntegrationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_integrations(self, **kwargs) -> 'IntegrationEntityListing':
         """
         List integrations
@@ -668,7 +673,7 @@ class IntegrationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_integrations_action(self, action_id: str, **kwargs) -> 'Action':
         """
         Retrieves a single Action matching id.
@@ -752,7 +757,7 @@ class IntegrationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_integrations_action_draft(self, action_id: str, **kwargs) -> 'Action':
         """
         Retrieve a Draft
@@ -836,7 +841,7 @@ class IntegrationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_integrations_action_draft_schema(self, action_id: str, file_name: str, **kwargs) -> 'JsonSchemaDocument':
         """
         Retrieve schema for a Draft based on filename.
@@ -920,7 +925,7 @@ class IntegrationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_integrations_action_draft_template(self, action_id: str, file_name: str, **kwargs) -> str:
         """
         Retrieve templates for a Draft based on filename.
@@ -1004,7 +1009,7 @@ class IntegrationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_integrations_action_draft_validation(self, action_id: str, **kwargs) -> 'DraftValidationResult':
         """
         Validate current Draft configuration.
@@ -1082,7 +1087,7 @@ class IntegrationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_integrations_action_schema(self, action_id: str, file_name: str, **kwargs) -> 'JsonSchemaDocument':
         """
         Retrieve schema for an action based on filename.
@@ -1166,7 +1171,7 @@ class IntegrationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_integrations_action_template(self, action_id: str, file_name: str, **kwargs) -> str:
         """
         Retrieve text of templates for an action based on filename.
@@ -1250,7 +1255,7 @@ class IntegrationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_integrations_actions(self, **kwargs) -> 'ActionEntityListing':
         """
         Retrieves all actions associated with filters passed in via query param.
@@ -1355,7 +1360,7 @@ class IntegrationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_integrations_actions_categories(self, **kwargs) -> 'CategoryEntityListing':
         """
         Retrieves all categories of available Actions
@@ -1448,7 +1453,7 @@ class IntegrationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_integrations_actions_drafts(self, **kwargs) -> 'ActionEntityListing':
         """
         Retrieves all action drafts associated with the filters passed in via query param.
@@ -1553,7 +1558,7 @@ class IntegrationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_integrations_botconnector_integration_id_bot(self, integration_id: str, bot_id: str, **kwargs) -> 'BotConnectorBot':
         """
         Get a specific botConnector bot, plus versions, for this integration
@@ -1640,7 +1645,7 @@ class IntegrationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_integrations_botconnector_integration_id_bot_versions(self, integration_id: str, bot_id: str, **kwargs) -> 'BotConnectorBotVersionSummaryEntityListing':
         """
         Get a list of bot versions for a bot
@@ -1730,7 +1735,7 @@ class IntegrationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_integrations_botconnector_integration_id_bots(self, integration_id: str, **kwargs) -> 'BotList':
         """
         Get a list of botConnector bots for this integration
@@ -1808,7 +1813,7 @@ class IntegrationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_integrations_botconnector_integration_id_bots_summaries(self, integration_id: str, **kwargs) -> 'BotConnectorBotSummaryEntityListing':
         """
         Get a summary list of botConnector bots for this integration
@@ -1892,7 +1897,7 @@ class IntegrationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_integrations_clientapps(self, **kwargs) -> 'ClientAppEntityListing':
         """
         List permitted client app integrations for the logged in user
@@ -1982,7 +1987,7 @@ class IntegrationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_integrations_clientapps_unifiedcommunications(self, **kwargs) -> 'UCIntegrationListing':
         """
         UC integration client application configuration.
@@ -2072,7 +2077,7 @@ class IntegrationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_integrations_credential(self, credential_id: str, **kwargs) -> 'Credential':
         """
         Get a single credential with sensitive fields redacted
@@ -2150,7 +2155,7 @@ class IntegrationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_integrations_credentials(self, **kwargs) -> 'CredentialInfoListing':
         """
         List multiple sets of credentials
@@ -2228,7 +2233,7 @@ class IntegrationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_integrations_credentials_types(self, **kwargs) -> 'CredentialTypeListing':
         """
         List all credential types
@@ -2300,7 +2305,7 @@ class IntegrationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_integrations_speech_dialogflow_agent(self, agent_id: str, **kwargs) -> 'DialogflowAgent':
         """
         Get details about a Dialogflow agent
@@ -2378,7 +2383,7 @@ class IntegrationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_integrations_speech_dialogflow_agents(self, **kwargs) -> 'DialogflowAgentSummaryEntityListing':
         """
         Get a list of Dialogflow agents in the customers' Google accounts
@@ -2459,7 +2464,7 @@ class IntegrationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_integrations_speech_lex_bot_alias(self, alias_id: str, **kwargs) -> 'LexBotAlias':
         """
         Get details about a Lex bot alias
@@ -2537,7 +2542,7 @@ class IntegrationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_integrations_speech_lex_bot_bot_id_aliases(self, bot_id: str, **kwargs) -> 'LexBotAliasEntityListing':
         """
         Get a list of aliases for a bot in the customer's AWS accounts
@@ -2627,7 +2632,7 @@ class IntegrationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_integrations_speech_lex_bots(self, **kwargs) -> 'LexBotEntityListing':
         """
         Get a list of Lex bots in the customers' AWS accounts
@@ -2708,7 +2713,538 @@ class IntegrationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
+	# Preview Endpoint
+    def get_integrations_speech_nuance_nuance_integration_id_bot(self, nuance_integration_id: str, bot_id: str, **kwargs) -> 'NuanceBot':
+        """
+        Get a Nuance bot in the specified Integration
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_integrations_speech_nuance_nuance_integration_id_bot(nuance_integration_id, bot_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str nuance_integration_id: The integration ID for this group of bots (required)
+        :param str bot_id: The Nuance bot ID to get (required)
+        :param list[str] expand: expand
+        :param str target_channel: targetChannel
+        :return: NuanceBot
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['nuance_integration_id', 'bot_id', 'expand', 'target_channel']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_integrations_speech_nuance_nuance_integration_id_bot" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'nuance_integration_id' is set
+        if ('nuance_integration_id' not in params) or (params['nuance_integration_id'] is None):
+            raise ValueError("Missing the required parameter `nuance_integration_id` when calling `get_integrations_speech_nuance_nuance_integration_id_bot`")
+        # verify the required parameter 'bot_id' is set
+        if ('bot_id' not in params) or (params['bot_id'] is None):
+            raise ValueError("Missing the required parameter `bot_id` when calling `get_integrations_speech_nuance_nuance_integration_id_bot`")
+
+
+        resource_path = '/api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/{botId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'nuance_integration_id' in params:
+            path_params['nuanceIntegrationId'] = params['nuance_integration_id']
+        if 'bot_id' in params:
+            path_params['botId'] = params['bot_id']
+
+        query_params = {}
+        if 'expand' in params:
+            query_params['expand'] = params['expand']
+        if 'target_channel' in params:
+            query_params['targetChannel'] = params['target_channel']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='NuanceBot',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+	# Preview Endpoint
+    def get_integrations_speech_nuance_nuance_integration_id_bot_job(self, nuance_integration_id: str, bot_id: str, job_id: str, **kwargs) -> 'AsyncJob':
+        """
+        Get the status of an asynchronous Nuance bot GET job
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_integrations_speech_nuance_nuance_integration_id_bot_job(nuance_integration_id, bot_id, job_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str nuance_integration_id: The integration ID for this group of bots (required)
+        :param str bot_id: The Nuance bot ID (required)
+        :param str job_id: The asynchronous job ID (required)
+        :return: AsyncJob
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['nuance_integration_id', 'bot_id', 'job_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_integrations_speech_nuance_nuance_integration_id_bot_job" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'nuance_integration_id' is set
+        if ('nuance_integration_id' not in params) or (params['nuance_integration_id'] is None):
+            raise ValueError("Missing the required parameter `nuance_integration_id` when calling `get_integrations_speech_nuance_nuance_integration_id_bot_job`")
+        # verify the required parameter 'bot_id' is set
+        if ('bot_id' not in params) or (params['bot_id'] is None):
+            raise ValueError("Missing the required parameter `bot_id` when calling `get_integrations_speech_nuance_nuance_integration_id_bot_job`")
+        # verify the required parameter 'job_id' is set
+        if ('job_id' not in params) or (params['job_id'] is None):
+            raise ValueError("Missing the required parameter `job_id` when calling `get_integrations_speech_nuance_nuance_integration_id_bot_job`")
+
+
+        resource_path = '/api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/{botId}/jobs/{jobId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'nuance_integration_id' in params:
+            path_params['nuanceIntegrationId'] = params['nuance_integration_id']
+        if 'bot_id' in params:
+            path_params['botId'] = params['bot_id']
+        if 'job_id' in params:
+            path_params['jobId'] = params['job_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='AsyncJob',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+	# Preview Endpoint
+    def get_integrations_speech_nuance_nuance_integration_id_bot_job_results(self, nuance_integration_id: str, bot_id: str, job_id: str, **kwargs) -> 'NuanceBot':
+        """
+        Get the result of an asynchronous Nuance bot GET job
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_integrations_speech_nuance_nuance_integration_id_bot_job_results(nuance_integration_id, bot_id, job_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str nuance_integration_id: The integration ID for this group of bots (required)
+        :param str bot_id: The Nuance bot ID (required)
+        :param str job_id: The asynchronous job ID (required)
+        :return: NuanceBot
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['nuance_integration_id', 'bot_id', 'job_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_integrations_speech_nuance_nuance_integration_id_bot_job_results" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'nuance_integration_id' is set
+        if ('nuance_integration_id' not in params) or (params['nuance_integration_id'] is None):
+            raise ValueError("Missing the required parameter `nuance_integration_id` when calling `get_integrations_speech_nuance_nuance_integration_id_bot_job_results`")
+        # verify the required parameter 'bot_id' is set
+        if ('bot_id' not in params) or (params['bot_id'] is None):
+            raise ValueError("Missing the required parameter `bot_id` when calling `get_integrations_speech_nuance_nuance_integration_id_bot_job_results`")
+        # verify the required parameter 'job_id' is set
+        if ('job_id' not in params) or (params['job_id'] is None):
+            raise ValueError("Missing the required parameter `job_id` when calling `get_integrations_speech_nuance_nuance_integration_id_bot_job_results`")
+
+
+        resource_path = '/api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/{botId}/jobs/{jobId}/results'.replace('{format}', 'json')
+        path_params = {}
+        if 'nuance_integration_id' in params:
+            path_params['nuanceIntegrationId'] = params['nuance_integration_id']
+        if 'bot_id' in params:
+            path_params['botId'] = params['bot_id']
+        if 'job_id' in params:
+            path_params['jobId'] = params['job_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='NuanceBot',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+	# Preview Endpoint
+    def get_integrations_speech_nuance_nuance_integration_id_bots(self, nuance_integration_id: str, **kwargs) -> 'NuanceBotEntityListing':
+        """
+        Get a list of Nuance bots available in the specified Integration
+        If the 'onlyRegisteredBots' param is set, the returned data will only include the Nuance bots which have configured client secrets within the Integration,  otherwise all of the Nuance bots available to the Integration's configured discovery credentials are returned.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_integrations_speech_nuance_nuance_integration_id_bots(nuance_integration_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str nuance_integration_id: The integration ID for this group of bots (required)
+        :param int page_number: Page number
+        :param int page_size: Page size
+        :param bool only_registered_bots: Limit bots to the ones configured for Genesys Cloud usage
+        :return: NuanceBotEntityListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['nuance_integration_id', 'page_number', 'page_size', 'only_registered_bots']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_integrations_speech_nuance_nuance_integration_id_bots" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'nuance_integration_id' is set
+        if ('nuance_integration_id' not in params) or (params['nuance_integration_id'] is None):
+            raise ValueError("Missing the required parameter `nuance_integration_id` when calling `get_integrations_speech_nuance_nuance_integration_id_bots`")
+
+
+        resource_path = '/api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots'.replace('{format}', 'json')
+        path_params = {}
+        if 'nuance_integration_id' in params:
+            path_params['nuanceIntegrationId'] = params['nuance_integration_id']
+
+        query_params = {}
+        if 'page_number' in params:
+            query_params['pageNumber'] = params['page_number']
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+        if 'only_registered_bots' in params:
+            query_params['onlyRegisteredBots'] = params['only_registered_bots']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='NuanceBotEntityListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+	# Preview Endpoint
+    def get_integrations_speech_nuance_nuance_integration_id_bots_job(self, nuance_integration_id: str, job_id: str, **kwargs) -> 'AsyncJob':
+        """
+        Get the status of an asynchronous Nuance bots GET job
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_integrations_speech_nuance_nuance_integration_id_bots_job(nuance_integration_id, job_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str nuance_integration_id: The integration ID for this group of bots (required)
+        :param str job_id: The asynchronous job ID (required)
+        :return: AsyncJob
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['nuance_integration_id', 'job_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_integrations_speech_nuance_nuance_integration_id_bots_job" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'nuance_integration_id' is set
+        if ('nuance_integration_id' not in params) or (params['nuance_integration_id'] is None):
+            raise ValueError("Missing the required parameter `nuance_integration_id` when calling `get_integrations_speech_nuance_nuance_integration_id_bots_job`")
+        # verify the required parameter 'job_id' is set
+        if ('job_id' not in params) or (params['job_id'] is None):
+            raise ValueError("Missing the required parameter `job_id` when calling `get_integrations_speech_nuance_nuance_integration_id_bots_job`")
+
+
+        resource_path = '/api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/jobs/{jobId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'nuance_integration_id' in params:
+            path_params['nuanceIntegrationId'] = params['nuance_integration_id']
+        if 'job_id' in params:
+            path_params['jobId'] = params['job_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='AsyncJob',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+	# Preview Endpoint
+    def get_integrations_speech_nuance_nuance_integration_id_bots_job_results(self, nuance_integration_id: str, job_id: str, **kwargs) -> 'NuanceBotEntityListing':
+        """
+        Get the result of an asynchronous Nuance bots GET job
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_integrations_speech_nuance_nuance_integration_id_bots_job_results(nuance_integration_id, job_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str nuance_integration_id: The integration ID for this group of bots (required)
+        :param str job_id: The asynchronous job ID (required)
+        :return: NuanceBotEntityListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['nuance_integration_id', 'job_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_integrations_speech_nuance_nuance_integration_id_bots_job_results" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'nuance_integration_id' is set
+        if ('nuance_integration_id' not in params) or (params['nuance_integration_id'] is None):
+            raise ValueError("Missing the required parameter `nuance_integration_id` when calling `get_integrations_speech_nuance_nuance_integration_id_bots_job_results`")
+        # verify the required parameter 'job_id' is set
+        if ('job_id' not in params) or (params['job_id'] is None):
+            raise ValueError("Missing the required parameter `job_id` when calling `get_integrations_speech_nuance_nuance_integration_id_bots_job_results`")
+
+
+        resource_path = '/api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/jobs/{jobId}/results'.replace('{format}', 'json')
+        path_params = {}
+        if 'nuance_integration_id' in params:
+            path_params['nuanceIntegrationId'] = params['nuance_integration_id']
+        if 'job_id' in params:
+            path_params['jobId'] = params['job_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='NuanceBotEntityListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def get_integrations_speech_tts_engine(self, engine_id: str, **kwargs) -> 'TtsEngineEntity':
         """
         Get details about a TTS engine
@@ -2789,7 +3325,7 @@ class IntegrationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_integrations_speech_tts_engine_voice(self, engine_id: str, voice_id: str, **kwargs) -> 'TtsVoiceEntity':
         """
         Get details about a specific voice for a TTS engine
@@ -2873,7 +3409,7 @@ class IntegrationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_integrations_speech_tts_engine_voices(self, engine_id: str, **kwargs) -> 'TtsVoiceEntityListing':
         """
         Get a list of voices for a TTS engine
@@ -2957,7 +3493,7 @@ class IntegrationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_integrations_speech_tts_engines(self, **kwargs) -> 'TtsEngineEntityListing':
         """
         Get a list of TTS engines enabled for org
@@ -3044,7 +3580,7 @@ class IntegrationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_integrations_speech_tts_settings(self, **kwargs) -> 'TtsSettings':
         """
         Get TTS settings for an org
@@ -3116,7 +3652,7 @@ class IntegrationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_integrations_type(self, type_id: str, **kwargs) -> 'IntegrationType':
         """
         Get integration type.
@@ -3194,7 +3730,7 @@ class IntegrationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_integrations_type_configschema(self, type_id: str, config_type: str, **kwargs) -> 'JsonSchemaDocument':
         """
         Get properties config schema for an integration type.
@@ -3278,7 +3814,7 @@ class IntegrationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_integrations_types(self, **kwargs) -> 'IntegrationTypeEntityListing':
         """
         List integration types
@@ -3368,7 +3904,7 @@ class IntegrationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_integrations_userapps(self, **kwargs) -> 'UserAppEntityListing':
         """
         List permitted user app integrations for the logged in user
@@ -3461,7 +3997,7 @@ class IntegrationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def patch_integration(self, integration_id: str, **kwargs) -> 'Integration':
         """
         Update an integration.
@@ -3560,7 +4096,7 @@ class IntegrationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def patch_integrations_action(self, action_id: str, body: 'UpdateActionInput', **kwargs) -> 'Action':
         """
         Patch an Action
@@ -3644,7 +4180,7 @@ class IntegrationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def patch_integrations_action_draft(self, action_id: str, body: 'UpdateDraftInput', **kwargs) -> 'Action':
         """
         Update an existing Draft
@@ -3728,7 +4264,7 @@ class IntegrationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def post_integrations(self, **kwargs) -> 'Integration':
         """
         Create an integration.
@@ -3803,7 +4339,7 @@ class IntegrationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def post_integrations_action_draft(self, action_id: str, **kwargs) -> 'Action':
         """
         Create a new Draft from existing Action
@@ -3881,7 +4417,7 @@ class IntegrationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def post_integrations_action_draft_publish(self, action_id: str, body: 'PublishDraftInput', **kwargs) -> 'Action':
         """
         Publish a Draft and make it the active Action configuration
@@ -3965,7 +4501,7 @@ class IntegrationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def post_integrations_action_draft_test(self, action_id: str, body: object, **kwargs) -> 'TestExecutionResult':
         """
         Test the execution of a draft. Responses will show execution steps broken out with intermediate results to help in debugging.
@@ -4049,7 +4585,7 @@ class IntegrationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def post_integrations_action_execute(self, action_id: str, body: object, **kwargs) -> object:
         """
         Execute Action and return response from 3rd party.  Responses will follow the schemas defined on the Action for success and error.
@@ -4133,7 +4669,7 @@ class IntegrationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def post_integrations_action_test(self, action_id: str, body: object, **kwargs) -> 'TestExecutionResult':
         """
         Test the execution of an action. Responses will show execution steps broken out with intermediate results to help in debugging.
@@ -4217,7 +4753,7 @@ class IntegrationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def post_integrations_actions(self, body: 'PostActionInput', **kwargs) -> 'Action':
         """
         Create a new Action
@@ -4295,7 +4831,7 @@ class IntegrationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def post_integrations_actions_drafts(self, body: 'PostActionInput', **kwargs) -> 'Action':
         """
         Create a new Draft
@@ -4373,7 +4909,7 @@ class IntegrationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def post_integrations_credentials(self, **kwargs) -> 'CredentialInfo':
         """
         Create a set of credentials
@@ -4448,7 +4984,271 @@ class IntegrationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
+	# Preview Endpoint
+    def post_integrations_speech_nuance_nuance_integration_id_bot_jobs(self, nuance_integration_id: str, bot_id: str, **kwargs) -> 'AsyncJob':
+        """
+        Get a Nuance bot in the specified Integration asynchronously
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_integrations_speech_nuance_nuance_integration_id_bot_jobs(nuance_integration_id, bot_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str nuance_integration_id: The integration ID for this group of bots (required)
+        :param str bot_id: The Nuance bot ID (required)
+        :param list[str] expand: expand
+        :param str body: targetChannel
+        :return: AsyncJob
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['nuance_integration_id', 'bot_id', 'expand', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_integrations_speech_nuance_nuance_integration_id_bot_jobs" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'nuance_integration_id' is set
+        if ('nuance_integration_id' not in params) or (params['nuance_integration_id'] is None):
+            raise ValueError("Missing the required parameter `nuance_integration_id` when calling `post_integrations_speech_nuance_nuance_integration_id_bot_jobs`")
+        # verify the required parameter 'bot_id' is set
+        if ('bot_id' not in params) or (params['bot_id'] is None):
+            raise ValueError("Missing the required parameter `bot_id` when calling `post_integrations_speech_nuance_nuance_integration_id_bot_jobs`")
+
+
+        resource_path = '/api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/{botId}/jobs'.replace('{format}', 'json')
+        path_params = {}
+        if 'nuance_integration_id' in params:
+            path_params['nuanceIntegrationId'] = params['nuance_integration_id']
+        if 'bot_id' in params:
+            path_params['botId'] = params['bot_id']
+
+        query_params = {}
+        if 'expand' in params:
+            query_params['expand'] = params['expand']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='AsyncJob',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+	# Preview Endpoint
+    def post_integrations_speech_nuance_nuance_integration_id_bots_jobs(self, nuance_integration_id: str, **kwargs) -> 'AsyncJob':
+        """
+        Get a list of Nuance bots in the specified Integration asynchronously
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_integrations_speech_nuance_nuance_integration_id_bots_jobs(nuance_integration_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str nuance_integration_id: The integration ID for this group of bots (required)
+        :param int page_number: Page number
+        :param int page_size: Page size
+        :param bool only_registered_bots: Limit bots to the ones configured for Genesys Cloud usage
+        :return: AsyncJob
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['nuance_integration_id', 'page_number', 'page_size', 'only_registered_bots']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_integrations_speech_nuance_nuance_integration_id_bots_jobs" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'nuance_integration_id' is set
+        if ('nuance_integration_id' not in params) or (params['nuance_integration_id'] is None):
+            raise ValueError("Missing the required parameter `nuance_integration_id` when calling `post_integrations_speech_nuance_nuance_integration_id_bots_jobs`")
+
+
+        resource_path = '/api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/jobs'.replace('{format}', 'json')
+        path_params = {}
+        if 'nuance_integration_id' in params:
+            path_params['nuanceIntegrationId'] = params['nuance_integration_id']
+
+        query_params = {}
+        if 'page_number' in params:
+            query_params['pageNumber'] = params['page_number']
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+        if 'only_registered_bots' in params:
+            query_params['onlyRegisteredBots'] = params['only_registered_bots']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='AsyncJob',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+	# Preview Endpoint
+    def post_integrations_speech_nuance_nuance_integration_id_bots_launch_validate(self, nuance_integration_id: str, settings: 'BotExecutionConfiguration', **kwargs) -> None:
+        """
+        Try out a single credential for a Nuance bot to know if the secret is correct
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_integrations_speech_nuance_nuance_integration_id_bots_launch_validate(nuance_integration_id, settings, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str nuance_integration_id: The integration ID for this group of bots (required)
+        :param BotExecutionConfiguration settings:  (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['nuance_integration_id', 'settings']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_integrations_speech_nuance_nuance_integration_id_bots_launch_validate" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'nuance_integration_id' is set
+        if ('nuance_integration_id' not in params) or (params['nuance_integration_id'] is None):
+            raise ValueError("Missing the required parameter `nuance_integration_id` when calling `post_integrations_speech_nuance_nuance_integration_id_bots_launch_validate`")
+        # verify the required parameter 'settings' is set
+        if ('settings' not in params) or (params['settings'] is None):
+            raise ValueError("Missing the required parameter `settings` when calling `post_integrations_speech_nuance_nuance_integration_id_bots_launch_validate`")
+
+
+        resource_path = '/api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/launch/validate'.replace('{format}', 'json')
+        path_params = {}
+        if 'nuance_integration_id' in params:
+            path_params['nuanceIntegrationId'] = params['nuance_integration_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'settings' in params:
+            body_params = params['settings']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def put_integration_config_current(self, integration_id: str, **kwargs) -> 'IntegrationConfiguration':
         """
         Update integration configuration.
@@ -4529,7 +5329,7 @@ class IntegrationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def put_integrations_botconnector_integration_id_bots(self, integration_id: str, bot_list: 'BotList', **kwargs) -> None:
         """
         Set a list of botConnector bots plus versions for this integration
@@ -4613,7 +5413,7 @@ class IntegrationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def put_integrations_credential(self, credential_id: str, **kwargs) -> 'CredentialInfo':
         """
         Update a set of credentials
@@ -4694,7 +5494,92 @@ class IntegrationsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
+	# Preview Endpoint
+    def put_integrations_speech_nuance_nuance_integration_id_bots_launch_settings(self, nuance_integration_id: str, settings: 'NuanceBotLaunchSettings', **kwargs) -> None:
+        """
+        Update the Nuance bot list for the specific bots made available to Genesys Cloud in the specified Integration
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.put_integrations_speech_nuance_nuance_integration_id_bots_launch_settings(nuance_integration_id, settings, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str nuance_integration_id: The integration ID for this group of bots (required)
+        :param NuanceBotLaunchSettings settings:  (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['nuance_integration_id', 'settings']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method put_integrations_speech_nuance_nuance_integration_id_bots_launch_settings" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'nuance_integration_id' is set
+        if ('nuance_integration_id' not in params) or (params['nuance_integration_id'] is None):
+            raise ValueError("Missing the required parameter `nuance_integration_id` when calling `put_integrations_speech_nuance_nuance_integration_id_bots_launch_settings`")
+        # verify the required parameter 'settings' is set
+        if ('settings' not in params) or (params['settings'] is None):
+            raise ValueError("Missing the required parameter `settings` when calling `put_integrations_speech_nuance_nuance_integration_id_bots_launch_settings`")
+
+
+        resource_path = '/api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/launch/settings'.replace('{format}', 'json')
+        path_params = {}
+        if 'nuance_integration_id' in params:
+            path_params['nuanceIntegrationId'] = params['nuance_integration_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'settings' in params:
+            body_params = params['settings']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def put_integrations_speech_tts_settings(self, body: 'TtsSettings', **kwargs) -> 'TtsSettings':
         """
         Update TTS settings for an org

@@ -40,6 +40,8 @@ from typing import Any
 from ..models import Empty
 from ..models import ErrorBody
 from ..models import OrganizationPresence
+from ..models import OrganizationPresenceDefinition
+from ..models import OrganizationPresenceDefinitionEntityListing
 from ..models import OrganizationPresenceEntityListing
 from ..models import PresenceSettings
 from ..models import Source
@@ -63,7 +65,86 @@ class PresenceApi(object):
             if not config.api_client:
                 config.api_client = ApiClient()
             self.api_client = config.api_client
-    
+
+	# Preview Endpoint
+    def delete_presence_definition(self, definition_id: str, **kwargs) -> None:
+        """
+        Delete a Presence Definition
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_presence_definition(definition_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str definition_id: Presence Definition ID (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['definition_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_presence_definition" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'definition_id' is set
+        if ('definition_id' not in params) or (params['definition_id'] is None):
+            raise ValueError("Missing the required parameter `definition_id` when calling `delete_presence_definition`")
+
+
+        resource_path = '/api/v2/presence/definitions/{definitionId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'definition_id' in params:
+            path_params['definitionId'] = params['definition_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def delete_presence_source(self, source_id: str, **kwargs) -> None:
         """
         Delete a Presence Source
@@ -141,7 +222,7 @@ class PresenceApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def delete_presencedefinition(self, presence_id: str, **kwargs) -> None:
         """
         Delete a Presence Definition
@@ -219,7 +300,165 @@ class PresenceApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
+	# Preview Endpoint
+    def get_presence_definition(self, definition_id: str, **kwargs) -> 'OrganizationPresenceDefinition':
+        """
+        Get a Presence Definition
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_presence_definition(definition_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str definition_id: Presence Definition ID (required)
+        :return: OrganizationPresenceDefinition
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['definition_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_presence_definition" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'definition_id' is set
+        if ('definition_id' not in params) or (params['definition_id'] is None):
+            raise ValueError("Missing the required parameter `definition_id` when calling `get_presence_definition`")
+
+
+        resource_path = '/api/v2/presence/definitions/{definitionId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'definition_id' in params:
+            path_params['definitionId'] = params['definition_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='OrganizationPresenceDefinition',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+	# Preview Endpoint
+    def get_presence_definitions(self, **kwargs) -> 'OrganizationPresenceDefinitionEntityListing':
+        """
+        Get a list of Presence Definitions
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_presence_definitions(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str deactivated: Deactivated query can be TRUE or FALSE
+        :param list[str] division_id: One or more division IDs. If nothing is provided, the definitions associated withthe list of divisions that the user has access to will be returned.
+        :return: OrganizationPresenceDefinitionEntityListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['deactivated', 'division_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_presence_definitions" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/presence/definitions'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'deactivated' in params:
+            query_params['deactivated'] = params['deactivated']
+        if 'division_id' in params:
+            query_params['divisionId'] = params['division_id']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='OrganizationPresenceDefinitionEntityListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def get_presence_settings(self, **kwargs) -> 'PresenceSettings':
         """
         Get the presence settings
@@ -291,7 +530,7 @@ class PresenceApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_presence_source(self, source_id: str, **kwargs) -> 'Source':
         """
         Get a Presence Source
@@ -369,7 +608,7 @@ class PresenceApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_presence_sources(self, **kwargs) -> 'SourceEntityListing':
         """
         Get a list of Presence Sources
@@ -444,7 +683,7 @@ class PresenceApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_presence_user_primarysource(self, user_id: str, **kwargs) -> 'UserPrimarySource':
         """
         Get a user's Primary Presence Source
@@ -522,7 +761,7 @@ class PresenceApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_presencedefinition(self, presence_id: str, **kwargs) -> 'OrganizationPresence':
         """
         Get a Presence Definition
@@ -603,7 +842,7 @@ class PresenceApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_presencedefinitions(self, **kwargs) -> 'OrganizationPresenceEntityListing':
         """
         Get an Organization's list of Presence Definitions
@@ -687,7 +926,7 @@ class PresenceApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_systempresences(self, **kwargs) -> List['SystemPresence']:
         """
         Get the list of SystemPresences
@@ -759,7 +998,7 @@ class PresenceApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_user_presence(self, user_id: str, source_id: str, **kwargs) -> 'UserPresence':
         """
         Get a user's Presence
@@ -843,7 +1082,7 @@ class PresenceApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_user_presences_purecloud(self, user_id: str, **kwargs) -> 'UserPresence':
         """
         Get a user's Genesys Cloud presence.
@@ -921,7 +1160,7 @@ class PresenceApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def patch_user_presence(self, user_id: str, source_id: str, body: 'UserPresence', **kwargs) -> 'UserPresence':
         """
         Patch a user's Presence
@@ -1011,7 +1250,7 @@ class PresenceApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def patch_user_presences_purecloud(self, user_id: str, body: 'UserPresence', **kwargs) -> 'UserPresence':
         """
         Patch a Genesys Cloud user's presence
@@ -1095,7 +1334,86 @@ class PresenceApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
+	# Preview Endpoint
+    def post_presence_definitions(self, body: 'OrganizationPresenceDefinition', **kwargs) -> 'OrganizationPresenceDefinition':
+        """
+        Create a Presence Definition
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_presence_definitions(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param OrganizationPresenceDefinition body: The Presence Definition to create (required)
+        :return: OrganizationPresenceDefinition
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_presence_definitions" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_presence_definitions`")
+
+
+        resource_path = '/api/v2/presence/definitions'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='OrganizationPresenceDefinition',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def post_presence_sources(self, body: 'Source', **kwargs) -> 'Source':
         """
         Create a Presence Source
@@ -1173,7 +1491,7 @@ class PresenceApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def post_presencedefinitions(self, body: 'OrganizationPresence', **kwargs) -> 'OrganizationPresence':
         """
         Create a Presence Definition
@@ -1251,7 +1569,92 @@ class PresenceApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
+	# Preview Endpoint
+    def put_presence_definition(self, definition_id: str, body: 'OrganizationPresenceDefinition', **kwargs) -> 'OrganizationPresenceDefinition':
+        """
+        Update a Presence Definition
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.put_presence_definition(definition_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str definition_id: Presence Definition ID (required)
+        :param OrganizationPresenceDefinition body: The updated Presence Definition (required)
+        :return: OrganizationPresenceDefinition
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['definition_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method put_presence_definition" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'definition_id' is set
+        if ('definition_id' not in params) or (params['definition_id'] is None):
+            raise ValueError("Missing the required parameter `definition_id` when calling `put_presence_definition`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `put_presence_definition`")
+
+
+        resource_path = '/api/v2/presence/definitions/{definitionId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'definition_id' in params:
+            path_params['definitionId'] = params['definition_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='OrganizationPresenceDefinition',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def put_presence_settings(self, body: 'PresenceSettings', **kwargs) -> 'PresenceSettings':
         """
         Update the presence settings
@@ -1329,7 +1732,7 @@ class PresenceApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def put_presence_source(self, source_id: str, body: 'Source', **kwargs) -> 'Source':
         """
         Update a Presence Source
@@ -1413,7 +1816,7 @@ class PresenceApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def put_presence_user_primarysource(self, user_id: str, body: 'UserPrimarySource', **kwargs) -> 'UserPrimarySource':
         """
         Update a user's Primary Presence Source
@@ -1497,7 +1900,7 @@ class PresenceApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def put_presencedefinition(self, presence_id: str, body: 'OrganizationPresence', **kwargs) -> 'OrganizationPresence':
         """
         Update a Presence Definition
@@ -1581,7 +1984,7 @@ class PresenceApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def put_users_presences_bulk(self, body: List['UserPresence'], **kwargs) -> List['UserPresence']:
         """
         Update bulk user Presences

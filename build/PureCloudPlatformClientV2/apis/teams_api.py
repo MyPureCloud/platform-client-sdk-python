@@ -40,6 +40,8 @@ from typing import Any
 from ..models import Empty
 from ..models import ErrorBody
 from ..models import Team
+from ..models import TeamActivityQuery
+from ..models import TeamActivityResponse
 from ..models import TeamEntityListing
 from ..models import TeamMemberAddListingResponse
 from ..models import TeamMemberEntityListing
@@ -62,7 +64,7 @@ class TeamsApi(object):
             if not config.api_client:
                 config.api_client = ApiClient()
             self.api_client = config.api_client
-    
+
     def delete_team(self, team_id: str, **kwargs) -> None:
         """
         Delete team
@@ -140,7 +142,7 @@ class TeamsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def delete_team_members(self, team_id: str, id: str, **kwargs) -> None:
         """
         Delete team members
@@ -224,7 +226,7 @@ class TeamsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_team(self, team_id: str, **kwargs) -> 'Team':
         """
         Get team
@@ -302,7 +304,7 @@ class TeamsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_team_members(self, team_id: str, **kwargs) -> 'TeamMemberEntityListing':
         """
         Get team membership
@@ -392,7 +394,7 @@ class TeamsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_teams(self, **kwargs) -> 'TeamEntityListing':
         """
         Get Team listing
@@ -479,7 +481,7 @@ class TeamsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def patch_team(self, team_id: str, body: 'Team', **kwargs) -> 'Team':
         """
         Update team
@@ -563,7 +565,92 @@ class TeamsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
+	# Preview Endpoint
+    def post_analytics_teams_activity_query(self, body: 'TeamActivityQuery', **kwargs) -> 'TeamActivityResponse':
+        """
+        Query for team activity observations
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_analytics_teams_activity_query(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param TeamActivityQuery body: query (required)
+        :param int page_size: The desired page size
+        :param int page_number: The desired page number
+        :return: TeamActivityResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body', 'page_size', 'page_number']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_analytics_teams_activity_query" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_analytics_teams_activity_query`")
+
+
+        resource_path = '/api/v2/analytics/teams/activity/query'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+        if 'page_number' in params:
+            query_params['pageNumber'] = params['page_number']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='TeamActivityResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def post_team_members(self, team_id: str, body: 'TeamMembers', **kwargs) -> 'TeamMemberAddListingResponse':
         """
         Add team members
@@ -647,7 +734,7 @@ class TeamsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def post_teams(self, body: 'Team', **kwargs) -> 'Team':
         """
         Create a team
@@ -725,7 +812,7 @@ class TeamsApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def post_teams_search(self, body: 'TeamSearchRequest', **kwargs) -> 'TeamsSearchResponse':
         """
         Search resources.

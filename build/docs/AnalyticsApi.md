@@ -11,13 +11,27 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**delete_analytics_conversations_details_job**](AnalyticsApi.html#delete_analytics_conversations_details_job) | Delete/cancel an async details job|
 |[**delete_analytics_reporting_schedule**](AnalyticsApi.html#delete_analytics_reporting_schedule) | Delete a scheduled report job.|
 |[**delete_analytics_users_details_job**](AnalyticsApi.html#delete_analytics_users_details_job) | Delete/cancel an async request|
+|[**get_analytics_actions_aggregates_job**](AnalyticsApi.html#get_analytics_actions_aggregates_job) | Get status for async query for action aggregates|
+|[**get_analytics_actions_aggregates_job_results**](AnalyticsApi.html#get_analytics_actions_aggregates_job_results) | Fetch a page of results for an async aggregates query|
 |[**get_analytics_botflow_reportingturns**](AnalyticsApi.html#get_analytics_botflow_reportingturns) | Get Reporting Turns.|
+|[**get_analytics_bots_aggregates_job**](AnalyticsApi.html#get_analytics_bots_aggregates_job) | Get status for async query for bot aggregates|
+|[**get_analytics_bots_aggregates_job_results**](AnalyticsApi.html#get_analytics_bots_aggregates_job_results) | Fetch a page of results for an async aggregates query|
 |[**get_analytics_conversation_details**](AnalyticsApi.html#get_analytics_conversation_details) | Get a conversation by id|
+|[**get_analytics_conversations_aggregates_job**](AnalyticsApi.html#get_analytics_conversations_aggregates_job) | Get status for async query for conversation aggregates|
+|[**get_analytics_conversations_aggregates_job_results**](AnalyticsApi.html#get_analytics_conversations_aggregates_job_results) | Fetch a page of results for an async aggregates query|
 |[**get_analytics_conversations_details**](AnalyticsApi.html#get_analytics_conversations_details) | Gets multiple conversations by id|
 |[**get_analytics_conversations_details_job**](AnalyticsApi.html#get_analytics_conversations_details_job) | Get status for async query for conversation details|
 |[**get_analytics_conversations_details_job_results**](AnalyticsApi.html#get_analytics_conversations_details_job_results) | Fetch a page of results for an async details job|
 |[**get_analytics_conversations_details_jobs_availability**](AnalyticsApi.html#get_analytics_conversations_details_jobs_availability) | Lookup the datalake availability date and time|
 |[**get_analytics_dataretention_settings**](AnalyticsApi.html#get_analytics_dataretention_settings) | Get analytics data retention setting|
+|[**get_analytics_evaluations_aggregates_job**](AnalyticsApi.html#get_analytics_evaluations_aggregates_job) | Get status for async query for evaluation aggregates|
+|[**get_analytics_evaluations_aggregates_job_results**](AnalyticsApi.html#get_analytics_evaluations_aggregates_job_results) | Fetch a page of results for an async aggregates query|
+|[**get_analytics_flows_aggregates_job**](AnalyticsApi.html#get_analytics_flows_aggregates_job) | Get status for async query for Flow aggregates|
+|[**get_analytics_flows_aggregates_job_results**](AnalyticsApi.html#get_analytics_flows_aggregates_job_results) | Fetch a page of results for an async aggregates query|
+|[**get_analytics_journeys_aggregates_job**](AnalyticsApi.html#get_analytics_journeys_aggregates_job) | Get status for async query for journey aggregates|
+|[**get_analytics_journeys_aggregates_job_results**](AnalyticsApi.html#get_analytics_journeys_aggregates_job_results) | Fetch a page of results for an async aggregates query|
+|[**get_analytics_knowledge_aggregates_job**](AnalyticsApi.html#get_analytics_knowledge_aggregates_job) | Get status for async query for knowledge aggregates|
+|[**get_analytics_knowledge_aggregates_job_results**](AnalyticsApi.html#get_analytics_knowledge_aggregates_job_results) | Fetch a page of results for an async aggregates query|
 |[**get_analytics_reporting_exports**](AnalyticsApi.html#get_analytics_reporting_exports) | Get all view export requests for a user|
 |[**get_analytics_reporting_exports_metadata**](AnalyticsApi.html#get_analytics_reporting_exports_metadata) | Get all export metadata|
 |[**get_analytics_reporting_metadata**](AnalyticsApi.html#get_analytics_reporting_metadata) | Get list of reporting metadata.|
@@ -30,27 +44,56 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_analytics_reporting_schedules**](AnalyticsApi.html#get_analytics_reporting_schedules) | Get a list of scheduled report jobs|
 |[**get_analytics_reporting_settings**](AnalyticsApi.html#get_analytics_reporting_settings) | Get AnalyticsReportingSettings for an organization|
 |[**get_analytics_reporting_timeperiods**](AnalyticsApi.html#get_analytics_reporting_timeperiods) | Get a list of report time periods.|
+|[**get_analytics_resolutions_aggregates_job**](AnalyticsApi.html#get_analytics_resolutions_aggregates_job) | Get status for async query for resolution aggregates|
+|[**get_analytics_resolutions_aggregates_job_results**](AnalyticsApi.html#get_analytics_resolutions_aggregates_job_results) | Fetch a page of results for an async aggregates query|
+|[**get_analytics_surveys_aggregates_job**](AnalyticsApi.html#get_analytics_surveys_aggregates_job) | Get status for async query for survey aggregates|
+|[**get_analytics_surveys_aggregates_job_results**](AnalyticsApi.html#get_analytics_surveys_aggregates_job_results) | Fetch a page of results for an async aggregates query|
+|[**get_analytics_taskmanagement_aggregates_job**](AnalyticsApi.html#get_analytics_taskmanagement_aggregates_job) | Get status for async query for task management aggregates|
+|[**get_analytics_taskmanagement_aggregates_job_results**](AnalyticsApi.html#get_analytics_taskmanagement_aggregates_job_results) | Fetch a page of results for an async task management query|
+|[**get_analytics_transcripts_aggregates_job**](AnalyticsApi.html#get_analytics_transcripts_aggregates_job) | Get status for async query for transcript aggregates|
+|[**get_analytics_transcripts_aggregates_job_results**](AnalyticsApi.html#get_analytics_transcripts_aggregates_job_results) | Fetch a page of results for an async aggregates query|
+|[**get_analytics_users_aggregates_job**](AnalyticsApi.html#get_analytics_users_aggregates_job) | Get status for async query for user aggregates|
+|[**get_analytics_users_aggregates_job_results**](AnalyticsApi.html#get_analytics_users_aggregates_job_results) | Fetch a page of results for an async aggregates query|
 |[**get_analytics_users_details_job**](AnalyticsApi.html#get_analytics_users_details_job) | Get status for async query for user details|
 |[**get_analytics_users_details_job_results**](AnalyticsApi.html#get_analytics_users_details_job_results) | Fetch a page of results for an async query|
 |[**get_analytics_users_details_jobs_availability**](AnalyticsApi.html#get_analytics_users_details_jobs_availability) | Lookup the datalake availability date and time|
 |[**patch_analytics_reporting_settings**](AnalyticsApi.html#patch_analytics_reporting_settings) | Patch AnalyticsReportingSettings values for an organization|
+|[**post_analytics_actions_aggregates_jobs**](AnalyticsApi.html#post_analytics_actions_aggregates_jobs) | Query for action aggregates asynchronously|
 |[**post_analytics_actions_aggregates_query**](AnalyticsApi.html#post_analytics_actions_aggregates_query) | Query for action aggregates|
+|[**post_analytics_bots_aggregates_jobs**](AnalyticsApi.html#post_analytics_bots_aggregates_jobs) | Query for bot aggregates asynchronously|
 |[**post_analytics_bots_aggregates_query**](AnalyticsApi.html#post_analytics_bots_aggregates_query) | Query for bot aggregates|
 |[**post_analytics_conversation_details_properties**](AnalyticsApi.html#post_analytics_conversation_details_properties) | Index conversation properties|
+|[**post_analytics_conversations_activity_query**](AnalyticsApi.html#post_analytics_conversations_activity_query) | Query for conversation activity observations|
+|[**post_analytics_conversations_aggregates_jobs**](AnalyticsApi.html#post_analytics_conversations_aggregates_jobs) | Query for conversation aggregates asynchronously|
 |[**post_analytics_conversations_aggregates_query**](AnalyticsApi.html#post_analytics_conversations_aggregates_query) | Query for conversation aggregates|
 |[**post_analytics_conversations_details_jobs**](AnalyticsApi.html#post_analytics_conversations_details_jobs) | Query for conversation details asynchronously|
 |[**post_analytics_conversations_details_query**](AnalyticsApi.html#post_analytics_conversations_details_query) | Query for conversation details|
 |[**post_analytics_conversations_transcripts_query**](AnalyticsApi.html#post_analytics_conversations_transcripts_query) | Search resources.|
+|[**post_analytics_evaluations_aggregates_jobs**](AnalyticsApi.html#post_analytics_evaluations_aggregates_jobs) | Query for evaluation aggregates asynchronously|
 |[**post_analytics_evaluations_aggregates_query**](AnalyticsApi.html#post_analytics_evaluations_aggregates_query) | Query for evaluation aggregates|
+|[**post_analytics_flows_activity_query**](AnalyticsApi.html#post_analytics_flows_activity_query) | Query for flow activity observations|
+|[**post_analytics_flows_aggregates_jobs**](AnalyticsApi.html#post_analytics_flows_aggregates_jobs) | Query for flow aggregates asynchronously|
 |[**post_analytics_flows_aggregates_query**](AnalyticsApi.html#post_analytics_flows_aggregates_query) | Query for flow aggregates|
 |[**post_analytics_flows_observations_query**](AnalyticsApi.html#post_analytics_flows_observations_query) | Query for flow observations|
+|[**post_analytics_journeys_aggregates_jobs**](AnalyticsApi.html#post_analytics_journeys_aggregates_jobs) | Query for journey aggregates asynchronously|
 |[**post_analytics_journeys_aggregates_query**](AnalyticsApi.html#post_analytics_journeys_aggregates_query) | Query for journey aggregates|
+|[**post_analytics_knowledge_aggregates_jobs**](AnalyticsApi.html#post_analytics_knowledge_aggregates_jobs) | Query for knowledge aggregates asynchronously|
+|[**post_analytics_knowledge_aggregates_query**](AnalyticsApi.html#post_analytics_knowledge_aggregates_query) | Query for knowledge aggregates|
 |[**post_analytics_queues_observations_query**](AnalyticsApi.html#post_analytics_queues_observations_query) | Query for queue observations|
 |[**post_analytics_reporting_exports**](AnalyticsApi.html#post_analytics_reporting_exports) | Generate a view export request|
 |[**post_analytics_reporting_schedule_runreport**](AnalyticsApi.html#post_analytics_reporting_schedule_runreport) | Place a scheduled report immediately into the reporting queue|
 |[**post_analytics_reporting_schedules**](AnalyticsApi.html#post_analytics_reporting_schedules) | Create a scheduled report job|
+|[**post_analytics_resolutions_aggregates_jobs**](AnalyticsApi.html#post_analytics_resolutions_aggregates_jobs) | Query for resolution aggregates asynchronously|
+|[**post_analytics_routing_activity_query**](AnalyticsApi.html#post_analytics_routing_activity_query) | Query for user activity observations|
+|[**post_analytics_surveys_aggregates_jobs**](AnalyticsApi.html#post_analytics_surveys_aggregates_jobs) | Query for survey aggregates asynchronously|
 |[**post_analytics_surveys_aggregates_query**](AnalyticsApi.html#post_analytics_surveys_aggregates_query) | Query for survey aggregates|
+|[**post_analytics_taskmanagement_aggregates_jobs**](AnalyticsApi.html#post_analytics_taskmanagement_aggregates_jobs) | Query for task management aggregates asynchronously|
+|[**post_analytics_taskmanagement_aggregates_query**](AnalyticsApi.html#post_analytics_taskmanagement_aggregates_query) | Query for task management aggregates|
+|[**post_analytics_teams_activity_query**](AnalyticsApi.html#post_analytics_teams_activity_query) | Query for team activity observations|
+|[**post_analytics_transcripts_aggregates_jobs**](AnalyticsApi.html#post_analytics_transcripts_aggregates_jobs) | Query for transcript aggregates asynchronously|
 |[**post_analytics_transcripts_aggregates_query**](AnalyticsApi.html#post_analytics_transcripts_aggregates_query) | Query for transcript aggregates|
+|[**post_analytics_users_activity_query**](AnalyticsApi.html#post_analytics_users_activity_query) | Query for user activity observations|
+|[**post_analytics_users_aggregates_jobs**](AnalyticsApi.html#post_analytics_users_aggregates_jobs) | Query for user aggregates asynchronously|
 |[**post_analytics_users_aggregates_query**](AnalyticsApi.html#post_analytics_users_aggregates_query) | Query for user aggregates|
 |[**post_analytics_users_details_jobs**](AnalyticsApi.html#post_analytics_users_details_jobs) | Query for user details asynchronously|
 |[**post_analytics_users_details_query**](AnalyticsApi.html#post_analytics_users_details_query) | Query for user details|
@@ -209,6 +252,112 @@ except ApiException as e:
 
 void (empty response body)
 
+<a name="get_analytics_actions_aggregates_job"></a>
+
+## [**AsyncQueryStatus**](AsyncQueryStatus.html) get_analytics_actions_aggregates_job(job_id)
+
+
+
+Get status for async query for action aggregates
+
+
+
+Wraps GET /api/v2/analytics/actions/aggregates/jobs/{jobId} 
+
+Requires ANY permissions: 
+
+* integrations:action:view
+* bridge:actions:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AnalyticsApi()
+job_id = 'job_id_example' # str | jobId
+
+try:
+    # Get status for async query for action aggregates
+    api_response = api_instance.get_analytics_actions_aggregates_job(job_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AnalyticsApi->get_analytics_actions_aggregates_job: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **job_id** | **str**| jobId |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**AsyncQueryStatus**](AsyncQueryStatus.html)
+
+<a name="get_analytics_actions_aggregates_job_results"></a>
+
+## [**ActionAsyncAggregateQueryResponse**](ActionAsyncAggregateQueryResponse.html) get_analytics_actions_aggregates_job_results(job_id, cursor=cursor)
+
+
+
+Fetch a page of results for an async aggregates query
+
+
+
+Wraps GET /api/v2/analytics/actions/aggregates/jobs/{jobId}/results 
+
+Requires ANY permissions: 
+
+* integrations:action:view
+* bridge:actions:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AnalyticsApi()
+job_id = 'job_id_example' # str | jobId
+cursor = 'cursor_example' # str | Cursor token to retrieve next page (optional)
+
+try:
+    # Fetch a page of results for an async aggregates query
+    api_response = api_instance.get_analytics_actions_aggregates_job_results(job_id, cursor=cursor)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AnalyticsApi->get_analytics_actions_aggregates_job_results: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **job_id** | **str**| jobId |  |
+| **cursor** | **str**| Cursor token to retrieve next page | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**ActionAsyncAggregateQueryResponse**](ActionAsyncAggregateQueryResponse.html)
+
 <a name="get_analytics_botflow_reportingturns"></a>
 
 ## [**ReportingTurnsResponse**](ReportingTurnsResponse.html) get_analytics_botflow_reportingturns(bot_flow_id, after=after, page_size=page_size, action_id=action_id, session_id=session_id, language=language, ask_action_results=ask_action_results)
@@ -274,6 +423,110 @@ except ApiException as e:
 
 [**ReportingTurnsResponse**](ReportingTurnsResponse.html)
 
+<a name="get_analytics_bots_aggregates_job"></a>
+
+## [**AsyncQueryStatus**](AsyncQueryStatus.html) get_analytics_bots_aggregates_job(job_id)
+
+
+
+Get status for async query for bot aggregates
+
+
+
+Wraps GET /api/v2/analytics/bots/aggregates/jobs/{jobId} 
+
+Requires ANY permissions: 
+
+* analytics:botAggregate:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AnalyticsApi()
+job_id = 'job_id_example' # str | jobId
+
+try:
+    # Get status for async query for bot aggregates
+    api_response = api_instance.get_analytics_bots_aggregates_job(job_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AnalyticsApi->get_analytics_bots_aggregates_job: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **job_id** | **str**| jobId |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**AsyncQueryStatus**](AsyncQueryStatus.html)
+
+<a name="get_analytics_bots_aggregates_job_results"></a>
+
+## [**BotAsyncAggregateQueryResponse**](BotAsyncAggregateQueryResponse.html) get_analytics_bots_aggregates_job_results(job_id, cursor=cursor)
+
+
+
+Fetch a page of results for an async aggregates query
+
+
+
+Wraps GET /api/v2/analytics/bots/aggregates/jobs/{jobId}/results 
+
+Requires ANY permissions: 
+
+* analytics:botAggregate:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AnalyticsApi()
+job_id = 'job_id_example' # str | jobId
+cursor = 'cursor_example' # str | Cursor token to retrieve next page (optional)
+
+try:
+    # Fetch a page of results for an async aggregates query
+    api_response = api_instance.get_analytics_bots_aggregates_job_results(job_id, cursor=cursor)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AnalyticsApi->get_analytics_bots_aggregates_job_results: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **job_id** | **str**| jobId |  |
+| **cursor** | **str**| Cursor token to retrieve next page | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**BotAsyncAggregateQueryResponse**](BotAsyncAggregateQueryResponse.html)
+
 <a name="get_analytics_conversation_details"></a>
 
 ## [**AnalyticsConversationWithoutAttributes**](AnalyticsConversationWithoutAttributes.html) get_analytics_conversation_details(conversation_id)
@@ -325,6 +578,110 @@ except ApiException as e:
 ### Return type
 
 [**AnalyticsConversationWithoutAttributes**](AnalyticsConversationWithoutAttributes.html)
+
+<a name="get_analytics_conversations_aggregates_job"></a>
+
+## [**AsyncQueryStatus**](AsyncQueryStatus.html) get_analytics_conversations_aggregates_job(job_id)
+
+
+
+Get status for async query for conversation aggregates
+
+
+
+Wraps GET /api/v2/analytics/conversations/aggregates/jobs/{jobId} 
+
+Requires ANY permissions: 
+
+* analytics:conversationAggregate:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AnalyticsApi()
+job_id = 'job_id_example' # str | jobId
+
+try:
+    # Get status for async query for conversation aggregates
+    api_response = api_instance.get_analytics_conversations_aggregates_job(job_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AnalyticsApi->get_analytics_conversations_aggregates_job: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **job_id** | **str**| jobId |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**AsyncQueryStatus**](AsyncQueryStatus.html)
+
+<a name="get_analytics_conversations_aggregates_job_results"></a>
+
+## [**ConversationAsyncAggregateQueryResponse**](ConversationAsyncAggregateQueryResponse.html) get_analytics_conversations_aggregates_job_results(job_id, cursor=cursor)
+
+
+
+Fetch a page of results for an async aggregates query
+
+
+
+Wraps GET /api/v2/analytics/conversations/aggregates/jobs/{jobId}/results 
+
+Requires ANY permissions: 
+
+* analytics:conversationAggregate:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AnalyticsApi()
+job_id = 'job_id_example' # str | jobId
+cursor = 'cursor_example' # str | Cursor token to retrieve next page (optional)
+
+try:
+    # Fetch a page of results for an async aggregates query
+    api_response = api_instance.get_analytics_conversations_aggregates_job_results(job_id, cursor=cursor)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AnalyticsApi->get_analytics_conversations_aggregates_job_results: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **job_id** | **str**| jobId |  |
+| **cursor** | **str**| Cursor token to retrieve next page | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**ConversationAsyncAggregateQueryResponse**](ConversationAsyncAggregateQueryResponse.html)
 
 <a name="get_analytics_conversations_details"></a>
 
@@ -579,6 +936,422 @@ This endpoint does not need any parameters.
 ### Return type
 
 [**AnalyticsDataRetentionResponse**](AnalyticsDataRetentionResponse.html)
+
+<a name="get_analytics_evaluations_aggregates_job"></a>
+
+## [**AsyncQueryStatus**](AsyncQueryStatus.html) get_analytics_evaluations_aggregates_job(job_id)
+
+
+
+Get status for async query for evaluation aggregates
+
+
+
+Wraps GET /api/v2/analytics/evaluations/aggregates/jobs/{jobId} 
+
+Requires ANY permissions: 
+
+* analytics:evaluationAggregate:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AnalyticsApi()
+job_id = 'job_id_example' # str | jobId
+
+try:
+    # Get status for async query for evaluation aggregates
+    api_response = api_instance.get_analytics_evaluations_aggregates_job(job_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AnalyticsApi->get_analytics_evaluations_aggregates_job: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **job_id** | **str**| jobId |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**AsyncQueryStatus**](AsyncQueryStatus.html)
+
+<a name="get_analytics_evaluations_aggregates_job_results"></a>
+
+## [**EvaluationAsyncAggregateQueryResponse**](EvaluationAsyncAggregateQueryResponse.html) get_analytics_evaluations_aggregates_job_results(job_id, cursor=cursor)
+
+
+
+Fetch a page of results for an async aggregates query
+
+
+
+Wraps GET /api/v2/analytics/evaluations/aggregates/jobs/{jobId}/results 
+
+Requires ANY permissions: 
+
+* analytics:evaluationAggregate:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AnalyticsApi()
+job_id = 'job_id_example' # str | jobId
+cursor = 'cursor_example' # str | Cursor token to retrieve next page (optional)
+
+try:
+    # Fetch a page of results for an async aggregates query
+    api_response = api_instance.get_analytics_evaluations_aggregates_job_results(job_id, cursor=cursor)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AnalyticsApi->get_analytics_evaluations_aggregates_job_results: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **job_id** | **str**| jobId |  |
+| **cursor** | **str**| Cursor token to retrieve next page | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**EvaluationAsyncAggregateQueryResponse**](EvaluationAsyncAggregateQueryResponse.html)
+
+<a name="get_analytics_flows_aggregates_job"></a>
+
+## [**AsyncQueryStatus**](AsyncQueryStatus.html) get_analytics_flows_aggregates_job(job_id)
+
+
+
+Get status for async query for Flow aggregates
+
+
+
+Wraps GET /api/v2/analytics/flows/aggregates/jobs/{jobId} 
+
+Requires ANY permissions: 
+
+* analytics:flowAggregate:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AnalyticsApi()
+job_id = 'job_id_example' # str | jobId
+
+try:
+    # Get status for async query for Flow aggregates
+    api_response = api_instance.get_analytics_flows_aggregates_job(job_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AnalyticsApi->get_analytics_flows_aggregates_job: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **job_id** | **str**| jobId |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**AsyncQueryStatus**](AsyncQueryStatus.html)
+
+<a name="get_analytics_flows_aggregates_job_results"></a>
+
+## [**FlowAsyncAggregateQueryResponse**](FlowAsyncAggregateQueryResponse.html) get_analytics_flows_aggregates_job_results(job_id, cursor=cursor)
+
+
+
+Fetch a page of results for an async aggregates query
+
+
+
+Wraps GET /api/v2/analytics/flows/aggregates/jobs/{jobId}/results 
+
+Requires ANY permissions: 
+
+* analytics:flowAggregate:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AnalyticsApi()
+job_id = 'job_id_example' # str | jobId
+cursor = 'cursor_example' # str | Cursor token to retrieve next page (optional)
+
+try:
+    # Fetch a page of results for an async aggregates query
+    api_response = api_instance.get_analytics_flows_aggregates_job_results(job_id, cursor=cursor)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AnalyticsApi->get_analytics_flows_aggregates_job_results: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **job_id** | **str**| jobId |  |
+| **cursor** | **str**| Cursor token to retrieve next page | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**FlowAsyncAggregateQueryResponse**](FlowAsyncAggregateQueryResponse.html)
+
+<a name="get_analytics_journeys_aggregates_job"></a>
+
+## [**AsyncQueryStatus**](AsyncQueryStatus.html) get_analytics_journeys_aggregates_job(job_id)
+
+
+
+Get status for async query for journey aggregates
+
+
+
+Wraps GET /api/v2/analytics/journeys/aggregates/jobs/{jobId} 
+
+Requires ANY permissions: 
+
+* analytics:journeyAggregate:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AnalyticsApi()
+job_id = 'job_id_example' # str | jobId
+
+try:
+    # Get status for async query for journey aggregates
+    api_response = api_instance.get_analytics_journeys_aggregates_job(job_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AnalyticsApi->get_analytics_journeys_aggregates_job: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **job_id** | **str**| jobId |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**AsyncQueryStatus**](AsyncQueryStatus.html)
+
+<a name="get_analytics_journeys_aggregates_job_results"></a>
+
+## [**JourneyAsyncAggregateQueryResponse**](JourneyAsyncAggregateQueryResponse.html) get_analytics_journeys_aggregates_job_results(job_id, cursor=cursor)
+
+
+
+Fetch a page of results for an async aggregates query
+
+
+
+Wraps GET /api/v2/analytics/journeys/aggregates/jobs/{jobId}/results 
+
+Requires ANY permissions: 
+
+* analytics:journeyAggregate:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AnalyticsApi()
+job_id = 'job_id_example' # str | jobId
+cursor = 'cursor_example' # str | Cursor token to retrieve next page (optional)
+
+try:
+    # Fetch a page of results for an async aggregates query
+    api_response = api_instance.get_analytics_journeys_aggregates_job_results(job_id, cursor=cursor)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AnalyticsApi->get_analytics_journeys_aggregates_job_results: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **job_id** | **str**| jobId |  |
+| **cursor** | **str**| Cursor token to retrieve next page | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**JourneyAsyncAggregateQueryResponse**](JourneyAsyncAggregateQueryResponse.html)
+
+<a name="get_analytics_knowledge_aggregates_job"></a>
+
+## [**AsyncQueryStatus**](AsyncQueryStatus.html) get_analytics_knowledge_aggregates_job(job_id)
+
+
+
+Get status for async query for knowledge aggregates
+
+
+
+Wraps GET /api/v2/analytics/knowledge/aggregates/jobs/{jobId} 
+
+Requires ANY permissions: 
+
+* analytics:knowledgeAggregate:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AnalyticsApi()
+job_id = 'job_id_example' # str | jobId
+
+try:
+    # Get status for async query for knowledge aggregates
+    api_response = api_instance.get_analytics_knowledge_aggregates_job(job_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AnalyticsApi->get_analytics_knowledge_aggregates_job: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **job_id** | **str**| jobId |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**AsyncQueryStatus**](AsyncQueryStatus.html)
+
+<a name="get_analytics_knowledge_aggregates_job_results"></a>
+
+## [**KnowledgeAsyncAggregateQueryResponse**](KnowledgeAsyncAggregateQueryResponse.html) get_analytics_knowledge_aggregates_job_results(job_id, cursor=cursor)
+
+
+
+Fetch a page of results for an async aggregates query
+
+
+
+Wraps GET /api/v2/analytics/knowledge/aggregates/jobs/{jobId}/results 
+
+Requires ANY permissions: 
+
+* analytics:knowledgeAggregate:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AnalyticsApi()
+job_id = 'job_id_example' # str | jobId
+cursor = 'cursor_example' # str | Cursor token to retrieve next page (optional)
+
+try:
+    # Fetch a page of results for an async aggregates query
+    api_response = api_instance.get_analytics_knowledge_aggregates_job_results(job_id, cursor=cursor)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AnalyticsApi->get_analytics_knowledge_aggregates_job_results: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **job_id** | **str**| jobId |  |
+| **cursor** | **str**| Cursor token to retrieve next page | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**KnowledgeAsyncAggregateQueryResponse**](KnowledgeAsyncAggregateQueryResponse.html)
 
 <a name="get_analytics_reporting_exports"></a>
 
@@ -1191,6 +1964,526 @@ This endpoint does not need any parameters.
 
 **list[str]**
 
+<a name="get_analytics_resolutions_aggregates_job"></a>
+
+## [**AsyncQueryStatus**](AsyncQueryStatus.html) get_analytics_resolutions_aggregates_job(job_id)
+
+
+
+Get status for async query for resolution aggregates
+
+
+
+Wraps GET /api/v2/analytics/resolutions/aggregates/jobs/{jobId} 
+
+Requires ANY permissions: 
+
+* analytics:resolutionAggregate:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AnalyticsApi()
+job_id = 'job_id_example' # str | jobId
+
+try:
+    # Get status for async query for resolution aggregates
+    api_response = api_instance.get_analytics_resolutions_aggregates_job(job_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AnalyticsApi->get_analytics_resolutions_aggregates_job: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **job_id** | **str**| jobId |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**AsyncQueryStatus**](AsyncQueryStatus.html)
+
+<a name="get_analytics_resolutions_aggregates_job_results"></a>
+
+## [**ResolutionAsyncAggregateQueryResponse**](ResolutionAsyncAggregateQueryResponse.html) get_analytics_resolutions_aggregates_job_results(job_id, cursor=cursor)
+
+
+
+Fetch a page of results for an async aggregates query
+
+
+
+Wraps GET /api/v2/analytics/resolutions/aggregates/jobs/{jobId}/results 
+
+Requires ANY permissions: 
+
+* analytics:resolutionAggregate:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AnalyticsApi()
+job_id = 'job_id_example' # str | jobId
+cursor = 'cursor_example' # str | Cursor token to retrieve next page (optional)
+
+try:
+    # Fetch a page of results for an async aggregates query
+    api_response = api_instance.get_analytics_resolutions_aggregates_job_results(job_id, cursor=cursor)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AnalyticsApi->get_analytics_resolutions_aggregates_job_results: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **job_id** | **str**| jobId |  |
+| **cursor** | **str**| Cursor token to retrieve next page | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**ResolutionAsyncAggregateQueryResponse**](ResolutionAsyncAggregateQueryResponse.html)
+
+<a name="get_analytics_surveys_aggregates_job"></a>
+
+## [**AsyncQueryStatus**](AsyncQueryStatus.html) get_analytics_surveys_aggregates_job(job_id)
+
+
+
+Get status for async query for survey aggregates
+
+
+
+Wraps GET /api/v2/analytics/surveys/aggregates/jobs/{jobId} 
+
+Requires ANY permissions: 
+
+* analytics:surveyAggregate:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AnalyticsApi()
+job_id = 'job_id_example' # str | jobId
+
+try:
+    # Get status for async query for survey aggregates
+    api_response = api_instance.get_analytics_surveys_aggregates_job(job_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AnalyticsApi->get_analytics_surveys_aggregates_job: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **job_id** | **str**| jobId |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**AsyncQueryStatus**](AsyncQueryStatus.html)
+
+<a name="get_analytics_surveys_aggregates_job_results"></a>
+
+## [**SurveyAsyncAggregateQueryResponse**](SurveyAsyncAggregateQueryResponse.html) get_analytics_surveys_aggregates_job_results(job_id, cursor=cursor)
+
+
+
+Fetch a page of results for an async aggregates query
+
+
+
+Wraps GET /api/v2/analytics/surveys/aggregates/jobs/{jobId}/results 
+
+Requires ANY permissions: 
+
+* analytics:surveyAggregate:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AnalyticsApi()
+job_id = 'job_id_example' # str | jobId
+cursor = 'cursor_example' # str | Cursor token to retrieve next page (optional)
+
+try:
+    # Fetch a page of results for an async aggregates query
+    api_response = api_instance.get_analytics_surveys_aggregates_job_results(job_id, cursor=cursor)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AnalyticsApi->get_analytics_surveys_aggregates_job_results: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **job_id** | **str**| jobId |  |
+| **cursor** | **str**| Cursor token to retrieve next page | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**SurveyAsyncAggregateQueryResponse**](SurveyAsyncAggregateQueryResponse.html)
+
+<a name="get_analytics_taskmanagement_aggregates_job"></a>
+
+## [**AsyncQueryStatus**](AsyncQueryStatus.html) get_analytics_taskmanagement_aggregates_job(job_id)
+
+
+
+Get status for async query for task management aggregates
+
+
+
+Wraps GET /api/v2/analytics/taskmanagement/aggregates/jobs/{jobId} 
+
+Requires ANY permissions: 
+
+* analytics:taskManagementAggregate:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AnalyticsApi()
+job_id = 'job_id_example' # str | jobId
+
+try:
+    # Get status for async query for task management aggregates
+    api_response = api_instance.get_analytics_taskmanagement_aggregates_job(job_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AnalyticsApi->get_analytics_taskmanagement_aggregates_job: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **job_id** | **str**| jobId |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**AsyncQueryStatus**](AsyncQueryStatus.html)
+
+<a name="get_analytics_taskmanagement_aggregates_job_results"></a>
+
+## [**TaskManagementAsyncAggregateQueryResponse**](TaskManagementAsyncAggregateQueryResponse.html) get_analytics_taskmanagement_aggregates_job_results(job_id, cursor=cursor)
+
+
+
+Fetch a page of results for an async task management query
+
+
+
+Wraps GET /api/v2/analytics/taskmanagement/aggregates/jobs/{jobId}/results 
+
+Requires ANY permissions: 
+
+* analytics:taskManagementAggregate:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AnalyticsApi()
+job_id = 'job_id_example' # str | jobId
+cursor = 'cursor_example' # str | Cursor token to retrieve next page (optional)
+
+try:
+    # Fetch a page of results for an async task management query
+    api_response = api_instance.get_analytics_taskmanagement_aggregates_job_results(job_id, cursor=cursor)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AnalyticsApi->get_analytics_taskmanagement_aggregates_job_results: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **job_id** | **str**| jobId |  |
+| **cursor** | **str**| Cursor token to retrieve next page | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**TaskManagementAsyncAggregateQueryResponse**](TaskManagementAsyncAggregateQueryResponse.html)
+
+<a name="get_analytics_transcripts_aggregates_job"></a>
+
+## [**AsyncQueryStatus**](AsyncQueryStatus.html) get_analytics_transcripts_aggregates_job(job_id)
+
+
+
+Get status for async query for transcript aggregates
+
+
+
+Wraps GET /api/v2/analytics/transcripts/aggregates/jobs/{jobId} 
+
+Requires ANY permissions: 
+
+* analytics:speechAndTextAnalyticsAggregates:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AnalyticsApi()
+job_id = 'job_id_example' # str | jobId
+
+try:
+    # Get status for async query for transcript aggregates
+    api_response = api_instance.get_analytics_transcripts_aggregates_job(job_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AnalyticsApi->get_analytics_transcripts_aggregates_job: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **job_id** | **str**| jobId |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**AsyncQueryStatus**](AsyncQueryStatus.html)
+
+<a name="get_analytics_transcripts_aggregates_job_results"></a>
+
+## [**TranscriptAsyncAggregateQueryResponse**](TranscriptAsyncAggregateQueryResponse.html) get_analytics_transcripts_aggregates_job_results(job_id, cursor=cursor)
+
+
+
+Fetch a page of results for an async aggregates query
+
+
+
+Wraps GET /api/v2/analytics/transcripts/aggregates/jobs/{jobId}/results 
+
+Requires ANY permissions: 
+
+* analytics:speechAndTextAnalyticsAggregates:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AnalyticsApi()
+job_id = 'job_id_example' # str | jobId
+cursor = 'cursor_example' # str | Cursor token to retrieve next page (optional)
+
+try:
+    # Fetch a page of results for an async aggregates query
+    api_response = api_instance.get_analytics_transcripts_aggregates_job_results(job_id, cursor=cursor)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AnalyticsApi->get_analytics_transcripts_aggregates_job_results: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **job_id** | **str**| jobId |  |
+| **cursor** | **str**| Cursor token to retrieve next page | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**TranscriptAsyncAggregateQueryResponse**](TranscriptAsyncAggregateQueryResponse.html)
+
+<a name="get_analytics_users_aggregates_job"></a>
+
+## [**AsyncQueryStatus**](AsyncQueryStatus.html) get_analytics_users_aggregates_job(job_id)
+
+
+
+Get status for async query for user aggregates
+
+
+
+Wraps GET /api/v2/analytics/users/aggregates/jobs/{jobId} 
+
+Requires ANY permissions: 
+
+* analytics:userAggregate:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AnalyticsApi()
+job_id = 'job_id_example' # str | jobId
+
+try:
+    # Get status for async query for user aggregates
+    api_response = api_instance.get_analytics_users_aggregates_job(job_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AnalyticsApi->get_analytics_users_aggregates_job: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **job_id** | **str**| jobId |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**AsyncQueryStatus**](AsyncQueryStatus.html)
+
+<a name="get_analytics_users_aggregates_job_results"></a>
+
+## [**UserAsyncAggregateQueryResponse**](UserAsyncAggregateQueryResponse.html) get_analytics_users_aggregates_job_results(job_id, cursor=cursor)
+
+
+
+Fetch a page of results for an async aggregates query
+
+
+
+Wraps GET /api/v2/analytics/users/aggregates/jobs/{jobId}/results 
+
+Requires ANY permissions: 
+
+* analytics:userAggregate:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AnalyticsApi()
+job_id = 'job_id_example' # str | jobId
+cursor = 'cursor_example' # str | Cursor token to retrieve next page (optional)
+
+try:
+    # Fetch a page of results for an async aggregates query
+    api_response = api_instance.get_analytics_users_aggregates_job_results(job_id, cursor=cursor)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AnalyticsApi->get_analytics_users_aggregates_job_results: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **job_id** | **str**| jobId |  |
+| **cursor** | **str**| Cursor token to retrieve next page | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**UserAsyncAggregateQueryResponse**](UserAsyncAggregateQueryResponse.html)
+
 <a name="get_analytics_users_details_job"></a>
 
 ## [**AsyncQueryStatus**](AsyncQueryStatus.html) get_analytics_users_details_job(job_id)
@@ -1398,6 +2691,58 @@ except ApiException as e:
 
 [**AnalyticsReportingSettings**](AnalyticsReportingSettings.html)
 
+<a name="post_analytics_actions_aggregates_jobs"></a>
+
+## [**AsyncQueryResponse**](AsyncQueryResponse.html) post_analytics_actions_aggregates_jobs(body)
+
+
+
+Query for action aggregates asynchronously
+
+
+
+Wraps POST /api/v2/analytics/actions/aggregates/jobs 
+
+Requires ANY permissions: 
+
+* integrations:action:view
+* bridge:actions:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AnalyticsApi()
+body = PureCloudPlatformClientV2.ActionAsyncAggregationQuery() # ActionAsyncAggregationQuery | query
+
+try:
+    # Query for action aggregates asynchronously
+    api_response = api_instance.post_analytics_actions_aggregates_jobs(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AnalyticsApi->post_analytics_actions_aggregates_jobs: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**ActionAsyncAggregationQuery**](ActionAsyncAggregationQuery.html)| query |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**AsyncQueryResponse**](AsyncQueryResponse.html)
+
 <a name="post_analytics_actions_aggregates_query"></a>
 
 ## [**ActionAggregateQueryResponse**](ActionAggregateQueryResponse.html) post_analytics_actions_aggregates_query(body)
@@ -1449,6 +2794,57 @@ except ApiException as e:
 ### Return type
 
 [**ActionAggregateQueryResponse**](ActionAggregateQueryResponse.html)
+
+<a name="post_analytics_bots_aggregates_jobs"></a>
+
+## [**AsyncQueryResponse**](AsyncQueryResponse.html) post_analytics_bots_aggregates_jobs(body)
+
+
+
+Query for bot aggregates asynchronously
+
+
+
+Wraps POST /api/v2/analytics/bots/aggregates/jobs 
+
+Requires ANY permissions: 
+
+* analytics:botAggregate:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AnalyticsApi()
+body = PureCloudPlatformClientV2.BotAsyncAggregationQuery() # BotAsyncAggregationQuery | query
+
+try:
+    # Query for bot aggregates asynchronously
+    api_response = api_instance.post_analytics_bots_aggregates_jobs(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AnalyticsApi->post_analytics_bots_aggregates_jobs: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**BotAsyncAggregationQuery**](BotAsyncAggregationQuery.html)| query |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**AsyncQueryResponse**](AsyncQueryResponse.html)
 
 <a name="post_analytics_bots_aggregates_query"></a>
 
@@ -1553,6 +2949,112 @@ except ApiException as e:
 ### Return type
 
 [**PropertyIndexRequest**](PropertyIndexRequest.html)
+
+<a name="post_analytics_conversations_activity_query"></a>
+
+## [**ConversationActivityResponse**](ConversationActivityResponse.html) post_analytics_conversations_activity_query(body, page_size=page_size, page_number=page_number)
+
+
+
+Query for conversation activity observations
+
+
+
+Wraps POST /api/v2/analytics/conversations/activity/query 
+
+Requires ANY permissions: 
+
+* analytics:queueObservation:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AnalyticsApi()
+body = PureCloudPlatformClientV2.ConversationActivityQuery() # ConversationActivityQuery | query
+page_size = 56 # int | The desired page size (optional)
+page_number = 56 # int | The desired page number (optional)
+
+try:
+    # Query for conversation activity observations
+    api_response = api_instance.post_analytics_conversations_activity_query(body, page_size=page_size, page_number=page_number)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AnalyticsApi->post_analytics_conversations_activity_query: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**ConversationActivityQuery**](ConversationActivityQuery.html)| query |  |
+| **page_size** | **int**| The desired page size | [optional]  |
+| **page_number** | **int**| The desired page number | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**ConversationActivityResponse**](ConversationActivityResponse.html)
+
+<a name="post_analytics_conversations_aggregates_jobs"></a>
+
+## [**AsyncQueryResponse**](AsyncQueryResponse.html) post_analytics_conversations_aggregates_jobs(body)
+
+
+
+Query for conversation aggregates asynchronously
+
+
+
+Wraps POST /api/v2/analytics/conversations/aggregates/jobs 
+
+Requires ANY permissions: 
+
+* analytics:conversationAggregate:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AnalyticsApi()
+body = PureCloudPlatformClientV2.ConversationAsyncAggregationQuery() # ConversationAsyncAggregationQuery | query
+
+try:
+    # Query for conversation aggregates asynchronously
+    api_response = api_instance.post_analytics_conversations_aggregates_jobs(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AnalyticsApi->post_analytics_conversations_aggregates_jobs: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**ConversationAsyncAggregationQuery**](ConversationAsyncAggregationQuery.html)| query |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**AsyncQueryResponse**](AsyncQueryResponse.html)
 
 <a name="post_analytics_conversations_aggregates_query"></a>
 
@@ -1760,6 +3262,57 @@ except ApiException as e:
 
 [**AnalyticsConversationWithoutAttributesMultiGetResponse**](AnalyticsConversationWithoutAttributesMultiGetResponse.html)
 
+<a name="post_analytics_evaluations_aggregates_jobs"></a>
+
+## [**AsyncQueryResponse**](AsyncQueryResponse.html) post_analytics_evaluations_aggregates_jobs(body)
+
+
+
+Query for evaluation aggregates asynchronously
+
+
+
+Wraps POST /api/v2/analytics/evaluations/aggregates/jobs 
+
+Requires ANY permissions: 
+
+* analytics:evaluationAggregate:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AnalyticsApi()
+body = PureCloudPlatformClientV2.EvaluationAsyncAggregationQuery() # EvaluationAsyncAggregationQuery | query
+
+try:
+    # Query for evaluation aggregates asynchronously
+    api_response = api_instance.post_analytics_evaluations_aggregates_jobs(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AnalyticsApi->post_analytics_evaluations_aggregates_jobs: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**EvaluationAsyncAggregationQuery**](EvaluationAsyncAggregationQuery.html)| query |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**AsyncQueryResponse**](AsyncQueryResponse.html)
+
 <a name="post_analytics_evaluations_aggregates_query"></a>
 
 ## [**EvaluationAggregateQueryResponse**](EvaluationAggregateQueryResponse.html) post_analytics_evaluations_aggregates_query(body)
@@ -1810,6 +3363,112 @@ except ApiException as e:
 ### Return type
 
 [**EvaluationAggregateQueryResponse**](EvaluationAggregateQueryResponse.html)
+
+<a name="post_analytics_flows_activity_query"></a>
+
+## [**FlowActivityResponse**](FlowActivityResponse.html) post_analytics_flows_activity_query(body, page_size=page_size, page_number=page_number)
+
+
+
+Query for flow activity observations
+
+
+
+Wraps POST /api/v2/analytics/flows/activity/query 
+
+Requires ANY permissions: 
+
+* analytics:flowObservation:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AnalyticsApi()
+body = PureCloudPlatformClientV2.FlowActivityQuery() # FlowActivityQuery | query
+page_size = 56 # int | The desired page size (optional)
+page_number = 56 # int | The desired page number (optional)
+
+try:
+    # Query for flow activity observations
+    api_response = api_instance.post_analytics_flows_activity_query(body, page_size=page_size, page_number=page_number)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AnalyticsApi->post_analytics_flows_activity_query: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**FlowActivityQuery**](FlowActivityQuery.html)| query |  |
+| **page_size** | **int**| The desired page size | [optional]  |
+| **page_number** | **int**| The desired page number | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**FlowActivityResponse**](FlowActivityResponse.html)
+
+<a name="post_analytics_flows_aggregates_jobs"></a>
+
+## [**AsyncQueryResponse**](AsyncQueryResponse.html) post_analytics_flows_aggregates_jobs(body)
+
+
+
+Query for flow aggregates asynchronously
+
+
+
+Wraps POST /api/v2/analytics/flows/aggregates/jobs 
+
+Requires ANY permissions: 
+
+* analytics:flowAggregate:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AnalyticsApi()
+body = PureCloudPlatformClientV2.FlowAsyncAggregationQuery() # FlowAsyncAggregationQuery | query
+
+try:
+    # Query for flow aggregates asynchronously
+    api_response = api_instance.post_analytics_flows_aggregates_jobs(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AnalyticsApi->post_analytics_flows_aggregates_jobs: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**FlowAsyncAggregationQuery**](FlowAsyncAggregationQuery.html)| query |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**AsyncQueryResponse**](AsyncQueryResponse.html)
 
 <a name="post_analytics_flows_aggregates_query"></a>
 
@@ -1913,6 +3572,57 @@ except ApiException as e:
 
 [**FlowObservationQueryResponse**](FlowObservationQueryResponse.html)
 
+<a name="post_analytics_journeys_aggregates_jobs"></a>
+
+## [**AsyncQueryResponse**](AsyncQueryResponse.html) post_analytics_journeys_aggregates_jobs(body)
+
+
+
+Query for journey aggregates asynchronously
+
+
+
+Wraps POST /api/v2/analytics/journeys/aggregates/jobs 
+
+Requires ANY permissions: 
+
+* analytics:journeyAggregate:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AnalyticsApi()
+body = PureCloudPlatformClientV2.JourneyAsyncAggregationQuery() # JourneyAsyncAggregationQuery | query
+
+try:
+    # Query for journey aggregates asynchronously
+    api_response = api_instance.post_analytics_journeys_aggregates_jobs(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AnalyticsApi->post_analytics_journeys_aggregates_jobs: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**JourneyAsyncAggregationQuery**](JourneyAsyncAggregationQuery.html)| query |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**AsyncQueryResponse**](AsyncQueryResponse.html)
+
 <a name="post_analytics_journeys_aggregates_query"></a>
 
 ## [**JourneyAggregateQueryResponse**](JourneyAggregateQueryResponse.html) post_analytics_journeys_aggregates_query(body)
@@ -1963,6 +3673,108 @@ except ApiException as e:
 ### Return type
 
 [**JourneyAggregateQueryResponse**](JourneyAggregateQueryResponse.html)
+
+<a name="post_analytics_knowledge_aggregates_jobs"></a>
+
+## [**AsyncQueryResponse**](AsyncQueryResponse.html) post_analytics_knowledge_aggregates_jobs(body)
+
+
+
+Query for knowledge aggregates asynchronously
+
+
+
+Wraps POST /api/v2/analytics/knowledge/aggregates/jobs 
+
+Requires ANY permissions: 
+
+* analytics:knowledgeAggregate:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AnalyticsApi()
+body = PureCloudPlatformClientV2.KnowledgeAsyncAggregationQuery() # KnowledgeAsyncAggregationQuery | query
+
+try:
+    # Query for knowledge aggregates asynchronously
+    api_response = api_instance.post_analytics_knowledge_aggregates_jobs(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AnalyticsApi->post_analytics_knowledge_aggregates_jobs: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**KnowledgeAsyncAggregationQuery**](KnowledgeAsyncAggregationQuery.html)| query |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**AsyncQueryResponse**](AsyncQueryResponse.html)
+
+<a name="post_analytics_knowledge_aggregates_query"></a>
+
+## [**KnowledgeAggregateQueryResponse**](KnowledgeAggregateQueryResponse.html) post_analytics_knowledge_aggregates_query(body)
+
+
+
+Query for knowledge aggregates
+
+
+
+Wraps POST /api/v2/analytics/knowledge/aggregates/query 
+
+Requires ANY permissions: 
+
+* analytics:knowledgeAggregate:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AnalyticsApi()
+body = PureCloudPlatformClientV2.KnowledgeAggregationQuery() # KnowledgeAggregationQuery | query
+
+try:
+    # Query for knowledge aggregates
+    api_response = api_instance.post_analytics_knowledge_aggregates_query(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AnalyticsApi->post_analytics_knowledge_aggregates_query: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**KnowledgeAggregationQuery**](KnowledgeAggregationQuery.html)| query |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**KnowledgeAggregateQueryResponse**](KnowledgeAggregateQueryResponse.html)
 
 <a name="post_analytics_queues_observations_query"></a>
 
@@ -2172,6 +3984,163 @@ except ApiException as e:
 
 [**ReportSchedule**](ReportSchedule.html)
 
+<a name="post_analytics_resolutions_aggregates_jobs"></a>
+
+## [**AsyncQueryResponse**](AsyncQueryResponse.html) post_analytics_resolutions_aggregates_jobs(body)
+
+
+
+Query for resolution aggregates asynchronously
+
+
+
+Wraps POST /api/v2/analytics/resolutions/aggregates/jobs 
+
+Requires ANY permissions: 
+
+* analytics:resolutionAggregate:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AnalyticsApi()
+body = PureCloudPlatformClientV2.ResolutionAsyncAggregationQuery() # ResolutionAsyncAggregationQuery | query
+
+try:
+    # Query for resolution aggregates asynchronously
+    api_response = api_instance.post_analytics_resolutions_aggregates_jobs(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AnalyticsApi->post_analytics_resolutions_aggregates_jobs: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**ResolutionAsyncAggregationQuery**](ResolutionAsyncAggregationQuery.html)| query |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**AsyncQueryResponse**](AsyncQueryResponse.html)
+
+<a name="post_analytics_routing_activity_query"></a>
+
+## [**RoutingActivityResponse**](RoutingActivityResponse.html) post_analytics_routing_activity_query(body, page_size=page_size, page_number=page_number)
+
+
+
+Query for user activity observations
+
+
+
+Wraps POST /api/v2/analytics/routing/activity/query 
+
+Requires ANY permissions: 
+
+* analytics:queueObservation:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AnalyticsApi()
+body = PureCloudPlatformClientV2.RoutingActivityQuery() # RoutingActivityQuery | query
+page_size = 56 # int | The desired page size (optional)
+page_number = 56 # int | The desired page number (optional)
+
+try:
+    # Query for user activity observations
+    api_response = api_instance.post_analytics_routing_activity_query(body, page_size=page_size, page_number=page_number)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AnalyticsApi->post_analytics_routing_activity_query: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**RoutingActivityQuery**](RoutingActivityQuery.html)| query |  |
+| **page_size** | **int**| The desired page size | [optional]  |
+| **page_number** | **int**| The desired page number | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**RoutingActivityResponse**](RoutingActivityResponse.html)
+
+<a name="post_analytics_surveys_aggregates_jobs"></a>
+
+## [**AsyncQueryResponse**](AsyncQueryResponse.html) post_analytics_surveys_aggregates_jobs(body)
+
+
+
+Query for survey aggregates asynchronously
+
+
+
+Wraps POST /api/v2/analytics/surveys/aggregates/jobs 
+
+Requires ANY permissions: 
+
+* analytics:surveyAggregate:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AnalyticsApi()
+body = PureCloudPlatformClientV2.SurveyAsyncAggregationQuery() # SurveyAsyncAggregationQuery | query
+
+try:
+    # Query for survey aggregates asynchronously
+    api_response = api_instance.post_analytics_surveys_aggregates_jobs(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AnalyticsApi->post_analytics_surveys_aggregates_jobs: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**SurveyAsyncAggregationQuery**](SurveyAsyncAggregationQuery.html)| query |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**AsyncQueryResponse**](AsyncQueryResponse.html)
+
 <a name="post_analytics_surveys_aggregates_query"></a>
 
 ## [**SurveyAggregateQueryResponse**](SurveyAggregateQueryResponse.html) post_analytics_surveys_aggregates_query(body)
@@ -2223,6 +4192,214 @@ except ApiException as e:
 
 [**SurveyAggregateQueryResponse**](SurveyAggregateQueryResponse.html)
 
+<a name="post_analytics_taskmanagement_aggregates_jobs"></a>
+
+## [**AsyncQueryResponse**](AsyncQueryResponse.html) post_analytics_taskmanagement_aggregates_jobs(body)
+
+
+
+Query for task management aggregates asynchronously
+
+
+
+Wraps POST /api/v2/analytics/taskmanagement/aggregates/jobs 
+
+Requires ANY permissions: 
+
+* analytics:taskManagementAggregate:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AnalyticsApi()
+body = PureCloudPlatformClientV2.TaskManagementAsyncAggregationQuery() # TaskManagementAsyncAggregationQuery | query
+
+try:
+    # Query for task management aggregates asynchronously
+    api_response = api_instance.post_analytics_taskmanagement_aggregates_jobs(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AnalyticsApi->post_analytics_taskmanagement_aggregates_jobs: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**TaskManagementAsyncAggregationQuery**](TaskManagementAsyncAggregationQuery.html)| query |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**AsyncQueryResponse**](AsyncQueryResponse.html)
+
+<a name="post_analytics_taskmanagement_aggregates_query"></a>
+
+## [**TaskManagementAggregateQueryResponse**](TaskManagementAggregateQueryResponse.html) post_analytics_taskmanagement_aggregates_query(body)
+
+
+
+Query for task management aggregates
+
+
+
+Wraps POST /api/v2/analytics/taskmanagement/aggregates/query 
+
+Requires ANY permissions: 
+
+* analytics:taskManagementAggregate:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AnalyticsApi()
+body = PureCloudPlatformClientV2.TaskManagementAggregationQuery() # TaskManagementAggregationQuery | query
+
+try:
+    # Query for task management aggregates
+    api_response = api_instance.post_analytics_taskmanagement_aggregates_query(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AnalyticsApi->post_analytics_taskmanagement_aggregates_query: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**TaskManagementAggregationQuery**](TaskManagementAggregationQuery.html)| query |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**TaskManagementAggregateQueryResponse**](TaskManagementAggregateQueryResponse.html)
+
+<a name="post_analytics_teams_activity_query"></a>
+
+## [**TeamActivityResponse**](TeamActivityResponse.html) post_analytics_teams_activity_query(body, page_size=page_size, page_number=page_number)
+
+
+
+Query for team activity observations
+
+
+
+Wraps POST /api/v2/analytics/teams/activity/query 
+
+Requires ANY permissions: 
+
+* analytics:teamObservation:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AnalyticsApi()
+body = PureCloudPlatformClientV2.TeamActivityQuery() # TeamActivityQuery | query
+page_size = 56 # int | The desired page size (optional)
+page_number = 56 # int | The desired page number (optional)
+
+try:
+    # Query for team activity observations
+    api_response = api_instance.post_analytics_teams_activity_query(body, page_size=page_size, page_number=page_number)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AnalyticsApi->post_analytics_teams_activity_query: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**TeamActivityQuery**](TeamActivityQuery.html)| query |  |
+| **page_size** | **int**| The desired page size | [optional]  |
+| **page_number** | **int**| The desired page number | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**TeamActivityResponse**](TeamActivityResponse.html)
+
+<a name="post_analytics_transcripts_aggregates_jobs"></a>
+
+## [**AsyncQueryResponse**](AsyncQueryResponse.html) post_analytics_transcripts_aggregates_jobs(body)
+
+
+
+Query for transcript aggregates asynchronously
+
+
+
+Wraps POST /api/v2/analytics/transcripts/aggregates/jobs 
+
+Requires ANY permissions: 
+
+* analytics:speechAndTextAnalyticsAggregates:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AnalyticsApi()
+body = PureCloudPlatformClientV2.TranscriptAsyncAggregationQuery() # TranscriptAsyncAggregationQuery | query
+
+try:
+    # Query for transcript aggregates asynchronously
+    api_response = api_instance.post_analytics_transcripts_aggregates_jobs(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AnalyticsApi->post_analytics_transcripts_aggregates_jobs: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**TranscriptAsyncAggregationQuery**](TranscriptAsyncAggregationQuery.html)| query |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**AsyncQueryResponse**](AsyncQueryResponse.html)
+
 <a name="post_analytics_transcripts_aggregates_query"></a>
 
 ## [**TranscriptAggregateQueryResponse**](TranscriptAggregateQueryResponse.html) post_analytics_transcripts_aggregates_query(body)
@@ -2273,6 +4450,112 @@ except ApiException as e:
 ### Return type
 
 [**TranscriptAggregateQueryResponse**](TranscriptAggregateQueryResponse.html)
+
+<a name="post_analytics_users_activity_query"></a>
+
+## [**UserActivityResponse**](UserActivityResponse.html) post_analytics_users_activity_query(body, page_size=page_size, page_number=page_number)
+
+
+
+Query for user activity observations
+
+
+
+Wraps POST /api/v2/analytics/users/activity/query 
+
+Requires ANY permissions: 
+
+* analytics:userObservation:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AnalyticsApi()
+body = PureCloudPlatformClientV2.UserActivityQuery() # UserActivityQuery | query
+page_size = 56 # int | The desired page size (optional)
+page_number = 56 # int | The desired page number (optional)
+
+try:
+    # Query for user activity observations
+    api_response = api_instance.post_analytics_users_activity_query(body, page_size=page_size, page_number=page_number)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AnalyticsApi->post_analytics_users_activity_query: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**UserActivityQuery**](UserActivityQuery.html)| query |  |
+| **page_size** | **int**| The desired page size | [optional]  |
+| **page_number** | **int**| The desired page number | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**UserActivityResponse**](UserActivityResponse.html)
+
+<a name="post_analytics_users_aggregates_jobs"></a>
+
+## [**AsyncQueryResponse**](AsyncQueryResponse.html) post_analytics_users_aggregates_jobs(body)
+
+
+
+Query for user aggregates asynchronously
+
+
+
+Wraps POST /api/v2/analytics/users/aggregates/jobs 
+
+Requires ANY permissions: 
+
+* analytics:userAggregate:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AnalyticsApi()
+body = PureCloudPlatformClientV2.UserAsyncAggregationQuery() # UserAsyncAggregationQuery | query
+
+try:
+    # Query for user aggregates asynchronously
+    api_response = api_instance.post_analytics_users_aggregates_jobs(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AnalyticsApi->post_analytics_users_aggregates_jobs: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**UserAsyncAggregationQuery**](UserAsyncAggregationQuery.html)| query |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**AsyncQueryResponse**](AsyncQueryResponse.html)
 
 <a name="post_analytics_users_aggregates_query"></a>
 

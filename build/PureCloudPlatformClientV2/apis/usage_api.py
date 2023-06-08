@@ -60,7 +60,7 @@ class UsageApi(object):
             if not config.api_client:
                 config.api_client = ApiClient()
             self.api_client = config.api_client
-    
+
     def get_oauth_client_usage_query_result(self, execution_id: str, client_id: str, **kwargs) -> 'ApiUsageQueryResult':
         """
         Get the results of a usage query
@@ -144,7 +144,7 @@ class UsageApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_oauth_client_usage_summary(self, client_id: str, **kwargs) -> 'UsageExecutionResult':
         """
         Get a summary of OAuth client API usage
@@ -225,7 +225,7 @@ class UsageApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_usage_query_execution_id_results(self, execution_id: str, **kwargs) -> 'ApiUsageQueryResult':
         """
         Get the results of a usage query
@@ -303,7 +303,7 @@ class UsageApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_usage_simplesearch_execution_id_results(self, execution_id: str, **kwargs) -> 'ApiUsageQueryResult':
         """
         Get the results of a usage search
@@ -381,7 +381,7 @@ class UsageApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def post_oauth_client_usage_query(self, client_id: str, body: 'ApiUsageClientQuery', **kwargs) -> 'UsageExecutionResult':
         """
         Query for OAuth client API usage
@@ -465,7 +465,7 @@ class UsageApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def post_usage_query(self, body: 'ApiUsageOrganizationQuery', **kwargs) -> 'UsageExecutionResult':
         """
         Query organization API Usage - 
@@ -543,7 +543,7 @@ class UsageApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def post_usage_simplesearch(self, body: 'ApiUsageSimpleSearch', **kwargs) -> 'UsageExecutionResult':
         """
         Search organization API Usage - 

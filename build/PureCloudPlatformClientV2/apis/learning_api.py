@@ -80,7 +80,7 @@ class LearningApi(object):
             if not config.api_client:
                 config.api_client = ApiClient()
             self.api_client = config.api_client
-    
+
     def delete_learning_assignment(self, assignment_id: str, **kwargs) -> None:
         """
         Delete a learning assignment
@@ -158,7 +158,7 @@ class LearningApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def delete_learning_module(self, module_id: str, **kwargs) -> None:
         """
         Delete a learning module
@@ -236,7 +236,7 @@ class LearningApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_learning_assignment(self, assignment_id: str, **kwargs) -> 'LearningAssignment':
         """
         Get Learning Assignment
@@ -317,7 +317,7 @@ class LearningApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_learning_assignments(self, **kwargs) -> 'LearningAssignmentsDomainEntity':
         """
         List of Learning module Assignments
@@ -434,7 +434,7 @@ class LearningApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_learning_assignments_me(self, **kwargs) -> 'LearningAssignmentsDomainEntity':
         """
         List of Learning Assignments assigned to current user
@@ -548,7 +548,7 @@ class LearningApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_learning_module(self, module_id: str, **kwargs) -> 'LearningModule':
         """
         Get a learning module
@@ -629,7 +629,7 @@ class LearningApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_learning_module_job(self, module_id: str, job_id: str, **kwargs) -> 'LearningModuleJobResponse':
         """
         Get a specific Learning Module job status
@@ -713,7 +713,7 @@ class LearningApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_learning_module_rule(self, module_id: str, **kwargs) -> 'LearningModuleRule':
         """
         Get a learning module rule
@@ -791,7 +791,7 @@ class LearningApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_learning_module_version(self, module_id: str, version_id: str, **kwargs) -> 'LearningModule':
         """
         Get specific version of a published module
@@ -878,7 +878,7 @@ class LearningApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_learning_modules(self, **kwargs) -> 'LearningModulesDomainEntityListing':
         """
         Get all learning modules of an organization
@@ -980,7 +980,7 @@ class LearningApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_learning_modules_assignments(self, user_ids: List['str'], **kwargs) -> 'AssignedLearningModuleDomainEntityListing':
         """
         Get all learning modules of an organization including assignments for a specific user
@@ -1076,7 +1076,7 @@ class LearningApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_learning_modules_coverart_cover_art_id(self, cover_art_id: str, **kwargs) -> 'LearningModuleCoverArtResponse':
         """
         Get a specific Learning Module cover art using ID
@@ -1154,7 +1154,7 @@ class LearningApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def patch_learning_assignment(self, assignment_id: str, **kwargs) -> 'LearningAssignment':
         """
         Update Learning Assignment
@@ -1235,7 +1235,7 @@ class LearningApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def patch_learning_assignment_reschedule(self, assignment_id: str, **kwargs) -> 'LearningAssignment':
         """
         Reschedule Learning Assignment
@@ -1316,7 +1316,7 @@ class LearningApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def post_learning_assessments_scoring(self, body: 'LearningAssessmentScoringRequest', **kwargs) -> 'AssessmentScoringSet':
         """
         Score learning assessment for preview
@@ -1394,7 +1394,7 @@ class LearningApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def post_learning_assignment_reassign(self, assignment_id: str, **kwargs) -> 'LearningAssignment':
         """
         Reassign Learning Assignment
@@ -1472,7 +1472,7 @@ class LearningApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def post_learning_assignment_reset(self, assignment_id: str, **kwargs) -> 'LearningAssignment':
         """
         Reset Learning Assignment
@@ -1550,7 +1550,7 @@ class LearningApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def post_learning_assignments(self, **kwargs) -> 'LearningAssignment':
         """
         Create Learning Assignment
@@ -1625,7 +1625,7 @@ class LearningApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def post_learning_assignments_aggregates_query(self, body: 'LearningAssignmentAggregateParam', **kwargs) -> 'LearningAssignmentAggregateResponse':
         """
         Retrieve aggregated assignment data
@@ -1703,7 +1703,7 @@ class LearningApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def post_learning_assignments_bulkadd(self, **kwargs) -> 'LearningAssignmentBulkAddResponse':
         """
         Add multiple learning assignments
@@ -1778,7 +1778,7 @@ class LearningApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def post_learning_assignments_bulkremove(self, **kwargs) -> 'LearningAssignmentBulkRemoveResponse':
         """
         Remove multiple Learning Assignments
@@ -1853,7 +1853,7 @@ class LearningApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def post_learning_module_jobs(self, module_id: str, body: 'LearningModuleJobRequest', **kwargs) -> 'LearningModuleJobResponse':
         """
         Starts a specified operation on learning module
@@ -1937,7 +1937,7 @@ class LearningApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def post_learning_module_publish(self, module_id: str, **kwargs) -> 'LearningModulePublishResponse':
         """
         Publish a Learning module
@@ -2015,7 +2015,7 @@ class LearningApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def post_learning_modules(self, body: 'LearningModuleRequest', **kwargs) -> 'LearningModule':
         """
         Create a new learning module
@@ -2093,7 +2093,7 @@ class LearningApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def post_learning_rules_query(self, page_size: int, page_number: int, body: 'LearningAssignmentUserQuery', **kwargs) -> 'LearningAssignmentUserListing':
         """
         Get users for learning module rule
@@ -2183,7 +2183,7 @@ class LearningApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def post_learning_scheduleslots_query(self, body: 'LearningScheduleSlotsQueryRequest', **kwargs) -> 'LearningScheduleSlotsQueryResponse':
         """
         Get list of possible slots where a learning activity can be scheduled.
@@ -2261,7 +2261,7 @@ class LearningApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def put_learning_module(self, module_id: str, body: 'LearningModuleRequest', **kwargs) -> 'LearningModule':
         """
         Update a learning module
@@ -2345,7 +2345,7 @@ class LearningApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def put_learning_module_rule(self, module_id: str, body: 'LearningModuleRule', **kwargs) -> 'LearningModuleRule':
         """
         Update a learning module rule

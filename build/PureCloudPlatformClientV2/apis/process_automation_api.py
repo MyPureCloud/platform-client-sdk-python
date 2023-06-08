@@ -62,7 +62,7 @@ class ProcessAutomationApi(object):
             if not config.api_client:
                 config.api_client = ApiClient()
             self.api_client = config.api_client
-    
+
     def delete_processautomation_trigger(self, trigger_id: str, **kwargs) -> None:
         """
         Delete a Trigger
@@ -140,7 +140,7 @@ class ProcessAutomationApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_processautomation_trigger(self, trigger_id: str, **kwargs) -> 'Trigger':
         """
         Retrieve a single Trigger matching id
@@ -218,7 +218,7 @@ class ProcessAutomationApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_processautomation_triggers(self, **kwargs) -> 'TriggerEntityListing':
         """
         Retrieves all triggers, optionally filtered by query parameters.
@@ -308,7 +308,7 @@ class ProcessAutomationApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def get_processautomation_triggers_topics(self, **kwargs) -> 'TopicCursorEntityListing':
         """
         Get topics available for organization
@@ -389,7 +389,7 @@ class ProcessAutomationApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def post_processautomation_trigger_test(self, trigger_id: str, **kwargs) -> 'TestModeResults':
         """
         Test the matching of a Trigger based on provided event body
@@ -470,7 +470,7 @@ class ProcessAutomationApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def post_processautomation_triggers(self, body: 'CreateTriggerRequest', **kwargs) -> 'Trigger':
         """
         Create a Trigger
@@ -548,7 +548,7 @@ class ProcessAutomationApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def post_processautomation_triggers_topic_test(self, topic_name: str, **kwargs) -> 'TestModeEventResults':
         """
         Test the matching of all organization Triggers on given topic using provided event body
@@ -629,7 +629,7 @@ class ProcessAutomationApi(object):
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
-    
+
     def put_processautomation_trigger(self, trigger_id: str, body: 'UpdateTriggerRequest', **kwargs) -> 'Trigger':
         """
         Update a Trigger
