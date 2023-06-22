@@ -45,8 +45,6 @@ Delete a voicemail message.
 
 A user voicemail can only be deleted by its associated user. A group voicemail can only be deleted by a user that is a member of the group. A queue voicemail can only be deleted by a user with the acd voicemail delete permission.
 
-
-
 Wraps DELETE /api/v2/voicemail/messages/{messageId} 
 
 Requires no permissions
@@ -94,8 +92,6 @@ void (empty response body)
 
 Delete all voicemail messages
 
-
-
 Wraps DELETE /api/v2/voicemail/messages 
 
 Requires no permissions
@@ -138,8 +134,6 @@ void (empty response body)
 
 
 Get the group's mailbox information
-
-
 
 Wraps GET /api/v2/voicemail/groups/{groupId}/mailbox 
 
@@ -188,8 +182,6 @@ except ApiException as e:
 
 
 List voicemail messages
-
-
 
 Wraps GET /api/v2/voicemail/groups/{groupId}/messages 
 
@@ -243,8 +235,6 @@ except ApiException as e:
 
 Get a group's voicemail policy
 
-
-
 Wraps GET /api/v2/voicemail/groups/{groupId}/policy 
 
 Requires ANY permissions: 
@@ -295,8 +285,6 @@ except ApiException as e:
 
 Get the current user's mailbox information
 
-
-
 Wraps GET /api/v2/voicemail/mailbox 
 
 Requires no permissions
@@ -341,8 +329,6 @@ This endpoint does not need any parameters.
 
 Get the current user's mailbox information
 
-
-
 Wraps GET /api/v2/voicemail/me/mailbox 
 
 Requires no permissions
@@ -386,8 +372,6 @@ This endpoint does not need any parameters.
 
 
 List voicemail messages
-
-
 
 Wraps GET /api/v2/voicemail/me/messages 
 
@@ -439,8 +423,6 @@ except ApiException as e:
 
 Get the current user's voicemail policy
 
-
-
 Wraps GET /api/v2/voicemail/me/policy 
 
 Requires no permissions
@@ -484,8 +466,6 @@ This endpoint does not need any parameters.
 
 
 Get a voicemail message
-
-
 
 Wraps GET /api/v2/voicemail/messages/{messageId} 
 
@@ -537,8 +517,6 @@ except ApiException as e:
 
 Get media playback URI for this voicemail message
 
-
-
 Wraps GET /api/v2/voicemail/messages/{messageId}/media 
 
 Requires no permissions
@@ -588,8 +566,6 @@ except ApiException as e:
 
 
 List voicemail messages
-
-
 
 Wraps GET /api/v2/voicemail/messages 
 
@@ -641,8 +617,6 @@ except ApiException as e:
 
 Get a policy
 
-
-
 Wraps GET /api/v2/voicemail/policy 
 
 Requires ALL permissions: 
@@ -687,8 +661,6 @@ This endpoint does not need any parameters.
 
 
 List voicemail messages
-
-
 
 Wraps GET /api/v2/voicemail/queues/{queueId}/messages 
 
@@ -743,8 +715,6 @@ except ApiException as e:
 
 Search voicemails using the q64 value returned from a previous search
 
-
-
 Wraps GET /api/v2/voicemail/search 
 
 Requires no permissions
@@ -795,8 +765,6 @@ except ApiException as e:
 
 Get a user's voicemail policy
 
-
-
 Wraps GET /api/v2/voicemail/userpolicies/{userId} 
 
 Requires no permissions
@@ -844,8 +812,6 @@ except ApiException as e:
 
 
 Update a group's voicemail policy
-
-
 
 Wraps PATCH /api/v2/voicemail/groups/{groupId}/policy 
 
@@ -899,8 +865,6 @@ except ApiException as e:
 
 Update the current user's voicemail policy
 
-
-
 Wraps PATCH /api/v2/voicemail/me/policy 
 
 Requires no permissions
@@ -950,8 +914,6 @@ except ApiException as e:
 Update a voicemail message
 
 A user voicemail can only be modified by its associated user. A group voicemail can only be modified by a user that is a member of the group. A queue voicemail can only be modified by a participant of the conversation the voicemail is associated with.
-
-
 
 Wraps PATCH /api/v2/voicemail/messages/{messageId} 
 
@@ -1003,8 +965,6 @@ except ApiException as e:
 
 Update a user's voicemail policy
 
-
-
 Wraps PATCH /api/v2/voicemail/userpolicies/{userId} 
 
 Requires no permissions
@@ -1055,8 +1015,6 @@ except ApiException as e:
 
 Copy a voicemail message to a user or group
 
-
-
 Wraps POST /api/v2/voicemail/messages 
 
 Requires no permissions
@@ -1104,8 +1062,6 @@ except ApiException as e:
 
 
 Search voicemails
-
-
 
 Wraps POST /api/v2/voicemail/search 
 
@@ -1157,8 +1113,6 @@ Update a voicemail message
 
 A user voicemail can only be modified by its associated user. A group voicemail can only be modified by a user that is a member of the group. A queue voicemail can only be modified by a participant of the conversation the voicemail is associated with.
 
-
-
 Wraps PUT /api/v2/voicemail/messages/{messageId} 
 
 Requires no permissions
@@ -1209,8 +1163,6 @@ except ApiException as e:
 
 Update a policy
 
-
-
 Wraps PUT /api/v2/voicemail/policy 
 
 Requires ALL permissions: 
@@ -1259,8 +1211,6 @@ except ApiException as e:
 
 
 Update a user's voicemail policy
-
-
 
 Wraps PUT /api/v2/voicemail/userpolicies/{userId} 
 

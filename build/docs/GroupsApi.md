@@ -36,8 +36,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 Delete group
 
-
-
 Wraps DELETE /api/v2/groups/{groupId} 
 
 Requires ANY permissions: 
@@ -86,7 +84,7 @@ void (empty response body)
 
 Remove dynamic group definition
 
-
+delete_group_dynamicsettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps DELETE /api/v2/groups/{groupId}/dynamicsettings 
 
@@ -135,8 +133,6 @@ void (empty response body)
 
 
 Remove members
-
-
 
 Wraps DELETE /api/v2/groups/{groupId}/members 
 
@@ -188,8 +184,6 @@ except ApiException as e:
 
 Fetch field config for an entity type
 
-
-
 Wraps GET /api/v2/fieldconfig 
 
 Requires no permissions
@@ -237,8 +231,6 @@ except ApiException as e:
 
 
 Get group
-
-
 
 Wraps GET /api/v2/groups/{groupId} 
 
@@ -288,7 +280,7 @@ except ApiException as e:
 
 Get dynamic group definition
 
-
+get_group_dynamicsettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/groups/{groupId}/dynamicsettings 
 
@@ -339,8 +331,6 @@ except ApiException as e:
 
 Get all individuals associated with the group
 
-
-
 Wraps GET /api/v2/groups/{groupId}/individuals 
 
 Requires no permissions
@@ -388,8 +378,6 @@ except ApiException as e:
 
 
 Get group members, includes individuals, owners, and dynamically included people
-
-
 
 Wraps GET /api/v2/groups/{groupId}/members 
 
@@ -449,8 +437,6 @@ Get group profile
 
 This api is deprecated. Use /api/v2/groups instead
 
-
-
 Wraps GET /api/v2/groups/{groupId}/profile 
 
 Requires no permissions
@@ -500,8 +486,6 @@ except ApiException as e:
 
 
 Get a group list
-
-
 
 Wraps GET /api/v2/groups 
 
@@ -559,8 +543,6 @@ except ApiException as e:
 
 Search groups using the q64 value returned from a previous search
 
-
-
 Wraps GET /api/v2/groups/search 
 
 Requires no permissions
@@ -612,8 +594,6 @@ except ApiException as e:
 Get group profile listing
 
 This api is deprecated. Use /api/v2/groups instead.
-
-
 
 Wraps GET /api/v2/profiles/groups 
 
@@ -671,8 +651,6 @@ except ApiException as e:
 
 Add members
 
-
-
 Wraps POST /api/v2/groups/{groupId}/members 
 
 Requires no permissions
@@ -723,8 +701,6 @@ except ApiException as e:
 
 Create a group
 
-
-
 Wraps POST /api/v2/groups 
 
 Requires ANY permissions: 
@@ -774,7 +750,7 @@ except ApiException as e:
 
 Preview the number of users selected for a dynamic group definition query
 
-
+post_groups_dynamicsettings_preview is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/groups/dynamicsettings/preview 
 
@@ -825,8 +801,6 @@ except ApiException as e:
 
 Search groups
 
-
-
 Wraps POST /api/v2/groups/search 
 
 Requires no permissions
@@ -874,8 +848,6 @@ except ApiException as e:
 
 
 Update group
-
-
 
 Wraps PUT /api/v2/groups/{groupId} 
 
@@ -928,7 +900,7 @@ except ApiException as e:
 
 Create / Update dynamic group definition
 
-
+put_group_dynamicsettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps PUT /api/v2/groups/{groupId}/dynamicsettings 
 

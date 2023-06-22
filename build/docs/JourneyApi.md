@@ -23,7 +23,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_journey_actiontargets**](JourneyApi.html#get_journey_actiontargets) | Retrieve all action targets.|
 |[**get_journey_actiontemplate**](JourneyApi.html#get_journey_actiontemplate) | Retrieve a single action template.|
 |[**get_journey_actiontemplates**](JourneyApi.html#get_journey_actiontemplates) | Retrieve all action templates.|
-|[**get_journey_customer_customer_id_sessions**](JourneyApi.html#get_journey_customer_customer_id_sessions) | Retrieve all sessions for a given customer.|
 |[**get_journey_outcome**](JourneyApi.html#get_journey_outcome) | Retrieve a single outcome.|
 |[**get_journey_outcomes**](JourneyApi.html#get_journey_outcomes) | Retrieve all outcomes.|
 |[**get_journey_outcomes_attributions_job**](JourneyApi.html#get_journey_outcomes_attributions_job) | Get job status.|
@@ -59,8 +58,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 
 Delete single action map.
-
-
 
 Wraps DELETE /api/v2/journey/actionmaps/{actionMapId} 
 
@@ -109,8 +106,6 @@ void (empty response body)
 
 
 Delete a single action template.
-
-
 
 Wraps DELETE /api/v2/journey/actiontemplates/{actionTemplateId} 
 
@@ -162,8 +157,6 @@ void (empty response body)
 
 Delete an outcome.
 
-
-
 Wraps DELETE /api/v2/journey/outcomes/{outcomeId} 
 
 Requires ANY permissions: 
@@ -211,8 +204,6 @@ void (empty response body)
 
 
 Delete an outcome predictor.
-
-
 
 Wraps DELETE /api/v2/journey/outcomes/predictors/{predictorId} 
 
@@ -262,8 +253,6 @@ void (empty response body)
 
 Delete a segment.
 
-
-
 Wraps DELETE /api/v2/journey/segments/{segmentId} 
 
 Requires ANY permissions: 
@@ -312,7 +301,7 @@ void (empty response body)
 
 Get status for async query for journey aggregates
 
-
+get_analytics_journeys_aggregates_job is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/analytics/journeys/aggregates/jobs/{jobId} 
 
@@ -363,7 +352,7 @@ except ApiException as e:
 
 Fetch a page of results for an async aggregates query
 
-
+get_analytics_journeys_aggregates_job_results is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/analytics/journeys/aggregates/jobs/{jobId}/results 
 
@@ -416,8 +405,6 @@ except ApiException as e:
 
 Retrieve a single action map.
 
-
-
 Wraps GET /api/v2/journey/actionmaps/{actionMapId} 
 
 Requires ANY permissions: 
@@ -466,8 +453,6 @@ except ApiException as e:
 
 
 Retrieve all action maps.
-
-
 
 Wraps GET /api/v2/journey/actionmaps 
 
@@ -532,8 +517,6 @@ except ApiException as e:
 
 Get status of job.
 
-
-
 Wraps GET /api/v2/journey/actionmaps/estimates/jobs/{jobId} 
 
 Requires ALL permissions: 
@@ -582,8 +565,6 @@ except ApiException as e:
 
 
 Get estimates from completed job.
-
-
 
 Wraps GET /api/v2/journey/actionmaps/estimates/jobs/{jobId}/results 
 
@@ -634,8 +615,6 @@ except ApiException as e:
 
 Retrieve a single action target.
 
-
-
 Wraps GET /api/v2/journey/actiontargets/{actionTargetId} 
 
 Requires ANY permissions: 
@@ -684,8 +663,6 @@ except ApiException as e:
 
 
 Retrieve all action targets.
-
-
 
 Wraps GET /api/v2/journey/actiontargets 
 
@@ -738,8 +715,6 @@ except ApiException as e:
 
 Retrieve a single action template.
 
-
-
 Wraps GET /api/v2/journey/actiontemplates/{actionTemplateId} 
 
 Requires ANY permissions: 
@@ -788,8 +763,6 @@ except ApiException as e:
 
 
 Retrieve all action templates.
-
-
 
 Wraps GET /api/v2/journey/actiontemplates 
 
@@ -844,63 +817,6 @@ except ApiException as e:
 
 [**ActionTemplateListing**](ActionTemplateListing.html)
 
-<a name="get_journey_customer_customer_id_sessions"></a>
-
-## [**SessionListing**](SessionListing.html) get_journey_customer_customer_id_sessions(customer_id_type, customer_id, page_size=page_size, after=after)
-
-
-
-Retrieve all sessions for a given customer.
-
-
-
-Wraps GET /api/v2/journey/customers/{customerIdType}/{customerId}/sessions 
-
-Requires ANY permissions: 
-
-* journey:session:view
-
-### Example
-
-```{"language":"python"}
-import time
-import PureCloudPlatformClientV2
-from PureCloudPlatformClientV2.rest import ApiException
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: PureCloud OAuth
-PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = PureCloudPlatformClientV2.JourneyApi()
-customer_id_type = 'customer_id_type_example' # str | Type of ID used to identify customer (e.g. email, cookie, and phone).
-customer_id = 'customer_id_example' # str | Primary identifier of the customer in the source of the session.
-page_size = 'page_size_example' # str | Number of entities to return. Maximum of 200. (optional)
-after = 'after_example' # str | The cursor that points to the end of the set of entities that has been returned. (optional)
-
-try:
-    # Retrieve all sessions for a given customer.
-    api_response = api_instance.get_journey_customer_customer_id_sessions(customer_id_type, customer_id, page_size=page_size, after=after)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling JourneyApi->get_journey_customer_customer_id_sessions: %s\n" % e)
-```
-
-### Parameters
-
-
-|Name | Type | Description  | Notes|
-|------------- | ------------- | ------------- | -------------|
-| **customer_id_type** | **str**| Type of ID used to identify customer (e.g. email, cookie, and phone). |  |
-| **customer_id** | **str**| Primary identifier of the customer in the source of the session. |  |
-| **page_size** | **str**| Number of entities to return. Maximum of 200. | [optional]  |
-| **after** | **str**| The cursor that points to the end of the set of entities that has been returned. | [optional]  |
-{: class="table table-striped"}
-
-### Return type
-
-[**SessionListing**](SessionListing.html)
-
 <a name="get_journey_outcome"></a>
 
 ## [**Outcome**](Outcome.html) get_journey_outcome(outcome_id)
@@ -908,8 +824,6 @@ except ApiException as e:
 
 
 Retrieve a single outcome.
-
-
 
 Wraps GET /api/v2/journey/outcomes/{outcomeId} 
 
@@ -959,8 +873,6 @@ except ApiException as e:
 
 
 Retrieve all outcomes.
-
-
 
 Wraps GET /api/v2/journey/outcomes 
 
@@ -1021,7 +933,7 @@ except ApiException as e:
 
 Get job status.
 
-
+get_journey_outcomes_attributions_job is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/journey/outcomes/attributions/jobs/{jobId} 
 
@@ -1072,7 +984,7 @@ except ApiException as e:
 
 Get outcome attribution entities from completed job.
 
-
+get_journey_outcomes_attributions_job_results is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/journey/outcomes/attributions/jobs/{jobId}/results 
 
@@ -1123,8 +1035,6 @@ except ApiException as e:
 
 Retrieve a single outcome predictor.
 
-
-
 Wraps GET /api/v2/journey/outcomes/predictors/{predictorId} 
 
 Requires ANY permissions: 
@@ -1174,8 +1084,6 @@ except ApiException as e:
 
 Retrieve all outcome predictors.
 
-
-
 Wraps GET /api/v2/journey/outcomes/predictors 
 
 Requires ANY permissions: 
@@ -1220,8 +1128,6 @@ This endpoint does not need any parameters.
 
 
 Retrieve a single segment.
-
-
 
 Wraps GET /api/v2/journey/segments/{segmentId} 
 
@@ -1271,8 +1177,6 @@ except ApiException as e:
 
 
 Retrieve all segments.
-
-
 
 Wraps GET /api/v2/journey/segments 
 
@@ -1335,8 +1239,6 @@ except ApiException as e:
 
 Retrieve a single session.
 
-
-
 Wraps GET /api/v2/journey/sessions/{sessionId} 
 
 Requires ANY permissions: 
@@ -1387,7 +1289,7 @@ except ApiException as e:
 
 Retrieve all events for a given session.
 
-
+get_journey_session_events is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/journey/sessions/{sessionId}/events 
 
@@ -1442,8 +1344,6 @@ except ApiException as e:
 
 Retrieve latest outcome score associated with a session for all outcomes.
 
-
-
 Wraps GET /api/v2/journey/sessions/{sessionId}/outcomescores 
 
 Requires ANY permissions: 
@@ -1493,7 +1393,7 @@ except ApiException as e:
 
 Retrieve segment assignments by session ID.
 
-
+get_journey_session_segments is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/journey/sessions/{sessionId}/segments 
 
@@ -1552,8 +1452,6 @@ except ApiException as e:
 
 Update single action map.
 
-
-
 Wraps PATCH /api/v2/journey/actionmaps/{actionMapId} 
 
 Requires ANY permissions: 
@@ -1604,8 +1502,6 @@ except ApiException as e:
 
 
 Update a single action target.
-
-
 
 Wraps PATCH /api/v2/journey/actiontargets/{actionTargetId} 
 
@@ -1658,8 +1554,6 @@ except ApiException as e:
 
 Update a single action template.
 
-
-
 Wraps PATCH /api/v2/journey/actiontemplates/{actionTemplateId} 
 
 Requires ANY permissions: 
@@ -1710,8 +1604,6 @@ except ApiException as e:
 
 
 Update an outcome.
-
-
 
 Wraps PATCH /api/v2/journey/outcomes/{outcomeId} 
 
@@ -1764,8 +1656,6 @@ except ApiException as e:
 
 Update a segment.
 
-
-
 Wraps PATCH /api/v2/journey/segments/{segmentId} 
 
 Requires ANY permissions: 
@@ -1817,7 +1707,7 @@ except ApiException as e:
 
 Query for journey aggregates asynchronously
 
-
+post_analytics_journeys_aggregates_jobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/analytics/journeys/aggregates/jobs 
 
@@ -1868,8 +1758,6 @@ except ApiException as e:
 
 Query for journey aggregates
 
-
-
 Wraps POST /api/v2/analytics/journeys/aggregates/query 
 
 Requires ANY permissions: 
@@ -1918,8 +1806,6 @@ except ApiException as e:
 
 
 Create an action map.
-
-
 
 Wraps POST /api/v2/journey/actionmaps 
 
@@ -1970,8 +1856,6 @@ except ApiException as e:
 
 Query for estimates
 
-
-
 Wraps POST /api/v2/journey/actionmaps/estimates/jobs 
 
 Requires ANY permissions: 
@@ -2020,8 +1904,6 @@ except ApiException as e:
 
 
 Create a single action template.
-
-
 
 Wraps POST /api/v2/journey/actiontemplates 
 
@@ -2072,8 +1954,6 @@ except ApiException as e:
 
 Create an outcome.
 
-
-
 Wraps POST /api/v2/journey/outcomes 
 
 Requires ANY permissions: 
@@ -2123,7 +2003,7 @@ except ApiException as e:
 
 Create Outcome Attributions
 
-
+post_journey_outcomes_attributions_jobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/journey/outcomes/attributions/jobs 
 
@@ -2174,8 +2054,6 @@ except ApiException as e:
 
 Create an outcome predictor.
 
-
-
 Wraps POST /api/v2/journey/outcomes/predictors 
 
 Requires ANY permissions: 
@@ -2224,8 +2102,6 @@ except ApiException as e:
 
 
 Create a segment.
-
-
 
 Wraps POST /api/v2/journey/segments 
 

@@ -33,7 +33,7 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
-    from . import GuestCategoryResponse
+    from . import GuestResponseCategory
 
 class GuestCategoryResponseListing(object):
     """
@@ -50,7 +50,7 @@ class GuestCategoryResponseListing(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'entities': 'list[GuestCategoryResponse]',
+            'entities': 'list[GuestResponseCategory]',
             'next_uri': 'str',
             'self_uri': 'str',
             'previous_uri': 'str',
@@ -72,24 +72,24 @@ class GuestCategoryResponseListing(object):
         self._session_id = None
 
     @property
-    def entities(self) -> List['GuestCategoryResponse']:
+    def entities(self) -> List['GuestResponseCategory']:
         """
         Gets the entities of this GuestCategoryResponseListing.
 
 
         :return: The entities of this GuestCategoryResponseListing.
-        :rtype: list[GuestCategoryResponse]
+        :rtype: list[GuestResponseCategory]
         """
         return self._entities
 
     @entities.setter
-    def entities(self, entities: List['GuestCategoryResponse']) -> None:
+    def entities(self, entities: List['GuestResponseCategory']) -> None:
         """
         Sets the entities of this GuestCategoryResponseListing.
 
 
         :param entities: The entities of this GuestCategoryResponseListing.
-        :type: list[GuestCategoryResponse]
+        :type: list[GuestResponseCategory]
         """
         
 

@@ -26,8 +26,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 Delete a location
 
-
-
 Wraps DELETE /api/v2/locations/{locationId} 
 
 Requires ALL permissions: 
@@ -75,8 +73,6 @@ void (empty response body)
 
 
 Get Location by ID.
-
-
 
 Wraps GET /api/v2/locations/{locationId} 
 
@@ -128,8 +124,6 @@ except ApiException as e:
 
 Get sublocations for location ID.
 
-
-
 Wraps GET /api/v2/locations/{locationId}/sublocations 
 
 Requires no permissions
@@ -177,8 +171,6 @@ except ApiException as e:
 
 
 Get a list of all locations.
-
-
 
 Wraps GET /api/v2/locations 
 
@@ -234,8 +226,6 @@ except ApiException as e:
 
 Search locations using the q64 value returned from a previous search
 
-
-
 Wraps GET /api/v2/locations/search 
 
 Requires no permissions
@@ -285,8 +275,6 @@ except ApiException as e:
 
 
 Update a location
-
-
 
 Wraps PATCH /api/v2/locations/{locationId} 
 
@@ -339,8 +327,6 @@ except ApiException as e:
 
 Create a location
 
-
-
 Wraps POST /api/v2/locations 
 
 Requires ALL permissions: 
@@ -389,8 +375,6 @@ except ApiException as e:
 
 
 Search locations
-
-
 
 Wraps POST /api/v2/locations/search 
 

@@ -24,8 +24,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 Delete a fax document.
 
-
-
 Wraps DELETE /api/v2/fax/documents/{documentId} 
 
 Requires no permissions
@@ -72,8 +70,6 @@ void (empty response body)
 
 
 Get a document.
-
-
 
 Wraps GET /api/v2/fax/documents/{documentId} 
 
@@ -123,8 +119,6 @@ except ApiException as e:
 
 Download a fax document.
 
-
-
 Wraps GET /api/v2/fax/documents/{documentId}/content 
 
 Requires no permissions
@@ -172,8 +166,6 @@ except ApiException as e:
 
 
 Get a list of fax documents.
-
-
 
 Wraps GET /api/v2/fax/documents 
 
@@ -225,8 +217,6 @@ except ApiException as e:
 
 Get fax summary
 
-
-
 Wraps GET /api/v2/fax/summary 
 
 Requires no permissions
@@ -270,8 +260,6 @@ This endpoint does not need any parameters.
 
 
 Update a fax document.
-
-
 
 Wraps PUT /api/v2/fax/documents/{documentId} 
 

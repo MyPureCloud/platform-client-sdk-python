@@ -25,8 +25,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 Get the results of a usage query
 
-
-
 Wraps GET /api/v2/oauth/clients/{clientId}/usage/query/results/{executionId} 
 
 Requires ANY permissions: 
@@ -81,8 +79,6 @@ Get a summary of OAuth client API usage
 
 After calling this method, you will then need to poll for the query results based on the returned execution Id
 
-
-
 Wraps GET /api/v2/oauth/clients/{clientId}/usage/summary 
 
 Requires ANY permissions: 
@@ -135,8 +131,6 @@ except ApiException as e:
 
 Get the results of a usage query
 
-
-
 Wraps GET /api/v2/usage/query/{executionId}/results 
 
 Requires ANY permissions: 
@@ -186,8 +180,6 @@ except ApiException as e:
 
 
 Get the results of a usage search
-
-
 
 Wraps GET /api/v2/usage/simplesearch/{executionId}/results 
 
@@ -240,8 +232,6 @@ except ApiException as e:
 Query for OAuth client API usage
 
 After calling this method, you will then need to poll for the query results based on the returned execution Id
-
-
 
 Wraps POST /api/v2/oauth/clients/{clientId}/usage/query 
 
@@ -297,8 +287,6 @@ Query organization API Usage -
 
 After calling this method, you will then need to poll for the query results based on the returned execution Id
 
-
-
 Wraps POST /api/v2/usage/query 
 
 Requires ANY permissions: 
@@ -350,8 +338,6 @@ except ApiException as e:
 Search organization API Usage - 
 
 After calling this method, you will then need to poll for the query results based on the returned execution Id
-
-
 
 Wraps POST /api/v2/usage/simplesearch 
 

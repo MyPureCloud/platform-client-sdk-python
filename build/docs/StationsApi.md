@@ -21,8 +21,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 Unassigns the user assigned to this station
 
-
-
 Wraps DELETE /api/v2/stations/{stationId}/associateduser 
 
 Requires no permissions
@@ -69,8 +67,6 @@ void (empty response body)
 
 
 Get station.
-
-
 
 Wraps GET /api/v2/stations/{stationId} 
 
@@ -119,8 +115,6 @@ except ApiException as e:
 
 
 Get the list of available stations.
-
-
 
 Wraps GET /api/v2/stations 
 

@@ -652,10 +652,11 @@ class ContentManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("get_contentmanagement_document_audits is deprecated")
     def get_contentmanagement_document_audits(self, document_id: str, **kwargs) -> 'DocumentAuditEntityListing':
         """
         Get a list of audits for a document.
-        
+        This api is deprecated, use https://developer.genesys.cloud/platform/audit/ instead.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -2264,10 +2265,11 @@ class ContentManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("post_contentmanagement_auditquery is deprecated")
     def post_contentmanagement_auditquery(self, body: 'ContentQueryRequest', **kwargs) -> 'QueryResults':
         """
         Query audits
-        
+        This api is deprecated, use https://developer.genesys.cloud/platform/audit/ instead.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

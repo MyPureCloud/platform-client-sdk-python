@@ -66,11 +66,11 @@ class FlowsApi(object):
                 config.api_client = ApiClient()
             self.api_client = config.api_client
 
-	# Preview Endpoint
     def get_analytics_flows_aggregates_job(self, job_id: str, **kwargs) -> 'AsyncQueryStatus':
         """
         Get status for async query for Flow aggregates
         
+	    get_analytics_flows_aggregates_job is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -145,11 +145,11 @@ class FlowsApi(object):
                                             callback=params.get('callback'))
         return response
 
-	# Preview Endpoint
     def get_analytics_flows_aggregates_job_results(self, job_id: str, **kwargs) -> 'FlowAsyncAggregateQueryResponse':
         """
         Fetch a page of results for an async aggregates query
         
+	    get_analytics_flows_aggregates_job_results is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -227,11 +227,11 @@ class FlowsApi(object):
                                             callback=params.get('callback'))
         return response
 
-	# Preview Endpoint
     def post_analytics_flows_activity_query(self, body: 'FlowActivityQuery', **kwargs) -> 'FlowActivityResponse':
         """
         Query for flow activity observations
         
+	    post_analytics_flows_activity_query is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -312,11 +312,11 @@ class FlowsApi(object):
                                             callback=params.get('callback'))
         return response
 
-	# Preview Endpoint
     def post_analytics_flows_aggregates_jobs(self, body: 'FlowAsyncAggregationQuery', **kwargs) -> 'AsyncQueryResponse':
         """
         Query for flow aggregates asynchronously
         
+	    post_analytics_flows_aggregates_jobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

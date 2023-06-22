@@ -889,11 +889,11 @@ class SearchApi(object):
                                             callback=params.get('callback'))
         return response
 
-	# Preview Endpoint
     def post_documentation_all_search(self, body: 'DocumentationV2SearchRequest', **kwargs) -> 'JsonNodeSearchResponse':
         """
         Search all documents
         
+	    post_documentation_all_search is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -1758,11 +1758,11 @@ class SearchApi(object):
                                             callback=params.get('callback'))
         return response
 
-	# Preview Endpoint
     def post_users_search_conversation_target(self, body: 'UserSearchRequest', **kwargs) -> 'UsersSearchResponse':
         """
         Search users as conversation targets
         
+	    post_users_search_conversation_target is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -1837,11 +1837,11 @@ class SearchApi(object):
                                             callback=params.get('callback'))
         return response
 
-	# Preview Endpoint
     def post_users_search_queuemembers_manage(self, body: 'UserSearchRequest', **kwargs) -> 'UsersSearchResponse':
         """
         Search manage queue member
         
+	    post_users_search_queuemembers_manage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

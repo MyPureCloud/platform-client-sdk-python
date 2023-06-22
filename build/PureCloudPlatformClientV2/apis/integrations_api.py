@@ -78,6 +78,7 @@ from ..models import TtsSettings
 from ..models import TtsVoiceEntity
 from ..models import TtsVoiceEntityListing
 from ..models import UCIntegrationListing
+from ..models import UCThirdPartyPresence
 from ..models import UpdateActionInput
 from ..models import UpdateDraftInput
 from ..models import UserAppEntityListing
@@ -2714,11 +2715,11 @@ class IntegrationsApi(object):
                                             callback=params.get('callback'))
         return response
 
-	# Preview Endpoint
     def get_integrations_speech_nuance_nuance_integration_id_bot(self, nuance_integration_id: str, bot_id: str, **kwargs) -> 'NuanceBot':
         """
         Get a Nuance bot in the specified Integration
         
+	    get_integrations_speech_nuance_nuance_integration_id_bot is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -2805,11 +2806,11 @@ class IntegrationsApi(object):
                                             callback=params.get('callback'))
         return response
 
-	# Preview Endpoint
     def get_integrations_speech_nuance_nuance_integration_id_bot_job(self, nuance_integration_id: str, bot_id: str, job_id: str, **kwargs) -> 'AsyncJob':
         """
         Get the status of an asynchronous Nuance bot GET job
         
+	    get_integrations_speech_nuance_nuance_integration_id_bot_job is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -2896,11 +2897,11 @@ class IntegrationsApi(object):
                                             callback=params.get('callback'))
         return response
 
-	# Preview Endpoint
     def get_integrations_speech_nuance_nuance_integration_id_bot_job_results(self, nuance_integration_id: str, bot_id: str, job_id: str, **kwargs) -> 'NuanceBot':
         """
         Get the result of an asynchronous Nuance bot GET job
         
+	    get_integrations_speech_nuance_nuance_integration_id_bot_job_results is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -2987,11 +2988,11 @@ class IntegrationsApi(object):
                                             callback=params.get('callback'))
         return response
 
-	# Preview Endpoint
     def get_integrations_speech_nuance_nuance_integration_id_bots(self, nuance_integration_id: str, **kwargs) -> 'NuanceBotEntityListing':
         """
         Get a list of Nuance bots available in the specified Integration
         If the 'onlyRegisteredBots' param is set, the returned data will only include the Nuance bots which have configured client secrets within the Integration,  otherwise all of the Nuance bots available to the Integration's configured discovery credentials are returned.
+	    get_integrations_speech_nuance_nuance_integration_id_bots is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -3075,11 +3076,11 @@ class IntegrationsApi(object):
                                             callback=params.get('callback'))
         return response
 
-	# Preview Endpoint
     def get_integrations_speech_nuance_nuance_integration_id_bots_job(self, nuance_integration_id: str, job_id: str, **kwargs) -> 'AsyncJob':
         """
         Get the status of an asynchronous Nuance bots GET job
         
+	    get_integrations_speech_nuance_nuance_integration_id_bots_job is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -3160,11 +3161,11 @@ class IntegrationsApi(object):
                                             callback=params.get('callback'))
         return response
 
-	# Preview Endpoint
     def get_integrations_speech_nuance_nuance_integration_id_bots_job_results(self, nuance_integration_id: str, job_id: str, **kwargs) -> 'NuanceBotEntityListing':
         """
         Get the result of an asynchronous Nuance bots GET job
         
+	    get_integrations_speech_nuance_nuance_integration_id_bots_job_results is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -4985,11 +4986,11 @@ class IntegrationsApi(object):
                                             callback=params.get('callback'))
         return response
 
-	# Preview Endpoint
     def post_integrations_speech_nuance_nuance_integration_id_bot_jobs(self, nuance_integration_id: str, bot_id: str, **kwargs) -> 'AsyncJob':
         """
         Get a Nuance bot in the specified Integration asynchronously
         
+	    post_integrations_speech_nuance_nuance_integration_id_bot_jobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -5076,11 +5077,11 @@ class IntegrationsApi(object):
                                             callback=params.get('callback'))
         return response
 
-	# Preview Endpoint
     def post_integrations_speech_nuance_nuance_integration_id_bots_jobs(self, nuance_integration_id: str, **kwargs) -> 'AsyncJob':
         """
         Get a list of Nuance bots in the specified Integration asynchronously
         
+	    post_integrations_speech_nuance_nuance_integration_id_bots_jobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -5164,11 +5165,11 @@ class IntegrationsApi(object):
                                             callback=params.get('callback'))
         return response
 
-	# Preview Endpoint
     def post_integrations_speech_nuance_nuance_integration_id_bots_launch_validate(self, nuance_integration_id: str, settings: 'BotExecutionConfiguration', **kwargs) -> None:
         """
         Try out a single credential for a Nuance bot to know if the secret is correct
         
+	    post_integrations_speech_nuance_nuance_integration_id_bots_launch_validate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -5495,11 +5496,11 @@ class IntegrationsApi(object):
                                             callback=params.get('callback'))
         return response
 
-	# Preview Endpoint
     def put_integrations_speech_nuance_nuance_integration_id_bots_launch_settings(self, nuance_integration_id: str, settings: 'NuanceBotLaunchSettings', **kwargs) -> None:
         """
         Update the Nuance bot list for the specific bots made available to Genesys Cloud in the specified Integration
         
+	    put_integrations_speech_nuance_nuance_integration_id_bots_launch_settings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -5654,6 +5655,90 @@ class IntegrationsApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='TtsSettings',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def put_integrations_unifiedcommunication_thirdpartypresences(self, uc_integration_id: str, body: List['UCThirdPartyPresence'], **kwargs) -> str:
+        """
+        Bulk integration presence ingestion
+        This endpoint accepts bulk presence updates from a 3rd-party presence integration and maps the 3rd-party user to a Genesys Cloud user via the matching email address. The 3rd-party presence value will be mapped to a Genesys Cloud organization presence definition value.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.put_integrations_unifiedcommunication_thirdpartypresences(uc_integration_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str uc_integration_id: UC Integration ID (required)
+        :param list[UCThirdPartyPresence] body: List of User presences (required)
+        :return: str
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['uc_integration_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method put_integrations_unifiedcommunication_thirdpartypresences" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'uc_integration_id' is set
+        if ('uc_integration_id' not in params) or (params['uc_integration_id'] is None):
+            raise ValueError("Missing the required parameter `uc_integration_id` when calling `put_integrations_unifiedcommunication_thirdpartypresences`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `put_integrations_unifiedcommunication_thirdpartypresences`")
+
+
+        resource_path = '/api/v2/integrations/unifiedcommunications/{ucIntegrationId}/thirdpartypresences'.replace('{format}', 'json')
+        path_params = {}
+        if 'uc_integration_id' in params:
+            path_params['ucIntegrationId'] = params['uc_integration_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='str',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

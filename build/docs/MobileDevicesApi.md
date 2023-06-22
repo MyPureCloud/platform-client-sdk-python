@@ -23,8 +23,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 Delete device
 
-
-
 Wraps DELETE /api/v2/mobiledevices/{deviceId} 
 
 Requires no permissions
@@ -71,8 +69,6 @@ void (empty response body)
 
 
 Get device
-
-
 
 Wraps GET /api/v2/mobiledevices/{deviceId} 
 
@@ -121,8 +117,6 @@ except ApiException as e:
 
 
 Get a list of all devices.
-
-
 
 Wraps GET /api/v2/mobiledevices 
 
@@ -176,8 +170,6 @@ except ApiException as e:
 
 Create User device
 
-
-
 Wraps POST /api/v2/mobiledevices 
 
 Requires no permissions
@@ -225,8 +217,6 @@ except ApiException as e:
 
 
 Update device
-
-
 
 Wraps PUT /api/v2/mobiledevices/{deviceId} 
 

@@ -46,8 +46,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 Delete a learning assignment
 
-
-
 Wraps DELETE /api/v2/learning/assignments/{assignmentId} 
 
 Requires ANY permissions: 
@@ -98,8 +96,6 @@ Delete a learning module
 
 This will delete a learning module if it is unpublished or it will delete a published and archived learning module
 
-
-
 Wraps DELETE /api/v2/learning/modules/{moduleId} 
 
 Requires ANY permissions: 
@@ -149,8 +145,6 @@ void (empty response body)
 Get Learning Assignment
 
 Permission not required if you are the assigned user of the learning assignment
-
-
 
 Wraps GET /api/v2/learning/assignments/{assignmentId} 
 
@@ -204,8 +198,6 @@ except ApiException as e:
 List of Learning module Assignments
 
 Either moduleId or user value is required
-
-
 
 Wraps GET /api/v2/learning/assignments 
 
@@ -284,8 +276,6 @@ except ApiException as e:
 
 List of Learning Assignments assigned to current user
 
-
-
 Wraps GET /api/v2/learning/assignments/me 
 
 Requires no permissions
@@ -360,8 +350,6 @@ except ApiException as e:
 
 Get a learning module
 
-
-
 Wraps GET /api/v2/learning/modules/{moduleId} 
 
 Requires ANY permissions: 
@@ -412,8 +400,6 @@ except ApiException as e:
 
 
 Get a specific Learning Module job status
-
-
 
 Wraps GET /api/v2/learning/modules/{moduleId}/jobs/{jobId} 
 
@@ -466,8 +452,6 @@ except ApiException as e:
 
 Get a learning module rule
 
-
-
 Wraps GET /api/v2/learning/modules/{moduleId}/rule 
 
 Requires ANY permissions: 
@@ -516,8 +500,6 @@ except ApiException as e:
 
 
 Get specific version of a published module
-
-
 
 Wraps GET /api/v2/learning/modules/{moduleId}/versions/{versionId} 
 
@@ -571,8 +553,6 @@ except ApiException as e:
 
 
 Get all learning modules of an organization
-
-
 
 Wraps GET /api/v2/learning/modules 
 
@@ -641,8 +621,6 @@ except ApiException as e:
 
 Get all learning modules of an organization including assignments for a specific user
 
-
-
 Wraps GET /api/v2/learning/modules/assignments 
 
 Requires ALL permissions: 
@@ -705,8 +683,6 @@ except ApiException as e:
 
 Get a specific Learning Module cover art using ID
 
-
-
 Wraps GET /api/v2/learning/modules/coverart/{coverArtId} 
 
 Requires ANY permissions: 
@@ -755,8 +731,6 @@ except ApiException as e:
 
 
 Update Learning Assignment
-
-
 
 Wraps PATCH /api/v2/learning/assignments/{assignmentId} 
 
@@ -808,8 +782,6 @@ except ApiException as e:
 
 Reschedule Learning Assignment
 
-
-
 Wraps PATCH /api/v2/learning/assignments/{assignmentId}/reschedule 
 
 Requires ANY permissions: 
@@ -860,8 +832,6 @@ except ApiException as e:
 
 
 Score learning assessment for preview
-
-
 
 Wraps POST /api/v2/learning/assessments/scoring 
 
@@ -916,8 +886,6 @@ Reassign Learning Assignment
 
 This will reassign the state of the assignment to 'Assigned' and update the assignment to the latest version of the module
 
-
-
 Wraps POST /api/v2/learning/assignments/{assignmentId}/reassign 
 
 Requires ANY permissions: 
@@ -969,8 +937,6 @@ Reset Learning Assignment
 
 This will reset the state of the assignment to 'Assigned' and remove the version of Learning module associated with the assignment
 
-
-
 Wraps POST /api/v2/learning/assignments/{assignmentId}/reset 
 
 Requires ANY permissions: 
@@ -1019,8 +985,6 @@ except ApiException as e:
 
 
 Create Learning Assignment
-
-
 
 Wraps POST /api/v2/learning/assignments 
 
@@ -1071,8 +1035,6 @@ except ApiException as e:
 
 Retrieve aggregated assignment data
 
-
-
 Wraps POST /api/v2/learning/assignments/aggregates/query 
 
 Requires ANY permissions: 
@@ -1122,8 +1084,6 @@ except ApiException as e:
 
 Add multiple learning assignments
 
-
-
 Wraps POST /api/v2/learning/assignments/bulkadd 
 
 Requires ANY permissions: 
@@ -1172,8 +1132,6 @@ except ApiException as e:
 
 
 Remove multiple Learning Assignments
-
-
 
 Wraps POST /api/v2/learning/assignments/bulkremove 
 
@@ -1226,8 +1184,6 @@ Starts a specified operation on learning module
 
 This will initiate operation specified in the request body for a learning module
 
-
-
 Wraps POST /api/v2/learning/modules/{moduleId}/jobs 
 
 Requires ANY permissions: 
@@ -1278,8 +1234,6 @@ except ApiException as e:
 
 
 Publish a Learning module
-
-
 
 Wraps POST /api/v2/learning/modules/{moduleId}/publish 
 
@@ -1332,8 +1286,6 @@ Create a new learning module
 
 This will create a new unpublished learning module with the specified fields.
 
-
-
 Wraps POST /api/v2/learning/modules 
 
 Requires ANY permissions: 
@@ -1384,8 +1336,6 @@ except ApiException as e:
 Get users for learning module rule
 
 This will get the users who matches the given rule.
-
-
 
 Wraps POST /api/v2/learning/rules/query 
 
@@ -1440,8 +1390,6 @@ except ApiException as e:
 
 Get list of possible slots where a learning activity can be scheduled.
 
-
-
 Wraps POST /api/v2/learning/scheduleslots/query 
 
 Requires ANY permissions: 
@@ -1492,8 +1440,6 @@ except ApiException as e:
 Update a learning module
 
 This will update the name, description, completion time in days and inform steps for a learning module
-
-
 
 Wraps PUT /api/v2/learning/modules/{moduleId} 
 
@@ -1547,8 +1493,6 @@ except ApiException as e:
 Update a learning module rule
 
 This will update a learning module rule with the specified fields.
-
-
 
 Wraps PUT /api/v2/learning/modules/{moduleId}/rule 
 

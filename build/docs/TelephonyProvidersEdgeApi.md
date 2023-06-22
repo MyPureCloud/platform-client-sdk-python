@@ -135,8 +135,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 Delete a edge.
 
-
-
 Wraps DELETE /api/v2/telephony/providers/edges/{edgeId} 
 
 Requires ANY permissions: 
@@ -184,8 +182,6 @@ void (empty response body)
 
 
 Delete an edge logical interface
-
-
 
 Wraps DELETE /api/v2/telephony/providers/edges/{edgeId}/logicalinterfaces/{interfaceId} 
 
@@ -237,8 +233,6 @@ void (empty response body)
 
 Cancels any in-progress update for this edge.
 
-
-
 Wraps DELETE /api/v2/telephony/providers/edges/{edgeId}/softwareupdate 
 
 Requires no permissions
@@ -285,8 +279,6 @@ void (empty response body)
 
 
 Delete a certificate authority.
-
-
 
 Wraps DELETE /api/v2/telephony/providers/edges/certificateauthorities/{certificateId} 
 
@@ -336,8 +328,6 @@ void (empty response body)
 
 Delete a DID Pool by ID.
 
-
-
 Wraps DELETE /api/v2/telephony/providers/edges/didpools/{didPoolId} 
 
 Requires ANY permissions: 
@@ -385,8 +375,6 @@ void (empty response body)
 
 
 Delete an edge group.
-
-
 
 Wraps DELETE /api/v2/telephony/providers/edges/edgegroups/{edgeGroupId} 
 
@@ -436,8 +424,6 @@ void (empty response body)
 
 Delete an extension pool by ID
 
-
-
 Wraps DELETE /api/v2/telephony/providers/edges/extensionpools/{extensionPoolId} 
 
 Requires ALL permissions: 
@@ -485,8 +471,6 @@ void (empty response body)
 
 
 Delete a Phone by ID
-
-
 
 Wraps DELETE /api/v2/telephony/providers/edges/phones/{phoneId} 
 
@@ -536,8 +520,6 @@ void (empty response body)
 
 Delete a Phone Base Settings by ID
 
-
-
 Wraps DELETE /api/v2/telephony/providers/edges/phonebasesettings/{phoneBaseId} 
 
 Requires ANY permissions: 
@@ -586,8 +568,6 @@ void (empty response body)
 
 Delete a Site by ID
 
-
-
 Wraps DELETE /api/v2/telephony/providers/edges/sites/{siteId} 
 
 Requires ANY permissions: 
@@ -635,8 +615,6 @@ void (empty response body)
 
 
 Delete Outbound Route
-
-
 
 Wraps DELETE /api/v2/telephony/providers/edges/sites/{siteId}/outboundroutes/{outboundRouteId} 
 
@@ -688,8 +666,6 @@ void (empty response body)
 
 Delete a Trunk Base Settings object by ID
 
-
-
 Wraps DELETE /api/v2/telephony/providers/edges/trunkbasesettings/{trunkBaseSettingsId} 
 
 Requires ANY permissions: 
@@ -737,8 +713,6 @@ void (empty response body)
 
 
 Get edge.
-
-
 
 Wraps GET /api/v2/telephony/providers/edges/{edgeId} 
 
@@ -791,8 +765,6 @@ except ApiException as e:
 
 Get networking-related information from an Edge for a target IP or host.
 
-
-
 Wraps GET /api/v2/telephony/providers/edges/{edgeId}/diagnostic/nslookup 
 
 Requires ANY permissions: 
@@ -841,8 +813,6 @@ except ApiException as e:
 
 
 Get networking-related information from an Edge for a target IP or host.
-
-
 
 Wraps GET /api/v2/telephony/providers/edges/{edgeId}/diagnostic/ping 
 
@@ -893,8 +863,6 @@ except ApiException as e:
 
 Get networking-related information from an Edge for a target IP or host.
 
-
-
 Wraps GET /api/v2/telephony/providers/edges/{edgeId}/diagnostic/route 
 
 Requires ANY permissions: 
@@ -944,8 +912,6 @@ except ApiException as e:
 
 Get networking-related information from an Edge for a target IP or host.
 
-
-
 Wraps GET /api/v2/telephony/providers/edges/{edgeId}/diagnostic/tracepath 
 
 Requires ANY permissions: 
@@ -994,8 +960,6 @@ except ApiException as e:
 
 
 Get an edge logical interface
-
-
 
 Wraps GET /api/v2/telephony/providers/edges/{edgeId}/logicalinterfaces/{interfaceId} 
 
@@ -1052,8 +1016,6 @@ Get edge logical interfaces.
 
 Retrieve a list of all configured logical interfaces from a specific edge.
 
-
-
 Wraps GET /api/v2/telephony/providers/edges/{edgeId}/logicalinterfaces 
 
 Requires ANY permissions: 
@@ -1104,8 +1066,6 @@ except ApiException as e:
 
 
 Get an Edge logs job.
-
-
 
 Wraps GET /api/v2/telephony/providers/edges/{edgeId}/logs/jobs/{jobId} 
 
@@ -1158,8 +1118,6 @@ except ApiException as e:
 
 Get the edge metrics.
 
-
-
 Wraps GET /api/v2/telephony/providers/edges/{edgeId}/metrics 
 
 Requires ANY permissions: 
@@ -1210,8 +1168,6 @@ except ApiException as e:
 Get edge physical interface.
 
 Retrieve a physical interface from a specific edge.
-
-
 
 Wraps GET /api/v2/telephony/providers/edges/{edgeId}/physicalinterfaces/{interfaceId} 
 
@@ -1264,8 +1220,6 @@ except ApiException as e:
 
 Retrieve a list of all configured physical interfaces from a specific edge.
 
-
-
 Wraps GET /api/v2/telephony/providers/edges/{edgeId}/physicalinterfaces 
 
 Requires ANY permissions: 
@@ -1314,8 +1268,6 @@ except ApiException as e:
 
 
 Get the setup package for a locally deployed edge device. This is needed to complete the setup process for the virtual edge.
-
-
 
 Wraps GET /api/v2/telephony/providers/edges/{edgeId}/setuppackage 
 
@@ -1366,8 +1318,6 @@ except ApiException as e:
 
 Gets software update status information about any edge.
 
-
-
 Wraps GET /api/v2/telephony/providers/edges/{edgeId}/softwareupdate 
 
 Requires no permissions
@@ -1415,8 +1365,6 @@ except ApiException as e:
 
 
 Gets all the available software versions for this edge.
-
-
 
 Wraps GET /api/v2/telephony/providers/edges/{edgeId}/softwareversions 
 
@@ -1467,8 +1415,6 @@ except ApiException as e:
 Get the list of available trunks for the given Edge.
 
 Trunks are created by assigning trunk base settings to an Edge or Edge Group.
-
-
 
 Wraps GET /api/v2/telephony/providers/edges/{edgeId}/trunks 
 
@@ -1530,8 +1476,6 @@ except ApiException as e:
 
 
 Get the list of edges.
-
-
 
 Wraps GET /api/v2/telephony/providers/edges 
 
@@ -1596,8 +1540,6 @@ except ApiException as e:
 
 Get the list of available languages.
 
-
-
 Wraps GET /api/v2/telephony/providers/edges/availablelanguages 
 
 Requires no permissions
@@ -1641,8 +1583,6 @@ This endpoint does not need any parameters.
 
 
 Get the list of certificate authorities.
-
-
 
 Wraps GET /api/v2/telephony/providers/edges/certificateauthorities 
 
@@ -1688,8 +1628,6 @@ This endpoint does not need any parameters.
 
 
 Get a certificate authority.
-
-
 
 Wraps GET /api/v2/telephony/providers/edges/certificateauthorities/{certificateId} 
 
@@ -1740,8 +1678,6 @@ except ApiException as e:
 
 Get a DID by ID.
 
-
-
 Wraps GET /api/v2/telephony/providers/edges/dids/{didId} 
 
 Requires ANY permissions: 
@@ -1791,8 +1727,6 @@ except ApiException as e:
 
 Get a DID Pool by ID.
 
-
-
 Wraps GET /api/v2/telephony/providers/edges/didpools/{didPoolId} 
 
 Requires ANY permissions: 
@@ -1841,8 +1775,6 @@ except ApiException as e:
 
 
 Get a listing of DID Pools
-
-
 
 Wraps GET /api/v2/telephony/providers/edges/didpools 
 
@@ -1898,8 +1830,6 @@ except ApiException as e:
 
 
 Get a listing of unassigned and/or assigned numbers in a set of DID Pools.
-
-
 
 Wraps GET /api/v2/telephony/providers/edges/didpools/dids 
 
@@ -1959,8 +1889,6 @@ except ApiException as e:
 
 
 Get a listing of DIDs
-
-
 
 Wraps GET /api/v2/telephony/providers/edges/dids 
 
@@ -2025,8 +1953,6 @@ except ApiException as e:
 
 Get edge group.
 
-
-
 Wraps GET /api/v2/telephony/providers/edges/edgegroups/{edgeGroupId} 
 
 Requires ANY permissions: 
@@ -2078,8 +2004,6 @@ except ApiException as e:
 
 Gets the edge trunk base associated with the edge group
 
-
-
 Wraps GET /api/v2/telephony/providers/edges/edgegroups/{edgegroupId}/edgetrunkbases/{edgetrunkbaseId} 
 
 Requires ANY permissions: 
@@ -2130,8 +2054,6 @@ except ApiException as e:
 
 
 Get the list of edge groups.
-
-
 
 Wraps GET /api/v2/telephony/providers/edges/edgegroups 
 
@@ -2192,8 +2114,6 @@ Get the edge version report.
 
 The report will not have consistent data about the edge version(s) until all edges have been reset.
 
-
-
 Wraps GET /api/v2/telephony/providers/edges/edgeversionreport 
 
 Requires no permissions
@@ -2237,8 +2157,6 @@ This endpoint does not need any parameters.
 
 
 List of edges more than 4 edge versions behind the latest software.
-
-
 
 Wraps GET /api/v2/telephony/providers/edges/expired 
 
@@ -2285,8 +2203,6 @@ This endpoint does not need any parameters.
 
 
 Get an extension by ID.
-
-
 
 Wraps GET /api/v2/telephony/providers/edges/extensions/{extensionId} 
 
@@ -2337,8 +2253,6 @@ except ApiException as e:
 
 Get an extension pool by ID
 
-
-
 Wraps GET /api/v2/telephony/providers/edges/extensionpools/{extensionPoolId} 
 
 Requires ALL permissions: 
@@ -2387,8 +2301,6 @@ except ApiException as e:
 
 
 Get a listing of extension pools
-
-
 
 Wraps GET /api/v2/telephony/providers/edges/extensionpools 
 
@@ -2447,7 +2359,7 @@ Get a pageable list of basic extension pool objects filterable by query paramete
 
 This returns extension pools consisting of name and division. If one or more IDs are specified, the search will fetch flow outcomes that match the given ID(s) and not use any additional supplied query parameters in the search.
 
-
+get_telephony_providers_edges_extensionpools_divisionviews is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/telephony/providers/edges/extensionpools/divisionviews 
 
@@ -2510,8 +2422,6 @@ except ApiException as e:
 
 Get a listing of extensions
 
-
-
 Wraps GET /api/v2/telephony/providers/edges/extensions 
 
 Requires ANY permissions: 
@@ -2569,8 +2479,6 @@ except ApiException as e:
 
 Get a Line by ID
 
-
-
 Wraps GET /api/v2/telephony/providers/edges/lines/{lineId} 
 
 Requires ANY permissions: 
@@ -2620,8 +2528,6 @@ except ApiException as e:
 
 Get a line base settings object by ID
 
-
-
 Wraps GET /api/v2/telephony/providers/edges/linebasesettings/{lineBaseId} 
 
 Requires ANY permissions: 
@@ -2670,8 +2576,6 @@ except ApiException as e:
 
 
 Get a listing of line base settings objects
-
-
 
 Wraps GET /api/v2/telephony/providers/edges/linebasesettings 
 
@@ -2730,8 +2634,6 @@ except ApiException as e:
 
 Get a list of Lines
 
-
-
 Wraps GET /api/v2/telephony/providers/edges/lines 
 
 Requires ANY permissions: 
@@ -2789,8 +2691,6 @@ except ApiException as e:
 
 Get a Line instance template based on a Line Base Settings object. This object can then be modified and saved as a new Line instance
 
-
-
 Wraps GET /api/v2/telephony/providers/edges/lines/template 
 
 Requires ANY permissions: 
@@ -2841,8 +2741,6 @@ except ApiException as e:
 Get edge logical interfaces.
 
 Retrieve the configured logical interfaces for a list edges. Only 100 edges can be requested at a time.
-
-
 
 Wraps GET /api/v2/telephony/providers/edges/logicalinterfaces 
 
@@ -2895,8 +2793,6 @@ except ApiException as e:
 
 Get the metrics for a list of edges.
 
-
-
 Wraps GET /api/v2/telephony/providers/edges/metrics 
 
 Requires ANY permissions: 
@@ -2948,8 +2844,6 @@ Get outbound route
 
 This route is deprecated, use /telephony/providers/edges/sites/{siteId}/outboundroutes/{outboundRouteId} instead.
 
-
-
 Wraps GET /api/v2/telephony/providers/edges/outboundroutes/{outboundRouteId} 
 
 Requires ANY permissions: 
@@ -2998,8 +2892,6 @@ except ApiException as e:
 
 
 Get outbound routes
-
-
 
 Wraps GET /api/v2/telephony/providers/edges/outboundroutes 
 
@@ -3060,8 +2952,6 @@ except ApiException as e:
 
 Get a Phone by ID
 
-
-
 Wraps GET /api/v2/telephony/providers/edges/phones/{phoneId} 
 
 Requires ANY permissions: 
@@ -3111,8 +3001,6 @@ except ApiException as e:
 
 Get a Phone Base Settings object by ID
 
-
-
 Wraps GET /api/v2/telephony/providers/edges/phonebasesettings/{phoneBaseId} 
 
 Requires ANY permissions: 
@@ -3161,8 +3049,6 @@ except ApiException as e:
 
 
 Get a list of Phone Base Settings objects
-
-
 
 Wraps GET /api/v2/telephony/providers/edges/phonebasesettings 
 
@@ -3223,8 +3109,6 @@ except ApiException as e:
 
 Get a list of available makes and models to create a new Phone Base Settings
 
-
-
 Wraps GET /api/v2/telephony/providers/edges/phonebasesettings/availablemetabases 
 
 Requires ANY permissions: 
@@ -3276,8 +3160,6 @@ except ApiException as e:
 
 Get a Phone Base Settings instance template from a given make and model. This object can then be modified and saved as a new Phone Base Settings instance
 
-
-
 Wraps GET /api/v2/telephony/providers/edges/phonebasesettings/template 
 
 Requires ANY permissions: 
@@ -3327,8 +3209,6 @@ except ApiException as e:
 
 Get a list of Phone Instances
 
-
-
 Wraps GET /api/v2/telephony/providers/edges/phones 
 
 Requires ANY permissions: 
@@ -3360,7 +3240,7 @@ lines_default_for_user_id = 'lines_default_for_user_id_example' # str | Filter b
 phone_hardware_id = 'phone_hardware_id_example' # str | Filter by phone_hardwareId (optional)
 lines_id = 'lines_id_example' # str | Filter by lines.id (optional)
 lines_name = 'lines_name_example' # str | Filter by lines.name (optional)
-name = 'name_example' # str | Name of the Phone to filter by (optional)
+name = 'name_example' # str | Name of the Phone to filter by, comma-separated (optional)
 status_operational_status = 'status_operational_status_example' # str | The primary status to filter by (optional)
 secondary_status_operational_status = 'secondary_status_operational_status_example' # str | The secondary status to filter by (optional)
 expand = ['expand_example'] # list[str] | Fields to expand in the response, comma-separated (optional)
@@ -3391,7 +3271,7 @@ except ApiException as e:
 | **phone_hardware_id** | **str**| Filter by phone_hardwareId | [optional]  |
 | **lines_id** | **str**| Filter by lines.id | [optional]  |
 | **lines_name** | **str**| Filter by lines.name | [optional]  |
-| **name** | **str**| Name of the Phone to filter by | [optional]  |
+| **name** | **str**| Name of the Phone to filter by, comma-separated | [optional]  |
 | **status_operational_status** | **str**| The primary status to filter by | [optional]  |
 | **secondary_status_operational_status** | **str**| The secondary status to filter by | [optional]  |
 | **expand** | [**list[str]**](str.html)| Fields to expand in the response, comma-separated | [optional] <br />**Values**: properties, site, status, status.primaryEdgesStatus, status.secondaryEdgesStatus, phoneBaseSettings, lines |
@@ -3409,8 +3289,6 @@ except ApiException as e:
 
 
 Get a Phone instance template based on a Phone Base Settings object. This object can then be modified and saved as a new Phone instance
-
-
 
 Wraps GET /api/v2/telephony/providers/edges/phones/template 
 
@@ -3463,8 +3341,6 @@ Get physical interfaces for edges.
 
 Retrieves a list of all configured physical interfaces for a list of edges. Only 100 edges can be requested at a time.
 
-
-
 Wraps GET /api/v2/telephony/providers/edges/physicalinterfaces 
 
 Requires ANY permissions: 
@@ -3513,8 +3389,6 @@ except ApiException as e:
 
 
 Get a Site by ID.
-
-
 
 Wraps GET /api/v2/telephony/providers/edges/sites/{siteId} 
 
@@ -3565,8 +3439,6 @@ except ApiException as e:
 
 
 Get a Number Plan by ID.
-
-
 
 Wraps GET /api/v2/telephony/providers/edges/sites/{siteId}/numberplans/{numberPlanId} 
 
@@ -3619,8 +3491,6 @@ except ApiException as e:
 
 Get the list of Number Plans for this Site. Only fetches the first 200 records.
 
-
-
 Wraps GET /api/v2/telephony/providers/edges/sites/{siteId}/numberplans 
 
 Requires ANY permissions: 
@@ -3669,8 +3539,6 @@ except ApiException as e:
 
 
 Get a list of Classifications for this Site
-
-
 
 Wraps GET /api/v2/telephony/providers/edges/sites/{siteId}/numberplans/classifications 
 
@@ -3723,8 +3591,6 @@ except ApiException as e:
 
 Get an outbound route
 
-
-
 Wraps GET /api/v2/telephony/providers/edges/sites/{siteId}/outboundroutes/{outboundRouteId} 
 
 Requires ANY permissions: 
@@ -3775,8 +3641,6 @@ except ApiException as e:
 
 
 Get outbound routes
-
-
 
 Wraps GET /api/v2/telephony/providers/edges/sites/{siteId}/outboundroutes 
 
@@ -3836,8 +3700,6 @@ except ApiException as e:
 
 
 Get the list of Sites.
-
-
 
 Wraps GET /api/v2/telephony/providers/edges/sites 
 
@@ -3899,8 +3761,6 @@ except ApiException as e:
 
 Get a list of Edge-compatible time zones
 
-
-
 Wraps GET /api/v2/telephony/providers/edges/timezones 
 
 Requires no permissions
@@ -3951,8 +3811,6 @@ except ApiException as e:
 
 Get a Trunk by ID
 
-
-
 Wraps GET /api/v2/telephony/providers/edges/trunks/{trunkId} 
 
 Requires ANY permissions: 
@@ -4001,8 +3859,6 @@ except ApiException as e:
 
 
 Get the trunk metrics.
-
-
 
 Wraps GET /api/v2/telephony/providers/edges/trunks/{trunkId}/metrics 
 
@@ -4054,8 +3910,6 @@ except ApiException as e:
 Get a Trunk Base Settings object by ID
 
 Managed properties will not be returned unless the user is assigned the internal:trunk:edit permission.
-
-
 
 Wraps GET /api/v2/telephony/providers/edges/trunkbasesettings/{trunkBaseSettingsId} 
 
@@ -4109,8 +3963,6 @@ except ApiException as e:
 Get Trunk Base Settings listing
 
 Managed properties will not be returned unless the user is assigned the internal:trunk:edit permission.
-
-
 
 Wraps GET /api/v2/telephony/providers/edges/trunkbasesettings 
 
@@ -4177,8 +4029,6 @@ except ApiException as e:
 
 Get a list of available makes and models to create a new Trunk Base Settings
 
-
-
 Wraps GET /api/v2/telephony/providers/edges/trunkbasesettings/availablemetabases 
 
 Requires ANY permissions: 
@@ -4232,8 +4082,6 @@ except ApiException as e:
 
 Get a Trunk Base Settings instance template from a given make and model. This object can then be modified and saved as a new Trunk Base Settings instance
 
-
-
 Wraps GET /api/v2/telephony/providers/edges/trunkbasesettings/template 
 
 Requires ANY permissions: 
@@ -4284,8 +4132,6 @@ except ApiException as e:
 Get the list of available trunks.
 
 Trunks are created by assigning trunk base settings to an Edge or Edge Group.
-
-
 
 Wraps GET /api/v2/telephony/providers/edges/trunks 
 
@@ -4348,8 +4194,6 @@ except ApiException as e:
 
 Get the metrics for a list of trunks.
 
-
-
 Wraps GET /api/v2/telephony/providers/edges/trunks/metrics 
 
 Requires ANY permissions: 
@@ -4398,8 +4242,6 @@ except ApiException as e:
 
 
 Get Counts of trunks that have recording disabled or enabled
-
-
 
 Wraps GET /api/v2/telephony/providers/edges/trunkswithrecording 
 
@@ -4450,8 +4292,6 @@ except ApiException as e:
 
 
 Nslookup request command to collect networking-related information from an Edge for a target IP or host.
-
-
 
 Wraps POST /api/v2/telephony/providers/edges/{edgeId}/diagnostic/nslookup 
 
@@ -4504,8 +4344,6 @@ except ApiException as e:
 
 Ping Request command to collect networking-related information from an Edge for a target IP or host.
 
-
-
 Wraps POST /api/v2/telephony/providers/edges/{edgeId}/diagnostic/ping 
 
 Requires ANY permissions: 
@@ -4557,8 +4395,6 @@ except ApiException as e:
 
 Route request command to collect networking-related information from an Edge for a target IP or host.
 
-
-
 Wraps POST /api/v2/telephony/providers/edges/{edgeId}/diagnostic/route 
 
 Requires ANY permissions: 
@@ -4609,8 +4445,6 @@ except ApiException as e:
 
 
 Tracepath request command to collect networking-related information from an Edge for a target IP or host.
-
-
 
 Wraps POST /api/v2/telephony/providers/edges/{edgeId}/diagnostic/tracepath 
 
@@ -4665,8 +4499,6 @@ Create an edge logical interface.
 
 Create
 
-
-
 Wraps POST /api/v2/telephony/providers/edges/{edgeId}/logicalinterfaces 
 
 Requires ANY permissions: 
@@ -4717,8 +4549,6 @@ except ApiException as e:
 
 
 Request that the specified fileIds be uploaded from the Edge.
-
-
 
 Wraps POST /api/v2/telephony/providers/edges/{edgeId}/logs/jobs/{jobId}/upload 
 
@@ -4772,8 +4602,6 @@ void (empty response body)
 
 Create a job to upload a list of Edge logs.
 
-
-
 Wraps POST /api/v2/telephony/providers/edges/{edgeId}/logs/jobs 
 
 Requires ANY permissions: 
@@ -4824,8 +4652,6 @@ except ApiException as e:
 
 
 Reboot an Edge
-
-
 
 Wraps POST /api/v2/telephony/providers/edges/{edgeId}/reboot 
 
@@ -4878,8 +4704,6 @@ except ApiException as e:
 
 Starts a software update for this edge.
 
-
-
 Wraps POST /api/v2/telephony/providers/edges/{edgeId}/softwareupdate 
 
 Requires no permissions
@@ -4929,8 +4753,6 @@ except ApiException as e:
 
 
 Take an Edge in or out of service
-
-
 
 Wraps POST /api/v2/telephony/providers/edges/{edgeId}/statuscode 
 
@@ -4983,8 +4805,6 @@ except ApiException as e:
 
 Unpair an Edge
 
-
-
 Wraps POST /api/v2/telephony/providers/edges/{edgeId}/unpair 
 
 Requires ANY permissions: 
@@ -5033,8 +4853,6 @@ except ApiException as e:
 
 
 Create an edge.
-
-
 
 Wraps POST /api/v2/telephony/providers/edges 
 
@@ -5085,8 +4903,6 @@ except ApiException as e:
 
 Validates a street address
 
-
-
 Wraps POST /api/v2/telephony/providers/edges/addressvalidation 
 
 Requires no permissions
@@ -5134,8 +4950,6 @@ except ApiException as e:
 
 
 Create a certificate authority.
-
-
 
 Wraps POST /api/v2/telephony/providers/edges/certificateauthorities 
 
@@ -5186,8 +5000,6 @@ except ApiException as e:
 
 Create a new DID pool
 
-
-
 Wraps POST /api/v2/telephony/providers/edges/didpools 
 
 Requires ANY permissions: 
@@ -5236,8 +5048,6 @@ except ApiException as e:
 
 
 Create an edge group.
-
-
 
 Wraps POST /api/v2/telephony/providers/edges/edgegroups 
 
@@ -5288,8 +5098,6 @@ except ApiException as e:
 
 Create a new extension pool
 
-
-
 Wraps POST /api/v2/telephony/providers/edges/extensionpools 
 
 Requires ALL permissions: 
@@ -5339,8 +5147,6 @@ except ApiException as e:
 
 Reboot a Phone
 
-
-
 Wraps POST /api/v2/telephony/providers/edges/phones/{phoneId}/reboot 
 
 Requires ANY permissions: 
@@ -5388,8 +5194,6 @@ void (empty response body)
 
 
 Create a new Phone Base Settings object
-
-
 
 Wraps POST /api/v2/telephony/providers/edges/phonebasesettings 
 
@@ -5440,8 +5244,6 @@ except ApiException as e:
 
 Create a new Phone
 
-
-
 Wraps POST /api/v2/telephony/providers/edges/phones 
 
 Requires ANY permissions: 
@@ -5491,8 +5293,6 @@ except ApiException as e:
 
 Reboot Multiple Phones
 
-
-
 Wraps POST /api/v2/telephony/providers/edges/phones/reboot 
 
 Requires ANY permissions: 
@@ -5540,8 +5340,6 @@ void (empty response body)
 
 
 Create outbound route
-
-
 
 Wraps POST /api/v2/telephony/providers/edges/sites/{siteId}/outboundroutes 
 
@@ -5594,8 +5392,6 @@ except ApiException as e:
 
 Create a Site.
 
-
-
 Wraps POST /api/v2/telephony/providers/edges/sites 
 
 Requires ANY permissions: 
@@ -5645,8 +5441,6 @@ except ApiException as e:
 
 Create a Trunk Base Settings object
 
-
-
 Wraps POST /api/v2/telephony/providers/edges/trunkbasesettings 
 
 Requires ANY permissions: 
@@ -5695,8 +5489,6 @@ except ApiException as e:
 
 
 Update a edge.
-
-
 
 Wraps PUT /api/v2/telephony/providers/edges/{edgeId} 
 
@@ -5748,8 +5540,6 @@ except ApiException as e:
 
 
 Update an edge logical interface.
-
-
 
 Wraps PUT /api/v2/telephony/providers/edges/{edgeId}/logicalinterfaces/{interfaceId} 
 
@@ -5804,8 +5594,6 @@ except ApiException as e:
 
 Update a certificate authority.
 
-
-
 Wraps PUT /api/v2/telephony/providers/edges/certificateauthorities/{certificateId} 
 
 Requires ANY permissions: 
@@ -5856,8 +5644,6 @@ except ApiException as e:
 
 
 Update a DID Pool by ID.
-
-
 
 Wraps PUT /api/v2/telephony/providers/edges/didpools/{didPoolId} 
 
@@ -5910,8 +5696,6 @@ except ApiException as e:
 
 Update an edge group.
 
-
-
 Wraps PUT /api/v2/telephony/providers/edges/edgegroups/{edgeGroupId} 
 
 Requires ANY permissions: 
@@ -5962,8 +5746,6 @@ except ApiException as e:
 
 
 Update the edge trunk base associated with the edge group
-
-
 
 Wraps PUT /api/v2/telephony/providers/edges/edgegroups/{edgegroupId}/edgetrunkbases/{edgetrunkbaseId} 
 
@@ -6018,8 +5800,6 @@ except ApiException as e:
 
 Update an extension pool by ID
 
-
-
 Wraps PUT /api/v2/telephony/providers/edges/extensionpools/{extensionPoolId} 
 
 Requires ALL permissions: 
@@ -6070,8 +5850,6 @@ except ApiException as e:
 
 
 Update a Phone by ID
-
-
 
 Wraps PUT /api/v2/telephony/providers/edges/phones/{phoneId} 
 
@@ -6124,8 +5902,6 @@ except ApiException as e:
 
 Update a Phone Base Settings by ID
 
-
-
 Wraps PUT /api/v2/telephony/providers/edges/phonebasesettings/{phoneBaseId} 
 
 Requires ANY permissions: 
@@ -6176,8 +5952,6 @@ except ApiException as e:
 
 
 Update a Site by ID.
-
-
 
 Wraps PUT /api/v2/telephony/providers/edges/sites/{siteId} 
 
@@ -6230,8 +6004,6 @@ except ApiException as e:
 
 Update the list of Number Plans. A user can update maximum 200 number plans at a time.
 
-
-
 Wraps PUT /api/v2/telephony/providers/edges/sites/{siteId}/numberplans 
 
 Requires ANY permissions: 
@@ -6282,8 +6054,6 @@ except ApiException as e:
 
 
 Update outbound route
-
-
 
 Wraps PUT /api/v2/telephony/providers/edges/sites/{siteId}/outboundroutes/{outboundRouteId} 
 
@@ -6337,8 +6107,6 @@ except ApiException as e:
 
 
 Update a Trunk Base Settings object by ID
-
-
 
 Wraps PUT /api/v2/telephony/providers/edges/trunkbasesettings/{trunkBaseSettingsId} 
 

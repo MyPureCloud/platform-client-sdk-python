@@ -24,8 +24,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 Creates a presigned URL for uploading a knowledge import file with a set of documents
 
-
-
 Wraps POST /api/v2/knowledge/documentuploads 
 
 Requires ALL permissions: 
@@ -74,8 +72,6 @@ except ApiException as e:
 
 
 Creates a presigned URL for uploading a chat corpus which will be used for mining by intent miner
-
-
 
 Wraps POST /api/v2/languageunderstanding/miners/{minerId}/uploads 
 
@@ -128,8 +124,6 @@ except ApiException as e:
 
 Generates pre-signed URL to upload cover art for learning modules
 
-
-
 Wraps POST /api/v2/uploads/learning/coverart 
 
 Requires ALL permissions: 
@@ -178,8 +172,6 @@ except ApiException as e:
 
 
 Creates presigned url for uploading a public asset image
-
-
 
 Wraps POST /api/v2/uploads/publicassets/images 
 
@@ -230,8 +222,6 @@ except ApiException as e:
 
 Creates presigned url for uploading a recording file
 
-
-
 Wraps POST /api/v2/uploads/recordings 
 
 Requires ALL permissions: 
@@ -280,8 +270,6 @@ except ApiException as e:
 
 
 Creates presigned url for uploading WFM historical data file. Requires data in csv format.
-
-
 
 Wraps POST /api/v2/uploads/workforcemanagement/historicaldata/csv 
 

@@ -74,7 +74,6 @@ from ..models import PatchSegment
 from ..models import SegmentAssignmentListing
 from ..models import SegmentListing
 from ..models import Session
-from ..models import SessionListing
 
 class JourneyApi(object):
     """
@@ -485,11 +484,11 @@ class JourneyApi(object):
                                             callback=params.get('callback'))
         return response
 
-	# Preview Endpoint
     def get_analytics_journeys_aggregates_job(self, job_id: str, **kwargs) -> 'AsyncQueryStatus':
         """
         Get status for async query for journey aggregates
         
+	    get_analytics_journeys_aggregates_job is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -564,11 +563,11 @@ class JourneyApi(object):
                                             callback=params.get('callback'))
         return response
 
-	# Preview Endpoint
     def get_analytics_journeys_aggregates_job_results(self, job_id: str, **kwargs) -> 'JourneyAsyncAggregateQueryResponse':
         """
         Fetch a page of results for an async aggregates query
         
+	    get_analytics_journeys_aggregates_job_results is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -1303,97 +1302,6 @@ class JourneyApi(object):
                                             callback=params.get('callback'))
         return response
 
-	# Preview Endpoint
-    def get_journey_customer_customer_id_sessions(self, customer_id_type: str, customer_id: str, **kwargs) -> 'SessionListing':
-        """
-        Retrieve all sessions for a given customer.
-        
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.get_journey_customer_customer_id_sessions(customer_id_type, customer_id, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param str customer_id_type: Type of ID used to identify customer (e.g. email, cookie, and phone). (required)
-        :param str customer_id: Primary identifier of the customer in the source of the session. (required)
-        :param str page_size: Number of entities to return. Maximum of 200.
-        :param str after: The cursor that points to the end of the set of entities that has been returned.
-        :return: SessionListing
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['customer_id_type', 'customer_id', 'page_size', 'after']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_journey_customer_customer_id_sessions" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        # verify the required parameter 'customer_id_type' is set
-        if ('customer_id_type' not in params) or (params['customer_id_type'] is None):
-            raise ValueError("Missing the required parameter `customer_id_type` when calling `get_journey_customer_customer_id_sessions`")
-        # verify the required parameter 'customer_id' is set
-        if ('customer_id' not in params) or (params['customer_id'] is None):
-            raise ValueError("Missing the required parameter `customer_id` when calling `get_journey_customer_customer_id_sessions`")
-
-
-        resource_path = '/api/v2/journey/customers/{customerIdType}/{customerId}/sessions'.replace('{format}', 'json')
-        path_params = {}
-        if 'customer_id_type' in params:
-            path_params['customerIdType'] = params['customer_id_type']
-        if 'customer_id' in params:
-            path_params['customerId'] = params['customer_id']
-
-        query_params = {}
-        if 'page_size' in params:
-            query_params['pageSize'] = params['page_size']
-        if 'after' in params:
-            query_params['after'] = params['after']
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/json'])
-
-        # Authentication setting
-        auth_settings = ['PureCloud OAuth']
-
-        response = self.api_client.call_api(resource_path, 'GET',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type='SessionListing',
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
     def get_journey_outcome(self, outcome_id: str, **kwargs) -> 'Outcome':
         """
         Retrieve a single outcome.
@@ -1562,11 +1470,11 @@ class JourneyApi(object):
                                             callback=params.get('callback'))
         return response
 
-	# Preview Endpoint
     def get_journey_outcomes_attributions_job(self, job_id: str, **kwargs) -> 'OutcomeAttributionJobStateResponse':
         """
         Get job status.
         
+	    get_journey_outcomes_attributions_job is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -1641,11 +1549,11 @@ class JourneyApi(object):
                                             callback=params.get('callback'))
         return response
 
-	# Preview Endpoint
     def get_journey_outcomes_attributions_job_results(self, job_id: str, **kwargs) -> 'OutcomeAttributionResponseListing':
         """
         Get outcome attribution entities from completed job.
         
+	    get_journey_outcomes_attributions_job_results is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -2119,11 +2027,11 @@ class JourneyApi(object):
                                             callback=params.get('callback'))
         return response
 
-	# Preview Endpoint
     def get_journey_session_events(self, session_id: str, **kwargs) -> 'EventListing':
         """
         Retrieve all events for a given session.
         
+	    get_journey_session_events is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -2282,11 +2190,11 @@ class JourneyApi(object):
                                             callback=params.get('callback'))
         return response
 
-	# Preview Endpoint
     def get_journey_session_segments(self, session_id: str, **kwargs) -> 'SegmentAssignmentListing':
         """
         Retrieve segment assignments by session ID.
         
+	    get_journey_session_segments is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -2778,11 +2686,11 @@ class JourneyApi(object):
                                             callback=params.get('callback'))
         return response
 
-	# Preview Endpoint
     def post_analytics_journeys_aggregates_jobs(self, body: 'JourneyAsyncAggregationQuery', **kwargs) -> 'AsyncQueryResponse':
         """
         Query for journey aggregates asynchronously
         
+	    post_analytics_journeys_aggregates_jobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -3238,11 +3146,11 @@ class JourneyApi(object):
                                             callback=params.get('callback'))
         return response
 
-	# Preview Endpoint
     def post_journey_outcomes_attributions_jobs(self, **kwargs) -> 'OutcomeAttributionAsyncResponse':
         """
         Create Outcome Attributions
         
+	    post_journey_outcomes_attributions_jobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

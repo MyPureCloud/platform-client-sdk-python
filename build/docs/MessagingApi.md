@@ -25,8 +25,6 @@ Delete a supported content profile
 
 Deprecated - use DELETE /api/v2/conversations/messaging/supportedcontent/{supportedContentId} as replacement
 
-
-
 Wraps DELETE /api/v2/messaging/supportedcontent/{supportedContentId} 
 
 Requires ALL permissions: 
@@ -76,8 +74,6 @@ void (empty response body)
 Get a list of Supported Content profiles
 
 Deprecated - use GET /api/v2/conversations/messaging/supportedcontent as replacement
-
-
 
 Wraps GET /api/v2/messaging/supportedcontent 
 
@@ -132,8 +128,6 @@ Get a supported content profile
 
 Deprecated - use GET /api/v2/conversations/messaging/supportedcontent/{supportedContentId} as replacement
 
-
-
 Wraps GET /api/v2/messaging/supportedcontent/{supportedContentId} 
 
 Requires ALL permissions: 
@@ -184,8 +178,6 @@ except ApiException as e:
 Update a supported content profile
 
 Deprecated - use PATCH /api/v2/conversations/messaging/supportedcontent/{supportedContentId} as replacement
-
-
 
 Wraps PATCH /api/v2/messaging/supportedcontent/{supportedContentId} 
 
@@ -239,8 +231,6 @@ except ApiException as e:
 Create a Supported Content profile
 
 Deprecated - use POST /api/v2/conversations/messaging/supportedcontent as replacement
-
-
 
 Wraps POST /api/v2/messaging/supportedcontent 
 

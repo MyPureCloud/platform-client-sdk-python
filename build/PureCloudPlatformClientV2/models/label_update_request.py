@@ -51,6 +51,7 @@ class LabelUpdateRequest(object):
             'id': 'str',
             'name': 'str',
             'color': 'str',
+            'external_id': 'str',
             'self_uri': 'str'
         }
 
@@ -58,12 +59,14 @@ class LabelUpdateRequest(object):
             'id': 'id',
             'name': 'name',
             'color': 'color',
+            'external_id': 'externalId',
             'self_uri': 'selfUri'
         }
 
         self._id = None
         self._name = None
         self._color = None
+        self._external_id = None
         self._self_uri = None
 
     @property
@@ -137,6 +140,30 @@ class LabelUpdateRequest(object):
         
 
         self._color = color
+
+    @property
+    def external_id(self) -> str:
+        """
+        Gets the external_id of this LabelUpdateRequest.
+        The external id associated with the label.
+
+        :return: The external_id of this LabelUpdateRequest.
+        :rtype: str
+        """
+        return self._external_id
+
+    @external_id.setter
+    def external_id(self, external_id: str) -> None:
+        """
+        Sets the external_id of this LabelUpdateRequest.
+        The external id associated with the label.
+
+        :param external_id: The external_id of this LabelUpdateRequest.
+        :type: str
+        """
+        
+
+        self._external_id = external_id
 
     @property
     def self_uri(self) -> str:

@@ -280,11 +280,11 @@ class TokensApi(object):
                                             callback=params.get('callback'))
         return response
 
-	# Preview Endpoint
     def get_tokens_timeout(self, **kwargs) -> 'IdleTokenTimeout':
         """
         Get the current Idle Token Timeout Value
         
+	    get_tokens_timeout is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -425,11 +425,11 @@ class TokensApi(object):
                                             callback=params.get('callback'))
         return response
 
-	# Preview Endpoint
     def put_tokens_timeout(self, **kwargs) -> 'IdleTokenTimeout':
         """
         Update or Enable/Disable the Idle Token Timeout
         
+	    put_tokens_timeout is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

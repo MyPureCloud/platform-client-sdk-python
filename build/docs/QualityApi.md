@@ -79,8 +79,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 Delete a calibration by id.
 
-
-
 Wraps DELETE /api/v2/quality/calibrations/{calibrationId} 
 
 Requires ANY permissions: 
@@ -131,8 +129,6 @@ except ApiException as e:
 
 
 Delete an evaluation
-
-
 
 Wraps DELETE /api/v2/quality/conversations/{conversationId}/evaluations/{evaluationId} 
 
@@ -187,8 +183,6 @@ except ApiException as e:
 
 Delete an evaluation form.
 
-
-
 Wraps DELETE /api/v2/quality/forms/{formId} 
 
 Requires ANY permissions: 
@@ -236,8 +230,6 @@ void (empty response body)
 
 
 Delete an evaluation form.
-
-
 
 Wraps DELETE /api/v2/quality/forms/evaluations/{formId} 
 
@@ -287,8 +279,6 @@ void (empty response body)
 
 Delete a survey form.
 
-
-
 Wraps DELETE /api/v2/quality/forms/surveys/{formId} 
 
 Requires ALL permissions: 
@@ -337,7 +327,7 @@ void (empty response body)
 
 Get status for async query for evaluation aggregates
 
-
+get_analytics_evaluations_aggregates_job is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/analytics/evaluations/aggregates/jobs/{jobId} 
 
@@ -388,7 +378,7 @@ except ApiException as e:
 
 Fetch a page of results for an async aggregates query
 
-
+get_analytics_evaluations_aggregates_job_results is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/analytics/evaluations/aggregates/jobs/{jobId}/results 
 
@@ -441,7 +431,7 @@ except ApiException as e:
 
 Get status for async query for survey aggregates
 
-
+get_analytics_surveys_aggregates_job is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/analytics/surveys/aggregates/jobs/{jobId} 
 
@@ -492,7 +482,7 @@ except ApiException as e:
 
 Fetch a page of results for an async aggregates query
 
-
+get_analytics_surveys_aggregates_job_results is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/analytics/surveys/aggregates/jobs/{jobId}/results 
 
@@ -546,8 +536,6 @@ except ApiException as e:
 Gets a list of Agent Activities
 
 Each item on the list shows one agent's evaluation activity comprised of the number of evaluations and the highest, average, and lowest standard and critical scores, as well as a sub list showing the number and average score of evaluations for each evaluator for that agent.  evaluatorUserId, startTime, and endTime are all filtering criteria. If specified, the only evaluations used to compile the agent activity response will be ones that match the filtering criteria. agentUserId, name, group, and agentTeamId are all agent selection criteria. criteria.  If one or more agent selection criteria are specified, then the returned activity will include users that match the criteria even if those users did not have any agent activity or evaluations that do not match any filtering criteria.  If no agent selection criteria are specified but an evaluatorUserId is, then the returned activity will be only for those agents that had evaluations where the evaluator is the evaluatorUserId.  If no agent selection criteria are specified and no evaluatorUserId is specified, then the returned activity will be for all users
-
-
 
 Wraps GET /api/v2/quality/agents/activity 
 
@@ -620,8 +608,6 @@ except ApiException as e:
 
 Get a calibration by id.  Requires either calibrator id or conversation id
 
-
-
 Wraps GET /api/v2/quality/calibrations/{calibrationId} 
 
 Requires ANY permissions: 
@@ -674,8 +660,6 @@ except ApiException as e:
 
 
 Get the list of calibrations
-
-
 
 Wraps GET /api/v2/quality/calibrations 
 
@@ -744,8 +728,6 @@ except ApiException as e:
 
 Get an evaluation
 
-
-
 Wraps GET /api/v2/quality/conversations/{conversationId}/evaluations/{evaluationId} 
 
 Requires ANY permissions: 
@@ -801,8 +783,6 @@ except ApiException as e:
 
 Get the surveys for a conversation
 
-
-
 Wraps GET /api/v2/quality/conversations/{conversationId}/surveys 
 
 Requires ANY permissions: 
@@ -852,8 +832,6 @@ except ApiException as e:
 
 Get status of audit query execution
 
-
-
 Wraps GET /api/v2/quality/conversations/audits/query/{transactionId} 
 
 Requires ALL permissions: 
@@ -902,8 +880,6 @@ except ApiException as e:
 
 
 Get results of audit query
-
-
 
 Wraps GET /api/v2/quality/conversations/audits/query/{transactionId}/results 
 
@@ -961,8 +937,6 @@ except ApiException as e:
 Queries Evaluations and returns a paged list
 
 Query params must include one of conversationId, evaluatorUserId, agentUserId or assigneeUserId. When querying by agentUserId (and not conversationId or evaluatorUserId), the results are sorted by release date. Evaluations set to 'Never Release' are omitted in this case. When querying by evaluatorUserId or conversationId (including when combined with agentUserId), the results are sorted by assigned date.
-
-
 
 Wraps GET /api/v2/quality/evaluations/query 
 
@@ -1049,8 +1023,6 @@ except ApiException as e:
 
 Get an evaluator activity
 
-
-
 Wraps GET /api/v2/quality/evaluators/activity 
 
 Requires ANY permissions: 
@@ -1120,8 +1092,6 @@ except ApiException as e:
 
 Get an evaluation form
 
-
-
 Wraps GET /api/v2/quality/forms/{formId} 
 
 Requires ANY permissions: 
@@ -1170,8 +1140,6 @@ except ApiException as e:
 <span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 Gets all the revisions for a specific evaluation.
-
-
 
 Wraps GET /api/v2/quality/forms/{formId}/versions 
 
@@ -1225,8 +1193,6 @@ except ApiException as e:
 <span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 Get the list of evaluation forms
-
-
 
 Wraps GET /api/v2/quality/forms 
 
@@ -1291,8 +1257,6 @@ except ApiException as e:
 
 Get an evaluation form
 
-
-
 Wraps GET /api/v2/quality/forms/evaluations/{formId} 
 
 Requires ANY permissions: 
@@ -1341,8 +1305,6 @@ except ApiException as e:
 
 
 Gets all the revisions for a specific evaluation.
-
-
 
 Wraps GET /api/v2/quality/forms/evaluations/{formId}/versions 
 
@@ -1398,8 +1360,6 @@ except ApiException as e:
 
 
 Get the list of evaluation forms
-
-
 
 Wraps GET /api/v2/quality/forms/evaluations 
 
@@ -1464,8 +1424,6 @@ except ApiException as e:
 
 Retrieve a list of the latest published evaluation form versions by context ids
 
-
-
 Wraps GET /api/v2/quality/forms/evaluations/bulk/contexts 
 
 Requires ALL permissions: 
@@ -1515,8 +1473,6 @@ except ApiException as e:
 
 Get a survey form
 
-
-
 Wraps GET /api/v2/quality/forms/surveys/{formId} 
 
 Requires ALL permissions: 
@@ -1565,8 +1521,6 @@ except ApiException as e:
 
 
 Gets all the revisions for a specific survey.
-
-
 
 Wraps GET /api/v2/quality/forms/surveys/{formId}/versions 
 
@@ -1620,8 +1574,6 @@ except ApiException as e:
 
 
 Get the list of survey forms
-
-
 
 Wraps GET /api/v2/quality/forms/surveys 
 
@@ -1686,8 +1638,6 @@ except ApiException as e:
 
 Retrieve a list of survey forms by their ids
 
-
-
 Wraps GET /api/v2/quality/forms/surveys/bulk 
 
 Requires ALL permissions: 
@@ -1736,8 +1686,6 @@ except ApiException as e:
 
 
 Retrieve a list of the latest form versions by context ids
-
-
 
 Wraps GET /api/v2/quality/forms/surveys/bulk/contexts 
 
@@ -1790,8 +1738,6 @@ except ApiException as e:
 
 Get the published evaluation forms.
 
-
-
 Wraps GET /api/v2/quality/publishedforms/{formId} 
 
 Requires ANY permissions: 
@@ -1840,8 +1786,6 @@ except ApiException as e:
 <span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 Get the published evaluation forms.
-
-
 
 Wraps GET /api/v2/quality/publishedforms 
 
@@ -1898,8 +1842,6 @@ except ApiException as e:
 
 Get the most recent published version of an evaluation form.
 
-
-
 Wraps GET /api/v2/quality/publishedforms/evaluations/{formId} 
 
 Requires ANY permissions: 
@@ -1948,8 +1890,6 @@ except ApiException as e:
 
 
 Get the published evaluation forms.
-
-
 
 Wraps GET /api/v2/quality/publishedforms/evaluations 
 
@@ -2006,8 +1946,6 @@ except ApiException as e:
 
 Get the most recent published version of a survey form.
 
-
-
 Wraps GET /api/v2/quality/publishedforms/surveys/{formId} 
 
 Requires ALL permissions: 
@@ -2056,8 +1994,6 @@ except ApiException as e:
 
 
 Get the published survey forms.
-
-
 
 Wraps GET /api/v2/quality/publishedforms/surveys 
 
@@ -2114,8 +2050,6 @@ except ApiException as e:
 
 Get a survey for a conversation
 
-
-
 Wraps GET /api/v2/quality/surveys/{surveyId} 
 
 Requires ANY permissions: 
@@ -2165,8 +2099,6 @@ except ApiException as e:
 
 Get a survey as an end-customer, for the purposes of scoring it.
 
-
-
 Wraps GET /api/v2/quality/surveys/scorable 
 
 Requires no permissions
@@ -2211,8 +2143,6 @@ except ApiException as e:
 
 
 Disable a particular version of a survey form and invalidates any invitations that have already been sent to customers using this version of the form.
-
-
 
 Wraps PATCH /api/v2/quality/forms/surveys/{formId} 
 
@@ -2265,7 +2195,7 @@ except ApiException as e:
 
 Query for evaluation aggregates asynchronously
 
-
+post_analytics_evaluations_aggregates_jobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/analytics/evaluations/aggregates/jobs 
 
@@ -2316,8 +2246,6 @@ except ApiException as e:
 
 Query for evaluation aggregates
 
-
-
 Wraps POST /api/v2/analytics/evaluations/aggregates/query 
 
 Requires ANY permissions: 
@@ -2367,7 +2295,7 @@ except ApiException as e:
 
 Query for survey aggregates asynchronously
 
-
+post_analytics_surveys_aggregates_jobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/analytics/surveys/aggregates/jobs 
 
@@ -2418,8 +2346,6 @@ except ApiException as e:
 
 Query for survey aggregates
 
-
-
 Wraps POST /api/v2/analytics/surveys/aggregates/query 
 
 Requires ANY permissions: 
@@ -2468,8 +2394,6 @@ except ApiException as e:
 
 
 Create a calibration
-
-
 
 Wraps POST /api/v2/quality/calibrations 
 
@@ -2521,8 +2445,6 @@ except ApiException as e:
 
 
 Create an evaluation
-
-
 
 Wraps POST /api/v2/quality/conversations/{conversationId}/evaluations 
 
@@ -2577,8 +2499,6 @@ except ApiException as e:
 
 Create audit query execution
 
-
-
 Wraps POST /api/v2/quality/conversations/audits/query 
 
 Requires ALL permissions: 
@@ -2628,8 +2548,6 @@ except ApiException as e:
 
 Query for evaluation aggregates for the current user
 
-
-
 Wraps POST /api/v2/quality/evaluations/aggregates/query/me 
 
 Requires no permissions
@@ -2678,8 +2596,6 @@ except ApiException as e:
 
 Score evaluation
 
-
-
 Wraps POST /api/v2/quality/evaluations/scoring 
 
 Requires no permissions
@@ -2727,8 +2643,6 @@ except ApiException as e:
 <span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 Create an evaluation form.
-
-
 
 Wraps POST /api/v2/quality/forms 
 
@@ -2779,8 +2693,6 @@ except ApiException as e:
 
 Create an evaluation form.
 
-
-
 Wraps POST /api/v2/quality/forms/evaluations 
 
 Requires ANY permissions: 
@@ -2829,8 +2741,6 @@ except ApiException as e:
 
 
 Create a survey form.
-
-
 
 Wraps POST /api/v2/quality/forms/surveys 
 
@@ -2881,8 +2791,6 @@ except ApiException as e:
 
 Publish an evaluation form.
 
-
-
 Wraps POST /api/v2/quality/publishedforms 
 
 Requires ANY permissions: 
@@ -2931,8 +2839,6 @@ except ApiException as e:
 
 
 Publish an evaluation form.
-
-
 
 Wraps POST /api/v2/quality/publishedforms/evaluations 
 
@@ -2983,8 +2889,6 @@ except ApiException as e:
 
 Publish a survey form.
 
-
-
 Wraps POST /api/v2/quality/publishedforms/surveys 
 
 Requires ALL permissions: 
@@ -3034,8 +2938,6 @@ except ApiException as e:
 
 Score survey
 
-
-
 Wraps POST /api/v2/quality/surveys/scoring 
 
 Requires no permissions
@@ -3083,8 +2985,6 @@ except ApiException as e:
 
 
 Update a calibration to the specified calibration via PUT.  Editable fields include: evaluators, expertEvaluator, and scoringIndex
-
-
 
 Wraps PUT /api/v2/quality/calibrations/{calibrationId} 
 
@@ -3138,8 +3038,6 @@ except ApiException as e:
 Update an evaluation
 
 The quality:evaluation:edit permission allows modification of most fields, while the quality:evaluation:editScore permission allows an evaluator to change just the question scores, and the quality:evaluation:editAgentSignoff permission allows an agent to change the agent comments and sign off on the evaluation.
-
-
 
 Wraps PUT /api/v2/quality/conversations/{conversationId}/evaluations/{evaluationId} 
 
@@ -3198,8 +3096,6 @@ except ApiException as e:
 
 Update an evaluation form.
 
-
-
 Wraps PUT /api/v2/quality/forms/{formId} 
 
 Requires ANY permissions: 
@@ -3250,8 +3146,6 @@ except ApiException as e:
 
 
 Update an evaluation form.
-
-
 
 Wraps PUT /api/v2/quality/forms/evaluations/{formId} 
 
@@ -3304,8 +3198,6 @@ except ApiException as e:
 
 Update a survey form.
 
-
-
 Wraps PUT /api/v2/quality/forms/surveys/{formId} 
 
 Requires ALL permissions: 
@@ -3356,8 +3248,6 @@ except ApiException as e:
 
 
 Update a survey as an end-customer, for the purposes of scoring it.
-
-
 
 Wraps PUT /api/v2/quality/surveys/scorable 
 

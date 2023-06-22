@@ -90,11 +90,11 @@ class TaskManagementApi(object):
                 config.api_client = ApiClient()
             self.api_client = config.api_client
 
-	# Preview Endpoint
     def delete_taskmanagement_workbin(self, workbin_id: str, **kwargs) -> None:
         """
         Delete a workbin
         
+	    delete_taskmanagement_workbin is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -169,11 +169,11 @@ class TaskManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-	# Preview Endpoint
     def delete_taskmanagement_workitem(self, workitem_id: str, **kwargs) -> None:
         """
         Delete a workitem
         
+	    delete_taskmanagement_workitem is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -248,11 +248,11 @@ class TaskManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-	# Preview Endpoint
     def delete_taskmanagement_workitems_schema(self, schema_id: str, **kwargs) -> None:
         """
         Delete a schema
         
+	    delete_taskmanagement_workitems_schema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -327,11 +327,11 @@ class TaskManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-	# Preview Endpoint
     def delete_taskmanagement_worktype(self, worktype_id: str, **kwargs) -> None:
         """
         Delete a worktype
         
+	    delete_taskmanagement_worktype is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -406,11 +406,11 @@ class TaskManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-	# Preview Endpoint
     def delete_taskmanagement_worktype_status(self, worktype_id: str, status_id: str, **kwargs) -> None:
         """
         Delete a status
         
+	    delete_taskmanagement_worktype_status is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -491,11 +491,11 @@ class TaskManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-	# Preview Endpoint
     def get_taskmanagement_workbin(self, workbin_id: str, **kwargs) -> 'Workbin':
         """
         Get a workbin
         
+	    get_taskmanagement_workbin is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -570,11 +570,11 @@ class TaskManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-	# Preview Endpoint
     def get_taskmanagement_workbin_history(self, workbin_id: str, **kwargs) -> 'WorkbinChangeListing':
         """
         Get a listing of a workbin's attribute change history
         
+	    get_taskmanagement_workbin_history is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -658,11 +658,11 @@ class TaskManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-	# Preview Endpoint
     def get_taskmanagement_workbin_version(self, workbin_id: str, entity_version: int, **kwargs) -> 'WorkbinVersion':
         """
         Get a version of a workbin
         
+	    get_taskmanagement_workbin_version is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -743,11 +743,11 @@ class TaskManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-	# Preview Endpoint
     def get_taskmanagement_workbin_versions(self, workbin_id: str, **kwargs) -> 'WorkbinVersionListing':
         """
         Get all versions of a workbin
         
+	    get_taskmanagement_workbin_versions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -831,11 +831,11 @@ class TaskManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-	# Preview Endpoint
     def get_taskmanagement_workitem(self, workitem_id: str, **kwargs) -> 'Workitem':
         """
         Get a workitem
         
+	    get_taskmanagement_workitem is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -848,12 +848,13 @@ class TaskManagementApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str workitem_id: Workitem ID (required)
+        :param str expands: Which fields to expand. Comma separated if more than one.
         :return: Workitem
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['workitem_id']
+        all_params = ['workitem_id', 'expands']
         all_params.append('callback')
 
         params = locals()
@@ -877,6 +878,8 @@ class TaskManagementApi(object):
             path_params['workitemId'] = params['workitem_id']
 
         query_params = {}
+        if 'expands' in params:
+            query_params['expands'] = params['expands']
 
         header_params = {}
 
@@ -910,11 +913,11 @@ class TaskManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-	# Preview Endpoint
     def get_taskmanagement_workitem_history(self, workitem_id: str, **kwargs) -> 'WorkitemChangeListing':
         """
         Get a listing of a workitem's attribute change history
         
+	    get_taskmanagement_workitem_history is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -998,11 +1001,11 @@ class TaskManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-	# Preview Endpoint
     def get_taskmanagement_workitem_user_wrapups(self, workitem_id: str, user_id: str, **kwargs) -> 'WorkitemWrapup':
         """
         Get all wrapup codes added for the given user for a workitem.
         
+	    get_taskmanagement_workitem_user_wrapups is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -1095,11 +1098,11 @@ class TaskManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-	# Preview Endpoint
     def get_taskmanagement_workitem_version(self, workitem_id: str, entity_version: int, **kwargs) -> 'WorkitemVersion':
         """
         Get a version of a workitem
         
+	    get_taskmanagement_workitem_version is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -1180,11 +1183,11 @@ class TaskManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-	# Preview Endpoint
     def get_taskmanagement_workitem_versions(self, workitem_id: str, **kwargs) -> 'WorkitemVersionListing':
         """
         Get all versions of a workitem
         
+	    get_taskmanagement_workitem_versions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -1268,11 +1271,11 @@ class TaskManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-	# Preview Endpoint
     def get_taskmanagement_workitem_wrapups(self, workitem_id: str, **kwargs) -> 'WorkitemWrapupEntityListing':
         """
         Get all wrapup codes added for all users for a workitem.
         
+	    get_taskmanagement_workitem_wrapups is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -1359,11 +1362,11 @@ class TaskManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-	# Preview Endpoint
     def get_taskmanagement_workitems_schema(self, schema_id: str, **kwargs) -> 'DataSchema':
         """
         Get a schema
         
+	    get_taskmanagement_workitems_schema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -1438,11 +1441,11 @@ class TaskManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-	# Preview Endpoint
     def get_taskmanagement_workitems_schema_version(self, schema_id: str, version_id: str, **kwargs) -> 'DataSchema':
         """
         Get a specific version of a schema
         
+	    get_taskmanagement_workitems_schema_version is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -1523,11 +1526,11 @@ class TaskManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-	# Preview Endpoint
     def get_taskmanagement_workitems_schema_versions(self, schema_id: str, **kwargs) -> 'DataSchema':
         """
         Get all versions of a schema
         
+	    get_taskmanagement_workitems_schema_versions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -1602,11 +1605,11 @@ class TaskManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-	# Preview Endpoint
     def get_taskmanagement_workitems_schemas(self, **kwargs) -> 'DataSchemaListing':
         """
         Get a list of schemas.
         
+	    get_taskmanagement_workitems_schemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -1675,11 +1678,11 @@ class TaskManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-	# Preview Endpoint
     def get_taskmanagement_worktype(self, worktype_id: str, **kwargs) -> 'Worktype':
         """
         Get a worktype
         
+	    get_taskmanagement_worktype is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -1757,11 +1760,11 @@ class TaskManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-	# Preview Endpoint
     def get_taskmanagement_worktype_history(self, worktype_id: str, **kwargs) -> 'WorktypeChangeListing':
         """
         Get a listing of a worktype's attribute change history
         
+	    get_taskmanagement_worktype_history is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -1845,11 +1848,11 @@ class TaskManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-	# Preview Endpoint
     def get_taskmanagement_worktype_status(self, worktype_id: str, status_id: str, **kwargs) -> 'WorkitemStatus':
         """
         Get a status
         
+	    get_taskmanagement_worktype_status is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -1930,11 +1933,11 @@ class TaskManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-	# Preview Endpoint
     def get_taskmanagement_worktype_version(self, worktype_id: str, entity_version: int, **kwargs) -> 'WorktypeVersion':
         """
         Get a version of a worktype
         
+	    get_taskmanagement_worktype_version is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -2015,11 +2018,11 @@ class TaskManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-	# Preview Endpoint
     def get_taskmanagement_worktype_versions(self, worktype_id: str, **kwargs) -> 'WorktypeVersionListing':
         """
         Get all versions of a worktype
         
+	    get_taskmanagement_worktype_versions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -2103,11 +2106,11 @@ class TaskManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-	# Preview Endpoint
     def patch_taskmanagement_workbin(self, workbin_id: str, body: 'WorkbinUpdate', **kwargs) -> 'Workbin':
         """
         Update the attributes of a workbin
         
+	    patch_taskmanagement_workbin is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -2188,11 +2191,11 @@ class TaskManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-	# Preview Endpoint
     def patch_taskmanagement_workitem(self, workitem_id: str, body: 'WorkitemUpdate', **kwargs) -> 'Workitem':
         """
         Update the attributes of a workitem
         
+	    patch_taskmanagement_workitem is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -2273,11 +2276,11 @@ class TaskManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-	# Preview Endpoint
     def patch_taskmanagement_workitem_assignment(self, workitem_id: str, body: 'WorkitemManualAssign', **kwargs) -> None:
         """
         Attempts to manually assign a specified workitem to a specified user.  Ignores bullseye ring, PAR score, skills, and languages.
         
+	    patch_taskmanagement_workitem_assignment is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -2358,11 +2361,11 @@ class TaskManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-	# Preview Endpoint
     def patch_taskmanagement_workitem_user_wrapups(self, workitem_id: str, user_id: str, body: 'WorkitemWrapupUpdate', **kwargs) -> 'WorkitemWrapup':
         """
         Add/Remove a wrapup code for a given user in a workitem.
         
+	    patch_taskmanagement_workitem_user_wrapups is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -2449,11 +2452,11 @@ class TaskManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-	# Preview Endpoint
     def patch_taskmanagement_workitem_users_me_wrapups(self, workitem_id: str, body: 'WorkitemWrapupUpdate', **kwargs) -> 'WorkitemWrapup':
         """
         Add/Remove a wrapup code for the current user in a workitem.
         
+	    patch_taskmanagement_workitem_users_me_wrapups is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -2534,11 +2537,11 @@ class TaskManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-	# Preview Endpoint
     def patch_taskmanagement_worktype(self, worktype_id: str, **kwargs) -> 'Worktype':
         """
         Update the attributes of a worktype
         
+	    patch_taskmanagement_worktype is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -2616,11 +2619,11 @@ class TaskManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-	# Preview Endpoint
     def patch_taskmanagement_worktype_status(self, worktype_id: str, status_id: str, **kwargs) -> 'WorkitemStatus':
         """
         Update the attributes of a status
         
+	    patch_taskmanagement_worktype_status is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -2704,11 +2707,11 @@ class TaskManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-	# Preview Endpoint
     def post_taskmanagement_workbins(self, **kwargs) -> 'Workbin':
         """
         Create a workbin
         
+	    post_taskmanagement_workbins is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -2780,11 +2783,11 @@ class TaskManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-	# Preview Endpoint
     def post_taskmanagement_workbins_query(self, body: 'WorkbinQueryRequest', **kwargs) -> 'WorkbinQueryEntityListing':
         """
         Query for workbins
         
+	    post_taskmanagement_workbins_query is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -2859,11 +2862,11 @@ class TaskManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-	# Preview Endpoint
     def post_taskmanagement_workitem_acd_cancel(self, workitem_id: str, **kwargs) -> 'Workitem':
         """
         Cancel the assignment process for a workitem that is currently queued for assignment through ACD.
         
+	    post_taskmanagement_workitem_acd_cancel is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -2938,11 +2941,11 @@ class TaskManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-	# Preview Endpoint
     def post_taskmanagement_workitem_disconnect(self, workitem_id: str, **kwargs) -> 'Workitem':
         """
         Disconnect the assignee of the workitem
         
+	    post_taskmanagement_workitem_disconnect is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -3017,11 +3020,11 @@ class TaskManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-	# Preview Endpoint
     def post_taskmanagement_workitem_terminate(self, workitem_id: str, **kwargs) -> 'Workitem':
         """
         Terminate a workitem
         
+	    post_taskmanagement_workitem_terminate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -3099,11 +3102,11 @@ class TaskManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-	# Preview Endpoint
     def post_taskmanagement_workitems(self, body: 'WorkitemCreate', **kwargs) -> 'Workitem':
         """
         Create a workitem
         
+	    post_taskmanagement_workitems is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -3178,11 +3181,11 @@ class TaskManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-	# Preview Endpoint
     def post_taskmanagement_workitems_query(self, body: 'WorkitemQueryPostRequest', **kwargs) -> 'WorkitemPostQueryEntityListing':
         """
         Query for workitems
         This query requires at least one EQ filter on the workbinId, assigneeId or typeId attributes.
+	    post_taskmanagement_workitems_query is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -3257,11 +3260,11 @@ class TaskManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-	# Preview Endpoint
     def post_taskmanagement_workitems_schemas(self, body: 'DataSchema', **kwargs) -> 'DataSchema':
         """
         Create a schema
         
+	    post_taskmanagement_workitems_schemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -3336,11 +3339,11 @@ class TaskManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-	# Preview Endpoint
     def post_taskmanagement_worktype_statuses(self, worktype_id: str, **kwargs) -> 'WorkitemStatus':
         """
         Add a status to a worktype
         
+	    post_taskmanagement_worktype_statuses is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -3418,11 +3421,11 @@ class TaskManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-	# Preview Endpoint
     def post_taskmanagement_worktypes(self, **kwargs) -> 'Worktype':
         """
         Create a worktype
         
+	    post_taskmanagement_worktypes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -3494,11 +3497,11 @@ class TaskManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-	# Preview Endpoint
     def post_taskmanagement_worktypes_query(self, body: 'WorktypeQueryRequest', **kwargs) -> 'WorktypeQueryEntityListing':
         """
         Query for worktypes
         
+	    post_taskmanagement_worktypes_query is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -3573,11 +3576,11 @@ class TaskManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-	# Preview Endpoint
     def put_taskmanagement_workitems_schema(self, schema_id: str, body: 'DataSchema', **kwargs) -> 'DataSchema':
         """
         Update a schema
         
+	    put_taskmanagement_workitems_schema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

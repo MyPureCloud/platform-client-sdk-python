@@ -51,15 +51,18 @@ class ConsultTransfer(object):
         """
         self.swagger_types = {
             'speak_to': 'str',
+            'consulting_user_id': 'str',
             'destination': 'Destination'
         }
 
         self.attribute_map = {
             'speak_to': 'speakTo',
+            'consulting_user_id': 'consultingUserId',
             'destination': 'destination'
         }
 
         self._speak_to = None
+        self._consulting_user_id = None
         self._destination = None
 
     @property
@@ -90,6 +93,30 @@ class ConsultTransfer(object):
             self._speak_to = "outdated_sdk_version"
         else:
             self._speak_to = speak_to
+
+    @property
+    def consulting_user_id(self) -> str:
+        """
+        Gets the consulting_user_id of this ConsultTransfer.
+        The user ID of the person who wants to talk before completing the transfer. Could be the same of the context user ID
+
+        :return: The consulting_user_id of this ConsultTransfer.
+        :rtype: str
+        """
+        return self._consulting_user_id
+
+    @consulting_user_id.setter
+    def consulting_user_id(self, consulting_user_id: str) -> None:
+        """
+        Sets the consulting_user_id of this ConsultTransfer.
+        The user ID of the person who wants to talk before completing the transfer. Could be the same of the context user ID
+
+        :param consulting_user_id: The consulting_user_id of this ConsultTransfer.
+        :type: str
+        """
+        
+
+        self._consulting_user_id = consulting_user_id
 
     @property
     def destination(self) -> 'Destination':

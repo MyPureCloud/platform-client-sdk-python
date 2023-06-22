@@ -37,8 +37,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 Delete all versions of a configuration
 
-
-
 Wraps DELETE /api/v2/webdeployments/configurations/{configurationId} 
 
 Requires ALL permissions: 
@@ -86,8 +84,6 @@ void (empty response body)
 
 
 Delete a deployment
-
-
 
 Wraps DELETE /api/v2/webdeployments/deployments/{deploymentId} 
 
@@ -137,8 +133,6 @@ void (empty response body)
 
 Deletes a cobrowse session
 
-
-
 Wraps DELETE /api/v2/webdeployments/deployments/{deploymentId}/cobrowse/{sessionId} 
 
 Requires no permissions
@@ -186,8 +180,6 @@ except ApiException as e:
 
 Invalidate JWT
 
-
-
 Wraps DELETE /api/v2/webdeployments/token/revoke 
 
 Requires no permissions
@@ -233,8 +225,6 @@ void (empty response body)
 
 
 Get a configuration version
-
-
 
 Wraps GET /api/v2/webdeployments/configurations/{configurationId}/versions/{versionId} 
 
@@ -289,8 +279,6 @@ Get the versions of a configuration
 
 This returns the 50 most recent versions for this configuration
 
-
-
 Wraps GET /api/v2/webdeployments/configurations/{configurationId}/versions 
 
 Requires ALL permissions: 
@@ -339,8 +327,6 @@ except ApiException as e:
 
 
 Get the configuration draft
-
-
 
 Wraps GET /api/v2/webdeployments/configurations/{configurationId}/versions/draft 
 
@@ -391,8 +377,6 @@ except ApiException as e:
 
 View configuration drafts
 
-
-
 Wraps GET /api/v2/webdeployments/configurations 
 
 Requires ALL permissions: 
@@ -441,8 +425,6 @@ except ApiException as e:
 
 
 Get a deployment
-
-
 
 Wraps GET /api/v2/webdeployments/deployments/{deploymentId} 
 
@@ -493,8 +475,6 @@ except ApiException as e:
 
 Retrieves a cobrowse session
 
-
-
 Wraps GET /api/v2/webdeployments/deployments/{deploymentId}/cobrowse/{sessionId} 
 
 Requires no permissions
@@ -541,8 +521,6 @@ except ApiException as e:
 
 
 Get active configuration for a given deployment
-
-
 
 Wraps GET /api/v2/webdeployments/deployments/{deploymentId}/configurations 
 
@@ -594,8 +572,6 @@ except ApiException as e:
 
 Get deployments
 
-
-
 Wraps GET /api/v2/webdeployments/deployments 
 
 Requires ALL permissions: 
@@ -644,8 +620,6 @@ except ApiException as e:
 
 
 Publish the configuration draft and create a new version
-
-
 
 Wraps POST /api/v2/webdeployments/configurations/{configurationId}/versions/draft/publish 
 
@@ -697,8 +671,6 @@ except ApiException as e:
 
 Create a configuration draft
 
-
-
 Wraps POST /api/v2/webdeployments/configurations 
 
 Requires ALL permissions: 
@@ -747,8 +719,6 @@ except ApiException as e:
 
 
 Create a deployment
-
-
 
 Wraps POST /api/v2/webdeployments/deployments 
 
@@ -799,8 +769,6 @@ except ApiException as e:
 
 Exchange an oAuth code (obtained using the Authorization Code Flow) for a JWT that can be used by webdeployments.
 
-
-
 Wraps POST /api/v2/webdeployments/token/oauthcodegrantjwtexchange 
 
 Requires no permissions
@@ -846,8 +814,6 @@ except ApiException as e:
 
 Refresh a JWT.
 
-
-
 Wraps POST /api/v2/webdeployments/token/refresh 
 
 Requires no permissions
@@ -892,8 +858,6 @@ except ApiException as e:
 
 
 Update the configuration draft
-
-
 
 Wraps PUT /api/v2/webdeployments/configurations/{configurationId}/versions/draft 
 
@@ -945,8 +909,6 @@ except ApiException as e:
 
 
 Update a deployment
-
-
 
 Wraps PUT /api/v2/webdeployments/deployments/{deploymentId} 
 

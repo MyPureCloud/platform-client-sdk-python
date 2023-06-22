@@ -22,8 +22,6 @@ Get a report of the billable license usages
 
 Report is of the billable usages (e.g. licenses and devices utilized) for a given period. If response's status is InProgress, wait a few seconds, then try the same request again.
 
-
-
 Wraps GET /api/v2/billing/reports/billableusage 
 
 Requires ANY permissions: 
@@ -77,8 +75,6 @@ except ApiException as e:
 Get the billing overview for an organization that is managed by a partner.
 
 Tax Disclaimer: Prices returned by this API do not include applicable taxes. It is the responsibility of the customer to pay all taxes that are appropriate in their jurisdiction. See the PureCloud API Documentation in the Developer Center for more information about this API: https://developer.mypurecloud.com/api/rest/v2/
-
-
 
 Wraps GET /api/v2/billing/trusteebillingoverview/{trustorOrgId} 
 

@@ -27,8 +27,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 Get PureCloud license definition.
 
-
-
 Wraps GET /api/v2/license/definitions/{licenseId} 
 
 Requires ANY permissions: 
@@ -79,8 +77,6 @@ except ApiException as e:
 
 Get all PureCloud license definitions available for the organization.
 
-
-
 Wraps GET /api/v2/license/definitions 
 
 Requires ANY permissions: 
@@ -126,8 +122,6 @@ This endpoint does not need any parameters.
 
 
 Get PureCloud license feature toggle value.
-
-
 
 Wraps GET /api/v2/license/toggles/{featureName} 
 
@@ -177,8 +171,6 @@ except ApiException as e:
 
 
 Get licenses for specified user.
-
-
 
 Wraps GET /api/v2/license/users/{userId} 
 
@@ -232,8 +224,6 @@ Get a page of users and their licenses
 
 Retrieve a page of users in an organization along with the licenses they possess.
 
-
-
 Wraps GET /api/v2/license/users 
 
 Requires no permissions
@@ -284,8 +274,6 @@ except ApiException as e:
 
 Get a list of licenses inferred based on a list of roleIds
 
-
-
 Wraps POST /api/v2/license/infer 
 
 Requires no permissions
@@ -333,8 +321,6 @@ except ApiException as e:
 
 
 Update the organization's license assignments in a batch.
-
-
 
 Wraps POST /api/v2/license/organization 
 
@@ -385,8 +371,6 @@ except ApiException as e:
 
 Switch PureCloud license feature toggle value.
 
-
-
 Wraps POST /api/v2/license/toggles/{featureName} 
 
 Requires ANY permissions: 
@@ -435,8 +419,6 @@ except ApiException as e:
 
 
 Fetch user licenses in a batch.
-
-
 
 Wraps POST /api/v2/license/users 
 

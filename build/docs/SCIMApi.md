@@ -48,8 +48,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 Delete a user
 
-
-
 Wraps DELETE /api/v2/scim/users/{userId} 
 
 Requires ANY permissions: 
@@ -101,8 +99,6 @@ except ApiException as e:
 
 Delete a user
 
-
-
 Wraps DELETE /api/v2/scim/v2/users/{userId} 
 
 Requires ANY permissions: 
@@ -153,8 +149,6 @@ except ApiException as e:
 
 
 Get a group
-
-
 
 Wraps GET /api/v2/scim/groups/{groupId} 
 
@@ -210,8 +204,6 @@ except ApiException as e:
 
 
 Get a list of groups
-
-
 
 Wraps GET /api/v2/scim/groups 
 
@@ -270,8 +262,6 @@ except ApiException as e:
 
 Get a resource type
 
-
-
 Wraps GET /api/v2/scim/resourcetypes/{resourceType} 
 
 Requires no permissions
@@ -320,8 +310,6 @@ except ApiException as e:
 
 Get a list of resource types
 
-
-
 Wraps GET /api/v2/scim/resourcetypes 
 
 Requires no permissions
@@ -365,8 +353,6 @@ This endpoint does not need any parameters.
 
 
 Get a SCIM schema
-
-
 
 Wraps GET /api/v2/scim/schemas/{schemaId} 
 
@@ -416,8 +402,6 @@ except ApiException as e:
 
 Get a list of SCIM schemas
 
-
-
 Wraps GET /api/v2/scim/schemas 
 
 Requires no permissions
@@ -466,8 +450,6 @@ except ApiException as e:
 
 Get a service provider's configuration
 
-
-
 Wraps GET /api/v2/scim/serviceproviderconfig 
 
 Requires no permissions
@@ -515,8 +497,6 @@ except ApiException as e:
 
 
 Get a user
-
-
 
 Wraps GET /api/v2/scim/users/{userId} 
 
@@ -574,8 +554,6 @@ Get a list of users
 
 To return all active users, do not use the filter parameter. To return inactive users, set the filter parameter to \"active eq false\". By default, returns SCIM attributes \"externalId\", \"enterprise-user:manager\", and \"roles\". To exclude these attributes, set the attributes parameter to \"id,active\" or the excludeAttributes parameter to \"externalId,roles,urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:division\".
 
-
-
 Wraps GET /api/v2/scim/users 
 
 Requires no permissions
@@ -632,8 +610,6 @@ except ApiException as e:
 
 Get a group
 
-
-
 Wraps GET /api/v2/scim/v2/groups/{groupId} 
 
 Requires ANY permissions: 
@@ -688,8 +664,6 @@ except ApiException as e:
 
 
 Get a list of groups
-
-
 
 Wraps GET /api/v2/scim/v2/groups 
 
@@ -748,8 +722,6 @@ except ApiException as e:
 
 Get a resource type
 
-
-
 Wraps GET /api/v2/scim/v2/resourcetypes/{resourceType} 
 
 Requires no permissions
@@ -798,8 +770,6 @@ except ApiException as e:
 
 Get a list of resource types
 
-
-
 Wraps GET /api/v2/scim/v2/resourcetypes 
 
 Requires no permissions
@@ -843,8 +813,6 @@ This endpoint does not need any parameters.
 
 
 Get a SCIM schema
-
-
 
 Wraps GET /api/v2/scim/v2/schemas/{schemaId} 
 
@@ -894,8 +862,6 @@ except ApiException as e:
 
 Get a list of SCIM schemas
 
-
-
 Wraps GET /api/v2/scim/v2/schemas 
 
 Requires no permissions
@@ -944,8 +910,6 @@ except ApiException as e:
 
 Get a service provider's configuration
 
-
-
 Wraps GET /api/v2/scim/v2/serviceproviderconfig 
 
 Requires no permissions
@@ -993,8 +957,6 @@ except ApiException as e:
 
 
 Get a user
-
-
 
 Wraps GET /api/v2/scim/v2/users/{userId} 
 
@@ -1052,8 +1014,6 @@ Get a list of users
 
 To return all active users, do not use the filter parameter. To return inactive users, set the filter parameter to \"active eq false\". By default, returns SCIM attributes \"externalId\", \"enterprise-user:manager\", and \"roles\". To exclude these attributes, set the attributes parameter to \"id,active\" or the excludeAttributes parameter to \"externalId,roles,urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:division\".
 
-
-
 Wraps GET /api/v2/scim/v2/users 
 
 Requires no permissions
@@ -1110,8 +1070,6 @@ except ApiException as e:
 
 Modify a group
 
-
-
 Wraps PATCH /api/v2/scim/groups/{groupId} 
 
 Requires ANY permissions: 
@@ -1164,8 +1122,6 @@ except ApiException as e:
 
 
 Modify a user
-
-
 
 Wraps PATCH /api/v2/scim/users/{userId} 
 
@@ -1225,8 +1181,6 @@ except ApiException as e:
 
 Modify a group
 
-
-
 Wraps PATCH /api/v2/scim/v2/groups/{groupId} 
 
 Requires ANY permissions: 
@@ -1279,8 +1233,6 @@ except ApiException as e:
 
 
 Modify a user
-
-
 
 Wraps PATCH /api/v2/scim/v2/users/{userId} 
 
@@ -1340,8 +1292,6 @@ except ApiException as e:
 
 Create a user
 
-
-
 Wraps POST /api/v2/scim/users 
 
 Requires ANY permissions: 
@@ -1394,8 +1344,6 @@ except ApiException as e:
 
 
 Create a user
-
-
 
 Wraps POST /api/v2/scim/v2/users 
 
@@ -1450,8 +1398,6 @@ except ApiException as e:
 
 Replace a group
 
-
-
 Wraps PUT /api/v2/scim/groups/{groupId} 
 
 Requires ANY permissions: 
@@ -1504,8 +1450,6 @@ except ApiException as e:
 
 
 Replace a user
-
-
 
 Wraps PUT /api/v2/scim/users/{userId} 
 
@@ -1565,8 +1509,6 @@ except ApiException as e:
 
 Replace a group
 
-
-
 Wraps PUT /api/v2/scim/v2/groups/{groupId} 
 
 Requires ANY permissions: 
@@ -1619,8 +1561,6 @@ except ApiException as e:
 
 
 Replace a user
-
-
 
 Wraps PUT /api/v2/scim/v2/users/{userId} 
 

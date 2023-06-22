@@ -26,8 +26,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 Delete a Trigger
 
-
-
 Wraps DELETE /api/v2/processautomation/triggers/{triggerId} 
 
 Requires ANY permissions: 
@@ -75,8 +73,6 @@ void (empty response body)
 
 
 Retrieve a single Trigger matching id
-
-
 
 Wraps GET /api/v2/processautomation/triggers/{triggerId} 
 
@@ -127,8 +123,6 @@ except ApiException as e:
 
 
 Retrieves all triggers, optionally filtered by query parameters.
-
-
 
 Wraps GET /api/v2/processautomation/triggers 
 
@@ -190,8 +184,6 @@ except ApiException as e:
 
 Get topics available for organization
 
-
-
 Wraps GET /api/v2/processautomation/triggers/topics 
 
 Requires ANY permissions: 
@@ -246,8 +238,6 @@ except ApiException as e:
 
 Test the matching of a Trigger based on provided event body
 
-
-
 Wraps POST /api/v2/processautomation/triggers/{triggerId}/test 
 
 Requires ANY permissions: 
@@ -299,8 +289,6 @@ except ApiException as e:
 
 Create a Trigger
 
-
-
 Wraps POST /api/v2/processautomation/triggers 
 
 Requires ANY permissions: 
@@ -349,8 +337,6 @@ except ApiException as e:
 
 
 Test the matching of all organization Triggers on given topic using provided event body
-
-
 
 Wraps POST /api/v2/processautomation/triggers/topics/{topicName}/test 
 
@@ -402,8 +388,6 @@ except ApiException as e:
 
 
 Update a Trigger
-
-
 
 Wraps PUT /api/v2/processautomation/triggers/{triggerId} 
 

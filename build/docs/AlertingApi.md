@@ -29,8 +29,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 Delete an interaction stats alert
 
-
-
 Wraps DELETE /api/v2/alerting/interactionstats/alerts/{alertId} 
 
 Requires ALL permissions: 
@@ -78,8 +76,6 @@ void (empty response body)
 
 
 Delete an interaction stats rule.
-
-
 
 Wraps DELETE /api/v2/alerting/interactionstats/rules/{ruleId} 
 
@@ -129,8 +125,6 @@ void (empty response body)
 
 Gets active alert count for a user.
 
-
-
 Wraps GET /api/v2/alerting/alerts/active 
 
 Requires no permissions
@@ -174,8 +168,6 @@ This endpoint does not need any parameters.
 
 
 Get an interaction stats alert
-
-
 
 Wraps GET /api/v2/alerting/interactionstats/alerts/{alertId} 
 
@@ -228,8 +220,6 @@ except ApiException as e:
 
 Get interaction stats alert list.
 
-
-
 Wraps GET /api/v2/alerting/interactionstats/alerts 
 
 Requires ALL permissions: 
@@ -279,8 +269,6 @@ except ApiException as e:
 
 Gets user unread count of interaction stats alerts.
 
-
-
 Wraps GET /api/v2/alerting/interactionstats/alerts/unread 
 
 Requires no permissions
@@ -324,8 +312,6 @@ This endpoint does not need any parameters.
 
 
 Get an interaction stats rule.
-
-
 
 Wraps GET /api/v2/alerting/interactionstats/rules/{ruleId} 
 
@@ -378,8 +364,6 @@ except ApiException as e:
 
 Get an interaction stats rule list.
 
-
-
 Wraps GET /api/v2/alerting/interactionstats/rules 
 
 Requires ALL permissions: 
@@ -428,8 +412,6 @@ except ApiException as e:
 
 
 Create an interaction stats rule.
-
-
 
 Wraps POST /api/v2/alerting/interactionstats/rules 
 
@@ -481,8 +463,6 @@ except ApiException as e:
 
 
 Update an interaction stats alert read status
-
-
 
 Wraps PUT /api/v2/alerting/interactionstats/alerts/{alertId} 
 
@@ -536,8 +516,6 @@ except ApiException as e:
 
 
 Update an interaction stats rule
-
-
 
 Wraps PUT /api/v2/alerting/interactionstats/rules/{ruleId} 
 

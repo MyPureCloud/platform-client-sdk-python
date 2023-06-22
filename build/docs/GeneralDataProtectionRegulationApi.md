@@ -22,8 +22,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 Get an existing GDPR request
 
-
-
 Wraps GET /api/v2/gdpr/requests/{requestId} 
 
 Requires ANY permissions: 
@@ -72,8 +70,6 @@ except ApiException as e:
 
 
 Get all GDPR requests
-
-
 
 Wraps GET /api/v2/gdpr/requests 
 
@@ -126,8 +122,6 @@ except ApiException as e:
 
 Get GDPR subjects
 
-
-
 Wraps GET /api/v2/gdpr/subjects 
 
 Requires ANY permissions: 
@@ -178,8 +172,6 @@ except ApiException as e:
 
 
 Submit a new GDPR request
-
-
 
 Wraps POST /api/v2/gdpr/requests 
 

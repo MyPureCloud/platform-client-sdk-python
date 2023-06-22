@@ -151,8 +151,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 Delete single benefit assessment.
 
-
-
 Wraps DELETE /api/v2/routing/assessments/{assessmentId} 
 
 Requires ANY permissions: 
@@ -201,8 +199,6 @@ void (empty response body)
 
 Delete a domain
 
-
-
 Wraps DELETE /api/v2/routing/email/domains/{domainId} 
 
 Requires ALL permissions: 
@@ -250,8 +246,6 @@ void (empty response body)
 
 
 Delete a route
-
-
 
 Wraps DELETE /api/v2/routing/email/domains/{domainName}/routes/{routeId} 
 
@@ -303,8 +297,6 @@ void (empty response body)
 
 Delete an outbound domain
 
-
-
 Wraps DELETE /api/v2/routing/email/outbound/domains/{domainId} 
 
 Requires ALL permissions: 
@@ -353,8 +345,6 @@ void (empty response body)
 
 Delete a routing language
 
-
-
 Wraps DELETE /api/v2/routing/languages/{languageId} 
 
 Requires ANY permissions: 
@@ -402,8 +392,6 @@ void (empty response body)
 
 
 Delete single predictor.
-
-
 
 Wraps DELETE /api/v2/routing/predictors/{predictorId} 
 
@@ -454,8 +442,6 @@ void (empty response body)
 
 Delete a queue
 
-
-
 Wraps DELETE /api/v2/routing/queues/{queueId} 
 
 Requires ALL permissions: 
@@ -505,8 +491,6 @@ void (empty response body)
 
 
 Delete a queue member.
-
-
 
 Wraps DELETE /api/v2/routing/queues/{queueId}/members/{memberId} 
 
@@ -559,8 +543,6 @@ void (empty response body)
 
 DEPRECATED: use DELETE /routing/queues/{queueId}/members/{memberId}.  Delete queue member.
 
-
-
 Wraps DELETE /api/v2/routing/queues/{queueId}/users/{memberId} 
 
 Requires ANY permissions: 
@@ -612,8 +594,6 @@ void (empty response body)
 
 Delete a wrap-up code from a queue
 
-
-
 Wraps DELETE /api/v2/routing/queues/{queueId}/wrapupcodes/{codeId} 
 
 Requires ALL permissions: 
@@ -664,8 +644,6 @@ void (empty response body)
 
 Delete an organization's routing settings
 
-
-
 Wraps DELETE /api/v2/routing/settings 
 
 Requires ANY permissions: 
@@ -709,8 +687,6 @@ void (empty response body)
 
 
 Delete Routing Skill
-
-
 
 Wraps DELETE /api/v2/routing/skills/{skillId} 
 
@@ -760,8 +736,6 @@ void (empty response body)
 
 Remove skill group definition
 
-
-
 Wraps DELETE /api/v2/routing/skillgroups/{skillGroupId} 
 
 Requires ANY permissions: 
@@ -809,8 +783,6 @@ void (empty response body)
 
 
 Delete an Address by Id for SMS
-
-
 
 Wraps DELETE /api/v2/routing/sms/addresses/{addressId} 
 
@@ -860,8 +832,6 @@ void (empty response body)
 
 Delete a phone number provisioned for SMS.
 
-
-
 Wraps DELETE /api/v2/routing/sms/phonenumbers/{addressId} 
 
 Requires ALL permissions: 
@@ -909,8 +879,6 @@ void (empty response body)
 
 
 Delete the user's max utilization settings and revert to the organization-wide default.
-
-
 
 Wraps DELETE /api/v2/routing/users/{userId}/utilization 
 
@@ -960,8 +928,6 @@ void (empty response body)
 
 Delete the organization-wide max utilization settings and revert to the system default.
 
-
-
 Wraps DELETE /api/v2/routing/utilization 
 
 Requires ALL permissions: 
@@ -1006,7 +972,7 @@ void (empty response body)
 
 Delete an utilization tag
 
-
+delete_routing_utilization_tag is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps DELETE /api/v2/routing/utilization/tags/{tagId} 
 
@@ -1058,8 +1024,6 @@ void (empty response body)
 
 Delete wrap-up code
 
-
-
 Wraps DELETE /api/v2/routing/wrapupcodes/{codeId} 
 
 Requires ALL permissions: 
@@ -1107,8 +1071,6 @@ void (empty response body)
 
 
 Remove routing language from user
-
-
 
 Wraps DELETE /api/v2/users/{userId}/routinglanguages/{languageId} 
 
@@ -1161,8 +1123,6 @@ void (empty response body)
 
 Remove routing skill from user
 
-
-
 Wraps DELETE /api/v2/users/{userId}/routingskills/{skillId} 
 
 Requires ALL permissions: 
@@ -1213,8 +1173,6 @@ void (empty response body)
 
 Retrieve a single benefit assessment.
 
-
-
 Wraps GET /api/v2/routing/assessments/{assessmentId} 
 
 Requires ANY permissions: 
@@ -1263,8 +1221,6 @@ except ApiException as e:
 
 
 Retrieve all benefit assessments.
-
-
 
 Wraps GET /api/v2/routing/assessments 
 
@@ -1324,8 +1280,6 @@ except ApiException as e:
 
 Retrieve a single benefit assessments job.
 
-
-
 Wraps GET /api/v2/routing/assessments/jobs/{jobId} 
 
 Requires ANY permissions: 
@@ -1374,8 +1328,6 @@ except ApiException as e:
 
 
 Retrieve all benefit assessment jobs.
-
-
 
 Wraps GET /api/v2/routing/assessments/jobs 
 
@@ -1426,8 +1378,6 @@ except ApiException as e:
 
 Get available media types
 
-
-
 Wraps GET /api/v2/routing/availablemediatypes 
 
 Requires no permissions
@@ -1471,8 +1421,6 @@ This endpoint does not need any parameters.
 
 
 Get domain
-
-
 
 Wraps GET /api/v2/routing/email/domains/{domainId} 
 
@@ -1522,8 +1470,6 @@ except ApiException as e:
 
 
 Get a route
-
-
 
 Wraps GET /api/v2/routing/email/domains/{domainName}/routes/{routeId} 
 
@@ -1575,8 +1521,6 @@ except ApiException as e:
 
 
 Get routes
-
-
 
 Wraps GET /api/v2/routing/email/domains/{domainName}/routes 
 
@@ -1633,8 +1577,6 @@ except ApiException as e:
 
 Get domains
 
-
-
 Wraps GET /api/v2/routing/email/domains 
 
 Requires ALL permissions: 
@@ -1690,8 +1632,6 @@ except ApiException as e:
 
 Get domain
 
-
-
 Wraps GET /api/v2/routing/email/outbound/domains/{domainId} 
 
 Requires ALL permissions: 
@@ -1740,8 +1680,6 @@ except ApiException as e:
 
 
 Get activation status (cname + dkim) of an outbound domain
-
-
 
 Wraps GET /api/v2/routing/email/outbound/domains/{domainId}/activation 
 
@@ -1792,8 +1730,6 @@ except ApiException as e:
 
 Search a domain across organizations
 
-
-
 Wraps GET /api/v2/routing/email/outbound/domains/{domainId}/search 
 
 Requires ALL permissions: 
@@ -1842,8 +1778,6 @@ except ApiException as e:
 
 
 Get outbound domains
-
-
 
 Wraps GET /api/v2/routing/email/outbound/domains 
 
@@ -1894,8 +1828,6 @@ except ApiException as e:
 
 Get email setup
 
-
-
 Wraps GET /api/v2/routing/email/setup 
 
 Requires ALL permissions: 
@@ -1940,8 +1872,6 @@ This endpoint does not need any parameters.
 
 
 Get a routing language
-
-
 
 Wraps GET /api/v2/routing/languages/{languageId} 
 
@@ -1990,8 +1920,6 @@ except ApiException as e:
 
 
 Get the list of supported languages.
-
-
 
 Wraps GET /api/v2/routing/languages 
 
@@ -2049,8 +1977,6 @@ except ApiException as e:
 
 Get a recipient
 
-
-
 Wraps GET /api/v2/routing/message/recipients/{recipientId} 
 
 Requires ALL permissions: 
@@ -2099,8 +2025,6 @@ except ApiException as e:
 
 
 Get recipients
-
-
 
 Wraps GET /api/v2/routing/message/recipients 
 
@@ -2155,8 +2079,6 @@ except ApiException as e:
 
 Retrieve a single predictor.
 
-
-
 Wraps GET /api/v2/routing/predictors/{predictorId} 
 
 Requires ANY permissions: 
@@ -2205,8 +2127,6 @@ except ApiException as e:
 
 
 Retrieve Predictor Model Features.
-
-
 
 Wraps GET /api/v2/routing/predictors/{predictorId}/models/{modelId}/features 
 
@@ -2259,8 +2179,6 @@ except ApiException as e:
 
 Retrieve Predictor Models and Top Features.
 
-
-
 Wraps GET /api/v2/routing/predictors/{predictorId}/models 
 
 Requires ALL permissions: 
@@ -2309,8 +2227,6 @@ except ApiException as e:
 
 
 Retrieve all predictors.
-
-
 
 Wraps GET /api/v2/routing/predictors 
 
@@ -2370,8 +2286,6 @@ except ApiException as e:
 
 Get a list of Key Performance Indicators
 
-
-
 Wraps GET /api/v2/routing/predictors/keyperformanceindicators 
 
 Requires ANY permissions: 
@@ -2423,8 +2337,6 @@ except ApiException as e:
 
 Get details about this queue.
 
-
-
 Wraps GET /api/v2/routing/queues/{queueId} 
 
 Requires ALL permissions: 
@@ -2473,8 +2385,6 @@ except ApiException as e:
 
 
 Get a Comparison Period.
-
-
 
 Wraps GET /api/v2/routing/queues/{queueId}/comparisonperiods/{comparisonPeriodId} 
 
@@ -2528,8 +2438,6 @@ except ApiException as e:
 
 Get list of comparison periods
 
-
-
 Wraps GET /api/v2/routing/queues/{queueId}/comparisonperiods 
 
 Requires ALL permissions: 
@@ -2579,8 +2487,6 @@ except ApiException as e:
 
 
 Get Estimated Wait Time
-
-
 
 Wraps GET /api/v2/routing/queues/{queueId}/estimatedwaittime 
 
@@ -2633,8 +2539,6 @@ except ApiException as e:
 
 Get Estimated Wait Time
 
-
-
 Wraps GET /api/v2/routing/queues/{queueId}/mediatypes/{mediaType}/estimatedwaittime 
 
 Requires ALL permissions: 
@@ -2685,8 +2589,6 @@ except ApiException as e:
 
 
 Get the members of this queue.
-
-
 
 Wraps GET /api/v2/routing/queues/{queueId}/members 
 
@@ -2764,8 +2666,6 @@ except ApiException as e:
 
 DEPRECATED: use GET /routing/queues/{queueId}/members.  Get the members of this queue.
 
-
-
 Wraps GET /api/v2/routing/queues/{queueId}/users 
 
 Requires ANY permissions: 
@@ -2838,8 +2738,6 @@ except ApiException as e:
 
 Get the wrap-up codes for a queue
 
-
-
 Wraps GET /api/v2/routing/queues/{queueId}/wrapupcodes 
 
 Requires ALL permissions: 
@@ -2892,8 +2790,6 @@ except ApiException as e:
 
 
 Get list of queues.
-
-
 
 Wraps GET /api/v2/routing/queues 
 
@@ -2958,8 +2854,6 @@ except ApiException as e:
 
 Get a paged listing of simplified queue objects, filterable by name, queue ID(s), or division ID(s).
 
-
-
 Wraps GET /api/v2/routing/queues/divisionviews 
 
 Requires ALL permissions: 
@@ -3021,8 +2915,6 @@ except ApiException as e:
 
 Get a paged listing of simplified queue objects, sorted by name.  Can be used to get a digest of all queues in an organization.
 
-
-
 Wraps GET /api/v2/routing/queues/divisionviews/all 
 
 Requires ALL permissions: 
@@ -3075,8 +2967,6 @@ except ApiException as e:
 
 
 Get a paged listing of queues the user is a member of.
-
-
 
 Wraps GET /api/v2/routing/queues/me 
 
@@ -3132,8 +3022,6 @@ except ApiException as e:
 
 Get an organization's routing settings
 
-
-
 Wraps GET /api/v2/routing/settings 
 
 Requires no permissions
@@ -3177,8 +3065,6 @@ This endpoint does not need any parameters.
 
 
 Get Contact Center Settings
-
-
 
 Wraps GET /api/v2/routing/settings/contactcenter 
 
@@ -3224,8 +3110,6 @@ This endpoint does not need any parameters.
 
 Get Transcription Settings
 
-
-
 Wraps GET /api/v2/routing/settings/transcription 
 
 Requires ANY permissions: 
@@ -3270,8 +3154,6 @@ This endpoint does not need any parameters.
 
 
 Get Routing Skill
-
-
 
 Wraps GET /api/v2/routing/skills/{skillId} 
 
@@ -3321,8 +3203,6 @@ except ApiException as e:
 
 Get skill group
 
-
-
 Wraps GET /api/v2/routing/skillgroups/{skillGroupId} 
 
 Requires ANY permissions: 
@@ -3371,8 +3251,6 @@ except ApiException as e:
 
 
 Get skill group members
-
-
 
 Wraps GET /api/v2/routing/skillgroups/{skillGroupId}/members 
 
@@ -3431,8 +3309,6 @@ except ApiException as e:
 
 Get list of member divisions for this skill group.
 
-
-
 Wraps GET /api/v2/routing/skillgroups/{skillGroupId}/members/divisions 
 
 Requires ANY permissions: 
@@ -3483,8 +3359,6 @@ except ApiException as e:
 
 
 Get skill group listing
-
-
 
 Wraps GET /api/v2/routing/skillgroups 
 
@@ -3541,8 +3415,6 @@ except ApiException as e:
 
 Get the list of routing skills.
 
-
-
 Wraps GET /api/v2/routing/skills 
 
 Requires no permissions
@@ -3597,8 +3469,6 @@ except ApiException as e:
 
 Get an Address by Id for SMS
 
-
-
 Wraps GET /api/v2/routing/sms/addresses/{addressId} 
 
 Requires ALL permissions: 
@@ -3647,8 +3517,6 @@ except ApiException as e:
 
 
 Get a list of Addresses for SMS
-
-
 
 Wraps GET /api/v2/routing/sms/addresses 
 
@@ -3702,8 +3570,6 @@ except ApiException as e:
 Get a list of available phone numbers for SMS provisioning.
 
 This request will return up to 30 random phone numbers matching the criteria specified.  To get additional phone numbers repeat the request.
-
-
 
 Wraps GET /api/v2/routing/sms/availablephonenumbers 
 
@@ -3766,8 +3632,6 @@ except ApiException as e:
 
 Get a phone number provisioned for SMS.
 
-
-
 Wraps GET /api/v2/routing/sms/phonenumbers/{addressId} 
 
 Requires ALL permissions: 
@@ -3818,8 +3682,6 @@ except ApiException as e:
 
 
 Get a list of provisioned phone numbers.
-
-
 
 Wraps GET /api/v2/routing/sms/phonenumbers 
 
@@ -3888,8 +3750,6 @@ except ApiException as e:
 
 Get the user's max utilization settings.  If not configured, the organization-wide default is returned.
 
-
-
 Wraps GET /api/v2/routing/users/{userId}/utilization 
 
 Requires ANY permissions: 
@@ -3940,8 +3800,6 @@ except ApiException as e:
 
 Get the organization-wide max utilization settings.
 
-
-
 Wraps GET /api/v2/routing/utilization 
 
 Requires ANY permissions: 
@@ -3988,7 +3846,7 @@ This endpoint does not need any parameters.
 
 Get details about this utilization tag
 
-
+get_routing_utilization_tag is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/routing/utilization/tags/{tagId} 
 
@@ -4039,7 +3897,7 @@ except ApiException as e:
 
 Get list of agent ids associated with a utilization tag
 
-
+get_routing_utilization_tag_agents is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/routing/utilization/tags/{tagId}/agents 
 
@@ -4090,7 +3948,7 @@ except ApiException as e:
 
 Get list of utilization tags
 
-
+get_routing_utilization_tags is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/routing/utilization/tags 
 
@@ -4147,8 +4005,6 @@ except ApiException as e:
 
 Get details about this wrap-up code.
 
-
-
 Wraps GET /api/v2/routing/wrapupcodes/{codeId} 
 
 Requires ALL permissions: 
@@ -4197,8 +4053,6 @@ except ApiException as e:
 
 
 Get list of wrapup codes.
-
-
 
 Wraps GET /api/v2/routing/wrapupcodes 
 
@@ -4261,8 +4115,6 @@ except ApiException as e:
 
 Get queues for user
 
-
-
 Wraps GET /api/v2/users/{userId}/queues 
 
 Requires ANY permissions: 
@@ -4322,8 +4174,6 @@ except ApiException as e:
 
 List routing language for user
 
-
-
 Wraps GET /api/v2/users/{userId}/routinglanguages 
 
 Requires no permissions
@@ -4378,8 +4228,6 @@ except ApiException as e:
 
 List routing skills for user
 
-
-
 Wraps GET /api/v2/users/{userId}/routingskills 
 
 Requires no permissions
@@ -4433,8 +4281,6 @@ except ApiException as e:
 
 
 Get skill groups for a user
-
-
 
 Wraps GET /api/v2/users/{userId}/skillgroups 
 
@@ -4493,8 +4339,6 @@ Update attributes of an in-queue conversation
 
 Returns an object indicating the updated values of all settable attributes. Supported attributes: skillIds, languageId, and priority.
 
-
-
 Wraps PATCH /api/v2/routing/conversations/{conversationId} 
 
 Requires ANY permissions: 
@@ -4545,8 +4389,6 @@ except ApiException as e:
 
 
 Update domain settings
-
-
 
 Wraps PATCH /api/v2/routing/email/domains/{domainId} 
 
@@ -4599,8 +4441,6 @@ except ApiException as e:
 
 Validate domain settings
 
-
-
 Wraps PATCH /api/v2/routing/email/domains/{domainId}/validate 
 
 Requires ALL permissions: 
@@ -4651,8 +4491,6 @@ except ApiException as e:
 
 
 Update single predictor.
-
-
 
 Wraps PATCH /api/v2/routing/predictors/{predictorId} 
 
@@ -4705,8 +4543,6 @@ except ApiException as e:
 
 
 Update the ring number OR joined status for a queue member.
-
-
 
 Wraps PATCH /api/v2/routing/queues/{queueId}/members/{memberId} 
 
@@ -4761,8 +4597,6 @@ void (empty response body)
 
 Join or unjoin a set of users for a queue
 
-
-
 Wraps PATCH /api/v2/routing/queues/{queueId}/members 
 
 Requires ANY permissions: 
@@ -4814,8 +4648,6 @@ except ApiException as e:
 <span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 DEPRECATED: use PATCH /routing/queues/{queueId}/members/{memberId}.  Update the ring number OR joined status for a User in a Queue.
-
-
 
 Wraps PATCH /api/v2/routing/queues/{queueId}/users/{memberId} 
 
@@ -4870,8 +4702,6 @@ void (empty response body)
 
 DEPRECATED: use PATCH /routing/queues/{queueId}/members.  Join or unjoin a set of users for a queue.
 
-
-
 Wraps PATCH /api/v2/routing/queues/{queueId}/users 
 
 Requires ANY permissions: 
@@ -4924,8 +4754,6 @@ except ApiException as e:
 
 Update Contact Center Settings
 
-
-
 Wraps PATCH /api/v2/routing/settings/contactcenter 
 
 Requires ANY permissions: 
@@ -4973,8 +4801,6 @@ void (empty response body)
 
 
 Update skill group definition
-
-
 
 Wraps PATCH /api/v2/routing/skillgroups/{skillGroupId} 
 
@@ -5026,8 +4852,6 @@ except ApiException as e:
 
 
 Join or unjoin a queue for a user
-
-
 
 Wraps PATCH /api/v2/users/{userId}/queues/{queueId} 
 
@@ -5083,8 +4907,6 @@ except ApiException as e:
 
 Join or unjoin a set of queues for a user
 
-
-
 Wraps PATCH /api/v2/users/{userId}/queues 
 
 Requires ANY permissions: 
@@ -5138,8 +4960,6 @@ except ApiException as e:
 
 
 Update routing language proficiency or state.
-
-
 
 Wraps PATCH /api/v2/users/{userId}/routinglanguages/{languageId} 
 
@@ -5195,8 +5015,6 @@ except ApiException as e:
 
 Add bulk routing language to user. Max limit 50 languages
 
-
-
 Wraps PATCH /api/v2/users/{userId}/routinglanguages/bulk 
 
 Requires ANY permissions: 
@@ -5249,8 +5067,6 @@ except ApiException as e:
 
 Bulk add routing skills to user
 
-
-
 Wraps PATCH /api/v2/users/{userId}/routingskills/bulk 
 
 Requires ANY permissions: 
@@ -5302,8 +5118,6 @@ except ApiException as e:
 
 Query for queue observations
 
-
-
 Wraps POST /api/v2/analytics/queues/observations/query 
 
 Requires ANY permissions: 
@@ -5353,7 +5167,7 @@ except ApiException as e:
 
 Query for user activity observations
 
-
+post_analytics_routing_activity_query is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/analytics/routing/activity/query 
 
@@ -5408,8 +5222,6 @@ except ApiException as e:
 
 Create a benefit assessment.
 
-
-
 Wraps POST /api/v2/routing/assessments 
 
 Requires ALL permissions: 
@@ -5460,8 +5272,6 @@ except ApiException as e:
 
 Create a benefit assessment job.
 
-
-
 Wraps POST /api/v2/routing/assessments/jobs 
 
 Requires ANY permissions: 
@@ -5510,8 +5320,6 @@ except ApiException as e:
 
 
 Create a route
-
-
 
 Wraps POST /api/v2/routing/email/domains/{domainName}/routes 
 
@@ -5566,8 +5374,6 @@ Tests the custom SMTP server integration connection set on this domain
 
 The request body is optional. If omitted, this endpoint will just test the connection of the Custom SMTP Server. If the body is specified, there will be an attempt to send an email message to the server.
 
-
-
 Wraps POST /api/v2/routing/email/domains/{domainId}/testconnection 
 
 Requires ALL permissions: 
@@ -5619,8 +5425,6 @@ except ApiException as e:
 
 Create a domain
 
-
-
 Wraps POST /api/v2/routing/email/domains 
 
 Requires ALL permissions: 
@@ -5669,8 +5473,6 @@ except ApiException as e:
 
 
 Create a domain
-
-
 
 Wraps POST /api/v2/routing/email/outbound/domains 
 
@@ -5721,8 +5523,6 @@ except ApiException as e:
 
 Create a simulated domain
 
-
-
 Wraps POST /api/v2/routing/email/outbound/domains/simulated 
 
 Requires ALL permissions: 
@@ -5771,8 +5571,6 @@ except ApiException as e:
 
 
 Create Language
-
-
 
 Wraps POST /api/v2/routing/languages 
 
@@ -5823,8 +5621,6 @@ except ApiException as e:
 
 Create a predictor.
 
-
-
 Wraps POST /api/v2/routing/predictors 
 
 Requires ALL permissions: 
@@ -5874,8 +5670,6 @@ except ApiException as e:
 
 
 Bulk add or delete up to 100 queue members
-
-
 
 Wraps POST /api/v2/routing/queues/{queueId}/members 
 
@@ -5930,8 +5724,6 @@ void (empty response body)
 
 DEPRECATED: use POST /routing/queues/{queueId}/members.  Bulk add or delete up to 100 queue members.
 
-
-
 Wraps POST /api/v2/routing/queues/{queueId}/users 
 
 Requires ANY permissions: 
@@ -5985,8 +5777,6 @@ void (empty response body)
 
 Add up to 100 wrap-up codes to a queue
 
-
-
 Wraps POST /api/v2/routing/queues/{queueId}/wrapupcodes 
 
 Requires ALL permissions: 
@@ -6038,8 +5828,6 @@ except ApiException as e:
 
 Create a queue
 
-
-
 Wraps POST /api/v2/routing/queues 
 
 Requires ANY permissions: 
@@ -6088,8 +5876,6 @@ except ApiException as e:
 
 
 Add or remove member divisions for this skill group.
-
-
 
 Wraps POST /api/v2/routing/skillgroups/{skillGroupId}/members/divisions 
 
@@ -6141,8 +5927,6 @@ void (empty response body)
 
 Create a skill group
 
-
-
 Wraps POST /api/v2/routing/skillgroups 
 
 Requires ANY permissions: 
@@ -6191,8 +5975,6 @@ except ApiException as e:
 
 
 Create Skill
-
-
 
 Wraps POST /api/v2/routing/skills 
 
@@ -6243,8 +6025,6 @@ except ApiException as e:
 
 Provision an Address for SMS
 
-
-
 Wraps POST /api/v2/routing/sms/addresses 
 
 Requires ALL permissions: 
@@ -6293,8 +6073,6 @@ except ApiException as e:
 
 
 Provision a phone number for SMS
-
-
 
 Wraps POST /api/v2/routing/sms/phonenumbers 
 
@@ -6345,7 +6123,7 @@ except ApiException as e:
 
 Imports a phone number for SMS
 
-
+post_routing_sms_phonenumbers_import is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/routing/sms/phonenumbers/import 
 
@@ -6396,7 +6174,7 @@ except ApiException as e:
 
 Create an utilization tag
 
-
+post_routing_utilization_tags is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/routing/utilization/tags 
 
@@ -6447,8 +6225,6 @@ except ApiException as e:
 
 Create a wrap-up code
 
-
-
 Wraps POST /api/v2/routing/wrapupcodes 
 
 Requires ALL permissions: 
@@ -6497,8 +6273,6 @@ except ApiException as e:
 
 
 Add routing language to user
-
-
 
 Wraps POST /api/v2/users/{userId}/routinglanguages 
 
@@ -6552,8 +6326,6 @@ except ApiException as e:
 
 Add routing skill to user
 
-
-
 Wraps POST /api/v2/users/{userId}/routingskills 
 
 Requires ALL permissions: 
@@ -6604,8 +6376,6 @@ except ApiException as e:
 
 
 Update a route
-
-
 
 Wraps PUT /api/v2/routing/email/domains/{domainName}/routes/{routeId} 
 
@@ -6660,8 +6430,6 @@ except ApiException as e:
 
 Request an activation status (cname + dkim) update of an outbound domain
 
-
-
 Wraps PUT /api/v2/routing/email/outbound/domains/{domainId}/activation 
 
 Requires ALL permissions: 
@@ -6710,8 +6478,6 @@ except ApiException as e:
 
 
 Update a recipient
-
-
 
 Wraps PUT /api/v2/routing/message/recipients/{recipientId} 
 
@@ -6764,8 +6530,6 @@ except ApiException as e:
 
 Update a queue
 
-
-
 Wraps PUT /api/v2/routing/queues/{queueId} 
 
 Requires ANY permissions: 
@@ -6817,8 +6581,6 @@ except ApiException as e:
 
 Update an organization's routing settings
 
-
-
 Wraps PUT /api/v2/routing/settings 
 
 Requires ANY permissions: 
@@ -6868,8 +6630,6 @@ except ApiException as e:
 
 Update Transcription Settings
 
-
-
 Wraps PUT /api/v2/routing/settings/transcription 
 
 Requires ANY permissions: 
@@ -6918,8 +6678,6 @@ except ApiException as e:
 
 
 Update a phone number provisioned for SMS.
-
-
 
 Wraps PUT /api/v2/routing/sms/phonenumbers/{addressId} 
 
@@ -6972,8 +6730,6 @@ except ApiException as e:
 
 Update the user's max utilization settings.  Include only those media types requiring custom configuration.
 
-
-
 Wraps PUT /api/v2/routing/users/{userId}/utilization 
 
 Requires ANY permissions: 
@@ -7025,8 +6781,6 @@ except ApiException as e:
 
 Update the organization-wide max utilization settings.  Include only those media types requiring custom configuration.
 
-
-
 Wraps PUT /api/v2/routing/utilization 
 
 Requires ALL permissions: 
@@ -7075,8 +6829,6 @@ except ApiException as e:
 
 
 Update wrap-up code
-
-
 
 Wraps PUT /api/v2/routing/wrapupcodes/{codeId} 
 
@@ -7128,8 +6880,6 @@ except ApiException as e:
 
 
 Update routing skill proficiency or state.
-
-
 
 Wraps PUT /api/v2/users/{userId}/routingskills/{skillId} 
 
@@ -7183,8 +6933,6 @@ except ApiException as e:
 
 
 Replace all routing skills assigned to a user
-
-
 
 Wraps PUT /api/v2/users/{userId}/routingskills/bulk 
 

@@ -43,8 +43,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 Search gkn documentation using the q64 value returned from a previous search
 
-
-
 Wraps GET /api/v2/documentation/gkn/search 
 
 Requires no permissions
@@ -90,8 +88,6 @@ except ApiException as e:
 
 Search documentation using the q64 value returned from a previous search
 
-
-
 Wraps GET /api/v2/documentation/search 
 
 Requires no permissions
@@ -136,8 +132,6 @@ except ApiException as e:
 
 
 Search groups using the q64 value returned from a previous search
-
-
 
 Wraps GET /api/v2/groups/search 
 
@@ -189,8 +183,6 @@ except ApiException as e:
 
 Search locations using the q64 value returned from a previous search
 
-
-
 Wraps GET /api/v2/locations/search 
 
 Requires no permissions
@@ -240,8 +232,6 @@ except ApiException as e:
 
 
 Search using the q64 value returned from a previous search.
-
-
 
 Wraps GET /api/v2/search 
 
@@ -296,8 +286,6 @@ except ApiException as e:
 
 Suggest resources using the q64 value returned from a previous suggest query.
 
-
-
 Wraps GET /api/v2/search/suggest 
 
 Requires ANY permissions: 
@@ -350,8 +338,6 @@ except ApiException as e:
 
 
 Search users using the q64 value returned from a previous search
-
-
 
 Wraps GET /api/v2/users/search 
 
@@ -406,8 +392,6 @@ except ApiException as e:
 
 Search voicemails using the q64 value returned from a previous search
 
-
-
 Wraps GET /api/v2/voicemail/search 
 
 Requires no permissions
@@ -458,8 +442,6 @@ except ApiException as e:
 
 Search resources.
 
-
-
 Wraps POST /api/v2/analytics/conversations/transcripts/query 
 
 Requires ANY permissions: 
@@ -508,8 +490,6 @@ except ApiException as e:
 
 
 Search conversations
-
-
 
 Wraps POST /api/v2/conversations/participants/attributes/search 
 
@@ -560,7 +540,7 @@ except ApiException as e:
 
 Search all documents
 
-
+post_documentation_all_search is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/documentation/all/search 
 
@@ -607,8 +587,6 @@ except ApiException as e:
 
 Search gkn documentation
 
-
-
 Wraps POST /api/v2/documentation/gkn/search 
 
 Requires no permissions
@@ -654,8 +632,6 @@ except ApiException as e:
 
 Search documentation
 
-
-
 Wraps POST /api/v2/documentation/search 
 
 Requires no permissions
@@ -700,8 +676,6 @@ except ApiException as e:
 
 
 Search groups
-
-
 
 Wraps POST /api/v2/groups/search 
 
@@ -750,8 +724,6 @@ except ApiException as e:
 <span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 Search Documents
-
-
 
 Wraps POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/search 
 
@@ -804,8 +776,6 @@ except ApiException as e:
 
 Search locations
 
-
-
 Wraps POST /api/v2/locations/search 
 
 Requires no permissions
@@ -853,8 +823,6 @@ except ApiException as e:
 
 
 Search resources.
-
-
 
 Wraps POST /api/v2/search 
 
@@ -907,8 +875,6 @@ except ApiException as e:
 
 Suggest resources.
 
-
-
 Wraps POST /api/v2/search/suggest 
 
 Requires ANY permissions: 
@@ -960,8 +926,6 @@ except ApiException as e:
 
 Search resources.
 
-
-
 Wraps POST /api/v2/speechandtextanalytics/transcripts/search 
 
 Requires ANY permissions: 
@@ -1012,8 +976,6 @@ except ApiException as e:
 
 Search resources.
 
-
-
 Wraps POST /api/v2/teams/search 
 
 Requires ANY permissions: 
@@ -1062,8 +1024,6 @@ except ApiException as e:
 
 
 Search users
-
-
 
 Wraps POST /api/v2/users/search 
 
@@ -1114,7 +1074,7 @@ except ApiException as e:
 
 Search users as conversation targets
 
-
+post_users_search_conversation_target is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/users/search/conversation/target 
 
@@ -1165,7 +1125,7 @@ except ApiException as e:
 
 Search manage queue member
 
-
+post_users_search_queuemembers_manage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/users/search/queuemembers/manage 
 
@@ -1217,8 +1177,6 @@ except ApiException as e:
 
 Search users assigned to teams
 
-
-
 Wraps POST /api/v2/users/search/teams/assign 
 
 Requires ANY permissions: 
@@ -1267,8 +1225,6 @@ except ApiException as e:
 
 
 Search voicemails
-
-
 
 Wraps POST /api/v2/voicemail/search 
 

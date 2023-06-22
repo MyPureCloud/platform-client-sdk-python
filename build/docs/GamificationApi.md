@@ -81,8 +81,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 Delete an External Metric Definition
 
-
-
 Wraps DELETE /api/v2/employeeperformance/externalmetrics/definitions/{metricId} 
 
 Requires ANY permissions: 
@@ -130,8 +128,6 @@ void (empty response body)
 
 
 Get an External Metric Definition
-
-
 
 Wraps GET /api/v2/employeeperformance/externalmetrics/definitions/{metricId} 
 
@@ -181,8 +177,6 @@ except ApiException as e:
 
 
 Get a list of External Metric Definitions of an organization, sorted by name in ascending order
-
-
 
 Wraps GET /api/v2/employeeperformance/externalmetrics/definitions 
 
@@ -234,8 +228,6 @@ except ApiException as e:
 
 
 Get insights summary
-
-
 
 Wraps GET /api/v2/gamification/insights 
 
@@ -306,8 +298,6 @@ except ApiException as e:
 
 Get insights details for the current user
 
-
-
 Wraps GET /api/v2/gamification/insights/details 
 
 Requires ANY permissions: 
@@ -364,8 +354,6 @@ except ApiException as e:
 
 
 Get insights overall trend for the current user
-
-
 
 Wraps GET /api/v2/gamification/insights/groups/trends 
 
@@ -428,8 +416,6 @@ except ApiException as e:
 
 Get insights overall trend
 
-
-
 Wraps GET /api/v2/gamification/insights/groups/trends/all 
 
 Requires ANY permissions: 
@@ -491,8 +477,6 @@ except ApiException as e:
 
 Query users in a profile during a period of time
 
-
-
 Wraps GET /api/v2/gamification/insights/members 
 
 Requires ANY permissions: 
@@ -547,8 +531,6 @@ except ApiException as e:
 
 
 Get insights user trend for the current user
-
-
 
 Wraps GET /api/v2/gamification/insights/trends 
 
@@ -611,8 +593,6 @@ except ApiException as e:
 
 Get insights details for the user
 
-
-
 Wraps GET /api/v2/gamification/insights/users/{userId}/details 
 
 Requires ANY permissions: 
@@ -671,8 +651,6 @@ except ApiException as e:
 
 
 Get insights user trend for the user
-
-
 
 Wraps GET /api/v2/gamification/insights/users/{userId}/trends 
 
@@ -737,8 +715,6 @@ except ApiException as e:
 
 Leaderboard of the requesting user's division or performance profile
 
-
-
 Wraps GET /api/v2/gamification/leaderboard 
 
 Requires ANY permissions: 
@@ -791,8 +767,6 @@ except ApiException as e:
 
 
 Leaderboard by filter type
-
-
 
 Wraps GET /api/v2/gamification/leaderboard/all 
 
@@ -851,8 +825,6 @@ except ApiException as e:
 
 Best Points by division or performance profile
 
-
-
 Wraps GET /api/v2/gamification/leaderboard/all/bestpoints 
 
 Requires ANY permissions: 
@@ -904,8 +876,6 @@ except ApiException as e:
 
 Best Points of the requesting user's current performance profile or division
 
-
-
 Wraps GET /api/v2/gamification/leaderboard/bestpoints 
 
 Requires ANY permissions: 
@@ -950,8 +920,6 @@ This endpoint does not need any parameters.
 
 
 Metric definition by id
-
-
 
 Wraps GET /api/v2/gamification/metricdefinitions/{metricDefinitionId} 
 
@@ -1004,8 +972,6 @@ All metric definitions
 
 Retrieves the metric definitions and their corresponding default objectives used to create a gamified metric
 
-
-
 Wraps GET /api/v2/gamification/metricdefinitions 
 
 Requires ANY permissions: 
@@ -1050,8 +1016,6 @@ This endpoint does not need any parameters.
 
 
 Performance profile by id
-
-
 
 Wraps GET /api/v2/gamification/profiles/{profileId} 
 
@@ -1104,8 +1068,6 @@ except ApiException as e:
 
 Members of a given performance profile
 
-
-
 Wraps GET /api/v2/gamification/profiles/{profileId}/members 
 
 Requires ANY permissions: 
@@ -1154,8 +1116,6 @@ except ApiException as e:
 
 
 Performance profile gamified metric by id
-
-
 
 Wraps GET /api/v2/gamification/profiles/{profileId}/metrics/{metricId} 
 
@@ -1211,8 +1171,6 @@ except ApiException as e:
 
 
 All gamified metrics for a given performance profile
-
-
 
 Wraps GET /api/v2/gamification/profiles/{profileId}/metrics 
 
@@ -1271,8 +1229,6 @@ except ApiException as e:
 
 All metrics for a given performance profile with objective details such as order and maxPoints
 
-
-
 Wraps GET /api/v2/gamification/profiles/{profileId}/metrics/objectivedetails 
 
 Requires ANY permissions: 
@@ -1326,8 +1282,6 @@ except ApiException as e:
 
 All performance profiles
 
-
-
 Wraps GET /api/v2/gamification/profiles 
 
 Requires ANY permissions: 
@@ -1374,8 +1328,6 @@ This endpoint does not need any parameters.
 
 
 Performance profile of a user
-
-
 
 Wraps GET /api/v2/gamification/profiles/users/{userId} 
 
@@ -1430,8 +1382,6 @@ except ApiException as e:
 
 Performance profile of the requesting user
 
-
-
 Wraps GET /api/v2/gamification/profiles/users/me 
 
 Requires no permissions
@@ -1479,8 +1429,6 @@ except ApiException as e:
 
 
 Workday performance metrics of the requesting user
-
-
 
 Wraps GET /api/v2/gamification/scorecards 
 
@@ -1533,8 +1481,6 @@ except ApiException as e:
 
 Attendance status metrics of the requesting user
 
-
-
 Wraps GET /api/v2/gamification/scorecards/attendance 
 
 Requires ANY permissions: 
@@ -1586,8 +1532,6 @@ except ApiException as e:
 
 Best points of the requesting user
 
-
-
 Wraps GET /api/v2/gamification/scorecards/bestpoints 
 
 Requires ANY permissions: 
@@ -1632,8 +1576,6 @@ This endpoint does not need any parameters.
 
 
 All-time points of the requesting user
-
-
 
 Wraps GET /api/v2/gamification/scorecards/points/alltime 
 
@@ -1684,8 +1626,6 @@ except ApiException as e:
 
 Average points of the requesting user's division or performance profile
 
-
-
 Wraps GET /api/v2/gamification/scorecards/points/average 
 
 Requires ANY permissions: 
@@ -1734,8 +1674,6 @@ except ApiException as e:
 
 
 Points trends of the requesting user
-
-
 
 Wraps GET /api/v2/gamification/scorecards/points/trends 
 
@@ -1789,8 +1727,6 @@ except ApiException as e:
 
 
 Average performance values trends by metric of a user
-
-
 
 Wraps GET /api/v2/gamification/scorecards/profiles/{profileId}/metrics/{metricId}/users/{userId}/values/trends 
 
@@ -1852,8 +1788,6 @@ except ApiException as e:
 
 
 Average performance values trends by metric of a division or a performance profile
-
-
 
 Wraps GET /api/v2/gamification/scorecards/profiles/{profileId}/metrics/{metricId}/users/values/trends 
 
@@ -1918,8 +1852,6 @@ except ApiException as e:
 
 Average performance values trends by metric of the requesting user
 
-
-
 Wraps GET /api/v2/gamification/scorecards/profiles/{profileId}/metrics/{metricId}/values/trends 
 
 Requires ANY permissions: 
@@ -1981,8 +1913,6 @@ except ApiException as e:
 
 Workday performance metrics for a user
 
-
-
 Wraps GET /api/v2/gamification/scorecards/users/{userId} 
 
 Requires ANY permissions: 
@@ -2035,8 +1965,6 @@ except ApiException as e:
 
 
 Attendance status metrics for a user
-
-
 
 Wraps GET /api/v2/gamification/scorecards/users/{userId}/attendance 
 
@@ -2091,8 +2019,6 @@ except ApiException as e:
 
 Best points of a user
 
-
-
 Wraps GET /api/v2/gamification/scorecards/users/{userId}/bestpoints 
 
 Requires ANY permissions: 
@@ -2141,8 +2067,6 @@ except ApiException as e:
 
 
 All-time points for a user
-
-
 
 Wraps GET /api/v2/gamification/scorecards/users/{userId}/points/alltime 
 
@@ -2194,8 +2118,6 @@ except ApiException as e:
 
 
 Points trend for a user
-
-
 
 Wraps GET /api/v2/gamification/scorecards/users/{userId}/points/trends 
 
@@ -2252,8 +2174,6 @@ except ApiException as e:
 
 Values trends of a user
 
-
-
 Wraps GET /api/v2/gamification/scorecards/users/{userId}/values/trends 
 
 Requires ANY permissions: 
@@ -2309,8 +2229,6 @@ except ApiException as e:
 
 Workday average points by target group
 
-
-
 Wraps GET /api/v2/gamification/scorecards/users/points/average 
 
 Requires ANY permissions: 
@@ -2363,8 +2281,6 @@ except ApiException as e:
 
 
 Workday average values by target group
-
-
 
 Wraps GET /api/v2/gamification/scorecards/users/values/average 
 
@@ -2420,8 +2336,6 @@ except ApiException as e:
 
 
 Values trend by target group
-
-
 
 Wraps GET /api/v2/gamification/scorecards/users/values/trends 
 
@@ -2480,8 +2394,6 @@ except ApiException as e:
 
 Average values of the requesting user's division or performance profile
 
-
-
 Wraps GET /api/v2/gamification/scorecards/values/average 
 
 Requires ANY permissions: 
@@ -2532,8 +2444,6 @@ except ApiException as e:
 
 
 Values trends of the requesting user or group
-
-
 
 Wraps GET /api/v2/gamification/scorecards/values/trends 
 
@@ -2592,8 +2502,6 @@ except ApiException as e:
 
 Gamification activation status
 
-
-
 Wraps GET /api/v2/gamification/status 
 
 Requires ANY permissions: 
@@ -2640,8 +2548,6 @@ This endpoint does not need any parameters.
 
 
 Objective template by id
-
-
 
 Wraps GET /api/v2/gamification/templates/{templateId} 
 
@@ -2692,8 +2598,6 @@ except ApiException as e:
 
 All objective templates
 
-
-
 Wraps GET /api/v2/gamification/templates 
 
 Requires ANY permissions: 
@@ -2738,8 +2642,6 @@ This endpoint does not need any parameters.
 
 
 Update External Metric Definition
-
-
 
 Wraps PATCH /api/v2/employeeperformance/externalmetrics/definitions/{metricId} 
 
@@ -2792,8 +2694,6 @@ except ApiException as e:
 
 Write External Metric Data
 
-
-
 Wraps POST /api/v2/employeeperformance/externalmetrics/data 
 
 Requires ANY permissions: 
@@ -2842,8 +2742,6 @@ except ApiException as e:
 
 
 Create External Metric Definition
-
-
 
 Wraps POST /api/v2/employeeperformance/externalmetrics/definitions 
 
@@ -2894,8 +2792,6 @@ except ApiException as e:
 
 Activate a performance profile
 
-
-
 Wraps POST /api/v2/gamification/profiles/{profileId}/activate 
 
 Requires ANY permissions: 
@@ -2945,8 +2841,6 @@ except ApiException as e:
 
 Deactivate a performance profile
 
-
-
 Wraps POST /api/v2/gamification/profiles/{profileId}/deactivate 
 
 Requires ANY permissions: 
@@ -2995,8 +2889,6 @@ except ApiException as e:
 
 
 Assign members to a given performance profile
-
-
 
 Wraps POST /api/v2/gamification/profiles/{profileId}/members 
 
@@ -3049,8 +2941,6 @@ except ApiException as e:
 
 Validate member assignment
 
-
-
 Wraps POST /api/v2/gamification/profiles/{profileId}/members/validate 
 
 Requires ANY permissions: 
@@ -3101,8 +2991,6 @@ except ApiException as e:
 
 
 Creates a linked metric
-
-
 
 Wraps POST /api/v2/gamification/profiles/{sourceProfileId}/metrics/{sourceMetricId}/link 
 
@@ -3157,8 +3045,6 @@ except ApiException as e:
 
 Creates a gamified metric with a given metric definition and metric objective under in a performance profile
 
-
-
 Wraps POST /api/v2/gamification/profiles/{profileId}/metrics 
 
 Requires ALL permissions: 
@@ -3209,8 +3095,6 @@ except ApiException as e:
 
 
 Create a new custom performance profile
-
-
 
 Wraps POST /api/v2/gamification/profiles 
 
@@ -3263,8 +3147,6 @@ except ApiException as e:
 
 Query performance profiles in date range for a user
 
-
-
 Wraps POST /api/v2/gamification/profiles/users/{userId}/query 
 
 Requires ANY permissions: 
@@ -3316,8 +3198,6 @@ except ApiException as e:
 
 Query performance profiles in date range for the current user
 
-
-
 Wraps POST /api/v2/gamification/profiles/users/me/query 
 
 Requires no permissions
@@ -3365,8 +3245,6 @@ except ApiException as e:
 
 
 Updates a performance profile
-
-
 
 Wraps PUT /api/v2/gamification/profiles/{profileId} 
 
@@ -3418,8 +3296,6 @@ except ApiException as e:
 
 
 Updates a metric in performance profile
-
-
 
 Wraps PUT /api/v2/gamification/profiles/{profileId}/metrics/{metricId} 
 
@@ -3473,8 +3349,6 @@ except ApiException as e:
 
 
 Update gamification activation status
-
-
 
 Wraps PUT /api/v2/gamification/status 
 

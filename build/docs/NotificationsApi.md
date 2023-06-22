@@ -26,8 +26,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 Remove all subscriptions
 
-
-
 Wraps DELETE /api/v2/notifications/channels/{channelId}/subscriptions 
 
 Requires no permissions
@@ -74,8 +72,6 @@ void (empty response body)
 
 
 Get available notification topics.
-
-
 
 Wraps GET /api/v2/notifications/availabletopics 
 
@@ -127,8 +123,6 @@ except ApiException as e:
 
 The list of all subscriptions for this channel
 
-
-
 Wraps GET /api/v2/notifications/channels/{channelId}/subscriptions 
 
 Requires no permissions
@@ -176,8 +170,6 @@ except ApiException as e:
 
 
 The list of existing channels
-
-
 
 Wraps GET /api/v2/notifications/channels 
 
@@ -229,8 +221,6 @@ Verify a channel still exists and is valid
 
 Returns a 200 OK if channel exists, and a 404 Not Found if it doesn't
 
-
-
 Wraps HEAD /api/v2/notifications/channels/{channelId} 
 
 Requires no permissions
@@ -277,8 +267,6 @@ void (empty response body)
 
 
 Add a list of subscriptions to the existing list of subscriptions
-
-
 
 Wraps POST /api/v2/notifications/channels/{channelId}/subscriptions 
 
@@ -334,8 +322,6 @@ Create a new channel
 
 There is a limit of 20 channels per user/app combination. Creating a 21st channel will remove the channel with oldest last used date. Channels without an active connection will be removed first.
 
-
-
 Wraps POST /api/v2/notifications/channels 
 
 Requires no permissions
@@ -379,8 +365,6 @@ This endpoint does not need any parameters.
 
 
 Replace the current list of subscriptions with a new list.
-
-
 
 Wraps PUT /api/v2/notifications/channels/{channelId}/subscriptions 
 

@@ -31,8 +31,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 Delete OAuth Client
 
-
-
 Wraps DELETE /api/v2/oauth/clients/{clientId} 
 
 Requires ANY permissions: 
@@ -80,8 +78,6 @@ void (empty response body)
 
 
 Get a client that is authorized by the resource owner
-
-
 
 Wraps GET /api/v2/oauth/authorizations/{clientId} 
 
@@ -134,8 +130,6 @@ except ApiException as e:
 
 List clients that have been authorized, requested, or revoked by the resource owner
 
-
-
 Wraps GET /api/v2/oauth/authorizations 
 
 Requires ANY permissions: 
@@ -185,8 +179,6 @@ except ApiException as e:
 
 Get OAuth Client
 
-
-
 Wraps GET /api/v2/oauth/clients/{clientId} 
 
 Requires ANY permissions: 
@@ -235,8 +227,6 @@ except ApiException as e:
 
 
 Get the results of a usage query
-
-
 
 Wraps GET /api/v2/oauth/clients/{clientId}/usage/query/results/{executionId} 
 
@@ -292,8 +282,6 @@ Get a summary of OAuth client API usage
 
 After calling this method, you will then need to poll for the query results based on the returned execution Id
 
-
-
 Wraps GET /api/v2/oauth/clients/{clientId}/usage/summary 
 
 Requires ANY permissions: 
@@ -346,8 +334,6 @@ except ApiException as e:
 
 The list of OAuth clients
 
-
-
 Wraps GET /api/v2/oauth/clients 
 
 Requires ANY permissions: 
@@ -392,8 +378,6 @@ This endpoint does not need any parameters.
 
 
 An OAuth scope
-
-
 
 Wraps GET /api/v2/oauth/scopes/{scopeId} 
 
@@ -445,8 +429,6 @@ except ApiException as e:
 
 The list of OAuth scopes
 
-
-
 Wraps GET /api/v2/oauth/scopes 
 
 Requires no permissions
@@ -496,8 +478,6 @@ except ApiException as e:
 Regenerate Client Secret
 
 This operation will set the client secret to a randomly generated cryptographically random value. All clients must be updated with the new secret. This operation should be used with caution.
-
-
 
 Wraps POST /api/v2/oauth/clients/{clientId}/secret 
 
@@ -549,8 +529,6 @@ except ApiException as e:
 Query for OAuth client API usage
 
 After calling this method, you will then need to poll for the query results based on the returned execution Id
-
-
 
 Wraps POST /api/v2/oauth/clients/{clientId}/usage/query 
 
@@ -606,8 +584,6 @@ Create OAuth client
 
 The OAuth Grant/Client is required in order to create an authentication token and gain access to PureCloud.  The preferred authorizedGrantTypes is 'CODE' which requires applications to send a client ID and client secret. This is typically a web server.  If the client is unable to secure the client secret then the 'TOKEN' grant type aka IMPLICIT should be used. This is would be for browser or mobile apps.  If a client is to be used outside of the context of a user then the 'CLIENT-CREDENTIALS' grant may be used. In this case the client must be granted roles  via the 'roleIds' field.
 
-
-
 Wraps POST /api/v2/oauth/clients 
 
 Requires ANY permissions: 
@@ -656,8 +632,6 @@ except ApiException as e:
 
 
 Update OAuth Client
-
-
 
 Wraps PUT /api/v2/oauth/clients/{clientId} 
 

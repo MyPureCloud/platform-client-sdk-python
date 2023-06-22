@@ -111,7 +111,7 @@ class GeneralProgramJobRequest(object):
         """
         if isinstance(mode, int):
             mode = str(mode)
-        allowed_values = ["Skip", "Merge"]
+        allowed_values = ["Skip", "Merge", "ReplaceMerge"]
         if mode.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for mode -> " + mode)
             self._mode = "outdated_sdk_version"

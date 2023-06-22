@@ -24,8 +24,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 Delete a user recording.
 
-
-
 Wraps DELETE /api/v2/userrecordings/{recordingId} 
 
 Requires no permissions
@@ -72,8 +70,6 @@ void (empty response body)
 
 
 Get a user recording.
-
-
 
 Wraps GET /api/v2/userrecordings/{recordingId} 
 
@@ -124,8 +120,6 @@ except ApiException as e:
 
 
 Download a user recording.
-
-
 
 Wraps GET /api/v2/userrecordings/{recordingId}/media 
 
@@ -179,8 +173,6 @@ except ApiException as e:
 
 Get a list of user recordings.
 
-
-
 Wraps GET /api/v2/userrecordings 
 
 Requires no permissions
@@ -233,8 +225,6 @@ except ApiException as e:
 
 Get user recording summary
 
-
-
 Wraps GET /api/v2/userrecordings/summary 
 
 Requires no permissions
@@ -278,8 +268,6 @@ This endpoint does not need any parameters.
 
 
 Update a user recording.
-
-
 
 Wraps PUT /api/v2/userrecordings/{recordingId} 
 

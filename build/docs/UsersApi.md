@@ -106,8 +106,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 Delete/cancel an async request
 
-
-
 Wraps DELETE /api/v2/analytics/users/details/jobs/{jobId} 
 
 Requires ANY permissions: 
@@ -155,8 +153,6 @@ void (empty response body)
 
 
 Delete a grant of a role in a division
-
-
 
 Wraps DELETE /api/v2/authorization/subjects/{subjectId}/divisions/{divisionId}/roles/{roleId} 
 
@@ -210,8 +206,6 @@ void (empty response body)
 
 Delete the user's max utilization settings and revert to the organization-wide default.
 
-
-
 Wraps DELETE /api/v2/routing/users/{userId}/utilization 
 
 Requires ANY permissions: 
@@ -259,8 +253,6 @@ void (empty response body)
 
 
 Delete user
-
-
 
 Wraps DELETE /api/v2/users/{userId} 
 
@@ -311,8 +303,6 @@ except ApiException as e:
 
 
 Remove routing language from user
-
-
 
 Wraps DELETE /api/v2/users/{userId}/routinglanguages/{languageId} 
 
@@ -365,8 +355,6 @@ void (empty response body)
 
 Remove routing skill from user
 
-
-
 Wraps DELETE /api/v2/users/{userId}/routingskills/{skillId} 
 
 Requires ALL permissions: 
@@ -417,8 +405,6 @@ void (empty response body)
 
 Clear associated station
 
-
-
 Wraps DELETE /api/v2/users/{userId}/station/associatedstation 
 
 Requires no permissions
@@ -465,8 +451,6 @@ void (empty response body)
 
 
 Clear default station
-
-
 
 Wraps DELETE /api/v2/users/{userId}/station/defaultstation 
 
@@ -517,7 +501,7 @@ void (empty response body)
 
 Get status for async query for user aggregates
 
-
+get_analytics_users_aggregates_job is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/analytics/users/aggregates/jobs/{jobId} 
 
@@ -568,7 +552,7 @@ except ApiException as e:
 
 Fetch a page of results for an async aggregates query
 
-
+get_analytics_users_aggregates_job_results is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/analytics/users/aggregates/jobs/{jobId}/results 
 
@@ -621,8 +605,6 @@ except ApiException as e:
 
 Get status for async query for user details
 
-
-
 Wraps GET /api/v2/analytics/users/details/jobs/{jobId} 
 
 Requires ANY permissions: 
@@ -671,8 +653,6 @@ except ApiException as e:
 
 
 Fetch a page of results for an async query
-
-
 
 Wraps GET /api/v2/analytics/users/details/jobs/{jobId}/results 
 
@@ -727,8 +707,6 @@ except ApiException as e:
 
 Lookup the datalake availability date and time
 
-
-
 Wraps GET /api/v2/analytics/users/details/jobs/availability 
 
 Requires ANY permissions: 
@@ -775,8 +753,6 @@ This endpoint does not need any parameters.
 Returns which divisions the current user has the given permission in.
 
 This route is deprecated, use authorization/divisionspermitted/paged/me instead.
-
-
 
 Wraps GET /api/v2/authorization/divisionspermitted/me 
 
@@ -827,8 +803,6 @@ except ApiException as e:
 
 
 Returns which divisions the current user has the given permission in.
-
-
 
 Wraps GET /api/v2/authorization/divisionspermitted/paged/me 
 
@@ -884,8 +858,6 @@ Returns which divisions the specified user has the given permission in.
 
 This route is deprecated, use authorization/divisionspermitted/paged/me instead.
 
-
-
 Wraps GET /api/v2/authorization/divisionspermitted/paged/{subjectId} 
 
 Requires no permissions
@@ -940,8 +912,6 @@ except ApiException as e:
 
 Returns a listing of roles and permissions for a user.
 
-
-
 Wraps GET /api/v2/authorization/subjects/{subjectId} 
 
 Requires ANY permissions: 
@@ -991,8 +961,6 @@ except ApiException as e:
 
 Returns a listing of roles and permissions for the currently authenticated user.
 
-
-
 Wraps GET /api/v2/authorization/subjects/me 
 
 Requires no permissions
@@ -1036,8 +1004,6 @@ This endpoint does not need any parameters.
 <span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 Fetch field config for an entity type
-
-
 
 Wraps GET /api/v2/fieldconfig 
 
@@ -1088,8 +1054,6 @@ except ApiException as e:
 Get a user profile listing
 
 This api is deprecated. User /api/v2/users
-
-
 
 Wraps GET /api/v2/profiles/users 
 
@@ -1151,8 +1115,6 @@ except ApiException as e:
 
 Get the user's max utilization settings.  If not configured, the organization-wide default is returned.
 
-
-
 Wraps GET /api/v2/routing/users/{userId}/utilization 
 
 Requires ANY permissions: 
@@ -1202,8 +1164,6 @@ except ApiException as e:
 
 
 Get user.
-
-
 
 Wraps GET /api/v2/users/{userId} 
 
@@ -1259,8 +1219,6 @@ except ApiException as e:
 
 Get adjacents
 
-
-
 Wraps GET /api/v2/users/{userId}/adjacents 
 
 Requires no permissions
@@ -1311,8 +1269,6 @@ except ApiException as e:
 
 Get a user's CallForwarding
 
-
-
 Wraps GET /api/v2/users/{userId}/callforwarding 
 
 Requires no permissions
@@ -1360,8 +1316,6 @@ except ApiException as e:
 
 
 Get direct reports
-
-
 
 Wraps GET /api/v2/users/{userId}/directreports 
 
@@ -1412,8 +1366,6 @@ except ApiException as e:
 <span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 Deprecated; will be revived with new contract
-
-
 
 Wraps GET /api/v2/users/{userId}/favorites 
 
@@ -1471,8 +1423,6 @@ except ApiException as e:
 
 Get a user's Geolocation
 
-
-
 Wraps GET /api/v2/users/{userId}/geolocations/{clientId} 
 
 Requires no permissions
@@ -1523,8 +1473,6 @@ except ApiException as e:
 
 Get a OutOfOffice
 
-
-
 Wraps GET /api/v2/users/{userId}/outofoffice 
 
 Requires no permissions
@@ -1574,8 +1522,6 @@ except ApiException as e:
 Get user profile
 
 This api has been deprecated. Use api/v2/users instead
-
-
 
 Wraps GET /api/v2/users/{userId}/profile 
 
@@ -1629,8 +1575,6 @@ except ApiException as e:
 
 List profile skills for a user
 
-
-
 Wraps GET /api/v2/users/{userId}/profileskills 
 
 Requires ANY permissions: 
@@ -1679,8 +1623,6 @@ except ApiException as e:
 
 
 Get queues for user
-
-
 
 Wraps GET /api/v2/users/{userId}/queues 
 
@@ -1741,8 +1683,6 @@ except ApiException as e:
 
 Returns a listing of roles and permissions for a user.
 
-
-
 Wraps GET /api/v2/users/{subjectId}/roles 
 
 Requires ANY permissions: 
@@ -1791,8 +1731,6 @@ except ApiException as e:
 
 
 List routing language for user
-
-
 
 Wraps GET /api/v2/users/{userId}/routinglanguages 
 
@@ -1848,8 +1786,6 @@ except ApiException as e:
 
 List routing skills for user
 
-
-
 Wraps GET /api/v2/users/{userId}/routingskills 
 
 Requires no permissions
@@ -1904,8 +1840,6 @@ except ApiException as e:
 
 Fetch the routing status of a user
 
-
-
 Wraps GET /api/v2/users/{userId}/routingstatus 
 
 Requires no permissions
@@ -1953,8 +1887,6 @@ except ApiException as e:
 
 
 Get skill groups for a user
-
-
 
 Wraps GET /api/v2/users/{userId}/skillgroups 
 
@@ -2011,8 +1943,6 @@ except ApiException as e:
 
 Get user state information.
 
-
-
 Wraps GET /api/v2/users/{userId}/state 
 
 Requires ANY permissions: 
@@ -2062,8 +1992,6 @@ except ApiException as e:
 
 Get station information for user
 
-
-
 Wraps GET /api/v2/users/{userId}/station 
 
 Requires no permissions
@@ -2111,8 +2039,6 @@ except ApiException as e:
 
 
 Get superiors
-
-
 
 Wraps GET /api/v2/users/{userId}/superiors 
 
@@ -2163,8 +2089,6 @@ except ApiException as e:
 
 
 List the organizations that have authorized/trusted the user.
-
-
 
 Wraps GET /api/v2/users/{userId}/trustors 
 
@@ -2218,8 +2142,6 @@ except ApiException as e:
 
 
 Get the list of available users.
-
-
 
 Wraps GET /api/v2/users 
 
@@ -2284,8 +2206,6 @@ except ApiException as e:
 Get list of Development Activities
 
 Either moduleId or userId is required. Results are filtered based on the applicable permissions.
-
-
 
 Wraps GET /api/v2/users/development/activities 
 
@@ -2361,8 +2281,6 @@ Get list of Development Activities for current user
 
 Results are filtered based on the applicable permissions.
 
-
-
 Wraps GET /api/v2/users/development/activities/me 
 
 Requires no permissions
@@ -2433,8 +2351,6 @@ Get a Development Activity
 
 Permission not required if you are the attendee, creator or facilitator of the coaching appointment or you are the assigned user of the learning assignment.
 
-
-
 Wraps GET /api/v2/users/development/activities/{activityId} 
 
 Requires ANY permissions: 
@@ -2489,8 +2405,6 @@ Get current user details.
 
 This request is not valid when using the Client Credentials OAuth grant.
 
-
-
 Wraps GET /api/v2/users/me 
 
 Requires no permissions
@@ -2540,8 +2454,6 @@ except ApiException as e:
 
 
 Search users using the q64 value returned from a previous search
-
-
 
 Wraps GET /api/v2/users/search 
 
@@ -2596,8 +2508,6 @@ except ApiException as e:
 
 Update user
 
-
-
 Wraps PATCH /api/v2/users/{userId} 
 
 Requires ANY permissions: 
@@ -2648,8 +2558,6 @@ except ApiException as e:
 
 
 Patch a user's CallForwarding
-
-
 
 Wraps PATCH /api/v2/users/{userId}/callforwarding 
 
@@ -2704,8 +2612,6 @@ Patch a user's Geolocation
 
 The geolocation object can be patched one of three ways. Option 1: Set the 'primary' property to true. This will set the client as the user's primary geolocation source.  Option 2: Provide the 'latitude' and 'longitude' values.  This will enqueue an asynchronous update of the 'city', 'region', and 'country', generating a notification. A subsequent GET operation will include the new values for 'city', 'region' and 'country'.  Option 3:  Provide the 'city', 'region', 'country' values.  Option 1 can be combined with Option 2 or Option 3.  For example, update the client as primary and provide latitude and longitude values.
 
-
-
 Wraps PATCH /api/v2/users/{userId}/geolocations/{clientId} 
 
 Requires no permissions
@@ -2757,8 +2663,6 @@ except ApiException as e:
 
 
 Join or unjoin a queue for a user
-
-
 
 Wraps PATCH /api/v2/users/{userId}/queues/{queueId} 
 
@@ -2814,8 +2718,6 @@ except ApiException as e:
 
 Join or unjoin a set of queues for a user
 
-
-
 Wraps PATCH /api/v2/users/{userId}/queues 
 
 Requires ANY permissions: 
@@ -2869,8 +2771,6 @@ except ApiException as e:
 
 
 Update routing language proficiency or state.
-
-
 
 Wraps PATCH /api/v2/users/{userId}/routinglanguages/{languageId} 
 
@@ -2926,8 +2826,6 @@ except ApiException as e:
 
 Add bulk routing language to user. Max limit 50 languages
 
-
-
 Wraps PATCH /api/v2/users/{userId}/routinglanguages/bulk 
 
 Requires ANY permissions: 
@@ -2980,8 +2878,6 @@ except ApiException as e:
 
 Bulk add routing skills to user
 
-
-
 Wraps PATCH /api/v2/users/{userId}/routingskills/bulk 
 
 Requires ANY permissions: 
@@ -3033,8 +2929,6 @@ except ApiException as e:
 
 Update bulk acd autoanswer on users
 
-
-
 Wraps PATCH /api/v2/users/bulk 
 
 Requires ANY permissions: 
@@ -3085,7 +2979,7 @@ except ApiException as e:
 
 Query for user activity observations
 
-
+post_analytics_users_activity_query is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/analytics/users/activity/query 
 
@@ -3140,7 +3034,7 @@ except ApiException as e:
 
 Query for user aggregates asynchronously
 
-
+post_analytics_users_aggregates_jobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/analytics/users/aggregates/jobs 
 
@@ -3191,8 +3085,6 @@ except ApiException as e:
 
 Query for user aggregates
 
-
-
 Wraps POST /api/v2/analytics/users/aggregates/query 
 
 Requires ANY permissions: 
@@ -3241,8 +3133,6 @@ except ApiException as e:
 
 
 Query for user details asynchronously
-
-
 
 Wraps POST /api/v2/analytics/users/details/jobs 
 
@@ -3293,8 +3183,6 @@ except ApiException as e:
 
 Query for user details
 
-
-
 Wraps POST /api/v2/analytics/users/details/query 
 
 Requires ANY permissions: 
@@ -3344,8 +3232,6 @@ except ApiException as e:
 
 Query for user observations
 
-
-
 Wraps POST /api/v2/analytics/users/observations/query 
 
 Requires ANY permissions: 
@@ -3394,8 +3280,6 @@ except ApiException as e:
 
 
 Bulk-grant roles and divisions to a subject.
-
-
 
 Wraps POST /api/v2/authorization/subjects/{subjectId}/bulkadd 
 
@@ -3449,8 +3333,6 @@ void (empty response body)
 
 Bulk-remove grants from a subject.
 
-
-
 Wraps POST /api/v2/authorization/subjects/{subjectId}/bulkremove 
 
 Requires ALL permissions: 
@@ -3502,8 +3384,6 @@ void (empty response body)
 Replace subject's roles and divisions with the exact list supplied in the request.
 
 This operation will not remove grants that are inherited from group membership. It will only set the grants directly applied to the subject.
-
-
 
 Wraps POST /api/v2/authorization/subjects/{subjectId}/bulkreplace 
 
@@ -3557,8 +3437,6 @@ void (empty response body)
 
 
 Make a grant of a role in a division
-
-
 
 Wraps POST /api/v2/authorization/subjects/{subjectId}/divisions/{divisionId}/roles/{roleId} 
 
@@ -3616,8 +3494,6 @@ Create mapping between external identifier and user. Limit 100 per entity.
 
 Authority Name and External key are case sensitive.
 
-
-
 Wraps POST /api/v2/users/{userId}/externalid 
 
 Requires ANY permissions: 
@@ -3669,8 +3545,6 @@ except ApiException as e:
 
 Send an activation email to the user
 
-
-
 Wraps POST /api/v2/users/{userId}/invite 
 
 Requires ANY permissions: 
@@ -3721,8 +3595,6 @@ void (empty response body)
 
 Change a users password
 
-
-
 Wraps POST /api/v2/users/{userId}/password 
 
 Requires ANY permissions: 
@@ -3772,8 +3644,6 @@ void (empty response body)
 
 
 Add routing language to user
-
-
 
 Wraps POST /api/v2/users/{userId}/routinglanguages 
 
@@ -3826,8 +3696,6 @@ except ApiException as e:
 
 
 Add routing skill to user
-
-
 
 Wraps POST /api/v2/users/{userId}/routingskills 
 
@@ -3882,8 +3750,6 @@ Create user
 
 If user creation is successful but the provided password is invalid or configuration fails, POST api/v2/users/{userId}/password can be used to re-attempt password configuration.
 
-
-
 Wraps POST /api/v2/users 
 
 Requires ANY permissions: 
@@ -3935,8 +3801,6 @@ Retrieve aggregated development activity data
 
 Results are filtered based on the applicable permissions.
 
-
-
 Wraps POST /api/v2/users/development/activities/aggregates/query 
 
 Requires ANY permissions: 
@@ -3987,8 +3851,6 @@ except ApiException as e:
 
 Change your password
 
-
-
 Wraps POST /api/v2/users/me/password 
 
 Requires no permissions
@@ -4035,8 +3897,6 @@ void (empty response body)
 
 
 Search users
-
-
 
 Wraps POST /api/v2/users/search 
 
@@ -4087,7 +3947,7 @@ except ApiException as e:
 
 Search users as conversation targets
 
-
+post_users_search_conversation_target is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/users/search/conversation/target 
 
@@ -4138,7 +3998,7 @@ except ApiException as e:
 
 Search manage queue member
 
-
+post_users_search_queuemembers_manage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/users/search/queuemembers/manage 
 
@@ -4190,8 +4050,6 @@ except ApiException as e:
 
 Search users assigned to teams
 
-
-
 Wraps POST /api/v2/users/search/teams/assign 
 
 Requires ANY permissions: 
@@ -4240,8 +4098,6 @@ except ApiException as e:
 
 
 Update the user's max utilization settings.  Include only those media types requiring custom configuration.
-
-
 
 Wraps PUT /api/v2/routing/users/{userId}/utilization 
 
@@ -4294,8 +4150,6 @@ except ApiException as e:
 
 Update a user's CallForwarding
 
-
-
 Wraps PUT /api/v2/users/{userId}/callforwarding 
 
 Requires ANY permissions: 
@@ -4347,8 +4201,6 @@ except ApiException as e:
 
 Update an OutOfOffice
 
-
-
 Wraps PUT /api/v2/users/{userId}/outofoffice 
 
 Requires no permissions
@@ -4398,8 +4250,6 @@ except ApiException as e:
 
 
 Update profile skills for a user
-
-
 
 Wraps PUT /api/v2/users/{userId}/profileskills 
 
@@ -4452,8 +4302,6 @@ except ApiException as e:
 
 Sets the user's roles
 
-
-
 Wraps PUT /api/v2/users/{subjectId}/roles 
 
 Requires ANY permissions: 
@@ -4504,8 +4352,6 @@ except ApiException as e:
 
 
 Update routing skill proficiency or state.
-
-
 
 Wraps PUT /api/v2/users/{userId}/routingskills/{skillId} 
 
@@ -4560,8 +4406,6 @@ except ApiException as e:
 
 Replace all routing skills assigned to a user
 
-
-
 Wraps PUT /api/v2/users/{userId}/routingskills/bulk 
 
 Requires ANY permissions: 
@@ -4613,8 +4457,6 @@ except ApiException as e:
 
 Update the routing status of a user
 
-
-
 Wraps PUT /api/v2/users/{userId}/routingstatus 
 
 Requires no permissions
@@ -4664,8 +4506,6 @@ except ApiException as e:
 
 
 Update user state information.
-
-
 
 Wraps PUT /api/v2/users/{userId}/state 
 
@@ -4718,8 +4558,6 @@ except ApiException as e:
 
 Set associated station
 
-
-
 Wraps PUT /api/v2/users/{userId}/station/associatedstation/{stationId} 
 
 Requires no permissions
@@ -4768,8 +4606,6 @@ void (empty response body)
 
 
 Set default station
-
-
 
 Wraps PUT /api/v2/users/{userId}/station/defaultstation/{stationId} 
 

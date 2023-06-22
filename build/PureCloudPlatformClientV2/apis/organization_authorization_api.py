@@ -573,11 +573,11 @@ class OrganizationAuthorizationApi(object):
                                             callback=params.get('callback'))
         return response
 
-	# Preview Endpoint
     def delete_orgauthorization_trustees(self, id: List['str'], **kwargs) -> None:
         """
         Delete Bulk Org Trustees
         
+	    delete_orgauthorization_trustees is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -982,11 +982,11 @@ class OrganizationAuthorizationApi(object):
                                             callback=params.get('callback'))
         return response
 
-	# Preview Endpoint
     def delete_orgauthorization_trustors(self, id: List['str'], **kwargs) -> None:
         """
         Delete Bulk Org Trustors
         
+	    delete_orgauthorization_trustors is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

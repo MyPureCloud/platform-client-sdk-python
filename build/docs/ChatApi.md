@@ -26,8 +26,6 @@ Get Chat Settings.
 
 This route is deprecated, please use /chats/settings instead
 
-
-
 Wraps GET /api/v2/chat/settings 
 
 Requires ANY permissions: 
@@ -73,8 +71,6 @@ This endpoint does not need any parameters.
 
 
 Get Chat Settings.
-
-
 
 Wraps GET /api/v2/chats/settings 
 
@@ -124,8 +120,6 @@ Patch Chat Settings.
 
 This route is deprecated, please use /chats/settings instead
 
-
-
 Wraps PATCH /api/v2/chat/settings 
 
 Requires ANY permissions: 
@@ -174,8 +168,6 @@ except ApiException as e:
 
 
 Patch Chat Settings.
-
-
 
 Wraps PATCH /api/v2/chats/settings 
 
@@ -228,8 +220,6 @@ Update Chat Settings.
 
 This route is deprecated, please use /chats/settings instead
 
-
-
 Wraps PUT /api/v2/chat/settings 
 
 Requires ANY permissions: 
@@ -278,8 +268,6 @@ except ApiException as e:
 
 
 Update Chat Settings.
-
-
 
 Wraps PUT /api/v2/chats/settings 
 

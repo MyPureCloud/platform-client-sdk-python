@@ -54,6 +54,7 @@ class CategoryResponse(object):
             'id': 'str',
             'name': 'str',
             'description': 'str',
+            'external_id': 'str',
             'date_created': 'datetime',
             'date_modified': 'datetime',
             'parent_category': 'CategoryReference',
@@ -66,6 +67,7 @@ class CategoryResponse(object):
             'id': 'id',
             'name': 'name',
             'description': 'description',
+            'external_id': 'externalId',
             'date_created': 'dateCreated',
             'date_modified': 'dateModified',
             'parent_category': 'parentCategory',
@@ -77,6 +79,7 @@ class CategoryResponse(object):
         self._id = None
         self._name = None
         self._description = None
+        self._external_id = None
         self._date_created = None
         self._date_modified = None
         self._parent_category = None
@@ -136,7 +139,7 @@ class CategoryResponse(object):
     def description(self) -> str:
         """
         Gets the description of this CategoryResponse.
-        The description for the category.
+
 
         :return: The description of this CategoryResponse.
         :rtype: str
@@ -147,7 +150,7 @@ class CategoryResponse(object):
     def description(self, description: str) -> None:
         """
         Sets the description of this CategoryResponse.
-        The description for the category.
+
 
         :param description: The description of this CategoryResponse.
         :type: str
@@ -157,10 +160,34 @@ class CategoryResponse(object):
         self._description = description
 
     @property
+    def external_id(self) -> str:
+        """
+        Gets the external_id of this CategoryResponse.
+
+
+        :return: The external_id of this CategoryResponse.
+        :rtype: str
+        """
+        return self._external_id
+
+    @external_id.setter
+    def external_id(self, external_id: str) -> None:
+        """
+        Sets the external_id of this CategoryResponse.
+
+
+        :param external_id: The external_id of this CategoryResponse.
+        :type: str
+        """
+        
+
+        self._external_id = external_id
+
+    @property
     def date_created(self) -> datetime:
         """
         Gets the date_created of this CategoryResponse.
-        The creation date-time for the category. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The date_created of this CategoryResponse.
         :rtype: datetime
@@ -171,7 +198,7 @@ class CategoryResponse(object):
     def date_created(self, date_created: datetime) -> None:
         """
         Sets the date_created of this CategoryResponse.
-        The creation date-time for the category. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param date_created: The date_created of this CategoryResponse.
         :type: datetime
@@ -184,7 +211,7 @@ class CategoryResponse(object):
     def date_modified(self) -> datetime:
         """
         Gets the date_modified of this CategoryResponse.
-        The last modification date-time for the category. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The date_modified of this CategoryResponse.
         :rtype: datetime
@@ -195,7 +222,7 @@ class CategoryResponse(object):
     def date_modified(self, date_modified: datetime) -> None:
         """
         Sets the date_modified of this CategoryResponse.
-        The last modification date-time for the category. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param date_modified: The date_modified of this CategoryResponse.
         :type: datetime

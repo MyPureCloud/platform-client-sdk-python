@@ -1,7 +1,7 @@
 ---
-title: CategoryRequest
+title: CategoryCreateRequest
 ---
-## CategoryRequest
+## CategoryCreateRequest
 
 ## Properties
 
@@ -9,8 +9,9 @@ title: CategoryRequest
 |------------ | ------------- | ------------- | -------------|
 | **id** | **str** | The globally unique identifier for the object. | [optional] |
 | **name** | **str** | The name of the category. | |
+| **parent_category_id** | **str** |  | [optional] |
 | **description** | **str** | The description for the category. | [optional] |
-| **parent_category_id** | **str** | The category to which this category belongs. | [optional] |
+| **external_id** | **str** | The external id associated with the category. | [optional] |
 | **self_uri** | **str** | The URI for this object | [optional] |
 {: class="table table-striped"}
 

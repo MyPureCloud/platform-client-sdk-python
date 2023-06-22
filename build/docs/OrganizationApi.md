@@ -36,8 +36,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 Fetch field config for an entity type
 
-
-
 Wraps GET /api/v2/fieldconfig 
 
 Requires no permissions
@@ -86,8 +84,6 @@ except ApiException as e:
 
 Gets the organization's settings
 
-
-
 Wraps GET /api/v2/organizations/authentication/settings 
 
 Requires ANY permissions: 
@@ -135,8 +131,6 @@ Get the list of domains that will be allowed to embed PureCloud applications
 
 This route is deprecated, please use /api/v2/organizations/authentication/settings instead
 
-
-
 Wraps GET /api/v2/organizations/embeddedintegration 
 
 Requires no permissions
@@ -183,8 +177,6 @@ Get organization IP address whitelist settings
 
 This route is deprecated, please use /api/v2/organizations/authentication/settings instead
 
-
-
 Wraps GET /api/v2/organizations/ipaddressauthentication 
 
 Requires ANY permissions: 
@@ -229,8 +221,6 @@ This endpoint does not need any parameters.
 
 
 Get a limit change request
-
-
 
 Wraps GET /api/v2/organizations/limits/changerequests/{requestId} 
 
@@ -282,8 +272,6 @@ except ApiException as e:
 Get the available limit change requests
 
 Timestamp interval defaults to the last 365 days if both query parameters are omitted. If only one parameter is omitted, the interval will default to a 180 day range in the specified direction.
-
-
 
 Wraps GET /api/v2/organizations/limits/changerequests 
 
@@ -342,8 +330,6 @@ except ApiException as e:
 
 Get a link to the limit documentation
 
-
-
 Wraps GET /api/v2/organizations/limits/docs 
 
 Requires no permissions
@@ -387,8 +373,6 @@ This endpoint does not need any parameters.
 
 
 Get the effective limits in a namespace for an organization
-
-
 
 Wraps GET /api/v2/organizations/limits/namespaces/{namespaceName} 
 
@@ -439,8 +423,6 @@ except ApiException as e:
 
 Get the default limits in a namespace for an organization
 
-
-
 Wraps GET /api/v2/organizations/limits/namespaces/{namespaceName}/defaults 
 
 Requires no permissions
@@ -488,8 +470,6 @@ except ApiException as e:
 
 
 Get the available limit namespaces
-
-
 
 Wraps GET /api/v2/organizations/limits/namespaces 
 
@@ -542,8 +522,6 @@ except ApiException as e:
 
 Get organization.
 
-
-
 Wraps GET /api/v2/organizations/me 
 
 Requires no permissions
@@ -588,8 +566,6 @@ This endpoint does not need any parameters.
 
 This route is deprecated, please use /api/v2/organizations/authentication/settings instead
 
-
-
 Wraps GET /api/v2/organizations/whitelist 
 
 Requires no permissions
@@ -633,8 +609,6 @@ This endpoint does not need any parameters.
 
 
 Update the organization's settings
-
-
 
 Wraps PATCH /api/v2/organizations/authentication/settings 
 
@@ -684,8 +658,6 @@ except ApiException as e:
 
 
 Update organization
-
-
 
 Wraps PATCH /api/v2/organizations/features/{featureName} 
 
@@ -740,8 +712,6 @@ Update the list of domains that will be allowed to embed PureCloud applications
 
 This route is deprecated, please use /api/v2/organizations/authentication/settings instead
 
-
-
 Wraps PUT /api/v2/organizations/embeddedintegration 
 
 Requires ANY permissions: 
@@ -793,8 +763,6 @@ Update organization IP address whitelist settings
 
 This route is deprecated, please use /api/v2/organizations/authentication/settings instead
 
-
-
 Wraps PUT /api/v2/organizations/ipaddressauthentication 
 
 Requires ANY permissions: 
@@ -844,8 +812,6 @@ except ApiException as e:
 
 Update organization.
 
-
-
 Wraps PUT /api/v2/organizations/me 
 
 Requires ANY permissions: 
@@ -894,8 +860,6 @@ except ApiException as e:
 <span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 This route is deprecated, please use /api/v2/organizations/authentication/settings instead
-
-
 
 Wraps PUT /api/v2/organizations/whitelist 
 

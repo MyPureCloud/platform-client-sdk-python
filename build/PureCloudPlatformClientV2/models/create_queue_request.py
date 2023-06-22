@@ -36,6 +36,7 @@ if TYPE_CHECKING:
     from . import AcwSettings
     from . import AgentOwnedRouting
     from . import Bullseye
+    from . import ConditionalGroupRouting
     from . import DirectRouting
     from . import DomainEntityRef
     from . import MemberGroup
@@ -74,6 +75,7 @@ class CreateQueueRequest(object):
             'joined_member_count': 'int',
             'media_settings': 'QueueMediaSettings',
             'routing_rules': 'list[RoutingRule]',
+            'conditional_group_routing': 'ConditionalGroupRouting',
             'bullseye': 'Bullseye',
             'acw_settings': 'AcwSettings',
             'skill_evaluation_method': 'str',
@@ -112,6 +114,7 @@ class CreateQueueRequest(object):
             'joined_member_count': 'joinedMemberCount',
             'media_settings': 'mediaSettings',
             'routing_rules': 'routingRules',
+            'conditional_group_routing': 'conditionalGroupRouting',
             'bullseye': 'bullseye',
             'acw_settings': 'acwSettings',
             'skill_evaluation_method': 'skillEvaluationMethod',
@@ -149,6 +152,7 @@ class CreateQueueRequest(object):
         self._joined_member_count = None
         self._media_settings = None
         self._routing_rules = None
+        self._conditional_group_routing = None
         self._bullseye = None
         self._acw_settings = None
         self._skill_evaluation_method = None
@@ -483,6 +487,30 @@ class CreateQueueRequest(object):
         
 
         self._routing_rules = routing_rules
+
+    @property
+    def conditional_group_routing(self) -> 'ConditionalGroupRouting':
+        """
+        Gets the conditional_group_routing of this CreateQueueRequest.
+        The Conditional Group Routing settings for the queue.
+
+        :return: The conditional_group_routing of this CreateQueueRequest.
+        :rtype: ConditionalGroupRouting
+        """
+        return self._conditional_group_routing
+
+    @conditional_group_routing.setter
+    def conditional_group_routing(self, conditional_group_routing: 'ConditionalGroupRouting') -> None:
+        """
+        Sets the conditional_group_routing of this CreateQueueRequest.
+        The Conditional Group Routing settings for the queue.
+
+        :param conditional_group_routing: The conditional_group_routing of this CreateQueueRequest.
+        :type: ConditionalGroupRouting
+        """
+        
+
+        self._conditional_group_routing = conditional_group_routing
 
     @property
     def bullseye(self) -> 'Bullseye':

@@ -48,29 +48,58 @@ class TransferRequest(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
+            'transfer_type': 'str',
             'user_id': 'str',
             'address': 'str',
             'user_name': 'str',
             'queue_id': 'str',
-            'voicemail': 'bool',
-            'transfer_type': 'str'
+            'voicemail': 'bool'
         }
 
         self.attribute_map = {
+            'transfer_type': 'transferType',
             'user_id': 'userId',
             'address': 'address',
             'user_name': 'userName',
             'queue_id': 'queueId',
-            'voicemail': 'voicemail',
-            'transfer_type': 'transferType'
+            'voicemail': 'voicemail'
         }
 
+        self._transfer_type = None
         self._user_id = None
         self._address = None
         self._user_name = None
         self._queue_id = None
         self._voicemail = None
-        self._transfer_type = None
+
+    @property
+    def transfer_type(self) -> str:
+        """
+        Gets the transfer_type of this TransferRequest.
+
+
+        :return: The transfer_type of this TransferRequest.
+        :rtype: str
+        """
+        return self._transfer_type
+
+    @transfer_type.setter
+    def transfer_type(self, transfer_type: str) -> None:
+        """
+        Sets the transfer_type of this TransferRequest.
+
+
+        :param transfer_type: The transfer_type of this TransferRequest.
+        :type: str
+        """
+        if isinstance(transfer_type, int):
+            transfer_type = str(transfer_type)
+        allowed_values = ["Attended", "Unattended"]
+        if transfer_type.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for transfer_type -> " + transfer_type)
+            self._transfer_type = "outdated_sdk_version"
+        else:
+            self._transfer_type = transfer_type
 
     @property
     def user_id(self) -> str:
@@ -191,35 +220,6 @@ class TransferRequest(object):
         
 
         self._voicemail = voicemail
-
-    @property
-    def transfer_type(self) -> str:
-        """
-        Gets the transfer_type of this TransferRequest.
-        The type of transfer to perform.
-
-        :return: The transfer_type of this TransferRequest.
-        :rtype: str
-        """
-        return self._transfer_type
-
-    @transfer_type.setter
-    def transfer_type(self, transfer_type: str) -> None:
-        """
-        Sets the transfer_type of this TransferRequest.
-        The type of transfer to perform.
-
-        :param transfer_type: The transfer_type of this TransferRequest.
-        :type: str
-        """
-        if isinstance(transfer_type, int):
-            transfer_type = str(transfer_type)
-        allowed_values = ["Attended", "Unattended"]
-        if transfer_type.lower() not in map(str.lower, allowed_values):
-            # print("Invalid value for transfer_type -> " + transfer_type)
-            self._transfer_type = "outdated_sdk_version"
-        else:
-            self._transfer_type = transfer_type
 
     def to_dict(self):
         """

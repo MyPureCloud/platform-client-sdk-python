@@ -34,7 +34,7 @@ from typing import Dict
 
 if TYPE_CHECKING:
     from . import BuForecastGenerationResult
-    from . import BuForecastModification
+    from . import BuForecastModificationResponse
     from . import ForecastPlanningGroupsResponse
     from . import ForecastSourceDayPointer
     from . import WfmVersionedEntityMetadata
@@ -64,7 +64,7 @@ class BuShortTermForecast(object):
             'can_use_for_scheduling': 'bool',
             'reference_start_date': 'datetime',
             'source_days': 'list[ForecastSourceDayPointer]',
-            'modifications': 'list[BuForecastModification]',
+            'modifications': 'list[BuForecastModificationResponse]',
             'generation_results': 'BuForecastGenerationResult',
             'time_zone': 'str',
             'planning_groups_version': 'int',
@@ -354,24 +354,24 @@ class BuShortTermForecast(object):
         self._source_days = source_days
 
     @property
-    def modifications(self) -> List['BuForecastModification']:
+    def modifications(self) -> List['BuForecastModificationResponse']:
         """
         Gets the modifications of this BuShortTermForecast.
         Any manual modifications applied to this forecast
 
         :return: The modifications of this BuShortTermForecast.
-        :rtype: list[BuForecastModification]
+        :rtype: list[BuForecastModificationResponse]
         """
         return self._modifications
 
     @modifications.setter
-    def modifications(self, modifications: List['BuForecastModification']) -> None:
+    def modifications(self, modifications: List['BuForecastModificationResponse']) -> None:
         """
         Sets the modifications of this BuShortTermForecast.
         Any manual modifications applied to this forecast
 
         :param modifications: The modifications of this BuShortTermForecast.
-        :type: list[BuForecastModification]
+        :type: list[BuForecastModificationResponse]
         """
         
 

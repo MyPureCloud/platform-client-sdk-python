@@ -334,7 +334,7 @@ from .models.bu_create_blank_schedule_request import BuCreateBlankScheduleReques
 from .models.bu_current_agent_schedule_search_response import BuCurrentAgentScheduleSearchResponse
 from .models.bu_forecast_generation_planning_group_result import BuForecastGenerationPlanningGroupResult
 from .models.bu_forecast_generation_result import BuForecastGenerationResult
-from .models.bu_forecast_modification import BuForecastModification
+from .models.bu_forecast_modification_response import BuForecastModificationResponse
 from .models.bu_forecast_result import BuForecastResult
 from .models.bu_forecast_result_response import BuForecastResultResponse
 from .models.bu_forecast_time_series_result import BuForecastTimeSeriesResult
@@ -485,12 +485,13 @@ from .models.campaign_time_slot import CampaignTimeSlot
 from .models.card import Card
 from .models.card_action import CardAction
 from .models.category import Category
+from .models.category_create_request import CategoryCreateRequest
 from .models.category_entity_listing import CategoryEntityListing
 from .models.category_listing import CategoryListing
 from .models.category_reference import CategoryReference
-from .models.category_request import CategoryRequest
 from .models.category_response import CategoryResponse
 from .models.category_response_listing import CategoryResponseListing
+from .models.category_update_request import CategoryUpdateRequest
 from .models.certificate import Certificate
 from .models.certificate_authority_entity_listing import CertificateAuthorityEntityListing
 from .models.certificate_details import CertificateDetails
@@ -569,6 +570,9 @@ from .models.constraint_conflict_message import ConstraintConflictMessage
 from .models.consult_transfer import ConsultTransfer
 from .models.consult_transfer_event import ConsultTransferEvent
 from .models.consult_transfer_response import ConsultTransferResponse
+from .models.consult_transfer_to_agent import ConsultTransferToAgent
+from .models.consult_transfer_to_external import ConsultTransferToExternal
+from .models.consult_transfer_to_queue import ConsultTransferToQueue
 from .models.consult_transfer_update import ConsultTransferUpdate
 from .models.consumed_resources_entity_listing import ConsumedResourcesEntityListing
 from .models.consuming_resources_entity_listing import ConsumingResourcesEntityListing
@@ -1572,9 +1576,9 @@ from .models.group_search_request import GroupSearchRequest
 from .models.group_update import GroupUpdate
 from .models.groups_search_response import GroupsSearchResponse
 from .models.guest_category_reference import GuestCategoryReference
-from .models.guest_category_response import GuestCategoryResponse
 from .models.guest_category_response_listing import GuestCategoryResponseListing
 from .models.guest_member_info import GuestMemberInfo
+from .models.guest_response_category import GuestResponseCategory
 from .models.headcount_forecast import HeadcountForecast
 from .models.headcount_interval import HeadcountInterval
 from .models.help_link import HelpLink
@@ -1643,6 +1647,10 @@ from .models.insights_trend_metric_item import InsightsTrendMetricItem
 from .models.insights_trend_total_item import InsightsTrendTotalItem
 from .models.insights_trends import InsightsTrends
 from .models.instagram_id import InstagramId
+from .models.instagram_integration import InstagramIntegration
+from .models.instagram_integration_entity_listing import InstagramIntegrationEntityListing
+from .models.instagram_integration_request import InstagramIntegrationRequest
+from .models.instagram_integration_update_request import InstagramIntegrationUpdateRequest
 from .models.instagram_scoped_id import InstagramScopedId
 from .models.integration import Integration
 from .models.integration_action import IntegrationAction
@@ -3181,6 +3189,9 @@ from .models.transfer_initiator import TransferInitiator
 from .models.transfer_request import TransferRequest
 from .models.transfer_response import TransferResponse
 from .models.transfer_response_modified_by import TransferResponseModifiedBy
+from .models.transfer_to_agent_request import TransferToAgentRequest
+from .models.transfer_to_external_request import TransferToExternalRequest
+from .models.transfer_to_queue_request import TransferToQueueRequest
 from .models.trend_data import TrendData
 from .models.trigger import Trigger
 from .models.trigger_entity_listing import TriggerEntityListing
@@ -3244,6 +3255,8 @@ from .models.uci10n import UCI10n
 from .models.uc_icon import UCIcon
 from .models.uc_integration import UCIntegration
 from .models.uc_integration_listing import UCIntegrationListing
+from .models.uc_third_party_presence import UCThirdPartyPresence
+from .models.uc_user_presence import UcUserPresence
 from .models.unanswered_group import UnansweredGroup
 from .models.unanswered_group_suggested_document import UnansweredGroupSuggestedDocument
 from .models.unanswered_groups import UnansweredGroups

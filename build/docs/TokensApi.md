@@ -24,8 +24,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 Delete all auth tokens for the specified user.
 
-
-
 Wraps DELETE /api/v2/tokens/{userId} 
 
 Requires ANY permissions: 
@@ -74,8 +72,6 @@ void (empty response body)
 
 Delete auth token used to make the request.
 
-
-
 Wraps DELETE /api/v2/tokens/me 
 
 Requires no permissions
@@ -118,8 +114,6 @@ void (empty response body)
 
 
 Fetch information about the current token
-
-
 
 Wraps GET /api/v2/tokens/me 
 
@@ -165,7 +159,7 @@ This endpoint does not need any parameters.
 
 Get the current Idle Token Timeout Value
 
-
+get_tokens_timeout is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/tokens/timeout 
 
@@ -212,8 +206,6 @@ This endpoint does not need any parameters.
 
 Verify user token
 
-
-
 Wraps HEAD /api/v2/tokens/me 
 
 Requires no permissions
@@ -257,7 +249,7 @@ void (empty response body)
 
 Update or Enable/Disable the Idle Token Timeout
 
-
+put_tokens_timeout is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps PUT /api/v2/tokens/timeout 
 

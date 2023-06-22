@@ -19,8 +19,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 Get the messages for a web messaging session.
 
-
-
 Wraps GET /api/v2/webmessaging/messages 
 
 Requires no permissions

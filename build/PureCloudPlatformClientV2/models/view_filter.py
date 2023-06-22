@@ -220,7 +220,9 @@ class ViewFilter(object):
             'user_state': 'str',
             'is_cleared_by_customer': 'bool',
             'evaluation_assignee_ids': 'list[str]',
-            'evaluation_assigned': 'bool'
+            'evaluation_assigned': 'bool',
+            'assistant_ids': 'list[str]',
+            'knowledge_base_ids': 'list[str]'
         }
 
         self.attribute_map = {
@@ -391,7 +393,9 @@ class ViewFilter(object):
             'user_state': 'userState',
             'is_cleared_by_customer': 'isClearedByCustomer',
             'evaluation_assignee_ids': 'evaluationAssigneeIds',
-            'evaluation_assigned': 'evaluationAssigned'
+            'evaluation_assigned': 'evaluationAssigned',
+            'assistant_ids': 'assistantIds',
+            'knowledge_base_ids': 'knowledgeBaseIds'
         }
 
         self._media_types = None
@@ -562,6 +566,8 @@ class ViewFilter(object):
         self._is_cleared_by_customer = None
         self._evaluation_assignee_ids = None
         self._evaluation_assigned = None
+        self._assistant_ids = None
+        self._knowledge_base_ids = None
 
     @property
     def media_types(self) -> List[str]:
@@ -4604,6 +4610,54 @@ class ViewFilter(object):
         
 
         self._evaluation_assigned = evaluation_assigned
+
+    @property
+    def assistant_ids(self) -> List[str]:
+        """
+        Gets the assistant_ids of this ViewFilter.
+        The assistant ids that are used to filter the view.
+
+        :return: The assistant_ids of this ViewFilter.
+        :rtype: list[str]
+        """
+        return self._assistant_ids
+
+    @assistant_ids.setter
+    def assistant_ids(self, assistant_ids: List[str]) -> None:
+        """
+        Sets the assistant_ids of this ViewFilter.
+        The assistant ids that are used to filter the view.
+
+        :param assistant_ids: The assistant_ids of this ViewFilter.
+        :type: list[str]
+        """
+        
+
+        self._assistant_ids = assistant_ids
+
+    @property
+    def knowledge_base_ids(self) -> List[str]:
+        """
+        Gets the knowledge_base_ids of this ViewFilter.
+        The knowledge base ids that are used to filter the view.
+
+        :return: The knowledge_base_ids of this ViewFilter.
+        :rtype: list[str]
+        """
+        return self._knowledge_base_ids
+
+    @knowledge_base_ids.setter
+    def knowledge_base_ids(self, knowledge_base_ids: List[str]) -> None:
+        """
+        Sets the knowledge_base_ids of this ViewFilter.
+        The knowledge base ids that are used to filter the view.
+
+        :param knowledge_base_ids: The knowledge_base_ids of this ViewFilter.
+        :type: list[str]
+        """
+        
+
+        self._knowledge_base_ids = knowledge_base_ids
 
     def to_dict(self):
         """

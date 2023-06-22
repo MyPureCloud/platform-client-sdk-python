@@ -56,8 +56,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 Delete a document.
 
-
-
 Wraps DELETE /api/v2/contentmanagement/documents/{documentId} 
 
 Requires no permissions
@@ -109,8 +107,6 @@ Deletes an existing share.
 
 This revokes sharing rights specified in the share record
 
-
-
 Wraps DELETE /api/v2/contentmanagement/shares/{shareId} 
 
 Requires no permissions
@@ -158,8 +154,6 @@ void (empty response body)
 
 Cancel the command for this status
 
-
-
 Wraps DELETE /api/v2/contentmanagement/status/{statusId} 
 
 Requires no permissions
@@ -206,8 +200,6 @@ void (empty response body)
 
 
 Delete a workspace
-
-
 
 Wraps DELETE /api/v2/contentmanagement/workspaces/{workspaceId} 
 
@@ -257,8 +249,6 @@ void (empty response body)
 
 
 Delete a member from a workspace
-
-
 
 Wraps DELETE /api/v2/contentmanagement/workspaces/{workspaceId}/members/{memberId} 
 
@@ -311,8 +301,6 @@ Delete workspace tag
 
 Delete a tag from a workspace. Will remove this tag from all documents.
 
-
-
 Wraps DELETE /api/v2/contentmanagement/workspaces/{workspaceId}/tagvalues/{tagId} 
 
 Requires no permissions
@@ -362,8 +350,6 @@ void (empty response body)
 
 Get a document.
 
-
-
 Wraps GET /api/v2/contentmanagement/documents/{documentId} 
 
 Requires no permissions
@@ -410,11 +396,11 @@ except ApiException as e:
 
 ## [**DocumentAuditEntityListing**](DocumentAuditEntityListing.html) get_contentmanagement_document_audits(document_id, page_size=page_size, page_number=page_number, transaction_filter=transaction_filter, level=level, sort_by=sort_by, sort_order=sort_order)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 Get a list of audits for a document.
 
-
+This api is deprecated, use https://developer.genesys.cloud/platform/audit/ instead.
 
 Wraps GET /api/v2/contentmanagement/documents/{documentId}/audits 
 
@@ -476,8 +462,6 @@ except ApiException as e:
 
 Download a document.
 
-
-
 Wraps GET /api/v2/contentmanagement/documents/{documentId}/content 
 
 Requires no permissions
@@ -529,8 +513,6 @@ except ApiException as e:
 <span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 Get a list of documents.
-
-
 
 Wraps GET /api/v2/contentmanagement/documents 
 
@@ -592,8 +574,6 @@ except ApiException as e:
 
 Query content
 
-
-
 Wraps GET /api/v2/contentmanagement/query 
 
 Requires no permissions
@@ -652,8 +632,6 @@ except ApiException as e:
 
 Get a Security Profile
 
-
-
 Wraps GET /api/v2/contentmanagement/securityprofiles/{securityProfileId} 
 
 Requires no permissions
@@ -702,8 +680,6 @@ except ApiException as e:
 
 Get a List of Security Profiles
 
-
-
 Wraps GET /api/v2/contentmanagement/securityprofiles 
 
 Requires no permissions
@@ -747,8 +723,6 @@ This endpoint does not need any parameters.
 
 
 Retrieve details about an existing share.
-
-
 
 Wraps GET /api/v2/contentmanagement/shares/{shareId} 
 
@@ -801,8 +775,6 @@ except ApiException as e:
 Get shared documents. Securely download a shared document.
 
 This method requires the download sharing URI obtained in the get document response (downloadSharingUri). Documents may be shared between users in the same workspace. Documents may also be shared between any user by creating a content management share.
-
-
 
 Wraps GET /api/v2/contentmanagement/shared/{sharedId} 
 
@@ -862,8 +834,6 @@ Gets a list of shares.  You must specify at least one filter (e.g. entityId).
 
 Failing to specify a filter will return 400.
 
-
-
 Wraps GET /api/v2/contentmanagement/shares 
 
 Requires no permissions
@@ -918,8 +888,6 @@ except ApiException as e:
 
 Get a list of statuses for pending operations
 
-
-
 Wraps GET /api/v2/contentmanagement/status 
 
 Requires no permissions
@@ -970,8 +938,6 @@ except ApiException as e:
 
 Get a status.
 
-
-
 Wraps GET /api/v2/contentmanagement/status/{statusId} 
 
 Requires no permissions
@@ -1020,8 +986,6 @@ except ApiException as e:
 
 Get usage details.
 
-
-
 Wraps GET /api/v2/contentmanagement/usage 
 
 Requires no permissions
@@ -1065,8 +1029,6 @@ This endpoint does not need any parameters.
 
 
 Get a workspace.
-
-
 
 Wraps GET /api/v2/contentmanagement/workspaces/{workspaceId} 
 
@@ -1117,8 +1079,6 @@ except ApiException as e:
 
 
 Get a list of documents.
-
-
 
 Wraps GET /api/v2/contentmanagement/workspaces/{workspaceId}/documents 
 
@@ -1178,8 +1138,6 @@ except ApiException as e:
 
 Get a workspace member
 
-
-
 Wraps GET /api/v2/contentmanagement/workspaces/{workspaceId}/members/{memberId} 
 
 Requires no permissions
@@ -1231,8 +1189,6 @@ except ApiException as e:
 
 
 Get a list workspace members
-
-
 
 Wraps GET /api/v2/contentmanagement/workspaces/{workspaceId}/members 
 
@@ -1288,8 +1244,6 @@ except ApiException as e:
 
 Get a workspace tag
 
-
-
 Wraps GET /api/v2/contentmanagement/workspaces/{workspaceId}/tagvalues/{tagId} 
 
 Requires no permissions
@@ -1341,8 +1295,6 @@ except ApiException as e:
 
 
 Get a list of workspace tags
-
-
 
 Wraps GET /api/v2/contentmanagement/workspaces/{workspaceId}/tagvalues 
 
@@ -1402,8 +1354,6 @@ Get a list of workspaces.
 
 Specifying 'content' access will return all workspaces the user has document access to, while 'admin' access will return all group workspaces the user has administrative rights to.
 
-
-
 Wraps GET /api/v2/contentmanagement/workspaces 
 
 Requires no permissions
@@ -1454,11 +1404,11 @@ except ApiException as e:
 
 ## [**QueryResults**](QueryResults.html) post_contentmanagement_auditquery(body)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 Query audits
 
-
+This api is deprecated, use https://developer.genesys.cloud/platform/audit/ instead.
 
 Wraps POST /api/v2/contentmanagement/auditquery 
 
@@ -1507,8 +1457,6 @@ except ApiException as e:
 
 
 Update a document.
-
-
 
 Wraps POST /api/v2/contentmanagement/documents/{documentId} 
 
@@ -1564,8 +1512,6 @@ except ApiException as e:
 
 Replace the contents of a document.
 
-
-
 Wraps POST /api/v2/contentmanagement/documents/{documentId}/content 
 
 Requires no permissions
@@ -1617,8 +1563,6 @@ except ApiException as e:
 
 
 Add a document.
-
-
 
 Wraps POST /api/v2/contentmanagement/documents 
 
@@ -1674,8 +1618,6 @@ except ApiException as e:
 
 Query content
 
-
-
 Wraps POST /api/v2/contentmanagement/query 
 
 Requires no permissions
@@ -1726,8 +1668,6 @@ except ApiException as e:
 
 Creates a new share or updates an existing share if the entity has already been shared
 
-
-
 Wraps POST /api/v2/contentmanagement/shares 
 
 Requires no permissions
@@ -1775,8 +1715,6 @@ except ApiException as e:
 
 
 Create a workspace tag
-
-
 
 Wraps POST /api/v2/contentmanagement/workspaces/{workspaceId}/tagvalues 
 
@@ -1827,8 +1765,6 @@ except ApiException as e:
 
 
 Perform a prefix query on tags in the workspace
-
-
 
 Wraps POST /api/v2/contentmanagement/workspaces/{workspaceId}/tagvalues/query 
 
@@ -1882,8 +1818,6 @@ except ApiException as e:
 
 Create a group workspace
 
-
-
 Wraps POST /api/v2/contentmanagement/workspaces 
 
 Requires no permissions
@@ -1931,8 +1865,6 @@ except ApiException as e:
 
 
 Update a workspace
-
-
 
 Wraps PUT /api/v2/contentmanagement/workspaces/{workspaceId} 
 
@@ -1983,8 +1915,6 @@ except ApiException as e:
 
 
 Add a member to a workspace
-
-
 
 Wraps PUT /api/v2/contentmanagement/workspaces/{workspaceId}/members/{memberId} 
 
@@ -2037,8 +1967,6 @@ except ApiException as e:
 
 
 Update a workspace tag. Will update all documents with the new tag value.
-
-
 
 Wraps PUT /api/v2/contentmanagement/workspaces/{workspaceId}/tagvalues/{tagId} 
 

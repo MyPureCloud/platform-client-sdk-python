@@ -35,6 +35,7 @@ from typing import Dict
 if TYPE_CHECKING:
     from . import Detail
     from . import ErrorBody
+    from . import Limit
 
 class KnowledgeImportJobError(object):
     """
@@ -61,6 +62,7 @@ class KnowledgeImportJobError(object):
             'context_id': 'str',
             'details': 'list[Detail]',
             'errors': 'list[ErrorBody]',
+            'limit': 'Limit',
             'document_index': 'int'
         }
 
@@ -75,6 +77,7 @@ class KnowledgeImportJobError(object):
             'context_id': 'contextId',
             'details': 'details',
             'errors': 'errors',
+            'limit': 'limit',
             'document_index': 'documentIndex'
         }
 
@@ -88,6 +91,7 @@ class KnowledgeImportJobError(object):
         self._context_id = None
         self._details = None
         self._errors = None
+        self._limit = None
         self._document_index = None
 
     @property
@@ -329,6 +333,30 @@ class KnowledgeImportJobError(object):
         
 
         self._errors = errors
+
+    @property
+    def limit(self) -> 'Limit':
+        """
+        Gets the limit of this KnowledgeImportJobError.
+
+
+        :return: The limit of this KnowledgeImportJobError.
+        :rtype: Limit
+        """
+        return self._limit
+
+    @limit.setter
+    def limit(self, limit: 'Limit') -> None:
+        """
+        Sets the limit of this KnowledgeImportJobError.
+
+
+        :param limit: The limit of this KnowledgeImportJobError.
+        :type: Limit
+        """
+        
+
+        self._limit = limit
 
     @property
     def document_index(self) -> int:

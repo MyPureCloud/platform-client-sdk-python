@@ -148,11 +148,11 @@ class GroupsApi(object):
                                             callback=params.get('callback'))
         return response
 
-	# Preview Endpoint
     def delete_group_dynamicsettings(self, group_id: str, **kwargs) -> None:
         """
         Remove dynamic group definition
         
+	    delete_group_dynamicsettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -468,11 +468,11 @@ class GroupsApi(object):
                                             callback=params.get('callback'))
         return response
 
-	# Preview Endpoint
     def get_group_dynamicsettings(self, group_id: str, **kwargs) -> 'DynamicGroupDefinition':
         """
         Get dynamic group definition
         
+	    get_group_dynamicsettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -1216,11 +1216,11 @@ class GroupsApi(object):
         return response
 
     @deprecated("post_groups_dynamicsettings_preview is deprecated")
-	# Preview Endpoint
     def post_groups_dynamicsettings_preview(self, body: 'DynamicGroupQuery', **kwargs) -> 'DynamicGroupQueryPreview':
         """
         Preview the number of users selected for a dynamic group definition query
         
+	    post_groups_dynamicsettings_preview is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -1454,11 +1454,11 @@ class GroupsApi(object):
                                             callback=params.get('callback'))
         return response
 
-	# Preview Endpoint
     def put_group_dynamicsettings(self, group_id: str, body: 'DynamicGroupQuery', **kwargs) -> None:
         """
         Create / Update dynamic group definition
         
+	    put_group_dynamicsettings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

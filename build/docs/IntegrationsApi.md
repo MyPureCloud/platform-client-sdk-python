@@ -74,6 +74,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**put_integrations_credential**](IntegrationsApi.html#put_integrations_credential) | Update a set of credentials|
 |[**put_integrations_speech_nuance_nuance_integration_id_bots_launch_settings**](IntegrationsApi.html#put_integrations_speech_nuance_nuance_integration_id_bots_launch_settings) | Update the Nuance bot list for the specific bots made available to Genesys Cloud in the specified Integration|
 |[**put_integrations_speech_tts_settings**](IntegrationsApi.html#put_integrations_speech_tts_settings) | Update TTS settings for an org|
+|[**put_integrations_unifiedcommunication_thirdpartypresences**](IntegrationsApi.html#put_integrations_unifiedcommunication_thirdpartypresences) | Bulk integration presence ingestion|
 {: class="table table-striped"}
 
 <a name="delete_integration"></a>
@@ -83,8 +84,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 
 Delete integration.
-
-
 
 Wraps DELETE /api/v2/integrations/{integrationId} 
 
@@ -135,8 +134,6 @@ except ApiException as e:
 
 Delete an Action
 
-
-
 Wraps DELETE /api/v2/integrations/actions/{actionId} 
 
 Requires ANY permissions: 
@@ -184,8 +181,6 @@ void (empty response body)
 
 
 Delete a Draft
-
-
 
 Wraps DELETE /api/v2/integrations/actions/{actionId}/draft 
 
@@ -235,8 +230,6 @@ void (empty response body)
 
 Delete a set of credentials
 
-
-
 Wraps DELETE /api/v2/integrations/credentials/{credentialId} 
 
 Requires no permissions
@@ -283,8 +276,6 @@ void (empty response body)
 
 
 Get integration.
-
-
 
 Wraps GET /api/v2/integrations/{integrationId} 
 
@@ -347,8 +338,6 @@ except ApiException as e:
 
 Get integration configuration.
 
-
-
 Wraps GET /api/v2/integrations/{integrationId}/config/current 
 
 Requires ANY permissions: 
@@ -397,8 +386,6 @@ except ApiException as e:
 
 
 List integrations
-
-
 
 Wraps GET /api/v2/integrations 
 
@@ -459,8 +446,6 @@ except ApiException as e:
 
 Retrieves a single Action matching id.
 
-
-
 Wraps GET /api/v2/integrations/actions/{actionId} 
 
 Requires ANY permissions: 
@@ -514,8 +499,6 @@ except ApiException as e:
 
 
 Retrieve a Draft
-
-
 
 Wraps GET /api/v2/integrations/actions/{actionId}/draft 
 
@@ -571,8 +554,6 @@ except ApiException as e:
 
 Retrieve schema for a Draft based on filename.
 
-
-
 Wraps GET /api/v2/integrations/actions/{actionId}/draft/schemas/{fileName} 
 
 Requires ANY permissions: 
@@ -624,8 +605,6 @@ except ApiException as e:
 
 
 Retrieve templates for a Draft based on filename.
-
-
 
 Wraps GET /api/v2/integrations/actions/{actionId}/draft/templates/{fileName} 
 
@@ -679,8 +658,6 @@ except ApiException as e:
 
 Validate current Draft configuration.
 
-
-
 Wraps GET /api/v2/integrations/actions/{actionId}/draft/validation 
 
 Requires ANY permissions: 
@@ -729,8 +706,6 @@ except ApiException as e:
 
 
 Retrieve schema for an action based on filename.
-
-
 
 Wraps GET /api/v2/integrations/actions/{actionId}/schemas/{fileName} 
 
@@ -784,8 +759,6 @@ except ApiException as e:
 
 Retrieve text of templates for an action based on filename.
 
-
-
 Wraps GET /api/v2/integrations/actions/{actionId}/templates/{fileName} 
 
 Requires ANY permissions: 
@@ -837,8 +810,6 @@ except ApiException as e:
 
 
 Retrieves all actions associated with filters passed in via query param.
-
-
 
 Wraps GET /api/v2/integrations/actions 
 
@@ -910,8 +881,6 @@ except ApiException as e:
 
 Retrieves all categories of available Actions
 
-
-
 Wraps GET /api/v2/integrations/actions/categories 
 
 Requires ANY permissions: 
@@ -973,8 +942,6 @@ except ApiException as e:
 
 
 Retrieves all action drafts associated with the filters passed in via query param.
-
-
 
 Wraps GET /api/v2/integrations/actions/drafts 
 
@@ -1046,8 +1013,6 @@ except ApiException as e:
 
 Get a specific botConnector bot, plus versions, for this integration
 
-
-
 Wraps GET /api/v2/integrations/botconnector/{integrationId}/bots/{botId} 
 
 Requires ANY permissions: 
@@ -1100,8 +1065,6 @@ except ApiException as e:
 
 
 Get a list of bot versions for a bot
-
-
 
 Wraps GET /api/v2/integrations/botconnector/{integrationId}/bots/{botId}/versions 
 
@@ -1158,8 +1121,6 @@ except ApiException as e:
 
 Get a list of botConnector bots for this integration
 
-
-
 Wraps GET /api/v2/integrations/botconnector/{integrationId}/bots 
 
 Requires ANY permissions: 
@@ -1208,8 +1169,6 @@ except ApiException as e:
 
 
 Get a summary list of botConnector bots for this integration
-
-
 
 Wraps GET /api/v2/integrations/botconnector/{integrationId}/bots/summaries 
 
@@ -1263,8 +1222,6 @@ except ApiException as e:
 
 
 List permitted client app integrations for the logged in user
-
-
 
 Wraps GET /api/v2/integrations/clientapps 
 
@@ -1326,8 +1283,6 @@ UC integration client application configuration.
 
 This endpoint returns basic UI configuration data for all Unified Communications integrations client applications enabled for the current organization.
 
-
-
 Wraps GET /api/v2/integrations/clientapps/unifiedcommunications 
 
 Requires ANY permissions: 
@@ -1387,8 +1342,6 @@ except ApiException as e:
 
 Get a single credential with sensitive fields redacted
 
-
-
 Wraps GET /api/v2/integrations/credentials/{credentialId} 
 
 Requires no permissions
@@ -1436,8 +1389,6 @@ except ApiException as e:
 
 
 List multiple sets of credentials
-
-
 
 Wraps GET /api/v2/integrations/credentials 
 
@@ -1489,8 +1440,6 @@ except ApiException as e:
 
 List all credential types
 
-
-
 Wraps GET /api/v2/integrations/credentials/types 
 
 Requires no permissions
@@ -1534,8 +1483,6 @@ This endpoint does not need any parameters.
 
 
 Get details about a Dialogflow agent
-
-
 
 Wraps GET /api/v2/integrations/speech/dialogflow/agents/{agentId} 
 
@@ -1585,8 +1532,6 @@ except ApiException as e:
 
 
 Get a list of Dialogflow agents in the customers' Google accounts
-
-
 
 Wraps GET /api/v2/integrations/speech/dialogflow/agents 
 
@@ -1641,8 +1586,6 @@ except ApiException as e:
 
 Get details about a Lex bot alias
 
-
-
 Wraps GET /api/v2/integrations/speech/lex/bot/alias/{aliasId} 
 
 Requires ANY permissions: 
@@ -1691,8 +1634,6 @@ except ApiException as e:
 
 
 Get a list of aliases for a bot in the customer's AWS accounts
-
-
 
 Wraps GET /api/v2/integrations/speech/lex/bot/{botId}/aliases 
 
@@ -1751,8 +1692,6 @@ except ApiException as e:
 
 Get a list of Lex bots in the customers' AWS accounts
 
-
-
 Wraps GET /api/v2/integrations/speech/lex/bots 
 
 Requires ANY permissions: 
@@ -1806,7 +1745,7 @@ except ApiException as e:
 
 Get a Nuance bot in the specified Integration
 
-
+get_integrations_speech_nuance_nuance_integration_id_bot is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/{botId} 
 
@@ -1863,7 +1802,7 @@ except ApiException as e:
 
 Get the status of an asynchronous Nuance bot GET job
 
-
+get_integrations_speech_nuance_nuance_integration_id_bot_job is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/{botId}/jobs/{jobId} 
 
@@ -1918,7 +1857,7 @@ except ApiException as e:
 
 Get the result of an asynchronous Nuance bot GET job
 
-
+get_integrations_speech_nuance_nuance_integration_id_bot_job_results is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/{botId}/jobs/{jobId}/results 
 
@@ -1975,7 +1914,7 @@ Get a list of Nuance bots available in the specified Integration
 
 If the 'onlyRegisteredBots' param is set, the returned data will only include the Nuance bots which have configured client secrets within the Integration,  otherwise all of the Nuance bots available to the Integration's configured discovery credentials are returned.
 
-
+get_integrations_speech_nuance_nuance_integration_id_bots is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots 
 
@@ -2032,7 +1971,7 @@ except ApiException as e:
 
 Get the status of an asynchronous Nuance bots GET job
 
-
+get_integrations_speech_nuance_nuance_integration_id_bots_job is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/jobs/{jobId} 
 
@@ -2085,7 +2024,7 @@ except ApiException as e:
 
 Get the result of an asynchronous Nuance bots GET job
 
-
+get_integrations_speech_nuance_nuance_integration_id_bots_job_results is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/jobs/{jobId}/results 
 
@@ -2138,8 +2077,6 @@ except ApiException as e:
 
 Get details about a TTS engine
 
-
-
 Wraps GET /api/v2/integrations/speech/tts/engines/{engineId} 
 
 Requires ANY permissions: 
@@ -2191,8 +2128,6 @@ except ApiException as e:
 
 Get details about a specific voice for a TTS engine
 
-
-
 Wraps GET /api/v2/integrations/speech/tts/engines/{engineId}/voices/{voiceId} 
 
 Requires ANY permissions: 
@@ -2243,8 +2178,6 @@ except ApiException as e:
 
 
 Get a list of voices for a TTS engine
-
-
 
 Wraps GET /api/v2/integrations/speech/tts/engines/{engineId}/voices 
 
@@ -2298,8 +2231,6 @@ except ApiException as e:
 
 
 Get a list of TTS engines enabled for org
-
-
 
 Wraps GET /api/v2/integrations/speech/tts/engines 
 
@@ -2358,8 +2289,6 @@ except ApiException as e:
 
 Get TTS settings for an org
 
-
-
 Wraps GET /api/v2/integrations/speech/tts/settings 
 
 Requires ANY permissions: 
@@ -2404,8 +2333,6 @@ This endpoint does not need any parameters.
 
 
 Get integration type.
-
-
 
 Wraps GET /api/v2/integrations/types/{typeId} 
 
@@ -2455,8 +2382,6 @@ except ApiException as e:
 
 
 Get properties config schema for an integration type.
-
-
 
 Wraps GET /api/v2/integrations/types/{typeId}/configschemas/{configType} 
 
@@ -2508,8 +2433,6 @@ except ApiException as e:
 
 
 List integration types
-
-
 
 Wraps GET /api/v2/integrations/types 
 
@@ -2570,8 +2493,6 @@ except ApiException as e:
 
 List permitted user app integrations for the logged in user
 
-
-
 Wraps GET /api/v2/integrations/userapps 
 
 Requires no permissions
@@ -2631,8 +2552,6 @@ except ApiException as e:
 
 
 Update an integration.
-
-
 
 Wraps PATCH /api/v2/integrations/{integrationId} 
 
@@ -2697,8 +2616,6 @@ except ApiException as e:
 
 Patch an Action
 
-
-
 Wraps PATCH /api/v2/integrations/actions/{actionId} 
 
 Requires ANY permissions: 
@@ -2749,8 +2666,6 @@ except ApiException as e:
 
 
 Update an existing Draft
-
-
 
 Wraps PATCH /api/v2/integrations/actions/{actionId}/draft 
 
@@ -2803,8 +2718,6 @@ except ApiException as e:
 
 Create an integration.
 
-
-
 Wraps POST /api/v2/integrations 
 
 Requires ANY permissions: 
@@ -2854,8 +2767,6 @@ except ApiException as e:
 
 Create a new Draft from existing Action
 
-
-
 Wraps POST /api/v2/integrations/actions/{actionId}/draft 
 
 Requires ANY permissions: 
@@ -2904,8 +2815,6 @@ except ApiException as e:
 
 
 Publish a Draft and make it the active Action configuration
-
-
 
 Wraps POST /api/v2/integrations/actions/{actionId}/draft/publish 
 
@@ -2958,8 +2867,6 @@ except ApiException as e:
 
 Test the execution of a draft. Responses will show execution steps broken out with intermediate results to help in debugging.
 
-
-
 Wraps POST /api/v2/integrations/actions/{actionId}/draft/test 
 
 Requires ANY permissions: 
@@ -3010,8 +2917,6 @@ except ApiException as e:
 
 
 Execute Action and return response from 3rd party.  Responses will follow the schemas defined on the Action for success and error.
-
-
 
 Wraps POST /api/v2/integrations/actions/{actionId}/execute 
 
@@ -3065,8 +2970,6 @@ except ApiException as e:
 
 Test the execution of an action. Responses will show execution steps broken out with intermediate results to help in debugging.
 
-
-
 Wraps POST /api/v2/integrations/actions/{actionId}/test 
 
 Requires ANY permissions: 
@@ -3119,8 +3022,6 @@ except ApiException as e:
 
 Create a new Action
 
-
-
 Wraps POST /api/v2/integrations/actions 
 
 Requires ANY permissions: 
@@ -3169,8 +3070,6 @@ except ApiException as e:
 
 
 Create a new Draft
-
-
 
 Wraps POST /api/v2/integrations/actions/drafts 
 
@@ -3221,8 +3120,6 @@ except ApiException as e:
 
 Create a set of credentials
 
-
-
 Wraps POST /api/v2/integrations/credentials 
 
 Requires no permissions
@@ -3271,7 +3168,7 @@ except ApiException as e:
 
 Get a Nuance bot in the specified Integration asynchronously
 
-
+post_integrations_speech_nuance_nuance_integration_id_bot_jobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/{botId}/jobs 
 
@@ -3328,7 +3225,7 @@ except ApiException as e:
 
 Get a list of Nuance bots in the specified Integration asynchronously
 
-
+post_integrations_speech_nuance_nuance_integration_id_bots_jobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/jobs 
 
@@ -3385,7 +3282,7 @@ except ApiException as e:
 
 Try out a single credential for a Nuance bot to know if the secret is correct
 
-
+post_integrations_speech_nuance_nuance_integration_id_bots_launch_validate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/launch/validate 
 
@@ -3436,8 +3333,6 @@ void (empty response body)
 
 
 Update integration configuration.
-
-
 
 Wraps PUT /api/v2/integrations/{integrationId}/config/current 
 
@@ -3490,8 +3385,6 @@ except ApiException as e:
 
 Set a list of botConnector bots plus versions for this integration
 
-
-
 Wraps PUT /api/v2/integrations/botconnector/{integrationId}/bots 
 
 Requires ANY permissions: 
@@ -3541,8 +3434,6 @@ void (empty response body)
 
 
 Update a set of credentials
-
-
 
 Wraps PUT /api/v2/integrations/credentials/{credentialId} 
 
@@ -3594,7 +3485,7 @@ except ApiException as e:
 
 Update the Nuance bot list for the specific bots made available to Genesys Cloud in the specified Integration
 
-
+put_integrations_speech_nuance_nuance_integration_id_bots_launch_settings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps PUT /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/launch/settings 
 
@@ -3646,8 +3537,6 @@ void (empty response body)
 
 Update TTS settings for an org
 
-
-
 Wraps PUT /api/v2/integrations/speech/tts/settings 
 
 Requires ANY permissions: 
@@ -3688,4 +3577,57 @@ except ApiException as e:
 ### Return type
 
 [**TtsSettings**](TtsSettings.html)
+
+<a name="put_integrations_unifiedcommunication_thirdpartypresences"></a>
+
+## str** put_integrations_unifiedcommunication_thirdpartypresences(uc_integration_id, body)
+
+
+
+Bulk integration presence ingestion
+
+This endpoint accepts bulk presence updates from a 3rd-party presence integration and maps the 3rd-party user to a Genesys Cloud user via the matching email address. The 3rd-party presence value will be mapped to a Genesys Cloud organization presence definition value.
+
+Wraps PUT /api/v2/integrations/unifiedcommunications/{ucIntegrationId}/thirdpartypresences 
+
+Requires ANY permissions: 
+
+* integration:presence:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.IntegrationsApi()
+uc_integration_id = 'uc_integration_id_example' # str | UC Integration ID
+body = [PureCloudPlatformClientV2.UCThirdPartyPresence()] # list[UCThirdPartyPresence] | List of User presences
+
+try:
+    # Bulk integration presence ingestion
+    api_response = api_instance.put_integrations_unifiedcommunication_thirdpartypresences(uc_integration_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling IntegrationsApi->put_integrations_unifiedcommunication_thirdpartypresences: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **uc_integration_id** | **str**| UC Integration ID |  |
+| **body** | [**list[UCThirdPartyPresence]**](UCThirdPartyPresence.html)| List of User presences |  |
+{: class="table table-striped"}
+
+### Return type
+
+**str**
 

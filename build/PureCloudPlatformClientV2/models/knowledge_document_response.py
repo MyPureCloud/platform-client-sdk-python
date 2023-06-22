@@ -73,6 +73,7 @@ class KnowledgeDocumentResponse(object):
             'labels': 'list[LabelResponse]',
             'knowledge_base': 'KnowledgeBaseReference',
             'variations': 'list[DocumentVariation]',
+            'external_id': 'str',
             'self_uri': 'str'
         }
 
@@ -94,6 +95,7 @@ class KnowledgeDocumentResponse(object):
             'labels': 'labels',
             'knowledge_base': 'knowledgeBase',
             'variations': 'variations',
+            'external_id': 'externalId',
             'self_uri': 'selfUri'
         }
 
@@ -114,6 +116,7 @@ class KnowledgeDocumentResponse(object):
         self._labels = None
         self._knowledge_base = None
         self._variations = None
+        self._external_id = None
         self._self_uri = None
 
     @property
@@ -528,6 +531,30 @@ class KnowledgeDocumentResponse(object):
         
 
         self._variations = variations
+
+    @property
+    def external_id(self) -> str:
+        """
+        Gets the external_id of this KnowledgeDocumentResponse.
+        The reference to external id associated with the document.
+
+        :return: The external_id of this KnowledgeDocumentResponse.
+        :rtype: str
+        """
+        return self._external_id
+
+    @external_id.setter
+    def external_id(self, external_id: str) -> None:
+        """
+        Sets the external_id of this KnowledgeDocumentResponse.
+        The reference to external id associated with the document.
+
+        :param external_id: The external_id of this KnowledgeDocumentResponse.
+        :type: str
+        """
+        
+
+        self._external_id = external_id
 
     @property
     def self_uri(self) -> str:

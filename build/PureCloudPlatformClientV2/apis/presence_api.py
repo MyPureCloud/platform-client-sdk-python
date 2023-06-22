@@ -47,6 +47,7 @@ from ..models import PresenceSettings
 from ..models import Source
 from ..models import SourceEntityListing
 from ..models import SystemPresence
+from ..models import UcUserPresence
 from ..models import UserPresence
 from ..models import UserPrimarySource
 
@@ -66,11 +67,11 @@ class PresenceApi(object):
                 config.api_client = ApiClient()
             self.api_client = config.api_client
 
-	# Preview Endpoint
     def delete_presence_definition(self, definition_id: str, **kwargs) -> None:
         """
         Delete a Presence Definition
         
+	    delete_presence_definition is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -301,11 +302,11 @@ class PresenceApi(object):
                                             callback=params.get('callback'))
         return response
 
-	# Preview Endpoint
     def get_presence_definition(self, definition_id: str, **kwargs) -> 'OrganizationPresenceDefinition':
         """
         Get a Presence Definition
         
+	    get_presence_definition is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -380,11 +381,11 @@ class PresenceApi(object):
                                             callback=params.get('callback'))
         return response
 
-	# Preview Endpoint
     def get_presence_definitions(self, **kwargs) -> 'OrganizationPresenceDefinitionEntityListing':
         """
         Get a list of Presence Definitions
         
+	    get_presence_definitions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -1161,6 +1162,162 @@ class PresenceApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def get_users_presence_bulk(self, source_id: str, **kwargs) -> List['UcUserPresence']:
+        """
+        Get bulk user presences for a single presence source
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_users_presence_bulk(source_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str source_id: The requested presence source ID. (required)
+        :param list[str] id: A comma separated list of user IDs to fetch their presence status in bulk. Limit 50.
+        :return: list[UcUserPresence]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['source_id', 'id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_users_presence_bulk" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'source_id' is set
+        if ('source_id' not in params) or (params['source_id'] is None):
+            raise ValueError("Missing the required parameter `source_id` when calling `get_users_presence_bulk`")
+
+
+        resource_path = '/api/v2/users/presences/{sourceId}/bulk'.replace('{format}', 'json')
+        path_params = {}
+        if 'source_id' in params:
+            path_params['sourceId'] = params['source_id']
+
+        query_params = {}
+        if 'id' in params:
+            query_params['id'] = params['id']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='list[UcUserPresence]',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_users_presences_purecloud_bulk(self, **kwargs) -> List['UcUserPresence']:
+        """
+        Get bulk user presences for a Genesys Cloud (PURECLOUD) presence source
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_users_presences_purecloud_bulk(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param list[str] id: A comma separated list of user IDs to fetch their presence status in bulk. Limit 50.
+        :return: list[UcUserPresence]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_users_presences_purecloud_bulk" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/users/presences/purecloud/bulk'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'id' in params:
+            query_params['id'] = params['id']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='list[UcUserPresence]',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def patch_user_presence(self, user_id: str, source_id: str, body: 'UserPresence', **kwargs) -> 'UserPresence':
         """
         Patch a user's Presence
@@ -1335,11 +1492,11 @@ class PresenceApi(object):
                                             callback=params.get('callback'))
         return response
 
-	# Preview Endpoint
     def post_presence_definitions(self, body: 'OrganizationPresenceDefinition', **kwargs) -> 'OrganizationPresenceDefinition':
         """
         Create a Presence Definition
         
+	    post_presence_definitions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -1570,11 +1727,11 @@ class PresenceApi(object):
                                             callback=params.get('callback'))
         return response
 
-	# Preview Endpoint
     def put_presence_definition(self, definition_id: str, body: 'OrganizationPresenceDefinition', **kwargs) -> 'OrganizationPresenceDefinition':
         """
         Update a Presence Definition
         
+	    put_presence_definition is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

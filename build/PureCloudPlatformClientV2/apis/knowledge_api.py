@@ -39,10 +39,11 @@ from typing import Any
 
 from ..models import Empty
 from ..models import BulkResponse
+from ..models import CategoryCreateRequest
 from ..models import CategoryListing
-from ..models import CategoryRequest
 from ..models import CategoryResponse
 from ..models import CategoryResponseListing
+from ..models import CategoryUpdateRequest
 from ..models import DocumentListing
 from ..models import DocumentVariation
 from ..models import DocumentVariationListing
@@ -2207,12 +2208,13 @@ class KnowledgeApi(object):
         :param bool include_drafts: If includeDrafts is true, Documents in the draft state are also returned in the response.
         :param list[str] label_ids: If specified, retrieves documents associated with label ids, comma separated values expected.
         :param list[str] expand: The specified entity attributes will be filled. Comma separated values expected.
+        :param list[str] external_ids: If specified, retrieves documents associated with external ids, comma separated values expected.
         :return: KnowledgeDocumentResponseListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['knowledge_base_id', 'before', 'after', 'page_size', 'interval', 'document_id', 'category_id', 'include_subcategories', 'include_drafts', 'label_ids', 'expand']
+        all_params = ['knowledge_base_id', 'before', 'after', 'page_size', 'interval', 'document_id', 'category_id', 'include_subcategories', 'include_drafts', 'label_ids', 'expand', 'external_ids']
         all_params.append('callback')
 
         params = locals()
@@ -2256,6 +2258,8 @@ class KnowledgeApi(object):
             query_params['labelIds'] = params['label_ids']
         if 'expand' in params:
             query_params['expand'] = params['expand']
+        if 'external_ids' in params:
+            query_params['externalIds'] = params['external_ids']
 
         header_params = {}
 
@@ -2917,11 +2921,11 @@ class KnowledgeApi(object):
         return response
 
     @deprecated("get_knowledge_knowledgebase_language_document_upload is deprecated")
-	# Preview Endpoint
     def get_knowledge_knowledgebase_language_document_upload(self, document_id: str, knowledge_base_id: str, language_code: str, upload_id: str, **kwargs) -> 'KnowledgeDocumentContentUpload':
         """
         Get document content upload status
         
+	    get_knowledge_knowledgebase_language_document_upload is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -3942,7 +3946,7 @@ class KnowledgeApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def patch_knowledge_knowledgebase_category(self, knowledge_base_id: str, category_id: str, body: 'CategoryRequest', **kwargs) -> 'CategoryResponse':
+    def patch_knowledge_knowledgebase_category(self, knowledge_base_id: str, category_id: str, body: 'CategoryUpdateRequest', **kwargs) -> 'CategoryResponse':
         """
         Update category
         
@@ -3959,7 +3963,7 @@ class KnowledgeApi(object):
             for asynchronous request. (optional)
         :param str knowledge_base_id: Knowledge base ID (required)
         :param str category_id: Category ID (required)
-        :param CategoryRequest body:  (required)
+        :param CategoryUpdateRequest body:  (required)
         :return: CategoryResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -5284,7 +5288,7 @@ class KnowledgeApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_knowledge_knowledgebase_categories(self, knowledge_base_id: str, body: 'CategoryRequest', **kwargs) -> 'CategoryResponse':
+    def post_knowledge_knowledgebase_categories(self, knowledge_base_id: str, body: 'CategoryCreateRequest', **kwargs) -> 'CategoryResponse':
         """
         Create new category
         
@@ -5300,7 +5304,7 @@ class KnowledgeApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str knowledge_base_id: Knowledge base ID (required)
-        :param CategoryRequest body:  (required)
+        :param CategoryCreateRequest body:  (required)
         :return: CategoryResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -5632,11 +5636,11 @@ class KnowledgeApi(object):
                                             callback=params.get('callback'))
         return response
 
-	# Preview Endpoint
     def post_knowledge_knowledgebase_documents_bulk_remove(self, knowledge_base_id: str, body: 'KnowledgeDocumentBulkRemoveRequest', **kwargs) -> 'BulkResponse':
         """
         Bulk remove documents.
         
+	    post_knowledge_knowledgebase_documents_bulk_remove is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -5717,11 +5721,11 @@ class KnowledgeApi(object):
                                             callback=params.get('callback'))
         return response
 
-	# Preview Endpoint
     def post_knowledge_knowledgebase_documents_bulk_update(self, knowledge_base_id: str, body: 'KnowledgeDocumentBulkUpdateRequest', **kwargs) -> 'BulkResponse':
         """
         Bulk update documents.
         
+	    post_knowledge_knowledgebase_documents_bulk_update is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -5967,11 +5971,11 @@ class KnowledgeApi(object):
                                             callback=params.get('callback'))
         return response
 
-	# Preview Endpoint
     def post_knowledge_knowledgebase_documents_versions_bulk_add(self, knowledge_base_id: str, body: 'KnowledgeDocumentBulkVersionAddRequest', **kwargs) -> 'BulkResponse':
         """
         Bulk add document versions.
         
+	    post_knowledge_knowledgebase_documents_versions_bulk_add is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -6396,11 +6400,11 @@ class KnowledgeApi(object):
         return response
 
     @deprecated("post_knowledge_knowledgebase_language_document_uploads is deprecated")
-	# Preview Endpoint
     def post_knowledge_knowledgebase_language_document_uploads(self, document_id: str, knowledge_base_id: str, language_code: str, body: 'KnowledgeDocumentContentUpload', **kwargs) -> 'KnowledgeDocumentContentUpload':
         """
         Upload Article Content
         
+	    post_knowledge_knowledgebase_language_document_uploads is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

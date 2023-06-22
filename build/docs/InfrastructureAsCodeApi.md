@@ -25,8 +25,6 @@ Get information about an accelerator
 
 Get the complete metadata specification for an accelerator, including requirements and parameters.
 
-
-
 Wraps GET /api/v2/infrastructureascode/accelerators/{acceleratorId} 
 
 Requires ANY permissions: 
@@ -79,8 +77,6 @@ except ApiException as e:
 Get a list of available accelerators
 
 Search for accelerators that can be run.
-
-
 
 Wraps GET /api/v2/infrastructureascode/accelerators 
 
@@ -151,8 +147,6 @@ Get job status and results
 
 Get the execution status of a submitted job, optionally including results and error details.
 
-
-
 Wraps GET /api/v2/infrastructureascode/jobs/{jobId} 
 
 Requires ALL permissions: 
@@ -205,8 +199,6 @@ except ApiException as e:
 Get job history
 
 Get a history of submitted jobs, optionally including error messages.
-
-
 
 Wraps GET /api/v2/infrastructureascode/jobs 
 
@@ -270,8 +262,6 @@ except ApiException as e:
 Create a Job
 
 Create and submit a job for remote execution or see job planning results.
-
-
 
 Wraps POST /api/v2/infrastructureascode/jobs 
 

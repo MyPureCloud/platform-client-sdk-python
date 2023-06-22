@@ -89,8 +89,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 Delete an external contact
 
-
-
 Wraps DELETE /api/v2/externalcontacts/contacts/{contactId} 
 
 Requires ANY permissions: 
@@ -139,8 +137,6 @@ except ApiException as e:
 
 
 Delete a note for an external contact
-
-
 
 Wraps DELETE /api/v2/externalcontacts/contacts/{contactId}/notes/{noteId} 
 
@@ -193,8 +189,6 @@ except ApiException as e:
 
 Delete a schema
 
-
-
 Wraps DELETE /api/v2/externalcontacts/contacts/schemas/{schemaId} 
 
 Requires ANY permissions: 
@@ -242,8 +236,6 @@ void (empty response body)
 
 
 Delete an external organization
-
-
 
 Wraps DELETE /api/v2/externalcontacts/organizations/{externalOrganizationId} 
 
@@ -294,8 +286,6 @@ except ApiException as e:
 
 
 Delete a note for an external organization
-
-
 
 Wraps DELETE /api/v2/externalcontacts/organizations/{externalOrganizationId}/notes/{noteId} 
 
@@ -348,8 +338,6 @@ except ApiException as e:
 
 Unlink the Trustor for this External Organization
 
-
-
 Wraps DELETE /api/v2/externalcontacts/organizations/{externalOrganizationId}/trustor 
 
 Requires ANY permissions: 
@@ -397,8 +385,6 @@ void (empty response body)
 
 
 Delete a relationship
-
-
 
 Wraps DELETE /api/v2/externalcontacts/relationships/{relationshipId} 
 
@@ -448,8 +434,6 @@ except ApiException as e:
 
 
 Fetch an external contact
-
-
 
 Wraps GET /api/v2/externalcontacts/contacts/{contactId} 
 
@@ -502,8 +486,6 @@ except ApiException as e:
 
 List the identifiers for a contact
 
-
-
 Wraps GET /api/v2/externalcontacts/contacts/{contactId}/identifiers 
 
 Requires ANY permissions: 
@@ -552,8 +534,6 @@ except ApiException as e:
 
 
 Retrieve all sessions for a given external contact.
-
-
 
 Wraps GET /api/v2/externalcontacts/contacts/{contactId}/journey/sessions 
 
@@ -610,8 +590,6 @@ except ApiException as e:
 
 Fetch a note for an external contact
 
-
-
 Wraps GET /api/v2/externalcontacts/contacts/{contactId}/notes/{noteId} 
 
 Requires ANY permissions: 
@@ -664,8 +642,6 @@ except ApiException as e:
 
 
 List notes for an external contact
-
-
 
 Wraps GET /api/v2/externalcontacts/contacts/{contactId}/notes 
 
@@ -724,8 +700,6 @@ except ApiException as e:
 
 Fetch an unresolved external contact
 
-
-
 Wraps GET /api/v2/externalcontacts/contacts/{contactId}/unresolved 
 
 Requires ANY permissions: 
@@ -776,8 +750,6 @@ except ApiException as e:
 
 
 Search for external contacts
-
-
 
 Wraps GET /api/v2/externalcontacts/contacts 
 
@@ -836,8 +808,6 @@ except ApiException as e:
 
 Get a schema
 
-
-
 Wraps GET /api/v2/externalcontacts/contacts/schemas/{schemaId} 
 
 Requires ANY permissions: 
@@ -886,8 +856,6 @@ except ApiException as e:
 
 
 Get a specific version of a schema
-
-
 
 Wraps GET /api/v2/externalcontacts/contacts/schemas/{schemaId}/versions/{versionId} 
 
@@ -940,8 +908,6 @@ except ApiException as e:
 
 Get all versions of an external contact's schema
 
-
-
 Wraps GET /api/v2/externalcontacts/contacts/schemas/{schemaId}/versions 
 
 Requires ANY permissions: 
@@ -991,8 +957,6 @@ except ApiException as e:
 
 Get a list of schemas.
 
-
-
 Wraps GET /api/v2/externalcontacts/contacts/schemas 
 
 Requires ANY permissions: 
@@ -1037,8 +1001,6 @@ This endpoint does not need any parameters.
 
 
 Fetch an external organization
-
-
 
 Wraps GET /api/v2/externalcontacts/organizations/{externalOrganizationId} 
 
@@ -1093,8 +1055,6 @@ except ApiException as e:
 
 
 Search for external contacts in an external organization
-
-
 
 Wraps GET /api/v2/externalcontacts/organizations/{externalOrganizationId}/contacts 
 
@@ -1155,8 +1115,6 @@ except ApiException as e:
 
 Fetch a note for an external organization
 
-
-
 Wraps GET /api/v2/externalcontacts/organizations/{externalOrganizationId}/notes/{noteId} 
 
 Requires ANY permissions: 
@@ -1209,8 +1167,6 @@ except ApiException as e:
 
 
 List notes for an external organization
-
-
 
 Wraps GET /api/v2/externalcontacts/organizations/{externalOrganizationId}/notes 
 
@@ -1270,8 +1226,6 @@ except ApiException as e:
 
 Fetch a relationship for an external organization
 
-
-
 Wraps GET /api/v2/externalcontacts/organizations/{externalOrganizationId}/relationships 
 
 Requires ANY permissions: 
@@ -1329,8 +1283,6 @@ except ApiException as e:
 
 
 Search for external organizations
-
-
 
 Wraps GET /api/v2/externalcontacts/organizations 
 
@@ -1394,8 +1346,6 @@ except ApiException as e:
 
 Get a schema
 
-
-
 Wraps GET /api/v2/externalcontacts/organizations/schemas/{schemaId} 
 
 Requires ANY permissions: 
@@ -1444,8 +1394,6 @@ except ApiException as e:
 
 
 Get a specific version of a schema
-
-
 
 Wraps GET /api/v2/externalcontacts/organizations/schemas/{schemaId}/versions/{versionId} 
 
@@ -1498,8 +1446,6 @@ except ApiException as e:
 
 Get all versions of an external organization's schema
 
-
-
 Wraps GET /api/v2/externalcontacts/organizations/schemas/{schemaId}/versions 
 
 Requires ANY permissions: 
@@ -1549,8 +1495,6 @@ except ApiException as e:
 
 Get a list of schemas.
 
-
-
 Wraps GET /api/v2/externalcontacts/organizations/schemas 
 
 Requires ANY permissions: 
@@ -1595,8 +1539,6 @@ This endpoint does not need any parameters.
 
 
 Fetch a relationship
-
-
 
 Wraps GET /api/v2/externalcontacts/relationships/{relationshipId} 
 
@@ -1649,8 +1591,6 @@ except ApiException as e:
 
 Look up contacts and externalOrganizations based on an attribute. Maximum of 25 values returned.
 
-
-
 Wraps GET /api/v2/externalcontacts/reversewhitepageslookup 
 
 Requires ANY permissions: 
@@ -1701,8 +1641,6 @@ except ApiException as e:
 
 
 Scan for external contacts using paging
-
-
 
 Wraps GET /api/v2/externalcontacts/scan/contacts 
 
@@ -1755,8 +1693,6 @@ except ApiException as e:
 
 Scan for notes using paging
 
-
-
 Wraps GET /api/v2/externalcontacts/scan/notes 
 
 Requires ANY permissions: 
@@ -1807,8 +1743,6 @@ except ApiException as e:
 
 
 Scan for external organizations using paging
-
-
 
 Wraps GET /api/v2/externalcontacts/scan/organizations 
 
@@ -1861,8 +1795,6 @@ except ApiException as e:
 
 Scan for relationships
 
-
-
 Wraps GET /api/v2/externalcontacts/scan/relationships 
 
 Requires ANY permissions: 
@@ -1913,8 +1845,6 @@ except ApiException as e:
 
 
 Claim or release identifiers for a contact
-
-
 
 Wraps PATCH /api/v2/externalcontacts/contacts/{contactId}/identifiers 
 
@@ -1967,8 +1897,6 @@ except ApiException as e:
 
 Bulk fetch contacts
 
-
-
 Wraps POST /api/v2/externalcontacts/bulk/contacts 
 
 Requires ANY permissions: 
@@ -2017,8 +1945,6 @@ except ApiException as e:
 
 
 Bulk add contacts
-
-
 
 Wraps POST /api/v2/externalcontacts/bulk/contacts/add 
 
@@ -2069,8 +1995,6 @@ except ApiException as e:
 
 Bulk remove contacts
 
-
-
 Wraps POST /api/v2/externalcontacts/bulk/contacts/remove 
 
 Requires ANY permissions: 
@@ -2119,8 +2043,6 @@ except ApiException as e:
 
 
 Bulk fetch unresolved ancestor contacts
-
-
 
 Wraps POST /api/v2/externalcontacts/bulk/contacts/unresolved 
 
@@ -2171,8 +2093,6 @@ except ApiException as e:
 
 Bulk update contacts
 
-
-
 Wraps POST /api/v2/externalcontacts/bulk/contacts/update 
 
 Requires ANY permissions: 
@@ -2221,8 +2141,6 @@ except ApiException as e:
 
 
 Bulk fetch notes
-
-
 
 Wraps POST /api/v2/externalcontacts/bulk/notes 
 
@@ -2274,8 +2192,6 @@ except ApiException as e:
 
 Bulk add notes
 
-
-
 Wraps POST /api/v2/externalcontacts/bulk/notes/add 
 
 Requires ALL permissions: 
@@ -2325,8 +2241,6 @@ except ApiException as e:
 
 
 Bulk remove notes
-
-
 
 Wraps POST /api/v2/externalcontacts/bulk/notes/remove 
 
@@ -2378,8 +2292,6 @@ except ApiException as e:
 
 Bulk update notes
 
-
-
 Wraps POST /api/v2/externalcontacts/bulk/notes/update 
 
 Requires ALL permissions: 
@@ -2430,8 +2342,6 @@ except ApiException as e:
 
 Bulk fetch organizations
 
-
-
 Wraps POST /api/v2/externalcontacts/bulk/organizations 
 
 Requires ANY permissions: 
@@ -2480,8 +2390,6 @@ except ApiException as e:
 
 
 Bulk add organizations
-
-
 
 Wraps POST /api/v2/externalcontacts/bulk/organizations/add 
 
@@ -2532,8 +2440,6 @@ except ApiException as e:
 
 Bulk remove organizations
 
-
-
 Wraps POST /api/v2/externalcontacts/bulk/organizations/remove 
 
 Requires ANY permissions: 
@@ -2583,8 +2489,6 @@ except ApiException as e:
 
 Bulk update organizations
 
-
-
 Wraps POST /api/v2/externalcontacts/bulk/organizations/update 
 
 Requires ANY permissions: 
@@ -2633,8 +2537,6 @@ except ApiException as e:
 
 
 Bulk fetch relationships
-
-
 
 Wraps POST /api/v2/externalcontacts/bulk/relationships 
 
@@ -2686,8 +2588,6 @@ except ApiException as e:
 
 Bulk add relationships
 
-
-
 Wraps POST /api/v2/externalcontacts/bulk/relationships/add 
 
 Requires ALL permissions: 
@@ -2737,8 +2637,6 @@ except ApiException as e:
 
 
 Bulk remove relationships
-
-
 
 Wraps POST /api/v2/externalcontacts/bulk/relationships/remove 
 
@@ -2790,8 +2688,6 @@ except ApiException as e:
 
 Bulk update relationships
 
-
-
 Wraps POST /api/v2/externalcontacts/bulk/relationships/update 
 
 Requires ALL permissions: 
@@ -2841,8 +2737,6 @@ except ApiException as e:
 
 
 Create a note for an external contact
-
-
 
 Wraps POST /api/v2/externalcontacts/contacts/{contactId}/notes 
 
@@ -2895,8 +2789,6 @@ except ApiException as e:
 
 Promote an observed contact (ephemeral or identified) to a curated contact
 
-
-
 Wraps POST /api/v2/externalcontacts/contacts/{contactId}/promotion 
 
 Requires ANY permissions: 
@@ -2946,8 +2838,6 @@ except ApiException as e:
 
 Create an external contact
 
-
-
 Wraps POST /api/v2/externalcontacts/contacts 
 
 Requires ANY permissions: 
@@ -2996,8 +2886,6 @@ except ApiException as e:
 
 
 Create a schema
-
-
 
 Wraps POST /api/v2/externalcontacts/contacts/schemas 
 
@@ -3049,8 +2937,6 @@ except ApiException as e:
 Fetch a contact using an identifier type and value.
 
 Phone number identifier values must be provided with the country code and a leading '+' symbol. Example: \"+1 704 298 4733\"
-
-
 
 Wraps POST /api/v2/externalcontacts/identifierlookup 
 
@@ -3104,8 +2990,6 @@ Merge two contacts into a new contact record
 
 Two curated contacts cannot be merged. Refer to the Contact Merging article on the Developer Center for details
 
-
-
 Wraps POST /api/v2/externalcontacts/merge/contacts 
 
 Requires ANY permissions: 
@@ -3154,8 +3038,6 @@ except ApiException as e:
 
 
 Create a note for an external organization
-
-
 
 Wraps POST /api/v2/externalcontacts/organizations/{externalOrganizationId}/notes 
 
@@ -3209,8 +3091,6 @@ except ApiException as e:
 
 Create an external organization
 
-
-
 Wraps POST /api/v2/externalcontacts/organizations 
 
 Requires ANY permissions: 
@@ -3261,8 +3141,6 @@ except ApiException as e:
 
 Create a schema
 
-
-
 Wraps POST /api/v2/externalcontacts/organizations/schemas 
 
 Requires ANY permissions: 
@@ -3312,8 +3190,6 @@ except ApiException as e:
 
 Create a relationship
 
-
-
 Wraps POST /api/v2/externalcontacts/relationships 
 
 Requires ANY permissions: 
@@ -3362,8 +3238,6 @@ except ApiException as e:
 
 
 Update an external contact
-
-
 
 Wraps PUT /api/v2/externalcontacts/contacts/{contactId} 
 
@@ -3415,8 +3289,6 @@ except ApiException as e:
 
 
 Update a note for an external contact
-
-
 
 Wraps PUT /api/v2/externalcontacts/contacts/{contactId}/notes/{noteId} 
 
@@ -3471,8 +3343,6 @@ except ApiException as e:
 
 Update a schema
 
-
-
 Wraps PUT /api/v2/externalcontacts/contacts/schemas/{schemaId} 
 
 Requires ANY permissions: 
@@ -3526,8 +3396,6 @@ Associate/disassociate an external contact with a conversation
 
 To associate, supply a value for the externalContactId.  To disassociate, do not include the property at all.
 
-
-
 Wraps PUT /api/v2/externalcontacts/conversations/{conversationId} 
 
 Requires ANY permissions: 
@@ -3577,8 +3445,6 @@ void (empty response body)
 
 
 Update an external organization
-
-
 
 Wraps PUT /api/v2/externalcontacts/organizations/{externalOrganizationId} 
 
@@ -3631,8 +3497,6 @@ except ApiException as e:
 
 
 Update a note for an external organization
-
-
 
 Wraps PUT /api/v2/externalcontacts/organizations/{externalOrganizationId}/notes/{noteId} 
 
@@ -3687,8 +3551,6 @@ except ApiException as e:
 
 Links a Trustor with an External Organization
 
-
-
 Wraps PUT /api/v2/externalcontacts/organizations/{externalOrganizationId}/trustor/{trustorId} 
 
 Requires ANY permissions: 
@@ -3740,8 +3602,6 @@ except ApiException as e:
 
 Update a schema
 
-
-
 Wraps PUT /api/v2/externalcontacts/organizations/schemas/{schemaId} 
 
 Requires ANY permissions: 
@@ -3792,8 +3652,6 @@ except ApiException as e:
 
 
 Update a relationship
-
-
 
 Wraps PUT /api/v2/externalcontacts/relationships/{relationshipId} 
 

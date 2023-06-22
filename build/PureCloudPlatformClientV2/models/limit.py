@@ -49,22 +49,25 @@ class Limit(object):
         """
         self.swagger_types = {
             'key': 'str',
-            'value': 'float'
+            'namespace': 'str',
+            'value': 'int'
         }
 
         self.attribute_map = {
             'key': 'key',
+            'namespace': 'namespace',
             'value': 'value'
         }
 
         self._key = None
+        self._namespace = None
         self._value = None
 
     @property
     def key(self) -> str:
         """
         Gets the key of this Limit.
-        The limit key
+
 
         :return: The key of this Limit.
         :rtype: str
@@ -75,7 +78,7 @@ class Limit(object):
     def key(self, key: str) -> None:
         """
         Sets the key of this Limit.
-        The limit key
+
 
         :param key: The key of this Limit.
         :type: str
@@ -85,24 +88,53 @@ class Limit(object):
         self._key = key
 
     @property
-    def value(self) -> float:
+    def namespace(self) -> str:
+        """
+        Gets the namespace of this Limit.
+
+
+        :return: The namespace of this Limit.
+        :rtype: str
+        """
+        return self._namespace
+
+    @namespace.setter
+    def namespace(self, namespace: str) -> None:
+        """
+        Sets the namespace of this Limit.
+
+
+        :param namespace: The namespace of this Limit.
+        :type: str
+        """
+        if isinstance(namespace, int):
+            namespace = str(namespace)
+        allowed_values = ["agent.assistant", "analytics.alerting", "analytics", "analytics.realtime", "analytics.reporting.settings", "architect", "audiohook", "audit", "auth.api", "authorization", "automation.testing", "bots", "bots.voice", "callback", "cobrowse", "content.management", "conversation", "dataactions", "datatables", "directory", "email", "event.orchestration", "external.contacts", "gcv", "gdpr", "groups", "historical.adherence", "infrastructureascode", "integrations", "intent.miner", "journey", "knowledge", "language.understanding", "limit.registry", "marketplace", "messaging", "notifications", "onboarding", "outbound", "platform.api", "predictive.routing", "presence", "quality", "recording", "response.management", "routing", "scim", "search", "secondary.automation.testing", "skills", "speech.and.text.analytics", "speech.integration", "supportability", "task.management", "telephony.configuration", "usage", "users", "web.deployments", "web.messaging", "webchat", "webhooks", "workforce.management"]
+        if namespace.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for namespace -> " + namespace)
+            self._namespace = "outdated_sdk_version"
+        else:
+            self._namespace = namespace
+
+    @property
+    def value(self) -> int:
         """
         Gets the value of this Limit.
-        The limit value
+
 
         :return: The value of this Limit.
-        :rtype: float
+        :rtype: int
         """
         return self._value
 
     @value.setter
-    def value(self, value: float) -> None:
+    def value(self, value: int) -> None:
         """
         Sets the value of this Limit.
-        The limit value
+
 
         :param value: The value of this Limit.
-        :type: float
+        :type: int
         """
         
 

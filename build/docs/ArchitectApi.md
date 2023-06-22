@@ -128,8 +128,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 Deletes a emergency group by ID
 
-
-
 Wraps DELETE /api/v2/architect/emergencygroups/{emergencyGroupId} 
 
 Requires ALL permissions: 
@@ -178,8 +176,6 @@ void (empty response body)
 
 Delete an IVR Config.
 
-
-
 Wraps DELETE /api/v2/architect/ivrs/{ivrId} 
 
 Requires ALL permissions: 
@@ -227,8 +223,6 @@ void (empty response body)
 
 
 Delete specified user prompt
-
-
 
 Wraps DELETE /api/v2/architect/prompts/{promptId} 
 
@@ -280,8 +274,6 @@ void (empty response body)
 
 Delete specified user prompt resource
 
-
-
 Wraps DELETE /api/v2/architect/prompts/{promptId}/resources/{languageCode} 
 
 Requires ALL permissions: 
@@ -331,8 +323,6 @@ void (empty response body)
 
 
 Delete specified user prompt resource audio
-
-
 
 Wraps DELETE /api/v2/architect/prompts/{promptId}/resources/{languageCode}/audio 
 
@@ -386,8 +376,6 @@ Batch-delete a list of prompts
 
 Multiple IDs can be specified, in which case all specified prompts will be deleted.  Asynchronous.  Notification topic: v2.architect.prompts.{promptId}
 
-
-
 Wraps DELETE /api/v2/architect/prompts 
 
 Requires ALL permissions: 
@@ -437,8 +425,6 @@ except ApiException as e:
 
 Delete a schedule by id
 
-
-
 Wraps DELETE /api/v2/architect/schedules/{scheduleId} 
 
 Requires ALL permissions: 
@@ -487,8 +473,6 @@ void (empty response body)
 
 Deletes a schedule group by ID
 
-
-
 Wraps DELETE /api/v2/architect/schedulegroups/{scheduleGroupId} 
 
 Requires ALL permissions: 
@@ -536,8 +520,6 @@ void (empty response body)
 
 
 Delete a system prompt resource override.
-
-
 
 Wraps DELETE /api/v2/architect/systemprompts/{promptId}/resources/{languageCode} 
 
@@ -589,8 +571,6 @@ void (empty response body)
 
 Delete flow
 
-
-
 Wraps DELETE /api/v2/flows/{flowId} 
 
 Requires ANY permissions: 
@@ -640,8 +620,6 @@ void (empty response body)
 Batch-delete a list of flows
 
 Multiple IDs can be specified, in which case all specified flows will be deleted.  Asynchronous.  Notification topic: v2.flows.{flowId}
-
-
 
 Wraps DELETE /api/v2/flows 
 
@@ -693,8 +671,6 @@ except ApiException as e:
 deletes a specific datatable by id
 
 Deletes an entire datatable (including the schema and data) with a given datatableId
-
-
 
 Wraps DELETE /api/v2/flows/datatables/{datatableId} 
 
@@ -748,8 +724,6 @@ Delete a row entry
 
 Deletes a row with a given rowId (the value of the key field).
 
-
-
 Wraps DELETE /api/v2/flows/datatables/{datatableId}/rows/{rowId} 
 
 Requires ANY permissions: 
@@ -801,8 +775,6 @@ void (empty response body)
 
 Delete a flow milestone.
 
-
-
 Wraps DELETE /api/v2/flows/milestones/{milestoneId} 
 
 Requires ALL permissions: 
@@ -851,8 +823,6 @@ except ApiException as e:
 
 
 Get Dependency Tracking objects that have a given display name
-
-
 
 Wraps GET /api/v2/architect/dependencytracking 
 
@@ -917,8 +887,6 @@ except ApiException as e:
 
 Get Dependency Tracking build status for an organization
 
-
-
 Wraps GET /api/v2/architect/dependencytracking/build 
 
 Requires ALL permissions: 
@@ -963,8 +931,6 @@ This endpoint does not need any parameters.
 
 
 Get resources that are consumed by a given Dependency Tracking object
-
-
 
 Wraps GET /api/v2/architect/dependencytracking/consumedresources 
 
@@ -1024,8 +990,6 @@ except ApiException as e:
 
 
 Get resources that consume a given Dependency Tracking object
-
-
 
 Wraps GET /api/v2/architect/dependencytracking/consumingresources 
 
@@ -1088,8 +1052,6 @@ except ApiException as e:
 
 Get Dependency Tracking objects that consume deleted resources
 
-
-
 Wraps GET /api/v2/architect/dependencytracking/deletedresourceconsumers 
 
 Requires ALL permissions: 
@@ -1150,8 +1112,6 @@ except ApiException as e:
 
 
 Get a Dependency Tracking object
-
-
 
 Wraps GET /api/v2/architect/dependencytracking/object 
 
@@ -1216,8 +1176,6 @@ except ApiException as e:
 
 Get a Dependency Tracking type.
 
-
-
 Wraps GET /api/v2/architect/dependencytracking/types/{typeId} 
 
 Requires ALL permissions: 
@@ -1266,8 +1224,6 @@ except ApiException as e:
 
 
 Get Dependency Tracking types.
-
-
 
 Wraps GET /api/v2/architect/dependencytracking/types 
 
@@ -1319,8 +1275,6 @@ except ApiException as e:
 
 
 Get Dependency Tracking objects that depend on updated resources
-
-
 
 Wraps GET /api/v2/architect/dependencytracking/updatedresourceconsumers 
 
@@ -1381,8 +1335,6 @@ except ApiException as e:
 
 Gets a emergency group by ID
 
-
-
 Wraps GET /api/v2/architect/emergencygroups/{emergencyGroupId} 
 
 Requires ALL permissions: 
@@ -1431,8 +1383,6 @@ except ApiException as e:
 
 
 Get a list of emergency groups.
-
-
 
 Wraps GET /api/v2/architect/emergencygroups 
 
@@ -1491,8 +1441,6 @@ except ApiException as e:
 
 Get an IVR config.
 
-
-
 Wraps GET /api/v2/architect/ivrs/{ivrId} 
 
 Requires ALL permissions: 
@@ -1541,8 +1489,6 @@ except ApiException as e:
 
 
 Get IVR configs.
-
-
 
 Wraps GET /api/v2/architect/ivrs 
 
@@ -1605,8 +1551,6 @@ except ApiException as e:
 
 Get specified user prompt
 
-
-
 Wraps GET /api/v2/architect/prompts/{promptId} 
 
 Requires ALL permissions: 
@@ -1655,8 +1599,6 @@ except ApiException as e:
 
 
 Get generated prompt history
-
-
 
 Wraps GET /api/v2/architect/prompts/{promptId}/history/{historyId} 
 
@@ -1719,8 +1661,6 @@ except ApiException as e:
 
 Get specified user prompt resource
 
-
-
 Wraps GET /api/v2/architect/prompts/{promptId}/resources/{languageCode} 
 
 Requires ALL permissions: 
@@ -1773,8 +1713,6 @@ except ApiException as e:
 Get a pageable list of user prompt resources
 
 The returned list is pageable, and query parameters can be used for filtering.
-
-
 
 Wraps GET /api/v2/architect/prompts/{promptId}/resources 
 
@@ -1830,8 +1768,6 @@ except ApiException as e:
 Get a pageable list of user prompts
 
 The returned list is pageable, and query parameters can be used for filtering.  Multiple names can be specified, in which case all matching prompts will be returned, and no other filters will be evaluated.
-
-
 
 Wraps GET /api/v2/architect/prompts 
 
@@ -1894,8 +1830,6 @@ except ApiException as e:
 
 Get a schedule by ID
 
-
-
 Wraps GET /api/v2/architect/schedules/{scheduleId} 
 
 Requires ALL permissions: 
@@ -1945,8 +1879,6 @@ except ApiException as e:
 
 Gets a schedule group by ID
 
-
-
 Wraps GET /api/v2/architect/schedulegroups/{scheduleGroupId} 
 
 Requires ALL permissions: 
@@ -1995,8 +1927,6 @@ except ApiException as e:
 
 
 Get a list of schedule groups.
-
-
 
 Wraps GET /api/v2/architect/schedulegroups 
 
@@ -2059,8 +1989,6 @@ except ApiException as e:
 
 Get a list of schedules.
 
-
-
 Wraps GET /api/v2/architect/schedules 
 
 Requires ALL permissions: 
@@ -2120,8 +2048,6 @@ except ApiException as e:
 
 Get a system prompt
 
-
-
 Wraps GET /api/v2/architect/systemprompts/{promptId} 
 
 Requires ALL permissions: 
@@ -2170,8 +2096,6 @@ except ApiException as e:
 
 
 Get generated prompt history
-
-
 
 Wraps GET /api/v2/architect/systemprompts/{promptId}/history/{historyId} 
 
@@ -2234,8 +2158,6 @@ except ApiException as e:
 
 Get a system prompt resource.
 
-
-
 Wraps GET /api/v2/architect/systemprompts/{promptId}/resources/{languageCode} 
 
 Requires ALL permissions: 
@@ -2286,8 +2208,6 @@ except ApiException as e:
 
 
 Get system prompt resources.
-
-
 
 Wraps GET /api/v2/architect/systemprompts/{promptId}/resources 
 
@@ -2345,8 +2265,6 @@ except ApiException as e:
 
 
 Get System Prompts
-
-
 
 Wraps GET /api/v2/architect/systemprompts 
 
@@ -2409,8 +2327,6 @@ except ApiException as e:
 
 Get flow
 
-
-
 Wraps GET /api/v2/flows/{flowId} 
 
 Requires ANY permissions: 
@@ -2461,8 +2377,6 @@ except ApiException as e:
 
 
 Get generated flow history
-
-
 
 Wraps GET /api/v2/flows/{flowId}/history/{historyId} 
 
@@ -2525,8 +2439,6 @@ except ApiException as e:
 
 Get the latest configuration for flow
 
-
-
 Wraps GET /api/v2/flows/{flowId}/latestconfiguration 
 
 Requires ANY permissions: 
@@ -2577,8 +2489,6 @@ except ApiException as e:
 
 
 Get flow version
-
-
 
 Wraps GET /api/v2/flows/{flowId}/versions/{versionId} 
 
@@ -2633,8 +2543,6 @@ except ApiException as e:
 
 Create flow version configuration
 
-
-
 Wraps GET /api/v2/flows/{flowId}/versions/{versionId}/configuration 
 
 Requires ANY permissions: 
@@ -2687,8 +2595,6 @@ except ApiException as e:
 
 
 Get flow version list
-
-
 
 Wraps GET /api/v2/flows/{flowId}/versions 
 
@@ -2746,8 +2652,6 @@ except ApiException as e:
 Get a pageable list of flows, filtered by query parameters
 
 If one or more IDs are specified, the search will fetch flows that match the given ID(s) and not use any additional supplied query parameters in the search.
-
-
 
 Wraps GET /api/v2/flows 
 
@@ -2836,8 +2740,6 @@ Returns a specific datatable by id
 
 Given a datatableId returns the datatable object and schema associated with it.
 
-
-
 Wraps GET /api/v2/flows/datatables/{datatableId} 
 
 Requires ANY permissions: 
@@ -2890,8 +2792,6 @@ except ApiException as e:
 Returns the state information about an export job
 
 Returns the state information about an export job.
-
-
 
 Wraps GET /api/v2/flows/datatables/{datatableId}/export/jobs/{exportJobId} 
 
@@ -2947,8 +2847,6 @@ Returns the state information about an import job
 
 Returns the state information about an import job.
 
-
-
 Wraps GET /api/v2/flows/datatables/{datatableId}/import/jobs/{importJobId} 
 
 Requires ANY permissions: 
@@ -3002,8 +2900,6 @@ except ApiException as e:
 Get all recent import jobs
 
 Get all recent import jobs
-
-
 
 Wraps GET /api/v2/flows/datatables/{datatableId}/import/jobs 
 
@@ -3061,8 +2957,6 @@ Returns a specific row for the datatable
 
 Given a datatableId and a rowId (the value of the key field) this will return the full row contents for that rowId.
 
-
-
 Wraps GET /api/v2/flows/datatables/{datatableId}/rows/{rowId} 
 
 Requires ANY permissions: 
@@ -3118,8 +3012,6 @@ except ApiException as e:
 Returns the rows for the datatable with the given id
 
 Returns all of the rows for the datatable with the given datatableId.  By default this will just be a truncated list returning the key for each row. Set showBrief to false to return all of the row contents.
-
-
 
 Wraps GET /api/v2/flows/datatables/{datatableId}/rows 
 
@@ -3180,8 +3072,6 @@ except ApiException as e:
 Retrieve a list of datatables for the org
 
 Returns a metadata list of the datatables associated with this org, including datatableId, name and description.
-
-
 
 Wraps GET /api/v2/flows/datatables 
 
@@ -3246,8 +3136,6 @@ Returns a specific datatable by id
 
 Given a datatableId returns the datatable object and schema associated with it.
 
-
-
 Wraps GET /api/v2/flows/datatables/divisionviews/{datatableId} 
 
 Requires ALL permissions: 
@@ -3300,8 +3188,6 @@ except ApiException as e:
 Retrieve a list of datatables for the org
 
 Returns a metadata list of the datatables associated with this org, including datatableId, name and description.
-
-
 
 Wraps GET /api/v2/flows/datatables/divisionviews 
 
@@ -3365,8 +3251,6 @@ except ApiException as e:
 Get a pageable list of basic flow information objects filterable by query parameters.
 
 This returns a simplified version of /flow consisting of name and type. If one or more IDs are specified, the search will fetch flows that match the given ID(s) and not use any additional supplied query parameters in the search.
-
-
 
 Wraps GET /api/v2/flows/divisionviews 
 
@@ -3439,8 +3323,6 @@ except ApiException as e:
 
 Get a flow execution's details. Flow execution details are available for several days after the flow is started.
 
-
-
 Wraps GET /api/v2/flows/executions/{flowExecutionId} 
 
 Requires ANY permissions: 
@@ -3492,7 +3374,7 @@ Start a process (job) to prepare a download of a singular flow execution data in
 
 Returns a JobResult object that contains an ID that can be used to check status and/or download links when the process (job) is complete.
 
-
+get_flows_instance is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/flows/instances/{instanceId} 
 
@@ -3545,7 +3427,7 @@ except ApiException as e:
 
 Get the status and/or results of an asynchronous flow execution data retrieval job
 
-
+get_flows_instances_job is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/flows/instances/jobs/{jobId} 
 
@@ -3598,7 +3480,7 @@ Retrieve a list of capabilities that the org can use to query for execution data
 
 Returns the queryable parameters that can be used to build a query for execution data.
 
-
+get_flows_instances_querycapabilities is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/flows/instances/querycapabilities 
 
@@ -3648,8 +3530,6 @@ except ApiException as e:
 
 
 Fetch Architect Job Status
-
-
 
 Wraps GET /api/v2/flows/jobs/{jobId} 
 
@@ -3704,8 +3584,6 @@ Get a flow milestone
 
 Returns a specified flow milestone
 
-
-
 Wraps GET /api/v2/flows/milestones/{milestoneId} 
 
 Requires ALL permissions: 
@@ -3756,8 +3634,6 @@ except ApiException as e:
 Get a pageable list of flow milestones, filtered by query parameters
 
 Multiple IDs can be specified, in which case all matching flow milestones will be returned, and no other parameters will be evaluated.
-
-
 
 Wraps GET /api/v2/flows/milestones 
 
@@ -3826,8 +3702,6 @@ Get a pageable list of basic flow milestone information objects filterable by qu
 
 This returns flow milestones consisting of name and division. If one or more IDs are specified, the search will fetch flow milestones that match the given ID(s) and not use any additional supplied query parameters in the search.
 
-
-
 Wraps GET /api/v2/flows/milestones/divisionviews 
 
 Requires ALL permissions: 
@@ -3891,8 +3765,6 @@ Get a flow outcome
 
 Returns a specified flow outcome
 
-
-
 Wraps GET /api/v2/flows/outcomes/{flowOutcomeId} 
 
 Requires ALL permissions: 
@@ -3943,8 +3815,6 @@ except ApiException as e:
 Get a pageable list of flow outcomes, filtered by query parameters
 
 Multiple IDs can be specified, in which case all matching flow outcomes will be returned, and no other parameters will be evaluated.
-
-
 
 Wraps GET /api/v2/flows/outcomes 
 
@@ -4013,8 +3883,6 @@ Get a pageable list of basic flow outcome information objects filterable by quer
 
 This returns flow outcomes consisting of name and division. If one or more IDs are specified, the search will fetch flow outcomes that match the given ID(s) and not use any additional supplied query parameters in the search.
 
-
-
 Wraps GET /api/v2/flows/outcomes/divisionviews 
 
 Requires ALL permissions: 
@@ -4078,8 +3946,6 @@ Rebuild Dependency Tracking data for an organization
 
 Asynchronous.  Notification topic: v2.architect.dependencytracking.build
 
-
-
 Wraps POST /api/v2/architect/dependencytracking/build 
 
 Requires ALL permissions: 
@@ -4123,8 +3989,6 @@ void (empty response body)
 
 
 Creates a new emergency group
-
-
 
 Wraps POST /api/v2/architect/emergencygroups 
 
@@ -4174,8 +4038,6 @@ except ApiException as e:
 
 
 Create IVR config.
-
-
 
 Wraps POST /api/v2/architect/ivrs 
 
@@ -4228,8 +4090,6 @@ Generate prompt history
 
 Asynchronous.  Notification topic: v2.architect.prompts.{promptId}
 
-
-
 Wraps POST /api/v2/architect/prompts/{promptId}/history 
 
 Requires ALL permissions: 
@@ -4278,8 +4138,6 @@ except ApiException as e:
 
 
 Create a new user prompt resource
-
-
 
 Wraps POST /api/v2/architect/prompts/{promptId}/resources 
 
@@ -4332,8 +4190,6 @@ except ApiException as e:
 
 Create a new user prompt
 
-
-
 Wraps POST /api/v2/architect/prompts 
 
 Requires ALL permissions: 
@@ -4383,8 +4239,6 @@ except ApiException as e:
 
 Creates a new schedule group
 
-
-
 Wraps POST /api/v2/architect/schedulegroups 
 
 Requires ALL permissions: 
@@ -4433,8 +4287,6 @@ except ApiException as e:
 
 
 Create a new schedule.
-
-
 
 Wraps POST /api/v2/architect/schedules 
 
@@ -4487,8 +4339,6 @@ Generate system prompt history
 
 Asynchronous.  Notification topic: v2.architect.systemprompts.{systemPromptId}
 
-
-
 Wraps POST /api/v2/architect/systemprompts/{promptId}/history 
 
 Requires ALL permissions: 
@@ -4537,8 +4387,6 @@ except ApiException as e:
 
 
 Create system prompt resource override.
-
-
 
 Wraps POST /api/v2/architect/systemprompts/{promptId}/resources 
 
@@ -4593,8 +4441,6 @@ Generate flow history
 
 Asynchronous.  Notification topic: v2.flows.{flowId}
 
-
-
 Wraps POST /api/v2/flows/{flowId}/history 
 
 Requires ANY permissions: 
@@ -4643,8 +4489,6 @@ except ApiException as e:
 
 
 Create flow version
-
-
 
 Wraps POST /api/v2/flows/{flowId}/versions 
 
@@ -4696,8 +4540,6 @@ except ApiException as e:
 
 
 Create flow
-
-
 
 Wraps POST /api/v2/flows 
 
@@ -4752,8 +4594,6 @@ Check-in flow
 
 Asynchronous.  Notification topic: v2.flows.{flowId}
 
-
-
 Wraps POST /api/v2/flows/actions/checkin 
 
 Requires ANY permissions: 
@@ -4804,8 +4644,6 @@ except ApiException as e:
 
 Check-out flow
 
-
-
 Wraps POST /api/v2/flows/actions/checkout 
 
 Requires ANY permissions: 
@@ -4854,8 +4692,6 @@ except ApiException as e:
 
 
 Deactivate flow
-
-
 
 Wraps POST /api/v2/flows/actions/deactivate 
 
@@ -4907,8 +4743,6 @@ except ApiException as e:
 Publish flow
 
 Asynchronous.  Notification topic: v2.flows.{flowId}
-
-
 
 Wraps POST /api/v2/flows/actions/publish 
 
@@ -4962,8 +4796,6 @@ except ApiException as e:
 
 Revert flow
 
-
-
 Wraps POST /api/v2/flows/actions/revert 
 
 Requires ANY permissions: 
@@ -5014,8 +4846,6 @@ except ApiException as e:
 Unlock flow
 
 Allows for unlocking a flow in the case where there is no flow configuration available, and thus a check-in will not unlock the flow. The user must have Architect Admin permissions to perform this action.
-
-
 
 Wraps POST /api/v2/flows/actions/unlock 
 
@@ -5068,8 +4898,6 @@ Begin an export process for exporting all rows from a datatable
 
 Create an export job for exporting rows. The caller can then poll for status of the export using the token returned in the response
 
-
-
 Wraps POST /api/v2/flows/datatables/{datatableId}/export/jobs 
 
 Requires ANY permissions: 
@@ -5121,8 +4949,6 @@ except ApiException as e:
 Begin an import process for importing rows into a datatable
 
 Create an import job for importing rows. The caller can then poll for status of the import using the token returned in the response
-
-
 
 Wraps POST /api/v2/flows/datatables/{datatableId}/import/jobs 
 
@@ -5178,8 +5004,6 @@ Create a new row entry for the datatable.
 
 Will add the passed in row entry to the datatable with the given datatableId after verifying it against the schema.  The DataTableRow should be a json-ized' stream of key -> value pairs {      \"Field1\": \"XYZZY\",      \"Field2\": false,      \"KEY\": \"27272\"  }
 
-
-
 Wraps POST /api/v2/flows/datatables/{datatableId}/rows 
 
 Requires ANY permissions: 
@@ -5234,8 +5058,6 @@ Create a new datatable with the specified json-schema definition
 
 This will create a new datatable with fields that match the property definitions in the JSON schema.  The schema's title field will be overridden by the name field in the DataTable object.  See also http://json-schema.org/
 
-
-
 Wraps POST /api/v2/flows/datatables 
 
 Requires ANY permissions: 
@@ -5286,8 +5108,6 @@ except ApiException as e:
 Launch an instance of a flow definition, for flow types that support it such as the 'workflow' type.
 
 The launch is asynchronous, it returns as soon as the flow starts. You can use the returned ID to query its status if you need.
-
-
 
 Wraps POST /api/v2/flows/executions 
 
@@ -5340,7 +5160,7 @@ Start a process (job) that will prepare a list of execution data IDs for downloa
 
 Returns a JobResult object that contains an ID that can be used to check status and/or download links when the process (job) is complete.
 
-
+post_flows_instances_jobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/flows/instances/jobs 
 
@@ -5395,7 +5215,7 @@ Query the database of existing flow histories to look for particular flow criter
 
 Returns a list of matching flow histories up to 200 max.
 
-
+post_flows_instances_query is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/flows/instances/query 
 
@@ -5448,8 +5268,6 @@ except ApiException as e:
 
 Register Architect Job. Returns a URL where a file, such as an Architect flow YAML file, can be PUT which will then initiate the job.
 
-
-
 Wraps POST /api/v2/flows/jobs 
 
 Requires ALL permissions: 
@@ -5494,8 +5312,6 @@ This endpoint does not need any parameters.
 
 
 Create a flow milestone
-
-
 
 Wraps POST /api/v2/flows/milestones 
 
@@ -5548,8 +5364,6 @@ Create a flow outcome
 
 Asynchronous.  Notification topic: v2.flows.outcomes.{flowOutcomeId}
 
-
-
 Wraps POST /api/v2/flows/outcomes 
 
 Requires ALL permissions: 
@@ -5598,8 +5412,6 @@ except ApiException as e:
 
 
 Updates a emergency group by ID
-
-
 
 Wraps PUT /api/v2/architect/emergencygroups/{emergencyGroupId} 
 
@@ -5652,8 +5464,6 @@ except ApiException as e:
 
 Update an IVR Config.
 
-
-
 Wraps PUT /api/v2/architect/ivrs/{ivrId} 
 
 Requires ALL permissions: 
@@ -5705,8 +5515,6 @@ except ApiException as e:
 
 Update specified user prompt
 
-
-
 Wraps PUT /api/v2/architect/prompts/{promptId} 
 
 Requires ALL permissions: 
@@ -5757,8 +5565,6 @@ except ApiException as e:
 
 
 Update specified user prompt resource
-
-
 
 Wraps PUT /api/v2/architect/prompts/{promptId}/resources/{languageCode} 
 
@@ -5813,8 +5619,6 @@ except ApiException as e:
 
 Update schedule by ID
 
-
-
 Wraps PUT /api/v2/architect/schedules/{scheduleId} 
 
 Requires ALL permissions: 
@@ -5866,8 +5670,6 @@ except ApiException as e:
 
 Updates a schedule group by ID
 
-
-
 Wraps PUT /api/v2/architect/schedulegroups/{scheduleGroupId} 
 
 Requires ALL permissions: 
@@ -5918,8 +5720,6 @@ except ApiException as e:
 
 
 Updates a system prompt resource override.
-
-
 
 Wraps PUT /api/v2/architect/systemprompts/{promptId}/resources/{languageCode} 
 
@@ -5974,8 +5774,6 @@ except ApiException as e:
 
 Update flow
 
-
-
 Wraps PUT /api/v2/flows/{flowId} 
 
 Requires ANY permissions: 
@@ -6028,8 +5826,6 @@ except ApiException as e:
 Updates a specific datatable by id
 
 Updates a schema for a datatable with the given datatableId -updates allow only new fields to be added in the schema, no changes or removals of existing fields.
-
-
 
 Wraps PUT /api/v2/flows/datatables/{datatableId} 
 
@@ -6086,8 +5882,6 @@ Update a row entry
 
 Updates a row with the given rowId (the value of the key field) to the new values.  The DataTableRow should be a json-ized' stream of key -> value pairs {     \"Field1\": \"XYZZY\",     \"Field2\": false,     \"KEY\": \"27272\" }
 
-
-
 Wraps PUT /api/v2/flows/datatables/{datatableId}/rows/{rowId} 
 
 Requires ANY permissions: 
@@ -6142,8 +5936,6 @@ except ApiException as e:
 
 Updates a flow milestone
 
-
-
 Wraps PUT /api/v2/flows/milestones/{milestoneId} 
 
 Requires ALL permissions: 
@@ -6196,8 +5988,6 @@ except ApiException as e:
 Updates a flow outcome
 
 Updates a flow outcome.  Asynchronous.  Notification topic: v2.flowoutcomes.{flowoutcomeId}
-
-
 
 Wraps PUT /api/v2/flows/outcomes/{flowOutcomeId} 
 

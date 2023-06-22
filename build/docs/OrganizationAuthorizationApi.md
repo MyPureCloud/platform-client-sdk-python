@@ -64,8 +64,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 Delete Org Trust
 
-
-
 Wraps DELETE /api/v2/orgauthorization/trustees/{trusteeOrgId} 
 
 Requires ANY permissions: 
@@ -113,8 +111,6 @@ void (empty response body)
 
 
 Deletes cloned user
-
-
 
 Wraps DELETE /api/v2/orgauthorization/trustees/{trusteeOrgId}/clonedusers/{trusteeUserId} 
 
@@ -166,8 +162,6 @@ void (empty response body)
 
 Delete Trustee Group
 
-
-
 Wraps DELETE /api/v2/orgauthorization/trustees/{trusteeOrgId}/groups/{trusteeGroupId} 
 
 Requires ANY permissions: 
@@ -217,8 +211,6 @@ void (empty response body)
 
 
 Delete Trustee Group Roles
-
-
 
 Wraps DELETE /api/v2/orgauthorization/trustees/{trusteeOrgId}/groups/{trusteeGroupId}/roles 
 
@@ -270,8 +262,6 @@ void (empty response body)
 
 Delete Trustee User
 
-
-
 Wraps DELETE /api/v2/orgauthorization/trustees/{trusteeOrgId}/users/{trusteeUserId} 
 
 Requires ANY permissions: 
@@ -321,8 +311,6 @@ void (empty response body)
 
 
 Delete Trustee User Roles
-
-
 
 Wraps DELETE /api/v2/orgauthorization/trustees/{trusteeOrgId}/users/{trusteeUserId}/roles 
 
@@ -374,7 +362,7 @@ void (empty response body)
 
 Delete Bulk Org Trustees
 
-
+delete_orgauthorization_trustees is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps DELETE /api/v2/orgauthorization/trustees 
 
@@ -424,8 +412,6 @@ void (empty response body)
 
 Delete Org Trust
 
-
-
 Wraps DELETE /api/v2/orgauthorization/trustors/{trustorOrgId} 
 
 Requires ANY permissions: 
@@ -473,8 +459,6 @@ void (empty response body)
 
 
 Delete Cloned User
-
-
 
 Wraps DELETE /api/v2/orgauthorization/trustors/{trustorOrgId}/clonedusers/{trusteeUserId} 
 
@@ -526,8 +510,6 @@ void (empty response body)
 
 Delete Trustee Group
 
-
-
 Wraps DELETE /api/v2/orgauthorization/trustors/{trustorOrgId}/groups/{trustorGroupId} 
 
 Requires ANY permissions: 
@@ -577,8 +559,6 @@ void (empty response body)
 
 
 Delete Trustee User
-
-
 
 Wraps DELETE /api/v2/orgauthorization/trustors/{trustorOrgId}/users/{trusteeUserId} 
 
@@ -630,7 +610,7 @@ void (empty response body)
 
 Delete Bulk Org Trustors
 
-
+delete_orgauthorization_trustors is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps DELETE /api/v2/orgauthorization/trustors 
 
@@ -679,8 +659,6 @@ void (empty response body)
 
 
 Get Pairing Info
-
-
 
 Wraps GET /api/v2/orgauthorization/pairings/{pairingId} 
 
@@ -731,8 +709,6 @@ except ApiException as e:
 
 
 Get Org Trust
-
-
 
 Wraps GET /api/v2/orgauthorization/trustees/{trusteeOrgId} 
 
@@ -785,8 +761,6 @@ The list of cloned users from the trustee organization (i.e. users with a native
 
 There can be no more than 5 cloned users per organization, so results are represented as simple list and not paged
 
-
-
 Wraps GET /api/v2/orgauthorization/trustees/{trusteeOrgId}/clonedusers 
 
 Requires ANY permissions: 
@@ -835,8 +809,6 @@ except ApiException as e:
 
 
 Get Trustee Group
-
-
 
 Wraps GET /api/v2/orgauthorization/trustees/{trusteeOrgId}/groups/{trusteeGroupId} 
 
@@ -889,8 +861,6 @@ except ApiException as e:
 
 Get Trustee Group Roles
 
-
-
 Wraps GET /api/v2/orgauthorization/trustees/{trusteeOrgId}/groups/{trusteeGroupId}/roles 
 
 Requires ANY permissions: 
@@ -941,8 +911,6 @@ except ApiException as e:
 
 
 The list of trustee groups for this organization (i.e. groups granted access to this organization).
-
-
 
 Wraps GET /api/v2/orgauthorization/trustees/{trusteeOrgId}/groups 
 
@@ -997,8 +965,6 @@ except ApiException as e:
 
 Get Trustee User
 
-
-
 Wraps GET /api/v2/orgauthorization/trustees/{trusteeOrgId}/users/{trusteeUserId} 
 
 Requires ANY permissions: 
@@ -1050,8 +1016,6 @@ except ApiException as e:
 
 Get Trustee User Roles
 
-
-
 Wraps GET /api/v2/orgauthorization/trustees/{trusteeOrgId}/users/{trusteeUserId}/roles 
 
 Requires ANY permissions: 
@@ -1102,8 +1066,6 @@ except ApiException as e:
 
 
 The list of trustee users for this organization (i.e. users granted access to this organization).
-
-
 
 Wraps GET /api/v2/orgauthorization/trustees/{trusteeOrgId}/users 
 
@@ -1158,8 +1120,6 @@ except ApiException as e:
 
 The list of trustees for this organization (i.e. organizations granted access to this organization).
 
-
-
 Wraps GET /api/v2/orgauthorization/trustees 
 
 Requires ANY permissions: 
@@ -1211,8 +1171,6 @@ except ApiException as e:
 
 Get organization authorization trust with Customer Care, if one exists.
 
-
-
 Wraps GET /api/v2/orgauthorization/trustees/default 
 
 Requires ANY permissions: 
@@ -1258,8 +1216,6 @@ This endpoint does not need any parameters.
 
 
 Get Org Trust
-
-
 
 Wraps GET /api/v2/orgauthorization/trustors/{trustorOrgId} 
 
@@ -1309,8 +1265,6 @@ except ApiException as e:
 
 
 Get Cloned User
-
-
 
 Wraps GET /api/v2/orgauthorization/trustors/{trustorOrgId}/clonedusers/{trusteeUserId} 
 
@@ -1363,8 +1317,6 @@ except ApiException as e:
 
 The list of cloned users in the trustor organization (i.e. users with a native user record).
 
-
-
 Wraps GET /api/v2/orgauthorization/trustors/{trustorOrgId}/clonedusers 
 
 Requires ANY permissions: 
@@ -1413,8 +1365,6 @@ except ApiException as e:
 
 
 Get Trustee Group
-
-
 
 Wraps GET /api/v2/orgauthorization/trustors/{trustorOrgId}/groups/{trustorGroupId} 
 
@@ -1466,8 +1416,6 @@ except ApiException as e:
 
 
 The list of groups in the trustor organization (i.e. groups granted access).
-
-
 
 Wraps GET /api/v2/orgauthorization/trustors/{trustorOrgId}/groups 
 
@@ -1522,8 +1470,6 @@ except ApiException as e:
 
 Get Trustee User
 
-
-
 Wraps GET /api/v2/orgauthorization/trustors/{trustorOrgId}/users/{trusteeUserId} 
 
 Requires ANY permissions: 
@@ -1574,8 +1520,6 @@ except ApiException as e:
 
 
 The list of users in the trustor organization (i.e. users granted access).
-
-
 
 Wraps GET /api/v2/orgauthorization/trustors/{trustorOrgId}/users 
 
@@ -1630,8 +1574,6 @@ except ApiException as e:
 
 The list of organizations that have authorized/trusted your organization.
 
-
-
 Wraps GET /api/v2/orgauthorization/trustors 
 
 Requires ANY permissions: 
@@ -1683,8 +1625,6 @@ except ApiException as e:
 
 A pairing id is created by the trustee and given to the trustor to create a trust.
 
-
-
 Wraps POST /api/v2/orgauthorization/pairings 
 
 Requires ANY permissions: 
@@ -1733,8 +1673,6 @@ except ApiException as e:
 
 
 Add a group to the trust.
-
-
 
 Wraps POST /api/v2/orgauthorization/trustees/{trusteeOrgId}/groups 
 
@@ -1787,8 +1725,6 @@ except ApiException as e:
 
 Add a user to the trust.
 
-
-
 Wraps POST /api/v2/orgauthorization/trustees/{trusteeOrgId}/users 
 
 Requires ANY permissions: 
@@ -1840,8 +1776,6 @@ except ApiException as e:
 
 Create a new organization authorization trust. This is required to grant other organizations access to your organization.
 
-
-
 Wraps POST /api/v2/orgauthorization/trustees 
 
 Requires ALL permissions: 
@@ -1891,8 +1825,6 @@ except ApiException as e:
 
 
 Get Org Trustee Audits
-
-
 
 Wraps POST /api/v2/orgauthorization/trustees/audits 
 
@@ -1951,8 +1883,6 @@ except ApiException as e:
 
 Create a new organization authorization trust with Customer Care. This is required to grant your regional Customer Care organization access to your organization.
 
-
-
 Wraps POST /api/v2/orgauthorization/trustees/default 
 
 Requires ALL permissions: 
@@ -2004,8 +1934,6 @@ except ApiException as e:
 
 
 Get Org Trustor Audits
-
-
 
 Wraps POST /api/v2/orgauthorization/trustor/audits 
 
@@ -2064,8 +1992,6 @@ except ApiException as e:
 
 Update Org Trust
 
-
-
 Wraps PUT /api/v2/orgauthorization/trustees/{trusteeOrgId} 
 
 Requires ANY permissions: 
@@ -2116,8 +2042,6 @@ except ApiException as e:
 
 
 Update Trustee Group Roles
-
-
 
 Wraps PUT /api/v2/orgauthorization/trustees/{trusteeOrgId}/groups/{trusteeGroupId}/roledivisions 
 
@@ -2172,8 +2096,6 @@ except ApiException as e:
 
 Update Trustee Group Roles
 
-
-
 Wraps PUT /api/v2/orgauthorization/trustees/{trusteeOrgId}/groups/{trusteeGroupId}/roles 
 
 Requires ANY permissions: 
@@ -2226,8 +2148,6 @@ except ApiException as e:
 
 
 Update Trustee User Roles
-
-
 
 Wraps PUT /api/v2/orgauthorization/trustees/{trusteeOrgId}/users/{trusteeUserId}/roledivisions 
 
@@ -2282,8 +2202,6 @@ except ApiException as e:
 
 Update Trustee User Roles
 
-
-
 Wraps PUT /api/v2/orgauthorization/trustees/{trusteeOrgId}/users/{trusteeUserId}/roles 
 
 Requires ANY permissions: 
@@ -2337,8 +2255,6 @@ except ApiException as e:
 
 Creates a clone of the trustee user in the trustor org.
 
-
-
 Wraps PUT /api/v2/orgauthorization/trustors/{trustorOrgId}/clonedusers/{trusteeUserId} 
 
 Requires ALL permissions: 
@@ -2390,8 +2306,6 @@ except ApiException as e:
 
 Add a Trustee Group to the trust.
 
-
-
 Wraps PUT /api/v2/orgauthorization/trustors/{trustorOrgId}/groups/{trustorGroupId} 
 
 Requires ALL permissions: 
@@ -2442,8 +2356,6 @@ except ApiException as e:
 
 
 Add a Trustee user to the trust.
-
-
 
 Wraps PUT /api/v2/orgauthorization/trustors/{trustorOrgId}/users/{trusteeUserId} 
 

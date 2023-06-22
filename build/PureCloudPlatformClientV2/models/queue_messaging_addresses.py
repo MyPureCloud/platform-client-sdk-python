@@ -51,16 +51,19 @@ class QueueMessagingAddresses(object):
         """
         self.swagger_types = {
             'sms_address': 'DomainEntityRef',
-            'open_messaging_recipient': 'DomainEntityRef'
+            'open_messaging_recipient': 'DomainEntityRef',
+            'whats_app_recipient': 'DomainEntityRef'
         }
 
         self.attribute_map = {
             'sms_address': 'smsAddress',
-            'open_messaging_recipient': 'openMessagingRecipient'
+            'open_messaging_recipient': 'openMessagingRecipient',
+            'whats_app_recipient': 'whatsAppRecipient'
         }
 
         self._sms_address = None
         self._open_messaging_recipient = None
+        self._whats_app_recipient = None
 
     @property
     def sms_address(self) -> 'DomainEntityRef':
@@ -109,6 +112,30 @@ class QueueMessagingAddresses(object):
         
 
         self._open_messaging_recipient = open_messaging_recipient
+
+    @property
+    def whats_app_recipient(self) -> 'DomainEntityRef':
+        """
+        Gets the whats_app_recipient of this QueueMessagingAddresses.
+
+
+        :return: The whats_app_recipient of this QueueMessagingAddresses.
+        :rtype: DomainEntityRef
+        """
+        return self._whats_app_recipient
+
+    @whats_app_recipient.setter
+    def whats_app_recipient(self, whats_app_recipient: 'DomainEntityRef') -> None:
+        """
+        Sets the whats_app_recipient of this QueueMessagingAddresses.
+
+
+        :param whats_app_recipient: The whats_app_recipient of this QueueMessagingAddresses.
+        :type: DomainEntityRef
+        """
+        
+
+        self._whats_app_recipient = whats_app_recipient
 
     def to_dict(self):
         """

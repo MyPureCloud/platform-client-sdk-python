@@ -177,8 +177,6 @@ Delete business unit
 
 A business unit cannot be deleted if it contains one or more management units
 
-
-
 Wraps DELETE /api/v2/workforcemanagement/businessunits/{businessUnitId} 
 
 Requires ANY permissions: 
@@ -226,8 +224,6 @@ void (empty response body)
 
 
 Deletes an activity code
-
-
 
 Wraps DELETE /api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes/{activityCodeId} 
 
@@ -279,8 +275,6 @@ void (empty response body)
 
 Deletes the planning group
 
-
-
 Wraps DELETE /api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups/{planningGroupId} 
 
 Requires ANY permissions: 
@@ -330,8 +324,6 @@ void (empty response body)
 
 
 Cancel a scheduling run
-
-
 
 Wraps DELETE /api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduling/runs/{runId} 
 
@@ -383,8 +375,6 @@ void (empty response body)
 
 Delete a service goal template
 
-
-
 Wraps DELETE /api/v2/workforcemanagement/businessunits/{businessUnitId}/servicegoaltemplates/{serviceGoalTemplateId} 
 
 Requires ANY permissions: 
@@ -434,8 +424,6 @@ void (empty response body)
 
 
 Delete a schedule
-
-
 
 Wraps DELETE /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId} 
 
@@ -492,8 +480,6 @@ Delete a short term forecast
 
 Must not be tied to any schedules
 
-
-
 Wraps DELETE /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId} 
 
 Requires ANY permissions: 
@@ -546,8 +532,6 @@ void (empty response body)
 
 Disable generated calendar link for the current user
 
-
-
 Wraps DELETE /api/v2/workforcemanagement/calendar/url/ics 
 
 Requires ALL permissions: 
@@ -591,8 +575,6 @@ void (empty response body)
 
 
 Delete management unit
-
-
 
 Wraps DELETE /api/v2/workforcemanagement/managementunits/{managementUnitId} 
 
@@ -641,8 +623,6 @@ void (empty response body)
 
 
 Deletes a time off limit object
-
-
 
 Wraps DELETE /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits/{timeOffLimitId} 
 
@@ -694,8 +674,6 @@ void (empty response body)
 
 Deletes a time off plan
 
-
-
 Wraps DELETE /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffplans/{timeOffPlanId} 
 
 Requires ANY permissions: 
@@ -745,8 +723,6 @@ void (empty response body)
 
 
 Delete a work plan
-
-
 
 Wraps DELETE /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans/{workPlanId} 
 
@@ -798,8 +774,6 @@ void (empty response body)
 
 Delete a work plan rotation
 
-
-
 Wraps DELETE /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplanrotations/{workPlanRotationId} 
 
 Requires ANY permissions: 
@@ -850,8 +824,6 @@ void (empty response body)
 
 Get a list of UserScheduleAdherence records for the requested users
 
-
-
 Wraps GET /api/v2/workforcemanagement/adherence 
 
 Requires ANY permissions: 
@@ -900,8 +872,6 @@ except ApiException as e:
 
 
 Get an adherence explanation for the current user
-
-
 
 Wraps GET /api/v2/workforcemanagement/adherence/explanations/{explanationId} 
 
@@ -954,8 +924,6 @@ Query the status of an adherence explanation operation. Only the user who starte
 
 Job details are only retained if the initial request returned a 202 ACCEPTED response
 
-
-
 Wraps GET /api/v2/workforcemanagement/adherence/explanations/jobs/{jobId} 
 
 Requires no permissions
@@ -1005,8 +973,6 @@ except ApiException as e:
 Request to fetch the status of the historical adherence bulk job. Only the user who started the operation can query the status
 
 Job details are only retained if the initial request returned a 202 ACCEPTED response
-
-
 
 Wraps GET /api/v2/workforcemanagement/adherence/historical/bulk/jobs/{jobId} 
 
@@ -1058,8 +1024,6 @@ Query the status of a historical adherence request operation. Only the user who 
 
 Job details are only retained if the initial request returned a 202 ACCEPTED response
 
-
-
 Wraps GET /api/v2/workforcemanagement/adherence/historical/jobs/{jobId} 
 
 Requires ANY permissions: 
@@ -1109,8 +1073,6 @@ except ApiException as e:
 
 Get status of the modeling job
 
-
-
 Wraps GET /api/v2/workforcemanagement/adhocmodelingjobs/{jobId} 
 
 Requires ANY permissions: 
@@ -1159,8 +1121,6 @@ except ApiException as e:
 
 
 Get an adherence explanation
-
-
 
 Wraps GET /api/v2/workforcemanagement/agents/{agentId}/adherence/explanations/{explanationId} 
 
@@ -1212,8 +1172,6 @@ except ApiException as e:
 
 
 Get the management unit to which the agent belongs
-
-
 
 Wraps GET /api/v2/workforcemanagement/agents/{agentId}/managementunit 
 
@@ -1269,8 +1227,6 @@ except ApiException as e:
 
 
 Get the management unit to which the currently logged in agent belongs
-
-
 
 Wraps GET /api/v2/workforcemanagement/agents/me/managementunit 
 
@@ -1375,8 +1331,6 @@ This endpoint does not need any parameters.
 Get business unit
 
 Expanding \"settings\" will retrieve all settings.  All other expands will retrieve only the requested settings field(s).
-
-
 
 Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId} 
 
@@ -1493,8 +1447,6 @@ except ApiException as e:
 
 Get an activity code
 
-
-
 Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes/{activityCodeId} 
 
 Requires ANY permissions: 
@@ -1545,8 +1497,6 @@ except ApiException as e:
 
 
 Get activity codes
-
-
 
 Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes 
 
@@ -1655,8 +1605,6 @@ except ApiException as e:
 
 Get intraday planning groups for the given date
 
-
-
 Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/intraday/planninggroups 
 
 Requires ANY permissions: 
@@ -1707,8 +1655,6 @@ except ApiException as e:
 
 
 Get all authorized management units in the business unit
-
-
 
 Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/managementunits 
 
@@ -1762,8 +1708,6 @@ except ApiException as e:
 
 Get a planning group
 
-
-
 Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups/{planningGroupId} 
 
 Requires ANY permissions: 
@@ -1814,8 +1758,6 @@ except ApiException as e:
 
 
 Gets list of planning groups
-
-
 
 Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups 
 
@@ -1871,8 +1813,6 @@ except ApiException as e:
 
 Get a scheduling run
 
-
-
 Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduling/runs/{runId} 
 
 Requires ANY permissions: 
@@ -1924,8 +1864,6 @@ except ApiException as e:
 
 
 Get the result of a rescheduling operation
-
-
 
 Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduling/runs/{runId}/result 
 
@@ -1983,8 +1921,6 @@ except ApiException as e:
 
 Get the list of scheduling runs
 
-
-
 Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduling/runs 
 
 Requires ANY permissions: 
@@ -2034,8 +1970,6 @@ except ApiException as e:
 
 
 Get a service goal template
-
-
 
 Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/servicegoaltemplates/{serviceGoalTemplateId} 
 
@@ -2088,8 +2022,6 @@ except ApiException as e:
 
 Gets list of service goal templates
 
-
-
 Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/servicegoaltemplates 
 
 Requires ANY permissions: 
@@ -2140,8 +2072,6 @@ except ApiException as e:
 
 
 Get the metadata for the schedule, describing which management units and agents are in the scheduleSchedule data can then be loaded with the query route
-
-
 
 Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId} 
 
@@ -2199,8 +2129,6 @@ except ApiException as e:
 
 Get the generation results for a generated schedule
 
-
-
 Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/generationresults 
 
 Requires ANY permissions: 
@@ -2254,8 +2182,6 @@ except ApiException as e:
 
 
 Get the headcount forecast by planning group for the schedule
-
-
 
 Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/headcountforecast 
 
@@ -2312,8 +2238,6 @@ except ApiException as e:
 
 
 Loads agent's schedule history.
-
-
 
 Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/history/agents/{agentId} 
 
@@ -2373,8 +2297,6 @@ Get the list of week schedules for the specified week
 
 Use \"recent\" (without quotes) for the `weekId` path parameter to fetch all forecasts for +/- 26 weeks from the current date. Response will include any schedule which spans the specified week
 
-
-
 Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules 
 
 Requires ANY permissions: 
@@ -2430,8 +2352,6 @@ except ApiException as e:
 
 
 Get a short term forecast
-
-
 
 Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId} 
 
@@ -2490,8 +2410,6 @@ Get the result of a short term forecast calculation
 
 Includes modifications unless you pass the doNotApplyModifications query parameter
 
-
-
 Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}/data 
 
 Requires ANY permissions: 
@@ -2549,8 +2467,6 @@ except ApiException as e:
 
 Gets the forecast generation results
 
-
-
 Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}/generationresults 
 
 Requires ANY permissions: 
@@ -2606,8 +2522,6 @@ Get the result of a long term forecast calculation
 
 Includes modifications unless you pass the doNotApplyModifications query parameter
 
-
-
 Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}/longtermforecastdata 
 
 Requires ANY permissions: 
@@ -2662,8 +2576,6 @@ except ApiException as e:
 
 
 Gets the forecast planning group snapshot
-
-
 
 Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}/planninggroups 
 
@@ -2722,8 +2634,6 @@ Get short term forecasts
 
 Use \"recent\" (without quotes) for the `weekDateId` path parameter to fetch all forecasts for +/- 26 weeks from the current date. Response will include any forecast which spans the specified week
 
-
-
 Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts 
 
 Requires ANY permissions: 
@@ -2776,8 +2686,6 @@ except ApiException as e:
 
 Get business units
 
-
-
 Wraps GET /api/v2/workforcemanagement/businessunits 
 
 Requires no permissions
@@ -2828,8 +2736,6 @@ except ApiException as e:
 
 Get business units across divisions
 
-
-
 Wraps GET /api/v2/workforcemanagement/businessunits/divisionviews 
 
 Requires ANY permissions: 
@@ -2879,8 +2785,6 @@ except ApiException as e:
 
 Get ics formatted calendar based on shareable link
 
-
-
 Wraps GET /api/v2/workforcemanagement/calendar/data/ics 
 
 Requires no permissions
@@ -2925,8 +2829,6 @@ except ApiException as e:
 
 
 Get existing calendar link for the current user
-
-
 
 Wraps GET /api/v2/workforcemanagement/calendar/url/ics 
 
@@ -2974,8 +2876,6 @@ This endpoint does not need any parameters.
 
 Retrieves delete job status for historical data imports of the organization
 
-
-
 Wraps GET /api/v2/workforcemanagement/historicaldata/deletejob 
 
 Requires ALL permissions: 
@@ -3020,8 +2920,6 @@ This endpoint does not need any parameters.
 
 
 Retrieves status of the historical data imports of the organization
-
-
 
 Wraps GET /api/v2/workforcemanagement/historicaldata/importstatus 
 
@@ -3069,8 +2967,6 @@ This endpoint does not need any parameters.
 Get management unit
 
 settings.shortTermForecasting is deprecated and now lives on the business unit
-
-
 
 Wraps GET /api/v2/workforcemanagement/managementunits/{managementUnitId} 
 
@@ -3182,8 +3078,6 @@ except ApiException as e:
 
 Get activity codes
 
-
-
 Wraps GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/activitycodes 
 
 Requires ANY permissions: 
@@ -3273,8 +3167,6 @@ except ApiException as e:
 
 Get a list of user schedule adherence records for the requested management unit
 
-
-
 Wraps GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/adherence 
 
 Requires ANY permissions: 
@@ -3325,8 +3217,6 @@ except ApiException as e:
 
 
 Get data for agent in the management unit
-
-
 
 Wraps GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/agents/{agentId} 
 
@@ -3381,8 +3271,6 @@ except ApiException as e:
 
 Gets all the shift trades for a given agent
 
-
-
 Wraps GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/agents/{agentId}/shifttrades 
 
 Requires ANY permissions: 
@@ -3435,8 +3323,6 @@ except ApiException as e:
 
 Gets a summary of all shift trades in the matched state
 
-
-
 Wraps GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/shifttrades/matched 
 
 Requires ANY permissions: 
@@ -3486,8 +3372,6 @@ except ApiException as e:
 
 
 Gets list of users available for whom you can send direct shift trade requests
-
-
 
 Wraps GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/shifttrades/users 
 
@@ -3539,8 +3423,6 @@ except ApiException as e:
 Gets a time off limit object
 
 Returns properties of time off limit object, but not daily values.
-
-
 
 Wraps GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits/{timeOffLimitId} 
 
@@ -3595,8 +3477,6 @@ Gets a list of time off limit objects under management unit.
 
 Currently only one time off limit object is allowed under management unit, so the list contains either 0 or 1 element.
 
-
-
 Wraps GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits 
 
 Requires ANY permissions: 
@@ -3646,8 +3526,6 @@ except ApiException as e:
 
 
 Gets a time off plan
-
-
 
 Wraps GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffplans/{timeOffPlanId} 
 
@@ -3700,8 +3578,6 @@ except ApiException as e:
 
 Gets a list of time off plans
 
-
-
 Wraps GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffplans 
 
 Requires ANY permissions: 
@@ -3750,8 +3626,6 @@ except ApiException as e:
 
 
 Get a time off request
-
-
 
 Wraps GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffrequests/{timeOffRequestId} 
 
@@ -3805,8 +3679,6 @@ except ApiException as e:
 
 
 Retrieves time off limit, allocated and waitlisted values according to specific time off request
-
-
 
 Wraps GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffrequests/{timeOffRequestId}/timeofflimits 
 
@@ -3862,8 +3734,6 @@ except ApiException as e:
 
 Get a list of time off requests for a given user
 
-
-
 Wraps GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffrequests 
 
 Requires ANY permissions: 
@@ -3916,8 +3786,6 @@ except ApiException as e:
 
 
 Get users in the management unit
-
-
 
 Wraps GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/users 
 
@@ -3974,8 +3842,6 @@ except ApiException as e:
 <span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 Deprecated.  Use the equivalent business unit resource instead. Get a week schedule
-
-
 
 Wraps GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekId}/schedules/{scheduleId} 
 
@@ -4035,8 +3901,6 @@ except ApiException as e:
 
 Deprecated.  Use the equivalent business unit resource instead. Get the list of schedules in a week in management unit
 
-
-
 Wraps GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekId}/schedules 
 
 Requires ANY permissions: 
@@ -4095,8 +3959,6 @@ except ApiException as e:
 
 Gets all the shift trades for a given week
 
-
-
 Wraps GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades 
 
 Requires ANY permissions: 
@@ -4150,8 +4012,6 @@ except ApiException as e:
 
 
 Get a work plan
-
-
 
 Wraps GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans/{workPlanId} 
 
@@ -4208,8 +4068,6 @@ except ApiException as e:
 
 Get a work plan rotation
 
-
-
 Wraps GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplanrotations/{workPlanRotationId} 
 
 Requires ANY permissions: 
@@ -4260,8 +4118,6 @@ except ApiException as e:
 
 
 Get work plan rotations
-
-
 
 Wraps GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplanrotations 
 
@@ -4317,8 +4173,6 @@ Get work plans
 
 \"expand=details\" is deprecated
 
-
-
 Wraps GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans 
 
 Requires ANY permissions: 
@@ -4373,8 +4227,6 @@ except ApiException as e:
 
 
 Get management units
-
-
 
 Wraps GET /api/v2/workforcemanagement/managementunits 
 
@@ -4432,8 +4284,6 @@ except ApiException as e:
 
 Get management units across divisions
 
-
-
 Wraps GET /api/v2/workforcemanagement/managementunits/divisionviews 
 
 Requires ANY permissions: 
@@ -4485,8 +4335,6 @@ Get a list of notifications for the current user
 
 Notifications are only initially sent if you have the relevant Notify and Edit permissions
 
-
-
 Wraps GET /api/v2/workforcemanagement/notifications 
 
 Requires no permissions
@@ -4530,8 +4378,6 @@ This endpoint does not need any parameters.
 
 
 Get status of the scheduling job
-
-
 
 Wraps GET /api/v2/workforcemanagement/schedulingjobs/{jobId} 
 
@@ -4582,8 +4428,6 @@ except ApiException as e:
 
 Gets all of my shift trades
 
-
-
 Wraps GET /api/v2/workforcemanagement/shifttrades 
 
 Requires ANY permissions: 
@@ -4630,8 +4474,6 @@ This endpoint does not need any parameters.
 
 
 Request to fetch the status of the historical shrinkage query
-
-
 
 Wraps GET /api/v2/workforcemanagement/shrinkage/jobs/{jobId} 
 
@@ -4680,8 +4522,6 @@ except ApiException as e:
 
 
 Get a time off request for the current user
-
-
 
 Wraps GET /api/v2/workforcemanagement/timeoffrequests/{timeOffRequestId} 
 
@@ -4733,8 +4573,6 @@ except ApiException as e:
 
 Get the daily waitlist positions of a time off request for the current user
 
-
-
 Wraps GET /api/v2/workforcemanagement/timeoffrequests/{timeOffRequestId}/waitlistpositions 
 
 Requires ANY permissions: 
@@ -4783,8 +4621,6 @@ except ApiException as e:
 
 
 Get a list of time off requests for the current user
-
-
 
 Wraps GET /api/v2/workforcemanagement/timeoffrequests 
 
@@ -4835,8 +4671,6 @@ except ApiException as e:
 
 
 Update an adherence explanation
-
-
 
 Wraps PATCH /api/v2/workforcemanagement/agents/{agentId}/adherence/explanations/{explanationId} 
 
@@ -4891,8 +4725,6 @@ except ApiException as e:
 
 Update business unit
 
-
-
 Wraps PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId} 
 
 Requires ALL permissions: 
@@ -4943,8 +4775,6 @@ except ApiException as e:
 
 
 Update an activity code
-
-
 
 Wraps PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes/{activityCodeId} 
 
@@ -4999,8 +4829,6 @@ except ApiException as e:
 
 Updates the planning group
 
-
-
 Wraps PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups/{planningGroupId} 
 
 Requires ANY permissions: 
@@ -5054,8 +4882,6 @@ except ApiException as e:
 
 Mark a schedule run as applied
 
-
-
 Wraps PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduling/runs/{runId} 
 
 Requires ANY permissions: 
@@ -5107,8 +4933,6 @@ void (empty response body)
 
 
 Updates a service goal template
-
-
 
 Wraps PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}/servicegoaltemplates/{serviceGoalTemplateId} 
 
@@ -5163,8 +4987,6 @@ except ApiException as e:
 
 Update the requested management unit
 
-
-
 Wraps PATCH /api/v2/workforcemanagement/managementunits/{managementUnitId} 
 
 Requires ANY permissions: 
@@ -5217,8 +5039,6 @@ except ApiException as e:
 Updates a time off limit object.
 
 Updates time off limit object properties, but not daily values.
-
-
 
 Wraps PATCH /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits/{timeOffLimitId} 
 
@@ -5273,8 +5093,6 @@ except ApiException as e:
 
 Updates a time off plan
 
-
-
 Wraps PATCH /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffplans/{timeOffPlanId} 
 
 Requires ANY permissions: 
@@ -5327,8 +5145,6 @@ except ApiException as e:
 
 
 Update a time off request
-
-
 
 Wraps PATCH /api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffrequests/{timeOffRequestId} 
 
@@ -5385,8 +5201,6 @@ except ApiException as e:
 
 Updates a shift trade. This route can only be called by the initiating agent
 
-
-
 Wraps PATCH /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades/{tradeId} 
 
 Requires ANY permissions: 
@@ -5441,8 +5255,6 @@ except ApiException as e:
 
 
 Update a work plan
-
-
 
 Wraps PATCH /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans/{workPlanId} 
 
@@ -5499,8 +5311,6 @@ except ApiException as e:
 
 Update a work plan rotation
 
-
-
 Wraps PATCH /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplanrotations/{workPlanRotationId} 
 
 Requires ANY permissions: 
@@ -5554,8 +5364,6 @@ except ApiException as e:
 
 Update a time off request for the current user
 
-
-
 Wraps PATCH /api/v2/workforcemanagement/timeoffrequests/{timeOffRequestId} 
 
 Requires ANY permissions: 
@@ -5607,8 +5415,6 @@ except ApiException as e:
 
 Submit an adherence explanation for the current user
 
-
-
 Wraps POST /api/v2/workforcemanagement/adherence/explanations 
 
 Requires ANY permissions: 
@@ -5657,8 +5463,6 @@ except ApiException as e:
 
 
 Query adherence explanations for the current user
-
-
 
 Wraps POST /api/v2/workforcemanagement/adherence/explanations/query 
 
@@ -5713,8 +5517,6 @@ except ApiException as e:
 
 Deprecated. Use bulk routes instead (/adherence/historical/bulk)
 
-
-
 Wraps POST /api/v2/workforcemanagement/adherence/historical 
 
 Requires ANY permissions: 
@@ -5764,8 +5566,6 @@ except ApiException as e:
 
 Request a historical adherence report in bulk
 
-
-
 Wraps POST /api/v2/workforcemanagement/adherence/historical/bulk 
 
 Requires ANY permissions: 
@@ -5814,8 +5614,6 @@ except ApiException as e:
 
 
 Add an adherence explanation for the requested user
-
-
 
 Wraps POST /api/v2/workforcemanagement/agents/{agentId}/adherence/explanations 
 
@@ -5867,8 +5665,6 @@ except ApiException as e:
 
 
 Query adherence explanations for the given agent across a specified range
-
-
 
 Wraps POST /api/v2/workforcemanagement/agents/{agentId}/adherence/explanations/query 
 
@@ -5925,8 +5721,6 @@ except ApiException as e:
 
 Get agent possible work shifts for requested time frame
 
-
-
 Wraps POST /api/v2/workforcemanagement/agents/me/possibleworkshifts 
 
 Requires ANY permissions: 
@@ -5976,8 +5770,6 @@ except ApiException as e:
 
 Get published schedule for the current user
 
-
-
 Wraps POST /api/v2/workforcemanagement/agentschedules/mine 
 
 Requires ANY permissions: 
@@ -6026,8 +5818,6 @@ except ApiException as e:
 
 
 Create a new activity code
-
-
 
 Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes 
 
@@ -6079,8 +5869,6 @@ except ApiException as e:
 
 
 Query adherence explanations across an entire business unit for the requested period
-
-
 
 Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/adherence/explanations/query 
 
@@ -6136,8 +5924,6 @@ except ApiException as e:
 
 
 Search published schedules
-
-
 
 Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/agentschedules/search 
 
@@ -6195,8 +5981,6 @@ except ApiException as e:
 
 Get intraday data for the given date for the requested planningGroupIds
 
-
-
 Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/intraday 
 
 Requires ANY permissions: 
@@ -6250,8 +6034,6 @@ except ApiException as e:
 
 Adds a new planning group
 
-
-
 Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/planninggroups 
 
 Requires ANY permissions: 
@@ -6303,8 +6085,6 @@ except ApiException as e:
 
 Adds a new service goal template
 
-
-
 Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/servicegoaltemplates 
 
 Requires ANY permissions: 
@@ -6355,8 +6135,6 @@ except ApiException as e:
 
 
 Loads agent schedule data from the schedule. Used in combination with the metadata route
-
-
 
 Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/agentschedules/query 
 
@@ -6418,8 +6196,6 @@ except ApiException as e:
 
 Copy a schedule
 
-
-
 Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/copy 
 
 Requires ANY permissions: 
@@ -6474,8 +6250,6 @@ except ApiException as e:
 
 
 Start a rescheduling run
-
-
 
 Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/reschedule 
 
@@ -6534,8 +6308,6 @@ Starts processing a schedule update
 
 Call after uploading the schedule data to the url supplied by the /update/uploadurl route
 
-
-
 Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/update 
 
 Requires ANY permissions: 
@@ -6593,8 +6365,6 @@ Creates a signed upload URL for updating a schedule
 
 Once the upload is complete, call the /{scheduleId}/update route to start the schedule update process
 
-
-
 Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/update/uploadurl 
 
 Requires ANY permissions: 
@@ -6650,8 +6420,6 @@ except ApiException as e:
 
 Create a blank schedule
 
-
-
 Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules 
 
 Requires ANY permissions: 
@@ -6704,8 +6472,6 @@ except ApiException as e:
 
 
 Generate a schedule
-
-
 
 Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/generate 
 
@@ -6762,8 +6528,6 @@ Starts processing a schedule import
 
 Call after uploading the schedule data to the url supplied by the /import/uploadurl route
 
-
-
 Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/import 
 
 Requires ANY permissions: 
@@ -6819,8 +6583,6 @@ Creates a signed upload URL for importing a schedule
 
 Once the upload is complete, call the /import route to start the schedule import process
 
-
-
 Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/import/uploadurl 
 
 Requires ANY permissions: 
@@ -6873,8 +6635,6 @@ except ApiException as e:
 
 
 Copy a short term forecast
-
-
 
 Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}/copy 
 
@@ -6933,8 +6693,6 @@ except ApiException as e:
 
 Generate a short term forecast
 
-
-
 Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/generate 
 
 Requires ANY permissions: 
@@ -6992,8 +6750,6 @@ Starts importing the uploaded short term forecast
 
 Call after uploading the forecast data to the url supplied by the /import/uploadurl route
 
-
-
 Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/import 
 
 Requires ANY permissions: 
@@ -7048,8 +6804,6 @@ except ApiException as e:
 Creates a signed upload URL for importing a short term forecast
 
 Once the upload is complete, call the /import route to start the short term forecast import process
-
-
 
 Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/import/uploadurl 
 
@@ -7106,8 +6860,6 @@ Add a new business unit
 
 It may take a minute or two for a new business unit to be available for api operations
 
-
-
 Wraps POST /api/v2/workforcemanagement/businessunits 
 
 Requires ANY permissions: 
@@ -7156,8 +6908,6 @@ except ApiException as e:
 
 
 Create a newly generated calendar link for the current user; if the current user has previously generated one, the generated link will be returned
-
-
 
 Wraps POST /api/v2/workforcemanagement/calendar/url/ics 
 
@@ -7209,8 +6959,6 @@ except ApiException as e:
 
 Delete the entries of the historical data imports in the organization
 
-
-
 Wraps POST /api/v2/workforcemanagement/historicaldata/deletejob 
 
 Requires ALL permissions: 
@@ -7255,8 +7003,6 @@ This endpoint does not need any parameters.
 
 
 Trigger validation process for historical import
-
-
 
 Wraps POST /api/v2/workforcemanagement/historicaldata/validate 
 
@@ -7305,8 +7051,6 @@ void (empty response body)
 
 
 Query published schedules for given given time range for set of users
-
-
 
 Wraps POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/agentschedules/search 
 
@@ -7366,8 +7110,6 @@ Request a historical adherence report
 
 The maximum supported range for historical adherence queries is 31 days, or 7 days with includeExceptions = true
 
-
-
 Wraps POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/historicaladherencequery 
 
 Requires ANY permissions: 
@@ -7421,8 +7163,6 @@ Move the requested management unit to a new business unit
 
 Returns status 200 if the management unit is already in the requested business unit
 
-
-
 Wraps POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/move 
 
 Requires ALL permissions: 
@@ -7473,8 +7213,6 @@ except ApiException as e:
 <span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 Query published schedules for given given time range for set of users
-
-
 
 Wraps POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/schedules/search 
 
@@ -7530,8 +7268,6 @@ Request a historical shrinkage report
 
 The maximum supported range for historical shrinkage queries is up to 32 days. Historical Shrinkage for a given date range can be queried in two modes - granular and aggregated. To see granular shrinkage information, provide granularity in the request body. 
 
-
-
 Wraps POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/shrinkage/jobs 
 
 Requires ANY permissions: 
@@ -7585,8 +7321,6 @@ Creates a new time off limit object under management unit.
 
 Only one limit object is allowed under management unit, so an attempt to create second object will fail.
 
-
-
 Wraps POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits 
 
 Requires ANY permissions: 
@@ -7637,8 +7371,6 @@ except ApiException as e:
 
 
 Retrieves time off limit related values based on a given set of filters.
-
-
 
 Wraps POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits/values/query 
 
@@ -7691,8 +7423,6 @@ except ApiException as e:
 
 Creates a new time off plan
 
-
-
 Wraps POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffplans 
 
 Requires ANY permissions: 
@@ -7743,8 +7473,6 @@ except ApiException as e:
 
 
 Create a new time off request
-
-
 
 Wraps POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffrequests 
 
@@ -7799,8 +7527,6 @@ Fetches time off requests matching the conditions specified in the request body
 
 Request body requires one of the following: User ID is specified, statuses == [Pending] or date range to be specified and less than or equal to 33 days.  All other fields are filters
 
-
-
 Wraps POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffrequests/query 
 
 Requires ANY permissions: 
@@ -7852,8 +7578,6 @@ except ApiException as e:
 
 Retrieves daily waitlist position for a list of time off requests
 
-
-
 Wraps POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffrequests/waitlistpositions/query 
 
 Requires ANY permissions: 
@@ -7904,8 +7628,6 @@ except ApiException as e:
 
 
 Query time off balances for a given user for specified activity code and dates
-
-
 
 Wraps POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffbalance/jobs 
 
@@ -7960,8 +7682,6 @@ except ApiException as e:
 
 Query time off balances for dates spanned by a given time off request
 
-
-
 Wraps POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffrequests/{timeOffRequestId}/timeoffbalance/jobs 
 
 Requires ANY permissions: 
@@ -8014,8 +7734,6 @@ except ApiException as e:
 
 
 Matches a shift trade. This route can only be called by the receiving agent
-
-
 
 Wraps POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades/{tradeId}/match 
 
@@ -8072,8 +7790,6 @@ except ApiException as e:
 
 Adds a shift trade
 
-
-
 Wraps POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades 
 
 Requires ANY permissions: 
@@ -8126,8 +7842,6 @@ except ApiException as e:
 
 
 Searches for potential shift trade matches for the current agent
-
-
 
 Wraps POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades/search 
 
@@ -8183,8 +7897,6 @@ except ApiException as e:
 Updates the state of a batch of shift trades
 
 Admin functionality is not supported with \"mine\".
-
-
 
 Wraps POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/weeks/{weekDateId}/shifttrades/state/bulk 
 
@@ -8242,8 +7954,6 @@ except ApiException as e:
 
 Create a copy of work plan
 
-
-
 Wraps POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans/{workPlanId}/copy 
 
 Requires ANY permissions: 
@@ -8296,8 +8006,6 @@ except ApiException as e:
 
 
 Validate Work Plan
-
-
 
 Wraps POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans/{workPlanId}/validate 
 
@@ -8355,8 +8063,6 @@ except ApiException as e:
 
 Create a copy of work plan rotation
 
-
-
 Wraps POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplanrotations/{workPlanRotationId}/copy 
 
 Requires ANY permissions: 
@@ -8410,8 +8116,6 @@ except ApiException as e:
 
 Create a new work plan rotation
 
-
-
 Wraps POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplanrotations 
 
 Requires ANY permissions: 
@@ -8462,8 +8166,6 @@ except ApiException as e:
 
 
 Create a new work plan
-
-
 
 Wraps POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplans 
 
@@ -8520,8 +8222,6 @@ Add a management unit
 
 It may take a minute or two for a new management unit to be available for api operations
 
-
-
 Wraps POST /api/v2/workforcemanagement/managementunits 
 
 Requires ALL permissions: 
@@ -8571,8 +8271,6 @@ except ApiException as e:
 
 Mark a list of notifications as read or unread
 
-
-
 Wraps POST /api/v2/workforcemanagement/notifications/update 
 
 Requires no permissions
@@ -8620,8 +8318,6 @@ except ApiException as e:
 <span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 Get published schedule for the current user
-
-
 
 Wraps POST /api/v2/workforcemanagement/schedules 
 
@@ -8673,8 +8369,6 @@ except ApiException as e:
 Request a teams historical adherence report
 
 The maximum supported range for historical adherence queries is 31 days, or 7 days with includeExceptions = true
-
-
 
 Wraps POST /api/v2/workforcemanagement/teams/{teamId}/adherence/historical 
 
@@ -8729,8 +8423,6 @@ Request a historical shrinkage report
 
 The maximum supported range for historical shrinkage queries is up to 32 days
 
-
-
 Wraps POST /api/v2/workforcemanagement/teams/{teamId}/shrinkage/jobs 
 
 Requires ANY permissions: 
@@ -8782,8 +8474,6 @@ except ApiException as e:
 
 Queries available time off for the current user
 
-
-
 Wraps POST /api/v2/workforcemanagement/timeofflimits/available/query 
 
 Requires ANY permissions: 
@@ -8832,8 +8522,6 @@ except ApiException as e:
 
 
 Create a time off request for the current user
-
-
 
 Wraps POST /api/v2/workforcemanagement/timeoffrequests 
 
@@ -8885,8 +8573,6 @@ except ApiException as e:
 Sets daily values for a date range of time off limit object
 
 Note that only limit daily values can be set through API, allocated and waitlisted values are read-only for time off limit API
-
-
 
 Wraps PUT /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeofflimits/{timeOffLimitId}/values 
 

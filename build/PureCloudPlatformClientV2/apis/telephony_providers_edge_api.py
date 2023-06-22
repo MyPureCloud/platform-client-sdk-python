@@ -3666,11 +3666,11 @@ class TelephonyProvidersEdgeApi(object):
                                             callback=params.get('callback'))
         return response
 
-	# Preview Endpoint
     def get_telephony_providers_edges_extensionpools_divisionviews(self, **kwargs) -> 'ExtensionPoolDivisionViewEntityListing':
         """
         Get a pageable list of basic extension pool objects filterable by query parameters.
         This returns extension pools consisting of name and division. If one or more IDs are specified, the search will fetch flow outcomes that match the given ID(s) and not use any additional supplied query parameters in the search.
+	    get_telephony_providers_edges_extensionpools_divisionviews is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -5012,7 +5012,7 @@ class TelephonyProvidersEdgeApi(object):
         :param str phone_hardware_id: Filter by phone_hardwareId
         :param str lines_id: Filter by lines.id
         :param str lines_name: Filter by lines.name
-        :param str name: Name of the Phone to filter by
+        :param str name: Name of the Phone to filter by, comma-separated
         :param str status_operational_status: The primary status to filter by
         :param str secondary_status_operational_status: The secondary status to filter by
         :param list[str] expand: Fields to expand in the response, comma-separated

@@ -761,11 +761,11 @@ class UsersApi(object):
                                             callback=params.get('callback'))
         return response
 
-	# Preview Endpoint
     def get_analytics_users_aggregates_job(self, job_id: str, **kwargs) -> 'AsyncQueryStatus':
         """
         Get status for async query for user aggregates
         
+	    get_analytics_users_aggregates_job is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -840,11 +840,11 @@ class UsersApi(object):
                                             callback=params.get('callback'))
         return response
 
-	# Preview Endpoint
     def get_analytics_users_aggregates_job_results(self, job_id: str, **kwargs) -> 'UserAsyncAggregateQueryResponse':
         """
         Fetch a page of results for an async aggregates query
         
+	    get_analytics_users_aggregates_job_results is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -4711,11 +4711,11 @@ class UsersApi(object):
                                             callback=params.get('callback'))
         return response
 
-	# Preview Endpoint
     def post_analytics_users_activity_query(self, body: 'UserActivityQuery', **kwargs) -> 'UserActivityResponse':
         """
         Query for user activity observations
         
+	    post_analytics_users_activity_query is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -4796,11 +4796,11 @@ class UsersApi(object):
                                             callback=params.get('callback'))
         return response
 
-	# Preview Endpoint
     def post_analytics_users_aggregates_jobs(self, body: 'UserAsyncAggregationQuery', **kwargs) -> 'AsyncQueryResponse':
         """
         Query for user aggregates asynchronously
         
+	    post_analytics_users_aggregates_jobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -6267,11 +6267,11 @@ class UsersApi(object):
                                             callback=params.get('callback'))
         return response
 
-	# Preview Endpoint
     def post_users_search_conversation_target(self, body: 'UserSearchRequest', **kwargs) -> 'UsersSearchResponse':
         """
         Search users as conversation targets
         
+	    post_users_search_conversation_target is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -6346,11 +6346,11 @@ class UsersApi(object):
                                             callback=params.get('callback'))
         return response
 
-	# Preview Endpoint
     def post_users_search_queuemembers_manage(self, body: 'UserSearchRequest', **kwargs) -> 'UsersSearchResponse':
         """
         Search manage queue member
         
+	    post_users_search_queuemembers_manage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

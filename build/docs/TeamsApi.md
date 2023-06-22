@@ -28,8 +28,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 Delete team
 
-
-
 Wraps DELETE /api/v2/teams/{teamId} 
 
 Requires ANY permissions: 
@@ -77,8 +75,6 @@ void (empty response body)
 
 
 Delete team members
-
-
 
 Wraps DELETE /api/v2/teams/{teamId}/members 
 
@@ -130,8 +126,6 @@ void (empty response body)
 
 Get team
 
-
-
 Wraps GET /api/v2/teams/{teamId} 
 
 Requires ANY permissions: 
@@ -180,8 +174,6 @@ except ApiException as e:
 
 
 Get team membership
-
-
 
 Wraps GET /api/v2/teams/{teamId}/members 
 
@@ -240,8 +232,6 @@ except ApiException as e:
 
 Get Team listing
 
-
-
 Wraps GET /api/v2/teams 
 
 Requires ANY permissions: 
@@ -299,8 +289,6 @@ except ApiException as e:
 
 Update team
 
-
-
 Wraps PATCH /api/v2/teams/{teamId} 
 
 Requires ANY permissions: 
@@ -352,7 +340,7 @@ except ApiException as e:
 
 Query for team activity observations
 
-
+post_analytics_teams_activity_query is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/analytics/teams/activity/query 
 
@@ -407,8 +395,6 @@ except ApiException as e:
 
 Add team members
 
-
-
 Wraps POST /api/v2/teams/{teamId}/members 
 
 Requires ANY permissions: 
@@ -460,8 +446,6 @@ except ApiException as e:
 
 Create a team
 
-
-
 Wraps POST /api/v2/teams 
 
 Requires ANY permissions: 
@@ -510,8 +494,6 @@ except ApiException as e:
 
 
 Search resources.
-
-
 
 Wraps POST /api/v2/teams/search 
 

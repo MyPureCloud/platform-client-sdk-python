@@ -22,8 +22,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 Search using the q64 value returned from a previous search.
 
-
-
 Wraps GET /api/v2/search 
 
 Requires ANY permissions: 
@@ -76,8 +74,6 @@ except ApiException as e:
 
 
 Suggest resources using the q64 value returned from a previous suggest query.
-
-
 
 Wraps GET /api/v2/search/suggest 
 
@@ -132,8 +128,6 @@ except ApiException as e:
 
 Search resources.
 
-
-
 Wraps POST /api/v2/search 
 
 Requires ANY permissions: 
@@ -184,8 +178,6 @@ except ApiException as e:
 
 
 Suggest resources.
-
-
 
 Wraps POST /api/v2/search/suggest 
 

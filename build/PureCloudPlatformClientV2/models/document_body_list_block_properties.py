@@ -82,7 +82,7 @@ class DocumentBodyListBlockProperties(object):
         """
         if isinstance(unordered_type, int):
             unordered_type = str(unordered_type)
-        allowed_values = ["Normal", "Square", "Circle"]
+        allowed_values = ["Normal", "Square", "Circle", "None"]
         if unordered_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for unordered_type -> " + unordered_type)
             self._unordered_type = "outdated_sdk_version"
@@ -111,7 +111,7 @@ class DocumentBodyListBlockProperties(object):
         """
         if isinstance(ordered_type, int):
             ordered_type = str(ordered_type)
-        allowed_values = ["Number", "LowerAlpha", "LowerGreek", "LowerRoman", "UpperAlpha", "UpperRoman"]
+        allowed_values = ["Number", "LowerAlpha", "LowerGreek", "LowerRoman", "UpperAlpha", "UpperRoman", "None"]
         if ordered_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for ordered_type -> " + ordered_type)
             self._ordered_type = "outdated_sdk_version"

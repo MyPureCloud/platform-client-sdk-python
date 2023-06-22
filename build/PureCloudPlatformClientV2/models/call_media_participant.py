@@ -34,6 +34,7 @@ from typing import Dict
 
 if TYPE_CHECKING:
     from . import ConversationRoutingData
+    from . import Disposition
     from . import DomainEntityRef
     from . import ErrorInfo
     from . import FaxStatus
@@ -104,7 +105,8 @@ class CallMediaParticipant(object):
             'consult_participant_id': 'str',
             'uui_data': 'str',
             'barged_time': 'datetime',
-            'secure_pause': 'bool'
+            'secure_pause': 'bool',
+            'disposition': 'Disposition'
         }
 
         self.attribute_map = {
@@ -157,7 +159,8 @@ class CallMediaParticipant(object):
             'consult_participant_id': 'consultParticipantId',
             'uui_data': 'uuiData',
             'barged_time': 'bargedTime',
-            'secure_pause': 'securePause'
+            'secure_pause': 'securePause',
+            'disposition': 'disposition'
         }
 
         self._id = None
@@ -210,6 +213,7 @@ class CallMediaParticipant(object):
         self._uui_data = None
         self._barged_time = None
         self._secure_pause = None
+        self._disposition = None
 
     @property
     def id(self) -> str:
@@ -1435,6 +1439,30 @@ class CallMediaParticipant(object):
         
 
         self._secure_pause = secure_pause
+
+    @property
+    def disposition(self) -> 'Disposition':
+        """
+        Gets the disposition of this CallMediaParticipant.
+        Call resolution data for Dialer bulk make calls commands.
+
+        :return: The disposition of this CallMediaParticipant.
+        :rtype: Disposition
+        """
+        return self._disposition
+
+    @disposition.setter
+    def disposition(self, disposition: 'Disposition') -> None:
+        """
+        Sets the disposition of this CallMediaParticipant.
+        Call resolution data for Dialer bulk make calls commands.
+
+        :param disposition: The disposition of this CallMediaParticipant.
+        :type: Disposition
+        """
+        
+
+        self._disposition = disposition
 
     def to_dict(self):
         """

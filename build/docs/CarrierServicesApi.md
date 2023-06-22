@@ -20,8 +20,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 Get location for the logged in user
 
-
-
 Wraps GET /api/v2/carrierservices/integrations/emergencylocations/me 
 
 Requires no permissions
@@ -69,8 +67,6 @@ except ApiException as e:
 
 
 Set current location for the logged in user
-
-
 
 Wraps POST /api/v2/carrierservices/integrations/emergencylocations/me 
 

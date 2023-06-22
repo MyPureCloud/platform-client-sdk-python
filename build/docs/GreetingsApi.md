@@ -34,8 +34,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 Deletes a Greeting with the given GreetingId
 
-
-
 Wraps DELETE /api/v2/greetings/{greetingId} 
 
 Requires no permissions
@@ -82,8 +80,6 @@ void (empty response body)
 
 
 Get a Greeting with the given GreetingId
-
-
 
 Wraps GET /api/v2/greetings/{greetingId} 
 
@@ -132,8 +128,6 @@ except ApiException as e:
 
 
 Get media playback URI for this greeting
-
-
 
 Wraps GET /api/v2/greetings/{greetingId}/media 
 
@@ -185,8 +179,6 @@ except ApiException as e:
 
 Gets an Organization's Greetings
 
-
-
 Wraps GET /api/v2/greetings 
 
 Requires no permissions
@@ -237,8 +229,6 @@ except ApiException as e:
 
 Get an Organization's DefaultGreetingList
 
-
-
 Wraps GET /api/v2/greetings/defaults 
 
 Requires no permissions
@@ -282,8 +272,6 @@ This endpoint does not need any parameters.
 
 
 Get a list of the Group's Greetings
-
-
 
 Wraps GET /api/v2/groups/{groupId}/greetings 
 
@@ -337,8 +325,6 @@ except ApiException as e:
 
 Grabs the list of Default Greetings given a Group's ID
 
-
-
 Wraps GET /api/v2/groups/{groupId}/greetings/defaults 
 
 Requires no permissions
@@ -386,8 +372,6 @@ except ApiException as e:
 
 
 Get a list of the User's Greetings
-
-
 
 Wraps GET /api/v2/users/{userId}/greetings 
 
@@ -441,8 +425,6 @@ except ApiException as e:
 
 Grabs the list of Default Greetings given a User's ID
 
-
-
 Wraps GET /api/v2/users/{userId}/greetings/defaults 
 
 Requires no permissions
@@ -491,8 +473,6 @@ except ApiException as e:
 
 Create a Greeting for an Organization
 
-
-
 Wraps POST /api/v2/greetings 
 
 Requires no permissions
@@ -540,8 +520,6 @@ except ApiException as e:
 
 
 Creates a Greeting for a Group
-
-
 
 Wraps POST /api/v2/groups/{groupId}/greetings 
 
@@ -593,8 +571,6 @@ except ApiException as e:
 
 Creates a Greeting for a User
 
-
-
 Wraps POST /api/v2/users/{userId}/greetings 
 
 Requires no permissions
@@ -644,8 +620,6 @@ except ApiException as e:
 
 
 Updates the Greeting with the given GreetingId
-
-
 
 Wraps PUT /api/v2/greetings/{greetingId} 
 
@@ -697,8 +671,6 @@ except ApiException as e:
 
 Update an Organization's DefaultGreetingList
 
-
-
 Wraps PUT /api/v2/greetings/defaults 
 
 Requires no permissions
@@ -746,8 +718,6 @@ except ApiException as e:
 
 
 Updates the DefaultGreetingList of the specified Group
-
-
 
 Wraps PUT /api/v2/groups/{groupId}/greetings/defaults 
 
@@ -798,8 +768,6 @@ except ApiException as e:
 
 
 Updates the DefaultGreetingList of the specified User
-
-
 
 Wraps PUT /api/v2/users/{userId}/greetings/defaults 
 

@@ -24,8 +24,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 Get service mapping information used in realtime audits.
 
-
-
 Wraps GET /api/v2/audits/query/realtime/servicemapping 
 
 Requires ALL permissions: 
@@ -71,8 +69,6 @@ This endpoint does not need any parameters.
 
 Get service mapping information used in audits.
 
-
-
 Wraps GET /api/v2/audits/query/servicemapping 
 
 Requires ALL permissions: 
@@ -117,8 +113,6 @@ This endpoint does not need any parameters.
 
 
 Get status of audit query execution
-
-
 
 Wraps GET /api/v2/audits/query/{transactionId} 
 
@@ -168,8 +162,6 @@ except ApiException as e:
 
 
 Get results of audit query
-
-
 
 Wraps GET /api/v2/audits/query/{transactionId}/results 
 
@@ -228,8 +220,6 @@ Create audit query execution
 
 Use /api/v2/audits/query/servicemapping endpoint for a list of valid values
 
-
-
 Wraps POST /api/v2/audits/query 
 
 Requires ALL permissions: 
@@ -280,8 +270,6 @@ except ApiException as e:
 This endpoint will only retrieve 14 days worth of audits for certain services. Please use /query to get a full list and older audits.
 
 Use /api/v2/audits/query/realtime/servicemapping endpoint for a list of valid values
-
-
 
 Wraps POST /api/v2/audits/query/realtime 
 

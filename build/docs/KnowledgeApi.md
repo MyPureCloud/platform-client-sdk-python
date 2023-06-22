@@ -95,8 +95,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 Delete knowledge base
 
-
-
 Wraps DELETE /api/v2/knowledge/knowledgebases/{knowledgeBaseId} 
 
 Requires ALL permissions: 
@@ -145,8 +143,6 @@ except ApiException as e:
 
 
 Delete category
-
-
 
 Wraps DELETE /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/categories/{categoryId} 
 
@@ -199,8 +195,6 @@ except ApiException as e:
 
 Delete document.
 
-
-
 Wraps DELETE /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId} 
 
 Requires ALL permissions: 
@@ -250,8 +244,6 @@ void (empty response body)
 
 
 Delete a variation for a document.
-
-
 
 Wraps DELETE /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/variations/{documentVariationId} 
 
@@ -306,8 +298,6 @@ void (empty response body)
 
 Delete export job
 
-
-
 Wraps DELETE /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/export/jobs/{exportJobId} 
 
 Requires ALL permissions: 
@@ -357,8 +347,6 @@ void (empty response body)
 
 
 Delete import job
-
-
 
 Wraps DELETE /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/import/jobs/{importJobId} 
 
@@ -410,8 +398,6 @@ void (empty response body)
 
 Delete label
 
-
-
 Wraps DELETE /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/labels/{labelId} 
 
 Requires ALL permissions: 
@@ -462,8 +448,6 @@ except ApiException as e:
 <span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 Delete category
-
-
 
 Wraps DELETE /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/categories/{categoryId} 
 
@@ -518,8 +502,6 @@ except ApiException as e:
 
 Delete document
 
-
-
 Wraps DELETE /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/{documentId} 
 
 Requires ALL permissions: 
@@ -573,8 +555,6 @@ except ApiException as e:
 
 Delete import operation
 
-
-
 Wraps DELETE /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/imports/{importId} 
 
 Requires ALL permissions: 
@@ -626,8 +606,6 @@ void (empty response body)
 
 
 Get categories
-
-
 
 Wraps GET /api/v2/knowledge/guest/sessions/{sessionId}/categories 
 
@@ -692,8 +670,6 @@ except ApiException as e:
 
 Get a knowledge document by ID.
 
-
-
 Wraps GET /api/v2/knowledge/guest/sessions/{sessionId}/documents/{documentId} 
 
 Requires no permissions
@@ -740,8 +716,6 @@ except ApiException as e:
 
 
 Get documents.
-
-
 
 Wraps GET /api/v2/knowledge/guest/sessions/{sessionId}/documents 
 
@@ -792,8 +766,6 @@ except ApiException as e:
 
 Get knowledge base
 
-
-
 Wraps GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId} 
 
 Requires ALL permissions: 
@@ -842,8 +814,6 @@ except ApiException as e:
 
 
 Get categories
-
-
 
 Wraps GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/categories 
 
@@ -912,8 +882,6 @@ except ApiException as e:
 
 Get category
 
-
-
 Wraps GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/categories/{categoryId} 
 
 Requires ALL permissions: 
@@ -964,8 +932,6 @@ except ApiException as e:
 
 
 Get document.
-
-
 
 Wraps GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId} 
 
@@ -1022,8 +988,6 @@ except ApiException as e:
 
 Get a variation for a document.
 
-
-
 Wraps GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/variations/{documentVariationId} 
 
 Requires ALL permissions: 
@@ -1078,8 +1042,6 @@ except ApiException as e:
 
 
 Get variations for a document.
-
-
 
 Wraps GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/variations 
 
@@ -1140,8 +1102,6 @@ except ApiException as e:
 
 Get document version.
 
-
-
 Wraps GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/versions/{versionId} 
 
 Requires ALL permissions: 
@@ -1197,8 +1157,6 @@ except ApiException as e:
 
 Get variation for the given document version.
 
-
-
 Wraps GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/versions/{versionId}/variations/{variationId} 
 
 Requires ALL permissions: 
@@ -1253,8 +1211,6 @@ except ApiException as e:
 
 
 Get variations for the given document version.
-
-
 
 Wraps GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/versions/{versionId}/variations 
 
@@ -1315,8 +1271,6 @@ except ApiException as e:
 
 Get document versions.
 
-
-
 Wraps GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/versions 
 
 Requires ALL permissions: 
@@ -1370,13 +1324,11 @@ except ApiException as e:
 
 <a name="get_knowledge_knowledgebase_documents"></a>
 
-## [**KnowledgeDocumentResponseListing**](KnowledgeDocumentResponseListing.html) get_knowledge_knowledgebase_documents(knowledge_base_id, before=before, after=after, page_size=page_size, interval=interval, document_id=document_id, category_id=category_id, include_subcategories=include_subcategories, include_drafts=include_drafts, label_ids=label_ids, expand=expand)
+## [**KnowledgeDocumentResponseListing**](KnowledgeDocumentResponseListing.html) get_knowledge_knowledgebase_documents(knowledge_base_id, before=before, after=after, page_size=page_size, interval=interval, document_id=document_id, category_id=category_id, include_subcategories=include_subcategories, include_drafts=include_drafts, label_ids=label_ids, expand=expand, external_ids=external_ids)
 
 
 
 Get documents.
-
-
 
 Wraps GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents 
 
@@ -1408,10 +1360,11 @@ include_subcategories = True # bool | Works along with 'categoryId' query parame
 include_drafts = True # bool | If includeDrafts is true, Documents in the draft state are also returned in the response. (optional)
 label_ids = ['label_ids_example'] # list[str] | If specified, retrieves documents associated with label ids, comma separated values expected. (optional)
 expand = ['expand_example'] # list[str] | The specified entity attributes will be filled. Comma separated values expected. (optional)
+external_ids = ['external_ids_example'] # list[str] | If specified, retrieves documents associated with external ids, comma separated values expected. (optional)
 
 try:
     # Get documents.
-    api_response = api_instance.get_knowledge_knowledgebase_documents(knowledge_base_id, before=before, after=after, page_size=page_size, interval=interval, document_id=document_id, category_id=category_id, include_subcategories=include_subcategories, include_drafts=include_drafts, label_ids=label_ids, expand=expand)
+    api_response = api_instance.get_knowledge_knowledgebase_documents(knowledge_base_id, before=before, after=after, page_size=page_size, interval=interval, document_id=document_id, category_id=category_id, include_subcategories=include_subcategories, include_drafts=include_drafts, label_ids=label_ids, expand=expand, external_ids=external_ids)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling KnowledgeApi->get_knowledge_knowledgebase_documents: %s\n" % e)
@@ -1433,6 +1386,7 @@ except ApiException as e:
 | **include_drafts** | **bool**| If includeDrafts is true, Documents in the draft state are also returned in the response. | [optional]  |
 | **label_ids** | [**list[str]**](str.html)| If specified, retrieves documents associated with label ids, comma separated values expected. | [optional]  |
 | **expand** | [**list[str]**](str.html)| The specified entity attributes will be filled. Comma separated values expected. | [optional] <br />**Values**: category, labels, variations |
+| **external_ids** | [**list[str]**](str.html)| If specified, retrieves documents associated with external ids, comma separated values expected. | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1446,8 +1400,6 @@ except ApiException as e:
 
 
 Get export job report
-
-
 
 Wraps GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/export/jobs/{exportJobId} 
 
@@ -1500,8 +1452,6 @@ except ApiException as e:
 
 Get import job report
 
-
-
 Wraps GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/import/jobs/{importJobId} 
 
 Requires ALL permissions: 
@@ -1553,8 +1503,6 @@ except ApiException as e:
 
 Get label
 
-
-
 Wraps GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/labels/{labelId} 
 
 Requires ALL permissions: 
@@ -1605,8 +1553,6 @@ except ApiException as e:
 
 
 Get labels
-
-
 
 Wraps GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/labels 
 
@@ -1666,8 +1612,6 @@ except ApiException as e:
 <span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 Get categories
-
-
 
 Wraps GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/categories 
 
@@ -1730,8 +1674,6 @@ except ApiException as e:
 
 Get category
 
-
-
 Wraps GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/categories/{categoryId} 
 
 Requires ALL permissions: 
@@ -1784,8 +1726,6 @@ except ApiException as e:
 <span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 Get document
-
-
 
 Wraps GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/{documentId} 
 
@@ -1840,7 +1780,7 @@ except ApiException as e:
 
 Get document content upload status
 
-
+get_knowledge_knowledgebase_language_document_upload is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/{documentId}/uploads/{uploadId} 
 
@@ -1896,8 +1836,6 @@ except ApiException as e:
 <span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 Get documents
-
-
 
 Wraps GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents 
 
@@ -1968,8 +1906,6 @@ except ApiException as e:
 
 Get import operation report
 
-
-
 Wraps GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/imports/{importId} 
 
 Requires ALL permissions: 
@@ -2023,8 +1959,6 @@ except ApiException as e:
 
 Get training detail
 
-
-
 Wraps GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/trainings/{trainingId} 
 
 Requires ALL permissions: 
@@ -2077,8 +2011,6 @@ except ApiException as e:
 <span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 Get all trainings information for a knowledgebase
-
-
 
 Wraps GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/trainings 
 
@@ -2141,8 +2073,6 @@ except ApiException as e:
 
 Get knowledge base unanswered group for a particular groupId
 
-
-
 Wraps GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/unanswered/groups/{groupId} 
 
 Requires ALL permissions: 
@@ -2195,8 +2125,6 @@ except ApiException as e:
 
 
 Get knowledge base unanswered phrase group for a particular phraseGroupId
-
-
 
 Wraps GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/unanswered/groups/{groupId}/phrasegroups/{phraseGroupId} 
 
@@ -2253,8 +2181,6 @@ except ApiException as e:
 
 Get knowledge base unanswered groups
 
-
-
 Wraps GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/unanswered/groups 
 
 Requires ALL permissions: 
@@ -2305,8 +2231,6 @@ except ApiException as e:
 
 
 Get knowledge bases
-
-
 
 Wraps GET /api/v2/knowledge/knowledgebases 
 
@@ -2373,8 +2297,6 @@ except ApiException as e:
 
 Update search result.
 
-
-
 Wraps PATCH /api/v2/knowledge/guest/sessions/{sessionId}/documents/search/{searchId} 
 
 Requires no permissions
@@ -2422,8 +2344,6 @@ void (empty response body)
 
 
 Update knowledge base
-
-
 
 Wraps PATCH /api/v2/knowledge/knowledgebases/{knowledgeBaseId} 
 
@@ -2476,8 +2396,6 @@ except ApiException as e:
 
 Update category
 
-
-
 Wraps PATCH /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/categories/{categoryId} 
 
 Requires ALL permissions: 
@@ -2499,7 +2417,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.KnowledgeApi()
 knowledge_base_id = 'knowledge_base_id_example' # str | Knowledge base ID
 category_id = 'category_id_example' # str | Category ID
-body = PureCloudPlatformClientV2.CategoryRequest() # CategoryRequest | 
+body = PureCloudPlatformClientV2.CategoryUpdateRequest() # CategoryUpdateRequest | 
 
 try:
     # Update category
@@ -2516,7 +2434,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **knowledge_base_id** | **str**| Knowledge base ID |  |
 | **category_id** | **str**| Category ID |  |
-| **body** | [**CategoryRequest**](CategoryRequest.html)|  |  |
+| **body** | [**CategoryUpdateRequest**](CategoryUpdateRequest.html)|  |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2530,8 +2448,6 @@ except ApiException as e:
 
 
 Update document.
-
-
 
 Wraps PATCH /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId} 
 
@@ -2585,8 +2501,6 @@ except ApiException as e:
 
 
 Update a variation for a document.
-
-
 
 Wraps PATCH /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/variations/{documentVariationId} 
 
@@ -2643,8 +2557,6 @@ except ApiException as e:
 
 Update search result.
 
-
-
 Wraps PATCH /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/search/{searchId} 
 
 Requires ALL permissions: 
@@ -2696,8 +2608,6 @@ void (empty response body)
 
 
 Start import job
-
-
 
 Wraps PATCH /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/import/jobs/{importJobId} 
 
@@ -2752,8 +2662,6 @@ except ApiException as e:
 
 Update label
 
-
-
 Wraps PATCH /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/labels/{labelId} 
 
 Requires ALL permissions: 
@@ -2806,8 +2714,6 @@ except ApiException as e:
 <span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 Update category
-
-
 
 Wraps PATCH /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/categories/{categoryId} 
 
@@ -2864,8 +2770,6 @@ except ApiException as e:
 
 Update document
 
-
-
 Wraps PATCH /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/{documentId} 
 
 Requires ALL permissions: 
@@ -2921,8 +2825,6 @@ except ApiException as e:
 
 Update documents collection
 
-
-
 Wraps PATCH /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents 
 
 Requires ALL permissions: 
@@ -2975,8 +2877,6 @@ except ApiException as e:
 <span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 Start import operation
-
-
 
 Wraps PATCH /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/imports/{importId} 
 
@@ -3034,8 +2934,6 @@ except ApiException as e:
 
 Update a Knowledge base unanswered phrase group
 
-
-
 Wraps PATCH /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/unanswered/groups/{groupId}/phrasegroups/{phraseGroupId} 
 
 Requires ALL permissions: 
@@ -3092,8 +2990,6 @@ except ApiException as e:
 
 Creates a presigned URL for uploading a knowledge import file with a set of documents
 
-
-
 Wraps POST /api/v2/knowledge/documentuploads 
 
 Requires ALL permissions: 
@@ -3142,8 +3038,6 @@ except ApiException as e:
 
 
 Search the documents in a guest session.
-
-
 
 Wraps POST /api/v2/knowledge/guest/sessions/{sessionId}/documents/search 
 
@@ -3194,8 +3088,6 @@ except ApiException as e:
 
 Query the knowledge documents to provide suggestions for auto completion.
 
-
-
 Wraps POST /api/v2/knowledge/guest/sessions/{sessionId}/documents/search/suggestions 
 
 Requires no permissions
@@ -3243,8 +3135,6 @@ except ApiException as e:
 
 Create guest session
 
-
-
 Wraps POST /api/v2/knowledge/guest/sessions 
 
 Requires no permissions
@@ -3290,8 +3180,6 @@ except ApiException as e:
 
 Create new category
 
-
-
 Wraps POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/categories 
 
 Requires ALL permissions: 
@@ -3312,7 +3200,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.KnowledgeApi()
 knowledge_base_id = 'knowledge_base_id_example' # str | Knowledge base ID
-body = PureCloudPlatformClientV2.CategoryRequest() # CategoryRequest | 
+body = PureCloudPlatformClientV2.CategoryCreateRequest() # CategoryCreateRequest | 
 
 try:
     # Create new category
@@ -3328,7 +3216,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **knowledge_base_id** | **str**| Knowledge base ID |  |
-| **body** | [**CategoryRequest**](CategoryRequest.html)|  |  |
+| **body** | [**CategoryCreateRequest**](CategoryCreateRequest.html)|  |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3342,8 +3230,6 @@ except ApiException as e:
 
 
 Create a variation for a document.
-
-
 
 Wraps POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/variations 
 
@@ -3399,8 +3285,6 @@ except ApiException as e:
 
 Creates or restores a document version.
 
-
-
 Wraps POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/versions 
 
 Requires ALL permissions: 
@@ -3454,8 +3338,6 @@ except ApiException as e:
 
 Create document.
 
-
-
 Wraps POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents 
 
 Requires ALL permissions: 
@@ -3507,7 +3389,7 @@ except ApiException as e:
 
 Bulk remove documents.
 
-
+post_knowledge_knowledgebase_documents_bulk_remove is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/bulk/remove 
 
@@ -3560,7 +3442,7 @@ except ApiException as e:
 
 Bulk update documents.
 
-
+post_knowledge_knowledgebase_documents_bulk_update is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/bulk/update 
 
@@ -3612,8 +3494,6 @@ except ApiException as e:
 
 
 Search the documents in a knowledge base.
-
-
 
 Wraps POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/search 
 
@@ -3668,8 +3548,6 @@ except ApiException as e:
 
 Query the knowledge documents to provide suggestions for auto completion.
 
-
-
 Wraps POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/search/suggestions 
 
 Requires ALL permissions: 
@@ -3721,7 +3599,7 @@ except ApiException as e:
 
 Bulk add document versions.
 
-
+post_knowledge_knowledgebase_documents_versions_bulk_add is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/versions/bulk/add 
 
@@ -3774,8 +3652,6 @@ except ApiException as e:
 
 Create export job
 
-
-
 Wraps POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/export/jobs 
 
 Requires ALL permissions: 
@@ -3826,8 +3702,6 @@ except ApiException as e:
 
 
 Create import job
-
-
 
 Wraps POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/import/jobs 
 
@@ -3880,8 +3754,6 @@ except ApiException as e:
 
 Create new label
 
-
-
 Wraps POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/labels 
 
 Requires ALL permissions: 
@@ -3932,8 +3804,6 @@ except ApiException as e:
 <span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 Create new category
-
-
 
 Wraps POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/categories 
 
@@ -3988,7 +3858,7 @@ except ApiException as e:
 
 Upload Article Content
 
-
+post_knowledge_knowledgebase_language_document_uploads is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/{documentId}/uploads 
 
@@ -4045,8 +3915,6 @@ except ApiException as e:
 
 Create document
 
-
-
 Wraps POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents 
 
 Requires ALL permissions: 
@@ -4099,8 +3967,6 @@ except ApiException as e:
 <span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 Create import operation
-
-
 
 Wraps POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/documents/imports 
 
@@ -4155,8 +4021,6 @@ except ApiException as e:
 
 Promote trained documents from draft state to active.
 
-
-
 Wraps POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/trainings/{trainingId}/promote 
 
 Requires ALL permissions: 
@@ -4210,8 +4074,6 @@ except ApiException as e:
 
 Trigger training
 
-
-
 Wraps POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/languages/{languageCode}/trainings 
 
 Requires ALL permissions: 
@@ -4263,8 +4125,6 @@ except ApiException as e:
 
 Search Documents
 
-
-
 Wraps POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/search 
 
 Requires ALL permissions: 
@@ -4315,8 +4175,6 @@ except ApiException as e:
 
 
 Create new knowledge base
-
-
 
 Wraps POST /api/v2/knowledge/knowledgebases 
 

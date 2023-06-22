@@ -52,8 +52,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 Delete ADFS Identity Provider
 
-
-
 Wraps DELETE /api/v2/identityproviders/adfs 
 
 Requires ANY permissions: 
@@ -98,8 +96,6 @@ This endpoint does not need any parameters.
 
 
 Delete Customer Interaction Center (CIC) Identity Provider
-
-
 
 Wraps DELETE /api/v2/identityproviders/cic 
 
@@ -146,8 +142,6 @@ This endpoint does not need any parameters.
 
 Delete Generic SAML Identity Provider
 
-
-
 Wraps DELETE /api/v2/identityproviders/generic 
 
 Requires ANY permissions: 
@@ -192,8 +186,6 @@ This endpoint does not need any parameters.
 
 
 Delete G Suite Identity Provider
-
-
 
 Wraps DELETE /api/v2/identityproviders/gsuite 
 
@@ -240,8 +232,6 @@ This endpoint does not need any parameters.
 
 Delete IdentityNow Provider
 
-
-
 Wraps DELETE /api/v2/identityproviders/identitynow 
 
 Requires ANY permissions: 
@@ -286,8 +276,6 @@ This endpoint does not need any parameters.
 
 
 Delete Okta Identity Provider
-
-
 
 Wraps DELETE /api/v2/identityproviders/okta 
 
@@ -334,8 +322,6 @@ This endpoint does not need any parameters.
 
 Delete OneLogin Identity Provider
 
-
-
 Wraps DELETE /api/v2/identityproviders/onelogin 
 
 Requires ANY permissions: 
@@ -380,8 +366,6 @@ This endpoint does not need any parameters.
 
 
 Delete Ping Identity Provider
-
-
 
 Wraps DELETE /api/v2/identityproviders/ping 
 
@@ -428,8 +412,6 @@ This endpoint does not need any parameters.
 
 Delete PureCloud Identity Provider
 
-
-
 Wraps DELETE /api/v2/identityproviders/purecloud 
 
 Requires ANY permissions: 
@@ -474,8 +456,6 @@ This endpoint does not need any parameters.
 
 
 Delete PureEngage Identity Provider
-
-
 
 Wraps DELETE /api/v2/identityproviders/pureengage 
 
@@ -522,8 +502,6 @@ This endpoint does not need any parameters.
 
 Delete Salesforce Identity Provider
 
-
-
 Wraps DELETE /api/v2/identityproviders/salesforce 
 
 Requires ANY permissions: 
@@ -568,8 +546,6 @@ This endpoint does not need any parameters.
 
 
 The list of identity providers
-
-
 
 Wraps GET /api/v2/identityproviders 
 
@@ -616,8 +592,6 @@ This endpoint does not need any parameters.
 
 Get ADFS Identity Provider
 
-
-
 Wraps GET /api/v2/identityproviders/adfs 
 
 Requires ANY permissions: 
@@ -662,8 +636,6 @@ This endpoint does not need any parameters.
 
 
 Get Customer Interaction Center (CIC) Identity Provider
-
-
 
 Wraps GET /api/v2/identityproviders/cic 
 
@@ -710,8 +682,6 @@ This endpoint does not need any parameters.
 
 Get Generic SAML Identity Provider
 
-
-
 Wraps GET /api/v2/identityproviders/generic 
 
 Requires ANY permissions: 
@@ -756,8 +726,6 @@ This endpoint does not need any parameters.
 
 
 Get G Suite Identity Provider
-
-
 
 Wraps GET /api/v2/identityproviders/gsuite 
 
@@ -804,8 +772,6 @@ This endpoint does not need any parameters.
 
 Get IdentityNow Provider
 
-
-
 Wraps GET /api/v2/identityproviders/identitynow 
 
 Requires ANY permissions: 
@@ -850,8 +816,6 @@ This endpoint does not need any parameters.
 
 
 Get Okta Identity Provider
-
-
 
 Wraps GET /api/v2/identityproviders/okta 
 
@@ -898,8 +862,6 @@ This endpoint does not need any parameters.
 
 Get OneLogin Identity Provider
 
-
-
 Wraps GET /api/v2/identityproviders/onelogin 
 
 Requires ANY permissions: 
@@ -944,8 +906,6 @@ This endpoint does not need any parameters.
 
 
 Get Ping Identity Provider
-
-
 
 Wraps GET /api/v2/identityproviders/ping 
 
@@ -992,8 +952,6 @@ This endpoint does not need any parameters.
 
 Get PureCloud Identity Provider
 
-
-
 Wraps GET /api/v2/identityproviders/purecloud 
 
 Requires ANY permissions: 
@@ -1038,8 +996,6 @@ This endpoint does not need any parameters.
 
 
 Get PureEngage Identity Provider
-
-
 
 Wraps GET /api/v2/identityproviders/pureengage 
 
@@ -1086,8 +1042,6 @@ This endpoint does not need any parameters.
 
 Get Salesforce Identity Provider
 
-
-
 Wraps GET /api/v2/identityproviders/salesforce 
 
 Requires ANY permissions: 
@@ -1132,8 +1086,6 @@ This endpoint does not need any parameters.
 
 
 Update/Create ADFS Identity Provider
-
-
 
 Wraps PUT /api/v2/identityproviders/adfs 
 
@@ -1185,8 +1137,6 @@ except ApiException as e:
 
 Update/Create Customer Interaction Center (CIC) Identity Provider
 
-
-
 Wraps PUT /api/v2/identityproviders/cic 
 
 Requires ANY permissions: 
@@ -1236,8 +1186,6 @@ except ApiException as e:
 
 
 Update/Create Generic SAML Identity Provider
-
-
 
 Wraps PUT /api/v2/identityproviders/generic 
 
@@ -1289,8 +1237,6 @@ except ApiException as e:
 
 Update/Create G Suite Identity Provider
 
-
-
 Wraps PUT /api/v2/identityproviders/gsuite 
 
 Requires ANY permissions: 
@@ -1340,8 +1286,6 @@ except ApiException as e:
 
 
 Update/Create IdentityNow Provider
-
-
 
 Wraps PUT /api/v2/identityproviders/identitynow 
 
@@ -1393,8 +1337,6 @@ except ApiException as e:
 
 Update/Create Okta Identity Provider
 
-
-
 Wraps PUT /api/v2/identityproviders/okta 
 
 Requires ANY permissions: 
@@ -1444,8 +1386,6 @@ except ApiException as e:
 
 
 Update/Create OneLogin Identity Provider
-
-
 
 Wraps PUT /api/v2/identityproviders/onelogin 
 
@@ -1497,8 +1437,6 @@ except ApiException as e:
 
 Update/Create Ping Identity Provider
 
-
-
 Wraps PUT /api/v2/identityproviders/ping 
 
 Requires ANY permissions: 
@@ -1548,8 +1486,6 @@ except ApiException as e:
 
 
 Update/Create PureCloud Identity Provider
-
-
 
 Wraps PUT /api/v2/identityproviders/purecloud 
 
@@ -1601,8 +1537,6 @@ except ApiException as e:
 
 Update/Create PureEngage Identity Provider
 
-
-
 Wraps PUT /api/v2/identityproviders/pureengage 
 
 Requires ANY permissions: 
@@ -1652,8 +1586,6 @@ except ApiException as e:
 
 
 Update/Create Salesforce Identity Provider
-
-
 
 Wraps PUT /api/v2/identityproviders/salesforce 
 

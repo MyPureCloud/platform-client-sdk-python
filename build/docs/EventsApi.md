@@ -21,8 +21,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 Publish Conversation Batch Events
 
-
-
 Wraps POST /api/v2/events/conversations 
 
 Requires ANY permissions: 
@@ -72,8 +70,6 @@ except ApiException as e:
 
 Publish User Presence Status Batch Events
 
-
-
 Wraps POST /api/v2/events/users/presence 
 
 Requires ANY permissions: 
@@ -122,8 +118,6 @@ except ApiException as e:
 
 
 Publish Agent Routing Status Batch Events
-
-
 
 Wraps POST /api/v2/events/users/routingstatus 
 

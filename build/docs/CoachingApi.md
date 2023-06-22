@@ -39,8 +39,6 @@ Delete an existing appointment
 
 Permission not required if you are the creator of the appointment
 
-
-
 Wraps DELETE /api/v2/coaching/appointments/{appointmentId} 
 
 Requires ANY permissions: 
@@ -91,8 +89,6 @@ except ApiException as e:
 Delete an existing annotation
 
 You must have the appropriate permission for the type of annotation you are updating. Permission not required if you are the creator or facilitator of the appointment
-
-
 
 Wraps DELETE /api/v2/coaching/appointments/{appointmentId}/annotations/{annotationId} 
 
@@ -147,8 +143,6 @@ Retrieve an appointment
 
 Permission not required if you are the attendee, creator or facilitator of the appointment
 
-
-
 Wraps GET /api/v2/coaching/appointments/{appointmentId} 
 
 Requires ANY permissions: 
@@ -199,8 +193,6 @@ except ApiException as e:
 Retrieve an annotation.
 
 You must have the appropriate permission for the type of annotation you are creating. Permission not required if you are related to the appointment (only the creator or facilitator can view private annotations).
-
-
 
 Wraps GET /api/v2/coaching/appointments/{appointmentId}/annotations/{annotationId} 
 
@@ -255,8 +247,6 @@ except ApiException as e:
 Get a list of annotations.
 
 You must have the appropriate permission for the type of annotation you are creating. Permission not required if you are related to the appointment (only the creator or facilitator can view private annotations).
-
-
 
 Wraps GET /api/v2/coaching/appointments/{appointmentId}/annotations 
 
@@ -314,8 +304,6 @@ Get the list of status changes for a coaching appointment.
 
 Permission not required if you are an attendee, creator or facilitator of the appointment
 
-
-
 Wraps GET /api/v2/coaching/appointments/{appointmentId}/statuses 
 
 Requires ANY permissions: 
@@ -368,8 +356,6 @@ except ApiException as e:
 
 
 Get appointments for users and optional date range
-
-
 
 Wraps GET /api/v2/coaching/appointments 
 
@@ -440,8 +426,6 @@ except ApiException as e:
 
 Get my appointments for a given date range
 
-
-
 Wraps GET /api/v2/coaching/appointments/me 
 
 Requires no permissions
@@ -510,8 +494,6 @@ Get an existing notification
 
 Permission not required if you are the owner of the notification.
 
-
-
 Wraps GET /api/v2/coaching/notifications/{notificationId} 
 
 Requires ANY permissions: 
@@ -562,8 +544,6 @@ except ApiException as e:
 
 
 Retrieve the list of your notifications.
-
-
 
 Wraps GET /api/v2/coaching/notifications 
 
@@ -619,8 +599,6 @@ Update an existing appointment
 
 Permission not required if you are the creator or facilitator of the appointment
 
-
-
 Wraps PATCH /api/v2/coaching/appointments/{appointmentId} 
 
 Requires ANY permissions: 
@@ -673,8 +651,6 @@ except ApiException as e:
 Update an existing annotation.
 
 You must have the appropriate permission for the type of annotation you are updating. Permission not required if you are the creator or facilitator of the appointment
-
-
 
 Wraps PATCH /api/v2/coaching/appointments/{appointmentId}/annotations/{annotationId} 
 
@@ -732,8 +708,6 @@ Update the status of a coaching appointment
 
 Permission not required if you are an attendee, creator or facilitator of the appointment
 
-
-
 Wraps PATCH /api/v2/coaching/appointments/{appointmentId}/status 
 
 Requires ANY permissions: 
@@ -787,8 +761,6 @@ Update an existing notification.
 
 Can only update your own notifications.
 
-
-
 Wraps PATCH /api/v2/coaching/notifications/{notificationId} 
 
 Requires no permissions
@@ -840,8 +812,6 @@ except ApiException as e:
 Create a new annotation.
 
 You must have the appropriate permission for the type of annotation you are creating. Permission not required if you are related to the appointment (only the creator or facilitator can create private annotations).
-
-
 
 Wraps POST /api/v2/coaching/appointments/{appointmentId}/annotations 
 
@@ -897,8 +867,6 @@ Add a conversation to an appointment
 
 Permission not required if you are the creator or facilitator of the appointment
 
-
-
 Wraps POST /api/v2/coaching/appointments/{appointmentId}/conversations 
 
 Requires ANY permissions: 
@@ -951,8 +919,6 @@ except ApiException as e:
 
 Create a new appointment
 
-
-
 Wraps POST /api/v2/coaching/appointments 
 
 Requires ANY permissions: 
@@ -1002,8 +968,6 @@ except ApiException as e:
 
 Retrieve aggregated appointment data
 
-
-
 Wraps POST /api/v2/coaching/appointments/aggregates/query 
 
 Requires ANY permissions: 
@@ -1052,8 +1016,6 @@ except ApiException as e:
 
 
 Get list of possible slots where a coaching appointment can be scheduled.
-
-
 
 Wraps POST /api/v2/coaching/scheduleslots/query 
 

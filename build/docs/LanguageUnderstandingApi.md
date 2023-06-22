@@ -51,8 +51,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 Delete an NLU Domain.
 
-
-
 Wraps DELETE /api/v2/languageunderstanding/domains/{domainId} 
 
 Requires ANY permissions: 
@@ -101,8 +99,6 @@ void (empty response body)
 
 
 Delete the feedback on the NLU Domain Version.
-
-
 
 Wraps DELETE /api/v2/languageunderstanding/domains/{domainId}/feedback/{feedbackId} 
 
@@ -155,8 +151,6 @@ void (empty response body)
 
 Delete an NLU Domain Version
 
-
-
 Wraps DELETE /api/v2/languageunderstanding/domains/{domainId}/versions/{domainVersionId} 
 
 Requires ANY permissions: 
@@ -208,8 +202,6 @@ void (empty response body)
 
 Delete a miner.
 
-
-
 Wraps DELETE /api/v2/languageunderstanding/miners/{minerId} 
 
 Requires ALL permissions: 
@@ -257,8 +249,6 @@ void (empty response body)
 
 
 Delete a draft
-
-
 
 Wraps DELETE /api/v2/languageunderstanding/miners/{minerId}/drafts/{draftId} 
 
@@ -310,8 +300,6 @@ void (empty response body)
 
 Find an NLU Domain.
 
-
-
 Wraps GET /api/v2/languageunderstanding/domains/{domainId} 
 
 Requires ANY permissions: 
@@ -361,8 +349,6 @@ except ApiException as e:
 
 
 Get all feedback in the given NLU Domain Version.
-
-
 
 Wraps GET /api/v2/languageunderstanding/domains/{domainId}/feedback 
 
@@ -438,8 +424,6 @@ except ApiException as e:
 
 Find a Feedback
 
-
-
 Wraps GET /api/v2/languageunderstanding/domains/{domainId}/feedback/{feedbackId} 
 
 Requires ANY permissions: 
@@ -493,8 +477,6 @@ except ApiException as e:
 
 
 Find an NLU Domain Version.
-
-
 
 Wraps GET /api/v2/languageunderstanding/domains/{domainId}/versions/{domainVersionId} 
 
@@ -550,8 +532,6 @@ except ApiException as e:
 
 Retrieved quality report for the specified NLU Domain Version
 
-
-
 Wraps GET /api/v2/languageunderstanding/domains/{domainId}/versions/{domainVersionId}/report 
 
 Requires ANY permissions: 
@@ -603,8 +583,6 @@ except ApiException as e:
 
 
 Get all NLU Domain Versions for a given Domain.
-
-
 
 Wraps GET /api/v2/languageunderstanding/domains/{domainId}/versions 
 
@@ -662,8 +640,6 @@ except ApiException as e:
 
 Get all NLU Domains.
 
-
-
 Wraps GET /api/v2/languageunderstanding/domains 
 
 Requires ANY permissions: 
@@ -716,8 +692,6 @@ except ApiException as e:
 
 Get information about a miner.
 
-
-
 Wraps GET /api/v2/languageunderstanding/miners/{minerId} 
 
 Requires ALL permissions: 
@@ -766,8 +740,6 @@ except ApiException as e:
 
 
 Get information about a draft.
-
-
 
 Wraps GET /api/v2/languageunderstanding/miners/{minerId}/drafts/{draftId} 
 
@@ -824,8 +796,6 @@ except ApiException as e:
 
 Retrieve the list of drafts created.
 
-
-
 Wraps GET /api/v2/languageunderstanding/miners/{minerId}/drafts 
 
 Requires ALL permissions: 
@@ -874,8 +844,6 @@ except ApiException as e:
 
 
 Get information about a mined intent
-
-
 
 Wraps GET /api/v2/languageunderstanding/miners/{minerId}/intents/{intentId} 
 
@@ -930,8 +898,6 @@ except ApiException as e:
 
 Retrieve a list of mined intents.
 
-
-
 Wraps GET /api/v2/languageunderstanding/miners/{minerId}/intents 
 
 Requires ALL permissions: 
@@ -982,8 +948,6 @@ except ApiException as e:
 
 
 Retrieves details of a particular topic.
-
-
 
 Wraps GET /api/v2/languageunderstanding/miners/{minerId}/topics/{topicId} 
 
@@ -1038,8 +1002,6 @@ except ApiException as e:
 
 Retrieves utterances related to a phrase in a topic.
 
-
-
 Wraps GET /api/v2/languageunderstanding/miners/{minerId}/topics/{topicId}/phrases/{phraseId} 
 
 Requires ALL permissions: 
@@ -1093,8 +1055,6 @@ except ApiException as e:
 
 Retrieve a list of mined topics.
 
-
-
 Wraps GET /api/v2/languageunderstanding/miners/{minerId}/topics 
 
 Requires ALL permissions: 
@@ -1144,8 +1104,6 @@ except ApiException as e:
 
 Retrieve the list of miners created.
 
-
-
 Wraps GET /api/v2/languageunderstanding/miners 
 
 Requires ALL permissions: 
@@ -1194,8 +1152,6 @@ except ApiException as e:
 
 
 Update an NLU Domain.
-
-
 
 Wraps PATCH /api/v2/languageunderstanding/domains/{domainId} 
 
@@ -1248,8 +1204,6 @@ except ApiException as e:
 
 
 Save information for the draft. Either topic draft or intent draft should be sent.
-
-
 
 Wraps PATCH /api/v2/languageunderstanding/miners/{minerId}/drafts/{draftId} 
 
@@ -1304,8 +1258,6 @@ except ApiException as e:
 
 Create feedback for the NLU Domain Version.
 
-
-
 Wraps POST /api/v2/languageunderstanding/domains/{domainId}/feedback 
 
 Requires ANY permissions: 
@@ -1357,8 +1309,6 @@ except ApiException as e:
 
 
 Detect intent, entities, etc. in the submitted text using the specified NLU domain version.
-
-
 
 Wraps POST /api/v2/languageunderstanding/domains/{domainId}/versions/{domainVersionId}/detect 
 
@@ -1414,8 +1364,6 @@ except ApiException as e:
 
 Publish the draft NLU Domain Version.
 
-
-
 Wraps POST /api/v2/languageunderstanding/domains/{domainId}/versions/{domainVersionId}/publish 
 
 Requires ANY permissions: 
@@ -1468,8 +1416,6 @@ except ApiException as e:
 
 Train the draft NLU Domain Version.
 
-
-
 Wraps POST /api/v2/languageunderstanding/domains/{domainId}/versions/{domainVersionId}/train 
 
 Requires ANY permissions: 
@@ -1521,8 +1467,6 @@ except ApiException as e:
 
 
 Create an NLU Domain Version.
-
-
 
 Wraps POST /api/v2/languageunderstanding/domains/{domainId}/versions 
 
@@ -1578,8 +1522,6 @@ except ApiException as e:
 
 Create an NLU Domain.
 
-
-
 Wraps POST /api/v2/languageunderstanding/domains 
 
 Requires ANY permissions: 
@@ -1629,8 +1571,6 @@ except ApiException as e:
 
 
 Create a new draft resource.
-
-
 
 Wraps POST /api/v2/languageunderstanding/miners/{minerId}/drafts 
 
@@ -1683,8 +1623,6 @@ except ApiException as e:
 
 Start the mining process. Specify date range pair with mediaType, queueIds, participantType for mining data from Genesys Cloud. Specify only uploadKey for mining through an external file.
 
-
-
 Wraps POST /api/v2/languageunderstanding/miners/{minerId}/execute 
 
 Requires ALL permissions: 
@@ -1736,8 +1674,6 @@ except ApiException as e:
 
 Create a unique miner.
 
-
-
 Wraps POST /api/v2/languageunderstanding/miners 
 
 Requires ALL permissions: 
@@ -1786,8 +1722,6 @@ except ApiException as e:
 
 
 Update an NLU Domain Version.
-
-
 
 Wraps PUT /api/v2/languageunderstanding/domains/{domainId}/versions/{domainVersionId} 
 

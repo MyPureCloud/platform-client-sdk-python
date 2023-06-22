@@ -28,8 +28,6 @@ Delete Language (Deprecated)
 
 This endpoint is deprecated. Please see the Routing API (DELETE /api/v2/routing/languages/{languageId})
 
-
-
 Wraps DELETE /api/v2/languages/{languageId} 
 
 Requires ANY permissions: 
@@ -79,8 +77,6 @@ void (empty response body)
 Get Language (Deprecated)
 
 This endpoint is deprecated. Please see the Routing API (GET /api/v2/routing/languages/{languageId})
-
-
 
 Wraps GET /api/v2/languages/{languageId} 
 
@@ -132,8 +128,6 @@ except ApiException as e:
 Get the list of supported languages. (Deprecated)
 
 This endpoint is deprecated. Please see the Routing API (GET /api/v2/routing/languages)
-
-
 
 Wraps GET /api/v2/languages 
 
@@ -190,8 +184,6 @@ except ApiException as e:
 
 Get all available languages for translation
 
-
-
 Wraps GET /api/v2/languages/translations 
 
 Requires no permissions
@@ -235,8 +227,6 @@ This endpoint does not need any parameters.
 
 
 Get the builtin translation for a language
-
-
 
 Wraps GET /api/v2/languages/translations/builtin 
 
@@ -286,8 +276,6 @@ except ApiException as e:
 
 Get effective translation for an organization by language
 
-
-
 Wraps GET /api/v2/languages/translations/organization 
 
 Requires no permissions
@@ -335,8 +323,6 @@ except ApiException as e:
 
 
 Get effective language translation for a user
-
-
 
 Wraps GET /api/v2/languages/translations/users/{userId} 
 
@@ -387,8 +373,6 @@ except ApiException as e:
 Create Language (Deprecated)
 
 This endpoint is deprecated. Please see the Routing API. (POST /api/v2/routing/languages
-
-
 
 Wraps POST /api/v2/languages 
 

@@ -31,8 +31,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 Get a script
 
-
-
 Wraps GET /api/v2/scripts/{scriptId} 
 
 Requires ANY permissions: 
@@ -81,8 +79,6 @@ except ApiException as e:
 
 
 Get a page
-
-
 
 Wraps GET /api/v2/scripts/{scriptId}/pages/{pageId} 
 
@@ -137,8 +133,6 @@ except ApiException as e:
 
 Get the list of pages
 
-
-
 Wraps GET /api/v2/scripts/{scriptId}/pages 
 
 Requires ANY permissions: 
@@ -189,8 +183,6 @@ except ApiException as e:
 
 
 Get the list of scripts
-
-
 
 Wraps GET /api/v2/scripts 
 
@@ -259,8 +251,6 @@ except ApiException as e:
 
 Get the metadata for a list of scripts
 
-
-
 Wraps GET /api/v2/scripts/divisionviews 
 
 Requires ANY permissions: 
@@ -328,8 +318,6 @@ except ApiException as e:
 
 Get the published scripts.
 
-
-
 Wraps GET /api/v2/scripts/published 
 
 Requires ANY permissions: 
@@ -392,8 +380,6 @@ except ApiException as e:
 
 
 Get the published scripts metadata.
-
-
 
 Wraps GET /api/v2/scripts/published/divisionviews 
 
@@ -458,8 +444,6 @@ except ApiException as e:
 
 Get the published script.
 
-
-
 Wraps GET /api/v2/scripts/published/{scriptId} 
 
 Requires ANY permissions: 
@@ -510,8 +494,6 @@ except ApiException as e:
 
 
 Get the published page.
-
-
 
 Wraps GET /api/v2/scripts/published/{scriptId}/pages/{pageId} 
 
@@ -566,8 +548,6 @@ except ApiException as e:
 
 Get the list of published pages
 
-
-
 Wraps GET /api/v2/scripts/published/{scriptId}/pages 
 
 Requires ANY permissions: 
@@ -618,8 +598,6 @@ except ApiException as e:
 
 
 Get the published variables
-
-
 
 Wraps GET /api/v2/scripts/published/{scriptId}/variables 
 
@@ -678,8 +656,6 @@ except ApiException as e:
 
 Get the upload status of an imported script
 
-
-
 Wraps GET /api/v2/scripts/uploads/{uploadId}/status 
 
 Requires ANY permissions: 
@@ -730,8 +706,6 @@ except ApiException as e:
 
 
 Export a script via download service.
-
-
 
 Wraps POST /api/v2/scripts/{scriptId}/export 
 

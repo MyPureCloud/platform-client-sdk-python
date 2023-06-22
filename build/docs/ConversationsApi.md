@@ -14,6 +14,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**delete_conversations_call_participant_consult**](ConversationsApi.html#delete_conversations_call_participant_consult) | Cancel the transfer|
 |[**delete_conversations_email_messages_draft_attachment**](ConversationsApi.html#delete_conversations_email_messages_draft_attachment) | Delete attachment from draft|
 |[**delete_conversations_messaging_integrations_facebook_integration_id**](ConversationsApi.html#delete_conversations_messaging_integrations_facebook_integration_id) | Delete a Facebook messaging integration|
+|[**delete_conversations_messaging_integrations_instagram_integration_id**](ConversationsApi.html#delete_conversations_messaging_integrations_instagram_integration_id) | Delete Instagram messaging integration|
 |[**delete_conversations_messaging_integrations_line_integration_id**](ConversationsApi.html#delete_conversations_messaging_integrations_line_integration_id) | Delete a LINE messenger integration|
 |[**delete_conversations_messaging_integrations_open_integration_id**](ConversationsApi.html#delete_conversations_messaging_integrations_open_integration_id) | Delete an Open messaging integration|
 |[**delete_conversations_messaging_integrations_twitter_integration_id**](ConversationsApi.html#delete_conversations_messaging_integrations_twitter_integration_id) | Delete a Twitter messaging integration|
@@ -80,6 +81,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_conversations_messaging_integrations**](ConversationsApi.html#get_conversations_messaging_integrations) | Get a list of Integrations|
 |[**get_conversations_messaging_integrations_facebook**](ConversationsApi.html#get_conversations_messaging_integrations_facebook) | Get a list of Facebook Integrations|
 |[**get_conversations_messaging_integrations_facebook_integration_id**](ConversationsApi.html#get_conversations_messaging_integrations_facebook_integration_id) | Get a Facebook messaging integration|
+|[**get_conversations_messaging_integrations_instagram**](ConversationsApi.html#get_conversations_messaging_integrations_instagram) | Get a list of Instagram Integrations|
+|[**get_conversations_messaging_integrations_instagram_integration_id**](ConversationsApi.html#get_conversations_messaging_integrations_instagram_integration_id) | Get Instagram messaging integration|
 |[**get_conversations_messaging_integrations_line**](ConversationsApi.html#get_conversations_messaging_integrations_line) | Get a list of LINE messenger Integrations|
 |[**get_conversations_messaging_integrations_line_integration_id**](ConversationsApi.html#get_conversations_messaging_integrations_line_integration_id) | Get a LINE messenger integration|
 |[**get_conversations_messaging_integrations_open**](ConversationsApi.html#get_conversations_messaging_integrations_open) | Get a list of Open messaging integrations|
@@ -130,6 +133,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**patch_conversations_message_participant_attributes**](ConversationsApi.html#patch_conversations_message_participant_attributes) | Update the attributes on a conversation participant.|
 |[**patch_conversations_message_participant_communication**](ConversationsApi.html#patch_conversations_message_participant_communication) | Update conversation participant&#39;s communication by disconnecting it.|
 |[**patch_conversations_messaging_integrations_facebook_integration_id**](ConversationsApi.html#patch_conversations_messaging_integrations_facebook_integration_id) | Update Facebook messaging integration|
+|[**patch_conversations_messaging_integrations_instagram_integration_id**](ConversationsApi.html#patch_conversations_messaging_integrations_instagram_integration_id) | Update Instagram messaging integration|
 |[**patch_conversations_messaging_integrations_open_integration_id**](ConversationsApi.html#patch_conversations_messaging_integrations_open_integration_id) | Update an Open messaging integration|
 |[**patch_conversations_messaging_integrations_twitter_integration_id**](ConversationsApi.html#patch_conversations_messaging_integrations_twitter_integration_id) | Update Twitter messaging integration|
 |[**patch_conversations_messaging_integrations_whatsapp_integration_id**](ConversationsApi.html#patch_conversations_messaging_integrations_whatsapp_integration_id) | Update or activate a WhatsApp messaging integration|
@@ -147,11 +151,17 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_conversation_participant_callbacks**](ConversationsApi.html#post_conversation_participant_callbacks) | Create a new callback for the specified participant on the conversation.|
 |[**post_conversation_participant_digits**](ConversationsApi.html#post_conversation_participant_digits) | Sends DTMF to the participant|
 |[**post_conversation_participant_replace**](ConversationsApi.html#post_conversation_participant_replace) | Replace this participant with the specified user and/or address|
+|[**post_conversation_participant_replace_agent**](ConversationsApi.html#post_conversation_participant_replace_agent) | Replace this participant with the specified agent|
+|[**post_conversation_participant_replace_external**](ConversationsApi.html#post_conversation_participant_replace_external) | Replace this participant with the an external contact|
+|[**post_conversation_participant_replace_queue**](ConversationsApi.html#post_conversation_participant_replace_queue) | Replace this participant with the specified queue|
 |[**post_conversation_participant_secureivrsessions**](ConversationsApi.html#post_conversation_participant_secureivrsessions) | Create secure IVR session. Only a participant in the conversation can invoke a secure IVR.|
 |[**post_conversations_call**](ConversationsApi.html#post_conversations_call) | Place a new call as part of a callback conversation.|
 |[**post_conversations_call_participant_coach**](ConversationsApi.html#post_conversations_call_participant_coach) | Listen in on the conversation from the point of view of a given participant while speaking to just the given participant.|
 |[**post_conversations_call_participant_communication_wrapup**](ConversationsApi.html#post_conversations_call_participant_communication_wrapup) | Apply wrap-up for this conversation communication|
 |[**post_conversations_call_participant_consult**](ConversationsApi.html#post_conversations_call_participant_consult) | Initiate and update consult transfer|
+|[**post_conversations_call_participant_consult_agent**](ConversationsApi.html#post_conversations_call_participant_consult_agent) | Initiate a consult transfer to an agent|
+|[**post_conversations_call_participant_consult_external**](ConversationsApi.html#post_conversations_call_participant_consult_external) | Initiate a consult transfer to an external contact|
+|[**post_conversations_call_participant_consult_queue**](ConversationsApi.html#post_conversations_call_participant_consult_queue) | Initiate a consult transfer to a queue|
 |[**post_conversations_call_participant_monitor**](ConversationsApi.html#post_conversations_call_participant_monitor) | Listen in on the conversation from the point of view of a given participant.|
 |[**post_conversations_call_participant_replace**](ConversationsApi.html#post_conversations_call_participant_replace) | Replace this participant with the specified user and/or address|
 |[**post_conversations_call_participants**](ConversationsApi.html#post_conversations_call_participants) | Add participants to a conversation|
@@ -189,6 +199,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_conversations_messages_agentless**](ConversationsApi.html#post_conversations_messages_agentless) | Send an agentless outbound message|
 |[**post_conversations_messages_inbound_open**](ConversationsApi.html#post_conversations_messages_inbound_open) | Send an inbound Open Message|
 |[**post_conversations_messaging_integrations_facebook**](ConversationsApi.html#post_conversations_messaging_integrations_facebook) | Create a Facebook Integration|
+|[**post_conversations_messaging_integrations_instagram**](ConversationsApi.html#post_conversations_messaging_integrations_instagram) | Create Instagram Integration|
 |[**post_conversations_messaging_integrations_line**](ConversationsApi.html#post_conversations_messaging_integrations_line) | Create a LINE messenger Integration|
 |[**post_conversations_messaging_integrations_open**](ConversationsApi.html#post_conversations_messaging_integrations_open) | Create an Open messaging integration|
 |[**post_conversations_messaging_integrations_twitter**](ConversationsApi.html#post_conversations_messaging_integrations_twitter) | Create a Twitter Integration|
@@ -225,8 +236,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 
 Delete/cancel an async details job
-
-
 
 Wraps DELETE /api/v2/analytics/conversations/details/jobs/{jobId} 
 
@@ -276,8 +285,6 @@ void (empty response body)
 
 
 Delete a code used to add a communication to this participant
-
-
 
 Wraps DELETE /api/v2/conversations/{conversationId}/participants/{participantId}/codes/{addCommunicationCode} 
 
@@ -330,8 +337,6 @@ void (empty response body)
 
 Remove flagged reason from conversation participant.
 
-
-
 Wraps DELETE /api/v2/conversations/{conversationId}/participants/{participantId}/flaggedreason 
 
 Requires no permissions
@@ -380,8 +385,6 @@ void (empty response body)
 
 
 Cancel the transfer
-
-
 
 Wraps DELETE /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult 
 
@@ -432,8 +435,6 @@ void (empty response body)
 
 Delete attachment from draft
 
-
-
 Wraps DELETE /api/v2/conversations/emails/{conversationId}/messages/draft/attachments/{attachmentId} 
 
 Requires no permissions
@@ -483,8 +484,6 @@ void (empty response body)
 
 Delete a Facebook messaging integration
 
-
-
 Wraps DELETE /api/v2/conversations/messaging/integrations/facebook/{integrationId} 
 
 Requires ALL permissions: 
@@ -525,6 +524,54 @@ except ApiException as e:
 
 void (empty response body)
 
+<a name="delete_conversations_messaging_integrations_instagram_integration_id"></a>
+
+##  delete_conversations_messaging_integrations_instagram_integration_id(integration_id)
+
+
+
+Delete Instagram messaging integration
+
+Wraps DELETE /api/v2/conversations/messaging/integrations/instagram/{integrationId} 
+
+Requires ALL permissions: 
+
+* messaging:integration:delete
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+integration_id = 'integration_id_example' # str | Integration ID
+
+try:
+    # Delete Instagram messaging integration
+    api_instance.delete_conversations_messaging_integrations_instagram_integration_id(integration_id)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->delete_conversations_messaging_integrations_instagram_integration_id: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **integration_id** | **str**| Integration ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
+
 <a name="delete_conversations_messaging_integrations_line_integration_id"></a>
 
 ##  delete_conversations_messaging_integrations_line_integration_id(integration_id)
@@ -532,8 +579,6 @@ void (empty response body)
 
 
 Delete a LINE messenger integration
-
-
 
 Wraps DELETE /api/v2/conversations/messaging/integrations/line/{integrationId} 
 
@@ -585,8 +630,6 @@ Delete an Open messaging integration
 
 See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
 
-
-
 Wraps DELETE /api/v2/conversations/messaging/integrations/open/{integrationId} 
 
 Requires ALL permissions: 
@@ -635,8 +678,6 @@ void (empty response body)
 
 Delete a Twitter messaging integration
 
-
-
 Wraps DELETE /api/v2/conversations/messaging/integrations/twitter/{integrationId} 
 
 Requires ALL permissions: 
@@ -684,8 +725,6 @@ void (empty response body)
 
 
 Delete a WhatsApp messaging integration
-
-
 
 Wraps DELETE /api/v2/conversations/messaging/integrations/whatsapp/{integrationId} 
 
@@ -736,8 +775,6 @@ except ApiException as e:
 
 Delete a supported content profile
 
-
-
 Wraps DELETE /api/v2/conversations/messaging/supportedcontent/{supportedContentId} 
 
 Requires ALL permissions: 
@@ -785,8 +822,6 @@ void (empty response body)
 
 
 Get a conversation by id
-
-
 
 Wraps GET /api/v2/analytics/conversations/{conversationId}/details 
 
@@ -838,7 +873,7 @@ except ApiException as e:
 
 Get status for async query for conversation aggregates
 
-
+get_analytics_conversations_aggregates_job is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/analytics/conversations/aggregates/jobs/{jobId} 
 
@@ -889,7 +924,7 @@ except ApiException as e:
 
 Fetch a page of results for an async aggregates query
 
-
+get_analytics_conversations_aggregates_job_results is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/analytics/conversations/aggregates/jobs/{jobId}/results 
 
@@ -942,8 +977,6 @@ except ApiException as e:
 
 Gets multiple conversations by id
 
-
-
 Wraps GET /api/v2/analytics/conversations/details 
 
 Requires ANY permissions: 
@@ -994,8 +1027,6 @@ except ApiException as e:
 
 Get status for async query for conversation details
 
-
-
 Wraps GET /api/v2/analytics/conversations/details/jobs/{jobId} 
 
 Requires ANY permissions: 
@@ -1045,8 +1076,6 @@ except ApiException as e:
 
 
 Fetch a page of results for an async details job
-
-
 
 Wraps GET /api/v2/analytics/conversations/details/jobs/{jobId}/results 
 
@@ -1102,8 +1131,6 @@ except ApiException as e:
 
 Lookup the datalake availability date and time
 
-
-
 Wraps GET /api/v2/analytics/conversations/details/jobs/availability 
 
 Requires ANY permissions: 
@@ -1148,8 +1175,6 @@ This endpoint does not need any parameters.
 
 
 Get conversation
-
-
 
 Wraps GET /api/v2/conversations/{conversationId} 
 
@@ -1199,8 +1224,6 @@ except ApiException as e:
 
 
 Fetch info on a secure session
-
-
 
 Wraps GET /api/v2/conversations/{conversationId}/participants/{participantId}/secureivrsessions/{secureSessionId} 
 
@@ -1254,8 +1277,6 @@ except ApiException as e:
 
 Get a list of secure sessions for this participant.
 
-
-
 Wraps GET /api/v2/conversations/{conversationId}/participants/{participantId}/secureivrsessions 
 
 Requires no permissions
@@ -1305,8 +1326,6 @@ except ApiException as e:
 
 
 Get the wrap-up for this conversation participant. 
-
-
 
 Wraps GET /api/v2/conversations/{conversationId}/participants/{participantId}/wrapup 
 
@@ -1360,8 +1379,6 @@ except ApiException as e:
 
 Get list of wrapup codes for this conversation participant
 
-
-
 Wraps GET /api/v2/conversations/{conversationId}/participants/{participantId}/wrapupcodes 
 
 Requires no permissions
@@ -1412,8 +1429,6 @@ except ApiException as e:
 
 Get the secure attributes on a conversation.
 
-
-
 Wraps GET /api/v2/conversations/{conversationId}/secureattributes 
 
 Requires ANY permissions: 
@@ -1463,8 +1478,6 @@ except ApiException as e:
 
 Get active conversations for the logged in user
 
-
-
 Wraps GET /api/v2/conversations 
 
 Requires no permissions
@@ -1513,8 +1526,6 @@ except ApiException as e:
 
 Get call conversation
 
-
-
 Wraps GET /api/v2/conversations/calls/{conversationId} 
 
 Requires no permissions
@@ -1562,8 +1573,6 @@ except ApiException as e:
 
 
 Get the wrap-up for this conversation communication. 
-
-
 
 Wraps GET /api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup 
 
@@ -1619,8 +1628,6 @@ except ApiException as e:
 
 Get the wrap-up for this conversation participant. 
 
-
-
 Wraps GET /api/v2/conversations/calls/{conversationId}/participants/{participantId}/wrapup 
 
 Requires no permissions
@@ -1673,8 +1680,6 @@ except ApiException as e:
 
 Get list of wrapup codes for this conversation participant
 
-
-
 Wraps GET /api/v2/conversations/calls/{conversationId}/participants/{participantId}/wrapupcodes 
 
 Requires no permissions
@@ -1725,8 +1730,6 @@ except ApiException as e:
 
 Get callback conversation
 
-
-
 Wraps GET /api/v2/conversations/callbacks/{conversationId} 
 
 Requires no permissions
@@ -1774,8 +1777,6 @@ except ApiException as e:
 
 
 Get the wrap-up for this conversation communication. 
-
-
 
 Wraps GET /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup 
 
@@ -1831,8 +1832,6 @@ except ApiException as e:
 
 Get the wrap-up for this conversation participant. 
 
-
-
 Wraps GET /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/wrapup 
 
 Requires no permissions
@@ -1885,8 +1884,6 @@ except ApiException as e:
 
 Get list of wrapup codes for this conversation participant
 
-
-
 Wraps GET /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/wrapupcodes 
 
 Requires no permissions
@@ -1937,8 +1934,6 @@ except ApiException as e:
 
 Get active callback conversations for the logged in user
 
-
-
 Wraps GET /api/v2/conversations/callbacks 
 
 Requires no permissions
@@ -1983,8 +1978,6 @@ This endpoint does not need any parameters.
 
 Get active call conversations for the logged in user
 
-
-
 Wraps GET /api/v2/conversations/calls 
 
 Requires no permissions
@@ -2028,8 +2021,6 @@ This endpoint does not need any parameters.
 
 
 Get call history
-
-
 
 Wraps GET /api/v2/conversations/calls/history 
 
@@ -2085,8 +2076,6 @@ except ApiException as e:
 
 Get the maximum number of participants that this user can have on a conference
 
-
-
 Wraps GET /api/v2/conversations/calls/maximumconferenceparties 
 
 Requires no permissions
@@ -2130,8 +2119,6 @@ This endpoint does not need any parameters.
 
 
 Get chat conversation
-
-
 
 Wraps GET /api/v2/conversations/chats/{conversationId} 
 
@@ -2182,8 +2169,6 @@ except ApiException as e:
 Get a web chat conversation message
 
 The current user must be involved with the conversation to get its messages.
-
-
 
 Wraps GET /api/v2/conversations/chats/{conversationId}/messages/{messageId} 
 
@@ -2236,8 +2221,6 @@ except ApiException as e:
 Get the messages of a chat conversation.
 
 The current user must be involved with the conversation to get its messages.
-
-
 
 Wraps GET /api/v2/conversations/chats/{conversationId}/messages 
 
@@ -2295,8 +2278,6 @@ except ApiException as e:
 
 Get the wrap-up for this conversation communication. 
 
-
-
 Wraps GET /api/v2/conversations/chats/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup 
 
 Requires no permissions
@@ -2351,8 +2332,6 @@ except ApiException as e:
 
 Get the wrap-up for this conversation participant. 
 
-
-
 Wraps GET /api/v2/conversations/chats/{conversationId}/participants/{participantId}/wrapup 
 
 Requires no permissions
@@ -2405,8 +2384,6 @@ except ApiException as e:
 
 Get list of wrapup codes for this conversation participant
 
-
-
 Wraps GET /api/v2/conversations/chats/{conversationId}/participants/{participantId}/wrapupcodes 
 
 Requires no permissions
@@ -2457,8 +2434,6 @@ except ApiException as e:
 
 Get active chat conversations for the logged in user
 
-
-
 Wraps GET /api/v2/conversations/chats 
 
 Requires no permissions
@@ -2502,8 +2477,6 @@ This endpoint does not need any parameters.
 
 
 Get cobrowse conversation
-
-
 
 Wraps GET /api/v2/conversations/cobrowsesessions/{conversationId} 
 
@@ -2552,8 +2525,6 @@ except ApiException as e:
 
 
 Get the wrap-up for this conversation communication. 
-
-
 
 Wraps GET /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup 
 
@@ -2609,8 +2580,6 @@ except ApiException as e:
 
 Get the wrap-up for this conversation participant. 
 
-
-
 Wraps GET /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/wrapup 
 
 Requires no permissions
@@ -2663,8 +2632,6 @@ except ApiException as e:
 
 Get list of wrapup codes for this conversation participant
 
-
-
 Wraps GET /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/wrapupcodes 
 
 Requires no permissions
@@ -2715,8 +2682,6 @@ except ApiException as e:
 
 Get active cobrowse conversations for the logged in user
 
-
-
 Wraps GET /api/v2/conversations/cobrowsesessions 
 
 Requires no permissions
@@ -2760,8 +2725,6 @@ This endpoint does not need any parameters.
 
 
 Get email conversation
-
-
 
 Wraps GET /api/v2/conversations/emails/{conversationId} 
 
@@ -2810,8 +2773,6 @@ except ApiException as e:
 
 
 Get conversation message
-
-
 
 Wraps GET /api/v2/conversations/emails/{conversationId}/messages/{messageId} 
 
@@ -2863,8 +2824,6 @@ except ApiException as e:
 
 Get conversation messages
 
-
-
 Wraps GET /api/v2/conversations/emails/{conversationId}/messages 
 
 Requires no permissions
@@ -2913,8 +2872,6 @@ except ApiException as e:
 
 Get conversation draft reply
 
-
-
 Wraps GET /api/v2/conversations/emails/{conversationId}/messages/draft 
 
 Requires no permissions
@@ -2962,8 +2919,6 @@ except ApiException as e:
 
 
 Get the wrap-up for this conversation communication. 
-
-
 
 Wraps GET /api/v2/conversations/emails/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup 
 
@@ -3019,8 +2974,6 @@ except ApiException as e:
 
 Get the wrap-up for this conversation participant. 
 
-
-
 Wraps GET /api/v2/conversations/emails/{conversationId}/participants/{participantId}/wrapup 
 
 Requires no permissions
@@ -3073,8 +3026,6 @@ except ApiException as e:
 
 Get list of wrapup codes for this conversation participant
 
-
-
 Wraps GET /api/v2/conversations/emails/{conversationId}/participants/{participantId}/wrapupcodes 
 
 Requires no permissions
@@ -3125,8 +3076,6 @@ except ApiException as e:
 
 Get emails settings for a given conversation
 
-
-
 Wraps GET /api/v2/conversations/emails/{conversationId}/settings 
 
 Requires no permissions
@@ -3175,8 +3124,6 @@ except ApiException as e:
 
 Get active email conversations for the logged in user
 
-
-
 Wraps GET /api/v2/conversations/emails 
 
 Requires no permissions
@@ -3220,8 +3167,6 @@ This endpoint does not need any parameters.
 
 
 Get the encryption key configurations
-
-
 
 Wraps GET /api/v2/conversations/keyconfigurations/{keyconfigurationsId} 
 
@@ -3272,8 +3217,6 @@ except ApiException as e:
 
 Get a list of key configurations data
 
-
-
 Wraps GET /api/v2/conversations/keyconfigurations 
 
 Requires ANY permissions: 
@@ -3318,8 +3261,6 @@ This endpoint does not need any parameters.
 
 
 Get message conversation
-
-
 
 Wraps GET /api/v2/conversations/messages/{conversationId} 
 
@@ -3370,8 +3311,6 @@ except ApiException as e:
 Get media
 
 See https://developer.genesys.cloud/api/rest/v2/conversations/messaging-media-upload for example usage.
-
-
 
 Wraps GET /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages/media/{mediaId} 
 
@@ -3427,8 +3366,6 @@ except ApiException as e:
 
 Get message
 
-
-
 Wraps GET /api/v2/conversations/messages/{messageId}/details 
 
 Requires ANY permissions: 
@@ -3480,8 +3417,6 @@ except ApiException as e:
 
 
 Get conversation message
-
-
 
 Wraps GET /api/v2/conversations/messages/{conversationId}/messages/{messageId} 
 
@@ -3537,8 +3472,6 @@ except ApiException as e:
 
 Get the wrap-up for this conversation communication. 
 
-
-
 Wraps GET /api/v2/conversations/messages/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup 
 
 Requires no permissions
@@ -3593,8 +3526,6 @@ except ApiException as e:
 
 Get the wrap-up for this conversation participant. 
 
-
-
 Wraps GET /api/v2/conversations/messages/{conversationId}/participants/{participantId}/wrapup 
 
 Requires no permissions
@@ -3647,8 +3578,6 @@ except ApiException as e:
 
 Get list of wrapup codes for this conversation participant
 
-
-
 Wraps GET /api/v2/conversations/messages/{conversationId}/participants/{participantId}/wrapupcodes 
 
 Requires no permissions
@@ -3699,8 +3628,6 @@ except ApiException as e:
 
 Get active message conversations for the logged in user
 
-
-
 Wraps GET /api/v2/conversations/messages 
 
 Requires no permissions
@@ -3744,8 +3671,6 @@ This endpoint does not need any parameters.
 
 
 Get Genesys Facebook App Id
-
-
 
 Wraps GET /api/v2/conversations/messaging/facebook/app 
 
@@ -3791,8 +3716,6 @@ This endpoint does not need any parameters.
 
 
 Get a list of Integrations
-
-
 
 Wraps GET /api/v2/conversations/messaging/integrations 
 
@@ -3851,8 +3774,6 @@ except ApiException as e:
 
 Get a list of Facebook Integrations
 
-
-
 Wraps GET /api/v2/conversations/messaging/integrations/facebook 
 
 Requires ALL permissions: 
@@ -3910,8 +3831,6 @@ except ApiException as e:
 
 Get a Facebook messaging integration
 
-
-
 Wraps GET /api/v2/conversations/messaging/integrations/facebook/{integrationId} 
 
 Requires ALL permissions: 
@@ -3955,6 +3874,114 @@ except ApiException as e:
 
 [**FacebookIntegration**](FacebookIntegration.html)
 
+<a name="get_conversations_messaging_integrations_instagram"></a>
+
+## [**InstagramIntegrationEntityListing**](InstagramIntegrationEntityListing.html) get_conversations_messaging_integrations_instagram(page_size=page_size, page_number=page_number, expand=expand, supported_content_id=supported_content_id, messaging_setting_id=messaging_setting_id)
+
+
+
+Get a list of Instagram Integrations
+
+Wraps GET /api/v2/conversations/messaging/integrations/instagram 
+
+Requires ALL permissions: 
+
+* messaging:integration:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+page_size = 25 # int | Page size (optional) (default to 25)
+page_number = 1 # int | Page number (optional) (default to 1)
+expand = 'expand_example' # str | Expand instructions for the return value. (optional)
+supported_content_id = 'supported_content_id_example' # str | Filter integrations returned based on the supported content ID (optional)
+messaging_setting_id = 'messaging_setting_id_example' # str | Filter integrations returned based on the setting ID (optional)
+
+try:
+    # Get a list of Instagram Integrations
+    api_response = api_instance.get_conversations_messaging_integrations_instagram(page_size=page_size, page_number=page_number, expand=expand, supported_content_id=supported_content_id, messaging_setting_id=messaging_setting_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->get_conversations_messaging_integrations_instagram: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **expand** | **str**| Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting |
+| **supported_content_id** | **str**| Filter integrations returned based on the supported content ID | [optional]  |
+| **messaging_setting_id** | **str**| Filter integrations returned based on the setting ID | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**InstagramIntegrationEntityListing**](InstagramIntegrationEntityListing.html)
+
+<a name="get_conversations_messaging_integrations_instagram_integration_id"></a>
+
+## [**InstagramIntegration**](InstagramIntegration.html) get_conversations_messaging_integrations_instagram_integration_id(integration_id, expand=expand)
+
+
+
+Get Instagram messaging integration
+
+Wraps GET /api/v2/conversations/messaging/integrations/instagram/{integrationId} 
+
+Requires ALL permissions: 
+
+* messaging:integration:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+integration_id = 'integration_id_example' # str | Integration ID
+expand = 'expand_example' # str | Expand instructions for the return value. (optional)
+
+try:
+    # Get Instagram messaging integration
+    api_response = api_instance.get_conversations_messaging_integrations_instagram_integration_id(integration_id, expand=expand)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->get_conversations_messaging_integrations_instagram_integration_id: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **integration_id** | **str**| Integration ID |  |
+| **expand** | **str**| Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting |
+{: class="table table-striped"}
+
+### Return type
+
+[**InstagramIntegration**](InstagramIntegration.html)
+
 <a name="get_conversations_messaging_integrations_line"></a>
 
 ## [**LineIntegrationEntityListing**](LineIntegrationEntityListing.html) get_conversations_messaging_integrations_line(page_size=page_size, page_number=page_number, expand=expand, supported_content_id=supported_content_id, messaging_setting_id=messaging_setting_id)
@@ -3962,8 +3989,6 @@ except ApiException as e:
 
 
 Get a list of LINE messenger Integrations
-
-
 
 Wraps GET /api/v2/conversations/messaging/integrations/line 
 
@@ -4022,8 +4047,6 @@ except ApiException as e:
 
 Get a LINE messenger integration
 
-
-
 Wraps GET /api/v2/conversations/messaging/integrations/line/{integrationId} 
 
 Requires ALL permissions: 
@@ -4076,8 +4099,6 @@ except ApiException as e:
 Get a list of Open messaging integrations
 
 See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
-
-
 
 Wraps GET /api/v2/conversations/messaging/integrations/open 
 
@@ -4138,8 +4159,6 @@ Get an Open messaging integration
 
 See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
 
-
-
 Wraps GET /api/v2/conversations/messaging/integrations/open/{integrationId} 
 
 Requires ALL permissions: 
@@ -4190,8 +4209,6 @@ except ApiException as e:
 
 
 Get a list of Twitter Integrations
-
-
 
 Wraps GET /api/v2/conversations/messaging/integrations/twitter 
 
@@ -4250,8 +4267,6 @@ except ApiException as e:
 
 Get a Twitter messaging integration
 
-
-
 Wraps GET /api/v2/conversations/messaging/integrations/twitter/{integrationId} 
 
 Requires ALL permissions: 
@@ -4302,8 +4317,6 @@ except ApiException as e:
 
 
 Get a list of WhatsApp Integrations
-
-
 
 Wraps GET /api/v2/conversations/messaging/integrations/whatsapp 
 
@@ -4362,8 +4375,6 @@ except ApiException as e:
 
 Get a WhatsApp messaging integration
 
-
-
 Wraps GET /api/v2/conversations/messaging/integrations/whatsapp/{integrationId} 
 
 Requires ALL permissions: 
@@ -4414,8 +4425,6 @@ except ApiException as e:
 
 
 Get a list of Messaging Stickers
-
-
 
 Wraps GET /api/v2/conversations/messaging/stickers/{messengerType} 
 
@@ -4470,8 +4479,6 @@ except ApiException as e:
 
 Get a list of Supported Content profiles
 
-
-
 Wraps GET /api/v2/conversations/messaging/supportedcontent 
 
 Requires ALL permissions: 
@@ -4525,8 +4532,6 @@ Get the organization's default supported content profile that will be used as th
 
 When an integration is created a supported content ID may be assigned to it. If the supported content ID is not supplied, the default supported content profile will be assigned to it.
 
-
-
 Wraps GET /api/v2/conversations/messaging/supportedcontent/default 
 
 Requires ALL permissions: 
@@ -4571,8 +4576,6 @@ This endpoint does not need any parameters.
 
 
 Get a supported content profile
-
-
 
 Wraps GET /api/v2/conversations/messaging/supportedcontent/{supportedContentId} 
 
@@ -4625,8 +4628,6 @@ Get conversation threading window timeline for each messaging type
 
 Conversation messaging threading timeline is a setting defined for each messenger type in your organization. This setting will dictate whether a new message is added to the most recent existing conversation, or creates a new Conversation. If the existing Conversation is still in a connected state the threading timeline setting will never play a role. After the conversation is disconnected, if an inbound message is received or an outbound message is sent after the setting for threading timeline expires, a new conversation is created.
 
-
-
 Wraps GET /api/v2/conversations/messaging/threadingtimeline 
 
 Requires ALL permissions: 
@@ -4671,8 +4672,6 @@ This endpoint does not need any parameters.
 
 
 Get the wrap-up for this conversation communication. 
-
-
 
 Wraps GET /api/v2/conversations/screenshares/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup 
 
@@ -4728,8 +4727,6 @@ except ApiException as e:
 
 Get Settings
 
-
-
 Wraps GET /api/v2/conversations/settings 
 
 Requires ANY permissions: 
@@ -4774,8 +4771,6 @@ This endpoint does not need any parameters.
 
 
 Get the wrap-up for this conversation communication. 
-
-
 
 Wraps GET /api/v2/conversations/socials/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup 
 
@@ -4831,7 +4826,7 @@ except ApiException as e:
 
 Get video conference details (e.g. the current number of active participants).
 
-
+get_conversations_video_details is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/conversations/videos/{conferenceId}/details 
 
@@ -4881,8 +4876,6 @@ except ApiException as e:
 
 
 Get the wrap-up for this conversation communication. 
-
-
 
 Wraps GET /api/v2/conversations/videos/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup 
 
@@ -4940,8 +4933,6 @@ Update a participant.
 
 Update conversation participant.
 
-
-
 Wraps PATCH /api/v2/conversations/{conversationId}/participants/{participantId} 
 
 Requires ANY permissions: 
@@ -4994,8 +4985,6 @@ void (empty response body)
 
 Update the attributes on a conversation participant.
 
-
-
 Wraps PATCH /api/v2/conversations/{conversationId}/participants/{participantId}/attributes 
 
 Requires no permissions
@@ -5047,8 +5036,6 @@ void (empty response body)
 
 Update the secure attributes on a conversation.
 
-
-
 Wraps PATCH /api/v2/conversations/{conversationId}/secureattributes 
 
 Requires ANY permissions: 
@@ -5099,8 +5086,6 @@ except ApiException as e:
 
 
 Update after-call work for this conversation communication.
-
-
 
 Wraps PATCH /api/v2/conversations/aftercallwork/{conversationId}/participants/{participantId}/communications/{communicationId} 
 
@@ -5157,8 +5142,6 @@ except ApiException as e:
 
 Update a conversation by setting its recording state, merging in other conversations to create a conference, or disconnecting all of the participants
 
-
-
 Wraps PATCH /api/v2/conversations/calls/{conversationId} 
 
 Requires ANY permissions: 
@@ -5209,8 +5192,6 @@ except ApiException as e:
 
 
 Update conversation participant
-
-
 
 Wraps PATCH /api/v2/conversations/calls/{conversationId}/participants/{participantId} 
 
@@ -5264,8 +5245,6 @@ void (empty response body)
 
 Update the attributes on a conversation participant.
 
-
-
 Wraps PATCH /api/v2/conversations/calls/{conversationId}/participants/{participantId}/attributes 
 
 Requires no permissions
@@ -5316,8 +5295,6 @@ void (empty response body)
 
 
 Update conversation participant's communication by disconnecting it.
-
-
 
 Wraps PATCH /api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId} 
 
@@ -5373,8 +5350,6 @@ except ApiException as e:
 
 Change who can speak
 
-
-
 Wraps PATCH /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult 
 
 Requires no permissions
@@ -5427,8 +5402,6 @@ except ApiException as e:
 
 Update a conversation by disconnecting all of the participants
 
-
-
 Wraps PATCH /api/v2/conversations/callbacks/{conversationId} 
 
 Requires ANY permissions: 
@@ -5479,8 +5452,6 @@ except ApiException as e:
 
 
 Update conversation participant
-
-
 
 Wraps PATCH /api/v2/conversations/callbacks/{conversationId}/participants/{participantId} 
 
@@ -5534,8 +5505,6 @@ void (empty response body)
 
 Update the attributes on a conversation participant.
 
-
-
 Wraps PATCH /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/attributes 
 
 Requires no permissions
@@ -5586,8 +5555,6 @@ void (empty response body)
 
 
 Update conversation participant's communication by disconnecting it.
-
-
 
 Wraps PATCH /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/communications/{communicationId} 
 
@@ -5643,8 +5610,6 @@ except ApiException as e:
 
 Update a scheduled callback
 
-
-
 Wraps PATCH /api/v2/conversations/callbacks 
 
 Requires ANY permissions: 
@@ -5693,8 +5658,6 @@ except ApiException as e:
 
 
 Update a conversation by disconnecting all of the participants
-
-
 
 Wraps PATCH /api/v2/conversations/chats/{conversationId} 
 
@@ -5746,8 +5709,6 @@ except ApiException as e:
 
 
 Update conversation participant
-
-
 
 Wraps PATCH /api/v2/conversations/chats/{conversationId}/participants/{participantId} 
 
@@ -5801,8 +5762,6 @@ void (empty response body)
 
 Update the attributes on a conversation participant.
 
-
-
 Wraps PATCH /api/v2/conversations/chats/{conversationId}/participants/{participantId}/attributes 
 
 Requires no permissions
@@ -5853,8 +5812,6 @@ void (empty response body)
 
 
 Update conversation participant's communication by disconnecting it.
-
-
 
 Wraps PATCH /api/v2/conversations/chats/{conversationId}/participants/{participantId}/communications/{communicationId} 
 
@@ -5910,8 +5867,6 @@ except ApiException as e:
 
 Update a conversation by disconnecting all of the participants
 
-
-
 Wraps PATCH /api/v2/conversations/cobrowsesessions/{conversationId} 
 
 Requires ANY permissions: 
@@ -5962,8 +5917,6 @@ except ApiException as e:
 
 
 Update conversation participant
-
-
 
 Wraps PATCH /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId} 
 
@@ -6017,8 +5970,6 @@ void (empty response body)
 
 Update the attributes on a conversation participant.
 
-
-
 Wraps PATCH /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/attributes 
 
 Requires no permissions
@@ -6069,8 +6020,6 @@ void (empty response body)
 
 
 Update conversation participant's communication by disconnecting it.
-
-
 
 Wraps PATCH /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/communications/{communicationId} 
 
@@ -6126,8 +6075,6 @@ except ApiException as e:
 
 Update a conversation by disconnecting all of the participants
 
-
-
 Wraps PATCH /api/v2/conversations/emails/{conversationId} 
 
 Requires ANY permissions: 
@@ -6178,8 +6125,6 @@ except ApiException as e:
 
 
 Reset conversation draft to its initial state and/or auto-fill draft content
-
-
 
 Wraps PATCH /api/v2/conversations/emails/{conversationId}/messages/draft 
 
@@ -6235,8 +6180,6 @@ except ApiException as e:
 
 Update conversation participant
 
-
-
 Wraps PATCH /api/v2/conversations/emails/{conversationId}/participants/{participantId} 
 
 Requires ANY permissions: 
@@ -6289,8 +6232,6 @@ void (empty response body)
 
 Update the attributes on a conversation participant.
 
-
-
 Wraps PATCH /api/v2/conversations/emails/{conversationId}/participants/{participantId}/attributes 
 
 Requires no permissions
@@ -6341,8 +6282,6 @@ void (empty response body)
 
 
 Update conversation participant's communication by disconnecting it.
-
-
 
 Wraps PATCH /api/v2/conversations/emails/{conversationId}/participants/{participantId}/communications/{communicationId} 
 
@@ -6398,8 +6337,6 @@ except ApiException as e:
 
 Update a conversation by disconnecting all of the participants
 
-
-
 Wraps PATCH /api/v2/conversations/messages/{conversationId} 
 
 Requires ANY permissions: 
@@ -6450,8 +6387,6 @@ except ApiException as e:
 
 
 Update conversation participant
-
-
 
 Wraps PATCH /api/v2/conversations/messages/{conversationId}/participants/{participantId} 
 
@@ -6505,8 +6440,6 @@ void (empty response body)
 
 Update the attributes on a conversation participant.
 
-
-
 Wraps PATCH /api/v2/conversations/messages/{conversationId}/participants/{participantId}/attributes 
 
 Requires no permissions
@@ -6557,8 +6490,6 @@ void (empty response body)
 
 
 Update conversation participant's communication by disconnecting it.
-
-
 
 Wraps PATCH /api/v2/conversations/messages/{conversationId}/participants/{participantId}/communications/{communicationId} 
 
@@ -6614,8 +6545,6 @@ except ApiException as e:
 
 Update Facebook messaging integration
 
-
-
 Wraps PATCH /api/v2/conversations/messaging/integrations/facebook/{integrationId} 
 
 Requires ALL permissions: 
@@ -6659,6 +6588,57 @@ except ApiException as e:
 
 [**FacebookIntegration**](FacebookIntegration.html)
 
+<a name="patch_conversations_messaging_integrations_instagram_integration_id"></a>
+
+## [**InstagramIntegration**](InstagramIntegration.html) patch_conversations_messaging_integrations_instagram_integration_id(integration_id, body)
+
+
+
+Update Instagram messaging integration
+
+Wraps PATCH /api/v2/conversations/messaging/integrations/instagram/{integrationId} 
+
+Requires ALL permissions: 
+
+* messaging:integration:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+integration_id = 'integration_id_example' # str | Integration ID
+body = PureCloudPlatformClientV2.InstagramIntegrationUpdateRequest() # InstagramIntegrationUpdateRequest | InstagramIntegrationUpdateRequest
+
+try:
+    # Update Instagram messaging integration
+    api_response = api_instance.patch_conversations_messaging_integrations_instagram_integration_id(integration_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->patch_conversations_messaging_integrations_instagram_integration_id: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **integration_id** | **str**| Integration ID |  |
+| **body** | [**InstagramIntegrationUpdateRequest**](InstagramIntegrationUpdateRequest.html)| InstagramIntegrationUpdateRequest |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**InstagramIntegration**](InstagramIntegration.html)
+
 <a name="patch_conversations_messaging_integrations_open_integration_id"></a>
 
 ## [**OpenIntegration**](OpenIntegration.html) patch_conversations_messaging_integrations_open_integration_id(integration_id, body)
@@ -6668,8 +6648,6 @@ except ApiException as e:
 Update an Open messaging integration
 
 See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
-
-
 
 Wraps PATCH /api/v2/conversations/messaging/integrations/open/{integrationId} 
 
@@ -6721,8 +6699,6 @@ except ApiException as e:
 
 
 Update Twitter messaging integration
-
-
 
 Wraps PATCH /api/v2/conversations/messaging/integrations/twitter/{integrationId} 
 
@@ -6777,8 +6753,6 @@ Update or activate a WhatsApp messaging integration
 
 The following steps are required in order to fully activate a WhatsApp Integration: Initially, you will need to get an activation code by sending: an action set to Activate, and an authenticationMethod choosing from Sms or Voice. Finally, once you have been informed of an activation code on selected authenticationMethod, you will need to confirm the code by sending: an action set to Confirm, and the confirmationCode you have received from Whatsapp.
 
-
-
 Wraps PATCH /api/v2/conversations/messaging/integrations/whatsapp/{integrationId} 
 
 Requires ALL permissions: 
@@ -6829,8 +6803,6 @@ except ApiException as e:
 
 
 Update a supported content profile
-
-
 
 Wraps PATCH /api/v2/conversations/messaging/supportedcontent/{supportedContentId} 
 
@@ -6883,8 +6855,6 @@ except ApiException as e:
 
 Update Settings
 
-
-
 Wraps PATCH /api/v2/conversations/settings 
 
 Requires ANY permissions: 
@@ -6932,8 +6902,6 @@ void (empty response body)
 
 
 Index conversation properties
-
-
 
 Wraps POST /api/v2/analytics/conversations/{conversationId}/details/properties 
 
@@ -6986,7 +6954,7 @@ except ApiException as e:
 
 Query for conversation activity observations
 
-
+post_analytics_conversations_activity_query is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/analytics/conversations/activity/query 
 
@@ -7041,7 +7009,7 @@ except ApiException as e:
 
 Query for conversation aggregates asynchronously
 
-
+post_analytics_conversations_aggregates_jobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/analytics/conversations/aggregates/jobs 
 
@@ -7092,8 +7060,6 @@ except ApiException as e:
 
 Query for conversation aggregates
 
-
-
 Wraps POST /api/v2/analytics/conversations/aggregates/query 
 
 Requires ANY permissions: 
@@ -7142,8 +7108,6 @@ except ApiException as e:
 
 
 Query for conversation details asynchronously
-
-
 
 Wraps POST /api/v2/analytics/conversations/details/jobs 
 
@@ -7195,8 +7159,6 @@ except ApiException as e:
 
 Query for conversation details
 
-
-
 Wraps POST /api/v2/analytics/conversations/details/query 
 
 Requires ANY permissions: 
@@ -7246,8 +7208,6 @@ except ApiException as e:
 
 
 Attempts to manually assign a specified conversation to a specified user.  Ignores bullseye ring, PAR score, skills, and languages.
-
-
 
 Wraps POST /api/v2/conversations/{conversationId}/assign 
 
@@ -7309,8 +7269,6 @@ except ApiException as e:
 
 Creates a cobrowse session. Requires \"conversation:cobrowse:add\" (for web messaging) or \"conversation:cobrowsevoice:add\" permission.
 
-
-
 Wraps POST /api/v2/conversations/{conversationId}/cobrowse 
 
 Requires ANY permissions: 
@@ -7361,8 +7319,6 @@ except ApiException as e:
 
 Performs a full conversation teardown. Issues disconnect requests for any connected media. Applies a system wrap-up code to any participants that are pending wrap-up. This is not intended to be the normal way of ending interactions but is available in the event of problems with the application to allow a resynchronization of state across all components. It is recommended that users submit a support case if they are relying on this endpoint systematically as there is likely something that needs investigation.
 
-
-
 Wraps POST /api/v2/conversations/{conversationId}/disconnect 
 
 Requires ANY permissions: 
@@ -7411,8 +7367,6 @@ except ApiException as e:
 
 
 Create a new callback for the specified participant on the conversation.
-
-
 
 Wraps POST /api/v2/conversations/{conversationId}/participants/{participantId}/callbacks 
 
@@ -7466,8 +7420,6 @@ void (empty response body)
 
 Sends DTMF to the participant
 
-
-
 Wraps POST /api/v2/conversations/{conversationId}/participants/{participantId}/digits 
 
 Requires no permissions
@@ -7515,16 +7467,15 @@ void (empty response body)
 
 ##  post_conversation_participant_replace(conversation_id, participant_id, body)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 Replace this participant with the specified user and/or address
 
-
-
 Wraps POST /api/v2/conversations/{conversationId}/participants/{participantId}/replace 
 
-Requires no permissions
+Requires ANY permissions: 
 
+* conversation:communication:blindTransfer
 
 ### Example
 
@@ -7564,6 +7515,165 @@ except ApiException as e:
 
 void (empty response body)
 
+<a name="post_conversation_participant_replace_agent"></a>
+
+##  post_conversation_participant_replace_agent(conversation_id, participant_id, body)
+
+
+
+Replace this participant with the specified agent
+
+Wraps POST /api/v2/conversations/{conversationId}/participants/{participantId}/replace/agent 
+
+Requires ANY permissions: 
+
+* conversation:communication:blindTransfer
+* conversation:communication:blindTransferAgent
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+conversation_id = 'conversation_id_example' # str | conversation ID
+participant_id = 'participant_id_example' # str | participant ID
+body = PureCloudPlatformClientV2.TransferToAgentRequest() # TransferToAgentRequest | Transfer request
+
+try:
+    # Replace this participant with the specified agent
+    api_instance.post_conversation_participant_replace_agent(conversation_id, participant_id, body)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->post_conversation_participant_replace_agent: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversation_id** | **str**| conversation ID |  |
+| **participant_id** | **str**| participant ID |  |
+| **body** | [**TransferToAgentRequest**](TransferToAgentRequest.html)| Transfer request |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
+
+<a name="post_conversation_participant_replace_external"></a>
+
+##  post_conversation_participant_replace_external(conversation_id, participant_id, body)
+
+
+
+Replace this participant with the an external contact
+
+Wraps POST /api/v2/conversations/{conversationId}/participants/{participantId}/replace/external 
+
+Requires ANY permissions: 
+
+* conversation:communication:blindTransfer
+* conversation:communication:blindTransferExternal
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+conversation_id = 'conversation_id_example' # str | conversation ID
+participant_id = 'participant_id_example' # str | participant ID
+body = PureCloudPlatformClientV2.TransferToExternalRequest() # TransferToExternalRequest | Transfer request
+
+try:
+    # Replace this participant with the an external contact
+    api_instance.post_conversation_participant_replace_external(conversation_id, participant_id, body)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->post_conversation_participant_replace_external: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversation_id** | **str**| conversation ID |  |
+| **participant_id** | **str**| participant ID |  |
+| **body** | [**TransferToExternalRequest**](TransferToExternalRequest.html)| Transfer request |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
+
+<a name="post_conversation_participant_replace_queue"></a>
+
+##  post_conversation_participant_replace_queue(conversation_id, participant_id, body)
+
+
+
+Replace this participant with the specified queue
+
+Wraps POST /api/v2/conversations/{conversationId}/participants/{participantId}/replace/queue 
+
+Requires ANY permissions: 
+
+* conversation:communication:blindTransfer
+* conversation:communication:blindTransferQueue
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+conversation_id = 'conversation_id_example' # str | conversation ID
+participant_id = 'participant_id_example' # str | participant ID
+body = PureCloudPlatformClientV2.TransferToQueueRequest() # TransferToQueueRequest | Transfer request
+
+try:
+    # Replace this participant with the specified queue
+    api_instance.post_conversation_participant_replace_queue(conversation_id, participant_id, body)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->post_conversation_participant_replace_queue: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversation_id** | **str**| conversation ID |  |
+| **participant_id** | **str**| participant ID |  |
+| **body** | [**TransferToQueueRequest**](TransferToQueueRequest.html)| Transfer request |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
+
 <a name="post_conversation_participant_secureivrsessions"></a>
 
 ## [**SecureSession**](SecureSession.html) post_conversation_participant_secureivrsessions(conversation_id, participant_id, body=body)
@@ -7571,8 +7681,6 @@ void (empty response body)
 
 
 Create secure IVR session. Only a participant in the conversation can invoke a secure IVR.
-
-
 
 Wraps POST /api/v2/conversations/{conversationId}/participants/{participantId}/secureivrsessions 
 
@@ -7626,8 +7734,6 @@ except ApiException as e:
 
 Place a new call as part of a callback conversation.
 
-
-
 Wraps POST /api/v2/conversations/calls/{conversationId} 
 
 Requires no permissions
@@ -7677,8 +7783,6 @@ except ApiException as e:
 
 
 Listen in on the conversation from the point of view of a given participant while speaking to just the given participant.
-
-
 
 Wraps POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/coach 
 
@@ -7730,8 +7834,6 @@ void (empty response body)
 
 Apply wrap-up for this conversation communication
 
-
-
 Wraps POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup 
 
 Requires ANY permissions: 
@@ -7782,16 +7884,15 @@ void (empty response body)
 
 ## [**ConsultTransferResponse**](ConsultTransferResponse.html) post_conversations_call_participant_consult(conversation_id, participant_id, body)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 Initiate and update consult transfer
 
-
-
 Wraps POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult 
 
-Requires no permissions
+Requires ANY permissions: 
 
+* conversation:communication:consultTransfer
 
 ### Example
 
@@ -7832,6 +7933,168 @@ except ApiException as e:
 
 [**ConsultTransferResponse**](ConsultTransferResponse.html)
 
+<a name="post_conversations_call_participant_consult_agent"></a>
+
+## [**ConsultTransferResponse**](ConsultTransferResponse.html) post_conversations_call_participant_consult_agent(conversation_id, participant_id, body)
+
+
+
+Initiate a consult transfer to an agent
+
+Wraps POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult/agent 
+
+Requires ANY permissions: 
+
+* conversation:communication:consultTransfer
+* conversation:communication:consultTransferAgent
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+conversation_id = 'conversation_id_example' # str | conversationId
+participant_id = 'participant_id_example' # str | participantId
+body = PureCloudPlatformClientV2.ConsultTransferToAgent() # ConsultTransferToAgent | Destination agent & initial speak to
+
+try:
+    # Initiate a consult transfer to an agent
+    api_response = api_instance.post_conversations_call_participant_consult_agent(conversation_id, participant_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->post_conversations_call_participant_consult_agent: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversation_id** | **str**| conversationId |  |
+| **participant_id** | **str**| participantId |  |
+| **body** | [**ConsultTransferToAgent**](ConsultTransferToAgent.html)| Destination agent &amp; initial speak to |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**ConsultTransferResponse**](ConsultTransferResponse.html)
+
+<a name="post_conversations_call_participant_consult_external"></a>
+
+## [**ConsultTransferResponse**](ConsultTransferResponse.html) post_conversations_call_participant_consult_external(conversation_id, participant_id, body)
+
+
+
+Initiate a consult transfer to an external contact
+
+Wraps POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult/external 
+
+Requires ANY permissions: 
+
+* conversation:communication:consultTransfer
+* conversation:communication:consultTransferExternal
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+conversation_id = 'conversation_id_example' # str | conversationId
+participant_id = 'participant_id_example' # str | participantId
+body = PureCloudPlatformClientV2.ConsultTransferToExternal() # ConsultTransferToExternal | Destination address & initial speak to
+
+try:
+    # Initiate a consult transfer to an external contact
+    api_response = api_instance.post_conversations_call_participant_consult_external(conversation_id, participant_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->post_conversations_call_participant_consult_external: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversation_id** | **str**| conversationId |  |
+| **participant_id** | **str**| participantId |  |
+| **body** | [**ConsultTransferToExternal**](ConsultTransferToExternal.html)| Destination address &amp; initial speak to |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**ConsultTransferResponse**](ConsultTransferResponse.html)
+
+<a name="post_conversations_call_participant_consult_queue"></a>
+
+## [**ConsultTransferResponse**](ConsultTransferResponse.html) post_conversations_call_participant_consult_queue(conversation_id, participant_id, body)
+
+
+
+Initiate a consult transfer to a queue
+
+Wraps POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult/queue 
+
+Requires ANY permissions: 
+
+* conversation:communication:consultTransfer
+* conversation:communication:consultTransferQueue
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+conversation_id = 'conversation_id_example' # str | conversationId
+participant_id = 'participant_id_example' # str | participantId
+body = PureCloudPlatformClientV2.ConsultTransferToQueue() # ConsultTransferToQueue | Destination queue & initial speak to
+
+try:
+    # Initiate a consult transfer to a queue
+    api_response = api_instance.post_conversations_call_participant_consult_queue(conversation_id, participant_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->post_conversations_call_participant_consult_queue: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversation_id** | **str**| conversationId |  |
+| **participant_id** | **str**| participantId |  |
+| **body** | [**ConsultTransferToQueue**](ConsultTransferToQueue.html)| Destination queue &amp; initial speak to |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**ConsultTransferResponse**](ConsultTransferResponse.html)
+
 <a name="post_conversations_call_participant_monitor"></a>
 
 ##  post_conversations_call_participant_monitor(conversation_id, participant_id)
@@ -7839,8 +8102,6 @@ except ApiException as e:
 
 
 Listen in on the conversation from the point of view of a given participant.
-
-
 
 Wraps POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/monitor 
 
@@ -7888,16 +8149,15 @@ void (empty response body)
 
 ##  post_conversations_call_participant_replace(conversation_id, participant_id, body)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 Replace this participant with the specified user and/or address
 
-
-
 Wraps POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/replace 
 
-Requires no permissions
+Requires ANY permissions: 
 
+* conversation:communication:blindTransfer
 
 ### Example
 
@@ -7944,8 +8204,6 @@ void (empty response body)
 
 
 Add participants to a conversation
-
-
 
 Wraps POST /api/v2/conversations/calls/{conversationId}/participants 
 
@@ -7997,8 +8255,6 @@ except ApiException as e:
 
 Apply wrap-up for this conversation communication
 
-
-
 Wraps POST /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup 
 
 Requires ANY permissions: 
@@ -8049,16 +8305,15 @@ void (empty response body)
 
 ##  post_conversations_callback_participant_replace(conversation_id, participant_id, body)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 Replace this participant with the specified user and/or address
 
-
-
 Wraps POST /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/replace 
 
-Requires no permissions
+Requires ANY permissions: 
 
+* conversation:communication:blindTransfer
 
 ### Example
 
@@ -8105,8 +8360,6 @@ void (empty response body)
 
 
 Create a Callback
-
-
 
 Wraps POST /api/v2/conversations/callbacks 
 
@@ -8157,8 +8410,6 @@ except ApiException as e:
 
 Disconnect multiple scheduled callbacks
 
-
-
 Wraps POST /api/v2/conversations/callbacks/bulk/disconnect 
 
 Requires ANY permissions: 
@@ -8206,8 +8457,6 @@ void (empty response body)
 
 
 Update multiple scheduled callbacks
-
-
 
 Wraps POST /api/v2/conversations/callbacks/bulk/update 
 
@@ -8258,8 +8507,6 @@ except ApiException as e:
 
 Create a call conversation
 
-
-
 Wraps POST /api/v2/conversations/calls 
 
 Requires ANY permissions: 
@@ -8308,8 +8555,6 @@ except ApiException as e:
 
 
 Send a message on behalf of a communication in a chat conversation.
-
-
 
 Wraps POST /api/v2/conversations/chats/{conversationId}/communications/{communicationId}/messages 
 
@@ -8363,8 +8608,6 @@ except ApiException as e:
 
 Send a typing-indicator on behalf of a communication in a chat conversation.
 
-
-
 Wraps POST /api/v2/conversations/chats/{conversationId}/communications/{communicationId}/typing 
 
 Requires no permissions
@@ -8414,8 +8657,6 @@ except ApiException as e:
 
 
 Apply wrap-up for this conversation communication
-
-
 
 Wraps POST /api/v2/conversations/chats/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup 
 
@@ -8467,16 +8708,15 @@ void (empty response body)
 
 ##  post_conversations_chat_participant_replace(conversation_id, participant_id, body)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 Replace this participant with the specified user and/or address
 
-
-
 Wraps POST /api/v2/conversations/chats/{conversationId}/participants/{participantId}/replace 
 
-Requires no permissions
+Requires ANY permissions: 
 
+* conversation:communication:blindTransfer
 
 ### Example
 
@@ -8523,8 +8763,6 @@ void (empty response body)
 
 
 Create a web chat conversation
-
-
 
 Wraps POST /api/v2/conversations/chats 
 
@@ -8574,8 +8812,6 @@ except ApiException as e:
 
 
 Apply wrap-up for this conversation communication
-
-
 
 Wraps POST /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup 
 
@@ -8627,16 +8863,15 @@ void (empty response body)
 
 ##  post_conversations_cobrowsesession_participant_replace(conversation_id, participant_id, body=body)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 Replace this participant with the specified user and/or address
 
-
-
 Wraps POST /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/replace 
 
-Requires no permissions
+Requires ANY permissions: 
 
+* conversation:communication:blindTransfer
 
 ### Example
 
@@ -8683,8 +8918,6 @@ void (empty response body)
 
 
 Send an email to an external conversation. An external conversation is one where the provider is not PureCloud based. This endpoint allows the sender of the external email to reply or send a new message to the existing conversation. The new message will be treated as part of the existing conversation and chained to it.
-
-
 
 Wraps POST /api/v2/conversations/emails/{conversationId}/inboundmessages 
 
@@ -8736,8 +8969,6 @@ except ApiException as e:
 
 Send an email reply
 
-
-
 Wraps POST /api/v2/conversations/emails/{conversationId}/messages 
 
 Requires no permissions
@@ -8787,8 +9018,6 @@ except ApiException as e:
 
 
 Copy attachments from an email message to the current draft.
-
-
 
 Wraps POST /api/v2/conversations/emails/{conversationId}/messages/draft/attachments/copy 
 
@@ -8840,8 +9069,6 @@ except ApiException as e:
 
 Apply wrap-up for this conversation communication
 
-
-
 Wraps POST /api/v2/conversations/emails/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup 
 
 Requires ANY permissions: 
@@ -8892,16 +9119,15 @@ void (empty response body)
 
 ##  post_conversations_email_participant_replace(conversation_id, participant_id, body)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 Replace this participant with the specified user and/or address
 
-
-
 Wraps POST /api/v2/conversations/emails/{conversationId}/participants/{participantId}/replace 
 
-Requires no permissions
+Requires ANY permissions: 
 
+* conversation:communication:blindTransfer
 
 ### Example
 
@@ -8951,8 +9177,6 @@ Create an email conversation
 
 If the direction of the request is INBOUND, this will create an external conversation with a third party provider. If the direction of the the request is OUTBOUND, this will create a conversation to send outbound emails on behalf of a queue.
 
-
-
 Wraps POST /api/v2/conversations/emails 
 
 Requires ANY permissions: 
@@ -9001,8 +9225,6 @@ except ApiException as e:
 
 
 Create an email conversation, per API
-
-
 
 Wraps POST /api/v2/conversations/emails/agentless 
 
@@ -9054,8 +9276,6 @@ except ApiException as e:
 
 Create Fax Conversation
 
-
-
 Wraps POST /api/v2/conversations/faxes 
 
 Requires no permissions
@@ -9103,8 +9323,6 @@ except ApiException as e:
 
 
 Setup configurations for encryption key creation
-
-
 
 Wraps POST /api/v2/conversations/keyconfigurations 
 
@@ -9154,8 +9372,6 @@ except ApiException as e:
 
 
 Validate encryption key configurations without saving it
-
-
 
 Wraps POST /api/v2/conversations/keyconfigurations/validate 
 
@@ -9207,8 +9423,6 @@ except ApiException as e:
 Send message
 
 Send message on existing conversation/communication. Only one message body field can be accepted, per request. Example: 1 textBody, 1 mediaId, 1 stickerId, or 1 messageTemplate.
-
-
 
 Wraps POST /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages 
 
@@ -9268,8 +9482,6 @@ Create media
 
 See https://developer.genesys.cloud/api/rest/v2/conversations/messaging-media-upload for example usage.
 
-
-
 Wraps POST /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages/media 
 
 Requires ANY permissions: 
@@ -9323,8 +9535,6 @@ except ApiException as e:
 Send message typing event
 
 Send message typing event for existing conversation/communication.
-
-
 
 Wraps POST /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/typing 
 
@@ -9381,8 +9591,6 @@ Get messages in batch
 
 The path parameter [conversationId] should contain the conversationId of the conversation being filtered. The body should contain the messageId(s) of messages being requested. For example: [\"a3069a33b-bbb1-4703-9d68-061d9e9db96e\", \"55bc6be3-078c-4a49-a4e6-1e05776ed7e8\"]
 
-
-
 Wraps POST /api/v2/conversations/messages/{conversationId}/messages/bulk 
 
 Requires ANY permissions: 
@@ -9436,8 +9644,6 @@ except ApiException as e:
 
 
 Apply wrap-up for this conversation communication
-
-
 
 Wraps POST /api/v2/conversations/messages/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup 
 
@@ -9493,7 +9699,7 @@ void (empty response body)
 
 Listen in on the conversation from the point of view of a given participant.
 
-
+post_conversations_message_participant_monitor is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/conversations/messages/{conversationId}/participants/{participantId}/monitor 
 
@@ -9541,16 +9747,15 @@ void (empty response body)
 
 ##  post_conversations_message_participant_replace(conversation_id, participant_id, body)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 Replace this participant with the specified user and/or address
 
-
-
 Wraps POST /api/v2/conversations/messages/{conversationId}/participants/{participantId}/replace 
 
-Requires no permissions
+Requires ANY permissions: 
 
+* conversation:communication:blindTransfer
 
 ### Example
 
@@ -9599,8 +9804,6 @@ void (empty response body)
 Create an outbound messaging conversation.
 
 If there is an existing conversation between the remote address and the address associated with the queue specified in createOutboundRequest then the result of this request depends on the state of that conversation and the useExistingConversation field of createOutboundRequest. If the existing conversation is in alerting or connected state, then the request will fail. If the existing conversation is disconnected but still within the conversation window then the request will fail unless useExistingConversation is set to true.
-
-
 
 Wraps POST /api/v2/conversations/messages 
 
@@ -9653,8 +9856,6 @@ Send an agentless outbound message
 
 Send an agentless (api participant) outbound message using a client credential grant. In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. If there is already a connected conversation between the 'fromAddress' and 'toAddress' specified, the 'useExistingActiveConversation' param can be used to barge in to the ongoing conversation.
 
-
-
 Wraps POST /api/v2/conversations/messages/agentless 
 
 Requires ALL permissions: 
@@ -9706,8 +9907,6 @@ Send an inbound Open Message
 
 Send an inbound message to an Open Messaging integration. In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. This will either generate a new Conversation, or be a part of an existing conversation. See https://developer.genesys.cloud/api/digital/openmessaging/ for example usage.
 
-
-
 Wraps POST /api/v2/conversations/messages/inbound/open 
 
 Requires ALL permissions: 
@@ -9757,8 +9956,6 @@ except ApiException as e:
 
 Create a Facebook Integration
 
-
-
 Wraps POST /api/v2/conversations/messaging/integrations/facebook 
 
 Requires ALL permissions: 
@@ -9800,6 +9997,55 @@ except ApiException as e:
 
 [**FacebookIntegration**](FacebookIntegration.html)
 
+<a name="post_conversations_messaging_integrations_instagram"></a>
+
+## [**InstagramIntegration**](InstagramIntegration.html) post_conversations_messaging_integrations_instagram(body)
+
+
+
+Create Instagram Integration
+
+Wraps POST /api/v2/conversations/messaging/integrations/instagram 
+
+Requires ALL permissions: 
+
+* messaging:conversationInstagramIntegration:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+body = PureCloudPlatformClientV2.InstagramIntegrationRequest() # InstagramIntegrationRequest | InstagramIntegrationRequest
+
+try:
+    # Create Instagram Integration
+    api_response = api_instance.post_conversations_messaging_integrations_instagram(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->post_conversations_messaging_integrations_instagram: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**InstagramIntegrationRequest**](InstagramIntegrationRequest.html)| InstagramIntegrationRequest |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**InstagramIntegration**](InstagramIntegration.html)
+
 <a name="post_conversations_messaging_integrations_line"></a>
 
 ## [**LineIntegration**](LineIntegration.html) post_conversations_messaging_integrations_line(body)
@@ -9807,8 +10053,6 @@ except ApiException as e:
 
 
 Create a LINE messenger Integration
-
-
 
 Wraps POST /api/v2/conversations/messaging/integrations/line 
 
@@ -9861,8 +10105,6 @@ Create an Open messaging integration
 
 See https://developer.genesys.cloud/api/digital/openmessaging/ for more information.
 
-
-
 Wraps POST /api/v2/conversations/messaging/integrations/open 
 
 Requires ALL permissions: 
@@ -9911,8 +10153,6 @@ except ApiException as e:
 
 
 Create a Twitter Integration
-
-
 
 Wraps POST /api/v2/conversations/messaging/integrations/twitter 
 
@@ -9965,8 +10205,6 @@ Create a WhatsApp Integration
 
 You must be approved by WhatsApp to use this feature. Your approved e164-formatted phone number and valid WhatsApp certificate for your number are required. Your WhatsApp certificate must have valid base64 encoding. Please paste carefully and do not add any leading or trailing spaces. Do not alter any characters. An integration must be activated within 7 days of certificate generation. If you cannot complete the addition and activation of the number within 7 days, please obtain a new certificate before creating the integration. Integrations created with an invalid number or certificate may immediately incur additional integration fees. Please carefully enter your number and certificate as described.
 
-
-
 Wraps POST /api/v2/conversations/messaging/integrations/whatsapp 
 
 Requires ALL permissions: 
@@ -10015,8 +10253,6 @@ except ApiException as e:
 
 
 Create a Supported Content profile
-
-
 
 Wraps POST /api/v2/conversations/messaging/supportedcontent 
 
@@ -10067,8 +10303,6 @@ except ApiException as e:
 
 Search conversations
 
-
-
 Wraps POST /api/v2/conversations/participants/attributes/search 
 
 Requires ANY permissions: 
@@ -10117,8 +10351,6 @@ except ApiException as e:
 
 
 Apply wrap-up for this conversation communication
-
-
 
 Wraps POST /api/v2/conversations/screenshares/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup 
 
@@ -10174,8 +10406,6 @@ void (empty response body)
 
 Apply wrap-up for this conversation communication
 
-
-
 Wraps POST /api/v2/conversations/socials/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup 
 
 Requires ANY permissions: 
@@ -10229,8 +10459,6 @@ void (empty response body)
 
 
 Apply wrap-up for this conversation communication
-
-
 
 Wraps POST /api/v2/conversations/videos/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup 
 
@@ -10286,8 +10514,6 @@ void (empty response body)
 
 Set flagged reason on conversation participant to indicate bad conversation quality.
 
-
-
 Wraps PUT /api/v2/conversations/{conversationId}/participants/{participantId}/flaggedreason 
 
 Requires no permissions
@@ -10336,8 +10562,6 @@ void (empty response body)
 
 
 Set the secure attributes on a conversation.
-
-
 
 Wraps PUT /api/v2/conversations/{conversationId}/secureattributes 
 
@@ -10390,8 +10614,6 @@ except ApiException as e:
 
 Update the tags on a conversation.
 
-
-
 Wraps PUT /api/v2/conversations/{conversationId}/tags 
 
 Requires ANY permissions: 
@@ -10442,8 +10664,6 @@ except ApiException as e:
 
 
 Set uuiData to be sent on future commands.
-
-
 
 Wraps PUT /api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId}/uuidata 
 
@@ -10499,8 +10719,6 @@ except ApiException as e:
 
 Update a conversation by setting its recording state
 
-
-
 Wraps PUT /api/v2/conversations/calls/{conversationId}/recordingstate 
 
 Requires ANY permissions: 
@@ -10551,8 +10769,6 @@ except ApiException as e:
 
 
 Update a conversation by setting its recording state
-
-
 
 Wraps PUT /api/v2/conversations/callbacks/{conversationId}/recordingstate 
 
@@ -10605,8 +10821,6 @@ except ApiException as e:
 
 Update a conversation by setting its recording state
 
-
-
 Wraps PUT /api/v2/conversations/chats/{conversationId}/recordingstate 
 
 Requires ANY permissions: 
@@ -10657,8 +10871,6 @@ except ApiException as e:
 
 
 Update a conversation by setting its recording state
-
-
 
 Wraps PUT /api/v2/conversations/cobrowsesessions/{conversationId}/recordingstate 
 
@@ -10711,8 +10923,6 @@ except ApiException as e:
 
 Update conversation draft reply
 
-
-
 Wraps PUT /api/v2/conversations/emails/{conversationId}/messages/draft 
 
 Requires no permissions
@@ -10762,8 +10972,6 @@ except ApiException as e:
 
 
 Update a conversation by setting its recording state
-
-
 
 Wraps PUT /api/v2/conversations/emails/{conversationId}/recordingstate 
 
@@ -10816,8 +11024,6 @@ except ApiException as e:
 
 Update the encryption key configurations
 
-
-
 Wraps PUT /api/v2/conversations/keyconfigurations/{keyconfigurationsId} 
 
 Requires ANY permissions: 
@@ -10869,8 +11075,6 @@ except ApiException as e:
 
 Update a conversation by setting its recording state
 
-
-
 Wraps PUT /api/v2/conversations/messages/{conversationId}/recordingstate 
 
 Requires ANY permissions: 
@@ -10921,8 +11125,6 @@ except ApiException as e:
 
 
 Update a LINE messenger integration
-
-
 
 Wraps PUT /api/v2/conversations/messaging/integrations/line/{integrationId} 
 
@@ -10977,8 +11179,6 @@ Set the organization's default supported content profile that may be assigned to
 
 When an integration is created a supported content ID may be assigned to it. If the supported content ID is not supplied, the default supported content profile will be assigned to it.
 
-
-
 Wraps PUT /api/v2/conversations/messaging/supportedcontent/default 
 
 Requires ALL permissions: 
@@ -11030,8 +11230,6 @@ Update conversation threading window timeline for each messaging type
 
 PUT Conversation messaging threading timeline is intended to set the conversation threading settings for ALL messengerTypes. If you omit a messengerType in the request body then the setting for that messengerType will use the platform default value. The PUT replaces the existing setting(s) that were previously set for each messengerType.
 
-
-
 Wraps PUT /api/v2/conversations/messaging/threadingtimeline 
 
 Requires ALL permissions: 
@@ -11080,8 +11278,6 @@ except ApiException as e:
 
 
 Update a conversation by setting its recording state
-
-
 
 Wraps PUT /api/v2/conversations/screenshares/{conversationId}/recordingstate 
 
@@ -11134,8 +11330,6 @@ except ApiException as e:
 
 Update a conversation by setting its recording state
 
-
-
 Wraps PUT /api/v2/conversations/socials/{conversationId}/recordingstate 
 
 Requires ANY permissions: 
@@ -11186,8 +11380,6 @@ except ApiException as e:
 
 
 Update a conversation by setting its recording state
-
-
 
 Wraps PUT /api/v2/conversations/videos/{conversationId}/recordingstate 
 

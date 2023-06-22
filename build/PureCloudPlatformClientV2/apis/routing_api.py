@@ -1479,11 +1479,11 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-	# Preview Endpoint
     def delete_routing_utilization_tag(self, tag_id: str, **kwargs) -> None:
         """
         Delete an utilization tag
         
+	    delete_routing_utilization_tag is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -6008,11 +6008,11 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-	# Preview Endpoint
     def get_routing_utilization_tag(self, tag_id: str, **kwargs) -> 'UtilizationTag':
         """
         Get details about this utilization tag
         
+	    get_routing_utilization_tag is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -6087,11 +6087,11 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-	# Preview Endpoint
     def get_routing_utilization_tag_agents(self, tag_id: str, **kwargs) -> List[object]:
         """
         Get list of agent ids associated with a utilization tag
         
+	    get_routing_utilization_tag_agents is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -6166,11 +6166,11 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-	# Preview Endpoint
     def get_routing_utilization_tags(self, **kwargs) -> 'UtilizationTagEntityListing':
         """
         Get list of utilization tags
         
+	    get_routing_utilization_tags is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -8131,11 +8131,11 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-	# Preview Endpoint
     def post_analytics_routing_activity_query(self, body: 'RoutingActivityQuery', **kwargs) -> 'RoutingActivityResponse':
         """
         Query for user activity observations
         
+	    post_analytics_routing_activity_query is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -9648,11 +9648,11 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-	# Preview Endpoint
     def post_routing_sms_phonenumbers_import(self, body: 'SmsPhoneNumberImport', **kwargs) -> 'SmsPhoneNumber':
         """
         Imports a phone number for SMS
         
+	    post_routing_sms_phonenumbers_import is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -9727,11 +9727,11 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-	# Preview Endpoint
     def post_routing_utilization_tags(self, body: 'CreateUtilizationTagRequest', **kwargs) -> 'UtilizationTag':
         """
         Create an utilization tag
         
+	    post_routing_utilization_tags is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

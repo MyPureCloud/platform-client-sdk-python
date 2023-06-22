@@ -150,8 +150,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 Delete attempt limits
 
-
-
 Wraps DELETE /api/v2/outbound/attemptlimits/{attemptLimitsId} 
 
 Requires ANY permissions: 
@@ -199,8 +197,6 @@ void (empty response body)
 
 
 Delete callable time set
-
-
 
 Wraps DELETE /api/v2/outbound/callabletimesets/{callableTimeSetId} 
 
@@ -250,8 +246,6 @@ void (empty response body)
 
 Delete a dialer call analysis response set.
 
-
-
 Wraps DELETE /api/v2/outbound/callanalysisresponsesets/{callAnalysisSetId} 
 
 Requires ANY permissions: 
@@ -299,8 +293,6 @@ void (empty response body)
 
 
 Delete a campaign.
-
-
 
 Wraps DELETE /api/v2/outbound/campaigns/{campaignId} 
 
@@ -351,8 +343,6 @@ except ApiException as e:
 
 Reset campaign progress and recycle the campaign
 
-
-
 Wraps DELETE /api/v2/outbound/campaigns/{campaignId}/progress 
 
 Requires ANY permissions: 
@@ -400,8 +390,6 @@ void (empty response body)
 
 
 Delete Campaign Rule
-
-
 
 Wraps DELETE /api/v2/outbound/campaignrules/{campaignRuleId} 
 
@@ -451,8 +439,6 @@ void (empty response body)
 
 Delete a contact list.
 
-
-
 Wraps DELETE /api/v2/outbound/contactlists/{contactListId} 
 
 Requires ANY permissions: 
@@ -500,8 +486,6 @@ void (empty response body)
 
 
 Delete a contact.
-
-
 
 Wraps DELETE /api/v2/outbound/contactlists/{contactListId}/contacts/{contactId} 
 
@@ -553,8 +537,6 @@ void (empty response body)
 
 Delete contacts from a contact list.
 
-
-
 Wraps DELETE /api/v2/outbound/contactlists/{contactListId}/contacts 
 
 Requires ANY permissions: 
@@ -605,8 +587,6 @@ void (empty response body)
 
 Delete Contact List Filter
 
-
-
 Wraps DELETE /api/v2/outbound/contactlistfilters/{contactListFilterId} 
 
 Requires ANY permissions: 
@@ -654,8 +634,6 @@ void (empty response body)
 
 
 Delete multiple contact lists.
-
-
 
 Wraps DELETE /api/v2/outbound/contactlists 
 
@@ -705,8 +683,6 @@ void (empty response body)
 
 Delete an Outbound Digital Rule Set
 
-
-
 Wraps DELETE /api/v2/outbound/digitalrulesets/{digitalRuleSetId} 
 
 Requires ANY permissions: 
@@ -754,8 +730,6 @@ void (empty response body)
 
 
 Delete dialer DNC list
-
-
 
 Wraps DELETE /api/v2/outbound/dnclists/{dncListId} 
 
@@ -806,8 +780,6 @@ void (empty response body)
 Deletes all or expired custom exclusion column entries from a DNC list.
 
 This operation is only for Internal DNC lists of custom exclusion column entries
-
-
 
 Wraps DELETE /api/v2/outbound/dnclists/{dncListId}/customexclusioncolumns 
 
@@ -861,8 +833,6 @@ Deletes all or expired email addresses from a DNC list.
 
 This operation is Only for Internal DNC lists of email addresses
 
-
-
 Wraps DELETE /api/v2/outbound/dnclists/{dncListId}/emailaddresses 
 
 Requires ANY permissions: 
@@ -915,8 +885,6 @@ Deletes all or expired phone numbers from a DNC list.
 
 This operation is Only for Internal DNC lists of phone numbers
 
-
-
 Wraps DELETE /api/v2/outbound/dnclists/{dncListId}/phonenumbers 
 
 Requires ANY permissions: 
@@ -966,8 +934,6 @@ void (empty response body)
 
 
 Delete an Outbound Messaging Campaign
-
-
 
 Wraps DELETE /api/v2/outbound/messagingcampaigns/{messagingCampaignId} 
 
@@ -1019,8 +985,6 @@ except ApiException as e:
 
 Reset messaging campaign progress and recycle the messaging campaign
 
-
-
 Wraps DELETE /api/v2/outbound/messagingcampaigns/{messagingCampaignId}/progress 
 
 Requires ANY permissions: 
@@ -1070,8 +1034,6 @@ void (empty response body)
 
 Delete a Rule Set.
 
-
-
 Wraps DELETE /api/v2/outbound/rulesets/{ruleSetId} 
 
 Requires ANY permissions: 
@@ -1119,8 +1081,6 @@ void (empty response body)
 
 
 Delete a dialer campaign schedule.
-
-
 
 Wraps DELETE /api/v2/outbound/schedules/campaigns/{campaignId} 
 
@@ -1170,8 +1130,6 @@ void (empty response body)
 
 Delete an email campaign schedule.
 
-
-
 Wraps DELETE /api/v2/outbound/schedules/emailcampaigns/{emailCampaignId} 
 
 Requires ANY permissions: 
@@ -1219,8 +1177,6 @@ void (empty response body)
 
 
 Delete a messaging campaign schedule.
-
-
 
 Wraps DELETE /api/v2/outbound/schedules/messagingcampaigns/{messagingCampaignId} 
 
@@ -1270,8 +1226,6 @@ void (empty response body)
 
 Delete a dialer sequence schedule.
 
-
-
 Wraps DELETE /api/v2/outbound/schedules/sequences/{sequenceId} 
 
 Requires ANY permissions: 
@@ -1319,8 +1273,6 @@ void (empty response body)
 
 
 Delete a dialer campaign sequence.
-
-
 
 Wraps DELETE /api/v2/outbound/sequences/{sequenceId} 
 
@@ -1370,8 +1322,6 @@ void (empty response body)
 
 Get attempt limits
 
-
-
 Wraps GET /api/v2/outbound/attemptlimits/{attemptLimitsId} 
 
 Requires ANY permissions: 
@@ -1420,8 +1370,6 @@ except ApiException as e:
 
 
 Query attempt limits list
-
-
 
 Wraps GET /api/v2/outbound/attemptlimits 
 
@@ -1484,8 +1432,6 @@ except ApiException as e:
 
 Get callable time set
 
-
-
 Wraps GET /api/v2/outbound/callabletimesets/{callableTimeSetId} 
 
 Requires ANY permissions: 
@@ -1534,8 +1480,6 @@ except ApiException as e:
 
 
 Query callable time set list
-
-
 
 Wraps GET /api/v2/outbound/callabletimesets 
 
@@ -1598,8 +1542,6 @@ except ApiException as e:
 
 Get a dialer call analysis response set.
 
-
-
 Wraps GET /api/v2/outbound/callanalysisresponsesets/{callAnalysisSetId} 
 
 Requires ANY permissions: 
@@ -1648,8 +1590,6 @@ except ApiException as e:
 
 
 Query a list of dialer call analysis response sets.
-
-
 
 Wraps GET /api/v2/outbound/callanalysisresponsesets 
 
@@ -1712,8 +1652,6 @@ except ApiException as e:
 
 Get dialer campaign.
 
-
-
 Wraps GET /api/v2/outbound/campaigns/{campaignId} 
 
 Requires ANY permissions: 
@@ -1762,8 +1700,6 @@ except ApiException as e:
 
 
 Get a preview of how agents will be mapped to this campaign's contact list.
-
-
 
 Wraps GET /api/v2/outbound/campaigns/{campaignId}/agentownedmappingpreview/results 
 
@@ -1816,8 +1752,6 @@ except ApiException as e:
 
 Get campaign diagnostics
 
-
-
 Wraps GET /api/v2/outbound/campaigns/{campaignId}/diagnostics 
 
 Requires ANY permissions: 
@@ -1866,8 +1800,6 @@ except ApiException as e:
 
 
 Get dialer campaign interactions.
-
-
 
 Wraps GET /api/v2/outbound/campaigns/{campaignId}/interactions 
 
@@ -1918,8 +1850,6 @@ except ApiException as e:
 
 Get campaign progress
 
-
-
 Wraps GET /api/v2/outbound/campaigns/{campaignId}/progress 
 
 Requires ANY permissions: 
@@ -1968,8 +1898,6 @@ except ApiException as e:
 
 
 Get statistics about a Dialer Campaign
-
-
 
 Wraps GET /api/v2/outbound/campaigns/{campaignId}/stats 
 
@@ -2020,8 +1948,6 @@ except ApiException as e:
 
 Get Campaign Rule
 
-
-
 Wraps GET /api/v2/outbound/campaignrules/{campaignRuleId} 
 
 Requires ANY permissions: 
@@ -2070,8 +1996,6 @@ except ApiException as e:
 
 
 Query Campaign Rule list
-
-
 
 Wraps GET /api/v2/outbound/campaignrules 
 
@@ -2133,8 +2057,6 @@ except ApiException as e:
 
 
 Query a list of dialer campaigns.
-
-
 
 Wraps GET /api/v2/outbound/campaigns 
 
@@ -2209,8 +2131,6 @@ except ApiException as e:
 
 Query across all types of campaigns by division
 
-
-
 Wraps GET /api/v2/outbound/campaigns/all 
 
 Requires ANY permissions: 
@@ -2273,8 +2193,6 @@ except ApiException as e:
 
 
 Query across all types of campaigns
-
-
 
 Wraps GET /api/v2/outbound/campaigns/all/divisionviews 
 
@@ -2341,8 +2259,6 @@ Get a basic Campaign information object
 
 This returns a simplified version of a Campaign, consisting of name and division.
 
-
-
 Wraps GET /api/v2/outbound/campaigns/divisionviews/{campaignId} 
 
 Requires ALL permissions: 
@@ -2393,8 +2309,6 @@ except ApiException as e:
 Query a list of basic Campaign information objects
 
 This returns a simplified version of a Campaign, consisting of name and division.
-
-
 
 Wraps GET /api/v2/outbound/campaigns/divisionviews 
 
@@ -2457,8 +2371,6 @@ except ApiException as e:
 
 Get a dialer contact list.
 
-
-
 Wraps GET /api/v2/outbound/contactlists/{contactListId} 
 
 Requires ANY permissions: 
@@ -2512,8 +2424,6 @@ except ApiException as e:
 
 Get a contact.
 
-
-
 Wraps GET /api/v2/outbound/contactlists/{contactListId}/contacts/{contactId} 
 
 Requires ANY permissions: 
@@ -2564,8 +2474,6 @@ except ApiException as e:
 
 
 Get the URI of a contact list export.
-
-
 
 Wraps GET /api/v2/outbound/contactlists/{contactListId}/export 
 
@@ -2619,8 +2527,6 @@ except ApiException as e:
 
 Get dialer contactList import status.
 
-
-
 Wraps GET /api/v2/outbound/contactlists/{contactListId}/importstatus 
 
 Requires ANY permissions: 
@@ -2669,8 +2575,6 @@ except ApiException as e:
 
 
 Preview the result of applying Automatic Time Zone Mapping to a contact list
-
-
 
 Wraps GET /api/v2/outbound/contactlists/{contactListId}/timezonemappingpreview 
 
@@ -2721,8 +2625,6 @@ except ApiException as e:
 
 Get Contact list filter
 
-
-
 Wraps GET /api/v2/outbound/contactlistfilters/{contactListFilterId} 
 
 Requires ANY permissions: 
@@ -2771,8 +2673,6 @@ except ApiException as e:
 
 
 Query Contact list filters
-
-
 
 Wraps GET /api/v2/outbound/contactlistfilters 
 
@@ -2836,8 +2736,6 @@ except ApiException as e:
 
 
 Query a list of contact lists.
-
-
 
 Wraps GET /api/v2/outbound/contactlists 
 
@@ -2910,8 +2808,6 @@ Get a basic ContactList information object
 
 This returns a simplified version of a ContactList, consisting of the name, division, column names, phone columns, import status, and size.
 
-
-
 Wraps GET /api/v2/outbound/contactlists/divisionviews/{contactListId} 
 
 Requires ALL permissions: 
@@ -2966,8 +2862,6 @@ except ApiException as e:
 Query a list of simplified contact list objects.
 
 This return a simplified version of contact lists, consisting of the name, division, column names, phone columns, import status, and size.
-
-
 
 Wraps GET /api/v2/outbound/contactlists/divisionviews 
 
@@ -3034,8 +2928,6 @@ except ApiException as e:
 
 Get an Outbound Digital Rule Set
 
-
-
 Wraps GET /api/v2/outbound/digitalrulesets/{digitalRuleSetId} 
 
 Requires ANY permissions: 
@@ -3084,8 +2976,6 @@ except ApiException as e:
 
 
 Query a list of Outbound Digital Rule Sets
-
-
 
 Wraps GET /api/v2/outbound/digitalrulesets 
 
@@ -3146,8 +3036,6 @@ except ApiException as e:
 
 Get dialer DNC list
 
-
-
 Wraps GET /api/v2/outbound/dnclists/{dncListId} 
 
 Requires ANY permissions: 
@@ -3201,8 +3089,6 @@ except ApiException as e:
 
 Get the URI of a DNC list export.
 
-
-
 Wraps GET /api/v2/outbound/dnclists/{dncListId}/export 
 
 Requires ALL permissions: 
@@ -3255,8 +3141,6 @@ except ApiException as e:
 
 Get dialer dncList import status.
 
-
-
 Wraps GET /api/v2/outbound/dnclists/{dncListId}/importstatus 
 
 Requires ANY permissions: 
@@ -3305,8 +3189,6 @@ except ApiException as e:
 
 
 Query dialer DNC lists
-
-
 
 Wraps GET /api/v2/outbound/dnclists 
 
@@ -3379,8 +3261,6 @@ Get a basic DncList information object
 
 This returns a simplified version of a DncList, consisting of the name, division, import status, and size.
 
-
-
 Wraps GET /api/v2/outbound/dnclists/divisionviews/{dncListId} 
 
 Requires ALL permissions: 
@@ -3435,8 +3315,6 @@ except ApiException as e:
 Query a list of simplified dnc list objects.
 
 This return a simplified version of dnc lists, consisting of the name, division, import status, and size.
-
-
 
 Wraps GET /api/v2/outbound/dnclists/divisionviews 
 
@@ -3505,8 +3383,6 @@ except ApiException as e:
 
 Get Dialer Event
 
-
-
 Wraps GET /api/v2/outbound/events/{eventId} 
 
 Requires ANY permissions: 
@@ -3555,8 +3431,6 @@ except ApiException as e:
 
 
 Query Event Logs
-
-
 
 Wraps GET /api/v2/outbound/events 
 
@@ -3619,8 +3493,6 @@ except ApiException as e:
 
 Get an Outbound Messaging Campaign
 
-
-
 Wraps GET /api/v2/outbound/messagingcampaigns/{messagingCampaignId} 
 
 Requires ANY permissions: 
@@ -3670,8 +3542,6 @@ except ApiException as e:
 
 
 Get messaging campaign diagnostics
-
-
 
 Wraps GET /api/v2/outbound/messagingcampaigns/{messagingCampaignId}/diagnostics 
 
@@ -3723,8 +3593,6 @@ except ApiException as e:
 
 Get messaging campaign's progress
 
-
-
 Wraps GET /api/v2/outbound/messagingcampaigns/{messagingCampaignId}/progress 
 
 Requires ANY permissions: 
@@ -3774,8 +3642,6 @@ except ApiException as e:
 
 
 Query a list of Messaging Campaigns
-
-
 
 Wraps GET /api/v2/outbound/messagingcampaigns 
 
@@ -3847,8 +3713,6 @@ Get a basic Messaging Campaign information object
 
 This returns a simplified version of a Messaging Campaign, consisting of id, name, and division.
 
-
-
 Wraps GET /api/v2/outbound/messagingcampaigns/divisionviews/{messagingCampaignId} 
 
 Requires ANY permissions: 
@@ -3900,8 +3764,6 @@ except ApiException as e:
 Query a list of basic Messaging Campaign information objects
 
 This returns a listing of simplified Messaging Campaigns, each consisting of id, name, and division.
-
-
 
 Wraps GET /api/v2/outbound/messagingcampaigns/divisionviews 
 
@@ -3965,8 +3827,6 @@ except ApiException as e:
 
 Get a Rule Set by ID.
 
-
-
 Wraps GET /api/v2/outbound/rulesets/{ruleSetId} 
 
 Requires ANY permissions: 
@@ -4015,8 +3875,6 @@ except ApiException as e:
 
 
 Query a list of Rule Sets.
-
-
 
 Wraps GET /api/v2/outbound/rulesets 
 
@@ -4079,8 +3937,6 @@ except ApiException as e:
 
 Get a dialer campaign schedule.
 
-
-
 Wraps GET /api/v2/outbound/schedules/campaigns/{campaignId} 
 
 Requires ANY permissions: 
@@ -4130,8 +3986,6 @@ except ApiException as e:
 
 Query for a list of dialer campaign schedules.
 
-
-
 Wraps GET /api/v2/outbound/schedules/campaigns 
 
 Requires ANY permissions: 
@@ -4176,8 +4030,6 @@ This endpoint does not need any parameters.
 
 
 Get an email campaign schedule.
-
-
 
 Wraps GET /api/v2/outbound/schedules/emailcampaigns/{emailCampaignId} 
 
@@ -4228,8 +4080,6 @@ except ApiException as e:
 
 Query for a list of email campaign schedules.
 
-
-
 Wraps GET /api/v2/outbound/schedules/emailcampaigns 
 
 Requires ANY permissions: 
@@ -4274,8 +4124,6 @@ This endpoint does not need any parameters.
 
 
 Get a messaging campaign schedule.
-
-
 
 Wraps GET /api/v2/outbound/schedules/messagingcampaigns/{messagingCampaignId} 
 
@@ -4326,8 +4174,6 @@ except ApiException as e:
 
 Query for a list of messaging campaign schedules.
 
-
-
 Wraps GET /api/v2/outbound/schedules/messagingcampaigns 
 
 Requires ANY permissions: 
@@ -4372,8 +4218,6 @@ This endpoint does not need any parameters.
 
 
 Get a dialer sequence schedule.
-
-
 
 Wraps GET /api/v2/outbound/schedules/sequences/{sequenceId} 
 
@@ -4424,8 +4268,6 @@ except ApiException as e:
 
 Query for a list of dialer sequence schedules.
 
-
-
 Wraps GET /api/v2/outbound/schedules/sequences 
 
 Requires ANY permissions: 
@@ -4470,8 +4312,6 @@ This endpoint does not need any parameters.
 
 
 Get a dialer campaign sequence.
-
-
 
 Wraps GET /api/v2/outbound/sequences/{sequenceId} 
 
@@ -4521,8 +4361,6 @@ except ApiException as e:
 
 
 Query a list of dialer campaign sequences.
-
-
 
 Wraps GET /api/v2/outbound/sequences 
 
@@ -4585,8 +4423,6 @@ except ApiException as e:
 
 Get the outbound settings for this organization
 
-
-
 Wraps GET /api/v2/outbound/settings 
 
 Requires ANY permissions: 
@@ -4631,8 +4467,6 @@ This endpoint does not need any parameters.
 
 
 Get the Dialer wrap up code mapping.
-
-
 
 Wraps GET /api/v2/outbound/wrapupcodemappings 
 
@@ -4680,8 +4514,6 @@ This endpoint does not need any parameters.
 Add entries to or delete entries from a DNC list.
 
 Only Internal DNC lists may be deleted from
-
-
 
 Wraps PATCH /api/v2/outbound/dnclists/{dncListId}/customexclusioncolumns 
 
@@ -4735,8 +4567,6 @@ Add emails to or Delete emails from a DNC list.
 
 Only Internal DNC lists may be added to or deleted from
 
-
-
 Wraps PATCH /api/v2/outbound/dnclists/{dncListId}/emailaddresses 
 
 Requires ANY permissions: 
@@ -4789,8 +4619,6 @@ Add numbers to or delete numbers from a DNC list.
 
 Only Internal DNC lists may be added to deleted from
 
-
-
 Wraps PATCH /api/v2/outbound/dnclists/{dncListId}/phonenumbers 
 
 Requires ANY permissions: 
@@ -4841,8 +4669,6 @@ void (empty response body)
 
 Update the outbound settings for this organization
 
-
-
 Wraps PATCH /api/v2/outbound/settings 
 
 Requires ANY permissions: 
@@ -4890,8 +4716,6 @@ void (empty response body)
 
 
 Create attempt limits
-
-
 
 Wraps POST /api/v2/outbound/attemptlimits 
 
@@ -4941,8 +4765,6 @@ except ApiException as e:
 
 
 Retrieves audits for dialer.
-
-
 
 Wraps POST /api/v2/outbound/audits 
 
@@ -5003,8 +4825,6 @@ except ApiException as e:
 
 Create callable time set
 
-
-
 Wraps POST /api/v2/outbound/callabletimesets 
 
 Requires ANY permissions: 
@@ -5054,8 +4874,6 @@ except ApiException as e:
 
 Create a dialer call analysis response set.
 
-
-
 Wraps POST /api/v2/outbound/callanalysisresponsesets 
 
 Requires ANY permissions: 
@@ -5104,8 +4922,6 @@ except ApiException as e:
 
 
 Initiate request for a preview of how agents will be mapped to this campaign's contact list.
-
-
 
 Wraps POST /api/v2/outbound/campaigns/{campaignId}/agentownedmappingpreview 
 
@@ -5160,8 +4976,6 @@ Schedule a Callback for a Dialer Campaign (Deprecated)
 
 This endpoint is deprecated and may have unexpected results. Please use \"/conversations/{conversationId}/participants/{participantId}/callbacks instead.\"
 
-
-
 Wraps POST /api/v2/outbound/campaigns/{campaignId}/callback/schedule 
 
 Requires no permissions
@@ -5212,8 +5026,6 @@ except ApiException as e:
 
 Create Campaign Rule
 
-
-
 Wraps POST /api/v2/outbound/campaignrules 
 
 Requires ANY permissions: 
@@ -5262,8 +5074,6 @@ except ApiException as e:
 
 
 Create a campaign.
-
-
 
 Wraps POST /api/v2/outbound/campaigns 
 
@@ -5314,8 +5124,6 @@ except ApiException as e:
 
 Get progress for a list of campaigns
 
-
-
 Wraps POST /api/v2/outbound/campaigns/progress 
 
 Requires ANY permissions: 
@@ -5365,8 +5173,6 @@ except ApiException as e:
 
 Deletes all contacts out of a list. All outstanding recalls or rule-scheduled callbacks for non-preview campaigns configured with the contactlist will be cancelled.
 
-
-
 Wraps POST /api/v2/outbound/contactlists/{contactListId}/clear 
 
 Requires ANY permissions: 
@@ -5414,8 +5220,6 @@ void (empty response body)
 
 
 Add contacts to a contact list.
-
-
 
 Wraps POST /api/v2/outbound/contactlists/{contactListId}/contacts 
 
@@ -5474,8 +5278,6 @@ except ApiException as e:
 
 Get contacts from a contact list.
 
-
-
 Wraps POST /api/v2/outbound/contactlists/{contactListId}/contacts/bulk 
 
 Requires ANY permissions: 
@@ -5529,8 +5331,6 @@ Initiate the export of a contact list.
 
 Returns 200 if received OK.
 
-
-
 Wraps POST /api/v2/outbound/contactlists/{contactListId}/export 
 
 Requires ALL permissions: 
@@ -5581,8 +5381,6 @@ except ApiException as e:
 
 Create Contact List Filter
 
-
-
 Wraps POST /api/v2/outbound/contactlistfilters 
 
 Requires ANY permissions: 
@@ -5631,8 +5429,6 @@ except ApiException as e:
 
 
 Get a preview of the output of a contact list filter
-
-
 
 Wraps POST /api/v2/outbound/contactlistfilters/preview 
 
@@ -5683,8 +5479,6 @@ except ApiException as e:
 
 Create a contact List.
 
-
-
 Wraps POST /api/v2/outbound/contactlists 
 
 Requires ANY permissions: 
@@ -5734,8 +5528,6 @@ except ApiException as e:
 
 Add phone numbers to a Dialer DNC list.
 
-
-
 Wraps POST /api/v2/outbound/conversations/{conversationId}/dnc 
 
 Requires ANY permissions: 
@@ -5783,8 +5575,6 @@ void (empty response body)
 
 
 Create an Outbound Digital Rule Set
-
-
 
 Wraps POST /api/v2/outbound/digitalrulesets 
 
@@ -5836,8 +5626,6 @@ except ApiException as e:
 Add email addresses to a DNC list.
 
 Only Internal DNC lists may be appended to
-
-
 
 Wraps POST /api/v2/outbound/dnclists/{dncListId}/emailaddresses 
 
@@ -5891,8 +5679,6 @@ Initiate the export of a dnc list.
 
 Returns 200 if received OK.
 
-
-
 Wraps POST /api/v2/outbound/dnclists/{dncListId}/export 
 
 Requires ALL permissions: 
@@ -5944,8 +5730,6 @@ except ApiException as e:
 Add phone numbers to a DNC list.
 
 Only Internal DNC lists may be appended to
-
-
 
 Wraps POST /api/v2/outbound/dnclists/{dncListId}/phonenumbers 
 
@@ -5999,8 +5783,6 @@ void (empty response body)
 
 Create dialer DNC list
 
-
-
 Wraps POST /api/v2/outbound/dnclists 
 
 Requires ANY permissions: 
@@ -6049,8 +5831,6 @@ except ApiException as e:
 
 
 Create a Messaging Campaign
-
-
 
 Wraps POST /api/v2/outbound/messagingcampaigns 
 
@@ -6102,8 +5882,6 @@ except ApiException as e:
 
 Get progress for a list of messaging campaigns
 
-
-
 Wraps POST /api/v2/outbound/messagingcampaigns/progress 
 
 Requires ANY permissions: 
@@ -6154,8 +5932,6 @@ except ApiException as e:
 
 Create a Rule Set.
 
-
-
 Wraps POST /api/v2/outbound/rulesets 
 
 Requires ANY permissions: 
@@ -6205,8 +5981,6 @@ except ApiException as e:
 
 Create a new campaign sequence.
 
-
-
 Wraps POST /api/v2/outbound/sequences 
 
 Requires ANY permissions: 
@@ -6255,8 +6029,6 @@ except ApiException as e:
 
 
 Update attempt limits
-
-
 
 Wraps PUT /api/v2/outbound/attemptlimits/{attemptLimitsId} 
 
@@ -6309,8 +6081,6 @@ except ApiException as e:
 
 Update callable time set
 
-
-
 Wraps PUT /api/v2/outbound/callabletimesets/{callableTimeSetId} 
 
 Requires ANY permissions: 
@@ -6362,8 +6132,6 @@ except ApiException as e:
 
 Update a dialer call analysis response set.
 
-
-
 Wraps PUT /api/v2/outbound/callanalysisresponsesets/{callAnalysisSetId} 
 
 Requires ANY permissions: 
@@ -6414,8 +6182,6 @@ except ApiException as e:
 
 
 Update a campaign.
-
-
 
 Wraps PUT /api/v2/outbound/campaigns/{campaignId} 
 
@@ -6470,8 +6236,6 @@ Send notification that an agent's state changed
 
 New agent state.
 
-
-
 Wraps PUT /api/v2/outbound/campaigns/{campaignId}/agents/{userId} 
 
 Requires no permissions
@@ -6524,8 +6288,6 @@ except ApiException as e:
 
 Update Campaign Rule
 
-
-
 Wraps PUT /api/v2/outbound/campaignrules/{campaignRuleId} 
 
 Requires ANY permissions: 
@@ -6577,8 +6339,6 @@ except ApiException as e:
 
 Update a contact list.
 
-
-
 Wraps PUT /api/v2/outbound/contactlists/{contactListId} 
 
 Requires ANY permissions: 
@@ -6629,8 +6389,6 @@ except ApiException as e:
 
 
 Update a contact.
-
-
 
 Wraps PUT /api/v2/outbound/contactlists/{contactListId}/contacts/{contactId} 
 
@@ -6685,8 +6443,6 @@ except ApiException as e:
 
 Update Contact List Filter
 
-
-
 Wraps PUT /api/v2/outbound/contactlistfilters/{contactListFilterId} 
 
 Requires ANY permissions: 
@@ -6737,8 +6493,6 @@ except ApiException as e:
 
 
 Update an Outbound Digital Rule Set
-
-
 
 Wraps PUT /api/v2/outbound/digitalrulesets/{digitalRuleSetId} 
 
@@ -6791,8 +6545,6 @@ except ApiException as e:
 
 Update dialer DNC list
 
-
-
 Wraps PUT /api/v2/outbound/dnclists/{dncListId} 
 
 Requires ANY permissions: 
@@ -6843,8 +6595,6 @@ except ApiException as e:
 
 
 Update an Outbound Messaging Campaign
-
-
 
 Wraps PUT /api/v2/outbound/messagingcampaigns/{messagingCampaignId} 
 
@@ -6898,8 +6648,6 @@ except ApiException as e:
 
 Update a Rule Set.
 
-
-
 Wraps PUT /api/v2/outbound/rulesets/{ruleSetId} 
 
 Requires ANY permissions: 
@@ -6950,8 +6698,6 @@ except ApiException as e:
 
 
 Update a new campaign schedule.
-
-
 
 Wraps PUT /api/v2/outbound/schedules/campaigns/{campaignId} 
 
@@ -7004,8 +6750,6 @@ except ApiException as e:
 
 Update an email campaign schedule.
 
-
-
 Wraps PUT /api/v2/outbound/schedules/emailcampaigns/{emailCampaignId} 
 
 Requires ANY permissions: 
@@ -7056,8 +6800,6 @@ except ApiException as e:
 
 
 Update a new messaging campaign schedule.
-
-
 
 Wraps PUT /api/v2/outbound/schedules/messagingcampaigns/{messagingCampaignId} 
 
@@ -7110,8 +6852,6 @@ except ApiException as e:
 
 Update a new sequence schedule.
 
-
-
 Wraps PUT /api/v2/outbound/schedules/sequences/{sequenceId} 
 
 Requires ANY permissions: 
@@ -7163,8 +6903,6 @@ except ApiException as e:
 
 Update a new campaign sequence.
 
-
-
 Wraps PUT /api/v2/outbound/sequences/{sequenceId} 
 
 Requires ANY permissions: 
@@ -7215,8 +6953,6 @@ except ApiException as e:
 
 
 Update the Dialer wrap up code mapping.
-
-
 
 Wraps PUT /api/v2/outbound/wrapupcodemappings 
 

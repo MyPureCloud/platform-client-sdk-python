@@ -110,8 +110,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 Delete/cancel an async details job
 
-
-
 Wraps DELETE /api/v2/analytics/conversations/details/jobs/{jobId} 
 
 Requires ANY permissions: 
@@ -161,8 +159,6 @@ void (empty response body)
 
 Delete a scheduled report job.
 
-
-
 Wraps DELETE /api/v2/analytics/reporting/schedules/{scheduleId} 
 
 Requires no permissions
@@ -209,8 +205,6 @@ void (empty response body)
 
 
 Delete/cancel an async request
-
-
 
 Wraps DELETE /api/v2/analytics/users/details/jobs/{jobId} 
 
@@ -260,7 +254,7 @@ void (empty response body)
 
 Get status for async query for action aggregates
 
-
+get_analytics_actions_aggregates_job is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/analytics/actions/aggregates/jobs/{jobId} 
 
@@ -312,7 +306,7 @@ except ApiException as e:
 
 Fetch a page of results for an async aggregates query
 
-
+get_analytics_actions_aggregates_job_results is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/analytics/actions/aggregates/jobs/{jobId}/results 
 
@@ -367,8 +361,6 @@ except ApiException as e:
 Get Reporting Turns.
 
 Returns the reporting turns grouped by session, in reverse chronological order from the date the session was created, with the reporting turns from the most recent session appearing at the start of the list.
-
-
 
 Wraps GET /api/v2/analytics/botflows/{botFlowId}/reportingturns 
 
@@ -431,7 +423,7 @@ except ApiException as e:
 
 Get status for async query for bot aggregates
 
-
+get_analytics_bots_aggregates_job is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/analytics/bots/aggregates/jobs/{jobId} 
 
@@ -482,7 +474,7 @@ except ApiException as e:
 
 Fetch a page of results for an async aggregates query
 
-
+get_analytics_bots_aggregates_job_results is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/analytics/bots/aggregates/jobs/{jobId}/results 
 
@@ -535,8 +527,6 @@ except ApiException as e:
 
 Get a conversation by id
 
-
-
 Wraps GET /api/v2/analytics/conversations/{conversationId}/details 
 
 Requires ANY permissions: 
@@ -587,7 +577,7 @@ except ApiException as e:
 
 Get status for async query for conversation aggregates
 
-
+get_analytics_conversations_aggregates_job is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/analytics/conversations/aggregates/jobs/{jobId} 
 
@@ -638,7 +628,7 @@ except ApiException as e:
 
 Fetch a page of results for an async aggregates query
 
-
+get_analytics_conversations_aggregates_job_results is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/analytics/conversations/aggregates/jobs/{jobId}/results 
 
@@ -691,8 +681,6 @@ except ApiException as e:
 
 Gets multiple conversations by id
 
-
-
 Wraps GET /api/v2/analytics/conversations/details 
 
 Requires ANY permissions: 
@@ -743,8 +731,6 @@ except ApiException as e:
 
 Get status for async query for conversation details
 
-
-
 Wraps GET /api/v2/analytics/conversations/details/jobs/{jobId} 
 
 Requires ANY permissions: 
@@ -794,8 +780,6 @@ except ApiException as e:
 
 
 Fetch a page of results for an async details job
-
-
 
 Wraps GET /api/v2/analytics/conversations/details/jobs/{jobId}/results 
 
@@ -851,8 +835,6 @@ except ApiException as e:
 
 Lookup the datalake availability date and time
 
-
-
 Wraps GET /api/v2/analytics/conversations/details/jobs/availability 
 
 Requires ANY permissions: 
@@ -897,8 +879,6 @@ This endpoint does not need any parameters.
 
 
 Get analytics data retention setting
-
-
 
 Wraps GET /api/v2/analytics/dataretention/settings 
 
@@ -945,7 +925,7 @@ This endpoint does not need any parameters.
 
 Get status for async query for evaluation aggregates
 
-
+get_analytics_evaluations_aggregates_job is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/analytics/evaluations/aggregates/jobs/{jobId} 
 
@@ -996,7 +976,7 @@ except ApiException as e:
 
 Fetch a page of results for an async aggregates query
 
-
+get_analytics_evaluations_aggregates_job_results is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/analytics/evaluations/aggregates/jobs/{jobId}/results 
 
@@ -1049,7 +1029,7 @@ except ApiException as e:
 
 Get status for async query for Flow aggregates
 
-
+get_analytics_flows_aggregates_job is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/analytics/flows/aggregates/jobs/{jobId} 
 
@@ -1100,7 +1080,7 @@ except ApiException as e:
 
 Fetch a page of results for an async aggregates query
 
-
+get_analytics_flows_aggregates_job_results is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/analytics/flows/aggregates/jobs/{jobId}/results 
 
@@ -1153,7 +1133,7 @@ except ApiException as e:
 
 Get status for async query for journey aggregates
 
-
+get_analytics_journeys_aggregates_job is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/analytics/journeys/aggregates/jobs/{jobId} 
 
@@ -1204,7 +1184,7 @@ except ApiException as e:
 
 Fetch a page of results for an async aggregates query
 
-
+get_analytics_journeys_aggregates_job_results is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/analytics/journeys/aggregates/jobs/{jobId}/results 
 
@@ -1257,7 +1237,7 @@ except ApiException as e:
 
 Get status for async query for knowledge aggregates
 
-
+get_analytics_knowledge_aggregates_job is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/analytics/knowledge/aggregates/jobs/{jobId} 
 
@@ -1308,7 +1288,7 @@ except ApiException as e:
 
 Fetch a page of results for an async aggregates query
 
-
+get_analytics_knowledge_aggregates_job_results is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/analytics/knowledge/aggregates/jobs/{jobId}/results 
 
@@ -1361,8 +1341,6 @@ except ApiException as e:
 
 Get all view export requests for a user
 
-
-
 Wraps GET /api/v2/analytics/reporting/exports 
 
 Requires ALL permissions: 
@@ -1414,8 +1392,6 @@ except ApiException as e:
 
 Get all export metadata
 
-
-
 Wraps GET /api/v2/analytics/reporting/exports/metadata 
 
 Requires ALL permissions: 
@@ -1460,8 +1436,6 @@ This endpoint does not need any parameters.
 
 
 Get list of reporting metadata.
-
-
 
 Wraps GET /api/v2/analytics/reporting/metadata 
 
@@ -1516,8 +1490,6 @@ except ApiException as e:
 
 Get a reporting metadata.
 
-
-
 Wraps GET /api/v2/analytics/reporting/{reportId}/metadata 
 
 Requires ANY permissions: 
@@ -1571,8 +1543,6 @@ Get a list of report formats
 
 Get a list of report formats.
 
-
-
 Wraps GET /api/v2/analytics/reporting/reportformats 
 
 Requires no permissions
@@ -1616,8 +1586,6 @@ This endpoint does not need any parameters.
 
 
 Get a scheduled report job.
-
-
 
 Wraps GET /api/v2/analytics/reporting/schedules/{scheduleId} 
 
@@ -1666,8 +1634,6 @@ except ApiException as e:
 
 
 Get list of completed scheduled report jobs.
-
-
 
 Wraps GET /api/v2/analytics/reporting/schedules/{scheduleId}/history 
 
@@ -1721,8 +1687,6 @@ except ApiException as e:
 
 Get most recently completed scheduled report job.
 
-
-
 Wraps GET /api/v2/analytics/reporting/schedules/{scheduleId}/history/latest 
 
 Requires no permissions
@@ -1772,8 +1736,6 @@ except ApiException as e:
 A completed scheduled report job
 
 A completed scheduled report job.
-
-
 
 Wraps GET /api/v2/analytics/reporting/schedules/{scheduleId}/history/{runId} 
 
@@ -1827,8 +1789,6 @@ Get a list of scheduled report jobs
 
 Get a list of scheduled report jobs.
 
-
-
 Wraps GET /api/v2/analytics/reporting/schedules 
 
 Requires ANY permissions: 
@@ -1880,8 +1840,6 @@ except ApiException as e:
 
 Get AnalyticsReportingSettings for an organization
 
-
-
 Wraps GET /api/v2/analytics/reporting/settings 
 
 Requires no permissions
@@ -1925,8 +1883,6 @@ This endpoint does not need any parameters.
 
 
 Get a list of report time periods.
-
-
 
 Wraps GET /api/v2/analytics/reporting/timeperiods 
 
@@ -1972,7 +1928,7 @@ This endpoint does not need any parameters.
 
 Get status for async query for resolution aggregates
 
-
+get_analytics_resolutions_aggregates_job is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/analytics/resolutions/aggregates/jobs/{jobId} 
 
@@ -2023,7 +1979,7 @@ except ApiException as e:
 
 Fetch a page of results for an async aggregates query
 
-
+get_analytics_resolutions_aggregates_job_results is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/analytics/resolutions/aggregates/jobs/{jobId}/results 
 
@@ -2076,7 +2032,7 @@ except ApiException as e:
 
 Get status for async query for survey aggregates
 
-
+get_analytics_surveys_aggregates_job is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/analytics/surveys/aggregates/jobs/{jobId} 
 
@@ -2127,7 +2083,7 @@ except ApiException as e:
 
 Fetch a page of results for an async aggregates query
 
-
+get_analytics_surveys_aggregates_job_results is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/analytics/surveys/aggregates/jobs/{jobId}/results 
 
@@ -2180,7 +2136,7 @@ except ApiException as e:
 
 Get status for async query for task management aggregates
 
-
+get_analytics_taskmanagement_aggregates_job is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/analytics/taskmanagement/aggregates/jobs/{jobId} 
 
@@ -2231,7 +2187,7 @@ except ApiException as e:
 
 Fetch a page of results for an async task management query
 
-
+get_analytics_taskmanagement_aggregates_job_results is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/analytics/taskmanagement/aggregates/jobs/{jobId}/results 
 
@@ -2284,7 +2240,7 @@ except ApiException as e:
 
 Get status for async query for transcript aggregates
 
-
+get_analytics_transcripts_aggregates_job is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/analytics/transcripts/aggregates/jobs/{jobId} 
 
@@ -2335,7 +2291,7 @@ except ApiException as e:
 
 Fetch a page of results for an async aggregates query
 
-
+get_analytics_transcripts_aggregates_job_results is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/analytics/transcripts/aggregates/jobs/{jobId}/results 
 
@@ -2388,7 +2344,7 @@ except ApiException as e:
 
 Get status for async query for user aggregates
 
-
+get_analytics_users_aggregates_job is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/analytics/users/aggregates/jobs/{jobId} 
 
@@ -2439,7 +2395,7 @@ except ApiException as e:
 
 Fetch a page of results for an async aggregates query
 
-
+get_analytics_users_aggregates_job_results is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/analytics/users/aggregates/jobs/{jobId}/results 
 
@@ -2492,8 +2448,6 @@ except ApiException as e:
 
 Get status for async query for user details
 
-
-
 Wraps GET /api/v2/analytics/users/details/jobs/{jobId} 
 
 Requires ANY permissions: 
@@ -2542,8 +2496,6 @@ except ApiException as e:
 
 
 Fetch a page of results for an async query
-
-
 
 Wraps GET /api/v2/analytics/users/details/jobs/{jobId}/results 
 
@@ -2598,8 +2550,6 @@ except ApiException as e:
 
 Lookup the datalake availability date and time
 
-
-
 Wraps GET /api/v2/analytics/users/details/jobs/availability 
 
 Requires ANY permissions: 
@@ -2644,8 +2594,6 @@ This endpoint does not need any parameters.
 
 
 Patch AnalyticsReportingSettings values for an organization
-
-
 
 Wraps PATCH /api/v2/analytics/reporting/settings 
 
@@ -2699,7 +2647,7 @@ except ApiException as e:
 
 Query for action aggregates asynchronously
 
-
+post_analytics_actions_aggregates_jobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/analytics/actions/aggregates/jobs 
 
@@ -2751,8 +2699,6 @@ except ApiException as e:
 
 Query for action aggregates
 
-
-
 Wraps POST /api/v2/analytics/actions/aggregates/query 
 
 Requires ANY permissions: 
@@ -2803,7 +2749,7 @@ except ApiException as e:
 
 Query for bot aggregates asynchronously
 
-
+post_analytics_bots_aggregates_jobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/analytics/bots/aggregates/jobs 
 
@@ -2854,8 +2800,6 @@ except ApiException as e:
 
 Query for bot aggregates
 
-
-
 Wraps POST /api/v2/analytics/bots/aggregates/query 
 
 Requires ANY permissions: 
@@ -2904,8 +2848,6 @@ except ApiException as e:
 
 
 Index conversation properties
-
-
 
 Wraps POST /api/v2/analytics/conversations/{conversationId}/details/properties 
 
@@ -2958,7 +2900,7 @@ except ApiException as e:
 
 Query for conversation activity observations
 
-
+post_analytics_conversations_activity_query is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/analytics/conversations/activity/query 
 
@@ -3013,7 +2955,7 @@ except ApiException as e:
 
 Query for conversation aggregates asynchronously
 
-
+post_analytics_conversations_aggregates_jobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/analytics/conversations/aggregates/jobs 
 
@@ -3064,8 +3006,6 @@ except ApiException as e:
 
 Query for conversation aggregates
 
-
-
 Wraps POST /api/v2/analytics/conversations/aggregates/query 
 
 Requires ANY permissions: 
@@ -3114,8 +3054,6 @@ except ApiException as e:
 
 
 Query for conversation details asynchronously
-
-
 
 Wraps POST /api/v2/analytics/conversations/details/jobs 
 
@@ -3167,8 +3105,6 @@ except ApiException as e:
 
 Query for conversation details
 
-
-
 Wraps POST /api/v2/analytics/conversations/details/query 
 
 Requires ANY permissions: 
@@ -3219,8 +3155,6 @@ except ApiException as e:
 
 Search resources.
 
-
-
 Wraps POST /api/v2/analytics/conversations/transcripts/query 
 
 Requires ANY permissions: 
@@ -3270,7 +3204,7 @@ except ApiException as e:
 
 Query for evaluation aggregates asynchronously
 
-
+post_analytics_evaluations_aggregates_jobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/analytics/evaluations/aggregates/jobs 
 
@@ -3321,8 +3255,6 @@ except ApiException as e:
 
 Query for evaluation aggregates
 
-
-
 Wraps POST /api/v2/analytics/evaluations/aggregates/query 
 
 Requires ANY permissions: 
@@ -3372,7 +3304,7 @@ except ApiException as e:
 
 Query for flow activity observations
 
-
+post_analytics_flows_activity_query is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/analytics/flows/activity/query 
 
@@ -3427,7 +3359,7 @@ except ApiException as e:
 
 Query for flow aggregates asynchronously
 
-
+post_analytics_flows_aggregates_jobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/analytics/flows/aggregates/jobs 
 
@@ -3478,8 +3410,6 @@ except ApiException as e:
 
 Query for flow aggregates
 
-
-
 Wraps POST /api/v2/analytics/flows/aggregates/query 
 
 Requires ANY permissions: 
@@ -3528,8 +3458,6 @@ except ApiException as e:
 
 
 Query for flow observations
-
-
 
 Wraps POST /api/v2/analytics/flows/observations/query 
 
@@ -3580,7 +3508,7 @@ except ApiException as e:
 
 Query for journey aggregates asynchronously
 
-
+post_analytics_journeys_aggregates_jobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/analytics/journeys/aggregates/jobs 
 
@@ -3631,8 +3559,6 @@ except ApiException as e:
 
 Query for journey aggregates
 
-
-
 Wraps POST /api/v2/analytics/journeys/aggregates/query 
 
 Requires ANY permissions: 
@@ -3682,7 +3608,7 @@ except ApiException as e:
 
 Query for knowledge aggregates asynchronously
 
-
+post_analytics_knowledge_aggregates_jobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/analytics/knowledge/aggregates/jobs 
 
@@ -3733,7 +3659,7 @@ except ApiException as e:
 
 Query for knowledge aggregates
 
-
+post_analytics_knowledge_aggregates_query is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/analytics/knowledge/aggregates/query 
 
@@ -3783,8 +3709,6 @@ except ApiException as e:
 
 
 Query for queue observations
-
-
 
 Wraps POST /api/v2/analytics/queues/observations/query 
 
@@ -3837,8 +3761,6 @@ Generate a view export request
 
 This API creates a reporting export but the desired way to export analytics data is to use the analytics query APIs instead
 
-
-
 Wraps POST /api/v2/analytics/reporting/exports 
 
 Requires ALL permissions: 
@@ -3887,8 +3809,6 @@ except ApiException as e:
 
 
 Place a scheduled report immediately into the reporting queue
-
-
 
 Wraps POST /api/v2/analytics/reporting/schedules/{scheduleId}/runreport 
 
@@ -3941,8 +3861,6 @@ Create a scheduled report job
 
 Create a scheduled report job.
 
-
-
 Wraps POST /api/v2/analytics/reporting/schedules 
 
 Requires ANY permissions: 
@@ -3992,7 +3910,7 @@ except ApiException as e:
 
 Query for resolution aggregates asynchronously
 
-
+post_analytics_resolutions_aggregates_jobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/analytics/resolutions/aggregates/jobs 
 
@@ -4043,7 +3961,7 @@ except ApiException as e:
 
 Query for user activity observations
 
-
+post_analytics_routing_activity_query is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/analytics/routing/activity/query 
 
@@ -4098,7 +4016,7 @@ except ApiException as e:
 
 Query for survey aggregates asynchronously
 
-
+post_analytics_surveys_aggregates_jobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/analytics/surveys/aggregates/jobs 
 
@@ -4149,8 +4067,6 @@ except ApiException as e:
 
 Query for survey aggregates
 
-
-
 Wraps POST /api/v2/analytics/surveys/aggregates/query 
 
 Requires ANY permissions: 
@@ -4200,7 +4116,7 @@ except ApiException as e:
 
 Query for task management aggregates asynchronously
 
-
+post_analytics_taskmanagement_aggregates_jobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/analytics/taskmanagement/aggregates/jobs 
 
@@ -4251,7 +4167,7 @@ except ApiException as e:
 
 Query for task management aggregates
 
-
+post_analytics_taskmanagement_aggregates_query is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/analytics/taskmanagement/aggregates/query 
 
@@ -4302,7 +4218,7 @@ except ApiException as e:
 
 Query for team activity observations
 
-
+post_analytics_teams_activity_query is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/analytics/teams/activity/query 
 
@@ -4357,7 +4273,7 @@ except ApiException as e:
 
 Query for transcript aggregates asynchronously
 
-
+post_analytics_transcripts_aggregates_jobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/analytics/transcripts/aggregates/jobs 
 
@@ -4408,8 +4324,6 @@ except ApiException as e:
 
 Query for transcript aggregates
 
-
-
 Wraps POST /api/v2/analytics/transcripts/aggregates/query 
 
 Requires ANY permissions: 
@@ -4459,7 +4373,7 @@ except ApiException as e:
 
 Query for user activity observations
 
-
+post_analytics_users_activity_query is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/analytics/users/activity/query 
 
@@ -4514,7 +4428,7 @@ except ApiException as e:
 
 Query for user aggregates asynchronously
 
-
+post_analytics_users_aggregates_jobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/analytics/users/aggregates/jobs 
 
@@ -4565,8 +4479,6 @@ except ApiException as e:
 
 Query for user aggregates
 
-
-
 Wraps POST /api/v2/analytics/users/aggregates/query 
 
 Requires ANY permissions: 
@@ -4615,8 +4527,6 @@ except ApiException as e:
 
 
 Query for user details asynchronously
-
-
 
 Wraps POST /api/v2/analytics/users/details/jobs 
 
@@ -4667,8 +4577,6 @@ except ApiException as e:
 
 Query for user details
 
-
-
 Wraps POST /api/v2/analytics/users/details/query 
 
 Requires ANY permissions: 
@@ -4717,8 +4625,6 @@ except ApiException as e:
 
 
 Query for user observations
-
-
 
 Wraps POST /api/v2/analytics/users/observations/query 
 
@@ -4769,8 +4675,6 @@ except ApiException as e:
 
 Update analytics data retention setting
 
-
-
 Wraps PUT /api/v2/analytics/dataretention/settings 
 
 Requires ANY permissions: 
@@ -4819,8 +4723,6 @@ except ApiException as e:
 
 
 Update a scheduled report job.
-
-
 
 Wraps PUT /api/v2/analytics/reporting/schedules/{scheduleId} 
 

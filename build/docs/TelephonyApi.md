@@ -22,8 +22,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 Retrieve the list of AWS regions media can stream through.
 
-
-
 Wraps GET /api/v2/telephony/mediaregions 
 
 Requires ANY permissions: 
@@ -70,8 +68,6 @@ This endpoint does not need any parameters.
 Fetch SIP metadata
 
 Fetch SIP metadata that matches a given parameter. If exactMatch is passed as a parameter only sip records that have exactly that value will be returned. For example, some records contain conversationId but not all relevant records for that call may contain the conversationId so only a partial view of the call will be reflected
-
-
 
 Wraps GET /api/v2/telephony/siptraces 
 
@@ -132,8 +128,6 @@ except ApiException as e:
 
 Get signed S3 URL for a pcap download
 
-
-
 Wraps GET /api/v2/telephony/siptraces/download/{downloadId} 
 
 Requires ALL permissions: 
@@ -182,8 +176,6 @@ except ApiException as e:
 
 
 Request a download of a pcap file to S3
-
-
 
 Wraps POST /api/v2/telephony/siptraces/download 
 

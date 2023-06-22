@@ -48,14 +48,17 @@ class ConsultTransferUpdate(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'speak_to': 'str'
+            'speak_to': 'str',
+            'consulting_user_id': 'str'
         }
 
         self.attribute_map = {
-            'speak_to': 'speakTo'
+            'speak_to': 'speakTo',
+            'consulting_user_id': 'consultingUserId'
         }
 
         self._speak_to = None
+        self._consulting_user_id = None
 
     @property
     def speak_to(self) -> str:
@@ -85,6 +88,30 @@ class ConsultTransferUpdate(object):
             self._speak_to = "outdated_sdk_version"
         else:
             self._speak_to = speak_to
+
+    @property
+    def consulting_user_id(self) -> str:
+        """
+        Gets the consulting_user_id of this ConsultTransferUpdate.
+        The user ID of the person who wants to talk before completing the transfer. Could be the same of the context user ID
+
+        :return: The consulting_user_id of this ConsultTransferUpdate.
+        :rtype: str
+        """
+        return self._consulting_user_id
+
+    @consulting_user_id.setter
+    def consulting_user_id(self, consulting_user_id: str) -> None:
+        """
+        Sets the consulting_user_id of this ConsultTransferUpdate.
+        The user ID of the person who wants to talk before completing the transfer. Could be the same of the context user ID
+
+        :param consulting_user_id: The consulting_user_id of this ConsultTransferUpdate.
+        :type: str
+        """
+        
+
+        self._consulting_user_id = consulting_user_id
 
     def to_dict(self):
         """

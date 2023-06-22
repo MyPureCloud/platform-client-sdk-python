@@ -56,6 +56,7 @@ class KnowledgeDocumentReq(object):
             'alternatives': 'list[KnowledgeDocumentAlternative]',
             'category_id': 'str',
             'label_ids': 'list[str]',
+            'external_id': 'str',
             'self_uri': 'str'
         }
 
@@ -66,6 +67,7 @@ class KnowledgeDocumentReq(object):
             'alternatives': 'alternatives',
             'category_id': 'categoryId',
             'label_ids': 'labelIds',
+            'external_id': 'externalId',
             'self_uri': 'selfUri'
         }
 
@@ -75,6 +77,7 @@ class KnowledgeDocumentReq(object):
         self._alternatives = None
         self._category_id = None
         self._label_ids = None
+        self._external_id = None
         self._self_uri = None
 
     @property
@@ -220,6 +223,30 @@ class KnowledgeDocumentReq(object):
         
 
         self._label_ids = label_ids
+
+    @property
+    def external_id(self) -> str:
+        """
+        Gets the external_id of this KnowledgeDocumentReq.
+        The external id associated with the document.
+
+        :return: The external_id of this KnowledgeDocumentReq.
+        :rtype: str
+        """
+        return self._external_id
+
+    @external_id.setter
+    def external_id(self, external_id: str) -> None:
+        """
+        Sets the external_id of this KnowledgeDocumentReq.
+        The external id associated with the document.
+
+        :param external_id: The external_id of this KnowledgeDocumentReq.
+        :type: str
+        """
+        
+
+        self._external_id = external_id
 
     @property
     def self_uri(self) -> str:

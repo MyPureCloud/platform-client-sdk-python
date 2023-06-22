@@ -54,6 +54,7 @@ class LabelResponse(object):
             'date_created': 'datetime',
             'date_modified': 'datetime',
             'document_count': 'int',
+            'external_id': 'str',
             'self_uri': 'str'
         }
 
@@ -64,6 +65,7 @@ class LabelResponse(object):
             'date_created': 'dateCreated',
             'date_modified': 'dateModified',
             'document_count': 'documentCount',
+            'external_id': 'externalId',
             'self_uri': 'selfUri'
         }
 
@@ -73,6 +75,7 @@ class LabelResponse(object):
         self._date_created = None
         self._date_modified = None
         self._document_count = None
+        self._external_id = None
         self._self_uri = None
 
     @property
@@ -218,6 +221,30 @@ class LabelResponse(object):
         
 
         self._document_count = document_count
+
+    @property
+    def external_id(self) -> str:
+        """
+        Gets the external_id of this LabelResponse.
+        The external id associated with the label.
+
+        :return: The external_id of this LabelResponse.
+        :rtype: str
+        """
+        return self._external_id
+
+    @external_id.setter
+    def external_id(self, external_id: str) -> None:
+        """
+        Sets the external_id of this LabelResponse.
+        The external id associated with the label.
+
+        :param external_id: The external_id of this LabelResponse.
+        :type: str
+        """
+        
+
+        self._external_id = external_id
 
     @property
     def self_uri(self) -> str:

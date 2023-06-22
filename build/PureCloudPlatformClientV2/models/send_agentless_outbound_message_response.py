@@ -34,6 +34,7 @@ from typing import Dict
 
 if TYPE_CHECKING:
     from . import AddressableEntityRef
+    from . import MessageData
     from . import MessagingTemplateRequest
 
 class SendAgentlessOutboundMessageResponse(object):
@@ -59,6 +60,7 @@ class SendAgentlessOutboundMessageResponse(object):
             'text_body': 'str',
             'messaging_template': 'MessagingTemplateRequest',
             'use_existing_active_conversation': 'bool',
+            'message': 'MessageData',
             'timestamp': 'datetime',
             'self_uri': 'str',
             'user': 'AddressableEntityRef'
@@ -73,6 +75,7 @@ class SendAgentlessOutboundMessageResponse(object):
             'text_body': 'textBody',
             'messaging_template': 'messagingTemplate',
             'use_existing_active_conversation': 'useExistingActiveConversation',
+            'message': 'message',
             'timestamp': 'timestamp',
             'self_uri': 'selfUri',
             'user': 'user'
@@ -86,6 +89,7 @@ class SendAgentlessOutboundMessageResponse(object):
         self._text_body = None
         self._messaging_template = None
         self._use_existing_active_conversation = None
+        self._message = None
         self._timestamp = None
         self._self_uri = None
         self._user = None
@@ -286,6 +290,30 @@ class SendAgentlessOutboundMessageResponse(object):
         
 
         self._use_existing_active_conversation = use_existing_active_conversation
+
+    @property
+    def message(self) -> 'MessageData':
+        """
+        Gets the message of this SendAgentlessOutboundMessageResponse.
+        Sent agentless outbound message in normalized format
+
+        :return: The message of this SendAgentlessOutboundMessageResponse.
+        :rtype: MessageData
+        """
+        return self._message
+
+    @message.setter
+    def message(self, message: 'MessageData') -> None:
+        """
+        Sets the message of this SendAgentlessOutboundMessageResponse.
+        Sent agentless outbound message in normalized format
+
+        :param message: The message of this SendAgentlessOutboundMessageResponse.
+        :type: MessageData
+        """
+        
+
+        self._message = message
 
     @property
     def timestamp(self) -> datetime:

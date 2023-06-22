@@ -334,7 +334,7 @@ from .bu_create_blank_schedule_request import BuCreateBlankScheduleRequest
 from .bu_current_agent_schedule_search_response import BuCurrentAgentScheduleSearchResponse
 from .bu_forecast_generation_planning_group_result import BuForecastGenerationPlanningGroupResult
 from .bu_forecast_generation_result import BuForecastGenerationResult
-from .bu_forecast_modification import BuForecastModification
+from .bu_forecast_modification_response import BuForecastModificationResponse
 from .bu_forecast_result import BuForecastResult
 from .bu_forecast_result_response import BuForecastResultResponse
 from .bu_forecast_time_series_result import BuForecastTimeSeriesResult
@@ -485,12 +485,13 @@ from .campaign_time_slot import CampaignTimeSlot
 from .card import Card
 from .card_action import CardAction
 from .category import Category
+from .category_create_request import CategoryCreateRequest
 from .category_entity_listing import CategoryEntityListing
 from .category_listing import CategoryListing
 from .category_reference import CategoryReference
-from .category_request import CategoryRequest
 from .category_response import CategoryResponse
 from .category_response_listing import CategoryResponseListing
+from .category_update_request import CategoryUpdateRequest
 from .certificate import Certificate
 from .certificate_authority_entity_listing import CertificateAuthorityEntityListing
 from .certificate_details import CertificateDetails
@@ -569,6 +570,9 @@ from .constraint_conflict_message import ConstraintConflictMessage
 from .consult_transfer import ConsultTransfer
 from .consult_transfer_event import ConsultTransferEvent
 from .consult_transfer_response import ConsultTransferResponse
+from .consult_transfer_to_agent import ConsultTransferToAgent
+from .consult_transfer_to_external import ConsultTransferToExternal
+from .consult_transfer_to_queue import ConsultTransferToQueue
 from .consult_transfer_update import ConsultTransferUpdate
 from .consumed_resources_entity_listing import ConsumedResourcesEntityListing
 from .consuming_resources_entity_listing import ConsumingResourcesEntityListing
@@ -1572,9 +1576,9 @@ from .group_search_request import GroupSearchRequest
 from .group_update import GroupUpdate
 from .groups_search_response import GroupsSearchResponse
 from .guest_category_reference import GuestCategoryReference
-from .guest_category_response import GuestCategoryResponse
 from .guest_category_response_listing import GuestCategoryResponseListing
 from .guest_member_info import GuestMemberInfo
+from .guest_response_category import GuestResponseCategory
 from .headcount_forecast import HeadcountForecast
 from .headcount_interval import HeadcountInterval
 from .help_link import HelpLink
@@ -1643,6 +1647,10 @@ from .insights_trend_metric_item import InsightsTrendMetricItem
 from .insights_trend_total_item import InsightsTrendTotalItem
 from .insights_trends import InsightsTrends
 from .instagram_id import InstagramId
+from .instagram_integration import InstagramIntegration
+from .instagram_integration_entity_listing import InstagramIntegrationEntityListing
+from .instagram_integration_request import InstagramIntegrationRequest
+from .instagram_integration_update_request import InstagramIntegrationUpdateRequest
 from .instagram_scoped_id import InstagramScopedId
 from .integration import Integration
 from .integration_action import IntegrationAction
@@ -3181,6 +3189,9 @@ from .transfer_initiator import TransferInitiator
 from .transfer_request import TransferRequest
 from .transfer_response import TransferResponse
 from .transfer_response_modified_by import TransferResponseModifiedBy
+from .transfer_to_agent_request import TransferToAgentRequest
+from .transfer_to_external_request import TransferToExternalRequest
+from .transfer_to_queue_request import TransferToQueueRequest
 from .trend_data import TrendData
 from .trigger import Trigger
 from .trigger_entity_listing import TriggerEntityListing
@@ -3244,6 +3255,8 @@ from .uci10n import UCI10n
 from .uc_icon import UCIcon
 from .uc_integration import UCIntegration
 from .uc_integration_listing import UCIntegrationListing
+from .uc_third_party_presence import UCThirdPartyPresence
+from .uc_user_presence import UcUserPresence
 from .unanswered_group import UnansweredGroup
 from .unanswered_group_suggested_document import UnansweredGroupSuggestedDocument
 from .unanswered_groups import UnansweredGroups

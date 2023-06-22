@@ -55,8 +55,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 Delete a Speech & Text Analytics program by id
 
-
-
 Wraps DELETE /api/v2/speechandtextanalytics/programs/{programId} 
 
 Requires ALL permissions: 
@@ -107,8 +105,6 @@ void (empty response body)
 
 Delete All Speech & Text Analytics SentimentFeedback
 
-
-
 Wraps DELETE /api/v2/speechandtextanalytics/sentimentfeedback 
 
 Requires ALL permissions: 
@@ -152,8 +148,6 @@ void (empty response body)
 
 
 Delete a Speech & Text Analytics SentimentFeedback by Id
-
-
 
 Wraps DELETE /api/v2/speechandtextanalytics/sentimentfeedback/{sentimentFeedbackId} 
 
@@ -203,8 +197,6 @@ void (empty response body)
 
 Delete a Speech & Text Analytics topic by id
 
-
-
 Wraps DELETE /api/v2/speechandtextanalytics/topics/{topicId} 
 
 Requires ALL permissions: 
@@ -252,8 +244,6 @@ void (empty response body)
 
 
 Get Speech and Text Analytics for a specific conversation
-
-
 
 Wraps GET /api/v2/speechandtextanalytics/conversations/{conversationId} 
 
@@ -303,8 +293,6 @@ except ApiException as e:
 
 
 Get the pre-signed S3 URL for the transcript of a specific communication of a conversation
-
-
 
 Wraps GET /api/v2/speechandtextanalytics/conversations/{conversationId}/communications/{communicationId}/transcripturl 
 
@@ -357,8 +345,6 @@ except ApiException as e:
 
 Get a Speech & Text Analytics program by id
 
-
-
 Wraps GET /api/v2/speechandtextanalytics/programs/{programId} 
 
 Requires ALL permissions: 
@@ -407,8 +393,6 @@ except ApiException as e:
 
 
 Get Speech & Text Analytics program mappings to queues and flows by id
-
-
 
 Wraps GET /api/v2/speechandtextanalytics/programs/{programId}/mappings 
 
@@ -459,8 +443,6 @@ except ApiException as e:
 
 Get transcription engine settings of a program
 
-
-
 Wraps GET /api/v2/speechandtextanalytics/programs/{programId}/transcriptionengines 
 
 Requires ALL permissions: 
@@ -509,8 +491,6 @@ except ApiException as e:
 
 
 Get the list of Speech & Text Analytics programs
-
-
 
 Wraps GET /api/v2/speechandtextanalytics/programs 
 
@@ -565,8 +545,6 @@ except ApiException as e:
 
 Get a Speech & Text Analytics general program job by id
 
-
-
 Wraps GET /api/v2/speechandtextanalytics/programs/general/jobs/{jobId} 
 
 Requires ALL permissions: 
@@ -619,8 +597,6 @@ except ApiException as e:
 
 Get the list of Speech & Text Analytics programs mappings to queues and flows
 
-
-
 Wraps GET /api/v2/speechandtextanalytics/programs/mappings 
 
 Requires ALL permissions: 
@@ -672,8 +648,6 @@ except ApiException as e:
 
 Get a Speech & Text Analytics publish programs job by id
 
-
-
 Wraps GET /api/v2/speechandtextanalytics/programs/publishjobs/{jobId} 
 
 Requires ALL permissions: 
@@ -723,8 +697,6 @@ except ApiException as e:
 
 Get supported dialects for each transcription engine
 
-
-
 Wraps GET /api/v2/speechandtextanalytics/programs/transcriptionengines/dialects 
 
 Requires no permissions
@@ -768,8 +740,6 @@ This endpoint does not need any parameters.
 
 
 Get the list of Speech & Text Analytics unpublished programs
-
-
 
 Wraps GET /api/v2/speechandtextanalytics/programs/unpublished 
 
@@ -822,8 +792,6 @@ except ApiException as e:
 
 Get the list of Speech & Text Analytics sentiment supported dialects
 
-
-
 Wraps GET /api/v2/speechandtextanalytics/sentiment/dialects 
 
 Requires no permissions
@@ -867,8 +835,6 @@ This endpoint does not need any parameters.
 
 
 Get the list of Speech & Text Analytics SentimentFeedback
-
-
 
 Wraps GET /api/v2/speechandtextanalytics/sentimentfeedback 
 
@@ -919,8 +885,6 @@ except ApiException as e:
 
 Get Speech And Text Analytics Settings
 
-
-
 Wraps GET /api/v2/speechandtextanalytics/settings 
 
 Requires ALL permissions: 
@@ -965,8 +929,6 @@ This endpoint does not need any parameters.
 
 
 Get a Speech & Text Analytics topic by id
-
-
 
 Wraps GET /api/v2/speechandtextanalytics/topics/{topicId} 
 
@@ -1016,8 +978,6 @@ except ApiException as e:
 
 
 Get the list of Speech & Text Analytics topics
-
-
 
 Wraps GET /api/v2/speechandtextanalytics/topics 
 
@@ -1080,8 +1040,6 @@ except ApiException as e:
 
 Get list of supported Speech & Text Analytics topics dialects
 
-
-
 Wraps GET /api/v2/speechandtextanalytics/topics/dialects 
 
 Requires no permissions
@@ -1125,8 +1083,6 @@ This endpoint does not need any parameters.
 
 
 Get the Speech & Text Analytics general topics for a given dialect
-
-
 
 Wraps GET /api/v2/speechandtextanalytics/topics/general 
 
@@ -1177,8 +1133,6 @@ except ApiException as e:
 
 Get the list of general topics from the org and the system with their current status
 
-
-
 Wraps GET /api/v2/speechandtextanalytics/topics/general/status 
 
 Requires ALL permissions: 
@@ -1227,8 +1181,6 @@ except ApiException as e:
 
 
 Get a Speech & Text Analytics publish topics job by id
-
-
 
 Wraps GET /api/v2/speechandtextanalytics/topics/publishjobs/{jobId} 
 
@@ -1279,8 +1231,6 @@ except ApiException as e:
 
 Patch Speech And Text Analytics Settings
 
-
-
 Wraps PATCH /api/v2/speechandtextanalytics/settings 
 
 Requires ALL permissions: 
@@ -1330,8 +1280,6 @@ except ApiException as e:
 
 Create new Speech & Text Analytics program
 
-
-
 Wraps POST /api/v2/speechandtextanalytics/programs 
 
 Requires ALL permissions: 
@@ -1380,8 +1328,6 @@ except ApiException as e:
 
 
 Create new Speech & Text Analytics general program job
-
-
 
 Wraps POST /api/v2/speechandtextanalytics/programs/general/jobs 
 
@@ -1435,8 +1381,6 @@ except ApiException as e:
 
 Create new Speech & Text Analytics publish programs job
 
-
-
 Wraps POST /api/v2/speechandtextanalytics/programs/publishjobs 
 
 Requires ALL permissions: 
@@ -1485,8 +1429,6 @@ except ApiException as e:
 
 
 Create a Speech & Text Analytics SentimentFeedback
-
-
 
 Wraps POST /api/v2/speechandtextanalytics/sentimentfeedback 
 
@@ -1537,8 +1479,6 @@ except ApiException as e:
 
 Create new Speech & Text Analytics topic
 
-
-
 Wraps POST /api/v2/speechandtextanalytics/topics 
 
 Requires ALL permissions: 
@@ -1587,8 +1527,6 @@ except ApiException as e:
 
 
 Create new Speech & Text Analytics publish topics job
-
-
 
 Wraps POST /api/v2/speechandtextanalytics/topics/publishjobs 
 
@@ -1639,8 +1577,6 @@ except ApiException as e:
 
 Search resources.
 
-
-
 Wraps POST /api/v2/speechandtextanalytics/transcripts/search 
 
 Requires ANY permissions: 
@@ -1690,8 +1626,6 @@ except ApiException as e:
 
 
 Update existing Speech & Text Analytics program
-
-
 
 Wraps PUT /api/v2/speechandtextanalytics/programs/{programId} 
 
@@ -1744,8 +1678,6 @@ except ApiException as e:
 
 Set Speech & Text Analytics program mappings to queues and flows
 
-
-
 Wraps PUT /api/v2/speechandtextanalytics/programs/{programId}/mappings 
 
 Requires ALL permissions: 
@@ -1796,8 +1728,6 @@ except ApiException as e:
 
 
 Update transcription engine settings of a program
-
-
 
 Wraps PUT /api/v2/speechandtextanalytics/programs/{programId}/transcriptionengines 
 
@@ -1850,8 +1780,6 @@ except ApiException as e:
 
 Update Speech And Text Analytics Settings
 
-
-
 Wraps PUT /api/v2/speechandtextanalytics/settings 
 
 Requires ALL permissions: 
@@ -1900,8 +1828,6 @@ except ApiException as e:
 
 
 Update existing Speech & Text Analytics topic
-
-
 
 Wraps PUT /api/v2/speechandtextanalytics/topics/{topicId} 
 

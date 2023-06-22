@@ -22,6 +22,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_systempresences**](PresenceApi.html#get_systempresences) | Get the list of SystemPresences|
 |[**get_user_presence**](PresenceApi.html#get_user_presence) | Get a user&#39;s Presence|
 |[**get_user_presences_purecloud**](PresenceApi.html#get_user_presences_purecloud) | Get a user&#39;s Genesys Cloud presence.|
+|[**get_users_presence_bulk**](PresenceApi.html#get_users_presence_bulk) | Get bulk user presences for a single presence source|
+|[**get_users_presences_purecloud_bulk**](PresenceApi.html#get_users_presences_purecloud_bulk) | Get bulk user presences for a Genesys Cloud (PURECLOUD) presence source|
 |[**patch_user_presence**](PresenceApi.html#patch_user_presence) | Patch a user&#39;s Presence|
 |[**patch_user_presences_purecloud**](PresenceApi.html#patch_user_presences_purecloud) | Patch a Genesys Cloud user&#39;s presence|
 |[**post_presence_definitions**](PresenceApi.html#post_presence_definitions) | Create a Presence Definition|
@@ -43,7 +45,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 Delete a Presence Definition
 
-
+delete_presence_definition is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps DELETE /api/v2/presence/definitions/{definitionId} 
 
@@ -94,8 +96,6 @@ void (empty response body)
 
 Delete a Presence Source
 
-
-
 Wraps DELETE /api/v2/presence/sources/{sourceId} 
 
 Requires ANY permissions: 
@@ -145,8 +145,6 @@ void (empty response body)
 
 Delete a Presence Definition
 
-
-
 Wraps DELETE /api/v2/presencedefinitions/{presenceId} 
 
 Requires ALL permissions: 
@@ -195,7 +193,7 @@ void (empty response body)
 
 Get a Presence Definition
 
-
+get_presence_definition is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/presence/definitions/{definitionId} 
 
@@ -246,7 +244,7 @@ except ApiException as e:
 
 Get a list of Presence Definitions
 
-
+get_presence_definitions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/presence/definitions 
 
@@ -299,8 +297,6 @@ except ApiException as e:
 
 Get the presence settings
 
-
-
 Wraps GET /api/v2/presence/settings 
 
 Requires ALL permissions: 
@@ -345,8 +341,6 @@ This endpoint does not need any parameters.
 
 
 Get a Presence Source
-
-
 
 Wraps GET /api/v2/presence/sources/{sourceId} 
 
@@ -397,8 +391,6 @@ except ApiException as e:
 
 Get a list of Presence Sources
 
-
-
 Wraps GET /api/v2/presence/sources 
 
 Requires ALL permissions: 
@@ -448,8 +440,6 @@ except ApiException as e:
 
 Get a user's Primary Presence Source
 
-
-
 Wraps GET /api/v2/presence/users/{userId}/primarysource 
 
 Requires ALL permissions: 
@@ -498,8 +488,6 @@ except ApiException as e:
 
 
 Get a Presence Definition
-
-
 
 Wraps GET /api/v2/presencedefinitions/{presenceId} 
 
@@ -551,8 +539,6 @@ except ApiException as e:
 
 
 Get an Organization's list of Presence Definitions
-
-
 
 Wraps GET /api/v2/presencedefinitions 
 
@@ -608,8 +594,6 @@ except ApiException as e:
 
 Get the list of SystemPresences
 
-
-
 Wraps GET /api/v2/systempresences 
 
 Requires no permissions
@@ -655,8 +639,6 @@ This endpoint does not need any parameters.
 Get a user's Presence
 
 Get a user's presence for the specified source that is not specifically listed.  Used to support custom presence sources. This endpoint does not support registered presence sources.
-
-
 
 Wraps GET /api/v2/users/{userId}/presences/{sourceId} 
 
@@ -710,8 +692,6 @@ Get a user's Genesys Cloud presence.
 
 Get the default Genesys Cloud user presence source PURECLOUD
 
-
-
 Wraps GET /api/v2/users/{userId}/presences/purecloud 
 
 Requires no permissions
@@ -752,6 +732,104 @@ except ApiException as e:
 
 [**UserPresence**](UserPresence.html)
 
+<a name="get_users_presence_bulk"></a>
+
+## [**list[UcUserPresence]**](UcUserPresence.html) get_users_presence_bulk(source_id, id=id)
+
+
+
+Get bulk user presences for a single presence source
+
+Wraps GET /api/v2/users/presences/{sourceId}/bulk 
+
+Requires no permissions
+
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.PresenceApi()
+source_id = 'source_id_example' # str | The requested presence source ID.
+id = ['id_example'] # list[str] | A comma separated list of user IDs to fetch their presence status in bulk. Limit 50. (optional)
+
+try:
+    # Get bulk user presences for a single presence source
+    api_response = api_instance.get_users_presence_bulk(source_id, id=id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling PresenceApi->get_users_presence_bulk: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **source_id** | **str**| The requested presence source ID. |  |
+| **id** | [**list[str]**](str.html)| A comma separated list of user IDs to fetch their presence status in bulk. Limit 50. | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**list[UcUserPresence]**](UcUserPresence.html)
+
+<a name="get_users_presences_purecloud_bulk"></a>
+
+## [**list[UcUserPresence]**](UcUserPresence.html) get_users_presences_purecloud_bulk(id=id)
+
+
+
+Get bulk user presences for a Genesys Cloud (PURECLOUD) presence source
+
+Wraps GET /api/v2/users/presences/purecloud/bulk 
+
+Requires no permissions
+
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.PresenceApi()
+id = ['id_example'] # list[str] | A comma separated list of user IDs to fetch their presence status in bulk. Limit 50. (optional)
+
+try:
+    # Get bulk user presences for a Genesys Cloud (PURECLOUD) presence source
+    api_response = api_instance.get_users_presences_purecloud_bulk(id=id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling PresenceApi->get_users_presences_purecloud_bulk: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **id** | [**list[str]**](str.html)| A comma separated list of user IDs to fetch their presence status in bulk. Limit 50. | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**list[UcUserPresence]**](UcUserPresence.html)
+
 <a name="patch_user_presence"></a>
 
 ## [**UserPresence**](UserPresence.html) patch_user_presence(user_id, source_id, body)
@@ -761,8 +839,6 @@ except ApiException as e:
 Patch a user's Presence
 
 Patch a user's presence for the specified source that is not specifically listed. This endpoint does not support registered presence sources. The presence object can be patched one of three ways. Option 1: Set the 'primary' property to true. This will set the 'source' defined in the path as the user's primary presence source. Option 2: Provide the presenceDefinition value. The 'id' is the only value required within the presenceDefinition. Option 3: Provide the message value. Option 1 can be combined with Option 2 and/or Option 3.
-
-
 
 Wraps PATCH /api/v2/users/{userId}/presences/{sourceId} 
 
@@ -818,8 +894,6 @@ Patch a Genesys Cloud user's presence
 
 The presence object can be patched one of three ways. Option 1: Set the 'primary' property to true. This will set the PURECLOUD source as the user's primary presence source. Option 2: Provide the presenceDefinition value. The 'id' is the only value required within the presenceDefinition. Option 3: Provide the message value. Option 1 can be combined with Option 2 and/or Option 3.
 
-
-
 Wraps PATCH /api/v2/users/{userId}/presences/purecloud 
 
 Requires no permissions
@@ -870,7 +944,7 @@ except ApiException as e:
 
 Create a Presence Definition
 
-
+post_presence_definitions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/presence/definitions 
 
@@ -921,8 +995,6 @@ except ApiException as e:
 
 Create a Presence Source
 
-
-
 Wraps POST /api/v2/presence/sources 
 
 Requires ALL permissions: 
@@ -971,8 +1043,6 @@ except ApiException as e:
 
 
 Create a Presence Definition
-
-
 
 Wraps POST /api/v2/presencedefinitions 
 
@@ -1023,7 +1093,7 @@ except ApiException as e:
 
 Update a Presence Definition
 
-
+put_presence_definition is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps PUT /api/v2/presence/definitions/{definitionId} 
 
@@ -1076,8 +1146,6 @@ except ApiException as e:
 
 Update the presence settings
 
-
-
 Wraps PUT /api/v2/presence/settings 
 
 Requires ALL permissions: 
@@ -1126,8 +1194,6 @@ except ApiException as e:
 
 
 Update a Presence Source
-
-
 
 Wraps PUT /api/v2/presence/sources/{sourceId} 
 
@@ -1180,8 +1246,6 @@ except ApiException as e:
 
 Update a user's Primary Presence Source
 
-
-
 Wraps PUT /api/v2/presence/users/{userId}/primarysource 
 
 Requires ALL permissions: 
@@ -1233,8 +1297,6 @@ except ApiException as e:
 
 Update a Presence Definition
 
-
-
 Wraps PUT /api/v2/presencedefinitions/{presenceId} 
 
 Requires ALL permissions: 
@@ -1285,8 +1347,6 @@ except ApiException as e:
 
 
 Update bulk user Presences
-
-
 
 Wraps PUT /api/v2/users/presences/bulk 
 

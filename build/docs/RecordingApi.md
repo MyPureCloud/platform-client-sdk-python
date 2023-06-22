@@ -76,8 +76,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 Delete annotation
 
-
-
 Wraps DELETE /api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations/{annotationId} 
 
 Requires ANY permissions: 
@@ -130,8 +128,6 @@ void (empty response body)
 
 Deletes a single orphan recording
 
-
-
 Wraps DELETE /api/v2/orphanrecordings/{orphanId} 
 
 Requires ANY permissions: 
@@ -183,8 +179,6 @@ Delete media retention policies
 
 Bulk delete of media retention policies, this will only delete the polices that match the ids specified in the query param.
 
-
-
 Wraps DELETE /api/v2/recording/crossplatform/mediaretentionpolicies 
 
 Requires ANY permissions: 
@@ -233,8 +227,6 @@ void (empty response body)
 
 Delete a media retention policy
 
-
-
 Wraps DELETE /api/v2/recording/crossplatform/mediaretentionpolicies/{policyId} 
 
 Requires ANY permissions: 
@@ -282,8 +274,6 @@ void (empty response body)
 
 
 Delete the recording bulk job
-
-
 
 Wraps DELETE /api/v2/recording/jobs/{jobId} 
 
@@ -335,8 +325,6 @@ Delete media retention policies
 
 Bulk delete of media retention policies, this will only delete the polices that match the ids specified in the query param.
 
-
-
 Wraps DELETE /api/v2/recording/mediaretentionpolicies 
 
 Requires ANY permissions: 
@@ -385,8 +373,6 @@ void (empty response body)
 
 Delete a media retention policy
 
-
-
 Wraps DELETE /api/v2/recording/mediaretentionpolicies/{policyId} 
 
 Requires ANY permissions: 
@@ -434,8 +420,6 @@ void (empty response body)
 
 
 Gets a specific recording.
-
-
 
 Wraps GET /api/v2/conversations/{conversationId}/recordings/{recordingId} 
 
@@ -505,8 +489,6 @@ except ApiException as e:
 
 Get annotation
 
-
-
 Wraps GET /api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations/{annotationId} 
 
 Requires ANY permissions: 
@@ -560,8 +542,6 @@ except ApiException as e:
 
 Get annotations for recording
 
-
-
 Wraps GET /api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations 
 
 Requires ANY permissions: 
@@ -613,8 +593,6 @@ except ApiException as e:
 
 Get recording metadata for a conversation. Does not return playable media. Annotations won't be included in the response if either recording:recording:view or recording:annotation:view permission is missing.
 
-
-
 Wraps GET /api/v2/conversations/{conversationId}/recordingmetadata 
 
 Requires ANY permissions: 
@@ -664,8 +642,6 @@ except ApiException as e:
 
 
 Get metadata for a specific recording. Does not return playable media.
-
-
 
 Wraps GET /api/v2/conversations/{conversationId}/recordingmetadata/{recordingId} 
 
@@ -718,8 +694,6 @@ except ApiException as e:
 
 
 Get all of a Conversation's Recordings.
-
-
 
 Wraps GET /api/v2/conversations/{conversationId}/recordings 
 
@@ -777,8 +751,6 @@ except ApiException as e:
 
 Gets a single orphan recording
 
-
-
 Wraps GET /api/v2/orphanrecordings/{orphanId} 
 
 Requires ANY permissions: 
@@ -829,8 +801,6 @@ except ApiException as e:
 Gets the media of a single orphan recording
 
 A 202 response means the orphaned media is currently transcoding and will be available shortly.A 200 response denotes the transcoded orphan media is available now and is contained in the response body.
-
-
 
 Wraps GET /api/v2/orphanrecordings/{orphanId}/media 
 
@@ -897,8 +867,6 @@ except ApiException as e:
 
 Gets all orphan recordings
 
-
-
 Wraps GET /api/v2/orphanrecordings 
 
 Requires ANY permissions: 
@@ -962,8 +930,6 @@ except ApiException as e:
 
 Get the status and results for a batch request job, only the user that submitted the job may retrieve results
 
-
-
 Wraps GET /api/v2/recording/batchrequests/{jobId} 
 
 Requires no permissions
@@ -1013,8 +979,6 @@ except ApiException as e:
 Gets media retention policy list with query options to filter on name and enabled.
 
 for a less verbose response, add summary=true to this endpoint
-
-
 
 Wraps GET /api/v2/recording/crossplatform/mediaretentionpolicies 
 
@@ -1085,8 +1049,6 @@ except ApiException as e:
 
 Get a media retention policy
 
-
-
 Wraps GET /api/v2/recording/crossplatform/mediaretentionpolicies/{policyId} 
 
 Requires ANY permissions: 
@@ -1136,8 +1098,6 @@ except ApiException as e:
 
 Get the status of the job associated with the job id.
 
-
-
 Wraps GET /api/v2/recording/jobs/{jobId} 
 
 Requires ALL permissions: 
@@ -1186,8 +1146,6 @@ except ApiException as e:
 
 
 Get IDs of recordings that the bulk job failed for
-
-
 
 Wraps GET /api/v2/recording/jobs/{jobId}/failedrecordings 
 
@@ -1245,8 +1203,6 @@ except ApiException as e:
 
 
 Get the status of all jobs within the user's organization
-
-
 
 Wraps GET /api/v2/recording/jobs 
 
@@ -1311,8 +1267,6 @@ except ApiException as e:
 
 Get the encryption key configurations
 
-
-
 Wraps GET /api/v2/recording/keyconfigurations/{keyConfigurationId} 
 
 Requires ANY permissions: 
@@ -1362,8 +1316,6 @@ except ApiException as e:
 
 Get a list of key configurations data
 
-
-
 Wraps GET /api/v2/recording/keyconfigurations 
 
 Requires ANY permissions: 
@@ -1410,8 +1362,6 @@ This endpoint does not need any parameters.
 Gets media retention policy list with query options to filter on name and enabled.
 
 for a less verbose response, add summary=true to this endpoint
-
-
 
 Wraps GET /api/v2/recording/mediaretentionpolicies 
 
@@ -1482,8 +1432,6 @@ except ApiException as e:
 
 Get a media retention policy
 
-
-
 Wraps GET /api/v2/recording/mediaretentionpolicies/{policyId} 
 
 Requires ANY permissions: 
@@ -1532,8 +1480,6 @@ except ApiException as e:
 
 
 Get encryption key list
-
-
 
 Wraps GET /api/v2/recording/recordingkeys 
 
@@ -1586,8 +1532,6 @@ except ApiException as e:
 
 Get key rotation schedule
 
-
-
 Wraps GET /api/v2/recording/recordingkeys/rotationschedule 
 
 Requires ANY permissions: 
@@ -1632,8 +1576,6 @@ This endpoint does not need any parameters.
 
 
 Get the Recording Settings for the Organization
-
-
 
 Wraps GET /api/v2/recording/settings 
 
@@ -1685,8 +1627,6 @@ except ApiException as e:
 
 Get the status of a recording upload status report
 
-
-
 Wraps GET /api/v2/recording/uploads/reports/{reportId} 
 
 Requires ALL permissions: 
@@ -1735,8 +1675,6 @@ except ApiException as e:
 
 
 Query for recording retention data
-
-
 
 Wraps GET /api/v2/recordings/retention/query 
 
@@ -1791,8 +1729,6 @@ except ApiException as e:
 
 Retrieves a paged listing of screen recording sessions
 
-
-
 Wraps GET /api/v2/recordings/screensessions 
 
 Requires ANY permissions: 
@@ -1843,8 +1779,6 @@ except ApiException as e:
 
 
 Patch a media retention policy
-
-
 
 Wraps PATCH /api/v2/recording/crossplatform/mediaretentionpolicies/{policyId} 
 
@@ -1897,8 +1831,6 @@ except ApiException as e:
 
 Patch a media retention policy
 
-
-
 Wraps PATCH /api/v2/recording/mediaretentionpolicies/{policyId} 
 
 Requires ANY permissions: 
@@ -1950,8 +1882,6 @@ except ApiException as e:
 
 Update a screen recording session
 
-
-
 Wraps PATCH /api/v2/recordings/screensessions/{recordingSessionId} 
 
 Requires ANY permissions: 
@@ -2001,8 +1931,6 @@ void (empty response body)
 
 
 Create annotation
-
-
 
 Wraps POST /api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations 
 
@@ -2057,8 +1985,6 @@ except ApiException as e:
 
 Submit a batch download request for recordings. Recordings in response will be in their original format/codec - configured in the Trunk configuration.
 
-
-
 Wraps POST /api/v2/recording/batchrequests 
 
 Requires ANY permissions: 
@@ -2111,8 +2037,6 @@ Create media retention policy
 
 Policy does not work retroactively
 
-
-
 Wraps POST /api/v2/recording/crossplatform/mediaretentionpolicies 
 
 Requires ANY permissions: 
@@ -2164,8 +2088,6 @@ Create a recording bulk job.
 
 Each organization can run up to a maximum of two concurrent jobs that are either in pending or processing state. Furthermore, the recording:recording:viewSensitiveData permission is required to access recordings with PCI DSS and/or PII data when redaction is enabled for their organization. If the requester does not have that permission and includeRecordingsWithSensitiveData is set to true, then their request will be rejected.
 
-
-
 Wraps POST /api/v2/recording/jobs 
 
 Requires ALL permissions: 
@@ -2214,8 +2136,6 @@ except ApiException as e:
 
 
 Setup configurations for encryption key creation
-
-
 
 Wraps POST /api/v2/recording/keyconfigurations 
 
@@ -2266,8 +2186,6 @@ except ApiException as e:
 
 Validate encryption key configurations without saving it
 
-
-
 Wraps POST /api/v2/recording/keyconfigurations/validate 
 
 Requires ANY permissions: 
@@ -2316,8 +2234,6 @@ except ApiException as e:
 
 
 create a local key management recording key
-
-
 
 Wraps POST /api/v2/recording/localkeys 
 
@@ -2370,8 +2286,6 @@ Create media retention policy
 
 Policy does not work retroactively
 
-
-
 Wraps POST /api/v2/recording/mediaretentionpolicies 
 
 Requires ANY permissions: 
@@ -2421,8 +2335,6 @@ except ApiException as e:
 
 Create encryption key
 
-
-
 Wraps POST /api/v2/recording/recordingkeys 
 
 Requires ANY permissions: 
@@ -2467,8 +2379,6 @@ This endpoint does not need any parameters.
 
 
 Creates a recording upload status report
-
-
 
 Wraps POST /api/v2/recording/uploads/reports 
 
@@ -2519,8 +2429,6 @@ except ApiException as e:
 
 Get a list of conversations with protected recordings
 
-
-
 Wraps POST /api/v2/recordings/deletionprotection 
 
 Requires no permissions
@@ -2569,8 +2477,6 @@ except ApiException as e:
 
 Acknowledge a screen recording.
 
-
-
 Wraps POST /api/v2/recordings/screensessions/acknowledge 
 
 Requires no permissions
@@ -2617,8 +2523,6 @@ void (empty response body)
 
 
 Provide meta-data a screen recording.
-
-
 
 Wraps POST /api/v2/recordings/screensessions/metadata 
 
@@ -2668,8 +2572,6 @@ void (empty response body)
 Updates the retention records on a recording.
 
 Currently supports updating and removing both archive and delete dates for eligible recordings. A request to change the archival date of an archived recording will result in a restoration of the recording until the new date set. The recording:recording:view permission is required for the recording, as well as either the recording:recording:editRetention or recording:screenRecording:editRetention permissions depending on the type of recording.
-
-
 
 Wraps PUT /api/v2/conversations/{conversationId}/recordings/{recordingId} 
 
@@ -2727,8 +2629,6 @@ except ApiException as e:
 
 
 Update annotation
-
-
 
 Wraps PUT /api/v2/conversations/{conversationId}/recordings/{recordingId}/annotations/{annotationId} 
 
@@ -2789,8 +2689,6 @@ Updates an orphan recording to a regular recording with retention values
 
 If this operation is successful the orphan will no longer exist. It will be replaced by the resulting recording in the response. This replacement recording is accessible by the normal Recording api.
 
-
-
 Wraps PUT /api/v2/orphanrecordings/{orphanId} 
 
 Requires ANY permissions: 
@@ -2843,8 +2741,6 @@ except ApiException as e:
 Update a media retention policy
 
 Policy does not work retroactively
-
-
 
 Wraps PUT /api/v2/recording/crossplatform/mediaretentionpolicies/{policyId} 
 
@@ -2899,8 +2795,6 @@ Execute the recording bulk job.
 
 A job must be executed by the same user whom originally created the job.  In addition, the user must have permission to update the recording's retention.
 
-
-
 Wraps PUT /api/v2/recording/jobs/{jobId} 
 
 Requires ALL permissions: 
@@ -2953,8 +2847,6 @@ except ApiException as e:
 
 
 Update the encryption key configurations
-
-
 
 Wraps PUT /api/v2/recording/keyconfigurations/{keyConfigurationId} 
 
@@ -3009,8 +2901,6 @@ Update a media retention policy
 
 Policy does not work retroactively
 
-
-
 Wraps PUT /api/v2/recording/mediaretentionpolicies/{policyId} 
 
 Requires ANY permissions: 
@@ -3062,8 +2952,6 @@ except ApiException as e:
 
 Update key rotation schedule
 
-
-
 Wraps PUT /api/v2/recording/recordingkeys/rotationschedule 
 
 Requires ANY permissions: 
@@ -3113,8 +3001,6 @@ except ApiException as e:
 
 Update the Recording Settings for the Organization
 
-
-
 Wraps PUT /api/v2/recording/settings 
 
 Requires ANY permissions: 
@@ -3163,8 +3049,6 @@ except ApiException as e:
 
 
 Apply or revoke recording protection for conversations
-
-
 
 Wraps PUT /api/v2/recordings/deletionprotection 
 

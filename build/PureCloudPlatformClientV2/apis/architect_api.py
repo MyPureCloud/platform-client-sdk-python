@@ -5209,11 +5209,11 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
-	# Preview Endpoint
     def get_flows_instance(self, instance_id: str, **kwargs) -> 'GetFlowExecutionDataJobResult':
         """
         Start a process (job) to prepare a download of a singular flow execution data instance by Id
         Returns a JobResult object that contains an ID that can be used to check status and/or download links when the process (job) is complete.
+	    get_flows_instance is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -5291,11 +5291,11 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
-	# Preview Endpoint
     def get_flows_instances_job(self, job_id: str, **kwargs) -> 'GetFlowExecutionDataJobResult':
         """
         Get the status and/or results of an asynchronous flow execution data retrieval job
         
+	    get_flows_instances_job is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -5370,11 +5370,11 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
-	# Preview Endpoint
     def get_flows_instances_querycapabilities(self, **kwargs) -> 'FlowsQueryCriteriaResponse':
         """
         Retrieve a list of capabilities that the org can use to query for execution data
         Returns the queryable parameters that can be used to build a query for execution data.
+	    get_flows_instances_querycapabilities is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -7969,11 +7969,11 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
-	# Preview Endpoint
     def post_flows_instances_jobs(self, body: 'ExecutionDataRequest', **kwargs) -> 'GetFlowExecutionDataJobResult':
         """
         Start a process (job) that will prepare a list of execution data IDs for download.
         Returns a JobResult object that contains an ID that can be used to check status and/or download links when the process (job) is complete.
+	    post_flows_instances_jobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -8051,11 +8051,11 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
-	# Preview Endpoint
     def post_flows_instances_query(self, body: 'CriteriaQuery', **kwargs) -> 'FlowResultEntityListing':
         """
         Query the database of existing flow histories to look for particular flow criteria
         Returns a list of matching flow histories up to 200 max.
+	    post_flows_instances_query is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
