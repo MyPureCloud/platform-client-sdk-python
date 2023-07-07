@@ -97,7 +97,7 @@ class CreateOutboundMessagingConversationRequest(object):
     def to_address(self) -> str:
         """
         Gets the to_address of this CreateOutboundMessagingConversationRequest.
-        The messaging address of the recipient of the message. For an SMS messenger type, the phone number address must be in E.164 format. E.g. +13175555555 or +34234234234.  For open messenger type, any string within the outbound.open.messaging.to.address.characters.max limit can be used.
+        The messaging address of the recipient of the message. For an SMS messenger type, the phone number address must be in E.164 format. E.g. +13175555555 or +34234234234.  For open messenger type, any string within the outbound.open.messaging.to.address.characters.max limit can be used. For whatsapp messenger type, use a Whatsapp ID of a phone number. E.g for a E.164 formatted phone number `+13175555555`, a Whatsapp ID would be 13175555555
 
         :return: The to_address of this CreateOutboundMessagingConversationRequest.
         :rtype: str
@@ -108,7 +108,7 @@ class CreateOutboundMessagingConversationRequest(object):
     def to_address(self, to_address: str) -> None:
         """
         Sets the to_address of this CreateOutboundMessagingConversationRequest.
-        The messaging address of the recipient of the message. For an SMS messenger type, the phone number address must be in E.164 format. E.g. +13175555555 or +34234234234.  For open messenger type, any string within the outbound.open.messaging.to.address.characters.max limit can be used.
+        The messaging address of the recipient of the message. For an SMS messenger type, the phone number address must be in E.164 format. E.g. +13175555555 or +34234234234.  For open messenger type, any string within the outbound.open.messaging.to.address.characters.max limit can be used. For whatsapp messenger type, use a Whatsapp ID of a phone number. E.g for a E.164 formatted phone number `+13175555555`, a Whatsapp ID would be 13175555555
 
         :param to_address: The to_address of this CreateOutboundMessagingConversationRequest.
         :type: str
@@ -139,7 +139,7 @@ class CreateOutboundMessagingConversationRequest(object):
         """
         if isinstance(to_address_messenger_type, int):
             to_address_messenger_type = str(to_address_messenger_type)
-        allowed_values = ["sms", "open"]
+        allowed_values = ["sms", "open", "whatsapp"]
         if to_address_messenger_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for to_address_messenger_type -> " + to_address_messenger_type)
             self._to_address_messenger_type = "outdated_sdk_version"

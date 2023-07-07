@@ -41,6 +41,7 @@ title: EvaluationQualityV2TopicEvaluationV2
 | **rescore_count** | **int** |  | [optional] |
 | **evaluator_comment_has_updated** | **bool** |  | [optional] |
 | **agent_comment_has_updated** | **bool** |  | [optional] |
+| **previous_rescore_count** | **int** |  | [optional] |
 {: class="table table-striped"}
 
 

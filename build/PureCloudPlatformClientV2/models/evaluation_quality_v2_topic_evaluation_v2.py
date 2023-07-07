@@ -87,7 +87,8 @@ class EvaluationQualityV2TopicEvaluationV2(object):
             'retracted_evaluation': 'EvaluationQualityV2TopicEvaluationReference',
             'rescore_count': 'int',
             'evaluator_comment_has_updated': 'bool',
-            'agent_comment_has_updated': 'bool'
+            'agent_comment_has_updated': 'bool',
+            'previous_rescore_count': 'int'
         }
 
         self.attribute_map = {
@@ -124,7 +125,8 @@ class EvaluationQualityV2TopicEvaluationV2(object):
             'retracted_evaluation': 'retractedEvaluation',
             'rescore_count': 'rescoreCount',
             'evaluator_comment_has_updated': 'evaluatorCommentHasUpdated',
-            'agent_comment_has_updated': 'agentCommentHasUpdated'
+            'agent_comment_has_updated': 'agentCommentHasUpdated',
+            'previous_rescore_count': 'previousRescoreCount'
         }
 
         self._id = None
@@ -161,6 +163,7 @@ class EvaluationQualityV2TopicEvaluationV2(object):
         self._rescore_count = None
         self._evaluator_comment_has_updated = None
         self._agent_comment_has_updated = None
+        self._previous_rescore_count = None
 
     @property
     def id(self) -> str:
@@ -987,6 +990,30 @@ class EvaluationQualityV2TopicEvaluationV2(object):
         
 
         self._agent_comment_has_updated = agent_comment_has_updated
+
+    @property
+    def previous_rescore_count(self) -> int:
+        """
+        Gets the previous_rescore_count of this EvaluationQualityV2TopicEvaluationV2.
+
+
+        :return: The previous_rescore_count of this EvaluationQualityV2TopicEvaluationV2.
+        :rtype: int
+        """
+        return self._previous_rescore_count
+
+    @previous_rescore_count.setter
+    def previous_rescore_count(self, previous_rescore_count: int) -> None:
+        """
+        Sets the previous_rescore_count of this EvaluationQualityV2TopicEvaluationV2.
+
+
+        :param previous_rescore_count: The previous_rescore_count of this EvaluationQualityV2TopicEvaluationV2.
+        :type: int
+        """
+        
+
+        self._previous_rescore_count = previous_rescore_count
 
     def to_dict(self):
         """

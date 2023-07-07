@@ -21,6 +21,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_scripts_published_script_id_variables**](ScriptsApi.html#get_scripts_published_script_id_variables) | Get the published variables|
 |[**get_scripts_upload_status**](ScriptsApi.html#get_scripts_upload_status) | Get the upload status of an imported script|
 |[**post_script_export**](ScriptsApi.html#post_script_export) | Export a script via download service.|
+|[**post_scripts_published**](ScriptsApi.html#post_scripts_published) | Publish a script.|
 {: class="table table-striped"}
 
 <a name="get_script"></a>
@@ -749,4 +750,55 @@ except ApiException as e:
 ### Return type
 
 [**ExportScriptResponse**](ExportScriptResponse.html)
+
+<a name="post_scripts_published"></a>
+
+## [**Script**](Script.html) post_scripts_published(script_data_version=script_data_version, body=body)
+
+
+
+Publish a script.
+
+Wraps POST /api/v2/scripts/published 
+
+Requires ANY permissions: 
+
+* scripter:publishedScript:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ScriptsApi()
+script_data_version = 'script_data_version_example' # str | Advanced usage - controls the data version of the script (optional)
+body = PureCloudPlatformClientV2.PublishScriptRequestData() # PublishScriptRequestData | body (optional)
+
+try:
+    # Publish a script.
+    api_response = api_instance.post_scripts_published(script_data_version=script_data_version, body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ScriptsApi->post_scripts_published: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **script_data_version** | **str**| Advanced usage - controls the data version of the script | [optional]  |
+| **body** | [**PublishScriptRequestData**](PublishScriptRequestData.html)| body | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**Script**](Script.html)
 

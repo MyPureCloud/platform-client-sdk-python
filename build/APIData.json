@@ -7419,7 +7419,7 @@
         "required": "true"
       }
     ],
-    "return": "EmailMessageListing",
+    "return": "EmailMessagePreviewListing",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.ConversationsApi();\nconversation_id = 'conversation_id_example' # str | conversationId\n\ntry:\n    # Get conversation messages\n    api_response = api_instance.get_conversations_email_messages(conversation_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling ConversationsApi->get_conversations_email_messages: %s\\n\" % e)"
   },
   "get_conversations_email_messages_draft": {
@@ -32161,6 +32161,25 @@
     "return": "ExportScriptResponse",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.ScriptsApi();\nscript_id = 'script_id_example' # str | Script ID\nbody = PureCloudPlatformClientV2.ExportScriptRequest() # ExportScriptRequest |  (optional)\n\ntry:\n    # Export a script via download service.\n    api_response = api_instance.post_script_export(script_id, body=body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling ScriptsApi->post_script_export: %s\\n\" % e)"
   },
+  "post_scripts_published": {
+    "operationId": "post_scripts_published",
+    "functionName": "post_scripts_published",
+    "signature": "post_scripts_published(script_data_version, body)",
+    "parameters": [
+      {
+        "name": "script_data_version",
+        "type": "str",
+        "required": "false"
+      },
+      {
+        "name": "body",
+        "type": "PublishScriptRequestData",
+        "required": "false"
+      }
+    ],
+    "return": "Script",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.ScriptsApi();\nscript_data_version = 'script_data_version_example' # str | Advanced usage - controls the data version of the script (optional)\nbody = PureCloudPlatformClientV2.PublishScriptRequestData() # PublishScriptRequestData | body (optional)\n\ntry:\n    # Publish a script.\n    api_response = api_instance.post_scripts_published(script_data_version=script_data_version, body=body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling ScriptsApi->post_scripts_published: %s\\n\" % e)"
+  },
   "get_documentation_gkn_search": {
     "operationId": "get_documentation_gkn_search",
     "functionName": "get_documentation_gkn_search",
@@ -35149,6 +35168,39 @@
     ],
     "return": "LogicalInterfaceEntityListing",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi();\nedge_ids = 'edge_ids_example' # str | Comma separated list of Edge Id's\nexpand = ['expand_example'] # list[str] | Field to expand in the response (optional)\n\ntry:\n    # Get edge logical interfaces.\n    api_response = api_instance.get_telephony_providers_edges_logicalinterfaces(edge_ids, expand=expand)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_logicalinterfaces: %s\\n\" % e)"
+  },
+  "get_telephony_providers_edges_mediastatistics_conversation": {
+    "operationId": "get_telephony_providers_edges_mediastatistics_conversation",
+    "functionName": "get_telephony_providers_edges_mediastatistics_conversation",
+    "signature": "get_telephony_providers_edges_mediastatistics_conversation(conversation_id)",
+    "parameters": [
+      {
+        "name": "conversation_id",
+        "type": "str",
+        "required": "true"
+      }
+    ],
+    "return": "MediaStatisticsListing",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi();\nconversation_id = 'conversation_id_example' # str | Identifier of the conversation\n\ntry:\n    # Get media endpoint statistics events.\n    api_response = api_instance.get_telephony_providers_edges_mediastatistics_conversation(conversation_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_mediastatistics_conversation: %s\\n\" % e)"
+  },
+  "get_telephony_providers_edges_mediastatistics_conversation_communication": {
+    "operationId": "get_telephony_providers_edges_mediastatistics_conversation_communication",
+    "functionName": "get_telephony_providers_edges_mediastatistics_conversation_communication",
+    "signature": "get_telephony_providers_edges_mediastatistics_conversation_communication(conversation_id, communication_id)",
+    "parameters": [
+      {
+        "name": "conversation_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "communication_id",
+        "type": "str",
+        "required": "true"
+      }
+    ],
+    "return": "MediaStatistics",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi();\nconversation_id = 'conversation_id_example' # str | Identifier of the conversation\ncommunication_id = 'communication_id_example' # str | Identifier of the media session\n\ntry:\n    # Get media endpoint statistics event.\n    api_response = api_instance.get_telephony_providers_edges_mediastatistics_conversation_communication(conversation_id, communication_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_mediastatistics_conversation_communication: %s\\n\" % e)"
   },
   "get_telephony_providers_edges_metrics": {
     "operationId": "get_telephony_providers_edges_metrics",

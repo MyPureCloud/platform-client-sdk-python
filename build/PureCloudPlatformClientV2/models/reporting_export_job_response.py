@@ -81,6 +81,7 @@ class ReportingExportJobResponse(object):
             'email_error_description': 'str',
             'include_duration_format_in_header': 'bool',
             'duration_format': 'str',
+            'export_allowed_to_rerun': 'bool',
             'enabled': 'bool',
             'self_uri': 'str'
         }
@@ -116,6 +117,7 @@ class ReportingExportJobResponse(object):
             'email_error_description': 'emailErrorDescription',
             'include_duration_format_in_header': 'includeDurationFormatInHeader',
             'duration_format': 'durationFormat',
+            'export_allowed_to_rerun': 'exportAllowedToRerun',
             'enabled': 'enabled',
             'self_uri': 'selfUri'
         }
@@ -150,6 +152,7 @@ class ReportingExportJobResponse(object):
         self._email_error_description = None
         self._include_duration_format_in_header = None
         self._duration_format = None
+        self._export_allowed_to_rerun = None
         self._enabled = None
         self._self_uri = None
 
@@ -406,7 +409,7 @@ class ReportingExportJobResponse(object):
         """
         if isinstance(export_error_messages_type, int):
             export_error_messages_type = str(export_error_messages_type)
-        allowed_values = ["FAILED_CONVERTING_EXPORT_JOB", "FAILED_NO_DATA_EXPORT_JOB_FOUND", "FAILED_GETTING_DATA_FROM_SERVICE", "FAILED_GENERATING_TEMP_FILE", "FAILED_SAVING_FILE_TO_S3", "FAILED_NOTIFYING_SKYWALKER_OF_DOWNLOAD", "FAILED_BUILDING_DOWNLOAD_URL_FROM_SKYWALKER_RESPONSE", "FAILED_CONVERTING_EXPORT_JOB_TO_QUEUE_PERFORMANCE_JOB", "EXPORT_TYPE_NOT_IMPLEMENTED", "REACHED_MAXIMUM_ATTEMPT_OF_RETRY", "FAILED_LONG_RUNNING_EXPORT", "TOO_MANY_REQUESTS_FROM_AN_ORGANIZATION", "FAILED_AS_EXPORT_FILE_SIZE_IS_GREATER_THAN_10MB", "NOT_AUTHORIZED_TO_VIEW_EXPORT"]
+        allowed_values = ["FAILED_CONVERTING_EXPORT_JOB", "FAILED_NO_DATA_EXPORT_JOB_FOUND", "FAILED_GETTING_DATA_FROM_SERVICE", "FAILED_GENERATING_TEMP_FILE", "FAILED_SAVING_FILE_TO_S3", "FAILED_NOTIFYING_SKYWALKER_OF_DOWNLOAD", "FAILED_BUILDING_DOWNLOAD_URL_FROM_SKYWALKER_RESPONSE", "FAILED_CONVERTING_EXPORT_JOB_TO_QUEUE_PERFORMANCE_JOB", "EXPORT_TYPE_NOT_IMPLEMENTED", "REACHED_MAXIMUM_ATTEMPT_OF_RETRY", "FAILED_LONG_RUNNING_EXPORT", "TOO_MANY_REQUESTS_FROM_AN_ORGANIZATION", "FAILED_AS_EXPORT_FILE_SIZE_IS_GREATER_THAN_10MB", "NOT_AUTHORIZED_TO_VIEW_EXPORT", "STATIC_LINK_EXPORT_FAILED", "TOO_MANY_SEARCH_CRITERIA", "SEARCH_CRITERIA_VALUES_EXCEED_LIMIT"]
         if export_error_messages_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for export_error_messages_type -> " + export_error_messages_type)
             self._export_error_messages_type = "outdated_sdk_version"
@@ -902,6 +905,30 @@ class ReportingExportJobResponse(object):
             self._duration_format = "outdated_sdk_version"
         else:
             self._duration_format = duration_format
+
+    @property
+    def export_allowed_to_rerun(self) -> bool:
+        """
+        Gets the export_allowed_to_rerun of this ReportingExportJobResponse.
+        Indicates whether the export run is allowed to rerun
+
+        :return: The export_allowed_to_rerun of this ReportingExportJobResponse.
+        :rtype: bool
+        """
+        return self._export_allowed_to_rerun
+
+    @export_allowed_to_rerun.setter
+    def export_allowed_to_rerun(self, export_allowed_to_rerun: bool) -> None:
+        """
+        Sets the export_allowed_to_rerun of this ReportingExportJobResponse.
+        Indicates whether the export run is allowed to rerun
+
+        :param export_allowed_to_rerun: The export_allowed_to_rerun of this ReportingExportJobResponse.
+        :type: bool
+        """
+        
+
+        self._export_allowed_to_rerun = export_allowed_to_rerun
 
     @property
     def enabled(self) -> bool:

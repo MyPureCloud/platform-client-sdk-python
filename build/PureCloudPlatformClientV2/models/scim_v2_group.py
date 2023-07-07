@@ -199,7 +199,7 @@ class ScimV2Group(object):
     def meta(self) -> 'ScimMetadata':
         """
         Gets the meta of this ScimV2Group.
-        The metadata of the SCIM resource.
+        The metadata of the SCIM resource. Metadata is defined as immutable per SCIM RFC.
 
         :return: The meta of this ScimV2Group.
         :rtype: ScimMetadata
@@ -210,7 +210,7 @@ class ScimV2Group(object):
     def meta(self, meta: 'ScimMetadata') -> None:
         """
         Sets the meta of this ScimV2Group.
-        The metadata of the SCIM resource.
+        The metadata of the SCIM resource. Metadata is defined as immutable per SCIM RFC.
 
         :param meta: The meta of this ScimV2Group.
         :type: ScimMetadata

@@ -14,8 +14,10 @@ title: WfmBuShortTermForecastCopyCompleteTopicBuForecastModification
 | **legacy_metric** | **str** |  | [optional] |
 | **value** | **float** |  | [optional] |
 | **values** | [**list[WfmBuShortTermForecastCopyCompleteTopicModificationIntervalOffsetValue]**](WfmBuShortTermForecastCopyCompleteTopicModificationIntervalOffsetValue.html) |  | [optional] |
+| **secondary_values** | [**list[WfmBuShortTermForecastCopyCompleteTopicModificationIntervalOffsetValue]**](WfmBuShortTermForecastCopyCompleteTopicModificationIntervalOffsetValue.html) |  | [optional] |
 | **enabled** | **bool** |  | [optional] |
 | **granularity** | **str** |  | [optional] |
+| **secondary_granularity** | **str** |  | [optional] |
 | **display_granularity** | **str** |  | [optional] |
 | **planning_group_ids** | **list[str]** |  | [optional] |
 {: class="table table-striped"}

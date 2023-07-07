@@ -351,7 +351,7 @@ class ScimV2User(object):
     def groups(self) -> List['ScimV2GroupReference']:
         """
         Gets the groups of this ScimV2User.
-        The list of groups that the user is a member of.
+        The list of groups that the user is a member of. This list is immutable per SCIM RFC and may only be updated using the GROUPS resource endpoint.
 
         :return: The groups of this ScimV2User.
         :rtype: list[ScimV2GroupReference]
@@ -362,7 +362,7 @@ class ScimV2User(object):
     def groups(self, groups: List['ScimV2GroupReference']) -> None:
         """
         Sets the groups of this ScimV2User.
-        The list of groups that the user is a member of.
+        The list of groups that the user is a member of. This list is immutable per SCIM RFC and may only be updated using the GROUPS resource endpoint.
 
         :param groups: The groups of this ScimV2User.
         :type: list[ScimV2GroupReference]
@@ -447,7 +447,7 @@ class ScimV2User(object):
     def meta(self) -> 'ScimMetadata':
         """
         Gets the meta of this ScimV2User.
-        The metadata of the SCIM resource.
+        The metadata of the SCIM resource. Metadata is defined as immutable per SCIM RFC.
 
         :return: The meta of this ScimV2User.
         :rtype: ScimMetadata
@@ -458,7 +458,7 @@ class ScimV2User(object):
     def meta(self, meta: 'ScimMetadata') -> None:
         """
         Sets the meta of this ScimV2User.
-        The metadata of the SCIM resource.
+        The metadata of the SCIM resource. Metadata is defined as immutable per SCIM RFC.
 
         :param meta: The meta of this ScimV2User.
         :type: ScimMetadata

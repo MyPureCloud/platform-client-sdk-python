@@ -64,7 +64,7 @@ class WorkitemQuerySort(object):
     def name(self) -> str:
         """
         Gets the name of this WorkitemQuerySort.
-        Specify an attribute for sorting. It's possible to use an attribute both for sorting and in the query at the same time, but these restrictions apply: Only the operators EQ, LT, LTE, GT, GTE, BETWEEN and BEGINS_WITH are supported and the attribute can't be present in more than one filter. Sorting by priority is only supported in workbinId based queries.
+        Specify an attribute for sorting. It's possible to use an attribute both for sorting and in the query at the same time, but these restrictions apply: Only the operators EQ, LT, LTE, GT, GTE, BETWEEN and BEGINS_WITH are supported and the attribute can't be present in more than one filter.
 
         :return: The name of this WorkitemQuerySort.
         :rtype: str
@@ -75,7 +75,7 @@ class WorkitemQuerySort(object):
     def name(self, name: str) -> None:
         """
         Sets the name of this WorkitemQuerySort.
-        Specify an attribute for sorting. It's possible to use an attribute both for sorting and in the query at the same time, but these restrictions apply: Only the operators EQ, LT, LTE, GT, GTE, BETWEEN and BEGINS_WITH are supported and the attribute can't be present in more than one filter. Sorting by priority is only supported in workbinId based queries.
+        Specify an attribute for sorting. It's possible to use an attribute both for sorting and in the query at the same time, but these restrictions apply: Only the operators EQ, LT, LTE, GT, GTE, BETWEEN and BEGINS_WITH are supported and the attribute can't be present in more than one filter.
 
         :param name: The name of this WorkitemQuerySort.
         :type: str

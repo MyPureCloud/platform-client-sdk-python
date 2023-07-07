@@ -57,8 +57,10 @@ class WfmBuShortTermForecastImportCompleteTopicBuForecastModification(object):
             'legacy_metric': 'str',
             'value': 'float',
             'values': 'list[WfmBuShortTermForecastImportCompleteTopicModificationIntervalOffsetValue]',
+            'secondary_values': 'list[WfmBuShortTermForecastImportCompleteTopicModificationIntervalOffsetValue]',
             'enabled': 'bool',
             'granularity': 'str',
+            'secondary_granularity': 'str',
             'display_granularity': 'str',
             'planning_group_ids': 'list[str]'
         }
@@ -71,8 +73,10 @@ class WfmBuShortTermForecastImportCompleteTopicBuForecastModification(object):
             'legacy_metric': 'legacyMetric',
             'value': 'value',
             'values': 'values',
+            'secondary_values': 'secondaryValues',
             'enabled': 'enabled',
             'granularity': 'granularity',
+            'secondary_granularity': 'secondaryGranularity',
             'display_granularity': 'displayGranularity',
             'planning_group_ids': 'planningGroupIds'
         }
@@ -84,8 +88,10 @@ class WfmBuShortTermForecastImportCompleteTopicBuForecastModification(object):
         self._legacy_metric = None
         self._value = None
         self._values = None
+        self._secondary_values = None
         self._enabled = None
         self._granularity = None
+        self._secondary_granularity = None
         self._display_granularity = None
         self._planning_group_ids = None
 
@@ -111,7 +117,7 @@ class WfmBuShortTermForecastImportCompleteTopicBuForecastModification(object):
         """
         if isinstance(type, int):
             type = str(type)
-        allowed_values = ["MinimumPerInterval", "MaximumPerInterval", "SetValuePerInterval", "ChangeValuePerInterval", "ChangePercentPerInterval", "SetValueOverRange", "ChangeValueOverRange", "SetValuesForIntervalSet"]
+        allowed_values = ["MinimumPerInterval", "MaximumPerInterval", "SetValuePerInterval", "ChangeValuePerInterval", "ChangePercentPerInterval", "SetValueOverRange", "ChangeValueOverRange", "SetValuesForIntervalSet", "SetMultiGranularityValuesForIntervalSet"]
         if type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for type -> " + type)
             self._type = "outdated_sdk_version"
@@ -273,6 +279,30 @@ class WfmBuShortTermForecastImportCompleteTopicBuForecastModification(object):
         self._values = values
 
     @property
+    def secondary_values(self) -> List['WfmBuShortTermForecastImportCompleteTopicModificationIntervalOffsetValue']:
+        """
+        Gets the secondary_values of this WfmBuShortTermForecastImportCompleteTopicBuForecastModification.
+
+
+        :return: The secondary_values of this WfmBuShortTermForecastImportCompleteTopicBuForecastModification.
+        :rtype: list[WfmBuShortTermForecastImportCompleteTopicModificationIntervalOffsetValue]
+        """
+        return self._secondary_values
+
+    @secondary_values.setter
+    def secondary_values(self, secondary_values: List['WfmBuShortTermForecastImportCompleteTopicModificationIntervalOffsetValue']) -> None:
+        """
+        Sets the secondary_values of this WfmBuShortTermForecastImportCompleteTopicBuForecastModification.
+
+
+        :param secondary_values: The secondary_values of this WfmBuShortTermForecastImportCompleteTopicBuForecastModification.
+        :type: list[WfmBuShortTermForecastImportCompleteTopicModificationIntervalOffsetValue]
+        """
+        
+
+        self._secondary_values = secondary_values
+
+    @property
     def enabled(self) -> bool:
         """
         Gets the enabled of this WfmBuShortTermForecastImportCompleteTopicBuForecastModification.
@@ -319,6 +349,30 @@ class WfmBuShortTermForecastImportCompleteTopicBuForecastModification(object):
         
 
         self._granularity = granularity
+
+    @property
+    def secondary_granularity(self) -> str:
+        """
+        Gets the secondary_granularity of this WfmBuShortTermForecastImportCompleteTopicBuForecastModification.
+
+
+        :return: The secondary_granularity of this WfmBuShortTermForecastImportCompleteTopicBuForecastModification.
+        :rtype: str
+        """
+        return self._secondary_granularity
+
+    @secondary_granularity.setter
+    def secondary_granularity(self, secondary_granularity: str) -> None:
+        """
+        Sets the secondary_granularity of this WfmBuShortTermForecastImportCompleteTopicBuForecastModification.
+
+
+        :param secondary_granularity: The secondary_granularity of this WfmBuShortTermForecastImportCompleteTopicBuForecastModification.
+        :type: str
+        """
+        
+
+        self._secondary_granularity = secondary_granularity
 
     @property
     def display_granularity(self) -> str:

@@ -2818,7 +2818,7 @@ except ApiException as e:
 
 <a name="get_conversations_email_messages"></a>
 
-## [**EmailMessageListing**](EmailMessageListing.html) get_conversations_email_messages(conversation_id)
+## [**EmailMessagePreviewListing**](EmailMessagePreviewListing.html) get_conversations_email_messages(conversation_id)
 
 
 
@@ -2862,7 +2862,7 @@ except ApiException as e:
 
 ### Return type
 
-[**EmailMessageListing**](EmailMessageListing.html)
+[**EmailMessagePreviewListing**](EmailMessagePreviewListing.html)
 
 <a name="get_conversations_email_messages_draft"></a>
 

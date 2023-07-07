@@ -1,13 +1,13 @@
 ---
-title: EventPresence
+title: SupportCenterImageSource
 ---
-## EventPresence
+## SupportCenterImageSource
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **type** | **str** | Describes the type of Presence event. | |
+| **default_url** | **str** |  | [optional] |
 {: class="table table-striped"}
 
 

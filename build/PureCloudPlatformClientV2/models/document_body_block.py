@@ -36,6 +36,7 @@ if TYPE_CHECKING:
     from . import DocumentBodyImage
     from . import DocumentBodyList
     from . import DocumentBodyParagraph
+    from . import DocumentBodyTable
     from . import DocumentBodyVideo
 
 class DocumentBodyBlock(object):
@@ -57,7 +58,8 @@ class DocumentBodyBlock(object):
             'paragraph': 'DocumentBodyParagraph',
             'image': 'DocumentBodyImage',
             'video': 'DocumentBodyVideo',
-            'list': 'DocumentBodyList'
+            'list': 'DocumentBodyList',
+            'table': 'DocumentBodyTable'
         }
 
         self.attribute_map = {
@@ -65,7 +67,8 @@ class DocumentBodyBlock(object):
             'paragraph': 'paragraph',
             'image': 'image',
             'video': 'video',
-            'list': 'list'
+            'list': 'list',
+            'table': 'table'
         }
 
         self._type = None
@@ -73,12 +76,13 @@ class DocumentBodyBlock(object):
         self._image = None
         self._video = None
         self._list = None
+        self._table = None
 
     @property
     def type(self) -> str:
         """
         Gets the type of this DocumentBodyBlock.
-        The type of the block for the body. This determines which body block object (paragraph, list, video or image) would have a value.
+        The type of the block for the body. This determines which body block object (paragraph, list, video, image or table) would have a value.
 
         :return: The type of this DocumentBodyBlock.
         :rtype: str
@@ -89,14 +93,14 @@ class DocumentBodyBlock(object):
     def type(self, type: str) -> None:
         """
         Sets the type of this DocumentBodyBlock.
-        The type of the block for the body. This determines which body block object (paragraph, list, video or image) would have a value.
+        The type of the block for the body. This determines which body block object (paragraph, list, video, image or table) would have a value.
 
         :param type: The type of this DocumentBodyBlock.
         :type: str
         """
         if isinstance(type, int):
             type = str(type)
-        allowed_values = ["Paragraph", "Image", "Video", "OrderedList", "UnorderedList"]
+        allowed_values = ["Paragraph", "Image", "Video", "OrderedList", "UnorderedList", "Table"]
         if type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for type -> " + type)
             self._type = "outdated_sdk_version"
@@ -198,6 +202,30 @@ class DocumentBodyBlock(object):
         
 
         self._list = list
+
+    @property
+    def table(self) -> 'DocumentBodyTable':
+        """
+        Gets the table of this DocumentBodyBlock.
+        Table. It must contain a value if type of the block is Table.
+
+        :return: The table of this DocumentBodyBlock.
+        :rtype: DocumentBodyTable
+        """
+        return self._table
+
+    @table.setter
+    def table(self, table: 'DocumentBodyTable') -> None:
+        """
+        Sets the table of this DocumentBodyBlock.
+        Table. It must contain a value if type of the block is Table.
+
+        :param table: The table of this DocumentBodyBlock.
+        :type: DocumentBodyTable
+        """
+        
+
+        self._table = table
 
     def to_dict(self):
         """

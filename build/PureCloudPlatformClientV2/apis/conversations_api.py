@@ -103,7 +103,7 @@ from ..models import DraftManipulationRequest
 from ..models import EmailConversation
 from ..models import EmailConversationEntityListing
 from ..models import EmailMessage
-from ..models import EmailMessageListing
+from ..models import EmailMessagePreviewListing
 from ..models import EmailMessageReply
 from ..models import EmailsSettings
 from ..models import ErrorBody
@@ -4424,7 +4424,7 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_conversations_email_messages(self, conversation_id: str, **kwargs) -> 'EmailMessageListing':
+    def get_conversations_email_messages(self, conversation_id: str, **kwargs) -> 'EmailMessagePreviewListing':
         """
         Get conversation messages
         
@@ -4440,7 +4440,7 @@ class ConversationsApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str conversation_id: conversationId (required)
-        :return: EmailMessageListing
+        :return: EmailMessagePreviewListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -4497,7 +4497,7 @@ class ConversationsApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='EmailMessageListing',
+                                            response_type='EmailMessagePreviewListing',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

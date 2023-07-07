@@ -60,6 +60,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_telephony_providers_edges_lines**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_lines) | Get a list of Lines|
 |[**get_telephony_providers_edges_lines_template**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_lines_template) | Get a Line instance template based on a Line Base Settings object. This object can then be modified and saved as a new Line instance|
 |[**get_telephony_providers_edges_logicalinterfaces**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_logicalinterfaces) | Get edge logical interfaces.|
+|[**get_telephony_providers_edges_mediastatistics_conversation**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_mediastatistics_conversation) | Get media endpoint statistics events.|
+|[**get_telephony_providers_edges_mediastatistics_conversation_communication**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_mediastatistics_conversation_communication) | Get media endpoint statistics event.|
 |[**get_telephony_providers_edges_metrics**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_metrics) | Get the metrics for a list of edges.|
 |[**get_telephony_providers_edges_outboundroute**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_outboundroute) | Get outbound route|
 |[**get_telephony_providers_edges_outboundroutes**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_outboundroutes) | Get outbound routes|
@@ -2784,6 +2786,110 @@ except ApiException as e:
 ### Return type
 
 [**LogicalInterfaceEntityListing**](LogicalInterfaceEntityListing.html)
+
+<a name="get_telephony_providers_edges_mediastatistics_conversation"></a>
+
+## [**MediaStatisticsListing**](MediaStatisticsListing.html) get_telephony_providers_edges_mediastatistics_conversation(conversation_id)
+
+
+
+Get media endpoint statistics events.
+
+get_telephony_providers_edges_mediastatistics_conversation is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/telephony/providers/edges/mediastatistics/conversations/{conversationId} 
+
+Requires ANY permissions: 
+
+* analytics:conversationDetail:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+conversation_id = 'conversation_id_example' # str | Identifier of the conversation
+
+try:
+    # Get media endpoint statistics events.
+    api_response = api_instance.get_telephony_providers_edges_mediastatistics_conversation(conversation_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_mediastatistics_conversation: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversation_id** | **str**| Identifier of the conversation |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**MediaStatisticsListing**](MediaStatisticsListing.html)
+
+<a name="get_telephony_providers_edges_mediastatistics_conversation_communication"></a>
+
+## [**MediaStatistics**](MediaStatistics.html) get_telephony_providers_edges_mediastatistics_conversation_communication(conversation_id, communication_id)
+
+
+
+Get media endpoint statistics event.
+
+get_telephony_providers_edges_mediastatistics_conversation_communication is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/telephony/providers/edges/mediastatistics/conversations/{conversationId}/communications/{communicationId} 
+
+Requires ANY permissions: 
+
+* analytics:conversationDetail:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+conversation_id = 'conversation_id_example' # str | Identifier of the conversation
+communication_id = 'communication_id_example' # str | Identifier of the media session
+
+try:
+    # Get media endpoint statistics event.
+    api_response = api_instance.get_telephony_providers_edges_mediastatistics_conversation_communication(conversation_id, communication_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_mediastatistics_conversation_communication: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversation_id** | **str**| Identifier of the conversation |  |
+| **communication_id** | **str**| Identifier of the media session |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**MediaStatistics**](MediaStatistics.html)
 
 <a name="get_telephony_providers_edges_metrics"></a>
 

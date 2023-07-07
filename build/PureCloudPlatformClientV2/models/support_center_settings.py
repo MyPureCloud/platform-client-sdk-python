@@ -34,6 +34,7 @@ from typing import Dict
 
 if TYPE_CHECKING:
     from . import AddressableEntityRef
+    from . import SupportCenterCategory
     from . import SupportCenterCustomMessage
     from . import SupportCenterFeedbackSettings
     from . import SupportCenterScreen
@@ -59,7 +60,7 @@ class SupportCenterSettings(object):
             'custom_messages': 'list[SupportCenterCustomMessage]',
             'router_type': 'str',
             'screens': 'list[SupportCenterScreen]',
-            'enabled_categories': 'list[AddressableEntityRef]',
+            'enabled_categories': 'list[SupportCenterCategory]',
             'style_setting': 'SupportCenterStyleSetting',
             'feedback': 'SupportCenterFeedbackSettings'
         }
@@ -210,24 +211,24 @@ class SupportCenterSettings(object):
         self._screens = screens
 
     @property
-    def enabled_categories(self) -> List['AddressableEntityRef']:
+    def enabled_categories(self) -> List['SupportCenterCategory']:
         """
         Gets the enabled_categories of this SupportCenterSettings.
         Enabled article categories for support center
 
         :return: The enabled_categories of this SupportCenterSettings.
-        :rtype: list[AddressableEntityRef]
+        :rtype: list[SupportCenterCategory]
         """
         return self._enabled_categories
 
     @enabled_categories.setter
-    def enabled_categories(self, enabled_categories: List['AddressableEntityRef']) -> None:
+    def enabled_categories(self, enabled_categories: List['SupportCenterCategory']) -> None:
         """
         Sets the enabled_categories of this SupportCenterSettings.
         Enabled article categories for support center
 
         :param enabled_categories: The enabled_categories of this SupportCenterSettings.
-        :type: list[AddressableEntityRef]
+        :type: list[SupportCenterCategory]
         """
         
 

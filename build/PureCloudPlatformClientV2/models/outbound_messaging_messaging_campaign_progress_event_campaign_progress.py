@@ -55,6 +55,7 @@ class OutboundMessagingMessagingCampaignProgressEventCampaignProgress(object):
             'number_of_contacts_messaged': 'float',
             'total_number_of_contacts': 'float',
             'percentage': 'int',
+            'number_of_contacts_skipped': 'dict(str, int)',
             'additional_properties': 'dict(str, object)'
         }
 
@@ -64,6 +65,7 @@ class OutboundMessagingMessagingCampaignProgressEventCampaignProgress(object):
             'number_of_contacts_messaged': 'numberOfContactsMessaged',
             'total_number_of_contacts': 'totalNumberOfContacts',
             'percentage': 'percentage',
+            'number_of_contacts_skipped': 'numberOfContactsSkipped',
             'additional_properties': 'additionalProperties'
         }
 
@@ -72,6 +74,7 @@ class OutboundMessagingMessagingCampaignProgressEventCampaignProgress(object):
         self._number_of_contacts_messaged = None
         self._total_number_of_contacts = None
         self._percentage = None
+        self._number_of_contacts_skipped = None
         self._additional_properties = None
 
     @property
@@ -193,6 +196,30 @@ class OutboundMessagingMessagingCampaignProgressEventCampaignProgress(object):
         
 
         self._percentage = percentage
+
+    @property
+    def number_of_contacts_skipped(self) -> Dict[str, int]:
+        """
+        Gets the number_of_contacts_skipped of this OutboundMessagingMessagingCampaignProgressEventCampaignProgress.
+        A map of skipped reasons and the number of contacts associated with each.
+
+        :return: The number_of_contacts_skipped of this OutboundMessagingMessagingCampaignProgressEventCampaignProgress.
+        :rtype: dict(str, int)
+        """
+        return self._number_of_contacts_skipped
+
+    @number_of_contacts_skipped.setter
+    def number_of_contacts_skipped(self, number_of_contacts_skipped: Dict[str, int]) -> None:
+        """
+        Sets the number_of_contacts_skipped of this OutboundMessagingMessagingCampaignProgressEventCampaignProgress.
+        A map of skipped reasons and the number of contacts associated with each.
+
+        :param number_of_contacts_skipped: The number_of_contacts_skipped of this OutboundMessagingMessagingCampaignProgressEventCampaignProgress.
+        :type: dict(str, int)
+        """
+        
+
+        self._number_of_contacts_skipped = number_of_contacts_skipped
 
     @property
     def additional_properties(self) -> Dict[str, object]:

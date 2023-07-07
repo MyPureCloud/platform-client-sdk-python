@@ -310,7 +310,7 @@ class ScimServiceProviderConfig(object):
     def meta(self) -> 'ScimMetadata':
         """
         Gets the meta of this ScimServiceProviderConfig.
-        The metadata of the SCIM resource.
+        The metadata of the SCIM resource. Metadata is defined as immutable per SCIM RFC.
 
         :return: The meta of this ScimServiceProviderConfig.
         :rtype: ScimMetadata
@@ -321,7 +321,7 @@ class ScimServiceProviderConfig(object):
     def meta(self, meta: 'ScimMetadata') -> None:
         """
         Sets the meta of this ScimServiceProviderConfig.
-        The metadata of the SCIM resource.
+        The metadata of the SCIM resource. Metadata is defined as immutable per SCIM RFC.
 
         :param meta: The meta of this ScimServiceProviderConfig.
         :type: ScimMetadata

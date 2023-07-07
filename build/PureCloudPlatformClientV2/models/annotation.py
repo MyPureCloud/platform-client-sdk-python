@@ -61,6 +61,9 @@ class Annotation(object):
             'recording_duration_ms': 'int',
             'user': 'User',
             'description': 'str',
+            'reason': 'str',
+            'annotations': 'list[Annotation]',
+            'realtime_location': 'int',
             'self_uri': 'str'
         }
 
@@ -76,6 +79,9 @@ class Annotation(object):
             'recording_duration_ms': 'recordingDurationMs',
             'user': 'user',
             'description': 'description',
+            'reason': 'reason',
+            'annotations': 'annotations',
+            'realtime_location': 'realtimeLocation',
             'self_uri': 'selfUri'
         }
 
@@ -90,6 +96,9 @@ class Annotation(object):
         self._recording_duration_ms = None
         self._user = None
         self._description = None
+        self._reason = None
+        self._annotations = None
+        self._realtime_location = None
         self._self_uri = None
 
     @property
@@ -355,6 +364,83 @@ class Annotation(object):
         
 
         self._description = description
+
+    @property
+    def reason(self) -> str:
+        """
+        Gets the reason of this Annotation.
+        Reason for a pause annotation. Valid values: Hold,SecurePause,FlowOrQueue
+
+        :return: The reason of this Annotation.
+        :rtype: str
+        """
+        return self._reason
+
+    @reason.setter
+    def reason(self, reason: str) -> None:
+        """
+        Sets the reason of this Annotation.
+        Reason for a pause annotation. Valid values: Hold,SecurePause,FlowOrQueue
+
+        :param reason: The reason of this Annotation.
+        :type: str
+        """
+        if isinstance(reason, int):
+            reason = str(reason)
+        allowed_values = ["Hold", "SecurePause", "FlowOrQueue"]
+        if reason.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for reason -> " + reason)
+            self._reason = "outdated_sdk_version"
+        else:
+            self._reason = reason
+
+    @property
+    def annotations(self) -> List['Annotation']:
+        """
+        Gets the annotations of this Annotation.
+        List of annotations
+
+        :return: The annotations of this Annotation.
+        :rtype: list[Annotation]
+        """
+        return self._annotations
+
+    @annotations.setter
+    def annotations(self, annotations: List['Annotation']) -> None:
+        """
+        Sets the annotations of this Annotation.
+        List of annotations
+
+        :param annotations: The annotations of this Annotation.
+        :type: list[Annotation]
+        """
+        
+
+        self._annotations = annotations
+
+    @property
+    def realtime_location(self) -> int:
+        """
+        Gets the realtime_location of this Annotation.
+        Offset of annotation (milliseconds) from start of the recording before removing the cumulative duration of all pauses before this annotation
+
+        :return: The realtime_location of this Annotation.
+        :rtype: int
+        """
+        return self._realtime_location
+
+    @realtime_location.setter
+    def realtime_location(self, realtime_location: int) -> None:
+        """
+        Sets the realtime_location of this Annotation.
+        Offset of annotation (milliseconds) from start of the recording before removing the cumulative duration of all pauses before this annotation
+
+        :param realtime_location: The realtime_location of this Annotation.
+        :type: int
+        """
+        
+
+        self._realtime_location = realtime_location
 
     @property
     def self_uri(self) -> str:

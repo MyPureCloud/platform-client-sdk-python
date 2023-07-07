@@ -32,6 +32,8 @@ from typing import TYPE_CHECKING
 from typing import List
 from typing import Dict
 
+if TYPE_CHECKING:
+    from . import SupportCenterImage
 
 class SupportCenterHeroStyle(object):
     """
@@ -49,16 +51,19 @@ class SupportCenterHeroStyle(object):
         """
         self.swagger_types = {
             'background_color': 'str',
-            'text_color': 'str'
+            'text_color': 'str',
+            'image': 'SupportCenterImage'
         }
 
         self.attribute_map = {
             'background_color': 'backgroundColor',
-            'text_color': 'textColor'
+            'text_color': 'textColor',
+            'image': 'image'
         }
 
         self._background_color = None
         self._text_color = None
+        self._image = None
 
     @property
     def background_color(self) -> str:
@@ -107,6 +112,30 @@ class SupportCenterHeroStyle(object):
         
 
         self._text_color = text_color
+
+    @property
+    def image(self) -> 'SupportCenterImage':
+        """
+        Gets the image of this SupportCenterHeroStyle.
+        Background image for hero section
+
+        :return: The image of this SupportCenterHeroStyle.
+        :rtype: SupportCenterImage
+        """
+        return self._image
+
+    @image.setter
+    def image(self, image: 'SupportCenterImage') -> None:
+        """
+        Sets the image of this SupportCenterHeroStyle.
+        Background image for hero section
+
+        :param image: The image of this SupportCenterHeroStyle.
+        :type: SupportCenterImage
+        """
+        
+
+        self._image = image
 
     def to_dict(self):
         """

@@ -320,7 +320,7 @@ class ScimV2CreateUser(object):
     def groups(self) -> List['ScimV2GroupReference']:
         """
         Gets the groups of this ScimV2CreateUser.
-        The list of groups that the user is a member of.
+        The list of groups that the user is a member of. This list is immutable per SCIM RFC and may only be updated using the GROUPS resource endpoint.
 
         :return: The groups of this ScimV2CreateUser.
         :rtype: list[ScimV2GroupReference]
@@ -331,7 +331,7 @@ class ScimV2CreateUser(object):
     def groups(self, groups: List['ScimV2GroupReference']) -> None:
         """
         Sets the groups of this ScimV2CreateUser.
-        The list of groups that the user is a member of.
+        The list of groups that the user is a member of. This list is immutable per SCIM RFC and may only be updated using the GROUPS resource endpoint.
 
         :param groups: The groups of this ScimV2CreateUser.
         :type: list[ScimV2GroupReference]
