@@ -980,6 +980,7 @@ from .custom_i18n_labels import CustomI18nLabels
 from .customer_end_detail_event_topic_customer_end_event import CustomerEndDetailEventTopicCustomerEndEvent
 from .customer_interaction_center import CustomerInteractionCenter
 from .customer_start_detail_event_topic_customer_start_event import CustomerStartDetailEventTopicCustomerStartEvent
+from .customer_start_detail_event_topic_journey_context import CustomerStartDetailEventTopicJourneyContext
 from .did import DID
 from .did_entity_listing import DIDEntityListing
 from .did_number import DIDNumber

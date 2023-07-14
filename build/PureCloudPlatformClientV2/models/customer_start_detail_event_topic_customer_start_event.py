@@ -32,6 +32,8 @@ from typing import TYPE_CHECKING
 from typing import List
 from typing import Dict
 
+if TYPE_CHECKING:
+    from . import CustomerStartDetailEventTopicJourneyContext
 
 class CustomerStartDetailEventTopicCustomerStartEvent(object):
     """
@@ -67,7 +69,8 @@ class CustomerStartDetailEventTopicCustomerStartEvent(object):
             'subject': 'str',
             'message_type': 'str',
             'conversation_external_contact_ids': 'list[str]',
-            'conversation_external_organization_ids': 'list[str]'
+            'conversation_external_organization_ids': 'list[str]',
+            'journey_context': 'CustomerStartDetailEventTopicJourneyContext'
         }
 
         self.attribute_map = {
@@ -90,7 +93,8 @@ class CustomerStartDetailEventTopicCustomerStartEvent(object):
             'subject': 'subject',
             'message_type': 'messageType',
             'conversation_external_contact_ids': 'conversationExternalContactIds',
-            'conversation_external_organization_ids': 'conversationExternalOrganizationIds'
+            'conversation_external_organization_ids': 'conversationExternalOrganizationIds',
+            'journey_context': 'journeyContext'
         }
 
         self._event_time = None
@@ -113,6 +117,7 @@ class CustomerStartDetailEventTopicCustomerStartEvent(object):
         self._message_type = None
         self._conversation_external_contact_ids = None
         self._conversation_external_organization_ids = None
+        self._journey_context = None
 
     @property
     def event_time(self) -> int:
@@ -608,6 +613,30 @@ class CustomerStartDetailEventTopicCustomerStartEvent(object):
         
 
         self._conversation_external_organization_ids = conversation_external_organization_ids
+
+    @property
+    def journey_context(self) -> 'CustomerStartDetailEventTopicJourneyContext':
+        """
+        Gets the journey_context of this CustomerStartDetailEventTopicCustomerStartEvent.
+
+
+        :return: The journey_context of this CustomerStartDetailEventTopicCustomerStartEvent.
+        :rtype: CustomerStartDetailEventTopicJourneyContext
+        """
+        return self._journey_context
+
+    @journey_context.setter
+    def journey_context(self, journey_context: 'CustomerStartDetailEventTopicJourneyContext') -> None:
+        """
+        Sets the journey_context of this CustomerStartDetailEventTopicCustomerStartEvent.
+
+
+        :param journey_context: The journey_context of this CustomerStartDetailEventTopicCustomerStartEvent.
+        :type: CustomerStartDetailEventTopicJourneyContext
+        """
+        
+
+        self._journey_context = journey_context
 
     def to_dict(self):
         """

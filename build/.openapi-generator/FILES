@@ -1054,6 +1054,7 @@ PureCloudPlatformClientV2/models/custom_i18n_labels.py
 PureCloudPlatformClientV2/models/customer_end_detail_event_topic_customer_end_event.py
 PureCloudPlatformClientV2/models/customer_interaction_center.py
 PureCloudPlatformClientV2/models/customer_start_detail_event_topic_customer_start_event.py
+PureCloudPlatformClientV2/models/customer_start_detail_event_topic_journey_context.py
 PureCloudPlatformClientV2/models/daily_possible_shift.py
 PureCloudPlatformClientV2/models/data_action_condition_predicate.py
 PureCloudPlatformClientV2/models/data_action_condition_settings.py
@@ -4934,6 +4935,7 @@ docs/CustomI18nLabels.md
 docs/CustomerEndDetailEventTopicCustomerEndEvent.md
 docs/CustomerInteractionCenter.md
 docs/CustomerStartDetailEventTopicCustomerStartEvent.md
+docs/CustomerStartDetailEventTopicJourneyContext.md
 docs/DID.md
 docs/DIDEntityListing.md
 docs/DIDNumber.md
