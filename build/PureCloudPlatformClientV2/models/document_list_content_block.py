@@ -35,6 +35,7 @@ from typing import Dict
 if TYPE_CHECKING:
     from . import DocumentBodyImage
     from . import DocumentBodyList
+    from . import DocumentBodyVideo
     from . import DocumentText
 
 class DocumentListContentBlock(object):
@@ -55,20 +56,23 @@ class DocumentListContentBlock(object):
             'type': 'str',
             'text': 'DocumentText',
             'image': 'DocumentBodyImage',
-            'list': 'DocumentBodyList'
+            'list': 'DocumentBodyList',
+            'video': 'DocumentBodyVideo'
         }
 
         self.attribute_map = {
             'type': 'type',
             'text': 'text',
             'image': 'image',
-            'list': 'list'
+            'list': 'list',
+            'video': 'video'
         }
 
         self._type = None
         self._text = None
         self._image = None
         self._list = None
+        self._video = None
 
     @property
     def type(self) -> str:
@@ -92,7 +96,7 @@ class DocumentListContentBlock(object):
         """
         if isinstance(type, int):
             type = str(type)
-        allowed_values = ["Text", "Image", "OrderedList", "UnorderedList"]
+        allowed_values = ["Text", "Image", "OrderedList", "UnorderedList", "Video"]
         if type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for type -> " + type)
             self._type = "outdated_sdk_version"
@@ -170,6 +174,30 @@ class DocumentListContentBlock(object):
         
 
         self._list = list
+
+    @property
+    def video(self) -> 'DocumentBodyVideo':
+        """
+        Gets the video of this DocumentListContentBlock.
+        Video. It must contain a value if the type of the block is Video.
+
+        :return: The video of this DocumentListContentBlock.
+        :rtype: DocumentBodyVideo
+        """
+        return self._video
+
+    @video.setter
+    def video(self, video: 'DocumentBodyVideo') -> None:
+        """
+        Sets the video of this DocumentListContentBlock.
+        Video. It must contain a value if the type of the block is Video.
+
+        :param video: The video of this DocumentListContentBlock.
+        :type: DocumentBodyVideo
+        """
+        
+
+        self._video = video
 
     def to_dict(self):
         """

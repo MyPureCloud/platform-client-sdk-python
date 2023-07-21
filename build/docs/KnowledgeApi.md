@@ -2067,7 +2067,7 @@ except ApiException as e:
 
 <a name="get_knowledge_knowledgebase_unanswered_group"></a>
 
-## [**UnansweredGroup**](UnansweredGroup.html) get_knowledge_knowledgebase_unanswered_group(knowledge_base_id, group_id, app=app)
+## [**UnansweredGroup**](UnansweredGroup.html) get_knowledge_knowledgebase_unanswered_group(knowledge_base_id, group_id, app=app, date_start=date_start, date_end=date_end)
 
 
 
@@ -2095,10 +2095,12 @@ api_instance = PureCloudPlatformClientV2.KnowledgeApi()
 knowledge_base_id = 'knowledge_base_id_example' # str | Knowledge base ID
 group_id = 'group_id_example' # str | The ID of the group to be retrieved.
 app = 'app_example' # str | The app value to be used for filtering phrases. (optional)
+date_start = '2013-10-20' # date | The start date to be used for filtering phrases. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)
+date_end = '2013-10-20' # date | The end date to be used for filtering phrases. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)
 
 try:
     # Get knowledge base unanswered group for a particular groupId
-    api_response = api_instance.get_knowledge_knowledgebase_unanswered_group(knowledge_base_id, group_id, app=app)
+    api_response = api_instance.get_knowledge_knowledgebase_unanswered_group(knowledge_base_id, group_id, app=app, date_start=date_start, date_end=date_end)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling KnowledgeApi->get_knowledge_knowledgebase_unanswered_group: %s\n" % e)
@@ -2112,6 +2114,8 @@ except ApiException as e:
 | **knowledge_base_id** | **str**| Knowledge base ID |  |
 | **group_id** | **str**| The ID of the group to be retrieved. |  |
 | **app** | **str**| The app value to be used for filtering phrases. | [optional] <br />**Values**: SupportCenter, MessengerKnowledgeApp, BotFlow, Assistant, SmartAdvisor |
+| **date_start** | **date**| The start date to be used for filtering phrases. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional]  |
+| **date_end** | **date**| The end date to be used for filtering phrases. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2120,7 +2124,7 @@ except ApiException as e:
 
 <a name="get_knowledge_knowledgebase_unanswered_group_phrasegroup"></a>
 
-## [**UnansweredPhraseGroup**](UnansweredPhraseGroup.html) get_knowledge_knowledgebase_unanswered_group_phrasegroup(knowledge_base_id, group_id, phrase_group_id, app=app)
+## [**UnansweredPhraseGroup**](UnansweredPhraseGroup.html) get_knowledge_knowledgebase_unanswered_group_phrasegroup(knowledge_base_id, group_id, phrase_group_id, app=app, date_start=date_start, date_end=date_end)
 
 
 
@@ -2149,10 +2153,12 @@ knowledge_base_id = 'knowledge_base_id_example' # str | Knowledge base ID
 group_id = 'group_id_example' # str | The ID of the group to be retrieved.
 phrase_group_id = 'phrase_group_id_example' # str | The ID of the phraseGroup to be retrieved.
 app = 'app_example' # str | The app value to be used for filtering phrases. (optional)
+date_start = '2013-10-20' # date | The start date to be used for filtering phrases. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)
+date_end = '2013-10-20' # date | The end date to be used for filtering phrases. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)
 
 try:
     # Get knowledge base unanswered phrase group for a particular phraseGroupId
-    api_response = api_instance.get_knowledge_knowledgebase_unanswered_group_phrasegroup(knowledge_base_id, group_id, phrase_group_id, app=app)
+    api_response = api_instance.get_knowledge_knowledgebase_unanswered_group_phrasegroup(knowledge_base_id, group_id, phrase_group_id, app=app, date_start=date_start, date_end=date_end)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling KnowledgeApi->get_knowledge_knowledgebase_unanswered_group_phrasegroup: %s\n" % e)
@@ -2167,6 +2173,8 @@ except ApiException as e:
 | **group_id** | **str**| The ID of the group to be retrieved. |  |
 | **phrase_group_id** | **str**| The ID of the phraseGroup to be retrieved. |  |
 | **app** | **str**| The app value to be used for filtering phrases. | [optional] <br />**Values**: SupportCenter, MessengerKnowledgeApp, BotFlow, Assistant, SmartAdvisor |
+| **date_start** | **date**| The start date to be used for filtering phrases. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional]  |
+| **date_end** | **date**| The end date to be used for filtering phrases. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2175,7 +2183,7 @@ except ApiException as e:
 
 <a name="get_knowledge_knowledgebase_unanswered_groups"></a>
 
-## [**UnansweredGroups**](UnansweredGroups.html) get_knowledge_knowledgebase_unanswered_groups(knowledge_base_id, app=app)
+## [**UnansweredGroups**](UnansweredGroups.html) get_knowledge_knowledgebase_unanswered_groups(knowledge_base_id, app=app, date_start=date_start, date_end=date_end)
 
 
 
@@ -2202,10 +2210,12 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.KnowledgeApi()
 knowledge_base_id = 'knowledge_base_id_example' # str | Knowledge base ID
 app = 'app_example' # str | The app value to be used for filtering phrases. (optional)
+date_start = '2013-10-20' # date | The start date to be used for filtering phrases. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)
+date_end = '2013-10-20' # date | The end date to be used for filtering phrases. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)
 
 try:
     # Get knowledge base unanswered groups
-    api_response = api_instance.get_knowledge_knowledgebase_unanswered_groups(knowledge_base_id, app=app)
+    api_response = api_instance.get_knowledge_knowledgebase_unanswered_groups(knowledge_base_id, app=app, date_start=date_start, date_end=date_end)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling KnowledgeApi->get_knowledge_knowledgebase_unanswered_groups: %s\n" % e)
@@ -2218,6 +2228,8 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **knowledge_base_id** | **str**| Knowledge base ID |  |
 | **app** | **str**| The app value to be used for filtering phrases. | [optional] <br />**Values**: SupportCenter, MessengerKnowledgeApp, BotFlow, Assistant, SmartAdvisor |
+| **date_start** | **date**| The start date to be used for filtering phrases. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional]  |
+| **date_end** | **date**| The end date to be used for filtering phrases. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional]  |
 {: class="table table-striped"}
 
 ### Return type

@@ -3430,12 +3430,14 @@ class KnowledgeApi(object):
         :param str knowledge_base_id: Knowledge base ID (required)
         :param str group_id: The ID of the group to be retrieved. (required)
         :param str app: The app value to be used for filtering phrases.
+        :param date date_start: The start date to be used for filtering phrases. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+        :param date date_end: The end date to be used for filtering phrases. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
         :return: UnansweredGroup
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['knowledge_base_id', 'group_id', 'app']
+        all_params = ['knowledge_base_id', 'group_id', 'app', 'date_start', 'date_end']
         all_params.append('callback')
 
         params = locals()
@@ -3466,6 +3468,10 @@ class KnowledgeApi(object):
         query_params = {}
         if 'app' in params:
             query_params['app'] = params['app']
+        if 'date_start' in params:
+            query_params['dateStart'] = params['date_start']
+        if 'date_end' in params:
+            query_params['dateEnd'] = params['date_end']
 
         header_params = {}
 
@@ -3518,12 +3524,14 @@ class KnowledgeApi(object):
         :param str group_id: The ID of the group to be retrieved. (required)
         :param str phrase_group_id: The ID of the phraseGroup to be retrieved. (required)
         :param str app: The app value to be used for filtering phrases.
+        :param date date_start: The start date to be used for filtering phrases. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+        :param date date_end: The end date to be used for filtering phrases. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
         :return: UnansweredPhraseGroup
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['knowledge_base_id', 'group_id', 'phrase_group_id', 'app']
+        all_params = ['knowledge_base_id', 'group_id', 'phrase_group_id', 'app', 'date_start', 'date_end']
         all_params.append('callback')
 
         params = locals()
@@ -3559,6 +3567,10 @@ class KnowledgeApi(object):
         query_params = {}
         if 'app' in params:
             query_params['app'] = params['app']
+        if 'date_start' in params:
+            query_params['dateStart'] = params['date_start']
+        if 'date_end' in params:
+            query_params['dateEnd'] = params['date_end']
 
         header_params = {}
 
@@ -3609,12 +3621,14 @@ class KnowledgeApi(object):
             for asynchronous request. (optional)
         :param str knowledge_base_id: Knowledge base ID (required)
         :param str app: The app value to be used for filtering phrases.
+        :param date date_start: The start date to be used for filtering phrases. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+        :param date date_end: The end date to be used for filtering phrases. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
         :return: UnansweredGroups
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['knowledge_base_id', 'app']
+        all_params = ['knowledge_base_id', 'app', 'date_start', 'date_end']
         all_params.append('callback')
 
         params = locals()
@@ -3640,6 +3654,10 @@ class KnowledgeApi(object):
         query_params = {}
         if 'app' in params:
             query_params['app'] = params['app']
+        if 'date_start' in params:
+            query_params['dateStart'] = params['date_start']
+        if 'date_end' in params:
+            query_params['dateEnd'] = params['date_end']
 
         header_params = {}
 

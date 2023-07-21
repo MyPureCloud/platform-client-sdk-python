@@ -37,6 +37,7 @@ if TYPE_CHECKING:
     from . import EventCondition
     from . import OutcomePercentileCondition
     from . import OutcomeProbabilityCondition
+    from . import OutcomeQuantileCondition
     from . import PatchAction
     from . import PatchActionMapScheduleGroups
     from . import UrlCondition
@@ -64,6 +65,7 @@ class PatchActionMap(object):
             'trigger_with_event_conditions': 'list[EventCondition]',
             'trigger_with_outcome_probability_conditions': 'list[OutcomeProbabilityCondition]',
             'trigger_with_outcome_percentile_conditions': 'list[OutcomePercentileCondition]',
+            'trigger_with_outcome_quantile_conditions': 'list[OutcomeQuantileCondition]',
             'page_url_conditions': 'list[UrlCondition]',
             'activation': 'Activation',
             'weight': 'int',
@@ -86,6 +88,7 @@ class PatchActionMap(object):
             'trigger_with_event_conditions': 'triggerWithEventConditions',
             'trigger_with_outcome_probability_conditions': 'triggerWithOutcomeProbabilityConditions',
             'trigger_with_outcome_percentile_conditions': 'triggerWithOutcomePercentileConditions',
+            'trigger_with_outcome_quantile_conditions': 'triggerWithOutcomeQuantileConditions',
             'page_url_conditions': 'pageUrlConditions',
             'activation': 'activation',
             'weight': 'weight',
@@ -107,6 +110,7 @@ class PatchActionMap(object):
         self._trigger_with_event_conditions = None
         self._trigger_with_outcome_probability_conditions = None
         self._trigger_with_outcome_percentile_conditions = None
+        self._trigger_with_outcome_quantile_conditions = None
         self._page_url_conditions = None
         self._activation = None
         self._weight = None
@@ -291,7 +295,7 @@ class PatchActionMap(object):
     def trigger_with_outcome_percentile_conditions(self) -> List['OutcomePercentileCondition']:
         """
         Gets the trigger_with_outcome_percentile_conditions of this PatchActionMap.
-        Percentile conditions for outcomes that must be satisfied to trigger the action map.
+        (deprecated - use triggerWithOutcomeQuantileConditions instead) Percentile conditions for outcomes that must be satisfied to trigger the action map.
 
         :return: The trigger_with_outcome_percentile_conditions of this PatchActionMap.
         :rtype: list[OutcomePercentileCondition]
@@ -302,7 +306,7 @@ class PatchActionMap(object):
     def trigger_with_outcome_percentile_conditions(self, trigger_with_outcome_percentile_conditions: List['OutcomePercentileCondition']) -> None:
         """
         Sets the trigger_with_outcome_percentile_conditions of this PatchActionMap.
-        Percentile conditions for outcomes that must be satisfied to trigger the action map.
+        (deprecated - use triggerWithOutcomeQuantileConditions instead) Percentile conditions for outcomes that must be satisfied to trigger the action map.
 
         :param trigger_with_outcome_percentile_conditions: The trigger_with_outcome_percentile_conditions of this PatchActionMap.
         :type: list[OutcomePercentileCondition]
@@ -310,6 +314,30 @@ class PatchActionMap(object):
         
 
         self._trigger_with_outcome_percentile_conditions = trigger_with_outcome_percentile_conditions
+
+    @property
+    def trigger_with_outcome_quantile_conditions(self) -> List['OutcomeQuantileCondition']:
+        """
+        Gets the trigger_with_outcome_quantile_conditions of this PatchActionMap.
+        Quantile conditions for outcomes that must be satisfied to trigger the action map.
+
+        :return: The trigger_with_outcome_quantile_conditions of this PatchActionMap.
+        :rtype: list[OutcomeQuantileCondition]
+        """
+        return self._trigger_with_outcome_quantile_conditions
+
+    @trigger_with_outcome_quantile_conditions.setter
+    def trigger_with_outcome_quantile_conditions(self, trigger_with_outcome_quantile_conditions: List['OutcomeQuantileCondition']) -> None:
+        """
+        Sets the trigger_with_outcome_quantile_conditions of this PatchActionMap.
+        Quantile conditions for outcomes that must be satisfied to trigger the action map.
+
+        :param trigger_with_outcome_quantile_conditions: The trigger_with_outcome_quantile_conditions of this PatchActionMap.
+        :type: list[OutcomeQuantileCondition]
+        """
+        
+
+        self._trigger_with_outcome_quantile_conditions = trigger_with_outcome_quantile_conditions
 
     @property
     def page_url_conditions(self) -> List['UrlCondition']:

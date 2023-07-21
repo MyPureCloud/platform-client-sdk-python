@@ -33,6 +33,7 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
+    from . import JourneyAction
     from . import JourneyCustomer
     from . import JourneyCustomerSession
 
@@ -51,17 +52,44 @@ class WebDeploymentsJourneyContext(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
+            'journey_action': 'JourneyAction',
             'customer': 'JourneyCustomer',
             'customer_session': 'JourneyCustomerSession'
         }
 
         self.attribute_map = {
+            'journey_action': 'journeyAction',
             'customer': 'customer',
             'customer_session': 'customerSession'
         }
 
+        self._journey_action = None
         self._customer = None
         self._customer_session = None
+
+    @property
+    def journey_action(self) -> 'JourneyAction':
+        """
+        Gets the journey_action of this WebDeploymentsJourneyContext.
+        A subset of the Journey System's action data relevant to a part of a conversation (for external linkage and internal usage/context)
+
+        :return: The journey_action of this WebDeploymentsJourneyContext.
+        :rtype: JourneyAction
+        """
+        return self._journey_action
+
+    @journey_action.setter
+    def journey_action(self, journey_action: 'JourneyAction') -> None:
+        """
+        Sets the journey_action of this WebDeploymentsJourneyContext.
+        A subset of the Journey System's action data relevant to a part of a conversation (for external linkage and internal usage/context)
+
+        :param journey_action: The journey_action of this WebDeploymentsJourneyContext.
+        :type: JourneyAction
+        """
+        
+
+        self._journey_action = journey_action
 
     @property
     def customer(self) -> 'JourneyCustomer':

@@ -32,6 +32,9 @@ from typing import TYPE_CHECKING
 from typing import List
 from typing import Dict
 
+if TYPE_CHECKING:
+    from . import SupportCenterCompactCategoryModuleTemplate
+    from . import SupportCenterDetailedCategoryModuleTemplate
 
 class SupportCenterModuleSetting(object):
     """
@@ -49,16 +52,22 @@ class SupportCenterModuleSetting(object):
         """
         self.swagger_types = {
             'type': 'str',
-            'enabled': 'bool'
+            'enabled': 'bool',
+            'compact_category_module_template': 'SupportCenterCompactCategoryModuleTemplate',
+            'detailed_category_module_template': 'SupportCenterDetailedCategoryModuleTemplate'
         }
 
         self.attribute_map = {
             'type': 'type',
-            'enabled': 'enabled'
+            'enabled': 'enabled',
+            'compact_category_module_template': 'compactCategoryModuleTemplate',
+            'detailed_category_module_template': 'detailedCategoryModuleTemplate'
         }
 
         self._type = None
         self._enabled = None
+        self._compact_category_module_template = None
+        self._detailed_category_module_template = None
 
     @property
     def type(self) -> str:
@@ -112,6 +121,54 @@ class SupportCenterModuleSetting(object):
         
 
         self._enabled = enabled
+
+    @property
+    def compact_category_module_template(self) -> 'SupportCenterCompactCategoryModuleTemplate':
+        """
+        Gets the compact_category_module_template of this SupportCenterModuleSetting.
+        Compact category module template
+
+        :return: The compact_category_module_template of this SupportCenterModuleSetting.
+        :rtype: SupportCenterCompactCategoryModuleTemplate
+        """
+        return self._compact_category_module_template
+
+    @compact_category_module_template.setter
+    def compact_category_module_template(self, compact_category_module_template: 'SupportCenterCompactCategoryModuleTemplate') -> None:
+        """
+        Sets the compact_category_module_template of this SupportCenterModuleSetting.
+        Compact category module template
+
+        :param compact_category_module_template: The compact_category_module_template of this SupportCenterModuleSetting.
+        :type: SupportCenterCompactCategoryModuleTemplate
+        """
+        
+
+        self._compact_category_module_template = compact_category_module_template
+
+    @property
+    def detailed_category_module_template(self) -> 'SupportCenterDetailedCategoryModuleTemplate':
+        """
+        Gets the detailed_category_module_template of this SupportCenterModuleSetting.
+        Detailed category module template
+
+        :return: The detailed_category_module_template of this SupportCenterModuleSetting.
+        :rtype: SupportCenterDetailedCategoryModuleTemplate
+        """
+        return self._detailed_category_module_template
+
+    @detailed_category_module_template.setter
+    def detailed_category_module_template(self, detailed_category_module_template: 'SupportCenterDetailedCategoryModuleTemplate') -> None:
+        """
+        Sets the detailed_category_module_template of this SupportCenterModuleSetting.
+        Detailed category module template
+
+        :param detailed_category_module_template: The detailed_category_module_template of this SupportCenterModuleSetting.
+        :type: SupportCenterDetailedCategoryModuleTemplate
+        """
+        
+
+        self._detailed_category_module_template = detailed_category_module_template
 
     def to_dict(self):
         """

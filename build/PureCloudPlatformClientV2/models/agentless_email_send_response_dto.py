@@ -188,7 +188,7 @@ class AgentlessEmailSendResponseDto(object):
     def to_addresses(self) -> List['EmailAddress']:
         """
         Gets the to_addresses of this AgentlessEmailSendResponseDto.
-        The recipient(s) of the message.
+        The recipient of the message. So far, only one recipient is allowed. This is a list, only for future usage.
 
         :return: The to_addresses of this AgentlessEmailSendResponseDto.
         :rtype: list[EmailAddress]
@@ -199,7 +199,7 @@ class AgentlessEmailSendResponseDto(object):
     def to_addresses(self, to_addresses: List['EmailAddress']) -> None:
         """
         Sets the to_addresses of this AgentlessEmailSendResponseDto.
-        The recipient(s) of the message.
+        The recipient of the message. So far, only one recipient is allowed. This is a list, only for future usage.
 
         :param to_addresses: The to_addresses of this AgentlessEmailSendResponseDto.
         :type: list[EmailAddress]

@@ -2918,7 +2918,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
-edge_ids = 'edge_ids_example' # str | Comma separated list of Edge Id's
+edge_ids = 'edge_ids_example' # str | Comma separated list of Edge Id's. Maximum of 100 edge ids allowed.
 
 try:
     # Get the metrics for a list of edges.
@@ -2933,7 +2933,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **edge_ids** | **str**| Comma separated list of Edge Id&#39;s |  |
+| **edge_ids** | **str**| Comma separated list of Edge Id&#39;s. Maximum of 100 edge ids allowed. |  |
 {: class="table table-striped"}
 
 ### Return type

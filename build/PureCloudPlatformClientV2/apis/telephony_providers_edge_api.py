@@ -4517,7 +4517,7 @@ class TelephonyProvidersEdgeApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str edge_ids: Comma separated list of Edge Id's (required)
+        :param str edge_ids: Comma separated list of Edge Id's. Maximum of 100 edge ids allowed. (required)
         :return: list[EdgeMetrics]
                  If the method is called asynchronously,
                  returns the request thread.

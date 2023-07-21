@@ -222,7 +222,8 @@ class ViewFilter(object):
             'evaluation_assignee_ids': 'list[str]',
             'evaluation_assigned': 'bool',
             'assistant_ids': 'list[str]',
-            'knowledge_base_ids': 'list[str]'
+            'knowledge_base_ids': 'list[str]',
+            'is_parked': 'bool'
         }
 
         self.attribute_map = {
@@ -395,7 +396,8 @@ class ViewFilter(object):
             'evaluation_assignee_ids': 'evaluationAssigneeIds',
             'evaluation_assigned': 'evaluationAssigned',
             'assistant_ids': 'assistantIds',
-            'knowledge_base_ids': 'knowledgeBaseIds'
+            'knowledge_base_ids': 'knowledgeBaseIds',
+            'is_parked': 'isParked'
         }
 
         self._media_types = None
@@ -568,6 +570,7 @@ class ViewFilter(object):
         self._evaluation_assigned = None
         self._assistant_ids = None
         self._knowledge_base_ids = None
+        self._is_parked = None
 
     @property
     def media_types(self) -> List[str]:
@@ -4658,6 +4661,30 @@ class ViewFilter(object):
         
 
         self._knowledge_base_ids = knowledge_base_ids
+
+    @property
+    def is_parked(self) -> bool:
+        """
+        Gets the is_parked of this ViewFilter.
+        Filter to indicate if the interactions are parked.
+
+        :return: The is_parked of this ViewFilter.
+        :rtype: bool
+        """
+        return self._is_parked
+
+    @is_parked.setter
+    def is_parked(self, is_parked: bool) -> None:
+        """
+        Sets the is_parked of this ViewFilter.
+        Filter to indicate if the interactions are parked.
+
+        :param is_parked: The is_parked of this ViewFilter.
+        :type: bool
+        """
+        
+
+        self._is_parked = is_parked
 
     def to_dict(self):
         """

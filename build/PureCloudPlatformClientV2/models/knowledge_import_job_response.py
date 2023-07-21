@@ -61,6 +61,7 @@ class KnowledgeImportJobResponse(object):
             'knowledge_base': 'KnowledgeBase',
             'date_created': 'datetime',
             'date_modified': 'datetime',
+            'skip_confirmation_step': 'bool',
             'self_uri': 'str'
         }
 
@@ -74,6 +75,7 @@ class KnowledgeImportJobResponse(object):
             'knowledge_base': 'knowledgeBase',
             'date_created': 'dateCreated',
             'date_modified': 'dateModified',
+            'skip_confirmation_step': 'skipConfirmationStep',
             'self_uri': 'selfUri'
         }
 
@@ -86,6 +88,7 @@ class KnowledgeImportJobResponse(object):
         self._knowledge_base = None
         self._date_created = None
         self._date_modified = None
+        self._skip_confirmation_step = None
         self._self_uri = None
 
     @property
@@ -313,6 +316,30 @@ class KnowledgeImportJobResponse(object):
         
 
         self._date_modified = date_modified
+
+    @property
+    def skip_confirmation_step(self) -> bool:
+        """
+        Gets the skip_confirmation_step of this KnowledgeImportJobResponse.
+        If enabled pre-validation step will be skipped.
+
+        :return: The skip_confirmation_step of this KnowledgeImportJobResponse.
+        :rtype: bool
+        """
+        return self._skip_confirmation_step
+
+    @skip_confirmation_step.setter
+    def skip_confirmation_step(self, skip_confirmation_step: bool) -> None:
+        """
+        Sets the skip_confirmation_step of this KnowledgeImportJobResponse.
+        If enabled pre-validation step will be skipped.
+
+        :param skip_confirmation_step: The skip_confirmation_step of this KnowledgeImportJobResponse.
+        :type: bool
+        """
+        
+
+        self._skip_confirmation_step = skip_confirmation_step
 
     @property
     def self_uri(self) -> str:

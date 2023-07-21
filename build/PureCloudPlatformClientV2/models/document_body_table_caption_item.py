@@ -35,6 +35,7 @@ from typing import Dict
 if TYPE_CHECKING:
     from . import DocumentBodyImage
     from . import DocumentBodyList
+    from . import DocumentBodyParagraph
     from . import DocumentBodyVideo
     from . import DocumentText
 
@@ -55,6 +56,7 @@ class DocumentBodyTableCaptionItem(object):
         self.swagger_types = {
             'type': 'str',
             'text': 'DocumentText',
+            'paragraph': 'DocumentBodyParagraph',
             'image': 'DocumentBodyImage',
             'video': 'DocumentBodyVideo',
             'list': 'DocumentBodyList'
@@ -63,6 +65,7 @@ class DocumentBodyTableCaptionItem(object):
         self.attribute_map = {
             'type': 'type',
             'text': 'text',
+            'paragraph': 'paragraph',
             'image': 'image',
             'video': 'video',
             'list': 'list'
@@ -70,6 +73,7 @@ class DocumentBodyTableCaptionItem(object):
 
         self._type = None
         self._text = None
+        self._paragraph = None
         self._image = None
         self._video = None
         self._list = None
@@ -96,7 +100,7 @@ class DocumentBodyTableCaptionItem(object):
         """
         if isinstance(type, int):
             type = str(type)
-        allowed_values = ["Text", "Image", "Video", "OrderedList", "UnorderedList"]
+        allowed_values = ["Text", "Paragraph", "Image", "Video", "OrderedList", "UnorderedList"]
         if type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for type -> " + type)
             self._type = "outdated_sdk_version"
@@ -126,6 +130,30 @@ class DocumentBodyTableCaptionItem(object):
         
 
         self._text = text
+
+    @property
+    def paragraph(self) -> 'DocumentBodyParagraph':
+        """
+        Gets the paragraph of this DocumentBodyTableCaptionItem.
+        Paragraph. It must contain a value if the type of the block is Paragraph.
+
+        :return: The paragraph of this DocumentBodyTableCaptionItem.
+        :rtype: DocumentBodyParagraph
+        """
+        return self._paragraph
+
+    @paragraph.setter
+    def paragraph(self, paragraph: 'DocumentBodyParagraph') -> None:
+        """
+        Sets the paragraph of this DocumentBodyTableCaptionItem.
+        Paragraph. It must contain a value if the type of the block is Paragraph.
+
+        :param paragraph: The paragraph of this DocumentBodyTableCaptionItem.
+        :type: DocumentBodyParagraph
+        """
+        
+
+        self._paragraph = paragraph
 
     @property
     def image(self) -> 'DocumentBodyImage':

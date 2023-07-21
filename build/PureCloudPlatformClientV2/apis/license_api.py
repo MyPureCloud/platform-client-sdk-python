@@ -214,7 +214,7 @@ class LicenseApi(object):
 
     def get_license_toggle(self, feature_name: str, **kwargs) -> 'LicenseOrgToggle':
         """
-        Get PureCloud license feature toggle value.
+        Deprecated - no alternative required. This operation will always return 'true' for requested toggles
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -598,7 +598,7 @@ class LicenseApi(object):
 
     def post_license_toggle(self, feature_name: str, **kwargs) -> 'LicenseOrgToggle':
         """
-        Switch PureCloud license feature toggle value.
+        Deprecated. No alternative required - this endpoint has no effect
         
 
         This method makes a synchronous HTTP request by default. To make an

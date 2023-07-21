@@ -39,6 +39,10 @@ from typing import Any
 
 from ..models import Empty
 from ..models import ErrorBody
+from ..models import MessagingConfigListing
+from ..models import MessagingSetting
+from ..models import MessagingSettingDefaultRequest
+from ..models import MessagingSettingRequest
 from ..models import SupportedContent
 from ..models import SupportedContentListing
 
@@ -57,6 +61,158 @@ class MessagingApi(object):
             if not config.api_client:
                 config.api_client = ApiClient()
             self.api_client = config.api_client
+
+    @deprecated("delete_messaging_setting is deprecated")
+    def delete_messaging_setting(self, message_setting_id: str, **kwargs) -> None:
+        """
+        Delete a messaging setting
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_messaging_setting(message_setting_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str message_setting_id: Message Settings ID (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['message_setting_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_messaging_setting" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'message_setting_id' is set
+        if ('message_setting_id' not in params) or (params['message_setting_id'] is None):
+            raise ValueError("Missing the required parameter `message_setting_id` when calling `delete_messaging_setting`")
+
+
+        resource_path = '/api/v2/messaging/settings/{messageSettingId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'message_setting_id' in params:
+            path_params['messageSettingId'] = params['message_setting_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    @deprecated("delete_messaging_settings_default is deprecated")
+    def delete_messaging_settings_default(self, **kwargs) -> None:
+        """
+        Delete the organization's default setting, a global default will be applied to integrations without settings
+        When an integration is created a settings ID may be assigned to it. If the settings ID is not supplied, the default settings will be applied to it.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_messaging_settings_default(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = []
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_messaging_settings_default" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/messaging/settings/default'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
 
     @deprecated("delete_messaging_supportedcontent_supported_content_id is deprecated")
     def delete_messaging_supportedcontent_supported_content_id(self, supported_content_id: str, **kwargs) -> None:
@@ -133,6 +289,237 @@ class MessagingApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    @deprecated("get_messaging_setting is deprecated")
+    def get_messaging_setting(self, message_setting_id: str, **kwargs) -> 'MessagingSetting':
+        """
+        Get a messaging setting
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_messaging_setting(message_setting_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str message_setting_id: Message Settings ID (required)
+        :return: MessagingSetting
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['message_setting_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_messaging_setting" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'message_setting_id' is set
+        if ('message_setting_id' not in params) or (params['message_setting_id'] is None):
+            raise ValueError("Missing the required parameter `message_setting_id` when calling `get_messaging_setting`")
+
+
+        resource_path = '/api/v2/messaging/settings/{messageSettingId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'message_setting_id' in params:
+            path_params['messageSettingId'] = params['message_setting_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='MessagingSetting',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    @deprecated("get_messaging_settings is deprecated")
+    def get_messaging_settings(self, **kwargs) -> 'MessagingConfigListing':
+        """
+        Get a list of messaging settings
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_messaging_settings(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int page_size: Page size
+        :param int page_number: Page number
+        :return: MessagingConfigListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['page_size', 'page_number']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_messaging_settings" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/messaging/settings'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+        if 'page_number' in params:
+            query_params['pageNumber'] = params['page_number']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='MessagingConfigListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    @deprecated("get_messaging_settings_default is deprecated")
+    def get_messaging_settings_default(self, **kwargs) -> 'MessagingSetting':
+        """
+        Get the organization's default settings that will be used as the default when creating an integration.
+        When an integration is created a settings ID may be assigned to it. If the settings ID is not supplied, the default settings will be applied to it.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_messaging_settings_default(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :return: MessagingSetting
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = []
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_messaging_settings_default" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/messaging/settings/default'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='MessagingSetting',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -295,6 +682,91 @@ class MessagingApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("patch_messaging_setting is deprecated")
+    def patch_messaging_setting(self, message_setting_id: str, body: 'MessagingSettingRequest', **kwargs) -> 'MessagingSetting':
+        """
+        Update a messaging setting
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.patch_messaging_setting(message_setting_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str message_setting_id: Message Settings ID (required)
+        :param MessagingSettingRequest body: MessagingSetting (required)
+        :return: MessagingSetting
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['message_setting_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method patch_messaging_setting" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'message_setting_id' is set
+        if ('message_setting_id' not in params) or (params['message_setting_id'] is None):
+            raise ValueError("Missing the required parameter `message_setting_id` when calling `patch_messaging_setting`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `patch_messaging_setting`")
+
+
+        resource_path = '/api/v2/messaging/settings/{messageSettingId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'message_setting_id' in params:
+            path_params['messageSettingId'] = params['message_setting_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PATCH',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='MessagingSetting',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     @deprecated("patch_messaging_supportedcontent_supported_content_id is deprecated")
     def patch_messaging_supportedcontent_supported_content_id(self, supported_content_id: str, body: 'SupportedContent', **kwargs) -> 'SupportedContent':
         """
@@ -380,6 +852,85 @@ class MessagingApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("post_messaging_settings is deprecated")
+    def post_messaging_settings(self, body: 'MessagingSettingRequest', **kwargs) -> 'MessagingSetting':
+        """
+        Create a messaging setting
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_messaging_settings(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param MessagingSettingRequest body: MessagingSetting (required)
+        :return: MessagingSetting
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_messaging_settings" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_messaging_settings`")
+
+
+        resource_path = '/api/v2/messaging/settings'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='MessagingSetting',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     @deprecated("post_messaging_supportedcontent is deprecated")
     def post_messaging_supportedcontent(self, body: 'SupportedContent', **kwargs) -> 'SupportedContent':
         """
@@ -455,6 +1006,85 @@ class MessagingApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='SupportedContent',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    @deprecated("put_messaging_settings_default is deprecated")
+    def put_messaging_settings_default(self, body: 'MessagingSettingDefaultRequest', **kwargs) -> 'MessagingSetting':
+        """
+        Set the organization's default settings that may be applied to an integration when it is created.
+        When an integration is created a settings ID may be assigned to it. If the settings ID is not supplied, the default settings will be applied to it.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.put_messaging_settings_default(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param MessagingSettingDefaultRequest body: Messaging Setting ID (required)
+        :return: MessagingSetting
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method put_messaging_settings_default" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `put_messaging_settings_default`")
+
+
+        resource_path = '/api/v2/messaging/settings/default'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='MessagingSetting',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

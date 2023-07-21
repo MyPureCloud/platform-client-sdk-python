@@ -95,6 +95,7 @@ class UserQueue(object):
             'outbound_messaging_addresses': 'QueueMessagingAddresses',
             'outbound_email_address': 'QueueEmailAddress',
             'peer_id': 'str',
+            'suppress_in_queue_call_recording': 'bool',
             'joined': 'bool',
             'self_uri': 'str'
         }
@@ -133,6 +134,7 @@ class UserQueue(object):
             'outbound_messaging_addresses': 'outboundMessagingAddresses',
             'outbound_email_address': 'outboundEmailAddress',
             'peer_id': 'peerId',
+            'suppress_in_queue_call_recording': 'suppressInQueueCallRecording',
             'joined': 'joined',
             'self_uri': 'selfUri'
         }
@@ -170,6 +172,7 @@ class UserQueue(object):
         self._outbound_messaging_addresses = None
         self._outbound_email_address = None
         self._peer_id = None
+        self._suppress_in_queue_call_recording = None
         self._joined = None
         self._self_uri = None
 
@@ -969,6 +972,30 @@ class UserQueue(object):
         
 
         self._peer_id = peer_id
+
+    @property
+    def suppress_in_queue_call_recording(self) -> bool:
+        """
+        Gets the suppress_in_queue_call_recording of this UserQueue.
+        Indicates whether recording in-queue calls is suppressed for this queue.
+
+        :return: The suppress_in_queue_call_recording of this UserQueue.
+        :rtype: bool
+        """
+        return self._suppress_in_queue_call_recording
+
+    @suppress_in_queue_call_recording.setter
+    def suppress_in_queue_call_recording(self, suppress_in_queue_call_recording: bool) -> None:
+        """
+        Sets the suppress_in_queue_call_recording of this UserQueue.
+        Indicates whether recording in-queue calls is suppressed for this queue.
+
+        :param suppress_in_queue_call_recording: The suppress_in_queue_call_recording of this UserQueue.
+        :type: bool
+        """
+        
+
+        self._suppress_in_queue_call_recording = suppress_in_queue_call_recording
 
     @property
     def joined(self) -> bool:

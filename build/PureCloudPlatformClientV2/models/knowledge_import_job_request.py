@@ -52,18 +52,21 @@ class KnowledgeImportJobRequest(object):
         self.swagger_types = {
             'upload_key': 'str',
             'file_type': 'str',
-            'settings': 'KnowledgeImportJobSettings'
+            'settings': 'KnowledgeImportJobSettings',
+            'skip_confirmation_step': 'bool'
         }
 
         self.attribute_map = {
             'upload_key': 'uploadKey',
             'file_type': 'fileType',
-            'settings': 'settings'
+            'settings': 'settings',
+            'skip_confirmation_step': 'skipConfirmationStep'
         }
 
         self._upload_key = None
         self._file_type = None
         self._settings = None
+        self._skip_confirmation_step = None
 
     @property
     def upload_key(self) -> str:
@@ -141,6 +144,30 @@ class KnowledgeImportJobRequest(object):
         
 
         self._settings = settings
+
+    @property
+    def skip_confirmation_step(self) -> bool:
+        """
+        Gets the skip_confirmation_step of this KnowledgeImportJobRequest.
+        If enabled pre-validation step will be skipped.
+
+        :return: The skip_confirmation_step of this KnowledgeImportJobRequest.
+        :rtype: bool
+        """
+        return self._skip_confirmation_step
+
+    @skip_confirmation_step.setter
+    def skip_confirmation_step(self, skip_confirmation_step: bool) -> None:
+        """
+        Sets the skip_confirmation_step of this KnowledgeImportJobRequest.
+        If enabled pre-validation step will be skipped.
+
+        :param skip_confirmation_step: The skip_confirmation_step of this KnowledgeImportJobRequest.
+        :type: bool
+        """
+        
+
+        self._skip_confirmation_step = skip_confirmation_step
 
     def to_dict(self):
         """

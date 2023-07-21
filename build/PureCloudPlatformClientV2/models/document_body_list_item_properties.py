@@ -53,7 +53,9 @@ class DocumentBodyListItemProperties(object):
             'indentation': 'float',
             'font_size': 'str',
             'font_type': 'str',
-            'text_color': 'str'
+            'text_color': 'str',
+            'unordered_type': 'str',
+            'ordered_type': 'str'
         }
 
         self.attribute_map = {
@@ -62,7 +64,9 @@ class DocumentBodyListItemProperties(object):
             'indentation': 'indentation',
             'font_size': 'fontSize',
             'font_type': 'fontType',
-            'text_color': 'textColor'
+            'text_color': 'textColor',
+            'unordered_type': 'unorderedType',
+            'ordered_type': 'orderedType'
         }
 
         self._background_color = None
@@ -71,6 +75,8 @@ class DocumentBodyListItemProperties(object):
         self._font_size = None
         self._font_type = None
         self._text_color = None
+        self._unordered_type = None
+        self._ordered_type = None
 
     @property
     def background_color(self) -> str:
@@ -230,6 +236,64 @@ class DocumentBodyListItemProperties(object):
         
 
         self._text_color = text_color
+
+    @property
+    def unordered_type(self) -> str:
+        """
+        Gets the unordered_type of this DocumentBodyListItemProperties.
+        The type of icon for the unordered list.
+
+        :return: The unordered_type of this DocumentBodyListItemProperties.
+        :rtype: str
+        """
+        return self._unordered_type
+
+    @unordered_type.setter
+    def unordered_type(self, unordered_type: str) -> None:
+        """
+        Sets the unordered_type of this DocumentBodyListItemProperties.
+        The type of icon for the unordered list.
+
+        :param unordered_type: The unordered_type of this DocumentBodyListItemProperties.
+        :type: str
+        """
+        if isinstance(unordered_type, int):
+            unordered_type = str(unordered_type)
+        allowed_values = ["Normal", "Square", "Circle", "None"]
+        if unordered_type.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for unordered_type -> " + unordered_type)
+            self._unordered_type = "outdated_sdk_version"
+        else:
+            self._unordered_type = unordered_type
+
+    @property
+    def ordered_type(self) -> str:
+        """
+        Gets the ordered_type of this DocumentBodyListItemProperties.
+        The type of icon for the ordered list.
+
+        :return: The ordered_type of this DocumentBodyListItemProperties.
+        :rtype: str
+        """
+        return self._ordered_type
+
+    @ordered_type.setter
+    def ordered_type(self, ordered_type: str) -> None:
+        """
+        Sets the ordered_type of this DocumentBodyListItemProperties.
+        The type of icon for the ordered list.
+
+        :param ordered_type: The ordered_type of this DocumentBodyListItemProperties.
+        :type: str
+        """
+        if isinstance(ordered_type, int):
+            ordered_type = str(ordered_type)
+        allowed_values = ["Number", "LowerAlpha", "LowerGreek", "LowerRoman", "UpperAlpha", "UpperRoman", "None"]
+        if ordered_type.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for ordered_type -> " + ordered_type)
+            self._ordered_type = "outdated_sdk_version"
+        else:
+            self._ordered_type = ordered_type
 
     def to_dict(self):
         """

@@ -54,7 +54,9 @@ class OutcomeEventScore(object):
             'session_max_probability': 'float',
             'probability': 'float',
             'percentile': 'int',
-            'session_max_percentile': 'int'
+            'session_max_percentile': 'int',
+            'quantile': 'float',
+            'session_max_quantile': 'float'
         }
 
         self.attribute_map = {
@@ -62,7 +64,9 @@ class OutcomeEventScore(object):
             'session_max_probability': 'sessionMaxProbability',
             'probability': 'probability',
             'percentile': 'percentile',
-            'session_max_percentile': 'sessionMaxPercentile'
+            'session_max_percentile': 'sessionMaxPercentile',
+            'quantile': 'quantile',
+            'session_max_quantile': 'sessionMaxQuantile'
         }
 
         self._outcome = None
@@ -70,6 +74,8 @@ class OutcomeEventScore(object):
         self._probability = None
         self._percentile = None
         self._session_max_percentile = None
+        self._quantile = None
+        self._session_max_quantile = None
 
     @property
     def outcome(self) -> 'AddressableEntityRef':
@@ -147,7 +153,7 @@ class OutcomeEventScore(object):
     def percentile(self) -> int:
         """
         Gets the percentile of this OutcomeEventScore.
-        Represents the predicted probability's percentile score when compared with all other generated probabilities for a given outcome.
+        (Deprecated: use the 'quantile' field instead) Represents the predicted probability's percentile score when compared with all other generated probabilities for a given outcome.
 
         :return: The percentile of this OutcomeEventScore.
         :rtype: int
@@ -158,7 +164,7 @@ class OutcomeEventScore(object):
     def percentile(self, percentile: int) -> None:
         """
         Sets the percentile of this OutcomeEventScore.
-        Represents the predicted probability's percentile score when compared with all other generated probabilities for a given outcome.
+        (Deprecated: use the 'quantile' field instead) Represents the predicted probability's percentile score when compared with all other generated probabilities for a given outcome.
 
         :param percentile: The percentile of this OutcomeEventScore.
         :type: int
@@ -171,7 +177,7 @@ class OutcomeEventScore(object):
     def session_max_percentile(self) -> int:
         """
         Gets the session_max_percentile of this OutcomeEventScore.
-        Represents the maximum likelihood percentile score reached for a given outcome by the current session.
+        (Deprecated: use the 'quantile' field instead) Represents the maximum likelihood percentile score reached for a given outcome by the current session.
 
         :return: The session_max_percentile of this OutcomeEventScore.
         :rtype: int
@@ -182,7 +188,7 @@ class OutcomeEventScore(object):
     def session_max_percentile(self, session_max_percentile: int) -> None:
         """
         Sets the session_max_percentile of this OutcomeEventScore.
-        Represents the maximum likelihood percentile score reached for a given outcome by the current session.
+        (Deprecated: use the 'quantile' field instead) Represents the maximum likelihood percentile score reached for a given outcome by the current session.
 
         :param session_max_percentile: The session_max_percentile of this OutcomeEventScore.
         :type: int
@@ -190,6 +196,54 @@ class OutcomeEventScore(object):
         
 
         self._session_max_percentile = session_max_percentile
+
+    @property
+    def quantile(self) -> float:
+        """
+        Gets the quantile of this OutcomeEventScore.
+        Represents the quantity of sessions that have a maximum probability less than the predicted probability.
+
+        :return: The quantile of this OutcomeEventScore.
+        :rtype: float
+        """
+        return self._quantile
+
+    @quantile.setter
+    def quantile(self, quantile: float) -> None:
+        """
+        Sets the quantile of this OutcomeEventScore.
+        Represents the quantity of sessions that have a maximum probability less than the predicted probability.
+
+        :param quantile: The quantile of this OutcomeEventScore.
+        :type: float
+        """
+        
+
+        self._quantile = quantile
+
+    @property
+    def session_max_quantile(self) -> float:
+        """
+        Gets the session_max_quantile of this OutcomeEventScore.
+        Represents the quantity of sessions that have a maximum probability less than the predicted session max probability.
+
+        :return: The session_max_quantile of this OutcomeEventScore.
+        :rtype: float
+        """
+        return self._session_max_quantile
+
+    @session_max_quantile.setter
+    def session_max_quantile(self, session_max_quantile: float) -> None:
+        """
+        Sets the session_max_quantile of this OutcomeEventScore.
+        Represents the quantity of sessions that have a maximum probability less than the predicted session max probability.
+
+        :param session_max_quantile: The session_max_quantile of this OutcomeEventScore.
+        :type: float
+        """
+        
+
+        self._session_max_quantile = session_max_quantile
 
     def to_dict(self):
         """

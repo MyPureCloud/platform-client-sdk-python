@@ -243,7 +243,7 @@ class WorkitemCreate(object):
     def ttl(self) -> int:
         """
         Gets the ttl of this WorkitemCreate.
-        A timestamp specifying the time to live for the Workitem. Can not be greater than 365 days from the current time.
+        The epoch timestamp in seconds specifying the time to live for the Workitem. Can not be greater than 365 days from the current time.
 
         :return: The ttl of this WorkitemCreate.
         :rtype: int
@@ -254,7 +254,7 @@ class WorkitemCreate(object):
     def ttl(self, ttl: int) -> None:
         """
         Sets the ttl of this WorkitemCreate.
-        A timestamp specifying the time to live for the Workitem. Can not be greater than 365 days from the current time.
+        The epoch timestamp in seconds specifying the time to live for the Workitem. Can not be greater than 365 days from the current time.
 
         :param ttl: The ttl of this WorkitemCreate.
         :type: int

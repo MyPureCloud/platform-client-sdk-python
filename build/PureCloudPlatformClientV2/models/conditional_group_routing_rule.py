@@ -121,7 +121,7 @@ class ConditionalGroupRoutingRule(object):
         """
         if isinstance(metric, int):
             metric = str(metric)
-        allowed_values = ["EstimatedWaitTime"]
+        allowed_values = ["EstimatedWaitTime", "ServiceLevel"]
         if metric.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for metric -> " + metric)
             self._metric = "outdated_sdk_version"

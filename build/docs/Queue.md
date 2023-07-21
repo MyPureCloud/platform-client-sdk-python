@@ -41,6 +41,7 @@ title: Queue
 | **outbound_messaging_addresses** | [**QueueMessagingAddresses**](QueueMessagingAddresses.html) | The messaging addresses for the queue. | [optional] |
 | **outbound_email_address** | [**QueueEmailAddress**](QueueEmailAddress.html) |  | [optional] |
 | **peer_id** | **str** | The ID of an associated external queue. | [optional] |
+| **suppress_in_queue_call_recording** | **bool** | Indicates whether recording in-queue calls is suppressed for this queue. | [optional] |
 | **self_uri** | **str** | The URI for this object | [optional] |
 {: class="table table-striped"}
 

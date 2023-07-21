@@ -50,14 +50,20 @@ class UnansweredPhraseGroupPatchRequestBody(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'phrase_associations': 'list[PhraseAssociations]'
+            'phrase_associations': 'list[PhraseAssociations]',
+            'date_start': 'date',
+            'date_end': 'date'
         }
 
         self.attribute_map = {
-            'phrase_associations': 'phraseAssociations'
+            'phrase_associations': 'phraseAssociations',
+            'date_start': 'dateStart',
+            'date_end': 'dateEnd'
         }
 
         self._phrase_associations = None
+        self._date_start = None
+        self._date_end = None
 
     @property
     def phrase_associations(self) -> List['PhraseAssociations']:
@@ -82,6 +88,54 @@ class UnansweredPhraseGroupPatchRequestBody(object):
         
 
         self._phrase_associations = phrase_associations
+
+    @property
+    def date_start(self) -> date:
+        """
+        Gets the date_start of this UnansweredPhraseGroupPatchRequestBody.
+        The start date to be used for filtering phrases. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+
+        :return: The date_start of this UnansweredPhraseGroupPatchRequestBody.
+        :rtype: date
+        """
+        return self._date_start
+
+    @date_start.setter
+    def date_start(self, date_start: date) -> None:
+        """
+        Sets the date_start of this UnansweredPhraseGroupPatchRequestBody.
+        The start date to be used for filtering phrases. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+
+        :param date_start: The date_start of this UnansweredPhraseGroupPatchRequestBody.
+        :type: date
+        """
+        
+
+        self._date_start = date_start
+
+    @property
+    def date_end(self) -> date:
+        """
+        Gets the date_end of this UnansweredPhraseGroupPatchRequestBody.
+        The end date to be used for filtering phrases. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+
+        :return: The date_end of this UnansweredPhraseGroupPatchRequestBody.
+        :rtype: date
+        """
+        return self._date_end
+
+    @date_end.setter
+    def date_end(self, date_end: date) -> None:
+        """
+        Sets the date_end of this UnansweredPhraseGroupPatchRequestBody.
+        The end date to be used for filtering phrases. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+
+        :param date_end: The date_end of this UnansweredPhraseGroupPatchRequestBody.
+        :type: date
+        """
+        
+
+        self._date_end = date_end
 
     def to_dict(self):
         """

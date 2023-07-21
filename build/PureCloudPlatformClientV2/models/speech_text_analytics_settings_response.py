@@ -51,16 +51,19 @@ class SpeechTextAnalyticsSettingsResponse(object):
         """
         self.swagger_types = {
             'default_program': 'AddressableEntityRef',
-            'expected_dialects': 'list[str]'
+            'expected_dialects': 'list[str]',
+            'text_analytics_enabled': 'bool'
         }
 
         self.attribute_map = {
             'default_program': 'defaultProgram',
-            'expected_dialects': 'expectedDialects'
+            'expected_dialects': 'expectedDialects',
+            'text_analytics_enabled': 'textAnalyticsEnabled'
         }
 
         self._default_program = None
         self._expected_dialects = None
+        self._text_analytics_enabled = None
 
     @property
     def default_program(self) -> 'AddressableEntityRef':
@@ -109,6 +112,30 @@ class SpeechTextAnalyticsSettingsResponse(object):
         
 
         self._expected_dialects = expected_dialects
+
+    @property
+    def text_analytics_enabled(self) -> bool:
+        """
+        Gets the text_analytics_enabled of this SpeechTextAnalyticsSettingsResponse.
+        Setting to enable/disable text analytics
+
+        :return: The text_analytics_enabled of this SpeechTextAnalyticsSettingsResponse.
+        :rtype: bool
+        """
+        return self._text_analytics_enabled
+
+    @text_analytics_enabled.setter
+    def text_analytics_enabled(self, text_analytics_enabled: bool) -> None:
+        """
+        Sets the text_analytics_enabled of this SpeechTextAnalyticsSettingsResponse.
+        Setting to enable/disable text analytics
+
+        :param text_analytics_enabled: The text_analytics_enabled of this SpeechTextAnalyticsSettingsResponse.
+        :type: bool
+        """
+        
+
+        self._text_analytics_enabled = text_analytics_enabled
 
     def to_dict(self):
         """

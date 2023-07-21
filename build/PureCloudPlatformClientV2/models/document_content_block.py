@@ -34,6 +34,7 @@ from typing import Dict
 
 if TYPE_CHECKING:
     from . import DocumentBodyImage
+    from . import DocumentBodyVideo
     from . import DocumentText
 
 class DocumentContentBlock(object):
@@ -53,18 +54,21 @@ class DocumentContentBlock(object):
         self.swagger_types = {
             'type': 'str',
             'text': 'DocumentText',
-            'image': 'DocumentBodyImage'
+            'image': 'DocumentBodyImage',
+            'video': 'DocumentBodyVideo'
         }
 
         self.attribute_map = {
             'type': 'type',
             'text': 'text',
-            'image': 'image'
+            'image': 'image',
+            'video': 'video'
         }
 
         self._type = None
         self._text = None
         self._image = None
+        self._video = None
 
     @property
     def type(self) -> str:
@@ -88,7 +92,7 @@ class DocumentContentBlock(object):
         """
         if isinstance(type, int):
             type = str(type)
-        allowed_values = ["Text", "Image"]
+        allowed_values = ["Text", "Image", "Video"]
         if type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for type -> " + type)
             self._type = "outdated_sdk_version"
@@ -142,6 +146,30 @@ class DocumentContentBlock(object):
         
 
         self._image = image
+
+    @property
+    def video(self) -> 'DocumentBodyVideo':
+        """
+        Gets the video of this DocumentContentBlock.
+        Video. It must contain a value if the type of the block is Video.
+
+        :return: The video of this DocumentContentBlock.
+        :rtype: DocumentBodyVideo
+        """
+        return self._video
+
+    @video.setter
+    def video(self, video: 'DocumentBodyVideo') -> None:
+        """
+        Sets the video of this DocumentContentBlock.
+        Video. It must contain a value if the type of the block is Video.
+
+        :param video: The video of this DocumentContentBlock.
+        :type: DocumentBodyVideo
+        """
+        
+
+        self._video = video
 
     def to_dict(self):
         """

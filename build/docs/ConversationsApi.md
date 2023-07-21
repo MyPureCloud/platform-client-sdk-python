@@ -19,6 +19,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**delete_conversations_messaging_integrations_open_integration_id**](ConversationsApi.html#delete_conversations_messaging_integrations_open_integration_id) | Delete an Open messaging integration|
 |[**delete_conversations_messaging_integrations_twitter_integration_id**](ConversationsApi.html#delete_conversations_messaging_integrations_twitter_integration_id) | Delete a Twitter messaging integration|
 |[**delete_conversations_messaging_integrations_whatsapp_integration_id**](ConversationsApi.html#delete_conversations_messaging_integrations_whatsapp_integration_id) | Delete a WhatsApp messaging integration|
+|[**delete_conversations_messaging_setting**](ConversationsApi.html#delete_conversations_messaging_setting) | Delete a messaging setting|
+|[**delete_conversations_messaging_settings_default**](ConversationsApi.html#delete_conversations_messaging_settings_default) | Delete the organization&#39;s default setting, a global default will be applied to integrations without settings|
 |[**delete_conversations_messaging_supportedcontent_supported_content_id**](ConversationsApi.html#delete_conversations_messaging_supportedcontent_supported_content_id) | Delete a supported content profile|
 |[**get_analytics_conversation_details**](ConversationsApi.html#get_analytics_conversation_details) | Get a conversation by id|
 |[**get_analytics_conversations_aggregates_job**](ConversationsApi.html#get_analytics_conversations_aggregates_job) | Get status for async query for conversation aggregates|
@@ -91,6 +93,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_conversations_messaging_integrations_twitter_integration_id**](ConversationsApi.html#get_conversations_messaging_integrations_twitter_integration_id) | Get a Twitter messaging integration|
 |[**get_conversations_messaging_integrations_whatsapp**](ConversationsApi.html#get_conversations_messaging_integrations_whatsapp) | Get a list of WhatsApp Integrations|
 |[**get_conversations_messaging_integrations_whatsapp_integration_id**](ConversationsApi.html#get_conversations_messaging_integrations_whatsapp_integration_id) | Get a WhatsApp messaging integration|
+|[**get_conversations_messaging_setting**](ConversationsApi.html#get_conversations_messaging_setting) | Get a messaging setting|
+|[**get_conversations_messaging_settings**](ConversationsApi.html#get_conversations_messaging_settings) | Get a list of messaging settings|
+|[**get_conversations_messaging_settings_default**](ConversationsApi.html#get_conversations_messaging_settings_default) | Get the organization&#39;s default settings that will be used as the default when creating an integration.|
 |[**get_conversations_messaging_sticker**](ConversationsApi.html#get_conversations_messaging_sticker) | Get a list of Messaging Stickers|
 |[**get_conversations_messaging_supportedcontent**](ConversationsApi.html#get_conversations_messaging_supportedcontent) | Get a list of Supported Content profiles|
 |[**get_conversations_messaging_supportedcontent_default**](ConversationsApi.html#get_conversations_messaging_supportedcontent_default) | Get the organization&#39;s default supported content profile that will be used as the default when creating an integration.|
@@ -137,6 +142,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**patch_conversations_messaging_integrations_open_integration_id**](ConversationsApi.html#patch_conversations_messaging_integrations_open_integration_id) | Update an Open messaging integration|
 |[**patch_conversations_messaging_integrations_twitter_integration_id**](ConversationsApi.html#patch_conversations_messaging_integrations_twitter_integration_id) | Update Twitter messaging integration|
 |[**patch_conversations_messaging_integrations_whatsapp_integration_id**](ConversationsApi.html#patch_conversations_messaging_integrations_whatsapp_integration_id) | Update or activate a WhatsApp messaging integration|
+|[**patch_conversations_messaging_setting**](ConversationsApi.html#patch_conversations_messaging_setting) | Update a messaging setting|
 |[**patch_conversations_messaging_supportedcontent_supported_content_id**](ConversationsApi.html#patch_conversations_messaging_supportedcontent_supported_content_id) | Update a supported content profile|
 |[**patch_conversations_settings**](ConversationsApi.html#patch_conversations_settings) | Update Settings|
 |[**post_analytics_conversation_details_properties**](ConversationsApi.html#post_analytics_conversation_details_properties) | Index conversation properties|
@@ -146,6 +152,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_analytics_conversations_details_jobs**](ConversationsApi.html#post_analytics_conversations_details_jobs) | Query for conversation details asynchronously|
 |[**post_analytics_conversations_details_query**](ConversationsApi.html#post_analytics_conversations_details_query) | Query for conversation details|
 |[**post_conversation_assign**](ConversationsApi.html#post_conversation_assign) | Attempts to manually assign a specified conversation to a specified user.  Ignores bullseye ring, PAR score, skills, and languages.|
+|[**post_conversation_barge**](ConversationsApi.html#post_conversation_barge) | Barge a conversation creating a barged in conference of connected participants.|
 |[**post_conversation_cobrowse**](ConversationsApi.html#post_conversation_cobrowse) | Creates a cobrowse session. Requires \&quot;conversation:cobrowse:add\&quot; (for web messaging) or \&quot;conversation:cobrowsevoice:add\&quot; permission.|
 |[**post_conversation_disconnect**](ConversationsApi.html#post_conversation_disconnect) | Performs a full conversation teardown. Issues disconnect requests for any connected media. Applies a system wrap-up code to any participants that are pending wrap-up. This is not intended to be the normal way of ending interactions but is available in the event of problems with the application to allow a resynchronization of state across all components. It is recommended that users submit a support case if they are relying on this endpoint systematically as there is likely something that needs investigation.|
 |[**post_conversation_participant_callbacks**](ConversationsApi.html#post_conversation_participant_callbacks) | Create a new callback for the specified participant on the conversation.|
@@ -156,6 +163,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_conversation_participant_replace_queue**](ConversationsApi.html#post_conversation_participant_replace_queue) | Replace this participant with the specified queue|
 |[**post_conversation_participant_secureivrsessions**](ConversationsApi.html#post_conversation_participant_secureivrsessions) | Create secure IVR session. Only a participant in the conversation can invoke a secure IVR.|
 |[**post_conversations_call**](ConversationsApi.html#post_conversations_call) | Place a new call as part of a callback conversation.|
+|[**post_conversations_call_participant_barge**](ConversationsApi.html#post_conversations_call_participant_barge) | Barge a given participant&#39;s call creating a barged in conference of connected participants.|
 |[**post_conversations_call_participant_coach**](ConversationsApi.html#post_conversations_call_participant_coach) | Listen in on the conversation from the point of view of a given participant while speaking to just the given participant.|
 |[**post_conversations_call_participant_communication_wrapup**](ConversationsApi.html#post_conversations_call_participant_communication_wrapup) | Apply wrap-up for this conversation communication|
 |[**post_conversations_call_participant_consult**](ConversationsApi.html#post_conversations_call_participant_consult) | Initiate and update consult transfer|
@@ -204,6 +212,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_conversations_messaging_integrations_open**](ConversationsApi.html#post_conversations_messaging_integrations_open) | Create an Open messaging integration|
 |[**post_conversations_messaging_integrations_twitter**](ConversationsApi.html#post_conversations_messaging_integrations_twitter) | Create a Twitter Integration|
 |[**post_conversations_messaging_integrations_whatsapp**](ConversationsApi.html#post_conversations_messaging_integrations_whatsapp) | Create a WhatsApp Integration|
+|[**post_conversations_messaging_settings**](ConversationsApi.html#post_conversations_messaging_settings) | Create a messaging setting|
 |[**post_conversations_messaging_supportedcontent**](ConversationsApi.html#post_conversations_messaging_supportedcontent) | Create a Supported Content profile|
 |[**post_conversations_participants_attributes_search**](ConversationsApi.html#post_conversations_participants_attributes_search) | Search conversations|
 |[**post_conversations_screenshare_participant_communication_wrapup**](ConversationsApi.html#post_conversations_screenshare_participant_communication_wrapup) | Apply wrap-up for this conversation communication|
@@ -222,6 +231,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**put_conversations_keyconfiguration**](ConversationsApi.html#put_conversations_keyconfiguration) | Update the encryption key configurations|
 |[**put_conversations_message_recordingstate**](ConversationsApi.html#put_conversations_message_recordingstate) | Update a conversation by setting its recording state|
 |[**put_conversations_messaging_integrations_line_integration_id**](ConversationsApi.html#put_conversations_messaging_integrations_line_integration_id) | Update a LINE messenger integration|
+|[**put_conversations_messaging_settings_default**](ConversationsApi.html#put_conversations_messaging_settings_default) | Set the organization&#39;s default setting that may be applied to to integrations without settings|
 |[**put_conversations_messaging_supportedcontent_default**](ConversationsApi.html#put_conversations_messaging_supportedcontent_default) | Set the organization&#39;s default supported content profile that may be assigned to an integration when it is created.|
 |[**put_conversations_messaging_threadingtimeline**](ConversationsApi.html#put_conversations_messaging_threadingtimeline) | Update conversation threading window timeline for each messaging type|
 |[**put_conversations_screenshare_recordingstate**](ConversationsApi.html#put_conversations_screenshare_recordingstate) | Update a conversation by setting its recording state|
@@ -766,6 +776,100 @@ except ApiException as e:
 ### Return type
 
 [**WhatsAppIntegration**](WhatsAppIntegration.html)
+
+<a name="delete_conversations_messaging_setting"></a>
+
+##  delete_conversations_messaging_setting(message_setting_id)
+
+
+
+Delete a messaging setting
+
+Wraps DELETE /api/v2/conversations/messaging/settings/{messageSettingId} 
+
+Requires ALL permissions: 
+
+* messaging:setting:delete
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+message_setting_id = 'message_setting_id_example' # str | Message Setting ID
+
+try:
+    # Delete a messaging setting
+    api_instance.delete_conversations_messaging_setting(message_setting_id)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->delete_conversations_messaging_setting: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **message_setting_id** | **str**| Message Setting ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
+
+<a name="delete_conversations_messaging_settings_default"></a>
+
+##  delete_conversations_messaging_settings_default()
+
+
+
+Delete the organization's default setting, a global default will be applied to integrations without settings
+
+When an integration is created a settings ID may be assigned to it. If the settings ID is not supplied, the default settings will be assigned to it.
+
+Wraps DELETE /api/v2/conversations/messaging/settings/default 
+
+Requires ALL permissions: 
+
+* messaging:setting:delete
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+
+try:
+    # Delete the organization's default setting, a global default will be applied to integrations without settings
+    api_instance.delete_conversations_messaging_settings_default()
+except ApiException as e:
+    print("Exception when calling ConversationsApi->delete_conversations_messaging_settings_default: %s\n" % e)
+```
+
+### Parameters
+
+This endpoint does not need any parameters.
+
+
+### Return type
+
+void (empty response body)
 
 <a name="delete_conversations_messaging_supportedcontent_supported_content_id"></a>
 
@@ -4418,6 +4522,153 @@ except ApiException as e:
 
 [**WhatsAppIntegration**](WhatsAppIntegration.html)
 
+<a name="get_conversations_messaging_setting"></a>
+
+## [**MessagingSetting**](MessagingSetting.html) get_conversations_messaging_setting(message_setting_id)
+
+
+
+Get a messaging setting
+
+Wraps GET /api/v2/conversations/messaging/settings/{messageSettingId} 
+
+Requires ALL permissions: 
+
+* messaging:setting:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+message_setting_id = 'message_setting_id_example' # str | Message Setting ID
+
+try:
+    # Get a messaging setting
+    api_response = api_instance.get_conversations_messaging_setting(message_setting_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->get_conversations_messaging_setting: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **message_setting_id** | **str**| Message Setting ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**MessagingSetting**](MessagingSetting.html)
+
+<a name="get_conversations_messaging_settings"></a>
+
+## [**MessagingConfigListing**](MessagingConfigListing.html) get_conversations_messaging_settings(page_size=page_size, page_number=page_number)
+
+
+
+Get a list of messaging settings
+
+Wraps GET /api/v2/conversations/messaging/settings 
+
+Requires ALL permissions: 
+
+* messaging:setting:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+page_size = 25 # int | Page size (optional) (default to 25)
+page_number = 1 # int | Page number (optional) (default to 1)
+
+try:
+    # Get a list of messaging settings
+    api_response = api_instance.get_conversations_messaging_settings(page_size=page_size, page_number=page_number)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->get_conversations_messaging_settings: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+{: class="table table-striped"}
+
+### Return type
+
+[**MessagingConfigListing**](MessagingConfigListing.html)
+
+<a name="get_conversations_messaging_settings_default"></a>
+
+## [**MessagingSetting**](MessagingSetting.html) get_conversations_messaging_settings_default()
+
+
+
+Get the organization's default settings that will be used as the default when creating an integration.
+
+When an integration is created a settings ID may be assigned to it. If the settings ID is not supplied, the default settings will be assigned to it.
+
+Wraps GET /api/v2/conversations/messaging/settings/default 
+
+Requires ALL permissions: 
+
+* messaging:setting:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+
+try:
+    # Get the organization's default settings that will be used as the default when creating an integration.
+    api_response = api_instance.get_conversations_messaging_settings_default()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->get_conversations_messaging_settings_default: %s\n" % e)
+```
+
+### Parameters
+
+This endpoint does not need any parameters.
+
+
+### Return type
+
+[**MessagingSetting**](MessagingSetting.html)
+
 <a name="get_conversations_messaging_sticker"></a>
 
 ## [**MessagingStickerEntityListing**](MessagingStickerEntityListing.html) get_conversations_messaging_sticker(messenger_type, page_size=page_size, page_number=page_number)
@@ -6796,6 +7047,57 @@ except ApiException as e:
 
 [**WhatsAppIntegration**](WhatsAppIntegration.html)
 
+<a name="patch_conversations_messaging_setting"></a>
+
+## [**MessagingSetting**](MessagingSetting.html) patch_conversations_messaging_setting(message_setting_id, body)
+
+
+
+Update a messaging setting
+
+Wraps PATCH /api/v2/conversations/messaging/settings/{messageSettingId} 
+
+Requires ALL permissions: 
+
+* messaging:setting:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+message_setting_id = 'message_setting_id_example' # str | Message Setting ID
+body = PureCloudPlatformClientV2.MessagingSettingPatchRequest() # MessagingSettingPatchRequest | MessagingSetting
+
+try:
+    # Update a messaging setting
+    api_response = api_instance.patch_conversations_messaging_setting(message_setting_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->patch_conversations_messaging_setting: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **message_setting_id** | **str**| Message Setting ID |  |
+| **body** | [**MessagingSettingPatchRequest**](MessagingSettingPatchRequest.html)| MessagingSetting |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**MessagingSetting**](MessagingSetting.html)
+
 <a name="patch_conversations_messaging_supportedcontent_supported_content_id"></a>
 
 ## [**SupportedContent**](SupportedContent.html) patch_conversations_messaging_supportedcontent_supported_content_id(supported_content_id, body)
@@ -7261,6 +7563,56 @@ except ApiException as e:
 
 **str**
 
+<a name="post_conversation_barge"></a>
+
+##  post_conversation_barge(conversation_id)
+
+
+
+Barge a conversation creating a barged in conference of connected participants.
+
+post_conversation_barge is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/conversations/{conversationId}/barge 
+
+Requires ANY permissions: 
+
+* conversation:call:barge
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+conversation_id = 'conversation_id_example' # str | conversation ID
+
+try:
+    # Barge a conversation creating a barged in conference of connected participants.
+    api_instance.post_conversation_barge(conversation_id)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->post_conversation_barge: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversation_id** | **str**| conversation ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
+
 <a name="post_conversation_cobrowse"></a>
 
 ## [**CobrowseWebMessagingSession**](CobrowseWebMessagingSession.html) post_conversation_cobrowse(conversation_id)
@@ -7467,7 +7819,7 @@ void (empty response body)
 
 ##  post_conversation_participant_replace(conversation_id, participant_id, body)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+
 
 Replace this participant with the specified user and/or address
 
@@ -7523,6 +7875,8 @@ void (empty response body)
 
 Replace this participant with the specified agent
 
+post_conversation_participant_replace_agent is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
 Wraps POST /api/v2/conversations/{conversationId}/participants/{participantId}/replace/agent 
 
 Requires ANY permissions: 
@@ -7576,6 +7930,8 @@ void (empty response body)
 
 Replace this participant with the an external contact
 
+post_conversation_participant_replace_external is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
 Wraps POST /api/v2/conversations/{conversationId}/participants/{participantId}/replace/external 
 
 Requires ANY permissions: 
@@ -7628,6 +7984,8 @@ void (empty response body)
 
 
 Replace this participant with the specified queue
+
+post_conversation_participant_replace_queue is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/conversations/{conversationId}/participants/{participantId}/replace/queue 
 
@@ -7776,6 +8134,58 @@ except ApiException as e:
 
 [**Conversation**](Conversation.html)
 
+<a name="post_conversations_call_participant_barge"></a>
+
+##  post_conversations_call_participant_barge(conversation_id, participant_id)
+
+
+
+Barge a given participant's call creating a barged in conference of connected participants.
+
+post_conversations_call_participant_barge is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/barge 
+
+Requires ANY permissions: 
+
+* conversation:call:barge
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+conversation_id = 'conversation_id_example' # str | conversationId
+participant_id = 'participant_id_example' # str | participantId
+
+try:
+    # Barge a given participant's call creating a barged in conference of connected participants.
+    api_instance.post_conversations_call_participant_barge(conversation_id, participant_id)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->post_conversations_call_participant_barge: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversation_id** | **str**| conversationId |  |
+| **participant_id** | **str**| participantId |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
+
 <a name="post_conversations_call_participant_coach"></a>
 
 ##  post_conversations_call_participant_coach(conversation_id, participant_id)
@@ -7884,7 +8294,7 @@ void (empty response body)
 
 ## [**ConsultTransferResponse**](ConsultTransferResponse.html) post_conversations_call_participant_consult(conversation_id, participant_id, body)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+
 
 Initiate and update consult transfer
 
@@ -7941,6 +8351,8 @@ except ApiException as e:
 
 Initiate a consult transfer to an agent
 
+post_conversations_call_participant_consult_agent is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
 Wraps POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult/agent 
 
 Requires ANY permissions: 
@@ -7995,6 +8407,8 @@ except ApiException as e:
 
 Initiate a consult transfer to an external contact
 
+post_conversations_call_participant_consult_external is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
 Wraps POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult/external 
 
 Requires ANY permissions: 
@@ -8048,6 +8462,8 @@ except ApiException as e:
 
 
 Initiate a consult transfer to a queue
+
+post_conversations_call_participant_consult_queue is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult/queue 
 
@@ -8149,7 +8565,7 @@ void (empty response body)
 
 ##  post_conversations_call_participant_replace(conversation_id, participant_id, body)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+
 
 Replace this participant with the specified user and/or address
 
@@ -8305,7 +8721,7 @@ void (empty response body)
 
 ##  post_conversations_callback_participant_replace(conversation_id, participant_id, body)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+
 
 Replace this participant with the specified user and/or address
 
@@ -8708,7 +9124,7 @@ void (empty response body)
 
 ##  post_conversations_chat_participant_replace(conversation_id, participant_id, body)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+
 
 Replace this participant with the specified user and/or address
 
@@ -8863,7 +9279,7 @@ void (empty response body)
 
 ##  post_conversations_cobrowsesession_participant_replace(conversation_id, participant_id, body=body)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+
 
 Replace this participant with the specified user and/or address
 
@@ -9119,7 +9535,7 @@ void (empty response body)
 
 ##  post_conversations_email_participant_replace(conversation_id, participant_id, body)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+
 
 Replace this participant with the specified user and/or address
 
@@ -9747,7 +10163,7 @@ void (empty response body)
 
 ##  post_conversations_message_participant_replace(conversation_id, participant_id, body)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+
 
 Replace this participant with the specified user and/or address
 
@@ -10245,6 +10661,55 @@ except ApiException as e:
 ### Return type
 
 [**WhatsAppIntegration**](WhatsAppIntegration.html)
+
+<a name="post_conversations_messaging_settings"></a>
+
+## [**MessagingSetting**](MessagingSetting.html) post_conversations_messaging_settings(body)
+
+
+
+Create a messaging setting
+
+Wraps POST /api/v2/conversations/messaging/settings 
+
+Requires ALL permissions: 
+
+* messaging:setting:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+body = PureCloudPlatformClientV2.MessagingSettingRequest() # MessagingSettingRequest | MessagingSetting
+
+try:
+    # Create a messaging setting
+    api_response = api_instance.post_conversations_messaging_settings(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->post_conversations_messaging_settings: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**MessagingSettingRequest**](MessagingSettingRequest.html)| MessagingSetting |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**MessagingSetting**](MessagingSetting.html)
 
 <a name="post_conversations_messaging_supportedcontent"></a>
 
@@ -11168,6 +11633,57 @@ except ApiException as e:
 ### Return type
 
 [**LineIntegration**](LineIntegration.html)
+
+<a name="put_conversations_messaging_settings_default"></a>
+
+## [**MessagingSetting**](MessagingSetting.html) put_conversations_messaging_settings_default(body)
+
+
+
+Set the organization's default setting that may be applied to to integrations without settings
+
+When an integration is created a settings ID may be assigned to it. If the settings ID is not supplied, the default settings will be assigned to it.
+
+Wraps PUT /api/v2/conversations/messaging/settings/default 
+
+Requires ALL permissions: 
+
+* messaging:setting:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+body = PureCloudPlatformClientV2.MessagingSettingDefaultRequest() # MessagingSettingDefaultRequest | MessagingSetting
+
+try:
+    # Set the organization's default setting that may be applied to to integrations without settings
+    api_response = api_instance.put_conversations_messaging_settings_default(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->put_conversations_messaging_settings_default: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**MessagingSettingDefaultRequest**](MessagingSettingDefaultRequest.html)| MessagingSetting |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**MessagingSetting**](MessagingSetting.html)
 
 <a name="put_conversations_messaging_supportedcontent_default"></a>
 

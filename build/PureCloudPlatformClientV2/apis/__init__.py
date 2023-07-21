@@ -14,6 +14,7 @@ from .content_management_api import ContentManagementApi
 from .conversations_api import ConversationsApi
 from .data_extensions_api import DataExtensionsApi
 from .downloads_api import DownloadsApi
+from .emails_api import EmailsApi
 from .events_api import EventsApi
 from .external_contacts_api import ExternalContactsApi
 from .fax_api import FaxApi
@@ -50,6 +51,7 @@ from .routing_api import RoutingApi
 from .scim_api import SCIMApi
 from .scripts_api import ScriptsApi
 from .search_api import SearchApi
+from .settings_api import SettingsApi
 from .speech_text_analytics_api import SpeechTextAnalyticsApi
 from .stations_api import StationsApi
 from .suggest_api import SuggestApi
@@ -83,6 +85,7 @@ from .content_management_api import ContentManagementApi
 from .conversations_api import ConversationsApi
 from .data_extensions_api import DataExtensionsApi
 from .downloads_api import DownloadsApi
+from .emails_api import EmailsApi
 from .events_api import EventsApi
 from .external_contacts_api import ExternalContactsApi
 from .fax_api import FaxApi
@@ -119,6 +122,7 @@ from .routing_api import RoutingApi
 from .scim_api import SCIMApi
 from .scripts_api import ScriptsApi
 from .search_api import SearchApi
+from .settings_api import SettingsApi
 from .speech_text_analytics_api import SpeechTextAnalyticsApi
 from .stations_api import StationsApi
 from .suggest_api import SuggestApi

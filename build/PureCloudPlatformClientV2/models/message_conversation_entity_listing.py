@@ -33,7 +33,7 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
-    from . import EmailConversation
+    from . import MessageConversation
 
 class MessageConversationEntityListing(object):
     """
@@ -50,7 +50,7 @@ class MessageConversationEntityListing(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'entities': 'list[EmailConversation]',
+            'entities': 'list[MessageConversation]',
             'page_size': 'int',
             'page_number': 'int',
             'total': 'int',
@@ -87,24 +87,24 @@ class MessageConversationEntityListing(object):
         self._page_count = None
 
     @property
-    def entities(self) -> List['EmailConversation']:
+    def entities(self) -> List['MessageConversation']:
         """
         Gets the entities of this MessageConversationEntityListing.
 
 
         :return: The entities of this MessageConversationEntityListing.
-        :rtype: list[EmailConversation]
+        :rtype: list[MessageConversation]
         """
         return self._entities
 
     @entities.setter
-    def entities(self, entities: List['EmailConversation']) -> None:
+    def entities(self, entities: List['MessageConversation']) -> None:
         """
         Sets the entities of this MessageConversationEntityListing.
 
 
         :param entities: The entities of this MessageConversationEntityListing.
-        :type: list[EmailConversation]
+        :type: list[MessageConversation]
         """
         
 

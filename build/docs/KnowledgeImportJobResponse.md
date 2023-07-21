@@ -16,6 +16,7 @@ title: KnowledgeImportJobResponse
 | **knowledge_base** | [**KnowledgeBase**](KnowledgeBase.html) | Knowledge base which document import does belong to | [optional] |
 | **date_created** | **datetime** | Created date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
 | **date_modified** | **datetime** | Last modified date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
+| **skip_confirmation_step** | **bool** | If enabled pre-validation step will be skipped. | [optional] |
 | **self_uri** | **str** | The URI for this object | [optional] |
 {: class="table table-striped"}
 

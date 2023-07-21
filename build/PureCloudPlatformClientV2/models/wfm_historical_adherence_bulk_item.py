@@ -169,7 +169,7 @@ class WfmHistoricalAdherenceBulkItem(object):
     def include_exceptions(self) -> bool:
         """
         Gets the include_exceptions of this WfmHistoricalAdherenceBulkItem.
-        Whether user exceptions should be returned as part of the results. If not included, will default to false
+        Whether user exceptions should be returned as part of the results. Defaults to false if not specified.
 
         :return: The include_exceptions of this WfmHistoricalAdherenceBulkItem.
         :rtype: bool
@@ -180,7 +180,7 @@ class WfmHistoricalAdherenceBulkItem(object):
     def include_exceptions(self, include_exceptions: bool) -> None:
         """
         Sets the include_exceptions of this WfmHistoricalAdherenceBulkItem.
-        Whether user exceptions should be returned as part of the results. If not included, will default to false
+        Whether user exceptions should be returned as part of the results. Defaults to false if not specified.
 
         :param include_exceptions: The include_exceptions of this WfmHistoricalAdherenceBulkItem.
         :type: bool

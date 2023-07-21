@@ -114,6 +114,8 @@ class AnalyticsSession(object):
             'requested_routings': 'list[str]',
             'room_id': 'str',
             'routing_ring': 'int',
+            'routing_rule': 'str',
+            'routing_rule_type': 'str',
             'screen_share_address_self': 'str',
             'screen_share_room_id': 'str',
             'script_id': 'str',
@@ -128,8 +130,8 @@ class AnalyticsSession(object):
             'video_address_self': 'str',
             'video_room_id': 'str',
             'waiting_interaction_counts': 'list[int]',
-            'proposed_agents': 'list[AnalyticsProposedAgent]',
             'agent_groups': 'list[AnalyticsAgentGroup]',
+            'proposed_agents': 'list[AnalyticsProposedAgent]',
             'media_endpoint_stats': 'list[AnalyticsMediaEndpointStat]',
             'flow': 'AnalyticsFlow',
             'metrics': 'list[AnalyticsSessionMetric]',
@@ -196,6 +198,8 @@ class AnalyticsSession(object):
             'requested_routings': 'requestedRoutings',
             'room_id': 'roomId',
             'routing_ring': 'routingRing',
+            'routing_rule': 'routingRule',
+            'routing_rule_type': 'routingRuleType',
             'screen_share_address_self': 'screenShareAddressSelf',
             'screen_share_room_id': 'screenShareRoomId',
             'script_id': 'scriptId',
@@ -210,8 +214,8 @@ class AnalyticsSession(object):
             'video_address_self': 'videoAddressSelf',
             'video_room_id': 'videoRoomId',
             'waiting_interaction_counts': 'waitingInteractionCounts',
-            'proposed_agents': 'proposedAgents',
             'agent_groups': 'agentGroups',
+            'proposed_agents': 'proposedAgents',
             'media_endpoint_stats': 'mediaEndpointStats',
             'flow': 'flow',
             'metrics': 'metrics',
@@ -277,6 +281,8 @@ class AnalyticsSession(object):
         self._requested_routings = None
         self._room_id = None
         self._routing_ring = None
+        self._routing_rule = None
+        self._routing_rule_type = None
         self._screen_share_address_self = None
         self._screen_share_room_id = None
         self._script_id = None
@@ -291,8 +297,8 @@ class AnalyticsSession(object):
         self._video_address_self = None
         self._video_room_id = None
         self._waiting_interaction_counts = None
-        self._proposed_agents = None
         self._agent_groups = None
+        self._proposed_agents = None
         self._media_endpoint_stats = None
         self._flow = None
         self._metrics = None
@@ -1730,6 +1736,59 @@ class AnalyticsSession(object):
         self._routing_ring = routing_ring
 
     @property
+    def routing_rule(self) -> str:
+        """
+        Gets the routing_rule of this AnalyticsSession.
+        Routing rule for preferred, conditional and predictive routing type
+
+        :return: The routing_rule of this AnalyticsSession.
+        :rtype: str
+        """
+        return self._routing_rule
+
+    @routing_rule.setter
+    def routing_rule(self, routing_rule: str) -> None:
+        """
+        Sets the routing_rule of this AnalyticsSession.
+        Routing rule for preferred, conditional and predictive routing type
+
+        :param routing_rule: The routing_rule of this AnalyticsSession.
+        :type: str
+        """
+        
+
+        self._routing_rule = routing_rule
+
+    @property
+    def routing_rule_type(self) -> str:
+        """
+        Gets the routing_rule_type of this AnalyticsSession.
+        Routing rule type
+
+        :return: The routing_rule_type of this AnalyticsSession.
+        :rtype: str
+        """
+        return self._routing_rule_type
+
+    @routing_rule_type.setter
+    def routing_rule_type(self, routing_rule_type: str) -> None:
+        """
+        Sets the routing_rule_type of this AnalyticsSession.
+        Routing rule type
+
+        :param routing_rule_type: The routing_rule_type of this AnalyticsSession.
+        :type: str
+        """
+        if isinstance(routing_rule_type, int):
+            routing_rule_type = str(routing_rule_type)
+        allowed_values = ["Bullseye", "Conditional", "Predictive", "Preferred"]
+        if routing_rule_type.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for routing_rule_type -> " + routing_rule_type)
+            self._routing_rule_type = "outdated_sdk_version"
+        else:
+            self._routing_rule_type = routing_rule_type
+
+    @property
     def screen_share_address_self(self) -> str:
         """
         Gets the screen_share_address_self of this AnalyticsSession.
@@ -2071,30 +2130,6 @@ class AnalyticsSession(object):
         self._waiting_interaction_counts = waiting_interaction_counts
 
     @property
-    def proposed_agents(self) -> List['AnalyticsProposedAgent']:
-        """
-        Gets the proposed_agents of this AnalyticsSession.
-        Proposed agents
-
-        :return: The proposed_agents of this AnalyticsSession.
-        :rtype: list[AnalyticsProposedAgent]
-        """
-        return self._proposed_agents
-
-    @proposed_agents.setter
-    def proposed_agents(self, proposed_agents: List['AnalyticsProposedAgent']) -> None:
-        """
-        Sets the proposed_agents of this AnalyticsSession.
-        Proposed agents
-
-        :param proposed_agents: The proposed_agents of this AnalyticsSession.
-        :type: list[AnalyticsProposedAgent]
-        """
-        
-
-        self._proposed_agents = proposed_agents
-
-    @property
     def agent_groups(self) -> List['AnalyticsAgentGroup']:
         """
         Gets the agent_groups of this AnalyticsSession.
@@ -2117,6 +2152,30 @@ class AnalyticsSession(object):
         
 
         self._agent_groups = agent_groups
+
+    @property
+    def proposed_agents(self) -> List['AnalyticsProposedAgent']:
+        """
+        Gets the proposed_agents of this AnalyticsSession.
+        Proposed agents
+
+        :return: The proposed_agents of this AnalyticsSession.
+        :rtype: list[AnalyticsProposedAgent]
+        """
+        return self._proposed_agents
+
+    @proposed_agents.setter
+    def proposed_agents(self, proposed_agents: List['AnalyticsProposedAgent']) -> None:
+        """
+        Sets the proposed_agents of this AnalyticsSession.
+        Proposed agents
+
+        :param proposed_agents: The proposed_agents of this AnalyticsSession.
+        :type: list[AnalyticsProposedAgent]
+        """
+        
+
+        self._proposed_agents = proposed_agents
 
     @property
     def media_endpoint_stats(self) -> List['AnalyticsMediaEndpointStat']:
