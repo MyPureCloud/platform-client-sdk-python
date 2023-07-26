@@ -216,6 +216,8 @@ class ViewFilter(object):
             'workitem_statuses': 'list[str]',
             'is_analyzed_for_sensitive_data': 'bool',
             'has_sensitive_data': 'bool',
+            'has_pci_data': 'bool',
+            'has_pii_data': 'bool',
             'sub_path': 'str',
             'user_state': 'str',
             'is_cleared_by_customer': 'bool',
@@ -390,6 +392,8 @@ class ViewFilter(object):
             'workitem_statuses': 'workitemStatuses',
             'is_analyzed_for_sensitive_data': 'isAnalyzedForSensitiveData',
             'has_sensitive_data': 'hasSensitiveData',
+            'has_pci_data': 'hasPciData',
+            'has_pii_data': 'hasPiiData',
             'sub_path': 'subPath',
             'user_state': 'userState',
             'is_cleared_by_customer': 'isClearedByCustomer',
@@ -563,6 +567,8 @@ class ViewFilter(object):
         self._workitem_statuses = None
         self._is_analyzed_for_sensitive_data = None
         self._has_sensitive_data = None
+        self._has_pci_data = None
+        self._has_pii_data = None
         self._sub_path = None
         self._user_state = None
         self._is_cleared_by_customer = None
@@ -4445,7 +4451,7 @@ class ViewFilter(object):
     def is_analyzed_for_sensitive_data(self) -> bool:
         """
         Gets the is_analyzed_for_sensitive_data of this ViewFilter.
-        Filter to indicate the transcript has been analyzed for sensitive data.
+        Deprecated - Use hasPciData or hasPiiData instead.
 
         :return: The is_analyzed_for_sensitive_data of this ViewFilter.
         :rtype: bool
@@ -4456,7 +4462,7 @@ class ViewFilter(object):
     def is_analyzed_for_sensitive_data(self, is_analyzed_for_sensitive_data: bool) -> None:
         """
         Sets the is_analyzed_for_sensitive_data of this ViewFilter.
-        Filter to indicate the transcript has been analyzed for sensitive data.
+        Deprecated - Use hasPciData or hasPiiData instead.
 
         :param is_analyzed_for_sensitive_data: The is_analyzed_for_sensitive_data of this ViewFilter.
         :type: bool
@@ -4469,7 +4475,7 @@ class ViewFilter(object):
     def has_sensitive_data(self) -> bool:
         """
         Gets the has_sensitive_data of this ViewFilter.
-        Filter to indicate the transcript contains sensitive data.
+        Deprecated. Use hasPciData or hasPiiData instead.
 
         :return: The has_sensitive_data of this ViewFilter.
         :rtype: bool
@@ -4480,7 +4486,7 @@ class ViewFilter(object):
     def has_sensitive_data(self, has_sensitive_data: bool) -> None:
         """
         Sets the has_sensitive_data of this ViewFilter.
-        Filter to indicate the transcript contains sensitive data.
+        Deprecated. Use hasPciData or hasPiiData instead.
 
         :param has_sensitive_data: The has_sensitive_data of this ViewFilter.
         :type: bool
@@ -4488,6 +4494,54 @@ class ViewFilter(object):
         
 
         self._has_sensitive_data = has_sensitive_data
+
+    @property
+    def has_pci_data(self) -> bool:
+        """
+        Gets the has_pci_data of this ViewFilter.
+        Filter to indicate the transcript contains Pci data.
+
+        :return: The has_pci_data of this ViewFilter.
+        :rtype: bool
+        """
+        return self._has_pci_data
+
+    @has_pci_data.setter
+    def has_pci_data(self, has_pci_data: bool) -> None:
+        """
+        Sets the has_pci_data of this ViewFilter.
+        Filter to indicate the transcript contains Pci data.
+
+        :param has_pci_data: The has_pci_data of this ViewFilter.
+        :type: bool
+        """
+        
+
+        self._has_pci_data = has_pci_data
+
+    @property
+    def has_pii_data(self) -> bool:
+        """
+        Gets the has_pii_data of this ViewFilter.
+        Filter to indicate the transcript contains Pii data.
+
+        :return: The has_pii_data of this ViewFilter.
+        :rtype: bool
+        """
+        return self._has_pii_data
+
+    @has_pii_data.setter
+    def has_pii_data(self, has_pii_data: bool) -> None:
+        """
+        Sets the has_pii_data of this ViewFilter.
+        Filter to indicate the transcript contains Pii data.
+
+        :param has_pii_data: The has_pii_data of this ViewFilter.
+        :type: bool
+        """
+        
+
+        self._has_pii_data = has_pii_data
 
     @property
     def sub_path(self) -> str:

@@ -182,7 +182,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **assignment_id** | **str**| The ID of Learning Assignment |  |
-| **expand** | [**list[str]**](str.html)| Fields to expand in response | [optional] <br />**Values**: module, assessment, assessmentForm, module.coverArt |
+| **expand** | [**list[str]**](str.html)| Fields to expand in response | [optional] <br />**Values**: module, assessment, assessmentForm, module.coverArt, step, step.moduleStep |
 {: class="table table-striped"}
 
 ### Return type

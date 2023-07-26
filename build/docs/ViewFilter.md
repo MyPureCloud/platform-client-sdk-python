@@ -168,8 +168,10 @@ title: ViewFilter
 | **workitem_ids** | **list[str]** | The list of Workitem IDs | [optional] |
 | **workitem_assignee_ids** | **list[str]** | The list of Workitem Assignee IDs | [optional] |
 | **workitem_statuses** | **list[str]** | The list of Workitem Statuses IDs | [optional] |
-| **is_analyzed_for_sensitive_data** | **bool** | Filter to indicate the transcript has been analyzed for sensitive data. | [optional] |
-| **has_sensitive_data** | **bool** | Filter to indicate the transcript contains sensitive data. | [optional] |
+| **is_analyzed_for_sensitive_data** | **bool** | Deprecated - Use hasPciData or hasPiiData instead. | [optional] |
+| **has_sensitive_data** | **bool** | Deprecated. Use hasPciData or hasPiiData instead. | [optional] |
+| **has_pci_data** | **bool** | Filter to indicate the transcript contains Pci data. | [optional] |
+| **has_pii_data** | **bool** | Filter to indicate the transcript contains Pii data. | [optional] |
 | **sub_path** | **str** | Filter for Sub Path | [optional] |
 | **user_state** | **str** | The user supplied state value in the view | [optional] |
 | **is_cleared_by_customer** | **bool** | Filter to indicate if the customer cleared the conversation. | [optional] |

@@ -34,6 +34,7 @@ from typing import Dict
 
 if TYPE_CHECKING:
     from . import ButtonResponse
+    from . import Card
     from . import ExternalContact
     from . import MessageMediaAttachment
     from . import MessageStickerAttachment
@@ -67,7 +68,9 @@ class RecordingMessagingMessage(object):
             'message_sticker_attachments': 'list[MessageStickerAttachment]',
             'quick_replies': 'list[QuickReply]',
             'button_response': 'ButtonResponse',
-            'story': 'RecordingContentStory'
+            'story': 'RecordingContentStory',
+            'cards': 'list[Card]',
+            'content_type': 'str'
         }
 
         self.attribute_map = {
@@ -82,7 +85,9 @@ class RecordingMessagingMessage(object):
             'message_sticker_attachments': 'messageStickerAttachments',
             'quick_replies': 'quickReplies',
             'button_response': 'buttonResponse',
-            'story': 'story'
+            'story': 'story',
+            'cards': 'cards',
+            'content_type': 'contentType'
         }
 
         self._pcFrom = None
@@ -97,6 +102,8 @@ class RecordingMessagingMessage(object):
         self._quick_replies = None
         self._button_response = None
         self._story = None
+        self._cards = None
+        self._content_type = None
 
     @property
     def pcFrom(self) -> str:
@@ -385,6 +392,59 @@ class RecordingMessagingMessage(object):
         
 
         self._story = story
+
+    @property
+    def cards(self) -> List['Card']:
+        """
+        Gets the cards of this RecordingMessagingMessage.
+        List of cards offered for this message
+
+        :return: The cards of this RecordingMessagingMessage.
+        :rtype: list[Card]
+        """
+        return self._cards
+
+    @cards.setter
+    def cards(self, cards: List['Card']) -> None:
+        """
+        Sets the cards of this RecordingMessagingMessage.
+        List of cards offered for this message
+
+        :param cards: The cards of this RecordingMessagingMessage.
+        :type: list[Card]
+        """
+        
+
+        self._cards = cards
+
+    @property
+    def content_type(self) -> str:
+        """
+        Gets the content_type of this RecordingMessagingMessage.
+        Indicates the content type for this message
+
+        :return: The content_type of this RecordingMessagingMessage.
+        :rtype: str
+        """
+        return self._content_type
+
+    @content_type.setter
+    def content_type(self, content_type: str) -> None:
+        """
+        Sets the content_type of this RecordingMessagingMessage.
+        Indicates the content type for this message
+
+        :param content_type: The content_type of this RecordingMessagingMessage.
+        :type: str
+        """
+        if isinstance(content_type, int):
+            content_type = str(content_type)
+        allowed_values = ["QuickReply", "Story", "Card", "Carousel", "Attachment", "Location", "Notification", "GenericTemplate", "ListTemplate", "Postback", "Reactions", "Mention", "ButtonResponse"]
+        if content_type.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for content_type -> " + content_type)
+            self._content_type = "outdated_sdk_version"
+        else:
+            self._content_type = content_type
 
     def to_dict(self):
         """

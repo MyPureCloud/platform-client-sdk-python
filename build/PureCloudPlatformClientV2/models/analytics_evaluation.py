@@ -49,6 +49,7 @@ class AnalyticsEvaluation(object):
         """
         self.swagger_types = {
             'assignee_id': 'str',
+            'assignee_applicable': 'bool',
             'calibration_id': 'str',
             'context_id': 'str',
             'deleted': 'bool',
@@ -68,6 +69,7 @@ class AnalyticsEvaluation(object):
 
         self.attribute_map = {
             'assignee_id': 'assigneeId',
+            'assignee_applicable': 'assigneeApplicable',
             'calibration_id': 'calibrationId',
             'context_id': 'contextId',
             'deleted': 'deleted',
@@ -86,6 +88,7 @@ class AnalyticsEvaluation(object):
         }
 
         self._assignee_id = None
+        self._assignee_applicable = None
         self._calibration_id = None
         self._context_id = None
         self._deleted = None
@@ -125,6 +128,30 @@ class AnalyticsEvaluation(object):
         
 
         self._assignee_id = assignee_id
+
+    @property
+    def assignee_applicable(self) -> bool:
+        """
+        Gets the assignee_applicable of this AnalyticsEvaluation.
+        Indicates whether an assignee is applicable for the evaluation. Set to false when assignee is not applicable
+
+        :return: The assignee_applicable of this AnalyticsEvaluation.
+        :rtype: bool
+        """
+        return self._assignee_applicable
+
+    @assignee_applicable.setter
+    def assignee_applicable(self, assignee_applicable: bool) -> None:
+        """
+        Sets the assignee_applicable of this AnalyticsEvaluation.
+        Indicates whether an assignee is applicable for the evaluation. Set to false when assignee is not applicable
+
+        :param assignee_applicable: The assignee_applicable of this AnalyticsEvaluation.
+        :type: bool
+        """
+        
+
+        self._assignee_applicable = assignee_applicable
 
     @property
     def calibration_id(self) -> str:

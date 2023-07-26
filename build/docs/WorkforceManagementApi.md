@@ -1675,8 +1675,8 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
 business_unit_id = 'business_unit_id_example' # str | The ID of the business unit, or 'mine' for the business unit of the logged-in user.
-feature = 'feature_example' # str |  (optional)
-division_id = 'division_id_example' # str |  (optional)
+feature = 'feature_example' # str | If specified, the list of management units for which the user is authorized to use the requested feature will be returned (optional)
+division_id = 'division_id_example' # str | If specified, the list of management units belonging to the specified division will be returned (optional)
 
 try:
     # Get all authorized management units in the business unit
@@ -1692,8 +1692,8 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **business_unit_id** | **str**| The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. |  |
-| **feature** | **str**|  | [optional] <br />**Values**: AgentSchedule, AgentTimeOffRequest, Coaching, Learning, ActivityCodes, Agents, BuActivityCodes, BusinessUnits, HistoricalAdherence, HistoricalShrinkage, IntradayMonitoring, BuIntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, BuSchedules, ServiceGoalTemplates, PlanningGroups, ShiftTrading, ShortTermForecasts, BuShortTermForecasts, StaffingGroups, TimeOffPlans, TimeOffRequests, TimeOffLimits, WorkPlanRotations, WorkPlans |
-| **division_id** | **str**|  | [optional]  |
+| **feature** | **str**| If specified, the list of management units for which the user is authorized to use the requested feature will be returned | [optional] <br />**Values**: AgentSchedule, AgentTimeOffRequest, Coaching, Learning, ActivityCodes, Agents, BuActivityCodes, BusinessUnits, HistoricalAdherence, HistoricalShrinkage, IntradayMonitoring, BuIntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, BuSchedules, ServiceGoalTemplates, PlanningGroups, ShiftTrading, ShortTermForecasts, BuShortTermForecasts, StaffingGroups, TimeOffPlans, TimeOffRequests, TimeOffLimits, WorkPlanRotations, WorkPlans |
+| **division_id** | **str**| If specified, the list of management units belonging to the specified division will be returned | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2704,8 +2704,8 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
-feature = 'feature_example' # str |  (optional)
-division_id = 'division_id_example' # str |  (optional)
+feature = 'feature_example' # str | If specified, the list of business units for which the user is authorized to use the requested feature will be returned (optional)
+division_id = 'division_id_example' # str | If specified, the list of business units belonging to the specified division will be returned (optional)
 
 try:
     # Get business units
@@ -2720,8 +2720,8 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **feature** | **str**|  | [optional] <br />**Values**: AgentSchedule, AgentTimeOffRequest, Coaching, Learning, ActivityCodes, Agents, BuActivityCodes, BusinessUnits, HistoricalAdherence, HistoricalShrinkage, IntradayMonitoring, BuIntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, BuSchedules, ServiceGoalTemplates, PlanningGroups, ShiftTrading, ShortTermForecasts, BuShortTermForecasts, StaffingGroups, TimeOffPlans, TimeOffRequests, TimeOffLimits, WorkPlanRotations, WorkPlans |
-| **division_id** | **str**|  | [optional]  |
+| **feature** | **str**| If specified, the list of business units for which the user is authorized to use the requested feature will be returned | [optional] <br />**Values**: AgentSchedule, AgentTimeOffRequest, Coaching, Learning, ActivityCodes, Agents, BuActivityCodes, BusinessUnits, HistoricalAdherence, HistoricalShrinkage, IntradayMonitoring, BuIntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, BuSchedules, ServiceGoalTemplates, PlanningGroups, ShiftTrading, ShortTermForecasts, BuShortTermForecasts, StaffingGroups, TimeOffPlans, TimeOffRequests, TimeOffLimits, WorkPlanRotations, WorkPlans |
+| **division_id** | **str**| If specified, the list of business units belonging to the specified division will be returned | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -4249,8 +4249,8 @@ api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
 page_size = 56 # int | Deprecated, paging is not supported (optional)
 page_number = 56 # int | Deprecated, paging is not supported (optional)
 expand = 'expand_example' # str | Deprecated, expand settings on the single MU route (optional)
-feature = 'feature_example' # str |  (optional)
-division_id = 'division_id_example' # str |  (optional)
+feature = 'feature_example' # str | If specified, the list of management units for which the user is authorized to use the requested feature will be returned (optional)
+division_id = 'division_id_example' # str | If specified, the list of management units belonging to the specified division will be returned (optional)
 
 try:
     # Get management units
@@ -4268,8 +4268,8 @@ except ApiException as e:
 | **page_size** | **int**| Deprecated, paging is not supported | [optional]  |
 | **page_number** | **int**| Deprecated, paging is not supported | [optional]  |
 | **expand** | **str**| Deprecated, expand settings on the single MU route | [optional] <br />**Values**: details |
-| **feature** | **str**|  | [optional] <br />**Values**: AgentSchedule, AgentTimeOffRequest, Coaching, Learning, ActivityCodes, Agents, BuActivityCodes, BusinessUnits, HistoricalAdherence, HistoricalShrinkage, IntradayMonitoring, BuIntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, BuSchedules, ServiceGoalTemplates, PlanningGroups, ShiftTrading, ShortTermForecasts, BuShortTermForecasts, StaffingGroups, TimeOffPlans, TimeOffRequests, TimeOffLimits, WorkPlanRotations, WorkPlans |
-| **division_id** | **str**|  | [optional]  |
+| **feature** | **str**| If specified, the list of management units for which the user is authorized to use the requested feature will be returned | [optional] <br />**Values**: AgentSchedule, AgentTimeOffRequest, Coaching, Learning, ActivityCodes, Agents, BuActivityCodes, BusinessUnits, HistoricalAdherence, HistoricalShrinkage, IntradayMonitoring, BuIntradayMonitoring, ManagementUnits, RealTimeAdherence, Schedules, BuSchedules, ServiceGoalTemplates, PlanningGroups, ShiftTrading, ShortTermForecasts, BuShortTermForecasts, StaffingGroups, TimeOffPlans, TimeOffRequests, TimeOffLimits, WorkPlanRotations, WorkPlans |
+| **division_id** | **str**| If specified, the list of management units belonging to the specified division will be returned | [optional]  |
 {: class="table table-striped"}
 
 ### Return type

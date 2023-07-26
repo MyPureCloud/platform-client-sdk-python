@@ -2334,8 +2334,8 @@ class WorkforceManagementApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str business_unit_id: The ID of the business unit, or 'mine' for the business unit of the logged-in user. (required)
-        :param str feature: 
-        :param str division_id: 
+        :param str feature: If specified, the list of management units for which the user is authorized to use the requested feature will be returned
+        :param str division_id: If specified, the list of management units belonging to the specified division will be returned
         :return: ManagementUnitListing
                  If the method is called asynchronously,
                  returns the request thread.
@@ -4007,8 +4007,8 @@ class WorkforceManagementApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str feature: 
-        :param str division_id: 
+        :param str feature: If specified, the list of business units for which the user is authorized to use the requested feature will be returned
+        :param str division_id: If specified, the list of business units belonging to the specified division will be returned
         :return: BusinessUnitListing
                  If the method is called asynchronously,
                  returns the request thread.
@@ -6305,8 +6305,8 @@ class WorkforceManagementApi(object):
         :param int page_size: Deprecated, paging is not supported
         :param int page_number: Deprecated, paging is not supported
         :param str expand: Deprecated, expand settings on the single MU route
-        :param str feature: 
-        :param str division_id: 
+        :param str feature: If specified, the list of management units for which the user is authorized to use the requested feature will be returned
+        :param str division_id: If specified, the list of management units belonging to the specified division will be returned
         :return: ManagementUnitListing
                  If the method is called asynchronously,
                  returns the request thread.

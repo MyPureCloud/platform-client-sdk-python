@@ -35,7 +35,6 @@ from typing import Dict
 if TYPE_CHECKING:
     from . import AddressableEntityRef
     from . import DomainEntityRef
-    from . import SupportedContentProfile
     from . import WebDeploymentConfigurationVersionEntityRef
 
 class WebDeployment(object):
@@ -58,7 +57,6 @@ class WebDeployment(object):
             'description': 'str',
             'allow_all_domains': 'bool',
             'allowed_domains': 'list[str]',
-            'supported_content_profile': 'SupportedContentProfile',
             'snippet': 'str',
             'date_created': 'datetime',
             'date_modified': 'datetime',
@@ -75,7 +73,6 @@ class WebDeployment(object):
             'description': 'description',
             'allow_all_domains': 'allowAllDomains',
             'allowed_domains': 'allowedDomains',
-            'supported_content_profile': 'supportedContentProfile',
             'snippet': 'snippet',
             'date_created': 'dateCreated',
             'date_modified': 'dateModified',
@@ -91,7 +88,6 @@ class WebDeployment(object):
         self._description = None
         self._allow_all_domains = None
         self._allowed_domains = None
-        self._supported_content_profile = None
         self._snippet = None
         self._date_created = None
         self._date_modified = None
@@ -220,30 +216,6 @@ class WebDeployment(object):
         
 
         self._allowed_domains = allowed_domains
-
-    @property
-    def supported_content_profile(self) -> 'SupportedContentProfile':
-        """
-        Gets the supported_content_profile of this WebDeployment.
-        The supported content profile for a deployment
-
-        :return: The supported_content_profile of this WebDeployment.
-        :rtype: SupportedContentProfile
-        """
-        return self._supported_content_profile
-
-    @supported_content_profile.setter
-    def supported_content_profile(self, supported_content_profile: 'SupportedContentProfile') -> None:
-        """
-        Sets the supported_content_profile of this WebDeployment.
-        The supported content profile for a deployment
-
-        :param supported_content_profile: The supported_content_profile of this WebDeployment.
-        :type: SupportedContentProfile
-        """
-        
-
-        self._supported_content_profile = supported_content_profile
 
     @property
     def snippet(self) -> str:
