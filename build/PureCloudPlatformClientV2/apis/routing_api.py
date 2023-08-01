@@ -4065,10 +4065,10 @@ class RoutingApi(object):
         :param int page_size: Max value is 100
         :param str sort_order: Note: results are sorted by name.
         :param list[str] expand: Which fields, if any, to expand.
-        :param str name: Filter by queue member name
-        :param list[str] profile_skills: Filter by profile skill
-        :param list[str] skills: Filter by skill
-        :param list[str] languages: Filter by language
+        :param str name: Filter by queue member name (contains-style search)
+        :param list[str] profile_skills: Filter by profile skill (contains-style search)
+        :param list[str] skills: Filter by skill (contains-style search)
+        :param list[str] languages: Filter by language (contains-style search)
         :param list[str] routing_status: Filter by routing status
         :param list[str] presence: Filter by presence
         :param str member_by: Filter by member type

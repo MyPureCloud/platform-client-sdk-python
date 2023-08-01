@@ -60,7 +60,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_workforcemanagement_historicaldata_deletejob**](WorkforceManagementApi.html#get_workforcemanagement_historicaldata_deletejob) | Retrieves delete job status for historical data imports of the organization|
 |[**get_workforcemanagement_historicaldata_importstatus**](WorkforceManagementApi.html#get_workforcemanagement_historicaldata_importstatus) | Retrieves status of the historical data imports of the organization|
 |[**get_workforcemanagement_managementunit**](WorkforceManagementApi.html#get_workforcemanagement_managementunit) | Get management unit|
-|[**get_workforcemanagement_managementunit_activitycodes**](WorkforceManagementApi.html#get_workforcemanagement_managementunit_activitycodes) | Get activity codes|
+|[**get_workforcemanagement_managementunit_activitycodes**](WorkforceManagementApi.html#get_workforcemanagement_managementunit_activitycodes) | Deprecated: Instead use /api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes. Get the list of activity codes|
 |[**get_workforcemanagement_managementunit_adherence**](WorkforceManagementApi.html#get_workforcemanagement_managementunit_adherence) | Get a list of user schedule adherence records for the requested management unit|
 |[**get_workforcemanagement_managementunit_agent**](WorkforceManagementApi.html#get_workforcemanagement_managementunit_agent) | Get data for agent in the management unit|
 |[**get_workforcemanagement_managementunit_agent_shifttrades**](WorkforceManagementApi.html#get_workforcemanagement_managementunit_agent_shifttrades) | Gets all the shift trades for a given agent|
@@ -3076,7 +3076,7 @@ except ApiException as e:
 
 <span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
-Get activity codes
+Deprecated: Instead use /api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes. Get the list of activity codes
 
 Wraps GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/activitycodes 
 
@@ -3140,7 +3140,7 @@ api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
 management_unit_id = 'management_unit_id_example' # str | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 
 try:
-    # Get activity codes
+    # Deprecated: Instead use /api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes. Get the list of activity codes
     api_response = api_instance.get_workforcemanagement_managementunit_activitycodes(management_unit_id)
     pprint(api_response)
 except ApiException as e:

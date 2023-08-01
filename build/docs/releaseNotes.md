@@ -1,71 +1,53 @@
-Platform API version: 7194
+Platform API version: 7205
 
 
-# Major Changes (3 changes)
-
-**SupportedContentProfile** (1 change)
-
-* Model SupportedContentProfile was removed
-
-**WebDeployment** (1 change)
-
-* Property supportedContentProfile was removed
-
-**ExpandableWebDeployment** (1 change)
-
-* Property supportedContentProfile was removed
+# Major Changes (0 changes)
 
 
-# Minor Changes (10 changes)
+# Minor Changes (11 changes)
 
-**AnalyticsEvaluation** (1 change)
+**Limit** (1 change)
+
+* Enum value media.communications was added to property namespace
+
+**Evaluation** (1 change)
 
 * Optional property assigneeApplicable was added
 
-**EvaluationDetailQueryPredicate** (1 change)
+**ApprovalNamespace** (1 change)
 
-* Enum value assigneeApplicable was added to property dimension
+* Enum value media.communications was added to property namespace
 
-**ViewFilter** (2 changes)
+**LimitChangeRequestDetails** (1 change)
 
-* Optional property hasPciData was added
-* Optional property hasPiiData was added
+* Enum value media.communications was added to property namespace
 
-**RecordingMessagingMessage** (2 changes)
+**StatusChange** (1 change)
 
-* Optional property cards was added
-* Optional property contentType was added
+* Enum value media.communications was added to property namespace
 
-**LearningAssignmentStep** (1 change)
+**EvaluationResponse** (1 change)
 
-* Model was added
+* Optional property assigneeApplicable was added
 
-**LearningAssignmentStepScoStructure** (1 change)
+**GeneralProgramJobRequest** (5 changes)
 
-* Model was added
-
-**LearningAssignmentStepSignedCookie** (1 change)
-
-* Model was added
-
-**LearningShareableContentObject** (1 change)
-
-* Model was added
+* Enum value de-CH was added to property dialect
+* Enum value en-HK was added to property dialect
+* Enum value en-IE was added to property dialect
+* Enum value en-NZ was added to property dialect
+* Enum value en-SG was added to property dialect
 
 
-# Point Changes (6 changes)
+# Point Changes (5 changes)
 
-**GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/managementunits** (2 changes)
+**GET /api/v2/routing/queues/{queueId}/members** (4 changes)
 
-* Description was changed for parameter feature
-* Description was changed for parameter divisionId
+* Description was changed for parameter name
+* Description was changed for parameter profileSkills
+* Description was changed for parameter skills
+* Description was changed for parameter languages
 
-**GET /api/v2/workforcemanagement/businessunits** (2 changes)
+**GET /api/v2/workforcemanagement/managementunits/{managementUnitId}/activitycodes** (1 change)
 
-* Description was changed for parameter feature
-* Description was changed for parameter divisionId
-
-**GET /api/v2/workforcemanagement/managementunits** (2 changes)
-
-* Description was changed for parameter feature
-* Description was changed for parameter divisionId
+* Summary was changed

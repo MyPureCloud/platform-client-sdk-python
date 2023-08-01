@@ -18,6 +18,7 @@ title: EvaluationResponse
 | **answers** | [**EvaluationScoringSet**](EvaluationScoringSet.html) |  | [optional] |
 | **agent_has_read** | **bool** |  | [optional] |
 | **assignee** | [**User**](User.html) |  | [optional] |
+| **assignee_applicable** | **bool** | Indicates whether an assignee is applicable for the evaluation. Set to false when assignee is not applicable. | [optional] |
 | **release_date** | **datetime** | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
 | **assigned_date** | **datetime** | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
 | **changed_date** | **datetime** | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |

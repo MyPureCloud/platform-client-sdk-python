@@ -67,6 +67,7 @@ class Evaluation(object):
             'answers': 'EvaluationScoringSet',
             'agent_has_read': 'bool',
             'assignee': 'User',
+            'assignee_applicable': 'bool',
             'release_date': 'datetime',
             'assigned_date': 'datetime',
             'changed_date': 'datetime',
@@ -100,6 +101,7 @@ class Evaluation(object):
             'answers': 'answers',
             'agent_has_read': 'agentHasRead',
             'assignee': 'assignee',
+            'assignee_applicable': 'assigneeApplicable',
             'release_date': 'releaseDate',
             'assigned_date': 'assignedDate',
             'changed_date': 'changedDate',
@@ -132,6 +134,7 @@ class Evaluation(object):
         self._answers = None
         self._agent_has_read = None
         self._assignee = None
+        self._assignee_applicable = None
         self._release_date = None
         self._assigned_date = None
         self._changed_date = None
@@ -420,6 +423,30 @@ class Evaluation(object):
         
 
         self._assignee = assignee
+
+    @property
+    def assignee_applicable(self) -> bool:
+        """
+        Gets the assignee_applicable of this Evaluation.
+        Indicates whether an assignee is applicable for the evaluation. Set to false when assignee is not applicable.
+
+        :return: The assignee_applicable of this Evaluation.
+        :rtype: bool
+        """
+        return self._assignee_applicable
+
+    @assignee_applicable.setter
+    def assignee_applicable(self, assignee_applicable: bool) -> None:
+        """
+        Sets the assignee_applicable of this Evaluation.
+        Indicates whether an assignee is applicable for the evaluation. Set to false when assignee is not applicable.
+
+        :param assignee_applicable: The assignee_applicable of this Evaluation.
+        :type: bool
+        """
+        
+
+        self._assignee_applicable = assignee_applicable
 
     @property
     def release_date(self) -> datetime:

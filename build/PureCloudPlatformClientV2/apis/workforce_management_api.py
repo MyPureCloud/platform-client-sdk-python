@@ -4523,7 +4523,7 @@ class WorkforceManagementApi(object):
     @deprecated("get_workforcemanagement_managementunit_activitycodes is deprecated")
     def get_workforcemanagement_managementunit_activitycodes(self, management_unit_id: str, **kwargs) -> 'ActivityCodeContainer':
         """
-        Get activity codes
+        Deprecated: Instead use /api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes. Get the list of activity codes
         
 
         This method makes a synchronous HTTP request by default. To make an

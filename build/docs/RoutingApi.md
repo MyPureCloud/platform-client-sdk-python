@@ -2617,10 +2617,10 @@ page_number = 1 # int |  (optional) (default to 1)
 page_size = 25 # int | Max value is 100 (optional) (default to 25)
 sort_order = ''asc'' # str | Note: results are sorted by name. (optional) (default to 'asc')
 expand = ['expand_example'] # list[str] | Which fields, if any, to expand. (optional)
-name = 'name_example' # str | Filter by queue member name (optional)
-profile_skills = ['profile_skills_example'] # list[str] | Filter by profile skill (optional)
-skills = ['skills_example'] # list[str] | Filter by skill (optional)
-languages = ['languages_example'] # list[str] | Filter by language (optional)
+name = 'name_example' # str | Filter by queue member name (contains-style search) (optional)
+profile_skills = ['profile_skills_example'] # list[str] | Filter by profile skill (contains-style search) (optional)
+skills = ['skills_example'] # list[str] | Filter by skill (contains-style search) (optional)
+languages = ['languages_example'] # list[str] | Filter by language (contains-style search) (optional)
 routing_status = ['routing_status_example'] # list[str] | Filter by routing status (optional)
 presence = ['presence_example'] # list[str] | Filter by presence (optional)
 member_by = 'member_by_example' # str | Filter by member type (optional)
@@ -2644,10 +2644,10 @@ except ApiException as e:
 | **page_size** | **int**| Max value is 100 | [optional] [default to 25] |
 | **sort_order** | **str**| Note: results are sorted by name. | [optional] [default to &#39;asc&#39;]<br />**Values**: asc, desc |
 | **expand** | [**list[str]**](str.html)| Which fields, if any, to expand. | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, dateLastLogin, authorization.unusedRoles, team, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography |
-| **name** | **str**| Filter by queue member name | [optional]  |
-| **profile_skills** | [**list[str]**](str.html)| Filter by profile skill | [optional]  |
-| **skills** | [**list[str]**](str.html)| Filter by skill | [optional]  |
-| **languages** | [**list[str]**](str.html)| Filter by language | [optional]  |
+| **name** | **str**| Filter by queue member name (contains-style search) | [optional]  |
+| **profile_skills** | [**list[str]**](str.html)| Filter by profile skill (contains-style search) | [optional]  |
+| **skills** | [**list[str]**](str.html)| Filter by skill (contains-style search) | [optional]  |
+| **languages** | [**list[str]**](str.html)| Filter by language (contains-style search) | [optional]  |
 | **routing_status** | [**list[str]**](str.html)| Filter by routing status | [optional]  |
 | **presence** | [**list[str]**](str.html)| Filter by presence | [optional]  |
 | **member_by** | **str**| Filter by member type | [optional] <br />**Values**: user, group |
