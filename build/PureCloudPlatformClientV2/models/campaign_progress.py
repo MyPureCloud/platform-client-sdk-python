@@ -55,7 +55,8 @@ class CampaignProgress(object):
             'number_of_contacts_called': 'int',
             'number_of_contacts_messaged': 'int',
             'total_number_of_contacts': 'int',
-            'percentage': 'int'
+            'percentage': 'int',
+            'number_of_contacts_skipped': 'dict(str, int)'
         }
 
         self.attribute_map = {
@@ -64,7 +65,8 @@ class CampaignProgress(object):
             'number_of_contacts_called': 'numberOfContactsCalled',
             'number_of_contacts_messaged': 'numberOfContactsMessaged',
             'total_number_of_contacts': 'totalNumberOfContacts',
-            'percentage': 'percentage'
+            'percentage': 'percentage',
+            'number_of_contacts_skipped': 'numberOfContactsSkipped'
         }
 
         self._campaign = None
@@ -73,6 +75,7 @@ class CampaignProgress(object):
         self._number_of_contacts_messaged = None
         self._total_number_of_contacts = None
         self._percentage = None
+        self._number_of_contacts_skipped = None
 
     @property
     def campaign(self) -> 'DomainEntityRef':
@@ -217,6 +220,30 @@ class CampaignProgress(object):
         
 
         self._percentage = percentage
+
+    @property
+    def number_of_contacts_skipped(self) -> Dict[str, int]:
+        """
+        Gets the number_of_contacts_skipped of this CampaignProgress.
+        Number of contacts skipped during the campaign
+
+        :return: The number_of_contacts_skipped of this CampaignProgress.
+        :rtype: dict(str, int)
+        """
+        return self._number_of_contacts_skipped
+
+    @number_of_contacts_skipped.setter
+    def number_of_contacts_skipped(self, number_of_contacts_skipped: Dict[str, int]) -> None:
+        """
+        Sets the number_of_contacts_skipped of this CampaignProgress.
+        Number of contacts skipped during the campaign
+
+        :param number_of_contacts_skipped: The number_of_contacts_skipped of this CampaignProgress.
+        :type: dict(str, int)
+        """
+        
+
+        self._number_of_contacts_skipped = number_of_contacts_skipped
 
     def to_dict(self):
         """

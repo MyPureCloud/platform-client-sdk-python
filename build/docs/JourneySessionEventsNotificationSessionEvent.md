@@ -44,6 +44,9 @@ title: JourneySessionEventsNotificationSessionEvent
 | **last_user_disconnect_type** | **str** |  | [optional] |
 | **last_acd_outcome** | **str** |  | [optional] |
 | **authenticated** | **bool** |  | [optional] |
+| **app** | [**JourneySessionEventsNotificationApp**](JourneySessionEventsNotificationApp.html) |  | [optional] |
+| **sdk_library** | [**JourneySessionEventsNotificationSdkLibrary**](JourneySessionEventsNotificationSdkLibrary.html) |  | [optional] |
+| **network_connectivity** | [**JourneySessionEventsNotificationNetworkConnectivity**](JourneySessionEventsNotificationNetworkConnectivity.html) |  | [optional] |
 {: class="table table-striped"}
 
 

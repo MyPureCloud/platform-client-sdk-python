@@ -53,9 +53,11 @@ class Device(object):
             'is_mobile': 'bool',
             'screen_height': 'int',
             'screen_width': 'int',
+            'screen_density': 'int',
             'fingerprint': 'str',
             'os_family': 'str',
-            'os_version': 'str'
+            'os_version': 'str',
+            'manufacturer': 'str'
         }
 
         self.attribute_map = {
@@ -64,9 +66,11 @@ class Device(object):
             'is_mobile': 'isMobile',
             'screen_height': 'screenHeight',
             'screen_width': 'screenWidth',
+            'screen_density': 'screenDensity',
             'fingerprint': 'fingerprint',
             'os_family': 'osFamily',
-            'os_version': 'osVersion'
+            'os_version': 'osVersion',
+            'manufacturer': 'manufacturer'
         }
 
         self._category = None
@@ -74,9 +78,11 @@ class Device(object):
         self._is_mobile = None
         self._screen_height = None
         self._screen_width = None
+        self._screen_density = None
         self._fingerprint = None
         self._os_family = None
         self._os_version = None
+        self._manufacturer = None
 
     @property
     def category(self) -> str:
@@ -204,6 +210,30 @@ class Device(object):
         self._screen_width = screen_width
 
     @property
+    def screen_density(self) -> int:
+        """
+        Gets the screen_density of this Device.
+        Device's screen density, measured as a scale factor where a value of 1 represents a baseline 1:1 ratio of pixels to logical (device-independent) pixels.
+
+        :return: The screen_density of this Device.
+        :rtype: int
+        """
+        return self._screen_density
+
+    @screen_density.setter
+    def screen_density(self, screen_density: int) -> None:
+        """
+        Sets the screen_density of this Device.
+        Device's screen density, measured as a scale factor where a value of 1 represents a baseline 1:1 ratio of pixels to logical (device-independent) pixels.
+
+        :param screen_density: The screen_density of this Device.
+        :type: int
+        """
+        
+
+        self._screen_density = screen_density
+
+    @property
     def fingerprint(self) -> str:
         """
         Gets the fingerprint of this Device.
@@ -274,6 +304,30 @@ class Device(object):
         
 
         self._os_version = os_version
+
+    @property
+    def manufacturer(self) -> str:
+        """
+        Gets the manufacturer of this Device.
+        Manufacturer of the device.
+
+        :return: The manufacturer of this Device.
+        :rtype: str
+        """
+        return self._manufacturer
+
+    @manufacturer.setter
+    def manufacturer(self, manufacturer: str) -> None:
+        """
+        Sets the manufacturer of this Device.
+        Manufacturer of the device.
+
+        :param manufacturer: The manufacturer of this Device.
+        :type: str
+        """
+        
+
+        self._manufacturer = manufacturer
 
     def to_dict(self):
         """

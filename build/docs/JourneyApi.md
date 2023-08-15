@@ -45,6 +45,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_journey_actionmaps**](JourneyApi.html#post_journey_actionmaps) | Create an action map.|
 |[**post_journey_actionmaps_estimates_jobs**](JourneyApi.html#post_journey_actionmaps_estimates_jobs) | Query for estimates|
 |[**post_journey_actiontemplates**](JourneyApi.html#post_journey_actiontemplates) | Create a single action template.|
+|[**post_journey_deployment_appevents**](JourneyApi.html#post_journey_deployment_appevents) | Send a journey app event, used for tracking customer activity on an application.|
 |[**post_journey_outcomes**](JourneyApi.html#post_journey_outcomes) | Create an outcome.|
 |[**post_journey_outcomes_attributions_jobs**](JourneyApi.html#post_journey_outcomes_attributions_jobs) | Create Outcome Attributions|
 |[**post_journey_outcomes_predictors**](JourneyApi.html#post_journey_outcomes_predictors) | Create an outcome predictor.|
@@ -1945,6 +1946,55 @@ except ApiException as e:
 ### Return type
 
 [**ActionTemplate**](ActionTemplate.html)
+
+<a name="post_journey_deployment_appevents"></a>
+
+## [**AppEventResponse**](AppEventResponse.html) post_journey_deployment_appevents(deployment_id, body=body)
+
+
+
+Send a journey app event, used for tracking customer activity on an application.
+
+post_journey_deployment_appevents is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/journey/deployments/{deploymentId}/appevents 
+
+Requires no permissions
+
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.JourneyApi()
+deployment_id = 'deployment_id_example' # str | The ID of the deployment sending the app event.
+body = PureCloudPlatformClientV2.AppEventRequest() # AppEventRequest |  (optional)
+
+try:
+    # Send a journey app event, used for tracking customer activity on an application.
+    api_response = api_instance.post_journey_deployment_appevents(deployment_id, body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling JourneyApi->post_journey_deployment_appevents: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **deployment_id** | **str**| The ID of the deployment sending the app event. |  |
+| **body** | [**AppEventRequest**](AppEventRequest.html)|  | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**AppEventResponse**](AppEventResponse.html)
 
 <a name="post_journey_outcomes"></a>
 

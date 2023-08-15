@@ -59,7 +59,8 @@ class V2MobiusRulesTopicRule(object):
             'conditions': 'V2MobiusRulesTopicCondition',
             'enabled': 'bool',
             'in_alarm': 'bool',
-            'action': 'str'
+            'action': 'str',
+            'date_created': 'datetime'
         }
 
         self.attribute_map = {
@@ -71,7 +72,8 @@ class V2MobiusRulesTopicRule(object):
             'conditions': 'conditions',
             'enabled': 'enabled',
             'in_alarm': 'inAlarm',
-            'action': 'action'
+            'action': 'action',
+            'date_created': 'dateCreated'
         }
 
         self._id = None
@@ -83,6 +85,7 @@ class V2MobiusRulesTopicRule(object):
         self._enabled = None
         self._in_alarm = None
         self._action = None
+        self._date_created = None
 
     @property
     def id(self) -> str:
@@ -178,7 +181,7 @@ class V2MobiusRulesTopicRule(object):
         """
         if isinstance(type, int):
             type = str(type)
-        allowed_values = ["ConversationMetrics", "UserPresence", "Unknown"]
+        allowed_values = ["ConversationMetrics", "UserPresence", "WorkforceManagement", "Unknown"]
         if type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for type -> " + type)
             self._type = "outdated_sdk_version"
@@ -309,6 +312,30 @@ class V2MobiusRulesTopicRule(object):
             self._action = "outdated_sdk_version"
         else:
             self._action = action
+
+    @property
+    def date_created(self) -> datetime:
+        """
+        Gets the date_created of this V2MobiusRulesTopicRule.
+
+
+        :return: The date_created of this V2MobiusRulesTopicRule.
+        :rtype: datetime
+        """
+        return self._date_created
+
+    @date_created.setter
+    def date_created(self, date_created: datetime) -> None:
+        """
+        Sets the date_created of this V2MobiusRulesTopicRule.
+
+
+        :param date_created: The date_created of this V2MobiusRulesTopicRule.
+        :type: datetime
+        """
+        
+
+        self._date_created = date_created
 
     def to_dict(self):
         """

@@ -959,9 +959,9 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.QualityApi()
 page_size = 25 # int | The total page size requested (optional) (default to 25)
 page_number = 1 # int | The page number requested (optional) (default to 1)
-sort_by = 'sort_by_example' # str | variable name requested to sort by (optional)
+sort_by = 'sort_by_example' # str | NOTE: Does not work when querying evaluations (optional)
 expand = ['expand_example'] # list[str] | variable name requested by expand list (optional)
-next_page = 'next_page_example' # str | next page token (optional)
+next_page = 'next_page_example' # str | NOTE: Does not work when querying evaluations (optional)
 previous_page = 'previous_page_example' # str | Previous page token (optional)
 conversation_id = 'conversation_id_example' # str | conversationId specified (optional)
 agent_user_id = 'agent_user_id_example' # str | user id of the agent (optional)
@@ -974,8 +974,8 @@ evaluation_state = ['evaluation_state_example'] # list[str] |  (optional)
 is_released = True # bool | the evaluation has been released (optional)
 agent_has_read = True # bool | agent has the evaluation (optional)
 expand_answer_total_scores = True # bool | get the total scores for evaluations (optional)
-maximum = 56 # int | maximum (optional)
-sort_order = 'sort_order_example' # str | sort order options for agentUserId or evaluatorUserId query. Valid options are 'a', 'asc', 'ascending', 'd', 'desc', 'descending'. Sorts by assigned date when evaluatorUserId or agentTeamId are supplied, and by released date for agentUserId (optional)
+maximum = 56 # int | the maximum number of results to return (optional)
+sort_order = 'sort_order_example' # str | NOTE: Does not work when conversationId is supplied. (optional)
 
 try:
     # Queries Evaluations and returns a paged list
@@ -992,9 +992,9 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **page_size** | **int**| The total page size requested | [optional] [default to 25] |
 | **page_number** | **int**| The page number requested | [optional] [default to 1] |
-| **sort_by** | **str**| variable name requested to sort by | [optional]  |
+| **sort_by** | **str**| NOTE: Does not work when querying evaluations | [optional]  |
 | **expand** | [**list[str]**](str.html)| variable name requested by expand list | [optional]  |
-| **next_page** | **str**| next page token | [optional]  |
+| **next_page** | **str**| NOTE: Does not work when querying evaluations | [optional]  |
 | **previous_page** | **str**| Previous page token | [optional]  |
 | **conversation_id** | **str**| conversationId specified | [optional]  |
 | **agent_user_id** | **str**| user id of the agent | [optional]  |
@@ -1007,8 +1007,8 @@ except ApiException as e:
 | **is_released** | **bool**| the evaluation has been released | [optional]  |
 | **agent_has_read** | **bool**| agent has the evaluation | [optional]  |
 | **expand_answer_total_scores** | **bool**| get the total scores for evaluations | [optional]  |
-| **maximum** | **int**| maximum | [optional]  |
-| **sort_order** | **str**| sort order options for agentUserId or evaluatorUserId query. Valid options are &#39;a&#39;, &#39;asc&#39;, &#39;ascending&#39;, &#39;d&#39;, &#39;desc&#39;, &#39;descending&#39;. Sorts by assigned date when evaluatorUserId or agentTeamId are supplied, and by released date for agentUserId | [optional]  |
+| **maximum** | **int**| the maximum number of results to return | [optional]  |
+| **sort_order** | **str**| NOTE: Does not work when conversationId is supplied. | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3063,7 +3063,7 @@ api_instance = PureCloudPlatformClientV2.QualityApi()
 conversation_id = 'conversation_id_example' # str | conversationId
 evaluation_id = 'evaluation_id_example' # str | evaluationId
 body = PureCloudPlatformClientV2.Evaluation() # Evaluation | evaluation
-expand = 'expand_example' # str | evaluatorId, evaluationForm, assignee (optional)
+expand = 'expand_example' # str | evaluatorId, evaluationForm, assignee, evaluator (optional)
 
 try:
     # Update an evaluation
@@ -3081,7 +3081,7 @@ except ApiException as e:
 | **conversation_id** | **str**| conversationId |  |
 | **evaluation_id** | **str**| evaluationId |  |
 | **body** | [**Evaluation**](Evaluation.html)| evaluation |  |
-| **expand** | **str**| evaluatorId, evaluationForm, assignee | [optional]  |
+| **expand** | **str**| evaluatorId, evaluationForm, assignee, evaluator | [optional]  |
 {: class="table table-striped"}
 
 ### Return type

@@ -25,6 +25,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_knowledge_knowledgebase_categories**](KnowledgeApi.html#get_knowledge_knowledgebase_categories) | Get categories|
 |[**get_knowledge_knowledgebase_category**](KnowledgeApi.html#get_knowledge_knowledgebase_category) | Get category|
 |[**get_knowledge_knowledgebase_document**](KnowledgeApi.html#get_knowledge_knowledgebase_document) | Get document.|
+|[**get_knowledge_knowledgebase_document_feedback**](KnowledgeApi.html#get_knowledge_knowledgebase_document_feedback) | Get a list of feedback records given on a document|
+|[**get_knowledge_knowledgebase_document_feedback_feedback_id**](KnowledgeApi.html#get_knowledge_knowledgebase_document_feedback_feedback_id) | Get a single feedback record given on a document|
 |[**get_knowledge_knowledgebase_document_variation**](KnowledgeApi.html#get_knowledge_knowledgebase_document_variation) | Get a variation for a document.|
 |[**get_knowledge_knowledgebase_document_variations**](KnowledgeApi.html#get_knowledge_knowledgebase_document_variations) | Get variations for a document.|
 |[**get_knowledge_knowledgebase_document_version**](KnowledgeApi.html#get_knowledge_knowledgebase_document_version) | Get document version.|
@@ -62,12 +64,15 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**patch_knowledge_knowledgebase_language_documents_import**](KnowledgeApi.html#patch_knowledge_knowledgebase_language_documents_import) | Start import operation|
 |[**patch_knowledge_knowledgebase_unanswered_group_phrasegroup**](KnowledgeApi.html#patch_knowledge_knowledgebase_unanswered_group_phrasegroup) | Update a Knowledge base unanswered phrase group|
 |[**post_knowledge_documentuploads**](KnowledgeApi.html#post_knowledge_documentuploads) | Creates a presigned URL for uploading a knowledge import file with a set of documents|
+|[**post_knowledge_guest_session_document_feedback**](KnowledgeApi.html#post_knowledge_guest_session_document_feedback) | Give feedback on a document|
 |[**post_knowledge_guest_session_documents_search**](KnowledgeApi.html#post_knowledge_guest_session_documents_search) | Search the documents in a guest session.|
 |[**post_knowledge_guest_session_documents_search_suggestions**](KnowledgeApi.html#post_knowledge_guest_session_documents_search_suggestions) | Query the knowledge documents to provide suggestions for auto completion.|
 |[**post_knowledge_guest_sessions**](KnowledgeApi.html#post_knowledge_guest_sessions) | Create guest session|
 |[**post_knowledge_knowledgebase_categories**](KnowledgeApi.html#post_knowledge_knowledgebase_categories) | Create new category|
+|[**post_knowledge_knowledgebase_document_feedback**](KnowledgeApi.html#post_knowledge_knowledgebase_document_feedback) | Give feedback on a document|
 |[**post_knowledge_knowledgebase_document_variations**](KnowledgeApi.html#post_knowledge_knowledgebase_document_variations) | Create a variation for a document.|
 |[**post_knowledge_knowledgebase_document_versions**](KnowledgeApi.html#post_knowledge_knowledgebase_document_versions) | Creates or restores a document version.|
+|[**post_knowledge_knowledgebase_document_views**](KnowledgeApi.html#post_knowledge_knowledgebase_document_views) | Create view for a document.|
 |[**post_knowledge_knowledgebase_documents**](KnowledgeApi.html#post_knowledge_knowledgebase_documents) | Create document.|
 |[**post_knowledge_knowledgebase_documents_bulk_remove**](KnowledgeApi.html#post_knowledge_knowledgebase_documents_bulk_remove) | Bulk remove documents.|
 |[**post_knowledge_knowledgebase_documents_bulk_update**](KnowledgeApi.html#post_knowledge_knowledgebase_documents_bulk_update) | Bulk update documents.|
@@ -979,6 +984,132 @@ except ApiException as e:
 ### Return type
 
 [**KnowledgeDocumentResponse**](KnowledgeDocumentResponse.html)
+
+<a name="get_knowledge_knowledgebase_document_feedback"></a>
+
+## [**KnowledgeDocumentFeedbackResponseListing**](KnowledgeDocumentFeedbackResponseListing.html) get_knowledge_knowledgebase_document_feedback(knowledge_base_id, document_id, before=before, after=after, page_size=page_size, only_commented=only_commented, document_version_id=document_version_id, document_variation_id=document_variation_id, app_type=app_type, query_type=query_type, user_id=user_id, queue_id=queue_id, state=state)
+
+
+
+Get a list of feedback records given on a document
+
+Wraps GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/feedback 
+
+Requires ANY permissions: 
+
+* knowledge:feedback:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.KnowledgeApi()
+knowledge_base_id = 'knowledge_base_id_example' # str | Knowledge base ID.
+document_id = 'document_id_example' # str | Document ID.
+before = 'before_example' # str | The cursor that points to the start of the set of entities that has been returned. (optional)
+after = 'after_example' # str | The cursor that points to the end of the set of entities that has been returned. (optional)
+page_size = 'page_size_example' # str | Number of entities to return. Maximum of 200. (optional)
+only_commented = True # bool | If true, only feedback records that have comment are returned. If false, feedback records with and without comment are returned. Default: false. (optional)
+document_version_id = 'document_version_id_example' # str | Document version ID to filter by. Supported only if onlyCommented=true is set. (optional)
+document_variation_id = 'document_variation_id_example' # str | Document variation ID to filter by. Supported only if onlyCommented=true is set. (optional)
+app_type = 'app_type_example' # str | Application type to filter by. Supported only if onlyCommented=true is set. (optional)
+query_type = 'query_type_example' # str | Query type to filter by. Supported only if onlyCommented=true is set. (optional)
+user_id = 'user_id_example' # str | The ID of the user, who created the feedback, to filter by. Supported only if onlyCommented=true is set. (optional)
+queue_id = 'queue_id_example' # str | Queue ID to filter by. Supported only if onlyCommented=true is set. (optional)
+state = 'state_example' # str | State to filter by. Supported only if onlyCommented=true is set. Default: Final (optional)
+
+try:
+    # Get a list of feedback records given on a document
+    api_response = api_instance.get_knowledge_knowledgebase_document_feedback(knowledge_base_id, document_id, before=before, after=after, page_size=page_size, only_commented=only_commented, document_version_id=document_version_id, document_variation_id=document_variation_id, app_type=app_type, query_type=query_type, user_id=user_id, queue_id=queue_id, state=state)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling KnowledgeApi->get_knowledge_knowledgebase_document_feedback: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **knowledge_base_id** | **str**| Knowledge base ID. |  |
+| **document_id** | **str**| Document ID. |  |
+| **before** | **str**| The cursor that points to the start of the set of entities that has been returned. | [optional]  |
+| **after** | **str**| The cursor that points to the end of the set of entities that has been returned. | [optional]  |
+| **page_size** | **str**| Number of entities to return. Maximum of 200. | [optional]  |
+| **only_commented** | **bool**| If true, only feedback records that have comment are returned. If false, feedback records with and without comment are returned. Default: false. | [optional]  |
+| **document_version_id** | **str**| Document version ID to filter by. Supported only if onlyCommented&#x3D;true is set. | [optional]  |
+| **document_variation_id** | **str**| Document variation ID to filter by. Supported only if onlyCommented&#x3D;true is set. | [optional]  |
+| **app_type** | **str**| Application type to filter by. Supported only if onlyCommented&#x3D;true is set. | [optional] <br />**Values**: Assistant, BotFlow, MessengerKnowledgeApp, SmartAdvisor, SupportCenter |
+| **query_type** | **str**| Query type to filter by. Supported only if onlyCommented&#x3D;true is set. | [optional] <br />**Values**: Unknown, Article, AutoSearch, Category, ManualSearch, Recommendation, Suggestion |
+| **user_id** | **str**| The ID of the user, who created the feedback, to filter by. Supported only if onlyCommented&#x3D;true is set. | [optional]  |
+| **queue_id** | **str**| Queue ID to filter by. Supported only if onlyCommented&#x3D;true is set. | [optional]  |
+| **state** | **str**| State to filter by. Supported only if onlyCommented&#x3D;true is set. Default: Final | [optional] <br />**Values**: All, Draft, Final |
+{: class="table table-striped"}
+
+### Return type
+
+[**KnowledgeDocumentFeedbackResponseListing**](KnowledgeDocumentFeedbackResponseListing.html)
+
+<a name="get_knowledge_knowledgebase_document_feedback_feedback_id"></a>
+
+## [**KnowledgeDocumentFeedbackResponse**](KnowledgeDocumentFeedbackResponse.html) get_knowledge_knowledgebase_document_feedback_feedback_id(knowledge_base_id, document_id, feedback_id)
+
+
+
+Get a single feedback record given on a document
+
+Wraps GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/feedback/{feedbackId} 
+
+Requires ANY permissions: 
+
+* knowledge:feedback:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.KnowledgeApi()
+knowledge_base_id = 'knowledge_base_id_example' # str | Knowledge base ID.
+document_id = 'document_id_example' # str | Document ID.
+feedback_id = 'feedback_id_example' # str | Feedback ID.
+
+try:
+    # Get a single feedback record given on a document
+    api_response = api_instance.get_knowledge_knowledgebase_document_feedback_feedback_id(knowledge_base_id, document_id, feedback_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling KnowledgeApi->get_knowledge_knowledgebase_document_feedback_feedback_id: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **knowledge_base_id** | **str**| Knowledge base ID. |  |
+| **document_id** | **str**| Document ID. |  |
+| **feedback_id** | **str**| Feedback ID. |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**KnowledgeDocumentFeedbackResponse**](KnowledgeDocumentFeedbackResponse.html)
 
 <a name="get_knowledge_knowledgebase_document_variation"></a>
 
@@ -3043,6 +3174,55 @@ except ApiException as e:
 
 [**UploadUrlResponse**](UploadUrlResponse.html)
 
+<a name="post_knowledge_guest_session_document_feedback"></a>
+
+## [**KnowledgeGuestDocumentFeedback**](KnowledgeGuestDocumentFeedback.html) post_knowledge_guest_session_document_feedback(session_id, document_id, body=body)
+
+
+
+Give feedback on a document
+
+Wraps POST /api/v2/knowledge/guest/sessions/{sessionId}/documents/{documentId}/feedback 
+
+Requires no permissions
+
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.KnowledgeApi()
+session_id = 'session_id_example' # str | Knowledge guest session ID.
+document_id = 'document_id_example' # str | Document ID.
+body = PureCloudPlatformClientV2.KnowledgeGuestDocumentFeedback() # KnowledgeGuestDocumentFeedback |  (optional)
+
+try:
+    # Give feedback on a document
+    api_response = api_instance.post_knowledge_guest_session_document_feedback(session_id, document_id, body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling KnowledgeApi->post_knowledge_guest_session_document_feedback: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **session_id** | **str**| Knowledge guest session ID. |  |
+| **document_id** | **str**| Document ID. |  |
+| **body** | [**KnowledgeGuestDocumentFeedback**](KnowledgeGuestDocumentFeedback.html)|  | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**KnowledgeGuestDocumentFeedback**](KnowledgeGuestDocumentFeedback.html)
+
 <a name="post_knowledge_guest_session_documents_search"></a>
 
 ## [**KnowledgeDocumentGuestSearch**](KnowledgeDocumentGuestSearch.html) post_knowledge_guest_session_documents_search(session_id, expand=expand, body=body)
@@ -3235,6 +3415,59 @@ except ApiException as e:
 
 [**CategoryResponse**](CategoryResponse.html)
 
+<a name="post_knowledge_knowledgebase_document_feedback"></a>
+
+## [**KnowledgeDocumentFeedbackResponse**](KnowledgeDocumentFeedbackResponse.html) post_knowledge_knowledgebase_document_feedback(knowledge_base_id, document_id, body=body)
+
+
+
+Give feedback on a document
+
+Wraps POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/feedback 
+
+Requires ANY permissions: 
+
+* knowledge:feedback:create
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.KnowledgeApi()
+knowledge_base_id = 'knowledge_base_id_example' # str | Knowledge base ID.
+document_id = 'document_id_example' # str | Document ID.
+body = PureCloudPlatformClientV2.KnowledgeDocumentFeedback() # KnowledgeDocumentFeedback |  (optional)
+
+try:
+    # Give feedback on a document
+    api_response = api_instance.post_knowledge_knowledgebase_document_feedback(knowledge_base_id, document_id, body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling KnowledgeApi->post_knowledge_knowledgebase_document_feedback: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **knowledge_base_id** | **str**| Knowledge base ID. |  |
+| **document_id** | **str**| Document ID. |  |
+| **body** | [**KnowledgeDocumentFeedback**](KnowledgeDocumentFeedback.html)|  | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**KnowledgeDocumentFeedbackResponse**](KnowledgeDocumentFeedbackResponse.html)
+
 <a name="post_knowledge_knowledgebase_document_variations"></a>
 
 ## [**DocumentVariation**](DocumentVariation.html) post_knowledge_knowledgebase_document_variations(knowledge_base_id, document_id, body)
@@ -3341,6 +3574,58 @@ except ApiException as e:
 ### Return type
 
 [**KnowledgeDocumentVersion**](KnowledgeDocumentVersion.html)
+
+<a name="post_knowledge_knowledgebase_document_views"></a>
+
+##  post_knowledge_knowledgebase_document_views(knowledge_base_id, document_id, body=body)
+
+
+
+Create view for a document.
+
+Wraps POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/views 
+
+Requires ALL permissions: 
+
+* knowledge:documentView:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.KnowledgeApi()
+knowledge_base_id = 'knowledge_base_id_example' # str | Knowledge base ID.
+document_id = 'document_id_example' # str | Document ID.
+body = PureCloudPlatformClientV2.KnowledgeDocumentView() # KnowledgeDocumentView |  (optional)
+
+try:
+    # Create view for a document.
+    api_instance.post_knowledge_knowledgebase_document_views(knowledge_base_id, document_id, body=body)
+except ApiException as e:
+    print("Exception when calling KnowledgeApi->post_knowledge_knowledgebase_document_views: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **knowledge_base_id** | **str**| Knowledge base ID. |  |
+| **document_id** | **str**| Document ID. |  |
+| **body** | [**KnowledgeDocumentView**](KnowledgeDocumentView.html)|  | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
 
 <a name="post_knowledge_knowledgebase_documents"></a>
 

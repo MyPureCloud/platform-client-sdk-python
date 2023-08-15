@@ -3700,7 +3700,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ConversationsApi()
-conversation_id = 'conversation_id_example' # str |  conversationId
+conversation_id = 'conversation_id_example' # str | conversationId
 participant_id = 'participant_id_example' # str | participantId
 
 try:
@@ -3716,7 +3716,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **conversation_id** | **str**|  conversationId |  |
+| **conversation_id** | **str**| conversationId |  |
 | **participant_id** | **str**| participantId |  |
 {: class="table table-striped"}
 
@@ -5490,7 +5490,7 @@ void (empty response body)
 
 <a name="patch_conversations_call_participant_attributes"></a>
 
-##  patch_conversations_call_participant_attributes(conversation_id, participant_id, body)
+## [**ParticipantAttributes**](ParticipantAttributes.html) patch_conversations_call_participant_attributes(conversation_id, participant_id, body)
 
 
 
@@ -5520,7 +5520,8 @@ body = PureCloudPlatformClientV2.ParticipantAttributes() # ParticipantAttributes
 
 try:
     # Update the attributes on a conversation participant.
-    api_instance.patch_conversations_call_participant_attributes(conversation_id, participant_id, body)
+    api_response = api_instance.patch_conversations_call_participant_attributes(conversation_id, participant_id, body)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling ConversationsApi->patch_conversations_call_participant_attributes: %s\n" % e)
 ```
@@ -5537,7 +5538,7 @@ except ApiException as e:
 
 ### Return type
 
-void (empty response body)
+[**ParticipantAttributes**](ParticipantAttributes.html)
 
 <a name="patch_conversations_call_participant_communication"></a>
 
@@ -5750,7 +5751,7 @@ void (empty response body)
 
 <a name="patch_conversations_callback_participant_attributes"></a>
 
-##  patch_conversations_callback_participant_attributes(conversation_id, participant_id, body)
+## [**ParticipantAttributes**](ParticipantAttributes.html) patch_conversations_callback_participant_attributes(conversation_id, participant_id, body)
 
 
 
@@ -5780,7 +5781,8 @@ body = PureCloudPlatformClientV2.ParticipantAttributes() # ParticipantAttributes
 
 try:
     # Update the attributes on a conversation participant.
-    api_instance.patch_conversations_callback_participant_attributes(conversation_id, participant_id, body)
+    api_response = api_instance.patch_conversations_callback_participant_attributes(conversation_id, participant_id, body)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling ConversationsApi->patch_conversations_callback_participant_attributes: %s\n" % e)
 ```
@@ -5797,7 +5799,7 @@ except ApiException as e:
 
 ### Return type
 
-void (empty response body)
+[**ParticipantAttributes**](ParticipantAttributes.html)
 
 <a name="patch_conversations_callback_participant_communication"></a>
 
@@ -6007,7 +6009,7 @@ void (empty response body)
 
 <a name="patch_conversations_chat_participant_attributes"></a>
 
-##  patch_conversations_chat_participant_attributes(conversation_id, participant_id, body)
+## [**ParticipantAttributes**](ParticipantAttributes.html) patch_conversations_chat_participant_attributes(conversation_id, participant_id, body)
 
 
 
@@ -6037,7 +6039,8 @@ body = PureCloudPlatformClientV2.ParticipantAttributes() # ParticipantAttributes
 
 try:
     # Update the attributes on a conversation participant.
-    api_instance.patch_conversations_chat_participant_attributes(conversation_id, participant_id, body)
+    api_response = api_instance.patch_conversations_chat_participant_attributes(conversation_id, participant_id, body)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling ConversationsApi->patch_conversations_chat_participant_attributes: %s\n" % e)
 ```
@@ -6054,7 +6057,7 @@ except ApiException as e:
 
 ### Return type
 
-void (empty response body)
+[**ParticipantAttributes**](ParticipantAttributes.html)
 
 <a name="patch_conversations_chat_participant_communication"></a>
 
@@ -6215,7 +6218,7 @@ void (empty response body)
 
 <a name="patch_conversations_cobrowsesession_participant_attributes"></a>
 
-##  patch_conversations_cobrowsesession_participant_attributes(conversation_id, participant_id, body=body)
+## [**ParticipantAttributes**](ParticipantAttributes.html) patch_conversations_cobrowsesession_participant_attributes(conversation_id, participant_id, body=body)
 
 
 
@@ -6245,7 +6248,8 @@ body = PureCloudPlatformClientV2.ParticipantAttributes() # ParticipantAttributes
 
 try:
     # Update the attributes on a conversation participant.
-    api_instance.patch_conversations_cobrowsesession_participant_attributes(conversation_id, participant_id, body=body)
+    api_response = api_instance.patch_conversations_cobrowsesession_participant_attributes(conversation_id, participant_id, body=body)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling ConversationsApi->patch_conversations_cobrowsesession_participant_attributes: %s\n" % e)
 ```
@@ -6262,7 +6266,7 @@ except ApiException as e:
 
 ### Return type
 
-void (empty response body)
+[**ParticipantAttributes**](ParticipantAttributes.html)
 
 <a name="patch_conversations_cobrowsesession_participant_communication"></a>
 
@@ -6477,7 +6481,7 @@ void (empty response body)
 
 <a name="patch_conversations_email_participant_attributes"></a>
 
-##  patch_conversations_email_participant_attributes(conversation_id, participant_id, body)
+## [**ParticipantAttributes**](ParticipantAttributes.html) patch_conversations_email_participant_attributes(conversation_id, participant_id, body)
 
 
 
@@ -6507,7 +6511,8 @@ body = PureCloudPlatformClientV2.ParticipantAttributes() # ParticipantAttributes
 
 try:
     # Update the attributes on a conversation participant.
-    api_instance.patch_conversations_email_participant_attributes(conversation_id, participant_id, body)
+    api_response = api_instance.patch_conversations_email_participant_attributes(conversation_id, participant_id, body)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling ConversationsApi->patch_conversations_email_participant_attributes: %s\n" % e)
 ```
@@ -6524,7 +6529,7 @@ except ApiException as e:
 
 ### Return type
 
-void (empty response body)
+[**ParticipantAttributes**](ParticipantAttributes.html)
 
 <a name="patch_conversations_email_participant_communication"></a>
 
@@ -6658,7 +6663,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ConversationsApi()
-conversation_id = 'conversation_id_example' # str |  conversationId
+conversation_id = 'conversation_id_example' # str | conversationId
 participant_id = 'participant_id_example' # str | participantId
 body = PureCloudPlatformClientV2.MediaParticipantRequest() # MediaParticipantRequest |  (optional)
 
@@ -6674,7 +6679,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **conversation_id** | **str**|  conversationId |  |
+| **conversation_id** | **str**| conversationId |  |
 | **participant_id** | **str**| participantId |  |
 | **body** | [**MediaParticipantRequest**](MediaParticipantRequest.html)|  | [optional]  |
 {: class="table table-striped"}
@@ -6685,7 +6690,7 @@ void (empty response body)
 
 <a name="patch_conversations_message_participant_attributes"></a>
 
-##  patch_conversations_message_participant_attributes(conversation_id, participant_id, body=body)
+## [**ParticipantAttributes**](ParticipantAttributes.html) patch_conversations_message_participant_attributes(conversation_id, participant_id, body=body)
 
 
 
@@ -6709,13 +6714,14 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ConversationsApi()
-conversation_id = 'conversation_id_example' # str |  conversationId
+conversation_id = 'conversation_id_example' # str | conversationId
 participant_id = 'participant_id_example' # str | participantId
 body = PureCloudPlatformClientV2.ParticipantAttributes() # ParticipantAttributes |  (optional)
 
 try:
     # Update the attributes on a conversation participant.
-    api_instance.patch_conversations_message_participant_attributes(conversation_id, participant_id, body=body)
+    api_response = api_instance.patch_conversations_message_participant_attributes(conversation_id, participant_id, body=body)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling ConversationsApi->patch_conversations_message_participant_attributes: %s\n" % e)
 ```
@@ -6725,14 +6731,14 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **conversation_id** | **str**|  conversationId |  |
+| **conversation_id** | **str**| conversationId |  |
 | **participant_id** | **str**| participantId |  |
 | **body** | [**ParticipantAttributes**](ParticipantAttributes.html)|  | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
 
-void (empty response body)
+[**ParticipantAttributes**](ParticipantAttributes.html)
 
 <a name="patch_conversations_message_participant_communication"></a>
 
@@ -6760,7 +6766,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ConversationsApi()
-conversation_id = 'conversation_id_example' # str |  conversationId
+conversation_id = 'conversation_id_example' # str | conversationId
 participant_id = 'participant_id_example' # str | participantId
 communication_id = 'communication_id_example' # str | communicationId
 body = PureCloudPlatformClientV2.MediaParticipantRequest() # MediaParticipantRequest | Participant
@@ -6778,7 +6784,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **conversation_id** | **str**|  conversationId |  |
+| **conversation_id** | **str**| conversationId |  |
 | **participant_id** | **str**| participantId |  |
 | **communication_id** | **str**| communicationId |  |
 | **body** | [**MediaParticipantRequest**](MediaParticipantRequest.html)| Participant |  |

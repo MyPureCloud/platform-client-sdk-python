@@ -35,6 +35,7 @@ from typing import Dict
 if TYPE_CHECKING:
     from . import V2MobiusAlertsTopicAlertNotification
     from . import V2MobiusAlertsTopicAlertRuleProperties
+    from . import V2MobiusAlertsTopicAlertSummary
     from . import V2MobiusAlertsTopicCondition
 
 class V2MobiusAlertsTopicAlert(object):
@@ -66,7 +67,8 @@ class V2MobiusAlertsTopicAlert(object):
             'snoozed': 'bool',
             'date_muted_until': 'datetime',
             'date_snoozed_until': 'datetime',
-            'action': 'str'
+            'action': 'str',
+            'alert_summary': 'V2MobiusAlertsTopicAlertSummary'
         }
 
         self.attribute_map = {
@@ -84,7 +86,8 @@ class V2MobiusAlertsTopicAlert(object):
             'snoozed': 'snoozed',
             'date_muted_until': 'dateMutedUntil',
             'date_snoozed_until': 'dateSnoozedUntil',
-            'action': 'action'
+            'action': 'action',
+            'alert_summary': 'alertSummary'
         }
 
         self._rule = None
@@ -102,6 +105,7 @@ class V2MobiusAlertsTopicAlert(object):
         self._date_muted_until = None
         self._date_snoozed_until = None
         self._action = None
+        self._alert_summary = None
 
     @property
     def rule(self) -> 'V2MobiusAlertsTopicAlertRuleProperties':
@@ -467,6 +471,30 @@ class V2MobiusAlertsTopicAlert(object):
             self._action = "outdated_sdk_version"
         else:
             self._action = action
+
+    @property
+    def alert_summary(self) -> 'V2MobiusAlertsTopicAlertSummary':
+        """
+        Gets the alert_summary of this V2MobiusAlertsTopicAlert.
+
+
+        :return: The alert_summary of this V2MobiusAlertsTopicAlert.
+        :rtype: V2MobiusAlertsTopicAlertSummary
+        """
+        return self._alert_summary
+
+    @alert_summary.setter
+    def alert_summary(self, alert_summary: 'V2MobiusAlertsTopicAlertSummary') -> None:
+        """
+        Sets the alert_summary of this V2MobiusAlertsTopicAlert.
+
+
+        :param alert_summary: The alert_summary of this V2MobiusAlertsTopicAlert.
+        :type: V2MobiusAlertsTopicAlertSummary
+        """
+        
+
+        self._alert_summary = alert_summary
 
     def to_dict(self):
         """

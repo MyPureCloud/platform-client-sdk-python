@@ -90,7 +90,7 @@ class TranscriptAggregationView(object):
         """
         if isinstance(target, int):
             target = str(target)
-        allowed_values = ["nTopicCommunications", "oCustomerSentiment", "oSentimentScore"]
+        allowed_values = ["nTopicCommunications", "oCustomerSentiment", "oOverTalkSpeechInstances", "oSentimentScore", "tAgentSpeech", "tCustomerSpeech", "tOverTalkSpeech", "tSilence", "tTotalSpeechAndSilence"]
         if target.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for target -> " + target)
             self._target = "outdated_sdk_version"

@@ -59,7 +59,8 @@ class WritableDialerContact(object):
             'latest_email_evaluations': 'dict(str, MessageEvaluation)',
             'callable': 'bool',
             'phone_number_status': 'dict(str, PhoneNumberStatus)',
-            'contactable_status': 'dict(str, ContactableStatus)'
+            'contactable_status': 'dict(str, ContactableStatus)',
+            'date_created': 'datetime'
         }
 
         self.attribute_map = {
@@ -70,7 +71,8 @@ class WritableDialerContact(object):
             'latest_email_evaluations': 'latestEmailEvaluations',
             'callable': 'callable',
             'phone_number_status': 'phoneNumberStatus',
-            'contactable_status': 'contactableStatus'
+            'contactable_status': 'contactableStatus',
+            'date_created': 'dateCreated'
         }
 
         self._id = None
@@ -81,6 +83,7 @@ class WritableDialerContact(object):
         self._callable = None
         self._phone_number_status = None
         self._contactable_status = None
+        self._date_created = None
 
     @property
     def id(self) -> str:
@@ -273,6 +276,30 @@ class WritableDialerContact(object):
         
 
         self._contactable_status = contactable_status
+
+    @property
+    def date_created(self) -> datetime:
+        """
+        Gets the date_created of this WritableDialerContact.
+        Timestamp for when the contact was added. Contacts added prior to 2023 September 1 may be missing this value. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :return: The date_created of this WritableDialerContact.
+        :rtype: datetime
+        """
+        return self._date_created
+
+    @date_created.setter
+    def date_created(self, date_created: datetime) -> None:
+        """
+        Sets the date_created of this WritableDialerContact.
+        Timestamp for when the contact was added. Contacts added prior to 2023 September 1 may be missing this value. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :param date_created: The date_created of this WritableDialerContact.
+        :type: datetime
+        """
+        
+
+        self._date_created = date_created
 
     def to_dict(self):
         """

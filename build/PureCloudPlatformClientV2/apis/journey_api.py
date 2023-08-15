@@ -46,6 +46,8 @@ from ..models import ActionTarget
 from ..models import ActionTargetListing
 from ..models import ActionTemplate
 from ..models import ActionTemplateListing
+from ..models import AppEventRequest
+from ..models import AppEventResponse
 from ..models import AsyncQueryResponse
 from ..models import AsyncQueryStatus
 from ..models import ErrorBody
@@ -3067,6 +3069,88 @@ class JourneyApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='ActionTemplate',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_journey_deployment_appevents(self, deployment_id: str, **kwargs) -> 'AppEventResponse':
+        """
+        Send a journey app event, used for tracking customer activity on an application.
+        
+	    post_journey_deployment_appevents is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_journey_deployment_appevents(deployment_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str deployment_id: The ID of the deployment sending the app event. (required)
+        :param AppEventRequest body: 
+        :return: AppEventResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['deployment_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_journey_deployment_appevents" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'deployment_id' is set
+        if ('deployment_id' not in params) or (params['deployment_id'] is None):
+            raise ValueError("Missing the required parameter `deployment_id` when calling `post_journey_deployment_appevents`")
+
+
+        resource_path = '/api/v2/journey/deployments/{deploymentId}/appevents'.replace('{format}', 'json')
+        path_params = {}
+        if 'deployment_id' in params:
+            path_params['deploymentId'] = params['deployment_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = []
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='AppEventResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

@@ -546,7 +546,7 @@ class AnalyticsApi(object):
     def get_analytics_botflow_reportingturns(self, bot_flow_id: str, **kwargs) -> 'ReportingTurnsResponse':
         """
         Get Reporting Turns.
-        Returns the reporting turns grouped by session, in reverse chronological order from the date the session was created, with the reporting turns from the most recent session appearing at the start of the list.
+        Returns the reporting turns grouped by session, in reverse chronological order from the date the session was created, with the reporting turns from the most recent session appearing at the start of the list. For pagination, clients should keep sending requests using the value of 'nextUri' in the response, until it's no longer present, only then have all items have been returned. Note: resources returned by this endpoint do not persist indefinitely, as they auto delete after a predefined period.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -562,7 +562,7 @@ class AnalyticsApi(object):
         :param str after: The cursor that points to the ID of the last item in the list of entities that has been returned.
         :param str page_size: Max number of entities to return. Maximum of 250
         :param str action_id: Optional action ID to get the reporting turns associated to a particular flow action
-        :param str session_id: Optional session ID to get the reporting turns for a particular session
+        :param str session_id: Optional session ID to get the reporting turns for a particular session. Specifying a session ID alongside an action ID or a language or any ask action results is not allowed.
         :param str language: Optional language code to get the reporting turns for a particular language
         :param str ask_action_results: Optional case-insensitive comma separated list of ask action results to filter the reporting turns.
         :return: ReportingTurnsResponse

@@ -82,7 +82,9 @@ class ExternalContactsUnresolvedContactChangedTopicContact(object):
             'facebook_id': 'ExternalContactsUnresolvedContactChangedTopicFacebookId',
             'instagram_id': 'ExternalContactsUnresolvedContactChangedTopicInstagramId',
             'schema': 'ExternalContactsUnresolvedContactChangedTopicDataSchema',
-            'custom_fields': 'dict(str, object)'
+            'custom_fields': 'dict(str, object)',
+            'create_date': 'datetime',
+            'modify_date': 'datetime'
         }
 
         self.attribute_map = {
@@ -110,7 +112,9 @@ class ExternalContactsUnresolvedContactChangedTopicContact(object):
             'facebook_id': 'facebookId',
             'instagram_id': 'instagramId',
             'schema': 'schema',
-            'custom_fields': 'customFields'
+            'custom_fields': 'customFields',
+            'create_date': 'createDate',
+            'modify_date': 'modifyDate'
         }
 
         self._id = None
@@ -138,6 +142,8 @@ class ExternalContactsUnresolvedContactChangedTopicContact(object):
         self._instagram_id = None
         self._schema = None
         self._custom_fields = None
+        self._create_date = None
+        self._modify_date = None
 
     @property
     def id(self) -> str:
@@ -743,6 +749,54 @@ class ExternalContactsUnresolvedContactChangedTopicContact(object):
         
 
         self._custom_fields = custom_fields
+
+    @property
+    def create_date(self) -> datetime:
+        """
+        Gets the create_date of this ExternalContactsUnresolvedContactChangedTopicContact.
+
+
+        :return: The create_date of this ExternalContactsUnresolvedContactChangedTopicContact.
+        :rtype: datetime
+        """
+        return self._create_date
+
+    @create_date.setter
+    def create_date(self, create_date: datetime) -> None:
+        """
+        Sets the create_date of this ExternalContactsUnresolvedContactChangedTopicContact.
+
+
+        :param create_date: The create_date of this ExternalContactsUnresolvedContactChangedTopicContact.
+        :type: datetime
+        """
+        
+
+        self._create_date = create_date
+
+    @property
+    def modify_date(self) -> datetime:
+        """
+        Gets the modify_date of this ExternalContactsUnresolvedContactChangedTopicContact.
+
+
+        :return: The modify_date of this ExternalContactsUnresolvedContactChangedTopicContact.
+        :rtype: datetime
+        """
+        return self._modify_date
+
+    @modify_date.setter
+    def modify_date(self, modify_date: datetime) -> None:
+        """
+        Sets the modify_date of this ExternalContactsUnresolvedContactChangedTopicContact.
+
+
+        :param modify_date: The modify_date of this ExternalContactsUnresolvedContactChangedTopicContact.
+        :type: datetime
+        """
+        
+
+        self._modify_date = modify_date
 
     def to_dict(self):
         """

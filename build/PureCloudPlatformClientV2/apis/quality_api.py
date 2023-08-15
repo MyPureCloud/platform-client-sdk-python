@@ -1461,9 +1461,9 @@ class QualityApi(object):
             for asynchronous request. (optional)
         :param int page_size: The total page size requested
         :param int page_number: The page number requested
-        :param str sort_by: variable name requested to sort by
+        :param str sort_by: NOTE: Does not work when querying evaluations
         :param list[str] expand: variable name requested by expand list
-        :param str next_page: next page token
+        :param str next_page: NOTE: Does not work when querying evaluations
         :param str previous_page: Previous page token
         :param str conversation_id: conversationId specified
         :param str agent_user_id: user id of the agent
@@ -1476,8 +1476,8 @@ class QualityApi(object):
         :param bool is_released: the evaluation has been released
         :param bool agent_has_read: agent has the evaluation
         :param bool expand_answer_total_scores: get the total scores for evaluations
-        :param int maximum: maximum
-        :param str sort_order: sort order options for agentUserId or evaluatorUserId query. Valid options are 'a', 'asc', 'ascending', 'd', 'desc', 'descending'. Sorts by assigned date when evaluatorUserId or agentTeamId are supplied, and by released date for agentUserId
+        :param int maximum: the maximum number of results to return
+        :param str sort_order: NOTE: Does not work when conversationId is supplied.
         :return: EvaluationEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
@@ -4789,7 +4789,7 @@ class QualityApi(object):
         :param str conversation_id: conversationId (required)
         :param str evaluation_id: evaluationId (required)
         :param Evaluation body: evaluation (required)
-        :param str expand: evaluatorId, evaluationForm, assignee
+        :param str expand: evaluatorId, evaluationForm, assignee, evaluator
         :return: EvaluationResponse
                  If the method is called asynchronously,
                  returns the request thread.

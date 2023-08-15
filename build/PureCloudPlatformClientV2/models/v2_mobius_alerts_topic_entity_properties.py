@@ -51,20 +51,23 @@ class V2MobiusAlertsTopicEntityProperties(object):
             'entity_type': 'str',
             'user_display_name': 'str',
             'group_display_name': 'str',
-            'queue_display_name': 'str'
+            'queue_display_name': 'str',
+            'team_display_name': 'str'
         }
 
         self.attribute_map = {
             'entity_type': 'entityType',
             'user_display_name': 'userDisplayName',
             'group_display_name': 'groupDisplayName',
-            'queue_display_name': 'queueDisplayName'
+            'queue_display_name': 'queueDisplayName',
+            'team_display_name': 'teamDisplayName'
         }
 
         self._entity_type = None
         self._user_display_name = None
         self._group_display_name = None
         self._queue_display_name = None
+        self._team_display_name = None
 
     @property
     def entity_type(self) -> str:
@@ -88,7 +91,7 @@ class V2MobiusAlertsTopicEntityProperties(object):
         """
         if isinstance(entity_type, int):
             entity_type = str(entity_type)
-        allowed_values = ["Organization", "User", "Queue", "Group", "Edge"]
+        allowed_values = ["Organization", "User", "Queue", "Group", "Edge", "Team", "TeamMembers"]
         if entity_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for entity_type -> " + entity_type)
             self._entity_type = "outdated_sdk_version"
@@ -166,6 +169,30 @@ class V2MobiusAlertsTopicEntityProperties(object):
         
 
         self._queue_display_name = queue_display_name
+
+    @property
+    def team_display_name(self) -> str:
+        """
+        Gets the team_display_name of this V2MobiusAlertsTopicEntityProperties.
+
+
+        :return: The team_display_name of this V2MobiusAlertsTopicEntityProperties.
+        :rtype: str
+        """
+        return self._team_display_name
+
+    @team_display_name.setter
+    def team_display_name(self, team_display_name: str) -> None:
+        """
+        Sets the team_display_name of this V2MobiusAlertsTopicEntityProperties.
+
+
+        :param team_display_name: The team_display_name of this V2MobiusAlertsTopicEntityProperties.
+        :type: str
+        """
+        
+
+        self._team_display_name = team_display_name
 
     def to_dict(self):
         """

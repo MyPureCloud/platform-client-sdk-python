@@ -79,6 +79,7 @@ class EvaluationQualityV2TopicEvaluationV2(object):
             'evaluation_source': 'EvaluationQualityV2TopicEvaluationSource',
             'assignee_user_id': 'str',
             'previous_assignee_user_id': 'str',
+            'assignee_applicable': 'bool',
             'evaluation_context_id': 'str',
             'dispute_count': 'int',
             'version': 'int',
@@ -88,7 +89,8 @@ class EvaluationQualityV2TopicEvaluationV2(object):
             'rescore_count': 'int',
             'evaluator_comment_has_updated': 'bool',
             'agent_comment_has_updated': 'bool',
-            'previous_rescore_count': 'int'
+            'previous_rescore_count': 'int',
+            'previous_evaluator_user_id': 'str'
         }
 
         self.attribute_map = {
@@ -117,6 +119,7 @@ class EvaluationQualityV2TopicEvaluationV2(object):
             'evaluation_source': 'evaluationSource',
             'assignee_user_id': 'assigneeUserId',
             'previous_assignee_user_id': 'previousAssigneeUserId',
+            'assignee_applicable': 'assigneeApplicable',
             'evaluation_context_id': 'evaluationContextId',
             'dispute_count': 'disputeCount',
             'version': 'version',
@@ -126,7 +129,8 @@ class EvaluationQualityV2TopicEvaluationV2(object):
             'rescore_count': 'rescoreCount',
             'evaluator_comment_has_updated': 'evaluatorCommentHasUpdated',
             'agent_comment_has_updated': 'agentCommentHasUpdated',
-            'previous_rescore_count': 'previousRescoreCount'
+            'previous_rescore_count': 'previousRescoreCount',
+            'previous_evaluator_user_id': 'previousEvaluatorUserId'
         }
 
         self._id = None
@@ -154,6 +158,7 @@ class EvaluationQualityV2TopicEvaluationV2(object):
         self._evaluation_source = None
         self._assignee_user_id = None
         self._previous_assignee_user_id = None
+        self._assignee_applicable = None
         self._evaluation_context_id = None
         self._dispute_count = None
         self._version = None
@@ -164,6 +169,7 @@ class EvaluationQualityV2TopicEvaluationV2(object):
         self._evaluator_comment_has_updated = None
         self._agent_comment_has_updated = None
         self._previous_rescore_count = None
+        self._previous_evaluator_user_id = None
 
     @property
     def id(self) -> str:
@@ -771,6 +777,30 @@ class EvaluationQualityV2TopicEvaluationV2(object):
         self._previous_assignee_user_id = previous_assignee_user_id
 
     @property
+    def assignee_applicable(self) -> bool:
+        """
+        Gets the assignee_applicable of this EvaluationQualityV2TopicEvaluationV2.
+
+
+        :return: The assignee_applicable of this EvaluationQualityV2TopicEvaluationV2.
+        :rtype: bool
+        """
+        return self._assignee_applicable
+
+    @assignee_applicable.setter
+    def assignee_applicable(self, assignee_applicable: bool) -> None:
+        """
+        Sets the assignee_applicable of this EvaluationQualityV2TopicEvaluationV2.
+
+
+        :param assignee_applicable: The assignee_applicable of this EvaluationQualityV2TopicEvaluationV2.
+        :type: bool
+        """
+        
+
+        self._assignee_applicable = assignee_applicable
+
+    @property
     def evaluation_context_id(self) -> str:
         """
         Gets the evaluation_context_id of this EvaluationQualityV2TopicEvaluationV2.
@@ -1014,6 +1044,30 @@ class EvaluationQualityV2TopicEvaluationV2(object):
         
 
         self._previous_rescore_count = previous_rescore_count
+
+    @property
+    def previous_evaluator_user_id(self) -> str:
+        """
+        Gets the previous_evaluator_user_id of this EvaluationQualityV2TopicEvaluationV2.
+
+
+        :return: The previous_evaluator_user_id of this EvaluationQualityV2TopicEvaluationV2.
+        :rtype: str
+        """
+        return self._previous_evaluator_user_id
+
+    @previous_evaluator_user_id.setter
+    def previous_evaluator_user_id(self, previous_evaluator_user_id: str) -> None:
+        """
+        Sets the previous_evaluator_user_id of this EvaluationQualityV2TopicEvaluationV2.
+
+
+        :param previous_evaluator_user_id: The previous_evaluator_user_id of this EvaluationQualityV2TopicEvaluationV2.
+        :type: str
+        """
+        
+
+        self._previous_evaluator_user_id = previous_evaluator_user_id
 
     def to_dict(self):
         """

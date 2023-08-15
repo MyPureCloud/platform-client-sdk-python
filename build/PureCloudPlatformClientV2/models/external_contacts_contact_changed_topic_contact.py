@@ -82,7 +82,9 @@ class ExternalContactsContactChangedTopicContact(object):
             'facebook_id': 'ExternalContactsContactChangedTopicFacebookId',
             'instagram_id': 'ExternalContactsContactChangedTopicInstagramId',
             'schema': 'ExternalContactsContactChangedTopicDataSchema',
-            'custom_fields': 'dict(str, object)'
+            'custom_fields': 'dict(str, object)',
+            'create_date': 'datetime',
+            'modify_date': 'datetime'
         }
 
         self.attribute_map = {
@@ -110,7 +112,9 @@ class ExternalContactsContactChangedTopicContact(object):
             'facebook_id': 'facebookId',
             'instagram_id': 'instagramId',
             'schema': 'schema',
-            'custom_fields': 'customFields'
+            'custom_fields': 'customFields',
+            'create_date': 'createDate',
+            'modify_date': 'modifyDate'
         }
 
         self._id = None
@@ -138,6 +142,8 @@ class ExternalContactsContactChangedTopicContact(object):
         self._instagram_id = None
         self._schema = None
         self._custom_fields = None
+        self._create_date = None
+        self._modify_date = None
 
     @property
     def id(self) -> str:
@@ -743,6 +749,54 @@ class ExternalContactsContactChangedTopicContact(object):
         
 
         self._custom_fields = custom_fields
+
+    @property
+    def create_date(self) -> datetime:
+        """
+        Gets the create_date of this ExternalContactsContactChangedTopicContact.
+
+
+        :return: The create_date of this ExternalContactsContactChangedTopicContact.
+        :rtype: datetime
+        """
+        return self._create_date
+
+    @create_date.setter
+    def create_date(self, create_date: datetime) -> None:
+        """
+        Sets the create_date of this ExternalContactsContactChangedTopicContact.
+
+
+        :param create_date: The create_date of this ExternalContactsContactChangedTopicContact.
+        :type: datetime
+        """
+        
+
+        self._create_date = create_date
+
+    @property
+    def modify_date(self) -> datetime:
+        """
+        Gets the modify_date of this ExternalContactsContactChangedTopicContact.
+
+
+        :return: The modify_date of this ExternalContactsContactChangedTopicContact.
+        :rtype: datetime
+        """
+        return self._modify_date
+
+    @modify_date.setter
+    def modify_date(self, modify_date: datetime) -> None:
+        """
+        Sets the modify_date of this ExternalContactsContactChangedTopicContact.
+
+
+        :param modify_date: The modify_date of this ExternalContactsContactChangedTopicContact.
+        :type: datetime
+        """
+        
+
+        self._modify_date = modify_date
 
     def to_dict(self):
         """

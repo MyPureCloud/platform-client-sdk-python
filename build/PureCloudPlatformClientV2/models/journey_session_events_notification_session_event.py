@@ -33,6 +33,7 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
+    from . import JourneySessionEventsNotificationApp
     from . import JourneySessionEventsNotificationBrowser
     from . import JourneySessionEventsNotificationConnectedQueue
     from . import JourneySessionEventsNotificationConversation
@@ -42,9 +43,11 @@ if TYPE_CHECKING:
     from . import JourneySessionEventsNotificationExternalContact
     from . import JourneySessionEventsNotificationGeoLocation
     from . import JourneySessionEventsNotificationMktCampaign
+    from . import JourneySessionEventsNotificationNetworkConnectivity
     from . import JourneySessionEventsNotificationOutcomeAchievement
     from . import JourneySessionEventsNotificationPage
     from . import JourneySessionEventsNotificationReferrer
+    from . import JourneySessionEventsNotificationSdkLibrary
     from . import JourneySessionEventsNotificationSegmentAssignment
     from . import JourneySessionEventsNotificationSessionLastEvent
     from . import JourneySessionEventsNotificationUser
@@ -100,7 +103,10 @@ class JourneySessionEventsNotificationSessionEvent(object):
             'conversation_channels': 'list[JourneySessionEventsNotificationConversationChannel]',
             'last_user_disconnect_type': 'str',
             'last_acd_outcome': 'str',
-            'authenticated': 'bool'
+            'authenticated': 'bool',
+            'app': 'JourneySessionEventsNotificationApp',
+            'sdk_library': 'JourneySessionEventsNotificationSdkLibrary',
+            'network_connectivity': 'JourneySessionEventsNotificationNetworkConnectivity'
         }
 
         self.attribute_map = {
@@ -140,7 +146,10 @@ class JourneySessionEventsNotificationSessionEvent(object):
             'conversation_channels': 'conversationChannels',
             'last_user_disconnect_type': 'lastUserDisconnectType',
             'last_acd_outcome': 'lastAcdOutcome',
-            'authenticated': 'authenticated'
+            'authenticated': 'authenticated',
+            'app': 'app',
+            'sdk_library': 'sdkLibrary',
+            'network_connectivity': 'networkConnectivity'
         }
 
         self._id = None
@@ -180,6 +189,9 @@ class JourneySessionEventsNotificationSessionEvent(object):
         self._last_user_disconnect_type = None
         self._last_acd_outcome = None
         self._authenticated = None
+        self._app = None
+        self._sdk_library = None
+        self._network_connectivity = None
 
     @property
     def id(self) -> str:
@@ -1024,7 +1036,7 @@ class JourneySessionEventsNotificationSessionEvent(object):
         """
         if isinstance(last_user_disconnect_type, int):
             last_user_disconnect_type = str(last_user_disconnect_type)
-        allowed_values = ["Unknown", "Endpoint", "Client", "System", "Transfer", "Error", "Peer", "Other", "Spam", "Timeout", "TransportFailure", "ConferenceTransfer", "ConsultTransfer", "ForwardTransfer", "NoAnswerTransfer", "NotAvailableTransfer", "Uncallable"]
+        allowed_values = ["Unknown", "Endpoint", "Client", "System", "Transfer", "Error", "Peer", "Other", "Spam", "Timeout", "TransportFailure", "ConferenceTransfer", "ConsultTransfer", "ForwardTransfer", "NoAnswerTransfer", "NotAvailableTransfer", "Uncallable", "DidNotDeliverEndpoint", "DidNotDeliverTransfer"]
         if last_user_disconnect_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for last_user_disconnect_type -> " + last_user_disconnect_type)
             self._last_user_disconnect_type = "outdated_sdk_version"
@@ -1083,6 +1095,78 @@ class JourneySessionEventsNotificationSessionEvent(object):
         
 
         self._authenticated = authenticated
+
+    @property
+    def app(self) -> 'JourneySessionEventsNotificationApp':
+        """
+        Gets the app of this JourneySessionEventsNotificationSessionEvent.
+
+
+        :return: The app of this JourneySessionEventsNotificationSessionEvent.
+        :rtype: JourneySessionEventsNotificationApp
+        """
+        return self._app
+
+    @app.setter
+    def app(self, app: 'JourneySessionEventsNotificationApp') -> None:
+        """
+        Sets the app of this JourneySessionEventsNotificationSessionEvent.
+
+
+        :param app: The app of this JourneySessionEventsNotificationSessionEvent.
+        :type: JourneySessionEventsNotificationApp
+        """
+        
+
+        self._app = app
+
+    @property
+    def sdk_library(self) -> 'JourneySessionEventsNotificationSdkLibrary':
+        """
+        Gets the sdk_library of this JourneySessionEventsNotificationSessionEvent.
+
+
+        :return: The sdk_library of this JourneySessionEventsNotificationSessionEvent.
+        :rtype: JourneySessionEventsNotificationSdkLibrary
+        """
+        return self._sdk_library
+
+    @sdk_library.setter
+    def sdk_library(self, sdk_library: 'JourneySessionEventsNotificationSdkLibrary') -> None:
+        """
+        Sets the sdk_library of this JourneySessionEventsNotificationSessionEvent.
+
+
+        :param sdk_library: The sdk_library of this JourneySessionEventsNotificationSessionEvent.
+        :type: JourneySessionEventsNotificationSdkLibrary
+        """
+        
+
+        self._sdk_library = sdk_library
+
+    @property
+    def network_connectivity(self) -> 'JourneySessionEventsNotificationNetworkConnectivity':
+        """
+        Gets the network_connectivity of this JourneySessionEventsNotificationSessionEvent.
+
+
+        :return: The network_connectivity of this JourneySessionEventsNotificationSessionEvent.
+        :rtype: JourneySessionEventsNotificationNetworkConnectivity
+        """
+        return self._network_connectivity
+
+    @network_connectivity.setter
+    def network_connectivity(self, network_connectivity: 'JourneySessionEventsNotificationNetworkConnectivity') -> None:
+        """
+        Sets the network_connectivity of this JourneySessionEventsNotificationSessionEvent.
+
+
+        :param network_connectivity: The network_connectivity of this JourneySessionEventsNotificationSessionEvent.
+        :type: JourneySessionEventsNotificationNetworkConnectivity
+        """
+        
+
+        self._network_connectivity = network_connectivity
 
     def to_dict(self):
         """

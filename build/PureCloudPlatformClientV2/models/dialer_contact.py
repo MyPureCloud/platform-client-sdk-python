@@ -67,6 +67,7 @@ class DialerContact(object):
             'contactable_status': 'dict(str, ContactableStatus)',
             'contact_column_time_zones': 'dict(str, ContactColumnTimeZone)',
             'configuration_overrides': 'ConfigurationOverrides',
+            'date_created': 'datetime',
             'self_uri': 'str'
         }
 
@@ -83,6 +84,7 @@ class DialerContact(object):
             'contactable_status': 'contactableStatus',
             'contact_column_time_zones': 'contactColumnTimeZones',
             'configuration_overrides': 'configurationOverrides',
+            'date_created': 'dateCreated',
             'self_uri': 'selfUri'
         }
 
@@ -98,6 +100,7 @@ class DialerContact(object):
         self._contactable_status = None
         self._contact_column_time_zones = None
         self._configuration_overrides = None
+        self._date_created = None
         self._self_uri = None
 
     @property
@@ -387,6 +390,30 @@ class DialerContact(object):
         
 
         self._configuration_overrides = configuration_overrides
+
+    @property
+    def date_created(self) -> datetime:
+        """
+        Gets the date_created of this DialerContact.
+        Timestamp for when the contact was added. Contacts added prior to 2023 September 1 may be missing this value. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :return: The date_created of this DialerContact.
+        :rtype: datetime
+        """
+        return self._date_created
+
+    @date_created.setter
+    def date_created(self, date_created: datetime) -> None:
+        """
+        Sets the date_created of this DialerContact.
+        Timestamp for when the contact was added. Contacts added prior to 2023 September 1 may be missing this value. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :param date_created: The date_created of this DialerContact.
+        :type: datetime
+        """
+        
+
+        self._date_created = date_created
 
     @property
     def self_uri(self) -> str:

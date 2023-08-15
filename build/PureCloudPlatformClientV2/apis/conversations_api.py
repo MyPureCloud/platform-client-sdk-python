@@ -5830,7 +5830,7 @@ class ConversationsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str conversation_id:  conversationId (required)
+        :param str conversation_id: conversationId (required)
         :param str participant_id: participantId (required)
         :return: list[WrapupCode]
                  If the method is called asynchronously,
@@ -8714,7 +8714,7 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def patch_conversations_call_participant_attributes(self, conversation_id: str, participant_id: str, body: 'ParticipantAttributes', **kwargs) -> None:
+    def patch_conversations_call_participant_attributes(self, conversation_id: str, participant_id: str, body: 'ParticipantAttributes', **kwargs) -> 'ParticipantAttributes':
         """
         Update the attributes on a conversation participant.
         
@@ -8732,7 +8732,7 @@ class ConversationsApi(object):
         :param str conversation_id: conversationId (required)
         :param str participant_id: participantId (required)
         :param ParticipantAttributes body: Participant attributes (required)
-        :return: None
+        :return: ParticipantAttributes
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -8799,7 +8799,7 @@ class ConversationsApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type=None,
+                                            response_type='ParticipantAttributes',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -9164,7 +9164,7 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def patch_conversations_callback_participant_attributes(self, conversation_id: str, participant_id: str, body: 'ParticipantAttributes', **kwargs) -> None:
+    def patch_conversations_callback_participant_attributes(self, conversation_id: str, participant_id: str, body: 'ParticipantAttributes', **kwargs) -> 'ParticipantAttributes':
         """
         Update the attributes on a conversation participant.
         
@@ -9182,7 +9182,7 @@ class ConversationsApi(object):
         :param str conversation_id: conversationId (required)
         :param str participant_id: participantId (required)
         :param ParticipantAttributes body: Attributes (required)
-        :return: None
+        :return: ParticipantAttributes
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -9249,7 +9249,7 @@ class ConversationsApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type=None,
+                                            response_type='ParticipantAttributes',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -9602,7 +9602,7 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def patch_conversations_chat_participant_attributes(self, conversation_id: str, participant_id: str, body: 'ParticipantAttributes', **kwargs) -> None:
+    def patch_conversations_chat_participant_attributes(self, conversation_id: str, participant_id: str, body: 'ParticipantAttributes', **kwargs) -> 'ParticipantAttributes':
         """
         Update the attributes on a conversation participant.
         
@@ -9620,7 +9620,7 @@ class ConversationsApi(object):
         :param str conversation_id: conversationId (required)
         :param str participant_id: participantId (required)
         :param ParticipantAttributes body: Participant attributes (required)
-        :return: None
+        :return: ParticipantAttributes
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -9687,7 +9687,7 @@ class ConversationsApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type=None,
+                                            response_type='ParticipantAttributes',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -9959,7 +9959,7 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def patch_conversations_cobrowsesession_participant_attributes(self, conversation_id: str, participant_id: str, **kwargs) -> None:
+    def patch_conversations_cobrowsesession_participant_attributes(self, conversation_id: str, participant_id: str, **kwargs) -> 'ParticipantAttributes':
         """
         Update the attributes on a conversation participant.
         
@@ -9977,7 +9977,7 @@ class ConversationsApi(object):
         :param str conversation_id: conversationId (required)
         :param str participant_id: participantId (required)
         :param ParticipantAttributes body: 
-        :return: None
+        :return: ParticipantAttributes
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -10041,7 +10041,7 @@ class ConversationsApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type=None,
+                                            response_type='ParticipantAttributes',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -10403,7 +10403,7 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def patch_conversations_email_participant_attributes(self, conversation_id: str, participant_id: str, body: 'ParticipantAttributes', **kwargs) -> None:
+    def patch_conversations_email_participant_attributes(self, conversation_id: str, participant_id: str, body: 'ParticipantAttributes', **kwargs) -> 'ParticipantAttributes':
         """
         Update the attributes on a conversation participant.
         
@@ -10421,7 +10421,7 @@ class ConversationsApi(object):
         :param str conversation_id: conversationId (required)
         :param str participant_id: participantId (required)
         :param ParticipantAttributes body: Participant attributes (required)
-        :return: None
+        :return: ParticipantAttributes
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -10488,7 +10488,7 @@ class ConversationsApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type=None,
+                                            response_type='ParticipantAttributes',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -10688,7 +10688,7 @@ class ConversationsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str conversation_id:  conversationId (required)
+        :param str conversation_id: conversationId (required)
         :param str participant_id: participantId (required)
         :param MediaParticipantRequest body: 
         :return: None
@@ -10760,7 +10760,7 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def patch_conversations_message_participant_attributes(self, conversation_id: str, participant_id: str, **kwargs) -> None:
+    def patch_conversations_message_participant_attributes(self, conversation_id: str, participant_id: str, **kwargs) -> 'ParticipantAttributes':
         """
         Update the attributes on a conversation participant.
         
@@ -10775,10 +10775,10 @@ class ConversationsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str conversation_id:  conversationId (required)
+        :param str conversation_id: conversationId (required)
         :param str participant_id: participantId (required)
         :param ParticipantAttributes body: 
-        :return: None
+        :return: ParticipantAttributes
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -10842,7 +10842,7 @@ class ConversationsApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type=None,
+                                            response_type='ParticipantAttributes',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -10862,7 +10862,7 @@ class ConversationsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str conversation_id:  conversationId (required)
+        :param str conversation_id: conversationId (required)
         :param str participant_id: participantId (required)
         :param str communication_id: communicationId (required)
         :param MediaParticipantRequest body: Participant (required)

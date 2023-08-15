@@ -33,6 +33,7 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
+    from . import AppEvent
     from . import EventSession
     from . import GenericActionEvent
     from . import OutcomeAchievedEvent
@@ -68,6 +69,7 @@ class Event(object):
             'segment_assignment_event': 'SegmentAssignmentEvent',
             'web_action_event': 'WebActionEvent',
             'web_event': 'WebEvent',
+            'app_event': 'AppEvent',
             'created_date': 'datetime'
         }
 
@@ -84,6 +86,7 @@ class Event(object):
             'segment_assignment_event': 'segmentAssignmentEvent',
             'web_action_event': 'webActionEvent',
             'web_event': 'webEvent',
+            'app_event': 'appEvent',
             'created_date': 'createdDate'
         }
 
@@ -99,6 +102,7 @@ class Event(object):
         self._segment_assignment_event = None
         self._web_action_event = None
         self._web_event = None
+        self._app_event = None
         self._created_date = None
 
     @property
@@ -388,6 +392,30 @@ class Event(object):
         
 
         self._web_event = web_event
+
+    @property
+    def app_event(self) -> 'AppEvent':
+        """
+        Gets the app_event of this Event.
+        Event that tracks user interactions with content in an application such as screen views, searches, etc.
+
+        :return: The app_event of this Event.
+        :rtype: AppEvent
+        """
+        return self._app_event
+
+    @app_event.setter
+    def app_event(self, app_event: 'AppEvent') -> None:
+        """
+        Sets the app_event of this Event.
+        Event that tracks user interactions with content in an application such as screen views, searches, etc.
+
+        :param app_event: The app_event of this Event.
+        :type: AppEvent
+        """
+        
+
+        self._app_event = app_event
 
     @property
     def created_date(self) -> datetime:

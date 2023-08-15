@@ -42,11 +42,14 @@ if TYPE_CHECKING:
     from . import CustomEventAttribute
     from . import CustomEventAttributeList
     from . import Device
+    from . import JourneyApp
     from . import JourneyCampaign
     from . import JourneyGeolocation
     from . import JourneyPage
+    from . import NetworkConnectivity
     from . import OutcomeAchievement
     from . import Referrer
+    from . import SdkLibrary
     from . import SessionLastEvent
     from . import SessionSegmentAssignment
 
@@ -84,6 +87,9 @@ class Session(object):
             'last_page': 'JourneyPage',
             'mkt_campaign': 'JourneyCampaign',
             'referrer': 'Referrer',
+            'app': 'JourneyApp',
+            'sdk_library': 'SdkLibrary',
+            'network_connectivity': 'NetworkConnectivity',
             'search_terms': 'list[str]',
             'user_agent_string': 'str',
             'duration_in_seconds': 'int',
@@ -129,6 +135,9 @@ class Session(object):
             'last_page': 'lastPage',
             'mkt_campaign': 'mktCampaign',
             'referrer': 'referrer',
+            'app': 'app',
+            'sdk_library': 'sdkLibrary',
+            'network_connectivity': 'networkConnectivity',
             'search_terms': 'searchTerms',
             'user_agent_string': 'userAgentString',
             'duration_in_seconds': 'durationInSeconds',
@@ -173,6 +182,9 @@ class Session(object):
         self._last_page = None
         self._mkt_campaign = None
         self._referrer = None
+        self._app = None
+        self._sdk_library = None
+        self._network_connectivity = None
         self._search_terms = None
         self._user_agent_string = None
         self._duration_in_seconds = None
@@ -652,6 +664,78 @@ class Session(object):
         
 
         self._referrer = referrer
+
+    @property
+    def app(self) -> 'JourneyApp':
+        """
+        Gets the app of this Session.
+        Application that the customer is interacting with (for app sessions).
+
+        :return: The app of this Session.
+        :rtype: JourneyApp
+        """
+        return self._app
+
+    @app.setter
+    def app(self, app: 'JourneyApp') -> None:
+        """
+        Sets the app of this Session.
+        Application that the customer is interacting with (for app sessions).
+
+        :param app: The app of this Session.
+        :type: JourneyApp
+        """
+        
+
+        self._app = app
+
+    @property
+    def sdk_library(self) -> 'SdkLibrary':
+        """
+        Gets the sdk_library of this Session.
+        SDK library used to generate the events for the session (for app and web sessions).
+
+        :return: The sdk_library of this Session.
+        :rtype: SdkLibrary
+        """
+        return self._sdk_library
+
+    @sdk_library.setter
+    def sdk_library(self, sdk_library: 'SdkLibrary') -> None:
+        """
+        Sets the sdk_library of this Session.
+        SDK library used to generate the events for the session (for app and web sessions).
+
+        :param sdk_library: The sdk_library of this Session.
+        :type: SdkLibrary
+        """
+        
+
+        self._sdk_library = sdk_library
+
+    @property
+    def network_connectivity(self) -> 'NetworkConnectivity':
+        """
+        Gets the network_connectivity of this Session.
+        Information relating to the device's network connectivity (for app sessions).
+
+        :return: The network_connectivity of this Session.
+        :rtype: NetworkConnectivity
+        """
+        return self._network_connectivity
+
+    @network_connectivity.setter
+    def network_connectivity(self, network_connectivity: 'NetworkConnectivity') -> None:
+        """
+        Sets the network_connectivity of this Session.
+        Information relating to the device's network connectivity (for app sessions).
+
+        :param network_connectivity: The network_connectivity of this Session.
+        :type: NetworkConnectivity
+        """
+        
+
+        self._network_connectivity = network_connectivity
 
     @property
     def search_terms(self) -> List[str]:

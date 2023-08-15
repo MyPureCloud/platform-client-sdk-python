@@ -360,7 +360,7 @@ except ApiException as e:
 
 Get Reporting Turns.
 
-Returns the reporting turns grouped by session, in reverse chronological order from the date the session was created, with the reporting turns from the most recent session appearing at the start of the list.
+Returns the reporting turns grouped by session, in reverse chronological order from the date the session was created, with the reporting turns from the most recent session appearing at the start of the list. For pagination, clients should keep sending requests using the value of 'nextUri' in the response, until it's no longer present, only then have all items have been returned. Note: resources returned by this endpoint do not persist indefinitely, as they auto delete after a predefined period.
 
 Wraps GET /api/v2/analytics/botflows/{botFlowId}/reportingturns 
 
@@ -385,7 +385,7 @@ bot_flow_id = 'bot_flow_id_example' # str | ID of the bot flow.
 after = 'after_example' # str | The cursor that points to the ID of the last item in the list of entities that has been returned. (optional)
 page_size = ''50'' # str | Max number of entities to return. Maximum of 250 (optional) (default to '50')
 action_id = 'action_id_example' # str | Optional action ID to get the reporting turns associated to a particular flow action (optional)
-session_id = 'session_id_example' # str | Optional session ID to get the reporting turns for a particular session (optional)
+session_id = 'session_id_example' # str | Optional session ID to get the reporting turns for a particular session. Specifying a session ID alongside an action ID or a language or any ask action results is not allowed. (optional)
 language = 'en-us' # str | Optional language code to get the reporting turns for a particular language (optional)
 ask_action_results = 'ask_action_results_example' # str | Optional case-insensitive comma separated list of ask action results to filter the reporting turns. (optional)
 
@@ -406,7 +406,7 @@ except ApiException as e:
 | **after** | **str**| The cursor that points to the ID of the last item in the list of entities that has been returned. | [optional]  |
 | **page_size** | **str**| Max number of entities to return. Maximum of 250 | [optional] [default to &#39;50&#39;] |
 | **action_id** | **str**| Optional action ID to get the reporting turns associated to a particular flow action | [optional]  |
-| **session_id** | **str**| Optional session ID to get the reporting turns for a particular session | [optional]  |
+| **session_id** | **str**| Optional session ID to get the reporting turns for a particular session. Specifying a session ID alongside an action ID or a language or any ask action results is not allowed. | [optional]  |
 | **language** | **str**| Optional language code to get the reporting turns for a particular language | [optional]  |
 | **ask_action_results** | **str**| Optional case-insensitive comma separated list of ask action results to filter the reporting turns. | [optional] <br />**Values**: AgentRequestedByUser, ConfirmationRequired, DisambiguationRequired, Error, ExpressionError, NoInputCollection, NoInputConfirmation, NoInputDisambiguation, NoMatchCollection, NoMatchConfirmation, NoMatchDisambiguation, SuccessCollection, SuccessConfirmationNo, SuccessConfirmationYes, SuccessDisambiguation, SuccessDisambiguationNone |
 {: class="table table-striped"}

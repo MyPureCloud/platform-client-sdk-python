@@ -33,6 +33,7 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
+    from . import GamificationScorecardChangeTopicEvaluationDetail
     from . import GamificationScorecardChangeTopicMetric
     from . import GamificationScorecardChangeTopicPunctualityEvent
 
@@ -54,20 +55,23 @@ class GamificationScorecardChangeTopicPerformanceMetric(object):
             'metric': 'GamificationScorecardChangeTopicMetric',
             'points': 'int',
             'value': 'float',
-            'punctuality_events': 'list[GamificationScorecardChangeTopicPunctualityEvent]'
+            'punctuality_events': 'list[GamificationScorecardChangeTopicPunctualityEvent]',
+            'evaluation_details': 'list[GamificationScorecardChangeTopicEvaluationDetail]'
         }
 
         self.attribute_map = {
             'metric': 'metric',
             'points': 'points',
             'value': 'value',
-            'punctuality_events': 'punctualityEvents'
+            'punctuality_events': 'punctualityEvents',
+            'evaluation_details': 'evaluationDetails'
         }
 
         self._metric = None
         self._points = None
         self._value = None
         self._punctuality_events = None
+        self._evaluation_details = None
 
     @property
     def metric(self) -> 'GamificationScorecardChangeTopicMetric':
@@ -164,6 +168,30 @@ class GamificationScorecardChangeTopicPerformanceMetric(object):
         
 
         self._punctuality_events = punctuality_events
+
+    @property
+    def evaluation_details(self) -> List['GamificationScorecardChangeTopicEvaluationDetail']:
+        """
+        Gets the evaluation_details of this GamificationScorecardChangeTopicPerformanceMetric.
+
+
+        :return: The evaluation_details of this GamificationScorecardChangeTopicPerformanceMetric.
+        :rtype: list[GamificationScorecardChangeTopicEvaluationDetail]
+        """
+        return self._evaluation_details
+
+    @evaluation_details.setter
+    def evaluation_details(self, evaluation_details: List['GamificationScorecardChangeTopicEvaluationDetail']) -> None:
+        """
+        Sets the evaluation_details of this GamificationScorecardChangeTopicPerformanceMetric.
+
+
+        :param evaluation_details: The evaluation_details of this GamificationScorecardChangeTopicPerformanceMetric.
+        :type: list[GamificationScorecardChangeTopicEvaluationDetail]
+        """
+        
+
+        self._evaluation_details = evaluation_details
 
     def to_dict(self):
         """

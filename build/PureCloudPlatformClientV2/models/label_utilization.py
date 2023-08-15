@@ -49,16 +49,16 @@ class LabelUtilization(object):
         """
         self.swagger_types = {
             'maximum_capacity': 'int',
-            'interrupting_labels': 'list[str]'
+            'interrupting_label_ids': 'list[str]'
         }
 
         self.attribute_map = {
             'maximum_capacity': 'maximumCapacity',
-            'interrupting_labels': 'interruptingLabels'
+            'interrupting_label_ids': 'interruptingLabelIds'
         }
 
         self._maximum_capacity = None
-        self._interrupting_labels = None
+        self._interrupting_label_ids = None
 
     @property
     def maximum_capacity(self) -> int:
@@ -85,28 +85,28 @@ class LabelUtilization(object):
         self._maximum_capacity = maximum_capacity
 
     @property
-    def interrupting_labels(self) -> List[str]:
+    def interrupting_label_ids(self) -> List[str]:
         """
-        Gets the interrupting_labels of this LabelUtilization.
-        Defines the list of other labels that can interrupt an interaction with this label.
+        Gets the interrupting_label_ids of this LabelUtilization.
+        Defines other labels that can interrupt an interaction with this label.
 
-        :return: The interrupting_labels of this LabelUtilization.
+        :return: The interrupting_label_ids of this LabelUtilization.
         :rtype: list[str]
         """
-        return self._interrupting_labels
+        return self._interrupting_label_ids
 
-    @interrupting_labels.setter
-    def interrupting_labels(self, interrupting_labels: List[str]) -> None:
+    @interrupting_label_ids.setter
+    def interrupting_label_ids(self, interrupting_label_ids: List[str]) -> None:
         """
-        Sets the interrupting_labels of this LabelUtilization.
-        Defines the list of other labels that can interrupt an interaction with this label.
+        Sets the interrupting_label_ids of this LabelUtilization.
+        Defines other labels that can interrupt an interaction with this label.
 
-        :param interrupting_labels: The interrupting_labels of this LabelUtilization.
+        :param interrupting_label_ids: The interrupting_label_ids of this LabelUtilization.
         :type: list[str]
         """
         
 
-        self._interrupting_labels = interrupting_labels
+        self._interrupting_label_ids = interrupting_label_ids
 
     def to_dict(self):
         """

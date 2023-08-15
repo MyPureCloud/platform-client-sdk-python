@@ -448,7 +448,7 @@ class WorkitemUpdate(object):
     def custom_fields(self) -> Dict[str, object]:
         """
         Gets the custom_fields of this WorkitemUpdate.
-        Custom fields defined in the schema referenced by the Workitem. If set to {}, the existing keys and values will be removed.
+        Custom fields defined in the schema referenced by the worktype of the workitem. If set to {}, the existing keys and values will be removed.
 
         :return: The custom_fields of this WorkitemUpdate.
         :rtype: dict(str, object)
@@ -459,7 +459,7 @@ class WorkitemUpdate(object):
     def custom_fields(self, custom_fields: Dict[str, object]) -> None:
         """
         Sets the custom_fields of this WorkitemUpdate.
-        Custom fields defined in the schema referenced by the Workitem. If set to {}, the existing keys and values will be removed.
+        Custom fields defined in the schema referenced by the worktype of the workitem. If set to {}, the existing keys and values will be removed.
 
         :param custom_fields: The custom_fields of this WorkitemUpdate.
         :type: dict(str, object)

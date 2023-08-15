@@ -52,10 +52,12 @@ class JourneyOutcomeEventsNotificationDevice(object):
             'is_mobile': 'bool',
             'screen_height': 'int',
             'screen_width': 'int',
+            'screen_density': 'int',
             'fingerprint': 'str',
             'os_family': 'str',
             'os_version': 'str',
-            'category': 'str'
+            'category': 'str',
+            'manufacturer': 'str'
         }
 
         self.attribute_map = {
@@ -63,20 +65,24 @@ class JourneyOutcomeEventsNotificationDevice(object):
             'is_mobile': 'isMobile',
             'screen_height': 'screenHeight',
             'screen_width': 'screenWidth',
+            'screen_density': 'screenDensity',
             'fingerprint': 'fingerprint',
             'os_family': 'osFamily',
             'os_version': 'osVersion',
-            'category': 'category'
+            'category': 'category',
+            'manufacturer': 'manufacturer'
         }
 
         self._type = None
         self._is_mobile = None
         self._screen_height = None
         self._screen_width = None
+        self._screen_density = None
         self._fingerprint = None
         self._os_family = None
         self._os_version = None
         self._category = None
+        self._manufacturer = None
 
     @property
     def type(self) -> str:
@@ -173,6 +179,30 @@ class JourneyOutcomeEventsNotificationDevice(object):
         
 
         self._screen_width = screen_width
+
+    @property
+    def screen_density(self) -> int:
+        """
+        Gets the screen_density of this JourneyOutcomeEventsNotificationDevice.
+
+
+        :return: The screen_density of this JourneyOutcomeEventsNotificationDevice.
+        :rtype: int
+        """
+        return self._screen_density
+
+    @screen_density.setter
+    def screen_density(self, screen_density: int) -> None:
+        """
+        Sets the screen_density of this JourneyOutcomeEventsNotificationDevice.
+
+
+        :param screen_density: The screen_density of this JourneyOutcomeEventsNotificationDevice.
+        :type: int
+        """
+        
+
+        self._screen_density = screen_density
 
     @property
     def fingerprint(self) -> str:
@@ -274,6 +304,30 @@ class JourneyOutcomeEventsNotificationDevice(object):
             self._category = "outdated_sdk_version"
         else:
             self._category = category
+
+    @property
+    def manufacturer(self) -> str:
+        """
+        Gets the manufacturer of this JourneyOutcomeEventsNotificationDevice.
+
+
+        :return: The manufacturer of this JourneyOutcomeEventsNotificationDevice.
+        :rtype: str
+        """
+        return self._manufacturer
+
+    @manufacturer.setter
+    def manufacturer(self, manufacturer: str) -> None:
+        """
+        Sets the manufacturer of this JourneyOutcomeEventsNotificationDevice.
+
+
+        :param manufacturer: The manufacturer of this JourneyOutcomeEventsNotificationDevice.
+        :type: str
+        """
+        
+
+        self._manufacturer = manufacturer
 
     def to_dict(self):
         """

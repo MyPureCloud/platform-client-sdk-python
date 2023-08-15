@@ -70,7 +70,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_telephony_providers_edges_phonebasesettings**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_phonebasesettings) | Get a list of Phone Base Settings objects|
 |[**get_telephony_providers_edges_phonebasesettings_availablemetabases**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_phonebasesettings_availablemetabases) | Get a list of available makes and models to create a new Phone Base Settings|
 |[**get_telephony_providers_edges_phonebasesettings_template**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_phonebasesettings_template) | Get a Phone Base Settings instance template from a given make and model. This object can then be modified and saved as a new Phone Base Settings instance|
-|[**get_telephony_providers_edges_phones**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_phones) | Get a list of Phone Instances|
+|[**get_telephony_providers_edges_phones**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_phones) | Get a list of Phone Instances. A maximum of 10,000 results is returned when filtering the results or sorting by a field other than the ID. Sorting by only the ID has no result limit. Each filter supports a wildcard, *, as a value to search for partial values.|
 |[**get_telephony_providers_edges_phones_template**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_phones_template) | Get a Phone instance template based on a Phone Base Settings object. This object can then be modified and saved as a new Phone instance|
 |[**get_telephony_providers_edges_physicalinterfaces**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_physicalinterfaces) | Get physical interfaces for edges.|
 |[**get_telephony_providers_edges_site**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_site) | Get a Site by ID.|
@@ -3313,7 +3313,7 @@ except ApiException as e:
 
 
 
-Get a list of Phone Instances
+Get a list of Phone Instances. A maximum of 10,000 results is returned when filtering the results or sorting by a field other than the ID. Sorting by only the ID has no result limit. Each filter supports a wildcard, *, as a value to search for partial values.
 
 Wraps GET /api/v2/telephony/providers/edges/phones 
 
@@ -3353,7 +3353,7 @@ expand = ['expand_example'] # list[str] | Fields to expand in the response, comm
 fields = ['fields_example'] # list[str] | Fields and properties to get, comma-separated (optional)
 
 try:
-    # Get a list of Phone Instances
+    # Get a list of Phone Instances. A maximum of 10,000 results is returned when filtering the results or sorting by a field other than the ID. Sorting by only the ID has no result limit. Each filter supports a wildcard, *, as a value to search for partial values.
     api_response = api_instance.get_telephony_providers_edges_phones(page_number=page_number, page_size=page_size, sort_by=sort_by, sort_order=sort_order, site_id=site_id, web_rtc_user_id=web_rtc_user_id, phone_base_settings_id=phone_base_settings_id, lines_logged_in_user_id=lines_logged_in_user_id, lines_default_for_user_id=lines_default_for_user_id, phone_hardware_id=phone_hardware_id, lines_id=lines_id, lines_name=lines_name, name=name, status_operational_status=status_operational_status, secondary_status_operational_status=secondary_status_operational_status, expand=expand, fields=fields)
     pprint(api_response)
 except ApiException as e:

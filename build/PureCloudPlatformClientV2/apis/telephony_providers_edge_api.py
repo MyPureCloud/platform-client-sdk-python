@@ -5153,7 +5153,7 @@ class TelephonyProvidersEdgeApi(object):
 
     def get_telephony_providers_edges_phones(self, **kwargs) -> 'PhoneEntityListing':
         """
-        Get a list of Phone Instances
+        Get a list of Phone Instances. A maximum of 10,000 results is returned when filtering the results or sorting by a field other than the ID. Sorting by only the ID has no result limit. Each filter supports a wildcard, *, as a value to search for partial values.
         
 
         This method makes a synchronous HTTP request by default. To make an

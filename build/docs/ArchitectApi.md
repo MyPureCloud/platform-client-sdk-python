@@ -9,6 +9,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 |Method | Description|
 |------------- | -------------|
 |[**delete_architect_emergencygroup**](ArchitectApi.html#delete_architect_emergencygroup) | Deletes a emergency group by ID|
+|[**delete_architect_grammar**](ArchitectApi.html#delete_architect_grammar) | Delete a grammar.|
+|[**delete_architect_grammar_language**](ArchitectApi.html#delete_architect_grammar_language) | Delete specified grammar language|
+|[**delete_architect_grammar_language_files_dtmf**](ArchitectApi.html#delete_architect_grammar_language_files_dtmf) | Clear the DTMF mode file for the grammar language if there is one|
+|[**delete_architect_grammar_language_files_voice**](ArchitectApi.html#delete_architect_grammar_language_files_voice) | Clear the voice mode file for the grammar language if there is one|
 |[**delete_architect_ivr**](ArchitectApi.html#delete_architect_ivr) | Delete an IVR Config.|
 |[**delete_architect_prompt**](ArchitectApi.html#delete_architect_prompt) | Delete specified user prompt|
 |[**delete_architect_prompt_resource**](ArchitectApi.html#delete_architect_prompt_resource) | Delete specified user prompt resource|
@@ -33,6 +37,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_architect_dependencytracking_updatedresourceconsumers**](ArchitectApi.html#get_architect_dependencytracking_updatedresourceconsumers) | Get Dependency Tracking objects that depend on updated resources|
 |[**get_architect_emergencygroup**](ArchitectApi.html#get_architect_emergencygroup) | Gets a emergency group by ID|
 |[**get_architect_emergencygroups**](ArchitectApi.html#get_architect_emergencygroups) | Get a list of emergency groups.|
+|[**get_architect_grammar**](ArchitectApi.html#get_architect_grammar) | Get a grammar|
+|[**get_architect_grammar_language**](ArchitectApi.html#get_architect_grammar_language) | Get a grammar language.|
+|[**get_architect_grammars**](ArchitectApi.html#get_architect_grammars) | Get a pageable list of grammars, filtered by query parameters|
 |[**get_architect_ivr**](ArchitectApi.html#get_architect_ivr) | Get an IVR config.|
 |[**get_architect_ivrs**](ArchitectApi.html#get_architect_ivrs) | Get IVR configs.|
 |[**get_architect_prompt**](ArchitectApi.html#get_architect_prompt) | Get specified user prompt|
@@ -77,8 +84,13 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_flows_outcome**](ArchitectApi.html#get_flows_outcome) | Get a flow outcome|
 |[**get_flows_outcomes**](ArchitectApi.html#get_flows_outcomes) | Get a pageable list of flow outcomes, filtered by query parameters|
 |[**get_flows_outcomes_divisionviews**](ArchitectApi.html#get_flows_outcomes_divisionviews) | Get a pageable list of basic flow outcome information objects filterable by query parameters.|
+|[**patch_architect_grammar**](ArchitectApi.html#patch_architect_grammar) | Updates a grammar|
 |[**post_architect_dependencytracking_build**](ArchitectApi.html#post_architect_dependencytracking_build) | Rebuild Dependency Tracking data for an organization|
 |[**post_architect_emergencygroups**](ArchitectApi.html#post_architect_emergencygroups) | Creates a new emergency group|
+|[**post_architect_grammar_language_files_dtmf**](ArchitectApi.html#post_architect_grammar_language_files_dtmf) | Creates a presigned URL for uploading a grammar DTMF mode file|
+|[**post_architect_grammar_language_files_voice**](ArchitectApi.html#post_architect_grammar_language_files_voice) | Creates a presigned URL for uploading a grammar voice mode file|
+|[**post_architect_grammar_languages**](ArchitectApi.html#post_architect_grammar_languages) | Create a new language for a given grammar|
+|[**post_architect_grammars**](ArchitectApi.html#post_architect_grammars) | Create a new grammar|
 |[**post_architect_ivrs**](ArchitectApi.html#post_architect_ivrs) | Create IVR config.|
 |[**post_architect_prompt_history**](ArchitectApi.html#post_architect_prompt_history) | Generate prompt history|
 |[**post_architect_prompt_resources**](ArchitectApi.html#post_architect_prompt_resources) | Create a new user prompt resource|
@@ -162,6 +174,213 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **emergency_group_id** | **str**| Emergency group ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
+
+<a name="delete_architect_grammar"></a>
+
+## object** delete_architect_grammar(grammar_id)
+
+
+
+Delete a grammar.
+
+delete_architect_grammar is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps DELETE /api/v2/architect/grammars/{grammarId} 
+
+Requires ALL permissions: 
+
+* architect:grammar:delete
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ArchitectApi()
+grammar_id = 'grammar_id_example' # str | grammar ID
+
+try:
+    # Delete a grammar.
+    api_response = api_instance.delete_architect_grammar(grammar_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ArchitectApi->delete_architect_grammar: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **grammar_id** | **str**| grammar ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+**object**
+
+<a name="delete_architect_grammar_language"></a>
+
+##  delete_architect_grammar_language(grammar_id, language_code)
+
+
+
+Delete specified grammar language
+
+delete_architect_grammar_language is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps DELETE /api/v2/architect/grammars/{grammarId}/languages/{languageCode} 
+
+Requires ALL permissions: 
+
+* architect:grammar:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ArchitectApi()
+grammar_id = 'grammar_id_example' # str | Grammar ID
+language_code = 'language_code_example' # str | Language
+
+try:
+    # Delete specified grammar language
+    api_instance.delete_architect_grammar_language(grammar_id, language_code)
+except ApiException as e:
+    print("Exception when calling ArchitectApi->delete_architect_grammar_language: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **grammar_id** | **str**| Grammar ID |  |
+| **language_code** | **str**| Language |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
+
+<a name="delete_architect_grammar_language_files_dtmf"></a>
+
+##  delete_architect_grammar_language_files_dtmf(grammar_id, language_code)
+
+
+
+Clear the DTMF mode file for the grammar language if there is one
+
+delete_architect_grammar_language_files_dtmf is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps DELETE /api/v2/architect/grammars/{grammarId}/languages/{languageCode}/files/dtmf 
+
+Requires ALL permissions: 
+
+* architect:grammar:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ArchitectApi()
+grammar_id = 'grammar_id_example' # str | Grammar ID
+language_code = 'language_code_example' # str | Language
+
+try:
+    # Clear the DTMF mode file for the grammar language if there is one
+    api_instance.delete_architect_grammar_language_files_dtmf(grammar_id, language_code)
+except ApiException as e:
+    print("Exception when calling ArchitectApi->delete_architect_grammar_language_files_dtmf: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **grammar_id** | **str**| Grammar ID |  |
+| **language_code** | **str**| Language |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
+
+<a name="delete_architect_grammar_language_files_voice"></a>
+
+##  delete_architect_grammar_language_files_voice(grammar_id, language_code)
+
+
+
+Clear the voice mode file for the grammar language if there is one
+
+delete_architect_grammar_language_files_voice is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps DELETE /api/v2/architect/grammars/{grammarId}/languages/{languageCode}/files/voice 
+
+Requires ALL permissions: 
+
+* architect:grammar:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ArchitectApi()
+grammar_id = 'grammar_id_example' # str | Grammar ID
+language_code = 'language_code_example' # str | Language
+
+try:
+    # Clear the voice mode file for the grammar language if there is one
+    api_instance.delete_architect_grammar_language_files_voice(grammar_id, language_code)
+except ApiException as e:
+    print("Exception when calling ArchitectApi->delete_architect_grammar_language_files_voice: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **grammar_id** | **str**| Grammar ID |  |
+| **language_code** | **str**| Language |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1432,6 +1651,183 @@ except ApiException as e:
 ### Return type
 
 [**EmergencyGroupListing**](EmergencyGroupListing.html)
+
+<a name="get_architect_grammar"></a>
+
+## [**Grammar**](Grammar.html) get_architect_grammar(grammar_id, include_file_urls=include_file_urls)
+
+
+
+Get a grammar
+
+Returns a specified grammar
+
+get_architect_grammar is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/architect/grammars/{grammarId} 
+
+Requires ALL permissions: 
+
+* architect:grammar:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ArchitectApi()
+grammar_id = 'grammar_id_example' # str | grammar ID
+include_file_urls = True # bool | Include grammar language file URLs (optional)
+
+try:
+    # Get a grammar
+    api_response = api_instance.get_architect_grammar(grammar_id, include_file_urls=include_file_urls)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ArchitectApi->get_architect_grammar: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **grammar_id** | **str**| grammar ID |  |
+| **include_file_urls** | **bool**| Include grammar language file URLs | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**Grammar**](Grammar.html)
+
+<a name="get_architect_grammar_language"></a>
+
+## [**GrammarLanguage**](GrammarLanguage.html) get_architect_grammar_language(grammar_id, language_code)
+
+
+
+Get a grammar language.
+
+get_architect_grammar_language is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/architect/grammars/{grammarId}/languages/{languageCode} 
+
+Requires ALL permissions: 
+
+* architect:grammar:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ArchitectApi()
+grammar_id = 'grammar_id_example' # str | Grammar ID
+language_code = 'language_code_example' # str | Language
+
+try:
+    # Get a grammar language.
+    api_response = api_instance.get_architect_grammar_language(grammar_id, language_code)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ArchitectApi->get_architect_grammar_language: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **grammar_id** | **str**| Grammar ID |  |
+| **language_code** | **str**| Language |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**GrammarLanguage**](GrammarLanguage.html)
+
+<a name="get_architect_grammars"></a>
+
+## [**GrammarListing**](GrammarListing.html) get_architect_grammars(page_number=page_number, page_size=page_size, sort_by=sort_by, sort_order=sort_order, id=id, name=name, description=description, name_or_description=name_or_description, include_file_urls=include_file_urls)
+
+
+
+Get a pageable list of grammars, filtered by query parameters
+
+Multiple IDs can be specified, in which case all matching grammars will be returned, and no other parameters will be evaluated.
+
+get_architect_grammars is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/architect/grammars 
+
+Requires ALL permissions: 
+
+* architect:grammar:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ArchitectApi()
+page_number = 1 # int | Page number (optional) (default to 1)
+page_size = 25 # int | Page size (optional) (default to 25)
+sort_by = ''id'' # str | Sort by (optional) (default to 'id')
+sort_order = ''asc'' # str | Sort order (optional) (default to 'asc')
+id = ['id_example'] # list[str] | ID (optional)
+name = 'name_example' # str | Name (optional)
+description = 'description_example' # str | Description (optional)
+name_or_description = 'name_or_description_example' # str | Name or description (optional)
+include_file_urls = True # bool | Include grammar language file URLs (optional)
+
+try:
+    # Get a pageable list of grammars, filtered by query parameters
+    api_response = api_instance.get_architect_grammars(page_number=page_number, page_size=page_size, sort_by=sort_by, sort_order=sort_order, id=id, name=name, description=description, name_or_description=name_or_description, include_file_urls=include_file_urls)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ArchitectApi->get_architect_grammars: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **sort_by** | **str**| Sort by | [optional] [default to &#39;id&#39;]<br />**Values**: description, id, name |
+| **sort_order** | **str**| Sort order | [optional] [default to &#39;asc&#39;]<br />**Values**: asc, desc |
+| **id** | [**list[str]**](str.html)| ID | [optional]  |
+| **name** | **str**| Name | [optional]  |
+| **description** | **str**| Description | [optional]  |
+| **name_or_description** | **str**| Name or description | [optional]  |
+| **include_file_urls** | **bool**| Include grammar language file URLs | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**GrammarListing**](GrammarListing.html)
 
 <a name="get_architect_ivr"></a>
 
@@ -3936,6 +4332,59 @@ except ApiException as e:
 
 [**FlowOutcomeDivisionViewEntityListing**](FlowOutcomeDivisionViewEntityListing.html)
 
+<a name="patch_architect_grammar"></a>
+
+## [**Grammar**](Grammar.html) patch_architect_grammar(grammar_id, body=body)
+
+
+
+Updates a grammar
+
+patch_architect_grammar is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps PATCH /api/v2/architect/grammars/{grammarId} 
+
+Requires ALL permissions: 
+
+* architect:grammar:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ArchitectApi()
+grammar_id = 'grammar_id_example' # str | grammar ID
+body = PureCloudPlatformClientV2.Grammar() # Grammar |  (optional)
+
+try:
+    # Updates a grammar
+    api_response = api_instance.patch_architect_grammar(grammar_id, body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ArchitectApi->patch_architect_grammar: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **grammar_id** | **str**| grammar ID |  |
+| **body** | [**Grammar**](Grammar.html)|  | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**Grammar**](Grammar.html)
+
 <a name="post_architect_dependencytracking_build"></a>
 
 ##  post_architect_dependencytracking_build()
@@ -4030,6 +4479,220 @@ except ApiException as e:
 ### Return type
 
 [**EmergencyGroup**](EmergencyGroup.html)
+
+<a name="post_architect_grammar_language_files_dtmf"></a>
+
+## [**UploadUrlResponse**](UploadUrlResponse.html) post_architect_grammar_language_files_dtmf(grammar_id, language_code, body)
+
+
+
+Creates a presigned URL for uploading a grammar DTMF mode file
+
+post_architect_grammar_language_files_dtmf is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/architect/grammars/{grammarId}/languages/{languageCode}/files/dtmf 
+
+Requires ALL permissions: 
+
+* architect:grammar:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ArchitectApi()
+grammar_id = 'grammar_id_example' # str | Grammar ID
+language_code = 'language_code_example' # str | Language
+body = PureCloudPlatformClientV2.GrammarFileUploadRequest() # GrammarFileUploadRequest | query
+
+try:
+    # Creates a presigned URL for uploading a grammar DTMF mode file
+    api_response = api_instance.post_architect_grammar_language_files_dtmf(grammar_id, language_code, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ArchitectApi->post_architect_grammar_language_files_dtmf: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **grammar_id** | **str**| Grammar ID |  |
+| **language_code** | **str**| Language |  |
+| **body** | [**GrammarFileUploadRequest**](GrammarFileUploadRequest.html)| query |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**UploadUrlResponse**](UploadUrlResponse.html)
+
+<a name="post_architect_grammar_language_files_voice"></a>
+
+## [**UploadUrlResponse**](UploadUrlResponse.html) post_architect_grammar_language_files_voice(grammar_id, language_code, body)
+
+
+
+Creates a presigned URL for uploading a grammar voice mode file
+
+post_architect_grammar_language_files_voice is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/architect/grammars/{grammarId}/languages/{languageCode}/files/voice 
+
+Requires ALL permissions: 
+
+* architect:grammar:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ArchitectApi()
+grammar_id = 'grammar_id_example' # str | Grammar ID
+language_code = 'language_code_example' # str | Language
+body = PureCloudPlatformClientV2.GrammarFileUploadRequest() # GrammarFileUploadRequest | query
+
+try:
+    # Creates a presigned URL for uploading a grammar voice mode file
+    api_response = api_instance.post_architect_grammar_language_files_voice(grammar_id, language_code, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ArchitectApi->post_architect_grammar_language_files_voice: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **grammar_id** | **str**| Grammar ID |  |
+| **language_code** | **str**| Language |  |
+| **body** | [**GrammarFileUploadRequest**](GrammarFileUploadRequest.html)| query |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**UploadUrlResponse**](UploadUrlResponse.html)
+
+<a name="post_architect_grammar_languages"></a>
+
+## [**GrammarLanguage**](GrammarLanguage.html) post_architect_grammar_languages(grammar_id, body)
+
+
+
+Create a new language for a given grammar
+
+post_architect_grammar_languages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/architect/grammars/{grammarId}/languages 
+
+Requires ALL permissions: 
+
+* architect:grammar:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ArchitectApi()
+grammar_id = 'grammar_id_example' # str | Grammar ID
+body = PureCloudPlatformClientV2.GrammarLanguage() # GrammarLanguage | 
+
+try:
+    # Create a new language for a given grammar
+    api_response = api_instance.post_architect_grammar_languages(grammar_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ArchitectApi->post_architect_grammar_languages: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **grammar_id** | **str**| Grammar ID |  |
+| **body** | [**GrammarLanguage**](GrammarLanguage.html)|  |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**GrammarLanguage**](GrammarLanguage.html)
+
+<a name="post_architect_grammars"></a>
+
+## [**Grammar**](Grammar.html) post_architect_grammars(body)
+
+
+
+Create a new grammar
+
+post_architect_grammars is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/architect/grammars 
+
+Requires ALL permissions: 
+
+* architect:grammar:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ArchitectApi()
+body = PureCloudPlatformClientV2.Grammar() # Grammar | 
+
+try:
+    # Create a new grammar
+    api_response = api_instance.post_architect_grammars(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ArchitectApi->post_architect_grammars: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**Grammar**](Grammar.html)|  |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**Grammar**](Grammar.html)
 
 <a name="post_architect_ivrs"></a>
 

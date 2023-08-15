@@ -129,6 +129,8 @@ class FlowMetricsTopicFlowMetricRecord(object):
             'room_id': 'str',
             'routing_priority': 'int',
             'routing_ring': 'int',
+            'routing_rule': 'str',
+            'routing_rule_type': 'str',
             'selected_agent_id': 'str',
             'selected_agent_rank': 'int',
             'self_served': 'bool',
@@ -227,6 +229,8 @@ class FlowMetricsTopicFlowMetricRecord(object):
             'room_id': 'roomId',
             'routing_priority': 'routingPriority',
             'routing_ring': 'routingRing',
+            'routing_rule': 'routingRule',
+            'routing_rule_type': 'routingRuleType',
             'selected_agent_id': 'selectedAgentId',
             'selected_agent_rank': 'selectedAgentRank',
             'self_served': 'selfServed',
@@ -324,6 +328,8 @@ class FlowMetricsTopicFlowMetricRecord(object):
         self._room_id = None
         self._routing_priority = None
         self._routing_ring = None
+        self._routing_rule = None
+        self._routing_rule_type = None
         self._selected_agent_id = None
         self._selected_agent_rank = None
         self._self_served = None
@@ -889,7 +895,7 @@ class FlowMetricsTopicFlowMetricRecord(object):
         """
         if isinstance(disconnect_type, int):
             disconnect_type = str(disconnect_type)
-        allowed_values = ["client", "conferenceTransfer", "consultTransfer", "endpoint", "error", "forwardTransfer", "noAnswerTransfer", "notAvailableTransfer", "other", "peer", "spam", "system", "timeout", "transfer", "transportFailure", "uncallable"]
+        allowed_values = ["client", "conferenceTransfer", "consultTransfer", "endpoint", "endpointDnd", "error", "forwardTransfer", "noAnswerTransfer", "notAvailableTransfer", "other", "peer", "spam", "system", "timeout", "transfer", "transferDnd", "transportFailure", "uncallable"]
         if disconnect_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for disconnect_type -> " + disconnect_type)
             self._disconnect_type = "outdated_sdk_version"
@@ -2247,6 +2253,59 @@ class FlowMetricsTopicFlowMetricRecord(object):
         self._routing_ring = routing_ring
 
     @property
+    def routing_rule(self) -> str:
+        """
+        Gets the routing_rule of this FlowMetricsTopicFlowMetricRecord.
+        Routing rule for preferred, conditional and predictive routing type
+
+        :return: The routing_rule of this FlowMetricsTopicFlowMetricRecord.
+        :rtype: str
+        """
+        return self._routing_rule
+
+    @routing_rule.setter
+    def routing_rule(self, routing_rule: str) -> None:
+        """
+        Sets the routing_rule of this FlowMetricsTopicFlowMetricRecord.
+        Routing rule for preferred, conditional and predictive routing type
+
+        :param routing_rule: The routing_rule of this FlowMetricsTopicFlowMetricRecord.
+        :type: str
+        """
+        
+
+        self._routing_rule = routing_rule
+
+    @property
+    def routing_rule_type(self) -> str:
+        """
+        Gets the routing_rule_type of this FlowMetricsTopicFlowMetricRecord.
+        Routing rule type
+
+        :return: The routing_rule_type of this FlowMetricsTopicFlowMetricRecord.
+        :rtype: str
+        """
+        return self._routing_rule_type
+
+    @routing_rule_type.setter
+    def routing_rule_type(self, routing_rule_type: str) -> None:
+        """
+        Sets the routing_rule_type of this FlowMetricsTopicFlowMetricRecord.
+        Routing rule type
+
+        :param routing_rule_type: The routing_rule_type of this FlowMetricsTopicFlowMetricRecord.
+        :type: str
+        """
+        if isinstance(routing_rule_type, int):
+            routing_rule_type = str(routing_rule_type)
+        allowed_values = ["Bullseye", "Conditional", "Predictive", "Preferred"]
+        if routing_rule_type.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for routing_rule_type -> " + routing_rule_type)
+            self._routing_rule_type = "outdated_sdk_version"
+        else:
+            self._routing_rule_type = routing_rule_type
+
+    @property
     def selected_agent_id(self) -> str:
         """
         Gets the selected_agent_id of this FlowMetricsTopicFlowMetricRecord.
@@ -2532,7 +2591,7 @@ class FlowMetricsTopicFlowMetricRecord(object):
         """
         if isinstance(used_routing, int):
             used_routing = str(used_routing)
-        allowed_values = ["Bullseye", "Conditional", "Last", "Manual", "Predictive", "Preferred", "Standard", "Vip"]
+        allowed_values = ["Bullseye", "Conditional", "Direct", "Last", "Manual", "Predictive", "Preferred", "Standard", "Vip"]
         if used_routing.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for used_routing -> " + used_routing)
             self._used_routing = "outdated_sdk_version"

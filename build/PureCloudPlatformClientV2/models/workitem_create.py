@@ -387,7 +387,7 @@ class WorkitemCreate(object):
     def custom_fields(self) -> Dict[str, object]:
         """
         Gets the custom_fields of this WorkitemCreate.
-        Custom fields defined in the schema referenced by the Workitems Worktype.
+        Custom fields defined in the schema referenced by the worktype of the workitem.
 
         :return: The custom_fields of this WorkitemCreate.
         :rtype: dict(str, object)
@@ -398,7 +398,7 @@ class WorkitemCreate(object):
     def custom_fields(self, custom_fields: Dict[str, object]) -> None:
         """
         Sets the custom_fields of this WorkitemCreate.
-        Custom fields defined in the schema referenced by the Workitems Worktype.
+        Custom fields defined in the schema referenced by the worktype of the workitem.
 
         :param custom_fields: The custom_fields of this WorkitemCreate.
         :type: dict(str, object)

@@ -16,6 +16,7 @@ title: V2MobiusRulesTopicRule
 | **enabled** | **bool** |  | [optional] |
 | **in_alarm** | **bool** |  | [optional] |
 | **action** | **str** |  | [optional] |
+| **date_created** | **datetime** |  | [optional] |
 {: class="table table-striped"}
 
 

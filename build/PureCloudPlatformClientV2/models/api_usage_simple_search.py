@@ -121,7 +121,7 @@ class ApiUsageSimpleSearch(object):
     def oauth_client_names(self) -> List[str]:
         """
         Gets the oauth_client_names of this ApiUsageSimpleSearch.
-        Behaves like a SQL WHERE with multiple AND operators. Specifies a list of OAuth client names to be queried.
+        Behaves like a SQL WHERE with multiple IN operators. Specifies a list of OAuth client names to be queried.
 
         :return: The oauth_client_names of this ApiUsageSimpleSearch.
         :rtype: list[str]
@@ -132,7 +132,7 @@ class ApiUsageSimpleSearch(object):
     def oauth_client_names(self, oauth_client_names: List[str]) -> None:
         """
         Sets the oauth_client_names of this ApiUsageSimpleSearch.
-        Behaves like a SQL WHERE with multiple AND operators. Specifies a list of OAuth client names to be queried.
+        Behaves like a SQL WHERE with multiple IN operators. Specifies a list of OAuth client names to be queried.
 
         :param oauth_client_names: The oauth_client_names of this ApiUsageSimpleSearch.
         :type: list[str]
@@ -145,7 +145,7 @@ class ApiUsageSimpleSearch(object):
     def http_methods(self) -> List[str]:
         """
         Gets the http_methods of this ApiUsageSimpleSearch.
-        Behaves like a SQL WHERE with multiple AND operators. Specifies a list of HTTP methods to be queried.
+        Behaves like a SQL WHERE with multiple IN operators. Specifies a list of HTTP methods to be queried.
 
         :return: The http_methods of this ApiUsageSimpleSearch.
         :rtype: list[str]
@@ -156,7 +156,7 @@ class ApiUsageSimpleSearch(object):
     def http_methods(self, http_methods: List[str]) -> None:
         """
         Sets the http_methods of this ApiUsageSimpleSearch.
-        Behaves like a SQL WHERE with multiple AND operators. Specifies a list of HTTP methods to be queried.
+        Behaves like a SQL WHERE with multiple IN operators. Specifies a list of HTTP methods to be queried.
 
         :param http_methods: The http_methods of this ApiUsageSimpleSearch.
         :type: list[str]
@@ -169,7 +169,7 @@ class ApiUsageSimpleSearch(object):
     def template_uris(self) -> List[str]:
         """
         Gets the template_uris of this ApiUsageSimpleSearch.
-        Behaves like a SQL WHERE with multiple AND operators. Specifies a list of Template Uris to be queried.
+        Behaves like a SQL WHERE with multiple IN operators. Specifies a list of Template Uris to be queried.
 
         :return: The template_uris of this ApiUsageSimpleSearch.
         :rtype: list[str]
@@ -180,7 +180,7 @@ class ApiUsageSimpleSearch(object):
     def template_uris(self, template_uris: List[str]) -> None:
         """
         Sets the template_uris of this ApiUsageSimpleSearch.
-        Behaves like a SQL WHERE with multiple AND operators. Specifies a list of Template Uris to be queried.
+        Behaves like a SQL WHERE with multiple IN operators. Specifies a list of Template Uris to be queried.
 
         :param template_uris: The template_uris of this ApiUsageSimpleSearch.
         :type: list[str]
