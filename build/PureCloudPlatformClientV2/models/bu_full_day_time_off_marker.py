@@ -53,7 +53,9 @@ class BuFullDayTimeOffMarker(object):
             'description': 'str',
             'activity_code_id': 'str',
             'paid': 'bool',
-            'time_off_request_id': 'str'
+            'payable_minutes': 'int',
+            'time_off_request_id': 'str',
+            'time_off_request_sync_version': 'int'
         }
 
         self.attribute_map = {
@@ -62,7 +64,9 @@ class BuFullDayTimeOffMarker(object):
             'description': 'description',
             'activity_code_id': 'activityCodeId',
             'paid': 'paid',
-            'time_off_request_id': 'timeOffRequestId'
+            'payable_minutes': 'payableMinutes',
+            'time_off_request_id': 'timeOffRequestId',
+            'time_off_request_sync_version': 'timeOffRequestSyncVersion'
         }
 
         self._business_unit_date = None
@@ -70,7 +74,9 @@ class BuFullDayTimeOffMarker(object):
         self._description = None
         self._activity_code_id = None
         self._paid = None
+        self._payable_minutes = None
         self._time_off_request_id = None
+        self._time_off_request_sync_version = None
 
     @property
     def business_unit_date(self) -> date:
@@ -193,6 +199,30 @@ class BuFullDayTimeOffMarker(object):
         self._paid = paid
 
     @property
+    def payable_minutes(self) -> int:
+        """
+        Gets the payable_minutes of this BuFullDayTimeOffMarker.
+        Payable minutes for the time off marker
+
+        :return: The payable_minutes of this BuFullDayTimeOffMarker.
+        :rtype: int
+        """
+        return self._payable_minutes
+
+    @payable_minutes.setter
+    def payable_minutes(self, payable_minutes: int) -> None:
+        """
+        Sets the payable_minutes of this BuFullDayTimeOffMarker.
+        Payable minutes for the time off marker
+
+        :param payable_minutes: The payable_minutes of this BuFullDayTimeOffMarker.
+        :type: int
+        """
+        
+
+        self._payable_minutes = payable_minutes
+
+    @property
     def time_off_request_id(self) -> str:
         """
         Gets the time_off_request_id of this BuFullDayTimeOffMarker.
@@ -215,6 +245,30 @@ class BuFullDayTimeOffMarker(object):
         
 
         self._time_off_request_id = time_off_request_id
+
+    @property
+    def time_off_request_sync_version(self) -> int:
+        """
+        Gets the time_off_request_sync_version of this BuFullDayTimeOffMarker.
+        The sync version of the full day time off request for which the scheduled activity is associated
+
+        :return: The time_off_request_sync_version of this BuFullDayTimeOffMarker.
+        :rtype: int
+        """
+        return self._time_off_request_sync_version
+
+    @time_off_request_sync_version.setter
+    def time_off_request_sync_version(self, time_off_request_sync_version: int) -> None:
+        """
+        Sets the time_off_request_sync_version of this BuFullDayTimeOffMarker.
+        The sync version of the full day time off request for which the scheduled activity is associated
+
+        :param time_off_request_sync_version: The time_off_request_sync_version of this BuFullDayTimeOffMarker.
+        :type: int
+        """
+        
+
+        self._time_off_request_sync_version = time_off_request_sync_version
 
     def to_dict(self):
         """

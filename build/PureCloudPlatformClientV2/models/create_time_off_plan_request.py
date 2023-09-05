@@ -32,6 +32,8 @@ from typing import TYPE_CHECKING
 from typing import List
 from typing import Dict
 
+if TYPE_CHECKING:
+    from . import HrisTimeOffType
 
 class CreateTimeOffPlanRequest(object):
     """
@@ -53,6 +55,7 @@ class CreateTimeOffPlanRequest(object):
             'time_off_limit_ids': 'list[str]',
             'auto_approval_rule': 'str',
             'days_before_start_to_expire_from_waitlist': 'int',
+            'hris_time_off_type': 'HrisTimeOffType',
             'active': 'bool'
         }
 
@@ -62,6 +65,7 @@ class CreateTimeOffPlanRequest(object):
             'time_off_limit_ids': 'timeOffLimitIds',
             'auto_approval_rule': 'autoApprovalRule',
             'days_before_start_to_expire_from_waitlist': 'daysBeforeStartToExpireFromWaitlist',
+            'hris_time_off_type': 'hrisTimeOffType',
             'active': 'active'
         }
 
@@ -70,6 +74,7 @@ class CreateTimeOffPlanRequest(object):
         self._time_off_limit_ids = None
         self._auto_approval_rule = None
         self._days_before_start_to_expire_from_waitlist = None
+        self._hris_time_off_type = None
         self._active = None
 
     @property
@@ -196,6 +201,30 @@ class CreateTimeOffPlanRequest(object):
         
 
         self._days_before_start_to_expire_from_waitlist = days_before_start_to_expire_from_waitlist
+
+    @property
+    def hris_time_off_type(self) -> 'HrisTimeOffType':
+        """
+        Gets the hris_time_off_type of this CreateTimeOffPlanRequest.
+        Time off type, if this time off plan is associated with the integration.
+
+        :return: The hris_time_off_type of this CreateTimeOffPlanRequest.
+        :rtype: HrisTimeOffType
+        """
+        return self._hris_time_off_type
+
+    @hris_time_off_type.setter
+    def hris_time_off_type(self, hris_time_off_type: 'HrisTimeOffType') -> None:
+        """
+        Sets the hris_time_off_type of this CreateTimeOffPlanRequest.
+        Time off type, if this time off plan is associated with the integration.
+
+        :param hris_time_off_type: The hris_time_off_type of this CreateTimeOffPlanRequest.
+        :type: HrisTimeOffType
+        """
+        
+
+        self._hris_time_off_type = hris_time_off_type
 
     @property
     def active(self) -> bool:

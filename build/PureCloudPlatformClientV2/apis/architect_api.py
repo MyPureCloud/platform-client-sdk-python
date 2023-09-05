@@ -54,6 +54,7 @@ from ..models import DependencyStatus
 from ..models import DependencyType
 from ..models import DependencyTypeEntityListing
 from ..models import EmergencyGroup
+from ..models import EmergencyGroupDivisionViewEntityListing
 from ..models import EmergencyGroupListing
 from ..models import ErrorBody
 from ..models import ExecutionDataRequest
@@ -80,6 +81,7 @@ from ..models import GrammarLanguage
 from ..models import GrammarListing
 from ..models import HistoryListing
 from ..models import IVR
+from ..models import IVRDivisionViewEntityListing
 from ..models import IVREntityListing
 from ..models import Operation
 from ..models import Prompt
@@ -89,8 +91,10 @@ from ..models import PromptAssetEntityListing
 from ..models import PromptEntityListing
 from ..models import RegisterArchitectJobResponse
 from ..models import Schedule
+from ..models import ScheduleDivisionViewEntityListing
 from ..models import ScheduleEntityListing
 from ..models import ScheduleGroup
+from ..models import ScheduleGroupDivisionViewEntityListing
 from ..models import ScheduleGroupEntityListing
 from ..models import SystemPrompt
 from ..models import SystemPromptAsset
@@ -2542,6 +2546,99 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def get_architect_emergencygroups_divisionviews(self, **kwargs) -> 'EmergencyGroupDivisionViewEntityListing':
+        """
+        Get a pageable list of basic emergency group objects filterable by query parameters.
+        This returns emergency groups consisting of name and division. If one or more IDs are specified, the search will fetch flow outcomes that match the given ID(s) and not use any additional supplied query parameters in the search.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_architect_emergencygroups_divisionviews(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int page_number: Page number
+        :param int page_size: Page size
+        :param str sort_by: Sort by
+        :param str sort_order: Sort order
+        :param list[str] id: ID of the Emergency Groups to filter by.
+        :param str name: Name of the Emergency Group to filter by.
+        :param list[str] division_id: List of divisionIds on which to filter.
+        :return: EmergencyGroupDivisionViewEntityListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['page_number', 'page_size', 'sort_by', 'sort_order', 'id', 'name', 'division_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_architect_emergencygroups_divisionviews" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/architect/emergencygroups/divisionviews'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'page_number' in params:
+            query_params['pageNumber'] = params['page_number']
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+        if 'sort_by' in params:
+            query_params['sortBy'] = params['sort_by']
+        if 'sort_order' in params:
+            query_params['sortOrder'] = params['sort_order']
+        if 'id' in params:
+            query_params['id'] = params['id']
+        if 'name' in params:
+            query_params['name'] = params['name']
+        if 'division_id' in params:
+            query_params['divisionId'] = params['division_id']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='EmergencyGroupDivisionViewEntityListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def get_architect_grammar(self, grammar_id: str, **kwargs) -> 'Grammar':
         """
         Get a grammar
@@ -2976,6 +3073,99 @@ class ArchitectApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='IVREntityListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_architect_ivrs_divisionviews(self, **kwargs) -> 'IVRDivisionViewEntityListing':
+        """
+        Get a pageable list of basic ivr configuration information objects filterable by query parameters.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_architect_ivrs_divisionviews(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int page_number: Page number
+        :param int page_size: Page size
+        :param str sort_by: Sort by
+        :param str sort_order: Sort order
+        :param list[str] id: ID of the IVR to filter by.
+        :param str name: Name of the IVR to filter by.
+        :param list[str] division_id: List of divisionIds on which to filter.
+        :return: IVRDivisionViewEntityListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['page_number', 'page_size', 'sort_by', 'sort_order', 'id', 'name', 'division_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_architect_ivrs_divisionviews" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/architect/ivrs/divisionviews'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'page_number' in params:
+            query_params['pageNumber'] = params['page_number']
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+        if 'sort_by' in params:
+            query_params['sortBy'] = params['sort_by']
+        if 'sort_order' in params:
+            query_params['sortOrder'] = params['sort_order']
+        if 'id' in params:
+            query_params['id'] = params['id']
+        if 'name' in params:
+            query_params['name'] = params['name']
+        if 'division_id' in params:
+            query_params['divisionId'] = params['division_id']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='IVRDivisionViewEntityListing',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -3667,6 +3857,99 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def get_architect_schedulegroups_divisionviews(self, **kwargs) -> 'ScheduleGroupDivisionViewEntityListing':
+        """
+        Get a pageable list of basic schedule group configuration information objects filterable by query parameters.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_architect_schedulegroups_divisionviews(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int page_number: Page number
+        :param int page_size: Page size
+        :param str sort_by: Sort by
+        :param str sort_order: Sort order
+        :param list[str] id: ID of the schedule group to filter by.
+        :param str name: Name of the schedule group to filter by.
+        :param list[str] division_id: List of divisionIds on which to filter.
+        :return: ScheduleGroupDivisionViewEntityListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['page_number', 'page_size', 'sort_by', 'sort_order', 'id', 'name', 'division_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_architect_schedulegroups_divisionviews" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/architect/schedulegroups/divisionviews'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'page_number' in params:
+            query_params['pageNumber'] = params['page_number']
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+        if 'sort_by' in params:
+            query_params['sortBy'] = params['sort_by']
+        if 'sort_order' in params:
+            query_params['sortOrder'] = params['sort_order']
+        if 'id' in params:
+            query_params['id'] = params['id']
+        if 'name' in params:
+            query_params['name'] = params['name']
+        if 'division_id' in params:
+            query_params['divisionId'] = params['division_id']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ScheduleGroupDivisionViewEntityListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def get_architect_schedules(self, **kwargs) -> 'ScheduleEntityListing':
         """
         Get a list of schedules.
@@ -3753,6 +4036,99 @@ class ArchitectApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='ScheduleEntityListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_architect_schedules_divisionviews(self, **kwargs) -> 'ScheduleDivisionViewEntityListing':
+        """
+        Get a pageable list of basic schedule configuration information objects filterable by query parameters.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_architect_schedules_divisionviews(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int page_number: Page number
+        :param int page_size: Page size
+        :param str sort_by: Sort by
+        :param str sort_order: Sort order
+        :param list[str] id: ID of the schedule group to filter by.
+        :param str name: Name of the schedule group to filter by.
+        :param list[str] division_id: List of divisionIds on which to filter.
+        :return: ScheduleDivisionViewEntityListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['page_number', 'page_size', 'sort_by', 'sort_order', 'id', 'name', 'division_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_architect_schedules_divisionviews" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/architect/schedules/divisionviews'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'page_number' in params:
+            query_params['pageNumber'] = params['page_number']
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+        if 'sort_by' in params:
+            query_params['sortBy'] = params['sort_by']
+        if 'sort_order' in params:
+            query_params['sortOrder'] = params['sort_order']
+        if 'id' in params:
+            query_params['id'] = params['id']
+        if 'name' in params:
+            query_params['name'] = params['name']
+        if 'division_id' in params:
+            query_params['divisionId'] = params['division_id']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ScheduleDivisionViewEntityListing',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

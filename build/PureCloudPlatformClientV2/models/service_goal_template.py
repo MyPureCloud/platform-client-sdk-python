@@ -36,6 +36,7 @@ if TYPE_CHECKING:
     from . import BuAbandonRate
     from . import BuAverageSpeedOfAnswer
     from . import BuServiceLevel
+    from . import ServiceGoalTemplateImpactOverride
     from . import WfmVersionedEntityMetadata
 
 class ServiceGoalTemplate(object):
@@ -59,6 +60,7 @@ class ServiceGoalTemplate(object):
             'average_speed_of_answer': 'BuAverageSpeedOfAnswer',
             'abandon_rate': 'BuAbandonRate',
             'metadata': 'WfmVersionedEntityMetadata',
+            'impact_override': 'ServiceGoalTemplateImpactOverride',
             'self_uri': 'str'
         }
 
@@ -69,6 +71,7 @@ class ServiceGoalTemplate(object):
             'average_speed_of_answer': 'averageSpeedOfAnswer',
             'abandon_rate': 'abandonRate',
             'metadata': 'metadata',
+            'impact_override': 'impactOverride',
             'self_uri': 'selfUri'
         }
 
@@ -78,6 +81,7 @@ class ServiceGoalTemplate(object):
         self._average_speed_of_answer = None
         self._abandon_rate = None
         self._metadata = None
+        self._impact_override = None
         self._self_uri = None
 
     @property
@@ -223,6 +227,30 @@ class ServiceGoalTemplate(object):
         
 
         self._metadata = metadata
+
+    @property
+    def impact_override(self) -> 'ServiceGoalTemplateImpactOverride':
+        """
+        Gets the impact_override of this ServiceGoalTemplate.
+        Settings controlling max percent increase and decrease of service goals for this service goal template
+
+        :return: The impact_override of this ServiceGoalTemplate.
+        :rtype: ServiceGoalTemplateImpactOverride
+        """
+        return self._impact_override
+
+    @impact_override.setter
+    def impact_override(self, impact_override: 'ServiceGoalTemplateImpactOverride') -> None:
+        """
+        Sets the impact_override of this ServiceGoalTemplate.
+        Settings controlling max percent increase and decrease of service goals for this service goal template
+
+        :param impact_override: The impact_override of this ServiceGoalTemplate.
+        :type: ServiceGoalTemplateImpactOverride
+        """
+        
+
+        self._impact_override = impact_override
 
     @property
     def self_uri(self) -> str:

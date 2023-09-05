@@ -2020,7 +2020,7 @@ except ApiException as e:
 
 <a name="get_routing_message_recipients"></a>
 
-## [**RecipientListing**](RecipientListing.html) get_routing_message_recipients(messenger_type=messenger_type, page_size=page_size, page_number=page_number)
+## [**RecipientListing**](RecipientListing.html) get_routing_message_recipients(messenger_type=messenger_type, name=name, page_size=page_size, page_number=page_number)
 
 
 
@@ -2046,12 +2046,13 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.RoutingApi()
 messenger_type = 'messenger_type_example' # str | Messenger Type (optional)
+name = 'name_example' # str | Recipient Name (optional)
 page_size = 25 # int | Page size (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
 
 try:
     # Get recipients
-    api_response = api_instance.get_routing_message_recipients(messenger_type=messenger_type, page_size=page_size, page_number=page_number)
+    api_response = api_instance.get_routing_message_recipients(messenger_type=messenger_type, name=name, page_size=page_size, page_number=page_number)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling RoutingApi->get_routing_message_recipients: %s\n" % e)
@@ -2063,6 +2064,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **messenger_type** | **str**| Messenger Type | [optional] <br />**Values**: sms, facebook, twitter, line, whatsapp, open, instagram |
+| **name** | **str**| Recipient Name | [optional]  |
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 {: class="table table-striped"}
@@ -5921,7 +5923,7 @@ void (empty response body)
 
 <a name="post_routing_skillgroups"></a>
 
-## [**SkillGroup**](SkillGroup.html) post_routing_skillgroups(body)
+## [**SkillGroupWithMemberDivisions**](SkillGroupWithMemberDivisions.html) post_routing_skillgroups(body)
 
 
 
@@ -5929,7 +5931,7 @@ Create a skill group
 
 Wraps POST /api/v2/routing/skillgroups 
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * routing:skillGroup:add
 
@@ -5946,7 +5948,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.RoutingApi()
-body = PureCloudPlatformClientV2.SkillGroup() # SkillGroup | Create skill group
+body = PureCloudPlatformClientV2.SkillGroupWithMemberDivisions() # SkillGroupWithMemberDivisions | Create skill group
 
 try:
     # Create a skill group
@@ -5961,12 +5963,12 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**SkillGroup**](SkillGroup.html)| Create skill group |  |
+| **body** | [**SkillGroupWithMemberDivisions**](SkillGroupWithMemberDivisions.html)| Create skill group |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**SkillGroup**](SkillGroup.html)
+[**SkillGroupWithMemberDivisions**](SkillGroupWithMemberDivisions.html)
 
 <a name="post_routing_skills"></a>
 
@@ -6499,7 +6501,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.RoutingApi()
 recipient_id = 'recipient_id_example' # str | Recipient ID
-body = PureCloudPlatformClientV2.Recipient() # Recipient | Recipient
+body = PureCloudPlatformClientV2.RecipientRequest() # RecipientRequest | Recipient
 
 try:
     # Update a recipient
@@ -6515,7 +6517,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **recipient_id** | **str**| Recipient ID |  |
-| **body** | [**Recipient**](Recipient.html)| Recipient |  |
+| **body** | [**RecipientRequest**](RecipientRequest.html)| Recipient |  |
 {: class="table table-striped"}
 
 ### Return type

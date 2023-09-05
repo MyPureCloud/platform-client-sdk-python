@@ -354,7 +354,7 @@ except ApiException as e:
 
 <a name="get_analytics_botflow_reportingturns"></a>
 
-## [**ReportingTurnsResponse**](ReportingTurnsResponse.html) get_analytics_botflow_reportingturns(bot_flow_id, after=after, page_size=page_size, action_id=action_id, session_id=session_id, language=language, ask_action_results=ask_action_results)
+## [**ReportingTurnsResponse**](ReportingTurnsResponse.html) get_analytics_botflow_reportingturns(bot_flow_id, after=after, page_size=page_size, interval=interval, action_id=action_id, session_id=session_id, language=language, ask_action_results=ask_action_results)
 
 
 
@@ -384,6 +384,7 @@ api_instance = PureCloudPlatformClientV2.AnalyticsApi()
 bot_flow_id = 'bot_flow_id_example' # str | ID of the bot flow.
 after = 'after_example' # str | The cursor that points to the ID of the last item in the list of entities that has been returned. (optional)
 page_size = ''50'' # str | Max number of entities to return. Maximum of 250 (optional) (default to '50')
+interval = '2023-07-17T08:15:44.586Z/2023-07-26T09:22:33.111Z' # str | Date range filter based on the date the individual resources were completed. UTC is the default if no TZ is supplied, however alternate timezones can be used e.g: '2022-11-22T09:11:11.111+08:00/2022-11-30T07:17:44.586-07'. . Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss (optional)
 action_id = 'action_id_example' # str | Optional action ID to get the reporting turns associated to a particular flow action (optional)
 session_id = 'session_id_example' # str | Optional session ID to get the reporting turns for a particular session. Specifying a session ID alongside an action ID or a language or any ask action results is not allowed. (optional)
 language = 'en-us' # str | Optional language code to get the reporting turns for a particular language (optional)
@@ -391,7 +392,7 @@ ask_action_results = 'ask_action_results_example' # str | Optional case-insensit
 
 try:
     # Get Reporting Turns.
-    api_response = api_instance.get_analytics_botflow_reportingturns(bot_flow_id, after=after, page_size=page_size, action_id=action_id, session_id=session_id, language=language, ask_action_results=ask_action_results)
+    api_response = api_instance.get_analytics_botflow_reportingturns(bot_flow_id, after=after, page_size=page_size, interval=interval, action_id=action_id, session_id=session_id, language=language, ask_action_results=ask_action_results)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AnalyticsApi->get_analytics_botflow_reportingturns: %s\n" % e)
@@ -405,6 +406,7 @@ except ApiException as e:
 | **bot_flow_id** | **str**| ID of the bot flow. |  |
 | **after** | **str**| The cursor that points to the ID of the last item in the list of entities that has been returned. | [optional]  |
 | **page_size** | **str**| Max number of entities to return. Maximum of 250 | [optional] [default to &#39;50&#39;] |
+| **interval** | **str**| Date range filter based on the date the individual resources were completed. UTC is the default if no TZ is supplied, however alternate timezones can be used e.g: &#39;2022-11-22T09:11:11.111+08:00/2022-11-30T07:17:44.586-07&#39;. . Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss | [optional]  |
 | **action_id** | **str**| Optional action ID to get the reporting turns associated to a particular flow action | [optional]  |
 | **session_id** | **str**| Optional session ID to get the reporting turns for a particular session. Specifying a session ID alongside an action ID or a language or any ask action results is not allowed. | [optional]  |
 | **language** | **str**| Optional language code to get the reporting turns for a particular language | [optional]  |

@@ -844,12 +844,13 @@ class QualityApi(object):
         :param str evaluator_user_id: user id of the evaluator
         :param str name: name
         :param str group: group id
+        :param str form_context_id: shared id between form versions
         :return: AgentActivityEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['page_size', 'page_number', 'sort_by', 'expand', 'next_page', 'previous_page', 'start_time', 'end_time', 'agent_user_id', 'evaluator_user_id', 'name', 'group']
+        all_params = ['page_size', 'page_number', 'sort_by', 'expand', 'next_page', 'previous_page', 'start_time', 'end_time', 'agent_user_id', 'evaluator_user_id', 'name', 'group', 'form_context_id']
         all_params.append('callback')
 
         params = locals()
@@ -892,6 +893,8 @@ class QualityApi(object):
             query_params['name'] = params['name']
         if 'group' in params:
             query_params['group'] = params['group']
+        if 'form_context_id' in params:
+            query_params['formContextId'] = params['form_context_id']
 
         header_params = {}
 
@@ -1472,6 +1475,7 @@ class QualityApi(object):
         :param str queue_id: queue id
         :param str start_time: start time of the evaluation query
         :param str end_time: end time of the evaluation query
+        :param str form_context_id: shared id between form versions
         :param list[str] evaluation_state: 
         :param bool is_released: the evaluation has been released
         :param bool agent_has_read: agent has the evaluation
@@ -1483,7 +1487,7 @@ class QualityApi(object):
                  returns the request thread.
         """
 
-        all_params = ['page_size', 'page_number', 'sort_by', 'expand', 'next_page', 'previous_page', 'conversation_id', 'agent_user_id', 'evaluator_user_id', 'assignee_user_id', 'queue_id', 'start_time', 'end_time', 'evaluation_state', 'is_released', 'agent_has_read', 'expand_answer_total_scores', 'maximum', 'sort_order']
+        all_params = ['page_size', 'page_number', 'sort_by', 'expand', 'next_page', 'previous_page', 'conversation_id', 'agent_user_id', 'evaluator_user_id', 'assignee_user_id', 'queue_id', 'start_time', 'end_time', 'form_context_id', 'evaluation_state', 'is_released', 'agent_has_read', 'expand_answer_total_scores', 'maximum', 'sort_order']
         all_params.append('callback')
 
         params = locals()
@@ -1528,6 +1532,8 @@ class QualityApi(object):
             query_params['startTime'] = params['start_time']
         if 'end_time' in params:
             query_params['endTime'] = params['end_time']
+        if 'form_context_id' in params:
+            query_params['formContextId'] = params['form_context_id']
         if 'evaluation_state' in params:
             query_params['evaluationState'] = params['evaluation_state']
         if 'is_released' in params:

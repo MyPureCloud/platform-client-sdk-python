@@ -561,6 +561,7 @@ class AnalyticsApi(object):
         :param str bot_flow_id: ID of the bot flow. (required)
         :param str after: The cursor that points to the ID of the last item in the list of entities that has been returned.
         :param str page_size: Max number of entities to return. Maximum of 250
+        :param str interval: Date range filter based on the date the individual resources were completed. UTC is the default if no TZ is supplied, however alternate timezones can be used e.g: '2022-11-22T09:11:11.111+08:00/2022-11-30T07:17:44.586-07'. . Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
         :param str action_id: Optional action ID to get the reporting turns associated to a particular flow action
         :param str session_id: Optional session ID to get the reporting turns for a particular session. Specifying a session ID alongside an action ID or a language or any ask action results is not allowed.
         :param str language: Optional language code to get the reporting turns for a particular language
@@ -570,7 +571,7 @@ class AnalyticsApi(object):
                  returns the request thread.
         """
 
-        all_params = ['bot_flow_id', 'after', 'page_size', 'action_id', 'session_id', 'language', 'ask_action_results']
+        all_params = ['bot_flow_id', 'after', 'page_size', 'interval', 'action_id', 'session_id', 'language', 'ask_action_results']
         all_params.append('callback')
 
         params = locals()
@@ -598,6 +599,8 @@ class AnalyticsApi(object):
             query_params['after'] = params['after']
         if 'page_size' in params:
             query_params['pageSize'] = params['page_size']
+        if 'interval' in params:
+            query_params['interval'] = params['interval']
         if 'action_id' in params:
             query_params['actionId'] = params['action_id']
         if 'session_id' in params:

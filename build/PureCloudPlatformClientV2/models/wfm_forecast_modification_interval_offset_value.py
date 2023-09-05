@@ -64,7 +64,7 @@ class WfmForecastModificationIntervalOffsetValue(object):
     def interval_index(self) -> int:
         """
         Gets the interval_index of this WfmForecastModificationIntervalOffsetValue.
-        The number of 15 minute intervals past referenceStartDate to which to apply this modification
+        The number of intervals past referenceStartDate to which to apply this modification
 
         :return: The interval_index of this WfmForecastModificationIntervalOffsetValue.
         :rtype: int
@@ -75,7 +75,7 @@ class WfmForecastModificationIntervalOffsetValue(object):
     def interval_index(self, interval_index: int) -> None:
         """
         Sets the interval_index of this WfmForecastModificationIntervalOffsetValue.
-        The number of 15 minute intervals past referenceStartDate to which to apply this modification
+        The number of intervals past referenceStartDate to which to apply this modification
 
         :param interval_index: The interval_index of this WfmForecastModificationIntervalOffsetValue.
         :type: int

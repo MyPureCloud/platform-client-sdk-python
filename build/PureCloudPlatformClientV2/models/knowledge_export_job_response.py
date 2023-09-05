@@ -36,6 +36,7 @@ if TYPE_CHECKING:
     from . import ErrorBody
     from . import KnowledgeBase
     from . import KnowledgeExportJobFilter
+    from . import UserReference
 
 class KnowledgeExportJobResponse(object):
     """
@@ -59,6 +60,7 @@ class KnowledgeExportJobResponse(object):
             'export_filter': 'KnowledgeExportJobFilter',
             'status': 'str',
             'knowledge_base': 'KnowledgeBase',
+            'created_by': 'UserReference',
             'date_created': 'datetime',
             'date_modified': 'datetime',
             'error_information': 'ErrorBody',
@@ -73,6 +75,7 @@ class KnowledgeExportJobResponse(object):
             'export_filter': 'exportFilter',
             'status': 'status',
             'knowledge_base': 'knowledgeBase',
+            'created_by': 'createdBy',
             'date_created': 'dateCreated',
             'date_modified': 'dateModified',
             'error_information': 'errorInformation',
@@ -86,6 +89,7 @@ class KnowledgeExportJobResponse(object):
         self._export_filter = None
         self._status = None
         self._knowledge_base = None
+        self._created_by = None
         self._date_created = None
         self._date_modified = None
         self._error_information = None
@@ -268,6 +272,30 @@ class KnowledgeExportJobResponse(object):
         
 
         self._knowledge_base = knowledge_base
+
+    @property
+    def created_by(self) -> 'UserReference':
+        """
+        Gets the created_by of this KnowledgeExportJobResponse.
+        The user who created the operation
+
+        :return: The created_by of this KnowledgeExportJobResponse.
+        :rtype: UserReference
+        """
+        return self._created_by
+
+    @created_by.setter
+    def created_by(self, created_by: 'UserReference') -> None:
+        """
+        Sets the created_by of this KnowledgeExportJobResponse.
+        The user who created the operation
+
+        :param created_by: The created_by of this KnowledgeExportJobResponse.
+        :type: UserReference
+        """
+        
+
+        self._created_by = created_by
 
     @property
     def date_created(self) -> datetime:

@@ -53,6 +53,8 @@ from ..models import AsyncQueryStatus
 from ..models import BulkCallbackDisconnectRequest
 from ..models import BulkCallbackPatchRequest
 from ..models import BulkCallbackPatchResponse
+from ..models import CachedMediaItem
+from ..models import CachedMediaItemEntityListing
 from ..models import CallCommand
 from ..models import CallConversation
 from ..models import CallConversationEntityListing
@@ -137,11 +139,17 @@ from ..models import MessagingSettingDefaultRequest
 from ..models import MessagingSettingPatchRequest
 from ..models import MessagingSettingRequest
 from ..models import MessagingStickerEntityListing
+from ..models import OpenEventNormalizedMessage
+from ..models import OpenInboundNormalizedEvent
+from ..models import OpenInboundNormalizedMessage
+from ..models import OpenInboundNormalizedReceipt
 from ..models import OpenIntegration
 from ..models import OpenIntegrationEntityListing
 from ..models import OpenIntegrationRequest
 from ..models import OpenIntegrationUpdateRequest
+from ..models import OpenMessageNormalizedMessage
 from ..models import OpenNormalizedMessage
+from ..models import OpenReceiptNormalizedMessage
 from ..models import ParticipantAttributes
 from ..models import PatchCallbackRequest
 from ..models import PatchCallbackResponse
@@ -576,6 +584,84 @@ class ConversationsApi(object):
             path_params['conversationId'] = params['conversation_id']
         if 'attachment_id' in params:
             path_params['attachmentId'] = params['attachment_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def delete_conversations_messages_cachedmedia_cached_media_item_id(self, cached_media_item_id: str, **kwargs) -> None:
+        """
+        Remove a cached media item asychronously
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_conversations_messages_cachedmedia_cached_media_item_id(cached_media_item_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str cached_media_item_id: cachedMediaItemId (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['cached_media_item_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_conversations_messages_cachedmedia_cached_media_item_id" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'cached_media_item_id' is set
+        if ('cached_media_item_id' not in params) or (params['cached_media_item_id'] is None):
+            raise ValueError("Missing the required parameter `cached_media_item_id` when calling `delete_conversations_messages_cachedmedia_cached_media_item_id`")
+
+
+        resource_path = '/api/v2/conversations/messages/cachedmedia/{cachedMediaItemId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'cached_media_item_id' in params:
+            path_params['cachedMediaItemId'] = params['cached_media_item_id']
 
         query_params = {}
 
@@ -5967,6 +6053,165 @@ class ConversationsApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='MessageConversationEntityListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_conversations_messages_cachedmedia(self, **kwargs) -> 'CachedMediaItemEntityListing':
+        """
+        Get a list of cached media items
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_conversations_messages_cachedmedia(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int page_size: Page size
+        :param int page_number: Page number
+        :param str url: URL to search for
+        :return: CachedMediaItemEntityListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['page_size', 'page_number', 'url']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_conversations_messages_cachedmedia" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/conversations/messages/cachedmedia'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+        if 'page_number' in params:
+            query_params['pageNumber'] = params['page_number']
+        if 'url' in params:
+            query_params['url'] = params['url']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='CachedMediaItemEntityListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_conversations_messages_cachedmedia_cached_media_item_id(self, cached_media_item_id: str, **kwargs) -> 'CachedMediaItem':
+        """
+        Get a cached media item
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_conversations_messages_cachedmedia_cached_media_item_id(cached_media_item_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str cached_media_item_id: cachedMediaItemId (required)
+        :return: CachedMediaItem
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['cached_media_item_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_conversations_messages_cachedmedia_cached_media_item_id" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'cached_media_item_id' is set
+        if ('cached_media_item_id' not in params) or (params['cached_media_item_id'] is None):
+            raise ValueError("Missing the required parameter `cached_media_item_id` when calling `get_conversations_messages_cachedmedia_cached_media_item_id`")
+
+
+        resource_path = '/api/v2/conversations/messages/cachedmedia/{cachedMediaItemId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'cached_media_item_id' in params:
+            path_params['cachedMediaItemId'] = params['cached_media_item_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='CachedMediaItem',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -16199,6 +16444,258 @@ class ConversationsApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_conversations_message_inbound_open_event(self, integration_id: str, body: 'OpenInboundNormalizedEvent', **kwargs) -> 'OpenEventNormalizedMessage':
+        """
+        Send an inbound Open Event Message
+        Send an inbound event message to an Open Messaging integration. In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. This will either generate a new Conversation, or be a part of an existing conversation. See https://developer.genesys.cloud/api/digital/openmessaging/ for example usage.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_conversations_message_inbound_open_event(integration_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str integration_id: integrationId (required)
+        :param OpenInboundNormalizedEvent body: NormalizedMessage (required)
+        :return: OpenEventNormalizedMessage
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['integration_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_conversations_message_inbound_open_event" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'integration_id' is set
+        if ('integration_id' not in params) or (params['integration_id'] is None):
+            raise ValueError("Missing the required parameter `integration_id` when calling `post_conversations_message_inbound_open_event`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_conversations_message_inbound_open_event`")
+
+
+        resource_path = '/api/v2/conversations/messages/{integrationId}/inbound/open/event'.replace('{format}', 'json')
+        path_params = {}
+        if 'integration_id' in params:
+            path_params['integrationId'] = params['integration_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='OpenEventNormalizedMessage',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_conversations_message_inbound_open_message(self, integration_id: str, body: 'OpenInboundNormalizedMessage', **kwargs) -> 'OpenMessageNormalizedMessage':
+        """
+        Send inbound Open Message
+        Send an inbound message to an Open Messaging integration. In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. This will either generate a new Conversation, or be a part of an existing conversation. See https://developer.genesys.cloud/api/digital/openmessaging/ for example usage.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_conversations_message_inbound_open_message(integration_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str integration_id: integrationId (required)
+        :param OpenInboundNormalizedMessage body: NormalizedMessage (required)
+        :return: OpenMessageNormalizedMessage
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['integration_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_conversations_message_inbound_open_message" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'integration_id' is set
+        if ('integration_id' not in params) or (params['integration_id'] is None):
+            raise ValueError("Missing the required parameter `integration_id` when calling `post_conversations_message_inbound_open_message`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_conversations_message_inbound_open_message`")
+
+
+        resource_path = '/api/v2/conversations/messages/{integrationId}/inbound/open/message'.replace('{format}', 'json')
+        path_params = {}
+        if 'integration_id' in params:
+            path_params['integrationId'] = params['integration_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='OpenMessageNormalizedMessage',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_conversations_message_inbound_open_receipt(self, integration_id: str, body: 'OpenInboundNormalizedReceipt', **kwargs) -> 'OpenReceiptNormalizedMessage':
+        """
+        Send an inbound Open Receipt Message
+        Send an inbound open Receipt to an Open Messaging integration. In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. This will either generate a new Conversation, or be a part of an existing conversation. See https://developer.genesys.cloud/api/digital/openmessaging/ for example usage.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_conversations_message_inbound_open_receipt(integration_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str integration_id: integrationId (required)
+        :param OpenInboundNormalizedReceipt body: NormalizedMessage (required)
+        :return: OpenReceiptNormalizedMessage
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['integration_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_conversations_message_inbound_open_receipt" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'integration_id' is set
+        if ('integration_id' not in params) or (params['integration_id'] is None):
+            raise ValueError("Missing the required parameter `integration_id` when calling `post_conversations_message_inbound_open_receipt`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_conversations_message_inbound_open_receipt`")
+
+
+        resource_path = '/api/v2/conversations/messages/{integrationId}/inbound/open/receipt'.replace('{format}', 'json')
+        path_params = {}
+        if 'integration_id' in params:
+            path_params['integrationId'] = params['integration_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='OpenReceiptNormalizedMessage',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

@@ -56,6 +56,8 @@ class AdminTimeOffRequestPatch(object):
             'full_day_management_unit_dates': 'list[str]',
             'partial_day_start_date_times': 'list[datetime]',
             'daily_duration_minutes': 'int',
+            'duration_minutes': 'list[int]',
+            'payable_minutes': 'list[int]',
             'metadata': 'WfmVersionedEntityMetadata'
         }
 
@@ -66,6 +68,8 @@ class AdminTimeOffRequestPatch(object):
             'full_day_management_unit_dates': 'fullDayManagementUnitDates',
             'partial_day_start_date_times': 'partialDayStartDateTimes',
             'daily_duration_minutes': 'dailyDurationMinutes',
+            'duration_minutes': 'durationMinutes',
+            'payable_minutes': 'payableMinutes',
             'metadata': 'metadata'
         }
 
@@ -75,6 +79,8 @@ class AdminTimeOffRequestPatch(object):
         self._full_day_management_unit_dates = None
         self._partial_day_start_date_times = None
         self._daily_duration_minutes = None
+        self._duration_minutes = None
+        self._payable_minutes = None
         self._metadata = None
 
     @property
@@ -225,6 +231,54 @@ class AdminTimeOffRequestPatch(object):
         
 
         self._daily_duration_minutes = daily_duration_minutes
+
+    @property
+    def duration_minutes(self) -> List[int]:
+        """
+        Gets the duration_minutes of this AdminTimeOffRequestPatch.
+        Daily durations for each day of this time off request in minutes
+
+        :return: The duration_minutes of this AdminTimeOffRequestPatch.
+        :rtype: list[int]
+        """
+        return self._duration_minutes
+
+    @duration_minutes.setter
+    def duration_minutes(self, duration_minutes: List[int]) -> None:
+        """
+        Sets the duration_minutes of this AdminTimeOffRequestPatch.
+        Daily durations for each day of this time off request in minutes
+
+        :param duration_minutes: The duration_minutes of this AdminTimeOffRequestPatch.
+        :type: list[int]
+        """
+        
+
+        self._duration_minutes = duration_minutes
+
+    @property
+    def payable_minutes(self) -> List[int]:
+        """
+        Gets the payable_minutes of this AdminTimeOffRequestPatch.
+        Payable minutes for each day of this time off request
+
+        :return: The payable_minutes of this AdminTimeOffRequestPatch.
+        :rtype: list[int]
+        """
+        return self._payable_minutes
+
+    @payable_minutes.setter
+    def payable_minutes(self, payable_minutes: List[int]) -> None:
+        """
+        Sets the payable_minutes of this AdminTimeOffRequestPatch.
+        Payable minutes for each day of this time off request
+
+        :param payable_minutes: The payable_minutes of this AdminTimeOffRequestPatch.
+        :type: list[int]
+        """
+        
+
+        self._payable_minutes = payable_minutes
 
     @property
     def metadata(self) -> 'WfmVersionedEntityMetadata':

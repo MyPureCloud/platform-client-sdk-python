@@ -15,6 +15,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**delete_journey_segment**](JourneyApi.html#delete_journey_segment) | Delete a segment.|
 |[**get_analytics_journeys_aggregates_job**](JourneyApi.html#get_analytics_journeys_aggregates_job) | Get status for async query for journey aggregates|
 |[**get_analytics_journeys_aggregates_job_results**](JourneyApi.html#get_analytics_journeys_aggregates_job_results) | Fetch a page of results for an async aggregates query|
+|[**get_externalcontacts_contact_journey_sessions**](JourneyApi.html#get_externalcontacts_contact_journey_sessions) | Retrieve all sessions for a given external contact.|
 |[**get_journey_actionmap**](JourneyApi.html#get_journey_actionmap) | Retrieve a single action map.|
 |[**get_journey_actionmaps**](JourneyApi.html#get_journey_actionmaps) | Retrieve all action maps.|
 |[**get_journey_actionmaps_estimates_job**](JourneyApi.html#get_journey_actionmaps_estimates_job) | Get status of job.|
@@ -397,6 +398,61 @@ except ApiException as e:
 ### Return type
 
 [**JourneyAsyncAggregateQueryResponse**](JourneyAsyncAggregateQueryResponse.html)
+
+<a name="get_externalcontacts_contact_journey_sessions"></a>
+
+## [**SessionListing**](SessionListing.html) get_externalcontacts_contact_journey_sessions(contact_id, page_size=page_size, after=after, include_merged=include_merged)
+
+
+
+Retrieve all sessions for a given external contact.
+
+Wraps GET /api/v2/externalcontacts/contacts/{contactId}/journey/sessions 
+
+Requires ANY permissions: 
+
+* externalContacts:session:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.JourneyApi()
+contact_id = 'contact_id_example' # str | ExternalContact ID
+page_size = 'page_size_example' # str | Number of entities to return. Maximum of 200. (optional)
+after = 'after_example' # str | The cursor that points to the end of the set of entities that has been returned. (optional)
+include_merged = True # bool | Indicates whether to return sessions from all external contacts in the merge-set of the given one. (optional)
+
+try:
+    # Retrieve all sessions for a given external contact.
+    api_response = api_instance.get_externalcontacts_contact_journey_sessions(contact_id, page_size=page_size, after=after, include_merged=include_merged)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling JourneyApi->get_externalcontacts_contact_journey_sessions: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **contact_id** | **str**| ExternalContact ID |  |
+| **page_size** | **str**| Number of entities to return. Maximum of 200. | [optional]  |
+| **after** | **str**| The cursor that points to the end of the set of entities that has been returned. | [optional]  |
+| **include_merged** | **bool**| Indicates whether to return sessions from all external contacts in the merge-set of the given one. | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**SessionListing**](SessionListing.html)
 
 <a name="get_journey_actionmap"></a>
 

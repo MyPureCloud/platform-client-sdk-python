@@ -76,6 +76,7 @@ from ..models import PatchSegment
 from ..models import SegmentAssignmentListing
 from ..models import SegmentListing
 from ..models import Session
+from ..models import SessionListing
 
 class JourneyApi(object):
     """
@@ -643,6 +644,93 @@ class JourneyApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='JourneyAsyncAggregateQueryResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_externalcontacts_contact_journey_sessions(self, contact_id: str, **kwargs) -> 'SessionListing':
+        """
+        Retrieve all sessions for a given external contact.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_externalcontacts_contact_journey_sessions(contact_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str contact_id: ExternalContact ID (required)
+        :param str page_size: Number of entities to return. Maximum of 200.
+        :param str after: The cursor that points to the end of the set of entities that has been returned.
+        :param bool include_merged: Indicates whether to return sessions from all external contacts in the merge-set of the given one.
+        :return: SessionListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['contact_id', 'page_size', 'after', 'include_merged']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_externalcontacts_contact_journey_sessions" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'contact_id' is set
+        if ('contact_id' not in params) or (params['contact_id'] is None):
+            raise ValueError("Missing the required parameter `contact_id` when calling `get_externalcontacts_contact_journey_sessions`")
+
+
+        resource_path = '/api/v2/externalcontacts/contacts/{contactId}/journey/sessions'.replace('{format}', 'json')
+        path_params = {}
+        if 'contact_id' in params:
+            path_params['contactId'] = params['contact_id']
+
+        query_params = {}
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+        if 'after' in params:
+            query_params['after'] = params['after']
+        if 'include_merged' in params:
+            query_params['includeMerged'] = params['include_merged']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='SessionListing',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

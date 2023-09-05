@@ -268,7 +268,7 @@ class ScheduleActivity(object):
         """
         if isinstance(external_activity_type, int):
             external_activity_type = str(external_activity_type)
-        allowed_values = ["Coaching", "Learning"]
+        allowed_values = ["ActivityPlan", "Coaching", "Learning"]
         if external_activity_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for external_activity_type -> " + external_activity_type)
             self._external_activity_type = "outdated_sdk_version"

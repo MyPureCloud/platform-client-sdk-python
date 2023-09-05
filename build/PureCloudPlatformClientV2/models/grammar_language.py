@@ -32,6 +32,8 @@ from typing import TYPE_CHECKING
 from typing import List
 from typing import Dict
 
+if TYPE_CHECKING:
+    from . import GrammarLanguageFileMetadata
 
 class GrammarLanguage(object):
     """
@@ -53,6 +55,8 @@ class GrammarLanguage(object):
             'language': 'str',
             'voice_file_url': 'str',
             'dtmf_file_url': 'str',
+            'voice_file_metadata': 'GrammarLanguageFileMetadata',
+            'dtmf_file_metadata': 'GrammarLanguageFileMetadata',
             'self_uri': 'str'
         }
 
@@ -62,6 +66,8 @@ class GrammarLanguage(object):
             'language': 'language',
             'voice_file_url': 'voiceFileUrl',
             'dtmf_file_url': 'dtmfFileUrl',
+            'voice_file_metadata': 'voiceFileMetadata',
+            'dtmf_file_metadata': 'dtmfFileMetadata',
             'self_uri': 'selfUri'
         }
 
@@ -70,6 +76,8 @@ class GrammarLanguage(object):
         self._language = None
         self._voice_file_url = None
         self._dtmf_file_url = None
+        self._voice_file_metadata = None
+        self._dtmf_file_metadata = None
         self._self_uri = None
 
     @property
@@ -191,6 +199,54 @@ class GrammarLanguage(object):
         
 
         self._dtmf_file_url = dtmf_file_url
+
+    @property
+    def voice_file_metadata(self) -> 'GrammarLanguageFileMetadata':
+        """
+        Gets the voice_file_metadata of this GrammarLanguage.
+        Additional information about the associated voice file
+
+        :return: The voice_file_metadata of this GrammarLanguage.
+        :rtype: GrammarLanguageFileMetadata
+        """
+        return self._voice_file_metadata
+
+    @voice_file_metadata.setter
+    def voice_file_metadata(self, voice_file_metadata: 'GrammarLanguageFileMetadata') -> None:
+        """
+        Sets the voice_file_metadata of this GrammarLanguage.
+        Additional information about the associated voice file
+
+        :param voice_file_metadata: The voice_file_metadata of this GrammarLanguage.
+        :type: GrammarLanguageFileMetadata
+        """
+        
+
+        self._voice_file_metadata = voice_file_metadata
+
+    @property
+    def dtmf_file_metadata(self) -> 'GrammarLanguageFileMetadata':
+        """
+        Gets the dtmf_file_metadata of this GrammarLanguage.
+        Additional information about the associated dtmf file
+
+        :return: The dtmf_file_metadata of this GrammarLanguage.
+        :rtype: GrammarLanguageFileMetadata
+        """
+        return self._dtmf_file_metadata
+
+    @dtmf_file_metadata.setter
+    def dtmf_file_metadata(self, dtmf_file_metadata: 'GrammarLanguageFileMetadata') -> None:
+        """
+        Sets the dtmf_file_metadata of this GrammarLanguage.
+        Additional information about the associated dtmf file
+
+        :param dtmf_file_metadata: The dtmf_file_metadata of this GrammarLanguage.
+        :type: GrammarLanguageFileMetadata
+        """
+        
+
+        self._dtmf_file_metadata = dtmf_file_metadata
 
     @property
     def self_uri(self) -> str:

@@ -51,7 +51,9 @@ from ..models import ErrorBody
 from ..models import GuestCategoryResponseListing
 from ..models import ImportStatusRequest
 from ..models import KnowledgeBase
+from ..models import KnowledgeBaseCreateRequest
 from ..models import KnowledgeBaseListing
+from ..models import KnowledgeBaseUpdateRequest
 from ..models import KnowledgeCategory
 from ..models import KnowledgeCategoryRequest
 from ..models import KnowledgeDocument
@@ -2606,12 +2608,13 @@ class KnowledgeApi(object):
             for asynchronous request. (optional)
         :param str knowledge_base_id: Knowledge base ID (required)
         :param str import_job_id: Import job ID (required)
+        :param list[str] expand: If expand contains 'urls' downloadURL and failedEntitiesURL will be filled.
         :return: KnowledgeImportJobResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['knowledge_base_id', 'import_job_id']
+        all_params = ['knowledge_base_id', 'import_job_id', 'expand']
         all_params.append('callback')
 
         params = locals()
@@ -2640,6 +2643,8 @@ class KnowledgeApi(object):
             path_params['importJobId'] = params['import_job_id']
 
         query_params = {}
+        if 'expand' in params:
+            query_params['expand'] = params['expand']
 
         header_params = {}
 
@@ -4092,7 +4097,7 @@ class KnowledgeApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def patch_knowledge_knowledgebase(self, knowledge_base_id: str, body: 'KnowledgeBase', **kwargs) -> 'KnowledgeBase':
+    def patch_knowledge_knowledgebase(self, knowledge_base_id: str, body: 'KnowledgeBaseUpdateRequest', **kwargs) -> 'KnowledgeBase':
         """
         Update knowledge base
         
@@ -4108,7 +4113,7 @@ class KnowledgeApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str knowledge_base_id: Knowledge base ID (required)
-        :param KnowledgeBase body:  (required)
+        :param KnowledgeBaseUpdateRequest body:  (required)
         :return: KnowledgeBase
                  If the method is called asynchronously,
                  returns the request thread.
@@ -7428,7 +7433,7 @@ class KnowledgeApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_knowledge_knowledgebases(self, body: 'KnowledgeBase', **kwargs) -> 'KnowledgeBase':
+    def post_knowledge_knowledgebases(self, body: 'KnowledgeBaseCreateRequest', **kwargs) -> 'KnowledgeBase':
         """
         Create new knowledge base
         
@@ -7443,7 +7448,7 @@ class KnowledgeApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param KnowledgeBase body:  (required)
+        :param KnowledgeBaseCreateRequest body:  (required)
         :return: KnowledgeBase
                  If the method is called asynchronously,
                  returns the request thread.

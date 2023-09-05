@@ -51,20 +51,23 @@ class ShiftTradeActivityPreviewResponse(object):
             'start_date': 'datetime',
             'length_minutes': 'int',
             'activity_code_id': 'str',
-            'counts_as_paid_time': 'bool'
+            'counts_as_paid_time': 'bool',
+            'payable_minutes': 'int'
         }
 
         self.attribute_map = {
             'start_date': 'startDate',
             'length_minutes': 'lengthMinutes',
             'activity_code_id': 'activityCodeId',
-            'counts_as_paid_time': 'countsAsPaidTime'
+            'counts_as_paid_time': 'countsAsPaidTime',
+            'payable_minutes': 'payableMinutes'
         }
 
         self._start_date = None
         self._length_minutes = None
         self._activity_code_id = None
         self._counts_as_paid_time = None
+        self._payable_minutes = None
 
     @property
     def start_date(self) -> datetime:
@@ -161,6 +164,30 @@ class ShiftTradeActivityPreviewResponse(object):
         
 
         self._counts_as_paid_time = counts_as_paid_time
+
+    @property
+    def payable_minutes(self) -> int:
+        """
+        Gets the payable_minutes of this ShiftTradeActivityPreviewResponse.
+        Payable minutes for this activity
+
+        :return: The payable_minutes of this ShiftTradeActivityPreviewResponse.
+        :rtype: int
+        """
+        return self._payable_minutes
+
+    @payable_minutes.setter
+    def payable_minutes(self, payable_minutes: int) -> None:
+        """
+        Sets the payable_minutes of this ShiftTradeActivityPreviewResponse.
+        Payable minutes for this activity
+
+        :param payable_minutes: The payable_minutes of this ShiftTradeActivityPreviewResponse.
+        :type: int
+        """
+        
+
+        self._payable_minutes = payable_minutes
 
     def to_dict(self):
         """

@@ -223,12 +223,13 @@ class TokensApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
+        :param bool preserve_idle_ttl: preserveIdleTTL indicates whether the idle token timeout should be reset or preserved. If preserveIdleTTL is true, then TTL value is not reset. If unset or false, the value is reset.
         :return: TokenInfo
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = []
+        all_params = ['preserve_idle_ttl']
         all_params.append('callback')
 
         params = locals()
@@ -247,6 +248,8 @@ class TokensApi(object):
         path_params = {}
 
         query_params = {}
+        if 'preserve_idle_ttl' in params:
+            query_params['preserveIdleTTL'] = params['preserve_idle_ttl']
 
         header_params = {}
 

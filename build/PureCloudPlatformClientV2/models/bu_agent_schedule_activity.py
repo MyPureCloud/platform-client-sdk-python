@@ -53,7 +53,9 @@ class BuAgentScheduleActivity(object):
             'description': 'str',
             'activity_code_id': 'str',
             'paid': 'bool',
+            'payable_minutes': 'int',
             'time_off_request_id': 'str',
+            'time_off_request_sync_version': 'int',
             'external_activity_id': 'str',
             'external_activity_type': 'str'
         }
@@ -64,7 +66,9 @@ class BuAgentScheduleActivity(object):
             'description': 'description',
             'activity_code_id': 'activityCodeId',
             'paid': 'paid',
+            'payable_minutes': 'payableMinutes',
             'time_off_request_id': 'timeOffRequestId',
+            'time_off_request_sync_version': 'timeOffRequestSyncVersion',
             'external_activity_id': 'externalActivityId',
             'external_activity_type': 'externalActivityType'
         }
@@ -74,7 +78,9 @@ class BuAgentScheduleActivity(object):
         self._description = None
         self._activity_code_id = None
         self._paid = None
+        self._payable_minutes = None
         self._time_off_request_id = None
+        self._time_off_request_sync_version = None
         self._external_activity_id = None
         self._external_activity_type = None
 
@@ -199,6 +205,30 @@ class BuAgentScheduleActivity(object):
         self._paid = paid
 
     @property
+    def payable_minutes(self) -> int:
+        """
+        Gets the payable_minutes of this BuAgentScheduleActivity.
+        Payable minutes for this activity
+
+        :return: The payable_minutes of this BuAgentScheduleActivity.
+        :rtype: int
+        """
+        return self._payable_minutes
+
+    @payable_minutes.setter
+    def payable_minutes(self, payable_minutes: int) -> None:
+        """
+        Sets the payable_minutes of this BuAgentScheduleActivity.
+        Payable minutes for this activity
+
+        :param payable_minutes: The payable_minutes of this BuAgentScheduleActivity.
+        :type: int
+        """
+        
+
+        self._payable_minutes = payable_minutes
+
+    @property
     def time_off_request_id(self) -> str:
         """
         Gets the time_off_request_id of this BuAgentScheduleActivity.
@@ -221,6 +251,30 @@ class BuAgentScheduleActivity(object):
         
 
         self._time_off_request_id = time_off_request_id
+
+    @property
+    def time_off_request_sync_version(self) -> int:
+        """
+        Gets the time_off_request_sync_version of this BuAgentScheduleActivity.
+        The sync version of the partial day time off request for which the scheduled activity is associated, if applicable
+
+        :return: The time_off_request_sync_version of this BuAgentScheduleActivity.
+        :rtype: int
+        """
+        return self._time_off_request_sync_version
+
+    @time_off_request_sync_version.setter
+    def time_off_request_sync_version(self, time_off_request_sync_version: int) -> None:
+        """
+        Sets the time_off_request_sync_version of this BuAgentScheduleActivity.
+        The sync version of the partial day time off request for which the scheduled activity is associated, if applicable
+
+        :param time_off_request_sync_version: The time_off_request_sync_version of this BuAgentScheduleActivity.
+        :type: int
+        """
+        
+
+        self._time_off_request_sync_version = time_off_request_sync_version
 
     @property
     def external_activity_id(self) -> str:
@@ -268,7 +322,7 @@ class BuAgentScheduleActivity(object):
         """
         if isinstance(external_activity_type, int):
             external_activity_type = str(external_activity_type)
-        allowed_values = ["Coaching", "Learning"]
+        allowed_values = ["ActivityPlan", "Coaching", "Learning"]
         if external_activity_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for external_activity_type -> " + external_activity_type)
             self._external_activity_type = "outdated_sdk_version"

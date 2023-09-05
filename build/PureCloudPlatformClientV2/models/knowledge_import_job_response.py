@@ -36,6 +36,7 @@ if TYPE_CHECKING:
     from . import KnowledgeBase
     from . import KnowledgeImportJobReport
     from . import KnowledgeImportJobSettings
+    from . import UserReference
 
 class KnowledgeImportJobResponse(object):
     """
@@ -53,12 +54,15 @@ class KnowledgeImportJobResponse(object):
         """
         self.swagger_types = {
             'id': 'str',
+            'download_url': 'str',
+            'failed_entities_url': 'str',
             'upload_key': 'str',
             'file_type': 'str',
             'settings': 'KnowledgeImportJobSettings',
             'status': 'str',
             'report': 'KnowledgeImportJobReport',
             'knowledge_base': 'KnowledgeBase',
+            'created_by': 'UserReference',
             'date_created': 'datetime',
             'date_modified': 'datetime',
             'skip_confirmation_step': 'bool',
@@ -67,12 +71,15 @@ class KnowledgeImportJobResponse(object):
 
         self.attribute_map = {
             'id': 'id',
+            'download_url': 'downloadURL',
+            'failed_entities_url': 'failedEntitiesURL',
             'upload_key': 'uploadKey',
             'file_type': 'fileType',
             'settings': 'settings',
             'status': 'status',
             'report': 'report',
             'knowledge_base': 'knowledgeBase',
+            'created_by': 'createdBy',
             'date_created': 'dateCreated',
             'date_modified': 'dateModified',
             'skip_confirmation_step': 'skipConfirmationStep',
@@ -80,12 +87,15 @@ class KnowledgeImportJobResponse(object):
         }
 
         self._id = None
+        self._download_url = None
+        self._failed_entities_url = None
         self._upload_key = None
         self._file_type = None
         self._settings = None
         self._status = None
         self._report = None
         self._knowledge_base = None
+        self._created_by = None
         self._date_created = None
         self._date_modified = None
         self._skip_confirmation_step = None
@@ -114,6 +124,54 @@ class KnowledgeImportJobResponse(object):
         
 
         self._id = id
+
+    @property
+    def download_url(self) -> str:
+        """
+        Gets the download_url of this KnowledgeImportJobResponse.
+        The URL of the location at which the caller can download the imported file.
+
+        :return: The download_url of this KnowledgeImportJobResponse.
+        :rtype: str
+        """
+        return self._download_url
+
+    @download_url.setter
+    def download_url(self, download_url: str) -> None:
+        """
+        Sets the download_url of this KnowledgeImportJobResponse.
+        The URL of the location at which the caller can download the imported file.
+
+        :param download_url: The download_url of this KnowledgeImportJobResponse.
+        :type: str
+        """
+        
+
+        self._download_url = download_url
+
+    @property
+    def failed_entities_url(self) -> str:
+        """
+        Gets the failed_entities_url of this KnowledgeImportJobResponse.
+        The URL of the location at which the caller can download the entities in json format that failed during the import.
+
+        :return: The failed_entities_url of this KnowledgeImportJobResponse.
+        :rtype: str
+        """
+        return self._failed_entities_url
+
+    @failed_entities_url.setter
+    def failed_entities_url(self, failed_entities_url: str) -> None:
+        """
+        Sets the failed_entities_url of this KnowledgeImportJobResponse.
+        The URL of the location at which the caller can download the entities in json format that failed during the import.
+
+        :param failed_entities_url: The failed_entities_url of this KnowledgeImportJobResponse.
+        :type: str
+        """
+        
+
+        self._failed_entities_url = failed_entities_url
 
     @property
     def upload_key(self) -> str:
@@ -268,6 +326,30 @@ class KnowledgeImportJobResponse(object):
         
 
         self._knowledge_base = knowledge_base
+
+    @property
+    def created_by(self) -> 'UserReference':
+        """
+        Gets the created_by of this KnowledgeImportJobResponse.
+        The user who created the operation
+
+        :return: The created_by of this KnowledgeImportJobResponse.
+        :rtype: UserReference
+        """
+        return self._created_by
+
+    @created_by.setter
+    def created_by(self, created_by: 'UserReference') -> None:
+        """
+        Sets the created_by of this KnowledgeImportJobResponse.
+        The user who created the operation
+
+        :param created_by: The created_by of this KnowledgeImportJobResponse.
+        :type: UserReference
+        """
+        
+
+        self._created_by = created_by
 
     @property
     def date_created(self) -> datetime:

@@ -33,6 +33,7 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
+    from . import HistoricalAdherenceActuals
     from . import HistoricalAdherenceExceptionInfo
     from . import WfmHistoricalAdherenceBulkUserDayMetrics
 
@@ -56,6 +57,7 @@ class WfmHistoricalAdherenceBulkUserResult(object):
             'conformance_percentage': 'float',
             'impact': 'str',
             'exception_info': 'list[HistoricalAdherenceExceptionInfo]',
+            'actuals': 'list[HistoricalAdherenceActuals]',
             'day_metrics': 'list[WfmHistoricalAdherenceBulkUserDayMetrics]'
         }
 
@@ -65,6 +67,7 @@ class WfmHistoricalAdherenceBulkUserResult(object):
             'conformance_percentage': 'conformancePercentage',
             'impact': 'impact',
             'exception_info': 'exceptionInfo',
+            'actuals': 'actuals',
             'day_metrics': 'dayMetrics'
         }
 
@@ -73,6 +76,7 @@ class WfmHistoricalAdherenceBulkUserResult(object):
         self._conformance_percentage = None
         self._impact = None
         self._exception_info = None
+        self._actuals = None
         self._day_metrics = None
 
     @property
@@ -199,6 +203,30 @@ class WfmHistoricalAdherenceBulkUserResult(object):
         
 
         self._exception_info = exception_info
+
+    @property
+    def actuals(self) -> List['HistoricalAdherenceActuals']:
+        """
+        Gets the actuals of this WfmHistoricalAdherenceBulkUserResult.
+        List of adherence actuals for this user
+
+        :return: The actuals of this WfmHistoricalAdherenceBulkUserResult.
+        :rtype: list[HistoricalAdherenceActuals]
+        """
+        return self._actuals
+
+    @actuals.setter
+    def actuals(self, actuals: List['HistoricalAdherenceActuals']) -> None:
+        """
+        Sets the actuals of this WfmHistoricalAdherenceBulkUserResult.
+        List of adherence actuals for this user
+
+        :param actuals: The actuals of this WfmHistoricalAdherenceBulkUserResult.
+        :type: list[HistoricalAdherenceActuals]
+        """
+        
+
+        self._actuals = actuals
 
     @property
     def day_metrics(self) -> List['WfmHistoricalAdherenceBulkUserDayMetrics']:

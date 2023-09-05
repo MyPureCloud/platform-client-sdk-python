@@ -77,6 +77,7 @@ class UserQueue(object):
             'routing_rules': 'list[RoutingRule]',
             'conditional_group_routing': 'ConditionalGroupRouting',
             'bullseye': 'Bullseye',
+            'scoring_method': 'str',
             'acw_settings': 'AcwSettings',
             'skill_evaluation_method': 'str',
             'member_groups': 'list[MemberGroup]',
@@ -116,6 +117,7 @@ class UserQueue(object):
             'routing_rules': 'routingRules',
             'conditional_group_routing': 'conditionalGroupRouting',
             'bullseye': 'bullseye',
+            'scoring_method': 'scoringMethod',
             'acw_settings': 'acwSettings',
             'skill_evaluation_method': 'skillEvaluationMethod',
             'member_groups': 'memberGroups',
@@ -154,6 +156,7 @@ class UserQueue(object):
         self._routing_rules = None
         self._conditional_group_routing = None
         self._bullseye = None
+        self._scoring_method = None
         self._acw_settings = None
         self._skill_evaluation_method = None
         self._member_groups = None
@@ -535,6 +538,35 @@ class UserQueue(object):
         
 
         self._bullseye = bullseye
+
+    @property
+    def scoring_method(self) -> str:
+        """
+        Gets the scoring_method of this UserQueue.
+        The Scoring Method for the queue
+
+        :return: The scoring_method of this UserQueue.
+        :rtype: str
+        """
+        return self._scoring_method
+
+    @scoring_method.setter
+    def scoring_method(self, scoring_method: str) -> None:
+        """
+        Sets the scoring_method of this UserQueue.
+        The Scoring Method for the queue
+
+        :param scoring_method: The scoring_method of this UserQueue.
+        :type: str
+        """
+        if isinstance(scoring_method, int):
+            scoring_method = str(scoring_method)
+        allowed_values = ["TimestampAndPriority", "PriorityOnly"]
+        if scoring_method.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for scoring_method -> " + scoring_method)
+            self._scoring_method = "outdated_sdk_version"
+        else:
+            self._scoring_method = scoring_method
 
     @property
     def acw_settings(self) -> 'AcwSettings':

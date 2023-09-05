@@ -52,7 +52,8 @@ class WfmHistoricalAdherenceBulkItem(object):
             'start_date': 'datetime',
             'end_date': 'datetime',
             'user_ids': 'list[str]',
-            'include_exceptions': 'bool'
+            'include_exceptions': 'bool',
+            'include_actuals': 'bool'
         }
 
         self.attribute_map = {
@@ -60,7 +61,8 @@ class WfmHistoricalAdherenceBulkItem(object):
             'start_date': 'startDate',
             'end_date': 'endDate',
             'user_ids': 'userIds',
-            'include_exceptions': 'includeExceptions'
+            'include_exceptions': 'includeExceptions',
+            'include_actuals': 'includeActuals'
         }
 
         self._management_unit_id = None
@@ -68,6 +70,7 @@ class WfmHistoricalAdherenceBulkItem(object):
         self._end_date = None
         self._user_ids = None
         self._include_exceptions = None
+        self._include_actuals = None
 
     @property
     def management_unit_id(self) -> str:
@@ -188,6 +191,30 @@ class WfmHistoricalAdherenceBulkItem(object):
         
 
         self._include_exceptions = include_exceptions
+
+    @property
+    def include_actuals(self) -> bool:
+        """
+        Gets the include_actuals of this WfmHistoricalAdherenceBulkItem.
+        Whether user actual activities should be returned as part of the results. Defaults to false if not specified.
+
+        :return: The include_actuals of this WfmHistoricalAdherenceBulkItem.
+        :rtype: bool
+        """
+        return self._include_actuals
+
+    @include_actuals.setter
+    def include_actuals(self, include_actuals: bool) -> None:
+        """
+        Sets the include_actuals of this WfmHistoricalAdherenceBulkItem.
+        Whether user actual activities should be returned as part of the results. Defaults to false if not specified.
+
+        :param include_actuals: The include_actuals of this WfmHistoricalAdherenceBulkItem.
+        :type: bool
+        """
+        
+
+        self._include_actuals = include_actuals
 
     def to_dict(self):
         """

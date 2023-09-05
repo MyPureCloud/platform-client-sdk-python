@@ -47,12 +47,15 @@ from ..models import AdherenceExplanationAsyncResponse
 from ..models import AdherenceExplanationJob
 from ..models import AdherenceExplanationResponse
 from ..models import AdminTimeOffRequestPatch
+from ..models import AgentIntegrationsRequest
+from ..models import AgentIntegrationsResponse
 from ..models import AgentManagementUnitReference
 from ..models import AgentPossibleWorkShiftsRequest
 from ..models import AgentPossibleWorkShiftsResponse
 from ..models import AgentQueryAdherenceExplanationsRequest
 from ..models import AgentQueryAdherenceExplanationsResponse
 from ..models import AgentTimeOffRequestPatch
+from ..models import AgentsIntegrationsListing
 from ..models import AsyncForecastOperationResult
 from ..models import AsyncIntradayResponse
 from ..models import AvailableTimeOffRequest
@@ -103,11 +106,16 @@ from ..models import CreateTimeOffLimitRequest
 from ..models import CreateTimeOffPlanRequest
 from ..models import CreateWorkPlan
 from ..models import CurrentUserScheduleRequestBody
+from ..models import CurrentUserTimeOffIntegrationStatusRequest
 from ..models import ErrorBody
+from ..models import EstimateAvailableTimeOffRequest
+from ..models import EstimateAvailableTimeOffResponse
 from ..models import ForecastPlanningGroupsResponse
 from ..models import GenerateBuForecastRequest
 from ..models import HistoricalImportDeleteJobResponse
 from ..models import HistoricalImportStatusListing
+from ..models import HrisTimeOffTypesJobResponse
+from ..models import HrisTimeOffTypesResponse
 from ..models import ImportForecastResponse
 from ..models import ImportForecastUploadResponse
 from ..models import ImportScheduleUploadResponse
@@ -127,6 +135,8 @@ from ..models import PlanningGroup
 from ..models import PlanningGroupList
 from ..models import ProcessScheduleUpdateUploadRequest
 from ..models import QueryAdherenceExplanationsResponse
+from ..models import QueryAgentsIntegrationsRequest
+from ..models import QueryTimeOffIntegrationStatusRequest
 from ..models import QueryTimeOffLimitValuesRequest
 from ..models import QueryTimeOffLimitValuesResponse
 from ..models import QueryWaitlistPositionsRequest
@@ -137,12 +147,15 @@ from ..models import SearchShiftTradesRequest
 from ..models import SearchShiftTradesResponse
 from ..models import ServiceGoalTemplate
 from ..models import ServiceGoalTemplateList
+from ..models import SetTimeOffIntegrationStatusRequest
 from ..models import SetTimeOffLimitValuesRequest
 from ..models import ShiftTradeListResponse
 from ..models import ShiftTradeMatchesSummaryResponse
 from ..models import ShiftTradeResponse
+from ..models import TimeOffBalanceJobResponse
 from ..models import TimeOffBalanceRequest
 from ..models import TimeOffBalancesResponse
+from ..models import TimeOffIntegrationStatusResponseListing
 from ..models import TimeOffLimit
 from ..models import TimeOffLimitListing
 from ..models import TimeOffPlan
@@ -168,6 +181,8 @@ from ..models import UserListScheduleRequestBody
 from ..models import UserScheduleAdherence
 from ..models import UserScheduleAdherenceListing
 from ..models import UserScheduleContainer
+from ..models import UserTimeOffIntegrationStatusResponse
+from ..models import UserTimeOffIntegrationStatusResponseListing
 from ..models import ValidateWorkPlanResponse
 from ..models import ValidationServiceRequest
 from ..models import WaitlistPositionListing
@@ -184,6 +199,7 @@ from ..models import WfmHistoricalAdherenceResponse
 from ..models import WfmHistoricalShrinkageRequest
 from ..models import WfmHistoricalShrinkageResponse
 from ..models import WfmHistoricalShrinkageTeamsRequest
+from ..models import WfmIntegrationListing
 from ..models import WfmIntradayPlanningGroupListing
 from ..models import WfmProcessUploadRequest
 from ..models import WfmUserEntityListing
@@ -2839,12 +2855,13 @@ class WorkforceManagementApi(object):
             for asynchronous request. (optional)
         :param str business_unit_id: The ID of the business unit. (required)
         :param str service_goal_template_id: The ID of a service goal template to fetch (required)
+        :param list[str] expand: Include to access additional data on the service goal template
         :return: ServiceGoalTemplate
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['business_unit_id', 'service_goal_template_id']
+        all_params = ['business_unit_id', 'service_goal_template_id', 'expand']
         all_params.append('callback')
 
         params = locals()
@@ -2873,6 +2890,8 @@ class WorkforceManagementApi(object):
             path_params['serviceGoalTemplateId'] = params['service_goal_template_id']
 
         query_params = {}
+        if 'expand' in params:
+            query_params['expand'] = params['expand']
 
         header_params = {}
 
@@ -2922,12 +2941,13 @@ class WorkforceManagementApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str business_unit_id: The ID of the business unit. (required)
+        :param list[str] expand: Include to access additional data on the service goal template
         :return: ServiceGoalTemplateList
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['business_unit_id']
+        all_params = ['business_unit_id', 'expand']
         all_params.append('callback')
 
         params = locals()
@@ -2951,6 +2971,8 @@ class WorkforceManagementApi(object):
             path_params['businessUnitId'] = params['business_unit_id']
 
         query_params = {}
+        if 'expand' in params:
+            query_params['expand'] = params['expand']
 
         header_params = {}
 
@@ -4435,6 +4457,156 @@ class WorkforceManagementApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='HistoricalImportStatusListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_workforcemanagement_integrations_hris(self, **kwargs) -> 'WfmIntegrationListing':
+        """
+        Get integrations
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_workforcemanagement_integrations_hris(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :return: WfmIntegrationListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = []
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_workforcemanagement_integrations_hris" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/workforcemanagement/integrations/hris'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='WfmIntegrationListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_workforcemanagement_integrations_hris_timeofftypes_job(self, job_id: str, **kwargs) -> 'HrisTimeOffTypesJobResponse':
+        """
+        Query the results of time off types job
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_workforcemanagement_integrations_hris_timeofftypes_job(job_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str job_id: The ID of the job. (required)
+        :return: HrisTimeOffTypesJobResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['job_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_workforcemanagement_integrations_hris_timeofftypes_job" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'job_id' is set
+        if ('job_id' not in params) or (params['job_id'] is None):
+            raise ValueError("Missing the required parameter `job_id` when calling `get_workforcemanagement_integrations_hris_timeofftypes_job`")
+
+
+        resource_path = '/api/v2/workforcemanagement/integrations/hris/timeofftypes/jobs/{jobId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'job_id' in params:
+            path_params['jobId'] = params['job_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='HrisTimeOffTypesJobResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -6749,6 +6921,84 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def get_workforcemanagement_timeoffbalance_job(self, job_id: str, **kwargs) -> 'TimeOffBalanceJobResponse':
+        """
+        Query the results of time off types job
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_workforcemanagement_timeoffbalance_job(job_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str job_id: The ID of the job. (required)
+        :return: TimeOffBalanceJobResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['job_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_workforcemanagement_timeoffbalance_job" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'job_id' is set
+        if ('job_id' not in params) or (params['job_id'] is None):
+            raise ValueError("Missing the required parameter `job_id` when calling `get_workforcemanagement_timeoffbalance_job`")
+
+
+        resource_path = '/api/v2/workforcemanagement/timeoffbalance/jobs/{jobId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'job_id' in params:
+            path_params['jobId'] = params['job_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='TimeOffBalanceJobResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def get_workforcemanagement_timeoffrequest(self, time_off_request_id: str, **kwargs) -> 'TimeOffRequestResponse':
         """
         Get a time off request for the current user
@@ -7754,6 +8004,99 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def patch_workforcemanagement_managementunit_timeoffrequest_user_integrationstatus(self, management_unit_id: str, time_off_request_id: str, user_id: str, **kwargs) -> 'UserTimeOffIntegrationStatusResponse':
+        """
+        Set integration status for a time off request.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.patch_workforcemanagement_managementunit_timeoffrequest_user_integrationstatus(management_unit_id, time_off_request_id, user_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str management_unit_id: The ID of the management unit. (required)
+        :param str time_off_request_id: The ID of the time off request. (required)
+        :param str user_id: The ID of user to whom the time off request belongs. (required)
+        :param SetTimeOffIntegrationStatusRequest body: body
+        :return: UserTimeOffIntegrationStatusResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['management_unit_id', 'time_off_request_id', 'user_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method patch_workforcemanagement_managementunit_timeoffrequest_user_integrationstatus" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'management_unit_id' is set
+        if ('management_unit_id' not in params) or (params['management_unit_id'] is None):
+            raise ValueError("Missing the required parameter `management_unit_id` when calling `patch_workforcemanagement_managementunit_timeoffrequest_user_integrationstatus`")
+        # verify the required parameter 'time_off_request_id' is set
+        if ('time_off_request_id' not in params) or (params['time_off_request_id'] is None):
+            raise ValueError("Missing the required parameter `time_off_request_id` when calling `patch_workforcemanagement_managementunit_timeoffrequest_user_integrationstatus`")
+        # verify the required parameter 'user_id' is set
+        if ('user_id' not in params) or (params['user_id'] is None):
+            raise ValueError("Missing the required parameter `user_id` when calling `patch_workforcemanagement_managementunit_timeoffrequest_user_integrationstatus`")
+
+
+        resource_path = '/api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffrequests/{timeOffRequestId}/users/{userId}/integrationstatus'.replace('{format}', 'json')
+        path_params = {}
+        if 'management_unit_id' in params:
+            path_params['managementUnitId'] = params['management_unit_id']
+        if 'time_off_request_id' in params:
+            path_params['timeOffRequestId'] = params['time_off_request_id']
+        if 'user_id' in params:
+            path_params['userId'] = params['user_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PATCH',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='UserTimeOffIntegrationStatusResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def patch_workforcemanagement_managementunit_user_timeoffrequest(self, management_unit_id: str, user_id: str, time_off_request_id: str, **kwargs) -> 'TimeOffRequestResponse':
         """
         Update a time off request
@@ -8363,6 +8706,7 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("post_workforcemanagement_adherence_historical is deprecated")
     def post_workforcemanagement_adherence_historical(self, **kwargs) -> 'WfmHistoricalAdherenceResponse':
         """
         Deprecated. Use bulk routes instead (/adherence/historical/bulk)
@@ -8683,6 +9027,81 @@ class WorkforceManagementApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='AgentQueryAdherenceExplanationsResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_workforcemanagement_agents_integrations_hris_query(self, **kwargs) -> 'AgentsIntegrationsListing':
+        """
+        Query integrations for agents
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_workforcemanagement_agents_integrations_hris_query(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param QueryAgentsIntegrationsRequest body: body
+        :return: AgentsIntegrationsListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_workforcemanagement_agents_integrations_hris_query" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/workforcemanagement/agents/integrations/hris/query'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='AgentsIntegrationsListing',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -10859,6 +11278,84 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def post_workforcemanagement_integrations_hri_timeofftypes_jobs(self, hris_integration_id: str, **kwargs) -> 'HrisTimeOffTypesResponse':
+        """
+        Get list of time off types configured in integration
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_workforcemanagement_integrations_hri_timeofftypes_jobs(hris_integration_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str hris_integration_id: The ID of the HRIS integration for which time off types are queried. (required)
+        :return: HrisTimeOffTypesResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['hris_integration_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_workforcemanagement_integrations_hri_timeofftypes_jobs" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'hris_integration_id' is set
+        if ('hris_integration_id' not in params) or (params['hris_integration_id'] is None):
+            raise ValueError("Missing the required parameter `hris_integration_id` when calling `post_workforcemanagement_integrations_hri_timeofftypes_jobs`")
+
+
+        resource_path = '/api/v2/workforcemanagement/integrations/hris/{hrisIntegrationId}/timeofftypes/jobs'.replace('{format}', 'json')
+        path_params = {}
+        if 'hris_integration_id' in params:
+            path_params['hrisIntegrationId'] = params['hris_integration_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='HrisTimeOffTypesResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def post_workforcemanagement_managementunit_agentschedules_search(self, management_unit_id: str, **kwargs) -> 'BuAsyncAgentSchedulesSearchResponse':
         """
         Query published schedules for given given time range for set of users
@@ -11595,6 +12092,87 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def post_workforcemanagement_managementunit_timeoffrequests_integrationstatus_query(self, management_unit_id: str, **kwargs) -> 'UserTimeOffIntegrationStatusResponseListing':
+        """
+        Retrieves integration statuses for a list of time off requests
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_workforcemanagement_managementunit_timeoffrequests_integrationstatus_query(management_unit_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str management_unit_id: The ID of the management unit. (required)
+        :param QueryTimeOffIntegrationStatusRequest body: body
+        :return: UserTimeOffIntegrationStatusResponseListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['management_unit_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_workforcemanagement_managementunit_timeoffrequests_integrationstatus_query" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'management_unit_id' is set
+        if ('management_unit_id' not in params) or (params['management_unit_id'] is None):
+            raise ValueError("Missing the required parameter `management_unit_id` when calling `post_workforcemanagement_managementunit_timeoffrequests_integrationstatus_query`")
+
+
+        resource_path = '/api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffrequests/integrationstatus/query'.replace('{format}', 'json')
+        path_params = {}
+        if 'management_unit_id' in params:
+            path_params['managementUnitId'] = params['management_unit_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='UserTimeOffIntegrationStatusResponseListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def post_workforcemanagement_managementunit_timeoffrequests_query(self, management_unit_id: str, **kwargs) -> 'TimeOffRequestListing':
         """
         Fetches time off requests matching the conditions specified in the request body
@@ -11933,6 +12511,93 @@ class WorkforceManagementApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='TimeOffBalancesResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_workforcemanagement_managementunit_user_timeoffrequests_estimate(self, management_unit_id: str, user_id: str, **kwargs) -> 'EstimateAvailableTimeOffResponse':
+        """
+        Estimates available time off for an agent
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_workforcemanagement_managementunit_user_timeoffrequests_estimate(management_unit_id, user_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str management_unit_id: The ID of the management unit (required)
+        :param str user_id: The id of the user for whom the time off request estimate is requested (required)
+        :param EstimateAvailableTimeOffRequest body: body
+        :return: EstimateAvailableTimeOffResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['management_unit_id', 'user_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_workforcemanagement_managementunit_user_timeoffrequests_estimate" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'management_unit_id' is set
+        if ('management_unit_id' not in params) or (params['management_unit_id'] is None):
+            raise ValueError("Missing the required parameter `management_unit_id` when calling `post_workforcemanagement_managementunit_user_timeoffrequests_estimate`")
+        # verify the required parameter 'user_id' is set
+        if ('user_id' not in params) or (params['user_id'] is None):
+            raise ValueError("Missing the required parameter `user_id` when calling `post_workforcemanagement_managementunit_user_timeoffrequests_estimate`")
+
+
+        resource_path = '/api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffrequests/estimate'.replace('{format}', 'json')
+        path_params = {}
+        if 'management_unit_id' in params:
+            path_params['managementUnitId'] = params['management_unit_id']
+        if 'user_id' in params:
+            path_params['userId'] = params['user_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='EstimateAvailableTimeOffResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -13123,6 +13788,84 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def post_workforcemanagement_timeoffbalance_jobs(self, body: 'TimeOffBalanceRequest', **kwargs) -> 'TimeOffBalancesResponse':
+        """
+        Query time off balances for the current user for specified activity code and dates
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_workforcemanagement_timeoffbalance_jobs(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param TimeOffBalanceRequest body: The request body (required)
+        :return: TimeOffBalancesResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_workforcemanagement_timeoffbalance_jobs" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_workforcemanagement_timeoffbalance_jobs`")
+
+
+        resource_path = '/api/v2/workforcemanagement/timeoffbalance/jobs'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='TimeOffBalancesResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def post_workforcemanagement_timeofflimits_available_query(self, **kwargs) -> 'AvailableTimeOffResponse':
         """
         Queries available time off for the current user
@@ -13269,6 +14012,240 @@ class WorkforceManagementApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='TimeOffRequestResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_workforcemanagement_timeoffrequests_estimate(self, **kwargs) -> 'EstimateAvailableTimeOffResponse':
+        """
+        Estimates available time off for current user
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_workforcemanagement_timeoffrequests_estimate(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param EstimateAvailableTimeOffRequest body: body
+        :return: EstimateAvailableTimeOffResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_workforcemanagement_timeoffrequests_estimate" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/workforcemanagement/timeoffrequests/estimate'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='EstimateAvailableTimeOffResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_workforcemanagement_timeoffrequests_integrationstatus_query(self, **kwargs) -> 'TimeOffIntegrationStatusResponseListing':
+        """
+        Retrieves integration statuses for a list of current user time off requests
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_workforcemanagement_timeoffrequests_integrationstatus_query(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param CurrentUserTimeOffIntegrationStatusRequest body: body
+        :return: TimeOffIntegrationStatusResponseListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_workforcemanagement_timeoffrequests_integrationstatus_query" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/workforcemanagement/timeoffrequests/integrationstatus/query'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='TimeOffIntegrationStatusResponseListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def put_workforcemanagement_agent_integrations_hris(self, agent_id: str, body: 'AgentIntegrationsRequest', **kwargs) -> 'AgentIntegrationsResponse':
+        """
+        Update integrations for agent
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.put_workforcemanagement_agent_integrations_hris(agent_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str agent_id: The ID of the agent (required)
+        :param AgentIntegrationsRequest body: body (required)
+        :return: AgentIntegrationsResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['agent_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method put_workforcemanagement_agent_integrations_hris" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'agent_id' is set
+        if ('agent_id' not in params) or (params['agent_id'] is None):
+            raise ValueError("Missing the required parameter `agent_id` when calling `put_workforcemanagement_agent_integrations_hris`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `put_workforcemanagement_agent_integrations_hris`")
+
+
+        resource_path = '/api/v2/workforcemanagement/agents/{agentId}/integrations/hris'.replace('{format}', 'json')
+        path_params = {}
+        if 'agent_id' in params:
+            path_params['agentId'] = params['agent_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='AgentIntegrationsResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

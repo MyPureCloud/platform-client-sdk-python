@@ -36,6 +36,7 @@ if TYPE_CHECKING:
     from . import BuAbandonRate
     from . import BuAverageSpeedOfAnswer
     from . import BuServiceLevel
+    from . import ServiceGoalTemplateImpactOverride
     from . import WfmVersionedEntityMetadata
 
 class UpdateServiceGoalTemplate(object):
@@ -57,7 +58,8 @@ class UpdateServiceGoalTemplate(object):
             'service_level': 'BuServiceLevel',
             'average_speed_of_answer': 'BuAverageSpeedOfAnswer',
             'abandon_rate': 'BuAbandonRate',
-            'metadata': 'WfmVersionedEntityMetadata'
+            'metadata': 'WfmVersionedEntityMetadata',
+            'impact_override': 'ServiceGoalTemplateImpactOverride'
         }
 
         self.attribute_map = {
@@ -65,7 +67,8 @@ class UpdateServiceGoalTemplate(object):
             'service_level': 'serviceLevel',
             'average_speed_of_answer': 'averageSpeedOfAnswer',
             'abandon_rate': 'abandonRate',
-            'metadata': 'metadata'
+            'metadata': 'metadata',
+            'impact_override': 'impactOverride'
         }
 
         self._name = None
@@ -73,6 +76,7 @@ class UpdateServiceGoalTemplate(object):
         self._average_speed_of_answer = None
         self._abandon_rate = None
         self._metadata = None
+        self._impact_override = None
 
     @property
     def name(self) -> str:
@@ -193,6 +197,30 @@ class UpdateServiceGoalTemplate(object):
         
 
         self._metadata = metadata
+
+    @property
+    def impact_override(self) -> 'ServiceGoalTemplateImpactOverride':
+        """
+        Gets the impact_override of this UpdateServiceGoalTemplate.
+        Settings controlling max percent increase and decrease of service goals for this service goal template
+
+        :return: The impact_override of this UpdateServiceGoalTemplate.
+        :rtype: ServiceGoalTemplateImpactOverride
+        """
+        return self._impact_override
+
+    @impact_override.setter
+    def impact_override(self, impact_override: 'ServiceGoalTemplateImpactOverride') -> None:
+        """
+        Sets the impact_override of this UpdateServiceGoalTemplate.
+        Settings controlling max percent increase and decrease of service goals for this service goal template
+
+        :param impact_override: The impact_override of this UpdateServiceGoalTemplate.
+        :type: ServiceGoalTemplateImpactOverride
+        """
+        
+
+        self._impact_override = impact_override
 
     def to_dict(self):
         """

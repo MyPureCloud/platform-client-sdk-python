@@ -35,6 +35,7 @@ from typing import Dict
 if TYPE_CHECKING:
     from . import ForecastAbandonRateResponse
     from . import ForecastAverageSpeedOfAnswerResponse
+    from . import ForecastServiceGoalTemplateImpactOverrideResponse
     from . import ForecastServiceLevelResponse
 
 class ForecastServiceGoalTemplateResponse(object):
@@ -54,18 +55,21 @@ class ForecastServiceGoalTemplateResponse(object):
         self.swagger_types = {
             'service_level': 'ForecastServiceLevelResponse',
             'average_speed_of_answer': 'ForecastAverageSpeedOfAnswerResponse',
-            'abandon_rate': 'ForecastAbandonRateResponse'
+            'abandon_rate': 'ForecastAbandonRateResponse',
+            'impact_override': 'ForecastServiceGoalTemplateImpactOverrideResponse'
         }
 
         self.attribute_map = {
             'service_level': 'serviceLevel',
             'average_speed_of_answer': 'averageSpeedOfAnswer',
-            'abandon_rate': 'abandonRate'
+            'abandon_rate': 'abandonRate',
+            'impact_override': 'impactOverride'
         }
 
         self._service_level = None
         self._average_speed_of_answer = None
         self._abandon_rate = None
+        self._impact_override = None
 
     @property
     def service_level(self) -> 'ForecastServiceLevelResponse':
@@ -138,6 +142,30 @@ class ForecastServiceGoalTemplateResponse(object):
         
 
         self._abandon_rate = abandon_rate
+
+    @property
+    def impact_override(self) -> 'ForecastServiceGoalTemplateImpactOverrideResponse':
+        """
+        Gets the impact_override of this ForecastServiceGoalTemplateResponse.
+        The service goal impact overrides for this forecast
+
+        :return: The impact_override of this ForecastServiceGoalTemplateResponse.
+        :rtype: ForecastServiceGoalTemplateImpactOverrideResponse
+        """
+        return self._impact_override
+
+    @impact_override.setter
+    def impact_override(self, impact_override: 'ForecastServiceGoalTemplateImpactOverrideResponse') -> None:
+        """
+        Sets the impact_override of this ForecastServiceGoalTemplateResponse.
+        The service goal impact overrides for this forecast
+
+        :param impact_override: The impact_override of this ForecastServiceGoalTemplateResponse.
+        :type: ForecastServiceGoalTemplateImpactOverrideResponse
+        """
+        
+
+        self._impact_override = impact_override
 
     def to_dict(self):
         """

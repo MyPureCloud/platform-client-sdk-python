@@ -34,6 +34,7 @@ from typing import Dict
 
 if TYPE_CHECKING:
     from . import ForecastPlanningGroupResponse
+    from . import WfmServiceGoalImpactSettings
 
 class ForecastPlanningGroupsResponse(object):
     """
@@ -50,14 +51,17 @@ class ForecastPlanningGroupsResponse(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'entities': 'list[ForecastPlanningGroupResponse]'
+            'entities': 'list[ForecastPlanningGroupResponse]',
+            'business_unit_service_goal_impact': 'WfmServiceGoalImpactSettings'
         }
 
         self.attribute_map = {
-            'entities': 'entities'
+            'entities': 'entities',
+            'business_unit_service_goal_impact': 'businessUnitServiceGoalImpact'
         }
 
         self._entities = None
+        self._business_unit_service_goal_impact = None
 
     @property
     def entities(self) -> List['ForecastPlanningGroupResponse']:
@@ -82,6 +86,30 @@ class ForecastPlanningGroupsResponse(object):
         
 
         self._entities = entities
+
+    @property
+    def business_unit_service_goal_impact(self) -> 'WfmServiceGoalImpactSettings':
+        """
+        Gets the business_unit_service_goal_impact of this ForecastPlanningGroupsResponse.
+        A snapshot of a business unit’s service goal impact settings taken at forecast generation time.
+
+        :return: The business_unit_service_goal_impact of this ForecastPlanningGroupsResponse.
+        :rtype: WfmServiceGoalImpactSettings
+        """
+        return self._business_unit_service_goal_impact
+
+    @business_unit_service_goal_impact.setter
+    def business_unit_service_goal_impact(self, business_unit_service_goal_impact: 'WfmServiceGoalImpactSettings') -> None:
+        """
+        Sets the business_unit_service_goal_impact of this ForecastPlanningGroupsResponse.
+        A snapshot of a business unit’s service goal impact settings taken at forecast generation time.
+
+        :param business_unit_service_goal_impact: The business_unit_service_goal_impact of this ForecastPlanningGroupsResponse.
+        :type: WfmServiceGoalImpactSettings
+        """
+        
+
+        self._business_unit_service_goal_impact = business_unit_service_goal_impact
 
     def to_dict(self):
         """

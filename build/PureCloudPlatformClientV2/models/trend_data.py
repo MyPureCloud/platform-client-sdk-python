@@ -50,18 +50,21 @@ class TrendData(object):
         self.swagger_types = {
             'date_start_workday': 'date',
             'date_end_workday': 'date',
-            'percent_of_goal': 'float'
+            'percent_of_goal': 'float',
+            'average_value': 'float'
         }
 
         self.attribute_map = {
             'date_start_workday': 'dateStartWorkday',
             'date_end_workday': 'dateEndWorkday',
-            'percent_of_goal': 'percentOfGoal'
+            'percent_of_goal': 'percentOfGoal',
+            'average_value': 'averageValue'
         }
 
         self._date_start_workday = None
         self._date_end_workday = None
         self._percent_of_goal = None
+        self._average_value = None
 
     @property
     def date_start_workday(self) -> date:
@@ -134,6 +137,30 @@ class TrendData(object):
         
 
         self._percent_of_goal = percent_of_goal
+
+    @property
+    def average_value(self) -> float:
+        """
+        Gets the average_value of this TrendData.
+        Average metric value
+
+        :return: The average_value of this TrendData.
+        :rtype: float
+        """
+        return self._average_value
+
+    @average_value.setter
+    def average_value(self, average_value: float) -> None:
+        """
+        Sets the average_value of this TrendData.
+        Average metric value
+
+        :param average_value: The average_value of this TrendData.
+        :type: float
+        """
+        
+
+        self._average_value = average_value
 
     def to_dict(self):
         """

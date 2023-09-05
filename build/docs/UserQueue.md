@@ -22,6 +22,7 @@ title: UserQueue
 | **routing_rules** | [**list[RoutingRule]**](RoutingRule.html) | The routing rules for the queue, used for Preferred Agent Routing. | [optional] |
 | **conditional_group_routing** | [**ConditionalGroupRouting**](ConditionalGroupRouting.html) | The Conditional Group Routing settings for the queue. | [optional] |
 | **bullseye** | [**Bullseye**](Bullseye.html) | The bullseye settings for the queue. | [optional] |
+| **scoring_method** | **str** | The Scoring Method for the queue | [optional] |
 | **acw_settings** | [**AcwSettings**](AcwSettings.html) | The ACW settings for the queue. | [optional] |
 | **skill_evaluation_method** | **str** | The skill evaluation method to use when routing conversations. | [optional] |
 | **member_groups** | [**list[MemberGroup]**](MemberGroup.html) | The groups of agents associated with the queue, if any.  Queue membership will update to match group membership changes. | [optional] |

@@ -13,6 +13,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**delete_conversation_participant_flaggedreason**](ConversationsApi.html#delete_conversation_participant_flaggedreason) | Remove flagged reason from conversation participant.|
 |[**delete_conversations_call_participant_consult**](ConversationsApi.html#delete_conversations_call_participant_consult) | Cancel the transfer|
 |[**delete_conversations_email_messages_draft_attachment**](ConversationsApi.html#delete_conversations_email_messages_draft_attachment) | Delete attachment from draft|
+|[**delete_conversations_messages_cachedmedia_cached_media_item_id**](ConversationsApi.html#delete_conversations_messages_cachedmedia_cached_media_item_id) | Remove a cached media item asychronously|
 |[**delete_conversations_messaging_integrations_facebook_integration_id**](ConversationsApi.html#delete_conversations_messaging_integrations_facebook_integration_id) | Delete a Facebook messaging integration|
 |[**delete_conversations_messaging_integrations_instagram_integration_id**](ConversationsApi.html#delete_conversations_messaging_integrations_instagram_integration_id) | Delete Instagram messaging integration|
 |[**delete_conversations_messaging_integrations_line_integration_id**](ConversationsApi.html#delete_conversations_messaging_integrations_line_integration_id) | Delete a LINE messenger integration|
@@ -79,6 +80,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_conversations_message_participant_wrapup**](ConversationsApi.html#get_conversations_message_participant_wrapup) | Get the wrap-up for this conversation participant. |
 |[**get_conversations_message_participant_wrapupcodes**](ConversationsApi.html#get_conversations_message_participant_wrapupcodes) | Get list of wrapup codes for this conversation participant|
 |[**get_conversations_messages**](ConversationsApi.html#get_conversations_messages) | Get active message conversations for the logged in user|
+|[**get_conversations_messages_cachedmedia**](ConversationsApi.html#get_conversations_messages_cachedmedia) | Get a list of cached media items|
+|[**get_conversations_messages_cachedmedia_cached_media_item_id**](ConversationsApi.html#get_conversations_messages_cachedmedia_cached_media_item_id) | Get a cached media item|
 |[**get_conversations_messaging_facebook_app**](ConversationsApi.html#get_conversations_messaging_facebook_app) | Get Genesys Facebook App Id|
 |[**get_conversations_messaging_integrations**](ConversationsApi.html#get_conversations_messaging_integrations) | Get a list of Integrations|
 |[**get_conversations_messaging_integrations_facebook**](ConversationsApi.html#get_conversations_messaging_integrations_facebook) | Get a list of Facebook Integrations|
@@ -199,6 +202,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_conversations_message_communication_messages**](ConversationsApi.html#post_conversations_message_communication_messages) | Send message|
 |[**post_conversations_message_communication_messages_media**](ConversationsApi.html#post_conversations_message_communication_messages_media) | Create media|
 |[**post_conversations_message_communication_typing**](ConversationsApi.html#post_conversations_message_communication_typing) | Send message typing event|
+|[**post_conversations_message_inbound_open_event**](ConversationsApi.html#post_conversations_message_inbound_open_event) | Send an inbound Open Event Message|
+|[**post_conversations_message_inbound_open_message**](ConversationsApi.html#post_conversations_message_inbound_open_message) | Send inbound Open Message|
+|[**post_conversations_message_inbound_open_receipt**](ConversationsApi.html#post_conversations_message_inbound_open_receipt) | Send an inbound Open Receipt Message|
 |[**post_conversations_message_messages_bulk**](ConversationsApi.html#post_conversations_message_messages_bulk) | Get messages in batch|
 |[**post_conversations_message_participant_communication_wrapup**](ConversationsApi.html#post_conversations_message_participant_communication_wrapup) | Apply wrap-up for this conversation communication|
 |[**post_conversations_message_participant_monitor**](ConversationsApi.html#post_conversations_message_participant_monitor) | Listen in on the conversation from the point of view of a given participant.|
@@ -480,6 +486,54 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
 | **attachment_id** | **str**| attachmentId |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
+
+<a name="delete_conversations_messages_cachedmedia_cached_media_item_id"></a>
+
+##  delete_conversations_messages_cachedmedia_cached_media_item_id(cached_media_item_id)
+
+
+
+Remove a cached media item asychronously
+
+Wraps DELETE /api/v2/conversations/messages/cachedmedia/{cachedMediaItemId} 
+
+Requires ANY permissions: 
+
+* conversation:cachedMedia:delete
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+cached_media_item_id = 'cached_media_item_id_example' # str | cachedMediaItemId
+
+try:
+    # Remove a cached media item asychronously
+    api_instance.delete_conversations_messages_cachedmedia_cached_media_item_id(cached_media_item_id)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->delete_conversations_messages_cachedmedia_cached_media_item_id: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **cached_media_item_id** | **str**| cachedMediaItemId |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3767,6 +3821,108 @@ This endpoint does not need any parameters.
 ### Return type
 
 [**MessageConversationEntityListing**](MessageConversationEntityListing.html)
+
+<a name="get_conversations_messages_cachedmedia"></a>
+
+## [**CachedMediaItemEntityListing**](CachedMediaItemEntityListing.html) get_conversations_messages_cachedmedia(page_size=page_size, page_number=page_number, url=url)
+
+
+
+Get a list of cached media items
+
+Wraps GET /api/v2/conversations/messages/cachedmedia 
+
+Requires ANY permissions: 
+
+* conversation:cachedMedia:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+page_size = 25 # int | Page size (optional) (default to 25)
+page_number = 1 # int | Page number (optional) (default to 1)
+url = 'url_example' # str | URL to search for (optional)
+
+try:
+    # Get a list of cached media items
+    api_response = api_instance.get_conversations_messages_cachedmedia(page_size=page_size, page_number=page_number, url=url)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->get_conversations_messages_cachedmedia: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **url** | **str**| URL to search for | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**CachedMediaItemEntityListing**](CachedMediaItemEntityListing.html)
+
+<a name="get_conversations_messages_cachedmedia_cached_media_item_id"></a>
+
+## [**CachedMediaItem**](CachedMediaItem.html) get_conversations_messages_cachedmedia_cached_media_item_id(cached_media_item_id)
+
+
+
+Get a cached media item
+
+Wraps GET /api/v2/conversations/messages/cachedmedia/{cachedMediaItemId} 
+
+Requires ANY permissions: 
+
+* conversation:cachedMedia:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+cached_media_item_id = 'cached_media_item_id_example' # str | cachedMediaItemId
+
+try:
+    # Get a cached media item
+    api_response = api_instance.get_conversations_messages_cachedmedia_cached_media_item_id(cached_media_item_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->get_conversations_messages_cachedmedia_cached_media_item_id: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **cached_media_item_id** | **str**| cachedMediaItemId |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**CachedMediaItem**](CachedMediaItem.html)
 
 <a name="get_conversations_messaging_facebook_app"></a>
 
@@ -10002,6 +10158,165 @@ except ApiException as e:
 ### Return type
 
 void (empty response body)
+
+<a name="post_conversations_message_inbound_open_event"></a>
+
+## [**OpenEventNormalizedMessage**](OpenEventNormalizedMessage.html) post_conversations_message_inbound_open_event(integration_id, body)
+
+
+
+Send an inbound Open Event Message
+
+Send an inbound event message to an Open Messaging integration. In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. This will either generate a new Conversation, or be a part of an existing conversation. See https://developer.genesys.cloud/api/digital/openmessaging/ for example usage.
+
+Wraps POST /api/v2/conversations/messages/{integrationId}/inbound/open/event 
+
+Requires ALL permissions: 
+
+* conversation:message:receive
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+integration_id = 'integration_id_example' # str | integrationId
+body = PureCloudPlatformClientV2.OpenInboundNormalizedEvent() # OpenInboundNormalizedEvent | NormalizedMessage
+
+try:
+    # Send an inbound Open Event Message
+    api_response = api_instance.post_conversations_message_inbound_open_event(integration_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->post_conversations_message_inbound_open_event: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **integration_id** | **str**| integrationId |  |
+| **body** | [**OpenInboundNormalizedEvent**](OpenInboundNormalizedEvent.html)| NormalizedMessage |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**OpenEventNormalizedMessage**](OpenEventNormalizedMessage.html)
+
+<a name="post_conversations_message_inbound_open_message"></a>
+
+## [**OpenMessageNormalizedMessage**](OpenMessageNormalizedMessage.html) post_conversations_message_inbound_open_message(integration_id, body)
+
+
+
+Send inbound Open Message
+
+Send an inbound message to an Open Messaging integration. In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. This will either generate a new Conversation, or be a part of an existing conversation. See https://developer.genesys.cloud/api/digital/openmessaging/ for example usage.
+
+Wraps POST /api/v2/conversations/messages/{integrationId}/inbound/open/message 
+
+Requires ALL permissions: 
+
+* conversation:message:receive
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+integration_id = 'integration_id_example' # str | integrationId
+body = PureCloudPlatformClientV2.OpenInboundNormalizedMessage() # OpenInboundNormalizedMessage | NormalizedMessage
+
+try:
+    # Send inbound Open Message
+    api_response = api_instance.post_conversations_message_inbound_open_message(integration_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->post_conversations_message_inbound_open_message: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **integration_id** | **str**| integrationId |  |
+| **body** | [**OpenInboundNormalizedMessage**](OpenInboundNormalizedMessage.html)| NormalizedMessage |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**OpenMessageNormalizedMessage**](OpenMessageNormalizedMessage.html)
+
+<a name="post_conversations_message_inbound_open_receipt"></a>
+
+## [**OpenReceiptNormalizedMessage**](OpenReceiptNormalizedMessage.html) post_conversations_message_inbound_open_receipt(integration_id, body)
+
+
+
+Send an inbound Open Receipt Message
+
+Send an inbound open Receipt to an Open Messaging integration. In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. This will either generate a new Conversation, or be a part of an existing conversation. See https://developer.genesys.cloud/api/digital/openmessaging/ for example usage.
+
+Wraps POST /api/v2/conversations/messages/{integrationId}/inbound/open/receipt 
+
+Requires ALL permissions: 
+
+* conversation:message:receive
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+integration_id = 'integration_id_example' # str | integrationId
+body = PureCloudPlatformClientV2.OpenInboundNormalizedReceipt() # OpenInboundNormalizedReceipt | NormalizedMessage
+
+try:
+    # Send an inbound Open Receipt Message
+    api_response = api_instance.post_conversations_message_inbound_open_receipt(integration_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->post_conversations_message_inbound_open_receipt: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **integration_id** | **str**| integrationId |  |
+| **body** | [**OpenInboundNormalizedReceipt**](OpenInboundNormalizedReceipt.html)| NormalizedMessage |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**OpenReceiptNormalizedMessage**](OpenReceiptNormalizedMessage.html)
 
 <a name="post_conversations_message_messages_bulk"></a>
 

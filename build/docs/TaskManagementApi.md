@@ -569,7 +569,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **workitem_id** | **str**| Workitem ID |  |
-| **expands** | **str**| Which fields to expand. Comma separated if more than one. | [optional] <br />**Values**: type, workbin, status |
+| **expands** | **str**| Which fields to expand. Comma separated if more than one. | [optional] <br />**Values**: type, workbin, status, queue, assignee |
 {: class="table table-striped"}
 
 ### Return type

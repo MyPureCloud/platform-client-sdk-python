@@ -36,6 +36,7 @@ if TYPE_CHECKING:
     from . import BuAbandonRate
     from . import BuAverageSpeedOfAnswer
     from . import BuServiceLevel
+    from . import ServiceGoalTemplateImpactOverride
 
 class CreateServiceGoalTemplate(object):
     """
@@ -55,20 +56,23 @@ class CreateServiceGoalTemplate(object):
             'name': 'str',
             'service_level': 'BuServiceLevel',
             'average_speed_of_answer': 'BuAverageSpeedOfAnswer',
-            'abandon_rate': 'BuAbandonRate'
+            'abandon_rate': 'BuAbandonRate',
+            'impact_override': 'ServiceGoalTemplateImpactOverride'
         }
 
         self.attribute_map = {
             'name': 'name',
             'service_level': 'serviceLevel',
             'average_speed_of_answer': 'averageSpeedOfAnswer',
-            'abandon_rate': 'abandonRate'
+            'abandon_rate': 'abandonRate',
+            'impact_override': 'impactOverride'
         }
 
         self._name = None
         self._service_level = None
         self._average_speed_of_answer = None
         self._abandon_rate = None
+        self._impact_override = None
 
     @property
     def name(self) -> str:
@@ -165,6 +169,30 @@ class CreateServiceGoalTemplate(object):
         
 
         self._abandon_rate = abandon_rate
+
+    @property
+    def impact_override(self) -> 'ServiceGoalTemplateImpactOverride':
+        """
+        Gets the impact_override of this CreateServiceGoalTemplate.
+        Settings controlling max percent increase and decrease of service goals for this service goal template
+
+        :return: The impact_override of this CreateServiceGoalTemplate.
+        :rtype: ServiceGoalTemplateImpactOverride
+        """
+        return self._impact_override
+
+    @impact_override.setter
+    def impact_override(self, impact_override: 'ServiceGoalTemplateImpactOverride') -> None:
+        """
+        Sets the impact_override of this CreateServiceGoalTemplate.
+        Settings controlling max percent increase and decrease of service goals for this service goal template
+
+        :param impact_override: The impact_override of this CreateServiceGoalTemplate.
+        :type: ServiceGoalTemplateImpactOverride
+        """
+        
+
+        self._impact_override = impact_override
 
     def to_dict(self):
         """

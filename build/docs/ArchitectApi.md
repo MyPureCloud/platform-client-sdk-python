@@ -37,11 +37,13 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_architect_dependencytracking_updatedresourceconsumers**](ArchitectApi.html#get_architect_dependencytracking_updatedresourceconsumers) | Get Dependency Tracking objects that depend on updated resources|
 |[**get_architect_emergencygroup**](ArchitectApi.html#get_architect_emergencygroup) | Gets a emergency group by ID|
 |[**get_architect_emergencygroups**](ArchitectApi.html#get_architect_emergencygroups) | Get a list of emergency groups.|
+|[**get_architect_emergencygroups_divisionviews**](ArchitectApi.html#get_architect_emergencygroups_divisionviews) | Get a pageable list of basic emergency group objects filterable by query parameters.|
 |[**get_architect_grammar**](ArchitectApi.html#get_architect_grammar) | Get a grammar|
 |[**get_architect_grammar_language**](ArchitectApi.html#get_architect_grammar_language) | Get a grammar language.|
 |[**get_architect_grammars**](ArchitectApi.html#get_architect_grammars) | Get a pageable list of grammars, filtered by query parameters|
 |[**get_architect_ivr**](ArchitectApi.html#get_architect_ivr) | Get an IVR config.|
 |[**get_architect_ivrs**](ArchitectApi.html#get_architect_ivrs) | Get IVR configs.|
+|[**get_architect_ivrs_divisionviews**](ArchitectApi.html#get_architect_ivrs_divisionviews) | Get a pageable list of basic ivr configuration information objects filterable by query parameters.|
 |[**get_architect_prompt**](ArchitectApi.html#get_architect_prompt) | Get specified user prompt|
 |[**get_architect_prompt_history_history_id**](ArchitectApi.html#get_architect_prompt_history_history_id) | Get generated prompt history|
 |[**get_architect_prompt_resource**](ArchitectApi.html#get_architect_prompt_resource) | Get specified user prompt resource|
@@ -50,7 +52,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_architect_schedule**](ArchitectApi.html#get_architect_schedule) | Get a schedule by ID|
 |[**get_architect_schedulegroup**](ArchitectApi.html#get_architect_schedulegroup) | Gets a schedule group by ID|
 |[**get_architect_schedulegroups**](ArchitectApi.html#get_architect_schedulegroups) | Get a list of schedule groups.|
+|[**get_architect_schedulegroups_divisionviews**](ArchitectApi.html#get_architect_schedulegroups_divisionviews) | Get a pageable list of basic schedule group configuration information objects filterable by query parameters.|
 |[**get_architect_schedules**](ArchitectApi.html#get_architect_schedules) | Get a list of schedules.|
+|[**get_architect_schedules_divisionviews**](ArchitectApi.html#get_architect_schedules_divisionviews) | Get a pageable list of basic schedule configuration information objects filterable by query parameters.|
 |[**get_architect_systemprompt**](ArchitectApi.html#get_architect_systemprompt) | Get a system prompt|
 |[**get_architect_systemprompt_history_history_id**](ArchitectApi.html#get_architect_systemprompt_history_history_id) | Get generated prompt history|
 |[**get_architect_systemprompt_resource**](ArchitectApi.html#get_architect_systemprompt_resource) | Get a system prompt resource.|
@@ -1652,6 +1656,69 @@ except ApiException as e:
 
 [**EmergencyGroupListing**](EmergencyGroupListing.html)
 
+<a name="get_architect_emergencygroups_divisionviews"></a>
+
+## [**EmergencyGroupDivisionViewEntityListing**](EmergencyGroupDivisionViewEntityListing.html) get_architect_emergencygroups_divisionviews(page_number=page_number, page_size=page_size, sort_by=sort_by, sort_order=sort_order, id=id, name=name, division_id=division_id)
+
+
+
+Get a pageable list of basic emergency group objects filterable by query parameters.
+
+This returns emergency groups consisting of name and division. If one or more IDs are specified, the search will fetch flow outcomes that match the given ID(s) and not use any additional supplied query parameters in the search.
+
+Wraps GET /api/v2/architect/emergencygroups/divisionviews 
+
+Requires ALL permissions: 
+
+* routing:emergencyGroup:search
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ArchitectApi()
+page_number = 1 # int | Page number (optional) (default to 1)
+page_size = 25 # int | Page size (optional) (default to 25)
+sort_by = ''name'' # str | Sort by (optional) (default to 'name')
+sort_order = ''ASC'' # str | Sort order (optional) (default to 'ASC')
+id = ['id_example'] # list[str] | ID of the Emergency Groups to filter by. (optional)
+name = 'name_example' # str | Name of the Emergency Group to filter by. (optional)
+division_id = ['division_id_example'] # list[str] | List of divisionIds on which to filter. (optional)
+
+try:
+    # Get a pageable list of basic emergency group objects filterable by query parameters.
+    api_response = api_instance.get_architect_emergencygroups_divisionviews(page_number=page_number, page_size=page_size, sort_by=sort_by, sort_order=sort_order, id=id, name=name, division_id=division_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ArchitectApi->get_architect_emergencygroups_divisionviews: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **sort_by** | **str**| Sort by | [optional] [default to &#39;name&#39;] |
+| **sort_order** | **str**| Sort order | [optional] [default to &#39;ASC&#39;] |
+| **id** | [**list[str]**](str.html)| ID of the Emergency Groups to filter by. | [optional]  |
+| **name** | **str**| Name of the Emergency Group to filter by. | [optional]  |
+| **division_id** | [**list[str]**](str.html)| List of divisionIds on which to filter. | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**EmergencyGroupDivisionViewEntityListing**](EmergencyGroupDivisionViewEntityListing.html)
+
 <a name="get_architect_grammar"></a>
 
 ## [**Grammar**](Grammar.html) get_architect_grammar(grammar_id, include_file_urls=include_file_urls)
@@ -1938,6 +2005,67 @@ except ApiException as e:
 ### Return type
 
 [**IVREntityListing**](IVREntityListing.html)
+
+<a name="get_architect_ivrs_divisionviews"></a>
+
+## [**IVRDivisionViewEntityListing**](IVRDivisionViewEntityListing.html) get_architect_ivrs_divisionviews(page_number=page_number, page_size=page_size, sort_by=sort_by, sort_order=sort_order, id=id, name=name, division_id=division_id)
+
+
+
+Get a pageable list of basic ivr configuration information objects filterable by query parameters.
+
+Wraps GET /api/v2/architect/ivrs/divisionviews 
+
+Requires ALL permissions: 
+
+* routing:callRoute:search
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ArchitectApi()
+page_number = 1 # int | Page number (optional) (default to 1)
+page_size = 25 # int | Page size (optional) (default to 25)
+sort_by = ''name'' # str | Sort by (optional) (default to 'name')
+sort_order = ''ASC'' # str | Sort order (optional) (default to 'ASC')
+id = ['id_example'] # list[str] | ID of the IVR to filter by. (optional)
+name = 'name_example' # str | Name of the IVR to filter by. (optional)
+division_id = ['division_id_example'] # list[str] | List of divisionIds on which to filter. (optional)
+
+try:
+    # Get a pageable list of basic ivr configuration information objects filterable by query parameters.
+    api_response = api_instance.get_architect_ivrs_divisionviews(page_number=page_number, page_size=page_size, sort_by=sort_by, sort_order=sort_order, id=id, name=name, division_id=division_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ArchitectApi->get_architect_ivrs_divisionviews: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **sort_by** | **str**| Sort by | [optional] [default to &#39;name&#39;] |
+| **sort_order** | **str**| Sort order | [optional] [default to &#39;ASC&#39;] |
+| **id** | [**list[str]**](str.html)| ID of the IVR to filter by. | [optional]  |
+| **name** | **str**| Name of the IVR to filter by. | [optional]  |
+| **division_id** | [**list[str]**](str.html)| List of divisionIds on which to filter. | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**IVRDivisionViewEntityListing**](IVRDivisionViewEntityListing.html)
 
 <a name="get_architect_prompt"></a>
 
@@ -2377,6 +2505,67 @@ except ApiException as e:
 
 [**ScheduleGroupEntityListing**](ScheduleGroupEntityListing.html)
 
+<a name="get_architect_schedulegroups_divisionviews"></a>
+
+## [**ScheduleGroupDivisionViewEntityListing**](ScheduleGroupDivisionViewEntityListing.html) get_architect_schedulegroups_divisionviews(page_number=page_number, page_size=page_size, sort_by=sort_by, sort_order=sort_order, id=id, name=name, division_id=division_id)
+
+
+
+Get a pageable list of basic schedule group configuration information objects filterable by query parameters.
+
+Wraps GET /api/v2/architect/schedulegroups/divisionviews 
+
+Requires ALL permissions: 
+
+* routing:scheduleGroup:search
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ArchitectApi()
+page_number = 1 # int | Page number (optional) (default to 1)
+page_size = 25 # int | Page size (optional) (default to 25)
+sort_by = ''name'' # str | Sort by (optional) (default to 'name')
+sort_order = ''ASC'' # str | Sort order (optional) (default to 'ASC')
+id = ['id_example'] # list[str] | ID of the schedule group to filter by. (optional)
+name = 'name_example' # str | Name of the schedule group to filter by. (optional)
+division_id = ['division_id_example'] # list[str] | List of divisionIds on which to filter. (optional)
+
+try:
+    # Get a pageable list of basic schedule group configuration information objects filterable by query parameters.
+    api_response = api_instance.get_architect_schedulegroups_divisionviews(page_number=page_number, page_size=page_size, sort_by=sort_by, sort_order=sort_order, id=id, name=name, division_id=division_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ArchitectApi->get_architect_schedulegroups_divisionviews: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **sort_by** | **str**| Sort by | [optional] [default to &#39;name&#39;] |
+| **sort_order** | **str**| Sort order | [optional] [default to &#39;ASC&#39;] |
+| **id** | [**list[str]**](str.html)| ID of the schedule group to filter by. | [optional]  |
+| **name** | **str**| Name of the schedule group to filter by. | [optional]  |
+| **division_id** | [**list[str]**](str.html)| List of divisionIds on which to filter. | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**ScheduleGroupDivisionViewEntityListing**](ScheduleGroupDivisionViewEntityListing.html)
+
 <a name="get_architect_schedules"></a>
 
 ## [**ScheduleEntityListing**](ScheduleEntityListing.html) get_architect_schedules(page_number=page_number, page_size=page_size, sort_by=sort_by, sort_order=sort_order, name=name, division_id=division_id)
@@ -2435,6 +2624,67 @@ except ApiException as e:
 ### Return type
 
 [**ScheduleEntityListing**](ScheduleEntityListing.html)
+
+<a name="get_architect_schedules_divisionviews"></a>
+
+## [**ScheduleDivisionViewEntityListing**](ScheduleDivisionViewEntityListing.html) get_architect_schedules_divisionviews(page_number=page_number, page_size=page_size, sort_by=sort_by, sort_order=sort_order, id=id, name=name, division_id=division_id)
+
+
+
+Get a pageable list of basic schedule configuration information objects filterable by query parameters.
+
+Wraps GET /api/v2/architect/schedules/divisionviews 
+
+Requires ALL permissions: 
+
+* routing:schedule:search
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ArchitectApi()
+page_number = 1 # int | Page number (optional) (default to 1)
+page_size = 25 # int | Page size (optional) (default to 25)
+sort_by = ''name'' # str | Sort by (optional) (default to 'name')
+sort_order = ''ASC'' # str | Sort order (optional) (default to 'ASC')
+id = ['id_example'] # list[str] | ID of the schedule group to filter by. (optional)
+name = 'name_example' # str | Name of the schedule group to filter by. (optional)
+division_id = ['division_id_example'] # list[str] | List of divisionIds on which to filter. (optional)
+
+try:
+    # Get a pageable list of basic schedule configuration information objects filterable by query parameters.
+    api_response = api_instance.get_architect_schedules_divisionviews(page_number=page_number, page_size=page_size, sort_by=sort_by, sort_order=sort_order, id=id, name=name, division_id=division_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ArchitectApi->get_architect_schedules_divisionviews: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **sort_by** | **str**| Sort by | [optional] [default to &#39;name&#39;] |
+| **sort_order** | **str**| Sort order | [optional] [default to &#39;ASC&#39;] |
+| **id** | [**list[str]**](str.html)| ID of the schedule group to filter by. | [optional]  |
+| **name** | **str**| Name of the schedule group to filter by. | [optional]  |
+| **division_id** | [**list[str]**](str.html)| List of divisionIds on which to filter. | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**ScheduleDivisionViewEntityListing**](ScheduleDivisionViewEntityListing.html)
 
 <a name="get_architect_systemprompt"></a>
 

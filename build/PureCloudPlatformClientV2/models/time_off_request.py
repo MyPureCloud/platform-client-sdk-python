@@ -62,11 +62,14 @@ class TimeOffRequest(object):
             'partial_day_start_date_times': 'list[datetime]',
             'full_day_management_unit_dates': 'list[str]',
             'daily_duration_minutes': 'int',
+            'duration_minutes': 'list[int]',
+            'payable_minutes': 'list[int]',
             'notes': 'str',
             'submitted_by': 'UserReference',
             'submitted_date': 'datetime',
             'reviewed_by': 'UserReference',
             'reviewed_date': 'datetime',
+            'sync_version': 'int',
             'metadata': 'WfmVersionedEntityMetadata',
             'self_uri': 'str'
         }
@@ -83,11 +86,14 @@ class TimeOffRequest(object):
             'partial_day_start_date_times': 'partialDayStartDateTimes',
             'full_day_management_unit_dates': 'fullDayManagementUnitDates',
             'daily_duration_minutes': 'dailyDurationMinutes',
+            'duration_minutes': 'durationMinutes',
+            'payable_minutes': 'payableMinutes',
             'notes': 'notes',
             'submitted_by': 'submittedBy',
             'submitted_date': 'submittedDate',
             'reviewed_by': 'reviewedBy',
             'reviewed_date': 'reviewedDate',
+            'sync_version': 'syncVersion',
             'metadata': 'metadata',
             'self_uri': 'selfUri'
         }
@@ -103,11 +109,14 @@ class TimeOffRequest(object):
         self._partial_day_start_date_times = None
         self._full_day_management_unit_dates = None
         self._daily_duration_minutes = None
+        self._duration_minutes = None
+        self._payable_minutes = None
         self._notes = None
         self._submitted_by = None
         self._submitted_date = None
         self._reviewed_by = None
         self._reviewed_date = None
+        self._sync_version = None
         self._metadata = None
         self._self_uri = None
 
@@ -386,6 +395,54 @@ class TimeOffRequest(object):
         self._daily_duration_minutes = daily_duration_minutes
 
     @property
+    def duration_minutes(self) -> List[int]:
+        """
+        Gets the duration_minutes of this TimeOffRequest.
+        Daily durations for each day of this time off request in minutes
+
+        :return: The duration_minutes of this TimeOffRequest.
+        :rtype: list[int]
+        """
+        return self._duration_minutes
+
+    @duration_minutes.setter
+    def duration_minutes(self, duration_minutes: List[int]) -> None:
+        """
+        Sets the duration_minutes of this TimeOffRequest.
+        Daily durations for each day of this time off request in minutes
+
+        :param duration_minutes: The duration_minutes of this TimeOffRequest.
+        :type: list[int]
+        """
+        
+
+        self._duration_minutes = duration_minutes
+
+    @property
+    def payable_minutes(self) -> List[int]:
+        """
+        Gets the payable_minutes of this TimeOffRequest.
+        Payable minutes for each day of this time off request
+
+        :return: The payable_minutes of this TimeOffRequest.
+        :rtype: list[int]
+        """
+        return self._payable_minutes
+
+    @payable_minutes.setter
+    def payable_minutes(self, payable_minutes: List[int]) -> None:
+        """
+        Sets the payable_minutes of this TimeOffRequest.
+        Payable minutes for each day of this time off request
+
+        :param payable_minutes: The payable_minutes of this TimeOffRequest.
+        :type: list[int]
+        """
+        
+
+        self._payable_minutes = payable_minutes
+
+    @property
     def notes(self) -> str:
         """
         Gets the notes of this TimeOffRequest.
@@ -504,6 +561,30 @@ class TimeOffRequest(object):
         
 
         self._reviewed_date = reviewed_date
+
+    @property
+    def sync_version(self) -> int:
+        """
+        Gets the sync_version of this TimeOffRequest.
+        The sync version of this time off request for which the scheduled activity is associated
+
+        :return: The sync_version of this TimeOffRequest.
+        :rtype: int
+        """
+        return self._sync_version
+
+    @sync_version.setter
+    def sync_version(self, sync_version: int) -> None:
+        """
+        Sets the sync_version of this TimeOffRequest.
+        The sync version of this time off request for which the scheduled activity is associated
+
+        :param sync_version: The sync_version of this TimeOffRequest.
+        :type: int
+        """
+        
+
+        self._sync_version = sync_version
 
     @property
     def metadata(self) -> 'WfmVersionedEntityMetadata':

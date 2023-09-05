@@ -81,6 +81,7 @@ from ..models import QueueObservationQueryResponse
 from ..models import QueueRequest
 from ..models import Recipient
 from ..models import RecipientListing
+from ..models import RecipientRequest
 from ..models import RoutingActivityQuery
 from ..models import RoutingActivityResponse
 from ..models import RoutingConversationAttributesRequest
@@ -94,6 +95,7 @@ from ..models import SkillGroupEntityListing
 from ..models import SkillGroupMemberDivisionList
 from ..models import SkillGroupMemberDivisions
 from ..models import SkillGroupMemberEntityListing
+from ..models import SkillGroupWithMemberDivisions
 from ..models import SmsAddress
 from ..models import SmsAddressEntityListing
 from ..models import SmsAddressProvision
@@ -3170,6 +3172,7 @@ class RoutingApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str messenger_type: Messenger Type
+        :param str name: Recipient Name
         :param int page_size: Page size
         :param int page_number: Page number
         :return: RecipientListing
@@ -3177,7 +3180,7 @@ class RoutingApi(object):
                  returns the request thread.
         """
 
-        all_params = ['messenger_type', 'page_size', 'page_number']
+        all_params = ['messenger_type', 'name', 'page_size', 'page_number']
         all_params.append('callback')
 
         params = locals()
@@ -3198,6 +3201,8 @@ class RoutingApi(object):
         query_params = {}
         if 'messenger_type' in params:
             query_params['messengerType'] = params['messenger_type']
+        if 'name' in params:
+            query_params['name'] = params['name']
         if 'page_size' in params:
             query_params['pageSize'] = params['page_size']
         if 'page_number' in params:
@@ -9336,7 +9341,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_routing_skillgroups(self, body: 'SkillGroup', **kwargs) -> 'SkillGroup':
+    def post_routing_skillgroups(self, body: 'SkillGroupWithMemberDivisions', **kwargs) -> 'SkillGroupWithMemberDivisions':
         """
         Create a skill group
         
@@ -9351,8 +9356,8 @@ class RoutingApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param SkillGroup body: Create skill group (required)
-        :return: SkillGroup
+        :param SkillGroupWithMemberDivisions body: Create skill group (required)
+        :return: SkillGroupWithMemberDivisions
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -9409,7 +9414,7 @@ class RoutingApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='SkillGroup',
+                                            response_type='SkillGroupWithMemberDivisions',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -10220,7 +10225,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def put_routing_message_recipient(self, recipient_id: str, body: 'Recipient', **kwargs) -> 'Recipient':
+    def put_routing_message_recipient(self, recipient_id: str, body: 'RecipientRequest', **kwargs) -> 'Recipient':
         """
         Update a recipient
         
@@ -10236,7 +10241,7 @@ class RoutingApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str recipient_id: Recipient ID (required)
-        :param Recipient body: Recipient (required)
+        :param RecipientRequest body: Recipient (required)
         :return: Recipient
                  If the method is called asynchronously,
                  returns the request thread.

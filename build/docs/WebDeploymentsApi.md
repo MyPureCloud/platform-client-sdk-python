@@ -420,7 +420,7 @@ except ApiException as e:
 
 <a name="get_webdeployments_deployment"></a>
 
-## [**WebDeployment**](WebDeployment.html) get_webdeployments_deployment(deployment_id)
+## [**WebDeployment**](WebDeployment.html) get_webdeployments_deployment(deployment_id, expand=expand)
 
 
 
@@ -446,10 +446,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.WebDeploymentsApi()
 deployment_id = 'deployment_id_example' # str | The deployment ID
+expand = ['expand_example'] # list[str] | The specified entity attributes will be filled. Comma separated values expected.  (optional)
 
 try:
     # Get a deployment
-    api_response = api_instance.get_webdeployments_deployment(deployment_id)
+    api_response = api_instance.get_webdeployments_deployment(deployment_id, expand=expand)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling WebDeploymentsApi->get_webdeployments_deployment: %s\n" % e)
@@ -461,6 +462,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **deployment_id** | **str**| The deployment ID |  |
+| **expand** | [**list[str]**](str.html)| The specified entity attributes will be filled. Comma separated values expected.  | [optional] <br />**Values**: supportedContent |
 {: class="table table-striped"}
 
 ### Return type
@@ -516,7 +518,7 @@ except ApiException as e:
 
 <a name="get_webdeployments_deployment_configurations"></a>
 
-## [**WebDeploymentActiveConfigurationOnDeployment**](WebDeploymentActiveConfigurationOnDeployment.html) get_webdeployments_deployment_configurations(deployment_id, type=type)
+## [**WebDeploymentActiveConfigurationOnDeployment**](WebDeploymentActiveConfigurationOnDeployment.html) get_webdeployments_deployment_configurations(deployment_id, type=type, expand=expand)
 
 
 
@@ -542,10 +544,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.WebDeploymentsApi()
 deployment_id = 'deployment_id_example' # str | The deployment ID
 type = 'type_example' # str | Get active configuration on a deployment (optional)
+expand = ['expand_example'] # list[str] | Expand instructions for the return value (optional)
 
 try:
     # Get active configuration for a given deployment
-    api_response = api_instance.get_webdeployments_deployment_configurations(deployment_id, type=type)
+    api_response = api_instance.get_webdeployments_deployment_configurations(deployment_id, type=type, expand=expand)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling WebDeploymentsApi->get_webdeployments_deployment_configurations: %s\n" % e)
@@ -558,6 +561,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **deployment_id** | **str**| The deployment ID |  |
 | **type** | **str**| Get active configuration on a deployment | [optional]  |
+| **expand** | [**list[str]**](str.html)| Expand instructions for the return value | [optional] <br />**Values**: supportedContent |
 {: class="table table-striped"}
 
 ### Return type

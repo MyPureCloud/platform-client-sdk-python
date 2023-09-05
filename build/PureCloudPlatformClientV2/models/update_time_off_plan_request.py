@@ -34,6 +34,7 @@ from typing import Dict
 
 if TYPE_CHECKING:
     from . import SetWrapperString
+    from . import ValueWrapperHrisTimeOffType
     from . import WfmVersionedEntityMetadata
 
 class UpdateTimeOffPlanRequest(object):
@@ -56,6 +57,7 @@ class UpdateTimeOffPlanRequest(object):
             'time_off_limit_ids': 'SetWrapperString',
             'auto_approval_rule': 'str',
             'days_before_start_to_expire_from_waitlist': 'int',
+            'hris_time_off_type': 'ValueWrapperHrisTimeOffType',
             'active': 'bool',
             'metadata': 'WfmVersionedEntityMetadata'
         }
@@ -66,6 +68,7 @@ class UpdateTimeOffPlanRequest(object):
             'time_off_limit_ids': 'timeOffLimitIds',
             'auto_approval_rule': 'autoApprovalRule',
             'days_before_start_to_expire_from_waitlist': 'daysBeforeStartToExpireFromWaitlist',
+            'hris_time_off_type': 'hrisTimeOffType',
             'active': 'active',
             'metadata': 'metadata'
         }
@@ -75,6 +78,7 @@ class UpdateTimeOffPlanRequest(object):
         self._time_off_limit_ids = None
         self._auto_approval_rule = None
         self._days_before_start_to_expire_from_waitlist = None
+        self._hris_time_off_type = None
         self._active = None
         self._metadata = None
 
@@ -202,6 +206,30 @@ class UpdateTimeOffPlanRequest(object):
         
 
         self._days_before_start_to_expire_from_waitlist = days_before_start_to_expire_from_waitlist
+
+    @property
+    def hris_time_off_type(self) -> 'ValueWrapperHrisTimeOffType':
+        """
+        Gets the hris_time_off_type of this UpdateTimeOffPlanRequest.
+        Time off type, if this time off plan is associated with the integration.
+
+        :return: The hris_time_off_type of this UpdateTimeOffPlanRequest.
+        :rtype: ValueWrapperHrisTimeOffType
+        """
+        return self._hris_time_off_type
+
+    @hris_time_off_type.setter
+    def hris_time_off_type(self, hris_time_off_type: 'ValueWrapperHrisTimeOffType') -> None:
+        """
+        Sets the hris_time_off_type of this UpdateTimeOffPlanRequest.
+        Time off type, if this time off plan is associated with the integration.
+
+        :param hris_time_off_type: The hris_time_off_type of this UpdateTimeOffPlanRequest.
+        :type: ValueWrapperHrisTimeOffType
+        """
+        
+
+        self._hris_time_off_type = hris_time_off_type
 
     @property
     def active(self) -> bool:

@@ -1577,7 +1577,7 @@ except ApiException as e:
 
 <a name="get_knowledge_knowledgebase_import_job"></a>
 
-## [**KnowledgeImportJobResponse**](KnowledgeImportJobResponse.html) get_knowledge_knowledgebase_import_job(knowledge_base_id, import_job_id)
+## [**KnowledgeImportJobResponse**](KnowledgeImportJobResponse.html) get_knowledge_knowledgebase_import_job(knowledge_base_id, import_job_id, expand=expand)
 
 
 
@@ -1604,10 +1604,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.KnowledgeApi()
 knowledge_base_id = 'knowledge_base_id_example' # str | Knowledge base ID
 import_job_id = 'import_job_id_example' # str | Import job ID
+expand = ['expand_example'] # list[str] | If expand contains 'urls' downloadURL and failedEntitiesURL will be filled. (optional)
 
 try:
     # Get import job report
-    api_response = api_instance.get_knowledge_knowledgebase_import_job(knowledge_base_id, import_job_id)
+    api_response = api_instance.get_knowledge_knowledgebase_import_job(knowledge_base_id, import_job_id, expand=expand)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling KnowledgeApi->get_knowledge_knowledgebase_import_job: %s\n" % e)
@@ -1620,6 +1621,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **knowledge_base_id** | **str**| Knowledge base ID |  |
 | **import_job_id** | **str**| Import job ID |  |
+| **expand** | [**list[str]**](str.html)| If expand contains &#39;urls&#39; downloadURL and failedEntitiesURL will be filled. | [optional] <br />**Values**: urls |
 {: class="table table-striped"}
 
 ### Return type
@@ -2508,7 +2510,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.KnowledgeApi()
 knowledge_base_id = 'knowledge_base_id_example' # str | Knowledge base ID
-body = PureCloudPlatformClientV2.KnowledgeBase() # KnowledgeBase | 
+body = PureCloudPlatformClientV2.KnowledgeBaseUpdateRequest() # KnowledgeBaseUpdateRequest | 
 
 try:
     # Update knowledge base
@@ -2524,7 +2526,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **knowledge_base_id** | **str**| Knowledge base ID |  |
-| **body** | [**KnowledgeBase**](KnowledgeBase.html)|  |  |
+| **body** | [**KnowledgeBaseUpdateRequest**](KnowledgeBaseUpdateRequest.html)|  |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -4492,7 +4494,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.KnowledgeApi()
-body = PureCloudPlatformClientV2.KnowledgeBase() # KnowledgeBase | 
+body = PureCloudPlatformClientV2.KnowledgeBaseCreateRequest() # KnowledgeBaseCreateRequest | 
 
 try:
     # Create new knowledge base
@@ -4507,7 +4509,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**KnowledgeBase**](KnowledgeBase.html)|  |  |
+| **body** | [**KnowledgeBaseCreateRequest**](KnowledgeBaseCreateRequest.html)|  |  |
 {: class="table table-striped"}
 
 ### Return type

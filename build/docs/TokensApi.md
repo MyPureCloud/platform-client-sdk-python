@@ -109,7 +109,7 @@ void (empty response body)
 
 <a name="get_tokens_me"></a>
 
-## [**TokenInfo**](TokenInfo.html) get_tokens_me()
+## [**TokenInfo**](TokenInfo.html) get_tokens_me(preserve_idle_ttl=preserve_idle_ttl)
 
 
 
@@ -133,10 +133,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.TokensApi()
+preserve_idle_ttl = True # bool | preserveIdleTTL indicates whether the idle token timeout should be reset or preserved. If preserveIdleTTL is true, then TTL value is not reset. If unset or false, the value is reset. (optional)
 
 try:
     # Fetch information about the current token
-    api_response = api_instance.get_tokens_me()
+    api_response = api_instance.get_tokens_me(preserve_idle_ttl=preserve_idle_ttl)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling TokensApi->get_tokens_me: %s\n" % e)
@@ -144,8 +145,11 @@ except ApiException as e:
 
 ### Parameters
 
-This endpoint does not need any parameters.
 
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **preserve_idle_ttl** | **bool**| preserveIdleTTL indicates whether the idle token timeout should be reset or preserved. If preserveIdleTTL is true, then TTL value is not reset. If unset or false, the value is reset. | [optional]  |
+{: class="table table-striped"}
 
 ### Return type
 

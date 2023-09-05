@@ -715,12 +715,13 @@ class WebDeploymentsApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str deployment_id: The deployment ID (required)
+        :param list[str] expand: The specified entity attributes will be filled. Comma separated values expected. 
         :return: WebDeployment
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['deployment_id']
+        all_params = ['deployment_id', 'expand']
         all_params.append('callback')
 
         params = locals()
@@ -744,6 +745,8 @@ class WebDeploymentsApi(object):
             path_params['deploymentId'] = params['deployment_id']
 
         query_params = {}
+        if 'expand' in params:
+            query_params['expand'] = params['expand']
 
         header_params = {}
 
@@ -878,12 +881,13 @@ class WebDeploymentsApi(object):
             for asynchronous request. (optional)
         :param str deployment_id: The deployment ID (required)
         :param str type: Get active configuration on a deployment
+        :param list[str] expand: Expand instructions for the return value
         :return: WebDeploymentActiveConfigurationOnDeployment
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['deployment_id', 'type']
+        all_params = ['deployment_id', 'type', 'expand']
         all_params.append('callback')
 
         params = locals()
@@ -909,6 +913,8 @@ class WebDeploymentsApi(object):
         query_params = {}
         if 'type' in params:
             query_params['type'] = params['type']
+        if 'expand' in params:
+            query_params['expand'] = params['expand']
 
         header_params = {}
 

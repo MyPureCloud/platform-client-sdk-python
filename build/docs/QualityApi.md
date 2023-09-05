@@ -529,7 +529,7 @@ except ApiException as e:
 
 <a name="get_quality_agents_activity"></a>
 
-## [**AgentActivityEntityListing**](AgentActivityEntityListing.html) get_quality_agents_activity(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, start_time=start_time, end_time=end_time, agent_user_id=agent_user_id, evaluator_user_id=evaluator_user_id, name=name, group=group)
+## [**AgentActivityEntityListing**](AgentActivityEntityListing.html) get_quality_agents_activity(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, start_time=start_time, end_time=end_time, agent_user_id=agent_user_id, evaluator_user_id=evaluator_user_id, name=name, group=group, form_context_id=form_context_id)
 
 
 
@@ -568,10 +568,11 @@ agent_user_id = ['agent_user_id_example'] # list[str] | user id of agent request
 evaluator_user_id = 'evaluator_user_id_example' # str | user id of the evaluator (optional)
 name = 'name_example' # str | name (optional)
 group = 'group_example' # str | group id (optional)
+form_context_id = 'form_context_id_example' # str | shared id between form versions (optional)
 
 try:
     # Gets a list of Agent Activities
-    api_response = api_instance.get_quality_agents_activity(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, start_time=start_time, end_time=end_time, agent_user_id=agent_user_id, evaluator_user_id=evaluator_user_id, name=name, group=group)
+    api_response = api_instance.get_quality_agents_activity(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, start_time=start_time, end_time=end_time, agent_user_id=agent_user_id, evaluator_user_id=evaluator_user_id, name=name, group=group, form_context_id=form_context_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling QualityApi->get_quality_agents_activity: %s\n" % e)
@@ -594,6 +595,7 @@ except ApiException as e:
 | **evaluator_user_id** | **str**| user id of the evaluator | [optional]  |
 | **name** | **str**| name | [optional]  |
 | **group** | **str**| group id | [optional]  |
+| **form_context_id** | **str**| shared id between form versions | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -930,7 +932,7 @@ except ApiException as e:
 
 <a name="get_quality_evaluations_query"></a>
 
-## [**EvaluationEntityListing**](EvaluationEntityListing.html) get_quality_evaluations_query(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, conversation_id=conversation_id, agent_user_id=agent_user_id, evaluator_user_id=evaluator_user_id, assignee_user_id=assignee_user_id, queue_id=queue_id, start_time=start_time, end_time=end_time, evaluation_state=evaluation_state, is_released=is_released, agent_has_read=agent_has_read, expand_answer_total_scores=expand_answer_total_scores, maximum=maximum, sort_order=sort_order)
+## [**EvaluationEntityListing**](EvaluationEntityListing.html) get_quality_evaluations_query(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, conversation_id=conversation_id, agent_user_id=agent_user_id, evaluator_user_id=evaluator_user_id, assignee_user_id=assignee_user_id, queue_id=queue_id, start_time=start_time, end_time=end_time, form_context_id=form_context_id, evaluation_state=evaluation_state, is_released=is_released, agent_has_read=agent_has_read, expand_answer_total_scores=expand_answer_total_scores, maximum=maximum, sort_order=sort_order)
 
 
 
@@ -970,6 +972,7 @@ assignee_user_id = 'assignee_user_id_example' # str | assignee user id (optional
 queue_id = 'queue_id_example' # str | queue id (optional)
 start_time = 'start_time_example' # str | start time of the evaluation query (optional)
 end_time = 'end_time_example' # str | end time of the evaluation query (optional)
+form_context_id = 'form_context_id_example' # str | shared id between form versions (optional)
 evaluation_state = ['evaluation_state_example'] # list[str] |  (optional)
 is_released = True # bool | the evaluation has been released (optional)
 agent_has_read = True # bool | agent has the evaluation (optional)
@@ -979,7 +982,7 @@ sort_order = 'sort_order_example' # str | NOTE: Does not work when conversationI
 
 try:
     # Queries Evaluations and returns a paged list
-    api_response = api_instance.get_quality_evaluations_query(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, conversation_id=conversation_id, agent_user_id=agent_user_id, evaluator_user_id=evaluator_user_id, assignee_user_id=assignee_user_id, queue_id=queue_id, start_time=start_time, end_time=end_time, evaluation_state=evaluation_state, is_released=is_released, agent_has_read=agent_has_read, expand_answer_total_scores=expand_answer_total_scores, maximum=maximum, sort_order=sort_order)
+    api_response = api_instance.get_quality_evaluations_query(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, conversation_id=conversation_id, agent_user_id=agent_user_id, evaluator_user_id=evaluator_user_id, assignee_user_id=assignee_user_id, queue_id=queue_id, start_time=start_time, end_time=end_time, form_context_id=form_context_id, evaluation_state=evaluation_state, is_released=is_released, agent_has_read=agent_has_read, expand_answer_total_scores=expand_answer_total_scores, maximum=maximum, sort_order=sort_order)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling QualityApi->get_quality_evaluations_query: %s\n" % e)
@@ -1003,6 +1006,7 @@ except ApiException as e:
 | **queue_id** | **str**| queue id | [optional]  |
 | **start_time** | **str**| start time of the evaluation query | [optional]  |
 | **end_time** | **str**| end time of the evaluation query | [optional]  |
+| **form_context_id** | **str**| shared id between form versions | [optional]  |
 | **evaluation_state** | [**list[str]**](str.html)|  | [optional]  |
 | **is_released** | **bool**| the evaluation has been released | [optional]  |
 | **agent_has_read** | **bool**| agent has the evaluation | [optional]  |

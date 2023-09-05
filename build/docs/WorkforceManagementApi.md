@@ -59,6 +59,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_workforcemanagement_calendar_url_ics**](WorkforceManagementApi.html#get_workforcemanagement_calendar_url_ics) | Get existing calendar link for the current user|
 |[**get_workforcemanagement_historicaldata_deletejob**](WorkforceManagementApi.html#get_workforcemanagement_historicaldata_deletejob) | Retrieves delete job status for historical data imports of the organization|
 |[**get_workforcemanagement_historicaldata_importstatus**](WorkforceManagementApi.html#get_workforcemanagement_historicaldata_importstatus) | Retrieves status of the historical data imports of the organization|
+|[**get_workforcemanagement_integrations_hris**](WorkforceManagementApi.html#get_workforcemanagement_integrations_hris) | Get integrations|
+|[**get_workforcemanagement_integrations_hris_timeofftypes_job**](WorkforceManagementApi.html#get_workforcemanagement_integrations_hris_timeofftypes_job) | Query the results of time off types job|
 |[**get_workforcemanagement_managementunit**](WorkforceManagementApi.html#get_workforcemanagement_managementunit) | Get management unit|
 |[**get_workforcemanagement_managementunit_activitycodes**](WorkforceManagementApi.html#get_workforcemanagement_managementunit_activitycodes) | Deprecated: Instead use /api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes. Get the list of activity codes|
 |[**get_workforcemanagement_managementunit_adherence**](WorkforceManagementApi.html#get_workforcemanagement_managementunit_adherence) | Get a list of user schedule adherence records for the requested management unit|
@@ -87,6 +89,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_workforcemanagement_schedulingjob**](WorkforceManagementApi.html#get_workforcemanagement_schedulingjob) | Get status of the scheduling job|
 |[**get_workforcemanagement_shifttrades**](WorkforceManagementApi.html#get_workforcemanagement_shifttrades) | Gets all of my shift trades|
 |[**get_workforcemanagement_shrinkage_job**](WorkforceManagementApi.html#get_workforcemanagement_shrinkage_job) | Request to fetch the status of the historical shrinkage query|
+|[**get_workforcemanagement_timeoffbalance_job**](WorkforceManagementApi.html#get_workforcemanagement_timeoffbalance_job) | Query the results of time off types job|
 |[**get_workforcemanagement_timeoffrequest**](WorkforceManagementApi.html#get_workforcemanagement_timeoffrequest) | Get a time off request for the current user|
 |[**get_workforcemanagement_timeoffrequest_waitlistpositions**](WorkforceManagementApi.html#get_workforcemanagement_timeoffrequest_waitlistpositions) | Get the daily waitlist positions of a time off request for the current user|
 |[**get_workforcemanagement_timeoffrequests**](WorkforceManagementApi.html#get_workforcemanagement_timeoffrequests) | Get a list of time off requests for the current user|
@@ -99,6 +102,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**patch_workforcemanagement_managementunit**](WorkforceManagementApi.html#patch_workforcemanagement_managementunit) | Update the requested management unit|
 |[**patch_workforcemanagement_managementunit_timeofflimit**](WorkforceManagementApi.html#patch_workforcemanagement_managementunit_timeofflimit) | Updates a time off limit object.|
 |[**patch_workforcemanagement_managementunit_timeoffplan**](WorkforceManagementApi.html#patch_workforcemanagement_managementunit_timeoffplan) | Updates a time off plan|
+|[**patch_workforcemanagement_managementunit_timeoffrequest_user_integrationstatus**](WorkforceManagementApi.html#patch_workforcemanagement_managementunit_timeoffrequest_user_integrationstatus) | Set integration status for a time off request.|
 |[**patch_workforcemanagement_managementunit_user_timeoffrequest**](WorkforceManagementApi.html#patch_workforcemanagement_managementunit_user_timeoffrequest) | Update a time off request|
 |[**patch_workforcemanagement_managementunit_week_shifttrade**](WorkforceManagementApi.html#patch_workforcemanagement_managementunit_week_shifttrade) | Updates a shift trade. This route can only be called by the initiating agent|
 |[**patch_workforcemanagement_managementunit_workplan**](WorkforceManagementApi.html#patch_workforcemanagement_managementunit_workplan) | Update a work plan|
@@ -110,6 +114,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_workforcemanagement_adherence_historical_bulk**](WorkforceManagementApi.html#post_workforcemanagement_adherence_historical_bulk) | Request a historical adherence report in bulk|
 |[**post_workforcemanagement_agent_adherence_explanations**](WorkforceManagementApi.html#post_workforcemanagement_agent_adherence_explanations) | Add an adherence explanation for the requested user|
 |[**post_workforcemanagement_agent_adherence_explanations_query**](WorkforceManagementApi.html#post_workforcemanagement_agent_adherence_explanations_query) | Query adherence explanations for the given agent across a specified range|
+|[**post_workforcemanagement_agents_integrations_hris_query**](WorkforceManagementApi.html#post_workforcemanagement_agents_integrations_hris_query) | Query integrations for agents|
 |[**post_workforcemanagement_agents_me_possibleworkshifts**](WorkforceManagementApi.html#post_workforcemanagement_agents_me_possibleworkshifts) | Get agent possible work shifts for requested time frame|
 |[**post_workforcemanagement_agentschedules_mine**](WorkforceManagementApi.html#post_workforcemanagement_agentschedules_mine) | Get published schedule for the current user|
 |[**post_workforcemanagement_businessunit_activitycodes**](WorkforceManagementApi.html#post_workforcemanagement_businessunit_activitycodes) | Create a new activity code|
@@ -135,6 +140,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_workforcemanagement_calendar_url_ics**](WorkforceManagementApi.html#post_workforcemanagement_calendar_url_ics) | Create a newly generated calendar link for the current user; if the current user has previously generated one, the generated link will be returned|
 |[**post_workforcemanagement_historicaldata_deletejob**](WorkforceManagementApi.html#post_workforcemanagement_historicaldata_deletejob) | Delete the entries of the historical data imports in the organization|
 |[**post_workforcemanagement_historicaldata_validate**](WorkforceManagementApi.html#post_workforcemanagement_historicaldata_validate) | Trigger validation process for historical import|
+|[**post_workforcemanagement_integrations_hri_timeofftypes_jobs**](WorkforceManagementApi.html#post_workforcemanagement_integrations_hri_timeofftypes_jobs) | Get list of time off types configured in integration|
 |[**post_workforcemanagement_managementunit_agentschedules_search**](WorkforceManagementApi.html#post_workforcemanagement_managementunit_agentschedules_search) | Query published schedules for given given time range for set of users|
 |[**post_workforcemanagement_managementunit_historicaladherencequery**](WorkforceManagementApi.html#post_workforcemanagement_managementunit_historicaladherencequery) | Request a historical adherence report|
 |[**post_workforcemanagement_managementunit_move**](WorkforceManagementApi.html#post_workforcemanagement_managementunit_move) | Move the requested management unit to a new business unit|
@@ -144,10 +150,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_workforcemanagement_managementunit_timeofflimits_values_query**](WorkforceManagementApi.html#post_workforcemanagement_managementunit_timeofflimits_values_query) | Retrieves time off limit related values based on a given set of filters.|
 |[**post_workforcemanagement_managementunit_timeoffplans**](WorkforceManagementApi.html#post_workforcemanagement_managementunit_timeoffplans) | Creates a new time off plan|
 |[**post_workforcemanagement_managementunit_timeoffrequests**](WorkforceManagementApi.html#post_workforcemanagement_managementunit_timeoffrequests) | Create a new time off request|
+|[**post_workforcemanagement_managementunit_timeoffrequests_integrationstatus_query**](WorkforceManagementApi.html#post_workforcemanagement_managementunit_timeoffrequests_integrationstatus_query) | Retrieves integration statuses for a list of time off requests|
 |[**post_workforcemanagement_managementunit_timeoffrequests_query**](WorkforceManagementApi.html#post_workforcemanagement_managementunit_timeoffrequests_query) | Fetches time off requests matching the conditions specified in the request body|
 |[**post_workforcemanagement_managementunit_timeoffrequests_waitlistpositions_query**](WorkforceManagementApi.html#post_workforcemanagement_managementunit_timeoffrequests_waitlistpositions_query) | Retrieves daily waitlist position for a list of time off requests|
 |[**post_workforcemanagement_managementunit_user_timeoffbalance_jobs**](WorkforceManagementApi.html#post_workforcemanagement_managementunit_user_timeoffbalance_jobs) | Query time off balances for a given user for specified activity code and dates|
 |[**post_workforcemanagement_managementunit_user_timeoffrequest_timeoffbalance_jobs**](WorkforceManagementApi.html#post_workforcemanagement_managementunit_user_timeoffrequest_timeoffbalance_jobs) | Query time off balances for dates spanned by a given time off request|
+|[**post_workforcemanagement_managementunit_user_timeoffrequests_estimate**](WorkforceManagementApi.html#post_workforcemanagement_managementunit_user_timeoffrequests_estimate) | Estimates available time off for an agent|
 |[**post_workforcemanagement_managementunit_week_shifttrade_match**](WorkforceManagementApi.html#post_workforcemanagement_managementunit_week_shifttrade_match) | Matches a shift trade. This route can only be called by the receiving agent|
 |[**post_workforcemanagement_managementunit_week_shifttrades**](WorkforceManagementApi.html#post_workforcemanagement_managementunit_week_shifttrades) | Adds a shift trade|
 |[**post_workforcemanagement_managementunit_week_shifttrades_search**](WorkforceManagementApi.html#post_workforcemanagement_managementunit_week_shifttrades_search) | Searches for potential shift trade matches for the current agent|
@@ -162,8 +170,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_workforcemanagement_schedules**](WorkforceManagementApi.html#post_workforcemanagement_schedules) | Get published schedule for the current user|
 |[**post_workforcemanagement_team_adherence_historical**](WorkforceManagementApi.html#post_workforcemanagement_team_adherence_historical) | Request a teams historical adherence report|
 |[**post_workforcemanagement_team_shrinkage_jobs**](WorkforceManagementApi.html#post_workforcemanagement_team_shrinkage_jobs) | Request a historical shrinkage report|
+|[**post_workforcemanagement_timeoffbalance_jobs**](WorkforceManagementApi.html#post_workforcemanagement_timeoffbalance_jobs) | Query time off balances for the current user for specified activity code and dates|
 |[**post_workforcemanagement_timeofflimits_available_query**](WorkforceManagementApi.html#post_workforcemanagement_timeofflimits_available_query) | Queries available time off for the current user|
 |[**post_workforcemanagement_timeoffrequests**](WorkforceManagementApi.html#post_workforcemanagement_timeoffrequests) | Create a time off request for the current user|
+|[**post_workforcemanagement_timeoffrequests_estimate**](WorkforceManagementApi.html#post_workforcemanagement_timeoffrequests_estimate) | Estimates available time off for current user|
+|[**post_workforcemanagement_timeoffrequests_integrationstatus_query**](WorkforceManagementApi.html#post_workforcemanagement_timeoffrequests_integrationstatus_query) | Retrieves integration statuses for a list of current user time off requests|
+|[**put_workforcemanagement_agent_integrations_hris**](WorkforceManagementApi.html#put_workforcemanagement_agent_integrations_hris) | Update integrations for agent|
 |[**put_workforcemanagement_managementunit_timeofflimit_values**](WorkforceManagementApi.html#put_workforcemanagement_managementunit_timeofflimit_values) | Sets daily values for a date range of time off limit object|
 {: class="table table-striped"}
 
@@ -1969,7 +1981,7 @@ except ApiException as e:
 
 <a name="get_workforcemanagement_businessunit_servicegoaltemplate"></a>
 
-## [**ServiceGoalTemplate**](ServiceGoalTemplate.html) get_workforcemanagement_businessunit_servicegoaltemplate(business_unit_id, service_goal_template_id)
+## [**ServiceGoalTemplate**](ServiceGoalTemplate.html) get_workforcemanagement_businessunit_servicegoaltemplate(business_unit_id, service_goal_template_id, expand=expand)
 
 
 
@@ -1996,10 +2008,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
 business_unit_id = 'business_unit_id_example' # str | The ID of the business unit.
 service_goal_template_id = 'service_goal_template_id_example' # str | The ID of a service goal template to fetch
+expand = ['expand_example'] # list[str] | Include to access additional data on the service goal template (optional)
 
 try:
     # Get a service goal template
-    api_response = api_instance.get_workforcemanagement_businessunit_servicegoaltemplate(business_unit_id, service_goal_template_id)
+    api_response = api_instance.get_workforcemanagement_businessunit_servicegoaltemplate(business_unit_id, service_goal_template_id, expand=expand)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_servicegoaltemplate: %s\n" % e)
@@ -2012,6 +2025,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **business_unit_id** | **str**| The ID of the business unit. |  |
 | **service_goal_template_id** | **str**| The ID of a service goal template to fetch |  |
+| **expand** | [**list[str]**](str.html)| Include to access additional data on the service goal template | [optional] <br />**Values**: impactOverride |
 {: class="table table-striped"}
 
 ### Return type
@@ -2020,7 +2034,7 @@ except ApiException as e:
 
 <a name="get_workforcemanagement_businessunit_servicegoaltemplates"></a>
 
-## [**ServiceGoalTemplateList**](ServiceGoalTemplateList.html) get_workforcemanagement_businessunit_servicegoaltemplates(business_unit_id)
+## [**ServiceGoalTemplateList**](ServiceGoalTemplateList.html) get_workforcemanagement_businessunit_servicegoaltemplates(business_unit_id, expand=expand)
 
 
 
@@ -2048,10 +2062,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
 business_unit_id = 'business_unit_id_example' # str | The ID of the business unit.
+expand = ['expand_example'] # list[str] | Include to access additional data on the service goal template (optional)
 
 try:
     # Gets list of service goal templates
-    api_response = api_instance.get_workforcemanagement_businessunit_servicegoaltemplates(business_unit_id)
+    api_response = api_instance.get_workforcemanagement_businessunit_servicegoaltemplates(business_unit_id, expand=expand)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_servicegoaltemplates: %s\n" % e)
@@ -2063,6 +2078,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **business_unit_id** | **str**| The ID of the business unit. |  |
+| **expand** | [**list[str]**](str.html)| Include to access additional data on the service goal template | [optional] <br />**Values**: impactOverride |
 {: class="table table-striped"}
 
 ### Return type
@@ -2961,6 +2977,99 @@ This endpoint does not need any parameters.
 ### Return type
 
 [**HistoricalImportStatusListing**](HistoricalImportStatusListing.html)
+
+<a name="get_workforcemanagement_integrations_hris"></a>
+
+## [**WfmIntegrationListing**](WfmIntegrationListing.html) get_workforcemanagement_integrations_hris()
+
+
+
+Get integrations
+
+Wraps GET /api/v2/workforcemanagement/integrations/hris 
+
+Requires ANY permissions: 
+
+* wfm:integration:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+
+try:
+    # Get integrations
+    api_response = api_instance.get_workforcemanagement_integrations_hris()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_integrations_hris: %s\n" % e)
+```
+
+### Parameters
+
+This endpoint does not need any parameters.
+
+
+### Return type
+
+[**WfmIntegrationListing**](WfmIntegrationListing.html)
+
+<a name="get_workforcemanagement_integrations_hris_timeofftypes_job"></a>
+
+## [**HrisTimeOffTypesJobResponse**](HrisTimeOffTypesJobResponse.html) get_workforcemanagement_integrations_hris_timeofftypes_job(job_id)
+
+
+
+Query the results of time off types job
+
+Wraps GET /api/v2/workforcemanagement/integrations/hris/timeofftypes/jobs/{jobId} 
+
+Requires no permissions
+
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+job_id = 'job_id_example' # str | The ID of the job.
+
+try:
+    # Query the results of time off types job
+    api_response = api_instance.get_workforcemanagement_integrations_hris_timeofftypes_job(job_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_integrations_hris_timeofftypes_job: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **job_id** | **str**| The ID of the job. |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**HrisTimeOffTypesJobResponse**](HrisTimeOffTypesJobResponse.html)
 
 <a name="get_workforcemanagement_managementunit"></a>
 
@@ -4524,6 +4633,54 @@ except ApiException as e:
 
 [**WfmHistoricalShrinkageResponse**](WfmHistoricalShrinkageResponse.html)
 
+<a name="get_workforcemanagement_timeoffbalance_job"></a>
+
+## [**TimeOffBalanceJobResponse**](TimeOffBalanceJobResponse.html) get_workforcemanagement_timeoffbalance_job(job_id)
+
+
+
+Query the results of time off types job
+
+Wraps GET /api/v2/workforcemanagement/timeoffbalance/jobs/{jobId} 
+
+Requires no permissions
+
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+job_id = 'job_id_example' # str | The ID of the job.
+
+try:
+    # Query the results of time off types job
+    api_response = api_instance.get_workforcemanagement_timeoffbalance_job(job_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_timeoffbalance_job: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **job_id** | **str**| The ID of the job. |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**TimeOffBalanceJobResponse**](TimeOffBalanceJobResponse.html)
+
 <a name="get_workforcemanagement_timeoffrequest"></a>
 
 ## [**TimeOffRequestResponse**](TimeOffRequestResponse.html) get_workforcemanagement_timeoffrequest(time_off_request_id)
@@ -5147,6 +5304,61 @@ except ApiException as e:
 
 [**TimeOffPlan**](TimeOffPlan.html)
 
+<a name="patch_workforcemanagement_managementunit_timeoffrequest_user_integrationstatus"></a>
+
+## [**UserTimeOffIntegrationStatusResponse**](UserTimeOffIntegrationStatusResponse.html) patch_workforcemanagement_managementunit_timeoffrequest_user_integrationstatus(management_unit_id, time_off_request_id, user_id, body=body)
+
+
+
+Set integration status for a time off request.
+
+Wraps PATCH /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffrequests/{timeOffRequestId}/users/{userId}/integrationstatus 
+
+Requires ANY permissions: 
+
+* wfm:timeOffRequest:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+management_unit_id = 'management_unit_id_example' # str | The ID of the management unit.
+time_off_request_id = 'time_off_request_id_example' # str | The ID of the time off request.
+user_id = 'user_id_example' # str | The ID of user to whom the time off request belongs.
+body = PureCloudPlatformClientV2.SetTimeOffIntegrationStatusRequest() # SetTimeOffIntegrationStatusRequest | body (optional)
+
+try:
+    # Set integration status for a time off request.
+    api_response = api_instance.patch_workforcemanagement_managementunit_timeoffrequest_user_integrationstatus(management_unit_id, time_off_request_id, user_id, body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->patch_workforcemanagement_managementunit_timeoffrequest_user_integrationstatus: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **management_unit_id** | **str**| The ID of the management unit. |  |
+| **time_off_request_id** | **str**| The ID of the time off request. |  |
+| **user_id** | **str**| The ID of user to whom the time off request belongs. |  |
+| **body** | [**SetTimeOffIntegrationStatusRequest**](SetTimeOffIntegrationStatusRequest.html)| body | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**UserTimeOffIntegrationStatusResponse**](UserTimeOffIntegrationStatusResponse.html)
+
 <a name="patch_workforcemanagement_managementunit_user_timeoffrequest"></a>
 
 ## [**TimeOffRequestResponse**](TimeOffRequestResponse.html) patch_workforcemanagement_managementunit_user_timeoffrequest(management_unit_id, user_id, time_off_request_id, body=body)
@@ -5522,7 +5734,7 @@ except ApiException as e:
 
 ## [**WfmHistoricalAdherenceResponse**](WfmHistoricalAdherenceResponse.html) post_workforcemanagement_adherence_historical(body=body)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 Deprecated. Use bulk routes instead (/adherence/historical/bulk)
 
@@ -5721,6 +5933,55 @@ except ApiException as e:
 ### Return type
 
 [**AgentQueryAdherenceExplanationsResponse**](AgentQueryAdherenceExplanationsResponse.html)
+
+<a name="post_workforcemanagement_agents_integrations_hris_query"></a>
+
+## [**AgentsIntegrationsListing**](AgentsIntegrationsListing.html) post_workforcemanagement_agents_integrations_hris_query(body=body)
+
+
+
+Query integrations for agents
+
+Wraps POST /api/v2/workforcemanagement/agents/integrations/hris/query 
+
+Requires ANY permissions: 
+
+* wfm:agent:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+body = PureCloudPlatformClientV2.QueryAgentsIntegrationsRequest() # QueryAgentsIntegrationsRequest | body (optional)
+
+try:
+    # Query integrations for agents
+    api_response = api_instance.post_workforcemanagement_agents_integrations_hris_query(body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_agents_integrations_hris_query: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**QueryAgentsIntegrationsRequest**](QueryAgentsIntegrationsRequest.html)| body | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**AgentsIntegrationsListing**](AgentsIntegrationsListing.html)
 
 <a name="post_workforcemanagement_agents_me_possibleworkshifts"></a>
 
@@ -7053,6 +7314,55 @@ except ApiException as e:
 
 void (empty response body)
 
+<a name="post_workforcemanagement_integrations_hri_timeofftypes_jobs"></a>
+
+## [**HrisTimeOffTypesResponse**](HrisTimeOffTypesResponse.html) post_workforcemanagement_integrations_hri_timeofftypes_jobs(hris_integration_id)
+
+
+
+Get list of time off types configured in integration
+
+Wraps POST /api/v2/workforcemanagement/integrations/hris/{hrisIntegrationId}/timeofftypes/jobs 
+
+Requires ANY permissions: 
+
+* wfm:integration:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+hris_integration_id = 'hris_integration_id_example' # str | The ID of the HRIS integration for which time off types are queried.
+
+try:
+    # Get list of time off types configured in integration
+    api_response = api_instance.post_workforcemanagement_integrations_hri_timeofftypes_jobs(hris_integration_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_integrations_hri_timeofftypes_jobs: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **hris_integration_id** | **str**| The ID of the HRIS integration for which time off types are queried. |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**HrisTimeOffTypesResponse**](HrisTimeOffTypesResponse.html)
+
 <a name="post_workforcemanagement_managementunit_agentschedules_search"></a>
 
 ## [**BuAsyncAgentSchedulesSearchResponse**](BuAsyncAgentSchedulesSearchResponse.html) post_workforcemanagement_managementunit_agentschedules_search(management_unit_id, force_async=force_async, force_download_service=force_download_service, body=body)
@@ -7526,6 +7836,57 @@ except ApiException as e:
 
 [**TimeOffRequestList**](TimeOffRequestList.html)
 
+<a name="post_workforcemanagement_managementunit_timeoffrequests_integrationstatus_query"></a>
+
+## [**UserTimeOffIntegrationStatusResponseListing**](UserTimeOffIntegrationStatusResponseListing.html) post_workforcemanagement_managementunit_timeoffrequests_integrationstatus_query(management_unit_id, body=body)
+
+
+
+Retrieves integration statuses for a list of time off requests
+
+Wraps POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffrequests/integrationstatus/query 
+
+Requires ANY permissions: 
+
+* wfm:timeOffRequest:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+management_unit_id = 'management_unit_id_example' # str | The ID of the management unit.
+body = PureCloudPlatformClientV2.QueryTimeOffIntegrationStatusRequest() # QueryTimeOffIntegrationStatusRequest | body (optional)
+
+try:
+    # Retrieves integration statuses for a list of time off requests
+    api_response = api_instance.post_workforcemanagement_managementunit_timeoffrequests_integrationstatus_query(management_unit_id, body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_managementunit_timeoffrequests_integrationstatus_query: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **management_unit_id** | **str**| The ID of the management unit. |  |
+| **body** | [**QueryTimeOffIntegrationStatusRequest**](QueryTimeOffIntegrationStatusRequest.html)| body | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**UserTimeOffIntegrationStatusResponseListing**](UserTimeOffIntegrationStatusResponseListing.html)
+
 <a name="post_workforcemanagement_managementunit_timeoffrequests_query"></a>
 
 ## [**TimeOffRequestListing**](TimeOffRequestListing.html) post_workforcemanagement_managementunit_timeoffrequests_query(management_unit_id, body=body)
@@ -7735,6 +8096,59 @@ except ApiException as e:
 ### Return type
 
 [**TimeOffBalancesResponse**](TimeOffBalancesResponse.html)
+
+<a name="post_workforcemanagement_managementunit_user_timeoffrequests_estimate"></a>
+
+## [**EstimateAvailableTimeOffResponse**](EstimateAvailableTimeOffResponse.html) post_workforcemanagement_managementunit_user_timeoffrequests_estimate(management_unit_id, user_id, body=body)
+
+
+
+Estimates available time off for an agent
+
+Wraps POST /api/v2/workforcemanagement/managementunits/{managementUnitId}/users/{userId}/timeoffrequests/estimate 
+
+Requires ANY permissions: 
+
+* wfm:timeOffRequest:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+management_unit_id = 'management_unit_id_example' # str | The ID of the management unit
+user_id = 'user_id_example' # str | The id of the user for whom the time off request estimate is requested
+body = PureCloudPlatformClientV2.EstimateAvailableTimeOffRequest() # EstimateAvailableTimeOffRequest | body (optional)
+
+try:
+    # Estimates available time off for an agent
+    api_response = api_instance.post_workforcemanagement_managementunit_user_timeoffrequests_estimate(management_unit_id, user_id, body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_managementunit_user_timeoffrequests_estimate: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **management_unit_id** | **str**| The ID of the management unit |  |
+| **user_id** | **str**| The id of the user for whom the time off request estimate is requested |  |
+| **body** | [**EstimateAvailableTimeOffRequest**](EstimateAvailableTimeOffRequest.html)| body | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**EstimateAvailableTimeOffResponse**](EstimateAvailableTimeOffResponse.html)
 
 <a name="post_workforcemanagement_managementunit_week_shifttrade_match"></a>
 
@@ -8475,6 +8889,55 @@ except ApiException as e:
 
 [**WfmHistoricalShrinkageResponse**](WfmHistoricalShrinkageResponse.html)
 
+<a name="post_workforcemanagement_timeoffbalance_jobs"></a>
+
+## [**TimeOffBalancesResponse**](TimeOffBalancesResponse.html) post_workforcemanagement_timeoffbalance_jobs(body)
+
+
+
+Query time off balances for the current user for specified activity code and dates
+
+Wraps POST /api/v2/workforcemanagement/timeoffbalance/jobs 
+
+Requires ANY permissions: 
+
+* wfm:agentTimeOffRequest:submit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+body = PureCloudPlatformClientV2.TimeOffBalanceRequest() # TimeOffBalanceRequest | The request body
+
+try:
+    # Query time off balances for the current user for specified activity code and dates
+    api_response = api_instance.post_workforcemanagement_timeoffbalance_jobs(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_timeoffbalance_jobs: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**TimeOffBalanceRequest**](TimeOffBalanceRequest.html)| The request body |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**TimeOffBalancesResponse**](TimeOffBalancesResponse.html)
+
 <a name="post_workforcemanagement_timeofflimits_available_query"></a>
 
 ## [**AvailableTimeOffResponse**](AvailableTimeOffResponse.html) post_workforcemanagement_timeofflimits_available_query(body=body)
@@ -8572,6 +9035,155 @@ except ApiException as e:
 ### Return type
 
 [**TimeOffRequestResponse**](TimeOffRequestResponse.html)
+
+<a name="post_workforcemanagement_timeoffrequests_estimate"></a>
+
+## [**EstimateAvailableTimeOffResponse**](EstimateAvailableTimeOffResponse.html) post_workforcemanagement_timeoffrequests_estimate(body=body)
+
+
+
+Estimates available time off for current user
+
+Wraps POST /api/v2/workforcemanagement/timeoffrequests/estimate 
+
+Requires ANY permissions: 
+
+* wfm:agentTimeOffRequest:submit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+body = PureCloudPlatformClientV2.EstimateAvailableTimeOffRequest() # EstimateAvailableTimeOffRequest | body (optional)
+
+try:
+    # Estimates available time off for current user
+    api_response = api_instance.post_workforcemanagement_timeoffrequests_estimate(body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_timeoffrequests_estimate: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**EstimateAvailableTimeOffRequest**](EstimateAvailableTimeOffRequest.html)| body | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**EstimateAvailableTimeOffResponse**](EstimateAvailableTimeOffResponse.html)
+
+<a name="post_workforcemanagement_timeoffrequests_integrationstatus_query"></a>
+
+## [**TimeOffIntegrationStatusResponseListing**](TimeOffIntegrationStatusResponseListing.html) post_workforcemanagement_timeoffrequests_integrationstatus_query(body=body)
+
+
+
+Retrieves integration statuses for a list of current user time off requests
+
+Wraps POST /api/v2/workforcemanagement/timeoffrequests/integrationstatus/query 
+
+Requires ANY permissions: 
+
+* wfm:agentTimeOffRequest:submit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+body = PureCloudPlatformClientV2.CurrentUserTimeOffIntegrationStatusRequest() # CurrentUserTimeOffIntegrationStatusRequest | body (optional)
+
+try:
+    # Retrieves integration statuses for a list of current user time off requests
+    api_response = api_instance.post_workforcemanagement_timeoffrequests_integrationstatus_query(body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_timeoffrequests_integrationstatus_query: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**CurrentUserTimeOffIntegrationStatusRequest**](CurrentUserTimeOffIntegrationStatusRequest.html)| body | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**TimeOffIntegrationStatusResponseListing**](TimeOffIntegrationStatusResponseListing.html)
+
+<a name="put_workforcemanagement_agent_integrations_hris"></a>
+
+## [**AgentIntegrationsResponse**](AgentIntegrationsResponse.html) put_workforcemanagement_agent_integrations_hris(agent_id, body)
+
+
+
+Update integrations for agent
+
+Wraps PUT /api/v2/workforcemanagement/agents/{agentId}/integrations/hris 
+
+Requires ANY permissions: 
+
+* wfm:agent:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+agent_id = 'agent_id_example' # str | The ID of the agent
+body = PureCloudPlatformClientV2.AgentIntegrationsRequest() # AgentIntegrationsRequest | body
+
+try:
+    # Update integrations for agent
+    api_response = api_instance.put_workforcemanagement_agent_integrations_hris(agent_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->put_workforcemanagement_agent_integrations_hris: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **agent_id** | **str**| The ID of the agent |  |
+| **body** | [**AgentIntegrationsRequest**](AgentIntegrationsRequest.html)| body |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**AgentIntegrationsResponse**](AgentIntegrationsResponse.html)
 
 <a name="put_workforcemanagement_managementunit_timeofflimit_values"></a>
 

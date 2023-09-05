@@ -34,6 +34,7 @@ from typing import Dict
 
 if TYPE_CHECKING:
     from . import SchedulerMessageTypeSeverity
+    from . import WfmServiceGoalImpactSettings
 
 class BuSchedulingSettingsResponse(object):
     """
@@ -50,14 +51,20 @@ class BuSchedulingSettingsResponse(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'message_severities': 'list[SchedulerMessageTypeSeverity]'
+            'message_severities': 'list[SchedulerMessageTypeSeverity]',
+            'sync_time_off_properties': 'list[str]',
+            'service_goal_impact': 'WfmServiceGoalImpactSettings'
         }
 
         self.attribute_map = {
-            'message_severities': 'messageSeverities'
+            'message_severities': 'messageSeverities',
+            'sync_time_off_properties': 'syncTimeOffProperties',
+            'service_goal_impact': 'serviceGoalImpact'
         }
 
         self._message_severities = None
+        self._sync_time_off_properties = None
+        self._service_goal_impact = None
 
     @property
     def message_severities(self) -> List['SchedulerMessageTypeSeverity']:
@@ -82,6 +89,54 @@ class BuSchedulingSettingsResponse(object):
         
 
         self._message_severities = message_severities
+
+    @property
+    def sync_time_off_properties(self) -> List[str]:
+        """
+        Gets the sync_time_off_properties of this BuSchedulingSettingsResponse.
+        Synchronize set of time off properties from scheduled activities to time off requests when the schedule is published.
+
+        :return: The sync_time_off_properties of this BuSchedulingSettingsResponse.
+        :rtype: list[str]
+        """
+        return self._sync_time_off_properties
+
+    @sync_time_off_properties.setter
+    def sync_time_off_properties(self, sync_time_off_properties: List[str]) -> None:
+        """
+        Sets the sync_time_off_properties of this BuSchedulingSettingsResponse.
+        Synchronize set of time off properties from scheduled activities to time off requests when the schedule is published.
+
+        :param sync_time_off_properties: The sync_time_off_properties of this BuSchedulingSettingsResponse.
+        :type: list[str]
+        """
+        
+
+        self._sync_time_off_properties = sync_time_off_properties
+
+    @property
+    def service_goal_impact(self) -> 'WfmServiceGoalImpactSettings':
+        """
+        Gets the service_goal_impact of this BuSchedulingSettingsResponse.
+        Configures the max percent increase and decrease of service goals for this business unit
+
+        :return: The service_goal_impact of this BuSchedulingSettingsResponse.
+        :rtype: WfmServiceGoalImpactSettings
+        """
+        return self._service_goal_impact
+
+    @service_goal_impact.setter
+    def service_goal_impact(self, service_goal_impact: 'WfmServiceGoalImpactSettings') -> None:
+        """
+        Sets the service_goal_impact of this BuSchedulingSettingsResponse.
+        Configures the max percent increase and decrease of service goals for this business unit
+
+        :param service_goal_impact: The service_goal_impact of this BuSchedulingSettingsResponse.
+        :type: WfmServiceGoalImpactSettings
+        """
+        
+
+        self._service_goal_impact = service_goal_impact
 
     def to_dict(self):
         """
