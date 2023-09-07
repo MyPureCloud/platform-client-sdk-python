@@ -58,7 +58,8 @@ class DefaultObjective(object):
             'media_types': 'list[str]',
             'queues': 'list[AddressableEntityRef]',
             'topics': 'list[AddressableEntityRef]',
-            'topic_ids_filter_type': 'str'
+            'topic_ids_filter_type': 'str',
+            'evaluation_form_context_ids': 'list[str]'
         }
 
         self.attribute_map = {
@@ -69,7 +70,8 @@ class DefaultObjective(object):
             'media_types': 'mediaTypes',
             'queues': 'queues',
             'topics': 'topics',
-            'topic_ids_filter_type': 'topicIdsFilterType'
+            'topic_ids_filter_type': 'topicIdsFilterType',
+            'evaluation_form_context_ids': 'evaluationFormContextIds'
         }
 
         self._id = None
@@ -80,6 +82,7 @@ class DefaultObjective(object):
         self._queues = None
         self._topics = None
         self._topic_ids_filter_type = None
+        self._evaluation_form_context_ids = None
 
     @property
     def id(self) -> str:
@@ -277,6 +280,30 @@ class DefaultObjective(object):
             self._topic_ids_filter_type = "outdated_sdk_version"
         else:
             self._topic_ids_filter_type = topic_ids_filter_type
+
+    @property
+    def evaluation_form_context_ids(self) -> List[str]:
+        """
+        Gets the evaluation_form_context_ids of this DefaultObjective.
+        The ids of associated evaluation form context, for Quality Evaluation Score metrics
+
+        :return: The evaluation_form_context_ids of this DefaultObjective.
+        :rtype: list[str]
+        """
+        return self._evaluation_form_context_ids
+
+    @evaluation_form_context_ids.setter
+    def evaluation_form_context_ids(self, evaluation_form_context_ids: List[str]) -> None:
+        """
+        Sets the evaluation_form_context_ids of this DefaultObjective.
+        The ids of associated evaluation form context, for Quality Evaluation Score metrics
+
+        :param evaluation_form_context_ids: The evaluation_form_context_ids of this DefaultObjective.
+        :type: list[str]
+        """
+        
+
+        self._evaluation_form_context_ids = evaluation_form_context_ids
 
     def to_dict(self):
         """

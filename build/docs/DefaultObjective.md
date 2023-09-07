@@ -15,6 +15,7 @@ title: DefaultObjective
 | **queues** | [**list[AddressableEntityRef]**](AddressableEntityRef.html) | A list of queues for the metric | [optional] |
 | **topics** | [**list[AddressableEntityRef]**](AddressableEntityRef.html) | A list of topic ids for detected topic metrics | [optional] |
 | **topic_ids_filter_type** | **str** | A filter type for topic Ids. It&#39;s only used for objectives with topicIds. Default filter behavior is \&quot;or\&quot;. | [optional] |
+| **evaluation_form_context_ids** | **list[str]** | The ids of associated evaluation form context, for Quality Evaluation Score metrics | [optional] |
 {: class="table table-striped"}
 
 

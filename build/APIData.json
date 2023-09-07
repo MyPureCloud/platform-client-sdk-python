@@ -8994,6 +8994,20 @@
     "return": "AssignedWrapupCode",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.ConversationsApi();\nconversation_id = 'conversation_id_example' # str | conversationId\nparticipant_id = 'participant_id_example' # str | participantId\ncommunication_id = 'communication_id_example' # str | communicationId\nprovisional = False # bool | Indicates if the wrap-up code is provisional. (optional) (default to False)\n\ntry:\n    # Get the wrap-up for this conversation communication. \n    api_response = api_instance.get_conversations_video_participant_communication_wrapup(conversation_id, participant_id, communication_id, provisional=provisional)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling ConversationsApi->get_conversations_video_participant_communication_wrapup: %s\\n\" % e)"
   },
+  "get_conversations_videos_meeting": {
+    "operationId": "get_conversations_videos_meeting",
+    "functionName": "get_conversations_videos_meeting",
+    "signature": "get_conversations_videos_meeting(meeting_id)",
+    "parameters": [
+      {
+        "name": "meeting_id",
+        "type": "str",
+        "required": "true"
+      }
+    ],
+    "return": "MeetingIdRecord",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.ConversationsApi();\nmeeting_id = 'meeting_id_example' # str | meetingId\n\ntry:\n    # Gets a record for a given meetingId\n    api_response = api_instance.get_conversations_videos_meeting(meeting_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling ConversationsApi->get_conversations_videos_meeting: %s\\n\" % e)"
+  },
   "patch_conversation_participant": {
     "operationId": "patch_conversation_participant",
     "functionName": "patch_conversation_participant",
@@ -11247,6 +11261,20 @@
       }
     ],
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.ConversationsApi();\nconversation_id = 'conversation_id_example' # str | conversationId\nparticipant_id = 'participant_id_example' # str | participantId\ncommunication_id = 'communication_id_example' # str | communicationId\nbody = PureCloudPlatformClientV2.WrapupInput() # WrapupInput | Wrap-up (optional)\n\ntry:\n    # Apply wrap-up for this conversation communication\n    api_instance.post_conversations_video_participant_communication_wrapup(conversation_id, participant_id, communication_id, body=body)\nexcept ApiException as e:\n    print(\"Exception when calling ConversationsApi->post_conversations_video_participant_communication_wrapup: %s\\n\" % e)"
+  },
+  "post_conversations_videos_meetings": {
+    "operationId": "post_conversations_videos_meetings",
+    "functionName": "post_conversations_videos_meetings",
+    "signature": "post_conversations_videos_meetings(body)",
+    "parameters": [
+      {
+        "name": "body",
+        "type": "GenerateMeetingIdRequest",
+        "required": "true"
+      }
+    ],
+    "return": "MeetingIdRecord",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.ConversationsApi();\nbody = PureCloudPlatformClientV2.GenerateMeetingIdRequest() # GenerateMeetingIdRequest | MeetingIdRequest\n\ntry:\n    # Generate a meetingId for a given conferenceId\n    api_response = api_instance.post_conversations_videos_meetings(body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling ConversationsApi->post_conversations_videos_meetings: %s\\n\" % e)"
   },
   "put_conversation_participant_flaggedreason": {
     "operationId": "put_conversation_participant_flaggedreason",
@@ -39969,7 +39997,7 @@
       }
     ],
     "return": "ExpandableWebDeploymentEntityListing",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.WebDeploymentsApi();\nexpand = ['expand_example'] # list[str] | The specified entity attributes will be filled. Comma separated values expected. Valid values: (optional)\n\ntry:\n    # Get deployments\n    api_response = api_instance.get_webdeployments_deployments(expand=expand)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling WebDeploymentsApi->get_webdeployments_deployments: %s\\n\" % e)"
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.WebDeploymentsApi();\nexpand = ['expand_example'] # list[str] | The specified entity attributes will be filled. Comma separated values expected. (optional)\n\ntry:\n    # Get deployments\n    api_response = api_instance.get_webdeployments_deployments(expand=expand)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling WebDeploymentsApi->get_webdeployments_deployments: %s\\n\" % e)"
   },
   "post_webdeployments_configuration_versions_draft_publish": {
     "operationId": "post_webdeployments_configuration_versions_draft_publish",
@@ -42185,6 +42213,20 @@
     ],
     "return": "AgentQueryAdherenceExplanationsResponse",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.WorkforceManagementApi();\nagent_id = 'agent_id_example' # str | The ID of the agent to query\nbody = PureCloudPlatformClientV2.AgentQueryAdherenceExplanationsRequest() # AgentQueryAdherenceExplanationsRequest | The request body\nforce_async = True # bool | Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes (optional)\nforce_download_service = True # bool | Force the result of this operation to be sent via download service. For testing/app development purposes (optional)\n\ntry:\n    # Query adherence explanations for the given agent across a specified range\n    api_response = api_instance.post_workforcemanagement_agent_adherence_explanations_query(agent_id, body, force_async=force_async, force_download_service=force_download_service)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling WorkforceManagementApi->post_workforcemanagement_agent_adherence_explanations_query: %s\\n\" % e)"
+  },
+  "post_workforcemanagement_agents": {
+    "operationId": "post_workforcemanagement_agents",
+    "functionName": "post_workforcemanagement_agents",
+    "signature": "post_workforcemanagement_agents(body)",
+    "parameters": [
+      {
+        "name": "body",
+        "type": "MoveAgentsRequest",
+        "required": "false"
+      }
+    ],
+    "return": "MoveAgentsResponse",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.WorkforceManagementApi();\nbody = PureCloudPlatformClientV2.MoveAgentsRequest() # MoveAgentsRequest | body (optional)\n\ntry:\n    # Move agents in and out of management unit\n    api_response = api_instance.post_workforcemanagement_agents(body=body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling WorkforceManagementApi->post_workforcemanagement_agents: %s\\n\" % e)"
   },
   "post_workforcemanagement_agents_integrations_hris_query": {
     "operationId": "post_workforcemanagement_agents_integrations_hris_query",

@@ -49,16 +49,19 @@ class AttendanceStatus(object):
         """
         self.swagger_types = {
             'date_workday': 'date',
-            'attendance_status_type': 'str'
+            'attendance_status_type': 'str',
+            'has_evaluation': 'str'
         }
 
         self.attribute_map = {
             'date_workday': 'dateWorkday',
-            'attendance_status_type': 'attendanceStatusType'
+            'attendance_status_type': 'attendanceStatusType',
+            'has_evaluation': 'hasEvaluation'
         }
 
         self._date_workday = None
         self._attendance_status_type = None
+        self._has_evaluation = None
 
     @property
     def date_workday(self) -> date:
@@ -112,6 +115,35 @@ class AttendanceStatus(object):
             self._attendance_status_type = "outdated_sdk_version"
         else:
             self._attendance_status_type = attendance_status_type
+
+    @property
+    def has_evaluation(self) -> str:
+        """
+        Gets the has_evaluation of this AttendanceStatus.
+        the quality evaluation score status
+
+        :return: The has_evaluation of this AttendanceStatus.
+        :rtype: str
+        """
+        return self._has_evaluation
+
+    @has_evaluation.setter
+    def has_evaluation(self, has_evaluation: str) -> None:
+        """
+        Sets the has_evaluation of this AttendanceStatus.
+        the quality evaluation score status
+
+        :param has_evaluation: The has_evaluation of this AttendanceStatus.
+        :type: str
+        """
+        if isinstance(has_evaluation, int):
+            has_evaluation = str(has_evaluation)
+        allowed_values = ["HasQualityEvaluation", "NoQualityEvaluation"]
+        if has_evaluation.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for has_evaluation -> " + has_evaluation)
+            self._has_evaluation = "outdated_sdk_version"
+        else:
+            self._has_evaluation = has_evaluation
 
     def to_dict(self):
         """

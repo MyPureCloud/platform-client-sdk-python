@@ -114,6 +114,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_workforcemanagement_adherence_historical_bulk**](WorkforceManagementApi.html#post_workforcemanagement_adherence_historical_bulk) | Request a historical adherence report in bulk|
 |[**post_workforcemanagement_agent_adherence_explanations**](WorkforceManagementApi.html#post_workforcemanagement_agent_adherence_explanations) | Add an adherence explanation for the requested user|
 |[**post_workforcemanagement_agent_adherence_explanations_query**](WorkforceManagementApi.html#post_workforcemanagement_agent_adherence_explanations_query) | Query adherence explanations for the given agent across a specified range|
+|[**post_workforcemanagement_agents**](WorkforceManagementApi.html#post_workforcemanagement_agents) | Move agents in and out of management unit|
 |[**post_workforcemanagement_agents_integrations_hris_query**](WorkforceManagementApi.html#post_workforcemanagement_agents_integrations_hris_query) | Query integrations for agents|
 |[**post_workforcemanagement_agents_me_possibleworkshifts**](WorkforceManagementApi.html#post_workforcemanagement_agents_me_possibleworkshifts) | Get agent possible work shifts for requested time frame|
 |[**post_workforcemanagement_agentschedules_mine**](WorkforceManagementApi.html#post_workforcemanagement_agentschedules_mine) | Get published schedule for the current user|
@@ -5933,6 +5934,55 @@ except ApiException as e:
 ### Return type
 
 [**AgentQueryAdherenceExplanationsResponse**](AgentQueryAdherenceExplanationsResponse.html)
+
+<a name="post_workforcemanagement_agents"></a>
+
+## [**MoveAgentsResponse**](MoveAgentsResponse.html) post_workforcemanagement_agents(body=body)
+
+
+
+Move agents in and out of management unit
+
+Wraps POST /api/v2/workforcemanagement/agents 
+
+Requires ANY permissions: 
+
+* wfm:agent:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+body = PureCloudPlatformClientV2.MoveAgentsRequest() # MoveAgentsRequest | body (optional)
+
+try:
+    # Move agents in and out of management unit
+    api_response = api_instance.post_workforcemanagement_agents(body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_agents: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**MoveAgentsRequest**](MoveAgentsRequest.html)| body | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**MoveAgentsResponse**](MoveAgentsResponse.html)
 
 <a name="post_workforcemanagement_agents_integrations_hris_query"></a>
 

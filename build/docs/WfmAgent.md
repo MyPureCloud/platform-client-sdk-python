@@ -15,7 +15,7 @@ title: WfmAgent
 | **queues** | [**list[QueueReference]**](QueueReference.html) | List of queues to which this agent is capable of handling | [optional] |
 | **languages** | [**list[LanguageReference]**](LanguageReference.html) | The list of languages this agent is capable of handling | [optional] |
 | **skills** | [**list[RoutingSkillReference]**](RoutingSkillReference.html) | The list of skills this agent is capable of handling | [optional] |
-| **schedulable** | **bool** | Whether the agent has the permission to be included in schedule generation | [optional] |
+| **schedulable** | **bool** | Whether the agent can be included in schedule generation | [optional] |
 | **metadata** | [**WfmVersionedEntityMetadata**](WfmVersionedEntityMetadata.html) | Metadata for this agent | [optional] |
 | **self_uri** | **str** | The URI for this object | [optional] |
 {: class="table table-striped"}

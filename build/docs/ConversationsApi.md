@@ -109,6 +109,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_conversations_social_participant_communication_wrapup**](ConversationsApi.html#get_conversations_social_participant_communication_wrapup) | Get the wrap-up for this conversation communication. |
 |[**get_conversations_video_details**](ConversationsApi.html#get_conversations_video_details) | Get video conference details (e.g. the current number of active participants).|
 |[**get_conversations_video_participant_communication_wrapup**](ConversationsApi.html#get_conversations_video_participant_communication_wrapup) | Get the wrap-up for this conversation communication. |
+|[**get_conversations_videos_meeting**](ConversationsApi.html#get_conversations_videos_meeting) | Gets a record for a given meetingId|
 |[**patch_conversation_participant**](ConversationsApi.html#patch_conversation_participant) | Update a participant.|
 |[**patch_conversation_participant_attributes**](ConversationsApi.html#patch_conversation_participant_attributes) | Update the attributes on a conversation participant.|
 |[**patch_conversation_secureattributes**](ConversationsApi.html#patch_conversation_secureattributes) | Update the secure attributes on a conversation.|
@@ -224,6 +225,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_conversations_screenshare_participant_communication_wrapup**](ConversationsApi.html#post_conversations_screenshare_participant_communication_wrapup) | Apply wrap-up for this conversation communication|
 |[**post_conversations_social_participant_communication_wrapup**](ConversationsApi.html#post_conversations_social_participant_communication_wrapup) | Apply wrap-up for this conversation communication|
 |[**post_conversations_video_participant_communication_wrapup**](ConversationsApi.html#post_conversations_video_participant_communication_wrapup) | Apply wrap-up for this conversation communication|
+|[**post_conversations_videos_meetings**](ConversationsApi.html#post_conversations_videos_meetings) | Generate a meetingId for a given conferenceId|
 |[**put_conversation_participant_flaggedreason**](ConversationsApi.html#put_conversation_participant_flaggedreason) | Set flagged reason on conversation participant to indicate bad conversation quality.|
 |[**put_conversation_secureattributes**](ConversationsApi.html#put_conversation_secureattributes) | Set the secure attributes on a conversation.|
 |[**put_conversation_tags**](ConversationsApi.html#put_conversation_tags) | Update the tags on a conversation.|
@@ -5329,6 +5331,57 @@ except ApiException as e:
 ### Return type
 
 [**AssignedWrapupCode**](AssignedWrapupCode.html)
+
+<a name="get_conversations_videos_meeting"></a>
+
+## [**MeetingIdRecord**](MeetingIdRecord.html) get_conversations_videos_meeting(meeting_id)
+
+
+
+Gets a record for a given meetingId
+
+get_conversations_videos_meeting is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/conversations/videos/meetings/{meetingId} 
+
+Requires ANY permissions: 
+
+* video:video:access
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+meeting_id = 'meeting_id_example' # str | meetingId
+
+try:
+    # Gets a record for a given meetingId
+    api_response = api_instance.get_conversations_videos_meeting(meeting_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->get_conversations_videos_meeting: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **meeting_id** | **str**| meetingId |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**MeetingIdRecord**](MeetingIdRecord.html)
 
 <a name="patch_conversation_participant"></a>
 
@@ -11291,6 +11344,57 @@ except ApiException as e:
 ### Return type
 
 void (empty response body)
+
+<a name="post_conversations_videos_meetings"></a>
+
+## [**MeetingIdRecord**](MeetingIdRecord.html) post_conversations_videos_meetings(body)
+
+
+
+Generate a meetingId for a given conferenceId
+
+post_conversations_videos_meetings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/conversations/videos/meetings 
+
+Requires ANY permissions: 
+
+* video:video:access
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+body = PureCloudPlatformClientV2.GenerateMeetingIdRequest() # GenerateMeetingIdRequest | MeetingIdRequest
+
+try:
+    # Generate a meetingId for a given conferenceId
+    api_response = api_instance.post_conversations_videos_meetings(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->post_conversations_videos_meetings: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**GenerateMeetingIdRequest**](GenerateMeetingIdRequest.html)| MeetingIdRequest |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**MeetingIdRecord**](MeetingIdRecord.html)
 
 <a name="put_conversation_participant_flaggedreason"></a>
 

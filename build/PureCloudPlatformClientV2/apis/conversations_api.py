@@ -116,6 +116,7 @@ from ..models import FacebookIntegrationRequest
 from ..models import FacebookIntegrationUpdateRequest
 from ..models import FaxSendRequest
 from ..models import FaxSendResponse
+from ..models import GenerateMeetingIdRequest
 from ..models import InboundMessageRequest
 from ..models import InstagramIntegration
 from ..models import InstagramIntegrationEntityListing
@@ -127,6 +128,7 @@ from ..models import LineIntegrationEntityListing
 from ..models import LineIntegrationRequest
 from ..models import MaxParticipants
 from ..models import MediaParticipantRequest
+from ..models import MeetingIdRecord
 from ..models import MessageConversation
 from ..models import MessageConversationEntityListing
 from ..models import MessageData
@@ -8421,6 +8423,85 @@ class ConversationsApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='AssignedWrapupCode',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_conversations_videos_meeting(self, meeting_id: str, **kwargs) -> 'MeetingIdRecord':
+        """
+        Gets a record for a given meetingId
+        
+	    get_conversations_videos_meeting is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_conversations_videos_meeting(meeting_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str meeting_id: meetingId (required)
+        :return: MeetingIdRecord
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['meeting_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_conversations_videos_meeting" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'meeting_id' is set
+        if ('meeting_id' not in params) or (params['meeting_id'] is None):
+            raise ValueError("Missing the required parameter `meeting_id` when calling `get_conversations_videos_meeting`")
+
+
+        resource_path = '/api/v2/conversations/videos/meetings/{meetingId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'meeting_id' in params:
+            path_params['meetingId'] = params['meeting_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='MeetingIdRecord',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -18263,6 +18344,85 @@ class ConversationsApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_conversations_videos_meetings(self, body: 'GenerateMeetingIdRequest', **kwargs) -> 'MeetingIdRecord':
+        """
+        Generate a meetingId for a given conferenceId
+        
+	    post_conversations_videos_meetings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_conversations_videos_meetings(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param GenerateMeetingIdRequest body: MeetingIdRequest (required)
+        :return: MeetingIdRecord
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_conversations_videos_meetings" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_conversations_videos_meetings`")
+
+
+        resource_path = '/api/v2/conversations/videos/meetings'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='MeetingIdRecord',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

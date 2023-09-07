@@ -1587,6 +1587,7 @@ from .models.general_program_job_request import GeneralProgramJobRequest
 from .models.general_topic import GeneralTopic
 from .models.general_topics_entity_listing import GeneralTopicsEntityListing
 from .models.generate_bu_forecast_request import GenerateBuForecastRequest
+from .models.generate_meeting_id_request import GenerateMeetingIdRequest
 from .models.generic_action_event import GenericActionEvent
 from .models.generic_event_action import GenericEventAction
 from .models.generic_saml import GenericSAML
@@ -2121,6 +2122,7 @@ from .models.media_type import MediaType
 from .models.media_type_access import MediaTypeAccess
 from .models.media_types import MediaTypes
 from .models.media_utilization import MediaUtilization
+from .models.meeting_id_record import MeetingIdRecord
 from .models.member import Member
 from .models.member_entity import MemberEntity
 from .models.member_group import MemberGroup
@@ -2195,6 +2197,9 @@ from .models.miner_topics_listing import MinerTopicsListing
 from .models.modeling_processing_error import ModelingProcessingError
 from .models.modeling_status_response import ModelingStatusResponse
 from .models.modifiable_rule_properties import ModifiableRuleProperties
+from .models.move_agent_response import MoveAgentResponse
+from .models.move_agents_request import MoveAgentsRequest
+from .models.move_agents_response import MoveAgentsResponse
 from .models.move_management_unit_request import MoveManagementUnitRequest
 from .models.move_management_unit_response import MoveManagementUnitResponse
 from .models.mu_reschedule_result_wrapper import MuRescheduleResultWrapper

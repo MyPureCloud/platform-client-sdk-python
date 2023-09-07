@@ -291,7 +291,7 @@ class WfmAgent(object):
     def schedulable(self) -> bool:
         """
         Gets the schedulable of this WfmAgent.
-        Whether the agent has the permission to be included in schedule generation
+        Whether the agent can be included in schedule generation
 
         :return: The schedulable of this WfmAgent.
         :rtype: bool
@@ -302,7 +302,7 @@ class WfmAgent(object):
     def schedulable(self, schedulable: bool) -> None:
         """
         Sets the schedulable of this WfmAgent.
-        Whether the agent has the permission to be included in schedule generation
+        Whether the agent can be included in schedule generation
 
         :param schedulable: The schedulable of this WfmAgent.
         :type: bool

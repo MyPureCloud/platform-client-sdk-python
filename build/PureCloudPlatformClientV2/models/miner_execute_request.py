@@ -166,7 +166,7 @@ class MinerExecuteRequest(object):
         """
         if isinstance(media_type, int):
             media_type = str(media_type)
-        allowed_values = ["Chat", "Call", "Message"]
+        allowed_values = ["Chat", "Call", "Message", "Email"]
         if media_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for media_type -> " + media_type)
             self._media_type = "outdated_sdk_version"

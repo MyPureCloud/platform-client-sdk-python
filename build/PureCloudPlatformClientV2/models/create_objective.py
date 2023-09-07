@@ -58,6 +58,7 @@ class CreateObjective(object):
             'media_types': 'list[str]',
             'queue_ids': 'list[str]',
             'topic_ids_filter_type': 'str',
+            'evaluation_form_context_ids': 'list[str]',
             'date_start': 'date'
         }
 
@@ -70,6 +71,7 @@ class CreateObjective(object):
             'media_types': 'mediaTypes',
             'queue_ids': 'queueIds',
             'topic_ids_filter_type': 'topicIdsFilterType',
+            'evaluation_form_context_ids': 'evaluationFormContextIds',
             'date_start': 'dateStart'
         }
 
@@ -81,6 +83,7 @@ class CreateObjective(object):
         self._media_types = None
         self._queue_ids = None
         self._topic_ids_filter_type = None
+        self._evaluation_form_context_ids = None
         self._date_start = None
 
     @property
@@ -279,6 +282,30 @@ class CreateObjective(object):
             self._topic_ids_filter_type = "outdated_sdk_version"
         else:
             self._topic_ids_filter_type = topic_ids_filter_type
+
+    @property
+    def evaluation_form_context_ids(self) -> List[str]:
+        """
+        Gets the evaluation_form_context_ids of this CreateObjective.
+        The ids of associated evaluation form context, for Quality Evaluation Score metrics
+
+        :return: The evaluation_form_context_ids of this CreateObjective.
+        :rtype: list[str]
+        """
+        return self._evaluation_form_context_ids
+
+    @evaluation_form_context_ids.setter
+    def evaluation_form_context_ids(self, evaluation_form_context_ids: List[str]) -> None:
+        """
+        Sets the evaluation_form_context_ids of this CreateObjective.
+        The ids of associated evaluation form context, for Quality Evaluation Score metrics
+
+        :param evaluation_form_context_ids: The evaluation_form_context_ids of this CreateObjective.
+        :type: list[str]
+        """
+        
+
+        self._evaluation_form_context_ids = evaluation_form_context_ids
 
     @property
     def date_start(self) -> date:

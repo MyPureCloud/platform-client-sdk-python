@@ -36,6 +36,7 @@ if TYPE_CHECKING:
     from . import Metric
     from . import Objective
     from . import PunctualityEvent
+    from . import QualityEvaluationScoreItem
 
 class WorkdayMetric(object):
     """
@@ -57,7 +58,8 @@ class WorkdayMetric(object):
             'points': 'int',
             'max_points': 'int',
             'value': 'float',
-            'punctuality_events': 'list[PunctualityEvent]'
+            'punctuality_events': 'list[PunctualityEvent]',
+            'evaluation_details': 'list[QualityEvaluationScoreItem]'
         }
 
         self.attribute_map = {
@@ -66,7 +68,8 @@ class WorkdayMetric(object):
             'points': 'points',
             'max_points': 'maxPoints',
             'value': 'value',
-            'punctuality_events': 'punctualityEvents'
+            'punctuality_events': 'punctualityEvents',
+            'evaluation_details': 'evaluationDetails'
         }
 
         self._metric = None
@@ -75,6 +78,7 @@ class WorkdayMetric(object):
         self._max_points = None
         self._value = None
         self._punctuality_events = None
+        self._evaluation_details = None
 
     @property
     def metric(self) -> 'Metric':
@@ -219,6 +223,30 @@ class WorkdayMetric(object):
         
 
         self._punctuality_events = punctuality_events
+
+    @property
+    def evaluation_details(self) -> List['QualityEvaluationScoreItem']:
+        """
+        Gets the evaluation_details of this WorkdayMetric.
+        List of evaluations for quality evaluation score metrics
+
+        :return: The evaluation_details of this WorkdayMetric.
+        :rtype: list[QualityEvaluationScoreItem]
+        """
+        return self._evaluation_details
+
+    @evaluation_details.setter
+    def evaluation_details(self, evaluation_details: List['QualityEvaluationScoreItem']) -> None:
+        """
+        Sets the evaluation_details of this WorkdayMetric.
+        List of evaluations for quality evaluation score metrics
+
+        :param evaluation_details: The evaluation_details of this WorkdayMetric.
+        :type: list[QualityEvaluationScoreItem]
+        """
+        
+
+        self._evaluation_details = evaluation_details
 
     def to_dict(self):
         """

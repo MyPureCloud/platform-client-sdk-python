@@ -1659,6 +1659,7 @@ PureCloudPlatformClientV2/models/general_program_job_request.py
 PureCloudPlatformClientV2/models/general_topic.py
 PureCloudPlatformClientV2/models/general_topics_entity_listing.py
 PureCloudPlatformClientV2/models/generate_bu_forecast_request.py
+PureCloudPlatformClientV2/models/generate_meeting_id_request.py
 PureCloudPlatformClientV2/models/generic_action_event.py
 PureCloudPlatformClientV2/models/generic_event_action.py
 PureCloudPlatformClientV2/models/generic_saml.py
@@ -2197,6 +2198,7 @@ PureCloudPlatformClientV2/models/media_type.py
 PureCloudPlatformClientV2/models/media_type_access.py
 PureCloudPlatformClientV2/models/media_types.py
 PureCloudPlatformClientV2/models/media_utilization.py
+PureCloudPlatformClientV2/models/meeting_id_record.py
 PureCloudPlatformClientV2/models/member.py
 PureCloudPlatformClientV2/models/member_entity.py
 PureCloudPlatformClientV2/models/member_group.py
@@ -2271,6 +2273,9 @@ PureCloudPlatformClientV2/models/miner_topics_listing.py
 PureCloudPlatformClientV2/models/modeling_processing_error.py
 PureCloudPlatformClientV2/models/modeling_status_response.py
 PureCloudPlatformClientV2/models/modifiable_rule_properties.py
+PureCloudPlatformClientV2/models/move_agent_response.py
+PureCloudPlatformClientV2/models/move_agents_request.py
+PureCloudPlatformClientV2/models/move_agents_response.py
 PureCloudPlatformClientV2/models/move_management_unit_request.py
 PureCloudPlatformClientV2/models/move_management_unit_response.py
 PureCloudPlatformClientV2/models/mu_reschedule_result_wrapper.py
@@ -5696,6 +5701,7 @@ docs/GeneralProgramJobRequest.md
 docs/GeneralTopic.md
 docs/GeneralTopicsEntityListing.md
 docs/GenerateBuForecastRequest.md
+docs/GenerateMeetingIdRequest.md
 docs/GenericActionEvent.md
 docs/GenericEventAction.md
 docs/GenericSAML.md
@@ -6256,6 +6262,7 @@ docs/MediaType.md
 docs/MediaTypeAccess.md
 docs/MediaTypes.md
 docs/MediaUtilization.md
+docs/MeetingIdRecord.md
 docs/Member.md
 docs/MemberEntity.md
 docs/MemberGroup.md
@@ -6334,6 +6341,9 @@ docs/MobileDevicesApi.md
 docs/ModelingProcessingError.md
 docs/ModelingStatusResponse.md
 docs/ModifiableRuleProperties.md
+docs/MoveAgentResponse.md
+docs/MoveAgentsRequest.md
+docs/MoveAgentsResponse.md
 docs/MoveManagementUnitRequest.md
 docs/MoveManagementUnitResponse.md
 docs/MuRescheduleResultWrapper.md
@@ -8707,6 +8717,7 @@ docs/get_conversations_settings-example.txt
 docs/get_conversations_social_participant_communication_wrapup-example.txt
 docs/get_conversations_video_details-example.txt
 docs/get_conversations_video_participant_communication_wrapup-example.txt
+docs/get_conversations_videos_meeting-example.txt
 docs/get_dataextensions_coretype-example.txt
 docs/get_dataextensions_coretypes-example.txt
 docs/get_dataextensions_limits-example.txt
@@ -9888,6 +9899,7 @@ docs/post_conversations_participants_attributes_search-example.txt
 docs/post_conversations_screenshare_participant_communication_wrapup-example.txt
 docs/post_conversations_social_participant_communication_wrapup-example.txt
 docs/post_conversations_video_participant_communication_wrapup-example.txt
+docs/post_conversations_videos_meetings-example.txt
 docs/post_documentation_all_search-example.txt
 docs/post_documentation_gkn_search-example.txt
 docs/post_documentation_search-example.txt
@@ -10240,6 +10252,7 @@ docs/post_workforcemanagement_adherence_historical-example.txt
 docs/post_workforcemanagement_adherence_historical_bulk-example.txt
 docs/post_workforcemanagement_agent_adherence_explanations-example.txt
 docs/post_workforcemanagement_agent_adherence_explanations_query-example.txt
+docs/post_workforcemanagement_agents-example.txt
 docs/post_workforcemanagement_agents_integrations_hris_query-example.txt
 docs/post_workforcemanagement_agents_me_possibleworkshifts-example.txt
 docs/post_workforcemanagement_agentschedules_mine-example.txt
