@@ -24,6 +24,7 @@ title: ContactList
 | **automatic_time_zone_mapping** | **bool** | Indicates if automatic time zone mapping is to be used for this ContactList. | [optional] |
 | **zip_code_column_name** | **str** | The name of contact list column containing the zip code for use with automatic time zone mapping. Only allowed if &#39;automaticTimeZoneMapping&#39; is set to true. | [optional] |
 | **column_data_type_specifications** | [**list[ColumnDataTypeSpecification]**](ColumnDataTypeSpecification.html) | The settings of the columns selected for dynamic queueing | [optional] |
+| **trim_whitespace** | **bool** | Whether to trim white space when importing a contactlist csv file, default value &#x3D; true | [optional] |
 | **self_uri** | **str** | The URI for this object | [optional] |
 {: class="table table-striped"}
 

@@ -1229,7 +1229,7 @@ except ApiException as e:
 
 <a name="post_learning_module_publish"></a>
 
-## [**LearningModulePublishResponse**](LearningModulePublishResponse.html) post_learning_module_publish(module_id)
+## [**LearningModulePublishResponse**](LearningModulePublishResponse.html) post_learning_module_publish(module_id, body=body)
 
 
 
@@ -1255,10 +1255,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.LearningApi()
 module_id = 'module_id_example' # str | The ID of the learning module
+body = PureCloudPlatformClientV2.LearningModulePublishRequest() # LearningModulePublishRequest | The request body (optional)
 
 try:
     # Publish a Learning module
-    api_response = api_instance.post_learning_module_publish(module_id)
+    api_response = api_instance.post_learning_module_publish(module_id, body=body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling LearningApi->post_learning_module_publish: %s\n" % e)
@@ -1270,6 +1271,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **module_id** | **str**| The ID of the learning module |  |
+| **body** | [**LearningModulePublishRequest**](LearningModulePublishRequest.html)| The request body | [optional]  |
 {: class="table table-striped"}
 
 ### Return type

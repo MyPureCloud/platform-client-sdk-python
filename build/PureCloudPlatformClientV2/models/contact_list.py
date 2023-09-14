@@ -71,6 +71,7 @@ class ContactList(object):
             'automatic_time_zone_mapping': 'bool',
             'zip_code_column_name': 'str',
             'column_data_type_specifications': 'list[ColumnDataTypeSpecification]',
+            'trim_whitespace': 'bool',
             'self_uri': 'str'
         }
 
@@ -92,6 +93,7 @@ class ContactList(object):
             'automatic_time_zone_mapping': 'automaticTimeZoneMapping',
             'zip_code_column_name': 'zipCodeColumnName',
             'column_data_type_specifications': 'columnDataTypeSpecifications',
+            'trim_whitespace': 'trimWhitespace',
             'self_uri': 'selfUri'
         }
 
@@ -112,6 +114,7 @@ class ContactList(object):
         self._automatic_time_zone_mapping = None
         self._zip_code_column_name = None
         self._column_data_type_specifications = None
+        self._trim_whitespace = None
         self._self_uri = None
 
     @property
@@ -521,6 +524,30 @@ class ContactList(object):
         
 
         self._column_data_type_specifications = column_data_type_specifications
+
+    @property
+    def trim_whitespace(self) -> bool:
+        """
+        Gets the trim_whitespace of this ContactList.
+        Whether to trim white space when importing a contactlist csv file, default value = true
+
+        :return: The trim_whitespace of this ContactList.
+        :rtype: bool
+        """
+        return self._trim_whitespace
+
+    @trim_whitespace.setter
+    def trim_whitespace(self, trim_whitespace: bool) -> None:
+        """
+        Sets the trim_whitespace of this ContactList.
+        Whether to trim white space when importing a contactlist csv file, default value = true
+
+        :param trim_whitespace: The trim_whitespace of this ContactList.
+        :type: bool
+        """
+        
+
+        self._trim_whitespace = trim_whitespace
 
     @property
     def self_uri(self) -> str:

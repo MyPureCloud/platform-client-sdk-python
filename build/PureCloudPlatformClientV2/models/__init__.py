@@ -387,6 +387,7 @@ from .bu_short_term_forecast_list_item import BuShortTermForecastListItem
 from .bu_short_term_forecast_listing import BuShortTermForecastListing
 from .bu_short_term_forecast_reference import BuShortTermForecastReference
 from .bu_short_term_forecasting_settings import BuShortTermForecastingSettings
+from .bu_update_agent_schedule_shift import BuUpdateAgentScheduleShift
 from .bu_update_agent_schedule_upload_schema import BuUpdateAgentScheduleUploadSchema
 from .bulk_callback_disconnect_request import BulkCallbackDisconnectRequest
 from .bulk_callback_patch_request import BulkCallbackPatchRequest
@@ -587,6 +588,11 @@ from .condition import Condition
 from .conditional_group_routing import ConditionalGroupRouting
 from .conditional_group_routing_rule import ConditionalGroupRoutingRule
 from .configuration_overrides import ConfigurationOverrides
+from .confusion_details import ConfusionDetails
+from .confusion_info import ConfusionInfo
+from .confusion_intent_details import ConfusionIntentDetails
+from .confusion_intent_info import ConfusionIntentInfo
+from .confusion_utterance import ConfusionUtterance
 from .connect_rate import ConnectRate
 from .connected_edge import ConnectedEdge
 from .connected_queue import ConnectedQueue
@@ -1528,6 +1534,14 @@ from .flow_entity_listing import FlowEntityListing
 from .flow_execution_data_query_result import FlowExecutionDataQueryResult
 from .flow_execution_launch_request import FlowExecutionLaunchRequest
 from .flow_execution_launch_response import FlowExecutionLaunchResponse
+from .flow_health import FlowHealth
+from .flow_health_error_info import FlowHealthErrorInfo
+from .flow_health_intent import FlowHealthIntent
+from .flow_health_intent_info import FlowHealthIntentInfo
+from .flow_health_intent_utterance import FlowHealthIntentUtterance
+from .flow_health_intent_version_info import FlowHealthIntentVersionInfo
+from .flow_health_utterance import FlowHealthUtterance
+from .flow_health_version_info import FlowHealthVersionInfo
 from .flow_metrics_topic_flow_metric_record import FlowMetricsTopicFlowMetricRecord
 from .flow_metrics_topic_flow_outcome import FlowMetricsTopicFlowOutcome
 from .flow_metrics_topic_flow_proposed_agent import FlowMetricsTopicFlowProposedAgent
@@ -1635,6 +1649,7 @@ from .guest_member_info import GuestMemberInfo
 from .guest_response_category import GuestResponseCategory
 from .headcount_forecast import HeadcountForecast
 from .headcount_interval import HeadcountInterval
+from .health_info import HealthInfo
 from .help_link import HelpLink
 from .help_settings import HelpSettings
 from .historical_adherence_actuals import HistoricalAdherenceActuals
@@ -2014,6 +2029,7 @@ from .learning_module_inform_step import LearningModuleInformStep
 from .learning_module_inform_step_request import LearningModuleInformStepRequest
 from .learning_module_job_request import LearningModuleJobRequest
 from .learning_module_job_response import LearningModuleJobResponse
+from .learning_module_publish_request import LearningModulePublishRequest
 from .learning_module_publish_response import LearningModulePublishResponse
 from .learning_module_reassign_summary import LearningModuleReassignSummary
 from .learning_module_request import LearningModuleRequest
@@ -2067,6 +2083,9 @@ from .local_date_range import LocalDateRange
 from .local_encryption_configuration import LocalEncryptionConfiguration
 from .local_encryption_key_request import LocalEncryptionKeyRequest
 from .local_time import LocalTime
+from .locale_flow_version_info import LocaleFlowVersionInfo
+from .locale_health import LocaleHealth
+from .locale_info import LocaleInfo
 from .localized_labels import LocalizedLabels
 from .location import Location
 from .location_address import LocationAddress
@@ -2364,6 +2383,7 @@ from .outcome_quantile_condition import OutcomeQuantileCondition
 from .outcome_ref import OutcomeRef
 from .outcome_ref_request import OutcomeRefRequest
 from .outcome_scores_result import OutcomeScoresResult
+from .outlier_info import OutlierInfo
 from .overall_best_points import OverallBestPoints
 from .overall_best_points_item import OverallBestPointsItem
 from .pin_configuration import PINConfiguration

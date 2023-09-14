@@ -49,16 +49,19 @@ class AnalyticsReportingSettings(object):
         """
         self.swagger_types = {
             'pii_masking_enabled': 'bool',
-            'queue_agent_access_obfuscation': 'bool'
+            'queue_agent_access_obfuscation': 'bool',
+            'my_interactions_pii_masking_enabled': 'bool'
         }
 
         self.attribute_map = {
             'pii_masking_enabled': 'piiMaskingEnabled',
-            'queue_agent_access_obfuscation': 'queueAgentAccessObfuscation'
+            'queue_agent_access_obfuscation': 'queueAgentAccessObfuscation',
+            'my_interactions_pii_masking_enabled': 'myInteractionsPiiMaskingEnabled'
         }
 
         self._pii_masking_enabled = None
         self._queue_agent_access_obfuscation = None
+        self._my_interactions_pii_masking_enabled = None
 
     @property
     def pii_masking_enabled(self) -> bool:
@@ -107,6 +110,30 @@ class AnalyticsReportingSettings(object):
         
 
         self._queue_agent_access_obfuscation = queue_agent_access_obfuscation
+
+    @property
+    def my_interactions_pii_masking_enabled(self) -> bool:
+        """
+        Gets the my_interactions_pii_masking_enabled of this AnalyticsReportingSettings.
+        Indicates whether PII data is masked in My Interaction export and the Analytics/Reporting UI
+
+        :return: The my_interactions_pii_masking_enabled of this AnalyticsReportingSettings.
+        :rtype: bool
+        """
+        return self._my_interactions_pii_masking_enabled
+
+    @my_interactions_pii_masking_enabled.setter
+    def my_interactions_pii_masking_enabled(self, my_interactions_pii_masking_enabled: bool) -> None:
+        """
+        Sets the my_interactions_pii_masking_enabled of this AnalyticsReportingSettings.
+        Indicates whether PII data is masked in My Interaction export and the Analytics/Reporting UI
+
+        :param my_interactions_pii_masking_enabled: The my_interactions_pii_masking_enabled of this AnalyticsReportingSettings.
+        :type: bool
+        """
+        
+
+        self._my_interactions_pii_masking_enabled = my_interactions_pii_masking_enabled
 
     def to_dict(self):
         """

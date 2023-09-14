@@ -65,6 +65,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_flow_latestconfiguration**](ArchitectApi.html#get_flow_latestconfiguration) | Get the latest configuration for flow|
 |[**get_flow_version**](ArchitectApi.html#get_flow_version) | Get flow version|
 |[**get_flow_version_configuration**](ArchitectApi.html#get_flow_version_configuration) | Create flow version configuration|
+|[**get_flow_version_health**](ArchitectApi.html#get_flow_version_health) | Get overall health scores for all intents present in the NLU domain version associated with the bot flow version.|
+|[**get_flow_version_intent_health**](ArchitectApi.html#get_flow_version_intent_health) | Get health scores and other health metrics for a specific intent. This includes the health metrics for each utterance in an intent.|
+|[**get_flow_version_intent_utterance_health**](ArchitectApi.html#get_flow_version_intent_utterance_health) | Get health metrics associated with a specific utterance of an intent.|
 |[**get_flow_versions**](ArchitectApi.html#get_flow_versions) | Get flow version list|
 |[**get_flows**](ArchitectApi.html#get_flows) | Get a pageable list of flows, filtered by query parameters|
 |[**get_flows_datatable**](ArchitectApi.html#get_flows_datatable) | Returns a specific datatable by id|
@@ -3233,6 +3236,171 @@ except ApiException as e:
 ### Return type
 
 **object**
+
+<a name="get_flow_version_health"></a>
+
+## [**FlowHealth**](FlowHealth.html) get_flow_version_health(flow_id, version_id, language=language)
+
+
+
+Get overall health scores for all intents present in the NLU domain version associated with the bot flow version.
+
+Wraps GET /api/v2/flows/{flowId}/versions/{versionId}/health 
+
+Requires ANY permissions: 
+
+* architect:flow:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ArchitectApi()
+flow_id = 'flow_id_example' # str | Flow ID.
+version_id = 'version_id_example' # str | Version ID.
+language = 'language_example' # str | Language to filter for (optional)
+
+try:
+    # Get overall health scores for all intents present in the NLU domain version associated with the bot flow version.
+    api_response = api_instance.get_flow_version_health(flow_id, version_id, language=language)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ArchitectApi->get_flow_version_health: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **flow_id** | **str**| Flow ID. |  |
+| **version_id** | **str**| Version ID. |  |
+| **language** | **str**| Language to filter for | [optional] <br />**Values**: en-us, en-gb, en-au, en-za, en-nz, en-ie, fr-ca, fr-fr, es-us, es-es, es-mx, de-de, it-it, pt-br, pt-pt, nl-nl |
+{: class="table table-striped"}
+
+### Return type
+
+[**FlowHealth**](FlowHealth.html)
+
+<a name="get_flow_version_intent_health"></a>
+
+## [**FlowHealthIntent**](FlowHealthIntent.html) get_flow_version_intent_health(flow_id, version_id, intent_id, language)
+
+
+
+Get health scores and other health metrics for a specific intent. This includes the health metrics for each utterance in an intent.
+
+Wraps GET /api/v2/flows/{flowId}/versions/{versionId}/intents/{intentId}/health 
+
+Requires ANY permissions: 
+
+* architect:flow:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ArchitectApi()
+flow_id = 'flow_id_example' # str | Flow ID.
+version_id = 'version_id_example' # str | Version ID.
+intent_id = 'intent_id_example' # str | Intent ID.
+language = 'language_example' # str | Language to filter for
+
+try:
+    # Get health scores and other health metrics for a specific intent. This includes the health metrics for each utterance in an intent.
+    api_response = api_instance.get_flow_version_intent_health(flow_id, version_id, intent_id, language)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ArchitectApi->get_flow_version_intent_health: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **flow_id** | **str**| Flow ID. |  |
+| **version_id** | **str**| Version ID. |  |
+| **intent_id** | **str**| Intent ID. |  |
+| **language** | **str**| Language to filter for | <br />**Values**: en-us, en-gb, en-au, en-za, en-nz, en-ie, fr-ca, fr-fr, es-us, es-es, es-mx, de-de, it-it, pt-br, pt-pt, nl-nl |
+{: class="table table-striped"}
+
+### Return type
+
+[**FlowHealthIntent**](FlowHealthIntent.html)
+
+<a name="get_flow_version_intent_utterance_health"></a>
+
+## [**FlowHealthUtterance**](FlowHealthUtterance.html) get_flow_version_intent_utterance_health(flow_id, version_id, intent_id, utterance_id, language)
+
+
+
+Get health metrics associated with a specific utterance of an intent.
+
+Wraps GET /api/v2/flows/{flowId}/versions/{versionId}/intents/{intentId}/utterances/{utteranceId}/health 
+
+Requires ANY permissions: 
+
+* architect:flow:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ArchitectApi()
+flow_id = 'flow_id_example' # str | Flow ID.
+version_id = 'version_id_example' # str | Version ID.
+intent_id = 'intent_id_example' # str | Intent ID.
+utterance_id = 'utterance_id_example' # str | Utterance ID.
+language = 'language_example' # str | Language to filter for
+
+try:
+    # Get health metrics associated with a specific utterance of an intent.
+    api_response = api_instance.get_flow_version_intent_utterance_health(flow_id, version_id, intent_id, utterance_id, language)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ArchitectApi->get_flow_version_intent_utterance_health: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **flow_id** | **str**| Flow ID. |  |
+| **version_id** | **str**| Version ID. |  |
+| **intent_id** | **str**| Intent ID. |  |
+| **utterance_id** | **str**| Utterance ID. |  |
+| **language** | **str**| Language to filter for | <br />**Values**: en-us, en-gb, en-au, en-za, en-nz, en-ie, fr-ca, fr-fr, es-us, es-es, es-mx, de-de, it-it, pt-br, pt-pt, nl-nl |
+{: class="table table-striped"}
+
+### Return type
+
+[**FlowHealthUtterance**](FlowHealthUtterance.html)
 
 <a name="get_flow_versions"></a>
 

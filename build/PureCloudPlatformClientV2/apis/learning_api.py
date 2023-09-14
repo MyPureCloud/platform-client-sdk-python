@@ -58,6 +58,7 @@ from ..models import LearningModule
 from ..models import LearningModuleCoverArtResponse
 from ..models import LearningModuleJobRequest
 from ..models import LearningModuleJobResponse
+from ..models import LearningModulePublishRequest
 from ..models import LearningModulePublishResponse
 from ..models import LearningModuleRequest
 from ..models import LearningModuleRule
@@ -1954,12 +1955,13 @@ class LearningApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str module_id: The ID of the learning module (required)
+        :param LearningModulePublishRequest body: The request body
         :return: LearningModulePublishResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['module_id']
+        all_params = ['module_id', 'body']
         all_params.append('callback')
 
         params = locals()
@@ -1990,6 +1992,8 @@ class LearningApi(object):
         local_var_files = {}
 
         body_params = None
+        if 'body' in params:
+            body_params = params['body']
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\

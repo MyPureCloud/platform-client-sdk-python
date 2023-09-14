@@ -3320,6 +3320,93 @@
     "return": "object",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.ArchitectApi();\nflow_id = 'flow_id_example' # str | Flow ID\nversion_id = 'version_id_example' # str | Version ID\ndeleted = 'deleted_example' # str | Deleted flows (optional)\n\ntry:\n    # Create flow version configuration\n    api_response = api_instance.get_flow_version_configuration(flow_id, version_id, deleted=deleted)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling ArchitectApi->get_flow_version_configuration: %s\\n\" % e)"
   },
+  "get_flow_version_health": {
+    "operationId": "get_flow_version_health",
+    "functionName": "get_flow_version_health",
+    "signature": "get_flow_version_health(flow_id, version_id, language)",
+    "parameters": [
+      {
+        "name": "flow_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "version_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "language",
+        "type": "str",
+        "required": "false"
+      }
+    ],
+    "return": "FlowHealth",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.ArchitectApi();\nflow_id = 'flow_id_example' # str | Flow ID.\nversion_id = 'version_id_example' # str | Version ID.\nlanguage = 'language_example' # str | Language to filter for (optional)\n\ntry:\n    # Get overall health scores for all intents present in the NLU domain version associated with the bot flow version.\n    api_response = api_instance.get_flow_version_health(flow_id, version_id, language=language)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling ArchitectApi->get_flow_version_health: %s\\n\" % e)"
+  },
+  "get_flow_version_intent_health": {
+    "operationId": "get_flow_version_intent_health",
+    "functionName": "get_flow_version_intent_health",
+    "signature": "get_flow_version_intent_health(flow_id, version_id, intent_id, language)",
+    "parameters": [
+      {
+        "name": "flow_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "version_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "intent_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "language",
+        "type": "str",
+        "required": "true"
+      }
+    ],
+    "return": "FlowHealthIntent",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.ArchitectApi();\nflow_id = 'flow_id_example' # str | Flow ID.\nversion_id = 'version_id_example' # str | Version ID.\nintent_id = 'intent_id_example' # str | Intent ID.\nlanguage = 'language_example' # str | Language to filter for\n\ntry:\n    # Get health scores and other health metrics for a specific intent. This includes the health metrics for each utterance in an intent.\n    api_response = api_instance.get_flow_version_intent_health(flow_id, version_id, intent_id, language)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling ArchitectApi->get_flow_version_intent_health: %s\\n\" % e)"
+  },
+  "get_flow_version_intent_utterance_health": {
+    "operationId": "get_flow_version_intent_utterance_health",
+    "functionName": "get_flow_version_intent_utterance_health",
+    "signature": "get_flow_version_intent_utterance_health(flow_id, version_id, intent_id, utterance_id, language)",
+    "parameters": [
+      {
+        "name": "flow_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "version_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "intent_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "utterance_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "language",
+        "type": "str",
+        "required": "true"
+      }
+    ],
+    "return": "FlowHealthUtterance",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.ArchitectApi();\nflow_id = 'flow_id_example' # str | Flow ID.\nversion_id = 'version_id_example' # str | Version ID.\nintent_id = 'intent_id_example' # str | Intent ID.\nutterance_id = 'utterance_id_example' # str | Utterance ID.\nlanguage = 'language_example' # str | Language to filter for\n\ntry:\n    # Get health metrics associated with a specific utterance of an intent.\n    api_response = api_instance.get_flow_version_intent_utterance_health(flow_id, version_id, intent_id, utterance_id, language)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling ArchitectApi->get_flow_version_intent_utterance_health: %s\\n\" % e)"
+  },
   "get_flow_versions": {
     "operationId": "get_flow_versions",
     "functionName": "get_flow_versions",
@@ -21646,16 +21733,21 @@
   "post_learning_module_publish": {
     "operationId": "post_learning_module_publish",
     "functionName": "post_learning_module_publish",
-    "signature": "post_learning_module_publish(module_id)",
+    "signature": "post_learning_module_publish(module_id, body)",
     "parameters": [
       {
         "name": "module_id",
         "type": "str",
         "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "LearningModulePublishRequest",
+        "required": "false"
       }
     ],
     "return": "LearningModulePublishResponse",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.LearningApi();\nmodule_id = 'module_id_example' # str | The ID of the learning module\n\ntry:\n    # Publish a Learning module\n    api_response = api_instance.post_learning_module_publish(module_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling LearningApi->post_learning_module_publish: %s\\n\" % e)"
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.LearningApi();\nmodule_id = 'module_id_example' # str | The ID of the learning module\nbody = PureCloudPlatformClientV2.LearningModulePublishRequest() # LearningModulePublishRequest | The request body (optional)\n\ntry:\n    # Publish a Learning module\n    api_response = api_instance.post_learning_module_publish(module_id, body=body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling LearningApi->post_learning_module_publish: %s\\n\" % e)"
   },
   "post_learning_modules": {
     "operationId": "post_learning_modules",

@@ -34,6 +34,7 @@ from typing import Dict
 
 if TYPE_CHECKING:
     from . import Address
+    from . import AddressableEntityRef
     from . import ConversationRoutingData
     from . import DomainEntityRef
     from . import ErrorInfo
@@ -97,7 +98,8 @@ class MessageMediaParticipant(object):
             'recipient_country': 'str',
             'recipient_type': 'str',
             'authenticated': 'bool',
-            'monitored_participant_id': 'str'
+            'monitored_participant_id': 'str',
+            'monitored_participant': 'AddressableEntityRef'
         }
 
         self.attribute_map = {
@@ -142,7 +144,8 @@ class MessageMediaParticipant(object):
             'recipient_country': 'recipientCountry',
             'recipient_type': 'recipientType',
             'authenticated': 'authenticated',
-            'monitored_participant_id': 'monitoredParticipantId'
+            'monitored_participant_id': 'monitoredParticipantId',
+            'monitored_participant': 'monitoredParticipant'
         }
 
         self._id = None
@@ -187,6 +190,7 @@ class MessageMediaParticipant(object):
         self._recipient_type = None
         self._authenticated = None
         self._monitored_participant_id = None
+        self._monitored_participant = None
 
     @property
     def id(self) -> str:
@@ -1220,6 +1224,30 @@ class MessageMediaParticipant(object):
         
 
         self._monitored_participant_id = monitored_participant_id
+
+    @property
+    def monitored_participant(self) -> 'AddressableEntityRef':
+        """
+        Gets the monitored_participant of this MessageMediaParticipant.
+        The participant being monitored when performing a message monitor.
+
+        :return: The monitored_participant of this MessageMediaParticipant.
+        :rtype: AddressableEntityRef
+        """
+        return self._monitored_participant
+
+    @monitored_participant.setter
+    def monitored_participant(self, monitored_participant: 'AddressableEntityRef') -> None:
+        """
+        Sets the monitored_participant of this MessageMediaParticipant.
+        The participant being monitored when performing a message monitor.
+
+        :param monitored_participant: The monitored_participant of this MessageMediaParticipant.
+        :type: AddressableEntityRef
+        """
+        
+
+        self._monitored_participant = monitored_participant
 
     def to_dict(self):
         """

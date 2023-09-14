@@ -387,6 +387,7 @@ from .models.bu_short_term_forecast_list_item import BuShortTermForecastListItem
 from .models.bu_short_term_forecast_listing import BuShortTermForecastListing
 from .models.bu_short_term_forecast_reference import BuShortTermForecastReference
 from .models.bu_short_term_forecasting_settings import BuShortTermForecastingSettings
+from .models.bu_update_agent_schedule_shift import BuUpdateAgentScheduleShift
 from .models.bu_update_agent_schedule_upload_schema import BuUpdateAgentScheduleUploadSchema
 from .models.bulk_callback_disconnect_request import BulkCallbackDisconnectRequest
 from .models.bulk_callback_patch_request import BulkCallbackPatchRequest
@@ -587,6 +588,11 @@ from .models.condition import Condition
 from .models.conditional_group_routing import ConditionalGroupRouting
 from .models.conditional_group_routing_rule import ConditionalGroupRoutingRule
 from .models.configuration_overrides import ConfigurationOverrides
+from .models.confusion_details import ConfusionDetails
+from .models.confusion_info import ConfusionInfo
+from .models.confusion_intent_details import ConfusionIntentDetails
+from .models.confusion_intent_info import ConfusionIntentInfo
+from .models.confusion_utterance import ConfusionUtterance
 from .models.connect_rate import ConnectRate
 from .models.connected_edge import ConnectedEdge
 from .models.connected_queue import ConnectedQueue
@@ -1528,6 +1534,14 @@ from .models.flow_entity_listing import FlowEntityListing
 from .models.flow_execution_data_query_result import FlowExecutionDataQueryResult
 from .models.flow_execution_launch_request import FlowExecutionLaunchRequest
 from .models.flow_execution_launch_response import FlowExecutionLaunchResponse
+from .models.flow_health import FlowHealth
+from .models.flow_health_error_info import FlowHealthErrorInfo
+from .models.flow_health_intent import FlowHealthIntent
+from .models.flow_health_intent_info import FlowHealthIntentInfo
+from .models.flow_health_intent_utterance import FlowHealthIntentUtterance
+from .models.flow_health_intent_version_info import FlowHealthIntentVersionInfo
+from .models.flow_health_utterance import FlowHealthUtterance
+from .models.flow_health_version_info import FlowHealthVersionInfo
 from .models.flow_metrics_topic_flow_metric_record import FlowMetricsTopicFlowMetricRecord
 from .models.flow_metrics_topic_flow_outcome import FlowMetricsTopicFlowOutcome
 from .models.flow_metrics_topic_flow_proposed_agent import FlowMetricsTopicFlowProposedAgent
@@ -1635,6 +1649,7 @@ from .models.guest_member_info import GuestMemberInfo
 from .models.guest_response_category import GuestResponseCategory
 from .models.headcount_forecast import HeadcountForecast
 from .models.headcount_interval import HeadcountInterval
+from .models.health_info import HealthInfo
 from .models.help_link import HelpLink
 from .models.help_settings import HelpSettings
 from .models.historical_adherence_actuals import HistoricalAdherenceActuals
@@ -2014,6 +2029,7 @@ from .models.learning_module_inform_step import LearningModuleInformStep
 from .models.learning_module_inform_step_request import LearningModuleInformStepRequest
 from .models.learning_module_job_request import LearningModuleJobRequest
 from .models.learning_module_job_response import LearningModuleJobResponse
+from .models.learning_module_publish_request import LearningModulePublishRequest
 from .models.learning_module_publish_response import LearningModulePublishResponse
 from .models.learning_module_reassign_summary import LearningModuleReassignSummary
 from .models.learning_module_request import LearningModuleRequest
@@ -2067,6 +2083,9 @@ from .models.local_date_range import LocalDateRange
 from .models.local_encryption_configuration import LocalEncryptionConfiguration
 from .models.local_encryption_key_request import LocalEncryptionKeyRequest
 from .models.local_time import LocalTime
+from .models.locale_flow_version_info import LocaleFlowVersionInfo
+from .models.locale_health import LocaleHealth
+from .models.locale_info import LocaleInfo
 from .models.localized_labels import LocalizedLabels
 from .models.location import Location
 from .models.location_address import LocationAddress
@@ -2364,6 +2383,7 @@ from .models.outcome_quantile_condition import OutcomeQuantileCondition
 from .models.outcome_ref import OutcomeRef
 from .models.outcome_ref_request import OutcomeRefRequest
 from .models.outcome_scores_result import OutcomeScoresResult
+from .models.outlier_info import OutlierInfo
 from .models.overall_best_points import OverallBestPoints
 from .models.overall_best_points_item import OverallBestPointsItem
 from .models.pin_configuration import PINConfiguration

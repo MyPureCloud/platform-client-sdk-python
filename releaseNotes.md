@@ -1,77 +1,125 @@
-Platform API version: 7322
+Platform API version: 7336
 
 
-# Major Changes (0 changes)
+# Major Changes (2 changes)
+
+**POST /api/v2/learning/modules/{moduleId}/publish** (1 change)
+
+* Parameter body was added
+
+**BuUpdateAgentScheduleUploadSchema** (1 change)
+
+* Property shifts was changed from BuAgentScheduleShift[] to BuUpdateAgentScheduleShift[]
 
 
-# Minor Changes (18 changes)
+# Minor Changes (29 changes)
 
-**/api/v2/workforcemanagement/agents** (2 changes)
-
-* Path was added
-* Operation POST was added
-
-**/api/v2/conversations/videos/meetings/{meetingId}** (2 changes)
+**/api/v2/flows/{flowId}/versions/{versionId}/intents/{intentId}/health** (2 changes)
 
 * Path was added
 * Operation GET was added
 
-**/api/v2/conversations/videos/meetings** (2 changes)
+**/api/v2/flows/{flowId}/versions/{versionId}/intents/{intentId}/utterances/{utteranceId}/health** (2 changes)
 
 * Path was added
-* Operation POST was added
+* Operation GET was added
 
-**DefaultObjective** (1 change)
+**/api/v2/flows/{flowId}/versions/{versionId}/health** (2 changes)
 
-* Optional property evaluationFormContextIds was added
+* Path was added
+* Operation GET was added
 
-**Objective** (1 change)
+**AnalyticsReportingSettings** (1 change)
 
-* Optional property evaluationFormContextIds was added
+* Optional property myInteractionsPiiMaskingEnabled was added
 
-**CreateObjective** (1 change)
+**MessageMediaParticipant** (1 change)
 
-* Optional property evaluationFormContextIds was added
+* Optional property monitoredParticipant was added
 
-**WorkdayMetric** (1 change)
+**ContactList** (1 change)
 
-* Optional property evaluationDetails was added
+* Optional property trimWhitespace was added
 
-**AttendanceStatus** (1 change)
-
-* Optional property hasEvaluation was added
-
-**Miner** (1 change)
-
-* Enum value Email was added to property mediaType
-
-**MinerExecuteRequest** (1 change)
-
-* Enum value Email was added to property mediaType
-
-**MoveAgentResponse** (1 change)
+**ConfusionInfo** (1 change)
 
 * Model was added
 
-**MoveAgentsResponse** (1 change)
+**ConfusionIntentInfo** (1 change)
 
 * Model was added
 
-**MoveAgentsRequest** (1 change)
+**FlowHealthErrorInfo** (1 change)
 
 * Model was added
 
-**MeetingIdRecord** (1 change)
+**FlowHealthIntent** (1 change)
 
 * Model was added
 
-**GenerateMeetingIdRequest** (1 change)
+**FlowHealthIntentUtterance** (1 change)
+
+* Model was added
+
+**FlowHealthIntentVersionInfo** (1 change)
+
+* Model was added
+
+**HealthInfo** (1 change)
+
+* Model was added
+
+**OutlierInfo** (1 change)
+
+* Model was added
+
+**ConfusionDetails** (1 change)
+
+* Model was added
+
+**ConfusionIntentDetails** (1 change)
+
+* Model was added
+
+**ConfusionUtterance** (1 change)
+
+* Model was added
+
+**FlowHealthUtterance** (1 change)
+
+* Model was added
+
+**FlowHealth** (1 change)
+
+* Model was added
+
+**FlowHealthIntentInfo** (1 change)
+
+* Model was added
+
+**FlowHealthVersionInfo** (1 change)
+
+* Model was added
+
+**LocaleFlowVersionInfo** (1 change)
+
+* Model was added
+
+**LocaleHealth** (1 change)
+
+* Model was added
+
+**LocaleInfo** (1 change)
+
+* Model was added
+
+**LearningModulePublishRequest** (1 change)
+
+* Model was added
+
+**BuUpdateAgentScheduleShift** (1 change)
 
 * Model was added
 
 
-# Point Changes (1 change)
-
-**GET /api/v2/webdeployments/deployments** (1 change)
-
-* Description was changed for parameter expand
+# Point Changes (0 changes)

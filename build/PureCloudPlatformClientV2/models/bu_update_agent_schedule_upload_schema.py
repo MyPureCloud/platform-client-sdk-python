@@ -33,8 +33,8 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
-    from . import BuAgentScheduleShift
     from . import BuFullDayTimeOffMarker
+    from . import BuUpdateAgentScheduleShift
     from . import ListWrapperString
     from . import ValueWrapperString
     from . import WfmVersionedEntityMetadata
@@ -57,7 +57,7 @@ class BuUpdateAgentScheduleUploadSchema(object):
             'user_id': 'str',
             'work_plan_id': 'ValueWrapperString',
             'work_plan_ids_per_week': 'ListWrapperString',
-            'shifts': 'list[BuAgentScheduleShift]',
+            'shifts': 'list[BuUpdateAgentScheduleShift]',
             'full_day_time_off_markers': 'list[BuFullDayTimeOffMarker]',
             'metadata': 'WfmVersionedEntityMetadata',
             'delete': 'bool'
@@ -154,24 +154,24 @@ class BuUpdateAgentScheduleUploadSchema(object):
         self._work_plan_ids_per_week = work_plan_ids_per_week
 
     @property
-    def shifts(self) -> List['BuAgentScheduleShift']:
+    def shifts(self) -> List['BuUpdateAgentScheduleShift']:
         """
         Gets the shifts of this BuUpdateAgentScheduleUploadSchema.
         The shift definitions for this agent schedule
 
         :return: The shifts of this BuUpdateAgentScheduleUploadSchema.
-        :rtype: list[BuAgentScheduleShift]
+        :rtype: list[BuUpdateAgentScheduleShift]
         """
         return self._shifts
 
     @shifts.setter
-    def shifts(self, shifts: List['BuAgentScheduleShift']) -> None:
+    def shifts(self, shifts: List['BuUpdateAgentScheduleShift']) -> None:
         """
         Sets the shifts of this BuUpdateAgentScheduleUploadSchema.
         The shift definitions for this agent schedule
 
         :param shifts: The shifts of this BuUpdateAgentScheduleUploadSchema.
-        :type: list[BuAgentScheduleShift]
+        :type: list[BuUpdateAgentScheduleShift]
         """
         
 
