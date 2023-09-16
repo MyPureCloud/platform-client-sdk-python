@@ -54,6 +54,8 @@ class CallbackMediaSettings(object):
             'enable_auto_answer': 'bool',
             'alerting_timeout_seconds': 'int',
             'service_level': 'ServiceLevel',
+            'auto_answer_alert_tone_seconds': 'float',
+            'manual_answer_alert_tone_seconds': 'float',
             'sub_type_settings': 'dict(str, BaseMediaSettings)'
         }
 
@@ -61,12 +63,16 @@ class CallbackMediaSettings(object):
             'enable_auto_answer': 'enableAutoAnswer',
             'alerting_timeout_seconds': 'alertingTimeoutSeconds',
             'service_level': 'serviceLevel',
+            'auto_answer_alert_tone_seconds': 'autoAnswerAlertToneSeconds',
+            'manual_answer_alert_tone_seconds': 'manualAnswerAlertToneSeconds',
             'sub_type_settings': 'subTypeSettings'
         }
 
         self._enable_auto_answer = None
         self._alerting_timeout_seconds = None
         self._service_level = None
+        self._auto_answer_alert_tone_seconds = None
+        self._manual_answer_alert_tone_seconds = None
         self._sub_type_settings = None
 
     @property
@@ -140,6 +146,54 @@ class CallbackMediaSettings(object):
         
 
         self._service_level = service_level
+
+    @property
+    def auto_answer_alert_tone_seconds(self) -> float:
+        """
+        Gets the auto_answer_alert_tone_seconds of this CallbackMediaSettings.
+
+
+        :return: The auto_answer_alert_tone_seconds of this CallbackMediaSettings.
+        :rtype: float
+        """
+        return self._auto_answer_alert_tone_seconds
+
+    @auto_answer_alert_tone_seconds.setter
+    def auto_answer_alert_tone_seconds(self, auto_answer_alert_tone_seconds: float) -> None:
+        """
+        Sets the auto_answer_alert_tone_seconds of this CallbackMediaSettings.
+
+
+        :param auto_answer_alert_tone_seconds: The auto_answer_alert_tone_seconds of this CallbackMediaSettings.
+        :type: float
+        """
+        
+
+        self._auto_answer_alert_tone_seconds = auto_answer_alert_tone_seconds
+
+    @property
+    def manual_answer_alert_tone_seconds(self) -> float:
+        """
+        Gets the manual_answer_alert_tone_seconds of this CallbackMediaSettings.
+
+
+        :return: The manual_answer_alert_tone_seconds of this CallbackMediaSettings.
+        :rtype: float
+        """
+        return self._manual_answer_alert_tone_seconds
+
+    @manual_answer_alert_tone_seconds.setter
+    def manual_answer_alert_tone_seconds(self, manual_answer_alert_tone_seconds: float) -> None:
+        """
+        Sets the manual_answer_alert_tone_seconds of this CallbackMediaSettings.
+
+
+        :param manual_answer_alert_tone_seconds: The manual_answer_alert_tone_seconds of this CallbackMediaSettings.
+        :type: float
+        """
+        
+
+        self._manual_answer_alert_tone_seconds = manual_answer_alert_tone_seconds
 
     @property
     def sub_type_settings(self) -> Dict[str, 'BaseMediaSettings']:

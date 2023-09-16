@@ -35,6 +35,7 @@ from typing import Dict
 if TYPE_CHECKING:
     from . import AlertNotification
     from . import AlertRuleProperties
+    from . import AlertSummary
     from . import CommonRuleConditions
     from . import UserReference
 
@@ -69,6 +70,7 @@ class CommonAlert(object):
             'date_snoozed_until': 'datetime',
             'conditions': 'CommonRuleConditions',
             'conversation_id': 'str',
+            'alert_summary': 'AlertSummary',
             'rule_uri': 'str',
             'self_uri': 'str'
         }
@@ -90,6 +92,7 @@ class CommonAlert(object):
             'date_snoozed_until': 'dateSnoozedUntil',
             'conditions': 'conditions',
             'conversation_id': 'conversationId',
+            'alert_summary': 'alertSummary',
             'rule_uri': 'ruleUri',
             'self_uri': 'selfUri'
         }
@@ -110,6 +113,7 @@ class CommonAlert(object):
         self._date_snoozed_until = None
         self._conditions = None
         self._conversation_id = None
+        self._alert_summary = None
         self._rule_uri = None
         self._self_uri = None
 
@@ -496,6 +500,30 @@ class CommonAlert(object):
         
 
         self._conversation_id = conversation_id
+
+    @property
+    def alert_summary(self) -> 'AlertSummary':
+        """
+        Gets the alert_summary of this CommonAlert.
+        Summary of the alert status of the entities defined in the conditions.  Is set when rule has instance-based or team member based rule predicates
+
+        :return: The alert_summary of this CommonAlert.
+        :rtype: AlertSummary
+        """
+        return self._alert_summary
+
+    @alert_summary.setter
+    def alert_summary(self, alert_summary: 'AlertSummary') -> None:
+        """
+        Sets the alert_summary of this CommonAlert.
+        Summary of the alert status of the entities defined in the conditions.  Is set when rule has instance-based or team member based rule predicates
+
+        :param alert_summary: The alert_summary of this CommonAlert.
+        :type: AlertSummary
+        """
+        
+
+        self._alert_summary = alert_summary
 
     @property
     def rule_uri(self) -> str:

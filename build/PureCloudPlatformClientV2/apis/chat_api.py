@@ -38,8 +38,17 @@ from typing import Dict
 from typing import Any
 
 from ..models import Empty
+from ..models import ChatMessageEntityListing
+from ..models import ChatMessageResponse
+from ..models import ChatSendMessageResponse
 from ..models import ChatSettings
+from ..models import CreateRoomRequest
+from ..models import CreateRoomResponse
 from ..models import ErrorBody
+from ..models import PinnedMessageRequest
+from ..models import Room
+from ..models import RoomUpdateRequest
+from ..models import SendMessageBody
 
 class ChatApi(object):
     """
@@ -56,6 +65,346 @@ class ChatApi(object):
             if not config.api_client:
                 config.api_client = ApiClient()
             self.api_client = config.api_client
+
+    def delete_chats_room_message(self, room_jid: str, message_id: str, **kwargs) -> None:
+        """
+        Delete a message in a room
+        
+	    delete_chats_room_message is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_chats_room_message(room_jid, message_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str room_jid: roomId (required)
+        :param str message_id: messageId (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['room_jid', 'message_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_chats_room_message" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'room_jid' is set
+        if ('room_jid' not in params) or (params['room_jid'] is None):
+            raise ValueError("Missing the required parameter `room_jid` when calling `delete_chats_room_message`")
+        # verify the required parameter 'message_id' is set
+        if ('message_id' not in params) or (params['message_id'] is None):
+            raise ValueError("Missing the required parameter `message_id` when calling `delete_chats_room_message`")
+
+
+        resource_path = '/api/v2/chats/rooms/{roomJid}/messages/{messageId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'room_jid' in params:
+            path_params['roomJid'] = params['room_jid']
+        if 'message_id' in params:
+            path_params['messageId'] = params['message_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def delete_chats_room_participant(self, room_jid: str, user_id: str, **kwargs) -> None:
+        """
+        Remove a user from a room.
+        
+	    delete_chats_room_participant is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_chats_room_participant(room_jid, user_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str room_jid: roomJid (required)
+        :param str user_id: userId (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['room_jid', 'user_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_chats_room_participant" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'room_jid' is set
+        if ('room_jid' not in params) or (params['room_jid'] is None):
+            raise ValueError("Missing the required parameter `room_jid` when calling `delete_chats_room_participant`")
+        # verify the required parameter 'user_id' is set
+        if ('user_id' not in params) or (params['user_id'] is None):
+            raise ValueError("Missing the required parameter `user_id` when calling `delete_chats_room_participant`")
+
+
+        resource_path = '/api/v2/chats/rooms/{roomJid}/participants/{userId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'room_jid' in params:
+            path_params['roomJid'] = params['room_jid']
+        if 'user_id' in params:
+            path_params['userId'] = params['user_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def delete_chats_room_pinnedmessage(self, room_jid: str, pinned_message_id: str, **kwargs) -> None:
+        """
+        Remove a pinned message from a room
+        
+	    delete_chats_room_pinnedmessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_chats_room_pinnedmessage(room_jid, pinned_message_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str room_jid: roomJid (required)
+        :param str pinned_message_id: pinnedMessageId (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['room_jid', 'pinned_message_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_chats_room_pinnedmessage" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'room_jid' is set
+        if ('room_jid' not in params) or (params['room_jid'] is None):
+            raise ValueError("Missing the required parameter `room_jid` when calling `delete_chats_room_pinnedmessage`")
+        # verify the required parameter 'pinned_message_id' is set
+        if ('pinned_message_id' not in params) or (params['pinned_message_id'] is None):
+            raise ValueError("Missing the required parameter `pinned_message_id` when calling `delete_chats_room_pinnedmessage`")
+
+
+        resource_path = '/api/v2/chats/rooms/{roomJid}/pinnedmessages/{pinnedMessageId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'room_jid' in params:
+            path_params['roomJid'] = params['room_jid']
+        if 'pinned_message_id' in params:
+            path_params['pinnedMessageId'] = params['pinned_message_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def delete_chats_user_message(self, user_id: str, message_id: str, **kwargs) -> None:
+        """
+        Delete a message to a user
+        
+	    delete_chats_user_message is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_chats_user_message(user_id, message_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str user_id: userId (required)
+        :param str message_id: messageId (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['user_id', 'message_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_chats_user_message" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'user_id' is set
+        if ('user_id' not in params) or (params['user_id'] is None):
+            raise ValueError("Missing the required parameter `user_id` when calling `delete_chats_user_message`")
+        # verify the required parameter 'message_id' is set
+        if ('message_id' not in params) or (params['message_id'] is None):
+            raise ValueError("Missing the required parameter `message_id` when calling `delete_chats_user_message`")
+
+
+        resource_path = '/api/v2/chats/users/{userId}/messages/{messageId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'user_id' in params:
+            path_params['userId'] = params['user_id']
+        if 'message_id' in params:
+            path_params['messageId'] = params['message_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
 
     @deprecated("get_chat_settings is deprecated")
     def get_chat_settings(self, **kwargs) -> 'ChatSettings':
@@ -130,6 +479,355 @@ class ChatApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def get_chats_message(self, message_id: str, **kwargs) -> 'ChatMessageResponse':
+        """
+        Get a message
+        
+	    get_chats_message is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_chats_message(message_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str message_id: messageId (required)
+        :return: ChatMessageResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['message_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_chats_message" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'message_id' is set
+        if ('message_id' not in params) or (params['message_id'] is None):
+            raise ValueError("Missing the required parameter `message_id` when calling `get_chats_message`")
+
+
+        resource_path = '/api/v2/chats/messages/{messageId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'message_id' in params:
+            path_params['messageId'] = params['message_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ChatMessageResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_chats_room(self, room_jid: str, **kwargs) -> 'Room':
+        """
+        Get a room
+        
+	    get_chats_room is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_chats_room(room_jid, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str room_jid: roomJid (required)
+        :return: Room
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['room_jid']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_chats_room" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'room_jid' is set
+        if ('room_jid' not in params) or (params['room_jid'] is None):
+            raise ValueError("Missing the required parameter `room_jid` when calling `get_chats_room`")
+
+
+        resource_path = '/api/v2/chats/rooms/{roomJid}'.replace('{format}', 'json')
+        path_params = {}
+        if 'room_jid' in params:
+            path_params['roomJid'] = params['room_jid']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='Room',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_chats_room_message(self, room_jid: str, message_ids: str, **kwargs) -> 'ChatMessageEntityListing':
+        """
+        Get messages by id(s) from a room
+        
+	    get_chats_room_message is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_chats_room_message(room_jid, message_ids, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str room_jid: roomJid (required)
+        :param str message_ids: messageIds, comma separated (required)
+        :return: ChatMessageEntityListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['room_jid', 'message_ids']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_chats_room_message" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'room_jid' is set
+        if ('room_jid' not in params) or (params['room_jid'] is None):
+            raise ValueError("Missing the required parameter `room_jid` when calling `get_chats_room_message`")
+        # verify the required parameter 'message_ids' is set
+        if ('message_ids' not in params) or (params['message_ids'] is None):
+            raise ValueError("Missing the required parameter `message_ids` when calling `get_chats_room_message`")
+
+
+        resource_path = '/api/v2/chats/rooms/{roomJid}/messages/{messageIds}'.replace('{format}', 'json')
+        path_params = {}
+        if 'room_jid' in params:
+            path_params['roomJid'] = params['room_jid']
+        if 'message_ids' in params:
+            path_params['messageIds'] = params['message_ids']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ChatMessageEntityListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_chats_room_messages(self, room_jid: str, **kwargs) -> 'ChatMessageEntityListing':
+        """
+        Get a room's message history
+        
+	    get_chats_room_messages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_chats_room_messages(room_jid, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str room_jid: roomJid (required)
+        :param int page_size: The total page size requested
+        :param int page_number: The page number requested
+        :param str sort_by: variable name requested to sort by
+        :param list[str] expand: variable name requested by expand list
+        :param str next_page: next page token
+        :param str previous_page: Previous page token
+        :param str limit: The maximum number of messages to retrieve
+        :param str before: The cutoff date for messages to retrieve
+        :param str after: The beginning date for messages to retrieve
+        :return: ChatMessageEntityListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['room_jid', 'page_size', 'page_number', 'sort_by', 'expand', 'next_page', 'previous_page', 'limit', 'before', 'after']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_chats_room_messages" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'room_jid' is set
+        if ('room_jid' not in params) or (params['room_jid'] is None):
+            raise ValueError("Missing the required parameter `room_jid` when calling `get_chats_room_messages`")
+
+
+        resource_path = '/api/v2/chats/rooms/{roomJid}/messages'.replace('{format}', 'json')
+        path_params = {}
+        if 'room_jid' in params:
+            path_params['roomJid'] = params['room_jid']
+
+        query_params = {}
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+        if 'page_number' in params:
+            query_params['pageNumber'] = params['page_number']
+        if 'sort_by' in params:
+            query_params['sortBy'] = params['sort_by']
+        if 'expand' in params:
+            query_params['expand'] = params['expand']
+        if 'next_page' in params:
+            query_params['nextPage'] = params['next_page']
+        if 'previous_page' in params:
+            query_params['previousPage'] = params['previous_page']
+        if 'limit' in params:
+            query_params['limit'] = params['limit']
+        if 'before' in params:
+            query_params['before'] = params['before']
+        if 'after' in params:
+            query_params['after'] = params['after']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ChatMessageEntityListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def get_chats_settings(self, **kwargs) -> 'ChatSettings':
         """
         Get Chat Settings.
@@ -198,6 +896,303 @@ class ChatApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='ChatSettings',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_chats_thread_messages(self, thread_id: str, **kwargs) -> 'ChatMessageEntityListing':
+        """
+        Get history by thread
+        
+	    get_chats_thread_messages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_chats_thread_messages(thread_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str thread_id: threadId (required)
+        :param int page_size: The total page size requested
+        :param int page_number: The page number requested
+        :param str sort_by: variable name requested to sort by
+        :param list[str] expand: variable name requested by expand list
+        :param str next_page: next page token
+        :param str previous_page: Previous page token
+        :param str limit: The maximum number of messages to retrieve
+        :param str before: The cutoff date for messages to retrieve
+        :param str after: The beginning date for messages to retrieve
+        :return: ChatMessageEntityListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['thread_id', 'page_size', 'page_number', 'sort_by', 'expand', 'next_page', 'previous_page', 'limit', 'before', 'after']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_chats_thread_messages" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'thread_id' is set
+        if ('thread_id' not in params) or (params['thread_id'] is None):
+            raise ValueError("Missing the required parameter `thread_id` when calling `get_chats_thread_messages`")
+
+
+        resource_path = '/api/v2/chats/threads/{threadId}/messages'.replace('{format}', 'json')
+        path_params = {}
+        if 'thread_id' in params:
+            path_params['threadId'] = params['thread_id']
+
+        query_params = {}
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+        if 'page_number' in params:
+            query_params['pageNumber'] = params['page_number']
+        if 'sort_by' in params:
+            query_params['sortBy'] = params['sort_by']
+        if 'expand' in params:
+            query_params['expand'] = params['expand']
+        if 'next_page' in params:
+            query_params['nextPage'] = params['next_page']
+        if 'previous_page' in params:
+            query_params['previousPage'] = params['previous_page']
+        if 'limit' in params:
+            query_params['limit'] = params['limit']
+        if 'before' in params:
+            query_params['before'] = params['before']
+        if 'after' in params:
+            query_params['after'] = params['after']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ChatMessageEntityListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_chats_user_message(self, user_id: str, message_ids: str, **kwargs) -> 'ChatMessageEntityListing':
+        """
+        Get messages by id(s) from a 1on1
+        
+	    get_chats_user_message is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_chats_user_message(user_id, message_ids, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str user_id: userId (required)
+        :param str message_ids: messageIds, comma separated (required)
+        :return: ChatMessageEntityListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['user_id', 'message_ids']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_chats_user_message" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'user_id' is set
+        if ('user_id' not in params) or (params['user_id'] is None):
+            raise ValueError("Missing the required parameter `user_id` when calling `get_chats_user_message`")
+        # verify the required parameter 'message_ids' is set
+        if ('message_ids' not in params) or (params['message_ids'] is None):
+            raise ValueError("Missing the required parameter `message_ids` when calling `get_chats_user_message`")
+
+
+        resource_path = '/api/v2/chats/users/{userId}/messages/{messageIds}'.replace('{format}', 'json')
+        path_params = {}
+        if 'user_id' in params:
+            path_params['userId'] = params['user_id']
+        if 'message_ids' in params:
+            path_params['messageIds'] = params['message_ids']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ChatMessageEntityListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_chats_user_messages(self, user_id: str, **kwargs) -> 'ChatMessageResponse':
+        """
+        Get 1on1 History between a user
+        
+	    get_chats_user_messages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_chats_user_messages(user_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str user_id: userId (required)
+        :param int page_size: The total page size requested
+        :param int page_number: The page number requested
+        :param str sort_by: variable name requested to sort by
+        :param list[str] expand: variable name requested by expand list
+        :param str next_page: next page token
+        :param str previous_page: Previous page token
+        :param str limit: The maximum number of messages to retrieve
+        :param str before: The cutoff date for messages to retrieve
+        :param str after: The beginning date for messages to retrieve
+        :return: ChatMessageResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['user_id', 'page_size', 'page_number', 'sort_by', 'expand', 'next_page', 'previous_page', 'limit', 'before', 'after']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_chats_user_messages" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'user_id' is set
+        if ('user_id' not in params) or (params['user_id'] is None):
+            raise ValueError("Missing the required parameter `user_id` when calling `get_chats_user_messages`")
+
+
+        resource_path = '/api/v2/chats/users/{userId}/messages'.replace('{format}', 'json')
+        path_params = {}
+        if 'user_id' in params:
+            path_params['userId'] = params['user_id']
+
+        query_params = {}
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+        if 'page_number' in params:
+            query_params['pageNumber'] = params['page_number']
+        if 'sort_by' in params:
+            query_params['sortBy'] = params['sort_by']
+        if 'expand' in params:
+            query_params['expand'] = params['expand']
+        if 'next_page' in params:
+            query_params['nextPage'] = params['next_page']
+        if 'previous_page' in params:
+            query_params['previousPage'] = params['previous_page']
+        if 'limit' in params:
+            query_params['limit'] = params['limit']
+        if 'before' in params:
+            query_params['before'] = params['before']
+        if 'after' in params:
+            query_params['after'] = params['after']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ChatMessageResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -281,6 +1276,182 @@ class ChatApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def patch_chats_room(self, room_jid: str, body: 'RoomUpdateRequest', **kwargs) -> None:
+        """
+        Set properties for a room
+        
+	    patch_chats_room is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.patch_chats_room(room_jid, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str room_jid: roomJid (required)
+        :param RoomUpdateRequest body: Room properties (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['room_jid', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method patch_chats_room" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'room_jid' is set
+        if ('room_jid' not in params) or (params['room_jid'] is None):
+            raise ValueError("Missing the required parameter `room_jid` when calling `patch_chats_room`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `patch_chats_room`")
+
+
+        resource_path = '/api/v2/chats/rooms/{roomJid}'.replace('{format}', 'json')
+        path_params = {}
+        if 'room_jid' in params:
+            path_params['roomJid'] = params['room_jid']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PATCH',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def patch_chats_room_message(self, room_jid: str, message_id: str, body: 'SendMessageBody', **kwargs) -> 'ChatSendMessageResponse':
+        """
+        Edit a message in a room
+        
+	    patch_chats_room_message is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.patch_chats_room_message(room_jid, message_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str room_jid: roomId (required)
+        :param str message_id: messageId (required)
+        :param SendMessageBody body: messageBody (required)
+        :return: ChatSendMessageResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['room_jid', 'message_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method patch_chats_room_message" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'room_jid' is set
+        if ('room_jid' not in params) or (params['room_jid'] is None):
+            raise ValueError("Missing the required parameter `room_jid` when calling `patch_chats_room_message`")
+        # verify the required parameter 'message_id' is set
+        if ('message_id' not in params) or (params['message_id'] is None):
+            raise ValueError("Missing the required parameter `message_id` when calling `patch_chats_room_message`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `patch_chats_room_message`")
+
+
+        resource_path = '/api/v2/chats/rooms/{roomJid}/messages/{messageId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'room_jid' in params:
+            path_params['roomJid'] = params['room_jid']
+        if 'message_id' in params:
+            path_params['messageId'] = params['message_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PATCH',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ChatSendMessageResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def patch_chats_settings(self, body: 'ChatSettings', **kwargs) -> 'ChatSettings':
         """
         Patch Chat Settings.
@@ -355,6 +1526,513 @@ class ChatApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='ChatSettings',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def patch_chats_user_message(self, user_id: str, message_id: str, body: 'SendMessageBody', **kwargs) -> 'ChatSendMessageResponse':
+        """
+        Edit a message to a user
+        
+	    patch_chats_user_message is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.patch_chats_user_message(user_id, message_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str user_id: userId (required)
+        :param str message_id: messageId (required)
+        :param SendMessageBody body: message body (required)
+        :return: ChatSendMessageResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['user_id', 'message_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method patch_chats_user_message" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'user_id' is set
+        if ('user_id' not in params) or (params['user_id'] is None):
+            raise ValueError("Missing the required parameter `user_id` when calling `patch_chats_user_message`")
+        # verify the required parameter 'message_id' is set
+        if ('message_id' not in params) or (params['message_id'] is None):
+            raise ValueError("Missing the required parameter `message_id` when calling `patch_chats_user_message`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `patch_chats_user_message`")
+
+
+        resource_path = '/api/v2/chats/users/{userId}/messages/{messageId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'user_id' in params:
+            path_params['userId'] = params['user_id']
+        if 'message_id' in params:
+            path_params['messageId'] = params['message_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PATCH',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ChatSendMessageResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_chats_room_messages(self, room_jid: str, body: 'SendMessageBody', **kwargs) -> 'ChatSendMessageResponse':
+        """
+        Send a message to a room
+        
+	    post_chats_room_messages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_chats_room_messages(room_jid, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str room_jid: roomId (required)
+        :param SendMessageBody body: messageBody (required)
+        :return: ChatSendMessageResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['room_jid', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_chats_room_messages" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'room_jid' is set
+        if ('room_jid' not in params) or (params['room_jid'] is None):
+            raise ValueError("Missing the required parameter `room_jid` when calling `post_chats_room_messages`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_chats_room_messages`")
+
+
+        resource_path = '/api/v2/chats/rooms/{roomJid}/messages'.replace('{format}', 'json')
+        path_params = {}
+        if 'room_jid' in params:
+            path_params['roomJid'] = params['room_jid']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ChatSendMessageResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_chats_room_participant(self, room_jid: str, user_id: str, **kwargs) -> None:
+        """
+        Join a room
+        
+	    post_chats_room_participant is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_chats_room_participant(room_jid, user_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str room_jid: roomJid (required)
+        :param str user_id: userId (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['room_jid', 'user_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_chats_room_participant" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'room_jid' is set
+        if ('room_jid' not in params) or (params['room_jid'] is None):
+            raise ValueError("Missing the required parameter `room_jid` when calling `post_chats_room_participant`")
+        # verify the required parameter 'user_id' is set
+        if ('user_id' not in params) or (params['user_id'] is None):
+            raise ValueError("Missing the required parameter `user_id` when calling `post_chats_room_participant`")
+
+
+        resource_path = '/api/v2/chats/rooms/{roomJid}/participants/{userId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'room_jid' in params:
+            path_params['roomJid'] = params['room_jid']
+        if 'user_id' in params:
+            path_params['userId'] = params['user_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_chats_room_pinnedmessages(self, room_jid: str, body: 'PinnedMessageRequest', **kwargs) -> None:
+        """
+        Add pinned messages for a room, up to a maximum of 5 pinned messages
+        
+	    post_chats_room_pinnedmessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_chats_room_pinnedmessages(room_jid, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str room_jid: roomJid (required)
+        :param PinnedMessageRequest body: Pinned Message Ids (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['room_jid', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_chats_room_pinnedmessages" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'room_jid' is set
+        if ('room_jid' not in params) or (params['room_jid'] is None):
+            raise ValueError("Missing the required parameter `room_jid` when calling `post_chats_room_pinnedmessages`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_chats_room_pinnedmessages`")
+
+
+        resource_path = '/api/v2/chats/rooms/{roomJid}/pinnedmessages'.replace('{format}', 'json')
+        path_params = {}
+        if 'room_jid' in params:
+            path_params['roomJid'] = params['room_jid']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_chats_rooms(self, **kwargs) -> 'CreateRoomResponse':
+        """
+        Create an adhoc room
+        
+	    post_chats_rooms is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_chats_rooms(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param CreateRoomRequest body: Room properties
+        :return: CreateRoomResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_chats_rooms" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/chats/rooms'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='CreateRoomResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_chats_user_messages(self, user_id: str, body: 'SendMessageBody', **kwargs) -> 'ChatSendMessageResponse':
+        """
+        Send a message to a user
+        
+	    post_chats_user_messages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_chats_user_messages(user_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str user_id: userId (required)
+        :param SendMessageBody body: message body (required)
+        :return: ChatSendMessageResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['user_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_chats_user_messages" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'user_id' is set
+        if ('user_id' not in params) or (params['user_id'] is None):
+            raise ValueError("Missing the required parameter `user_id` when calling `post_chats_user_messages`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_chats_user_messages`")
+
+
+        resource_path = '/api/v2/chats/users/{userId}/messages'.replace('{format}', 'json')
+        path_params = {}
+        if 'user_id' in params:
+            path_params['userId'] = params['user_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ChatSendMessageResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

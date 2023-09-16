@@ -208,7 +208,7 @@ class ContactListFilter(object):
     def contact_list(self) -> 'DomainEntityRef':
         """
         Gets the contact_list of this ContactListFilter.
-        The contact list the filter is based on.
+        The contact list the filter is based on. Required if sourceType is ContactList
 
         :return: The contact_list of this ContactListFilter.
         :rtype: DomainEntityRef
@@ -219,7 +219,7 @@ class ContactListFilter(object):
     def contact_list(self, contact_list: 'DomainEntityRef') -> None:
         """
         Sets the contact_list of this ContactListFilter.
-        The contact list the filter is based on.
+        The contact list the filter is based on. Required if sourceType is ContactList
 
         :param contact_list: The contact_list of this ContactListFilter.
         :type: DomainEntityRef

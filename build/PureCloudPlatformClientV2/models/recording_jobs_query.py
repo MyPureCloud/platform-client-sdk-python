@@ -90,7 +90,7 @@ class RecordingJobsQuery(object):
     def action(self) -> str:
         """
         Gets the action of this RecordingJobsQuery.
-        Operation to perform bulk task. If the operation will cause the delete date of a recording to be older than the export date, the export date will be adjusted to the delete date.
+        Operation to perform bulk task. If the operation will cause the delete date of a recording to be older than the export date, the export date will be adjusted to the delete date. Archive action is currently not supported
 
         :return: The action of this RecordingJobsQuery.
         :rtype: str
@@ -101,14 +101,14 @@ class RecordingJobsQuery(object):
     def action(self, action: str) -> None:
         """
         Sets the action of this RecordingJobsQuery.
-        Operation to perform bulk task. If the operation will cause the delete date of a recording to be older than the export date, the export date will be adjusted to the delete date.
+        Operation to perform bulk task. If the operation will cause the delete date of a recording to be older than the export date, the export date will be adjusted to the delete date. Archive action is currently not supported
 
         :param action: The action of this RecordingJobsQuery.
         :type: str
         """
         if isinstance(action, int):
             action = str(action)
-        allowed_values = ["DELETE", "EXPORT"]
+        allowed_values = ["ARCHIVE", "DELETE", "EXPORT"]
         if action.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for action -> " + action)
             self._action = "outdated_sdk_version"
@@ -287,7 +287,7 @@ class RecordingJobsQuery(object):
     def clear_export(self) -> bool:
         """
         Gets the clear_export of this RecordingJobsQuery.
-        For DELETE action, setting this to true will clear any pending exports for recordings. This field is not used for EXPORT action. Default value = false
+        For DELETE action, setting this to true will clear any pending exports for recordings. This field is only used for DELETE action. Default value = false
 
         :return: The clear_export of this RecordingJobsQuery.
         :rtype: bool
@@ -298,7 +298,7 @@ class RecordingJobsQuery(object):
     def clear_export(self, clear_export: bool) -> None:
         """
         Sets the clear_export of this RecordingJobsQuery.
-        For DELETE action, setting this to true will clear any pending exports for recordings. This field is not used for EXPORT action. Default value = false
+        For DELETE action, setting this to true will clear any pending exports for recordings. This field is only used for DELETE action. Default value = false
 
         :param clear_export: The clear_export of this RecordingJobsQuery.
         :type: bool

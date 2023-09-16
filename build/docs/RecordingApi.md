@@ -1250,7 +1250,7 @@ except ApiException as e:
 | **sort_by** | **str**| Sort by | [optional] [default to &#39;userId&#39;]<br />**Values**: userId, dateCreated |
 | **state** | **str**| Filter by state | [optional] <br />**Values**: FULFILLED, PENDING, READY, PROCESSING, CANCELLED, FAILED |
 | **show_only_my_jobs** | **bool**| Show only my jobs | [optional]  |
-| **job_type** | **str**| Job Type (Can be left empty for both) | [optional] <br />**Values**: DELETE, EXPORT |
+| **job_type** | **str**| Job Type (Can be left empty for both) | [optional] <br />**Values**: ARCHIVE, DELETE, EXPORT |
 | **include_total** | **bool**| If false, cursor will be used to locate the page instead of pageNumber. | [optional]  |
 | **cursor** | **str**| Indicates where to resume query results (not required for first page) | [optional]  |
 {: class="table table-striped"}

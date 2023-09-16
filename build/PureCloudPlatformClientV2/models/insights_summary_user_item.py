@@ -54,18 +54,21 @@ class InsightsSummaryUserItem(object):
         self.swagger_types = {
             'user': 'UserReference',
             'metric_data': 'list[InsightsSummaryMetricItem]',
-            'overall_data': 'InsightsSummaryOverallItem'
+            'overall_data': 'InsightsSummaryOverallItem',
+            'ranking': 'int'
         }
 
         self.attribute_map = {
             'user': 'user',
             'metric_data': 'metricData',
-            'overall_data': 'overallData'
+            'overall_data': 'overallData',
+            'ranking': 'ranking'
         }
 
         self._user = None
         self._metric_data = None
         self._overall_data = None
+        self._ranking = None
 
     @property
     def user(self) -> 'UserReference':
@@ -138,6 +141,30 @@ class InsightsSummaryUserItem(object):
         
 
         self._overall_data = overall_data
+
+    @property
+    def ranking(self) -> int:
+        """
+        Gets the ranking of this InsightsSummaryUserItem.
+        Ranking of the user
+
+        :return: The ranking of this InsightsSummaryUserItem.
+        :rtype: int
+        """
+        return self._ranking
+
+    @ranking.setter
+    def ranking(self, ranking: int) -> None:
+        """
+        Sets the ranking of this InsightsSummaryUserItem.
+        Ranking of the user
+
+        :param ranking: The ranking of this InsightsSummaryUserItem.
+        :type: int
+        """
+        
+
+        self._ranking = ranking
 
     def to_dict(self):
         """

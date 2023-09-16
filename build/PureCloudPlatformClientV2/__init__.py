@@ -118,6 +118,8 @@ from .models.alert_listing import AlertListing
 from .models.alert_notification import AlertNotification
 from .models.alert_request import AlertRequest
 from .models.alert_rule_properties import AlertRuleProperties
+from .models.alert_summary import AlertSummary
+from .models.alert_summary_entity import AlertSummaryEntity
 from .models.alerting_unread_status import AlertingUnreadStatus
 from .models.all_time_points import AllTimePoints
 from .models.amazon_lex_request import AmazonLexRequest
@@ -497,6 +499,7 @@ from .models.campaign_rule_parameters import CampaignRuleParameters
 from .models.campaign_schedule import CampaignSchedule
 from .models.campaign_sequence import CampaignSequence
 from .models.campaign_sequence_entity_listing import CampaignSequenceEntityListing
+from .models.campaign_skill_statistics import CampaignSkillStatistics
 from .models.campaign_stats import CampaignStats
 from .models.campaign_time_slot import CampaignTimeSlot
 from .models.card import Card
@@ -528,7 +531,10 @@ from .models.chat_media_participant import ChatMediaParticipant
 from .models.chat_media_policy import ChatMediaPolicy
 from .models.chat_media_policy_conditions import ChatMediaPolicyConditions
 from .models.chat_message import ChatMessage
+from .models.chat_message_entity_listing import ChatMessageEntityListing
+from .models.chat_message_response import ChatMessageResponse
 from .models.chat_message_user import ChatMessageUser
+from .models.chat_send_message_response import ChatSendMessageResponse
 from .models.chat_settings import ChatSettings
 from .models.check import Check
 from .models.client_app import ClientApp
@@ -961,6 +967,8 @@ from .models.create_predictor_request import CreatePredictorRequest
 from .models.create_queue_request import CreateQueueRequest
 from .models.create_response_asset_request import CreateResponseAssetRequest
 from .models.create_response_asset_response import CreateResponseAssetResponse
+from .models.create_room_request import CreateRoomRequest
+from .models.create_room_response import CreateRoomResponse
 from .models.create_secure_session import CreateSecureSession
 from .models.create_service_goal_template import CreateServiceGoalTemplate
 from .models.create_share_request import CreateShareRequest
@@ -2458,6 +2466,7 @@ from .models.phrase import Phrase
 from .models.phrase_associations import PhraseAssociations
 from .models.physical_interface_entity_listing import PhysicalInterfaceEntityListing
 from .models.ping_identity import PingIdentity
+from .models.pinned_message_request import PinnedMessageRequest
 from .models.planning_group import PlanningGroup
 from .models.planning_group_list import PlanningGroupList
 from .models.planning_group_reference import PlanningGroupReference
@@ -2910,6 +2919,8 @@ from .models.ring import Ring
 from .models.role_division import RoleDivision
 from .models.role_division_grants import RoleDivisionGrants
 from .models.role_division_pair import RoleDivisionPair
+from .models.room import Room
+from .models.room_update_request import RoomUpdateRequest
 from .models.route_path_request import RoutePathRequest
 from .models.route_path_response import RoutePathResponse
 from .models.routing_activity_data import RoutingActivityData
@@ -3043,6 +3054,7 @@ from .models.selected_columns import SelectedColumns
 from .models.selector_event_trigger import SelectorEventTrigger
 from .models.send_agentless_outbound_message_request import SendAgentlessOutboundMessageRequest
 from .models.send_agentless_outbound_message_response import SendAgentlessOutboundMessageResponse
+from .models.send_message_body import SendMessageBody
 from .models.sentiment_feedback import SentimentFeedback
 from .models.sentiment_feedback_entity_listing import SentimentFeedbackEntityListing
 from .models.sequence_schedule import SequenceSchedule
@@ -3662,6 +3674,7 @@ from .models.video import Video
 from .models.video_conference_details import VideoConferenceDetails
 from .models.video_conference_update_topic_participant_info import VideoConferenceUpdateTopicParticipantInfo
 from .models.video_conference_update_topic_video_conference import VideoConferenceUpdateTopicVideoConference
+from .models.video_metadata import VideoMetadata
 from .models.view_filter import ViewFilter
 from .models.visibility_condition import VisibilityCondition
 from .models.vm_pairing_info import VmPairingInfo

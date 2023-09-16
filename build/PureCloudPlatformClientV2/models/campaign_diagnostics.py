@@ -34,6 +34,7 @@ from typing import Dict
 
 if TYPE_CHECKING:
     from . import CallableContactsDiagnostic
+    from . import CampaignSkillStatistics
     from . import QueueUtilizationDiagnostic
     from . import RuleSetDiagnostic
 
@@ -57,7 +58,8 @@ class CampaignDiagnostics(object):
             'rule_set_diagnostics': 'list[RuleSetDiagnostic]',
             'outstanding_interactions_count': 'int',
             'scheduled_interactions_count': 'int',
-            'time_zone_rescheduled_calls_count': 'int'
+            'time_zone_rescheduled_calls_count': 'int',
+            'campaign_skill_statistics': 'CampaignSkillStatistics'
         }
 
         self.attribute_map = {
@@ -66,7 +68,8 @@ class CampaignDiagnostics(object):
             'rule_set_diagnostics': 'ruleSetDiagnostics',
             'outstanding_interactions_count': 'outstandingInteractionsCount',
             'scheduled_interactions_count': 'scheduledInteractionsCount',
-            'time_zone_rescheduled_calls_count': 'timeZoneRescheduledCallsCount'
+            'time_zone_rescheduled_calls_count': 'timeZoneRescheduledCallsCount',
+            'campaign_skill_statistics': 'campaignSkillStatistics'
         }
 
         self._callable_contacts = None
@@ -75,6 +78,7 @@ class CampaignDiagnostics(object):
         self._outstanding_interactions_count = None
         self._scheduled_interactions_count = None
         self._time_zone_rescheduled_calls_count = None
+        self._campaign_skill_statistics = None
 
     @property
     def callable_contacts(self) -> 'CallableContactsDiagnostic':
@@ -219,6 +223,30 @@ class CampaignDiagnostics(object):
         
 
         self._time_zone_rescheduled_calls_count = time_zone_rescheduled_calls_count
+
+    @property
+    def campaign_skill_statistics(self) -> 'CampaignSkillStatistics':
+        """
+        Gets the campaign_skill_statistics of this CampaignDiagnostics.
+        Information regarding the campaign's skills
+
+        :return: The campaign_skill_statistics of this CampaignDiagnostics.
+        :rtype: CampaignSkillStatistics
+        """
+        return self._campaign_skill_statistics
+
+    @campaign_skill_statistics.setter
+    def campaign_skill_statistics(self, campaign_skill_statistics: 'CampaignSkillStatistics') -> None:
+        """
+        Sets the campaign_skill_statistics of this CampaignDiagnostics.
+        Information regarding the campaign's skills
+
+        :param campaign_skill_statistics: The campaign_skill_statistics of this CampaignDiagnostics.
+        :type: CampaignSkillStatistics
+        """
+        
+
+        self._campaign_skill_statistics = campaign_skill_statistics
 
     def to_dict(self):
         """

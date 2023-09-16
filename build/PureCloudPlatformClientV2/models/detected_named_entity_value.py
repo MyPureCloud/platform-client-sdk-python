@@ -49,16 +49,19 @@ class DetectedNamedEntityValue(object):
         """
         self.swagger_types = {
             'raw': 'str',
-            'resolved': 'str'
+            'resolved': 'str',
+            'unit': 'str'
         }
 
         self.attribute_map = {
             'raw': 'raw',
-            'resolved': 'resolved'
+            'resolved': 'resolved',
+            'unit': 'unit'
         }
 
         self._raw = None
         self._resolved = None
+        self._unit = None
 
     @property
     def raw(self) -> str:
@@ -107,6 +110,30 @@ class DetectedNamedEntityValue(object):
         
 
         self._resolved = resolved
+
+    @property
+    def unit(self) -> str:
+        """
+        Gets the unit of this DetectedNamedEntityValue.
+        The unit of the detected amount of money entity, e.g. EUR, USD.
+
+        :return: The unit of this DetectedNamedEntityValue.
+        :rtype: str
+        """
+        return self._unit
+
+    @unit.setter
+    def unit(self, unit: str) -> None:
+        """
+        Sets the unit of this DetectedNamedEntityValue.
+        The unit of the detected amount of money entity, e.g. EUR, USD.
+
+        :param unit: The unit of this DetectedNamedEntityValue.
+        :type: str
+        """
+        
+
+        self._unit = unit
 
     def to_dict(self):
         """

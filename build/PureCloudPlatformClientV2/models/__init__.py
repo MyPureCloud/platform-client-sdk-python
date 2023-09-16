@@ -118,6 +118,8 @@ from .alert_listing import AlertListing
 from .alert_notification import AlertNotification
 from .alert_request import AlertRequest
 from .alert_rule_properties import AlertRuleProperties
+from .alert_summary import AlertSummary
+from .alert_summary_entity import AlertSummaryEntity
 from .alerting_unread_status import AlertingUnreadStatus
 from .all_time_points import AllTimePoints
 from .amazon_lex_request import AmazonLexRequest
@@ -497,6 +499,7 @@ from .campaign_rule_parameters import CampaignRuleParameters
 from .campaign_schedule import CampaignSchedule
 from .campaign_sequence import CampaignSequence
 from .campaign_sequence_entity_listing import CampaignSequenceEntityListing
+from .campaign_skill_statistics import CampaignSkillStatistics
 from .campaign_stats import CampaignStats
 from .campaign_time_slot import CampaignTimeSlot
 from .card import Card
@@ -528,7 +531,10 @@ from .chat_media_participant import ChatMediaParticipant
 from .chat_media_policy import ChatMediaPolicy
 from .chat_media_policy_conditions import ChatMediaPolicyConditions
 from .chat_message import ChatMessage
+from .chat_message_entity_listing import ChatMessageEntityListing
+from .chat_message_response import ChatMessageResponse
 from .chat_message_user import ChatMessageUser
+from .chat_send_message_response import ChatSendMessageResponse
 from .chat_settings import ChatSettings
 from .check import Check
 from .client_app import ClientApp
@@ -961,6 +967,8 @@ from .create_predictor_request import CreatePredictorRequest
 from .create_queue_request import CreateQueueRequest
 from .create_response_asset_request import CreateResponseAssetRequest
 from .create_response_asset_response import CreateResponseAssetResponse
+from .create_room_request import CreateRoomRequest
+from .create_room_response import CreateRoomResponse
 from .create_secure_session import CreateSecureSession
 from .create_service_goal_template import CreateServiceGoalTemplate
 from .create_share_request import CreateShareRequest
@@ -2458,6 +2466,7 @@ from .phrase import Phrase
 from .phrase_associations import PhraseAssociations
 from .physical_interface_entity_listing import PhysicalInterfaceEntityListing
 from .ping_identity import PingIdentity
+from .pinned_message_request import PinnedMessageRequest
 from .planning_group import PlanningGroup
 from .planning_group_list import PlanningGroupList
 from .planning_group_reference import PlanningGroupReference
@@ -2910,6 +2919,8 @@ from .ring import Ring
 from .role_division import RoleDivision
 from .role_division_grants import RoleDivisionGrants
 from .role_division_pair import RoleDivisionPair
+from .room import Room
+from .room_update_request import RoomUpdateRequest
 from .route_path_request import RoutePathRequest
 from .route_path_response import RoutePathResponse
 from .routing_activity_data import RoutingActivityData
@@ -3043,6 +3054,7 @@ from .selected_columns import SelectedColumns
 from .selector_event_trigger import SelectorEventTrigger
 from .send_agentless_outbound_message_request import SendAgentlessOutboundMessageRequest
 from .send_agentless_outbound_message_response import SendAgentlessOutboundMessageResponse
+from .send_message_body import SendMessageBody
 from .sentiment_feedback import SentimentFeedback
 from .sentiment_feedback_entity_listing import SentimentFeedbackEntityListing
 from .sequence_schedule import SequenceSchedule
@@ -3662,6 +3674,7 @@ from .video import Video
 from .video_conference_details import VideoConferenceDetails
 from .video_conference_update_topic_participant_info import VideoConferenceUpdateTopicParticipantInfo
 from .video_conference_update_topic_video_conference import VideoConferenceUpdateTopicVideoConference
+from .video_metadata import VideoMetadata
 from .view_filter import ViewFilter
 from .visibility_condition import VisibilityCondition
 from .vm_pairing_info import VmPairingInfo

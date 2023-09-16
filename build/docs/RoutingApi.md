@@ -4050,7 +4050,7 @@ except ApiException as e:
 
 <a name="get_routing_wrapupcodes"></a>
 
-## [**WrapupCodeEntityListing**](WrapupCodeEntityListing.html) get_routing_wrapupcodes(page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order, id=id, name=name, division_id=division_id)
+## [**WrapupCodeEntityListing**](WrapupCodeEntityListing.html) get_routing_wrapupcodes(page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order, name=name, id=id, division_id=division_id)
 
 
 
@@ -4079,13 +4079,13 @@ page_size = 25 # int | Page size (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
 sort_by = ''name'' # str | Sort by (optional) (default to 'name')
 sort_order = ''ascending'' # str | Sort order (optional) (default to 'ascending')
-id = ['id_example'] # list[str] | Filter by wrapup code ID(s) (optional)
 name = 'name_example' # str | Wrapup code's name ('Sort by' param is ignored unless this field is provided) (optional)
+id = ['id_example'] # list[str] | Filter by wrapup code ID(s) (optional)
 division_id = ['division_id_example'] # list[str] | Filter by division ID(s) (optional)
 
 try:
     # Get list of wrapup codes.
-    api_response = api_instance.get_routing_wrapupcodes(page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order, id=id, name=name, division_id=division_id)
+    api_response = api_instance.get_routing_wrapupcodes(page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order, name=name, id=id, division_id=division_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling RoutingApi->get_routing_wrapupcodes: %s\n" % e)
@@ -4100,8 +4100,8 @@ except ApiException as e:
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **sort_by** | **str**| Sort by | [optional] [default to &#39;name&#39;]<br />**Values**: name, id |
 | **sort_order** | **str**| Sort order | [optional] [default to &#39;ascending&#39;]<br />**Values**: ascending, descending |
-| **id** | [**list[str]**](str.html)| Filter by wrapup code ID(s) | [optional]  |
 | **name** | **str**| Wrapup code&#39;s name (&#39;Sort by&#39; param is ignored unless this field is provided) | [optional]  |
+| **id** | [**list[str]**](str.html)| Filter by wrapup code ID(s) | [optional]  |
 | **division_id** | [**list[str]**](str.html)| Filter by division ID(s) | [optional]  |
 {: class="table table-striped"}
 
