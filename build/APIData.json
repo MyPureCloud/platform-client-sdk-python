@@ -4178,6 +4178,30 @@
     "return": "Grammar",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.ArchitectApi();\ngrammar_id = 'grammar_id_example' # str | grammar ID\nbody = PureCloudPlatformClientV2.Grammar() # Grammar |  (optional)\n\ntry:\n    # Updates a grammar\n    api_response = api_instance.patch_architect_grammar(grammar_id, body=body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling ArchitectApi->patch_architect_grammar: %s\\n\" % e)"
   },
+  "patch_architect_grammar_language": {
+    "operationId": "patch_architect_grammar_language",
+    "functionName": "patch_architect_grammar_language",
+    "signature": "patch_architect_grammar_language(grammar_id, language_code, body)",
+    "parameters": [
+      {
+        "name": "grammar_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "language_code",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "GrammarLanguageUpdate",
+        "required": "false"
+      }
+    ],
+    "return": "GrammarLanguage",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.ArchitectApi();\ngrammar_id = 'grammar_id_example' # str | Grammar ID\nlanguage_code = 'language_code_example' # str | Language\nbody = PureCloudPlatformClientV2.GrammarLanguageUpdate() # GrammarLanguageUpdate |  (optional)\n\ntry:\n    # Updates a grammar language\n    api_response = api_instance.patch_architect_grammar_language(grammar_id, language_code, body=body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling ArchitectApi->patch_architect_grammar_language: %s\\n\" % e)"
+  },
   "post_architect_dependencytracking_build": {
     "operationId": "post_architect_dependencytracking_build",
     "functionName": "post_architect_dependencytracking_build",

@@ -33,6 +33,7 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
+    from . import AddressableEntityRef
     from . import Entity
 
 class ChatMessageResponse(object):
@@ -60,7 +61,9 @@ class ChatMessageResponse(object):
             'edited': 'bool',
             'attachment_deleted': 'bool',
             'file_uri': 'str',
-            'thread': 'Entity'
+            'thread': 'Entity',
+            'user': 'AddressableEntityRef',
+            'to_user': 'AddressableEntityRef'
         }
 
         self.attribute_map = {
@@ -74,7 +77,9 @@ class ChatMessageResponse(object):
             'edited': 'edited',
             'attachment_deleted': 'attachmentDeleted',
             'file_uri': 'fileUri',
-            'thread': 'thread'
+            'thread': 'thread',
+            'user': 'user',
+            'to_user': 'toUser'
         }
 
         self._id = None
@@ -88,6 +93,8 @@ class ChatMessageResponse(object):
         self._attachment_deleted = None
         self._file_uri = None
         self._thread = None
+        self._user = None
+        self._to_user = None
 
     @property
     def id(self) -> str:
@@ -352,6 +359,54 @@ class ChatMessageResponse(object):
         
 
         self._thread = thread
+
+    @property
+    def user(self) -> 'AddressableEntityRef':
+        """
+        Gets the user of this ChatMessageResponse.
+        The user who sent the message
+
+        :return: The user of this ChatMessageResponse.
+        :rtype: AddressableEntityRef
+        """
+        return self._user
+
+    @user.setter
+    def user(self, user: 'AddressableEntityRef') -> None:
+        """
+        Sets the user of this ChatMessageResponse.
+        The user who sent the message
+
+        :param user: The user of this ChatMessageResponse.
+        :type: AddressableEntityRef
+        """
+        
+
+        self._user = user
+
+    @property
+    def to_user(self) -> 'AddressableEntityRef':
+        """
+        Gets the to_user of this ChatMessageResponse.
+        The receiving user of the message
+
+        :return: The to_user of this ChatMessageResponse.
+        :rtype: AddressableEntityRef
+        """
+        return self._to_user
+
+    @to_user.setter
+    def to_user(self, to_user: 'AddressableEntityRef') -> None:
+        """
+        Sets the to_user of this ChatMessageResponse.
+        The receiving user of the message
+
+        :param to_user: The to_user of this ChatMessageResponse.
+        :type: AddressableEntityRef
+        """
+        
+
+        self._to_user = to_user
 
     def to_dict(self):
         """

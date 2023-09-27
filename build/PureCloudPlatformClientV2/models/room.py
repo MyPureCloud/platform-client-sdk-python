@@ -56,6 +56,7 @@ class Room(object):
             'date_created': 'datetime',
             'room_type': 'str',
             'description': 'str',
+            'subject': 'str',
             'participant_limit': 'int',
             'owners': 'list[UserReference]',
             'pinned_messages': 'list[AddressableEntityRef]',
@@ -68,6 +69,7 @@ class Room(object):
             'date_created': 'dateCreated',
             'room_type': 'roomType',
             'description': 'description',
+            'subject': 'subject',
             'participant_limit': 'participantLimit',
             'owners': 'owners',
             'pinned_messages': 'pinnedMessages',
@@ -79,6 +81,7 @@ class Room(object):
         self._date_created = None
         self._room_type = None
         self._description = None
+        self._subject = None
         self._participant_limit = None
         self._owners = None
         self._pinned_messages = None
@@ -208,6 +211,30 @@ class Room(object):
         
 
         self._description = description
+
+    @property
+    def subject(self) -> str:
+        """
+        Gets the subject of this Room.
+        Room's subject
+
+        :return: The subject of this Room.
+        :rtype: str
+        """
+        return self._subject
+
+    @subject.setter
+    def subject(self, subject: str) -> None:
+        """
+        Sets the subject of this Room.
+        Room's subject
+
+        :param subject: The subject of this Room.
+        :type: str
+        """
+        
+
+        self._subject = subject
 
     @property
     def participant_limit(self) -> int:

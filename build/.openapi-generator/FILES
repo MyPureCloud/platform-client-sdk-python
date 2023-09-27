@@ -1707,6 +1707,7 @@ PureCloudPlatformClientV2/models/grammar.py
 PureCloudPlatformClientV2/models/grammar_file_upload_request.py
 PureCloudPlatformClientV2/models/grammar_language.py
 PureCloudPlatformClientV2/models/grammar_language_file_metadata.py
+PureCloudPlatformClientV2/models/grammar_language_update.py
 PureCloudPlatformClientV2/models/grammar_listing.py
 PureCloudPlatformClientV2/models/greeting.py
 PureCloudPlatformClientV2/models/greeting_audio_file.py
@@ -3668,6 +3669,7 @@ PureCloudPlatformClientV2/models/user_tokens_topic_uri_reference.py
 PureCloudPlatformClientV2/models/user_transfer_event.py
 PureCloudPlatformClientV2/models/users_search_response.py
 PureCloudPlatformClientV2/models/utilization.py
+PureCloudPlatformClientV2/models/utilization_label.py
 PureCloudPlatformClientV2/models/utilization_tag.py
 PureCloudPlatformClientV2/models/utilization_tag_entity_listing.py
 PureCloudPlatformClientV2/models/utterance.py
@@ -5780,6 +5782,7 @@ docs/Grammar.md
 docs/GrammarFileUploadRequest.md
 docs/GrammarLanguage.md
 docs/GrammarLanguageFileMetadata.md
+docs/GrammarLanguageUpdate.md
 docs/GrammarListing.md
 docs/Greeting.md
 docs/GreetingAudioFile.md
@@ -7829,6 +7832,7 @@ docs/UsersSearchResponse.md
 docs/UtilitiesApi.json
 docs/UtilitiesApi.md
 docs/Utilization.md
+docs/UtilizationLabel.md
 docs/UtilizationTag.md
 docs/UtilizationTagEntityListing.md
 docs/Utterance.md
@@ -9636,6 +9640,7 @@ docs/patch_alerting_alerts_bulk-example.txt
 docs/patch_alerting_rules_bulk-example.txt
 docs/patch_analytics_reporting_settings-example.txt
 docs/patch_architect_grammar-example.txt
+docs/patch_architect_grammar_language-example.txt
 docs/patch_authorization_role-example.txt
 docs/patch_authorization_settings-example.txt
 docs/patch_chat_settings-example.txt

@@ -32,6 +32,8 @@ from typing import TYPE_CHECKING
 from typing import List
 from typing import Dict
 
+if TYPE_CHECKING:
+    from . import DomainEntityRef
 
 class InsightsAgentItem(object):
     """
@@ -50,17 +52,20 @@ class InsightsAgentItem(object):
         self.swagger_types = {
             'id': 'str',
             'name': 'str',
+            'manager': 'DomainEntityRef',
             'self_uri': 'str'
         }
 
         self.attribute_map = {
             'id': 'id',
             'name': 'name',
+            'manager': 'manager',
             'self_uri': 'selfUri'
         }
 
         self._id = None
         self._name = None
+        self._manager = None
         self._self_uri = None
 
     @property
@@ -110,6 +115,30 @@ class InsightsAgentItem(object):
         
 
         self._name = name
+
+    @property
+    def manager(self) -> 'DomainEntityRef':
+        """
+        Gets the manager of this InsightsAgentItem.
+        This user's manager.
+
+        :return: The manager of this InsightsAgentItem.
+        :rtype: DomainEntityRef
+        """
+        return self._manager
+
+    @manager.setter
+    def manager(self, manager: 'DomainEntityRef') -> None:
+        """
+        Sets the manager of this InsightsAgentItem.
+        This user's manager.
+
+        :param manager: The manager of this InsightsAgentItem.
+        :type: DomainEntityRef
+        """
+        
+
+        self._manager = manager
 
     @property
     def self_uri(self) -> str:

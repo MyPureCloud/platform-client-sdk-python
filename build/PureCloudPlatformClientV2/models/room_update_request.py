@@ -48,14 +48,23 @@ class RoomUpdateRequest(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'description': 'str'
+            'description': 'str',
+            'subject': 'str',
+            'pinned_message_ids': 'list[str]',
+            'owner_ids': 'list[str]'
         }
 
         self.attribute_map = {
-            'description': 'description'
+            'description': 'description',
+            'subject': 'subject',
+            'pinned_message_ids': 'pinnedMessageIds',
+            'owner_ids': 'ownerIds'
         }
 
         self._description = None
+        self._subject = None
+        self._pinned_message_ids = None
+        self._owner_ids = None
 
     @property
     def description(self) -> str:
@@ -80,6 +89,78 @@ class RoomUpdateRequest(object):
         
 
         self._description = description
+
+    @property
+    def subject(self) -> str:
+        """
+        Gets the subject of this RoomUpdateRequest.
+        Room's subject
+
+        :return: The subject of this RoomUpdateRequest.
+        :rtype: str
+        """
+        return self._subject
+
+    @subject.setter
+    def subject(self, subject: str) -> None:
+        """
+        Sets the subject of this RoomUpdateRequest.
+        Room's subject
+
+        :param subject: The subject of this RoomUpdateRequest.
+        :type: str
+        """
+        
+
+        self._subject = subject
+
+    @property
+    def pinned_message_ids(self) -> List[str]:
+        """
+        Gets the pinned_message_ids of this RoomUpdateRequest.
+        Room's pinned messages
+
+        :return: The pinned_message_ids of this RoomUpdateRequest.
+        :rtype: list[str]
+        """
+        return self._pinned_message_ids
+
+    @pinned_message_ids.setter
+    def pinned_message_ids(self, pinned_message_ids: List[str]) -> None:
+        """
+        Sets the pinned_message_ids of this RoomUpdateRequest.
+        Room's pinned messages
+
+        :param pinned_message_ids: The pinned_message_ids of this RoomUpdateRequest.
+        :type: list[str]
+        """
+        
+
+        self._pinned_message_ids = pinned_message_ids
+
+    @property
+    def owner_ids(self) -> List[str]:
+        """
+        Gets the owner_ids of this RoomUpdateRequest.
+        Room's owners
+
+        :return: The owner_ids of this RoomUpdateRequest.
+        :rtype: list[str]
+        """
+        return self._owner_ids
+
+    @owner_ids.setter
+    def owner_ids(self, owner_ids: List[str]) -> None:
+        """
+        Sets the owner_ids of this RoomUpdateRequest.
+        Room's owners
+
+        :param owner_ids: The owner_ids of this RoomUpdateRequest.
+        :type: list[str]
+        """
+        
+
+        self._owner_ids = owner_ids
 
     def to_dict(self):
         """

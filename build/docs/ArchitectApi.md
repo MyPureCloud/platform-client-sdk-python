@@ -92,6 +92,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_flows_outcomes**](ArchitectApi.html#get_flows_outcomes) | Get a pageable list of flow outcomes, filtered by query parameters|
 |[**get_flows_outcomes_divisionviews**](ArchitectApi.html#get_flows_outcomes_divisionviews) | Get a pageable list of basic flow outcome information objects filterable by query parameters.|
 |[**patch_architect_grammar**](ArchitectApi.html#patch_architect_grammar) | Updates a grammar|
+|[**patch_architect_grammar_language**](ArchitectApi.html#patch_architect_grammar_language) | Updates a grammar language|
 |[**post_architect_dependencytracking_build**](ArchitectApi.html#post_architect_dependencytracking_build) | Rebuild Dependency Tracking data for an organization|
 |[**post_architect_emergencygroups**](ArchitectApi.html#post_architect_emergencygroups) | Creates a new emergency group|
 |[**post_architect_grammar_language_files_dtmf**](ArchitectApi.html#post_architect_grammar_language_files_dtmf) | Creates a presigned URL for uploading a grammar DTMF mode file|
@@ -4802,6 +4803,61 @@ except ApiException as e:
 ### Return type
 
 [**Grammar**](Grammar.html)
+
+<a name="patch_architect_grammar_language"></a>
+
+## [**GrammarLanguage**](GrammarLanguage.html) patch_architect_grammar_language(grammar_id, language_code, body=body)
+
+
+
+Updates a grammar language
+
+patch_architect_grammar_language is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps PATCH /api/v2/architect/grammars/{grammarId}/languages/{languageCode} 
+
+Requires ALL permissions: 
+
+* architect:grammar:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ArchitectApi()
+grammar_id = 'grammar_id_example' # str | Grammar ID
+language_code = 'language_code_example' # str | Language
+body = PureCloudPlatformClientV2.GrammarLanguageUpdate() # GrammarLanguageUpdate |  (optional)
+
+try:
+    # Updates a grammar language
+    api_response = api_instance.patch_architect_grammar_language(grammar_id, language_code, body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ArchitectApi->patch_architect_grammar_language: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **grammar_id** | **str**| Grammar ID |  |
+| **language_code** | **str**| Language |  |
+| **body** | [**GrammarLanguageUpdate**](GrammarLanguageUpdate.html)|  | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**GrammarLanguage**](GrammarLanguage.html)
 
 <a name="post_architect_dependencytracking_build"></a>
 

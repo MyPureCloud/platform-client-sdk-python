@@ -81,6 +81,7 @@ from ..models import GetFlowExecutionDataJobResult
 from ..models import Grammar
 from ..models import GrammarFileUploadRequest
 from ..models import GrammarLanguage
+from ..models import GrammarLanguageUpdate
 from ..models import GrammarListing
 from ..models import HistoryListing
 from ..models import IVR
@@ -7415,6 +7416,94 @@ class ArchitectApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='Grammar',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def patch_architect_grammar_language(self, grammar_id: str, language_code: str, **kwargs) -> 'GrammarLanguage':
+        """
+        Updates a grammar language
+        
+	    patch_architect_grammar_language is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.patch_architect_grammar_language(grammar_id, language_code, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str grammar_id: Grammar ID (required)
+        :param str language_code: Language (required)
+        :param GrammarLanguageUpdate body: 
+        :return: GrammarLanguage
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['grammar_id', 'language_code', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method patch_architect_grammar_language" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'grammar_id' is set
+        if ('grammar_id' not in params) or (params['grammar_id'] is None):
+            raise ValueError("Missing the required parameter `grammar_id` when calling `patch_architect_grammar_language`")
+        # verify the required parameter 'language_code' is set
+        if ('language_code' not in params) or (params['language_code'] is None):
+            raise ValueError("Missing the required parameter `language_code` when calling `patch_architect_grammar_language`")
+
+
+        resource_path = '/api/v2/architect/grammars/{grammarId}/languages/{languageCode}'.replace('{format}', 'json')
+        path_params = {}
+        if 'grammar_id' in params:
+            path_params['grammarId'] = params['grammar_id']
+        if 'language_code' in params:
+            path_params['languageCode'] = params['language_code']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PATCH',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='GrammarLanguage',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

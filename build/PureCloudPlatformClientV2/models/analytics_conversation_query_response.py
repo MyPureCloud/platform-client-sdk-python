@@ -51,44 +51,20 @@ class AnalyticsConversationQueryResponse(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'aggregations': 'list[AggregationResult]',
             'conversations': 'list[AnalyticsConversationWithoutAttributes]',
+            'aggregations': 'list[AggregationResult]',
             'total_hits': 'int'
         }
 
         self.attribute_map = {
-            'aggregations': 'aggregations',
             'conversations': 'conversations',
+            'aggregations': 'aggregations',
             'total_hits': 'totalHits'
         }
 
-        self._aggregations = None
         self._conversations = None
+        self._aggregations = None
         self._total_hits = None
-
-    @property
-    def aggregations(self) -> List['AggregationResult']:
-        """
-        Gets the aggregations of this AnalyticsConversationQueryResponse.
-
-
-        :return: The aggregations of this AnalyticsConversationQueryResponse.
-        :rtype: list[AggregationResult]
-        """
-        return self._aggregations
-
-    @aggregations.setter
-    def aggregations(self, aggregations: List['AggregationResult']) -> None:
-        """
-        Sets the aggregations of this AnalyticsConversationQueryResponse.
-
-
-        :param aggregations: The aggregations of this AnalyticsConversationQueryResponse.
-        :type: list[AggregationResult]
-        """
-        
-
-        self._aggregations = aggregations
 
     @property
     def conversations(self) -> List['AnalyticsConversationWithoutAttributes']:
@@ -113,6 +89,30 @@ class AnalyticsConversationQueryResponse(object):
         
 
         self._conversations = conversations
+
+    @property
+    def aggregations(self) -> List['AggregationResult']:
+        """
+        Gets the aggregations of this AnalyticsConversationQueryResponse.
+
+
+        :return: The aggregations of this AnalyticsConversationQueryResponse.
+        :rtype: list[AggregationResult]
+        """
+        return self._aggregations
+
+    @aggregations.setter
+    def aggregations(self, aggregations: List['AggregationResult']) -> None:
+        """
+        Sets the aggregations of this AnalyticsConversationQueryResponse.
+
+
+        :param aggregations: The aggregations of this AnalyticsConversationQueryResponse.
+        :type: list[AggregationResult]
+        """
+        
+
+        self._aggregations = aggregations
 
     @property
     def total_hits(self) -> int:

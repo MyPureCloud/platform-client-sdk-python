@@ -1631,6 +1631,7 @@ from .grammar import Grammar
 from .grammar_file_upload_request import GrammarFileUploadRequest
 from .grammar_language import GrammarLanguage
 from .grammar_language_file_metadata import GrammarLanguageFileMetadata
+from .grammar_language_update import GrammarLanguageUpdate
 from .grammar_listing import GrammarListing
 from .greeting import Greeting
 from .greeting_audio_file import GreetingAudioFile
@@ -3592,6 +3593,7 @@ from .user_tokens_topic_uri_reference import UserTokensTopicUriReference
 from .user_transfer_event import UserTransferEvent
 from .users_search_response import UsersSearchResponse
 from .utilization import Utilization
+from .utilization_label import UtilizationLabel
 from .utilization_tag import UtilizationTag
 from .utilization_tag_entity_listing import UtilizationTagEntityListing
 from .utterance import Utterance

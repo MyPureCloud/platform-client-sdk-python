@@ -9,7 +9,7 @@ title: KnowledgeBaseCreateRequest
 |------------ | ------------- | ------------- | -------------|
 | **name** | **str** | Knowledge base name | |
 | **description** | **str** | Knowledge base description | [optional] |
-| **core_language** | **str** | Core language for knowledge base in which initial content must be created, language codes [en-US, en-UK, en-AU, de-DE] are supported currently, however the new DX knowledge will support all these language codes | |
+| **core_language** | **str** | Core language for knowledge base in which initial content must be created, language codes [en-US, en-UK, en-AU, de-DE] are supported currently. However, the new DX knowledge will support all these language codes, along with &#39;early preview&#39; language codes [ca-ES, tr-TR, sv-SE, fi-FI, nb-NO, da-DK] which might have a lower accuracy. | |
 {: class="table table-striped"}
 
 

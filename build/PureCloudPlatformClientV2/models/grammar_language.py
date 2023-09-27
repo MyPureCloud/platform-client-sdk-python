@@ -108,7 +108,7 @@ class GrammarLanguage(object):
     def grammar_id(self) -> str:
         """
         Gets the grammar_id of this GrammarLanguage.
-
+        The ID of the grammar associated with this grammar language
 
         :return: The grammar_id of this GrammarLanguage.
         :rtype: str
@@ -119,7 +119,7 @@ class GrammarLanguage(object):
     def grammar_id(self, grammar_id: str) -> None:
         """
         Sets the grammar_id of this GrammarLanguage.
-
+        The ID of the grammar associated with this grammar language
 
         :param grammar_id: The grammar_id of this GrammarLanguage.
         :type: str

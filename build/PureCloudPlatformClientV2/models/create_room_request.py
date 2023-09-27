@@ -48,14 +48,17 @@ class CreateRoomRequest(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'description': 'str'
+            'description': 'str',
+            'subject': 'str'
         }
 
         self.attribute_map = {
-            'description': 'description'
+            'description': 'description',
+            'subject': 'subject'
         }
 
         self._description = None
+        self._subject = None
 
     @property
     def description(self) -> str:
@@ -80,6 +83,30 @@ class CreateRoomRequest(object):
         
 
         self._description = description
+
+    @property
+    def subject(self) -> str:
+        """
+        Gets the subject of this CreateRoomRequest.
+        Room's subject
+
+        :return: The subject of this CreateRoomRequest.
+        :rtype: str
+        """
+        return self._subject
+
+    @subject.setter
+    def subject(self, subject: str) -> None:
+        """
+        Sets the subject of this CreateRoomRequest.
+        Room's subject
+
+        :param subject: The subject of this CreateRoomRequest.
+        :type: str
+        """
+        
+
+        self._subject = subject
 
     def to_dict(self):
         """

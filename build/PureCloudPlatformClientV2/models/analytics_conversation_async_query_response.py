@@ -50,20 +50,44 @@ class AnalyticsConversationAsyncQueryResponse(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
+            'conversations': 'list[AnalyticsConversation]',
             'cursor': 'str',
-            'data_availability_date': 'datetime',
-            'conversations': 'list[AnalyticsConversation]'
+            'data_availability_date': 'datetime'
         }
 
         self.attribute_map = {
+            'conversations': 'conversations',
             'cursor': 'cursor',
-            'data_availability_date': 'dataAvailabilityDate',
-            'conversations': 'conversations'
+            'data_availability_date': 'dataAvailabilityDate'
         }
 
+        self._conversations = None
         self._cursor = None
         self._data_availability_date = None
-        self._conversations = None
+
+    @property
+    def conversations(self) -> List['AnalyticsConversation']:
+        """
+        Gets the conversations of this AnalyticsConversationAsyncQueryResponse.
+
+
+        :return: The conversations of this AnalyticsConversationAsyncQueryResponse.
+        :rtype: list[AnalyticsConversation]
+        """
+        return self._conversations
+
+    @conversations.setter
+    def conversations(self, conversations: List['AnalyticsConversation']) -> None:
+        """
+        Sets the conversations of this AnalyticsConversationAsyncQueryResponse.
+
+
+        :param conversations: The conversations of this AnalyticsConversationAsyncQueryResponse.
+        :type: list[AnalyticsConversation]
+        """
+        
+
+        self._conversations = conversations
 
     @property
     def cursor(self) -> str:
@@ -112,30 +136,6 @@ class AnalyticsConversationAsyncQueryResponse(object):
         
 
         self._data_availability_date = data_availability_date
-
-    @property
-    def conversations(self) -> List['AnalyticsConversation']:
-        """
-        Gets the conversations of this AnalyticsConversationAsyncQueryResponse.
-
-
-        :return: The conversations of this AnalyticsConversationAsyncQueryResponse.
-        :rtype: list[AnalyticsConversation]
-        """
-        return self._conversations
-
-    @conversations.setter
-    def conversations(self, conversations: List['AnalyticsConversation']) -> None:
-        """
-        Sets the conversations of this AnalyticsConversationAsyncQueryResponse.
-
-
-        :param conversations: The conversations of this AnalyticsConversationAsyncQueryResponse.
-        :type: list[AnalyticsConversation]
-        """
-        
-
-        self._conversations = conversations
 
     def to_dict(self):
         """

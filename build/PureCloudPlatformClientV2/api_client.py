@@ -37,7 +37,7 @@ import json
 import time
 
 
-from datetime import datetime
+from datetime import datetime, timezone
 from datetime import date
 
 # python 2 and python 3 compatibility library
@@ -295,7 +295,7 @@ class ApiClient(object):
             header_params['Cookie'] = self.cookie
         if header_params:
             header_params = self.sanitize_for_serialization(header_params)
-        header_params['purecloud-sdk'] = '185.0.0'
+        header_params['purecloud-sdk'] = '186.0.0'
 
         # path parameters
         if path_params:
@@ -776,13 +776,19 @@ class ApiClient(object):
                 return parse(string)
             except ImportError:
                 return string
-            # Not much we can do if `parse` returns a ValueError
-            except ValueError:
-                raise ApiException(
-                    status=0,
-                    reason="Failed to parse `{0}` into a datetime object".
-                    format(string)
-                )
+            except ValueError as e:
+                if "out of range" in str(e):
+                    try:
+                        from datetime import datetime, timezone
+                        return datetime(1, 1, 1, tzinfo = timezone.utc)
+                    except (ValueError, ImportError) as e:
+                        return string
+                else:
+                    raise ApiException(
+                            status=0,
+                            reason="Failed to parse `{0}` into a datetime object".
+                            format(string)
+                        )
         except ImportError:
             return string
 
