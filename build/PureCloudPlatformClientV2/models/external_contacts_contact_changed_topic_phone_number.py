@@ -53,7 +53,8 @@ class ExternalContactsContactChangedTopicPhoneNumber(object):
             'accepts_sms': 'bool',
             'user_input': 'str',
             'e164': 'str',
-            'country_code': 'str'
+            'country_code': 'str',
+            'normalization_country_code': 'str'
         }
 
         self.attribute_map = {
@@ -62,7 +63,8 @@ class ExternalContactsContactChangedTopicPhoneNumber(object):
             'accepts_sms': 'acceptsSMS',
             'user_input': 'userInput',
             'e164': 'e164',
-            'country_code': 'countryCode'
+            'country_code': 'countryCode',
+            'normalization_country_code': 'normalizationCountryCode'
         }
 
         self._display = None
@@ -71,6 +73,7 @@ class ExternalContactsContactChangedTopicPhoneNumber(object):
         self._user_input = None
         self._e164 = None
         self._country_code = None
+        self._normalization_country_code = None
 
     @property
     def display(self) -> str:
@@ -215,6 +218,30 @@ class ExternalContactsContactChangedTopicPhoneNumber(object):
         
 
         self._country_code = country_code
+
+    @property
+    def normalization_country_code(self) -> str:
+        """
+        Gets the normalization_country_code of this ExternalContactsContactChangedTopicPhoneNumber.
+
+
+        :return: The normalization_country_code of this ExternalContactsContactChangedTopicPhoneNumber.
+        :rtype: str
+        """
+        return self._normalization_country_code
+
+    @normalization_country_code.setter
+    def normalization_country_code(self, normalization_country_code: str) -> None:
+        """
+        Sets the normalization_country_code of this ExternalContactsContactChangedTopicPhoneNumber.
+
+
+        :param normalization_country_code: The normalization_country_code of this ExternalContactsContactChangedTopicPhoneNumber.
+        :type: str
+        """
+        
+
+        self._normalization_country_code = normalization_country_code
 
     def to_dict(self):
         """

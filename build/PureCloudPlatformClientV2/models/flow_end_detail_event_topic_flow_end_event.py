@@ -68,7 +68,9 @@ class FlowEndDetailEventTopicFlowEndEvent(object):
             'flow_version': 'str',
             'connected_duration_ms': 'int',
             'conversation_external_contact_ids': 'list[str]',
-            'conversation_external_organization_ids': 'list[str]'
+            'conversation_external_organization_ids': 'list[str]',
+            'exit_reason': 'str',
+            'transfer_type': 'str'
         }
 
         self.attribute_map = {
@@ -92,7 +94,9 @@ class FlowEndDetailEventTopicFlowEndEvent(object):
             'flow_version': 'flowVersion',
             'connected_duration_ms': 'connectedDurationMs',
             'conversation_external_contact_ids': 'conversationExternalContactIds',
-            'conversation_external_organization_ids': 'conversationExternalOrganizationIds'
+            'conversation_external_organization_ids': 'conversationExternalOrganizationIds',
+            'exit_reason': 'exitReason',
+            'transfer_type': 'transferType'
         }
 
         self._event_time = None
@@ -116,6 +120,8 @@ class FlowEndDetailEventTopicFlowEndEvent(object):
         self._connected_duration_ms = None
         self._conversation_external_contact_ids = None
         self._conversation_external_organization_ids = None
+        self._exit_reason = None
+        self._transfer_type = None
 
     @property
     def event_time(self) -> int:
@@ -645,6 +651,64 @@ class FlowEndDetailEventTopicFlowEndEvent(object):
         
 
         self._conversation_external_organization_ids = conversation_external_organization_ids
+
+    @property
+    def exit_reason(self) -> str:
+        """
+        Gets the exit_reason of this FlowEndDetailEventTopicFlowEndEvent.
+
+
+        :return: The exit_reason of this FlowEndDetailEventTopicFlowEndEvent.
+        :rtype: str
+        """
+        return self._exit_reason
+
+    @exit_reason.setter
+    def exit_reason(self, exit_reason: str) -> None:
+        """
+        Sets the exit_reason of this FlowEndDetailEventTopicFlowEndEvent.
+
+
+        :param exit_reason: The exit_reason of this FlowEndDetailEventTopicFlowEndEvent.
+        :type: str
+        """
+        if isinstance(exit_reason, int):
+            exit_reason = str(exit_reason)
+        allowed_values = ["UNKNOWN", "DISCONNECT", "FLOW_DISCONNECT", "FLOW_ERROR_DISCONNECT", "TRANSFER", "SESSION_EXPIRE_DISCONNECT", "RECOGNITION_FAILURE_DISCONNECT", "RECOGNITION_FAILURE_EXIT", "USER_EXIT", "FLOW_EXIT", "FLOW_ERROR_EXIT"]
+        if exit_reason.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for exit_reason -> " + exit_reason)
+            self._exit_reason = "outdated_sdk_version"
+        else:
+            self._exit_reason = exit_reason
+
+    @property
+    def transfer_type(self) -> str:
+        """
+        Gets the transfer_type of this FlowEndDetailEventTopicFlowEndEvent.
+
+
+        :return: The transfer_type of this FlowEndDetailEventTopicFlowEndEvent.
+        :rtype: str
+        """
+        return self._transfer_type
+
+    @transfer_type.setter
+    def transfer_type(self, transfer_type: str) -> None:
+        """
+        Sets the transfer_type of this FlowEndDetailEventTopicFlowEndEvent.
+
+
+        :param transfer_type: The transfer_type of this FlowEndDetailEventTopicFlowEndEvent.
+        :type: str
+        """
+        if isinstance(transfer_type, int):
+            transfer_type = str(transfer_type)
+        allowed_values = ["UNKNOWN", "ACD", "USER", "NUMBER", "ACD_VOICEMAIL", "USER_VOICEMAIL", "GROUP_VOICEMAIL", "GROUP", "FLOW", "SECURE_FLOW", "RETURN_TO_AGENT"]
+        if transfer_type.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for transfer_type -> " + transfer_type)
+            self._transfer_type = "outdated_sdk_version"
+        else:
+            self._transfer_type = transfer_type
 
     def to_dict(self):
         """

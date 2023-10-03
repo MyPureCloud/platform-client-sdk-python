@@ -50,6 +50,7 @@ class MetadataProperty(object):
         self.swagger_types = {
             'type': 'str',
             'description': 'str',
+            'sensitive': 'str',
             'help': 'str',
             'default': 'str',
             'enum': 'list[str]'
@@ -58,6 +59,7 @@ class MetadataProperty(object):
         self.attribute_map = {
             'type': 'type',
             'description': 'description',
+            'sensitive': 'sensitive',
             'help': 'help',
             'default': 'default',
             'enum': 'enum'
@@ -65,6 +67,7 @@ class MetadataProperty(object):
 
         self._type = None
         self._description = None
+        self._sensitive = None
         self._help = None
         self._default = None
         self._enum = None
@@ -116,6 +119,30 @@ class MetadataProperty(object):
         
 
         self._description = description
+
+    @property
+    def sensitive(self) -> str:
+        """
+        Gets the sensitive of this MetadataProperty.
+        whether the property's value should be hidden from display
+
+        :return: The sensitive of this MetadataProperty.
+        :rtype: str
+        """
+        return self._sensitive
+
+    @sensitive.setter
+    def sensitive(self, sensitive: str) -> None:
+        """
+        Sets the sensitive of this MetadataProperty.
+        whether the property's value should be hidden from display
+
+        :param sensitive: The sensitive of this MetadataProperty.
+        :type: str
+        """
+        
+
+        self._sensitive = sensitive
 
     @property
     def help(self) -> str:

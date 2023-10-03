@@ -1220,6 +1220,9 @@ PureCloudPlatformClientV2/models/dialogflow_agent_summary_entity_listing.py
 PureCloudPlatformClientV2/models/dialogflow_intent.py
 PureCloudPlatformClientV2/models/dialogflow_parameter.py
 PureCloudPlatformClientV2/models/dialogflow_project.py
+PureCloudPlatformClientV2/models/dictionary_feedback.py
+PureCloudPlatformClientV2/models/dictionary_feedback_entity_listing.py
+PureCloudPlatformClientV2/models/dictionary_feedback_example_phrase.py
 PureCloudPlatformClientV2/models/did.py
 PureCloudPlatformClientV2/models/did_entity_listing.py
 PureCloudPlatformClientV2/models/did_number.py
@@ -2162,6 +2165,7 @@ PureCloudPlatformClientV2/models/list_wrapper_interval.py
 PureCloudPlatformClientV2/models/list_wrapper_secondary_presence.py
 PureCloudPlatformClientV2/models/list_wrapper_shift_start_variance.py
 PureCloudPlatformClientV2/models/list_wrapper_string.py
+PureCloudPlatformClientV2/models/listed_dictionary_feedback.py
 PureCloudPlatformClientV2/models/listed_program.py
 PureCloudPlatformClientV2/models/listed_topic.py
 PureCloudPlatformClientV2/models/local_date_range.py
@@ -2457,7 +2461,6 @@ PureCloudPlatformClientV2/models/outcome_attribution_request.py
 PureCloudPlatformClientV2/models/outcome_attribution_response_listing.py
 PureCloudPlatformClientV2/models/outcome_attribution_results_response.py
 PureCloudPlatformClientV2/models/outcome_config.py
-PureCloudPlatformClientV2/models/outcome_event_score.py
 PureCloudPlatformClientV2/models/outcome_listing.py
 PureCloudPlatformClientV2/models/outcome_percentile_condition.py
 PureCloudPlatformClientV2/models/outcome_predictor.py
@@ -2467,6 +2470,7 @@ PureCloudPlatformClientV2/models/outcome_probability_condition.py
 PureCloudPlatformClientV2/models/outcome_quantile_condition.py
 PureCloudPlatformClientV2/models/outcome_ref.py
 PureCloudPlatformClientV2/models/outcome_ref_request.py
+PureCloudPlatformClientV2/models/outcome_score.py
 PureCloudPlatformClientV2/models/outcome_scores_result.py
 PureCloudPlatformClientV2/models/outlier_info.py
 PureCloudPlatformClientV2/models/overall_best_points.py
@@ -3752,7 +3756,6 @@ PureCloudPlatformClientV2/models/video.py
 PureCloudPlatformClientV2/models/video_conference_details.py
 PureCloudPlatformClientV2/models/video_conference_update_topic_participant_info.py
 PureCloudPlatformClientV2/models/video_conference_update_topic_video_conference.py
-PureCloudPlatformClientV2/models/video_metadata.py
 PureCloudPlatformClientV2/models/view_filter.py
 PureCloudPlatformClientV2/models/visibility_condition.py
 PureCloudPlatformClientV2/models/vm_pairing_info.py
@@ -5283,6 +5286,9 @@ docs/DialogflowAgentSummaryEntityListing.md
 docs/DialogflowIntent.md
 docs/DialogflowParameter.md
 docs/DialogflowProject.md
+docs/DictionaryFeedback.md
+docs/DictionaryFeedbackEntityListing.md
+docs/DictionaryFeedbackExamplePhrase.md
 docs/DigitLength.md
 docs/DigitalAction.md
 docs/DigitalCondition.md
@@ -6259,6 +6265,7 @@ docs/ListWrapperInterval.md
 docs/ListWrapperSecondaryPresence.md
 docs/ListWrapperShiftStartVariance.md
 docs/ListWrapperString.md
+docs/ListedDictionaryFeedback.md
 docs/ListedProgram.md
 docs/ListedTopic.md
 docs/LocalDateRange.md
@@ -6572,7 +6579,6 @@ docs/OutcomeAttributionRequest.md
 docs/OutcomeAttributionResponseListing.md
 docs/OutcomeAttributionResultsResponse.md
 docs/OutcomeConfig.md
-docs/OutcomeEventScore.md
 docs/OutcomeListing.md
 docs/OutcomePercentileCondition.md
 docs/OutcomePredictor.md
@@ -6582,6 +6588,7 @@ docs/OutcomeProbabilityCondition.md
 docs/OutcomeQuantileCondition.md
 docs/OutcomeRef.md
 docs/OutcomeRefRequest.md
+docs/OutcomeScore.md
 docs/OutcomeScoresResult.md
 docs/OutlierInfo.md
 docs/OverallBestPoints.md
@@ -7915,7 +7922,6 @@ docs/Video.md
 docs/VideoConferenceDetails.md
 docs/VideoConferenceUpdateTopicParticipantInfo.md
 docs/VideoConferenceUpdateTopicVideoConference.md
-docs/VideoMetadata.md
 docs/ViewFilter.md
 docs/VisibilityCondition.md
 docs/VmPairingInfo.md
@@ -8476,6 +8482,7 @@ docs/delete_routing_utilization_tag-example.txt
 docs/delete_routing_wrapupcode-example.txt
 docs/delete_scim_user-example.txt
 docs/delete_scim_v2_user-example.txt
+docs/delete_speechandtextanalytics_dictionaryfeedback_dictionary_feedback_id-example.txt
 docs/delete_speechandtextanalytics_program-example.txt
 docs/delete_speechandtextanalytics_sentimentfeedback-example.txt
 docs/delete_speechandtextanalytics_sentimentfeedback_sentiment_feedback_id-example.txt
@@ -9362,6 +9369,8 @@ docs/get_search_suggest-example.txt
 docs/get_speechandtextanalytics_conversation-example.txt
 docs/get_speechandtextanalytics_conversation_communication_transcripturl-example.txt
 docs/get_speechandtextanalytics_conversation_communication_transcripturls-example.txt
+docs/get_speechandtextanalytics_dictionaryfeedback-example.txt
+docs/get_speechandtextanalytics_dictionaryfeedback_dictionary_feedback_id-example.txt
 docs/get_speechandtextanalytics_program-example.txt
 docs/get_speechandtextanalytics_program_mappings-example.txt
 docs/get_speechandtextanalytics_program_transcriptionengines-example.txt
@@ -10250,6 +10259,7 @@ docs/post_search-example.txt
 docs/post_search-example.txt
 docs/post_search_suggest-example.txt
 docs/post_search_suggest-example.txt
+docs/post_speechandtextanalytics_dictionaryfeedback-example.txt
 docs/post_speechandtextanalytics_programs-example.txt
 docs/post_speechandtextanalytics_programs_general_jobs-example.txt
 docs/post_speechandtextanalytics_programs_publishjobs-example.txt
@@ -10568,6 +10578,7 @@ docs/put_scim_group-example.txt
 docs/put_scim_user-example.txt
 docs/put_scim_v2_group-example.txt
 docs/put_scim_v2_user-example.txt
+docs/put_speechandtextanalytics_dictionaryfeedback_dictionary_feedback_id-example.txt
 docs/put_speechandtextanalytics_program-example.txt
 docs/put_speechandtextanalytics_program_mappings-example.txt
 docs/put_speechandtextanalytics_program_transcriptionengines-example.txt

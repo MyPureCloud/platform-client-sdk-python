@@ -117,7 +117,7 @@ class FlowActivityQueryPredicate(object):
         """
         if isinstance(dimension, int):
             dimension = str(dimension)
-        allowed_values = ["addressFrom", "addressTo", "agentScore", "ani", "conversationId", "convertedFrom", "convertedTo", "direction", "dnis", "flowId", "flowType", "mediaType", "participantName", "queueId", "requestedLanguageId", "requestedRouting", "requestedRoutingSkillId", "routingPriority", "scoredAgentId", "sessionId", "teamId", "usedRouting", "userId"]
+        allowed_values = ["activeRouting", "addressFrom", "addressTo", "agentScore", "ani", "conversationId", "convertedFrom", "convertedTo", "direction", "dnis", "flowId", "flowType", "mediaType", "participantName", "queueId", "requestedLanguageId", "requestedRouting", "requestedRoutingSkillId", "routingPriority", "scoredAgentId", "sessionId", "teamId", "usedRouting", "userId"]
         if dimension.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for dimension -> " + dimension)
             self._dimension = "outdated_sdk_version"

@@ -11,6 +11,7 @@ title: ConversationMetricsTopicConversationMetricRecord
 | **metric_date** | **datetime** | The date and time of metric creation | [optional] |
 | **value** | **int** | Metric value | [optional] |
 | **record_id** | **str** | Record identifier | [optional] |
+| **active_routing** | **str** | Active routing method | [optional] |
 | **active_skill_ids** | **list[str]** | ID(s) of Skill(s) that are active on the conversation | [optional] |
 | **address_from** | **str** | The address that initiated an action | [optional] |
 | **address_to** | **str** | The address receiving an action | [optional] |

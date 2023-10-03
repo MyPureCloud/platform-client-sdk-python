@@ -1150,6 +1150,9 @@ from .models.dialogflow_agent_summary_entity_listing import DialogflowAgentSumma
 from .models.dialogflow_intent import DialogflowIntent
 from .models.dialogflow_parameter import DialogflowParameter
 from .models.dialogflow_project import DialogflowProject
+from .models.dictionary_feedback import DictionaryFeedback
+from .models.dictionary_feedback_entity_listing import DictionaryFeedbackEntityListing
+from .models.dictionary_feedback_example_phrase import DictionaryFeedbackExamplePhrase
 from .models.digit_length import DigitLength
 from .models.digital_action import DigitalAction
 from .models.digital_condition import DigitalCondition
@@ -2086,6 +2089,7 @@ from .models.list_wrapper_interval import ListWrapperInterval
 from .models.list_wrapper_secondary_presence import ListWrapperSecondaryPresence
 from .models.list_wrapper_shift_start_variance import ListWrapperShiftStartVariance
 from .models.list_wrapper_string import ListWrapperString
+from .models.listed_dictionary_feedback import ListedDictionaryFeedback
 from .models.listed_program import ListedProgram
 from .models.listed_topic import ListedTopic
 from .models.local_date_range import LocalDateRange
@@ -2381,7 +2385,6 @@ from .models.outcome_attribution_request import OutcomeAttributionRequest
 from .models.outcome_attribution_response_listing import OutcomeAttributionResponseListing
 from .models.outcome_attribution_results_response import OutcomeAttributionResultsResponse
 from .models.outcome_config import OutcomeConfig
-from .models.outcome_event_score import OutcomeEventScore
 from .models.outcome_listing import OutcomeListing
 from .models.outcome_percentile_condition import OutcomePercentileCondition
 from .models.outcome_predictor import OutcomePredictor
@@ -2391,6 +2394,7 @@ from .models.outcome_probability_condition import OutcomeProbabilityCondition
 from .models.outcome_quantile_condition import OutcomeQuantileCondition
 from .models.outcome_ref import OutcomeRef
 from .models.outcome_ref_request import OutcomeRefRequest
+from .models.outcome_score import OutcomeScore
 from .models.outcome_scores_result import OutcomeScoresResult
 from .models.outlier_info import OutlierInfo
 from .models.overall_best_points import OverallBestPoints
@@ -3676,7 +3680,6 @@ from .models.video import Video
 from .models.video_conference_details import VideoConferenceDetails
 from .models.video_conference_update_topic_participant_info import VideoConferenceUpdateTopicParticipantInfo
 from .models.video_conference_update_topic_video_conference import VideoConferenceUpdateTopicVideoConference
-from .models.video_metadata import VideoMetadata
 from .models.view_filter import ViewFilter
 from .models.visibility_condition import VisibilityCondition
 from .models.vm_pairing_info import VmPairingInfo

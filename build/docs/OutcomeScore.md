@@ -1,7 +1,7 @@
 ---
-title: OutcomeEventScore
+title: OutcomeScore
 ---
-## OutcomeEventScore
+## OutcomeScore
 
 ## Properties
 

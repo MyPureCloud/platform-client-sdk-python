@@ -7,7 +7,7 @@ title: OutcomeScoresResult
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **outcome_scores** | [**list[OutcomeEventScore]**](OutcomeEventScore.html) | List of scored outcomes in the session. | [optional] |
+| **outcome_scores** | [**list[OutcomeScore]**](OutcomeScore.html) | List of scored outcomes in the session. | [optional] |
 | **modified_date** | **datetime** | Timestamp indicating the last time that the event was scored. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
 {: class="table table-striped"}
 

@@ -53,6 +53,8 @@ class ContactlistImportStatusImportStatus(object):
             'completed_records': 'int',
             'percentage_complete': 'int',
             'failure_reason': 'str',
+            'target_contact_list_ids': 'list[str]',
+            'list_name_prefix': 'str',
             'additional_properties': 'dict(str, object)'
         }
 
@@ -62,6 +64,8 @@ class ContactlistImportStatusImportStatus(object):
             'completed_records': 'completedRecords',
             'percentage_complete': 'percentageComplete',
             'failure_reason': 'failureReason',
+            'target_contact_list_ids': 'targetContactListIds',
+            'list_name_prefix': 'listNamePrefix',
             'additional_properties': 'additionalProperties'
         }
 
@@ -70,6 +74,8 @@ class ContactlistImportStatusImportStatus(object):
         self._completed_records = None
         self._percentage_complete = None
         self._failure_reason = None
+        self._target_contact_list_ids = None
+        self._list_name_prefix = None
         self._additional_properties = None
 
     @property
@@ -196,6 +202,54 @@ class ContactlistImportStatusImportStatus(object):
         
 
         self._failure_reason = failure_reason
+
+    @property
+    def target_contact_list_ids(self) -> List[str]:
+        """
+        Gets the target_contact_list_ids of this ContactlistImportStatusImportStatus.
+        The ids for target contact lists
+
+        :return: The target_contact_list_ids of this ContactlistImportStatusImportStatus.
+        :rtype: list[str]
+        """
+        return self._target_contact_list_ids
+
+    @target_contact_list_ids.setter
+    def target_contact_list_ids(self, target_contact_list_ids: List[str]) -> None:
+        """
+        Sets the target_contact_list_ids of this ContactlistImportStatusImportStatus.
+        The ids for target contact lists
+
+        :param target_contact_list_ids: The target_contact_list_ids of this ContactlistImportStatusImportStatus.
+        :type: list[str]
+        """
+        
+
+        self._target_contact_list_ids = target_contact_list_ids
+
+    @property
+    def list_name_prefix(self) -> str:
+        """
+        Gets the list_name_prefix of this ContactlistImportStatusImportStatus.
+        The prefix used for target contact list names
+
+        :return: The list_name_prefix of this ContactlistImportStatusImportStatus.
+        :rtype: str
+        """
+        return self._list_name_prefix
+
+    @list_name_prefix.setter
+    def list_name_prefix(self, list_name_prefix: str) -> None:
+        """
+        Sets the list_name_prefix of this ContactlistImportStatusImportStatus.
+        The prefix used for target contact list names
+
+        :param list_name_prefix: The list_name_prefix of this ContactlistImportStatusImportStatus.
+        :type: str
+        """
+        
+
+        self._list_name_prefix = list_name_prefix
 
     @property
     def additional_properties(self) -> Dict[str, object]:

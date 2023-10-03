@@ -56,6 +56,7 @@ class FlowMetricsTopicFlowMetricRecord(object):
             'metric_date': 'datetime',
             'value': 'int',
             'record_id': 'str',
+            'active_routing': 'str',
             'active_skill_ids': 'list[str]',
             'address_from': 'str',
             'address_to': 'str',
@@ -156,6 +157,7 @@ class FlowMetricsTopicFlowMetricRecord(object):
             'metric_date': 'metricDate',
             'value': 'value',
             'record_id': 'recordId',
+            'active_routing': 'activeRouting',
             'active_skill_ids': 'activeSkillIds',
             'address_from': 'addressFrom',
             'address_to': 'addressTo',
@@ -255,6 +257,7 @@ class FlowMetricsTopicFlowMetricRecord(object):
         self._metric_date = None
         self._value = None
         self._record_id = None
+        self._active_routing = None
         self._active_skill_ids = None
         self._address_from = None
         self._address_to = None
@@ -449,6 +452,35 @@ class FlowMetricsTopicFlowMetricRecord(object):
         
 
         self._record_id = record_id
+
+    @property
+    def active_routing(self) -> str:
+        """
+        Gets the active_routing of this FlowMetricsTopicFlowMetricRecord.
+        Active routing method
+
+        :return: The active_routing of this FlowMetricsTopicFlowMetricRecord.
+        :rtype: str
+        """
+        return self._active_routing
+
+    @active_routing.setter
+    def active_routing(self, active_routing: str) -> None:
+        """
+        Sets the active_routing of this FlowMetricsTopicFlowMetricRecord.
+        Active routing method
+
+        :param active_routing: The active_routing of this FlowMetricsTopicFlowMetricRecord.
+        :type: str
+        """
+        if isinstance(active_routing, int):
+            active_routing = str(active_routing)
+        allowed_values = ["Bullseye", "Conditional", "Direct", "Last", "Manual", "Predictive", "Preferred", "Standard", "Vip"]
+        if active_routing.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for active_routing -> " + active_routing)
+            self._active_routing = "outdated_sdk_version"
+        else:
+            self._active_routing = active_routing
 
     @property
     def active_skill_ids(self) -> List[str]:

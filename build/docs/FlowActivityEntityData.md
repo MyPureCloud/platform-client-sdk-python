@@ -9,6 +9,7 @@ title: FlowActivityEntityData
 |------------ | ------------- | ------------- | -------------|
 | **activity_date** | **datetime** | The time at which the activity was observed. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | |
 | **metric** | **str** | Activity metric | [optional] |
+| **active_routing** | **str** | Active routing method | [optional] |
 | **address_from** | **str** | The address that initiated an action | [optional] |
 | **address_to** | **str** | The address receiving an action | [optional] |
 | **ani** | **str** | Automatic Number Identification (caller&#39;s number) | [optional] |

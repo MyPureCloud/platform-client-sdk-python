@@ -1150,6 +1150,9 @@ from .dialogflow_agent_summary_entity_listing import DialogflowAgentSummaryEntit
 from .dialogflow_intent import DialogflowIntent
 from .dialogflow_parameter import DialogflowParameter
 from .dialogflow_project import DialogflowProject
+from .dictionary_feedback import DictionaryFeedback
+from .dictionary_feedback_entity_listing import DictionaryFeedbackEntityListing
+from .dictionary_feedback_example_phrase import DictionaryFeedbackExamplePhrase
 from .digit_length import DigitLength
 from .digital_action import DigitalAction
 from .digital_condition import DigitalCondition
@@ -2086,6 +2089,7 @@ from .list_wrapper_interval import ListWrapperInterval
 from .list_wrapper_secondary_presence import ListWrapperSecondaryPresence
 from .list_wrapper_shift_start_variance import ListWrapperShiftStartVariance
 from .list_wrapper_string import ListWrapperString
+from .listed_dictionary_feedback import ListedDictionaryFeedback
 from .listed_program import ListedProgram
 from .listed_topic import ListedTopic
 from .local_date_range import LocalDateRange
@@ -2381,7 +2385,6 @@ from .outcome_attribution_request import OutcomeAttributionRequest
 from .outcome_attribution_response_listing import OutcomeAttributionResponseListing
 from .outcome_attribution_results_response import OutcomeAttributionResultsResponse
 from .outcome_config import OutcomeConfig
-from .outcome_event_score import OutcomeEventScore
 from .outcome_listing import OutcomeListing
 from .outcome_percentile_condition import OutcomePercentileCondition
 from .outcome_predictor import OutcomePredictor
@@ -2391,6 +2394,7 @@ from .outcome_probability_condition import OutcomeProbabilityCondition
 from .outcome_quantile_condition import OutcomeQuantileCondition
 from .outcome_ref import OutcomeRef
 from .outcome_ref_request import OutcomeRefRequest
+from .outcome_score import OutcomeScore
 from .outcome_scores_result import OutcomeScoresResult
 from .outlier_info import OutlierInfo
 from .overall_best_points import OverallBestPoints
@@ -3676,7 +3680,6 @@ from .video import Video
 from .video_conference_details import VideoConferenceDetails
 from .video_conference_update_topic_participant_info import VideoConferenceUpdateTopicParticipantInfo
 from .video_conference_update_topic_video_conference import VideoConferenceUpdateTopicVideoConference
-from .video_metadata import VideoMetadata
 from .view_filter import ViewFilter
 from .visibility_condition import VisibilityCondition
 from .vm_pairing_info import VmPairingInfo

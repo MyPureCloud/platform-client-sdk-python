@@ -3550,7 +3550,8 @@ Wraps POST /api/v2/users/{userId}/invite
 
 Requires ANY permissions: 
 
-* directory:user:add
+* directory:organization:admin
+* directory:userPassword:edit
 
 ### Example
 

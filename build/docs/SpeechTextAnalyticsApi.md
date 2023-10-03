@@ -8,6 +8,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 |Method | Description|
 |------------- | -------------|
+|[**delete_speechandtextanalytics_dictionaryfeedback_dictionary_feedback_id**](SpeechTextAnalyticsApi.html#delete_speechandtextanalytics_dictionaryfeedback_dictionary_feedback_id) | Delete a Speech &amp; Text Analytics DictionaryFeedback by Id|
 |[**delete_speechandtextanalytics_program**](SpeechTextAnalyticsApi.html#delete_speechandtextanalytics_program) | Delete a Speech &amp; Text Analytics program by id|
 |[**delete_speechandtextanalytics_sentimentfeedback**](SpeechTextAnalyticsApi.html#delete_speechandtextanalytics_sentimentfeedback) | Delete All Speech &amp; Text Analytics SentimentFeedback|
 |[**delete_speechandtextanalytics_sentimentfeedback_sentiment_feedback_id**](SpeechTextAnalyticsApi.html#delete_speechandtextanalytics_sentimentfeedback_sentiment_feedback_id) | Delete a Speech &amp; Text Analytics SentimentFeedback by Id|
@@ -15,6 +16,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_speechandtextanalytics_conversation**](SpeechTextAnalyticsApi.html#get_speechandtextanalytics_conversation) | Get Speech and Text Analytics for a specific conversation|
 |[**get_speechandtextanalytics_conversation_communication_transcripturl**](SpeechTextAnalyticsApi.html#get_speechandtextanalytics_conversation_communication_transcripturl) | Get the pre-signed S3 URL for the transcript of a specific communication of a conversation|
 |[**get_speechandtextanalytics_conversation_communication_transcripturls**](SpeechTextAnalyticsApi.html#get_speechandtextanalytics_conversation_communication_transcripturls) | Get the list of pre-signed S3 URL for the transcripts of a specific communication of a conversation|
+|[**get_speechandtextanalytics_dictionaryfeedback**](SpeechTextAnalyticsApi.html#get_speechandtextanalytics_dictionaryfeedback) | Get the list of Speech &amp; Text Analytics dictionary feedbacks|
+|[**get_speechandtextanalytics_dictionaryfeedback_dictionary_feedback_id**](SpeechTextAnalyticsApi.html#get_speechandtextanalytics_dictionaryfeedback_dictionary_feedback_id) | Get a Speech &amp; Text Analytics dictionary feedback by id|
 |[**get_speechandtextanalytics_program**](SpeechTextAnalyticsApi.html#get_speechandtextanalytics_program) | Get a Speech &amp; Text Analytics program by id|
 |[**get_speechandtextanalytics_program_mappings**](SpeechTextAnalyticsApi.html#get_speechandtextanalytics_program_mappings) | Get Speech &amp; Text Analytics program mappings to queues and flows by id|
 |[**get_speechandtextanalytics_program_transcriptionengines**](SpeechTextAnalyticsApi.html#get_speechandtextanalytics_program_transcriptionengines) | Get transcription engine settings of a program|
@@ -34,6 +37,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_speechandtextanalytics_topics_general_status**](SpeechTextAnalyticsApi.html#get_speechandtextanalytics_topics_general_status) | Get the list of general topics from the org and the system with their current status|
 |[**get_speechandtextanalytics_topics_publishjob**](SpeechTextAnalyticsApi.html#get_speechandtextanalytics_topics_publishjob) | Get a Speech &amp; Text Analytics publish topics job by id|
 |[**patch_speechandtextanalytics_settings**](SpeechTextAnalyticsApi.html#patch_speechandtextanalytics_settings) | Patch Speech And Text Analytics Settings|
+|[**post_speechandtextanalytics_dictionaryfeedback**](SpeechTextAnalyticsApi.html#post_speechandtextanalytics_dictionaryfeedback) | Create a Speech &amp; Text Analytics DictionaryFeedback|
 |[**post_speechandtextanalytics_programs**](SpeechTextAnalyticsApi.html#post_speechandtextanalytics_programs) | Create new Speech &amp; Text Analytics program|
 |[**post_speechandtextanalytics_programs_general_jobs**](SpeechTextAnalyticsApi.html#post_speechandtextanalytics_programs_general_jobs) | Create new Speech &amp; Text Analytics general program job|
 |[**post_speechandtextanalytics_programs_publishjobs**](SpeechTextAnalyticsApi.html#post_speechandtextanalytics_programs_publishjobs) | Create new Speech &amp; Text Analytics publish programs job|
@@ -41,12 +45,61 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_speechandtextanalytics_topics**](SpeechTextAnalyticsApi.html#post_speechandtextanalytics_topics) | Create new Speech &amp; Text Analytics topic|
 |[**post_speechandtextanalytics_topics_publishjobs**](SpeechTextAnalyticsApi.html#post_speechandtextanalytics_topics_publishjobs) | Create new Speech &amp; Text Analytics publish topics job|
 |[**post_speechandtextanalytics_transcripts_search**](SpeechTextAnalyticsApi.html#post_speechandtextanalytics_transcripts_search) | Search resources.|
+|[**put_speechandtextanalytics_dictionaryfeedback_dictionary_feedback_id**](SpeechTextAnalyticsApi.html#put_speechandtextanalytics_dictionaryfeedback_dictionary_feedback_id) | Update existing Speech &amp; Text Analytics dictionary feedback by id|
 |[**put_speechandtextanalytics_program**](SpeechTextAnalyticsApi.html#put_speechandtextanalytics_program) | Update existing Speech &amp; Text Analytics program|
 |[**put_speechandtextanalytics_program_mappings**](SpeechTextAnalyticsApi.html#put_speechandtextanalytics_program_mappings) | Set Speech &amp; Text Analytics program mappings to queues and flows|
 |[**put_speechandtextanalytics_program_transcriptionengines**](SpeechTextAnalyticsApi.html#put_speechandtextanalytics_program_transcriptionengines) | Update transcription engine settings of a program|
 |[**put_speechandtextanalytics_settings**](SpeechTextAnalyticsApi.html#put_speechandtextanalytics_settings) | Update Speech And Text Analytics Settings|
 |[**put_speechandtextanalytics_topic**](SpeechTextAnalyticsApi.html#put_speechandtextanalytics_topic) | Update existing Speech &amp; Text Analytics topic|
 {: class="table table-striped"}
+
+<a name="delete_speechandtextanalytics_dictionaryfeedback_dictionary_feedback_id"></a>
+
+##  delete_speechandtextanalytics_dictionaryfeedback_dictionary_feedback_id(dictionary_feedback_id)
+
+
+
+Delete a Speech & Text Analytics DictionaryFeedback by Id
+
+Wraps DELETE /api/v2/speechandtextanalytics/dictionaryfeedback/{dictionaryFeedbackId} 
+
+Requires ALL permissions: 
+
+* speechAndTextAnalytics:dictionaryterm:delete
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.SpeechTextAnalyticsApi()
+dictionary_feedback_id = 'dictionary_feedback_id_example' # str | The Id of the Dictionary Feedback
+
+try:
+    # Delete a Speech & Text Analytics DictionaryFeedback by Id
+    api_instance.delete_speechandtextanalytics_dictionaryfeedback_dictionary_feedback_id(dictionary_feedback_id)
+except ApiException as e:
+    print("Exception when calling SpeechTextAnalyticsApi->delete_speechandtextanalytics_dictionaryfeedback_dictionary_feedback_id: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **dictionary_feedback_id** | **str**| The Id of the Dictionary Feedback |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
 
 <a name="delete_speechandtextanalytics_program"></a>
 
@@ -389,6 +442,108 @@ except ApiException as e:
 ### Return type
 
 [**TranscriptUrls**](TranscriptUrls.html)
+
+<a name="get_speechandtextanalytics_dictionaryfeedback"></a>
+
+## [**DictionaryFeedbackEntityListing**](DictionaryFeedbackEntityListing.html) get_speechandtextanalytics_dictionaryfeedback(dialect=dialect, next_page=next_page, page_size=page_size)
+
+
+
+Get the list of Speech & Text Analytics dictionary feedbacks
+
+Wraps GET /api/v2/speechandtextanalytics/dictionaryfeedback 
+
+Requires ALL permissions: 
+
+* speechAndTextAnalytics:dictionaryterm:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.SpeechTextAnalyticsApi()
+dialect = 'en-US' # str | The key for filter the listing by dialect, dialect format is {language}-{country} where language follows ISO 639-1 standard and country follows ISO 3166-1 alpha 2 standard (optional)
+next_page = 'next_page_example' # str | The key for listing the next page (optional)
+page_size = 500 # int | The page size for the listing (optional) (default to 500)
+
+try:
+    # Get the list of Speech & Text Analytics dictionary feedbacks
+    api_response = api_instance.get_speechandtextanalytics_dictionaryfeedback(dialect=dialect, next_page=next_page, page_size=page_size)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling SpeechTextAnalyticsApi->get_speechandtextanalytics_dictionaryfeedback: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **dialect** | **str**| The key for filter the listing by dialect, dialect format is {language}-{country} where language follows ISO 639-1 standard and country follows ISO 3166-1 alpha 2 standard | [optional]  |
+| **next_page** | **str**| The key for listing the next page | [optional]  |
+| **page_size** | **int**| The page size for the listing | [optional] [default to 500] |
+{: class="table table-striped"}
+
+### Return type
+
+[**DictionaryFeedbackEntityListing**](DictionaryFeedbackEntityListing.html)
+
+<a name="get_speechandtextanalytics_dictionaryfeedback_dictionary_feedback_id"></a>
+
+## [**DictionaryFeedback**](DictionaryFeedback.html) get_speechandtextanalytics_dictionaryfeedback_dictionary_feedback_id(dictionary_feedback_id)
+
+
+
+Get a Speech & Text Analytics dictionary feedback by id
+
+Wraps GET /api/v2/speechandtextanalytics/dictionaryfeedback/{dictionaryFeedbackId} 
+
+Requires ALL permissions: 
+
+* speechAndTextAnalytics:dictionaryterm:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.SpeechTextAnalyticsApi()
+dictionary_feedback_id = 'dictionary_feedback_id_example' # str | The Id of the Dictionary Feedback
+
+try:
+    # Get a Speech & Text Analytics dictionary feedback by id
+    api_response = api_instance.get_speechandtextanalytics_dictionaryfeedback_dictionary_feedback_id(dictionary_feedback_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling SpeechTextAnalyticsApi->get_speechandtextanalytics_dictionaryfeedback_dictionary_feedback_id: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **dictionary_feedback_id** | **str**| The Id of the Dictionary Feedback |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**DictionaryFeedback**](DictionaryFeedback.html)
 
 <a name="get_speechandtextanalytics_program"></a>
 
@@ -1325,6 +1480,55 @@ except ApiException as e:
 
 [**SpeechTextAnalyticsSettingsResponse**](SpeechTextAnalyticsSettingsResponse.html)
 
+<a name="post_speechandtextanalytics_dictionaryfeedback"></a>
+
+## [**DictionaryFeedback**](DictionaryFeedback.html) post_speechandtextanalytics_dictionaryfeedback(body)
+
+
+
+Create a Speech & Text Analytics DictionaryFeedback
+
+Wraps POST /api/v2/speechandtextanalytics/dictionaryfeedback 
+
+Requires ALL permissions: 
+
+* speechAndTextAnalytics:dictionaryterm:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.SpeechTextAnalyticsApi()
+body = PureCloudPlatformClientV2.DictionaryFeedback() # DictionaryFeedback | The DictionaryFeedback to create
+
+try:
+    # Create a Speech & Text Analytics DictionaryFeedback
+    api_response = api_instance.post_speechandtextanalytics_dictionaryfeedback(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling SpeechTextAnalyticsApi->post_speechandtextanalytics_dictionaryfeedback: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**DictionaryFeedback**](DictionaryFeedback.html)| The DictionaryFeedback to create |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**DictionaryFeedback**](DictionaryFeedback.html)
+
 <a name="post_speechandtextanalytics_programs"></a>
 
 ## [**Program**](Program.html) post_speechandtextanalytics_programs(body)
@@ -1671,6 +1875,57 @@ except ApiException as e:
 ### Return type
 
 [**JsonSearchResponse**](JsonSearchResponse.html)
+
+<a name="put_speechandtextanalytics_dictionaryfeedback_dictionary_feedback_id"></a>
+
+## [**DictionaryFeedback**](DictionaryFeedback.html) put_speechandtextanalytics_dictionaryfeedback_dictionary_feedback_id(dictionary_feedback_id, body=body)
+
+
+
+Update existing Speech & Text Analytics dictionary feedback by id
+
+Wraps PUT /api/v2/speechandtextanalytics/dictionaryfeedback/{dictionaryFeedbackId} 
+
+Requires ALL permissions: 
+
+* speechAndTextAnalytics:dictionaryterm:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.SpeechTextAnalyticsApi()
+dictionary_feedback_id = 'dictionary_feedback_id_example' # str | The Id of the Dictionary Feedback
+body = PureCloudPlatformClientV2.DictionaryFeedback() # DictionaryFeedback |  (optional)
+
+try:
+    # Update existing Speech & Text Analytics dictionary feedback by id
+    api_response = api_instance.put_speechandtextanalytics_dictionaryfeedback_dictionary_feedback_id(dictionary_feedback_id, body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling SpeechTextAnalyticsApi->put_speechandtextanalytics_dictionaryfeedback_dictionary_feedback_id: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **dictionary_feedback_id** | **str**| The Id of the Dictionary Feedback |  |
+| **body** | [**DictionaryFeedback**](DictionaryFeedback.html)|  | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**DictionaryFeedback**](DictionaryFeedback.html)
 
 <a name="put_speechandtextanalytics_program"></a>
 

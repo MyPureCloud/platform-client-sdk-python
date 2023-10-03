@@ -33,7 +33,7 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
-    from . import OutcomeEventScore
+    from . import OutcomeScore
 
 class OutcomeScoresResult(object):
     """
@@ -50,7 +50,7 @@ class OutcomeScoresResult(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'outcome_scores': 'list[OutcomeEventScore]',
+            'outcome_scores': 'list[OutcomeScore]',
             'modified_date': 'datetime'
         }
 
@@ -63,24 +63,24 @@ class OutcomeScoresResult(object):
         self._modified_date = None
 
     @property
-    def outcome_scores(self) -> List['OutcomeEventScore']:
+    def outcome_scores(self) -> List['OutcomeScore']:
         """
         Gets the outcome_scores of this OutcomeScoresResult.
         List of scored outcomes in the session.
 
         :return: The outcome_scores of this OutcomeScoresResult.
-        :rtype: list[OutcomeEventScore]
+        :rtype: list[OutcomeScore]
         """
         return self._outcome_scores
 
     @outcome_scores.setter
-    def outcome_scores(self, outcome_scores: List['OutcomeEventScore']) -> None:
+    def outcome_scores(self, outcome_scores: List['OutcomeScore']) -> None:
         """
         Sets the outcome_scores of this OutcomeScoresResult.
         List of scored outcomes in the session.
 
         :param outcome_scores: The outcome_scores of this OutcomeScoresResult.
-        :type: list[OutcomeEventScore]
+        :type: list[OutcomeScore]
         """
         
 

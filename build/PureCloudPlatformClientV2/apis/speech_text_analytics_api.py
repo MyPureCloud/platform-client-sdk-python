@@ -39,6 +39,8 @@ from typing import Any
 
 from ..models import Empty
 from ..models import ConversationMetrics
+from ..models import DictionaryFeedback
+from ..models import DictionaryFeedbackEntityListing
 from ..models import EntityListing
 from ..models import ErrorBody
 from ..models import GeneralProgramJob
@@ -86,6 +88,84 @@ class SpeechTextAnalyticsApi(object):
             if not config.api_client:
                 config.api_client = ApiClient()
             self.api_client = config.api_client
+
+    def delete_speechandtextanalytics_dictionaryfeedback_dictionary_feedback_id(self, dictionary_feedback_id: str, **kwargs) -> None:
+        """
+        Delete a Speech & Text Analytics DictionaryFeedback by Id
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_speechandtextanalytics_dictionaryfeedback_dictionary_feedback_id(dictionary_feedback_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str dictionary_feedback_id: The Id of the Dictionary Feedback (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['dictionary_feedback_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_speechandtextanalytics_dictionaryfeedback_dictionary_feedback_id" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'dictionary_feedback_id' is set
+        if ('dictionary_feedback_id' not in params) or (params['dictionary_feedback_id'] is None):
+            raise ValueError("Missing the required parameter `dictionary_feedback_id` when calling `delete_speechandtextanalytics_dictionaryfeedback_dictionary_feedback_id`")
+
+
+        resource_path = '/api/v2/speechandtextanalytics/dictionaryfeedback/{dictionaryFeedbackId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'dictionary_feedback_id' in params:
+            path_params['dictionaryFeedbackId'] = params['dictionary_feedback_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
 
     def delete_speechandtextanalytics_program(self, program_id: str, **kwargs) -> None:
         """
@@ -638,6 +718,165 @@ class SpeechTextAnalyticsApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='TranscriptUrls',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_speechandtextanalytics_dictionaryfeedback(self, **kwargs) -> 'DictionaryFeedbackEntityListing':
+        """
+        Get the list of Speech & Text Analytics dictionary feedbacks
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_speechandtextanalytics_dictionaryfeedback(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str dialect: The key for filter the listing by dialect, dialect format is {language}-{country} where language follows ISO 639-1 standard and country follows ISO 3166-1 alpha 2 standard
+        :param str next_page: The key for listing the next page
+        :param int page_size: The page size for the listing
+        :return: DictionaryFeedbackEntityListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['dialect', 'next_page', 'page_size']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_speechandtextanalytics_dictionaryfeedback" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/speechandtextanalytics/dictionaryfeedback'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'dialect' in params:
+            query_params['dialect'] = params['dialect']
+        if 'next_page' in params:
+            query_params['nextPage'] = params['next_page']
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='DictionaryFeedbackEntityListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_speechandtextanalytics_dictionaryfeedback_dictionary_feedback_id(self, dictionary_feedback_id: str, **kwargs) -> 'DictionaryFeedback':
+        """
+        Get a Speech & Text Analytics dictionary feedback by id
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_speechandtextanalytics_dictionaryfeedback_dictionary_feedback_id(dictionary_feedback_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str dictionary_feedback_id: The Id of the Dictionary Feedback (required)
+        :return: DictionaryFeedback
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['dictionary_feedback_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_speechandtextanalytics_dictionaryfeedback_dictionary_feedback_id" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'dictionary_feedback_id' is set
+        if ('dictionary_feedback_id' not in params) or (params['dictionary_feedback_id'] is None):
+            raise ValueError("Missing the required parameter `dictionary_feedback_id` when calling `get_speechandtextanalytics_dictionaryfeedback_dictionary_feedback_id`")
+
+
+        resource_path = '/api/v2/speechandtextanalytics/dictionaryfeedback/{dictionaryFeedbackId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'dictionary_feedback_id' in params:
+            path_params['dictionaryFeedbackId'] = params['dictionary_feedback_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='DictionaryFeedback',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -2109,6 +2348,84 @@ class SpeechTextAnalyticsApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def post_speechandtextanalytics_dictionaryfeedback(self, body: 'DictionaryFeedback', **kwargs) -> 'DictionaryFeedback':
+        """
+        Create a Speech & Text Analytics DictionaryFeedback
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_speechandtextanalytics_dictionaryfeedback(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param DictionaryFeedback body: The DictionaryFeedback to create (required)
+        :return: DictionaryFeedback
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_speechandtextanalytics_dictionaryfeedback" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_speechandtextanalytics_dictionaryfeedback`")
+
+
+        resource_path = '/api/v2/speechandtextanalytics/dictionaryfeedback'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='DictionaryFeedback',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def post_speechandtextanalytics_programs(self, body: 'ProgramRequest', **kwargs) -> 'Program':
         """
         Create new Speech & Text Analytics program
@@ -2651,6 +2968,87 @@ class SpeechTextAnalyticsApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='JsonSearchResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def put_speechandtextanalytics_dictionaryfeedback_dictionary_feedback_id(self, dictionary_feedback_id: str, **kwargs) -> 'DictionaryFeedback':
+        """
+        Update existing Speech & Text Analytics dictionary feedback by id
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.put_speechandtextanalytics_dictionaryfeedback_dictionary_feedback_id(dictionary_feedback_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str dictionary_feedback_id: The Id of the Dictionary Feedback (required)
+        :param DictionaryFeedback body: 
+        :return: DictionaryFeedback
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['dictionary_feedback_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method put_speechandtextanalytics_dictionaryfeedback_dictionary_feedback_id" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'dictionary_feedback_id' is set
+        if ('dictionary_feedback_id' not in params) or (params['dictionary_feedback_id'] is None):
+            raise ValueError("Missing the required parameter `dictionary_feedback_id` when calling `put_speechandtextanalytics_dictionaryfeedback_dictionary_feedback_id`")
+
+
+        resource_path = '/api/v2/speechandtextanalytics/dictionaryfeedback/{dictionaryFeedbackId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'dictionary_feedback_id' in params:
+            path_params['dictionaryFeedbackId'] = params['dictionary_feedback_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='DictionaryFeedback',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

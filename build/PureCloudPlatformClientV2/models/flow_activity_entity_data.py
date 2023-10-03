@@ -52,6 +52,7 @@ class FlowActivityEntityData(object):
         self.swagger_types = {
             'activity_date': 'datetime',
             'metric': 'str',
+            'active_routing': 'str',
             'address_from': 'str',
             'address_to': 'str',
             'ani': 'str',
@@ -79,6 +80,7 @@ class FlowActivityEntityData(object):
         self.attribute_map = {
             'activity_date': 'activityDate',
             'metric': 'metric',
+            'active_routing': 'activeRouting',
             'address_from': 'addressFrom',
             'address_to': 'addressTo',
             'ani': 'ani',
@@ -105,6 +107,7 @@ class FlowActivityEntityData(object):
 
         self._activity_date = None
         self._metric = None
+        self._active_routing = None
         self._address_from = None
         self._address_to = None
         self._ani = None
@@ -180,6 +183,35 @@ class FlowActivityEntityData(object):
             self._metric = "outdated_sdk_version"
         else:
             self._metric = metric
+
+    @property
+    def active_routing(self) -> str:
+        """
+        Gets the active_routing of this FlowActivityEntityData.
+        Active routing method
+
+        :return: The active_routing of this FlowActivityEntityData.
+        :rtype: str
+        """
+        return self._active_routing
+
+    @active_routing.setter
+    def active_routing(self, active_routing: str) -> None:
+        """
+        Sets the active_routing of this FlowActivityEntityData.
+        Active routing method
+
+        :param active_routing: The active_routing of this FlowActivityEntityData.
+        :type: str
+        """
+        if isinstance(active_routing, int):
+            active_routing = str(active_routing)
+        allowed_values = ["Bullseye", "Conditional", "Direct", "Last", "Manual", "Predictive", "Preferred", "Standard", "Vip"]
+        if active_routing.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for active_routing -> " + active_routing)
+            self._active_routing = "outdated_sdk_version"
+        else:
+            self._active_routing = active_routing
 
     @property
     def address_from(self) -> str:

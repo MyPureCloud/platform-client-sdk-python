@@ -34342,6 +34342,19 @@
     "return": "VoicemailsSearchResponse",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.VoicemailApi();\nbody = PureCloudPlatformClientV2.VoicemailSearchRequest() # VoicemailSearchRequest | Search request options\n\ntry:\n    # Search voicemails\n    api_response = api_instance.post_voicemail_search(body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling VoicemailApi->post_voicemail_search: %s\\n\" % e)"
   },
+  "delete_speechandtextanalytics_dictionaryfeedback_dictionary_feedback_id": {
+    "operationId": "delete_speechandtextanalytics_dictionaryfeedback_dictionary_feedback_id",
+    "functionName": "delete_speechandtextanalytics_dictionaryfeedback_dictionary_feedback_id",
+    "signature": "delete_speechandtextanalytics_dictionaryfeedback_dictionary_feedback_id(dictionary_feedback_id)",
+    "parameters": [
+      {
+        "name": "dictionary_feedback_id",
+        "type": "str",
+        "required": "true"
+      }
+    ],
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.SpeechTextAnalyticsApi();\ndictionary_feedback_id = 'dictionary_feedback_id_example' # str | The Id of the Dictionary Feedback\n\ntry:\n    # Delete a Speech & Text Analytics DictionaryFeedback by Id\n    api_instance.delete_speechandtextanalytics_dictionaryfeedback_dictionary_feedback_id(dictionary_feedback_id)\nexcept ApiException as e:\n    print(\"Exception when calling SpeechTextAnalyticsApi->delete_speechandtextanalytics_dictionaryfeedback_dictionary_feedback_id: %s\\n\" % e)"
+  },
   "delete_speechandtextanalytics_program": {
     "operationId": "delete_speechandtextanalytics_program",
     "functionName": "delete_speechandtextanalytics_program",
@@ -34443,6 +34456,44 @@
     ],
     "return": "TranscriptUrls",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.SpeechTextAnalyticsApi();\nconversation_id = 'conversation_id_example' # str | Conversation ID\ncommunication_id = 'communication_id_example' # str | Communication ID\n\ntry:\n    # Get the list of pre-signed S3 URL for the transcripts of a specific communication of a conversation\n    api_response = api_instance.get_speechandtextanalytics_conversation_communication_transcripturls(conversation_id, communication_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling SpeechTextAnalyticsApi->get_speechandtextanalytics_conversation_communication_transcripturls: %s\\n\" % e)"
+  },
+  "get_speechandtextanalytics_dictionaryfeedback": {
+    "operationId": "get_speechandtextanalytics_dictionaryfeedback",
+    "functionName": "get_speechandtextanalytics_dictionaryfeedback",
+    "signature": "get_speechandtextanalytics_dictionaryfeedback(dialect, next_page, page_size)",
+    "parameters": [
+      {
+        "name": "dialect",
+        "type": "str",
+        "required": "false"
+      },
+      {
+        "name": "next_page",
+        "type": "str",
+        "required": "false"
+      },
+      {
+        "name": "page_size",
+        "type": "int",
+        "required": "false"
+      }
+    ],
+    "return": "DictionaryFeedbackEntityListing",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.SpeechTextAnalyticsApi();\ndialect = 'en-US' # str | The key for filter the listing by dialect, dialect format is {language}-{country} where language follows ISO 639-1 standard and country follows ISO 3166-1 alpha 2 standard (optional)\nnext_page = 'next_page_example' # str | The key for listing the next page (optional)\npage_size = 500 # int | The page size for the listing (optional) (default to 500)\n\ntry:\n    # Get the list of Speech & Text Analytics dictionary feedbacks\n    api_response = api_instance.get_speechandtextanalytics_dictionaryfeedback(dialect=dialect, next_page=next_page, page_size=page_size)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling SpeechTextAnalyticsApi->get_speechandtextanalytics_dictionaryfeedback: %s\\n\" % e)"
+  },
+  "get_speechandtextanalytics_dictionaryfeedback_dictionary_feedback_id": {
+    "operationId": "get_speechandtextanalytics_dictionaryfeedback_dictionary_feedback_id",
+    "functionName": "get_speechandtextanalytics_dictionaryfeedback_dictionary_feedback_id",
+    "signature": "get_speechandtextanalytics_dictionaryfeedback_dictionary_feedback_id(dictionary_feedback_id)",
+    "parameters": [
+      {
+        "name": "dictionary_feedback_id",
+        "type": "str",
+        "required": "true"
+      }
+    ],
+    "return": "DictionaryFeedback",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.SpeechTextAnalyticsApi();\ndictionary_feedback_id = 'dictionary_feedback_id_example' # str | The Id of the Dictionary Feedback\n\ntry:\n    # Get a Speech & Text Analytics dictionary feedback by id\n    api_response = api_instance.get_speechandtextanalytics_dictionaryfeedback_dictionary_feedback_id(dictionary_feedback_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling SpeechTextAnalyticsApi->get_speechandtextanalytics_dictionaryfeedback_dictionary_feedback_id: %s\\n\" % e)"
   },
   "get_speechandtextanalytics_program": {
     "operationId": "get_speechandtextanalytics_program",
@@ -34732,6 +34783,20 @@
     "return": "SpeechTextAnalyticsSettingsResponse",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.SpeechTextAnalyticsApi();\nbody = PureCloudPlatformClientV2.SpeechTextAnalyticsSettingsRequest() # SpeechTextAnalyticsSettingsRequest | Speech And Text Analytics Settings\n\ntry:\n    # Patch Speech And Text Analytics Settings\n    api_response = api_instance.patch_speechandtextanalytics_settings(body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling SpeechTextAnalyticsApi->patch_speechandtextanalytics_settings: %s\\n\" % e)"
   },
+  "post_speechandtextanalytics_dictionaryfeedback": {
+    "operationId": "post_speechandtextanalytics_dictionaryfeedback",
+    "functionName": "post_speechandtextanalytics_dictionaryfeedback",
+    "signature": "post_speechandtextanalytics_dictionaryfeedback(body)",
+    "parameters": [
+      {
+        "name": "body",
+        "type": "DictionaryFeedback",
+        "required": "true"
+      }
+    ],
+    "return": "DictionaryFeedback",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.SpeechTextAnalyticsApi();\nbody = PureCloudPlatformClientV2.DictionaryFeedback() # DictionaryFeedback | The DictionaryFeedback to create\n\ntry:\n    # Create a Speech & Text Analytics DictionaryFeedback\n    api_response = api_instance.post_speechandtextanalytics_dictionaryfeedback(body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling SpeechTextAnalyticsApi->post_speechandtextanalytics_dictionaryfeedback: %s\\n\" % e)"
+  },
   "post_speechandtextanalytics_programs": {
     "operationId": "post_speechandtextanalytics_programs",
     "functionName": "post_speechandtextanalytics_programs",
@@ -34815,6 +34880,25 @@
     ],
     "return": "TopicJob",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.SpeechTextAnalyticsApi();\nbody = PureCloudPlatformClientV2.TopicJobRequest() # TopicJobRequest | The publish topics job to create\n\ntry:\n    # Create new Speech & Text Analytics publish topics job\n    api_response = api_instance.post_speechandtextanalytics_topics_publishjobs(body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling SpeechTextAnalyticsApi->post_speechandtextanalytics_topics_publishjobs: %s\\n\" % e)"
+  },
+  "put_speechandtextanalytics_dictionaryfeedback_dictionary_feedback_id": {
+    "operationId": "put_speechandtextanalytics_dictionaryfeedback_dictionary_feedback_id",
+    "functionName": "put_speechandtextanalytics_dictionaryfeedback_dictionary_feedback_id",
+    "signature": "put_speechandtextanalytics_dictionaryfeedback_dictionary_feedback_id(dictionary_feedback_id, body)",
+    "parameters": [
+      {
+        "name": "dictionary_feedback_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "DictionaryFeedback",
+        "required": "false"
+      }
+    ],
+    "return": "DictionaryFeedback",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.SpeechTextAnalyticsApi();\ndictionary_feedback_id = 'dictionary_feedback_id_example' # str | The Id of the Dictionary Feedback\nbody = PureCloudPlatformClientV2.DictionaryFeedback() # DictionaryFeedback |  (optional)\n\ntry:\n    # Update existing Speech & Text Analytics dictionary feedback by id\n    api_response = api_instance.put_speechandtextanalytics_dictionaryfeedback_dictionary_feedback_id(dictionary_feedback_id, body=body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling SpeechTextAnalyticsApi->put_speechandtextanalytics_dictionaryfeedback_dictionary_feedback_id: %s\\n\" % e)"
   },
   "put_speechandtextanalytics_program": {
     "operationId": "put_speechandtextanalytics_program",

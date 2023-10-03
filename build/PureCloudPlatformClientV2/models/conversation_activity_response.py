@@ -108,7 +108,7 @@ class ConversationActivityResponse(object):
         """
         if isinstance(entity_id_dimension, int):
             entity_id_dimension = str(entity_id_dimension)
-        allowed_values = ["addressFrom", "addressTo", "agentScore", "ani", "conversationId", "convertedFrom", "convertedTo", "direction", "dnis", "mediaType", "participantName", "queueId", "requestedLanguageId", "requestedRouting", "requestedRoutingSkillId", "routingPriority", "scoredAgentId", "sessionId", "teamId", "usedRouting", "userId"]
+        allowed_values = ["activeRouting", "addressFrom", "addressTo", "agentScore", "ani", "conversationId", "convertedFrom", "convertedTo", "direction", "dnis", "mediaType", "participantName", "queueId", "requestedLanguageId", "requestedRouting", "requestedRoutingSkillId", "routingPriority", "scoredAgentId", "sessionId", "teamId", "usedRouting", "userId"]
         if entity_id_dimension.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for entity_id_dimension -> " + entity_id_dimension)
             self._entity_id_dimension = "outdated_sdk_version"
