@@ -1,0 +1,19 @@
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'your_access_token'
+# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.PresenceApi();
+presence_id = 'presence_id_example' # str | Organization Presence ID
+locale_code = 'locale_code_example' # str | The locale code to fetch for the presence definition. Use ALL to fetch everything. (optional)
+
+try:
+    # Get a Presence Definition
+    api_response = api_instance.get_presencedefinition(presence_id, locale_code=locale_code)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling PresenceApi->get_presencedefinition: %s\n" % e)

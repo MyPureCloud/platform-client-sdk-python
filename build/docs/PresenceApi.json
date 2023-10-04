@@ -1,0 +1,409 @@
+{
+    "DELETE /api/v2/presence/definitions/{definitionId}": {
+        "operationId": "delete_presence_definition",
+        "functionName": "delete_presence_definition",
+        "signature": "delete_presence_definition(definition_id)",
+        "parameters": [
+            {
+                "name": "definition_id",
+                "type": "str",
+                "required": "true"
+            }
+        ]
+    },
+    "DELETE /api/v2/presence/sources/{sourceId}": {
+        "operationId": "delete_presence_source",
+        "functionName": "delete_presence_source",
+        "signature": "delete_presence_source(source_id)",
+        "parameters": [
+            {
+                "name": "source_id",
+                "type": "str",
+                "required": "true"
+            }
+        ]
+    },
+    "DELETE /api/v2/presencedefinitions/{presenceId}": {
+        "operationId": "delete_presencedefinition",
+        "functionName": "delete_presencedefinition",
+        "signature": "delete_presencedefinition(presence_id)",
+        "parameters": [
+            {
+                "name": "presence_id",
+                "type": "str",
+                "required": "true"
+            }
+        ]
+    },
+    "GET /api/v2/presence/definitions/{definitionId}": {
+        "operationId": "get_presence_definition",
+        "functionName": "get_presence_definition",
+        "signature": "get_presence_definition(definition_id)",
+        "parameters": [
+            {
+                "name": "definition_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "OrganizationPresenceDefinition"
+    },
+    "GET /api/v2/presence/definitions": {
+        "operationId": "get_presence_definitions",
+        "functionName": "get_presence_definitions",
+        "signature": "get_presence_definitions(deactivated, division_id)",
+        "parameters": [
+            {
+                "name": "deactivated",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "division_id",
+                "type": "list[str]",
+                "required": "false"
+            }
+        ],
+        "return": "OrganizationPresenceDefinitionEntityListing"
+    },
+    "GET /api/v2/presence/settings": {
+        "operationId": "get_presence_settings",
+        "functionName": "get_presence_settings",
+        "signature": "get_presence_settings()",
+        
+        "return": "PresenceSettings"
+    },
+    "GET /api/v2/presence/sources/{sourceId}": {
+        "operationId": "get_presence_source",
+        "functionName": "get_presence_source",
+        "signature": "get_presence_source(source_id)",
+        "parameters": [
+            {
+                "name": "source_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "Source"
+    },
+    "GET /api/v2/presence/sources": {
+        "operationId": "get_presence_sources",
+        "functionName": "get_presence_sources",
+        "signature": "get_presence_sources(deactivated)",
+        "parameters": [
+            {
+                "name": "deactivated",
+                "type": "str",
+                "required": "false"
+            }
+        ],
+        "return": "SourceEntityListing"
+    },
+    "GET /api/v2/presence/users/{userId}/primarysource": {
+        "operationId": "get_presence_user_primarysource",
+        "functionName": "get_presence_user_primarysource",
+        "signature": "get_presence_user_primarysource(user_id)",
+        "parameters": [
+            {
+                "name": "user_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "UserPrimarySource"
+    },
+    "GET /api/v2/presencedefinitions/{presenceId}": {
+        "operationId": "get_presencedefinition",
+        "functionName": "get_presencedefinition",
+        "signature": "get_presencedefinition(presence_id, locale_code)",
+        "parameters": [
+            {
+                "name": "presence_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "locale_code",
+                "type": "str",
+                "required": "false"
+            }
+        ],
+        "return": "OrganizationPresence"
+    },
+    "GET /api/v2/presencedefinitions": {
+        "operationId": "get_presencedefinitions",
+        "functionName": "get_presencedefinitions",
+        "signature": "get_presencedefinitions(page_number, page_size, deleted, locale_code)",
+        "parameters": [
+            {
+                "name": "page_number",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "page_size",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "deleted",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "locale_code",
+                "type": "str",
+                "required": "false"
+            }
+        ],
+        "return": "OrganizationPresenceEntityListing"
+    },
+    "GET /api/v2/systempresences": {
+        "operationId": "get_systempresences",
+        "functionName": "get_systempresences",
+        "signature": "get_systempresences()",
+        
+        "return": "list[SystemPresence]"
+    },
+    "GET /api/v2/users/{userId}/presences/{sourceId}": {
+        "operationId": "get_user_presence",
+        "functionName": "get_user_presence",
+        "signature": "get_user_presence(user_id, source_id)",
+        "parameters": [
+            {
+                "name": "user_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "source_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "UserPresence"
+    },
+    "GET /api/v2/users/{userId}/presences/purecloud": {
+        "operationId": "get_user_presences_purecloud",
+        "functionName": "get_user_presences_purecloud",
+        "signature": "get_user_presences_purecloud(user_id)",
+        "parameters": [
+            {
+                "name": "user_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "UserPresence"
+    },
+    "GET /api/v2/users/presences/{sourceId}/bulk": {
+        "operationId": "get_users_presence_bulk",
+        "functionName": "get_users_presence_bulk",
+        "signature": "get_users_presence_bulk(source_id, id)",
+        "parameters": [
+            {
+                "name": "source_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "id",
+                "type": "list[str]",
+                "required": "false"
+            }
+        ],
+        "return": "list[UcUserPresence]"
+    },
+    "GET /api/v2/users/presences/purecloud/bulk": {
+        "operationId": "get_users_presences_purecloud_bulk",
+        "functionName": "get_users_presences_purecloud_bulk",
+        "signature": "get_users_presences_purecloud_bulk(id)",
+        "parameters": [
+            {
+                "name": "id",
+                "type": "list[str]",
+                "required": "false"
+            }
+        ],
+        "return": "list[UcUserPresence]"
+    },
+    "PATCH /api/v2/users/{userId}/presences/{sourceId}": {
+        "operationId": "patch_user_presence",
+        "functionName": "patch_user_presence",
+        "signature": "patch_user_presence(user_id, source_id, body)",
+        "parameters": [
+            {
+                "name": "user_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "source_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "UserPresence",
+                "required": "true"
+            }
+        ],
+        "return": "UserPresence"
+    },
+    "PATCH /api/v2/users/{userId}/presences/purecloud": {
+        "operationId": "patch_user_presences_purecloud",
+        "functionName": "patch_user_presences_purecloud",
+        "signature": "patch_user_presences_purecloud(user_id, body)",
+        "parameters": [
+            {
+                "name": "user_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "UserPresence",
+                "required": "true"
+            }
+        ],
+        "return": "UserPresence"
+    },
+    "POST /api/v2/presence/definitions": {
+        "operationId": "post_presence_definitions",
+        "functionName": "post_presence_definitions",
+        "signature": "post_presence_definitions(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "OrganizationPresenceDefinition",
+                "required": "true"
+            }
+        ],
+        "return": "OrganizationPresenceDefinition"
+    },
+    "POST /api/v2/presence/sources": {
+        "operationId": "post_presence_sources",
+        "functionName": "post_presence_sources",
+        "signature": "post_presence_sources(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Source",
+                "required": "true"
+            }
+        ],
+        "return": "Source"
+    },
+    "POST /api/v2/presencedefinitions": {
+        "operationId": "post_presencedefinitions",
+        "functionName": "post_presencedefinitions",
+        "signature": "post_presencedefinitions(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "OrganizationPresence",
+                "required": "true"
+            }
+        ],
+        "return": "OrganizationPresence"
+    },
+    "PUT /api/v2/presence/definitions/{definitionId}": {
+        "operationId": "put_presence_definition",
+        "functionName": "put_presence_definition",
+        "signature": "put_presence_definition(definition_id, body)",
+        "parameters": [
+            {
+                "name": "definition_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "OrganizationPresenceDefinition",
+                "required": "true"
+            }
+        ],
+        "return": "OrganizationPresenceDefinition"
+    },
+    "PUT /api/v2/presence/settings": {
+        "operationId": "put_presence_settings",
+        "functionName": "put_presence_settings",
+        "signature": "put_presence_settings(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "PresenceSettings",
+                "required": "true"
+            }
+        ],
+        "return": "PresenceSettings"
+    },
+    "PUT /api/v2/presence/sources/{sourceId}": {
+        "operationId": "put_presence_source",
+        "functionName": "put_presence_source",
+        "signature": "put_presence_source(source_id, body)",
+        "parameters": [
+            {
+                "name": "source_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Source",
+                "required": "true"
+            }
+        ],
+        "return": "Source"
+    },
+    "PUT /api/v2/presence/users/{userId}/primarysource": {
+        "operationId": "put_presence_user_primarysource",
+        "functionName": "put_presence_user_primarysource",
+        "signature": "put_presence_user_primarysource(user_id, body)",
+        "parameters": [
+            {
+                "name": "user_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "UserPrimarySource",
+                "required": "true"
+            }
+        ],
+        "return": "UserPrimarySource"
+    },
+    "PUT /api/v2/presencedefinitions/{presenceId}": {
+        "operationId": "put_presencedefinition",
+        "functionName": "put_presencedefinition",
+        "signature": "put_presencedefinition(presence_id, body)",
+        "parameters": [
+            {
+                "name": "presence_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "OrganizationPresence",
+                "required": "true"
+            }
+        ],
+        "return": "OrganizationPresence"
+    },
+    "PUT /api/v2/users/presences/bulk": {
+        "operationId": "put_users_presences_bulk",
+        "functionName": "put_users_presences_bulk",
+        "signature": "put_users_presences_bulk(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "list[UserPresence]",
+                "required": "true"
+            }
+        ],
+        "return": "list[UserPresence]"
+    }
+    
+}

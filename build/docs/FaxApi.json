@@ -1,0 +1,84 @@
+{
+    "DELETE /api/v2/fax/documents/{documentId}": {
+        "operationId": "delete_fax_document",
+        "functionName": "delete_fax_document",
+        "signature": "delete_fax_document(document_id)",
+        "parameters": [
+            {
+                "name": "document_id",
+                "type": "str",
+                "required": "true"
+            }
+        ]
+    },
+    "GET /api/v2/fax/documents/{documentId}": {
+        "operationId": "get_fax_document",
+        "functionName": "get_fax_document",
+        "signature": "get_fax_document(document_id)",
+        "parameters": [
+            {
+                "name": "document_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "FaxDocument"
+    },
+    "GET /api/v2/fax/documents/{documentId}/content": {
+        "operationId": "get_fax_document_content",
+        "functionName": "get_fax_document_content",
+        "signature": "get_fax_document_content(document_id)",
+        "parameters": [
+            {
+                "name": "document_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "DownloadResponse"
+    },
+    "GET /api/v2/fax/documents": {
+        "operationId": "get_fax_documents",
+        "functionName": "get_fax_documents",
+        "signature": "get_fax_documents(page_size, page_number)",
+        "parameters": [
+            {
+                "name": "page_size",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "page_number",
+                "type": "int",
+                "required": "false"
+            }
+        ],
+        "return": "FaxDocumentEntityListing"
+    },
+    "GET /api/v2/fax/summary": {
+        "operationId": "get_fax_summary",
+        "functionName": "get_fax_summary",
+        "signature": "get_fax_summary()",
+        
+        "return": "FaxSummary"
+    },
+    "PUT /api/v2/fax/documents/{documentId}": {
+        "operationId": "put_fax_document",
+        "functionName": "put_fax_document",
+        "signature": "put_fax_document(document_id, body)",
+        "parameters": [
+            {
+                "name": "document_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "FaxDocument",
+                "required": "true"
+            }
+        ],
+        "return": "FaxDocument"
+    }
+    
+}

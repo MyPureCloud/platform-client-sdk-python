@@ -1,0 +1,20 @@
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'your_access_token'
+# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.LearningApi();
+page_size = 50 # int | Page size (default to 50)
+page_number = 1 # int | Page number (default to 1)
+body = PureCloudPlatformClientV2.LearningAssignmentUserQuery() # LearningAssignmentUserQuery | The learning module rule to fetch users
+
+try:
+    # Get users for learning module rule
+    api_response = api_instance.post_learning_rules_query(page_size, page_number, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling LearningApi->post_learning_rules_query: %s\n" % e)

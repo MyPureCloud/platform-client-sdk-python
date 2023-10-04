@@ -1,0 +1,829 @@
+{
+    "DELETE /api/v2/contentmanagement/documents/{documentId}": {
+        "operationId": "delete_contentmanagement_document",
+        "functionName": "delete_contentmanagement_document",
+        "signature": "delete_contentmanagement_document(document_id, override)",
+        "parameters": [
+            {
+                "name": "document_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "override",
+                "type": "bool",
+                "required": "false"
+            }
+        ]
+    },
+    "DELETE /api/v2/contentmanagement/shares/{shareId}": {
+        "operationId": "delete_contentmanagement_share",
+        "functionName": "delete_contentmanagement_share",
+        "signature": "delete_contentmanagement_share(share_id)",
+        "parameters": [
+            {
+                "name": "share_id",
+                "type": "str",
+                "required": "true"
+            }
+        ]
+    },
+    "DELETE /api/v2/contentmanagement/status/{statusId}": {
+        "operationId": "delete_contentmanagement_status_status_id",
+        "functionName": "delete_contentmanagement_status_status_id",
+        "signature": "delete_contentmanagement_status_status_id(status_id)",
+        "parameters": [
+            {
+                "name": "status_id",
+                "type": "str",
+                "required": "true"
+            }
+        ]
+    },
+    "DELETE /api/v2/contentmanagement/workspaces/{workspaceId}": {
+        "operationId": "delete_contentmanagement_workspace",
+        "functionName": "delete_contentmanagement_workspace",
+        "signature": "delete_contentmanagement_workspace(workspace_id, move_children_to_workspace_id)",
+        "parameters": [
+            {
+                "name": "workspace_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "move_children_to_workspace_id",
+                "type": "str",
+                "required": "false"
+            }
+        ]
+    },
+    "DELETE /api/v2/contentmanagement/workspaces/{workspaceId}/members/{memberId}": {
+        "operationId": "delete_contentmanagement_workspace_member",
+        "functionName": "delete_contentmanagement_workspace_member",
+        "signature": "delete_contentmanagement_workspace_member(workspace_id, member_id)",
+        "parameters": [
+            {
+                "name": "workspace_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "member_id",
+                "type": "str",
+                "required": "true"
+            }
+        ]
+    },
+    "DELETE /api/v2/contentmanagement/workspaces/{workspaceId}/tagvalues/{tagId}": {
+        "operationId": "delete_contentmanagement_workspace_tagvalue",
+        "functionName": "delete_contentmanagement_workspace_tagvalue",
+        "signature": "delete_contentmanagement_workspace_tagvalue(workspace_id, tag_id)",
+        "parameters": [
+            {
+                "name": "workspace_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "tag_id",
+                "type": "str",
+                "required": "true"
+            }
+        ]
+    },
+    "GET /api/v2/contentmanagement/documents/{documentId}": {
+        "operationId": "get_contentmanagement_document",
+        "functionName": "get_contentmanagement_document",
+        "signature": "get_contentmanagement_document(document_id, expand)",
+        "parameters": [
+            {
+                "name": "document_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "expand",
+                "type": "list[str]",
+                "required": "false"
+            }
+        ],
+        "return": "Document"
+    },
+    "GET /api/v2/contentmanagement/documents/{documentId}/audits": {
+        "operationId": "get_contentmanagement_document_audits",
+        "functionName": "get_contentmanagement_document_audits",
+        "signature": "get_contentmanagement_document_audits(document_id, page_size, page_number, transaction_filter, level, sort_by, sort_order)",
+        "parameters": [
+            {
+                "name": "document_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "page_size",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "page_number",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "transaction_filter",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "level",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "sort_by",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "sort_order",
+                "type": "str",
+                "required": "false"
+            }
+        ],
+        "return": "DocumentAuditEntityListing"
+    },
+    "GET /api/v2/contentmanagement/documents/{documentId}/content": {
+        "operationId": "get_contentmanagement_document_content",
+        "functionName": "get_contentmanagement_document_content",
+        "signature": "get_contentmanagement_document_content(document_id, disposition, content_type)",
+        "parameters": [
+            {
+                "name": "document_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "disposition",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "content_type",
+                "type": "str",
+                "required": "false"
+            }
+        ],
+        "return": "DownloadResponse"
+    },
+    "GET /api/v2/contentmanagement/documents": {
+        "operationId": "get_contentmanagement_documents",
+        "functionName": "get_contentmanagement_documents",
+        "signature": "get_contentmanagement_documents(workspace_id, name, expand, page_size, page_number, sort_by, sort_order)",
+        "parameters": [
+            {
+                "name": "workspace_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "name",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "expand",
+                "type": "list[str]",
+                "required": "false"
+            },
+            {
+                "name": "page_size",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "page_number",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "sort_by",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "sort_order",
+                "type": "str",
+                "required": "false"
+            }
+        ],
+        "return": "DocumentEntityListing"
+    },
+    "GET /api/v2/contentmanagement/query": {
+        "operationId": "get_contentmanagement_query",
+        "functionName": "get_contentmanagement_query",
+        "signature": "get_contentmanagement_query(query_phrase, page_size, page_number, sort_by, sort_order, expand)",
+        "parameters": [
+            {
+                "name": "query_phrase",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "page_size",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "page_number",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "sort_by",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "sort_order",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "expand",
+                "type": "list[str]",
+                "required": "false"
+            }
+        ],
+        "return": "QueryResults"
+    },
+    "GET /api/v2/contentmanagement/securityprofiles/{securityProfileId}": {
+        "operationId": "get_contentmanagement_securityprofile",
+        "functionName": "get_contentmanagement_securityprofile",
+        "signature": "get_contentmanagement_securityprofile(security_profile_id)",
+        "parameters": [
+            {
+                "name": "security_profile_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "SecurityProfile"
+    },
+    "GET /api/v2/contentmanagement/securityprofiles": {
+        "operationId": "get_contentmanagement_securityprofiles",
+        "functionName": "get_contentmanagement_securityprofiles",
+        "signature": "get_contentmanagement_securityprofiles()",
+        
+        "return": "SecurityProfileEntityListing"
+    },
+    "GET /api/v2/contentmanagement/shares/{shareId}": {
+        "operationId": "get_contentmanagement_share",
+        "functionName": "get_contentmanagement_share",
+        "signature": "get_contentmanagement_share(share_id, expand)",
+        "parameters": [
+            {
+                "name": "share_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "expand",
+                "type": "list[str]",
+                "required": "false"
+            }
+        ],
+        "return": "Share"
+    },
+    "GET /api/v2/contentmanagement/shared/{sharedId}": {
+        "operationId": "get_contentmanagement_shared_shared_id",
+        "functionName": "get_contentmanagement_shared_shared_id",
+        "signature": "get_contentmanagement_shared_shared_id(shared_id, redirect, disposition, content_type, expand)",
+        "parameters": [
+            {
+                "name": "shared_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "redirect",
+                "type": "bool",
+                "required": "false"
+            },
+            {
+                "name": "disposition",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "content_type",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "expand",
+                "type": "str",
+                "required": "false"
+            }
+        ],
+        "return": "SharedResponse"
+    },
+    "GET /api/v2/contentmanagement/shares": {
+        "operationId": "get_contentmanagement_shares",
+        "functionName": "get_contentmanagement_shares",
+        "signature": "get_contentmanagement_shares(entity_id, expand, page_size, page_number)",
+        "parameters": [
+            {
+                "name": "entity_id",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "expand",
+                "type": "list[str]",
+                "required": "false"
+            },
+            {
+                "name": "page_size",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "page_number",
+                "type": "int",
+                "required": "false"
+            }
+        ],
+        "return": "ShareEntityListing"
+    },
+    "GET /api/v2/contentmanagement/status": {
+        "operationId": "get_contentmanagement_status",
+        "functionName": "get_contentmanagement_status",
+        "signature": "get_contentmanagement_status(page_size, page_number)",
+        "parameters": [
+            {
+                "name": "page_size",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "page_number",
+                "type": "int",
+                "required": "false"
+            }
+        ],
+        "return": "CommandStatusEntityListing"
+    },
+    "GET /api/v2/contentmanagement/status/{statusId}": {
+        "operationId": "get_contentmanagement_status_status_id",
+        "functionName": "get_contentmanagement_status_status_id",
+        "signature": "get_contentmanagement_status_status_id(status_id)",
+        "parameters": [
+            {
+                "name": "status_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "CommandStatus"
+    },
+    "GET /api/v2/contentmanagement/usage": {
+        "operationId": "get_contentmanagement_usage",
+        "functionName": "get_contentmanagement_usage",
+        "signature": "get_contentmanagement_usage()",
+        
+        "return": "Usage"
+    },
+    "GET /api/v2/contentmanagement/workspaces/{workspaceId}": {
+        "operationId": "get_contentmanagement_workspace",
+        "functionName": "get_contentmanagement_workspace",
+        "signature": "get_contentmanagement_workspace(workspace_id, expand)",
+        "parameters": [
+            {
+                "name": "workspace_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "expand",
+                "type": "list[str]",
+                "required": "false"
+            }
+        ],
+        "return": "Workspace"
+    },
+    "GET /api/v2/contentmanagement/workspaces/{workspaceId}/documents": {
+        "operationId": "get_contentmanagement_workspace_documents",
+        "functionName": "get_contentmanagement_workspace_documents",
+        "signature": "get_contentmanagement_workspace_documents(workspace_id, expand, page_size, page_number, sort_by, sort_order)",
+        "parameters": [
+            {
+                "name": "workspace_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "expand",
+                "type": "list[str]",
+                "required": "false"
+            },
+            {
+                "name": "page_size",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "page_number",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "sort_by",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "sort_order",
+                "type": "str",
+                "required": "false"
+            }
+        ],
+        "return": "DocumentEntityListing"
+    },
+    "GET /api/v2/contentmanagement/workspaces/{workspaceId}/members/{memberId}": {
+        "operationId": "get_contentmanagement_workspace_member",
+        "functionName": "get_contentmanagement_workspace_member",
+        "signature": "get_contentmanagement_workspace_member(workspace_id, member_id, expand)",
+        "parameters": [
+            {
+                "name": "workspace_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "member_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "expand",
+                "type": "list[str]",
+                "required": "false"
+            }
+        ],
+        "return": "WorkspaceMember"
+    },
+    "GET /api/v2/contentmanagement/workspaces/{workspaceId}/members": {
+        "operationId": "get_contentmanagement_workspace_members",
+        "functionName": "get_contentmanagement_workspace_members",
+        "signature": "get_contentmanagement_workspace_members(workspace_id, page_size, page_number, expand)",
+        "parameters": [
+            {
+                "name": "workspace_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "page_size",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "page_number",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "expand",
+                "type": "list[str]",
+                "required": "false"
+            }
+        ],
+        "return": "WorkspaceMemberEntityListing"
+    },
+    "GET /api/v2/contentmanagement/workspaces/{workspaceId}/tagvalues/{tagId}": {
+        "operationId": "get_contentmanagement_workspace_tagvalue",
+        "functionName": "get_contentmanagement_workspace_tagvalue",
+        "signature": "get_contentmanagement_workspace_tagvalue(workspace_id, tag_id, expand)",
+        "parameters": [
+            {
+                "name": "workspace_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "tag_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "expand",
+                "type": "list[str]",
+                "required": "false"
+            }
+        ],
+        "return": "TagValue"
+    },
+    "GET /api/v2/contentmanagement/workspaces/{workspaceId}/tagvalues": {
+        "operationId": "get_contentmanagement_workspace_tagvalues",
+        "functionName": "get_contentmanagement_workspace_tagvalues",
+        "signature": "get_contentmanagement_workspace_tagvalues(workspace_id, value, page_size, page_number, expand)",
+        "parameters": [
+            {
+                "name": "workspace_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "value",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "page_size",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "page_number",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "expand",
+                "type": "list[str]",
+                "required": "false"
+            }
+        ],
+        "return": "TagValueEntityListing"
+    },
+    "GET /api/v2/contentmanagement/workspaces": {
+        "operationId": "get_contentmanagement_workspaces",
+        "functionName": "get_contentmanagement_workspaces",
+        "signature": "get_contentmanagement_workspaces(page_size, page_number, access, expand)",
+        "parameters": [
+            {
+                "name": "page_size",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "page_number",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "access",
+                "type": "list[str]",
+                "required": "false"
+            },
+            {
+                "name": "expand",
+                "type": "list[str]",
+                "required": "false"
+            }
+        ],
+        "return": "WorkspaceEntityListing"
+    },
+    "POST /api/v2/contentmanagement/auditquery": {
+        "operationId": "post_contentmanagement_auditquery",
+        "functionName": "post_contentmanagement_auditquery",
+        "signature": "post_contentmanagement_auditquery(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "ContentQueryRequest",
+                "required": "true"
+            }
+        ],
+        "return": "QueryResults"
+    },
+    "POST /api/v2/contentmanagement/documents/{documentId}": {
+        "operationId": "post_contentmanagement_document",
+        "functionName": "post_contentmanagement_document",
+        "signature": "post_contentmanagement_document(document_id, body, expand, override)",
+        "parameters": [
+            {
+                "name": "document_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "DocumentUpdate",
+                "required": "true"
+            },
+            {
+                "name": "expand",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "override",
+                "type": "bool",
+                "required": "false"
+            }
+        ],
+        "return": "Document"
+    },
+    "POST /api/v2/contentmanagement/documents/{documentId}/content": {
+        "operationId": "post_contentmanagement_document_content",
+        "functionName": "post_contentmanagement_document_content",
+        "signature": "post_contentmanagement_document_content(document_id, body, override)",
+        "parameters": [
+            {
+                "name": "document_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "ReplaceRequest",
+                "required": "true"
+            },
+            {
+                "name": "override",
+                "type": "bool",
+                "required": "false"
+            }
+        ],
+        "return": "ReplaceResponse"
+    },
+    "POST /api/v2/contentmanagement/documents": {
+        "operationId": "post_contentmanagement_documents",
+        "functionName": "post_contentmanagement_documents",
+        "signature": "post_contentmanagement_documents(body, copy_source, move_source, override)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "DocumentUpload",
+                "required": "true"
+            },
+            {
+                "name": "copy_source",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "move_source",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "override",
+                "type": "bool",
+                "required": "false"
+            }
+        ],
+        "return": "Document"
+    },
+    "POST /api/v2/contentmanagement/query": {
+        "operationId": "post_contentmanagement_query",
+        "functionName": "post_contentmanagement_query",
+        "signature": "post_contentmanagement_query(body, expand)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "QueryRequest",
+                "required": "true"
+            },
+            {
+                "name": "expand",
+                "type": "str",
+                "required": "false"
+            }
+        ],
+        "return": "QueryResults"
+    },
+    "POST /api/v2/contentmanagement/shares": {
+        "operationId": "post_contentmanagement_shares",
+        "functionName": "post_contentmanagement_shares",
+        "signature": "post_contentmanagement_shares(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "CreateShareRequest",
+                "required": "true"
+            }
+        ],
+        "return": "CreateShareResponse"
+    },
+    "POST /api/v2/contentmanagement/workspaces/{workspaceId}/tagvalues": {
+        "operationId": "post_contentmanagement_workspace_tagvalues",
+        "functionName": "post_contentmanagement_workspace_tagvalues",
+        "signature": "post_contentmanagement_workspace_tagvalues(workspace_id, body)",
+        "parameters": [
+            {
+                "name": "workspace_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "TagValue",
+                "required": "true"
+            }
+        ],
+        "return": "TagValue"
+    },
+    "POST /api/v2/contentmanagement/workspaces/{workspaceId}/tagvalues/query": {
+        "operationId": "post_contentmanagement_workspace_tagvalues_query",
+        "functionName": "post_contentmanagement_workspace_tagvalues_query",
+        "signature": "post_contentmanagement_workspace_tagvalues_query(workspace_id, body, expand)",
+        "parameters": [
+            {
+                "name": "workspace_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "TagQueryRequest",
+                "required": "true"
+            },
+            {
+                "name": "expand",
+                "type": "list[str]",
+                "required": "false"
+            }
+        ],
+        "return": "TagValueEntityListing"
+    },
+    "POST /api/v2/contentmanagement/workspaces": {
+        "operationId": "post_contentmanagement_workspaces",
+        "functionName": "post_contentmanagement_workspaces",
+        "signature": "post_contentmanagement_workspaces(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "WorkspaceCreate",
+                "required": "true"
+            }
+        ],
+        "return": "Workspace"
+    },
+    "PUT /api/v2/contentmanagement/workspaces/{workspaceId}": {
+        "operationId": "put_contentmanagement_workspace",
+        "functionName": "put_contentmanagement_workspace",
+        "signature": "put_contentmanagement_workspace(workspace_id, body)",
+        "parameters": [
+            {
+                "name": "workspace_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Workspace",
+                "required": "true"
+            }
+        ],
+        "return": "Workspace"
+    },
+    "PUT /api/v2/contentmanagement/workspaces/{workspaceId}/members/{memberId}": {
+        "operationId": "put_contentmanagement_workspace_member",
+        "functionName": "put_contentmanagement_workspace_member",
+        "signature": "put_contentmanagement_workspace_member(workspace_id, member_id, body)",
+        "parameters": [
+            {
+                "name": "workspace_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "member_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "WorkspaceMember",
+                "required": "true"
+            }
+        ],
+        "return": "WorkspaceMember"
+    },
+    "PUT /api/v2/contentmanagement/workspaces/{workspaceId}/tagvalues/{tagId}": {
+        "operationId": "put_contentmanagement_workspace_tagvalue",
+        "functionName": "put_contentmanagement_workspace_tagvalue",
+        "signature": "put_contentmanagement_workspace_tagvalue(workspace_id, tag_id, body)",
+        "parameters": [
+            {
+                "name": "workspace_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "tag_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "TagValue",
+                "required": "true"
+            }
+        ],
+        "return": "TagValue"
+    }
+    
+}

@@ -1,0 +1,19 @@
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'your_access_token'
+# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.SuggestApi();
+body = PureCloudPlatformClientV2.SuggestSearchRequest() # SuggestSearchRequest | Search request options
+profile = True # bool | profile (optional) (default to True)
+
+try:
+    # Suggest resources.
+    api_response = api_instance.post_search_suggest(body, profile=profile)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling SuggestApi->post_search_suggest: %s\n" % e)

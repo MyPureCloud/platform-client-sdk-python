@@ -1,0 +1,19 @@
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'your_access_token'
+# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ArchitectApi();
+body = PureCloudPlatformClientV2.CriteriaQuery() # CriteriaQuery | query
+index_only = True # bool | indexes only (optional)
+
+try:
+    # Query the database of existing flow histories to look for particular flow criteria
+    api_response = api_instance.post_flows_instances_query(body, index_only=index_only)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ArchitectApi->post_flows_instances_query: %s\n" % e)

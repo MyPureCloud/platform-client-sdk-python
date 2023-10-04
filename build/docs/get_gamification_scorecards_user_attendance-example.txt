@@ -1,0 +1,20 @@
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'your_access_token'
+# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.GamificationApi();
+user_id = 'user_id_example' # str | 
+start_workday = '2013-10-20' # date | Start workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+end_workday = '2013-10-20' # date | End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+
+try:
+    # Attendance status metrics for a user
+    api_response = api_instance.get_gamification_scorecards_user_attendance(user_id, start_workday, end_workday)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GamificationApi->get_gamification_scorecards_user_attendance: %s\n" % e)

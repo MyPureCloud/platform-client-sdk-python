@@ -1,0 +1,19 @@
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'your_access_token'
+# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.UsersApi();
+activity_id = 'activity_id_example' # str | Specifies the activity ID, maps to either assignment or appointment ID
+type = 'type_example' # str | Specifies the activity type.
+
+try:
+    # Get a Development Activity
+    api_response = api_instance.get_users_development_activity(activity_id, type)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling UsersApi->get_users_development_activity: %s\n" % e)

@@ -1,0 +1,3025 @@
+{
+    "DELETE /api/v2/architect/emergencygroups/{emergencyGroupId}": {
+        "operationId": "delete_architect_emergencygroup",
+        "functionName": "delete_architect_emergencygroup",
+        "signature": "delete_architect_emergencygroup(emergency_group_id)",
+        "parameters": [
+            {
+                "name": "emergency_group_id",
+                "type": "str",
+                "required": "true"
+            }
+        ]
+    },
+    "DELETE /api/v2/architect/grammars/{grammarId}": {
+        "operationId": "delete_architect_grammar",
+        "functionName": "delete_architect_grammar",
+        "signature": "delete_architect_grammar(grammar_id)",
+        "parameters": [
+            {
+                "name": "grammar_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "object"
+    },
+    "DELETE /api/v2/architect/grammars/{grammarId}/languages/{languageCode}": {
+        "operationId": "delete_architect_grammar_language",
+        "functionName": "delete_architect_grammar_language",
+        "signature": "delete_architect_grammar_language(grammar_id, language_code)",
+        "parameters": [
+            {
+                "name": "grammar_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "language_code",
+                "type": "str",
+                "required": "true"
+            }
+        ]
+    },
+    "DELETE /api/v2/architect/grammars/{grammarId}/languages/{languageCode}/files/dtmf": {
+        "operationId": "delete_architect_grammar_language_files_dtmf",
+        "functionName": "delete_architect_grammar_language_files_dtmf",
+        "signature": "delete_architect_grammar_language_files_dtmf(grammar_id, language_code)",
+        "parameters": [
+            {
+                "name": "grammar_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "language_code",
+                "type": "str",
+                "required": "true"
+            }
+        ]
+    },
+    "DELETE /api/v2/architect/grammars/{grammarId}/languages/{languageCode}/files/voice": {
+        "operationId": "delete_architect_grammar_language_files_voice",
+        "functionName": "delete_architect_grammar_language_files_voice",
+        "signature": "delete_architect_grammar_language_files_voice(grammar_id, language_code)",
+        "parameters": [
+            {
+                "name": "grammar_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "language_code",
+                "type": "str",
+                "required": "true"
+            }
+        ]
+    },
+    "DELETE /api/v2/architect/ivrs/{ivrId}": {
+        "operationId": "delete_architect_ivr",
+        "functionName": "delete_architect_ivr",
+        "signature": "delete_architect_ivr(ivr_id)",
+        "parameters": [
+            {
+                "name": "ivr_id",
+                "type": "str",
+                "required": "true"
+            }
+        ]
+    },
+    "DELETE /api/v2/architect/prompts/{promptId}": {
+        "operationId": "delete_architect_prompt",
+        "functionName": "delete_architect_prompt",
+        "signature": "delete_architect_prompt(prompt_id, all_resources)",
+        "parameters": [
+            {
+                "name": "prompt_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "all_resources",
+                "type": "bool",
+                "required": "false"
+            }
+        ]
+    },
+    "DELETE /api/v2/architect/prompts/{promptId}/resources/{languageCode}": {
+        "operationId": "delete_architect_prompt_resource",
+        "functionName": "delete_architect_prompt_resource",
+        "signature": "delete_architect_prompt_resource(prompt_id, language_code)",
+        "parameters": [
+            {
+                "name": "prompt_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "language_code",
+                "type": "str",
+                "required": "true"
+            }
+        ]
+    },
+    "DELETE /api/v2/architect/prompts/{promptId}/resources/{languageCode}/audio": {
+        "operationId": "delete_architect_prompt_resource_audio",
+        "functionName": "delete_architect_prompt_resource_audio",
+        "signature": "delete_architect_prompt_resource_audio(prompt_id, language_code)",
+        "parameters": [
+            {
+                "name": "prompt_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "language_code",
+                "type": "str",
+                "required": "true"
+            }
+        ]
+    },
+    "DELETE /api/v2/architect/prompts": {
+        "operationId": "delete_architect_prompts",
+        "functionName": "delete_architect_prompts",
+        "signature": "delete_architect_prompts(id)",
+        "parameters": [
+            {
+                "name": "id",
+                "type": "list[str]",
+                "required": "true"
+            }
+        ],
+        "return": "Operation"
+    },
+    "DELETE /api/v2/architect/schedules/{scheduleId}": {
+        "operationId": "delete_architect_schedule",
+        "functionName": "delete_architect_schedule",
+        "signature": "delete_architect_schedule(schedule_id)",
+        "parameters": [
+            {
+                "name": "schedule_id",
+                "type": "str",
+                "required": "true"
+            }
+        ]
+    },
+    "DELETE /api/v2/architect/schedulegroups/{scheduleGroupId}": {
+        "operationId": "delete_architect_schedulegroup",
+        "functionName": "delete_architect_schedulegroup",
+        "signature": "delete_architect_schedulegroup(schedule_group_id)",
+        "parameters": [
+            {
+                "name": "schedule_group_id",
+                "type": "str",
+                "required": "true"
+            }
+        ]
+    },
+    "DELETE /api/v2/architect/systemprompts/{promptId}/resources/{languageCode}": {
+        "operationId": "delete_architect_systemprompt_resource",
+        "functionName": "delete_architect_systemprompt_resource",
+        "signature": "delete_architect_systemprompt_resource(prompt_id, language_code)",
+        "parameters": [
+            {
+                "name": "prompt_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "language_code",
+                "type": "str",
+                "required": "true"
+            }
+        ]
+    },
+    "DELETE /api/v2/flows/{flowId}": {
+        "operationId": "delete_flow",
+        "functionName": "delete_flow",
+        "signature": "delete_flow(flow_id)",
+        "parameters": [
+            {
+                "name": "flow_id",
+                "type": "str",
+                "required": "true"
+            }
+        ]
+    },
+    "DELETE /api/v2/flows": {
+        "operationId": "delete_flows",
+        "functionName": "delete_flows",
+        "signature": "delete_flows(id)",
+        "parameters": [
+            {
+                "name": "id",
+                "type": "list[str]",
+                "required": "true"
+            }
+        ],
+        "return": "Operation"
+    },
+    "DELETE /api/v2/flows/datatables/{datatableId}": {
+        "operationId": "delete_flows_datatable",
+        "functionName": "delete_flows_datatable",
+        "signature": "delete_flows_datatable(datatable_id, force)",
+        "parameters": [
+            {
+                "name": "datatable_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "force",
+                "type": "bool",
+                "required": "false"
+            }
+        ]
+    },
+    "DELETE /api/v2/flows/datatables/{datatableId}/rows/{rowId}": {
+        "operationId": "delete_flows_datatable_row",
+        "functionName": "delete_flows_datatable_row",
+        "signature": "delete_flows_datatable_row(datatable_id, row_id)",
+        "parameters": [
+            {
+                "name": "datatable_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "row_id",
+                "type": "str",
+                "required": "true"
+            }
+        ]
+    },
+    "DELETE /api/v2/flows/milestones/{milestoneId}": {
+        "operationId": "delete_flows_milestone",
+        "functionName": "delete_flows_milestone",
+        "signature": "delete_flows_milestone(milestone_id)",
+        "parameters": [
+            {
+                "name": "milestone_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "object"
+    },
+    "GET /api/v2/architect/dependencytracking": {
+        "operationId": "get_architect_dependencytracking",
+        "functionName": "get_architect_dependencytracking",
+        "signature": "get_architect_dependencytracking(name, page_number, page_size, object_type, consumed_resources, consuming_resources, consumed_resource_type, consuming_resource_type)",
+        "parameters": [
+            {
+                "name": "name",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "page_number",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "page_size",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "object_type",
+                "type": "list[str]",
+                "required": "false"
+            },
+            {
+                "name": "consumed_resources",
+                "type": "bool",
+                "required": "false"
+            },
+            {
+                "name": "consuming_resources",
+                "type": "bool",
+                "required": "false"
+            },
+            {
+                "name": "consumed_resource_type",
+                "type": "list[str]",
+                "required": "false"
+            },
+            {
+                "name": "consuming_resource_type",
+                "type": "list[str]",
+                "required": "false"
+            }
+        ],
+        "return": "DependencyObjectEntityListing"
+    },
+    "GET /api/v2/architect/dependencytracking/build": {
+        "operationId": "get_architect_dependencytracking_build",
+        "functionName": "get_architect_dependencytracking_build",
+        "signature": "get_architect_dependencytracking_build()",
+        
+        "return": "DependencyStatus"
+    },
+    "GET /api/v2/architect/dependencytracking/consumedresources": {
+        "operationId": "get_architect_dependencytracking_consumedresources",
+        "functionName": "get_architect_dependencytracking_consumedresources",
+        "signature": "get_architect_dependencytracking_consumedresources(id, version, object_type, resource_type, page_number, page_size)",
+        "parameters": [
+            {
+                "name": "id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "version",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "object_type",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "resource_type",
+                "type": "list[str]",
+                "required": "false"
+            },
+            {
+                "name": "page_number",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "page_size",
+                "type": "int",
+                "required": "false"
+            }
+        ],
+        "return": "ConsumedResourcesEntityListing"
+    },
+    "GET /api/v2/architect/dependencytracking/consumingresources": {
+        "operationId": "get_architect_dependencytracking_consumingresources",
+        "functionName": "get_architect_dependencytracking_consumingresources",
+        "signature": "get_architect_dependencytracking_consumingresources(id, object_type, resource_type, version, page_number, page_size, flow_filter)",
+        "parameters": [
+            {
+                "name": "id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "object_type",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "resource_type",
+                "type": "list[str]",
+                "required": "false"
+            },
+            {
+                "name": "version",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "page_number",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "page_size",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "flow_filter",
+                "type": "str",
+                "required": "false"
+            }
+        ],
+        "return": "ConsumingResourcesEntityListing"
+    },
+    "GET /api/v2/architect/dependencytracking/deletedresourceconsumers": {
+        "operationId": "get_architect_dependencytracking_deletedresourceconsumers",
+        "functionName": "get_architect_dependencytracking_deletedresourceconsumers",
+        "signature": "get_architect_dependencytracking_deletedresourceconsumers(name, object_type, flow_filter, consumed_resources, consumed_resource_type, page_number, page_size)",
+        "parameters": [
+            {
+                "name": "name",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "object_type",
+                "type": "list[str]",
+                "required": "false"
+            },
+            {
+                "name": "flow_filter",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "consumed_resources",
+                "type": "bool",
+                "required": "false"
+            },
+            {
+                "name": "consumed_resource_type",
+                "type": "list[str]",
+                "required": "false"
+            },
+            {
+                "name": "page_number",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "page_size",
+                "type": "int",
+                "required": "false"
+            }
+        ],
+        "return": "DependencyObjectEntityListing"
+    },
+    "GET /api/v2/architect/dependencytracking/object": {
+        "operationId": "get_architect_dependencytracking_object",
+        "functionName": "get_architect_dependencytracking_object",
+        "signature": "get_architect_dependencytracking_object(id, version, object_type, consumed_resources, consuming_resources, consumed_resource_type, consuming_resource_type, consumed_resource_request)",
+        "parameters": [
+            {
+                "name": "id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "version",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "object_type",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "consumed_resources",
+                "type": "bool",
+                "required": "false"
+            },
+            {
+                "name": "consuming_resources",
+                "type": "bool",
+                "required": "false"
+            },
+            {
+                "name": "consumed_resource_type",
+                "type": "list[str]",
+                "required": "false"
+            },
+            {
+                "name": "consuming_resource_type",
+                "type": "list[str]",
+                "required": "false"
+            },
+            {
+                "name": "consumed_resource_request",
+                "type": "bool",
+                "required": "false"
+            }
+        ],
+        "return": "DependencyObject"
+    },
+    "GET /api/v2/architect/dependencytracking/types/{typeId}": {
+        "operationId": "get_architect_dependencytracking_type",
+        "functionName": "get_architect_dependencytracking_type",
+        "signature": "get_architect_dependencytracking_type(type_id)",
+        "parameters": [
+            {
+                "name": "type_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "DependencyType"
+    },
+    "GET /api/v2/architect/dependencytracking/types": {
+        "operationId": "get_architect_dependencytracking_types",
+        "functionName": "get_architect_dependencytracking_types",
+        "signature": "get_architect_dependencytracking_types(page_number, page_size)",
+        "parameters": [
+            {
+                "name": "page_number",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "page_size",
+                "type": "int",
+                "required": "false"
+            }
+        ],
+        "return": "DependencyTypeEntityListing"
+    },
+    "GET /api/v2/architect/dependencytracking/updatedresourceconsumers": {
+        "operationId": "get_architect_dependencytracking_updatedresourceconsumers",
+        "functionName": "get_architect_dependencytracking_updatedresourceconsumers",
+        "signature": "get_architect_dependencytracking_updatedresourceconsumers(name, object_type, consumed_resources, consumed_resource_type, page_number, page_size)",
+        "parameters": [
+            {
+                "name": "name",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "object_type",
+                "type": "list[str]",
+                "required": "false"
+            },
+            {
+                "name": "consumed_resources",
+                "type": "bool",
+                "required": "false"
+            },
+            {
+                "name": "consumed_resource_type",
+                "type": "list[str]",
+                "required": "false"
+            },
+            {
+                "name": "page_number",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "page_size",
+                "type": "int",
+                "required": "false"
+            }
+        ],
+        "return": "DependencyObjectEntityListing"
+    },
+    "GET /api/v2/architect/emergencygroups/{emergencyGroupId}": {
+        "operationId": "get_architect_emergencygroup",
+        "functionName": "get_architect_emergencygroup",
+        "signature": "get_architect_emergencygroup(emergency_group_id)",
+        "parameters": [
+            {
+                "name": "emergency_group_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "EmergencyGroup"
+    },
+    "GET /api/v2/architect/emergencygroups": {
+        "operationId": "get_architect_emergencygroups",
+        "functionName": "get_architect_emergencygroups",
+        "signature": "get_architect_emergencygroups(page_number, page_size, sort_by, sort_order, name)",
+        "parameters": [
+            {
+                "name": "page_number",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "page_size",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "sort_by",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "sort_order",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "name",
+                "type": "str",
+                "required": "false"
+            }
+        ],
+        "return": "EmergencyGroupListing"
+    },
+    "GET /api/v2/architect/emergencygroups/divisionviews": {
+        "operationId": "get_architect_emergencygroups_divisionviews",
+        "functionName": "get_architect_emergencygroups_divisionviews",
+        "signature": "get_architect_emergencygroups_divisionviews(page_number, page_size, sort_by, sort_order, id, name, division_id)",
+        "parameters": [
+            {
+                "name": "page_number",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "page_size",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "sort_by",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "sort_order",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "id",
+                "type": "list[str]",
+                "required": "false"
+            },
+            {
+                "name": "name",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "division_id",
+                "type": "list[str]",
+                "required": "false"
+            }
+        ],
+        "return": "EmergencyGroupDivisionViewEntityListing"
+    },
+    "GET /api/v2/architect/grammars/{grammarId}": {
+        "operationId": "get_architect_grammar",
+        "functionName": "get_architect_grammar",
+        "signature": "get_architect_grammar(grammar_id, include_file_urls)",
+        "parameters": [
+            {
+                "name": "grammar_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "include_file_urls",
+                "type": "bool",
+                "required": "false"
+            }
+        ],
+        "return": "Grammar"
+    },
+    "GET /api/v2/architect/grammars/{grammarId}/languages/{languageCode}": {
+        "operationId": "get_architect_grammar_language",
+        "functionName": "get_architect_grammar_language",
+        "signature": "get_architect_grammar_language(grammar_id, language_code)",
+        "parameters": [
+            {
+                "name": "grammar_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "language_code",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "GrammarLanguage"
+    },
+    "GET /api/v2/architect/grammars": {
+        "operationId": "get_architect_grammars",
+        "functionName": "get_architect_grammars",
+        "signature": "get_architect_grammars(page_number, page_size, sort_by, sort_order, id, name, description, name_or_description, include_file_urls)",
+        "parameters": [
+            {
+                "name": "page_number",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "page_size",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "sort_by",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "sort_order",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "id",
+                "type": "list[str]",
+                "required": "false"
+            },
+            {
+                "name": "name",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "description",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "name_or_description",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "include_file_urls",
+                "type": "bool",
+                "required": "false"
+            }
+        ],
+        "return": "GrammarListing"
+    },
+    "GET /api/v2/architect/ivrs/{ivrId}": {
+        "operationId": "get_architect_ivr",
+        "functionName": "get_architect_ivr",
+        "signature": "get_architect_ivr(ivr_id)",
+        "parameters": [
+            {
+                "name": "ivr_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "IVR"
+    },
+    "GET /api/v2/architect/ivrs": {
+        "operationId": "get_architect_ivrs",
+        "functionName": "get_architect_ivrs",
+        "signature": "get_architect_ivrs(page_number, page_size, sort_by, sort_order, name, dnis, schedule_group)",
+        "parameters": [
+            {
+                "name": "page_number",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "page_size",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "sort_by",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "sort_order",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "name",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "dnis",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "schedule_group",
+                "type": "str",
+                "required": "false"
+            }
+        ],
+        "return": "IVREntityListing"
+    },
+    "GET /api/v2/architect/ivrs/divisionviews": {
+        "operationId": "get_architect_ivrs_divisionviews",
+        "functionName": "get_architect_ivrs_divisionviews",
+        "signature": "get_architect_ivrs_divisionviews(page_number, page_size, sort_by, sort_order, id, name, division_id)",
+        "parameters": [
+            {
+                "name": "page_number",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "page_size",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "sort_by",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "sort_order",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "id",
+                "type": "list[str]",
+                "required": "false"
+            },
+            {
+                "name": "name",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "division_id",
+                "type": "list[str]",
+                "required": "false"
+            }
+        ],
+        "return": "IVRDivisionViewEntityListing"
+    },
+    "GET /api/v2/architect/prompts/{promptId}": {
+        "operationId": "get_architect_prompt",
+        "functionName": "get_architect_prompt",
+        "signature": "get_architect_prompt(prompt_id)",
+        "parameters": [
+            {
+                "name": "prompt_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "Prompt"
+    },
+    "GET /api/v2/architect/prompts/{promptId}/history/{historyId}": {
+        "operationId": "get_architect_prompt_history_history_id",
+        "functionName": "get_architect_prompt_history_history_id",
+        "signature": "get_architect_prompt_history_history_id(prompt_id, history_id, page_number, page_size, sort_order, sort_by, action)",
+        "parameters": [
+            {
+                "name": "prompt_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "history_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "page_number",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "page_size",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "sort_order",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "sort_by",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "action",
+                "type": "list[str]",
+                "required": "false"
+            }
+        ],
+        "return": "HistoryListing"
+    },
+    "GET /api/v2/architect/prompts/{promptId}/resources/{languageCode}": {
+        "operationId": "get_architect_prompt_resource",
+        "functionName": "get_architect_prompt_resource",
+        "signature": "get_architect_prompt_resource(prompt_id, language_code)",
+        "parameters": [
+            {
+                "name": "prompt_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "language_code",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "PromptAsset"
+    },
+    "GET /api/v2/architect/prompts/{promptId}/resources": {
+        "operationId": "get_architect_prompt_resources",
+        "functionName": "get_architect_prompt_resources",
+        "signature": "get_architect_prompt_resources(prompt_id, page_number, page_size)",
+        "parameters": [
+            {
+                "name": "prompt_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "page_number",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "page_size",
+                "type": "int",
+                "required": "false"
+            }
+        ],
+        "return": "PromptAssetEntityListing"
+    },
+    "GET /api/v2/architect/prompts": {
+        "operationId": "get_architect_prompts",
+        "functionName": "get_architect_prompts",
+        "signature": "get_architect_prompts(page_number, page_size, name, description, name_or_description, sort_by, sort_order)",
+        "parameters": [
+            {
+                "name": "page_number",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "page_size",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "name",
+                "type": "list[str]",
+                "required": "false"
+            },
+            {
+                "name": "description",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "name_or_description",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "sort_by",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "sort_order",
+                "type": "str",
+                "required": "false"
+            }
+        ],
+        "return": "PromptEntityListing"
+    },
+    "GET /api/v2/architect/schedules/{scheduleId}": {
+        "operationId": "get_architect_schedule",
+        "functionName": "get_architect_schedule",
+        "signature": "get_architect_schedule(schedule_id)",
+        "parameters": [
+            {
+                "name": "schedule_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "Schedule"
+    },
+    "GET /api/v2/architect/schedulegroups/{scheduleGroupId}": {
+        "operationId": "get_architect_schedulegroup",
+        "functionName": "get_architect_schedulegroup",
+        "signature": "get_architect_schedulegroup(schedule_group_id)",
+        "parameters": [
+            {
+                "name": "schedule_group_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "ScheduleGroup"
+    },
+    "GET /api/v2/architect/schedulegroups": {
+        "operationId": "get_architect_schedulegroups",
+        "functionName": "get_architect_schedulegroups",
+        "signature": "get_architect_schedulegroups(page_number, page_size, sort_by, sort_order, name, schedule_ids, division_id)",
+        "parameters": [
+            {
+                "name": "page_number",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "page_size",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "sort_by",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "sort_order",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "name",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "schedule_ids",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "division_id",
+                "type": "list[str]",
+                "required": "false"
+            }
+        ],
+        "return": "ScheduleGroupEntityListing"
+    },
+    "GET /api/v2/architect/schedulegroups/divisionviews": {
+        "operationId": "get_architect_schedulegroups_divisionviews",
+        "functionName": "get_architect_schedulegroups_divisionviews",
+        "signature": "get_architect_schedulegroups_divisionviews(page_number, page_size, sort_by, sort_order, id, name, division_id)",
+        "parameters": [
+            {
+                "name": "page_number",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "page_size",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "sort_by",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "sort_order",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "id",
+                "type": "list[str]",
+                "required": "false"
+            },
+            {
+                "name": "name",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "division_id",
+                "type": "list[str]",
+                "required": "false"
+            }
+        ],
+        "return": "ScheduleGroupDivisionViewEntityListing"
+    },
+    "GET /api/v2/architect/schedules": {
+        "operationId": "get_architect_schedules",
+        "functionName": "get_architect_schedules",
+        "signature": "get_architect_schedules(page_number, page_size, sort_by, sort_order, name, division_id)",
+        "parameters": [
+            {
+                "name": "page_number",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "page_size",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "sort_by",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "sort_order",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "name",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "division_id",
+                "type": "list[str]",
+                "required": "false"
+            }
+        ],
+        "return": "ScheduleEntityListing"
+    },
+    "GET /api/v2/architect/schedules/divisionviews": {
+        "operationId": "get_architect_schedules_divisionviews",
+        "functionName": "get_architect_schedules_divisionviews",
+        "signature": "get_architect_schedules_divisionviews(page_number, page_size, sort_by, sort_order, id, name, division_id)",
+        "parameters": [
+            {
+                "name": "page_number",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "page_size",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "sort_by",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "sort_order",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "id",
+                "type": "list[str]",
+                "required": "false"
+            },
+            {
+                "name": "name",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "division_id",
+                "type": "list[str]",
+                "required": "false"
+            }
+        ],
+        "return": "ScheduleDivisionViewEntityListing"
+    },
+    "GET /api/v2/architect/systemprompts/{promptId}": {
+        "operationId": "get_architect_systemprompt",
+        "functionName": "get_architect_systemprompt",
+        "signature": "get_architect_systemprompt(prompt_id)",
+        "parameters": [
+            {
+                "name": "prompt_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "SystemPrompt"
+    },
+    "GET /api/v2/architect/systemprompts/{promptId}/history/{historyId}": {
+        "operationId": "get_architect_systemprompt_history_history_id",
+        "functionName": "get_architect_systemprompt_history_history_id",
+        "signature": "get_architect_systemprompt_history_history_id(prompt_id, history_id, page_number, page_size, sort_order, sort_by, action)",
+        "parameters": [
+            {
+                "name": "prompt_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "history_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "page_number",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "page_size",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "sort_order",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "sort_by",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "action",
+                "type": "list[str]",
+                "required": "false"
+            }
+        ],
+        "return": "HistoryListing"
+    },
+    "GET /api/v2/architect/systemprompts/{promptId}/resources/{languageCode}": {
+        "operationId": "get_architect_systemprompt_resource",
+        "functionName": "get_architect_systemprompt_resource",
+        "signature": "get_architect_systemprompt_resource(prompt_id, language_code)",
+        "parameters": [
+            {
+                "name": "prompt_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "language_code",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "SystemPromptAsset"
+    },
+    "GET /api/v2/architect/systemprompts/{promptId}/resources": {
+        "operationId": "get_architect_systemprompt_resources",
+        "functionName": "get_architect_systemprompt_resources",
+        "signature": "get_architect_systemprompt_resources(prompt_id, page_number, page_size, sort_by, sort_order)",
+        "parameters": [
+            {
+                "name": "prompt_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "page_number",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "page_size",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "sort_by",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "sort_order",
+                "type": "str",
+                "required": "false"
+            }
+        ],
+        "return": "SystemPromptAssetEntityListing"
+    },
+    "GET /api/v2/architect/systemprompts": {
+        "operationId": "get_architect_systemprompts",
+        "functionName": "get_architect_systemprompts",
+        "signature": "get_architect_systemprompts(page_number, page_size, sort_by, sort_order, name, description, name_or_description)",
+        "parameters": [
+            {
+                "name": "page_number",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "page_size",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "sort_by",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "sort_order",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "name",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "description",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "name_or_description",
+                "type": "str",
+                "required": "false"
+            }
+        ],
+        "return": "SystemPromptEntityListing"
+    },
+    "GET /api/v2/flows/{flowId}": {
+        "operationId": "get_flow",
+        "functionName": "get_flow",
+        "signature": "get_flow(flow_id, deleted)",
+        "parameters": [
+            {
+                "name": "flow_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "deleted",
+                "type": "bool",
+                "required": "false"
+            }
+        ],
+        "return": "Flow"
+    },
+    "GET /api/v2/flows/{flowId}/history/{historyId}": {
+        "operationId": "get_flow_history_history_id",
+        "functionName": "get_flow_history_history_id",
+        "signature": "get_flow_history_history_id(flow_id, history_id, page_number, page_size, sort_order, sort_by, action)",
+        "parameters": [
+            {
+                "name": "flow_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "history_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "page_number",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "page_size",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "sort_order",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "sort_by",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "action",
+                "type": "list[str]",
+                "required": "false"
+            }
+        ],
+        "return": "HistoryListing"
+    },
+    "GET /api/v2/flows/{flowId}/latestconfiguration": {
+        "operationId": "get_flow_latestconfiguration",
+        "functionName": "get_flow_latestconfiguration",
+        "signature": "get_flow_latestconfiguration(flow_id, deleted)",
+        "parameters": [
+            {
+                "name": "flow_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "deleted",
+                "type": "bool",
+                "required": "false"
+            }
+        ],
+        "return": "object"
+    },
+    "GET /api/v2/flows/{flowId}/versions/{versionId}": {
+        "operationId": "get_flow_version",
+        "functionName": "get_flow_version",
+        "signature": "get_flow_version(flow_id, version_id, deleted)",
+        "parameters": [
+            {
+                "name": "flow_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "version_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "deleted",
+                "type": "str",
+                "required": "false"
+            }
+        ],
+        "return": "FlowVersion"
+    },
+    "GET /api/v2/flows/{flowId}/versions/{versionId}/configuration": {
+        "operationId": "get_flow_version_configuration",
+        "functionName": "get_flow_version_configuration",
+        "signature": "get_flow_version_configuration(flow_id, version_id, deleted)",
+        "parameters": [
+            {
+                "name": "flow_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "version_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "deleted",
+                "type": "str",
+                "required": "false"
+            }
+        ],
+        "return": "object"
+    },
+    "GET /api/v2/flows/{flowId}/versions/{versionId}/health": {
+        "operationId": "get_flow_version_health",
+        "functionName": "get_flow_version_health",
+        "signature": "get_flow_version_health(flow_id, version_id, language)",
+        "parameters": [
+            {
+                "name": "flow_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "version_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "language",
+                "type": "str",
+                "required": "false"
+            }
+        ],
+        "return": "FlowHealth"
+    },
+    "GET /api/v2/flows/{flowId}/versions/{versionId}/intents/{intentId}/health": {
+        "operationId": "get_flow_version_intent_health",
+        "functionName": "get_flow_version_intent_health",
+        "signature": "get_flow_version_intent_health(flow_id, version_id, intent_id, language)",
+        "parameters": [
+            {
+                "name": "flow_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "version_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "intent_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "language",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "FlowHealthIntent"
+    },
+    "GET /api/v2/flows/{flowId}/versions/{versionId}/intents/{intentId}/utterances/{utteranceId}/health": {
+        "operationId": "get_flow_version_intent_utterance_health",
+        "functionName": "get_flow_version_intent_utterance_health",
+        "signature": "get_flow_version_intent_utterance_health(flow_id, version_id, intent_id, utterance_id, language)",
+        "parameters": [
+            {
+                "name": "flow_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "version_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "intent_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "utterance_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "language",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "FlowHealthUtterance"
+    },
+    "GET /api/v2/flows/{flowId}/versions": {
+        "operationId": "get_flow_versions",
+        "functionName": "get_flow_versions",
+        "signature": "get_flow_versions(flow_id, page_number, page_size, deleted)",
+        "parameters": [
+            {
+                "name": "flow_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "page_number",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "page_size",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "deleted",
+                "type": "bool",
+                "required": "false"
+            }
+        ],
+        "return": "FlowVersionEntityListing"
+    },
+    "GET /api/v2/flows": {
+        "operationId": "get_flows",
+        "functionName": "get_flows",
+        "signature": "get_flows(type, page_number, page_size, sort_by, sort_order, id, name, description, name_or_description, publish_version_id, editable_by, locked_by, locked_by_client_id, secure, deleted, include_schemas, published_after, published_before, division_id)",
+        "parameters": [
+            {
+                "name": "type",
+                "type": "list[str]",
+                "required": "false"
+            },
+            {
+                "name": "page_number",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "page_size",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "sort_by",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "sort_order",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "id",
+                "type": "list[str]",
+                "required": "false"
+            },
+            {
+                "name": "name",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "description",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "name_or_description",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "publish_version_id",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "editable_by",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "locked_by",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "locked_by_client_id",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "secure",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "deleted",
+                "type": "bool",
+                "required": "false"
+            },
+            {
+                "name": "include_schemas",
+                "type": "bool",
+                "required": "false"
+            },
+            {
+                "name": "published_after",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "published_before",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "division_id",
+                "type": "list[str]",
+                "required": "false"
+            }
+        ],
+        "return": "FlowEntityListing"
+    },
+    "GET /api/v2/flows/datatables/{datatableId}": {
+        "operationId": "get_flows_datatable",
+        "functionName": "get_flows_datatable",
+        "signature": "get_flows_datatable(datatable_id, expand)",
+        "parameters": [
+            {
+                "name": "datatable_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "expand",
+                "type": "str",
+                "required": "false"
+            }
+        ],
+        "return": "DataTable"
+    },
+    "GET /api/v2/flows/datatables/{datatableId}/export/jobs/{exportJobId}": {
+        "operationId": "get_flows_datatable_export_job",
+        "functionName": "get_flows_datatable_export_job",
+        "signature": "get_flows_datatable_export_job(datatable_id, export_job_id)",
+        "parameters": [
+            {
+                "name": "datatable_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "export_job_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "DataTableExportJob"
+    },
+    "GET /api/v2/flows/datatables/{datatableId}/import/jobs/{importJobId}": {
+        "operationId": "get_flows_datatable_import_job",
+        "functionName": "get_flows_datatable_import_job",
+        "signature": "get_flows_datatable_import_job(datatable_id, import_job_id)",
+        "parameters": [
+            {
+                "name": "datatable_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "import_job_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "DataTableImportJob"
+    },
+    "GET /api/v2/flows/datatables/{datatableId}/import/jobs": {
+        "operationId": "get_flows_datatable_import_jobs",
+        "functionName": "get_flows_datatable_import_jobs",
+        "signature": "get_flows_datatable_import_jobs(datatable_id, page_number, page_size)",
+        "parameters": [
+            {
+                "name": "datatable_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "page_number",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "page_size",
+                "type": "int",
+                "required": "false"
+            }
+        ],
+        "return": "DataTableImportEntityListing"
+    },
+    "GET /api/v2/flows/datatables/{datatableId}/rows/{rowId}": {
+        "operationId": "get_flows_datatable_row",
+        "functionName": "get_flows_datatable_row",
+        "signature": "get_flows_datatable_row(datatable_id, row_id, showbrief)",
+        "parameters": [
+            {
+                "name": "datatable_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "row_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "showbrief",
+                "type": "bool",
+                "required": "false"
+            }
+        ],
+        "return": "dict(str, object)"
+    },
+    "GET /api/v2/flows/datatables/{datatableId}/rows": {
+        "operationId": "get_flows_datatable_rows",
+        "functionName": "get_flows_datatable_rows",
+        "signature": "get_flows_datatable_rows(datatable_id, page_number, page_size, showbrief, sort_order)",
+        "parameters": [
+            {
+                "name": "datatable_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "page_number",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "page_size",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "showbrief",
+                "type": "bool",
+                "required": "false"
+            },
+            {
+                "name": "sort_order",
+                "type": "str",
+                "required": "false"
+            }
+        ],
+        "return": "DataTableRowEntityListing"
+    },
+    "GET /api/v2/flows/datatables": {
+        "operationId": "get_flows_datatables",
+        "functionName": "get_flows_datatables",
+        "signature": "get_flows_datatables(expand, page_number, page_size, sort_by, sort_order, division_id, name)",
+        "parameters": [
+            {
+                "name": "expand",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "page_number",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "page_size",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "sort_by",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "sort_order",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "division_id",
+                "type": "list[str]",
+                "required": "false"
+            },
+            {
+                "name": "name",
+                "type": "str",
+                "required": "false"
+            }
+        ],
+        "return": "DataTablesDomainEntityListing"
+    },
+    "GET /api/v2/flows/datatables/divisionviews/{datatableId}": {
+        "operationId": "get_flows_datatables_divisionview",
+        "functionName": "get_flows_datatables_divisionview",
+        "signature": "get_flows_datatables_divisionview(datatable_id, expand)",
+        "parameters": [
+            {
+                "name": "datatable_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "expand",
+                "type": "str",
+                "required": "false"
+            }
+        ],
+        "return": "DataTable"
+    },
+    "GET /api/v2/flows/datatables/divisionviews": {
+        "operationId": "get_flows_datatables_divisionviews",
+        "functionName": "get_flows_datatables_divisionviews",
+        "signature": "get_flows_datatables_divisionviews(expand, page_number, page_size, sort_by, sort_order, division_id, name)",
+        "parameters": [
+            {
+                "name": "expand",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "page_number",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "page_size",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "sort_by",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "sort_order",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "division_id",
+                "type": "list[str]",
+                "required": "false"
+            },
+            {
+                "name": "name",
+                "type": "str",
+                "required": "false"
+            }
+        ],
+        "return": "DataTablesDomainEntityListing"
+    },
+    "GET /api/v2/flows/divisionviews": {
+        "operationId": "get_flows_divisionviews",
+        "functionName": "get_flows_divisionviews",
+        "signature": "get_flows_divisionviews(type, page_number, page_size, sort_by, sort_order, id, name, publish_version_id, published_after, published_before, division_id, include_schemas)",
+        "parameters": [
+            {
+                "name": "type",
+                "type": "list[str]",
+                "required": "false"
+            },
+            {
+                "name": "page_number",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "page_size",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "sort_by",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "sort_order",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "id",
+                "type": "list[str]",
+                "required": "false"
+            },
+            {
+                "name": "name",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "publish_version_id",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "published_after",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "published_before",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "division_id",
+                "type": "list[str]",
+                "required": "false"
+            },
+            {
+                "name": "include_schemas",
+                "type": "bool",
+                "required": "false"
+            }
+        ],
+        "return": "FlowDivisionViewEntityListing"
+    },
+    "GET /api/v2/flows/executions/{flowExecutionId}": {
+        "operationId": "get_flows_execution",
+        "functionName": "get_flows_execution",
+        "signature": "get_flows_execution(flow_execution_id)",
+        "parameters": [
+            {
+                "name": "flow_execution_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "FlowRuntimeExecution"
+    },
+    "GET /api/v2/flows/instances/{instanceId}": {
+        "operationId": "get_flows_instance",
+        "functionName": "get_flows_instance",
+        "signature": "get_flows_instance(instance_id, expand)",
+        "parameters": [
+            {
+                "name": "instance_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "expand",
+                "type": "str",
+                "required": "false"
+            }
+        ],
+        "return": "GetFlowExecutionDataJobResult"
+    },
+    "GET /api/v2/flows/instances/jobs/{jobId}": {
+        "operationId": "get_flows_instances_job",
+        "functionName": "get_flows_instances_job",
+        "signature": "get_flows_instances_job(job_id)",
+        "parameters": [
+            {
+                "name": "job_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "GetFlowExecutionDataJobResult"
+    },
+    "GET /api/v2/flows/instances/querycapabilities": {
+        "operationId": "get_flows_instances_querycapabilities",
+        "functionName": "get_flows_instances_querycapabilities",
+        "signature": "get_flows_instances_querycapabilities(expand)",
+        "parameters": [
+            {
+                "name": "expand",
+                "type": "str",
+                "required": "false"
+            }
+        ],
+        "return": "FlowsQueryCriteriaResponse"
+    },
+    "GET /api/v2/flows/jobs/{jobId}": {
+        "operationId": "get_flows_job",
+        "functionName": "get_flows_job",
+        "signature": "get_flows_job(job_id, expand)",
+        "parameters": [
+            {
+                "name": "job_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "expand",
+                "type": "list[str]",
+                "required": "false"
+            }
+        ],
+        "return": "ArchitectJobStateResponse"
+    },
+    "GET /api/v2/flows/milestones/{milestoneId}": {
+        "operationId": "get_flows_milestone",
+        "functionName": "get_flows_milestone",
+        "signature": "get_flows_milestone(milestone_id)",
+        "parameters": [
+            {
+                "name": "milestone_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "FlowMilestone"
+    },
+    "GET /api/v2/flows/milestones": {
+        "operationId": "get_flows_milestones",
+        "functionName": "get_flows_milestones",
+        "signature": "get_flows_milestones(page_number, page_size, sort_by, sort_order, id, name, description, name_or_description, division_id)",
+        "parameters": [
+            {
+                "name": "page_number",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "page_size",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "sort_by",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "sort_order",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "id",
+                "type": "list[str]",
+                "required": "false"
+            },
+            {
+                "name": "name",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "description",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "name_or_description",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "division_id",
+                "type": "list[str]",
+                "required": "false"
+            }
+        ],
+        "return": "FlowMilestoneListing"
+    },
+    "GET /api/v2/flows/milestones/divisionviews": {
+        "operationId": "get_flows_milestones_divisionviews",
+        "functionName": "get_flows_milestones_divisionviews",
+        "signature": "get_flows_milestones_divisionviews(page_number, page_size, sort_by, sort_order, id, name, division_id)",
+        "parameters": [
+            {
+                "name": "page_number",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "page_size",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "sort_by",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "sort_order",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "id",
+                "type": "list[str]",
+                "required": "false"
+            },
+            {
+                "name": "name",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "division_id",
+                "type": "list[str]",
+                "required": "false"
+            }
+        ],
+        "return": "FlowMilestoneDivisionViewEntityListing"
+    },
+    "GET /api/v2/flows/outcomes/{flowOutcomeId}": {
+        "operationId": "get_flows_outcome",
+        "functionName": "get_flows_outcome",
+        "signature": "get_flows_outcome(flow_outcome_id)",
+        "parameters": [
+            {
+                "name": "flow_outcome_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "FlowOutcome"
+    },
+    "GET /api/v2/flows/outcomes": {
+        "operationId": "get_flows_outcomes",
+        "functionName": "get_flows_outcomes",
+        "signature": "get_flows_outcomes(page_number, page_size, sort_by, sort_order, id, name, description, name_or_description, division_id)",
+        "parameters": [
+            {
+                "name": "page_number",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "page_size",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "sort_by",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "sort_order",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "id",
+                "type": "list[str]",
+                "required": "false"
+            },
+            {
+                "name": "name",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "description",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "name_or_description",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "division_id",
+                "type": "list[str]",
+                "required": "false"
+            }
+        ],
+        "return": "FlowOutcomeListing"
+    },
+    "GET /api/v2/flows/outcomes/divisionviews": {
+        "operationId": "get_flows_outcomes_divisionviews",
+        "functionName": "get_flows_outcomes_divisionviews",
+        "signature": "get_flows_outcomes_divisionviews(page_number, page_size, sort_by, sort_order, id, name, division_id)",
+        "parameters": [
+            {
+                "name": "page_number",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "page_size",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "sort_by",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "sort_order",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "id",
+                "type": "list[str]",
+                "required": "false"
+            },
+            {
+                "name": "name",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "division_id",
+                "type": "list[str]",
+                "required": "false"
+            }
+        ],
+        "return": "FlowOutcomeDivisionViewEntityListing"
+    },
+    "PATCH /api/v2/architect/grammars/{grammarId}": {
+        "operationId": "patch_architect_grammar",
+        "functionName": "patch_architect_grammar",
+        "signature": "patch_architect_grammar(grammar_id, body)",
+        "parameters": [
+            {
+                "name": "grammar_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Grammar",
+                "required": "false"
+            }
+        ],
+        "return": "Grammar"
+    },
+    "PATCH /api/v2/architect/grammars/{grammarId}/languages/{languageCode}": {
+        "operationId": "patch_architect_grammar_language",
+        "functionName": "patch_architect_grammar_language",
+        "signature": "patch_architect_grammar_language(grammar_id, language_code, body)",
+        "parameters": [
+            {
+                "name": "grammar_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "language_code",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "GrammarLanguageUpdate",
+                "required": "false"
+            }
+        ],
+        "return": "GrammarLanguage"
+    },
+    "POST /api/v2/architect/dependencytracking/build": {
+        "operationId": "post_architect_dependencytracking_build",
+        "functionName": "post_architect_dependencytracking_build",
+        "signature": "post_architect_dependencytracking_build()"
+        
+    },
+    "POST /api/v2/architect/emergencygroups": {
+        "operationId": "post_architect_emergencygroups",
+        "functionName": "post_architect_emergencygroups",
+        "signature": "post_architect_emergencygroups(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "EmergencyGroup",
+                "required": "true"
+            }
+        ],
+        "return": "EmergencyGroup"
+    },
+    "POST /api/v2/architect/grammars/{grammarId}/languages/{languageCode}/files/dtmf": {
+        "operationId": "post_architect_grammar_language_files_dtmf",
+        "functionName": "post_architect_grammar_language_files_dtmf",
+        "signature": "post_architect_grammar_language_files_dtmf(grammar_id, language_code, body)",
+        "parameters": [
+            {
+                "name": "grammar_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "language_code",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "GrammarFileUploadRequest",
+                "required": "true"
+            }
+        ],
+        "return": "UploadUrlResponse"
+    },
+    "POST /api/v2/architect/grammars/{grammarId}/languages/{languageCode}/files/voice": {
+        "operationId": "post_architect_grammar_language_files_voice",
+        "functionName": "post_architect_grammar_language_files_voice",
+        "signature": "post_architect_grammar_language_files_voice(grammar_id, language_code, body)",
+        "parameters": [
+            {
+                "name": "grammar_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "language_code",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "GrammarFileUploadRequest",
+                "required": "true"
+            }
+        ],
+        "return": "UploadUrlResponse"
+    },
+    "POST /api/v2/architect/grammars/{grammarId}/languages": {
+        "operationId": "post_architect_grammar_languages",
+        "functionName": "post_architect_grammar_languages",
+        "signature": "post_architect_grammar_languages(grammar_id, body)",
+        "parameters": [
+            {
+                "name": "grammar_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "GrammarLanguage",
+                "required": "true"
+            }
+        ],
+        "return": "GrammarLanguage"
+    },
+    "POST /api/v2/architect/grammars": {
+        "operationId": "post_architect_grammars",
+        "functionName": "post_architect_grammars",
+        "signature": "post_architect_grammars(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Grammar",
+                "required": "true"
+            }
+        ],
+        "return": "Grammar"
+    },
+    "POST /api/v2/architect/ivrs": {
+        "operationId": "post_architect_ivrs",
+        "functionName": "post_architect_ivrs",
+        "signature": "post_architect_ivrs(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "IVR",
+                "required": "true"
+            }
+        ],
+        "return": "IVR"
+    },
+    "POST /api/v2/architect/prompts/{promptId}/history": {
+        "operationId": "post_architect_prompt_history",
+        "functionName": "post_architect_prompt_history",
+        "signature": "post_architect_prompt_history(prompt_id)",
+        "parameters": [
+            {
+                "name": "prompt_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "Operation"
+    },
+    "POST /api/v2/architect/prompts/{promptId}/resources": {
+        "operationId": "post_architect_prompt_resources",
+        "functionName": "post_architect_prompt_resources",
+        "signature": "post_architect_prompt_resources(prompt_id, body)",
+        "parameters": [
+            {
+                "name": "prompt_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "PromptAssetCreate",
+                "required": "true"
+            }
+        ],
+        "return": "PromptAsset"
+    },
+    "POST /api/v2/architect/prompts": {
+        "operationId": "post_architect_prompts",
+        "functionName": "post_architect_prompts",
+        "signature": "post_architect_prompts(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Prompt",
+                "required": "true"
+            }
+        ],
+        "return": "Prompt"
+    },
+    "POST /api/v2/architect/schedulegroups": {
+        "operationId": "post_architect_schedulegroups",
+        "functionName": "post_architect_schedulegroups",
+        "signature": "post_architect_schedulegroups(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "ScheduleGroup",
+                "required": "true"
+            }
+        ],
+        "return": "ScheduleGroup"
+    },
+    "POST /api/v2/architect/schedules": {
+        "operationId": "post_architect_schedules",
+        "functionName": "post_architect_schedules",
+        "signature": "post_architect_schedules(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Schedule",
+                "required": "true"
+            }
+        ],
+        "return": "Schedule"
+    },
+    "POST /api/v2/architect/systemprompts/{promptId}/history": {
+        "operationId": "post_architect_systemprompt_history",
+        "functionName": "post_architect_systemprompt_history",
+        "signature": "post_architect_systemprompt_history(prompt_id)",
+        "parameters": [
+            {
+                "name": "prompt_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "Operation"
+    },
+    "POST /api/v2/architect/systemprompts/{promptId}/resources": {
+        "operationId": "post_architect_systemprompt_resources",
+        "functionName": "post_architect_systemprompt_resources",
+        "signature": "post_architect_systemprompt_resources(prompt_id, body)",
+        "parameters": [
+            {
+                "name": "prompt_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "SystemPromptAsset",
+                "required": "true"
+            }
+        ],
+        "return": "SystemPromptAsset"
+    },
+    "POST /api/v2/flows/{flowId}/history": {
+        "operationId": "post_flow_history",
+        "functionName": "post_flow_history",
+        "signature": "post_flow_history(flow_id)",
+        "parameters": [
+            {
+                "name": "flow_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "Operation"
+    },
+    "POST /api/v2/flows/{flowId}/versions": {
+        "operationId": "post_flow_versions",
+        "functionName": "post_flow_versions",
+        "signature": "post_flow_versions(flow_id, body)",
+        "parameters": [
+            {
+                "name": "flow_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "object",
+                "required": "true"
+            }
+        ],
+        "return": "FlowVersion"
+    },
+    "POST /api/v2/flows": {
+        "operationId": "post_flows",
+        "functionName": "post_flows",
+        "signature": "post_flows(body, language)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Flow",
+                "required": "true"
+            },
+            {
+                "name": "language",
+                "type": "str",
+                "required": "false"
+            }
+        ],
+        "return": "Flow"
+    },
+    "POST /api/v2/flows/actions/checkin": {
+        "operationId": "post_flows_actions_checkin",
+        "functionName": "post_flows_actions_checkin",
+        "signature": "post_flows_actions_checkin(flow)",
+        "parameters": [
+            {
+                "name": "flow",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "Operation"
+    },
+    "POST /api/v2/flows/actions/checkout": {
+        "operationId": "post_flows_actions_checkout",
+        "functionName": "post_flows_actions_checkout",
+        "signature": "post_flows_actions_checkout(flow)",
+        "parameters": [
+            {
+                "name": "flow",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "Flow"
+    },
+    "POST /api/v2/flows/actions/deactivate": {
+        "operationId": "post_flows_actions_deactivate",
+        "functionName": "post_flows_actions_deactivate",
+        "signature": "post_flows_actions_deactivate(flow)",
+        "parameters": [
+            {
+                "name": "flow",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "Flow"
+    },
+    "POST /api/v2/flows/actions/publish": {
+        "operationId": "post_flows_actions_publish",
+        "functionName": "post_flows_actions_publish",
+        "signature": "post_flows_actions_publish(flow, version)",
+        "parameters": [
+            {
+                "name": "flow",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "version",
+                "type": "str",
+                "required": "false"
+            }
+        ],
+        "return": "Operation"
+    },
+    "POST /api/v2/flows/actions/revert": {
+        "operationId": "post_flows_actions_revert",
+        "functionName": "post_flows_actions_revert",
+        "signature": "post_flows_actions_revert(flow)",
+        "parameters": [
+            {
+                "name": "flow",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "Flow"
+    },
+    "POST /api/v2/flows/actions/unlock": {
+        "operationId": "post_flows_actions_unlock",
+        "functionName": "post_flows_actions_unlock",
+        "signature": "post_flows_actions_unlock(flow)",
+        "parameters": [
+            {
+                "name": "flow",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "Flow"
+    },
+    "POST /api/v2/flows/datatables/{datatableId}/export/jobs": {
+        "operationId": "post_flows_datatable_export_jobs",
+        "functionName": "post_flows_datatable_export_jobs",
+        "signature": "post_flows_datatable_export_jobs(datatable_id)",
+        "parameters": [
+            {
+                "name": "datatable_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "DataTableExportJob"
+    },
+    "POST /api/v2/flows/datatables/{datatableId}/import/jobs": {
+        "operationId": "post_flows_datatable_import_jobs",
+        "functionName": "post_flows_datatable_import_jobs",
+        "signature": "post_flows_datatable_import_jobs(datatable_id, body)",
+        "parameters": [
+            {
+                "name": "datatable_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "DataTableImportJob",
+                "required": "true"
+            }
+        ],
+        "return": "DataTableImportJob"
+    },
+    "POST /api/v2/flows/datatables/{datatableId}/rows": {
+        "operationId": "post_flows_datatable_rows",
+        "functionName": "post_flows_datatable_rows",
+        "signature": "post_flows_datatable_rows(datatable_id, data_table_row)",
+        "parameters": [
+            {
+                "name": "datatable_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "data_table_row",
+                "type": "object",
+                "required": "true"
+            }
+        ],
+        "return": "dict(str, object)"
+    },
+    "POST /api/v2/flows/datatables": {
+        "operationId": "post_flows_datatables",
+        "functionName": "post_flows_datatables",
+        "signature": "post_flows_datatables(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "DataTable",
+                "required": "true"
+            }
+        ],
+        "return": "DataTable"
+    },
+    "POST /api/v2/flows/executions": {
+        "operationId": "post_flows_executions",
+        "functionName": "post_flows_executions",
+        "signature": "post_flows_executions(flow_launch_request)",
+        "parameters": [
+            {
+                "name": "flow_launch_request",
+                "type": "FlowExecutionLaunchRequest",
+                "required": "true"
+            }
+        ],
+        "return": "FlowExecutionLaunchResponse"
+    },
+    "POST /api/v2/flows/instances/jobs": {
+        "operationId": "post_flows_instances_jobs",
+        "functionName": "post_flows_instances_jobs",
+        "signature": "post_flows_instances_jobs(body, expand)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "ExecutionDataRequest",
+                "required": "true"
+            },
+            {
+                "name": "expand",
+                "type": "str",
+                "required": "false"
+            }
+        ],
+        "return": "GetFlowExecutionDataJobResult"
+    },
+    "POST /api/v2/flows/instances/query": {
+        "operationId": "post_flows_instances_query",
+        "functionName": "post_flows_instances_query",
+        "signature": "post_flows_instances_query(body, index_only)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "CriteriaQuery",
+                "required": "true"
+            },
+            {
+                "name": "index_only",
+                "type": "bool",
+                "required": "false"
+            }
+        ],
+        "return": "FlowResultEntityListing"
+    },
+    "POST /api/v2/flows/jobs": {
+        "operationId": "post_flows_jobs",
+        "functionName": "post_flows_jobs",
+        "signature": "post_flows_jobs()",
+        
+        "return": "RegisterArchitectJobResponse"
+    },
+    "POST /api/v2/flows/milestones": {
+        "operationId": "post_flows_milestones",
+        "functionName": "post_flows_milestones",
+        "signature": "post_flows_milestones(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "FlowMilestone",
+                "required": "false"
+            }
+        ],
+        "return": "FlowMilestone"
+    },
+    "POST /api/v2/flows/outcomes": {
+        "operationId": "post_flows_outcomes",
+        "functionName": "post_flows_outcomes",
+        "signature": "post_flows_outcomes(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "FlowOutcome",
+                "required": "false"
+            }
+        ],
+        "return": "FlowOutcome"
+    },
+    "PUT /api/v2/architect/emergencygroups/{emergencyGroupId}": {
+        "operationId": "put_architect_emergencygroup",
+        "functionName": "put_architect_emergencygroup",
+        "signature": "put_architect_emergencygroup(emergency_group_id, body)",
+        "parameters": [
+            {
+                "name": "emergency_group_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "EmergencyGroup",
+                "required": "true"
+            }
+        ],
+        "return": "EmergencyGroup"
+    },
+    "PUT /api/v2/architect/ivrs/{ivrId}": {
+        "operationId": "put_architect_ivr",
+        "functionName": "put_architect_ivr",
+        "signature": "put_architect_ivr(ivr_id, body)",
+        "parameters": [
+            {
+                "name": "ivr_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "IVR",
+                "required": "true"
+            }
+        ],
+        "return": "IVR"
+    },
+    "PUT /api/v2/architect/prompts/{promptId}": {
+        "operationId": "put_architect_prompt",
+        "functionName": "put_architect_prompt",
+        "signature": "put_architect_prompt(prompt_id, body)",
+        "parameters": [
+            {
+                "name": "prompt_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Prompt",
+                "required": "true"
+            }
+        ],
+        "return": "Prompt"
+    },
+    "PUT /api/v2/architect/prompts/{promptId}/resources/{languageCode}": {
+        "operationId": "put_architect_prompt_resource",
+        "functionName": "put_architect_prompt_resource",
+        "signature": "put_architect_prompt_resource(prompt_id, language_code, body)",
+        "parameters": [
+            {
+                "name": "prompt_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "language_code",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "PromptAsset",
+                "required": "true"
+            }
+        ],
+        "return": "PromptAsset"
+    },
+    "PUT /api/v2/architect/schedules/{scheduleId}": {
+        "operationId": "put_architect_schedule",
+        "functionName": "put_architect_schedule",
+        "signature": "put_architect_schedule(schedule_id, body)",
+        "parameters": [
+            {
+                "name": "schedule_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Schedule",
+                "required": "true"
+            }
+        ],
+        "return": "Schedule"
+    },
+    "PUT /api/v2/architect/schedulegroups/{scheduleGroupId}": {
+        "operationId": "put_architect_schedulegroup",
+        "functionName": "put_architect_schedulegroup",
+        "signature": "put_architect_schedulegroup(schedule_group_id, body)",
+        "parameters": [
+            {
+                "name": "schedule_group_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "ScheduleGroup",
+                "required": "true"
+            }
+        ],
+        "return": "ScheduleGroup"
+    },
+    "PUT /api/v2/architect/systemprompts/{promptId}/resources/{languageCode}": {
+        "operationId": "put_architect_systemprompt_resource",
+        "functionName": "put_architect_systemprompt_resource",
+        "signature": "put_architect_systemprompt_resource(prompt_id, language_code, body)",
+        "parameters": [
+            {
+                "name": "prompt_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "language_code",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "SystemPromptAsset",
+                "required": "true"
+            }
+        ],
+        "return": "SystemPromptAsset"
+    },
+    "PUT /api/v2/flows/{flowId}": {
+        "operationId": "put_flow",
+        "functionName": "put_flow",
+        "signature": "put_flow(flow_id, body)",
+        "parameters": [
+            {
+                "name": "flow_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Flow",
+                "required": "true"
+            }
+        ],
+        "return": "Flow"
+    },
+    "PUT /api/v2/flows/datatables/{datatableId}": {
+        "operationId": "put_flows_datatable",
+        "functionName": "put_flows_datatable",
+        "signature": "put_flows_datatable(datatable_id, body, expand)",
+        "parameters": [
+            {
+                "name": "datatable_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "DataTable",
+                "required": "true"
+            },
+            {
+                "name": "expand",
+                "type": "str",
+                "required": "false"
+            }
+        ],
+        "return": "DataTable"
+    },
+    "PUT /api/v2/flows/datatables/{datatableId}/rows/{rowId}": {
+        "operationId": "put_flows_datatable_row",
+        "functionName": "put_flows_datatable_row",
+        "signature": "put_flows_datatable_row(datatable_id, row_id, body)",
+        "parameters": [
+            {
+                "name": "datatable_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "row_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "object",
+                "required": "false"
+            }
+        ],
+        "return": "dict(str, object)"
+    },
+    "PUT /api/v2/flows/milestones/{milestoneId}": {
+        "operationId": "put_flows_milestone",
+        "functionName": "put_flows_milestone",
+        "signature": "put_flows_milestone(milestone_id, body)",
+        "parameters": [
+            {
+                "name": "milestone_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "FlowMilestone",
+                "required": "false"
+            }
+        ],
+        "return": "FlowMilestone"
+    },
+    "PUT /api/v2/flows/outcomes/{flowOutcomeId}": {
+        "operationId": "put_flows_outcome",
+        "functionName": "put_flows_outcome",
+        "signature": "put_flows_outcome(flow_outcome_id, body)",
+        "parameters": [
+            {
+                "name": "flow_outcome_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "FlowOutcome",
+                "required": "false"
+            }
+        ],
+        "return": "Operation"
+    }
+    
+}

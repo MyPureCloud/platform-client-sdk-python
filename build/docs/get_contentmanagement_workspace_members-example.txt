@@ -1,0 +1,21 @@
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'your_access_token'
+# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ContentManagementApi();
+workspace_id = 'workspace_id_example' # str | Workspace ID
+page_size = 25 # int | Page size (optional) (default to 25)
+page_number = 1 # int | Page number (optional) (default to 1)
+expand = ['expand_example'] # list[str] | Which fields, if any, to expand. (optional)
+
+try:
+    # Get a list workspace members
+    api_response = api_instance.get_contentmanagement_workspace_members(workspace_id, page_size=page_size, page_number=page_number, expand=expand)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ContentManagementApi->get_contentmanagement_workspace_members: %s\n" % e)

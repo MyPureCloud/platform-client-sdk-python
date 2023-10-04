@@ -1,0 +1,19 @@
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'your_access_token'
+# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TaskManagementApi();
+workbin_id = 'workbin_id_example' # str | Workbin ID
+body = PureCloudPlatformClientV2.WorkbinUpdate() # WorkbinUpdate | Json with attributes and their new values: {\"description\":\"new description\", \"name\":\"new name\"}.
+
+try:
+    # Update the attributes of a workbin
+    api_response = api_instance.patch_taskmanagement_workbin(workbin_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling TaskManagementApi->patch_taskmanagement_workbin: %s\n" % e)

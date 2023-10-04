@@ -1,0 +1,2502 @@
+{
+    "DELETE /api/v2/routing/assessments/{assessmentId}": {
+        "operationId": "delete_routing_assessment",
+        "functionName": "delete_routing_assessment",
+        "signature": "delete_routing_assessment(assessment_id)",
+        "parameters": [
+            {
+                "name": "assessment_id",
+                "type": "str",
+                "required": "true"
+            }
+        ]
+    },
+    "DELETE /api/v2/routing/email/domains/{domainId}": {
+        "operationId": "delete_routing_email_domain",
+        "functionName": "delete_routing_email_domain",
+        "signature": "delete_routing_email_domain(domain_id)",
+        "parameters": [
+            {
+                "name": "domain_id",
+                "type": "str",
+                "required": "true"
+            }
+        ]
+    },
+    "DELETE /api/v2/routing/email/domains/{domainName}/routes/{routeId}": {
+        "operationId": "delete_routing_email_domain_route",
+        "functionName": "delete_routing_email_domain_route",
+        "signature": "delete_routing_email_domain_route(domain_name, route_id)",
+        "parameters": [
+            {
+                "name": "domain_name",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "route_id",
+                "type": "str",
+                "required": "true"
+            }
+        ]
+    },
+    "DELETE /api/v2/routing/email/outbound/domains/{domainId}": {
+        "operationId": "delete_routing_email_outbound_domain",
+        "functionName": "delete_routing_email_outbound_domain",
+        "signature": "delete_routing_email_outbound_domain(domain_id)",
+        "parameters": [
+            {
+                "name": "domain_id",
+                "type": "str",
+                "required": "true"
+            }
+        ]
+    },
+    "DELETE /api/v2/routing/languages/{languageId}": {
+        "operationId": "delete_routing_language",
+        "functionName": "delete_routing_language",
+        "signature": "delete_routing_language(language_id)",
+        "parameters": [
+            {
+                "name": "language_id",
+                "type": "str",
+                "required": "true"
+            }
+        ]
+    },
+    "DELETE /api/v2/routing/predictors/{predictorId}": {
+        "operationId": "delete_routing_predictor",
+        "functionName": "delete_routing_predictor",
+        "signature": "delete_routing_predictor(predictor_id)",
+        "parameters": [
+            {
+                "name": "predictor_id",
+                "type": "str",
+                "required": "true"
+            }
+        ]
+    },
+    "DELETE /api/v2/routing/queues/{queueId}": {
+        "operationId": "delete_routing_queue",
+        "functionName": "delete_routing_queue",
+        "signature": "delete_routing_queue(queue_id, force_delete)",
+        "parameters": [
+            {
+                "name": "queue_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "force_delete",
+                "type": "bool",
+                "required": "false"
+            }
+        ]
+    },
+    "DELETE /api/v2/routing/queues/{queueId}/members/{memberId}": {
+        "operationId": "delete_routing_queue_member",
+        "functionName": "delete_routing_queue_member",
+        "signature": "delete_routing_queue_member(queue_id, member_id)",
+        "parameters": [
+            {
+                "name": "queue_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "member_id",
+                "type": "str",
+                "required": "true"
+            }
+        ]
+    },
+    "DELETE /api/v2/routing/queues/{queueId}/users/{memberId}": {
+        "operationId": "delete_routing_queue_user",
+        "functionName": "delete_routing_queue_user",
+        "signature": "delete_routing_queue_user(queue_id, member_id)",
+        "parameters": [
+            {
+                "name": "queue_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "member_id",
+                "type": "str",
+                "required": "true"
+            }
+        ]
+    },
+    "DELETE /api/v2/routing/queues/{queueId}/wrapupcodes/{codeId}": {
+        "operationId": "delete_routing_queue_wrapupcode",
+        "functionName": "delete_routing_queue_wrapupcode",
+        "signature": "delete_routing_queue_wrapupcode(queue_id, code_id)",
+        "parameters": [
+            {
+                "name": "queue_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "code_id",
+                "type": "str",
+                "required": "true"
+            }
+        ]
+    },
+    "DELETE /api/v2/routing/settings": {
+        "operationId": "delete_routing_settings",
+        "functionName": "delete_routing_settings",
+        "signature": "delete_routing_settings()"
+        
+    },
+    "DELETE /api/v2/routing/skills/{skillId}": {
+        "operationId": "delete_routing_skill",
+        "functionName": "delete_routing_skill",
+        "signature": "delete_routing_skill(skill_id)",
+        "parameters": [
+            {
+                "name": "skill_id",
+                "type": "str",
+                "required": "true"
+            }
+        ]
+    },
+    "DELETE /api/v2/routing/skillgroups/{skillGroupId}": {
+        "operationId": "delete_routing_skillgroup",
+        "functionName": "delete_routing_skillgroup",
+        "signature": "delete_routing_skillgroup(skill_group_id)",
+        "parameters": [
+            {
+                "name": "skill_group_id",
+                "type": "str",
+                "required": "true"
+            }
+        ]
+    },
+    "DELETE /api/v2/routing/sms/addresses/{addressId}": {
+        "operationId": "delete_routing_sms_address",
+        "functionName": "delete_routing_sms_address",
+        "signature": "delete_routing_sms_address(address_id)",
+        "parameters": [
+            {
+                "name": "address_id",
+                "type": "str",
+                "required": "true"
+            }
+        ]
+    },
+    "DELETE /api/v2/routing/sms/phonenumbers/{addressId}": {
+        "operationId": "delete_routing_sms_phonenumber",
+        "functionName": "delete_routing_sms_phonenumber",
+        "signature": "delete_routing_sms_phonenumber(address_id)",
+        "parameters": [
+            {
+                "name": "address_id",
+                "type": "str",
+                "required": "true"
+            }
+        ]
+    },
+    "DELETE /api/v2/routing/users/{userId}/utilization": {
+        "operationId": "delete_routing_user_utilization",
+        "functionName": "delete_routing_user_utilization",
+        "signature": "delete_routing_user_utilization(user_id)",
+        "parameters": [
+            {
+                "name": "user_id",
+                "type": "str",
+                "required": "true"
+            }
+        ]
+    },
+    "DELETE /api/v2/routing/utilization": {
+        "operationId": "delete_routing_utilization",
+        "functionName": "delete_routing_utilization",
+        "signature": "delete_routing_utilization()"
+        
+    },
+    "DELETE /api/v2/routing/utilization/tags/{tagId}": {
+        "operationId": "delete_routing_utilization_tag",
+        "functionName": "delete_routing_utilization_tag",
+        "signature": "delete_routing_utilization_tag(tag_id, force_delete)",
+        "parameters": [
+            {
+                "name": "tag_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "force_delete",
+                "type": "bool",
+                "required": "false"
+            }
+        ]
+    },
+    "DELETE /api/v2/routing/wrapupcodes/{codeId}": {
+        "operationId": "delete_routing_wrapupcode",
+        "functionName": "delete_routing_wrapupcode",
+        "signature": "delete_routing_wrapupcode(code_id)",
+        "parameters": [
+            {
+                "name": "code_id",
+                "type": "str",
+                "required": "true"
+            }
+        ]
+    },
+    "DELETE /api/v2/users/{userId}/routinglanguages/{languageId}": {
+        "operationId": "delete_user_routinglanguage",
+        "functionName": "delete_user_routinglanguage",
+        "signature": "delete_user_routinglanguage(user_id, language_id)",
+        "parameters": [
+            {
+                "name": "user_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "language_id",
+                "type": "str",
+                "required": "true"
+            }
+        ]
+    },
+    "DELETE /api/v2/users/{userId}/routingskills/{skillId}": {
+        "operationId": "delete_user_routingskill",
+        "functionName": "delete_user_routingskill",
+        "signature": "delete_user_routingskill(user_id, skill_id)",
+        "parameters": [
+            {
+                "name": "user_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "skill_id",
+                "type": "str",
+                "required": "true"
+            }
+        ]
+    },
+    "GET /api/v2/routing/assessments/{assessmentId}": {
+        "operationId": "get_routing_assessment",
+        "functionName": "get_routing_assessment",
+        "signature": "get_routing_assessment(assessment_id)",
+        "parameters": [
+            {
+                "name": "assessment_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "BenefitAssessment"
+    },
+    "GET /api/v2/routing/assessments": {
+        "operationId": "get_routing_assessments",
+        "functionName": "get_routing_assessments",
+        "signature": "get_routing_assessments(before, after, limit, page_size, queue_id)",
+        "parameters": [
+            {
+                "name": "before",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "after",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "limit",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "page_size",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "queue_id",
+                "type": "list[str]",
+                "required": "false"
+            }
+        ],
+        "return": "AssessmentListing"
+    },
+    "GET /api/v2/routing/assessments/jobs/{jobId}": {
+        "operationId": "get_routing_assessments_job",
+        "functionName": "get_routing_assessments_job",
+        "signature": "get_routing_assessments_job(job_id)",
+        "parameters": [
+            {
+                "name": "job_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "BenefitAssessmentJob"
+    },
+    "GET /api/v2/routing/assessments/jobs": {
+        "operationId": "get_routing_assessments_jobs",
+        "functionName": "get_routing_assessments_jobs",
+        "signature": "get_routing_assessments_jobs(division_id)",
+        "parameters": [
+            {
+                "name": "division_id",
+                "type": "list[str]",
+                "required": "false"
+            }
+        ],
+        "return": "AssessmentJobListing"
+    },
+    "GET /api/v2/routing/availablemediatypes": {
+        "operationId": "get_routing_availablemediatypes",
+        "functionName": "get_routing_availablemediatypes",
+        "signature": "get_routing_availablemediatypes()",
+        
+        "return": "AvailableMediaTypeEntityListing"
+    },
+    "GET /api/v2/routing/email/domains/{domainId}": {
+        "operationId": "get_routing_email_domain",
+        "functionName": "get_routing_email_domain",
+        "signature": "get_routing_email_domain(domain_id)",
+        "parameters": [
+            {
+                "name": "domain_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "InboundDomain"
+    },
+    "GET /api/v2/routing/email/domains/{domainName}/routes/{routeId}": {
+        "operationId": "get_routing_email_domain_route",
+        "functionName": "get_routing_email_domain_route",
+        "signature": "get_routing_email_domain_route(domain_name, route_id)",
+        "parameters": [
+            {
+                "name": "domain_name",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "route_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "InboundRoute"
+    },
+    "GET /api/v2/routing/email/domains/{domainName}/routes": {
+        "operationId": "get_routing_email_domain_routes",
+        "functionName": "get_routing_email_domain_routes",
+        "signature": "get_routing_email_domain_routes(domain_name, page_size, page_number, pattern)",
+        "parameters": [
+            {
+                "name": "domain_name",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "page_size",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "page_number",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "pattern",
+                "type": "str",
+                "required": "false"
+            }
+        ],
+        "return": "InboundRouteEntityListing"
+    },
+    "GET /api/v2/routing/email/domains": {
+        "operationId": "get_routing_email_domains",
+        "functionName": "get_routing_email_domains",
+        "signature": "get_routing_email_domains(page_size, page_number, exclude_status, filter)",
+        "parameters": [
+            {
+                "name": "page_size",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "page_number",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "exclude_status",
+                "type": "bool",
+                "required": "false"
+            },
+            {
+                "name": "filter",
+                "type": "str",
+                "required": "false"
+            }
+        ],
+        "return": "InboundDomainEntityListing"
+    },
+    "GET /api/v2/routing/email/outbound/domains/{domainId}": {
+        "operationId": "get_routing_email_outbound_domain",
+        "functionName": "get_routing_email_outbound_domain",
+        "signature": "get_routing_email_outbound_domain(domain_id)",
+        "parameters": [
+            {
+                "name": "domain_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "OutboundDomain"
+    },
+    "GET /api/v2/routing/email/outbound/domains/{domainId}/activation": {
+        "operationId": "get_routing_email_outbound_domain_activation",
+        "functionName": "get_routing_email_outbound_domain_activation",
+        "signature": "get_routing_email_outbound_domain_activation(domain_id)",
+        "parameters": [
+            {
+                "name": "domain_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "EmailOutboundDomainResult"
+    },
+    "GET /api/v2/routing/email/outbound/domains/{domainId}/search": {
+        "operationId": "get_routing_email_outbound_domain_search",
+        "functionName": "get_routing_email_outbound_domain_search",
+        "signature": "get_routing_email_outbound_domain_search(domain_id)",
+        "parameters": [
+            {
+                "name": "domain_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "OutboundDomain"
+    },
+    "GET /api/v2/routing/email/outbound/domains": {
+        "operationId": "get_routing_email_outbound_domains",
+        "functionName": "get_routing_email_outbound_domains",
+        "signature": "get_routing_email_outbound_domains(filter)",
+        "parameters": [
+            {
+                "name": "filter",
+                "type": "str",
+                "required": "false"
+            }
+        ],
+        "return": "OutboundDomainEntityListing"
+    },
+    "GET /api/v2/routing/email/setup": {
+        "operationId": "get_routing_email_setup",
+        "functionName": "get_routing_email_setup",
+        "signature": "get_routing_email_setup()",
+        
+        "return": "EmailSetup"
+    },
+    "GET /api/v2/routing/languages/{languageId}": {
+        "operationId": "get_routing_language",
+        "functionName": "get_routing_language",
+        "signature": "get_routing_language(language_id)",
+        "parameters": [
+            {
+                "name": "language_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "Language"
+    },
+    "GET /api/v2/routing/languages": {
+        "operationId": "get_routing_languages",
+        "functionName": "get_routing_languages",
+        "signature": "get_routing_languages(page_size, page_number, sort_order, name, id)",
+        "parameters": [
+            {
+                "name": "page_size",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "page_number",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "sort_order",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "name",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "id",
+                "type": "list[str]",
+                "required": "false"
+            }
+        ],
+        "return": "LanguageEntityListing"
+    },
+    "GET /api/v2/routing/message/recipients/{recipientId}": {
+        "operationId": "get_routing_message_recipient",
+        "functionName": "get_routing_message_recipient",
+        "signature": "get_routing_message_recipient(recipient_id)",
+        "parameters": [
+            {
+                "name": "recipient_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "Recipient"
+    },
+    "GET /api/v2/routing/message/recipients": {
+        "operationId": "get_routing_message_recipients",
+        "functionName": "get_routing_message_recipients",
+        "signature": "get_routing_message_recipients(messenger_type, name, page_size, page_number)",
+        "parameters": [
+            {
+                "name": "messenger_type",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "name",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "page_size",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "page_number",
+                "type": "int",
+                "required": "false"
+            }
+        ],
+        "return": "RecipientListing"
+    },
+    "GET /api/v2/routing/predictors/{predictorId}": {
+        "operationId": "get_routing_predictor",
+        "functionName": "get_routing_predictor",
+        "signature": "get_routing_predictor(predictor_id)",
+        "parameters": [
+            {
+                "name": "predictor_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "Predictor"
+    },
+    "GET /api/v2/routing/predictors/{predictorId}/models/{modelId}/features": {
+        "operationId": "get_routing_predictor_model_features",
+        "functionName": "get_routing_predictor_model_features",
+        "signature": "get_routing_predictor_model_features(predictor_id, model_id)",
+        "parameters": [
+            {
+                "name": "predictor_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "model_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "PredictorModelFeatureListing"
+    },
+    "GET /api/v2/routing/predictors/{predictorId}/models": {
+        "operationId": "get_routing_predictor_models",
+        "functionName": "get_routing_predictor_models",
+        "signature": "get_routing_predictor_models(predictor_id)",
+        "parameters": [
+            {
+                "name": "predictor_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "PredictorModels"
+    },
+    "GET /api/v2/routing/predictors": {
+        "operationId": "get_routing_predictors",
+        "functionName": "get_routing_predictors",
+        "signature": "get_routing_predictors(before, after, limit, page_size, queue_id)",
+        "parameters": [
+            {
+                "name": "before",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "after",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "limit",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "page_size",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "queue_id",
+                "type": "list[str]",
+                "required": "false"
+            }
+        ],
+        "return": "PredictorListing"
+    },
+    "GET /api/v2/routing/predictors/keyperformanceindicators": {
+        "operationId": "get_routing_predictors_keyperformanceindicators",
+        "functionName": "get_routing_predictors_keyperformanceindicators",
+        "signature": "get_routing_predictors_keyperformanceindicators(kpi_group, expand)",
+        "parameters": [
+            {
+                "name": "kpi_group",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "expand",
+                "type": "list[str]",
+                "required": "false"
+            }
+        ],
+        "return": "list[KeyPerformanceIndicator]"
+    },
+    "GET /api/v2/routing/queues/{queueId}": {
+        "operationId": "get_routing_queue",
+        "functionName": "get_routing_queue",
+        "signature": "get_routing_queue(queue_id)",
+        "parameters": [
+            {
+                "name": "queue_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "Queue"
+    },
+    "GET /api/v2/routing/queues/{queueId}/comparisonperiods/{comparisonPeriodId}": {
+        "operationId": "get_routing_queue_comparisonperiod",
+        "functionName": "get_routing_queue_comparisonperiod",
+        "signature": "get_routing_queue_comparisonperiod(queue_id, comparison_period_id)",
+        "parameters": [
+            {
+                "name": "queue_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "comparison_period_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "ComparisonPeriod"
+    },
+    "GET /api/v2/routing/queues/{queueId}/comparisonperiods": {
+        "operationId": "get_routing_queue_comparisonperiods",
+        "functionName": "get_routing_queue_comparisonperiods",
+        "signature": "get_routing_queue_comparisonperiods(queue_id)",
+        "parameters": [
+            {
+                "name": "queue_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "ComparisonPeriodListing"
+    },
+    "GET /api/v2/routing/queues/{queueId}/estimatedwaittime": {
+        "operationId": "get_routing_queue_estimatedwaittime",
+        "functionName": "get_routing_queue_estimatedwaittime",
+        "signature": "get_routing_queue_estimatedwaittime(queue_id, conversation_id)",
+        "parameters": [
+            {
+                "name": "queue_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "false"
+            }
+        ],
+        "return": "EstimatedWaitTimePredictions"
+    },
+    "GET /api/v2/routing/queues/{queueId}/mediatypes/{mediaType}/estimatedwaittime": {
+        "operationId": "get_routing_queue_mediatype_estimatedwaittime",
+        "functionName": "get_routing_queue_mediatype_estimatedwaittime",
+        "signature": "get_routing_queue_mediatype_estimatedwaittime(queue_id, media_type)",
+        "parameters": [
+            {
+                "name": "queue_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "media_type",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "EstimatedWaitTimePredictions"
+    },
+    "GET /api/v2/routing/queues/{queueId}/members": {
+        "operationId": "get_routing_queue_members",
+        "functionName": "get_routing_queue_members",
+        "signature": "get_routing_queue_members(queue_id, page_number, page_size, sort_order, expand, name, profile_skills, skills, languages, routing_status, presence, member_by, joined)",
+        "parameters": [
+            {
+                "name": "queue_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "page_number",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "page_size",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "sort_order",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "expand",
+                "type": "list[str]",
+                "required": "false"
+            },
+            {
+                "name": "name",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "profile_skills",
+                "type": "list[str]",
+                "required": "false"
+            },
+            {
+                "name": "skills",
+                "type": "list[str]",
+                "required": "false"
+            },
+            {
+                "name": "languages",
+                "type": "list[str]",
+                "required": "false"
+            },
+            {
+                "name": "routing_status",
+                "type": "list[str]",
+                "required": "false"
+            },
+            {
+                "name": "presence",
+                "type": "list[str]",
+                "required": "false"
+            },
+            {
+                "name": "member_by",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "joined",
+                "type": "bool",
+                "required": "false"
+            }
+        ],
+        "return": "QueueMemberEntityListing"
+    },
+    "GET /api/v2/routing/queues/{queueId}/users": {
+        "operationId": "get_routing_queue_users",
+        "functionName": "get_routing_queue_users",
+        "signature": "get_routing_queue_users(queue_id, page_number, page_size, sort_order, expand, joined, name, profile_skills, skills, languages, routing_status, presence)",
+        "parameters": [
+            {
+                "name": "queue_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "page_number",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "page_size",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "sort_order",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "expand",
+                "type": "list[str]",
+                "required": "false"
+            },
+            {
+                "name": "joined",
+                "type": "bool",
+                "required": "false"
+            },
+            {
+                "name": "name",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "profile_skills",
+                "type": "list[str]",
+                "required": "false"
+            },
+            {
+                "name": "skills",
+                "type": "list[str]",
+                "required": "false"
+            },
+            {
+                "name": "languages",
+                "type": "list[str]",
+                "required": "false"
+            },
+            {
+                "name": "routing_status",
+                "type": "list[str]",
+                "required": "false"
+            },
+            {
+                "name": "presence",
+                "type": "list[str]",
+                "required": "false"
+            }
+        ],
+        "return": "QueueMemberEntityListingV1"
+    },
+    "GET /api/v2/routing/queues/{queueId}/wrapupcodes": {
+        "operationId": "get_routing_queue_wrapupcodes",
+        "functionName": "get_routing_queue_wrapupcodes",
+        "signature": "get_routing_queue_wrapupcodes(queue_id, page_size, page_number)",
+        "parameters": [
+            {
+                "name": "queue_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "page_size",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "page_number",
+                "type": "int",
+                "required": "false"
+            }
+        ],
+        "return": "WrapupCodeEntityListing"
+    },
+    "GET /api/v2/routing/queues": {
+        "operationId": "get_routing_queues",
+        "functionName": "get_routing_queues",
+        "signature": "get_routing_queues(page_number, page_size, sort_order, name, id, division_id, peer_id, has_peer)",
+        "parameters": [
+            {
+                "name": "page_number",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "page_size",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "sort_order",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "name",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "id",
+                "type": "list[str]",
+                "required": "false"
+            },
+            {
+                "name": "division_id",
+                "type": "list[str]",
+                "required": "false"
+            },
+            {
+                "name": "peer_id",
+                "type": "list[str]",
+                "required": "false"
+            },
+            {
+                "name": "has_peer",
+                "type": "bool",
+                "required": "false"
+            }
+        ],
+        "return": "QueueEntityListing"
+    },
+    "GET /api/v2/routing/queues/divisionviews": {
+        "operationId": "get_routing_queues_divisionviews",
+        "functionName": "get_routing_queues_divisionviews",
+        "signature": "get_routing_queues_divisionviews(page_size, page_number, sort_by, sort_order, name, id, division_id)",
+        "parameters": [
+            {
+                "name": "page_size",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "page_number",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "sort_by",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "sort_order",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "name",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "id",
+                "type": "list[str]",
+                "required": "false"
+            },
+            {
+                "name": "division_id",
+                "type": "list[str]",
+                "required": "false"
+            }
+        ],
+        "return": "QueueEntityListing"
+    },
+    "GET /api/v2/routing/queues/divisionviews/all": {
+        "operationId": "get_routing_queues_divisionviews_all",
+        "functionName": "get_routing_queues_divisionviews_all",
+        "signature": "get_routing_queues_divisionviews_all(page_size, page_number, sort_order)",
+        "parameters": [
+            {
+                "name": "page_size",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "page_number",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "sort_order",
+                "type": "str",
+                "required": "false"
+            }
+        ],
+        "return": "QueueEntityListing"
+    },
+    "GET /api/v2/routing/queues/me": {
+        "operationId": "get_routing_queues_me",
+        "functionName": "get_routing_queues_me",
+        "signature": "get_routing_queues_me(page_number, page_size, joined, sort_order)",
+        "parameters": [
+            {
+                "name": "page_number",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "page_size",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "joined",
+                "type": "bool",
+                "required": "false"
+            },
+            {
+                "name": "sort_order",
+                "type": "str",
+                "required": "false"
+            }
+        ],
+        "return": "UserQueueEntityListing"
+    },
+    "GET /api/v2/routing/settings": {
+        "operationId": "get_routing_settings",
+        "functionName": "get_routing_settings",
+        "signature": "get_routing_settings()",
+        
+        "return": "RoutingSettings"
+    },
+    "GET /api/v2/routing/settings/contactcenter": {
+        "operationId": "get_routing_settings_contactcenter",
+        "functionName": "get_routing_settings_contactcenter",
+        "signature": "get_routing_settings_contactcenter()",
+        
+        "return": "ContactCenterSettings"
+    },
+    "GET /api/v2/routing/settings/transcription": {
+        "operationId": "get_routing_settings_transcription",
+        "functionName": "get_routing_settings_transcription",
+        "signature": "get_routing_settings_transcription()",
+        
+        "return": "TranscriptionSettings"
+    },
+    "GET /api/v2/routing/skills/{skillId}": {
+        "operationId": "get_routing_skill",
+        "functionName": "get_routing_skill",
+        "signature": "get_routing_skill(skill_id)",
+        "parameters": [
+            {
+                "name": "skill_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "RoutingSkill"
+    },
+    "GET /api/v2/routing/skillgroups/{skillGroupId}": {
+        "operationId": "get_routing_skillgroup",
+        "functionName": "get_routing_skillgroup",
+        "signature": "get_routing_skillgroup(skill_group_id)",
+        "parameters": [
+            {
+                "name": "skill_group_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "SkillGroup"
+    },
+    "GET /api/v2/routing/skillgroups/{skillGroupId}/members": {
+        "operationId": "get_routing_skillgroup_members",
+        "functionName": "get_routing_skillgroup_members",
+        "signature": "get_routing_skillgroup_members(skill_group_id, page_size, after, before, expand)",
+        "parameters": [
+            {
+                "name": "skill_group_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "page_size",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "after",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "before",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "expand",
+                "type": "str",
+                "required": "false"
+            }
+        ],
+        "return": "SkillGroupMemberEntityListing"
+    },
+    "GET /api/v2/routing/skillgroups/{skillGroupId}/members/divisions": {
+        "operationId": "get_routing_skillgroup_members_divisions",
+        "functionName": "get_routing_skillgroup_members_divisions",
+        "signature": "get_routing_skillgroup_members_divisions(skill_group_id, expand)",
+        "parameters": [
+            {
+                "name": "skill_group_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "expand",
+                "type": "str",
+                "required": "false"
+            }
+        ],
+        "return": "SkillGroupMemberDivisionList"
+    },
+    "GET /api/v2/routing/skillgroups": {
+        "operationId": "get_routing_skillgroups",
+        "functionName": "get_routing_skillgroups",
+        "signature": "get_routing_skillgroups(page_size, name, after, before)",
+        "parameters": [
+            {
+                "name": "page_size",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "name",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "after",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "before",
+                "type": "str",
+                "required": "false"
+            }
+        ],
+        "return": "SkillGroupEntityListing"
+    },
+    "GET /api/v2/routing/skills": {
+        "operationId": "get_routing_skills",
+        "functionName": "get_routing_skills",
+        "signature": "get_routing_skills(page_size, page_number, name, id)",
+        "parameters": [
+            {
+                "name": "page_size",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "page_number",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "name",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "id",
+                "type": "list[str]",
+                "required": "false"
+            }
+        ],
+        "return": "SkillEntityListing"
+    },
+    "GET /api/v2/routing/sms/addresses/{addressId}": {
+        "operationId": "get_routing_sms_address",
+        "functionName": "get_routing_sms_address",
+        "signature": "get_routing_sms_address(address_id)",
+        "parameters": [
+            {
+                "name": "address_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "SmsAddress"
+    },
+    "GET /api/v2/routing/sms/addresses": {
+        "operationId": "get_routing_sms_addresses",
+        "functionName": "get_routing_sms_addresses",
+        "signature": "get_routing_sms_addresses(page_size, page_number)",
+        "parameters": [
+            {
+                "name": "page_size",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "page_number",
+                "type": "int",
+                "required": "false"
+            }
+        ],
+        "return": "SmsAddressEntityListing"
+    },
+    "GET /api/v2/routing/sms/availablephonenumbers": {
+        "operationId": "get_routing_sms_availablephonenumbers",
+        "functionName": "get_routing_sms_availablephonenumbers",
+        "signature": "get_routing_sms_availablephonenumbers(country_code, phone_number_type, region, city, area_code, pattern, address_requirement)",
+        "parameters": [
+            {
+                "name": "country_code",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "phone_number_type",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "region",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "city",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "area_code",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "pattern",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "address_requirement",
+                "type": "str",
+                "required": "false"
+            }
+        ],
+        "return": "SMSAvailablePhoneNumberEntityListing"
+    },
+    "GET /api/v2/routing/sms/phonenumbers/{addressId}": {
+        "operationId": "get_routing_sms_phonenumber",
+        "functionName": "get_routing_sms_phonenumber",
+        "signature": "get_routing_sms_phonenumber(address_id, expand)",
+        "parameters": [
+            {
+                "name": "address_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "expand",
+                "type": "str",
+                "required": "false"
+            }
+        ],
+        "return": "SmsPhoneNumber"
+    },
+    "GET /api/v2/routing/sms/phonenumbers": {
+        "operationId": "get_routing_sms_phonenumbers",
+        "functionName": "get_routing_sms_phonenumbers",
+        "signature": "get_routing_sms_phonenumbers(phone_number, phone_number_type, phone_number_status, country_code, page_size, page_number, sort_by, sort_order, language, integration_id)",
+        "parameters": [
+            {
+                "name": "phone_number",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "phone_number_type",
+                "type": "list[str]",
+                "required": "false"
+            },
+            {
+                "name": "phone_number_status",
+                "type": "list[str]",
+                "required": "false"
+            },
+            {
+                "name": "country_code",
+                "type": "list[str]",
+                "required": "false"
+            },
+            {
+                "name": "page_size",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "page_number",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "sort_by",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "sort_order",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "language",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "integration_id",
+                "type": "str",
+                "required": "false"
+            }
+        ],
+        "return": "SmsPhoneNumberEntityListing"
+    },
+    "GET /api/v2/routing/users/{userId}/utilization": {
+        "operationId": "get_routing_user_utilization",
+        "functionName": "get_routing_user_utilization",
+        "signature": "get_routing_user_utilization(user_id)",
+        "parameters": [
+            {
+                "name": "user_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "AgentMaxUtilization"
+    },
+    "GET /api/v2/routing/utilization": {
+        "operationId": "get_routing_utilization",
+        "functionName": "get_routing_utilization",
+        "signature": "get_routing_utilization()",
+        
+        "return": "Utilization"
+    },
+    "GET /api/v2/routing/utilization/tags/{tagId}": {
+        "operationId": "get_routing_utilization_tag",
+        "functionName": "get_routing_utilization_tag",
+        "signature": "get_routing_utilization_tag(tag_id)",
+        "parameters": [
+            {
+                "name": "tag_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "UtilizationTag"
+    },
+    "GET /api/v2/routing/utilization/tags/{tagId}/agents": {
+        "operationId": "get_routing_utilization_tag_agents",
+        "functionName": "get_routing_utilization_tag_agents",
+        "signature": "get_routing_utilization_tag_agents(tag_id)",
+        "parameters": [
+            {
+                "name": "tag_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "list[object]"
+    },
+    "GET /api/v2/routing/utilization/tags": {
+        "operationId": "get_routing_utilization_tags",
+        "functionName": "get_routing_utilization_tags",
+        "signature": "get_routing_utilization_tags(page_size, page_number, sort_order, name)",
+        "parameters": [
+            {
+                "name": "page_size",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "page_number",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "sort_order",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "name",
+                "type": "str",
+                "required": "false"
+            }
+        ],
+        "return": "UtilizationTagEntityListing"
+    },
+    "GET /api/v2/routing/wrapupcodes/{codeId}": {
+        "operationId": "get_routing_wrapupcode",
+        "functionName": "get_routing_wrapupcode",
+        "signature": "get_routing_wrapupcode(code_id)",
+        "parameters": [
+            {
+                "name": "code_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "WrapupCode"
+    },
+    "GET /api/v2/routing/wrapupcodes": {
+        "operationId": "get_routing_wrapupcodes",
+        "functionName": "get_routing_wrapupcodes",
+        "signature": "get_routing_wrapupcodes(page_size, page_number, sort_by, sort_order, name, id, division_id)",
+        "parameters": [
+            {
+                "name": "page_size",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "page_number",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "sort_by",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "sort_order",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "name",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "id",
+                "type": "list[str]",
+                "required": "false"
+            },
+            {
+                "name": "division_id",
+                "type": "list[str]",
+                "required": "false"
+            }
+        ],
+        "return": "WrapupCodeEntityListing"
+    },
+    "GET /api/v2/users/{userId}/queues": {
+        "operationId": "get_user_queues",
+        "functionName": "get_user_queues",
+        "signature": "get_user_queues(user_id, page_size, page_number, joined, division_id)",
+        "parameters": [
+            {
+                "name": "user_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "page_size",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "page_number",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "joined",
+                "type": "bool",
+                "required": "false"
+            },
+            {
+                "name": "division_id",
+                "type": "list[str]",
+                "required": "false"
+            }
+        ],
+        "return": "UserQueueEntityListing"
+    },
+    "GET /api/v2/users/{userId}/routinglanguages": {
+        "operationId": "get_user_routinglanguages",
+        "functionName": "get_user_routinglanguages",
+        "signature": "get_user_routinglanguages(user_id, page_size, page_number, sort_order)",
+        "parameters": [
+            {
+                "name": "user_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "page_size",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "page_number",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "sort_order",
+                "type": "str",
+                "required": "false"
+            }
+        ],
+        "return": "UserLanguageEntityListing"
+    },
+    "GET /api/v2/users/{userId}/routingskills": {
+        "operationId": "get_user_routingskills",
+        "functionName": "get_user_routingskills",
+        "signature": "get_user_routingskills(user_id, page_size, page_number, sort_order)",
+        "parameters": [
+            {
+                "name": "user_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "page_size",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "page_number",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "sort_order",
+                "type": "str",
+                "required": "false"
+            }
+        ],
+        "return": "UserSkillEntityListing"
+    },
+    "GET /api/v2/users/{userId}/skillgroups": {
+        "operationId": "get_user_skillgroups",
+        "functionName": "get_user_skillgroups",
+        "signature": "get_user_skillgroups(user_id, page_size, after, before)",
+        "parameters": [
+            {
+                "name": "user_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "page_size",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "after",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "before",
+                "type": "str",
+                "required": "false"
+            }
+        ],
+        "return": "UserSkillGroupEntityListing"
+    },
+    "PATCH /api/v2/routing/conversations/{conversationId}": {
+        "operationId": "patch_routing_conversation",
+        "functionName": "patch_routing_conversation",
+        "signature": "patch_routing_conversation(conversation_id, body)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "RoutingConversationAttributesRequest",
+                "required": "true"
+            }
+        ],
+        "return": "RoutingConversationAttributesResponse"
+    },
+    "PATCH /api/v2/routing/email/domains/{domainId}": {
+        "operationId": "patch_routing_email_domain",
+        "functionName": "patch_routing_email_domain",
+        "signature": "patch_routing_email_domain(domain_id, body)",
+        "parameters": [
+            {
+                "name": "domain_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "InboundDomainPatchRequest",
+                "required": "true"
+            }
+        ],
+        "return": "InboundDomain"
+    },
+    "PATCH /api/v2/routing/email/domains/{domainId}/validate": {
+        "operationId": "patch_routing_email_domain_validate",
+        "functionName": "patch_routing_email_domain_validate",
+        "signature": "patch_routing_email_domain_validate(domain_id, body)",
+        "parameters": [
+            {
+                "name": "domain_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "InboundDomainPatchRequest",
+                "required": "true"
+            }
+        ],
+        "return": "InboundDomain"
+    },
+    "PATCH /api/v2/routing/predictors/{predictorId}": {
+        "operationId": "patch_routing_predictor",
+        "functionName": "patch_routing_predictor",
+        "signature": "patch_routing_predictor(predictor_id, body)",
+        "parameters": [
+            {
+                "name": "predictor_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "PatchPredictorRequest",
+                "required": "false"
+            }
+        ],
+        "return": "Predictor"
+    },
+    "PATCH /api/v2/routing/queues/{queueId}/members/{memberId}": {
+        "operationId": "patch_routing_queue_member",
+        "functionName": "patch_routing_queue_member",
+        "signature": "patch_routing_queue_member(queue_id, member_id, body)",
+        "parameters": [
+            {
+                "name": "queue_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "member_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "QueueMember",
+                "required": "true"
+            }
+        ]
+    },
+    "PATCH /api/v2/routing/queues/{queueId}/members": {
+        "operationId": "patch_routing_queue_members",
+        "functionName": "patch_routing_queue_members",
+        "signature": "patch_routing_queue_members(queue_id, body)",
+        "parameters": [
+            {
+                "name": "queue_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "list[QueueMember]",
+                "required": "true"
+            }
+        ],
+        "return": "QueueMemberEntityListing"
+    },
+    "PATCH /api/v2/routing/queues/{queueId}/users/{memberId}": {
+        "operationId": "patch_routing_queue_user",
+        "functionName": "patch_routing_queue_user",
+        "signature": "patch_routing_queue_user(queue_id, member_id, body)",
+        "parameters": [
+            {
+                "name": "queue_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "member_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "QueueMember",
+                "required": "true"
+            }
+        ]
+    },
+    "PATCH /api/v2/routing/queues/{queueId}/users": {
+        "operationId": "patch_routing_queue_users",
+        "functionName": "patch_routing_queue_users",
+        "signature": "patch_routing_queue_users(queue_id, body)",
+        "parameters": [
+            {
+                "name": "queue_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "list[QueueMember]",
+                "required": "true"
+            }
+        ],
+        "return": "QueueMemberEntityListingV1"
+    },
+    "PATCH /api/v2/routing/settings/contactcenter": {
+        "operationId": "patch_routing_settings_contactcenter",
+        "functionName": "patch_routing_settings_contactcenter",
+        "signature": "patch_routing_settings_contactcenter(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "ContactCenterSettings",
+                "required": "true"
+            }
+        ]
+    },
+    "PATCH /api/v2/routing/skillgroups/{skillGroupId}": {
+        "operationId": "patch_routing_skillgroup",
+        "functionName": "patch_routing_skillgroup",
+        "signature": "patch_routing_skillgroup(skill_group_id, body)",
+        "parameters": [
+            {
+                "name": "skill_group_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "SkillGroup",
+                "required": "true"
+            }
+        ],
+        "return": "SkillGroup"
+    },
+    "PATCH /api/v2/users/{userId}/queues/{queueId}": {
+        "operationId": "patch_user_queue",
+        "functionName": "patch_user_queue",
+        "signature": "patch_user_queue(queue_id, user_id, body)",
+        "parameters": [
+            {
+                "name": "queue_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "user_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "UserQueue",
+                "required": "true"
+            }
+        ],
+        "return": "UserQueue"
+    },
+    "PATCH /api/v2/users/{userId}/queues": {
+        "operationId": "patch_user_queues",
+        "functionName": "patch_user_queues",
+        "signature": "patch_user_queues(user_id, body, division_id)",
+        "parameters": [
+            {
+                "name": "user_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "list[UserQueue]",
+                "required": "true"
+            },
+            {
+                "name": "division_id",
+                "type": "list[str]",
+                "required": "false"
+            }
+        ],
+        "return": "UserQueueEntityListing"
+    },
+    "PATCH /api/v2/users/{userId}/routinglanguages/{languageId}": {
+        "operationId": "patch_user_routinglanguage",
+        "functionName": "patch_user_routinglanguage",
+        "signature": "patch_user_routinglanguage(user_id, language_id, body)",
+        "parameters": [
+            {
+                "name": "user_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "language_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "UserRoutingLanguage",
+                "required": "true"
+            }
+        ],
+        "return": "UserRoutingLanguage"
+    },
+    "PATCH /api/v2/users/{userId}/routinglanguages/bulk": {
+        "operationId": "patch_user_routinglanguages_bulk",
+        "functionName": "patch_user_routinglanguages_bulk",
+        "signature": "patch_user_routinglanguages_bulk(user_id, body)",
+        "parameters": [
+            {
+                "name": "user_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "list[UserRoutingLanguagePost]",
+                "required": "true"
+            }
+        ],
+        "return": "UserLanguageEntityListing"
+    },
+    "PATCH /api/v2/users/{userId}/routingskills/bulk": {
+        "operationId": "patch_user_routingskills_bulk",
+        "functionName": "patch_user_routingskills_bulk",
+        "signature": "patch_user_routingskills_bulk(user_id, body)",
+        "parameters": [
+            {
+                "name": "user_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "list[UserRoutingSkillPost]",
+                "required": "true"
+            }
+        ],
+        "return": "UserSkillEntityListing"
+    },
+    "POST /api/v2/analytics/queues/observations/query": {
+        "operationId": "post_analytics_queues_observations_query",
+        "functionName": "post_analytics_queues_observations_query",
+        "signature": "post_analytics_queues_observations_query(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "QueueObservationQuery",
+                "required": "true"
+            }
+        ],
+        "return": "QueueObservationQueryResponse"
+    },
+    "POST /api/v2/analytics/routing/activity/query": {
+        "operationId": "post_analytics_routing_activity_query",
+        "functionName": "post_analytics_routing_activity_query",
+        "signature": "post_analytics_routing_activity_query(body, page_size, page_number)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "RoutingActivityQuery",
+                "required": "true"
+            },
+            {
+                "name": "page_size",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "page_number",
+                "type": "int",
+                "required": "false"
+            }
+        ],
+        "return": "RoutingActivityResponse"
+    },
+    "POST /api/v2/routing/assessments": {
+        "operationId": "post_routing_assessments",
+        "functionName": "post_routing_assessments",
+        "signature": "post_routing_assessments(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "CreateBenefitAssessmentRequest",
+                "required": "false"
+            }
+        ],
+        "return": "BenefitAssessment"
+    },
+    "POST /api/v2/routing/assessments/jobs": {
+        "operationId": "post_routing_assessments_jobs",
+        "functionName": "post_routing_assessments_jobs",
+        "signature": "post_routing_assessments_jobs(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "CreateBenefitAssessmentJobRequest",
+                "required": "false"
+            }
+        ],
+        "return": "BenefitAssessmentJob"
+    },
+    "POST /api/v2/routing/email/domains/{domainName}/routes": {
+        "operationId": "post_routing_email_domain_routes",
+        "functionName": "post_routing_email_domain_routes",
+        "signature": "post_routing_email_domain_routes(domain_name, body)",
+        "parameters": [
+            {
+                "name": "domain_name",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "InboundRoute",
+                "required": "true"
+            }
+        ],
+        "return": "InboundRoute"
+    },
+    "POST /api/v2/routing/email/domains/{domainId}/testconnection": {
+        "operationId": "post_routing_email_domain_testconnection",
+        "functionName": "post_routing_email_domain_testconnection",
+        "signature": "post_routing_email_domain_testconnection(domain_id, body)",
+        "parameters": [
+            {
+                "name": "domain_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "TestMessage",
+                "required": "false"
+            }
+        ],
+        "return": "TestMessage"
+    },
+    "POST /api/v2/routing/email/domains": {
+        "operationId": "post_routing_email_domains",
+        "functionName": "post_routing_email_domains",
+        "signature": "post_routing_email_domains(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "InboundDomain",
+                "required": "true"
+            }
+        ],
+        "return": "InboundDomain"
+    },
+    "POST /api/v2/routing/email/outbound/domains": {
+        "operationId": "post_routing_email_outbound_domains",
+        "functionName": "post_routing_email_outbound_domains",
+        "signature": "post_routing_email_outbound_domains(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "OutboundDomain",
+                "required": "true"
+            }
+        ],
+        "return": "EmailOutboundDomainResult"
+    },
+    "POST /api/v2/routing/email/outbound/domains/simulated": {
+        "operationId": "post_routing_email_outbound_domains_simulated",
+        "functionName": "post_routing_email_outbound_domains_simulated",
+        "signature": "post_routing_email_outbound_domains_simulated(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "OutboundDomain",
+                "required": "true"
+            }
+        ],
+        "return": "EmailOutboundDomainResult"
+    },
+    "POST /api/v2/routing/languages": {
+        "operationId": "post_routing_languages",
+        "functionName": "post_routing_languages",
+        "signature": "post_routing_languages(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Language",
+                "required": "true"
+            }
+        ],
+        "return": "Language"
+    },
+    "POST /api/v2/routing/predictors": {
+        "operationId": "post_routing_predictors",
+        "functionName": "post_routing_predictors",
+        "signature": "post_routing_predictors(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "CreatePredictorRequest",
+                "required": "false"
+            }
+        ],
+        "return": "Predictor"
+    },
+    "POST /api/v2/routing/queues/{queueId}/members": {
+        "operationId": "post_routing_queue_members",
+        "functionName": "post_routing_queue_members",
+        "signature": "post_routing_queue_members(queue_id, body, delete)",
+        "parameters": [
+            {
+                "name": "queue_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "list[WritableEntity]",
+                "required": "true"
+            },
+            {
+                "name": "delete",
+                "type": "bool",
+                "required": "false"
+            }
+        ]
+    },
+    "POST /api/v2/routing/queues/{queueId}/users": {
+        "operationId": "post_routing_queue_users",
+        "functionName": "post_routing_queue_users",
+        "signature": "post_routing_queue_users(queue_id, body, delete)",
+        "parameters": [
+            {
+                "name": "queue_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "list[WritableEntity]",
+                "required": "true"
+            },
+            {
+                "name": "delete",
+                "type": "bool",
+                "required": "false"
+            }
+        ]
+    },
+    "POST /api/v2/routing/queues/{queueId}/wrapupcodes": {
+        "operationId": "post_routing_queue_wrapupcodes",
+        "functionName": "post_routing_queue_wrapupcodes",
+        "signature": "post_routing_queue_wrapupcodes(queue_id, body)",
+        "parameters": [
+            {
+                "name": "queue_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "list[WrapUpCodeReference]",
+                "required": "true"
+            }
+        ],
+        "return": "list[WrapupCode]"
+    },
+    "POST /api/v2/routing/queues": {
+        "operationId": "post_routing_queues",
+        "functionName": "post_routing_queues",
+        "signature": "post_routing_queues(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "CreateQueueRequest",
+                "required": "true"
+            }
+        ],
+        "return": "Queue"
+    },
+    "POST /api/v2/routing/skillgroups/{skillGroupId}/members/divisions": {
+        "operationId": "post_routing_skillgroup_members_divisions",
+        "functionName": "post_routing_skillgroup_members_divisions",
+        "signature": "post_routing_skillgroup_members_divisions(skill_group_id, body)",
+        "parameters": [
+            {
+                "name": "skill_group_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "SkillGroupMemberDivisions",
+                "required": "false"
+            }
+        ]
+    },
+    "POST /api/v2/routing/skillgroups": {
+        "operationId": "post_routing_skillgroups",
+        "functionName": "post_routing_skillgroups",
+        "signature": "post_routing_skillgroups(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "SkillGroupWithMemberDivisions",
+                "required": "true"
+            }
+        ],
+        "return": "SkillGroupWithMemberDivisions"
+    },
+    "POST /api/v2/routing/skills": {
+        "operationId": "post_routing_skills",
+        "functionName": "post_routing_skills",
+        "signature": "post_routing_skills(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "RoutingSkill",
+                "required": "true"
+            }
+        ],
+        "return": "RoutingSkill"
+    },
+    "POST /api/v2/routing/sms/addresses": {
+        "operationId": "post_routing_sms_addresses",
+        "functionName": "post_routing_sms_addresses",
+        "signature": "post_routing_sms_addresses(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "SmsAddressProvision",
+                "required": "true"
+            }
+        ],
+        "return": "SmsAddress"
+    },
+    "POST /api/v2/routing/sms/phonenumbers": {
+        "operationId": "post_routing_sms_phonenumbers",
+        "functionName": "post_routing_sms_phonenumbers",
+        "signature": "post_routing_sms_phonenumbers(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "SmsPhoneNumberProvision",
+                "required": "true"
+            }
+        ],
+        "return": "SmsPhoneNumber"
+    },
+    "POST /api/v2/routing/sms/phonenumbers/import": {
+        "operationId": "post_routing_sms_phonenumbers_import",
+        "functionName": "post_routing_sms_phonenumbers_import",
+        "signature": "post_routing_sms_phonenumbers_import(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "SmsPhoneNumberImport",
+                "required": "true"
+            }
+        ],
+        "return": "SmsPhoneNumber"
+    },
+    "POST /api/v2/routing/utilization/tags": {
+        "operationId": "post_routing_utilization_tags",
+        "functionName": "post_routing_utilization_tags",
+        "signature": "post_routing_utilization_tags(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "CreateUtilizationTagRequest",
+                "required": "true"
+            }
+        ],
+        "return": "UtilizationTag"
+    },
+    "POST /api/v2/routing/wrapupcodes": {
+        "operationId": "post_routing_wrapupcodes",
+        "functionName": "post_routing_wrapupcodes",
+        "signature": "post_routing_wrapupcodes(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "WrapupCodeRequest",
+                "required": "true"
+            }
+        ],
+        "return": "WrapupCode"
+    },
+    "POST /api/v2/users/{userId}/routinglanguages": {
+        "operationId": "post_user_routinglanguages",
+        "functionName": "post_user_routinglanguages",
+        "signature": "post_user_routinglanguages(user_id, body)",
+        "parameters": [
+            {
+                "name": "user_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "UserRoutingLanguagePost",
+                "required": "true"
+            }
+        ],
+        "return": "UserRoutingLanguage"
+    },
+    "POST /api/v2/users/{userId}/routingskills": {
+        "operationId": "post_user_routingskills",
+        "functionName": "post_user_routingskills",
+        "signature": "post_user_routingskills(user_id, body)",
+        "parameters": [
+            {
+                "name": "user_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "UserRoutingSkillPost",
+                "required": "true"
+            }
+        ],
+        "return": "UserRoutingSkill"
+    },
+    "PUT /api/v2/routing/email/domains/{domainName}/routes/{routeId}": {
+        "operationId": "put_routing_email_domain_route",
+        "functionName": "put_routing_email_domain_route",
+        "signature": "put_routing_email_domain_route(domain_name, route_id, body)",
+        "parameters": [
+            {
+                "name": "domain_name",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "route_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "InboundRoute",
+                "required": "true"
+            }
+        ],
+        "return": "InboundRoute"
+    },
+    "PUT /api/v2/routing/email/outbound/domains/{domainId}/activation": {
+        "operationId": "put_routing_email_outbound_domain_activation",
+        "functionName": "put_routing_email_outbound_domain_activation",
+        "signature": "put_routing_email_outbound_domain_activation(domain_id)",
+        "parameters": [
+            {
+                "name": "domain_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "EmailOutboundDomainResult"
+    },
+    "PUT /api/v2/routing/message/recipients/{recipientId}": {
+        "operationId": "put_routing_message_recipient",
+        "functionName": "put_routing_message_recipient",
+        "signature": "put_routing_message_recipient(recipient_id, body)",
+        "parameters": [
+            {
+                "name": "recipient_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "RecipientRequest",
+                "required": "true"
+            }
+        ],
+        "return": "Recipient"
+    },
+    "PUT /api/v2/routing/queues/{queueId}": {
+        "operationId": "put_routing_queue",
+        "functionName": "put_routing_queue",
+        "signature": "put_routing_queue(queue_id, body)",
+        "parameters": [
+            {
+                "name": "queue_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "QueueRequest",
+                "required": "true"
+            }
+        ],
+        "return": "Queue"
+    },
+    "PUT /api/v2/routing/settings": {
+        "operationId": "put_routing_settings",
+        "functionName": "put_routing_settings",
+        "signature": "put_routing_settings(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "RoutingSettings",
+                "required": "true"
+            }
+        ],
+        "return": "RoutingSettings"
+    },
+    "PUT /api/v2/routing/settings/transcription": {
+        "operationId": "put_routing_settings_transcription",
+        "functionName": "put_routing_settings_transcription",
+        "signature": "put_routing_settings_transcription(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "TranscriptionSettings",
+                "required": "true"
+            }
+        ],
+        "return": "TranscriptionSettings"
+    },
+    "PUT /api/v2/routing/sms/phonenumbers/{addressId}": {
+        "operationId": "put_routing_sms_phonenumber",
+        "functionName": "put_routing_sms_phonenumber",
+        "signature": "put_routing_sms_phonenumber(address_id, body)",
+        "parameters": [
+            {
+                "name": "address_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "SmsPhoneNumber",
+                "required": "true"
+            }
+        ],
+        "return": "SmsPhoneNumber"
+    },
+    "PUT /api/v2/routing/users/{userId}/utilization": {
+        "operationId": "put_routing_user_utilization",
+        "functionName": "put_routing_user_utilization",
+        "signature": "put_routing_user_utilization(user_id, body)",
+        "parameters": [
+            {
+                "name": "user_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Utilization",
+                "required": "true"
+            }
+        ],
+        "return": "AgentMaxUtilization"
+    },
+    "PUT /api/v2/routing/utilization": {
+        "operationId": "put_routing_utilization",
+        "functionName": "put_routing_utilization",
+        "signature": "put_routing_utilization(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Utilization",
+                "required": "true"
+            }
+        ],
+        "return": "Utilization"
+    },
+    "PUT /api/v2/routing/wrapupcodes/{codeId}": {
+        "operationId": "put_routing_wrapupcode",
+        "functionName": "put_routing_wrapupcode",
+        "signature": "put_routing_wrapupcode(code_id, body)",
+        "parameters": [
+            {
+                "name": "code_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "WrapupCodeRequest",
+                "required": "true"
+            }
+        ],
+        "return": "WrapupCode"
+    },
+    "PUT /api/v2/users/{userId}/routingskills/{skillId}": {
+        "operationId": "put_user_routingskill",
+        "functionName": "put_user_routingskill",
+        "signature": "put_user_routingskill(user_id, skill_id, body)",
+        "parameters": [
+            {
+                "name": "user_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "skill_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "UserRoutingSkill",
+                "required": "true"
+            }
+        ],
+        "return": "UserRoutingSkill"
+    },
+    "PUT /api/v2/users/{userId}/routingskills/bulk": {
+        "operationId": "put_user_routingskills_bulk",
+        "functionName": "put_user_routingskills_bulk",
+        "signature": "put_user_routingskills_bulk(user_id, body)",
+        "parameters": [
+            {
+                "name": "user_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "list[UserRoutingSkillPost]",
+                "required": "true"
+            }
+        ],
+        "return": "UserSkillEntityListing"
+    }
+    
+}

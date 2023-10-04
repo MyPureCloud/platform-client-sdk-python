@@ -1,0 +1,18 @@
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'your_access_token'
+# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi();
+time_off_request_id = 'time_off_request_id_example' # str | The ID of the time off request
+
+try:
+    # Get the daily waitlist positions of a time off request for the current user
+    api_response = api_instance.get_workforcemanagement_timeoffrequest_waitlistpositions(time_off_request_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_timeoffrequest_waitlistpositions: %s\n" % e)

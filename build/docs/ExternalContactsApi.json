@@ -1,0 +1,1221 @@
+{
+    "DELETE /api/v2/externalcontacts/contacts/{contactId}": {
+        "operationId": "delete_externalcontacts_contact",
+        "functionName": "delete_externalcontacts_contact",
+        "signature": "delete_externalcontacts_contact(contact_id)",
+        "parameters": [
+            {
+                "name": "contact_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "object"
+    },
+    "DELETE /api/v2/externalcontacts/contacts/{contactId}/notes/{noteId}": {
+        "operationId": "delete_externalcontacts_contact_note",
+        "functionName": "delete_externalcontacts_contact_note",
+        "signature": "delete_externalcontacts_contact_note(contact_id, note_id)",
+        "parameters": [
+            {
+                "name": "contact_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "note_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "object"
+    },
+    "DELETE /api/v2/externalcontacts/contacts/schemas/{schemaId}": {
+        "operationId": "delete_externalcontacts_contacts_schema",
+        "functionName": "delete_externalcontacts_contacts_schema",
+        "signature": "delete_externalcontacts_contacts_schema(schema_id)",
+        "parameters": [
+            {
+                "name": "schema_id",
+                "type": "str",
+                "required": "true"
+            }
+        ]
+    },
+    "DELETE /api/v2/externalcontacts/organizations/{externalOrganizationId}": {
+        "operationId": "delete_externalcontacts_organization",
+        "functionName": "delete_externalcontacts_organization",
+        "signature": "delete_externalcontacts_organization(external_organization_id)",
+        "parameters": [
+            {
+                "name": "external_organization_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "object"
+    },
+    "DELETE /api/v2/externalcontacts/organizations/{externalOrganizationId}/notes/{noteId}": {
+        "operationId": "delete_externalcontacts_organization_note",
+        "functionName": "delete_externalcontacts_organization_note",
+        "signature": "delete_externalcontacts_organization_note(external_organization_id, note_id)",
+        "parameters": [
+            {
+                "name": "external_organization_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "note_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "object"
+    },
+    "DELETE /api/v2/externalcontacts/organizations/{externalOrganizationId}/trustor": {
+        "operationId": "delete_externalcontacts_organization_trustor",
+        "functionName": "delete_externalcontacts_organization_trustor",
+        "signature": "delete_externalcontacts_organization_trustor(external_organization_id)",
+        "parameters": [
+            {
+                "name": "external_organization_id",
+                "type": "str",
+                "required": "true"
+            }
+        ]
+    },
+    "DELETE /api/v2/externalcontacts/relationships/{relationshipId}": {
+        "operationId": "delete_externalcontacts_relationship",
+        "functionName": "delete_externalcontacts_relationship",
+        "signature": "delete_externalcontacts_relationship(relationship_id)",
+        "parameters": [
+            {
+                "name": "relationship_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "object"
+    },
+    "GET /api/v2/externalcontacts/contacts/{contactId}": {
+        "operationId": "get_externalcontacts_contact",
+        "functionName": "get_externalcontacts_contact",
+        "signature": "get_externalcontacts_contact(contact_id, expand)",
+        "parameters": [
+            {
+                "name": "contact_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "expand",
+                "type": "list[str]",
+                "required": "false"
+            }
+        ],
+        "return": "ExternalContact"
+    },
+    "GET /api/v2/externalcontacts/contacts/{contactId}/identifiers": {
+        "operationId": "get_externalcontacts_contact_identifiers",
+        "functionName": "get_externalcontacts_contact_identifiers",
+        "signature": "get_externalcontacts_contact_identifiers(contact_id)",
+        "parameters": [
+            {
+                "name": "contact_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "EntityListing"
+    },
+    "GET /api/v2/externalcontacts/contacts/{contactId}/journey/sessions": {
+        "operationId": "get_externalcontacts_contact_journey_sessions",
+        "functionName": "get_externalcontacts_contact_journey_sessions",
+        "signature": "get_externalcontacts_contact_journey_sessions(contact_id, page_size, after, include_merged)",
+        "parameters": [
+            {
+                "name": "contact_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "page_size",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "after",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "include_merged",
+                "type": "bool",
+                "required": "false"
+            }
+        ],
+        "return": "SessionListing"
+    },
+    "GET /api/v2/externalcontacts/contacts/{contactId}/notes/{noteId}": {
+        "operationId": "get_externalcontacts_contact_note",
+        "functionName": "get_externalcontacts_contact_note",
+        "signature": "get_externalcontacts_contact_note(contact_id, note_id, expand)",
+        "parameters": [
+            {
+                "name": "contact_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "note_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "expand",
+                "type": "list[str]",
+                "required": "false"
+            }
+        ],
+        "return": "Note"
+    },
+    "GET /api/v2/externalcontacts/contacts/{contactId}/notes": {
+        "operationId": "get_externalcontacts_contact_notes",
+        "functionName": "get_externalcontacts_contact_notes",
+        "signature": "get_externalcontacts_contact_notes(contact_id, page_size, page_number, sort_order, expand)",
+        "parameters": [
+            {
+                "name": "contact_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "page_size",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "page_number",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "sort_order",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "expand",
+                "type": "list[str]",
+                "required": "false"
+            }
+        ],
+        "return": "NoteListing"
+    },
+    "GET /api/v2/externalcontacts/contacts/{contactId}/unresolved": {
+        "operationId": "get_externalcontacts_contact_unresolved",
+        "functionName": "get_externalcontacts_contact_unresolved",
+        "signature": "get_externalcontacts_contact_unresolved(contact_id, expand)",
+        "parameters": [
+            {
+                "name": "contact_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "expand",
+                "type": "list[str]",
+                "required": "false"
+            }
+        ],
+        "return": "ExternalContact"
+    },
+    "GET /api/v2/externalcontacts/contacts": {
+        "operationId": "get_externalcontacts_contacts",
+        "functionName": "get_externalcontacts_contacts",
+        "signature": "get_externalcontacts_contacts(page_size, page_number, q, sort_order, expand)",
+        "parameters": [
+            {
+                "name": "page_size",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "page_number",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "q",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "sort_order",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "expand",
+                "type": "list[str]",
+                "required": "false"
+            }
+        ],
+        "return": "ContactListing"
+    },
+    "GET /api/v2/externalcontacts/contacts/schemas/{schemaId}": {
+        "operationId": "get_externalcontacts_contacts_schema",
+        "functionName": "get_externalcontacts_contacts_schema",
+        "signature": "get_externalcontacts_contacts_schema(schema_id)",
+        "parameters": [
+            {
+                "name": "schema_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "DataSchema"
+    },
+    "GET /api/v2/externalcontacts/contacts/schemas/{schemaId}/versions/{versionId}": {
+        "operationId": "get_externalcontacts_contacts_schema_version",
+        "functionName": "get_externalcontacts_contacts_schema_version",
+        "signature": "get_externalcontacts_contacts_schema_version(schema_id, version_id)",
+        "parameters": [
+            {
+                "name": "schema_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "version_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "DataSchema"
+    },
+    "GET /api/v2/externalcontacts/contacts/schemas/{schemaId}/versions": {
+        "operationId": "get_externalcontacts_contacts_schema_versions",
+        "functionName": "get_externalcontacts_contacts_schema_versions",
+        "signature": "get_externalcontacts_contacts_schema_versions(schema_id)",
+        "parameters": [
+            {
+                "name": "schema_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "DataSchema"
+    },
+    "GET /api/v2/externalcontacts/contacts/schemas": {
+        "operationId": "get_externalcontacts_contacts_schemas",
+        "functionName": "get_externalcontacts_contacts_schemas",
+        "signature": "get_externalcontacts_contacts_schemas()",
+        
+        "return": "DataSchemaListing"
+    },
+    "GET /api/v2/externalcontacts/organizations/{externalOrganizationId}": {
+        "operationId": "get_externalcontacts_organization",
+        "functionName": "get_externalcontacts_organization",
+        "signature": "get_externalcontacts_organization(external_organization_id, expand, include_trustors)",
+        "parameters": [
+            {
+                "name": "external_organization_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "expand",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "include_trustors",
+                "type": "bool",
+                "required": "false"
+            }
+        ],
+        "return": "ExternalOrganization"
+    },
+    "GET /api/v2/externalcontacts/organizations/{externalOrganizationId}/contacts": {
+        "operationId": "get_externalcontacts_organization_contacts",
+        "functionName": "get_externalcontacts_organization_contacts",
+        "signature": "get_externalcontacts_organization_contacts(external_organization_id, page_size, page_number, q, sort_order, expand)",
+        "parameters": [
+            {
+                "name": "external_organization_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "page_size",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "page_number",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "q",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "sort_order",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "expand",
+                "type": "list[str]",
+                "required": "false"
+            }
+        ],
+        "return": "ContactListing"
+    },
+    "GET /api/v2/externalcontacts/organizations/{externalOrganizationId}/notes/{noteId}": {
+        "operationId": "get_externalcontacts_organization_note",
+        "functionName": "get_externalcontacts_organization_note",
+        "signature": "get_externalcontacts_organization_note(external_organization_id, note_id, expand)",
+        "parameters": [
+            {
+                "name": "external_organization_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "note_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "expand",
+                "type": "list[str]",
+                "required": "false"
+            }
+        ],
+        "return": "Note"
+    },
+    "GET /api/v2/externalcontacts/organizations/{externalOrganizationId}/notes": {
+        "operationId": "get_externalcontacts_organization_notes",
+        "functionName": "get_externalcontacts_organization_notes",
+        "signature": "get_externalcontacts_organization_notes(external_organization_id, page_size, page_number, sort_order, expand)",
+        "parameters": [
+            {
+                "name": "external_organization_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "page_size",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "page_number",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "sort_order",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "expand",
+                "type": "list[str]",
+                "required": "false"
+            }
+        ],
+        "return": "NoteListing"
+    },
+    "GET /api/v2/externalcontacts/organizations/{externalOrganizationId}/relationships": {
+        "operationId": "get_externalcontacts_organization_relationships",
+        "functionName": "get_externalcontacts_organization_relationships",
+        "signature": "get_externalcontacts_organization_relationships(external_organization_id, page_size, page_number, expand, sort_order)",
+        "parameters": [
+            {
+                "name": "external_organization_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "page_size",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "page_number",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "expand",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "sort_order",
+                "type": "str",
+                "required": "false"
+            }
+        ],
+        "return": "RelationshipListing"
+    },
+    "GET /api/v2/externalcontacts/organizations": {
+        "operationId": "get_externalcontacts_organizations",
+        "functionName": "get_externalcontacts_organizations",
+        "signature": "get_externalcontacts_organizations(page_size, page_number, q, trustor_id, sort_order, expand, include_trustors)",
+        "parameters": [
+            {
+                "name": "page_size",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "page_number",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "q",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "trustor_id",
+                "type": "list[str]",
+                "required": "false"
+            },
+            {
+                "name": "sort_order",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "expand",
+                "type": "list[str]",
+                "required": "false"
+            },
+            {
+                "name": "include_trustors",
+                "type": "bool",
+                "required": "false"
+            }
+        ],
+        "return": "ExternalOrganizationListing"
+    },
+    "GET /api/v2/externalcontacts/organizations/schemas/{schemaId}": {
+        "operationId": "get_externalcontacts_organizations_schema",
+        "functionName": "get_externalcontacts_organizations_schema",
+        "signature": "get_externalcontacts_organizations_schema(schema_id)",
+        "parameters": [
+            {
+                "name": "schema_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "DataSchema"
+    },
+    "GET /api/v2/externalcontacts/organizations/schemas/{schemaId}/versions/{versionId}": {
+        "operationId": "get_externalcontacts_organizations_schema_version",
+        "functionName": "get_externalcontacts_organizations_schema_version",
+        "signature": "get_externalcontacts_organizations_schema_version(schema_id, version_id)",
+        "parameters": [
+            {
+                "name": "schema_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "version_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "DataSchema"
+    },
+    "GET /api/v2/externalcontacts/organizations/schemas/{schemaId}/versions": {
+        "operationId": "get_externalcontacts_organizations_schema_versions",
+        "functionName": "get_externalcontacts_organizations_schema_versions",
+        "signature": "get_externalcontacts_organizations_schema_versions(schema_id)",
+        "parameters": [
+            {
+                "name": "schema_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "DataSchema"
+    },
+    "GET /api/v2/externalcontacts/organizations/schemas": {
+        "operationId": "get_externalcontacts_organizations_schemas",
+        "functionName": "get_externalcontacts_organizations_schemas",
+        "signature": "get_externalcontacts_organizations_schemas()",
+        
+        "return": "DataSchemaListing"
+    },
+    "GET /api/v2/externalcontacts/relationships/{relationshipId}": {
+        "operationId": "get_externalcontacts_relationship",
+        "functionName": "get_externalcontacts_relationship",
+        "signature": "get_externalcontacts_relationship(relationship_id, expand)",
+        "parameters": [
+            {
+                "name": "relationship_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "expand",
+                "type": "str",
+                "required": "false"
+            }
+        ],
+        "return": "Relationship"
+    },
+    "GET /api/v2/externalcontacts/reversewhitepageslookup": {
+        "operationId": "get_externalcontacts_reversewhitepageslookup",
+        "functionName": "get_externalcontacts_reversewhitepageslookup",
+        "signature": "get_externalcontacts_reversewhitepageslookup(lookup_val, expand)",
+        "parameters": [
+            {
+                "name": "lookup_val",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "expand",
+                "type": "list[str]",
+                "required": "false"
+            }
+        ],
+        "return": "ReverseWhitepagesLookupResult"
+    },
+    "GET /api/v2/externalcontacts/scan/contacts": {
+        "operationId": "get_externalcontacts_scan_contacts",
+        "functionName": "get_externalcontacts_scan_contacts",
+        "signature": "get_externalcontacts_scan_contacts(limit, cursor)",
+        "parameters": [
+            {
+                "name": "limit",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "cursor",
+                "type": "str",
+                "required": "false"
+            }
+        ],
+        "return": "CursorContactListing"
+    },
+    "GET /api/v2/externalcontacts/scan/notes": {
+        "operationId": "get_externalcontacts_scan_notes",
+        "functionName": "get_externalcontacts_scan_notes",
+        "signature": "get_externalcontacts_scan_notes(limit, cursor)",
+        "parameters": [
+            {
+                "name": "limit",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "cursor",
+                "type": "str",
+                "required": "false"
+            }
+        ],
+        "return": "CursorNoteListing"
+    },
+    "GET /api/v2/externalcontacts/scan/organizations": {
+        "operationId": "get_externalcontacts_scan_organizations",
+        "functionName": "get_externalcontacts_scan_organizations",
+        "signature": "get_externalcontacts_scan_organizations(limit, cursor)",
+        "parameters": [
+            {
+                "name": "limit",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "cursor",
+                "type": "str",
+                "required": "false"
+            }
+        ],
+        "return": "CursorOrganizationListing"
+    },
+    "GET /api/v2/externalcontacts/scan/relationships": {
+        "operationId": "get_externalcontacts_scan_relationships",
+        "functionName": "get_externalcontacts_scan_relationships",
+        "signature": "get_externalcontacts_scan_relationships(limit, cursor)",
+        "parameters": [
+            {
+                "name": "limit",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "cursor",
+                "type": "str",
+                "required": "false"
+            }
+        ],
+        "return": "CursorRelationshipListing"
+    },
+    "PATCH /api/v2/externalcontacts/contacts/{contactId}/identifiers": {
+        "operationId": "patch_externalcontacts_contact_identifiers",
+        "functionName": "patch_externalcontacts_contact_identifiers",
+        "signature": "patch_externalcontacts_contact_identifiers(contact_id, body)",
+        "parameters": [
+            {
+                "name": "contact_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "IdentifierClaimRequest",
+                "required": "true"
+            }
+        ],
+        "return": "ContactIdentifier"
+    },
+    "POST /api/v2/externalcontacts/bulk/contacts": {
+        "operationId": "post_externalcontacts_bulk_contacts",
+        "functionName": "post_externalcontacts_bulk_contacts",
+        "signature": "post_externalcontacts_bulk_contacts(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "BulkIdsRequest",
+                "required": "true"
+            }
+        ],
+        "return": "BulkFetchContactsResponse"
+    },
+    "POST /api/v2/externalcontacts/bulk/contacts/add": {
+        "operationId": "post_externalcontacts_bulk_contacts_add",
+        "functionName": "post_externalcontacts_bulk_contacts_add",
+        "signature": "post_externalcontacts_bulk_contacts_add(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "BulkContactsRequest",
+                "required": "true"
+            }
+        ],
+        "return": "BulkContactsResponse"
+    },
+    "POST /api/v2/externalcontacts/bulk/contacts/remove": {
+        "operationId": "post_externalcontacts_bulk_contacts_remove",
+        "functionName": "post_externalcontacts_bulk_contacts_remove",
+        "signature": "post_externalcontacts_bulk_contacts_remove(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "BulkIdsRequest",
+                "required": "true"
+            }
+        ],
+        "return": "BulkDeleteResponse"
+    },
+    "POST /api/v2/externalcontacts/bulk/contacts/unresolved": {
+        "operationId": "post_externalcontacts_bulk_contacts_unresolved",
+        "functionName": "post_externalcontacts_bulk_contacts_unresolved",
+        "signature": "post_externalcontacts_bulk_contacts_unresolved(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "BulkIdsRequest",
+                "required": "true"
+            }
+        ],
+        "return": "BulkFetchContactsResponse"
+    },
+    "POST /api/v2/externalcontacts/bulk/contacts/update": {
+        "operationId": "post_externalcontacts_bulk_contacts_update",
+        "functionName": "post_externalcontacts_bulk_contacts_update",
+        "signature": "post_externalcontacts_bulk_contacts_update(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "BulkContactsRequest",
+                "required": "true"
+            }
+        ],
+        "return": "BulkContactsResponse"
+    },
+    "POST /api/v2/externalcontacts/bulk/notes": {
+        "operationId": "post_externalcontacts_bulk_notes",
+        "functionName": "post_externalcontacts_bulk_notes",
+        "signature": "post_externalcontacts_bulk_notes(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "BulkIdsRequest",
+                "required": "true"
+            }
+        ],
+        "return": "BulkFetchNotesResponse"
+    },
+    "POST /api/v2/externalcontacts/bulk/notes/add": {
+        "operationId": "post_externalcontacts_bulk_notes_add",
+        "functionName": "post_externalcontacts_bulk_notes_add",
+        "signature": "post_externalcontacts_bulk_notes_add(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "BulkNotesRequest",
+                "required": "true"
+            }
+        ],
+        "return": "BulkNotesResponse"
+    },
+    "POST /api/v2/externalcontacts/bulk/notes/remove": {
+        "operationId": "post_externalcontacts_bulk_notes_remove",
+        "functionName": "post_externalcontacts_bulk_notes_remove",
+        "signature": "post_externalcontacts_bulk_notes_remove(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "BulkIdsRequest",
+                "required": "true"
+            }
+        ],
+        "return": "BulkDeleteResponse"
+    },
+    "POST /api/v2/externalcontacts/bulk/notes/update": {
+        "operationId": "post_externalcontacts_bulk_notes_update",
+        "functionName": "post_externalcontacts_bulk_notes_update",
+        "signature": "post_externalcontacts_bulk_notes_update(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "BulkNotesRequest",
+                "required": "true"
+            }
+        ],
+        "return": "BulkNotesResponse"
+    },
+    "POST /api/v2/externalcontacts/bulk/organizations": {
+        "operationId": "post_externalcontacts_bulk_organizations",
+        "functionName": "post_externalcontacts_bulk_organizations",
+        "signature": "post_externalcontacts_bulk_organizations(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "BulkIdsRequest",
+                "required": "true"
+            }
+        ],
+        "return": "BulkFetchOrganizationsResponse"
+    },
+    "POST /api/v2/externalcontacts/bulk/organizations/add": {
+        "operationId": "post_externalcontacts_bulk_organizations_add",
+        "functionName": "post_externalcontacts_bulk_organizations_add",
+        "signature": "post_externalcontacts_bulk_organizations_add(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "BulkOrganizationsRequest",
+                "required": "true"
+            }
+        ],
+        "return": "BulkOrganizationsResponse"
+    },
+    "POST /api/v2/externalcontacts/bulk/organizations/remove": {
+        "operationId": "post_externalcontacts_bulk_organizations_remove",
+        "functionName": "post_externalcontacts_bulk_organizations_remove",
+        "signature": "post_externalcontacts_bulk_organizations_remove(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "BulkIdsRequest",
+                "required": "true"
+            }
+        ],
+        "return": "BulkDeleteResponse"
+    },
+    "POST /api/v2/externalcontacts/bulk/organizations/update": {
+        "operationId": "post_externalcontacts_bulk_organizations_update",
+        "functionName": "post_externalcontacts_bulk_organizations_update",
+        "signature": "post_externalcontacts_bulk_organizations_update(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "BulkOrganizationsRequest",
+                "required": "true"
+            }
+        ],
+        "return": "BulkOrganizationsResponse"
+    },
+    "POST /api/v2/externalcontacts/bulk/relationships": {
+        "operationId": "post_externalcontacts_bulk_relationships",
+        "functionName": "post_externalcontacts_bulk_relationships",
+        "signature": "post_externalcontacts_bulk_relationships(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "BulkIdsRequest",
+                "required": "true"
+            }
+        ],
+        "return": "BulkFetchRelationshipsResponse"
+    },
+    "POST /api/v2/externalcontacts/bulk/relationships/add": {
+        "operationId": "post_externalcontacts_bulk_relationships_add",
+        "functionName": "post_externalcontacts_bulk_relationships_add",
+        "signature": "post_externalcontacts_bulk_relationships_add(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "BulkRelationshipsRequest",
+                "required": "true"
+            }
+        ],
+        "return": "BulkRelationshipsResponse"
+    },
+    "POST /api/v2/externalcontacts/bulk/relationships/remove": {
+        "operationId": "post_externalcontacts_bulk_relationships_remove",
+        "functionName": "post_externalcontacts_bulk_relationships_remove",
+        "signature": "post_externalcontacts_bulk_relationships_remove(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "BulkIdsRequest",
+                "required": "true"
+            }
+        ],
+        "return": "BulkDeleteResponse"
+    },
+    "POST /api/v2/externalcontacts/bulk/relationships/update": {
+        "operationId": "post_externalcontacts_bulk_relationships_update",
+        "functionName": "post_externalcontacts_bulk_relationships_update",
+        "signature": "post_externalcontacts_bulk_relationships_update(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "BulkRelationshipsRequest",
+                "required": "true"
+            }
+        ],
+        "return": "BulkRelationshipsResponse"
+    },
+    "POST /api/v2/externalcontacts/contacts/{contactId}/notes": {
+        "operationId": "post_externalcontacts_contact_notes",
+        "functionName": "post_externalcontacts_contact_notes",
+        "signature": "post_externalcontacts_contact_notes(contact_id, body)",
+        "parameters": [
+            {
+                "name": "contact_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Note",
+                "required": "true"
+            }
+        ],
+        "return": "Note"
+    },
+    "POST /api/v2/externalcontacts/contacts/{contactId}/promotion": {
+        "operationId": "post_externalcontacts_contact_promotion",
+        "functionName": "post_externalcontacts_contact_promotion",
+        "signature": "post_externalcontacts_contact_promotion(contact_id)",
+        "parameters": [
+            {
+                "name": "contact_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "ExternalContact"
+    },
+    "POST /api/v2/externalcontacts/contacts": {
+        "operationId": "post_externalcontacts_contacts",
+        "functionName": "post_externalcontacts_contacts",
+        "signature": "post_externalcontacts_contacts(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "ExternalContact",
+                "required": "true"
+            }
+        ],
+        "return": "ExternalContact"
+    },
+    "POST /api/v2/externalcontacts/contacts/schemas": {
+        "operationId": "post_externalcontacts_contacts_schemas",
+        "functionName": "post_externalcontacts_contacts_schemas",
+        "signature": "post_externalcontacts_contacts_schemas(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "DataSchema",
+                "required": "true"
+            }
+        ],
+        "return": "DataSchema"
+    },
+    "POST /api/v2/externalcontacts/identifierlookup": {
+        "operationId": "post_externalcontacts_identifierlookup",
+        "functionName": "post_externalcontacts_identifierlookup",
+        "signature": "post_externalcontacts_identifierlookup(identifier)",
+        "parameters": [
+            {
+                "name": "identifier",
+                "type": "ContactIdentifier",
+                "required": "true"
+            }
+        ],
+        "return": "ExternalContact"
+    },
+    "POST /api/v2/externalcontacts/merge/contacts": {
+        "operationId": "post_externalcontacts_merge_contacts",
+        "functionName": "post_externalcontacts_merge_contacts",
+        "signature": "post_externalcontacts_merge_contacts(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "MergeRequest",
+                "required": "true"
+            }
+        ],
+        "return": "ExternalContact"
+    },
+    "POST /api/v2/externalcontacts/organizations/{externalOrganizationId}/notes": {
+        "operationId": "post_externalcontacts_organization_notes",
+        "functionName": "post_externalcontacts_organization_notes",
+        "signature": "post_externalcontacts_organization_notes(external_organization_id, body)",
+        "parameters": [
+            {
+                "name": "external_organization_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Note",
+                "required": "true"
+            }
+        ],
+        "return": "Note"
+    },
+    "POST /api/v2/externalcontacts/organizations": {
+        "operationId": "post_externalcontacts_organizations",
+        "functionName": "post_externalcontacts_organizations",
+        "signature": "post_externalcontacts_organizations(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "ExternalOrganization",
+                "required": "true"
+            }
+        ],
+        "return": "ExternalOrganization"
+    },
+    "POST /api/v2/externalcontacts/organizations/schemas": {
+        "operationId": "post_externalcontacts_organizations_schemas",
+        "functionName": "post_externalcontacts_organizations_schemas",
+        "signature": "post_externalcontacts_organizations_schemas(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "DataSchema",
+                "required": "true"
+            }
+        ],
+        "return": "DataSchema"
+    },
+    "POST /api/v2/externalcontacts/relationships": {
+        "operationId": "post_externalcontacts_relationships",
+        "functionName": "post_externalcontacts_relationships",
+        "signature": "post_externalcontacts_relationships(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Relationship",
+                "required": "true"
+            }
+        ],
+        "return": "Relationship"
+    },
+    "PUT /api/v2/externalcontacts/contacts/{contactId}": {
+        "operationId": "put_externalcontacts_contact",
+        "functionName": "put_externalcontacts_contact",
+        "signature": "put_externalcontacts_contact(contact_id, body)",
+        "parameters": [
+            {
+                "name": "contact_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "ExternalContact",
+                "required": "true"
+            }
+        ],
+        "return": "ExternalContact"
+    },
+    "PUT /api/v2/externalcontacts/contacts/{contactId}/notes/{noteId}": {
+        "operationId": "put_externalcontacts_contact_note",
+        "functionName": "put_externalcontacts_contact_note",
+        "signature": "put_externalcontacts_contact_note(contact_id, note_id, body)",
+        "parameters": [
+            {
+                "name": "contact_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "note_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Note",
+                "required": "true"
+            }
+        ],
+        "return": "Note"
+    },
+    "PUT /api/v2/externalcontacts/contacts/schemas/{schemaId}": {
+        "operationId": "put_externalcontacts_contacts_schema",
+        "functionName": "put_externalcontacts_contacts_schema",
+        "signature": "put_externalcontacts_contacts_schema(schema_id, body)",
+        "parameters": [
+            {
+                "name": "schema_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "DataSchema",
+                "required": "true"
+            }
+        ],
+        "return": "DataSchema"
+    },
+    "PUT /api/v2/externalcontacts/conversations/{conversationId}": {
+        "operationId": "put_externalcontacts_conversation",
+        "functionName": "put_externalcontacts_conversation",
+        "signature": "put_externalcontacts_conversation(conversation_id, body)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "ConversationAssociation",
+                "required": "true"
+            }
+        ]
+    },
+    "PUT /api/v2/externalcontacts/organizations/{externalOrganizationId}": {
+        "operationId": "put_externalcontacts_organization",
+        "functionName": "put_externalcontacts_organization",
+        "signature": "put_externalcontacts_organization(external_organization_id, body)",
+        "parameters": [
+            {
+                "name": "external_organization_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "ExternalOrganization",
+                "required": "true"
+            }
+        ],
+        "return": "ExternalOrganization"
+    },
+    "PUT /api/v2/externalcontacts/organizations/{externalOrganizationId}/notes/{noteId}": {
+        "operationId": "put_externalcontacts_organization_note",
+        "functionName": "put_externalcontacts_organization_note",
+        "signature": "put_externalcontacts_organization_note(external_organization_id, note_id, body)",
+        "parameters": [
+            {
+                "name": "external_organization_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "note_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Note",
+                "required": "true"
+            }
+        ],
+        "return": "Note"
+    },
+    "PUT /api/v2/externalcontacts/organizations/{externalOrganizationId}/trustor/{trustorId}": {
+        "operationId": "put_externalcontacts_organization_trustor_trustor_id",
+        "functionName": "put_externalcontacts_organization_trustor_trustor_id",
+        "signature": "put_externalcontacts_organization_trustor_trustor_id(external_organization_id, trustor_id)",
+        "parameters": [
+            {
+                "name": "external_organization_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "trustor_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "ExternalOrganizationTrustorLink"
+    },
+    "PUT /api/v2/externalcontacts/organizations/schemas/{schemaId}": {
+        "operationId": "put_externalcontacts_organizations_schema",
+        "functionName": "put_externalcontacts_organizations_schema",
+        "signature": "put_externalcontacts_organizations_schema(schema_id, body)",
+        "parameters": [
+            {
+                "name": "schema_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "DataSchema",
+                "required": "true"
+            }
+        ],
+        "return": "DataSchema"
+    },
+    "PUT /api/v2/externalcontacts/relationships/{relationshipId}": {
+        "operationId": "put_externalcontacts_relationship",
+        "functionName": "put_externalcontacts_relationship",
+        "signature": "put_externalcontacts_relationship(relationship_id, body)",
+        "parameters": [
+            {
+                "name": "relationship_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Relationship",
+                "required": "true"
+            }
+        ],
+        "return": "Relationship"
+    }
+    
+}

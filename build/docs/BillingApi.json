@@ -1,0 +1,39 @@
+{
+    "GET /api/v2/billing/reports/billableusage": {
+        "operationId": "get_billing_reports_billableusage",
+        "functionName": "get_billing_reports_billableusage",
+        "signature": "get_billing_reports_billableusage(start_date, end_date)",
+        "parameters": [
+            {
+                "name": "start_date",
+                "type": "datetime",
+                "required": "true"
+            },
+            {
+                "name": "end_date",
+                "type": "datetime",
+                "required": "true"
+            }
+        ],
+        "return": "BillingUsageReport"
+    },
+    "GET /api/v2/billing/trusteebillingoverview/{trustorOrgId}": {
+        "operationId": "get_billing_trusteebillingoverview_trustor_org_id",
+        "functionName": "get_billing_trusteebillingoverview_trustor_org_id",
+        "signature": "get_billing_trusteebillingoverview_trustor_org_id(trustor_org_id, billing_period_index)",
+        "parameters": [
+            {
+                "name": "trustor_org_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "billing_period_index",
+                "type": "int",
+                "required": "false"
+            }
+        ],
+        "return": "TrusteeBillingOverview"
+    }
+    
+}

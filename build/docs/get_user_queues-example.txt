@@ -1,0 +1,22 @@
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'your_access_token'
+# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.UsersApi();
+user_id = 'user_id_example' # str | User ID
+page_size = 25 # int | Page size (optional) (default to 25)
+page_number = 1 # int | Page number (optional) (default to 1)
+joined = True # bool | Is joined to the queue (optional) (default to True)
+division_id = ['division_id_example'] # list[str] | Division ID(s) (optional)
+
+try:
+    # Get queues for user
+    api_response = api_instance.get_user_queues(user_id, page_size=page_size, page_number=page_number, joined=joined, division_id=division_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling UsersApi->get_user_queues: %s\n" % e)

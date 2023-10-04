@@ -1,0 +1,14 @@
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WebDeploymentsApi();
+x_journey_session_id = 'x_journey_session_id_example' # str | The Customer's journey sessionId. (optional)
+x_journey_session_type = 'x_journey_session_type_example' # str | The Customer's journey session type. (optional)
+
+try:
+    # Invalidate JWT
+    api_instance.delete_webdeployments_token_revoke(x_journey_session_id=x_journey_session_id, x_journey_session_type=x_journey_session_type)
+except ApiException as e:
+    print("Exception when calling WebDeploymentsApi->delete_webdeployments_token_revoke: %s\n" % e)

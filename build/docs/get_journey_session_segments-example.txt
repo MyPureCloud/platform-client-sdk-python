@@ -1,0 +1,22 @@
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'your_access_token'
+# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.JourneyApi();
+session_id = 'session_id_example' # str | ID of the session to query for segment assignments.
+page_size = 'page_size_example' # str | Number of entities to return. Maximum of 200. (optional)
+after = 'after_example' # str | The cursor that points to the end of the set of entities that has been returned. (optional)
+segment_scope = 'segment_scope_example' # str | Scope to filter on. If not specified, both session-scoped and customer-scoped assignments are returned. (optional)
+assignment_state = 'assignment_state_example' # str | Assignment state to filter on. If not specified, both assigned and unassigned assignments are returned. (optional)
+
+try:
+    # Retrieve segment assignments by session ID.
+    api_response = api_instance.get_journey_session_segments(session_id, page_size=page_size, after=after, segment_scope=segment_scope, assignment_state=assignment_state)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling JourneyApi->get_journey_session_segments: %s\n" % e)

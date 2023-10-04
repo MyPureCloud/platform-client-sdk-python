@@ -1,0 +1,20 @@
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'your_access_token'
+# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi();
+conversation_id = 'conversation_id_example' # str | conversation ID
+participant_id = 'participant_id_example' # str | participant ID
+provisional = False # bool | Indicates if the wrap-up code is provisional. (optional) (default to False)
+
+try:
+    # Get the wrap-up for this conversation participant. 
+    api_response = api_instance.get_conversation_participant_wrapup(conversation_id, participant_id, provisional=provisional)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->get_conversation_participant_wrapup: %s\n" % e)

@@ -1,0 +1,25 @@
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'your_access_token'
+# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.JourneyApi();
+page_number = 1 # int | Page number (optional) (default to 1)
+page_size = 25 # int | Page size (optional) (default to 25)
+sort_by = 'sort_by_example' # str | Field(s) to sort by. Prefix with '-' for descending (e.g. sortBy=displayName,-createdDate). (optional)
+filter_field = 'filter_field_example' # str | Field to filter by (e.g. filterField=weight or filterField=action.actionTemplate.id). Requires 'filterField' to also be set. (optional)
+filter_value = 'filter_value_example' # str | Value to filter by. Requires 'filterValue' to also be set. (optional)
+action_map_ids = ['action_map_ids_example'] # list[str] | IDs of action maps to return. Use of this parameter is not compatible with pagination, filtering, sorting or querying. A maximum of 100 action maps are allowed per request. (optional)
+query_fields = ['query_fields_example'] # list[str] | Action Map field(s) to query on. Requires 'queryValue' to also be set. (optional)
+query_value = 'query_value_example' # str | Value to query on. Requires 'queryFields' to also be set. (optional)
+
+try:
+    # Retrieve all action maps.
+    api_response = api_instance.get_journey_actionmaps(page_number=page_number, page_size=page_size, sort_by=sort_by, filter_field=filter_field, filter_value=filter_value, action_map_ids=action_map_ids, query_fields=query_fields, query_value=query_value)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling JourneyApi->get_journey_actionmaps: %s\n" % e)

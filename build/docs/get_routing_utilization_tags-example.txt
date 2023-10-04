@@ -1,0 +1,21 @@
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'your_access_token'
+# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RoutingApi();
+page_size = 25 # int | Page size (optional) (default to 25)
+page_number = 1 # int | Page number (optional) (default to 1)
+sort_order = ''ascending'' # str | Sort order by name (optional) (default to 'ascending')
+name = 'name_example' # str | Utilization tag's name (Wildcard is supported, e.g., 'tag1*') (optional)
+
+try:
+    # Get list of utilization tags
+    api_response = api_instance.get_routing_utilization_tags(page_size=page_size, page_number=page_number, sort_order=sort_order, name=name)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling RoutingApi->get_routing_utilization_tags: %s\n" % e)

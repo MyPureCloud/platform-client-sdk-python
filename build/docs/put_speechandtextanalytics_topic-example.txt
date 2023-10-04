@@ -1,0 +1,19 @@
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'your_access_token'
+# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.SpeechTextAnalyticsApi();
+topic_id = 'topic_id_example' # str | The id of the topic
+body = PureCloudPlatformClientV2.TopicRequest() # TopicRequest | The topic to update
+
+try:
+    # Update existing Speech & Text Analytics topic
+    api_response = api_instance.put_speechandtextanalytics_topic(topic_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling SpeechTextAnalyticsApi->put_speechandtextanalytics_topic: %s\n" % e)

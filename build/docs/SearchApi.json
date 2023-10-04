@@ -1,0 +1,388 @@
+{
+    "GET /api/v2/documentation/gkn/search": {
+        "operationId": "get_documentation_gkn_search",
+        "functionName": "get_documentation_gkn_search",
+        "signature": "get_documentation_gkn_search(q64)",
+        "parameters": [
+            {
+                "name": "q64",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "GKNDocumentationSearchResponse"
+    },
+    "GET /api/v2/documentation/search": {
+        "operationId": "get_documentation_search",
+        "functionName": "get_documentation_search",
+        "signature": "get_documentation_search(q64)",
+        "parameters": [
+            {
+                "name": "q64",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "DocumentationSearchResponse"
+    },
+    "GET /api/v2/groups/search": {
+        "operationId": "get_groups_search",
+        "functionName": "get_groups_search",
+        "signature": "get_groups_search(q64, expand)",
+        "parameters": [
+            {
+                "name": "q64",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "expand",
+                "type": "list[str]",
+                "required": "false"
+            }
+        ],
+        "return": "GroupsSearchResponse"
+    },
+    "GET /api/v2/locations/search": {
+        "operationId": "get_locations_search",
+        "functionName": "get_locations_search",
+        "signature": "get_locations_search(q64, expand)",
+        "parameters": [
+            {
+                "name": "q64",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "expand",
+                "type": "list[str]",
+                "required": "false"
+            }
+        ],
+        "return": "LocationsSearchResponse"
+    },
+    "GET /api/v2/search": {
+        "operationId": "get_search",
+        "functionName": "get_search",
+        "signature": "get_search(q64, expand, profile)",
+        "parameters": [
+            {
+                "name": "q64",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "expand",
+                "type": "list[str]",
+                "required": "false"
+            },
+            {
+                "name": "profile",
+                "type": "bool",
+                "required": "false"
+            }
+        ],
+        "return": "JsonNodeSearchResponse"
+    },
+    "GET /api/v2/search/suggest": {
+        "operationId": "get_search_suggest",
+        "functionName": "get_search_suggest",
+        "signature": "get_search_suggest(q64, expand, profile)",
+        "parameters": [
+            {
+                "name": "q64",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "expand",
+                "type": "list[str]",
+                "required": "false"
+            },
+            {
+                "name": "profile",
+                "type": "bool",
+                "required": "false"
+            }
+        ],
+        "return": "JsonNodeSearchResponse"
+    },
+    "GET /api/v2/users/search": {
+        "operationId": "get_users_search",
+        "functionName": "get_users_search",
+        "signature": "get_users_search(q64, expand, integration_presence_source)",
+        "parameters": [
+            {
+                "name": "q64",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "expand",
+                "type": "list[str]",
+                "required": "false"
+            },
+            {
+                "name": "integration_presence_source",
+                "type": "str",
+                "required": "false"
+            }
+        ],
+        "return": "UsersSearchResponse"
+    },
+    "GET /api/v2/voicemail/search": {
+        "operationId": "get_voicemail_search",
+        "functionName": "get_voicemail_search",
+        "signature": "get_voicemail_search(q64, expand)",
+        "parameters": [
+            {
+                "name": "q64",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "expand",
+                "type": "list[str]",
+                "required": "false"
+            }
+        ],
+        "return": "VoicemailsSearchResponse"
+    },
+    "POST /api/v2/analytics/conversations/transcripts/query": {
+        "operationId": "post_analytics_conversations_transcripts_query",
+        "functionName": "post_analytics_conversations_transcripts_query",
+        "signature": "post_analytics_conversations_transcripts_query(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "TranscriptConversationDetailSearchRequest",
+                "required": "true"
+            }
+        ],
+        "return": "AnalyticsConversationWithoutAttributesMultiGetResponse"
+    },
+    "POST /api/v2/conversations/participants/attributes/search": {
+        "operationId": "post_conversations_participants_attributes_search",
+        "functionName": "post_conversations_participants_attributes_search",
+        "signature": "post_conversations_participants_attributes_search(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "ConversationParticipantSearchRequest",
+                "required": "true"
+            }
+        ],
+        "return": "JsonCursorSearchResponse"
+    },
+    "POST /api/v2/documentation/all/search": {
+        "operationId": "post_documentation_all_search",
+        "functionName": "post_documentation_all_search",
+        "signature": "post_documentation_all_search(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "DocumentationV2SearchRequest",
+                "required": "true"
+            }
+        ],
+        "return": "JsonNodeSearchResponse"
+    },
+    "POST /api/v2/documentation/gkn/search": {
+        "operationId": "post_documentation_gkn_search",
+        "functionName": "post_documentation_gkn_search",
+        "signature": "post_documentation_gkn_search(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "GKNDocumentationSearchRequest",
+                "required": "true"
+            }
+        ],
+        "return": "GKNDocumentationSearchResponse"
+    },
+    "POST /api/v2/documentation/search": {
+        "operationId": "post_documentation_search",
+        "functionName": "post_documentation_search",
+        "signature": "post_documentation_search(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "DocumentationSearchRequest",
+                "required": "true"
+            }
+        ],
+        "return": "DocumentationSearchResponse"
+    },
+    "POST /api/v2/groups/search": {
+        "operationId": "post_groups_search",
+        "functionName": "post_groups_search",
+        "signature": "post_groups_search(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "GroupSearchRequest",
+                "required": "true"
+            }
+        ],
+        "return": "GroupsSearchResponse"
+    },
+    "POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/search": {
+        "operationId": "post_knowledge_knowledgebase_search",
+        "functionName": "post_knowledge_knowledgebase_search",
+        "signature": "post_knowledge_knowledgebase_search(knowledge_base_id, body)",
+        "parameters": [
+            {
+                "name": "knowledge_base_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "KnowledgeSearchRequest",
+                "required": "false"
+            }
+        ],
+        "return": "KnowledgeSearchResponse"
+    },
+    "POST /api/v2/locations/search": {
+        "operationId": "post_locations_search",
+        "functionName": "post_locations_search",
+        "signature": "post_locations_search(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "LocationSearchRequest",
+                "required": "true"
+            }
+        ],
+        "return": "LocationsSearchResponse"
+    },
+    "POST /api/v2/search": {
+        "operationId": "post_search",
+        "functionName": "post_search",
+        "signature": "post_search(body, profile)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "SearchRequest",
+                "required": "true"
+            },
+            {
+                "name": "profile",
+                "type": "bool",
+                "required": "false"
+            }
+        ],
+        "return": "JsonNodeSearchResponse"
+    },
+    "POST /api/v2/search/suggest": {
+        "operationId": "post_search_suggest",
+        "functionName": "post_search_suggest",
+        "signature": "post_search_suggest(body, profile)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "SuggestSearchRequest",
+                "required": "true"
+            },
+            {
+                "name": "profile",
+                "type": "bool",
+                "required": "false"
+            }
+        ],
+        "return": "JsonNodeSearchResponse"
+    },
+    "POST /api/v2/speechandtextanalytics/transcripts/search": {
+        "operationId": "post_speechandtextanalytics_transcripts_search",
+        "functionName": "post_speechandtextanalytics_transcripts_search",
+        "signature": "post_speechandtextanalytics_transcripts_search(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "TranscriptSearchRequest",
+                "required": "true"
+            }
+        ],
+        "return": "JsonSearchResponse"
+    },
+    "POST /api/v2/teams/search": {
+        "operationId": "post_teams_search",
+        "functionName": "post_teams_search",
+        "signature": "post_teams_search(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "TeamSearchRequest",
+                "required": "true"
+            }
+        ],
+        "return": "TeamsSearchResponse"
+    },
+    "POST /api/v2/users/search": {
+        "operationId": "post_users_search",
+        "functionName": "post_users_search",
+        "signature": "post_users_search(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "UserSearchRequest",
+                "required": "true"
+            }
+        ],
+        "return": "UsersSearchResponse"
+    },
+    "POST /api/v2/users/search/conversation/target": {
+        "operationId": "post_users_search_conversation_target",
+        "functionName": "post_users_search_conversation_target",
+        "signature": "post_users_search_conversation_target(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "UserSearchRequest",
+                "required": "true"
+            }
+        ],
+        "return": "UsersSearchResponse"
+    },
+    "POST /api/v2/users/search/queuemembers/manage": {
+        "operationId": "post_users_search_queuemembers_manage",
+        "functionName": "post_users_search_queuemembers_manage",
+        "signature": "post_users_search_queuemembers_manage(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "UserSearchRequest",
+                "required": "true"
+            }
+        ],
+        "return": "UsersSearchResponse"
+    },
+    "POST /api/v2/users/search/teams/assign": {
+        "operationId": "post_users_search_teams_assign",
+        "functionName": "post_users_search_teams_assign",
+        "signature": "post_users_search_teams_assign(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "UserSearchRequest",
+                "required": "true"
+            }
+        ],
+        "return": "UsersSearchResponse"
+    },
+    "POST /api/v2/voicemail/search": {
+        "operationId": "post_voicemail_search",
+        "functionName": "post_voicemail_search",
+        "signature": "post_voicemail_search(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "VoicemailSearchRequest",
+                "required": "true"
+            }
+        ],
+        "return": "VoicemailsSearchResponse"
+    }
+    
+}

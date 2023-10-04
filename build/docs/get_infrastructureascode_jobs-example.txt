@@ -1,0 +1,24 @@
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'your_access_token'
+# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.InfrastructureAsCodeApi();
+max_results = 1 # int | Number of jobs to show (optional) (default to 1)
+include_errors = False # bool | Include error messages (optional) (default to False)
+sort_by = ''dateSubmitted'' # str | Sort by (optional) (default to 'dateSubmitted')
+sort_order = ''desc'' # str | Sort order (optional) (default to 'desc')
+accelerator_id = 'accelerator_id_example' # str | Find only jobs associated with this accelerator (optional)
+submitted_by = 'submitted_by_example' # str | Find only jobs submitted by this user (optional)
+status = 'status_example' # str | Find only jobs in this state (optional)
+
+try:
+    # Get job history
+    api_response = api_instance.get_infrastructureascode_jobs(max_results=max_results, include_errors=include_errors, sort_by=sort_by, sort_order=sort_order, accelerator_id=accelerator_id, submitted_by=submitted_by, status=status)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling InfrastructureAsCodeApi->get_infrastructureascode_jobs: %s\n" % e)

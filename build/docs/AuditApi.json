@@ -1,0 +1,89 @@
+{
+    "GET /api/v2/audits/query/realtime/servicemapping": {
+        "operationId": "get_audits_query_realtime_servicemapping",
+        "functionName": "get_audits_query_realtime_servicemapping",
+        "signature": "get_audits_query_realtime_servicemapping()",
+        
+        "return": "AuditQueryServiceMapping"
+    },
+    "GET /api/v2/audits/query/servicemapping": {
+        "operationId": "get_audits_query_servicemapping",
+        "functionName": "get_audits_query_servicemapping",
+        "signature": "get_audits_query_servicemapping()",
+        
+        "return": "AuditQueryServiceMapping"
+    },
+    "GET /api/v2/audits/query/{transactionId}": {
+        "operationId": "get_audits_query_transaction_id",
+        "functionName": "get_audits_query_transaction_id",
+        "signature": "get_audits_query_transaction_id(transaction_id)",
+        "parameters": [
+            {
+                "name": "transaction_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "AuditQueryExecutionStatusResponse"
+    },
+    "GET /api/v2/audits/query/{transactionId}/results": {
+        "operationId": "get_audits_query_transaction_id_results",
+        "functionName": "get_audits_query_transaction_id_results",
+        "signature": "get_audits_query_transaction_id_results(transaction_id, cursor, page_size, expand)",
+        "parameters": [
+            {
+                "name": "transaction_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "cursor",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "page_size",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "expand",
+                "type": "list[str]",
+                "required": "false"
+            }
+        ],
+        "return": "AuditQueryExecutionResultsResponse"
+    },
+    "POST /api/v2/audits/query": {
+        "operationId": "post_audits_query",
+        "functionName": "post_audits_query",
+        "signature": "post_audits_query(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "AuditQueryRequest",
+                "required": "true"
+            }
+        ],
+        "return": "AuditQueryExecutionStatusResponse"
+    },
+    "POST /api/v2/audits/query/realtime": {
+        "operationId": "post_audits_query_realtime",
+        "functionName": "post_audits_query_realtime",
+        "signature": "post_audits_query_realtime(body, expand)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "AuditRealtimeQueryRequest",
+                "required": "true"
+            },
+            {
+                "name": "expand",
+                "type": "list[str]",
+                "required": "false"
+            }
+        ],
+        "return": "AuditRealtimeQueryResultsResponse"
+    }
+    
+}

@@ -1,0 +1,70 @@
+{
+    "GET /api/v2/gdpr/requests/{requestId}": {
+        "operationId": "get_gdpr_request",
+        "functionName": "get_gdpr_request",
+        "signature": "get_gdpr_request(request_id)",
+        "parameters": [
+            {
+                "name": "request_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "GDPRRequest"
+    },
+    "GET /api/v2/gdpr/requests": {
+        "operationId": "get_gdpr_requests",
+        "functionName": "get_gdpr_requests",
+        "signature": "get_gdpr_requests(page_size, page_number)",
+        "parameters": [
+            {
+                "name": "page_size",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "page_number",
+                "type": "int",
+                "required": "false"
+            }
+        ],
+        "return": "GDPRRequestEntityListing"
+    },
+    "GET /api/v2/gdpr/subjects": {
+        "operationId": "get_gdpr_subjects",
+        "functionName": "get_gdpr_subjects",
+        "signature": "get_gdpr_subjects(search_type, search_value)",
+        "parameters": [
+            {
+                "name": "search_type",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "search_value",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "GDPRSubjectEntityListing"
+    },
+    "POST /api/v2/gdpr/requests": {
+        "operationId": "post_gdpr_requests",
+        "functionName": "post_gdpr_requests",
+        "signature": "post_gdpr_requests(body, delete_confirmed)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "GDPRRequest",
+                "required": "true"
+            },
+            {
+                "name": "delete_confirmed",
+                "type": "bool",
+                "required": "false"
+            }
+        ],
+        "return": "GDPRRequest"
+    }
+    
+}

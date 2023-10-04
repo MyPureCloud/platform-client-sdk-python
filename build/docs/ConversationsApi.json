@@ -1,0 +1,4377 @@
+{
+    "DELETE /api/v2/analytics/conversations/details/jobs/{jobId}": {
+        "operationId": "delete_analytics_conversations_details_job",
+        "functionName": "delete_analytics_conversations_details_job",
+        "signature": "delete_analytics_conversations_details_job(job_id)",
+        "parameters": [
+            {
+                "name": "job_id",
+                "type": "str",
+                "required": "true"
+            }
+        ]
+    },
+    "DELETE /api/v2/conversations/{conversationId}/participants/{participantId}/codes/{addCommunicationCode}": {
+        "operationId": "delete_conversation_participant_code",
+        "functionName": "delete_conversation_participant_code",
+        "signature": "delete_conversation_participant_code(conversation_id, participant_id, add_communication_code)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "participant_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "add_communication_code",
+                "type": "str",
+                "required": "true"
+            }
+        ]
+    },
+    "DELETE /api/v2/conversations/{conversationId}/participants/{participantId}/flaggedreason": {
+        "operationId": "delete_conversation_participant_flaggedreason",
+        "functionName": "delete_conversation_participant_flaggedreason",
+        "signature": "delete_conversation_participant_flaggedreason(conversation_id, participant_id)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "participant_id",
+                "type": "str",
+                "required": "true"
+            }
+        ]
+    },
+    "DELETE /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult": {
+        "operationId": "delete_conversations_call_participant_consult",
+        "functionName": "delete_conversations_call_participant_consult",
+        "signature": "delete_conversations_call_participant_consult(conversation_id, participant_id)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "participant_id",
+                "type": "str",
+                "required": "true"
+            }
+        ]
+    },
+    "DELETE /api/v2/conversations/emails/{conversationId}/messages/draft/attachments/{attachmentId}": {
+        "operationId": "delete_conversations_email_messages_draft_attachment",
+        "functionName": "delete_conversations_email_messages_draft_attachment",
+        "signature": "delete_conversations_email_messages_draft_attachment(conversation_id, attachment_id)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "attachment_id",
+                "type": "str",
+                "required": "true"
+            }
+        ]
+    },
+    "DELETE /api/v2/conversations/messages/cachedmedia/{cachedMediaItemId}": {
+        "operationId": "delete_conversations_messages_cachedmedia_cached_media_item_id",
+        "functionName": "delete_conversations_messages_cachedmedia_cached_media_item_id",
+        "signature": "delete_conversations_messages_cachedmedia_cached_media_item_id(cached_media_item_id)",
+        "parameters": [
+            {
+                "name": "cached_media_item_id",
+                "type": "str",
+                "required": "true"
+            }
+        ]
+    },
+    "DELETE /api/v2/conversations/messaging/integrations/facebook/{integrationId}": {
+        "operationId": "delete_conversations_messaging_integrations_facebook_integration_id",
+        "functionName": "delete_conversations_messaging_integrations_facebook_integration_id",
+        "signature": "delete_conversations_messaging_integrations_facebook_integration_id(integration_id)",
+        "parameters": [
+            {
+                "name": "integration_id",
+                "type": "str",
+                "required": "true"
+            }
+        ]
+    },
+    "DELETE /api/v2/conversations/messaging/integrations/instagram/{integrationId}": {
+        "operationId": "delete_conversations_messaging_integrations_instagram_integration_id",
+        "functionName": "delete_conversations_messaging_integrations_instagram_integration_id",
+        "signature": "delete_conversations_messaging_integrations_instagram_integration_id(integration_id)",
+        "parameters": [
+            {
+                "name": "integration_id",
+                "type": "str",
+                "required": "true"
+            }
+        ]
+    },
+    "DELETE /api/v2/conversations/messaging/integrations/line/{integrationId}": {
+        "operationId": "delete_conversations_messaging_integrations_line_integration_id",
+        "functionName": "delete_conversations_messaging_integrations_line_integration_id",
+        "signature": "delete_conversations_messaging_integrations_line_integration_id(integration_id)",
+        "parameters": [
+            {
+                "name": "integration_id",
+                "type": "str",
+                "required": "true"
+            }
+        ]
+    },
+    "DELETE /api/v2/conversations/messaging/integrations/open/{integrationId}": {
+        "operationId": "delete_conversations_messaging_integrations_open_integration_id",
+        "functionName": "delete_conversations_messaging_integrations_open_integration_id",
+        "signature": "delete_conversations_messaging_integrations_open_integration_id(integration_id)",
+        "parameters": [
+            {
+                "name": "integration_id",
+                "type": "str",
+                "required": "true"
+            }
+        ]
+    },
+    "DELETE /api/v2/conversations/messaging/integrations/twitter/{integrationId}": {
+        "operationId": "delete_conversations_messaging_integrations_twitter_integration_id",
+        "functionName": "delete_conversations_messaging_integrations_twitter_integration_id",
+        "signature": "delete_conversations_messaging_integrations_twitter_integration_id(integration_id)",
+        "parameters": [
+            {
+                "name": "integration_id",
+                "type": "str",
+                "required": "true"
+            }
+        ]
+    },
+    "DELETE /api/v2/conversations/messaging/integrations/whatsapp/{integrationId}": {
+        "operationId": "delete_conversations_messaging_integrations_whatsapp_integration_id",
+        "functionName": "delete_conversations_messaging_integrations_whatsapp_integration_id",
+        "signature": "delete_conversations_messaging_integrations_whatsapp_integration_id(integration_id)",
+        "parameters": [
+            {
+                "name": "integration_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "WhatsAppIntegration"
+    },
+    "DELETE /api/v2/conversations/messaging/settings/{messageSettingId}": {
+        "operationId": "delete_conversations_messaging_setting",
+        "functionName": "delete_conversations_messaging_setting",
+        "signature": "delete_conversations_messaging_setting(message_setting_id)",
+        "parameters": [
+            {
+                "name": "message_setting_id",
+                "type": "str",
+                "required": "true"
+            }
+        ]
+    },
+    "DELETE /api/v2/conversations/messaging/settings/default": {
+        "operationId": "delete_conversations_messaging_settings_default",
+        "functionName": "delete_conversations_messaging_settings_default",
+        "signature": "delete_conversations_messaging_settings_default()"
+        
+    },
+    "DELETE /api/v2/conversations/messaging/supportedcontent/{supportedContentId}": {
+        "operationId": "delete_conversations_messaging_supportedcontent_supported_content_id",
+        "functionName": "delete_conversations_messaging_supportedcontent_supported_content_id",
+        "signature": "delete_conversations_messaging_supportedcontent_supported_content_id(supported_content_id)",
+        "parameters": [
+            {
+                "name": "supported_content_id",
+                "type": "str",
+                "required": "true"
+            }
+        ]
+    },
+    "GET /api/v2/analytics/conversations/{conversationId}/details": {
+        "operationId": "get_analytics_conversation_details",
+        "functionName": "get_analytics_conversation_details",
+        "signature": "get_analytics_conversation_details(conversation_id)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "AnalyticsConversationWithoutAttributes"
+    },
+    "GET /api/v2/analytics/conversations/aggregates/jobs/{jobId}": {
+        "operationId": "get_analytics_conversations_aggregates_job",
+        "functionName": "get_analytics_conversations_aggregates_job",
+        "signature": "get_analytics_conversations_aggregates_job(job_id)",
+        "parameters": [
+            {
+                "name": "job_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "AsyncQueryStatus"
+    },
+    "GET /api/v2/analytics/conversations/aggregates/jobs/{jobId}/results": {
+        "operationId": "get_analytics_conversations_aggregates_job_results",
+        "functionName": "get_analytics_conversations_aggregates_job_results",
+        "signature": "get_analytics_conversations_aggregates_job_results(job_id, cursor)",
+        "parameters": [
+            {
+                "name": "job_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "cursor",
+                "type": "str",
+                "required": "false"
+            }
+        ],
+        "return": "ConversationAsyncAggregateQueryResponse"
+    },
+    "GET /api/v2/analytics/conversations/details": {
+        "operationId": "get_analytics_conversations_details",
+        "functionName": "get_analytics_conversations_details",
+        "signature": "get_analytics_conversations_details(id)",
+        "parameters": [
+            {
+                "name": "id",
+                "type": "list[str]",
+                "required": "false"
+            }
+        ],
+        "return": "AnalyticsConversationWithoutAttributesMultiGetResponse"
+    },
+    "GET /api/v2/analytics/conversations/details/jobs/{jobId}": {
+        "operationId": "get_analytics_conversations_details_job",
+        "functionName": "get_analytics_conversations_details_job",
+        "signature": "get_analytics_conversations_details_job(job_id)",
+        "parameters": [
+            {
+                "name": "job_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "AsyncQueryStatus"
+    },
+    "GET /api/v2/analytics/conversations/details/jobs/{jobId}/results": {
+        "operationId": "get_analytics_conversations_details_job_results",
+        "functionName": "get_analytics_conversations_details_job_results",
+        "signature": "get_analytics_conversations_details_job_results(job_id, cursor, page_size)",
+        "parameters": [
+            {
+                "name": "job_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "cursor",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "page_size",
+                "type": "int",
+                "required": "false"
+            }
+        ],
+        "return": "AnalyticsConversationAsyncQueryResponse"
+    },
+    "GET /api/v2/analytics/conversations/details/jobs/availability": {
+        "operationId": "get_analytics_conversations_details_jobs_availability",
+        "functionName": "get_analytics_conversations_details_jobs_availability",
+        "signature": "get_analytics_conversations_details_jobs_availability()",
+        
+        "return": "DataAvailabilityResponse"
+    },
+    "GET /api/v2/conversations/{conversationId}": {
+        "operationId": "get_conversation",
+        "functionName": "get_conversation",
+        "signature": "get_conversation(conversation_id)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "Conversation"
+    },
+    "GET /api/v2/conversations/{conversationId}/participants/{participantId}/secureivrsessions/{secureSessionId}": {
+        "operationId": "get_conversation_participant_secureivrsession",
+        "functionName": "get_conversation_participant_secureivrsession",
+        "signature": "get_conversation_participant_secureivrsession(conversation_id, participant_id, secure_session_id)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "participant_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "secure_session_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "SecureSession"
+    },
+    "GET /api/v2/conversations/{conversationId}/participants/{participantId}/secureivrsessions": {
+        "operationId": "get_conversation_participant_secureivrsessions",
+        "functionName": "get_conversation_participant_secureivrsessions",
+        "signature": "get_conversation_participant_secureivrsessions(conversation_id, participant_id)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "participant_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "SecureSessionEntityListing"
+    },
+    "GET /api/v2/conversations/{conversationId}/participants/{participantId}/wrapup": {
+        "operationId": "get_conversation_participant_wrapup",
+        "functionName": "get_conversation_participant_wrapup",
+        "signature": "get_conversation_participant_wrapup(conversation_id, participant_id, provisional)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "participant_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "provisional",
+                "type": "bool",
+                "required": "false"
+            }
+        ],
+        "return": "AssignedWrapupCode"
+    },
+    "GET /api/v2/conversations/{conversationId}/participants/{participantId}/wrapupcodes": {
+        "operationId": "get_conversation_participant_wrapupcodes",
+        "functionName": "get_conversation_participant_wrapupcodes",
+        "signature": "get_conversation_participant_wrapupcodes(conversation_id, participant_id)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "participant_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "list[WrapupCode]"
+    },
+    "GET /api/v2/conversations/{conversationId}/secureattributes": {
+        "operationId": "get_conversation_secureattributes",
+        "functionName": "get_conversation_secureattributes",
+        "signature": "get_conversation_secureattributes(conversation_id)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "ConversationSecureAttributes"
+    },
+    "GET /api/v2/conversations": {
+        "operationId": "get_conversations",
+        "functionName": "get_conversations",
+        "signature": "get_conversations(communication_type)",
+        "parameters": [
+            {
+                "name": "communication_type",
+                "type": "str",
+                "required": "false"
+            }
+        ],
+        "return": "ConversationEntityListing"
+    },
+    "GET /api/v2/conversations/calls/{conversationId}": {
+        "operationId": "get_conversations_call",
+        "functionName": "get_conversations_call",
+        "signature": "get_conversations_call(conversation_id)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "CallConversation"
+    },
+    "GET /api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup": {
+        "operationId": "get_conversations_call_participant_communication_wrapup",
+        "functionName": "get_conversations_call_participant_communication_wrapup",
+        "signature": "get_conversations_call_participant_communication_wrapup(conversation_id, participant_id, communication_id, provisional)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "participant_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "communication_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "provisional",
+                "type": "bool",
+                "required": "false"
+            }
+        ],
+        "return": "AssignedWrapupCode"
+    },
+    "GET /api/v2/conversations/calls/{conversationId}/participants/{participantId}/wrapup": {
+        "operationId": "get_conversations_call_participant_wrapup",
+        "functionName": "get_conversations_call_participant_wrapup",
+        "signature": "get_conversations_call_participant_wrapup(conversation_id, participant_id, provisional)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "participant_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "provisional",
+                "type": "bool",
+                "required": "false"
+            }
+        ],
+        "return": "AssignedWrapupCode"
+    },
+    "GET /api/v2/conversations/calls/{conversationId}/participants/{participantId}/wrapupcodes": {
+        "operationId": "get_conversations_call_participant_wrapupcodes",
+        "functionName": "get_conversations_call_participant_wrapupcodes",
+        "signature": "get_conversations_call_participant_wrapupcodes(conversation_id, participant_id)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "participant_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "list[WrapupCode]"
+    },
+    "GET /api/v2/conversations/callbacks/{conversationId}": {
+        "operationId": "get_conversations_callback",
+        "functionName": "get_conversations_callback",
+        "signature": "get_conversations_callback(conversation_id)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "CallbackConversation"
+    },
+    "GET /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup": {
+        "operationId": "get_conversations_callback_participant_communication_wrapup",
+        "functionName": "get_conversations_callback_participant_communication_wrapup",
+        "signature": "get_conversations_callback_participant_communication_wrapup(conversation_id, participant_id, communication_id, provisional)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "participant_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "communication_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "provisional",
+                "type": "bool",
+                "required": "false"
+            }
+        ],
+        "return": "AssignedWrapupCode"
+    },
+    "GET /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/wrapup": {
+        "operationId": "get_conversations_callback_participant_wrapup",
+        "functionName": "get_conversations_callback_participant_wrapup",
+        "signature": "get_conversations_callback_participant_wrapup(conversation_id, participant_id, provisional)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "participant_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "provisional",
+                "type": "bool",
+                "required": "false"
+            }
+        ],
+        "return": "AssignedWrapupCode"
+    },
+    "GET /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/wrapupcodes": {
+        "operationId": "get_conversations_callback_participant_wrapupcodes",
+        "functionName": "get_conversations_callback_participant_wrapupcodes",
+        "signature": "get_conversations_callback_participant_wrapupcodes(conversation_id, participant_id)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "participant_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "list[WrapupCode]"
+    },
+    "GET /api/v2/conversations/callbacks": {
+        "operationId": "get_conversations_callbacks",
+        "functionName": "get_conversations_callbacks",
+        "signature": "get_conversations_callbacks()",
+        
+        "return": "CallbackConversationEntityListing"
+    },
+    "GET /api/v2/conversations/calls": {
+        "operationId": "get_conversations_calls",
+        "functionName": "get_conversations_calls",
+        "signature": "get_conversations_calls()",
+        
+        "return": "CallConversationEntityListing"
+    },
+    "GET /api/v2/conversations/calls/history": {
+        "operationId": "get_conversations_calls_history",
+        "functionName": "get_conversations_calls_history",
+        "signature": "get_conversations_calls_history(page_size, page_number, interval, expand)",
+        "parameters": [
+            {
+                "name": "page_size",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "page_number",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "interval",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "expand",
+                "type": "list[str]",
+                "required": "false"
+            }
+        ],
+        "return": "CallHistoryConversationEntityListing"
+    },
+    "GET /api/v2/conversations/calls/maximumconferenceparties": {
+        "operationId": "get_conversations_calls_maximumconferenceparties",
+        "functionName": "get_conversations_calls_maximumconferenceparties",
+        "signature": "get_conversations_calls_maximumconferenceparties()",
+        
+        "return": "MaxParticipants"
+    },
+    "GET /api/v2/conversations/chats/{conversationId}": {
+        "operationId": "get_conversations_chat",
+        "functionName": "get_conversations_chat",
+        "signature": "get_conversations_chat(conversation_id)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "ChatConversation"
+    },
+    "GET /api/v2/conversations/chats/{conversationId}/messages/{messageId}": {
+        "operationId": "get_conversations_chat_message",
+        "functionName": "get_conversations_chat_message",
+        "signature": "get_conversations_chat_message(conversation_id, message_id)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "message_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "WebChatMessage"
+    },
+    "GET /api/v2/conversations/chats/{conversationId}/messages": {
+        "operationId": "get_conversations_chat_messages",
+        "functionName": "get_conversations_chat_messages",
+        "signature": "get_conversations_chat_messages(conversation_id, after, before, sort_order, max_results)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "after",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "before",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "sort_order",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "max_results",
+                "type": "int",
+                "required": "false"
+            }
+        ],
+        "return": "WebChatMessageEntityList"
+    },
+    "GET /api/v2/conversations/chats/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup": {
+        "operationId": "get_conversations_chat_participant_communication_wrapup",
+        "functionName": "get_conversations_chat_participant_communication_wrapup",
+        "signature": "get_conversations_chat_participant_communication_wrapup(conversation_id, participant_id, communication_id, provisional)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "participant_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "communication_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "provisional",
+                "type": "bool",
+                "required": "false"
+            }
+        ],
+        "return": "AssignedWrapupCode"
+    },
+    "GET /api/v2/conversations/chats/{conversationId}/participants/{participantId}/wrapup": {
+        "operationId": "get_conversations_chat_participant_wrapup",
+        "functionName": "get_conversations_chat_participant_wrapup",
+        "signature": "get_conversations_chat_participant_wrapup(conversation_id, participant_id, provisional)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "participant_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "provisional",
+                "type": "bool",
+                "required": "false"
+            }
+        ],
+        "return": "AssignedWrapupCode"
+    },
+    "GET /api/v2/conversations/chats/{conversationId}/participants/{participantId}/wrapupcodes": {
+        "operationId": "get_conversations_chat_participant_wrapupcodes",
+        "functionName": "get_conversations_chat_participant_wrapupcodes",
+        "signature": "get_conversations_chat_participant_wrapupcodes(conversation_id, participant_id)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "participant_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "list[WrapupCode]"
+    },
+    "GET /api/v2/conversations/chats": {
+        "operationId": "get_conversations_chats",
+        "functionName": "get_conversations_chats",
+        "signature": "get_conversations_chats()",
+        
+        "return": "ChatConversationEntityListing"
+    },
+    "GET /api/v2/conversations/cobrowsesessions/{conversationId}": {
+        "operationId": "get_conversations_cobrowsesession",
+        "functionName": "get_conversations_cobrowsesession",
+        "signature": "get_conversations_cobrowsesession(conversation_id)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "CobrowseConversation"
+    },
+    "GET /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup": {
+        "operationId": "get_conversations_cobrowsesession_participant_communication_wrapup",
+        "functionName": "get_conversations_cobrowsesession_participant_communication_wrapup",
+        "signature": "get_conversations_cobrowsesession_participant_communication_wrapup(conversation_id, participant_id, communication_id, provisional)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "participant_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "communication_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "provisional",
+                "type": "bool",
+                "required": "false"
+            }
+        ],
+        "return": "AssignedWrapupCode"
+    },
+    "GET /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/wrapup": {
+        "operationId": "get_conversations_cobrowsesession_participant_wrapup",
+        "functionName": "get_conversations_cobrowsesession_participant_wrapup",
+        "signature": "get_conversations_cobrowsesession_participant_wrapup(conversation_id, participant_id, provisional)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "participant_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "provisional",
+                "type": "bool",
+                "required": "false"
+            }
+        ],
+        "return": "AssignedWrapupCode"
+    },
+    "GET /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/wrapupcodes": {
+        "operationId": "get_conversations_cobrowsesession_participant_wrapupcodes",
+        "functionName": "get_conversations_cobrowsesession_participant_wrapupcodes",
+        "signature": "get_conversations_cobrowsesession_participant_wrapupcodes(conversation_id, participant_id)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "participant_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "list[WrapupCode]"
+    },
+    "GET /api/v2/conversations/cobrowsesessions": {
+        "operationId": "get_conversations_cobrowsesessions",
+        "functionName": "get_conversations_cobrowsesessions",
+        "signature": "get_conversations_cobrowsesessions()",
+        
+        "return": "CobrowseConversationEntityListing"
+    },
+    "GET /api/v2/conversations/emails/{conversationId}": {
+        "operationId": "get_conversations_email",
+        "functionName": "get_conversations_email",
+        "signature": "get_conversations_email(conversation_id)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "EmailConversation"
+    },
+    "GET /api/v2/conversations/emails/{conversationId}/messages/{messageId}": {
+        "operationId": "get_conversations_email_message",
+        "functionName": "get_conversations_email_message",
+        "signature": "get_conversations_email_message(conversation_id, message_id)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "message_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "EmailMessage"
+    },
+    "GET /api/v2/conversations/emails/{conversationId}/messages": {
+        "operationId": "get_conversations_email_messages",
+        "functionName": "get_conversations_email_messages",
+        "signature": "get_conversations_email_messages(conversation_id)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "EmailMessagePreviewListing"
+    },
+    "GET /api/v2/conversations/emails/{conversationId}/messages/draft": {
+        "operationId": "get_conversations_email_messages_draft",
+        "functionName": "get_conversations_email_messages_draft",
+        "signature": "get_conversations_email_messages_draft(conversation_id)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "EmailMessage"
+    },
+    "GET /api/v2/conversations/emails/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup": {
+        "operationId": "get_conversations_email_participant_communication_wrapup",
+        "functionName": "get_conversations_email_participant_communication_wrapup",
+        "signature": "get_conversations_email_participant_communication_wrapup(conversation_id, participant_id, communication_id, provisional)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "participant_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "communication_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "provisional",
+                "type": "bool",
+                "required": "false"
+            }
+        ],
+        "return": "AssignedWrapupCode"
+    },
+    "GET /api/v2/conversations/emails/{conversationId}/participants/{participantId}/wrapup": {
+        "operationId": "get_conversations_email_participant_wrapup",
+        "functionName": "get_conversations_email_participant_wrapup",
+        "signature": "get_conversations_email_participant_wrapup(conversation_id, participant_id, provisional)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "participant_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "provisional",
+                "type": "bool",
+                "required": "false"
+            }
+        ],
+        "return": "AssignedWrapupCode"
+    },
+    "GET /api/v2/conversations/emails/{conversationId}/participants/{participantId}/wrapupcodes": {
+        "operationId": "get_conversations_email_participant_wrapupcodes",
+        "functionName": "get_conversations_email_participant_wrapupcodes",
+        "signature": "get_conversations_email_participant_wrapupcodes(conversation_id, participant_id)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "participant_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "list[WrapupCode]"
+    },
+    "GET /api/v2/conversations/emails/{conversationId}/settings": {
+        "operationId": "get_conversations_email_settings",
+        "functionName": "get_conversations_email_settings",
+        "signature": "get_conversations_email_settings(conversation_id)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "EmailsSettings"
+    },
+    "GET /api/v2/conversations/emails": {
+        "operationId": "get_conversations_emails",
+        "functionName": "get_conversations_emails",
+        "signature": "get_conversations_emails()",
+        
+        "return": "EmailConversationEntityListing"
+    },
+    "GET /api/v2/conversations/keyconfigurations/{keyconfigurationsId}": {
+        "operationId": "get_conversations_keyconfiguration",
+        "functionName": "get_conversations_keyconfiguration",
+        "signature": "get_conversations_keyconfiguration(keyconfigurations_id)",
+        "parameters": [
+            {
+                "name": "keyconfigurations_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "ConversationEncryptionConfiguration"
+    },
+    "GET /api/v2/conversations/keyconfigurations": {
+        "operationId": "get_conversations_keyconfigurations",
+        "functionName": "get_conversations_keyconfigurations",
+        "signature": "get_conversations_keyconfigurations()",
+        
+        "return": "ConversationEncryptionConfigurationListing"
+    },
+    "GET /api/v2/conversations/messages/{conversationId}": {
+        "operationId": "get_conversations_message",
+        "functionName": "get_conversations_message",
+        "signature": "get_conversations_message(conversation_id)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "MessageConversation"
+    },
+    "GET /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages/media/{mediaId}": {
+        "operationId": "get_conversations_message_communication_messages_media_media_id",
+        "functionName": "get_conversations_message_communication_messages_media_media_id",
+        "signature": "get_conversations_message_communication_messages_media_media_id(conversation_id, communication_id, media_id)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "communication_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "media_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "MessageMediaData"
+    },
+    "GET /api/v2/conversations/messages/{messageId}/details": {
+        "operationId": "get_conversations_message_details",
+        "functionName": "get_conversations_message_details",
+        "signature": "get_conversations_message_details(message_id, use_normalized_message)",
+        "parameters": [
+            {
+                "name": "message_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "use_normalized_message",
+                "type": "bool",
+                "required": "false"
+            }
+        ],
+        "return": "MessageData"
+    },
+    "GET /api/v2/conversations/messages/{conversationId}/messages/{messageId}": {
+        "operationId": "get_conversations_message_message",
+        "functionName": "get_conversations_message_message",
+        "signature": "get_conversations_message_message(conversation_id, message_id, use_normalized_message)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "message_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "use_normalized_message",
+                "type": "bool",
+                "required": "false"
+            }
+        ],
+        "return": "MessageData"
+    },
+    "GET /api/v2/conversations/messages/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup": {
+        "operationId": "get_conversations_message_participant_communication_wrapup",
+        "functionName": "get_conversations_message_participant_communication_wrapup",
+        "signature": "get_conversations_message_participant_communication_wrapup(conversation_id, participant_id, communication_id, provisional)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "participant_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "communication_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "provisional",
+                "type": "bool",
+                "required": "false"
+            }
+        ],
+        "return": "AssignedWrapupCode"
+    },
+    "GET /api/v2/conversations/messages/{conversationId}/participants/{participantId}/wrapup": {
+        "operationId": "get_conversations_message_participant_wrapup",
+        "functionName": "get_conversations_message_participant_wrapup",
+        "signature": "get_conversations_message_participant_wrapup(conversation_id, participant_id, provisional)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "participant_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "provisional",
+                "type": "bool",
+                "required": "false"
+            }
+        ],
+        "return": "AssignedWrapupCode"
+    },
+    "GET /api/v2/conversations/messages/{conversationId}/participants/{participantId}/wrapupcodes": {
+        "operationId": "get_conversations_message_participant_wrapupcodes",
+        "functionName": "get_conversations_message_participant_wrapupcodes",
+        "signature": "get_conversations_message_participant_wrapupcodes(conversation_id, participant_id)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "participant_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "list[WrapupCode]"
+    },
+    "GET /api/v2/conversations/messages": {
+        "operationId": "get_conversations_messages",
+        "functionName": "get_conversations_messages",
+        "signature": "get_conversations_messages()",
+        
+        "return": "MessageConversationEntityListing"
+    },
+    "GET /api/v2/conversations/messages/cachedmedia": {
+        "operationId": "get_conversations_messages_cachedmedia",
+        "functionName": "get_conversations_messages_cachedmedia",
+        "signature": "get_conversations_messages_cachedmedia(page_size, page_number, url)",
+        "parameters": [
+            {
+                "name": "page_size",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "page_number",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "url",
+                "type": "str",
+                "required": "false"
+            }
+        ],
+        "return": "CachedMediaItemEntityListing"
+    },
+    "GET /api/v2/conversations/messages/cachedmedia/{cachedMediaItemId}": {
+        "operationId": "get_conversations_messages_cachedmedia_cached_media_item_id",
+        "functionName": "get_conversations_messages_cachedmedia_cached_media_item_id",
+        "signature": "get_conversations_messages_cachedmedia_cached_media_item_id(cached_media_item_id)",
+        "parameters": [
+            {
+                "name": "cached_media_item_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "CachedMediaItem"
+    },
+    "GET /api/v2/conversations/messaging/facebook/app": {
+        "operationId": "get_conversations_messaging_facebook_app",
+        "functionName": "get_conversations_messaging_facebook_app",
+        "signature": "get_conversations_messaging_facebook_app()",
+        
+        "return": "FacebookAppCredentials"
+    },
+    "GET /api/v2/conversations/messaging/integrations": {
+        "operationId": "get_conversations_messaging_integrations",
+        "functionName": "get_conversations_messaging_integrations",
+        "signature": "get_conversations_messaging_integrations(page_size, page_number, expand, supported_content_id, messaging_setting_id)",
+        "parameters": [
+            {
+                "name": "page_size",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "page_number",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "expand",
+                "type": "list[str]",
+                "required": "false"
+            },
+            {
+                "name": "supported_content_id",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "messaging_setting_id",
+                "type": "str",
+                "required": "false"
+            }
+        ],
+        "return": "MessagingIntegrationEntityListing"
+    },
+    "GET /api/v2/conversations/messaging/integrations/facebook": {
+        "operationId": "get_conversations_messaging_integrations_facebook",
+        "functionName": "get_conversations_messaging_integrations_facebook",
+        "signature": "get_conversations_messaging_integrations_facebook(page_size, page_number, expand, supported_content_id, messaging_setting_id)",
+        "parameters": [
+            {
+                "name": "page_size",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "page_number",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "expand",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "supported_content_id",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "messaging_setting_id",
+                "type": "str",
+                "required": "false"
+            }
+        ],
+        "return": "FacebookIntegrationEntityListing"
+    },
+    "GET /api/v2/conversations/messaging/integrations/facebook/{integrationId}": {
+        "operationId": "get_conversations_messaging_integrations_facebook_integration_id",
+        "functionName": "get_conversations_messaging_integrations_facebook_integration_id",
+        "signature": "get_conversations_messaging_integrations_facebook_integration_id(integration_id, expand)",
+        "parameters": [
+            {
+                "name": "integration_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "expand",
+                "type": "str",
+                "required": "false"
+            }
+        ],
+        "return": "FacebookIntegration"
+    },
+    "GET /api/v2/conversations/messaging/integrations/instagram": {
+        "operationId": "get_conversations_messaging_integrations_instagram",
+        "functionName": "get_conversations_messaging_integrations_instagram",
+        "signature": "get_conversations_messaging_integrations_instagram(page_size, page_number, expand, supported_content_id, messaging_setting_id)",
+        "parameters": [
+            {
+                "name": "page_size",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "page_number",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "expand",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "supported_content_id",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "messaging_setting_id",
+                "type": "str",
+                "required": "false"
+            }
+        ],
+        "return": "InstagramIntegrationEntityListing"
+    },
+    "GET /api/v2/conversations/messaging/integrations/instagram/{integrationId}": {
+        "operationId": "get_conversations_messaging_integrations_instagram_integration_id",
+        "functionName": "get_conversations_messaging_integrations_instagram_integration_id",
+        "signature": "get_conversations_messaging_integrations_instagram_integration_id(integration_id, expand)",
+        "parameters": [
+            {
+                "name": "integration_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "expand",
+                "type": "str",
+                "required": "false"
+            }
+        ],
+        "return": "InstagramIntegration"
+    },
+    "GET /api/v2/conversations/messaging/integrations/line": {
+        "operationId": "get_conversations_messaging_integrations_line",
+        "functionName": "get_conversations_messaging_integrations_line",
+        "signature": "get_conversations_messaging_integrations_line(page_size, page_number, expand, supported_content_id, messaging_setting_id)",
+        "parameters": [
+            {
+                "name": "page_size",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "page_number",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "expand",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "supported_content_id",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "messaging_setting_id",
+                "type": "str",
+                "required": "false"
+            }
+        ],
+        "return": "LineIntegrationEntityListing"
+    },
+    "GET /api/v2/conversations/messaging/integrations/line/{integrationId}": {
+        "operationId": "get_conversations_messaging_integrations_line_integration_id",
+        "functionName": "get_conversations_messaging_integrations_line_integration_id",
+        "signature": "get_conversations_messaging_integrations_line_integration_id(integration_id, expand)",
+        "parameters": [
+            {
+                "name": "integration_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "expand",
+                "type": "str",
+                "required": "false"
+            }
+        ],
+        "return": "LineIntegration"
+    },
+    "GET /api/v2/conversations/messaging/integrations/open": {
+        "operationId": "get_conversations_messaging_integrations_open",
+        "functionName": "get_conversations_messaging_integrations_open",
+        "signature": "get_conversations_messaging_integrations_open(page_size, page_number, expand, supported_content_id, messaging_setting_id)",
+        "parameters": [
+            {
+                "name": "page_size",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "page_number",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "expand",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "supported_content_id",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "messaging_setting_id",
+                "type": "str",
+                "required": "false"
+            }
+        ],
+        "return": "OpenIntegrationEntityListing"
+    },
+    "GET /api/v2/conversations/messaging/integrations/open/{integrationId}": {
+        "operationId": "get_conversations_messaging_integrations_open_integration_id",
+        "functionName": "get_conversations_messaging_integrations_open_integration_id",
+        "signature": "get_conversations_messaging_integrations_open_integration_id(integration_id, expand)",
+        "parameters": [
+            {
+                "name": "integration_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "expand",
+                "type": "str",
+                "required": "false"
+            }
+        ],
+        "return": "OpenIntegration"
+    },
+    "GET /api/v2/conversations/messaging/integrations/twitter": {
+        "operationId": "get_conversations_messaging_integrations_twitter",
+        "functionName": "get_conversations_messaging_integrations_twitter",
+        "signature": "get_conversations_messaging_integrations_twitter(page_size, page_number, expand, supported_content_id, messaging_setting_id)",
+        "parameters": [
+            {
+                "name": "page_size",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "page_number",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "expand",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "supported_content_id",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "messaging_setting_id",
+                "type": "str",
+                "required": "false"
+            }
+        ],
+        "return": "TwitterIntegrationEntityListing"
+    },
+    "GET /api/v2/conversations/messaging/integrations/twitter/{integrationId}": {
+        "operationId": "get_conversations_messaging_integrations_twitter_integration_id",
+        "functionName": "get_conversations_messaging_integrations_twitter_integration_id",
+        "signature": "get_conversations_messaging_integrations_twitter_integration_id(integration_id, expand)",
+        "parameters": [
+            {
+                "name": "integration_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "expand",
+                "type": "str",
+                "required": "false"
+            }
+        ],
+        "return": "TwitterIntegration"
+    },
+    "GET /api/v2/conversations/messaging/integrations/whatsapp": {
+        "operationId": "get_conversations_messaging_integrations_whatsapp",
+        "functionName": "get_conversations_messaging_integrations_whatsapp",
+        "signature": "get_conversations_messaging_integrations_whatsapp(page_size, page_number, expand, supported_content_id, messaging_setting_id)",
+        "parameters": [
+            {
+                "name": "page_size",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "page_number",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "expand",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "supported_content_id",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "messaging_setting_id",
+                "type": "str",
+                "required": "false"
+            }
+        ],
+        "return": "WhatsAppIntegrationEntityListing"
+    },
+    "GET /api/v2/conversations/messaging/integrations/whatsapp/{integrationId}": {
+        "operationId": "get_conversations_messaging_integrations_whatsapp_integration_id",
+        "functionName": "get_conversations_messaging_integrations_whatsapp_integration_id",
+        "signature": "get_conversations_messaging_integrations_whatsapp_integration_id(integration_id, expand)",
+        "parameters": [
+            {
+                "name": "integration_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "expand",
+                "type": "str",
+                "required": "false"
+            }
+        ],
+        "return": "WhatsAppIntegration"
+    },
+    "GET /api/v2/conversations/messaging/settings/{messageSettingId}": {
+        "operationId": "get_conversations_messaging_setting",
+        "functionName": "get_conversations_messaging_setting",
+        "signature": "get_conversations_messaging_setting(message_setting_id)",
+        "parameters": [
+            {
+                "name": "message_setting_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "MessagingSetting"
+    },
+    "GET /api/v2/conversations/messaging/settings": {
+        "operationId": "get_conversations_messaging_settings",
+        "functionName": "get_conversations_messaging_settings",
+        "signature": "get_conversations_messaging_settings(page_size, page_number)",
+        "parameters": [
+            {
+                "name": "page_size",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "page_number",
+                "type": "int",
+                "required": "false"
+            }
+        ],
+        "return": "MessagingConfigListing"
+    },
+    "GET /api/v2/conversations/messaging/settings/default": {
+        "operationId": "get_conversations_messaging_settings_default",
+        "functionName": "get_conversations_messaging_settings_default",
+        "signature": "get_conversations_messaging_settings_default()",
+        
+        "return": "MessagingSetting"
+    },
+    "GET /api/v2/conversations/messaging/stickers/{messengerType}": {
+        "operationId": "get_conversations_messaging_sticker",
+        "functionName": "get_conversations_messaging_sticker",
+        "signature": "get_conversations_messaging_sticker(messenger_type, page_size, page_number)",
+        "parameters": [
+            {
+                "name": "messenger_type",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "page_size",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "page_number",
+                "type": "int",
+                "required": "false"
+            }
+        ],
+        "return": "MessagingStickerEntityListing"
+    },
+    "GET /api/v2/conversations/messaging/supportedcontent": {
+        "operationId": "get_conversations_messaging_supportedcontent",
+        "functionName": "get_conversations_messaging_supportedcontent",
+        "signature": "get_conversations_messaging_supportedcontent(page_size, page_number)",
+        "parameters": [
+            {
+                "name": "page_size",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "page_number",
+                "type": "int",
+                "required": "false"
+            }
+        ],
+        "return": "SupportedContentListing"
+    },
+    "GET /api/v2/conversations/messaging/supportedcontent/default": {
+        "operationId": "get_conversations_messaging_supportedcontent_default",
+        "functionName": "get_conversations_messaging_supportedcontent_default",
+        "signature": "get_conversations_messaging_supportedcontent_default()",
+        
+        "return": "SupportedContent"
+    },
+    "GET /api/v2/conversations/messaging/supportedcontent/{supportedContentId}": {
+        "operationId": "get_conversations_messaging_supportedcontent_supported_content_id",
+        "functionName": "get_conversations_messaging_supportedcontent_supported_content_id",
+        "signature": "get_conversations_messaging_supportedcontent_supported_content_id(supported_content_id)",
+        "parameters": [
+            {
+                "name": "supported_content_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "SupportedContent"
+    },
+    "GET /api/v2/conversations/messaging/threadingtimeline": {
+        "operationId": "get_conversations_messaging_threadingtimeline",
+        "functionName": "get_conversations_messaging_threadingtimeline",
+        "signature": "get_conversations_messaging_threadingtimeline()",
+        
+        "return": "ConversationThreadingWindow"
+    },
+    "GET /api/v2/conversations/screenshares/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup": {
+        "operationId": "get_conversations_screenshare_participant_communication_wrapup",
+        "functionName": "get_conversations_screenshare_participant_communication_wrapup",
+        "signature": "get_conversations_screenshare_participant_communication_wrapup(conversation_id, participant_id, communication_id, provisional)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "participant_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "communication_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "provisional",
+                "type": "bool",
+                "required": "false"
+            }
+        ],
+        "return": "AssignedWrapupCode"
+    },
+    "GET /api/v2/conversations/settings": {
+        "operationId": "get_conversations_settings",
+        "functionName": "get_conversations_settings",
+        "signature": "get_conversations_settings()",
+        
+        "return": "Settings"
+    },
+    "GET /api/v2/conversations/socials/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup": {
+        "operationId": "get_conversations_social_participant_communication_wrapup",
+        "functionName": "get_conversations_social_participant_communication_wrapup",
+        "signature": "get_conversations_social_participant_communication_wrapup(conversation_id, participant_id, communication_id, provisional)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "participant_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "communication_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "provisional",
+                "type": "bool",
+                "required": "false"
+            }
+        ],
+        "return": "AssignedWrapupCode"
+    },
+    "GET /api/v2/conversations/videos/{conferenceId}/details": {
+        "operationId": "get_conversations_video_details",
+        "functionName": "get_conversations_video_details",
+        "signature": "get_conversations_video_details(conference_id)",
+        "parameters": [
+            {
+                "name": "conference_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "VideoConferenceDetails"
+    },
+    "GET /api/v2/conversations/videos/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup": {
+        "operationId": "get_conversations_video_participant_communication_wrapup",
+        "functionName": "get_conversations_video_participant_communication_wrapup",
+        "signature": "get_conversations_video_participant_communication_wrapup(conversation_id, participant_id, communication_id, provisional)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "participant_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "communication_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "provisional",
+                "type": "bool",
+                "required": "false"
+            }
+        ],
+        "return": "AssignedWrapupCode"
+    },
+    "GET /api/v2/conversations/videos/meetings/{meetingId}": {
+        "operationId": "get_conversations_videos_meeting",
+        "functionName": "get_conversations_videos_meeting",
+        "signature": "get_conversations_videos_meeting(meeting_id)",
+        "parameters": [
+            {
+                "name": "meeting_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "MeetingIdRecord"
+    },
+    "PATCH /api/v2/conversations/{conversationId}/participants/{participantId}": {
+        "operationId": "patch_conversation_participant",
+        "functionName": "patch_conversation_participant",
+        "signature": "patch_conversation_participant(conversation_id, participant_id, body)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "participant_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "MediaParticipantRequest",
+                "required": "true"
+            }
+        ]
+    },
+    "PATCH /api/v2/conversations/{conversationId}/participants/{participantId}/attributes": {
+        "operationId": "patch_conversation_participant_attributes",
+        "functionName": "patch_conversation_participant_attributes",
+        "signature": "patch_conversation_participant_attributes(conversation_id, participant_id, body)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "participant_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "ParticipantAttributes",
+                "required": "true"
+            }
+        ]
+    },
+    "PATCH /api/v2/conversations/{conversationId}/secureattributes": {
+        "operationId": "patch_conversation_secureattributes",
+        "functionName": "patch_conversation_secureattributes",
+        "signature": "patch_conversation_secureattributes(conversation_id, body)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "ConversationSecureAttributes",
+                "required": "true"
+            }
+        ],
+        "return": "str"
+    },
+    "PATCH /api/v2/conversations/aftercallwork/{conversationId}/participants/{participantId}/communications/{communicationId}": {
+        "operationId": "patch_conversations_aftercallwork_conversation_id_participant_communication",
+        "functionName": "patch_conversations_aftercallwork_conversation_id_participant_communication",
+        "signature": "patch_conversations_aftercallwork_conversation_id_participant_communication(conversation_id, participant_id, communication_id, body)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "participant_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "communication_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "AfterCallWorkUpdate",
+                "required": "true"
+            }
+        ],
+        "return": "AfterCallWorkUpdate"
+    },
+    "PATCH /api/v2/conversations/calls/{conversationId}": {
+        "operationId": "patch_conversations_call",
+        "functionName": "patch_conversations_call",
+        "signature": "patch_conversations_call(conversation_id, body)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Conversation",
+                "required": "true"
+            }
+        ],
+        "return": "Conversation"
+    },
+    "PATCH /api/v2/conversations/calls/{conversationId}/participants/{participantId}": {
+        "operationId": "patch_conversations_call_participant",
+        "functionName": "patch_conversations_call_participant",
+        "signature": "patch_conversations_call_participant(conversation_id, participant_id, body)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "participant_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "MediaParticipantRequest",
+                "required": "true"
+            }
+        ]
+    },
+    "PATCH /api/v2/conversations/calls/{conversationId}/participants/{participantId}/attributes": {
+        "operationId": "patch_conversations_call_participant_attributes",
+        "functionName": "patch_conversations_call_participant_attributes",
+        "signature": "patch_conversations_call_participant_attributes(conversation_id, participant_id, body)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "participant_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "ParticipantAttributes",
+                "required": "true"
+            }
+        ],
+        "return": "ParticipantAttributes"
+    },
+    "PATCH /api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId}": {
+        "operationId": "patch_conversations_call_participant_communication",
+        "functionName": "patch_conversations_call_participant_communication",
+        "signature": "patch_conversations_call_participant_communication(conversation_id, participant_id, communication_id, body)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "participant_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "communication_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "MediaParticipantRequest",
+                "required": "true"
+            }
+        ],
+        "return": "object"
+    },
+    "PATCH /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult": {
+        "operationId": "patch_conversations_call_participant_consult",
+        "functionName": "patch_conversations_call_participant_consult",
+        "signature": "patch_conversations_call_participant_consult(conversation_id, participant_id, body)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "participant_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "ConsultTransferUpdate",
+                "required": "true"
+            }
+        ],
+        "return": "ConsultTransferResponse"
+    },
+    "PATCH /api/v2/conversations/callbacks/{conversationId}": {
+        "operationId": "patch_conversations_callback",
+        "functionName": "patch_conversations_callback",
+        "signature": "patch_conversations_callback(conversation_id, body)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Conversation",
+                "required": "true"
+            }
+        ],
+        "return": "Conversation"
+    },
+    "PATCH /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}": {
+        "operationId": "patch_conversations_callback_participant",
+        "functionName": "patch_conversations_callback_participant",
+        "signature": "patch_conversations_callback_participant(conversation_id, participant_id, body)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "participant_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "MediaParticipantRequest",
+                "required": "true"
+            }
+        ]
+    },
+    "PATCH /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/attributes": {
+        "operationId": "patch_conversations_callback_participant_attributes",
+        "functionName": "patch_conversations_callback_participant_attributes",
+        "signature": "patch_conversations_callback_participant_attributes(conversation_id, participant_id, body)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "participant_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "ParticipantAttributes",
+                "required": "true"
+            }
+        ],
+        "return": "ParticipantAttributes"
+    },
+    "PATCH /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/communications/{communicationId}": {
+        "operationId": "patch_conversations_callback_participant_communication",
+        "functionName": "patch_conversations_callback_participant_communication",
+        "signature": "patch_conversations_callback_participant_communication(conversation_id, participant_id, communication_id, body)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "participant_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "communication_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "MediaParticipantRequest",
+                "required": "true"
+            }
+        ],
+        "return": "object"
+    },
+    "PATCH /api/v2/conversations/callbacks": {
+        "operationId": "patch_conversations_callbacks",
+        "functionName": "patch_conversations_callbacks",
+        "signature": "patch_conversations_callbacks(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "PatchCallbackRequest",
+                "required": "true"
+            }
+        ],
+        "return": "PatchCallbackResponse"
+    },
+    "PATCH /api/v2/conversations/chats/{conversationId}": {
+        "operationId": "patch_conversations_chat",
+        "functionName": "patch_conversations_chat",
+        "signature": "patch_conversations_chat(conversation_id, body)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Conversation",
+                "required": "true"
+            }
+        ],
+        "return": "Conversation"
+    },
+    "PATCH /api/v2/conversations/chats/{conversationId}/participants/{participantId}": {
+        "operationId": "patch_conversations_chat_participant",
+        "functionName": "patch_conversations_chat_participant",
+        "signature": "patch_conversations_chat_participant(conversation_id, participant_id, body)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "participant_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "MediaParticipantRequest",
+                "required": "true"
+            }
+        ]
+    },
+    "PATCH /api/v2/conversations/chats/{conversationId}/participants/{participantId}/attributes": {
+        "operationId": "patch_conversations_chat_participant_attributes",
+        "functionName": "patch_conversations_chat_participant_attributes",
+        "signature": "patch_conversations_chat_participant_attributes(conversation_id, participant_id, body)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "participant_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "ParticipantAttributes",
+                "required": "true"
+            }
+        ],
+        "return": "ParticipantAttributes"
+    },
+    "PATCH /api/v2/conversations/chats/{conversationId}/participants/{participantId}/communications/{communicationId}": {
+        "operationId": "patch_conversations_chat_participant_communication",
+        "functionName": "patch_conversations_chat_participant_communication",
+        "signature": "patch_conversations_chat_participant_communication(conversation_id, participant_id, communication_id, body)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "participant_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "communication_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "MediaParticipantRequest",
+                "required": "true"
+            }
+        ],
+        "return": "object"
+    },
+    "PATCH /api/v2/conversations/cobrowsesessions/{conversationId}": {
+        "operationId": "patch_conversations_cobrowsesession",
+        "functionName": "patch_conversations_cobrowsesession",
+        "signature": "patch_conversations_cobrowsesession(conversation_id, body)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Conversation",
+                "required": "true"
+            }
+        ],
+        "return": "Conversation"
+    },
+    "PATCH /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}": {
+        "operationId": "patch_conversations_cobrowsesession_participant",
+        "functionName": "patch_conversations_cobrowsesession_participant",
+        "signature": "patch_conversations_cobrowsesession_participant(conversation_id, participant_id, body)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "participant_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "MediaParticipantRequest",
+                "required": "false"
+            }
+        ]
+    },
+    "PATCH /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/attributes": {
+        "operationId": "patch_conversations_cobrowsesession_participant_attributes",
+        "functionName": "patch_conversations_cobrowsesession_participant_attributes",
+        "signature": "patch_conversations_cobrowsesession_participant_attributes(conversation_id, participant_id, body)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "participant_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "ParticipantAttributes",
+                "required": "false"
+            }
+        ],
+        "return": "ParticipantAttributes"
+    },
+    "PATCH /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/communications/{communicationId}": {
+        "operationId": "patch_conversations_cobrowsesession_participant_communication",
+        "functionName": "patch_conversations_cobrowsesession_participant_communication",
+        "signature": "patch_conversations_cobrowsesession_participant_communication(conversation_id, participant_id, communication_id, body)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "participant_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "communication_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "MediaParticipantRequest",
+                "required": "true"
+            }
+        ],
+        "return": "object"
+    },
+    "PATCH /api/v2/conversations/emails/{conversationId}": {
+        "operationId": "patch_conversations_email",
+        "functionName": "patch_conversations_email",
+        "signature": "patch_conversations_email(conversation_id, body)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Conversation",
+                "required": "true"
+            }
+        ],
+        "return": "Conversation"
+    },
+    "PATCH /api/v2/conversations/emails/{conversationId}/messages/draft": {
+        "operationId": "patch_conversations_email_messages_draft",
+        "functionName": "patch_conversations_email_messages_draft",
+        "signature": "patch_conversations_email_messages_draft(conversation_id, auto_fill, discard, body)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "auto_fill",
+                "type": "bool",
+                "required": "false"
+            },
+            {
+                "name": "discard",
+                "type": "bool",
+                "required": "false"
+            },
+            {
+                "name": "body",
+                "type": "DraftManipulationRequest",
+                "required": "false"
+            }
+        ],
+        "return": "EmailMessage"
+    },
+    "PATCH /api/v2/conversations/emails/{conversationId}/participants/{participantId}": {
+        "operationId": "patch_conversations_email_participant",
+        "functionName": "patch_conversations_email_participant",
+        "signature": "patch_conversations_email_participant(conversation_id, participant_id, body)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "participant_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "MediaParticipantRequest",
+                "required": "true"
+            }
+        ]
+    },
+    "PATCH /api/v2/conversations/emails/{conversationId}/participants/{participantId}/attributes": {
+        "operationId": "patch_conversations_email_participant_attributes",
+        "functionName": "patch_conversations_email_participant_attributes",
+        "signature": "patch_conversations_email_participant_attributes(conversation_id, participant_id, body)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "participant_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "ParticipantAttributes",
+                "required": "true"
+            }
+        ],
+        "return": "ParticipantAttributes"
+    },
+    "PATCH /api/v2/conversations/emails/{conversationId}/participants/{participantId}/communications/{communicationId}": {
+        "operationId": "patch_conversations_email_participant_communication",
+        "functionName": "patch_conversations_email_participant_communication",
+        "signature": "patch_conversations_email_participant_communication(conversation_id, participant_id, communication_id, body)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "participant_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "communication_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "MediaParticipantRequest",
+                "required": "true"
+            }
+        ],
+        "return": "object"
+    },
+    "PATCH /api/v2/conversations/messages/{conversationId}": {
+        "operationId": "patch_conversations_message",
+        "functionName": "patch_conversations_message",
+        "signature": "patch_conversations_message(conversation_id, body)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Conversation",
+                "required": "true"
+            }
+        ],
+        "return": "Conversation"
+    },
+    "PATCH /api/v2/conversations/messages/{conversationId}/participants/{participantId}": {
+        "operationId": "patch_conversations_message_participant",
+        "functionName": "patch_conversations_message_participant",
+        "signature": "patch_conversations_message_participant(conversation_id, participant_id, body)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "participant_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "MediaParticipantRequest",
+                "required": "false"
+            }
+        ]
+    },
+    "PATCH /api/v2/conversations/messages/{conversationId}/participants/{participantId}/attributes": {
+        "operationId": "patch_conversations_message_participant_attributes",
+        "functionName": "patch_conversations_message_participant_attributes",
+        "signature": "patch_conversations_message_participant_attributes(conversation_id, participant_id, body)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "participant_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "ParticipantAttributes",
+                "required": "false"
+            }
+        ],
+        "return": "ParticipantAttributes"
+    },
+    "PATCH /api/v2/conversations/messages/{conversationId}/participants/{participantId}/communications/{communicationId}": {
+        "operationId": "patch_conversations_message_participant_communication",
+        "functionName": "patch_conversations_message_participant_communication",
+        "signature": "patch_conversations_message_participant_communication(conversation_id, participant_id, communication_id, body)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "participant_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "communication_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "MediaParticipantRequest",
+                "required": "true"
+            }
+        ],
+        "return": "object"
+    },
+    "PATCH /api/v2/conversations/messaging/integrations/facebook/{integrationId}": {
+        "operationId": "patch_conversations_messaging_integrations_facebook_integration_id",
+        "functionName": "patch_conversations_messaging_integrations_facebook_integration_id",
+        "signature": "patch_conversations_messaging_integrations_facebook_integration_id(integration_id, body)",
+        "parameters": [
+            {
+                "name": "integration_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "FacebookIntegrationUpdateRequest",
+                "required": "true"
+            }
+        ],
+        "return": "FacebookIntegration"
+    },
+    "PATCH /api/v2/conversations/messaging/integrations/instagram/{integrationId}": {
+        "operationId": "patch_conversations_messaging_integrations_instagram_integration_id",
+        "functionName": "patch_conversations_messaging_integrations_instagram_integration_id",
+        "signature": "patch_conversations_messaging_integrations_instagram_integration_id(integration_id, body)",
+        "parameters": [
+            {
+                "name": "integration_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "InstagramIntegrationUpdateRequest",
+                "required": "true"
+            }
+        ],
+        "return": "InstagramIntegration"
+    },
+    "PATCH /api/v2/conversations/messaging/integrations/open/{integrationId}": {
+        "operationId": "patch_conversations_messaging_integrations_open_integration_id",
+        "functionName": "patch_conversations_messaging_integrations_open_integration_id",
+        "signature": "patch_conversations_messaging_integrations_open_integration_id(integration_id, body)",
+        "parameters": [
+            {
+                "name": "integration_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "OpenIntegrationUpdateRequest",
+                "required": "true"
+            }
+        ],
+        "return": "OpenIntegration"
+    },
+    "PATCH /api/v2/conversations/messaging/integrations/twitter/{integrationId}": {
+        "operationId": "patch_conversations_messaging_integrations_twitter_integration_id",
+        "functionName": "patch_conversations_messaging_integrations_twitter_integration_id",
+        "signature": "patch_conversations_messaging_integrations_twitter_integration_id(integration_id, body)",
+        "parameters": [
+            {
+                "name": "integration_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "TwitterIntegrationRequest",
+                "required": "true"
+            }
+        ],
+        "return": "TwitterIntegration"
+    },
+    "PATCH /api/v2/conversations/messaging/integrations/whatsapp/{integrationId}": {
+        "operationId": "patch_conversations_messaging_integrations_whatsapp_integration_id",
+        "functionName": "patch_conversations_messaging_integrations_whatsapp_integration_id",
+        "signature": "patch_conversations_messaging_integrations_whatsapp_integration_id(integration_id, body)",
+        "parameters": [
+            {
+                "name": "integration_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "WhatsAppIntegrationUpdateRequest",
+                "required": "true"
+            }
+        ],
+        "return": "WhatsAppIntegration"
+    },
+    "PATCH /api/v2/conversations/messaging/settings/{messageSettingId}": {
+        "operationId": "patch_conversations_messaging_setting",
+        "functionName": "patch_conversations_messaging_setting",
+        "signature": "patch_conversations_messaging_setting(message_setting_id, body)",
+        "parameters": [
+            {
+                "name": "message_setting_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "MessagingSettingPatchRequest",
+                "required": "true"
+            }
+        ],
+        "return": "MessagingSetting"
+    },
+    "PATCH /api/v2/conversations/messaging/supportedcontent/{supportedContentId}": {
+        "operationId": "patch_conversations_messaging_supportedcontent_supported_content_id",
+        "functionName": "patch_conversations_messaging_supportedcontent_supported_content_id",
+        "signature": "patch_conversations_messaging_supportedcontent_supported_content_id(supported_content_id, body)",
+        "parameters": [
+            {
+                "name": "supported_content_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "SupportedContent",
+                "required": "true"
+            }
+        ],
+        "return": "SupportedContent"
+    },
+    "PATCH /api/v2/conversations/settings": {
+        "operationId": "patch_conversations_settings",
+        "functionName": "patch_conversations_settings",
+        "signature": "patch_conversations_settings(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Settings",
+                "required": "true"
+            }
+        ]
+    },
+    "POST /api/v2/analytics/conversations/{conversationId}/details/properties": {
+        "operationId": "post_analytics_conversation_details_properties",
+        "functionName": "post_analytics_conversation_details_properties",
+        "signature": "post_analytics_conversation_details_properties(conversation_id, body)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "PropertyIndexRequest",
+                "required": "true"
+            }
+        ],
+        "return": "PropertyIndexRequest"
+    },
+    "POST /api/v2/analytics/conversations/activity/query": {
+        "operationId": "post_analytics_conversations_activity_query",
+        "functionName": "post_analytics_conversations_activity_query",
+        "signature": "post_analytics_conversations_activity_query(body, page_size, page_number)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "ConversationActivityQuery",
+                "required": "true"
+            },
+            {
+                "name": "page_size",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "page_number",
+                "type": "int",
+                "required": "false"
+            }
+        ],
+        "return": "ConversationActivityResponse"
+    },
+    "POST /api/v2/analytics/conversations/aggregates/jobs": {
+        "operationId": "post_analytics_conversations_aggregates_jobs",
+        "functionName": "post_analytics_conversations_aggregates_jobs",
+        "signature": "post_analytics_conversations_aggregates_jobs(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "ConversationAsyncAggregationQuery",
+                "required": "true"
+            }
+        ],
+        "return": "AsyncQueryResponse"
+    },
+    "POST /api/v2/analytics/conversations/aggregates/query": {
+        "operationId": "post_analytics_conversations_aggregates_query",
+        "functionName": "post_analytics_conversations_aggregates_query",
+        "signature": "post_analytics_conversations_aggregates_query(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "ConversationAggregationQuery",
+                "required": "true"
+            }
+        ],
+        "return": "ConversationAggregateQueryResponse"
+    },
+    "POST /api/v2/analytics/conversations/details/jobs": {
+        "operationId": "post_analytics_conversations_details_jobs",
+        "functionName": "post_analytics_conversations_details_jobs",
+        "signature": "post_analytics_conversations_details_jobs(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "AsyncConversationQuery",
+                "required": "true"
+            }
+        ],
+        "return": "AsyncQueryResponse"
+    },
+    "POST /api/v2/analytics/conversations/details/query": {
+        "operationId": "post_analytics_conversations_details_query",
+        "functionName": "post_analytics_conversations_details_query",
+        "signature": "post_analytics_conversations_details_query(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "ConversationQuery",
+                "required": "true"
+            }
+        ],
+        "return": "AnalyticsConversationQueryResponse"
+    },
+    "POST /api/v2/conversations/{conversationId}/assign": {
+        "operationId": "post_conversation_assign",
+        "functionName": "post_conversation_assign",
+        "signature": "post_conversation_assign(conversation_id, body)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "ConversationUser",
+                "required": "true"
+            }
+        ],
+        "return": "str"
+    },
+    "POST /api/v2/conversations/{conversationId}/barge": {
+        "operationId": "post_conversation_barge",
+        "functionName": "post_conversation_barge",
+        "signature": "post_conversation_barge(conversation_id)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            }
+        ]
+    },
+    "POST /api/v2/conversations/{conversationId}/cobrowse": {
+        "operationId": "post_conversation_cobrowse",
+        "functionName": "post_conversation_cobrowse",
+        "signature": "post_conversation_cobrowse(conversation_id)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "CobrowseWebMessagingSession"
+    },
+    "POST /api/v2/conversations/{conversationId}/disconnect": {
+        "operationId": "post_conversation_disconnect",
+        "functionName": "post_conversation_disconnect",
+        "signature": "post_conversation_disconnect(conversation_id)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "str"
+    },
+    "POST /api/v2/conversations/{conversationId}/participants/{participantId}/callbacks": {
+        "operationId": "post_conversation_participant_callbacks",
+        "functionName": "post_conversation_participant_callbacks",
+        "signature": "post_conversation_participant_callbacks(conversation_id, participant_id, body)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "participant_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "CreateCallbackOnConversationCommand",
+                "required": "false"
+            }
+        ]
+    },
+    "POST /api/v2/conversations/{conversationId}/participants/{participantId}/digits": {
+        "operationId": "post_conversation_participant_digits",
+        "functionName": "post_conversation_participant_digits",
+        "signature": "post_conversation_participant_digits(conversation_id, participant_id, body)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "participant_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Digits",
+                "required": "false"
+            }
+        ]
+    },
+    "POST /api/v2/conversations/{conversationId}/participants/{participantId}/replace": {
+        "operationId": "post_conversation_participant_replace",
+        "functionName": "post_conversation_participant_replace",
+        "signature": "post_conversation_participant_replace(conversation_id, participant_id, body)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "participant_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "TransferRequest",
+                "required": "true"
+            }
+        ]
+    },
+    "POST /api/v2/conversations/{conversationId}/participants/{participantId}/replace/agent": {
+        "operationId": "post_conversation_participant_replace_agent",
+        "functionName": "post_conversation_participant_replace_agent",
+        "signature": "post_conversation_participant_replace_agent(conversation_id, participant_id, body)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "participant_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "TransferToAgentRequest",
+                "required": "true"
+            }
+        ]
+    },
+    "POST /api/v2/conversations/{conversationId}/participants/{participantId}/replace/external": {
+        "operationId": "post_conversation_participant_replace_external",
+        "functionName": "post_conversation_participant_replace_external",
+        "signature": "post_conversation_participant_replace_external(conversation_id, participant_id, body)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "participant_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "TransferToExternalRequest",
+                "required": "true"
+            }
+        ]
+    },
+    "POST /api/v2/conversations/{conversationId}/participants/{participantId}/replace/queue": {
+        "operationId": "post_conversation_participant_replace_queue",
+        "functionName": "post_conversation_participant_replace_queue",
+        "signature": "post_conversation_participant_replace_queue(conversation_id, participant_id, body)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "participant_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "TransferToQueueRequest",
+                "required": "true"
+            }
+        ]
+    },
+    "POST /api/v2/conversations/{conversationId}/participants/{participantId}/secureivrsessions": {
+        "operationId": "post_conversation_participant_secureivrsessions",
+        "functionName": "post_conversation_participant_secureivrsessions",
+        "signature": "post_conversation_participant_secureivrsessions(conversation_id, participant_id, body)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "participant_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "CreateSecureSession",
+                "required": "false"
+            }
+        ],
+        "return": "SecureSession"
+    },
+    "POST /api/v2/conversations/calls/{conversationId}": {
+        "operationId": "post_conversations_call",
+        "functionName": "post_conversations_call",
+        "signature": "post_conversations_call(conversation_id, body)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "CallCommand",
+                "required": "true"
+            }
+        ],
+        "return": "Conversation"
+    },
+    "POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/barge": {
+        "operationId": "post_conversations_call_participant_barge",
+        "functionName": "post_conversations_call_participant_barge",
+        "signature": "post_conversations_call_participant_barge(conversation_id, participant_id)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "participant_id",
+                "type": "str",
+                "required": "true"
+            }
+        ]
+    },
+    "POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/coach": {
+        "operationId": "post_conversations_call_participant_coach",
+        "functionName": "post_conversations_call_participant_coach",
+        "signature": "post_conversations_call_participant_coach(conversation_id, participant_id)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "participant_id",
+                "type": "str",
+                "required": "true"
+            }
+        ]
+    },
+    "POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup": {
+        "operationId": "post_conversations_call_participant_communication_wrapup",
+        "functionName": "post_conversations_call_participant_communication_wrapup",
+        "signature": "post_conversations_call_participant_communication_wrapup(conversation_id, participant_id, communication_id, body)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "participant_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "communication_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "WrapupInput",
+                "required": "false"
+            }
+        ]
+    },
+    "POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult": {
+        "operationId": "post_conversations_call_participant_consult",
+        "functionName": "post_conversations_call_participant_consult",
+        "signature": "post_conversations_call_participant_consult(conversation_id, participant_id, body)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "participant_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "ConsultTransfer",
+                "required": "true"
+            }
+        ],
+        "return": "ConsultTransferResponse"
+    },
+    "POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult/agent": {
+        "operationId": "post_conversations_call_participant_consult_agent",
+        "functionName": "post_conversations_call_participant_consult_agent",
+        "signature": "post_conversations_call_participant_consult_agent(conversation_id, participant_id, body)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "participant_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "ConsultTransferToAgent",
+                "required": "true"
+            }
+        ],
+        "return": "ConsultTransferResponse"
+    },
+    "POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult/external": {
+        "operationId": "post_conversations_call_participant_consult_external",
+        "functionName": "post_conversations_call_participant_consult_external",
+        "signature": "post_conversations_call_participant_consult_external(conversation_id, participant_id, body)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "participant_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "ConsultTransferToExternal",
+                "required": "true"
+            }
+        ],
+        "return": "ConsultTransferResponse"
+    },
+    "POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult/queue": {
+        "operationId": "post_conversations_call_participant_consult_queue",
+        "functionName": "post_conversations_call_participant_consult_queue",
+        "signature": "post_conversations_call_participant_consult_queue(conversation_id, participant_id, body)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "participant_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "ConsultTransferToQueue",
+                "required": "true"
+            }
+        ],
+        "return": "ConsultTransferResponse"
+    },
+    "POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/monitor": {
+        "operationId": "post_conversations_call_participant_monitor",
+        "functionName": "post_conversations_call_participant_monitor",
+        "signature": "post_conversations_call_participant_monitor(conversation_id, participant_id)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "participant_id",
+                "type": "str",
+                "required": "true"
+            }
+        ]
+    },
+    "POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/replace": {
+        "operationId": "post_conversations_call_participant_replace",
+        "functionName": "post_conversations_call_participant_replace",
+        "signature": "post_conversations_call_participant_replace(conversation_id, participant_id, body)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "participant_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "TransferRequest",
+                "required": "true"
+            }
+        ]
+    },
+    "POST /api/v2/conversations/calls/{conversationId}/participants": {
+        "operationId": "post_conversations_call_participants",
+        "functionName": "post_conversations_call_participants",
+        "signature": "post_conversations_call_participants(conversation_id, body)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Conversation",
+                "required": "true"
+            }
+        ],
+        "return": "Conversation"
+    },
+    "POST /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup": {
+        "operationId": "post_conversations_callback_participant_communication_wrapup",
+        "functionName": "post_conversations_callback_participant_communication_wrapup",
+        "signature": "post_conversations_callback_participant_communication_wrapup(conversation_id, participant_id, communication_id, body)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "participant_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "communication_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "WrapupInput",
+                "required": "false"
+            }
+        ]
+    },
+    "POST /api/v2/conversations/callbacks/{conversationId}/participants/{participantId}/replace": {
+        "operationId": "post_conversations_callback_participant_replace",
+        "functionName": "post_conversations_callback_participant_replace",
+        "signature": "post_conversations_callback_participant_replace(conversation_id, participant_id, body)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "participant_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "TransferRequest",
+                "required": "true"
+            }
+        ]
+    },
+    "POST /api/v2/conversations/callbacks": {
+        "operationId": "post_conversations_callbacks",
+        "functionName": "post_conversations_callbacks",
+        "signature": "post_conversations_callbacks(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "CreateCallbackCommand",
+                "required": "true"
+            }
+        ],
+        "return": "CreateCallbackResponse"
+    },
+    "POST /api/v2/conversations/callbacks/bulk/disconnect": {
+        "operationId": "post_conversations_callbacks_bulk_disconnect",
+        "functionName": "post_conversations_callbacks_bulk_disconnect",
+        "signature": "post_conversations_callbacks_bulk_disconnect(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "BulkCallbackDisconnectRequest",
+                "required": "true"
+            }
+        ]
+    },
+    "POST /api/v2/conversations/callbacks/bulk/update": {
+        "operationId": "post_conversations_callbacks_bulk_update",
+        "functionName": "post_conversations_callbacks_bulk_update",
+        "signature": "post_conversations_callbacks_bulk_update(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "BulkCallbackPatchRequest",
+                "required": "true"
+            }
+        ],
+        "return": "BulkCallbackPatchResponse"
+    },
+    "POST /api/v2/conversations/calls": {
+        "operationId": "post_conversations_calls",
+        "functionName": "post_conversations_calls",
+        "signature": "post_conversations_calls(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "CreateCallRequest",
+                "required": "true"
+            }
+        ],
+        "return": "CreateCallResponse"
+    },
+    "POST /api/v2/conversations/chats/{conversationId}/communications/{communicationId}/messages": {
+        "operationId": "post_conversations_chat_communication_messages",
+        "functionName": "post_conversations_chat_communication_messages",
+        "signature": "post_conversations_chat_communication_messages(conversation_id, communication_id, body)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "communication_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "CreateWebChatMessageRequest",
+                "required": "true"
+            }
+        ],
+        "return": "WebChatMessage"
+    },
+    "POST /api/v2/conversations/chats/{conversationId}/communications/{communicationId}/typing": {
+        "operationId": "post_conversations_chat_communication_typing",
+        "functionName": "post_conversations_chat_communication_typing",
+        "signature": "post_conversations_chat_communication_typing(conversation_id, communication_id)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "communication_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "WebChatTyping"
+    },
+    "POST /api/v2/conversations/chats/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup": {
+        "operationId": "post_conversations_chat_participant_communication_wrapup",
+        "functionName": "post_conversations_chat_participant_communication_wrapup",
+        "signature": "post_conversations_chat_participant_communication_wrapup(conversation_id, participant_id, communication_id, body)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "participant_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "communication_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "WrapupInput",
+                "required": "false"
+            }
+        ]
+    },
+    "POST /api/v2/conversations/chats/{conversationId}/participants/{participantId}/replace": {
+        "operationId": "post_conversations_chat_participant_replace",
+        "functionName": "post_conversations_chat_participant_replace",
+        "signature": "post_conversations_chat_participant_replace(conversation_id, participant_id, body)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "participant_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "TransferRequest",
+                "required": "true"
+            }
+        ]
+    },
+    "POST /api/v2/conversations/chats": {
+        "operationId": "post_conversations_chats",
+        "functionName": "post_conversations_chats",
+        "signature": "post_conversations_chats(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "CreateWebChatRequest",
+                "required": "true"
+            }
+        ],
+        "return": "ChatConversation"
+    },
+    "POST /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup": {
+        "operationId": "post_conversations_cobrowsesession_participant_communication_wrapup",
+        "functionName": "post_conversations_cobrowsesession_participant_communication_wrapup",
+        "signature": "post_conversations_cobrowsesession_participant_communication_wrapup(conversation_id, participant_id, communication_id, body)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "participant_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "communication_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "WrapupInput",
+                "required": "false"
+            }
+        ]
+    },
+    "POST /api/v2/conversations/cobrowsesessions/{conversationId}/participants/{participantId}/replace": {
+        "operationId": "post_conversations_cobrowsesession_participant_replace",
+        "functionName": "post_conversations_cobrowsesession_participant_replace",
+        "signature": "post_conversations_cobrowsesession_participant_replace(conversation_id, participant_id, body)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "participant_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "TransferRequest",
+                "required": "false"
+            }
+        ]
+    },
+    "POST /api/v2/conversations/emails/{conversationId}/inboundmessages": {
+        "operationId": "post_conversations_email_inboundmessages",
+        "functionName": "post_conversations_email_inboundmessages",
+        "signature": "post_conversations_email_inboundmessages(conversation_id, body)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "InboundMessageRequest",
+                "required": "true"
+            }
+        ],
+        "return": "EmailConversation"
+    },
+    "POST /api/v2/conversations/emails/{conversationId}/messages": {
+        "operationId": "post_conversations_email_messages",
+        "functionName": "post_conversations_email_messages",
+        "signature": "post_conversations_email_messages(conversation_id, body)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "EmailMessage",
+                "required": "true"
+            }
+        ],
+        "return": "EmailMessageReply"
+    },
+    "POST /api/v2/conversations/emails/{conversationId}/messages/draft/attachments/copy": {
+        "operationId": "post_conversations_email_messages_draft_attachments_copy",
+        "functionName": "post_conversations_email_messages_draft_attachments_copy",
+        "signature": "post_conversations_email_messages_draft_attachments_copy(conversation_id, body)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "CopyAttachmentsRequest",
+                "required": "true"
+            }
+        ],
+        "return": "EmailMessage"
+    },
+    "POST /api/v2/conversations/emails/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup": {
+        "operationId": "post_conversations_email_participant_communication_wrapup",
+        "functionName": "post_conversations_email_participant_communication_wrapup",
+        "signature": "post_conversations_email_participant_communication_wrapup(conversation_id, participant_id, communication_id, body)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "participant_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "communication_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "WrapupInput",
+                "required": "false"
+            }
+        ]
+    },
+    "POST /api/v2/conversations/emails/{conversationId}/participants/{participantId}/replace": {
+        "operationId": "post_conversations_email_participant_replace",
+        "functionName": "post_conversations_email_participant_replace",
+        "signature": "post_conversations_email_participant_replace(conversation_id, participant_id, body)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "participant_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "TransferRequest",
+                "required": "true"
+            }
+        ]
+    },
+    "POST /api/v2/conversations/emails": {
+        "operationId": "post_conversations_emails",
+        "functionName": "post_conversations_emails",
+        "signature": "post_conversations_emails(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "CreateEmailRequest",
+                "required": "true"
+            }
+        ],
+        "return": "EmailConversation"
+    },
+    "POST /api/v2/conversations/emails/agentless": {
+        "operationId": "post_conversations_emails_agentless",
+        "functionName": "post_conversations_emails_agentless",
+        "signature": "post_conversations_emails_agentless(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "AgentlessEmailSendRequestDto",
+                "required": "true"
+            }
+        ],
+        "return": "AgentlessEmailSendResponseDto"
+    },
+    "POST /api/v2/conversations/faxes": {
+        "operationId": "post_conversations_faxes",
+        "functionName": "post_conversations_faxes",
+        "signature": "post_conversations_faxes(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "FaxSendRequest",
+                "required": "true"
+            }
+        ],
+        "return": "FaxSendResponse"
+    },
+    "POST /api/v2/conversations/keyconfigurations": {
+        "operationId": "post_conversations_keyconfigurations",
+        "functionName": "post_conversations_keyconfigurations",
+        "signature": "post_conversations_keyconfigurations(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "ConversationEncryptionConfiguration",
+                "required": "true"
+            }
+        ],
+        "return": "ConversationEncryptionConfiguration"
+    },
+    "POST /api/v2/conversations/keyconfigurations/validate": {
+        "operationId": "post_conversations_keyconfigurations_validate",
+        "functionName": "post_conversations_keyconfigurations_validate",
+        "signature": "post_conversations_keyconfigurations_validate(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "ConversationEncryptionConfiguration",
+                "required": "true"
+            }
+        ],
+        "return": "ConversationEncryptionConfiguration"
+    },
+    "POST /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages": {
+        "operationId": "post_conversations_message_communication_messages",
+        "functionName": "post_conversations_message_communication_messages",
+        "signature": "post_conversations_message_communication_messages(conversation_id, communication_id, body, use_normalized_message)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "communication_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "AdditionalMessage",
+                "required": "true"
+            },
+            {
+                "name": "use_normalized_message",
+                "type": "bool",
+                "required": "false"
+            }
+        ],
+        "return": "MessageData"
+    },
+    "POST /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/messages/media": {
+        "operationId": "post_conversations_message_communication_messages_media",
+        "functionName": "post_conversations_message_communication_messages_media",
+        "signature": "post_conversations_message_communication_messages_media(conversation_id, communication_id)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "communication_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "MessageMediaData"
+    },
+    "POST /api/v2/conversations/messages/{conversationId}/communications/{communicationId}/typing": {
+        "operationId": "post_conversations_message_communication_typing",
+        "functionName": "post_conversations_message_communication_typing",
+        "signature": "post_conversations_message_communication_typing(conversation_id, communication_id, body)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "communication_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "MessageTypingEventRequest",
+                "required": "true"
+            }
+        ]
+    },
+    "POST /api/v2/conversations/messages/{integrationId}/inbound/open/event": {
+        "operationId": "post_conversations_message_inbound_open_event",
+        "functionName": "post_conversations_message_inbound_open_event",
+        "signature": "post_conversations_message_inbound_open_event(integration_id, body)",
+        "parameters": [
+            {
+                "name": "integration_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "OpenInboundNormalizedEvent",
+                "required": "true"
+            }
+        ],
+        "return": "OpenEventNormalizedMessage"
+    },
+    "POST /api/v2/conversations/messages/{integrationId}/inbound/open/message": {
+        "operationId": "post_conversations_message_inbound_open_message",
+        "functionName": "post_conversations_message_inbound_open_message",
+        "signature": "post_conversations_message_inbound_open_message(integration_id, body)",
+        "parameters": [
+            {
+                "name": "integration_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "OpenInboundNormalizedMessage",
+                "required": "true"
+            }
+        ],
+        "return": "OpenMessageNormalizedMessage"
+    },
+    "POST /api/v2/conversations/messages/{integrationId}/inbound/open/receipt": {
+        "operationId": "post_conversations_message_inbound_open_receipt",
+        "functionName": "post_conversations_message_inbound_open_receipt",
+        "signature": "post_conversations_message_inbound_open_receipt(integration_id, body)",
+        "parameters": [
+            {
+                "name": "integration_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "OpenInboundNormalizedReceipt",
+                "required": "true"
+            }
+        ],
+        "return": "OpenReceiptNormalizedMessage"
+    },
+    "POST /api/v2/conversations/messages/{conversationId}/messages/bulk": {
+        "operationId": "post_conversations_message_messages_bulk",
+        "functionName": "post_conversations_message_messages_bulk",
+        "signature": "post_conversations_message_messages_bulk(conversation_id, use_normalized_message, body)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "use_normalized_message",
+                "type": "bool",
+                "required": "false"
+            },
+            {
+                "name": "body",
+                "type": "list[str]",
+                "required": "false"
+            }
+        ],
+        "return": "TextMessageListing"
+    },
+    "POST /api/v2/conversations/messages/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup": {
+        "operationId": "post_conversations_message_participant_communication_wrapup",
+        "functionName": "post_conversations_message_participant_communication_wrapup",
+        "signature": "post_conversations_message_participant_communication_wrapup(conversation_id, participant_id, communication_id, body)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "participant_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "communication_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "WrapupInput",
+                "required": "false"
+            }
+        ]
+    },
+    "POST /api/v2/conversations/messages/{conversationId}/participants/{participantId}/monitor": {
+        "operationId": "post_conversations_message_participant_monitor",
+        "functionName": "post_conversations_message_participant_monitor",
+        "signature": "post_conversations_message_participant_monitor(conversation_id, participant_id)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "participant_id",
+                "type": "str",
+                "required": "true"
+            }
+        ]
+    },
+    "POST /api/v2/conversations/messages/{conversationId}/participants/{participantId}/replace": {
+        "operationId": "post_conversations_message_participant_replace",
+        "functionName": "post_conversations_message_participant_replace",
+        "signature": "post_conversations_message_participant_replace(conversation_id, participant_id, body)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "participant_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "TransferRequest",
+                "required": "true"
+            }
+        ]
+    },
+    "POST /api/v2/conversations/messages": {
+        "operationId": "post_conversations_messages",
+        "functionName": "post_conversations_messages",
+        "signature": "post_conversations_messages(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "CreateOutboundMessagingConversationRequest",
+                "required": "true"
+            }
+        ],
+        "return": "MessageConversation"
+    },
+    "POST /api/v2/conversations/messages/agentless": {
+        "operationId": "post_conversations_messages_agentless",
+        "functionName": "post_conversations_messages_agentless",
+        "signature": "post_conversations_messages_agentless(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "SendAgentlessOutboundMessageRequest",
+                "required": "true"
+            }
+        ],
+        "return": "SendAgentlessOutboundMessageResponse"
+    },
+    "POST /api/v2/conversations/messages/inbound/open": {
+        "operationId": "post_conversations_messages_inbound_open",
+        "functionName": "post_conversations_messages_inbound_open",
+        "signature": "post_conversations_messages_inbound_open(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "OpenNormalizedMessage",
+                "required": "true"
+            }
+        ],
+        "return": "OpenNormalizedMessage"
+    },
+    "POST /api/v2/conversations/messaging/integrations/facebook": {
+        "operationId": "post_conversations_messaging_integrations_facebook",
+        "functionName": "post_conversations_messaging_integrations_facebook",
+        "signature": "post_conversations_messaging_integrations_facebook(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "FacebookIntegrationRequest",
+                "required": "true"
+            }
+        ],
+        "return": "FacebookIntegration"
+    },
+    "POST /api/v2/conversations/messaging/integrations/instagram": {
+        "operationId": "post_conversations_messaging_integrations_instagram",
+        "functionName": "post_conversations_messaging_integrations_instagram",
+        "signature": "post_conversations_messaging_integrations_instagram(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "InstagramIntegrationRequest",
+                "required": "true"
+            }
+        ],
+        "return": "InstagramIntegration"
+    },
+    "POST /api/v2/conversations/messaging/integrations/line": {
+        "operationId": "post_conversations_messaging_integrations_line",
+        "functionName": "post_conversations_messaging_integrations_line",
+        "signature": "post_conversations_messaging_integrations_line(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "LineIntegrationRequest",
+                "required": "true"
+            }
+        ],
+        "return": "LineIntegration"
+    },
+    "POST /api/v2/conversations/messaging/integrations/open": {
+        "operationId": "post_conversations_messaging_integrations_open",
+        "functionName": "post_conversations_messaging_integrations_open",
+        "signature": "post_conversations_messaging_integrations_open(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "OpenIntegrationRequest",
+                "required": "true"
+            }
+        ],
+        "return": "OpenIntegration"
+    },
+    "POST /api/v2/conversations/messaging/integrations/twitter": {
+        "operationId": "post_conversations_messaging_integrations_twitter",
+        "functionName": "post_conversations_messaging_integrations_twitter",
+        "signature": "post_conversations_messaging_integrations_twitter(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "TwitterIntegrationRequest",
+                "required": "true"
+            }
+        ],
+        "return": "TwitterIntegration"
+    },
+    "POST /api/v2/conversations/messaging/integrations/whatsapp": {
+        "operationId": "post_conversations_messaging_integrations_whatsapp",
+        "functionName": "post_conversations_messaging_integrations_whatsapp",
+        "signature": "post_conversations_messaging_integrations_whatsapp(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "WhatsAppIntegrationRequest",
+                "required": "true"
+            }
+        ],
+        "return": "WhatsAppIntegration"
+    },
+    "POST /api/v2/conversations/messaging/settings": {
+        "operationId": "post_conversations_messaging_settings",
+        "functionName": "post_conversations_messaging_settings",
+        "signature": "post_conversations_messaging_settings(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "MessagingSettingRequest",
+                "required": "true"
+            }
+        ],
+        "return": "MessagingSetting"
+    },
+    "POST /api/v2/conversations/messaging/supportedcontent": {
+        "operationId": "post_conversations_messaging_supportedcontent",
+        "functionName": "post_conversations_messaging_supportedcontent",
+        "signature": "post_conversations_messaging_supportedcontent(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "SupportedContent",
+                "required": "true"
+            }
+        ],
+        "return": "SupportedContent"
+    },
+    "POST /api/v2/conversations/participants/attributes/search": {
+        "operationId": "post_conversations_participants_attributes_search",
+        "functionName": "post_conversations_participants_attributes_search",
+        "signature": "post_conversations_participants_attributes_search(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "ConversationParticipantSearchRequest",
+                "required": "true"
+            }
+        ],
+        "return": "JsonCursorSearchResponse"
+    },
+    "POST /api/v2/conversations/screenshares/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup": {
+        "operationId": "post_conversations_screenshare_participant_communication_wrapup",
+        "functionName": "post_conversations_screenshare_participant_communication_wrapup",
+        "signature": "post_conversations_screenshare_participant_communication_wrapup(conversation_id, participant_id, communication_id, body)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "participant_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "communication_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "WrapupInput",
+                "required": "false"
+            }
+        ]
+    },
+    "POST /api/v2/conversations/socials/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup": {
+        "operationId": "post_conversations_social_participant_communication_wrapup",
+        "functionName": "post_conversations_social_participant_communication_wrapup",
+        "signature": "post_conversations_social_participant_communication_wrapup(conversation_id, participant_id, communication_id, body)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "participant_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "communication_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "WrapupInput",
+                "required": "false"
+            }
+        ]
+    },
+    "POST /api/v2/conversations/videos/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup": {
+        "operationId": "post_conversations_video_participant_communication_wrapup",
+        "functionName": "post_conversations_video_participant_communication_wrapup",
+        "signature": "post_conversations_video_participant_communication_wrapup(conversation_id, participant_id, communication_id, body)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "participant_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "communication_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "WrapupInput",
+                "required": "false"
+            }
+        ]
+    },
+    "POST /api/v2/conversations/videos/meetings": {
+        "operationId": "post_conversations_videos_meetings",
+        "functionName": "post_conversations_videos_meetings",
+        "signature": "post_conversations_videos_meetings(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "GenerateMeetingIdRequest",
+                "required": "true"
+            }
+        ],
+        "return": "MeetingIdRecord"
+    },
+    "PUT /api/v2/conversations/{conversationId}/participants/{participantId}/flaggedreason": {
+        "operationId": "put_conversation_participant_flaggedreason",
+        "functionName": "put_conversation_participant_flaggedreason",
+        "signature": "put_conversation_participant_flaggedreason(conversation_id, participant_id)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "participant_id",
+                "type": "str",
+                "required": "true"
+            }
+        ]
+    },
+    "PUT /api/v2/conversations/{conversationId}/secureattributes": {
+        "operationId": "put_conversation_secureattributes",
+        "functionName": "put_conversation_secureattributes",
+        "signature": "put_conversation_secureattributes(conversation_id, body)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "ConversationSecureAttributes",
+                "required": "true"
+            }
+        ],
+        "return": "str"
+    },
+    "PUT /api/v2/conversations/{conversationId}/tags": {
+        "operationId": "put_conversation_tags",
+        "functionName": "put_conversation_tags",
+        "signature": "put_conversation_tags(conversation_id, body)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "ConversationTagsUpdate",
+                "required": "true"
+            }
+        ],
+        "return": "str"
+    },
+    "PUT /api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId}/uuidata": {
+        "operationId": "put_conversations_call_participant_communication_uuidata",
+        "functionName": "put_conversations_call_participant_communication_uuidata",
+        "signature": "put_conversations_call_participant_communication_uuidata(conversation_id, participant_id, communication_id, body)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "participant_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "communication_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "SetUuiDataRequest",
+                "required": "true"
+            }
+        ],
+        "return": "object"
+    },
+    "PUT /api/v2/conversations/calls/{conversationId}/recordingstate": {
+        "operationId": "put_conversations_call_recordingstate",
+        "functionName": "put_conversations_call_recordingstate",
+        "signature": "put_conversations_call_recordingstate(conversation_id, body)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "SetRecordingState",
+                "required": "true"
+            }
+        ],
+        "return": "str"
+    },
+    "PUT /api/v2/conversations/callbacks/{conversationId}/recordingstate": {
+        "operationId": "put_conversations_callback_recordingstate",
+        "functionName": "put_conversations_callback_recordingstate",
+        "signature": "put_conversations_callback_recordingstate(conversation_id, body)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "SetRecordingState",
+                "required": "true"
+            }
+        ],
+        "return": "str"
+    },
+    "PUT /api/v2/conversations/chats/{conversationId}/recordingstate": {
+        "operationId": "put_conversations_chat_recordingstate",
+        "functionName": "put_conversations_chat_recordingstate",
+        "signature": "put_conversations_chat_recordingstate(conversation_id, body)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "SetRecordingState",
+                "required": "true"
+            }
+        ],
+        "return": "str"
+    },
+    "PUT /api/v2/conversations/cobrowsesessions/{conversationId}/recordingstate": {
+        "operationId": "put_conversations_cobrowsesession_recordingstate",
+        "functionName": "put_conversations_cobrowsesession_recordingstate",
+        "signature": "put_conversations_cobrowsesession_recordingstate(conversation_id, body)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "SetRecordingState",
+                "required": "true"
+            }
+        ],
+        "return": "str"
+    },
+    "PUT /api/v2/conversations/emails/{conversationId}/messages/draft": {
+        "operationId": "put_conversations_email_messages_draft",
+        "functionName": "put_conversations_email_messages_draft",
+        "signature": "put_conversations_email_messages_draft(conversation_id, body)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "EmailMessage",
+                "required": "true"
+            }
+        ],
+        "return": "EmailMessage"
+    },
+    "PUT /api/v2/conversations/emails/{conversationId}/recordingstate": {
+        "operationId": "put_conversations_email_recordingstate",
+        "functionName": "put_conversations_email_recordingstate",
+        "signature": "put_conversations_email_recordingstate(conversation_id, body)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "SetRecordingState",
+                "required": "true"
+            }
+        ],
+        "return": "str"
+    },
+    "PUT /api/v2/conversations/keyconfigurations/{keyconfigurationsId}": {
+        "operationId": "put_conversations_keyconfiguration",
+        "functionName": "put_conversations_keyconfiguration",
+        "signature": "put_conversations_keyconfiguration(keyconfigurations_id, body)",
+        "parameters": [
+            {
+                "name": "keyconfigurations_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "ConversationEncryptionConfiguration",
+                "required": "true"
+            }
+        ],
+        "return": "ConversationEncryptionConfiguration"
+    },
+    "PUT /api/v2/conversations/messages/{conversationId}/recordingstate": {
+        "operationId": "put_conversations_message_recordingstate",
+        "functionName": "put_conversations_message_recordingstate",
+        "signature": "put_conversations_message_recordingstate(conversation_id, body)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "SetRecordingState",
+                "required": "true"
+            }
+        ],
+        "return": "str"
+    },
+    "PUT /api/v2/conversations/messaging/integrations/line/{integrationId}": {
+        "operationId": "put_conversations_messaging_integrations_line_integration_id",
+        "functionName": "put_conversations_messaging_integrations_line_integration_id",
+        "signature": "put_conversations_messaging_integrations_line_integration_id(integration_id, body)",
+        "parameters": [
+            {
+                "name": "integration_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "LineIntegrationRequest",
+                "required": "true"
+            }
+        ],
+        "return": "LineIntegration"
+    },
+    "PUT /api/v2/conversations/messaging/settings/default": {
+        "operationId": "put_conversations_messaging_settings_default",
+        "functionName": "put_conversations_messaging_settings_default",
+        "signature": "put_conversations_messaging_settings_default(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "MessagingSettingDefaultRequest",
+                "required": "true"
+            }
+        ],
+        "return": "MessagingSetting"
+    },
+    "PUT /api/v2/conversations/messaging/supportedcontent/default": {
+        "operationId": "put_conversations_messaging_supportedcontent_default",
+        "functionName": "put_conversations_messaging_supportedcontent_default",
+        "signature": "put_conversations_messaging_supportedcontent_default(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "SupportedContentReference",
+                "required": "true"
+            }
+        ],
+        "return": "SupportedContent"
+    },
+    "PUT /api/v2/conversations/messaging/threadingtimeline": {
+        "operationId": "put_conversations_messaging_threadingtimeline",
+        "functionName": "put_conversations_messaging_threadingtimeline",
+        "signature": "put_conversations_messaging_threadingtimeline(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "ConversationThreadingWindow",
+                "required": "true"
+            }
+        ],
+        "return": "ConversationThreadingWindow"
+    },
+    "PUT /api/v2/conversations/screenshares/{conversationId}/recordingstate": {
+        "operationId": "put_conversations_screenshare_recordingstate",
+        "functionName": "put_conversations_screenshare_recordingstate",
+        "signature": "put_conversations_screenshare_recordingstate(conversation_id, body)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "SetRecordingState",
+                "required": "true"
+            }
+        ],
+        "return": "str"
+    },
+    "PUT /api/v2/conversations/socials/{conversationId}/recordingstate": {
+        "operationId": "put_conversations_social_recordingstate",
+        "functionName": "put_conversations_social_recordingstate",
+        "signature": "put_conversations_social_recordingstate(conversation_id, body)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "SetRecordingState",
+                "required": "true"
+            }
+        ],
+        "return": "str"
+    },
+    "PUT /api/v2/conversations/videos/{conversationId}/recordingstate": {
+        "operationId": "put_conversations_video_recordingstate",
+        "functionName": "put_conversations_video_recordingstate",
+        "signature": "put_conversations_video_recordingstate(conversation_id, body)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "SetRecordingState",
+                "required": "true"
+            }
+        ],
+        "return": "str"
+    }
+    
+}

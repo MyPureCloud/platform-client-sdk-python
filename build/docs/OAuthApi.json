@@ -1,0 +1,195 @@
+{
+    "DELETE /api/v2/oauth/clients/{clientId}": {
+        "operationId": "delete_oauth_client",
+        "functionName": "delete_oauth_client",
+        "signature": "delete_oauth_client(client_id)",
+        "parameters": [
+            {
+                "name": "client_id",
+                "type": "str",
+                "required": "true"
+            }
+        ]
+    },
+    "GET /api/v2/oauth/authorizations/{clientId}": {
+        "operationId": "get_oauth_authorization",
+        "functionName": "get_oauth_authorization",
+        "signature": "get_oauth_authorization(client_id, accept_language)",
+        "parameters": [
+            {
+                "name": "client_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "accept_language",
+                "type": "str",
+                "required": "false"
+            }
+        ],
+        "return": "OAuthAuthorization"
+    },
+    "GET /api/v2/oauth/authorizations": {
+        "operationId": "get_oauth_authorizations",
+        "functionName": "get_oauth_authorizations",
+        "signature": "get_oauth_authorizations(accept_language)",
+        "parameters": [
+            {
+                "name": "accept_language",
+                "type": "str",
+                "required": "false"
+            }
+        ],
+        "return": "OAuthAuthorizationListing"
+    },
+    "GET /api/v2/oauth/clients/{clientId}": {
+        "operationId": "get_oauth_client",
+        "functionName": "get_oauth_client",
+        "signature": "get_oauth_client(client_id)",
+        "parameters": [
+            {
+                "name": "client_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "OAuthClient"
+    },
+    "GET /api/v2/oauth/clients/{clientId}/usage/query/results/{executionId}": {
+        "operationId": "get_oauth_client_usage_query_result",
+        "functionName": "get_oauth_client_usage_query_result",
+        "signature": "get_oauth_client_usage_query_result(execution_id, client_id)",
+        "parameters": [
+            {
+                "name": "execution_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "client_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "ApiUsageQueryResult"
+    },
+    "GET /api/v2/oauth/clients/{clientId}/usage/summary": {
+        "operationId": "get_oauth_client_usage_summary",
+        "functionName": "get_oauth_client_usage_summary",
+        "signature": "get_oauth_client_usage_summary(client_id, days)",
+        "parameters": [
+            {
+                "name": "client_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "days",
+                "type": "str",
+                "required": "false"
+            }
+        ],
+        "return": "UsageExecutionResult"
+    },
+    "GET /api/v2/oauth/clients": {
+        "operationId": "get_oauth_clients",
+        "functionName": "get_oauth_clients",
+        "signature": "get_oauth_clients()",
+        
+        "return": "OAuthClientEntityListing"
+    },
+    "GET /api/v2/oauth/scopes/{scopeId}": {
+        "operationId": "get_oauth_scope",
+        "functionName": "get_oauth_scope",
+        "signature": "get_oauth_scope(scope_id, accept_language)",
+        "parameters": [
+            {
+                "name": "scope_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "accept_language",
+                "type": "str",
+                "required": "false"
+            }
+        ],
+        "return": "OAuthScope"
+    },
+    "GET /api/v2/oauth/scopes": {
+        "operationId": "get_oauth_scopes",
+        "functionName": "get_oauth_scopes",
+        "signature": "get_oauth_scopes(accept_language)",
+        "parameters": [
+            {
+                "name": "accept_language",
+                "type": "str",
+                "required": "false"
+            }
+        ],
+        "return": "OAuthScopeListing"
+    },
+    "POST /api/v2/oauth/clients/{clientId}/secret": {
+        "operationId": "post_oauth_client_secret",
+        "functionName": "post_oauth_client_secret",
+        "signature": "post_oauth_client_secret(client_id)",
+        "parameters": [
+            {
+                "name": "client_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "OAuthClient"
+    },
+    "POST /api/v2/oauth/clients/{clientId}/usage/query": {
+        "operationId": "post_oauth_client_usage_query",
+        "functionName": "post_oauth_client_usage_query",
+        "signature": "post_oauth_client_usage_query(client_id, body)",
+        "parameters": [
+            {
+                "name": "client_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "ApiUsageClientQuery",
+                "required": "true"
+            }
+        ],
+        "return": "UsageExecutionResult"
+    },
+    "POST /api/v2/oauth/clients": {
+        "operationId": "post_oauth_clients",
+        "functionName": "post_oauth_clients",
+        "signature": "post_oauth_clients(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "OAuthClientRequest",
+                "required": "true"
+            }
+        ],
+        "return": "OAuthClient"
+    },
+    "PUT /api/v2/oauth/clients/{clientId}": {
+        "operationId": "put_oauth_client",
+        "functionName": "put_oauth_client",
+        "signature": "put_oauth_client(client_id, body)",
+        "parameters": [
+            {
+                "name": "client_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "OAuthClientRequest",
+                "required": "true"
+            }
+        ],
+        "return": "OAuthClient"
+    }
+    
+}

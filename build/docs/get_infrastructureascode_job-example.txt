@@ -1,0 +1,19 @@
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'your_access_token'
+# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.InfrastructureAsCodeApi();
+job_id = 'job_id_example' # str | Job ID
+details = False # bool | Include details of execution, including job results or error information (optional) (default to False)
+
+try:
+    # Get job status and results
+    api_response = api_instance.get_infrastructureascode_job(job_id, details=details)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling InfrastructureAsCodeApi->get_infrastructureascode_job: %s\n" % e)

@@ -1,0 +1,20 @@
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'your_access_token'
+# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AlertingApi();
+rule_id = 'rule_id_example' # str | Rule ID
+body = PureCloudPlatformClientV2.InteractionStatsRule() # InteractionStatsRule | AlertingRule
+expand = ['expand_example'] # list[str] | Which fields, if any, to expand (optional)
+
+try:
+    # Update an interaction stats rule
+    api_response = api_instance.put_alerting_interactionstats_rule(rule_id, body, expand=expand)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AlertingApi->put_alerting_interactionstats_rule: %s\n" % e)

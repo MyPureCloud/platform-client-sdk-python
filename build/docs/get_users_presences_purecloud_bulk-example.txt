@@ -1,0 +1,18 @@
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'your_access_token'
+# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.PresenceApi();
+id = ['id_example'] # list[str] | A comma separated list of user IDs to fetch their presence status in bulk. Limit 50. (optional)
+
+try:
+    # Get bulk user presences for a Genesys Cloud (PURECLOUD) presence source
+    api_response = api_instance.get_users_presences_purecloud_bulk(id=id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling PresenceApi->get_users_presences_purecloud_bulk: %s\n" % e)

@@ -1,0 +1,20 @@
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'your_access_token'
+# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.CoachingApi();
+appointment_id = 'appointment_id_example' # str | The ID of the coaching appointment.
+annotation_id = 'annotation_id_example' # str | The ID of the annotation.
+body = PureCloudPlatformClientV2.CoachingAnnotation() # CoachingAnnotation | The new version of the annotation
+
+try:
+    # Update an existing annotation.
+    api_response = api_instance.patch_coaching_appointment_annotation(appointment_id, annotation_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling CoachingApi->patch_coaching_appointment_annotation: %s\n" % e)

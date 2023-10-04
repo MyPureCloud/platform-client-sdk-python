@@ -1,0 +1,16 @@
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'your_access_token'
+# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.MessagingApi();
+
+try:
+    # Delete the organization's default setting, a global default will be applied to integrations without settings
+    api_instance.delete_messaging_settings_default()
+except ApiException as e:
+    print("Exception when calling MessagingApi->delete_messaging_settings_default: %s\n" % e)

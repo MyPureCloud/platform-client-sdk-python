@@ -1,0 +1,19 @@
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'your_access_token'
+# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.UsersApi();
+subject_id = 'subject_id_example' # str | Subject ID (user or group)
+body = PureCloudPlatformClientV2.RoleDivisionGrants() # RoleDivisionGrants | Pairs of role and division IDs
+subject_type = ''PC_USER'' # str | what the type of the subject is (PC_GROUP, PC_USER or PC_OAUTH_CLIENT) (optional) (default to 'PC_USER')
+
+try:
+    # Bulk-grant roles and divisions to a subject.
+    api_instance.post_authorization_subject_bulkadd(subject_id, body, subject_type=subject_type)
+except ApiException as e:
+    print("Exception when calling UsersApi->post_authorization_subject_bulkadd: %s\n" % e)

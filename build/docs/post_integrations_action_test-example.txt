@@ -1,0 +1,19 @@
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'your_access_token'
+# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.IntegrationsApi();
+action_id = 'action_id_example' # str | actionId
+body = NULL # object | Map of parameters used for variable substitution.
+
+try:
+    # Test the execution of an action. Responses will show execution steps broken out with intermediate results to help in debugging.
+    api_response = api_instance.post_integrations_action_test(action_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling IntegrationsApi->post_integrations_action_test: %s\n" % e)

@@ -1,0 +1,30 @@
+{
+    "GET /api/v2/dataextensions/coretypes/{coretypeName}": {
+        "operationId": "get_dataextensions_coretype",
+        "functionName": "get_dataextensions_coretype",
+        "signature": "get_dataextensions_coretype(coretype_name)",
+        "parameters": [
+            {
+                "name": "coretype_name",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "Coretype"
+    },
+    "GET /api/v2/dataextensions/coretypes": {
+        "operationId": "get_dataextensions_coretypes",
+        "functionName": "get_dataextensions_coretypes",
+        "signature": "get_dataextensions_coretypes()",
+        
+        "return": "CoretypeListing"
+    },
+    "GET /api/v2/dataextensions/limits": {
+        "operationId": "get_dataextensions_limits",
+        "functionName": "get_dataextensions_limits",
+        "signature": "get_dataextensions_limits()",
+        
+        "return": "SchemaQuantityLimits"
+    }
+    
+}

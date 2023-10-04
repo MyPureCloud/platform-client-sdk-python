@@ -1,0 +1,19 @@
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'your_access_token'
+# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.UsersApi();
+subject_id = 'subject_id_example' # str | Subject ID (user or group)
+division_id = 'division_id_example' # str | the id of the division of the grant
+role_id = 'role_id_example' # str | the id of the role of the grant
+
+try:
+    # Delete a grant of a role in a division
+    api_instance.delete_authorization_subject_division_role(subject_id, division_id, role_id)
+except ApiException as e:
+    print("Exception when calling UsersApi->delete_authorization_subject_division_role: %s\n" % e)

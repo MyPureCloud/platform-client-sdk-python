@@ -1,0 +1,24 @@
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'your_access_token'
+# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.OutboundApi();
+page_size = 25 # int | Page size. The max that will be returned is 100. (optional) (default to 25)
+page_number = 1 # int | Page number (optional) (default to 1)
+sort_order = ''a'' # str | The direction to sort (optional) (default to 'a')
+name = 'name_example' # str | Name (optional)
+type = 'type_example' # str | Campaign Type (optional)
+id = ['id_example'] # list[str] | id (optional)
+sender_sms_phone_number = 'sender_sms_phone_number_example' # str | Sender SMS Phone Number (optional)
+
+try:
+    # Query a list of basic Messaging Campaign information objects
+    api_response = api_instance.get_outbound_messagingcampaigns_divisionviews(page_size=page_size, page_number=page_number, sort_order=sort_order, name=name, type=type, id=id, sender_sms_phone_number=sender_sms_phone_number)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling OutboundApi->get_outbound_messagingcampaigns_divisionviews: %s\n" % e)

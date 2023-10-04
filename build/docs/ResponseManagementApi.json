@@ -1,0 +1,286 @@
+{
+    "DELETE /api/v2/responsemanagement/libraries/{libraryId}": {
+        "operationId": "delete_responsemanagement_library",
+        "functionName": "delete_responsemanagement_library",
+        "signature": "delete_responsemanagement_library(library_id)",
+        "parameters": [
+            {
+                "name": "library_id",
+                "type": "str",
+                "required": "true"
+            }
+        ]
+    },
+    "DELETE /api/v2/responsemanagement/responses/{responseId}": {
+        "operationId": "delete_responsemanagement_response",
+        "functionName": "delete_responsemanagement_response",
+        "signature": "delete_responsemanagement_response(response_id)",
+        "parameters": [
+            {
+                "name": "response_id",
+                "type": "str",
+                "required": "true"
+            }
+        ]
+    },
+    "DELETE /api/v2/responsemanagement/responseassets/{responseAssetId}": {
+        "operationId": "delete_responsemanagement_responseasset",
+        "functionName": "delete_responsemanagement_responseasset",
+        "signature": "delete_responsemanagement_responseasset(response_asset_id)",
+        "parameters": [
+            {
+                "name": "response_asset_id",
+                "type": "str",
+                "required": "true"
+            }
+        ]
+    },
+    "GET /api/v2/responsemanagement/libraries": {
+        "operationId": "get_responsemanagement_libraries",
+        "functionName": "get_responsemanagement_libraries",
+        "signature": "get_responsemanagement_libraries(page_number, page_size, messaging_template_filter, library_prefix)",
+        "parameters": [
+            {
+                "name": "page_number",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "page_size",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "messaging_template_filter",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "library_prefix",
+                "type": "str",
+                "required": "false"
+            }
+        ],
+        "return": "LibraryEntityListing"
+    },
+    "GET /api/v2/responsemanagement/libraries/{libraryId}": {
+        "operationId": "get_responsemanagement_library",
+        "functionName": "get_responsemanagement_library",
+        "signature": "get_responsemanagement_library(library_id)",
+        "parameters": [
+            {
+                "name": "library_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "Library"
+    },
+    "GET /api/v2/responsemanagement/responses/{responseId}": {
+        "operationId": "get_responsemanagement_response",
+        "functionName": "get_responsemanagement_response",
+        "signature": "get_responsemanagement_response(response_id, expand)",
+        "parameters": [
+            {
+                "name": "response_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "expand",
+                "type": "str",
+                "required": "false"
+            }
+        ],
+        "return": "Response"
+    },
+    "GET /api/v2/responsemanagement/responseassets/{responseAssetId}": {
+        "operationId": "get_responsemanagement_responseasset",
+        "functionName": "get_responsemanagement_responseasset",
+        "signature": "get_responsemanagement_responseasset(response_asset_id)",
+        "parameters": [
+            {
+                "name": "response_asset_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "ResponseAsset"
+    },
+    "GET /api/v2/responsemanagement/responseassets/status/{statusId}": {
+        "operationId": "get_responsemanagement_responseassets_status_status_id",
+        "functionName": "get_responsemanagement_responseassets_status_status_id",
+        "signature": "get_responsemanagement_responseassets_status_status_id(status_id)",
+        "parameters": [
+            {
+                "name": "status_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "ResponseAssetStatus"
+    },
+    "GET /api/v2/responsemanagement/responses": {
+        "operationId": "get_responsemanagement_responses",
+        "functionName": "get_responsemanagement_responses",
+        "signature": "get_responsemanagement_responses(library_id, page_number, page_size, expand)",
+        "parameters": [
+            {
+                "name": "library_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "page_number",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "page_size",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "expand",
+                "type": "str",
+                "required": "false"
+            }
+        ],
+        "return": "ResponseEntityListing"
+    },
+    "POST /api/v2/responsemanagement/libraries": {
+        "operationId": "post_responsemanagement_libraries",
+        "functionName": "post_responsemanagement_libraries",
+        "signature": "post_responsemanagement_libraries(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Library",
+                "required": "true"
+            }
+        ],
+        "return": "Library"
+    },
+    "POST /api/v2/responsemanagement/responseassets/search": {
+        "operationId": "post_responsemanagement_responseassets_search",
+        "functionName": "post_responsemanagement_responseassets_search",
+        "signature": "post_responsemanagement_responseassets_search(body, expand)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "ResponseAssetSearchRequest",
+                "required": "true"
+            },
+            {
+                "name": "expand",
+                "type": "list[str]",
+                "required": "false"
+            }
+        ],
+        "return": "ResponseAssetSearchResults"
+    },
+    "POST /api/v2/responsemanagement/responseassets/uploads": {
+        "operationId": "post_responsemanagement_responseassets_uploads",
+        "functionName": "post_responsemanagement_responseassets_uploads",
+        "signature": "post_responsemanagement_responseassets_uploads(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "CreateResponseAssetRequest",
+                "required": "true"
+            }
+        ],
+        "return": "CreateResponseAssetResponse"
+    },
+    "POST /api/v2/responsemanagement/responses": {
+        "operationId": "post_responsemanagement_responses",
+        "functionName": "post_responsemanagement_responses",
+        "signature": "post_responsemanagement_responses(body, expand)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Response",
+                "required": "true"
+            },
+            {
+                "name": "expand",
+                "type": "str",
+                "required": "false"
+            }
+        ],
+        "return": "Response"
+    },
+    "POST /api/v2/responsemanagement/responses/query": {
+        "operationId": "post_responsemanagement_responses_query",
+        "functionName": "post_responsemanagement_responses_query",
+        "signature": "post_responsemanagement_responses_query(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "ResponseQueryRequest",
+                "required": "true"
+            }
+        ],
+        "return": "ResponseQueryResults"
+    },
+    "PUT /api/v2/responsemanagement/libraries/{libraryId}": {
+        "operationId": "put_responsemanagement_library",
+        "functionName": "put_responsemanagement_library",
+        "signature": "put_responsemanagement_library(library_id, body)",
+        "parameters": [
+            {
+                "name": "library_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Library",
+                "required": "true"
+            }
+        ],
+        "return": "Library"
+    },
+    "PUT /api/v2/responsemanagement/responses/{responseId}": {
+        "operationId": "put_responsemanagement_response",
+        "functionName": "put_responsemanagement_response",
+        "signature": "put_responsemanagement_response(response_id, body, expand)",
+        "parameters": [
+            {
+                "name": "response_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "Response",
+                "required": "true"
+            },
+            {
+                "name": "expand",
+                "type": "str",
+                "required": "false"
+            }
+        ],
+        "return": "Response"
+    },
+    "PUT /api/v2/responsemanagement/responseassets/{responseAssetId}": {
+        "operationId": "put_responsemanagement_responseasset",
+        "functionName": "put_responsemanagement_responseasset",
+        "signature": "put_responsemanagement_responseasset(response_asset_id, body)",
+        "parameters": [
+            {
+                "name": "response_asset_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "ResponseAssetRequest",
+                "required": "true"
+            }
+        ],
+        "return": "ResponseAsset"
+    }
+    
+}

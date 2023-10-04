@@ -1,0 +1,20 @@
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'your_access_token'
+# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ArchitectApi();
+datatable_id = 'datatable_id_example' # str | id of datatable
+row_id = 'row_id_example' # str | the key for the row
+body = NULL # object | datatable row (optional)
+
+try:
+    # Update a row entry
+    api_response = api_instance.put_flows_datatable_row(datatable_id, row_id, body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ArchitectApi->put_flows_datatable_row: %s\n" % e)

@@ -1,0 +1,611 @@
+{
+    "DELETE /api/v2/scim/users/{userId}": {
+        "operationId": "delete_scim_user",
+        "functionName": "delete_scim_user",
+        "signature": "delete_scim_user(user_id, if_match)",
+        "parameters": [
+            {
+                "name": "user_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "if_match",
+                "type": "str",
+                "required": "false"
+            }
+        ],
+        "return": "object"
+    },
+    "DELETE /api/v2/scim/v2/users/{userId}": {
+        "operationId": "delete_scim_v2_user",
+        "functionName": "delete_scim_v2_user",
+        "signature": "delete_scim_v2_user(user_id, if_match)",
+        "parameters": [
+            {
+                "name": "user_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "if_match",
+                "type": "str",
+                "required": "false"
+            }
+        ],
+        "return": "object"
+    },
+    "GET /api/v2/scim/groups/{groupId}": {
+        "operationId": "get_scim_group",
+        "functionName": "get_scim_group",
+        "signature": "get_scim_group(group_id, attributes, excluded_attributes, if_none_match)",
+        "parameters": [
+            {
+                "name": "group_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "attributes",
+                "type": "list[str]",
+                "required": "false"
+            },
+            {
+                "name": "excluded_attributes",
+                "type": "list[str]",
+                "required": "false"
+            },
+            {
+                "name": "if_none_match",
+                "type": "str",
+                "required": "false"
+            }
+        ],
+        "return": "ScimV2Group"
+    },
+    "GET /api/v2/scim/groups": {
+        "operationId": "get_scim_groups",
+        "functionName": "get_scim_groups",
+        "signature": "get_scim_groups(start_index, count, attributes, excluded_attributes, filter)",
+        "parameters": [
+            {
+                "name": "start_index",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "count",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "attributes",
+                "type": "list[str]",
+                "required": "false"
+            },
+            {
+                "name": "excluded_attributes",
+                "type": "list[str]",
+                "required": "false"
+            },
+            {
+                "name": "filter",
+                "type": "str",
+                "required": "false"
+            }
+        ],
+        "return": "ScimGroupListResponse"
+    },
+    "GET /api/v2/scim/resourcetypes/{resourceType}": {
+        "operationId": "get_scim_resourcetype",
+        "functionName": "get_scim_resourcetype",
+        "signature": "get_scim_resourcetype(resource_type)",
+        "parameters": [
+            {
+                "name": "resource_type",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "ScimConfigResourceType"
+    },
+    "GET /api/v2/scim/resourcetypes": {
+        "operationId": "get_scim_resourcetypes",
+        "functionName": "get_scim_resourcetypes",
+        "signature": "get_scim_resourcetypes()",
+        
+        "return": "ScimConfigResourceTypesListResponse"
+    },
+    "GET /api/v2/scim/schemas/{schemaId}": {
+        "operationId": "get_scim_schema",
+        "functionName": "get_scim_schema",
+        "signature": "get_scim_schema(schema_id)",
+        "parameters": [
+            {
+                "name": "schema_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "ScimV2SchemaDefinition"
+    },
+    "GET /api/v2/scim/schemas": {
+        "operationId": "get_scim_schemas",
+        "functionName": "get_scim_schemas",
+        "signature": "get_scim_schemas(filter)",
+        "parameters": [
+            {
+                "name": "filter",
+                "type": "str",
+                "required": "false"
+            }
+        ],
+        "return": "ScimV2SchemaListResponse"
+    },
+    "GET /api/v2/scim/serviceproviderconfig": {
+        "operationId": "get_scim_serviceproviderconfig",
+        "functionName": "get_scim_serviceproviderconfig",
+        "signature": "get_scim_serviceproviderconfig(if_none_match)",
+        "parameters": [
+            {
+                "name": "if_none_match",
+                "type": "str",
+                "required": "false"
+            }
+        ],
+        "return": "ScimServiceProviderConfig"
+    },
+    "GET /api/v2/scim/users/{userId}": {
+        "operationId": "get_scim_user",
+        "functionName": "get_scim_user",
+        "signature": "get_scim_user(user_id, attributes, excluded_attributes, if_none_match)",
+        "parameters": [
+            {
+                "name": "user_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "attributes",
+                "type": "list[str]",
+                "required": "false"
+            },
+            {
+                "name": "excluded_attributes",
+                "type": "list[str]",
+                "required": "false"
+            },
+            {
+                "name": "if_none_match",
+                "type": "str",
+                "required": "false"
+            }
+        ],
+        "return": "ScimV2User"
+    },
+    "GET /api/v2/scim/users": {
+        "operationId": "get_scim_users",
+        "functionName": "get_scim_users",
+        "signature": "get_scim_users(start_index, count, attributes, excluded_attributes, filter)",
+        "parameters": [
+            {
+                "name": "start_index",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "count",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "attributes",
+                "type": "list[str]",
+                "required": "false"
+            },
+            {
+                "name": "excluded_attributes",
+                "type": "list[str]",
+                "required": "false"
+            },
+            {
+                "name": "filter",
+                "type": "str",
+                "required": "false"
+            }
+        ],
+        "return": "ScimUserListResponse"
+    },
+    "GET /api/v2/scim/v2/groups/{groupId}": {
+        "operationId": "get_scim_v2_group",
+        "functionName": "get_scim_v2_group",
+        "signature": "get_scim_v2_group(group_id, attributes, excluded_attributes, if_none_match)",
+        "parameters": [
+            {
+                "name": "group_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "attributes",
+                "type": "list[str]",
+                "required": "false"
+            },
+            {
+                "name": "excluded_attributes",
+                "type": "list[str]",
+                "required": "false"
+            },
+            {
+                "name": "if_none_match",
+                "type": "str",
+                "required": "false"
+            }
+        ],
+        "return": "ScimV2Group"
+    },
+    "GET /api/v2/scim/v2/groups": {
+        "operationId": "get_scim_v2_groups",
+        "functionName": "get_scim_v2_groups",
+        "signature": "get_scim_v2_groups(filter, start_index, count, attributes, excluded_attributes)",
+        "parameters": [
+            {
+                "name": "filter",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "start_index",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "count",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "attributes",
+                "type": "list[str]",
+                "required": "false"
+            },
+            {
+                "name": "excluded_attributes",
+                "type": "list[str]",
+                "required": "false"
+            }
+        ],
+        "return": "ScimGroupListResponse"
+    },
+    "GET /api/v2/scim/v2/resourcetypes/{resourceType}": {
+        "operationId": "get_scim_v2_resourcetype",
+        "functionName": "get_scim_v2_resourcetype",
+        "signature": "get_scim_v2_resourcetype(resource_type)",
+        "parameters": [
+            {
+                "name": "resource_type",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "ScimConfigResourceType"
+    },
+    "GET /api/v2/scim/v2/resourcetypes": {
+        "operationId": "get_scim_v2_resourcetypes",
+        "functionName": "get_scim_v2_resourcetypes",
+        "signature": "get_scim_v2_resourcetypes()",
+        
+        "return": "ScimConfigResourceTypesListResponse"
+    },
+    "GET /api/v2/scim/v2/schemas/{schemaId}": {
+        "operationId": "get_scim_v2_schema",
+        "functionName": "get_scim_v2_schema",
+        "signature": "get_scim_v2_schema(schema_id)",
+        "parameters": [
+            {
+                "name": "schema_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "ScimV2SchemaDefinition"
+    },
+    "GET /api/v2/scim/v2/schemas": {
+        "operationId": "get_scim_v2_schemas",
+        "functionName": "get_scim_v2_schemas",
+        "signature": "get_scim_v2_schemas(filter)",
+        "parameters": [
+            {
+                "name": "filter",
+                "type": "str",
+                "required": "false"
+            }
+        ],
+        "return": "ScimV2SchemaListResponse"
+    },
+    "GET /api/v2/scim/v2/serviceproviderconfig": {
+        "operationId": "get_scim_v2_serviceproviderconfig",
+        "functionName": "get_scim_v2_serviceproviderconfig",
+        "signature": "get_scim_v2_serviceproviderconfig(if_none_match)",
+        "parameters": [
+            {
+                "name": "if_none_match",
+                "type": "str",
+                "required": "false"
+            }
+        ],
+        "return": "ScimServiceProviderConfig"
+    },
+    "GET /api/v2/scim/v2/users/{userId}": {
+        "operationId": "get_scim_v2_user",
+        "functionName": "get_scim_v2_user",
+        "signature": "get_scim_v2_user(user_id, attributes, excluded_attributes, if_none_match)",
+        "parameters": [
+            {
+                "name": "user_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "attributes",
+                "type": "list[str]",
+                "required": "false"
+            },
+            {
+                "name": "excluded_attributes",
+                "type": "list[str]",
+                "required": "false"
+            },
+            {
+                "name": "if_none_match",
+                "type": "str",
+                "required": "false"
+            }
+        ],
+        "return": "ScimV2User"
+    },
+    "GET /api/v2/scim/v2/users": {
+        "operationId": "get_scim_v2_users",
+        "functionName": "get_scim_v2_users",
+        "signature": "get_scim_v2_users(start_index, count, attributes, excluded_attributes, filter)",
+        "parameters": [
+            {
+                "name": "start_index",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "count",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "attributes",
+                "type": "list[str]",
+                "required": "false"
+            },
+            {
+                "name": "excluded_attributes",
+                "type": "list[str]",
+                "required": "false"
+            },
+            {
+                "name": "filter",
+                "type": "str",
+                "required": "false"
+            }
+        ],
+        "return": "ScimUserListResponse"
+    },
+    "PATCH /api/v2/scim/groups/{groupId}": {
+        "operationId": "patch_scim_group",
+        "functionName": "patch_scim_group",
+        "signature": "patch_scim_group(group_id, body, if_match)",
+        "parameters": [
+            {
+                "name": "group_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "ScimV2PatchRequest",
+                "required": "true"
+            },
+            {
+                "name": "if_match",
+                "type": "str",
+                "required": "false"
+            }
+        ],
+        "return": "ScimV2Group"
+    },
+    "PATCH /api/v2/scim/users/{userId}": {
+        "operationId": "patch_scim_user",
+        "functionName": "patch_scim_user",
+        "signature": "patch_scim_user(user_id, body, if_match)",
+        "parameters": [
+            {
+                "name": "user_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "ScimV2PatchRequest",
+                "required": "true"
+            },
+            {
+                "name": "if_match",
+                "type": "str",
+                "required": "false"
+            }
+        ],
+        "return": "ScimV2User"
+    },
+    "PATCH /api/v2/scim/v2/groups/{groupId}": {
+        "operationId": "patch_scim_v2_group",
+        "functionName": "patch_scim_v2_group",
+        "signature": "patch_scim_v2_group(group_id, body, if_match)",
+        "parameters": [
+            {
+                "name": "group_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "ScimV2PatchRequest",
+                "required": "true"
+            },
+            {
+                "name": "if_match",
+                "type": "str",
+                "required": "false"
+            }
+        ],
+        "return": "ScimV2Group"
+    },
+    "PATCH /api/v2/scim/v2/users/{userId}": {
+        "operationId": "patch_scim_v2_user",
+        "functionName": "patch_scim_v2_user",
+        "signature": "patch_scim_v2_user(user_id, body, if_match)",
+        "parameters": [
+            {
+                "name": "user_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "ScimV2PatchRequest",
+                "required": "true"
+            },
+            {
+                "name": "if_match",
+                "type": "str",
+                "required": "false"
+            }
+        ],
+        "return": "ScimV2User"
+    },
+    "POST /api/v2/scim/users": {
+        "operationId": "post_scim_users",
+        "functionName": "post_scim_users",
+        "signature": "post_scim_users(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "ScimV2CreateUser",
+                "required": "true"
+            }
+        ],
+        "return": "ScimV2User"
+    },
+    "POST /api/v2/scim/v2/users": {
+        "operationId": "post_scim_v2_users",
+        "functionName": "post_scim_v2_users",
+        "signature": "post_scim_v2_users(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "ScimV2CreateUser",
+                "required": "true"
+            }
+        ],
+        "return": "ScimV2User"
+    },
+    "PUT /api/v2/scim/groups/{groupId}": {
+        "operationId": "put_scim_group",
+        "functionName": "put_scim_group",
+        "signature": "put_scim_group(group_id, body, if_match)",
+        "parameters": [
+            {
+                "name": "group_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "ScimV2Group",
+                "required": "true"
+            },
+            {
+                "name": "if_match",
+                "type": "str",
+                "required": "false"
+            }
+        ],
+        "return": "ScimV2Group"
+    },
+    "PUT /api/v2/scim/users/{userId}": {
+        "operationId": "put_scim_user",
+        "functionName": "put_scim_user",
+        "signature": "put_scim_user(user_id, body, if_match)",
+        "parameters": [
+            {
+                "name": "user_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "ScimV2User",
+                "required": "true"
+            },
+            {
+                "name": "if_match",
+                "type": "str",
+                "required": "false"
+            }
+        ],
+        "return": "ScimV2User"
+    },
+    "PUT /api/v2/scim/v2/groups/{groupId}": {
+        "operationId": "put_scim_v2_group",
+        "functionName": "put_scim_v2_group",
+        "signature": "put_scim_v2_group(group_id, body, if_match)",
+        "parameters": [
+            {
+                "name": "group_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "ScimV2Group",
+                "required": "true"
+            },
+            {
+                "name": "if_match",
+                "type": "str",
+                "required": "false"
+            }
+        ],
+        "return": "ScimV2Group"
+    },
+    "PUT /api/v2/scim/v2/users/{userId}": {
+        "operationId": "put_scim_v2_user",
+        "functionName": "put_scim_v2_user",
+        "signature": "put_scim_v2_user(user_id, body, if_match)",
+        "parameters": [
+            {
+                "name": "user_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "ScimV2User",
+                "required": "true"
+            },
+            {
+                "name": "if_match",
+                "type": "str",
+                "required": "false"
+            }
+        ],
+        "return": "ScimV2User"
+    }
+    
+}

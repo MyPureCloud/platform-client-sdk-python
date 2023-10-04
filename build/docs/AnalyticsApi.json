@@ -1,0 +1,1369 @@
+{
+    "DELETE /api/v2/analytics/conversations/details/jobs/{jobId}": {
+        "operationId": "delete_analytics_conversations_details_job",
+        "functionName": "delete_analytics_conversations_details_job",
+        "signature": "delete_analytics_conversations_details_job(job_id)",
+        "parameters": [
+            {
+                "name": "job_id",
+                "type": "str",
+                "required": "true"
+            }
+        ]
+    },
+    "DELETE /api/v2/analytics/reporting/schedules/{scheduleId}": {
+        "operationId": "delete_analytics_reporting_schedule",
+        "functionName": "delete_analytics_reporting_schedule",
+        "signature": "delete_analytics_reporting_schedule(schedule_id)",
+        "parameters": [
+            {
+                "name": "schedule_id",
+                "type": "str",
+                "required": "true"
+            }
+        ]
+    },
+    "DELETE /api/v2/analytics/users/details/jobs/{jobId}": {
+        "operationId": "delete_analytics_users_details_job",
+        "functionName": "delete_analytics_users_details_job",
+        "signature": "delete_analytics_users_details_job(job_id)",
+        "parameters": [
+            {
+                "name": "job_id",
+                "type": "str",
+                "required": "true"
+            }
+        ]
+    },
+    "GET /api/v2/analytics/actions/aggregates/jobs/{jobId}": {
+        "operationId": "get_analytics_actions_aggregates_job",
+        "functionName": "get_analytics_actions_aggregates_job",
+        "signature": "get_analytics_actions_aggregates_job(job_id)",
+        "parameters": [
+            {
+                "name": "job_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "AsyncQueryStatus"
+    },
+    "GET /api/v2/analytics/actions/aggregates/jobs/{jobId}/results": {
+        "operationId": "get_analytics_actions_aggregates_job_results",
+        "functionName": "get_analytics_actions_aggregates_job_results",
+        "signature": "get_analytics_actions_aggregates_job_results(job_id, cursor)",
+        "parameters": [
+            {
+                "name": "job_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "cursor",
+                "type": "str",
+                "required": "false"
+            }
+        ],
+        "return": "ActionAsyncAggregateQueryResponse"
+    },
+    "GET /api/v2/analytics/botflows/{botFlowId}/reportingturns": {
+        "operationId": "get_analytics_botflow_reportingturns",
+        "functionName": "get_analytics_botflow_reportingturns",
+        "signature": "get_analytics_botflow_reportingturns(bot_flow_id, after, page_size, interval, action_id, session_id, language, ask_action_results)",
+        "parameters": [
+            {
+                "name": "bot_flow_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "after",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "page_size",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "interval",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "action_id",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "session_id",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "language",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "ask_action_results",
+                "type": "str",
+                "required": "false"
+            }
+        ],
+        "return": "ReportingTurnsResponse"
+    },
+    "GET /api/v2/analytics/bots/aggregates/jobs/{jobId}": {
+        "operationId": "get_analytics_bots_aggregates_job",
+        "functionName": "get_analytics_bots_aggregates_job",
+        "signature": "get_analytics_bots_aggregates_job(job_id)",
+        "parameters": [
+            {
+                "name": "job_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "AsyncQueryStatus"
+    },
+    "GET /api/v2/analytics/bots/aggregates/jobs/{jobId}/results": {
+        "operationId": "get_analytics_bots_aggregates_job_results",
+        "functionName": "get_analytics_bots_aggregates_job_results",
+        "signature": "get_analytics_bots_aggregates_job_results(job_id, cursor)",
+        "parameters": [
+            {
+                "name": "job_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "cursor",
+                "type": "str",
+                "required": "false"
+            }
+        ],
+        "return": "BotAsyncAggregateQueryResponse"
+    },
+    "GET /api/v2/analytics/conversations/{conversationId}/details": {
+        "operationId": "get_analytics_conversation_details",
+        "functionName": "get_analytics_conversation_details",
+        "signature": "get_analytics_conversation_details(conversation_id)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "AnalyticsConversationWithoutAttributes"
+    },
+    "GET /api/v2/analytics/conversations/aggregates/jobs/{jobId}": {
+        "operationId": "get_analytics_conversations_aggregates_job",
+        "functionName": "get_analytics_conversations_aggregates_job",
+        "signature": "get_analytics_conversations_aggregates_job(job_id)",
+        "parameters": [
+            {
+                "name": "job_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "AsyncQueryStatus"
+    },
+    "GET /api/v2/analytics/conversations/aggregates/jobs/{jobId}/results": {
+        "operationId": "get_analytics_conversations_aggregates_job_results",
+        "functionName": "get_analytics_conversations_aggregates_job_results",
+        "signature": "get_analytics_conversations_aggregates_job_results(job_id, cursor)",
+        "parameters": [
+            {
+                "name": "job_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "cursor",
+                "type": "str",
+                "required": "false"
+            }
+        ],
+        "return": "ConversationAsyncAggregateQueryResponse"
+    },
+    "GET /api/v2/analytics/conversations/details": {
+        "operationId": "get_analytics_conversations_details",
+        "functionName": "get_analytics_conversations_details",
+        "signature": "get_analytics_conversations_details(id)",
+        "parameters": [
+            {
+                "name": "id",
+                "type": "list[str]",
+                "required": "false"
+            }
+        ],
+        "return": "AnalyticsConversationWithoutAttributesMultiGetResponse"
+    },
+    "GET /api/v2/analytics/conversations/details/jobs/{jobId}": {
+        "operationId": "get_analytics_conversations_details_job",
+        "functionName": "get_analytics_conversations_details_job",
+        "signature": "get_analytics_conversations_details_job(job_id)",
+        "parameters": [
+            {
+                "name": "job_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "AsyncQueryStatus"
+    },
+    "GET /api/v2/analytics/conversations/details/jobs/{jobId}/results": {
+        "operationId": "get_analytics_conversations_details_job_results",
+        "functionName": "get_analytics_conversations_details_job_results",
+        "signature": "get_analytics_conversations_details_job_results(job_id, cursor, page_size)",
+        "parameters": [
+            {
+                "name": "job_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "cursor",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "page_size",
+                "type": "int",
+                "required": "false"
+            }
+        ],
+        "return": "AnalyticsConversationAsyncQueryResponse"
+    },
+    "GET /api/v2/analytics/conversations/details/jobs/availability": {
+        "operationId": "get_analytics_conversations_details_jobs_availability",
+        "functionName": "get_analytics_conversations_details_jobs_availability",
+        "signature": "get_analytics_conversations_details_jobs_availability()",
+        
+        "return": "DataAvailabilityResponse"
+    },
+    "GET /api/v2/analytics/dataretention/settings": {
+        "operationId": "get_analytics_dataretention_settings",
+        "functionName": "get_analytics_dataretention_settings",
+        "signature": "get_analytics_dataretention_settings()",
+        
+        "return": "AnalyticsDataRetentionResponse"
+    },
+    "GET /api/v2/analytics/evaluations/aggregates/jobs/{jobId}": {
+        "operationId": "get_analytics_evaluations_aggregates_job",
+        "functionName": "get_analytics_evaluations_aggregates_job",
+        "signature": "get_analytics_evaluations_aggregates_job(job_id)",
+        "parameters": [
+            {
+                "name": "job_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "AsyncQueryStatus"
+    },
+    "GET /api/v2/analytics/evaluations/aggregates/jobs/{jobId}/results": {
+        "operationId": "get_analytics_evaluations_aggregates_job_results",
+        "functionName": "get_analytics_evaluations_aggregates_job_results",
+        "signature": "get_analytics_evaluations_aggregates_job_results(job_id, cursor)",
+        "parameters": [
+            {
+                "name": "job_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "cursor",
+                "type": "str",
+                "required": "false"
+            }
+        ],
+        "return": "EvaluationAsyncAggregateQueryResponse"
+    },
+    "GET /api/v2/analytics/flows/aggregates/jobs/{jobId}": {
+        "operationId": "get_analytics_flows_aggregates_job",
+        "functionName": "get_analytics_flows_aggregates_job",
+        "signature": "get_analytics_flows_aggregates_job(job_id)",
+        "parameters": [
+            {
+                "name": "job_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "AsyncQueryStatus"
+    },
+    "GET /api/v2/analytics/flows/aggregates/jobs/{jobId}/results": {
+        "operationId": "get_analytics_flows_aggregates_job_results",
+        "functionName": "get_analytics_flows_aggregates_job_results",
+        "signature": "get_analytics_flows_aggregates_job_results(job_id, cursor)",
+        "parameters": [
+            {
+                "name": "job_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "cursor",
+                "type": "str",
+                "required": "false"
+            }
+        ],
+        "return": "FlowAsyncAggregateQueryResponse"
+    },
+    "GET /api/v2/analytics/journeys/aggregates/jobs/{jobId}": {
+        "operationId": "get_analytics_journeys_aggregates_job",
+        "functionName": "get_analytics_journeys_aggregates_job",
+        "signature": "get_analytics_journeys_aggregates_job(job_id)",
+        "parameters": [
+            {
+                "name": "job_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "AsyncQueryStatus"
+    },
+    "GET /api/v2/analytics/journeys/aggregates/jobs/{jobId}/results": {
+        "operationId": "get_analytics_journeys_aggregates_job_results",
+        "functionName": "get_analytics_journeys_aggregates_job_results",
+        "signature": "get_analytics_journeys_aggregates_job_results(job_id, cursor)",
+        "parameters": [
+            {
+                "name": "job_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "cursor",
+                "type": "str",
+                "required": "false"
+            }
+        ],
+        "return": "JourneyAsyncAggregateQueryResponse"
+    },
+    "GET /api/v2/analytics/knowledge/aggregates/jobs/{jobId}": {
+        "operationId": "get_analytics_knowledge_aggregates_job",
+        "functionName": "get_analytics_knowledge_aggregates_job",
+        "signature": "get_analytics_knowledge_aggregates_job(job_id)",
+        "parameters": [
+            {
+                "name": "job_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "AsyncQueryStatus"
+    },
+    "GET /api/v2/analytics/knowledge/aggregates/jobs/{jobId}/results": {
+        "operationId": "get_analytics_knowledge_aggregates_job_results",
+        "functionName": "get_analytics_knowledge_aggregates_job_results",
+        "signature": "get_analytics_knowledge_aggregates_job_results(job_id, cursor)",
+        "parameters": [
+            {
+                "name": "job_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "cursor",
+                "type": "str",
+                "required": "false"
+            }
+        ],
+        "return": "KnowledgeAsyncAggregateQueryResponse"
+    },
+    "GET /api/v2/analytics/reporting/exports": {
+        "operationId": "get_analytics_reporting_exports",
+        "functionName": "get_analytics_reporting_exports",
+        "signature": "get_analytics_reporting_exports(page_number, page_size)",
+        "parameters": [
+            {
+                "name": "page_number",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "page_size",
+                "type": "int",
+                "required": "false"
+            }
+        ],
+        "return": "ReportingExportJobListing"
+    },
+    "GET /api/v2/analytics/reporting/exports/metadata": {
+        "operationId": "get_analytics_reporting_exports_metadata",
+        "functionName": "get_analytics_reporting_exports_metadata",
+        "signature": "get_analytics_reporting_exports_metadata()",
+        
+        "return": "ReportingExportMetadataJobListing"
+    },
+    "GET /api/v2/analytics/reporting/metadata": {
+        "operationId": "get_analytics_reporting_metadata",
+        "functionName": "get_analytics_reporting_metadata",
+        "signature": "get_analytics_reporting_metadata(page_number, page_size, locale)",
+        "parameters": [
+            {
+                "name": "page_number",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "page_size",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "locale",
+                "type": "str",
+                "required": "false"
+            }
+        ],
+        "return": "ReportMetaDataEntityListing"
+    },
+    "GET /api/v2/analytics/reporting/{reportId}/metadata": {
+        "operationId": "get_analytics_reporting_report_id_metadata",
+        "functionName": "get_analytics_reporting_report_id_metadata",
+        "signature": "get_analytics_reporting_report_id_metadata(report_id, locale)",
+        "parameters": [
+            {
+                "name": "report_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "locale",
+                "type": "str",
+                "required": "false"
+            }
+        ],
+        "return": "ReportMetaData"
+    },
+    "GET /api/v2/analytics/reporting/reportformats": {
+        "operationId": "get_analytics_reporting_reportformats",
+        "functionName": "get_analytics_reporting_reportformats",
+        "signature": "get_analytics_reporting_reportformats()",
+        
+        "return": "list[str]"
+    },
+    "GET /api/v2/analytics/reporting/schedules/{scheduleId}": {
+        "operationId": "get_analytics_reporting_schedule",
+        "functionName": "get_analytics_reporting_schedule",
+        "signature": "get_analytics_reporting_schedule(schedule_id)",
+        "parameters": [
+            {
+                "name": "schedule_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "ReportSchedule"
+    },
+    "GET /api/v2/analytics/reporting/schedules/{scheduleId}/history": {
+        "operationId": "get_analytics_reporting_schedule_history",
+        "functionName": "get_analytics_reporting_schedule_history",
+        "signature": "get_analytics_reporting_schedule_history(schedule_id, page_number, page_size)",
+        "parameters": [
+            {
+                "name": "schedule_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "page_number",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "page_size",
+                "type": "int",
+                "required": "false"
+            }
+        ],
+        "return": "ReportRunEntryEntityDomainListing"
+    },
+    "GET /api/v2/analytics/reporting/schedules/{scheduleId}/history/latest": {
+        "operationId": "get_analytics_reporting_schedule_history_latest",
+        "functionName": "get_analytics_reporting_schedule_history_latest",
+        "signature": "get_analytics_reporting_schedule_history_latest(schedule_id)",
+        "parameters": [
+            {
+                "name": "schedule_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "ReportRunEntry"
+    },
+    "GET /api/v2/analytics/reporting/schedules/{scheduleId}/history/{runId}": {
+        "operationId": "get_analytics_reporting_schedule_history_run_id",
+        "functionName": "get_analytics_reporting_schedule_history_run_id",
+        "signature": "get_analytics_reporting_schedule_history_run_id(run_id, schedule_id)",
+        "parameters": [
+            {
+                "name": "run_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "schedule_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "ReportRunEntry"
+    },
+    "GET /api/v2/analytics/reporting/schedules": {
+        "operationId": "get_analytics_reporting_schedules",
+        "functionName": "get_analytics_reporting_schedules",
+        "signature": "get_analytics_reporting_schedules(page_number, page_size)",
+        "parameters": [
+            {
+                "name": "page_number",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "page_size",
+                "type": "int",
+                "required": "false"
+            }
+        ],
+        "return": "ReportScheduleEntityListing"
+    },
+    "GET /api/v2/analytics/reporting/settings": {
+        "operationId": "get_analytics_reporting_settings",
+        "functionName": "get_analytics_reporting_settings",
+        "signature": "get_analytics_reporting_settings()",
+        
+        "return": "AnalyticsReportingSettings"
+    },
+    "GET /api/v2/analytics/reporting/timeperiods": {
+        "operationId": "get_analytics_reporting_timeperiods",
+        "functionName": "get_analytics_reporting_timeperiods",
+        "signature": "get_analytics_reporting_timeperiods()",
+        
+        "return": "list[str]"
+    },
+    "GET /api/v2/analytics/resolutions/aggregates/jobs/{jobId}": {
+        "operationId": "get_analytics_resolutions_aggregates_job",
+        "functionName": "get_analytics_resolutions_aggregates_job",
+        "signature": "get_analytics_resolutions_aggregates_job(job_id)",
+        "parameters": [
+            {
+                "name": "job_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "AsyncQueryStatus"
+    },
+    "GET /api/v2/analytics/resolutions/aggregates/jobs/{jobId}/results": {
+        "operationId": "get_analytics_resolutions_aggregates_job_results",
+        "functionName": "get_analytics_resolutions_aggregates_job_results",
+        "signature": "get_analytics_resolutions_aggregates_job_results(job_id, cursor)",
+        "parameters": [
+            {
+                "name": "job_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "cursor",
+                "type": "str",
+                "required": "false"
+            }
+        ],
+        "return": "ResolutionAsyncAggregateQueryResponse"
+    },
+    "GET /api/v2/analytics/surveys/aggregates/jobs/{jobId}": {
+        "operationId": "get_analytics_surveys_aggregates_job",
+        "functionName": "get_analytics_surveys_aggregates_job",
+        "signature": "get_analytics_surveys_aggregates_job(job_id)",
+        "parameters": [
+            {
+                "name": "job_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "AsyncQueryStatus"
+    },
+    "GET /api/v2/analytics/surveys/aggregates/jobs/{jobId}/results": {
+        "operationId": "get_analytics_surveys_aggregates_job_results",
+        "functionName": "get_analytics_surveys_aggregates_job_results",
+        "signature": "get_analytics_surveys_aggregates_job_results(job_id, cursor)",
+        "parameters": [
+            {
+                "name": "job_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "cursor",
+                "type": "str",
+                "required": "false"
+            }
+        ],
+        "return": "SurveyAsyncAggregateQueryResponse"
+    },
+    "GET /api/v2/analytics/taskmanagement/aggregates/jobs/{jobId}": {
+        "operationId": "get_analytics_taskmanagement_aggregates_job",
+        "functionName": "get_analytics_taskmanagement_aggregates_job",
+        "signature": "get_analytics_taskmanagement_aggregates_job(job_id)",
+        "parameters": [
+            {
+                "name": "job_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "AsyncQueryStatus"
+    },
+    "GET /api/v2/analytics/taskmanagement/aggregates/jobs/{jobId}/results": {
+        "operationId": "get_analytics_taskmanagement_aggregates_job_results",
+        "functionName": "get_analytics_taskmanagement_aggregates_job_results",
+        "signature": "get_analytics_taskmanagement_aggregates_job_results(job_id, cursor)",
+        "parameters": [
+            {
+                "name": "job_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "cursor",
+                "type": "str",
+                "required": "false"
+            }
+        ],
+        "return": "TaskManagementAsyncAggregateQueryResponse"
+    },
+    "GET /api/v2/analytics/transcripts/aggregates/jobs/{jobId}": {
+        "operationId": "get_analytics_transcripts_aggregates_job",
+        "functionName": "get_analytics_transcripts_aggregates_job",
+        "signature": "get_analytics_transcripts_aggregates_job(job_id)",
+        "parameters": [
+            {
+                "name": "job_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "AsyncQueryStatus"
+    },
+    "GET /api/v2/analytics/transcripts/aggregates/jobs/{jobId}/results": {
+        "operationId": "get_analytics_transcripts_aggregates_job_results",
+        "functionName": "get_analytics_transcripts_aggregates_job_results",
+        "signature": "get_analytics_transcripts_aggregates_job_results(job_id, cursor)",
+        "parameters": [
+            {
+                "name": "job_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "cursor",
+                "type": "str",
+                "required": "false"
+            }
+        ],
+        "return": "TranscriptAsyncAggregateQueryResponse"
+    },
+    "GET /api/v2/analytics/users/aggregates/jobs/{jobId}": {
+        "operationId": "get_analytics_users_aggregates_job",
+        "functionName": "get_analytics_users_aggregates_job",
+        "signature": "get_analytics_users_aggregates_job(job_id)",
+        "parameters": [
+            {
+                "name": "job_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "AsyncQueryStatus"
+    },
+    "GET /api/v2/analytics/users/aggregates/jobs/{jobId}/results": {
+        "operationId": "get_analytics_users_aggregates_job_results",
+        "functionName": "get_analytics_users_aggregates_job_results",
+        "signature": "get_analytics_users_aggregates_job_results(job_id, cursor)",
+        "parameters": [
+            {
+                "name": "job_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "cursor",
+                "type": "str",
+                "required": "false"
+            }
+        ],
+        "return": "UserAsyncAggregateQueryResponse"
+    },
+    "GET /api/v2/analytics/users/details/jobs/{jobId}": {
+        "operationId": "get_analytics_users_details_job",
+        "functionName": "get_analytics_users_details_job",
+        "signature": "get_analytics_users_details_job(job_id)",
+        "parameters": [
+            {
+                "name": "job_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "AsyncQueryStatus"
+    },
+    "GET /api/v2/analytics/users/details/jobs/{jobId}/results": {
+        "operationId": "get_analytics_users_details_job_results",
+        "functionName": "get_analytics_users_details_job_results",
+        "signature": "get_analytics_users_details_job_results(job_id, cursor, page_size)",
+        "parameters": [
+            {
+                "name": "job_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "cursor",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "page_size",
+                "type": "int",
+                "required": "false"
+            }
+        ],
+        "return": "AnalyticsUserDetailsAsyncQueryResponse"
+    },
+    "GET /api/v2/analytics/users/details/jobs/availability": {
+        "operationId": "get_analytics_users_details_jobs_availability",
+        "functionName": "get_analytics_users_details_jobs_availability",
+        "signature": "get_analytics_users_details_jobs_availability()",
+        
+        "return": "DataAvailabilityResponse"
+    },
+    "PATCH /api/v2/analytics/reporting/settings": {
+        "operationId": "patch_analytics_reporting_settings",
+        "functionName": "patch_analytics_reporting_settings",
+        "signature": "patch_analytics_reporting_settings(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "AnalyticsReportingSettings",
+                "required": "true"
+            }
+        ],
+        "return": "AnalyticsReportingSettings"
+    },
+    "POST /api/v2/analytics/actions/aggregates/jobs": {
+        "operationId": "post_analytics_actions_aggregates_jobs",
+        "functionName": "post_analytics_actions_aggregates_jobs",
+        "signature": "post_analytics_actions_aggregates_jobs(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "ActionAsyncAggregationQuery",
+                "required": "true"
+            }
+        ],
+        "return": "AsyncQueryResponse"
+    },
+    "POST /api/v2/analytics/actions/aggregates/query": {
+        "operationId": "post_analytics_actions_aggregates_query",
+        "functionName": "post_analytics_actions_aggregates_query",
+        "signature": "post_analytics_actions_aggregates_query(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "ActionAggregationQuery",
+                "required": "true"
+            }
+        ],
+        "return": "ActionAggregateQueryResponse"
+    },
+    "POST /api/v2/analytics/bots/aggregates/jobs": {
+        "operationId": "post_analytics_bots_aggregates_jobs",
+        "functionName": "post_analytics_bots_aggregates_jobs",
+        "signature": "post_analytics_bots_aggregates_jobs(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "BotAsyncAggregationQuery",
+                "required": "true"
+            }
+        ],
+        "return": "AsyncQueryResponse"
+    },
+    "POST /api/v2/analytics/bots/aggregates/query": {
+        "operationId": "post_analytics_bots_aggregates_query",
+        "functionName": "post_analytics_bots_aggregates_query",
+        "signature": "post_analytics_bots_aggregates_query(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "BotAggregationQuery",
+                "required": "true"
+            }
+        ],
+        "return": "BotAggregateQueryResponse"
+    },
+    "POST /api/v2/analytics/conversations/{conversationId}/details/properties": {
+        "operationId": "post_analytics_conversation_details_properties",
+        "functionName": "post_analytics_conversation_details_properties",
+        "signature": "post_analytics_conversation_details_properties(conversation_id, body)",
+        "parameters": [
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "PropertyIndexRequest",
+                "required": "true"
+            }
+        ],
+        "return": "PropertyIndexRequest"
+    },
+    "POST /api/v2/analytics/conversations/activity/query": {
+        "operationId": "post_analytics_conversations_activity_query",
+        "functionName": "post_analytics_conversations_activity_query",
+        "signature": "post_analytics_conversations_activity_query(body, page_size, page_number)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "ConversationActivityQuery",
+                "required": "true"
+            },
+            {
+                "name": "page_size",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "page_number",
+                "type": "int",
+                "required": "false"
+            }
+        ],
+        "return": "ConversationActivityResponse"
+    },
+    "POST /api/v2/analytics/conversations/aggregates/jobs": {
+        "operationId": "post_analytics_conversations_aggregates_jobs",
+        "functionName": "post_analytics_conversations_aggregates_jobs",
+        "signature": "post_analytics_conversations_aggregates_jobs(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "ConversationAsyncAggregationQuery",
+                "required": "true"
+            }
+        ],
+        "return": "AsyncQueryResponse"
+    },
+    "POST /api/v2/analytics/conversations/aggregates/query": {
+        "operationId": "post_analytics_conversations_aggregates_query",
+        "functionName": "post_analytics_conversations_aggregates_query",
+        "signature": "post_analytics_conversations_aggregates_query(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "ConversationAggregationQuery",
+                "required": "true"
+            }
+        ],
+        "return": "ConversationAggregateQueryResponse"
+    },
+    "POST /api/v2/analytics/conversations/details/jobs": {
+        "operationId": "post_analytics_conversations_details_jobs",
+        "functionName": "post_analytics_conversations_details_jobs",
+        "signature": "post_analytics_conversations_details_jobs(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "AsyncConversationQuery",
+                "required": "true"
+            }
+        ],
+        "return": "AsyncQueryResponse"
+    },
+    "POST /api/v2/analytics/conversations/details/query": {
+        "operationId": "post_analytics_conversations_details_query",
+        "functionName": "post_analytics_conversations_details_query",
+        "signature": "post_analytics_conversations_details_query(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "ConversationQuery",
+                "required": "true"
+            }
+        ],
+        "return": "AnalyticsConversationQueryResponse"
+    },
+    "POST /api/v2/analytics/conversations/transcripts/query": {
+        "operationId": "post_analytics_conversations_transcripts_query",
+        "functionName": "post_analytics_conversations_transcripts_query",
+        "signature": "post_analytics_conversations_transcripts_query(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "TranscriptConversationDetailSearchRequest",
+                "required": "true"
+            }
+        ],
+        "return": "AnalyticsConversationWithoutAttributesMultiGetResponse"
+    },
+    "POST /api/v2/analytics/evaluations/aggregates/jobs": {
+        "operationId": "post_analytics_evaluations_aggregates_jobs",
+        "functionName": "post_analytics_evaluations_aggregates_jobs",
+        "signature": "post_analytics_evaluations_aggregates_jobs(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "EvaluationAsyncAggregationQuery",
+                "required": "true"
+            }
+        ],
+        "return": "AsyncQueryResponse"
+    },
+    "POST /api/v2/analytics/evaluations/aggregates/query": {
+        "operationId": "post_analytics_evaluations_aggregates_query",
+        "functionName": "post_analytics_evaluations_aggregates_query",
+        "signature": "post_analytics_evaluations_aggregates_query(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "EvaluationAggregationQuery",
+                "required": "true"
+            }
+        ],
+        "return": "EvaluationAggregateQueryResponse"
+    },
+    "POST /api/v2/analytics/flows/activity/query": {
+        "operationId": "post_analytics_flows_activity_query",
+        "functionName": "post_analytics_flows_activity_query",
+        "signature": "post_analytics_flows_activity_query(body, page_size, page_number)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "FlowActivityQuery",
+                "required": "true"
+            },
+            {
+                "name": "page_size",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "page_number",
+                "type": "int",
+                "required": "false"
+            }
+        ],
+        "return": "FlowActivityResponse"
+    },
+    "POST /api/v2/analytics/flows/aggregates/jobs": {
+        "operationId": "post_analytics_flows_aggregates_jobs",
+        "functionName": "post_analytics_flows_aggregates_jobs",
+        "signature": "post_analytics_flows_aggregates_jobs(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "FlowAsyncAggregationQuery",
+                "required": "true"
+            }
+        ],
+        "return": "AsyncQueryResponse"
+    },
+    "POST /api/v2/analytics/flows/aggregates/query": {
+        "operationId": "post_analytics_flows_aggregates_query",
+        "functionName": "post_analytics_flows_aggregates_query",
+        "signature": "post_analytics_flows_aggregates_query(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "FlowAggregationQuery",
+                "required": "true"
+            }
+        ],
+        "return": "FlowAggregateQueryResponse"
+    },
+    "POST /api/v2/analytics/flows/observations/query": {
+        "operationId": "post_analytics_flows_observations_query",
+        "functionName": "post_analytics_flows_observations_query",
+        "signature": "post_analytics_flows_observations_query(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "FlowObservationQuery",
+                "required": "true"
+            }
+        ],
+        "return": "FlowObservationQueryResponse"
+    },
+    "POST /api/v2/analytics/journeys/aggregates/jobs": {
+        "operationId": "post_analytics_journeys_aggregates_jobs",
+        "functionName": "post_analytics_journeys_aggregates_jobs",
+        "signature": "post_analytics_journeys_aggregates_jobs(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "JourneyAsyncAggregationQuery",
+                "required": "true"
+            }
+        ],
+        "return": "AsyncQueryResponse"
+    },
+    "POST /api/v2/analytics/journeys/aggregates/query": {
+        "operationId": "post_analytics_journeys_aggregates_query",
+        "functionName": "post_analytics_journeys_aggregates_query",
+        "signature": "post_analytics_journeys_aggregates_query(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "JourneyAggregationQuery",
+                "required": "true"
+            }
+        ],
+        "return": "JourneyAggregateQueryResponse"
+    },
+    "POST /api/v2/analytics/knowledge/aggregates/jobs": {
+        "operationId": "post_analytics_knowledge_aggregates_jobs",
+        "functionName": "post_analytics_knowledge_aggregates_jobs",
+        "signature": "post_analytics_knowledge_aggregates_jobs(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "KnowledgeAsyncAggregationQuery",
+                "required": "true"
+            }
+        ],
+        "return": "AsyncQueryResponse"
+    },
+    "POST /api/v2/analytics/knowledge/aggregates/query": {
+        "operationId": "post_analytics_knowledge_aggregates_query",
+        "functionName": "post_analytics_knowledge_aggregates_query",
+        "signature": "post_analytics_knowledge_aggregates_query(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "KnowledgeAggregationQuery",
+                "required": "true"
+            }
+        ],
+        "return": "KnowledgeAggregateQueryResponse"
+    },
+    "POST /api/v2/analytics/queues/observations/query": {
+        "operationId": "post_analytics_queues_observations_query",
+        "functionName": "post_analytics_queues_observations_query",
+        "signature": "post_analytics_queues_observations_query(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "QueueObservationQuery",
+                "required": "true"
+            }
+        ],
+        "return": "QueueObservationQueryResponse"
+    },
+    "POST /api/v2/analytics/reporting/exports": {
+        "operationId": "post_analytics_reporting_exports",
+        "functionName": "post_analytics_reporting_exports",
+        "signature": "post_analytics_reporting_exports(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "ReportingExportJobRequest",
+                "required": "true"
+            }
+        ],
+        "return": "ReportingExportJobResponse"
+    },
+    "POST /api/v2/analytics/reporting/schedules/{scheduleId}/runreport": {
+        "operationId": "post_analytics_reporting_schedule_runreport",
+        "functionName": "post_analytics_reporting_schedule_runreport",
+        "signature": "post_analytics_reporting_schedule_runreport(schedule_id)",
+        "parameters": [
+            {
+                "name": "schedule_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "RunNowResponse"
+    },
+    "POST /api/v2/analytics/reporting/schedules": {
+        "operationId": "post_analytics_reporting_schedules",
+        "functionName": "post_analytics_reporting_schedules",
+        "signature": "post_analytics_reporting_schedules(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "ReportSchedule",
+                "required": "true"
+            }
+        ],
+        "return": "ReportSchedule"
+    },
+    "POST /api/v2/analytics/resolutions/aggregates/jobs": {
+        "operationId": "post_analytics_resolutions_aggregates_jobs",
+        "functionName": "post_analytics_resolutions_aggregates_jobs",
+        "signature": "post_analytics_resolutions_aggregates_jobs(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "ResolutionAsyncAggregationQuery",
+                "required": "true"
+            }
+        ],
+        "return": "AsyncQueryResponse"
+    },
+    "POST /api/v2/analytics/routing/activity/query": {
+        "operationId": "post_analytics_routing_activity_query",
+        "functionName": "post_analytics_routing_activity_query",
+        "signature": "post_analytics_routing_activity_query(body, page_size, page_number)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "RoutingActivityQuery",
+                "required": "true"
+            },
+            {
+                "name": "page_size",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "page_number",
+                "type": "int",
+                "required": "false"
+            }
+        ],
+        "return": "RoutingActivityResponse"
+    },
+    "POST /api/v2/analytics/surveys/aggregates/jobs": {
+        "operationId": "post_analytics_surveys_aggregates_jobs",
+        "functionName": "post_analytics_surveys_aggregates_jobs",
+        "signature": "post_analytics_surveys_aggregates_jobs(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "SurveyAsyncAggregationQuery",
+                "required": "true"
+            }
+        ],
+        "return": "AsyncQueryResponse"
+    },
+    "POST /api/v2/analytics/surveys/aggregates/query": {
+        "operationId": "post_analytics_surveys_aggregates_query",
+        "functionName": "post_analytics_surveys_aggregates_query",
+        "signature": "post_analytics_surveys_aggregates_query(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "SurveyAggregationQuery",
+                "required": "true"
+            }
+        ],
+        "return": "SurveyAggregateQueryResponse"
+    },
+    "POST /api/v2/analytics/taskmanagement/aggregates/jobs": {
+        "operationId": "post_analytics_taskmanagement_aggregates_jobs",
+        "functionName": "post_analytics_taskmanagement_aggregates_jobs",
+        "signature": "post_analytics_taskmanagement_aggregates_jobs(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "TaskManagementAsyncAggregationQuery",
+                "required": "true"
+            }
+        ],
+        "return": "AsyncQueryResponse"
+    },
+    "POST /api/v2/analytics/taskmanagement/aggregates/query": {
+        "operationId": "post_analytics_taskmanagement_aggregates_query",
+        "functionName": "post_analytics_taskmanagement_aggregates_query",
+        "signature": "post_analytics_taskmanagement_aggregates_query(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "TaskManagementAggregationQuery",
+                "required": "true"
+            }
+        ],
+        "return": "TaskManagementAggregateQueryResponse"
+    },
+    "POST /api/v2/analytics/teams/activity/query": {
+        "operationId": "post_analytics_teams_activity_query",
+        "functionName": "post_analytics_teams_activity_query",
+        "signature": "post_analytics_teams_activity_query(body, page_size, page_number)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "TeamActivityQuery",
+                "required": "true"
+            },
+            {
+                "name": "page_size",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "page_number",
+                "type": "int",
+                "required": "false"
+            }
+        ],
+        "return": "TeamActivityResponse"
+    },
+    "POST /api/v2/analytics/transcripts/aggregates/jobs": {
+        "operationId": "post_analytics_transcripts_aggregates_jobs",
+        "functionName": "post_analytics_transcripts_aggregates_jobs",
+        "signature": "post_analytics_transcripts_aggregates_jobs(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "TranscriptAsyncAggregationQuery",
+                "required": "true"
+            }
+        ],
+        "return": "AsyncQueryResponse"
+    },
+    "POST /api/v2/analytics/transcripts/aggregates/query": {
+        "operationId": "post_analytics_transcripts_aggregates_query",
+        "functionName": "post_analytics_transcripts_aggregates_query",
+        "signature": "post_analytics_transcripts_aggregates_query(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "TranscriptAggregationQuery",
+                "required": "true"
+            }
+        ],
+        "return": "TranscriptAggregateQueryResponse"
+    },
+    "POST /api/v2/analytics/users/activity/query": {
+        "operationId": "post_analytics_users_activity_query",
+        "functionName": "post_analytics_users_activity_query",
+        "signature": "post_analytics_users_activity_query(body, page_size, page_number)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "UserActivityQuery",
+                "required": "true"
+            },
+            {
+                "name": "page_size",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "page_number",
+                "type": "int",
+                "required": "false"
+            }
+        ],
+        "return": "UserActivityResponse"
+    },
+    "POST /api/v2/analytics/users/aggregates/jobs": {
+        "operationId": "post_analytics_users_aggregates_jobs",
+        "functionName": "post_analytics_users_aggregates_jobs",
+        "signature": "post_analytics_users_aggregates_jobs(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "UserAsyncAggregationQuery",
+                "required": "true"
+            }
+        ],
+        "return": "AsyncQueryResponse"
+    },
+    "POST /api/v2/analytics/users/aggregates/query": {
+        "operationId": "post_analytics_users_aggregates_query",
+        "functionName": "post_analytics_users_aggregates_query",
+        "signature": "post_analytics_users_aggregates_query(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "UserAggregationQuery",
+                "required": "true"
+            }
+        ],
+        "return": "UserAggregateQueryResponse"
+    },
+    "POST /api/v2/analytics/users/details/jobs": {
+        "operationId": "post_analytics_users_details_jobs",
+        "functionName": "post_analytics_users_details_jobs",
+        "signature": "post_analytics_users_details_jobs(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "AsyncUserDetailsQuery",
+                "required": "true"
+            }
+        ],
+        "return": "AsyncQueryResponse"
+    },
+    "POST /api/v2/analytics/users/details/query": {
+        "operationId": "post_analytics_users_details_query",
+        "functionName": "post_analytics_users_details_query",
+        "signature": "post_analytics_users_details_query(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "UserDetailsQuery",
+                "required": "true"
+            }
+        ],
+        "return": "AnalyticsUserDetailsQueryResponse"
+    },
+    "POST /api/v2/analytics/users/observations/query": {
+        "operationId": "post_analytics_users_observations_query",
+        "functionName": "post_analytics_users_observations_query",
+        "signature": "post_analytics_users_observations_query(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "UserObservationQuery",
+                "required": "true"
+            }
+        ],
+        "return": "UserObservationQueryResponse"
+    },
+    "PUT /api/v2/analytics/dataretention/settings": {
+        "operationId": "put_analytics_dataretention_settings",
+        "functionName": "put_analytics_dataretention_settings",
+        "signature": "put_analytics_dataretention_settings(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "UpdateAnalyticsDataRetentionRequest",
+                "required": "true"
+            }
+        ],
+        "return": "AnalyticsDataRetentionResponse"
+    },
+    "PUT /api/v2/analytics/reporting/schedules/{scheduleId}": {
+        "operationId": "put_analytics_reporting_schedule",
+        "functionName": "put_analytics_reporting_schedule",
+        "signature": "put_analytics_reporting_schedule(schedule_id, body)",
+        "parameters": [
+            {
+                "name": "schedule_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "ReportSchedule",
+                "required": "true"
+            }
+        ],
+        "return": "ReportSchedule"
+    }
+    
+}

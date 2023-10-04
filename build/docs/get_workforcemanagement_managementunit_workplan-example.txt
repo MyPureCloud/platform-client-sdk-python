@@ -1,0 +1,20 @@
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'your_access_token'
+# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi();
+management_unit_id = 'management_unit_id_example' # str | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+work_plan_id = 'work_plan_id_example' # str | The ID of the work plan to fetch
+include_only = ['include_only_example'] # list[str] | limit response to the specified fields (optional)
+
+try:
+    # Get a work plan
+    api_response = api_instance.get_workforcemanagement_managementunit_workplan(management_unit_id, work_plan_id, include_only=include_only)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_managementunit_workplan: %s\n" % e)

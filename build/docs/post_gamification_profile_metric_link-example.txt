@@ -1,0 +1,20 @@
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'your_access_token'
+# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.GamificationApi();
+source_profile_id = 'source_profile_id_example' # str | Source Performance Profile Id
+source_metric_id = 'source_metric_id_example' # str | Source Metric Id
+body = PureCloudPlatformClientV2.TargetPerformanceProfile() # TargetPerformanceProfile | linkedMetric
+
+try:
+    # Creates a linked metric
+    api_response = api_instance.post_gamification_profile_metric_link(source_profile_id, source_metric_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GamificationApi->post_gamification_profile_metric_link: %s\n" % e)

@@ -1,0 +1,76 @@
+{
+    "DELETE /api/v2/stations/{stationId}/associateduser": {
+        "operationId": "delete_station_associateduser",
+        "functionName": "delete_station_associateduser",
+        "signature": "delete_station_associateduser(station_id)",
+        "parameters": [
+            {
+                "name": "station_id",
+                "type": "str",
+                "required": "true"
+            }
+        ]
+    },
+    "GET /api/v2/stations/{stationId}": {
+        "operationId": "get_station",
+        "functionName": "get_station",
+        "signature": "get_station(station_id)",
+        "parameters": [
+            {
+                "name": "station_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "Station"
+    },
+    "GET /api/v2/stations": {
+        "operationId": "get_stations",
+        "functionName": "get_stations",
+        "signature": "get_stations(page_size, page_number, sort_by, name, user_selectable, web_rtc_user_id, id, line_appearance_id)",
+        "parameters": [
+            {
+                "name": "page_size",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "page_number",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "sort_by",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "name",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "user_selectable",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "web_rtc_user_id",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "id",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "line_appearance_id",
+                "type": "str",
+                "required": "false"
+            }
+        ],
+        "return": "StationEntityListing"
+    }
+    
+}

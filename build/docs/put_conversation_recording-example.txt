@@ -1,0 +1,21 @@
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'your_access_token'
+# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RecordingApi();
+conversation_id = 'conversation_id_example' # str | Conversation ID
+recording_id = 'recording_id_example' # str | Recording ID
+body = PureCloudPlatformClientV2.Recording() # Recording | recording
+clear_export = True # bool | Whether to clear the pending export for the recording (optional)
+
+try:
+    # Updates the retention records on a recording.
+    api_response = api_instance.put_conversation_recording(conversation_id, recording_id, body, clear_export=clear_export)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling RecordingApi->put_conversation_recording: %s\n" % e)

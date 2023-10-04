@@ -1,0 +1,21 @@
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'your_access_token'
+# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RoutingApi();
+page_number = 1 # int | Page number (optional) (default to 1)
+page_size = 25 # int | Page size (optional) (default to 25)
+joined = True # bool | Filter by joined status. (optional)
+sort_order = ''asc'' # str | Note: results are sorted by name. (optional) (default to 'asc')
+
+try:
+    # Get a paged listing of queues the user is a member of.
+    api_response = api_instance.get_routing_queues_me(page_number=page_number, page_size=page_size, joined=joined, sort_order=sort_order)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling RoutingApi->get_routing_queues_me: %s\n" % e)

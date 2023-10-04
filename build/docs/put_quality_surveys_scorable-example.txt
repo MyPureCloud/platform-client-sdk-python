@@ -1,0 +1,15 @@
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.QualityApi();
+customer_survey_url = 'customer_survey_url_example' # str | customerSurveyUrl
+body = PureCloudPlatformClientV2.ScorableSurvey() # ScorableSurvey | survey
+
+try:
+    # Update a survey as an end-customer, for the purposes of scoring it.
+    api_response = api_instance.put_quality_surveys_scorable(customer_survey_url, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling QualityApi->put_quality_surveys_scorable: %s\n" % e)

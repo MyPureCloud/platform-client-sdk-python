@@ -1,0 +1,28 @@
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'your_access_token'
+# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RecordingApi();
+page_size = 25 # int | The total page size requested (optional) (default to 25)
+page_number = 1 # int | The page number requested (optional) (default to 1)
+sort_by = 'sort_by_example' # str | variable name requested to sort by (optional)
+expand = ['expand_example'] # list[str] | variable name requested by expand list (optional)
+next_page = 'next_page_example' # str | next page token (optional)
+previous_page = 'previous_page_example' # str | Previous page token (optional)
+name = 'name_example' # str | the policy name - used for filtering results in searches. (optional)
+enabled = True # bool | checks to see if policy is enabled - use enabled = true or enabled = false (optional)
+summary = False # bool | provides a less verbose response of policy lists. (optional) (default to False)
+has_errors = True # bool | provides a way to fetch all policies with errors or policies that do not have errors (optional)
+delete_days_threshold = 56 # int | provides a way to fetch all policies with any actions having deleteDays exceeding the provided value (optional)
+
+try:
+    # Gets media retention policy list with query options to filter on name and enabled.
+    api_response = api_instance.get_recording_mediaretentionpolicies(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, name=name, enabled=enabled, summary=summary, has_errors=has_errors, delete_days_threshold=delete_days_threshold)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling RecordingApi->get_recording_mediaretentionpolicies: %s\n" % e)

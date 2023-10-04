@@ -1,0 +1,23 @@
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'your_access_token'
+# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.GamificationApi();
+user_id = 'user_id_example' # str | The ID of a user.
+filter_type = 'filter_type_example' # str | Filter type for the query request.
+filter_id = 'filter_id_example' # str | ID for the filter type.
+granularity = 'granularity_example' # str | Granularity
+comparative_period_start_workday = '2013-10-20' # date | The start work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+primary_period_start_workday = '2013-10-20' # date | The start work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+
+try:
+    # Get insights details for the user
+    api_response = api_instance.get_gamification_insights_user_details(user_id, filter_type, filter_id, granularity, comparative_period_start_workday, primary_period_start_workday)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GamificationApi->get_gamification_insights_user_details: %s\n" % e)

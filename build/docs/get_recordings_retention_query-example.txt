@@ -1,0 +1,20 @@
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'your_access_token'
+# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RecordingApi();
+retention_threshold_days = 56 # int | Fetch retention data for recordings retained for more days than the provided value.
+cursor = 'cursor_example' # str | Indicates where to resume query results (not required for first page) (optional)
+page_size = 25 # int | Page size. Maximum is 500. (optional) (default to 25)
+
+try:
+    # Query for recording retention data
+    api_response = api_instance.get_recordings_retention_query(retention_threshold_days, cursor=cursor, page_size=page_size)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling RecordingApi->get_recordings_retention_query: %s\n" % e)

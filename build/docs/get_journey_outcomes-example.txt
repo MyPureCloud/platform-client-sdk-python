@@ -1,0 +1,23 @@
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'your_access_token'
+# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.JourneyApi();
+page_number = 1 # int | Page number (optional) (default to 1)
+page_size = 25 # int | Page size (optional) (default to 25)
+sort_by = 'sort_by_example' # str | Field(s) to sort by. The response can be sorted by any first level property on the Outcome response. Prefix with '-' for descending (e.g. sortBy=displayName,-createdDate). (optional)
+outcome_ids = ['outcome_ids_example'] # list[str] | IDs of outcomes to return. Use of this parameter is not compatible with pagination, sorting or querying. A maximum of 20 outcomes are allowed per request. (optional)
+query_fields = ['query_fields_example'] # list[str] | Outcome field(s) to query on. Requires 'queryValue' to also be set. (optional)
+query_value = 'query_value_example' # str | Value to query on. Requires 'queryFields' to also be set. (optional)
+
+try:
+    # Retrieve all outcomes.
+    api_response = api_instance.get_journey_outcomes(page_number=page_number, page_size=page_size, sort_by=sort_by, outcome_ids=outcome_ids, query_fields=query_fields, query_value=query_value)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling JourneyApi->get_journey_outcomes: %s\n" % e)

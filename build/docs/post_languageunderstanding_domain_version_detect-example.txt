@@ -1,0 +1,20 @@
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'your_access_token'
+# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.LanguageUnderstandingApi();
+domain_id = 'domain_id_example' # str | ID of the NLU domain.
+domain_version_id = 'domain_version_id_example' # str | ID of the NLU domain version.
+body = PureCloudPlatformClientV2.NluDetectionRequest() # NluDetectionRequest | The input data to perform detection on.
+
+try:
+    # Detect intent, entities, etc. in the submitted text using the specified NLU domain version.
+    api_response = api_instance.post_languageunderstanding_domain_version_detect(domain_id, domain_version_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling LanguageUnderstandingApi->post_languageunderstanding_domain_version_detect: %s\n" % e)

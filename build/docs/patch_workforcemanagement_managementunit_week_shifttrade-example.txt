@@ -1,0 +1,21 @@
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'your_access_token'
+# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi();
+management_unit_id = 'management_unit_id_example' # str | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+week_date_id = '2013-10-20' # date | The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+trade_id = 'trade_id_example' # str | The ID of the shift trade to update
+body = PureCloudPlatformClientV2.PatchShiftTradeRequest() # PatchShiftTradeRequest | body
+
+try:
+    # Updates a shift trade. This route can only be called by the initiating agent
+    api_response = api_instance.patch_workforcemanagement_managementunit_week_shifttrade(management_unit_id, week_date_id, trade_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->patch_workforcemanagement_managementunit_week_shifttrade: %s\n" % e)

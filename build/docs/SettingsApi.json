@@ -1,0 +1,23 @@
+{
+    "GET /api/v2/emails/settings": {
+        "operationId": "get_emails_settings",
+        "functionName": "get_emails_settings",
+        "signature": "get_emails_settings()",
+        
+        "return": "EmailSettings"
+    },
+    "PATCH /api/v2/emails/settings": {
+        "operationId": "patch_emails_settings",
+        "functionName": "patch_emails_settings",
+        "signature": "patch_emails_settings(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "EmailSettings",
+                "required": "false"
+            }
+        ],
+        "return": "EmailSettings"
+    }
+    
+}

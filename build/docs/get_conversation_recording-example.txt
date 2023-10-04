@@ -1,0 +1,27 @@
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'your_access_token'
+# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RecordingApi();
+conversation_id = 'conversation_id_example' # str | Conversation ID
+recording_id = 'recording_id_example' # str | Recording ID
+format_id = ''WEBM'' # str | The desired media format. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3,NONE (optional) (default to 'WEBM')
+email_format_id = ''EML'' # str | The desired media format when downloading an email recording. Valid values:EML,NONE (optional) (default to 'EML')
+chat_format_id = ''ZIP'' # str | The desired media format when downloading a chat recording. Valid values:ZIP,NONE  (optional) (default to 'ZIP')
+message_format_id = ''ZIP'' # str | The desired media format when downloading a message recording. Valid values:ZIP,NONE (optional) (default to 'ZIP')
+download = False # bool | requesting a download format of the recording. Valid values:true,false (optional) (default to False)
+file_name = 'file_name_example' # str | the name of the downloaded fileName (optional)
+locale = 'locale_example' # str | The locale for the requested file when downloading, as an ISO 639-1 code (optional)
+media_formats = ['media_formats_example'] # list[str] | All acceptable media formats. Overrides formatId. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3 (optional)
+
+try:
+    # Gets a specific recording.
+    api_response = api_instance.get_conversation_recording(conversation_id, recording_id, format_id=format_id, email_format_id=email_format_id, chat_format_id=chat_format_id, message_format_id=message_format_id, download=download, file_name=file_name, locale=locale, media_formats=media_formats)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling RecordingApi->get_conversation_recording: %s\n" % e)

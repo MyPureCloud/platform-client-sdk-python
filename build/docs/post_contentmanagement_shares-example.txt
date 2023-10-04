@@ -1,0 +1,18 @@
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'your_access_token'
+# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ContentManagementApi();
+body = PureCloudPlatformClientV2.CreateShareRequest() # CreateShareRequest | CreateShareRequest - entity id and type and a single member or list of members are required
+
+try:
+    # Creates a new share or updates an existing share if the entity has already been shared
+    api_response = api_instance.post_contentmanagement_shares(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ContentManagementApi->post_contentmanagement_shares: %s\n" % e)

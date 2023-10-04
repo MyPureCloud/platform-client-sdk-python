@@ -1,0 +1,66 @@
+{
+    "DELETE /api/v2/widgets/deployments/{deploymentId}": {
+        "operationId": "delete_widgets_deployment",
+        "functionName": "delete_widgets_deployment",
+        "signature": "delete_widgets_deployment(deployment_id)",
+        "parameters": [
+            {
+                "name": "deployment_id",
+                "type": "str",
+                "required": "true"
+            }
+        ]
+    },
+    "GET /api/v2/widgets/deployments/{deploymentId}": {
+        "operationId": "get_widgets_deployment",
+        "functionName": "get_widgets_deployment",
+        "signature": "get_widgets_deployment(deployment_id)",
+        "parameters": [
+            {
+                "name": "deployment_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "WidgetDeployment"
+    },
+    "GET /api/v2/widgets/deployments": {
+        "operationId": "get_widgets_deployments",
+        "functionName": "get_widgets_deployments",
+        "signature": "get_widgets_deployments()",
+        
+        "return": "WidgetDeploymentEntityListing"
+    },
+    "POST /api/v2/widgets/deployments": {
+        "operationId": "post_widgets_deployments",
+        "functionName": "post_widgets_deployments",
+        "signature": "post_widgets_deployments(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "WidgetDeployment",
+                "required": "true"
+            }
+        ],
+        "return": "WidgetDeployment"
+    },
+    "PUT /api/v2/widgets/deployments/{deploymentId}": {
+        "operationId": "put_widgets_deployment",
+        "functionName": "put_widgets_deployment",
+        "signature": "put_widgets_deployment(deployment_id, body)",
+        "parameters": [
+            {
+                "name": "deployment_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "WidgetDeployment",
+                "required": "true"
+            }
+        ],
+        "return": "WidgetDeployment"
+    }
+    
+}

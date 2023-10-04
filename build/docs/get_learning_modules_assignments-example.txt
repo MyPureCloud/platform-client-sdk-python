@@ -1,0 +1,24 @@
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'your_access_token'
+# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.LearningApi();
+user_ids = ['user_ids_example'] # list[str] | The IDs of the users to include
+page_size = 25 # int | Page size (optional) (default to 25)
+page_number = 1 # int | Page number (optional) (default to 1)
+search_term = 'search_term_example' # str | Search Term (searches by name and description) (optional)
+overdue = ''Any'' # str | Specifies if only modules with overdue/not overdue (overdue is \"True\" or \"False\") assignments are returned. If overdue is \"Any\" or omitted, both are returned and can including modules that are unassigned. (optional) (default to 'Any')
+assignment_states = ['assignment_states_example'] # list[str] | Specifies the assignment states to return. (optional)
+expand = ['expand_example'] # list[str] | Fields to expand in response(case insensitive) (optional)
+
+try:
+    # Get all learning modules of an organization including assignments for a specific user
+    api_response = api_instance.get_learning_modules_assignments(user_ids, page_size=page_size, page_number=page_number, search_term=search_term, overdue=overdue, assignment_states=assignment_states, expand=expand)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling LearningApi->get_learning_modules_assignments: %s\n" % e)

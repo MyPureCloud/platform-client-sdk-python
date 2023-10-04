@@ -1,0 +1,136 @@
+{
+    "DELETE /api/v2/locations/{locationId}": {
+        "operationId": "delete_location",
+        "functionName": "delete_location",
+        "signature": "delete_location(location_id)",
+        "parameters": [
+            {
+                "name": "location_id",
+                "type": "str",
+                "required": "true"
+            }
+        ]
+    },
+    "GET /api/v2/locations/{locationId}": {
+        "operationId": "get_location",
+        "functionName": "get_location",
+        "signature": "get_location(location_id, expand)",
+        "parameters": [
+            {
+                "name": "location_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "expand",
+                "type": "list[str]",
+                "required": "false"
+            }
+        ],
+        "return": "LocationDefinition"
+    },
+    "GET /api/v2/locations/{locationId}/sublocations": {
+        "operationId": "get_location_sublocations",
+        "functionName": "get_location_sublocations",
+        "signature": "get_location_sublocations(location_id)",
+        "parameters": [
+            {
+                "name": "location_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "LocationEntityListing"
+    },
+    "GET /api/v2/locations": {
+        "operationId": "get_locations",
+        "functionName": "get_locations",
+        "signature": "get_locations(page_size, page_number, id, sort_order)",
+        "parameters": [
+            {
+                "name": "page_size",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "page_number",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "id",
+                "type": "list[str]",
+                "required": "false"
+            },
+            {
+                "name": "sort_order",
+                "type": "str",
+                "required": "false"
+            }
+        ],
+        "return": "LocationEntityListing"
+    },
+    "GET /api/v2/locations/search": {
+        "operationId": "get_locations_search",
+        "functionName": "get_locations_search",
+        "signature": "get_locations_search(q64, expand)",
+        "parameters": [
+            {
+                "name": "q64",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "expand",
+                "type": "list[str]",
+                "required": "false"
+            }
+        ],
+        "return": "LocationsSearchResponse"
+    },
+    "PATCH /api/v2/locations/{locationId}": {
+        "operationId": "patch_location",
+        "functionName": "patch_location",
+        "signature": "patch_location(location_id, body)",
+        "parameters": [
+            {
+                "name": "location_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "LocationUpdateDefinition",
+                "required": "true"
+            }
+        ],
+        "return": "LocationDefinition"
+    },
+    "POST /api/v2/locations": {
+        "operationId": "post_locations",
+        "functionName": "post_locations",
+        "signature": "post_locations(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "LocationCreateDefinition",
+                "required": "true"
+            }
+        ],
+        "return": "LocationDefinition"
+    },
+    "POST /api/v2/locations/search": {
+        "operationId": "post_locations_search",
+        "functionName": "post_locations_search",
+        "signature": "post_locations_search(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "LocationSearchRequest",
+                "required": "true"
+            }
+        ],
+        "return": "LocationsSearchResponse"
+    }
+    
+}

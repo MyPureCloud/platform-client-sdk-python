@@ -1,0 +1,307 @@
+{
+    "DELETE /api/v2/identityproviders/adfs": {
+        "operationId": "delete_identityproviders_adfs",
+        "functionName": "delete_identityproviders_adfs",
+        "signature": "delete_identityproviders_adfs()",
+        
+        "return": "object"
+    },
+    "DELETE /api/v2/identityproviders/cic": {
+        "operationId": "delete_identityproviders_cic",
+        "functionName": "delete_identityproviders_cic",
+        "signature": "delete_identityproviders_cic()",
+        
+        "return": "object"
+    },
+    "DELETE /api/v2/identityproviders/generic": {
+        "operationId": "delete_identityproviders_generic",
+        "functionName": "delete_identityproviders_generic",
+        "signature": "delete_identityproviders_generic()",
+        
+        "return": "object"
+    },
+    "DELETE /api/v2/identityproviders/gsuite": {
+        "operationId": "delete_identityproviders_gsuite",
+        "functionName": "delete_identityproviders_gsuite",
+        "signature": "delete_identityproviders_gsuite()",
+        
+        "return": "object"
+    },
+    "DELETE /api/v2/identityproviders/identitynow": {
+        "operationId": "delete_identityproviders_identitynow",
+        "functionName": "delete_identityproviders_identitynow",
+        "signature": "delete_identityproviders_identitynow()",
+        
+        "return": "object"
+    },
+    "DELETE /api/v2/identityproviders/okta": {
+        "operationId": "delete_identityproviders_okta",
+        "functionName": "delete_identityproviders_okta",
+        "signature": "delete_identityproviders_okta()",
+        
+        "return": "object"
+    },
+    "DELETE /api/v2/identityproviders/onelogin": {
+        "operationId": "delete_identityproviders_onelogin",
+        "functionName": "delete_identityproviders_onelogin",
+        "signature": "delete_identityproviders_onelogin()",
+        
+        "return": "object"
+    },
+    "DELETE /api/v2/identityproviders/ping": {
+        "operationId": "delete_identityproviders_ping",
+        "functionName": "delete_identityproviders_ping",
+        "signature": "delete_identityproviders_ping()",
+        
+        "return": "object"
+    },
+    "DELETE /api/v2/identityproviders/purecloud": {
+        "operationId": "delete_identityproviders_purecloud",
+        "functionName": "delete_identityproviders_purecloud",
+        "signature": "delete_identityproviders_purecloud()",
+        
+        "return": "object"
+    },
+    "DELETE /api/v2/identityproviders/pureengage": {
+        "operationId": "delete_identityproviders_pureengage",
+        "functionName": "delete_identityproviders_pureengage",
+        "signature": "delete_identityproviders_pureengage()",
+        
+        "return": "object"
+    },
+    "DELETE /api/v2/identityproviders/salesforce": {
+        "operationId": "delete_identityproviders_salesforce",
+        "functionName": "delete_identityproviders_salesforce",
+        "signature": "delete_identityproviders_salesforce()",
+        
+        "return": "object"
+    },
+    "GET /api/v2/identityproviders": {
+        "operationId": "get_identityproviders",
+        "functionName": "get_identityproviders",
+        "signature": "get_identityproviders()",
+        
+        "return": "OAuthProviderEntityListing"
+    },
+    "GET /api/v2/identityproviders/adfs": {
+        "operationId": "get_identityproviders_adfs",
+        "functionName": "get_identityproviders_adfs",
+        "signature": "get_identityproviders_adfs()",
+        
+        "return": "ADFS"
+    },
+    "GET /api/v2/identityproviders/cic": {
+        "operationId": "get_identityproviders_cic",
+        "functionName": "get_identityproviders_cic",
+        "signature": "get_identityproviders_cic()",
+        
+        "return": "CustomerInteractionCenter"
+    },
+    "GET /api/v2/identityproviders/generic": {
+        "operationId": "get_identityproviders_generic",
+        "functionName": "get_identityproviders_generic",
+        "signature": "get_identityproviders_generic()",
+        
+        "return": "GenericSAML"
+    },
+    "GET /api/v2/identityproviders/gsuite": {
+        "operationId": "get_identityproviders_gsuite",
+        "functionName": "get_identityproviders_gsuite",
+        "signature": "get_identityproviders_gsuite()",
+        
+        "return": "GSuite"
+    },
+    "GET /api/v2/identityproviders/identitynow": {
+        "operationId": "get_identityproviders_identitynow",
+        "functionName": "get_identityproviders_identitynow",
+        "signature": "get_identityproviders_identitynow()",
+        
+        "return": "IdentityNow"
+    },
+    "GET /api/v2/identityproviders/okta": {
+        "operationId": "get_identityproviders_okta",
+        "functionName": "get_identityproviders_okta",
+        "signature": "get_identityproviders_okta()",
+        
+        "return": "Okta"
+    },
+    "GET /api/v2/identityproviders/onelogin": {
+        "operationId": "get_identityproviders_onelogin",
+        "functionName": "get_identityproviders_onelogin",
+        "signature": "get_identityproviders_onelogin()",
+        
+        "return": "OneLogin"
+    },
+    "GET /api/v2/identityproviders/ping": {
+        "operationId": "get_identityproviders_ping",
+        "functionName": "get_identityproviders_ping",
+        "signature": "get_identityproviders_ping()",
+        
+        "return": "PingIdentity"
+    },
+    "GET /api/v2/identityproviders/purecloud": {
+        "operationId": "get_identityproviders_purecloud",
+        "functionName": "get_identityproviders_purecloud",
+        "signature": "get_identityproviders_purecloud()",
+        
+        "return": "PureCloud"
+    },
+    "GET /api/v2/identityproviders/pureengage": {
+        "operationId": "get_identityproviders_pureengage",
+        "functionName": "get_identityproviders_pureengage",
+        "signature": "get_identityproviders_pureengage()",
+        
+        "return": "PureEngage"
+    },
+    "GET /api/v2/identityproviders/salesforce": {
+        "operationId": "get_identityproviders_salesforce",
+        "functionName": "get_identityproviders_salesforce",
+        "signature": "get_identityproviders_salesforce()",
+        
+        "return": "Salesforce"
+    },
+    "PUT /api/v2/identityproviders/adfs": {
+        "operationId": "put_identityproviders_adfs",
+        "functionName": "put_identityproviders_adfs",
+        "signature": "put_identityproviders_adfs(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "ADFS",
+                "required": "true"
+            }
+        ],
+        "return": "OAuthProvider"
+    },
+    "PUT /api/v2/identityproviders/cic": {
+        "operationId": "put_identityproviders_cic",
+        "functionName": "put_identityproviders_cic",
+        "signature": "put_identityproviders_cic(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "CustomerInteractionCenter",
+                "required": "true"
+            }
+        ],
+        "return": "OAuthProvider"
+    },
+    "PUT /api/v2/identityproviders/generic": {
+        "operationId": "put_identityproviders_generic",
+        "functionName": "put_identityproviders_generic",
+        "signature": "put_identityproviders_generic(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "GenericSAML",
+                "required": "true"
+            }
+        ],
+        "return": "OAuthProvider"
+    },
+    "PUT /api/v2/identityproviders/gsuite": {
+        "operationId": "put_identityproviders_gsuite",
+        "functionName": "put_identityproviders_gsuite",
+        "signature": "put_identityproviders_gsuite(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "GSuite",
+                "required": "true"
+            }
+        ],
+        "return": "OAuthProvider"
+    },
+    "PUT /api/v2/identityproviders/identitynow": {
+        "operationId": "put_identityproviders_identitynow",
+        "functionName": "put_identityproviders_identitynow",
+        "signature": "put_identityproviders_identitynow(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "IdentityNow",
+                "required": "true"
+            }
+        ],
+        "return": "IdentityNow"
+    },
+    "PUT /api/v2/identityproviders/okta": {
+        "operationId": "put_identityproviders_okta",
+        "functionName": "put_identityproviders_okta",
+        "signature": "put_identityproviders_okta(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Okta",
+                "required": "true"
+            }
+        ],
+        "return": "OAuthProvider"
+    },
+    "PUT /api/v2/identityproviders/onelogin": {
+        "operationId": "put_identityproviders_onelogin",
+        "functionName": "put_identityproviders_onelogin",
+        "signature": "put_identityproviders_onelogin(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "OneLogin",
+                "required": "true"
+            }
+        ],
+        "return": "OAuthProvider"
+    },
+    "PUT /api/v2/identityproviders/ping": {
+        "operationId": "put_identityproviders_ping",
+        "functionName": "put_identityproviders_ping",
+        "signature": "put_identityproviders_ping(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "PingIdentity",
+                "required": "true"
+            }
+        ],
+        "return": "OAuthProvider"
+    },
+    "PUT /api/v2/identityproviders/purecloud": {
+        "operationId": "put_identityproviders_purecloud",
+        "functionName": "put_identityproviders_purecloud",
+        "signature": "put_identityproviders_purecloud(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "PureCloud",
+                "required": "true"
+            }
+        ],
+        "return": "OAuthProvider"
+    },
+    "PUT /api/v2/identityproviders/pureengage": {
+        "operationId": "put_identityproviders_pureengage",
+        "functionName": "put_identityproviders_pureengage",
+        "signature": "put_identityproviders_pureengage(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "PureEngage",
+                "required": "true"
+            }
+        ],
+        "return": "OAuthProvider"
+    },
+    "PUT /api/v2/identityproviders/salesforce": {
+        "operationId": "put_identityproviders_salesforce",
+        "functionName": "put_identityproviders_salesforce",
+        "signature": "put_identityproviders_salesforce(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Salesforce",
+                "required": "true"
+            }
+        ],
+        "return": "OAuthProvider"
+    }
+    
+}

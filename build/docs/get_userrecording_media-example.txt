@@ -1,0 +1,20 @@
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'your_access_token'
+# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.UserRecordingsApi();
+recording_id = 'recording_id_example' # str | User Recording ID
+format_id = ''WEBM'' # str | The desired media format. (optional) (default to 'WEBM')
+async = True # bool | When set to true, api will return 202 response until the recording is ready for download (optional)
+
+try:
+    # Download a user recording.
+    api_response = api_instance.get_userrecording_media(recording_id, format_id=format_id, async=async)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling UserRecordingsApi->get_userrecording_media: %s\n" % e)

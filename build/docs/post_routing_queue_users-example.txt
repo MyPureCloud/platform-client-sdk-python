@@ -1,0 +1,19 @@
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'your_access_token'
+# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RoutingApi();
+queue_id = 'queue_id_example' # str | Queue ID
+body = [PureCloudPlatformClientV2.WritableEntity()] # list[WritableEntity] | Queue Members
+delete = False # bool | True to delete queue members (optional) (default to False)
+
+try:
+    # DEPRECATED: use POST /routing/queues/{queueId}/members.  Bulk add or delete up to 100 queue members.
+    api_instance.post_routing_queue_users(queue_id, body, delete=delete)
+except ApiException as e:
+    print("Exception when calling RoutingApi->post_routing_queue_users: %s\n" % e)

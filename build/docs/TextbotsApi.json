@@ -1,0 +1,75 @@
+{
+    "GET /api/v2/textbots/bots/search": {
+        "operationId": "get_textbots_bots_search",
+        "functionName": "get_textbots_bots_search",
+        "signature": "get_textbots_bots_search(bot_type, bot_name, bot_id, page_size)",
+        "parameters": [
+            {
+                "name": "bot_type",
+                "type": "list[str]",
+                "required": "false"
+            },
+            {
+                "name": "bot_name",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "bot_id",
+                "type": "list[str]",
+                "required": "false"
+            },
+            {
+                "name": "page_size",
+                "type": "int",
+                "required": "false"
+            }
+        ],
+        "return": "BotSearchResponseEntityListing"
+    },
+    "POST /api/v2/textbots/botflows/sessions/{sessionId}/turns": {
+        "operationId": "post_textbots_botflows_session_turns",
+        "functionName": "post_textbots_botflows_session_turns",
+        "signature": "post_textbots_botflows_session_turns(session_id, turn_request)",
+        "parameters": [
+            {
+                "name": "session_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "turn_request",
+                "type": "TextBotFlowTurnRequest",
+                "required": "true"
+            }
+        ],
+        "return": "TextBotFlowTurnResponse"
+    },
+    "POST /api/v2/textbots/botflows/sessions": {
+        "operationId": "post_textbots_botflows_sessions",
+        "functionName": "post_textbots_botflows_sessions",
+        "signature": "post_textbots_botflows_sessions(launch_request)",
+        "parameters": [
+            {
+                "name": "launch_request",
+                "type": "TextBotFlowLaunchRequest",
+                "required": "true"
+            }
+        ],
+        "return": "TextBotFlowLaunchResponse"
+    },
+    "POST /api/v2/textbots/bots/execute": {
+        "operationId": "post_textbots_bots_execute",
+        "functionName": "post_textbots_bots_execute",
+        "signature": "post_textbots_bots_execute(post_text_request)",
+        "parameters": [
+            {
+                "name": "post_text_request",
+                "type": "PostTextRequest",
+                "required": "true"
+            }
+        ],
+        "return": "PostTextResponse"
+    }
+    
+}

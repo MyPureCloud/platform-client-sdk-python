@@ -1,0 +1,19 @@
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'your_access_token'
+# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.SCIMApi();
+user_id = 'user_id_example' # str | The ID of a user. Returned with GET /api/v2/scim/v2/users.
+if_match = 'if_match_example' # str | The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/users/{userId}. Example: \"42\". If the ETag is different from the version on the server, returns 400 with a \"scimType\" of \"invalidVers\". (optional)
+
+try:
+    # Delete a user
+    api_response = api_instance.delete_scim_v2_user(user_id, if_match=if_match)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling SCIMApi->delete_scim_v2_user: %s\n" % e)

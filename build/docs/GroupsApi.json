@@ -1,0 +1,324 @@
+{
+    "DELETE /api/v2/groups/{groupId}": {
+        "operationId": "delete_group",
+        "functionName": "delete_group",
+        "signature": "delete_group(group_id)",
+        "parameters": [
+            {
+                "name": "group_id",
+                "type": "str",
+                "required": "true"
+            }
+        ]
+    },
+    "DELETE /api/v2/groups/{groupId}/dynamicsettings": {
+        "operationId": "delete_group_dynamicsettings",
+        "functionName": "delete_group_dynamicsettings",
+        "signature": "delete_group_dynamicsettings(group_id)",
+        "parameters": [
+            {
+                "name": "group_id",
+                "type": "str",
+                "required": "true"
+            }
+        ]
+    },
+    "DELETE /api/v2/groups/{groupId}/members": {
+        "operationId": "delete_group_members",
+        "functionName": "delete_group_members",
+        "signature": "delete_group_members(group_id, ids)",
+        "parameters": [
+            {
+                "name": "group_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "ids",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "object"
+    },
+    "GET /api/v2/fieldconfig": {
+        "operationId": "get_fieldconfig",
+        "functionName": "get_fieldconfig",
+        "signature": "get_fieldconfig(type)",
+        "parameters": [
+            {
+                "name": "type",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "FieldConfig"
+    },
+    "GET /api/v2/groups/{groupId}": {
+        "operationId": "get_group",
+        "functionName": "get_group",
+        "signature": "get_group(group_id)",
+        "parameters": [
+            {
+                "name": "group_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "Group"
+    },
+    "GET /api/v2/groups/{groupId}/dynamicsettings": {
+        "operationId": "get_group_dynamicsettings",
+        "functionName": "get_group_dynamicsettings",
+        "signature": "get_group_dynamicsettings(group_id)",
+        "parameters": [
+            {
+                "name": "group_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "DynamicGroupDefinition"
+    },
+    "GET /api/v2/groups/{groupId}/individuals": {
+        "operationId": "get_group_individuals",
+        "functionName": "get_group_individuals",
+        "signature": "get_group_individuals(group_id)",
+        "parameters": [
+            {
+                "name": "group_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "UserEntityListing"
+    },
+    "GET /api/v2/groups/{groupId}/members": {
+        "operationId": "get_group_members",
+        "functionName": "get_group_members",
+        "signature": "get_group_members(group_id, page_size, page_number, sort_order, expand)",
+        "parameters": [
+            {
+                "name": "group_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "page_size",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "page_number",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "sort_order",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "expand",
+                "type": "list[str]",
+                "required": "false"
+            }
+        ],
+        "return": "UserEntityListing"
+    },
+    "GET /api/v2/groups/{groupId}/profile": {
+        "operationId": "get_group_profile",
+        "functionName": "get_group_profile",
+        "signature": "get_group_profile(group_id, fields)",
+        "parameters": [
+            {
+                "name": "group_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "fields",
+                "type": "str",
+                "required": "false"
+            }
+        ],
+        "return": "GroupProfile"
+    },
+    "GET /api/v2/groups": {
+        "operationId": "get_groups",
+        "functionName": "get_groups",
+        "signature": "get_groups(page_size, page_number, id, jabber_id, sort_order)",
+        "parameters": [
+            {
+                "name": "page_size",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "page_number",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "id",
+                "type": "list[str]",
+                "required": "false"
+            },
+            {
+                "name": "jabber_id",
+                "type": "list[str]",
+                "required": "false"
+            },
+            {
+                "name": "sort_order",
+                "type": "str",
+                "required": "false"
+            }
+        ],
+        "return": "GroupEntityListing"
+    },
+    "GET /api/v2/groups/search": {
+        "operationId": "get_groups_search",
+        "functionName": "get_groups_search",
+        "signature": "get_groups_search(q64, expand)",
+        "parameters": [
+            {
+                "name": "q64",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "expand",
+                "type": "list[str]",
+                "required": "false"
+            }
+        ],
+        "return": "GroupsSearchResponse"
+    },
+    "GET /api/v2/profiles/groups": {
+        "operationId": "get_profiles_groups",
+        "functionName": "get_profiles_groups",
+        "signature": "get_profiles_groups(page_size, page_number, id, jabber_id, sort_order)",
+        "parameters": [
+            {
+                "name": "page_size",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "page_number",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "id",
+                "type": "list[str]",
+                "required": "false"
+            },
+            {
+                "name": "jabber_id",
+                "type": "list[str]",
+                "required": "false"
+            },
+            {
+                "name": "sort_order",
+                "type": "str",
+                "required": "false"
+            }
+        ],
+        "return": "GroupProfileEntityListing"
+    },
+    "POST /api/v2/groups/{groupId}/members": {
+        "operationId": "post_group_members",
+        "functionName": "post_group_members",
+        "signature": "post_group_members(group_id, body)",
+        "parameters": [
+            {
+                "name": "group_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "GroupMembersUpdate",
+                "required": "true"
+            }
+        ],
+        "return": "object"
+    },
+    "POST /api/v2/groups": {
+        "operationId": "post_groups",
+        "functionName": "post_groups",
+        "signature": "post_groups(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "GroupCreate",
+                "required": "true"
+            }
+        ],
+        "return": "Group"
+    },
+    "POST /api/v2/groups/dynamicsettings/preview": {
+        "operationId": "post_groups_dynamicsettings_preview",
+        "functionName": "post_groups_dynamicsettings_preview",
+        "signature": "post_groups_dynamicsettings_preview(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "DynamicGroupQuery",
+                "required": "true"
+            }
+        ],
+        "return": "DynamicGroupQueryPreview"
+    },
+    "POST /api/v2/groups/search": {
+        "operationId": "post_groups_search",
+        "functionName": "post_groups_search",
+        "signature": "post_groups_search(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "GroupSearchRequest",
+                "required": "true"
+            }
+        ],
+        "return": "GroupsSearchResponse"
+    },
+    "PUT /api/v2/groups/{groupId}": {
+        "operationId": "put_group",
+        "functionName": "put_group",
+        "signature": "put_group(group_id, body)",
+        "parameters": [
+            {
+                "name": "group_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "GroupUpdate",
+                "required": "false"
+            }
+        ],
+        "return": "Group"
+    },
+    "PUT /api/v2/groups/{groupId}/dynamicsettings": {
+        "operationId": "put_group_dynamicsettings",
+        "functionName": "put_group_dynamicsettings",
+        "signature": "put_group_dynamicsettings(group_id, body)",
+        "parameters": [
+            {
+                "name": "group_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "DynamicGroupQuery",
+                "required": "true"
+            }
+        ]
+    }
+    
+}

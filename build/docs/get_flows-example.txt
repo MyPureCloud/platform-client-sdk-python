@@ -1,0 +1,36 @@
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'your_access_token'
+# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ArchitectApi();
+type = ['type_example'] # list[str] | Type (optional)
+page_number = 1 # int | Page number (optional) (default to 1)
+page_size = 25 # int | Page size (optional) (default to 25)
+sort_by = ''id'' # str | Sort by (optional) (default to 'id')
+sort_order = ''asc'' # str | Sort order (optional) (default to 'asc')
+id = ['id_example'] # list[str] | ID (optional)
+name = 'name_example' # str | Name (optional)
+description = 'description_example' # str | Description (optional)
+name_or_description = 'name_or_description_example' # str | Name or description (optional)
+publish_version_id = 'publish_version_id_example' # str | Publish version ID (optional)
+editable_by = 'editable_by_example' # str | Editable by (optional)
+locked_by = 'locked_by_example' # str | Locked by (optional)
+locked_by_client_id = 'locked_by_client_id_example' # str | Locked by client ID (optional)
+secure = 'secure_example' # str | Secure (optional)
+deleted = False # bool | Include deleted (optional) (default to False)
+include_schemas = False # bool | Include variable schemas (optional) (default to False)
+published_after = '2015-01-01T12:00:00-0600, 2015-01-01T18:00:00Z, 2015-01-01T12:00:00.000-0600, 2015-01-01T18:00:00.000Z, 2015-01-01' # str | Published after (optional)
+published_before = '2015-01-01T12:00:00-0600, 2015-01-01T18:00:00Z, 2015-01-01T12:00:00.000-0600, 2015-01-01T18:00:00.000Z, 2015-01-01' # str | Published before (optional)
+division_id = ['division_id_example'] # list[str] | division ID(s) (optional)
+
+try:
+    # Get a pageable list of flows, filtered by query parameters
+    api_response = api_instance.get_flows(type=type, page_number=page_number, page_size=page_size, sort_by=sort_by, sort_order=sort_order, id=id, name=name, description=description, name_or_description=name_or_description, publish_version_id=publish_version_id, editable_by=editable_by, locked_by=locked_by, locked_by_client_id=locked_by_client_id, secure=secure, deleted=deleted, include_schemas=include_schemas, published_after=published_after, published_before=published_before, division_id=division_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ArchitectApi->get_flows: %s\n" % e)

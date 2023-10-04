@@ -1,0 +1,18 @@
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'your_access_token'
+# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.UsersApi();
+user_id = 'user_id_example' # str | User ID
+force = False # bool | Resend the invitation even if one is already outstanding (optional) (default to False)
+
+try:
+    # Send an activation email to the user
+    api_instance.post_user_invite(user_id, force=force)
+except ApiException as e:
+    print("Exception when calling UsersApi->post_user_invite: %s\n" % e)

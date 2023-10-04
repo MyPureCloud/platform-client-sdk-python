@@ -1,0 +1,153 @@
+{
+    "GET /api/v2/infrastructureascode/accelerators/{acceleratorId}": {
+        "operationId": "get_infrastructureascode_accelerator",
+        "functionName": "get_infrastructureascode_accelerator",
+        "signature": "get_infrastructureascode_accelerator(accelerator_id, preferred_language)",
+        "parameters": [
+            {
+                "name": "accelerator_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "preferred_language",
+                "type": "str",
+                "required": "false"
+            }
+        ],
+        "return": "AcceleratorSpecification"
+    },
+    "GET /api/v2/infrastructureascode/accelerators": {
+        "operationId": "get_infrastructureascode_accelerators",
+        "functionName": "get_infrastructureascode_accelerators",
+        "signature": "get_infrastructureascode_accelerators(page_size, page_number, sort_by, sort_order, name, description, origin, type, classification, tags)",
+        "parameters": [
+            {
+                "name": "page_size",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "page_number",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "sort_by",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "sort_order",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "name",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "description",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "origin",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "type",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "classification",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "tags",
+                "type": "str",
+                "required": "false"
+            }
+        ],
+        "return": "AcceleratorList"
+    },
+    "GET /api/v2/infrastructureascode/jobs/{jobId}": {
+        "operationId": "get_infrastructureascode_job",
+        "functionName": "get_infrastructureascode_job",
+        "signature": "get_infrastructureascode_job(job_id, details)",
+        "parameters": [
+            {
+                "name": "job_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "details",
+                "type": "bool",
+                "required": "false"
+            }
+        ],
+        "return": "InfrastructureascodeJob"
+    },
+    "GET /api/v2/infrastructureascode/jobs": {
+        "operationId": "get_infrastructureascode_jobs",
+        "functionName": "get_infrastructureascode_jobs",
+        "signature": "get_infrastructureascode_jobs(max_results, include_errors, sort_by, sort_order, accelerator_id, submitted_by, status)",
+        "parameters": [
+            {
+                "name": "max_results",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "include_errors",
+                "type": "bool",
+                "required": "false"
+            },
+            {
+                "name": "sort_by",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "sort_order",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "accelerator_id",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "submitted_by",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "status",
+                "type": "str",
+                "required": "false"
+            }
+        ],
+        "return": "InfrastructureascodeJob"
+    },
+    "POST /api/v2/infrastructureascode/jobs": {
+        "operationId": "post_infrastructureascode_jobs",
+        "functionName": "post_infrastructureascode_jobs",
+        "signature": "post_infrastructureascode_jobs(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "AcceleratorInput",
+                "required": "true"
+            }
+        ],
+        "return": "InfrastructureascodeJob"
+    }
+    
+}

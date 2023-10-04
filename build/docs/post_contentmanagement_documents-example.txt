@@ -1,0 +1,21 @@
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'your_access_token'
+# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ContentManagementApi();
+body = PureCloudPlatformClientV2.DocumentUpload() # DocumentUpload | Document
+copy_source = 'copy_source_example' # str | Copy a document within a workspace or to a new workspace. Provide a document ID as the copy source. (optional)
+move_source = 'move_source_example' # str | Move a document to a new workspace. Provide a document ID as the move source. (optional)
+override = True # bool | Override any lock on the source document (optional)
+
+try:
+    # Add a document.
+    api_response = api_instance.post_contentmanagement_documents(body, copy_source=copy_source, move_source=move_source, override=override)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ContentManagementApi->post_contentmanagement_documents: %s\n" % e)

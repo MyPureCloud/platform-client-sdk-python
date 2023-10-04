@@ -1,0 +1,231 @@
+{
+    "GET /api/v2/fieldconfig": {
+        "operationId": "get_fieldconfig",
+        "functionName": "get_fieldconfig",
+        "signature": "get_fieldconfig(type)",
+        "parameters": [
+            {
+                "name": "type",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "FieldConfig"
+    },
+    "GET /api/v2/organizations/authentication/settings": {
+        "operationId": "get_organizations_authentication_settings",
+        "functionName": "get_organizations_authentication_settings",
+        "signature": "get_organizations_authentication_settings()",
+        
+        "return": "OrgAuthSettings"
+    },
+    "GET /api/v2/organizations/embeddedintegration": {
+        "operationId": "get_organizations_embeddedintegration",
+        "functionName": "get_organizations_embeddedintegration",
+        "signature": "get_organizations_embeddedintegration()",
+        
+        "return": "EmbeddedIntegration"
+    },
+    "GET /api/v2/organizations/ipaddressauthentication": {
+        "operationId": "get_organizations_ipaddressauthentication",
+        "functionName": "get_organizations_ipaddressauthentication",
+        "signature": "get_organizations_ipaddressauthentication()",
+        
+        "return": "IpAddressAuthentication"
+    },
+    "GET /api/v2/organizations/limits/changerequests/{requestId}": {
+        "operationId": "get_organizations_limits_changerequest",
+        "functionName": "get_organizations_limits_changerequest",
+        "signature": "get_organizations_limits_changerequest(request_id)",
+        "parameters": [
+            {
+                "name": "request_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "LimitChangeRequestDetails"
+    },
+    "GET /api/v2/organizations/limits/changerequests": {
+        "operationId": "get_organizations_limits_changerequests",
+        "functionName": "get_organizations_limits_changerequests",
+        "signature": "get_organizations_limits_changerequests(after, before, status, page_size, expand)",
+        "parameters": [
+            {
+                "name": "after",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "before",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "status",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "page_size",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "expand",
+                "type": "list[str]",
+                "required": "false"
+            }
+        ],
+        "return": "LimitChangeRequestsEntityListing"
+    },
+    "GET /api/v2/organizations/limits/docs": {
+        "operationId": "get_organizations_limits_docs",
+        "functionName": "get_organizations_limits_docs",
+        "signature": "get_organizations_limits_docs()",
+        
+        "return": "UrlResponse"
+    },
+    "GET /api/v2/organizations/limits/namespaces/{namespaceName}": {
+        "operationId": "get_organizations_limits_namespace",
+        "functionName": "get_organizations_limits_namespace",
+        "signature": "get_organizations_limits_namespace(namespace_name)",
+        "parameters": [
+            {
+                "name": "namespace_name",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "LimitsEntityListing"
+    },
+    "GET /api/v2/organizations/limits/namespaces/{namespaceName}/defaults": {
+        "operationId": "get_organizations_limits_namespace_defaults",
+        "functionName": "get_organizations_limits_namespace_defaults",
+        "signature": "get_organizations_limits_namespace_defaults(namespace_name)",
+        "parameters": [
+            {
+                "name": "namespace_name",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "LimitsEntityListing"
+    },
+    "GET /api/v2/organizations/limits/namespaces": {
+        "operationId": "get_organizations_limits_namespaces",
+        "functionName": "get_organizations_limits_namespaces",
+        "signature": "get_organizations_limits_namespaces(page_size, page_number)",
+        "parameters": [
+            {
+                "name": "page_size",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "page_number",
+                "type": "int",
+                "required": "false"
+            }
+        ],
+        "return": "object"
+    },
+    "GET /api/v2/organizations/me": {
+        "operationId": "get_organizations_me",
+        "functionName": "get_organizations_me",
+        "signature": "get_organizations_me()",
+        
+        "return": "Organization"
+    },
+    "GET /api/v2/organizations/whitelist": {
+        "operationId": "get_organizations_whitelist",
+        "functionName": "get_organizations_whitelist",
+        "signature": "get_organizations_whitelist()",
+        
+        "return": "OrgWhitelistSettings"
+    },
+    "PATCH /api/v2/organizations/authentication/settings": {
+        "operationId": "patch_organizations_authentication_settings",
+        "functionName": "patch_organizations_authentication_settings",
+        "signature": "patch_organizations_authentication_settings(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "OrgAuthSettings",
+                "required": "true"
+            }
+        ],
+        "return": "OrgAuthSettings"
+    },
+    "PATCH /api/v2/organizations/features/{featureName}": {
+        "operationId": "patch_organizations_feature",
+        "functionName": "patch_organizations_feature",
+        "signature": "patch_organizations_feature(feature_name, enabled)",
+        "parameters": [
+            {
+                "name": "feature_name",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "enabled",
+                "type": "FeatureState",
+                "required": "true"
+            }
+        ],
+        "return": "OrganizationFeatures"
+    },
+    "PUT /api/v2/organizations/embeddedintegration": {
+        "operationId": "put_organizations_embeddedintegration",
+        "functionName": "put_organizations_embeddedintegration",
+        "signature": "put_organizations_embeddedintegration(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "EmbeddedIntegration",
+                "required": "true"
+            }
+        ],
+        "return": "EmbeddedIntegration"
+    },
+    "PUT /api/v2/organizations/ipaddressauthentication": {
+        "operationId": "put_organizations_ipaddressauthentication",
+        "functionName": "put_organizations_ipaddressauthentication",
+        "signature": "put_organizations_ipaddressauthentication(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "IpAddressAuthentication",
+                "required": "true"
+            }
+        ],
+        "return": "IpAddressAuthentication"
+    },
+    "PUT /api/v2/organizations/me": {
+        "operationId": "put_organizations_me",
+        "functionName": "put_organizations_me",
+        "signature": "put_organizations_me(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "Organization",
+                "required": "false"
+            }
+        ],
+        "return": "Organization"
+    },
+    "PUT /api/v2/organizations/whitelist": {
+        "operationId": "put_organizations_whitelist",
+        "functionName": "put_organizations_whitelist",
+        "signature": "put_organizations_whitelist(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "OrgWhitelistSettings",
+                "required": "true"
+            }
+        ],
+        "return": "OrgWhitelistSettings"
+    }
+    
+}

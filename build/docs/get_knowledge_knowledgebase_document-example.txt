@@ -1,0 +1,21 @@
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'your_access_token'
+# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.KnowledgeApi();
+knowledge_base_id = 'knowledge_base_id_example' # str | Knowledge base ID.
+document_id = 'document_id_example' # str | Document ID.
+expand = ['expand_example'] # list[str] | The specified entity attributes will be filled. Comma separated values expected. Max No. of variations that can be returned on expand is 20. (optional)
+state = 'state_example' # str | \"when state is \"Draft\", draft version of the document is returned,otherwise by default published version is returned in the response. (optional)
+
+try:
+    # Get document.
+    api_response = api_instance.get_knowledge_knowledgebase_document(knowledge_base_id, document_id, expand=expand, state=state)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling KnowledgeApi->get_knowledge_knowledgebase_document: %s\n" % e)

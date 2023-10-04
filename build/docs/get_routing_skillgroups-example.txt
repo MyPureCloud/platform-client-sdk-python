@@ -1,0 +1,21 @@
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'your_access_token'
+# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RoutingApi();
+page_size = 25 # int | Page size (optional) (default to 25)
+name = 'name_example' # str | Return only skill group names whose names start with this value (case-insensitive matching) (optional)
+after = 'after_example' # str | The cursor that points to the next item (optional)
+before = 'before_example' # str | The cursor that points to the previous item (optional)
+
+try:
+    # Get skill group listing
+    api_response = api_instance.get_routing_skillgroups(page_size=page_size, name=name, after=after, before=before)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling RoutingApi->get_routing_skillgroups: %s\n" % e)

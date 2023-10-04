@@ -1,0 +1,20 @@
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'your_access_token'
+# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.NotificationsApi();
+channel_id = 'channel_id_example' # str | Channel ID
+body = [PureCloudPlatformClientV2.ChannelTopic()] # list[ChannelTopic] | Body
+ignore_errors = False # bool | Optionally prevent throwing of errors for failed permissions checks. (optional) (default to False)
+
+try:
+    # Replace the current list of subscriptions with a new list.
+    api_response = api_instance.put_notifications_channel_subscriptions(channel_id, body, ignore_errors=ignore_errors)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling NotificationsApi->put_notifications_channel_subscriptions: %s\n" % e)

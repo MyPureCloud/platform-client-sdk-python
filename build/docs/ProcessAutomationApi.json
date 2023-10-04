@@ -1,0 +1,156 @@
+{
+    "DELETE /api/v2/processautomation/triggers/{triggerId}": {
+        "operationId": "delete_processautomation_trigger",
+        "functionName": "delete_processautomation_trigger",
+        "signature": "delete_processautomation_trigger(trigger_id)",
+        "parameters": [
+            {
+                "name": "trigger_id",
+                "type": "str",
+                "required": "true"
+            }
+        ]
+    },
+    "GET /api/v2/processautomation/triggers/{triggerId}": {
+        "operationId": "get_processautomation_trigger",
+        "functionName": "get_processautomation_trigger",
+        "signature": "get_processautomation_trigger(trigger_id)",
+        "parameters": [
+            {
+                "name": "trigger_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "Trigger"
+    },
+    "GET /api/v2/processautomation/triggers": {
+        "operationId": "get_processautomation_triggers",
+        "functionName": "get_processautomation_triggers",
+        "signature": "get_processautomation_triggers(before, after, page_size, topic_name, enabled, has_delay_by)",
+        "parameters": [
+            {
+                "name": "before",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "after",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "page_size",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "topic_name",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "enabled",
+                "type": "bool",
+                "required": "false"
+            },
+            {
+                "name": "has_delay_by",
+                "type": "bool",
+                "required": "false"
+            }
+        ],
+        "return": "TriggerEntityListing"
+    },
+    "GET /api/v2/processautomation/triggers/topics": {
+        "operationId": "get_processautomation_triggers_topics",
+        "functionName": "get_processautomation_triggers_topics",
+        "signature": "get_processautomation_triggers_topics(before, after, page_size)",
+        "parameters": [
+            {
+                "name": "before",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "after",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "page_size",
+                "type": "str",
+                "required": "false"
+            }
+        ],
+        "return": "TopicCursorEntityListing"
+    },
+    "POST /api/v2/processautomation/triggers/{triggerId}/test": {
+        "operationId": "post_processautomation_trigger_test",
+        "functionName": "post_processautomation_trigger_test",
+        "signature": "post_processautomation_trigger_test(trigger_id, body)",
+        "parameters": [
+            {
+                "name": "trigger_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "str",
+                "required": "false"
+            }
+        ],
+        "return": "TestModeResults"
+    },
+    "POST /api/v2/processautomation/triggers": {
+        "operationId": "post_processautomation_triggers",
+        "functionName": "post_processautomation_triggers",
+        "signature": "post_processautomation_triggers(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "CreateTriggerRequest",
+                "required": "true"
+            }
+        ],
+        "return": "Trigger"
+    },
+    "POST /api/v2/processautomation/triggers/topics/{topicName}/test": {
+        "operationId": "post_processautomation_triggers_topic_test",
+        "functionName": "post_processautomation_triggers_topic_test",
+        "signature": "post_processautomation_triggers_topic_test(topic_name, body)",
+        "parameters": [
+            {
+                "name": "topic_name",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "str",
+                "required": "false"
+            }
+        ],
+        "return": "TestModeEventResults"
+    },
+    "PUT /api/v2/processautomation/triggers/{triggerId}": {
+        "operationId": "put_processautomation_trigger",
+        "functionName": "put_processautomation_trigger",
+        "signature": "put_processautomation_trigger(trigger_id, body)",
+        "parameters": [
+            {
+                "name": "trigger_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "UpdateTriggerRequest",
+                "required": "true"
+            }
+        ],
+        "return": "Trigger"
+    }
+    
+}

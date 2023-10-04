@@ -1,0 +1,19 @@
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'your_access_token'
+# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.BillingApi();
+start_date = '2013-10-20T19:20:30+01:00' # datetime | The period start date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+end_date = '2013-10-20T19:20:30+01:00' # datetime | The period end date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+try:
+    # Get a report of the billable license usages
+    api_response = api_instance.get_billing_reports_billableusage(start_date, end_date)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling BillingApi->get_billing_reports_billableusage: %s\n" % e)

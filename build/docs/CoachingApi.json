@@ -1,0 +1,424 @@
+{
+    "DELETE /api/v2/coaching/appointments/{appointmentId}": {
+        "operationId": "delete_coaching_appointment",
+        "functionName": "delete_coaching_appointment",
+        "signature": "delete_coaching_appointment(appointment_id)",
+        "parameters": [
+            {
+                "name": "appointment_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "CoachingAppointmentReference"
+    },
+    "DELETE /api/v2/coaching/appointments/{appointmentId}/annotations/{annotationId}": {
+        "operationId": "delete_coaching_appointment_annotation",
+        "functionName": "delete_coaching_appointment_annotation",
+        "signature": "delete_coaching_appointment_annotation(appointment_id, annotation_id)",
+        "parameters": [
+            {
+                "name": "appointment_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "annotation_id",
+                "type": "str",
+                "required": "true"
+            }
+        ]
+    },
+    "GET /api/v2/coaching/appointments/{appointmentId}": {
+        "operationId": "get_coaching_appointment",
+        "functionName": "get_coaching_appointment",
+        "signature": "get_coaching_appointment(appointment_id)",
+        "parameters": [
+            {
+                "name": "appointment_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "CoachingAppointmentResponse"
+    },
+    "GET /api/v2/coaching/appointments/{appointmentId}/annotations/{annotationId}": {
+        "operationId": "get_coaching_appointment_annotation",
+        "functionName": "get_coaching_appointment_annotation",
+        "signature": "get_coaching_appointment_annotation(appointment_id, annotation_id)",
+        "parameters": [
+            {
+                "name": "appointment_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "annotation_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "CoachingAnnotation"
+    },
+    "GET /api/v2/coaching/appointments/{appointmentId}/annotations": {
+        "operationId": "get_coaching_appointment_annotations",
+        "functionName": "get_coaching_appointment_annotations",
+        "signature": "get_coaching_appointment_annotations(appointment_id, page_number, page_size)",
+        "parameters": [
+            {
+                "name": "appointment_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "page_number",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "page_size",
+                "type": "int",
+                "required": "false"
+            }
+        ],
+        "return": "CoachingAnnotationList"
+    },
+    "GET /api/v2/coaching/appointments/{appointmentId}/statuses": {
+        "operationId": "get_coaching_appointment_statuses",
+        "functionName": "get_coaching_appointment_statuses",
+        "signature": "get_coaching_appointment_statuses(appointment_id, page_number, page_size)",
+        "parameters": [
+            {
+                "name": "appointment_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "page_number",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "page_size",
+                "type": "int",
+                "required": "false"
+            }
+        ],
+        "return": "CoachingAppointmentStatusResponseList"
+    },
+    "GET /api/v2/coaching/appointments": {
+        "operationId": "get_coaching_appointments",
+        "functionName": "get_coaching_appointments",
+        "signature": "get_coaching_appointments(user_ids, interval, page_number, page_size, statuses, facilitator_ids, sort_order, relationships, completion_interval, overdue, interval_condition)",
+        "parameters": [
+            {
+                "name": "user_ids",
+                "type": "list[str]",
+                "required": "true"
+            },
+            {
+                "name": "interval",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "page_number",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "page_size",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "statuses",
+                "type": "list[str]",
+                "required": "false"
+            },
+            {
+                "name": "facilitator_ids",
+                "type": "list[str]",
+                "required": "false"
+            },
+            {
+                "name": "sort_order",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "relationships",
+                "type": "list[str]",
+                "required": "false"
+            },
+            {
+                "name": "completion_interval",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "overdue",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "interval_condition",
+                "type": "str",
+                "required": "false"
+            }
+        ],
+        "return": "CoachingAppointmentResponseList"
+    },
+    "GET /api/v2/coaching/appointments/me": {
+        "operationId": "get_coaching_appointments_me",
+        "functionName": "get_coaching_appointments_me",
+        "signature": "get_coaching_appointments_me(interval, page_number, page_size, statuses, facilitator_ids, sort_order, relationships, completion_interval, overdue, interval_condition)",
+        "parameters": [
+            {
+                "name": "interval",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "page_number",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "page_size",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "statuses",
+                "type": "list[str]",
+                "required": "false"
+            },
+            {
+                "name": "facilitator_ids",
+                "type": "list[str]",
+                "required": "false"
+            },
+            {
+                "name": "sort_order",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "relationships",
+                "type": "list[str]",
+                "required": "false"
+            },
+            {
+                "name": "completion_interval",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "overdue",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "interval_condition",
+                "type": "str",
+                "required": "false"
+            }
+        ],
+        "return": "CoachingAppointmentResponseList"
+    },
+    "GET /api/v2/coaching/notifications/{notificationId}": {
+        "operationId": "get_coaching_notification",
+        "functionName": "get_coaching_notification",
+        "signature": "get_coaching_notification(notification_id, expand)",
+        "parameters": [
+            {
+                "name": "notification_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "expand",
+                "type": "list[str]",
+                "required": "false"
+            }
+        ],
+        "return": "CoachingNotification"
+    },
+    "GET /api/v2/coaching/notifications": {
+        "operationId": "get_coaching_notifications",
+        "functionName": "get_coaching_notifications",
+        "signature": "get_coaching_notifications(page_number, page_size, expand)",
+        "parameters": [
+            {
+                "name": "page_number",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "page_size",
+                "type": "int",
+                "required": "false"
+            },
+            {
+                "name": "expand",
+                "type": "list[str]",
+                "required": "false"
+            }
+        ],
+        "return": "CoachingNotificationList"
+    },
+    "PATCH /api/v2/coaching/appointments/{appointmentId}": {
+        "operationId": "patch_coaching_appointment",
+        "functionName": "patch_coaching_appointment",
+        "signature": "patch_coaching_appointment(appointment_id, body)",
+        "parameters": [
+            {
+                "name": "appointment_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "UpdateCoachingAppointmentRequest",
+                "required": "true"
+            }
+        ],
+        "return": "CoachingAppointmentResponse"
+    },
+    "PATCH /api/v2/coaching/appointments/{appointmentId}/annotations/{annotationId}": {
+        "operationId": "patch_coaching_appointment_annotation",
+        "functionName": "patch_coaching_appointment_annotation",
+        "signature": "patch_coaching_appointment_annotation(appointment_id, annotation_id, body)",
+        "parameters": [
+            {
+                "name": "appointment_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "annotation_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "CoachingAnnotation",
+                "required": "true"
+            }
+        ],
+        "return": "CoachingAnnotation"
+    },
+    "PATCH /api/v2/coaching/appointments/{appointmentId}/status": {
+        "operationId": "patch_coaching_appointment_status",
+        "functionName": "patch_coaching_appointment_status",
+        "signature": "patch_coaching_appointment_status(appointment_id, body)",
+        "parameters": [
+            {
+                "name": "appointment_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "CoachingAppointmentStatusRequest",
+                "required": "true"
+            }
+        ],
+        "return": "CoachingAppointmentStatusResponse"
+    },
+    "PATCH /api/v2/coaching/notifications/{notificationId}": {
+        "operationId": "patch_coaching_notification",
+        "functionName": "patch_coaching_notification",
+        "signature": "patch_coaching_notification(notification_id, body)",
+        "parameters": [
+            {
+                "name": "notification_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "CoachingNotification",
+                "required": "true"
+            }
+        ],
+        "return": "CoachingNotification"
+    },
+    "POST /api/v2/coaching/appointments/{appointmentId}/annotations": {
+        "operationId": "post_coaching_appointment_annotations",
+        "functionName": "post_coaching_appointment_annotations",
+        "signature": "post_coaching_appointment_annotations(appointment_id, body)",
+        "parameters": [
+            {
+                "name": "appointment_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "CoachingAnnotationCreateRequest",
+                "required": "true"
+            }
+        ],
+        "return": "CoachingAnnotation"
+    },
+    "POST /api/v2/coaching/appointments/{appointmentId}/conversations": {
+        "operationId": "post_coaching_appointment_conversations",
+        "functionName": "post_coaching_appointment_conversations",
+        "signature": "post_coaching_appointment_conversations(appointment_id, body)",
+        "parameters": [
+            {
+                "name": "appointment_id",
+                "type": "str",
+                "required": "true"
+            },
+            {
+                "name": "body",
+                "type": "AddConversationRequest",
+                "required": "true"
+            }
+        ],
+        "return": "AddConversationResponse"
+    },
+    "POST /api/v2/coaching/appointments": {
+        "operationId": "post_coaching_appointments",
+        "functionName": "post_coaching_appointments",
+        "signature": "post_coaching_appointments(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "CreateCoachingAppointmentRequest",
+                "required": "true"
+            }
+        ],
+        "return": "CoachingAppointmentResponse"
+    },
+    "POST /api/v2/coaching/appointments/aggregates/query": {
+        "operationId": "post_coaching_appointments_aggregates_query",
+        "functionName": "post_coaching_appointments_aggregates_query",
+        "signature": "post_coaching_appointments_aggregates_query(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "CoachingAppointmentAggregateRequest",
+                "required": "true"
+            }
+        ],
+        "return": "CoachingAppointmentAggregateResponse"
+    },
+    "POST /api/v2/coaching/scheduleslots/query": {
+        "operationId": "post_coaching_scheduleslots_query",
+        "functionName": "post_coaching_scheduleslots_query",
+        "signature": "post_coaching_scheduleslots_query(body)",
+        "parameters": [
+            {
+                "name": "body",
+                "type": "CoachingSlotsRequest",
+                "required": "true"
+            }
+        ],
+        "return": "CoachingSlotsResponse"
+    }
+    
+}

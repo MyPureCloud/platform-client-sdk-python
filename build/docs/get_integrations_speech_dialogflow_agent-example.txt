@@ -1,0 +1,18 @@
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'your_access_token'
+# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.IntegrationsApi();
+agent_id = 'agent_id_example' # str | The agent ID
+
+try:
+    # Get details about a Dialogflow agent
+    api_response = api_instance.get_integrations_speech_dialogflow_agent(agent_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling IntegrationsApi->get_integrations_speech_dialogflow_agent: %s\n" % e)

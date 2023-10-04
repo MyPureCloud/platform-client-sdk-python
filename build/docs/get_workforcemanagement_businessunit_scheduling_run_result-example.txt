@@ -1,0 +1,21 @@
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'your_access_token'
+# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi();
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+run_id = 'run_id_example' # str | The ID of the schedule run
+management_unit_ids = ['management_unit_ids_example'] # list[str] | The IDs of the management units for which to fetch the reschedule results
+expand = ['expand_example'] # list[str] | The fields to expand. Omitting will return an empty response
+
+try:
+    # Get the result of a rescheduling operation
+    api_response = api_instance.get_workforcemanagement_businessunit_scheduling_run_result(business_unit_id, run_id, management_unit_ids, expand)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_scheduling_run_result: %s\n" % e)

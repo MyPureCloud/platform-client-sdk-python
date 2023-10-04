@@ -1,0 +1,74 @@
+{
+    "GET /api/v2/telephony/mediaregions": {
+        "operationId": "get_telephony_mediaregions",
+        "functionName": "get_telephony_mediaregions",
+        "signature": "get_telephony_mediaregions()",
+        
+        "return": "MediaRegions"
+    },
+    "GET /api/v2/telephony/siptraces": {
+        "operationId": "get_telephony_siptraces",
+        "functionName": "get_telephony_siptraces",
+        "signature": "get_telephony_siptraces(date_start, date_end, call_id, to_user, from_user, conversation_id)",
+        "parameters": [
+            {
+                "name": "date_start",
+                "type": "datetime",
+                "required": "true"
+            },
+            {
+                "name": "date_end",
+                "type": "datetime",
+                "required": "true"
+            },
+            {
+                "name": "call_id",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "to_user",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "from_user",
+                "type": "str",
+                "required": "false"
+            },
+            {
+                "name": "conversation_id",
+                "type": "str",
+                "required": "false"
+            }
+        ],
+        "return": "SipSearchResult"
+    },
+    "GET /api/v2/telephony/siptraces/download/{downloadId}": {
+        "operationId": "get_telephony_siptraces_download_download_id",
+        "functionName": "get_telephony_siptraces_download_download_id",
+        "signature": "get_telephony_siptraces_download_download_id(download_id)",
+        "parameters": [
+            {
+                "name": "download_id",
+                "type": "str",
+                "required": "true"
+            }
+        ],
+        "return": "SignedUrlResponse"
+    },
+    "POST /api/v2/telephony/siptraces/download": {
+        "operationId": "post_telephony_siptraces_download",
+        "functionName": "post_telephony_siptraces_download",
+        "signature": "post_telephony_siptraces_download(sip_search_public_request)",
+        "parameters": [
+            {
+                "name": "sip_search_public_request",
+                "type": "SIPSearchPublicRequest",
+                "required": "true"
+            }
+        ],
+        "return": "SipDownloadResponse"
+    }
+    
+}
