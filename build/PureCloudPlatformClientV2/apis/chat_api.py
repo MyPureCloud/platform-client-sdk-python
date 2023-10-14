@@ -1876,7 +1876,7 @@ class ChatApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_chats_rooms(self, **kwargs) -> 'CreateRoomResponse':
+    def post_chats_rooms(self, body: 'CreateRoomRequest', **kwargs) -> 'CreateRoomResponse':
         """
         Create an adhoc room
         
@@ -1888,11 +1888,11 @@ class ChatApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.post_chats_rooms(callback=callback_function)
+        >>> thread = api.post_chats_rooms(body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param CreateRoomRequest body: Room properties
+        :param CreateRoomRequest body: Room properties (required)
         :return: CreateRoomResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1911,6 +1911,9 @@ class ChatApi(object):
             params[key] = val
         del params['kwargs']
 
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_chats_rooms`")
 
 
         resource_path = '/api/v2/chats/rooms'.replace('{format}', 'json')

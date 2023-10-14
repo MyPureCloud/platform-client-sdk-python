@@ -33,7 +33,6 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
-    from . import DirectRoutingCallMediaSettings
     from . import DirectRoutingMediaSettings
 
 class DirectRouting(object):
@@ -51,7 +50,7 @@ class DirectRouting(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'call_media_settings': 'DirectRoutingCallMediaSettings',
+            'call_media_settings': 'DirectRoutingMediaSettings',
             'email_media_settings': 'DirectRoutingMediaSettings',
             'message_media_settings': 'DirectRoutingMediaSettings',
             'backup_queue_id': 'str',
@@ -76,24 +75,24 @@ class DirectRouting(object):
         self._agent_wait_seconds = None
 
     @property
-    def call_media_settings(self) -> 'DirectRoutingCallMediaSettings':
+    def call_media_settings(self) -> 'DirectRoutingMediaSettings':
         """
         Gets the call_media_settings of this DirectRouting.
         Direct Routing Settings specific to Call media.
 
         :return: The call_media_settings of this DirectRouting.
-        :rtype: DirectRoutingCallMediaSettings
+        :rtype: DirectRoutingMediaSettings
         """
         return self._call_media_settings
 
     @call_media_settings.setter
-    def call_media_settings(self, call_media_settings: 'DirectRoutingCallMediaSettings') -> None:
+    def call_media_settings(self, call_media_settings: 'DirectRoutingMediaSettings') -> None:
         """
         Sets the call_media_settings of this DirectRouting.
         Direct Routing Settings specific to Call media.
 
         :param call_media_settings: The call_media_settings of this DirectRouting.
-        :type: DirectRoutingCallMediaSettings
+        :type: DirectRoutingMediaSettings
         """
         
 

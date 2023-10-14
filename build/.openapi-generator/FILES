@@ -557,6 +557,8 @@ PureCloudPlatformClientV2/models/callback_disconnect_identifier.py
 PureCloudPlatformClientV2/models/callback_identifier.py
 PureCloudPlatformClientV2/models/callback_media_participant.py
 PureCloudPlatformClientV2/models/callback_media_settings.py
+PureCloudPlatformClientV2/models/callheader.py
+PureCloudPlatformClientV2/models/callmessage.py
 PureCloudPlatformClientV2/models/campaign.py
 PureCloudPlatformClientV2/models/campaign_diagnostics.py
 PureCloudPlatformClientV2/models/campaign_division_view.py
@@ -1238,7 +1240,6 @@ PureCloudPlatformClientV2/models/digital_rule_set.py
 PureCloudPlatformClientV2/models/digital_rule_set_entity_listing.py
 PureCloudPlatformClientV2/models/digits.py
 PureCloudPlatformClientV2/models/direct_routing.py
-PureCloudPlatformClientV2/models/direct_routing_call_media_settings.py
 PureCloudPlatformClientV2/models/direct_routing_media_settings.py
 PureCloudPlatformClientV2/models/directory_user_devices_listing.py
 PureCloudPlatformClientV2/models/disallowed_entity_learning_assignment_item.py
@@ -2223,6 +2224,7 @@ PureCloudPlatformClientV2/models/media_rtp_statistics.py
 PureCloudPlatformClientV2/models/media_settings.py
 PureCloudPlatformClientV2/models/media_statistics.py
 PureCloudPlatformClientV2/models/media_statistics_listing.py
+PureCloudPlatformClientV2/models/media_statistics_trunk_info.py
 PureCloudPlatformClientV2/models/media_summary.py
 PureCloudPlatformClientV2/models/media_summary_detail.py
 PureCloudPlatformClientV2/models/media_transcription.py
@@ -4605,6 +4607,8 @@ docs/CallbackDisconnectIdentifier.md
 docs/CallbackIdentifier.md
 docs/CallbackMediaParticipant.md
 docs/CallbackMediaSettings.md
+docs/Callheader.md
+docs/Callmessage.md
 docs/Campaign.md
 docs/CampaignDiagnostics.md
 docs/CampaignDivisionView.md
@@ -5298,7 +5302,6 @@ docs/DigitalRuleSet.md
 docs/DigitalRuleSetEntityListing.md
 docs/Digits.md
 docs/DirectRouting.md
-docs/DirectRoutingCallMediaSettings.md
 docs/DirectRoutingMediaSettings.md
 docs/DirectoryUserDevicesListing.md
 docs/DisallowedEntityLearningAssignmentItem.md
@@ -6325,6 +6328,7 @@ docs/MediaRtpStatistics.md
 docs/MediaSettings.md
 docs/MediaStatistics.md
 docs/MediaStatisticsListing.md
+docs/MediaStatisticsTrunkInfo.md
 docs/MediaSummary.md
 docs/MediaSummaryDetail.md
 docs/MediaTranscription.md
@@ -9485,6 +9489,8 @@ docs/get_telephony_providers_edges_trunkbasesettings_template-example.txt
 docs/get_telephony_providers_edges_trunks-example.txt
 docs/get_telephony_providers_edges_trunks_metrics-example.txt
 docs/get_telephony_providers_edges_trunkswithrecording-example.txt
+docs/get_telephony_sipmessages_conversation-example.txt
+docs/get_telephony_sipmessages_conversation_headers-example.txt
 docs/get_telephony_siptraces-example.txt
 docs/get_telephony_siptraces_download_download_id-example.txt
 docs/get_textbots_bots_search-example.txt

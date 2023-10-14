@@ -32,8 +32,6 @@ from typing import TYPE_CHECKING
 from typing import List
 from typing import Dict
 
-if TYPE_CHECKING:
-    from . import AddressableEntityRef
 
 class DirectRoutingMediaSettings(object):
     """
@@ -50,65 +48,38 @@ class DirectRoutingMediaSettings(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'enabled': 'bool',
-            'inbound_flow': 'AddressableEntityRef'
+            'use_agent_address_outbound': 'bool'
         }
 
         self.attribute_map = {
-            'enabled': 'enabled',
-            'inbound_flow': 'inboundFlow'
+            'use_agent_address_outbound': 'useAgentAddressOutbound'
         }
 
-        self._enabled = None
-        self._inbound_flow = None
+        self._use_agent_address_outbound = None
 
     @property
-    def enabled(self) -> bool:
+    def use_agent_address_outbound(self) -> bool:
         """
-        Gets the enabled of this DirectRoutingMediaSettings.
-        Toggle that enables Direct Routing for this media type.
+        Gets the use_agent_address_outbound of this DirectRoutingMediaSettings.
+        Toggle that enables using an agent's Direct Routing address outbound on behalf of queue for this media type.
 
-        :return: The enabled of this DirectRoutingMediaSettings.
+        :return: The use_agent_address_outbound of this DirectRoutingMediaSettings.
         :rtype: bool
         """
-        return self._enabled
+        return self._use_agent_address_outbound
 
-    @enabled.setter
-    def enabled(self, enabled: bool) -> None:
+    @use_agent_address_outbound.setter
+    def use_agent_address_outbound(self, use_agent_address_outbound: bool) -> None:
         """
-        Sets the enabled of this DirectRoutingMediaSettings.
-        Toggle that enables Direct Routing for this media type.
+        Sets the use_agent_address_outbound of this DirectRoutingMediaSettings.
+        Toggle that enables using an agent's Direct Routing address outbound on behalf of queue for this media type.
 
-        :param enabled: The enabled of this DirectRoutingMediaSettings.
+        :param use_agent_address_outbound: The use_agent_address_outbound of this DirectRoutingMediaSettings.
         :type: bool
         """
         
 
-        self._enabled = enabled
-
-    @property
-    def inbound_flow(self) -> 'AddressableEntityRef':
-        """
-        Gets the inbound_flow of this DirectRoutingMediaSettings.
-        The Direct Routing inbound flow id for this media type.
-
-        :return: The inbound_flow of this DirectRoutingMediaSettings.
-        :rtype: AddressableEntityRef
-        """
-        return self._inbound_flow
-
-    @inbound_flow.setter
-    def inbound_flow(self, inbound_flow: 'AddressableEntityRef') -> None:
-        """
-        Sets the inbound_flow of this DirectRoutingMediaSettings.
-        The Direct Routing inbound flow id for this media type.
-
-        :param inbound_flow: The inbound_flow of this DirectRoutingMediaSettings.
-        :type: AddressableEntityRef
-        """
-        
-
-        self._inbound_flow = inbound_flow
+        self._use_agent_address_outbound = use_agent_address_outbound
 
     def to_dict(self):
         """

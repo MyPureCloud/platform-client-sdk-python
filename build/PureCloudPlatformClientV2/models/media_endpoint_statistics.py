@@ -35,6 +35,7 @@ from typing import Dict
 if TYPE_CHECKING:
     from . import MediaIceStatistics
     from . import MediaRtpStatistics
+    from . import MediaStatisticsTrunkInfo
     from . import NamedEntity
 
 class MediaEndpointStatistics(object):
@@ -52,7 +53,7 @@ class MediaEndpointStatistics(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'trunk': 'NamedEntity',
+            'trunk': 'MediaStatisticsTrunkInfo',
             'station': 'NamedEntity',
             'user': 'NamedEntity',
             'ice': 'MediaIceStatistics',
@@ -74,24 +75,24 @@ class MediaEndpointStatistics(object):
         self._rtp = None
 
     @property
-    def trunk(self) -> 'NamedEntity':
+    def trunk(self) -> 'MediaStatisticsTrunkInfo':
         """
         Gets the trunk of this MediaEndpointStatistics.
         Trunk information utilized when creating the media endpoint
 
         :return: The trunk of this MediaEndpointStatistics.
-        :rtype: NamedEntity
+        :rtype: MediaStatisticsTrunkInfo
         """
         return self._trunk
 
     @trunk.setter
-    def trunk(self, trunk: 'NamedEntity') -> None:
+    def trunk(self, trunk: 'MediaStatisticsTrunkInfo') -> None:
         """
         Sets the trunk of this MediaEndpointStatistics.
         Trunk information utilized when creating the media endpoint
 
         :param trunk: The trunk of this MediaEndpointStatistics.
-        :type: NamedEntity
+        :type: MediaStatisticsTrunkInfo
         """
         
 

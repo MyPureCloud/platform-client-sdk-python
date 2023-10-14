@@ -49,16 +49,19 @@ class CreateRoomRequest(object):
         """
         self.swagger_types = {
             'description': 'str',
-            'subject': 'str'
+            'subject': 'str',
+            'user_ids': 'list[str]'
         }
 
         self.attribute_map = {
             'description': 'description',
-            'subject': 'subject'
+            'subject': 'subject',
+            'user_ids': 'userIds'
         }
 
         self._description = None
         self._subject = None
+        self._user_ids = None
 
     @property
     def description(self) -> str:
@@ -107,6 +110,30 @@ class CreateRoomRequest(object):
         
 
         self._subject = subject
+
+    @property
+    def user_ids(self) -> List[str]:
+        """
+        Gets the user_ids of this CreateRoomRequest.
+        Users to add to the room
+
+        :return: The user_ids of this CreateRoomRequest.
+        :rtype: list[str]
+        """
+        return self._user_ids
+
+    @user_ids.setter
+    def user_ids(self, user_ids: List[str]) -> None:
+        """
+        Sets the user_ids of this CreateRoomRequest.
+        Users to add to the room
+
+        :param user_ids: The user_ids of this CreateRoomRequest.
+        :type: list[str]
+        """
+        
+
+        self._user_ids = user_ids
 
     def to_dict(self):
         """

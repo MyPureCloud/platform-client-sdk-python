@@ -481,6 +481,8 @@ from .callback_disconnect_identifier import CallbackDisconnectIdentifier
 from .callback_identifier import CallbackIdentifier
 from .callback_media_participant import CallbackMediaParticipant
 from .callback_media_settings import CallbackMediaSettings
+from .callheader import Callheader
+from .callmessage import Callmessage
 from .campaign import Campaign
 from .campaign_diagnostics import CampaignDiagnostics
 from .campaign_division_view import CampaignDivisionView
@@ -1162,7 +1164,6 @@ from .digital_rule_set import DigitalRuleSet
 from .digital_rule_set_entity_listing import DigitalRuleSetEntityListing
 from .digits import Digits
 from .direct_routing import DirectRouting
-from .direct_routing_call_media_settings import DirectRoutingCallMediaSettings
 from .direct_routing_media_settings import DirectRoutingMediaSettings
 from .directory_user_devices_listing import DirectoryUserDevicesListing
 from .disallowed_entity_learning_assignment_item import DisallowedEntityLearningAssignmentItem
@@ -2147,6 +2148,7 @@ from .media_rtp_statistics import MediaRtpStatistics
 from .media_settings import MediaSettings
 from .media_statistics import MediaStatistics
 from .media_statistics_listing import MediaStatisticsListing
+from .media_statistics_trunk_info import MediaStatisticsTrunkInfo
 from .media_summary import MediaSummary
 from .media_summary_detail import MediaSummaryDetail
 from .media_transcription import MediaTranscription

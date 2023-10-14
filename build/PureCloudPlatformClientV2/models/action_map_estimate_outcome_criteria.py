@@ -50,18 +50,24 @@ class ActionMapEstimateOutcomeCriteria(object):
         self.swagger_types = {
             'outcome_id': 'str',
             'max_probability': 'float',
-            'probability': 'float'
+            'probability': 'float',
+            'quantile': 'float',
+            'max_quantile': 'float'
         }
 
         self.attribute_map = {
             'outcome_id': 'outcomeId',
             'max_probability': 'maxProbability',
-            'probability': 'probability'
+            'probability': 'probability',
+            'quantile': 'quantile',
+            'max_quantile': 'maxQuantile'
         }
 
         self._outcome_id = None
         self._max_probability = None
         self._probability = None
+        self._quantile = None
+        self._max_quantile = None
 
     @property
     def outcome_id(self) -> str:
@@ -134,6 +140,54 @@ class ActionMapEstimateOutcomeCriteria(object):
         
 
         self._probability = probability
+
+    @property
+    def quantile(self) -> float:
+        """
+        Gets the quantile of this ActionMapEstimateOutcomeCriteria.
+        Represents the quantity of sessions that have a maximum probability less than the predicted probability.
+
+        :return: The quantile of this ActionMapEstimateOutcomeCriteria.
+        :rtype: float
+        """
+        return self._quantile
+
+    @quantile.setter
+    def quantile(self, quantile: float) -> None:
+        """
+        Sets the quantile of this ActionMapEstimateOutcomeCriteria.
+        Represents the quantity of sessions that have a maximum probability less than the predicted probability.
+
+        :param quantile: The quantile of this ActionMapEstimateOutcomeCriteria.
+        :type: float
+        """
+        
+
+        self._quantile = quantile
+
+    @property
+    def max_quantile(self) -> float:
+        """
+        Gets the max_quantile of this ActionMapEstimateOutcomeCriteria.
+        Represents the quantity of sessions that have a maximum probability less than the predicted session max probability.
+
+        :return: The max_quantile of this ActionMapEstimateOutcomeCriteria.
+        :rtype: float
+        """
+        return self._max_quantile
+
+    @max_quantile.setter
+    def max_quantile(self, max_quantile: float) -> None:
+        """
+        Sets the max_quantile of this ActionMapEstimateOutcomeCriteria.
+        Represents the quantity of sessions that have a maximum probability less than the predicted session max probability.
+
+        :param max_quantile: The max_quantile of this ActionMapEstimateOutcomeCriteria.
+        :type: float
+        """
+        
+
+        self._max_quantile = max_quantile
 
     def to_dict(self):
         """

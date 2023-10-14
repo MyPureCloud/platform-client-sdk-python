@@ -481,6 +481,8 @@ from .models.callback_disconnect_identifier import CallbackDisconnectIdentifier
 from .models.callback_identifier import CallbackIdentifier
 from .models.callback_media_participant import CallbackMediaParticipant
 from .models.callback_media_settings import CallbackMediaSettings
+from .models.callheader import Callheader
+from .models.callmessage import Callmessage
 from .models.campaign import Campaign
 from .models.campaign_diagnostics import CampaignDiagnostics
 from .models.campaign_division_view import CampaignDivisionView
@@ -1162,7 +1164,6 @@ from .models.digital_rule_set import DigitalRuleSet
 from .models.digital_rule_set_entity_listing import DigitalRuleSetEntityListing
 from .models.digits import Digits
 from .models.direct_routing import DirectRouting
-from .models.direct_routing_call_media_settings import DirectRoutingCallMediaSettings
 from .models.direct_routing_media_settings import DirectRoutingMediaSettings
 from .models.directory_user_devices_listing import DirectoryUserDevicesListing
 from .models.disallowed_entity_learning_assignment_item import DisallowedEntityLearningAssignmentItem
@@ -2147,6 +2148,7 @@ from .models.media_rtp_statistics import MediaRtpStatistics
 from .models.media_settings import MediaSettings
 from .models.media_statistics import MediaStatistics
 from .models.media_statistics_listing import MediaStatisticsListing
+from .models.media_statistics_trunk_info import MediaStatisticsTrunkInfo
 from .models.media_summary import MediaSummary
 from .models.media_summary_detail import MediaSummaryDetail
 from .models.media_transcription import MediaTranscription

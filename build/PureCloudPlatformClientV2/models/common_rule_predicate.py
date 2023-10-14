@@ -290,7 +290,7 @@ class CommonRulePredicate(object):
         """
         if isinstance(metric, int):
             metric = str(metric)
-        allowed_values = ["nAbandon", "nConnected", "nInteractions", "nOffered", "nOutbound", "nTransferred", "serviceLevel", "oServiceLevel", "oWaiting", "tAbandon", "tAcw", "tAlert", "tAnswered", "tHandle", "tHeldComplete", "tTalkComplete", "tWait", "tTalk", "tHeld", "tOrganizationPresence", "tSystemPresence", "tAgentRoutingStatus", "oUserRoutingStatuses", "oUserPresences", "oInteracting", "tFlowOut"]
+        allowed_values = ["nAbandon", "nConnected", "nInteractions", "nOffered", "nOutbound", "nTransferred", "serviceLevel", "oServiceLevel", "oWaiting", "tAbandon", "tAcw", "tAlert", "tAnswered", "tHandle", "tHeldComplete", "tTalkComplete", "tWait", "tTalk", "tHeld", "tOrganizationPresence", "tSystemPresence", "tAgentRoutingStatus", "oUserRoutingStatuses", "oUserPresences", "oInteracting", "tFlowOut", "tAdherenceStatus"]
         if metric.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for metric -> " + metric)
             self._metric = "outdated_sdk_version"

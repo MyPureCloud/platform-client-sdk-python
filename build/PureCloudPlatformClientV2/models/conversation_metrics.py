@@ -34,6 +34,7 @@ from typing import Dict
 
 if TYPE_CHECKING:
     from . import AddressableEntityRef
+    from . import EmpathyScore
     from . import ParticipantMetrics
 
 class ConversationMetrics(object):
@@ -55,6 +56,7 @@ class ConversationMetrics(object):
             'sentiment_score': 'float',
             'sentiment_trend': 'float',
             'sentiment_trend_class': 'str',
+            'empathy_scores': 'list[EmpathyScore]',
             'participant_metrics': 'ParticipantMetrics'
         }
 
@@ -63,6 +65,7 @@ class ConversationMetrics(object):
             'sentiment_score': 'sentimentScore',
             'sentiment_trend': 'sentimentTrend',
             'sentiment_trend_class': 'sentimentTrendClass',
+            'empathy_scores': 'empathyScores',
             'participant_metrics': 'participantMetrics'
         }
 
@@ -70,6 +73,7 @@ class ConversationMetrics(object):
         self._sentiment_score = None
         self._sentiment_trend = None
         self._sentiment_trend_class = None
+        self._empathy_scores = None
         self._participant_metrics = None
 
     @property
@@ -172,6 +176,30 @@ class ConversationMetrics(object):
             self._sentiment_trend_class = "outdated_sdk_version"
         else:
             self._sentiment_trend_class = sentiment_trend_class
+
+    @property
+    def empathy_scores(self) -> List['EmpathyScore']:
+        """
+        Gets the empathy_scores of this ConversationMetrics.
+        The Empathy Scores
+
+        :return: The empathy_scores of this ConversationMetrics.
+        :rtype: list[EmpathyScore]
+        """
+        return self._empathy_scores
+
+    @empathy_scores.setter
+    def empathy_scores(self, empathy_scores: List['EmpathyScore']) -> None:
+        """
+        Sets the empathy_scores of this ConversationMetrics.
+        The Empathy Scores
+
+        :param empathy_scores: The empathy_scores of this ConversationMetrics.
+        :type: list[EmpathyScore]
+        """
+        
+
+        self._empathy_scores = empathy_scores
 
     @property
     def participant_metrics(self) -> 'ParticipantMetrics':

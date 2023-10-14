@@ -9,6 +9,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |Method | Description|
 |------------- | -------------|
 |[**get_telephony_mediaregions**](TelephonyApi.html#get_telephony_mediaregions) | Retrieve the list of AWS regions media can stream through.|
+|[**get_telephony_sipmessages_conversation**](TelephonyApi.html#get_telephony_sipmessages_conversation) | Get a SIP message.|
+|[**get_telephony_sipmessages_conversation_headers**](TelephonyApi.html#get_telephony_sipmessages_conversation_headers) | Get SIP headers.|
 |[**get_telephony_siptraces**](TelephonyApi.html#get_telephony_siptraces) | Fetch SIP metadata|
 |[**get_telephony_siptraces_download_download_id**](TelephonyApi.html#get_telephony_siptraces_download_download_id) | Get signed S3 URL for a pcap download|
 |[**post_telephony_siptraces_download**](TelephonyApi.html#post_telephony_siptraces_download) | Request a download of a pcap file to S3|
@@ -58,6 +60,114 @@ This endpoint does not need any parameters.
 ### Return type
 
 [**MediaRegions**](MediaRegions.html)
+
+<a name="get_telephony_sipmessages_conversation"></a>
+
+## [**Callmessage**](Callmessage.html) get_telephony_sipmessages_conversation(conversation_id)
+
+
+
+Get a SIP message.
+
+Get the raw form of the SIP message
+
+get_telephony_sipmessages_conversation is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/telephony/sipmessages/conversations/{conversationId} 
+
+Requires ALL permissions: 
+
+* telephony:pcap:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyApi()
+conversation_id = 'conversation_id_example' # str | Conversation id
+
+try:
+    # Get a SIP message.
+    api_response = api_instance.get_telephony_sipmessages_conversation(conversation_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling TelephonyApi->get_telephony_sipmessages_conversation: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversation_id** | **str**| Conversation id |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**Callmessage**](Callmessage.html)
+
+<a name="get_telephony_sipmessages_conversation_headers"></a>
+
+## [**Callheader**](Callheader.html) get_telephony_sipmessages_conversation_headers(conversation_id, keys=keys)
+
+
+
+Get SIP headers.
+
+Get parsed SIP headers. Returns specific headers if key query parameters are added.
+
+get_telephony_sipmessages_conversation_headers is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/telephony/sipmessages/conversations/{conversationId}/headers 
+
+Requires ALL permissions: 
+
+* telephony:pcap:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyApi()
+conversation_id = 'conversation_id_example' # str | Conversation id
+keys = ['keys_example'] # list[str] | comma-separated list of header identifiers to query. e.g. ruri,to,from (optional)
+
+try:
+    # Get SIP headers.
+    api_response = api_instance.get_telephony_sipmessages_conversation_headers(conversation_id, keys=keys)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling TelephonyApi->get_telephony_sipmessages_conversation_headers: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversation_id** | **str**| Conversation id |  |
+| **keys** | [**list[str]**](str.html)| comma-separated list of header identifiers to query. e.g. ruri,to,from | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**Callheader**](Callheader.html)
 
 <a name="get_telephony_siptraces"></a>
 

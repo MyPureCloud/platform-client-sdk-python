@@ -58,6 +58,7 @@ class SkillGroupWithMemberDivisions(object):
             'member_count': 'int',
             'date_modified': 'datetime',
             'date_created': 'datetime',
+            'status': 'str',
             'skill_conditions': 'list[SkillGroupCondition]',
             'member_divisions': 'list[str]',
             'self_uri': 'str'
@@ -71,6 +72,7 @@ class SkillGroupWithMemberDivisions(object):
             'member_count': 'memberCount',
             'date_modified': 'dateModified',
             'date_created': 'dateCreated',
+            'status': 'status',
             'skill_conditions': 'skillConditions',
             'member_divisions': 'memberDivisions',
             'self_uri': 'selfUri'
@@ -83,6 +85,7 @@ class SkillGroupWithMemberDivisions(object):
         self._member_count = None
         self._date_modified = None
         self._date_created = None
+        self._status = None
         self._skill_conditions = None
         self._member_divisions = None
         self._self_uri = None
@@ -254,6 +257,35 @@ class SkillGroupWithMemberDivisions(object):
         
 
         self._date_created = date_created
+
+    @property
+    def status(self) -> str:
+        """
+        Gets the status of this SkillGroupWithMemberDivisions.
+        Group's filling status
+
+        :return: The status of this SkillGroupWithMemberDivisions.
+        :rtype: str
+        """
+        return self._status
+
+    @status.setter
+    def status(self, status: str) -> None:
+        """
+        Sets the status of this SkillGroupWithMemberDivisions.
+        Group's filling status
+
+        :param status: The status of this SkillGroupWithMemberDivisions.
+        :type: str
+        """
+        if isinstance(status, int):
+            status = str(status)
+        allowed_values = ["InProgress", "Complete"]
+        if status.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for status -> " + status)
+            self._status = "outdated_sdk_version"
+        else:
+            self._status = status
 
     @property
     def skill_conditions(self) -> List['SkillGroupCondition']:

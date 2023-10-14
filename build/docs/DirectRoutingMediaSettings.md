@@ -7,8 +7,7 @@ title: DirectRoutingMediaSettings
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **enabled** | **bool** | Toggle that enables Direct Routing for this media type. | [optional] |
-| **inbound_flow** | [**AddressableEntityRef**](AddressableEntityRef.html) | The Direct Routing inbound flow id for this media type. | [optional] |
+| **use_agent_address_outbound** | **bool** | Toggle that enables using an agent&#39;s Direct Routing address outbound on behalf of queue for this media type. | [optional] |
 {: class="table table-striped"}
 
 

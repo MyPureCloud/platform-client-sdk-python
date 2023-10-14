@@ -6478,11 +6478,11 @@
       {
         "name": "body",
         "type": "CreateRoomRequest",
-        "required": "false"
+        "required": "true"
       }
     ],
     "return": "CreateRoomResponse",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.ChatApi();\nbody = PureCloudPlatformClientV2.CreateRoomRequest() # CreateRoomRequest | Room properties (optional)\n\ntry:\n    # Create an adhoc room\n    api_response = api_instance.post_chats_rooms(body=body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling ChatApi->post_chats_rooms: %s\\n\" % e)"
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.ChatApi();\nbody = PureCloudPlatformClientV2.CreateRoomRequest() # CreateRoomRequest | Room properties\n\ntry:\n    # Create an adhoc room\n    api_response = api_instance.post_chats_rooms(body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling ChatApi->post_chats_rooms: %s\\n\" % e)"
   },
   "post_chats_user_messages": {
     "operationId": "post_chats_user_messages",
@@ -36061,6 +36061,39 @@
     "signature": "get_telephony_mediaregions()",
     "return": "MediaRegions",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.TelephonyApi();\n\ntry:\n    # Retrieve the list of AWS regions media can stream through.\n    api_response = api_instance.get_telephony_mediaregions()\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling TelephonyApi->get_telephony_mediaregions: %s\\n\" % e)"
+  },
+  "get_telephony_sipmessages_conversation": {
+    "operationId": "get_telephony_sipmessages_conversation",
+    "functionName": "get_telephony_sipmessages_conversation",
+    "signature": "get_telephony_sipmessages_conversation(conversation_id)",
+    "parameters": [
+      {
+        "name": "conversation_id",
+        "type": "str",
+        "required": "true"
+      }
+    ],
+    "return": "Callmessage",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.TelephonyApi();\nconversation_id = 'conversation_id_example' # str | Conversation id\n\ntry:\n    # Get a SIP message.\n    api_response = api_instance.get_telephony_sipmessages_conversation(conversation_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling TelephonyApi->get_telephony_sipmessages_conversation: %s\\n\" % e)"
+  },
+  "get_telephony_sipmessages_conversation_headers": {
+    "operationId": "get_telephony_sipmessages_conversation_headers",
+    "functionName": "get_telephony_sipmessages_conversation_headers",
+    "signature": "get_telephony_sipmessages_conversation_headers(conversation_id, keys)",
+    "parameters": [
+      {
+        "name": "conversation_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "keys",
+        "type": "list[str]",
+        "required": "false"
+      }
+    ],
+    "return": "Callheader",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.TelephonyApi();\nconversation_id = 'conversation_id_example' # str | Conversation id\nkeys = ['keys_example'] # list[str] | comma-separated list of header identifiers to query. e.g. ruri,to,from (optional)\n\ntry:\n    # Get SIP headers.\n    api_response = api_instance.get_telephony_sipmessages_conversation_headers(conversation_id, keys=keys)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling TelephonyApi->get_telephony_sipmessages_conversation_headers: %s\\n\" % e)"
   },
   "get_telephony_siptraces": {
     "operationId": "get_telephony_siptraces",

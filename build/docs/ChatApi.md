@@ -1191,7 +1191,7 @@ void (empty response body)
 
 <a name="post_chats_rooms"></a>
 
-## [**CreateRoomResponse**](CreateRoomResponse.html) post_chats_rooms(body=body)
+## [**CreateRoomResponse**](CreateRoomResponse.html) post_chats_rooms(body)
 
 
 
@@ -1219,11 +1219,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ChatApi()
-body = PureCloudPlatformClientV2.CreateRoomRequest() # CreateRoomRequest | Room properties (optional)
+body = PureCloudPlatformClientV2.CreateRoomRequest() # CreateRoomRequest | Room properties
 
 try:
     # Create an adhoc room
-    api_response = api_instance.post_chats_rooms(body=body)
+    api_response = api_instance.post_chats_rooms(body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ChatApi->post_chats_rooms: %s\n" % e)
@@ -1234,7 +1234,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**CreateRoomRequest**](CreateRoomRequest.html)| Room properties | [optional]  |
+| **body** | [**CreateRoomRequest**](CreateRoomRequest.html)| Room properties |  |
 {: class="table table-striped"}
 
 ### Return type

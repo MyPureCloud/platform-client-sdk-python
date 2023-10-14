@@ -52,18 +52,21 @@ class SpeechTextAnalyticsSettingsResponse(object):
         self.swagger_types = {
             'default_program': 'AddressableEntityRef',
             'expected_dialects': 'list[str]',
-            'text_analytics_enabled': 'bool'
+            'text_analytics_enabled': 'bool',
+            'agent_empathy_enabled': 'bool'
         }
 
         self.attribute_map = {
             'default_program': 'defaultProgram',
             'expected_dialects': 'expectedDialects',
-            'text_analytics_enabled': 'textAnalyticsEnabled'
+            'text_analytics_enabled': 'textAnalyticsEnabled',
+            'agent_empathy_enabled': 'agentEmpathyEnabled'
         }
 
         self._default_program = None
         self._expected_dialects = None
         self._text_analytics_enabled = None
+        self._agent_empathy_enabled = None
 
     @property
     def default_program(self) -> 'AddressableEntityRef':
@@ -136,6 +139,30 @@ class SpeechTextAnalyticsSettingsResponse(object):
         
 
         self._text_analytics_enabled = text_analytics_enabled
+
+    @property
+    def agent_empathy_enabled(self) -> bool:
+        """
+        Gets the agent_empathy_enabled of this SpeechTextAnalyticsSettingsResponse.
+        Setting to enable/disable Agent Empathy setting
+
+        :return: The agent_empathy_enabled of this SpeechTextAnalyticsSettingsResponse.
+        :rtype: bool
+        """
+        return self._agent_empathy_enabled
+
+    @agent_empathy_enabled.setter
+    def agent_empathy_enabled(self, agent_empathy_enabled: bool) -> None:
+        """
+        Sets the agent_empathy_enabled of this SpeechTextAnalyticsSettingsResponse.
+        Setting to enable/disable Agent Empathy setting
+
+        :param agent_empathy_enabled: The agent_empathy_enabled of this SpeechTextAnalyticsSettingsResponse.
+        :type: bool
+        """
+        
+
+        self._agent_empathy_enabled = agent_empathy_enabled
 
     def to_dict(self):
         """
