@@ -136,7 +136,7 @@ class Recipient(object):
     def flow(self) -> 'Flow':
         """
         Gets the flow of this Recipient.
-        An automate flow object which defines the set of actions to be taken, when a message is received by this provisioned phone number.
+        An automate flow object which defines the set of actions to be taken, when a message is received by this recipient.
 
         :return: The flow of this Recipient.
         :rtype: Flow
@@ -147,7 +147,7 @@ class Recipient(object):
     def flow(self, flow: 'Flow') -> None:
         """
         Sets the flow of this Recipient.
-        An automate flow object which defines the set of actions to be taken, when a message is received by this provisioned phone number.
+        An automate flow object which defines the set of actions to be taken, when a message is received by this recipient.
 
         :param flow: The flow of this Recipient.
         :type: Flow

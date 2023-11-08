@@ -102,7 +102,7 @@ class SendAgentlessOutboundMessageRequest(object):
     def to_address(self) -> str:
         """
         Gets the to_address of this SendAgentlessOutboundMessageRequest.
-        The messaging address of the recipient of the message. For an SMS messenger type, the phone number address must be in E.164 format. E.g. +13175555555 or +34234234234.
+        The messaging address of the recipient of the message. For an SMS messenger type, the phone number address must be in E.164 format. E.g. +13175555555 or +34234234234. For WhatsApp messenger type, use a WhatsApp ID of a phone number. E.g for a E.164 formatted phone number `+13175555555`, a WhatsApp ID would be 13175555555
 
         :return: The to_address of this SendAgentlessOutboundMessageRequest.
         :rtype: str
@@ -113,7 +113,7 @@ class SendAgentlessOutboundMessageRequest(object):
     def to_address(self, to_address: str) -> None:
         """
         Sets the to_address of this SendAgentlessOutboundMessageRequest.
-        The messaging address of the recipient of the message. For an SMS messenger type, the phone number address must be in E.164 format. E.g. +13175555555 or +34234234234.
+        The messaging address of the recipient of the message. For an SMS messenger type, the phone number address must be in E.164 format. E.g. +13175555555 or +34234234234. For WhatsApp messenger type, use a WhatsApp ID of a phone number. E.g for a E.164 formatted phone number `+13175555555`, a WhatsApp ID would be 13175555555
 
         :param to_address: The to_address of this SendAgentlessOutboundMessageRequest.
         :type: str

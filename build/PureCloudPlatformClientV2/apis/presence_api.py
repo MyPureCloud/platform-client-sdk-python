@@ -39,6 +39,7 @@ from typing import Any
 
 from ..models import Empty
 from ..models import ErrorBody
+from ..models import MutableUserPresence
 from ..models import OrganizationPresence
 from ..models import OrganizationPresenceDefinition
 from ..models import OrganizationPresenceDefinitionEntityListing
@@ -319,12 +320,13 @@ class PresenceApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str definition_id: Presence Definition ID (required)
+        :param str locale_code: The locale code to fetch for the presence definition. Use ALL to fetch everything.
         :return: OrganizationPresenceDefinition
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['definition_id']
+        all_params = ['definition_id', 'locale_code']
         all_params.append('callback')
 
         params = locals()
@@ -348,6 +350,8 @@ class PresenceApi(object):
             path_params['definitionId'] = params['definition_id']
 
         query_params = {}
+        if 'locale_code' in params:
+            query_params['localeCode'] = params['locale_code']
 
         header_params = {}
 
@@ -399,12 +403,13 @@ class PresenceApi(object):
             for asynchronous request. (optional)
         :param str deactivated: Deactivated query can be TRUE or FALSE
         :param list[str] division_id: One or more division IDs. If nothing is provided, the definitions associated withthe list of divisions that the user has access to will be returned.
+        :param str locale_code: The locale code to fetch for the presence definition. Use ALL to fetch everything.
         :return: OrganizationPresenceDefinitionEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['deactivated', 'division_id']
+        all_params = ['deactivated', 'division_id', 'locale_code']
         all_params.append('callback')
 
         params = locals()
@@ -427,6 +432,8 @@ class PresenceApi(object):
             query_params['deactivated'] = params['deactivated']
         if 'division_id' in params:
             query_params['divisionId'] = params['division_id']
+        if 'locale_code' in params:
+            query_params['localeCode'] = params['locale_code']
 
         header_params = {}
 
@@ -2142,7 +2149,7 @@ class PresenceApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def put_users_presences_bulk(self, body: List['UserPresence'], **kwargs) -> List['UserPresence']:
+    def put_users_presences_bulk(self, body: List['MutableUserPresence'], **kwargs) -> List['UserPresence']:
         """
         Update bulk user Presences
         
@@ -2157,7 +2164,7 @@ class PresenceApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param list[UserPresence] body: List of User presences (required)
+        :param list[MutableUserPresence] body: List of User presences (required)
         :return: list[UserPresence]
                  If the method is called asynchronously,
                  returns the request thread.

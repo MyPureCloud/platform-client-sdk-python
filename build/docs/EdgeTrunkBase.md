@@ -22,6 +22,8 @@ title: EdgeTrunkBase
 | **trunk_metabase** | [**DomainEntityRef**](DomainEntityRef.html) | The meta-base this trunk is based on. | |
 | **properties** | **dict(str, object)** |  | [optional] |
 | **trunk_type** | **str** | The type of this trunk base. | |
+| **site** | [**DomainEntityRef**](DomainEntityRef.html) | Used to determine the media regions for inbound and outbound calls through a trunk. Also determines the dial plan to use for calls that came in on a trunk and have to be sent out on it as well. | [optional] |
+| **inbound_site** | [**DomainEntityRef**](DomainEntityRef.html) | Allows a customer to set the site to which inbound calls will be routed | [optional] |
 | **self_uri** | **str** | The URI for this object | [optional] |
 {: class="table table-striped"}
 

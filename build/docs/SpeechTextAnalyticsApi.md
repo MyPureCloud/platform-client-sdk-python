@@ -301,9 +301,10 @@ Get Speech and Text Analytics for a specific conversation
 
 Wraps GET /api/v2/speechandtextanalytics/conversations/{conversationId} 
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * recording:recording:view
+* speechAndTextAnalytics:data:view
 
 ### Example
 
@@ -350,9 +351,10 @@ Get the pre-signed S3 URL for the transcript of a specific communication of a co
 
 Wraps GET /api/v2/speechandtextanalytics/conversations/{conversationId}/communications/{communicationId}/transcripturl 
 
-Requires ANY permissions: 
+Requires ALL permissions: 
 
 * recording:recording:view
+* speechAndTextAnalytics:data:view
 
 ### Example
 

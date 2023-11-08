@@ -66,6 +66,8 @@ class EdgeTrunkBase(object):
             'trunk_metabase': 'DomainEntityRef',
             'properties': 'dict(str, object)',
             'trunk_type': 'str',
+            'site': 'DomainEntityRef',
+            'inbound_site': 'DomainEntityRef',
             'self_uri': 'str'
         }
 
@@ -85,6 +87,8 @@ class EdgeTrunkBase(object):
             'trunk_metabase': 'trunkMetabase',
             'properties': 'properties',
             'trunk_type': 'trunkType',
+            'site': 'site',
+            'inbound_site': 'inboundSite',
             'self_uri': 'selfUri'
         }
 
@@ -103,6 +107,8 @@ class EdgeTrunkBase(object):
         self._trunk_metabase = None
         self._properties = None
         self._trunk_type = None
+        self._site = None
+        self._inbound_site = None
         self._self_uri = None
 
     @property
@@ -474,6 +480,54 @@ class EdgeTrunkBase(object):
             self._trunk_type = "outdated_sdk_version"
         else:
             self._trunk_type = trunk_type
+
+    @property
+    def site(self) -> 'DomainEntityRef':
+        """
+        Gets the site of this EdgeTrunkBase.
+        Used to determine the media regions for inbound and outbound calls through a trunk. Also determines the dial plan to use for calls that came in on a trunk and have to be sent out on it as well.
+
+        :return: The site of this EdgeTrunkBase.
+        :rtype: DomainEntityRef
+        """
+        return self._site
+
+    @site.setter
+    def site(self, site: 'DomainEntityRef') -> None:
+        """
+        Sets the site of this EdgeTrunkBase.
+        Used to determine the media regions for inbound and outbound calls through a trunk. Also determines the dial plan to use for calls that came in on a trunk and have to be sent out on it as well.
+
+        :param site: The site of this EdgeTrunkBase.
+        :type: DomainEntityRef
+        """
+        
+
+        self._site = site
+
+    @property
+    def inbound_site(self) -> 'DomainEntityRef':
+        """
+        Gets the inbound_site of this EdgeTrunkBase.
+        Allows a customer to set the site to which inbound calls will be routed
+
+        :return: The inbound_site of this EdgeTrunkBase.
+        :rtype: DomainEntityRef
+        """
+        return self._inbound_site
+
+    @inbound_site.setter
+    def inbound_site(self, inbound_site: 'DomainEntityRef') -> None:
+        """
+        Sets the inbound_site of this EdgeTrunkBase.
+        Allows a customer to set the site to which inbound calls will be routed
+
+        :param inbound_site: The inbound_site of this EdgeTrunkBase.
+        :type: DomainEntityRef
+        """
+        
+
+        self._inbound_site = inbound_site
 
     @property
     def self_uri(self) -> str:

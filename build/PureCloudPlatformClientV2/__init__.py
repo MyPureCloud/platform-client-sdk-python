@@ -26,6 +26,7 @@ from .models.action_contract import ActionContract
 from .models.action_contract_input import ActionContractInput
 from .models.action_entity_listing import ActionEntityListing
 from .models.action_event_action_map import ActionEventActionMap
+from .models.action_event_request import ActionEventRequest
 from .models.action_input import ActionInput
 from .models.action_map import ActionMap
 from .models.action_map_action import ActionMapAction
@@ -160,7 +161,6 @@ from .models.api_usage_row import ApiUsageRow
 from .models.api_usage_simple_search import ApiUsageSimpleSearch
 from .models.app_event import AppEvent
 from .models.app_event_request import AppEventRequest
-from .models.app_event_request_session import AppEventRequestSession
 from .models.app_event_response import AppEventResponse
 from .models.app_event_response_session import AppEventResponseSession
 from .models.append_to_dnc_action_settings import AppendToDncActionSettings
@@ -1054,6 +1054,8 @@ from .models.dependency_object_entity_listing import DependencyObjectEntityListi
 from .models.dependency_status import DependencyStatus
 from .models.dependency_type import DependencyType
 from .models.dependency_type_entity_listing import DependencyTypeEntityListing
+from .models.deployment_ping import DeploymentPing
+from .models.deployment_web_action import DeploymentWebAction
 from .models.destination import Destination
 from .models.detail import Detail
 from .models.detected_dialog_act import DetectedDialogAct
@@ -1166,6 +1168,7 @@ from .models.digits import Digits
 from .models.direct_routing import DirectRouting
 from .models.direct_routing_media_settings import DirectRoutingMediaSettings
 from .models.directory_user_devices_listing import DirectoryUserDevicesListing
+from .models.disable_site_connections_request import DisableSiteConnectionsRequest
 from .models.disallowed_entity_learning_assignment_item import DisallowedEntityLearningAssignmentItem
 from .models.disallowed_entity_learning_assignment_reference import DisallowedEntityLearningAssignmentReference
 from .models.disconnect_reason import DisconnectReason
@@ -1418,6 +1421,8 @@ from .models.evaluator_activity_entity_listing import EvaluatorActivityEntityLis
 from .models.event import Event
 from .models.event_action import EventAction
 from .models.event_condition import EventCondition
+from .models.event_definition import EventDefinition
+from .models.event_definition_listing import EventDefinitionListing
 from .models.event_error import EventError
 from .models.event_listing import EventListing
 from .models.event_log import EventLog
@@ -1569,6 +1574,8 @@ from .models.flow_observation_query_filter import FlowObservationQueryFilter
 from .models.flow_observation_query_predicate import FlowObservationQueryPredicate
 from .models.flow_observation_query_response import FlowObservationQueryResponse
 from .models.flow_outcome import FlowOutcome
+from .models.flow_outcome_detail_event_topic_flow_milestone import FlowOutcomeDetailEventTopicFlowMilestone
+from .models.flow_outcome_detail_event_topic_flow_outcome_event import FlowOutcomeDetailEventTopicFlowOutcomeEvent
 from .models.flow_outcome_division_view import FlowOutcomeDivisionView
 from .models.flow_outcome_division_view_entity_listing import FlowOutcomeDivisionViewEntityListing
 from .models.flow_outcome_listing import FlowOutcomeListing
@@ -2237,6 +2244,7 @@ from .models.move_agents_response import MoveAgentsResponse
 from .models.move_management_unit_request import MoveManagementUnitRequest
 from .models.move_management_unit_response import MoveManagementUnitResponse
 from .models.mu_reschedule_result_wrapper import MuRescheduleResultWrapper
+from .models.mutable_user_presence import MutableUserPresence
 from .models.mute_snooze_fields import MuteSnoozeFields
 from .models.ntp_settings import NTPSettings
 from .models.named_entity import NamedEntity
@@ -2309,6 +2317,7 @@ from .models.observation_value import ObservationValue
 from .models.okta import Okta
 from .models.one_login import OneLogin
 from .models.open_action_fields import OpenActionFields
+from .models.open_action_properties import OpenActionProperties
 from .models.open_content_attachment import OpenContentAttachment
 from .models.open_event import OpenEvent
 from .models.open_event_normalized_message import OpenEventNormalizedMessage
@@ -3118,6 +3127,7 @@ from .models.sip_download_response import SipDownloadResponse
 from .models.sip_search_result import SipSearchResult
 from .models.site import Site
 from .models.site_connection import SiteConnection
+from .models.site_connections import SiteConnections
 from .models.site_entity_listing import SiteEntityListing
 from .models.skill_entity_listing import SkillEntityListing
 from .models.skill_group import SkillGroup
@@ -3481,6 +3491,7 @@ from .models.update_time_off_limit_request import UpdateTimeOffLimitRequest
 from .models.update_time_off_plan_request import UpdateTimeOffPlanRequest
 from .models.update_trigger_request import UpdateTriggerRequest
 from .models.update_user import UpdateUser
+from .models.update_verifier_request import UpdateVerifierRequest
 from .models.update_work_plan_rotation_agent_request import UpdateWorkPlanRotationAgentRequest
 from .models.update_work_plan_rotation_request import UpdateWorkPlanRotationRequest
 from .models.upload_url_request import UploadUrlRequest
@@ -3653,6 +3664,7 @@ from .models.v2_conversation_message_typing_event_for_workflow_topic_conversatio
 from .models.v2_conversation_message_typing_event_for_workflow_topic_conversation_reason import V2ConversationMessageTypingEventForWorkflowTopicConversationReason
 from .models.v2_conversation_message_typing_event_for_workflow_topic_conversation_recipient_additional_identifier import V2ConversationMessageTypingEventForWorkflowTopicConversationRecipientAdditionalIdentifier
 from .models.v2_conversation_message_typing_event_for_workflow_topic_message_data import V2ConversationMessageTypingEventForWorkflowTopicMessageData
+from .models.v2_mobius_alerts_topic_addressable_entity_ref import V2MobiusAlertsTopicAddressableEntityRef
 from .models.v2_mobius_alerts_topic_alert import V2MobiusAlertsTopicAlert
 from .models.v2_mobius_alerts_topic_alert_notification import V2MobiusAlertsTopicAlertNotification
 from .models.v2_mobius_alerts_topic_alert_rule_properties import V2MobiusAlertsTopicAlertRuleProperties
@@ -3661,6 +3673,7 @@ from .models.v2_mobius_alerts_topic_alert_summary_entity import V2MobiusAlertsTo
 from .models.v2_mobius_alerts_topic_condition import V2MobiusAlertsTopicCondition
 from .models.v2_mobius_alerts_topic_condition_rule_predicate import V2MobiusAlertsTopicConditionRulePredicate
 from .models.v2_mobius_alerts_topic_entity_properties import V2MobiusAlertsTopicEntityProperties
+from .models.v2_mobius_rules_topic_addressable_entity_ref import V2MobiusRulesTopicAddressableEntityRef
 from .models.v2_mobius_rules_topic_alert_notification import V2MobiusRulesTopicAlertNotification
 from .models.v2_mobius_rules_topic_condition import V2MobiusRulesTopicCondition
 from .models.v2_mobius_rules_topic_condition_rule_predicate import V2MobiusRulesTopicConditionRulePredicate
@@ -3678,6 +3691,8 @@ from .models.value_wrapper_hris_time_off_type import ValueWrapperHrisTimeOffType
 from .models.value_wrapper_planning_period_settings import ValueWrapperPlanningPeriodSettings
 from .models.value_wrapper_string import ValueWrapperString
 from .models.verification_result import VerificationResult
+from .models.verifier import Verifier
+from .models.verifier_entity_listing import VerifierEntityListing
 from .models.video import Video
 from .models.video_conference_details import VideoConferenceDetails
 from .models.video_conference_update_topic_participant_info import VideoConferenceUpdateTopicParticipantInfo
@@ -3747,6 +3762,7 @@ from .models.web_messaging_generic import WebMessagingGeneric
 from .models.web_messaging_message import WebMessagingMessage
 from .models.web_messaging_message_entity_list import WebMessagingMessageEntityList
 from .models.web_messaging_offer_fields import WebMessagingOfferFields
+from .models.web_messaging_offer_properties import WebMessagingOfferProperties
 from .models.web_messaging_quick_reply import WebMessagingQuickReply
 from .models.web_messaging_recipient import WebMessagingRecipient
 from .models.week_schedule import WeekSchedule
@@ -3911,6 +3927,8 @@ from .models.wfm_versioned_entity_metadata import WfmVersionedEntityMetadata
 from .models.whats_app_available_phone_number_details import WhatsAppAvailablePhoneNumberDetails
 from .models.whats_app_available_phone_number_details_listing import WhatsAppAvailablePhoneNumberDetailsListing
 from .models.whats_app_definition import WhatsAppDefinition
+from .models.whats_app_embedded_signup_integration_activation_request import WhatsAppEmbeddedSignupIntegrationActivationRequest
+from .models.whats_app_embedded_signup_integration_request import WhatsAppEmbeddedSignupIntegrationRequest
 from .models.whats_app_id import WhatsAppId
 from .models.whats_app_integration import WhatsAppIntegration
 from .models.whats_app_integration_entity_listing import WhatsAppIntegrationEntityListing
@@ -4077,6 +4095,7 @@ from .apis.mobile_devices_api import MobileDevicesApi
 from .apis.notifications_api import NotificationsApi
 from .apis.o_auth_api import OAuthApi
 from .apis.objects_api import ObjectsApi
+from .apis.operational_events_api import OperationalEventsApi
 from .apis.organization_api import OrganizationApi
 from .apis.organization_authorization_api import OrganizationAuthorizationApi
 from .apis.outbound_api import OutboundApi
@@ -4148,6 +4167,7 @@ from .apis.mobile_devices_api import MobileDevicesApi
 from .apis.notifications_api import NotificationsApi
 from .apis.o_auth_api import OAuthApi
 from .apis.objects_api import ObjectsApi
+from .apis.operational_events_api import OperationalEventsApi
 from .apis.organization_api import OrganizationApi
 from .apis.organization_authorization_api import OrganizationAuthorizationApi
 from .apis.outbound_api import OutboundApi

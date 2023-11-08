@@ -33,6 +33,7 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
+    from . import V2MobiusAlertsTopicAddressableEntityRef
     from . import V2MobiusAlertsTopicAlertSummaryEntity
 
 class V2MobiusAlertsTopicAlertSummary(object):
@@ -51,7 +52,7 @@ class V2MobiusAlertsTopicAlertSummary(object):
         """
         self.swagger_types = {
             'entities': 'list[V2MobiusAlertsTopicAlertSummaryEntity]',
-            'conversation_id': 'str',
+            'conversation': 'V2MobiusAlertsTopicAddressableEntityRef',
             'metric_type': 'str',
             'is_team_member_rule_summary': 'bool',
             'team_member_rule_summary': 'bool'
@@ -59,14 +60,14 @@ class V2MobiusAlertsTopicAlertSummary(object):
 
         self.attribute_map = {
             'entities': 'entities',
-            'conversation_id': 'conversationId',
+            'conversation': 'conversation',
             'metric_type': 'metricType',
             'is_team_member_rule_summary': 'isTeamMemberRuleSummary',
             'team_member_rule_summary': 'teamMemberRuleSummary'
         }
 
         self._entities = None
-        self._conversation_id = None
+        self._conversation = None
         self._metric_type = None
         self._is_team_member_rule_summary = None
         self._team_member_rule_summary = None
@@ -96,28 +97,28 @@ class V2MobiusAlertsTopicAlertSummary(object):
         self._entities = entities
 
     @property
-    def conversation_id(self) -> str:
+    def conversation(self) -> 'V2MobiusAlertsTopicAddressableEntityRef':
         """
-        Gets the conversation_id of this V2MobiusAlertsTopicAlertSummary.
+        Gets the conversation of this V2MobiusAlertsTopicAlertSummary.
 
 
-        :return: The conversation_id of this V2MobiusAlertsTopicAlertSummary.
-        :rtype: str
+        :return: The conversation of this V2MobiusAlertsTopicAlertSummary.
+        :rtype: V2MobiusAlertsTopicAddressableEntityRef
         """
-        return self._conversation_id
+        return self._conversation
 
-    @conversation_id.setter
-    def conversation_id(self, conversation_id: str) -> None:
+    @conversation.setter
+    def conversation(self, conversation: 'V2MobiusAlertsTopicAddressableEntityRef') -> None:
         """
-        Sets the conversation_id of this V2MobiusAlertsTopicAlertSummary.
+        Sets the conversation of this V2MobiusAlertsTopicAlertSummary.
 
 
-        :param conversation_id: The conversation_id of this V2MobiusAlertsTopicAlertSummary.
-        :type: str
+        :param conversation: The conversation of this V2MobiusAlertsTopicAlertSummary.
+        :type: V2MobiusAlertsTopicAddressableEntityRef
         """
         
 
-        self._conversation_id = conversation_id
+        self._conversation = conversation
 
     @property
     def metric_type(self) -> str:

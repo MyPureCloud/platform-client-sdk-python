@@ -24,6 +24,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_journey_actiontargets**](JourneyApi.html#get_journey_actiontargets) | Retrieve all action targets.|
 |[**get_journey_actiontemplate**](JourneyApi.html#get_journey_actiontemplate) | Retrieve a single action template.|
 |[**get_journey_actiontemplates**](JourneyApi.html#get_journey_actiontemplates) | Retrieve all action templates.|
+|[**get_journey_deployment_customer_ping**](JourneyApi.html#get_journey_deployment_customer_ping) | Send a ping.|
 |[**get_journey_outcome**](JourneyApi.html#get_journey_outcome) | Retrieve a single outcome.|
 |[**get_journey_outcomes**](JourneyApi.html#get_journey_outcomes) | Retrieve all outcomes.|
 |[**get_journey_outcomes_attributions_job**](JourneyApi.html#get_journey_outcomes_attributions_job) | Get job status.|
@@ -46,6 +47,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_journey_actionmaps**](JourneyApi.html#post_journey_actionmaps) | Create an action map.|
 |[**post_journey_actionmaps_estimates_jobs**](JourneyApi.html#post_journey_actionmaps_estimates_jobs) | Query for estimates|
 |[**post_journey_actiontemplates**](JourneyApi.html#post_journey_actiontemplates) | Create a single action template.|
+|[**post_journey_deployment_actionevent**](JourneyApi.html#post_journey_deployment_actionevent) | Sends an action event, which is used for changing the state of actions that have been offered to the user.|
 |[**post_journey_deployment_appevents**](JourneyApi.html#post_journey_deployment_appevents) | Send a journey app event, used for tracking customer activity on an application.|
 |[**post_journey_outcomes**](JourneyApi.html#post_journey_outcomes) | Create an outcome.|
 |[**post_journey_outcomes_attributions_jobs**](JourneyApi.html#post_journey_outcomes_attributions_jobs) | Create Outcome Attributions|
@@ -873,6 +875,63 @@ except ApiException as e:
 ### Return type
 
 [**ActionTemplateListing**](ActionTemplateListing.html)
+
+<a name="get_journey_deployment_customer_ping"></a>
+
+## [**DeploymentPing**](DeploymentPing.html) get_journey_deployment_customer_ping(deployment_id, customer_cookie_id, session_id, dl=dl, dt=dt, app_namespace=app_namespace, since_last_beacon_milliseconds=since_last_beacon_milliseconds)
+
+
+
+Send a ping.
+
+Wraps GET /api/v2/journey/deployments/{deploymentId}/customers/{customerCookieId}/ping 
+
+Requires no permissions
+
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.JourneyApi()
+deployment_id = 'deployment_id_example' # str | The ID of the deployment sending the ping.
+customer_cookie_id = 'customer_cookie_id_example' # str | ID of the customer associated with the ping.
+session_id = 'session_id_example' # str | UUID of the customer session. Use the same Session Id for all pings, AppEvents and ActionEvents in the session
+dl = 'dl_example' # str | Document Location: 1) Web Page URL if overridden or URL fragment identifier (window.location.hash). OR  2) Application screen name that the ping request was sent from in the app. e.g. 'home' or 'help. Pings without this parameter will not return actions. (optional)
+dt = 'dt_example' # str | Document Title.  A human readable name for the page or screen (optional)
+app_namespace = 'app_namespace_example' # str | Namespace of the application (e.g. com.genesys.bancodinero). Used for domain filtering in application sessions (optional)
+since_last_beacon_milliseconds = 56 # int | How long (milliseconds) since the last app event or beacon was sent. The response may return a pollInternvalMilliseconds to reduce the frequency of pings. (optional)
+
+try:
+    # Send a ping.
+    api_response = api_instance.get_journey_deployment_customer_ping(deployment_id, customer_cookie_id, session_id, dl=dl, dt=dt, app_namespace=app_namespace, since_last_beacon_milliseconds=since_last_beacon_milliseconds)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling JourneyApi->get_journey_deployment_customer_ping: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **deployment_id** | **str**| The ID of the deployment sending the ping. |  |
+| **customer_cookie_id** | **str**| ID of the customer associated with the ping. |  |
+| **session_id** | **str**| UUID of the customer session. Use the same Session Id for all pings, AppEvents and ActionEvents in the session |  |
+| **dl** | **str**| Document Location: 1) Web Page URL if overridden or URL fragment identifier (window.location.hash). OR  2) Application screen name that the ping request was sent from in the app. e.g. &#39;home&#39; or &#39;help. Pings without this parameter will not return actions. | [optional]  |
+| **dt** | **str**| Document Title.  A human readable name for the page or screen | [optional]  |
+| **app_namespace** | **str**| Namespace of the application (e.g. com.genesys.bancodinero). Used for domain filtering in application sessions | [optional]  |
+| **since_last_beacon_milliseconds** | **int**| How long (milliseconds) since the last app event or beacon was sent. The response may return a pollInternvalMilliseconds to reduce the frequency of pings. | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**DeploymentPing**](DeploymentPing.html)
 
 <a name="get_journey_outcome"></a>
 
@@ -2003,6 +2062,52 @@ except ApiException as e:
 
 [**ActionTemplate**](ActionTemplate.html)
 
+<a name="post_journey_deployment_actionevent"></a>
+
+##  post_journey_deployment_actionevent(deployment_id, body)
+
+
+
+Sends an action event, which is used for changing the state of actions that have been offered to the user.
+
+Wraps POST /api/v2/journey/deployments/{deploymentId}/actionevent 
+
+Requires no permissions
+
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.JourneyApi()
+deployment_id = 'deployment_id_example' # str | The ID of the deployment sending the beacon.
+body = PureCloudPlatformClientV2.ActionEventRequest() # ActionEventRequest | 
+
+try:
+    # Sends an action event, which is used for changing the state of actions that have been offered to the user.
+    api_instance.post_journey_deployment_actionevent(deployment_id, body)
+except ApiException as e:
+    print("Exception when calling JourneyApi->post_journey_deployment_actionevent: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **deployment_id** | **str**| The ID of the deployment sending the beacon. |  |
+| **body** | [**ActionEventRequest**](ActionEventRequest.html)|  |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
+
 <a name="post_journey_deployment_appevents"></a>
 
 ## [**AppEventResponse**](AppEventResponse.html) post_journey_deployment_appevents(deployment_id, body=body)
@@ -2010,8 +2115,6 @@ except ApiException as e:
 
 
 Send a journey app event, used for tracking customer activity on an application.
-
-post_journey_deployment_appevents is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/journey/deployments/{deploymentId}/appevents 
 

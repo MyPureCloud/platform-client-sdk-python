@@ -7,7 +7,7 @@ title: RecipientRequest
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **flow** | [**RecipientFlow**](RecipientFlow.html) | An automate flow object which defines the set of actions to be taken, when a message is received by this provisioned phone number. | [optional] |
+| **flow** | [**RecipientFlow**](RecipientFlow.html) | An automate flow object which defines the set of actions to be taken, when a message is received by this recipient. | [optional] |
 {: class="table table-striped"}
 
 

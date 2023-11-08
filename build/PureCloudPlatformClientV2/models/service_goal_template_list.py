@@ -34,6 +34,7 @@ from typing import Dict
 
 if TYPE_CHECKING:
     from . import ServiceGoalTemplate
+    from . import WfmVersionedEntityMetadata
 
 class ServiceGoalTemplateList(object):
     """
@@ -50,14 +51,17 @@ class ServiceGoalTemplateList(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'entities': 'list[ServiceGoalTemplate]'
+            'entities': 'list[ServiceGoalTemplate]',
+            'metadata': 'WfmVersionedEntityMetadata'
         }
 
         self.attribute_map = {
-            'entities': 'entities'
+            'entities': 'entities',
+            'metadata': 'metadata'
         }
 
         self._entities = None
+        self._metadata = None
 
     @property
     def entities(self) -> List['ServiceGoalTemplate']:
@@ -82,6 +86,30 @@ class ServiceGoalTemplateList(object):
         
 
         self._entities = entities
+
+    @property
+    def metadata(self) -> 'WfmVersionedEntityMetadata':
+        """
+        Gets the metadata of this ServiceGoalTemplateList.
+        Version metadata for the service goal templates
+
+        :return: The metadata of this ServiceGoalTemplateList.
+        :rtype: WfmVersionedEntityMetadata
+        """
+        return self._metadata
+
+    @metadata.setter
+    def metadata(self, metadata: 'WfmVersionedEntityMetadata') -> None:
+        """
+        Sets the metadata of this ServiceGoalTemplateList.
+        Version metadata for the service goal templates
+
+        :param metadata: The metadata of this ServiceGoalTemplateList.
+        :type: WfmVersionedEntityMetadata
+        """
+        
+
+        self._metadata = metadata
 
     def to_dict(self):
         """

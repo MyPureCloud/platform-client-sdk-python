@@ -187,7 +187,7 @@ void (empty response body)
 
 <a name="get_presence_definition"></a>
 
-## [**OrganizationPresenceDefinition**](OrganizationPresenceDefinition.html) get_presence_definition(definition_id)
+## [**OrganizationPresenceDefinition**](OrganizationPresenceDefinition.html) get_presence_definition(definition_id, locale_code=locale_code)
 
 
 
@@ -215,10 +215,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.PresenceApi()
 definition_id = 'definition_id_example' # str | Presence Definition ID
+locale_code = 'locale_code_example' # str | The locale code to fetch for the presence definition. Use ALL to fetch everything. (optional)
 
 try:
     # Get a Presence Definition
-    api_response = api_instance.get_presence_definition(definition_id)
+    api_response = api_instance.get_presence_definition(definition_id, locale_code=locale_code)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling PresenceApi->get_presence_definition: %s\n" % e)
@@ -230,6 +231,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **definition_id** | **str**| Presence Definition ID |  |
+| **locale_code** | **str**| The locale code to fetch for the presence definition. Use ALL to fetch everything. | [optional] <br />**Values**: ALL, he, fr, en_US, da, de, it, cs, es, fi, ar, ja, ko, nl, no, pl, pt_BR, pt_PT, ru, sv, th, tr, uk, zh_CN, zh_TW |
 {: class="table table-striped"}
 
 ### Return type
@@ -238,7 +240,7 @@ except ApiException as e:
 
 <a name="get_presence_definitions"></a>
 
-## [**OrganizationPresenceDefinitionEntityListing**](OrganizationPresenceDefinitionEntityListing.html) get_presence_definitions(deactivated=deactivated, division_id=division_id)
+## [**OrganizationPresenceDefinitionEntityListing**](OrganizationPresenceDefinitionEntityListing.html) get_presence_definitions(deactivated=deactivated, division_id=division_id, locale_code=locale_code)
 
 
 
@@ -267,10 +269,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.PresenceApi()
 deactivated = ''false'' # str | Deactivated query can be TRUE or FALSE (optional) (default to 'false')
 division_id = ['division_id_example'] # list[str] | One or more division IDs. If nothing is provided, the definitions associated withthe list of divisions that the user has access to will be returned. (optional)
+locale_code = 'locale_code_example' # str | The locale code to fetch for the presence definition. Use ALL to fetch everything. (optional)
 
 try:
     # Get a list of Presence Definitions
-    api_response = api_instance.get_presence_definitions(deactivated=deactivated, division_id=division_id)
+    api_response = api_instance.get_presence_definitions(deactivated=deactivated, division_id=division_id, locale_code=locale_code)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling PresenceApi->get_presence_definitions: %s\n" % e)
@@ -283,6 +286,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **deactivated** | **str**| Deactivated query can be TRUE or FALSE | [optional] [default to &#39;false&#39;] |
 | **division_id** | [**list[str]**](str.html)| One or more division IDs. If nothing is provided, the definitions associated withthe list of divisions that the user has access to will be returned. | [optional]  |
+| **locale_code** | **str**| The locale code to fetch for the presence definition. Use ALL to fetch everything. | [optional] <br />**Values**: ALL, he, fr, en_US, da, de, it, cs, es, fi, ar, ja, ko, nl, no, pl, pt_BR, pt_PT, ru, sv, th, tr, uk, zh_CN, zh_TW |
 {: class="table table-striped"}
 
 ### Return type
@@ -1367,7 +1371,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.PresenceApi()
-body = [PureCloudPlatformClientV2.UserPresence()] # list[UserPresence] | List of User presences
+body = [PureCloudPlatformClientV2.MutableUserPresence()] # list[MutableUserPresence] | List of User presences
 
 try:
     # Update bulk user Presences
@@ -1382,7 +1386,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**list[UserPresence]**](UserPresence.html)| List of User presences |  |
+| **body** | [**list[MutableUserPresence]**](MutableUserPresence.html)| List of User presences |  |
 {: class="table table-striped"}
 
 ### Return type

@@ -38,6 +38,7 @@ from typing import Dict
 from typing import Any
 
 from ..models import Empty
+from ..models import ActionEventRequest
 from ..models import ActionMap
 from ..models import ActionMapEstimateRequest
 from ..models import ActionMapEstimateResult
@@ -50,6 +51,7 @@ from ..models import AppEventRequest
 from ..models import AppEventResponse
 from ..models import AsyncQueryResponse
 from ..models import AsyncQueryStatus
+from ..models import DeploymentPing
 from ..models import ErrorBody
 from ..models import EstimateJobAsyncResponse
 from ..models import EventListing
@@ -1388,6 +1390,108 @@ class JourneyApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='ActionTemplateListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_journey_deployment_customer_ping(self, deployment_id: str, customer_cookie_id: str, session_id: str, **kwargs) -> 'DeploymentPing':
+        """
+        Send a ping.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_journey_deployment_customer_ping(deployment_id, customer_cookie_id, session_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str deployment_id: The ID of the deployment sending the ping. (required)
+        :param str customer_cookie_id: ID of the customer associated with the ping. (required)
+        :param str session_id: UUID of the customer session. Use the same Session Id for all pings, AppEvents and ActionEvents in the session (required)
+        :param str dl: Document Location: 1) Web Page URL if overridden or URL fragment identifier (window.location.hash). OR  2) Application screen name that the ping request was sent from in the app. e.g. 'home' or 'help. Pings without this parameter will not return actions.
+        :param str dt: Document Title.  A human readable name for the page or screen
+        :param str app_namespace: Namespace of the application (e.g. com.genesys.bancodinero). Used for domain filtering in application sessions
+        :param int since_last_beacon_milliseconds: How long (milliseconds) since the last app event or beacon was sent. The response may return a pollInternvalMilliseconds to reduce the frequency of pings.
+        :return: DeploymentPing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['deployment_id', 'customer_cookie_id', 'session_id', 'dl', 'dt', 'app_namespace', 'since_last_beacon_milliseconds']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_journey_deployment_customer_ping" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'deployment_id' is set
+        if ('deployment_id' not in params) or (params['deployment_id'] is None):
+            raise ValueError("Missing the required parameter `deployment_id` when calling `get_journey_deployment_customer_ping`")
+        # verify the required parameter 'customer_cookie_id' is set
+        if ('customer_cookie_id' not in params) or (params['customer_cookie_id'] is None):
+            raise ValueError("Missing the required parameter `customer_cookie_id` when calling `get_journey_deployment_customer_ping`")
+        # verify the required parameter 'session_id' is set
+        if ('session_id' not in params) or (params['session_id'] is None):
+            raise ValueError("Missing the required parameter `session_id` when calling `get_journey_deployment_customer_ping`")
+
+
+        resource_path = '/api/v2/journey/deployments/{deploymentId}/customers/{customerCookieId}/ping'.replace('{format}', 'json')
+        path_params = {}
+        if 'deployment_id' in params:
+            path_params['deploymentId'] = params['deployment_id']
+        if 'customer_cookie_id' in params:
+            path_params['customerCookieId'] = params['customer_cookie_id']
+
+        query_params = {}
+        if 'dl' in params:
+            query_params['dl'] = params['dl']
+        if 'dt' in params:
+            query_params['dt'] = params['dt']
+        if 'app_namespace' in params:
+            query_params['appNamespace'] = params['app_namespace']
+        if 'session_id' in params:
+            query_params['sessionId'] = params['session_id']
+        if 'since_last_beacon_milliseconds' in params:
+            query_params['sinceLastBeaconMilliseconds'] = params['since_last_beacon_milliseconds']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = []
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='DeploymentPing',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -3161,11 +3265,94 @@ class JourneyApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def post_journey_deployment_actionevent(self, deployment_id: str, body: 'ActionEventRequest', **kwargs) -> None:
+        """
+        Sends an action event, which is used for changing the state of actions that have been offered to the user.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_journey_deployment_actionevent(deployment_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str deployment_id: The ID of the deployment sending the beacon. (required)
+        :param ActionEventRequest body:  (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['deployment_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_journey_deployment_actionevent" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'deployment_id' is set
+        if ('deployment_id' not in params) or (params['deployment_id'] is None):
+            raise ValueError("Missing the required parameter `deployment_id` when calling `post_journey_deployment_actionevent`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_journey_deployment_actionevent`")
+
+
+        resource_path = '/api/v2/journey/deployments/{deploymentId}/actionevent'.replace('{format}', 'json')
+        path_params = {}
+        if 'deployment_id' in params:
+            path_params['deploymentId'] = params['deployment_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = []
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def post_journey_deployment_appevents(self, deployment_id: str, **kwargs) -> 'AppEventResponse':
         """
         Send a journey app event, used for tracking customer activity on an application.
         
-	    post_journey_deployment_appevents is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

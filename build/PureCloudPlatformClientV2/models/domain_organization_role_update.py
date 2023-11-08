@@ -96,7 +96,7 @@ class DomainOrganizationRoleUpdate(object):
     def id(self) -> str:
         """
         Gets the id of this DomainOrganizationRoleUpdate.
-        The globally unique identifier for the object.
+        role id
 
         :return: The id of this DomainOrganizationRoleUpdate.
         :rtype: str
@@ -107,7 +107,7 @@ class DomainOrganizationRoleUpdate(object):
     def id(self, id: str) -> None:
         """
         Sets the id of this DomainOrganizationRoleUpdate.
-        The globally unique identifier for the object.
+        role id
 
         :param id: The id of this DomainOrganizationRoleUpdate.
         :type: str

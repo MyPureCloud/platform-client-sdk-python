@@ -91,7 +91,7 @@ class BuQueryAgentSchedulesRequest(object):
     def user_ids(self) -> List[str]:
         """
         Gets the user_ids of this BuQueryAgentSchedulesRequest.
-        The IDs of the users to query.  Omit to query all user schedules in the management unit. 
+        The IDs of the users to query.  Omit to query all user schedules in the management unit. Note: If teamIds is also specified, only schedules for users in the requested teams will be returned
 
         :return: The user_ids of this BuQueryAgentSchedulesRequest.
         :rtype: list[str]
@@ -102,7 +102,7 @@ class BuQueryAgentSchedulesRequest(object):
     def user_ids(self, user_ids: List[str]) -> None:
         """
         Sets the user_ids of this BuQueryAgentSchedulesRequest.
-        The IDs of the users to query.  Omit to query all user schedules in the management unit. 
+        The IDs of the users to query.  Omit to query all user schedules in the management unit. Note: If teamIds is also specified, only schedules for users in the requested teams will be returned
 
         :param user_ids: The user_ids of this BuQueryAgentSchedulesRequest.
         :type: list[str]

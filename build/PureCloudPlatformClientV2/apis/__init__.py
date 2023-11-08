@@ -39,6 +39,7 @@ from .mobile_devices_api import MobileDevicesApi
 from .notifications_api import NotificationsApi
 from .o_auth_api import OAuthApi
 from .objects_api import ObjectsApi
+from .operational_events_api import OperationalEventsApi
 from .organization_api import OrganizationApi
 from .organization_authorization_api import OrganizationAuthorizationApi
 from .outbound_api import OutboundApi
@@ -110,6 +111,7 @@ from .mobile_devices_api import MobileDevicesApi
 from .notifications_api import NotificationsApi
 from .o_auth_api import OAuthApi
 from .objects_api import ObjectsApi
+from .operational_events_api import OperationalEventsApi
 from .organization_api import OrganizationApi
 from .organization_authorization_api import OrganizationAuthorizationApi
 from .outbound_api import OutboundApi

@@ -12,7 +12,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**delete_chats_room_participant**](ChatApi.html#delete_chats_room_participant) | Remove a user from a room.|
 |[**delete_chats_room_pinnedmessage**](ChatApi.html#delete_chats_room_pinnedmessage) | Remove a pinned message from a room|
 |[**delete_chats_user_message**](ChatApi.html#delete_chats_user_message) | Delete a message to a user|
-|[**get_chat_settings**](ChatApi.html#get_chat_settings) | Get Chat Settings.|
 |[**get_chats_message**](ChatApi.html#get_chats_message) | Get a message|
 |[**get_chats_room**](ChatApi.html#get_chats_room) | Get a room|
 |[**get_chats_room_message**](ChatApi.html#get_chats_room_message) | Get messages by id(s) from a room|
@@ -21,7 +20,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_chats_thread_messages**](ChatApi.html#get_chats_thread_messages) | Get history by thread|
 |[**get_chats_user_message**](ChatApi.html#get_chats_user_message) | Get messages by id(s) from a 1on1|
 |[**get_chats_user_messages**](ChatApi.html#get_chats_user_messages) | Get 1on1 History between a user|
-|[**patch_chat_settings**](ChatApi.html#patch_chat_settings) | Patch Chat Settings.|
 |[**patch_chats_room**](ChatApi.html#patch_chats_room) | Set properties for a room|
 |[**patch_chats_room_message**](ChatApi.html#patch_chats_room_message) | Edit a message in a room|
 |[**patch_chats_settings**](ChatApi.html#patch_chats_settings) | Patch Chat Settings.|
@@ -31,7 +29,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_chats_room_pinnedmessages**](ChatApi.html#post_chats_room_pinnedmessages) | Add pinned messages for a room, up to a maximum of 5 pinned messages|
 |[**post_chats_rooms**](ChatApi.html#post_chats_rooms) | Create an adhoc room|
 |[**post_chats_user_messages**](ChatApi.html#post_chats_user_messages) | Send a message to a user|
-|[**put_chat_settings**](ChatApi.html#put_chat_settings) | Update Chat Settings.|
 |[**put_chats_settings**](ChatApi.html#put_chats_settings) | Update Chat Settings.|
 {: class="table table-striped"}
 
@@ -246,54 +243,6 @@ except ApiException as e:
 ### Return type
 
 void (empty response body)
-
-<a name="get_chat_settings"></a>
-
-## [**ChatSettings**](ChatSettings.html) get_chat_settings()
-
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
-
-Get Chat Settings.
-
-This route is deprecated, please use /chats/settings instead
-
-Wraps GET /api/v2/chat/settings 
-
-Requires ANY permissions: 
-
-* chat:setting:view
-* chat:setting:edit
-
-### Example
-
-```{"language":"python"}
-import time
-import PureCloudPlatformClientV2
-from PureCloudPlatformClientV2.rest import ApiException
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: PureCloud OAuth
-PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = PureCloudPlatformClientV2.ChatApi()
-
-try:
-    # Get Chat Settings.
-    api_response = api_instance.get_chat_settings()
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ChatApi->get_chat_settings: %s\n" % e)
-```
-
-### Parameters
-
-This endpoint does not need any parameters.
-
-
-### Return type
-
-[**ChatSettings**](ChatSettings.html)
 
 <a name="get_chats_message"></a>
 
@@ -763,57 +712,6 @@ except ApiException as e:
 ### Return type
 
 [**ChatMessageResponse**](ChatMessageResponse.html)
-
-<a name="patch_chat_settings"></a>
-
-## [**ChatSettings**](ChatSettings.html) patch_chat_settings(body)
-
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
-
-Patch Chat Settings.
-
-This route is deprecated, please use /chats/settings instead
-
-Wraps PATCH /api/v2/chat/settings 
-
-Requires ANY permissions: 
-
-* chat:setting:edit
-
-### Example
-
-```{"language":"python"}
-import time
-import PureCloudPlatformClientV2
-from PureCloudPlatformClientV2.rest import ApiException
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: PureCloud OAuth
-PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = PureCloudPlatformClientV2.ChatApi()
-body = PureCloudPlatformClientV2.ChatSettings() # ChatSettings | Chat
-
-try:
-    # Patch Chat Settings.
-    api_response = api_instance.patch_chat_settings(body)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ChatApi->patch_chat_settings: %s\n" % e)
-```
-
-### Parameters
-
-
-|Name | Type | Description  | Notes|
-|------------- | ------------- | ------------- | -------------|
-| **body** | [**ChatSettings**](ChatSettings.html)| Chat |  |
-{: class="table table-striped"}
-
-### Return type
-
-[**ChatSettings**](ChatSettings.html)
 
 <a name="patch_chats_room"></a>
 
@@ -1294,57 +1192,6 @@ except ApiException as e:
 ### Return type
 
 [**ChatSendMessageResponse**](ChatSendMessageResponse.html)
-
-<a name="put_chat_settings"></a>
-
-## [**ChatSettings**](ChatSettings.html) put_chat_settings(body)
-
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
-
-Update Chat Settings.
-
-This route is deprecated, please use /chats/settings instead
-
-Wraps PUT /api/v2/chat/settings 
-
-Requires ANY permissions: 
-
-* chat:setting:edit
-
-### Example
-
-```{"language":"python"}
-import time
-import PureCloudPlatformClientV2
-from PureCloudPlatformClientV2.rest import ApiException
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: PureCloud OAuth
-PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = PureCloudPlatformClientV2.ChatApi()
-body = PureCloudPlatformClientV2.ChatSettings() # ChatSettings | Chat
-
-try:
-    # Update Chat Settings.
-    api_response = api_instance.put_chat_settings(body)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ChatApi->put_chat_settings: %s\n" % e)
-```
-
-### Parameters
-
-
-|Name | Type | Description  | Notes|
-|------------- | ------------- | ------------- | -------------|
-| **body** | [**ChatSettings**](ChatSettings.html)| Chat |  |
-{: class="table table-striped"}
-
-### Return type
-
-[**ChatSettings**](ChatSettings.html)
 
 <a name="put_chats_settings"></a>
 

@@ -8,7 +8,7 @@ title: AgentlessEmailSendRequestDto
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
 | **sender_type** | **str** | The direction of the message. | |
-| **conversation_id** | **str** | The identifier of the conversation. | [optional] |
+| **conversation_id** | **str** | The identifier of the conversation. This must be an email interaction. | [optional] |
 | **from_address** | [**EmailAddress**](EmailAddress.html) | The sender of the message. | |
 | **to_addresses** | [**list[EmailAddress]**](EmailAddress.html) | The recipient of the message. We currently support one recipient only. | |
 | **reply_to_address** | [**EmailAddress**](EmailAddress.html) | The address to use for reply. | [optional] |

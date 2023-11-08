@@ -1418,6 +1418,8 @@ Requires ANY permissions:
 * wfm:workPlanRotation:view
 * coaching:appointment:add
 * coaching:appointment:edit
+* learning:assignment:add
+* learning:assignment:reschedule
 
 ### Example
 
@@ -1509,7 +1511,7 @@ except ApiException as e:
 
 <a name="get_workforcemanagement_businessunit_activitycodes"></a>
 
-## [**BusinessUnitActivityCodeListing**](BusinessUnitActivityCodeListing.html) get_workforcemanagement_businessunit_activitycodes(business_unit_id)
+## [**BusinessUnitActivityCodeListing**](BusinessUnitActivityCodeListing.html) get_workforcemanagement_businessunit_activitycodes(business_unit_id, force_download_service=force_download_service)
 
 
 
@@ -1593,10 +1595,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
 business_unit_id = 'business_unit_id_example' # str | The ID of the business unit, or 'mine' for the business unit of the logged-in user.
+force_download_service = True # bool | Force the result of this operation to be sent via download service. For testing/app development purposes (optional)
 
 try:
     # Get activity codes
-    api_response = api_instance.get_workforcemanagement_businessunit_activitycodes(business_unit_id)
+    api_response = api_instance.get_workforcemanagement_businessunit_activitycodes(business_unit_id, force_download_service=force_download_service)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_activitycodes: %s\n" % e)
@@ -1608,6 +1611,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **business_unit_id** | **str**| The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. |  |
+| **force_download_service** | **bool**| Force the result of this operation to be sent via download service. For testing/app development purposes | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -4072,7 +4076,7 @@ except ApiException as e:
 
 <a name="get_workforcemanagement_managementunit_week_shifttrades"></a>
 
-## [**WeekShiftTradeListResponse**](WeekShiftTradeListResponse.html) get_workforcemanagement_managementunit_week_shifttrades(management_unit_id, week_date_id, evaluate_matches=evaluate_matches)
+## [**WeekShiftTradeListResponse**](WeekShiftTradeListResponse.html) get_workforcemanagement_managementunit_week_shifttrades(management_unit_id, week_date_id, evaluate_matches=evaluate_matches, force_download_service=force_download_service)
 
 
 
@@ -4101,10 +4105,11 @@ api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
 management_unit_id = 'management_unit_id_example' # str | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 week_date_id = '2013-10-20' # date | The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 evaluate_matches = True # bool | Whether to evaluate the matches for violations (optional) (default to True)
+force_download_service = True # bool | Force the result of this operation to be sent via download service. For testing/app development purposes (optional)
 
 try:
     # Gets all the shift trades for a given week
-    api_response = api_instance.get_workforcemanagement_managementunit_week_shifttrades(management_unit_id, week_date_id, evaluate_matches=evaluate_matches)
+    api_response = api_instance.get_workforcemanagement_managementunit_week_shifttrades(management_unit_id, week_date_id, evaluate_matches=evaluate_matches, force_download_service=force_download_service)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling WorkforceManagementApi->get_workforcemanagement_managementunit_week_shifttrades: %s\n" % e)
@@ -4118,6 +4123,7 @@ except ApiException as e:
 | **management_unit_id** | **str**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
 | **week_date_id** | **date**| The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
 | **evaluate_matches** | **bool**| Whether to evaluate the matches for violations | [optional] [default to True] |
+| **force_download_service** | **bool**| Force the result of this operation to be sent via download service. For testing/app development purposes | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -7939,7 +7945,7 @@ except ApiException as e:
 
 <a name="post_workforcemanagement_managementunit_timeoffrequests_query"></a>
 
-## [**TimeOffRequestListing**](TimeOffRequestListing.html) post_workforcemanagement_managementunit_timeoffrequests_query(management_unit_id, body=body)
+## [**TimeOffRequestListing**](TimeOffRequestListing.html) post_workforcemanagement_managementunit_timeoffrequests_query(management_unit_id, force_download_service=force_download_service, body=body)
 
 
 
@@ -7967,11 +7973,12 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
 management_unit_id = 'management_unit_id_example' # str | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+force_download_service = True # bool | Force the result of this operation to be sent via download service. For testing/app development purposes (optional)
 body = PureCloudPlatformClientV2.TimeOffRequestQueryBody() # TimeOffRequestQueryBody | body (optional)
 
 try:
     # Fetches time off requests matching the conditions specified in the request body
-    api_response = api_instance.post_workforcemanagement_managementunit_timeoffrequests_query(management_unit_id, body=body)
+    api_response = api_instance.post_workforcemanagement_managementunit_timeoffrequests_query(management_unit_id, force_download_service=force_download_service, body=body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling WorkforceManagementApi->post_workforcemanagement_managementunit_timeoffrequests_query: %s\n" % e)
@@ -7983,6 +7990,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **management_unit_id** | **str**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+| **force_download_service** | **bool**| Force the result of this operation to be sent via download service. For testing/app development purposes | [optional]  |
 | **body** | [**TimeOffRequestQueryBody**](TimeOffRequestQueryBody.html)| body | [optional]  |
 {: class="table table-striped"}
 
@@ -8310,7 +8318,7 @@ except ApiException as e:
 
 <a name="post_workforcemanagement_managementunit_week_shifttrades_search"></a>
 
-## [**SearchShiftTradesResponse**](SearchShiftTradesResponse.html) post_workforcemanagement_managementunit_week_shifttrades_search(management_unit_id, week_date_id, body)
+## [**SearchShiftTradesResponse**](SearchShiftTradesResponse.html) post_workforcemanagement_managementunit_week_shifttrades_search(management_unit_id, week_date_id, body, force_download_service=force_download_service)
 
 
 
@@ -8338,10 +8346,11 @@ api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
 management_unit_id = 'management_unit_id_example' # str | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 week_date_id = '2013-10-20' # date | The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
 body = PureCloudPlatformClientV2.SearchShiftTradesRequest() # SearchShiftTradesRequest | body
+force_download_service = True # bool | Force the result of this operation to be sent via download service. For testing/app development purposes (optional)
 
 try:
     # Searches for potential shift trade matches for the current agent
-    api_response = api_instance.post_workforcemanagement_managementunit_week_shifttrades_search(management_unit_id, week_date_id, body)
+    api_response = api_instance.post_workforcemanagement_managementunit_week_shifttrades_search(management_unit_id, week_date_id, body, force_download_service=force_download_service)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling WorkforceManagementApi->post_workforcemanagement_managementunit_week_shifttrades_search: %s\n" % e)
@@ -8355,6 +8364,7 @@ except ApiException as e:
 | **management_unit_id** | **str**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
 | **week_date_id** | **date**| The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
 | **body** | [**SearchShiftTradesRequest**](SearchShiftTradesRequest.html)| body |  |
+| **force_download_service** | **bool**| Force the result of this operation to be sent via download service. For testing/app development purposes | [optional]  |
 {: class="table table-striped"}
 
 ### Return type

@@ -32,6 +32,8 @@ from typing import TYPE_CHECKING
 from typing import List
 from typing import Dict
 
+if TYPE_CHECKING:
+    from . import V2MobiusAlertsTopicAddressableEntityRef
 
 class V2MobiusAlertsTopicAlertSummaryEntity(object):
     """
@@ -49,27 +51,27 @@ class V2MobiusAlertsTopicAlertSummaryEntity(object):
         """
         self.swagger_types = {
             'entity_type': 'str',
-            'user_display_name': 'str',
-            'group_display_name': 'str',
-            'queue_display_name': 'str',
-            'team_display_name': 'str',
+            'user': 'V2MobiusAlertsTopicAddressableEntityRef',
+            'group': 'V2MobiusAlertsTopicAddressableEntityRef',
+            'queue': 'V2MobiusAlertsTopicAddressableEntityRef',
+            'team': 'V2MobiusAlertsTopicAddressableEntityRef',
             'alerting': 'bool'
         }
 
         self.attribute_map = {
             'entity_type': 'entityType',
-            'user_display_name': 'userDisplayName',
-            'group_display_name': 'groupDisplayName',
-            'queue_display_name': 'queueDisplayName',
-            'team_display_name': 'teamDisplayName',
+            'user': 'user',
+            'group': 'group',
+            'queue': 'queue',
+            'team': 'team',
             'alerting': 'alerting'
         }
 
         self._entity_type = None
-        self._user_display_name = None
-        self._group_display_name = None
-        self._queue_display_name = None
-        self._team_display_name = None
+        self._user = None
+        self._group = None
+        self._queue = None
+        self._team = None
         self._alerting = None
 
     @property
@@ -102,100 +104,100 @@ class V2MobiusAlertsTopicAlertSummaryEntity(object):
             self._entity_type = entity_type
 
     @property
-    def user_display_name(self) -> str:
+    def user(self) -> 'V2MobiusAlertsTopicAddressableEntityRef':
         """
-        Gets the user_display_name of this V2MobiusAlertsTopicAlertSummaryEntity.
+        Gets the user of this V2MobiusAlertsTopicAlertSummaryEntity.
 
 
-        :return: The user_display_name of this V2MobiusAlertsTopicAlertSummaryEntity.
-        :rtype: str
+        :return: The user of this V2MobiusAlertsTopicAlertSummaryEntity.
+        :rtype: V2MobiusAlertsTopicAddressableEntityRef
         """
-        return self._user_display_name
+        return self._user
 
-    @user_display_name.setter
-    def user_display_name(self, user_display_name: str) -> None:
+    @user.setter
+    def user(self, user: 'V2MobiusAlertsTopicAddressableEntityRef') -> None:
         """
-        Sets the user_display_name of this V2MobiusAlertsTopicAlertSummaryEntity.
+        Sets the user of this V2MobiusAlertsTopicAlertSummaryEntity.
 
 
-        :param user_display_name: The user_display_name of this V2MobiusAlertsTopicAlertSummaryEntity.
-        :type: str
+        :param user: The user of this V2MobiusAlertsTopicAlertSummaryEntity.
+        :type: V2MobiusAlertsTopicAddressableEntityRef
         """
         
 
-        self._user_display_name = user_display_name
+        self._user = user
 
     @property
-    def group_display_name(self) -> str:
+    def group(self) -> 'V2MobiusAlertsTopicAddressableEntityRef':
         """
-        Gets the group_display_name of this V2MobiusAlertsTopicAlertSummaryEntity.
+        Gets the group of this V2MobiusAlertsTopicAlertSummaryEntity.
 
 
-        :return: The group_display_name of this V2MobiusAlertsTopicAlertSummaryEntity.
-        :rtype: str
+        :return: The group of this V2MobiusAlertsTopicAlertSummaryEntity.
+        :rtype: V2MobiusAlertsTopicAddressableEntityRef
         """
-        return self._group_display_name
+        return self._group
 
-    @group_display_name.setter
-    def group_display_name(self, group_display_name: str) -> None:
+    @group.setter
+    def group(self, group: 'V2MobiusAlertsTopicAddressableEntityRef') -> None:
         """
-        Sets the group_display_name of this V2MobiusAlertsTopicAlertSummaryEntity.
+        Sets the group of this V2MobiusAlertsTopicAlertSummaryEntity.
 
 
-        :param group_display_name: The group_display_name of this V2MobiusAlertsTopicAlertSummaryEntity.
-        :type: str
+        :param group: The group of this V2MobiusAlertsTopicAlertSummaryEntity.
+        :type: V2MobiusAlertsTopicAddressableEntityRef
         """
         
 
-        self._group_display_name = group_display_name
+        self._group = group
 
     @property
-    def queue_display_name(self) -> str:
+    def queue(self) -> 'V2MobiusAlertsTopicAddressableEntityRef':
         """
-        Gets the queue_display_name of this V2MobiusAlertsTopicAlertSummaryEntity.
+        Gets the queue of this V2MobiusAlertsTopicAlertSummaryEntity.
 
 
-        :return: The queue_display_name of this V2MobiusAlertsTopicAlertSummaryEntity.
-        :rtype: str
+        :return: The queue of this V2MobiusAlertsTopicAlertSummaryEntity.
+        :rtype: V2MobiusAlertsTopicAddressableEntityRef
         """
-        return self._queue_display_name
+        return self._queue
 
-    @queue_display_name.setter
-    def queue_display_name(self, queue_display_name: str) -> None:
+    @queue.setter
+    def queue(self, queue: 'V2MobiusAlertsTopicAddressableEntityRef') -> None:
         """
-        Sets the queue_display_name of this V2MobiusAlertsTopicAlertSummaryEntity.
+        Sets the queue of this V2MobiusAlertsTopicAlertSummaryEntity.
 
 
-        :param queue_display_name: The queue_display_name of this V2MobiusAlertsTopicAlertSummaryEntity.
-        :type: str
+        :param queue: The queue of this V2MobiusAlertsTopicAlertSummaryEntity.
+        :type: V2MobiusAlertsTopicAddressableEntityRef
         """
         
 
-        self._queue_display_name = queue_display_name
+        self._queue = queue
 
     @property
-    def team_display_name(self) -> str:
+    def team(self) -> 'V2MobiusAlertsTopicAddressableEntityRef':
         """
-        Gets the team_display_name of this V2MobiusAlertsTopicAlertSummaryEntity.
+        Gets the team of this V2MobiusAlertsTopicAlertSummaryEntity.
 
 
-        :return: The team_display_name of this V2MobiusAlertsTopicAlertSummaryEntity.
-        :rtype: str
+        :return: The team of this V2MobiusAlertsTopicAlertSummaryEntity.
+        :rtype: V2MobiusAlertsTopicAddressableEntityRef
         """
-        return self._team_display_name
+        return self._team
 
-    @team_display_name.setter
-    def team_display_name(self, team_display_name: str) -> None:
+    @team.setter
+    def team(self, team: 'V2MobiusAlertsTopicAddressableEntityRef') -> None:
         """
-        Sets the team_display_name of this V2MobiusAlertsTopicAlertSummaryEntity.
+        Sets the team of this V2MobiusAlertsTopicAlertSummaryEntity.
 
 
-        :param team_display_name: The team_display_name of this V2MobiusAlertsTopicAlertSummaryEntity.
-        :type: str
+        :param team: The team of this V2MobiusAlertsTopicAlertSummaryEntity.
+        :type: V2MobiusAlertsTopicAddressableEntityRef
         """
         
 
-        self._team_display_name = team_display_name
+        self._team = team
 
     @property
     def alerting(self) -> bool:

@@ -533,7 +533,7 @@ class AppEventResponse(object):
     def created_date(self) -> datetime:
         """
         Gets the created_date of this AppEventResponse.
-        Timestamp indicating when the event actually took place. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+        UTC timestamp indicating when the event actually took place. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The created_date of this AppEventResponse.
         :rtype: datetime
@@ -544,7 +544,7 @@ class AppEventResponse(object):
     def created_date(self, created_date: datetime) -> None:
         """
         Sets the created_date of this AppEventResponse.
-        Timestamp indicating when the event actually took place. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+        UTC timestamp indicating when the event actually took place. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param created_date: The created_date of this AppEventResponse.
         :type: datetime

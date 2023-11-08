@@ -16,6 +16,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**delete_user_routingskill**](UsersApi.html#delete_user_routingskill) | Remove routing skill from user|
 |[**delete_user_station_associatedstation**](UsersApi.html#delete_user_station_associatedstation) | Clear associated station|
 |[**delete_user_station_defaultstation**](UsersApi.html#delete_user_station_defaultstation) | Clear default station|
+|[**delete_user_verifier**](UsersApi.html#delete_user_verifier) | Delete a verifier|
 |[**get_analytics_users_aggregates_job**](UsersApi.html#get_analytics_users_aggregates_job) | Get status for async query for user aggregates|
 |[**get_analytics_users_aggregates_job_results**](UsersApi.html#get_analytics_users_aggregates_job_results) | Fetch a page of results for an async aggregates query|
 |[**get_analytics_users_details_job**](UsersApi.html#get_analytics_users_details_job) | Get status for async query for user details|
@@ -48,6 +49,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_user_station**](UsersApi.html#get_user_station) | Get station information for user|
 |[**get_user_superiors**](UsersApi.html#get_user_superiors) | Get superiors|
 |[**get_user_trustors**](UsersApi.html#get_user_trustors) | List the organizations that have authorized/trusted the user.|
+|[**get_user_verifiers**](UsersApi.html#get_user_verifiers) | Get a list of verifiers|
 |[**get_users**](UsersApi.html#get_users) | Get the list of available users.|
 |[**get_users_development_activities**](UsersApi.html#get_users_development_activities) | Get list of Development Activities|
 |[**get_users_development_activities_me**](UsersApi.html#get_users_development_activities_me) | Get list of Development Activities for current user|
@@ -62,7 +64,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**patch_user_routinglanguage**](UsersApi.html#patch_user_routinglanguage) | Update routing language proficiency or state.|
 |[**patch_user_routinglanguages_bulk**](UsersApi.html#patch_user_routinglanguages_bulk) | Add bulk routing language to user. Max limit 50 languages|
 |[**patch_user_routingskills_bulk**](UsersApi.html#patch_user_routingskills_bulk) | Bulk add routing skills to user|
-|[**patch_users_bulk**](UsersApi.html#patch_users_bulk) | Update bulk acd autoanswer on users|
+|[**patch_users_bulk**](UsersApi.html#patch_users_bulk) | Update bulk acd autoanswer on users. Max 50 users can be updated at a time.|
 |[**post_analytics_users_activity_query**](UsersApi.html#post_analytics_users_activity_query) | Query for user activity observations|
 |[**post_analytics_users_aggregates_jobs**](UsersApi.html#post_analytics_users_aggregates_jobs) | Query for user aggregates asynchronously|
 |[**post_analytics_users_aggregates_query**](UsersApi.html#post_analytics_users_aggregates_query) | Query for user aggregates|
@@ -96,6 +98,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**put_user_state**](UsersApi.html#put_user_state) | Update user state information.|
 |[**put_user_station_associatedstation_station_id**](UsersApi.html#put_user_station_associatedstation_station_id) | Set associated station|
 |[**put_user_station_defaultstation_station_id**](UsersApi.html#put_user_station_defaultstation_station_id) | Set default station|
+|[**put_user_verifier**](UsersApi.html#put_user_verifier) | Update a verifier|
 {: class="table table-striped"}
 
 <a name="delete_analytics_users_details_job"></a>
@@ -487,6 +490,56 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **user_id** | **str**| User ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
+
+<a name="delete_user_verifier"></a>
+
+##  delete_user_verifier(user_id, verifier_id)
+
+
+
+Delete a verifier
+
+Wraps DELETE /api/v2/users/{userId}/verifiers/{verifierId} 
+
+Requires ANY permissions: 
+
+* mfa:verifier:delete
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.UsersApi()
+user_id = 'user_id_example' # str | User ID
+verifier_id = 'verifier_id_example' # str | Verifier ID
+
+try:
+    # Delete a verifier
+    api_instance.delete_user_verifier(user_id, verifier_id)
+except ApiException as e:
+    print("Exception when calling UsersApi->delete_user_verifier: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **user_id** | **str**| User ID |  |
+| **verifier_id** | **str**| Verifier ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2135,6 +2188,55 @@ except ApiException as e:
 
 [**TrustorEntityListing**](TrustorEntityListing.html)
 
+<a name="get_user_verifiers"></a>
+
+## [**VerifierEntityListing**](VerifierEntityListing.html) get_user_verifiers(user_id)
+
+
+
+Get a list of verifiers
+
+Wraps GET /api/v2/users/{userId}/verifiers 
+
+Requires ANY permissions: 
+
+* mfa:verifier:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.UsersApi()
+user_id = 'user_id_example' # str | User ID
+
+try:
+    # Get a list of verifiers
+    api_response = api_instance.get_user_verifiers(user_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling UsersApi->get_user_verifiers: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **user_id** | **str**| User ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**VerifierEntityListing**](VerifierEntityListing.html)
+
 <a name="get_users"></a>
 
 ## [**UserEntityListing**](UserEntityListing.html) get_users(page_size=page_size, page_number=page_number, id=id, jabber_id=jabber_id, sort_order=sort_order, expand=expand, integration_presence_source=integration_presence_source, state=state)
@@ -2928,7 +3030,7 @@ except ApiException as e:
 
 
 
-Update bulk acd autoanswer on users
+Update bulk acd autoanswer on users. Max 50 users can be updated at a time.
 
 Wraps PATCH /api/v2/users/bulk 
 
@@ -2953,7 +3055,7 @@ api_instance = PureCloudPlatformClientV2.UsersApi()
 body = [PureCloudPlatformClientV2.PatchUser()] # list[PatchUser] | Users
 
 try:
-    # Update bulk acd autoanswer on users
+    # Update bulk acd autoanswer on users. Max 50 users can be updated at a time.
     api_response = api_instance.patch_users_bulk(body)
     pprint(api_response)
 except ApiException as e:
@@ -4651,4 +4753,57 @@ except ApiException as e:
 ### Return type
 
 void (empty response body)
+
+<a name="put_user_verifier"></a>
+
+## [**Verifier**](Verifier.html) put_user_verifier(user_id, verifier_id, body)
+
+
+
+Update a verifier
+
+Wraps PUT /api/v2/users/{userId}/verifiers/{verifierId} 
+
+Requires ANY permissions: 
+
+* mfa:verifier:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.UsersApi()
+user_id = 'user_id_example' # str | User ID
+verifier_id = 'verifier_id_example' # str | Verifier ID
+body = PureCloudPlatformClientV2.UpdateVerifierRequest() # UpdateVerifierRequest | Verifier Update
+
+try:
+    # Update a verifier
+    api_response = api_instance.put_user_verifier(user_id, verifier_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling UsersApi->put_user_verifier: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **user_id** | **str**| User ID |  |
+| **verifier_id** | **str**| Verifier ID |  |
+| **body** | [**UpdateVerifierRequest**](UpdateVerifierRequest.html)| Verifier Update |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**Verifier**](Verifier.html)
 

@@ -79,6 +79,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_telephony_providers_edges_site_numberplans_classifications**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_site_numberplans_classifications) | Get a list of Classifications for this Site|
 |[**get_telephony_providers_edges_site_outboundroute**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_site_outboundroute) | Get an outbound route|
 |[**get_telephony_providers_edges_site_outboundroutes**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_site_outboundroutes) | Get outbound routes|
+|[**get_telephony_providers_edges_site_siteconnections**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_site_siteconnections) | Get site connections for a site.|
 |[**get_telephony_providers_edges_sites**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_sites) | Get the list of Sites.|
 |[**get_telephony_providers_edges_timezones**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_timezones) | Get a list of Edge-compatible time zones|
 |[**get_telephony_providers_edges_trunk**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_trunk) | Get a Trunk by ID|
@@ -90,6 +91,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_telephony_providers_edges_trunks**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_trunks) | Get the list of available trunks.|
 |[**get_telephony_providers_edges_trunks_metrics**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_trunks_metrics) | Get the metrics for a list of trunks.|
 |[**get_telephony_providers_edges_trunkswithrecording**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_trunkswithrecording) | Get Counts of trunks that have recording disabled or enabled|
+|[**patch_telephony_providers_edges_site_siteconnections**](TelephonyProvidersEdgeApi.html#patch_telephony_providers_edges_site_siteconnections) | Disable site connections for a site.|
 |[**post_telephony_providers_edge_diagnostic_nslookup**](TelephonyProvidersEdgeApi.html#post_telephony_providers_edge_diagnostic_nslookup) | Nslookup request command to collect networking-related information from an Edge for a target IP or host.|
 |[**post_telephony_providers_edge_diagnostic_ping**](TelephonyProvidersEdgeApi.html#post_telephony_providers_edge_diagnostic_ping) | Ping Request command to collect networking-related information from an Edge for a target IP or host.|
 |[**post_telephony_providers_edge_diagnostic_route**](TelephonyProvidersEdgeApi.html#post_telephony_providers_edge_diagnostic_route) | Route request command to collect networking-related information from an Edge for a target IP or host.|
@@ -126,6 +128,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**put_telephony_providers_edges_site**](TelephonyProvidersEdgeApi.html#put_telephony_providers_edges_site) | Update a Site by ID.|
 |[**put_telephony_providers_edges_site_numberplans**](TelephonyProvidersEdgeApi.html#put_telephony_providers_edges_site_numberplans) | Update the list of Number Plans. A user can update maximum 200 number plans at a time.|
 |[**put_telephony_providers_edges_site_outboundroute**](TelephonyProvidersEdgeApi.html#put_telephony_providers_edges_site_outboundroute) | Update outbound route|
+|[**put_telephony_providers_edges_site_siteconnections**](TelephonyProvidersEdgeApi.html#put_telephony_providers_edges_site_siteconnections) | Update site connections for a site.|
 |[**put_telephony_providers_edges_trunkbasesetting**](TelephonyProvidersEdgeApi.html#put_telephony_providers_edges_trunkbasesetting) | Update a Trunk Base Settings object by ID|
 {: class="table table-striped"}
 
@@ -3799,6 +3802,56 @@ except ApiException as e:
 
 [**OutboundRouteBaseEntityListing**](OutboundRouteBaseEntityListing.html)
 
+<a name="get_telephony_providers_edges_site_siteconnections"></a>
+
+## [**SiteConnections**](SiteConnections.html) get_telephony_providers_edges_site_siteconnections(site_id)
+
+
+
+Get site connections for a site.
+
+Wraps GET /api/v2/telephony/providers/edges/sites/{siteId}/siteconnections 
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
+* telephony:sites:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+site_id = 'site_id_example' # str | Site ID
+
+try:
+    # Get site connections for a site.
+    api_response = api_instance.get_telephony_providers_edges_site_siteconnections(site_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_site_siteconnections: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **site_id** | **str**| Site ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**SiteConnections**](SiteConnections.html)
+
 <a name="get_telephony_providers_edges_sites"></a>
 
 ## [**SiteEntityListing**](SiteEntityListing.html) get_telephony_providers_edges_sites(page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order, name=name, location_id=location_id, managed=managed)
@@ -4390,6 +4443,57 @@ except ApiException as e:
 ### Return type
 
 [**TrunkRecordingEnabledCount**](TrunkRecordingEnabledCount.html)
+
+<a name="patch_telephony_providers_edges_site_siteconnections"></a>
+
+## [**SiteConnections**](SiteConnections.html) patch_telephony_providers_edges_site_siteconnections(site_id, body)
+
+
+
+Disable site connections for a site.
+
+Wraps PATCH /api/v2/telephony/providers/edges/sites/{siteId}/siteconnections 
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+site_id = 'site_id_example' # str | Site ID
+body = PureCloudPlatformClientV2.DisableSiteConnectionsRequest() # DisableSiteConnectionsRequest | Site
+
+try:
+    # Disable site connections for a site.
+    api_response = api_instance.patch_telephony_providers_edges_site_siteconnections(site_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling TelephonyProvidersEdgeApi->patch_telephony_providers_edges_site_siteconnections: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **site_id** | **str**| Site ID |  |
+| **body** | [**DisableSiteConnectionsRequest**](DisableSiteConnectionsRequest.html)| Site |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**SiteConnections**](SiteConnections.html)
 
 <a name="post_telephony_providers_edge_diagnostic_nslookup"></a>
 
@@ -6205,6 +6309,57 @@ except ApiException as e:
 ### Return type
 
 [**OutboundRouteBase**](OutboundRouteBase.html)
+
+<a name="put_telephony_providers_edges_site_siteconnections"></a>
+
+## [**SiteConnections**](SiteConnections.html) put_telephony_providers_edges_site_siteconnections(site_id, body)
+
+
+
+Update site connections for a site.
+
+Wraps PUT /api/v2/telephony/providers/edges/sites/{siteId}/siteconnections 
+
+Requires ANY permissions: 
+
+* telephony:plugin:all
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+site_id = 'site_id_example' # str | Site ID
+body = PureCloudPlatformClientV2.SiteConnections() # SiteConnections | Site
+
+try:
+    # Update site connections for a site.
+    api_response = api_instance.put_telephony_providers_edges_site_siteconnections(site_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling TelephonyProvidersEdgeApi->put_telephony_providers_edges_site_siteconnections: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **site_id** | **str**| Site ID |  |
+| **body** | [**SiteConnections**](SiteConnections.html)| Site |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**SiteConnections**](SiteConnections.html)
 
 <a name="put_telephony_providers_edges_trunkbasesetting"></a>
 

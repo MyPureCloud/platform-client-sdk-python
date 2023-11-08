@@ -66,6 +66,7 @@ from ..models import RoleDivisionGrants
 from ..models import RoutingStatus
 from ..models import TrustorEntityListing
 from ..models import UpdateUser
+from ..models import UpdateVerifierRequest
 from ..models import User
 from ..models import UserActivityQuery
 from ..models import UserActivityResponse
@@ -96,6 +97,8 @@ from ..models import UserState
 from ..models import UserStations
 from ..models import UsersSearchResponse
 from ..models import Utilization
+from ..models import Verifier
+from ..models import VerifierEntityListing
 
 class UsersApi(object):
     """
@@ -726,6 +729,90 @@ class UsersApi(object):
         path_params = {}
         if 'user_id' in params:
             path_params['userId'] = params['user_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def delete_user_verifier(self, user_id: str, verifier_id: str, **kwargs) -> None:
+        """
+        Delete a verifier
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_user_verifier(user_id, verifier_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str user_id: User ID (required)
+        :param str verifier_id: Verifier ID (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['user_id', 'verifier_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_user_verifier" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'user_id' is set
+        if ('user_id' not in params) or (params['user_id'] is None):
+            raise ValueError("Missing the required parameter `user_id` when calling `delete_user_verifier`")
+        # verify the required parameter 'verifier_id' is set
+        if ('verifier_id' not in params) or (params['verifier_id'] is None):
+            raise ValueError("Missing the required parameter `verifier_id` when calling `delete_user_verifier`")
+
+
+        resource_path = '/api/v2/users/{userId}/verifiers/{verifierId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'user_id' in params:
+            path_params['userId'] = params['user_id']
+        if 'verifier_id' in params:
+            path_params['verifierId'] = params['verifier_id']
 
         query_params = {}
 
@@ -3385,6 +3472,84 @@ class UsersApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def get_user_verifiers(self, user_id: str, **kwargs) -> 'VerifierEntityListing':
+        """
+        Get a list of verifiers
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_user_verifiers(user_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str user_id: User ID (required)
+        :return: VerifierEntityListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['user_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_user_verifiers" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'user_id' is set
+        if ('user_id' not in params) or (params['user_id'] is None):
+            raise ValueError("Missing the required parameter `user_id` when calling `get_user_verifiers`")
+
+
+        resource_path = '/api/v2/users/{userId}/verifiers'.replace('{format}', 'json')
+        path_params = {}
+        if 'user_id' in params:
+            path_params['userId'] = params['user_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='VerifierEntityListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def get_users(self, **kwargs) -> 'UserEntityListing':
         """
         Get the list of available users.
@@ -4635,7 +4800,7 @@ class UsersApi(object):
 
     def patch_users_bulk(self, body: List['PatchUser'], **kwargs) -> 'UserEntityListing':
         """
-        Update bulk acd autoanswer on users
+        Update bulk acd autoanswer on users. Max 50 users can be updated at a time.
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -7429,6 +7594,96 @@ class UsersApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def put_user_verifier(self, user_id: str, verifier_id: str, body: 'UpdateVerifierRequest', **kwargs) -> 'Verifier':
+        """
+        Update a verifier
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.put_user_verifier(user_id, verifier_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str user_id: User ID (required)
+        :param str verifier_id: Verifier ID (required)
+        :param UpdateVerifierRequest body: Verifier Update (required)
+        :return: Verifier
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['user_id', 'verifier_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method put_user_verifier" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'user_id' is set
+        if ('user_id' not in params) or (params['user_id'] is None):
+            raise ValueError("Missing the required parameter `user_id` when calling `put_user_verifier`")
+        # verify the required parameter 'verifier_id' is set
+        if ('verifier_id' not in params) or (params['verifier_id'] is None):
+            raise ValueError("Missing the required parameter `verifier_id` when calling `put_user_verifier`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `put_user_verifier`")
+
+
+        resource_path = '/api/v2/users/{userId}/verifiers/{verifierId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'user_id' in params:
+            path_params['userId'] = params['user_id']
+        if 'verifier_id' in params:
+            path_params['verifierId'] = params['verifier_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='Verifier',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

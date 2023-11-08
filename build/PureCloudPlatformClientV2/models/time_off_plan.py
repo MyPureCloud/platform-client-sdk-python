@@ -33,6 +33,7 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
+    from . import HrisTimeOffType
     from . import TimeOffLimitReference
     from . import WfmVersionedEntityMetadata
 
@@ -57,6 +58,7 @@ class TimeOffPlan(object):
             'time_off_limits': 'list[TimeOffLimitReference]',
             'auto_approval_rule': 'str',
             'days_before_start_to_expire_from_waitlist': 'int',
+            'hris_time_off_type': 'HrisTimeOffType',
             'active': 'bool',
             'metadata': 'WfmVersionedEntityMetadata',
             'self_uri': 'str'
@@ -69,6 +71,7 @@ class TimeOffPlan(object):
             'time_off_limits': 'timeOffLimits',
             'auto_approval_rule': 'autoApprovalRule',
             'days_before_start_to_expire_from_waitlist': 'daysBeforeStartToExpireFromWaitlist',
+            'hris_time_off_type': 'hrisTimeOffType',
             'active': 'active',
             'metadata': 'metadata',
             'self_uri': 'selfUri'
@@ -80,6 +83,7 @@ class TimeOffPlan(object):
         self._time_off_limits = None
         self._auto_approval_rule = None
         self._days_before_start_to_expire_from_waitlist = None
+        self._hris_time_off_type = None
         self._active = None
         self._metadata = None
         self._self_uri = None
@@ -232,6 +236,30 @@ class TimeOffPlan(object):
         
 
         self._days_before_start_to_expire_from_waitlist = days_before_start_to_expire_from_waitlist
+
+    @property
+    def hris_time_off_type(self) -> 'HrisTimeOffType':
+        """
+        Gets the hris_time_off_type of this TimeOffPlan.
+        Time off type, if this time off plan is associated with the integration.
+
+        :return: The hris_time_off_type of this TimeOffPlan.
+        :rtype: HrisTimeOffType
+        """
+        return self._hris_time_off_type
+
+    @hris_time_off_type.setter
+    def hris_time_off_type(self, hris_time_off_type: 'HrisTimeOffType') -> None:
+        """
+        Sets the hris_time_off_type of this TimeOffPlan.
+        Time off type, if this time off plan is associated with the integration.
+
+        :param hris_time_off_type: The hris_time_off_type of this TimeOffPlan.
+        :type: HrisTimeOffType
+        """
+        
+
+        self._hris_time_off_type = hris_time_off_type
 
     @property
     def active(self) -> bool:

@@ -71,6 +71,7 @@ class EvaluationResponse(object):
             'release_date': 'datetime',
             'assigned_date': 'datetime',
             'changed_date': 'datetime',
+            'revision_created_date': 'datetime',
             'queue': 'Queue',
             'media_type': 'list[str]',
             'rescore': 'bool',
@@ -105,6 +106,7 @@ class EvaluationResponse(object):
             'release_date': 'releaseDate',
             'assigned_date': 'assignedDate',
             'changed_date': 'changedDate',
+            'revision_created_date': 'revisionCreatedDate',
             'queue': 'queue',
             'media_type': 'mediaType',
             'rescore': 'rescore',
@@ -138,6 +140,7 @@ class EvaluationResponse(object):
         self._release_date = None
         self._assigned_date = None
         self._changed_date = None
+        self._revision_created_date = None
         self._queue = None
         self._media_type = None
         self._rescore = None
@@ -519,6 +522,30 @@ class EvaluationResponse(object):
         
 
         self._changed_date = changed_date
+
+    @property
+    def revision_created_date(self) -> datetime:
+        """
+        Gets the revision_created_date of this EvaluationResponse.
+        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :return: The revision_created_date of this EvaluationResponse.
+        :rtype: datetime
+        """
+        return self._revision_created_date
+
+    @revision_created_date.setter
+    def revision_created_date(self, revision_created_date: datetime) -> None:
+        """
+        Sets the revision_created_date of this EvaluationResponse.
+        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :param revision_created_date: The revision_created_date of this EvaluationResponse.
+        :type: datetime
+        """
+        
+
+        self._revision_created_date = revision_created_date
 
     @property
     def queue(self) -> 'Queue':

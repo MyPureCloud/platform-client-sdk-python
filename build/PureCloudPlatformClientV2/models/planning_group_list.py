@@ -34,6 +34,7 @@ from typing import Dict
 
 if TYPE_CHECKING:
     from . import PlanningGroup
+    from . import WfmVersionedEntityMetadata
 
 class PlanningGroupList(object):
     """
@@ -50,14 +51,17 @@ class PlanningGroupList(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'entities': 'list[PlanningGroup]'
+            'entities': 'list[PlanningGroup]',
+            'metadata': 'WfmVersionedEntityMetadata'
         }
 
         self.attribute_map = {
-            'entities': 'entities'
+            'entities': 'entities',
+            'metadata': 'metadata'
         }
 
         self._entities = None
+        self._metadata = None
 
     @property
     def entities(self) -> List['PlanningGroup']:
@@ -82,6 +86,30 @@ class PlanningGroupList(object):
         
 
         self._entities = entities
+
+    @property
+    def metadata(self) -> 'WfmVersionedEntityMetadata':
+        """
+        Gets the metadata of this PlanningGroupList.
+        Version metadata for the planning groups
+
+        :return: The metadata of this PlanningGroupList.
+        :rtype: WfmVersionedEntityMetadata
+        """
+        return self._metadata
+
+    @metadata.setter
+    def metadata(self, metadata: 'WfmVersionedEntityMetadata') -> None:
+        """
+        Sets the metadata of this PlanningGroupList.
+        Version metadata for the planning groups
+
+        :param metadata: The metadata of this PlanningGroupList.
+        :type: WfmVersionedEntityMetadata
+        """
+        
+
+        self._metadata = metadata
 
     def to_dict(self):
         """

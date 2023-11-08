@@ -7,7 +7,7 @@ title: DomainOrganizationRoleUpdate
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **id** | **str** | The globally unique identifier for the object. | [optional] |
+| **id** | **str** | role id | [optional] |
 | **name** | **str** | The name of the role | |
 | **description** | **str** |  | [optional] |
 | **default_role_id** | **str** |  | [optional] |

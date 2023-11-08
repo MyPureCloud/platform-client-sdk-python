@@ -26,6 +26,7 @@ from .action_contract import ActionContract
 from .action_contract_input import ActionContractInput
 from .action_entity_listing import ActionEntityListing
 from .action_event_action_map import ActionEventActionMap
+from .action_event_request import ActionEventRequest
 from .action_input import ActionInput
 from .action_map import ActionMap
 from .action_map_action import ActionMapAction
@@ -160,7 +161,6 @@ from .api_usage_row import ApiUsageRow
 from .api_usage_simple_search import ApiUsageSimpleSearch
 from .app_event import AppEvent
 from .app_event_request import AppEventRequest
-from .app_event_request_session import AppEventRequestSession
 from .app_event_response import AppEventResponse
 from .app_event_response_session import AppEventResponseSession
 from .append_to_dnc_action_settings import AppendToDncActionSettings
@@ -1054,6 +1054,8 @@ from .dependency_object_entity_listing import DependencyObjectEntityListing
 from .dependency_status import DependencyStatus
 from .dependency_type import DependencyType
 from .dependency_type_entity_listing import DependencyTypeEntityListing
+from .deployment_ping import DeploymentPing
+from .deployment_web_action import DeploymentWebAction
 from .destination import Destination
 from .detail import Detail
 from .detected_dialog_act import DetectedDialogAct
@@ -1166,6 +1168,7 @@ from .digits import Digits
 from .direct_routing import DirectRouting
 from .direct_routing_media_settings import DirectRoutingMediaSettings
 from .directory_user_devices_listing import DirectoryUserDevicesListing
+from .disable_site_connections_request import DisableSiteConnectionsRequest
 from .disallowed_entity_learning_assignment_item import DisallowedEntityLearningAssignmentItem
 from .disallowed_entity_learning_assignment_reference import DisallowedEntityLearningAssignmentReference
 from .disconnect_reason import DisconnectReason
@@ -1418,6 +1421,8 @@ from .evaluator_activity_entity_listing import EvaluatorActivityEntityListing
 from .event import Event
 from .event_action import EventAction
 from .event_condition import EventCondition
+from .event_definition import EventDefinition
+from .event_definition_listing import EventDefinitionListing
 from .event_error import EventError
 from .event_listing import EventListing
 from .event_log import EventLog
@@ -1569,6 +1574,8 @@ from .flow_observation_query_filter import FlowObservationQueryFilter
 from .flow_observation_query_predicate import FlowObservationQueryPredicate
 from .flow_observation_query_response import FlowObservationQueryResponse
 from .flow_outcome import FlowOutcome
+from .flow_outcome_detail_event_topic_flow_milestone import FlowOutcomeDetailEventTopicFlowMilestone
+from .flow_outcome_detail_event_topic_flow_outcome_event import FlowOutcomeDetailEventTopicFlowOutcomeEvent
 from .flow_outcome_division_view import FlowOutcomeDivisionView
 from .flow_outcome_division_view_entity_listing import FlowOutcomeDivisionViewEntityListing
 from .flow_outcome_listing import FlowOutcomeListing
@@ -2237,6 +2244,7 @@ from .move_agents_response import MoveAgentsResponse
 from .move_management_unit_request import MoveManagementUnitRequest
 from .move_management_unit_response import MoveManagementUnitResponse
 from .mu_reschedule_result_wrapper import MuRescheduleResultWrapper
+from .mutable_user_presence import MutableUserPresence
 from .mute_snooze_fields import MuteSnoozeFields
 from .ntp_settings import NTPSettings
 from .named_entity import NamedEntity
@@ -2309,6 +2317,7 @@ from .observation_value import ObservationValue
 from .okta import Okta
 from .one_login import OneLogin
 from .open_action_fields import OpenActionFields
+from .open_action_properties import OpenActionProperties
 from .open_content_attachment import OpenContentAttachment
 from .open_event import OpenEvent
 from .open_event_normalized_message import OpenEventNormalizedMessage
@@ -3118,6 +3127,7 @@ from .sip_download_response import SipDownloadResponse
 from .sip_search_result import SipSearchResult
 from .site import Site
 from .site_connection import SiteConnection
+from .site_connections import SiteConnections
 from .site_entity_listing import SiteEntityListing
 from .skill_entity_listing import SkillEntityListing
 from .skill_group import SkillGroup
@@ -3481,6 +3491,7 @@ from .update_time_off_limit_request import UpdateTimeOffLimitRequest
 from .update_time_off_plan_request import UpdateTimeOffPlanRequest
 from .update_trigger_request import UpdateTriggerRequest
 from .update_user import UpdateUser
+from .update_verifier_request import UpdateVerifierRequest
 from .update_work_plan_rotation_agent_request import UpdateWorkPlanRotationAgentRequest
 from .update_work_plan_rotation_request import UpdateWorkPlanRotationRequest
 from .upload_url_request import UploadUrlRequest
@@ -3653,6 +3664,7 @@ from .v2_conversation_message_typing_event_for_workflow_topic_conversation_notif
 from .v2_conversation_message_typing_event_for_workflow_topic_conversation_reason import V2ConversationMessageTypingEventForWorkflowTopicConversationReason
 from .v2_conversation_message_typing_event_for_workflow_topic_conversation_recipient_additional_identifier import V2ConversationMessageTypingEventForWorkflowTopicConversationRecipientAdditionalIdentifier
 from .v2_conversation_message_typing_event_for_workflow_topic_message_data import V2ConversationMessageTypingEventForWorkflowTopicMessageData
+from .v2_mobius_alerts_topic_addressable_entity_ref import V2MobiusAlertsTopicAddressableEntityRef
 from .v2_mobius_alerts_topic_alert import V2MobiusAlertsTopicAlert
 from .v2_mobius_alerts_topic_alert_notification import V2MobiusAlertsTopicAlertNotification
 from .v2_mobius_alerts_topic_alert_rule_properties import V2MobiusAlertsTopicAlertRuleProperties
@@ -3661,6 +3673,7 @@ from .v2_mobius_alerts_topic_alert_summary_entity import V2MobiusAlertsTopicAler
 from .v2_mobius_alerts_topic_condition import V2MobiusAlertsTopicCondition
 from .v2_mobius_alerts_topic_condition_rule_predicate import V2MobiusAlertsTopicConditionRulePredicate
 from .v2_mobius_alerts_topic_entity_properties import V2MobiusAlertsTopicEntityProperties
+from .v2_mobius_rules_topic_addressable_entity_ref import V2MobiusRulesTopicAddressableEntityRef
 from .v2_mobius_rules_topic_alert_notification import V2MobiusRulesTopicAlertNotification
 from .v2_mobius_rules_topic_condition import V2MobiusRulesTopicCondition
 from .v2_mobius_rules_topic_condition_rule_predicate import V2MobiusRulesTopicConditionRulePredicate
@@ -3678,6 +3691,8 @@ from .value_wrapper_hris_time_off_type import ValueWrapperHrisTimeOffType
 from .value_wrapper_planning_period_settings import ValueWrapperPlanningPeriodSettings
 from .value_wrapper_string import ValueWrapperString
 from .verification_result import VerificationResult
+from .verifier import Verifier
+from .verifier_entity_listing import VerifierEntityListing
 from .video import Video
 from .video_conference_details import VideoConferenceDetails
 from .video_conference_update_topic_participant_info import VideoConferenceUpdateTopicParticipantInfo
@@ -3747,6 +3762,7 @@ from .web_messaging_generic import WebMessagingGeneric
 from .web_messaging_message import WebMessagingMessage
 from .web_messaging_message_entity_list import WebMessagingMessageEntityList
 from .web_messaging_offer_fields import WebMessagingOfferFields
+from .web_messaging_offer_properties import WebMessagingOfferProperties
 from .web_messaging_quick_reply import WebMessagingQuickReply
 from .web_messaging_recipient import WebMessagingRecipient
 from .week_schedule import WeekSchedule
@@ -3911,6 +3927,8 @@ from .wfm_versioned_entity_metadata import WfmVersionedEntityMetadata
 from .whats_app_available_phone_number_details import WhatsAppAvailablePhoneNumberDetails
 from .whats_app_available_phone_number_details_listing import WhatsAppAvailablePhoneNumberDetailsListing
 from .whats_app_definition import WhatsAppDefinition
+from .whats_app_embedded_signup_integration_activation_request import WhatsAppEmbeddedSignupIntegrationActivationRequest
+from .whats_app_embedded_signup_integration_request import WhatsAppEmbeddedSignupIntegrationRequest
 from .whats_app_id import WhatsAppId
 from .whats_app_integration import WhatsAppIntegration
 from .whats_app_integration_entity_listing import WhatsAppIntegrationEntityListing

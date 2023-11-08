@@ -50,14 +50,17 @@ class SearchShiftTradesResponse(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'trades': 'list[SearchShiftTradeResponse]'
+            'trades': 'list[SearchShiftTradeResponse]',
+            'download_url': 'str'
         }
 
         self.attribute_map = {
-            'trades': 'trades'
+            'trades': 'trades',
+            'download_url': 'downloadUrl'
         }
 
         self._trades = None
+        self._download_url = None
 
     @property
     def trades(self) -> List['SearchShiftTradeResponse']:
@@ -82,6 +85,30 @@ class SearchShiftTradesResponse(object):
         
 
         self._trades = trades
+
+    @property
+    def download_url(self) -> str:
+        """
+        Gets the download_url of this SearchShiftTradesResponse.
+        URL from which to fetch results for requests with a large result set. If populated, the downloaded data will conform to the same schema as would normally be returned, excepting downloaded data will never itself contain a downloadUrl
+
+        :return: The download_url of this SearchShiftTradesResponse.
+        :rtype: str
+        """
+        return self._download_url
+
+    @download_url.setter
+    def download_url(self, download_url: str) -> None:
+        """
+        Sets the download_url of this SearchShiftTradesResponse.
+        URL from which to fetch results for requests with a large result set. If populated, the downloaded data will conform to the same schema as would normally be returned, excepting downloaded data will never itself contain a downloadUrl
+
+        :param download_url: The download_url of this SearchShiftTradesResponse.
+        :type: str
+        """
+        
+
+        self._download_url = download_url
 
     def to_dict(self):
         """

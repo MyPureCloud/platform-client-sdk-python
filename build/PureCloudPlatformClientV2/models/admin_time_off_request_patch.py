@@ -52,6 +52,7 @@ class AdminTimeOffRequestPatch(object):
         self.swagger_types = {
             'status': 'str',
             'activity_code_id': 'str',
+            'paid': 'bool',
             'notes': 'str',
             'full_day_management_unit_dates': 'list[str]',
             'partial_day_start_date_times': 'list[datetime]',
@@ -64,6 +65,7 @@ class AdminTimeOffRequestPatch(object):
         self.attribute_map = {
             'status': 'status',
             'activity_code_id': 'activityCodeId',
+            'paid': 'paid',
             'notes': 'notes',
             'full_day_management_unit_dates': 'fullDayManagementUnitDates',
             'partial_day_start_date_times': 'partialDayStartDateTimes',
@@ -75,6 +77,7 @@ class AdminTimeOffRequestPatch(object):
 
         self._status = None
         self._activity_code_id = None
+        self._paid = None
         self._notes = None
         self._full_day_management_unit_dates = None
         self._partial_day_start_date_times = None
@@ -137,6 +140,30 @@ class AdminTimeOffRequestPatch(object):
         self._activity_code_id = activity_code_id
 
     @property
+    def paid(self) -> bool:
+        """
+        Gets the paid of this AdminTimeOffRequestPatch.
+        Whether this is a paid time off request
+
+        :return: The paid of this AdminTimeOffRequestPatch.
+        :rtype: bool
+        """
+        return self._paid
+
+    @paid.setter
+    def paid(self, paid: bool) -> None:
+        """
+        Sets the paid of this AdminTimeOffRequestPatch.
+        Whether this is a paid time off request
+
+        :param paid: The paid of this AdminTimeOffRequestPatch.
+        :type: bool
+        """
+        
+
+        self._paid = paid
+
+    @property
     def notes(self) -> str:
         """
         Gets the notes of this AdminTimeOffRequestPatch.
@@ -164,7 +191,7 @@ class AdminTimeOffRequestPatch(object):
     def full_day_management_unit_dates(self) -> List[str]:
         """
         Gets the full_day_management_unit_dates of this AdminTimeOffRequestPatch.
-        A set of dates in yyyy-MM-dd format.  Should be interpreted in the management unit's configured time zone.
+        A set of dates in yyyy-MM-dd format. Should be interpreted in the management unit's configured time zone.
 
         :return: The full_day_management_unit_dates of this AdminTimeOffRequestPatch.
         :rtype: list[str]
@@ -175,7 +202,7 @@ class AdminTimeOffRequestPatch(object):
     def full_day_management_unit_dates(self, full_day_management_unit_dates: List[str]) -> None:
         """
         Sets the full_day_management_unit_dates of this AdminTimeOffRequestPatch.
-        A set of dates in yyyy-MM-dd format.  Should be interpreted in the management unit's configured time zone.
+        A set of dates in yyyy-MM-dd format. Should be interpreted in the management unit's configured time zone.
 
         :param full_day_management_unit_dates: The full_day_management_unit_dates of this AdminTimeOffRequestPatch.
         :type: list[str]

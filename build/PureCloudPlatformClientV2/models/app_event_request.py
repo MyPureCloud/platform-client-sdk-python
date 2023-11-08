@@ -33,7 +33,6 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
-    from . import AppEventRequestSession
     from . import CustomEventAttribute
     from . import Device
     from . import JourneyApp
@@ -62,7 +61,6 @@ class AppEventRequest(object):
             'sdk_library': 'SdkLibrary',
             'network_connectivity': 'NetworkConnectivity',
             'referrer_url': 'str',
-            'session': 'AppEventRequestSession',
             'search_query': 'str',
             'attributes': 'dict(str, CustomEventAttribute)',
             'traits': 'dict(str, CustomEventAttribute)',
@@ -78,7 +76,6 @@ class AppEventRequest(object):
             'sdk_library': 'sdkLibrary',
             'network_connectivity': 'networkConnectivity',
             'referrer_url': 'referrerUrl',
-            'session': 'session',
             'search_query': 'searchQuery',
             'attributes': 'attributes',
             'traits': 'traits',
@@ -93,7 +90,6 @@ class AppEventRequest(object):
         self._sdk_library = None
         self._network_connectivity = None
         self._referrer_url = None
-        self._session = None
         self._search_query = None
         self._attributes = None
         self._traits = None
@@ -269,30 +265,6 @@ class AppEventRequest(object):
         self._referrer_url = referrer_url
 
     @property
-    def session(self) -> 'AppEventRequestSession':
-        """
-        Gets the session of this AppEventRequest.
-        Contains information about the app session the event belongs to. A session is expected to end once the application is closed or a customer has been idle for more than 30 minutes. Each session is tied to a single customer and a customer can be linked to multiple unique sessions.
-
-        :return: The session of this AppEventRequest.
-        :rtype: AppEventRequestSession
-        """
-        return self._session
-
-    @session.setter
-    def session(self, session: 'AppEventRequestSession') -> None:
-        """
-        Sets the session of this AppEventRequest.
-        Contains information about the app session the event belongs to. A session is expected to end once the application is closed or a customer has been idle for more than 30 minutes. Each session is tied to a single customer and a customer can be linked to multiple unique sessions.
-
-        :param session: The session of this AppEventRequest.
-        :type: AppEventRequestSession
-        """
-        
-
-        self._session = session
-
-    @property
     def search_query(self) -> str:
         """
         Gets the search_query of this AppEventRequest.
@@ -392,7 +364,7 @@ class AppEventRequest(object):
     def created_date(self) -> datetime:
         """
         Gets the created_date of this AppEventRequest.
-        Timestamp indicating when the event actually took place. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+        UTC timestamp indicating when the event actually took place, events older than an hour will be rejected. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The created_date of this AppEventRequest.
         :rtype: datetime
@@ -403,7 +375,7 @@ class AppEventRequest(object):
     def created_date(self, created_date: datetime) -> None:
         """
         Sets the created_date of this AppEventRequest.
-        Timestamp indicating when the event actually took place. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+        UTC timestamp indicating when the event actually took place, events older than an hour will be rejected. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param created_date: The created_date of this AppEventRequest.
         :type: datetime

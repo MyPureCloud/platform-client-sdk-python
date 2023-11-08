@@ -103,7 +103,7 @@ class CallbackMediaSettings(object):
     def alerting_timeout_seconds(self) -> int:
         """
         Gets the alerting_timeout_seconds of this CallbackMediaSettings.
-
+        The alerting timeout for the media type, in seconds
 
         :return: The alerting_timeout_seconds of this CallbackMediaSettings.
         :rtype: int
@@ -114,7 +114,7 @@ class CallbackMediaSettings(object):
     def alerting_timeout_seconds(self, alerting_timeout_seconds: int) -> None:
         """
         Sets the alerting_timeout_seconds of this CallbackMediaSettings.
-
+        The alerting timeout for the media type, in seconds
 
         :param alerting_timeout_seconds: The alerting_timeout_seconds of this CallbackMediaSettings.
         :type: int
@@ -127,7 +127,7 @@ class CallbackMediaSettings(object):
     def service_level(self) -> 'ServiceLevel':
         """
         Gets the service_level of this CallbackMediaSettings.
-
+        The targeted service level for the media type
 
         :return: The service_level of this CallbackMediaSettings.
         :rtype: ServiceLevel
@@ -138,7 +138,7 @@ class CallbackMediaSettings(object):
     def service_level(self, service_level: 'ServiceLevel') -> None:
         """
         Sets the service_level of this CallbackMediaSettings.
-
+        The targeted service level for the media type
 
         :param service_level: The service_level of this CallbackMediaSettings.
         :type: ServiceLevel
@@ -151,7 +151,7 @@ class CallbackMediaSettings(object):
     def auto_answer_alert_tone_seconds(self) -> float:
         """
         Gets the auto_answer_alert_tone_seconds of this CallbackMediaSettings.
-
+        How long to play the alerting tone for an auto-answer interaction
 
         :return: The auto_answer_alert_tone_seconds of this CallbackMediaSettings.
         :rtype: float
@@ -162,7 +162,7 @@ class CallbackMediaSettings(object):
     def auto_answer_alert_tone_seconds(self, auto_answer_alert_tone_seconds: float) -> None:
         """
         Sets the auto_answer_alert_tone_seconds of this CallbackMediaSettings.
-
+        How long to play the alerting tone for an auto-answer interaction
 
         :param auto_answer_alert_tone_seconds: The auto_answer_alert_tone_seconds of this CallbackMediaSettings.
         :type: float
@@ -175,7 +175,7 @@ class CallbackMediaSettings(object):
     def manual_answer_alert_tone_seconds(self) -> float:
         """
         Gets the manual_answer_alert_tone_seconds of this CallbackMediaSettings.
-
+        How long to play the alerting tone for a manual-answer interaction
 
         :return: The manual_answer_alert_tone_seconds of this CallbackMediaSettings.
         :rtype: float
@@ -186,7 +186,7 @@ class CallbackMediaSettings(object):
     def manual_answer_alert_tone_seconds(self, manual_answer_alert_tone_seconds: float) -> None:
         """
         Sets the manual_answer_alert_tone_seconds of this CallbackMediaSettings.
-
+        How long to play the alerting tone for a manual-answer interaction
 
         :param manual_answer_alert_tone_seconds: The manual_answer_alert_tone_seconds of this CallbackMediaSettings.
         :type: float

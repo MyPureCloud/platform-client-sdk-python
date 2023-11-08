@@ -113,7 +113,7 @@ class AgentlessEmailSendRequestDto(object):
     def conversation_id(self) -> str:
         """
         Gets the conversation_id of this AgentlessEmailSendRequestDto.
-        The identifier of the conversation.
+        The identifier of the conversation. This must be an email interaction.
 
         :return: The conversation_id of this AgentlessEmailSendRequestDto.
         :rtype: str
@@ -124,7 +124,7 @@ class AgentlessEmailSendRequestDto(object):
     def conversation_id(self, conversation_id: str) -> None:
         """
         Sets the conversation_id of this AgentlessEmailSendRequestDto.
-        The identifier of the conversation.
+        The identifier of the conversation. This must be an email interaction.
 
         :param conversation_id: The conversation_id of this AgentlessEmailSendRequestDto.
         :type: str

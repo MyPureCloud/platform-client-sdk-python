@@ -22,6 +22,7 @@ title: Evaluation
 | **release_date** | **datetime** | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
 | **assigned_date** | **datetime** | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
 | **changed_date** | **datetime** | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
+| **revision_created_date** | **datetime** | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
 | **queue** | [**Queue**](Queue.html) |  | [optional] |
 | **media_type** | **list[str]** | List of different communication types used in conversation. | [optional] |
 | **rescore** | **bool** | Is only true when evaluation is re-scored. | [optional] |

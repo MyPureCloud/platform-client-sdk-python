@@ -225,7 +225,7 @@ class AppEventResponseSession(object):
     def created_date(self) -> datetime:
         """
         Gets the created_date of this AppEventResponseSession.
-        Date of the session's first event, that is when the session starts. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+        UTC timestamp of the session's first event, that is when the session starts. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The created_date of this AppEventResponseSession.
         :rtype: datetime
@@ -236,7 +236,7 @@ class AppEventResponseSession(object):
     def created_date(self, created_date: datetime) -> None:
         """
         Sets the created_date of this AppEventResponseSession.
-        Date of the session's first event, that is when the session starts. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+        UTC timestamp of the session's first event, that is when the session starts. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param created_date: The created_date of this AppEventResponseSession.
         :type: datetime
