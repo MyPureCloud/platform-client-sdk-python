@@ -117,7 +117,7 @@ class SupportCenterCategory(object):
     def image(self) -> 'SupportCenterImage':
         """
         Gets the image of this SupportCenterCategory.
-
+        Image attributes for a featured category
 
         :return: The image of this SupportCenterCategory.
         :rtype: SupportCenterImage
@@ -128,7 +128,7 @@ class SupportCenterCategory(object):
     def image(self, image: 'SupportCenterImage') -> None:
         """
         Sets the image of this SupportCenterCategory.
-
+        Image attributes for a featured category
 
         :param image: The image of this SupportCenterCategory.
         :type: SupportCenterImage

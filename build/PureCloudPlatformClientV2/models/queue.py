@@ -88,6 +88,7 @@ class Queue(object):
             'on_hold_prompt': 'DomainEntityRef',
             'auto_answer_only': 'bool',
             'enable_transcription': 'bool',
+            'enable_audio_monitoring': 'bool',
             'enable_manual_assignment': 'bool',
             'agent_owned_routing': 'AgentOwnedRouting',
             'direct_routing': 'DirectRouting',
@@ -128,6 +129,7 @@ class Queue(object):
             'on_hold_prompt': 'onHoldPrompt',
             'auto_answer_only': 'autoAnswerOnly',
             'enable_transcription': 'enableTranscription',
+            'enable_audio_monitoring': 'enableAudioMonitoring',
             'enable_manual_assignment': 'enableManualAssignment',
             'agent_owned_routing': 'agentOwnedRouting',
             'direct_routing': 'directRouting',
@@ -167,6 +169,7 @@ class Queue(object):
         self._on_hold_prompt = None
         self._auto_answer_only = None
         self._enable_transcription = None
+        self._enable_audio_monitoring = None
         self._enable_manual_assignment = None
         self._agent_owned_routing = None
         self._direct_routing = None
@@ -812,6 +815,30 @@ class Queue(object):
         
 
         self._enable_transcription = enable_transcription
+
+    @property
+    def enable_audio_monitoring(self) -> bool:
+        """
+        Gets the enable_audio_monitoring of this Queue.
+        Indicates whether audio monitoring is enabled for this queue.
+
+        :return: The enable_audio_monitoring of this Queue.
+        :rtype: bool
+        """
+        return self._enable_audio_monitoring
+
+    @enable_audio_monitoring.setter
+    def enable_audio_monitoring(self, enable_audio_monitoring: bool) -> None:
+        """
+        Sets the enable_audio_monitoring of this Queue.
+        Indicates whether audio monitoring is enabled for this queue.
+
+        :param enable_audio_monitoring: The enable_audio_monitoring of this Queue.
+        :type: bool
+        """
+        
+
+        self._enable_audio_monitoring = enable_audio_monitoring
 
     @property
     def enable_manual_assignment(self) -> bool:

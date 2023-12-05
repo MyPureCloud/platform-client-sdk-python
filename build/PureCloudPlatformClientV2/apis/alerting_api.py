@@ -154,10 +154,11 @@ class AlertingApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("delete_alerting_interactionstats_alert is deprecated")
     def delete_alerting_interactionstats_alert(self, alert_id: str, **kwargs) -> None:
         """
         Delete an interaction stats alert
-        
+        Apps should migrate to use DELETE /api/v2/alerting/alerts/{alertId}.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -232,10 +233,11 @@ class AlertingApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("delete_alerting_interactionstats_rule is deprecated")
     def delete_alerting_interactionstats_rule(self, rule_id: str, **kwargs) -> None:
         """
-        Delete an interaction stats rule.
-        
+        Delete an interaction stats rule
+        Apps should migrate to use DELETE /api/v2/alerting/rules/{ruleId}.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -466,10 +468,11 @@ class AlertingApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("get_alerting_alerts_active is deprecated")
     def get_alerting_alerts_active(self, **kwargs) -> 'ActiveAlertCount':
         """
-        Gets active alert count for a user.
-        
+        Gets active alert count for a user
+        Apps should migrate to use POST /api/v2/alerting/alerts/query with the queryType set to 'Count' and alertStatus to 'Active' in the request body.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -538,10 +541,11 @@ class AlertingApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("get_alerting_interactionstats_alert is deprecated")
     def get_alerting_interactionstats_alert(self, alert_id: str, **kwargs) -> 'InteractionStatsAlert':
         """
         Get an interaction stats alert
-        
+        Apps should migrate to use GET /api/v2/alerting/alerts/{alertId}.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -619,10 +623,11 @@ class AlertingApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("get_alerting_interactionstats_alerts is deprecated")
     def get_alerting_interactionstats_alerts(self, **kwargs) -> 'InteractionStatsAlertContainer':
         """
-        Get interaction stats alert list.
-        
+        Get interaction stats alert list
+        Apps should migrate to use POST /api/v2/alerting/alerts/query.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -694,10 +699,11 @@ class AlertingApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("get_alerting_interactionstats_alerts_unread is deprecated")
     def get_alerting_interactionstats_alerts_unread(self, **kwargs) -> 'UnreadMetric':
         """
-        Gets user unread count of interaction stats alerts.
-        
+        Gets user unread count of interaction stats alerts
+        Apps should migrate to use POST /api/v2/alerting/alerts/query with the queryType set to 'Count' and viewStatus to 'Unread' in the request body.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -766,10 +772,11 @@ class AlertingApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("get_alerting_interactionstats_rule is deprecated")
     def get_alerting_interactionstats_rule(self, rule_id: str, **kwargs) -> 'InteractionStatsRule':
         """
-        Get an interaction stats rule.
-        
+        Get an interaction stats rule
+        Apps should migrate to use GET /api/v2/alerting/rules/{ruleId}.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -847,10 +854,11 @@ class AlertingApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("get_alerting_interactionstats_rules is deprecated")
     def get_alerting_interactionstats_rules(self, **kwargs) -> 'InteractionStatsRuleContainer':
         """
-        Get an interaction stats rule list.
-        
+        Get an interaction stats rule list
+        Apps should migrate to use POST /api/v2/alerting/rules/query.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -1312,10 +1320,11 @@ class AlertingApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("post_alerting_interactionstats_rules is deprecated")
     def post_alerting_interactionstats_rules(self, body: 'InteractionStatsRule', **kwargs) -> 'InteractionStatsRule':
         """
-        Create an interaction stats rule.
-        
+        Create an interaction stats rule
+        Apps should migrate to use POST /api/v2/alerting/rules.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -1705,10 +1714,11 @@ class AlertingApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("put_alerting_interactionstats_alert is deprecated")
     def put_alerting_interactionstats_alert(self, alert_id: str, body: 'UnreadStatus', **kwargs) -> 'UnreadStatus':
         """
         Update an interaction stats alert read status
-        
+        Apps should migrate to use PUT /api/v2/alerting/alerts/{alertId}.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -1792,10 +1802,11 @@ class AlertingApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("put_alerting_interactionstats_rule is deprecated")
     def put_alerting_interactionstats_rule(self, rule_id: str, body: 'InteractionStatsRule', **kwargs) -> 'InteractionStatsRule':
         """
         Update an interaction stats rule
-        
+        Apps should migrate to use PUT /api/v2/alerting/rules/{ruleId}.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

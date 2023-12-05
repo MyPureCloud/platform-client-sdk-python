@@ -9,7 +9,7 @@ title: TriggerTarget
 |------------ | ------------- | ------------- | -------------|
 | **type** | **str** | The entity type to target | [optional] |
 | **id** | **str** | The ID of the entity to target | [optional] |
-| **workflow_target_settings** | [**WorkflowTargetSettings**](WorkflowTargetSettings.html) | Optional config for the target. Until the feature gets enabled will always operate in TopLevelPrimitives mode. | [optional] |
+| **workflow_target_settings** | [**WorkflowTargetSettings**](WorkflowTargetSettings.html) | Optional config for the target. | [optional] |
 {: class="table table-striped"}
 
 

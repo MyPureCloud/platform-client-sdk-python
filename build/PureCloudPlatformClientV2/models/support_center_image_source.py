@@ -61,7 +61,7 @@ class SupportCenterImageSource(object):
     def default_url(self) -> str:
         """
         Gets the default_url of this SupportCenterImageSource.
-
+        Default URL for image
 
         :return: The default_url of this SupportCenterImageSource.
         :rtype: str
@@ -72,7 +72,7 @@ class SupportCenterImageSource(object):
     def default_url(self, default_url: str) -> None:
         """
         Sets the default_url of this SupportCenterImageSource.
-
+        Default URL for image
 
         :param default_url: The default_url of this SupportCenterImageSource.
         :type: str

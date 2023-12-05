@@ -529,7 +529,7 @@ except ApiException as e:
 
 <a name="get_quality_agents_activity"></a>
 
-## [**AgentActivityEntityListing**](AgentActivityEntityListing.html) get_quality_agents_activity(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, start_time=start_time, end_time=end_time, agent_user_id=agent_user_id, evaluator_user_id=evaluator_user_id, name=name, group=group, form_context_id=form_context_id)
+## [**AgentActivityEntityListing**](AgentActivityEntityListing.html) get_quality_agents_activity(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, start_time=start_time, end_time=end_time, agent_user_id=agent_user_id, evaluator_user_id=evaluator_user_id, name=name, group=group, agent_team_id=agent_team_id, form_context_id=form_context_id)
 
 
 
@@ -568,11 +568,12 @@ agent_user_id = ['agent_user_id_example'] # list[str] | user id of agent request
 evaluator_user_id = 'evaluator_user_id_example' # str | user id of the evaluator (optional)
 name = 'name_example' # str | name (optional)
 group = 'group_example' # str | group id (optional)
+agent_team_id = 'agent_team_id_example' # str | team id of agents requested (optional)
 form_context_id = 'form_context_id_example' # str | shared id between form versions (optional)
 
 try:
     # Gets a list of Agent Activities
-    api_response = api_instance.get_quality_agents_activity(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, start_time=start_time, end_time=end_time, agent_user_id=agent_user_id, evaluator_user_id=evaluator_user_id, name=name, group=group, form_context_id=form_context_id)
+    api_response = api_instance.get_quality_agents_activity(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, start_time=start_time, end_time=end_time, agent_user_id=agent_user_id, evaluator_user_id=evaluator_user_id, name=name, group=group, agent_team_id=agent_team_id, form_context_id=form_context_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling QualityApi->get_quality_agents_activity: %s\n" % e)
@@ -595,6 +596,7 @@ except ApiException as e:
 | **evaluator_user_id** | **str**| user id of the evaluator | [optional]  |
 | **name** | **str**| name | [optional]  |
 | **group** | **str**| group id | [optional]  |
+| **agent_team_id** | **str**| team id of agents requested | [optional]  |
 | **form_context_id** | **str**| shared id between form versions | [optional]  |
 {: class="table table-striped"}
 
@@ -932,7 +934,7 @@ except ApiException as e:
 
 <a name="get_quality_evaluations_query"></a>
 
-## [**EvaluationEntityListing**](EvaluationEntityListing.html) get_quality_evaluations_query(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, conversation_id=conversation_id, agent_user_id=agent_user_id, evaluator_user_id=evaluator_user_id, assignee_user_id=assignee_user_id, queue_id=queue_id, start_time=start_time, end_time=end_time, form_context_id=form_context_id, evaluation_state=evaluation_state, is_released=is_released, agent_has_read=agent_has_read, expand_answer_total_scores=expand_answer_total_scores, maximum=maximum, sort_order=sort_order)
+## [**EvaluationEntityListing**](EvaluationEntityListing.html) get_quality_evaluations_query(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, conversation_id=conversation_id, agent_user_id=agent_user_id, agent_team_id=agent_team_id, evaluator_user_id=evaluator_user_id, assignee_user_id=assignee_user_id, queue_id=queue_id, start_time=start_time, end_time=end_time, form_context_id=form_context_id, evaluation_state=evaluation_state, is_released=is_released, agent_has_read=agent_has_read, expand_answer_total_scores=expand_answer_total_scores, maximum=maximum, sort_order=sort_order)
 
 
 
@@ -967,6 +969,7 @@ next_page = 'next_page_example' # str | NOTE: Does not work when querying evalua
 previous_page = 'previous_page_example' # str | Previous page token (optional)
 conversation_id = 'conversation_id_example' # str | conversationId specified (optional)
 agent_user_id = 'agent_user_id_example' # str | user id of the agent (optional)
+agent_team_id = 'agent_team_id_example' # str | team id of the agent (optional)
 evaluator_user_id = 'evaluator_user_id_example' # str | evaluator user id (optional)
 assignee_user_id = 'assignee_user_id_example' # str | assignee user id (optional)
 queue_id = 'queue_id_example' # str | queue id (optional)
@@ -982,7 +985,7 @@ sort_order = 'sort_order_example' # str | NOTE: Does not work when conversationI
 
 try:
     # Queries Evaluations and returns a paged list
-    api_response = api_instance.get_quality_evaluations_query(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, conversation_id=conversation_id, agent_user_id=agent_user_id, evaluator_user_id=evaluator_user_id, assignee_user_id=assignee_user_id, queue_id=queue_id, start_time=start_time, end_time=end_time, form_context_id=form_context_id, evaluation_state=evaluation_state, is_released=is_released, agent_has_read=agent_has_read, expand_answer_total_scores=expand_answer_total_scores, maximum=maximum, sort_order=sort_order)
+    api_response = api_instance.get_quality_evaluations_query(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, conversation_id=conversation_id, agent_user_id=agent_user_id, agent_team_id=agent_team_id, evaluator_user_id=evaluator_user_id, assignee_user_id=assignee_user_id, queue_id=queue_id, start_time=start_time, end_time=end_time, form_context_id=form_context_id, evaluation_state=evaluation_state, is_released=is_released, agent_has_read=agent_has_read, expand_answer_total_scores=expand_answer_total_scores, maximum=maximum, sort_order=sort_order)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling QualityApi->get_quality_evaluations_query: %s\n" % e)
@@ -1001,6 +1004,7 @@ except ApiException as e:
 | **previous_page** | **str**| Previous page token | [optional]  |
 | **conversation_id** | **str**| conversationId specified | [optional]  |
 | **agent_user_id** | **str**| user id of the agent | [optional]  |
+| **agent_team_id** | **str**| team id of the agent | [optional]  |
 | **evaluator_user_id** | **str**| evaluator user id | [optional]  |
 | **assignee_user_id** | **str**| assignee user id | [optional]  |
 | **queue_id** | **str**| queue id | [optional]  |
@@ -1021,7 +1025,7 @@ except ApiException as e:
 
 <a name="get_quality_evaluators_activity"></a>
 
-## [**EvaluatorActivityEntityListing**](EvaluatorActivityEntityListing.html) get_quality_evaluators_activity(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, start_time=start_time, end_time=end_time, name=name, permission=permission, group=group)
+## [**EvaluatorActivityEntityListing**](EvaluatorActivityEntityListing.html) get_quality_evaluators_activity(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, start_time=start_time, end_time=end_time, name=name, permission=permission, group=group, agent_team_id=agent_team_id)
 
 
 
@@ -1057,10 +1061,11 @@ end_time = '2013-10-20T19:20:30+01:00' # datetime | The end time specified. Date
 name = 'name_example' # str | Evaluator name (optional)
 permission = ['permission_example'] # list[str] | permission strings (optional)
 group = 'group_example' # str | group id (optional)
+agent_team_id = 'agent_team_id_example' # str | team id of agents to be considered (optional)
 
 try:
     # Get an evaluator activity
-    api_response = api_instance.get_quality_evaluators_activity(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, start_time=start_time, end_time=end_time, name=name, permission=permission, group=group)
+    api_response = api_instance.get_quality_evaluators_activity(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, start_time=start_time, end_time=end_time, name=name, permission=permission, group=group, agent_team_id=agent_team_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling QualityApi->get_quality_evaluators_activity: %s\n" % e)
@@ -1082,6 +1087,7 @@ except ApiException as e:
 | **name** | **str**| Evaluator name | [optional]  |
 | **permission** | [**list[str]**](str.html)| permission strings | [optional]  |
 | **group** | **str**| group id | [optional]  |
+| **agent_team_id** | **str**| team id of agents to be considered | [optional]  |
 {: class="table table-striped"}
 
 ### Return type

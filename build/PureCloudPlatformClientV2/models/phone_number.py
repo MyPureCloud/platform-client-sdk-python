@@ -51,6 +51,7 @@ class PhoneNumber(object):
             'display': 'str',
             'extension': 'int',
             'accepts_sms': 'bool',
+            'normalization_country_code': 'str',
             'user_input': 'str',
             'e164': 'str',
             'country_code': 'str'
@@ -60,6 +61,7 @@ class PhoneNumber(object):
             'display': 'display',
             'extension': 'extension',
             'accepts_sms': 'acceptsSMS',
+            'normalization_country_code': 'normalizationCountryCode',
             'user_input': 'userInput',
             'e164': 'e164',
             'country_code': 'countryCode'
@@ -68,6 +70,7 @@ class PhoneNumber(object):
         self._display = None
         self._extension = None
         self._accepts_sms = None
+        self._normalization_country_code = None
         self._user_input = None
         self._e164 = None
         self._country_code = None
@@ -76,7 +79,7 @@ class PhoneNumber(object):
     def display(self) -> str:
         """
         Gets the display of this PhoneNumber.
-
+        The displayed form of the phone number string. Users should input the phone number in this field, but it will be altered by the API on write. If the phone number can be read as E164, the value will be replaced with international formatted-version of the number. If the number cannot be read as E164, the value will be preserved as-is. In both cases, the provided input string will be copied to the userInput field.
 
         :return: The display of this PhoneNumber.
         :rtype: str
@@ -87,7 +90,7 @@ class PhoneNumber(object):
     def display(self, display: str) -> None:
         """
         Sets the display of this PhoneNumber.
-
+        The displayed form of the phone number string. Users should input the phone number in this field, but it will be altered by the API on write. If the phone number can be read as E164, the value will be replaced with international formatted-version of the number. If the number cannot be read as E164, the value will be preserved as-is. In both cases, the provided input string will be copied to the userInput field.
 
         :param display: The display of this PhoneNumber.
         :type: str
@@ -100,7 +103,7 @@ class PhoneNumber(object):
     def extension(self) -> int:
         """
         Gets the extension of this PhoneNumber.
-
+        An optional extension for the provided phone number.
 
         :return: The extension of this PhoneNumber.
         :rtype: int
@@ -111,7 +114,7 @@ class PhoneNumber(object):
     def extension(self, extension: int) -> None:
         """
         Sets the extension of this PhoneNumber.
-
+        An optional extension for the provided phone number.
 
         :param extension: The extension of this PhoneNumber.
         :type: int
@@ -124,7 +127,7 @@ class PhoneNumber(object):
     def accepts_sms(self) -> bool:
         """
         Gets the accepts_sms of this PhoneNumber.
-
+        Whether this phone number can accept SMS messages.
 
         :return: The accepts_sms of this PhoneNumber.
         :rtype: bool
@@ -135,7 +138,7 @@ class PhoneNumber(object):
     def accepts_sms(self, accepts_sms: bool) -> None:
         """
         Sets the accepts_sms of this PhoneNumber.
-
+        Whether this phone number can accept SMS messages.
 
         :param accepts_sms: The accepts_sms of this PhoneNumber.
         :type: bool
@@ -145,10 +148,34 @@ class PhoneNumber(object):
         self._accepts_sms = accepts_sms
 
     @property
+    def normalization_country_code(self) -> str:
+        """
+        Gets the normalization_country_code of this PhoneNumber.
+        The country code that will be used for E164 conversion of a provided phone number. If the country code is omitted from the provided phone number, the country code provided in this field will be used during the E164 conversion attempt. If this field is left empty, the default country code for any provided phone number that does not explicitly include a country code is assumed to be +1 (North America).
+
+        :return: The normalization_country_code of this PhoneNumber.
+        :rtype: str
+        """
+        return self._normalization_country_code
+
+    @normalization_country_code.setter
+    def normalization_country_code(self, normalization_country_code: str) -> None:
+        """
+        Sets the normalization_country_code of this PhoneNumber.
+        The country code that will be used for E164 conversion of a provided phone number. If the country code is omitted from the provided phone number, the country code provided in this field will be used during the E164 conversion attempt. If this field is left empty, the default country code for any provided phone number that does not explicitly include a country code is assumed to be +1 (North America).
+
+        :param normalization_country_code: The normalization_country_code of this PhoneNumber.
+        :type: str
+        """
+        
+
+        self._normalization_country_code = normalization_country_code
+
+    @property
     def user_input(self) -> str:
         """
         Gets the user_input of this PhoneNumber.
-
+        The user-inputted phone number string that was provided to the display field on write. This field is not user-writeable and will always be set by the system.
 
         :return: The user_input of this PhoneNumber.
         :rtype: str
@@ -159,7 +186,7 @@ class PhoneNumber(object):
     def user_input(self, user_input: str) -> None:
         """
         Sets the user_input of this PhoneNumber.
-
+        The user-inputted phone number string that was provided to the display field on write. This field is not user-writeable and will always be set by the system.
 
         :param user_input: The user_input of this PhoneNumber.
         :type: str
@@ -172,7 +199,7 @@ class PhoneNumber(object):
     def e164(self) -> str:
         """
         Gets the e164 of this PhoneNumber.
-
+        The E164-formatted form of the provided phone number. This field is not user-writeable and will only be set when the provided phone number could be read as E164.
 
         :return: The e164 of this PhoneNumber.
         :rtype: str
@@ -183,7 +210,7 @@ class PhoneNumber(object):
     def e164(self, e164: str) -> None:
         """
         Sets the e164 of this PhoneNumber.
-
+        The E164-formatted form of the provided phone number. This field is not user-writeable and will only be set when the provided phone number could be read as E164.
 
         :param e164: The e164 of this PhoneNumber.
         :type: str
@@ -196,7 +223,7 @@ class PhoneNumber(object):
     def country_code(self) -> str:
         """
         Gets the country_code of this PhoneNumber.
-
+        The detected country code from the provided phone number. This field is not user-writeable and will only be set when the provided phone number could be read as E164.
 
         :return: The country_code of this PhoneNumber.
         :rtype: str
@@ -207,7 +234,7 @@ class PhoneNumber(object):
     def country_code(self, country_code: str) -> None:
         """
         Sets the country_code of this PhoneNumber.
-
+        The detected country code from the provided phone number. This field is not user-writeable and will only be set when the provided phone number could be read as E164.
 
         :param country_code: The country_code of this PhoneNumber.
         :type: str

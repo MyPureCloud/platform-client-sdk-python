@@ -45,8 +45,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 Delete a Presence Definition
 
-delete_presence_definition is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps DELETE /api/v2/presence/definitions/{definitionId} 
 
 Requires ANY permissions: 
@@ -193,8 +191,6 @@ void (empty response body)
 
 Get a Presence Definition
 
-get_presence_definition is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/presence/definitions/{definitionId} 
 
 Requires ALL permissions: 
@@ -245,8 +241,6 @@ except ApiException as e:
 
 
 Get a list of Presence Definitions
-
-get_presence_definitions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/presence/definitions 
 
@@ -948,8 +942,6 @@ except ApiException as e:
 
 Create a Presence Definition
 
-post_presence_definitions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps POST /api/v2/presence/definitions 
 
 Requires ALL permissions: 
@@ -1096,8 +1088,6 @@ except ApiException as e:
 
 
 Update a Presence Definition
-
-put_presence_definition is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps PUT /api/v2/presence/definitions/{definitionId} 
 

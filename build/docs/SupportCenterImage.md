@@ -7,7 +7,7 @@ title: SupportCenterImage
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **source** | [**SupportCenterImageSource**](SupportCenterImageSource.html) |  | [optional] |
+| **source** | [**SupportCenterImageSource**](SupportCenterImageSource.html) | Source URLs for image | [optional] |
 {: class="table table-striped"}
 
 

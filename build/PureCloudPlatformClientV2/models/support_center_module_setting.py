@@ -102,7 +102,7 @@ class SupportCenterModuleSetting(object):
     def enabled(self) -> bool:
         """
         Gets the enabled of this SupportCenterModuleSetting.
-        Whether or not support center screen module is enabled
+        Whether or not knowledge portal (previously support center) screen module is enabled
 
         :return: The enabled of this SupportCenterModuleSetting.
         :rtype: bool
@@ -113,7 +113,7 @@ class SupportCenterModuleSetting(object):
     def enabled(self, enabled: bool) -> None:
         """
         Sets the enabled of this SupportCenterModuleSetting.
-        Whether or not support center screen module is enabled
+        Whether or not knowledge portal (previously support center) screen module is enabled
 
         :param enabled: The enabled of this SupportCenterModuleSetting.
         :type: bool

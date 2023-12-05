@@ -122,7 +122,7 @@ class TriggerTarget(object):
     def workflow_target_settings(self) -> 'WorkflowTargetSettings':
         """
         Gets the workflow_target_settings of this TriggerTarget.
-        Optional config for the target. Until the feature gets enabled will always operate in TopLevelPrimitives mode.
+        Optional config for the target.
 
         :return: The workflow_target_settings of this TriggerTarget.
         :rtype: WorkflowTargetSettings
@@ -133,7 +133,7 @@ class TriggerTarget(object):
     def workflow_target_settings(self, workflow_target_settings: 'WorkflowTargetSettings') -> None:
         """
         Sets the workflow_target_settings of this TriggerTarget.
-        Optional config for the target. Until the feature gets enabled will always operate in TopLevelPrimitives mode.
+        Optional config for the target.
 
         :param workflow_target_settings: The workflow_target_settings of this TriggerTarget.
         :type: WorkflowTargetSettings

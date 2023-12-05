@@ -374,7 +374,7 @@ class WebDeploymentConfigurationVersion(object):
     def support_center(self) -> 'SupportCenterSettings':
         """
         Gets the support_center of this WebDeploymentConfigurationVersion.
-        The settings for support center
+        The settings for knowledge portal (previously support center)
 
         :return: The support_center of this WebDeploymentConfigurationVersion.
         :rtype: SupportCenterSettings
@@ -385,7 +385,7 @@ class WebDeploymentConfigurationVersion(object):
     def support_center(self, support_center: 'SupportCenterSettings') -> None:
         """
         Sets the support_center of this WebDeploymentConfigurationVersion.
-        The settings for support center
+        The settings for knowledge portal (previously support center)
 
         :param support_center: The support_center of this WebDeploymentConfigurationVersion.
         :type: SupportCenterSettings

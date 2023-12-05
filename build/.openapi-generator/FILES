@@ -388,11 +388,13 @@ PureCloudPlatformClientV2/models/bot_aggregation_query.py
 PureCloudPlatformClientV2/models/bot_aggregation_view.py
 PureCloudPlatformClientV2/models/bot_async_aggregate_query_response.py
 PureCloudPlatformClientV2/models/bot_async_aggregation_query.py
+PureCloudPlatformClientV2/models/bot_channel.py
 PureCloudPlatformClientV2/models/bot_connector_bot.py
 PureCloudPlatformClientV2/models/bot_connector_bot_summary_entity_listing.py
 PureCloudPlatformClientV2/models/bot_connector_bot_version.py
 PureCloudPlatformClientV2/models/bot_connector_bot_version_summary_entity_listing.py
 PureCloudPlatformClientV2/models/bot_execution_configuration.py
+PureCloudPlatformClientV2/models/bot_flow_session.py
 PureCloudPlatformClientV2/models/bot_intent.py
 PureCloudPlatformClientV2/models/bot_list.py
 PureCloudPlatformClientV2/models/bot_messenger_profile.py
@@ -2099,6 +2101,7 @@ PureCloudPlatformClientV2/models/learning_assignment_bulk_add_response.py
 PureCloudPlatformClientV2/models/learning_assignment_bulk_remove_response.py
 PureCloudPlatformClientV2/models/learning_assignment_create.py
 PureCloudPlatformClientV2/models/learning_assignment_entity.py
+PureCloudPlatformClientV2/models/learning_assignment_external_update.py
 PureCloudPlatformClientV2/models/learning_assignment_item.py
 PureCloudPlatformClientV2/models/learning_assignment_reassign.py
 PureCloudPlatformClientV2/models/learning_assignment_reference.py
@@ -3161,6 +3164,7 @@ PureCloudPlatformClientV2/models/session_end_details.py
 PureCloudPlatformClientV2/models/session_last_event.py
 PureCloudPlatformClientV2/models/session_listing.py
 PureCloudPlatformClientV2/models/session_segment_assignment.py
+PureCloudPlatformClientV2/models/sessions_response.py
 PureCloudPlatformClientV2/models/set_content_template_action_settings.py
 PureCloudPlatformClientV2/models/set_recording_state.py
 PureCloudPlatformClientV2/models/set_sms_phone_number_action_settings.py
@@ -4064,6 +4068,7 @@ PureCloudPlatformClientV2/models/workitem_manual_assign.py
 PureCloudPlatformClientV2/models/workitem_post_query_entity_listing.py
 PureCloudPlatformClientV2/models/workitem_query_post_request.py
 PureCloudPlatformClientV2/models/workitem_query_sort.py
+PureCloudPlatformClientV2/models/workitem_queue_reference.py
 PureCloudPlatformClientV2/models/workitem_reference.py
 PureCloudPlatformClientV2/models/workitem_schema.py
 PureCloudPlatformClientV2/models/workitem_scored_agent.py
@@ -4456,11 +4461,13 @@ docs/BotAggregationQuery.md
 docs/BotAggregationView.md
 docs/BotAsyncAggregateQueryResponse.md
 docs/BotAsyncAggregationQuery.md
+docs/BotChannel.md
 docs/BotConnectorBot.md
 docs/BotConnectorBotSummaryEntityListing.md
 docs/BotConnectorBotVersion.md
 docs/BotConnectorBotVersionSummaryEntityListing.md
 docs/BotExecutionConfiguration.md
+docs/BotFlowSession.md
 docs/BotIntent.md
 docs/BotList.md
 docs/BotMessengerProfile.md
@@ -6217,6 +6224,7 @@ docs/LearningAssignmentBulkAddResponse.md
 docs/LearningAssignmentBulkRemoveResponse.md
 docs/LearningAssignmentCreate.md
 docs/LearningAssignmentEntity.md
+docs/LearningAssignmentExternalUpdate.md
 docs/LearningAssignmentItem.md
 docs/LearningAssignmentReassign.md
 docs/LearningAssignmentReference.md
@@ -7321,6 +7329,7 @@ docs/SessionEndDetails.md
 docs/SessionLastEvent.md
 docs/SessionListing.md
 docs/SessionSegmentAssignment.md
+docs/SessionsResponse.md
 docs/SetContentTemplateActionSettings.md
 docs/SetRecordingState.md
 docs/SetSmsPhoneNumberActionSettings.md
@@ -8264,6 +8273,7 @@ docs/WorkitemManualAssign.md
 docs/WorkitemPostQueryEntityListing.md
 docs/WorkitemQueryPostRequest.md
 docs/WorkitemQuerySort.md
+docs/WorkitemQueueReference.md
 docs/WorkitemReference.md
 docs/WorkitemSchema.md
 docs/WorkitemScoredAgent.md
@@ -8595,6 +8605,7 @@ docs/get_alerting_rule-example.txt
 docs/get_analytics_actions_aggregates_job-example.txt
 docs/get_analytics_actions_aggregates_job_results-example.txt
 docs/get_analytics_botflow_reportingturns-example.txt
+docs/get_analytics_botflow_sessions-example.txt
 docs/get_analytics_bots_aggregates_job-example.txt
 docs/get_analytics_bots_aggregates_job_results-example.txt
 docs/get_analytics_conversation_details-example.txt
@@ -9780,6 +9791,7 @@ docs/patch_languageunderstanding_domain-example.txt
 docs/patch_languageunderstanding_miner_draft-example.txt
 docs/patch_learning_assignment-example.txt
 docs/patch_learning_assignment_reschedule-example.txt
+docs/patch_learning_module_user_assignments-example.txt
 docs/patch_location-example.txt
 docs/patch_messaging_setting-example.txt
 docs/patch_messaging_supportedcontent_supported_content_id-example.txt

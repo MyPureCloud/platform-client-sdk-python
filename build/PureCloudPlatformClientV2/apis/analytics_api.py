@@ -106,6 +106,7 @@ from ..models import ResolutionAsyncAggregationQuery
 from ..models import RoutingActivityQuery
 from ..models import RoutingActivityResponse
 from ..models import RunNowResponse
+from ..models import SessionsResponse
 from ..models import SurveyAggregateQueryResponse
 from ..models import SurveyAggregationQuery
 from ..models import SurveyAsyncAggregateQueryResponse
@@ -546,7 +547,7 @@ class AnalyticsApi(object):
     def get_analytics_botflow_reportingturns(self, bot_flow_id: str, **kwargs) -> 'ReportingTurnsResponse':
         """
         Get Reporting Turns.
-        Returns the reporting turns grouped by session, in reverse chronological order from the date the session was created, with the reporting turns from the most recent session appearing at the start of the list. For pagination, clients should keep sending requests using the value of 'nextUri' in the response, until it's no longer present, only then have all items have been returned. Note: resources returned by this endpoint do not persist indefinitely, as they auto delete after a predefined period.
+        Returns the reporting turns grouped by session, in reverse chronological order from the date the session was created, with the reporting turns from the most recent session appearing at the start of the list. For pagination, clients should keep sending requests using the value of 'nextUri' in the response, until it's no longer present, only then have all items have been returned. Note: resources returned by this endpoint are not persisted indefinitely, as they are deleted after approximately, but not before, 10 days.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -638,6 +639,99 @@ class AnalyticsApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='ReportingTurnsResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_analytics_botflow_sessions(self, bot_flow_id: str, **kwargs) -> 'SessionsResponse':
+        """
+        Get Bot Flow Sessions.
+        Returns the bot flow sessions in reverse chronological order from the date they were created. For pagination, clients should keep sending requests using the value of 'nextUri' in the response, until it's no longer present, only then have all items have been returned. Note: resources returned by this endpoint are not persisted indefinitely, as they are deleted after approximately, but not before, 10 days.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_analytics_botflow_sessions(bot_flow_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str bot_flow_id: ID of the bot flow. (required)
+        :param str after: The cursor that points to the ID of the last item in the list of entities that has been returned.
+        :param str page_size: Max number of entities to return. Maximum of 250
+        :param str interval: Date range filter based on the date the individual resources were completed. UTC is the default if no TZ is supplied, however alternate timezones can be used e.g: '2022-11-22T09:11:11.111+08:00/2022-11-30T07:17:44.586-07'. . Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
+        :param str bot_result_categories: Optional case-insensitive comma separated list of Bot Result Categories to filter sessions by.
+        :param str end_language: Optional case-insensitive language code to filter sessions by the language the sessions ended in.
+        :return: SessionsResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['bot_flow_id', 'after', 'page_size', 'interval', 'bot_result_categories', 'end_language']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_analytics_botflow_sessions" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'bot_flow_id' is set
+        if ('bot_flow_id' not in params) or (params['bot_flow_id'] is None):
+            raise ValueError("Missing the required parameter `bot_flow_id` when calling `get_analytics_botflow_sessions`")
+
+
+        resource_path = '/api/v2/analytics/botflows/{botFlowId}/sessions'.replace('{format}', 'json')
+        path_params = {}
+        if 'bot_flow_id' in params:
+            path_params['botFlowId'] = params['bot_flow_id']
+
+        query_params = {}
+        if 'after' in params:
+            query_params['after'] = params['after']
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+        if 'interval' in params:
+            query_params['interval'] = params['interval']
+        if 'bot_result_categories' in params:
+            query_params['botResultCategories'] = params['bot_result_categories']
+        if 'end_language' in params:
+            query_params['endLanguage'] = params['end_language']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='SessionsResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -5936,10 +6030,11 @@ class AnalyticsApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("post_analytics_reporting_schedule_runreport is deprecated")
     def post_analytics_reporting_schedule_runreport(self, schedule_id: str, **kwargs) -> 'RunNowResponse':
         """
         Place a scheduled report immediately into the reporting queue
-        
+        This route is deprecated, please use POST:api/v2/analytics/reporting/exports/{exportId}/execute instead
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -6014,10 +6109,11 @@ class AnalyticsApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("post_analytics_reporting_schedules is deprecated")
     def post_analytics_reporting_schedules(self, body: 'ReportSchedule', **kwargs) -> 'ReportSchedule':
         """
         Create a scheduled report job
-        Create a scheduled report job.
+        This route is deprecated, please use POST:api/v2/analytics/reporting/exports instead
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -7367,10 +7463,11 @@ class AnalyticsApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("put_analytics_reporting_schedule is deprecated")
     def put_analytics_reporting_schedule(self, schedule_id: str, body: 'ReportSchedule', **kwargs) -> 'ReportSchedule':
         """
         Update a scheduled report job.
-        
+        This route is deprecated, please use PATCH:api/v2/analytics/reporting/exports/{exportId}/schedule instead
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

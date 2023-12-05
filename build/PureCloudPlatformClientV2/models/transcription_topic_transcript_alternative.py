@@ -54,7 +54,9 @@ class TranscriptionTopicTranscriptAlternative(object):
             'offset_ms': 'int',
             'duration_ms': 'int',
             'transcript': 'str',
-            'words': 'list[TranscriptionTopicTranscriptWord]'
+            'words': 'list[TranscriptionTopicTranscriptWord]',
+            'decorated_transcript': 'str',
+            'decorated_words': 'list[TranscriptionTopicTranscriptWord]'
         }
 
         self.attribute_map = {
@@ -62,7 +64,9 @@ class TranscriptionTopicTranscriptAlternative(object):
             'offset_ms': 'offsetMs',
             'duration_ms': 'durationMs',
             'transcript': 'transcript',
-            'words': 'words'
+            'words': 'words',
+            'decorated_transcript': 'decoratedTranscript',
+            'decorated_words': 'decoratedWords'
         }
 
         self._confidence = None
@@ -70,6 +74,8 @@ class TranscriptionTopicTranscriptAlternative(object):
         self._duration_ms = None
         self._transcript = None
         self._words = None
+        self._decorated_transcript = None
+        self._decorated_words = None
 
     @property
     def confidence(self) -> float:
@@ -190,6 +196,54 @@ class TranscriptionTopicTranscriptAlternative(object):
         
 
         self._words = words
+
+    @property
+    def decorated_transcript(self) -> str:
+        """
+        Gets the decorated_transcript of this TranscriptionTopicTranscriptAlternative.
+
+
+        :return: The decorated_transcript of this TranscriptionTopicTranscriptAlternative.
+        :rtype: str
+        """
+        return self._decorated_transcript
+
+    @decorated_transcript.setter
+    def decorated_transcript(self, decorated_transcript: str) -> None:
+        """
+        Sets the decorated_transcript of this TranscriptionTopicTranscriptAlternative.
+
+
+        :param decorated_transcript: The decorated_transcript of this TranscriptionTopicTranscriptAlternative.
+        :type: str
+        """
+        
+
+        self._decorated_transcript = decorated_transcript
+
+    @property
+    def decorated_words(self) -> List['TranscriptionTopicTranscriptWord']:
+        """
+        Gets the decorated_words of this TranscriptionTopicTranscriptAlternative.
+
+
+        :return: The decorated_words of this TranscriptionTopicTranscriptAlternative.
+        :rtype: list[TranscriptionTopicTranscriptWord]
+        """
+        return self._decorated_words
+
+    @decorated_words.setter
+    def decorated_words(self, decorated_words: List['TranscriptionTopicTranscriptWord']) -> None:
+        """
+        Sets the decorated_words of this TranscriptionTopicTranscriptAlternative.
+
+
+        :param decorated_words: The decorated_words of this TranscriptionTopicTranscriptAlternative.
+        :type: list[TranscriptionTopicTranscriptWord]
+        """
+        
+
+        self._decorated_words = decorated_words
 
     def to_dict(self):
         """

@@ -22,6 +22,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_learning_modules_coverart_cover_art_id**](LearningApi.html#get_learning_modules_coverart_cover_art_id) | Get a specific Learning Module cover art using ID|
 |[**patch_learning_assignment**](LearningApi.html#patch_learning_assignment) | Update Learning Assignment|
 |[**patch_learning_assignment_reschedule**](LearningApi.html#patch_learning_assignment_reschedule) | Reschedule Learning Assignment|
+|[**patch_learning_module_user_assignments**](LearningApi.html#patch_learning_module_user_assignments) | Update an external assignment for a specific user|
 |[**post_learning_assessments_scoring**](LearningApi.html#post_learning_assessments_scoring) | Score learning assessment for preview|
 |[**post_learning_assignment_reassign**](LearningApi.html#post_learning_assignment_reassign) | Reassign Learning Assignment|
 |[**post_learning_assignment_reset**](LearningApi.html#post_learning_assignment_reset) | Reset Learning Assignment|
@@ -548,7 +549,7 @@ except ApiException as e:
 
 <a name="get_learning_modules"></a>
 
-## [**LearningModulesDomainEntityListing**](LearningModulesDomainEntityListing.html) get_learning_modules(is_archived=is_archived, types=types, page_size=page_size, page_number=page_number, sort_order=sort_order, sort_by=sort_by, search_term=search_term, expand=expand, is_published=is_published, statuses=statuses)
+## [**LearningModulesDomainEntityListing**](LearningModulesDomainEntityListing.html) get_learning_modules(is_archived=is_archived, types=types, page_size=page_size, page_number=page_number, sort_order=sort_order, sort_by=sort_by, search_term=search_term, expand=expand, is_published=is_published, statuses=statuses, external_ids=external_ids)
 
 
 
@@ -583,10 +584,11 @@ search_term = 'search_term_example' # str | Search Term (searchable by name) (op
 expand = ['expand_example'] # list[str] | Fields to expand in response(case insensitive) (optional)
 is_published = ''Any'' # str | Specifies if only the Unpublished (isPublished is \"False\") or Published (isPublished is \"True\") modules are returned. If isPublished is \"Any\" or omitted, both types are returned (optional) (default to 'Any')
 statuses = ['statuses_example'] # list[str] | Specifies the module statuses to filter by (optional)
+external_ids = ['external_ids_example'] # list[str] | Specifies the module external IDs to filter by. Only one ID is allowed (optional)
 
 try:
     # Get all learning modules of an organization
-    api_response = api_instance.get_learning_modules(is_archived=is_archived, types=types, page_size=page_size, page_number=page_number, sort_order=sort_order, sort_by=sort_by, search_term=search_term, expand=expand, is_published=is_published, statuses=statuses)
+    api_response = api_instance.get_learning_modules(is_archived=is_archived, types=types, page_size=page_size, page_number=page_number, sort_order=sort_order, sort_by=sort_by, search_term=search_term, expand=expand, is_published=is_published, statuses=statuses, external_ids=external_ids)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling LearningApi->get_learning_modules: %s\n" % e)
@@ -607,6 +609,7 @@ except ApiException as e:
 | **expand** | [**list[str]**](str.html)| Fields to expand in response(case insensitive) | [optional] <br />**Values**: rule, summaryData |
 | **is_published** | **str**| Specifies if only the Unpublished (isPublished is \&quot;False\&quot;) or Published (isPublished is \&quot;True\&quot;) modules are returned. If isPublished is \&quot;Any\&quot; or omitted, both types are returned | [optional] [default to &#39;Any&#39;]<br />**Values**: True, False, Any |
 | **statuses** | [**list[str]**](str.html)| Specifies the module statuses to filter by | [optional] <br />**Values**: Unpublished, Published, Archived |
+| **external_ids** | [**list[str]**](str.html)| Specifies the module external IDs to filter by. Only one ID is allowed | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -819,6 +822,61 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **assignment_id** | **str**| The ID of Learning Assignment |  |
 | **body** | [**LearningAssignmentReschedule**](LearningAssignmentReschedule.html)| The Learning assignment reschedule model | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**LearningAssignment**](LearningAssignment.html)
+
+<a name="patch_learning_module_user_assignments"></a>
+
+## [**LearningAssignment**](LearningAssignment.html) patch_learning_module_user_assignments(module_id, user_id, body)
+
+
+
+Update an external assignment for a specific user
+
+patch_learning_module_user_assignments is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps PATCH /api/v2/learning/modules/{moduleId}/users/{userId}/assignments 
+
+Requires ALL permissions: 
+
+* learning:externalAssignment:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.LearningApi()
+module_id = 'module_id_example' # str | Key identifier for the module
+user_id = 'user_id_example' # str | Key identifier for the user
+body = PureCloudPlatformClientV2.LearningAssignmentExternalUpdate() # LearningAssignmentExternalUpdate | The learning request for updating the assignment
+
+try:
+    # Update an external assignment for a specific user
+    api_response = api_instance.patch_learning_module_user_assignments(module_id, user_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling LearningApi->patch_learning_module_user_assignments: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **module_id** | **str**| Key identifier for the module |  |
+| **user_id** | **str**| Key identifier for the user |  |
+| **body** | [**LearningAssignmentExternalUpdate**](LearningAssignmentExternalUpdate.html)| The learning request for updating the assignment |  |
 {: class="table table-striped"}
 
 ### Return type

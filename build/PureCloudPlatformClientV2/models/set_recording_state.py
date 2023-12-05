@@ -61,7 +61,7 @@ class SetRecordingState(object):
     def recording_state(self) -> str:
         """
         Gets the recording_state of this SetRecordingState.
-        The value of the recordingState to set.
+        On update, 'paused' initiates a secure pause, 'active' resumes any paused recordings.
 
         :return: The recording_state of this SetRecordingState.
         :rtype: str
@@ -72,7 +72,7 @@ class SetRecordingState(object):
     def recording_state(self, recording_state: str) -> None:
         """
         Sets the recording_state of this SetRecordingState.
-        The value of the recordingState to set.
+        On update, 'paused' initiates a secure pause, 'active' resumes any paused recordings.
 
         :param recording_state: The recording_state of this SetRecordingState.
         :type: str

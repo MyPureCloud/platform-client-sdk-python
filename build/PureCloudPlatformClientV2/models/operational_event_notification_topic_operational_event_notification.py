@@ -52,18 +52,42 @@ class OperationalEventNotificationTopicOperationalEventNotification(object):
         self.swagger_types = {
             'event_entity': 'OperationalEventNotificationTopicEventEntity',
             'entity_id': 'str',
-            'entity_name': 'str'
+            'entity_name': 'str',
+            'previous_value': 'str',
+            'current_value': 'str',
+            'error_code': 'str',
+            'version': 'str',
+            'parent_entity': 'str',
+            'entity_type': 'str',
+            'conversation_id': 'str',
+            'timestamp': 'datetime'
         }
 
         self.attribute_map = {
             'event_entity': 'eventEntity',
             'entity_id': 'entityId',
-            'entity_name': 'entityName'
+            'entity_name': 'entityName',
+            'previous_value': 'previousValue',
+            'current_value': 'currentValue',
+            'error_code': 'errorCode',
+            'version': 'version',
+            'parent_entity': 'parentEntity',
+            'entity_type': 'entityType',
+            'conversation_id': 'conversationId',
+            'timestamp': 'timestamp'
         }
 
         self._event_entity = None
         self._entity_id = None
         self._entity_name = None
+        self._previous_value = None
+        self._current_value = None
+        self._error_code = None
+        self._version = None
+        self._parent_entity = None
+        self._entity_type = None
+        self._conversation_id = None
+        self._timestamp = None
 
     @property
     def event_entity(self) -> 'OperationalEventNotificationTopicEventEntity':
@@ -136,6 +160,198 @@ class OperationalEventNotificationTopicOperationalEventNotification(object):
         
 
         self._entity_name = entity_name
+
+    @property
+    def previous_value(self) -> str:
+        """
+        Gets the previous_value of this OperationalEventNotificationTopicOperationalEventNotification.
+
+
+        :return: The previous_value of this OperationalEventNotificationTopicOperationalEventNotification.
+        :rtype: str
+        """
+        return self._previous_value
+
+    @previous_value.setter
+    def previous_value(self, previous_value: str) -> None:
+        """
+        Sets the previous_value of this OperationalEventNotificationTopicOperationalEventNotification.
+
+
+        :param previous_value: The previous_value of this OperationalEventNotificationTopicOperationalEventNotification.
+        :type: str
+        """
+        
+
+        self._previous_value = previous_value
+
+    @property
+    def current_value(self) -> str:
+        """
+        Gets the current_value of this OperationalEventNotificationTopicOperationalEventNotification.
+
+
+        :return: The current_value of this OperationalEventNotificationTopicOperationalEventNotification.
+        :rtype: str
+        """
+        return self._current_value
+
+    @current_value.setter
+    def current_value(self, current_value: str) -> None:
+        """
+        Sets the current_value of this OperationalEventNotificationTopicOperationalEventNotification.
+
+
+        :param current_value: The current_value of this OperationalEventNotificationTopicOperationalEventNotification.
+        :type: str
+        """
+        
+
+        self._current_value = current_value
+
+    @property
+    def error_code(self) -> str:
+        """
+        Gets the error_code of this OperationalEventNotificationTopicOperationalEventNotification.
+
+
+        :return: The error_code of this OperationalEventNotificationTopicOperationalEventNotification.
+        :rtype: str
+        """
+        return self._error_code
+
+    @error_code.setter
+    def error_code(self, error_code: str) -> None:
+        """
+        Sets the error_code of this OperationalEventNotificationTopicOperationalEventNotification.
+
+
+        :param error_code: The error_code of this OperationalEventNotificationTopicOperationalEventNotification.
+        :type: str
+        """
+        
+
+        self._error_code = error_code
+
+    @property
+    def version(self) -> str:
+        """
+        Gets the version of this OperationalEventNotificationTopicOperationalEventNotification.
+
+
+        :return: The version of this OperationalEventNotificationTopicOperationalEventNotification.
+        :rtype: str
+        """
+        return self._version
+
+    @version.setter
+    def version(self, version: str) -> None:
+        """
+        Sets the version of this OperationalEventNotificationTopicOperationalEventNotification.
+
+
+        :param version: The version of this OperationalEventNotificationTopicOperationalEventNotification.
+        :type: str
+        """
+        
+
+        self._version = version
+
+    @property
+    def parent_entity(self) -> str:
+        """
+        Gets the parent_entity of this OperationalEventNotificationTopicOperationalEventNotification.
+
+
+        :return: The parent_entity of this OperationalEventNotificationTopicOperationalEventNotification.
+        :rtype: str
+        """
+        return self._parent_entity
+
+    @parent_entity.setter
+    def parent_entity(self, parent_entity: str) -> None:
+        """
+        Sets the parent_entity of this OperationalEventNotificationTopicOperationalEventNotification.
+
+
+        :param parent_entity: The parent_entity of this OperationalEventNotificationTopicOperationalEventNotification.
+        :type: str
+        """
+        
+
+        self._parent_entity = parent_entity
+
+    @property
+    def entity_type(self) -> str:
+        """
+        Gets the entity_type of this OperationalEventNotificationTopicOperationalEventNotification.
+
+
+        :return: The entity_type of this OperationalEventNotificationTopicOperationalEventNotification.
+        :rtype: str
+        """
+        return self._entity_type
+
+    @entity_type.setter
+    def entity_type(self, entity_type: str) -> None:
+        """
+        Sets the entity_type of this OperationalEventNotificationTopicOperationalEventNotification.
+
+
+        :param entity_type: The entity_type of this OperationalEventNotificationTopicOperationalEventNotification.
+        :type: str
+        """
+        
+
+        self._entity_type = entity_type
+
+    @property
+    def conversation_id(self) -> str:
+        """
+        Gets the conversation_id of this OperationalEventNotificationTopicOperationalEventNotification.
+
+
+        :return: The conversation_id of this OperationalEventNotificationTopicOperationalEventNotification.
+        :rtype: str
+        """
+        return self._conversation_id
+
+    @conversation_id.setter
+    def conversation_id(self, conversation_id: str) -> None:
+        """
+        Sets the conversation_id of this OperationalEventNotificationTopicOperationalEventNotification.
+
+
+        :param conversation_id: The conversation_id of this OperationalEventNotificationTopicOperationalEventNotification.
+        :type: str
+        """
+        
+
+        self._conversation_id = conversation_id
+
+    @property
+    def timestamp(self) -> datetime:
+        """
+        Gets the timestamp of this OperationalEventNotificationTopicOperationalEventNotification.
+
+
+        :return: The timestamp of this OperationalEventNotificationTopicOperationalEventNotification.
+        :rtype: datetime
+        """
+        return self._timestamp
+
+    @timestamp.setter
+    def timestamp(self, timestamp: datetime) -> None:
+        """
+        Sets the timestamp of this OperationalEventNotificationTopicOperationalEventNotification.
+
+
+        :param timestamp: The timestamp of this OperationalEventNotificationTopicOperationalEventNotification.
+        :type: datetime
+        """
+        
+
+        self._timestamp = timestamp
 
     def to_dict(self):
         """

@@ -63,7 +63,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_integrations_action_draft_test**](IntegrationsApi.html#post_integrations_action_draft_test) | Test the execution of a draft. Responses will show execution steps broken out with intermediate results to help in debugging.|
 |[**post_integrations_action_execute**](IntegrationsApi.html#post_integrations_action_execute) | Execute Action and return response from 3rd party.  Responses will follow the schemas defined on the Action for success and error.|
 |[**post_integrations_action_test**](IntegrationsApi.html#post_integrations_action_test) | Test the execution of an action. Responses will show execution steps broken out with intermediate results to help in debugging.|
-|[**post_integrations_actions**](IntegrationsApi.html#post_integrations_actions) | Create a new Action|
+|[**post_integrations_actions**](IntegrationsApi.html#post_integrations_actions) | Create a new Action. Not supported for &#39;Function Integration&#39; actions. Function integrations must be created as drafts to allow managing of uploading required ZIP function package before they may be used as a published action.|
 |[**post_integrations_actions_drafts**](IntegrationsApi.html#post_integrations_actions_drafts) | Create a new Draft|
 |[**post_integrations_credentials**](IntegrationsApi.html#post_integrations_credentials) | Create a set of credentials|
 |[**post_integrations_speech_nuance_nuance_integration_id_bot_jobs**](IntegrationsApi.html#post_integrations_speech_nuance_nuance_integration_id_bot_jobs) | Get a Nuance bot in the specified Integration asynchronously|
@@ -3020,7 +3020,7 @@ except ApiException as e:
 
 
 
-Create a new Action
+Create a new Action. Not supported for 'Function Integration' actions. Function integrations must be created as drafts to allow managing of uploading required ZIP function package before they may be used as a published action.
 
 Wraps POST /api/v2/integrations/actions 
 
@@ -3044,7 +3044,7 @@ api_instance = PureCloudPlatformClientV2.IntegrationsApi()
 body = PureCloudPlatformClientV2.PostActionInput() # PostActionInput | Input used to create Action.
 
 try:
-    # Create a new Action
+    # Create a new Action. Not supported for 'Function Integration' actions. Function integrations must be created as drafts to allow managing of uploading required ZIP function package before they may be used as a published action.
     api_response = api_instance.post_integrations_actions(body)
     pprint(api_response)
 except ApiException as e:

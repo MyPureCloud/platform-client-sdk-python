@@ -58,6 +58,7 @@ class LearningModule(object):
         self.swagger_types = {
             'id': 'str',
             'name': 'str',
+            'excluded_from_catalog': 'bool',
             'created_by': 'UserReference',
             'date_created': 'datetime',
             'modified_by': 'UserReference',
@@ -77,12 +78,14 @@ class LearningModule(object):
             'summary_data': 'LearningModuleSummary',
             'reassign_summary_data': 'LearningModuleReassignSummary',
             'cover_art': 'LearningModuleCoverArtResponse',
+            'length_in_minutes': 'int',
             'archival_mode': 'str'
         }
 
         self.attribute_map = {
             'id': 'id',
             'name': 'name',
+            'excluded_from_catalog': 'excludedFromCatalog',
             'created_by': 'createdBy',
             'date_created': 'dateCreated',
             'modified_by': 'modifiedBy',
@@ -102,11 +105,13 @@ class LearningModule(object):
             'summary_data': 'summaryData',
             'reassign_summary_data': 'reassignSummaryData',
             'cover_art': 'coverArt',
+            'length_in_minutes': 'lengthInMinutes',
             'archival_mode': 'archivalMode'
         }
 
         self._id = None
         self._name = None
+        self._excluded_from_catalog = None
         self._created_by = None
         self._date_created = None
         self._modified_by = None
@@ -126,6 +131,7 @@ class LearningModule(object):
         self._summary_data = None
         self._reassign_summary_data = None
         self._cover_art = None
+        self._length_in_minutes = None
         self._archival_mode = None
 
     @property
@@ -175,6 +181,30 @@ class LearningModule(object):
         
 
         self._name = name
+
+    @property
+    def excluded_from_catalog(self) -> bool:
+        """
+        Gets the excluded_from_catalog of this LearningModule.
+        If true, learning module is excluded when retrieving modules for manual assignment
+
+        :return: The excluded_from_catalog of this LearningModule.
+        :rtype: bool
+        """
+        return self._excluded_from_catalog
+
+    @excluded_from_catalog.setter
+    def excluded_from_catalog(self, excluded_from_catalog: bool) -> None:
+        """
+        Sets the excluded_from_catalog of this LearningModule.
+        If true, learning module is excluded when retrieving modules for manual assignment
+
+        :param excluded_from_catalog: The excluded_from_catalog of this LearningModule.
+        :type: bool
+        """
+        
+
+        self._excluded_from_catalog = excluded_from_catalog
 
     @property
     def created_by(self) -> 'UserReference':
@@ -641,6 +671,30 @@ class LearningModule(object):
         
 
         self._cover_art = cover_art
+
+    @property
+    def length_in_minutes(self) -> int:
+        """
+        Gets the length_in_minutes of this LearningModule.
+        The recommended time in minutes to complete the module
+
+        :return: The length_in_minutes of this LearningModule.
+        :rtype: int
+        """
+        return self._length_in_minutes
+
+    @length_in_minutes.setter
+    def length_in_minutes(self, length_in_minutes: int) -> None:
+        """
+        Sets the length_in_minutes of this LearningModule.
+        The recommended time in minutes to complete the module
+
+        :param length_in_minutes: The length_in_minutes of this LearningModule.
+        :type: int
+        """
+        
+
+        self._length_in_minutes = length_in_minutes
 
     @property
     def archival_mode(self) -> str:

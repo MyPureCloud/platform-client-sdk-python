@@ -73,7 +73,7 @@ class RequestConfig(object):
     def request_url_template(self) -> str:
         """
         Gets the request_url_template of this RequestConfig.
-        URL that may include placeholders for requests to 3rd party service
+        URL that may include placeholders for requests to 3rd party service. This value is read only for Function Integrations and will be set when a draft is created.
 
         :return: The request_url_template of this RequestConfig.
         :rtype: str
@@ -84,7 +84,7 @@ class RequestConfig(object):
     def request_url_template(self, request_url_template: str) -> None:
         """
         Sets the request_url_template of this RequestConfig.
-        URL that may include placeholders for requests to 3rd party service
+        URL that may include placeholders for requests to 3rd party service. This value is read only for Function Integrations and will be set when a draft is created.
 
         :param request_url_template: The request_url_template of this RequestConfig.
         :type: str

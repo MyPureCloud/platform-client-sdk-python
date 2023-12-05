@@ -4757,7 +4757,7 @@ class IntegrationsApi(object):
 
     def post_integrations_actions(self, body: 'PostActionInput', **kwargs) -> 'Action':
         """
-        Create a new Action
+        Create a new Action. Not supported for 'Function Integration' actions. Function integrations must be created as drafts to allow managing of uploading required ZIP function package before they may be used as a published action.
         
 
         This method makes a synchronous HTTP request by default. To make an

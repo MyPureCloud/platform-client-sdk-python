@@ -72,7 +72,6 @@ class PresenceApi(object):
         """
         Delete a Presence Definition
         
-	    delete_presence_definition is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -307,7 +306,6 @@ class PresenceApi(object):
         """
         Get a Presence Definition
         
-	    get_presence_definition is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -389,7 +387,6 @@ class PresenceApi(object):
         """
         Get a list of Presence Definitions
         
-	    get_presence_definitions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -1503,7 +1500,6 @@ class PresenceApi(object):
         """
         Create a Presence Definition
         
-	    post_presence_definitions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -1738,7 +1734,6 @@ class PresenceApi(object):
         """
         Update a Presence Definition
         
-	    put_presence_definition is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

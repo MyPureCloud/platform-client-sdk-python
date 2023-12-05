@@ -256,7 +256,7 @@ class UpdateTriggerRequest(object):
     def delay_by_seconds(self) -> int:
         """
         Gets the delay_by_seconds of this UpdateTriggerRequest.
-        Optional delay invoking target after trigger fires. Must be in the range of 60 to 900 seconds. Only one of eventTTLSeconds or delayBySeconds can be set. Until delayed triggers are released supplying this attribute will cause a failure.
+        Optional delay invoking target after trigger fires. Must be in the range of 60 to 900 seconds. Only one of eventTTLSeconds or delayBySeconds can be set.
 
         :return: The delay_by_seconds of this UpdateTriggerRequest.
         :rtype: int
@@ -267,7 +267,7 @@ class UpdateTriggerRequest(object):
     def delay_by_seconds(self, delay_by_seconds: int) -> None:
         """
         Sets the delay_by_seconds of this UpdateTriggerRequest.
-        Optional delay invoking target after trigger fires. Must be in the range of 60 to 900 seconds. Only one of eventTTLSeconds or delayBySeconds can be set. Until delayed triggers are released supplying this attribute will cause a failure.
+        Optional delay invoking target after trigger fires. Must be in the range of 60 to 900 seconds. Only one of eventTTLSeconds or delayBySeconds can be set.
 
         :param delay_by_seconds: The delay_by_seconds of this UpdateTriggerRequest.
         :type: int

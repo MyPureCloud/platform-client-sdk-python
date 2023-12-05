@@ -48,6 +48,7 @@ from ..models import LearningAssignmentAggregateResponse
 from ..models import LearningAssignmentBulkAddResponse
 from ..models import LearningAssignmentBulkRemoveResponse
 from ..models import LearningAssignmentCreate
+from ..models import LearningAssignmentExternalUpdate
 from ..models import LearningAssignmentItem
 from ..models import LearningAssignmentReschedule
 from ..models import LearningAssignmentUpdate
@@ -905,12 +906,13 @@ class LearningApi(object):
         :param list[str] expand: Fields to expand in response(case insensitive)
         :param str is_published: Specifies if only the Unpublished (isPublished is \"False\") or Published (isPublished is \"True\") modules are returned. If isPublished is \"Any\" or omitted, both types are returned
         :param list[str] statuses: Specifies the module statuses to filter by
+        :param list[str] external_ids: Specifies the module external IDs to filter by. Only one ID is allowed
         :return: LearningModulesDomainEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['is_archived', 'types', 'page_size', 'page_number', 'sort_order', 'sort_by', 'search_term', 'expand', 'is_published', 'statuses']
+        all_params = ['is_archived', 'types', 'page_size', 'page_number', 'sort_order', 'sort_by', 'search_term', 'expand', 'is_published', 'statuses', 'external_ids']
         all_params.append('callback')
 
         params = locals()
@@ -949,6 +951,8 @@ class LearningApi(object):
             query_params['isPublished'] = params['is_published']
         if 'statuses' in params:
             query_params['statuses'] = params['statuses']
+        if 'external_ids' in params:
+            query_params['externalIds'] = params['external_ids']
 
         header_params = {}
 
@@ -1281,6 +1285,97 @@ class LearningApi(object):
         path_params = {}
         if 'assignment_id' in params:
             path_params['assignmentId'] = params['assignment_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PATCH',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='LearningAssignment',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def patch_learning_module_user_assignments(self, module_id: str, user_id: str, body: 'LearningAssignmentExternalUpdate', **kwargs) -> 'LearningAssignment':
+        """
+        Update an external assignment for a specific user
+        
+	    patch_learning_module_user_assignments is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.patch_learning_module_user_assignments(module_id, user_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str module_id: Key identifier for the module (required)
+        :param str user_id: Key identifier for the user (required)
+        :param LearningAssignmentExternalUpdate body: The learning request for updating the assignment (required)
+        :return: LearningAssignment
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['module_id', 'user_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method patch_learning_module_user_assignments" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'module_id' is set
+        if ('module_id' not in params) or (params['module_id'] is None):
+            raise ValueError("Missing the required parameter `module_id` when calling `patch_learning_module_user_assignments`")
+        # verify the required parameter 'user_id' is set
+        if ('user_id' not in params) or (params['user_id'] is None):
+            raise ValueError("Missing the required parameter `user_id` when calling `patch_learning_module_user_assignments`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `patch_learning_module_user_assignments`")
+
+
+        resource_path = '/api/v2/learning/modules/{moduleId}/users/{userId}/assignments'.replace('{format}', 'json')
+        path_params = {}
+        if 'module_id' in params:
+            path_params['moduleId'] = params['module_id']
+        if 'user_id' in params:
+            path_params['userId'] = params['user_id']
 
         query_params = {}
 

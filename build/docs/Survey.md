@@ -17,6 +17,7 @@ title: Survey
 | **answers** | [**SurveyScoringSet**](SurveyScoringSet.html) |  | [optional] |
 | **completed_date** | **datetime** | Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
 | **survey_error_details** | [**SurveyErrorDetails**](SurveyErrorDetails.html) | Additional information about what happened when the survey is in Error status. | [optional] |
+| **agent_team** | [**Team**](Team.html) | The team that the agent belongs to | [optional] |
 | **self_uri** | **str** | The URI for this object | [optional] |
 {: class="table table-striped"}
 

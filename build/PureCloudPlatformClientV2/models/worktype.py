@@ -35,10 +35,10 @@ from typing import Dict
 if TYPE_CHECKING:
     from . import Division
     from . import LanguageReference
-    from . import QueueReference
     from . import RoutingSkillReference
     from . import UserReference
     from . import WorkbinReference
+    from . import WorkitemQueueReference
     from . import WorkitemSchema
     from . import WorkitemStatus
     from . import WorkitemStatusReference
@@ -74,7 +74,7 @@ class Worktype(object):
             'default_language': 'LanguageReference',
             'default_ttl_seconds': 'int',
             'modified_by': 'UserReference',
-            'default_queue': 'QueueReference',
+            'default_queue': 'WorkitemQueueReference',
             'default_skills': 'list[RoutingSkillReference]',
             'assignment_enabled': 'bool',
             'schema': 'WorkitemSchema',
@@ -512,24 +512,24 @@ class Worktype(object):
         self._modified_by = modified_by
 
     @property
-    def default_queue(self) -> 'QueueReference':
+    def default_queue(self) -> 'WorkitemQueueReference':
         """
         Gets the default_queue of this Worktype.
         The default queue for Workitems created from the Worktype.
 
         :return: The default_queue of this Worktype.
-        :rtype: QueueReference
+        :rtype: WorkitemQueueReference
         """
         return self._default_queue
 
     @default_queue.setter
-    def default_queue(self, default_queue: 'QueueReference') -> None:
+    def default_queue(self, default_queue: 'WorkitemQueueReference') -> None:
         """
         Sets the default_queue of this Worktype.
         The default queue for Workitems created from the Worktype.
 
         :param default_queue: The default_queue of this Worktype.
-        :type: QueueReference
+        :type: WorkitemQueueReference
         """
         
 

@@ -58,7 +58,10 @@ class LearningModuleRequest(object):
             'inform_steps': 'list[LearningModuleInformStepRequest]',
             'type': 'str',
             'assessment_form': 'AssessmentForm',
-            'cover_art': 'LearningModuleCoverArtRequest'
+            'cover_art': 'LearningModuleCoverArtRequest',
+            'length_in_minutes': 'int',
+            'excluded_from_catalog': 'bool',
+            'external_id': 'str'
         }
 
         self.attribute_map = {
@@ -68,7 +71,10 @@ class LearningModuleRequest(object):
             'inform_steps': 'informSteps',
             'type': 'type',
             'assessment_form': 'assessmentForm',
-            'cover_art': 'coverArt'
+            'cover_art': 'coverArt',
+            'length_in_minutes': 'lengthInMinutes',
+            'excluded_from_catalog': 'excludedFromCatalog',
+            'external_id': 'externalId'
         }
 
         self._name = None
@@ -78,6 +84,9 @@ class LearningModuleRequest(object):
         self._type = None
         self._assessment_form = None
         self._cover_art = None
+        self._length_in_minutes = None
+        self._excluded_from_catalog = None
+        self._external_id = None
 
     @property
     def name(self) -> str:
@@ -251,6 +260,84 @@ class LearningModuleRequest(object):
         
 
         self._cover_art = cover_art
+
+    @property
+    def length_in_minutes(self) -> int:
+        """
+        Gets the length_in_minutes of this LearningModuleRequest.
+        The recommended time in minutes to complete the module
+
+        :return: The length_in_minutes of this LearningModuleRequest.
+        :rtype: int
+        """
+        return self._length_in_minutes
+
+    @length_in_minutes.setter
+    def length_in_minutes(self, length_in_minutes: int) -> None:
+        """
+        Sets the length_in_minutes of this LearningModuleRequest.
+        The recommended time in minutes to complete the module
+
+        :param length_in_minutes: The length_in_minutes of this LearningModuleRequest.
+        :type: int
+        """
+        
+
+        self._length_in_minutes = length_in_minutes
+
+    @property
+    def excluded_from_catalog(self) -> bool:
+        """
+        Gets the excluded_from_catalog of this LearningModuleRequest.
+        If true, learning module is excluded when retrieving modules for manual assignment
+
+        :return: The excluded_from_catalog of this LearningModuleRequest.
+        :rtype: bool
+        """
+        return self._excluded_from_catalog
+
+    @excluded_from_catalog.setter
+    def excluded_from_catalog(self, excluded_from_catalog: bool) -> None:
+        """
+        Sets the excluded_from_catalog of this LearningModuleRequest.
+        If true, learning module is excluded when retrieving modules for manual assignment
+
+        :param excluded_from_catalog: The excluded_from_catalog of this LearningModuleRequest.
+        :type: bool
+        """
+        
+
+        self._excluded_from_catalog = excluded_from_catalog
+
+    @property
+    def external_id(self) -> str:
+        """
+        Gets the external_id of this LearningModuleRequest.
+        The external ID of the learning module. Maximum length: 50 characters.
+
+        :return: The external_id of this LearningModuleRequest.
+        :rtype: str
+        """
+        return self._external_id
+
+    @external_id.setter
+    def external_id(self, external_id: str) -> None:
+        """
+        Sets the external_id of this LearningModuleRequest.
+        The external ID of the learning module. Maximum length: 50 characters.
+
+        :param external_id: The external_id of this LearningModuleRequest.
+        :type: str
+        """
+        
+        if len(external_id) > 50:
+            raise ValueError("Invalid value for `external_id`, length must be less than `50`")
+
+        if len(external_id) < 0:
+            raise ValueError("Invalid value for `external_id`, length must be greater than or equal to `0`")
+
+
+        self._external_id = external_id
 
     def to_dict(self):
         """

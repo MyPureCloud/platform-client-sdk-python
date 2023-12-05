@@ -844,13 +844,14 @@ class QualityApi(object):
         :param str evaluator_user_id: user id of the evaluator
         :param str name: name
         :param str group: group id
+        :param str agent_team_id: team id of agents requested
         :param str form_context_id: shared id between form versions
         :return: AgentActivityEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['page_size', 'page_number', 'sort_by', 'expand', 'next_page', 'previous_page', 'start_time', 'end_time', 'agent_user_id', 'evaluator_user_id', 'name', 'group', 'form_context_id']
+        all_params = ['page_size', 'page_number', 'sort_by', 'expand', 'next_page', 'previous_page', 'start_time', 'end_time', 'agent_user_id', 'evaluator_user_id', 'name', 'group', 'agent_team_id', 'form_context_id']
         all_params.append('callback')
 
         params = locals()
@@ -893,6 +894,8 @@ class QualityApi(object):
             query_params['name'] = params['name']
         if 'group' in params:
             query_params['group'] = params['group']
+        if 'agent_team_id' in params:
+            query_params['agentTeamId'] = params['agent_team_id']
         if 'form_context_id' in params:
             query_params['formContextId'] = params['form_context_id']
 
@@ -1470,6 +1473,7 @@ class QualityApi(object):
         :param str previous_page: Previous page token
         :param str conversation_id: conversationId specified
         :param str agent_user_id: user id of the agent
+        :param str agent_team_id: team id of the agent
         :param str evaluator_user_id: evaluator user id
         :param str assignee_user_id: assignee user id
         :param str queue_id: queue id
@@ -1487,7 +1491,7 @@ class QualityApi(object):
                  returns the request thread.
         """
 
-        all_params = ['page_size', 'page_number', 'sort_by', 'expand', 'next_page', 'previous_page', 'conversation_id', 'agent_user_id', 'evaluator_user_id', 'assignee_user_id', 'queue_id', 'start_time', 'end_time', 'form_context_id', 'evaluation_state', 'is_released', 'agent_has_read', 'expand_answer_total_scores', 'maximum', 'sort_order']
+        all_params = ['page_size', 'page_number', 'sort_by', 'expand', 'next_page', 'previous_page', 'conversation_id', 'agent_user_id', 'agent_team_id', 'evaluator_user_id', 'assignee_user_id', 'queue_id', 'start_time', 'end_time', 'form_context_id', 'evaluation_state', 'is_released', 'agent_has_read', 'expand_answer_total_scores', 'maximum', 'sort_order']
         all_params.append('callback')
 
         params = locals()
@@ -1522,6 +1526,8 @@ class QualityApi(object):
             query_params['conversationId'] = params['conversation_id']
         if 'agent_user_id' in params:
             query_params['agentUserId'] = params['agent_user_id']
+        if 'agent_team_id' in params:
+            query_params['agentTeamId'] = params['agent_team_id']
         if 'evaluator_user_id' in params:
             query_params['evaluatorUserId'] = params['evaluator_user_id']
         if 'assignee_user_id' in params:
@@ -1605,12 +1611,13 @@ class QualityApi(object):
         :param str name: Evaluator name
         :param list[str] permission: permission strings
         :param str group: group id
+        :param str agent_team_id: team id of agents to be considered
         :return: EvaluatorActivityEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['page_size', 'page_number', 'sort_by', 'expand', 'next_page', 'previous_page', 'start_time', 'end_time', 'name', 'permission', 'group']
+        all_params = ['page_size', 'page_number', 'sort_by', 'expand', 'next_page', 'previous_page', 'start_time', 'end_time', 'name', 'permission', 'group', 'agent_team_id']
         all_params.append('callback')
 
         params = locals()
@@ -1651,6 +1658,8 @@ class QualityApi(object):
             query_params['permission'] = params['permission']
         if 'group' in params:
             query_params['group'] = params['group']
+        if 'agent_team_id' in params:
+            query_params['agentTeamId'] = params['agent_team_id']
 
         header_params = {}
 

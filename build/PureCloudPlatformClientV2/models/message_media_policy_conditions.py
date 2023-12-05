@@ -35,6 +35,7 @@ from typing import Dict
 if TYPE_CHECKING:
     from . import Language
     from . import Queue
+    from . import Team
     from . import TimeAllowed
     from . import User
     from . import WrapupCode
@@ -60,6 +61,7 @@ class MessageMediaPolicyConditions(object):
             'wrapup_codes': 'list[WrapupCode]',
             'languages': 'list[Language]',
             'time_allowed': 'TimeAllowed',
+            'teams': 'list[Team]',
             'customer_participation': 'str'
         }
 
@@ -70,6 +72,7 @@ class MessageMediaPolicyConditions(object):
             'wrapup_codes': 'wrapupCodes',
             'languages': 'languages',
             'time_allowed': 'timeAllowed',
+            'teams': 'teams',
             'customer_participation': 'customerParticipation'
         }
 
@@ -79,6 +82,7 @@ class MessageMediaPolicyConditions(object):
         self._wrapup_codes = None
         self._languages = None
         self._time_allowed = None
+        self._teams = None
         self._customer_participation = None
 
     @property
@@ -224,6 +228,30 @@ class MessageMediaPolicyConditions(object):
         
 
         self._time_allowed = time_allowed
+
+    @property
+    def teams(self) -> List['Team']:
+        """
+        Gets the teams of this MessageMediaPolicyConditions.
+        Teams to match conversations against
+
+        :return: The teams of this MessageMediaPolicyConditions.
+        :rtype: list[Team]
+        """
+        return self._teams
+
+    @teams.setter
+    def teams(self, teams: List['Team']) -> None:
+        """
+        Sets the teams of this MessageMediaPolicyConditions.
+        Teams to match conversations against
+
+        :param teams: The teams of this MessageMediaPolicyConditions.
+        :type: list[Team]
+        """
+        
+
+        self._teams = teams
 
     @property
     def customer_participation(self) -> str:

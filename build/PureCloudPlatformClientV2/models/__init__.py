@@ -311,11 +311,13 @@ from .bot_aggregation_query import BotAggregationQuery
 from .bot_aggregation_view import BotAggregationView
 from .bot_async_aggregate_query_response import BotAsyncAggregateQueryResponse
 from .bot_async_aggregation_query import BotAsyncAggregationQuery
+from .bot_channel import BotChannel
 from .bot_connector_bot import BotConnectorBot
 from .bot_connector_bot_summary_entity_listing import BotConnectorBotSummaryEntityListing
 from .bot_connector_bot_version import BotConnectorBotVersion
 from .bot_connector_bot_version_summary_entity_listing import BotConnectorBotVersionSummaryEntityListing
 from .bot_execution_configuration import BotExecutionConfiguration
+from .bot_flow_session import BotFlowSession
 from .bot_intent import BotIntent
 from .bot_list import BotList
 from .bot_messenger_profile import BotMessengerProfile
@@ -2022,6 +2024,7 @@ from .learning_assignment_bulk_add_response import LearningAssignmentBulkAddResp
 from .learning_assignment_bulk_remove_response import LearningAssignmentBulkRemoveResponse
 from .learning_assignment_create import LearningAssignmentCreate
 from .learning_assignment_entity import LearningAssignmentEntity
+from .learning_assignment_external_update import LearningAssignmentExternalUpdate
 from .learning_assignment_item import LearningAssignmentItem
 from .learning_assignment_reassign import LearningAssignmentReassign
 from .learning_assignment_reference import LearningAssignmentReference
@@ -3086,6 +3089,7 @@ from .session_end_details import SessionEndDetails
 from .session_last_event import SessionLastEvent
 from .session_listing import SessionListing
 from .session_segment_assignment import SessionSegmentAssignment
+from .sessions_response import SessionsResponse
 from .set_content_template_action_settings import SetContentTemplateActionSettings
 from .set_recording_state import SetRecordingState
 from .set_sms_phone_number_action_settings import SetSmsPhoneNumberActionSettings
@@ -3987,6 +3991,7 @@ from .workitem_manual_assign import WorkitemManualAssign
 from .workitem_post_query_entity_listing import WorkitemPostQueryEntityListing
 from .workitem_query_post_request import WorkitemQueryPostRequest
 from .workitem_query_sort import WorkitemQuerySort
+from .workitem_queue_reference import WorkitemQueueReference
 from .workitem_reference import WorkitemReference
 from .workitem_schema import WorkitemSchema
 from .workitem_scored_agent import WorkitemScoredAgent

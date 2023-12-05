@@ -10,21 +10,21 @@ All URIs are relative to *https://api.mypurecloud.com*
 |------------- | -------------|
 |[**delete_alerting_alert**](AlertingApi.html#delete_alerting_alert) | Delete an alert|
 |[**delete_alerting_interactionstats_alert**](AlertingApi.html#delete_alerting_interactionstats_alert) | Delete an interaction stats alert|
-|[**delete_alerting_interactionstats_rule**](AlertingApi.html#delete_alerting_interactionstats_rule) | Delete an interaction stats rule.|
+|[**delete_alerting_interactionstats_rule**](AlertingApi.html#delete_alerting_interactionstats_rule) | Delete an interaction stats rule|
 |[**delete_alerting_rule**](AlertingApi.html#delete_alerting_rule) | Delete a rule.|
 |[**get_alerting_alert**](AlertingApi.html#get_alerting_alert) | Get an alert|
-|[**get_alerting_alerts_active**](AlertingApi.html#get_alerting_alerts_active) | Gets active alert count for a user.|
+|[**get_alerting_alerts_active**](AlertingApi.html#get_alerting_alerts_active) | Gets active alert count for a user|
 |[**get_alerting_interactionstats_alert**](AlertingApi.html#get_alerting_interactionstats_alert) | Get an interaction stats alert|
-|[**get_alerting_interactionstats_alerts**](AlertingApi.html#get_alerting_interactionstats_alerts) | Get interaction stats alert list.|
-|[**get_alerting_interactionstats_alerts_unread**](AlertingApi.html#get_alerting_interactionstats_alerts_unread) | Gets user unread count of interaction stats alerts.|
-|[**get_alerting_interactionstats_rule**](AlertingApi.html#get_alerting_interactionstats_rule) | Get an interaction stats rule.|
-|[**get_alerting_interactionstats_rules**](AlertingApi.html#get_alerting_interactionstats_rules) | Get an interaction stats rule list.|
+|[**get_alerting_interactionstats_alerts**](AlertingApi.html#get_alerting_interactionstats_alerts) | Get interaction stats alert list|
+|[**get_alerting_interactionstats_alerts_unread**](AlertingApi.html#get_alerting_interactionstats_alerts_unread) | Gets user unread count of interaction stats alerts|
+|[**get_alerting_interactionstats_rule**](AlertingApi.html#get_alerting_interactionstats_rule) | Get an interaction stats rule|
+|[**get_alerting_interactionstats_rules**](AlertingApi.html#get_alerting_interactionstats_rules) | Get an interaction stats rule list|
 |[**get_alerting_rule**](AlertingApi.html#get_alerting_rule) | Get a rule.|
 |[**patch_alerting_alert**](AlertingApi.html#patch_alerting_alert) | Allows an entity to mute/snooze an alert or update the unread status of the alert.|
 |[**patch_alerting_alerts_bulk**](AlertingApi.html#patch_alerting_alerts_bulk) | Bulk alert updates|
 |[**patch_alerting_rules_bulk**](AlertingApi.html#patch_alerting_rules_bulk) | Bulk update of notification lists|
 |[**post_alerting_alerts_query**](AlertingApi.html#post_alerting_alerts_query) | Gets a paged list of alerts. The max page size is 50|
-|[**post_alerting_interactionstats_rules**](AlertingApi.html#post_alerting_interactionstats_rules) | Create an interaction stats rule.|
+|[**post_alerting_interactionstats_rules**](AlertingApi.html#post_alerting_interactionstats_rules) | Create an interaction stats rule|
 |[**post_alerting_rules**](AlertingApi.html#post_alerting_rules) | Create a Rule.|
 |[**post_alerting_rules_bulk_remove**](AlertingApi.html#post_alerting_rules_bulk_remove) | Bulk remove rules|
 |[**post_alerting_rules_query**](AlertingApi.html#post_alerting_rules_query) | Get a paged list of rules.  The max size of the page is 50 items.|
@@ -86,9 +86,11 @@ void (empty response body)
 
 ##  delete_alerting_interactionstats_alert(alert_id)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 Delete an interaction stats alert
+
+Apps should migrate to use DELETE /api/v2/alerting/alerts/{alertId}.
 
 Wraps DELETE /api/v2/alerting/interactionstats/alerts/{alertId} 
 
@@ -134,9 +136,11 @@ void (empty response body)
 
 ##  delete_alerting_interactionstats_rule(rule_id)
 
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
+Delete an interaction stats rule
 
-Delete an interaction stats rule.
+Apps should migrate to use DELETE /api/v2/alerting/rules/{ruleId}.
 
 Wraps DELETE /api/v2/alerting/interactionstats/rules/{ruleId} 
 
@@ -160,7 +164,7 @@ api_instance = PureCloudPlatformClientV2.AlertingApi()
 rule_id = 'rule_id_example' # str | Rule ID
 
 try:
-    # Delete an interaction stats rule.
+    # Delete an interaction stats rule
     api_instance.delete_alerting_interactionstats_rule(rule_id)
 except ApiException as e:
     print("Exception when calling AlertingApi->delete_alerting_interactionstats_rule: %s\n" % e)
@@ -279,9 +283,11 @@ except ApiException as e:
 
 ## [**ActiveAlertCount**](ActiveAlertCount.html) get_alerting_alerts_active()
 
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
+Gets active alert count for a user
 
-Gets active alert count for a user.
+Apps should migrate to use POST /api/v2/alerting/alerts/query with the queryType set to 'Count' and alertStatus to 'Active' in the request body.
 
 Wraps GET /api/v2/alerting/alerts/active 
 
@@ -303,7 +309,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.AlertingApi()
 
 try:
-    # Gets active alert count for a user.
+    # Gets active alert count for a user
     api_response = api_instance.get_alerting_alerts_active()
     pprint(api_response)
 except ApiException as e:
@@ -323,9 +329,11 @@ This endpoint does not need any parameters.
 
 ## [**InteractionStatsAlert**](InteractionStatsAlert.html) get_alerting_interactionstats_alert(alert_id, expand=expand)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 Get an interaction stats alert
+
+Apps should migrate to use GET /api/v2/alerting/alerts/{alertId}.
 
 Wraps GET /api/v2/alerting/interactionstats/alerts/{alertId} 
 
@@ -374,9 +382,11 @@ except ApiException as e:
 
 ## [**InteractionStatsAlertContainer**](InteractionStatsAlertContainer.html) get_alerting_interactionstats_alerts(expand=expand)
 
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
+Get interaction stats alert list
 
-Get interaction stats alert list.
+Apps should migrate to use POST /api/v2/alerting/alerts/query.
 
 Wraps GET /api/v2/alerting/interactionstats/alerts 
 
@@ -400,7 +410,7 @@ api_instance = PureCloudPlatformClientV2.AlertingApi()
 expand = ['expand_example'] # list[str] | Which fields, if any, to expand (optional)
 
 try:
-    # Get interaction stats alert list.
+    # Get interaction stats alert list
     api_response = api_instance.get_alerting_interactionstats_alerts(expand=expand)
     pprint(api_response)
 except ApiException as e:
@@ -423,9 +433,11 @@ except ApiException as e:
 
 ## [**UnreadMetric**](UnreadMetric.html) get_alerting_interactionstats_alerts_unread()
 
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
+Gets user unread count of interaction stats alerts
 
-Gets user unread count of interaction stats alerts.
+Apps should migrate to use POST /api/v2/alerting/alerts/query with the queryType set to 'Count' and viewStatus to 'Unread' in the request body.
 
 Wraps GET /api/v2/alerting/interactionstats/alerts/unread 
 
@@ -447,7 +459,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.AlertingApi()
 
 try:
-    # Gets user unread count of interaction stats alerts.
+    # Gets user unread count of interaction stats alerts
     api_response = api_instance.get_alerting_interactionstats_alerts_unread()
     pprint(api_response)
 except ApiException as e:
@@ -467,9 +479,11 @@ This endpoint does not need any parameters.
 
 ## [**InteractionStatsRule**](InteractionStatsRule.html) get_alerting_interactionstats_rule(rule_id, expand=expand)
 
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
+Get an interaction stats rule
 
-Get an interaction stats rule.
+Apps should migrate to use GET /api/v2/alerting/rules/{ruleId}.
 
 Wraps GET /api/v2/alerting/interactionstats/rules/{ruleId} 
 
@@ -494,7 +508,7 @@ rule_id = 'rule_id_example' # str | Rule ID
 expand = ['expand_example'] # list[str] | Which fields, if any, to expand (optional)
 
 try:
-    # Get an interaction stats rule.
+    # Get an interaction stats rule
     api_response = api_instance.get_alerting_interactionstats_rule(rule_id, expand=expand)
     pprint(api_response)
 except ApiException as e:
@@ -518,9 +532,11 @@ except ApiException as e:
 
 ## [**InteractionStatsRuleContainer**](InteractionStatsRuleContainer.html) get_alerting_interactionstats_rules(expand=expand)
 
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
+Get an interaction stats rule list
 
-Get an interaction stats rule list.
+Apps should migrate to use POST /api/v2/alerting/rules/query.
 
 Wraps GET /api/v2/alerting/interactionstats/rules 
 
@@ -544,7 +560,7 @@ api_instance = PureCloudPlatformClientV2.AlertingApi()
 expand = ['expand_example'] # list[str] | Which fields, if any, to expand (optional)
 
 try:
-    # Get an interaction stats rule list.
+    # Get an interaction stats rule list
     api_response = api_instance.get_alerting_interactionstats_rules(expand=expand)
     pprint(api_response)
 except ApiException as e:
@@ -816,9 +832,11 @@ except ApiException as e:
 
 ## [**InteractionStatsRule**](InteractionStatsRule.html) post_alerting_interactionstats_rules(body, expand=expand)
 
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
+Create an interaction stats rule
 
-Create an interaction stats rule.
+Apps should migrate to use POST /api/v2/alerting/rules.
 
 Wraps POST /api/v2/alerting/interactionstats/rules 
 
@@ -843,7 +861,7 @@ body = PureCloudPlatformClientV2.InteractionStatsRule() # InteractionStatsRule |
 expand = ['expand_example'] # list[str] | Which fields, if any, to expand (optional)
 
 try:
-    # Create an interaction stats rule.
+    # Create an interaction stats rule
     api_response = api_instance.post_alerting_interactionstats_rules(body, expand=expand)
     pprint(api_response)
 except ApiException as e:
@@ -1065,9 +1083,11 @@ except ApiException as e:
 
 ## [**UnreadStatus**](UnreadStatus.html) put_alerting_interactionstats_alert(alert_id, body, expand=expand)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 Update an interaction stats alert read status
+
+Apps should migrate to use PUT /api/v2/alerting/alerts/{alertId}.
 
 Wraps PUT /api/v2/alerting/interactionstats/alerts/{alertId} 
 
@@ -1118,9 +1138,11 @@ except ApiException as e:
 
 ## [**InteractionStatsRule**](InteractionStatsRule.html) put_alerting_interactionstats_rule(rule_id, body, expand=expand)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 Update an interaction stats rule
+
+Apps should migrate to use PUT /api/v2/alerting/rules/{ruleId}.
 
 Wraps PUT /api/v2/alerting/interactionstats/rules/{ruleId} 
 

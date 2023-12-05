@@ -7,8 +7,8 @@ title: SupportCenterStyleSetting
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **hero_style** | [**SupportCenterHeroStyle**](SupportCenterHeroStyle.html) | Support center hero customizations | [optional] |
-| **global_style** | [**SupportCenterGlobalStyle**](SupportCenterGlobalStyle.html) | Support center global customizations | [optional] |
+| **hero_style** | [**SupportCenterHeroStyle**](SupportCenterHeroStyle.html) | Knowledge portal (previously support center) hero customizations | [optional] |
+| **global_style** | [**SupportCenterGlobalStyle**](SupportCenterGlobalStyle.html) | Knowledge portal (previously support center) global customizations | [optional] |
 {: class="table table-striped"}
 
 

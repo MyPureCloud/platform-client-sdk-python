@@ -878,7 +878,7 @@ except ApiException as e:
 
 <a name="get_journey_deployment_customer_ping"></a>
 
-## [**DeploymentPing**](DeploymentPing.html) get_journey_deployment_customer_ping(deployment_id, customer_cookie_id, session_id, dl=dl, dt=dt, app_namespace=app_namespace, since_last_beacon_milliseconds=since_last_beacon_milliseconds)
+## [**DeploymentPing**](DeploymentPing.html) get_journey_deployment_customer_ping(deployment_id, customer_cookie_id, dl=dl, dt=dt, app_namespace=app_namespace, session_id=session_id, since_last_beacon_milliseconds=since_last_beacon_milliseconds)
 
 
 
@@ -901,15 +901,15 @@ from pprint import pprint
 api_instance = PureCloudPlatformClientV2.JourneyApi()
 deployment_id = 'deployment_id_example' # str | The ID of the deployment sending the ping.
 customer_cookie_id = 'customer_cookie_id_example' # str | ID of the customer associated with the ping.
-session_id = 'session_id_example' # str | UUID of the customer session. Use the same Session Id for all pings, AppEvents and ActionEvents in the session
 dl = 'dl_example' # str | Document Location: 1) Web Page URL if overridden or URL fragment identifier (window.location.hash). OR  2) Application screen name that the ping request was sent from in the app. e.g. 'home' or 'help. Pings without this parameter will not return actions. (optional)
 dt = 'dt_example' # str | Document Title.  A human readable name for the page or screen (optional)
 app_namespace = 'app_namespace_example' # str | Namespace of the application (e.g. com.genesys.bancodinero). Used for domain filtering in application sessions (optional)
+session_id = 'session_id_example' # str | UUID of the customer session. Use the same Session Id for all pings, AppEvents and ActionEvents in the session (optional)
 since_last_beacon_milliseconds = 56 # int | How long (milliseconds) since the last app event or beacon was sent. The response may return a pollInternvalMilliseconds to reduce the frequency of pings. (optional)
 
 try:
     # Send a ping.
-    api_response = api_instance.get_journey_deployment_customer_ping(deployment_id, customer_cookie_id, session_id, dl=dl, dt=dt, app_namespace=app_namespace, since_last_beacon_milliseconds=since_last_beacon_milliseconds)
+    api_response = api_instance.get_journey_deployment_customer_ping(deployment_id, customer_cookie_id, dl=dl, dt=dt, app_namespace=app_namespace, session_id=session_id, since_last_beacon_milliseconds=since_last_beacon_milliseconds)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling JourneyApi->get_journey_deployment_customer_ping: %s\n" % e)
@@ -922,10 +922,10 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **deployment_id** | **str**| The ID of the deployment sending the ping. |  |
 | **customer_cookie_id** | **str**| ID of the customer associated with the ping. |  |
-| **session_id** | **str**| UUID of the customer session. Use the same Session Id for all pings, AppEvents and ActionEvents in the session |  |
 | **dl** | **str**| Document Location: 1) Web Page URL if overridden or URL fragment identifier (window.location.hash). OR  2) Application screen name that the ping request was sent from in the app. e.g. &#39;home&#39; or &#39;help. Pings without this parameter will not return actions. | [optional]  |
 | **dt** | **str**| Document Title.  A human readable name for the page or screen | [optional]  |
 | **app_namespace** | **str**| Namespace of the application (e.g. com.genesys.bancodinero). Used for domain filtering in application sessions | [optional]  |
+| **session_id** | **str**| UUID of the customer session. Use the same Session Id for all pings, AppEvents and ActionEvents in the session | [optional]  |
 | **since_last_beacon_milliseconds** | **int**| How long (milliseconds) since the last app event or beacon was sent. The response may return a pollInternvalMilliseconds to reduce the frequency of pings. | [optional]  |
 {: class="table table-striped"}
 

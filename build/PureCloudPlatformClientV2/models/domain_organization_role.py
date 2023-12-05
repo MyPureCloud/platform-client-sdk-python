@@ -59,8 +59,8 @@ class DomainOrganizationRole(object):
             'permission_policies': 'list[DomainPermissionPolicy]',
             'user_count': 'int',
             'role_needs_update': 'bool',
-            'base': 'bool',
             'default': 'bool',
+            'base': 'bool',
             'self_uri': 'str'
         }
 
@@ -74,8 +74,8 @@ class DomainOrganizationRole(object):
             'permission_policies': 'permissionPolicies',
             'user_count': 'userCount',
             'role_needs_update': 'roleNeedsUpdate',
-            'base': 'base',
             'default': 'default',
+            'base': 'base',
             'self_uri': 'selfUri'
         }
 
@@ -88,8 +88,8 @@ class DomainOrganizationRole(object):
         self._permission_policies = None
         self._user_count = None
         self._role_needs_update = None
-        self._base = None
         self._default = None
+        self._base = None
         self._self_uri = None
 
     @property
@@ -309,30 +309,6 @@ class DomainOrganizationRole(object):
         self._role_needs_update = role_needs_update
 
     @property
-    def base(self) -> bool:
-        """
-        Gets the base of this DomainOrganizationRole.
-
-
-        :return: The base of this DomainOrganizationRole.
-        :rtype: bool
-        """
-        return self._base
-
-    @base.setter
-    def base(self, base: bool) -> None:
-        """
-        Sets the base of this DomainOrganizationRole.
-
-
-        :param base: The base of this DomainOrganizationRole.
-        :type: bool
-        """
-        
-
-        self._base = base
-
-    @property
     def default(self) -> bool:
         """
         Gets the default of this DomainOrganizationRole.
@@ -355,6 +331,30 @@ class DomainOrganizationRole(object):
         
 
         self._default = default
+
+    @property
+    def base(self) -> bool:
+        """
+        Gets the base of this DomainOrganizationRole.
+
+
+        :return: The base of this DomainOrganizationRole.
+        :rtype: bool
+        """
+        return self._base
+
+    @base.setter
+    def base(self, base: bool) -> None:
+        """
+        Sets the base of this DomainOrganizationRole.
+
+
+        :param base: The base of this DomainOrganizationRole.
+        :type: bool
+        """
+        
+
+        self._base = base
 
     @property
     def self_uri(self) -> str:

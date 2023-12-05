@@ -67,7 +67,7 @@ class SupportCenterStyleSetting(object):
     def hero_style(self) -> 'SupportCenterHeroStyle':
         """
         Gets the hero_style of this SupportCenterStyleSetting.
-        Support center hero customizations
+        Knowledge portal (previously support center) hero customizations
 
         :return: The hero_style of this SupportCenterStyleSetting.
         :rtype: SupportCenterHeroStyle
@@ -78,7 +78,7 @@ class SupportCenterStyleSetting(object):
     def hero_style(self, hero_style: 'SupportCenterHeroStyle') -> None:
         """
         Sets the hero_style of this SupportCenterStyleSetting.
-        Support center hero customizations
+        Knowledge portal (previously support center) hero customizations
 
         :param hero_style: The hero_style of this SupportCenterStyleSetting.
         :type: SupportCenterHeroStyle
@@ -91,7 +91,7 @@ class SupportCenterStyleSetting(object):
     def global_style(self) -> 'SupportCenterGlobalStyle':
         """
         Gets the global_style of this SupportCenterStyleSetting.
-        Support center global customizations
+        Knowledge portal (previously support center) global customizations
 
         :return: The global_style of this SupportCenterStyleSetting.
         :rtype: SupportCenterGlobalStyle
@@ -102,7 +102,7 @@ class SupportCenterStyleSetting(object):
     def global_style(self, global_style: 'SupportCenterGlobalStyle') -> None:
         """
         Sets the global_style of this SupportCenterStyleSetting.
-        Support center global customizations
+        Knowledge portal (previously support center) global customizations
 
         :param global_style: The global_style of this SupportCenterStyleSetting.
         :type: SupportCenterGlobalStyle

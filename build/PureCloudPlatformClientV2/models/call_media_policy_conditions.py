@@ -36,6 +36,7 @@ if TYPE_CHECKING:
     from . import DurationCondition
     from . import Language
     from . import Queue
+    from . import Team
     from . import TimeAllowed
     from . import User
     from . import WrapupCode
@@ -61,6 +62,7 @@ class CallMediaPolicyConditions(object):
             'wrapup_codes': 'list[WrapupCode]',
             'languages': 'list[Language]',
             'time_allowed': 'TimeAllowed',
+            'teams': 'list[Team]',
             'directions': 'list[str]',
             'duration': 'DurationCondition'
         }
@@ -72,6 +74,7 @@ class CallMediaPolicyConditions(object):
             'wrapup_codes': 'wrapupCodes',
             'languages': 'languages',
             'time_allowed': 'timeAllowed',
+            'teams': 'teams',
             'directions': 'directions',
             'duration': 'duration'
         }
@@ -82,6 +85,7 @@ class CallMediaPolicyConditions(object):
         self._wrapup_codes = None
         self._languages = None
         self._time_allowed = None
+        self._teams = None
         self._directions = None
         self._duration = None
 
@@ -228,6 +232,30 @@ class CallMediaPolicyConditions(object):
         
 
         self._time_allowed = time_allowed
+
+    @property
+    def teams(self) -> List['Team']:
+        """
+        Gets the teams of this CallMediaPolicyConditions.
+        Teams to match conversations against
+
+        :return: The teams of this CallMediaPolicyConditions.
+        :rtype: list[Team]
+        """
+        return self._teams
+
+    @teams.setter
+    def teams(self, teams: List['Team']) -> None:
+        """
+        Sets the teams of this CallMediaPolicyConditions.
+        Teams to match conversations against
+
+        :param teams: The teams of this CallMediaPolicyConditions.
+        :type: list[Team]
+        """
+        
+
+        self._teams = teams
 
     @property
     def directions(self) -> List[str]:

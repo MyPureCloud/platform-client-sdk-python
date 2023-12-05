@@ -1394,7 +1394,7 @@ class JourneyApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_journey_deployment_customer_ping(self, deployment_id: str, customer_cookie_id: str, session_id: str, **kwargs) -> 'DeploymentPing':
+    def get_journey_deployment_customer_ping(self, deployment_id: str, customer_cookie_id: str, **kwargs) -> 'DeploymentPing':
         """
         Send a ping.
         
@@ -1405,23 +1405,23 @@ class JourneyApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.get_journey_deployment_customer_ping(deployment_id, customer_cookie_id, session_id, callback=callback_function)
+        >>> thread = api.get_journey_deployment_customer_ping(deployment_id, customer_cookie_id, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str deployment_id: The ID of the deployment sending the ping. (required)
         :param str customer_cookie_id: ID of the customer associated with the ping. (required)
-        :param str session_id: UUID of the customer session. Use the same Session Id for all pings, AppEvents and ActionEvents in the session (required)
         :param str dl: Document Location: 1) Web Page URL if overridden or URL fragment identifier (window.location.hash). OR  2) Application screen name that the ping request was sent from in the app. e.g. 'home' or 'help. Pings without this parameter will not return actions.
         :param str dt: Document Title.  A human readable name for the page or screen
         :param str app_namespace: Namespace of the application (e.g. com.genesys.bancodinero). Used for domain filtering in application sessions
+        :param str session_id: UUID of the customer session. Use the same Session Id for all pings, AppEvents and ActionEvents in the session
         :param int since_last_beacon_milliseconds: How long (milliseconds) since the last app event or beacon was sent. The response may return a pollInternvalMilliseconds to reduce the frequency of pings.
         :return: DeploymentPing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['deployment_id', 'customer_cookie_id', 'session_id', 'dl', 'dt', 'app_namespace', 'since_last_beacon_milliseconds']
+        all_params = ['deployment_id', 'customer_cookie_id', 'dl', 'dt', 'app_namespace', 'session_id', 'since_last_beacon_milliseconds']
         all_params.append('callback')
 
         params = locals()
@@ -1440,9 +1440,6 @@ class JourneyApi(object):
         # verify the required parameter 'customer_cookie_id' is set
         if ('customer_cookie_id' not in params) or (params['customer_cookie_id'] is None):
             raise ValueError("Missing the required parameter `customer_cookie_id` when calling `get_journey_deployment_customer_ping`")
-        # verify the required parameter 'session_id' is set
-        if ('session_id' not in params) or (params['session_id'] is None):
-            raise ValueError("Missing the required parameter `session_id` when calling `get_journey_deployment_customer_ping`")
 
 
         resource_path = '/api/v2/journey/deployments/{deploymentId}/customers/{customerCookieId}/ping'.replace('{format}', 'json')

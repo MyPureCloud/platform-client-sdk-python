@@ -63,7 +63,7 @@ class SupportCenterImage(object):
     def source(self) -> 'SupportCenterImageSource':
         """
         Gets the source of this SupportCenterImage.
-
+        Source URLs for image
 
         :return: The source of this SupportCenterImage.
         :rtype: SupportCenterImageSource
@@ -74,7 +74,7 @@ class SupportCenterImage(object):
     def source(self, source: 'SupportCenterImageSource') -> None:
         """
         Sets the source of this SupportCenterImage.
-
+        Source URLs for image
 
         :param source: The source of this SupportCenterImage.
         :type: SupportCenterImageSource

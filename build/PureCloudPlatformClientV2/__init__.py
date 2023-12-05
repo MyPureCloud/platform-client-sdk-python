@@ -311,11 +311,13 @@ from .models.bot_aggregation_query import BotAggregationQuery
 from .models.bot_aggregation_view import BotAggregationView
 from .models.bot_async_aggregate_query_response import BotAsyncAggregateQueryResponse
 from .models.bot_async_aggregation_query import BotAsyncAggregationQuery
+from .models.bot_channel import BotChannel
 from .models.bot_connector_bot import BotConnectorBot
 from .models.bot_connector_bot_summary_entity_listing import BotConnectorBotSummaryEntityListing
 from .models.bot_connector_bot_version import BotConnectorBotVersion
 from .models.bot_connector_bot_version_summary_entity_listing import BotConnectorBotVersionSummaryEntityListing
 from .models.bot_execution_configuration import BotExecutionConfiguration
+from .models.bot_flow_session import BotFlowSession
 from .models.bot_intent import BotIntent
 from .models.bot_list import BotList
 from .models.bot_messenger_profile import BotMessengerProfile
@@ -2022,6 +2024,7 @@ from .models.learning_assignment_bulk_add_response import LearningAssignmentBulk
 from .models.learning_assignment_bulk_remove_response import LearningAssignmentBulkRemoveResponse
 from .models.learning_assignment_create import LearningAssignmentCreate
 from .models.learning_assignment_entity import LearningAssignmentEntity
+from .models.learning_assignment_external_update import LearningAssignmentExternalUpdate
 from .models.learning_assignment_item import LearningAssignmentItem
 from .models.learning_assignment_reassign import LearningAssignmentReassign
 from .models.learning_assignment_reference import LearningAssignmentReference
@@ -3086,6 +3089,7 @@ from .models.session_end_details import SessionEndDetails
 from .models.session_last_event import SessionLastEvent
 from .models.session_listing import SessionListing
 from .models.session_segment_assignment import SessionSegmentAssignment
+from .models.sessions_response import SessionsResponse
 from .models.set_content_template_action_settings import SetContentTemplateActionSettings
 from .models.set_recording_state import SetRecordingState
 from .models.set_sms_phone_number_action_settings import SetSmsPhoneNumberActionSettings
@@ -3987,6 +3991,7 @@ from .models.workitem_manual_assign import WorkitemManualAssign
 from .models.workitem_post_query_entity_listing import WorkitemPostQueryEntityListing
 from .models.workitem_query_post_request import WorkitemQueryPostRequest
 from .models.workitem_query_sort import WorkitemQuerySort
+from .models.workitem_queue_reference import WorkitemQueueReference
 from .models.workitem_reference import WorkitemReference
 from .models.workitem_schema import WorkitemSchema
 from .models.workitem_scored_agent import WorkitemScoredAgent

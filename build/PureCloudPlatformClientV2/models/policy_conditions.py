@@ -35,6 +35,7 @@ from typing import Dict
 if TYPE_CHECKING:
     from . import DurationCondition
     from . import Queue
+    from . import Team
     from . import TimeAllowed
     from . import User
     from . import WrapupCode
@@ -62,6 +63,7 @@ class PolicyConditions(object):
             'duration': 'DurationCondition',
             'wrapup_codes': 'list[WrapupCode]',
             'time_allowed': 'TimeAllowed',
+            'teams': 'list[Team]',
             'customer_participation': 'str'
         }
 
@@ -74,6 +76,7 @@ class PolicyConditions(object):
             'duration': 'duration',
             'wrapup_codes': 'wrapupCodes',
             'time_allowed': 'timeAllowed',
+            'teams': 'teams',
             'customer_participation': 'customerParticipation'
         }
 
@@ -85,6 +88,7 @@ class PolicyConditions(object):
         self._duration = None
         self._wrapup_codes = None
         self._time_allowed = None
+        self._teams = None
         self._customer_participation = None
 
     @property
@@ -278,6 +282,30 @@ class PolicyConditions(object):
         
 
         self._time_allowed = time_allowed
+
+    @property
+    def teams(self) -> List['Team']:
+        """
+        Gets the teams of this PolicyConditions.
+        Teams to match conversations against
+
+        :return: The teams of this PolicyConditions.
+        :rtype: list[Team]
+        """
+        return self._teams
+
+    @teams.setter
+    def teams(self, teams: List['Team']) -> None:
+        """
+        Sets the teams of this PolicyConditions.
+        Teams to match conversations against
+
+        :param teams: The teams of this PolicyConditions.
+        :type: list[Team]
+        """
+        
+
+        self._teams = teams
 
     @property
     def customer_participation(self) -> str:

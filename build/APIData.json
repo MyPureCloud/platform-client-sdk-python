@@ -36,7 +36,7 @@
         "required": "true"
       }
     ],
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.AlertingApi();\nrule_id = 'rule_id_example' # str | Rule ID\n\ntry:\n    # Delete an interaction stats rule.\n    api_instance.delete_alerting_interactionstats_rule(rule_id)\nexcept ApiException as e:\n    print(\"Exception when calling AlertingApi->delete_alerting_interactionstats_rule: %s\\n\" % e)"
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.AlertingApi();\nrule_id = 'rule_id_example' # str | Rule ID\n\ntry:\n    # Delete an interaction stats rule\n    api_instance.delete_alerting_interactionstats_rule(rule_id)\nexcept ApiException as e:\n    print(\"Exception when calling AlertingApi->delete_alerting_interactionstats_rule: %s\\n\" % e)"
   },
   "delete_alerting_rule": {
     "operationId": "delete_alerting_rule",
@@ -70,7 +70,7 @@
     "functionName": "get_alerting_alerts_active",
     "signature": "get_alerting_alerts_active()",
     "return": "ActiveAlertCount",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.AlertingApi();\n\ntry:\n    # Gets active alert count for a user.\n    api_response = api_instance.get_alerting_alerts_active()\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling AlertingApi->get_alerting_alerts_active: %s\\n\" % e)"
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.AlertingApi();\n\ntry:\n    # Gets active alert count for a user\n    api_response = api_instance.get_alerting_alerts_active()\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling AlertingApi->get_alerting_alerts_active: %s\\n\" % e)"
   },
   "get_alerting_interactionstats_alert": {
     "operationId": "get_alerting_interactionstats_alert",
@@ -103,14 +103,14 @@
       }
     ],
     "return": "InteractionStatsAlertContainer",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.AlertingApi();\nexpand = ['expand_example'] # list[str] | Which fields, if any, to expand (optional)\n\ntry:\n    # Get interaction stats alert list.\n    api_response = api_instance.get_alerting_interactionstats_alerts(expand=expand)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling AlertingApi->get_alerting_interactionstats_alerts: %s\\n\" % e)"
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.AlertingApi();\nexpand = ['expand_example'] # list[str] | Which fields, if any, to expand (optional)\n\ntry:\n    # Get interaction stats alert list\n    api_response = api_instance.get_alerting_interactionstats_alerts(expand=expand)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling AlertingApi->get_alerting_interactionstats_alerts: %s\\n\" % e)"
   },
   "get_alerting_interactionstats_alerts_unread": {
     "operationId": "get_alerting_interactionstats_alerts_unread",
     "functionName": "get_alerting_interactionstats_alerts_unread",
     "signature": "get_alerting_interactionstats_alerts_unread()",
     "return": "UnreadMetric",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.AlertingApi();\n\ntry:\n    # Gets user unread count of interaction stats alerts.\n    api_response = api_instance.get_alerting_interactionstats_alerts_unread()\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling AlertingApi->get_alerting_interactionstats_alerts_unread: %s\\n\" % e)"
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.AlertingApi();\n\ntry:\n    # Gets user unread count of interaction stats alerts\n    api_response = api_instance.get_alerting_interactionstats_alerts_unread()\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling AlertingApi->get_alerting_interactionstats_alerts_unread: %s\\n\" % e)"
   },
   "get_alerting_interactionstats_rule": {
     "operationId": "get_alerting_interactionstats_rule",
@@ -129,7 +129,7 @@
       }
     ],
     "return": "InteractionStatsRule",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.AlertingApi();\nrule_id = 'rule_id_example' # str | Rule ID\nexpand = ['expand_example'] # list[str] | Which fields, if any, to expand (optional)\n\ntry:\n    # Get an interaction stats rule.\n    api_response = api_instance.get_alerting_interactionstats_rule(rule_id, expand=expand)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling AlertingApi->get_alerting_interactionstats_rule: %s\\n\" % e)"
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.AlertingApi();\nrule_id = 'rule_id_example' # str | Rule ID\nexpand = ['expand_example'] # list[str] | Which fields, if any, to expand (optional)\n\ntry:\n    # Get an interaction stats rule\n    api_response = api_instance.get_alerting_interactionstats_rule(rule_id, expand=expand)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling AlertingApi->get_alerting_interactionstats_rule: %s\\n\" % e)"
   },
   "get_alerting_interactionstats_rules": {
     "operationId": "get_alerting_interactionstats_rules",
@@ -143,7 +143,7 @@
       }
     ],
     "return": "InteractionStatsRuleContainer",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.AlertingApi();\nexpand = ['expand_example'] # list[str] | Which fields, if any, to expand (optional)\n\ntry:\n    # Get an interaction stats rule list.\n    api_response = api_instance.get_alerting_interactionstats_rules(expand=expand)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling AlertingApi->get_alerting_interactionstats_rules: %s\\n\" % e)"
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.AlertingApi();\nexpand = ['expand_example'] # list[str] | Which fields, if any, to expand (optional)\n\ntry:\n    # Get an interaction stats rule list\n    api_response = api_instance.get_alerting_interactionstats_rules(expand=expand)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling AlertingApi->get_alerting_interactionstats_rules: %s\\n\" % e)"
   },
   "get_alerting_rule": {
     "operationId": "get_alerting_rule",
@@ -237,7 +237,7 @@
       }
     ],
     "return": "InteractionStatsRule",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.AlertingApi();\nbody = PureCloudPlatformClientV2.InteractionStatsRule() # InteractionStatsRule | AlertingRule\nexpand = ['expand_example'] # list[str] | Which fields, if any, to expand (optional)\n\ntry:\n    # Create an interaction stats rule.\n    api_response = api_instance.post_alerting_interactionstats_rules(body, expand=expand)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling AlertingApi->post_alerting_interactionstats_rules: %s\\n\" % e)"
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.AlertingApi();\nbody = PureCloudPlatformClientV2.InteractionStatsRule() # InteractionStatsRule | AlertingRule\nexpand = ['expand_example'] # list[str] | Which fields, if any, to expand (optional)\n\ntry:\n    # Create an interaction stats rule\n    api_response = api_instance.post_alerting_interactionstats_rules(body, expand=expand)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling AlertingApi->post_alerting_interactionstats_rules: %s\\n\" % e)"
   },
   "post_alerting_rules": {
     "operationId": "post_alerting_rules",
@@ -487,6 +487,45 @@
     ],
     "return": "ReportingTurnsResponse",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.AnalyticsApi();\nbot_flow_id = 'bot_flow_id_example' # str | ID of the bot flow.\nafter = 'after_example' # str | The cursor that points to the ID of the last item in the list of entities that has been returned. (optional)\npage_size = ''50'' # str | Max number of entities to return. Maximum of 250 (optional) (default to '50')\ninterval = '2023-07-17T08:15:44.586Z/2023-07-26T09:22:33.111Z' # str | Date range filter based on the date the individual resources were completed. UTC is the default if no TZ is supplied, however alternate timezones can be used e.g: '2022-11-22T09:11:11.111+08:00/2022-11-30T07:17:44.586-07'. . Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss (optional)\naction_id = 'action_id_example' # str | Optional action ID to get the reporting turns associated to a particular flow action (optional)\nsession_id = 'session_id_example' # str | Optional session ID to get the reporting turns for a particular session. Specifying a session ID alongside an action ID or a language or any ask action results is not allowed. (optional)\nlanguage = 'en-us' # str | Optional language code to get the reporting turns for a particular language (optional)\nask_action_results = 'ask_action_results_example' # str | Optional case-insensitive comma separated list of ask action results to filter the reporting turns. (optional)\n\ntry:\n    # Get Reporting Turns.\n    api_response = api_instance.get_analytics_botflow_reportingturns(bot_flow_id, after=after, page_size=page_size, interval=interval, action_id=action_id, session_id=session_id, language=language, ask_action_results=ask_action_results)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling AnalyticsApi->get_analytics_botflow_reportingturns: %s\\n\" % e)"
+  },
+  "get_analytics_botflow_sessions": {
+    "operationId": "get_analytics_botflow_sessions",
+    "functionName": "get_analytics_botflow_sessions",
+    "signature": "get_analytics_botflow_sessions(bot_flow_id, after, page_size, interval, bot_result_categories, end_language)",
+    "parameters": [
+      {
+        "name": "bot_flow_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "after",
+        "type": "str",
+        "required": "false"
+      },
+      {
+        "name": "page_size",
+        "type": "str",
+        "required": "false"
+      },
+      {
+        "name": "interval",
+        "type": "str",
+        "required": "false"
+      },
+      {
+        "name": "bot_result_categories",
+        "type": "str",
+        "required": "false"
+      },
+      {
+        "name": "end_language",
+        "type": "str",
+        "required": "false"
+      }
+    ],
+    "return": "SessionsResponse",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.AnalyticsApi();\nbot_flow_id = 'bot_flow_id_example' # str | ID of the bot flow.\nafter = 'after_example' # str | The cursor that points to the ID of the last item in the list of entities that has been returned. (optional)\npage_size = ''50'' # str | Max number of entities to return. Maximum of 250 (optional) (default to '50')\ninterval = '2023-07-17T08:15:44.586Z/2023-07-26T09:22:33.111Z' # str | Date range filter based on the date the individual resources were completed. UTC is the default if no TZ is supplied, however alternate timezones can be used e.g: '2022-11-22T09:11:11.111+08:00/2022-11-30T07:17:44.586-07'. . Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss (optional)\nbot_result_categories = 'bot_result_categories_example' # str | Optional case-insensitive comma separated list of Bot Result Categories to filter sessions by. (optional)\nend_language = 'end_language_example' # str | Optional case-insensitive language code to filter sessions by the language the sessions ended in. (optional)\n\ntry:\n    # Get Bot Flow Sessions.\n    api_response = api_instance.get_analytics_botflow_sessions(bot_flow_id, after=after, page_size=page_size, interval=interval, bot_result_categories=bot_result_categories, end_language=end_language)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling AnalyticsApi->get_analytics_botflow_sessions: %s\\n\" % e)"
   },
   "get_analytics_bots_aggregates_job": {
     "operationId": "get_analytics_bots_aggregates_job",
@@ -17706,7 +17745,7 @@
       }
     ],
     "return": "Action",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.IntegrationsApi();\nbody = PureCloudPlatformClientV2.PostActionInput() # PostActionInput | Input used to create Action.\n\ntry:\n    # Create a new Action\n    api_response = api_instance.post_integrations_actions(body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling IntegrationsApi->post_integrations_actions: %s\\n\" % e)"
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.IntegrationsApi();\nbody = PureCloudPlatformClientV2.PostActionInput() # PostActionInput | Input used to create Action.\n\ntry:\n    # Create a new Action. Not supported for 'Function Integration' actions. Function integrations must be created as drafts to allow managing of uploading required ZIP function package before they may be used as a published action.\n    api_response = api_instance.post_integrations_actions(body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling IntegrationsApi->post_integrations_actions: %s\\n\" % e)"
   },
   "post_integrations_actions_drafts": {
     "operationId": "post_integrations_actions_drafts",
@@ -18174,7 +18213,7 @@
   "get_journey_deployment_customer_ping": {
     "operationId": "get_journey_deployment_customer_ping",
     "functionName": "get_journey_deployment_customer_ping",
-    "signature": "get_journey_deployment_customer_ping(deployment_id, customer_cookie_id, session_id, dl, dt, app_namespace, since_last_beacon_milliseconds)",
+    "signature": "get_journey_deployment_customer_ping(deployment_id, customer_cookie_id, dl, dt, app_namespace, session_id, since_last_beacon_milliseconds)",
     "parameters": [
       {
         "name": "deployment_id",
@@ -18183,11 +18222,6 @@
       },
       {
         "name": "customer_cookie_id",
-        "type": "str",
-        "required": "true"
-      },
-      {
-        "name": "session_id",
         "type": "str",
         "required": "true"
       },
@@ -18207,13 +18241,18 @@
         "required": "false"
       },
       {
+        "name": "session_id",
+        "type": "str",
+        "required": "false"
+      },
+      {
         "name": "since_last_beacon_milliseconds",
         "type": "int",
         "required": "false"
       }
     ],
     "return": "DeploymentPing",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.JourneyApi();\ndeployment_id = 'deployment_id_example' # str | The ID of the deployment sending the ping.\ncustomer_cookie_id = 'customer_cookie_id_example' # str | ID of the customer associated with the ping.\nsession_id = 'session_id_example' # str | UUID of the customer session. Use the same Session Id for all pings, AppEvents and ActionEvents in the session\ndl = 'dl_example' # str | Document Location: 1) Web Page URL if overridden or URL fragment identifier (window.location.hash). OR  2) Application screen name that the ping request was sent from in the app. e.g. 'home' or 'help. Pings without this parameter will not return actions. (optional)\ndt = 'dt_example' # str | Document Title.  A human readable name for the page or screen (optional)\napp_namespace = 'app_namespace_example' # str | Namespace of the application (e.g. com.genesys.bancodinero). Used for domain filtering in application sessions (optional)\nsince_last_beacon_milliseconds = 56 # int | How long (milliseconds) since the last app event or beacon was sent. The response may return a pollInternvalMilliseconds to reduce the frequency of pings. (optional)\n\ntry:\n    # Send a ping.\n    api_response = api_instance.get_journey_deployment_customer_ping(deployment_id, customer_cookie_id, session_id, dl=dl, dt=dt, app_namespace=app_namespace, since_last_beacon_milliseconds=since_last_beacon_milliseconds)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling JourneyApi->get_journey_deployment_customer_ping: %s\\n\" % e)"
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.JourneyApi();\ndeployment_id = 'deployment_id_example' # str | The ID of the deployment sending the ping.\ncustomer_cookie_id = 'customer_cookie_id_example' # str | ID of the customer associated with the ping.\ndl = 'dl_example' # str | Document Location: 1) Web Page URL if overridden or URL fragment identifier (window.location.hash). OR  2) Application screen name that the ping request was sent from in the app. e.g. 'home' or 'help. Pings without this parameter will not return actions. (optional)\ndt = 'dt_example' # str | Document Title.  A human readable name for the page or screen (optional)\napp_namespace = 'app_namespace_example' # str | Namespace of the application (e.g. com.genesys.bancodinero). Used for domain filtering in application sessions (optional)\nsession_id = 'session_id_example' # str | UUID of the customer session. Use the same Session Id for all pings, AppEvents and ActionEvents in the session (optional)\nsince_last_beacon_milliseconds = 56 # int | How long (milliseconds) since the last app event or beacon was sent. The response may return a pollInternvalMilliseconds to reduce the frequency of pings. (optional)\n\ntry:\n    # Send a ping.\n    api_response = api_instance.get_journey_deployment_customer_ping(deployment_id, customer_cookie_id, dl=dl, dt=dt, app_namespace=app_namespace, session_id=session_id, since_last_beacon_milliseconds=since_last_beacon_milliseconds)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling JourneyApi->get_journey_deployment_customer_ping: %s\\n\" % e)"
   },
   "get_journey_outcome": {
     "operationId": "get_journey_outcome",
@@ -22014,7 +22053,7 @@
   "get_learning_modules": {
     "operationId": "get_learning_modules",
     "functionName": "get_learning_modules",
-    "signature": "get_learning_modules(is_archived, types, page_size, page_number, sort_order, sort_by, search_term, expand, is_published, statuses)",
+    "signature": "get_learning_modules(is_archived, types, page_size, page_number, sort_order, sort_by, search_term, expand, is_published, statuses, external_ids)",
     "parameters": [
       {
         "name": "is_archived",
@@ -22065,10 +22104,15 @@
         "name": "statuses",
         "type": "list[str]",
         "required": "false"
+      },
+      {
+        "name": "external_ids",
+        "type": "list[str]",
+        "required": "false"
       }
     ],
     "return": "LearningModulesDomainEntityListing",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.LearningApi();\nis_archived = False # bool | Archive status (optional) (default to False)\ntypes = ['types_example'] # list[str] | Specifies the module types. (optional)\npage_size = 25 # int | Page size (optional) (default to 25)\npage_number = 1 # int | Page number (optional) (default to 1)\nsort_order = ''ascending'' # str | Sort order (optional) (default to 'ascending')\nsort_by = ''name'' # str | Sort by (optional) (default to 'name')\nsearch_term = 'search_term_example' # str | Search Term (searchable by name) (optional)\nexpand = ['expand_example'] # list[str] | Fields to expand in response(case insensitive) (optional)\nis_published = ''Any'' # str | Specifies if only the Unpublished (isPublished is \\\"False\\\") or Published (isPublished is \\\"True\\\") modules are returned. If isPublished is \\\"Any\\\" or omitted, both types are returned (optional) (default to 'Any')\nstatuses = ['statuses_example'] # list[str] | Specifies the module statuses to filter by (optional)\n\ntry:\n    # Get all learning modules of an organization\n    api_response = api_instance.get_learning_modules(is_archived=is_archived, types=types, page_size=page_size, page_number=page_number, sort_order=sort_order, sort_by=sort_by, search_term=search_term, expand=expand, is_published=is_published, statuses=statuses)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling LearningApi->get_learning_modules: %s\\n\" % e)"
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.LearningApi();\nis_archived = False # bool | Archive status (optional) (default to False)\ntypes = ['types_example'] # list[str] | Specifies the module types. (optional)\npage_size = 25 # int | Page size (optional) (default to 25)\npage_number = 1 # int | Page number (optional) (default to 1)\nsort_order = ''ascending'' # str | Sort order (optional) (default to 'ascending')\nsort_by = ''name'' # str | Sort by (optional) (default to 'name')\nsearch_term = 'search_term_example' # str | Search Term (searchable by name) (optional)\nexpand = ['expand_example'] # list[str] | Fields to expand in response(case insensitive) (optional)\nis_published = ''Any'' # str | Specifies if only the Unpublished (isPublished is \\\"False\\\") or Published (isPublished is \\\"True\\\") modules are returned. If isPublished is \\\"Any\\\" or omitted, both types are returned (optional) (default to 'Any')\nstatuses = ['statuses_example'] # list[str] | Specifies the module statuses to filter by (optional)\nexternal_ids = ['external_ids_example'] # list[str] | Specifies the module external IDs to filter by. Only one ID is allowed (optional)\n\ntry:\n    # Get all learning modules of an organization\n    api_response = api_instance.get_learning_modules(is_archived=is_archived, types=types, page_size=page_size, page_number=page_number, sort_order=sort_order, sort_by=sort_by, search_term=search_term, expand=expand, is_published=is_published, statuses=statuses, external_ids=external_ids)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling LearningApi->get_learning_modules: %s\\n\" % e)"
   },
   "get_learning_modules_assignments": {
     "operationId": "get_learning_modules_assignments",
@@ -22165,6 +22209,30 @@
     ],
     "return": "LearningAssignment",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.LearningApi();\nassignment_id = 'assignment_id_example' # str | The ID of Learning Assignment\nbody = PureCloudPlatformClientV2.LearningAssignmentReschedule() # LearningAssignmentReschedule | The Learning assignment reschedule model (optional)\n\ntry:\n    # Reschedule Learning Assignment\n    api_response = api_instance.patch_learning_assignment_reschedule(assignment_id, body=body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling LearningApi->patch_learning_assignment_reschedule: %s\\n\" % e)"
+  },
+  "patch_learning_module_user_assignments": {
+    "operationId": "patch_learning_module_user_assignments",
+    "functionName": "patch_learning_module_user_assignments",
+    "signature": "patch_learning_module_user_assignments(module_id, user_id, body)",
+    "parameters": [
+      {
+        "name": "module_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "user_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "LearningAssignmentExternalUpdate",
+        "required": "true"
+      }
+    ],
+    "return": "LearningAssignment",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.LearningApi();\nmodule_id = 'module_id_example' # str | Key identifier for the module\nuser_id = 'user_id_example' # str | Key identifier for the user\nbody = PureCloudPlatformClientV2.LearningAssignmentExternalUpdate() # LearningAssignmentExternalUpdate | The learning request for updating the assignment\n\ntry:\n    # Update an external assignment for a specific user\n    api_response = api_instance.patch_learning_module_user_assignments(module_id, user_id, body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling LearningApi->patch_learning_module_user_assignments: %s\\n\" % e)"
   },
   "post_learning_assessments_scoring": {
     "operationId": "post_learning_assessments_scoring",
@@ -27778,7 +27846,7 @@
   "get_quality_agents_activity": {
     "operationId": "get_quality_agents_activity",
     "functionName": "get_quality_agents_activity",
-    "signature": "get_quality_agents_activity(page_size, page_number, sort_by, expand, next_page, previous_page, start_time, end_time, agent_user_id, evaluator_user_id, name, group, form_context_id)",
+    "signature": "get_quality_agents_activity(page_size, page_number, sort_by, expand, next_page, previous_page, start_time, end_time, agent_user_id, evaluator_user_id, name, group, agent_team_id, form_context_id)",
     "parameters": [
       {
         "name": "page_size",
@@ -27841,13 +27909,18 @@
         "required": "false"
       },
       {
+        "name": "agent_team_id",
+        "type": "str",
+        "required": "false"
+      },
+      {
         "name": "form_context_id",
         "type": "str",
         "required": "false"
       }
     ],
     "return": "AgentActivityEntityListing",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.QualityApi();\npage_size = 25 # int | The total page size requested (optional) (default to 25)\npage_number = 1 # int | The page number requested (optional) (default to 1)\nsort_by = 'sort_by_example' # str | variable name requested to sort by (optional)\nexpand = ['expand_example'] # list[str] | variable name requested by expand list (optional)\nnext_page = 'next_page_example' # str | next page token (optional)\nprevious_page = 'previous_page_example' # str | Previous page token (optional)\nstart_time = '2013-10-20T19:20:30+01:00' # datetime | Start time of agent activity based on assigned date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z (optional)\nend_time = '2013-10-20T19:20:30+01:00' # datetime | End time of agent activity based on assigned date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z (optional)\nagent_user_id = ['agent_user_id_example'] # list[str] | user id of agent requested (optional)\nevaluator_user_id = 'evaluator_user_id_example' # str | user id of the evaluator (optional)\nname = 'name_example' # str | name (optional)\ngroup = 'group_example' # str | group id (optional)\nform_context_id = 'form_context_id_example' # str | shared id between form versions (optional)\n\ntry:\n    # Gets a list of Agent Activities\n    api_response = api_instance.get_quality_agents_activity(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, start_time=start_time, end_time=end_time, agent_user_id=agent_user_id, evaluator_user_id=evaluator_user_id, name=name, group=group, form_context_id=form_context_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling QualityApi->get_quality_agents_activity: %s\\n\" % e)"
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.QualityApi();\npage_size = 25 # int | The total page size requested (optional) (default to 25)\npage_number = 1 # int | The page number requested (optional) (default to 1)\nsort_by = 'sort_by_example' # str | variable name requested to sort by (optional)\nexpand = ['expand_example'] # list[str] | variable name requested by expand list (optional)\nnext_page = 'next_page_example' # str | next page token (optional)\nprevious_page = 'previous_page_example' # str | Previous page token (optional)\nstart_time = '2013-10-20T19:20:30+01:00' # datetime | Start time of agent activity based on assigned date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z (optional)\nend_time = '2013-10-20T19:20:30+01:00' # datetime | End time of agent activity based on assigned date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z (optional)\nagent_user_id = ['agent_user_id_example'] # list[str] | user id of agent requested (optional)\nevaluator_user_id = 'evaluator_user_id_example' # str | user id of the evaluator (optional)\nname = 'name_example' # str | name (optional)\ngroup = 'group_example' # str | group id (optional)\nagent_team_id = 'agent_team_id_example' # str | team id of agents requested (optional)\nform_context_id = 'form_context_id_example' # str | shared id between form versions (optional)\n\ntry:\n    # Gets a list of Agent Activities\n    api_response = api_instance.get_quality_agents_activity(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, start_time=start_time, end_time=end_time, agent_user_id=agent_user_id, evaluator_user_id=evaluator_user_id, name=name, group=group, agent_team_id=agent_team_id, form_context_id=form_context_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling QualityApi->get_quality_agents_activity: %s\\n\" % e)"
   },
   "get_quality_calibration": {
     "operationId": "get_quality_calibration",
@@ -28016,7 +28089,7 @@
   "get_quality_evaluations_query": {
     "operationId": "get_quality_evaluations_query",
     "functionName": "get_quality_evaluations_query",
-    "signature": "get_quality_evaluations_query(page_size, page_number, sort_by, expand, next_page, previous_page, conversation_id, agent_user_id, evaluator_user_id, assignee_user_id, queue_id, start_time, end_time, form_context_id, evaluation_state, is_released, agent_has_read, expand_answer_total_scores, maximum, sort_order)",
+    "signature": "get_quality_evaluations_query(page_size, page_number, sort_by, expand, next_page, previous_page, conversation_id, agent_user_id, agent_team_id, evaluator_user_id, assignee_user_id, queue_id, start_time, end_time, form_context_id, evaluation_state, is_released, agent_has_read, expand_answer_total_scores, maximum, sort_order)",
     "parameters": [
       {
         "name": "page_size",
@@ -28055,6 +28128,11 @@
       },
       {
         "name": "agent_user_id",
+        "type": "str",
+        "required": "false"
+      },
+      {
+        "name": "agent_team_id",
         "type": "str",
         "required": "false"
       },
@@ -28120,12 +28198,12 @@
       }
     ],
     "return": "EvaluationEntityListing",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.QualityApi();\npage_size = 25 # int | The total page size requested (optional) (default to 25)\npage_number = 1 # int | The page number requested (optional) (default to 1)\nsort_by = 'sort_by_example' # str | NOTE: Does not work when querying evaluations (optional)\nexpand = ['expand_example'] # list[str] | variable name requested by expand list (optional)\nnext_page = 'next_page_example' # str | NOTE: Does not work when querying evaluations (optional)\nprevious_page = 'previous_page_example' # str | Previous page token (optional)\nconversation_id = 'conversation_id_example' # str | conversationId specified (optional)\nagent_user_id = 'agent_user_id_example' # str | user id of the agent (optional)\nevaluator_user_id = 'evaluator_user_id_example' # str | evaluator user id (optional)\nassignee_user_id = 'assignee_user_id_example' # str | assignee user id (optional)\nqueue_id = 'queue_id_example' # str | queue id (optional)\nstart_time = 'start_time_example' # str | start time of the evaluation query (optional)\nend_time = 'end_time_example' # str | end time of the evaluation query (optional)\nform_context_id = 'form_context_id_example' # str | shared id between form versions (optional)\nevaluation_state = ['evaluation_state_example'] # list[str] |  (optional)\nis_released = True # bool | the evaluation has been released (optional)\nagent_has_read = True # bool | agent has the evaluation (optional)\nexpand_answer_total_scores = True # bool | get the total scores for evaluations (optional)\nmaximum = 56 # int | the maximum number of results to return (optional)\nsort_order = 'sort_order_example' # str | NOTE: Does not work when conversationId is supplied. (optional)\n\ntry:\n    # Queries Evaluations and returns a paged list\n    api_response = api_instance.get_quality_evaluations_query(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, conversation_id=conversation_id, agent_user_id=agent_user_id, evaluator_user_id=evaluator_user_id, assignee_user_id=assignee_user_id, queue_id=queue_id, start_time=start_time, end_time=end_time, form_context_id=form_context_id, evaluation_state=evaluation_state, is_released=is_released, agent_has_read=agent_has_read, expand_answer_total_scores=expand_answer_total_scores, maximum=maximum, sort_order=sort_order)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling QualityApi->get_quality_evaluations_query: %s\\n\" % e)"
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.QualityApi();\npage_size = 25 # int | The total page size requested (optional) (default to 25)\npage_number = 1 # int | The page number requested (optional) (default to 1)\nsort_by = 'sort_by_example' # str | NOTE: Does not work when querying evaluations (optional)\nexpand = ['expand_example'] # list[str] | variable name requested by expand list (optional)\nnext_page = 'next_page_example' # str | NOTE: Does not work when querying evaluations (optional)\nprevious_page = 'previous_page_example' # str | Previous page token (optional)\nconversation_id = 'conversation_id_example' # str | conversationId specified (optional)\nagent_user_id = 'agent_user_id_example' # str | user id of the agent (optional)\nagent_team_id = 'agent_team_id_example' # str | team id of the agent (optional)\nevaluator_user_id = 'evaluator_user_id_example' # str | evaluator user id (optional)\nassignee_user_id = 'assignee_user_id_example' # str | assignee user id (optional)\nqueue_id = 'queue_id_example' # str | queue id (optional)\nstart_time = 'start_time_example' # str | start time of the evaluation query (optional)\nend_time = 'end_time_example' # str | end time of the evaluation query (optional)\nform_context_id = 'form_context_id_example' # str | shared id between form versions (optional)\nevaluation_state = ['evaluation_state_example'] # list[str] |  (optional)\nis_released = True # bool | the evaluation has been released (optional)\nagent_has_read = True # bool | agent has the evaluation (optional)\nexpand_answer_total_scores = True # bool | get the total scores for evaluations (optional)\nmaximum = 56 # int | the maximum number of results to return (optional)\nsort_order = 'sort_order_example' # str | NOTE: Does not work when conversationId is supplied. (optional)\n\ntry:\n    # Queries Evaluations and returns a paged list\n    api_response = api_instance.get_quality_evaluations_query(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, conversation_id=conversation_id, agent_user_id=agent_user_id, agent_team_id=agent_team_id, evaluator_user_id=evaluator_user_id, assignee_user_id=assignee_user_id, queue_id=queue_id, start_time=start_time, end_time=end_time, form_context_id=form_context_id, evaluation_state=evaluation_state, is_released=is_released, agent_has_read=agent_has_read, expand_answer_total_scores=expand_answer_total_scores, maximum=maximum, sort_order=sort_order)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling QualityApi->get_quality_evaluations_query: %s\\n\" % e)"
   },
   "get_quality_evaluators_activity": {
     "operationId": "get_quality_evaluators_activity",
     "functionName": "get_quality_evaluators_activity",
-    "signature": "get_quality_evaluators_activity(page_size, page_number, sort_by, expand, next_page, previous_page, start_time, end_time, name, permission, group)",
+    "signature": "get_quality_evaluators_activity(page_size, page_number, sort_by, expand, next_page, previous_page, start_time, end_time, name, permission, group, agent_team_id)",
     "parameters": [
       {
         "name": "page_size",
@@ -28181,10 +28259,15 @@
         "name": "group",
         "type": "str",
         "required": "false"
+      },
+      {
+        "name": "agent_team_id",
+        "type": "str",
+        "required": "false"
       }
     ],
     "return": "EvaluatorActivityEntityListing",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.QualityApi();\npage_size = 25 # int | The total page size requested (optional) (default to 25)\npage_number = 1 # int | The page number requested (optional) (default to 1)\nsort_by = 'sort_by_example' # str | variable name requested to sort by (optional)\nexpand = ['expand_example'] # list[str] | variable name requested by expand list (optional)\nnext_page = 'next_page_example' # str | next page token (optional)\nprevious_page = 'previous_page_example' # str | Previous page token (optional)\nstart_time = '2013-10-20T19:20:30+01:00' # datetime | The start time specified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z (optional)\nend_time = '2013-10-20T19:20:30+01:00' # datetime | The end time specified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z (optional)\nname = 'name_example' # str | Evaluator name (optional)\npermission = ['permission_example'] # list[str] | permission strings (optional)\ngroup = 'group_example' # str | group id (optional)\n\ntry:\n    # Get an evaluator activity\n    api_response = api_instance.get_quality_evaluators_activity(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, start_time=start_time, end_time=end_time, name=name, permission=permission, group=group)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling QualityApi->get_quality_evaluators_activity: %s\\n\" % e)"
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...) or get_code_authorization_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.QualityApi();\npage_size = 25 # int | The total page size requested (optional) (default to 25)\npage_number = 1 # int | The page number requested (optional) (default to 1)\nsort_by = 'sort_by_example' # str | variable name requested to sort by (optional)\nexpand = ['expand_example'] # list[str] | variable name requested by expand list (optional)\nnext_page = 'next_page_example' # str | next page token (optional)\nprevious_page = 'previous_page_example' # str | Previous page token (optional)\nstart_time = '2013-10-20T19:20:30+01:00' # datetime | The start time specified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z (optional)\nend_time = '2013-10-20T19:20:30+01:00' # datetime | The end time specified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z (optional)\nname = 'name_example' # str | Evaluator name (optional)\npermission = ['permission_example'] # list[str] | permission strings (optional)\ngroup = 'group_example' # str | group id (optional)\nagent_team_id = 'agent_team_id_example' # str | team id of agents to be considered (optional)\n\ntry:\n    # Get an evaluator activity\n    api_response = api_instance.get_quality_evaluators_activity(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, start_time=start_time, end_time=end_time, name=name, permission=permission, group=group, agent_team_id=agent_team_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling QualityApi->get_quality_evaluators_activity: %s\\n\" % e)"
   },
   "get_quality_form": {
     "operationId": "get_quality_form",

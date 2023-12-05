@@ -23,7 +23,7 @@ title: WorktypeVersion
 | **default_language** | [**LanguageReference**](LanguageReference.html) | The default language for Workitems created from the Worktype. | [optional] |
 | **default_ttl_seconds** | **int** | The default time to time to live in seconds for Workitems created from the Worktype. | [optional] |
 | **modified_by** | [**UserReference**](UserReference.html) | The id of the User who modified the Worktype. | [optional] |
-| **default_queue** | [**QueueReference**](QueueReference.html) | The default queue for Workitems created from the Worktype. | [optional] |
+| **default_queue** | [**WorkitemQueueReference**](WorkitemQueueReference.html) | The default queue for Workitems created from the Worktype. | [optional] |
 | **default_skills** | [**list[RoutingSkillReference]**](RoutingSkillReference.html) | The default skills for Workitems created from the Worktype. | [optional] |
 | **assignment_enabled** | **bool** | When set to true, Workitems will be sent to the queue of the Worktype as they are created. Default value is false. | [optional] |
 | **schema** | [**WorkitemSchema**](WorkitemSchema.html) | The schema defining the custom attributes for Workitems created from the Worktype. | [optional] |

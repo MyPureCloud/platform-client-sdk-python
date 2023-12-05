@@ -71,7 +71,8 @@ class LearningAssignment(object):
             'version': 'int',
             'module': 'LearningModule',
             'user': 'UserReference',
-            'assessment_form': 'AssessmentForm'
+            'assessment_form': 'AssessmentForm',
+            'length_in_minutes': 'int'
         }
 
         self.attribute_map = {
@@ -93,7 +94,8 @@ class LearningAssignment(object):
             'version': 'version',
             'module': 'module',
             'user': 'user',
-            'assessment_form': 'assessmentForm'
+            'assessment_form': 'assessmentForm',
+            'length_in_minutes': 'lengthInMinutes'
         }
 
         self._id = None
@@ -115,6 +117,7 @@ class LearningAssignment(object):
         self._module = None
         self._user = None
         self._assessment_form = None
+        self._length_in_minutes = None
 
     @property
     def id(self) -> str:
@@ -576,6 +579,30 @@ class LearningAssignment(object):
         
 
         self._assessment_form = assessment_form
+
+    @property
+    def length_in_minutes(self) -> int:
+        """
+        Gets the length_in_minutes of this LearningAssignment.
+        The length in minutes of the assignment
+
+        :return: The length_in_minutes of this LearningAssignment.
+        :rtype: int
+        """
+        return self._length_in_minutes
+
+    @length_in_minutes.setter
+    def length_in_minutes(self, length_in_minutes: int) -> None:
+        """
+        Sets the length_in_minutes of this LearningAssignment.
+        The length in minutes of the assignment
+
+        :param length_in_minutes: The length_in_minutes of this LearningAssignment.
+        :type: int
+        """
+        
+
+        self._length_in_minutes = length_in_minutes
 
     def to_dict(self):
         """

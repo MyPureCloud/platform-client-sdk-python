@@ -50,18 +50,21 @@ class LearningAssignmentCreate(object):
         self.swagger_types = {
             'module_id': 'str',
             'user_id': 'str',
-            'recommended_completion_date': 'datetime'
+            'recommended_completion_date': 'datetime',
+            'length_in_minutes': 'int'
         }
 
         self.attribute_map = {
             'module_id': 'moduleId',
             'user_id': 'userId',
-            'recommended_completion_date': 'recommendedCompletionDate'
+            'recommended_completion_date': 'recommendedCompletionDate',
+            'length_in_minutes': 'lengthInMinutes'
         }
 
         self._module_id = None
         self._user_id = None
         self._recommended_completion_date = None
+        self._length_in_minutes = None
 
     @property
     def module_id(self) -> str:
@@ -134,6 +137,30 @@ class LearningAssignmentCreate(object):
         
 
         self._recommended_completion_date = recommended_completion_date
+
+    @property
+    def length_in_minutes(self) -> int:
+        """
+        Gets the length_in_minutes of this LearningAssignmentCreate.
+        The length in minutes of assignment
+
+        :return: The length_in_minutes of this LearningAssignmentCreate.
+        :rtype: int
+        """
+        return self._length_in_minutes
+
+    @length_in_minutes.setter
+    def length_in_minutes(self, length_in_minutes: int) -> None:
+        """
+        Sets the length_in_minutes of this LearningAssignmentCreate.
+        The length in minutes of assignment
+
+        :param length_in_minutes: The length_in_minutes of this LearningAssignmentCreate.
+        :type: int
+        """
+        
+
+        self._length_in_minutes = length_in_minutes
 
     def to_dict(self):
         """

@@ -39,6 +39,7 @@ if TYPE_CHECKING:
     from . import SurveyErrorDetails
     from . import SurveyForm
     from . import SurveyScoringSet
+    from . import Team
 
 class Survey(object):
     """
@@ -65,6 +66,7 @@ class Survey(object):
             'answers': 'SurveyScoringSet',
             'completed_date': 'datetime',
             'survey_error_details': 'SurveyErrorDetails',
+            'agent_team': 'Team',
             'self_uri': 'str'
         }
 
@@ -79,6 +81,7 @@ class Survey(object):
             'answers': 'answers',
             'completed_date': 'completedDate',
             'survey_error_details': 'surveyErrorDetails',
+            'agent_team': 'agentTeam',
             'self_uri': 'selfUri'
         }
 
@@ -92,6 +95,7 @@ class Survey(object):
         self._answers = None
         self._completed_date = None
         self._survey_error_details = None
+        self._agent_team = None
         self._self_uri = None
 
     @property
@@ -338,6 +342,30 @@ class Survey(object):
         
 
         self._survey_error_details = survey_error_details
+
+    @property
+    def agent_team(self) -> 'Team':
+        """
+        Gets the agent_team of this Survey.
+        The team that the agent belongs to
+
+        :return: The agent_team of this Survey.
+        :rtype: Team
+        """
+        return self._agent_team
+
+    @agent_team.setter
+    def agent_team(self, agent_team: 'Team') -> None:
+        """
+        Sets the agent_team of this Survey.
+        The team that the agent belongs to
+
+        :param agent_team: The agent_team of this Survey.
+        :type: Team
+        """
+        
+
+        self._agent_team = agent_team
 
     @property
     def self_uri(self) -> str:

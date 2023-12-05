@@ -37,11 +37,11 @@ if TYPE_CHECKING:
     from . import Division
     from . import ExternalContactReference
     from . import LanguageReference
-    from . import QueueReference
     from . import RoutingSkillReference
     from . import UserReference
     from . import UserReferenceWithName
     from . import WorkbinReference
+    from . import WorkitemQueueReference
     from . import WorkitemSchema
     from . import WorkitemScoredAgent
     from . import WorkitemStatusReference
@@ -85,7 +85,7 @@ class WorkitemVersion(object):
             'external_contact': 'ExternalContactReference',
             'external_tag': 'str',
             'modified_by': 'UserReference',
-            'queue': 'QueueReference',
+            'queue': 'WorkitemQueueReference',
             'assignment_state': 'str',
             'date_assignment_state_changed': 'datetime',
             'alert_timeout_seconds': 'int',
@@ -734,24 +734,24 @@ class WorkitemVersion(object):
         self._modified_by = modified_by
 
     @property
-    def queue(self) -> 'QueueReference':
+    def queue(self) -> 'WorkitemQueueReference':
         """
         Gets the queue of this WorkitemVersion.
         The Workitems queue.
 
         :return: The queue of this WorkitemVersion.
-        :rtype: QueueReference
+        :rtype: WorkitemQueueReference
         """
         return self._queue
 
     @queue.setter
-    def queue(self, queue: 'QueueReference') -> None:
+    def queue(self, queue: 'WorkitemQueueReference') -> None:
         """
         Sets the queue of this WorkitemVersion.
         The Workitems queue.
 
         :param queue: The queue of this WorkitemVersion.
-        :type: QueueReference
+        :type: WorkitemQueueReference
         """
         
 
