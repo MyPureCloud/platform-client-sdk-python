@@ -27,6 +27,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_analytics_dataretention_settings**](AnalyticsApi.html#get_analytics_dataretention_settings) | Get analytics data retention setting|
 |[**get_analytics_evaluations_aggregates_job**](AnalyticsApi.html#get_analytics_evaluations_aggregates_job) | Get status for async query for evaluation aggregates|
 |[**get_analytics_evaluations_aggregates_job_results**](AnalyticsApi.html#get_analytics_evaluations_aggregates_job_results) | Fetch a page of results for an async aggregates query|
+|[**get_analytics_flowexecutions_aggregates_job**](AnalyticsApi.html#get_analytics_flowexecutions_aggregates_job) | Get status for async query for flow execution aggregates|
+|[**get_analytics_flowexecutions_aggregates_job_results**](AnalyticsApi.html#get_analytics_flowexecutions_aggregates_job_results) | Fetch a page of results for an async aggregates query|
 |[**get_analytics_flows_aggregates_job**](AnalyticsApi.html#get_analytics_flows_aggregates_job) | Get status for async query for Flow aggregates|
 |[**get_analytics_flows_aggregates_job_results**](AnalyticsApi.html#get_analytics_flows_aggregates_job_results) | Fetch a page of results for an async aggregates query|
 |[**get_analytics_journeys_aggregates_job**](AnalyticsApi.html#get_analytics_journeys_aggregates_job) | Get status for async query for journey aggregates|
@@ -72,6 +74,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_analytics_conversations_transcripts_query**](AnalyticsApi.html#post_analytics_conversations_transcripts_query) | Search resources.|
 |[**post_analytics_evaluations_aggregates_jobs**](AnalyticsApi.html#post_analytics_evaluations_aggregates_jobs) | Query for evaluation aggregates asynchronously|
 |[**post_analytics_evaluations_aggregates_query**](AnalyticsApi.html#post_analytics_evaluations_aggregates_query) | Query for evaluation aggregates|
+|[**post_analytics_flowexecutions_aggregates_jobs**](AnalyticsApi.html#post_analytics_flowexecutions_aggregates_jobs) | Query for flow execution aggregates asynchronously|
+|[**post_analytics_flowexecutions_aggregates_query**](AnalyticsApi.html#post_analytics_flowexecutions_aggregates_query) | Query for flow execution aggregates|
 |[**post_analytics_flows_activity_query**](AnalyticsApi.html#post_analytics_flows_activity_query) | Query for flow activity observations|
 |[**post_analytics_flows_aggregates_jobs**](AnalyticsApi.html#post_analytics_flows_aggregates_jobs) | Query for flow aggregates asynchronously|
 |[**post_analytics_flows_aggregates_query**](AnalyticsApi.html#post_analytics_flows_aggregates_query) | Query for flow aggregates|
@@ -1084,6 +1088,110 @@ except ApiException as e:
 ### Return type
 
 [**EvaluationAsyncAggregateQueryResponse**](EvaluationAsyncAggregateQueryResponse.html)
+
+<a name="get_analytics_flowexecutions_aggregates_job"></a>
+
+## [**AsyncQueryStatus**](AsyncQueryStatus.html) get_analytics_flowexecutions_aggregates_job(job_id)
+
+
+
+Get status for async query for flow execution aggregates
+
+get_analytics_flowexecutions_aggregates_job is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/analytics/flowexecutions/aggregates/jobs/{jobId} 
+
+Requires ANY permissions: 
+
+* analytics:flowExecutionAggregate:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AnalyticsApi()
+job_id = 'job_id_example' # str | jobId
+
+try:
+    # Get status for async query for flow execution aggregates
+    api_response = api_instance.get_analytics_flowexecutions_aggregates_job(job_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AnalyticsApi->get_analytics_flowexecutions_aggregates_job: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **job_id** | **str**| jobId |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**AsyncQueryStatus**](AsyncQueryStatus.html)
+
+<a name="get_analytics_flowexecutions_aggregates_job_results"></a>
+
+## [**FlowExecutionAsyncAggregateQueryResponse**](FlowExecutionAsyncAggregateQueryResponse.html) get_analytics_flowexecutions_aggregates_job_results(job_id, cursor=cursor)
+
+
+
+Fetch a page of results for an async aggregates query
+
+get_analytics_flowexecutions_aggregates_job_results is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/analytics/flowexecutions/aggregates/jobs/{jobId}/results 
+
+Requires ANY permissions: 
+
+* analytics:flowExecutionAggregate:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AnalyticsApi()
+job_id = 'job_id_example' # str | jobId
+cursor = 'cursor_example' # str | Cursor token to retrieve next page (optional)
+
+try:
+    # Fetch a page of results for an async aggregates query
+    api_response = api_instance.get_analytics_flowexecutions_aggregates_job_results(job_id, cursor=cursor)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AnalyticsApi->get_analytics_flowexecutions_aggregates_job_results: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **job_id** | **str**| jobId |  |
+| **cursor** | **str**| Cursor token to retrieve next page | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**FlowExecutionAsyncAggregateQueryResponse**](FlowExecutionAsyncAggregateQueryResponse.html)
 
 <a name="get_analytics_flows_aggregates_job"></a>
 
@@ -3359,6 +3467,108 @@ except ApiException as e:
 ### Return type
 
 [**EvaluationAggregateQueryResponse**](EvaluationAggregateQueryResponse.html)
+
+<a name="post_analytics_flowexecutions_aggregates_jobs"></a>
+
+## [**AsyncQueryResponse**](AsyncQueryResponse.html) post_analytics_flowexecutions_aggregates_jobs(body)
+
+
+
+Query for flow execution aggregates asynchronously
+
+post_analytics_flowexecutions_aggregates_jobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/analytics/flowexecutions/aggregates/jobs 
+
+Requires ANY permissions: 
+
+* analytics:flowExecutionAggregate:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AnalyticsApi()
+body = PureCloudPlatformClientV2.FlowExecutionAsyncAggregationQuery() # FlowExecutionAsyncAggregationQuery | query
+
+try:
+    # Query for flow execution aggregates asynchronously
+    api_response = api_instance.post_analytics_flowexecutions_aggregates_jobs(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AnalyticsApi->post_analytics_flowexecutions_aggregates_jobs: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**FlowExecutionAsyncAggregationQuery**](FlowExecutionAsyncAggregationQuery.html)| query |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**AsyncQueryResponse**](AsyncQueryResponse.html)
+
+<a name="post_analytics_flowexecutions_aggregates_query"></a>
+
+## [**FlowExecutionAggregateQueryResponse**](FlowExecutionAggregateQueryResponse.html) post_analytics_flowexecutions_aggregates_query(body)
+
+
+
+Query for flow execution aggregates
+
+post_analytics_flowexecutions_aggregates_query is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/analytics/flowexecutions/aggregates/query 
+
+Requires ANY permissions: 
+
+* analytics:flowExecutionAggregate:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AnalyticsApi()
+body = PureCloudPlatformClientV2.FlowExecutionAggregationQuery() # FlowExecutionAggregationQuery | query
+
+try:
+    # Query for flow execution aggregates
+    api_response = api_instance.post_analytics_flowexecutions_aggregates_query(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AnalyticsApi->post_analytics_flowexecutions_aggregates_query: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**FlowExecutionAggregationQuery**](FlowExecutionAggregationQuery.html)| query |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**FlowExecutionAggregateQueryResponse**](FlowExecutionAggregateQueryResponse.html)
 
 <a name="post_analytics_flows_activity_query"></a>
 

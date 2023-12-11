@@ -35,8 +35,8 @@ from typing import Dict
 if TYPE_CHECKING:
     from . import AddressableEntityRef
     from . import DivisionReference
-    from . import InsightsTrendMetricItem
-    from . import InsightsTrendTotalItem
+    from . import UserInsightsTrendMetricItem
+    from . import UserInsightsTrendTotalItem
     from . import UserReference
     from . import WorkdayPeriod
 
@@ -60,9 +60,9 @@ class UserInsightsTrend(object):
             'granularity': 'str',
             'comparative_period': 'WorkdayPeriod',
             'primary_period': 'WorkdayPeriod',
-            'entities': 'list[InsightsTrendMetricItem]',
-            'total': 'InsightsTrendTotalItem',
-            'user': 'UserReference'
+            'user': 'UserReference',
+            'entities': 'list[UserInsightsTrendMetricItem]',
+            'total': 'UserInsightsTrendTotalItem'
         }
 
         self.attribute_map = {
@@ -71,9 +71,9 @@ class UserInsightsTrend(object):
             'granularity': 'granularity',
             'comparative_period': 'comparativePeriod',
             'primary_period': 'primaryPeriod',
+            'user': 'user',
             'entities': 'entities',
-            'total': 'total',
-            'user': 'user'
+            'total': 'total'
         }
 
         self._performance_profile = None
@@ -81,9 +81,9 @@ class UserInsightsTrend(object):
         self._granularity = None
         self._comparative_period = None
         self._primary_period = None
+        self._user = None
         self._entities = None
         self._total = None
-        self._user = None
 
     @property
     def performance_profile(self) -> 'AddressableEntityRef':
@@ -211,54 +211,6 @@ class UserInsightsTrend(object):
         self._primary_period = primary_period
 
     @property
-    def entities(self) -> List['InsightsTrendMetricItem']:
-        """
-        Gets the entities of this UserInsightsTrend.
-        The list of insights trend for each metric
-
-        :return: The entities of this UserInsightsTrend.
-        :rtype: list[InsightsTrendMetricItem]
-        """
-        return self._entities
-
-    @entities.setter
-    def entities(self, entities: List['InsightsTrendMetricItem']) -> None:
-        """
-        Sets the entities of this UserInsightsTrend.
-        The list of insights trend for each metric
-
-        :param entities: The entities of this UserInsightsTrend.
-        :type: list[InsightsTrendMetricItem]
-        """
-        
-
-        self._entities = entities
-
-    @property
-    def total(self) -> 'InsightsTrendTotalItem':
-        """
-        Gets the total of this UserInsightsTrend.
-        The insights trend in total
-
-        :return: The total of this UserInsightsTrend.
-        :rtype: InsightsTrendTotalItem
-        """
-        return self._total
-
-    @total.setter
-    def total(self, total: 'InsightsTrendTotalItem') -> None:
-        """
-        Sets the total of this UserInsightsTrend.
-        The insights trend in total
-
-        :param total: The total of this UserInsightsTrend.
-        :type: InsightsTrendTotalItem
-        """
-        
-
-        self._total = total
-
-    @property
     def user(self) -> 'UserReference':
         """
         Gets the user of this UserInsightsTrend.
@@ -281,6 +233,54 @@ class UserInsightsTrend(object):
         
 
         self._user = user
+
+    @property
+    def entities(self) -> List['UserInsightsTrendMetricItem']:
+        """
+        Gets the entities of this UserInsightsTrend.
+        The list of insights trend for each metric
+
+        :return: The entities of this UserInsightsTrend.
+        :rtype: list[UserInsightsTrendMetricItem]
+        """
+        return self._entities
+
+    @entities.setter
+    def entities(self, entities: List['UserInsightsTrendMetricItem']) -> None:
+        """
+        Sets the entities of this UserInsightsTrend.
+        The list of insights trend for each metric
+
+        :param entities: The entities of this UserInsightsTrend.
+        :type: list[UserInsightsTrendMetricItem]
+        """
+        
+
+        self._entities = entities
+
+    @property
+    def total(self) -> 'UserInsightsTrendTotalItem':
+        """
+        Gets the total of this UserInsightsTrend.
+        The insights trend in total
+
+        :return: The total of this UserInsightsTrend.
+        :rtype: UserInsightsTrendTotalItem
+        """
+        return self._total
+
+    @total.setter
+    def total(self, total: 'UserInsightsTrendTotalItem') -> None:
+        """
+        Sets the total of this UserInsightsTrend.
+        The insights trend in total
+
+        :param total: The total of this UserInsightsTrend.
+        :type: UserInsightsTrendTotalItem
+        """
+        
+
+        self._total = total
 
     def to_dict(self):
         """

@@ -330,7 +330,7 @@ void (empty response body)
 
 <a name="post_authorization_division_restore"></a>
 
-## [**AuthzDivision**](AuthzDivision.html) post_authorization_division_restore(division_id, body)
+## [**AuthzDivision**](AuthzDivision.html) post_authorization_division_restore(division_id, body=body)
 
 
 
@@ -356,11 +356,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ObjectsApi()
 division_id = 'division_id_example' # str | Division ID
-body = PureCloudPlatformClientV2.AuthzDivision() # AuthzDivision | Recreated division data
+body = PureCloudPlatformClientV2.AuthzDivision() # AuthzDivision | Recreated division data (optional)
 
 try:
     # Recreate a previously deleted division.
-    api_response = api_instance.post_authorization_division_restore(division_id, body)
+    api_response = api_instance.post_authorization_division_restore(division_id, body=body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ObjectsApi->post_authorization_division_restore: %s\n" % e)
@@ -372,7 +372,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **division_id** | **str**| Division ID |  |
-| **body** | [**AuthzDivision**](AuthzDivision.html)| Recreated division data |  |
+| **body** | [**AuthzDivision**](AuthzDivision.html)| Recreated division data | [optional]  |
 {: class="table table-striped"}
 
 ### Return type

@@ -33,7 +33,6 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
-    from . import AddressableEntityRef
     from . import AppEventResponseSession
     from . import CustomEventAttribute
     from . import Device
@@ -65,7 +64,6 @@ class AppEventResponse(object):
             'screen_name': 'str',
             'app': 'JourneyApp',
             'device': 'Device',
-            'ip_address': 'str',
             'ip_organization': 'str',
             'geolocation': 'JourneyGeolocation',
             'sdk_library': 'SdkLibrary',
@@ -75,8 +73,7 @@ class AppEventResponse(object):
             'search_query': 'str',
             'attributes': 'dict(str, CustomEventAttribute)',
             'traits': 'dict(str, CustomEventAttribute)',
-            'created_date': 'datetime',
-            'external_contact': 'AddressableEntityRef'
+            'created_date': 'datetime'
         }
 
         self.attribute_map = {
@@ -87,7 +84,6 @@ class AppEventResponse(object):
             'screen_name': 'screenName',
             'app': 'app',
             'device': 'device',
-            'ip_address': 'ipAddress',
             'ip_organization': 'ipOrganization',
             'geolocation': 'geolocation',
             'sdk_library': 'sdkLibrary',
@@ -97,8 +93,7 @@ class AppEventResponse(object):
             'search_query': 'searchQuery',
             'attributes': 'attributes',
             'traits': 'traits',
-            'created_date': 'createdDate',
-            'external_contact': 'externalContact'
+            'created_date': 'createdDate'
         }
 
         self._id = None
@@ -108,7 +103,6 @@ class AppEventResponse(object):
         self._screen_name = None
         self._app = None
         self._device = None
-        self._ip_address = None
         self._ip_organization = None
         self._geolocation = None
         self._sdk_library = None
@@ -119,7 +113,6 @@ class AppEventResponse(object):
         self._attributes = None
         self._traits = None
         self._created_date = None
-        self._external_contact = None
 
     @property
     def id(self) -> str:
@@ -288,30 +281,6 @@ class AppEventResponse(object):
         
 
         self._device = device
-
-    @property
-    def ip_address(self) -> str:
-        """
-        Gets the ip_address of this AppEventResponse.
-        Customer's IP address. May be null if the business configures the tracker to not collect IP addresses.
-
-        :return: The ip_address of this AppEventResponse.
-        :rtype: str
-        """
-        return self._ip_address
-
-    @ip_address.setter
-    def ip_address(self, ip_address: str) -> None:
-        """
-        Sets the ip_address of this AppEventResponse.
-        Customer's IP address. May be null if the business configures the tracker to not collect IP addresses.
-
-        :param ip_address: The ip_address of this AppEventResponse.
-        :type: str
-        """
-        
-
-        self._ip_address = ip_address
 
     @property
     def ip_organization(self) -> str:
@@ -552,30 +521,6 @@ class AppEventResponse(object):
         
 
         self._created_date = created_date
-
-    @property
-    def external_contact(self) -> 'AddressableEntityRef':
-        """
-        Gets the external_contact of this AppEventResponse.
-        The external contact associated with this app event.
-
-        :return: The external_contact of this AppEventResponse.
-        :rtype: AddressableEntityRef
-        """
-        return self._external_contact
-
-    @external_contact.setter
-    def external_contact(self, external_contact: 'AddressableEntityRef') -> None:
-        """
-        Sets the external_contact of this AppEventResponse.
-        The external contact associated with this app event.
-
-        :param external_contact: The external_contact of this AppEventResponse.
-        :type: AddressableEntityRef
-        """
-        
-
-        self._external_contact = external_contact
 
     def to_dict(self):
         """

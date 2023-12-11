@@ -3746,7 +3746,7 @@ except ApiException as e:
 
 <a name="get_routing_user_utilization"></a>
 
-## [**AgentMaxUtilization**](AgentMaxUtilization.html) get_routing_user_utilization(user_id)
+## [**AgentMaxUtilizationResponse**](AgentMaxUtilizationResponse.html) get_routing_user_utilization(user_id)
 
 
 
@@ -3792,11 +3792,11 @@ except ApiException as e:
 
 ### Return type
 
-[**AgentMaxUtilization**](AgentMaxUtilization.html)
+[**AgentMaxUtilizationResponse**](AgentMaxUtilizationResponse.html)
 
 <a name="get_routing_utilization"></a>
 
-## [**Utilization**](Utilization.html) get_routing_utilization()
+## [**UtilizationResponse**](UtilizationResponse.html) get_routing_utilization()
 
 
 
@@ -3838,7 +3838,7 @@ This endpoint does not need any parameters.
 
 ### Return type
 
-[**Utilization**](Utilization.html)
+[**UtilizationResponse**](UtilizationResponse.html)
 
 <a name="get_routing_utilization_tag"></a>
 
@@ -6726,7 +6726,7 @@ except ApiException as e:
 
 <a name="put_routing_user_utilization"></a>
 
-## [**AgentMaxUtilization**](AgentMaxUtilization.html) put_routing_user_utilization(user_id, body)
+## [**AgentMaxUtilizationResponse**](AgentMaxUtilizationResponse.html) put_routing_user_utilization(user_id, body)
 
 
 
@@ -6752,7 +6752,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.RoutingApi()
 user_id = 'user_id_example' # str | User ID
-body = PureCloudPlatformClientV2.Utilization() # Utilization | utilization
+body = PureCloudPlatformClientV2.UtilizationRequest() # UtilizationRequest | utilization
 
 try:
     # Update the user's max utilization settings.  Include only those media types requiring custom configuration.
@@ -6768,16 +6768,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **user_id** | **str**| User ID |  |
-| **body** | [**Utilization**](Utilization.html)| utilization |  |
+| **body** | [**UtilizationRequest**](UtilizationRequest.html)| utilization |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**AgentMaxUtilization**](AgentMaxUtilization.html)
+[**AgentMaxUtilizationResponse**](AgentMaxUtilizationResponse.html)
 
 <a name="put_routing_utilization"></a>
 
-## [**Utilization**](Utilization.html) put_routing_utilization(body)
+## [**UtilizationResponse**](UtilizationResponse.html) put_routing_utilization(body)
 
 
 
@@ -6802,7 +6802,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.RoutingApi()
-body = PureCloudPlatformClientV2.Utilization() # Utilization | utilization
+body = PureCloudPlatformClientV2.UtilizationRequest() # UtilizationRequest | utilization
 
 try:
     # Update the organization-wide max utilization settings.  Include only those media types requiring custom configuration.
@@ -6817,12 +6817,12 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**Utilization**](Utilization.html)| utilization |  |
+| **body** | [**UtilizationRequest**](UtilizationRequest.html)| utilization |  |
 {: class="table table-striped"}
 
 ### Return type
 
-[**Utilization**](Utilization.html)
+[**UtilizationResponse**](UtilizationResponse.html)
 
 <a name="put_routing_wrapupcode"></a>
 

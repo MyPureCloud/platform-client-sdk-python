@@ -1,7 +1,7 @@
 ---
-title: LabelUtilization
+title: LabelUtilizationRequest
 ---
-## LabelUtilization
+## LabelUtilizationRequest
 
 ## Properties
 

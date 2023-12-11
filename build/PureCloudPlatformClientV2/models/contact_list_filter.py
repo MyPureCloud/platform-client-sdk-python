@@ -57,6 +57,8 @@ class ContactListFilter(object):
             'date_modified': 'datetime',
             'version': 'int',
             'contact_list': 'DomainEntityRef',
+            'contact_list_template': 'DomainEntityRef',
+            'source_type': 'str',
             'clauses': 'list[ContactListFilterClause]',
             'filter_type': 'str',
             'self_uri': 'str'
@@ -69,6 +71,8 @@ class ContactListFilter(object):
             'date_modified': 'dateModified',
             'version': 'version',
             'contact_list': 'contactList',
+            'contact_list_template': 'contactListTemplate',
+            'source_type': 'sourceType',
             'clauses': 'clauses',
             'filter_type': 'filterType',
             'self_uri': 'selfUri'
@@ -80,6 +84,8 @@ class ContactListFilter(object):
         self._date_modified = None
         self._version = None
         self._contact_list = None
+        self._contact_list_template = None
+        self._source_type = None
         self._clauses = None
         self._filter_type = None
         self._self_uri = None
@@ -227,6 +233,59 @@ class ContactListFilter(object):
         
 
         self._contact_list = contact_list
+
+    @property
+    def contact_list_template(self) -> 'DomainEntityRef':
+        """
+        Gets the contact_list_template of this ContactListFilter.
+        The contact list template the filter is based on. Required if sourceType is ContactListTemplate
+
+        :return: The contact_list_template of this ContactListFilter.
+        :rtype: DomainEntityRef
+        """
+        return self._contact_list_template
+
+    @contact_list_template.setter
+    def contact_list_template(self, contact_list_template: 'DomainEntityRef') -> None:
+        """
+        Sets the contact_list_template of this ContactListFilter.
+        The contact list template the filter is based on. Required if sourceType is ContactListTemplate
+
+        :param contact_list_template: The contact_list_template of this ContactListFilter.
+        :type: DomainEntityRef
+        """
+        
+
+        self._contact_list_template = contact_list_template
+
+    @property
+    def source_type(self) -> str:
+        """
+        Gets the source_type of this ContactListFilter.
+        The source type the filter is based on.
+
+        :return: The source_type of this ContactListFilter.
+        :rtype: str
+        """
+        return self._source_type
+
+    @source_type.setter
+    def source_type(self, source_type: str) -> None:
+        """
+        Sets the source_type of this ContactListFilter.
+        The source type the filter is based on.
+
+        :param source_type: The source_type of this ContactListFilter.
+        :type: str
+        """
+        if isinstance(source_type, int):
+            source_type = str(source_type)
+        allowed_values = ["ContactList", "ContactListTemplate"]
+        if source_type.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for source_type -> " + source_type)
+            self._source_type = "outdated_sdk_version"
+        else:
+            self._source_type = source_type
 
     @property
     def clauses(self) -> List['ContactListFilterClause']:

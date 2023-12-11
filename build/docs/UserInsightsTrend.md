@@ -12,9 +12,9 @@ title: UserInsightsTrend
 | **granularity** | **str** | Granularity | [optional] |
 | **comparative_period** | [**WorkdayPeriod**](WorkdayPeriod.html) | The comparative period work day date range | [optional] |
 | **primary_period** | [**WorkdayPeriod**](WorkdayPeriod.html) | The primary period work day date range | [optional] |
-| **entities** | [**list[InsightsTrendMetricItem]**](InsightsTrendMetricItem.html) | The list of insights trend for each metric | [optional] |
-| **total** | [**InsightsTrendTotalItem**](InsightsTrendTotalItem.html) | The insights trend in total | [optional] |
 | **user** | [**UserReference**](UserReference.html) | The query user | [optional] |
+| **entities** | [**list[UserInsightsTrendMetricItem]**](UserInsightsTrendMetricItem.html) | The list of insights trend for each metric | [optional] |
+| **total** | [**UserInsightsTrendTotalItem**](UserInsightsTrendTotalItem.html) | The insights trend in total | [optional] |
 {: class="table table-striped"}
 
 

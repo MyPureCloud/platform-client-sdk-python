@@ -50,18 +50,21 @@ class ExecutionDataEntity(object):
         self.swagger_types = {
             'id': 'str',
             'download_uri': 'str',
-            'failed': 'bool'
+            'failed': 'bool',
+            'status_code': 'str'
         }
 
         self.attribute_map = {
             'id': 'id',
             'download_uri': 'downloadUri',
-            'failed': 'failed'
+            'failed': 'failed',
+            'status_code': 'statusCode'
         }
 
         self._id = None
         self._download_uri = None
         self._failed = None
+        self._status_code = None
 
     @property
     def id(self) -> str:
@@ -134,6 +137,30 @@ class ExecutionDataEntity(object):
         
 
         self._failed = failed
+
+    @property
+    def status_code(self) -> str:
+        """
+        Gets the status_code of this ExecutionDataEntity.
+        This will contain the http status code for the failure
+
+        :return: The status_code of this ExecutionDataEntity.
+        :rtype: str
+        """
+        return self._status_code
+
+    @status_code.setter
+    def status_code(self, status_code: str) -> None:
+        """
+        Sets the status_code of this ExecutionDataEntity.
+        This will contain the http status code for the failure
+
+        :param status_code: The status_code of this ExecutionDataEntity.
+        :type: str
+        """
+        
+
+        self._status_code = status_code
 
     def to_dict(self):
         """

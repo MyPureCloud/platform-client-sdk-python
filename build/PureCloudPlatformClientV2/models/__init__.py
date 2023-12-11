@@ -98,7 +98,7 @@ from .agent_integration_association_response import AgentIntegrationAssociationR
 from .agent_integrations_request import AgentIntegrationsRequest
 from .agent_integrations_response import AgentIntegrationsResponse
 from .agent_management_unit_reference import AgentManagementUnitReference
-from .agent_max_utilization import AgentMaxUtilization
+from .agent_max_utilization_response import AgentMaxUtilizationResponse
 from .agent_owned_mapping_preview import AgentOwnedMappingPreview
 from .agent_owned_mapping_preview_listing import AgentOwnedMappingPreviewListing
 from .agent_owned_routing import AgentOwnedRouting
@@ -638,6 +638,8 @@ from .contact_list_filter_clause import ContactListFilterClause
 from .contact_list_filter_entity_listing import ContactListFilterEntityListing
 from .contact_list_filter_predicate import ContactListFilterPredicate
 from .contact_list_filter_range import ContactListFilterRange
+from .contact_list_template import ContactListTemplate
+from .contact_list_template_entity_listing import ContactListTemplateEntityListing
 from .contact_listing import ContactListing
 from .contact_phone_number_column import ContactPhoneNumberColumn
 from .contact_sort import ContactSort
@@ -1550,6 +1552,15 @@ from .flow_division_view import FlowDivisionView
 from .flow_division_view_entity_listing import FlowDivisionViewEntityListing
 from .flow_end_detail_event_topic_flow_end_event import FlowEndDetailEventTopicFlowEndEvent
 from .flow_entity_listing import FlowEntityListing
+from .flow_execution_aggregate_data_container import FlowExecutionAggregateDataContainer
+from .flow_execution_aggregate_query_clause import FlowExecutionAggregateQueryClause
+from .flow_execution_aggregate_query_filter import FlowExecutionAggregateQueryFilter
+from .flow_execution_aggregate_query_predicate import FlowExecutionAggregateQueryPredicate
+from .flow_execution_aggregate_query_response import FlowExecutionAggregateQueryResponse
+from .flow_execution_aggregation_query import FlowExecutionAggregationQuery
+from .flow_execution_aggregation_view import FlowExecutionAggregationView
+from .flow_execution_async_aggregate_query_response import FlowExecutionAsyncAggregateQueryResponse
+from .flow_execution_async_aggregation_query import FlowExecutionAsyncAggregationQuery
 from .flow_execution_data_query_result import FlowExecutionDataQueryResult
 from .flow_execution_launch_request import FlowExecutionLaunchRequest
 from .flow_execution_launch_response import FlowExecutionLaunchResponse
@@ -1715,6 +1726,8 @@ from .import_schedule_upload_schema import ImportScheduleUploadSchema
 from .import_script_status_response import ImportScriptStatusResponse
 from .import_status import ImportStatus
 from .import_status_request import ImportStatusRequest
+from .import_template import ImportTemplate
+from .import_template_entity_listing import ImportTemplateEntityListing
 from .inbound_domain import InboundDomain
 from .inbound_domain_entity_listing import InboundDomainEntityListing
 from .inbound_domain_patch_request import InboundDomainPatchRequest
@@ -1996,7 +2009,8 @@ from .label_create_request import LabelCreateRequest
 from .label_listing import LabelListing
 from .label_response import LabelResponse
 from .label_update_request import LabelUpdateRequest
-from .label_utilization import LabelUtilization
+from .label_utilization_request import LabelUtilizationRequest
+from .label_utilization_response import LabelUtilizationResponse
 from .language import Language
 from .language_entity_listing import LanguageEntityListing
 from .language_override import LanguageOverride
@@ -2124,6 +2138,8 @@ from .location_search_request import LocationSearchRequest
 from .location_update_definition import LocationUpdateDefinition
 from .locations_search_response import LocationsSearchResponse
 from .lock_info import LockInfo
+from .log_capture_download_execution_response import LogCaptureDownloadExecutionResponse
+from .log_capture_query_request import LogCaptureQueryRequest
 from .log_capture_user_configuration import LogCaptureUserConfiguration
 from .logical_interface_entity_listing import LogicalInterfaceEntityListing
 from .long_term_forecast_planning_group_data import LongTermForecastPlanningGroupData
@@ -3165,6 +3181,7 @@ from .source_entity_listing import SourceEntityListing
 from .source_planning_group_request import SourcePlanningGroupRequest
 from .speech_text_analytics_settings_request import SpeechTextAnalyticsSettingsRequest
 from .speech_text_analytics_settings_response import SpeechTextAnalyticsSettingsResponse
+from .splitting_information import SplittingInformation
 from .starrable_division import StarrableDivision
 from .stat_event_campaign_topic_interval_metrics import StatEventCampaignTopicIntervalMetrics
 from .stat_event_campaign_topic_metric_stats import StatEventCampaignTopicMetricStats
@@ -3553,6 +3570,9 @@ from .user_greeting_event_greeting_audio_file import UserGreetingEventGreetingAu
 from .user_greeting_event_greeting_owner import UserGreetingEventGreetingOwner
 from .user_image import UserImage
 from .user_insights_trend import UserInsightsTrend
+from .user_insights_trend_metric_item import UserInsightsTrendMetricItem
+from .user_insights_trend_total_item import UserInsightsTrendTotalItem
+from .user_insights_trends import UserInsightsTrends
 from .user_language_entity_listing import UserLanguageEntityListing
 from .user_licenses import UserLicenses
 from .user_licenses_entity_listing import UserLicensesEntityListing
@@ -3612,9 +3632,11 @@ from .user_time_off_request_reference import UserTimeOffRequestReference
 from .user_tokens_topic_token_notification import UserTokensTopicTokenNotification
 from .user_tokens_topic_uri_reference import UserTokensTopicUriReference
 from .user_transfer_event import UserTransferEvent
+from .user_trend_data import UserTrendData
 from .users_search_response import UsersSearchResponse
-from .utilization import Utilization
 from .utilization_label import UtilizationLabel
+from .utilization_request import UtilizationRequest
+from .utilization_response import UtilizationResponse
 from .utilization_tag import UtilizationTag
 from .utilization_tag_entity_listing import UtilizationTagEntityListing
 from .utterance import Utterance

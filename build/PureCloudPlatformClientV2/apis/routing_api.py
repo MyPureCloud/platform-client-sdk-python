@@ -38,7 +38,7 @@ from typing import Dict
 from typing import Any
 
 from ..models import Empty
-from ..models import AgentMaxUtilization
+from ..models import AgentMaxUtilizationResponse
 from ..models import AssessmentJobListing
 from ..models import AssessmentListing
 from ..models import AvailableMediaTypeEntityListing
@@ -114,7 +114,8 @@ from ..models import UserRoutingSkill
 from ..models import UserRoutingSkillPost
 from ..models import UserSkillEntityListing
 from ..models import UserSkillGroupEntityListing
-from ..models import Utilization
+from ..models import UtilizationRequest
+from ..models import UtilizationResponse
 from ..models import UtilizationTag
 from ..models import UtilizationTagEntityListing
 from ..models import WrapUpCodeReference
@@ -5863,7 +5864,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_routing_user_utilization(self, user_id: str, **kwargs) -> 'AgentMaxUtilization':
+    def get_routing_user_utilization(self, user_id: str, **kwargs) -> 'AgentMaxUtilizationResponse':
         """
         Get the user's max utilization settings.  If not configured, the organization-wide default is returned.
         
@@ -5879,7 +5880,7 @@ class RoutingApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str user_id: User ID (required)
-        :return: AgentMaxUtilization
+        :return: AgentMaxUtilizationResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -5936,12 +5937,12 @@ class RoutingApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='AgentMaxUtilization',
+                                            response_type='AgentMaxUtilizationResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
 
-    def get_routing_utilization(self, **kwargs) -> 'Utilization':
+    def get_routing_utilization(self, **kwargs) -> 'UtilizationResponse':
         """
         Get the organization-wide max utilization settings.
         
@@ -5956,7 +5957,7 @@ class RoutingApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :return: Utilization
+        :return: UtilizationResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -6008,7 +6009,7 @@ class RoutingApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='Utilization',
+                                            response_type='UtilizationResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -10633,7 +10634,7 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def put_routing_user_utilization(self, user_id: str, body: 'Utilization', **kwargs) -> 'AgentMaxUtilization':
+    def put_routing_user_utilization(self, user_id: str, body: 'UtilizationRequest', **kwargs) -> 'AgentMaxUtilizationResponse':
         """
         Update the user's max utilization settings.  Include only those media types requiring custom configuration.
         
@@ -10649,8 +10650,8 @@ class RoutingApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str user_id: User ID (required)
-        :param Utilization body: utilization (required)
-        :return: AgentMaxUtilization
+        :param UtilizationRequest body: utilization (required)
+        :return: AgentMaxUtilizationResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -10712,12 +10713,12 @@ class RoutingApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='AgentMaxUtilization',
+                                            response_type='AgentMaxUtilizationResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
 
-    def put_routing_utilization(self, body: 'Utilization', **kwargs) -> 'Utilization':
+    def put_routing_utilization(self, body: 'UtilizationRequest', **kwargs) -> 'UtilizationResponse':
         """
         Update the organization-wide max utilization settings.  Include only those media types requiring custom configuration.
         
@@ -10732,8 +10733,8 @@ class RoutingApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param Utilization body: utilization (required)
-        :return: Utilization
+        :param UtilizationRequest body: utilization (required)
+        :return: UtilizationResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -10790,7 +10791,7 @@ class RoutingApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='Utilization',
+                                            response_type='UtilizationResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

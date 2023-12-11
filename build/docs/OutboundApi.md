@@ -19,11 +19,15 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**delete_outbound_contactlist_contacts**](OutboundApi.html#delete_outbound_contactlist_contacts) | Delete contacts from a contact list.|
 |[**delete_outbound_contactlistfilter**](OutboundApi.html#delete_outbound_contactlistfilter) | Delete Contact List Filter|
 |[**delete_outbound_contactlists**](OutboundApi.html#delete_outbound_contactlists) | Delete multiple contact lists.|
+|[**delete_outbound_contactlisttemplate**](OutboundApi.html#delete_outbound_contactlisttemplate) | Delete Contact List Template|
+|[**delete_outbound_contactlisttemplates**](OutboundApi.html#delete_outbound_contactlisttemplates) | Delete multiple contact list templates.|
 |[**delete_outbound_digitalruleset**](OutboundApi.html#delete_outbound_digitalruleset) | Delete an Outbound Digital Rule Set|
 |[**delete_outbound_dnclist**](OutboundApi.html#delete_outbound_dnclist) | Delete dialer DNC list|
 |[**delete_outbound_dnclist_customexclusioncolumns**](OutboundApi.html#delete_outbound_dnclist_customexclusioncolumns) | Deletes all or expired custom exclusion column entries from a DNC list.|
 |[**delete_outbound_dnclist_emailaddresses**](OutboundApi.html#delete_outbound_dnclist_emailaddresses) | Deletes all or expired email addresses from a DNC list.|
 |[**delete_outbound_dnclist_phonenumbers**](OutboundApi.html#delete_outbound_dnclist_phonenumbers) | Deletes all or expired phone numbers from a DNC list.|
+|[**delete_outbound_importtemplate**](OutboundApi.html#delete_outbound_importtemplate) | Delete Import Template|
+|[**delete_outbound_importtemplates**](OutboundApi.html#delete_outbound_importtemplates) | Delete multiple import templates.|
 |[**delete_outbound_messagingcampaign**](OutboundApi.html#delete_outbound_messagingcampaign) | Delete an Outbound Messaging Campaign|
 |[**delete_outbound_messagingcampaign_progress**](OutboundApi.html#delete_outbound_messagingcampaign_progress) | Reset messaging campaign progress and recycle the messaging campaign|
 |[**delete_outbound_ruleset**](OutboundApi.html#delete_outbound_ruleset) | Delete a Rule Set.|
@@ -61,6 +65,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_outbound_contactlists**](OutboundApi.html#get_outbound_contactlists) | Query a list of contact lists.|
 |[**get_outbound_contactlists_divisionview**](OutboundApi.html#get_outbound_contactlists_divisionview) | Get a basic ContactList information object|
 |[**get_outbound_contactlists_divisionviews**](OutboundApi.html#get_outbound_contactlists_divisionviews) | Query a list of simplified contact list objects.|
+|[**get_outbound_contactlisttemplate**](OutboundApi.html#get_outbound_contactlisttemplate) | Get Contact List Template|
+|[**get_outbound_contactlisttemplates**](OutboundApi.html#get_outbound_contactlisttemplates) | Query a list of contact list templates|
 |[**get_outbound_digitalruleset**](OutboundApi.html#get_outbound_digitalruleset) | Get an Outbound Digital Rule Set|
 |[**get_outbound_digitalrulesets**](OutboundApi.html#get_outbound_digitalrulesets) | Query a list of Outbound Digital Rule Sets|
 |[**get_outbound_dnclist**](OutboundApi.html#get_outbound_dnclist) | Get dialer DNC list|
@@ -71,6 +77,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_outbound_dnclists_divisionviews**](OutboundApi.html#get_outbound_dnclists_divisionviews) | Query a list of simplified dnc list objects.|
 |[**get_outbound_event**](OutboundApi.html#get_outbound_event) | Get Dialer Event|
 |[**get_outbound_events**](OutboundApi.html#get_outbound_events) | Query Event Logs|
+|[**get_outbound_importtemplate**](OutboundApi.html#get_outbound_importtemplate) | Get Import Template|
+|[**get_outbound_importtemplate_importstatus**](OutboundApi.html#get_outbound_importtemplate_importstatus) | Get the import status for an import template.|
+|[**get_outbound_importtemplates**](OutboundApi.html#get_outbound_importtemplates) | Query Import Templates|
 |[**get_outbound_messagingcampaign**](OutboundApi.html#get_outbound_messagingcampaign) | Get an Outbound Messaging Campaign|
 |[**get_outbound_messagingcampaign_diagnostics**](OutboundApi.html#get_outbound_messagingcampaign_diagnostics) | Get messaging campaign diagnostics|
 |[**get_outbound_messagingcampaign_progress**](OutboundApi.html#get_outbound_messagingcampaign_progress) | Get messaging campaign&#39;s progress|
@@ -111,12 +120,16 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_outbound_contactlistfilters**](OutboundApi.html#post_outbound_contactlistfilters) | Create Contact List Filter|
 |[**post_outbound_contactlistfilters_preview**](OutboundApi.html#post_outbound_contactlistfilters_preview) | Get a preview of the output of a contact list filter|
 |[**post_outbound_contactlists**](OutboundApi.html#post_outbound_contactlists) | Create a contact List.|
+|[**post_outbound_contactlisttemplates**](OutboundApi.html#post_outbound_contactlisttemplates) | Create Contact List Template|
+|[**post_outbound_contactlisttemplates_bulk_add**](OutboundApi.html#post_outbound_contactlisttemplates_bulk_add) | Add multiple contact list templates|
 |[**post_outbound_conversation_dnc**](OutboundApi.html#post_outbound_conversation_dnc) | Add phone numbers to a Dialer DNC list.|
 |[**post_outbound_digitalrulesets**](OutboundApi.html#post_outbound_digitalrulesets) | Create an Outbound Digital Rule Set|
 |[**post_outbound_dnclist_emailaddresses**](OutboundApi.html#post_outbound_dnclist_emailaddresses) | Add email addresses to a DNC list.|
 |[**post_outbound_dnclist_export**](OutboundApi.html#post_outbound_dnclist_export) | Initiate the export of a dnc list.|
 |[**post_outbound_dnclist_phonenumbers**](OutboundApi.html#post_outbound_dnclist_phonenumbers) | Add phone numbers to a DNC list.|
 |[**post_outbound_dnclists**](OutboundApi.html#post_outbound_dnclists) | Create dialer DNC list|
+|[**post_outbound_importtemplates**](OutboundApi.html#post_outbound_importtemplates) | Create Import Template|
+|[**post_outbound_importtemplates_bulk_add**](OutboundApi.html#post_outbound_importtemplates_bulk_add) | Add multiple import templates|
 |[**post_outbound_messagingcampaigns**](OutboundApi.html#post_outbound_messagingcampaigns) | Create a Messaging Campaign|
 |[**post_outbound_messagingcampaigns_progress**](OutboundApi.html#post_outbound_messagingcampaigns_progress) | Get progress for a list of messaging campaigns|
 |[**post_outbound_rulesets**](OutboundApi.html#post_outbound_rulesets) | Create a Rule Set.|
@@ -130,8 +143,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**put_outbound_contactlist**](OutboundApi.html#put_outbound_contactlist) | Update a contact list.|
 |[**put_outbound_contactlist_contact**](OutboundApi.html#put_outbound_contactlist_contact) | Update a contact.|
 |[**put_outbound_contactlistfilter**](OutboundApi.html#put_outbound_contactlistfilter) | Update Contact List Filter|
+|[**put_outbound_contactlisttemplate**](OutboundApi.html#put_outbound_contactlisttemplate) | Update a contact list template.|
 |[**put_outbound_digitalruleset**](OutboundApi.html#put_outbound_digitalruleset) | Update an Outbound Digital Rule Set|
 |[**put_outbound_dnclist**](OutboundApi.html#put_outbound_dnclist) | Update dialer DNC list|
+|[**put_outbound_importtemplate**](OutboundApi.html#put_outbound_importtemplate) | Update Import Template|
 |[**put_outbound_messagingcampaign**](OutboundApi.html#put_outbound_messagingcampaign) | Update an Outbound Messaging Campaign|
 |[**put_outbound_ruleset**](OutboundApi.html#put_outbound_ruleset) | Update a Rule Set.|
 |[**put_outbound_schedules_campaign**](OutboundApi.html#put_outbound_schedules_campaign) | Update a new campaign schedule.|
@@ -675,6 +690,102 @@ except ApiException as e:
 
 void (empty response body)
 
+<a name="delete_outbound_contactlisttemplate"></a>
+
+##  delete_outbound_contactlisttemplate(contact_list_template_id)
+
+
+
+Delete Contact List Template
+
+Wraps DELETE /api/v2/outbound/contactlisttemplates/{contactListTemplateId} 
+
+Requires ANY permissions: 
+
+* outbound:contactListTemplate:delete
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.OutboundApi()
+contact_list_template_id = 'contact_list_template_id_example' # str | ContactListTemplate ID
+
+try:
+    # Delete Contact List Template
+    api_instance.delete_outbound_contactlisttemplate(contact_list_template_id)
+except ApiException as e:
+    print("Exception when calling OutboundApi->delete_outbound_contactlisttemplate: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **contact_list_template_id** | **str**| ContactListTemplate ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
+
+<a name="delete_outbound_contactlisttemplates"></a>
+
+##  delete_outbound_contactlisttemplates(id)
+
+
+
+Delete multiple contact list templates.
+
+Wraps DELETE /api/v2/outbound/contactlisttemplates 
+
+Requires ANY permissions: 
+
+* outbound:contactListTemplate:delete
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.OutboundApi()
+id = ['id_example'] # list[str] | contact list template id(s) to delete
+
+try:
+    # Delete multiple contact list templates.
+    api_instance.delete_outbound_contactlisttemplates(id)
+except ApiException as e:
+    print("Exception when calling OutboundApi->delete_outbound_contactlisttemplates: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **id** | [**list[str]**](str.html)| contact list template id(s) to delete |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
+
 <a name="delete_outbound_digitalruleset"></a>
 
 ##  delete_outbound_digitalruleset(digital_rule_set_id)
@@ -921,6 +1032,102 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **dnc_list_id** | **str**| DncList ID |  |
 | **expired_only** | **bool**| Set to true to only remove DNC entries that are expired | [optional] [default to False] |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
+
+<a name="delete_outbound_importtemplate"></a>
+
+##  delete_outbound_importtemplate(import_template_id)
+
+
+
+Delete Import Template
+
+Wraps DELETE /api/v2/outbound/importtemplates/{importTemplateId} 
+
+Requires ANY permissions: 
+
+* outbound:importTemplate:delete
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.OutboundApi()
+import_template_id = 'import_template_id_example' # str | Import Template ID
+
+try:
+    # Delete Import Template
+    api_instance.delete_outbound_importtemplate(import_template_id)
+except ApiException as e:
+    print("Exception when calling OutboundApi->delete_outbound_importtemplate: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **import_template_id** | **str**| Import Template ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
+
+<a name="delete_outbound_importtemplates"></a>
+
+##  delete_outbound_importtemplates(id)
+
+
+
+Delete multiple import templates.
+
+Wraps DELETE /api/v2/outbound/importtemplates 
+
+Requires ANY permissions: 
+
+* outbound:importTemplate:delete
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.OutboundApi()
+id = ['id_example'] # list[str] | import template id(s) to delete
+
+try:
+    # Delete multiple import templates.
+    api_instance.delete_outbound_importtemplates(id)
+except ApiException as e:
+    print("Exception when calling OutboundApi->delete_outbound_importtemplates: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **id** | [**list[str]**](str.html)| import template id(s) to delete |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2920,6 +3127,116 @@ except ApiException as e:
 
 [**ContactListDivisionViewListing**](ContactListDivisionViewListing.html)
 
+<a name="get_outbound_contactlisttemplate"></a>
+
+## [**ContactListTemplate**](ContactListTemplate.html) get_outbound_contactlisttemplate(contact_list_template_id)
+
+
+
+Get Contact List Template
+
+Wraps GET /api/v2/outbound/contactlisttemplates/{contactListTemplateId} 
+
+Requires ANY permissions: 
+
+* outbound:contactListTemplate:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.OutboundApi()
+contact_list_template_id = 'contact_list_template_id_example' # str | ContactListTemplate ID
+
+try:
+    # Get Contact List Template
+    api_response = api_instance.get_outbound_contactlisttemplate(contact_list_template_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling OutboundApi->get_outbound_contactlisttemplate: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **contact_list_template_id** | **str**| ContactListTemplate ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**ContactListTemplate**](ContactListTemplate.html)
+
+<a name="get_outbound_contactlisttemplates"></a>
+
+## [**ContactListTemplateEntityListing**](ContactListTemplateEntityListing.html) get_outbound_contactlisttemplates(page_size=page_size, page_number=page_number, allow_empty_result=allow_empty_result, filter_type=filter_type, name=name, sort_by=sort_by, sort_order=sort_order)
+
+
+
+Query a list of contact list templates
+
+Wraps GET /api/v2/outbound/contactlisttemplates 
+
+Requires ANY permissions: 
+
+* outbound:contactListTemplate:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.OutboundApi()
+page_size = 25 # int | Page size. The max that will be returned is 100. (optional) (default to 25)
+page_number = 1 # int | Page number (optional) (default to 1)
+allow_empty_result = False # bool | Whether to return an empty page when there are no results for that page (optional) (default to False)
+filter_type = ''Prefix'' # str | Filter type (optional) (default to 'Prefix')
+name = 'name_example' # str | Name (optional)
+sort_by = 'sort_by_example' # str | Sort by (optional)
+sort_order = ''a'' # str | Sort order (optional) (default to 'a')
+
+try:
+    # Query a list of contact list templates
+    api_response = api_instance.get_outbound_contactlisttemplates(page_size=page_size, page_number=page_number, allow_empty_result=allow_empty_result, filter_type=filter_type, name=name, sort_by=sort_by, sort_order=sort_order)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling OutboundApi->get_outbound_contactlisttemplates: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **page_size** | **int**| Page size. The max that will be returned is 100. | [optional] [default to 25] |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **allow_empty_result** | **bool**| Whether to return an empty page when there are no results for that page | [optional] [default to False] |
+| **filter_type** | **str**| Filter type | [optional] [default to &#39;Prefix&#39;]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
+| **name** | **str**| Name | [optional]  |
+| **sort_by** | **str**| Sort by | [optional]  |
+| **sort_order** | **str**| Sort order | [optional] [default to &#39;a&#39;]<br />**Values**: ascending, descending |
+{: class="table table-striped"}
+
+### Return type
+
+[**ContactListTemplateEntityListing**](ContactListTemplateEntityListing.html)
+
 <a name="get_outbound_digitalruleset"></a>
 
 ## [**DigitalRuleSet**](DigitalRuleSet.html) get_outbound_digitalruleset(digital_rule_set_id)
@@ -3484,6 +3801,169 @@ except ApiException as e:
 ### Return type
 
 [**DialerEventEntityListing**](DialerEventEntityListing.html)
+
+<a name="get_outbound_importtemplate"></a>
+
+## [**ImportTemplate**](ImportTemplate.html) get_outbound_importtemplate(import_template_id)
+
+
+
+Get Import Template
+
+Wraps GET /api/v2/outbound/importtemplates/{importTemplateId} 
+
+Requires ANY permissions: 
+
+* outbound:importTemplate:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.OutboundApi()
+import_template_id = 'import_template_id_example' # str | Import Template ID
+
+try:
+    # Get Import Template
+    api_response = api_instance.get_outbound_importtemplate(import_template_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling OutboundApi->get_outbound_importtemplate: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **import_template_id** | **str**| Import Template ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**ImportTemplate**](ImportTemplate.html)
+
+<a name="get_outbound_importtemplate_importstatus"></a>
+
+## [**ImportStatus**](ImportStatus.html) get_outbound_importtemplate_importstatus(import_template_id, list_name_prefix=list_name_prefix)
+
+
+
+Get the import status for an import template.
+
+Wraps GET /api/v2/outbound/importtemplates/{importTemplateId}/importstatus 
+
+Requires ANY permissions: 
+
+* outbound:importTemplate:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.OutboundApi()
+import_template_id = 'import_template_id_example' # str | importTemplateId
+list_name_prefix = 'list_name_prefix_example' # str | listNamePrefix (optional)
+
+try:
+    # Get the import status for an import template.
+    api_response = api_instance.get_outbound_importtemplate_importstatus(import_template_id, list_name_prefix=list_name_prefix)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling OutboundApi->get_outbound_importtemplate_importstatus: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **import_template_id** | **str**| importTemplateId |  |
+| **list_name_prefix** | **str**| listNamePrefix | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**ImportStatus**](ImportStatus.html)
+
+<a name="get_outbound_importtemplates"></a>
+
+## [**ImportTemplateEntityListing**](ImportTemplateEntityListing.html) get_outbound_importtemplates(page_size=page_size, page_number=page_number, allow_empty_result=allow_empty_result, filter_type=filter_type, name=name, sort_by=sort_by, sort_order=sort_order, contact_list_template_id=contact_list_template_id)
+
+
+
+Query Import Templates
+
+Wraps GET /api/v2/outbound/importtemplates 
+
+Requires ANY permissions: 
+
+* outbound:importTemplate:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.OutboundApi()
+page_size = 25 # int | Page size. The max that will be returned is 100. (optional) (default to 25)
+page_number = 1 # int | Page number (optional) (default to 1)
+allow_empty_result = False # bool | Whether to return an empty page when there are no results for that page (optional) (default to False)
+filter_type = ''Prefix'' # str | Filter type (optional) (default to 'Prefix')
+name = 'name_example' # str | Name (optional)
+sort_by = 'sort_by_example' # str | Sort by (optional)
+sort_order = ''a'' # str | Sort order (optional) (default to 'a')
+contact_list_template_id = 'contact_list_template_id_example' # str | Contact List Template ID (optional)
+
+try:
+    # Query Import Templates
+    api_response = api_instance.get_outbound_importtemplates(page_size=page_size, page_number=page_number, allow_empty_result=allow_empty_result, filter_type=filter_type, name=name, sort_by=sort_by, sort_order=sort_order, contact_list_template_id=contact_list_template_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling OutboundApi->get_outbound_importtemplates: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **page_size** | **int**| Page size. The max that will be returned is 100. | [optional] [default to 25] |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **allow_empty_result** | **bool**| Whether to return an empty page when there are no results for that page | [optional] [default to False] |
+| **filter_type** | **str**| Filter type | [optional] [default to &#39;Prefix&#39;]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
+| **name** | **str**| Name | [optional]  |
+| **sort_by** | **str**| Sort by | [optional]  |
+| **sort_order** | **str**| Sort order | [optional] [default to &#39;a&#39;]<br />**Values**: ascending, descending |
+| **contact_list_template_id** | **str**| Contact List Template ID | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**ImportTemplateEntityListing**](ImportTemplateEntityListing.html)
 
 <a name="get_outbound_messagingcampaign"></a>
 
@@ -5520,6 +6000,104 @@ except ApiException as e:
 
 [**ContactList**](ContactList.html)
 
+<a name="post_outbound_contactlisttemplates"></a>
+
+## [**ContactListTemplate**](ContactListTemplate.html) post_outbound_contactlisttemplates(body)
+
+
+
+Create Contact List Template
+
+Wraps POST /api/v2/outbound/contactlisttemplates 
+
+Requires ANY permissions: 
+
+* outbound:contactListTemplate:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.OutboundApi()
+body = PureCloudPlatformClientV2.ContactListTemplate() # ContactListTemplate | ContactListTemplate
+
+try:
+    # Create Contact List Template
+    api_response = api_instance.post_outbound_contactlisttemplates(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling OutboundApi->post_outbound_contactlisttemplates: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**ContactListTemplate**](ContactListTemplate.html)| ContactListTemplate |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**ContactListTemplate**](ContactListTemplate.html)
+
+<a name="post_outbound_contactlisttemplates_bulk_add"></a>
+
+## [**ContactListTemplateEntityListing**](ContactListTemplateEntityListing.html) post_outbound_contactlisttemplates_bulk_add(body)
+
+
+
+Add multiple contact list templates
+
+Wraps POST /api/v2/outbound/contactlisttemplates/bulk/add 
+
+Requires ANY permissions: 
+
+* outbound:contactListTemplate:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.OutboundApi()
+body = [PureCloudPlatformClientV2.ContactListTemplate()] # list[ContactListTemplate] | contact list template(s) to add
+
+try:
+    # Add multiple contact list templates
+    api_response = api_instance.post_outbound_contactlisttemplates_bulk_add(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling OutboundApi->post_outbound_contactlisttemplates_bulk_add: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**list[ContactListTemplate]**](ContactListTemplate.html)| contact list template(s) to add |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**ContactListTemplateEntityListing**](ContactListTemplateEntityListing.html)
+
 <a name="post_outbound_conversation_dnc"></a>
 
 ##  post_outbound_conversation_dnc(conversation_id)
@@ -5823,6 +6401,104 @@ except ApiException as e:
 ### Return type
 
 [**DncList**](DncList.html)
+
+<a name="post_outbound_importtemplates"></a>
+
+## [**ImportTemplate**](ImportTemplate.html) post_outbound_importtemplates(body)
+
+
+
+Create Import Template
+
+Wraps POST /api/v2/outbound/importtemplates 
+
+Requires ANY permissions: 
+
+* outbound:importTemplate:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.OutboundApi()
+body = PureCloudPlatformClientV2.ImportTemplate() # ImportTemplate | ImportTemplate
+
+try:
+    # Create Import Template
+    api_response = api_instance.post_outbound_importtemplates(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling OutboundApi->post_outbound_importtemplates: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**ImportTemplate**](ImportTemplate.html)| ImportTemplate |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**ImportTemplate**](ImportTemplate.html)
+
+<a name="post_outbound_importtemplates_bulk_add"></a>
+
+## [**ImportTemplateEntityListing**](ImportTemplateEntityListing.html) post_outbound_importtemplates_bulk_add(body)
+
+
+
+Add multiple import templates
+
+Wraps POST /api/v2/outbound/importtemplates/bulk/add 
+
+Requires ANY permissions: 
+
+* outbound:importTemplate:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.OutboundApi()
+body = [PureCloudPlatformClientV2.ImportTemplate()] # list[ImportTemplate] | import template(s) to add
+
+try:
+    # Add multiple import templates
+    api_response = api_instance.post_outbound_importtemplates_bulk_add(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling OutboundApi->post_outbound_importtemplates_bulk_add: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**list[ImportTemplate]**](ImportTemplate.html)| import template(s) to add |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**ImportTemplateEntityListing**](ImportTemplateEntityListing.html)
 
 <a name="post_outbound_messagingcampaigns"></a>
 
@@ -6486,6 +7162,57 @@ except ApiException as e:
 
 [**ContactListFilter**](ContactListFilter.html)
 
+<a name="put_outbound_contactlisttemplate"></a>
+
+## [**ContactListTemplate**](ContactListTemplate.html) put_outbound_contactlisttemplate(contact_list_template_id, body)
+
+
+
+Update a contact list template.
+
+Wraps PUT /api/v2/outbound/contactlisttemplates/{contactListTemplateId} 
+
+Requires ANY permissions: 
+
+* outbound:contactListTemplate:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.OutboundApi()
+contact_list_template_id = 'contact_list_template_id_example' # str | ContactListTemplate ID
+body = PureCloudPlatformClientV2.ContactListTemplate() # ContactListTemplate | ContactListTemplate
+
+try:
+    # Update a contact list template.
+    api_response = api_instance.put_outbound_contactlisttemplate(contact_list_template_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling OutboundApi->put_outbound_contactlisttemplate: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **contact_list_template_id** | **str**| ContactListTemplate ID |  |
+| **body** | [**ContactListTemplate**](ContactListTemplate.html)| ContactListTemplate |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**ContactListTemplate**](ContactListTemplate.html)
+
 <a name="put_outbound_digitalruleset"></a>
 
 ## [**DigitalRuleSet**](DigitalRuleSet.html) put_outbound_digitalruleset(digital_rule_set_id, body)
@@ -6587,6 +7314,57 @@ except ApiException as e:
 ### Return type
 
 [**DncList**](DncList.html)
+
+<a name="put_outbound_importtemplate"></a>
+
+## [**ImportTemplate**](ImportTemplate.html) put_outbound_importtemplate(import_template_id, body)
+
+
+
+Update Import Template
+
+Wraps PUT /api/v2/outbound/importtemplates/{importTemplateId} 
+
+Requires ANY permissions: 
+
+* outbound:importTemplate:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.OutboundApi()
+import_template_id = 'import_template_id_example' # str | Import Template ID
+body = PureCloudPlatformClientV2.ImportTemplate() # ImportTemplate | importTemplate
+
+try:
+    # Update Import Template
+    api_response = api_instance.put_outbound_importtemplate(import_template_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling OutboundApi->put_outbound_importtemplate: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **import_template_id** | **str**| Import Template ID |  |
+| **body** | [**ImportTemplate**](ImportTemplate.html)| importTemplate |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**ImportTemplate**](ImportTemplate.html)
 
 <a name="put_outbound_messagingcampaign"></a>
 

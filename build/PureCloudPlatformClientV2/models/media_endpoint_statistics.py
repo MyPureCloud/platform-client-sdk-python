@@ -57,7 +57,8 @@ class MediaEndpointStatistics(object):
             'station': 'NamedEntity',
             'user': 'NamedEntity',
             'ice': 'MediaIceStatistics',
-            'rtp': 'MediaRtpStatistics'
+            'rtp': 'MediaRtpStatistics',
+            'reconnect_attempt_count': 'int'
         }
 
         self.attribute_map = {
@@ -65,7 +66,8 @@ class MediaEndpointStatistics(object):
             'station': 'station',
             'user': 'user',
             'ice': 'ice',
-            'rtp': 'rtp'
+            'rtp': 'rtp',
+            'reconnect_attempt_count': 'reconnectAttemptCount'
         }
 
         self._trunk = None
@@ -73,6 +75,7 @@ class MediaEndpointStatistics(object):
         self._user = None
         self._ice = None
         self._rtp = None
+        self._reconnect_attempt_count = None
 
     @property
     def trunk(self) -> 'MediaStatisticsTrunkInfo':
@@ -193,6 +196,30 @@ class MediaEndpointStatistics(object):
         
 
         self._rtp = rtp
+
+    @property
+    def reconnect_attempt_count(self) -> int:
+        """
+        Gets the reconnect_attempt_count of this MediaEndpointStatistics.
+        Media reconnect attempt count
+
+        :return: The reconnect_attempt_count of this MediaEndpointStatistics.
+        :rtype: int
+        """
+        return self._reconnect_attempt_count
+
+    @reconnect_attempt_count.setter
+    def reconnect_attempt_count(self, reconnect_attempt_count: int) -> None:
+        """
+        Sets the reconnect_attempt_count of this MediaEndpointStatistics.
+        Media reconnect attempt count
+
+        :param reconnect_attempt_count: The reconnect_attempt_count of this MediaEndpointStatistics.
+        :type: int
+        """
+        
+
+        self._reconnect_attempt_count = reconnect_attempt_count
 
     def to_dict(self):
         """
