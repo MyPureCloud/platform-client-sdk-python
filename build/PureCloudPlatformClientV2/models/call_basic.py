@@ -35,6 +35,7 @@ from typing import Dict
 if TYPE_CHECKING:
     from . import Address
     from . import AfterCallWork
+    from . import ConversationQueueMediaSettings
     from . import DisconnectReason
     from . import Disposition
     from . import ErrorInfo
@@ -88,6 +89,7 @@ class CallBasic(object):
             'after_call_work': 'AfterCallWork',
             'after_call_work_required': 'bool',
             'agent_assistant_id': 'str',
+            'queue_media_settings': 'ConversationQueueMediaSettings',
             'disposition': 'Disposition'
         }
 
@@ -123,6 +125,7 @@ class CallBasic(object):
             'after_call_work': 'afterCallWork',
             'after_call_work_required': 'afterCallWorkRequired',
             'agent_assistant_id': 'agentAssistantId',
+            'queue_media_settings': 'queueMediaSettings',
             'disposition': 'disposition'
         }
 
@@ -157,6 +160,7 @@ class CallBasic(object):
         self._after_call_work = None
         self._after_call_work_required = None
         self._agent_assistant_id = None
+        self._queue_media_settings = None
         self._disposition = None
 
     @property
@@ -927,6 +931,30 @@ class CallBasic(object):
         
 
         self._agent_assistant_id = agent_assistant_id
+
+    @property
+    def queue_media_settings(self) -> 'ConversationQueueMediaSettings':
+        """
+        Gets the queue_media_settings of this CallBasic.
+        Represents the queue settings for this media type.
+
+        :return: The queue_media_settings of this CallBasic.
+        :rtype: ConversationQueueMediaSettings
+        """
+        return self._queue_media_settings
+
+    @queue_media_settings.setter
+    def queue_media_settings(self, queue_media_settings: 'ConversationQueueMediaSettings') -> None:
+        """
+        Sets the queue_media_settings of this CallBasic.
+        Represents the queue settings for this media type.
+
+        :param queue_media_settings: The queue_media_settings of this CallBasic.
+        :type: ConversationQueueMediaSettings
+        """
+        
+
+        self._queue_media_settings = queue_media_settings
 
     @property
     def disposition(self) -> 'Disposition':

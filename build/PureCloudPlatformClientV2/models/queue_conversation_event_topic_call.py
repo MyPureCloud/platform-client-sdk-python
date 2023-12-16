@@ -38,6 +38,7 @@ if TYPE_CHECKING:
     from . import QueueConversationEventTopicDisconnectReason
     from . import QueueConversationEventTopicErrorDetails
     from . import QueueConversationEventTopicFaxStatus
+    from . import QueueConversationEventTopicQueueMediaSettings
     from . import QueueConversationEventTopicWrapup
 
 class QueueConversationEventTopicCall(object):
@@ -83,7 +84,8 @@ class QueueConversationEventTopicCall(object):
             'wrapup': 'QueueConversationEventTopicWrapup',
             'after_call_work': 'QueueConversationEventTopicAfterCallWork',
             'after_call_work_required': 'bool',
-            'agent_assistant_id': 'str'
+            'agent_assistant_id': 'str',
+            'queue_media_settings': 'QueueConversationEventTopicQueueMediaSettings'
         }
 
         self.attribute_map = {
@@ -115,7 +117,8 @@ class QueueConversationEventTopicCall(object):
             'wrapup': 'wrapup',
             'after_call_work': 'afterCallWork',
             'after_call_work_required': 'afterCallWorkRequired',
-            'agent_assistant_id': 'agentAssistantId'
+            'agent_assistant_id': 'agentAssistantId',
+            'queue_media_settings': 'queueMediaSettings'
         }
 
         self._id = None
@@ -147,6 +150,7 @@ class QueueConversationEventTopicCall(object):
         self._after_call_work = None
         self._after_call_work_required = None
         self._agent_assistant_id = None
+        self._queue_media_settings = None
 
     @property
     def id(self) -> str:
@@ -868,6 +872,30 @@ class QueueConversationEventTopicCall(object):
         
 
         self._agent_assistant_id = agent_assistant_id
+
+    @property
+    def queue_media_settings(self) -> 'QueueConversationEventTopicQueueMediaSettings':
+        """
+        Gets the queue_media_settings of this QueueConversationEventTopicCall.
+
+
+        :return: The queue_media_settings of this QueueConversationEventTopicCall.
+        :rtype: QueueConversationEventTopicQueueMediaSettings
+        """
+        return self._queue_media_settings
+
+    @queue_media_settings.setter
+    def queue_media_settings(self, queue_media_settings: 'QueueConversationEventTopicQueueMediaSettings') -> None:
+        """
+        Sets the queue_media_settings of this QueueConversationEventTopicCall.
+
+
+        :param queue_media_settings: The queue_media_settings of this QueueConversationEventTopicCall.
+        :type: QueueConversationEventTopicQueueMediaSettings
+        """
+        
+
+        self._queue_media_settings = queue_media_settings
 
     def to_dict(self):
         """

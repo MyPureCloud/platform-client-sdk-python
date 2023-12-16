@@ -35,6 +35,7 @@ from typing import Dict
 if TYPE_CHECKING:
     from . import QueueConversationSocialExpressionEventTopicAfterCallWork
     from . import QueueConversationSocialExpressionEventTopicJourneyContext
+    from . import QueueConversationSocialExpressionEventTopicQueueMediaSettings
     from . import QueueConversationSocialExpressionEventTopicWrapup
 
 class QueueConversationSocialExpressionEventTopicChat(object):
@@ -68,7 +69,8 @@ class QueueConversationSocialExpressionEventTopicChat(object):
             'journey_context': 'QueueConversationSocialExpressionEventTopicJourneyContext',
             'wrapup': 'QueueConversationSocialExpressionEventTopicWrapup',
             'after_call_work': 'QueueConversationSocialExpressionEventTopicAfterCallWork',
-            'after_call_work_required': 'bool'
+            'after_call_work_required': 'bool',
+            'queue_media_settings': 'QueueConversationSocialExpressionEventTopicQueueMediaSettings'
         }
 
         self.attribute_map = {
@@ -88,7 +90,8 @@ class QueueConversationSocialExpressionEventTopicChat(object):
             'journey_context': 'journeyContext',
             'wrapup': 'wrapup',
             'after_call_work': 'afterCallWork',
-            'after_call_work_required': 'afterCallWorkRequired'
+            'after_call_work_required': 'afterCallWorkRequired',
+            'queue_media_settings': 'queueMediaSettings'
         }
 
         self._state = None
@@ -108,6 +111,7 @@ class QueueConversationSocialExpressionEventTopicChat(object):
         self._wrapup = None
         self._after_call_work = None
         self._after_call_work_required = None
+        self._queue_media_settings = None
 
     @property
     def state(self) -> str:
@@ -531,6 +535,30 @@ class QueueConversationSocialExpressionEventTopicChat(object):
         
 
         self._after_call_work_required = after_call_work_required
+
+    @property
+    def queue_media_settings(self) -> 'QueueConversationSocialExpressionEventTopicQueueMediaSettings':
+        """
+        Gets the queue_media_settings of this QueueConversationSocialExpressionEventTopicChat.
+        Represents the queue setting for this media.
+
+        :return: The queue_media_settings of this QueueConversationSocialExpressionEventTopicChat.
+        :rtype: QueueConversationSocialExpressionEventTopicQueueMediaSettings
+        """
+        return self._queue_media_settings
+
+    @queue_media_settings.setter
+    def queue_media_settings(self, queue_media_settings: 'QueueConversationSocialExpressionEventTopicQueueMediaSettings') -> None:
+        """
+        Sets the queue_media_settings of this QueueConversationSocialExpressionEventTopicChat.
+        Represents the queue setting for this media.
+
+        :param queue_media_settings: The queue_media_settings of this QueueConversationSocialExpressionEventTopicChat.
+        :type: QueueConversationSocialExpressionEventTopicQueueMediaSettings
+        """
+        
+
+        self._queue_media_settings = queue_media_settings
 
     def to_dict(self):
         """

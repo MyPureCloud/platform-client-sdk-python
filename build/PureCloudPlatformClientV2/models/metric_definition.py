@@ -59,6 +59,7 @@ class MetricDefinition(object):
             'default_objective': 'DefaultObjective',
             'lock_template_id': 'str',
             'media_type_filtering_allowed': 'bool',
+            'initial_direction_filtering_allowed': 'bool',
             'queue_filtering_allowed': 'bool',
             'self_uri': 'str'
         }
@@ -73,6 +74,7 @@ class MetricDefinition(object):
             'default_objective': 'defaultObjective',
             'lock_template_id': 'lockTemplateId',
             'media_type_filtering_allowed': 'mediaTypeFilteringAllowed',
+            'initial_direction_filtering_allowed': 'initialDirectionFilteringAllowed',
             'queue_filtering_allowed': 'queueFilteringAllowed',
             'self_uri': 'selfUri'
         }
@@ -86,6 +88,7 @@ class MetricDefinition(object):
         self._default_objective = None
         self._lock_template_id = None
         self._media_type_filtering_allowed = None
+        self._initial_direction_filtering_allowed = None
         self._queue_filtering_allowed = None
         self._self_uri = None
 
@@ -309,6 +312,30 @@ class MetricDefinition(object):
         
 
         self._media_type_filtering_allowed = media_type_filtering_allowed
+
+    @property
+    def initial_direction_filtering_allowed(self) -> bool:
+        """
+        Gets the initial_direction_filtering_allowed of this MetricDefinition.
+        Flag to indicate if this metricDefinition allows filter based on initial direction
+
+        :return: The initial_direction_filtering_allowed of this MetricDefinition.
+        :rtype: bool
+        """
+        return self._initial_direction_filtering_allowed
+
+    @initial_direction_filtering_allowed.setter
+    def initial_direction_filtering_allowed(self, initial_direction_filtering_allowed: bool) -> None:
+        """
+        Sets the initial_direction_filtering_allowed of this MetricDefinition.
+        Flag to indicate if this metricDefinition allows filter based on initial direction
+
+        :param initial_direction_filtering_allowed: The initial_direction_filtering_allowed of this MetricDefinition.
+        :type: bool
+        """
+        
+
+        self._initial_direction_filtering_allowed = initial_direction_filtering_allowed
 
     @property
     def queue_filtering_allowed(self) -> bool:

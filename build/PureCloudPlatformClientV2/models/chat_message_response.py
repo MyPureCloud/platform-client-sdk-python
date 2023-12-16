@@ -34,6 +34,7 @@ from typing import Dict
 
 if TYPE_CHECKING:
     from . import AddressableEntityRef
+    from . import ChatReaction
     from . import Entity
 
 class ChatMessageResponse(object):
@@ -63,7 +64,8 @@ class ChatMessageResponse(object):
             'file_uri': 'str',
             'thread': 'Entity',
             'user': 'AddressableEntityRef',
-            'to_user': 'AddressableEntityRef'
+            'to_user': 'AddressableEntityRef',
+            'reactions': 'list[ChatReaction]'
         }
 
         self.attribute_map = {
@@ -79,7 +81,8 @@ class ChatMessageResponse(object):
             'file_uri': 'fileUri',
             'thread': 'thread',
             'user': 'user',
-            'to_user': 'toUser'
+            'to_user': 'toUser',
+            'reactions': 'reactions'
         }
 
         self._id = None
@@ -95,6 +98,7 @@ class ChatMessageResponse(object):
         self._thread = None
         self._user = None
         self._to_user = None
+        self._reactions = None
 
     @property
     def id(self) -> str:
@@ -407,6 +411,30 @@ class ChatMessageResponse(object):
         
 
         self._to_user = to_user
+
+    @property
+    def reactions(self) -> List['ChatReaction']:
+        """
+        Gets the reactions of this ChatMessageResponse.
+        The emoji reactions to this message
+
+        :return: The reactions of this ChatMessageResponse.
+        :rtype: list[ChatReaction]
+        """
+        return self._reactions
+
+    @reactions.setter
+    def reactions(self, reactions: List['ChatReaction']) -> None:
+        """
+        Sets the reactions of this ChatMessageResponse.
+        The emoji reactions to this message
+
+        :param reactions: The reactions of this ChatMessageResponse.
+        :type: list[ChatReaction]
+        """
+        
+
+        self._reactions = reactions
 
     def to_dict(self):
         """

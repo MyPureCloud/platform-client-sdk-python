@@ -43,6 +43,7 @@ title: ConversationEmailEventTopicEmailMediaParticipant
 | **start_acw_time** | **datetime** |  | [optional] |
 | **end_acw_time** | **datetime** |  | [optional] |
 | **media_roles** | **list[str]** |  | [optional] |
+| **queue_media_settings** | [**ConversationEmailEventTopicQueueMediaSettings**](ConversationEmailEventTopicQueueMediaSettings.html) |  | [optional] |
 | **subject** | **str** |  | [optional] |
 | **messages_sent** | **int** |  | [optional] |
 | **auto_generated** | **bool** |  | [optional] |

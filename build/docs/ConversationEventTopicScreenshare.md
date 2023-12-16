@@ -23,6 +23,7 @@ title: ConversationEventTopicScreenshare
 | **wrapup** | [**ConversationEventTopicWrapup**](ConversationEventTopicWrapup.html) | Call wrap up or disposition data. | [optional] |
 | **after_call_work** | [**ConversationEventTopicAfterCallWork**](ConversationEventTopicAfterCallWork.html) | A communication&#39;s after-call work data. | [optional] |
 | **after_call_work_required** | **bool** | Indicates if after-call is required for a communication. Only used when the ACW Setting is Agent Requested. | [optional] |
+| **queue_media_settings** | [**ConversationEventTopicQueueMediaSettings**](ConversationEventTopicQueueMediaSettings.html) | Represents the queue setting for this media. | [optional] |
 {: class="table table-striped"}
 
 

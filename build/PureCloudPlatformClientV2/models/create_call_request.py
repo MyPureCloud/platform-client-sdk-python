@@ -62,7 +62,8 @@ class CreateCallRequest(object):
             'conversation_ids': 'list[str]',
             'participants': 'list[Destination]',
             'uui_data': 'str',
-            'external_contact_id': 'str'
+            'external_contact_id': 'str',
+            'label': 'str'
         }
 
         self.attribute_map = {
@@ -78,7 +79,8 @@ class CreateCallRequest(object):
             'conversation_ids': 'conversationIds',
             'participants': 'participants',
             'uui_data': 'uuiData',
-            'external_contact_id': 'externalContactId'
+            'external_contact_id': 'externalContactId',
+            'label': 'label'
         }
 
         self._phone_number = None
@@ -94,6 +96,7 @@ class CreateCallRequest(object):
         self._participants = None
         self._uui_data = None
         self._external_contact_id = None
+        self._label = None
 
     @property
     def phone_number(self) -> str:
@@ -406,6 +409,30 @@ class CreateCallRequest(object):
         
 
         self._external_contact_id = external_contact_id
+
+    @property
+    def label(self) -> str:
+        """
+        Gets the label of this CreateCallRequest.
+        An optional label that categorizes the conversation.  Max-utilization settings can be configured at a per-label level
+
+        :return: The label of this CreateCallRequest.
+        :rtype: str
+        """
+        return self._label
+
+    @label.setter
+    def label(self, label: str) -> None:
+        """
+        Sets the label of this CreateCallRequest.
+        An optional label that categorizes the conversation.  Max-utilization settings can be configured at a per-label level
+
+        :param label: The label of this CreateCallRequest.
+        :type: str
+        """
+        
+
+        self._label = label
 
     def to_dict(self):
         """

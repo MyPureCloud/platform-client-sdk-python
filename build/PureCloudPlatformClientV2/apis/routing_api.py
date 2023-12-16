@@ -51,6 +51,7 @@ from ..models import CreateBenefitAssessmentJobRequest
 from ..models import CreateBenefitAssessmentRequest
 from ..models import CreatePredictorRequest
 from ..models import CreateQueueRequest
+from ..models import CreateUtilizationLabelRequest
 from ..models import CreateUtilizationTagRequest
 from ..models import EmailOutboundDomainResult
 from ..models import EmailSetup
@@ -105,6 +106,7 @@ from ..models import SmsPhoneNumberImport
 from ..models import SmsPhoneNumberProvision
 from ..models import TestMessage
 from ..models import TranscriptionSettings
+from ..models import UpdateUtilizationLabelRequest
 from ..models import UserLanguageEntityListing
 from ..models import UserQueue
 from ..models import UserQueueEntityListing
@@ -114,6 +116,8 @@ from ..models import UserRoutingSkill
 from ..models import UserRoutingSkillPost
 from ..models import UserSkillEntityListing
 from ..models import UserSkillGroupEntityListing
+from ..models import UtilizationLabel
+from ..models import UtilizationLabelEntityListing
 from ..models import UtilizationRequest
 from ..models import UtilizationResponse
 from ..models import UtilizationTag
@@ -1449,6 +1453,88 @@ class RoutingApi(object):
         path_params = {}
 
         query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def delete_routing_utilization_label(self, label_id: str, **kwargs) -> None:
+        """
+        Delete a utilization label
+        
+	    delete_routing_utilization_label is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_routing_utilization_label(label_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str label_id: Utilization Label ID (required)
+        :param bool force_delete: Remove all label usages (if found) without warning
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['label_id', 'force_delete']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_routing_utilization_label" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'label_id' is set
+        if ('label_id' not in params) or (params['label_id'] is None):
+            raise ValueError("Missing the required parameter `label_id` when calling `delete_routing_utilization_label`")
+
+
+        resource_path = '/api/v2/routing/utilization/labels/{labelId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'label_id' in params:
+            path_params['labelId'] = params['label_id']
+
+        query_params = {}
+        if 'force_delete' in params:
+            query_params['forceDelete'] = params['force_delete']
 
         header_params = {}
 
@@ -6014,6 +6100,249 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def get_routing_utilization_label(self, label_id: str, **kwargs) -> 'UtilizationLabel':
+        """
+        Get details about this utilization label
+        
+	    get_routing_utilization_label is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_routing_utilization_label(label_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str label_id: Utilization Label ID (required)
+        :return: UtilizationLabel
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['label_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_routing_utilization_label" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'label_id' is set
+        if ('label_id' not in params) or (params['label_id'] is None):
+            raise ValueError("Missing the required parameter `label_id` when calling `get_routing_utilization_label`")
+
+
+        resource_path = '/api/v2/routing/utilization/labels/{labelId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'label_id' in params:
+            path_params['labelId'] = params['label_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='UtilizationLabel',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_routing_utilization_label_agents(self, label_id: str, **kwargs) -> List[object]:
+        """
+        Get list of agent ids associated with a utilization label
+        
+	    get_routing_utilization_label_agents is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_routing_utilization_label_agents(label_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str label_id: Utilization Label ID (required)
+        :return: list[object]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['label_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_routing_utilization_label_agents" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'label_id' is set
+        if ('label_id' not in params) or (params['label_id'] is None):
+            raise ValueError("Missing the required parameter `label_id` when calling `get_routing_utilization_label_agents`")
+
+
+        resource_path = '/api/v2/routing/utilization/labels/{labelId}/agents'.replace('{format}', 'json')
+        path_params = {}
+        if 'label_id' in params:
+            path_params['labelId'] = params['label_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='list[object]',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_routing_utilization_labels(self, **kwargs) -> 'UtilizationLabelEntityListing':
+        """
+        Get list of utilization labels
+        
+	    get_routing_utilization_labels is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_routing_utilization_labels(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int page_size: Page size
+        :param int page_number: Page number
+        :param str sort_order: Sort order by name
+        :param str name: Utilization label's name (Wildcard is supported, e.g., 'label1*', '*label*'
+        :return: UtilizationLabelEntityListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['page_size', 'page_number', 'sort_order', 'name']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_routing_utilization_labels" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/routing/utilization/labels'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+        if 'page_number' in params:
+            query_params['pageNumber'] = params['page_number']
+        if 'sort_order' in params:
+            query_params['sortOrder'] = params['sort_order']
+        if 'name' in params:
+            query_params['name'] = params['name']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='UtilizationLabelEntityListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def get_routing_utilization_tag(self, tag_id: str, **kwargs) -> 'UtilizationTag':
         """
         Get details about this utilization tag
@@ -9733,6 +10062,85 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def post_routing_utilization_labels(self, body: 'CreateUtilizationLabelRequest', **kwargs) -> 'UtilizationLabel':
+        """
+        Create a utilization label
+        
+	    post_routing_utilization_labels is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_routing_utilization_labels(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param CreateUtilizationLabelRequest body: UtilizationLabel (required)
+        :return: UtilizationLabel
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_routing_utilization_labels" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_routing_utilization_labels`")
+
+
+        resource_path = '/api/v2/routing/utilization/labels'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='UtilizationLabel',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def post_routing_utilization_tags(self, body: 'CreateUtilizationTagRequest', **kwargs) -> 'UtilizationTag':
         """
         Create an utilization tag
@@ -10792,6 +11200,91 @@ class RoutingApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='UtilizationResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def put_routing_utilization_label(self, label_id: str, body: 'UpdateUtilizationLabelRequest', **kwargs) -> 'UtilizationLabel':
+        """
+        Update a utilization label
+        
+	    put_routing_utilization_label is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.put_routing_utilization_label(label_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str label_id: Utilization Label ID (required)
+        :param UpdateUtilizationLabelRequest body: UtilizationLabel (required)
+        :return: UtilizationLabel
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['label_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method put_routing_utilization_label" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'label_id' is set
+        if ('label_id' not in params) or (params['label_id'] is None):
+            raise ValueError("Missing the required parameter `label_id` when calling `put_routing_utilization_label`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `put_routing_utilization_label`")
+
+
+        resource_path = '/api/v2/routing/utilization/labels/{labelId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'label_id' in params:
+            path_params['labelId'] = params['label_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='UtilizationLabel',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

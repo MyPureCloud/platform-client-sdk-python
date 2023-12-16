@@ -43,6 +43,7 @@ title: ConversationCobrowseEventTopicCobrowseMediaParticipant
 | **start_acw_time** | **datetime** |  | [optional] |
 | **end_acw_time** | **datetime** |  | [optional] |
 | **media_roles** | **list[str]** |  | [optional] |
+| **queue_media_settings** | [**ConversationCobrowseEventTopicQueueMediaSettings**](ConversationCobrowseEventTopicQueueMediaSettings.html) |  | [optional] |
 | **cobrowse_session_id** | **str** |  | [optional] |
 | **cobrowse_role** | **str** |  | [optional] |
 | **viewer_url** | **str** |  | [optional] |

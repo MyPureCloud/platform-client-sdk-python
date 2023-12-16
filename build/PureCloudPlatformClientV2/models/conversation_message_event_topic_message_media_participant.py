@@ -37,6 +37,7 @@ if TYPE_CHECKING:
     from . import ConversationMessageEventTopicErrorBody
     from . import ConversationMessageEventTopicJourneyContext
     from . import ConversationMessageEventTopicMessageDetails
+    from . import ConversationMessageEventTopicQueueMediaSettings
     from . import ConversationMessageEventTopicUriReference
     from . import ConversationMessageEventTopicWrapup
 
@@ -91,6 +92,7 @@ class ConversationMessageEventTopicMessageMediaParticipant(object):
             'start_acw_time': 'datetime',
             'end_acw_time': 'datetime',
             'media_roles': 'list[str]',
+            'queue_media_settings': 'ConversationMessageEventTopicQueueMediaSettings',
             'messages': 'list[ConversationMessageEventTopicMessageDetails]',
             'type': 'str',
             'recipient_country': 'str',
@@ -136,6 +138,7 @@ class ConversationMessageEventTopicMessageMediaParticipant(object):
             'start_acw_time': 'startAcwTime',
             'end_acw_time': 'endAcwTime',
             'media_roles': 'mediaRoles',
+            'queue_media_settings': 'queueMediaSettings',
             'messages': 'messages',
             'type': 'type',
             'recipient_country': 'recipientCountry',
@@ -180,6 +183,7 @@ class ConversationMessageEventTopicMessageMediaParticipant(object):
         self._start_acw_time = None
         self._end_acw_time = None
         self._media_roles = None
+        self._queue_media_settings = None
         self._messages = None
         self._type = None
         self._recipient_country = None
@@ -1075,6 +1079,30 @@ class ConversationMessageEventTopicMessageMediaParticipant(object):
         
 
         self._media_roles = media_roles
+
+    @property
+    def queue_media_settings(self) -> 'ConversationMessageEventTopicQueueMediaSettings':
+        """
+        Gets the queue_media_settings of this ConversationMessageEventTopicMessageMediaParticipant.
+
+
+        :return: The queue_media_settings of this ConversationMessageEventTopicMessageMediaParticipant.
+        :rtype: ConversationMessageEventTopicQueueMediaSettings
+        """
+        return self._queue_media_settings
+
+    @queue_media_settings.setter
+    def queue_media_settings(self, queue_media_settings: 'ConversationMessageEventTopicQueueMediaSettings') -> None:
+        """
+        Sets the queue_media_settings of this ConversationMessageEventTopicMessageMediaParticipant.
+
+
+        :param queue_media_settings: The queue_media_settings of this ConversationMessageEventTopicMessageMediaParticipant.
+        :type: ConversationMessageEventTopicQueueMediaSettings
+        """
+        
+
+        self._queue_media_settings = queue_media_settings
 
     @property
     def messages(self) -> List['ConversationMessageEventTopicMessageDetails']:

@@ -1160,7 +1160,7 @@ class AuthorizationApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str role_id: Role ID (required)
-        :param bool user_count: Fetch the count of users who have this role granted in at least one division
+        :param bool user_count: Fetch the count of users who have this role granted in at least one division. Setting this value or defaulting to 'true' can lead to slower load times or timeouts for role queries with large member counts.
         :param list[str] expand: Which fields, if any, to expand. \"unusedPermissions\" returns the permissions not used for the role
         :return: DomainOrganizationRole
                  If the method is called asynchronously,

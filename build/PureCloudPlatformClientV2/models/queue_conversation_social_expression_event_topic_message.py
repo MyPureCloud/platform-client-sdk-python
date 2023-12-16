@@ -38,6 +38,7 @@ if TYPE_CHECKING:
     from . import QueueConversationSocialExpressionEventTopicErrorDetails
     from . import QueueConversationSocialExpressionEventTopicJourneyContext
     from . import QueueConversationSocialExpressionEventTopicMessageDetails
+    from . import QueueConversationSocialExpressionEventTopicQueueMediaSettings
     from . import QueueConversationSocialExpressionEventTopicWrapup
 
 class QueueConversationSocialExpressionEventTopicMessage(object):
@@ -80,7 +81,8 @@ class QueueConversationSocialExpressionEventTopicMessage(object):
             'after_call_work': 'QueueConversationSocialExpressionEventTopicAfterCallWork',
             'after_call_work_required': 'bool',
             'agent_assistant_id': 'str',
-            'byo_sms_integration_id': 'str'
+            'byo_sms_integration_id': 'str',
+            'queue_media_settings': 'QueueConversationSocialExpressionEventTopicQueueMediaSettings'
         }
 
         self.attribute_map = {
@@ -109,7 +111,8 @@ class QueueConversationSocialExpressionEventTopicMessage(object):
             'after_call_work': 'afterCallWork',
             'after_call_work_required': 'afterCallWorkRequired',
             'agent_assistant_id': 'agentAssistantId',
-            'byo_sms_integration_id': 'byoSmsIntegrationId'
+            'byo_sms_integration_id': 'byoSmsIntegrationId',
+            'queue_media_settings': 'queueMediaSettings'
         }
 
         self._id = None
@@ -138,6 +141,7 @@ class QueueConversationSocialExpressionEventTopicMessage(object):
         self._after_call_work_required = None
         self._agent_assistant_id = None
         self._byo_sms_integration_id = None
+        self._queue_media_settings = None
 
     @property
     def id(self) -> str:
@@ -787,6 +791,30 @@ class QueueConversationSocialExpressionEventTopicMessage(object):
         
 
         self._byo_sms_integration_id = byo_sms_integration_id
+
+    @property
+    def queue_media_settings(self) -> 'QueueConversationSocialExpressionEventTopicQueueMediaSettings':
+        """
+        Gets the queue_media_settings of this QueueConversationSocialExpressionEventTopicMessage.
+        Represents the queue setting for this media.
+
+        :return: The queue_media_settings of this QueueConversationSocialExpressionEventTopicMessage.
+        :rtype: QueueConversationSocialExpressionEventTopicQueueMediaSettings
+        """
+        return self._queue_media_settings
+
+    @queue_media_settings.setter
+    def queue_media_settings(self, queue_media_settings: 'QueueConversationSocialExpressionEventTopicQueueMediaSettings') -> None:
+        """
+        Sets the queue_media_settings of this QueueConversationSocialExpressionEventTopicMessage.
+        Represents the queue setting for this media.
+
+        :param queue_media_settings: The queue_media_settings of this QueueConversationSocialExpressionEventTopicMessage.
+        :type: QueueConversationSocialExpressionEventTopicQueueMediaSettings
+        """
+        
+
+        self._queue_media_settings = queue_media_settings
 
     def to_dict(self):
         """

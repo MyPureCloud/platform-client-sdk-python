@@ -39,7 +39,6 @@ if TYPE_CHECKING:
     from . import EvaluationScoringSet
     from . import EvaluationSource
     from . import Queue
-    from . import Team
     from . import User
 
 class EvaluationResponse(object):
@@ -72,7 +71,6 @@ class EvaluationResponse(object):
             'release_date': 'datetime',
             'assigned_date': 'datetime',
             'changed_date': 'datetime',
-            'revision_created_date': 'datetime',
             'queue': 'Queue',
             'media_type': 'list[str]',
             'rescore': 'bool',
@@ -84,7 +82,6 @@ class EvaluationResponse(object):
             'resource_id': 'str',
             'resource_type': 'str',
             'redacted': 'bool',
-            'agent_team': 'Team',
             'is_scoring_index': 'bool',
             'authorized_actions': 'list[str]',
             'has_assistance_failed': 'bool',
@@ -108,7 +105,6 @@ class EvaluationResponse(object):
             'release_date': 'releaseDate',
             'assigned_date': 'assignedDate',
             'changed_date': 'changedDate',
-            'revision_created_date': 'revisionCreatedDate',
             'queue': 'queue',
             'media_type': 'mediaType',
             'rescore': 'rescore',
@@ -120,7 +116,6 @@ class EvaluationResponse(object):
             'resource_id': 'resourceId',
             'resource_type': 'resourceType',
             'redacted': 'redacted',
-            'agent_team': 'agentTeam',
             'is_scoring_index': 'isScoringIndex',
             'authorized_actions': 'authorizedActions',
             'has_assistance_failed': 'hasAssistanceFailed',
@@ -143,7 +138,6 @@ class EvaluationResponse(object):
         self._release_date = None
         self._assigned_date = None
         self._changed_date = None
-        self._revision_created_date = None
         self._queue = None
         self._media_type = None
         self._rescore = None
@@ -155,7 +149,6 @@ class EvaluationResponse(object):
         self._resource_id = None
         self._resource_type = None
         self._redacted = None
-        self._agent_team = None
         self._is_scoring_index = None
         self._authorized_actions = None
         self._has_assistance_failed = None
@@ -528,30 +521,6 @@ class EvaluationResponse(object):
         self._changed_date = changed_date
 
     @property
-    def revision_created_date(self) -> datetime:
-        """
-        Gets the revision_created_date of this EvaluationResponse.
-        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
-
-        :return: The revision_created_date of this EvaluationResponse.
-        :rtype: datetime
-        """
-        return self._revision_created_date
-
-    @revision_created_date.setter
-    def revision_created_date(self, revision_created_date: datetime) -> None:
-        """
-        Sets the revision_created_date of this EvaluationResponse.
-        Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
-
-        :param revision_created_date: The revision_created_date of this EvaluationResponse.
-        :type: datetime
-        """
-        
-
-        self._revision_created_date = revision_created_date
-
-    @property
     def queue(self) -> 'Queue':
         """
         Gets the queue of this EvaluationResponse.
@@ -819,30 +788,6 @@ class EvaluationResponse(object):
         
 
         self._redacted = redacted
-
-    @property
-    def agent_team(self) -> 'Team':
-        """
-        Gets the agent_team of this EvaluationResponse.
-        Team of the evaluation agent
-
-        :return: The agent_team of this EvaluationResponse.
-        :rtype: Team
-        """
-        return self._agent_team
-
-    @agent_team.setter
-    def agent_team(self, agent_team: 'Team') -> None:
-        """
-        Sets the agent_team of this EvaluationResponse.
-        Team of the evaluation agent
-
-        :param agent_team: The agent_team of this EvaluationResponse.
-        :type: Team
-        """
-        
-
-        self._agent_team = agent_team
 
     @property
     def is_scoring_index(self) -> bool:

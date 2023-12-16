@@ -25,6 +25,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**delete_routing_sms_phonenumber**](RoutingApi.html#delete_routing_sms_phonenumber) | Delete a phone number provisioned for SMS.|
 |[**delete_routing_user_utilization**](RoutingApi.html#delete_routing_user_utilization) | Delete the user&#39;s max utilization settings and revert to the organization-wide default.|
 |[**delete_routing_utilization**](RoutingApi.html#delete_routing_utilization) | Delete the organization-wide max utilization settings and revert to the system default.|
+|[**delete_routing_utilization_label**](RoutingApi.html#delete_routing_utilization_label) | Delete a utilization label|
 |[**delete_routing_utilization_tag**](RoutingApi.html#delete_routing_utilization_tag) | Delete an utilization tag|
 |[**delete_routing_wrapupcode**](RoutingApi.html#delete_routing_wrapupcode) | Delete wrap-up code|
 |[**delete_user_routinglanguage**](RoutingApi.html#delete_user_routinglanguage) | Remove routing language from user|
@@ -80,6 +81,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_routing_sms_phonenumbers**](RoutingApi.html#get_routing_sms_phonenumbers) | Get a list of provisioned phone numbers.|
 |[**get_routing_user_utilization**](RoutingApi.html#get_routing_user_utilization) | Get the user&#39;s max utilization settings.  If not configured, the organization-wide default is returned.|
 |[**get_routing_utilization**](RoutingApi.html#get_routing_utilization) | Get the organization-wide max utilization settings.|
+|[**get_routing_utilization_label**](RoutingApi.html#get_routing_utilization_label) | Get details about this utilization label|
+|[**get_routing_utilization_label_agents**](RoutingApi.html#get_routing_utilization_label_agents) | Get list of agent ids associated with a utilization label|
+|[**get_routing_utilization_labels**](RoutingApi.html#get_routing_utilization_labels) | Get list of utilization labels|
 |[**get_routing_utilization_tag**](RoutingApi.html#get_routing_utilization_tag) | Get details about this utilization tag|
 |[**get_routing_utilization_tag_agents**](RoutingApi.html#get_routing_utilization_tag_agents) | Get list of agent ids associated with a utilization tag|
 |[**get_routing_utilization_tags**](RoutingApi.html#get_routing_utilization_tags) | Get list of utilization tags|
@@ -125,6 +129,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_routing_sms_addresses**](RoutingApi.html#post_routing_sms_addresses) | Provision an Address for SMS|
 |[**post_routing_sms_phonenumbers**](RoutingApi.html#post_routing_sms_phonenumbers) | Provision a phone number for SMS|
 |[**post_routing_sms_phonenumbers_import**](RoutingApi.html#post_routing_sms_phonenumbers_import) | Imports a phone number for SMS|
+|[**post_routing_utilization_labels**](RoutingApi.html#post_routing_utilization_labels) | Create a utilization label|
 |[**post_routing_utilization_tags**](RoutingApi.html#post_routing_utilization_tags) | Create an utilization tag|
 |[**post_routing_wrapupcodes**](RoutingApi.html#post_routing_wrapupcodes) | Create a wrap-up code|
 |[**post_user_routinglanguages**](RoutingApi.html#post_user_routinglanguages) | Add routing language to user|
@@ -138,6 +143,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**put_routing_sms_phonenumber**](RoutingApi.html#put_routing_sms_phonenumber) | Update a phone number provisioned for SMS.|
 |[**put_routing_user_utilization**](RoutingApi.html#put_routing_user_utilization) | Update the user&#39;s max utilization settings.  Include only those media types requiring custom configuration.|
 |[**put_routing_utilization**](RoutingApi.html#put_routing_utilization) | Update the organization-wide max utilization settings.  Include only those media types requiring custom configuration.|
+|[**put_routing_utilization_label**](RoutingApi.html#put_routing_utilization_label) | Update a utilization label|
 |[**put_routing_wrapupcode**](RoutingApi.html#put_routing_wrapupcode) | Update wrap-up code|
 |[**put_user_routingskill**](RoutingApi.html#put_user_routingskill) | Update routing skill proficiency or state.|
 |[**put_user_routingskills_bulk**](RoutingApi.html#put_user_routingskills_bulk) | Replace all routing skills assigned to a user|
@@ -959,6 +965,58 @@ except ApiException as e:
 
 This endpoint does not need any parameters.
 
+
+### Return type
+
+void (empty response body)
+
+<a name="delete_routing_utilization_label"></a>
+
+##  delete_routing_utilization_label(label_id, force_delete=force_delete)
+
+
+
+Delete a utilization label
+
+delete_routing_utilization_label is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps DELETE /api/v2/routing/utilization/labels/{labelId} 
+
+Requires ALL permissions: 
+
+* routing:utilization:manage
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RoutingApi()
+label_id = 'label_id_example' # str | Utilization Label ID
+force_delete = False # bool | Remove all label usages (if found) without warning (optional) (default to False)
+
+try:
+    # Delete a utilization label
+    api_instance.delete_routing_utilization_label(label_id, force_delete=force_delete)
+except ApiException as e:
+    print("Exception when calling RoutingApi->delete_routing_utilization_label: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **label_id** | **str**| Utilization Label ID |  |
+| **force_delete** | **bool**| Remove all label usages (if found) without warning | [optional] [default to False] |
+{: class="table table-striped"}
 
 ### Return type
 
@@ -3840,6 +3898,165 @@ This endpoint does not need any parameters.
 
 [**UtilizationResponse**](UtilizationResponse.html)
 
+<a name="get_routing_utilization_label"></a>
+
+## [**UtilizationLabel**](UtilizationLabel.html) get_routing_utilization_label(label_id)
+
+
+
+Get details about this utilization label
+
+get_routing_utilization_label is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/routing/utilization/labels/{labelId} 
+
+Requires ALL permissions: 
+
+* routing:utilization:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RoutingApi()
+label_id = 'label_id_example' # str | Utilization Label ID
+
+try:
+    # Get details about this utilization label
+    api_response = api_instance.get_routing_utilization_label(label_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling RoutingApi->get_routing_utilization_label: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **label_id** | **str**| Utilization Label ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**UtilizationLabel**](UtilizationLabel.html)
+
+<a name="get_routing_utilization_label_agents"></a>
+
+## list[object]** get_routing_utilization_label_agents(label_id)
+
+
+
+Get list of agent ids associated with a utilization label
+
+get_routing_utilization_label_agents is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/routing/utilization/labels/{labelId}/agents 
+
+Requires ALL permissions: 
+
+* routing:utilization:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RoutingApi()
+label_id = 'label_id_example' # str | Utilization Label ID
+
+try:
+    # Get list of agent ids associated with a utilization label
+    api_response = api_instance.get_routing_utilization_label_agents(label_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling RoutingApi->get_routing_utilization_label_agents: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **label_id** | **str**| Utilization Label ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+**list[object]**
+
+<a name="get_routing_utilization_labels"></a>
+
+## [**UtilizationLabelEntityListing**](UtilizationLabelEntityListing.html) get_routing_utilization_labels(page_size=page_size, page_number=page_number, sort_order=sort_order, name=name)
+
+
+
+Get list of utilization labels
+
+get_routing_utilization_labels is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/routing/utilization/labels 
+
+Requires ALL permissions: 
+
+* routing:utilization:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RoutingApi()
+page_size = 25 # int | Page size (optional) (default to 25)
+page_number = 1 # int | Page number (optional) (default to 1)
+sort_order = ''ascending'' # str | Sort order by name (optional) (default to 'ascending')
+name = 'name_example' # str | Utilization label's name (Wildcard is supported, e.g., 'label1*', '*label*' (optional)
+
+try:
+    # Get list of utilization labels
+    api_response = api_instance.get_routing_utilization_labels(page_size=page_size, page_number=page_number, sort_order=sort_order, name=name)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling RoutingApi->get_routing_utilization_labels: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **sort_order** | **str**| Sort order by name | [optional] [default to &#39;ascending&#39;]<br />**Values**: ascending, descending |
+| **name** | **str**| Utilization label&#39;s name (Wildcard is supported, e.g., &#39;label1*&#39;, &#39;*label*&#39; | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**UtilizationLabelEntityListing**](UtilizationLabelEntityListing.html)
+
 <a name="get_routing_utilization_tag"></a>
 
 ## [**UtilizationTag**](UtilizationTag.html) get_routing_utilization_tag(tag_id)
@@ -6168,6 +6385,57 @@ except ApiException as e:
 
 [**SmsPhoneNumber**](SmsPhoneNumber.html)
 
+<a name="post_routing_utilization_labels"></a>
+
+## [**UtilizationLabel**](UtilizationLabel.html) post_routing_utilization_labels(body)
+
+
+
+Create a utilization label
+
+post_routing_utilization_labels is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/routing/utilization/labels 
+
+Requires ALL permissions: 
+
+* routing:utilization:manage
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RoutingApi()
+body = PureCloudPlatformClientV2.CreateUtilizationLabelRequest() # CreateUtilizationLabelRequest | UtilizationLabel
+
+try:
+    # Create a utilization label
+    api_response = api_instance.post_routing_utilization_labels(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling RoutingApi->post_routing_utilization_labels: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**CreateUtilizationLabelRequest**](CreateUtilizationLabelRequest.html)| UtilizationLabel |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**UtilizationLabel**](UtilizationLabel.html)
+
 <a name="post_routing_utilization_tags"></a>
 
 ## [**UtilizationTag**](UtilizationTag.html) post_routing_utilization_tags(body)
@@ -6823,6 +7091,59 @@ except ApiException as e:
 ### Return type
 
 [**UtilizationResponse**](UtilizationResponse.html)
+
+<a name="put_routing_utilization_label"></a>
+
+## [**UtilizationLabel**](UtilizationLabel.html) put_routing_utilization_label(label_id, body)
+
+
+
+Update a utilization label
+
+put_routing_utilization_label is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps PUT /api/v2/routing/utilization/labels/{labelId} 
+
+Requires ALL permissions: 
+
+* routing:utilization:manage
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RoutingApi()
+label_id = 'label_id_example' # str | Utilization Label ID
+body = PureCloudPlatformClientV2.UpdateUtilizationLabelRequest() # UpdateUtilizationLabelRequest | UtilizationLabel
+
+try:
+    # Update a utilization label
+    api_response = api_instance.put_routing_utilization_label(label_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling RoutingApi->put_routing_utilization_label: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **label_id** | **str**| Utilization Label ID |  |
+| **body** | [**UpdateUtilizationLabelRequest**](UpdateUtilizationLabelRequest.html)| UtilizationLabel |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**UtilizationLabel**](UtilizationLabel.html)
 
 <a name="put_routing_wrapupcode"></a>
 

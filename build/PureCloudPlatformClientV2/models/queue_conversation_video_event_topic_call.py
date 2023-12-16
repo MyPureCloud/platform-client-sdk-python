@@ -38,6 +38,7 @@ if TYPE_CHECKING:
     from . import QueueConversationVideoEventTopicDisconnectReason
     from . import QueueConversationVideoEventTopicErrorDetails
     from . import QueueConversationVideoEventTopicFaxStatus
+    from . import QueueConversationVideoEventTopicQueueMediaSettings
     from . import QueueConversationVideoEventTopicWrapup
 
 class QueueConversationVideoEventTopicCall(object):
@@ -83,7 +84,8 @@ class QueueConversationVideoEventTopicCall(object):
             'wrapup': 'QueueConversationVideoEventTopicWrapup',
             'after_call_work': 'QueueConversationVideoEventTopicAfterCallWork',
             'after_call_work_required': 'bool',
-            'agent_assistant_id': 'str'
+            'agent_assistant_id': 'str',
+            'queue_media_settings': 'QueueConversationVideoEventTopicQueueMediaSettings'
         }
 
         self.attribute_map = {
@@ -115,7 +117,8 @@ class QueueConversationVideoEventTopicCall(object):
             'wrapup': 'wrapup',
             'after_call_work': 'afterCallWork',
             'after_call_work_required': 'afterCallWorkRequired',
-            'agent_assistant_id': 'agentAssistantId'
+            'agent_assistant_id': 'agentAssistantId',
+            'queue_media_settings': 'queueMediaSettings'
         }
 
         self._id = None
@@ -147,6 +150,7 @@ class QueueConversationVideoEventTopicCall(object):
         self._after_call_work = None
         self._after_call_work_required = None
         self._agent_assistant_id = None
+        self._queue_media_settings = None
 
     @property
     def id(self) -> str:
@@ -868,6 +872,30 @@ class QueueConversationVideoEventTopicCall(object):
         
 
         self._agent_assistant_id = agent_assistant_id
+
+    @property
+    def queue_media_settings(self) -> 'QueueConversationVideoEventTopicQueueMediaSettings':
+        """
+        Gets the queue_media_settings of this QueueConversationVideoEventTopicCall.
+
+
+        :return: The queue_media_settings of this QueueConversationVideoEventTopicCall.
+        :rtype: QueueConversationVideoEventTopicQueueMediaSettings
+        """
+        return self._queue_media_settings
+
+    @queue_media_settings.setter
+    def queue_media_settings(self, queue_media_settings: 'QueueConversationVideoEventTopicQueueMediaSettings') -> None:
+        """
+        Sets the queue_media_settings of this QueueConversationVideoEventTopicCall.
+
+
+        :param queue_media_settings: The queue_media_settings of this QueueConversationVideoEventTopicCall.
+        :type: QueueConversationVideoEventTopicQueueMediaSettings
+        """
+        
+
+        self._queue_media_settings = queue_media_settings
 
     def to_dict(self):
         """

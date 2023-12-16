@@ -36,6 +36,7 @@ if TYPE_CHECKING:
     from . import ConversationChatEventTopicConversationRoutingData
     from . import ConversationChatEventTopicErrorBody
     from . import ConversationChatEventTopicJourneyContext
+    from . import ConversationChatEventTopicQueueMediaSettings
     from . import ConversationChatEventTopicUriReference
     from . import ConversationChatEventTopicWrapup
 
@@ -90,6 +91,7 @@ class ConversationChatEventTopicChatMediaParticipant(object):
             'start_acw_time': 'datetime',
             'end_acw_time': 'datetime',
             'media_roles': 'list[str]',
+            'queue_media_settings': 'ConversationChatEventTopicQueueMediaSettings',
             'room_id': 'str',
             'avatar_image_url': 'str'
         }
@@ -131,6 +133,7 @@ class ConversationChatEventTopicChatMediaParticipant(object):
             'start_acw_time': 'startAcwTime',
             'end_acw_time': 'endAcwTime',
             'media_roles': 'mediaRoles',
+            'queue_media_settings': 'queueMediaSettings',
             'room_id': 'roomId',
             'avatar_image_url': 'avatarImageUrl'
         }
@@ -171,6 +174,7 @@ class ConversationChatEventTopicChatMediaParticipant(object):
         self._start_acw_time = None
         self._end_acw_time = None
         self._media_roles = None
+        self._queue_media_settings = None
         self._room_id = None
         self._avatar_image_url = None
 
@@ -1062,6 +1066,30 @@ class ConversationChatEventTopicChatMediaParticipant(object):
         
 
         self._media_roles = media_roles
+
+    @property
+    def queue_media_settings(self) -> 'ConversationChatEventTopicQueueMediaSettings':
+        """
+        Gets the queue_media_settings of this ConversationChatEventTopicChatMediaParticipant.
+
+
+        :return: The queue_media_settings of this ConversationChatEventTopicChatMediaParticipant.
+        :rtype: ConversationChatEventTopicQueueMediaSettings
+        """
+        return self._queue_media_settings
+
+    @queue_media_settings.setter
+    def queue_media_settings(self, queue_media_settings: 'ConversationChatEventTopicQueueMediaSettings') -> None:
+        """
+        Sets the queue_media_settings of this ConversationChatEventTopicChatMediaParticipant.
+
+
+        :param queue_media_settings: The queue_media_settings of this ConversationChatEventTopicChatMediaParticipant.
+        :type: ConversationChatEventTopicQueueMediaSettings
+        """
+        
+
+        self._queue_media_settings = queue_media_settings
 
     @property
     def room_id(self) -> str:

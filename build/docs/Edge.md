@@ -43,6 +43,7 @@ title: Edge
 | **physical_edge** | **bool** |  | [optional] |
 | **managed** | **bool** |  | [optional] |
 | **edge_deployment_type** | **str** |  | [optional] |
+| **cert_type** | **str** | The type of certificate used to communicate with edge-proxy. | [optional] |
 | **call_draining_state** | **str** | The current state of the Edge&#39;s call draining process before it can be safely rebooted or updated. | [optional] |
 | **conversation_count** | **int** | The remaining number of conversations the Edge has to drain before it can be safely rebooted or updated. When an Edge is not draining conversations, this will be NULL or 0. | [optional] |
 | **proxy** | **str** | Edge HTTP proxy configuration for the WAN port. The field can be a hostname, FQDN, IPv4 or IPv6 address. If port is not included, port 80 is assumed. | [optional] |

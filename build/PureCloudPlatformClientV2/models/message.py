@@ -35,6 +35,7 @@ from typing import Dict
 if TYPE_CHECKING:
     from . import Address
     from . import AfterCallWork
+    from . import ConversationQueueMediaSettings
     from . import ErrorBody
     from . import JourneyContext
     from . import MessageDetails
@@ -84,7 +85,8 @@ class Message(object):
             'after_call_work': 'AfterCallWork',
             'after_call_work_required': 'bool',
             'agent_assistant_id': 'str',
-            'byo_sms_integration_id': 'str'
+            'byo_sms_integration_id': 'str',
+            'queue_media_settings': 'ConversationQueueMediaSettings'
         }
 
         self.attribute_map = {
@@ -116,7 +118,8 @@ class Message(object):
             'after_call_work': 'afterCallWork',
             'after_call_work_required': 'afterCallWorkRequired',
             'agent_assistant_id': 'agentAssistantId',
-            'byo_sms_integration_id': 'byoSmsIntegrationId'
+            'byo_sms_integration_id': 'byoSmsIntegrationId',
+            'queue_media_settings': 'queueMediaSettings'
         }
 
         self._state = None
@@ -148,6 +151,7 @@ class Message(object):
         self._after_call_work_required = None
         self._agent_assistant_id = None
         self._byo_sms_integration_id = None
+        self._queue_media_settings = None
 
     @property
     def state(self) -> str:
@@ -869,6 +873,30 @@ class Message(object):
         
 
         self._byo_sms_integration_id = byo_sms_integration_id
+
+    @property
+    def queue_media_settings(self) -> 'ConversationQueueMediaSettings':
+        """
+        Gets the queue_media_settings of this Message.
+        Represents the queue settings for this media type.
+
+        :return: The queue_media_settings of this Message.
+        :rtype: ConversationQueueMediaSettings
+        """
+        return self._queue_media_settings
+
+    @queue_media_settings.setter
+    def queue_media_settings(self, queue_media_settings: 'ConversationQueueMediaSettings') -> None:
+        """
+        Sets the queue_media_settings of this Message.
+        Represents the queue settings for this media type.
+
+        :param queue_media_settings: The queue_media_settings of this Message.
+        :type: ConversationQueueMediaSettings
+        """
+        
+
+        self._queue_media_settings = queue_media_settings
 
     def to_dict(self):
         """

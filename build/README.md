@@ -94,6 +94,27 @@ apiclient, auth_token_info = apiclient.refresh_code_authorization_token(os.envir
                                                                         refresh_token)
 ```
 
+### PKCE Grant
+
+* The app is authenticating as a human, the [PKCE Grant](https://developer.genesys.cloud/authorization/platform-auth/use-pkce)
+* The app is served via a web server
+* There is server-side code that will be making API requests
+
+```python
+apiclient, auth_token_info = apiclient.get_pkce_token(os.environ['GENESYS_CLOUD_CODEAUTH_CLIENT_ID'],
+                                                                    code_verifier,
+                                                                    auth_code,
+                                                                    "https://redirect-uri.com/oauth/callback")
+usersApi = PureCloudPlatformClientV2.UsersApi(apiclient)
+```
+
+The SDK provides methods to generate a PKCE Code Verifier and to compute PKCE Code Challenge.
+
+```python
+code_verifier = PureCloudPlatformClientV2.api_client.ApiClient().generate_pkce_code_verifier(128)
+code_challenge = PureCloudPlatformClientV2.api_client.ApiClient().compute_pkce_code_challenge(code_verifier)
+```
+
 ### Setting the Environment
 
 If connecting to a Genesys Cloud environment other than mypurecloud.com (e.g. mypurecloud.ie), set the new base path before constructing any API classes. The new base path should be the base path to the Platform API for your environment.

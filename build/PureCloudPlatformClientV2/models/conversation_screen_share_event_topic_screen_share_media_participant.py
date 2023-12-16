@@ -36,6 +36,7 @@ if TYPE_CHECKING:
     from . import ConversationScreenShareEventTopicConversationRoutingData
     from . import ConversationScreenShareEventTopicErrorBody
     from . import ConversationScreenShareEventTopicJourneyContext
+    from . import ConversationScreenShareEventTopicQueueMediaSettings
     from . import ConversationScreenShareEventTopicUriReference
     from . import ConversationScreenShareEventTopicWrapup
 
@@ -90,6 +91,7 @@ class ConversationScreenShareEventTopicScreenShareMediaParticipant(object):
             'start_acw_time': 'datetime',
             'end_acw_time': 'datetime',
             'media_roles': 'list[str]',
+            'queue_media_settings': 'ConversationScreenShareEventTopicQueueMediaSettings',
             'context': 'str',
             'peer_count': 'int',
             'sharing': 'bool'
@@ -132,6 +134,7 @@ class ConversationScreenShareEventTopicScreenShareMediaParticipant(object):
             'start_acw_time': 'startAcwTime',
             'end_acw_time': 'endAcwTime',
             'media_roles': 'mediaRoles',
+            'queue_media_settings': 'queueMediaSettings',
             'context': 'context',
             'peer_count': 'peerCount',
             'sharing': 'sharing'
@@ -173,6 +176,7 @@ class ConversationScreenShareEventTopicScreenShareMediaParticipant(object):
         self._start_acw_time = None
         self._end_acw_time = None
         self._media_roles = None
+        self._queue_media_settings = None
         self._context = None
         self._peer_count = None
         self._sharing = None
@@ -1065,6 +1069,30 @@ class ConversationScreenShareEventTopicScreenShareMediaParticipant(object):
         
 
         self._media_roles = media_roles
+
+    @property
+    def queue_media_settings(self) -> 'ConversationScreenShareEventTopicQueueMediaSettings':
+        """
+        Gets the queue_media_settings of this ConversationScreenShareEventTopicScreenShareMediaParticipant.
+
+
+        :return: The queue_media_settings of this ConversationScreenShareEventTopicScreenShareMediaParticipant.
+        :rtype: ConversationScreenShareEventTopicQueueMediaSettings
+        """
+        return self._queue_media_settings
+
+    @queue_media_settings.setter
+    def queue_media_settings(self, queue_media_settings: 'ConversationScreenShareEventTopicQueueMediaSettings') -> None:
+        """
+        Sets the queue_media_settings of this ConversationScreenShareEventTopicScreenShareMediaParticipant.
+
+
+        :param queue_media_settings: The queue_media_settings of this ConversationScreenShareEventTopicScreenShareMediaParticipant.
+        :type: ConversationScreenShareEventTopicQueueMediaSettings
+        """
+        
+
+        self._queue_media_settings = queue_media_settings
 
     @property
     def context(self) -> str:

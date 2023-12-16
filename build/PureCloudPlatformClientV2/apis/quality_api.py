@@ -54,7 +54,8 @@ from ..models import EvaluationAsyncAggregationQuery
 from ..models import EvaluationEntityListing
 from ..models import EvaluationForm
 from ..models import EvaluationFormAndScoringSet
-from ..models import EvaluationFormEntityListing
+from ..models import EvaluationFormResponse
+from ..models import EvaluationFormResponseEntityListing
 from ..models import EvaluationResponse
 from ..models import EvaluationScoringSet
 from ..models import EvaluatorActivityEntityListing
@@ -1694,7 +1695,7 @@ class QualityApi(object):
         return response
 
     @deprecated("get_quality_form is deprecated")
-    def get_quality_form(self, form_id: str, **kwargs) -> 'EvaluationForm':
+    def get_quality_form(self, form_id: str, **kwargs) -> 'EvaluationFormResponse':
         """
         Get an evaluation form
         
@@ -1710,7 +1711,7 @@ class QualityApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str form_id: Form ID (required)
-        :return: EvaluationForm
+        :return: EvaluationFormResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1767,13 +1768,13 @@ class QualityApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='EvaluationForm',
+                                            response_type='EvaluationFormResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
 
     @deprecated("get_quality_form_versions is deprecated")
-    def get_quality_form_versions(self, form_id: str, **kwargs) -> 'EvaluationFormEntityListing':
+    def get_quality_form_versions(self, form_id: str, **kwargs) -> 'EvaluationFormResponseEntityListing':
         """
         Gets all the revisions for a specific evaluation.
         
@@ -1791,7 +1792,7 @@ class QualityApi(object):
         :param str form_id: Form ID (required)
         :param int page_size: Page size
         :param int page_number: Page number
-        :return: EvaluationFormEntityListing
+        :return: EvaluationFormResponseEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1852,13 +1853,13 @@ class QualityApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='EvaluationFormEntityListing',
+                                            response_type='EvaluationFormResponseEntityListing',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
 
     @deprecated("get_quality_forms is deprecated")
-    def get_quality_forms(self, **kwargs) -> 'EvaluationFormEntityListing':
+    def get_quality_forms(self, **kwargs) -> 'EvaluationFormResponseEntityListing':
         """
         Get the list of evaluation forms
         
@@ -1881,7 +1882,7 @@ class QualityApi(object):
         :param str expand: If 'expand=publishHistory', then each unpublished evaluation form includes a listing of its published versions
         :param str name: Name
         :param str sort_order: Order to sort results, either asc or desc
-        :return: EvaluationFormEntityListing
+        :return: EvaluationFormResponseEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1949,12 +1950,12 @@ class QualityApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='EvaluationFormEntityListing',
+                                            response_type='EvaluationFormResponseEntityListing',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
 
-    def get_quality_forms_evaluation(self, form_id: str, **kwargs) -> 'EvaluationForm':
+    def get_quality_forms_evaluation(self, form_id: str, **kwargs) -> 'EvaluationFormResponse':
         """
         Get an evaluation form
         
@@ -1970,7 +1971,7 @@ class QualityApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str form_id: Form ID (required)
-        :return: EvaluationForm
+        :return: EvaluationFormResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -2027,12 +2028,12 @@ class QualityApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='EvaluationForm',
+                                            response_type='EvaluationFormResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
 
-    def get_quality_forms_evaluation_versions(self, form_id: str, **kwargs) -> 'EvaluationFormEntityListing':
+    def get_quality_forms_evaluation_versions(self, form_id: str, **kwargs) -> 'EvaluationFormResponseEntityListing':
         """
         Gets all the revisions for a specific evaluation.
         
@@ -2051,7 +2052,7 @@ class QualityApi(object):
         :param int page_size: Page size
         :param int page_number: Page number
         :param str sort_order: Sort order
-        :return: EvaluationFormEntityListing
+        :return: EvaluationFormResponseEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -2114,12 +2115,12 @@ class QualityApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='EvaluationFormEntityListing',
+                                            response_type='EvaluationFormResponseEntityListing',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
 
-    def get_quality_forms_evaluations(self, **kwargs) -> 'EvaluationFormEntityListing':
+    def get_quality_forms_evaluations(self, **kwargs) -> 'EvaluationFormResponseEntityListing':
         """
         Get the list of evaluation forms
         By default, \"published\" field is always returned as false for all evaluation forms. If you set \"expand=publishHistory\", then you will be able to get published versions for each corresponding evaluation form. In addition, \"questionGroups\", the detailed information about evaluation form, is not returned by default. We will enhance this field in the future release.
@@ -2142,7 +2143,7 @@ class QualityApi(object):
         :param str expand: If 'expand=publishHistory', then each unpublished evaluation form includes a listing of its published versions
         :param str name: Name
         :param str sort_order: Order to sort results, either asc or desc
-        :return: EvaluationFormEntityListing
+        :return: EvaluationFormResponseEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -2210,12 +2211,12 @@ class QualityApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='EvaluationFormEntityListing',
+                                            response_type='EvaluationFormResponseEntityListing',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
 
-    def get_quality_forms_evaluations_bulk_contexts(self, context_id: List['str'], **kwargs) -> List['EvaluationForm']:
+    def get_quality_forms_evaluations_bulk_contexts(self, context_id: List['str'], **kwargs) -> List['EvaluationFormResponse']:
         """
         Retrieve a list of the latest published evaluation form versions by context ids
         
@@ -2231,7 +2232,7 @@ class QualityApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param list[str] context_id: A comma-delimited list of valid evaluation form context ids (required)
-        :return: list[EvaluationForm]
+        :return: list[EvaluationFormResponse]
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -2288,7 +2289,7 @@ class QualityApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='list[EvaluationForm]',
+                                            response_type='list[EvaluationFormResponse]',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -2711,7 +2712,7 @@ class QualityApi(object):
         return response
 
     @deprecated("get_quality_publishedform is deprecated")
-    def get_quality_publishedform(self, form_id: str, **kwargs) -> 'EvaluationForm':
+    def get_quality_publishedform(self, form_id: str, **kwargs) -> 'EvaluationFormResponse':
         """
         Get the published evaluation forms.
         
@@ -2727,7 +2728,7 @@ class QualityApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str form_id: Form ID (required)
-        :return: EvaluationForm
+        :return: EvaluationFormResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -2784,13 +2785,13 @@ class QualityApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='EvaluationForm',
+                                            response_type='EvaluationFormResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
 
     @deprecated("get_quality_publishedforms is deprecated")
-    def get_quality_publishedforms(self, **kwargs) -> 'EvaluationFormEntityListing':
+    def get_quality_publishedforms(self, **kwargs) -> 'EvaluationFormResponseEntityListing':
         """
         Get the published evaluation forms.
         
@@ -2809,7 +2810,7 @@ class QualityApi(object):
         :param int page_number: Page number
         :param str name: Name
         :param bool only_latest_per_context: onlyLatestPerContext
-        :return: EvaluationFormEntityListing
+        :return: EvaluationFormResponseEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -2869,12 +2870,12 @@ class QualityApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='EvaluationFormEntityListing',
+                                            response_type='EvaluationFormResponseEntityListing',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
 
-    def get_quality_publishedforms_evaluation(self, form_id: str, **kwargs) -> 'EvaluationForm':
+    def get_quality_publishedforms_evaluation(self, form_id: str, **kwargs) -> 'EvaluationFormResponse':
         """
         Get the most recent published version of an evaluation form.
         
@@ -2890,7 +2891,7 @@ class QualityApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str form_id: Form ID (required)
-        :return: EvaluationForm
+        :return: EvaluationFormResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -2947,12 +2948,12 @@ class QualityApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='EvaluationForm',
+                                            response_type='EvaluationFormResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
 
-    def get_quality_publishedforms_evaluations(self, **kwargs) -> 'EvaluationFormEntityListing':
+    def get_quality_publishedforms_evaluations(self, **kwargs) -> 'EvaluationFormResponseEntityListing':
         """
         Get the published evaluation forms.
         
@@ -2971,7 +2972,7 @@ class QualityApi(object):
         :param int page_number: Page number
         :param str name: Name
         :param bool only_latest_per_context: onlyLatestPerContext
-        :return: EvaluationFormEntityListing
+        :return: EvaluationFormResponseEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -3031,7 +3032,7 @@ class QualityApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='EvaluationFormEntityListing',
+                                            response_type='EvaluationFormResponseEntityListing',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -4155,7 +4156,7 @@ class QualityApi(object):
         return response
 
     @deprecated("post_quality_forms is deprecated")
-    def post_quality_forms(self, body: 'EvaluationForm', **kwargs) -> 'EvaluationForm':
+    def post_quality_forms(self, body: 'EvaluationForm', **kwargs) -> 'EvaluationFormResponse':
         """
         Create an evaluation form.
         
@@ -4171,7 +4172,7 @@ class QualityApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param EvaluationForm body: Evaluation form (required)
-        :return: EvaluationForm
+        :return: EvaluationFormResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -4228,12 +4229,12 @@ class QualityApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='EvaluationForm',
+                                            response_type='EvaluationFormResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
 
-    def post_quality_forms_evaluations(self, body: 'EvaluationForm', **kwargs) -> 'EvaluationForm':
+    def post_quality_forms_evaluations(self, body: 'EvaluationForm', **kwargs) -> 'EvaluationFormResponse':
         """
         Create an evaluation form.
         
@@ -4249,7 +4250,7 @@ class QualityApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param EvaluationForm body: Evaluation form (required)
-        :return: EvaluationForm
+        :return: EvaluationFormResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -4306,7 +4307,7 @@ class QualityApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='EvaluationForm',
+                                            response_type='EvaluationFormResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -4390,7 +4391,7 @@ class QualityApi(object):
         return response
 
     @deprecated("post_quality_publishedforms is deprecated")
-    def post_quality_publishedforms(self, body: 'PublishForm', **kwargs) -> 'EvaluationForm':
+    def post_quality_publishedforms(self, body: 'PublishForm', **kwargs) -> 'EvaluationFormResponse':
         """
         Publish an evaluation form.
         
@@ -4406,7 +4407,7 @@ class QualityApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param PublishForm body: Publish request containing id of form to publish (required)
-        :return: EvaluationForm
+        :return: EvaluationFormResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -4463,12 +4464,12 @@ class QualityApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='EvaluationForm',
+                                            response_type='EvaluationFormResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
 
-    def post_quality_publishedforms_evaluations(self, body: 'PublishForm', **kwargs) -> 'EvaluationForm':
+    def post_quality_publishedforms_evaluations(self, body: 'PublishForm', **kwargs) -> 'EvaluationFormResponse':
         """
         Publish an evaluation form.
         
@@ -4484,7 +4485,7 @@ class QualityApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param PublishForm body: Publish request containing id of form to publish (required)
-        :return: EvaluationForm
+        :return: EvaluationFormResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -4541,7 +4542,7 @@ class QualityApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='EvaluationForm',
+                                            response_type='EvaluationFormResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -4880,7 +4881,7 @@ class QualityApi(object):
         return response
 
     @deprecated("put_quality_form is deprecated")
-    def put_quality_form(self, form_id: str, body: 'EvaluationForm', **kwargs) -> 'EvaluationForm':
+    def put_quality_form(self, form_id: str, body: 'EvaluationForm', **kwargs) -> 'EvaluationFormResponse':
         """
         Update an evaluation form.
         
@@ -4897,7 +4898,7 @@ class QualityApi(object):
             for asynchronous request. (optional)
         :param str form_id: Form ID (required)
         :param EvaluationForm body: Evaluation form (required)
-        :return: EvaluationForm
+        :return: EvaluationFormResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -4959,12 +4960,12 @@ class QualityApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='EvaluationForm',
+                                            response_type='EvaluationFormResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
 
-    def put_quality_forms_evaluation(self, form_id: str, body: 'EvaluationForm', **kwargs) -> 'EvaluationForm':
+    def put_quality_forms_evaluation(self, form_id: str, body: 'EvaluationForm', **kwargs) -> 'EvaluationFormResponse':
         """
         Update an evaluation form.
         
@@ -4981,7 +4982,7 @@ class QualityApi(object):
             for asynchronous request. (optional)
         :param str form_id: Form ID (required)
         :param EvaluationForm body: Evaluation form (required)
-        :return: EvaluationForm
+        :return: EvaluationFormResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -5043,7 +5044,7 @@ class QualityApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='EvaluationForm',
+                                            response_type='EvaluationFormResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

@@ -9,6 +9,7 @@ title: RoutingData
 |------------ | ------------- | ------------- | -------------|
 | **queue_id** | **str** | The identifier of the routing queue | |
 | **language_id** | **str** | The identifier of a language to be considered in routing | [optional] |
+| **label** | **str** | An optional label that categorizes the conversation.  Max-utilization settings can be configured at a per-label level | [optional] |
 | **priority** | **int** | The priority for routing | [optional] |
 | **skill_ids** | **list[str]** | A list of skill identifiers to be considered in routing | [optional] |
 | **preferred_agent_ids** | **list[str]** | A list of agents to be preferred in routing | [optional] |

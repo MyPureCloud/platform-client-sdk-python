@@ -36,6 +36,7 @@ if TYPE_CHECKING:
     from . import QueueConversationEventTopicAfterCallWork
     from . import QueueConversationEventTopicAttachment
     from . import QueueConversationEventTopicErrorDetails
+    from . import QueueConversationEventTopicQueueMediaSettings
     from . import QueueConversationEventTopicWrapup
 
 class QueueConversationEventTopicEmail(object):
@@ -74,7 +75,8 @@ class QueueConversationEventTopicEmail(object):
             'spam': 'bool',
             'wrapup': 'QueueConversationEventTopicWrapup',
             'after_call_work': 'QueueConversationEventTopicAfterCallWork',
-            'after_call_work_required': 'bool'
+            'after_call_work_required': 'bool',
+            'queue_media_settings': 'QueueConversationEventTopicQueueMediaSettings'
         }
 
         self.attribute_map = {
@@ -99,7 +101,8 @@ class QueueConversationEventTopicEmail(object):
             'spam': 'spam',
             'wrapup': 'wrapup',
             'after_call_work': 'afterCallWork',
-            'after_call_work_required': 'afterCallWorkRequired'
+            'after_call_work_required': 'afterCallWorkRequired',
+            'queue_media_settings': 'queueMediaSettings'
         }
 
         self._id = None
@@ -124,6 +127,7 @@ class QueueConversationEventTopicEmail(object):
         self._wrapup = None
         self._after_call_work = None
         self._after_call_work_required = None
+        self._queue_media_settings = None
 
     @property
     def id(self) -> str:
@@ -672,6 +676,30 @@ class QueueConversationEventTopicEmail(object):
         
 
         self._after_call_work_required = after_call_work_required
+
+    @property
+    def queue_media_settings(self) -> 'QueueConversationEventTopicQueueMediaSettings':
+        """
+        Gets the queue_media_settings of this QueueConversationEventTopicEmail.
+        Represents the queue setting for this media.
+
+        :return: The queue_media_settings of this QueueConversationEventTopicEmail.
+        :rtype: QueueConversationEventTopicQueueMediaSettings
+        """
+        return self._queue_media_settings
+
+    @queue_media_settings.setter
+    def queue_media_settings(self, queue_media_settings: 'QueueConversationEventTopicQueueMediaSettings') -> None:
+        """
+        Sets the queue_media_settings of this QueueConversationEventTopicEmail.
+        Represents the queue setting for this media.
+
+        :param queue_media_settings: The queue_media_settings of this QueueConversationEventTopicEmail.
+        :type: QueueConversationEventTopicQueueMediaSettings
+        """
+        
+
+        self._queue_media_settings = queue_media_settings
 
     def to_dict(self):
         """

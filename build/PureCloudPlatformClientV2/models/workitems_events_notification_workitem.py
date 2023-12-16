@@ -35,6 +35,7 @@ from typing import Dict
 if TYPE_CHECKING:
     from . import WorkitemsEventsNotificationCustomAttribute
     from . import WorkitemsEventsNotificationDelta
+    from . import WorkitemsEventsNotificationSession
     from . import WorkitemsEventsNotificationWrapup
 
 class WorkitemsEventsNotificationWorkitem(object):
@@ -82,7 +83,8 @@ class WorkitemsEventsNotificationWorkitem(object):
             'alert_timeout_seconds': 'int',
             'queue_id': 'str',
             'custom_fields': 'dict(str, WorkitemsEventsNotificationCustomAttribute)',
-            'wrapup': 'WorkitemsEventsNotificationWrapup'
+            'wrapup': 'WorkitemsEventsNotificationWrapup',
+            'sessions': 'list[WorkitemsEventsNotificationSession]'
         }
 
         self.attribute_map = {
@@ -116,7 +118,8 @@ class WorkitemsEventsNotificationWorkitem(object):
             'alert_timeout_seconds': 'alertTimeoutSeconds',
             'queue_id': 'queueId',
             'custom_fields': 'customFields',
-            'wrapup': 'wrapup'
+            'wrapup': 'wrapup',
+            'sessions': 'sessions'
         }
 
         self._id = None
@@ -150,6 +153,7 @@ class WorkitemsEventsNotificationWorkitem(object):
         self._queue_id = None
         self._custom_fields = None
         self._wrapup = None
+        self._sessions = None
 
     @property
     def id(self) -> str:
@@ -909,6 +913,30 @@ class WorkitemsEventsNotificationWorkitem(object):
         
 
         self._wrapup = wrapup
+
+    @property
+    def sessions(self) -> List['WorkitemsEventsNotificationSession']:
+        """
+        Gets the sessions of this WorkitemsEventsNotificationWorkitem.
+
+
+        :return: The sessions of this WorkitemsEventsNotificationWorkitem.
+        :rtype: list[WorkitemsEventsNotificationSession]
+        """
+        return self._sessions
+
+    @sessions.setter
+    def sessions(self, sessions: List['WorkitemsEventsNotificationSession']) -> None:
+        """
+        Sets the sessions of this WorkitemsEventsNotificationWorkitem.
+
+
+        :param sessions: The sessions of this WorkitemsEventsNotificationWorkitem.
+        :type: list[WorkitemsEventsNotificationSession]
+        """
+        
+
+        self._sessions = sessions
 
     def to_dict(self):
         """

@@ -34,6 +34,7 @@ from typing import Dict
 
 if TYPE_CHECKING:
     from . import AfterCallWork
+    from . import ConversationQueueMediaSettings
     from . import DialerPreview
     from . import Segment
     from . import Voicemail
@@ -81,7 +82,8 @@ class Callback(object):
             'after_call_work': 'AfterCallWork',
             'after_call_work_required': 'bool',
             'caller_id': 'str',
-            'caller_id_name': 'str'
+            'caller_id_name': 'str',
+            'queue_media_settings': 'ConversationQueueMediaSettings'
         }
 
         self.attribute_map = {
@@ -112,7 +114,8 @@ class Callback(object):
             'after_call_work': 'afterCallWork',
             'after_call_work_required': 'afterCallWorkRequired',
             'caller_id': 'callerId',
-            'caller_id_name': 'callerIdName'
+            'caller_id_name': 'callerIdName',
+            'queue_media_settings': 'queueMediaSettings'
         }
 
         self._state = None
@@ -143,6 +146,7 @@ class Callback(object):
         self._after_call_work_required = None
         self._caller_id = None
         self._caller_id_name = None
+        self._queue_media_settings = None
 
     @property
     def state(self) -> str:
@@ -835,6 +839,30 @@ class Callback(object):
         
 
         self._caller_id_name = caller_id_name
+
+    @property
+    def queue_media_settings(self) -> 'ConversationQueueMediaSettings':
+        """
+        Gets the queue_media_settings of this Callback.
+        Represents the queue settings for this media type.
+
+        :return: The queue_media_settings of this Callback.
+        :rtype: ConversationQueueMediaSettings
+        """
+        return self._queue_media_settings
+
+    @queue_media_settings.setter
+    def queue_media_settings(self, queue_media_settings: 'ConversationQueueMediaSettings') -> None:
+        """
+        Sets the queue_media_settings of this Callback.
+        Represents the queue settings for this media type.
+
+        :param queue_media_settings: The queue_media_settings of this Callback.
+        :type: ConversationQueueMediaSettings
+        """
+        
+
+        self._queue_media_settings = queue_media_settings
 
     def to_dict(self):
         """

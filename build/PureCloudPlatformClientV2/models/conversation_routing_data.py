@@ -55,7 +55,8 @@ class ConversationRoutingData(object):
             'language': 'AddressableEntityRef',
             'priority': 'int',
             'skills': 'list[AddressableEntityRef]',
-            'scored_agents': 'list[ScoredAgent]'
+            'scored_agents': 'list[ScoredAgent]',
+            'label': 'str'
         }
 
         self.attribute_map = {
@@ -63,7 +64,8 @@ class ConversationRoutingData(object):
             'language': 'language',
             'priority': 'priority',
             'skills': 'skills',
-            'scored_agents': 'scoredAgents'
+            'scored_agents': 'scoredAgents',
+            'label': 'label'
         }
 
         self._queue = None
@@ -71,6 +73,7 @@ class ConversationRoutingData(object):
         self._priority = None
         self._skills = None
         self._scored_agents = None
+        self._label = None
 
     @property
     def queue(self) -> 'AddressableEntityRef':
@@ -191,6 +194,30 @@ class ConversationRoutingData(object):
         
 
         self._scored_agents = scored_agents
+
+    @property
+    def label(self) -> str:
+        """
+        Gets the label of this ConversationRoutingData.
+        An optional label that categorizes the conversation.  Max-utilization settings can be configured at a per-label level
+
+        :return: The label of this ConversationRoutingData.
+        :rtype: str
+        """
+        return self._label
+
+    @label.setter
+    def label(self, label: str) -> None:
+        """
+        Sets the label of this ConversationRoutingData.
+        An optional label that categorizes the conversation.  Max-utilization settings can be configured at a per-label level
+
+        :param label: The label of this ConversationRoutingData.
+        :type: str
+        """
+        
+
+        self._label = label
 
     def to_dict(self):
         """

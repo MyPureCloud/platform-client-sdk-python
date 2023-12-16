@@ -37,6 +37,7 @@ if TYPE_CHECKING:
     from . import ConversationCallEventTopicErrorBody
     from . import ConversationCallEventTopicFaxStatus
     from . import ConversationCallEventTopicJourneyContext
+    from . import ConversationCallEventTopicQueueMediaSettings
     from . import ConversationCallEventTopicUriReference
     from . import ConversationCallEventTopicWrapup
 
@@ -91,6 +92,7 @@ class ConversationCallEventTopicCallMediaParticipant(object):
             'start_acw_time': 'datetime',
             'end_acw_time': 'datetime',
             'media_roles': 'list[str]',
+            'queue_media_settings': 'ConversationCallEventTopicQueueMediaSettings',
             'muted': 'bool',
             'confined': 'bool',
             'recording': 'bool',
@@ -145,6 +147,7 @@ class ConversationCallEventTopicCallMediaParticipant(object):
             'start_acw_time': 'startAcwTime',
             'end_acw_time': 'endAcwTime',
             'media_roles': 'mediaRoles',
+            'queue_media_settings': 'queueMediaSettings',
             'muted': 'muted',
             'confined': 'confined',
             'recording': 'recording',
@@ -198,6 +201,7 @@ class ConversationCallEventTopicCallMediaParticipant(object):
         self._start_acw_time = None
         self._end_acw_time = None
         self._media_roles = None
+        self._queue_media_settings = None
         self._muted = None
         self._confined = None
         self._recording = None
@@ -1102,6 +1106,30 @@ class ConversationCallEventTopicCallMediaParticipant(object):
         
 
         self._media_roles = media_roles
+
+    @property
+    def queue_media_settings(self) -> 'ConversationCallEventTopicQueueMediaSettings':
+        """
+        Gets the queue_media_settings of this ConversationCallEventTopicCallMediaParticipant.
+
+
+        :return: The queue_media_settings of this ConversationCallEventTopicCallMediaParticipant.
+        :rtype: ConversationCallEventTopicQueueMediaSettings
+        """
+        return self._queue_media_settings
+
+    @queue_media_settings.setter
+    def queue_media_settings(self, queue_media_settings: 'ConversationCallEventTopicQueueMediaSettings') -> None:
+        """
+        Sets the queue_media_settings of this ConversationCallEventTopicCallMediaParticipant.
+
+
+        :param queue_media_settings: The queue_media_settings of this ConversationCallEventTopicCallMediaParticipant.
+        :type: ConversationCallEventTopicQueueMediaSettings
+        """
+        
+
+        self._queue_media_settings = queue_media_settings
 
     @property
     def muted(self) -> bool:

@@ -52,6 +52,7 @@ class RoutingData(object):
         self.swagger_types = {
             'queue_id': 'str',
             'language_id': 'str',
+            'label': 'str',
             'priority': 'int',
             'skill_ids': 'list[str]',
             'preferred_agent_ids': 'list[str]',
@@ -62,6 +63,7 @@ class RoutingData(object):
         self.attribute_map = {
             'queue_id': 'queueId',
             'language_id': 'languageId',
+            'label': 'label',
             'priority': 'priority',
             'skill_ids': 'skillIds',
             'preferred_agent_ids': 'preferredAgentIds',
@@ -71,6 +73,7 @@ class RoutingData(object):
 
         self._queue_id = None
         self._language_id = None
+        self._label = None
         self._priority = None
         self._skill_ids = None
         self._preferred_agent_ids = None
@@ -124,6 +127,30 @@ class RoutingData(object):
         
 
         self._language_id = language_id
+
+    @property
+    def label(self) -> str:
+        """
+        Gets the label of this RoutingData.
+        An optional label that categorizes the conversation.  Max-utilization settings can be configured at a per-label level
+
+        :return: The label of this RoutingData.
+        :rtype: str
+        """
+        return self._label
+
+    @label.setter
+    def label(self, label: str) -> None:
+        """
+        Sets the label of this RoutingData.
+        An optional label that categorizes the conversation.  Max-utilization settings can be configured at a per-label level
+
+        :param label: The label of this RoutingData.
+        :type: str
+        """
+        
+
+        self._label = label
 
     @property
     def priority(self) -> int:

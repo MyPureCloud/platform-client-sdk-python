@@ -37,6 +37,7 @@ if TYPE_CHECKING:
     from . import ConversationCallbackEventTopicDialerPreview
     from . import ConversationCallbackEventTopicErrorBody
     from . import ConversationCallbackEventTopicJourneyContext
+    from . import ConversationCallbackEventTopicQueueMediaSettings
     from . import ConversationCallbackEventTopicUriReference
     from . import ConversationCallbackEventTopicVoicemail
     from . import ConversationCallbackEventTopicWrapup
@@ -92,6 +93,7 @@ class ConversationCallbackEventTopicCallbackMediaParticipant(object):
             'start_acw_time': 'datetime',
             'end_acw_time': 'datetime',
             'media_roles': 'list[str]',
+            'queue_media_settings': 'ConversationCallbackEventTopicQueueMediaSettings',
             'outbound_preview': 'ConversationCallbackEventTopicDialerPreview',
             'voicemail': 'ConversationCallbackEventTopicVoicemail',
             'callback_numbers': 'list[str]',
@@ -140,6 +142,7 @@ class ConversationCallbackEventTopicCallbackMediaParticipant(object):
             'start_acw_time': 'startAcwTime',
             'end_acw_time': 'endAcwTime',
             'media_roles': 'mediaRoles',
+            'queue_media_settings': 'queueMediaSettings',
             'outbound_preview': 'outboundPreview',
             'voicemail': 'voicemail',
             'callback_numbers': 'callbackNumbers',
@@ -187,6 +190,7 @@ class ConversationCallbackEventTopicCallbackMediaParticipant(object):
         self._start_acw_time = None
         self._end_acw_time = None
         self._media_roles = None
+        self._queue_media_settings = None
         self._outbound_preview = None
         self._voicemail = None
         self._callback_numbers = None
@@ -1085,6 +1089,30 @@ class ConversationCallbackEventTopicCallbackMediaParticipant(object):
         
 
         self._media_roles = media_roles
+
+    @property
+    def queue_media_settings(self) -> 'ConversationCallbackEventTopicQueueMediaSettings':
+        """
+        Gets the queue_media_settings of this ConversationCallbackEventTopicCallbackMediaParticipant.
+
+
+        :return: The queue_media_settings of this ConversationCallbackEventTopicCallbackMediaParticipant.
+        :rtype: ConversationCallbackEventTopicQueueMediaSettings
+        """
+        return self._queue_media_settings
+
+    @queue_media_settings.setter
+    def queue_media_settings(self, queue_media_settings: 'ConversationCallbackEventTopicQueueMediaSettings') -> None:
+        """
+        Sets the queue_media_settings of this ConversationCallbackEventTopicCallbackMediaParticipant.
+
+
+        :param queue_media_settings: The queue_media_settings of this ConversationCallbackEventTopicCallbackMediaParticipant.
+        :type: ConversationCallbackEventTopicQueueMediaSettings
+        """
+        
+
+        self._queue_media_settings = queue_media_settings
 
     @property
     def outbound_preview(self) -> 'ConversationCallbackEventTopicDialerPreview':

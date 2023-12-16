@@ -20,6 +20,7 @@ title: CreateCallRequest
 | **participants** | [**list[Destination]**](Destination.html) | The list of participants to call to create a new ad-hoc conference. | [optional] |
 | **uui_data** | **str** | User to User Information (UUI) data managed by SIP session application. | [optional] |
 | **external_contact_id** | **str** | The external contact with which to associate the call. | [optional] |
+| **label** | **str** | An optional label that categorizes the conversation.  Max-utilization settings can be configured at a per-label level | [optional] |
 {: class="table table-striped"}
 
 

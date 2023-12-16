@@ -33,7 +33,6 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
-    from . import DomainEntityListingEvaluationForm
     from . import EvaluationQuestionGroup
 
 class EvaluationFormResponse(object):
@@ -57,7 +56,7 @@ class EvaluationFormResponse(object):
             'published': 'bool',
             'context_id': 'str',
             'question_groups': 'list[EvaluationQuestionGroup]',
-            'published_versions': 'DomainEntityListingEvaluationForm',
+            'weight_mode': 'str',
             'self_uri': 'str'
         }
 
@@ -68,7 +67,7 @@ class EvaluationFormResponse(object):
             'published': 'published',
             'context_id': 'contextId',
             'question_groups': 'questionGroups',
-            'published_versions': 'publishedVersions',
+            'weight_mode': 'weightMode',
             'self_uri': 'selfUri'
         }
 
@@ -78,7 +77,7 @@ class EvaluationFormResponse(object):
         self._published = None
         self._context_id = None
         self._question_groups = None
-        self._published_versions = None
+        self._weight_mode = None
         self._self_uri = None
 
     @property
@@ -226,28 +225,33 @@ class EvaluationFormResponse(object):
         self._question_groups = question_groups
 
     @property
-    def published_versions(self) -> 'DomainEntityListingEvaluationForm':
+    def weight_mode(self) -> str:
         """
-        Gets the published_versions of this EvaluationFormResponse.
+        Gets the weight_mode of this EvaluationFormResponse.
+        Mode for evaluation form weight
 
-
-        :return: The published_versions of this EvaluationFormResponse.
-        :rtype: DomainEntityListingEvaluationForm
+        :return: The weight_mode of this EvaluationFormResponse.
+        :rtype: str
         """
-        return self._published_versions
+        return self._weight_mode
 
-    @published_versions.setter
-    def published_versions(self, published_versions: 'DomainEntityListingEvaluationForm') -> None:
+    @weight_mode.setter
+    def weight_mode(self, weight_mode: str) -> None:
         """
-        Sets the published_versions of this EvaluationFormResponse.
+        Sets the weight_mode of this EvaluationFormResponse.
+        Mode for evaluation form weight
 
-
-        :param published_versions: The published_versions of this EvaluationFormResponse.
-        :type: DomainEntityListingEvaluationForm
+        :param weight_mode: The weight_mode of this EvaluationFormResponse.
+        :type: str
         """
-        
-
-        self._published_versions = published_versions
+        if isinstance(weight_mode, int):
+            weight_mode = str(weight_mode)
+        allowed_values = ["SCALED", "OFF"]
+        if weight_mode.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for weight_mode -> " + weight_mode)
+            self._weight_mode = "outdated_sdk_version"
+        else:
+            self._weight_mode = weight_mode
 
     @property
     def self_uri(self) -> str:

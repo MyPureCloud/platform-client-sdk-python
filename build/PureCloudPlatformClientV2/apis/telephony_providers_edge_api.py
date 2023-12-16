@@ -2383,9 +2383,10 @@ class TelephonyProvidersEdgeApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("get_telephony_providers_edges_availablelanguages is deprecated")
     def get_telephony_providers_edges_availablelanguages(self, **kwargs) -> 'AvailableLanguageList':
         """
-        Get the list of available languages.
+        Get the list of available languages. For never released keyword spotting feature. Deprecated, do not use.
         
 
         This method makes a synchronous HTTP request by default. To make an

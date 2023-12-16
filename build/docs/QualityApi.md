@@ -1096,7 +1096,7 @@ except ApiException as e:
 
 <a name="get_quality_form"></a>
 
-## [**EvaluationForm**](EvaluationForm.html) get_quality_form(form_id)
+## [**EvaluationFormResponse**](EvaluationFormResponse.html) get_quality_form(form_id)
 
 <span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
@@ -1141,11 +1141,11 @@ except ApiException as e:
 
 ### Return type
 
-[**EvaluationForm**](EvaluationForm.html)
+[**EvaluationFormResponse**](EvaluationFormResponse.html)
 
 <a name="get_quality_form_versions"></a>
 
-## [**EvaluationFormEntityListing**](EvaluationFormEntityListing.html) get_quality_form_versions(form_id, page_size=page_size, page_number=page_number)
+## [**EvaluationFormResponseEntityListing**](EvaluationFormResponseEntityListing.html) get_quality_form_versions(form_id, page_size=page_size, page_number=page_number)
 
 <span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
@@ -1194,11 +1194,11 @@ except ApiException as e:
 
 ### Return type
 
-[**EvaluationFormEntityListing**](EvaluationFormEntityListing.html)
+[**EvaluationFormResponseEntityListing**](EvaluationFormResponseEntityListing.html)
 
 <a name="get_quality_forms"></a>
 
-## [**EvaluationFormEntityListing**](EvaluationFormEntityListing.html) get_quality_forms(page_size=page_size, page_number=page_number, sort_by=sort_by, next_page=next_page, previous_page=previous_page, expand=expand, name=name, sort_order=sort_order)
+## [**EvaluationFormResponseEntityListing**](EvaluationFormResponseEntityListing.html) get_quality_forms(page_size=page_size, page_number=page_number, sort_by=sort_by, next_page=next_page, previous_page=previous_page, expand=expand, name=name, sort_order=sort_order)
 
 <span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
@@ -1257,11 +1257,11 @@ except ApiException as e:
 
 ### Return type
 
-[**EvaluationFormEntityListing**](EvaluationFormEntityListing.html)
+[**EvaluationFormResponseEntityListing**](EvaluationFormResponseEntityListing.html)
 
 <a name="get_quality_forms_evaluation"></a>
 
-## [**EvaluationForm**](EvaluationForm.html) get_quality_forms_evaluation(form_id)
+## [**EvaluationFormResponse**](EvaluationFormResponse.html) get_quality_forms_evaluation(form_id)
 
 
 
@@ -1306,11 +1306,11 @@ except ApiException as e:
 
 ### Return type
 
-[**EvaluationForm**](EvaluationForm.html)
+[**EvaluationFormResponse**](EvaluationFormResponse.html)
 
 <a name="get_quality_forms_evaluation_versions"></a>
 
-## [**EvaluationFormEntityListing**](EvaluationFormEntityListing.html) get_quality_forms_evaluation_versions(form_id, page_size=page_size, page_number=page_number, sort_order=sort_order)
+## [**EvaluationFormResponseEntityListing**](EvaluationFormResponseEntityListing.html) get_quality_forms_evaluation_versions(form_id, page_size=page_size, page_number=page_number, sort_order=sort_order)
 
 
 
@@ -1361,11 +1361,11 @@ except ApiException as e:
 
 ### Return type
 
-[**EvaluationFormEntityListing**](EvaluationFormEntityListing.html)
+[**EvaluationFormResponseEntityListing**](EvaluationFormResponseEntityListing.html)
 
 <a name="get_quality_forms_evaluations"></a>
 
-## [**EvaluationFormEntityListing**](EvaluationFormEntityListing.html) get_quality_forms_evaluations(page_size=page_size, page_number=page_number, sort_by=sort_by, next_page=next_page, previous_page=previous_page, expand=expand, name=name, sort_order=sort_order)
+## [**EvaluationFormResponseEntityListing**](EvaluationFormResponseEntityListing.html) get_quality_forms_evaluations(page_size=page_size, page_number=page_number, sort_by=sort_by, next_page=next_page, previous_page=previous_page, expand=expand, name=name, sort_order=sort_order)
 
 
 
@@ -1426,11 +1426,11 @@ except ApiException as e:
 
 ### Return type
 
-[**EvaluationFormEntityListing**](EvaluationFormEntityListing.html)
+[**EvaluationFormResponseEntityListing**](EvaluationFormResponseEntityListing.html)
 
 <a name="get_quality_forms_evaluations_bulk_contexts"></a>
 
-## [**list[EvaluationForm]**](EvaluationForm.html) get_quality_forms_evaluations_bulk_contexts(context_id)
+## [**list[EvaluationFormResponse]**](EvaluationFormResponse.html) get_quality_forms_evaluations_bulk_contexts(context_id)
 
 
 
@@ -1475,7 +1475,7 @@ except ApiException as e:
 
 ### Return type
 
-[**list[EvaluationForm]**](EvaluationForm.html)
+[**list[EvaluationFormResponse]**](EvaluationFormResponse.html)
 
 <a name="get_quality_forms_survey"></a>
 
@@ -1744,7 +1744,7 @@ except ApiException as e:
 
 <a name="get_quality_publishedform"></a>
 
-## [**EvaluationForm**](EvaluationForm.html) get_quality_publishedform(form_id)
+## [**EvaluationFormResponse**](EvaluationFormResponse.html) get_quality_publishedform(form_id)
 
 <span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
@@ -1789,11 +1789,11 @@ except ApiException as e:
 
 ### Return type
 
-[**EvaluationForm**](EvaluationForm.html)
+[**EvaluationFormResponse**](EvaluationFormResponse.html)
 
 <a name="get_quality_publishedforms"></a>
 
-## [**EvaluationFormEntityListing**](EvaluationFormEntityListing.html) get_quality_publishedforms(page_size=page_size, page_number=page_number, name=name, only_latest_per_context=only_latest_per_context)
+## [**EvaluationFormResponseEntityListing**](EvaluationFormResponseEntityListing.html) get_quality_publishedforms(page_size=page_size, page_number=page_number, name=name, only_latest_per_context=only_latest_per_context)
 
 <span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
@@ -1844,11 +1844,11 @@ except ApiException as e:
 
 ### Return type
 
-[**EvaluationFormEntityListing**](EvaluationFormEntityListing.html)
+[**EvaluationFormResponseEntityListing**](EvaluationFormResponseEntityListing.html)
 
 <a name="get_quality_publishedforms_evaluation"></a>
 
-## [**EvaluationForm**](EvaluationForm.html) get_quality_publishedforms_evaluation(form_id)
+## [**EvaluationFormResponse**](EvaluationFormResponse.html) get_quality_publishedforms_evaluation(form_id)
 
 
 
@@ -1893,11 +1893,11 @@ except ApiException as e:
 
 ### Return type
 
-[**EvaluationForm**](EvaluationForm.html)
+[**EvaluationFormResponse**](EvaluationFormResponse.html)
 
 <a name="get_quality_publishedforms_evaluations"></a>
 
-## [**EvaluationFormEntityListing**](EvaluationFormEntityListing.html) get_quality_publishedforms_evaluations(page_size=page_size, page_number=page_number, name=name, only_latest_per_context=only_latest_per_context)
+## [**EvaluationFormResponseEntityListing**](EvaluationFormResponseEntityListing.html) get_quality_publishedforms_evaluations(page_size=page_size, page_number=page_number, name=name, only_latest_per_context=only_latest_per_context)
 
 
 
@@ -1948,7 +1948,7 @@ except ApiException as e:
 
 ### Return type
 
-[**EvaluationFormEntityListing**](EvaluationFormEntityListing.html)
+[**EvaluationFormResponseEntityListing**](EvaluationFormResponseEntityListing.html)
 
 <a name="get_quality_publishedforms_survey"></a>
 
@@ -2650,7 +2650,7 @@ except ApiException as e:
 
 <a name="post_quality_forms"></a>
 
-## [**EvaluationForm**](EvaluationForm.html) post_quality_forms(body)
+## [**EvaluationFormResponse**](EvaluationFormResponse.html) post_quality_forms(body)
 
 <span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
@@ -2695,11 +2695,11 @@ except ApiException as e:
 
 ### Return type
 
-[**EvaluationForm**](EvaluationForm.html)
+[**EvaluationFormResponse**](EvaluationFormResponse.html)
 
 <a name="post_quality_forms_evaluations"></a>
 
-## [**EvaluationForm**](EvaluationForm.html) post_quality_forms_evaluations(body)
+## [**EvaluationFormResponse**](EvaluationFormResponse.html) post_quality_forms_evaluations(body)
 
 
 
@@ -2744,7 +2744,7 @@ except ApiException as e:
 
 ### Return type
 
-[**EvaluationForm**](EvaluationForm.html)
+[**EvaluationFormResponse**](EvaluationFormResponse.html)
 
 <a name="post_quality_forms_surveys"></a>
 
@@ -2797,7 +2797,7 @@ except ApiException as e:
 
 <a name="post_quality_publishedforms"></a>
 
-## [**EvaluationForm**](EvaluationForm.html) post_quality_publishedforms(body)
+## [**EvaluationFormResponse**](EvaluationFormResponse.html) post_quality_publishedforms(body)
 
 <span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
@@ -2842,11 +2842,11 @@ except ApiException as e:
 
 ### Return type
 
-[**EvaluationForm**](EvaluationForm.html)
+[**EvaluationFormResponse**](EvaluationFormResponse.html)
 
 <a name="post_quality_publishedforms_evaluations"></a>
 
-## [**EvaluationForm**](EvaluationForm.html) post_quality_publishedforms_evaluations(body)
+## [**EvaluationFormResponse**](EvaluationFormResponse.html) post_quality_publishedforms_evaluations(body)
 
 
 
@@ -2891,7 +2891,7 @@ except ApiException as e:
 
 ### Return type
 
-[**EvaluationForm**](EvaluationForm.html)
+[**EvaluationFormResponse**](EvaluationFormResponse.html)
 
 <a name="post_quality_publishedforms_surveys"></a>
 
@@ -3102,7 +3102,7 @@ except ApiException as e:
 
 <a name="put_quality_form"></a>
 
-## [**EvaluationForm**](EvaluationForm.html) put_quality_form(form_id, body)
+## [**EvaluationFormResponse**](EvaluationFormResponse.html) put_quality_form(form_id, body)
 
 <span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
@@ -3149,11 +3149,11 @@ except ApiException as e:
 
 ### Return type
 
-[**EvaluationForm**](EvaluationForm.html)
+[**EvaluationFormResponse**](EvaluationFormResponse.html)
 
 <a name="put_quality_forms_evaluation"></a>
 
-## [**EvaluationForm**](EvaluationForm.html) put_quality_forms_evaluation(form_id, body)
+## [**EvaluationFormResponse**](EvaluationFormResponse.html) put_quality_forms_evaluation(form_id, body)
 
 
 
@@ -3200,7 +3200,7 @@ except ApiException as e:
 
 ### Return type
 
-[**EvaluationForm**](EvaluationForm.html)
+[**EvaluationFormResponse**](EvaluationFormResponse.html)
 
 <a name="put_quality_forms_survey"></a>
 

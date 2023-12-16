@@ -36,6 +36,7 @@ if TYPE_CHECKING:
     from . import ConversationCobrowseEventTopicConversationRoutingData
     from . import ConversationCobrowseEventTopicErrorBody
     from . import ConversationCobrowseEventTopicJourneyContext
+    from . import ConversationCobrowseEventTopicQueueMediaSettings
     from . import ConversationCobrowseEventTopicUriReference
     from . import ConversationCobrowseEventTopicWrapup
 
@@ -90,6 +91,7 @@ class ConversationCobrowseEventTopicCobrowseMediaParticipant(object):
             'start_acw_time': 'datetime',
             'end_acw_time': 'datetime',
             'media_roles': 'list[str]',
+            'queue_media_settings': 'ConversationCobrowseEventTopicQueueMediaSettings',
             'cobrowse_session_id': 'str',
             'cobrowse_role': 'str',
             'viewer_url': 'str',
@@ -134,6 +136,7 @@ class ConversationCobrowseEventTopicCobrowseMediaParticipant(object):
             'start_acw_time': 'startAcwTime',
             'end_acw_time': 'endAcwTime',
             'media_roles': 'mediaRoles',
+            'queue_media_settings': 'queueMediaSettings',
             'cobrowse_session_id': 'cobrowseSessionId',
             'cobrowse_role': 'cobrowseRole',
             'viewer_url': 'viewerUrl',
@@ -177,6 +180,7 @@ class ConversationCobrowseEventTopicCobrowseMediaParticipant(object):
         self._start_acw_time = None
         self._end_acw_time = None
         self._media_roles = None
+        self._queue_media_settings = None
         self._cobrowse_session_id = None
         self._cobrowse_role = None
         self._viewer_url = None
@@ -1071,6 +1075,30 @@ class ConversationCobrowseEventTopicCobrowseMediaParticipant(object):
         
 
         self._media_roles = media_roles
+
+    @property
+    def queue_media_settings(self) -> 'ConversationCobrowseEventTopicQueueMediaSettings':
+        """
+        Gets the queue_media_settings of this ConversationCobrowseEventTopicCobrowseMediaParticipant.
+
+
+        :return: The queue_media_settings of this ConversationCobrowseEventTopicCobrowseMediaParticipant.
+        :rtype: ConversationCobrowseEventTopicQueueMediaSettings
+        """
+        return self._queue_media_settings
+
+    @queue_media_settings.setter
+    def queue_media_settings(self, queue_media_settings: 'ConversationCobrowseEventTopicQueueMediaSettings') -> None:
+        """
+        Sets the queue_media_settings of this ConversationCobrowseEventTopicCobrowseMediaParticipant.
+
+
+        :param queue_media_settings: The queue_media_settings of this ConversationCobrowseEventTopicCobrowseMediaParticipant.
+        :type: ConversationCobrowseEventTopicQueueMediaSettings
+        """
+        
+
+        self._queue_media_settings = queue_media_settings
 
     @property
     def cobrowse_session_id(self) -> str:

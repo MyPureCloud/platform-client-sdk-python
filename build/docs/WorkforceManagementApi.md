@@ -46,12 +46,15 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_workforcemanagement_businessunit_week_schedule_generationresults**](WorkforceManagementApi.html#get_workforcemanagement_businessunit_week_schedule_generationresults) | Get the generation results for a generated schedule|
 |[**get_workforcemanagement_businessunit_week_schedule_headcountforecast**](WorkforceManagementApi.html#get_workforcemanagement_businessunit_week_schedule_headcountforecast) | Get the headcount forecast by planning group for the schedule|
 |[**get_workforcemanagement_businessunit_week_schedule_history_agent**](WorkforceManagementApi.html#get_workforcemanagement_businessunit_week_schedule_history_agent) | Loads agent&#39;s schedule history.|
+|[**get_workforcemanagement_businessunit_week_schedule_performancepredictions**](WorkforceManagementApi.html#get_workforcemanagement_businessunit_week_schedule_performancepredictions) | Get the performance prediction for the associated schedule|
+|[**get_workforcemanagement_businessunit_week_schedule_performancepredictions_recalculation**](WorkforceManagementApi.html#get_workforcemanagement_businessunit_week_schedule_performancepredictions_recalculation) | Get recalculated performance prediction result|
 |[**get_workforcemanagement_businessunit_week_schedules**](WorkforceManagementApi.html#get_workforcemanagement_businessunit_week_schedules) | Get the list of week schedules for the specified week|
 |[**get_workforcemanagement_businessunit_week_shorttermforecast**](WorkforceManagementApi.html#get_workforcemanagement_businessunit_week_shorttermforecast) | Get a short term forecast|
 |[**get_workforcemanagement_businessunit_week_shorttermforecast_data**](WorkforceManagementApi.html#get_workforcemanagement_businessunit_week_shorttermforecast_data) | Get the result of a short term forecast calculation|
 |[**get_workforcemanagement_businessunit_week_shorttermforecast_generationresults**](WorkforceManagementApi.html#get_workforcemanagement_businessunit_week_shorttermforecast_generationresults) | Gets the forecast generation results|
 |[**get_workforcemanagement_businessunit_week_shorttermforecast_longtermforecastdata**](WorkforceManagementApi.html#get_workforcemanagement_businessunit_week_shorttermforecast_longtermforecastdata) | Get the result of a long term forecast calculation|
 |[**get_workforcemanagement_businessunit_week_shorttermforecast_planninggroups**](WorkforceManagementApi.html#get_workforcemanagement_businessunit_week_shorttermforecast_planninggroups) | Gets the forecast planning group snapshot|
+|[**get_workforcemanagement_businessunit_week_shorttermforecast_staffingrequirement**](WorkforceManagementApi.html#get_workforcemanagement_businessunit_week_shorttermforecast_staffingrequirement) | Get the staffing requirement by planning group for a forecast|
 |[**get_workforcemanagement_businessunit_week_shorttermforecasts**](WorkforceManagementApi.html#get_workforcemanagement_businessunit_week_shorttermforecasts) | Get short term forecasts|
 |[**get_workforcemanagement_businessunits**](WorkforceManagementApi.html#get_workforcemanagement_businessunits) | Get business units|
 |[**get_workforcemanagement_businessunits_divisionviews**](WorkforceManagementApi.html#get_workforcemanagement_businessunits_divisionviews) | Get business units across divisions|
@@ -100,6 +103,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**patch_workforcemanagement_businessunit_scheduling_run**](WorkforceManagementApi.html#patch_workforcemanagement_businessunit_scheduling_run) | Mark a schedule run as applied|
 |[**patch_workforcemanagement_businessunit_servicegoaltemplate**](WorkforceManagementApi.html#patch_workforcemanagement_businessunit_servicegoaltemplate) | Updates a service goal template|
 |[**patch_workforcemanagement_managementunit**](WorkforceManagementApi.html#patch_workforcemanagement_managementunit) | Update the requested management unit|
+|[**patch_workforcemanagement_managementunit_agents**](WorkforceManagementApi.html#patch_workforcemanagement_managementunit_agents) | Update agent configurations|
 |[**patch_workforcemanagement_managementunit_timeofflimit**](WorkforceManagementApi.html#patch_workforcemanagement_managementunit_timeofflimit) | Updates a time off limit object.|
 |[**patch_workforcemanagement_managementunit_timeoffplan**](WorkforceManagementApi.html#patch_workforcemanagement_managementunit_timeoffplan) | Updates a time off plan|
 |[**patch_workforcemanagement_managementunit_timeoffrequest_user_integrationstatus**](WorkforceManagementApi.html#patch_workforcemanagement_managementunit_timeoffrequest_user_integrationstatus) | Set integration status for a time off request.|
@@ -126,6 +130,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_workforcemanagement_businessunit_servicegoaltemplates**](WorkforceManagementApi.html#post_workforcemanagement_businessunit_servicegoaltemplates) | Adds a new service goal template|
 |[**post_workforcemanagement_businessunit_week_schedule_agentschedules_query**](WorkforceManagementApi.html#post_workforcemanagement_businessunit_week_schedule_agentschedules_query) | Loads agent schedule data from the schedule. Used in combination with the metadata route|
 |[**post_workforcemanagement_businessunit_week_schedule_copy**](WorkforceManagementApi.html#post_workforcemanagement_businessunit_week_schedule_copy) | Copy a schedule|
+|[**post_workforcemanagement_businessunit_week_schedule_performancepredictions_recalculations**](WorkforceManagementApi.html#post_workforcemanagement_businessunit_week_schedule_performancepredictions_recalculations) | Request a daily recalculation of the performance prediction for the associated schedule|
+|[**post_workforcemanagement_businessunit_week_schedule_performancepredictions_recalculations_uploadurl**](WorkforceManagementApi.html#post_workforcemanagement_businessunit_week_schedule_performancepredictions_recalculations_uploadurl) | Upload daily activity changes to be able to request a performance prediction recalculation|
 |[**post_workforcemanagement_businessunit_week_schedule_reschedule**](WorkforceManagementApi.html#post_workforcemanagement_businessunit_week_schedule_reschedule) | Start a rescheduling run|
 |[**post_workforcemanagement_businessunit_week_schedule_update**](WorkforceManagementApi.html#post_workforcemanagement_businessunit_week_schedule_update) | Starts processing a schedule update|
 |[**post_workforcemanagement_businessunit_week_schedule_update_uploadurl**](WorkforceManagementApi.html#post_workforcemanagement_businessunit_week_schedule_update_uploadurl) | Creates a signed upload URL for updating a schedule|
@@ -2312,6 +2318,116 @@ except ApiException as e:
 
 [**BuAgentScheduleHistoryResponse**](BuAgentScheduleHistoryResponse.html)
 
+<a name="get_workforcemanagement_businessunit_week_schedule_performancepredictions"></a>
+
+## [**PerformancePredictionResponse**](PerformancePredictionResponse.html) get_workforcemanagement_businessunit_week_schedule_performancepredictions(business_unit_id, week_id, schedule_id)
+
+
+
+Get the performance prediction for the associated schedule
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/performancepredictions 
+
+Requires ANY permissions: 
+
+* wfm:schedule:view
+* wfm:publishedSchedule:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit to which the performance prediction belongs
+week_id = 'week_id_example' # str | First day of schedule week in yyyy-MM-dd format
+schedule_id = 'schedule_id_example' # str | The ID of the schedule the performance prediction belongs to
+
+try:
+    # Get the performance prediction for the associated schedule
+    api_response = api_instance.get_workforcemanagement_businessunit_week_schedule_performancepredictions(business_unit_id, week_id, schedule_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_week_schedule_performancepredictions: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit to which the performance prediction belongs |  |
+| **week_id** | **str**| First day of schedule week in yyyy-MM-dd format |  |
+| **schedule_id** | **str**| The ID of the schedule the performance prediction belongs to |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**PerformancePredictionResponse**](PerformancePredictionResponse.html)
+
+<a name="get_workforcemanagement_businessunit_week_schedule_performancepredictions_recalculation"></a>
+
+## [**PerformancePredictionRecalculationResponse**](PerformancePredictionRecalculationResponse.html) get_workforcemanagement_businessunit_week_schedule_performancepredictions_recalculation(business_unit_id, week_id, schedule_id, recalculation_id)
+
+
+
+Get recalculated performance prediction result
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/performancepredictions/recalculations/{recalculationId} 
+
+Requires ANY permissions: 
+
+* wfm:schedule:view
+* wfm:publishedSchedule:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit to which the performance prediction belongs
+week_id = 'week_id_example' # str | First day of schedule week in yyyy-MM-dd format
+schedule_id = 'schedule_id_example' # str | The ID of the schedule the recalculation belongs to
+recalculation_id = 'recalculation_id_example' # str | The ID of the recalculation request
+
+try:
+    # Get recalculated performance prediction result
+    api_response = api_instance.get_workforcemanagement_businessunit_week_schedule_performancepredictions_recalculation(business_unit_id, week_id, schedule_id, recalculation_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_week_schedule_performancepredictions_recalculation: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit to which the performance prediction belongs |  |
+| **week_id** | **str**| First day of schedule week in yyyy-MM-dd format |  |
+| **schedule_id** | **str**| The ID of the schedule the recalculation belongs to |  |
+| **recalculation_id** | **str**| The ID of the recalculation request |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**PerformancePredictionRecalculationResponse**](PerformancePredictionRecalculationResponse.html)
+
 <a name="get_workforcemanagement_businessunit_week_schedules"></a>
 
 ## [**BuScheduleListing**](BuScheduleListing.html) get_workforcemanagement_businessunit_week_schedules(business_unit_id, week_id, include_only_published=include_only_published, expand=expand)
@@ -2648,6 +2764,61 @@ except ApiException as e:
 ### Return type
 
 [**ForecastPlanningGroupsResponse**](ForecastPlanningGroupsResponse.html)
+
+<a name="get_workforcemanagement_businessunit_week_shorttermforecast_staffingrequirement"></a>
+
+## [**BuForecastStaffingRequirementsResultResponse**](BuForecastStaffingRequirementsResultResponse.html) get_workforcemanagement_businessunit_week_shorttermforecast_staffingrequirement(business_unit_id, week_date_id, forecast_id, week_numbers=week_numbers)
+
+
+
+Get the staffing requirement by planning group for a forecast
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekDateId}/shorttermforecasts/{forecastId}/staffingrequirement 
+
+Requires ANY permissions: 
+
+* wfm:staffingRequirement:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit to which the forecast belongs
+week_date_id = '2013-10-20' # date | The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+forecast_id = 'forecast_id_example' # str | The ID of the forecast
+week_numbers = ['week_numbers_example'] # list[str] | The week numbers to fetch (for multi-week forecasts) staffing requirements. Returns all week data if the list is not specified (optional)
+
+try:
+    # Get the staffing requirement by planning group for a forecast
+    api_response = api_instance.get_workforcemanagement_businessunit_week_shorttermforecast_staffingrequirement(business_unit_id, week_date_id, forecast_id, week_numbers=week_numbers)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_week_shorttermforecast_staffingrequirement: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit to which the forecast belongs |  |
+| **week_date_id** | **date**| The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
+| **forecast_id** | **str**| The ID of the forecast |  |
+| **week_numbers** | [**list[str]**](str.html)| The week numbers to fetch (for multi-week forecasts) staffing requirements. Returns all week data if the list is not specified | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**BuForecastStaffingRequirementsResultResponse**](BuForecastStaffingRequirementsResultResponse.html)
 
 <a name="get_workforcemanagement_businessunit_week_shorttermforecasts"></a>
 
@@ -5203,6 +5374,56 @@ except ApiException as e:
 
 [**ManagementUnit**](ManagementUnit.html)
 
+<a name="patch_workforcemanagement_managementunit_agents"></a>
+
+##  patch_workforcemanagement_managementunit_agents(management_unit_id, body=body)
+
+
+
+Update agent configurations
+
+Wraps PATCH /api/v2/workforcemanagement/managementunits/{managementUnitId}/agents 
+
+Requires ANY permissions: 
+
+* wfm:agent:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+management_unit_id = 'management_unit_id_example' # str | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
+body = PureCloudPlatformClientV2.UpdateMuAgentsRequest() # UpdateMuAgentsRequest | body (optional)
+
+try:
+    # Update agent configurations
+    api_instance.patch_workforcemanagement_managementunit_agents(management_unit_id, body=body)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->patch_workforcemanagement_managementunit_agents: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **management_unit_id** | **str**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
+| **body** | [**UpdateMuAgentsRequest**](UpdateMuAgentsRequest.html)| body | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
+
 <a name="patch_workforcemanagement_managementunit_timeofflimit"></a>
 
 ## [**TimeOffLimit**](TimeOffLimit.html) patch_workforcemanagement_managementunit_timeofflimit(management_unit_id, time_off_limit_id, body=body)
@@ -6568,6 +6789,116 @@ except ApiException as e:
 ### Return type
 
 [**BuAsyncScheduleResponse**](BuAsyncScheduleResponse.html)
+
+<a name="post_workforcemanagement_businessunit_week_schedule_performancepredictions_recalculations"></a>
+
+## [**PerformancePredictionRecalculationResponse**](PerformancePredictionRecalculationResponse.html) post_workforcemanagement_businessunit_week_schedule_performancepredictions_recalculations(business_unit_id, week_id, schedule_id, body=body)
+
+
+
+Request a daily recalculation of the performance prediction for the associated schedule
+
+Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/performancepredictions/recalculations 
+
+Requires ANY permissions: 
+
+* wfm:schedule:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit to which the performance prediction belongs
+week_id = 'week_id_example' # str | First day of schedule week in yyyy-MM-dd format
+schedule_id = 'schedule_id_example' # str | The ID of the schedule the performance prediction belongs to
+body = PureCloudPlatformClientV2.WfmProcessUploadRequest() # WfmProcessUploadRequest | body (optional)
+
+try:
+    # Request a daily recalculation of the performance prediction for the associated schedule
+    api_response = api_instance.post_workforcemanagement_businessunit_week_schedule_performancepredictions_recalculations(business_unit_id, week_id, schedule_id, body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_businessunit_week_schedule_performancepredictions_recalculations: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit to which the performance prediction belongs |  |
+| **week_id** | **str**| First day of schedule week in yyyy-MM-dd format |  |
+| **schedule_id** | **str**| The ID of the schedule the performance prediction belongs to |  |
+| **body** | [**WfmProcessUploadRequest**](WfmProcessUploadRequest.html)| body | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**PerformancePredictionRecalculationResponse**](PerformancePredictionRecalculationResponse.html)
+
+<a name="post_workforcemanagement_businessunit_week_schedule_performancepredictions_recalculations_uploadurl"></a>
+
+## [**PerformancePredictionRecalculationUploadResponse**](PerformancePredictionRecalculationUploadResponse.html) post_workforcemanagement_businessunit_week_schedule_performancepredictions_recalculations_uploadurl(business_unit_id, week_id, schedule_id, body=body)
+
+
+
+Upload daily activity changes to be able to request a performance prediction recalculation
+
+Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId}/performancepredictions/recalculations/uploadurl 
+
+Requires ANY permissions: 
+
+* wfm:schedule:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit to which the performance prediction belongs
+week_id = 'week_id_example' # str | First day of schedule week in yyyy-MM-dd format
+schedule_id = 'schedule_id_example' # str | The ID of the schedule the performance prediction belongs to
+body = PureCloudPlatformClientV2.UploadUrlRequestBody() # UploadUrlRequestBody | body (optional)
+
+try:
+    # Upload daily activity changes to be able to request a performance prediction recalculation
+    api_response = api_instance.post_workforcemanagement_businessunit_week_schedule_performancepredictions_recalculations_uploadurl(business_unit_id, week_id, schedule_id, body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_businessunit_week_schedule_performancepredictions_recalculations_uploadurl: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit to which the performance prediction belongs |  |
+| **week_id** | **str**| First day of schedule week in yyyy-MM-dd format |  |
+| **schedule_id** | **str**| The ID of the schedule the performance prediction belongs to |  |
+| **body** | [**UploadUrlRequestBody**](UploadUrlRequestBody.html)| body | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**PerformancePredictionRecalculationUploadResponse**](PerformancePredictionRecalculationUploadResponse.html)
 
 <a name="post_workforcemanagement_businessunit_week_schedule_reschedule"></a>
 

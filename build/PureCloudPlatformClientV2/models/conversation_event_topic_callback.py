@@ -35,6 +35,7 @@ from typing import Dict
 if TYPE_CHECKING:
     from . import ConversationEventTopicAfterCallWork
     from . import ConversationEventTopicDialerPreview
+    from . import ConversationEventTopicQueueMediaSettings
     from . import ConversationEventTopicVoicemail
     from . import ConversationEventTopicWrapup
 
@@ -78,7 +79,8 @@ class ConversationEventTopicCallback(object):
             'after_call_work': 'ConversationEventTopicAfterCallWork',
             'after_call_work_required': 'bool',
             'caller_id': 'str',
-            'caller_id_name': 'str'
+            'caller_id_name': 'str',
+            'queue_media_settings': 'ConversationEventTopicQueueMediaSettings'
         }
 
         self.attribute_map = {
@@ -107,7 +109,8 @@ class ConversationEventTopicCallback(object):
             'after_call_work': 'afterCallWork',
             'after_call_work_required': 'afterCallWorkRequired',
             'caller_id': 'callerId',
-            'caller_id_name': 'callerIdName'
+            'caller_id_name': 'callerIdName',
+            'queue_media_settings': 'queueMediaSettings'
         }
 
         self._state = None
@@ -136,6 +139,7 @@ class ConversationEventTopicCallback(object):
         self._after_call_work_required = None
         self._caller_id = None
         self._caller_id_name = None
+        self._queue_media_settings = None
 
     @property
     def state(self) -> str:
@@ -780,6 +784,30 @@ class ConversationEventTopicCallback(object):
         
 
         self._caller_id_name = caller_id_name
+
+    @property
+    def queue_media_settings(self) -> 'ConversationEventTopicQueueMediaSettings':
+        """
+        Gets the queue_media_settings of this ConversationEventTopicCallback.
+        Represents the queue setting for this media.
+
+        :return: The queue_media_settings of this ConversationEventTopicCallback.
+        :rtype: ConversationEventTopicQueueMediaSettings
+        """
+        return self._queue_media_settings
+
+    @queue_media_settings.setter
+    def queue_media_settings(self, queue_media_settings: 'ConversationEventTopicQueueMediaSettings') -> None:
+        """
+        Sets the queue_media_settings of this ConversationEventTopicCallback.
+        Represents the queue setting for this media.
+
+        :param queue_media_settings: The queue_media_settings of this ConversationEventTopicCallback.
+        :type: ConversationEventTopicQueueMediaSettings
+        """
+        
+
+        self._queue_media_settings = queue_media_settings
 
     def to_dict(self):
         """

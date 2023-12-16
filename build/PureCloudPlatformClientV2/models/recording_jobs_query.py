@@ -90,7 +90,7 @@ class RecordingJobsQuery(object):
     def action(self) -> str:
         """
         Gets the action of this RecordingJobsQuery.
-        Operation to perform bulk task. If the operation will cause the delete date of a recording to be older than the export date, the export date will be adjusted to the delete date. Archive action is currently not supported
+        Operation to perform bulk task. If the operation will cause the delete date of a recording to be older than the export date, the export date will be adjusted to the delete date.
 
         :return: The action of this RecordingJobsQuery.
         :rtype: str
@@ -101,7 +101,7 @@ class RecordingJobsQuery(object):
     def action(self, action: str) -> None:
         """
         Sets the action of this RecordingJobsQuery.
-        Operation to perform bulk task. If the operation will cause the delete date of a recording to be older than the export date, the export date will be adjusted to the delete date. Archive action is currently not supported
+        Operation to perform bulk task. If the operation will cause the delete date of a recording to be older than the export date, the export date will be adjusted to the delete date.
 
         :param action: The action of this RecordingJobsQuery.
         :type: str
@@ -311,7 +311,7 @@ class RecordingJobsQuery(object):
     def conversation_query(self) -> 'AsyncConversationQuery':
         """
         Gets the conversation_query of this RecordingJobsQuery.
-        Conversation Query. Note: After the recording is created, it might take up to 48 hours for the recording to be included in the submitted job query.  This result depends on the analytics data lake job completion. See also: https://developer.genesys.cloud/analyticsdatamanagement/analytics/jobs/conversation-details-job#data-availability
+        Conversation Query. Note: After the recording is created, it might take up to 48 hours for the recording to be included in the submitted job query.  This result depends on the analytics data lake job completion. See also: https://developer.genesys.cloud/analyticsdatamanagement/analytics/jobs/conversation-details-job#data-availability.This is required only when querying for conversations lesser than 5 years.
 
         :return: The conversation_query of this RecordingJobsQuery.
         :rtype: AsyncConversationQuery
@@ -322,7 +322,7 @@ class RecordingJobsQuery(object):
     def conversation_query(self, conversation_query: 'AsyncConversationQuery') -> None:
         """
         Sets the conversation_query of this RecordingJobsQuery.
-        Conversation Query. Note: After the recording is created, it might take up to 48 hours for the recording to be included in the submitted job query.  This result depends on the analytics data lake job completion. See also: https://developer.genesys.cloud/analyticsdatamanagement/analytics/jobs/conversation-details-job#data-availability
+        Conversation Query. Note: After the recording is created, it might take up to 48 hours for the recording to be included in the submitted job query.  This result depends on the analytics data lake job completion. See also: https://developer.genesys.cloud/analyticsdatamanagement/analytics/jobs/conversation-details-job#data-availability.This is required only when querying for conversations lesser than 5 years.
 
         :param conversation_query: The conversation_query of this RecordingJobsQuery.
         :type: AsyncConversationQuery

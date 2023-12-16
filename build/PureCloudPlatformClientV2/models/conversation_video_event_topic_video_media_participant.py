@@ -36,6 +36,7 @@ if TYPE_CHECKING:
     from . import ConversationVideoEventTopicConversationRoutingData
     from . import ConversationVideoEventTopicErrorBody
     from . import ConversationVideoEventTopicJourneyContext
+    from . import ConversationVideoEventTopicQueueMediaSettings
     from . import ConversationVideoEventTopicUriReference
     from . import ConversationVideoEventTopicWrapup
 
@@ -90,6 +91,7 @@ class ConversationVideoEventTopicVideoMediaParticipant(object):
             'start_acw_time': 'datetime',
             'end_acw_time': 'datetime',
             'media_roles': 'list[str]',
+            'queue_media_settings': 'ConversationVideoEventTopicQueueMediaSettings',
             'audio_muted': 'bool',
             'video_muted': 'bool',
             'sharing_screen': 'bool',
@@ -135,6 +137,7 @@ class ConversationVideoEventTopicVideoMediaParticipant(object):
             'start_acw_time': 'startAcwTime',
             'end_acw_time': 'endAcwTime',
             'media_roles': 'mediaRoles',
+            'queue_media_settings': 'queueMediaSettings',
             'audio_muted': 'audioMuted',
             'video_muted': 'videoMuted',
             'sharing_screen': 'sharingScreen',
@@ -179,6 +182,7 @@ class ConversationVideoEventTopicVideoMediaParticipant(object):
         self._start_acw_time = None
         self._end_acw_time = None
         self._media_roles = None
+        self._queue_media_settings = None
         self._audio_muted = None
         self._video_muted = None
         self._sharing_screen = None
@@ -1074,6 +1078,30 @@ class ConversationVideoEventTopicVideoMediaParticipant(object):
         
 
         self._media_roles = media_roles
+
+    @property
+    def queue_media_settings(self) -> 'ConversationVideoEventTopicQueueMediaSettings':
+        """
+        Gets the queue_media_settings of this ConversationVideoEventTopicVideoMediaParticipant.
+
+
+        :return: The queue_media_settings of this ConversationVideoEventTopicVideoMediaParticipant.
+        :rtype: ConversationVideoEventTopicQueueMediaSettings
+        """
+        return self._queue_media_settings
+
+    @queue_media_settings.setter
+    def queue_media_settings(self, queue_media_settings: 'ConversationVideoEventTopicQueueMediaSettings') -> None:
+        """
+        Sets the queue_media_settings of this ConversationVideoEventTopicVideoMediaParticipant.
+
+
+        :param queue_media_settings: The queue_media_settings of this ConversationVideoEventTopicVideoMediaParticipant.
+        :type: ConversationVideoEventTopicQueueMediaSettings
+        """
+        
+
+        self._queue_media_settings = queue_media_settings
 
     @property
     def audio_muted(self) -> bool:

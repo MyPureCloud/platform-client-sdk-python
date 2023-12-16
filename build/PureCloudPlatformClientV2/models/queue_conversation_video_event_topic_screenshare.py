@@ -35,6 +35,7 @@ from typing import Dict
 if TYPE_CHECKING:
     from . import QueueConversationVideoEventTopicAddress
     from . import QueueConversationVideoEventTopicAfterCallWork
+    from . import QueueConversationVideoEventTopicQueueMediaSettings
     from . import QueueConversationVideoEventTopicWrapup
 
 class QueueConversationVideoEventTopicScreenshare(object):
@@ -67,7 +68,8 @@ class QueueConversationVideoEventTopicScreenshare(object):
             'disconnected_time': 'datetime',
             'wrapup': 'QueueConversationVideoEventTopicWrapup',
             'after_call_work': 'QueueConversationVideoEventTopicAfterCallWork',
-            'after_call_work_required': 'bool'
+            'after_call_work_required': 'bool',
+            'queue_media_settings': 'QueueConversationVideoEventTopicQueueMediaSettings'
         }
 
         self.attribute_map = {
@@ -86,7 +88,8 @@ class QueueConversationVideoEventTopicScreenshare(object):
             'disconnected_time': 'disconnectedTime',
             'wrapup': 'wrapup',
             'after_call_work': 'afterCallWork',
-            'after_call_work_required': 'afterCallWorkRequired'
+            'after_call_work_required': 'afterCallWorkRequired',
+            'queue_media_settings': 'queueMediaSettings'
         }
 
         self._state = None
@@ -105,6 +108,7 @@ class QueueConversationVideoEventTopicScreenshare(object):
         self._wrapup = None
         self._after_call_work = None
         self._after_call_work_required = None
+        self._queue_media_settings = None
 
     @property
     def state(self) -> str:
@@ -504,6 +508,30 @@ class QueueConversationVideoEventTopicScreenshare(object):
         
 
         self._after_call_work_required = after_call_work_required
+
+    @property
+    def queue_media_settings(self) -> 'QueueConversationVideoEventTopicQueueMediaSettings':
+        """
+        Gets the queue_media_settings of this QueueConversationVideoEventTopicScreenshare.
+        Represents the queue setting for this media.
+
+        :return: The queue_media_settings of this QueueConversationVideoEventTopicScreenshare.
+        :rtype: QueueConversationVideoEventTopicQueueMediaSettings
+        """
+        return self._queue_media_settings
+
+    @queue_media_settings.setter
+    def queue_media_settings(self, queue_media_settings: 'QueueConversationVideoEventTopicQueueMediaSettings') -> None:
+        """
+        Sets the queue_media_settings of this QueueConversationVideoEventTopicScreenshare.
+        Represents the queue setting for this media.
+
+        :param queue_media_settings: The queue_media_settings of this QueueConversationVideoEventTopicScreenshare.
+        :type: QueueConversationVideoEventTopicQueueMediaSettings
+        """
+        
+
+        self._queue_media_settings = queue_media_settings
 
     def to_dict(self):
         """

@@ -20,6 +20,7 @@ title: ChatMessageResponse
 | **thread** | [**Entity**](Entity.html) | The id for a thread this message corresponds to | |
 | **user** | [**AddressableEntityRef**](AddressableEntityRef.html) | The user who sent the message | [optional] |
 | **to_user** | [**AddressableEntityRef**](AddressableEntityRef.html) | The receiving user of the message | [optional] |
+| **reactions** | [**list[ChatReaction]**](ChatReaction.html) | The emoji reactions to this message | [optional] |
 {: class="table table-striped"}
 
 

@@ -35,6 +35,8 @@ import threading
 import base64
 import json
 import time
+import string
+import hashlib
 
 
 from datetime import datetime, timezone
@@ -243,6 +245,66 @@ class ApiClient(object):
 
         return self, data[0]
 
+    def generate_pkce_code_verifier(self,length):
+        """
+        Generate a random string used as PKCE Code Verifier.
+        """
+        if length < 43 or length > 128:
+            raise ValueError('PKCE Code Verifier (length) must be between 43 and 128 characters')
+        
+        # Get all the ASCII letters in lowercase and uppercase
+        unreserved_characters = string.ascii_letters + string.digits + '-' + '.' + '_'
+        # Randomly choose characters from unreserved_characters for the given length of the string
+        random_string = ''.join(random.choice(unreserved_characters) for i in range(length))
+        return random_string
+
+    def compute_pkce_code_challenge(self,code):
+        """
+        Compute PKCE Code Challenge from Code Verifier.
+        """
+        if len(code) < 43 or len(code) > 128:
+            raise ValueError('PKCE Code Verifier (length) must be between 43 and 128 characters')
+        
+        code_hash = hashlib.sha256(code.encode('ascii'))
+        return (base64.urlsafe_b64encode(code_hash.digest()).decode('ascii')).split('=')[0]
+
+    def get_pkce_token(self,client_id,code_verifier,auth_code,redirect_uri):
+        """:param client_id: Client Id to authenticate with
+         :param code_verifier: Code verifier used to generate the code challenge
+         :param auth_code: Authorization code
+         :param redirect_uri: Authorized redirect URI for your Code Authorization client
+         :return:
+         """
+
+        self.client_id = client_id
+
+        query_params = {}
+        body = None
+        url = re.sub(r'\/\/(api)\.', '//login.', self.host) + '/oauth/token'
+
+        post_params = {'grant_type': 'authorization_code',
+                       'code': auth_code,
+                       'code_verifier': code_verifier,
+                       'client_id': client_id,
+                       'redirect_uri': redirect_uri
+                       }
+
+        header_params = {
+            'Content-Type': 'application/x-www-form-urlencoded'
+        }
+        header_params = self.sanitize_for_serialization(header_params)
+        post_params = self.sanitize_for_serialization(post_params)
+
+        response = self.request("POST", url,
+                                query_params=query_params,
+                                headers=header_params,
+                                post_params=post_params, body=body)
+        data = json.loads('[' + response.data + ']')
+
+        self.access_token = data[0]["access_token"]
+
+        return self, data[0]
+
     @property
     def user_agent(self):
         """
@@ -295,7 +357,7 @@ class ApiClient(object):
             header_params['Cookie'] = self.cookie
         if header_params:
             header_params = self.sanitize_for_serialization(header_params)
-        header_params['purecloud-sdk'] = '191.0.0'
+        header_params['purecloud-sdk'] = '192.0.0'
 
         # path parameters
         if path_params:

@@ -35,6 +35,7 @@ from typing import Dict
 if TYPE_CHECKING:
     from . import AfterCallWork
     from . import Attachment
+    from . import ConversationQueueMediaSettings
     from . import ErrorBody
     from . import Segment
     from . import Wrapup
@@ -78,7 +79,8 @@ class Email(object):
             'spam': 'bool',
             'wrapup': 'Wrapup',
             'after_call_work': 'AfterCallWork',
-            'after_call_work_required': 'bool'
+            'after_call_work_required': 'bool',
+            'queue_media_settings': 'ConversationQueueMediaSettings'
         }
 
         self.attribute_map = {
@@ -106,7 +108,8 @@ class Email(object):
             'spam': 'spam',
             'wrapup': 'wrapup',
             'after_call_work': 'afterCallWork',
-            'after_call_work_required': 'afterCallWorkRequired'
+            'after_call_work_required': 'afterCallWorkRequired',
+            'queue_media_settings': 'queueMediaSettings'
         }
 
         self._state = None
@@ -134,6 +137,7 @@ class Email(object):
         self._wrapup = None
         self._after_call_work = None
         self._after_call_work_required = None
+        self._queue_media_settings = None
 
     @property
     def state(self) -> str:
@@ -754,6 +758,30 @@ class Email(object):
         
 
         self._after_call_work_required = after_call_work_required
+
+    @property
+    def queue_media_settings(self) -> 'ConversationQueueMediaSettings':
+        """
+        Gets the queue_media_settings of this Email.
+        Represents the queue settings for this media type.
+
+        :return: The queue_media_settings of this Email.
+        :rtype: ConversationQueueMediaSettings
+        """
+        return self._queue_media_settings
+
+    @queue_media_settings.setter
+    def queue_media_settings(self, queue_media_settings: 'ConversationQueueMediaSettings') -> None:
+        """
+        Sets the queue_media_settings of this Email.
+        Represents the queue settings for this media type.
+
+        :param queue_media_settings: The queue_media_settings of this Email.
+        :type: ConversationQueueMediaSettings
+        """
+        
+
+        self._queue_media_settings = queue_media_settings
 
     def to_dict(self):
         """

@@ -90,6 +90,7 @@ class Edge(object):
             'physical_edge': 'bool',
             'managed': 'bool',
             'edge_deployment_type': 'str',
+            'cert_type': 'str',
             'call_draining_state': 'str',
             'conversation_count': 'int',
             'proxy': 'str',
@@ -135,6 +136,7 @@ class Edge(object):
             'physical_edge': 'physicalEdge',
             'managed': 'managed',
             'edge_deployment_type': 'edgeDeploymentType',
+            'cert_type': 'certType',
             'call_draining_state': 'callDrainingState',
             'conversation_count': 'conversationCount',
             'proxy': 'proxy',
@@ -179,6 +181,7 @@ class Edge(object):
         self._physical_edge = None
         self._managed = None
         self._edge_deployment_type = None
+        self._cert_type = None
         self._call_draining_state = None
         self._conversation_count = None
         self._proxy = None
@@ -1069,6 +1072,35 @@ class Edge(object):
             self._edge_deployment_type = "outdated_sdk_version"
         else:
             self._edge_deployment_type = edge_deployment_type
+
+    @property
+    def cert_type(self) -> str:
+        """
+        Gets the cert_type of this Edge.
+        The type of certificate used to communicate with edge-proxy.
+
+        :return: The cert_type of this Edge.
+        :rtype: str
+        """
+        return self._cert_type
+
+    @cert_type.setter
+    def cert_type(self, cert_type: str) -> None:
+        """
+        Sets the cert_type of this Edge.
+        The type of certificate used to communicate with edge-proxy.
+
+        :param cert_type: The cert_type of this Edge.
+        :type: str
+        """
+        if isinstance(cert_type, int):
+            cert_type = str(cert_type)
+        allowed_values = ["PureCloud", "Public", "China", "NotRequested"]
+        if cert_type.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for cert_type -> " + cert_type)
+            self._cert_type = "outdated_sdk_version"
+        else:
+            self._cert_type = cert_type
 
     @property
     def call_draining_state(self) -> str:

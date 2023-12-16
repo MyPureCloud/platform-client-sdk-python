@@ -203,7 +203,7 @@ class ClientApp(object):
         """
         if isinstance(intended_state, int):
             intended_state = str(intended_state)
-        allowed_values = ["ENABLED", "DISABLED", "DELETED"]
+        allowed_values = ["ENABLED", "DISABLED", "DELETED", "RESTORED"]
         if intended_state.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for intended_state -> " + intended_state)
             self._intended_state = "outdated_sdk_version"

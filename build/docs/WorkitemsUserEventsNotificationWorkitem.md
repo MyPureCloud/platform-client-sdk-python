@@ -38,6 +38,7 @@ title: WorkitemsUserEventsNotificationWorkitem
 | **queue_id** | **str** |  | [optional] |
 | **custom_fields** | [**dict(str, WorkitemsUserEventsNotificationCustomAttribute)**](WorkitemsUserEventsNotificationCustomAttribute.html) |  | [optional] |
 | **wrapup** | [**WorkitemsUserEventsNotificationWrapup**](WorkitemsUserEventsNotificationWrapup.html) |  | [optional] |
+| **sessions** | [**list[WorkitemsUserEventsNotificationSession]**](WorkitemsUserEventsNotificationSession.html) |  | [optional] |
 {: class="table table-striped"}
 
 
