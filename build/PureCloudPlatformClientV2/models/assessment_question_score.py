@@ -54,6 +54,7 @@ class AssessmentQuestionScore(object):
             'answer_id': 'str',
             'score': 'int',
             'marked_na': 'bool',
+            'system_marked_na': 'bool',
             'free_text_answer': 'str'
         }
 
@@ -64,6 +65,7 @@ class AssessmentQuestionScore(object):
             'answer_id': 'answerId',
             'score': 'score',
             'marked_na': 'markedNA',
+            'system_marked_na': 'systemMarkedNA',
             'free_text_answer': 'freeTextAnswer'
         }
 
@@ -73,6 +75,7 @@ class AssessmentQuestionScore(object):
         self._answer_id = None
         self._score = None
         self._marked_na = None
+        self._system_marked_na = None
         self._free_text_answer = None
 
     @property
@@ -218,6 +221,30 @@ class AssessmentQuestionScore(object):
         
 
         self._marked_na = marked_na
+
+    @property
+    def system_marked_na(self) -> bool:
+        """
+        Gets the system_marked_na of this AssessmentQuestionScore.
+        If markedNA is true, systemMarkedNA indicates whether it was marked by a user or by the system due to visibility conditions. Always false if markedNA is false.
+
+        :return: The system_marked_na of this AssessmentQuestionScore.
+        :rtype: bool
+        """
+        return self._system_marked_na
+
+    @system_marked_na.setter
+    def system_marked_na(self, system_marked_na: bool) -> None:
+        """
+        Sets the system_marked_na of this AssessmentQuestionScore.
+        If markedNA is true, systemMarkedNA indicates whether it was marked by a user or by the system due to visibility conditions. Always false if markedNA is false.
+
+        :param system_marked_na: The system_marked_na of this AssessmentQuestionScore.
+        :type: bool
+        """
+        
+
+        self._system_marked_na = system_marked_na
 
     @property
     def free_text_answer(self) -> str:

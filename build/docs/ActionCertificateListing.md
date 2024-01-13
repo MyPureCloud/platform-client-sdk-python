@@ -1,13 +1,13 @@
 ---
-title: DocumentAuditEntityListing
+title: ActionCertificateListing
 ---
-## DocumentAuditEntityListing
+## ActionCertificateListing
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **entities** | [**list[DocumentAudit]**](DocumentAudit.html) |  | [optional] |
+| **entities** | [**list[ActionCertificate]**](ActionCertificate.html) |  | [optional] |
 | **page_size** | **int** |  | [optional] |
 | **page_number** | **int** |  | [optional] |
 | **total** | **int** |  | [optional] |

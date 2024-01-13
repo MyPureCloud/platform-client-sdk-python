@@ -49,15 +49,18 @@ class PatchUser(object):
         """
         self.swagger_types = {
             'id': 'str',
+            'preferred_name': 'str',
             'acd_auto_answer': 'bool'
         }
 
         self.attribute_map = {
             'id': 'id',
+            'preferred_name': 'preferredName',
             'acd_auto_answer': 'acdAutoAnswer'
         }
 
         self._id = None
+        self._preferred_name = None
         self._acd_auto_answer = None
 
     @property
@@ -83,6 +86,30 @@ class PatchUser(object):
         
 
         self._id = id
+
+    @property
+    def preferred_name(self) -> str:
+        """
+        Gets the preferred_name of this PatchUser.
+        Preferred full name of agent
+
+        :return: The preferred_name of this PatchUser.
+        :rtype: str
+        """
+        return self._preferred_name
+
+    @preferred_name.setter
+    def preferred_name(self, preferred_name: str) -> None:
+        """
+        Sets the preferred_name of this PatchUser.
+        Preferred full name of agent
+
+        :param preferred_name: The preferred_name of this PatchUser.
+        :type: str
+        """
+        
+
+        self._preferred_name = preferred_name
 
     @property
     def acd_auto_answer(self) -> bool:

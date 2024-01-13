@@ -84,7 +84,8 @@ class WorkitemsUserEventsNotificationWorkitem(object):
             'queue_id': 'str',
             'custom_fields': 'dict(str, WorkitemsUserEventsNotificationCustomAttribute)',
             'wrapup': 'WorkitemsUserEventsNotificationWrapup',
-            'sessions': 'list[WorkitemsUserEventsNotificationSession]'
+            'sessions': 'list[WorkitemsUserEventsNotificationSession]',
+            'skill_ids': 'list[str]'
         }
 
         self.attribute_map = {
@@ -119,7 +120,8 @@ class WorkitemsUserEventsNotificationWorkitem(object):
             'queue_id': 'queueId',
             'custom_fields': 'customFields',
             'wrapup': 'wrapup',
-            'sessions': 'sessions'
+            'sessions': 'sessions',
+            'skill_ids': 'skillIds'
         }
 
         self._id = None
@@ -154,6 +156,7 @@ class WorkitemsUserEventsNotificationWorkitem(object):
         self._custom_fields = None
         self._wrapup = None
         self._sessions = None
+        self._skill_ids = None
 
     @property
     def id(self) -> str:
@@ -937,6 +940,30 @@ class WorkitemsUserEventsNotificationWorkitem(object):
         
 
         self._sessions = sessions
+
+    @property
+    def skill_ids(self) -> List[str]:
+        """
+        Gets the skill_ids of this WorkitemsUserEventsNotificationWorkitem.
+
+
+        :return: The skill_ids of this WorkitemsUserEventsNotificationWorkitem.
+        :rtype: list[str]
+        """
+        return self._skill_ids
+
+    @skill_ids.setter
+    def skill_ids(self, skill_ids: List[str]) -> None:
+        """
+        Sets the skill_ids of this WorkitemsUserEventsNotificationWorkitem.
+
+
+        :param skill_ids: The skill_ids of this WorkitemsUserEventsNotificationWorkitem.
+        :type: list[str]
+        """
+        
+
+        self._skill_ids = skill_ids
 
     def to_dict(self):
         """

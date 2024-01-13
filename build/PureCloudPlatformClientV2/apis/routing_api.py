@@ -6757,6 +6757,174 @@ class RoutingApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def get_routing_wrapupcodes_divisionview(self, code_id: str, **kwargs) -> 'WrapupCode':
+        """
+        Get a simplified wrap-up code.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_routing_wrapupcodes_divisionview(code_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str code_id: Wrapup Code ID (required)
+        :return: WrapupCode
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['code_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_routing_wrapupcodes_divisionview" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'code_id' is set
+        if ('code_id' not in params) or (params['code_id'] is None):
+            raise ValueError("Missing the required parameter `code_id` when calling `get_routing_wrapupcodes_divisionview`")
+
+
+        resource_path = '/api/v2/routing/wrapupcodes/divisionviews/{codeId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'code_id' in params:
+            path_params['codeId'] = params['code_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='WrapupCode',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_routing_wrapupcodes_divisionviews(self, **kwargs) -> 'WrapupCodeEntityListing':
+        """
+        Get a paged listing of simplified wrapup code objects, filterable by name, wrapup code ID(s), or division ID(s).
+        Specifying both name and ID parameters is not supported.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_routing_wrapupcodes_divisionviews(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int page_size: Page size
+        :param int page_number: Page number
+        :param str name: Name (trailing asterisks allowed)
+        :param list[str] id: Wrapup code ID(s)
+        :param list[str] division_id: Division ID(s)
+        :param str include_state: Wrapup code state(s) to include
+        :return: WrapupCodeEntityListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['page_size', 'page_number', 'name', 'id', 'division_id', 'include_state']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_routing_wrapupcodes_divisionviews" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/routing/wrapupcodes/divisionviews'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+        if 'page_number' in params:
+            query_params['pageNumber'] = params['page_number']
+        if 'name' in params:
+            query_params['name'] = params['name']
+        if 'id' in params:
+            query_params['id'] = params['id']
+        if 'division_id' in params:
+            query_params['divisionId'] = params['division_id']
+        if 'include_state' in params:
+            query_params['includeState'] = params['include_state']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='WrapupCodeEntityListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def get_user_queues(self, user_id: str, **kwargs) -> 'UserQueueEntityListing':
         """
         Get queues for user
@@ -7865,6 +8033,84 @@ class RoutingApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def patch_routing_settings_transcription(self, body: 'TranscriptionSettings', **kwargs) -> 'TranscriptionSettings':
+        """
+        Patch Transcription Settings
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.patch_routing_settings_transcription(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param TranscriptionSettings body: Organization Settings (required)
+        :return: TranscriptionSettings
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method patch_routing_settings_transcription" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `patch_routing_settings_transcription`")
+
+
+        resource_path = '/api/v2/routing/settings/transcription'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PATCH',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='TranscriptionSettings',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -9987,7 +10233,6 @@ class RoutingApi(object):
         """
         Imports a phone number for SMS
         
-	    post_routing_sms_phonenumbers_import is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

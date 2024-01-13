@@ -87,6 +87,7 @@ class OrgUser(object):
             'certifications': 'list[str]',
             'biography': 'Biography',
             'employer_info': 'EmployerInfo',
+            'preferred_name': 'str',
             'routing_status': 'RoutingStatus',
             'presence': 'UserPresence',
             'integration_presence': 'UserPresence',
@@ -126,6 +127,7 @@ class OrgUser(object):
             'certifications': 'certifications',
             'biography': 'biography',
             'employer_info': 'employerInfo',
+            'preferred_name': 'preferredName',
             'routing_status': 'routingStatus',
             'presence': 'presence',
             'integration_presence': 'integrationPresence',
@@ -164,6 +166,7 @@ class OrgUser(object):
         self._certifications = None
         self._biography = None
         self._employer_info = None
+        self._preferred_name = None
         self._routing_status = None
         self._presence = None
         self._integration_presence = None
@@ -596,6 +599,30 @@ class OrgUser(object):
         
 
         self._employer_info = employer_info
+
+    @property
+    def preferred_name(self) -> str:
+        """
+        Gets the preferred_name of this OrgUser.
+        Preferred full name of the agent
+
+        :return: The preferred_name of this OrgUser.
+        :rtype: str
+        """
+        return self._preferred_name
+
+    @preferred_name.setter
+    def preferred_name(self, preferred_name: str) -> None:
+        """
+        Sets the preferred_name of this OrgUser.
+        Preferred full name of the agent
+
+        :param preferred_name: The preferred_name of this OrgUser.
+        :type: str
+        """
+        
+
+        self._preferred_name = preferred_name
 
     @property
     def routing_status(self) -> 'RoutingStatus':

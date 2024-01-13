@@ -93,6 +93,9 @@ class SupportCenterGlobalStyle(object):
         :type: str
         """
         
+        if not re.search('^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$', background_color):
+            raise ValueError("Invalid value for `background_color`, must be a follow pattern or equal to `/^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/`")
+
 
         self._background_color = background_color
 
@@ -117,6 +120,9 @@ class SupportCenterGlobalStyle(object):
         :type: str
         """
         
+        if not re.search('^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$', primary_color):
+            raise ValueError("Invalid value for `primary_color`, must be a follow pattern or equal to `/^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/`")
+
 
         self._primary_color = primary_color
 
@@ -141,6 +147,9 @@ class SupportCenterGlobalStyle(object):
         :type: str
         """
         
+        if not re.search('^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$', primary_color_dark):
+            raise ValueError("Invalid value for `primary_color_dark`, must be a follow pattern or equal to `/^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/`")
+
 
         self._primary_color_dark = primary_color_dark
 
@@ -165,6 +174,9 @@ class SupportCenterGlobalStyle(object):
         :type: str
         """
         
+        if not re.search('^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$', primary_color_light):
+            raise ValueError("Invalid value for `primary_color_light`, must be a follow pattern or equal to `/^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/`")
+
 
         self._primary_color_light = primary_color_light
 
@@ -189,6 +201,9 @@ class SupportCenterGlobalStyle(object):
         :type: str
         """
         
+        if not re.search('^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$', text_color):
+            raise ValueError("Invalid value for `text_color`, must be a follow pattern or equal to `/^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/`")
+
 
         self._text_color = text_color
 

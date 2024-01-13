@@ -51,20 +51,26 @@ class TranscriptionSettings(object):
             'transcription': 'str',
             'transcription_confidence_threshold': 'int',
             'low_latency_transcription_enabled': 'bool',
-            'content_search_enabled': 'bool'
+            'content_search_enabled': 'bool',
+            'pci_dss_redaction_enabled': 'bool',
+            'pii_redaction_enabled': 'bool'
         }
 
         self.attribute_map = {
             'transcription': 'transcription',
             'transcription_confidence_threshold': 'transcriptionConfidenceThreshold',
             'low_latency_transcription_enabled': 'lowLatencyTranscriptionEnabled',
-            'content_search_enabled': 'contentSearchEnabled'
+            'content_search_enabled': 'contentSearchEnabled',
+            'pci_dss_redaction_enabled': 'pciDssRedactionEnabled',
+            'pii_redaction_enabled': 'piiRedactionEnabled'
         }
 
         self._transcription = None
         self._transcription_confidence_threshold = None
         self._low_latency_transcription_enabled = None
         self._content_search_enabled = None
+        self._pci_dss_redaction_enabled = None
+        self._pii_redaction_enabled = None
 
     @property
     def transcription(self) -> str:
@@ -166,6 +172,54 @@ class TranscriptionSettings(object):
         
 
         self._content_search_enabled = content_search_enabled
+
+    @property
+    def pci_dss_redaction_enabled(self) -> bool:
+        """
+        Gets the pci_dss_redaction_enabled of this TranscriptionSettings.
+        Setting to enable/disable PCI DSS Redaction
+
+        :return: The pci_dss_redaction_enabled of this TranscriptionSettings.
+        :rtype: bool
+        """
+        return self._pci_dss_redaction_enabled
+
+    @pci_dss_redaction_enabled.setter
+    def pci_dss_redaction_enabled(self, pci_dss_redaction_enabled: bool) -> None:
+        """
+        Sets the pci_dss_redaction_enabled of this TranscriptionSettings.
+        Setting to enable/disable PCI DSS Redaction
+
+        :param pci_dss_redaction_enabled: The pci_dss_redaction_enabled of this TranscriptionSettings.
+        :type: bool
+        """
+        
+
+        self._pci_dss_redaction_enabled = pci_dss_redaction_enabled
+
+    @property
+    def pii_redaction_enabled(self) -> bool:
+        """
+        Gets the pii_redaction_enabled of this TranscriptionSettings.
+        Setting to enable/disable PII Redaction
+
+        :return: The pii_redaction_enabled of this TranscriptionSettings.
+        :rtype: bool
+        """
+        return self._pii_redaction_enabled
+
+    @pii_redaction_enabled.setter
+    def pii_redaction_enabled(self, pii_redaction_enabled: bool) -> None:
+        """
+        Sets the pii_redaction_enabled of this TranscriptionSettings.
+        Setting to enable/disable PII Redaction
+
+        :param pii_redaction_enabled: The pii_redaction_enabled of this TranscriptionSettings.
+        :type: bool
+        """
+        
+
+        self._pii_redaction_enabled = pii_redaction_enabled
 
     def to_dict(self):
         """

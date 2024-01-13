@@ -95,7 +95,7 @@ class SupportCenterScreen(object):
     def module_settings(self) -> List['SupportCenterModuleSetting']:
         """
         Gets the module_settings of this SupportCenterScreen.
-        Module settings for the screen
+        Module settings for the screen, valid modules for each screenType: Home: Search, Categories, TopViewedArticles; Category: Search, Categories; SearchResults: Search, Results; Article: Search, Article;
 
         :return: The module_settings of this SupportCenterScreen.
         :rtype: list[SupportCenterModuleSetting]
@@ -106,7 +106,7 @@ class SupportCenterScreen(object):
     def module_settings(self, module_settings: List['SupportCenterModuleSetting']) -> None:
         """
         Sets the module_settings of this SupportCenterScreen.
-        Module settings for the screen
+        Module settings for the screen, valid modules for each screenType: Home: Search, Categories, TopViewedArticles; Category: Search, Categories; SearchResults: Search, Results; Article: Search, Article;
 
         :param module_settings: The module_settings of this SupportCenterScreen.
         :type: list[SupportCenterModuleSetting]

@@ -41,6 +41,9 @@ from ..models import Empty
 from ..models import ErrorBody
 from ..models import LogCaptureDownloadExecutionResponse
 from ..models import LogCaptureQueryRequest
+from ..models import LogCaptureQueryResponse
+from ..models import LogCaptureUserConfiguration
+from ..models import PagelessEntityListing
 
 class LogCaptureApi(object):
     """
@@ -57,6 +60,84 @@ class LogCaptureApi(object):
             if not config.api_client:
                 config.api_client = ApiClient()
             self.api_client = config.api_client
+
+    def delete_diagnostics_logcapture_browser_user(self, user_id: str, **kwargs) -> None:
+        """
+        Disable browser log capture for the user
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_diagnostics_logcapture_browser_user(user_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str user_id: The id of the user to disable browser log capture (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['user_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_diagnostics_logcapture_browser_user" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'user_id' is set
+        if ('user_id' not in params) or (params['user_id'] is None):
+            raise ValueError("Missing the required parameter `user_id` when calling `delete_diagnostics_logcapture_browser_user`")
+
+
+        resource_path = '/api/v2/diagnostics/logcapture/browser/users/{userId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'user_id' in params:
+            path_params['userId'] = params['user_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
 
     def get_diagnostics_logcapture_browser_entries_download_job(self, job_id: str, **kwargs) -> 'LogCaptureDownloadExecutionResponse':
         """
@@ -136,6 +217,159 @@ class LogCaptureApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def get_diagnostics_logcapture_browser_user(self, user_id: str, **kwargs) -> 'LogCaptureUserConfiguration':
+        """
+        Get log capture configuration for the user
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_diagnostics_logcapture_browser_user(user_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str user_id: The id of the user to get browser log capture configuration (required)
+        :return: LogCaptureUserConfiguration
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['user_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_diagnostics_logcapture_browser_user" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'user_id' is set
+        if ('user_id' not in params) or (params['user_id'] is None):
+            raise ValueError("Missing the required parameter `user_id` when calling `get_diagnostics_logcapture_browser_user`")
+
+
+        resource_path = '/api/v2/diagnostics/logcapture/browser/users/{userId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'user_id' in params:
+            path_params['userId'] = params['user_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='LogCaptureUserConfiguration',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_diagnostics_logcapture_browser_users(self, **kwargs) -> 'PagelessEntityListing':
+        """
+        Get all log capture enabled users for an org
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_diagnostics_logcapture_browser_users(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param bool include_expired: Include expired users with log captures still available for search or download
+        :return: PagelessEntityListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['include_expired']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_diagnostics_logcapture_browser_users" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/diagnostics/logcapture/browser/users'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'include_expired' in params:
+            query_params['includeExpired'] = params['include_expired']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='PagelessEntityListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def post_diagnostics_logcapture_browser_entries_download_jobs(self, **kwargs) -> 'LogCaptureDownloadExecutionResponse':
         """
         Creates an async download execution
@@ -207,6 +441,171 @@ class LogCaptureApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='LogCaptureDownloadExecutionResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_diagnostics_logcapture_browser_entries_query(self, **kwargs) -> 'LogCaptureQueryResponse':
+        """
+        Query collected log entries. It returns a limited amount of records, to get all records use download endpoint.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_diagnostics_logcapture_browser_entries_query(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str before: The cursor that points to the start of the set of entities that has been returned.
+        :param str after: The cursor that points to the end of the set of entities that has been returned.
+        :param str page_size: Number of entities to return. Maximum of 200.
+        :param LogCaptureQueryRequest body: 
+        :return: LogCaptureQueryResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['before', 'after', 'page_size', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_diagnostics_logcapture_browser_entries_query" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/diagnostics/logcapture/browser/entries/query'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'before' in params:
+            query_params['before'] = params['before']
+        if 'after' in params:
+            query_params['after'] = params['after']
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='LogCaptureQueryResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_diagnostics_logcapture_browser_user(self, user_id: str, **kwargs) -> 'LogCaptureUserConfiguration':
+        """
+        Enable log capture for a user or update expiration
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_diagnostics_logcapture_browser_user(user_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str user_id: The id of the user to enable browser log capture (required)
+        :param LogCaptureUserConfiguration body: 
+        :return: LogCaptureUserConfiguration
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['user_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_diagnostics_logcapture_browser_user" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'user_id' is set
+        if ('user_id' not in params) or (params['user_id'] is None):
+            raise ValueError("Missing the required parameter `user_id` when calling `post_diagnostics_logcapture_browser_user`")
+
+
+        resource_path = '/api/v2/diagnostics/logcapture/browser/users/{userId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'user_id' in params:
+            path_params['userId'] = params['user_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='LogCaptureUserConfiguration',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

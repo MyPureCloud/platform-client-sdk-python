@@ -89,6 +89,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_routing_utilization_tags**](RoutingApi.html#get_routing_utilization_tags) | Get list of utilization tags|
 |[**get_routing_wrapupcode**](RoutingApi.html#get_routing_wrapupcode) | Get details about this wrap-up code.|
 |[**get_routing_wrapupcodes**](RoutingApi.html#get_routing_wrapupcodes) | Get list of wrapup codes.|
+|[**get_routing_wrapupcodes_divisionview**](RoutingApi.html#get_routing_wrapupcodes_divisionview) | Get a simplified wrap-up code.|
+|[**get_routing_wrapupcodes_divisionviews**](RoutingApi.html#get_routing_wrapupcodes_divisionviews) | Get a paged listing of simplified wrapup code objects, filterable by name, wrapup code ID(s), or division ID(s).|
 |[**get_user_queues**](RoutingApi.html#get_user_queues) | Get queues for user|
 |[**get_user_routinglanguages**](RoutingApi.html#get_user_routinglanguages) | List routing language for user|
 |[**get_user_routingskills**](RoutingApi.html#get_user_routingskills) | List routing skills for user|
@@ -102,6 +104,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**patch_routing_queue_user**](RoutingApi.html#patch_routing_queue_user) | DEPRECATED: use PATCH /routing/queues/{queueId}/members/{memberId}.  Update the ring number OR joined status for a User in a Queue.|
 |[**patch_routing_queue_users**](RoutingApi.html#patch_routing_queue_users) | DEPRECATED: use PATCH /routing/queues/{queueId}/members.  Join or unjoin a set of users for a queue.|
 |[**patch_routing_settings_contactcenter**](RoutingApi.html#patch_routing_settings_contactcenter) | Update Contact Center Settings|
+|[**patch_routing_settings_transcription**](RoutingApi.html#patch_routing_settings_transcription) | Patch Transcription Settings|
 |[**patch_routing_skillgroup**](RoutingApi.html#patch_routing_skillgroup) | Update skill group definition|
 |[**patch_user_queue**](RoutingApi.html#patch_user_queue) | Join or unjoin a queue for a user|
 |[**patch_user_queues**](RoutingApi.html#patch_user_queues) | Join or unjoin a set of queues for a user|
@@ -4326,6 +4329,116 @@ except ApiException as e:
 
 [**WrapupCodeEntityListing**](WrapupCodeEntityListing.html)
 
+<a name="get_routing_wrapupcodes_divisionview"></a>
+
+## [**WrapupCode**](WrapupCode.html) get_routing_wrapupcodes_divisionview(code_id)
+
+
+
+Get a simplified wrap-up code.
+
+Wraps GET /api/v2/routing/wrapupcodes/divisionviews/{codeId} 
+
+Requires ALL permissions: 
+
+* routing:wrapupCode:search
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RoutingApi()
+code_id = 'code_id_example' # str | Wrapup Code ID
+
+try:
+    # Get a simplified wrap-up code.
+    api_response = api_instance.get_routing_wrapupcodes_divisionview(code_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling RoutingApi->get_routing_wrapupcodes_divisionview: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **code_id** | **str**| Wrapup Code ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**WrapupCode**](WrapupCode.html)
+
+<a name="get_routing_wrapupcodes_divisionviews"></a>
+
+## [**WrapupCodeEntityListing**](WrapupCodeEntityListing.html) get_routing_wrapupcodes_divisionviews(page_size=page_size, page_number=page_number, name=name, id=id, division_id=division_id, include_state=include_state)
+
+
+
+Get a paged listing of simplified wrapup code objects, filterable by name, wrapup code ID(s), or division ID(s).
+
+Specifying both name and ID parameters is not supported.
+
+Wraps GET /api/v2/routing/wrapupcodes/divisionviews 
+
+Requires ALL permissions: 
+
+* routing:wrapupCode:search
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RoutingApi()
+page_size = 25 # int | Page size (optional) (default to 25)
+page_number = 1 # int | Page number (optional) (default to 1)
+name = 'name_example' # str | Name (trailing asterisks allowed) (optional)
+id = ['id_example'] # list[str] | Wrapup code ID(s) (optional)
+division_id = ['division_id_example'] # list[str] | Division ID(s) (optional)
+include_state = 'include_state_example' # str | Wrapup code state(s) to include (optional)
+
+try:
+    # Get a paged listing of simplified wrapup code objects, filterable by name, wrapup code ID(s), or division ID(s).
+    api_response = api_instance.get_routing_wrapupcodes_divisionviews(page_size=page_size, page_number=page_number, name=name, id=id, division_id=division_id, include_state=include_state)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling RoutingApi->get_routing_wrapupcodes_divisionviews: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **name** | **str**| Name (trailing asterisks allowed) | [optional]  |
+| **id** | [**list[str]**](str.html)| Wrapup code ID(s) | [optional]  |
+| **division_id** | [**list[str]**](str.html)| Division ID(s) | [optional]  |
+| **include_state** | **str**| Wrapup code state(s) to include | [optional] <br />**Values**: Active, Deleted, ActiveAndDeleted |
+{: class="table table-striped"}
+
+### Return type
+
+[**WrapupCodeEntityListing**](WrapupCodeEntityListing.html)
+
 <a name="get_user_queues"></a>
 
 ## [**UserQueueEntityListing**](UserQueueEntityListing.html) get_user_queues(user_id, page_size=page_size, page_number=page_number, joined=joined, division_id=division_id)
@@ -5012,6 +5125,55 @@ except ApiException as e:
 ### Return type
 
 void (empty response body)
+
+<a name="patch_routing_settings_transcription"></a>
+
+## [**TranscriptionSettings**](TranscriptionSettings.html) patch_routing_settings_transcription(body)
+
+
+
+Patch Transcription Settings
+
+Wraps PATCH /api/v2/routing/settings/transcription 
+
+Requires ANY permissions: 
+
+* routing:transcriptionSettings:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RoutingApi()
+body = PureCloudPlatformClientV2.TranscriptionSettings() # TranscriptionSettings | Organization Settings
+
+try:
+    # Patch Transcription Settings
+    api_response = api_instance.patch_routing_settings_transcription(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling RoutingApi->patch_routing_settings_transcription: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**TranscriptionSettings**](TranscriptionSettings.html)| Organization Settings |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**TranscriptionSettings**](TranscriptionSettings.html)
 
 <a name="patch_routing_skillgroup"></a>
 
@@ -6341,8 +6503,6 @@ except ApiException as e:
 
 
 Imports a phone number for SMS
-
-post_routing_sms_phonenumbers_import is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/routing/sms/phonenumbers/import 
 

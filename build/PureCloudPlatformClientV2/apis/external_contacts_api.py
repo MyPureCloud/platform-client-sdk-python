@@ -1001,7 +1001,7 @@ class ExternalContactsApi(object):
         :param str contact_id: ExternalContact Id (required)
         :param int page_size: Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000)
         :param int page_number: Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000)
-        :param str sort_order: Sort order
+        :param str sort_order: The Note field to sort by. Any of: [createDate]. Direction: [asc, desc].  e.g. \"createDate:asc\", \"createDate:desc\"
         :param list[str] expand: which fields, if any, to expand
         :return: NoteListing
                  If the method is called asynchronously,
@@ -1172,7 +1172,7 @@ class ExternalContactsApi(object):
         :param int page_size: Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000)
         :param int page_number: Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000)
         :param str q: User supplied search keywords (no special syntax is currently supported)
-        :param str sort_order: Sort order
+        :param str sort_order: The External Contact field to sort by. Any of: [firstName, lastName, middleName, title]. Direction: [asc, desc]. e.g. \"firstName:asc\", \"title:desc\"
         :param list[str] expand: which fields, if any, to expand
         :return: ContactListing
                  If the method is called asynchronously,
@@ -1656,7 +1656,7 @@ class ExternalContactsApi(object):
         :param int page_size: Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000)
         :param int page_number: Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000)
         :param str q: User supplied search keywords (no special syntax is currently supported)
-        :param str sort_order: Sort order
+        :param str sort_order: The External Contact field to sort by. Any of: [firstName, lastName, middleName, title]. Direction: [asc, desc]. e.g. \"firstName:asc\", \"title:desc\"
         :param list[str] expand: which fields, if any, to expand
         :return: ContactListing
                  If the method is called asynchronously,
@@ -1835,7 +1835,7 @@ class ExternalContactsApi(object):
         :param str external_organization_id: External Organization Id (required)
         :param int page_size: Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000)
         :param int page_number: Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000)
-        :param str sort_order: Sort order
+        :param str sort_order: The Note field to sort by. Any of: [createDate]. Direction: [asc, desc]. e.g. \"createDate:asc\", \"createDate:desc\"
         :param list[str] expand: which fields, if any, to expand
         :return: NoteListing
                  If the method is called asynchronously,
@@ -1926,7 +1926,7 @@ class ExternalContactsApi(object):
         :param int page_size: Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000)
         :param int page_number: Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000)
         :param str expand: which fields, if any, to expand
-        :param str sort_order: Sort order
+        :param str sort_order: The Relationship field to sort by. Any of: [createDate, relationship]. Direction: [asc, desc]. e.g. \"createDate:asc\", \"relationship:desc\"
         :return: RelationshipListing
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2016,7 +2016,7 @@ class ExternalContactsApi(object):
         :param int page_number: Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000)
         :param str q: Search query
         :param list[str] trustor_id: Search for external organizations by trustorIds (limit 25). If supplied, the 'q' parameters is ignored. Items are returned in the order requested
-        :param str sort_order: Sort order
+        :param str sort_order: The Organization field to sort by. Any of: [companyType, industry, name]. Direction: [asc, desc]. e.g. \"companyType:asc\", \"industry:desc\"
         :param list[str] expand: which fields, if any, to expand
         :param bool include_trustors: (true or false) whether or not to include trustor information embedded in the externalOrganization
         :return: ExternalOrganizationListing

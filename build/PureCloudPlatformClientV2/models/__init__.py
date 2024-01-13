@@ -21,6 +21,8 @@ from .action_aggregation_query import ActionAggregationQuery
 from .action_aggregation_view import ActionAggregationView
 from .action_async_aggregate_query_response import ActionAsyncAggregateQueryResponse
 from .action_async_aggregation_query import ActionAsyncAggregationQuery
+from .action_certificate import ActionCertificate
+from .action_certificate_listing import ActionCertificateListing
 from .action_config import ActionConfig
 from .action_contract import ActionContract
 from .action_contract_input import ActionContractInput
@@ -63,6 +65,7 @@ from .additional_languages_intent import AdditionalLanguagesIntent
 from .additional_languages_synonyms import AdditionalLanguagesSynonyms
 from .additional_message import AdditionalMessage
 from .address import Address
+from .addressable_entity import AddressableEntity
 from .addressable_entity_ref import AddressableEntityRef
 from .addressable_license_definition import AddressableLicenseDefinition
 from .adherence_explanation_async_response import AdherenceExplanationAsyncResponse
@@ -238,9 +241,7 @@ from .atzm_time_slot import AtzmTimeSlot
 from .atzm_time_slot_with_time_zone import AtzmTimeSlotWithTimeZone
 from .audio_state import AudioState
 from .audio_updated_event import AudioUpdatedEvent
-from .audit_change import AuditChange
 from .audit_entity import AuditEntity
-from .audit_entity_reference import AuditEntityReference
 from .audit_facet import AuditFacet
 from .audit_filter import AuditFilter
 from .audit_log_message import AuditLogMessage
@@ -544,6 +545,7 @@ from .chat_message_user import ChatMessageUser
 from .chat_reaction import ChatReaction
 from .chat_send_message_response import ChatSendMessageResponse
 from .chat_settings import ChatSettings
+from .chat_user_settings import ChatUserSettings
 from .check import Check
 from .client_app import ClientApp
 from .client_app_configuration_info import ClientAppConfigurationInfo
@@ -654,12 +656,10 @@ from .contactlist_import_status_import_status import ContactlistImportStatusImpo
 from .contactlist_import_status_object import ContactlistImportStatusObject
 from .content_actions import ContentActions
 from .content_attachment import ContentAttachment
-from .content_attribute_filter_item import ContentAttributeFilterItem
 from .content_button_response import ContentButtonResponse
 from .content_card import ContentCard
 from .content_card_action import ContentCardAction
 from .content_carousel import ContentCarousel
-from .content_facet_filter_item import ContentFacetFilterItem
 from .content_filter_item import ContentFilterItem
 from .content_generic import ContentGeneric
 from .content_list import ContentList
@@ -678,12 +678,10 @@ from .content_offer_style_properties import ContentOfferStyleProperties
 from .content_offer_styling_configuration import ContentOfferStylingConfiguration
 from .content_position_properties import ContentPositionProperties
 from .content_postback import ContentPostback
-from .content_query_request import ContentQueryRequest
 from .content_quick_reply import ContentQuickReply
 from .content_quick_reply_v2 import ContentQuickReplyV2
 from .content_reaction import ContentReaction
 from .content_setting import ContentSetting
-from .content_sort_item import ContentSortItem
 from .content_story import ContentStory
 from .content_text import ContentText
 from .context import Context
@@ -1214,8 +1212,6 @@ from .do_not_send_action_settings import DoNotSendActionSettings
 from .document import Document
 from .document_article import DocumentArticle
 from .document_attribute import DocumentAttribute
-from .document_audit import DocumentAudit
-from .document_audit_entity_listing import DocumentAuditEntityListing
 from .document_body import DocumentBody
 from .document_body_block import DocumentBodyBlock
 from .document_body_image import DocumentBodyImage
@@ -1744,6 +1740,8 @@ from .import_status import ImportStatus
 from .import_status_request import ImportStatusRequest
 from .import_template import ImportTemplate
 from .import_template_entity_listing import ImportTemplateEntityListing
+from .import_template_import_status_import_status import ImportTemplateImportStatusImportStatus
+from .import_template_import_status_object import ImportTemplateImportStatusObject
 from .inbound_domain import InboundDomain
 from .inbound_domain_entity_listing import InboundDomainEntityListing
 from .inbound_domain_patch_request import InboundDomainPatchRequest
@@ -2136,7 +2134,6 @@ from .listed_topic import ListedTopic
 from .local_date_range import LocalDateRange
 from .local_encryption_configuration import LocalEncryptionConfiguration
 from .local_encryption_key_request import LocalEncryptionKeyRequest
-from .local_time import LocalTime
 from .locale_flow_version_info import LocaleFlowVersionInfo
 from .locale_health import LocaleHealth
 from .locale_info import LocaleInfo
@@ -2156,7 +2153,9 @@ from .locations_search_response import LocationsSearchResponse
 from .lock_info import LockInfo
 from .log_capture_download_execution_response import LogCaptureDownloadExecutionResponse
 from .log_capture_query_request import LogCaptureQueryRequest
+from .log_capture_query_response import LogCaptureQueryResponse
 from .log_capture_user_configuration import LogCaptureUserConfiguration
+from .log_entry import LogEntry
 from .logical_interface_entity_listing import LogicalInterfaceEntityListing
 from .long_term_forecast_planning_group_data import LongTermForecastPlanningGroupData
 from .long_term_forecast_result import LongTermForecastResult
@@ -2270,6 +2269,8 @@ from .miner_listing import MinerListing
 from .miner_topic import MinerTopic
 from .miner_topic_phrase import MinerTopicPhrase
 from .miner_topics_listing import MinerTopicsListing
+from .mobile_notification_settings import MobileNotificationSettings
+from .mobile_settings import MobileSettings
 from .modeling_processing_error import ModelingProcessingError
 from .modeling_status_response import ModelingStatusResponse
 from .modifiable_rule_properties import ModifiableRuleProperties
@@ -2450,6 +2451,7 @@ from .pin_configuration import PINConfiguration
 from .page import Page
 from .paged_namespace_listing import PagedNamespaceListing
 from .pageless_domain_entity_listing_evaluation_version import PagelessDomainEntityListingEvaluationVersion
+from .pageless_entity_listing import PagelessEntityListing
 from .paging_spec import PagingSpec
 from .parameter import Parameter
 from .parsed_certificate import ParsedCertificate

@@ -24,6 +24,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_integrations_action_template**](IntegrationsApi.html#get_integrations_action_template) | Retrieve text of templates for an action based on filename.|
 |[**get_integrations_actions**](IntegrationsApi.html#get_integrations_actions) | Retrieves all actions associated with filters passed in via query param.|
 |[**get_integrations_actions_categories**](IntegrationsApi.html#get_integrations_actions_categories) | Retrieves all categories of available Actions|
+|[**get_integrations_actions_certificates**](IntegrationsApi.html#get_integrations_actions_certificates) | Retrieves the available mTLS client certificates in use. This endpoint will return inconsistent results while a certificate rotation is in progress.|
 |[**get_integrations_actions_drafts**](IntegrationsApi.html#get_integrations_actions_drafts) | Retrieves all action drafts associated with the filters passed in via query param.|
 |[**get_integrations_botconnector_integration_id_bot**](IntegrationsApi.html#get_integrations_botconnector_integration_id_bot) | Get a specific botConnector bot, plus versions, for this integration|
 |[**get_integrations_botconnector_integration_id_bot_versions**](IntegrationsApi.html#get_integrations_botconnector_integration_id_bot_versions) | Get a list of bot versions for a bot|
@@ -934,6 +935,57 @@ except ApiException as e:
 ### Return type
 
 [**CategoryEntityListing**](CategoryEntityListing.html)
+
+<a name="get_integrations_actions_certificates"></a>
+
+## [**ActionCertificateListing**](ActionCertificateListing.html) get_integrations_actions_certificates(status=status, type=type)
+
+
+
+Retrieves the available mTLS client certificates in use. This endpoint will return inconsistent results while a certificate rotation is in progress.
+
+Wraps GET /api/v2/integrations/actions/certificates 
+
+Requires ANY permissions: 
+
+* integrations:actionCertificate:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.IntegrationsApi()
+status = 'status_example' # str | Indicates the validity of the certificate in question. (optional)
+type = 'type_example' # str | Indicates the type of the certificate. (optional)
+
+try:
+    # Retrieves the available mTLS client certificates in use. This endpoint will return inconsistent results while a certificate rotation is in progress.
+    api_response = api_instance.get_integrations_actions_certificates(status=status, type=type)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling IntegrationsApi->get_integrations_actions_certificates: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **status** | **str**| Indicates the validity of the certificate in question. | [optional] <br />**Values**: Current, Upcoming |
+| **type** | **str**| Indicates the type of the certificate. | [optional] <br />**Values**: Client |
+{: class="table table-striped"}
+
+### Return type
+
+[**ActionCertificateListing**](ActionCertificateListing.html)
 
 <a name="get_integrations_actions_drafts"></a>
 

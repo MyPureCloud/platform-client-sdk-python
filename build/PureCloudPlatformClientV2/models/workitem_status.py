@@ -33,7 +33,6 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
-    from . import LocalTime
     from . import WorkitemStatusReference
     from . import WorktypeReference
 
@@ -59,7 +58,7 @@ class WorkitemStatus(object):
             'description': 'str',
             'default_destination_status': 'WorkitemStatusReference',
             'status_transition_delay_seconds': 'int',
-            'status_transition_time': 'LocalTime',
+            'status_transition_time': 'str',
             'worktype': 'WorktypeReference',
             'self_uri': 'str'
         }
@@ -262,24 +261,24 @@ class WorkitemStatus(object):
         self._status_transition_delay_seconds = status_transition_delay_seconds
 
     @property
-    def status_transition_time(self) -> 'LocalTime':
+    def status_transition_time(self) -> str:
         """
         Gets the status_transition_time of this WorkitemStatus.
-        Time in HH:MM:SS format at which auto status transition will occur after statusTransitionDelaySeconds delay. To set Time, the statusTransitionDelaySeconds must be equal to or greater than 86400 i.e. a day
+        Time is represented as an ISO-8601 string without a timezone. For example: HH:mm:ss.SSS
 
         :return: The status_transition_time of this WorkitemStatus.
-        :rtype: LocalTime
+        :rtype: str
         """
         return self._status_transition_time
 
     @status_transition_time.setter
-    def status_transition_time(self, status_transition_time: 'LocalTime') -> None:
+    def status_transition_time(self, status_transition_time: str) -> None:
         """
         Sets the status_transition_time of this WorkitemStatus.
-        Time in HH:MM:SS format at which auto status transition will occur after statusTransitionDelaySeconds delay. To set Time, the statusTransitionDelaySeconds must be equal to or greater than 86400 i.e. a day
+        Time is represented as an ISO-8601 string without a timezone. For example: HH:mm:ss.SSS
 
         :param status_transition_time: The status_transition_time of this WorkitemStatus.
-        :type: LocalTime
+        :type: str
         """
         
 

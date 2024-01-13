@@ -305,7 +305,7 @@ class WfmTimeOffRequestUpdateTopicTimeOffRequestUpdate(object):
         """
         if isinstance(substatus, int):
             substatus = str(substatus)
-        allowed_values = ["AdvanceTimeElapsed", "AutoApproved", "InvalidDailyDuration", "OutsideShift", "RemovedFromWaitlist", "Waitlisted"]
+        allowed_values = ["AdvanceTimeElapsed", "AutoApproved", "InsufficientBalance", "InvalidDailyDuration", "OutsideShift", "RemovedFromWaitlist", "Waitlisted"]
         if substatus.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for substatus -> " + substatus)
             self._substatus = "outdated_sdk_version"

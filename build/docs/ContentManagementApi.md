@@ -15,7 +15,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**delete_contentmanagement_workspace_member**](ContentManagementApi.html#delete_contentmanagement_workspace_member) | Delete a member from a workspace|
 |[**delete_contentmanagement_workspace_tagvalue**](ContentManagementApi.html#delete_contentmanagement_workspace_tagvalue) | Delete workspace tag|
 |[**get_contentmanagement_document**](ContentManagementApi.html#get_contentmanagement_document) | Get a document.|
-|[**get_contentmanagement_document_audits**](ContentManagementApi.html#get_contentmanagement_document_audits) | Get a list of audits for a document.|
 |[**get_contentmanagement_document_content**](ContentManagementApi.html#get_contentmanagement_document_content) | Download a document.|
 |[**get_contentmanagement_documents**](ContentManagementApi.html#get_contentmanagement_documents) | Get a list of documents.|
 |[**get_contentmanagement_query**](ContentManagementApi.html#get_contentmanagement_query) | Query content|
@@ -34,7 +33,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_contentmanagement_workspace_tagvalue**](ContentManagementApi.html#get_contentmanagement_workspace_tagvalue) | Get a workspace tag|
 |[**get_contentmanagement_workspace_tagvalues**](ContentManagementApi.html#get_contentmanagement_workspace_tagvalues) | Get a list of workspace tags|
 |[**get_contentmanagement_workspaces**](ContentManagementApi.html#get_contentmanagement_workspaces) | Get a list of workspaces.|
-|[**post_contentmanagement_auditquery**](ContentManagementApi.html#post_contentmanagement_auditquery) | Query audits|
 |[**post_contentmanagement_document**](ContentManagementApi.html#post_contentmanagement_document) | Update a document.|
 |[**post_contentmanagement_document_content**](ContentManagementApi.html#post_contentmanagement_document_content) | Replace the contents of a document.|
 |[**post_contentmanagement_documents**](ContentManagementApi.html#post_contentmanagement_documents) | Add a document.|
@@ -391,68 +389,6 @@ except ApiException as e:
 ### Return type
 
 [**Document**](Document.html)
-
-<a name="get_contentmanagement_document_audits"></a>
-
-## [**DocumentAuditEntityListing**](DocumentAuditEntityListing.html) get_contentmanagement_document_audits(document_id, page_size=page_size, page_number=page_number, transaction_filter=transaction_filter, level=level, sort_by=sort_by, sort_order=sort_order)
-
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
-
-Get a list of audits for a document.
-
-This api is deprecated, use https://developer.genesys.cloud/platform/audit/ instead.
-
-Wraps GET /api/v2/contentmanagement/documents/{documentId}/audits 
-
-Requires no permissions
-
-
-### Example
-
-```{"language":"python"}
-import time
-import PureCloudPlatformClientV2
-from PureCloudPlatformClientV2.rest import ApiException
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: PureCloud OAuth
-PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = PureCloudPlatformClientV2.ContentManagementApi()
-document_id = 'document_id_example' # str | Document ID
-page_size = 25 # int | Page size (optional) (default to 25)
-page_number = 1 # int | Page number (optional) (default to 1)
-transaction_filter = 'transaction_filter_example' # str | Transaction filter (optional)
-level = ''USER'' # str | level (optional) (default to 'USER')
-sort_by = 'sort_by_example' # str | Sort by (optional)
-sort_order = ''ascending'' # str | Sort order (optional) (default to 'ascending')
-
-try:
-    # Get a list of audits for a document.
-    api_response = api_instance.get_contentmanagement_document_audits(document_id, page_size=page_size, page_number=page_number, transaction_filter=transaction_filter, level=level, sort_by=sort_by, sort_order=sort_order)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ContentManagementApi->get_contentmanagement_document_audits: %s\n" % e)
-```
-
-### Parameters
-
-
-|Name | Type | Description  | Notes|
-|------------- | ------------- | ------------- | -------------|
-| **document_id** | **str**| Document ID |  |
-| **page_size** | **int**| Page size | [optional] [default to 25] |
-| **page_number** | **int**| Page number | [optional] [default to 1] |
-| **transaction_filter** | **str**| Transaction filter | [optional]  |
-| **level** | **str**| level | [optional] [default to &#39;USER&#39;] |
-| **sort_by** | **str**| Sort by | [optional]  |
-| **sort_order** | **str**| Sort order | [optional] [default to &#39;ascending&#39;] |
-{: class="table table-striped"}
-
-### Return type
-
-[**DocumentAuditEntityListing**](DocumentAuditEntityListing.html)
 
 <a name="get_contentmanagement_document_content"></a>
 
@@ -1399,56 +1335,6 @@ except ApiException as e:
 ### Return type
 
 [**WorkspaceEntityListing**](WorkspaceEntityListing.html)
-
-<a name="post_contentmanagement_auditquery"></a>
-
-## [**QueryResults**](QueryResults.html) post_contentmanagement_auditquery(body)
-
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
-
-Query audits
-
-This api is deprecated, use https://developer.genesys.cloud/platform/audit/ instead.
-
-Wraps POST /api/v2/contentmanagement/auditquery 
-
-Requires no permissions
-
-
-### Example
-
-```{"language":"python"}
-import time
-import PureCloudPlatformClientV2
-from PureCloudPlatformClientV2.rest import ApiException
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: PureCloud OAuth
-PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = PureCloudPlatformClientV2.ContentManagementApi()
-body = PureCloudPlatformClientV2.ContentQueryRequest() # ContentQueryRequest | Allows for a filtered query returning facet information
-
-try:
-    # Query audits
-    api_response = api_instance.post_contentmanagement_auditquery(body)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ContentManagementApi->post_contentmanagement_auditquery: %s\n" % e)
-```
-
-### Parameters
-
-
-|Name | Type | Description  | Notes|
-|------------- | ------------- | ------------- | -------------|
-| **body** | [**ContentQueryRequest**](ContentQueryRequest.html)| Allows for a filtered query returning facet information |  |
-{: class="table table-striped"}
-
-### Return type
-
-[**QueryResults**](QueryResults.html)
 
 <a name="post_contentmanagement_document"></a>
 

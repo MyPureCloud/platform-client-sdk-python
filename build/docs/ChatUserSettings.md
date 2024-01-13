@@ -1,14 +1,13 @@
 ---
-title: ContentSortItem
+title: ChatUserSettings
 ---
-## ContentSortItem
+## ChatUserSettings
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **name** | **str** |  | [optional] |
-| **ascending** | **bool** |  | [optional] |
+| **mobile** | [**MobileSettings**](MobileSettings.html) | Settings for mobile devices | |
 {: class="table table-striped"}
 
 

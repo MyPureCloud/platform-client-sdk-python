@@ -3675,7 +3675,6 @@ class TelephonyProvidersEdgeApi(object):
         """
         Get a pageable list of basic extension pool objects filterable by query parameters.
         This returns extension pools consisting of name and division. If one or more IDs are specified, the search will fetch flow outcomes that match the given ID(s) and not use any additional supplied query parameters in the search.
-	    get_telephony_providers_edges_extensionpools_divisionviews is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -6031,12 +6030,13 @@ class TelephonyProvidersEdgeApi(object):
         :param str name: Name
         :param str location_id: Location Id
         :param bool managed: Filter by managed
+        :param list[str] expand: Fields to expand in the response, comma-separated
         :return: SiteEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['page_size', 'page_number', 'sort_by', 'sort_order', 'name', 'location_id', 'managed']
+        all_params = ['page_size', 'page_number', 'sort_by', 'sort_order', 'name', 'location_id', 'managed', 'expand']
         all_params.append('callback')
 
         params = locals()
@@ -6069,6 +6069,8 @@ class TelephonyProvidersEdgeApi(object):
             query_params['location.id'] = params['location_id']
         if 'managed' in params:
             query_params['managed'] = params['managed']
+        if 'expand' in params:
+            query_params['expand'] = params['expand']
 
         header_params = {}
 

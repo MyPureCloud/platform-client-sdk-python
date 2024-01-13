@@ -60,7 +60,7 @@ class OperationalEventNotificationTopicOperationalEventNotification(object):
             'parent_entity': 'str',
             'entity_type': 'str',
             'conversation_id': 'str',
-            'timestamp': 'datetime'
+            'timestamp': 'int'
         }
 
         self.attribute_map = {
@@ -330,24 +330,24 @@ class OperationalEventNotificationTopicOperationalEventNotification(object):
         self._conversation_id = conversation_id
 
     @property
-    def timestamp(self) -> datetime:
+    def timestamp(self) -> int:
         """
         Gets the timestamp of this OperationalEventNotificationTopicOperationalEventNotification.
 
 
         :return: The timestamp of this OperationalEventNotificationTopicOperationalEventNotification.
-        :rtype: datetime
+        :rtype: int
         """
         return self._timestamp
 
     @timestamp.setter
-    def timestamp(self, timestamp: datetime) -> None:
+    def timestamp(self, timestamp: int) -> None:
         """
         Sets the timestamp of this OperationalEventNotificationTopicOperationalEventNotification.
 
 
         :param timestamp: The timestamp of this OperationalEventNotificationTopicOperationalEventNotification.
-        :type: datetime
+        :type: int
         """
         
 

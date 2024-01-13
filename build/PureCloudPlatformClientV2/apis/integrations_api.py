@@ -39,6 +39,7 @@ from typing import Any
 
 from ..models import Empty
 from ..models import Action
+from ..models import ActionCertificateListing
 from ..models import ActionEntityListing
 from ..models import AsyncJob
 from ..models import BotConnectorBot
@@ -1451,6 +1452,84 @@ class IntegrationsApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='CategoryEntityListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_integrations_actions_certificates(self, **kwargs) -> 'ActionCertificateListing':
+        """
+        Retrieves the available mTLS client certificates in use. This endpoint will return inconsistent results while a certificate rotation is in progress.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_integrations_actions_certificates(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str status: Indicates the validity of the certificate in question.
+        :param str type: Indicates the type of the certificate.
+        :return: ActionCertificateListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['status', 'type']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_integrations_actions_certificates" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/integrations/actions/certificates'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'status' in params:
+            query_params['status'] = params['status']
+        if 'type' in params:
+            query_params['type'] = params['type']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ActionCertificateListing',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

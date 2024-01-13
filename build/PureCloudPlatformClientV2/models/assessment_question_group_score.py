@@ -54,6 +54,7 @@ class AssessmentQuestionGroupScore(object):
             'total_score': 'float',
             'max_total_score': 'float',
             'marked_na': 'bool',
+            'system_marked_na': 'bool',
             'total_critical_score': 'float',
             'max_total_critical_score': 'float',
             'total_non_critical_score': 'float',
@@ -72,6 +73,7 @@ class AssessmentQuestionGroupScore(object):
             'total_score': 'totalScore',
             'max_total_score': 'maxTotalScore',
             'marked_na': 'markedNA',
+            'system_marked_na': 'systemMarkedNA',
             'total_critical_score': 'totalCriticalScore',
             'max_total_critical_score': 'maxTotalCriticalScore',
             'total_non_critical_score': 'totalNonCriticalScore',
@@ -89,6 +91,7 @@ class AssessmentQuestionGroupScore(object):
         self._total_score = None
         self._max_total_score = None
         self._marked_na = None
+        self._system_marked_na = None
         self._total_critical_score = None
         self._max_total_critical_score = None
         self._total_non_critical_score = None
@@ -196,6 +199,30 @@ class AssessmentQuestionGroupScore(object):
         
 
         self._marked_na = marked_na
+
+    @property
+    def system_marked_na(self) -> bool:
+        """
+        Gets the system_marked_na of this AssessmentQuestionGroupScore.
+        If markedNA is true, systemMarkedNA indicates whether it was marked by a user or by the system due to visibility conditions. Always false if markedNA is false.
+
+        :return: The system_marked_na of this AssessmentQuestionGroupScore.
+        :rtype: bool
+        """
+        return self._system_marked_na
+
+    @system_marked_na.setter
+    def system_marked_na(self, system_marked_na: bool) -> None:
+        """
+        Sets the system_marked_na of this AssessmentQuestionGroupScore.
+        If markedNA is true, systemMarkedNA indicates whether it was marked by a user or by the system due to visibility conditions. Always false if markedNA is false.
+
+        :param system_marked_na: The system_marked_na of this AssessmentQuestionGroupScore.
+        :type: bool
+        """
+        
+
+        self._system_marked_na = system_marked_na
 
     @property
     def total_critical_score(self) -> float:

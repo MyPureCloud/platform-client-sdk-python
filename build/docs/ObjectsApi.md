@@ -121,7 +121,7 @@ except ApiException as e:
 
 <a name="get_authorization_divisions"></a>
 
-## [**AuthzDivisionEntityListing**](AuthzDivisionEntityListing.html) get_authorization_divisions(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, object_count=object_count, id=id, name=name)
+## [**AuthzDivisionEntityListing**](AuthzDivisionEntityListing.html) get_authorization_divisions(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, object_count=object_count, name=name)
 
 
 
@@ -154,12 +154,11 @@ expand = ['expand_example'] # list[str] | variable name requested by expand list
 next_page = 'next_page_example' # str | next page token (optional)
 previous_page = 'previous_page_example' # str | Previous page token (optional)
 object_count = False # bool | Include the count of objects contained in the division (optional) (default to False)
-id = ['id_example'] # list[str] | Optionally request specific divisions by their IDs (optional)
 name = 'name_example' # str | Search term to filter by division name (optional)
 
 try:
     # Retrieve a list of all divisions defined for the organization
-    api_response = api_instance.get_authorization_divisions(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, object_count=object_count, id=id, name=name)
+    api_response = api_instance.get_authorization_divisions(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, object_count=object_count, name=name)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ObjectsApi->get_authorization_divisions: %s\n" % e)
@@ -177,7 +176,6 @@ except ApiException as e:
 | **next_page** | **str**| next page token | [optional]  |
 | **previous_page** | **str**| Previous page token | [optional]  |
 | **object_count** | **bool**| Include the count of objects contained in the division | [optional] [default to False] |
-| **id** | [**list[str]**](str.html)| Optionally request specific divisions by their IDs | [optional]  |
 | **name** | **str**| Search term to filter by division name | [optional]  |
 {: class="table table-striped"}
 

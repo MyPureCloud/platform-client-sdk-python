@@ -242,14 +242,13 @@ class ObjectsApi(object):
         :param str next_page: next page token
         :param str previous_page: Previous page token
         :param bool object_count: Include the count of objects contained in the division
-        :param list[str] id: Optionally request specific divisions by their IDs
         :param str name: Search term to filter by division name
         :return: AuthzDivisionEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['page_size', 'page_number', 'sort_by', 'expand', 'next_page', 'previous_page', 'object_count', 'id', 'name']
+        all_params = ['page_size', 'page_number', 'sort_by', 'expand', 'next_page', 'previous_page', 'object_count', 'name']
         all_params.append('callback')
 
         params = locals()
@@ -282,8 +281,6 @@ class ObjectsApi(object):
             query_params['previousPage'] = params['previous_page']
         if 'object_count' in params:
             query_params['objectCount'] = params['object_count']
-        if 'id' in params:
-            query_params['id'] = params['id']
         if 'name' in params:
             query_params['name'] = params['name']
 

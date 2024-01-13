@@ -39,6 +39,7 @@ title: WorkitemsEventsNotificationWorkitem
 | **custom_fields** | [**dict(str, WorkitemsEventsNotificationCustomAttribute)**](WorkitemsEventsNotificationCustomAttribute.html) |  | [optional] |
 | **wrapup** | [**WorkitemsEventsNotificationWrapup**](WorkitemsEventsNotificationWrapup.html) |  | [optional] |
 | **sessions** | [**list[WorkitemsEventsNotificationSession]**](WorkitemsEventsNotificationSession.html) |  | [optional] |
+| **skill_ids** | **list[str]** |  | [optional] |
 {: class="table table-striped"}
 
 

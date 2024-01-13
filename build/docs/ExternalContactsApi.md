@@ -665,7 +665,7 @@ api_instance = PureCloudPlatformClientV2.ExternalContactsApi()
 contact_id = 'contact_id_example' # str | ExternalContact Id
 page_size = 20 # int | Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) (optional) (default to 20)
 page_number = 1 # int | Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) (optional) (default to 1)
-sort_order = 'sort_order_example' # str | Sort order (optional)
+sort_order = 'sort_order_example' # str | The Note field to sort by. Any of: [createDate]. Direction: [asc, desc].  e.g. \"createDate:asc\", \"createDate:desc\" (optional)
 expand = ['expand_example'] # list[str] | which fields, if any, to expand (optional)
 
 try:
@@ -684,7 +684,7 @@ except ApiException as e:
 | **contact_id** | **str**| ExternalContact Id |  |
 | **page_size** | **int**| Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;&#x3D; 1,000) | [optional] [default to 20] |
 | **page_number** | **int**| Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;&#x3D; 1,000) | [optional] [default to 1] |
-| **sort_order** | **str**| Sort order | [optional]  |
+| **sort_order** | **str**| The Note field to sort by. Any of: [createDate]. Direction: [asc, desc].  e.g. \&quot;createDate:asc\&quot;, \&quot;createDate:desc\&quot; | [optional]  |
 | **expand** | [**list[str]**](str.html)| which fields, if any, to expand | [optional] <br />**Values**: author, externalDataSources |
 {: class="table table-striped"}
 
@@ -773,7 +773,7 @@ api_instance = PureCloudPlatformClientV2.ExternalContactsApi()
 page_size = 20 # int | Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) (optional) (default to 20)
 page_number = 1 # int | Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) (optional) (default to 1)
 q = 'q_example' # str | User supplied search keywords (no special syntax is currently supported) (optional)
-sort_order = 'sort_order_example' # str | Sort order (optional)
+sort_order = 'sort_order_example' # str | The External Contact field to sort by. Any of: [firstName, lastName, middleName, title]. Direction: [asc, desc]. e.g. \"firstName:asc\", \"title:desc\" (optional)
 expand = ['expand_example'] # list[str] | which fields, if any, to expand (optional)
 
 try:
@@ -792,7 +792,7 @@ except ApiException as e:
 | **page_size** | **int**| Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;&#x3D; 1,000) | [optional] [default to 20] |
 | **page_number** | **int**| Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;&#x3D; 1,000) | [optional] [default to 1] |
 | **q** | **str**| User supplied search keywords (no special syntax is currently supported) | [optional]  |
-| **sort_order** | **str**| Sort order | [optional]  |
+| **sort_order** | **str**| The External Contact field to sort by. Any of: [firstName, lastName, middleName, title]. Direction: [asc, desc]. e.g. \&quot;firstName:asc\&quot;, \&quot;title:desc\&quot; | [optional]  |
 | **expand** | [**list[str]**](str.html)| which fields, if any, to expand | [optional] <br />**Values**: externalOrganization, externalDataSources |
 {: class="table table-striped"}
 
@@ -1079,7 +1079,7 @@ external_organization_id = 'external_organization_id_example' # str | External O
 page_size = 20 # int | Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) (optional) (default to 20)
 page_number = 1 # int | Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) (optional) (default to 1)
 q = 'q_example' # str | User supplied search keywords (no special syntax is currently supported) (optional)
-sort_order = 'sort_order_example' # str | Sort order (optional)
+sort_order = 'sort_order_example' # str | The External Contact field to sort by. Any of: [firstName, lastName, middleName, title]. Direction: [asc, desc]. e.g. \"firstName:asc\", \"title:desc\" (optional)
 expand = ['expand_example'] # list[str] | which fields, if any, to expand (optional)
 
 try:
@@ -1099,7 +1099,7 @@ except ApiException as e:
 | **page_size** | **int**| Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;&#x3D; 1,000) | [optional] [default to 20] |
 | **page_number** | **int**| Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;&#x3D; 1,000) | [optional] [default to 1] |
 | **q** | **str**| User supplied search keywords (no special syntax is currently supported) | [optional]  |
-| **sort_order** | **str**| Sort order | [optional]  |
+| **sort_order** | **str**| The External Contact field to sort by. Any of: [firstName, lastName, middleName, title]. Direction: [asc, desc]. e.g. \&quot;firstName:asc\&quot;, \&quot;title:desc\&quot; | [optional]  |
 | **expand** | [**list[str]**](str.html)| which fields, if any, to expand | [optional] <br />**Values**: externalOrganization, externalDataSources |
 {: class="table table-striped"}
 
@@ -1191,7 +1191,7 @@ api_instance = PureCloudPlatformClientV2.ExternalContactsApi()
 external_organization_id = 'external_organization_id_example' # str | External Organization Id
 page_size = 20 # int | Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) (optional) (default to 20)
 page_number = 1 # int | Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) (optional) (default to 1)
-sort_order = 'sort_order_example' # str | Sort order (optional)
+sort_order = 'sort_order_example' # str | The Note field to sort by. Any of: [createDate]. Direction: [asc, desc]. e.g. \"createDate:asc\", \"createDate:desc\" (optional)
 expand = ['expand_example'] # list[str] | which fields, if any, to expand (optional)
 
 try:
@@ -1210,7 +1210,7 @@ except ApiException as e:
 | **external_organization_id** | **str**| External Organization Id |  |
 | **page_size** | **int**| Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;&#x3D; 1,000) | [optional] [default to 20] |
 | **page_number** | **int**| Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;&#x3D; 1,000) | [optional] [default to 1] |
-| **sort_order** | **str**| Sort order | [optional]  |
+| **sort_order** | **str**| The Note field to sort by. Any of: [createDate]. Direction: [asc, desc]. e.g. \&quot;createDate:asc\&quot;, \&quot;createDate:desc\&quot; | [optional]  |
 | **expand** | [**list[str]**](str.html)| which fields, if any, to expand | [optional] <br />**Values**: author, externalDataSources |
 {: class="table table-striped"}
 
@@ -1250,7 +1250,7 @@ external_organization_id = 'external_organization_id_example' # str | External O
 page_size = 20 # int | Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) (optional) (default to 20)
 page_number = 1 # int | Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) (optional) (default to 1)
 expand = 'expand_example' # str | which fields, if any, to expand (optional)
-sort_order = 'sort_order_example' # str | Sort order (optional)
+sort_order = 'sort_order_example' # str | The Relationship field to sort by. Any of: [createDate, relationship]. Direction: [asc, desc]. e.g. \"createDate:asc\", \"relationship:desc\" (optional)
 
 try:
     # Fetch a relationship for an external organization
@@ -1269,7 +1269,7 @@ except ApiException as e:
 | **page_size** | **int**| Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;&#x3D; 1,000) | [optional] [default to 20] |
 | **page_number** | **int**| Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;&#x3D; 1,000) | [optional] [default to 1] |
 | **expand** | **str**| which fields, if any, to expand | [optional] <br />**Values**: externalDataSources |
-| **sort_order** | **str**| Sort order | [optional]  |
+| **sort_order** | **str**| The Relationship field to sort by. Any of: [createDate, relationship]. Direction: [asc, desc]. e.g. \&quot;createDate:asc\&quot;, \&quot;relationship:desc\&quot; | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1308,7 +1308,7 @@ page_size = 20 # int | Page size (limited to fetching first 1,000 records; pageN
 page_number = 1 # int | Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) (optional) (default to 1)
 q = 'q_example' # str | Search query (optional)
 trustor_id = ['trustor_id_example'] # list[str] | Search for external organizations by trustorIds (limit 25). If supplied, the 'q' parameters is ignored. Items are returned in the order requested (optional)
-sort_order = 'sort_order_example' # str | Sort order (optional)
+sort_order = 'sort_order_example' # str | The Organization field to sort by. Any of: [companyType, industry, name]. Direction: [asc, desc]. e.g. \"companyType:asc\", \"industry:desc\" (optional)
 expand = ['expand_example'] # list[str] | which fields, if any, to expand (optional)
 include_trustors = True # bool | (true or false) whether or not to include trustor information embedded in the externalOrganization (optional)
 
@@ -1329,7 +1329,7 @@ except ApiException as e:
 | **page_number** | **int**| Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;&#x3D; 1,000) | [optional] [default to 1] |
 | **q** | **str**| Search query | [optional]  |
 | **trustor_id** | [**list[str]**](str.html)| Search for external organizations by trustorIds (limit 25). If supplied, the &#39;q&#39; parameters is ignored. Items are returned in the order requested | [optional]  |
-| **sort_order** | **str**| Sort order | [optional]  |
+| **sort_order** | **str**| The Organization field to sort by. Any of: [companyType, industry, name]. Direction: [asc, desc]. e.g. \&quot;companyType:asc\&quot;, \&quot;industry:desc\&quot; | [optional]  |
 | **expand** | [**list[str]**](str.html)| which fields, if any, to expand | [optional] <br />**Values**: externalDataSources |
 | **include_trustors** | **bool**| (true or false) whether or not to include trustor information embedded in the externalOrganization | [optional]  |
 {: class="table table-striped"}

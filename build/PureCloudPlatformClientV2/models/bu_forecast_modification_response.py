@@ -57,8 +57,10 @@ class BuForecastModificationResponse(object):
             'legacy_metric': 'str',
             'value': 'float',
             'values': 'list[WfmForecastModificationIntervalOffsetValue]',
+            'secondary_values': 'list[WfmForecastModificationIntervalOffsetValue]',
             'display_granularity': 'str',
             'granularity': 'str',
+            'secondary_granularity': 'str',
             'enabled': 'bool',
             'planning_group_ids': 'list[str]'
         }
@@ -71,8 +73,10 @@ class BuForecastModificationResponse(object):
             'legacy_metric': 'legacyMetric',
             'value': 'value',
             'values': 'values',
+            'secondary_values': 'secondaryValues',
             'display_granularity': 'displayGranularity',
             'granularity': 'granularity',
+            'secondary_granularity': 'secondaryGranularity',
             'enabled': 'enabled',
             'planning_group_ids': 'planningGroupIds'
         }
@@ -84,8 +88,10 @@ class BuForecastModificationResponse(object):
         self._legacy_metric = None
         self._value = None
         self._values = None
+        self._secondary_values = None
         self._display_granularity = None
         self._granularity = None
+        self._secondary_granularity = None
         self._enabled = None
         self._planning_group_ids = None
 
@@ -273,6 +279,30 @@ class BuForecastModificationResponse(object):
         self._values = values
 
     @property
+    def secondary_values(self) -> List['WfmForecastModificationIntervalOffsetValue']:
+        """
+        Gets the secondary_values of this BuForecastModificationResponse.
+        The list of modification secondary values. Only applicable for multi granularity modifications
+
+        :return: The secondary_values of this BuForecastModificationResponse.
+        :rtype: list[WfmForecastModificationIntervalOffsetValue]
+        """
+        return self._secondary_values
+
+    @secondary_values.setter
+    def secondary_values(self, secondary_values: List['WfmForecastModificationIntervalOffsetValue']) -> None:
+        """
+        Sets the secondary_values of this BuForecastModificationResponse.
+        The list of modification secondary values. Only applicable for multi granularity modifications
+
+        :param secondary_values: The secondary_values of this BuForecastModificationResponse.
+        :type: list[WfmForecastModificationIntervalOffsetValue]
+        """
+        
+
+        self._secondary_values = secondary_values
+
+    @property
     def display_granularity(self) -> str:
         """
         Gets the display_granularity of this BuForecastModificationResponse.
@@ -319,6 +349,30 @@ class BuForecastModificationResponse(object):
         
 
         self._granularity = granularity
+
+    @property
+    def secondary_granularity(self) -> str:
+        """
+        Gets the secondary_granularity of this BuForecastModificationResponse.
+        The granularity of the 'secondaryValues' modification as stored behind the scenes, expressed in the ISO-8601 duration format. Periods are represented as an ISO-8601 string. For example: P1D or P1DT12H
+
+        :return: The secondary_granularity of this BuForecastModificationResponse.
+        :rtype: str
+        """
+        return self._secondary_granularity
+
+    @secondary_granularity.setter
+    def secondary_granularity(self, secondary_granularity: str) -> None:
+        """
+        Sets the secondary_granularity of this BuForecastModificationResponse.
+        The granularity of the 'secondaryValues' modification as stored behind the scenes, expressed in the ISO-8601 duration format. Periods are represented as an ISO-8601 string. For example: P1D or P1DT12H
+
+        :param secondary_granularity: The secondary_granularity of this BuForecastModificationResponse.
+        :type: str
+        """
+        
+
+        self._secondary_granularity = secondary_granularity
 
     @property
     def enabled(self) -> bool:

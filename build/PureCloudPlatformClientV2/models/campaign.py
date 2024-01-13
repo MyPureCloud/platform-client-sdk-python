@@ -488,7 +488,7 @@ class Campaign(object):
     def abandon_rate(self) -> float:
         """
         Gets the abandon_rate of this Campaign.
-        The targeted abandon rate percentage. Required for progressive, power, and predictive campaigns.
+        The targeted compliance abandon rate percentage. Required for power and predictive campaigns.
 
         :return: The abandon_rate of this Campaign.
         :rtype: float
@@ -499,7 +499,7 @@ class Campaign(object):
     def abandon_rate(self, abandon_rate: float) -> None:
         """
         Sets the abandon_rate of this Campaign.
-        The targeted abandon rate percentage. Required for progressive, power, and predictive campaigns.
+        The targeted compliance abandon rate percentage. Required for power and predictive campaigns.
 
         :param abandon_rate: The abandon_rate of this Campaign.
         :type: float

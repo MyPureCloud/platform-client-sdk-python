@@ -346,7 +346,7 @@ class WorktypeCreate(object):
     def division_id(self) -> str:
         """
         Gets the division_id of this WorktypeCreate.
-        The ID of the division the Worktype belongs to. Defaults to home division ID. The Worktype must be in the same division as its default Workbin.
+        The ID of the division the Worktype belongs to. Defaults to the default Workbin division ID. The Worktype must be in the same division as its default Workbin.
 
         :return: The division_id of this WorktypeCreate.
         :rtype: str
@@ -357,7 +357,7 @@ class WorktypeCreate(object):
     def division_id(self, division_id: str) -> None:
         """
         Sets the division_id of this WorktypeCreate.
-        The ID of the division the Worktype belongs to. Defaults to home division ID. The Worktype must be in the same division as its default Workbin.
+        The ID of the division the Worktype belongs to. Defaults to the default Workbin division ID. The Worktype must be in the same division as its default Workbin.
 
         :param division_id: The division_id of this WorktypeCreate.
         :type: str

@@ -20,10 +20,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_chats_thread_messages**](ChatApi.html#get_chats_thread_messages) | Get history by thread|
 |[**get_chats_user_message**](ChatApi.html#get_chats_user_message) | Get messages by id(s) from a 1on1|
 |[**get_chats_user_messages**](ChatApi.html#get_chats_user_messages) | Get 1on1 History between a user|
+|[**get_chats_user_settings**](ChatApi.html#get_chats_user_settings) | Get a user&#39;s chat settings|
 |[**patch_chats_room**](ChatApi.html#patch_chats_room) | Set properties for a room|
 |[**patch_chats_room_message**](ChatApi.html#patch_chats_room_message) | Edit a message in a room|
 |[**patch_chats_settings**](ChatApi.html#patch_chats_settings) | Patch Chat Settings.|
 |[**patch_chats_user_message**](ChatApi.html#patch_chats_user_message) | Edit a message to a user|
+|[**patch_chats_user_settings**](ChatApi.html#patch_chats_user_settings) | Update a user&#39;s chat settings|
 |[**post_chats_room_messages**](ChatApi.html#post_chats_room_messages) | Send a message to a room|
 |[**post_chats_room_participant**](ChatApi.html#post_chats_room_participant) | Join a room|
 |[**post_chats_room_pinnedmessages**](ChatApi.html#post_chats_room_pinnedmessages) | Add pinned messages for a room, up to a maximum of 5 pinned messages|
@@ -713,6 +715,58 @@ except ApiException as e:
 
 [**ChatMessageResponse**](ChatMessageResponse.html)
 
+<a name="get_chats_user_settings"></a>
+
+## [**ChatUserSettings**](ChatUserSettings.html) get_chats_user_settings(user_id)
+
+
+
+Get a user's chat settings
+
+get_chats_user_settings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/chats/users/{userId}/settings 
+
+Requires ANY permissions: 
+
+* chat:usersettings:view
+* chat:setting:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ChatApi()
+user_id = 'user_id_example' # str | User ID
+
+try:
+    # Get a user's chat settings
+    api_response = api_instance.get_chats_user_settings(user_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ChatApi->get_chats_user_settings: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **user_id** | **str**| User ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**ChatUserSettings**](ChatUserSettings.html)
+
 <a name="patch_chats_room"></a>
 
 ##  patch_chats_room(room_jid, body)
@@ -926,6 +980,60 @@ except ApiException as e:
 ### Return type
 
 [**ChatSendMessageResponse**](ChatSendMessageResponse.html)
+
+<a name="patch_chats_user_settings"></a>
+
+## [**ChatUserSettings**](ChatUserSettings.html) patch_chats_user_settings(user_id, body)
+
+
+
+Update a user's chat settings
+
+patch_chats_user_settings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps PATCH /api/v2/chats/users/{userId}/settings 
+
+Requires ANY permissions: 
+
+* chat:usersettings:edit
+* chat:setting:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ChatApi()
+user_id = 'user_id_example' # str | User ID
+body = PureCloudPlatformClientV2.ChatUserSettings() # ChatUserSettings | 
+
+try:
+    # Update a user's chat settings
+    api_response = api_instance.patch_chats_user_settings(user_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ChatApi->patch_chats_user_settings: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **user_id** | **str**| User ID |  |
+| **body** | [**ChatUserSettings**](ChatUserSettings.html)|  |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**ChatUserSettings**](ChatUserSettings.html)
 
 <a name="post_chats_room_messages"></a>
 

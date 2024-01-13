@@ -17,7 +17,7 @@ title: WorktypeCreate
 | **assignment_enabled** | **bool** | When set to true, Workitems will be sent to the queue of the Worktype as they are created. Default value is false. | [optional] |
 | **schema_id** | **str** | The ID of the custom attribute schema for Workitems created from the Worktype. Must be a valid UUID. | [optional] |
 | **description** | **str** | The description of the Worktype. Maximum length of 4096 characters. | [optional] |
-| **division_id** | **str** | The ID of the division the Worktype belongs to. Defaults to home division ID. The Worktype must be in the same division as its default Workbin. | [optional] |
+| **division_id** | **str** | The ID of the division the Worktype belongs to. Defaults to the default Workbin division ID. The Worktype must be in the same division as its default Workbin. | [optional] |
 | **disable_default_status_creation** | **bool** | Set to true to disable default status creation. Default statuses are created with the Worktype by default | [optional] |
 | **schema_version** | **int** | The version of the Worktypes custom attribute schema. The latest schema version will be used if this property is not set. | [optional] |
 | **default_queue_id** | **str** | The ID of the default queue for Workitems created from the Worktype. Must be a valid UUID. | [optional] |

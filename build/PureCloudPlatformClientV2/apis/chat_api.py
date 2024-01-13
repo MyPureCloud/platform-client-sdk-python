@@ -42,6 +42,7 @@ from ..models import ChatMessageEntityListing
 from ..models import ChatMessageResponse
 from ..models import ChatSendMessageResponse
 from ..models import ChatSettings
+from ..models import ChatUserSettings
 from ..models import CreateRoomRequest
 from ..models import CreateRoomResponse
 from ..models import ErrorBody
@@ -1124,6 +1125,85 @@ class ChatApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def get_chats_user_settings(self, user_id: str, **kwargs) -> 'ChatUserSettings':
+        """
+        Get a user's chat settings
+        
+	    get_chats_user_settings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_chats_user_settings(user_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str user_id: User ID (required)
+        :return: ChatUserSettings
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['user_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_chats_user_settings" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'user_id' is set
+        if ('user_id' not in params) or (params['user_id'] is None):
+            raise ValueError("Missing the required parameter `user_id` when calling `get_chats_user_settings`")
+
+
+        resource_path = '/api/v2/chats/users/{userId}/settings'.replace('{format}', 'json')
+        path_params = {}
+        if 'user_id' in params:
+            path_params['userId'] = params['user_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ChatUserSettings',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def patch_chats_room(self, room_jid: str, body: 'RoomUpdateRequest', **kwargs) -> None:
         """
         Set properties for a room
@@ -1465,6 +1545,91 @@ class ChatApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='ChatSendMessageResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def patch_chats_user_settings(self, user_id: str, body: 'ChatUserSettings', **kwargs) -> 'ChatUserSettings':
+        """
+        Update a user's chat settings
+        
+	    patch_chats_user_settings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.patch_chats_user_settings(user_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str user_id: User ID (required)
+        :param ChatUserSettings body:  (required)
+        :return: ChatUserSettings
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['user_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method patch_chats_user_settings" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'user_id' is set
+        if ('user_id' not in params) or (params['user_id'] is None):
+            raise ValueError("Missing the required parameter `user_id` when calling `patch_chats_user_settings`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `patch_chats_user_settings`")
+
+
+        resource_path = '/api/v2/chats/users/{userId}/settings'.replace('{format}', 'json')
+        path_params = {}
+        if 'user_id' in params:
+            path_params['userId'] = params['user_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PATCH',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ChatUserSettings',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

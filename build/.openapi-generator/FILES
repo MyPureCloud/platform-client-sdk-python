@@ -98,6 +98,8 @@ PureCloudPlatformClientV2/models/action_aggregation_query.py
 PureCloudPlatformClientV2/models/action_aggregation_view.py
 PureCloudPlatformClientV2/models/action_async_aggregate_query_response.py
 PureCloudPlatformClientV2/models/action_async_aggregation_query.py
+PureCloudPlatformClientV2/models/action_certificate.py
+PureCloudPlatformClientV2/models/action_certificate_listing.py
 PureCloudPlatformClientV2/models/action_config.py
 PureCloudPlatformClientV2/models/action_contract.py
 PureCloudPlatformClientV2/models/action_contract_input.py
@@ -140,6 +142,7 @@ PureCloudPlatformClientV2/models/additional_languages_intent.py
 PureCloudPlatformClientV2/models/additional_languages_synonyms.py
 PureCloudPlatformClientV2/models/additional_message.py
 PureCloudPlatformClientV2/models/address.py
+PureCloudPlatformClientV2/models/addressable_entity.py
 PureCloudPlatformClientV2/models/addressable_entity_ref.py
 PureCloudPlatformClientV2/models/addressable_license_definition.py
 PureCloudPlatformClientV2/models/adfs.py
@@ -316,9 +319,7 @@ PureCloudPlatformClientV2/models/atzm_time_slot.py
 PureCloudPlatformClientV2/models/atzm_time_slot_with_time_zone.py
 PureCloudPlatformClientV2/models/audio_state.py
 PureCloudPlatformClientV2/models/audio_updated_event.py
-PureCloudPlatformClientV2/models/audit_change.py
 PureCloudPlatformClientV2/models/audit_entity.py
-PureCloudPlatformClientV2/models/audit_entity_reference.py
 PureCloudPlatformClientV2/models/audit_facet.py
 PureCloudPlatformClientV2/models/audit_filter.py
 PureCloudPlatformClientV2/models/audit_log_message.py
@@ -622,6 +623,7 @@ PureCloudPlatformClientV2/models/chat_message_user.py
 PureCloudPlatformClientV2/models/chat_reaction.py
 PureCloudPlatformClientV2/models/chat_send_message_response.py
 PureCloudPlatformClientV2/models/chat_settings.py
+PureCloudPlatformClientV2/models/chat_user_settings.py
 PureCloudPlatformClientV2/models/check.py
 PureCloudPlatformClientV2/models/client_app.py
 PureCloudPlatformClientV2/models/client_app_configuration_info.py
@@ -732,12 +734,10 @@ PureCloudPlatformClientV2/models/contactlist_import_status_import_status.py
 PureCloudPlatformClientV2/models/contactlist_import_status_object.py
 PureCloudPlatformClientV2/models/content_actions.py
 PureCloudPlatformClientV2/models/content_attachment.py
-PureCloudPlatformClientV2/models/content_attribute_filter_item.py
 PureCloudPlatformClientV2/models/content_button_response.py
 PureCloudPlatformClientV2/models/content_card.py
 PureCloudPlatformClientV2/models/content_card_action.py
 PureCloudPlatformClientV2/models/content_carousel.py
-PureCloudPlatformClientV2/models/content_facet_filter_item.py
 PureCloudPlatformClientV2/models/content_filter_item.py
 PureCloudPlatformClientV2/models/content_generic.py
 PureCloudPlatformClientV2/models/content_list.py
@@ -756,12 +756,10 @@ PureCloudPlatformClientV2/models/content_offer_style_properties.py
 PureCloudPlatformClientV2/models/content_offer_styling_configuration.py
 PureCloudPlatformClientV2/models/content_position_properties.py
 PureCloudPlatformClientV2/models/content_postback.py
-PureCloudPlatformClientV2/models/content_query_request.py
 PureCloudPlatformClientV2/models/content_quick_reply.py
 PureCloudPlatformClientV2/models/content_quick_reply_v2.py
 PureCloudPlatformClientV2/models/content_reaction.py
 PureCloudPlatformClientV2/models/content_setting.py
-PureCloudPlatformClientV2/models/content_sort_item.py
 PureCloudPlatformClientV2/models/content_story.py
 PureCloudPlatformClientV2/models/content_text.py
 PureCloudPlatformClientV2/models/context.py
@@ -1292,8 +1290,6 @@ PureCloudPlatformClientV2/models/do_not_send_action_settings.py
 PureCloudPlatformClientV2/models/document.py
 PureCloudPlatformClientV2/models/document_article.py
 PureCloudPlatformClientV2/models/document_attribute.py
-PureCloudPlatformClientV2/models/document_audit.py
-PureCloudPlatformClientV2/models/document_audit_entity_listing.py
 PureCloudPlatformClientV2/models/document_body.py
 PureCloudPlatformClientV2/models/document_body_block.py
 PureCloudPlatformClientV2/models/document_body_image.py
@@ -1818,6 +1814,8 @@ PureCloudPlatformClientV2/models/import_status.py
 PureCloudPlatformClientV2/models/import_status_request.py
 PureCloudPlatformClientV2/models/import_template.py
 PureCloudPlatformClientV2/models/import_template_entity_listing.py
+PureCloudPlatformClientV2/models/import_template_import_status_import_status.py
+PureCloudPlatformClientV2/models/import_template_import_status_object.py
 PureCloudPlatformClientV2/models/inbound_domain.py
 PureCloudPlatformClientV2/models/inbound_domain_entity_listing.py
 PureCloudPlatformClientV2/models/inbound_domain_patch_request.py
@@ -2214,7 +2212,6 @@ PureCloudPlatformClientV2/models/listed_topic.py
 PureCloudPlatformClientV2/models/local_date_range.py
 PureCloudPlatformClientV2/models/local_encryption_configuration.py
 PureCloudPlatformClientV2/models/local_encryption_key_request.py
-PureCloudPlatformClientV2/models/local_time.py
 PureCloudPlatformClientV2/models/locale_flow_version_info.py
 PureCloudPlatformClientV2/models/locale_health.py
 PureCloudPlatformClientV2/models/locale_info.py
@@ -2234,7 +2231,9 @@ PureCloudPlatformClientV2/models/locations_search_response.py
 PureCloudPlatformClientV2/models/lock_info.py
 PureCloudPlatformClientV2/models/log_capture_download_execution_response.py
 PureCloudPlatformClientV2/models/log_capture_query_request.py
+PureCloudPlatformClientV2/models/log_capture_query_response.py
 PureCloudPlatformClientV2/models/log_capture_user_configuration.py
+PureCloudPlatformClientV2/models/log_entry.py
 PureCloudPlatformClientV2/models/logical_interface_entity_listing.py
 PureCloudPlatformClientV2/models/long_term_forecast_planning_group_data.py
 PureCloudPlatformClientV2/models/long_term_forecast_result.py
@@ -2348,6 +2347,8 @@ PureCloudPlatformClientV2/models/miner_listing.py
 PureCloudPlatformClientV2/models/miner_topic.py
 PureCloudPlatformClientV2/models/miner_topic_phrase.py
 PureCloudPlatformClientV2/models/miner_topics_listing.py
+PureCloudPlatformClientV2/models/mobile_notification_settings.py
+PureCloudPlatformClientV2/models/mobile_settings.py
 PureCloudPlatformClientV2/models/modeling_processing_error.py
 PureCloudPlatformClientV2/models/modeling_status_response.py
 PureCloudPlatformClientV2/models/modifiable_rule_properties.py
@@ -2527,6 +2528,7 @@ PureCloudPlatformClientV2/models/overall_best_points_item.py
 PureCloudPlatformClientV2/models/page.py
 PureCloudPlatformClientV2/models/paged_namespace_listing.py
 PureCloudPlatformClientV2/models/pageless_domain_entity_listing_evaluation_version.py
+PureCloudPlatformClientV2/models/pageless_entity_listing.py
 PureCloudPlatformClientV2/models/paging_spec.py
 PureCloudPlatformClientV2/models/parameter.py
 PureCloudPlatformClientV2/models/parsed_certificate.py
@@ -4241,6 +4243,8 @@ docs/ActionAggregationQuery.md
 docs/ActionAggregationView.md
 docs/ActionAsyncAggregateQueryResponse.md
 docs/ActionAsyncAggregationQuery.md
+docs/ActionCertificate.md
+docs/ActionCertificateListing.md
 docs/ActionConfig.md
 docs/ActionContract.md
 docs/ActionContractInput.md
@@ -4283,6 +4287,7 @@ docs/AdditionalLanguagesIntent.md
 docs/AdditionalLanguagesSynonyms.md
 docs/AdditionalMessage.md
 docs/Address.md
+docs/AddressableEntity.md
 docs/AddressableEntityRef.md
 docs/AddressableLicenseDefinition.md
 docs/AdherenceExplanationAsyncResponse.md
@@ -4466,9 +4471,7 @@ docs/AudioState.md
 docs/AudioUpdatedEvent.md
 docs/AuditApi.json
 docs/AuditApi.md
-docs/AuditChange.md
 docs/AuditEntity.md
-docs/AuditEntityReference.md
 docs/AuditFacet.md
 docs/AuditFilter.md
 docs/AuditLogMessage.md
@@ -4780,6 +4783,7 @@ docs/ChatMessageUser.md
 docs/ChatReaction.md
 docs/ChatSendMessageResponse.md
 docs/ChatSettings.md
+docs/ChatUserSettings.md
 docs/Check.md
 docs/ClientApp.md
 docs/ClientAppConfigurationInfo.md
@@ -4892,12 +4896,10 @@ docs/ContactlistImportStatusImportStatus.md
 docs/ContactlistImportStatusObject.md
 docs/ContentActions.md
 docs/ContentAttachment.md
-docs/ContentAttributeFilterItem.md
 docs/ContentButtonResponse.md
 docs/ContentCard.md
 docs/ContentCardAction.md
 docs/ContentCarousel.md
-docs/ContentFacetFilterItem.md
 docs/ContentFilterItem.md
 docs/ContentGeneric.md
 docs/ContentList.md
@@ -4918,12 +4920,10 @@ docs/ContentOfferStyleProperties.md
 docs/ContentOfferStylingConfiguration.md
 docs/ContentPositionProperties.md
 docs/ContentPostback.md
-docs/ContentQueryRequest.md
 docs/ContentQuickReply.md
 docs/ContentQuickReplyV2.md
 docs/ContentReaction.md
 docs/ContentSetting.md
-docs/ContentSortItem.md
 docs/ContentStory.md
 docs/ContentText.md
 docs/Context.md
@@ -5458,8 +5458,6 @@ docs/DoNotSendActionSettings.md
 docs/Document.md
 docs/DocumentArticle.md
 docs/DocumentAttribute.md
-docs/DocumentAudit.md
-docs/DocumentAuditEntityListing.md
 docs/DocumentBody.md
 docs/DocumentBodyBlock.md
 docs/DocumentBodyImage.md
@@ -6012,6 +6010,8 @@ docs/ImportStatus.md
 docs/ImportStatusRequest.md
 docs/ImportTemplate.md
 docs/ImportTemplateEntityListing.md
+docs/ImportTemplateImportStatusImportStatus.md
+docs/ImportTemplateImportStatusObject.md
 docs/InboundDomain.md
 docs/InboundDomainEntityListing.md
 docs/InboundDomainPatchRequest.md
@@ -6420,7 +6420,6 @@ docs/ListedTopic.md
 docs/LocalDateRange.md
 docs/LocalEncryptionConfiguration.md
 docs/LocalEncryptionKeyRequest.md
-docs/LocalTime.md
 docs/LocaleFlowVersionInfo.md
 docs/LocaleHealth.md
 docs/LocaleInfo.md
@@ -6444,7 +6443,9 @@ docs/LogCaptureApi.json
 docs/LogCaptureApi.md
 docs/LogCaptureDownloadExecutionResponse.md
 docs/LogCaptureQueryRequest.md
+docs/LogCaptureQueryResponse.md
 docs/LogCaptureUserConfiguration.md
+docs/LogEntry.md
 docs/LogicalInterfaceEntityListing.md
 docs/LongTermForecastPlanningGroupData.md
 docs/LongTermForecastResult.md
@@ -6562,6 +6563,8 @@ docs/MinerTopicPhrase.md
 docs/MinerTopicsListing.md
 docs/MobileDevicesApi.json
 docs/MobileDevicesApi.md
+docs/MobileNotificationSettings.md
+docs/MobileSettings.md
 docs/ModelingProcessingError.md
 docs/ModelingStatusResponse.md
 docs/ModifiableRuleProperties.md
@@ -6756,6 +6759,7 @@ docs/PINConfiguration.md
 docs/Page.md
 docs/PagedNamespaceListing.md
 docs/PagelessDomainEntityListingEvaluationVersion.md
+docs/PagelessEntityListing.md
 docs/PagingSpec.md
 docs/Parameter.md
 docs/ParsedCertificate.md
@@ -8561,6 +8565,7 @@ docs/delete_conversations_messaging_integrations_whatsapp_integration_id-example
 docs/delete_conversations_messaging_setting-example.txt
 docs/delete_conversations_messaging_settings_default-example.txt
 docs/delete_conversations_messaging_supportedcontent_supported_content_id-example.txt
+docs/delete_diagnostics_logcapture_browser_user-example.txt
 docs/delete_employeeperformance_externalmetrics_definition-example.txt
 docs/delete_externalcontacts_contact-example.txt
 docs/delete_externalcontacts_contact_note-example.txt
@@ -8918,6 +8923,7 @@ docs/get_chats_settings-example.txt
 docs/get_chats_thread_messages-example.txt
 docs/get_chats_user_message-example.txt
 docs/get_chats_user_messages-example.txt
+docs/get_chats_user_settings-example.txt
 docs/get_coaching_appointment-example.txt
 docs/get_coaching_appointment_annotation-example.txt
 docs/get_coaching_appointment_annotations-example.txt
@@ -8927,7 +8933,6 @@ docs/get_coaching_appointments_me-example.txt
 docs/get_coaching_notification-example.txt
 docs/get_coaching_notifications-example.txt
 docs/get_contentmanagement_document-example.txt
-docs/get_contentmanagement_document_audits-example.txt
 docs/get_contentmanagement_document_content-example.txt
 docs/get_contentmanagement_documents-example.txt
 docs/get_contentmanagement_query-example.txt
@@ -9037,6 +9042,8 @@ docs/get_dataextensions_coretypes-example.txt
 docs/get_dataextensions_limits-example.txt
 docs/get_date-example.txt
 docs/get_diagnostics_logcapture_browser_entries_download_job-example.txt
+docs/get_diagnostics_logcapture_browser_user-example.txt
+docs/get_diagnostics_logcapture_browser_users-example.txt
 docs/get_documentation_gkn_search-example.txt
 docs/get_documentation_search-example.txt
 docs/get_download-example.txt
@@ -9201,6 +9208,7 @@ docs/get_integrations_action_schema-example.txt
 docs/get_integrations_action_template-example.txt
 docs/get_integrations_actions-example.txt
 docs/get_integrations_actions_categories-example.txt
+docs/get_integrations_actions_certificates-example.txt
 docs/get_integrations_actions_drafts-example.txt
 docs/get_integrations_botconnector_integration_id_bot-example.txt
 docs/get_integrations_botconnector_integration_id_bot_versions-example.txt
@@ -9568,6 +9576,8 @@ docs/get_routing_utilization_tag_agents-example.txt
 docs/get_routing_utilization_tags-example.txt
 docs/get_routing_wrapupcode-example.txt
 docs/get_routing_wrapupcodes-example.txt
+docs/get_routing_wrapupcodes_divisionview-example.txt
+docs/get_routing_wrapupcodes_divisionviews-example.txt
 docs/get_scim_group-example.txt
 docs/get_scim_groups-example.txt
 docs/get_scim_resourcetype-example.txt
@@ -9901,6 +9911,7 @@ docs/patch_chats_room-example.txt
 docs/patch_chats_room_message-example.txt
 docs/patch_chats_settings-example.txt
 docs/patch_chats_user_message-example.txt
+docs/patch_chats_user_settings-example.txt
 docs/patch_coaching_appointment-example.txt
 docs/patch_coaching_appointment_annotation-example.txt
 docs/patch_coaching_appointment_status-example.txt
@@ -9998,6 +10009,7 @@ docs/patch_routing_queue_members-example.txt
 docs/patch_routing_queue_user-example.txt
 docs/patch_routing_queue_users-example.txt
 docs/patch_routing_settings_contactcenter-example.txt
+docs/patch_routing_settings_transcription-example.txt
 docs/patch_routing_skillgroup-example.txt
 docs/patch_scim_group-example.txt
 docs/patch_scim_user-example.txt
@@ -10170,7 +10182,6 @@ docs/post_coaching_appointment_conversations-example.txt
 docs/post_coaching_appointments-example.txt
 docs/post_coaching_appointments_aggregates_query-example.txt
 docs/post_coaching_scheduleslots_query-example.txt
-docs/post_contentmanagement_auditquery-example.txt
 docs/post_contentmanagement_document-example.txt
 docs/post_contentmanagement_document_content-example.txt
 docs/post_contentmanagement_documents-example.txt
@@ -10254,6 +10265,8 @@ docs/post_conversations_social_participant_communication_wrapup-example.txt
 docs/post_conversations_video_participant_communication_wrapup-example.txt
 docs/post_conversations_videos_meetings-example.txt
 docs/post_diagnostics_logcapture_browser_entries_download_jobs-example.txt
+docs/post_diagnostics_logcapture_browser_entries_query-example.txt
+docs/post_diagnostics_logcapture_browser_user-example.txt
 docs/post_documentation_all_search-example.txt
 docs/post_documentation_gkn_search-example.txt
 docs/post_documentation_search-example.txt

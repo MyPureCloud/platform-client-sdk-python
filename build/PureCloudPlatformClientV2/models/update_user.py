@@ -65,6 +65,7 @@ class UpdateUser(object):
             'addresses': 'list[Contact]',
             'title': 'str',
             'username': 'str',
+            'preferred_name': 'str',
             'manager': 'str',
             'images': 'list[UserImage]',
             'version': 'int',
@@ -89,6 +90,7 @@ class UpdateUser(object):
             'addresses': 'addresses',
             'title': 'title',
             'username': 'username',
+            'preferred_name': 'preferredName',
             'manager': 'manager',
             'images': 'images',
             'version': 'version',
@@ -112,6 +114,7 @@ class UpdateUser(object):
         self._addresses = None
         self._title = None
         self._username = None
+        self._preferred_name = None
         self._manager = None
         self._images = None
         self._version = None
@@ -340,6 +343,30 @@ class UpdateUser(object):
         
 
         self._username = username
+
+    @property
+    def preferred_name(self) -> str:
+        """
+        Gets the preferred_name of this UpdateUser.
+        Preferred full name of agent
+
+        :return: The preferred_name of this UpdateUser.
+        :rtype: str
+        """
+        return self._preferred_name
+
+    @preferred_name.setter
+    def preferred_name(self, preferred_name: str) -> None:
+        """
+        Sets the preferred_name of this UpdateUser.
+        Preferred full name of agent
+
+        :param preferred_name: The preferred_name of this UpdateUser.
+        :type: str
+        """
+        
+
+        self._preferred_name = preferred_name
 
     @property
     def manager(self) -> str:

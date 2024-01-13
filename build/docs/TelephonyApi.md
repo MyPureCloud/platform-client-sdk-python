@@ -71,8 +71,6 @@ Get a SIP message.
 
 Get the raw form of the SIP message
 
-get_telephony_sipmessages_conversation is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/telephony/sipmessages/conversations/{conversationId} 
 
 Requires ALL permissions: 
@@ -123,8 +121,6 @@ except ApiException as e:
 Get SIP headers.
 
 Get parsed SIP headers. Returns specific headers if key query parameters are added.
-
-get_telephony_sipmessages_conversation_headers is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/telephony/sipmessages/conversations/{conversationId}/headers 
 

@@ -2364,8 +2364,6 @@ Get a pageable list of basic extension pool objects filterable by query paramete
 
 This returns extension pools consisting of name and division. If one or more IDs are specified, the search will fetch flow outcomes that match the given ID(s) and not use any additional supplied query parameters in the search.
 
-get_telephony_providers_edges_extensionpools_divisionviews is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/telephony/providers/edges/extensionpools/divisionviews 
 
 Requires ALL permissions: 
@@ -3854,7 +3852,7 @@ except ApiException as e:
 
 <a name="get_telephony_providers_edges_sites"></a>
 
-## [**SiteEntityListing**](SiteEntityListing.html) get_telephony_providers_edges_sites(page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order, name=name, location_id=location_id, managed=managed)
+## [**SiteEntityListing**](SiteEntityListing.html) get_telephony_providers_edges_sites(page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order, name=name, location_id=location_id, managed=managed, expand=expand)
 
 
 
@@ -3885,10 +3883,11 @@ sort_order = ''ASC'' # str | Sort order (optional) (default to 'ASC')
 name = 'name_example' # str | Name (optional)
 location_id = 'location_id_example' # str | Location Id (optional)
 managed = True # bool | Filter by managed (optional)
+expand = ['expand_example'] # list[str] | Fields to expand in the response, comma-separated (optional)
 
 try:
     # Get the list of Sites.
-    api_response = api_instance.get_telephony_providers_edges_sites(page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order, name=name, location_id=location_id, managed=managed)
+    api_response = api_instance.get_telephony_providers_edges_sites(page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order, name=name, location_id=location_id, managed=managed, expand=expand)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_sites: %s\n" % e)
@@ -3906,6 +3905,7 @@ except ApiException as e:
 | **name** | **str**| Name | [optional]  |
 | **location_id** | **str**| Location Id | [optional]  |
 | **managed** | **bool**| Filter by managed | [optional]  |
+| **expand** | [**list[str]**](str.html)| Fields to expand in the response, comma-separated | [optional] <br />**Values**: edges, location, primarySites, secondarySites |
 {: class="table table-striped"}
 
 ### Return type

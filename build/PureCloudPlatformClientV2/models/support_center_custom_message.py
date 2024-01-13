@@ -81,6 +81,12 @@ class SupportCenterCustomMessage(object):
         :type: str
         """
         
+        if len(default_value) > 300:
+            raise ValueError("Invalid value for `default_value`, length must be less than `300`")
+
+        if len(default_value) < 0:
+            raise ValueError("Invalid value for `default_value`, length must be greater than or equal to `0`")
+
 
         self._default_value = default_value
 

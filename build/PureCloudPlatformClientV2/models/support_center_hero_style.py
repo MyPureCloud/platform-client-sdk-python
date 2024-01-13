@@ -86,6 +86,9 @@ class SupportCenterHeroStyle(object):
         :type: str
         """
         
+        if not re.search('^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$', background_color):
+            raise ValueError("Invalid value for `background_color`, must be a follow pattern or equal to `/^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/`")
+
 
         self._background_color = background_color
 
@@ -110,6 +113,9 @@ class SupportCenterHeroStyle(object):
         :type: str
         """
         
+        if not re.search('^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$', text_color):
+            raise ValueError("Invalid value for `text_color`, must be a follow pattern or equal to `/^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/`")
+
 
         self._text_color = text_color
 
