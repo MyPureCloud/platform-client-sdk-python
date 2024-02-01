@@ -46,6 +46,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_knowledge_knowledgebase_language_documents_import**](KnowledgeApi.html#get_knowledge_knowledgebase_language_documents_import) | Get import operation report|
 |[**get_knowledge_knowledgebase_language_training**](KnowledgeApi.html#get_knowledge_knowledgebase_language_training) | Get training detail|
 |[**get_knowledge_knowledgebase_language_trainings**](KnowledgeApi.html#get_knowledge_knowledgebase_language_trainings) | Get all trainings information for a knowledgebase|
+|[**get_knowledge_knowledgebase_operations**](KnowledgeApi.html#get_knowledge_knowledgebase_operations) | Get operations|
+|[**get_knowledge_knowledgebase_operations_users_query**](KnowledgeApi.html#get_knowledge_knowledgebase_operations_users_query) | Get ids of operation creator users and oauth clients|
 |[**get_knowledge_knowledgebase_unanswered_group**](KnowledgeApi.html#get_knowledge_knowledgebase_unanswered_group) | Get knowledge base unanswered group for a particular groupId|
 |[**get_knowledge_knowledgebase_unanswered_group_phrasegroup**](KnowledgeApi.html#get_knowledge_knowledgebase_unanswered_group_phrasegroup) | Get knowledge base unanswered phrase group for a particular phraseGroupId|
 |[**get_knowledge_knowledgebase_unanswered_groups**](KnowledgeApi.html#get_knowledge_knowledgebase_unanswered_groups) | Get knowledge base unanswered groups|
@@ -2197,6 +2199,122 @@ except ApiException as e:
 ### Return type
 
 [**TrainingListing**](TrainingListing.html)
+
+<a name="get_knowledge_knowledgebase_operations"></a>
+
+## [**OperationListing**](OperationListing.html) get_knowledge_knowledgebase_operations(knowledge_base_id, before=before, after=after, page_size=page_size, user_id=user_id, type=type, status=status, interval=interval)
+
+
+
+Get operations
+
+get_knowledge_knowledgebase_operations is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/operations 
+
+Requires ALL permissions: 
+
+* knowledge:importExportOperationsList:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.KnowledgeApi()
+knowledge_base_id = 'knowledge_base_id_example' # str | Knowledge base ID
+before = 'before_example' # str | The cursor that points to the start of the set of entities that has been returned. (optional)
+after = 'after_example' # str | The cursor that points to the end of the set of entities that has been returned. (optional)
+page_size = 'page_size_example' # str | Number of entities to return. Maximum of 200. (optional)
+user_id = ['user_id_example'] # list[str] | If specified, retrieves operations associated with user ids, comma separated values expected. (optional)
+type = ['type_example'] # list[str] | If specified, retrieves operations with specified operation type, comma separated values expected. (optional)
+status = ['status_example'] # list[str] | If specified, retrieves operations with specified operation status, comma separated values expected. (optional)
+interval = 'interval_example' # str | Retrieves the operations modified in specified date and time range. If the after and before cursor parameters are within this interval, it would return valid data, otherwise it throws an error.The dates in the interval are represented in ISO-8601 format: YYYY-MM-DDThh:mm:ssZ/YYYY-MM-DDThh:mm:ssZ (optional)
+
+try:
+    # Get operations
+    api_response = api_instance.get_knowledge_knowledgebase_operations(knowledge_base_id, before=before, after=after, page_size=page_size, user_id=user_id, type=type, status=status, interval=interval)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling KnowledgeApi->get_knowledge_knowledgebase_operations: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **knowledge_base_id** | **str**| Knowledge base ID |  |
+| **before** | **str**| The cursor that points to the start of the set of entities that has been returned. | [optional]  |
+| **after** | **str**| The cursor that points to the end of the set of entities that has been returned. | [optional]  |
+| **page_size** | **str**| Number of entities to return. Maximum of 200. | [optional]  |
+| **user_id** | [**list[str]**](str.html)| If specified, retrieves operations associated with user ids, comma separated values expected. | [optional]  |
+| **type** | [**list[str]**](str.html)| If specified, retrieves operations with specified operation type, comma separated values expected. | [optional] <br />**Values**: Export, Import, Parse, Sync |
+| **status** | [**list[str]**](str.html)| If specified, retrieves operations with specified operation status, comma separated values expected. | [optional]  |
+| **interval** | **str**| Retrieves the operations modified in specified date and time range. If the after and before cursor parameters are within this interval, it would return valid data, otherwise it throws an error.The dates in the interval are represented in ISO-8601 format: YYYY-MM-DDThh:mm:ssZ/YYYY-MM-DDThh:mm:ssZ | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**OperationListing**](OperationListing.html)
+
+<a name="get_knowledge_knowledgebase_operations_users_query"></a>
+
+## [**OperationCreatorUserResponse**](OperationCreatorUserResponse.html) get_knowledge_knowledgebase_operations_users_query(knowledge_base_id)
+
+
+
+Get ids of operation creator users and oauth clients
+
+get_knowledge_knowledgebase_operations_users_query is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/operations/users/query 
+
+Requires ALL permissions: 
+
+* knowledge:importExportOperationsList:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.KnowledgeApi()
+knowledge_base_id = 'knowledge_base_id_example' # str | Knowledge base ID
+
+try:
+    # Get ids of operation creator users and oauth clients
+    api_response = api_instance.get_knowledge_knowledgebase_operations_users_query(knowledge_base_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling KnowledgeApi->get_knowledge_knowledgebase_operations_users_query: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **knowledge_base_id** | **str**| Knowledge base ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**OperationCreatorUserResponse**](OperationCreatorUserResponse.html)
 
 <a name="get_knowledge_knowledgebase_unanswered_group"></a>
 

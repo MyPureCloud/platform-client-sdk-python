@@ -50,7 +50,7 @@ class GetAlertQuery(object):
         self.swagger_types = {
             'rule_type': 'str',
             'query_type': 'str',
-            'active_status': 'str',
+            'alert_status': 'str',
             'viewed_status': 'str',
             'page_number': 'int',
             'page_size': 'int',
@@ -61,7 +61,7 @@ class GetAlertQuery(object):
         self.attribute_map = {
             'rule_type': 'ruleType',
             'query_type': 'queryType',
-            'active_status': 'activeStatus',
+            'alert_status': 'alertStatus',
             'viewed_status': 'viewedStatus',
             'page_number': 'pageNumber',
             'page_size': 'pageSize',
@@ -71,7 +71,7 @@ class GetAlertQuery(object):
 
         self._rule_type = None
         self._query_type = None
-        self._active_status = None
+        self._alert_status = None
         self._viewed_status = None
         self._page_number = None
         self._page_size = None
@@ -137,33 +137,33 @@ class GetAlertQuery(object):
             self._query_type = query_type
 
     @property
-    def active_status(self) -> str:
+    def alert_status(self) -> str:
         """
-        Gets the active_status of this GetAlertQuery.
+        Gets the alert_status of this GetAlertQuery.
         The status of the alerts the query will return.
 
-        :return: The active_status of this GetAlertQuery.
+        :return: The alert_status of this GetAlertQuery.
         :rtype: str
         """
-        return self._active_status
+        return self._alert_status
 
-    @active_status.setter
-    def active_status(self, active_status: str) -> None:
+    @alert_status.setter
+    def alert_status(self, alert_status: str) -> None:
         """
-        Sets the active_status of this GetAlertQuery.
+        Sets the alert_status of this GetAlertQuery.
         The status of the alerts the query will return.
 
-        :param active_status: The active_status of this GetAlertQuery.
+        :param alert_status: The alert_status of this GetAlertQuery.
         :type: str
         """
-        if isinstance(active_status, int):
-            active_status = str(active_status)
+        if isinstance(alert_status, int):
+            alert_status = str(alert_status)
         allowed_values = ["Active", "Inactive", "All"]
-        if active_status.lower() not in map(str.lower, allowed_values):
-            # print("Invalid value for active_status -> " + active_status)
-            self._active_status = "outdated_sdk_version"
+        if alert_status.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for alert_status -> " + alert_status)
+            self._alert_status = "outdated_sdk_version"
         else:
-            self._active_status = active_status
+            self._alert_status = alert_status
 
     @property
     def viewed_status(self) -> str:

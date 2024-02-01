@@ -26,6 +26,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**delete_outbound_dnclist_customexclusioncolumns**](OutboundApi.html#delete_outbound_dnclist_customexclusioncolumns) | Deletes all or expired custom exclusion column entries from a DNC list.|
 |[**delete_outbound_dnclist_emailaddresses**](OutboundApi.html#delete_outbound_dnclist_emailaddresses) | Deletes all or expired email addresses from a DNC list.|
 |[**delete_outbound_dnclist_phonenumbers**](OutboundApi.html#delete_outbound_dnclist_phonenumbers) | Deletes all or expired phone numbers from a DNC list.|
+|[**delete_outbound_filespecificationtemplate**](OutboundApi.html#delete_outbound_filespecificationtemplate) | Delete File Specification Template|
+|[**delete_outbound_filespecificationtemplates_bulk**](OutboundApi.html#delete_outbound_filespecificationtemplates_bulk) | Delete multiple file specification templates.|
 |[**delete_outbound_importtemplate**](OutboundApi.html#delete_outbound_importtemplate) | Delete Import Template|
 |[**delete_outbound_importtemplates**](OutboundApi.html#delete_outbound_importtemplates) | Delete multiple import templates.|
 |[**delete_outbound_messagingcampaign**](OutboundApi.html#delete_outbound_messagingcampaign) | Delete an Outbound Messaging Campaign|
@@ -77,6 +79,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_outbound_dnclists_divisionviews**](OutboundApi.html#get_outbound_dnclists_divisionviews) | Query a list of simplified dnc list objects.|
 |[**get_outbound_event**](OutboundApi.html#get_outbound_event) | Get Dialer Event|
 |[**get_outbound_events**](OutboundApi.html#get_outbound_events) | Query Event Logs|
+|[**get_outbound_filespecificationtemplate**](OutboundApi.html#get_outbound_filespecificationtemplate) | Get File Specification Template|
+|[**get_outbound_filespecificationtemplates**](OutboundApi.html#get_outbound_filespecificationtemplates) | Query File Specification Templates|
 |[**get_outbound_importtemplate**](OutboundApi.html#get_outbound_importtemplate) | Get Import Template|
 |[**get_outbound_importtemplate_importstatus**](OutboundApi.html#get_outbound_importtemplate_importstatus) | Get the import status for an import template.|
 |[**get_outbound_importtemplates**](OutboundApi.html#get_outbound_importtemplates) | Query Import Templates|
@@ -122,12 +126,14 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_outbound_contactlists**](OutboundApi.html#post_outbound_contactlists) | Create a contact List.|
 |[**post_outbound_contactlisttemplates**](OutboundApi.html#post_outbound_contactlisttemplates) | Create Contact List Template|
 |[**post_outbound_contactlisttemplates_bulk_add**](OutboundApi.html#post_outbound_contactlisttemplates_bulk_add) | Add multiple contact list templates|
+|[**post_outbound_contactlisttemplates_bulk_retrieve**](OutboundApi.html#post_outbound_contactlisttemplates_bulk_retrieve) | Get multiple contact list templates|
 |[**post_outbound_conversation_dnc**](OutboundApi.html#post_outbound_conversation_dnc) | Add phone numbers to a Dialer DNC list.|
 |[**post_outbound_digitalrulesets**](OutboundApi.html#post_outbound_digitalrulesets) | Create an Outbound Digital Rule Set|
 |[**post_outbound_dnclist_emailaddresses**](OutboundApi.html#post_outbound_dnclist_emailaddresses) | Add email addresses to a DNC list.|
 |[**post_outbound_dnclist_export**](OutboundApi.html#post_outbound_dnclist_export) | Initiate the export of a dnc list.|
 |[**post_outbound_dnclist_phonenumbers**](OutboundApi.html#post_outbound_dnclist_phonenumbers) | Add phone numbers to a DNC list.|
 |[**post_outbound_dnclists**](OutboundApi.html#post_outbound_dnclists) | Create dialer DNC list|
+|[**post_outbound_filespecificationtemplates**](OutboundApi.html#post_outbound_filespecificationtemplates) | Create File Specification Template|
 |[**post_outbound_importtemplates**](OutboundApi.html#post_outbound_importtemplates) | Create Import Template|
 |[**post_outbound_importtemplates_bulk_add**](OutboundApi.html#post_outbound_importtemplates_bulk_add) | Add multiple import templates|
 |[**post_outbound_messagingcampaigns**](OutboundApi.html#post_outbound_messagingcampaigns) | Create a Messaging Campaign|
@@ -146,6 +152,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**put_outbound_contactlisttemplate**](OutboundApi.html#put_outbound_contactlisttemplate) | Update a contact list template.|
 |[**put_outbound_digitalruleset**](OutboundApi.html#put_outbound_digitalruleset) | Update an Outbound Digital Rule Set|
 |[**put_outbound_dnclist**](OutboundApi.html#put_outbound_dnclist) | Update dialer DNC list|
+|[**put_outbound_filespecificationtemplate**](OutboundApi.html#put_outbound_filespecificationtemplate) | Update File Specification Template|
 |[**put_outbound_importtemplate**](OutboundApi.html#put_outbound_importtemplate) | Update Import Template|
 |[**put_outbound_messagingcampaign**](OutboundApi.html#put_outbound_messagingcampaign) | Update an Outbound Messaging Campaign|
 |[**put_outbound_ruleset**](OutboundApi.html#put_outbound_ruleset) | Update a Rule Set.|
@@ -1032,6 +1039,102 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **dnc_list_id** | **str**| DncList ID |  |
 | **expired_only** | **bool**| Set to true to only remove DNC entries that are expired | [optional] [default to False] |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
+
+<a name="delete_outbound_filespecificationtemplate"></a>
+
+##  delete_outbound_filespecificationtemplate(file_specification_template_id)
+
+
+
+Delete File Specification Template
+
+Wraps DELETE /api/v2/outbound/filespecificationtemplates/{fileSpecificationTemplateId} 
+
+Requires ANY permissions: 
+
+* outbound:fileSpecificationTemplate:delete
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.OutboundApi()
+file_specification_template_id = 'file_specification_template_id_example' # str | File Specification Template ID
+
+try:
+    # Delete File Specification Template
+    api_instance.delete_outbound_filespecificationtemplate(file_specification_template_id)
+except ApiException as e:
+    print("Exception when calling OutboundApi->delete_outbound_filespecificationtemplate: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **file_specification_template_id** | **str**| File Specification Template ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
+
+<a name="delete_outbound_filespecificationtemplates_bulk"></a>
+
+##  delete_outbound_filespecificationtemplates_bulk(id)
+
+
+
+Delete multiple file specification templates.
+
+Wraps DELETE /api/v2/outbound/filespecificationtemplates/bulk 
+
+Requires ANY permissions: 
+
+* outbound:fileSpecificationTemplate:delete
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.OutboundApi()
+id = ['id_example'] # list[str] | File Specification template id(s) to delete
+
+try:
+    # Delete multiple file specification templates.
+    api_instance.delete_outbound_filespecificationtemplates_bulk(id)
+except ApiException as e:
+    print("Exception when calling OutboundApi->delete_outbound_filespecificationtemplates_bulk: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **id** | [**list[str]**](str.html)| File Specification template id(s) to delete |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -3802,6 +3905,116 @@ except ApiException as e:
 
 [**DialerEventEntityListing**](DialerEventEntityListing.html)
 
+<a name="get_outbound_filespecificationtemplate"></a>
+
+## [**FileSpecificationTemplate**](FileSpecificationTemplate.html) get_outbound_filespecificationtemplate(file_specification_template_id)
+
+
+
+Get File Specification Template
+
+Wraps GET /api/v2/outbound/filespecificationtemplates/{fileSpecificationTemplateId} 
+
+Requires ANY permissions: 
+
+* outbound:fileSpecificationTemplate:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.OutboundApi()
+file_specification_template_id = 'file_specification_template_id_example' # str | File Specification Template ID
+
+try:
+    # Get File Specification Template
+    api_response = api_instance.get_outbound_filespecificationtemplate(file_specification_template_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling OutboundApi->get_outbound_filespecificationtemplate: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **file_specification_template_id** | **str**| File Specification Template ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**FileSpecificationTemplate**](FileSpecificationTemplate.html)
+
+<a name="get_outbound_filespecificationtemplates"></a>
+
+## [**FileSpecificationTemplateEntityListing**](FileSpecificationTemplateEntityListing.html) get_outbound_filespecificationtemplates(page_size=page_size, page_number=page_number, allow_empty_result=allow_empty_result, filter_type=filter_type, name=name, sort_by=sort_by, sort_order=sort_order)
+
+
+
+Query File Specification Templates
+
+Wraps GET /api/v2/outbound/filespecificationtemplates 
+
+Requires ANY permissions: 
+
+* outbound:fileSpecificationTemplate:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.OutboundApi()
+page_size = 25 # int | Page size. The max that will be returned is 100. (optional) (default to 25)
+page_number = 1 # int | Page number (optional) (default to 1)
+allow_empty_result = False # bool | Whether to return an empty page when there are no results for that page (optional) (default to False)
+filter_type = ''Prefix'' # str | Filter type (optional) (default to 'Prefix')
+name = 'name_example' # str | Name (optional)
+sort_by = 'sort_by_example' # str | Sort by (optional)
+sort_order = ''a'' # str | Sort order (optional) (default to 'a')
+
+try:
+    # Query File Specification Templates
+    api_response = api_instance.get_outbound_filespecificationtemplates(page_size=page_size, page_number=page_number, allow_empty_result=allow_empty_result, filter_type=filter_type, name=name, sort_by=sort_by, sort_order=sort_order)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling OutboundApi->get_outbound_filespecificationtemplates: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **page_size** | **int**| Page size. The max that will be returned is 100. | [optional] [default to 25] |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **allow_empty_result** | **bool**| Whether to return an empty page when there are no results for that page | [optional] [default to False] |
+| **filter_type** | **str**| Filter type | [optional] [default to &#39;Prefix&#39;]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
+| **name** | **str**| Name | [optional]  |
+| **sort_by** | **str**| Sort by | [optional]  |
+| **sort_order** | **str**| Sort order | [optional] [default to &#39;a&#39;]<br />**Values**: ascending, descending |
+{: class="table table-striped"}
+
+### Return type
+
+[**FileSpecificationTemplateEntityListing**](FileSpecificationTemplateEntityListing.html)
+
 <a name="get_outbound_importtemplate"></a>
 
 ## [**ImportTemplate**](ImportTemplate.html) get_outbound_importtemplate(import_template_id)
@@ -6098,6 +6311,55 @@ except ApiException as e:
 
 [**ContactListTemplateEntityListing**](ContactListTemplateEntityListing.html)
 
+<a name="post_outbound_contactlisttemplates_bulk_retrieve"></a>
+
+## [**ContactListTemplateEntityListing**](ContactListTemplateEntityListing.html) post_outbound_contactlisttemplates_bulk_retrieve(body)
+
+
+
+Get multiple contact list templates
+
+Wraps POST /api/v2/outbound/contactlisttemplates/bulk/retrieve 
+
+Requires ANY permissions: 
+
+* outbound:contactListTemplate:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.OutboundApi()
+body = PureCloudPlatformClientV2.ContactListTemplateBulkRetrieveBody() # ContactListTemplateBulkRetrieveBody | contact list templates to get
+
+try:
+    # Get multiple contact list templates
+    api_response = api_instance.post_outbound_contactlisttemplates_bulk_retrieve(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling OutboundApi->post_outbound_contactlisttemplates_bulk_retrieve: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**ContactListTemplateBulkRetrieveBody**](ContactListTemplateBulkRetrieveBody.html)| contact list templates to get |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**ContactListTemplateEntityListing**](ContactListTemplateEntityListing.html)
+
 <a name="post_outbound_conversation_dnc"></a>
 
 ##  post_outbound_conversation_dnc(conversation_id)
@@ -6401,6 +6663,55 @@ except ApiException as e:
 ### Return type
 
 [**DncList**](DncList.html)
+
+<a name="post_outbound_filespecificationtemplates"></a>
+
+## [**FileSpecificationTemplate**](FileSpecificationTemplate.html) post_outbound_filespecificationtemplates(body)
+
+
+
+Create File Specification Template
+
+Wraps POST /api/v2/outbound/filespecificationtemplates 
+
+Requires ANY permissions: 
+
+* outbound:fileSpecificationTemplate:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.OutboundApi()
+body = PureCloudPlatformClientV2.FileSpecificationTemplate() # FileSpecificationTemplate | FileSpecificationTemplate
+
+try:
+    # Create File Specification Template
+    api_response = api_instance.post_outbound_filespecificationtemplates(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling OutboundApi->post_outbound_filespecificationtemplates: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**FileSpecificationTemplate**](FileSpecificationTemplate.html)| FileSpecificationTemplate |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**FileSpecificationTemplate**](FileSpecificationTemplate.html)
 
 <a name="post_outbound_importtemplates"></a>
 
@@ -7314,6 +7625,57 @@ except ApiException as e:
 ### Return type
 
 [**DncList**](DncList.html)
+
+<a name="put_outbound_filespecificationtemplate"></a>
+
+## [**FileSpecificationTemplate**](FileSpecificationTemplate.html) put_outbound_filespecificationtemplate(file_specification_template_id, body)
+
+
+
+Update File Specification Template
+
+Wraps PUT /api/v2/outbound/filespecificationtemplates/{fileSpecificationTemplateId} 
+
+Requires ANY permissions: 
+
+* outbound:fileSpecificationTemplate:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.OutboundApi()
+file_specification_template_id = 'file_specification_template_id_example' # str | File Specification Template ID
+body = PureCloudPlatformClientV2.FileSpecificationTemplate() # FileSpecificationTemplate | fileSpecificationTemplate
+
+try:
+    # Update File Specification Template
+    api_response = api_instance.put_outbound_filespecificationtemplate(file_specification_template_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling OutboundApi->put_outbound_filespecificationtemplate: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **file_specification_template_id** | **str**| File Specification Template ID |  |
+| **body** | [**FileSpecificationTemplate**](FileSpecificationTemplate.html)| fileSpecificationTemplate |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**FileSpecificationTemplate**](FileSpecificationTemplate.html)
 
 <a name="put_outbound_importtemplate"></a>
 

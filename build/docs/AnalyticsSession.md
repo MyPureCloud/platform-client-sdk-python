@@ -82,8 +82,8 @@ title: AnalyticsSession
 | **video_address_self** | **str** | Direct Video address | [optional] |
 | **video_room_id** | **str** | A unique identifier for a PureCloud video room | [optional] |
 | **waiting_interaction_counts** | **list[int]** | Number of waiting interactions for each predictive routing attempt | [optional] |
-| **proposed_agents** | [**list[AnalyticsProposedAgent]**](AnalyticsProposedAgent.html) | Proposed agents | [optional] |
 | **agent_groups** | [**list[AnalyticsAgentGroup]**](AnalyticsAgentGroup.html) | Conditional group routing agent groups | [optional] |
+| **proposed_agents** | [**list[AnalyticsProposedAgent]**](AnalyticsProposedAgent.html) | Proposed agents | [optional] |
 | **media_endpoint_stats** | [**list[AnalyticsMediaEndpointStat]**](AnalyticsMediaEndpointStat.html) | MediaEndpointStats associated with this session | [optional] |
 | **flow** | [**AnalyticsFlow**](AnalyticsFlow.html) | IVR flow execution associated with this session | [optional] |
 | **metrics** | [**list[AnalyticsSessionMetric]**](AnalyticsSessionMetric.html) | List of metrics for this session | [optional] |

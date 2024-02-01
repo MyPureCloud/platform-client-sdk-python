@@ -64,6 +64,7 @@ class Group(object):
             'addresses': 'list[GroupContact]',
             'rules_visible': 'bool',
             'visibility': 'str',
+            'roles_enabled': 'bool',
             'owners': 'list[User]',
             'self_uri': 'str'
         }
@@ -81,6 +82,7 @@ class Group(object):
             'addresses': 'addresses',
             'rules_visible': 'rulesVisible',
             'visibility': 'visibility',
+            'roles_enabled': 'rolesEnabled',
             'owners': 'owners',
             'self_uri': 'selfUri'
         }
@@ -97,6 +99,7 @@ class Group(object):
         self._addresses = None
         self._rules_visible = None
         self._visibility = None
+        self._roles_enabled = None
         self._owners = None
         self._self_uri = None
 
@@ -402,6 +405,30 @@ class Group(object):
             self._visibility = "outdated_sdk_version"
         else:
             self._visibility = visibility
+
+    @property
+    def roles_enabled(self) -> bool:
+        """
+        Gets the roles_enabled of this Group.
+        Allow roles to be assigned to this group
+
+        :return: The roles_enabled of this Group.
+        :rtype: bool
+        """
+        return self._roles_enabled
+
+    @roles_enabled.setter
+    def roles_enabled(self, roles_enabled: bool) -> None:
+        """
+        Sets the roles_enabled of this Group.
+        Allow roles to be assigned to this group
+
+        :param roles_enabled: The roles_enabled of this Group.
+        :type: bool
+        """
+        
+
+        self._roles_enabled = roles_enabled
 
     @property
     def owners(self) -> List['User']:

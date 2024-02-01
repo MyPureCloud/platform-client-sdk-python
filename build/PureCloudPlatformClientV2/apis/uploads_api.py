@@ -39,6 +39,8 @@ from typing import Any
 
 from ..models import Empty
 from ..models import ErrorBody
+from ..models import FunctionUploadRequest
+from ..models import FunctionUploadResponse
 from ..models import LearningCoverArtUploadUrlRequest
 from ..models import UploadUrlRequest
 from ..models import UploadUrlResponse
@@ -58,6 +60,91 @@ class UploadsApi(object):
             if not config.api_client:
                 config.api_client = ApiClient()
             self.api_client = config.api_client
+
+    def post_integrations_action_draft_function_upload(self, action_id: str, body: 'FunctionUploadRequest', **kwargs) -> 'FunctionUploadResponse':
+        """
+        Create upload presigned URL for draft function package file.
+        
+	    post_integrations_action_draft_function_upload is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_integrations_action_draft_function_upload(action_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str action_id: actionId (required)
+        :param FunctionUploadRequest body: Input used to request URL upload. (required)
+        :return: FunctionUploadResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['action_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_integrations_action_draft_function_upload" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'action_id' is set
+        if ('action_id' not in params) or (params['action_id'] is None):
+            raise ValueError("Missing the required parameter `action_id` when calling `post_integrations_action_draft_function_upload`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_integrations_action_draft_function_upload`")
+
+
+        resource_path = '/api/v2/integrations/actions/{actionId}/draft/function/upload'.replace('{format}', 'json')
+        path_params = {}
+        if 'action_id' in params:
+            path_params['actionId'] = params['action_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='FunctionUploadResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
 
     def post_knowledge_documentuploads(self, body: 'UploadUrlRequest', **kwargs) -> 'UploadUrlResponse':
         """

@@ -54,6 +54,7 @@ class UcUserPresence(object):
             'name': 'str',
             'user_id': 'str',
             'source': 'str',
+            'source_id': 'str',
             'presence_definition': 'PresenceDefinition',
             'message': 'str',
             'modified_date': 'datetime',
@@ -65,6 +66,7 @@ class UcUserPresence(object):
             'name': 'name',
             'user_id': 'userId',
             'source': 'source',
+            'source_id': 'sourceId',
             'presence_definition': 'presenceDefinition',
             'message': 'message',
             'modified_date': 'modifiedDate',
@@ -75,6 +77,7 @@ class UcUserPresence(object):
         self._name = None
         self._user_id = None
         self._source = None
+        self._source_id = None
         self._presence_definition = None
         self._message = None
         self._modified_date = None
@@ -156,7 +159,7 @@ class UcUserPresence(object):
     def source(self) -> str:
         """
         Gets the source of this UcUserPresence.
-        Represents the source where the Presence was set. Some examples are: PURECLOUD, MICROSOFTTEAMS, ZOOMPHONE, etc.
+        Deprecated - The sourceID field should be used as a replacement.
 
         :return: The source of this UcUserPresence.
         :rtype: str
@@ -167,7 +170,7 @@ class UcUserPresence(object):
     def source(self, source: str) -> None:
         """
         Sets the source of this UcUserPresence.
-        Represents the source where the Presence was set. Some examples are: PURECLOUD, MICROSOFTTEAMS, ZOOMPHONE, etc.
+        Deprecated - The sourceID field should be used as a replacement.
 
         :param source: The source of this UcUserPresence.
         :type: str
@@ -175,6 +178,30 @@ class UcUserPresence(object):
         
 
         self._source = source
+
+    @property
+    def source_id(self) -> str:
+        """
+        Gets the source_id of this UcUserPresence.
+        The registered source ID from where the presence was set
+
+        :return: The source_id of this UcUserPresence.
+        :rtype: str
+        """
+        return self._source_id
+
+    @source_id.setter
+    def source_id(self, source_id: str) -> None:
+        """
+        Sets the source_id of this UcUserPresence.
+        The registered source ID from where the presence was set
+
+        :param source_id: The source_id of this UcUserPresence.
+        :type: str
+        """
+        
+
+        self._source_id = source_id
 
     @property
     def presence_definition(self) -> 'PresenceDefinition':

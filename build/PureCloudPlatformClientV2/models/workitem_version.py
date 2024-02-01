@@ -45,6 +45,7 @@ if TYPE_CHECKING:
     from . import WorkitemSchema
     from . import WorkitemScoredAgent
     from . import WorkitemStatusReference
+    from . import WorkitemUtilizationLabelReference
     from . import WorktypeReference
 
 class WorkitemVersion(object):
@@ -68,6 +69,7 @@ class WorkitemVersion(object):
             'type': 'WorktypeReference',
             'description': 'str',
             'language': 'LanguageReference',
+            'utilization_label': 'WorkitemUtilizationLabelReference',
             'priority': 'int',
             'date_created': 'datetime',
             'date_modified': 'datetime',
@@ -107,6 +109,7 @@ class WorkitemVersion(object):
             'type': 'type',
             'description': 'description',
             'language': 'language',
+            'utilization_label': 'utilizationLabel',
             'priority': 'priority',
             'date_created': 'dateCreated',
             'date_modified': 'dateModified',
@@ -145,6 +148,7 @@ class WorkitemVersion(object):
         self._type = None
         self._description = None
         self._language = None
+        self._utilization_label = None
         self._priority = None
         self._date_created = None
         self._date_modified = None
@@ -319,6 +323,30 @@ class WorkitemVersion(object):
         
 
         self._language = language
+
+    @property
+    def utilization_label(self) -> 'WorkitemUtilizationLabelReference':
+        """
+        Gets the utilization_label of this WorkitemVersion.
+        The utilization label of the Workitem.
+
+        :return: The utilization_label of this WorkitemVersion.
+        :rtype: WorkitemUtilizationLabelReference
+        """
+        return self._utilization_label
+
+    @utilization_label.setter
+    def utilization_label(self, utilization_label: 'WorkitemUtilizationLabelReference') -> None:
+        """
+        Sets the utilization_label of this WorkitemVersion.
+        The utilization label of the Workitem.
+
+        :param utilization_label: The utilization_label of this WorkitemVersion.
+        :type: WorkitemUtilizationLabelReference
+        """
+        
+
+        self._utilization_label = utilization_label
 
     @property
     def priority(self) -> int:

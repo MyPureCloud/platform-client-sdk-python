@@ -3400,6 +3400,7 @@ Wraps PUT /api/v2/externalcontacts/conversations/{conversationId}
 
 Requires ANY permissions: 
 
+* relate:conversation:associate
 * externalContacts:conversation:associate
 
 ### Example

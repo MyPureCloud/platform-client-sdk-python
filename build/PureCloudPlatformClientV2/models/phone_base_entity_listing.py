@@ -54,6 +54,7 @@ class PhoneBaseEntityListing(object):
             'page_size': 'int',
             'page_number': 'int',
             'total': 'int',
+            'total_number_of_entities': 'int',
             'first_uri': 'str',
             'next_uri': 'str',
             'previous_uri': 'str',
@@ -67,6 +68,7 @@ class PhoneBaseEntityListing(object):
             'page_size': 'pageSize',
             'page_number': 'pageNumber',
             'total': 'total',
+            'total_number_of_entities': 'totalNumberOfEntities',
             'first_uri': 'firstUri',
             'next_uri': 'nextUri',
             'previous_uri': 'previousUri',
@@ -79,6 +81,7 @@ class PhoneBaseEntityListing(object):
         self._page_size = None
         self._page_number = None
         self._total = None
+        self._total_number_of_entities = None
         self._first_uri = None
         self._next_uri = None
         self._previous_uri = None
@@ -181,6 +184,30 @@ class PhoneBaseEntityListing(object):
         
 
         self._total = total
+
+    @property
+    def total_number_of_entities(self) -> int:
+        """
+        Gets the total_number_of_entities of this PhoneBaseEntityListing.
+        The total organization-wide number of entities.
+
+        :return: The total_number_of_entities of this PhoneBaseEntityListing.
+        :rtype: int
+        """
+        return self._total_number_of_entities
+
+    @total_number_of_entities.setter
+    def total_number_of_entities(self, total_number_of_entities: int) -> None:
+        """
+        Sets the total_number_of_entities of this PhoneBaseEntityListing.
+        The total organization-wide number of entities.
+
+        :param total_number_of_entities: The total_number_of_entities of this PhoneBaseEntityListing.
+        :type: int
+        """
+        
+
+        self._total_number_of_entities = total_number_of_entities
 
     @property
     def first_uri(self) -> str:

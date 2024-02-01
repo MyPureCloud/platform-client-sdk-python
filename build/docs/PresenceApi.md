@@ -10,15 +10,15 @@ All URIs are relative to *https://api.mypurecloud.com*
 |------------- | -------------|
 |[**delete_presence_definition**](PresenceApi.html#delete_presence_definition) | Delete a Presence Definition|
 |[**delete_presence_source**](PresenceApi.html#delete_presence_source) | Delete a Presence Source|
-|[**delete_presencedefinition**](PresenceApi.html#delete_presencedefinition) | Delete a Presence Definition|
+|[**delete_presencedefinition**](PresenceApi.html#delete_presencedefinition) | Delete a Presence Definition. Apps should migrate to use DELETE /api/v2/presence/definitions/{definitionId} instead|
 |[**get_presence_definition**](PresenceApi.html#get_presence_definition) | Get a Presence Definition|
 |[**get_presence_definitions**](PresenceApi.html#get_presence_definitions) | Get a list of Presence Definitions|
 |[**get_presence_settings**](PresenceApi.html#get_presence_settings) | Get the presence settings|
 |[**get_presence_source**](PresenceApi.html#get_presence_source) | Get a Presence Source|
 |[**get_presence_sources**](PresenceApi.html#get_presence_sources) | Get a list of Presence Sources|
 |[**get_presence_user_primarysource**](PresenceApi.html#get_presence_user_primarysource) | Get a user&#39;s Primary Presence Source|
-|[**get_presencedefinition**](PresenceApi.html#get_presencedefinition) | Get a Presence Definition|
-|[**get_presencedefinitions**](PresenceApi.html#get_presencedefinitions) | Get an Organization&#39;s list of Presence Definitions|
+|[**get_presencedefinition**](PresenceApi.html#get_presencedefinition) | Get a Presence Definition. Apps should migrate to use GET /api/v2/presence/definitions/{definitionId} instead|
+|[**get_presencedefinitions**](PresenceApi.html#get_presencedefinitions) | Get an Organization&#39;s list of Presence Definitions. Apps should migrate to use GET /api/v2/presence/definitions instead|
 |[**get_systempresences**](PresenceApi.html#get_systempresences) | Get the list of SystemPresences|
 |[**get_user_presence**](PresenceApi.html#get_user_presence) | Get a user&#39;s Presence|
 |[**get_user_presences_purecloud**](PresenceApi.html#get_user_presences_purecloud) | Get a user&#39;s Genesys Cloud presence.|
@@ -28,12 +28,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**patch_user_presences_purecloud**](PresenceApi.html#patch_user_presences_purecloud) | Patch a Genesys Cloud user&#39;s presence|
 |[**post_presence_definitions**](PresenceApi.html#post_presence_definitions) | Create a Presence Definition|
 |[**post_presence_sources**](PresenceApi.html#post_presence_sources) | Create a Presence Source|
-|[**post_presencedefinitions**](PresenceApi.html#post_presencedefinitions) | Create a Presence Definition|
+|[**post_presencedefinitions**](PresenceApi.html#post_presencedefinitions) | Create a Presence Definition. Apps should migrate to use POST /api/v2/presence/definitions instead|
 |[**put_presence_definition**](PresenceApi.html#put_presence_definition) | Update a Presence Definition|
 |[**put_presence_settings**](PresenceApi.html#put_presence_settings) | Update the presence settings|
 |[**put_presence_source**](PresenceApi.html#put_presence_source) | Update a Presence Source|
 |[**put_presence_user_primarysource**](PresenceApi.html#put_presence_user_primarysource) | Update a user&#39;s Primary Presence Source|
-|[**put_presencedefinition**](PresenceApi.html#put_presencedefinition) | Update a Presence Definition|
+|[**put_presencedefinition**](PresenceApi.html#put_presencedefinition) | Update a Presence Definition. Apps should migrate to use PUT /api/v2/presence/definitions/{definitionId} instead)|
 |[**put_users_presences_bulk**](PresenceApi.html#put_users_presences_bulk) | Update bulk user Presences|
 {: class="table table-striped"}
 
@@ -139,9 +139,9 @@ void (empty response body)
 
 ##  delete_presencedefinition(presence_id)
 
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
-
-Delete a Presence Definition
+Delete a Presence Definition. Apps should migrate to use DELETE /api/v2/presence/definitions/{definitionId} instead
 
 Wraps DELETE /api/v2/presencedefinitions/{presenceId} 
 
@@ -165,7 +165,7 @@ api_instance = PureCloudPlatformClientV2.PresenceApi()
 presence_id = 'presence_id_example' # str | Organization Presence ID
 
 try:
-    # Delete a Presence Definition
+    # Delete a Presence Definition. Apps should migrate to use DELETE /api/v2/presence/definitions/{definitionId} instead
     api_instance.delete_presencedefinition(presence_id)
 except ApiException as e:
     print("Exception when calling PresenceApi->delete_presencedefinition: %s\n" % e)
@@ -483,9 +483,9 @@ except ApiException as e:
 
 ## [**OrganizationPresence**](OrganizationPresence.html) get_presencedefinition(presence_id, locale_code=locale_code)
 
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
-
-Get a Presence Definition
+Get a Presence Definition. Apps should migrate to use GET /api/v2/presence/definitions/{definitionId} instead
 
 Wraps GET /api/v2/presencedefinitions/{presenceId} 
 
@@ -510,7 +510,7 @@ presence_id = 'presence_id_example' # str | Organization Presence ID
 locale_code = 'locale_code_example' # str | The locale code to fetch for the presence definition. Use ALL to fetch everything. (optional)
 
 try:
-    # Get a Presence Definition
+    # Get a Presence Definition. Apps should migrate to use GET /api/v2/presence/definitions/{definitionId} instead
     api_response = api_instance.get_presencedefinition(presence_id, locale_code=locale_code)
     pprint(api_response)
 except ApiException as e:
@@ -534,9 +534,9 @@ except ApiException as e:
 
 ## [**OrganizationPresenceEntityListing**](OrganizationPresenceEntityListing.html) get_presencedefinitions(page_number=page_number, page_size=page_size, deleted=deleted, locale_code=locale_code)
 
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
-
-Get an Organization's list of Presence Definitions
+Get an Organization's list of Presence Definitions. Apps should migrate to use GET /api/v2/presence/definitions instead
 
 Wraps GET /api/v2/presencedefinitions 
 
@@ -562,7 +562,7 @@ deleted = ''false'' # str | Deleted query can be TRUE, FALSE or ALL (optional) (
 locale_code = 'locale_code_example' # str | The locale code to fetch for each presence definition. Use ALL to fetch everything. (optional)
 
 try:
-    # Get an Organization's list of Presence Definitions
+    # Get an Organization's list of Presence Definitions. Apps should migrate to use GET /api/v2/presence/definitions instead
     api_response = api_instance.get_presencedefinitions(page_number=page_number, page_size=page_size, deleted=deleted, locale_code=locale_code)
     pprint(api_response)
 except ApiException as e:
@@ -1036,9 +1036,9 @@ except ApiException as e:
 
 ## [**OrganizationPresence**](OrganizationPresence.html) post_presencedefinitions(body)
 
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
-
-Create a Presence Definition
+Create a Presence Definition. Apps should migrate to use POST /api/v2/presence/definitions instead
 
 Wraps POST /api/v2/presencedefinitions 
 
@@ -1062,7 +1062,7 @@ api_instance = PureCloudPlatformClientV2.PresenceApi()
 body = PureCloudPlatformClientV2.OrganizationPresence() # OrganizationPresence | The Presence Definition to create
 
 try:
-    # Create a Presence Definition
+    # Create a Presence Definition. Apps should migrate to use POST /api/v2/presence/definitions instead
     api_response = api_instance.post_presencedefinitions(body)
     pprint(api_response)
 except ApiException as e:
@@ -1287,9 +1287,9 @@ except ApiException as e:
 
 ## [**OrganizationPresence**](OrganizationPresence.html) put_presencedefinition(presence_id, body)
 
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
-
-Update a Presence Definition
+Update a Presence Definition. Apps should migrate to use PUT /api/v2/presence/definitions/{definitionId} instead)
 
 Wraps PUT /api/v2/presencedefinitions/{presenceId} 
 
@@ -1314,7 +1314,7 @@ presence_id = 'presence_id_example' # str | Organization Presence ID
 body = PureCloudPlatformClientV2.OrganizationPresence() # OrganizationPresence | The OrganizationPresence to update
 
 try:
-    # Update a Presence Definition
+    # Update a Presence Definition. Apps should migrate to use PUT /api/v2/presence/definitions/{definitionId} instead)
     api_response = api_instance.put_presencedefinition(presence_id, body)
     pprint(api_response)
 except ApiException as e:

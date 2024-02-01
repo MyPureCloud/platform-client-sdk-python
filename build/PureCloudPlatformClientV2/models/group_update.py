@@ -60,6 +60,7 @@ class GroupUpdate(object):
             'addresses': 'list[GroupContact]',
             'rules_visible': 'bool',
             'visibility': 'str',
+            'roles_enabled': 'bool',
             'owner_ids': 'list[str]',
             'self_uri': 'str'
         }
@@ -74,6 +75,7 @@ class GroupUpdate(object):
             'addresses': 'addresses',
             'rules_visible': 'rulesVisible',
             'visibility': 'visibility',
+            'roles_enabled': 'rolesEnabled',
             'owner_ids': 'ownerIds',
             'self_uri': 'selfUri'
         }
@@ -87,6 +89,7 @@ class GroupUpdate(object):
         self._addresses = None
         self._rules_visible = None
         self._visibility = None
+        self._roles_enabled = None
         self._owner_ids = None
         self._self_uri = None
 
@@ -315,6 +318,30 @@ class GroupUpdate(object):
             self._visibility = "outdated_sdk_version"
         else:
             self._visibility = visibility
+
+    @property
+    def roles_enabled(self) -> bool:
+        """
+        Gets the roles_enabled of this GroupUpdate.
+        Allow roles to be assigned to this group
+
+        :return: The roles_enabled of this GroupUpdate.
+        :rtype: bool
+        """
+        return self._roles_enabled
+
+    @roles_enabled.setter
+    def roles_enabled(self, roles_enabled: bool) -> None:
+        """
+        Sets the roles_enabled of this GroupUpdate.
+        Allow roles to be assigned to this group
+
+        :param roles_enabled: The roles_enabled of this GroupUpdate.
+        :type: bool
+        """
+        
+
+        self._roles_enabled = roles_enabled
 
     @property
     def owner_ids(self) -> List[str]:

@@ -150,7 +150,7 @@ class DirectRouting(object):
     def backup_queue_id(self) -> str:
         """
         Gets the backup_queue_id of this DirectRouting.
-        ID of queue to be used as the default backup if an agent does not have their Backup Settings configured.
+        ID of another queue to be used as the default backup if an agent does not have their Backup Settings configured. If not set, the current queue will be used as backup, but with Direct Routing criteria removed from the conversation.
 
         :return: The backup_queue_id of this DirectRouting.
         :rtype: str
@@ -161,7 +161,7 @@ class DirectRouting(object):
     def backup_queue_id(self, backup_queue_id: str) -> None:
         """
         Sets the backup_queue_id of this DirectRouting.
-        ID of queue to be used as the default backup if an agent does not have their Backup Settings configured.
+        ID of another queue to be used as the default backup if an agent does not have their Backup Settings configured. If not set, the current queue will be used as backup, but with Direct Routing criteria removed from the conversation.
 
         :param backup_queue_id: The backup_queue_id of this DirectRouting.
         :type: str

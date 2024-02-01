@@ -90,7 +90,7 @@ class TaskManagementAggregationView(object):
         """
         if isinstance(target, int):
             target = str(target)
-        allowed_values = ["nWorkitemsCreated", "nWorkitemsDeleted", "nWorkitemsPurged", "nWorkitemsStatusChanged", "tWorkitemsStatus"]
+        allowed_values = ["nWorkitemsAcdCancelled", "nWorkitemsAcdExpired", "nWorkitemsAcdStarted", "nWorkitemsAgentTransferred", "nWorkitemsCreated", "nWorkitemsDeclined", "nWorkitemsDeleted", "nWorkitemsDisconnected", "nWorkitemsOverSla", "nWorkitemsPurged", "nWorkitemsQueueTransferred", "nWorkitemsStatusChanged", "nWorkitemsTerminated", "nWorkitemsTimedout", "nWorkitemsTransferred", "nWorkitemsWrapupAdded", "nWorkitemsWrapupRemoved", "tWorkitemsAlert", "tWorkitemsAnswered", "tWorkitemsDirectAnswered", "tWorkitemsFocus", "tWorkitemsFocusComplete", "tWorkitemsHandled", "tWorkitemsHeld", "tWorkitemsHeldComplete", "tWorkitemsNotResponding", "tWorkitemsParked", "tWorkitemsQueueAnswered", "tWorkitemsStatus"]
         if target.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for target -> " + target)
             self._target = "outdated_sdk_version"

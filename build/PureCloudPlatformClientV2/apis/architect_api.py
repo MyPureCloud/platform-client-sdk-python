@@ -3190,12 +3190,15 @@ class ArchitectApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str prompt_id: Prompt ID (required)
+        :param bool include_media_uris: Include the media URIs for each resource
+        :param bool include_resources: Include the resources for each system prompt
+        :param list[str] language: Filter the resources down to the provided languages
         :return: Prompt
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['prompt_id']
+        all_params = ['prompt_id', 'include_media_uris', 'include_resources', 'language']
         all_params.append('callback')
 
         params = locals()
@@ -3219,6 +3222,12 @@ class ArchitectApi(object):
             path_params['promptId'] = params['prompt_id']
 
         query_params = {}
+        if 'include_media_uris' in params:
+            query_params['includeMediaUris'] = params['include_media_uris']
+        if 'include_resources' in params:
+            query_params['includeResources'] = params['include_resources']
+        if 'language' in params:
+            query_params['language'] = params['language']
 
         header_params = {}
 
@@ -3541,12 +3550,15 @@ class ArchitectApi(object):
         :param str name_or_description: Name or description
         :param str sort_by: Sort by
         :param str sort_order: Sort order
+        :param bool include_media_uris: Include the media URIs for each resource
+        :param bool include_resources: Include the resources for each system prompt
+        :param list[str] language: Filter the resources down to the provided languages
         :return: PromptEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['page_number', 'page_size', 'name', 'description', 'name_or_description', 'sort_by', 'sort_order']
+        all_params = ['page_number', 'page_size', 'name', 'description', 'name_or_description', 'sort_by', 'sort_order', 'include_media_uris', 'include_resources', 'language']
         all_params.append('callback')
 
         params = locals()
@@ -3579,6 +3591,12 @@ class ArchitectApi(object):
             query_params['sortBy'] = params['sort_by']
         if 'sort_order' in params:
             query_params['sortOrder'] = params['sort_order']
+        if 'include_media_uris' in params:
+            query_params['includeMediaUris'] = params['include_media_uris']
+        if 'include_resources' in params:
+            query_params['includeResources'] = params['include_resources']
+        if 'language' in params:
+            query_params['language'] = params['language']
 
         header_params = {}
 
@@ -4153,12 +4171,15 @@ class ArchitectApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str prompt_id: promptId (required)
+        :param bool include_media_uris: Include the media URIs for each resource
+        :param bool include_resources: Include the resources for each system prompt
+        :param list[str] language: Filter the resources down to the provided languages
         :return: SystemPrompt
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['prompt_id']
+        all_params = ['prompt_id', 'include_media_uris', 'include_resources', 'language']
         all_params.append('callback')
 
         params = locals()
@@ -4182,6 +4203,12 @@ class ArchitectApi(object):
             path_params['promptId'] = params['prompt_id']
 
         query_params = {}
+        if 'include_media_uris' in params:
+            query_params['includeMediaUris'] = params['include_media_uris']
+        if 'include_resources' in params:
+            query_params['includeResources'] = params['include_resources']
+        if 'language' in params:
+            query_params['language'] = params['language']
 
         header_params = {}
 
@@ -4510,12 +4537,15 @@ class ArchitectApi(object):
         :param str name: Name
         :param str description: Description
         :param str name_or_description: Name or description
+        :param bool include_media_uris: Include the media URIs for each resource
+        :param bool include_resources: Include the resources for each system prompt
+        :param list[str] language: Filter the resources down to the provided languages
         :return: SystemPromptEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['page_number', 'page_size', 'sort_by', 'sort_order', 'name', 'description', 'name_or_description']
+        all_params = ['page_number', 'page_size', 'sort_by', 'sort_order', 'name', 'description', 'name_or_description', 'include_media_uris', 'include_resources', 'language']
         all_params.append('callback')
 
         params = locals()
@@ -4548,6 +4578,12 @@ class ArchitectApi(object):
             query_params['description'] = params['description']
         if 'name_or_description' in params:
             query_params['nameOrDescription'] = params['name_or_description']
+        if 'include_media_uris' in params:
+            query_params['includeMediaUris'] = params['include_media_uris']
+        if 'include_resources' in params:
+            query_params['includeResources'] = params['include_resources']
+        if 'language' in params:
+            query_params['language'] = params['language']
 
         header_params = {}
 

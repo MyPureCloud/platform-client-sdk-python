@@ -49,16 +49,19 @@ class AuthenticationSettings(object):
         """
         self.swagger_types = {
             'enabled': 'bool',
-            'integration_id': 'str'
+            'integration_id': 'str',
+            'allow_session_upgrade': 'bool'
         }
 
         self.attribute_map = {
             'enabled': 'enabled',
-            'integration_id': 'integrationId'
+            'integration_id': 'integrationId',
+            'allow_session_upgrade': 'allowSessionUpgrade'
         }
 
         self._enabled = None
         self._integration_id = None
+        self._allow_session_upgrade = None
 
     @property
     def enabled(self) -> bool:
@@ -107,6 +110,30 @@ class AuthenticationSettings(object):
         
 
         self._integration_id = integration_id
+
+    @property
+    def allow_session_upgrade(self) -> bool:
+        """
+        Gets the allow_session_upgrade of this AuthenticationSettings.
+        Allow end-users to upgrade an anonymous session to authenticated conversation.
+
+        :return: The allow_session_upgrade of this AuthenticationSettings.
+        :rtype: bool
+        """
+        return self._allow_session_upgrade
+
+    @allow_session_upgrade.setter
+    def allow_session_upgrade(self, allow_session_upgrade: bool) -> None:
+        """
+        Sets the allow_session_upgrade of this AuthenticationSettings.
+        Allow end-users to upgrade an anonymous session to authenticated conversation.
+
+        :param allow_session_upgrade: The allow_session_upgrade of this AuthenticationSettings.
+        :type: bool
+        """
+        
+
+        self._allow_session_upgrade = allow_session_upgrade
 
     def to_dict(self):
         """

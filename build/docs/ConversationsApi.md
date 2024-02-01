@@ -167,6 +167,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_conversation_participant_replace_external**](ConversationsApi.html#post_conversation_participant_replace_external) | Replace this participant with the an external contact|
 |[**post_conversation_participant_replace_queue**](ConversationsApi.html#post_conversation_participant_replace_queue) | Replace this participant with the specified queue|
 |[**post_conversation_participant_secureivrsessions**](ConversationsApi.html#post_conversation_participant_secureivrsessions) | Create secure IVR session. Only a participant in the conversation can invoke a secure IVR.|
+|[**post_conversation_summary_feedback**](ConversationsApi.html#post_conversation_summary_feedback) | Submit feedback for the summary.|
 |[**post_conversations_call**](ConversationsApi.html#post_conversations_call) | Place a new call as part of a callback conversation.|
 |[**post_conversations_call_participant_barge**](ConversationsApi.html#post_conversations_call_participant_barge) | Barge a given participant&#39;s call creating a barged in conference of connected participants.|
 |[**post_conversations_call_participant_coach**](ConversationsApi.html#post_conversations_call_participant_coach) | Listen in on the conversation from the point of view of a given participant while speaking to just the given participant.|
@@ -216,7 +217,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_conversations_messages_inbound_open**](ConversationsApi.html#post_conversations_messages_inbound_open) | Send an inbound Open Message|
 |[**post_conversations_messaging_integrations_facebook**](ConversationsApi.html#post_conversations_messaging_integrations_facebook) | Create a Facebook Integration|
 |[**post_conversations_messaging_integrations_instagram**](ConversationsApi.html#post_conversations_messaging_integrations_instagram) | Create Instagram Integration|
-|[**post_conversations_messaging_integrations_line**](ConversationsApi.html#post_conversations_messaging_integrations_line) | Create a LINE messenger Integration|
+|[**post_conversations_messaging_integrations_line**](ConversationsApi.html#post_conversations_messaging_integrations_line) | Create a LINE messenger Integration (Deprecated)|
 |[**post_conversations_messaging_integrations_open**](ConversationsApi.html#post_conversations_messaging_integrations_open) | Create an Open messaging integration|
 |[**post_conversations_messaging_integrations_twitter**](ConversationsApi.html#post_conversations_messaging_integrations_twitter) | Create a Twitter Integration|
 |[**post_conversations_messaging_integrations_whatsapp**](ConversationsApi.html#post_conversations_messaging_integrations_whatsapp) | [This API is deprecated. Use POST /api/v2/conversations/messaging/integrations/whatsapp/embeddedsignup instead] Create a WhatsApp Integration|
@@ -8354,6 +8355,58 @@ except ApiException as e:
 
 [**SecureSession**](SecureSession.html)
 
+<a name="post_conversation_summary_feedback"></a>
+
+##  post_conversation_summary_feedback(conversation_id, summary_id, body=body)
+
+
+
+Submit feedback for the summary.
+
+Wraps POST /api/v2/conversations/{conversationId}/summaries/{summaryId}/feedback 
+
+Requires ALL permissions: 
+
+* conversation:summaryFeedback:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+conversation_id = 'conversation_id_example' # str | Conversation ID
+summary_id = 'summary_id_example' # str | Summary ID
+body = PureCloudPlatformClientV2.FeedbackAddRequest() # FeedbackAddRequest |  (optional)
+
+try:
+    # Submit feedback for the summary.
+    api_instance.post_conversation_summary_feedback(conversation_id, summary_id, body=body)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->post_conversation_summary_feedback: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversation_id** | **str**| Conversation ID |  |
+| **summary_id** | **str**| Summary ID |  |
+| **body** | [**FeedbackAddRequest**](FeedbackAddRequest.html)|  | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
+
 <a name="post_conversations_call"></a>
 
 ## [**Conversation**](Conversation.html) post_conversations_call(conversation_id, body)
@@ -10895,9 +10948,11 @@ except ApiException as e:
 
 ## [**LineIntegration**](LineIntegration.html) post_conversations_messaging_integrations_line(body)
 
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
+Create a LINE messenger Integration (Deprecated)
 
-Create a LINE messenger Integration
+This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-line-third-party-messaging-channel/
 
 Wraps POST /api/v2/conversations/messaging/integrations/line 
 
@@ -10921,7 +10976,7 @@ api_instance = PureCloudPlatformClientV2.ConversationsApi()
 body = PureCloudPlatformClientV2.LineIntegrationRequest() # LineIntegrationRequest | LineIntegrationRequest
 
 try:
-    # Create a LINE messenger Integration
+    # Create a LINE messenger Integration (Deprecated)
     api_response = api_instance.post_conversations_messaging_integrations_line(body)
     pprint(api_response)
 except ApiException as e:

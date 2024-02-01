@@ -67,6 +67,7 @@ class WorkitemCreate(object):
             'wrapup_code': 'str',
             'scored_agents': 'list[WorkitemScoredAgentRequest]',
             'language_id': 'str',
+            'utilization_label_id': 'str',
             'external_contact_id': 'str',
             'external_tag': 'str',
             'skill_ids': 'list[str]',
@@ -91,6 +92,7 @@ class WorkitemCreate(object):
             'wrapup_code': 'wrapupCode',
             'scored_agents': 'scoredAgents',
             'language_id': 'languageId',
+            'utilization_label_id': 'utilizationLabelId',
             'external_contact_id': 'externalContactId',
             'external_tag': 'externalTag',
             'skill_ids': 'skillIds',
@@ -114,6 +116,7 @@ class WorkitemCreate(object):
         self._wrapup_code = None
         self._scored_agents = None
         self._language_id = None
+        self._utilization_label_id = None
         self._external_contact_id = None
         self._external_tag = None
         self._skill_ids = None
@@ -526,6 +529,30 @@ class WorkitemCreate(object):
         
 
         self._language_id = language_id
+
+    @property
+    def utilization_label_id(self) -> str:
+        """
+        Gets the utilization_label_id of this WorkitemCreate.
+        The ID of utilization label of the Workitem. Must be a valid UUID.
+
+        :return: The utilization_label_id of this WorkitemCreate.
+        :rtype: str
+        """
+        return self._utilization_label_id
+
+    @utilization_label_id.setter
+    def utilization_label_id(self, utilization_label_id: str) -> None:
+        """
+        Sets the utilization_label_id of this WorkitemCreate.
+        The ID of utilization label of the Workitem. Must be a valid UUID.
+
+        :param utilization_label_id: The utilization_label_id of this WorkitemCreate.
+        :type: str
+        """
+        
+
+        self._utilization_label_id = utilization_label_id
 
     @property
     def external_contact_id(self) -> str:

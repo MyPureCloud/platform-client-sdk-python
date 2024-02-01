@@ -36,7 +36,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_journey_session**](JourneyApi.html#get_journey_session) | Retrieve a single session.|
 |[**get_journey_session_events**](JourneyApi.html#get_journey_session_events) | Retrieve all events for a given session.|
 |[**get_journey_session_outcomescores**](JourneyApi.html#get_journey_session_outcomescores) | Retrieve latest outcome score associated with a session for all outcomes.|
-|[**get_journey_session_segments**](JourneyApi.html#get_journey_session_segments) | Retrieve segment assignments by session ID.|
 |[**patch_journey_actionmap**](JourneyApi.html#patch_journey_actionmap) | Update single action map.|
 |[**patch_journey_actiontarget**](JourneyApi.html#patch_journey_actiontarget) | Update a single action target.|
 |[**patch_journey_actiontemplate**](JourneyApi.html#patch_journey_actiontemplate) | Update a single action template.|
@@ -1500,65 +1499,6 @@ except ApiException as e:
 ### Return type
 
 [**OutcomeScoresResult**](OutcomeScoresResult.html)
-
-<a name="get_journey_session_segments"></a>
-
-## [**SegmentAssignmentListing**](SegmentAssignmentListing.html) get_journey_session_segments(session_id, page_size=page_size, after=after, segment_scope=segment_scope, assignment_state=assignment_state)
-
-
-
-Retrieve segment assignments by session ID.
-
-get_journey_session_segments is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
-Wraps GET /api/v2/journey/sessions/{sessionId}/segments 
-
-Requires ANY permissions: 
-
-* journey:segmentassignment:view
-
-### Example
-
-```{"language":"python"}
-import time
-import PureCloudPlatformClientV2
-from PureCloudPlatformClientV2.rest import ApiException
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: PureCloud OAuth
-PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = PureCloudPlatformClientV2.JourneyApi()
-session_id = 'session_id_example' # str | ID of the session to query for segment assignments.
-page_size = 'page_size_example' # str | Number of entities to return. Maximum of 200. (optional)
-after = 'after_example' # str | The cursor that points to the end of the set of entities that has been returned. (optional)
-segment_scope = 'segment_scope_example' # str | Scope to filter on. If not specified, both session-scoped and customer-scoped assignments are returned. (optional)
-assignment_state = 'assignment_state_example' # str | Assignment state to filter on. If not specified, both assigned and unassigned assignments are returned. (optional)
-
-try:
-    # Retrieve segment assignments by session ID.
-    api_response = api_instance.get_journey_session_segments(session_id, page_size=page_size, after=after, segment_scope=segment_scope, assignment_state=assignment_state)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling JourneyApi->get_journey_session_segments: %s\n" % e)
-```
-
-### Parameters
-
-
-|Name | Type | Description  | Notes|
-|------------- | ------------- | ------------- | -------------|
-| **session_id** | **str**| ID of the session to query for segment assignments. |  |
-| **page_size** | **str**| Number of entities to return. Maximum of 200. | [optional]  |
-| **after** | **str**| The cursor that points to the end of the set of entities that has been returned. | [optional]  |
-| **segment_scope** | **str**| Scope to filter on. If not specified, both session-scoped and customer-scoped assignments are returned. | [optional] <br />**Values**: Session, Customer |
-| **assignment_state** | **str**| Assignment state to filter on. If not specified, both assigned and unassigned assignments are returned. | [optional] <br />**Values**: Assigned, Unassigned |
-{: class="table table-striped"}
-
-### Return type
-
-[**SegmentAssignmentListing**](SegmentAssignmentListing.html)
 
 <a name="patch_journey_actionmap"></a>
 

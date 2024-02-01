@@ -63,7 +63,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_telephony_providers_edges_mediastatistics_conversation**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_mediastatistics_conversation) | Get media endpoint statistics events.|
 |[**get_telephony_providers_edges_mediastatistics_conversation_communication**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_mediastatistics_conversation_communication) | Get media endpoint statistics event.|
 |[**get_telephony_providers_edges_metrics**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_metrics) | Get the metrics for a list of edges.|
-|[**get_telephony_providers_edges_outboundroute**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_outboundroute) | Get outbound route|
 |[**get_telephony_providers_edges_outboundroutes**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_outboundroutes) | Get outbound routes|
 |[**get_telephony_providers_edges_phone**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_phone) | Get a Phone by ID|
 |[**get_telephony_providers_edges_phonebasesetting**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_phonebasesetting) | Get a Phone Base Settings object by ID|
@@ -2940,57 +2939,6 @@ except ApiException as e:
 ### Return type
 
 [**list[EdgeMetrics]**](EdgeMetrics.html)
-
-<a name="get_telephony_providers_edges_outboundroute"></a>
-
-## [**OutboundRoute**](OutboundRoute.html) get_telephony_providers_edges_outboundroute(outbound_route_id)
-
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
-
-Get outbound route
-
-This route is deprecated, use /telephony/providers/edges/sites/{siteId}/outboundroutes/{outboundRouteId} instead.
-
-Wraps GET /api/v2/telephony/providers/edges/outboundroutes/{outboundRouteId} 
-
-Requires ANY permissions: 
-
-* telephony:plugin:all
-
-### Example
-
-```{"language":"python"}
-import time
-import PureCloudPlatformClientV2
-from PureCloudPlatformClientV2.rest import ApiException
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: PureCloud OAuth
-PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
-outbound_route_id = 'outbound_route_id_example' # str | Outbound route ID
-
-try:
-    # Get outbound route
-    api_response = api_instance.get_telephony_providers_edges_outboundroute(outbound_route_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_outboundroute: %s\n" % e)
-```
-
-### Parameters
-
-
-|Name | Type | Description  | Notes|
-|------------- | ------------- | ------------- | -------------|
-| **outbound_route_id** | **str**| Outbound route ID |  |
-{: class="table table-striped"}
-
-### Return type
-
-[**OutboundRoute**](OutboundRoute.html)
 
 <a name="get_telephony_providers_edges_outboundroutes"></a>
 

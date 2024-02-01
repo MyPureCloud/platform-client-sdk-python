@@ -667,12 +667,6 @@ class ChatApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str room_jid: roomJid (required)
-        :param int page_size: The total page size requested
-        :param int page_number: The page number requested
-        :param str sort_by: variable name requested to sort by
-        :param list[str] expand: variable name requested by expand list
-        :param str next_page: next page token
-        :param str previous_page: Previous page token
         :param str limit: The maximum number of messages to retrieve
         :param str before: The cutoff date for messages to retrieve
         :param str after: The beginning date for messages to retrieve
@@ -681,7 +675,7 @@ class ChatApi(object):
                  returns the request thread.
         """
 
-        all_params = ['room_jid', 'page_size', 'page_number', 'sort_by', 'expand', 'next_page', 'previous_page', 'limit', 'before', 'after']
+        all_params = ['room_jid', 'limit', 'before', 'after']
         all_params.append('callback')
 
         params = locals()
@@ -705,18 +699,6 @@ class ChatApi(object):
             path_params['roomJid'] = params['room_jid']
 
         query_params = {}
-        if 'page_size' in params:
-            query_params['pageSize'] = params['page_size']
-        if 'page_number' in params:
-            query_params['pageNumber'] = params['page_number']
-        if 'sort_by' in params:
-            query_params['sortBy'] = params['sort_by']
-        if 'expand' in params:
-            query_params['expand'] = params['expand']
-        if 'next_page' in params:
-            query_params['nextPage'] = params['next_page']
-        if 'previous_page' in params:
-            query_params['previousPage'] = params['previous_page']
         if 'limit' in params:
             query_params['limit'] = params['limit']
         if 'before' in params:
@@ -845,12 +827,6 @@ class ChatApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str thread_id: threadId (required)
-        :param int page_size: The total page size requested
-        :param int page_number: The page number requested
-        :param str sort_by: variable name requested to sort by
-        :param list[str] expand: variable name requested by expand list
-        :param str next_page: next page token
-        :param str previous_page: Previous page token
         :param str limit: The maximum number of messages to retrieve
         :param str before: The cutoff date for messages to retrieve
         :param str after: The beginning date for messages to retrieve
@@ -859,7 +835,7 @@ class ChatApi(object):
                  returns the request thread.
         """
 
-        all_params = ['thread_id', 'page_size', 'page_number', 'sort_by', 'expand', 'next_page', 'previous_page', 'limit', 'before', 'after']
+        all_params = ['thread_id', 'limit', 'before', 'after']
         all_params.append('callback')
 
         params = locals()
@@ -883,18 +859,6 @@ class ChatApi(object):
             path_params['threadId'] = params['thread_id']
 
         query_params = {}
-        if 'page_size' in params:
-            query_params['pageSize'] = params['page_size']
-        if 'page_number' in params:
-            query_params['pageNumber'] = params['page_number']
-        if 'sort_by' in params:
-            query_params['sortBy'] = params['sort_by']
-        if 'expand' in params:
-            query_params['expand'] = params['expand']
-        if 'next_page' in params:
-            query_params['nextPage'] = params['next_page']
-        if 'previous_page' in params:
-            query_params['previousPage'] = params['previous_page']
         if 'limit' in params:
             query_params['limit'] = params['limit']
         if 'before' in params:
@@ -1036,12 +1000,6 @@ class ChatApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str user_id: userId (required)
-        :param int page_size: The total page size requested
-        :param int page_number: The page number requested
-        :param str sort_by: variable name requested to sort by
-        :param list[str] expand: variable name requested by expand list
-        :param str next_page: next page token
-        :param str previous_page: Previous page token
         :param str limit: The maximum number of messages to retrieve
         :param str before: The cutoff date for messages to retrieve
         :param str after: The beginning date for messages to retrieve
@@ -1050,7 +1008,7 @@ class ChatApi(object):
                  returns the request thread.
         """
 
-        all_params = ['user_id', 'page_size', 'page_number', 'sort_by', 'expand', 'next_page', 'previous_page', 'limit', 'before', 'after']
+        all_params = ['user_id', 'limit', 'before', 'after']
         all_params.append('callback')
 
         params = locals()
@@ -1074,18 +1032,6 @@ class ChatApi(object):
             path_params['userId'] = params['user_id']
 
         query_params = {}
-        if 'page_size' in params:
-            query_params['pageSize'] = params['page_size']
-        if 'page_number' in params:
-            query_params['pageNumber'] = params['page_number']
-        if 'sort_by' in params:
-            query_params['sortBy'] = params['sort_by']
-        if 'expand' in params:
-            query_params['expand'] = params['expand']
-        if 'next_page' in params:
-            query_params['nextPage'] = params['next_page']
-        if 'previous_page' in params:
-            query_params['previousPage'] = params['previous_page']
         if 'limit' in params:
             query_params['limit'] = params['limit']
         if 'before' in params:

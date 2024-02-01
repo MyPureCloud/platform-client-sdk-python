@@ -116,6 +116,7 @@ from ..models import FacebookIntegrationRequest
 from ..models import FacebookIntegrationUpdateRequest
 from ..models import FaxSendRequest
 from ..models import FaxSendResponse
+from ..models import FeedbackAddRequest
 from ..models import GenerateMeetingIdRequest
 from ..models import InboundMessageRequest
 from ..models import InstagramIntegration
@@ -13446,6 +13447,93 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def post_conversation_summary_feedback(self, conversation_id: str, summary_id: str, **kwargs) -> None:
+        """
+        Submit feedback for the summary.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_conversation_summary_feedback(conversation_id, summary_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str conversation_id: Conversation ID (required)
+        :param str summary_id: Summary ID (required)
+        :param FeedbackAddRequest body: 
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['conversation_id', 'summary_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_conversation_summary_feedback" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'conversation_id' is set
+        if ('conversation_id' not in params) or (params['conversation_id'] is None):
+            raise ValueError("Missing the required parameter `conversation_id` when calling `post_conversation_summary_feedback`")
+        # verify the required parameter 'summary_id' is set
+        if ('summary_id' not in params) or (params['summary_id'] is None):
+            raise ValueError("Missing the required parameter `summary_id` when calling `post_conversation_summary_feedback`")
+
+
+        resource_path = '/api/v2/conversations/{conversationId}/summaries/{summaryId}/feedback'.replace('{format}', 'json')
+        path_params = {}
+        if 'conversation_id' in params:
+            path_params['conversationId'] = params['conversation_id']
+        if 'summary_id' in params:
+            path_params['summaryId'] = params['summary_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def post_conversations_call(self, conversation_id: str, body: 'CallCommand', **kwargs) -> 'Conversation':
         """
         Place a new call as part of a callback conversation.
@@ -17609,10 +17697,11 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("post_conversations_messaging_integrations_line is deprecated")
     def post_conversations_messaging_integrations_line(self, body: 'LineIntegrationRequest', **kwargs) -> 'LineIntegration':
         """
-        Create a LINE messenger Integration
-        
+        Create a LINE messenger Integration (Deprecated)
+        This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-line-third-party-messaging-channel/
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

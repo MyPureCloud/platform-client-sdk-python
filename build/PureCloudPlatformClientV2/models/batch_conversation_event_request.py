@@ -131,7 +131,7 @@ class BatchConversationEventRequest(object):
     def end_transfer_events(self) -> List['EndTransferEvent']:
         """
         Gets the end_transfer_events of this BatchConversationEventRequest.
-        EndTransfer events for this batch
+        Voice - EndTransfer events for this batch
 
         :return: The end_transfer_events of this BatchConversationEventRequest.
         :rtype: list[EndTransferEvent]
@@ -142,7 +142,7 @@ class BatchConversationEventRequest(object):
     def end_transfer_events(self, end_transfer_events: List['EndTransferEvent']) -> None:
         """
         Sets the end_transfer_events of this BatchConversationEventRequest.
-        EndTransfer events for this batch
+        Voice - EndTransfer events for this batch
 
         :param end_transfer_events: The end_transfer_events of this BatchConversationEventRequest.
         :type: list[EndTransferEvent]
@@ -155,7 +155,7 @@ class BatchConversationEventRequest(object):
     def phone_transfer_events(self) -> List['PhoneTransferEvent']:
         """
         Gets the phone_transfer_events of this BatchConversationEventRequest.
-        PhoneTransfer events for this batch
+        Voice - PhoneTransfer events for this batch
 
         :return: The phone_transfer_events of this BatchConversationEventRequest.
         :rtype: list[PhoneTransferEvent]
@@ -166,7 +166,7 @@ class BatchConversationEventRequest(object):
     def phone_transfer_events(self, phone_transfer_events: List['PhoneTransferEvent']) -> None:
         """
         Sets the phone_transfer_events of this BatchConversationEventRequest.
-        PhoneTransfer events for this batch
+        Voice - PhoneTransfer events for this batch
 
         :param phone_transfer_events: The phone_transfer_events of this BatchConversationEventRequest.
         :type: list[PhoneTransferEvent]
@@ -179,7 +179,7 @@ class BatchConversationEventRequest(object):
     def progress_transfer_events(self) -> List['ProgressTransferEvent']:
         """
         Gets the progress_transfer_events of this BatchConversationEventRequest.
-        ProgressTransfer events for this batch
+        Voice - ProgressTransfer events for this batch
 
         :return: The progress_transfer_events of this BatchConversationEventRequest.
         :rtype: list[ProgressTransferEvent]
@@ -190,7 +190,7 @@ class BatchConversationEventRequest(object):
     def progress_transfer_events(self, progress_transfer_events: List['ProgressTransferEvent']) -> None:
         """
         Sets the progress_transfer_events of this BatchConversationEventRequest.
-        ProgressTransfer events for this batch
+        Voice - ProgressTransfer events for this batch
 
         :param progress_transfer_events: The progress_transfer_events of this BatchConversationEventRequest.
         :type: list[ProgressTransferEvent]
@@ -203,7 +203,7 @@ class BatchConversationEventRequest(object):
     def routing_transfer_events(self) -> List['RoutingTransferEvent']:
         """
         Gets the routing_transfer_events of this BatchConversationEventRequest.
-        RoutingTransfer events for this batch
+        Voice - RoutingTransfer events for this batch
 
         :return: The routing_transfer_events of this BatchConversationEventRequest.
         :rtype: list[RoutingTransferEvent]
@@ -214,7 +214,7 @@ class BatchConversationEventRequest(object):
     def routing_transfer_events(self, routing_transfer_events: List['RoutingTransferEvent']) -> None:
         """
         Sets the routing_transfer_events of this BatchConversationEventRequest.
-        RoutingTransfer events for this batch
+        Voice - RoutingTransfer events for this batch
 
         :param routing_transfer_events: The routing_transfer_events of this BatchConversationEventRequest.
         :type: list[RoutingTransferEvent]
@@ -227,7 +227,7 @@ class BatchConversationEventRequest(object):
     def user_transfer_events(self) -> List['UserTransferEvent']:
         """
         Gets the user_transfer_events of this BatchConversationEventRequest.
-        UserTransfer events for this batch
+        Voice - UserTransfer events for this batch
 
         :return: The user_transfer_events of this BatchConversationEventRequest.
         :rtype: list[UserTransferEvent]
@@ -238,7 +238,7 @@ class BatchConversationEventRequest(object):
     def user_transfer_events(self, user_transfer_events: List['UserTransferEvent']) -> None:
         """
         Sets the user_transfer_events of this BatchConversationEventRequest.
-        UserTransfer events for this batch
+        Voice - UserTransfer events for this batch
 
         :param user_transfer_events: The user_transfer_events of this BatchConversationEventRequest.
         :type: list[UserTransferEvent]
@@ -251,7 +251,7 @@ class BatchConversationEventRequest(object):
     def communication_answered_events(self) -> List['CommunicationAnsweredEvent']:
         """
         Gets the communication_answered_events of this BatchConversationEventRequest.
-        CommunicationAnswered events for this batch
+        Voice - CommunicationAnswered events for this batch
 
         :return: The communication_answered_events of this BatchConversationEventRequest.
         :rtype: list[CommunicationAnsweredEvent]
@@ -262,7 +262,7 @@ class BatchConversationEventRequest(object):
     def communication_answered_events(self, communication_answered_events: List['CommunicationAnsweredEvent']) -> None:
         """
         Sets the communication_answered_events of this BatchConversationEventRequest.
-        CommunicationAnswered events for this batch
+        Voice - CommunicationAnswered events for this batch
 
         :param communication_answered_events: The communication_answered_events of this BatchConversationEventRequest.
         :type: list[CommunicationAnsweredEvent]
@@ -275,7 +275,7 @@ class BatchConversationEventRequest(object):
     def communication_disposition_applied_events(self) -> List['CommunicationDispositionAppliedEvent']:
         """
         Gets the communication_disposition_applied_events of this BatchConversationEventRequest.
-        CommunicationDispositionApplied events for this batch
+        Voice - CommunicationDispositionApplied events for this batch
 
         :return: The communication_disposition_applied_events of this BatchConversationEventRequest.
         :rtype: list[CommunicationDispositionAppliedEvent]
@@ -286,7 +286,7 @@ class BatchConversationEventRequest(object):
     def communication_disposition_applied_events(self, communication_disposition_applied_events: List['CommunicationDispositionAppliedEvent']) -> None:
         """
         Sets the communication_disposition_applied_events of this BatchConversationEventRequest.
-        CommunicationDispositionApplied events for this batch
+        Voice - CommunicationDispositionApplied events for this batch
 
         :param communication_disposition_applied_events: The communication_disposition_applied_events of this BatchConversationEventRequest.
         :type: list[CommunicationDispositionAppliedEvent]
@@ -299,7 +299,7 @@ class BatchConversationEventRequest(object):
     def hold_updated_events(self) -> List['HoldUpdatedEvent']:
         """
         Gets the hold_updated_events of this BatchConversationEventRequest.
-        HoldUpdated events for this batch
+        Voice - HoldUpdated events for this batch
 
         :return: The hold_updated_events of this BatchConversationEventRequest.
         :rtype: list[HoldUpdatedEvent]
@@ -310,7 +310,7 @@ class BatchConversationEventRequest(object):
     def hold_updated_events(self, hold_updated_events: List['HoldUpdatedEvent']) -> None:
         """
         Sets the hold_updated_events of this BatchConversationEventRequest.
-        HoldUpdated events for this batch
+        Voice - HoldUpdated events for this batch
 
         :param hold_updated_events: The hold_updated_events of this BatchConversationEventRequest.
         :type: list[HoldUpdatedEvent]
@@ -323,7 +323,7 @@ class BatchConversationEventRequest(object):
     def external_established_events(self) -> List['ExternalEstablishedEvent']:
         """
         Gets the external_established_events of this BatchConversationEventRequest.
-        ExternalEstablished events for this batch
+        Voice - ExternalEstablished events for this batch
 
         :return: The external_established_events of this BatchConversationEventRequest.
         :rtype: list[ExternalEstablishedEvent]
@@ -334,7 +334,7 @@ class BatchConversationEventRequest(object):
     def external_established_events(self, external_established_events: List['ExternalEstablishedEvent']) -> None:
         """
         Sets the external_established_events of this BatchConversationEventRequest.
-        ExternalEstablished events for this batch
+        Voice - ExternalEstablished events for this batch
 
         :param external_established_events: The external_established_events of this BatchConversationEventRequest.
         :type: list[ExternalEstablishedEvent]
@@ -347,7 +347,7 @@ class BatchConversationEventRequest(object):
     def ivr_established_events(self) -> List['IvrEstablishedEvent']:
         """
         Gets the ivr_established_events of this BatchConversationEventRequest.
-        IvrEstablished events for this batch
+        Voice - IvrEstablished events for this batch
 
         :return: The ivr_established_events of this BatchConversationEventRequest.
         :rtype: list[IvrEstablishedEvent]
@@ -358,7 +358,7 @@ class BatchConversationEventRequest(object):
     def ivr_established_events(self, ivr_established_events: List['IvrEstablishedEvent']) -> None:
         """
         Sets the ivr_established_events of this BatchConversationEventRequest.
-        IvrEstablished events for this batch
+        Voice - IvrEstablished events for this batch
 
         :param ivr_established_events: The ivr_established_events of this BatchConversationEventRequest.
         :type: list[IvrEstablishedEvent]
@@ -371,7 +371,7 @@ class BatchConversationEventRequest(object):
     def phone_established_events(self) -> List['PhoneEstablishedEvent']:
         """
         Gets the phone_established_events of this BatchConversationEventRequest.
-        PhoneEstablished events for this batch
+        Voice - PhoneEstablished events for this batch
 
         :return: The phone_established_events of this BatchConversationEventRequest.
         :rtype: list[PhoneEstablishedEvent]
@@ -382,7 +382,7 @@ class BatchConversationEventRequest(object):
     def phone_established_events(self, phone_established_events: List['PhoneEstablishedEvent']) -> None:
         """
         Sets the phone_established_events of this BatchConversationEventRequest.
-        PhoneEstablished events for this batch
+        Voice - PhoneEstablished events for this batch
 
         :param phone_established_events: The phone_established_events of this BatchConversationEventRequest.
         :type: list[PhoneEstablishedEvent]
@@ -395,7 +395,7 @@ class BatchConversationEventRequest(object):
     def routing_established_events(self) -> List['RoutingEstablishedEvent']:
         """
         Gets the routing_established_events of this BatchConversationEventRequest.
-        RoutingEstablished events for this batch
+        Voice - RoutingEstablished events for this batch
 
         :return: The routing_established_events of this BatchConversationEventRequest.
         :rtype: list[RoutingEstablishedEvent]
@@ -406,7 +406,7 @@ class BatchConversationEventRequest(object):
     def routing_established_events(self, routing_established_events: List['RoutingEstablishedEvent']) -> None:
         """
         Sets the routing_established_events of this BatchConversationEventRequest.
-        RoutingEstablished events for this batch
+        Voice - RoutingEstablished events for this batch
 
         :param routing_established_events: The routing_established_events of this BatchConversationEventRequest.
         :type: list[RoutingEstablishedEvent]
@@ -419,7 +419,7 @@ class BatchConversationEventRequest(object):
     def user_established_events(self) -> List['UserEstablishedEvent']:
         """
         Gets the user_established_events of this BatchConversationEventRequest.
-        UserEstablished events for this batch
+        Voice - UserEstablished events for this batch
 
         :return: The user_established_events of this BatchConversationEventRequest.
         :rtype: list[UserEstablishedEvent]
@@ -430,7 +430,7 @@ class BatchConversationEventRequest(object):
     def user_established_events(self, user_established_events: List['UserEstablishedEvent']) -> None:
         """
         Sets the user_established_events of this BatchConversationEventRequest.
-        UserEstablished events for this batch
+        Voice - UserEstablished events for this batch
 
         :param user_established_events: The user_established_events of this BatchConversationEventRequest.
         :type: list[UserEstablishedEvent]
@@ -443,7 +443,7 @@ class BatchConversationEventRequest(object):
     def audio_updated_events(self) -> List['AudioUpdatedEvent']:
         """
         Gets the audio_updated_events of this BatchConversationEventRequest.
-        AudioUpdated events for this batch
+        Voice - AudioUpdated events for this batch
 
         :return: The audio_updated_events of this BatchConversationEventRequest.
         :rtype: list[AudioUpdatedEvent]
@@ -454,7 +454,7 @@ class BatchConversationEventRequest(object):
     def audio_updated_events(self, audio_updated_events: List['AudioUpdatedEvent']) -> None:
         """
         Sets the audio_updated_events of this BatchConversationEventRequest.
-        AudioUpdated events for this batch
+        Voice - AudioUpdated events for this batch
 
         :param audio_updated_events: The audio_updated_events of this BatchConversationEventRequest.
         :type: list[AudioUpdatedEvent]
@@ -467,7 +467,7 @@ class BatchConversationEventRequest(object):
     def communication_ended_events(self) -> List['CommunicationEndedEvent']:
         """
         Gets the communication_ended_events of this BatchConversationEventRequest.
-        CommunicationEnded events for this batch
+        Voice - CommunicationEnded events for this batch
 
         :return: The communication_ended_events of this BatchConversationEventRequest.
         :rtype: list[CommunicationEndedEvent]
@@ -478,7 +478,7 @@ class BatchConversationEventRequest(object):
     def communication_ended_events(self, communication_ended_events: List['CommunicationEndedEvent']) -> None:
         """
         Sets the communication_ended_events of this BatchConversationEventRequest.
-        CommunicationEnded events for this batch
+        Voice - CommunicationEnded events for this batch
 
         :param communication_ended_events: The communication_ended_events of this BatchConversationEventRequest.
         :type: list[CommunicationEndedEvent]
@@ -491,7 +491,7 @@ class BatchConversationEventRequest(object):
     def consult_transfer_events(self) -> List['ConsultTransferEvent']:
         """
         Gets the consult_transfer_events of this BatchConversationEventRequest.
-        ConsultTransfer events for this batch
+        Voice - ConsultTransfer events for this batch
 
         :return: The consult_transfer_events of this BatchConversationEventRequest.
         :rtype: list[ConsultTransferEvent]
@@ -502,7 +502,7 @@ class BatchConversationEventRequest(object):
     def consult_transfer_events(self, consult_transfer_events: List['ConsultTransferEvent']) -> None:
         """
         Sets the consult_transfer_events of this BatchConversationEventRequest.
-        ConsultTransfer events for this batch
+        Voice - ConsultTransfer events for this batch
 
         :param consult_transfer_events: The consult_transfer_events of this BatchConversationEventRequest.
         :type: list[ConsultTransferEvent]
@@ -515,7 +515,7 @@ class BatchConversationEventRequest(object):
     def progress_consult_transfer_events(self) -> List['ProgressConsultTransferEvent']:
         """
         Gets the progress_consult_transfer_events of this BatchConversationEventRequest.
-        ProgressConsultTransfer events for this batch
+        Voice - ProgressConsultTransfer events for this batch
 
         :return: The progress_consult_transfer_events of this BatchConversationEventRequest.
         :rtype: list[ProgressConsultTransferEvent]
@@ -526,7 +526,7 @@ class BatchConversationEventRequest(object):
     def progress_consult_transfer_events(self, progress_consult_transfer_events: List['ProgressConsultTransferEvent']) -> None:
         """
         Sets the progress_consult_transfer_events of this BatchConversationEventRequest.
-        ProgressConsultTransfer events for this batch
+        Voice - ProgressConsultTransfer events for this batch
 
         :param progress_consult_transfer_events: The progress_consult_transfer_events of this BatchConversationEventRequest.
         :type: list[ProgressConsultTransferEvent]
@@ -539,7 +539,7 @@ class BatchConversationEventRequest(object):
     def end_consult_transfer_events(self) -> List['EndConsultTransferEvent']:
         """
         Gets the end_consult_transfer_events of this BatchConversationEventRequest.
-        EndConsultTransfer events for this batch
+        Voice - EndConsultTransfer events for this batch
 
         :return: The end_consult_transfer_events of this BatchConversationEventRequest.
         :rtype: list[EndConsultTransferEvent]
@@ -550,7 +550,7 @@ class BatchConversationEventRequest(object):
     def end_consult_transfer_events(self, end_consult_transfer_events: List['EndConsultTransferEvent']) -> None:
         """
         Sets the end_consult_transfer_events of this BatchConversationEventRequest.
-        EndConsultTransfer events for this batch
+        Voice - EndConsultTransfer events for this batch
 
         :param end_consult_transfer_events: The end_consult_transfer_events of this BatchConversationEventRequest.
         :type: list[EndConsultTransferEvent]

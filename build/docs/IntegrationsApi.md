@@ -17,15 +17,18 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_integrations**](IntegrationsApi.html#get_integrations) | List integrations|
 |[**get_integrations_action**](IntegrationsApi.html#get_integrations_action) | Retrieves a single Action matching id.|
 |[**get_integrations_action_draft**](IntegrationsApi.html#get_integrations_action_draft) | Retrieve a Draft|
+|[**get_integrations_action_draft_function**](IntegrationsApi.html#get_integrations_action_draft_function) | Get draft function settings for Action|
 |[**get_integrations_action_draft_schema**](IntegrationsApi.html#get_integrations_action_draft_schema) | Retrieve schema for a Draft based on filename.|
 |[**get_integrations_action_draft_template**](IntegrationsApi.html#get_integrations_action_draft_template) | Retrieve templates for a Draft based on filename.|
 |[**get_integrations_action_draft_validation**](IntegrationsApi.html#get_integrations_action_draft_validation) | Validate current Draft configuration.|
+|[**get_integrations_action_function**](IntegrationsApi.html#get_integrations_action_function) | Get published function settings for Action|
 |[**get_integrations_action_schema**](IntegrationsApi.html#get_integrations_action_schema) | Retrieve schema for an action based on filename.|
 |[**get_integrations_action_template**](IntegrationsApi.html#get_integrations_action_template) | Retrieve text of templates for an action based on filename.|
 |[**get_integrations_actions**](IntegrationsApi.html#get_integrations_actions) | Retrieves all actions associated with filters passed in via query param.|
 |[**get_integrations_actions_categories**](IntegrationsApi.html#get_integrations_actions_categories) | Retrieves all categories of available Actions|
 |[**get_integrations_actions_certificates**](IntegrationsApi.html#get_integrations_actions_certificates) | Retrieves the available mTLS client certificates in use. This endpoint will return inconsistent results while a certificate rotation is in progress.|
 |[**get_integrations_actions_drafts**](IntegrationsApi.html#get_integrations_actions_drafts) | Retrieves all action drafts associated with the filters passed in via query param.|
+|[**get_integrations_actions_functions_runtimes**](IntegrationsApi.html#get_integrations_actions_functions_runtimes) | Get action function settings for Action|
 |[**get_integrations_botconnector_integration_id_bot**](IntegrationsApi.html#get_integrations_botconnector_integration_id_bot) | Get a specific botConnector bot, plus versions, for this integration|
 |[**get_integrations_botconnector_integration_id_bot_versions**](IntegrationsApi.html#get_integrations_botconnector_integration_id_bot_versions) | Get a list of bot versions for a bot|
 |[**get_integrations_botconnector_integration_id_bots**](IntegrationsApi.html#get_integrations_botconnector_integration_id_bots) | Get a list of botConnector bots for this integration|
@@ -60,6 +63,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**patch_integrations_action_draft**](IntegrationsApi.html#patch_integrations_action_draft) | Update an existing Draft|
 |[**post_integrations**](IntegrationsApi.html#post_integrations) | Create an integration.|
 |[**post_integrations_action_draft**](IntegrationsApi.html#post_integrations_action_draft) | Create a new Draft from existing Action|
+|[**post_integrations_action_draft_function_upload**](IntegrationsApi.html#post_integrations_action_draft_function_upload) | Create upload presigned URL for draft function package file.|
 |[**post_integrations_action_draft_publish**](IntegrationsApi.html#post_integrations_action_draft_publish) | Publish a Draft and make it the active Action configuration|
 |[**post_integrations_action_draft_test**](IntegrationsApi.html#post_integrations_action_draft_test) | Test the execution of a draft. Responses will show execution steps broken out with intermediate results to help in debugging.|
 |[**post_integrations_action_execute**](IntegrationsApi.html#post_integrations_action_execute) | Execute Action and return response from 3rd party.  Responses will follow the schemas defined on the Action for success and error.|
@@ -71,6 +75,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_integrations_speech_nuance_nuance_integration_id_bots_jobs**](IntegrationsApi.html#post_integrations_speech_nuance_nuance_integration_id_bots_jobs) | Get a list of Nuance bots in the specified Integration asynchronously|
 |[**post_integrations_speech_nuance_nuance_integration_id_bots_launch_validate**](IntegrationsApi.html#post_integrations_speech_nuance_nuance_integration_id_bots_launch_validate) | Try out a single credential for a Nuance bot to know if the secret is correct|
 |[**put_integration_config_current**](IntegrationsApi.html#put_integration_config_current) | Update integration configuration.|
+|[**put_integrations_action_draft_function**](IntegrationsApi.html#put_integrations_action_draft_function) | Update draft function settings.|
 |[**put_integrations_botconnector_integration_id_bots**](IntegrationsApi.html#put_integrations_botconnector_integration_id_bots) | Set a list of botConnector bots plus versions for this integration|
 |[**put_integrations_credential**](IntegrationsApi.html#put_integrations_credential) | Update a set of credentials|
 |[**put_integrations_speech_nuance_nuance_integration_id_bots_launch_settings**](IntegrationsApi.html#put_integrations_speech_nuance_nuance_integration_id_bots_launch_settings) | Update the Nuance bot list for the specific bots made available to Genesys Cloud in the specified Integration|
@@ -547,6 +552,57 @@ except ApiException as e:
 
 [**Action**](Action.html)
 
+<a name="get_integrations_action_draft_function"></a>
+
+## [**FunctionConfig**](FunctionConfig.html) get_integrations_action_draft_function(action_id)
+
+
+
+Get draft function settings for Action
+
+get_integrations_action_draft_function is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/integrations/actions/{actionId}/draft/function 
+
+Requires ANY permissions: 
+
+* integrations:actionFunction:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.IntegrationsApi()
+action_id = 'action_id_example' # str | actionId
+
+try:
+    # Get draft function settings for Action
+    api_response = api_instance.get_integrations_action_draft_function(action_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling IntegrationsApi->get_integrations_action_draft_function: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **action_id** | **str**| actionId |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**FunctionConfig**](FunctionConfig.html)
+
 <a name="get_integrations_action_draft_schema"></a>
 
 ## [**JsonSchemaDocument**](JsonSchemaDocument.html) get_integrations_action_draft_schema(action_id, file_name)
@@ -699,6 +755,57 @@ except ApiException as e:
 ### Return type
 
 [**DraftValidationResult**](DraftValidationResult.html)
+
+<a name="get_integrations_action_function"></a>
+
+## [**FunctionConfig**](FunctionConfig.html) get_integrations_action_function(action_id)
+
+
+
+Get published function settings for Action
+
+get_integrations_action_function is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/integrations/actions/{actionId}/function 
+
+Requires ANY permissions: 
+
+* integrations:actionFunction:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.IntegrationsApi()
+action_id = 'action_id_example' # str | actionId
+
+try:
+    # Get published function settings for Action
+    api_response = api_instance.get_integrations_action_function(action_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling IntegrationsApi->get_integrations_action_function: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **action_id** | **str**| actionId |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**FunctionConfig**](FunctionConfig.html)
 
 <a name="get_integrations_action_schema"></a>
 
@@ -1056,6 +1163,53 @@ except ApiException as e:
 ### Return type
 
 [**ActionEntityListing**](ActionEntityListing.html)
+
+<a name="get_integrations_actions_functions_runtimes"></a>
+
+## [**list[FunctionRuntime]**](FunctionRuntime.html) get_integrations_actions_functions_runtimes()
+
+
+
+Get action function settings for Action
+
+get_integrations_actions_functions_runtimes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/integrations/actions/functions/runtimes 
+
+Requires ANY permissions: 
+
+* integrations:actionFunction:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.IntegrationsApi()
+
+try:
+    # Get action function settings for Action
+    api_response = api_instance.get_integrations_actions_functions_runtimes()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling IntegrationsApi->get_integrations_actions_functions_runtimes: %s\n" % e)
+```
+
+### Parameters
+
+This endpoint does not need any parameters.
+
+
+### Return type
+
+[**list[FunctionRuntime]**](FunctionRuntime.html)
 
 <a name="get_integrations_botconnector_integration_id_bot"></a>
 
@@ -2860,6 +3014,59 @@ except ApiException as e:
 
 [**Action**](Action.html)
 
+<a name="post_integrations_action_draft_function_upload"></a>
+
+## [**FunctionUploadResponse**](FunctionUploadResponse.html) post_integrations_action_draft_function_upload(action_id, body)
+
+
+
+Create upload presigned URL for draft function package file.
+
+post_integrations_action_draft_function_upload is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/integrations/actions/{actionId}/draft/function/upload 
+
+Requires ANY permissions: 
+
+* integrations:actionFunction:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.IntegrationsApi()
+action_id = 'action_id_example' # str | actionId
+body = PureCloudPlatformClientV2.FunctionUploadRequest() # FunctionUploadRequest | Input used to request URL upload.
+
+try:
+    # Create upload presigned URL for draft function package file.
+    api_response = api_instance.post_integrations_action_draft_function_upload(action_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling IntegrationsApi->post_integrations_action_draft_function_upload: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **action_id** | **str**| actionId |  |
+| **body** | [**FunctionUploadRequest**](FunctionUploadRequest.html)| Input used to request URL upload. |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**FunctionUploadResponse**](FunctionUploadResponse.html)
+
 <a name="post_integrations_action_draft_publish"></a>
 
 ## [**Action**](Action.html) post_integrations_action_draft_publish(action_id, body)
@@ -3428,6 +3635,59 @@ except ApiException as e:
 ### Return type
 
 [**IntegrationConfiguration**](IntegrationConfiguration.html)
+
+<a name="put_integrations_action_draft_function"></a>
+
+## [**FunctionConfig**](FunctionConfig.html) put_integrations_action_draft_function(action_id, body)
+
+
+
+Update draft function settings.
+
+put_integrations_action_draft_function is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps PUT /api/v2/integrations/actions/{actionId}/draft/function 
+
+Requires ANY permissions: 
+
+* integrations:actionFunction:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.IntegrationsApi()
+action_id = 'action_id_example' # str | actionId
+body = PureCloudPlatformClientV2.Function() # Function | Input used to update function settings.
+
+try:
+    # Update draft function settings.
+    api_response = api_instance.put_integrations_action_draft_function(action_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling IntegrationsApi->put_integrations_action_draft_function: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **action_id** | **str**| actionId |  |
+| **body** | [**Function**](Function.html)| Input used to update function settings. |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**FunctionConfig**](FunctionConfig.html)
 
 <a name="put_integrations_botconnector_integration_id_bots"></a>
 

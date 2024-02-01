@@ -99,6 +99,8 @@ from ..models import LabelCreateRequest
 from ..models import LabelListing
 from ..models import LabelResponse
 from ..models import LabelUpdateRequest
+from ..models import OperationCreatorUserResponse
+from ..models import OperationListing
 from ..models import SearchUpdateRequest
 from ..models import TrainingListing
 from ..models import UnansweredGroup
@@ -3625,6 +3627,185 @@ class KnowledgeApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='TrainingListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_knowledge_knowledgebase_operations(self, knowledge_base_id: str, **kwargs) -> 'OperationListing':
+        """
+        Get operations
+        
+	    get_knowledge_knowledgebase_operations is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_knowledge_knowledgebase_operations(knowledge_base_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str knowledge_base_id: Knowledge base ID (required)
+        :param str before: The cursor that points to the start of the set of entities that has been returned.
+        :param str after: The cursor that points to the end of the set of entities that has been returned.
+        :param str page_size: Number of entities to return. Maximum of 200.
+        :param list[str] user_id: If specified, retrieves operations associated with user ids, comma separated values expected.
+        :param list[str] type: If specified, retrieves operations with specified operation type, comma separated values expected.
+        :param list[str] status: If specified, retrieves operations with specified operation status, comma separated values expected.
+        :param str interval: Retrieves the operations modified in specified date and time range. If the after and before cursor parameters are within this interval, it would return valid data, otherwise it throws an error.The dates in the interval are represented in ISO-8601 format: YYYY-MM-DDThh:mm:ssZ/YYYY-MM-DDThh:mm:ssZ
+        :return: OperationListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['knowledge_base_id', 'before', 'after', 'page_size', 'user_id', 'type', 'status', 'interval']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_knowledge_knowledgebase_operations" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'knowledge_base_id' is set
+        if ('knowledge_base_id' not in params) or (params['knowledge_base_id'] is None):
+            raise ValueError("Missing the required parameter `knowledge_base_id` when calling `get_knowledge_knowledgebase_operations`")
+
+
+        resource_path = '/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/operations'.replace('{format}', 'json')
+        path_params = {}
+        if 'knowledge_base_id' in params:
+            path_params['knowledgeBaseId'] = params['knowledge_base_id']
+
+        query_params = {}
+        if 'before' in params:
+            query_params['before'] = params['before']
+        if 'after' in params:
+            query_params['after'] = params['after']
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+        if 'user_id' in params:
+            query_params['userId'] = params['user_id']
+        if 'type' in params:
+            query_params['type'] = params['type']
+        if 'status' in params:
+            query_params['status'] = params['status']
+        if 'interval' in params:
+            query_params['interval'] = params['interval']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='OperationListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_knowledge_knowledgebase_operations_users_query(self, knowledge_base_id: str, **kwargs) -> 'OperationCreatorUserResponse':
+        """
+        Get ids of operation creator users and oauth clients
+        
+	    get_knowledge_knowledgebase_operations_users_query is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_knowledge_knowledgebase_operations_users_query(knowledge_base_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str knowledge_base_id: Knowledge base ID (required)
+        :return: OperationCreatorUserResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['knowledge_base_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_knowledge_knowledgebase_operations_users_query" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'knowledge_base_id' is set
+        if ('knowledge_base_id' not in params) or (params['knowledge_base_id'] is None):
+            raise ValueError("Missing the required parameter `knowledge_base_id` when calling `get_knowledge_knowledgebase_operations_users_query`")
+
+
+        resource_path = '/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/operations/users/query'.replace('{format}', 'json')
+        path_params = {}
+        if 'knowledge_base_id' in params:
+            path_params['knowledgeBaseId'] = params['knowledge_base_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='OperationCreatorUserResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

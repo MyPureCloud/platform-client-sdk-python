@@ -60,7 +60,8 @@ class V2MobiusRulesTopicRule(object):
             'enabled': 'bool',
             'in_alarm': 'bool',
             'action': 'str',
-            'date_created': 'datetime'
+            'date_created': 'datetime',
+            'send_exiting_alarm_notification': 'bool'
         }
 
         self.attribute_map = {
@@ -73,7 +74,8 @@ class V2MobiusRulesTopicRule(object):
             'enabled': 'enabled',
             'in_alarm': 'inAlarm',
             'action': 'action',
-            'date_created': 'dateCreated'
+            'date_created': 'dateCreated',
+            'send_exiting_alarm_notification': 'sendExitingAlarmNotification'
         }
 
         self._id = None
@@ -86,6 +88,7 @@ class V2MobiusRulesTopicRule(object):
         self._in_alarm = None
         self._action = None
         self._date_created = None
+        self._send_exiting_alarm_notification = None
 
     @property
     def id(self) -> str:
@@ -336,6 +339,30 @@ class V2MobiusRulesTopicRule(object):
         
 
         self._date_created = date_created
+
+    @property
+    def send_exiting_alarm_notification(self) -> bool:
+        """
+        Gets the send_exiting_alarm_notification of this V2MobiusRulesTopicRule.
+
+
+        :return: The send_exiting_alarm_notification of this V2MobiusRulesTopicRule.
+        :rtype: bool
+        """
+        return self._send_exiting_alarm_notification
+
+    @send_exiting_alarm_notification.setter
+    def send_exiting_alarm_notification(self, send_exiting_alarm_notification: bool) -> None:
+        """
+        Sets the send_exiting_alarm_notification of this V2MobiusRulesTopicRule.
+
+
+        :param send_exiting_alarm_notification: The send_exiting_alarm_notification of this V2MobiusRulesTopicRule.
+        :type: bool
+        """
+        
+
+        self._send_exiting_alarm_notification = send_exiting_alarm_notification
 
     def to_dict(self):
         """

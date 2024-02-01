@@ -68,7 +68,8 @@ class V2MobiusAlertsTopicAlert(object):
             'date_muted_until': 'datetime',
             'date_snoozed_until': 'datetime',
             'action': 'str',
-            'alert_summary': 'V2MobiusAlertsTopicAlertSummary'
+            'alert_summary': 'V2MobiusAlertsTopicAlertSummary',
+            'send_exiting_alarm_notification': 'bool'
         }
 
         self.attribute_map = {
@@ -87,7 +88,8 @@ class V2MobiusAlertsTopicAlert(object):
             'date_muted_until': 'dateMutedUntil',
             'date_snoozed_until': 'dateSnoozedUntil',
             'action': 'action',
-            'alert_summary': 'alertSummary'
+            'alert_summary': 'alertSummary',
+            'send_exiting_alarm_notification': 'sendExitingAlarmNotification'
         }
 
         self._rule = None
@@ -106,6 +108,7 @@ class V2MobiusAlertsTopicAlert(object):
         self._date_snoozed_until = None
         self._action = None
         self._alert_summary = None
+        self._send_exiting_alarm_notification = None
 
     @property
     def rule(self) -> 'V2MobiusAlertsTopicAlertRuleProperties':
@@ -495,6 +498,30 @@ class V2MobiusAlertsTopicAlert(object):
         
 
         self._alert_summary = alert_summary
+
+    @property
+    def send_exiting_alarm_notification(self) -> bool:
+        """
+        Gets the send_exiting_alarm_notification of this V2MobiusAlertsTopicAlert.
+
+
+        :return: The send_exiting_alarm_notification of this V2MobiusAlertsTopicAlert.
+        :rtype: bool
+        """
+        return self._send_exiting_alarm_notification
+
+    @send_exiting_alarm_notification.setter
+    def send_exiting_alarm_notification(self, send_exiting_alarm_notification: bool) -> None:
+        """
+        Sets the send_exiting_alarm_notification of this V2MobiusAlertsTopicAlert.
+
+
+        :param send_exiting_alarm_notification: The send_exiting_alarm_notification of this V2MobiusAlertsTopicAlert.
+        :type: bool
+        """
+        
+
+        self._send_exiting_alarm_notification = send_exiting_alarm_notification
 
     def to_dict(self):
         """

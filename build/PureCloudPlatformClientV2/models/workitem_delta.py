@@ -59,6 +59,7 @@ class WorkitemDelta(object):
             'name': 'WorkitemsAttributeChangeString',
             'description': 'WorkitemsAttributeChangeString',
             'language_id': 'WorkitemsAttributeChangeString',
+            'utilization_label_id': 'WorkitemsAttributeChangeString',
             'priority': 'WorkitemsAttributeChangeInteger',
             'skill_ids': 'WorkitemsAttributeChangeList',
             'preferred_agent_ids': 'WorkitemsAttributeChangeList',
@@ -87,6 +88,7 @@ class WorkitemDelta(object):
             'name': 'name',
             'description': 'description',
             'language_id': 'languageId',
+            'utilization_label_id': 'utilizationLabelId',
             'priority': 'priority',
             'skill_ids': 'skillIds',
             'preferred_agent_ids': 'preferredAgentIds',
@@ -114,6 +116,7 @@ class WorkitemDelta(object):
         self._name = None
         self._description = None
         self._language_id = None
+        self._utilization_label_id = None
         self._priority = None
         self._skill_ids = None
         self._preferred_agent_ids = None
@@ -208,6 +211,30 @@ class WorkitemDelta(object):
         
 
         self._language_id = language_id
+
+    @property
+    def utilization_label_id(self) -> 'WorkitemsAttributeChangeString':
+        """
+        Gets the utilization_label_id of this WorkitemDelta.
+
+
+        :return: The utilization_label_id of this WorkitemDelta.
+        :rtype: WorkitemsAttributeChangeString
+        """
+        return self._utilization_label_id
+
+    @utilization_label_id.setter
+    def utilization_label_id(self, utilization_label_id: 'WorkitemsAttributeChangeString') -> None:
+        """
+        Sets the utilization_label_id of this WorkitemDelta.
+
+
+        :param utilization_label_id: The utilization_label_id of this WorkitemDelta.
+        :type: WorkitemsAttributeChangeString
+        """
+        
+
+        self._utilization_label_id = utilization_label_id
 
     @property
     def priority(self) -> 'WorkitemsAttributeChangeInteger':

@@ -71,6 +71,7 @@ class WorkitemUpdate(object):
             'external_tag': 'str',
             'skill_ids': 'list[str]',
             'language_id': 'str',
+            'utilization_label_id': 'str',
             'preferred_agent_ids': 'list[str]'
         }
 
@@ -96,6 +97,7 @@ class WorkitemUpdate(object):
             'external_tag': 'externalTag',
             'skill_ids': 'skillIds',
             'language_id': 'languageId',
+            'utilization_label_id': 'utilizationLabelId',
             'preferred_agent_ids': 'preferredAgentIds'
         }
 
@@ -120,6 +122,7 @@ class WorkitemUpdate(object):
         self._external_tag = None
         self._skill_ids = None
         self._language_id = None
+        self._utilization_label_id = None
         self._preferred_agent_ids = None
 
     @property
@@ -635,6 +638,30 @@ class WorkitemUpdate(object):
         
 
         self._language_id = language_id
+
+    @property
+    def utilization_label_id(self) -> str:
+        """
+        Gets the utilization_label_id of this WorkitemUpdate.
+        The ID of the utilization label of the Workitem. Must be a valid UUID.
+
+        :return: The utilization_label_id of this WorkitemUpdate.
+        :rtype: str
+        """
+        return self._utilization_label_id
+
+    @utilization_label_id.setter
+    def utilization_label_id(self, utilization_label_id: str) -> None:
+        """
+        Sets the utilization_label_id of this WorkitemUpdate.
+        The ID of the utilization label of the Workitem. Must be a valid UUID.
+
+        :param utilization_label_id: The utilization_label_id of this WorkitemUpdate.
+        :type: str
+        """
+        
+
+        self._utilization_label_id = utilization_label_id
 
     @property
     def preferred_agent_ids(self) -> List[str]:

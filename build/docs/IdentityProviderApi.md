@@ -8,6 +8,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 |Method | Description|
 |------------- | -------------|
+|[**delete_identityprovider**](IdentityProviderApi.html#delete_identityprovider) | Delete Identity Provider|
 |[**delete_identityproviders_adfs**](IdentityProviderApi.html#delete_identityproviders_adfs) | Delete ADFS Identity Provider|
 |[**delete_identityproviders_cic**](IdentityProviderApi.html#delete_identityproviders_cic) | Delete Customer Interaction Center (CIC) Identity Provider|
 |[**delete_identityproviders_generic**](IdentityProviderApi.html#delete_identityproviders_generic) | Delete Generic SAML Identity Provider|
@@ -19,6 +20,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**delete_identityproviders_purecloud**](IdentityProviderApi.html#delete_identityproviders_purecloud) | Delete PureCloud Identity Provider|
 |[**delete_identityproviders_pureengage**](IdentityProviderApi.html#delete_identityproviders_pureengage) | Delete PureEngage Identity Provider|
 |[**delete_identityproviders_salesforce**](IdentityProviderApi.html#delete_identityproviders_salesforce) | Delete Salesforce Identity Provider|
+|[**get_identityprovider**](IdentityProviderApi.html#get_identityprovider) | Get Identity Provider|
 |[**get_identityproviders**](IdentityProviderApi.html#get_identityproviders) | The list of identity providers|
 |[**get_identityproviders_adfs**](IdentityProviderApi.html#get_identityproviders_adfs) | Get ADFS Identity Provider|
 |[**get_identityproviders_cic**](IdentityProviderApi.html#get_identityproviders_cic) | Get Customer Interaction Center (CIC) Identity Provider|
@@ -31,6 +33,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_identityproviders_purecloud**](IdentityProviderApi.html#get_identityproviders_purecloud) | Get PureCloud Identity Provider|
 |[**get_identityproviders_pureengage**](IdentityProviderApi.html#get_identityproviders_pureengage) | Get PureEngage Identity Provider|
 |[**get_identityproviders_salesforce**](IdentityProviderApi.html#get_identityproviders_salesforce) | Get Salesforce Identity Provider|
+|[**post_identityproviders**](IdentityProviderApi.html#post_identityproviders) | Create Identity Provider|
+|[**put_identityprovider**](IdentityProviderApi.html#put_identityprovider) | Update Identity Provider|
 |[**put_identityproviders_adfs**](IdentityProviderApi.html#put_identityproviders_adfs) | Update/Create ADFS Identity Provider|
 |[**put_identityproviders_cic**](IdentityProviderApi.html#put_identityproviders_cic) | Update/Create Customer Interaction Center (CIC) Identity Provider|
 |[**put_identityproviders_generic**](IdentityProviderApi.html#put_identityproviders_generic) | Update/Create Generic SAML Identity Provider|
@@ -43,6 +47,54 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**put_identityproviders_pureengage**](IdentityProviderApi.html#put_identityproviders_pureengage) | Update/Create PureEngage Identity Provider|
 |[**put_identityproviders_salesforce**](IdentityProviderApi.html#put_identityproviders_salesforce) | Update/Create Salesforce Identity Provider|
 {: class="table table-striped"}
+
+<a name="delete_identityprovider"></a>
+
+##  delete_identityprovider(provider_id)
+
+
+
+Delete Identity Provider
+
+Wraps DELETE /api/v2/identityproviders/{providerId} 
+
+Requires ANY permissions: 
+
+* sso:provider:delete
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.IdentityProviderApi()
+provider_id = 'provider_id_example' # str | Provider ID
+
+try:
+    # Delete Identity Provider
+    api_instance.delete_identityprovider(provider_id)
+except ApiException as e:
+    print("Exception when calling IdentityProviderApi->delete_identityprovider: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **provider_id** | **str**| Provider ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
 
 <a name="delete_identityproviders_adfs"></a>
 
@@ -539,9 +591,58 @@ This endpoint does not need any parameters.
 
 **object**
 
+<a name="get_identityprovider"></a>
+
+## [**CustomProvider**](CustomProvider.html) get_identityprovider(provider_id)
+
+
+
+Get Identity Provider
+
+Wraps GET /api/v2/identityproviders/{providerId} 
+
+Requires ANY permissions: 
+
+* sso:provider:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.IdentityProviderApi()
+provider_id = 'provider_id_example' # str | Provider ID
+
+try:
+    # Get Identity Provider
+    api_response = api_instance.get_identityprovider(provider_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling IdentityProviderApi->get_identityprovider: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **provider_id** | **str**| Provider ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**CustomProvider**](CustomProvider.html)
+
 <a name="get_identityproviders"></a>
 
-## [**OAuthProviderEntityListing**](OAuthProviderEntityListing.html) get_identityproviders()
+## [**IdentityProviderEntityListing**](IdentityProviderEntityListing.html) get_identityproviders()
 
 
 
@@ -582,7 +683,7 @@ This endpoint does not need any parameters.
 
 ### Return type
 
-[**OAuthProviderEntityListing**](OAuthProviderEntityListing.html)
+[**IdentityProviderEntityListing**](IdentityProviderEntityListing.html)
 
 <a name="get_identityproviders_adfs"></a>
 
@@ -1079,9 +1180,109 @@ This endpoint does not need any parameters.
 
 [**Salesforce**](Salesforce.html)
 
+<a name="post_identityproviders"></a>
+
+## [**CustomProvider**](CustomProvider.html) post_identityproviders(body)
+
+
+
+Create Identity Provider
+
+Wraps POST /api/v2/identityproviders 
+
+Requires ANY permissions: 
+
+* sso:provider:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.IdentityProviderApi()
+body = PureCloudPlatformClientV2.CustomProvider() # CustomProvider | Provider
+
+try:
+    # Create Identity Provider
+    api_response = api_instance.post_identityproviders(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling IdentityProviderApi->post_identityproviders: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**CustomProvider**](CustomProvider.html)| Provider |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**CustomProvider**](CustomProvider.html)
+
+<a name="put_identityprovider"></a>
+
+## [**CustomProvider**](CustomProvider.html) put_identityprovider(provider_id, body)
+
+
+
+Update Identity Provider
+
+Wraps PUT /api/v2/identityproviders/{providerId} 
+
+Requires ANY permissions: 
+
+* sso:provider:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.IdentityProviderApi()
+provider_id = 'provider_id_example' # str | Provider ID
+body = PureCloudPlatformClientV2.CustomProvider() # CustomProvider | Provider
+
+try:
+    # Update Identity Provider
+    api_response = api_instance.put_identityprovider(provider_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling IdentityProviderApi->put_identityprovider: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **provider_id** | **str**| Provider ID |  |
+| **body** | [**CustomProvider**](CustomProvider.html)| Provider |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**CustomProvider**](CustomProvider.html)
+
 <a name="put_identityproviders_adfs"></a>
 
-## [**OAuthProvider**](OAuthProvider.html) put_identityproviders_adfs(body)
+## [**IdentityProvider**](IdentityProvider.html) put_identityproviders_adfs(body)
 
 
 
@@ -1127,11 +1328,11 @@ except ApiException as e:
 
 ### Return type
 
-[**OAuthProvider**](OAuthProvider.html)
+[**IdentityProvider**](IdentityProvider.html)
 
 <a name="put_identityproviders_cic"></a>
 
-## [**OAuthProvider**](OAuthProvider.html) put_identityproviders_cic(body)
+## [**IdentityProvider**](IdentityProvider.html) put_identityproviders_cic(body)
 
 
 
@@ -1177,11 +1378,11 @@ except ApiException as e:
 
 ### Return type
 
-[**OAuthProvider**](OAuthProvider.html)
+[**IdentityProvider**](IdentityProvider.html)
 
 <a name="put_identityproviders_generic"></a>
 
-## [**OAuthProvider**](OAuthProvider.html) put_identityproviders_generic(body)
+## [**IdentityProvider**](IdentityProvider.html) put_identityproviders_generic(body)
 
 
 
@@ -1227,11 +1428,11 @@ except ApiException as e:
 
 ### Return type
 
-[**OAuthProvider**](OAuthProvider.html)
+[**IdentityProvider**](IdentityProvider.html)
 
 <a name="put_identityproviders_gsuite"></a>
 
-## [**OAuthProvider**](OAuthProvider.html) put_identityproviders_gsuite(body)
+## [**IdentityProvider**](IdentityProvider.html) put_identityproviders_gsuite(body)
 
 
 
@@ -1277,7 +1478,7 @@ except ApiException as e:
 
 ### Return type
 
-[**OAuthProvider**](OAuthProvider.html)
+[**IdentityProvider**](IdentityProvider.html)
 
 <a name="put_identityproviders_identitynow"></a>
 
@@ -1331,7 +1532,7 @@ except ApiException as e:
 
 <a name="put_identityproviders_okta"></a>
 
-## [**OAuthProvider**](OAuthProvider.html) put_identityproviders_okta(body)
+## [**IdentityProvider**](IdentityProvider.html) put_identityproviders_okta(body)
 
 
 
@@ -1377,11 +1578,11 @@ except ApiException as e:
 
 ### Return type
 
-[**OAuthProvider**](OAuthProvider.html)
+[**IdentityProvider**](IdentityProvider.html)
 
 <a name="put_identityproviders_onelogin"></a>
 
-## [**OAuthProvider**](OAuthProvider.html) put_identityproviders_onelogin(body)
+## [**IdentityProvider**](IdentityProvider.html) put_identityproviders_onelogin(body)
 
 
 
@@ -1427,11 +1628,11 @@ except ApiException as e:
 
 ### Return type
 
-[**OAuthProvider**](OAuthProvider.html)
+[**IdentityProvider**](IdentityProvider.html)
 
 <a name="put_identityproviders_ping"></a>
 
-## [**OAuthProvider**](OAuthProvider.html) put_identityproviders_ping(body)
+## [**IdentityProvider**](IdentityProvider.html) put_identityproviders_ping(body)
 
 
 
@@ -1477,11 +1678,11 @@ except ApiException as e:
 
 ### Return type
 
-[**OAuthProvider**](OAuthProvider.html)
+[**IdentityProvider**](IdentityProvider.html)
 
 <a name="put_identityproviders_purecloud"></a>
 
-## [**OAuthProvider**](OAuthProvider.html) put_identityproviders_purecloud(body)
+## [**IdentityProvider**](IdentityProvider.html) put_identityproviders_purecloud(body)
 
 
 
@@ -1527,11 +1728,11 @@ except ApiException as e:
 
 ### Return type
 
-[**OAuthProvider**](OAuthProvider.html)
+[**IdentityProvider**](IdentityProvider.html)
 
 <a name="put_identityproviders_pureengage"></a>
 
-## [**OAuthProvider**](OAuthProvider.html) put_identityproviders_pureengage(body)
+## [**IdentityProvider**](IdentityProvider.html) put_identityproviders_pureengage(body)
 
 
 
@@ -1577,11 +1778,11 @@ except ApiException as e:
 
 ### Return type
 
-[**OAuthProvider**](OAuthProvider.html)
+[**IdentityProvider**](IdentityProvider.html)
 
 <a name="put_identityproviders_salesforce"></a>
 
-## [**OAuthProvider**](OAuthProvider.html) put_identityproviders_salesforce(body)
+## [**IdentityProvider**](IdentityProvider.html) put_identityproviders_salesforce(body)
 
 
 
@@ -1627,5 +1828,5 @@ except ApiException as e:
 
 ### Return type
 
-[**OAuthProvider**](OAuthProvider.html)
+[**IdentityProvider**](IdentityProvider.html)
 

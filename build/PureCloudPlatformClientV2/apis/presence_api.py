@@ -224,9 +224,10 @@ class PresenceApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("delete_presencedefinition is deprecated")
     def delete_presencedefinition(self, presence_id: str, **kwargs) -> None:
         """
-        Delete a Presence Definition
+        Delete a Presence Definition. Apps should migrate to use DELETE /api/v2/presence/definitions/{definitionId} instead
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -767,9 +768,10 @@ class PresenceApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("get_presencedefinition is deprecated")
     def get_presencedefinition(self, presence_id: str, **kwargs) -> 'OrganizationPresence':
         """
-        Get a Presence Definition
+        Get a Presence Definition. Apps should migrate to use GET /api/v2/presence/definitions/{definitionId} instead
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -848,9 +850,10 @@ class PresenceApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("get_presencedefinitions is deprecated")
     def get_presencedefinitions(self, **kwargs) -> 'OrganizationPresenceEntityListing':
         """
-        Get an Organization's list of Presence Definitions
+        Get an Organization's list of Presence Definitions. Apps should migrate to use GET /api/v2/presence/definitions instead
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -1652,9 +1655,10 @@ class PresenceApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("post_presencedefinitions is deprecated")
     def post_presencedefinitions(self, body: 'OrganizationPresence', **kwargs) -> 'OrganizationPresence':
         """
-        Create a Presence Definition
+        Create a Presence Definition. Apps should migrate to use POST /api/v2/presence/definitions instead
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -2060,9 +2064,10 @@ class PresenceApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("put_presencedefinition is deprecated")
     def put_presencedefinition(self, presence_id: str, body: 'OrganizationPresence', **kwargs) -> 'OrganizationPresence':
         """
-        Update a Presence Definition
+        Update a Presence Definition. Apps should migrate to use PUT /api/v2/presence/definitions/{definitionId} instead)
         
 
         This method makes a synchronous HTTP request by default. To make an

@@ -16,7 +16,7 @@ title: PhoneStatus
 | **line_statuses** | [**list[LineStatus]**](LineStatus.html) | A list of LineStatus information for each of the lines of this phone | [optional] |
 | **phone_assignment_to_edge_type** | **str** | The phone status&#39;s edge assignment type. | [optional] |
 | **edge** | [**DomainEntityRef**](DomainEntityRef.html) | The URI of the edge that provided this status information. | [optional] |
-| **self_uri** | **str** | The URI for this object | [optional] |
+| **self_uri** | **str** | The URI for this object. Deprecated. Do not use. | [optional] |
 {: class="table table-striped"}
 
 

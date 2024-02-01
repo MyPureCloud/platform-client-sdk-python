@@ -323,7 +323,7 @@ class PhoneStatus(object):
     def self_uri(self) -> str:
         """
         Gets the self_uri of this PhoneStatus.
-        The URI for this object
+        The URI for this object. Deprecated. Do not use.
 
         :return: The self_uri of this PhoneStatus.
         :rtype: str
@@ -334,7 +334,7 @@ class PhoneStatus(object):
     def self_uri(self, self_uri: str) -> None:
         """
         Sets the self_uri of this PhoneStatus.
-        The URI for this object
+        The URI for this object. Deprecated. Do not use.
 
         :param self_uri: The self_uri of this PhoneStatus.
         :type: str

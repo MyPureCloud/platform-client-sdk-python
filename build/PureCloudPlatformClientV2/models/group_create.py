@@ -63,6 +63,7 @@ class GroupCreate(object):
             'addresses': 'list[GroupContact]',
             'rules_visible': 'bool',
             'visibility': 'str',
+            'roles_enabled': 'bool',
             'owner_ids': 'list[str]',
             'self_uri': 'str'
         }
@@ -80,6 +81,7 @@ class GroupCreate(object):
             'addresses': 'addresses',
             'rules_visible': 'rulesVisible',
             'visibility': 'visibility',
+            'roles_enabled': 'rolesEnabled',
             'owner_ids': 'ownerIds',
             'self_uri': 'selfUri'
         }
@@ -96,6 +98,7 @@ class GroupCreate(object):
         self._addresses = None
         self._rules_visible = None
         self._visibility = None
+        self._roles_enabled = None
         self._owner_ids = None
         self._self_uri = None
 
@@ -401,6 +404,30 @@ class GroupCreate(object):
             self._visibility = "outdated_sdk_version"
         else:
             self._visibility = visibility
+
+    @property
+    def roles_enabled(self) -> bool:
+        """
+        Gets the roles_enabled of this GroupCreate.
+        Allow roles to be assigned to this group
+
+        :return: The roles_enabled of this GroupCreate.
+        :rtype: bool
+        """
+        return self._roles_enabled
+
+    @roles_enabled.setter
+    def roles_enabled(self, roles_enabled: bool) -> None:
+        """
+        Sets the roles_enabled of this GroupCreate.
+        Allow roles to be assigned to this group
+
+        :param roles_enabled: The roles_enabled of this GroupCreate.
+        :type: bool
+        """
+        
+
+        self._roles_enabled = roles_enabled
 
     @property
     def owner_ids(self) -> List[str]:

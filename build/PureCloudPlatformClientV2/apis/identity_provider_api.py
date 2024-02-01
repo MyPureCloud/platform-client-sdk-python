@@ -39,13 +39,14 @@ from typing import Any
 
 from ..models import Empty
 from ..models import ADFS
+from ..models import CustomProvider
 from ..models import CustomerInteractionCenter
 from ..models import ErrorBody
 from ..models import GSuite
 from ..models import GenericSAML
 from ..models import IdentityNow
-from ..models import OAuthProvider
-from ..models import OAuthProviderEntityListing
+from ..models import IdentityProvider
+from ..models import IdentityProviderEntityListing
 from ..models import Okta
 from ..models import OneLogin
 from ..models import PingIdentity
@@ -68,6 +69,84 @@ class IdentityProviderApi(object):
             if not config.api_client:
                 config.api_client = ApiClient()
             self.api_client = config.api_client
+
+    def delete_identityprovider(self, provider_id: str, **kwargs) -> None:
+        """
+        Delete Identity Provider
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_identityprovider(provider_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str provider_id: Provider ID (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['provider_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_identityprovider" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'provider_id' is set
+        if ('provider_id' not in params) or (params['provider_id'] is None):
+            raise ValueError("Missing the required parameter `provider_id` when calling `delete_identityprovider`")
+
+
+        resource_path = '/api/v2/identityproviders/{providerId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'provider_id' in params:
+            path_params['providerId'] = params['provider_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
 
     def delete_identityproviders_adfs(self, **kwargs) -> object:
         """
@@ -861,7 +940,85 @@ class IdentityProviderApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_identityproviders(self, **kwargs) -> 'OAuthProviderEntityListing':
+    def get_identityprovider(self, provider_id: str, **kwargs) -> 'CustomProvider':
+        """
+        Get Identity Provider
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_identityprovider(provider_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str provider_id: Provider ID (required)
+        :return: CustomProvider
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['provider_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_identityprovider" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'provider_id' is set
+        if ('provider_id' not in params) or (params['provider_id'] is None):
+            raise ValueError("Missing the required parameter `provider_id` when calling `get_identityprovider`")
+
+
+        resource_path = '/api/v2/identityproviders/{providerId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'provider_id' in params:
+            path_params['providerId'] = params['provider_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='CustomProvider',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_identityproviders(self, **kwargs) -> 'IdentityProviderEntityListing':
         """
         The list of identity providers
         
@@ -876,7 +1033,7 @@ class IdentityProviderApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :return: OAuthProviderEntityListing
+        :return: IdentityProviderEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -928,7 +1085,7 @@ class IdentityProviderApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='OAuthProviderEntityListing',
+                                            response_type='IdentityProviderEntityListing',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -1725,7 +1882,169 @@ class IdentityProviderApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def put_identityproviders_adfs(self, body: 'ADFS', **kwargs) -> 'OAuthProvider':
+    def post_identityproviders(self, body: 'CustomProvider', **kwargs) -> 'CustomProvider':
+        """
+        Create Identity Provider
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_identityproviders(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param CustomProvider body: Provider (required)
+        :return: CustomProvider
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_identityproviders" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_identityproviders`")
+
+
+        resource_path = '/api/v2/identityproviders'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='CustomProvider',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def put_identityprovider(self, provider_id: str, body: 'CustomProvider', **kwargs) -> 'CustomProvider':
+        """
+        Update Identity Provider
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.put_identityprovider(provider_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str provider_id: Provider ID (required)
+        :param CustomProvider body: Provider (required)
+        :return: CustomProvider
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['provider_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method put_identityprovider" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'provider_id' is set
+        if ('provider_id' not in params) or (params['provider_id'] is None):
+            raise ValueError("Missing the required parameter `provider_id` when calling `put_identityprovider`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `put_identityprovider`")
+
+
+        resource_path = '/api/v2/identityproviders/{providerId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'provider_id' in params:
+            path_params['providerId'] = params['provider_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='CustomProvider',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def put_identityproviders_adfs(self, body: 'ADFS', **kwargs) -> 'IdentityProvider':
         """
         Update/Create ADFS Identity Provider
         
@@ -1741,7 +2060,7 @@ class IdentityProviderApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param ADFS body: Provider (required)
-        :return: OAuthProvider
+        :return: IdentityProvider
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1798,12 +2117,12 @@ class IdentityProviderApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='OAuthProvider',
+                                            response_type='IdentityProvider',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
 
-    def put_identityproviders_cic(self, body: 'CustomerInteractionCenter', **kwargs) -> 'OAuthProvider':
+    def put_identityproviders_cic(self, body: 'CustomerInteractionCenter', **kwargs) -> 'IdentityProvider':
         """
         Update/Create Customer Interaction Center (CIC) Identity Provider
         
@@ -1819,7 +2138,7 @@ class IdentityProviderApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param CustomerInteractionCenter body: Provider (required)
-        :return: OAuthProvider
+        :return: IdentityProvider
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1876,12 +2195,12 @@ class IdentityProviderApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='OAuthProvider',
+                                            response_type='IdentityProvider',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
 
-    def put_identityproviders_generic(self, body: 'GenericSAML', **kwargs) -> 'OAuthProvider':
+    def put_identityproviders_generic(self, body: 'GenericSAML', **kwargs) -> 'IdentityProvider':
         """
         Update/Create Generic SAML Identity Provider
         
@@ -1897,7 +2216,7 @@ class IdentityProviderApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param GenericSAML body: Provider (required)
-        :return: OAuthProvider
+        :return: IdentityProvider
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1954,12 +2273,12 @@ class IdentityProviderApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='OAuthProvider',
+                                            response_type='IdentityProvider',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
 
-    def put_identityproviders_gsuite(self, body: 'GSuite', **kwargs) -> 'OAuthProvider':
+    def put_identityproviders_gsuite(self, body: 'GSuite', **kwargs) -> 'IdentityProvider':
         """
         Update/Create G Suite Identity Provider
         
@@ -1975,7 +2294,7 @@ class IdentityProviderApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param GSuite body: Provider (required)
-        :return: OAuthProvider
+        :return: IdentityProvider
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -2032,7 +2351,7 @@ class IdentityProviderApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='OAuthProvider',
+                                            response_type='IdentityProvider',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -2115,7 +2434,7 @@ class IdentityProviderApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def put_identityproviders_okta(self, body: 'Okta', **kwargs) -> 'OAuthProvider':
+    def put_identityproviders_okta(self, body: 'Okta', **kwargs) -> 'IdentityProvider':
         """
         Update/Create Okta Identity Provider
         
@@ -2131,7 +2450,7 @@ class IdentityProviderApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param Okta body: Provider (required)
-        :return: OAuthProvider
+        :return: IdentityProvider
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -2188,12 +2507,12 @@ class IdentityProviderApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='OAuthProvider',
+                                            response_type='IdentityProvider',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
 
-    def put_identityproviders_onelogin(self, body: 'OneLogin', **kwargs) -> 'OAuthProvider':
+    def put_identityproviders_onelogin(self, body: 'OneLogin', **kwargs) -> 'IdentityProvider':
         """
         Update/Create OneLogin Identity Provider
         
@@ -2209,7 +2528,7 @@ class IdentityProviderApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param OneLogin body: Provider (required)
-        :return: OAuthProvider
+        :return: IdentityProvider
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -2266,12 +2585,12 @@ class IdentityProviderApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='OAuthProvider',
+                                            response_type='IdentityProvider',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
 
-    def put_identityproviders_ping(self, body: 'PingIdentity', **kwargs) -> 'OAuthProvider':
+    def put_identityproviders_ping(self, body: 'PingIdentity', **kwargs) -> 'IdentityProvider':
         """
         Update/Create Ping Identity Provider
         
@@ -2287,7 +2606,7 @@ class IdentityProviderApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param PingIdentity body: Provider (required)
-        :return: OAuthProvider
+        :return: IdentityProvider
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -2344,12 +2663,12 @@ class IdentityProviderApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='OAuthProvider',
+                                            response_type='IdentityProvider',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
 
-    def put_identityproviders_purecloud(self, body: 'PureCloud', **kwargs) -> 'OAuthProvider':
+    def put_identityproviders_purecloud(self, body: 'PureCloud', **kwargs) -> 'IdentityProvider':
         """
         Update/Create PureCloud Identity Provider
         
@@ -2365,7 +2684,7 @@ class IdentityProviderApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param PureCloud body: Provider (required)
-        :return: OAuthProvider
+        :return: IdentityProvider
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -2422,12 +2741,12 @@ class IdentityProviderApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='OAuthProvider',
+                                            response_type='IdentityProvider',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
 
-    def put_identityproviders_pureengage(self, body: 'PureEngage', **kwargs) -> 'OAuthProvider':
+    def put_identityproviders_pureengage(self, body: 'PureEngage', **kwargs) -> 'IdentityProvider':
         """
         Update/Create PureEngage Identity Provider
         
@@ -2443,7 +2762,7 @@ class IdentityProviderApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param PureEngage body: Provider (required)
-        :return: OAuthProvider
+        :return: IdentityProvider
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -2500,12 +2819,12 @@ class IdentityProviderApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='OAuthProvider',
+                                            response_type='IdentityProvider',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
 
-    def put_identityproviders_salesforce(self, body: 'Salesforce', **kwargs) -> 'OAuthProvider':
+    def put_identityproviders_salesforce(self, body: 'Salesforce', **kwargs) -> 'IdentityProvider':
         """
         Update/Create Salesforce Identity Provider
         
@@ -2521,7 +2840,7 @@ class IdentityProviderApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param Salesforce body: Provider (required)
-        :return: OAuthProvider
+        :return: IdentityProvider
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -2578,7 +2897,7 @@ class IdentityProviderApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='OAuthProvider',
+                                            response_type='IdentityProvider',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

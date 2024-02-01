@@ -2073,7 +2073,7 @@ except ApiException as e:
 
 <a name="get_architect_prompt"></a>
 
-## [**Prompt**](Prompt.html) get_architect_prompt(prompt_id)
+## [**Prompt**](Prompt.html) get_architect_prompt(prompt_id, include_media_uris=include_media_uris, include_resources=include_resources, language=language)
 
 
 
@@ -2099,10 +2099,13 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ArchitectApi()
 prompt_id = 'prompt_id_example' # str | Prompt ID
+include_media_uris = True # bool | Include the media URIs for each resource (optional) (default to True)
+include_resources = True # bool | Include the resources for each system prompt (optional) (default to True)
+language = ['language_example'] # list[str] | Filter the resources down to the provided languages (optional)
 
 try:
     # Get specified user prompt
-    api_response = api_instance.get_architect_prompt(prompt_id)
+    api_response = api_instance.get_architect_prompt(prompt_id, include_media_uris=include_media_uris, include_resources=include_resources, language=language)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ArchitectApi->get_architect_prompt: %s\n" % e)
@@ -2114,6 +2117,9 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **prompt_id** | **str**| Prompt ID |  |
+| **include_media_uris** | **bool**| Include the media URIs for each resource | [optional] [default to True] |
+| **include_resources** | **bool**| Include the resources for each system prompt | [optional] [default to True] |
+| **language** | [**list[str]**](str.html)| Filter the resources down to the provided languages | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2289,7 +2295,7 @@ except ApiException as e:
 
 <a name="get_architect_prompts"></a>
 
-## [**PromptEntityListing**](PromptEntityListing.html) get_architect_prompts(page_number=page_number, page_size=page_size, name=name, description=description, name_or_description=name_or_description, sort_by=sort_by, sort_order=sort_order)
+## [**PromptEntityListing**](PromptEntityListing.html) get_architect_prompts(page_number=page_number, page_size=page_size, name=name, description=description, name_or_description=name_or_description, sort_by=sort_by, sort_order=sort_order, include_media_uris=include_media_uris, include_resources=include_resources, language=language)
 
 
 
@@ -2323,10 +2329,13 @@ description = 'description_example' # str | Description (optional)
 name_or_description = 'name_or_description_example' # str | Name or description (optional)
 sort_by = ''id'' # str | Sort by (optional) (default to 'id')
 sort_order = ''asc'' # str | Sort order (optional) (default to 'asc')
+include_media_uris = True # bool | Include the media URIs for each resource (optional) (default to True)
+include_resources = True # bool | Include the resources for each system prompt (optional) (default to True)
+language = ['language_example'] # list[str] | Filter the resources down to the provided languages (optional)
 
 try:
     # Get a pageable list of user prompts
-    api_response = api_instance.get_architect_prompts(page_number=page_number, page_size=page_size, name=name, description=description, name_or_description=name_or_description, sort_by=sort_by, sort_order=sort_order)
+    api_response = api_instance.get_architect_prompts(page_number=page_number, page_size=page_size, name=name, description=description, name_or_description=name_or_description, sort_by=sort_by, sort_order=sort_order, include_media_uris=include_media_uris, include_resources=include_resources, language=language)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ArchitectApi->get_architect_prompts: %s\n" % e)
@@ -2344,6 +2353,9 @@ except ApiException as e:
 | **name_or_description** | **str**| Name or description | [optional]  |
 | **sort_by** | **str**| Sort by | [optional] [default to &#39;id&#39;] |
 | **sort_order** | **str**| Sort order | [optional] [default to &#39;asc&#39;] |
+| **include_media_uris** | **bool**| Include the media URIs for each resource | [optional] [default to True] |
+| **include_resources** | **bool**| Include the resources for each system prompt | [optional] [default to True] |
+| **language** | [**list[str]**](str.html)| Filter the resources down to the provided languages | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2692,7 +2704,7 @@ except ApiException as e:
 
 <a name="get_architect_systemprompt"></a>
 
-## [**SystemPrompt**](SystemPrompt.html) get_architect_systemprompt(prompt_id)
+## [**SystemPrompt**](SystemPrompt.html) get_architect_systemprompt(prompt_id, include_media_uris=include_media_uris, include_resources=include_resources, language=language)
 
 
 
@@ -2718,10 +2730,13 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ArchitectApi()
 prompt_id = 'prompt_id_example' # str | promptId
+include_media_uris = True # bool | Include the media URIs for each resource (optional) (default to True)
+include_resources = True # bool | Include the resources for each system prompt (optional) (default to True)
+language = ['language_example'] # list[str] | Filter the resources down to the provided languages (optional)
 
 try:
     # Get a system prompt
-    api_response = api_instance.get_architect_systemprompt(prompt_id)
+    api_response = api_instance.get_architect_systemprompt(prompt_id, include_media_uris=include_media_uris, include_resources=include_resources, language=language)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ArchitectApi->get_architect_systemprompt: %s\n" % e)
@@ -2733,6 +2748,9 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **prompt_id** | **str**| promptId |  |
+| **include_media_uris** | **bool**| Include the media URIs for each resource | [optional] [default to True] |
+| **include_resources** | **bool**| Include the resources for each system prompt | [optional] [default to True] |
+| **language** | [**list[str]**](str.html)| Filter the resources down to the provided languages | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2910,7 +2928,7 @@ except ApiException as e:
 
 <a name="get_architect_systemprompts"></a>
 
-## [**SystemPromptEntityListing**](SystemPromptEntityListing.html) get_architect_systemprompts(page_number=page_number, page_size=page_size, sort_by=sort_by, sort_order=sort_order, name=name, description=description, name_or_description=name_or_description)
+## [**SystemPromptEntityListing**](SystemPromptEntityListing.html) get_architect_systemprompts(page_number=page_number, page_size=page_size, sort_by=sort_by, sort_order=sort_order, name=name, description=description, name_or_description=name_or_description, include_media_uris=include_media_uris, include_resources=include_resources, language=language)
 
 
 
@@ -2942,10 +2960,13 @@ sort_order = ''asc'' # str | Sort order (optional) (default to 'asc')
 name = 'name_example' # str | Name (optional)
 description = 'description_example' # str | Description (optional)
 name_or_description = 'name_or_description_example' # str | Name or description (optional)
+include_media_uris = True # bool | Include the media URIs for each resource (optional) (default to True)
+include_resources = True # bool | Include the resources for each system prompt (optional) (default to True)
+language = ['language_example'] # list[str] | Filter the resources down to the provided languages (optional)
 
 try:
     # Get System Prompts
-    api_response = api_instance.get_architect_systemprompts(page_number=page_number, page_size=page_size, sort_by=sort_by, sort_order=sort_order, name=name, description=description, name_or_description=name_or_description)
+    api_response = api_instance.get_architect_systemprompts(page_number=page_number, page_size=page_size, sort_by=sort_by, sort_order=sort_order, name=name, description=description, name_or_description=name_or_description, include_media_uris=include_media_uris, include_resources=include_resources, language=language)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ArchitectApi->get_architect_systemprompts: %s\n" % e)
@@ -2963,6 +2984,9 @@ except ApiException as e:
 | **name** | **str**| Name | [optional]  |
 | **description** | **str**| Description | [optional]  |
 | **name_or_description** | **str**| Name or description | [optional]  |
+| **include_media_uris** | **bool**| Include the media URIs for each resource | [optional] [default to True] |
+| **include_resources** | **bool**| Include the resources for each system prompt | [optional] [default to True] |
+| **language** | [**list[str]**](str.html)| Filter the resources down to the provided languages | [optional]  |
 {: class="table table-striped"}
 
 ### Return type

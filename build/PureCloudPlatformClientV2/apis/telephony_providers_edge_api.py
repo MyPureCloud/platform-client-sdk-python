@@ -82,7 +82,6 @@ from ..models import LogicalInterfaceEntityListing
 from ..models import MediaStatistics
 from ..models import MediaStatisticsListing
 from ..models import NumberPlan
-from ..models import OutboundRoute
 from ..models import OutboundRouteBase
 from ..models import OutboundRouteBaseEntityListing
 from ..models import OutboundRouteEntityListing
@@ -4578,85 +4577,6 @@ class TelephonyProvidersEdgeApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='list[EdgeMetrics]',
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    @deprecated("get_telephony_providers_edges_outboundroute is deprecated")
-    def get_telephony_providers_edges_outboundroute(self, outbound_route_id: str, **kwargs) -> 'OutboundRoute':
-        """
-        Get outbound route
-        This route is deprecated, use /telephony/providers/edges/sites/{siteId}/outboundroutes/{outboundRouteId} instead.
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.get_telephony_providers_edges_outboundroute(outbound_route_id, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param str outbound_route_id: Outbound route ID (required)
-        :return: OutboundRoute
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['outbound_route_id']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_telephony_providers_edges_outboundroute" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        # verify the required parameter 'outbound_route_id' is set
-        if ('outbound_route_id' not in params) or (params['outbound_route_id'] is None):
-            raise ValueError("Missing the required parameter `outbound_route_id` when calling `get_telephony_providers_edges_outboundroute`")
-
-
-        resource_path = '/api/v2/telephony/providers/edges/outboundroutes/{outboundRouteId}'.replace('{format}', 'json')
-        path_params = {}
-        if 'outbound_route_id' in params:
-            path_params['outboundRouteId'] = params['outbound_route_id']
-
-        query_params = {}
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/json'])
-
-        # Authentication setting
-        auth_settings = ['PureCloud OAuth']
-
-        response = self.api_client.call_api(resource_path, 'GET',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type='OutboundRoute',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

@@ -58,6 +58,11 @@ from ..models import DialogflowAgent
 from ..models import DialogflowAgentSummaryEntityListing
 from ..models import DraftValidationResult
 from ..models import ErrorBody
+from ..models import Function
+from ..models import FunctionConfig
+from ..models import FunctionRuntime
+from ..models import FunctionUploadRequest
+from ..models import FunctionUploadResponse
 from ..models import Integration
 from ..models import IntegrationConfiguration
 from ..models import IntegrationEntityListing
@@ -844,6 +849,85 @@ class IntegrationsApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def get_integrations_action_draft_function(self, action_id: str, **kwargs) -> 'FunctionConfig':
+        """
+        Get draft function settings for Action
+        
+	    get_integrations_action_draft_function is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_integrations_action_draft_function(action_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str action_id: actionId (required)
+        :return: FunctionConfig
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['action_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_integrations_action_draft_function" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'action_id' is set
+        if ('action_id' not in params) or (params['action_id'] is None):
+            raise ValueError("Missing the required parameter `action_id` when calling `get_integrations_action_draft_function`")
+
+
+        resource_path = '/api/v2/integrations/actions/{actionId}/draft/function'.replace('{format}', 'json')
+        path_params = {}
+        if 'action_id' in params:
+            path_params['actionId'] = params['action_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='FunctionConfig',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def get_integrations_action_draft_schema(self, action_id: str, file_name: str, **kwargs) -> 'JsonSchemaDocument':
         """
         Retrieve schema for a Draft based on filename.
@@ -1086,6 +1170,85 @@ class IntegrationsApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='DraftValidationResult',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_integrations_action_function(self, action_id: str, **kwargs) -> 'FunctionConfig':
+        """
+        Get published function settings for Action
+        
+	    get_integrations_action_function is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_integrations_action_function(action_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str action_id: actionId (required)
+        :return: FunctionConfig
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['action_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_integrations_action_function" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'action_id' is set
+        if ('action_id' not in params) or (params['action_id'] is None):
+            raise ValueError("Missing the required parameter `action_id` when calling `get_integrations_action_function`")
+
+
+        resource_path = '/api/v2/integrations/actions/{actionId}/function'.replace('{format}', 'json')
+        path_params = {}
+        if 'action_id' in params:
+            path_params['actionId'] = params['action_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='FunctionConfig',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -1635,6 +1798,79 @@ class IntegrationsApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='ActionEntityListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_integrations_actions_functions_runtimes(self, **kwargs) -> List['FunctionRuntime']:
+        """
+        Get action function settings for Action
+        
+	    get_integrations_actions_functions_runtimes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_integrations_actions_functions_runtimes(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :return: list[FunctionRuntime]
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = []
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_integrations_actions_functions_runtimes" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/integrations/actions/functions/runtimes'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='list[FunctionRuntime]',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -4498,6 +4734,91 @@ class IntegrationsApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def post_integrations_action_draft_function_upload(self, action_id: str, body: 'FunctionUploadRequest', **kwargs) -> 'FunctionUploadResponse':
+        """
+        Create upload presigned URL for draft function package file.
+        
+	    post_integrations_action_draft_function_upload is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_integrations_action_draft_function_upload(action_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str action_id: actionId (required)
+        :param FunctionUploadRequest body: Input used to request URL upload. (required)
+        :return: FunctionUploadResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['action_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_integrations_action_draft_function_upload" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'action_id' is set
+        if ('action_id' not in params) or (params['action_id'] is None):
+            raise ValueError("Missing the required parameter `action_id` when calling `post_integrations_action_draft_function_upload`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_integrations_action_draft_function_upload`")
+
+
+        resource_path = '/api/v2/integrations/actions/{actionId}/draft/function/upload'.replace('{format}', 'json')
+        path_params = {}
+        if 'action_id' in params:
+            path_params['actionId'] = params['action_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='FunctionUploadResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def post_integrations_action_draft_publish(self, action_id: str, body: 'PublishDraftInput', **kwargs) -> 'Action':
         """
         Publish a Draft and make it the active Action configuration
@@ -5406,6 +5727,91 @@ class IntegrationsApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='IntegrationConfiguration',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def put_integrations_action_draft_function(self, action_id: str, body: 'Function', **kwargs) -> 'FunctionConfig':
+        """
+        Update draft function settings.
+        
+	    put_integrations_action_draft_function is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.put_integrations_action_draft_function(action_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str action_id: actionId (required)
+        :param Function body: Input used to update function settings. (required)
+        :return: FunctionConfig
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['action_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method put_integrations_action_draft_function" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'action_id' is set
+        if ('action_id' not in params) or (params['action_id'] is None):
+            raise ValueError("Missing the required parameter `action_id` when calling `put_integrations_action_draft_function`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `put_integrations_action_draft_function`")
+
+
+        resource_path = '/api/v2/integrations/actions/{actionId}/draft/function'.replace('{format}', 'json')
+        path_params = {}
+        if 'action_id' in params:
+            path_params['actionId'] = params['action_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='FunctionConfig',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

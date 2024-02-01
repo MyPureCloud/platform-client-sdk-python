@@ -65,6 +65,7 @@ class TrustGroup(object):
             'addresses': 'list[GroupContact]',
             'rules_visible': 'bool',
             'visibility': 'str',
+            'roles_enabled': 'bool',
             'owners': 'list[User]',
             'date_created': 'datetime',
             'created_by': 'OrgUser'
@@ -83,6 +84,7 @@ class TrustGroup(object):
             'addresses': 'addresses',
             'rules_visible': 'rulesVisible',
             'visibility': 'visibility',
+            'roles_enabled': 'rolesEnabled',
             'owners': 'owners',
             'date_created': 'dateCreated',
             'created_by': 'createdBy'
@@ -100,6 +102,7 @@ class TrustGroup(object):
         self._addresses = None
         self._rules_visible = None
         self._visibility = None
+        self._roles_enabled = None
         self._owners = None
         self._date_created = None
         self._created_by = None
@@ -406,6 +409,30 @@ class TrustGroup(object):
             self._visibility = "outdated_sdk_version"
         else:
             self._visibility = visibility
+
+    @property
+    def roles_enabled(self) -> bool:
+        """
+        Gets the roles_enabled of this TrustGroup.
+        Allow roles to be assigned to this group
+
+        :return: The roles_enabled of this TrustGroup.
+        :rtype: bool
+        """
+        return self._roles_enabled
+
+    @roles_enabled.setter
+    def roles_enabled(self, roles_enabled: bool) -> None:
+        """
+        Sets the roles_enabled of this TrustGroup.
+        Allow roles to be assigned to this group
+
+        :param roles_enabled: The roles_enabled of this TrustGroup.
+        :type: bool
+        """
+        
+
+        self._roles_enabled = roles_enabled
 
     @property
     def owners(self) -> List['User']:

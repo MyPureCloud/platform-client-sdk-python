@@ -68,6 +68,7 @@ from ..models import ContactListEntityListing
 from ..models import ContactListFilter
 from ..models import ContactListFilterEntityListing
 from ..models import ContactListTemplate
+from ..models import ContactListTemplateBulkRetrieveBody
 from ..models import ContactListTemplateEntityListing
 from ..models import DialerAuditRequest
 from ..models import DialerContact
@@ -87,6 +88,8 @@ from ..models import EmailCampaignSchedule
 from ..models import ErrorBody
 from ..models import EventLog
 from ..models import ExportUri
+from ..models import FileSpecificationTemplate
+from ..models import FileSpecificationTemplateEntityListing
 from ..models import FilterPreviewResponse
 from ..models import ImportStatus
 from ..models import ImportTemplate
@@ -1516,6 +1519,162 @@ class OutboundApi(object):
         query_params = {}
         if 'expired_only' in params:
             query_params['expiredOnly'] = params['expired_only']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def delete_outbound_filespecificationtemplate(self, file_specification_template_id: str, **kwargs) -> None:
+        """
+        Delete File Specification Template
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_outbound_filespecificationtemplate(file_specification_template_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str file_specification_template_id: File Specification Template ID (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['file_specification_template_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_outbound_filespecificationtemplate" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'file_specification_template_id' is set
+        if ('file_specification_template_id' not in params) or (params['file_specification_template_id'] is None):
+            raise ValueError("Missing the required parameter `file_specification_template_id` when calling `delete_outbound_filespecificationtemplate`")
+
+
+        resource_path = '/api/v2/outbound/filespecificationtemplates/{fileSpecificationTemplateId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'file_specification_template_id' in params:
+            path_params['fileSpecificationTemplateId'] = params['file_specification_template_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def delete_outbound_filespecificationtemplates_bulk(self, id: List['str'], **kwargs) -> None:
+        """
+        Delete multiple file specification templates.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_outbound_filespecificationtemplates_bulk(id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param list[str] id: File Specification template id(s) to delete (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_outbound_filespecificationtemplates_bulk" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'id' is set
+        if ('id' not in params) or (params['id'] is None):
+            raise ValueError("Missing the required parameter `id` when calling `delete_outbound_filespecificationtemplates_bulk`")
+
+
+        resource_path = '/api/v2/outbound/filespecificationtemplates/bulk'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'id' in params:
+            query_params['id'] = params['id']
 
         header_params = {}
 
@@ -5860,6 +6019,177 @@ class OutboundApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def get_outbound_filespecificationtemplate(self, file_specification_template_id: str, **kwargs) -> 'FileSpecificationTemplate':
+        """
+        Get File Specification Template
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_outbound_filespecificationtemplate(file_specification_template_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str file_specification_template_id: File Specification Template ID (required)
+        :return: FileSpecificationTemplate
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['file_specification_template_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_outbound_filespecificationtemplate" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'file_specification_template_id' is set
+        if ('file_specification_template_id' not in params) or (params['file_specification_template_id'] is None):
+            raise ValueError("Missing the required parameter `file_specification_template_id` when calling `get_outbound_filespecificationtemplate`")
+
+
+        resource_path = '/api/v2/outbound/filespecificationtemplates/{fileSpecificationTemplateId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'file_specification_template_id' in params:
+            path_params['fileSpecificationTemplateId'] = params['file_specification_template_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='FileSpecificationTemplate',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_outbound_filespecificationtemplates(self, **kwargs) -> 'FileSpecificationTemplateEntityListing':
+        """
+        Query File Specification Templates
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_outbound_filespecificationtemplates(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int page_size: Page size. The max that will be returned is 100.
+        :param int page_number: Page number
+        :param bool allow_empty_result: Whether to return an empty page when there are no results for that page
+        :param str filter_type: Filter type
+        :param str name: Name
+        :param str sort_by: Sort by
+        :param str sort_order: Sort order
+        :return: FileSpecificationTemplateEntityListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['page_size', 'page_number', 'allow_empty_result', 'filter_type', 'name', 'sort_by', 'sort_order']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_outbound_filespecificationtemplates" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/outbound/filespecificationtemplates'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+        if 'page_number' in params:
+            query_params['pageNumber'] = params['page_number']
+        if 'allow_empty_result' in params:
+            query_params['allowEmptyResult'] = params['allow_empty_result']
+        if 'filter_type' in params:
+            query_params['filterType'] = params['filter_type']
+        if 'name' in params:
+            query_params['name'] = params['name']
+        if 'sort_by' in params:
+            query_params['sortBy'] = params['sort_by']
+        if 'sort_order' in params:
+            query_params['sortOrder'] = params['sort_order']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='FileSpecificationTemplateEntityListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def get_outbound_importtemplate(self, import_template_id: str, **kwargs) -> 'ImportTemplate':
         """
         Get Import Template
@@ -9485,6 +9815,84 @@ class OutboundApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def post_outbound_contactlisttemplates_bulk_retrieve(self, body: 'ContactListTemplateBulkRetrieveBody', **kwargs) -> 'ContactListTemplateEntityListing':
+        """
+        Get multiple contact list templates
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_outbound_contactlisttemplates_bulk_retrieve(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param ContactListTemplateBulkRetrieveBody body: contact list templates to get (required)
+        :return: ContactListTemplateEntityListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_outbound_contactlisttemplates_bulk_retrieve" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_outbound_contactlisttemplates_bulk_retrieve`")
+
+
+        resource_path = '/api/v2/outbound/contactlisttemplates/bulk/retrieve'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ContactListTemplateEntityListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def post_outbound_conversation_dnc(self, conversation_id: str, **kwargs) -> None:
         """
         Add phone numbers to a Dialer DNC list.
@@ -9964,6 +10372,84 @@ class OutboundApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='DncList',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_outbound_filespecificationtemplates(self, body: 'FileSpecificationTemplate', **kwargs) -> 'FileSpecificationTemplate':
+        """
+        Create File Specification Template
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_outbound_filespecificationtemplates(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param FileSpecificationTemplate body: FileSpecificationTemplate (required)
+        :return: FileSpecificationTemplate
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_outbound_filespecificationtemplates" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_outbound_filespecificationtemplates`")
+
+
+        resource_path = '/api/v2/outbound/filespecificationtemplates'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='FileSpecificationTemplate',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -11452,6 +11938,90 @@ class OutboundApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='DncList',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def put_outbound_filespecificationtemplate(self, file_specification_template_id: str, body: 'FileSpecificationTemplate', **kwargs) -> 'FileSpecificationTemplate':
+        """
+        Update File Specification Template
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.put_outbound_filespecificationtemplate(file_specification_template_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str file_specification_template_id: File Specification Template ID (required)
+        :param FileSpecificationTemplate body: fileSpecificationTemplate (required)
+        :return: FileSpecificationTemplate
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['file_specification_template_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method put_outbound_filespecificationtemplate" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'file_specification_template_id' is set
+        if ('file_specification_template_id' not in params) or (params['file_specification_template_id'] is None):
+            raise ValueError("Missing the required parameter `file_specification_template_id` when calling `put_outbound_filespecificationtemplate`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `put_outbound_filespecificationtemplate`")
+
+
+        resource_path = '/api/v2/outbound/filespecificationtemplates/{fileSpecificationTemplateId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'file_specification_template_id' in params:
+            path_params['fileSpecificationTemplateId'] = params['file_specification_template_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='FileSpecificationTemplate',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

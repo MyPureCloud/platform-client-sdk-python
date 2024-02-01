@@ -53,6 +53,7 @@ class UserPresence(object):
             'id': 'str',
             'name': 'str',
             'source': 'str',
+            'source_id': 'str',
             'primary': 'bool',
             'presence_definition': 'PresenceDefinition',
             'message': 'str',
@@ -64,6 +65,7 @@ class UserPresence(object):
             'id': 'id',
             'name': 'name',
             'source': 'source',
+            'source_id': 'sourceId',
             'primary': 'primary',
             'presence_definition': 'presenceDefinition',
             'message': 'message',
@@ -74,6 +76,7 @@ class UserPresence(object):
         self._id = None
         self._name = None
         self._source = None
+        self._source_id = None
         self._primary = None
         self._presence_definition = None
         self._message = None
@@ -132,7 +135,7 @@ class UserPresence(object):
     def source(self) -> str:
         """
         Gets the source of this UserPresence.
-        Represents the source where the Presence was set. Some examples are: PURECLOUD, LYNC, OUTLOOK, etc.
+        Deprecated - The sourceID field should be used as a replacement.
 
         :return: The source of this UserPresence.
         :rtype: str
@@ -143,7 +146,7 @@ class UserPresence(object):
     def source(self, source: str) -> None:
         """
         Sets the source of this UserPresence.
-        Represents the source where the Presence was set. Some examples are: PURECLOUD, LYNC, OUTLOOK, etc.
+        Deprecated - The sourceID field should be used as a replacement.
 
         :param source: The source of this UserPresence.
         :type: str
@@ -151,6 +154,30 @@ class UserPresence(object):
         
 
         self._source = source
+
+    @property
+    def source_id(self) -> str:
+        """
+        Gets the source_id of this UserPresence.
+        Represents the ID of a registered source
+
+        :return: The source_id of this UserPresence.
+        :rtype: str
+        """
+        return self._source_id
+
+    @source_id.setter
+    def source_id(self, source_id: str) -> None:
+        """
+        Sets the source_id of this UserPresence.
+        Represents the ID of a registered source
+
+        :param source_id: The source_id of this UserPresence.
+        :type: str
+        """
+        
+
+        self._source_id = source_id
 
     @property
     def primary(self) -> bool:

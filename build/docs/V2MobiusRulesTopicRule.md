@@ -17,6 +17,7 @@ title: V2MobiusRulesTopicRule
 | **in_alarm** | **bool** |  | [optional] |
 | **action** | **str** |  | [optional] |
 | **date_created** | **datetime** |  | [optional] |
+| **send_exiting_alarm_notification** | **bool** |  | [optional] |
 {: class="table table-striped"}
 
 

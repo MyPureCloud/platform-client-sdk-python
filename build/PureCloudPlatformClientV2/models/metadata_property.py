@@ -49,6 +49,7 @@ class MetadataProperty(object):
         """
         self.swagger_types = {
             'type': 'str',
+            'displayname': 'str',
             'description': 'str',
             'sensitive': 'str',
             'help': 'str',
@@ -58,6 +59,7 @@ class MetadataProperty(object):
 
         self.attribute_map = {
             'type': 'type',
+            'displayname': 'displayname',
             'description': 'description',
             'sensitive': 'sensitive',
             'help': 'help',
@@ -66,6 +68,7 @@ class MetadataProperty(object):
         }
 
         self._type = None
+        self._displayname = None
         self._description = None
         self._sensitive = None
         self._help = None
@@ -95,6 +98,30 @@ class MetadataProperty(object):
         
 
         self._type = type
+
+    @property
+    def displayname(self) -> str:
+        """
+        Gets the displayname of this MetadataProperty.
+        user-friendly name of the input property
+
+        :return: The displayname of this MetadataProperty.
+        :rtype: str
+        """
+        return self._displayname
+
+    @displayname.setter
+    def displayname(self, displayname: str) -> None:
+        """
+        Sets the displayname of this MetadataProperty.
+        user-friendly name of the input property
+
+        :param displayname: The displayname of this MetadataProperty.
+        :type: str
+        """
+        
+
+        self._displayname = displayname
 
     @property
     def description(self) -> str:
