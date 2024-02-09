@@ -641,6 +641,7 @@ from .models.contact_list_division_view import ContactListDivisionView
 from .models.contact_list_division_view_listing import ContactListDivisionViewListing
 from .models.contact_list_entity_listing import ContactListEntityListing
 from .models.contact_list_filter import ContactListFilter
+from .models.contact_list_filter_bulk_retrieve_body import ContactListFilterBulkRetrieveBody
 from .models.contact_list_filter_clause import ContactListFilterClause
 from .models.contact_list_filter_entity_listing import ContactListFilterEntityListing
 from .models.contact_list_filter_predicate import ContactListFilterPredicate
@@ -998,6 +999,8 @@ from .models.create_share_response import CreateShareResponse
 from .models.create_time_off_limit_request import CreateTimeOffLimitRequest
 from .models.create_time_off_plan_request import CreateTimeOffPlanRequest
 from .models.create_trigger_request import CreateTriggerRequest
+from .models.create_upload_source_url_job_request import CreateUploadSourceUrlJobRequest
+from .models.create_upload_source_url_job_response import CreateUploadSourceUrlJobResponse
 from .models.create_user import CreateUser
 from .models.create_utilization_label_request import CreateUtilizationLabelRequest
 from .models.create_utilization_tag_request import CreateUtilizationTagRequest
@@ -1352,6 +1355,7 @@ from .models.email_address import EmailAddress
 from .models.email_attachment import EmailAttachment
 from .models.email_begin_transmitting_event import EmailBeginTransmittingEvent
 from .models.email_campaign_schedule import EmailCampaignSchedule
+from .models.email_campaign_schedule_entity_listing import EmailCampaignScheduleEntityListing
 from .models.email_column import EmailColumn
 from .models.email_communication_answered_event import EmailCommunicationAnsweredEvent
 from .models.email_communication_disposition_applied_event import EmailCommunicationDispositionAppliedEvent
@@ -1689,6 +1693,7 @@ from .models.get_metrics_response import GetMetricsResponse
 from .models.get_profiles_response import GetProfilesResponse
 from .models.get_rules_query import GetRulesQuery
 from .models.get_templates_response import GetTemplatesResponse
+from .models.get_upload_source_url_job_status_response import GetUploadSourceUrlJobStatusResponse
 from .models.google_dialogflow_custom_settings import GoogleDialogflowCustomSettings
 from .models.grammar import Grammar
 from .models.grammar_file_upload_request import GrammarFileUploadRequest
@@ -1887,6 +1892,7 @@ from .models.journey_outcome_events_notification_session import JourneyOutcomeEv
 from .models.journey_page import JourneyPage
 from .models.journey_pattern import JourneyPattern
 from .models.journey_segment import JourneySegment
+from .models.journey_segment_request import JourneySegmentRequest
 from .models.journey_session_events_notification_app import JourneySessionEventsNotificationApp
 from .models.journey_session_events_notification_browser import JourneySessionEventsNotificationBrowser
 from .models.journey_session_events_notification_connected_queue import JourneySessionEventsNotificationConnectedQueue
@@ -2042,6 +2048,12 @@ from .models.knowledge_import_job_request import KnowledgeImportJobRequest
 from .models.knowledge_import_job_response import KnowledgeImportJobResponse
 from .models.knowledge_import_job_settings import KnowledgeImportJobSettings
 from .models.knowledge_import_job_statistics import KnowledgeImportJobStatistics
+from .models.knowledge_parse_import_result import KnowledgeParseImportResult
+from .models.knowledge_parse_job_request import KnowledgeParseJobRequest
+from .models.knowledge_parse_job_request_import import KnowledgeParseJobRequestImport
+from .models.knowledge_parse_job_request_patch import KnowledgeParseJobRequestPatch
+from .models.knowledge_parse_job_response import KnowledgeParseJobResponse
+from .models.knowledge_parse_record import KnowledgeParseRecord
 from .models.knowledge_search_client_application import KnowledgeSearchClientApplication
 from .models.knowledge_search_document import KnowledgeSearchDocument
 from .models.knowledge_search_request import KnowledgeSearchRequest
@@ -2472,6 +2484,7 @@ from .models.outcome_probability_condition import OutcomeProbabilityCondition
 from .models.outcome_quantile_condition import OutcomeQuantileCondition
 from .models.outcome_ref import OutcomeRef
 from .models.outcome_ref_request import OutcomeRefRequest
+from .models.outcome_request import OutcomeRequest
 from .models.outcome_score import OutcomeScore
 from .models.outcome_scores_result import OutcomeScoresResult
 from .models.outlier_info import OutlierInfo
@@ -2498,6 +2511,7 @@ from .models.patch_action_properties import PatchActionProperties
 from .models.patch_action_survey import PatchActionSurvey
 from .models.patch_action_target import PatchActionTarget
 from .models.patch_action_template import PatchActionTemplate
+from .models.patch_associated_value_field import PatchAssociatedValueField
 from .models.patch_bu_rescheduling_options_management_unit_request import PatchBuReschedulingOptionsManagementUnitRequest
 from .models.patch_bu_rescheduling_options_request import PatchBuReschedulingOptionsRequest
 from .models.patch_bu_schedule_run_request import PatchBuScheduleRunRequest
@@ -2509,10 +2523,16 @@ from .models.patch_content_offer import PatchContentOffer
 from .models.patch_content_offer_style_properties import PatchContentOfferStyleProperties
 from .models.patch_content_offer_styling_configuration import PatchContentOfferStylingConfiguration
 from .models.patch_content_position_properties import PatchContentPositionProperties
+from .models.patch_context import PatchContext
+from .models.patch_context_pattern import PatchContextPattern
+from .models.patch_criteria import PatchCriteria
 from .models.patch_cta_button_style_properties import PatchCtaButtonStyleProperties
+from .models.patch_entity_type_criteria import PatchEntityTypeCriteria
 from .models.patch_external_segment import PatchExternalSegment
 from .models.patch_integration_action import PatchIntegrationAction
 from .models.patch_integration_action_fields import PatchIntegrationActionFields
+from .models.patch_journey import PatchJourney
+from .models.patch_journey_pattern import PatchJourneyPattern
 from .models.patch_outcome import PatchOutcome
 from .models.patch_predictor_request import PatchPredictorRequest
 from .models.patch_segment import PatchSegment
@@ -2913,6 +2933,13 @@ from .models.queue_user_event_topic_queue_member import QueueUserEventTopicQueue
 from .models.queue_user_event_topic_user_reference import QueueUserEventTopicUserReference
 from .models.queue_utilization_diagnostic import QueueUtilizationDiagnostic
 from .models.quick_reply import QuickReply
+from .models.rate_limit_aggregate_data_container import RateLimitAggregateDataContainer
+from .models.rate_limit_aggregate_query_clause import RateLimitAggregateQueryClause
+from .models.rate_limit_aggregate_query_filter import RateLimitAggregateQueryFilter
+from .models.rate_limit_aggregate_query_predicate import RateLimitAggregateQueryPredicate
+from .models.rate_limit_aggregate_query_response import RateLimitAggregateQueryResponse
+from .models.rate_limit_aggregation_query import RateLimitAggregationQuery
+from .models.rate_limit_aggregation_view import RateLimitAggregationView
 from .models.reaction import Reaction
 from .models.real_time_adherence_explanation import RealTimeAdherenceExplanation
 from .models.recall_entry import RecallEntry
@@ -2980,6 +3007,14 @@ from .models.reporting_turn_knowledge_feedback import ReportingTurnKnowledgeFeed
 from .models.reporting_turn_knowledge_search import ReportingTurnKnowledgeSearch
 from .models.reporting_turns_response import ReportingTurnsResponse
 from .models.request_config import RequestConfig
+from .models.request_context import RequestContext
+from .models.request_context_pattern import RequestContextPattern
+from .models.request_criteria import RequestCriteria
+from .models.request_device import RequestDevice
+from .models.request_entity_type_criteria import RequestEntityTypeCriteria
+from .models.request_external_segment import RequestExternalSegment
+from .models.request_journey import RequestJourney
+from .models.request_journey_pattern import RequestJourneyPattern
 from .models.request_mapping import RequestMapping
 from .models.request_scored_agent import RequestScoredAgent
 from .models.rescheduling_management_unit_response import ReschedulingManagementUnitResponse
@@ -3142,8 +3177,6 @@ from .models.secure_session_entity_listing import SecureSessionEntityListing
 from .models.security_profile import SecurityProfile
 from .models.security_profile_entity_listing import SecurityProfileEntityListing
 from .models.segment import Segment
-from .models.segment_assigned_event import SegmentAssignedEvent
-from .models.segment_assigned_event_segment import SegmentAssignedEventSegment
 from .models.segment_assignment_event import SegmentAssignmentEvent
 from .models.segment_detail_query_clause import SegmentDetailQueryClause
 from .models.segment_detail_query_filter import SegmentDetailQueryFilter

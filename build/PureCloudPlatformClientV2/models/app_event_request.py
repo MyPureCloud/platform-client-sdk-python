@@ -34,9 +34,9 @@ from typing import Dict
 
 if TYPE_CHECKING:
     from . import CustomEventAttribute
-    from . import Device
     from . import JourneyApp
     from . import NetworkConnectivity
+    from . import RequestDevice
     from . import SdkLibrary
 
 class AppEventRequest(object):
@@ -57,7 +57,7 @@ class AppEventRequest(object):
             'event_name': 'str',
             'screen_name': 'str',
             'app': 'JourneyApp',
-            'device': 'Device',
+            'device': 'RequestDevice',
             'sdk_library': 'SdkLibrary',
             'network_connectivity': 'NetworkConnectivity',
             'referrer_url': 'str',
@@ -169,24 +169,24 @@ class AppEventRequest(object):
         self._app = app
 
     @property
-    def device(self) -> 'Device':
+    def device(self) -> 'RequestDevice':
         """
         Gets the device of this AppEventRequest.
         Customer's device.
 
         :return: The device of this AppEventRequest.
-        :rtype: Device
+        :rtype: RequestDevice
         """
         return self._device
 
     @device.setter
-    def device(self, device: 'Device') -> None:
+    def device(self, device: 'RequestDevice') -> None:
         """
         Sets the device of this AppEventRequest.
         Customer's device.
 
         :param device: The device of this AppEventRequest.
-        :type: Device
+        :type: RequestDevice
         """
         
 

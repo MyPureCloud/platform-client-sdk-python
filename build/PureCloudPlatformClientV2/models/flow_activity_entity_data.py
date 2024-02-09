@@ -456,7 +456,7 @@ class FlowActivityEntityData(object):
         """
         if isinstance(flow_type, int):
             flow_type = str(flow_type)
-        allowed_values = ["BOT", "COMMONMODULE", "DIGITALBOT", "INBOUNDCALL", "INBOUNDCHAT", "INBOUNDEMAIL", "INBOUNDSHORTMESSAGE", "INQUEUECALL", "INQUEUEEMAIL", "INQUEUESHORTMESSAGE", "OUTBOUNDCALL", "SECURECALL", "SPEECH", "SURVEYINVITE", "VOICE", "VOICEMAIL", "WORKFLOW", "WORKITEM"]
+        allowed_values = ["BOT", "COMMONMODULE", "DIGITALBOT", "INBOUNDCALL", "INBOUNDCHAT", "INBOUNDEMAIL", "INBOUNDSHORTMESSAGE", "INQUEUECALL", "INQUEUEEMAIL", "INQUEUESHORTMESSAGE", "OUTBOUNDCALL", "SECURECALL", "SPEECH", "SURVEYINVITE", "VOICE", "VOICEMAIL", "VOICESURVEY", "WORKFLOW", "WORKITEM"]
         if flow_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for flow_type -> " + flow_type)
             self._flow_type = "outdated_sdk_version"

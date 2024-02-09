@@ -213,7 +213,7 @@ class Session(object):
     def id(self) -> str:
         """
         Gets the id of this Session.
-        The globally unique identifier for the object.
+        The ID of the session.
 
         :return: The id of this Session.
         :rtype: str
@@ -224,7 +224,7 @@ class Session(object):
     def id(self, id: str) -> None:
         """
         Sets the id of this Session.
-        The globally unique identifier for the object.
+        The ID of the session.
 
         :param id: The id of this Session.
         :type: str

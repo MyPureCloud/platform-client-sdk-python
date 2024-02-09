@@ -85,6 +85,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_analytics_knowledge_aggregates_jobs**](AnalyticsApi.html#post_analytics_knowledge_aggregates_jobs) | Query for knowledge aggregates asynchronously|
 |[**post_analytics_knowledge_aggregates_query**](AnalyticsApi.html#post_analytics_knowledge_aggregates_query) | Query for knowledge aggregates|
 |[**post_analytics_queues_observations_query**](AnalyticsApi.html#post_analytics_queues_observations_query) | Query for queue observations|
+|[**post_analytics_ratelimits_aggregates_query**](AnalyticsApi.html#post_analytics_ratelimits_aggregates_query) | Query for limits rate limit aggregates. Data populated when limits are exceeded or are close to being exceeded|
 |[**post_analytics_reporting_exports**](AnalyticsApi.html#post_analytics_reporting_exports) | Generate a view export request|
 |[**post_analytics_reporting_schedule_runreport**](AnalyticsApi.html#post_analytics_reporting_schedule_runreport) | Place a scheduled report immediately into the reporting queue|
 |[**post_analytics_reporting_schedules**](AnalyticsApi.html#post_analytics_reporting_schedules) | Create a scheduled report job|
@@ -3528,8 +3529,6 @@ except ApiException as e:
 
 Query for flow execution aggregates
 
-post_analytics_flowexecutions_aggregates_query is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps POST /api/v2/analytics/flowexecutions/aggregates/query 
 
 Requires ANY permissions: 
@@ -4025,6 +4024,55 @@ except ApiException as e:
 ### Return type
 
 [**QueueObservationQueryResponse**](QueueObservationQueryResponse.html)
+
+<a name="post_analytics_ratelimits_aggregates_query"></a>
+
+## [**RateLimitAggregateQueryResponse**](RateLimitAggregateQueryResponse.html) post_analytics_ratelimits_aggregates_query(body)
+
+
+
+Query for limits rate limit aggregates. Data populated when limits are exceeded or are close to being exceeded
+
+Wraps POST /api/v2/analytics/ratelimits/aggregates/query 
+
+Requires ANY permissions: 
+
+* analytics:rateLimitAggregate:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AnalyticsApi()
+body = PureCloudPlatformClientV2.RateLimitAggregationQuery() # RateLimitAggregationQuery | query
+
+try:
+    # Query for limits rate limit aggregates. Data populated when limits are exceeded or are close to being exceeded
+    api_response = api_instance.post_analytics_ratelimits_aggregates_query(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AnalyticsApi->post_analytics_ratelimits_aggregates_query: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**RateLimitAggregationQuery**](RateLimitAggregationQuery.html)| query |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**RateLimitAggregateQueryResponse**](RateLimitAggregateQueryResponse.html)
 
 <a name="post_analytics_reporting_exports"></a>
 

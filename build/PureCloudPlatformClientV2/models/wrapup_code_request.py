@@ -32,6 +32,8 @@ from typing import TYPE_CHECKING
 from typing import List
 from typing import Dict
 
+if TYPE_CHECKING:
+    from . import WritableStarrableDivision
 
 class WrapupCodeRequest(object):
     """
@@ -50,6 +52,7 @@ class WrapupCodeRequest(object):
         self.swagger_types = {
             'id': 'str',
             'name': 'str',
+            'division': 'WritableStarrableDivision',
             'date_created': 'datetime',
             'date_modified': 'datetime',
             'created_by': 'str',
@@ -60,6 +63,7 @@ class WrapupCodeRequest(object):
         self.attribute_map = {
             'id': 'id',
             'name': 'name',
+            'division': 'division',
             'date_created': 'dateCreated',
             'date_modified': 'dateModified',
             'created_by': 'createdBy',
@@ -69,6 +73,7 @@ class WrapupCodeRequest(object):
 
         self._id = None
         self._name = None
+        self._division = None
         self._date_created = None
         self._date_modified = None
         self._created_by = None
@@ -122,6 +127,30 @@ class WrapupCodeRequest(object):
         
 
         self._name = name
+
+    @property
+    def division(self) -> 'WritableStarrableDivision':
+        """
+        Gets the division of this WrapupCodeRequest.
+        The division to which this entity belongs.
+
+        :return: The division of this WrapupCodeRequest.
+        :rtype: WritableStarrableDivision
+        """
+        return self._division
+
+    @division.setter
+    def division(self, division: 'WritableStarrableDivision') -> None:
+        """
+        Sets the division of this WrapupCodeRequest.
+        The division to which this entity belongs.
+
+        :param division: The division of this WrapupCodeRequest.
+        :type: WritableStarrableDivision
+        """
+        
+
+        self._division = division
 
     @property
     def date_created(self) -> datetime:

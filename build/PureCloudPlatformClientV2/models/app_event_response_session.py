@@ -81,7 +81,7 @@ class AppEventResponseSession(object):
     def id(self) -> str:
         """
         Gets the id of this AppEventResponseSession.
-        The globally unique identifier for the object.
+        ID of the app session.
 
         :return: The id of this AppEventResponseSession.
         :rtype: str
@@ -92,7 +92,7 @@ class AppEventResponseSession(object):
     def id(self, id: str) -> None:
         """
         Sets the id of this AppEventResponseSession.
-        The globally unique identifier for the object.
+        ID of the app session.
 
         :param id: The id of this AppEventResponseSession.
         :type: str

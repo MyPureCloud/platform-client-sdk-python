@@ -64,7 +64,7 @@ class AchievedOutcome(object):
     def id(self) -> str:
         """
         Gets the id of this AchievedOutcome.
-        The globally unique identifier for the object.
+        The ID of the outcome achieved.
 
         :return: The id of this AchievedOutcome.
         :rtype: str
@@ -75,7 +75,7 @@ class AchievedOutcome(object):
     def id(self, id: str) -> None:
         """
         Sets the id of this AchievedOutcome.
-        The globally unique identifier for the object.
+        The ID of the outcome achieved.
 
         :param id: The id of this AchievedOutcome.
         :type: str

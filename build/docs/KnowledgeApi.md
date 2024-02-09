@@ -48,9 +48,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_knowledge_knowledgebase_language_trainings**](KnowledgeApi.html#get_knowledge_knowledgebase_language_trainings) | Get all trainings information for a knowledgebase|
 |[**get_knowledge_knowledgebase_operations**](KnowledgeApi.html#get_knowledge_knowledgebase_operations) | Get operations|
 |[**get_knowledge_knowledgebase_operations_users_query**](KnowledgeApi.html#get_knowledge_knowledgebase_operations_users_query) | Get ids of operation creator users and oauth clients|
+|[**get_knowledge_knowledgebase_parse_job**](KnowledgeApi.html#get_knowledge_knowledgebase_parse_job) | Get parse job report|
 |[**get_knowledge_knowledgebase_unanswered_group**](KnowledgeApi.html#get_knowledge_knowledgebase_unanswered_group) | Get knowledge base unanswered group for a particular groupId|
 |[**get_knowledge_knowledgebase_unanswered_group_phrasegroup**](KnowledgeApi.html#get_knowledge_knowledgebase_unanswered_group_phrasegroup) | Get knowledge base unanswered phrase group for a particular phraseGroupId|
 |[**get_knowledge_knowledgebase_unanswered_groups**](KnowledgeApi.html#get_knowledge_knowledgebase_unanswered_groups) | Get knowledge base unanswered groups|
+|[**get_knowledge_knowledgebase_uploads_urls_job**](KnowledgeApi.html#get_knowledge_knowledgebase_uploads_urls_job) | Get content upload from URL job status|
 |[**get_knowledge_knowledgebases**](KnowledgeApi.html#get_knowledge_knowledgebases) | Get knowledge bases|
 |[**patch_knowledge_guest_session_documents_search_search_id**](KnowledgeApi.html#patch_knowledge_guest_session_documents_search_search_id) | Update search result.|
 |[**patch_knowledge_knowledgebase**](KnowledgeApi.html#patch_knowledge_knowledgebase) | Update knowledge base|
@@ -64,6 +66,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**patch_knowledge_knowledgebase_language_document**](KnowledgeApi.html#patch_knowledge_knowledgebase_language_document) | Update document|
 |[**patch_knowledge_knowledgebase_language_documents**](KnowledgeApi.html#patch_knowledge_knowledgebase_language_documents) | Update documents collection|
 |[**patch_knowledge_knowledgebase_language_documents_import**](KnowledgeApi.html#patch_knowledge_knowledgebase_language_documents_import) | Start import operation|
+|[**patch_knowledge_knowledgebase_parse_job**](KnowledgeApi.html#patch_knowledge_knowledgebase_parse_job) | Send update to the parse operation|
 |[**patch_knowledge_knowledgebase_unanswered_group_phrasegroup**](KnowledgeApi.html#patch_knowledge_knowledgebase_unanswered_group_phrasegroup) | Update a Knowledge base unanswered phrase group|
 |[**post_knowledge_documentuploads**](KnowledgeApi.html#post_knowledge_documentuploads) | Creates a presigned URL for uploading a knowledge import file with a set of documents|
 |[**post_knowledge_guest_session_document_feedback**](KnowledgeApi.html#post_knowledge_guest_session_document_feedback) | Give feedback on a document|
@@ -90,7 +93,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_knowledge_knowledgebase_language_documents_imports**](KnowledgeApi.html#post_knowledge_knowledgebase_language_documents_imports) | Create import operation|
 |[**post_knowledge_knowledgebase_language_training_promote**](KnowledgeApi.html#post_knowledge_knowledgebase_language_training_promote) | Promote trained documents from draft state to active.|
 |[**post_knowledge_knowledgebase_language_trainings**](KnowledgeApi.html#post_knowledge_knowledgebase_language_trainings) | Trigger training|
+|[**post_knowledge_knowledgebase_parse_job_import**](KnowledgeApi.html#post_knowledge_knowledgebase_parse_job_import) | Import the parsed articles|
+|[**post_knowledge_knowledgebase_parse_jobs**](KnowledgeApi.html#post_knowledge_knowledgebase_parse_jobs) | Create parse job|
 |[**post_knowledge_knowledgebase_search**](KnowledgeApi.html#post_knowledge_knowledgebase_search) | Search Documents|
+|[**post_knowledge_knowledgebase_uploads_urls_jobs**](KnowledgeApi.html#post_knowledge_knowledgebase_uploads_urls_jobs) | Create content upload from URL job|
 |[**post_knowledge_knowledgebases**](KnowledgeApi.html#post_knowledge_knowledgebases) | Create new knowledge base|
 {: class="table table-striped"}
 
@@ -2316,6 +2322,61 @@ except ApiException as e:
 
 [**OperationCreatorUserResponse**](OperationCreatorUserResponse.html)
 
+<a name="get_knowledge_knowledgebase_parse_job"></a>
+
+## [**KnowledgeParseJobResponse**](KnowledgeParseJobResponse.html) get_knowledge_knowledgebase_parse_job(knowledge_base_id, parse_job_id, expand=expand)
+
+
+
+Get parse job report
+
+get_knowledge_knowledgebase_parse_job is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/parse/jobs/{parseJobId} 
+
+Requires ALL permissions: 
+
+* knowledge:importJob:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.KnowledgeApi()
+knowledge_base_id = 'knowledge_base_id_example' # str | Knowledge base ID
+parse_job_id = 'parse_job_id_example' # str | Parse job ID
+expand = ['expand_example'] # list[str] | If expand contains 'urls' downloadURL and failedEntitiesURL will be filled. (optional)
+
+try:
+    # Get parse job report
+    api_response = api_instance.get_knowledge_knowledgebase_parse_job(knowledge_base_id, parse_job_id, expand=expand)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling KnowledgeApi->get_knowledge_knowledgebase_parse_job: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **knowledge_base_id** | **str**| Knowledge base ID |  |
+| **parse_job_id** | **str**| Parse job ID |  |
+| **expand** | [**list[str]**](str.html)| If expand contains &#39;urls&#39; downloadURL and failedEntitiesURL will be filled. | [optional] <br />**Values**: urls |
+{: class="table table-striped"}
+
+### Return type
+
+[**KnowledgeParseJobResponse**](KnowledgeParseJobResponse.html)
+
 <a name="get_knowledge_knowledgebase_unanswered_group"></a>
 
 ## [**UnansweredGroup**](UnansweredGroup.html) get_knowledge_knowledgebase_unanswered_group(knowledge_base_id, group_id, app=app, date_start=date_start, date_end=date_end)
@@ -2486,6 +2547,59 @@ except ApiException as e:
 ### Return type
 
 [**UnansweredGroups**](UnansweredGroups.html)
+
+<a name="get_knowledge_knowledgebase_uploads_urls_job"></a>
+
+## [**GetUploadSourceUrlJobStatusResponse**](GetUploadSourceUrlJobStatusResponse.html) get_knowledge_knowledgebase_uploads_urls_job(knowledge_base_id, job_id)
+
+
+
+Get content upload from URL job status
+
+get_knowledge_knowledgebase_uploads_urls_job is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/uploads/urls/jobs/{jobId} 
+
+Requires ALL permissions: 
+
+* knowledge:uploadSourceUrlJob:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.KnowledgeApi()
+knowledge_base_id = 'knowledge_base_id_example' # str | Knowledge base ID
+job_id = 'job_id_example' # str | Upload job ID
+
+try:
+    # Get content upload from URL job status
+    api_response = api_instance.get_knowledge_knowledgebase_uploads_urls_job(knowledge_base_id, job_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling KnowledgeApi->get_knowledge_knowledgebase_uploads_urls_job: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **knowledge_base_id** | **str**| Knowledge base ID |  |
+| **job_id** | **str**| Upload job ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**GetUploadSourceUrlJobStatusResponse**](GetUploadSourceUrlJobStatusResponse.html)
 
 <a name="get_knowledge_knowledgebases"></a>
 
@@ -3188,6 +3302,60 @@ except ApiException as e:
 ### Return type
 
 [**KnowledgeImport**](KnowledgeImport.html)
+
+<a name="patch_knowledge_knowledgebase_parse_job"></a>
+
+##  patch_knowledge_knowledgebase_parse_job(knowledge_base_id, parse_job_id, body)
+
+
+
+Send update to the parse operation
+
+patch_knowledge_knowledgebase_parse_job is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps PATCH /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/parse/jobs/{parseJobId} 
+
+Requires ALL permissions: 
+
+* knowledge:importJob:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.KnowledgeApi()
+knowledge_base_id = 'knowledge_base_id_example' # str | Knowledge base ID
+parse_job_id = 'parse_job_id_example' # str | Parse job ID
+body = PureCloudPlatformClientV2.KnowledgeParseJobRequestPatch() # KnowledgeParseJobRequestPatch | 
+
+try:
+    # Send update to the parse operation
+    api_instance.patch_knowledge_knowledgebase_parse_job(knowledge_base_id, parse_job_id, body)
+except ApiException as e:
+    print("Exception when calling KnowledgeApi->patch_knowledge_knowledgebase_parse_job: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **knowledge_base_id** | **str**| Knowledge base ID |  |
+| **parse_job_id** | **str**| Parse job ID |  |
+| **body** | [**KnowledgeParseJobRequestPatch**](KnowledgeParseJobRequestPatch.html)|  |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
 
 <a name="patch_knowledge_knowledgebase_unanswered_group_phrasegroup"></a>
 
@@ -4534,6 +4702,113 @@ except ApiException as e:
 
 [**KnowledgeTraining**](KnowledgeTraining.html)
 
+<a name="post_knowledge_knowledgebase_parse_job_import"></a>
+
+##  post_knowledge_knowledgebase_parse_job_import(knowledge_base_id, parse_job_id, body)
+
+
+
+Import the parsed articles
+
+post_knowledge_knowledgebase_parse_job_import is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/parse/jobs/{parseJobId}/import 
+
+Requires ALL permissions: 
+
+* knowledge:importJob:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.KnowledgeApi()
+knowledge_base_id = 'knowledge_base_id_example' # str | Knowledge base ID
+parse_job_id = 'parse_job_id_example' # str | Parse job ID
+body = PureCloudPlatformClientV2.KnowledgeParseJobRequestImport() # KnowledgeParseJobRequestImport | 
+
+try:
+    # Import the parsed articles
+    api_instance.post_knowledge_knowledgebase_parse_job_import(knowledge_base_id, parse_job_id, body)
+except ApiException as e:
+    print("Exception when calling KnowledgeApi->post_knowledge_knowledgebase_parse_job_import: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **knowledge_base_id** | **str**| Knowledge base ID |  |
+| **parse_job_id** | **str**| Parse job ID |  |
+| **body** | [**KnowledgeParseJobRequestImport**](KnowledgeParseJobRequestImport.html)|  |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
+
+<a name="post_knowledge_knowledgebase_parse_jobs"></a>
+
+## [**KnowledgeParseJobResponse**](KnowledgeParseJobResponse.html) post_knowledge_knowledgebase_parse_jobs(knowledge_base_id, body)
+
+
+
+Create parse job
+
+post_knowledge_knowledgebase_parse_jobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/parse/jobs 
+
+Requires ALL permissions: 
+
+* knowledge:importJob:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.KnowledgeApi()
+knowledge_base_id = 'knowledge_base_id_example' # str | Knowledge base ID
+body = PureCloudPlatformClientV2.KnowledgeParseJobRequest() # KnowledgeParseJobRequest | 
+
+try:
+    # Create parse job
+    api_response = api_instance.post_knowledge_knowledgebase_parse_jobs(knowledge_base_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling KnowledgeApi->post_knowledge_knowledgebase_parse_jobs: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **knowledge_base_id** | **str**| Knowledge base ID |  |
+| **body** | [**KnowledgeParseJobRequest**](KnowledgeParseJobRequest.html)|  |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**KnowledgeParseJobResponse**](KnowledgeParseJobResponse.html)
+
 <a name="post_knowledge_knowledgebase_search"></a>
 
 ## [**KnowledgeSearchResponse**](KnowledgeSearchResponse.html) post_knowledge_knowledgebase_search(knowledge_base_id, body=body)
@@ -4584,6 +4859,59 @@ except ApiException as e:
 ### Return type
 
 [**KnowledgeSearchResponse**](KnowledgeSearchResponse.html)
+
+<a name="post_knowledge_knowledgebase_uploads_urls_jobs"></a>
+
+## [**CreateUploadSourceUrlJobResponse**](CreateUploadSourceUrlJobResponse.html) post_knowledge_knowledgebase_uploads_urls_jobs(knowledge_base_id, body)
+
+
+
+Create content upload from URL job
+
+post_knowledge_knowledgebase_uploads_urls_jobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/uploads/urls/jobs 
+
+Requires ALL permissions: 
+
+* knowledge:uploadSourceUrlJob:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.KnowledgeApi()
+knowledge_base_id = 'knowledge_base_id_example' # str | Knowledge base ID
+body = PureCloudPlatformClientV2.CreateUploadSourceUrlJobRequest() # CreateUploadSourceUrlJobRequest | uploadRequest
+
+try:
+    # Create content upload from URL job
+    api_response = api_instance.post_knowledge_knowledgebase_uploads_urls_jobs(knowledge_base_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling KnowledgeApi->post_knowledge_knowledgebase_uploads_urls_jobs: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **knowledge_base_id** | **str**| Knowledge base ID |  |
+| **body** | [**CreateUploadSourceUrlJobRequest**](CreateUploadSourceUrlJobRequest.html)| uploadRequest |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**CreateUploadSourceUrlJobResponse**](CreateUploadSourceUrlJobResponse.html)
 
 <a name="post_knowledge_knowledgebases"></a>
 

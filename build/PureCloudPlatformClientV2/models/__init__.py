@@ -641,6 +641,7 @@ from .contact_list_division_view import ContactListDivisionView
 from .contact_list_division_view_listing import ContactListDivisionViewListing
 from .contact_list_entity_listing import ContactListEntityListing
 from .contact_list_filter import ContactListFilter
+from .contact_list_filter_bulk_retrieve_body import ContactListFilterBulkRetrieveBody
 from .contact_list_filter_clause import ContactListFilterClause
 from .contact_list_filter_entity_listing import ContactListFilterEntityListing
 from .contact_list_filter_predicate import ContactListFilterPredicate
@@ -998,6 +999,8 @@ from .create_share_response import CreateShareResponse
 from .create_time_off_limit_request import CreateTimeOffLimitRequest
 from .create_time_off_plan_request import CreateTimeOffPlanRequest
 from .create_trigger_request import CreateTriggerRequest
+from .create_upload_source_url_job_request import CreateUploadSourceUrlJobRequest
+from .create_upload_source_url_job_response import CreateUploadSourceUrlJobResponse
 from .create_user import CreateUser
 from .create_utilization_label_request import CreateUtilizationLabelRequest
 from .create_utilization_tag_request import CreateUtilizationTagRequest
@@ -1352,6 +1355,7 @@ from .email_address import EmailAddress
 from .email_attachment import EmailAttachment
 from .email_begin_transmitting_event import EmailBeginTransmittingEvent
 from .email_campaign_schedule import EmailCampaignSchedule
+from .email_campaign_schedule_entity_listing import EmailCampaignScheduleEntityListing
 from .email_column import EmailColumn
 from .email_communication_answered_event import EmailCommunicationAnsweredEvent
 from .email_communication_disposition_applied_event import EmailCommunicationDispositionAppliedEvent
@@ -1689,6 +1693,7 @@ from .get_metrics_response import GetMetricsResponse
 from .get_profiles_response import GetProfilesResponse
 from .get_rules_query import GetRulesQuery
 from .get_templates_response import GetTemplatesResponse
+from .get_upload_source_url_job_status_response import GetUploadSourceUrlJobStatusResponse
 from .google_dialogflow_custom_settings import GoogleDialogflowCustomSettings
 from .grammar import Grammar
 from .grammar_file_upload_request import GrammarFileUploadRequest
@@ -1887,6 +1892,7 @@ from .journey_outcome_events_notification_session import JourneyOutcomeEventsNot
 from .journey_page import JourneyPage
 from .journey_pattern import JourneyPattern
 from .journey_segment import JourneySegment
+from .journey_segment_request import JourneySegmentRequest
 from .journey_session_events_notification_app import JourneySessionEventsNotificationApp
 from .journey_session_events_notification_browser import JourneySessionEventsNotificationBrowser
 from .journey_session_events_notification_connected_queue import JourneySessionEventsNotificationConnectedQueue
@@ -2042,6 +2048,12 @@ from .knowledge_import_job_request import KnowledgeImportJobRequest
 from .knowledge_import_job_response import KnowledgeImportJobResponse
 from .knowledge_import_job_settings import KnowledgeImportJobSettings
 from .knowledge_import_job_statistics import KnowledgeImportJobStatistics
+from .knowledge_parse_import_result import KnowledgeParseImportResult
+from .knowledge_parse_job_request import KnowledgeParseJobRequest
+from .knowledge_parse_job_request_import import KnowledgeParseJobRequestImport
+from .knowledge_parse_job_request_patch import KnowledgeParseJobRequestPatch
+from .knowledge_parse_job_response import KnowledgeParseJobResponse
+from .knowledge_parse_record import KnowledgeParseRecord
 from .knowledge_search_client_application import KnowledgeSearchClientApplication
 from .knowledge_search_document import KnowledgeSearchDocument
 from .knowledge_search_request import KnowledgeSearchRequest
@@ -2472,6 +2484,7 @@ from .outcome_probability_condition import OutcomeProbabilityCondition
 from .outcome_quantile_condition import OutcomeQuantileCondition
 from .outcome_ref import OutcomeRef
 from .outcome_ref_request import OutcomeRefRequest
+from .outcome_request import OutcomeRequest
 from .outcome_score import OutcomeScore
 from .outcome_scores_result import OutcomeScoresResult
 from .outlier_info import OutlierInfo
@@ -2498,6 +2511,7 @@ from .patch_action_properties import PatchActionProperties
 from .patch_action_survey import PatchActionSurvey
 from .patch_action_target import PatchActionTarget
 from .patch_action_template import PatchActionTemplate
+from .patch_associated_value_field import PatchAssociatedValueField
 from .patch_bu_rescheduling_options_management_unit_request import PatchBuReschedulingOptionsManagementUnitRequest
 from .patch_bu_rescheduling_options_request import PatchBuReschedulingOptionsRequest
 from .patch_bu_schedule_run_request import PatchBuScheduleRunRequest
@@ -2509,10 +2523,16 @@ from .patch_content_offer import PatchContentOffer
 from .patch_content_offer_style_properties import PatchContentOfferStyleProperties
 from .patch_content_offer_styling_configuration import PatchContentOfferStylingConfiguration
 from .patch_content_position_properties import PatchContentPositionProperties
+from .patch_context import PatchContext
+from .patch_context_pattern import PatchContextPattern
+from .patch_criteria import PatchCriteria
 from .patch_cta_button_style_properties import PatchCtaButtonStyleProperties
+from .patch_entity_type_criteria import PatchEntityTypeCriteria
 from .patch_external_segment import PatchExternalSegment
 from .patch_integration_action import PatchIntegrationAction
 from .patch_integration_action_fields import PatchIntegrationActionFields
+from .patch_journey import PatchJourney
+from .patch_journey_pattern import PatchJourneyPattern
 from .patch_outcome import PatchOutcome
 from .patch_predictor_request import PatchPredictorRequest
 from .patch_segment import PatchSegment
@@ -2913,6 +2933,13 @@ from .queue_user_event_topic_queue_member import QueueUserEventTopicQueueMember
 from .queue_user_event_topic_user_reference import QueueUserEventTopicUserReference
 from .queue_utilization_diagnostic import QueueUtilizationDiagnostic
 from .quick_reply import QuickReply
+from .rate_limit_aggregate_data_container import RateLimitAggregateDataContainer
+from .rate_limit_aggregate_query_clause import RateLimitAggregateQueryClause
+from .rate_limit_aggregate_query_filter import RateLimitAggregateQueryFilter
+from .rate_limit_aggregate_query_predicate import RateLimitAggregateQueryPredicate
+from .rate_limit_aggregate_query_response import RateLimitAggregateQueryResponse
+from .rate_limit_aggregation_query import RateLimitAggregationQuery
+from .rate_limit_aggregation_view import RateLimitAggregationView
 from .reaction import Reaction
 from .real_time_adherence_explanation import RealTimeAdherenceExplanation
 from .recall_entry import RecallEntry
@@ -2980,6 +3007,14 @@ from .reporting_turn_knowledge_feedback import ReportingTurnKnowledgeFeedback
 from .reporting_turn_knowledge_search import ReportingTurnKnowledgeSearch
 from .reporting_turns_response import ReportingTurnsResponse
 from .request_config import RequestConfig
+from .request_context import RequestContext
+from .request_context_pattern import RequestContextPattern
+from .request_criteria import RequestCriteria
+from .request_device import RequestDevice
+from .request_entity_type_criteria import RequestEntityTypeCriteria
+from .request_external_segment import RequestExternalSegment
+from .request_journey import RequestJourney
+from .request_journey_pattern import RequestJourneyPattern
 from .request_mapping import RequestMapping
 from .request_scored_agent import RequestScoredAgent
 from .rescheduling_management_unit_response import ReschedulingManagementUnitResponse
@@ -3142,8 +3177,6 @@ from .secure_session_entity_listing import SecureSessionEntityListing
 from .security_profile import SecurityProfile
 from .security_profile_entity_listing import SecurityProfileEntityListing
 from .segment import Segment
-from .segment_assigned_event import SegmentAssignedEvent
-from .segment_assigned_event_segment import SegmentAssignedEventSegment
 from .segment_assignment_event import SegmentAssignmentEvent
 from .segment_detail_query_clause import SegmentDetailQueryClause
 from .segment_detail_query_filter import SegmentDetailQueryFilter

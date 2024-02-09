@@ -67,7 +67,7 @@ class EventSession(object):
     def id(self) -> str:
         """
         Gets the id of this EventSession.
-
+        The ID of the session.
 
         :return: The id of this EventSession.
         :rtype: str
@@ -78,7 +78,7 @@ class EventSession(object):
     def id(self, id: str) -> None:
         """
         Sets the id of this EventSession.
-
+        The ID of the session.
 
         :param id: The id of this EventSession.
         :type: str

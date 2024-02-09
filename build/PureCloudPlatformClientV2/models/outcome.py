@@ -98,7 +98,7 @@ class Outcome(object):
     def id(self) -> str:
         """
         Gets the id of this Outcome.
-        The globally unique identifier for the object.
+        ID of the outcome.
 
         :return: The id of this Outcome.
         :rtype: str
@@ -109,7 +109,7 @@ class Outcome(object):
     def id(self, id: str) -> None:
         """
         Sets the id of this Outcome.
-        The globally unique identifier for the object.
+        ID of the outcome.
 
         :param id: The id of this Outcome.
         :type: str

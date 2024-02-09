@@ -1183,7 +1183,7 @@ except ApiException as e:
 
 <a name="get_speechandtextanalytics_topics"></a>
 
-## [**TopicsEntityListing**](TopicsEntityListing.html) get_speechandtextanalytics_topics(next_page=next_page, page_size=page_size, state=state, name=name, ids=ids, sort_by=sort_by, sort_order=sort_order)
+## [**TopicsEntityListing**](TopicsEntityListing.html) get_speechandtextanalytics_topics(next_page=next_page, page_size=page_size, state=state, name=name, ids=ids, dialects=dialects, sort_by=sort_by, sort_order=sort_order)
 
 
 
@@ -1213,12 +1213,13 @@ page_size = 20 # int | The page size for the listing (optional) (default to 20)
 state = 'state_example' # str | Topic state. Defaults to latest (optional)
 name = 'name_example' # str | Case insensitive partial name to filter by (optional)
 ids = ['ids_example'] # list[str] | Comma separated Topic IDs to filter by. Cannot be used with other filters. Maximum of 50 IDs allowed. (optional)
+dialects = ['dialects_example'] # list[str] | Comma separated dialect strings to filter by. Maximum of 15 dialects allowed. (optional)
 sort_by = 'sort_by_example' # str | Sort results by. Defaults to name (optional)
 sort_order = 'sort_order_example' # str | Sort order. Defaults to asc (optional)
 
 try:
     # Get the list of Speech & Text Analytics topics
-    api_response = api_instance.get_speechandtextanalytics_topics(next_page=next_page, page_size=page_size, state=state, name=name, ids=ids, sort_by=sort_by, sort_order=sort_order)
+    api_response = api_instance.get_speechandtextanalytics_topics(next_page=next_page, page_size=page_size, state=state, name=name, ids=ids, dialects=dialects, sort_by=sort_by, sort_order=sort_order)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SpeechTextAnalyticsApi->get_speechandtextanalytics_topics: %s\n" % e)
@@ -1234,6 +1235,7 @@ except ApiException as e:
 | **state** | **str**| Topic state. Defaults to latest | [optional] <br />**Values**: latest, published |
 | **name** | **str**| Case insensitive partial name to filter by | [optional]  |
 | **ids** | [**list[str]**](str.html)| Comma separated Topic IDs to filter by. Cannot be used with other filters. Maximum of 50 IDs allowed. | [optional]  |
+| **dialects** | [**list[str]**](str.html)| Comma separated dialect strings to filter by. Maximum of 15 dialects allowed. | [optional] <br />**Values**: en-US, es-US, en-AU, en-GB, en-ZA, es-ES, en-IN, fr-FR, fr-CA, it-IT, de-DE, pt-BR, pl-PL, pt-PT, nl-NL, ko-KR |
 | **sort_by** | **str**| Sort results by. Defaults to name | [optional] <br />**Values**: name |
 | **sort_order** | **str**| Sort order. Defaults to asc | [optional] <br />**Values**: asc, desc |
 {: class="table table-striped"}

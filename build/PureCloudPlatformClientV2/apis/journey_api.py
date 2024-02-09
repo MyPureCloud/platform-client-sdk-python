@@ -60,6 +60,7 @@ from ..models import JourneyAggregationQuery
 from ..models import JourneyAsyncAggregateQueryResponse
 from ..models import JourneyAsyncAggregationQuery
 from ..models import JourneySegment
+from ..models import JourneySegmentRequest
 from ..models import Outcome
 from ..models import OutcomeAttributionAsyncResponse
 from ..models import OutcomeAttributionJobStateResponse
@@ -69,6 +70,7 @@ from ..models import OutcomeListing
 from ..models import OutcomePredictor
 from ..models import OutcomePredictorListing
 from ..models import OutcomePredictorRequest
+from ..models import OutcomeRequest
 from ..models import OutcomeScoresResult
 from ..models import PatchActionMap
 from ..models import PatchActionTarget
@@ -3350,7 +3352,7 @@ class JourneyApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param Outcome body: 
+        :param OutcomeRequest body: 
         :return: Outcome
                  If the method is called asynchronously,
                  returns the request thread.
@@ -3576,7 +3578,7 @@ class JourneyApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param JourneySegment body: 
+        :param JourneySegmentRequest body: 
         :return: JourneySegment
                  If the method is called asynchronously,
                  returns the request thread.

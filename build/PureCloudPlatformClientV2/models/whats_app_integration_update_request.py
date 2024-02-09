@@ -55,10 +55,6 @@ class WhatsAppIntegrationUpdateRequest(object):
             'name': 'str',
             'supported_content': 'SupportedContentReference',
             'messaging_setting': 'MessagingSettingRequestReference',
-            'action': 'str',
-            'authentication_method': 'str',
-            'confirmation_code': 'str',
-            'phone_number': 'str',
             'self_uri': 'str'
         }
 
@@ -67,10 +63,6 @@ class WhatsAppIntegrationUpdateRequest(object):
             'name': 'name',
             'supported_content': 'supportedContent',
             'messaging_setting': 'messagingSetting',
-            'action': 'action',
-            'authentication_method': 'authenticationMethod',
-            'confirmation_code': 'confirmationCode',
-            'phone_number': 'phoneNumber',
             'self_uri': 'selfUri'
         }
 
@@ -78,10 +70,6 @@ class WhatsAppIntegrationUpdateRequest(object):
         self._name = None
         self._supported_content = None
         self._messaging_setting = None
-        self._action = None
-        self._authentication_method = None
-        self._confirmation_code = None
-        self._phone_number = None
         self._self_uri = None
 
     @property
@@ -179,112 +167,6 @@ class WhatsAppIntegrationUpdateRequest(object):
         
 
         self._messaging_setting = messaging_setting
-
-    @property
-    def action(self) -> str:
-        """
-        Gets the action of this WhatsAppIntegrationUpdateRequest.
-        The action used to activate and then confirm a WhatsApp Integration.
-
-        :return: The action of this WhatsAppIntegrationUpdateRequest.
-        :rtype: str
-        """
-        return self._action
-
-    @action.setter
-    def action(self, action: str) -> None:
-        """
-        Sets the action of this WhatsAppIntegrationUpdateRequest.
-        The action used to activate and then confirm a WhatsApp Integration.
-
-        :param action: The action of this WhatsAppIntegrationUpdateRequest.
-        :type: str
-        """
-        if isinstance(action, int):
-            action = str(action)
-        allowed_values = ["Activate", "Confirm"]
-        if action.lower() not in map(str.lower, allowed_values):
-            # print("Invalid value for action -> " + action)
-            self._action = "outdated_sdk_version"
-        else:
-            self._action = action
-
-    @property
-    def authentication_method(self) -> str:
-        """
-        Gets the authentication_method of this WhatsAppIntegrationUpdateRequest.
-        The authentication method used to confirm a WhatsApp Integration activation. If action is set to Activate, then authenticationMethod is a required field. 
-
-        :return: The authentication_method of this WhatsAppIntegrationUpdateRequest.
-        :rtype: str
-        """
-        return self._authentication_method
-
-    @authentication_method.setter
-    def authentication_method(self, authentication_method: str) -> None:
-        """
-        Sets the authentication_method of this WhatsAppIntegrationUpdateRequest.
-        The authentication method used to confirm a WhatsApp Integration activation. If action is set to Activate, then authenticationMethod is a required field. 
-
-        :param authentication_method: The authentication_method of this WhatsAppIntegrationUpdateRequest.
-        :type: str
-        """
-        if isinstance(authentication_method, int):
-            authentication_method = str(authentication_method)
-        allowed_values = ["Sms", "Voice"]
-        if authentication_method.lower() not in map(str.lower, allowed_values):
-            # print("Invalid value for authentication_method -> " + authentication_method)
-            self._authentication_method = "outdated_sdk_version"
-        else:
-            self._authentication_method = authentication_method
-
-    @property
-    def confirmation_code(self) -> str:
-        """
-        Gets the confirmation_code of this WhatsAppIntegrationUpdateRequest.
-        The confirmation code sent by Whatsapp to you during the activation step. If action is set to Confirm, then confirmationCode is a required field.
-
-        :return: The confirmation_code of this WhatsAppIntegrationUpdateRequest.
-        :rtype: str
-        """
-        return self._confirmation_code
-
-    @confirmation_code.setter
-    def confirmation_code(self, confirmation_code: str) -> None:
-        """
-        Sets the confirmation_code of this WhatsAppIntegrationUpdateRequest.
-        The confirmation code sent by Whatsapp to you during the activation step. If action is set to Confirm, then confirmationCode is a required field.
-
-        :param confirmation_code: The confirmation_code of this WhatsAppIntegrationUpdateRequest.
-        :type: str
-        """
-        
-
-        self._confirmation_code = confirmation_code
-
-    @property
-    def phone_number(self) -> str:
-        """
-        Gets the phone_number of this WhatsAppIntegrationUpdateRequest.
-        Phone number to associate with the WhatsApp integration
-
-        :return: The phone_number of this WhatsAppIntegrationUpdateRequest.
-        :rtype: str
-        """
-        return self._phone_number
-
-    @phone_number.setter
-    def phone_number(self, phone_number: str) -> None:
-        """
-        Sets the phone_number of this WhatsAppIntegrationUpdateRequest.
-        Phone number to associate with the WhatsApp integration
-
-        :param phone_number: The phone_number of this WhatsAppIntegrationUpdateRequest.
-        :type: str
-        """
-        
-
-        self._phone_number = phone_number
 
     @property
     def self_uri(self) -> str:

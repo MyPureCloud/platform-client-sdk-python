@@ -66,6 +66,7 @@ from ..models import ContactListDivisionView
 from ..models import ContactListDivisionViewListing
 from ..models import ContactListEntityListing
 from ..models import ContactListFilter
+from ..models import ContactListFilterBulkRetrieveBody
 from ..models import ContactListFilterEntityListing
 from ..models import ContactListTemplate
 from ..models import ContactListTemplateBulkRetrieveBody
@@ -85,6 +86,7 @@ from ..models import DncPatchEmailsRequest
 from ..models import DncPatchPhoneNumbersRequest
 from ..models import DomainEntityRef
 from ..models import EmailCampaignSchedule
+from ..models import EmailCampaignScheduleEntityListing
 from ..models import ErrorBody
 from ..models import EventLog
 from ..models import ExportUri
@@ -6206,12 +6208,13 @@ class OutboundApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str import_template_id: Import Template ID (required)
+        :param bool include_import_status: Import status
         :return: ImportTemplate
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['import_template_id']
+        all_params = ['import_template_id', 'include_import_status']
         all_params.append('callback')
 
         params = locals()
@@ -6235,6 +6238,8 @@ class OutboundApi(object):
             path_params['importTemplateId'] = params['import_template_id']
 
         query_params = {}
+        if 'include_import_status' in params:
+            query_params['includeImportStatus'] = params['include_import_status']
 
         header_params = {}
 
@@ -6364,6 +6369,7 @@ class OutboundApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
+        :param bool include_import_status: Import status
         :param int page_size: Page size. The max that will be returned is 100.
         :param int page_number: Page number
         :param bool allow_empty_result: Whether to return an empty page when there are no results for that page
@@ -6377,7 +6383,7 @@ class OutboundApi(object):
                  returns the request thread.
         """
 
-        all_params = ['page_size', 'page_number', 'allow_empty_result', 'filter_type', 'name', 'sort_by', 'sort_order', 'contact_list_template_id']
+        all_params = ['include_import_status', 'page_size', 'page_number', 'allow_empty_result', 'filter_type', 'name', 'sort_by', 'sort_order', 'contact_list_template_id']
         all_params.append('callback')
 
         params = locals()
@@ -6396,6 +6402,8 @@ class OutboundApi(object):
         path_params = {}
 
         query_params = {}
+        if 'include_import_status' in params:
+            query_params['includeImportStatus'] = params['include_import_status']
         if 'page_size' in params:
             query_params['pageSize'] = params['page_size']
         if 'page_number' in params:
@@ -7351,7 +7359,7 @@ class OutboundApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_outbound_schedules_emailcampaigns(self, **kwargs) -> 'MessagingCampaignScheduleEntityListing':
+    def get_outbound_schedules_emailcampaigns(self, **kwargs) -> 'EmailCampaignScheduleEntityListing':
         """
         Query for a list of email campaign schedules.
         
@@ -7366,7 +7374,7 @@ class OutboundApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :return: MessagingCampaignScheduleEntityListing
+        :return: EmailCampaignScheduleEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -7418,7 +7426,7 @@ class OutboundApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='MessagingCampaignScheduleEntityListing',
+                                            response_type='EmailCampaignScheduleEntityListing',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -9499,6 +9507,84 @@ class OutboundApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='ContactListFilter',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_outbound_contactlistfilters_bulk_retrieve(self, body: 'ContactListFilterBulkRetrieveBody', **kwargs) -> 'ContactListFilterEntityListing':
+        """
+        Retrieve multiple contact list filters
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_outbound_contactlistfilters_bulk_retrieve(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param ContactListFilterBulkRetrieveBody body: The contact list filters to retrieve (required)
+        :return: ContactListFilterEntityListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_outbound_contactlistfilters_bulk_retrieve" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_outbound_contactlistfilters_bulk_retrieve`")
+
+
+        resource_path = '/api/v2/outbound/contactlistfilters/bulk/retrieve'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ContactListFilterEntityListing',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

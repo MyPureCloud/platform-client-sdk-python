@@ -34,6 +34,7 @@ from typing import Dict
 
 if TYPE_CHECKING:
     from . import DomainEntityRef
+    from . import ImportStatus
     from . import SplittingInformation
 
 class ImportTemplate(object):
@@ -62,6 +63,7 @@ class ImportTemplate(object):
             'splitting_information': 'SplittingInformation',
             'list_name_format': 'str',
             'custom_list_name_format_value': 'str',
+            'import_status': 'ImportStatus',
             'self_uri': 'str'
         }
 
@@ -77,6 +79,7 @@ class ImportTemplate(object):
             'splitting_information': 'splittingInformation',
             'list_name_format': 'listNameFormat',
             'custom_list_name_format_value': 'customListNameFormatValue',
+            'import_status': 'importStatus',
             'self_uri': 'selfUri'
         }
 
@@ -91,6 +94,7 @@ class ImportTemplate(object):
         self._splitting_information = None
         self._list_name_format = None
         self._custom_list_name_format_value = None
+        self._import_status = None
         self._self_uri = None
 
     @property
@@ -361,6 +365,30 @@ class ImportTemplate(object):
         
 
         self._custom_list_name_format_value = custom_list_name_format_value
+
+    @property
+    def import_status(self) -> 'ImportStatus':
+        """
+        Gets the import_status of this ImportTemplate.
+        The status of the import process.
+
+        :return: The import_status of this ImportTemplate.
+        :rtype: ImportStatus
+        """
+        return self._import_status
+
+    @import_status.setter
+    def import_status(self, import_status: 'ImportStatus') -> None:
+        """
+        Sets the import_status of this ImportTemplate.
+        The status of the import process.
+
+        :param import_status: The import_status of this ImportTemplate.
+        :type: ImportStatus
+        """
+        
+
+        self._import_status = import_status
 
     @property
     def self_uri(self) -> str:

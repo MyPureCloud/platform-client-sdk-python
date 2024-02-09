@@ -9892,12 +9892,13 @@ class ArchitectApi(object):
             for asynchronous request. (optional)
         :param CriteriaQuery body: query (required)
         :param bool index_only: indexes only
+        :param int page_size: number of results to return
         :return: FlowResultEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['body', 'index_only']
+        all_params = ['body', 'index_only', 'page_size']
         all_params.append('callback')
 
         params = locals()
@@ -9921,6 +9922,8 @@ class ArchitectApi(object):
         query_params = {}
         if 'index_only' in params:
             query_params['indexOnly'] = params['index_only']
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
 
         header_params = {}
 

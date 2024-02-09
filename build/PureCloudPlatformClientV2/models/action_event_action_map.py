@@ -70,7 +70,7 @@ class ActionEventActionMap(object):
     def id(self) -> str:
         """
         Gets the id of this ActionEventActionMap.
-
+        The ID of the action map.
 
         :return: The id of this ActionEventActionMap.
         :rtype: str
@@ -81,7 +81,7 @@ class ActionEventActionMap(object):
     def id(self, id: str) -> None:
         """
         Sets the id of this ActionEventActionMap.
-
+        The ID of the action map.
 
         :param id: The id of this ActionEventActionMap.
         :type: str

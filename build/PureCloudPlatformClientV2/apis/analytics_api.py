@@ -94,6 +94,8 @@ from ..models import KnowledgeAsyncAggregationQuery
 from ..models import PropertyIndexRequest
 from ..models import QueueObservationQuery
 from ..models import QueueObservationQueryResponse
+from ..models import RateLimitAggregateQueryResponse
+from ..models import RateLimitAggregationQuery
 from ..models import ReportMetaData
 from ..models import ReportMetaDataEntityListing
 from ..models import ReportRunEntry
@@ -5487,7 +5489,6 @@ class AnalyticsApi(object):
         """
         Query for flow execution aggregates
         
-	    post_analytics_flowexecutions_aggregates_query is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -6271,6 +6272,84 @@ class AnalyticsApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='QueueObservationQueryResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_analytics_ratelimits_aggregates_query(self, body: 'RateLimitAggregationQuery', **kwargs) -> 'RateLimitAggregateQueryResponse':
+        """
+        Query for limits rate limit aggregates. Data populated when limits are exceeded or are close to being exceeded
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_analytics_ratelimits_aggregates_query(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param RateLimitAggregationQuery body: query (required)
+        :return: RateLimitAggregateQueryResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_analytics_ratelimits_aggregates_query" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_analytics_ratelimits_aggregates_query`")
+
+
+        resource_path = '/api/v2/analytics/ratelimits/aggregates/query'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='RateLimitAggregateQueryResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

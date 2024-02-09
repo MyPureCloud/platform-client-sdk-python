@@ -51,16 +51,19 @@ class KnowledgeExportJobRequest(object):
         """
         self.swagger_types = {
             'export_filter': 'KnowledgeExportJobFilter',
-            'file_type': 'str'
+            'file_type': 'str',
+            'json_file_version': 'int'
         }
 
         self.attribute_map = {
             'export_filter': 'exportFilter',
-            'file_type': 'fileType'
+            'file_type': 'fileType',
+            'json_file_version': 'jsonFileVersion'
         }
 
         self._export_filter = None
         self._file_type = None
+        self._json_file_version = None
 
     @property
     def export_filter(self) -> 'KnowledgeExportJobFilter':
@@ -114,6 +117,30 @@ class KnowledgeExportJobRequest(object):
             self._file_type = "outdated_sdk_version"
         else:
             self._file_type = file_type
+
+    @property
+    def json_file_version(self) -> int:
+        """
+        Gets the json_file_version of this KnowledgeExportJobRequest.
+        Requested version of the exported json file. Available versions are 2 and 3, default is 2
+
+        :return: The json_file_version of this KnowledgeExportJobRequest.
+        :rtype: int
+        """
+        return self._json_file_version
+
+    @json_file_version.setter
+    def json_file_version(self, json_file_version: int) -> None:
+        """
+        Sets the json_file_version of this KnowledgeExportJobRequest.
+        Requested version of the exported json file. Available versions are 2 and 3, default is 2
+
+        :param json_file_version: The json_file_version of this KnowledgeExportJobRequest.
+        :type: int
+        """
+        
+
+        self._json_file_version = json_file_version
 
     def to_dict(self):
         """

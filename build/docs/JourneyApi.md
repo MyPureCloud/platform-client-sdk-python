@@ -2122,7 +2122,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.JourneyApi()
-body = PureCloudPlatformClientV2.Outcome() # Outcome |  (optional)
+body = PureCloudPlatformClientV2.OutcomeRequest() # OutcomeRequest |  (optional)
 
 try:
     # Create an outcome.
@@ -2137,7 +2137,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**Outcome**](Outcome.html)|  | [optional]  |
+| **body** | [**OutcomeRequest**](OutcomeRequest.html)|  | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2271,7 +2271,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.JourneyApi()
-body = PureCloudPlatformClientV2.JourneySegment() # JourneySegment |  (optional)
+body = PureCloudPlatformClientV2.JourneySegmentRequest() # JourneySegmentRequest |  (optional)
 
 try:
     # Create a segment.
@@ -2286,7 +2286,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**JourneySegment**](JourneySegment.html)|  | [optional]  |
+| **body** | [**JourneySegmentRequest**](JourneySegmentRequest.html)|  | [optional]  |
 {: class="table table-striped"}
 
 ### Return type

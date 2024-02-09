@@ -107,7 +107,7 @@ class JourneySegment(object):
     def id(self) -> str:
         """
         Gets the id of this JourneySegment.
-        The globally unique identifier for the object.
+        The ID of the segment.
 
         :return: The id of this JourneySegment.
         :rtype: str
@@ -118,7 +118,7 @@ class JourneySegment(object):
     def id(self, id: str) -> None:
         """
         Sets the id of this JourneySegment.
-        The globally unique identifier for the object.
+        The ID of the segment.
 
         :param id: The id of this JourneySegment.
         :type: str

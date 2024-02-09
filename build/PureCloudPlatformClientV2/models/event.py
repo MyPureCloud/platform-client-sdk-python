@@ -37,7 +37,6 @@ if TYPE_CHECKING:
     from . import EventSession
     from . import GenericActionEvent
     from . import OutcomeAchievedEvent
-    from . import SegmentAssignedEvent
     from . import SegmentAssignmentEvent
     from . import WebActionEvent
     from . import WebEvent
@@ -65,7 +64,6 @@ class Event(object):
             'event_type': 'str',
             'generic_action_event': 'GenericActionEvent',
             'outcome_achieved_event': 'OutcomeAchievedEvent',
-            'segment_assigned_event': 'SegmentAssignedEvent',
             'segment_assignment_event': 'SegmentAssignmentEvent',
             'web_action_event': 'WebActionEvent',
             'web_event': 'WebEvent',
@@ -82,7 +80,6 @@ class Event(object):
             'event_type': 'eventType',
             'generic_action_event': 'genericActionEvent',
             'outcome_achieved_event': 'outcomeAchievedEvent',
-            'segment_assigned_event': 'segmentAssignedEvent',
             'segment_assignment_event': 'segmentAssignmentEvent',
             'web_action_event': 'webActionEvent',
             'web_event': 'webEvent',
@@ -98,7 +95,6 @@ class Event(object):
         self._event_type = None
         self._generic_action_event = None
         self._outcome_achieved_event = None
-        self._segment_assigned_event = None
         self._segment_assignment_event = None
         self._web_action_event = None
         self._web_event = None
@@ -296,30 +292,6 @@ class Event(object):
         
 
         self._outcome_achieved_event = outcome_achieved_event
-
-    @property
-    def segment_assigned_event(self) -> 'SegmentAssignedEvent':
-        """
-        Gets the segment_assigned_event of this Event.
-        Event that represents a segment being assigned (deprecated).
-
-        :return: The segment_assigned_event of this Event.
-        :rtype: SegmentAssignedEvent
-        """
-        return self._segment_assigned_event
-
-    @segment_assigned_event.setter
-    def segment_assigned_event(self, segment_assigned_event: 'SegmentAssignedEvent') -> None:
-        """
-        Sets the segment_assigned_event of this Event.
-        Event that represents a segment being assigned (deprecated).
-
-        :param segment_assigned_event: The segment_assigned_event of this Event.
-        :type: SegmentAssignedEvent
-        """
-        
-
-        self._segment_assigned_event = segment_assigned_event
 
     @property
     def segment_assignment_event(self) -> 'SegmentAssignmentEvent':

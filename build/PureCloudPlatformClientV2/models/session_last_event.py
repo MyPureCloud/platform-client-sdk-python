@@ -67,7 +67,7 @@ class SessionLastEvent(object):
     def id(self) -> str:
         """
         Gets the id of this SessionLastEvent.
-        The globally unique identifier for the object.
+        The ID of the last event.
 
         :return: The id of this SessionLastEvent.
         :rtype: str
@@ -78,7 +78,7 @@ class SessionLastEvent(object):
     def id(self, id: str) -> None:
         """
         Sets the id of this SessionLastEvent.
-        The globally unique identifier for the object.
+        The ID of the last event.
 
         :param id: The id of this SessionLastEvent.
         :type: str

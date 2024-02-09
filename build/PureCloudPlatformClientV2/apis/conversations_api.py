@@ -11694,8 +11694,8 @@ class ConversationsApi(object):
 
     def patch_conversations_messaging_integrations_whatsapp_integration_id(self, integration_id: str, body: 'WhatsAppIntegrationUpdateRequest', **kwargs) -> 'WhatsAppIntegration':
         """
-        Update or activate a WhatsApp messaging integration
-        The following steps are required in order to fully activate a WhatsApp Integration: Initially, you will need to get an activation code by sending: an action set to Activate, and an authenticationMethod choosing from Sms or Voice. Finally, once you have been informed of an activation code on selected authenticationMethod, you will need to confirm the code by sending: an action set to Confirm, and the confirmationCode you have received from Whatsapp.
+        Update a WhatsApp messaging integration
+        
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -13091,7 +13091,6 @@ class ConversationsApi(object):
         """
         Replace this participant with the specified agent
         
-	    post_conversation_participant_replace_agent is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -13182,7 +13181,6 @@ class ConversationsApi(object):
         """
         Replace this participant with the an external contact
         
-	    post_conversation_participant_replace_external is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -13273,7 +13271,6 @@ class ConversationsApi(object):
         """
         Replace this participant with the specified queue
         
-	    post_conversation_participant_replace_queue is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -13974,7 +13971,6 @@ class ConversationsApi(object):
         """
         Initiate a consult transfer to an agent
         
-	    post_conversations_call_participant_consult_agent is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -14065,7 +14061,6 @@ class ConversationsApi(object):
         """
         Initiate a consult transfer to an external contact
         
-	    post_conversations_call_participant_consult_external is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -14156,7 +14151,6 @@ class ConversationsApi(object):
         """
         Initiate a consult transfer to a queue
         
-	    post_conversations_call_participant_consult_queue is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -17136,7 +17130,6 @@ class ConversationsApi(object):
         """
         Listen in on the conversation from the point of view of a given participant.
         
-	    post_conversations_message_participant_monitor is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

@@ -33,9 +33,9 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
-    from . import AssociatedValueField
-    from . import Context
-    from . import Journey
+    from . import PatchAssociatedValueField
+    from . import PatchContext
+    from . import PatchJourney
 
 class PatchOutcome(object):
     """
@@ -52,22 +52,17 @@ class PatchOutcome(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'id': 'str',
             'is_active': 'bool',
             'display_name': 'str',
             'version': 'int',
             'description': 'str',
             'is_positive': 'bool',
-            'context': 'Context',
-            'journey': 'Journey',
-            'associated_value_field': 'AssociatedValueField',
-            'self_uri': 'str',
-            'created_date': 'datetime',
-            'modified_date': 'datetime'
+            'context': 'PatchContext',
+            'journey': 'PatchJourney',
+            'associated_value_field': 'PatchAssociatedValueField'
         }
 
         self.attribute_map = {
-            'id': 'id',
             'is_active': 'isActive',
             'display_name': 'displayName',
             'version': 'version',
@@ -75,13 +70,9 @@ class PatchOutcome(object):
             'is_positive': 'isPositive',
             'context': 'context',
             'journey': 'journey',
-            'associated_value_field': 'associatedValueField',
-            'self_uri': 'selfUri',
-            'created_date': 'createdDate',
-            'modified_date': 'modifiedDate'
+            'associated_value_field': 'associatedValueField'
         }
 
-        self._id = None
         self._is_active = None
         self._display_name = None
         self._version = None
@@ -90,33 +81,6 @@ class PatchOutcome(object):
         self._context = None
         self._journey = None
         self._associated_value_field = None
-        self._self_uri = None
-        self._created_date = None
-        self._modified_date = None
-
-    @property
-    def id(self) -> str:
-        """
-        Gets the id of this PatchOutcome.
-        The globally unique identifier for the object.
-
-        :return: The id of this PatchOutcome.
-        :rtype: str
-        """
-        return self._id
-
-    @id.setter
-    def id(self, id: str) -> None:
-        """
-        Sets the id of this PatchOutcome.
-        The globally unique identifier for the object.
-
-        :param id: The id of this PatchOutcome.
-        :type: str
-        """
-        
-
-        self._id = id
 
     @property
     def is_active(self) -> bool:
@@ -239,148 +203,76 @@ class PatchOutcome(object):
         self._is_positive = is_positive
 
     @property
-    def context(self) -> 'Context':
+    def context(self) -> 'PatchContext':
         """
         Gets the context of this PatchOutcome.
         The context of the outcome.
 
         :return: The context of this PatchOutcome.
-        :rtype: Context
+        :rtype: PatchContext
         """
         return self._context
 
     @context.setter
-    def context(self, context: 'Context') -> None:
+    def context(self, context: 'PatchContext') -> None:
         """
         Sets the context of this PatchOutcome.
         The context of the outcome.
 
         :param context: The context of this PatchOutcome.
-        :type: Context
+        :type: PatchContext
         """
         
 
         self._context = context
 
     @property
-    def journey(self) -> 'Journey':
+    def journey(self) -> 'PatchJourney':
         """
         Gets the journey of this PatchOutcome.
         The pattern of rules defining the filter of the outcome.
 
         :return: The journey of this PatchOutcome.
-        :rtype: Journey
+        :rtype: PatchJourney
         """
         return self._journey
 
     @journey.setter
-    def journey(self, journey: 'Journey') -> None:
+    def journey(self, journey: 'PatchJourney') -> None:
         """
         Sets the journey of this PatchOutcome.
         The pattern of rules defining the filter of the outcome.
 
         :param journey: The journey of this PatchOutcome.
-        :type: Journey
+        :type: PatchJourney
         """
         
 
         self._journey = journey
 
     @property
-    def associated_value_field(self) -> 'AssociatedValueField':
+    def associated_value_field(self) -> 'PatchAssociatedValueField':
         """
         Gets the associated_value_field of this PatchOutcome.
         The field from the event indicating the associated value.
 
         :return: The associated_value_field of this PatchOutcome.
-        :rtype: AssociatedValueField
+        :rtype: PatchAssociatedValueField
         """
         return self._associated_value_field
 
     @associated_value_field.setter
-    def associated_value_field(self, associated_value_field: 'AssociatedValueField') -> None:
+    def associated_value_field(self, associated_value_field: 'PatchAssociatedValueField') -> None:
         """
         Sets the associated_value_field of this PatchOutcome.
         The field from the event indicating the associated value.
 
         :param associated_value_field: The associated_value_field of this PatchOutcome.
-        :type: AssociatedValueField
+        :type: PatchAssociatedValueField
         """
         
 
         self._associated_value_field = associated_value_field
-
-    @property
-    def self_uri(self) -> str:
-        """
-        Gets the self_uri of this PatchOutcome.
-        The URI for this object
-
-        :return: The self_uri of this PatchOutcome.
-        :rtype: str
-        """
-        return self._self_uri
-
-    @self_uri.setter
-    def self_uri(self, self_uri: str) -> None:
-        """
-        Sets the self_uri of this PatchOutcome.
-        The URI for this object
-
-        :param self_uri: The self_uri of this PatchOutcome.
-        :type: str
-        """
-        
-
-        self._self_uri = self_uri
-
-    @property
-    def created_date(self) -> datetime:
-        """
-        Gets the created_date of this PatchOutcome.
-        Timestamp indicating when the outcome was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
-
-        :return: The created_date of this PatchOutcome.
-        :rtype: datetime
-        """
-        return self._created_date
-
-    @created_date.setter
-    def created_date(self, created_date: datetime) -> None:
-        """
-        Sets the created_date of this PatchOutcome.
-        Timestamp indicating when the outcome was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
-
-        :param created_date: The created_date of this PatchOutcome.
-        :type: datetime
-        """
-        
-
-        self._created_date = created_date
-
-    @property
-    def modified_date(self) -> datetime:
-        """
-        Gets the modified_date of this PatchOutcome.
-        Timestamp indicating when the outcome was last updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
-
-        :return: The modified_date of this PatchOutcome.
-        :rtype: datetime
-        """
-        return self._modified_date
-
-    @modified_date.setter
-    def modified_date(self, modified_date: datetime) -> None:
-        """
-        Sets the modified_date of this PatchOutcome.
-        Timestamp indicating when the outcome was last updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
-
-        :param modified_date: The modified_date of this PatchOutcome.
-        :type: datetime
-        """
-        
-
-        self._modified_date = modified_date
 
     def to_dict(self):
         """

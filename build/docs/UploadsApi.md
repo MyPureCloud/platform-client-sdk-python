@@ -8,14 +8,69 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 |Method | Description|
 |------------- | -------------|
+|[**get_knowledge_knowledgebase_uploads_urls_job**](UploadsApi.html#get_knowledge_knowledgebase_uploads_urls_job) | Get content upload from URL job status|
 |[**post_integrations_action_draft_function_upload**](UploadsApi.html#post_integrations_action_draft_function_upload) | Create upload presigned URL for draft function package file.|
 |[**post_knowledge_documentuploads**](UploadsApi.html#post_knowledge_documentuploads) | Creates a presigned URL for uploading a knowledge import file with a set of documents|
+|[**post_knowledge_knowledgebase_uploads_urls_jobs**](UploadsApi.html#post_knowledge_knowledgebase_uploads_urls_jobs) | Create content upload from URL job|
 |[**post_languageunderstanding_miner_uploads**](UploadsApi.html#post_languageunderstanding_miner_uploads) | Creates a presigned URL for uploading a chat corpus which will be used for mining by intent miner|
 |[**post_uploads_learning_coverart**](UploadsApi.html#post_uploads_learning_coverart) | Generates pre-signed URL to upload cover art for learning modules|
 |[**post_uploads_publicassets_images**](UploadsApi.html#post_uploads_publicassets_images) | Creates presigned url for uploading a public asset image|
 |[**post_uploads_recordings**](UploadsApi.html#post_uploads_recordings) | Creates presigned url for uploading a recording file|
 |[**post_uploads_workforcemanagement_historicaldata_csv**](UploadsApi.html#post_uploads_workforcemanagement_historicaldata_csv) | Creates presigned url for uploading WFM historical data file. Requires data in csv format.|
 {: class="table table-striped"}
+
+<a name="get_knowledge_knowledgebase_uploads_urls_job"></a>
+
+## [**GetUploadSourceUrlJobStatusResponse**](GetUploadSourceUrlJobStatusResponse.html) get_knowledge_knowledgebase_uploads_urls_job(knowledge_base_id, job_id)
+
+
+
+Get content upload from URL job status
+
+get_knowledge_knowledgebase_uploads_urls_job is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/uploads/urls/jobs/{jobId} 
+
+Requires ALL permissions: 
+
+* knowledge:uploadSourceUrlJob:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.UploadsApi()
+knowledge_base_id = 'knowledge_base_id_example' # str | Knowledge base ID
+job_id = 'job_id_example' # str | Upload job ID
+
+try:
+    # Get content upload from URL job status
+    api_response = api_instance.get_knowledge_knowledgebase_uploads_urls_job(knowledge_base_id, job_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling UploadsApi->get_knowledge_knowledgebase_uploads_urls_job: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **knowledge_base_id** | **str**| Knowledge base ID |  |
+| **job_id** | **str**| Upload job ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**GetUploadSourceUrlJobStatusResponse**](GetUploadSourceUrlJobStatusResponse.html)
 
 <a name="post_integrations_action_draft_function_upload"></a>
 
@@ -118,6 +173,59 @@ except ApiException as e:
 ### Return type
 
 [**UploadUrlResponse**](UploadUrlResponse.html)
+
+<a name="post_knowledge_knowledgebase_uploads_urls_jobs"></a>
+
+## [**CreateUploadSourceUrlJobResponse**](CreateUploadSourceUrlJobResponse.html) post_knowledge_knowledgebase_uploads_urls_jobs(knowledge_base_id, body)
+
+
+
+Create content upload from URL job
+
+post_knowledge_knowledgebase_uploads_urls_jobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/uploads/urls/jobs 
+
+Requires ALL permissions: 
+
+* knowledge:uploadSourceUrlJob:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.UploadsApi()
+knowledge_base_id = 'knowledge_base_id_example' # str | Knowledge base ID
+body = PureCloudPlatformClientV2.CreateUploadSourceUrlJobRequest() # CreateUploadSourceUrlJobRequest | uploadRequest
+
+try:
+    # Create content upload from URL job
+    api_response = api_instance.post_knowledge_knowledgebase_uploads_urls_jobs(knowledge_base_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling UploadsApi->post_knowledge_knowledgebase_uploads_urls_jobs: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **knowledge_base_id** | **str**| Knowledge base ID |  |
+| **body** | [**CreateUploadSourceUrlJobRequest**](CreateUploadSourceUrlJobRequest.html)| uploadRequest |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**CreateUploadSourceUrlJobResponse**](CreateUploadSourceUrlJobResponse.html)
 
 <a name="post_languageunderstanding_miner_uploads"></a>
 

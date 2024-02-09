@@ -7,7 +7,7 @@ title: SegmentAssignmentEvent
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **segment** | [**AddressableEntityRef**](AddressableEntityRef.html) | The segment which was assigned. | [optional] |
+| **segment** | [**AddressableEntityRef**](AddressableEntityRef.html) | The segment which was assigned. | |
 {: class="table table-striped"}
 
 

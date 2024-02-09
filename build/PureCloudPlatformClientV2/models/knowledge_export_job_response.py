@@ -56,6 +56,7 @@ class KnowledgeExportJobResponse(object):
             'id': 'str',
             'download_url': 'str',
             'file_type': 'str',
+            'json_file_version': 'int',
             'count_document_processed': 'int',
             'export_filter': 'KnowledgeExportJobFilter',
             'status': 'str',
@@ -71,6 +72,7 @@ class KnowledgeExportJobResponse(object):
             'id': 'id',
             'download_url': 'downloadURL',
             'file_type': 'fileType',
+            'json_file_version': 'jsonFileVersion',
             'count_document_processed': 'countDocumentProcessed',
             'export_filter': 'exportFilter',
             'status': 'status',
@@ -85,6 +87,7 @@ class KnowledgeExportJobResponse(object):
         self._id = None
         self._download_url = None
         self._file_type = None
+        self._json_file_version = None
         self._count_document_processed = None
         self._export_filter = None
         self._status = None
@@ -171,6 +174,30 @@ class KnowledgeExportJobResponse(object):
             self._file_type = "outdated_sdk_version"
         else:
             self._file_type = file_type
+
+    @property
+    def json_file_version(self) -> int:
+        """
+        Gets the json_file_version of this KnowledgeExportJobResponse.
+        Requested version of the exported json file.
+
+        :return: The json_file_version of this KnowledgeExportJobResponse.
+        :rtype: int
+        """
+        return self._json_file_version
+
+    @json_file_version.setter
+    def json_file_version(self, json_file_version: int) -> None:
+        """
+        Sets the json_file_version of this KnowledgeExportJobResponse.
+        Requested version of the exported json file.
+
+        :param json_file_version: The json_file_version of this KnowledgeExportJobResponse.
+        :type: int
+        """
+        
+
+        self._json_file_version = json_file_version
 
     @property
     def count_document_processed(self) -> int:

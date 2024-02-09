@@ -56,7 +56,10 @@ class CallbackMediaSettings(object):
             'service_level': 'ServiceLevel',
             'auto_answer_alert_tone_seconds': 'float',
             'manual_answer_alert_tone_seconds': 'float',
-            'sub_type_settings': 'dict(str, BaseMediaSettings)'
+            'sub_type_settings': 'dict(str, BaseMediaSettings)',
+            'enable_auto_dial_and_end': 'bool',
+            'auto_dial_delay_seconds': 'int',
+            'auto_end_delay_seconds': 'int'
         }
 
         self.attribute_map = {
@@ -65,7 +68,10 @@ class CallbackMediaSettings(object):
             'service_level': 'serviceLevel',
             'auto_answer_alert_tone_seconds': 'autoAnswerAlertToneSeconds',
             'manual_answer_alert_tone_seconds': 'manualAnswerAlertToneSeconds',
-            'sub_type_settings': 'subTypeSettings'
+            'sub_type_settings': 'subTypeSettings',
+            'enable_auto_dial_and_end': 'enableAutoDialAndEnd',
+            'auto_dial_delay_seconds': 'autoDialDelaySeconds',
+            'auto_end_delay_seconds': 'autoEndDelaySeconds'
         }
 
         self._enable_auto_answer = None
@@ -74,6 +80,9 @@ class CallbackMediaSettings(object):
         self._auto_answer_alert_tone_seconds = None
         self._manual_answer_alert_tone_seconds = None
         self._sub_type_settings = None
+        self._enable_auto_dial_and_end = None
+        self._auto_dial_delay_seconds = None
+        self._auto_end_delay_seconds = None
 
     @property
     def enable_auto_answer(self) -> bool:
@@ -218,6 +227,78 @@ class CallbackMediaSettings(object):
         
 
         self._sub_type_settings = sub_type_settings
+
+    @property
+    def enable_auto_dial_and_end(self) -> bool:
+        """
+        Gets the enable_auto_dial_and_end of this CallbackMediaSettings.
+        Flag to enable Auto-Dial and Auto-End automation for callbacks on this queue.
+
+        :return: The enable_auto_dial_and_end of this CallbackMediaSettings.
+        :rtype: bool
+        """
+        return self._enable_auto_dial_and_end
+
+    @enable_auto_dial_and_end.setter
+    def enable_auto_dial_and_end(self, enable_auto_dial_and_end: bool) -> None:
+        """
+        Sets the enable_auto_dial_and_end of this CallbackMediaSettings.
+        Flag to enable Auto-Dial and Auto-End automation for callbacks on this queue.
+
+        :param enable_auto_dial_and_end: The enable_auto_dial_and_end of this CallbackMediaSettings.
+        :type: bool
+        """
+        
+
+        self._enable_auto_dial_and_end = enable_auto_dial_and_end
+
+    @property
+    def auto_dial_delay_seconds(self) -> int:
+        """
+        Gets the auto_dial_delay_seconds of this CallbackMediaSettings.
+        Time in seconds after agent connects to callback before outgoing call is auto-dialed. Allowable values in range 0 - 1200 seconds. Defaults to 300 seconds.
+
+        :return: The auto_dial_delay_seconds of this CallbackMediaSettings.
+        :rtype: int
+        """
+        return self._auto_dial_delay_seconds
+
+    @auto_dial_delay_seconds.setter
+    def auto_dial_delay_seconds(self, auto_dial_delay_seconds: int) -> None:
+        """
+        Sets the auto_dial_delay_seconds of this CallbackMediaSettings.
+        Time in seconds after agent connects to callback before outgoing call is auto-dialed. Allowable values in range 0 - 1200 seconds. Defaults to 300 seconds.
+
+        :param auto_dial_delay_seconds: The auto_dial_delay_seconds of this CallbackMediaSettings.
+        :type: int
+        """
+        
+
+        self._auto_dial_delay_seconds = auto_dial_delay_seconds
+
+    @property
+    def auto_end_delay_seconds(self) -> int:
+        """
+        Gets the auto_end_delay_seconds of this CallbackMediaSettings.
+        Time in seconds after agent disconnects from the outgoing call before the encasing callback is auto-ended. Allowable values in range 0 - 1200 seconds. Defaults to 300 seconds.
+
+        :return: The auto_end_delay_seconds of this CallbackMediaSettings.
+        :rtype: int
+        """
+        return self._auto_end_delay_seconds
+
+    @auto_end_delay_seconds.setter
+    def auto_end_delay_seconds(self, auto_end_delay_seconds: int) -> None:
+        """
+        Sets the auto_end_delay_seconds of this CallbackMediaSettings.
+        Time in seconds after agent disconnects from the outgoing call before the encasing callback is auto-ended. Allowable values in range 0 - 1200 seconds. Defaults to 300 seconds.
+
+        :param auto_end_delay_seconds: The auto_end_delay_seconds of this CallbackMediaSettings.
+        :type: int
+        """
+        
+
+        self._auto_end_delay_seconds = auto_end_delay_seconds
 
     def to_dict(self):
         """

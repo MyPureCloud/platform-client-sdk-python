@@ -33,9 +33,9 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
-    from . import Context
-    from . import Journey
+    from . import PatchContext
     from . import PatchExternalSegment
+    from . import PatchJourney
 
 class PatchSegment(object):
     """
@@ -52,24 +52,19 @@ class PatchSegment(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'id': 'str',
             'is_active': 'bool',
             'display_name': 'str',
             'version': 'int',
             'description': 'str',
             'color': 'str',
             'should_display_to_agent': 'bool',
-            'context': 'Context',
-            'journey': 'Journey',
+            'context': 'PatchContext',
+            'journey': 'PatchJourney',
             'external_segment': 'PatchExternalSegment',
-            'assignment_expiration_days': 'int',
-            'self_uri': 'str',
-            'created_date': 'datetime',
-            'modified_date': 'datetime'
+            'assignment_expiration_days': 'int'
         }
 
         self.attribute_map = {
-            'id': 'id',
             'is_active': 'isActive',
             'display_name': 'displayName',
             'version': 'version',
@@ -79,13 +74,9 @@ class PatchSegment(object):
             'context': 'context',
             'journey': 'journey',
             'external_segment': 'externalSegment',
-            'assignment_expiration_days': 'assignmentExpirationDays',
-            'self_uri': 'selfUri',
-            'created_date': 'createdDate',
-            'modified_date': 'modifiedDate'
+            'assignment_expiration_days': 'assignmentExpirationDays'
         }
 
-        self._id = None
         self._is_active = None
         self._display_name = None
         self._version = None
@@ -96,33 +87,6 @@ class PatchSegment(object):
         self._journey = None
         self._external_segment = None
         self._assignment_expiration_days = None
-        self._self_uri = None
-        self._created_date = None
-        self._modified_date = None
-
-    @property
-    def id(self) -> str:
-        """
-        Gets the id of this PatchSegment.
-        The globally unique identifier for the object.
-
-        :return: The id of this PatchSegment.
-        :rtype: str
-        """
-        return self._id
-
-    @id.setter
-    def id(self, id: str) -> None:
-        """
-        Sets the id of this PatchSegment.
-        The globally unique identifier for the object.
-
-        :param id: The id of this PatchSegment.
-        :type: str
-        """
-        
-
-        self._id = id
 
     @property
     def is_active(self) -> bool:
@@ -269,48 +233,48 @@ class PatchSegment(object):
         self._should_display_to_agent = should_display_to_agent
 
     @property
-    def context(self) -> 'Context':
+    def context(self) -> 'PatchContext':
         """
         Gets the context of this PatchSegment.
         The context of the segment.
 
         :return: The context of this PatchSegment.
-        :rtype: Context
+        :rtype: PatchContext
         """
         return self._context
 
     @context.setter
-    def context(self, context: 'Context') -> None:
+    def context(self, context: 'PatchContext') -> None:
         """
         Sets the context of this PatchSegment.
         The context of the segment.
 
         :param context: The context of this PatchSegment.
-        :type: Context
+        :type: PatchContext
         """
         
 
         self._context = context
 
     @property
-    def journey(self) -> 'Journey':
+    def journey(self) -> 'PatchJourney':
         """
         Gets the journey of this PatchSegment.
         The pattern of rules defining the segment.
 
         :return: The journey of this PatchSegment.
-        :rtype: Journey
+        :rtype: PatchJourney
         """
         return self._journey
 
     @journey.setter
-    def journey(self, journey: 'Journey') -> None:
+    def journey(self, journey: 'PatchJourney') -> None:
         """
         Sets the journey of this PatchSegment.
         The pattern of rules defining the segment.
 
         :param journey: The journey of this PatchSegment.
-        :type: Journey
+        :type: PatchJourney
         """
         
 
@@ -363,78 +327,6 @@ class PatchSegment(object):
         
 
         self._assignment_expiration_days = assignment_expiration_days
-
-    @property
-    def self_uri(self) -> str:
-        """
-        Gets the self_uri of this PatchSegment.
-        The URI for this object
-
-        :return: The self_uri of this PatchSegment.
-        :rtype: str
-        """
-        return self._self_uri
-
-    @self_uri.setter
-    def self_uri(self, self_uri: str) -> None:
-        """
-        Sets the self_uri of this PatchSegment.
-        The URI for this object
-
-        :param self_uri: The self_uri of this PatchSegment.
-        :type: str
-        """
-        
-
-        self._self_uri = self_uri
-
-    @property
-    def created_date(self) -> datetime:
-        """
-        Gets the created_date of this PatchSegment.
-        Timestamp indicating when the segment was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
-
-        :return: The created_date of this PatchSegment.
-        :rtype: datetime
-        """
-        return self._created_date
-
-    @created_date.setter
-    def created_date(self, created_date: datetime) -> None:
-        """
-        Sets the created_date of this PatchSegment.
-        Timestamp indicating when the segment was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
-
-        :param created_date: The created_date of this PatchSegment.
-        :type: datetime
-        """
-        
-
-        self._created_date = created_date
-
-    @property
-    def modified_date(self) -> datetime:
-        """
-        Gets the modified_date of this PatchSegment.
-        Timestamp indicating when the the segment was last updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
-
-        :return: The modified_date of this PatchSegment.
-        :rtype: datetime
-        """
-        return self._modified_date
-
-    @modified_date.setter
-    def modified_date(self, modified_date: datetime) -> None:
-        """
-        Sets the modified_date of this PatchSegment.
-        Timestamp indicating when the the segment was last updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
-
-        :param modified_date: The modified_date of this PatchSegment.
-        :type: datetime
-        """
-        
-
-        self._modified_date = modified_date
 
     def to_dict(self):
         """

@@ -18,6 +18,7 @@ title: ImportTemplate
 | **splitting_information** | [**SplittingInformation**](SplittingInformation.html) | How to split contact records, required if useSplittingCriteria is true. | [optional] |
 | **list_name_format** | **str** | The list name format for target ContactLists. When Custom is provided, customListNameFormatValue is required. | [optional] |
 | **custom_list_name_format_value** | **str** | Custom value for the list name format, at least %N is required. Any character other than the specified tokens will be used as is. Available tokens: %N: ListNamePrefix; %P: Part number; %F: Filter name; %C: Column value; YYYY: year; MM: month; DD: day; hh: hour; mm: minute; ss: second. | [optional] |
+| **import_status** | [**ImportStatus**](ImportStatus.html) | The status of the import process. | [optional] |
 | **self_uri** | **str** | The URI for this object | [optional] |
 {: class="table table-striped"}
 

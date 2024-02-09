@@ -146,7 +146,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**patch_conversations_messaging_integrations_open_integration_id**](ConversationsApi.html#patch_conversations_messaging_integrations_open_integration_id) | Update an Open messaging integration|
 |[**patch_conversations_messaging_integrations_twitter_integration_id**](ConversationsApi.html#patch_conversations_messaging_integrations_twitter_integration_id) | Update Twitter messaging integration|
 |[**patch_conversations_messaging_integrations_whatsapp_embeddedsignup_integration_id**](ConversationsApi.html#patch_conversations_messaging_integrations_whatsapp_embeddedsignup_integration_id) | Activate a WhatsApp messaging integration created using the WhatsApp embedded signup flow|
-|[**patch_conversations_messaging_integrations_whatsapp_integration_id**](ConversationsApi.html#patch_conversations_messaging_integrations_whatsapp_integration_id) | Update or activate a WhatsApp messaging integration|
+|[**patch_conversations_messaging_integrations_whatsapp_integration_id**](ConversationsApi.html#patch_conversations_messaging_integrations_whatsapp_integration_id) | Update a WhatsApp messaging integration|
 |[**patch_conversations_messaging_setting**](ConversationsApi.html#patch_conversations_messaging_setting) | Update a messaging setting|
 |[**patch_conversations_messaging_supportedcontent_supported_content_id**](ConversationsApi.html#patch_conversations_messaging_supportedcontent_supported_content_id) | Update a supported content profile|
 |[**patch_conversations_settings**](ConversationsApi.html#patch_conversations_settings) | Update Settings|
@@ -7271,9 +7271,7 @@ except ApiException as e:
 
 
 
-Update or activate a WhatsApp messaging integration
-
-The following steps are required in order to fully activate a WhatsApp Integration: Initially, you will need to get an activation code by sending: an action set to Activate, and an authenticationMethod choosing from Sms or Voice. Finally, once you have been informed of an activation code on selected authenticationMethod, you will need to confirm the code by sending: an action set to Confirm, and the confirmationCode you have received from Whatsapp.
+Update a WhatsApp messaging integration
 
 Wraps PATCH /api/v2/conversations/messaging/integrations/whatsapp/{integrationId} 
 
@@ -7298,7 +7296,7 @@ integration_id = 'integration_id_example' # str | Integration ID
 body = PureCloudPlatformClientV2.WhatsAppIntegrationUpdateRequest() # WhatsAppIntegrationUpdateRequest | WhatsAppIntegrationUpdateRequest
 
 try:
-    # Update or activate a WhatsApp messaging integration
+    # Update a WhatsApp messaging integration
     api_response = api_instance.patch_conversations_messaging_integrations_whatsapp_integration_id(integration_id, body)
     pprint(api_response)
 except ApiException as e:
@@ -8146,8 +8144,6 @@ void (empty response body)
 
 Replace this participant with the specified agent
 
-post_conversation_participant_replace_agent is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps POST /api/v2/conversations/{conversationId}/participants/{participantId}/replace/agent 
 
 Requires ANY permissions: 
@@ -8201,8 +8197,6 @@ void (empty response body)
 
 Replace this participant with the an external contact
 
-post_conversation_participant_replace_external is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps POST /api/v2/conversations/{conversationId}/participants/{participantId}/replace/external 
 
 Requires ANY permissions: 
@@ -8255,8 +8249,6 @@ void (empty response body)
 
 
 Replace this participant with the specified queue
-
-post_conversation_participant_replace_queue is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/conversations/{conversationId}/participants/{participantId}/replace/queue 
 
@@ -8674,8 +8666,6 @@ except ApiException as e:
 
 Initiate a consult transfer to an agent
 
-post_conversations_call_participant_consult_agent is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult/agent 
 
 Requires ANY permissions: 
@@ -8730,8 +8720,6 @@ except ApiException as e:
 
 Initiate a consult transfer to an external contact
 
-post_conversations_call_participant_consult_external is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult/external 
 
 Requires ANY permissions: 
@@ -8785,8 +8773,6 @@ except ApiException as e:
 
 
 Initiate a consult transfer to a queue
-
-post_conversations_call_participant_consult_queue is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/consult/queue 
 
@@ -10596,8 +10582,6 @@ void (empty response body)
 
 
 Listen in on the conversation from the point of view of a given participant.
-
-post_conversations_message_participant_monitor is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/conversations/messages/{conversationId}/participants/{participantId}/monitor 
 

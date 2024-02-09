@@ -38,9 +38,12 @@ from typing import Dict
 from typing import Any
 
 from ..models import Empty
+from ..models import CreateUploadSourceUrlJobRequest
+from ..models import CreateUploadSourceUrlJobResponse
 from ..models import ErrorBody
 from ..models import FunctionUploadRequest
 from ..models import FunctionUploadResponse
+from ..models import GetUploadSourceUrlJobStatusResponse
 from ..models import LearningCoverArtUploadUrlRequest
 from ..models import UploadUrlRequest
 from ..models import UploadUrlResponse
@@ -60,6 +63,91 @@ class UploadsApi(object):
             if not config.api_client:
                 config.api_client = ApiClient()
             self.api_client = config.api_client
+
+    def get_knowledge_knowledgebase_uploads_urls_job(self, knowledge_base_id: str, job_id: str, **kwargs) -> 'GetUploadSourceUrlJobStatusResponse':
+        """
+        Get content upload from URL job status
+        
+	    get_knowledge_knowledgebase_uploads_urls_job is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_knowledge_knowledgebase_uploads_urls_job(knowledge_base_id, job_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str knowledge_base_id: Knowledge base ID (required)
+        :param str job_id: Upload job ID (required)
+        :return: GetUploadSourceUrlJobStatusResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['knowledge_base_id', 'job_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_knowledge_knowledgebase_uploads_urls_job" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'knowledge_base_id' is set
+        if ('knowledge_base_id' not in params) or (params['knowledge_base_id'] is None):
+            raise ValueError("Missing the required parameter `knowledge_base_id` when calling `get_knowledge_knowledgebase_uploads_urls_job`")
+        # verify the required parameter 'job_id' is set
+        if ('job_id' not in params) or (params['job_id'] is None):
+            raise ValueError("Missing the required parameter `job_id` when calling `get_knowledge_knowledgebase_uploads_urls_job`")
+
+
+        resource_path = '/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/uploads/urls/jobs/{jobId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'knowledge_base_id' in params:
+            path_params['knowledgeBaseId'] = params['knowledge_base_id']
+        if 'job_id' in params:
+            path_params['jobId'] = params['job_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='GetUploadSourceUrlJobStatusResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
 
     def post_integrations_action_draft_function_upload(self, action_id: str, body: 'FunctionUploadRequest', **kwargs) -> 'FunctionUploadResponse':
         """
@@ -220,6 +308,91 @@ class UploadsApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='UploadUrlResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_knowledge_knowledgebase_uploads_urls_jobs(self, knowledge_base_id: str, body: 'CreateUploadSourceUrlJobRequest', **kwargs) -> 'CreateUploadSourceUrlJobResponse':
+        """
+        Create content upload from URL job
+        
+	    post_knowledge_knowledgebase_uploads_urls_jobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_knowledge_knowledgebase_uploads_urls_jobs(knowledge_base_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str knowledge_base_id: Knowledge base ID (required)
+        :param CreateUploadSourceUrlJobRequest body: uploadRequest (required)
+        :return: CreateUploadSourceUrlJobResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['knowledge_base_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_knowledge_knowledgebase_uploads_urls_jobs" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'knowledge_base_id' is set
+        if ('knowledge_base_id' not in params) or (params['knowledge_base_id'] is None):
+            raise ValueError("Missing the required parameter `knowledge_base_id` when calling `post_knowledge_knowledgebase_uploads_urls_jobs`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_knowledge_knowledgebase_uploads_urls_jobs`")
+
+
+        resource_path = '/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/uploads/urls/jobs'.replace('{format}', 'json')
+        path_params = {}
+        if 'knowledge_base_id' in params:
+            path_params['knowledgeBaseId'] = params['knowledge_base_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='CreateUploadSourceUrlJobResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

@@ -122,6 +122,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_outbound_contactlist_contacts_bulk**](OutboundApi.html#post_outbound_contactlist_contacts_bulk) | Get contacts from a contact list.|
 |[**post_outbound_contactlist_export**](OutboundApi.html#post_outbound_contactlist_export) | Initiate the export of a contact list.|
 |[**post_outbound_contactlistfilters**](OutboundApi.html#post_outbound_contactlistfilters) | Create Contact List Filter|
+|[**post_outbound_contactlistfilters_bulk_retrieve**](OutboundApi.html#post_outbound_contactlistfilters_bulk_retrieve) | Retrieve multiple contact list filters|
 |[**post_outbound_contactlistfilters_preview**](OutboundApi.html#post_outbound_contactlistfilters_preview) | Get a preview of the output of a contact list filter|
 |[**post_outbound_contactlists**](OutboundApi.html#post_outbound_contactlists) | Create a contact List.|
 |[**post_outbound_contactlisttemplates**](OutboundApi.html#post_outbound_contactlisttemplates) | Create Contact List Template|
@@ -4017,7 +4018,7 @@ except ApiException as e:
 
 <a name="get_outbound_importtemplate"></a>
 
-## [**ImportTemplate**](ImportTemplate.html) get_outbound_importtemplate(import_template_id)
+## [**ImportTemplate**](ImportTemplate.html) get_outbound_importtemplate(import_template_id, include_import_status=include_import_status)
 
 
 
@@ -4043,10 +4044,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.OutboundApi()
 import_template_id = 'import_template_id_example' # str | Import Template ID
+include_import_status = False # bool | Import status (optional) (default to False)
 
 try:
     # Get Import Template
-    api_response = api_instance.get_outbound_importtemplate(import_template_id)
+    api_response = api_instance.get_outbound_importtemplate(import_template_id, include_import_status=include_import_status)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling OutboundApi->get_outbound_importtemplate: %s\n" % e)
@@ -4058,6 +4060,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **import_template_id** | **str**| Import Template ID |  |
+| **include_import_status** | **bool**| Import status | [optional] [default to False] |
 {: class="table table-striped"}
 
 ### Return type
@@ -4117,7 +4120,7 @@ except ApiException as e:
 
 <a name="get_outbound_importtemplates"></a>
 
-## [**ImportTemplateEntityListing**](ImportTemplateEntityListing.html) get_outbound_importtemplates(page_size=page_size, page_number=page_number, allow_empty_result=allow_empty_result, filter_type=filter_type, name=name, sort_by=sort_by, sort_order=sort_order, contact_list_template_id=contact_list_template_id)
+## [**ImportTemplateEntityListing**](ImportTemplateEntityListing.html) get_outbound_importtemplates(include_import_status=include_import_status, page_size=page_size, page_number=page_number, allow_empty_result=allow_empty_result, filter_type=filter_type, name=name, sort_by=sort_by, sort_order=sort_order, contact_list_template_id=contact_list_template_id)
 
 
 
@@ -4142,6 +4145,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.OutboundApi()
+include_import_status = False # bool | Import status (optional) (default to False)
 page_size = 25 # int | Page size. The max that will be returned is 100. (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
 allow_empty_result = False # bool | Whether to return an empty page when there are no results for that page (optional) (default to False)
@@ -4153,7 +4157,7 @@ contact_list_template_id = 'contact_list_template_id_example' # str | Contact Li
 
 try:
     # Query Import Templates
-    api_response = api_instance.get_outbound_importtemplates(page_size=page_size, page_number=page_number, allow_empty_result=allow_empty_result, filter_type=filter_type, name=name, sort_by=sort_by, sort_order=sort_order, contact_list_template_id=contact_list_template_id)
+    api_response = api_instance.get_outbound_importtemplates(include_import_status=include_import_status, page_size=page_size, page_number=page_number, allow_empty_result=allow_empty_result, filter_type=filter_type, name=name, sort_by=sort_by, sort_order=sort_order, contact_list_template_id=contact_list_template_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling OutboundApi->get_outbound_importtemplates: %s\n" % e)
@@ -4164,6 +4168,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
+| **include_import_status** | **bool**| Import status | [optional] [default to False] |
 | **page_size** | **int**| Page size. The max that will be returned is 100. | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **allow_empty_result** | **bool**| Whether to return an empty page when there are no results for that page | [optional] [default to False] |
@@ -4767,7 +4772,7 @@ except ApiException as e:
 
 <a name="get_outbound_schedules_emailcampaigns"></a>
 
-## [**MessagingCampaignScheduleEntityListing**](MessagingCampaignScheduleEntityListing.html) get_outbound_schedules_emailcampaigns()
+## [**EmailCampaignScheduleEntityListing**](EmailCampaignScheduleEntityListing.html) get_outbound_schedules_emailcampaigns()
 
 
 
@@ -4808,7 +4813,7 @@ This endpoint does not need any parameters.
 
 ### Return type
 
-[**MessagingCampaignScheduleEntityListing**](MessagingCampaignScheduleEntityListing.html)
+[**EmailCampaignScheduleEntityListing**](EmailCampaignScheduleEntityListing.html)
 
 <a name="get_outbound_schedules_messagingcampaign"></a>
 
@@ -6114,6 +6119,55 @@ except ApiException as e:
 ### Return type
 
 [**ContactListFilter**](ContactListFilter.html)
+
+<a name="post_outbound_contactlistfilters_bulk_retrieve"></a>
+
+## [**ContactListFilterEntityListing**](ContactListFilterEntityListing.html) post_outbound_contactlistfilters_bulk_retrieve(body)
+
+
+
+Retrieve multiple contact list filters
+
+Wraps POST /api/v2/outbound/contactlistfilters/bulk/retrieve 
+
+Requires ANY permissions: 
+
+* outbound:contactListFilter:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.OutboundApi()
+body = PureCloudPlatformClientV2.ContactListFilterBulkRetrieveBody() # ContactListFilterBulkRetrieveBody | The contact list filters to retrieve
+
+try:
+    # Retrieve multiple contact list filters
+    api_response = api_instance.post_outbound_contactlistfilters_bulk_retrieve(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling OutboundApi->post_outbound_contactlistfilters_bulk_retrieve: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**ContactListFilterBulkRetrieveBody**](ContactListFilterBulkRetrieveBody.html)| The contact list filters to retrieve |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**ContactListFilterEntityListing**](ContactListFilterEntityListing.html)
 
 <a name="post_outbound_contactlistfilters_preview"></a>
 

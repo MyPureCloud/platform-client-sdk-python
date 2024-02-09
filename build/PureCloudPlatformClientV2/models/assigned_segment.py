@@ -64,7 +64,7 @@ class AssignedSegment(object):
     def id(self) -> str:
         """
         Gets the id of this AssignedSegment.
-        The globally unique identifier for the object.
+        The ID of the segment assigned.
 
         :return: The id of this AssignedSegment.
         :rtype: str
@@ -75,7 +75,7 @@ class AssignedSegment(object):
     def id(self, id: str) -> None:
         """
         Sets the id of this AssignedSegment.
-        The globally unique identifier for the object.
+        The ID of the segment assigned.
 
         :param id: The id of this AssignedSegment.
         :type: str

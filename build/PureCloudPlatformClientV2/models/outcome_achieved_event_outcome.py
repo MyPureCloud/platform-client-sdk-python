@@ -70,7 +70,7 @@ class OutcomeAchievedEventOutcome(object):
     def id(self) -> str:
         """
         Gets the id of this OutcomeAchievedEventOutcome.
-
+        ID of the outcome.
 
         :return: The id of this OutcomeAchievedEventOutcome.
         :rtype: str
@@ -81,7 +81,7 @@ class OutcomeAchievedEventOutcome(object):
     def id(self, id: str) -> None:
         """
         Sets the id of this OutcomeAchievedEventOutcome.
-
+        ID of the outcome.
 
         :param id: The id of this OutcomeAchievedEventOutcome.
         :type: str
