@@ -35,6 +35,7 @@ from typing import Dict
 if TYPE_CHECKING:
     from . import ExternalContactsUnresolvedContactChangedTopicContactAddress
     from . import ExternalContactsUnresolvedContactChangedTopicDataSchema
+    from . import ExternalContactsUnresolvedContactChangedTopicDivision
     from . import ExternalContactsUnresolvedContactChangedTopicExternalOrganization
     from . import ExternalContactsUnresolvedContactChangedTopicFacebookId
     from . import ExternalContactsUnresolvedContactChangedTopicInstagramId
@@ -59,6 +60,7 @@ class ExternalContactsUnresolvedContactChangedTopicContact(object):
         """
         self.swagger_types = {
             'id': 'str',
+            'division': 'ExternalContactsUnresolvedContactChangedTopicDivision',
             'external_organization': 'ExternalContactsUnresolvedContactChangedTopicExternalOrganization',
             'type': 'str',
             'first_name': 'str',
@@ -89,6 +91,7 @@ class ExternalContactsUnresolvedContactChangedTopicContact(object):
 
         self.attribute_map = {
             'id': 'id',
+            'division': 'division',
             'external_organization': 'externalOrganization',
             'type': 'type',
             'first_name': 'firstName',
@@ -118,6 +121,7 @@ class ExternalContactsUnresolvedContactChangedTopicContact(object):
         }
 
         self._id = None
+        self._division = None
         self._external_organization = None
         self._type = None
         self._first_name = None
@@ -168,6 +172,30 @@ class ExternalContactsUnresolvedContactChangedTopicContact(object):
         
 
         self._id = id
+
+    @property
+    def division(self) -> 'ExternalContactsUnresolvedContactChangedTopicDivision':
+        """
+        Gets the division of this ExternalContactsUnresolvedContactChangedTopicContact.
+
+
+        :return: The division of this ExternalContactsUnresolvedContactChangedTopicContact.
+        :rtype: ExternalContactsUnresolvedContactChangedTopicDivision
+        """
+        return self._division
+
+    @division.setter
+    def division(self, division: 'ExternalContactsUnresolvedContactChangedTopicDivision') -> None:
+        """
+        Sets the division of this ExternalContactsUnresolvedContactChangedTopicContact.
+
+
+        :param division: The division of this ExternalContactsUnresolvedContactChangedTopicContact.
+        :type: ExternalContactsUnresolvedContactChangedTopicDivision
+        """
+        
+
+        self._division = division
 
     @property
     def external_organization(self) -> 'ExternalContactsUnresolvedContactChangedTopicExternalOrganization':

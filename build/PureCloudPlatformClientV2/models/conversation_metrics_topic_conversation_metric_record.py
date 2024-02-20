@@ -112,7 +112,6 @@ class ConversationMetricsTopicConversationMetricRecord(object):
             'queue_id': 'str',
             'remote': 'str',
             'removed_skill_ids': 'list[str]',
-            'reoffered': 'bool',
             'requested_language_id': 'str',
             'requested_routing_skill_ids': 'list[str]',
             'requested_routings': 'list[str]',
@@ -198,7 +197,6 @@ class ConversationMetricsTopicConversationMetricRecord(object):
             'queue_id': 'queueId',
             'remote': 'remote',
             'removed_skill_ids': 'removedSkillIds',
-            'reoffered': 'reoffered',
             'requested_language_id': 'requestedLanguageId',
             'requested_routing_skill_ids': 'requestedRoutingSkillIds',
             'requested_routings': 'requestedRoutings',
@@ -283,7 +281,6 @@ class ConversationMetricsTopicConversationMetricRecord(object):
         self._queue_id = None
         self._remote = None
         self._removed_skill_ids = None
-        self._reoffered = None
         self._requested_language_id = None
         self._requested_routing_skill_ids = None
         self._requested_routings = None
@@ -1819,30 +1816,6 @@ class ConversationMetricsTopicConversationMetricRecord(object):
         
 
         self._removed_skill_ids = removed_skill_ids
-
-    @property
-    def reoffered(self) -> bool:
-        """
-        Gets the reoffered of this ConversationMetricsTopicConversationMetricRecord.
-        Marker for an interaction that got reoffered to the same queue by an in-queue flow
-
-        :return: The reoffered of this ConversationMetricsTopicConversationMetricRecord.
-        :rtype: bool
-        """
-        return self._reoffered
-
-    @reoffered.setter
-    def reoffered(self, reoffered: bool) -> None:
-        """
-        Sets the reoffered of this ConversationMetricsTopicConversationMetricRecord.
-        Marker for an interaction that got reoffered to the same queue by an in-queue flow
-
-        :param reoffered: The reoffered of this ConversationMetricsTopicConversationMetricRecord.
-        :type: bool
-        """
-        
-
-        self._reoffered = reoffered
 
     @property
     def requested_language_id(self) -> str:

@@ -13,6 +13,7 @@ title: AttributeDetailEventTopicAttributeUpdateEvent
 | **attributes** | **dict(str, str)** |  | [optional] |
 | **conversation_external_contact_ids** | **list[str]** |  | [optional] |
 | **conversation_external_organization_ids** | **list[str]** |  | [optional] |
+| **communications** | [**list[AttributeDetailEventTopicCommunication]**](AttributeDetailEventTopicCommunication.html) |  | [optional] |
 {: class="table table-striped"}
 
 

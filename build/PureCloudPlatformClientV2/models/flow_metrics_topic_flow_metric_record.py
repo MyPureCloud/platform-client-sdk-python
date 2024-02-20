@@ -123,7 +123,6 @@ class FlowMetricsTopicFlowMetricRecord(object):
             'recognition_failure_reason': 'str',
             'remote': 'str',
             'removed_skill_ids': 'list[str]',
-            'reoffered': 'bool',
             'requested_language_id': 'str',
             'requested_routing_skill_ids': 'list[str]',
             'requested_routings': 'list[str]',
@@ -224,7 +223,6 @@ class FlowMetricsTopicFlowMetricRecord(object):
             'recognition_failure_reason': 'recognitionFailureReason',
             'remote': 'remote',
             'removed_skill_ids': 'removedSkillIds',
-            'reoffered': 'reoffered',
             'requested_language_id': 'requestedLanguageId',
             'requested_routing_skill_ids': 'requestedRoutingSkillIds',
             'requested_routings': 'requestedRoutings',
@@ -324,7 +322,6 @@ class FlowMetricsTopicFlowMetricRecord(object):
         self._recognition_failure_reason = None
         self._remote = None
         self._removed_skill_ids = None
-        self._reoffered = None
         self._requested_language_id = None
         self._requested_routing_skill_ids = None
         self._requested_routings = None
@@ -2115,30 +2112,6 @@ class FlowMetricsTopicFlowMetricRecord(object):
         
 
         self._removed_skill_ids = removed_skill_ids
-
-    @property
-    def reoffered(self) -> bool:
-        """
-        Gets the reoffered of this FlowMetricsTopicFlowMetricRecord.
-        Marker for an interaction that got reoffered to the same queue by an in-queue flow
-
-        :return: The reoffered of this FlowMetricsTopicFlowMetricRecord.
-        :rtype: bool
-        """
-        return self._reoffered
-
-    @reoffered.setter
-    def reoffered(self, reoffered: bool) -> None:
-        """
-        Sets the reoffered of this FlowMetricsTopicFlowMetricRecord.
-        Marker for an interaction that got reoffered to the same queue by an in-queue flow
-
-        :param reoffered: The reoffered of this FlowMetricsTopicFlowMetricRecord.
-        :type: bool
-        """
-        
-
-        self._reoffered = reoffered
 
     @property
     def requested_language_id(self) -> str:

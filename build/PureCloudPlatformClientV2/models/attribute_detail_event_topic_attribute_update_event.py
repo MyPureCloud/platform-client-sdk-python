@@ -32,6 +32,8 @@ from typing import TYPE_CHECKING
 from typing import List
 from typing import Dict
 
+if TYPE_CHECKING:
+    from . import AttributeDetailEventTopicCommunication
 
 class AttributeDetailEventTopicAttributeUpdateEvent(object):
     """
@@ -53,7 +55,8 @@ class AttributeDetailEventTopicAttributeUpdateEvent(object):
             'participant_id': 'str',
             'attributes': 'dict(str, str)',
             'conversation_external_contact_ids': 'list[str]',
-            'conversation_external_organization_ids': 'list[str]'
+            'conversation_external_organization_ids': 'list[str]',
+            'communications': 'list[AttributeDetailEventTopicCommunication]'
         }
 
         self.attribute_map = {
@@ -62,7 +65,8 @@ class AttributeDetailEventTopicAttributeUpdateEvent(object):
             'participant_id': 'participantId',
             'attributes': 'attributes',
             'conversation_external_contact_ids': 'conversationExternalContactIds',
-            'conversation_external_organization_ids': 'conversationExternalOrganizationIds'
+            'conversation_external_organization_ids': 'conversationExternalOrganizationIds',
+            'communications': 'communications'
         }
 
         self._event_time = None
@@ -71,6 +75,7 @@ class AttributeDetailEventTopicAttributeUpdateEvent(object):
         self._attributes = None
         self._conversation_external_contact_ids = None
         self._conversation_external_organization_ids = None
+        self._communications = None
 
     @property
     def event_time(self) -> int:
@@ -215,6 +220,30 @@ class AttributeDetailEventTopicAttributeUpdateEvent(object):
         
 
         self._conversation_external_organization_ids = conversation_external_organization_ids
+
+    @property
+    def communications(self) -> List['AttributeDetailEventTopicCommunication']:
+        """
+        Gets the communications of this AttributeDetailEventTopicAttributeUpdateEvent.
+
+
+        :return: The communications of this AttributeDetailEventTopicAttributeUpdateEvent.
+        :rtype: list[AttributeDetailEventTopicCommunication]
+        """
+        return self._communications
+
+    @communications.setter
+    def communications(self, communications: List['AttributeDetailEventTopicCommunication']) -> None:
+        """
+        Sets the communications of this AttributeDetailEventTopicAttributeUpdateEvent.
+
+
+        :param communications: The communications of this AttributeDetailEventTopicAttributeUpdateEvent.
+        :type: list[AttributeDetailEventTopicCommunication]
+        """
+        
+
+        self._communications = communications
 
     def to_dict(self):
         """
