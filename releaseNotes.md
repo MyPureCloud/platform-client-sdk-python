@@ -1,7 +1,7 @@
 Platform API version: 7756
 
 
-Testing PyPi publication
+Testing a Python SDK build issue.  No changes to the SDK disregard
 
 # Major Changes (0 changes)
 
