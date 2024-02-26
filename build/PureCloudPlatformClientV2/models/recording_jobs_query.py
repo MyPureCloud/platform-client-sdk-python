@@ -59,7 +59,8 @@ class RecordingJobsQuery(object):
             'include_recordings_with_sensitive_data': 'bool',
             'include_screen_recordings': 'bool',
             'clear_export': 'bool',
-            'conversation_query': 'AsyncConversationQuery'
+            'conversation_query': 'AsyncConversationQuery',
+            'aged_conversation_interval': 'str'
         }
 
         self.attribute_map = {
@@ -72,7 +73,8 @@ class RecordingJobsQuery(object):
             'include_recordings_with_sensitive_data': 'includeRecordingsWithSensitiveData',
             'include_screen_recordings': 'includeScreenRecordings',
             'clear_export': 'clearExport',
-            'conversation_query': 'conversationQuery'
+            'conversation_query': 'conversationQuery',
+            'aged_conversation_interval': 'agedConversationInterval'
         }
 
         self._action = None
@@ -85,6 +87,7 @@ class RecordingJobsQuery(object):
         self._include_screen_recordings = None
         self._clear_export = None
         self._conversation_query = None
+        self._aged_conversation_interval = None
 
     @property
     def action(self) -> str:
@@ -311,7 +314,7 @@ class RecordingJobsQuery(object):
     def conversation_query(self) -> 'AsyncConversationQuery':
         """
         Gets the conversation_query of this RecordingJobsQuery.
-        Conversation Query. Note: After the recording is created, it might take up to 48 hours for the recording to be included in the submitted job query.  This result depends on the analytics data lake job completion. See also: https://developer.genesys.cloud/analyticsdatamanagement/analytics/jobs/conversation-details-job#data-availability.This is required only when querying for conversations lesser than 5 years.
+        Conversation Query. Note: After the recording is created, it might take up to 48 hours for the recording to be included in the submitted job query.  This result depends on the analytics data lake job completion. See also: https://developer.genesys.cloud/analyticsdatamanagement/analytics/jobs/conversation-details-job#data-availability.This is supported only when querying for conversations up to and including 5 years old.
 
         :return: The conversation_query of this RecordingJobsQuery.
         :rtype: AsyncConversationQuery
@@ -322,7 +325,7 @@ class RecordingJobsQuery(object):
     def conversation_query(self, conversation_query: 'AsyncConversationQuery') -> None:
         """
         Sets the conversation_query of this RecordingJobsQuery.
-        Conversation Query. Note: After the recording is created, it might take up to 48 hours for the recording to be included in the submitted job query.  This result depends on the analytics data lake job completion. See also: https://developer.genesys.cloud/analyticsdatamanagement/analytics/jobs/conversation-details-job#data-availability.This is required only when querying for conversations lesser than 5 years.
+        Conversation Query. Note: After the recording is created, it might take up to 48 hours for the recording to be included in the submitted job query.  This result depends on the analytics data lake job completion. See also: https://developer.genesys.cloud/analyticsdatamanagement/analytics/jobs/conversation-details-job#data-availability.This is supported only when querying for conversations up to and including 5 years old.
 
         :param conversation_query: The conversation_query of this RecordingJobsQuery.
         :type: AsyncConversationQuery
@@ -330,6 +333,30 @@ class RecordingJobsQuery(object):
         
 
         self._conversation_query = conversation_query
+
+    @property
+    def aged_conversation_interval(self) -> str:
+        """
+        Gets the aged_conversation_interval of this RecordingJobsQuery.
+        As an alternative to conversationQuery, specify the date and time range of conversations that are older than 5 years to query.Results will include all conversations that had activity during the interval. This is supported only when querying for conversations older than 5 years;conversationQuery must not be provided when this is provided. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss.Interval duration must not exceed 6 months. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
+
+        :return: The aged_conversation_interval of this RecordingJobsQuery.
+        :rtype: str
+        """
+        return self._aged_conversation_interval
+
+    @aged_conversation_interval.setter
+    def aged_conversation_interval(self, aged_conversation_interval: str) -> None:
+        """
+        Sets the aged_conversation_interval of this RecordingJobsQuery.
+        As an alternative to conversationQuery, specify the date and time range of conversations that are older than 5 years to query.Results will include all conversations that had activity during the interval. This is supported only when querying for conversations older than 5 years;conversationQuery must not be provided when this is provided. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss.Interval duration must not exceed 6 months. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
+
+        :param aged_conversation_interval: The aged_conversation_interval of this RecordingJobsQuery.
+        :type: str
+        """
+        
+
+        self._aged_conversation_interval = aged_conversation_interval
 
     def to_dict(self):
         """

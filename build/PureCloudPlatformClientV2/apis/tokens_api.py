@@ -287,7 +287,6 @@ class TokensApi(object):
         """
         Get the current Idle Token Timeout Value
         
-	    get_tokens_timeout is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -432,7 +431,6 @@ class TokensApi(object):
         """
         Update or Enable/Disable the Idle Token Timeout
         
-	    put_tokens_timeout is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

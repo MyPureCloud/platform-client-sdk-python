@@ -63,6 +63,7 @@ class ChatMessageResponse(object):
             'attachment_deleted': 'bool',
             'file_uri': 'str',
             'thread': 'Entity',
+            'parent_thread': 'Entity',
             'user': 'AddressableEntityRef',
             'to_user': 'AddressableEntityRef',
             'reactions': 'list[ChatReaction]'
@@ -80,6 +81,7 @@ class ChatMessageResponse(object):
             'attachment_deleted': 'attachmentDeleted',
             'file_uri': 'fileUri',
             'thread': 'thread',
+            'parent_thread': 'parentThread',
             'user': 'user',
             'to_user': 'toUser',
             'reactions': 'reactions'
@@ -96,6 +98,7 @@ class ChatMessageResponse(object):
         self._attachment_deleted = None
         self._file_uri = None
         self._thread = None
+        self._parent_thread = None
         self._user = None
         self._to_user = None
         self._reactions = None
@@ -363,6 +366,30 @@ class ChatMessageResponse(object):
         
 
         self._thread = thread
+
+    @property
+    def parent_thread(self) -> 'Entity':
+        """
+        Gets the parent_thread of this ChatMessageResponse.
+        Parent thread id for thread replies
+
+        :return: The parent_thread of this ChatMessageResponse.
+        :rtype: Entity
+        """
+        return self._parent_thread
+
+    @parent_thread.setter
+    def parent_thread(self, parent_thread: 'Entity') -> None:
+        """
+        Sets the parent_thread of this ChatMessageResponse.
+        Parent thread id for thread replies
+
+        :param parent_thread: The parent_thread of this ChatMessageResponse.
+        :type: Entity
+        """
+        
+
+        self._parent_thread = parent_thread
 
     @property
     def user(self) -> 'AddressableEntityRef':

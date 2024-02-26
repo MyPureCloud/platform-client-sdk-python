@@ -6123,7 +6123,6 @@ class AnalyticsApi(object):
         """
         Query for knowledge aggregates
         
-	    post_analytics_knowledge_aggregates_query is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

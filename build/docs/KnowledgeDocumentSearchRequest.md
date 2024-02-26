@@ -21,6 +21,7 @@ title: KnowledgeDocumentSearchRequest
 | **sort_by** | **str** | The field in the documents that you want to sort the search results by. | [optional] |
 | **application** | [**KnowledgeSearchClientApplication**](KnowledgeSearchClientApplication.html) | The client application details from which search request was sent. | [optional] |
 | **conversation_context** | [**KnowledgeConversationContext**](KnowledgeConversationContext.html) | Conversation context information if the search is initiated in the context of a conversation. | [optional] |
+| **confidence_threshold** | **float** | The confidence threshold for the search results. If applied, the returned results will have an equal or higher confidence than the threshold. The value should be between 0 to 1. | [optional] |
 {: class="table table-striped"}
 
 

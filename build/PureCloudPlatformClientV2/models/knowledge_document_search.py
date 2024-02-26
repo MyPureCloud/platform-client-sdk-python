@@ -61,7 +61,8 @@ class KnowledgeDocumentSearch(object):
             'query_type': 'str',
             'results': 'list[KnowledgeDocumentSearchResult]',
             'application': 'KnowledgeSearchClientApplication',
-            'conversation_context': 'KnowledgeConversationContextResponse'
+            'conversation_context': 'KnowledgeConversationContextResponse',
+            'confidence_threshold': 'float'
         }
 
         self.attribute_map = {
@@ -74,7 +75,8 @@ class KnowledgeDocumentSearch(object):
             'query_type': 'queryType',
             'results': 'results',
             'application': 'application',
-            'conversation_context': 'conversationContext'
+            'conversation_context': 'conversationContext',
+            'confidence_threshold': 'confidenceThreshold'
         }
 
         self._query = None
@@ -87,6 +89,7 @@ class KnowledgeDocumentSearch(object):
         self._results = None
         self._application = None
         self._conversation_context = None
+        self._confidence_threshold = None
 
     @property
     def query(self) -> str:
@@ -338,6 +341,30 @@ class KnowledgeDocumentSearch(object):
         
 
         self._conversation_context = conversation_context
+
+    @property
+    def confidence_threshold(self) -> float:
+        """
+        Gets the confidence_threshold of this KnowledgeDocumentSearch.
+        The confidence threshold for the search results. If applied, the returned results will have an equal or higher confidence than the threshold.
+
+        :return: The confidence_threshold of this KnowledgeDocumentSearch.
+        :rtype: float
+        """
+        return self._confidence_threshold
+
+    @confidence_threshold.setter
+    def confidence_threshold(self, confidence_threshold: float) -> None:
+        """
+        Sets the confidence_threshold of this KnowledgeDocumentSearch.
+        The confidence threshold for the search results. If applied, the returned results will have an equal or higher confidence than the threshold.
+
+        :param confidence_threshold: The confidence_threshold of this KnowledgeDocumentSearch.
+        :type: float
+        """
+        
+
+        self._confidence_threshold = confidence_threshold
 
     def to_dict(self):
         """

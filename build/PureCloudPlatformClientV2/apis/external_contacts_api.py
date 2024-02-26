@@ -2579,7 +2579,7 @@ class ExternalContactsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param int limit: The number of contacts per page; must be between 10 and 200, default is 100)
+        :param int limit: The number of contacts per page; must be between 10 and 200, default is 100
         :param str cursor: Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL
         :return: CursorContactListing
                  If the method is called asynchronously,
@@ -2657,7 +2657,7 @@ class ExternalContactsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param int limit: The number of notes per page; must be between 10 and 200, default is 100)
+        :param int limit: The number of notes per page; must be between 10 and 200, default is 100
         :param str cursor: Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL
         :return: CursorNoteListing
                  If the method is called asynchronously,
@@ -2735,7 +2735,7 @@ class ExternalContactsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param int limit: The number of organizations per page; must be between 10 and 200, default is 100)
+        :param int limit: The number of organizations per page; must be between 10 and 200, default is 100
         :param str cursor: Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL
         :return: CursorOrganizationListing
                  If the method is called asynchronously,
@@ -2813,7 +2813,7 @@ class ExternalContactsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param int limit: The number of relationships per page; must be between 10 and 200, default is 100)
+        :param int limit: The number of relationships per page; must be between 10 and 200, default is 100
         :param str cursor: Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL
         :return: CursorRelationshipListing
                  If the method is called asynchronously,

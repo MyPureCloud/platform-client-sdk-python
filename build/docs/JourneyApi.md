@@ -13,6 +13,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**delete_journey_outcome**](JourneyApi.html#delete_journey_outcome) | Delete an outcome.|
 |[**delete_journey_outcomes_predictor**](JourneyApi.html#delete_journey_outcomes_predictor) | Delete an outcome predictor.|
 |[**delete_journey_segment**](JourneyApi.html#delete_journey_segment) | Delete a segment.|
+|[**delete_journey_view**](JourneyApi.html#delete_journey_view) | Delete a Journey View by ID|
 |[**get_analytics_journeys_aggregates_job**](JourneyApi.html#get_analytics_journeys_aggregates_job) | Get status for async query for journey aggregates|
 |[**get_analytics_journeys_aggregates_job_results**](JourneyApi.html#get_analytics_journeys_aggregates_job_results) | Fetch a page of results for an async aggregates query|
 |[**get_externalcontacts_contact_journey_sessions**](JourneyApi.html#get_externalcontacts_contact_journey_sessions) | Retrieve all sessions for a given external contact.|
@@ -36,6 +37,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_journey_session**](JourneyApi.html#get_journey_session) | Retrieve a single session.|
 |[**get_journey_session_events**](JourneyApi.html#get_journey_session_events) | Retrieve all events for a given session.|
 |[**get_journey_session_outcomescores**](JourneyApi.html#get_journey_session_outcomescores) | Retrieve latest outcome score associated with a session for all outcomes.|
+|[**get_journey_view**](JourneyApi.html#get_journey_view) | Get a Journey View by ID|
+|[**get_journey_view_version**](JourneyApi.html#get_journey_view_version) | Get a Journey View by ID and version|
+|[**get_journey_views**](JourneyApi.html#get_journey_views) | Get a list of Journey Views|
 |[**patch_journey_actionmap**](JourneyApi.html#patch_journey_actionmap) | Update single action map.|
 |[**patch_journey_actiontarget**](JourneyApi.html#patch_journey_actiontarget) | Update a single action target.|
 |[**patch_journey_actiontemplate**](JourneyApi.html#patch_journey_actiontemplate) | Update a single action template.|
@@ -48,10 +52,13 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_journey_actiontemplates**](JourneyApi.html#post_journey_actiontemplates) | Create a single action template.|
 |[**post_journey_deployment_actionevent**](JourneyApi.html#post_journey_deployment_actionevent) | Sends an action event, which is used for changing the state of actions that have been offered to the user.|
 |[**post_journey_deployment_appevents**](JourneyApi.html#post_journey_deployment_appevents) | Send a journey app event, used for tracking customer activity on an application.|
+|[**post_journey_flows_paths_query**](JourneyApi.html#post_journey_flows_paths_query) | Query for flow paths.|
 |[**post_journey_outcomes**](JourneyApi.html#post_journey_outcomes) | Create an outcome.|
 |[**post_journey_outcomes_attributions_jobs**](JourneyApi.html#post_journey_outcomes_attributions_jobs) | Create Outcome Attributions|
 |[**post_journey_outcomes_predictors**](JourneyApi.html#post_journey_outcomes_predictors) | Create an outcome predictor.|
 |[**post_journey_segments**](JourneyApi.html#post_journey_segments) | Create a segment.|
+|[**post_journey_view_versions**](JourneyApi.html#post_journey_view_versions) | Update a Journey View by ID|
+|[**post_journey_views**](JourneyApi.html#post_journey_views) | Create a new Journey View|
 {: class="table table-striped"}
 
 <a name="delete_journey_actionmap"></a>
@@ -290,6 +297,58 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **segment_id** | **str**| ID of the segment. |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
+
+<a name="delete_journey_view"></a>
+
+##  delete_journey_view(view_id)
+
+
+
+Delete a Journey View by ID
+
+deletes all versions
+
+delete_journey_view is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps DELETE /api/v2/journey/views/{viewId} 
+
+Requires ALL permissions: 
+
+* journey:views:delete
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.JourneyApi()
+view_id = 'view_id_example' # str | viewId
+
+try:
+    # Delete a Journey View by ID
+    api_instance.delete_journey_view(view_id)
+except ApiException as e:
+    print("Exception when calling JourneyApi->delete_journey_view: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **view_id** | **str**| viewId |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1500,6 +1559,159 @@ except ApiException as e:
 
 [**OutcomeScoresResult**](OutcomeScoresResult.html)
 
+<a name="get_journey_view"></a>
+
+## [**JourneyView**](JourneyView.html) get_journey_view(view_id)
+
+
+
+Get a Journey View by ID
+
+returns the latest version
+
+get_journey_view is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/journey/views/{viewId} 
+
+Requires ALL permissions: 
+
+* journey:views:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.JourneyApi()
+view_id = 'view_id_example' # str | viewId
+
+try:
+    # Get a Journey View by ID
+    api_response = api_instance.get_journey_view(view_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling JourneyApi->get_journey_view: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **view_id** | **str**| viewId |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**JourneyView**](JourneyView.html)
+
+<a name="get_journey_view_version"></a>
+
+## [**JourneyView**](JourneyView.html) get_journey_view_version(view_id, version_id)
+
+
+
+Get a Journey View by ID and version
+
+get_journey_view_version is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/journey/views/{viewId}/versions/{versionId} 
+
+Requires ALL permissions: 
+
+* journey:views:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.JourneyApi()
+view_id = 'view_id_example' # str | viewId
+version_id = 'version_id_example' # str | versionId
+
+try:
+    # Get a Journey View by ID and version
+    api_response = api_instance.get_journey_view_version(view_id, version_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling JourneyApi->get_journey_view_version: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **view_id** | **str**| viewId |  |
+| **version_id** | **str**| versionId |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**JourneyView**](JourneyView.html)
+
+<a name="get_journey_views"></a>
+
+## [**AddressableEntityListing**](AddressableEntityListing.html) get_journey_views()
+
+
+
+Get a list of Journey Views
+
+get_journey_views is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/journey/views 
+
+Requires ALL permissions: 
+
+* journey:views:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.JourneyApi()
+
+try:
+    # Get a list of Journey Views
+    api_response = api_instance.get_journey_views()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling JourneyApi->get_journey_views: %s\n" % e)
+```
+
+### Parameters
+
+This endpoint does not need any parameters.
+
+
+### Return type
+
+[**AddressableEntityListing**](AddressableEntityListing.html)
+
 <a name="patch_journey_actionmap"></a>
 
 ## [**ActionMap**](ActionMap.html) patch_journey_actionmap(action_map_id, body=body)
@@ -2095,6 +2307,57 @@ except ApiException as e:
 
 [**AppEventResponse**](AppEventResponse.html)
 
+<a name="post_journey_flows_paths_query"></a>
+
+## [**FlowPaths**](FlowPaths.html) post_journey_flows_paths_query(body=body)
+
+
+
+Query for flow paths.
+
+post_journey_flows_paths_query is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/journey/flows/paths/query 
+
+Requires ALL permissions: 
+
+* journey:flowpaths:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.JourneyApi()
+body = PureCloudPlatformClientV2.FlowPathsQuery() # FlowPathsQuery |  (optional)
+
+try:
+    # Query for flow paths.
+    api_response = api_instance.post_journey_flows_paths_query(body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling JourneyApi->post_journey_flows_paths_query: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**FlowPathsQuery**](FlowPathsQuery.html)|  | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**FlowPaths**](FlowPaths.html)
+
 <a name="post_journey_outcomes"></a>
 
 ## [**Outcome**](Outcome.html) post_journey_outcomes(body=body)
@@ -2292,4 +2555,110 @@ except ApiException as e:
 ### Return type
 
 [**JourneySegment**](JourneySegment.html)
+
+<a name="post_journey_view_versions"></a>
+
+## [**JourneyView**](JourneyView.html) post_journey_view_versions(view_id, body)
+
+
+
+Update a Journey View by ID
+
+creates a new version
+
+post_journey_view_versions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/journey/views/{viewId}/versions 
+
+Requires ALL permissions: 
+
+* journey:views:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.JourneyApi()
+view_id = 'view_id_example' # str | viewId
+body = PureCloudPlatformClientV2.JourneyView() # JourneyView | JourneyView
+
+try:
+    # Update a Journey View by ID
+    api_response = api_instance.post_journey_view_versions(view_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling JourneyApi->post_journey_view_versions: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **view_id** | **str**| viewId |  |
+| **body** | [**JourneyView**](JourneyView.html)| JourneyView |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**JourneyView**](JourneyView.html)
+
+<a name="post_journey_views"></a>
+
+## [**JourneyView**](JourneyView.html) post_journey_views(body)
+
+
+
+Create a new Journey View
+
+post_journey_views is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/journey/views 
+
+Requires ALL permissions: 
+
+* journey:views:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.JourneyApi()
+body = PureCloudPlatformClientV2.JourneyView() # JourneyView | JourneyView
+
+try:
+    # Create a new Journey View
+    api_response = api_instance.post_journey_views(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling JourneyApi->post_journey_views: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**JourneyView**](JourneyView.html)| JourneyView |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**JourneyView**](JourneyView.html)
 

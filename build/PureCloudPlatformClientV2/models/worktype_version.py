@@ -78,6 +78,7 @@ class WorktypeVersion(object):
             'default_skills': 'list[RoutingSkillReference]',
             'assignment_enabled': 'bool',
             'schema': 'WorkitemSchema',
+            'service_level_target': 'int',
             'version': 'int',
             'self_uri': 'str'
         }
@@ -103,6 +104,7 @@ class WorktypeVersion(object):
             'default_skills': 'defaultSkills',
             'assignment_enabled': 'assignmentEnabled',
             'schema': 'schema',
+            'service_level_target': 'serviceLevelTarget',
             'version': 'version',
             'self_uri': 'selfUri'
         }
@@ -127,6 +129,7 @@ class WorktypeVersion(object):
         self._default_skills = None
         self._assignment_enabled = None
         self._schema = None
+        self._service_level_target = None
         self._version = None
         self._self_uri = None
 
@@ -609,6 +612,30 @@ class WorktypeVersion(object):
         
 
         self._schema = schema
+
+    @property
+    def service_level_target(self) -> int:
+        """
+        Gets the service_level_target of this WorktypeVersion.
+        The target service level for Workitems created from the Worktype. The default value is 100.
+
+        :return: The service_level_target of this WorktypeVersion.
+        :rtype: int
+        """
+        return self._service_level_target
+
+    @service_level_target.setter
+    def service_level_target(self, service_level_target: int) -> None:
+        """
+        Sets the service_level_target of this WorktypeVersion.
+        The target service level for Workitems created from the Worktype. The default value is 100.
+
+        :param service_level_target: The service_level_target of this WorktypeVersion.
+        :type: int
+        """
+        
+
+        self._service_level_target = service_level_target
 
     @property
     def version(self) -> int:

@@ -18,6 +18,7 @@ title: ChatMessageResponse
 | **attachment_deleted** | **bool** | If message&#39;s attachment was deleted | [optional] |
 | **file_uri** | **str** | URI of file attachment | [optional] |
 | **thread** | [**Entity**](Entity.html) | The id for a thread this message corresponds to | |
+| **parent_thread** | [**Entity**](Entity.html) | Parent thread id for thread replies | [optional] |
 | **user** | [**AddressableEntityRef**](AddressableEntityRef.html) | The user who sent the message | [optional] |
 | **to_user** | [**AddressableEntityRef**](AddressableEntityRef.html) | The receiving user of the message | [optional] |
 | **reactions** | [**list[ChatReaction]**](ChatReaction.html) | The emoji reactions to this message | [optional] |

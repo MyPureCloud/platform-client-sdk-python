@@ -217,7 +217,7 @@ class CobrowseWebMessagingSession(object):
         """
         if isinstance(communication_type, int):
             communication_type = str(communication_type)
-        allowed_values = ["Call", "Message"]
+        allowed_values = ["Call", "Message", "Unknown"]
         if communication_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for communication_type -> " + communication_type)
             self._communication_type = "outdated_sdk_version"

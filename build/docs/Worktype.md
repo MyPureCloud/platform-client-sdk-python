@@ -27,6 +27,7 @@ title: Worktype
 | **default_skills** | [**list[RoutingSkillReference]**](RoutingSkillReference.html) | The default skills for Workitems created from the Worktype. | [optional] |
 | **assignment_enabled** | **bool** | When set to true, Workitems will be sent to the queue of the Worktype as they are created. Default value is false. | [optional] |
 | **schema** | [**WorkitemSchema**](WorkitemSchema.html) | The schema defining the custom attributes for Workitems created from the Worktype. | [optional] |
+| **service_level_target** | **int** | The target service level for Workitems created from the Worktype. The default value is 100. | [optional] |
 | **self_uri** | **str** | The URI for this object | [optional] |
 {: class="table table-striped"}
 

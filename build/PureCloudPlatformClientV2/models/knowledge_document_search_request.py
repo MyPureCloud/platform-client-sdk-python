@@ -66,7 +66,8 @@ class KnowledgeDocumentSearchRequest(object):
             'sort_order': 'str',
             'sort_by': 'str',
             'application': 'KnowledgeSearchClientApplication',
-            'conversation_context': 'KnowledgeConversationContext'
+            'conversation_context': 'KnowledgeConversationContext',
+            'confidence_threshold': 'float'
         }
 
         self.attribute_map = {
@@ -83,7 +84,8 @@ class KnowledgeDocumentSearchRequest(object):
             'sort_order': 'sortOrder',
             'sort_by': 'sortBy',
             'application': 'application',
-            'conversation_context': 'conversationContext'
+            'conversation_context': 'conversationContext',
+            'confidence_threshold': 'confidenceThreshold'
         }
 
         self._query = None
@@ -100,6 +102,7 @@ class KnowledgeDocumentSearchRequest(object):
         self._sort_by = None
         self._application = None
         self._conversation_context = None
+        self._confidence_threshold = None
 
     @property
     def query(self) -> str:
@@ -457,6 +460,30 @@ class KnowledgeDocumentSearchRequest(object):
         
 
         self._conversation_context = conversation_context
+
+    @property
+    def confidence_threshold(self) -> float:
+        """
+        Gets the confidence_threshold of this KnowledgeDocumentSearchRequest.
+        The confidence threshold for the search results. If applied, the returned results will have an equal or higher confidence than the threshold. The value should be between 0 to 1.
+
+        :return: The confidence_threshold of this KnowledgeDocumentSearchRequest.
+        :rtype: float
+        """
+        return self._confidence_threshold
+
+    @confidence_threshold.setter
+    def confidence_threshold(self, confidence_threshold: float) -> None:
+        """
+        Sets the confidence_threshold of this KnowledgeDocumentSearchRequest.
+        The confidence threshold for the search results. If applied, the returned results will have an equal or higher confidence than the threshold. The value should be between 0 to 1.
+
+        :param confidence_threshold: The confidence_threshold of this KnowledgeDocumentSearchRequest.
+        :type: float
+        """
+        
+
+        self._confidence_threshold = confidence_threshold
 
     def to_dict(self):
         """

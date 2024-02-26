@@ -53,18 +53,21 @@ class BuSchedulingSettingsResponse(object):
         self.swagger_types = {
             'message_severities': 'list[SchedulerMessageTypeSeverity]',
             'sync_time_off_properties': 'list[str]',
-            'service_goal_impact': 'WfmServiceGoalImpactSettings'
+            'service_goal_impact': 'WfmServiceGoalImpactSettings',
+            'allow_work_plan_per_minute_granularity': 'bool'
         }
 
         self.attribute_map = {
             'message_severities': 'messageSeverities',
             'sync_time_off_properties': 'syncTimeOffProperties',
-            'service_goal_impact': 'serviceGoalImpact'
+            'service_goal_impact': 'serviceGoalImpact',
+            'allow_work_plan_per_minute_granularity': 'allowWorkPlanPerMinuteGranularity'
         }
 
         self._message_severities = None
         self._sync_time_off_properties = None
         self._service_goal_impact = None
+        self._allow_work_plan_per_minute_granularity = None
 
     @property
     def message_severities(self) -> List['SchedulerMessageTypeSeverity']:
@@ -137,6 +140,30 @@ class BuSchedulingSettingsResponse(object):
         
 
         self._service_goal_impact = service_goal_impact
+
+    @property
+    def allow_work_plan_per_minute_granularity(self) -> bool:
+        """
+        Gets the allow_work_plan_per_minute_granularity of this BuSchedulingSettingsResponse.
+        Indicates whether or not per minute granularity for scheduling will be enabled for this business unit
+
+        :return: The allow_work_plan_per_minute_granularity of this BuSchedulingSettingsResponse.
+        :rtype: bool
+        """
+        return self._allow_work_plan_per_minute_granularity
+
+    @allow_work_plan_per_minute_granularity.setter
+    def allow_work_plan_per_minute_granularity(self, allow_work_plan_per_minute_granularity: bool) -> None:
+        """
+        Sets the allow_work_plan_per_minute_granularity of this BuSchedulingSettingsResponse.
+        Indicates whether or not per minute granularity for scheduling will be enabled for this business unit
+
+        :param allow_work_plan_per_minute_granularity: The allow_work_plan_per_minute_granularity of this BuSchedulingSettingsResponse.
+        :type: bool
+        """
+        
+
+        self._allow_work_plan_per_minute_granularity = allow_work_plan_per_minute_granularity
 
     def to_dict(self):
         """

@@ -55,6 +55,7 @@ class BenefitAssessment(object):
             'queues': 'list[AddressableEntityRef]',
             'kpi_assessments': 'list[KeyPerformanceIndicatorAssessment]',
             'state': 'str',
+            'job_id': 'str',
             'date_created': 'datetime',
             'date_modified': 'datetime',
             'self_uri': 'str'
@@ -65,6 +66,7 @@ class BenefitAssessment(object):
             'queues': 'queues',
             'kpi_assessments': 'kpiAssessments',
             'state': 'state',
+            'job_id': 'jobId',
             'date_created': 'dateCreated',
             'date_modified': 'dateModified',
             'self_uri': 'selfUri'
@@ -74,6 +76,7 @@ class BenefitAssessment(object):
         self._queues = None
         self._kpi_assessments = None
         self._state = None
+        self._job_id = None
         self._date_created = None
         self._date_modified = None
         self._self_uri = None
@@ -178,6 +181,30 @@ class BenefitAssessment(object):
             self._state = "outdated_sdk_version"
         else:
             self._state = state
+
+    @property
+    def job_id(self) -> str:
+        """
+        Gets the job_id of this BenefitAssessment.
+        The unique identifier of job that created this benefit assessment.
+
+        :return: The job_id of this BenefitAssessment.
+        :rtype: str
+        """
+        return self._job_id
+
+    @job_id.setter
+    def job_id(self, job_id: str) -> None:
+        """
+        Sets the job_id of this BenefitAssessment.
+        The unique identifier of job that created this benefit assessment.
+
+        :param job_id: The job_id of this BenefitAssessment.
+        :type: str
+        """
+        
+
+        self._job_id = job_id
 
     @property
     def date_created(self) -> datetime:

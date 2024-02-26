@@ -163,8 +163,6 @@ except ApiException as e:
 
 Get the current Idle Token Timeout Value
 
-get_tokens_timeout is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/tokens/timeout 
 
 Requires ANY permissions: 
@@ -252,8 +250,6 @@ void (empty response body)
 
 
 Update or Enable/Disable the Idle Token Timeout
-
-put_tokens_timeout is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps PUT /api/v2/tokens/timeout 
 

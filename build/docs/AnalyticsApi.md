@@ -3933,8 +3933,6 @@ except ApiException as e:
 
 Query for knowledge aggregates
 
-post_analytics_knowledge_aggregates_query is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps POST /api/v2/analytics/knowledge/aggregates/query 
 
 Requires ANY permissions: 

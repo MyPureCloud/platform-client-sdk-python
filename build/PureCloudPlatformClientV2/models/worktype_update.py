@@ -57,6 +57,7 @@ class WorktypeUpdate(object):
             'default_ttl_seconds': 'int',
             'assignment_enabled': 'bool',
             'schema_id': 'str',
+            'service_level_target': 'int',
             'description': 'str',
             'default_status_id': 'str',
             'schema_version': 'int',
@@ -75,6 +76,7 @@ class WorktypeUpdate(object):
             'default_ttl_seconds': 'defaultTtlSeconds',
             'assignment_enabled': 'assignmentEnabled',
             'schema_id': 'schemaId',
+            'service_level_target': 'serviceLevelTarget',
             'description': 'description',
             'default_status_id': 'defaultStatusId',
             'schema_version': 'schemaVersion',
@@ -92,6 +94,7 @@ class WorktypeUpdate(object):
         self._default_ttl_seconds = None
         self._assignment_enabled = None
         self._schema_id = None
+        self._service_level_target = None
         self._description = None
         self._default_status_id = None
         self._schema_version = None
@@ -314,6 +317,36 @@ class WorktypeUpdate(object):
         
 
         self._schema_id = schema_id
+
+    @property
+    def service_level_target(self) -> int:
+        """
+        Gets the service_level_target of this WorktypeUpdate.
+        The target service level for Workitems created from the Worktype. The default value is 100.
+
+        :return: The service_level_target of this WorktypeUpdate.
+        :rtype: int
+        """
+        return self._service_level_target
+
+    @service_level_target.setter
+    def service_level_target(self, service_level_target: int) -> None:
+        """
+        Sets the service_level_target of this WorktypeUpdate.
+        The target service level for Workitems created from the Worktype. The default value is 100.
+
+        :param service_level_target: The service_level_target of this WorktypeUpdate.
+        :type: int
+        """
+        
+        if service_level_target > 100:
+            raise ValueError("Invalid value for `service_level_target`, must be a value less than or equal to `100`")
+
+        if service_level_target < 1:
+            raise ValueError("Invalid value for `service_level_target`, must be a value greater than or equal to `1`")
+
+
+        self._service_level_target = service_level_target
 
     @property
     def description(self) -> str:
