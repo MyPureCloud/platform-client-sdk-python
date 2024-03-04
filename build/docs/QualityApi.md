@@ -28,14 +28,14 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_quality_evaluators_activity**](QualityApi.html#get_quality_evaluators_activity) | Get an evaluator activity|
 |[**get_quality_form**](QualityApi.html#get_quality_form) | Get an evaluation form|
 |[**get_quality_form_versions**](QualityApi.html#get_quality_form_versions) | Gets all the revisions for a specific evaluation.|
-|[**get_quality_forms**](QualityApi.html#get_quality_forms) | Get the list of evaluation forms|
+|[**get_quality_forms**](QualityApi.html#get_quality_forms) | Get the list of evaluation forms. If you set \&quot;expand&#x3D;publishHistory\&quot;, then you will be able to get published versions for each corresponding evaluation form.|
 |[**get_quality_forms_evaluation**](QualityApi.html#get_quality_forms_evaluation) | Get an evaluation form|
 |[**get_quality_forms_evaluation_versions**](QualityApi.html#get_quality_forms_evaluation_versions) | Gets all the revisions for a specific evaluation.|
 |[**get_quality_forms_evaluations**](QualityApi.html#get_quality_forms_evaluations) | Get the list of evaluation forms|
 |[**get_quality_forms_evaluations_bulk_contexts**](QualityApi.html#get_quality_forms_evaluations_bulk_contexts) | Retrieve a list of the latest published evaluation form versions by context ids|
 |[**get_quality_forms_survey**](QualityApi.html#get_quality_forms_survey) | Get a survey form|
 |[**get_quality_forms_survey_versions**](QualityApi.html#get_quality_forms_survey_versions) | Gets all the revisions for a specific survey.|
-|[**get_quality_forms_surveys**](QualityApi.html#get_quality_forms_surveys) | Get the list of survey forms|
+|[**get_quality_forms_surveys**](QualityApi.html#get_quality_forms_surveys) | Get the list of survey forms. If you set \&quot;expand&#x3D;publishHistory\&quot;, then you will be able to get published versions for each corresponding survey form.|
 |[**get_quality_forms_surveys_bulk**](QualityApi.html#get_quality_forms_surveys_bulk) | Retrieve a list of survey forms by their ids|
 |[**get_quality_forms_surveys_bulk_contexts**](QualityApi.html#get_quality_forms_surveys_bulk_contexts) | Retrieve a list of the latest form versions by context ids|
 |[**get_quality_publishedform**](QualityApi.html#get_quality_publishedform) | Get the published evaluation forms.|
@@ -1202,7 +1202,7 @@ except ApiException as e:
 
 <span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
-Get the list of evaluation forms
+Get the list of evaluation forms. If you set \"expand=publishHistory\", then you will be able to get published versions for each corresponding evaluation form.
 
 Wraps GET /api/v2/quality/forms 
 
@@ -1233,7 +1233,7 @@ name = 'name_example' # str | Name (optional)
 sort_order = 'sort_order_example' # str | Order to sort results, either asc or desc (optional)
 
 try:
-    # Get the list of evaluation forms
+    # Get the list of evaluation forms. If you set \"expand=publishHistory\", then you will be able to get published versions for each corresponding evaluation form.
     api_response = api_instance.get_quality_forms(page_size=page_size, page_number=page_number, sort_by=sort_by, next_page=next_page, previous_page=previous_page, expand=expand, name=name, sort_order=sort_order)
     pprint(api_response)
 except ApiException as e:
@@ -1371,7 +1371,7 @@ except ApiException as e:
 
 Get the list of evaluation forms
 
-By default, \"published\" field is always returned as false for all evaluation forms. If you set \"expand=publishHistory\", then you will be able to get published versions for each corresponding evaluation form. In addition, \"questionGroups\", the detailed information about evaluation form, is not returned by default. We will enhance this field in the future release.
+By default, \"published\" field is always returned as false for all evaluation forms. If you set \"expand=publishHistory\", then you will be able to get published versions for each corresponding evaluation form. In addition, \"questionGroups\", the detailed information about evaluation form, is not returned. We will enhance this field in a future release.
 
 Wraps GET /api/v2/quality/forms/evaluations 
 
@@ -1585,7 +1585,7 @@ except ApiException as e:
 
 
 
-Get the list of survey forms
+Get the list of survey forms. If you set \"expand=publishHistory\", then you will be able to get published versions for each corresponding survey form.
 
 Wraps GET /api/v2/quality/forms/surveys 
 
@@ -1616,7 +1616,7 @@ name = 'name_example' # str | Name (optional)
 sort_order = 'sort_order_example' # str | Order to sort results, either asc or desc (optional)
 
 try:
-    # Get the list of survey forms
+    # Get the list of survey forms. If you set \"expand=publishHistory\", then you will be able to get published versions for each corresponding survey form.
     api_response = api_instance.get_quality_forms_surveys(page_size=page_size, page_number=page_number, sort_by=sort_by, next_page=next_page, previous_page=previous_page, expand=expand, name=name, sort_order=sort_order)
     pprint(api_response)
 except ApiException as e:
@@ -2478,7 +2478,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.QualityApi()
 conversation_id = 'conversation_id_example' # str | conversationId
-body = PureCloudPlatformClientV2.Evaluation() # Evaluation | evaluation
+body = PureCloudPlatformClientV2.EvaluationCreateBody() # EvaluationCreateBody | evaluation
 expand = 'expand_example' # str | evaluatorId (optional)
 
 try:
@@ -2495,7 +2495,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
-| **body** | [**Evaluation**](Evaluation.html)| evaluation |  |
+| **body** | [**EvaluationCreateBody**](EvaluationCreateBody.html)| evaluation |  |
 | **expand** | **str**| evaluatorId | [optional]  |
 {: class="table table-striped"}
 

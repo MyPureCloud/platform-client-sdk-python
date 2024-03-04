@@ -146,7 +146,7 @@ class BuSchedulingSettingsRequest(object):
     def allow_work_plan_per_minute_granularity(self) -> bool:
         """
         Gets the allow_work_plan_per_minute_granularity of this BuSchedulingSettingsRequest.
-        Indicates whether or not per minute granularity for scheduling will be enabled for this business unit
+        Indicates whether or not per minute granularity for scheduling will be enabled for this business unit. Defaults to false.
 
         :return: The allow_work_plan_per_minute_granularity of this BuSchedulingSettingsRequest.
         :rtype: bool
@@ -157,7 +157,7 @@ class BuSchedulingSettingsRequest(object):
     def allow_work_plan_per_minute_granularity(self, allow_work_plan_per_minute_granularity: bool) -> None:
         """
         Sets the allow_work_plan_per_minute_granularity of this BuSchedulingSettingsRequest.
-        Indicates whether or not per minute granularity for scheduling will be enabled for this business unit
+        Indicates whether or not per minute granularity for scheduling will be enabled for this business unit. Defaults to false.
 
         :param allow_work_plan_per_minute_granularity: The allow_work_plan_per_minute_granularity of this BuSchedulingSettingsRequest.
         :type: bool

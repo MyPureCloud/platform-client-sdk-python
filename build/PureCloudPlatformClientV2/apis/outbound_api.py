@@ -71,6 +71,7 @@ from ..models import ContactListFilterEntityListing
 from ..models import ContactListTemplate
 from ..models import ContactListTemplateBulkRetrieveBody
 from ..models import ContactListTemplateEntityListing
+from ..models import ContactsExportRequest
 from ..models import DialerAuditRequest
 from ..models import DialerContact
 from ..models import DialerEventEntityListing
@@ -9371,12 +9372,13 @@ class OutboundApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str contact_list_id: ContactList ID (required)
+        :param ContactsExportRequest body: Export information to get
         :return: DomainEntityRef
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['contact_list_id']
+        all_params = ['contact_list_id', 'body']
         all_params.append('callback')
 
         params = locals()
@@ -9407,6 +9409,8 @@ class OutboundApi(object):
         local_var_files = {}
 
         body_params = None
+        if 'body' in params:
+            body_params = params['body']
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\

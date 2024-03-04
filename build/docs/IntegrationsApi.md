@@ -40,15 +40,22 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_integrations_credentials_types**](IntegrationsApi.html#get_integrations_credentials_types) | List all credential types|
 |[**get_integrations_speech_dialogflow_agent**](IntegrationsApi.html#get_integrations_speech_dialogflow_agent) | Get details about a Dialogflow agent|
 |[**get_integrations_speech_dialogflow_agents**](IntegrationsApi.html#get_integrations_speech_dialogflow_agents) | Get a list of Dialogflow agents in the customers&#39; Google accounts|
+|[**get_integrations_speech_dialogflowcx_agent**](IntegrationsApi.html#get_integrations_speech_dialogflowcx_agent) | Get details about a Dialogflow CX agent|
+|[**get_integrations_speech_dialogflowcx_agents**](IntegrationsApi.html#get_integrations_speech_dialogflowcx_agents) | Get a list of Dialogflow CX agents in the customers&#39; Google accounts|
 |[**get_integrations_speech_lex_bot_alias**](IntegrationsApi.html#get_integrations_speech_lex_bot_alias) | Get details about a Lex bot alias|
 |[**get_integrations_speech_lex_bot_bot_id_aliases**](IntegrationsApi.html#get_integrations_speech_lex_bot_bot_id_aliases) | Get a list of aliases for a bot in the customer&#39;s AWS accounts|
 |[**get_integrations_speech_lex_bots**](IntegrationsApi.html#get_integrations_speech_lex_bots) | Get a list of Lex bots in the customers&#39; AWS accounts|
+|[**get_integrations_speech_lexv2_bot_alias**](IntegrationsApi.html#get_integrations_speech_lexv2_bot_alias) | Get details about a Lex V2 bot alias|
+|[**get_integrations_speech_lexv2_bot_bot_id_aliases**](IntegrationsApi.html#get_integrations_speech_lexv2_bot_bot_id_aliases) | Get a list of aliases for a Lex V2 bot|
+|[**get_integrations_speech_lexv2_bots**](IntegrationsApi.html#get_integrations_speech_lexv2_bots) | Get a list of Lex V2 bots|
 |[**get_integrations_speech_nuance_nuance_integration_id_bot**](IntegrationsApi.html#get_integrations_speech_nuance_nuance_integration_id_bot) | Get a Nuance bot in the specified Integration|
 |[**get_integrations_speech_nuance_nuance_integration_id_bot_job**](IntegrationsApi.html#get_integrations_speech_nuance_nuance_integration_id_bot_job) | Get the status of an asynchronous Nuance bot GET job|
 |[**get_integrations_speech_nuance_nuance_integration_id_bot_job_results**](IntegrationsApi.html#get_integrations_speech_nuance_nuance_integration_id_bot_job_results) | Get the result of an asynchronous Nuance bot GET job|
 |[**get_integrations_speech_nuance_nuance_integration_id_bots**](IntegrationsApi.html#get_integrations_speech_nuance_nuance_integration_id_bots) | Get a list of Nuance bots available in the specified Integration|
 |[**get_integrations_speech_nuance_nuance_integration_id_bots_job**](IntegrationsApi.html#get_integrations_speech_nuance_nuance_integration_id_bots_job) | Get the status of an asynchronous Nuance bots GET job|
 |[**get_integrations_speech_nuance_nuance_integration_id_bots_job_results**](IntegrationsApi.html#get_integrations_speech_nuance_nuance_integration_id_bots_job_results) | Get the result of an asynchronous Nuance bots GET job|
+|[**get_integrations_speech_stt_engine**](IntegrationsApi.html#get_integrations_speech_stt_engine) | Get details about a STT engine|
+|[**get_integrations_speech_stt_engines**](IntegrationsApi.html#get_integrations_speech_stt_engines) | Get a list of STT engines enabled for org|
 |[**get_integrations_speech_tts_engine**](IntegrationsApi.html#get_integrations_speech_tts_engine) | Get details about a TTS engine|
 |[**get_integrations_speech_tts_engine_voice**](IntegrationsApi.html#get_integrations_speech_tts_engine_voice) | Get details about a specific voice for a TTS engine|
 |[**get_integrations_speech_tts_engine_voices**](IntegrationsApi.html#get_integrations_speech_tts_engine_voices) | Get a list of voices for a TTS engine|
@@ -57,6 +64,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_integrations_type**](IntegrationsApi.html#get_integrations_type) | Get integration type.|
 |[**get_integrations_type_configschema**](IntegrationsApi.html#get_integrations_type_configschema) | Get properties config schema for an integration type.|
 |[**get_integrations_types**](IntegrationsApi.html#get_integrations_types) | List integration types|
+|[**get_integrations_unifiedcommunications_clientapp**](IntegrationsApi.html#get_integrations_unifiedcommunications_clientapp) | UC integration client application configuration.|
+|[**get_integrations_unifiedcommunications_clientapps**](IntegrationsApi.html#get_integrations_unifiedcommunications_clientapps) | List UC integration client application configurations.|
 |[**get_integrations_userapps**](IntegrationsApi.html#get_integrations_userapps) | List permitted user app integrations for the logged in user|
 |[**patch_integration**](IntegrationsApi.html#patch_integration) | Update an integration.|
 |[**patch_integrations_action**](IntegrationsApi.html#patch_integrations_action) | Patch an Action|
@@ -1784,6 +1793,108 @@ except ApiException as e:
 
 [**DialogflowAgentSummaryEntityListing**](DialogflowAgentSummaryEntityListing.html)
 
+<a name="get_integrations_speech_dialogflowcx_agent"></a>
+
+## [**DialogflowCXAgent**](DialogflowCXAgent.html) get_integrations_speech_dialogflowcx_agent(agent_id)
+
+
+
+Get details about a Dialogflow CX agent
+
+Wraps GET /api/v2/integrations/speech/dialogflowcx/agents/{agentId} 
+
+Requires ANY permissions: 
+
+* integrations:integration:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.IntegrationsApi()
+agent_id = 'agent_id_example' # str | The agent ID
+
+try:
+    # Get details about a Dialogflow CX agent
+    api_response = api_instance.get_integrations_speech_dialogflowcx_agent(agent_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling IntegrationsApi->get_integrations_speech_dialogflowcx_agent: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **agent_id** | **str**| The agent ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**DialogflowCXAgent**](DialogflowCXAgent.html)
+
+<a name="get_integrations_speech_dialogflowcx_agents"></a>
+
+## [**DialogflowCXAgentSummaryEntityListing**](DialogflowCXAgentSummaryEntityListing.html) get_integrations_speech_dialogflowcx_agents(page_number=page_number, page_size=page_size, name=name)
+
+
+
+Get a list of Dialogflow CX agents in the customers' Google accounts
+
+Wraps GET /api/v2/integrations/speech/dialogflowcx/agents 
+
+Requires ANY permissions: 
+
+* integrations:integration:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.IntegrationsApi()
+page_number = 1 # int | Page number (optional) (default to 1)
+page_size = 25 # int | Page size (optional) (default to 25)
+name = 'name_example' # str | Filter on agent name (optional)
+
+try:
+    # Get a list of Dialogflow CX agents in the customers' Google accounts
+    api_response = api_instance.get_integrations_speech_dialogflowcx_agents(page_number=page_number, page_size=page_size, name=name)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling IntegrationsApi->get_integrations_speech_dialogflowcx_agents: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **name** | **str**| Filter on agent name | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**DialogflowCXAgentSummaryEntityListing**](DialogflowCXAgentSummaryEntityListing.html)
+
 <a name="get_integrations_speech_lex_bot_alias"></a>
 
 ## [**LexBotAlias**](LexBotAlias.html) get_integrations_speech_lex_bot_alias(alias_id)
@@ -1943,6 +2054,165 @@ except ApiException as e:
 
 [**LexBotEntityListing**](LexBotEntityListing.html)
 
+<a name="get_integrations_speech_lexv2_bot_alias"></a>
+
+## [**LexV2BotAlias**](LexV2BotAlias.html) get_integrations_speech_lexv2_bot_alias(alias_id)
+
+
+
+Get details about a Lex V2 bot alias
+
+Wraps GET /api/v2/integrations/speech/lexv2/bot/alias/{aliasId} 
+
+Requires ANY permissions: 
+
+* integrations:integration:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.IntegrationsApi()
+alias_id = 'alias_id_example' # str | The Alias ID
+
+try:
+    # Get details about a Lex V2 bot alias
+    api_response = api_instance.get_integrations_speech_lexv2_bot_alias(alias_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling IntegrationsApi->get_integrations_speech_lexv2_bot_alias: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **alias_id** | **str**| The Alias ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**LexV2BotAlias**](LexV2BotAlias.html)
+
+<a name="get_integrations_speech_lexv2_bot_bot_id_aliases"></a>
+
+## [**LexV2BotAliasEntityListing**](LexV2BotAliasEntityListing.html) get_integrations_speech_lexv2_bot_bot_id_aliases(bot_id, page_number=page_number, page_size=page_size, status=status, name=name)
+
+
+
+Get a list of aliases for a Lex V2 bot
+
+Wraps GET /api/v2/integrations/speech/lexv2/bot/{botId}/aliases 
+
+Requires ANY permissions: 
+
+* integrations:integration:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.IntegrationsApi()
+bot_id = 'bot_id_example' # str | The Bot ID
+page_number = 1 # int | Page number (optional) (default to 1)
+page_size = 25 # int | Page size (optional) (default to 25)
+status = 'status_example' # str | Filter on alias status (optional)
+name = 'name_example' # str | Filter on alias name (optional)
+
+try:
+    # Get a list of aliases for a Lex V2 bot
+    api_response = api_instance.get_integrations_speech_lexv2_bot_bot_id_aliases(bot_id, page_number=page_number, page_size=page_size, status=status, name=name)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling IntegrationsApi->get_integrations_speech_lexv2_bot_bot_id_aliases: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **bot_id** | **str**| The Bot ID |  |
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **status** | **str**| Filter on alias status | [optional] <br />**Values**: Creating, Available, Deleting, Failed |
+| **name** | **str**| Filter on alias name | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**LexV2BotAliasEntityListing**](LexV2BotAliasEntityListing.html)
+
+<a name="get_integrations_speech_lexv2_bots"></a>
+
+## [**LexV2BotEntityListing**](LexV2BotEntityListing.html) get_integrations_speech_lexv2_bots(page_number=page_number, page_size=page_size, name=name)
+
+
+
+Get a list of Lex V2 bots
+
+Wraps GET /api/v2/integrations/speech/lexv2/bots 
+
+Requires ANY permissions: 
+
+* integrations:integration:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.IntegrationsApi()
+page_number = 1 # int | Page number (optional) (default to 1)
+page_size = 25 # int | Page size (optional) (default to 25)
+name = 'name_example' # str | Filter on bot name (optional)
+
+try:
+    # Get a list of Lex V2 bots
+    api_response = api_instance.get_integrations_speech_lexv2_bots(page_number=page_number, page_size=page_size, name=name)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling IntegrationsApi->get_integrations_speech_lexv2_bots: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **name** | **str**| Filter on bot name | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**LexV2BotEntityListing**](LexV2BotEntityListing.html)
+
 <a name="get_integrations_speech_nuance_nuance_integration_id_bot"></a>
 
 ## [**NuanceBot**](NuanceBot.html) get_integrations_speech_nuance_nuance_integration_id_bot(nuance_integration_id, bot_id, expand=expand, target_channel=target_channel)
@@ -1950,8 +2220,6 @@ except ApiException as e:
 
 
 Get a Nuance bot in the specified Integration
-
-get_integrations_speech_nuance_nuance_integration_id_bot is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/{botId} 
 
@@ -2008,8 +2276,6 @@ except ApiException as e:
 
 Get the status of an asynchronous Nuance bot GET job
 
-get_integrations_speech_nuance_nuance_integration_id_bot_job is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/{botId}/jobs/{jobId} 
 
 Requires ANY permissions: 
@@ -2062,8 +2328,6 @@ except ApiException as e:
 
 
 Get the result of an asynchronous Nuance bot GET job
-
-get_integrations_speech_nuance_nuance_integration_id_bot_job_results is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/{botId}/jobs/{jobId}/results 
 
@@ -2120,8 +2384,6 @@ Get a list of Nuance bots available in the specified Integration
 
 If the 'onlyRegisteredBots' param is set, the returned data will only include the Nuance bots which have configured client secrets within the Integration,  otherwise all of the Nuance bots available to the Integration's configured discovery credentials are returned.
 
-get_integrations_speech_nuance_nuance_integration_id_bots is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots 
 
 Requires ANY permissions: 
@@ -2177,8 +2439,6 @@ except ApiException as e:
 
 Get the status of an asynchronous Nuance bots GET job
 
-get_integrations_speech_nuance_nuance_integration_id_bots_job is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/jobs/{jobId} 
 
 Requires ANY permissions: 
@@ -2230,8 +2490,6 @@ except ApiException as e:
 
 Get the result of an asynchronous Nuance bots GET job
 
-get_integrations_speech_nuance_nuance_integration_id_bots_job_results is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/jobs/{jobId}/results 
 
 Requires ANY permissions: 
@@ -2274,6 +2532,108 @@ except ApiException as e:
 ### Return type
 
 [**NuanceBotEntityListing**](NuanceBotEntityListing.html)
+
+<a name="get_integrations_speech_stt_engine"></a>
+
+## [**SttEngineEntity**](SttEngineEntity.html) get_integrations_speech_stt_engine(engine_id)
+
+
+
+Get details about a STT engine
+
+Wraps GET /api/v2/integrations/speech/stt/engines/{engineId} 
+
+Requires ANY permissions: 
+
+* integrations:integration:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.IntegrationsApi()
+engine_id = 'engine_id_example' # str | The engine ID
+
+try:
+    # Get details about a STT engine
+    api_response = api_instance.get_integrations_speech_stt_engine(engine_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling IntegrationsApi->get_integrations_speech_stt_engine: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **engine_id** | **str**| The engine ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**SttEngineEntity**](SttEngineEntity.html)
+
+<a name="get_integrations_speech_stt_engines"></a>
+
+## [**SttEngineEntityListing**](SttEngineEntityListing.html) get_integrations_speech_stt_engines(page_number=page_number, page_size=page_size, name=name)
+
+
+
+Get a list of STT engines enabled for org
+
+Wraps GET /api/v2/integrations/speech/stt/engines 
+
+Requires ANY permissions: 
+
+* integrations:integration:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.IntegrationsApi()
+page_number = 1 # int | Page number (optional) (default to 1)
+page_size = 25 # int | Page size (optional) (default to 25)
+name = 'name_example' # str | Filter on engine name (optional)
+
+try:
+    # Get a list of STT engines enabled for org
+    api_response = api_instance.get_integrations_speech_stt_engines(page_number=page_number, page_size=page_size, name=name)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling IntegrationsApi->get_integrations_speech_stt_engines: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **name** | **str**| Filter on engine name | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**SttEngineEntityListing**](SttEngineEntityListing.html)
 
 <a name="get_integrations_speech_tts_engine"></a>
 
@@ -2690,6 +3050,118 @@ except ApiException as e:
 ### Return type
 
 [**IntegrationTypeEntityListing**](IntegrationTypeEntityListing.html)
+
+<a name="get_integrations_unifiedcommunications_clientapp"></a>
+
+## [**UnifiedCommunicationsIntegration**](UnifiedCommunicationsIntegration.html) get_integrations_unifiedcommunications_clientapp(uc_integration_id)
+
+
+
+UC integration client application configuration.
+
+This endpoint returns basic UI configuration data for the specified Unified Communications integration client application.
+
+Wraps GET /api/v2/integrations/unifiedcommunications/clientapps/{ucIntegrationId} 
+
+Requires ANY permissions: 
+
+* integration:unifiedCommunications:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.IntegrationsApi()
+uc_integration_id = 'uc_integration_id_example' # str | 3rd Party Service Type
+
+try:
+    # UC integration client application configuration.
+    api_response = api_instance.get_integrations_unifiedcommunications_clientapp(uc_integration_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling IntegrationsApi->get_integrations_unifiedcommunications_clientapp: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **uc_integration_id** | **str**| 3rd Party Service Type |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**UnifiedCommunicationsIntegration**](UnifiedCommunicationsIntegration.html)
+
+<a name="get_integrations_unifiedcommunications_clientapps"></a>
+
+## [**UnifiedCommunicationsIntegrationListing**](UnifiedCommunicationsIntegrationListing.html) get_integrations_unifiedcommunications_clientapps(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page)
+
+
+
+List UC integration client application configurations.
+
+This endpoint returns basic UI configuration data for all Unified Communications integrations client applications enabled.
+
+Wraps GET /api/v2/integrations/unifiedcommunications/clientapps 
+
+Requires ANY permissions: 
+
+* integration:unifiedCommunications:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.IntegrationsApi()
+page_size = 25 # int | The total page size requested (optional) (default to 25)
+page_number = 1 # int | The page number requested (optional) (default to 1)
+sort_by = 'sort_by_example' # str | variable name requested to sort by (optional)
+expand = ['expand_example'] # list[str] | variable name requested by expand list (optional)
+next_page = 'next_page_example' # str | next page token (optional)
+previous_page = 'previous_page_example' # str | Previous page token (optional)
+
+try:
+    # List UC integration client application configurations.
+    api_response = api_instance.get_integrations_unifiedcommunications_clientapps(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling IntegrationsApi->get_integrations_unifiedcommunications_clientapps: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **page_size** | **int**| The total page size requested | [optional] [default to 25] |
+| **page_number** | **int**| The page number requested | [optional] [default to 1] |
+| **sort_by** | **str**| variable name requested to sort by | [optional]  |
+| **expand** | [**list[str]**](str.html)| variable name requested by expand list | [optional]  |
+| **next_page** | **str**| next page token | [optional]  |
+| **previous_page** | **str**| Previous page token | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**UnifiedCommunicationsIntegrationListing**](UnifiedCommunicationsIntegrationListing.html)
 
 <a name="get_integrations_userapps"></a>
 
@@ -3427,8 +3899,6 @@ except ApiException as e:
 
 Get a Nuance bot in the specified Integration asynchronously
 
-post_integrations_speech_nuance_nuance_integration_id_bot_jobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps POST /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/{botId}/jobs 
 
 Requires ANY permissions: 
@@ -3484,8 +3954,6 @@ except ApiException as e:
 
 Get a list of Nuance bots in the specified Integration asynchronously
 
-post_integrations_speech_nuance_nuance_integration_id_bots_jobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps POST /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/jobs 
 
 Requires ANY permissions: 
@@ -3540,8 +4008,6 @@ except ApiException as e:
 
 
 Try out a single credential for a Nuance bot to know if the secret is correct
-
-post_integrations_speech_nuance_nuance_integration_id_bots_launch_validate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/launch/validate 
 
@@ -3796,8 +4262,6 @@ except ApiException as e:
 
 
 Update the Nuance bot list for the specific bots made available to Genesys Cloud in the specified Integration
-
-put_integrations_speech_nuance_nuance_integration_id_bots_launch_settings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps PUT /api/v2/integrations/speech/nuance/{nuanceIntegrationId}/bots/launch/settings 
 

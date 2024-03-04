@@ -51,6 +51,7 @@ from ..models import EvaluationAggregationQuery
 from ..models import EvaluationAggregationQueryMe
 from ..models import EvaluationAsyncAggregateQueryResponse
 from ..models import EvaluationAsyncAggregationQuery
+from ..models import EvaluationCreateBody
 from ..models import EvaluationEntityListing
 from ..models import EvaluationForm
 from ..models import EvaluationFormAndScoringSet
@@ -1861,7 +1862,7 @@ class QualityApi(object):
     @deprecated("get_quality_forms is deprecated")
     def get_quality_forms(self, **kwargs) -> 'EvaluationFormResponseEntityListing':
         """
-        Get the list of evaluation forms
+        Get the list of evaluation forms. If you set \"expand=publishHistory\", then you will be able to get published versions for each corresponding evaluation form.
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -2123,7 +2124,7 @@ class QualityApi(object):
     def get_quality_forms_evaluations(self, **kwargs) -> 'EvaluationFormResponseEntityListing':
         """
         Get the list of evaluation forms
-        By default, \"published\" field is always returned as false for all evaluation forms. If you set \"expand=publishHistory\", then you will be able to get published versions for each corresponding evaluation form. In addition, \"questionGroups\", the detailed information about evaluation form, is not returned by default. We will enhance this field in the future release.
+        By default, \"published\" field is always returned as false for all evaluation forms. If you set \"expand=publishHistory\", then you will be able to get published versions for each corresponding evaluation form. In addition, \"questionGroups\", the detailed information about evaluation form, is not returned. We will enhance this field in a future release.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -2458,7 +2459,7 @@ class QualityApi(object):
 
     def get_quality_forms_surveys(self, **kwargs) -> 'SurveyFormEntityListing':
         """
-        Get the list of survey forms
+        Get the list of survey forms. If you set \"expand=publishHistory\", then you will be able to get published versions for each corresponding survey form.
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -3834,7 +3835,7 @@ class QualityApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_quality_conversation_evaluations(self, conversation_id: str, body: 'Evaluation', **kwargs) -> 'Evaluation':
+    def post_quality_conversation_evaluations(self, conversation_id: str, body: 'EvaluationCreateBody', **kwargs) -> 'Evaluation':
         """
         Create an evaluation
         
@@ -3850,7 +3851,7 @@ class QualityApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str conversation_id: conversationId (required)
-        :param Evaluation body: evaluation (required)
+        :param EvaluationCreateBody body: evaluation (required)
         :param str expand: evaluatorId
         :return: Evaluation
                  If the method is called asynchronously,

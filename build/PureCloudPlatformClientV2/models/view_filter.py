@@ -225,7 +225,8 @@ class ViewFilter(object):
             'evaluation_assigned': 'bool',
             'assistant_ids': 'list[str]',
             'knowledge_base_ids': 'list[str]',
-            'is_parked': 'bool'
+            'is_parked': 'bool',
+            'agent_empathy_score': 'NumericRange'
         }
 
         self.attribute_map = {
@@ -401,7 +402,8 @@ class ViewFilter(object):
             'evaluation_assigned': 'evaluationAssigned',
             'assistant_ids': 'assistantIds',
             'knowledge_base_ids': 'knowledgeBaseIds',
-            'is_parked': 'isParked'
+            'is_parked': 'isParked',
+            'agent_empathy_score': 'agentEmpathyScore'
         }
 
         self._media_types = None
@@ -577,6 +579,7 @@ class ViewFilter(object):
         self._assistant_ids = None
         self._knowledge_base_ids = None
         self._is_parked = None
+        self._agent_empathy_score = None
 
     @property
     def media_types(self) -> List[str]:
@@ -4739,6 +4742,30 @@ class ViewFilter(object):
         
 
         self._is_parked = is_parked
+
+    @property
+    def agent_empathy_score(self) -> 'NumericRange':
+        """
+        Gets the agent_empathy_score of this ViewFilter.
+        The agentEmpathyScore is used to filter the view
+
+        :return: The agent_empathy_score of this ViewFilter.
+        :rtype: NumericRange
+        """
+        return self._agent_empathy_score
+
+    @agent_empathy_score.setter
+    def agent_empathy_score(self, agent_empathy_score: 'NumericRange') -> None:
+        """
+        Sets the agent_empathy_score of this ViewFilter.
+        The agentEmpathyScore is used to filter the view
+
+        :param agent_empathy_score: The agent_empathy_score of this ViewFilter.
+        :type: NumericRange
+        """
+        
+
+        self._agent_empathy_score = agent_empathy_score
 
     def to_dict(self):
         """

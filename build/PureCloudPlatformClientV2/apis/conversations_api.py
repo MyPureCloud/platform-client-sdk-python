@@ -858,10 +858,11 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("delete_conversations_messaging_integrations_line_integration_id is deprecated")
     def delete_conversations_messaging_integrations_line_integration_id(self, integration_id: str, **kwargs) -> None:
         """
-        Delete a LINE messenger integration
-        
+        Delete a LINE messenger integration (Deprecated)
+        This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-line-third-party-messaging-channel/
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -6716,10 +6717,11 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("get_conversations_messaging_integrations_line is deprecated")
     def get_conversations_messaging_integrations_line(self, **kwargs) -> 'LineIntegrationEntityListing':
         """
-        Get a list of LINE messenger Integrations
-        
+        Get a list of LINE messenger Integrations (Deprecated)
+        This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-line-third-party-messaging-channel/
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -6803,10 +6805,11 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("get_conversations_messaging_integrations_line_integration_id is deprecated")
     def get_conversations_messaging_integrations_line_integration_id(self, integration_id: str, **kwargs) -> 'LineIntegration':
         """
-        Get a LINE messenger integration
-        
+        Get a LINE messenger integration (Deprecated)
+        This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-line-third-party-messaging-channel/
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -19694,10 +19697,11 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("put_conversations_messaging_integrations_line_integration_id is deprecated")
     def put_conversations_messaging_integrations_line_integration_id(self, integration_id: str, body: 'LineIntegrationRequest', **kwargs) -> 'LineIntegration':
         """
-        Update a LINE messenger integration
-        
+        Update a LINE messenger integration (Deprecated)
+        This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-line-third-party-messaging-channel/
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

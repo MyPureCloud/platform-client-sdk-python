@@ -26,7 +26,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_workforcemanagement_adherence_explanations_job**](WorkforceManagementApi.html#get_workforcemanagement_adherence_explanations_job) | Query the status of an adherence explanation operation. Only the user who started the operation can query the status|
 |[**get_workforcemanagement_adherence_historical_bulk_job**](WorkforceManagementApi.html#get_workforcemanagement_adherence_historical_bulk_job) | Request to fetch the status of the historical adherence bulk job. Only the user who started the operation can query the status|
 |[**get_workforcemanagement_adherence_historical_job**](WorkforceManagementApi.html#get_workforcemanagement_adherence_historical_job) | Query the status of a historical adherence request operation. Only the user who started the operation can query the status|
-|[**get_workforcemanagement_adhocmodelingjob**](WorkforceManagementApi.html#get_workforcemanagement_adhocmodelingjob) | Get status of the modeling job|
+|[**get_workforcemanagement_adhocmodelingjob**](WorkforceManagementApi.html#get_workforcemanagement_adhocmodelingjob) | To get status of the modeling job.|
 |[**get_workforcemanagement_agent_adherence_explanation**](WorkforceManagementApi.html#get_workforcemanagement_agent_adherence_explanation) | Get an adherence explanation|
 |[**get_workforcemanagement_agent_managementunit**](WorkforceManagementApi.html#get_workforcemanagement_agent_managementunit) | Get the management unit to which the agent belongs|
 |[**get_workforcemanagement_agents_me_managementunit**](WorkforceManagementApi.html#get_workforcemanagement_agents_me_managementunit) | Get the management unit to which the currently logged in agent belongs|
@@ -1088,9 +1088,11 @@ except ApiException as e:
 
 ## [**ModelingStatusResponse**](ModelingStatusResponse.html) get_workforcemanagement_adhocmodelingjob(job_id)
 
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
+To get status of the modeling job.
 
-Get status of the modeling job
+This Endpoint is Deprecated, and not recommended to be used.
 
 Wraps GET /api/v2/workforcemanagement/adhocmodelingjobs/{jobId} 
 
@@ -1114,7 +1116,7 @@ api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
 job_id = 'job_id_example' # str | The id of the modeling job
 
 try:
-    # Get status of the modeling job
+    # To get status of the modeling job.
     api_response = api_instance.get_workforcemanagement_adhocmodelingjob(job_id)
     pprint(api_response)
 except ApiException as e:

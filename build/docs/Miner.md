@@ -17,8 +17,8 @@ title: Miner
 | **conversations_date_range_end** | **date** | Date till which the conversations need to be taken for mining. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional] |
 | **date_completed** | **datetime** | Date when the mining process was completed. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
 | **message** | **str** | Mining message if present. | [optional] |
-| **error_info** | [**ErrorInfo**](ErrorInfo.html) | Error Information | [optional] |
-| **warning_info** | [**ErrorInfo**](ErrorInfo.html) | Warning Information | [optional] |
+| **error_info** | [**MinerErrorInfo**](MinerErrorInfo.html) | Error Information | [optional] |
+| **warning_info** | [**MinerErrorInfo**](MinerErrorInfo.html) | Warning Information | [optional] |
 | **conversation_data_uploaded** | **bool** | Flag to indicate whether data file to be mined was uploaded. | [optional] |
 | **media_type** | **str** | Media type for filtering conversations. | [optional] |
 | **participant_type** | **str** | Type of the participant, either agent, customer or both. | [optional] |

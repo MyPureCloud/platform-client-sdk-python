@@ -40,6 +40,7 @@ title: Campaign
 | **contact_list_filters** | [**list[DomainEntityRef]**](DomainEntityRef.html) | Filter to apply to the contact list before dialing. Currently a campaign can only have one filter applied. | [optional] |
 | **division** | [**DomainEntityRef**](DomainEntityRef.html) | The division this campaign belongs to. | [optional] |
 | **dynamic_contact_queueing_settings** | [**DynamicContactQueueingSettings**](DynamicContactQueueingSettings.html) | Settings for dynamic queueing of contacts. | [optional] |
+| **max_calls_per_agent** | **int** | The maximum number of calls that can be placed per agent on this campaign | [optional] |
 | **self_uri** | **str** | The URI for this object | [optional] |
 {: class="table table-striped"}
 

@@ -56,6 +56,8 @@ from ..models import CredentialInfoListing
 from ..models import CredentialTypeListing
 from ..models import DialogflowAgent
 from ..models import DialogflowAgentSummaryEntityListing
+from ..models import DialogflowCXAgent
+from ..models import DialogflowCXAgentSummaryEntityListing
 from ..models import DraftValidationResult
 from ..models import ErrorBody
 from ..models import Function
@@ -72,11 +74,16 @@ from ..models import JsonSchemaDocument
 from ..models import LexBotAlias
 from ..models import LexBotAliasEntityListing
 from ..models import LexBotEntityListing
+from ..models import LexV2BotAlias
+from ..models import LexV2BotAliasEntityListing
+from ..models import LexV2BotEntityListing
 from ..models import NuanceBot
 from ..models import NuanceBotEntityListing
 from ..models import NuanceBotLaunchSettings
 from ..models import PostActionInput
 from ..models import PublishDraftInput
+from ..models import SttEngineEntity
+from ..models import SttEngineEntityListing
 from ..models import TestExecutionResult
 from ..models import TtsEngineEntity
 from ..models import TtsEngineEntityListing
@@ -85,6 +92,8 @@ from ..models import TtsVoiceEntity
 from ..models import TtsVoiceEntityListing
 from ..models import UCIntegrationListing
 from ..models import UCThirdPartyPresence
+from ..models import UnifiedCommunicationsIntegration
+from ..models import UnifiedCommunicationsIntegrationListing
 from ..models import UpdateActionInput
 from ..models import UpdateDraftInput
 from ..models import UserAppEntityListing
@@ -2781,6 +2790,165 @@ class IntegrationsApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def get_integrations_speech_dialogflowcx_agent(self, agent_id: str, **kwargs) -> 'DialogflowCXAgent':
+        """
+        Get details about a Dialogflow CX agent
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_integrations_speech_dialogflowcx_agent(agent_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str agent_id: The agent ID (required)
+        :return: DialogflowCXAgent
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['agent_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_integrations_speech_dialogflowcx_agent" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'agent_id' is set
+        if ('agent_id' not in params) or (params['agent_id'] is None):
+            raise ValueError("Missing the required parameter `agent_id` when calling `get_integrations_speech_dialogflowcx_agent`")
+
+
+        resource_path = '/api/v2/integrations/speech/dialogflowcx/agents/{agentId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'agent_id' in params:
+            path_params['agentId'] = params['agent_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='DialogflowCXAgent',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_integrations_speech_dialogflowcx_agents(self, **kwargs) -> 'DialogflowCXAgentSummaryEntityListing':
+        """
+        Get a list of Dialogflow CX agents in the customers' Google accounts
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_integrations_speech_dialogflowcx_agents(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int page_number: Page number
+        :param int page_size: Page size
+        :param str name: Filter on agent name
+        :return: DialogflowCXAgentSummaryEntityListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['page_number', 'page_size', 'name']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_integrations_speech_dialogflowcx_agents" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/integrations/speech/dialogflowcx/agents'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'page_number' in params:
+            query_params['pageNumber'] = params['page_number']
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+        if 'name' in params:
+            query_params['name'] = params['name']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='DialogflowCXAgentSummaryEntityListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def get_integrations_speech_lex_bot_alias(self, alias_id: str, **kwargs) -> 'LexBotAlias':
         """
         Get details about a Lex bot alias
@@ -3030,11 +3198,259 @@ class IntegrationsApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def get_integrations_speech_lexv2_bot_alias(self, alias_id: str, **kwargs) -> 'LexV2BotAlias':
+        """
+        Get details about a Lex V2 bot alias
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_integrations_speech_lexv2_bot_alias(alias_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str alias_id: The Alias ID (required)
+        :return: LexV2BotAlias
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['alias_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_integrations_speech_lexv2_bot_alias" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'alias_id' is set
+        if ('alias_id' not in params) or (params['alias_id'] is None):
+            raise ValueError("Missing the required parameter `alias_id` when calling `get_integrations_speech_lexv2_bot_alias`")
+
+
+        resource_path = '/api/v2/integrations/speech/lexv2/bot/alias/{aliasId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'alias_id' in params:
+            path_params['aliasId'] = params['alias_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='LexV2BotAlias',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_integrations_speech_lexv2_bot_bot_id_aliases(self, bot_id: str, **kwargs) -> 'LexV2BotAliasEntityListing':
+        """
+        Get a list of aliases for a Lex V2 bot
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_integrations_speech_lexv2_bot_bot_id_aliases(bot_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str bot_id: The Bot ID (required)
+        :param int page_number: Page number
+        :param int page_size: Page size
+        :param str status: Filter on alias status
+        :param str name: Filter on alias name
+        :return: LexV2BotAliasEntityListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['bot_id', 'page_number', 'page_size', 'status', 'name']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_integrations_speech_lexv2_bot_bot_id_aliases" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'bot_id' is set
+        if ('bot_id' not in params) or (params['bot_id'] is None):
+            raise ValueError("Missing the required parameter `bot_id` when calling `get_integrations_speech_lexv2_bot_bot_id_aliases`")
+
+
+        resource_path = '/api/v2/integrations/speech/lexv2/bot/{botId}/aliases'.replace('{format}', 'json')
+        path_params = {}
+        if 'bot_id' in params:
+            path_params['botId'] = params['bot_id']
+
+        query_params = {}
+        if 'page_number' in params:
+            query_params['pageNumber'] = params['page_number']
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+        if 'status' in params:
+            query_params['status'] = params['status']
+        if 'name' in params:
+            query_params['name'] = params['name']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='LexV2BotAliasEntityListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_integrations_speech_lexv2_bots(self, **kwargs) -> 'LexV2BotEntityListing':
+        """
+        Get a list of Lex V2 bots
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_integrations_speech_lexv2_bots(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int page_number: Page number
+        :param int page_size: Page size
+        :param str name: Filter on bot name
+        :return: LexV2BotEntityListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['page_number', 'page_size', 'name']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_integrations_speech_lexv2_bots" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/integrations/speech/lexv2/bots'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'page_number' in params:
+            query_params['pageNumber'] = params['page_number']
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+        if 'name' in params:
+            query_params['name'] = params['name']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='LexV2BotEntityListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def get_integrations_speech_nuance_nuance_integration_id_bot(self, nuance_integration_id: str, bot_id: str, **kwargs) -> 'NuanceBot':
         """
         Get a Nuance bot in the specified Integration
         
-	    get_integrations_speech_nuance_nuance_integration_id_bot is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -3125,7 +3541,6 @@ class IntegrationsApi(object):
         """
         Get the status of an asynchronous Nuance bot GET job
         
-	    get_integrations_speech_nuance_nuance_integration_id_bot_job is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -3216,7 +3631,6 @@ class IntegrationsApi(object):
         """
         Get the result of an asynchronous Nuance bot GET job
         
-	    get_integrations_speech_nuance_nuance_integration_id_bot_job_results is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -3307,7 +3721,6 @@ class IntegrationsApi(object):
         """
         Get a list of Nuance bots available in the specified Integration
         If the 'onlyRegisteredBots' param is set, the returned data will only include the Nuance bots which have configured client secrets within the Integration,  otherwise all of the Nuance bots available to the Integration's configured discovery credentials are returned.
-	    get_integrations_speech_nuance_nuance_integration_id_bots is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -3395,7 +3808,6 @@ class IntegrationsApi(object):
         """
         Get the status of an asynchronous Nuance bots GET job
         
-	    get_integrations_speech_nuance_nuance_integration_id_bots_job is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -3480,7 +3892,6 @@ class IntegrationsApi(object):
         """
         Get the result of an asynchronous Nuance bots GET job
         
-	    get_integrations_speech_nuance_nuance_integration_id_bots_job_results is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -3557,6 +3968,165 @@ class IntegrationsApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='NuanceBotEntityListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_integrations_speech_stt_engine(self, engine_id: str, **kwargs) -> 'SttEngineEntity':
+        """
+        Get details about a STT engine
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_integrations_speech_stt_engine(engine_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str engine_id: The engine ID (required)
+        :return: SttEngineEntity
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['engine_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_integrations_speech_stt_engine" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'engine_id' is set
+        if ('engine_id' not in params) or (params['engine_id'] is None):
+            raise ValueError("Missing the required parameter `engine_id` when calling `get_integrations_speech_stt_engine`")
+
+
+        resource_path = '/api/v2/integrations/speech/stt/engines/{engineId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'engine_id' in params:
+            path_params['engineId'] = params['engine_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='SttEngineEntity',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_integrations_speech_stt_engines(self, **kwargs) -> 'SttEngineEntityListing':
+        """
+        Get a list of STT engines enabled for org
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_integrations_speech_stt_engines(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int page_number: Page number
+        :param int page_size: Page size
+        :param str name: Filter on engine name
+        :return: SttEngineEntityListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['page_number', 'page_size', 'name']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_integrations_speech_stt_engines" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/integrations/speech/stt/engines'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'page_number' in params:
+            query_params['pageNumber'] = params['page_number']
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+        if 'name' in params:
+            query_params['name'] = params['name']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='SttEngineEntityListing',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -4217,6 +4787,174 @@ class IntegrationsApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='IntegrationTypeEntityListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_integrations_unifiedcommunications_clientapp(self, uc_integration_id: str, **kwargs) -> 'UnifiedCommunicationsIntegration':
+        """
+        UC integration client application configuration.
+        This endpoint returns basic UI configuration data for the specified Unified Communications integration client application.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_integrations_unifiedcommunications_clientapp(uc_integration_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str uc_integration_id: 3rd Party Service Type (required)
+        :return: UnifiedCommunicationsIntegration
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['uc_integration_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_integrations_unifiedcommunications_clientapp" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'uc_integration_id' is set
+        if ('uc_integration_id' not in params) or (params['uc_integration_id'] is None):
+            raise ValueError("Missing the required parameter `uc_integration_id` when calling `get_integrations_unifiedcommunications_clientapp`")
+
+
+        resource_path = '/api/v2/integrations/unifiedcommunications/clientapps/{ucIntegrationId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'uc_integration_id' in params:
+            path_params['ucIntegrationId'] = params['uc_integration_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='UnifiedCommunicationsIntegration',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_integrations_unifiedcommunications_clientapps(self, **kwargs) -> 'UnifiedCommunicationsIntegrationListing':
+        """
+        List UC integration client application configurations.
+        This endpoint returns basic UI configuration data for all Unified Communications integrations client applications enabled.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_integrations_unifiedcommunications_clientapps(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int page_size: The total page size requested
+        :param int page_number: The page number requested
+        :param str sort_by: variable name requested to sort by
+        :param list[str] expand: variable name requested by expand list
+        :param str next_page: next page token
+        :param str previous_page: Previous page token
+        :return: UnifiedCommunicationsIntegrationListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['page_size', 'page_number', 'sort_by', 'expand', 'next_page', 'previous_page']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_integrations_unifiedcommunications_clientapps" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/integrations/unifiedcommunications/clientapps'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+        if 'page_number' in params:
+            query_params['pageNumber'] = params['page_number']
+        if 'sort_by' in params:
+            query_params['sortBy'] = params['sort_by']
+        if 'expand' in params:
+            query_params['expand'] = params['expand']
+        if 'next_page' in params:
+            query_params['nextPage'] = params['next_page']
+        if 'previous_page' in params:
+            query_params['previousPage'] = params['previous_page']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='UnifiedCommunicationsIntegrationListing',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -5390,7 +6128,6 @@ class IntegrationsApi(object):
         """
         Get a Nuance bot in the specified Integration asynchronously
         
-	    post_integrations_speech_nuance_nuance_integration_id_bot_jobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -5481,7 +6218,6 @@ class IntegrationsApi(object):
         """
         Get a list of Nuance bots in the specified Integration asynchronously
         
-	    post_integrations_speech_nuance_nuance_integration_id_bots_jobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -5569,7 +6305,6 @@ class IntegrationsApi(object):
         """
         Try out a single credential for a Nuance bot to know if the secret is correct
         
-	    post_integrations_speech_nuance_nuance_integration_id_bots_launch_validate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -5985,7 +6720,6 @@ class IntegrationsApi(object):
         """
         Update the Nuance bot list for the specific bots made available to Genesys Cloud in the specified Integration
         
-	    put_integrations_speech_nuance_nuance_integration_id_bots_launch_settings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

@@ -34,7 +34,7 @@ from typing import Dict
 
 if TYPE_CHECKING:
     from . import Draft
-    from . import ErrorInfo
+    from . import MinerErrorInfo
 
 class Miner(object):
     """
@@ -61,8 +61,8 @@ class Miner(object):
             'conversations_date_range_end': 'date',
             'date_completed': 'datetime',
             'message': 'str',
-            'error_info': 'ErrorInfo',
-            'warning_info': 'ErrorInfo',
+            'error_info': 'MinerErrorInfo',
+            'warning_info': 'MinerErrorInfo',
             'conversation_data_uploaded': 'bool',
             'media_type': 'str',
             'participant_type': 'str',
@@ -382,48 +382,48 @@ class Miner(object):
         self._message = message
 
     @property
-    def error_info(self) -> 'ErrorInfo':
+    def error_info(self) -> 'MinerErrorInfo':
         """
         Gets the error_info of this Miner.
         Error Information
 
         :return: The error_info of this Miner.
-        :rtype: ErrorInfo
+        :rtype: MinerErrorInfo
         """
         return self._error_info
 
     @error_info.setter
-    def error_info(self, error_info: 'ErrorInfo') -> None:
+    def error_info(self, error_info: 'MinerErrorInfo') -> None:
         """
         Sets the error_info of this Miner.
         Error Information
 
         :param error_info: The error_info of this Miner.
-        :type: ErrorInfo
+        :type: MinerErrorInfo
         """
         
 
         self._error_info = error_info
 
     @property
-    def warning_info(self) -> 'ErrorInfo':
+    def warning_info(self) -> 'MinerErrorInfo':
         """
         Gets the warning_info of this Miner.
         Warning Information
 
         :return: The warning_info of this Miner.
-        :rtype: ErrorInfo
+        :rtype: MinerErrorInfo
         """
         return self._warning_info
 
     @warning_info.setter
-    def warning_info(self, warning_info: 'ErrorInfo') -> None:
+    def warning_info(self, warning_info: 'MinerErrorInfo') -> None:
         """
         Sets the warning_info of this Miner.
         Warning Information
 
         :param warning_info: The warning_info of this Miner.
-        :type: ErrorInfo
+        :type: MinerErrorInfo
         """
         
 

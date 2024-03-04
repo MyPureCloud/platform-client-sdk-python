@@ -87,6 +87,7 @@ class Campaign(object):
             'contact_list_filters': 'list[DomainEntityRef]',
             'division': 'DomainEntityRef',
             'dynamic_contact_queueing_settings': 'DynamicContactQueueingSettings',
+            'max_calls_per_agent': 'int',
             'self_uri': 'str'
         }
 
@@ -124,6 +125,7 @@ class Campaign(object):
             'contact_list_filters': 'contactListFilters',
             'division': 'division',
             'dynamic_contact_queueing_settings': 'dynamicContactQueueingSettings',
+            'max_calls_per_agent': 'maxCallsPerAgent',
             'self_uri': 'selfUri'
         }
 
@@ -160,6 +162,7 @@ class Campaign(object):
         self._contact_list_filters = None
         self._division = None
         self._dynamic_contact_queueing_settings = None
+        self._max_calls_per_agent = None
         self._self_uri = None
 
     @property
@@ -963,6 +966,30 @@ class Campaign(object):
         
 
         self._dynamic_contact_queueing_settings = dynamic_contact_queueing_settings
+
+    @property
+    def max_calls_per_agent(self) -> int:
+        """
+        Gets the max_calls_per_agent of this Campaign.
+        The maximum number of calls that can be placed per agent on this campaign
+
+        :return: The max_calls_per_agent of this Campaign.
+        :rtype: int
+        """
+        return self._max_calls_per_agent
+
+    @max_calls_per_agent.setter
+    def max_calls_per_agent(self, max_calls_per_agent: int) -> None:
+        """
+        Sets the max_calls_per_agent of this Campaign.
+        The maximum number of calls that can be placed per agent on this campaign
+
+        :param max_calls_per_agent: The max_calls_per_agent of this Campaign.
+        :type: int
+        """
+        
+
+        self._max_calls_per_agent = max_calls_per_agent
 
     @property
     def self_uri(self) -> str:

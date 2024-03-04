@@ -57,7 +57,9 @@ from ..models import EmergencyGroup
 from ..models import EmergencyGroupDivisionViewEntityListing
 from ..models import EmergencyGroupListing
 from ..models import ErrorBody
+from ..models import ExecutionDataFlowSettingsResponse
 from ..models import ExecutionDataRequest
+from ..models import ExecutionDataSettingsRequest
 from ..models import Flow
 from ..models import FlowDivisionViewEntityListing
 from ..models import FlowEntityListing
@@ -66,6 +68,8 @@ from ..models import FlowExecutionLaunchResponse
 from ..models import FlowHealth
 from ..models import FlowHealthIntent
 from ..models import FlowHealthUtterance
+from ..models import FlowLogLevelCharacteristicsDefinitions
+from ..models import FlowLogLevelRequest
 from ..models import FlowMilestone
 from ..models import FlowMilestoneDivisionViewEntityListing
 from ..models import FlowMilestoneListing
@@ -74,6 +78,8 @@ from ..models import FlowOutcomeDivisionViewEntityListing
 from ..models import FlowOutcomeListing
 from ..models import FlowResultEntityListing
 from ..models import FlowRuntimeExecution
+from ..models import FlowSettingsResponse
+from ..models import FlowSettingsResponseEntityListing
 from ..models import FlowVersion
 from ..models import FlowVersionEntityListing
 from ..models import FlowsQueryCriteriaResponse
@@ -1257,6 +1263,85 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def delete_flow_instances_settings_loglevels(self, flow_id: str, **kwargs) -> None:
+        """
+        Deletes a log level for a flow by flow id.
+        Deletes the associated log level for a flow by flow id
+	    delete_flow_instances_settings_loglevels is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_flow_instances_settings_loglevels(flow_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str flow_id: The flow id to delete the loglevel for (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['flow_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_flow_instances_settings_loglevels" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'flow_id' is set
+        if ('flow_id' not in params) or (params['flow_id'] is None):
+            raise ValueError("Missing the required parameter `flow_id` when calling `delete_flow_instances_settings_loglevels`")
+
+
+        resource_path = '/api/v2/flows/{flowId}/instances/settings/loglevels'.replace('{format}', 'json')
+        path_params = {}
+        if 'flow_id' in params:
+            path_params['flowId'] = params['flow_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def delete_flows(self, id: List['str'], **kwargs) -> 'Operation':
         """
         Batch-delete a list of flows
@@ -1465,6 +1550,79 @@ class ArchitectApi(object):
             path_params['datatableId'] = params['datatable_id']
         if 'row_id' in params:
             path_params['rowId'] = params['row_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def delete_flows_instances_settings_loglevels_default(self, **kwargs) -> None:
+        """
+        Resets the org log level to default, base
+        Resets the org log level to default, base
+	    delete_flows_instances_settings_loglevels_default is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_flows_instances_settings_loglevels_default(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = []
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_flows_instances_settings_loglevels_default" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/flows/instances/settings/loglevels/default'.replace('{format}', 'json')
+        path_params = {}
 
         query_params = {}
 
@@ -4797,6 +4955,88 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def get_flow_instances_settings_loglevels(self, flow_id: str, **kwargs) -> 'FlowSettingsResponse':
+        """
+        Retrieves the log level for a flow by flow id.
+        Retrieves the log level for a flow by flow id.
+	    get_flow_instances_settings_loglevels is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_flow_instances_settings_loglevels(flow_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str flow_id: The flow id to get the loglevel for (required)
+        :param list[str] expand: Expand instructions for the result
+        :return: FlowSettingsResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['flow_id', 'expand']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_flow_instances_settings_loglevels" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'flow_id' is set
+        if ('flow_id' not in params) or (params['flow_id'] is None):
+            raise ValueError("Missing the required parameter `flow_id` when calling `get_flow_instances_settings_loglevels`")
+
+
+        resource_path = '/api/v2/flows/{flowId}/instances/settings/loglevels'.replace('{format}', 'json')
+        path_params = {}
+        if 'flow_id' in params:
+            path_params['flowId'] = params['flow_id']
+
+        query_params = {}
+        if 'expand' in params:
+            query_params['expand'] = params['expand']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='FlowSettingsResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def get_flow_latestconfiguration(self, flow_id: str, **kwargs) -> object:
         """
         Get the latest configuration for flow
@@ -6520,7 +6760,6 @@ class ArchitectApi(object):
         """
         Start a process (job) to prepare a download of a singular flow execution data instance by Id
         Returns a JobResult object that contains an ID that can be used to check status and/or download links when the process (job) is complete.
-	    get_flows_instance is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -6602,7 +6841,6 @@ class ArchitectApi(object):
         """
         Get the status and/or results of an asynchronous flow execution data retrieval job
         
-	    get_flows_instances_job is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -6681,7 +6919,6 @@ class ArchitectApi(object):
         """
         Retrieve a list of capabilities that the org can use to query for execution data
         Returns the queryable parameters that can be used to build a query for execution data.
-	    get_flows_instances_querycapabilities is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -6749,6 +6986,310 @@ class ArchitectApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='FlowsQueryCriteriaResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_flows_instances_settings_executiondata(self, **kwargs) -> 'ExecutionDataFlowSettingsResponse':
+        """
+        Get the execution history enabled setting.
+        Get the execution history enabled setting.
+	    get_flows_instances_settings_executiondata is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_flows_instances_settings_executiondata(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :return: ExecutionDataFlowSettingsResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = []
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_flows_instances_settings_executiondata" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/flows/instances/settings/executiondata'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ExecutionDataFlowSettingsResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_flows_instances_settings_loglevels(self, **kwargs) -> 'FlowSettingsResponseEntityListing':
+        """
+        Retrieve a list of LogLevels for the organization.
+        Returns a paged set of LogLevels per flow id
+	    get_flows_instances_settings_loglevels is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_flows_instances_settings_loglevels(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param list[str] expand: Expand instructions for the result
+        :param int page_number: Page number
+        :param int page_size: Number of entities to return. Maximum of 200.
+        :return: FlowSettingsResponseEntityListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['expand', 'page_number', 'page_size']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_flows_instances_settings_loglevels" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/flows/instances/settings/loglevels'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'expand' in params:
+            query_params['expand'] = params['expand']
+        if 'page_number' in params:
+            query_params['pageNumber'] = params['page_number']
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='FlowSettingsResponseEntityListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_flows_instances_settings_loglevels_characteristics(self, **kwargs) -> 'FlowLogLevelCharacteristicsDefinitions':
+        """
+        Gets the available flow log level characteristics for this organization.
+        Log levels can be customized and this returns the set of available characteristics that can be enabled/disabled.
+	    get_flows_instances_settings_loglevels_characteristics is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_flows_instances_settings_loglevels_characteristics(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :return: FlowLogLevelCharacteristicsDefinitions
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = []
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_flows_instances_settings_loglevels_characteristics" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/flows/instances/settings/loglevels/characteristics'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='FlowLogLevelCharacteristicsDefinitions',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_flows_instances_settings_loglevels_default(self, **kwargs) -> 'FlowSettingsResponse':
+        """
+        Returns the flow default log level.
+        Returns the flow default log level which will be used if no specific flow id log level is found.
+	    get_flows_instances_settings_loglevels_default is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_flows_instances_settings_loglevels_default(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param list[str] expand: Expand instructions for the result
+        :return: FlowSettingsResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['expand']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_flows_instances_settings_loglevels_default" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/flows/instances/settings/loglevels/default'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'expand' in params:
+            query_params['expand'] = params['expand']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='FlowSettingsResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -7540,6 +8081,85 @@ class ArchitectApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='GrammarLanguage',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def patch_flows_instances_settings_executiondata(self, body: 'ExecutionDataSettingsRequest', **kwargs) -> 'ExecutionDataFlowSettingsResponse':
+        """
+        Edit the execution history enabled setting.
+        Edit the execution history enabled setting.
+	    patch_flows_instances_settings_executiondata is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.patch_flows_instances_settings_executiondata(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param ExecutionDataSettingsRequest body: New Execution Data Setting (required)
+        :return: ExecutionDataFlowSettingsResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method patch_flows_instances_settings_executiondata" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `patch_flows_instances_settings_executiondata`")
+
+
+        resource_path = '/api/v2/flows/instances/settings/executiondata'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PATCH',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ExecutionDataFlowSettingsResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -8754,6 +9374,94 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def post_flow_instances_settings_loglevels(self, flow_id: str, body: 'FlowLogLevelRequest', **kwargs) -> 'FlowSettingsResponse':
+        """
+        Set the logLevel for a particular flow id
+        Assigns a new loglevel to a flow id
+	    post_flow_instances_settings_loglevels is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_flow_instances_settings_loglevels(flow_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str flow_id: The flow id to set the loglevel for (required)
+        :param FlowLogLevelRequest body: New LogLevel settings (required)
+        :param list[str] expand: Expand instructions for the result
+        :return: FlowSettingsResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['flow_id', 'body', 'expand']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_flow_instances_settings_loglevels" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'flow_id' is set
+        if ('flow_id' not in params) or (params['flow_id'] is None):
+            raise ValueError("Missing the required parameter `flow_id` when calling `post_flow_instances_settings_loglevels`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_flow_instances_settings_loglevels`")
+
+
+        resource_path = '/api/v2/flows/{flowId}/instances/settings/loglevels'.replace('{format}', 'json')
+        path_params = {}
+        if 'flow_id' in params:
+            path_params['flowId'] = params['flow_id']
+
+        query_params = {}
+        if 'expand' in params:
+            query_params['expand'] = params['expand']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='FlowSettingsResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def post_flow_versions(self, flow_id: str, body: object, **kwargs) -> 'FlowVersion':
         """
         Create flow version
@@ -9796,7 +10504,6 @@ class ArchitectApi(object):
         """
         Start a process (job) that will prepare a list of execution data IDs for download.
         Returns a JobResult object that contains an ID that can be used to check status and/or download links when the process (job) is complete.
-	    post_flows_instances_jobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -9878,7 +10585,6 @@ class ArchitectApi(object):
         """
         Query the database of existing flow histories to look for particular flow criteria
         Returns a list of matching flow histories up to 200 max.
-	    post_flows_instances_query is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -10865,6 +11571,94 @@ class ArchitectApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def put_flow_instances_settings_loglevels(self, flow_id: str, body: 'FlowLogLevelRequest', **kwargs) -> 'FlowSettingsResponse':
+        """
+        Edit the logLevel for a particular flow id
+        Updates the loglevel for a flow id
+	    put_flow_instances_settings_loglevels is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.put_flow_instances_settings_loglevels(flow_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str flow_id: The flow id to edit the loglevel for (required)
+        :param FlowLogLevelRequest body: New LogLevel settings (required)
+        :param list[str] expand: Expand instructions for the result
+        :return: FlowSettingsResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['flow_id', 'body', 'expand']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method put_flow_instances_settings_loglevels" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'flow_id' is set
+        if ('flow_id' not in params) or (params['flow_id'] is None):
+            raise ValueError("Missing the required parameter `flow_id` when calling `put_flow_instances_settings_loglevels`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `put_flow_instances_settings_loglevels`")
+
+
+        resource_path = '/api/v2/flows/{flowId}/instances/settings/loglevels'.replace('{format}', 'json')
+        path_params = {}
+        if 'flow_id' in params:
+            path_params['flowId'] = params['flow_id']
+
+        query_params = {}
+        if 'expand' in params:
+            query_params['expand'] = params['expand']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='FlowSettingsResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def put_flows_datatable(self, datatable_id: str, body: 'DataTable', **kwargs) -> 'DataTable':
         """
         Updates a specific datatable by id
@@ -11035,6 +11829,88 @@ class ArchitectApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='dict(str, object)',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def put_flows_instances_settings_loglevels_default(self, body: 'FlowLogLevelRequest', **kwargs) -> 'FlowSettingsResponse':
+        """
+        Edit the flow default log level.
+        Edit the flow default log level.
+	    put_flows_instances_settings_loglevels_default is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.put_flows_instances_settings_loglevels_default(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param FlowLogLevelRequest body: New LogLevel settings (required)
+        :param list[str] expand: Expand instructions for the result
+        :return: FlowSettingsResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body', 'expand']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method put_flows_instances_settings_loglevels_default" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `put_flows_instances_settings_loglevels_default`")
+
+
+        resource_path = '/api/v2/flows/instances/settings/loglevels/default'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'expand' in params:
+            query_params['expand'] = params['expand']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='FlowSettingsResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

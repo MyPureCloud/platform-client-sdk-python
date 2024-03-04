@@ -1702,10 +1702,11 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("get_workforcemanagement_adhocmodelingjob is deprecated")
     def get_workforcemanagement_adhocmodelingjob(self, job_id: str, **kwargs) -> 'ModelingStatusResponse':
         """
-        Get status of the modeling job
-        
+        To get status of the modeling job.
+        This Endpoint is Deprecated, and not recommended to be used.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

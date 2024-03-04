@@ -33,6 +33,7 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
+    from . import DomainEntityListingEvaluationForm
     from . import EvaluationQuestionGroup
 
 class EvaluationFormResponse(object):
@@ -57,6 +58,7 @@ class EvaluationFormResponse(object):
             'context_id': 'str',
             'question_groups': 'list[EvaluationQuestionGroup]',
             'weight_mode': 'str',
+            'published_versions': 'DomainEntityListingEvaluationForm',
             'self_uri': 'str'
         }
 
@@ -68,6 +70,7 @@ class EvaluationFormResponse(object):
             'context_id': 'contextId',
             'question_groups': 'questionGroups',
             'weight_mode': 'weightMode',
+            'published_versions': 'publishedVersions',
             'self_uri': 'selfUri'
         }
 
@@ -78,6 +81,7 @@ class EvaluationFormResponse(object):
         self._context_id = None
         self._question_groups = None
         self._weight_mode = None
+        self._published_versions = None
         self._self_uri = None
 
     @property
@@ -252,6 +256,30 @@ class EvaluationFormResponse(object):
             self._weight_mode = "outdated_sdk_version"
         else:
             self._weight_mode = weight_mode
+
+    @property
+    def published_versions(self) -> 'DomainEntityListingEvaluationForm':
+        """
+        Gets the published_versions of this EvaluationFormResponse.
+        A list of the published versions of this form. Not populated by default, its availability depends on the endpoint. Use the 'expand=publishHistory' query parameter to retrieve this data where applicable (refer to the endpoint description to see if it is applicable).
+
+        :return: The published_versions of this EvaluationFormResponse.
+        :rtype: DomainEntityListingEvaluationForm
+        """
+        return self._published_versions
+
+    @published_versions.setter
+    def published_versions(self, published_versions: 'DomainEntityListingEvaluationForm') -> None:
+        """
+        Sets the published_versions of this EvaluationFormResponse.
+        A list of the published versions of this form. Not populated by default, its availability depends on the endpoint. Use the 'expand=publishHistory' query parameter to retrieve this data where applicable (refer to the endpoint description to see if it is applicable).
+
+        :param published_versions: The published_versions of this EvaluationFormResponse.
+        :type: DomainEntityListingEvaluationForm
+        """
+        
+
+        self._published_versions = published_versions
 
     @property
     def self_uri(self) -> str:

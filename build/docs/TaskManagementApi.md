@@ -30,6 +30,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_taskmanagement_worktype**](TaskManagementApi.html#get_taskmanagement_worktype) | Get a worktype|
 |[**get_taskmanagement_worktype_history**](TaskManagementApi.html#get_taskmanagement_worktype_history) | Get a listing of a worktype&#39;s attribute change history|
 |[**get_taskmanagement_worktype_status**](TaskManagementApi.html#get_taskmanagement_worktype_status) | Get a status|
+|[**get_taskmanagement_worktype_statuses**](TaskManagementApi.html#get_taskmanagement_worktype_statuses) | Get list of statuses for this worktype.|
 |[**get_taskmanagement_worktype_version**](TaskManagementApi.html#get_taskmanagement_worktype_version) | Get a version of a worktype|
 |[**get_taskmanagement_worktype_versions**](TaskManagementApi.html#get_taskmanagement_worktype_versions) | Get all versions of a worktype|
 |[**patch_taskmanagement_workbin**](TaskManagementApi.html#patch_taskmanagement_workbin) | Update the attributes of a workbin|
@@ -1227,6 +1228,57 @@ except ApiException as e:
 ### Return type
 
 [**WorkitemStatus**](WorkitemStatus.html)
+
+<a name="get_taskmanagement_worktype_statuses"></a>
+
+## [**WorkitemStatusListing**](WorkitemStatusListing.html) get_taskmanagement_worktype_statuses(worktype_id)
+
+
+
+Get list of statuses for this worktype.
+
+get_taskmanagement_worktype_statuses is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/taskmanagement/worktypes/{worktypeId}/statuses 
+
+Requires ANY permissions: 
+
+* workitems:status:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TaskManagementApi()
+worktype_id = 'worktype_id_example' # str | Worktype id
+
+try:
+    # Get list of statuses for this worktype.
+    api_response = api_instance.get_taskmanagement_worktype_statuses(worktype_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling TaskManagementApi->get_taskmanagement_worktype_statuses: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **worktype_id** | **str**| Worktype id |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**WorkitemStatusListing**](WorkitemStatusListing.html)
 
 <a name="get_taskmanagement_worktype_version"></a>
 

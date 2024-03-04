@@ -259,7 +259,7 @@ class EmailRoutingEstablishedEvent(object):
     def label(self) -> str:
         """
         Gets the label of this EmailRoutingEstablishedEvent.
-        An optional label that categorizes the conversation.  Max-utilization settings can be configured at a per-label level.
+        An optional label that categorizes the conversation. Max-utilization settings can be configured at a per-label level.
 
         :return: The label of this EmailRoutingEstablishedEvent.
         :rtype: str
@@ -270,7 +270,7 @@ class EmailRoutingEstablishedEvent(object):
     def label(self, label: str) -> None:
         """
         Sets the label of this EmailRoutingEstablishedEvent.
-        An optional label that categorizes the conversation.  Max-utilization settings can be configured at a per-label level.
+        An optional label that categorizes the conversation. Max-utilization settings can be configured at a per-label level.
 
         :param label: The label of this EmailRoutingEstablishedEvent.
         :type: str

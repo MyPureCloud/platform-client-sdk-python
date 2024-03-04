@@ -229,7 +229,7 @@ class EvaluationForm(object):
     def published_versions(self) -> 'DomainEntityListingEvaluationForm':
         """
         Gets the published_versions of this EvaluationForm.
-
+        A list of the published versions of this form. Not populated by default, its availability depends on the endpoint. Use the 'expand=publishHistory' query parameter to retrieve this data where applicable (refer to the endpoint description to see if it is applicable).
 
         :return: The published_versions of this EvaluationForm.
         :rtype: DomainEntityListingEvaluationForm
@@ -240,7 +240,7 @@ class EvaluationForm(object):
     def published_versions(self, published_versions: 'DomainEntityListingEvaluationForm') -> None:
         """
         Sets the published_versions of this EvaluationForm.
-
+        A list of the published versions of this form. Not populated by default, its availability depends on the endpoint. Use the 'expand=publishHistory' query parameter to retrieve this data where applicable (refer to the endpoint description to see if it is applicable).
 
         :param published_versions: The published_versions of this EvaluationForm.
         :type: DomainEntityListingEvaluationForm

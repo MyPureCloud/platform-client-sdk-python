@@ -6021,7 +6021,7 @@ except ApiException as e:
 
 <a name="post_outbound_contactlist_export"></a>
 
-## [**DomainEntityRef**](DomainEntityRef.html) post_outbound_contactlist_export(contact_list_id)
+## [**DomainEntityRef**](DomainEntityRef.html) post_outbound_contactlist_export(contact_list_id, body=body)
 
 
 
@@ -6050,10 +6050,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.OutboundApi()
 contact_list_id = 'contact_list_id_example' # str | ContactList ID
+body = PureCloudPlatformClientV2.ContactsExportRequest() # ContactsExportRequest | Export information to get (optional)
 
 try:
     # Initiate the export of a contact list.
-    api_response = api_instance.post_outbound_contactlist_export(contact_list_id)
+    api_response = api_instance.post_outbound_contactlist_export(contact_list_id, body=body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling OutboundApi->post_outbound_contactlist_export: %s\n" % e)
@@ -6065,6 +6066,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **contact_list_id** | **str**| ContactList ID |  |
+| **body** | [**ContactsExportRequest**](ContactsExportRequest.html)| Export information to get | [optional]  |
 {: class="table table-striped"}
 
 ### Return type

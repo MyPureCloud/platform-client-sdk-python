@@ -51,16 +51,22 @@ class CommonRuleBulkUpdateNotificationsRequest(object):
         """
         self.swagger_types = {
             'rule_ids': 'list[str]',
-            'properties': 'ModifiableRuleProperties'
+            'properties': 'ModifiableRuleProperties',
+            'types_to_add': 'list[str]',
+            'types_to_remove': 'list[str]'
         }
 
         self.attribute_map = {
             'rule_ids': 'ruleIds',
-            'properties': 'properties'
+            'properties': 'properties',
+            'types_to_add': 'typesToAdd',
+            'types_to_remove': 'typesToRemove'
         }
 
         self._rule_ids = None
         self._properties = None
+        self._types_to_add = None
+        self._types_to_remove = None
 
     @property
     def rule_ids(self) -> List[str]:
@@ -109,6 +115,54 @@ class CommonRuleBulkUpdateNotificationsRequest(object):
         
 
         self._properties = properties
+
+    @property
+    def types_to_add(self) -> List[str]:
+        """
+        Gets the types_to_add of this CommonRuleBulkUpdateNotificationsRequest.
+        Collection of alerting notification types to add for all entities in the rules
+
+        :return: The types_to_add of this CommonRuleBulkUpdateNotificationsRequest.
+        :rtype: list[str]
+        """
+        return self._types_to_add
+
+    @types_to_add.setter
+    def types_to_add(self, types_to_add: List[str]) -> None:
+        """
+        Sets the types_to_add of this CommonRuleBulkUpdateNotificationsRequest.
+        Collection of alerting notification types to add for all entities in the rules
+
+        :param types_to_add: The types_to_add of this CommonRuleBulkUpdateNotificationsRequest.
+        :type: list[str]
+        """
+        
+
+        self._types_to_add = types_to_add
+
+    @property
+    def types_to_remove(self) -> List[str]:
+        """
+        Gets the types_to_remove of this CommonRuleBulkUpdateNotificationsRequest.
+        Collection of alerting notification types to remove for all entities in the rules
+
+        :return: The types_to_remove of this CommonRuleBulkUpdateNotificationsRequest.
+        :rtype: list[str]
+        """
+        return self._types_to_remove
+
+    @types_to_remove.setter
+    def types_to_remove(self, types_to_remove: List[str]) -> None:
+        """
+        Sets the types_to_remove of this CommonRuleBulkUpdateNotificationsRequest.
+        Collection of alerting notification types to remove for all entities in the rules
+
+        :param types_to_remove: The types_to_remove of this CommonRuleBulkUpdateNotificationsRequest.
+        :type: list[str]
+        """
+        
+
+        self._types_to_remove = types_to_remove
 
     def to_dict(self):
         """

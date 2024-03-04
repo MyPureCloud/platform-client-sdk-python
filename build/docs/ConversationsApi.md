@@ -16,7 +16,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**delete_conversations_messages_cachedmedia_cached_media_item_id**](ConversationsApi.html#delete_conversations_messages_cachedmedia_cached_media_item_id) | Remove a cached media item asychronously|
 |[**delete_conversations_messaging_integrations_facebook_integration_id**](ConversationsApi.html#delete_conversations_messaging_integrations_facebook_integration_id) | Delete a Facebook messaging integration|
 |[**delete_conversations_messaging_integrations_instagram_integration_id**](ConversationsApi.html#delete_conversations_messaging_integrations_instagram_integration_id) | Delete Instagram messaging integration|
-|[**delete_conversations_messaging_integrations_line_integration_id**](ConversationsApi.html#delete_conversations_messaging_integrations_line_integration_id) | Delete a LINE messenger integration|
+|[**delete_conversations_messaging_integrations_line_integration_id**](ConversationsApi.html#delete_conversations_messaging_integrations_line_integration_id) | Delete a LINE messenger integration (Deprecated)|
 |[**delete_conversations_messaging_integrations_open_integration_id**](ConversationsApi.html#delete_conversations_messaging_integrations_open_integration_id) | Delete an Open messaging integration|
 |[**delete_conversations_messaging_integrations_twitter_integration_id**](ConversationsApi.html#delete_conversations_messaging_integrations_twitter_integration_id) | Delete a Twitter messaging integration|
 |[**delete_conversations_messaging_integrations_whatsapp_integration_id**](ConversationsApi.html#delete_conversations_messaging_integrations_whatsapp_integration_id) | Delete a WhatsApp messaging integration|
@@ -88,8 +88,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_conversations_messaging_integrations_facebook_integration_id**](ConversationsApi.html#get_conversations_messaging_integrations_facebook_integration_id) | Get a Facebook messaging integration|
 |[**get_conversations_messaging_integrations_instagram**](ConversationsApi.html#get_conversations_messaging_integrations_instagram) | Get a list of Instagram Integrations|
 |[**get_conversations_messaging_integrations_instagram_integration_id**](ConversationsApi.html#get_conversations_messaging_integrations_instagram_integration_id) | Get Instagram messaging integration|
-|[**get_conversations_messaging_integrations_line**](ConversationsApi.html#get_conversations_messaging_integrations_line) | Get a list of LINE messenger Integrations|
-|[**get_conversations_messaging_integrations_line_integration_id**](ConversationsApi.html#get_conversations_messaging_integrations_line_integration_id) | Get a LINE messenger integration|
+|[**get_conversations_messaging_integrations_line**](ConversationsApi.html#get_conversations_messaging_integrations_line) | Get a list of LINE messenger Integrations (Deprecated)|
+|[**get_conversations_messaging_integrations_line_integration_id**](ConversationsApi.html#get_conversations_messaging_integrations_line_integration_id) | Get a LINE messenger integration (Deprecated)|
 |[**get_conversations_messaging_integrations_open**](ConversationsApi.html#get_conversations_messaging_integrations_open) | Get a list of Open messaging integrations|
 |[**get_conversations_messaging_integrations_open_integration_id**](ConversationsApi.html#get_conversations_messaging_integrations_open_integration_id) | Get an Open messaging integration|
 |[**get_conversations_messaging_integrations_twitter**](ConversationsApi.html#get_conversations_messaging_integrations_twitter) | Get a list of Twitter Integrations|
@@ -241,7 +241,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**put_conversations_email_recordingstate**](ConversationsApi.html#put_conversations_email_recordingstate) | Update a conversation by setting its recording state|
 |[**put_conversations_keyconfiguration**](ConversationsApi.html#put_conversations_keyconfiguration) | Update the encryption key configurations|
 |[**put_conversations_message_recordingstate**](ConversationsApi.html#put_conversations_message_recordingstate) | Update a conversation by setting its recording state|
-|[**put_conversations_messaging_integrations_line_integration_id**](ConversationsApi.html#put_conversations_messaging_integrations_line_integration_id) | Update a LINE messenger integration|
+|[**put_conversations_messaging_integrations_line_integration_id**](ConversationsApi.html#put_conversations_messaging_integrations_line_integration_id) | Update a LINE messenger integration (Deprecated)|
 |[**put_conversations_messaging_settings_default**](ConversationsApi.html#put_conversations_messaging_settings_default) | Set the organization&#39;s default setting that may be applied to to integrations without settings|
 |[**put_conversations_messaging_supportedcontent_default**](ConversationsApi.html#put_conversations_messaging_supportedcontent_default) | Set the organization&#39;s default supported content profile that may be assigned to an integration when it is created.|
 |[**put_conversations_messaging_threadingtimeline**](ConversationsApi.html#put_conversations_messaging_threadingtimeline) | Update conversation threading window timeline for each messaging type|
@@ -645,9 +645,11 @@ void (empty response body)
 
 ##  delete_conversations_messaging_integrations_line_integration_id(integration_id)
 
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
+Delete a LINE messenger integration (Deprecated)
 
-Delete a LINE messenger integration
+This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-line-third-party-messaging-channel/
 
 Wraps DELETE /api/v2/conversations/messaging/integrations/line/{integrationId} 
 
@@ -671,7 +673,7 @@ api_instance = PureCloudPlatformClientV2.ConversationsApi()
 integration_id = 'integration_id_example' # str | Integration ID
 
 try:
-    # Delete a LINE messenger integration
+    # Delete a LINE messenger integration (Deprecated)
     api_instance.delete_conversations_messaging_integrations_line_integration_id(integration_id)
 except ApiException as e:
     print("Exception when calling ConversationsApi->delete_conversations_messaging_integrations_line_integration_id: %s\n" % e)
@@ -4251,9 +4253,11 @@ except ApiException as e:
 
 ## [**LineIntegrationEntityListing**](LineIntegrationEntityListing.html) get_conversations_messaging_integrations_line(page_size=page_size, page_number=page_number, expand=expand, supported_content_id=supported_content_id, messaging_setting_id=messaging_setting_id)
 
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
+Get a list of LINE messenger Integrations (Deprecated)
 
-Get a list of LINE messenger Integrations
+This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-line-third-party-messaging-channel/
 
 Wraps GET /api/v2/conversations/messaging/integrations/line 
 
@@ -4281,7 +4285,7 @@ supported_content_id = 'supported_content_id_example' # str | Filter integration
 messaging_setting_id = 'messaging_setting_id_example' # str | Filter integrations returned based on the setting ID (optional)
 
 try:
-    # Get a list of LINE messenger Integrations
+    # Get a list of LINE messenger Integrations (Deprecated)
     api_response = api_instance.get_conversations_messaging_integrations_line(page_size=page_size, page_number=page_number, expand=expand, supported_content_id=supported_content_id, messaging_setting_id=messaging_setting_id)
     pprint(api_response)
 except ApiException as e:
@@ -4308,9 +4312,11 @@ except ApiException as e:
 
 ## [**LineIntegration**](LineIntegration.html) get_conversations_messaging_integrations_line_integration_id(integration_id, expand=expand)
 
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
+Get a LINE messenger integration (Deprecated)
 
-Get a LINE messenger integration
+This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-line-third-party-messaging-channel/
 
 Wraps GET /api/v2/conversations/messaging/integrations/line/{integrationId} 
 
@@ -4335,7 +4341,7 @@ integration_id = 'integration_id_example' # str | Integration ID
 expand = 'expand_example' # str | Expand instructions for the return value. (optional)
 
 try:
-    # Get a LINE messenger integration
+    # Get a LINE messenger integration (Deprecated)
     api_response = api_instance.get_conversations_messaging_integrations_line_integration_id(integration_id, expand=expand)
     pprint(api_response)
 except ApiException as e:
@@ -12157,9 +12163,11 @@ except ApiException as e:
 
 ## [**LineIntegration**](LineIntegration.html) put_conversations_messaging_integrations_line_integration_id(integration_id, body)
 
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
+Update a LINE messenger integration (Deprecated)
 
-Update a LINE messenger integration
+This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-line-third-party-messaging-channel/
 
 Wraps PUT /api/v2/conversations/messaging/integrations/line/{integrationId} 
 
@@ -12184,7 +12192,7 @@ integration_id = 'integration_id_example' # str | Integration ID
 body = PureCloudPlatformClientV2.LineIntegrationRequest() # LineIntegrationRequest | LineIntegrationRequest
 
 try:
-    # Update a LINE messenger integration
+    # Update a LINE messenger integration (Deprecated)
     api_response = api_instance.put_conversations_messaging_integrations_line_integration_id(integration_id, body)
     pprint(api_response)
 except ApiException as e:

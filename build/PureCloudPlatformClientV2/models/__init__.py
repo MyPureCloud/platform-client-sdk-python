@@ -632,6 +632,7 @@ from .contact_address import ContactAddress
 from .contact_address_condition_settings import ContactAddressConditionSettings
 from .contact_address_type_condition_settings import ContactAddressTypeConditionSettings
 from .contact_addressable_entity_ref import ContactAddressableEntityRef
+from .contact_bulk_search_criteria import ContactBulkSearchCriteria
 from .contact_callback_request import ContactCallbackRequest
 from .contact_center_settings import ContactCenterSettings
 from .contact_column_condition_settings import ContactColumnConditionSettings
@@ -660,6 +661,7 @@ from .contactlist_download_ready_export_uri import ContactlistDownloadReadyExpor
 from .contactlist_download_ready_object import ContactlistDownloadReadyObject
 from .contactlist_import_status_import_status import ContactlistImportStatusImportStatus
 from .contactlist_import_status_object import ContactlistImportStatusObject
+from .contacts_export_request import ContactsExportRequest
 from .content_actions import ContentActions
 from .content_attachment import ContentAttachment
 from .content_button_response import ContentButtonResponse
@@ -1178,6 +1180,11 @@ from .dialer_wrapupcodemapping_config_change_wrap_up_code_mapping import DialerW
 from .dialogflow_agent import DialogflowAgent
 from .dialogflow_agent_summary import DialogflowAgentSummary
 from .dialogflow_agent_summary_entity_listing import DialogflowAgentSummaryEntityListing
+from .dialogflow_cx_agent import DialogflowCXAgent
+from .dialogflow_cx_agent_summary import DialogflowCXAgentSummary
+from .dialogflow_cx_agent_summary_entity_listing import DialogflowCXAgentSummaryEntityListing
+from .dialogflow_cx_environment import DialogflowCXEnvironment
+from .dialogflow_cx_project import DialogflowCXProject
 from .dialogflow_intent import DialogflowIntent
 from .dialogflow_parameter import DialogflowParameter
 from .dialogflow_project import DialogflowProject
@@ -1432,6 +1439,12 @@ from .evaluation_aggregation_view import EvaluationAggregationView
 from .evaluation_assignment import EvaluationAssignment
 from .evaluation_async_aggregate_query_response import EvaluationAsyncAggregateQueryResponse
 from .evaluation_async_aggregation_query import EvaluationAsyncAggregationQuery
+from .evaluation_create_body import EvaluationCreateBody
+from .evaluation_create_calibration import EvaluationCreateCalibration
+from .evaluation_create_conversation import EvaluationCreateConversation
+from .evaluation_create_eval_form import EvaluationCreateEvalForm
+from .evaluation_create_queue import EvaluationCreateQueue
+from .evaluation_create_user import EvaluationCreateUser
 from .evaluation_detail_query_clause import EvaluationDetailQueryClause
 from .evaluation_detail_query_filter import EvaluationDetailQueryFilter
 from .evaluation_detail_query_predicate import EvaluationDetailQueryPredicate
@@ -1472,7 +1485,10 @@ from .event_session import EventSession
 from .event_setting import EventSetting
 from .execute_recording_jobs_query import ExecuteRecordingJobsQuery
 from .execution_data_entity import ExecutionDataEntity
+from .execution_data_flow_settings_response import ExecutionDataFlowSettingsResponse
+from .execution_data_global_settings_response import ExecutionDataGlobalSettingsResponse
 from .execution_data_request import ExecutionDataRequest
+from .execution_data_settings_request import ExecutionDataSettingsRequest
 from .expandable_web_deployment import ExpandableWebDeployment
 from .expandable_web_deployment_entity_listing import ExpandableWebDeploymentEntityListing
 from .expansion_criterium import ExpansionCriterium
@@ -1589,6 +1605,7 @@ from .flow_aggregation_query import FlowAggregationQuery
 from .flow_aggregation_view import FlowAggregationView
 from .flow_async_aggregate_query_response import FlowAsyncAggregateQueryResponse
 from .flow_async_aggregation_query import FlowAsyncAggregationQuery
+from .flow_characteristics import FlowCharacteristics
 from .flow_diagnostic_info import FlowDiagnosticInfo
 from .flow_division_view import FlowDivisionView
 from .flow_division_view_entity_listing import FlowDivisionViewEntityListing
@@ -1614,6 +1631,10 @@ from .flow_health_intent_utterance import FlowHealthIntentUtterance
 from .flow_health_intent_version_info import FlowHealthIntentVersionInfo
 from .flow_health_utterance import FlowHealthUtterance
 from .flow_health_version_info import FlowHealthVersionInfo
+from .flow_log_level import FlowLogLevel
+from .flow_log_level_characteristics_definition import FlowLogLevelCharacteristicsDefinition
+from .flow_log_level_characteristics_definitions import FlowLogLevelCharacteristicsDefinitions
+from .flow_log_level_request import FlowLogLevelRequest
 from .flow_metrics_topic_flow_metric_record import FlowMetricsTopicFlowMetricRecord
 from .flow_metrics_topic_flow_outcome import FlowMetricsTopicFlowOutcome
 from .flow_metrics_topic_flow_proposed_agent import FlowMetricsTopicFlowProposedAgent
@@ -1641,6 +1662,8 @@ from .flow_paths_flow_filter import FlowPathsFlowFilter
 from .flow_paths_query import FlowPathsQuery
 from .flow_result_entity_listing import FlowResultEntityListing
 from .flow_runtime_execution import FlowRuntimeExecution
+from .flow_settings_response import FlowSettingsResponse
+from .flow_settings_response_entity_listing import FlowSettingsResponseEntityListing
 from .flow_start_detail_event_topic_flow_start_event import FlowStartDetailEventTopicFlowStartEvent
 from .flow_version import FlowVersion
 from .flow_version_entity_listing import FlowVersionEntityListing
@@ -2166,6 +2189,12 @@ from .lex_bot_alias_entity_listing import LexBotAliasEntityListing
 from .lex_bot_entity_listing import LexBotEntityListing
 from .lex_intent import LexIntent
 from .lex_slot import LexSlot
+from .lex_v2_bot import LexV2Bot
+from .lex_v2_bot_alias import LexV2BotAlias
+from .lex_v2_bot_alias_entity_listing import LexV2BotAliasEntityListing
+from .lex_v2_bot_entity_listing import LexV2BotEntityListing
+from .lex_v2_intent import LexV2Intent
+from .lex_v2_slot import LexV2Slot
 from .library import Library
 from .library_entity_listing import LibraryEntityListing
 from .license_assignment_request import LicenseAssignmentRequest
@@ -2293,10 +2322,21 @@ from .messaging_campaign_division_view_entity_listing import MessagingCampaignDi
 from .messaging_campaign_entity_listing import MessagingCampaignEntityListing
 from .messaging_campaign_schedule import MessagingCampaignSchedule
 from .messaging_campaign_schedule_entity_listing import MessagingCampaignScheduleEntityListing
+from .messaging_communication_answered_event import MessagingCommunicationAnsweredEvent
+from .messaging_communication_disposition_applied_event import MessagingCommunicationDispositionAppliedEvent
+from .messaging_communication_ended_event import MessagingCommunicationEndedEvent
 from .messaging_config_listing import MessagingConfigListing
+from .messaging_end_transfer_event import MessagingEndTransferEvent
+from .messaging_external_established_event import MessagingExternalEstablishedEvent
+from .messaging_flow_established_event import MessagingFlowEstablishedEvent
+from .messaging_hold_updated_event import MessagingHoldUpdatedEvent
+from .messaging_initial_configuration import MessagingInitialConfiguration
 from .messaging_integration import MessagingIntegration
 from .messaging_integration_entity_listing import MessagingIntegrationEntityListing
+from .messaging_progress_transfer_event import MessagingProgressTransferEvent
 from .messaging_recipient import MessagingRecipient
+from .messaging_routing_established_event import MessagingRoutingEstablishedEvent
+from .messaging_routing_transfer_event import MessagingRoutingTransferEvent
 from .messaging_setting import MessagingSetting
 from .messaging_setting_default_request import MessagingSettingDefaultRequest
 from .messaging_setting_patch_request import MessagingSettingPatchRequest
@@ -2307,6 +2347,8 @@ from .messaging_sticker import MessagingSticker
 from .messaging_sticker_entity_listing import MessagingStickerEntityListing
 from .messaging_template import MessagingTemplate
 from .messaging_template_request import MessagingTemplateRequest
+from .messaging_user_established_event import MessagingUserEstablishedEvent
+from .messaging_user_transfer_event import MessagingUserTransferEvent
 from .messenger_apps import MessengerApps
 from .messenger_home_screen import MessengerHomeScreen
 from .messenger_settings import MessengerSettings
@@ -2314,6 +2356,7 @@ from .messenger_styles import MessengerStyles
 from .meta_data import MetaData
 from .metabase import Metabase
 from .metadata_documentation import MetadataDocumentation
+from .metadata_item import MetadataItem
 from .metadata_presentation import MetadataPresentation
 from .metadata_property import MetadataProperty
 from .metadata_result_entity import MetadataResultEntity
@@ -2328,6 +2371,7 @@ from .metrics import Metrics
 from .min_length import MinLength
 from .mined_intents_listing import MinedIntentsListing
 from .miner import Miner
+from .miner_error_info import MinerErrorInfo
 from .miner_execute_request import MinerExecuteRequest
 from .miner_intent import MinerIntent
 from .miner_listing import MinerListing
@@ -3342,6 +3386,8 @@ from .status_change import StatusChange
 from .stop_settings import StopSettings
 from .story_setting import StorySetting
 from .street_address import StreetAddress
+from .stt_engine_entity import SttEngineEntity
+from .stt_engine_entity_listing import SttEngineEntityListing
 from .subject_division_grants import SubjectDivisionGrants
 from .subject_division_grants_entity_listing import SubjectDivisionGrantsEntityListing
 from .subject_divisions import SubjectDivisions
@@ -3618,6 +3664,8 @@ from .unanswered_phrase import UnansweredPhrase
 from .unanswered_phrase_group import UnansweredPhraseGroup
 from .unanswered_phrase_group_patch_request_body import UnansweredPhraseGroupPatchRequestBody
 from .unanswered_phrase_group_update_response import UnansweredPhraseGroupUpdateResponse
+from .unified_communications_integration import UnifiedCommunicationsIntegration
+from .unified_communications_integration_listing import UnifiedCommunicationsIntegrationListing
 from .unified_general_topic import UnifiedGeneralTopic
 from .unified_general_topic_entity_listing import UnifiedGeneralTopicEntityListing
 from .unpublished_programs_entity_listing import UnpublishedProgramsEntityListing
@@ -4183,6 +4231,7 @@ from .workitem_scored_agent import WorkitemScoredAgent
 from .workitem_scored_agent_request import WorkitemScoredAgentRequest
 from .workitem_status import WorkitemStatus
 from .workitem_status_create import WorkitemStatusCreate
+from .workitem_status_listing import WorkitemStatusListing
 from .workitem_status_reference import WorkitemStatusReference
 from .workitem_status_update import WorkitemStatusUpdate
 from .workitem_terminate import WorkitemTerminate
