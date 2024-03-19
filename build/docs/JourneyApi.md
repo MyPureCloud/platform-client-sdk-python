@@ -39,7 +39,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_journey_session_outcomescores**](JourneyApi.html#get_journey_session_outcomescores) | Retrieve latest outcome score associated with a session for all outcomes.|
 |[**get_journey_view**](JourneyApi.html#get_journey_view) | Get a Journey View by ID|
 |[**get_journey_view_version**](JourneyApi.html#get_journey_view_version) | Get a Journey View by ID and version|
+|[**get_journey_view_version_job**](JourneyApi.html#get_journey_view_version_job) | Get the job for a journey view version.|
+|[**get_journey_view_version_job_results**](JourneyApi.html#get_journey_view_version_job_results) | Get the result of a job for a journey view version.|
+|[**get_journey_view_version_jobs_latest**](JourneyApi.html#get_journey_view_version_jobs_latest) | Get the latest job of a journey view version.|
 |[**get_journey_views**](JourneyApi.html#get_journey_views) | Get a list of Journey Views|
+|[**get_journey_views_eventdefinition**](JourneyApi.html#get_journey_views_eventdefinition) | Get an Event Definition|
+|[**get_journey_views_eventdefinitions**](JourneyApi.html#get_journey_views_eventdefinitions) | Get a list of Event Definitions|
 |[**patch_journey_actionmap**](JourneyApi.html#patch_journey_actionmap) | Update single action map.|
 |[**patch_journey_actiontarget**](JourneyApi.html#patch_journey_actiontarget) | Update a single action target.|
 |[**patch_journey_actiontemplate**](JourneyApi.html#patch_journey_actiontemplate) | Update a single action template.|
@@ -57,8 +62,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_journey_outcomes_attributions_jobs**](JourneyApi.html#post_journey_outcomes_attributions_jobs) | Create Outcome Attributions|
 |[**post_journey_outcomes_predictors**](JourneyApi.html#post_journey_outcomes_predictors) | Create an outcome predictor.|
 |[**post_journey_segments**](JourneyApi.html#post_journey_segments) | Create a segment.|
+|[**post_journey_view_version_jobs**](JourneyApi.html#post_journey_view_version_jobs) | Submit a job request for a journey view version.|
 |[**post_journey_view_versions**](JourneyApi.html#post_journey_view_versions) | Update a Journey View by ID|
 |[**post_journey_views**](JourneyApi.html#post_journey_views) | Create a new Journey View|
+|[**post_journey_views_encodings_validate**](JourneyApi.html#post_journey_views_encodings_validate) | Validate whether an encoding exist for a label/value combination.|
 {: class="table table-striped"}
 
 <a name="delete_journey_actionmap"></a>
@@ -1665,6 +1672,175 @@ except ApiException as e:
 
 [**JourneyView**](JourneyView.html)
 
+<a name="get_journey_view_version_job"></a>
+
+## [**JourneyViewJob**](JourneyViewJob.html) get_journey_view_version_job(view_id, journey_version_id, job_id)
+
+
+
+Get the job for a journey view version.
+
+used for long descriptions
+
+get_journey_view_version_job is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/journey/views/{viewId}/versions/{journeyVersionId}/jobs/{jobId} 
+
+Requires ALL permissions: 
+
+* journey:viewsJobs:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.JourneyApi()
+view_id = 'view_id_example' # str | Journey View Id
+journey_version_id = 'journey_version_id_example' # str | Journey View Version
+job_id = 'job_id_example' # str | JobId
+
+try:
+    # Get the job for a journey view version.
+    api_response = api_instance.get_journey_view_version_job(view_id, journey_version_id, job_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling JourneyApi->get_journey_view_version_job: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **view_id** | **str**| Journey View Id |  |
+| **journey_version_id** | **str**| Journey View Version |  |
+| **job_id** | **str**| JobId |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**JourneyViewJob**](JourneyViewJob.html)
+
+<a name="get_journey_view_version_job_results"></a>
+
+## [**JourneyViewResult**](JourneyViewResult.html) get_journey_view_version_job_results(view_id, journey_view_version, job_id)
+
+
+
+Get the result of a job for a journey view version.
+
+used for long descriptions
+
+get_journey_view_version_job_results is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/journey/views/{viewId}/versions/{journeyViewVersion}/jobs/{jobId}/results 
+
+Requires ALL permissions: 
+
+* journey:viewsResults:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.JourneyApi()
+view_id = 'view_id_example' # str | JourneyViewResult id
+journey_view_version = 'journey_view_version_example' # str | Journey View Version
+job_id = 'job_id_example' # str | Id of the executing job
+
+try:
+    # Get the result of a job for a journey view version.
+    api_response = api_instance.get_journey_view_version_job_results(view_id, journey_view_version, job_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling JourneyApi->get_journey_view_version_job_results: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **view_id** | **str**| JourneyViewResult id |  |
+| **journey_view_version** | **str**| Journey View Version |  |
+| **job_id** | **str**| Id of the executing job |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**JourneyViewResult**](JourneyViewResult.html)
+
+<a name="get_journey_view_version_jobs_latest"></a>
+
+## [**JourneyViewJob**](JourneyViewJob.html) get_journey_view_version_jobs_latest(view_id, journey_version_id)
+
+
+
+Get the latest job of a journey view version.
+
+used for long descriptions
+
+get_journey_view_version_jobs_latest is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/journey/views/{viewId}/versions/{journeyVersionId}/jobs/latest 
+
+Requires ALL permissions: 
+
+* journey:viewsJobs:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.JourneyApi()
+view_id = 'view_id_example' # str | Journey View Id
+journey_version_id = 'journey_version_id_example' # str | Journey View Version
+
+try:
+    # Get the latest job of a journey view version.
+    api_response = api_instance.get_journey_view_version_jobs_latest(view_id, journey_version_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling JourneyApi->get_journey_view_version_jobs_latest: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **view_id** | **str**| Journey View Id |  |
+| **journey_version_id** | **str**| Journey View Version |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**JourneyViewJob**](JourneyViewJob.html)
+
 <a name="get_journey_views"></a>
 
 ## [**AddressableEntityListing**](AddressableEntityListing.html) get_journey_views()
@@ -1711,6 +1887,104 @@ This endpoint does not need any parameters.
 ### Return type
 
 [**AddressableEntityListing**](AddressableEntityListing.html)
+
+<a name="get_journey_views_eventdefinition"></a>
+
+## [**JourneyEventDefinition**](JourneyEventDefinition.html) get_journey_views_eventdefinition(event_definition_id)
+
+
+
+Get an Event Definition
+
+get_journey_views_eventdefinition is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/journey/views/eventdefinitions/{eventDefinitionId} 
+
+Requires ALL permissions: 
+
+* journey:eventDefinition:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.JourneyApi()
+event_definition_id = 'event_definition_id_example' # str | Event Definition ID
+
+try:
+    # Get an Event Definition
+    api_response = api_instance.get_journey_views_eventdefinition(event_definition_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling JourneyApi->get_journey_views_eventdefinition: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **event_definition_id** | **str**| Event Definition ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**JourneyEventDefinition**](JourneyEventDefinition.html)
+
+<a name="get_journey_views_eventdefinitions"></a>
+
+## [**JourneyEventDefinitionListing**](JourneyEventDefinitionListing.html) get_journey_views_eventdefinitions()
+
+
+
+Get a list of Event Definitions
+
+get_journey_views_eventdefinitions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/journey/views/eventdefinitions 
+
+Requires ALL permissions: 
+
+* journey:eventDefinition:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.JourneyApi()
+
+try:
+    # Get a list of Event Definitions
+    api_response = api_instance.get_journey_views_eventdefinitions()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling JourneyApi->get_journey_views_eventdefinitions: %s\n" % e)
+```
+
+### Parameters
+
+This endpoint does not need any parameters.
+
+
+### Return type
+
+[**JourneyEventDefinitionListing**](JourneyEventDefinitionListing.html)
 
 <a name="patch_journey_actionmap"></a>
 
@@ -2556,6 +2830,61 @@ except ApiException as e:
 
 [**JourneySegment**](JourneySegment.html)
 
+<a name="post_journey_view_version_jobs"></a>
+
+## [**JourneyViewJob**](JourneyViewJob.html) post_journey_view_version_jobs(view_id, journey_version_id)
+
+
+
+Submit a job request for a journey view version.
+
+used for long descriptions
+
+post_journey_view_version_jobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/journey/views/{viewId}/versions/{journeyVersionId}/jobs 
+
+Requires ALL permissions: 
+
+* journey:viewsJobs:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.JourneyApi()
+view_id = 'view_id_example' # str | Journey View Id
+journey_version_id = 'journey_version_id_example' # str | Journey View Version
+
+try:
+    # Submit a job request for a journey view version.
+    api_response = api_instance.post_journey_view_version_jobs(view_id, journey_version_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling JourneyApi->post_journey_view_version_jobs: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **view_id** | **str**| Journey View Id |  |
+| **journey_version_id** | **str**| Journey View Version |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**JourneyViewJob**](JourneyViewJob.html)
+
 <a name="post_journey_view_versions"></a>
 
 ## [**JourneyView**](JourneyView.html) post_journey_view_versions(view_id, body)
@@ -2661,4 +2990,57 @@ except ApiException as e:
 ### Return type
 
 [**JourneyView**](JourneyView.html)
+
+<a name="post_journey_views_encodings_validate"></a>
+
+## [**EntityListing**](EntityListing.html) post_journey_views_encodings_validate(body=body)
+
+
+
+Validate whether an encoding exist for a label/value combination.
+
+True indicates a valid encoding
+
+post_journey_views_encodings_validate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/journey/views/encodings/validate 
+
+Requires ALL permissions: 
+
+* journey:viewsEncodings:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.JourneyApi()
+body = [PureCloudPlatformClientV2.Label()] # list[Label] |  (optional)
+
+try:
+    # Validate whether an encoding exist for a label/value combination.
+    api_response = api_instance.post_journey_views_encodings_validate(body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling JourneyApi->post_journey_views_encodings_validate: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**list[Label]**](Label.html)|  | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**EntityListing**](EntityListing.html)
 

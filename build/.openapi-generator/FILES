@@ -207,6 +207,7 @@ PureCloudPlatformClientV2/models/alert_summary.py
 PureCloudPlatformClientV2/models/alert_summary_entity.py
 PureCloudPlatformClientV2/models/alerting_unread_status.py
 PureCloudPlatformClientV2/models/all_time_points.py
+PureCloudPlatformClientV2/models/alteration.py
 PureCloudPlatformClientV2/models/amazon_lex_request.py
 PureCloudPlatformClientV2/models/analytics_agent_group.py
 PureCloudPlatformClientV2/models/analytics_conversation.py
@@ -432,6 +433,8 @@ PureCloudPlatformClientV2/models/bu_async_schedule_run_response.py
 PureCloudPlatformClientV2/models/bu_average_speed_of_answer.py
 PureCloudPlatformClientV2/models/bu_copy_schedule_request.py
 PureCloudPlatformClientV2/models/bu_create_blank_schedule_request.py
+PureCloudPlatformClientV2/models/bu_create_time_off_limit_request.py
+PureCloudPlatformClientV2/models/bu_create_time_off_plan_request.py
 PureCloudPlatformClientV2/models/bu_current_agent_schedule_search_response.py
 PureCloudPlatformClientV2/models/bu_forecast_generation_planning_group_result.py
 PureCloudPlatformClientV2/models/bu_forecast_generation_result.py
@@ -471,13 +474,23 @@ PureCloudPlatformClientV2/models/bu_scheduling_settings_request.py
 PureCloudPlatformClientV2/models/bu_scheduling_settings_response.py
 PureCloudPlatformClientV2/models/bu_search_agent_schedules_request.py
 PureCloudPlatformClientV2/models/bu_service_level.py
+PureCloudPlatformClientV2/models/bu_set_time_off_limit_values_request.py
 PureCloudPlatformClientV2/models/bu_short_term_forecast.py
 PureCloudPlatformClientV2/models/bu_short_term_forecast_list_item.py
 PureCloudPlatformClientV2/models/bu_short_term_forecast_listing.py
 PureCloudPlatformClientV2/models/bu_short_term_forecast_reference.py
 PureCloudPlatformClientV2/models/bu_short_term_forecasting_settings.py
+PureCloudPlatformClientV2/models/bu_time_off_limit_listing.py
+PureCloudPlatformClientV2/models/bu_time_off_limit_range.py
+PureCloudPlatformClientV2/models/bu_time_off_limit_reference.py
+PureCloudPlatformClientV2/models/bu_time_off_limit_response.py
+PureCloudPlatformClientV2/models/bu_time_off_limit_value_range.py
+PureCloudPlatformClientV2/models/bu_time_off_limit_values_response.py
+PureCloudPlatformClientV2/models/bu_time_off_plan_listing.py
+PureCloudPlatformClientV2/models/bu_time_off_plan_response.py
 PureCloudPlatformClientV2/models/bu_update_agent_schedule_shift.py
 PureCloudPlatformClientV2/models/bu_update_agent_schedule_upload_schema.py
+PureCloudPlatformClientV2/models/bu_update_time_off_plan_request.py
 PureCloudPlatformClientV2/models/bulk_callback_disconnect_request.py
 PureCloudPlatformClientV2/models/bulk_callback_patch_request.py
 PureCloudPlatformClientV2/models/bulk_callback_patch_response.py
@@ -625,6 +638,7 @@ PureCloudPlatformClientV2/models/chat_message_entity_listing.py
 PureCloudPlatformClientV2/models/chat_message_response.py
 PureCloudPlatformClientV2/models/chat_message_user.py
 PureCloudPlatformClientV2/models/chat_reaction.py
+PureCloudPlatformClientV2/models/chat_reaction_update.py
 PureCloudPlatformClientV2/models/chat_send_message_response.py
 PureCloudPlatformClientV2/models/chat_settings.py
 PureCloudPlatformClientV2/models/chat_user_settings.py
@@ -1080,7 +1094,10 @@ PureCloudPlatformClientV2/models/create_service_goal_template.py
 PureCloudPlatformClientV2/models/create_share_request.py
 PureCloudPlatformClientV2/models/create_share_request_member.py
 PureCloudPlatformClientV2/models/create_share_response.py
+PureCloudPlatformClientV2/models/create_staffing_group_request.py
 PureCloudPlatformClientV2/models/create_time_off_limit_request.py
+PureCloudPlatformClientV2/models/create_time_off_plan_business_unit_association.py
+PureCloudPlatformClientV2/models/create_time_off_plan_management_unit_association.py
 PureCloudPlatformClientV2/models/create_time_off_plan_request.py
 PureCloudPlatformClientV2/models/create_trigger_request.py
 PureCloudPlatformClientV2/models/create_upload_source_url_job_request.py
@@ -1983,6 +2000,8 @@ PureCloudPlatformClientV2/models/journey_campaign.py
 PureCloudPlatformClientV2/models/journey_context.py
 PureCloudPlatformClientV2/models/journey_customer.py
 PureCloudPlatformClientV2/models/journey_customer_session.py
+PureCloudPlatformClientV2/models/journey_event_definition.py
+PureCloudPlatformClientV2/models/journey_event_definition_listing.py
 PureCloudPlatformClientV2/models/journey_events_settings.py
 PureCloudPlatformClientV2/models/journey_geolocation.py
 PureCloudPlatformClientV2/models/journey_outcome_events_notification_action_map.py
@@ -2032,8 +2051,13 @@ PureCloudPlatformClientV2/models/journey_view_element.py
 PureCloudPlatformClientV2/models/journey_view_element_attributes.py
 PureCloudPlatformClientV2/models/journey_view_element_filter.py
 PureCloudPlatformClientV2/models/journey_view_element_filter_predicate.py
+PureCloudPlatformClientV2/models/journey_view_job.py
 PureCloudPlatformClientV2/models/journey_view_link.py
 PureCloudPlatformClientV2/models/journey_view_link_time_constraint.py
+PureCloudPlatformClientV2/models/journey_view_result.py
+PureCloudPlatformClientV2/models/journey_view_result_element.py
+PureCloudPlatformClientV2/models/journey_view_result_link.py
+PureCloudPlatformClientV2/models/journey_view_result_metrics.py
 PureCloudPlatformClientV2/models/journey_view_user.py
 PureCloudPlatformClientV2/models/journey_web_action_events_notification_action_map.py
 PureCloudPlatformClientV2/models/journey_web_action_events_notification_action_map_page_url_condition.py
@@ -2186,6 +2210,7 @@ PureCloudPlatformClientV2/models/knowledge_search_request.py
 PureCloudPlatformClientV2/models/knowledge_search_response.py
 PureCloudPlatformClientV2/models/knowledge_training.py
 PureCloudPlatformClientV2/models/kpi_result.py
+PureCloudPlatformClientV2/models/label.py
 PureCloudPlatformClientV2/models/label_create_request.py
 PureCloudPlatformClientV2/models/label_listing.py
 PureCloudPlatformClientV2/models/label_response.py
@@ -2285,6 +2310,8 @@ PureCloudPlatformClientV2/models/license_user.py
 PureCloudPlatformClientV2/models/limit.py
 PureCloudPlatformClientV2/models/limit_change_request_details.py
 PureCloudPlatformClientV2/models/limit_change_requests_entity_listing.py
+PureCloudPlatformClientV2/models/limit_docs.py
+PureCloudPlatformClientV2/models/limit_documentation.py
 PureCloudPlatformClientV2/models/limits_entity_listing.py
 PureCloudPlatformClientV2/models/line.py
 PureCloudPlatformClientV2/models/line_base.py
@@ -2478,6 +2505,7 @@ PureCloudPlatformClientV2/models/named_entity_type_binding.py
 PureCloudPlatformClientV2/models/named_entity_type_definition.py
 PureCloudPlatformClientV2/models/named_entity_type_item.py
 PureCloudPlatformClientV2/models/named_entity_type_mechanism.py
+PureCloudPlatformClientV2/models/namespace_docs.py
 PureCloudPlatformClientV2/models/network_connectivity.py
 PureCloudPlatformClientV2/models/nlu_confusion_matrix_column.py
 PureCloudPlatformClientV2/models/nlu_confusion_matrix_row.py
@@ -2695,6 +2723,7 @@ PureCloudPlatformClientV2/models/patch_survey_question.py
 PureCloudPlatformClientV2/models/patch_text_style_properties.py
 PureCloudPlatformClientV2/models/patch_user.py
 PureCloudPlatformClientV2/models/patch_web_messaging_offer_fields.py
+PureCloudPlatformClientV2/models/pattern.py
 PureCloudPlatformClientV2/models/performance_prediction_complete_event_topic_error_body.py
 PureCloudPlatformClientV2/models/performance_prediction_complete_event_topic_performance_prediction_calculation_notification.py
 PureCloudPlatformClientV2/models/performance_prediction_outputs.py
@@ -2830,6 +2859,7 @@ PureCloudPlatformClientV2/models/query_results.py
 PureCloudPlatformClientV2/models/query_time_off_integration_status_request.py
 PureCloudPlatformClientV2/models/query_time_off_limit_values_request.py
 PureCloudPlatformClientV2/models/query_time_off_limit_values_response.py
+PureCloudPlatformClientV2/models/query_user_staffing_group_list_request.py
 PureCloudPlatformClientV2/models/query_waitlist_positions_request.py
 PureCloudPlatformClientV2/models/queue.py
 PureCloudPlatformClientV2/models/queue_conversation_call_event_topic_call_conversation.py
@@ -3088,6 +3118,7 @@ PureCloudPlatformClientV2/models/queue_user_event_topic_queue_member.py
 PureCloudPlatformClientV2/models/queue_user_event_topic_user_reference.py
 PureCloudPlatformClientV2/models/queue_utilization_diagnostic.py
 PureCloudPlatformClientV2/models/quick_reply.py
+PureCloudPlatformClientV2/models/range.py
 PureCloudPlatformClientV2/models/rate_limit_aggregate_data_container.py
 PureCloudPlatformClientV2/models/rate_limit_aggregate_query_clause.py
 PureCloudPlatformClientV2/models/rate_limit_aggregate_query_filter.py
@@ -3135,6 +3166,7 @@ PureCloudPlatformClientV2/models/region_time_zone.py
 PureCloudPlatformClientV2/models/register_architect_job_response.py
 PureCloudPlatformClientV2/models/relationship.py
 PureCloudPlatformClientV2/models/relationship_listing.py
+PureCloudPlatformClientV2/models/reoccurrence.py
 PureCloudPlatformClientV2/models/replace_request.py
 PureCloudPlatformClientV2/models/replace_response.py
 PureCloudPlatformClientV2/models/replacement_term.py
@@ -3215,6 +3247,9 @@ PureCloudPlatformClientV2/models/role_division.py
 PureCloudPlatformClientV2/models/role_division_grants.py
 PureCloudPlatformClientV2/models/role_division_pair.py
 PureCloudPlatformClientV2/models/room.py
+PureCloudPlatformClientV2/models/room_participant.py
+PureCloudPlatformClientV2/models/room_participant_response.py
+PureCloudPlatformClientV2/models/room_participants_response.py
 PureCloudPlatformClientV2/models/room_update_request.py
 PureCloudPlatformClientV2/models/route_path_request.py
 PureCloudPlatformClientV2/models/route_path_response.py
@@ -3304,6 +3339,7 @@ PureCloudPlatformClientV2/models/scim_v2_schema_list_response.py
 PureCloudPlatformClientV2/models/scim_v2_user.py
 PureCloudPlatformClientV2/models/scorable_survey.py
 PureCloudPlatformClientV2/models/scored_agent.py
+PureCloudPlatformClientV2/models/screen_recording_active_sessions.py
 PureCloudPlatformClientV2/models/screen_recording_meta_data.py
 PureCloudPlatformClientV2/models/screen_recording_meta_data_request.py
 PureCloudPlatformClientV2/models/screen_recording_session.py
@@ -3437,6 +3473,9 @@ PureCloudPlatformClientV2/models/source_planning_group_request.py
 PureCloudPlatformClientV2/models/speech_text_analytics_settings_request.py
 PureCloudPlatformClientV2/models/speech_text_analytics_settings_response.py
 PureCloudPlatformClientV2/models/splitting_information.py
+PureCloudPlatformClientV2/models/staffing_group_listing.py
+PureCloudPlatformClientV2/models/staffing_group_reference.py
+PureCloudPlatformClientV2/models/staffing_group_response.py
 PureCloudPlatformClientV2/models/staffing_requirements_planning_group_data.py
 PureCloudPlatformClientV2/models/starrable_division.py
 PureCloudPlatformClientV2/models/stat_event_campaign_topic_interval_metrics.py
@@ -3537,6 +3576,7 @@ PureCloudPlatformClientV2/models/task_management_aggregation_query.py
 PureCloudPlatformClientV2/models/task_management_aggregation_view.py
 PureCloudPlatformClientV2/models/task_management_async_aggregate_query_response.py
 PureCloudPlatformClientV2/models/task_management_async_aggregation_query.py
+PureCloudPlatformClientV2/models/task_management_error_details.py
 PureCloudPlatformClientV2/models/team.py
 PureCloudPlatformClientV2/models/team_activity_data.py
 PureCloudPlatformClientV2/models/team_activity_entity_data.py
@@ -3610,7 +3650,9 @@ PureCloudPlatformClientV2/models/time_off_limit_range.py
 PureCloudPlatformClientV2/models/time_off_limit_reference.py
 PureCloudPlatformClientV2/models/time_off_limit_value_range.py
 PureCloudPlatformClientV2/models/time_off_plan.py
+PureCloudPlatformClientV2/models/time_off_plan_business_unit_association.py
 PureCloudPlatformClientV2/models/time_off_plan_listing.py
+PureCloudPlatformClientV2/models/time_off_plan_management_unit_association.py
 PureCloudPlatformClientV2/models/time_off_request.py
 PureCloudPlatformClientV2/models/time_off_request_list.py
 PureCloudPlatformClientV2/models/time_off_request_listing.py
@@ -3770,7 +3812,10 @@ PureCloudPlatformClientV2/models/update_planning_group_request.py
 PureCloudPlatformClientV2/models/update_schedule_upload_response.py
 PureCloudPlatformClientV2/models/update_schedule_upload_schema.py
 PureCloudPlatformClientV2/models/update_service_goal_template.py
+PureCloudPlatformClientV2/models/update_staffing_group_request.py
 PureCloudPlatformClientV2/models/update_time_off_limit_request.py
+PureCloudPlatformClientV2/models/update_time_off_plan_business_unit_association.py
+PureCloudPlatformClientV2/models/update_time_off_plan_management_unit_association.py
 PureCloudPlatformClientV2/models/update_time_off_plan_request.py
 PureCloudPlatformClientV2/models/update_trigger_request.py
 PureCloudPlatformClientV2/models/update_user.py
@@ -3882,6 +3927,8 @@ PureCloudPlatformClientV2/models/user_search_criteria.py
 PureCloudPlatformClientV2/models/user_search_request.py
 PureCloudPlatformClientV2/models/user_skill_entity_listing.py
 PureCloudPlatformClientV2/models/user_skill_group_entity_listing.py
+PureCloudPlatformClientV2/models/user_staffing_group_listing.py
+PureCloudPlatformClientV2/models/user_staffing_group_response.py
 PureCloudPlatformClientV2/models/user_start_detail_event_topic_user_start_event.py
 PureCloudPlatformClientV2/models/user_state.py
 PureCloudPlatformClientV2/models/user_station.py
@@ -4511,6 +4558,7 @@ docs/AlertingApi.json
 docs/AlertingApi.md
 docs/AlertingUnreadStatus.md
 docs/AllTimePoints.md
+docs/Alteration.md
 docs/AmazonLexRequest.md
 docs/AnalyticsAgentGroup.md
 docs/AnalyticsApi.json
@@ -4746,6 +4794,8 @@ docs/BuAsyncScheduleRunResponse.md
 docs/BuAverageSpeedOfAnswer.md
 docs/BuCopyScheduleRequest.md
 docs/BuCreateBlankScheduleRequest.md
+docs/BuCreateTimeOffLimitRequest.md
+docs/BuCreateTimeOffPlanRequest.md
 docs/BuCurrentAgentScheduleSearchResponse.md
 docs/BuForecastGenerationPlanningGroupResult.md
 docs/BuForecastGenerationResult.md
@@ -4785,13 +4835,23 @@ docs/BuSchedulingSettingsRequest.md
 docs/BuSchedulingSettingsResponse.md
 docs/BuSearchAgentSchedulesRequest.md
 docs/BuServiceLevel.md
+docs/BuSetTimeOffLimitValuesRequest.md
 docs/BuShortTermForecast.md
 docs/BuShortTermForecastListItem.md
 docs/BuShortTermForecastListing.md
 docs/BuShortTermForecastReference.md
 docs/BuShortTermForecastingSettings.md
+docs/BuTimeOffLimitListing.md
+docs/BuTimeOffLimitRange.md
+docs/BuTimeOffLimitReference.md
+docs/BuTimeOffLimitResponse.md
+docs/BuTimeOffLimitValueRange.md
+docs/BuTimeOffLimitValuesResponse.md
+docs/BuTimeOffPlanListing.md
+docs/BuTimeOffPlanResponse.md
 docs/BuUpdateAgentScheduleShift.md
 docs/BuUpdateAgentScheduleUploadSchema.md
+docs/BuUpdateTimeOffPlanRequest.md
 docs/BulkCallbackDisconnectRequest.md
 docs/BulkCallbackPatchRequest.md
 docs/BulkCallbackPatchResponse.md
@@ -4943,6 +5003,7 @@ docs/ChatMessageEntityListing.md
 docs/ChatMessageResponse.md
 docs/ChatMessageUser.md
 docs/ChatReaction.md
+docs/ChatReactionUpdate.md
 docs/ChatSendMessageResponse.md
 docs/ChatSettings.md
 docs/ChatUserSettings.md
@@ -5404,7 +5465,10 @@ docs/CreateServiceGoalTemplate.md
 docs/CreateShareRequest.md
 docs/CreateShareRequestMember.md
 docs/CreateShareResponse.md
+docs/CreateStaffingGroupRequest.md
 docs/CreateTimeOffLimitRequest.md
+docs/CreateTimeOffPlanBusinessUnitAssociation.md
+docs/CreateTimeOffPlanManagementUnitAssociation.md
 docs/CreateTimeOffPlanRequest.md
 docs/CreateTriggerRequest.md
 docs/CreateUploadSourceUrlJobRequest.md
@@ -6339,6 +6403,8 @@ docs/JourneyCampaign.md
 docs/JourneyContext.md
 docs/JourneyCustomer.md
 docs/JourneyCustomerSession.md
+docs/JourneyEventDefinition.md
+docs/JourneyEventDefinitionListing.md
 docs/JourneyEventsSettings.md
 docs/JourneyGeolocation.md
 docs/JourneyOutcomeEventsNotificationActionMap.md
@@ -6388,8 +6454,13 @@ docs/JourneyViewElement.md
 docs/JourneyViewElementAttributes.md
 docs/JourneyViewElementFilter.md
 docs/JourneyViewElementFilterPredicate.md
+docs/JourneyViewJob.md
 docs/JourneyViewLink.md
 docs/JourneyViewLinkTimeConstraint.md
+docs/JourneyViewResult.md
+docs/JourneyViewResultElement.md
+docs/JourneyViewResultLink.md
+docs/JourneyViewResultMetrics.md
 docs/JourneyViewUser.md
 docs/JourneyWebActionEventsNotificationActionMap.md
 docs/JourneyWebActionEventsNotificationActionMapPageUrlCondition.md
@@ -6544,6 +6615,7 @@ docs/KnowledgeSearchRequest.md
 docs/KnowledgeSearchResponse.md
 docs/KnowledgeTraining.md
 docs/KpiResult.md
+docs/Label.md
 docs/LabelCreateRequest.md
 docs/LabelListing.md
 docs/LabelResponse.md
@@ -6651,6 +6723,8 @@ docs/LicenseUser.md
 docs/Limit.md
 docs/LimitChangeRequestDetails.md
 docs/LimitChangeRequestsEntityListing.md
+docs/LimitDocs.md
+docs/LimitDocumentation.md
 docs/LimitsEntityListing.md
 docs/Line.md
 docs/LineBase.md
@@ -6853,6 +6927,7 @@ docs/NamedEntityTypeBinding.md
 docs/NamedEntityTypeDefinition.md
 docs/NamedEntityTypeItem.md
 docs/NamedEntityTypeMechanism.md
+docs/NamespaceDocs.md
 docs/NetworkConnectivity.md
 docs/NluConfusionMatrixColumn.md
 docs/NluConfusionMatrixRow.md
@@ -7084,6 +7159,7 @@ docs/PatchSurveyQuestion.md
 docs/PatchTextStyleProperties.md
 docs/PatchUser.md
 docs/PatchWebMessagingOfferFields.md
+docs/Pattern.md
 docs/PerformancePredictionCompleteEventTopicErrorBody.md
 docs/PerformancePredictionCompleteEventTopicPerformancePredictionCalculationNotification.md
 docs/PerformancePredictionOutputs.md
@@ -7224,6 +7300,7 @@ docs/QueryResults.md
 docs/QueryTimeOffIntegrationStatusRequest.md
 docs/QueryTimeOffLimitValuesRequest.md
 docs/QueryTimeOffLimitValuesResponse.md
+docs/QueryUserStaffingGroupListRequest.md
 docs/QueryWaitlistPositionsRequest.md
 docs/Queue.md
 docs/QueueConversationCallEventTopicCallConversation.md
@@ -7482,6 +7559,7 @@ docs/QueueUserEventTopicQueueMember.md
 docs/QueueUserEventTopicUserReference.md
 docs/QueueUtilizationDiagnostic.md
 docs/QuickReply.md
+docs/Range.md
 docs/RateLimitAggregateDataContainer.md
 docs/RateLimitAggregateQueryClause.md
 docs/RateLimitAggregateQueryFilter.md
@@ -7531,6 +7609,7 @@ docs/RegionTimeZone.md
 docs/RegisterArchitectJobResponse.md
 docs/Relationship.md
 docs/RelationshipListing.md
+docs/Reoccurrence.md
 docs/ReplaceRequest.md
 docs/ReplaceResponse.md
 docs/ReplacementTerm.md
@@ -7613,6 +7692,9 @@ docs/RoleDivision.md
 docs/RoleDivisionGrants.md
 docs/RoleDivisionPair.md
 docs/Room.md
+docs/RoomParticipant.md
+docs/RoomParticipantResponse.md
+docs/RoomParticipantsResponse.md
 docs/RoomUpdateRequest.md
 docs/RoutePathRequest.md
 docs/RoutePathResponse.md
@@ -7708,6 +7790,7 @@ docs/ScimV2SchemaListResponse.md
 docs/ScimV2User.md
 docs/ScorableSurvey.md
 docs/ScoredAgent.md
+docs/ScreenRecordingActiveSessions.md
 docs/ScreenRecordingApi.json
 docs/ScreenRecordingApi.md
 docs/ScreenRecordingMetaData.md
@@ -7849,6 +7932,9 @@ docs/SpeechTextAnalyticsApi.md
 docs/SpeechTextAnalyticsSettingsRequest.md
 docs/SpeechTextAnalyticsSettingsResponse.md
 docs/SplittingInformation.md
+docs/StaffingGroupListing.md
+docs/StaffingGroupReference.md
+docs/StaffingGroupResponse.md
 docs/StaffingRequirementsPlanningGroupData.md
 docs/StarrableDivision.md
 docs/StatEventCampaignTopicIntervalMetrics.md
@@ -7955,6 +8041,7 @@ docs/TaskManagementApi.json
 docs/TaskManagementApi.md
 docs/TaskManagementAsyncAggregateQueryResponse.md
 docs/TaskManagementAsyncAggregationQuery.md
+docs/TaskManagementErrorDetails.md
 docs/Team.md
 docs/TeamActivityData.md
 docs/TeamActivityEntityData.md
@@ -8036,7 +8123,9 @@ docs/TimeOffLimitRange.md
 docs/TimeOffLimitReference.md
 docs/TimeOffLimitValueRange.md
 docs/TimeOffPlan.md
+docs/TimeOffPlanBusinessUnitAssociation.md
 docs/TimeOffPlanListing.md
+docs/TimeOffPlanManagementUnitAssociation.md
 docs/TimeOffRequest.md
 docs/TimeOffRequestList.md
 docs/TimeOffRequestListing.md
@@ -8198,7 +8287,10 @@ docs/UpdatePlanningGroupRequest.md
 docs/UpdateScheduleUploadResponse.md
 docs/UpdateScheduleUploadSchema.md
 docs/UpdateServiceGoalTemplate.md
+docs/UpdateStaffingGroupRequest.md
 docs/UpdateTimeOffLimitRequest.md
+docs/UpdateTimeOffPlanBusinessUnitAssociation.md
+docs/UpdateTimeOffPlanManagementUnitAssociation.md
 docs/UpdateTimeOffPlanRequest.md
 docs/UpdateTriggerRequest.md
 docs/UpdateUser.md
@@ -8316,6 +8408,8 @@ docs/UserSearchCriteria.md
 docs/UserSearchRequest.md
 docs/UserSkillEntityListing.md
 docs/UserSkillGroupEntityListing.md
+docs/UserStaffingGroupListing.md
+docs/UserStaffingGroupResponse.md
 docs/UserStartDetailEventTopicUserStartEvent.md
 docs/UserState.md
 docs/UserStation.md
@@ -9086,6 +9180,9 @@ docs/delete_workforcemanagement_businessunit_activitycode-example.txt
 docs/delete_workforcemanagement_businessunit_planninggroup-example.txt
 docs/delete_workforcemanagement_businessunit_scheduling_run-example.txt
 docs/delete_workforcemanagement_businessunit_servicegoaltemplate-example.txt
+docs/delete_workforcemanagement_businessunit_staffinggroup-example.txt
+docs/delete_workforcemanagement_businessunit_timeofflimit-example.txt
+docs/delete_workforcemanagement_businessunit_timeoffplan-example.txt
 docs/delete_workforcemanagement_businessunit_week_schedule-example.txt
 docs/delete_workforcemanagement_businessunit_week_shorttermforecast-example.txt
 docs/delete_workforcemanagement_calendar_url_ics-example.txt
@@ -9244,6 +9341,8 @@ docs/get_chats_message-example.txt
 docs/get_chats_room-example.txt
 docs/get_chats_room_message-example.txt
 docs/get_chats_room_messages-example.txt
+docs/get_chats_room_participant-example.txt
+docs/get_chats_room_participants-example.txt
 docs/get_chats_settings-example.txt
 docs/get_chats_thread_messages-example.txt
 docs/get_chats_user_message-example.txt
@@ -9605,7 +9704,12 @@ docs/get_journey_session_events-example.txt
 docs/get_journey_session_outcomescores-example.txt
 docs/get_journey_view-example.txt
 docs/get_journey_view_version-example.txt
+docs/get_journey_view_version_job-example.txt
+docs/get_journey_view_version_job_results-example.txt
+docs/get_journey_view_version_jobs_latest-example.txt
 docs/get_journey_views-example.txt
+docs/get_journey_views_eventdefinition-example.txt
+docs/get_journey_views_eventdefinitions-example.txt
 docs/get_knowledge_guest_session_categories-example.txt
 docs/get_knowledge_guest_session_document-example.txt
 docs/get_knowledge_guest_session_documents-example.txt
@@ -9862,6 +9966,7 @@ docs/get_recording_settings-example.txt
 docs/get_recording_uploads_report-example.txt
 docs/get_recordings_retention_query-example.txt
 docs/get_recordings_screensessions-example.txt
+docs/get_recordings_screensessions_details-example.txt
 docs/get_responsemanagement_libraries-example.txt
 docs/get_responsemanagement_library-example.txt
 docs/get_responsemanagement_response-example.txt
@@ -10196,6 +10301,12 @@ docs/get_workforcemanagement_businessunit_scheduling_run_result-example.txt
 docs/get_workforcemanagement_businessunit_scheduling_runs-example.txt
 docs/get_workforcemanagement_businessunit_servicegoaltemplate-example.txt
 docs/get_workforcemanagement_businessunit_servicegoaltemplates-example.txt
+docs/get_workforcemanagement_businessunit_staffinggroup-example.txt
+docs/get_workforcemanagement_businessunit_staffinggroups-example.txt
+docs/get_workforcemanagement_businessunit_timeofflimit-example.txt
+docs/get_workforcemanagement_businessunit_timeofflimits-example.txt
+docs/get_workforcemanagement_businessunit_timeoffplan-example.txt
+docs/get_workforcemanagement_businessunit_timeoffplans-example.txt
 docs/get_workforcemanagement_businessunit_week_schedule-example.txt
 docs/get_workforcemanagement_businessunit_week_schedule_generationresults-example.txt
 docs/get_workforcemanagement_businessunit_week_schedule_headcountforecast-example.txt
@@ -10409,6 +10520,8 @@ docs/patch_workforcemanagement_businessunit_activitycode-example.txt
 docs/patch_workforcemanagement_businessunit_planninggroup-example.txt
 docs/patch_workforcemanagement_businessunit_scheduling_run-example.txt
 docs/patch_workforcemanagement_businessunit_servicegoaltemplate-example.txt
+docs/patch_workforcemanagement_businessunit_staffinggroup-example.txt
+docs/patch_workforcemanagement_businessunit_timeoffplan-example.txt
 docs/patch_workforcemanagement_managementunit-example.txt
 docs/patch_workforcemanagement_managementunit_agents-example.txt
 docs/patch_workforcemanagement_managementunit_timeofflimit-example.txt
@@ -10723,8 +10836,10 @@ docs/post_journey_outcomes-example.txt
 docs/post_journey_outcomes_attributions_jobs-example.txt
 docs/post_journey_outcomes_predictors-example.txt
 docs/post_journey_segments-example.txt
+docs/post_journey_view_version_jobs-example.txt
 docs/post_journey_view_versions-example.txt
 docs/post_journey_views-example.txt
+docs/post_journey_views_encodings_validate-example.txt
 docs/post_knowledge_documentuploads-example.txt
 docs/post_knowledge_documentuploads-example.txt
 docs/post_knowledge_guest_session_document_copies-example.txt
@@ -11014,6 +11129,11 @@ docs/post_workforcemanagement_businessunit_agentschedules_search-example.txt
 docs/post_workforcemanagement_businessunit_intraday-example.txt
 docs/post_workforcemanagement_businessunit_planninggroups-example.txt
 docs/post_workforcemanagement_businessunit_servicegoaltemplates-example.txt
+docs/post_workforcemanagement_businessunit_staffinggroups-example.txt
+docs/post_workforcemanagement_businessunit_staffinggroups_query-example.txt
+docs/post_workforcemanagement_businessunit_timeofflimits-example.txt
+docs/post_workforcemanagement_businessunit_timeofflimits_values_query-example.txt
+docs/post_workforcemanagement_businessunit_timeoffplans-example.txt
 docs/post_workforcemanagement_businessunit_week_schedule_agentschedules_query-example.txt
 docs/post_workforcemanagement_businessunit_week_schedule_copy-example.txt
 docs/post_workforcemanagement_businessunit_week_schedule_performancepredictions_recalculations-example.txt
@@ -11087,6 +11207,7 @@ docs/put_authorization_role-example.txt
 docs/put_authorization_role_users_add-example.txt
 docs/put_authorization_role_users_remove-example.txt
 docs/put_authorization_roles_default-example.txt
+docs/put_chats_message_reactions-example.txt
 docs/put_chats_settings-example.txt
 docs/put_contentmanagement_workspace-example.txt
 docs/put_contentmanagement_workspace_member-example.txt
@@ -11284,6 +11405,7 @@ docs/put_webdeployments_configuration_versions_draft-example.txt
 docs/put_webdeployments_deployment-example.txt
 docs/put_widgets_deployment-example.txt
 docs/put_workforcemanagement_agent_integrations_hris-example.txt
+docs/put_workforcemanagement_businessunit_timeofflimit_values-example.txt
 docs/put_workforcemanagement_managementunit_timeofflimit_values-example.txt
 git_push.sh
 requirements.txt

@@ -57,7 +57,6 @@ class ConversationAppSettings(object):
             'enabled': 'bool',
             'show_agent_typing_indicator': 'bool',
             'show_user_typing_indicator': 'bool',
-            'auto_start_type': 'str',
             'auto_start': 'AutoStart',
             'markdown': 'Markdown',
             'conversation_disconnect': 'ConversationDisconnectSettings',
@@ -69,7 +68,6 @@ class ConversationAppSettings(object):
             'enabled': 'enabled',
             'show_agent_typing_indicator': 'showAgentTypingIndicator',
             'show_user_typing_indicator': 'showUserTypingIndicator',
-            'auto_start_type': 'autoStartType',
             'auto_start': 'autoStart',
             'markdown': 'markdown',
             'conversation_disconnect': 'conversationDisconnect',
@@ -80,7 +78,6 @@ class ConversationAppSettings(object):
         self._enabled = None
         self._show_agent_typing_indicator = None
         self._show_user_typing_indicator = None
-        self._auto_start_type = None
         self._auto_start = None
         self._markdown = None
         self._conversation_disconnect = None
@@ -158,35 +155,6 @@ class ConversationAppSettings(object):
         
 
         self._show_user_typing_indicator = show_user_typing_indicator
-
-    @property
-    def auto_start_type(self) -> str:
-        """
-        Gets the auto_start_type of this ConversationAppSettings.
-        Deprecated. The auto start type for the messenger conversation
-
-        :return: The auto_start_type of this ConversationAppSettings.
-        :rtype: str
-        """
-        return self._auto_start_type
-
-    @auto_start_type.setter
-    def auto_start_type(self, auto_start_type: str) -> None:
-        """
-        Sets the auto_start_type of this ConversationAppSettings.
-        Deprecated. The auto start type for the messenger conversation
-
-        :param auto_start_type: The auto_start_type of this ConversationAppSettings.
-        :type: str
-        """
-        if isinstance(auto_start_type, int):
-            auto_start_type = str(auto_start_type)
-        allowed_values = ["Standard", "Automatic"]
-        if auto_start_type.lower() not in map(str.lower, allowed_values):
-            # print("Invalid value for auto_start_type -> " + auto_start_type)
-            self._auto_start_type = "outdated_sdk_version"
-        else:
-            self._auto_start_type = auto_start_type
 
     @property
     def auto_start(self) -> 'AutoStart':

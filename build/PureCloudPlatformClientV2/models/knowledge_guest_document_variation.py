@@ -53,33 +53,33 @@ class KnowledgeGuestDocumentVariation(object):
         """
         self.swagger_types = {
             'id': 'str',
-            'body': 'DocumentBody',
             'date_created': 'datetime',
             'date_modified': 'datetime',
             'document_version': 'AddressableEntityRef',
             'contexts': 'list[KnowledgeGuestDocumentVariationContext]',
             'document': 'AddressableEntityRef',
+            'body': 'DocumentBody',
             'self_uri': 'str'
         }
 
         self.attribute_map = {
             'id': 'id',
-            'body': 'body',
             'date_created': 'dateCreated',
             'date_modified': 'dateModified',
             'document_version': 'documentVersion',
             'contexts': 'contexts',
             'document': 'document',
+            'body': 'body',
             'self_uri': 'selfUri'
         }
 
         self._id = None
-        self._body = None
         self._date_created = None
         self._date_modified = None
         self._document_version = None
         self._contexts = None
         self._document = None
+        self._body = None
         self._self_uri = None
 
     @property
@@ -105,30 +105,6 @@ class KnowledgeGuestDocumentVariation(object):
         
 
         self._id = id
-
-    @property
-    def body(self) -> 'DocumentBody':
-        """
-        Gets the body of this KnowledgeGuestDocumentVariation.
-        The content for the variation.
-
-        :return: The body of this KnowledgeGuestDocumentVariation.
-        :rtype: DocumentBody
-        """
-        return self._body
-
-    @body.setter
-    def body(self, body: 'DocumentBody') -> None:
-        """
-        Sets the body of this KnowledgeGuestDocumentVariation.
-        The content for the variation.
-
-        :param body: The body of this KnowledgeGuestDocumentVariation.
-        :type: DocumentBody
-        """
-        
-
-        self._body = body
 
     @property
     def date_created(self) -> datetime:
@@ -249,6 +225,30 @@ class KnowledgeGuestDocumentVariation(object):
         
 
         self._document = document
+
+    @property
+    def body(self) -> 'DocumentBody':
+        """
+        Gets the body of this KnowledgeGuestDocumentVariation.
+        The content for the variation.
+
+        :return: The body of this KnowledgeGuestDocumentVariation.
+        :rtype: DocumentBody
+        """
+        return self._body
+
+    @body.setter
+    def body(self, body: 'DocumentBody') -> None:
+        """
+        Sets the body of this KnowledgeGuestDocumentVariation.
+        The content for the variation.
+
+        :param body: The body of this KnowledgeGuestDocumentVariation.
+        :type: DocumentBody
+        """
+        
+
+        self._body = body
 
     @property
     def self_uri(self) -> str:

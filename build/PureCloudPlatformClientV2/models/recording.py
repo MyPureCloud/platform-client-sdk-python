@@ -305,7 +305,7 @@ class Recording(object):
     def media(self) -> str:
         """
         Gets the media of this Recording.
-        The type of media that the recording is. At the moment that could be audio, chat, or email.
+        The media type of the recording. This could be audio, chat, messaging, email, or screen.
 
         :return: The media of this Recording.
         :rtype: str
@@ -316,7 +316,7 @@ class Recording(object):
     def media(self, media: str) -> None:
         """
         Sets the media of this Recording.
-        The type of media that the recording is. At the moment that could be audio, chat, or email.
+        The media type of the recording. This could be audio, chat, messaging, email, or screen.
 
         :param media: The media of this Recording.
         :type: str

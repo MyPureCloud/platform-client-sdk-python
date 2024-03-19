@@ -11,7 +11,7 @@ title: EmailUserEstablishedEvent
 | **event_date_time** | **datetime** | A Date Time representing the time this event occurred. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | |
 | **conversation_id** | **str** | A unique Id (V4 UUID) identifying this conversation | |
 | **communication_id** | **str** | A unique Id (V4 UUID) identifying this communication. | |
-| **user_id** | **str** | A unique Id (V4 UUID) identifying this userId this communication belongs to. | |
+| **user_id** | **str** | A unique Id (V4 UUID) identifying the user this communication belongs to. | |
 | **queue_id** | **str** | A unique Id (V4 UUID) identifying the queue that the user is emailing on behalf of. Applies to outbound emails only. | [optional] |
 | **after_call_work_required** | **bool** | Indicates whether or not this user will be required to complete after call work. | [optional] |
 | **initial_configuration** | [**EmailInitialConfiguration**](EmailInitialConfiguration.html) | Metadata about this communication. | |

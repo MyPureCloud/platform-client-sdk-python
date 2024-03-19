@@ -45,12 +45,12 @@ from ..models import FieldConfig
 from ..models import IpAddressAuthentication
 from ..models import LimitChangeRequestDetails
 from ..models import LimitChangeRequestsEntityListing
+from ..models import LimitDocumentation
 from ..models import LimitsEntityListing
 from ..models import OrgAuthSettings
 from ..models import OrgWhitelistSettings
 from ..models import Organization
 from ..models import OrganizationFeatures
-from ..models import UrlResponse
 
 class OrganizationApi(object):
     """
@@ -530,9 +530,9 @@ class OrganizationApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_organizations_limits_docs(self, **kwargs) -> 'UrlResponse':
+    def get_organizations_limits_docs(self, **kwargs) -> 'LimitDocumentation':
         """
-        Get a link to the limit documentation
+        Get limit documentation
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -545,7 +545,7 @@ class OrganizationApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :return: UrlResponse
+        :return: LimitDocumentation
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -597,7 +597,7 @@ class OrganizationApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='UrlResponse',
+                                            response_type='LimitDocumentation',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

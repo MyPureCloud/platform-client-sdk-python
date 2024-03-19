@@ -55,8 +55,10 @@ class AnalyticsSurvey(object):
             'survey_form_id': 'str',
             'survey_form_name': 'str',
             'survey_id': 'str',
+            'survey_partial_response': 'bool',
             'survey_promoter_score': 'int',
             'survey_status': 'str',
+            'survey_type': 'str',
             'user_id': 'str',
             'o_survey_total_score': 'int'
         }
@@ -69,8 +71,10 @@ class AnalyticsSurvey(object):
             'survey_form_id': 'surveyFormId',
             'survey_form_name': 'surveyFormName',
             'survey_id': 'surveyId',
+            'survey_partial_response': 'surveyPartialResponse',
             'survey_promoter_score': 'surveyPromoterScore',
             'survey_status': 'surveyStatus',
+            'survey_type': 'surveyType',
             'user_id': 'userId',
             'o_survey_total_score': 'oSurveyTotalScore'
         }
@@ -82,8 +86,10 @@ class AnalyticsSurvey(object):
         self._survey_form_id = None
         self._survey_form_name = None
         self._survey_id = None
+        self._survey_partial_response = None
         self._survey_promoter_score = None
         self._survey_status = None
+        self._survey_type = None
         self._user_id = None
         self._o_survey_total_score = None
 
@@ -256,6 +262,30 @@ class AnalyticsSurvey(object):
         self._survey_id = survey_id
 
     @property
+    def survey_partial_response(self) -> bool:
+        """
+        Gets the survey_partial_response of this AnalyticsSurvey.
+        Whether the survey was completed with any required questions unanswered.
+
+        :return: The survey_partial_response of this AnalyticsSurvey.
+        :rtype: bool
+        """
+        return self._survey_partial_response
+
+    @survey_partial_response.setter
+    def survey_partial_response(self, survey_partial_response: bool) -> None:
+        """
+        Sets the survey_partial_response of this AnalyticsSurvey.
+        Whether the survey was completed with any required questions unanswered.
+
+        :param survey_partial_response: The survey_partial_response of this AnalyticsSurvey.
+        :type: bool
+        """
+        
+
+        self._survey_partial_response = survey_partial_response
+
+    @property
     def survey_promoter_score(self) -> int:
         """
         Gets the survey_promoter_score of this AnalyticsSurvey.
@@ -302,6 +332,35 @@ class AnalyticsSurvey(object):
         
 
         self._survey_status = survey_status
+
+    @property
+    def survey_type(self) -> str:
+        """
+        Gets the survey_type of this AnalyticsSurvey.
+        The type of the survey
+
+        :return: The survey_type of this AnalyticsSurvey.
+        :rtype: str
+        """
+        return self._survey_type
+
+    @survey_type.setter
+    def survey_type(self, survey_type: str) -> None:
+        """
+        Sets the survey_type of this AnalyticsSurvey.
+        The type of the survey
+
+        :param survey_type: The survey_type of this AnalyticsSurvey.
+        :type: str
+        """
+        if isinstance(survey_type, int):
+            survey_type = str(survey_type)
+        allowed_values = ["Web", "Voice"]
+        if survey_type.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for survey_type -> " + survey_type)
+            self._survey_type = "outdated_sdk_version"
+        else:
+            self._survey_type = survey_type
 
     @property
     def user_id(self) -> str:

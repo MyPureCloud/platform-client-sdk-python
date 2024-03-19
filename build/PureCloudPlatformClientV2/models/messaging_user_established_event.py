@@ -184,7 +184,7 @@ class MessagingUserEstablishedEvent(object):
     def user_id(self) -> str:
         """
         Gets the user_id of this MessagingUserEstablishedEvent.
-        A unique Id (V4 UUID) identifying this userId this communication belongs to.
+        A unique Id (V4 UUID) identifying the user this communication belongs to.
 
         :return: The user_id of this MessagingUserEstablishedEvent.
         :rtype: str
@@ -195,7 +195,7 @@ class MessagingUserEstablishedEvent(object):
     def user_id(self, user_id: str) -> None:
         """
         Sets the user_id of this MessagingUserEstablishedEvent.
-        A unique Id (V4 UUID) identifying this userId this communication belongs to.
+        A unique Id (V4 UUID) identifying the user this communication belongs to.
 
         :param user_id: The user_id of this MessagingUserEstablishedEvent.
         :type: str

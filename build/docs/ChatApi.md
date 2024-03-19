@@ -16,6 +16,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_chats_room**](ChatApi.html#get_chats_room) | Get a room|
 |[**get_chats_room_message**](ChatApi.html#get_chats_room_message) | Get messages by id(s) from a room|
 |[**get_chats_room_messages**](ChatApi.html#get_chats_room_messages) | Get a room&#39;s message history|
+|[**get_chats_room_participant**](ChatApi.html#get_chats_room_participant) | Get a room participant|
+|[**get_chats_room_participants**](ChatApi.html#get_chats_room_participants) | Get room participants in a room|
 |[**get_chats_settings**](ChatApi.html#get_chats_settings) | Get Chat Settings.|
 |[**get_chats_thread_messages**](ChatApi.html#get_chats_thread_messages) | Get history by thread|
 |[**get_chats_user_message**](ChatApi.html#get_chats_user_message) | Get messages by id(s) from a 1on1|
@@ -31,6 +33,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_chats_room_pinnedmessages**](ChatApi.html#post_chats_room_pinnedmessages) | Add pinned messages for a room, up to a maximum of 5 pinned messages|
 |[**post_chats_rooms**](ChatApi.html#post_chats_rooms) | Create an adhoc room|
 |[**post_chats_user_messages**](ChatApi.html#post_chats_user_messages) | Send a message to a user|
+|[**put_chats_message_reactions**](ChatApi.html#put_chats_message_reactions) | Update reactions to a message|
 |[**put_chats_settings**](ChatApi.html#put_chats_settings) | Update Chat Settings.|
 {: class="table table-striped"}
 
@@ -41,8 +44,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 
 Delete a message in a room
-
-delete_chats_room_message is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps DELETE /api/v2/chats/rooms/{roomJid}/messages/{messageId} 
 
@@ -95,8 +96,6 @@ void (empty response body)
 
 Remove a user from a room.
 
-delete_chats_room_participant is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps DELETE /api/v2/chats/rooms/{roomJid}/participants/{userId} 
 
 Requires ANY permissions: 
@@ -147,8 +146,6 @@ void (empty response body)
 
 
 Remove a pinned message from a room
-
-delete_chats_room_pinnedmessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps DELETE /api/v2/chats/rooms/{roomJid}/pinnedmessages/{pinnedMessageId} 
 
@@ -201,8 +198,6 @@ void (empty response body)
 
 Delete a message to a user
 
-delete_chats_user_message is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps DELETE /api/v2/chats/users/{userId}/messages/{messageId} 
 
 Requires ANY permissions: 
@@ -253,8 +248,6 @@ void (empty response body)
 
 
 Get a message
-
-get_chats_message is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/chats/messages/{messageId} 
 
@@ -307,8 +300,6 @@ except ApiException as e:
 
 Get a room
 
-get_chats_room is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/chats/rooms/{roomJid} 
 
 Requires ANY permissions: 
@@ -358,8 +349,6 @@ except ApiException as e:
 
 
 Get messages by id(s) from a room
-
-get_chats_room_message is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/chats/rooms/{roomJid}/messages/{messageIds} 
 
@@ -413,8 +402,6 @@ except ApiException as e:
 
 Get a room's message history
 
-get_chats_room_messages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/chats/rooms/{roomJid}/messages 
 
 Requires ANY permissions: 
@@ -462,6 +449,106 @@ except ApiException as e:
 ### Return type
 
 [**ChatMessageEntityListing**](ChatMessageEntityListing.html)
+
+<a name="get_chats_room_participant"></a>
+
+## [**RoomParticipant**](RoomParticipant.html) get_chats_room_participant(room_jid, participant_jid)
+
+
+
+Get a room participant
+
+Wraps GET /api/v2/chats/rooms/{roomJid}/participants/{participantJid} 
+
+Requires no permissions
+
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ChatApi()
+room_jid = 'room_jid_example' # str | roomJid
+participant_jid = 'participant_jid_example' # str | participantJid
+
+try:
+    # Get a room participant
+    api_response = api_instance.get_chats_room_participant(room_jid, participant_jid)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ChatApi->get_chats_room_participant: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **room_jid** | **str**| roomJid |  |
+| **participant_jid** | **str**| participantJid |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**RoomParticipant**](RoomParticipant.html)
+
+<a name="get_chats_room_participants"></a>
+
+## [**RoomParticipantsResponse**](RoomParticipantsResponse.html) get_chats_room_participants(room_jid)
+
+
+
+Get room participants in a room
+
+Wraps GET /api/v2/chats/rooms/{roomJid}/participants 
+
+Requires ANY permissions: 
+
+* chat:chat:access
+* chat:room:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ChatApi()
+room_jid = 'room_jid_example' # str | roomJid
+
+try:
+    # Get room participants in a room
+    api_response = api_instance.get_chats_room_participants(room_jid)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ChatApi->get_chats_room_participants: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **room_jid** | **str**| roomJid |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**RoomParticipantsResponse**](RoomParticipantsResponse.html)
 
 <a name="get_chats_settings"></a>
 
@@ -516,8 +603,6 @@ This endpoint does not need any parameters.
 
 
 Get history by thread
-
-get_chats_thread_messages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/chats/threads/{threadId}/messages 
 
@@ -575,8 +660,6 @@ except ApiException as e:
 
 Get messages by id(s) from a 1on1
 
-get_chats_user_message is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/chats/users/{userId}/messages/{messageIds} 
 
 Requires ANY permissions: 
@@ -628,8 +711,6 @@ except ApiException as e:
 
 
 Get 1on1 History between a user
-
-get_chats_user_messages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/chats/users/{userId}/messages 
 
@@ -739,8 +820,6 @@ except ApiException as e:
 
 Set properties for a room
 
-patch_chats_room is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps PATCH /api/v2/chats/rooms/{roomJid} 
 
 Requires ANY permissions: 
@@ -791,8 +870,6 @@ void (empty response body)
 
 
 Edit a message in a room
-
-patch_chats_room_message is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps PATCH /api/v2/chats/rooms/{roomJid}/messages/{messageId} 
 
@@ -896,8 +973,6 @@ except ApiException as e:
 
 
 Edit a message to a user
-
-patch_chats_user_message is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps PATCH /api/v2/chats/users/{userId}/messages/{messageId} 
 
@@ -1007,8 +1082,6 @@ except ApiException as e:
 
 Send a message to a room
 
-post_chats_room_messages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps POST /api/v2/chats/rooms/{roomJid}/messages 
 
 Requires ANY permissions: 
@@ -1061,8 +1134,6 @@ except ApiException as e:
 
 Join a room
 
-post_chats_room_participant is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps POST /api/v2/chats/rooms/{roomJid}/participants/{userId} 
 
 Requires ANY permissions: 
@@ -1113,8 +1184,6 @@ void (empty response body)
 
 
 Add pinned messages for a room, up to a maximum of 5 pinned messages
-
-post_chats_room_pinnedmessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/chats/rooms/{roomJid}/pinnedmessages 
 
@@ -1167,8 +1236,6 @@ void (empty response body)
 
 Create an adhoc room
 
-post_chats_rooms is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps POST /api/v2/chats/rooms 
 
 Requires ANY permissions: 
@@ -1219,8 +1286,6 @@ except ApiException as e:
 
 Send a message to a user
 
-post_chats_user_messages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps POST /api/v2/chats/users/{userId}/messages 
 
 Requires ANY permissions: 
@@ -1264,6 +1329,57 @@ except ApiException as e:
 ### Return type
 
 [**ChatSendMessageResponse**](ChatSendMessageResponse.html)
+
+<a name="put_chats_message_reactions"></a>
+
+##  put_chats_message_reactions(message_id, body)
+
+
+
+Update reactions to a message
+
+Wraps PUT /api/v2/chats/messages/{messageId}/reactions 
+
+Requires ANY permissions: 
+
+* chat:chat:access
+* chat:reactions:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ChatApi()
+message_id = 'message_id_example' # str | messageId
+body = PureCloudPlatformClientV2.ChatReactionUpdate() # ChatReactionUpdate | reactionUpdate
+
+try:
+    # Update reactions to a message
+    api_instance.put_chats_message_reactions(message_id, body)
+except ApiException as e:
+    print("Exception when calling ChatApi->put_chats_message_reactions: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **message_id** | **str**| messageId |  |
+| **body** | [**ChatReactionUpdate**](ChatReactionUpdate.html)| reactionUpdate |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
 
 <a name="put_chats_settings"></a>
 

@@ -33,6 +33,7 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
+    from . import TaskManagementErrorDetails
     from . import WorkitemStatusReference
 
 class AutoStatusTransitionDetail(object):
@@ -51,16 +52,19 @@ class AutoStatusTransitionDetail(object):
         """
         self.swagger_types = {
             'next_status': 'WorkitemStatusReference',
-            'date_of_transition': 'datetime'
+            'date_of_transition': 'datetime',
+            'error_details': 'TaskManagementErrorDetails'
         }
 
         self.attribute_map = {
             'next_status': 'nextStatus',
-            'date_of_transition': 'dateOfTransition'
+            'date_of_transition': 'dateOfTransition',
+            'error_details': 'errorDetails'
         }
 
         self._next_status = None
         self._date_of_transition = None
+        self._error_details = None
 
     @property
     def next_status(self) -> 'WorkitemStatusReference':
@@ -109,6 +113,30 @@ class AutoStatusTransitionDetail(object):
         
 
         self._date_of_transition = date_of_transition
+
+    @property
+    def error_details(self) -> 'TaskManagementErrorDetails':
+        """
+        Gets the error_details of this AutoStatusTransitionDetail.
+        This property will be set if auto status transition is failed.
+
+        :return: The error_details of this AutoStatusTransitionDetail.
+        :rtype: TaskManagementErrorDetails
+        """
+        return self._error_details
+
+    @error_details.setter
+    def error_details(self, error_details: 'TaskManagementErrorDetails') -> None:
+        """
+        Sets the error_details of this AutoStatusTransitionDetail.
+        This property will be set if auto status transition is failed.
+
+        :param error_details: The error_details of this AutoStatusTransitionDetail.
+        :type: TaskManagementErrorDetails
+        """
+        
+
+        self._error_details = error_details
 
     def to_dict(self):
         """

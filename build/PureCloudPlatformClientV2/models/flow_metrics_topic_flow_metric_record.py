@@ -1467,7 +1467,7 @@ class FlowMetricsTopicFlowMetricRecord(object):
         """
         if isinstance(flow_type, int):
             flow_type = str(flow_type)
-        allowed_values = ["bot", "commonmodule", "digitalbot", "inboundcall", "inboundchat", "inboundemail", "inboundshortmessage", "inqueuecall", "inqueueemail", "inqueueshortmessage", "outboundcall", "securecall", "speech", "surveyinvite", "voice", "voicemail", "workflow", "workitem"]
+        allowed_values = ["bot", "commonmodule", "digitalbot", "inboundcall", "inboundchat", "inboundemail", "inboundshortmessage", "inqueuecall", "inqueueemail", "inqueueshortmessage", "outboundcall", "securecall", "speech", "surveyinvite", "voice", "voicemail", "voicesurvey", "workflow", "workitem"]
         if flow_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for flow_type -> " + flow_type)
             self._flow_type = "outdated_sdk_version"

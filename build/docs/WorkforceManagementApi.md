@@ -13,6 +13,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**delete_workforcemanagement_businessunit_planninggroup**](WorkforceManagementApi.html#delete_workforcemanagement_businessunit_planninggroup) | Deletes the planning group|
 |[**delete_workforcemanagement_businessunit_scheduling_run**](WorkforceManagementApi.html#delete_workforcemanagement_businessunit_scheduling_run) | Cancel a scheduling run|
 |[**delete_workforcemanagement_businessunit_servicegoaltemplate**](WorkforceManagementApi.html#delete_workforcemanagement_businessunit_servicegoaltemplate) | Delete a service goal template|
+|[**delete_workforcemanagement_businessunit_staffinggroup**](WorkforceManagementApi.html#delete_workforcemanagement_businessunit_staffinggroup) | Deletes a staffing group|
+|[**delete_workforcemanagement_businessunit_timeofflimit**](WorkforceManagementApi.html#delete_workforcemanagement_businessunit_timeofflimit) | Deletes a time-off limit object|
+|[**delete_workforcemanagement_businessunit_timeoffplan**](WorkforceManagementApi.html#delete_workforcemanagement_businessunit_timeoffplan) | Deletes a time-off plan|
 |[**delete_workforcemanagement_businessunit_week_schedule**](WorkforceManagementApi.html#delete_workforcemanagement_businessunit_week_schedule) | Delete a schedule|
 |[**delete_workforcemanagement_businessunit_week_shorttermforecast**](WorkforceManagementApi.html#delete_workforcemanagement_businessunit_week_shorttermforecast) | Delete a short term forecast|
 |[**delete_workforcemanagement_calendar_url_ics**](WorkforceManagementApi.html#delete_workforcemanagement_calendar_url_ics) | Disable generated calendar link for the current user|
@@ -42,6 +45,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_workforcemanagement_businessunit_scheduling_runs**](WorkforceManagementApi.html#get_workforcemanagement_businessunit_scheduling_runs) | Get the list of scheduling runs|
 |[**get_workforcemanagement_businessunit_servicegoaltemplate**](WorkforceManagementApi.html#get_workforcemanagement_businessunit_servicegoaltemplate) | Get a service goal template|
 |[**get_workforcemanagement_businessunit_servicegoaltemplates**](WorkforceManagementApi.html#get_workforcemanagement_businessunit_servicegoaltemplates) | Gets list of service goal templates|
+|[**get_workforcemanagement_businessunit_staffinggroup**](WorkforceManagementApi.html#get_workforcemanagement_businessunit_staffinggroup) | Gets a staffing group|
+|[**get_workforcemanagement_businessunit_staffinggroups**](WorkforceManagementApi.html#get_workforcemanagement_businessunit_staffinggroups) | Gets a list of staffing groups|
+|[**get_workforcemanagement_businessunit_timeofflimit**](WorkforceManagementApi.html#get_workforcemanagement_businessunit_timeofflimit) | Gets a time-off limit object|
+|[**get_workforcemanagement_businessunit_timeofflimits**](WorkforceManagementApi.html#get_workforcemanagement_businessunit_timeofflimits) | Gets a list of time-off limit objects|
+|[**get_workforcemanagement_businessunit_timeoffplan**](WorkforceManagementApi.html#get_workforcemanagement_businessunit_timeoffplan) | Gets a time-off plan|
+|[**get_workforcemanagement_businessunit_timeoffplans**](WorkforceManagementApi.html#get_workforcemanagement_businessunit_timeoffplans) | Gets a list of time-off plans|
 |[**get_workforcemanagement_businessunit_week_schedule**](WorkforceManagementApi.html#get_workforcemanagement_businessunit_week_schedule) | Get the metadata for the schedule, describing which management units and agents are in the scheduleSchedule data can then be loaded with the query route|
 |[**get_workforcemanagement_businessunit_week_schedule_generationresults**](WorkforceManagementApi.html#get_workforcemanagement_businessunit_week_schedule_generationresults) | Get the generation results for a generated schedule|
 |[**get_workforcemanagement_businessunit_week_schedule_headcountforecast**](WorkforceManagementApi.html#get_workforcemanagement_businessunit_week_schedule_headcountforecast) | Get the headcount forecast by planning group for the schedule|
@@ -102,6 +111,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**patch_workforcemanagement_businessunit_planninggroup**](WorkforceManagementApi.html#patch_workforcemanagement_businessunit_planninggroup) | Updates the planning group|
 |[**patch_workforcemanagement_businessunit_scheduling_run**](WorkforceManagementApi.html#patch_workforcemanagement_businessunit_scheduling_run) | Mark a schedule run as applied|
 |[**patch_workforcemanagement_businessunit_servicegoaltemplate**](WorkforceManagementApi.html#patch_workforcemanagement_businessunit_servicegoaltemplate) | Updates a service goal template|
+|[**patch_workforcemanagement_businessunit_staffinggroup**](WorkforceManagementApi.html#patch_workforcemanagement_businessunit_staffinggroup) | Updates a staffing group|
+|[**patch_workforcemanagement_businessunit_timeoffplan**](WorkforceManagementApi.html#patch_workforcemanagement_businessunit_timeoffplan) | Updates a time-off plan|
 |[**patch_workforcemanagement_managementunit**](WorkforceManagementApi.html#patch_workforcemanagement_managementunit) | Update the requested management unit|
 |[**patch_workforcemanagement_managementunit_agents**](WorkforceManagementApi.html#patch_workforcemanagement_managementunit_agents) | Update agent configurations|
 |[**patch_workforcemanagement_managementunit_timeofflimit**](WorkforceManagementApi.html#patch_workforcemanagement_managementunit_timeofflimit) | Updates a time off limit object.|
@@ -128,6 +139,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_workforcemanagement_businessunit_intraday**](WorkforceManagementApi.html#post_workforcemanagement_businessunit_intraday) | Get intraday data for the given date for the requested planningGroupIds|
 |[**post_workforcemanagement_businessunit_planninggroups**](WorkforceManagementApi.html#post_workforcemanagement_businessunit_planninggroups) | Adds a new planning group|
 |[**post_workforcemanagement_businessunit_servicegoaltemplates**](WorkforceManagementApi.html#post_workforcemanagement_businessunit_servicegoaltemplates) | Adds a new service goal template|
+|[**post_workforcemanagement_businessunit_staffinggroups**](WorkforceManagementApi.html#post_workforcemanagement_businessunit_staffinggroups) | Creates a new staffing group|
+|[**post_workforcemanagement_businessunit_staffinggroups_query**](WorkforceManagementApi.html#post_workforcemanagement_businessunit_staffinggroups_query) | Gets staffing group associations for a list of user IDs|
+|[**post_workforcemanagement_businessunit_timeofflimits**](WorkforceManagementApi.html#post_workforcemanagement_businessunit_timeofflimits) | Creates a new time-off limit object|
+|[**post_workforcemanagement_businessunit_timeofflimits_values_query**](WorkforceManagementApi.html#post_workforcemanagement_businessunit_timeofflimits_values_query) | Retrieves time-off limit related values based on a given set of filters.|
+|[**post_workforcemanagement_businessunit_timeoffplans**](WorkforceManagementApi.html#post_workforcemanagement_businessunit_timeoffplans) | Creates a new time-off plan|
 |[**post_workforcemanagement_businessunit_week_schedule_agentschedules_query**](WorkforceManagementApi.html#post_workforcemanagement_businessunit_week_schedule_agentschedules_query) | Loads agent schedule data from the schedule. Used in combination with the metadata route|
 |[**post_workforcemanagement_businessunit_week_schedule_copy**](WorkforceManagementApi.html#post_workforcemanagement_businessunit_week_schedule_copy) | Copy a schedule|
 |[**post_workforcemanagement_businessunit_week_schedule_performancepredictions_recalculations**](WorkforceManagementApi.html#post_workforcemanagement_businessunit_week_schedule_performancepredictions_recalculations) | Request a daily recalculation of the performance prediction for the associated schedule|
@@ -183,6 +199,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_workforcemanagement_timeoffrequests_estimate**](WorkforceManagementApi.html#post_workforcemanagement_timeoffrequests_estimate) | Estimates available time off for current user|
 |[**post_workforcemanagement_timeoffrequests_integrationstatus_query**](WorkforceManagementApi.html#post_workforcemanagement_timeoffrequests_integrationstatus_query) | Retrieves integration statuses for a list of current user time off requests|
 |[**put_workforcemanagement_agent_integrations_hris**](WorkforceManagementApi.html#put_workforcemanagement_agent_integrations_hris) | Update integrations for agent|
+|[**put_workforcemanagement_businessunit_timeofflimit_values**](WorkforceManagementApi.html#put_workforcemanagement_businessunit_timeofflimit_values) | Sets daily values for a date range of time-off limit object|
 |[**put_workforcemanagement_managementunit_timeofflimit_values**](WorkforceManagementApi.html#put_workforcemanagement_managementunit_timeofflimit_values) | Sets daily values for a date range of time off limit object|
 {: class="table table-striped"}
 
@@ -430,6 +447,156 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **business_unit_id** | **str**| The ID of the business unit. |  |
 | **service_goal_template_id** | **str**| The ID of the service goal template to delete |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
+
+<a name="delete_workforcemanagement_businessunit_staffinggroup"></a>
+
+##  delete_workforcemanagement_businessunit_staffinggroup(business_unit_id, staffing_group_id)
+
+
+
+Deletes a staffing group
+
+Wraps DELETE /api/v2/workforcemanagement/businessunits/{businessUnitId}/staffinggroups/{staffingGroupId} 
+
+Requires ANY permissions: 
+
+* wfm:staffingGroup:delete
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+staffing_group_id = 'staffing_group_id_example' # str | The ID of the staffing group to delete
+
+try:
+    # Deletes a staffing group
+    api_instance.delete_workforcemanagement_businessunit_staffinggroup(business_unit_id, staffing_group_id)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->delete_workforcemanagement_businessunit_staffinggroup: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **staffing_group_id** | **str**| The ID of the staffing group to delete |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
+
+<a name="delete_workforcemanagement_businessunit_timeofflimit"></a>
+
+##  delete_workforcemanagement_businessunit_timeofflimit(business_unit_id, time_off_limit_id)
+
+
+
+Deletes a time-off limit object
+
+Wraps DELETE /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId} 
+
+Requires ANY permissions: 
+
+* wfm:timeOffLimit:delete
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+time_off_limit_id = 'time_off_limit_id_example' # str | The ID of the time-off limit object to delete
+
+try:
+    # Deletes a time-off limit object
+    api_instance.delete_workforcemanagement_businessunit_timeofflimit(business_unit_id, time_off_limit_id)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->delete_workforcemanagement_businessunit_timeofflimit: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **time_off_limit_id** | **str**| The ID of the time-off limit object to delete |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
+
+<a name="delete_workforcemanagement_businessunit_timeoffplan"></a>
+
+##  delete_workforcemanagement_businessunit_timeoffplan(business_unit_id, time_off_plan_id)
+
+
+
+Deletes a time-off plan
+
+Wraps DELETE /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans/{timeOffPlanId} 
+
+Requires ANY permissions: 
+
+* wfm:timeOffPlan:delete
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+time_off_plan_id = 'time_off_plan_id_example' # str | The ID of the time-off plan to delete
+
+try:
+    # Deletes a time-off plan
+    api_instance.delete_workforcemanagement_businessunit_timeoffplan(business_unit_id, time_off_plan_id)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->delete_workforcemanagement_businessunit_timeoffplan: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **time_off_plan_id** | **str**| The ID of the time-off plan to delete |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2097,6 +2264,317 @@ except ApiException as e:
 ### Return type
 
 [**ServiceGoalTemplateList**](ServiceGoalTemplateList.html)
+
+<a name="get_workforcemanagement_businessunit_staffinggroup"></a>
+
+## [**StaffingGroupResponse**](StaffingGroupResponse.html) get_workforcemanagement_businessunit_staffinggroup(business_unit_id, staffing_group_id)
+
+
+
+Gets a staffing group
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/staffinggroups/{staffingGroupId} 
+
+Requires ANY permissions: 
+
+* wfm:staffingGroup:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+staffing_group_id = 'staffing_group_id_example' # str | The ID of the staffing group to fetch
+
+try:
+    # Gets a staffing group
+    api_response = api_instance.get_workforcemanagement_businessunit_staffinggroup(business_unit_id, staffing_group_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_staffinggroup: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **staffing_group_id** | **str**| The ID of the staffing group to fetch |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**StaffingGroupResponse**](StaffingGroupResponse.html)
+
+<a name="get_workforcemanagement_businessunit_staffinggroups"></a>
+
+## [**StaffingGroupListing**](StaffingGroupListing.html) get_workforcemanagement_businessunit_staffinggroups(business_unit_id, management_unit_id=management_unit_id)
+
+
+
+Gets a list of staffing groups
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/staffinggroups 
+
+Requires ANY permissions: 
+
+* wfm:staffingGroup:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+management_unit_id = 'management_unit_id_example' # str | The ID of the management unit to get management unit specific staffing groups (optional)
+
+try:
+    # Gets a list of staffing groups
+    api_response = api_instance.get_workforcemanagement_businessunit_staffinggroups(business_unit_id, management_unit_id=management_unit_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_staffinggroups: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **management_unit_id** | **str**| The ID of the management unit to get management unit specific staffing groups | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**StaffingGroupListing**](StaffingGroupListing.html)
+
+<a name="get_workforcemanagement_businessunit_timeofflimit"></a>
+
+## [**BuTimeOffLimitResponse**](BuTimeOffLimitResponse.html) get_workforcemanagement_businessunit_timeofflimit(business_unit_id, time_off_limit_id)
+
+
+
+Gets a time-off limit object
+
+Returns properties of time-off limit object, but not daily values
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId} 
+
+Requires ANY permissions: 
+
+* wfm:timeOffLimit:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+time_off_limit_id = 'time_off_limit_id_example' # str | The ID of the time-off limit to fetch
+
+try:
+    # Gets a time-off limit object
+    api_response = api_instance.get_workforcemanagement_businessunit_timeofflimit(business_unit_id, time_off_limit_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_timeofflimit: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **time_off_limit_id** | **str**| The ID of the time-off limit to fetch |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**BuTimeOffLimitResponse**](BuTimeOffLimitResponse.html)
+
+<a name="get_workforcemanagement_businessunit_timeofflimits"></a>
+
+## [**BuTimeOffLimitListing**](BuTimeOffLimitListing.html) get_workforcemanagement_businessunit_timeofflimits(business_unit_id, management_unit_id=management_unit_id)
+
+
+
+Gets a list of time-off limit objects
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits 
+
+Requires ANY permissions: 
+
+* wfm:timeOffLimit:view
+* wfm:timeOffPlan:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+management_unit_id = 'management_unit_id_example' # str | The ID of the management unit to get management unit specific time-off limit objects (optional)
+
+try:
+    # Gets a list of time-off limit objects
+    api_response = api_instance.get_workforcemanagement_businessunit_timeofflimits(business_unit_id, management_unit_id=management_unit_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_timeofflimits: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **management_unit_id** | **str**| The ID of the management unit to get management unit specific time-off limit objects | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**BuTimeOffLimitListing**](BuTimeOffLimitListing.html)
+
+<a name="get_workforcemanagement_businessunit_timeoffplan"></a>
+
+## [**BuTimeOffPlanResponse**](BuTimeOffPlanResponse.html) get_workforcemanagement_businessunit_timeoffplan(business_unit_id, time_off_plan_id)
+
+
+
+Gets a time-off plan
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans/{timeOffPlanId} 
+
+Requires ANY permissions: 
+
+* wfm:timeOffPlan:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+time_off_plan_id = 'time_off_plan_id_example' # str | The ID of the time-off plan to fetch
+
+try:
+    # Gets a time-off plan
+    api_response = api_instance.get_workforcemanagement_businessunit_timeoffplan(business_unit_id, time_off_plan_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_timeoffplan: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **time_off_plan_id** | **str**| The ID of the time-off plan to fetch |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**BuTimeOffPlanResponse**](BuTimeOffPlanResponse.html)
+
+<a name="get_workforcemanagement_businessunit_timeoffplans"></a>
+
+## [**BuTimeOffPlanListing**](BuTimeOffPlanListing.html) get_workforcemanagement_businessunit_timeoffplans(business_unit_id, management_unit_id=management_unit_id, force_download_service=force_download_service)
+
+
+
+Gets a list of time-off plans
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans 
+
+Requires ANY permissions: 
+
+* wfm:timeOffPlan:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+management_unit_id = 'management_unit_id_example' # str | The ID of the management unit to get management unit specific staffing groups (optional)
+force_download_service = True # bool | Force the result of this operation to be sent via download service. For testing/app development purposes (optional)
+
+try:
+    # Gets a list of time-off plans
+    api_response = api_instance.get_workforcemanagement_businessunit_timeoffplans(business_unit_id, management_unit_id=management_unit_id, force_download_service=force_download_service)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_timeoffplans: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **management_unit_id** | **str**| The ID of the management unit to get management unit specific staffing groups | [optional]  |
+| **force_download_service** | **bool**| Force the result of this operation to be sent via download service. For testing/app development purposes | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**BuTimeOffPlanListing**](BuTimeOffPlanListing.html)
 
 <a name="get_workforcemanagement_businessunit_week_schedule"></a>
 
@@ -5325,6 +5803,112 @@ except ApiException as e:
 
 [**ServiceGoalTemplate**](ServiceGoalTemplate.html)
 
+<a name="patch_workforcemanagement_businessunit_staffinggroup"></a>
+
+## [**StaffingGroupResponse**](StaffingGroupResponse.html) patch_workforcemanagement_businessunit_staffinggroup(business_unit_id, staffing_group_id, body=body)
+
+
+
+Updates a staffing group
+
+Wraps PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}/staffinggroups/{staffingGroupId} 
+
+Requires ANY permissions: 
+
+* wfm:staffingGroup:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+staffing_group_id = 'staffing_group_id_example' # str | The ID of the staffing group to update
+body = PureCloudPlatformClientV2.UpdateStaffingGroupRequest() # UpdateStaffingGroupRequest | body (optional)
+
+try:
+    # Updates a staffing group
+    api_response = api_instance.patch_workforcemanagement_businessunit_staffinggroup(business_unit_id, staffing_group_id, body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->patch_workforcemanagement_businessunit_staffinggroup: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **staffing_group_id** | **str**| The ID of the staffing group to update |  |
+| **body** | [**UpdateStaffingGroupRequest**](UpdateStaffingGroupRequest.html)| body | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**StaffingGroupResponse**](StaffingGroupResponse.html)
+
+<a name="patch_workforcemanagement_businessunit_timeoffplan"></a>
+
+## [**BuTimeOffPlanResponse**](BuTimeOffPlanResponse.html) patch_workforcemanagement_businessunit_timeoffplan(business_unit_id, time_off_plan_id, body=body)
+
+
+
+Updates a time-off plan
+
+Wraps PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans/{timeOffPlanId} 
+
+Requires ANY permissions: 
+
+* wfm:timeOffPlan:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+time_off_plan_id = 'time_off_plan_id_example' # str | The ID of the time-off plan to update
+body = PureCloudPlatformClientV2.BuUpdateTimeOffPlanRequest() # BuUpdateTimeOffPlanRequest | body (optional)
+
+try:
+    # Updates a time-off plan
+    api_response = api_instance.patch_workforcemanagement_businessunit_timeoffplan(business_unit_id, time_off_plan_id, body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->patch_workforcemanagement_businessunit_timeoffplan: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **time_off_plan_id** | **str**| The ID of the time-off plan to update |  |
+| **body** | [**BuUpdateTimeOffPlanRequest**](BuUpdateTimeOffPlanRequest.html)| body | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**BuTimeOffPlanResponse**](BuTimeOffPlanResponse.html)
+
 <a name="patch_workforcemanagement_managementunit"></a>
 
 ## [**ManagementUnit**](ManagementUnit.html) patch_workforcemanagement_managementunit(management_unit_id, body=body)
@@ -6676,6 +7260,261 @@ except ApiException as e:
 ### Return type
 
 [**ServiceGoalTemplate**](ServiceGoalTemplate.html)
+
+<a name="post_workforcemanagement_businessunit_staffinggroups"></a>
+
+## [**StaffingGroupResponse**](StaffingGroupResponse.html) post_workforcemanagement_businessunit_staffinggroups(business_unit_id, body=body)
+
+
+
+Creates a new staffing group
+
+Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/staffinggroups 
+
+Requires ANY permissions: 
+
+* wfm:staffingGroup:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+body = PureCloudPlatformClientV2.CreateStaffingGroupRequest() # CreateStaffingGroupRequest | body (optional)
+
+try:
+    # Creates a new staffing group
+    api_response = api_instance.post_workforcemanagement_businessunit_staffinggroups(business_unit_id, body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_businessunit_staffinggroups: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **body** | [**CreateStaffingGroupRequest**](CreateStaffingGroupRequest.html)| body | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**StaffingGroupResponse**](StaffingGroupResponse.html)
+
+<a name="post_workforcemanagement_businessunit_staffinggroups_query"></a>
+
+## [**UserStaffingGroupListing**](UserStaffingGroupListing.html) post_workforcemanagement_businessunit_staffinggroups_query(business_unit_id, body=body)
+
+
+
+Gets staffing group associations for a list of user IDs
+
+Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/staffinggroups/query 
+
+Requires ANY permissions: 
+
+* wfm:staffingGroup:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+body = PureCloudPlatformClientV2.QueryUserStaffingGroupListRequest() # QueryUserStaffingGroupListRequest | body (optional)
+
+try:
+    # Gets staffing group associations for a list of user IDs
+    api_response = api_instance.post_workforcemanagement_businessunit_staffinggroups_query(business_unit_id, body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_businessunit_staffinggroups_query: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **body** | [**QueryUserStaffingGroupListRequest**](QueryUserStaffingGroupListRequest.html)| body | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**UserStaffingGroupListing**](UserStaffingGroupListing.html)
+
+<a name="post_workforcemanagement_businessunit_timeofflimits"></a>
+
+## [**BuTimeOffLimitResponse**](BuTimeOffLimitResponse.html) post_workforcemanagement_businessunit_timeofflimits(business_unit_id, body=body)
+
+
+
+Creates a new time-off limit object
+
+Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits 
+
+Requires ANY permissions: 
+
+* wfm:timeOffLimit:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+body = PureCloudPlatformClientV2.BuCreateTimeOffLimitRequest() # BuCreateTimeOffLimitRequest | body (optional)
+
+try:
+    # Creates a new time-off limit object
+    api_response = api_instance.post_workforcemanagement_businessunit_timeofflimits(business_unit_id, body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_businessunit_timeofflimits: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **body** | [**BuCreateTimeOffLimitRequest**](BuCreateTimeOffLimitRequest.html)| body | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**BuTimeOffLimitResponse**](BuTimeOffLimitResponse.html)
+
+<a name="post_workforcemanagement_businessunit_timeofflimits_values_query"></a>
+
+## [**BuTimeOffLimitValuesResponse**](BuTimeOffLimitValuesResponse.html) post_workforcemanagement_businessunit_timeofflimits_values_query(business_unit_id, body=body)
+
+
+
+Retrieves time-off limit related values based on a given set of filters.
+
+Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/values/query 
+
+Requires ANY permissions: 
+
+* wfm:timeOffLimit:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+body = PureCloudPlatformClientV2.QueryTimeOffLimitValuesRequest() # QueryTimeOffLimitValuesRequest | body (optional)
+
+try:
+    # Retrieves time-off limit related values based on a given set of filters.
+    api_response = api_instance.post_workforcemanagement_businessunit_timeofflimits_values_query(business_unit_id, body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_businessunit_timeofflimits_values_query: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **body** | [**QueryTimeOffLimitValuesRequest**](QueryTimeOffLimitValuesRequest.html)| body | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**BuTimeOffLimitValuesResponse**](BuTimeOffLimitValuesResponse.html)
+
+<a name="post_workforcemanagement_businessunit_timeoffplans"></a>
+
+## [**BuTimeOffPlanResponse**](BuTimeOffPlanResponse.html) post_workforcemanagement_businessunit_timeoffplans(business_unit_id, body=body)
+
+
+
+Creates a new time-off plan
+
+Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans 
+
+Requires ANY permissions: 
+
+* wfm:timeOffPlan:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+body = PureCloudPlatformClientV2.BuCreateTimeOffPlanRequest() # BuCreateTimeOffPlanRequest | body (optional)
+
+try:
+    # Creates a new time-off plan
+    api_response = api_instance.post_workforcemanagement_businessunit_timeoffplans(business_unit_id, body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_businessunit_timeoffplans: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **body** | [**BuCreateTimeOffPlanRequest**](BuCreateTimeOffPlanRequest.html)| body | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**BuTimeOffPlanResponse**](BuTimeOffPlanResponse.html)
 
 <a name="post_workforcemanagement_businessunit_week_schedule_agentschedules_query"></a>
 
@@ -9577,6 +10416,61 @@ except ApiException as e:
 ### Return type
 
 [**AgentIntegrationsResponse**](AgentIntegrationsResponse.html)
+
+<a name="put_workforcemanagement_businessunit_timeofflimit_values"></a>
+
+## [**BuTimeOffLimitResponse**](BuTimeOffLimitResponse.html) put_workforcemanagement_businessunit_timeofflimit_values(business_unit_id, time_off_limit_id, body=body)
+
+
+
+Sets daily values for a date range of time-off limit object
+
+Note that only limit daily values can be set through API, allocated and waitlisted values are read-only for time-off limit API
+
+Wraps PUT /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeofflimits/{timeOffLimitId}/values 
+
+Requires ANY permissions: 
+
+* wfm:timeOffLimit:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+time_off_limit_id = 'time_off_limit_id_example' # str | The ID of the time-off limit object to set values for
+body = PureCloudPlatformClientV2.BuSetTimeOffLimitValuesRequest() # BuSetTimeOffLimitValuesRequest | body (optional)
+
+try:
+    # Sets daily values for a date range of time-off limit object
+    api_response = api_instance.put_workforcemanagement_businessunit_timeofflimit_values(business_unit_id, time_off_limit_id, body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->put_workforcemanagement_businessunit_timeofflimit_values: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **time_off_limit_id** | **str**| The ID of the time-off limit object to set values for |  |
+| **body** | [**BuSetTimeOffLimitValuesRequest**](BuSetTimeOffLimitValuesRequest.html)| body | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**BuTimeOffLimitResponse**](BuTimeOffLimitResponse.html)
 
 <a name="put_workforcemanagement_managementunit_timeofflimit_values"></a>
 

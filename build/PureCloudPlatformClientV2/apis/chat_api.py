@@ -40,6 +40,7 @@ from typing import Any
 from ..models import Empty
 from ..models import ChatMessageEntityListing
 from ..models import ChatMessageResponse
+from ..models import ChatReactionUpdate
 from ..models import ChatSendMessageResponse
 from ..models import ChatSettings
 from ..models import ChatUserSettings
@@ -48,6 +49,8 @@ from ..models import CreateRoomResponse
 from ..models import ErrorBody
 from ..models import PinnedMessageRequest
 from ..models import Room
+from ..models import RoomParticipant
+from ..models import RoomParticipantsResponse
 from ..models import RoomUpdateRequest
 from ..models import SendMessageBody
 
@@ -71,7 +74,6 @@ class ChatApi(object):
         """
         Delete a message in a room
         
-	    delete_chats_room_message is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -156,7 +158,6 @@ class ChatApi(object):
         """
         Remove a user from a room.
         
-	    delete_chats_room_participant is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -241,7 +242,6 @@ class ChatApi(object):
         """
         Remove a pinned message from a room
         
-	    delete_chats_room_pinnedmessage is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -326,7 +326,6 @@ class ChatApi(object):
         """
         Delete a message to a user
         
-	    delete_chats_user_message is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -411,7 +410,6 @@ class ChatApi(object):
         """
         Get a message
         
-	    get_chats_message is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -490,7 +488,6 @@ class ChatApi(object):
         """
         Get a room
         
-	    get_chats_room is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -569,7 +566,6 @@ class ChatApi(object):
         """
         Get messages by id(s) from a room
         
-	    get_chats_room_message is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -654,7 +650,6 @@ class ChatApi(object):
         """
         Get a room's message history
         
-	    get_chats_room_messages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -738,6 +733,168 @@ class ChatApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def get_chats_room_participant(self, room_jid: str, participant_jid: str, **kwargs) -> 'RoomParticipant':
+        """
+        Get a room participant
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_chats_room_participant(room_jid, participant_jid, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str room_jid: roomJid (required)
+        :param str participant_jid: participantJid (required)
+        :return: RoomParticipant
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['room_jid', 'participant_jid']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_chats_room_participant" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'room_jid' is set
+        if ('room_jid' not in params) or (params['room_jid'] is None):
+            raise ValueError("Missing the required parameter `room_jid` when calling `get_chats_room_participant`")
+        # verify the required parameter 'participant_jid' is set
+        if ('participant_jid' not in params) or (params['participant_jid'] is None):
+            raise ValueError("Missing the required parameter `participant_jid` when calling `get_chats_room_participant`")
+
+
+        resource_path = '/api/v2/chats/rooms/{roomJid}/participants/{participantJid}'.replace('{format}', 'json')
+        path_params = {}
+        if 'room_jid' in params:
+            path_params['roomJid'] = params['room_jid']
+        if 'participant_jid' in params:
+            path_params['participantJid'] = params['participant_jid']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='RoomParticipant',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_chats_room_participants(self, room_jid: str, **kwargs) -> 'RoomParticipantsResponse':
+        """
+        Get room participants in a room
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_chats_room_participants(room_jid, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str room_jid: roomJid (required)
+        :return: RoomParticipantsResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['room_jid']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_chats_room_participants" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'room_jid' is set
+        if ('room_jid' not in params) or (params['room_jid'] is None):
+            raise ValueError("Missing the required parameter `room_jid` when calling `get_chats_room_participants`")
+
+
+        resource_path = '/api/v2/chats/rooms/{roomJid}/participants'.replace('{format}', 'json')
+        path_params = {}
+        if 'room_jid' in params:
+            path_params['roomJid'] = params['room_jid']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='RoomParticipantsResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def get_chats_settings(self, **kwargs) -> 'ChatSettings':
         """
         Get Chat Settings.
@@ -814,7 +971,6 @@ class ChatApi(object):
         """
         Get history by thread
         
-	    get_chats_thread_messages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -902,7 +1058,6 @@ class ChatApi(object):
         """
         Get messages by id(s) from a 1on1
         
-	    get_chats_user_message is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -987,7 +1142,6 @@ class ChatApi(object):
         """
         Get 1on1 History between a user
         
-	    get_chats_user_messages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -1154,7 +1308,6 @@ class ChatApi(object):
         """
         Set properties for a room
         
-	    patch_chats_room is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -1239,7 +1392,6 @@ class ChatApi(object):
         """
         Edit a message in a room
         
-	    patch_chats_room_message is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -1408,7 +1560,6 @@ class ChatApi(object):
         """
         Edit a message to a user
         
-	    patch_chats_user_message is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -1584,7 +1735,6 @@ class ChatApi(object):
         """
         Send a message to a room
         
-	    post_chats_room_messages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -1669,7 +1819,6 @@ class ChatApi(object):
         """
         Join a room
         
-	    post_chats_room_participant is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -1754,7 +1903,6 @@ class ChatApi(object):
         """
         Add pinned messages for a room, up to a maximum of 5 pinned messages
         
-	    post_chats_room_pinnedmessages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -1839,7 +1987,6 @@ class ChatApi(object):
         """
         Create an adhoc room
         
-	    post_chats_rooms is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -1918,7 +2065,6 @@ class ChatApi(object):
         """
         Send a message to a user
         
-	    post_chats_user_messages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -1995,6 +2141,90 @@ class ChatApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='ChatSendMessageResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def put_chats_message_reactions(self, message_id: str, body: 'ChatReactionUpdate', **kwargs) -> None:
+        """
+        Update reactions to a message
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.put_chats_message_reactions(message_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str message_id: messageId (required)
+        :param ChatReactionUpdate body: reactionUpdate (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['message_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method put_chats_message_reactions" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'message_id' is set
+        if ('message_id' not in params) or (params['message_id'] is None):
+            raise ValueError("Missing the required parameter `message_id` when calling `put_chats_message_reactions`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `put_chats_message_reactions`")
+
+
+        resource_path = '/api/v2/chats/messages/{messageId}/reactions'.replace('{format}', 'json')
+        path_params = {}
+        if 'message_id' in params:
+            path_params['messageId'] = params['message_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

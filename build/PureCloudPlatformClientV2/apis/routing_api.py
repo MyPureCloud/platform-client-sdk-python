@@ -4465,17 +4465,18 @@ class RoutingApi(object):
         :param int page_number: Page number
         :param int page_size: Page size
         :param str sort_order: Note: results are sorted by name.
-        :param str name: Filter by queue name
-        :param list[str] id: Filter by queue ID(s)
-        :param list[str] division_id: Filter by queue division ID(s)
-        :param list[str] peer_id: Filter by queue peer ID(s)
-        :param bool has_peer: Filter by queues associated with peer
+        :param str name: Include only queues with the given name (leading and trailing asterisks allowed)
+        :param list[str] id: Include only queues with the specified ID(s)
+        :param list[str] division_id: Include only queues in the specified division ID(s)
+        :param list[str] peer_id: Include only queues with the specified peer ID(s)
+        :param str canned_response_library_id: Include only queues explicitly associated with the specified canned response library ID
+        :param bool has_peer: Include only queues with a peer ID
         :return: QueueEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['page_number', 'page_size', 'sort_order', 'name', 'id', 'division_id', 'peer_id', 'has_peer']
+        all_params = ['page_number', 'page_size', 'sort_order', 'name', 'id', 'division_id', 'peer_id', 'canned_response_library_id', 'has_peer']
         all_params.append('callback')
 
         params = locals()
@@ -4508,6 +4509,8 @@ class RoutingApi(object):
             query_params['divisionId'] = params['division_id']
         if 'peer_id' in params:
             query_params['peerId'] = params['peer_id']
+        if 'canned_response_library_id' in params:
+            query_params['cannedResponseLibraryId'] = params['canned_response_library_id']
         if 'has_peer' in params:
             query_params['hasPeer'] = params['has_peer']
 

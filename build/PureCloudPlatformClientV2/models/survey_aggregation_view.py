@@ -90,7 +90,7 @@ class SurveyAggregationView(object):
         """
         if isinstance(target, int):
             target = str(target)
-        allowed_values = ["nSurveyErrors", "nSurveyNpsDetractors", "nSurveyNpsPromoters", "nSurveyNpsResponses", "nSurveyQuestionGroupResponses", "nSurveyQuestionResponses", "nSurveyResponses", "nSurveysAbandoned", "nSurveysDeleted", "nSurveysExpired", "nSurveysSent", "nSurveysStarted", "oSurveyQuestionGroupScore", "oSurveyQuestionScore", "oSurveyTotalScore"]
+        allowed_values = ["nSurveyErrors", "nSurveyFullResponses", "nSurveyNpsDetractors", "nSurveyNpsPromoters", "nSurveyNpsResponses", "nSurveyPartialResponses", "nSurveyQuestionGroupResponses", "nSurveyQuestionResponses", "nSurveyResponses", "nSurveysAbandoned", "nSurveysDeleted", "nSurveysExpired", "nSurveysSent", "nSurveysStarted", "nVoiceSurveys", "nWebSurveys", "oSurveyQuestionGroupScore", "oSurveyQuestionScore", "oSurveyTotalScore"]
         if target.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for target -> " + target)
             self._target = "outdated_sdk_version"

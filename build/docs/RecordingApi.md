@@ -40,6 +40,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_recording_uploads_report**](RecordingApi.html#get_recording_uploads_report) | Get the status of a recording upload status report|
 |[**get_recordings_retention_query**](RecordingApi.html#get_recordings_retention_query) | Query for recording retention data|
 |[**get_recordings_screensessions**](RecordingApi.html#get_recordings_screensessions) | Retrieves a paged listing of screen recording sessions|
+|[**get_recordings_screensessions_details**](RecordingApi.html#get_recordings_screensessions_details) | Retrieves an object containing the total number of concurrent active screen recordings|
 |[**patch_recording_crossplatform_mediaretentionpolicy**](RecordingApi.html#patch_recording_crossplatform_mediaretentionpolicy) | Patch a media retention policy|
 |[**patch_recording_mediaretentionpolicy**](RecordingApi.html#patch_recording_mediaretentionpolicy) | Patch a media retention policy|
 |[**patch_recordings_screensession**](RecordingApi.html#patch_recordings_screensession) | Update a screen recording session|
@@ -1771,6 +1772,53 @@ except ApiException as e:
 ### Return type
 
 [**ScreenRecordingSessionListing**](ScreenRecordingSessionListing.html)
+
+<a name="get_recordings_screensessions_details"></a>
+
+## [**ScreenRecordingActiveSessions**](ScreenRecordingActiveSessions.html) get_recordings_screensessions_details()
+
+
+
+Retrieves an object containing the total number of concurrent active screen recordings
+
+get_recordings_screensessions_details is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/recordings/screensessions/details 
+
+Requires ANY permissions: 
+
+* recording:screenRecording:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RecordingApi()
+
+try:
+    # Retrieves an object containing the total number of concurrent active screen recordings
+    api_response = api_instance.get_recordings_screensessions_details()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling RecordingApi->get_recordings_screensessions_details: %s\n" % e)
+```
+
+### Parameters
+
+This endpoint does not need any parameters.
+
+
+### Return type
+
+[**ScreenRecordingActiveSessions**](ScreenRecordingActiveSessions.html)
 
 <a name="patch_recording_crossplatform_mediaretentionpolicy"></a>
 

@@ -14,7 +14,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_organizations_ipaddressauthentication**](OrganizationApi.html#get_organizations_ipaddressauthentication) | Get organization IP address whitelist settings|
 |[**get_organizations_limits_changerequest**](OrganizationApi.html#get_organizations_limits_changerequest) | Get a limit change request|
 |[**get_organizations_limits_changerequests**](OrganizationApi.html#get_organizations_limits_changerequests) | Get the available limit change requests|
-|[**get_organizations_limits_docs**](OrganizationApi.html#get_organizations_limits_docs) | Get a link to the limit documentation|
+|[**get_organizations_limits_docs**](OrganizationApi.html#get_organizations_limits_docs) | Get limit documentation|
 |[**get_organizations_limits_namespace**](OrganizationApi.html#get_organizations_limits_namespace) | Get the effective limits in a namespace for an organization|
 |[**get_organizations_limits_namespace_defaults**](OrganizationApi.html#get_organizations_limits_namespace_defaults) | Get the default limits in a namespace for an organization|
 |[**get_organizations_limits_namespaces**](OrganizationApi.html#get_organizations_limits_namespaces) | Get the available limit namespaces|
@@ -324,11 +324,11 @@ except ApiException as e:
 
 <a name="get_organizations_limits_docs"></a>
 
-## [**UrlResponse**](UrlResponse.html) get_organizations_limits_docs()
+## [**LimitDocumentation**](LimitDocumentation.html) get_organizations_limits_docs()
 
 
 
-Get a link to the limit documentation
+Get limit documentation
 
 Wraps GET /api/v2/organizations/limits/docs 
 
@@ -350,7 +350,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.OrganizationApi()
 
 try:
-    # Get a link to the limit documentation
+    # Get limit documentation
     api_response = api_instance.get_organizations_limits_docs()
     pprint(api_response)
 except ApiException as e:
@@ -364,7 +364,7 @@ This endpoint does not need any parameters.
 
 ### Return type
 
-[**UrlResponse**](UrlResponse.html)
+[**LimitDocumentation**](LimitDocumentation.html)
 
 <a name="get_organizations_limits_namespace"></a>
 

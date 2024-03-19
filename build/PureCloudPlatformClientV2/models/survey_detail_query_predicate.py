@@ -125,7 +125,7 @@ class SurveyDetailQueryPredicate(object):
         """
         if isinstance(dimension, int):
             dimension = str(dimension)
-        allowed_values = ["eventTime", "queueId", "surveyCompletedDate", "surveyFormContextId", "surveyFormId", "surveyId", "surveyPromoterScore", "surveyStatus", "userId"]
+        allowed_values = ["eventTime", "queueId", "surveyCompletedDate", "surveyFormContextId", "surveyFormId", "surveyId", "surveyPartialResponse", "surveyPromoterScore", "surveyStatus", "surveyType", "userId"]
         if dimension.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for dimension -> " + dimension)
             self._dimension = "outdated_sdk_version"

@@ -53,6 +53,7 @@ from ..models import AppEventResponse
 from ..models import AsyncQueryResponse
 from ..models import AsyncQueryStatus
 from ..models import DeploymentPing
+from ..models import EntityListing
 from ..models import ErrorBody
 from ..models import EstimateJobAsyncResponse
 from ..models import EventListing
@@ -62,9 +63,14 @@ from ..models import JourneyAggregateQueryResponse
 from ..models import JourneyAggregationQuery
 from ..models import JourneyAsyncAggregateQueryResponse
 from ..models import JourneyAsyncAggregationQuery
+from ..models import JourneyEventDefinition
+from ..models import JourneyEventDefinitionListing
 from ..models import JourneySegment
 from ..models import JourneySegmentRequest
 from ..models import JourneyView
+from ..models import JourneyViewJob
+from ..models import JourneyViewResult
+from ..models import Label
 from ..models import Outcome
 from ..models import OutcomeAttributionAsyncResponse
 from ..models import OutcomeAttributionJobStateResponse
@@ -2629,6 +2635,273 @@ class JourneyApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def get_journey_view_version_job(self, view_id: str, journey_version_id: str, job_id: str, **kwargs) -> 'JourneyViewJob':
+        """
+        Get the job for a journey view version.
+        used for long descriptions
+	    get_journey_view_version_job is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_journey_view_version_job(view_id, journey_version_id, job_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str view_id: Journey View Id (required)
+        :param str journey_version_id: Journey View Version (required)
+        :param str job_id: JobId (required)
+        :return: JourneyViewJob
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['view_id', 'journey_version_id', 'job_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_journey_view_version_job" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'view_id' is set
+        if ('view_id' not in params) or (params['view_id'] is None):
+            raise ValueError("Missing the required parameter `view_id` when calling `get_journey_view_version_job`")
+        # verify the required parameter 'journey_version_id' is set
+        if ('journey_version_id' not in params) or (params['journey_version_id'] is None):
+            raise ValueError("Missing the required parameter `journey_version_id` when calling `get_journey_view_version_job`")
+        # verify the required parameter 'job_id' is set
+        if ('job_id' not in params) or (params['job_id'] is None):
+            raise ValueError("Missing the required parameter `job_id` when calling `get_journey_view_version_job`")
+
+
+        resource_path = '/api/v2/journey/views/{viewId}/versions/{journeyVersionId}/jobs/{jobId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'view_id' in params:
+            path_params['viewId'] = params['view_id']
+        if 'journey_version_id' in params:
+            path_params['journeyVersionId'] = params['journey_version_id']
+        if 'job_id' in params:
+            path_params['jobId'] = params['job_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='JourneyViewJob',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_journey_view_version_job_results(self, view_id: str, journey_view_version: str, job_id: str, **kwargs) -> 'JourneyViewResult':
+        """
+        Get the result of a job for a journey view version.
+        used for long descriptions
+	    get_journey_view_version_job_results is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_journey_view_version_job_results(view_id, journey_view_version, job_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str view_id: JourneyViewResult id (required)
+        :param str journey_view_version: Journey View Version (required)
+        :param str job_id: Id of the executing job (required)
+        :return: JourneyViewResult
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['view_id', 'journey_view_version', 'job_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_journey_view_version_job_results" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'view_id' is set
+        if ('view_id' not in params) or (params['view_id'] is None):
+            raise ValueError("Missing the required parameter `view_id` when calling `get_journey_view_version_job_results`")
+        # verify the required parameter 'journey_view_version' is set
+        if ('journey_view_version' not in params) or (params['journey_view_version'] is None):
+            raise ValueError("Missing the required parameter `journey_view_version` when calling `get_journey_view_version_job_results`")
+        # verify the required parameter 'job_id' is set
+        if ('job_id' not in params) or (params['job_id'] is None):
+            raise ValueError("Missing the required parameter `job_id` when calling `get_journey_view_version_job_results`")
+
+
+        resource_path = '/api/v2/journey/views/{viewId}/versions/{journeyViewVersion}/jobs/{jobId}/results'.replace('{format}', 'json')
+        path_params = {}
+        if 'view_id' in params:
+            path_params['viewId'] = params['view_id']
+        if 'journey_view_version' in params:
+            path_params['journeyViewVersion'] = params['journey_view_version']
+        if 'job_id' in params:
+            path_params['jobId'] = params['job_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='JourneyViewResult',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_journey_view_version_jobs_latest(self, view_id: str, journey_version_id: str, **kwargs) -> 'JourneyViewJob':
+        """
+        Get the latest job of a journey view version.
+        used for long descriptions
+	    get_journey_view_version_jobs_latest is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_journey_view_version_jobs_latest(view_id, journey_version_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str view_id: Journey View Id (required)
+        :param str journey_version_id: Journey View Version (required)
+        :return: JourneyViewJob
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['view_id', 'journey_version_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_journey_view_version_jobs_latest" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'view_id' is set
+        if ('view_id' not in params) or (params['view_id'] is None):
+            raise ValueError("Missing the required parameter `view_id` when calling `get_journey_view_version_jobs_latest`")
+        # verify the required parameter 'journey_version_id' is set
+        if ('journey_version_id' not in params) or (params['journey_version_id'] is None):
+            raise ValueError("Missing the required parameter `journey_version_id` when calling `get_journey_view_version_jobs_latest`")
+
+
+        resource_path = '/api/v2/journey/views/{viewId}/versions/{journeyVersionId}/jobs/latest'.replace('{format}', 'json')
+        path_params = {}
+        if 'view_id' in params:
+            path_params['viewId'] = params['view_id']
+        if 'journey_version_id' in params:
+            path_params['journeyVersionId'] = params['journey_version_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='JourneyViewJob',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def get_journey_views(self, **kwargs) -> 'AddressableEntityListing':
         """
         Get a list of Journey Views
@@ -2698,6 +2971,158 @@ class JourneyApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='AddressableEntityListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_journey_views_eventdefinition(self, event_definition_id: str, **kwargs) -> 'JourneyEventDefinition':
+        """
+        Get an Event Definition
+        
+	    get_journey_views_eventdefinition is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_journey_views_eventdefinition(event_definition_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str event_definition_id: Event Definition ID (required)
+        :return: JourneyEventDefinition
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['event_definition_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_journey_views_eventdefinition" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'event_definition_id' is set
+        if ('event_definition_id' not in params) or (params['event_definition_id'] is None):
+            raise ValueError("Missing the required parameter `event_definition_id` when calling `get_journey_views_eventdefinition`")
+
+
+        resource_path = '/api/v2/journey/views/eventdefinitions/{eventDefinitionId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'event_definition_id' in params:
+            path_params['eventDefinitionId'] = params['event_definition_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='JourneyEventDefinition',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_journey_views_eventdefinitions(self, **kwargs) -> 'JourneyEventDefinitionListing':
+        """
+        Get a list of Event Definitions
+        
+	    get_journey_views_eventdefinitions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_journey_views_eventdefinitions(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :return: JourneyEventDefinitionListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = []
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_journey_views_eventdefinitions" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/journey/views/eventdefinitions'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='JourneyEventDefinitionListing',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -4034,6 +4459,91 @@ class JourneyApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def post_journey_view_version_jobs(self, view_id: str, journey_version_id: str, **kwargs) -> 'JourneyViewJob':
+        """
+        Submit a job request for a journey view version.
+        used for long descriptions
+	    post_journey_view_version_jobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_journey_view_version_jobs(view_id, journey_version_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str view_id: Journey View Id (required)
+        :param str journey_version_id: Journey View Version (required)
+        :return: JourneyViewJob
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['view_id', 'journey_version_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_journey_view_version_jobs" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'view_id' is set
+        if ('view_id' not in params) or (params['view_id'] is None):
+            raise ValueError("Missing the required parameter `view_id` when calling `post_journey_view_version_jobs`")
+        # verify the required parameter 'journey_version_id' is set
+        if ('journey_version_id' not in params) or (params['journey_version_id'] is None):
+            raise ValueError("Missing the required parameter `journey_version_id` when calling `post_journey_view_version_jobs`")
+
+
+        resource_path = '/api/v2/journey/views/{viewId}/versions/{journeyVersionId}/jobs'.replace('{format}', 'json')
+        path_params = {}
+        if 'view_id' in params:
+            path_params['viewId'] = params['view_id']
+        if 'journey_version_id' in params:
+            path_params['journeyVersionId'] = params['journey_version_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='JourneyViewJob',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def post_journey_view_versions(self, view_id: str, body: 'JourneyView', **kwargs) -> 'JourneyView':
         """
         Update a Journey View by ID
@@ -4194,6 +4704,82 @@ class JourneyApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='JourneyView',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_journey_views_encodings_validate(self, **kwargs) -> 'EntityListing':
+        """
+        Validate whether an encoding exist for a label/value combination.
+        True indicates a valid encoding
+	    post_journey_views_encodings_validate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_journey_views_encodings_validate(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param list[Label] body: 
+        :return: EntityListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_journey_views_encodings_validate" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/journey/views/encodings/validate'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='EntityListing',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

@@ -122,7 +122,7 @@ class SurveyAggregateQueryPredicate(object):
         """
         if isinstance(dimension, int):
             dimension = str(dimension)
-        allowed_values = ["conversationId", "divisionId", "externalContactId", "mediaType", "queueId", "requestedLanguageId", "requestedRoutingSkillId", "surveyAnswerId", "surveyCreatedDate", "surveyErrorReason", "surveyFormContextId", "surveyFormId", "surveyFormName", "surveyId", "surveyPreviousStatus", "surveyPromoterScore", "surveyQuestionGroupId", "surveyQuestionId", "surveyStatus", "teamId", "userId", "wrapUpCode"]
+        allowed_values = ["conversationId", "divisionId", "externalContactId", "mediaType", "queueId", "requestedLanguageId", "requestedRoutingSkillId", "surveyAnswerId", "surveyCreatedDate", "surveyErrorReason", "surveyFormContextId", "surveyFormId", "surveyFormName", "surveyId", "surveyPartialResponse", "surveyPreviousStatus", "surveyPromoterScore", "surveyQuestionGroupId", "surveyQuestionId", "surveyStatus", "surveyType", "teamId", "userId", "wrapUpCode"]
         if dimension.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for dimension -> " + dimension)
             self._dimension = "outdated_sdk_version"

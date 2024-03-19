@@ -53,29 +53,35 @@ class KnowledgeDocumentVersionVariation(object):
         """
         self.swagger_types = {
             'id': 'str',
-            'body': 'DocumentBody',
             'date_created': 'datetime',
             'date_modified': 'datetime',
             'contexts': 'list[DocumentVariationContext]',
+            'priority': 'int',
+            'name': 'str',
+            'body': 'DocumentBody',
             'self_uri': 'str',
             'document_version': 'AddressableEntityRef'
         }
 
         self.attribute_map = {
             'id': 'id',
-            'body': 'body',
             'date_created': 'dateCreated',
             'date_modified': 'dateModified',
             'contexts': 'contexts',
+            'priority': 'priority',
+            'name': 'name',
+            'body': 'body',
             'self_uri': 'selfUri',
             'document_version': 'documentVersion'
         }
 
         self._id = None
-        self._body = None
         self._date_created = None
         self._date_modified = None
         self._contexts = None
+        self._priority = None
+        self._name = None
+        self._body = None
         self._self_uri = None
         self._document_version = None
 
@@ -102,30 +108,6 @@ class KnowledgeDocumentVersionVariation(object):
         
 
         self._id = id
-
-    @property
-    def body(self) -> 'DocumentBody':
-        """
-        Gets the body of this KnowledgeDocumentVersionVariation.
-        The content for the variation.
-
-        :return: The body of this KnowledgeDocumentVersionVariation.
-        :rtype: DocumentBody
-        """
-        return self._body
-
-    @body.setter
-    def body(self, body: 'DocumentBody') -> None:
-        """
-        Sets the body of this KnowledgeDocumentVersionVariation.
-        The content for the variation.
-
-        :param body: The body of this KnowledgeDocumentVersionVariation.
-        :type: DocumentBody
-        """
-        
-
-        self._body = body
 
     @property
     def date_created(self) -> datetime:
@@ -198,6 +180,78 @@ class KnowledgeDocumentVersionVariation(object):
         
 
         self._contexts = contexts
+
+    @property
+    def priority(self) -> int:
+        """
+        Gets the priority of this KnowledgeDocumentVersionVariation.
+        The priority of the variation.
+
+        :return: The priority of this KnowledgeDocumentVersionVariation.
+        :rtype: int
+        """
+        return self._priority
+
+    @priority.setter
+    def priority(self, priority: int) -> None:
+        """
+        Sets the priority of this KnowledgeDocumentVersionVariation.
+        The priority of the variation.
+
+        :param priority: The priority of this KnowledgeDocumentVersionVariation.
+        :type: int
+        """
+        
+
+        self._priority = priority
+
+    @property
+    def name(self) -> str:
+        """
+        Gets the name of this KnowledgeDocumentVersionVariation.
+        The name of the variation.
+
+        :return: The name of this KnowledgeDocumentVersionVariation.
+        :rtype: str
+        """
+        return self._name
+
+    @name.setter
+    def name(self, name: str) -> None:
+        """
+        Sets the name of this KnowledgeDocumentVersionVariation.
+        The name of the variation.
+
+        :param name: The name of this KnowledgeDocumentVersionVariation.
+        :type: str
+        """
+        
+
+        self._name = name
+
+    @property
+    def body(self) -> 'DocumentBody':
+        """
+        Gets the body of this KnowledgeDocumentVersionVariation.
+        The content for the variation.
+
+        :return: The body of this KnowledgeDocumentVersionVariation.
+        :rtype: DocumentBody
+        """
+        return self._body
+
+    @body.setter
+    def body(self, body: 'DocumentBody') -> None:
+        """
+        Sets the body of this KnowledgeDocumentVersionVariation.
+        The content for the variation.
+
+        :param body: The body of this KnowledgeDocumentVersionVariation.
+        :type: DocumentBody
+        """
+        
+
+        self._body = body
 
     @property
     def self_uri(self) -> str:

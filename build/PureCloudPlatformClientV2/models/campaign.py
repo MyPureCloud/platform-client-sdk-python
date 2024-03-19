@@ -88,6 +88,7 @@ class Campaign(object):
             'division': 'DomainEntityRef',
             'dynamic_contact_queueing_settings': 'DynamicContactQueueingSettings',
             'max_calls_per_agent': 'int',
+            'callback_auto_answer': 'bool',
             'self_uri': 'str'
         }
 
@@ -126,6 +127,7 @@ class Campaign(object):
             'division': 'division',
             'dynamic_contact_queueing_settings': 'dynamicContactQueueingSettings',
             'max_calls_per_agent': 'maxCallsPerAgent',
+            'callback_auto_answer': 'callbackAutoAnswer',
             'self_uri': 'selfUri'
         }
 
@@ -163,6 +165,7 @@ class Campaign(object):
         self._division = None
         self._dynamic_contact_queueing_settings = None
         self._max_calls_per_agent = None
+        self._callback_auto_answer = None
         self._self_uri = None
 
     @property
@@ -990,6 +993,30 @@ class Campaign(object):
         
 
         self._max_calls_per_agent = max_calls_per_agent
+
+    @property
+    def callback_auto_answer(self) -> bool:
+        """
+        Gets the callback_auto_answer of this Campaign.
+        The option manages the auto-answer callback calls
+
+        :return: The callback_auto_answer of this Campaign.
+        :rtype: bool
+        """
+        return self._callback_auto_answer
+
+    @callback_auto_answer.setter
+    def callback_auto_answer(self, callback_auto_answer: bool) -> None:
+        """
+        Sets the callback_auto_answer of this Campaign.
+        The option manages the auto-answer callback calls
+
+        :param callback_auto_answer: The callback_auto_answer of this Campaign.
+        :type: bool
+        """
+        
+
+        self._callback_auto_answer = callback_auto_answer
 
     @property
     def self_uri(self) -> str:

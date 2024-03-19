@@ -2706,7 +2706,7 @@ except ApiException as e:
 | **page_number** | **int**|  | [optional] [default to 1] |
 | **page_size** | **int**| Max value is 100 | [optional] [default to 25] |
 | **sort_order** | **str**| Note: results are sorted by name. | [optional] [default to &#39;asc&#39;]<br />**Values**: asc, desc |
-| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand. | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, dateLastLogin, authorization.unusedRoles, team, workPlanBidRanks, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography |
+| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand. | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography, dateLastLogin |
 | **name** | **str**| Filter by queue member name (contains-style search) | [optional]  |
 | **profile_skills** | [**list[str]**](str.html)| Filter by profile skill (contains-style search) | [optional]  |
 | **skills** | [**list[str]**](str.html)| Filter by skill (contains-style search) | [optional]  |
@@ -2779,7 +2779,7 @@ except ApiException as e:
 | **page_number** | **int**|  | [optional] [default to 1] |
 | **page_size** | **int**| Max value is 100 | [optional] [default to 25] |
 | **sort_order** | **str**| Note: results are sorted by name. | [optional] [default to &#39;asc&#39;]<br />**Values**: asc, desc |
-| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand. | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, dateLastLogin, authorization.unusedRoles, team, workPlanBidRanks, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography |
+| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand. | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography, dateLastLogin |
 | **joined** | **bool**| Filter by joined status | [optional]  |
 | **name** | **str**| Filter by queue member name | [optional]  |
 | **profile_skills** | [**list[str]**](str.html)| Filter by profile skill | [optional]  |
@@ -2848,7 +2848,7 @@ except ApiException as e:
 
 <a name="get_routing_queues"></a>
 
-## [**QueueEntityListing**](QueueEntityListing.html) get_routing_queues(page_number=page_number, page_size=page_size, sort_order=sort_order, name=name, id=id, division_id=division_id, peer_id=peer_id, has_peer=has_peer)
+## [**QueueEntityListing**](QueueEntityListing.html) get_routing_queues(page_number=page_number, page_size=page_size, sort_order=sort_order, name=name, id=id, division_id=division_id, peer_id=peer_id, canned_response_library_id=canned_response_library_id, has_peer=has_peer)
 
 
 
@@ -2876,15 +2876,16 @@ api_instance = PureCloudPlatformClientV2.RoutingApi()
 page_number = 1 # int | Page number (optional) (default to 1)
 page_size = 25 # int | Page size (optional) (default to 25)
 sort_order = ''asc'' # str | Note: results are sorted by name. (optional) (default to 'asc')
-name = 'name_example' # str | Filter by queue name (optional)
-id = ['id_example'] # list[str] | Filter by queue ID(s) (optional)
-division_id = ['division_id_example'] # list[str] | Filter by queue division ID(s) (optional)
-peer_id = ['peer_id_example'] # list[str] | Filter by queue peer ID(s) (optional)
-has_peer = True # bool | Filter by queues associated with peer (optional)
+name = 'name_example' # str | Include only queues with the given name (leading and trailing asterisks allowed) (optional)
+id = ['id_example'] # list[str] | Include only queues with the specified ID(s) (optional)
+division_id = ['division_id_example'] # list[str] | Include only queues in the specified division ID(s) (optional)
+peer_id = ['peer_id_example'] # list[str] | Include only queues with the specified peer ID(s) (optional)
+canned_response_library_id = 'canned_response_library_id_example' # str | Include only queues explicitly associated with the specified canned response library ID (optional)
+has_peer = True # bool | Include only queues with a peer ID (optional)
 
 try:
     # Get list of queues.
-    api_response = api_instance.get_routing_queues(page_number=page_number, page_size=page_size, sort_order=sort_order, name=name, id=id, division_id=division_id, peer_id=peer_id, has_peer=has_peer)
+    api_response = api_instance.get_routing_queues(page_number=page_number, page_size=page_size, sort_order=sort_order, name=name, id=id, division_id=division_id, peer_id=peer_id, canned_response_library_id=canned_response_library_id, has_peer=has_peer)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling RoutingApi->get_routing_queues: %s\n" % e)
@@ -2898,11 +2899,12 @@ except ApiException as e:
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **sort_order** | **str**| Note: results are sorted by name. | [optional] [default to &#39;asc&#39;]<br />**Values**: asc, desc |
-| **name** | **str**| Filter by queue name | [optional]  |
-| **id** | [**list[str]**](str.html)| Filter by queue ID(s) | [optional]  |
-| **division_id** | [**list[str]**](str.html)| Filter by queue division ID(s) | [optional]  |
-| **peer_id** | [**list[str]**](str.html)| Filter by queue peer ID(s) | [optional]  |
-| **has_peer** | **bool**| Filter by queues associated with peer | [optional]  |
+| **name** | **str**| Include only queues with the given name (leading and trailing asterisks allowed) | [optional]  |
+| **id** | [**list[str]**](str.html)| Include only queues with the specified ID(s) | [optional]  |
+| **division_id** | [**list[str]**](str.html)| Include only queues in the specified division ID(s) | [optional]  |
+| **peer_id** | [**list[str]**](str.html)| Include only queues with the specified peer ID(s) | [optional]  |
+| **canned_response_library_id** | **str**| Include only queues explicitly associated with the specified canned response library ID | [optional]  |
+| **has_peer** | **bool**| Include only queues with a peer ID | [optional]  |
 {: class="table table-striped"}
 
 ### Return type

@@ -128,6 +128,7 @@ from .models.alert_summary import AlertSummary
 from .models.alert_summary_entity import AlertSummaryEntity
 from .models.alerting_unread_status import AlertingUnreadStatus
 from .models.all_time_points import AllTimePoints
+from .models.alteration import Alteration
 from .models.amazon_lex_request import AmazonLexRequest
 from .models.analytics_agent_group import AnalyticsAgentGroup
 from .models.analytics_conversation import AnalyticsConversation
@@ -353,6 +354,8 @@ from .models.bu_async_schedule_run_response import BuAsyncScheduleRunResponse
 from .models.bu_average_speed_of_answer import BuAverageSpeedOfAnswer
 from .models.bu_copy_schedule_request import BuCopyScheduleRequest
 from .models.bu_create_blank_schedule_request import BuCreateBlankScheduleRequest
+from .models.bu_create_time_off_limit_request import BuCreateTimeOffLimitRequest
+from .models.bu_create_time_off_plan_request import BuCreateTimeOffPlanRequest
 from .models.bu_current_agent_schedule_search_response import BuCurrentAgentScheduleSearchResponse
 from .models.bu_forecast_generation_planning_group_result import BuForecastGenerationPlanningGroupResult
 from .models.bu_forecast_generation_result import BuForecastGenerationResult
@@ -392,13 +395,23 @@ from .models.bu_scheduling_settings_request import BuSchedulingSettingsRequest
 from .models.bu_scheduling_settings_response import BuSchedulingSettingsResponse
 from .models.bu_search_agent_schedules_request import BuSearchAgentSchedulesRequest
 from .models.bu_service_level import BuServiceLevel
+from .models.bu_set_time_off_limit_values_request import BuSetTimeOffLimitValuesRequest
 from .models.bu_short_term_forecast import BuShortTermForecast
 from .models.bu_short_term_forecast_list_item import BuShortTermForecastListItem
 from .models.bu_short_term_forecast_listing import BuShortTermForecastListing
 from .models.bu_short_term_forecast_reference import BuShortTermForecastReference
 from .models.bu_short_term_forecasting_settings import BuShortTermForecastingSettings
+from .models.bu_time_off_limit_listing import BuTimeOffLimitListing
+from .models.bu_time_off_limit_range import BuTimeOffLimitRange
+from .models.bu_time_off_limit_reference import BuTimeOffLimitReference
+from .models.bu_time_off_limit_response import BuTimeOffLimitResponse
+from .models.bu_time_off_limit_value_range import BuTimeOffLimitValueRange
+from .models.bu_time_off_limit_values_response import BuTimeOffLimitValuesResponse
+from .models.bu_time_off_plan_listing import BuTimeOffPlanListing
+from .models.bu_time_off_plan_response import BuTimeOffPlanResponse
 from .models.bu_update_agent_schedule_shift import BuUpdateAgentScheduleShift
 from .models.bu_update_agent_schedule_upload_schema import BuUpdateAgentScheduleUploadSchema
+from .models.bu_update_time_off_plan_request import BuUpdateTimeOffPlanRequest
 from .models.bulk_callback_disconnect_request import BulkCallbackDisconnectRequest
 from .models.bulk_callback_patch_request import BulkCallbackPatchRequest
 from .models.bulk_callback_patch_response import BulkCallbackPatchResponse
@@ -546,6 +559,7 @@ from .models.chat_message_entity_listing import ChatMessageEntityListing
 from .models.chat_message_response import ChatMessageResponse
 from .models.chat_message_user import ChatMessageUser
 from .models.chat_reaction import ChatReaction
+from .models.chat_reaction_update import ChatReactionUpdate
 from .models.chat_send_message_response import ChatSendMessageResponse
 from .models.chat_settings import ChatSettings
 from .models.chat_user_settings import ChatUserSettings
@@ -1001,7 +1015,10 @@ from .models.create_service_goal_template import CreateServiceGoalTemplate
 from .models.create_share_request import CreateShareRequest
 from .models.create_share_request_member import CreateShareRequestMember
 from .models.create_share_response import CreateShareResponse
+from .models.create_staffing_group_request import CreateStaffingGroupRequest
 from .models.create_time_off_limit_request import CreateTimeOffLimitRequest
+from .models.create_time_off_plan_business_unit_association import CreateTimeOffPlanBusinessUnitAssociation
+from .models.create_time_off_plan_management_unit_association import CreateTimeOffPlanManagementUnitAssociation
 from .models.create_time_off_plan_request import CreateTimeOffPlanRequest
 from .models.create_trigger_request import CreateTriggerRequest
 from .models.create_upload_source_url_job_request import CreateUploadSourceUrlJobRequest
@@ -1904,6 +1921,8 @@ from .models.journey_campaign import JourneyCampaign
 from .models.journey_context import JourneyContext
 from .models.journey_customer import JourneyCustomer
 from .models.journey_customer_session import JourneyCustomerSession
+from .models.journey_event_definition import JourneyEventDefinition
+from .models.journey_event_definition_listing import JourneyEventDefinitionListing
 from .models.journey_events_settings import JourneyEventsSettings
 from .models.journey_geolocation import JourneyGeolocation
 from .models.journey_outcome_events_notification_action_map import JourneyOutcomeEventsNotificationActionMap
@@ -1953,8 +1972,13 @@ from .models.journey_view_element import JourneyViewElement
 from .models.journey_view_element_attributes import JourneyViewElementAttributes
 from .models.journey_view_element_filter import JourneyViewElementFilter
 from .models.journey_view_element_filter_predicate import JourneyViewElementFilterPredicate
+from .models.journey_view_job import JourneyViewJob
 from .models.journey_view_link import JourneyViewLink
 from .models.journey_view_link_time_constraint import JourneyViewLinkTimeConstraint
+from .models.journey_view_result import JourneyViewResult
+from .models.journey_view_result_element import JourneyViewResultElement
+from .models.journey_view_result_link import JourneyViewResultLink
+from .models.journey_view_result_metrics import JourneyViewResultMetrics
 from .models.journey_view_user import JourneyViewUser
 from .models.journey_web_action_events_notification_action_map import JourneyWebActionEventsNotificationActionMap
 from .models.journey_web_action_events_notification_action_map_page_url_condition import JourneyWebActionEventsNotificationActionMapPageUrlCondition
@@ -2107,6 +2131,7 @@ from .models.knowledge_search_request import KnowledgeSearchRequest
 from .models.knowledge_search_response import KnowledgeSearchResponse
 from .models.knowledge_training import KnowledgeTraining
 from .models.kpi_result import KpiResult
+from .models.label import Label
 from .models.label_create_request import LabelCreateRequest
 from .models.label_listing import LabelListing
 from .models.label_response import LabelResponse
@@ -2206,6 +2231,8 @@ from .models.license_user import LicenseUser
 from .models.limit import Limit
 from .models.limit_change_request_details import LimitChangeRequestDetails
 from .models.limit_change_requests_entity_listing import LimitChangeRequestsEntityListing
+from .models.limit_docs import LimitDocs
+from .models.limit_documentation import LimitDocumentation
 from .models.limits_entity_listing import LimitsEntityListing
 from .models.line import Line
 from .models.line_base import LineBase
@@ -2400,6 +2427,7 @@ from .models.named_entity_type_binding import NamedEntityTypeBinding
 from .models.named_entity_type_definition import NamedEntityTypeDefinition
 from .models.named_entity_type_item import NamedEntityTypeItem
 from .models.named_entity_type_mechanism import NamedEntityTypeMechanism
+from .models.namespace_docs import NamespaceDocs
 from .models.network_connectivity import NetworkConnectivity
 from .models.nlu_confusion_matrix_column import NluConfusionMatrixColumn
 from .models.nlu_confusion_matrix_row import NluConfusionMatrixRow
@@ -2617,6 +2645,7 @@ from .models.patch_survey_question import PatchSurveyQuestion
 from .models.patch_text_style_properties import PatchTextStyleProperties
 from .models.patch_user import PatchUser
 from .models.patch_web_messaging_offer_fields import PatchWebMessagingOfferFields
+from .models.pattern import Pattern
 from .models.performance_prediction_complete_event_topic_error_body import PerformancePredictionCompleteEventTopicErrorBody
 from .models.performance_prediction_complete_event_topic_performance_prediction_calculation_notification import PerformancePredictionCompleteEventTopicPerformancePredictionCalculationNotification
 from .models.performance_prediction_outputs import PerformancePredictionOutputs
@@ -2751,6 +2780,7 @@ from .models.query_results import QueryResults
 from .models.query_time_off_integration_status_request import QueryTimeOffIntegrationStatusRequest
 from .models.query_time_off_limit_values_request import QueryTimeOffLimitValuesRequest
 from .models.query_time_off_limit_values_response import QueryTimeOffLimitValuesResponse
+from .models.query_user_staffing_group_list_request import QueryUserStaffingGroupListRequest
 from .models.query_waitlist_positions_request import QueryWaitlistPositionsRequest
 from .models.queue import Queue
 from .models.queue_conversation_call_event_topic_call_conversation import QueueConversationCallEventTopicCallConversation
@@ -3009,6 +3039,7 @@ from .models.queue_user_event_topic_queue_member import QueueUserEventTopicQueue
 from .models.queue_user_event_topic_user_reference import QueueUserEventTopicUserReference
 from .models.queue_utilization_diagnostic import QueueUtilizationDiagnostic
 from .models.quick_reply import QuickReply
+from .models.range import Range
 from .models.rate_limit_aggregate_data_container import RateLimitAggregateDataContainer
 from .models.rate_limit_aggregate_query_clause import RateLimitAggregateQueryClause
 from .models.rate_limit_aggregate_query_filter import RateLimitAggregateQueryFilter
@@ -3056,6 +3087,7 @@ from .models.region_time_zone import RegionTimeZone
 from .models.register_architect_job_response import RegisterArchitectJobResponse
 from .models.relationship import Relationship
 from .models.relationship_listing import RelationshipListing
+from .models.reoccurrence import Reoccurrence
 from .models.replace_request import ReplaceRequest
 from .models.replace_response import ReplaceResponse
 from .models.replacement_term import ReplacementTerm
@@ -3136,6 +3168,9 @@ from .models.role_division import RoleDivision
 from .models.role_division_grants import RoleDivisionGrants
 from .models.role_division_pair import RoleDivisionPair
 from .models.room import Room
+from .models.room_participant import RoomParticipant
+from .models.room_participant_response import RoomParticipantResponse
+from .models.room_participants_response import RoomParticipantsResponse
 from .models.room_update_request import RoomUpdateRequest
 from .models.route_path_request import RoutePathRequest
 from .models.route_path_response import RoutePathResponse
@@ -3227,6 +3262,7 @@ from .models.scim_v2_schema_list_response import ScimV2SchemaListResponse
 from .models.scim_v2_user import ScimV2User
 from .models.scorable_survey import ScorableSurvey
 from .models.scored_agent import ScoredAgent
+from .models.screen_recording_active_sessions import ScreenRecordingActiveSessions
 from .models.screen_recording_meta_data import ScreenRecordingMetaData
 from .models.screen_recording_meta_data_request import ScreenRecordingMetaDataRequest
 from .models.screen_recording_session import ScreenRecordingSession
@@ -3358,6 +3394,9 @@ from .models.source_planning_group_request import SourcePlanningGroupRequest
 from .models.speech_text_analytics_settings_request import SpeechTextAnalyticsSettingsRequest
 from .models.speech_text_analytics_settings_response import SpeechTextAnalyticsSettingsResponse
 from .models.splitting_information import SplittingInformation
+from .models.staffing_group_listing import StaffingGroupListing
+from .models.staffing_group_reference import StaffingGroupReference
+from .models.staffing_group_response import StaffingGroupResponse
 from .models.staffing_requirements_planning_group_data import StaffingRequirementsPlanningGroupData
 from .models.starrable_division import StarrableDivision
 from .models.stat_event_campaign_topic_interval_metrics import StatEventCampaignTopicIntervalMetrics
@@ -3458,6 +3497,7 @@ from .models.task_management_aggregation_query import TaskManagementAggregationQ
 from .models.task_management_aggregation_view import TaskManagementAggregationView
 from .models.task_management_async_aggregate_query_response import TaskManagementAsyncAggregateQueryResponse
 from .models.task_management_async_aggregation_query import TaskManagementAsyncAggregationQuery
+from .models.task_management_error_details import TaskManagementErrorDetails
 from .models.team import Team
 from .models.team_activity_data import TeamActivityData
 from .models.team_activity_entity_data import TeamActivityEntityData
@@ -3531,7 +3571,9 @@ from .models.time_off_limit_range import TimeOffLimitRange
 from .models.time_off_limit_reference import TimeOffLimitReference
 from .models.time_off_limit_value_range import TimeOffLimitValueRange
 from .models.time_off_plan import TimeOffPlan
+from .models.time_off_plan_business_unit_association import TimeOffPlanBusinessUnitAssociation
 from .models.time_off_plan_listing import TimeOffPlanListing
+from .models.time_off_plan_management_unit_association import TimeOffPlanManagementUnitAssociation
 from .models.time_off_request import TimeOffRequest
 from .models.time_off_request_list import TimeOffRequestList
 from .models.time_off_request_listing import TimeOffRequestListing
@@ -3691,7 +3733,10 @@ from .models.update_planning_group_request import UpdatePlanningGroupRequest
 from .models.update_schedule_upload_response import UpdateScheduleUploadResponse
 from .models.update_schedule_upload_schema import UpdateScheduleUploadSchema
 from .models.update_service_goal_template import UpdateServiceGoalTemplate
+from .models.update_staffing_group_request import UpdateStaffingGroupRequest
 from .models.update_time_off_limit_request import UpdateTimeOffLimitRequest
+from .models.update_time_off_plan_business_unit_association import UpdateTimeOffPlanBusinessUnitAssociation
+from .models.update_time_off_plan_management_unit_association import UpdateTimeOffPlanManagementUnitAssociation
 from .models.update_time_off_plan_request import UpdateTimeOffPlanRequest
 from .models.update_trigger_request import UpdateTriggerRequest
 from .models.update_user import UpdateUser
@@ -3803,6 +3848,8 @@ from .models.user_search_criteria import UserSearchCriteria
 from .models.user_search_request import UserSearchRequest
 from .models.user_skill_entity_listing import UserSkillEntityListing
 from .models.user_skill_group_entity_listing import UserSkillGroupEntityListing
+from .models.user_staffing_group_listing import UserStaffingGroupListing
+from .models.user_staffing_group_response import UserStaffingGroupResponse
 from .models.user_start_detail_event_topic_user_start_event import UserStartDetailEventTopicUserStartEvent
 from .models.user_state import UserState
 from .models.user_station import UserStation

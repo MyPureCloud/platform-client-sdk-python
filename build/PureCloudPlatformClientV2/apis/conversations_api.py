@@ -1015,10 +1015,11 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("delete_conversations_messaging_integrations_twitter_integration_id is deprecated")
     def delete_conversations_messaging_integrations_twitter_integration_id(self, integration_id: str, **kwargs) -> None:
         """
         Delete a Twitter messaging integration
-        
+        This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-x-formerly-twitter-third-party-messaging-channel/
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -7055,10 +7056,11 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("get_conversations_messaging_integrations_twitter is deprecated")
     def get_conversations_messaging_integrations_twitter(self, **kwargs) -> 'TwitterIntegrationEntityListing':
         """
-        Get a list of Twitter Integrations
-        
+        Get a list of Twitter Integrations (Deprecated)
+        This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-x-formerly-twitter-third-party-messaging-channel/
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -7142,10 +7144,11 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("get_conversations_messaging_integrations_twitter_integration_id is deprecated")
     def get_conversations_messaging_integrations_twitter_integration_id(self, integration_id: str, **kwargs) -> 'TwitterIntegration':
         """
-        Get a Twitter messaging integration
-        
+        Get a Twitter messaging integration (Deprecated)
+        This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-x-formerly-twitter-third-party-messaging-channel/
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -11527,10 +11530,11 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("patch_conversations_messaging_integrations_twitter_integration_id is deprecated")
     def patch_conversations_messaging_integrations_twitter_integration_id(self, integration_id: str, body: 'TwitterIntegrationRequest', **kwargs) -> 'TwitterIntegration':
         """
         Update Twitter messaging integration
-        
+        This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-x-formerly-twitter-third-party-messaging-channel/
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -17850,10 +17854,11 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("post_conversations_messaging_integrations_twitter is deprecated")
     def post_conversations_messaging_integrations_twitter(self, body: 'TwitterIntegrationRequest', **kwargs) -> 'TwitterIntegration':
         """
         Create a Twitter Integration
-        
+        This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-x-formerly-twitter-third-party-messaging-channel/
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
