@@ -53,20 +53,23 @@ class ConversationEmailEventTopicEmailConversation(object):
             'id': 'str',
             'name': 'str',
             'participants': 'list[ConversationEmailEventTopicEmailMediaParticipant]',
-            'other_media_uris': 'list[str]'
+            'other_media_uris': 'list[str]',
+            'address': 'str'
         }
 
         self.attribute_map = {
             'id': 'id',
             'name': 'name',
             'participants': 'participants',
-            'other_media_uris': 'otherMediaUris'
+            'other_media_uris': 'otherMediaUris',
+            'address': 'address'
         }
 
         self._id = None
         self._name = None
         self._participants = None
         self._other_media_uris = None
+        self._address = None
 
     @property
     def id(self) -> str:
@@ -163,6 +166,30 @@ class ConversationEmailEventTopicEmailConversation(object):
         
 
         self._other_media_uris = other_media_uris
+
+    @property
+    def address(self) -> str:
+        """
+        Gets the address of this ConversationEmailEventTopicEmailConversation.
+
+
+        :return: The address of this ConversationEmailEventTopicEmailConversation.
+        :rtype: str
+        """
+        return self._address
+
+    @address.setter
+    def address(self, address: str) -> None:
+        """
+        Sets the address of this ConversationEmailEventTopicEmailConversation.
+
+
+        :param address: The address of this ConversationEmailEventTopicEmailConversation.
+        :type: str
+        """
+        
+
+        self._address = address
 
     def to_dict(self):
         """

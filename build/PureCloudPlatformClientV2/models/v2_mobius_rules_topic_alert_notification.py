@@ -49,16 +49,19 @@ class V2MobiusRulesTopicAlertNotification(object):
         """
         self.swagger_types = {
             'recipient': 'str',
-            'notification_types': 'list[str]'
+            'notification_types': 'list[str]',
+            'locale': 'str'
         }
 
         self.attribute_map = {
             'recipient': 'recipient',
-            'notification_types': 'notificationTypes'
+            'notification_types': 'notificationTypes',
+            'locale': 'locale'
         }
 
         self._recipient = None
         self._notification_types = None
+        self._locale = None
 
     @property
     def recipient(self) -> str:
@@ -107,6 +110,30 @@ class V2MobiusRulesTopicAlertNotification(object):
         
 
         self._notification_types = notification_types
+
+    @property
+    def locale(self) -> str:
+        """
+        Gets the locale of this V2MobiusRulesTopicAlertNotification.
+
+
+        :return: The locale of this V2MobiusRulesTopicAlertNotification.
+        :rtype: str
+        """
+        return self._locale
+
+    @locale.setter
+    def locale(self, locale: str) -> None:
+        """
+        Sets the locale of this V2MobiusRulesTopicAlertNotification.
+
+
+        :param locale: The locale of this V2MobiusRulesTopicAlertNotification.
+        :type: str
+        """
+        
+
+        self._locale = locale
 
     def to_dict(self):
         """

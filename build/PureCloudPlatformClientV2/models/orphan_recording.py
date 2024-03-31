@@ -58,6 +58,8 @@ class OrphanRecording(object):
             'provider_type': 'str',
             'media_size_bytes': 'int',
             'media_type': 'str',
+            'media_subtype': 'str',
+            'media_subject': 'str',
             'file_state': 'str',
             'provider_endpoint': 'Endpoint',
             'recording': 'Recording',
@@ -75,6 +77,8 @@ class OrphanRecording(object):
             'provider_type': 'providerType',
             'media_size_bytes': 'mediaSizeBytes',
             'media_type': 'mediaType',
+            'media_subtype': 'mediaSubtype',
+            'media_subject': 'mediaSubject',
             'file_state': 'fileState',
             'provider_endpoint': 'providerEndpoint',
             'recording': 'recording',
@@ -91,6 +95,8 @@ class OrphanRecording(object):
         self._provider_type = None
         self._media_size_bytes = None
         self._media_type = None
+        self._media_subtype = None
+        self._media_subject = None
         self._file_state = None
         self._provider_endpoint = None
         self._recording = None
@@ -276,6 +282,59 @@ class OrphanRecording(object):
             self._media_type = "outdated_sdk_version"
         else:
             self._media_type = media_type
+
+    @property
+    def media_subtype(self) -> str:
+        """
+        Gets the media_subtype of this OrphanRecording.
+
+
+        :return: The media_subtype of this OrphanRecording.
+        :rtype: str
+        """
+        return self._media_subtype
+
+    @media_subtype.setter
+    def media_subtype(self, media_subtype: str) -> None:
+        """
+        Sets the media_subtype of this OrphanRecording.
+
+
+        :param media_subtype: The media_subtype of this OrphanRecording.
+        :type: str
+        """
+        if isinstance(media_subtype, int):
+            media_subtype = str(media_subtype)
+        allowed_values = ["Trunk", "Station", "Consult", "Screen"]
+        if media_subtype.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for media_subtype -> " + media_subtype)
+            self._media_subtype = "outdated_sdk_version"
+        else:
+            self._media_subtype = media_subtype
+
+    @property
+    def media_subject(self) -> str:
+        """
+        Gets the media_subject of this OrphanRecording.
+
+
+        :return: The media_subject of this OrphanRecording.
+        :rtype: str
+        """
+        return self._media_subject
+
+    @media_subject.setter
+    def media_subject(self, media_subject: str) -> None:
+        """
+        Sets the media_subject of this OrphanRecording.
+
+
+        :param media_subject: The media_subject of this OrphanRecording.
+        :type: str
+        """
+        
+
+        self._media_subject = media_subject
 
     @property
     def file_state(self) -> str:

@@ -1326,7 +1326,6 @@ class LearningApi(object):
         """
         Update an external assignment for a specific user
         
-	    patch_learning_module_user_assignments is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

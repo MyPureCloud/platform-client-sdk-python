@@ -1,7 +1,7 @@
 ---
-title: KnowledgeSearchDocument
+title: KnowledgeSearchDocumentV1
 ---
-## KnowledgeSearchDocument
+## KnowledgeSearchDocumentV1
 
 ## Properties
 

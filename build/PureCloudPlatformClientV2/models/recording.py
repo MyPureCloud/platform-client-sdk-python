@@ -62,6 +62,8 @@ class Recording(object):
             'start_time': 'str',
             'end_time': 'str',
             'media': 'str',
+            'media_subtype': 'str',
+            'media_subject': 'str',
             'annotations': 'list[Annotation]',
             'transcript': 'list[ChatMessage]',
             'email_transcript': 'list[RecordingEmailMessage]',
@@ -97,6 +99,8 @@ class Recording(object):
             'start_time': 'startTime',
             'end_time': 'endTime',
             'media': 'media',
+            'media_subtype': 'mediaSubtype',
+            'media_subject': 'mediaSubject',
             'annotations': 'annotations',
             'transcript': 'transcript',
             'email_transcript': 'emailTranscript',
@@ -131,6 +135,8 @@ class Recording(object):
         self._start_time = None
         self._end_time = None
         self._media = None
+        self._media_subtype = None
+        self._media_subject = None
         self._annotations = None
         self._transcript = None
         self._email_transcript = None
@@ -324,6 +330,59 @@ class Recording(object):
         
 
         self._media = media
+
+    @property
+    def media_subtype(self) -> str:
+        """
+        Gets the media_subtype of this Recording.
+        The media subtype of the recording.
+
+        :return: The media_subtype of this Recording.
+        :rtype: str
+        """
+        return self._media_subtype
+
+    @media_subtype.setter
+    def media_subtype(self, media_subtype: str) -> None:
+        """
+        Sets the media_subtype of this Recording.
+        The media subtype of the recording.
+
+        :param media_subtype: The media_subtype of this Recording.
+        :type: str
+        """
+        if isinstance(media_subtype, int):
+            media_subtype = str(media_subtype)
+        allowed_values = ["Trunk", "Station", "Consult", "Screen"]
+        if media_subtype.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for media_subtype -> " + media_subtype)
+            self._media_subtype = "outdated_sdk_version"
+        else:
+            self._media_subtype = media_subtype
+
+    @property
+    def media_subject(self) -> str:
+        """
+        Gets the media_subject of this Recording.
+        The media subject of the recording.
+
+        :return: The media_subject of this Recording.
+        :rtype: str
+        """
+        return self._media_subject
+
+    @media_subject.setter
+    def media_subject(self, media_subject: str) -> None:
+        """
+        Sets the media_subject of this Recording.
+        The media subject of the recording.
+
+        :param media_subject: The media_subject of this Recording.
+        :type: str
+        """
+        
+
+        self._media_subject = media_subject
 
     @property
     def annotations(self) -> List['Annotation']:

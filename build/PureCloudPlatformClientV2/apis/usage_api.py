@@ -306,7 +306,7 @@ class UsageApi(object):
 
     def get_usage_simplesearch_execution_id_results(self, execution_id: str, **kwargs) -> 'ApiUsageQueryResult':
         """
-        Get the results of a usage search
+        Get the results of a usage search. Number of records to be returned is limited to 20,000 results.
         
 
         This method makes a synchronous HTTP request by default. To make an
@@ -546,8 +546,8 @@ class UsageApi(object):
 
     def post_usage_simplesearch(self, body: 'ApiUsageSimpleSearch', **kwargs) -> 'UsageExecutionResult':
         """
-        Search organization API Usage - 
-        After calling this method, you will then need to poll for the query results based on the returned execution Id
+        Search organization API Usage
+        After calling this method, you will then need to poll for the query results based on the returned execution Id. The number of records is limited to 20,000 results
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

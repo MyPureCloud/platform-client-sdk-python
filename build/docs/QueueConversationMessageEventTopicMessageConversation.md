@@ -11,6 +11,7 @@ title: QueueConversationMessageEventTopicMessageConversation
 | **name** | **str** |  | [optional] |
 | **participants** | [**list[QueueConversationMessageEventTopicMessageMediaParticipant]**](QueueConversationMessageEventTopicMessageMediaParticipant.html) |  | [optional] |
 | **other_media_uris** | **list[str]** |  | [optional] |
+| **address** | **str** |  | [optional] |
 {: class="table table-striped"}
 
 

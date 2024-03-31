@@ -50,20 +50,47 @@ class V2MobiusAlertsTopicCondition(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
+            'id': 'str',
             'conditions': 'list[V2MobiusAlertsTopicCondition]',
             'predicates': 'list[V2MobiusAlertsTopicConditionRulePredicate]',
             'type': 'str'
         }
 
         self.attribute_map = {
+            'id': 'id',
             'conditions': 'conditions',
             'predicates': 'predicates',
             'type': 'type'
         }
 
+        self._id = None
         self._conditions = None
         self._predicates = None
         self._type = None
+
+    @property
+    def id(self) -> str:
+        """
+        Gets the id of this V2MobiusAlertsTopicCondition.
+
+
+        :return: The id of this V2MobiusAlertsTopicCondition.
+        :rtype: str
+        """
+        return self._id
+
+    @id.setter
+    def id(self, id: str) -> None:
+        """
+        Sets the id of this V2MobiusAlertsTopicCondition.
+
+
+        :param id: The id of this V2MobiusAlertsTopicCondition.
+        :type: str
+        """
+        
+
+        self._id = id
 
     @property
     def conditions(self) -> List['V2MobiusAlertsTopicCondition']:

@@ -395,7 +395,7 @@ class QueueConversationScreenShareEventTopicScreenShareMediaParticipant(object):
         """
         if isinstance(state, int):
             state = str(state)
-        allowed_values = ["alerting", "dialing", "contacting", "offering", "connected", "disconnected", "terminated", "converting", "uploading", "transmitting", "scheduled", "none"]
+        allowed_values = ["alerting", "dialing", "contacting", "offering", "connected", "disconnected", "terminated", "converting", "uploading", "transmitting", "scheduled", "parked", "none"]
         if state.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for state -> " + state)
             self._state = "outdated_sdk_version"
@@ -424,7 +424,7 @@ class QueueConversationScreenShareEventTopicScreenShareMediaParticipant(object):
         """
         if isinstance(initial_state, int):
             initial_state = str(initial_state)
-        allowed_values = ["alerting", "dialing", "contacting", "offering", "connected", "disconnected", "terminated", "converting", "uploading", "transmitting", "scheduled", "none"]
+        allowed_values = ["alerting", "dialing", "contacting", "offering", "connected", "disconnected", "terminated", "converting", "uploading", "transmitting", "scheduled", "parked", "none"]
         if initial_state.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for initial_state -> " + initial_state)
             self._initial_state = "outdated_sdk_version"

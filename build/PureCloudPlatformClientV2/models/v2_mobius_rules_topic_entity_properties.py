@@ -33,7 +33,7 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
-    from . import V2MobiusRulesTopicAddressableEntityRef
+    from . import V2MobiusRulesTopicAlertingAddressableEntityRef
 
 class V2MobiusRulesTopicEntityProperties(object):
     """
@@ -51,10 +51,10 @@ class V2MobiusRulesTopicEntityProperties(object):
         """
         self.swagger_types = {
             'entity_type': 'str',
-            'user': 'V2MobiusRulesTopicAddressableEntityRef',
-            'group': 'V2MobiusRulesTopicAddressableEntityRef',
-            'queue': 'V2MobiusRulesTopicAddressableEntityRef',
-            'team': 'V2MobiusRulesTopicAddressableEntityRef'
+            'user': 'V2MobiusRulesTopicAlertingAddressableEntityRef',
+            'group': 'V2MobiusRulesTopicAlertingAddressableEntityRef',
+            'queue': 'V2MobiusRulesTopicAlertingAddressableEntityRef',
+            'team': 'V2MobiusRulesTopicAlertingAddressableEntityRef'
         }
 
         self.attribute_map = {
@@ -101,96 +101,96 @@ class V2MobiusRulesTopicEntityProperties(object):
             self._entity_type = entity_type
 
     @property
-    def user(self) -> 'V2MobiusRulesTopicAddressableEntityRef':
+    def user(self) -> 'V2MobiusRulesTopicAlertingAddressableEntityRef':
         """
         Gets the user of this V2MobiusRulesTopicEntityProperties.
 
 
         :return: The user of this V2MobiusRulesTopicEntityProperties.
-        :rtype: V2MobiusRulesTopicAddressableEntityRef
+        :rtype: V2MobiusRulesTopicAlertingAddressableEntityRef
         """
         return self._user
 
     @user.setter
-    def user(self, user: 'V2MobiusRulesTopicAddressableEntityRef') -> None:
+    def user(self, user: 'V2MobiusRulesTopicAlertingAddressableEntityRef') -> None:
         """
         Sets the user of this V2MobiusRulesTopicEntityProperties.
 
 
         :param user: The user of this V2MobiusRulesTopicEntityProperties.
-        :type: V2MobiusRulesTopicAddressableEntityRef
+        :type: V2MobiusRulesTopicAlertingAddressableEntityRef
         """
         
 
         self._user = user
 
     @property
-    def group(self) -> 'V2MobiusRulesTopicAddressableEntityRef':
+    def group(self) -> 'V2MobiusRulesTopicAlertingAddressableEntityRef':
         """
         Gets the group of this V2MobiusRulesTopicEntityProperties.
 
 
         :return: The group of this V2MobiusRulesTopicEntityProperties.
-        :rtype: V2MobiusRulesTopicAddressableEntityRef
+        :rtype: V2MobiusRulesTopicAlertingAddressableEntityRef
         """
         return self._group
 
     @group.setter
-    def group(self, group: 'V2MobiusRulesTopicAddressableEntityRef') -> None:
+    def group(self, group: 'V2MobiusRulesTopicAlertingAddressableEntityRef') -> None:
         """
         Sets the group of this V2MobiusRulesTopicEntityProperties.
 
 
         :param group: The group of this V2MobiusRulesTopicEntityProperties.
-        :type: V2MobiusRulesTopicAddressableEntityRef
+        :type: V2MobiusRulesTopicAlertingAddressableEntityRef
         """
         
 
         self._group = group
 
     @property
-    def queue(self) -> 'V2MobiusRulesTopicAddressableEntityRef':
+    def queue(self) -> 'V2MobiusRulesTopicAlertingAddressableEntityRef':
         """
         Gets the queue of this V2MobiusRulesTopicEntityProperties.
 
 
         :return: The queue of this V2MobiusRulesTopicEntityProperties.
-        :rtype: V2MobiusRulesTopicAddressableEntityRef
+        :rtype: V2MobiusRulesTopicAlertingAddressableEntityRef
         """
         return self._queue
 
     @queue.setter
-    def queue(self, queue: 'V2MobiusRulesTopicAddressableEntityRef') -> None:
+    def queue(self, queue: 'V2MobiusRulesTopicAlertingAddressableEntityRef') -> None:
         """
         Sets the queue of this V2MobiusRulesTopicEntityProperties.
 
 
         :param queue: The queue of this V2MobiusRulesTopicEntityProperties.
-        :type: V2MobiusRulesTopicAddressableEntityRef
+        :type: V2MobiusRulesTopicAlertingAddressableEntityRef
         """
         
 
         self._queue = queue
 
     @property
-    def team(self) -> 'V2MobiusRulesTopicAddressableEntityRef':
+    def team(self) -> 'V2MobiusRulesTopicAlertingAddressableEntityRef':
         """
         Gets the team of this V2MobiusRulesTopicEntityProperties.
 
 
         :return: The team of this V2MobiusRulesTopicEntityProperties.
-        :rtype: V2MobiusRulesTopicAddressableEntityRef
+        :rtype: V2MobiusRulesTopicAlertingAddressableEntityRef
         """
         return self._team
 
     @team.setter
-    def team(self, team: 'V2MobiusRulesTopicAddressableEntityRef') -> None:
+    def team(self, team: 'V2MobiusRulesTopicAlertingAddressableEntityRef') -> None:
         """
         Sets the team of this V2MobiusRulesTopicEntityProperties.
 
 
         :param team: The team of this V2MobiusRulesTopicEntityProperties.
-        :type: V2MobiusRulesTopicAddressableEntityRef
+        :type: V2MobiusRulesTopicAlertingAddressableEntityRef
         """
         
 

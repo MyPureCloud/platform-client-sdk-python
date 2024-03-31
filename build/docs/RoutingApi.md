@@ -131,6 +131,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_routing_skills**](RoutingApi.html#post_routing_skills) | Create Skill|
 |[**post_routing_sms_addresses**](RoutingApi.html#post_routing_sms_addresses) | Provision an Address for SMS|
 |[**post_routing_sms_phonenumbers**](RoutingApi.html#post_routing_sms_phonenumbers) | Provision a phone number for SMS|
+|[**post_routing_sms_phonenumbers_alphanumeric**](RoutingApi.html#post_routing_sms_phonenumbers_alphanumeric) | Provision an alphanumeric number for SMS|
 |[**post_routing_sms_phonenumbers_import**](RoutingApi.html#post_routing_sms_phonenumbers_import) | Imports a phone number for SMS|
 |[**post_routing_utilization_labels**](RoutingApi.html#post_routing_utilization_labels) | Create a utilization label|
 |[**post_routing_utilization_tags**](RoutingApi.html#post_routing_utilization_tags) | Create an utilization tag|
@@ -3792,7 +3793,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **phone_number** | **str**| Filter on phone number address. Allowable characters are the digits &#39;0-9&#39; and the wild card character &#39;\\*&#39;. If just digits are present, a contains search is done on the address pattern. For example, &#39;317&#39; could be matched anywhere in the address. An &#39;\\*&#39; will match multiple digits. For example, to match a specific area code within the US a pattern like &#39;1317*&#39; could be used. | [optional]  |
-| **phone_number_type** | [**list[str]**](str.html)| Filter on phone number type | [optional] <br />**Values**: local, mobile, tollfree, shortcode |
+| **phone_number_type** | [**list[str]**](str.html)| Filter on phone number type | [optional] <br />**Values**: local, mobile, tollfree, shortcode, alphanumeric |
 | **phone_number_status** | [**list[str]**](str.html)| Filter on phone number status | [optional] <br />**Values**: active, invalid, initiated, porting, pending, pending-cancellation |
 | **country_code** | [**list[str]**](str.html)| Filter on country code | [optional]  |
 | **page_size** | **int**| Page size | [optional] [default to 25] |
@@ -6492,6 +6493,57 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **body** | [**SmsPhoneNumberProvision**](SmsPhoneNumberProvision.html)| SmsPhoneNumber |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**SmsPhoneNumber**](SmsPhoneNumber.html)
+
+<a name="post_routing_sms_phonenumbers_alphanumeric"></a>
+
+## [**SmsPhoneNumber**](SmsPhoneNumber.html) post_routing_sms_phonenumbers_alphanumeric(body)
+
+
+
+Provision an alphanumeric number for SMS
+
+post_routing_sms_phonenumbers_alphanumeric is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/routing/sms/phonenumbers/alphanumeric 
+
+Requires ALL permissions: 
+
+* sms:phoneNumber:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RoutingApi()
+body = PureCloudPlatformClientV2.SmsAlphanumericProvision() # SmsAlphanumericProvision | SmsPhoneNumber
+
+try:
+    # Provision an alphanumeric number for SMS
+    api_response = api_instance.post_routing_sms_phonenumbers_alphanumeric(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling RoutingApi->post_routing_sms_phonenumbers_alphanumeric: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**SmsAlphanumericProvision**](SmsAlphanumericProvision.html)| SmsPhoneNumber |  |
 {: class="table table-striped"}
 
 ### Return type

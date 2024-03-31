@@ -33,7 +33,7 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
-    from . import KnowledgeDocumentResponse
+    from . import KnowledgeSearchDocumentResponse
 
 class KnowledgeDocumentSearchResult(object):
     """
@@ -51,7 +51,7 @@ class KnowledgeDocumentSearchResult(object):
         """
         self.swagger_types = {
             'confidence': 'float',
-            'document': 'KnowledgeDocumentResponse'
+            'document': 'KnowledgeSearchDocumentResponse'
         }
 
         self.attribute_map = {
@@ -87,24 +87,24 @@ class KnowledgeDocumentSearchResult(object):
         self._confidence = confidence
 
     @property
-    def document(self) -> 'KnowledgeDocumentResponse':
+    def document(self) -> 'KnowledgeSearchDocumentResponse':
         """
         Gets the document of this KnowledgeDocumentSearchResult.
         Document that matched the query.
 
         :return: The document of this KnowledgeDocumentSearchResult.
-        :rtype: KnowledgeDocumentResponse
+        :rtype: KnowledgeSearchDocumentResponse
         """
         return self._document
 
     @document.setter
-    def document(self, document: 'KnowledgeDocumentResponse') -> None:
+    def document(self, document: 'KnowledgeSearchDocumentResponse') -> None:
         """
         Sets the document of this KnowledgeDocumentSearchResult.
         Document that matched the query.
 
         :param document: The document of this KnowledgeDocumentSearchResult.
-        :type: KnowledgeDocumentResponse
+        :type: KnowledgeSearchDocumentResponse
         """
         
 

@@ -14,6 +14,8 @@ title: OrphanRecording
 | **provider_type** | **str** |  | [optional] |
 | **media_size_bytes** | **int** |  | [optional] |
 | **media_type** | **str** |  | [optional] |
+| **media_subtype** | **str** |  | [optional] |
+| **media_subject** | **str** |  | [optional] |
 | **file_state** | **str** |  | [optional] |
 | **provider_endpoint** | [**Endpoint**](Endpoint.html) |  | [optional] |
 | **recording** | [**Recording**](Recording.html) |  | [optional] |

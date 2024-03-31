@@ -14,6 +14,8 @@ title: RecordingMetadata
 | **start_time** | **str** | The start time of the recording for screen recordings. Null for other types. | [optional] |
 | **end_time** | **str** |  | [optional] |
 | **media** | **str** | The type of media that the recording is. At the moment that could be audio, chat, email, or message. | [optional] |
+| **media_subtype** | **str** | The recording media subtype. | [optional] |
+| **media_subject** | **str** | The recording media subject. | [optional] |
 | **annotations** | [**list[Annotation]**](Annotation.html) | Annotations that belong to the recording. Populated when recording filestate is AVAILABLE. | [optional] |
 | **file_state** | **str** | Represents the current file state for a recording. Examples: Uploading, Archived, etc | [optional] |
 | **restore_expiration_time** | **datetime** | The amount of time a restored recording will remain restored before being archived again. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |

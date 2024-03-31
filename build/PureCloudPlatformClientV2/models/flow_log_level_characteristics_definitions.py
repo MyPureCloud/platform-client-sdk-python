@@ -33,6 +33,7 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
+    from . import FlowLogLevel
     from . import FlowLogLevelCharacteristicsDefinition
 
 class FlowLogLevelCharacteristicsDefinitions(object):
@@ -50,20 +51,47 @@ class FlowLogLevelCharacteristicsDefinitions(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
+            'log_levels': 'list[FlowLogLevel]',
             'characteristics': 'list[FlowLogLevelCharacteristicsDefinition]'
         }
 
         self.attribute_map = {
+            'log_levels': 'logLevels',
             'characteristics': 'characteristics'
         }
 
+        self._log_levels = None
         self._characteristics = None
+
+    @property
+    def log_levels(self) -> List['FlowLogLevel']:
+        """
+        Gets the log_levels of this FlowLogLevelCharacteristicsDefinitions.
+        A list of flow log levels available to the organization.
+
+        :return: The log_levels of this FlowLogLevelCharacteristicsDefinitions.
+        :rtype: list[FlowLogLevel]
+        """
+        return self._log_levels
+
+    @log_levels.setter
+    def log_levels(self, log_levels: List['FlowLogLevel']) -> None:
+        """
+        Sets the log_levels of this FlowLogLevelCharacteristicsDefinitions.
+        A list of flow log levels available to the organization.
+
+        :param log_levels: The log_levels of this FlowLogLevelCharacteristicsDefinitions.
+        :type: list[FlowLogLevel]
+        """
+        
+
+        self._log_levels = log_levels
 
     @property
     def characteristics(self) -> List['FlowLogLevelCharacteristicsDefinition']:
         """
         Gets the characteristics of this FlowLogLevelCharacteristicsDefinitions.
-
+        A list of characteristics that the loglevels will have that are available to the organization..
 
         :return: The characteristics of this FlowLogLevelCharacteristicsDefinitions.
         :rtype: list[FlowLogLevelCharacteristicsDefinition]
@@ -74,7 +102,7 @@ class FlowLogLevelCharacteristicsDefinitions(object):
     def characteristics(self, characteristics: List['FlowLogLevelCharacteristicsDefinition']) -> None:
         """
         Sets the characteristics of this FlowLogLevelCharacteristicsDefinitions.
-
+        A list of characteristics that the loglevels will have that are available to the organization..
 
         :param characteristics: The characteristics of this FlowLogLevelCharacteristicsDefinitions.
         :type: list[FlowLogLevelCharacteristicsDefinition]

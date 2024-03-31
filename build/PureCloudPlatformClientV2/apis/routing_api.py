@@ -100,6 +100,7 @@ from ..models import SkillGroupWithMemberDivisions
 from ..models import SmsAddress
 from ..models import SmsAddressEntityListing
 from ..models import SmsAddressProvision
+from ..models import SmsAlphanumericProvision
 from ..models import SmsPhoneNumber
 from ..models import SmsPhoneNumberEntityListing
 from ..models import SmsPhoneNumberImport
@@ -10194,6 +10195,85 @@ class RoutingApi(object):
 
 
         resource_path = '/api/v2/routing/sms/phonenumbers'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='SmsPhoneNumber',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_routing_sms_phonenumbers_alphanumeric(self, body: 'SmsAlphanumericProvision', **kwargs) -> 'SmsPhoneNumber':
+        """
+        Provision an alphanumeric number for SMS
+        
+	    post_routing_sms_phonenumbers_alphanumeric is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_routing_sms_phonenumbers_alphanumeric(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param SmsAlphanumericProvision body: SmsPhoneNumber (required)
+        :return: SmsPhoneNumber
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_routing_sms_phonenumbers_alphanumeric" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_routing_sms_phonenumbers_alphanumeric`")
+
+
+        resource_path = '/api/v2/routing/sms/phonenumbers/alphanumeric'.replace('{format}', 'json')
         path_params = {}
 
         query_params = {}

@@ -51,18 +51,18 @@ class ContactsExportRequest(object):
         """
         self.swagger_types = {
             'contact_list_filter_id': 'str',
-            'search_criteria': 'ContactBulkSearchCriteria',
+            'criteria': 'ContactBulkSearchCriteria',
             'contact_ids': 'list[str]'
         }
 
         self.attribute_map = {
             'contact_list_filter_id': 'contactListFilterId',
-            'search_criteria': 'searchCriteria',
+            'criteria': 'criteria',
             'contact_ids': 'contactIds'
         }
 
         self._contact_list_filter_id = None
-        self._search_criteria = None
+        self._criteria = None
         self._contact_ids = None
 
     @property
@@ -90,28 +90,28 @@ class ContactsExportRequest(object):
         self._contact_list_filter_id = contact_list_filter_id
 
     @property
-    def search_criteria(self) -> 'ContactBulkSearchCriteria':
+    def criteria(self) -> 'ContactBulkSearchCriteria':
         """
-        Gets the search_criteria of this ContactsExportRequest.
+        Gets the criteria of this ContactsExportRequest.
         Criteria to filter the contacts by.
 
-        :return: The search_criteria of this ContactsExportRequest.
+        :return: The criteria of this ContactsExportRequest.
         :rtype: ContactBulkSearchCriteria
         """
-        return self._search_criteria
+        return self._criteria
 
-    @search_criteria.setter
-    def search_criteria(self, search_criteria: 'ContactBulkSearchCriteria') -> None:
+    @criteria.setter
+    def criteria(self, criteria: 'ContactBulkSearchCriteria') -> None:
         """
-        Sets the search_criteria of this ContactsExportRequest.
+        Sets the criteria of this ContactsExportRequest.
         Criteria to filter the contacts by.
 
-        :param search_criteria: The search_criteria of this ContactsExportRequest.
+        :param criteria: The criteria of this ContactsExportRequest.
         :type: ContactBulkSearchCriteria
         """
         
 
-        self._search_criteria = search_criteria
+        self._criteria = criteria
 
     @property
     def contact_ids(self) -> List[str]:

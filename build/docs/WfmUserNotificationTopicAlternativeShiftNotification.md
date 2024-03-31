@@ -1,0 +1,20 @@
+---
+title: WfmUserNotificationTopicAlternativeShiftNotification
+---
+## WfmUserNotificationTopicAlternativeShiftNotification
+
+## Properties
+
+|Name | Type | Description | Notes|
+|------------ | ------------- | ------------- | -------------|
+| **id** | **str** |  | [optional] |
+| **week_date** | **datetime** |  | [optional] |
+| **granularity** | **str** |  | [optional] |
+| **new_state** | **str** |  | [optional] |
+| **initiating_user** | [**WfmUserNotificationTopicUserReference**](WfmUserNotificationTopicUserReference.html) |  | [optional] |
+| **initiating_shift_date** | **datetime** |  | [optional] |
+| **receiving_user** | [**WfmUserNotificationTopicUserReference**](WfmUserNotificationTopicUserReference.html) |  | [optional] |
+| **receiving_shift_date** | **datetime** |  | [optional] |
+{: class="table table-striped"}
+
+

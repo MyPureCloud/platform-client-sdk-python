@@ -175,7 +175,7 @@ class ConversationEventTopicEmail(object):
         """
         if isinstance(state, int):
             state = str(state)
-        allowed_values = ["alerting", "connected", "disconnected", "none", "transmitting"]
+        allowed_values = ["alerting", "connected", "disconnected", "none", "transmitting", "parked"]
         if state.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for state -> " + state)
             self._state = "outdated_sdk_version"
@@ -204,7 +204,7 @@ class ConversationEventTopicEmail(object):
         """
         if isinstance(initial_state, int):
             initial_state = str(initial_state)
-        allowed_values = ["alerting", "connected", "disconnected", "none", "transmitting"]
+        allowed_values = ["alerting", "connected", "disconnected", "none", "transmitting", "parked"]
         if initial_state.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for initial_state -> " + initial_state)
             self._initial_state = "outdated_sdk_version"

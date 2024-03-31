@@ -1,0 +1,19 @@
+---
+title: JourneyViewChart
+---
+## JourneyViewChart
+
+## Properties
+
+|Name | Type | Description | Notes|
+|------------ | ------------- | ------------- | -------------|
+| **id** | **str** | The globally unique identifier for the object. | [optional] |
+| **name** | **str** |  | [optional] |
+| **version** | **int** | The version of the journey view chart | [optional] |
+| **group_by_time** | **str** | A time unit to group the metrics by. There is a limit on the number of groupBy properties which can be specified. | [optional] |
+| **group_by_attributes** | [**list[JourneyViewChartGroupByAttribute]**](JourneyViewChartGroupByAttribute.html) | A list of attributes to group the metrics by. There is a limit on the number of groupBy properties which can be specified. | [optional] |
+| **metrics** | [**list[JourneyViewChartMetric]**](JourneyViewChartMetric.html) | A list of metrics to calculate within the chart by (aka the y axis) | |
+| **self_uri** | **str** | The URI for this object | [optional] |
+{: class="table table-striped"}
+
+

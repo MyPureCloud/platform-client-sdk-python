@@ -50,29 +50,62 @@ class V2MobiusRulesTopicConditionRulePredicate(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
+            'id': 'str',
             'entity': 'V2MobiusRulesTopicEntityProperties',
             'metric': 'str',
             'metric_type': 'str',
             'metric_value_type': 'str',
             'value': 'float',
+            'status': 'str',
+            'media_type': 'str',
             'comparison_operator': 'str'
         }
 
         self.attribute_map = {
+            'id': 'id',
             'entity': 'entity',
             'metric': 'metric',
             'metric_type': 'metricType',
             'metric_value_type': 'metricValueType',
             'value': 'value',
+            'status': 'status',
+            'media_type': 'mediaType',
             'comparison_operator': 'comparisonOperator'
         }
 
+        self._id = None
         self._entity = None
         self._metric = None
         self._metric_type = None
         self._metric_value_type = None
         self._value = None
+        self._status = None
+        self._media_type = None
         self._comparison_operator = None
+
+    @property
+    def id(self) -> str:
+        """
+        Gets the id of this V2MobiusRulesTopicConditionRulePredicate.
+
+
+        :return: The id of this V2MobiusRulesTopicConditionRulePredicate.
+        :rtype: str
+        """
+        return self._id
+
+    @id.setter
+    def id(self, id: str) -> None:
+        """
+        Sets the id of this V2MobiusRulesTopicConditionRulePredicate.
+
+
+        :param id: The id of this V2MobiusRulesTopicConditionRulePredicate.
+        :type: str
+        """
+        
+
+        self._id = id
 
     @property
     def entity(self) -> 'V2MobiusRulesTopicEntityProperties':
@@ -203,6 +236,59 @@ class V2MobiusRulesTopicConditionRulePredicate(object):
         
 
         self._value = value
+
+    @property
+    def status(self) -> str:
+        """
+        Gets the status of this V2MobiusRulesTopicConditionRulePredicate.
+
+
+        :return: The status of this V2MobiusRulesTopicConditionRulePredicate.
+        :rtype: str
+        """
+        return self._status
+
+    @status.setter
+    def status(self, status: str) -> None:
+        """
+        Sets the status of this V2MobiusRulesTopicConditionRulePredicate.
+
+
+        :param status: The status of this V2MobiusRulesTopicConditionRulePredicate.
+        :type: str
+        """
+        
+
+        self._status = status
+
+    @property
+    def media_type(self) -> str:
+        """
+        Gets the media_type of this V2MobiusRulesTopicConditionRulePredicate.
+
+
+        :return: The media_type of this V2MobiusRulesTopicConditionRulePredicate.
+        :rtype: str
+        """
+        return self._media_type
+
+    @media_type.setter
+    def media_type(self, media_type: str) -> None:
+        """
+        Sets the media_type of this V2MobiusRulesTopicConditionRulePredicate.
+
+
+        :param media_type: The media_type of this V2MobiusRulesTopicConditionRulePredicate.
+        :type: str
+        """
+        if isinstance(media_type, int):
+            media_type = str(media_type)
+        allowed_values = ["Voice", "Chat", "Email", "Callback", "Message", "Screenshare", "Cobrowse", "Unknown"]
+        if media_type.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for media_type -> " + media_type)
+            self._media_type = "outdated_sdk_version"
+        else:
+            self._media_type = media_type
 
     @property
     def comparison_operator(self) -> str:

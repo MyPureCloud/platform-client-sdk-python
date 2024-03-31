@@ -33,7 +33,7 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
-    from . import KnowledgeGuestDocument
+    from . import KnowledgeGuestDocumentResponse
 
 class KnowledgeGuestDocumentResponseListing(object):
     """
@@ -50,7 +50,7 @@ class KnowledgeGuestDocumentResponseListing(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'entities': 'list[KnowledgeGuestDocument]',
+            'entities': 'list[KnowledgeGuestDocumentResponse]',
             'next_uri': 'str',
             'self_uri': 'str',
             'previous_uri': 'str'
@@ -69,24 +69,24 @@ class KnowledgeGuestDocumentResponseListing(object):
         self._previous_uri = None
 
     @property
-    def entities(self) -> List['KnowledgeGuestDocument']:
+    def entities(self) -> List['KnowledgeGuestDocumentResponse']:
         """
         Gets the entities of this KnowledgeGuestDocumentResponseListing.
 
 
         :return: The entities of this KnowledgeGuestDocumentResponseListing.
-        :rtype: list[KnowledgeGuestDocument]
+        :rtype: list[KnowledgeGuestDocumentResponse]
         """
         return self._entities
 
     @entities.setter
-    def entities(self, entities: List['KnowledgeGuestDocument']) -> None:
+    def entities(self, entities: List['KnowledgeGuestDocumentResponse']) -> None:
         """
         Sets the entities of this KnowledgeGuestDocumentResponseListing.
 
 
         :param entities: The entities of this KnowledgeGuestDocumentResponseListing.
-        :type: list[KnowledgeGuestDocument]
+        :type: list[KnowledgeGuestDocumentResponse]
         """
         
 

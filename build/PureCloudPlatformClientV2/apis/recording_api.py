@@ -2704,10 +2704,11 @@ class RecordingApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("get_recordings_screensessions is deprecated")
     def get_recordings_screensessions(self, **kwargs) -> 'ScreenRecordingSessionListing':
         """
         Retrieves a paged listing of screen recording sessions
-        
+        Coming soon: This API is deprecated and will be replaced by /api/v2/recordings/screensessions/details
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

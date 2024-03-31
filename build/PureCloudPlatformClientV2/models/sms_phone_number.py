@@ -193,7 +193,7 @@ class SmsPhoneNumber(object):
     def phone_number(self) -> str:
         """
         Gets the phone_number of this SmsPhoneNumber.
-        A phone number provisioned for SMS communications in E.164 format. E.g. +13175555555 or +34234234234
+        A phone number provisioned for SMS communications.
 
         :return: The phone_number of this SmsPhoneNumber.
         :rtype: str
@@ -204,7 +204,7 @@ class SmsPhoneNumber(object):
     def phone_number(self, phone_number: str) -> None:
         """
         Sets the phone_number of this SmsPhoneNumber.
-        A phone number provisioned for SMS communications in E.164 format. E.g. +13175555555 or +34234234234
+        A phone number provisioned for SMS communications.
 
         :param phone_number: The phone_number of this SmsPhoneNumber.
         :type: str
@@ -235,7 +235,7 @@ class SmsPhoneNumber(object):
         """
         if isinstance(phone_number_type, int):
             phone_number_type = str(phone_number_type)
-        allowed_values = ["local", "mobile", "tollfree", "shortcode"]
+        allowed_values = ["local", "mobile", "tollfree", "shortcode", "alphanumeric"]
         if phone_number_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for phone_number_type -> " + phone_number_type)
             self._phone_number_type = "outdated_sdk_version"

@@ -51,18 +51,15 @@ class FileUploadSettings(object):
         """
         self.swagger_types = {
             'enable_attachments': 'bool',
-            'use_supported_content_profile': 'bool',
             'modes': 'list[FileUploadMode]'
         }
 
         self.attribute_map = {
             'enable_attachments': 'enableAttachments',
-            'use_supported_content_profile': 'useSupportedContentProfile',
             'modes': 'modes'
         }
 
         self._enable_attachments = None
-        self._use_supported_content_profile = None
         self._modes = None
 
     @property
@@ -88,30 +85,6 @@ class FileUploadSettings(object):
         
 
         self._enable_attachments = enable_attachments
-
-    @property
-    def use_supported_content_profile(self) -> bool:
-        """
-        Gets the use_supported_content_profile of this FileUploadSettings.
-        whether or not supported content profile is enabled
-
-        :return: The use_supported_content_profile of this FileUploadSettings.
-        :rtype: bool
-        """
-        return self._use_supported_content_profile
-
-    @use_supported_content_profile.setter
-    def use_supported_content_profile(self, use_supported_content_profile: bool) -> None:
-        """
-        Sets the use_supported_content_profile of this FileUploadSettings.
-        whether or not supported content profile is enabled
-
-        :param use_supported_content_profile: The use_supported_content_profile of this FileUploadSettings.
-        :type: bool
-        """
-        
-
-        self._use_supported_content_profile = use_supported_content_profile
 
     @property
     def modes(self) -> List['FileUploadMode']:

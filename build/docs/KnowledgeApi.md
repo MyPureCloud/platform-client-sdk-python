@@ -682,7 +682,7 @@ except ApiException as e:
 
 <a name="get_knowledge_guest_session_document"></a>
 
-## [**KnowledgeGuestDocument**](KnowledgeGuestDocument.html) get_knowledge_guest_session_document(session_id, document_id)
+## [**KnowledgeGuestDocumentResponse**](KnowledgeGuestDocumentResponse.html) get_knowledge_guest_session_document(session_id, document_id)
 
 
 
@@ -725,7 +725,7 @@ except ApiException as e:
 
 ### Return type
 
-[**KnowledgeGuestDocument**](KnowledgeGuestDocument.html)
+[**KnowledgeGuestDocumentResponse**](KnowledgeGuestDocumentResponse.html)
 
 <a name="get_knowledge_guest_session_documents"></a>
 

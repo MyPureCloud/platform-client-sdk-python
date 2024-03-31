@@ -8,7 +8,7 @@ title: ContactsExportRequest
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
 | **contact_list_filter_id** | **str** | Contact List Filter ID. | [optional] |
-| **search_criteria** | [**ContactBulkSearchCriteria**](ContactBulkSearchCriteria.html) | Criteria to filter the contacts by. | [optional] |
+| **criteria** | [**ContactBulkSearchCriteria**](ContactBulkSearchCriteria.html) | Criteria to filter the contacts by. | [optional] |
 | **contact_ids** | **list[str]** | Contact IDs to be exported. | [optional] |
 {: class="table table-striped"}
 

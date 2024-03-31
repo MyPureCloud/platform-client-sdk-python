@@ -61,7 +61,8 @@ class V2MobiusRulesTopicRule(object):
             'in_alarm': 'bool',
             'action': 'str',
             'date_created': 'datetime',
-            'send_exiting_alarm_notification': 'bool'
+            'send_exiting_alarm_notification': 'bool',
+            'wait_between_notification_ms': 'int'
         }
 
         self.attribute_map = {
@@ -75,7 +76,8 @@ class V2MobiusRulesTopicRule(object):
             'in_alarm': 'inAlarm',
             'action': 'action',
             'date_created': 'dateCreated',
-            'send_exiting_alarm_notification': 'sendExitingAlarmNotification'
+            'send_exiting_alarm_notification': 'sendExitingAlarmNotification',
+            'wait_between_notification_ms': 'waitBetweenNotificationMs'
         }
 
         self._id = None
@@ -89,6 +91,7 @@ class V2MobiusRulesTopicRule(object):
         self._action = None
         self._date_created = None
         self._send_exiting_alarm_notification = None
+        self._wait_between_notification_ms = None
 
     @property
     def id(self) -> str:
@@ -363,6 +366,30 @@ class V2MobiusRulesTopicRule(object):
         
 
         self._send_exiting_alarm_notification = send_exiting_alarm_notification
+
+    @property
+    def wait_between_notification_ms(self) -> int:
+        """
+        Gets the wait_between_notification_ms of this V2MobiusRulesTopicRule.
+
+
+        :return: The wait_between_notification_ms of this V2MobiusRulesTopicRule.
+        :rtype: int
+        """
+        return self._wait_between_notification_ms
+
+    @wait_between_notification_ms.setter
+    def wait_between_notification_ms(self, wait_between_notification_ms: int) -> None:
+        """
+        Sets the wait_between_notification_ms of this V2MobiusRulesTopicRule.
+
+
+        :param wait_between_notification_ms: The wait_between_notification_ms of this V2MobiusRulesTopicRule.
+        :type: int
+        """
+        
+
+        self._wait_between_notification_ms = wait_between_notification_ms
 
     def to_dict(self):
         """

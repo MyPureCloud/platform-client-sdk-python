@@ -11,10 +11,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_oauth_client_usage_query_result**](UsageApi.html#get_oauth_client_usage_query_result) | Get the results of a usage query|
 |[**get_oauth_client_usage_summary**](UsageApi.html#get_oauth_client_usage_summary) | Get a summary of OAuth client API usage|
 |[**get_usage_query_execution_id_results**](UsageApi.html#get_usage_query_execution_id_results) | Get the results of a usage query|
-|[**get_usage_simplesearch_execution_id_results**](UsageApi.html#get_usage_simplesearch_execution_id_results) | Get the results of a usage search|
+|[**get_usage_simplesearch_execution_id_results**](UsageApi.html#get_usage_simplesearch_execution_id_results) | Get the results of a usage search. Number of records to be returned is limited to 20,000 results.|
 |[**post_oauth_client_usage_query**](UsageApi.html#post_oauth_client_usage_query) | Query for OAuth client API usage|
 |[**post_usage_query**](UsageApi.html#post_usage_query) | Query organization API Usage - |
-|[**post_usage_simplesearch**](UsageApi.html#post_usage_simplesearch) | Search organization API Usage - |
+|[**post_usage_simplesearch**](UsageApi.html#post_usage_simplesearch) | Search organization API Usage|
 {: class="table table-striped"}
 
 <a name="get_oauth_client_usage_query_result"></a>
@@ -179,7 +179,7 @@ except ApiException as e:
 
 
 
-Get the results of a usage search
+Get the results of a usage search. Number of records to be returned is limited to 20,000 results.
 
 Wraps GET /api/v2/usage/simplesearch/{executionId}/results 
 
@@ -204,7 +204,7 @@ api_instance = PureCloudPlatformClientV2.UsageApi()
 execution_id = 'execution_id_example' # str | ID of the search execution
 
 try:
-    # Get the results of a usage search
+    # Get the results of a usage search. Number of records to be returned is limited to 20,000 results.
     api_response = api_instance.get_usage_simplesearch_execution_id_results(execution_id)
     pprint(api_response)
 except ApiException as e:
@@ -335,9 +335,9 @@ except ApiException as e:
 
 
 
-Search organization API Usage - 
+Search organization API Usage
 
-After calling this method, you will then need to poll for the query results based on the returned execution Id
+After calling this method, you will then need to poll for the query results based on the returned execution Id. The number of records is limited to 20,000 results
 
 Wraps POST /api/v2/usage/simplesearch 
 
@@ -362,7 +362,7 @@ api_instance = PureCloudPlatformClientV2.UsageApi()
 body = PureCloudPlatformClientV2.ApiUsageSimpleSearch() # ApiUsageSimpleSearch | SimpleSearch
 
 try:
-    # Search organization API Usage - 
+    # Search organization API Usage
     api_response = api_instance.post_usage_simplesearch(body)
     pprint(api_response)
 except ApiException as e:

@@ -72,8 +72,8 @@ class KnowledgeDocumentResponse(object):
             'category': 'CategoryResponse',
             'labels': 'list[LabelResponse]',
             'knowledge_base': 'KnowledgeBaseReference',
-            'variations': 'list[DocumentVariation]',
             'external_id': 'str',
+            'variations': 'list[DocumentVariation]',
             'self_uri': 'str'
         }
 
@@ -94,8 +94,8 @@ class KnowledgeDocumentResponse(object):
             'category': 'category',
             'labels': 'labels',
             'knowledge_base': 'knowledgeBase',
-            'variations': 'variations',
             'external_id': 'externalId',
+            'variations': 'variations',
             'self_uri': 'selfUri'
         }
 
@@ -115,8 +115,8 @@ class KnowledgeDocumentResponse(object):
         self._category = None
         self._labels = None
         self._knowledge_base = None
-        self._variations = None
         self._external_id = None
+        self._variations = None
         self._self_uri = None
 
     @property
@@ -509,30 +509,6 @@ class KnowledgeDocumentResponse(object):
         self._knowledge_base = knowledge_base
 
     @property
-    def variations(self) -> List['DocumentVariation']:
-        """
-        Gets the variations of this KnowledgeDocumentResponse.
-        Variations of the document.
-
-        :return: The variations of this KnowledgeDocumentResponse.
-        :rtype: list[DocumentVariation]
-        """
-        return self._variations
-
-    @variations.setter
-    def variations(self, variations: List['DocumentVariation']) -> None:
-        """
-        Sets the variations of this KnowledgeDocumentResponse.
-        Variations of the document.
-
-        :param variations: The variations of this KnowledgeDocumentResponse.
-        :type: list[DocumentVariation]
-        """
-        
-
-        self._variations = variations
-
-    @property
     def external_id(self) -> str:
         """
         Gets the external_id of this KnowledgeDocumentResponse.
@@ -555,6 +531,30 @@ class KnowledgeDocumentResponse(object):
         
 
         self._external_id = external_id
+
+    @property
+    def variations(self) -> List['DocumentVariation']:
+        """
+        Gets the variations of this KnowledgeDocumentResponse.
+        Variations of the document.
+
+        :return: The variations of this KnowledgeDocumentResponse.
+        :rtype: list[DocumentVariation]
+        """
+        return self._variations
+
+    @variations.setter
+    def variations(self, variations: List['DocumentVariation']) -> None:
+        """
+        Sets the variations of this KnowledgeDocumentResponse.
+        Variations of the document.
+
+        :param variations: The variations of this KnowledgeDocumentResponse.
+        :type: list[DocumentVariation]
+        """
+        
+
+        self._variations = variations
 
     @property
     def self_uri(self) -> str:

@@ -1,7 +1,7 @@
 ---
-title: KnowledgeGuestDocument
+title: KnowledgeSearchDocumentResponse
 ---
-## KnowledgeGuestDocument
+## KnowledgeSearchDocumentResponse
 
 ## Properties
 
@@ -20,9 +20,12 @@ title: KnowledgeGuestDocument
 | **created_by** | [**UserReference**](UserReference.html) | The user who created the document. | [optional] |
 | **modified_by** | [**UserReference**](UserReference.html) | The user who modified the document. | [optional] |
 | **document_version** | [**AddressableEntityRef**](AddressableEntityRef.html) | The version of the document. | [optional] |
-| **variations** | [**list[KnowledgeGuestDocumentVariation]**](KnowledgeGuestDocumentVariation.html) | Variations of the document. | [optional] |
-| **session_id** | **str** | ID of the guest session. | [optional] |
-| **category** | [**GuestCategoryReference**](GuestCategoryReference.html) | The reference to category associated with the document. | [optional] |
+| **category** | [**CategoryResponse**](CategoryResponse.html) | The reference to category associated with the document. | [optional] |
+| **labels** | [**list[LabelResponse]**](LabelResponse.html) | The references to labels associated with the document. | [optional] |
+| **knowledge_base** | [**KnowledgeBaseReference**](KnowledgeBaseReference.html) | Knowledge base to which the document belongs to. | [optional] |
+| **external_id** | **str** | The reference to external id associated with the document. | [optional] |
+| **variations** | [**list[DocumentVariationAnswer]**](DocumentVariationAnswer.html) | Variations of the document. | [optional] |
+| **answer** | **str** | The answer to the query. | [optional] |
 | **self_uri** | **str** | The URI for this object | [optional] |
 {: class="table table-striped"}
 

@@ -11,6 +11,7 @@ title: QueueConversationScreenShareEventTopicScreenShareConversation
 | **name** | **str** |  | [optional] |
 | **participants** | [**list[QueueConversationScreenShareEventTopicScreenShareMediaParticipant]**](QueueConversationScreenShareEventTopicScreenShareMediaParticipant.html) |  | [optional] |
 | **other_media_uris** | **list[str]** |  | [optional] |
+| **address** | **str** |  | [optional] |
 {: class="table table-striped"}
 
 

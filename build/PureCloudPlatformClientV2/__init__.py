@@ -129,6 +129,7 @@ from .models.alert_summary_entity import AlertSummaryEntity
 from .models.alerting_unread_status import AlertingUnreadStatus
 from .models.all_time_points import AllTimePoints
 from .models.alteration import Alteration
+from .models.alternative_shift_notification import AlternativeShiftNotification
 from .models.amazon_lex_request import AmazonLexRequest
 from .models.analytics_agent_group import AnalyticsAgentGroup
 from .models.analytics_conversation import AnalyticsConversation
@@ -1076,6 +1077,12 @@ from .models.did_number_entity_listing import DIDNumberEntityListing
 from .models.did_pool import DIDPool
 from .models.did_pool_entity_listing import DIDPoolEntityListing
 from .models.daily_possible_shift import DailyPossibleShift
+from .models.dashboard_configuration import DashboardConfiguration
+from .models.dashboard_configuration_bulk_request import DashboardConfigurationBulkRequest
+from .models.dashboard_configuration_listing import DashboardConfigurationListing
+from .models.dashboard_configuration_query_request import DashboardConfigurationQueryRequest
+from .models.dashboard_user import DashboardUser
+from .models.dashboard_user_listing import DashboardUserListing
 from .models.data_action_condition_predicate import DataActionConditionPredicate
 from .models.data_action_condition_settings import DataActionConditionSettings
 from .models.data_action_contact_column_field_mapping import DataActionContactColumnFieldMapping
@@ -1145,9 +1152,13 @@ from .models.dialer_campaign_rule_config_change_campaign_rule_condition import D
 from .models.dialer_campaign_rule_config_change_campaign_rule_entities import DialerCampaignRuleConfigChangeCampaignRuleEntities
 from .models.dialer_campaign_rule_config_change_object import DialerCampaignRuleConfigChangeObject
 from .models.dialer_campaign_rule_config_change_uri_reference import DialerCampaignRuleConfigChangeUriReference
+from .models.dialer_campaign_schedule_config_change_alteration import DialerCampaignScheduleConfigChangeAlteration
 from .models.dialer_campaign_schedule_config_change_campaign_schedule import DialerCampaignScheduleConfigChangeCampaignSchedule
 from .models.dialer_campaign_schedule_config_change_object import DialerCampaignScheduleConfigChangeObject
+from .models.dialer_campaign_schedule_config_change_recurrence_pattern import DialerCampaignScheduleConfigChangeRecurrencePattern
+from .models.dialer_campaign_schedule_config_change_recurrence_range import DialerCampaignScheduleConfigChangeRecurrenceRange
 from .models.dialer_campaign_schedule_config_change_schedule_interval import DialerCampaignScheduleConfigChangeScheduleInterval
+from .models.dialer_campaign_schedule_config_change_schedule_recurrence import DialerCampaignScheduleConfigChangeScheduleRecurrence
 from .models.dialer_campaign_schedule_config_change_uri_reference import DialerCampaignScheduleConfigChangeUriReference
 from .models.dialer_contact import DialerContact
 from .models.dialer_contact_id import DialerContactId
@@ -1247,6 +1258,7 @@ from .models.document_article import DocumentArticle
 from .models.document_attribute import DocumentAttribute
 from .models.document_body import DocumentBody
 from .models.document_body_block import DocumentBodyBlock
+from .models.document_body_block_with_highlight import DocumentBodyBlockWithHighlight
 from .models.document_body_image import DocumentBodyImage
 from .models.document_body_image_properties import DocumentBodyImageProperties
 from .models.document_body_list import DocumentBodyList
@@ -1255,6 +1267,7 @@ from .models.document_body_list_block_properties import DocumentBodyListBlockPro
 from .models.document_body_list_item_properties import DocumentBodyListItemProperties
 from .models.document_body_paragraph import DocumentBodyParagraph
 from .models.document_body_paragraph_properties import DocumentBodyParagraphProperties
+from .models.document_body_paragraph_with_highlight import DocumentBodyParagraphWithHighlight
 from .models.document_body_table import DocumentBodyTable
 from .models.document_body_table_caption_block import DocumentBodyTableCaptionBlock
 from .models.document_body_table_caption_item import DocumentBodyTableCaptionItem
@@ -1265,8 +1278,11 @@ from .models.document_body_table_row_block import DocumentBodyTableRowBlock
 from .models.document_body_table_row_block_properties import DocumentBodyTableRowBlockProperties
 from .models.document_body_video import DocumentBodyVideo
 from .models.document_body_video_properties import DocumentBodyVideoProperties
+from .models.document_body_with_highlight import DocumentBodyWithHighlight
 from .models.document_category_input import DocumentCategoryInput
 from .models.document_content_block import DocumentContentBlock
+from .models.document_content_block_with_highlight import DocumentContentBlockWithHighlight
+from .models.document_content_highlight_index import DocumentContentHighlightIndex
 from .models.document_entity_listing import DocumentEntityListing
 from .models.document_faq import DocumentFaq
 from .models.document_list_content_block import DocumentListContentBlock
@@ -1283,6 +1299,7 @@ from .models.document_thumbnail import DocumentThumbnail
 from .models.document_update import DocumentUpdate
 from .models.document_upload import DocumentUpload
 from .models.document_variation import DocumentVariation
+from .models.document_variation_answer import DocumentVariationAnswer
 from .models.document_variation_context import DocumentVariationContext
 from .models.document_variation_listing import DocumentVariationListing
 from .models.documentation_result import DocumentationResult
@@ -1337,6 +1354,7 @@ from .models.dynamic_group_query import DynamicGroupQuery
 from .models.dynamic_group_query_preview import DynamicGroupQueryPreview
 from .models.dynamic_group_routing_skill_condition import DynamicGroupRoutingSkillCondition
 from .models.dynamic_group_skill_condition import DynamicGroupSkillCondition
+from .models.dynamic_line_balancing_settings import DynamicLineBalancingSettings
 from .models.edge import Edge
 from .models.edge_auto_update_config import EdgeAutoUpdateConfig
 from .models.edge_change_topic_edge import EdgeChangeTopicEdge
@@ -1572,6 +1590,8 @@ from .models.facebook_integration import FacebookIntegration
 from .models.facebook_integration_entity_listing import FacebookIntegrationEntityListing
 from .models.facebook_integration_request import FacebookIntegrationRequest
 from .models.facebook_integration_update_request import FacebookIntegrationUpdateRequest
+from .models.facebook_permission import FacebookPermission
+from .models.facebook_permission_entity_listing import FacebookPermissionEntityListing
 from .models.facebook_scoped_id import FacebookScopedId
 from .models.facet import Facet
 from .models.facet_entry import FacetEntry
@@ -1968,6 +1988,9 @@ from .models.journey_session_events_notification_session_last_event import Journ
 from .models.journey_session_events_notification_user import JourneySessionEventsNotificationUser
 from .models.journey_survey_question import JourneySurveyQuestion
 from .models.journey_view import JourneyView
+from .models.journey_view_chart import JourneyViewChart
+from .models.journey_view_chart_group_by_attribute import JourneyViewChartGroupByAttribute
+from .models.journey_view_chart_metric import JourneyViewChartMetric
 from .models.journey_view_element import JourneyViewElement
 from .models.journey_view_element_attributes import JourneyViewElementAttributes
 from .models.journey_view_element_filter import JourneyViewElementFilter
@@ -2096,19 +2119,21 @@ from .models.knowledge_export_job_request import KnowledgeExportJobRequest
 from .models.knowledge_export_job_response import KnowledgeExportJobResponse
 from .models.knowledge_extended_category import KnowledgeExtendedCategory
 from .models.knowledge_group_statistics import KnowledgeGroupStatistics
-from .models.knowledge_guest_document import KnowledgeGuestDocument
 from .models.knowledge_guest_document_copy import KnowledgeGuestDocumentCopy
 from .models.knowledge_guest_document_feedback import KnowledgeGuestDocumentFeedback
 from .models.knowledge_guest_document_presentation import KnowledgeGuestDocumentPresentation
+from .models.knowledge_guest_document_response import KnowledgeGuestDocumentResponse
 from .models.knowledge_guest_document_response_listing import KnowledgeGuestDocumentResponseListing
 from .models.knowledge_guest_document_suggestion import KnowledgeGuestDocumentSuggestion
 from .models.knowledge_guest_document_suggestion_request import KnowledgeGuestDocumentSuggestionRequest
 from .models.knowledge_guest_document_suggestion_result import KnowledgeGuestDocumentSuggestionResult
 from .models.knowledge_guest_document_variation import KnowledgeGuestDocumentVariation
+from .models.knowledge_guest_document_variation_answer import KnowledgeGuestDocumentVariationAnswer
 from .models.knowledge_guest_document_variation_context import KnowledgeGuestDocumentVariationContext
 from .models.knowledge_guest_document_version_reference import KnowledgeGuestDocumentVersionReference
 from .models.knowledge_guest_document_view import KnowledgeGuestDocumentView
 from .models.knowledge_guest_search_client_application import KnowledgeGuestSearchClientApplication
+from .models.knowledge_guest_search_document_response import KnowledgeGuestSearchDocumentResponse
 from .models.knowledge_guest_session import KnowledgeGuestSession
 from .models.knowledge_guest_session_app import KnowledgeGuestSessionApp
 from .models.knowledge_guest_session_context import KnowledgeGuestSessionContext
@@ -2126,7 +2151,8 @@ from .models.knowledge_parse_job_request_patch import KnowledgeParseJobRequestPa
 from .models.knowledge_parse_job_response import KnowledgeParseJobResponse
 from .models.knowledge_parse_record import KnowledgeParseRecord
 from .models.knowledge_search_client_application import KnowledgeSearchClientApplication
-from .models.knowledge_search_document import KnowledgeSearchDocument
+from .models.knowledge_search_document_response import KnowledgeSearchDocumentResponse
+from .models.knowledge_search_document_v1 import KnowledgeSearchDocumentV1
 from .models.knowledge_search_request import KnowledgeSearchRequest
 from .models.knowledge_search_response import KnowledgeSearchResponse
 from .models.knowledge_training import KnowledgeTraining
@@ -2221,6 +2247,7 @@ from .models.lex_v2_bot_entity_listing import LexV2BotEntityListing
 from .models.lex_v2_intent import LexV2Intent
 from .models.lex_v2_slot import LexV2Slot
 from .models.library import Library
+from .models.library_batch_request import LibraryBatchRequest
 from .models.library_entity_listing import LibraryEntityListing
 from .models.license_assignment_request import LicenseAssignmentRequest
 from .models.license_batch_assignment_request import LicenseBatchAssignmentRequest
@@ -3376,6 +3403,7 @@ from .models.skills_to_remove import SkillsToRemove
 from .models.sms_address import SmsAddress
 from .models.sms_address_entity_listing import SmsAddressEntityListing
 from .models.sms_address_provision import SmsAddressProvision
+from .models.sms_alphanumeric_provision import SmsAlphanumericProvision
 from .models.sms_available_phone_number import SmsAvailablePhoneNumber
 from .models.sms_config import SmsConfig
 from .models.sms_phone_number import SmsPhoneNumber
@@ -3936,11 +3964,12 @@ from .models.v2_mobius_alerts_topic_alert_notification import V2MobiusAlertsTopi
 from .models.v2_mobius_alerts_topic_alert_rule_properties import V2MobiusAlertsTopicAlertRuleProperties
 from .models.v2_mobius_alerts_topic_alert_summary import V2MobiusAlertsTopicAlertSummary
 from .models.v2_mobius_alerts_topic_alert_summary_entity import V2MobiusAlertsTopicAlertSummaryEntity
+from .models.v2_mobius_alerts_topic_alerting_addressable_entity_ref import V2MobiusAlertsTopicAlertingAddressableEntityRef
 from .models.v2_mobius_alerts_topic_condition import V2MobiusAlertsTopicCondition
 from .models.v2_mobius_alerts_topic_condition_rule_predicate import V2MobiusAlertsTopicConditionRulePredicate
 from .models.v2_mobius_alerts_topic_entity_properties import V2MobiusAlertsTopicEntityProperties
-from .models.v2_mobius_rules_topic_addressable_entity_ref import V2MobiusRulesTopicAddressableEntityRef
 from .models.v2_mobius_rules_topic_alert_notification import V2MobiusRulesTopicAlertNotification
+from .models.v2_mobius_rules_topic_alerting_addressable_entity_ref import V2MobiusRulesTopicAlertingAddressableEntityRef
 from .models.v2_mobius_rules_topic_condition import V2MobiusRulesTopicCondition
 from .models.v2_mobius_rules_topic_condition_rule_predicate import V2MobiusRulesTopicConditionRulePredicate
 from .models.v2_mobius_rules_topic_entity_properties import V2MobiusRulesTopicEntityProperties
@@ -3987,6 +4016,7 @@ from .models.voicemails_search_response import VoicemailsSearchResponse
 from .models.void import Void
 from .models.waitlist_position import WaitlistPosition
 from .models.waitlist_position_listing import WaitlistPositionListing
+from .models.warning import Warning
 from .models.web_action_event import WebActionEvent
 from .models.web_chat_config import WebChatConfig
 from .models.web_chat_conversation import WebChatConversation
@@ -4179,6 +4209,7 @@ from .models.wfm_update_agent_details_topic_wfm_update_agent_details_complete im
 from .models.wfm_user_entity_listing import WfmUserEntityListing
 from .models.wfm_user_notification import WfmUserNotification
 from .models.wfm_user_notification_topic_adherence_explanation_notification import WfmUserNotificationTopicAdherenceExplanationNotification
+from .models.wfm_user_notification_topic_alternative_shift_notification import WfmUserNotificationTopicAlternativeShiftNotification
 from .models.wfm_user_notification_topic_business_unit import WfmUserNotificationTopicBusinessUnit
 from .models.wfm_user_notification_topic_management_unit import WfmUserNotificationTopicManagementUnit
 from .models.wfm_user_notification_topic_shift_trade_notification import WfmUserNotificationTopicShiftTradeNotification
@@ -4217,6 +4248,7 @@ from .models.whats_app_integration import WhatsAppIntegration
 from .models.whats_app_integration_entity_listing import WhatsAppIntegrationEntityListing
 from .models.whats_app_integration_request import WhatsAppIntegrationRequest
 from .models.whats_app_integration_update_request import WhatsAppIntegrationUpdateRequest
+from .models.widget import Widget
 from .models.widget_client_config import WidgetClientConfig
 from .models.widget_client_config_third_party import WidgetClientConfigThirdParty
 from .models.widget_client_config_v1 import WidgetClientConfigV1

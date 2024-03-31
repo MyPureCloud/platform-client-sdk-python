@@ -57,6 +57,8 @@ class RecordingMetadata(object):
             'start_time': 'str',
             'end_time': 'str',
             'media': 'str',
+            'media_subtype': 'str',
+            'media_subject': 'str',
             'annotations': 'list[Annotation]',
             'file_state': 'str',
             'restore_expiration_time': 'datetime',
@@ -79,6 +81,8 @@ class RecordingMetadata(object):
             'start_time': 'startTime',
             'end_time': 'endTime',
             'media': 'media',
+            'media_subtype': 'mediaSubtype',
+            'media_subject': 'mediaSubject',
             'annotations': 'annotations',
             'file_state': 'fileState',
             'restore_expiration_time': 'restoreExpirationTime',
@@ -100,6 +104,8 @@ class RecordingMetadata(object):
         self._start_time = None
         self._end_time = None
         self._media = None
+        self._media_subtype = None
+        self._media_subject = None
         self._annotations = None
         self._file_state = None
         self._restore_expiration_time = None
@@ -280,6 +286,59 @@ class RecordingMetadata(object):
         
 
         self._media = media
+
+    @property
+    def media_subtype(self) -> str:
+        """
+        Gets the media_subtype of this RecordingMetadata.
+        The recording media subtype.
+
+        :return: The media_subtype of this RecordingMetadata.
+        :rtype: str
+        """
+        return self._media_subtype
+
+    @media_subtype.setter
+    def media_subtype(self, media_subtype: str) -> None:
+        """
+        Sets the media_subtype of this RecordingMetadata.
+        The recording media subtype.
+
+        :param media_subtype: The media_subtype of this RecordingMetadata.
+        :type: str
+        """
+        if isinstance(media_subtype, int):
+            media_subtype = str(media_subtype)
+        allowed_values = ["Trunk", "Station", "Consult", "Screen"]
+        if media_subtype.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for media_subtype -> " + media_subtype)
+            self._media_subtype = "outdated_sdk_version"
+        else:
+            self._media_subtype = media_subtype
+
+    @property
+    def media_subject(self) -> str:
+        """
+        Gets the media_subject of this RecordingMetadata.
+        The recording media subject.
+
+        :return: The media_subject of this RecordingMetadata.
+        :rtype: str
+        """
+        return self._media_subject
+
+    @media_subject.setter
+    def media_subject(self, media_subject: str) -> None:
+        """
+        Sets the media_subject of this RecordingMetadata.
+        The recording media subject.
+
+        :param media_subject: The media_subject of this RecordingMetadata.
+        :type: str
+        """
+        
+
+        self._media_subject = media_subject
 
     @property
     def annotations(self) -> List['Annotation']:

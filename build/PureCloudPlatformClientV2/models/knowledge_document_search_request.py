@@ -67,7 +67,8 @@ class KnowledgeDocumentSearchRequest(object):
             'sort_by': 'str',
             'application': 'KnowledgeSearchClientApplication',
             'conversation_context': 'KnowledgeConversationContext',
-            'confidence_threshold': 'float'
+            'confidence_threshold': 'float',
+            'answer_highlight_top_results': 'int'
         }
 
         self.attribute_map = {
@@ -85,7 +86,8 @@ class KnowledgeDocumentSearchRequest(object):
             'sort_by': 'sortBy',
             'application': 'application',
             'conversation_context': 'conversationContext',
-            'confidence_threshold': 'confidenceThreshold'
+            'confidence_threshold': 'confidenceThreshold',
+            'answer_highlight_top_results': 'answerHighlightTopResults'
         }
 
         self._query = None
@@ -103,6 +105,7 @@ class KnowledgeDocumentSearchRequest(object):
         self._application = None
         self._conversation_context = None
         self._confidence_threshold = None
+        self._answer_highlight_top_results = None
 
     @property
     def query(self) -> str:
@@ -484,6 +487,36 @@ class KnowledgeDocumentSearchRequest(object):
         
 
         self._confidence_threshold = confidence_threshold
+
+    @property
+    def answer_highlight_top_results(self) -> int:
+        """
+        Gets the answer_highlight_top_results of this KnowledgeDocumentSearchRequest.
+        The number of articles to be sent for answer-highlighting. Can range from 1-5.
+
+        :return: The answer_highlight_top_results of this KnowledgeDocumentSearchRequest.
+        :rtype: int
+        """
+        return self._answer_highlight_top_results
+
+    @answer_highlight_top_results.setter
+    def answer_highlight_top_results(self, answer_highlight_top_results: int) -> None:
+        """
+        Sets the answer_highlight_top_results of this KnowledgeDocumentSearchRequest.
+        The number of articles to be sent for answer-highlighting. Can range from 1-5.
+
+        :param answer_highlight_top_results: The answer_highlight_top_results of this KnowledgeDocumentSearchRequest.
+        :type: int
+        """
+        
+        if answer_highlight_top_results > 5:
+            raise ValueError("Invalid value for `answer_highlight_top_results`, must be a value less than or equal to `5`")
+
+        if answer_highlight_top_results < 1:
+            raise ValueError("Invalid value for `answer_highlight_top_results`, must be a value greater than or equal to `1`")
+
+
+        self._answer_highlight_top_results = answer_highlight_top_results
 
     def to_dict(self):
         """

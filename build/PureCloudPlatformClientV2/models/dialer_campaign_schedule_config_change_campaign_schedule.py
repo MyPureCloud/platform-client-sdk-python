@@ -34,6 +34,7 @@ from typing import Dict
 
 if TYPE_CHECKING:
     from . import DialerCampaignScheduleConfigChangeScheduleInterval
+    from . import DialerCampaignScheduleConfigChangeScheduleRecurrence
     from . import DialerCampaignScheduleConfigChangeUriReference
 
 class DialerCampaignScheduleConfigChangeCampaignSchedule(object):
@@ -52,6 +53,7 @@ class DialerCampaignScheduleConfigChangeCampaignSchedule(object):
         """
         self.swagger_types = {
             'intervals': 'list[DialerCampaignScheduleConfigChangeScheduleInterval]',
+            'recurrences': 'list[DialerCampaignScheduleConfigChangeScheduleRecurrence]',
             'time_zone': 'str',
             'campaign': 'DialerCampaignScheduleConfigChangeUriReference',
             'additional_properties': 'dict(str, object)',
@@ -64,6 +66,7 @@ class DialerCampaignScheduleConfigChangeCampaignSchedule(object):
 
         self.attribute_map = {
             'intervals': 'intervals',
+            'recurrences': 'recurrences',
             'time_zone': 'timeZone',
             'campaign': 'campaign',
             'additional_properties': 'additionalProperties',
@@ -75,6 +78,7 @@ class DialerCampaignScheduleConfigChangeCampaignSchedule(object):
         }
 
         self._intervals = None
+        self._recurrences = None
         self._time_zone = None
         self._campaign = None
         self._additional_properties = None
@@ -107,6 +111,30 @@ class DialerCampaignScheduleConfigChangeCampaignSchedule(object):
         
 
         self._intervals = intervals
+
+    @property
+    def recurrences(self) -> List['DialerCampaignScheduleConfigChangeScheduleRecurrence']:
+        """
+        Gets the recurrences of this DialerCampaignScheduleConfigChangeCampaignSchedule.
+        a list of recurrences for a schedule
+
+        :return: The recurrences of this DialerCampaignScheduleConfigChangeCampaignSchedule.
+        :rtype: list[DialerCampaignScheduleConfigChangeScheduleRecurrence]
+        """
+        return self._recurrences
+
+    @recurrences.setter
+    def recurrences(self, recurrences: List['DialerCampaignScheduleConfigChangeScheduleRecurrence']) -> None:
+        """
+        Sets the recurrences of this DialerCampaignScheduleConfigChangeCampaignSchedule.
+        a list of recurrences for a schedule
+
+        :param recurrences: The recurrences of this DialerCampaignScheduleConfigChangeCampaignSchedule.
+        :type: list[DialerCampaignScheduleConfigChangeScheduleRecurrence]
+        """
+        
+
+        self._recurrences = recurrences
 
     @property
     def time_zone(self) -> str:

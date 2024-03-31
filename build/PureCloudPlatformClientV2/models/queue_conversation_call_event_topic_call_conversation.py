@@ -54,6 +54,7 @@ class QueueConversationCallEventTopicCallConversation(object):
             'name': 'str',
             'participants': 'list[QueueConversationCallEventTopicCallMediaParticipant]',
             'other_media_uris': 'list[str]',
+            'address': 'str',
             'recording_state': 'str',
             'secure_pause': 'bool',
             'max_participants': 'int'
@@ -64,6 +65,7 @@ class QueueConversationCallEventTopicCallConversation(object):
             'name': 'name',
             'participants': 'participants',
             'other_media_uris': 'otherMediaUris',
+            'address': 'address',
             'recording_state': 'recordingState',
             'secure_pause': 'securePause',
             'max_participants': 'maxParticipants'
@@ -73,6 +75,7 @@ class QueueConversationCallEventTopicCallConversation(object):
         self._name = None
         self._participants = None
         self._other_media_uris = None
+        self._address = None
         self._recording_state = None
         self._secure_pause = None
         self._max_participants = None
@@ -172,6 +175,30 @@ class QueueConversationCallEventTopicCallConversation(object):
         
 
         self._other_media_uris = other_media_uris
+
+    @property
+    def address(self) -> str:
+        """
+        Gets the address of this QueueConversationCallEventTopicCallConversation.
+
+
+        :return: The address of this QueueConversationCallEventTopicCallConversation.
+        :rtype: str
+        """
+        return self._address
+
+    @address.setter
+    def address(self, address: str) -> None:
+        """
+        Sets the address of this QueueConversationCallEventTopicCallConversation.
+
+
+        :param address: The address of this QueueConversationCallEventTopicCallConversation.
+        :type: str
+        """
+        
+
+        self._address = address
 
     @property
     def recording_state(self) -> str:

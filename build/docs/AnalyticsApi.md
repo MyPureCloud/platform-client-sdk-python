@@ -35,6 +35,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_analytics_journeys_aggregates_job_results**](AnalyticsApi.html#get_analytics_journeys_aggregates_job_results) | Fetch a page of results for an async aggregates query|
 |[**get_analytics_knowledge_aggregates_job**](AnalyticsApi.html#get_analytics_knowledge_aggregates_job) | Get status for async query for knowledge aggregates|
 |[**get_analytics_knowledge_aggregates_job_results**](AnalyticsApi.html#get_analytics_knowledge_aggregates_job_results) | Fetch a page of results for an async aggregates query|
+|[**get_analytics_reporting_dashboards_user**](AnalyticsApi.html#get_analytics_reporting_dashboards_user) | Get dashboards summary for a user|
+|[**get_analytics_reporting_dashboards_users**](AnalyticsApi.html#get_analytics_reporting_dashboards_users) | Get dashboards summary for users in a org|
 |[**get_analytics_reporting_exports**](AnalyticsApi.html#get_analytics_reporting_exports) | Get all view export requests for a user|
 |[**get_analytics_reporting_exports_metadata**](AnalyticsApi.html#get_analytics_reporting_exports_metadata) | Get all export metadata|
 |[**get_analytics_reporting_metadata**](AnalyticsApi.html#get_analytics_reporting_metadata) | Get list of reporting metadata.|
@@ -46,6 +48,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_analytics_reporting_schedule_history_run_id**](AnalyticsApi.html#get_analytics_reporting_schedule_history_run_id) | A completed scheduled report job|
 |[**get_analytics_reporting_schedules**](AnalyticsApi.html#get_analytics_reporting_schedules) | Get a list of scheduled report jobs|
 |[**get_analytics_reporting_settings**](AnalyticsApi.html#get_analytics_reporting_settings) | Get AnalyticsReportingSettings for an organization|
+|[**get_analytics_reporting_settings_user_dashboards**](AnalyticsApi.html#get_analytics_reporting_settings_user_dashboards) | Get list of dashboards for an user|
 |[**get_analytics_reporting_timeperiods**](AnalyticsApi.html#get_analytics_reporting_timeperiods) | Get a list of report time periods.|
 |[**get_analytics_resolutions_aggregates_job**](AnalyticsApi.html#get_analytics_resolutions_aggregates_job) | Get status for async query for resolution aggregates|
 |[**get_analytics_resolutions_aggregates_job_results**](AnalyticsApi.html#get_analytics_resolutions_aggregates_job_results) | Fetch a page of results for an async aggregates query|
@@ -86,9 +89,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_analytics_knowledge_aggregates_query**](AnalyticsApi.html#post_analytics_knowledge_aggregates_query) | Query for knowledge aggregates|
 |[**post_analytics_queues_observations_query**](AnalyticsApi.html#post_analytics_queues_observations_query) | Query for queue observations|
 |[**post_analytics_ratelimits_aggregates_query**](AnalyticsApi.html#post_analytics_ratelimits_aggregates_query) | Query for limits rate limit aggregates. Data populated when limits are exceeded or are close to being exceeded|
+|[**post_analytics_reporting_dashboards_users_bulk_remove**](AnalyticsApi.html#post_analytics_reporting_dashboards_users_bulk_remove) | Bulk delete dashboards owned by other user(s)|
 |[**post_analytics_reporting_exports**](AnalyticsApi.html#post_analytics_reporting_exports) | Generate a view export request|
 |[**post_analytics_reporting_schedule_runreport**](AnalyticsApi.html#post_analytics_reporting_schedule_runreport) | Place a scheduled report immediately into the reporting queue|
 |[**post_analytics_reporting_schedules**](AnalyticsApi.html#post_analytics_reporting_schedules) | Create a scheduled report job|
+|[**post_analytics_reporting_settings_dashboards_bulk_remove**](AnalyticsApi.html#post_analytics_reporting_settings_dashboards_bulk_remove) | Bulk remove dashboard configurations|
+|[**post_analytics_reporting_settings_dashboards_query**](AnalyticsApi.html#post_analytics_reporting_settings_dashboards_query) | Query dashboard configurations|
 |[**post_analytics_resolutions_aggregates_jobs**](AnalyticsApi.html#post_analytics_resolutions_aggregates_jobs) | Query for resolution aggregates asynchronously|
 |[**post_analytics_routing_activity_query**](AnalyticsApi.html#post_analytics_routing_activity_query) | Query for user activity observations|
 |[**post_analytics_surveys_aggregates_jobs**](AnalyticsApi.html#post_analytics_surveys_aggregates_jobs) | Query for survey aggregates asynchronously|
@@ -1506,6 +1512,112 @@ except ApiException as e:
 
 [**KnowledgeAsyncAggregateQueryResponse**](KnowledgeAsyncAggregateQueryResponse.html)
 
+<a name="get_analytics_reporting_dashboards_user"></a>
+
+## [**DashboardUser**](DashboardUser.html) get_analytics_reporting_dashboards_user(user_id)
+
+
+
+Get dashboards summary for a user
+
+Wraps GET /api/v2/analytics/reporting/dashboards/users/{userId} 
+
+Requires ALL permissions: 
+
+* analytics:dashboardConfigurations:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AnalyticsApi()
+user_id = 'user_id_example' # str | User ID
+
+try:
+    # Get dashboards summary for a user
+    api_response = api_instance.get_analytics_reporting_dashboards_user(user_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AnalyticsApi->get_analytics_reporting_dashboards_user: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **user_id** | **str**| User ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**DashboardUser**](DashboardUser.html)
+
+<a name="get_analytics_reporting_dashboards_users"></a>
+
+## [**DashboardUserListing**](DashboardUserListing.html) get_analytics_reporting_dashboards_users(sort_by=sort_by, page_number=page_number, page_size=page_size, id=id, state=state)
+
+
+
+Get dashboards summary for users in a org
+
+Wraps GET /api/v2/analytics/reporting/dashboards/users 
+
+Requires ALL permissions: 
+
+* analytics:dashboardConfigurations:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AnalyticsApi()
+sort_by = ''asc'' # str |  (optional) (default to 'asc')
+page_number = 1 # int |  (optional) (default to 1)
+page_size = 25 # int |  (optional) (default to 25)
+id = ['id_example'] # list[str] | A list of user IDs to fetch by bulk (optional)
+state = 'state_example' # str | Only list users of this state (optional)
+
+try:
+    # Get dashboards summary for users in a org
+    api_response = api_instance.get_analytics_reporting_dashboards_users(sort_by=sort_by, page_number=page_number, page_size=page_size, id=id, state=state)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AnalyticsApi->get_analytics_reporting_dashboards_users: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **sort_by** | **str**|  | [optional] [default to &#39;asc&#39;] |
+| **page_number** | **int**|  | [optional] [default to 1] |
+| **page_size** | **int**|  | [optional] [default to 25] |
+| **id** | [**list[str]**](str.html)| A list of user IDs to fetch by bulk | [optional]  |
+| **state** | **str**| Only list users of this state | [optional] <br />**Values**: active, inactive |
+{: class="table table-striped"}
+
+### Return type
+
+[**DashboardUserListing**](DashboardUserListing.html)
+
 <a name="get_analytics_reporting_exports"></a>
 
 ## [**ReportingExportJobListing**](ReportingExportJobListing.html) get_analytics_reporting_exports(page_number=page_number, page_size=page_size)
@@ -2048,6 +2160,65 @@ This endpoint does not need any parameters.
 ### Return type
 
 [**AnalyticsReportingSettings**](AnalyticsReportingSettings.html)
+
+<a name="get_analytics_reporting_settings_user_dashboards"></a>
+
+## [**DashboardConfigurationListing**](DashboardConfigurationListing.html) get_analytics_reporting_settings_user_dashboards(user_id, sort_by=sort_by, page_number=page_number, page_size=page_size, public_only=public_only, favorite_only=favorite_only)
+
+
+
+Get list of dashboards for an user
+
+Wraps GET /api/v2/analytics/reporting/settings/users/{userId}/dashboards 
+
+Requires ALL permissions: 
+
+* analytics:dashboardConfigurations:viewPrivate
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AnalyticsApi()
+user_id = 'user_id_example' # str | User ID
+sort_by = ''asc'' # str |  (optional) (default to 'asc')
+page_number = 1 # int |  (optional) (default to 1)
+page_size = 50 # int |  (optional) (default to 50)
+public_only = True # bool | If true, retrieve only public dashboards (optional)
+favorite_only = True # bool | If true, retrieve only favorite dashboards (optional)
+
+try:
+    # Get list of dashboards for an user
+    api_response = api_instance.get_analytics_reporting_settings_user_dashboards(user_id, sort_by=sort_by, page_number=page_number, page_size=page_size, public_only=public_only, favorite_only=favorite_only)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AnalyticsApi->get_analytics_reporting_settings_user_dashboards: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **user_id** | **str**| User ID |  |
+| **sort_by** | **str**|  | [optional] [default to &#39;asc&#39;] |
+| **page_number** | **int**|  | [optional] [default to 1] |
+| **page_size** | **int**|  | [optional] [default to 50] |
+| **public_only** | **bool**| If true, retrieve only public dashboards | [optional]  |
+| **favorite_only** | **bool**| If true, retrieve only favorite dashboards | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**DashboardConfigurationListing**](DashboardConfigurationListing.html)
 
 <a name="get_analytics_reporting_timeperiods"></a>
 
@@ -2772,11 +2943,7 @@ Wraps PATCH /api/v2/analytics/reporting/settings
 
 Requires ANY permissions: 
 
-* recording:recordingSegment:view
-* analytics:conversationDetail:view
-* analytics:conversationAggregate:view
 * analytics:reportingSettings:edit
-* analytics:dashboardConfigurations:view
 
 ### Example
 
@@ -4072,6 +4239,55 @@ except ApiException as e:
 
 [**RateLimitAggregateQueryResponse**](RateLimitAggregateQueryResponse.html)
 
+<a name="post_analytics_reporting_dashboards_users_bulk_remove"></a>
+
+##  post_analytics_reporting_dashboards_users_bulk_remove(body)
+
+
+
+Bulk delete dashboards owned by other user(s)
+
+Wraps POST /api/v2/analytics/reporting/dashboards/users/bulk/remove 
+
+Requires ANY permissions: 
+
+* analytics:dashboardConfigurations:deleteActive
+* analytics:dashboardConfigurations:deleteInactive
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AnalyticsApi()
+body = ['body_example'] # list[str] | List of userIds
+
+try:
+    # Bulk delete dashboards owned by other user(s)
+    api_instance.post_analytics_reporting_dashboards_users_bulk_remove(body)
+except ApiException as e:
+    print("Exception when calling AnalyticsApi->post_analytics_reporting_dashboards_users_bulk_remove: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**list[str]**](str.html)| List of userIds |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
+
 <a name="post_analytics_reporting_exports"></a>
 
 ## [**ReportingExportJobResponse**](ReportingExportJobResponse.html) post_analytics_reporting_exports(body)
@@ -4224,6 +4440,103 @@ except ApiException as e:
 ### Return type
 
 [**ReportSchedule**](ReportSchedule.html)
+
+<a name="post_analytics_reporting_settings_dashboards_bulk_remove"></a>
+
+##  post_analytics_reporting_settings_dashboards_bulk_remove(body)
+
+
+
+Bulk remove dashboard configurations
+
+Wraps POST /api/v2/analytics/reporting/settings/dashboards/bulk/remove 
+
+Requires ALL permissions: 
+
+* analytics:dashboardConfigurations:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AnalyticsApi()
+body = PureCloudPlatformClientV2.DashboardConfigurationBulkRequest() # DashboardConfigurationBulkRequest | 
+
+try:
+    # Bulk remove dashboard configurations
+    api_instance.post_analytics_reporting_settings_dashboards_bulk_remove(body)
+except ApiException as e:
+    print("Exception when calling AnalyticsApi->post_analytics_reporting_settings_dashboards_bulk_remove: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**DashboardConfigurationBulkRequest**](DashboardConfigurationBulkRequest.html)|  |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
+
+<a name="post_analytics_reporting_settings_dashboards_query"></a>
+
+## [**DashboardConfigurationListing**](DashboardConfigurationListing.html) post_analytics_reporting_settings_dashboards_query(body)
+
+
+
+Query dashboard configurations
+
+Wraps POST /api/v2/analytics/reporting/settings/dashboards/query 
+
+Requires ALL permissions: 
+
+* analytics:dashboardConfigurations:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AnalyticsApi()
+body = PureCloudPlatformClientV2.DashboardConfigurationQueryRequest() # DashboardConfigurationQueryRequest | 
+
+try:
+    # Query dashboard configurations
+    api_response = api_instance.post_analytics_reporting_settings_dashboards_query(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AnalyticsApi->post_analytics_reporting_settings_dashboards_query: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**DashboardConfigurationQueryRequest**](DashboardConfigurationQueryRequest.html)|  |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**DashboardConfigurationListing**](DashboardConfigurationListing.html)
 
 <a name="post_analytics_resolutions_aggregates_jobs"></a>
 

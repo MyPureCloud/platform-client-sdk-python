@@ -93,7 +93,7 @@ class DevelopmentActivityAggregateQueryRequestPredicate(object):
     def value(self) -> str:
         """
         Gets the value of this DevelopmentActivityAggregateQueryRequestPredicate.
-        Corresponding value for dimensions in predicates. If the dimension is type, Valid Values: Informational, AssessedContent, Assessment, Coaching
+        Corresponding value for dimensions in predicates. If the dimension is type, Valid Values: Informational, AssessedContent, Assessment, Coaching, External
 
         :return: The value of this DevelopmentActivityAggregateQueryRequestPredicate.
         :rtype: str
@@ -104,7 +104,7 @@ class DevelopmentActivityAggregateQueryRequestPredicate(object):
     def value(self, value: str) -> None:
         """
         Sets the value of this DevelopmentActivityAggregateQueryRequestPredicate.
-        Corresponding value for dimensions in predicates. If the dimension is type, Valid Values: Informational, AssessedContent, Assessment, Coaching
+        Corresponding value for dimensions in predicates. If the dimension is type, Valid Values: Informational, AssessedContent, Assessment, Coaching, External
 
         :param value: The value of this DevelopmentActivityAggregateQueryRequestPredicate.
         :type: str

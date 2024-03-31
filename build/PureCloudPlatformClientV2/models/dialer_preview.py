@@ -54,7 +54,8 @@ class DialerPreview(object):
             'contact_id': 'str',
             'contact_list_id': 'str',
             'campaign_id': 'str',
-            'phone_number_columns': 'list[PhoneNumberColumn]'
+            'phone_number_columns': 'list[PhoneNumberColumn]',
+            'callback_auto_answer': 'bool'
         }
 
         self.attribute_map = {
@@ -62,7 +63,8 @@ class DialerPreview(object):
             'contact_id': 'contactId',
             'contact_list_id': 'contactListId',
             'campaign_id': 'campaignId',
-            'phone_number_columns': 'phoneNumberColumns'
+            'phone_number_columns': 'phoneNumberColumns',
+            'callback_auto_answer': 'callbackAutoAnswer'
         }
 
         self._id = None
@@ -70,6 +72,7 @@ class DialerPreview(object):
         self._contact_list_id = None
         self._campaign_id = None
         self._phone_number_columns = None
+        self._callback_auto_answer = None
 
     @property
     def id(self) -> str:
@@ -190,6 +193,30 @@ class DialerPreview(object):
         
 
         self._phone_number_columns = phone_number_columns
+
+    @property
+    def callback_auto_answer(self) -> bool:
+        """
+        Gets the callback_auto_answer of this DialerPreview.
+        Whether or not to auto answer the callback
+
+        :return: The callback_auto_answer of this DialerPreview.
+        :rtype: bool
+        """
+        return self._callback_auto_answer
+
+    @callback_auto_answer.setter
+    def callback_auto_answer(self, callback_auto_answer: bool) -> None:
+        """
+        Sets the callback_auto_answer of this DialerPreview.
+        Whether or not to auto answer the callback
+
+        :param callback_auto_answer: The callback_auto_answer of this DialerPreview.
+        :type: bool
+        """
+        
+
+        self._callback_auto_answer = callback_auto_answer
 
     def to_dict(self):
         """

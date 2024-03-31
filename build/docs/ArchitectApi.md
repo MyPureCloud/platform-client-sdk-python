@@ -4646,6 +4646,7 @@ Wraps GET /api/v2/flows/instances/settings/loglevels/characteristics
 Requires ANY permissions: 
 
 * architect:flowLogLevel:view
+* architect:flowLogLevelDefault:view
 
 ### Example
 

@@ -33,7 +33,7 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
-    from . import V2MobiusAlertsTopicAddressableEntityRef
+    from . import V2MobiusAlertsTopicAlertingAddressableEntityRef
 
 class V2MobiusAlertsTopicAlertSummaryEntity(object):
     """
@@ -51,10 +51,10 @@ class V2MobiusAlertsTopicAlertSummaryEntity(object):
         """
         self.swagger_types = {
             'entity_type': 'str',
-            'user': 'V2MobiusAlertsTopicAddressableEntityRef',
-            'group': 'V2MobiusAlertsTopicAddressableEntityRef',
-            'queue': 'V2MobiusAlertsTopicAddressableEntityRef',
-            'team': 'V2MobiusAlertsTopicAddressableEntityRef',
+            'user': 'V2MobiusAlertsTopicAlertingAddressableEntityRef',
+            'group': 'V2MobiusAlertsTopicAlertingAddressableEntityRef',
+            'queue': 'V2MobiusAlertsTopicAlertingAddressableEntityRef',
+            'team': 'V2MobiusAlertsTopicAlertingAddressableEntityRef',
             'alerting': 'bool'
         }
 
@@ -104,96 +104,96 @@ class V2MobiusAlertsTopicAlertSummaryEntity(object):
             self._entity_type = entity_type
 
     @property
-    def user(self) -> 'V2MobiusAlertsTopicAddressableEntityRef':
+    def user(self) -> 'V2MobiusAlertsTopicAlertingAddressableEntityRef':
         """
         Gets the user of this V2MobiusAlertsTopicAlertSummaryEntity.
 
 
         :return: The user of this V2MobiusAlertsTopicAlertSummaryEntity.
-        :rtype: V2MobiusAlertsTopicAddressableEntityRef
+        :rtype: V2MobiusAlertsTopicAlertingAddressableEntityRef
         """
         return self._user
 
     @user.setter
-    def user(self, user: 'V2MobiusAlertsTopicAddressableEntityRef') -> None:
+    def user(self, user: 'V2MobiusAlertsTopicAlertingAddressableEntityRef') -> None:
         """
         Sets the user of this V2MobiusAlertsTopicAlertSummaryEntity.
 
 
         :param user: The user of this V2MobiusAlertsTopicAlertSummaryEntity.
-        :type: V2MobiusAlertsTopicAddressableEntityRef
+        :type: V2MobiusAlertsTopicAlertingAddressableEntityRef
         """
         
 
         self._user = user
 
     @property
-    def group(self) -> 'V2MobiusAlertsTopicAddressableEntityRef':
+    def group(self) -> 'V2MobiusAlertsTopicAlertingAddressableEntityRef':
         """
         Gets the group of this V2MobiusAlertsTopicAlertSummaryEntity.
 
 
         :return: The group of this V2MobiusAlertsTopicAlertSummaryEntity.
-        :rtype: V2MobiusAlertsTopicAddressableEntityRef
+        :rtype: V2MobiusAlertsTopicAlertingAddressableEntityRef
         """
         return self._group
 
     @group.setter
-    def group(self, group: 'V2MobiusAlertsTopicAddressableEntityRef') -> None:
+    def group(self, group: 'V2MobiusAlertsTopicAlertingAddressableEntityRef') -> None:
         """
         Sets the group of this V2MobiusAlertsTopicAlertSummaryEntity.
 
 
         :param group: The group of this V2MobiusAlertsTopicAlertSummaryEntity.
-        :type: V2MobiusAlertsTopicAddressableEntityRef
+        :type: V2MobiusAlertsTopicAlertingAddressableEntityRef
         """
         
 
         self._group = group
 
     @property
-    def queue(self) -> 'V2MobiusAlertsTopicAddressableEntityRef':
+    def queue(self) -> 'V2MobiusAlertsTopicAlertingAddressableEntityRef':
         """
         Gets the queue of this V2MobiusAlertsTopicAlertSummaryEntity.
 
 
         :return: The queue of this V2MobiusAlertsTopicAlertSummaryEntity.
-        :rtype: V2MobiusAlertsTopicAddressableEntityRef
+        :rtype: V2MobiusAlertsTopicAlertingAddressableEntityRef
         """
         return self._queue
 
     @queue.setter
-    def queue(self, queue: 'V2MobiusAlertsTopicAddressableEntityRef') -> None:
+    def queue(self, queue: 'V2MobiusAlertsTopicAlertingAddressableEntityRef') -> None:
         """
         Sets the queue of this V2MobiusAlertsTopicAlertSummaryEntity.
 
 
         :param queue: The queue of this V2MobiusAlertsTopicAlertSummaryEntity.
-        :type: V2MobiusAlertsTopicAddressableEntityRef
+        :type: V2MobiusAlertsTopicAlertingAddressableEntityRef
         """
         
 
         self._queue = queue
 
     @property
-    def team(self) -> 'V2MobiusAlertsTopicAddressableEntityRef':
+    def team(self) -> 'V2MobiusAlertsTopicAlertingAddressableEntityRef':
         """
         Gets the team of this V2MobiusAlertsTopicAlertSummaryEntity.
 
 
         :return: The team of this V2MobiusAlertsTopicAlertSummaryEntity.
-        :rtype: V2MobiusAlertsTopicAddressableEntityRef
+        :rtype: V2MobiusAlertsTopicAlertingAddressableEntityRef
         """
         return self._team
 
     @team.setter
-    def team(self, team: 'V2MobiusAlertsTopicAddressableEntityRef') -> None:
+    def team(self, team: 'V2MobiusAlertsTopicAlertingAddressableEntityRef') -> None:
         """
         Sets the team of this V2MobiusAlertsTopicAlertSummaryEntity.
 
 
         :param team: The team of this V2MobiusAlertsTopicAlertSummaryEntity.
-        :type: V2MobiusAlertsTopicAddressableEntityRef
+        :type: V2MobiusAlertsTopicAlertingAddressableEntityRef
         """
         
 

@@ -83,6 +83,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_conversations_messages_cachedmedia**](ConversationsApi.html#get_conversations_messages_cachedmedia) | Get a list of cached media items|
 |[**get_conversations_messages_cachedmedia_cached_media_item_id**](ConversationsApi.html#get_conversations_messages_cachedmedia_cached_media_item_id) | Get a cached media item|
 |[**get_conversations_messaging_facebook_app**](ConversationsApi.html#get_conversations_messaging_facebook_app) | Get Genesys Facebook App Id|
+|[**get_conversations_messaging_facebook_permissions**](ConversationsApi.html#get_conversations_messaging_facebook_permissions) | Get a list of Facebook Permissions|
 |[**get_conversations_messaging_integrations**](ConversationsApi.html#get_conversations_messaging_integrations) | Get a list of Integrations|
 |[**get_conversations_messaging_integrations_facebook**](ConversationsApi.html#get_conversations_messaging_integrations_facebook) | Get a list of Facebook Integrations|
 |[**get_conversations_messaging_integrations_facebook_integration_id**](ConversationsApi.html#get_conversations_messaging_integrations_facebook_integration_id) | Get a Facebook messaging integration|
@@ -3977,6 +3978,53 @@ This endpoint does not need any parameters.
 ### Return type
 
 [**FacebookAppCredentials**](FacebookAppCredentials.html)
+
+<a name="get_conversations_messaging_facebook_permissions"></a>
+
+## [**FacebookPermissionEntityListing**](FacebookPermissionEntityListing.html) get_conversations_messaging_facebook_permissions()
+
+
+
+Get a list of Facebook Permissions
+
+Wraps GET /api/v2/conversations/messaging/facebook/permissions 
+
+Requires ANY permissions: 
+
+* messaging:integration:add
+* messaging:integration:edit
+* messaging:conversationInstagramIntegration:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+
+try:
+    # Get a list of Facebook Permissions
+    api_response = api_instance.get_conversations_messaging_facebook_permissions()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->get_conversations_messaging_facebook_permissions: %s\n" % e)
+```
+
+### Parameters
+
+This endpoint does not need any parameters.
+
+
+### Return type
+
+[**FacebookPermissionEntityListing**](FacebookPermissionEntityListing.html)
 
 <a name="get_conversations_messaging_integrations"></a>
 

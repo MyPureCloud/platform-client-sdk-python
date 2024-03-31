@@ -56,6 +56,7 @@ class KnowledgeDocumentGuestSearchRequest(object):
             'page_count': 'int',
             'query_type': 'str',
             'session_id': 'str',
+            'answer_highlight_top_results': 'int',
             'include_draft_documents': 'bool'
         }
 
@@ -68,6 +69,7 @@ class KnowledgeDocumentGuestSearchRequest(object):
             'page_count': 'pageCount',
             'query_type': 'queryType',
             'session_id': 'sessionId',
+            'answer_highlight_top_results': 'answerHighlightTopResults',
             'include_draft_documents': 'includeDraftDocuments'
         }
 
@@ -79,6 +81,7 @@ class KnowledgeDocumentGuestSearchRequest(object):
         self._page_count = None
         self._query_type = None
         self._session_id = None
+        self._answer_highlight_top_results = None
         self._include_draft_documents = None
 
     @property
@@ -283,6 +286,36 @@ class KnowledgeDocumentGuestSearchRequest(object):
         
 
         self._session_id = session_id
+
+    @property
+    def answer_highlight_top_results(self) -> int:
+        """
+        Gets the answer_highlight_top_results of this KnowledgeDocumentGuestSearchRequest.
+        The number of articles to be sent for answer-highlighting. Can range from 1-5.
+
+        :return: The answer_highlight_top_results of this KnowledgeDocumentGuestSearchRequest.
+        :rtype: int
+        """
+        return self._answer_highlight_top_results
+
+    @answer_highlight_top_results.setter
+    def answer_highlight_top_results(self, answer_highlight_top_results: int) -> None:
+        """
+        Sets the answer_highlight_top_results of this KnowledgeDocumentGuestSearchRequest.
+        The number of articles to be sent for answer-highlighting. Can range from 1-5.
+
+        :param answer_highlight_top_results: The answer_highlight_top_results of this KnowledgeDocumentGuestSearchRequest.
+        :type: int
+        """
+        
+        if answer_highlight_top_results > 5:
+            raise ValueError("Invalid value for `answer_highlight_top_results`, must be a value less than or equal to `5`")
+
+        if answer_highlight_top_results < 1:
+            raise ValueError("Invalid value for `answer_highlight_top_results`, must be a value greater than or equal to `1`")
+
+
+        self._answer_highlight_top_results = answer_highlight_top_results
 
     @property
     def include_draft_documents(self) -> bool:

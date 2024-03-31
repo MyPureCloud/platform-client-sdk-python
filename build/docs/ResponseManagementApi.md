@@ -18,6 +18,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_responsemanagement_responseassets_status_status_id**](ResponseManagementApi.html#get_responsemanagement_responseassets_status_status_id) | Get response asset upload status|
 |[**get_responsemanagement_responses**](ResponseManagementApi.html#get_responsemanagement_responses) | Gets a list of existing responses.|
 |[**post_responsemanagement_libraries**](ResponseManagementApi.html#post_responsemanagement_libraries) | Create a response library.|
+|[**post_responsemanagement_libraries_bulk**](ResponseManagementApi.html#post_responsemanagement_libraries_bulk) | Get response libraries.|
 |[**post_responsemanagement_responseassets_search**](ResponseManagementApi.html#post_responsemanagement_responseassets_search) | Search response assets|
 |[**post_responsemanagement_responseassets_uploads**](ResponseManagementApi.html#post_responsemanagement_responseassets_uploads) | Creates pre-signed url for uploading response asset|
 |[**post_responsemanagement_responses**](ResponseManagementApi.html#post_responsemanagement_responses) | Create a response.|
@@ -531,6 +532,55 @@ except ApiException as e:
 ### Return type
 
 [**Library**](Library.html)
+
+<a name="post_responsemanagement_libraries_bulk"></a>
+
+## [**LibraryEntityListing**](LibraryEntityListing.html) post_responsemanagement_libraries_bulk(body)
+
+
+
+Get response libraries.
+
+Wraps POST /api/v2/responsemanagement/libraries/bulk 
+
+Requires ANY permissions: 
+
+* responses:library:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ResponseManagementApi()
+body = PureCloudPlatformClientV2.LibraryBatchRequest() # LibraryBatchRequest | LibraryIDs (max allowed 50)
+
+try:
+    # Get response libraries.
+    api_response = api_instance.post_responsemanagement_libraries_bulk(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ResponseManagementApi->post_responsemanagement_libraries_bulk: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**LibraryBatchRequest**](LibraryBatchRequest.html)| LibraryIDs (max allowed 50) |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**LibraryEntityListing**](LibraryEntityListing.html)
 
 <a name="post_responsemanagement_responseassets_search"></a>
 

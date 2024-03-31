@@ -34,6 +34,7 @@ from typing import Dict
 
 if TYPE_CHECKING:
     from . import AdherenceExplanationNotification
+    from . import AlternativeShiftNotification
     from . import ShiftTradeNotification
     from . import TimeOffRequestNotification
 
@@ -59,6 +60,7 @@ class WfmUserNotification(object):
             'shift_trade': 'ShiftTradeNotification',
             'time_off_request': 'TimeOffRequestNotification',
             'adherence_explanation': 'AdherenceExplanationNotification',
+            'alternative_shift': 'AlternativeShiftNotification',
             'marked_as_read': 'bool',
             'agent_notification': 'bool',
             'other_notification_ids_in_group': 'list[str]'
@@ -72,6 +74,7 @@ class WfmUserNotification(object):
             'shift_trade': 'shiftTrade',
             'time_off_request': 'timeOffRequest',
             'adherence_explanation': 'adherenceExplanation',
+            'alternative_shift': 'alternativeShift',
             'marked_as_read': 'markedAsRead',
             'agent_notification': 'agentNotification',
             'other_notification_ids_in_group': 'otherNotificationIdsInGroup'
@@ -84,6 +87,7 @@ class WfmUserNotification(object):
         self._shift_trade = None
         self._time_off_request = None
         self._adherence_explanation = None
+        self._alternative_shift = None
         self._marked_as_read = None
         self._agent_notification = None
         self._other_notification_ids_in_group = None
@@ -182,7 +186,7 @@ class WfmUserNotification(object):
         """
         if isinstance(type, int):
             type = str(type)
-        allowed_values = ["AdherenceExplanation", "ShiftTrade", "TimeOffRequest"]
+        allowed_values = ["AdherenceExplanation", "ShiftTrade", "TimeOffRequest", "AlternativeShift"]
         if type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for type -> " + type)
             self._type = "outdated_sdk_version"
@@ -260,6 +264,30 @@ class WfmUserNotification(object):
         
 
         self._adherence_explanation = adherence_explanation
+
+    @property
+    def alternative_shift(self) -> 'AlternativeShiftNotification':
+        """
+        Gets the alternative_shift of this WfmUserNotification.
+        An alternative shift trade notification.  Only set if type == AlternativeShift
+
+        :return: The alternative_shift of this WfmUserNotification.
+        :rtype: AlternativeShiftNotification
+        """
+        return self._alternative_shift
+
+    @alternative_shift.setter
+    def alternative_shift(self, alternative_shift: 'AlternativeShiftNotification') -> None:
+        """
+        Sets the alternative_shift of this WfmUserNotification.
+        An alternative shift trade notification.  Only set if type == AlternativeShift
+
+        :param alternative_shift: The alternative_shift of this WfmUserNotification.
+        :type: AlternativeShiftNotification
+        """
+        
+
+        self._alternative_shift = alternative_shift
 
     @property
     def marked_as_read(self) -> bool:

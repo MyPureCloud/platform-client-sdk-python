@@ -88,10 +88,10 @@ from ..models import KnowledgeDocumentView
 from ..models import KnowledgeExportJobRequest
 from ..models import KnowledgeExportJobResponse
 from ..models import KnowledgeExtendedCategory
-from ..models import KnowledgeGuestDocument
 from ..models import KnowledgeGuestDocumentCopy
 from ..models import KnowledgeGuestDocumentFeedback
 from ..models import KnowledgeGuestDocumentPresentation
+from ..models import KnowledgeGuestDocumentResponse
 from ..models import KnowledgeGuestDocumentResponseListing
 from ..models import KnowledgeGuestDocumentSuggestion
 from ..models import KnowledgeGuestDocumentSuggestionRequest
@@ -1105,7 +1105,7 @@ class KnowledgeApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_knowledge_guest_session_document(self, session_id: str, document_id: str, **kwargs) -> 'KnowledgeGuestDocument':
+    def get_knowledge_guest_session_document(self, session_id: str, document_id: str, **kwargs) -> 'KnowledgeGuestDocumentResponse':
         """
         Get a knowledge document by ID.
         
@@ -1122,7 +1122,7 @@ class KnowledgeApi(object):
             for asynchronous request. (optional)
         :param str session_id: Knowledge guest session ID. (required)
         :param str document_id: Document ID (required)
-        :return: KnowledgeGuestDocument
+        :return: KnowledgeGuestDocumentResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1184,7 +1184,7 @@ class KnowledgeApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='KnowledgeGuestDocument',
+                                            response_type='KnowledgeGuestDocumentResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
