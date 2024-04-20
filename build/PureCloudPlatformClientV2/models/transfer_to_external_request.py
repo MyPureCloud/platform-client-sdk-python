@@ -64,7 +64,7 @@ class TransferToExternalRequest(object):
     def transfer_type(self) -> str:
         """
         Gets the transfer_type of this TransferToExternalRequest.
-
+        The type of transfer to perform. Attended, where the initiating agent maintains ownership of the conversation until the intended recipient accepts the transfer, or Unattended, where the initiating agent immediately disconnects. Default is Unattended.
 
         :return: The transfer_type of this TransferToExternalRequest.
         :rtype: str
@@ -75,7 +75,7 @@ class TransferToExternalRequest(object):
     def transfer_type(self, transfer_type: str) -> None:
         """
         Sets the transfer_type of this TransferToExternalRequest.
-
+        The type of transfer to perform. Attended, where the initiating agent maintains ownership of the conversation until the intended recipient accepts the transfer, or Unattended, where the initiating agent immediately disconnects. Default is Unattended.
 
         :param transfer_type: The transfer_type of this TransferToExternalRequest.
         :type: str

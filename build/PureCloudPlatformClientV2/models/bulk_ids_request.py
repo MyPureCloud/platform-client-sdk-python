@@ -33,7 +33,7 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
-    from . import WritableEntity
+    from . import ExternalContactsEntity
 
 class BulkIdsRequest(object):
     """
@@ -50,7 +50,7 @@ class BulkIdsRequest(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'entities': 'list[WritableEntity]'
+            'entities': 'list[ExternalContactsEntity]'
         }
 
         self.attribute_map = {
@@ -60,24 +60,24 @@ class BulkIdsRequest(object):
         self._entities = None
 
     @property
-    def entities(self) -> List['WritableEntity']:
+    def entities(self) -> List['ExternalContactsEntity']:
         """
         Gets the entities of this BulkIdsRequest.
 
 
         :return: The entities of this BulkIdsRequest.
-        :rtype: list[WritableEntity]
+        :rtype: list[ExternalContactsEntity]
         """
         return self._entities
 
     @entities.setter
-    def entities(self, entities: List['WritableEntity']) -> None:
+    def entities(self, entities: List['ExternalContactsEntity']) -> None:
         """
         Sets the entities of this BulkIdsRequest.
 
 
         :param entities: The entities of this BulkIdsRequest.
-        :type: list[WritableEntity]
+        :type: list[ExternalContactsEntity]
         """
         
 

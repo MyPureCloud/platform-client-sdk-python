@@ -959,7 +959,7 @@ except ApiException as e:
 
 <a name="get_authorization_subject"></a>
 
-## [**AuthzSubject**](AuthzSubject.html) get_authorization_subject(subject_id)
+## [**AuthzSubject**](AuthzSubject.html) get_authorization_subject(subject_id, include_duplicates=include_duplicates)
 
 
 
@@ -985,10 +985,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.UsersApi()
 subject_id = 'subject_id_example' # str | Subject ID (user or group)
+include_duplicates = False # bool | Include multiple entries with the same role and division but different subjects (optional) (default to False)
 
 try:
     # Returns a listing of roles and permissions for a user.
-    api_response = api_instance.get_authorization_subject(subject_id)
+    api_response = api_instance.get_authorization_subject(subject_id, include_duplicates=include_duplicates)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UsersApi->get_authorization_subject: %s\n" % e)
@@ -1000,6 +1001,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **subject_id** | **str**| Subject ID (user or group) |  |
+| **include_duplicates** | **bool**| Include multiple entries with the same role and division but different subjects | [optional] [default to False]<br />**Values**: true, false |
 {: class="table table-striped"}
 
 ### Return type
@@ -1008,7 +1010,7 @@ except ApiException as e:
 
 <a name="get_authorization_subjects_me"></a>
 
-## [**AuthzSubject**](AuthzSubject.html) get_authorization_subjects_me()
+## [**AuthzSubject**](AuthzSubject.html) get_authorization_subjects_me(include_duplicates=include_duplicates)
 
 
 
@@ -1032,10 +1034,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.UsersApi()
+include_duplicates = False # bool | Include multiple entries with the same role and division but different subjects (optional) (default to False)
 
 try:
     # Returns a listing of roles and permissions for the currently authenticated user.
-    api_response = api_instance.get_authorization_subjects_me()
+    api_response = api_instance.get_authorization_subjects_me(include_duplicates=include_duplicates)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UsersApi->get_authorization_subjects_me: %s\n" % e)
@@ -1043,8 +1046,11 @@ except ApiException as e:
 
 ### Parameters
 
-This endpoint does not need any parameters.
 
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **include_duplicates** | **bool**| Include multiple entries with the same role and division but different subjects | [optional] [default to False]<br />**Values**: true, false |
+{: class="table table-striped"}
 
 ### Return type
 
@@ -2365,7 +2371,7 @@ except ApiException as e:
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **sort_order** | **str**| Specifies result set sort order sorted by the date due; if not specified, default sort order is descending (Desc) | [optional] [default to &#39;Desc&#39;]<br />**Values**: Asc, Desc |
 | **types** | [**list[str]**](str.html)| Specifies the activity types. | [optional] <br />**Values**: Informational, Coaching, AssessedContent, Assessment |
-| **statuses** | [**list[str]**](str.html)| Specifies the activity statuses to filter by | [optional] <br />**Values**: Planned, InProgress, Completed, InvalidSchedule |
+| **statuses** | [**list[str]**](str.html)| Specifies the activity statuses to filter by | [optional] <br />**Values**: Planned, InProgress, Completed, InvalidSchedule, NotCompleted |
 | **relationship** | [**list[str]**](str.html)| Specifies how the current user relation should be interpreted, and filters the activities returned to only the activities that have the specified relationship. If a value besides Attendee is specified, it will only return Coaching Appointments. If not specified, no filtering is applied. | [optional] <br />**Values**: Creator, Facilitator, Attendee |
 {: class="table table-striped"}
 
@@ -2435,7 +2441,7 @@ except ApiException as e:
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **sort_order** | **str**| Specifies result set sort order sorted by the date due; if not specified, default sort order is descending (Desc) | [optional] [default to &#39;Desc&#39;]<br />**Values**: Asc, Desc |
 | **types** | [**list[str]**](str.html)| Specifies the activity types. | [optional] <br />**Values**: Informational, Coaching, AssessedContent, Assessment |
-| **statuses** | [**list[str]**](str.html)| Specifies the activity statuses to filter by | [optional] <br />**Values**: Planned, InProgress, Completed, InvalidSchedule |
+| **statuses** | [**list[str]**](str.html)| Specifies the activity statuses to filter by | [optional] <br />**Values**: Planned, InProgress, Completed, InvalidSchedule, NotCompleted |
 | **relationship** | [**list[str]**](str.html)| Specifies how the current user relation should be interpreted, and filters the activities returned to only the activities that have the specified relationship. If a value besides Attendee is specified, it will only return Coaching Appointments. If not specified, no filtering is applied. | [optional] <br />**Values**: Creator, Facilitator, Attendee |
 {: class="table table-striped"}
 

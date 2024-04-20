@@ -457,7 +457,7 @@ class ShiftTradeResponse(object):
     def acceptable_intervals(self) -> List[str]:
         """
         Gets the acceptable_intervals of this ShiftTradeResponse.
-
+        Time frames when the initiating user is willing to accept trades.  Empty means giving up the shift. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
 
         :return: The acceptable_intervals of this ShiftTradeResponse.
         :rtype: list[str]
@@ -468,7 +468,7 @@ class ShiftTradeResponse(object):
     def acceptable_intervals(self, acceptable_intervals: List[str]) -> None:
         """
         Sets the acceptable_intervals of this ShiftTradeResponse.
-
+        Time frames when the initiating user is willing to accept trades.  Empty means giving up the shift. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
 
         :param acceptable_intervals: The acceptable_intervals of this ShiftTradeResponse.
         :type: list[str]

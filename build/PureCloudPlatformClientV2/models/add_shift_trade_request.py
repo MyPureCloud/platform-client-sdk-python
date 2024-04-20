@@ -169,7 +169,7 @@ class AddShiftTradeRequest(object):
     def acceptable_intervals(self) -> List[str]:
         """
         Gets the acceptable_intervals of this AddShiftTradeRequest.
-
+        The acceptable intervals the initiating user is willing to accept in trade.  Empty indicates the user is giving up the shift. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
 
         :return: The acceptable_intervals of this AddShiftTradeRequest.
         :rtype: list[str]
@@ -180,7 +180,7 @@ class AddShiftTradeRequest(object):
     def acceptable_intervals(self, acceptable_intervals: List[str]) -> None:
         """
         Sets the acceptable_intervals of this AddShiftTradeRequest.
-
+        The acceptable intervals the initiating user is willing to accept in trade.  Empty indicates the user is giving up the shift. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
 
         :param acceptable_intervals: The acceptable_intervals of this AddShiftTradeRequest.
         :type: list[str]

@@ -60,6 +60,7 @@ class Objective(object):
             'topics': 'list[AddressableEntityRef]',
             'topic_ids_filter_type': 'str',
             'evaluation_form_context_ids': 'list[str]',
+            'initial_direction': 'str',
             'date_start': 'date'
         }
 
@@ -73,6 +74,7 @@ class Objective(object):
             'topics': 'topics',
             'topic_ids_filter_type': 'topicIdsFilterType',
             'evaluation_form_context_ids': 'evaluationFormContextIds',
+            'initial_direction': 'initialDirection',
             'date_start': 'dateStart'
         }
 
@@ -85,6 +87,7 @@ class Objective(object):
         self._topics = None
         self._topic_ids_filter_type = None
         self._evaluation_form_context_ids = None
+        self._initial_direction = None
         self._date_start = None
 
     @property
@@ -307,6 +310,35 @@ class Objective(object):
         
 
         self._evaluation_form_context_ids = evaluation_form_context_ids
+
+    @property
+    def initial_direction(self) -> str:
+        """
+        Gets the initial_direction of this Objective.
+        The initial direction to filter on
+
+        :return: The initial_direction of this Objective.
+        :rtype: str
+        """
+        return self._initial_direction
+
+    @initial_direction.setter
+    def initial_direction(self, initial_direction: str) -> None:
+        """
+        Sets the initial_direction of this Objective.
+        The initial direction to filter on
+
+        :param initial_direction: The initial_direction of this Objective.
+        :type: str
+        """
+        if isinstance(initial_direction, int):
+            initial_direction = str(initial_direction)
+        allowed_values = ["inbound", "outbound"]
+        if initial_direction.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for initial_direction -> " + initial_direction)
+            self._initial_direction = "outdated_sdk_version"
+        else:
+            self._initial_direction = initial_direction
 
     @property
     def date_start(self) -> date:

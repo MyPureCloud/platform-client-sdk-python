@@ -284,7 +284,7 @@ class AuditLogMessage(object):
         """
         if isinstance(level, int):
             level = str(level)
-        allowed_values = ["USER", "SYSTEM"]
+        allowed_values = ["USER", "SYSTEM", "GENESYS_INTERNAL"]
         if level.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for level -> " + level)
             self._level = "outdated_sdk_version"

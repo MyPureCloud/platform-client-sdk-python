@@ -79,7 +79,7 @@ class ConditionalGroupRoutingRule(object):
     def queue(self) -> 'DomainEntityRef':
         """
         Gets the queue of this ConditionalGroupRoutingRule.
-        The queue being evaluated for this rule.  For rule 1, this is always the current queue, so should not be specified.
+        The queue being evaluated for this rule.  If null, the current queue will be used.
 
         :return: The queue of this ConditionalGroupRoutingRule.
         :rtype: DomainEntityRef
@@ -90,7 +90,7 @@ class ConditionalGroupRoutingRule(object):
     def queue(self, queue: 'DomainEntityRef') -> None:
         """
         Sets the queue of this ConditionalGroupRoutingRule.
-        The queue being evaluated for this rule.  For rule 1, this is always the current queue, so should not be specified.
+        The queue being evaluated for this rule.  If null, the current queue will be used.
 
         :param queue: The queue of this ConditionalGroupRoutingRule.
         :type: DomainEntityRef

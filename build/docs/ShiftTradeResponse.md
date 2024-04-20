@@ -21,7 +21,7 @@ title: ShiftTradeResponse
 | **receiving_shift_end** | **datetime** | The end date/time of the receiving shift. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
 | **expiration** | **datetime** | When this shift trade offer will expire if not matched or approved. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
 | **one_sided** | **bool** | Whether this is a one-sided shift trade (e.g. the initiating user is not asking for a shift in return) | [optional] |
-| **acceptable_intervals** | **list[str]** |  | [optional] |
+| **acceptable_intervals** | **list[str]** | Time frames when the initiating user is willing to accept trades.  Empty means giving up the shift. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss | [optional] |
 | **reviewed_by** | [**UserReference**](UserReference.html) | The user who reviewed this shift trade | [optional] |
 | **reviewed_date** | **datetime** | The timestamp when this shift trade was reviewed. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
 | **metadata** | [**WfmVersionedEntityMetadata**](WfmVersionedEntityMetadata.html) | Version data for this trade | [optional] |

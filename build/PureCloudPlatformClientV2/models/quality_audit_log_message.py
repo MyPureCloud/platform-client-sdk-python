@@ -302,7 +302,7 @@ class QualityAuditLogMessage(object):
         """
         if isinstance(level, int):
             level = str(level)
-        allowed_values = ["User", "System"]
+        allowed_values = ["User", "System", "GENESYS_INTERNAL"]
         if level.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for level -> " + level)
             self._level = "outdated_sdk_version"
@@ -408,7 +408,7 @@ class QualityAuditLogMessage(object):
         """
         if isinstance(action, int):
             action = str(action)
-        allowed_values = ["Read", "Create", "Update", "Delete", "Abandon", "Archive", "Export", "RestoreRequest", "RestoreComplete", "ApplyProtection", "RevokeProtection", "UpdateRetention"]
+        allowed_values = ["Read", "Create", "Update", "Delete", "Abandon", "Archive", "Export", "Download", "RestoreRequest", "RestoreComplete", "ApplyProtection", "RevokeProtection", "UpdateRetention"]
         if action.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for action -> " + action)
             self._action = "outdated_sdk_version"

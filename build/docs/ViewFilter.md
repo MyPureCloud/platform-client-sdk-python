@@ -181,6 +181,8 @@ title: ViewFilter
 | **knowledge_base_ids** | **list[str]** | The knowledge base ids that are used to filter the view. | [optional] |
 | **is_parked** | **bool** | Filter to indicate if the interactions are parked. | [optional] |
 | **agent_empathy_score** | [**NumericRange**](NumericRange.html) | The agentEmpathyScore is used to filter the view | [optional] |
+| **survey_types** | **list[str]** | The surveyTypes is used to filter the view | [optional] |
+| **survey_response_statuses** | **list[str]** | The list of Survey Response Status | [optional] |
 {: class="table table-striped"}
 
 

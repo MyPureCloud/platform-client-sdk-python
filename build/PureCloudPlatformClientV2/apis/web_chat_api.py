@@ -456,10 +456,11 @@ class WebChatApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("get_webchat_guest_conversation_mediarequest is deprecated")
     def get_webchat_guest_conversation_mediarequest(self, conversation_id: str, media_request_id: str, **kwargs) -> 'WebChatGuestMediaRequest':
         """
         Get a media request in the conversation
-        
+        This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -1035,10 +1036,11 @@ class WebChatApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("patch_webchat_guest_conversation_mediarequest is deprecated")
     def patch_webchat_guest_conversation_mediarequest(self, conversation_id: str, media_request_id: str, body: 'WebChatGuestMediaRequest', **kwargs) -> 'WebChatGuestMediaRequest':
         """
         Update a media request in the conversation, setting the state to ACCEPTED/DECLINED/ERRORED
-        
+        This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

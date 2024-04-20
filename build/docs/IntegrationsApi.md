@@ -1492,11 +1492,11 @@ except ApiException as e:
 
 ## [**UCIntegrationListing**](UCIntegrationListing.html) get_integrations_clientapps_unifiedcommunications(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 UC integration client application configuration.
 
-This endpoint returns basic UI configuration data for all Unified Communications integrations client applications enabled for the current organization.
+Deprecated: Please use GET /integrations/unifiedcommunications/clientapps instead. This endpoint returns basic UI configuration data for all Unified Communications integrations client applications enabled for the current organization.
 
 Wraps GET /api/v2/integrations/clientapps/unifiedcommunications 
 

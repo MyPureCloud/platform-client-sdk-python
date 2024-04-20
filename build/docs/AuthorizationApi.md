@@ -1067,7 +1067,7 @@ This endpoint does not need any parameters.
 
 <a name="get_authorization_subject"></a>
 
-## [**AuthzSubject**](AuthzSubject.html) get_authorization_subject(subject_id)
+## [**AuthzSubject**](AuthzSubject.html) get_authorization_subject(subject_id, include_duplicates=include_duplicates)
 
 
 
@@ -1093,10 +1093,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.AuthorizationApi()
 subject_id = 'subject_id_example' # str | Subject ID (user or group)
+include_duplicates = False # bool | Include multiple entries with the same role and division but different subjects (optional) (default to False)
 
 try:
     # Returns a listing of roles and permissions for a user.
-    api_response = api_instance.get_authorization_subject(subject_id)
+    api_response = api_instance.get_authorization_subject(subject_id, include_duplicates=include_duplicates)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AuthorizationApi->get_authorization_subject: %s\n" % e)
@@ -1108,6 +1109,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **subject_id** | **str**| Subject ID (user or group) |  |
+| **include_duplicates** | **bool**| Include multiple entries with the same role and division but different subjects | [optional] [default to False]<br />**Values**: true, false |
 {: class="table table-striped"}
 
 ### Return type
@@ -1116,7 +1118,7 @@ except ApiException as e:
 
 <a name="get_authorization_subjects_me"></a>
 
-## [**AuthzSubject**](AuthzSubject.html) get_authorization_subjects_me()
+## [**AuthzSubject**](AuthzSubject.html) get_authorization_subjects_me(include_duplicates=include_duplicates)
 
 
 
@@ -1140,10 +1142,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.AuthorizationApi()
+include_duplicates = False # bool | Include multiple entries with the same role and division but different subjects (optional) (default to False)
 
 try:
     # Returns a listing of roles and permissions for the currently authenticated user.
-    api_response = api_instance.get_authorization_subjects_me()
+    api_response = api_instance.get_authorization_subjects_me(include_duplicates=include_duplicates)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AuthorizationApi->get_authorization_subjects_me: %s\n" % e)
@@ -1151,8 +1154,11 @@ except ApiException as e:
 
 ### Parameters
 
-This endpoint does not need any parameters.
 
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **include_duplicates** | **bool**| Include multiple entries with the same role and division but different subjects | [optional] [default to False]<br />**Values**: true, false |
+{: class="table table-striped"}
 
 ### Return type
 

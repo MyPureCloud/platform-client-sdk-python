@@ -33,7 +33,7 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
-    from . import TranscriptionEngines
+    from . import SupportedDialectsTranscriptionEngine
 
 class SupportedDialectsEntityListing(object):
     """
@@ -50,7 +50,7 @@ class SupportedDialectsEntityListing(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'entities': 'list[TranscriptionEngines]'
+            'entities': 'list[SupportedDialectsTranscriptionEngine]'
         }
 
         self.attribute_map = {
@@ -60,24 +60,24 @@ class SupportedDialectsEntityListing(object):
         self._entities = None
 
     @property
-    def entities(self) -> List['TranscriptionEngines']:
+    def entities(self) -> List['SupportedDialectsTranscriptionEngine']:
         """
         Gets the entities of this SupportedDialectsEntityListing.
 
 
         :return: The entities of this SupportedDialectsEntityListing.
-        :rtype: list[TranscriptionEngines]
+        :rtype: list[SupportedDialectsTranscriptionEngine]
         """
         return self._entities
 
     @entities.setter
-    def entities(self, entities: List['TranscriptionEngines']) -> None:
+    def entities(self, entities: List['SupportedDialectsTranscriptionEngine']) -> None:
         """
         Sets the entities of this SupportedDialectsEntityListing.
 
 
         :param entities: The entities of this SupportedDialectsEntityListing.
-        :type: list[TranscriptionEngines]
+        :type: list[SupportedDialectsTranscriptionEngine]
         """
         
 

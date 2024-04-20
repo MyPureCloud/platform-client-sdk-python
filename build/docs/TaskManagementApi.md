@@ -23,6 +23,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_taskmanagement_workitem_version**](TaskManagementApi.html#get_taskmanagement_workitem_version) | Get a version of a workitem|
 |[**get_taskmanagement_workitem_versions**](TaskManagementApi.html#get_taskmanagement_workitem_versions) | Get all versions of a workitem|
 |[**get_taskmanagement_workitem_wrapups**](TaskManagementApi.html#get_taskmanagement_workitem_wrapups) | Get all wrapup codes added for all users for a workitem.|
+|[**get_taskmanagement_workitems_query_job**](TaskManagementApi.html#get_taskmanagement_workitems_query_job) | Get the workitem query job associated with the job id.|
+|[**get_taskmanagement_workitems_query_job_results**](TaskManagementApi.html#get_taskmanagement_workitems_query_job_results) | Get results from for workitem query job |
 |[**get_taskmanagement_workitems_schema**](TaskManagementApi.html#get_taskmanagement_workitems_schema) | Get a schema|
 |[**get_taskmanagement_workitems_schema_version**](TaskManagementApi.html#get_taskmanagement_workitems_schema_version) | Get a specific version of a schema|
 |[**get_taskmanagement_workitems_schema_versions**](TaskManagementApi.html#get_taskmanagement_workitems_schema_versions) | Get all versions of a schema|
@@ -47,6 +49,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_taskmanagement_workitem_terminate**](TaskManagementApi.html#post_taskmanagement_workitem_terminate) | Terminate a workitem|
 |[**post_taskmanagement_workitems**](TaskManagementApi.html#post_taskmanagement_workitems) | Create a workitem|
 |[**post_taskmanagement_workitems_query**](TaskManagementApi.html#post_taskmanagement_workitems_query) | Query for workitems|
+|[**post_taskmanagement_workitems_query_jobs**](TaskManagementApi.html#post_taskmanagement_workitems_query_jobs) | Create a workitem query job|
 |[**post_taskmanagement_workitems_schemas**](TaskManagementApi.html#post_taskmanagement_workitems_schemas) | Create a schema|
 |[**post_taskmanagement_worktype_statuses**](TaskManagementApi.html#post_taskmanagement_worktype_statuses) | Add a status to a worktype|
 |[**post_taskmanagement_worktypes**](TaskManagementApi.html#post_taskmanagement_worktypes) | Create a worktype|
@@ -863,6 +866,108 @@ except ApiException as e:
 ### Return type
 
 [**WorkitemWrapupEntityListing**](WorkitemWrapupEntityListing.html)
+
+<a name="get_taskmanagement_workitems_query_job"></a>
+
+## [**WorkitemQueryJobResponse**](WorkitemQueryJobResponse.html) get_taskmanagement_workitems_query_job(job_id)
+
+
+
+Get the workitem query job associated with the job id.
+
+get_taskmanagement_workitems_query_job is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/taskmanagement/workitems/query/jobs/{jobId} 
+
+Requires ALL permissions: 
+
+* workitems:queryJob:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TaskManagementApi()
+job_id = 'job_id_example' # str | jobId
+
+try:
+    # Get the workitem query job associated with the job id.
+    api_response = api_instance.get_taskmanagement_workitems_query_job(job_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling TaskManagementApi->get_taskmanagement_workitems_query_job: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **job_id** | **str**| jobId |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**WorkitemQueryJobResponse**](WorkitemQueryJobResponse.html)
+
+<a name="get_taskmanagement_workitems_query_job_results"></a>
+
+## [**WorkitemPagedEntityListing**](WorkitemPagedEntityListing.html) get_taskmanagement_workitems_query_job_results(job_id)
+
+
+
+Get results from for workitem query job 
+
+get_taskmanagement_workitems_query_job_results is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/taskmanagement/workitems/query/jobs/{jobId}/results 
+
+Requires ALL permissions: 
+
+* workitems:queryJobResults:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TaskManagementApi()
+job_id = 'job_id_example' # str | jobId
+
+try:
+    # Get results from for workitem query job 
+    api_response = api_instance.get_taskmanagement_workitems_query_job_results(job_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling TaskManagementApi->get_taskmanagement_workitems_query_job_results: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **job_id** | **str**| jobId |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**WorkitemPagedEntityListing**](WorkitemPagedEntityListing.html)
 
 <a name="get_taskmanagement_workitems_schema"></a>
 
@@ -2126,6 +2231,57 @@ except ApiException as e:
 ### Return type
 
 [**WorkitemPostQueryEntityListing**](WorkitemPostQueryEntityListing.html)
+
+<a name="post_taskmanagement_workitems_query_jobs"></a>
+
+## [**WorkitemQueryJobResponse**](WorkitemQueryJobResponse.html) post_taskmanagement_workitems_query_jobs(body)
+
+
+
+Create a workitem query job
+
+post_taskmanagement_workitems_query_jobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/taskmanagement/workitems/query/jobs 
+
+Requires ANY permissions: 
+
+* workitems:queryJob:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TaskManagementApi()
+body = PureCloudPlatformClientV2.WorkitemQueryJobCreate() # WorkitemQueryJobCreate | WorkitemQueryJobCreate
+
+try:
+    # Create a workitem query job
+    api_response = api_instance.post_taskmanagement_workitems_query_jobs(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling TaskManagementApi->post_taskmanagement_workitems_query_jobs: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**WorkitemQueryJobCreate**](WorkitemQueryJobCreate.html)| WorkitemQueryJobCreate |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**WorkitemQueryJobResponse**](WorkitemQueryJobResponse.html)
 
 <a name="post_taskmanagement_workitems_schemas"></a>
 

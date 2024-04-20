@@ -47,6 +47,7 @@ from ..models import ChatUserSettings
 from ..models import CreateRoomRequest
 from ..models import CreateRoomResponse
 from ..models import ErrorBody
+from ..models import OneOnOne
 from ..models import PinnedMessageRequest
 from ..models import Room
 from ..models import RoomParticipant
@@ -119,6 +120,90 @@ class ChatApi(object):
             path_params['roomJid'] = params['room_jid']
         if 'message_id' in params:
             path_params['messageId'] = params['message_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def delete_chats_room_messages_pin(self, room_jid: str, pinned_message_id: str, **kwargs) -> None:
+        """
+        Remove a pinned message from a room
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_chats_room_messages_pin(room_jid, pinned_message_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str room_jid: roomJid (required)
+        :param str pinned_message_id: pinnedMessageId (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['room_jid', 'pinned_message_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_chats_room_messages_pin" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'room_jid' is set
+        if ('room_jid' not in params) or (params['room_jid'] is None):
+            raise ValueError("Missing the required parameter `room_jid` when calling `delete_chats_room_messages_pin`")
+        # verify the required parameter 'pinned_message_id' is set
+        if ('pinned_message_id' not in params) or (params['pinned_message_id'] is None):
+            raise ValueError("Missing the required parameter `pinned_message_id` when calling `delete_chats_room_messages_pin`")
+
+
+        resource_path = '/api/v2/chats/rooms/{roomJid}/messages/pins/{pinnedMessageId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'room_jid' in params:
+            path_params['roomJid'] = params['room_jid']
+        if 'pinned_message_id' in params:
+            path_params['pinnedMessageId'] = params['pinned_message_id']
 
         query_params = {}
 
@@ -238,90 +323,6 @@ class ChatApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def delete_chats_room_pinnedmessage(self, room_jid: str, pinned_message_id: str, **kwargs) -> None:
-        """
-        Remove a pinned message from a room
-        
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.delete_chats_room_pinnedmessage(room_jid, pinned_message_id, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param str room_jid: roomJid (required)
-        :param str pinned_message_id: pinnedMessageId (required)
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['room_jid', 'pinned_message_id']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method delete_chats_room_pinnedmessage" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        # verify the required parameter 'room_jid' is set
-        if ('room_jid' not in params) or (params['room_jid'] is None):
-            raise ValueError("Missing the required parameter `room_jid` when calling `delete_chats_room_pinnedmessage`")
-        # verify the required parameter 'pinned_message_id' is set
-        if ('pinned_message_id' not in params) or (params['pinned_message_id'] is None):
-            raise ValueError("Missing the required parameter `pinned_message_id` when calling `delete_chats_room_pinnedmessage`")
-
-
-        resource_path = '/api/v2/chats/rooms/{roomJid}/pinnedmessages/{pinnedMessageId}'.replace('{format}', 'json')
-        path_params = {}
-        if 'room_jid' in params:
-            path_params['roomJid'] = params['room_jid']
-        if 'pinned_message_id' in params:
-            path_params['pinnedMessageId'] = params['pinned_message_id']
-
-        query_params = {}
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/json'])
-
-        # Authentication setting
-        auth_settings = ['PureCloud OAuth']
-
-        response = self.api_client.call_api(resource_path, 'DELETE',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type=None,
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
     def delete_chats_user_message(self, user_id: str, message_id: str, **kwargs) -> None:
         """
         Delete a message to a user
@@ -371,6 +372,91 @@ class ChatApi(object):
             path_params['userId'] = params['user_id']
         if 'message_id' in params:
             path_params['messageId'] = params['message_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def delete_chats_user_messages_pin(self, user_id: str, pinned_message_id: str, **kwargs) -> None:
+        """
+        Remove a pinned message from a 1on1
+        
+	    delete_chats_user_messages_pin is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_chats_user_messages_pin(user_id, pinned_message_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str user_id: userId (required)
+        :param str pinned_message_id: pinnedMessageId (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['user_id', 'pinned_message_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_chats_user_messages_pin" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'user_id' is set
+        if ('user_id' not in params) or (params['user_id'] is None):
+            raise ValueError("Missing the required parameter `user_id` when calling `delete_chats_user_messages_pin`")
+        # verify the required parameter 'pinned_message_id' is set
+        if ('pinned_message_id' not in params) or (params['pinned_message_id'] is None):
+            raise ValueError("Missing the required parameter `pinned_message_id` when calling `delete_chats_user_messages_pin`")
+
+
+        resource_path = '/api/v2/chats/users/{userId}/messages/pins/{pinnedMessageId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'user_id' in params:
+            path_params['userId'] = params['user_id']
+        if 'pinned_message_id' in params:
+            path_params['pinnedMessageId'] = params['pinned_message_id']
 
         query_params = {}
 
@@ -1050,6 +1136,85 @@ class ChatApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='ChatMessageEntityListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_chats_user(self, user_id: str, **kwargs) -> 'OneOnOne':
+        """
+        Get information for a 1on1
+        
+	    get_chats_user is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_chats_user(user_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str user_id: userId (required)
+        :return: OneOnOne
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['user_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_chats_user" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'user_id' is set
+        if ('user_id' not in params) or (params['user_id'] is None):
+            raise ValueError("Missing the required parameter `user_id` when calling `get_chats_user`")
+
+
+        resource_path = '/api/v2/chats/users/{userId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'user_id' in params:
+            path_params['userId'] = params['user_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='OneOnOne',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -1815,6 +1980,90 @@ class ChatApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def post_chats_room_messages_pins(self, room_jid: str, body: 'PinnedMessageRequest', **kwargs) -> None:
+        """
+        Add pinned messages for a room, up to a maximum of 5 pinned messages
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_chats_room_messages_pins(room_jid, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str room_jid: roomJid (required)
+        :param PinnedMessageRequest body: Pinned Message Ids (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['room_jid', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_chats_room_messages_pins" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'room_jid' is set
+        if ('room_jid' not in params) or (params['room_jid'] is None):
+            raise ValueError("Missing the required parameter `room_jid` when calling `post_chats_room_messages_pins`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_chats_room_messages_pins`")
+
+
+        resource_path = '/api/v2/chats/rooms/{roomJid}/messages/pins'.replace('{format}', 'json')
+        path_params = {}
+        if 'room_jid' in params:
+            path_params['roomJid'] = params['room_jid']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def post_chats_room_participant(self, room_jid: str, user_id: str, **kwargs) -> None:
         """
         Join a room
@@ -1873,90 +2122,6 @@ class ChatApi(object):
         local_var_files = {}
 
         body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/json'])
-
-        # Authentication setting
-        auth_settings = ['PureCloud OAuth']
-
-        response = self.api_client.call_api(resource_path, 'POST',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type=None,
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def post_chats_room_pinnedmessages(self, room_jid: str, body: 'PinnedMessageRequest', **kwargs) -> None:
-        """
-        Add pinned messages for a room, up to a maximum of 5 pinned messages
-        
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.post_chats_room_pinnedmessages(room_jid, body, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param str room_jid: roomJid (required)
-        :param PinnedMessageRequest body: Pinned Message Ids (required)
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['room_jid', 'body']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method post_chats_room_pinnedmessages" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        # verify the required parameter 'room_jid' is set
-        if ('room_jid' not in params) or (params['room_jid'] is None):
-            raise ValueError("Missing the required parameter `room_jid` when calling `post_chats_room_pinnedmessages`")
-        # verify the required parameter 'body' is set
-        if ('body' not in params) or (params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `post_chats_room_pinnedmessages`")
-
-
-        resource_path = '/api/v2/chats/rooms/{roomJid}/pinnedmessages'.replace('{format}', 'json')
-        path_params = {}
-        if 'room_jid' in params:
-            path_params['roomJid'] = params['room_jid']
-
-        query_params = {}
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        if 'body' in params:
-            body_params = params['body']
 
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
@@ -2141,6 +2306,91 @@ class ChatApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='ChatSendMessageResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_chats_user_messages_pins(self, user_id: str, body: 'PinnedMessageRequest', **kwargs) -> None:
+        """
+        Add pinned messages for a 1on1, up to a maximum of 5 pinned messages
+        
+	    post_chats_user_messages_pins is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_chats_user_messages_pins(user_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str user_id: userId (required)
+        :param PinnedMessageRequest body: Pinned Message Ids (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['user_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_chats_user_messages_pins" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'user_id' is set
+        if ('user_id' not in params) or (params['user_id'] is None):
+            raise ValueError("Missing the required parameter `user_id` when calling `post_chats_user_messages_pins`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_chats_user_messages_pins`")
+
+
+        resource_path = '/api/v2/chats/users/{userId}/messages/pins'.replace('{format}', 'json')
+        path_params = {}
+        if 'user_id' in params:
+            path_params['userId'] = params['user_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

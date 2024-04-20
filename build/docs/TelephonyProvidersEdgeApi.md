@@ -36,7 +36,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_telephony_providers_edge_softwareversions**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edge_softwareversions) | Gets all the available software versions for this edge.|
 |[**get_telephony_providers_edge_trunks**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edge_trunks) | Get the list of available trunks for the given Edge.|
 |[**get_telephony_providers_edges**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges) | Get the list of edges.|
-|[**get_telephony_providers_edges_availablelanguages**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_availablelanguages) | Get the list of available languages. For never released keyword spotting feature. Deprecated, do not use.|
 |[**get_telephony_providers_edges_certificateauthorities**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_certificateauthorities) | Get the list of certificate authorities.|
 |[**get_telephony_providers_edges_certificateauthority**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_certificateauthority) | Get a certificate authority.|
 |[**get_telephony_providers_edges_did**](TelephonyProvidersEdgeApi.html#get_telephony_providers_edges_did) | Get a DID by ID.|
@@ -1535,50 +1534,6 @@ except ApiException as e:
 ### Return type
 
 [**EdgeEntityListing**](EdgeEntityListing.html)
-
-<a name="get_telephony_providers_edges_availablelanguages"></a>
-
-## [**AvailableLanguageList**](AvailableLanguageList.html) get_telephony_providers_edges_availablelanguages()
-
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
-
-Get the list of available languages. For never released keyword spotting feature. Deprecated, do not use.
-
-Wraps GET /api/v2/telephony/providers/edges/availablelanguages 
-
-Requires no permissions
-
-
-### Example
-
-```{"language":"python"}
-import time
-import PureCloudPlatformClientV2
-from PureCloudPlatformClientV2.rest import ApiException
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: PureCloud OAuth
-PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
-
-try:
-    # Get the list of available languages. For never released keyword spotting feature. Deprecated, do not use.
-    api_response = api_instance.get_telephony_providers_edges_availablelanguages()
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_availablelanguages: %s\n" % e)
-```
-
-### Parameters
-
-This endpoint does not need any parameters.
-
-
-### Return type
-
-[**AvailableLanguageList**](AvailableLanguageList.html)
 
 <a name="get_telephony_providers_edges_certificateauthorities"></a>
 

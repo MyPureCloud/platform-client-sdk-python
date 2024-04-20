@@ -7,7 +7,7 @@ title: BulkIdsRequest
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **entities** | [**list[WritableEntity]**](WritableEntity.html) |  | [optional] |
+| **entities** | [**list[ExternalContactsEntity]**](ExternalContactsEntity.html) |  | [optional] |
 {: class="table table-striped"}
 
 

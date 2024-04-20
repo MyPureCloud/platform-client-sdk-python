@@ -226,7 +226,9 @@ class ViewFilter(object):
             'assistant_ids': 'list[str]',
             'knowledge_base_ids': 'list[str]',
             'is_parked': 'bool',
-            'agent_empathy_score': 'NumericRange'
+            'agent_empathy_score': 'NumericRange',
+            'survey_types': 'list[str]',
+            'survey_response_statuses': 'list[str]'
         }
 
         self.attribute_map = {
@@ -403,7 +405,9 @@ class ViewFilter(object):
             'assistant_ids': 'assistantIds',
             'knowledge_base_ids': 'knowledgeBaseIds',
             'is_parked': 'isParked',
-            'agent_empathy_score': 'agentEmpathyScore'
+            'agent_empathy_score': 'agentEmpathyScore',
+            'survey_types': 'surveyTypes',
+            'survey_response_statuses': 'surveyResponseStatuses'
         }
 
         self._media_types = None
@@ -580,6 +584,8 @@ class ViewFilter(object):
         self._knowledge_base_ids = None
         self._is_parked = None
         self._agent_empathy_score = None
+        self._survey_types = None
+        self._survey_response_statuses = None
 
     @property
     def media_types(self) -> List[str]:
@@ -4766,6 +4772,54 @@ class ViewFilter(object):
         
 
         self._agent_empathy_score = agent_empathy_score
+
+    @property
+    def survey_types(self) -> List[str]:
+        """
+        Gets the survey_types of this ViewFilter.
+        The surveyTypes is used to filter the view
+
+        :return: The survey_types of this ViewFilter.
+        :rtype: list[str]
+        """
+        return self._survey_types
+
+    @survey_types.setter
+    def survey_types(self, survey_types: List[str]) -> None:
+        """
+        Sets the survey_types of this ViewFilter.
+        The surveyTypes is used to filter the view
+
+        :param survey_types: The survey_types of this ViewFilter.
+        :type: list[str]
+        """
+        
+
+        self._survey_types = survey_types
+
+    @property
+    def survey_response_statuses(self) -> List[str]:
+        """
+        Gets the survey_response_statuses of this ViewFilter.
+        The list of Survey Response Status
+
+        :return: The survey_response_statuses of this ViewFilter.
+        :rtype: list[str]
+        """
+        return self._survey_response_statuses
+
+    @survey_response_statuses.setter
+    def survey_response_statuses(self, survey_response_statuses: List[str]) -> None:
+        """
+        Sets the survey_response_statuses of this ViewFilter.
+        The list of Survey Response Status
+
+        :param survey_response_statuses: The survey_response_statuses of this ViewFilter.
+        :type: list[str]
+        """
+        
+
+        self._survey_response_statuses = survey_response_statuses
 
     def to_dict(self):
         """

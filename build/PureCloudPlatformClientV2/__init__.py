@@ -112,6 +112,7 @@ from .models.agent_query_adherence_explanations_request import AgentQueryAdheren
 from .models.agent_query_adherence_explanations_response import AgentQueryAdherenceExplanationsResponse
 from .models.agent_queue_time_request import AgentQueueTimeRequest
 from .models.agent_time_off_request_patch import AgentTimeOffRequestPatch
+from .models.agent_video_settings import AgentVideoSettings
 from .models.agentless_email_send_request_dto import AgentlessEmailSendRequestDto
 from .models.agentless_email_send_response_dto import AgentlessEmailSendResponseDto
 from .models.agents_integrations_listing import AgentsIntegrationsListing
@@ -280,7 +281,6 @@ from .models.authz_subject import AuthzSubject
 from .models.auto_start import AutoStart
 from .models.auto_status_transition_detail import AutoStatusTransitionDetail
 from .models.automatic_time_zone_mapping_settings import AutomaticTimeZoneMappingSettings
-from .models.available_language_list import AvailableLanguageList
 from .models.available_media_type import AvailableMediaType
 from .models.available_media_type_entity_listing import AvailableMediaTypeEntityListing
 from .models.available_time import AvailableTime
@@ -290,6 +290,7 @@ from .models.available_time_off_response import AvailableTimeOffResponse
 from .models.available_topic import AvailableTopic
 from .models.available_topic_entity_listing import AvailableTopicEntityListing
 from .models.available_translations import AvailableTranslations
+from .models.background_image_settings import BackgroundImageSettings
 from .models.base_media_settings import BaseMediaSettings
 from .models.base_program_entity import BaseProgramEntity
 from .models.base_topic_entitiy import BaseTopicEntitiy
@@ -512,6 +513,7 @@ from .models.campaign_division_view_listing import CampaignDivisionViewListing
 from .models.campaign_entity_listing import CampaignEntityListing
 from .models.campaign_interaction import CampaignInteraction
 from .models.campaign_interactions import CampaignInteractions
+from .models.campaign_lines_utilization import CampaignLinesUtilization
 from .models.campaign_progress import CampaignProgress
 from .models.campaign_rule import CampaignRule
 from .models.campaign_rule_action import CampaignRuleAction
@@ -621,6 +623,7 @@ from .models.compliance import Compliance
 from .models.compliance_response import ComplianceResponse
 from .models.condition import Condition
 from .models.conditional_group_routing import ConditionalGroupRouting
+from .models.conditional_group_routing_condition import ConditionalGroupRoutingCondition
 from .models.conditional_group_routing_rule import ConditionalGroupRoutingRule
 from .models.configuration_overrides import ConfigurationOverrides
 from .models.confusion_details import ConfusionDetails
@@ -974,6 +977,7 @@ from .models.conversation_video_event_topic_uri_reference import ConversationVid
 from .models.conversation_video_event_topic_video_conversation import ConversationVideoEventTopicVideoConversation
 from .models.conversation_video_event_topic_video_media_participant import ConversationVideoEventTopicVideoMediaParticipant
 from .models.conversation_video_event_topic_wrapup import ConversationVideoEventTopicWrapup
+from .models.copilot_scoring import CopilotScoring
 from .models.copy_attachments_request import CopyAttachmentsRequest
 from .models.copy_bu_forecast_request import CopyBuForecastRequest
 from .models.copy_voicemail_message import CopyVoicemailMessage
@@ -1445,6 +1449,7 @@ from .models.encryption_key_entity_listing import EncryptionKeyEntityListing
 from .models.end_consult_transfer_event import EndConsultTransferEvent
 from .models.end_transfer_event import EndTransferEvent
 from .models.endpoint import Endpoint
+from .models.engine_integration import EngineIntegration
 from .models.entity import Entity
 from .models.entity_change import EntityChange
 from .models.entity_listing import EntityListing
@@ -1554,6 +1559,7 @@ from .models.external_contacts_contact_changed_topic_object import ExternalConta
 from .models.external_contacts_contact_changed_topic_phone_number import ExternalContactsContactChangedTopicPhoneNumber
 from .models.external_contacts_contact_changed_topic_twitter_id import ExternalContactsContactChangedTopicTwitterId
 from .models.external_contacts_contact_changed_topic_whats_app_id import ExternalContactsContactChangedTopicWhatsAppId
+from .models.external_contacts_entity import ExternalContactsEntity
 from .models.external_contacts_unresolved_contact_changed_topic_contact import ExternalContactsUnresolvedContactChangedTopicContact
 from .models.external_contacts_unresolved_contact_changed_topic_contact_address import ExternalContactsUnresolvedContactChangedTopicContactAddress
 from .models.external_contacts_unresolved_contact_changed_topic_data_schema import ExternalContactsUnresolvedContactChangedTopicDataSchema
@@ -1571,6 +1577,7 @@ from .models.external_contacts_unresolved_contact_changed_topic_twitter_id impor
 from .models.external_contacts_unresolved_contact_changed_topic_whats_app_id import ExternalContactsUnresolvedContactChangedTopicWhatsAppId
 from .models.external_data_source import ExternalDataSource
 from .models.external_established_event import ExternalEstablishedEvent
+from .models.external_id import ExternalId
 from .models.external_metric_data_item import ExternalMetricDataItem
 from .models.external_metric_data_processed_item import ExternalMetricDataProcessedItem
 from .models.external_metric_data_unprocessed_item import ExternalMetricDataUnprocessedItem
@@ -1584,6 +1591,7 @@ from .models.external_organization import ExternalOrganization
 from .models.external_organization_listing import ExternalOrganizationListing
 from .models.external_organization_trustor_link import ExternalOrganizationTrustorLink
 from .models.external_segment import ExternalSegment
+from .models.external_source import ExternalSource
 from .models.facebook_app_credentials import FacebookAppCredentials
 from .models.facebook_id import FacebookId
 from .models.facebook_integration import FacebookIntegration
@@ -1601,6 +1609,7 @@ from .models.facet_statistics import FacetStatistics
 from .models.facet_term import FacetTerm
 from .models.failed_object import FailedObject
 from .models.failed_recording_entity_listing import FailedRecordingEntityListing
+from .models.fax_config import FaxConfig
 from .models.fax_document import FaxDocument
 from .models.fax_document_entity_listing import FaxDocumentEntityListing
 from .models.fax_send_request import FaxSendRequest
@@ -1777,6 +1786,7 @@ from .models.greeting_listing import GreetingListing
 from .models.greeting_media_info import GreetingMediaInfo
 from .models.greeting_owner import GreetingOwner
 from .models.group import Group
+from .models.group_by_attribute import GroupByAttribute
 from .models.group_contact import GroupContact
 from .models.group_create import GroupCreate
 from .models.group_entity_listing import GroupEntityListing
@@ -1991,6 +2001,9 @@ from .models.journey_view import JourneyView
 from .models.journey_view_chart import JourneyViewChart
 from .models.journey_view_chart_group_by_attribute import JourneyViewChartGroupByAttribute
 from .models.journey_view_chart_metric import JourneyViewChartMetric
+from .models.journey_view_chart_metric_result import JourneyViewChartMetricResult
+from .models.journey_view_chart_metric_result_value import JourneyViewChartMetricResultValue
+from .models.journey_view_chart_result import JourneyViewChartResult
 from .models.journey_view_element import JourneyViewElement
 from .models.journey_view_element_attributes import JourneyViewElementAttributes
 from .models.journey_view_element_filter import JourneyViewElementFilter
@@ -2271,6 +2284,7 @@ from .models.line_integration_entity_listing import LineIntegrationEntityListing
 from .models.line_integration_request import LineIntegrationRequest
 from .models.line_status import LineStatus
 from .models.line_user_id import LineUserId
+from .models.link_configuration import LinkConfiguration
 from .models.list_item_component import ListItemComponent
 from .models.list_wrapper_interval import ListWrapperInterval
 from .models.list_wrapper_secondary_presence import ListWrapperSecondaryPresence
@@ -2473,6 +2487,7 @@ from .models.nlu_feedback_listing import NluFeedbackListing
 from .models.nlu_feedback_request import NluFeedbackRequest
 from .models.nlu_feedback_response import NluFeedbackResponse
 from .models.nlu_info import NluInfo
+from .models.nlu_organization import NluOrganization
 from .models.nlu_quality_report_summary import NluQualityReportSummary
 from .models.nlu_quality_report_summary_metric import NluQualityReportSummaryMetric
 from .models.nlu_utterance import NluUtterance
@@ -2515,6 +2530,7 @@ from .models.observation_metric_data import ObservationMetricData
 from .models.observation_value import ObservationValue
 from .models.okta import Okta
 from .models.one_login import OneLogin
+from .models.one_on_one import OneOnOne
 from .models.open_action_fields import OpenActionFields
 from .models.open_action_properties import OpenActionProperties
 from .models.open_content_attachment import OpenContentAttachment
@@ -2761,6 +2777,7 @@ from .models.program_job_request import ProgramJobRequest
 from .models.program_mappings import ProgramMappings
 from .models.program_mappings_request import ProgramMappingsRequest
 from .models.program_request import ProgramRequest
+from .models.program_transcription_engine import ProgramTranscriptionEngine
 from .models.program_transcription_engines import ProgramTranscriptionEngines
 from .models.programs_entity_listing import ProgramsEntityListing
 from .models.programs_mappings_entity_listing import ProgramsMappingsEntityListing
@@ -3481,7 +3498,10 @@ from .models.supported_content import SupportedContent
 from .models.supported_content_listing import SupportedContentListing
 from .models.supported_content_reference import SupportedContentReference
 from .models.supported_dialects_entity_listing import SupportedDialectsEntityListing
+from .models.supported_dialects_transcription_engine import SupportedDialectsTranscriptionEngine
+from .models.supported_entity_type_status import SupportedEntityTypeStatus
 from .models.supported_language import SupportedLanguage
+from .models.supported_languages_info_definition import SupportedLanguagesInfoDefinition
 from .models.survey import Survey
 from .models.survey_aggregate_data_container import SurveyAggregateDataContainer
 from .models.survey_aggregate_query_clause import SurveyAggregateQueryClause
@@ -3645,7 +3665,6 @@ from .models.transcript_topic import TranscriptTopic
 from .models.transcript_topics import TranscriptTopics
 from .models.transcript_url import TranscriptUrl
 from .models.transcript_urls import TranscriptUrls
-from .models.transcription_engines import TranscriptionEngines
 from .models.transcription_engines_request import TranscriptionEnginesRequest
 from .models.transcription_settings import TranscriptionSettings
 from .models.transcription_topic_transcript_alternative import TranscriptionTopicTranscriptAlternative
@@ -3892,6 +3911,7 @@ from .models.user_tokens_topic_token_notification import UserTokensTopicTokenNot
 from .models.user_tokens_topic_uri_reference import UserTokensTopicUriReference
 from .models.user_transfer_event import UserTransferEvent
 from .models.user_trend_data import UserTrendData
+from .models.user_video_settings import UserVideoSettings
 from .models.users_search_response import UsersSearchResponse
 from .models.utilization_label import UtilizationLabel
 from .models.utilization_label_entity_listing import UtilizationLabelEntityListing
@@ -3992,6 +4012,7 @@ from .models.video import Video
 from .models.video_conference_details import VideoConferenceDetails
 from .models.video_conference_update_topic_participant_info import VideoConferenceUpdateTopicParticipantInfo
 from .models.video_conference_update_topic_video_conference import VideoConferenceUpdateTopicVideoConference
+from .models.video_settings import VideoSettings
 from .models.view_filter import ViewFilter
 from .models.visibility_condition import VisibilityCondition
 from .models.vm_pairing_info import VmPairingInfo
@@ -4300,7 +4321,13 @@ from .models.workitem_create import WorkitemCreate
 from .models.workitem_delta import WorkitemDelta
 from .models.workitem_filter import WorkitemFilter
 from .models.workitem_manual_assign import WorkitemManualAssign
+from .models.workitem_paged_entity_listing import WorkitemPagedEntityListing
 from .models.workitem_post_query_entity_listing import WorkitemPostQueryEntityListing
+from .models.workitem_query_job_create import WorkitemQueryJobCreate
+from .models.workitem_query_job_error import WorkitemQueryJobError
+from .models.workitem_query_job_filter import WorkitemQueryJobFilter
+from .models.workitem_query_job_response import WorkitemQueryJobResponse
+from .models.workitem_query_job_sort import WorkitemQueryJobSort
 from .models.workitem_query_post_request import WorkitemQueryPostRequest
 from .models.workitem_query_sort import WorkitemQuerySort
 from .models.workitem_queue_reference import WorkitemQueueReference

@@ -320,12 +320,14 @@ class UsageApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str execution_id: ID of the search execution (required)
+        :param str after: The cursor that points to the end of the set of entities that has been returned
+        :param int page_size: The max number of entities to be returned per request. Maximum page size of 1000
         :return: ApiUsageQueryResult
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['execution_id']
+        all_params = ['execution_id', 'after', 'page_size']
         all_params.append('callback')
 
         params = locals()
@@ -349,6 +351,10 @@ class UsageApi(object):
             path_params['executionId'] = params['execution_id']
 
         query_params = {}
+        if 'after' in params:
+            query_params['after'] = params['after']
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
 
         header_params = {}
 

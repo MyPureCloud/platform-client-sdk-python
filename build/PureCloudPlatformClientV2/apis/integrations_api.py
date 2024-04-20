@@ -2313,10 +2313,11 @@ class IntegrationsApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("get_integrations_clientapps_unifiedcommunications is deprecated")
     def get_integrations_clientapps_unifiedcommunications(self, **kwargs) -> 'UCIntegrationListing':
         """
         UC integration client application configuration.
-        This endpoint returns basic UI configuration data for all Unified Communications integrations client applications enabled for the current organization.
+        Deprecated: Please use GET /integrations/unifiedcommunications/clientapps instead. This endpoint returns basic UI configuration data for all Unified Communications integrations client applications enabled for the current organization.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

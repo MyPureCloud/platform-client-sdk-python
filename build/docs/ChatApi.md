@@ -9,9 +9,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 |Method | Description|
 |------------- | -------------|
 |[**delete_chats_room_message**](ChatApi.html#delete_chats_room_message) | Delete a message in a room|
+|[**delete_chats_room_messages_pin**](ChatApi.html#delete_chats_room_messages_pin) | Remove a pinned message from a room|
 |[**delete_chats_room_participant**](ChatApi.html#delete_chats_room_participant) | Remove a user from a room.|
-|[**delete_chats_room_pinnedmessage**](ChatApi.html#delete_chats_room_pinnedmessage) | Remove a pinned message from a room|
 |[**delete_chats_user_message**](ChatApi.html#delete_chats_user_message) | Delete a message to a user|
+|[**delete_chats_user_messages_pin**](ChatApi.html#delete_chats_user_messages_pin) | Remove a pinned message from a 1on1|
 |[**get_chats_message**](ChatApi.html#get_chats_message) | Get a message|
 |[**get_chats_room**](ChatApi.html#get_chats_room) | Get a room|
 |[**get_chats_room_message**](ChatApi.html#get_chats_room_message) | Get messages by id(s) from a room|
@@ -20,6 +21,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_chats_room_participants**](ChatApi.html#get_chats_room_participants) | Get room participants in a room|
 |[**get_chats_settings**](ChatApi.html#get_chats_settings) | Get Chat Settings.|
 |[**get_chats_thread_messages**](ChatApi.html#get_chats_thread_messages) | Get history by thread|
+|[**get_chats_user**](ChatApi.html#get_chats_user) | Get information for a 1on1|
 |[**get_chats_user_message**](ChatApi.html#get_chats_user_message) | Get messages by id(s) from a 1on1|
 |[**get_chats_user_messages**](ChatApi.html#get_chats_user_messages) | Get 1on1 History between a user|
 |[**get_chats_user_settings**](ChatApi.html#get_chats_user_settings) | Get a user&#39;s chat settings|
@@ -29,10 +31,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**patch_chats_user_message**](ChatApi.html#patch_chats_user_message) | Edit a message to a user|
 |[**patch_chats_user_settings**](ChatApi.html#patch_chats_user_settings) | Update a user&#39;s chat settings|
 |[**post_chats_room_messages**](ChatApi.html#post_chats_room_messages) | Send a message to a room|
+|[**post_chats_room_messages_pins**](ChatApi.html#post_chats_room_messages_pins) | Add pinned messages for a room, up to a maximum of 5 pinned messages|
 |[**post_chats_room_participant**](ChatApi.html#post_chats_room_participant) | Join a room|
-|[**post_chats_room_pinnedmessages**](ChatApi.html#post_chats_room_pinnedmessages) | Add pinned messages for a room, up to a maximum of 5 pinned messages|
 |[**post_chats_rooms**](ChatApi.html#post_chats_rooms) | Create an adhoc room|
 |[**post_chats_user_messages**](ChatApi.html#post_chats_user_messages) | Send a message to a user|
+|[**post_chats_user_messages_pins**](ChatApi.html#post_chats_user_messages_pins) | Add pinned messages for a 1on1, up to a maximum of 5 pinned messages|
 |[**put_chats_message_reactions**](ChatApi.html#put_chats_message_reactions) | Update reactions to a message|
 |[**put_chats_settings**](ChatApi.html#put_chats_settings) | Update Chat Settings.|
 {: class="table table-striped"}
@@ -82,6 +85,57 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **room_jid** | **str**| roomId |  |
 | **message_id** | **str**| messageId |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
+
+<a name="delete_chats_room_messages_pin"></a>
+
+##  delete_chats_room_messages_pin(room_jid, pinned_message_id)
+
+
+
+Remove a pinned message from a room
+
+Wraps DELETE /api/v2/chats/rooms/{roomJid}/messages/pins/{pinnedMessageId} 
+
+Requires ANY permissions: 
+
+* chat:chat:access
+* chat:room:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ChatApi()
+room_jid = 'room_jid_example' # str | roomJid
+pinned_message_id = 'pinned_message_id_example' # str | pinnedMessageId
+
+try:
+    # Remove a pinned message from a room
+    api_instance.delete_chats_room_messages_pin(room_jid, pinned_message_id)
+except ApiException as e:
+    print("Exception when calling ChatApi->delete_chats_room_messages_pin: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **room_jid** | **str**| roomJid |  |
+| **pinned_message_id** | **str**| pinnedMessageId |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -139,57 +193,6 @@ except ApiException as e:
 
 void (empty response body)
 
-<a name="delete_chats_room_pinnedmessage"></a>
-
-##  delete_chats_room_pinnedmessage(room_jid, pinned_message_id)
-
-
-
-Remove a pinned message from a room
-
-Wraps DELETE /api/v2/chats/rooms/{roomJid}/pinnedmessages/{pinnedMessageId} 
-
-Requires ANY permissions: 
-
-* chat:chat:access
-* chat:room:edit
-
-### Example
-
-```{"language":"python"}
-import time
-import PureCloudPlatformClientV2
-from PureCloudPlatformClientV2.rest import ApiException
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: PureCloud OAuth
-PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = PureCloudPlatformClientV2.ChatApi()
-room_jid = 'room_jid_example' # str | roomJid
-pinned_message_id = 'pinned_message_id_example' # str | pinnedMessageId
-
-try:
-    # Remove a pinned message from a room
-    api_instance.delete_chats_room_pinnedmessage(room_jid, pinned_message_id)
-except ApiException as e:
-    print("Exception when calling ChatApi->delete_chats_room_pinnedmessage: %s\n" % e)
-```
-
-### Parameters
-
-
-|Name | Type | Description  | Notes|
-|------------- | ------------- | ------------- | -------------|
-| **room_jid** | **str**| roomJid |  |
-| **pinned_message_id** | **str**| pinnedMessageId |  |
-{: class="table table-striped"}
-
-### Return type
-
-void (empty response body)
-
 <a name="delete_chats_user_message"></a>
 
 ##  delete_chats_user_message(user_id, message_id)
@@ -235,6 +238,59 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **user_id** | **str**| userId |  |
 | **message_id** | **str**| messageId |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
+
+<a name="delete_chats_user_messages_pin"></a>
+
+##  delete_chats_user_messages_pin(user_id, pinned_message_id)
+
+
+
+Remove a pinned message from a 1on1
+
+delete_chats_user_messages_pin is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps DELETE /api/v2/chats/users/{userId}/messages/pins/{pinnedMessageId} 
+
+Requires ANY permissions: 
+
+* chat:chat:access
+* chat:1on1:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ChatApi()
+user_id = 'user_id_example' # str | userId
+pinned_message_id = 'pinned_message_id_example' # str | pinnedMessageId
+
+try:
+    # Remove a pinned message from a 1on1
+    api_instance.delete_chats_user_messages_pin(user_id, pinned_message_id)
+except ApiException as e:
+    print("Exception when calling ChatApi->delete_chats_user_messages_pin: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **user_id** | **str**| userId |  |
+| **pinned_message_id** | **str**| pinnedMessageId |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -651,6 +707,58 @@ except ApiException as e:
 ### Return type
 
 [**ChatMessageEntityListing**](ChatMessageEntityListing.html)
+
+<a name="get_chats_user"></a>
+
+## [**OneOnOne**](OneOnOne.html) get_chats_user(user_id)
+
+
+
+Get information for a 1on1
+
+get_chats_user is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/chats/users/{userId} 
+
+Requires ANY permissions: 
+
+* chat:chat:access
+* chat:1on1:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ChatApi()
+user_id = 'user_id_example' # str | userId
+
+try:
+    # Get information for a 1on1
+    api_response = api_instance.get_chats_user(user_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ChatApi->get_chats_user: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **user_id** | **str**| userId |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**OneOnOne**](OneOnOne.html)
 
 <a name="get_chats_user_message"></a>
 
@@ -1126,6 +1234,57 @@ except ApiException as e:
 
 [**ChatSendMessageResponse**](ChatSendMessageResponse.html)
 
+<a name="post_chats_room_messages_pins"></a>
+
+##  post_chats_room_messages_pins(room_jid, body)
+
+
+
+Add pinned messages for a room, up to a maximum of 5 pinned messages
+
+Wraps POST /api/v2/chats/rooms/{roomJid}/messages/pins 
+
+Requires ANY permissions: 
+
+* chat:chat:access
+* chat:room:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ChatApi()
+room_jid = 'room_jid_example' # str | roomJid
+body = PureCloudPlatformClientV2.PinnedMessageRequest() # PinnedMessageRequest | Pinned Message Ids
+
+try:
+    # Add pinned messages for a room, up to a maximum of 5 pinned messages
+    api_instance.post_chats_room_messages_pins(room_jid, body)
+except ApiException as e:
+    print("Exception when calling ChatApi->post_chats_room_messages_pins: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **room_jid** | **str**| roomJid |  |
+| **body** | [**PinnedMessageRequest**](PinnedMessageRequest.html)| Pinned Message Ids |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
+
 <a name="post_chats_room_participant"></a>
 
 ##  post_chats_room_participant(room_jid, user_id)
@@ -1171,57 +1330,6 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **room_jid** | **str**| roomJid |  |
 | **user_id** | **str**| userId |  |
-{: class="table table-striped"}
-
-### Return type
-
-void (empty response body)
-
-<a name="post_chats_room_pinnedmessages"></a>
-
-##  post_chats_room_pinnedmessages(room_jid, body)
-
-
-
-Add pinned messages for a room, up to a maximum of 5 pinned messages
-
-Wraps POST /api/v2/chats/rooms/{roomJid}/pinnedmessages 
-
-Requires ANY permissions: 
-
-* chat:chat:access
-* chat:room:edit
-
-### Example
-
-```{"language":"python"}
-import time
-import PureCloudPlatformClientV2
-from PureCloudPlatformClientV2.rest import ApiException
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: PureCloud OAuth
-PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = PureCloudPlatformClientV2.ChatApi()
-room_jid = 'room_jid_example' # str | roomJid
-body = PureCloudPlatformClientV2.PinnedMessageRequest() # PinnedMessageRequest | Pinned Message Ids
-
-try:
-    # Add pinned messages for a room, up to a maximum of 5 pinned messages
-    api_instance.post_chats_room_pinnedmessages(room_jid, body)
-except ApiException as e:
-    print("Exception when calling ChatApi->post_chats_room_pinnedmessages: %s\n" % e)
-```
-
-### Parameters
-
-
-|Name | Type | Description  | Notes|
-|------------- | ------------- | ------------- | -------------|
-| **room_jid** | **str**| roomJid |  |
-| **body** | [**PinnedMessageRequest**](PinnedMessageRequest.html)| Pinned Message Ids |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1329,6 +1437,59 @@ except ApiException as e:
 ### Return type
 
 [**ChatSendMessageResponse**](ChatSendMessageResponse.html)
+
+<a name="post_chats_user_messages_pins"></a>
+
+##  post_chats_user_messages_pins(user_id, body)
+
+
+
+Add pinned messages for a 1on1, up to a maximum of 5 pinned messages
+
+post_chats_user_messages_pins is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/chats/users/{userId}/messages/pins 
+
+Requires ANY permissions: 
+
+* chat:chat:access
+* chat:1on1:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ChatApi()
+user_id = 'user_id_example' # str | userId
+body = PureCloudPlatformClientV2.PinnedMessageRequest() # PinnedMessageRequest | Pinned Message Ids
+
+try:
+    # Add pinned messages for a 1on1, up to a maximum of 5 pinned messages
+    api_instance.post_chats_user_messages_pins(user_id, body)
+except ApiException as e:
+    print("Exception when calling ChatApi->post_chats_user_messages_pins: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **user_id** | **str**| userId |  |
+| **body** | [**PinnedMessageRequest**](PinnedMessageRequest.html)| Pinned Message Ids |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
 
 <a name="put_chats_message_reactions"></a>
 

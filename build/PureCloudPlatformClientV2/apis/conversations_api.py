@@ -4175,10 +4175,11 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("get_conversations_cobrowsesession_participant_communication_wrapup is deprecated")
     def get_conversations_cobrowsesession_participant_communication_wrapup(self, conversation_id: str, participant_id: str, communication_id: str, **kwargs) -> 'AssignedWrapupCode':
         """
         Get the wrap-up for this conversation communication. 
-        
+        This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -4268,10 +4269,11 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("get_conversations_cobrowsesession_participant_wrapup is deprecated")
     def get_conversations_cobrowsesession_participant_wrapup(self, conversation_id: str, participant_id: str, **kwargs) -> 'AssignedWrapupCode':
         """
         Get the wrap-up for this conversation participant. 
-        
+        This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -4355,10 +4357,11 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("get_conversations_cobrowsesession_participant_wrapupcodes is deprecated")
     def get_conversations_cobrowsesession_participant_wrapupcodes(self, conversation_id: str, participant_id: str, **kwargs) -> List['WrapupCode']:
         """
         Get list of wrapup codes for this conversation participant
-        
+        This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -7695,10 +7698,11 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("get_conversations_messaging_sticker is deprecated")
     def get_conversations_messaging_sticker(self, messenger_type: str, **kwargs) -> 'MessagingStickerEntityListing':
         """
-        Get a list of Messaging Stickers
-        
+        Get a list of Messaging Stickers (Deprecated)
+        This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-line-third-party-messaging-channel/
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -8079,10 +8083,11 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("get_conversations_screenshare_participant_communication_wrapup is deprecated")
     def get_conversations_screenshare_participant_communication_wrapup(self, conversation_id: str, participant_id: str, communication_id: str, **kwargs) -> 'AssignedWrapupCode':
         """
         Get the wrap-up for this conversation communication. 
-        
+        This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -10196,10 +10201,11 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("patch_conversations_cobrowsesession is deprecated")
     def patch_conversations_cobrowsesession(self, conversation_id: str, body: 'Conversation', **kwargs) -> 'Conversation':
         """
         Update a conversation by disconnecting all of the participants
-        
+        This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -10280,10 +10286,11 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("patch_conversations_cobrowsesession_participant is deprecated")
     def patch_conversations_cobrowsesession_participant(self, conversation_id: str, participant_id: str, **kwargs) -> None:
         """
         Update conversation participant
-        
+        This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -10367,10 +10374,11 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("patch_conversations_cobrowsesession_participant_attributes is deprecated")
     def patch_conversations_cobrowsesession_participant_attributes(self, conversation_id: str, participant_id: str, **kwargs) -> 'ParticipantAttributes':
         """
         Update the attributes on a conversation participant.
-        
+        This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -10454,10 +10462,11 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("patch_conversations_cobrowsesession_participant_communication is deprecated")
     def patch_conversations_cobrowsesession_participant_communication(self, conversation_id: str, participant_id: str, communication_id: str, body: 'MediaParticipantRequest', **kwargs) -> object:
         """
         Update conversation participant's communication by disconnecting it.
-        
+        This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -15505,10 +15514,11 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("post_conversations_cobrowsesession_participant_communication_wrapup is deprecated")
     def post_conversations_cobrowsesession_participant_communication_wrapup(self, conversation_id: str, participant_id: str, communication_id: str, **kwargs) -> None:
         """
         Apply wrap-up for this conversation communication
-        
+        This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -15598,10 +15608,11 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("post_conversations_cobrowsesession_participant_replace is deprecated")
     def post_conversations_cobrowsesession_participant_replace(self, conversation_id: str, participant_id: str, **kwargs) -> None:
         """
         Replace this participant with the specified user and/or address
-        
+        This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -17536,10 +17547,11 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("post_conversations_messages_inbound_open is deprecated")
     def post_conversations_messages_inbound_open(self, body: 'OpenNormalizedMessage', **kwargs) -> 'OpenNormalizedMessage':
         """
         Send an inbound Open Message
-        Send an inbound message to an Open Messaging integration. In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. This will either generate a new Conversation, or be a part of an existing conversation. See https://developer.genesys.cloud/api/digital/openmessaging/ for example usage.
+        [This API is deprecated. Instead, use 1. POST /api/v2/conversations/messages/{integrationId}/inbound/open/event, if you want to send an inbound Open Event Message 2. POST /api/v2/conversations/messages/{integrationId}/inbound/open/message, if you want to send an inbound Open Message 3. POST /api/v2/conversations/messages/{integrationId}/inbound/open/receipt, to send an inbound Open Receipt Message]  In order to call this endpoint you will need OAuth token generated using OAuth client credentials authorized with at least messaging scope. This will either generate a new Conversation, or be a part of an existing conversation. See https://developer.genesys.cloud/api/digital/openmessaging/ for example usage.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -18397,10 +18409,11 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("post_conversations_screenshare_participant_communication_wrapup is deprecated")
     def post_conversations_screenshare_participant_communication_wrapup(self, conversation_id: str, participant_id: str, communication_id: str, **kwargs) -> None:
         """
         Apply wrap-up for this conversation communication
-        
+        This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -20094,10 +20107,11 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("put_conversations_screenshare_recordingstate is deprecated")
     def put_conversations_screenshare_recordingstate(self, conversation_id: str, body: 'SetRecordingState', **kwargs) -> str:
         """
         Update a conversation by setting its recording state
-        
+        This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-legacy-co-browse-and-screenshare/
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

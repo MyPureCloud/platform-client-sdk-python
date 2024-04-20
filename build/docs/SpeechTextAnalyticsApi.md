@@ -1209,7 +1209,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.SpeechTextAnalyticsApi()
 next_page = 'next_page_example' # str | The key for listing the next page (optional)
-page_size = 20 # int | The page size for the listing (optional) (default to 20)
+page_size = 20 # int | The page size for the listing. The max that will be returned is 500. (optional) (default to 20)
 state = 'state_example' # str | Topic state. Defaults to latest (optional)
 name = 'name_example' # str | Case insensitive partial name to filter by (optional)
 ids = ['ids_example'] # list[str] | Comma separated Topic IDs to filter by. Cannot be used with other filters. Maximum of 50 IDs allowed. (optional)
@@ -1231,7 +1231,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **next_page** | **str**| The key for listing the next page | [optional]  |
-| **page_size** | **int**| The page size for the listing | [optional] [default to 20] |
+| **page_size** | **int**| The page size for the listing. The max that will be returned is 500. | [optional] [default to 20] |
 | **state** | **str**| Topic state. Defaults to latest | [optional] <br />**Values**: latest, published |
 | **name** | **str**| Case insensitive partial name to filter by | [optional]  |
 | **ids** | [**list[str]**](str.html)| Comma separated Topic IDs to filter by. Cannot be used with other filters. Maximum of 50 IDs allowed. | [optional]  |

@@ -8455,10 +8455,11 @@ class OutboundApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("post_outbound_audits is deprecated")
     def post_outbound_audits(self, body: 'DialerAuditRequest', **kwargs) -> 'AuditSearchResult':
         """
-        Retrieves audits for dialer.
-        
+        Retrieves audits for dialer. (Deprecated)
+        This endpoint is deprecated as a result of this functionality being moved to the Audit Service. Please use \"/api/v2/audits/query\" instead.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

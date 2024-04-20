@@ -29,6 +29,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_languageunderstanding_miner_topic_phrase**](LanguageUnderstandingApi.html#get_languageunderstanding_miner_topic_phrase) | Retrieves utterances related to a phrase in a topic.|
 |[**get_languageunderstanding_miner_topics**](LanguageUnderstandingApi.html#get_languageunderstanding_miner_topics) | Retrieve a list of mined topics.|
 |[**get_languageunderstanding_miners**](LanguageUnderstandingApi.html#get_languageunderstanding_miners) | Retrieve the list of miners created.|
+|[**get_languageunderstanding_settings**](LanguageUnderstandingApi.html#get_languageunderstanding_settings) | Get Organization Configuration|
 |[**patch_languageunderstanding_domain**](LanguageUnderstandingApi.html#patch_languageunderstanding_domain) | Update an NLU Domain.|
 |[**patch_languageunderstanding_miner_draft**](LanguageUnderstandingApi.html#patch_languageunderstanding_miner_draft) | Save information for the draft. Either topic draft or intent draft should be sent.|
 |[**post_languageunderstanding_domain_feedback**](LanguageUnderstandingApi.html#post_languageunderstanding_domain_feedback) | Create feedback for the NLU Domain Version.|
@@ -1144,6 +1145,53 @@ except ApiException as e:
 ### Return type
 
 [**MinerListing**](MinerListing.html)
+
+<a name="get_languageunderstanding_settings"></a>
+
+## [**NluOrganization**](NluOrganization.html) get_languageunderstanding_settings()
+
+
+
+Get Organization Configuration
+
+get_languageunderstanding_settings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/languageunderstanding/settings 
+
+Requires ANY permissions: 
+
+* languageUnderstanding:settings:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.LanguageUnderstandingApi()
+
+try:
+    # Get Organization Configuration
+    api_response = api_instance.get_languageunderstanding_settings()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling LanguageUnderstandingApi->get_languageunderstanding_settings: %s\n" % e)
+```
+
+### Parameters
+
+This endpoint does not need any parameters.
+
+
+### Return type
+
+[**NluOrganization**](NluOrganization.html)
 
 <a name="patch_languageunderstanding_domain"></a>
 

@@ -33,7 +33,7 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
-    from . import TranscriptionEngines
+    from . import ProgramTranscriptionEngine
 
 class TranscriptionEnginesRequest(object):
     """
@@ -50,7 +50,7 @@ class TranscriptionEnginesRequest(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'transcription_engines': 'list[TranscriptionEngines]'
+            'transcription_engines': 'list[ProgramTranscriptionEngine]'
         }
 
         self.attribute_map = {
@@ -60,24 +60,24 @@ class TranscriptionEnginesRequest(object):
         self._transcription_engines = None
 
     @property
-    def transcription_engines(self) -> List['TranscriptionEngines']:
+    def transcription_engines(self) -> List['ProgramTranscriptionEngine']:
         """
         Gets the transcription_engines of this TranscriptionEnginesRequest.
         The transcription engine setting
 
         :return: The transcription_engines of this TranscriptionEnginesRequest.
-        :rtype: list[TranscriptionEngines]
+        :rtype: list[ProgramTranscriptionEngine]
         """
         return self._transcription_engines
 
     @transcription_engines.setter
-    def transcription_engines(self, transcription_engines: List['TranscriptionEngines']) -> None:
+    def transcription_engines(self, transcription_engines: List['ProgramTranscriptionEngine']) -> None:
         """
         Sets the transcription_engines of this TranscriptionEnginesRequest.
         The transcription engine setting
 
         :param transcription_engines: The transcription_engines of this TranscriptionEnginesRequest.
-        :type: list[TranscriptionEngines]
+        :type: list[ProgramTranscriptionEngine]
         """
         
 

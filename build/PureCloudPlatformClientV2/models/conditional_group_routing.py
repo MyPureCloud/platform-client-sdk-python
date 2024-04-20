@@ -63,7 +63,7 @@ class ConditionalGroupRouting(object):
     def rules(self) -> List['ConditionalGroupRoutingRule']:
         """
         Gets the rules of this ConditionalGroupRouting.
-        The set of rules that defines Conditional Group Routing for this queue
+        The set of rules to be executed for each conversation
 
         :return: The rules of this ConditionalGroupRouting.
         :rtype: list[ConditionalGroupRoutingRule]
@@ -74,7 +74,7 @@ class ConditionalGroupRouting(object):
     def rules(self, rules: List['ConditionalGroupRoutingRule']) -> None:
         """
         Sets the rules of this ConditionalGroupRouting.
-        The set of rules that defines Conditional Group Routing for this queue
+        The set of rules to be executed for each conversation
 
         :param rules: The rules of this ConditionalGroupRouting.
         :type: list[ConditionalGroupRoutingRule]

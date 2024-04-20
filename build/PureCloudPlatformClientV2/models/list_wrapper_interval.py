@@ -61,7 +61,7 @@ class ListWrapperInterval(object):
     def values(self) -> List[str]:
         """
         Gets the values of this ListWrapperInterval.
-
+        Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
 
         :return: The values of this ListWrapperInterval.
         :rtype: list[str]
@@ -72,7 +72,7 @@ class ListWrapperInterval(object):
     def values(self, values: List[str]) -> None:
         """
         Sets the values of this ListWrapperInterval.
-
+        Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
 
         :param values: The values of this ListWrapperInterval.
         :type: list[str]

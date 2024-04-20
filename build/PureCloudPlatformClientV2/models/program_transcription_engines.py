@@ -35,7 +35,7 @@ from typing import Dict
 if TYPE_CHECKING:
     from . import AddressableEntityRef
     from . import BaseProgramEntity
-    from . import TranscriptionEngines
+    from . import ProgramTranscriptionEngine
 
 class ProgramTranscriptionEngines(object):
     """
@@ -52,23 +52,53 @@ class ProgramTranscriptionEngines(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
+            'id': 'str',
             'program': 'BaseProgramEntity',
-            'transcription_engines': 'list[TranscriptionEngines]',
+            'transcription_engines': 'list[ProgramTranscriptionEngine]',
             'modified_by': 'AddressableEntityRef',
-            'date_modified': 'datetime'
+            'date_modified': 'datetime',
+            'self_uri': 'str'
         }
 
         self.attribute_map = {
+            'id': 'id',
             'program': 'program',
             'transcription_engines': 'transcriptionEngines',
             'modified_by': 'modifiedBy',
-            'date_modified': 'dateModified'
+            'date_modified': 'dateModified',
+            'self_uri': 'selfUri'
         }
 
+        self._id = None
         self._program = None
         self._transcription_engines = None
         self._modified_by = None
         self._date_modified = None
+        self._self_uri = None
+
+    @property
+    def id(self) -> str:
+        """
+        Gets the id of this ProgramTranscriptionEngines.
+        The globally unique identifier for the object.
+
+        :return: The id of this ProgramTranscriptionEngines.
+        :rtype: str
+        """
+        return self._id
+
+    @id.setter
+    def id(self, id: str) -> None:
+        """
+        Sets the id of this ProgramTranscriptionEngines.
+        The globally unique identifier for the object.
+
+        :param id: The id of this ProgramTranscriptionEngines.
+        :type: str
+        """
+        
+
+        self._id = id
 
     @property
     def program(self) -> 'BaseProgramEntity':
@@ -95,24 +125,24 @@ class ProgramTranscriptionEngines(object):
         self._program = program
 
     @property
-    def transcription_engines(self) -> List['TranscriptionEngines']:
+    def transcription_engines(self) -> List['ProgramTranscriptionEngine']:
         """
         Gets the transcription_engines of this ProgramTranscriptionEngines.
         The program transcription engine settings
 
         :return: The transcription_engines of this ProgramTranscriptionEngines.
-        :rtype: list[TranscriptionEngines]
+        :rtype: list[ProgramTranscriptionEngine]
         """
         return self._transcription_engines
 
     @transcription_engines.setter
-    def transcription_engines(self, transcription_engines: List['TranscriptionEngines']) -> None:
+    def transcription_engines(self, transcription_engines: List['ProgramTranscriptionEngine']) -> None:
         """
         Sets the transcription_engines of this ProgramTranscriptionEngines.
         The program transcription engine settings
 
         :param transcription_engines: The transcription_engines of this ProgramTranscriptionEngines.
-        :type: list[TranscriptionEngines]
+        :type: list[ProgramTranscriptionEngine]
         """
         
 
@@ -165,6 +195,30 @@ class ProgramTranscriptionEngines(object):
         
 
         self._date_modified = date_modified
+
+    @property
+    def self_uri(self) -> str:
+        """
+        Gets the self_uri of this ProgramTranscriptionEngines.
+        The URI for this object
+
+        :return: The self_uri of this ProgramTranscriptionEngines.
+        :rtype: str
+        """
+        return self._self_uri
+
+    @self_uri.setter
+    def self_uri(self, self_uri: str) -> None:
+        """
+        Sets the self_uri of this ProgramTranscriptionEngines.
+        The URI for this object
+
+        :param self_uri: The self_uri of this ProgramTranscriptionEngines.
+        :type: str
+        """
+        
+
+        self._self_uri = self_uri
 
     def to_dict(self):
         """

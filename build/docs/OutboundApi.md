@@ -109,7 +109,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**patch_outbound_dnclist_phonenumbers**](OutboundApi.html#patch_outbound_dnclist_phonenumbers) | Add numbers to or delete numbers from a DNC list.|
 |[**patch_outbound_settings**](OutboundApi.html#patch_outbound_settings) | Update the outbound settings for this organization|
 |[**post_outbound_attemptlimits**](OutboundApi.html#post_outbound_attemptlimits) | Create attempt limits|
-|[**post_outbound_audits**](OutboundApi.html#post_outbound_audits) | Retrieves audits for dialer.|
+|[**post_outbound_audits**](OutboundApi.html#post_outbound_audits) | Retrieves audits for dialer. (Deprecated)|
 |[**post_outbound_callabletimesets**](OutboundApi.html#post_outbound_callabletimesets) | Create callable time set|
 |[**post_outbound_callanalysisresponsesets**](OutboundApi.html#post_outbound_callanalysisresponsesets) | Create a dialer call analysis response set.|
 |[**post_outbound_campaign_agentownedmappingpreview**](OutboundApi.html#post_outbound_campaign_agentownedmappingpreview) | Initiate request for a preview of how agents will be mapped to this campaign&#39;s contact list.|
@@ -5460,9 +5460,11 @@ except ApiException as e:
 
 ## [**AuditSearchResult**](AuditSearchResult.html) post_outbound_audits(body, page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order, facets_only=facets_only)
 
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
+Retrieves audits for dialer. (Deprecated)
 
-Retrieves audits for dialer.
+This endpoint is deprecated as a result of this functionality being moved to the Audit Service. Please use \"/api/v2/audits/query\" instead.
 
 Wraps POST /api/v2/outbound/audits 
 
@@ -5491,7 +5493,7 @@ sort_order = ''ascending'' # str | Sort order (optional) (default to 'ascending'
 facets_only = False # bool | Facets only (optional) (default to False)
 
 try:
-    # Retrieves audits for dialer.
+    # Retrieves audits for dialer. (Deprecated)
     api_response = api_instance.post_outbound_audits(body, page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order, facets_only=facets_only)
     pprint(api_response)
 except ApiException as e:

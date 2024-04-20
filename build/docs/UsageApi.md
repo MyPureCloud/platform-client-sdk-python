@@ -175,7 +175,7 @@ except ApiException as e:
 
 <a name="get_usage_simplesearch_execution_id_results"></a>
 
-## [**ApiUsageQueryResult**](ApiUsageQueryResult.html) get_usage_simplesearch_execution_id_results(execution_id)
+## [**ApiUsageQueryResult**](ApiUsageQueryResult.html) get_usage_simplesearch_execution_id_results(execution_id, after=after, page_size=page_size)
 
 
 
@@ -202,10 +202,12 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.UsageApi()
 execution_id = 'execution_id_example' # str | ID of the search execution
+after = 'after_example' # str | The cursor that points to the end of the set of entities that has been returned (optional)
+page_size = 56 # int | The max number of entities to be returned per request. Maximum page size of 1000 (optional)
 
 try:
     # Get the results of a usage search. Number of records to be returned is limited to 20,000 results.
-    api_response = api_instance.get_usage_simplesearch_execution_id_results(execution_id)
+    api_response = api_instance.get_usage_simplesearch_execution_id_results(execution_id, after=after, page_size=page_size)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling UsageApi->get_usage_simplesearch_execution_id_results: %s\n" % e)
@@ -217,6 +219,8 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **execution_id** | **str**| ID of the search execution |  |
+| **after** | **str**| The cursor that points to the end of the set of entities that has been returned | [optional]  |
+| **page_size** | **int**| The max number of entities to be returned per request. Maximum page size of 1000 | [optional]  |
 {: class="table table-striped"}
 
 ### Return type

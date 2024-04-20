@@ -8,7 +8,7 @@ title: CallbackDisconnectIdentifier
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
 | **conversation_id** | **str** | The Conversation Id. | |
-| **callback_id** | **str** | The callback id. | [optional] |
+| **callback_id** | **str** | The callback id. | |
 {: class="table table-striped"}
 
 

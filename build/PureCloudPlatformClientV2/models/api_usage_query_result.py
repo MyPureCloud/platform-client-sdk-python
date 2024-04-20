@@ -34,6 +34,7 @@ from typing import Dict
 
 if TYPE_CHECKING:
     from . import ApiUsageRow
+    from . import Cursors
 
 class ApiUsageQueryResult(object):
     """
@@ -51,16 +52,19 @@ class ApiUsageQueryResult(object):
         """
         self.swagger_types = {
             'results': 'list[ApiUsageRow]',
-            'query_status': 'str'
+            'query_status': 'str',
+            'cursors': 'Cursors'
         }
 
         self.attribute_map = {
             'results': 'results',
-            'query_status': 'queryStatus'
+            'query_status': 'queryStatus',
+            'cursors': 'cursors'
         }
 
         self._results = None
         self._query_status = None
+        self._cursors = None
 
     @property
     def results(self) -> List['ApiUsageRow']:
@@ -114,6 +118,30 @@ class ApiUsageQueryResult(object):
             self._query_status = "outdated_sdk_version"
         else:
             self._query_status = query_status
+
+    @property
+    def cursors(self) -> 'Cursors':
+        """
+        Gets the cursors of this ApiUsageQueryResult.
+        Cursor tokens to be used for navigating paginated results
+
+        :return: The cursors of this ApiUsageQueryResult.
+        :rtype: Cursors
+        """
+        return self._cursors
+
+    @cursors.setter
+    def cursors(self, cursors: 'Cursors') -> None:
+        """
+        Sets the cursors of this ApiUsageQueryResult.
+        Cursor tokens to be used for navigating paginated results
+
+        :param cursors: The cursors of this ApiUsageQueryResult.
+        :type: Cursors
+        """
+        
+
+        self._cursors = cursors
 
     def to_dict(self):
         """

@@ -112,6 +112,7 @@ from .agent_query_adherence_explanations_request import AgentQueryAdherenceExpla
 from .agent_query_adherence_explanations_response import AgentQueryAdherenceExplanationsResponse
 from .agent_queue_time_request import AgentQueueTimeRequest
 from .agent_time_off_request_patch import AgentTimeOffRequestPatch
+from .agent_video_settings import AgentVideoSettings
 from .agentless_email_send_request_dto import AgentlessEmailSendRequestDto
 from .agentless_email_send_response_dto import AgentlessEmailSendResponseDto
 from .agents_integrations_listing import AgentsIntegrationsListing
@@ -280,7 +281,6 @@ from .authz_subject import AuthzSubject
 from .auto_start import AutoStart
 from .auto_status_transition_detail import AutoStatusTransitionDetail
 from .automatic_time_zone_mapping_settings import AutomaticTimeZoneMappingSettings
-from .available_language_list import AvailableLanguageList
 from .available_media_type import AvailableMediaType
 from .available_media_type_entity_listing import AvailableMediaTypeEntityListing
 from .available_time import AvailableTime
@@ -290,6 +290,7 @@ from .available_time_off_response import AvailableTimeOffResponse
 from .available_topic import AvailableTopic
 from .available_topic_entity_listing import AvailableTopicEntityListing
 from .available_translations import AvailableTranslations
+from .background_image_settings import BackgroundImageSettings
 from .base_media_settings import BaseMediaSettings
 from .base_program_entity import BaseProgramEntity
 from .base_topic_entitiy import BaseTopicEntitiy
@@ -512,6 +513,7 @@ from .campaign_division_view_listing import CampaignDivisionViewListing
 from .campaign_entity_listing import CampaignEntityListing
 from .campaign_interaction import CampaignInteraction
 from .campaign_interactions import CampaignInteractions
+from .campaign_lines_utilization import CampaignLinesUtilization
 from .campaign_progress import CampaignProgress
 from .campaign_rule import CampaignRule
 from .campaign_rule_action import CampaignRuleAction
@@ -621,6 +623,7 @@ from .compliance import Compliance
 from .compliance_response import ComplianceResponse
 from .condition import Condition
 from .conditional_group_routing import ConditionalGroupRouting
+from .conditional_group_routing_condition import ConditionalGroupRoutingCondition
 from .conditional_group_routing_rule import ConditionalGroupRoutingRule
 from .configuration_overrides import ConfigurationOverrides
 from .confusion_details import ConfusionDetails
@@ -974,6 +977,7 @@ from .conversation_video_event_topic_uri_reference import ConversationVideoEvent
 from .conversation_video_event_topic_video_conversation import ConversationVideoEventTopicVideoConversation
 from .conversation_video_event_topic_video_media_participant import ConversationVideoEventTopicVideoMediaParticipant
 from .conversation_video_event_topic_wrapup import ConversationVideoEventTopicWrapup
+from .copilot_scoring import CopilotScoring
 from .copy_attachments_request import CopyAttachmentsRequest
 from .copy_bu_forecast_request import CopyBuForecastRequest
 from .copy_voicemail_message import CopyVoicemailMessage
@@ -1445,6 +1449,7 @@ from .encryption_key_entity_listing import EncryptionKeyEntityListing
 from .end_consult_transfer_event import EndConsultTransferEvent
 from .end_transfer_event import EndTransferEvent
 from .endpoint import Endpoint
+from .engine_integration import EngineIntegration
 from .entity import Entity
 from .entity_change import EntityChange
 from .entity_listing import EntityListing
@@ -1554,6 +1559,7 @@ from .external_contacts_contact_changed_topic_object import ExternalContactsCont
 from .external_contacts_contact_changed_topic_phone_number import ExternalContactsContactChangedTopicPhoneNumber
 from .external_contacts_contact_changed_topic_twitter_id import ExternalContactsContactChangedTopicTwitterId
 from .external_contacts_contact_changed_topic_whats_app_id import ExternalContactsContactChangedTopicWhatsAppId
+from .external_contacts_entity import ExternalContactsEntity
 from .external_contacts_unresolved_contact_changed_topic_contact import ExternalContactsUnresolvedContactChangedTopicContact
 from .external_contacts_unresolved_contact_changed_topic_contact_address import ExternalContactsUnresolvedContactChangedTopicContactAddress
 from .external_contacts_unresolved_contact_changed_topic_data_schema import ExternalContactsUnresolvedContactChangedTopicDataSchema
@@ -1571,6 +1577,7 @@ from .external_contacts_unresolved_contact_changed_topic_twitter_id import Exter
 from .external_contacts_unresolved_contact_changed_topic_whats_app_id import ExternalContactsUnresolvedContactChangedTopicWhatsAppId
 from .external_data_source import ExternalDataSource
 from .external_established_event import ExternalEstablishedEvent
+from .external_id import ExternalId
 from .external_metric_data_item import ExternalMetricDataItem
 from .external_metric_data_processed_item import ExternalMetricDataProcessedItem
 from .external_metric_data_unprocessed_item import ExternalMetricDataUnprocessedItem
@@ -1584,6 +1591,7 @@ from .external_organization import ExternalOrganization
 from .external_organization_listing import ExternalOrganizationListing
 from .external_organization_trustor_link import ExternalOrganizationTrustorLink
 from .external_segment import ExternalSegment
+from .external_source import ExternalSource
 from .facebook_app_credentials import FacebookAppCredentials
 from .facebook_id import FacebookId
 from .facebook_integration import FacebookIntegration
@@ -1601,6 +1609,7 @@ from .facet_statistics import FacetStatistics
 from .facet_term import FacetTerm
 from .failed_object import FailedObject
 from .failed_recording_entity_listing import FailedRecordingEntityListing
+from .fax_config import FaxConfig
 from .fax_document import FaxDocument
 from .fax_document_entity_listing import FaxDocumentEntityListing
 from .fax_send_request import FaxSendRequest
@@ -1777,6 +1786,7 @@ from .greeting_listing import GreetingListing
 from .greeting_media_info import GreetingMediaInfo
 from .greeting_owner import GreetingOwner
 from .group import Group
+from .group_by_attribute import GroupByAttribute
 from .group_contact import GroupContact
 from .group_create import GroupCreate
 from .group_entity_listing import GroupEntityListing
@@ -1991,6 +2001,9 @@ from .journey_view import JourneyView
 from .journey_view_chart import JourneyViewChart
 from .journey_view_chart_group_by_attribute import JourneyViewChartGroupByAttribute
 from .journey_view_chart_metric import JourneyViewChartMetric
+from .journey_view_chart_metric_result import JourneyViewChartMetricResult
+from .journey_view_chart_metric_result_value import JourneyViewChartMetricResultValue
+from .journey_view_chart_result import JourneyViewChartResult
 from .journey_view_element import JourneyViewElement
 from .journey_view_element_attributes import JourneyViewElementAttributes
 from .journey_view_element_filter import JourneyViewElementFilter
@@ -2271,6 +2284,7 @@ from .line_integration_entity_listing import LineIntegrationEntityListing
 from .line_integration_request import LineIntegrationRequest
 from .line_status import LineStatus
 from .line_user_id import LineUserId
+from .link_configuration import LinkConfiguration
 from .list_item_component import ListItemComponent
 from .list_wrapper_interval import ListWrapperInterval
 from .list_wrapper_secondary_presence import ListWrapperSecondaryPresence
@@ -2473,6 +2487,7 @@ from .nlu_feedback_listing import NluFeedbackListing
 from .nlu_feedback_request import NluFeedbackRequest
 from .nlu_feedback_response import NluFeedbackResponse
 from .nlu_info import NluInfo
+from .nlu_organization import NluOrganization
 from .nlu_quality_report_summary import NluQualityReportSummary
 from .nlu_quality_report_summary_metric import NluQualityReportSummaryMetric
 from .nlu_utterance import NluUtterance
@@ -2515,6 +2530,7 @@ from .observation_metric_data import ObservationMetricData
 from .observation_value import ObservationValue
 from .okta import Okta
 from .one_login import OneLogin
+from .one_on_one import OneOnOne
 from .open_action_fields import OpenActionFields
 from .open_action_properties import OpenActionProperties
 from .open_content_attachment import OpenContentAttachment
@@ -2761,6 +2777,7 @@ from .program_job_request import ProgramJobRequest
 from .program_mappings import ProgramMappings
 from .program_mappings_request import ProgramMappingsRequest
 from .program_request import ProgramRequest
+from .program_transcription_engine import ProgramTranscriptionEngine
 from .program_transcription_engines import ProgramTranscriptionEngines
 from .programs_entity_listing import ProgramsEntityListing
 from .programs_mappings_entity_listing import ProgramsMappingsEntityListing
@@ -3481,7 +3498,10 @@ from .supported_content import SupportedContent
 from .supported_content_listing import SupportedContentListing
 from .supported_content_reference import SupportedContentReference
 from .supported_dialects_entity_listing import SupportedDialectsEntityListing
+from .supported_dialects_transcription_engine import SupportedDialectsTranscriptionEngine
+from .supported_entity_type_status import SupportedEntityTypeStatus
 from .supported_language import SupportedLanguage
+from .supported_languages_info_definition import SupportedLanguagesInfoDefinition
 from .survey import Survey
 from .survey_aggregate_data_container import SurveyAggregateDataContainer
 from .survey_aggregate_query_clause import SurveyAggregateQueryClause
@@ -3645,7 +3665,6 @@ from .transcript_topic import TranscriptTopic
 from .transcript_topics import TranscriptTopics
 from .transcript_url import TranscriptUrl
 from .transcript_urls import TranscriptUrls
-from .transcription_engines import TranscriptionEngines
 from .transcription_engines_request import TranscriptionEnginesRequest
 from .transcription_settings import TranscriptionSettings
 from .transcription_topic_transcript_alternative import TranscriptionTopicTranscriptAlternative
@@ -3892,6 +3911,7 @@ from .user_tokens_topic_token_notification import UserTokensTopicTokenNotificati
 from .user_tokens_topic_uri_reference import UserTokensTopicUriReference
 from .user_transfer_event import UserTransferEvent
 from .user_trend_data import UserTrendData
+from .user_video_settings import UserVideoSettings
 from .users_search_response import UsersSearchResponse
 from .utilization_label import UtilizationLabel
 from .utilization_label_entity_listing import UtilizationLabelEntityListing
@@ -3992,6 +4012,7 @@ from .video import Video
 from .video_conference_details import VideoConferenceDetails
 from .video_conference_update_topic_participant_info import VideoConferenceUpdateTopicParticipantInfo
 from .video_conference_update_topic_video_conference import VideoConferenceUpdateTopicVideoConference
+from .video_settings import VideoSettings
 from .view_filter import ViewFilter
 from .visibility_condition import VisibilityCondition
 from .vm_pairing_info import VmPairingInfo
@@ -4300,7 +4321,13 @@ from .workitem_create import WorkitemCreate
 from .workitem_delta import WorkitemDelta
 from .workitem_filter import WorkitemFilter
 from .workitem_manual_assign import WorkitemManualAssign
+from .workitem_paged_entity_listing import WorkitemPagedEntityListing
 from .workitem_post_query_entity_listing import WorkitemPostQueryEntityListing
+from .workitem_query_job_create import WorkitemQueryJobCreate
+from .workitem_query_job_error import WorkitemQueryJobError
+from .workitem_query_job_filter import WorkitemQueryJobFilter
+from .workitem_query_job_response import WorkitemQueryJobResponse
+from .workitem_query_job_sort import WorkitemQueryJobSort
 from .workitem_query_post_request import WorkitemQueryPostRequest
 from .workitem_query_sort import WorkitemQuerySort
 from .workitem_queue_reference import WorkitemQueueReference

@@ -1,13 +1,14 @@
 ---
-title: AvailableLanguageList
+title: ExternalId
 ---
-## AvailableLanguageList
+## ExternalId
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **languages** | **list[str]** |  | [optional] |
+| **external_source** | [**ExternalSource**](ExternalSource.html) |  | [optional] |
+| **value** | **str** |  | [optional] |
 {: class="table table-striped"}
 
 

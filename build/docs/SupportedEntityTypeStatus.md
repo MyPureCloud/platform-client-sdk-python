@@ -1,14 +1,13 @@
 ---
-title: TranscriptionEngines
+title: SupportedEntityTypeStatus
 ---
-## TranscriptionEngines
+## SupportedEntityTypeStatus
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **engine** | **str** |  | [optional] |
-| **dialects** | **list[str]** |  | [optional] |
+| **list_slot_type** | **str** | The configuration status of restricted lists | [optional] |
 {: class="table table-striped"}
 
 

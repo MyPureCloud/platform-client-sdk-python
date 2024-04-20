@@ -1685,12 +1685,13 @@ class AuthorizationApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str subject_id: Subject ID (user or group) (required)
+        :param bool include_duplicates: Include multiple entries with the same role and division but different subjects
         :return: AuthzSubject
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['subject_id']
+        all_params = ['subject_id', 'include_duplicates']
         all_params.append('callback')
 
         params = locals()
@@ -1714,6 +1715,8 @@ class AuthorizationApi(object):
             path_params['subjectId'] = params['subject_id']
 
         query_params = {}
+        if 'include_duplicates' in params:
+            query_params['includeDuplicates'] = params['include_duplicates']
 
         header_params = {}
 
@@ -1762,12 +1765,13 @@ class AuthorizationApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
+        :param bool include_duplicates: Include multiple entries with the same role and division but different subjects
         :return: AuthzSubject
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = []
+        all_params = ['include_duplicates']
         all_params.append('callback')
 
         params = locals()
@@ -1786,6 +1790,8 @@ class AuthorizationApi(object):
         path_params = {}
 
         query_params = {}
+        if 'include_duplicates' in params:
+            query_params['includeDuplicates'] = params['include_duplicates']
 
         header_params = {}
 

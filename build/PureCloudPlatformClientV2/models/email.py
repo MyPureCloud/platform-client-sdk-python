@@ -80,8 +80,7 @@ class Email(object):
             'wrapup': 'Wrapup',
             'after_call_work': 'AfterCallWork',
             'after_call_work_required': 'bool',
-            'queue_media_settings': 'ConversationQueueMediaSettings',
-            'resume_timestamp': 'int'
+            'queue_media_settings': 'ConversationQueueMediaSettings'
         }
 
         self.attribute_map = {
@@ -110,8 +109,7 @@ class Email(object):
             'wrapup': 'wrapup',
             'after_call_work': 'afterCallWork',
             'after_call_work_required': 'afterCallWorkRequired',
-            'queue_media_settings': 'queueMediaSettings',
-            'resume_timestamp': 'resumeTimestamp'
+            'queue_media_settings': 'queueMediaSettings'
         }
 
         self._state = None
@@ -140,7 +138,6 @@ class Email(object):
         self._after_call_work = None
         self._after_call_work_required = None
         self._queue_media_settings = None
-        self._resume_timestamp = None
 
     @property
     def state(self) -> str:
@@ -785,30 +782,6 @@ class Email(object):
         
 
         self._queue_media_settings = queue_media_settings
-
-    @property
-    def resume_timestamp(self) -> int:
-        """
-        Gets the resume_timestamp of this Email.
-        Represents the timestamp when a parked conversation will resume.
-
-        :return: The resume_timestamp of this Email.
-        :rtype: int
-        """
-        return self._resume_timestamp
-
-    @resume_timestamp.setter
-    def resume_timestamp(self, resume_timestamp: int) -> None:
-        """
-        Sets the resume_timestamp of this Email.
-        Represents the timestamp when a parked conversation will resume.
-
-        :param resume_timestamp: The resume_timestamp of this Email.
-        :type: int
-        """
-        
-
-        self._resume_timestamp = resume_timestamp
 
     def to_dict(self):
         """
