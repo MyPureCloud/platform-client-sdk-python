@@ -1042,6 +1042,7 @@ PureCloudPlatformClientV2/models/conversation_threading_window.py
 PureCloudPlatformClientV2/models/conversation_threading_window_setting.py
 PureCloudPlatformClientV2/models/conversation_user.py
 PureCloudPlatformClientV2/models/conversation_user_disposition.py
+PureCloudPlatformClientV2/models/conversation_utilization_label_update.py
 PureCloudPlatformClientV2/models/conversation_video_event_topic_conversation_routing_data.py
 PureCloudPlatformClientV2/models/conversation_video_event_topic_detail.py
 PureCloudPlatformClientV2/models/conversation_video_event_topic_error_body.py
@@ -1493,6 +1494,7 @@ PureCloudPlatformClientV2/models/email_config.py
 PureCloudPlatformClientV2/models/email_conversation.py
 PureCloudPlatformClientV2/models/email_conversation_entity_listing.py
 PureCloudPlatformClientV2/models/email_end_transfer_event.py
+PureCloudPlatformClientV2/models/email_error_info.py
 PureCloudPlatformClientV2/models/email_external_established_event.py
 PureCloudPlatformClientV2/models/email_flow_established_event.py
 PureCloudPlatformClientV2/models/email_hold_updated_event.py
@@ -1918,6 +1920,7 @@ PureCloudPlatformClientV2/models/identity_provider_entity_listing.py
 PureCloudPlatformClientV2/models/idle_event_trigger.py
 PureCloudPlatformClientV2/models/idle_token_timeout.py
 PureCloudPlatformClientV2/models/ignored_activity_categories.py
+PureCloudPlatformClientV2/models/imap_settings.py
 PureCloudPlatformClientV2/models/import_error.py
 PureCloudPlatformClientV2/models/import_forecast_response.py
 PureCloudPlatformClientV2/models/import_forecast_upload_response.py
@@ -5470,6 +5473,7 @@ docs/ConversationThreadingWindow.md
 docs/ConversationThreadingWindowSetting.md
 docs/ConversationUser.md
 docs/ConversationUserDisposition.md
+docs/ConversationUtilizationLabelUpdate.md
 docs/ConversationVideoEventTopicConversationRoutingData.md
 docs/ConversationVideoEventTopicDetail.md
 docs/ConversationVideoEventTopicErrorBody.md
@@ -5927,6 +5931,7 @@ docs/EmailConfig.md
 docs/EmailConversation.md
 docs/EmailConversationEntityListing.md
 docs/EmailEndTransferEvent.md
+docs/EmailErrorInfo.md
 docs/EmailExternalEstablishedEvent.md
 docs/EmailFlowEstablishedEvent.md
 docs/EmailHoldUpdatedEvent.md
@@ -6378,6 +6383,7 @@ docs/IdentityProviderEntityListing.md
 docs/IdleEventTrigger.md
 docs/IdleTokenTimeout.md
 docs/IgnoredActivityCategories.md
+docs/ImapSettings.md
 docs/ImportError.md
 docs/ImportForecastResponse.md
 docs/ImportForecastUploadResponse.md
@@ -10510,6 +10516,7 @@ docs/patch_coaching_notification-example.txt
 docs/patch_conversation_participant-example.txt
 docs/patch_conversation_participant_attributes-example.txt
 docs/patch_conversation_secureattributes-example.txt
+docs/patch_conversation_utilizationlabel-example.txt
 docs/patch_conversations_aftercallwork_conversation_id_participant_communication-example.txt
 docs/patch_conversations_call-example.txt
 docs/patch_conversations_call_participant-example.txt

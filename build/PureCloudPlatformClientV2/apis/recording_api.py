@@ -2787,7 +2787,6 @@ class RecordingApi(object):
         """
         Retrieves an object containing the total number of concurrent active screen recordings
         
-	    get_recordings_screensessions_details is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

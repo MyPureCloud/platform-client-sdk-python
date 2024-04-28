@@ -54,7 +54,8 @@ class ConversationMessageEventTopicMessageConversation(object):
             'name': 'str',
             'participants': 'list[ConversationMessageEventTopicMessageMediaParticipant]',
             'other_media_uris': 'list[str]',
-            'address': 'str'
+            'address': 'str',
+            'utilization_label_id': 'str'
         }
 
         self.attribute_map = {
@@ -62,7 +63,8 @@ class ConversationMessageEventTopicMessageConversation(object):
             'name': 'name',
             'participants': 'participants',
             'other_media_uris': 'otherMediaUris',
-            'address': 'address'
+            'address': 'address',
+            'utilization_label_id': 'utilizationLabelId'
         }
 
         self._id = None
@@ -70,6 +72,7 @@ class ConversationMessageEventTopicMessageConversation(object):
         self._participants = None
         self._other_media_uris = None
         self._address = None
+        self._utilization_label_id = None
 
     @property
     def id(self) -> str:
@@ -190,6 +193,30 @@ class ConversationMessageEventTopicMessageConversation(object):
         
 
         self._address = address
+
+    @property
+    def utilization_label_id(self) -> str:
+        """
+        Gets the utilization_label_id of this ConversationMessageEventTopicMessageConversation.
+
+
+        :return: The utilization_label_id of this ConversationMessageEventTopicMessageConversation.
+        :rtype: str
+        """
+        return self._utilization_label_id
+
+    @utilization_label_id.setter
+    def utilization_label_id(self, utilization_label_id: str) -> None:
+        """
+        Sets the utilization_label_id of this ConversationMessageEventTopicMessageConversation.
+
+
+        :param utilization_label_id: The utilization_label_id of this ConversationMessageEventTopicMessageConversation.
+        :type: str
+        """
+        
+
+        self._utilization_label_id = utilization_label_id
 
     def to_dict(self):
         """

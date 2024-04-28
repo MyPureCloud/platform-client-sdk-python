@@ -49,15 +49,18 @@ class KnowledgeBaseReference(object):
         """
         self.swagger_types = {
             'id': 'str',
+            'language_code': 'str',
             'self_uri': 'str'
         }
 
         self.attribute_map = {
             'id': 'id',
+            'language_code': 'languageCode',
             'self_uri': 'selfUri'
         }
 
         self._id = None
+        self._language_code = None
         self._self_uri = None
 
     @property
@@ -83,6 +86,35 @@ class KnowledgeBaseReference(object):
         
 
         self._id = id
+
+    @property
+    def language_code(self) -> str:
+        """
+        Gets the language_code of this KnowledgeBaseReference.
+        Language of the knowledge base
+
+        :return: The language_code of this KnowledgeBaseReference.
+        :rtype: str
+        """
+        return self._language_code
+
+    @language_code.setter
+    def language_code(self, language_code: str) -> None:
+        """
+        Sets the language_code of this KnowledgeBaseReference.
+        Language of the knowledge base
+
+        :param language_code: The language_code of this KnowledgeBaseReference.
+        :type: str
+        """
+        if isinstance(language_code, int):
+            language_code = str(language_code)
+        allowed_values = ["en-US", "en-UK", "en-AU", "en-CA", "en-HK", "en-IN", "en-IE", "en-NZ", "en-PH", "en-SG", "en-ZA", "de-DE", "de-AT", "de-CH", "es-AR", "es-CO", "es-MX", "es-US", "es-ES", "fr-FR", "fr-BE", "fr-CA", "fr-CH", "pt-BR", "pt-PT", "nl-NL", "nl-BE", "it-IT", "ca-ES", "tr-TR", "sv-SE", "fi-FI", "nb-NO", "da-DK", "ja-JP", "ar-AE"]
+        if language_code.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for language_code -> " + language_code)
+            self._language_code = "outdated_sdk_version"
+        else:
+            self._language_code = language_code
 
     @property
     def self_uri(self) -> str:

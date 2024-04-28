@@ -963,6 +963,7 @@ from .models.conversation_threading_window import ConversationThreadingWindow
 from .models.conversation_threading_window_setting import ConversationThreadingWindowSetting
 from .models.conversation_user import ConversationUser
 from .models.conversation_user_disposition import ConversationUserDisposition
+from .models.conversation_utilization_label_update import ConversationUtilizationLabelUpdate
 from .models.conversation_video_event_topic_conversation_routing_data import ConversationVideoEventTopicConversationRoutingData
 from .models.conversation_video_event_topic_detail import ConversationVideoEventTopicDetail
 from .models.conversation_video_event_topic_error_body import ConversationVideoEventTopicErrorBody
@@ -1414,6 +1415,7 @@ from .models.email_config import EmailConfig
 from .models.email_conversation import EmailConversation
 from .models.email_conversation_entity_listing import EmailConversationEntityListing
 from .models.email_end_transfer_event import EmailEndTransferEvent
+from .models.email_error_info import EmailErrorInfo
 from .models.email_external_established_event import EmailExternalEstablishedEvent
 from .models.email_flow_established_event import EmailFlowEstablishedEvent
 from .models.email_hold_updated_event import EmailHoldUpdatedEvent
@@ -1843,6 +1845,7 @@ from .models.identity_provider_entity_listing import IdentityProviderEntityListi
 from .models.idle_event_trigger import IdleEventTrigger
 from .models.idle_token_timeout import IdleTokenTimeout
 from .models.ignored_activity_categories import IgnoredActivityCategories
+from .models.imap_settings import ImapSettings
 from .models.import_error import ImportError
 from .models.import_forecast_response import ImportForecastResponse
 from .models.import_forecast_upload_response import ImportForecastUploadResponse

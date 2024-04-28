@@ -963,6 +963,7 @@ from .conversation_threading_window import ConversationThreadingWindow
 from .conversation_threading_window_setting import ConversationThreadingWindowSetting
 from .conversation_user import ConversationUser
 from .conversation_user_disposition import ConversationUserDisposition
+from .conversation_utilization_label_update import ConversationUtilizationLabelUpdate
 from .conversation_video_event_topic_conversation_routing_data import ConversationVideoEventTopicConversationRoutingData
 from .conversation_video_event_topic_detail import ConversationVideoEventTopicDetail
 from .conversation_video_event_topic_error_body import ConversationVideoEventTopicErrorBody
@@ -1414,6 +1415,7 @@ from .email_config import EmailConfig
 from .email_conversation import EmailConversation
 from .email_conversation_entity_listing import EmailConversationEntityListing
 from .email_end_transfer_event import EmailEndTransferEvent
+from .email_error_info import EmailErrorInfo
 from .email_external_established_event import EmailExternalEstablishedEvent
 from .email_flow_established_event import EmailFlowEstablishedEvent
 from .email_hold_updated_event import EmailHoldUpdatedEvent
@@ -1843,6 +1845,7 @@ from .identity_provider_entity_listing import IdentityProviderEntityListing
 from .idle_event_trigger import IdleEventTrigger
 from .idle_token_timeout import IdleTokenTimeout
 from .ignored_activity_categories import IgnoredActivityCategories
+from .imap_settings import ImapSettings
 from .import_error import ImportError
 from .import_forecast_response import ImportForecastResponse
 from .import_forecast_upload_response import ImportForecastUploadResponse

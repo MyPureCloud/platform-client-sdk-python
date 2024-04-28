@@ -10100,6 +10100,25 @@
     "return": "str",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.ConversationsApi();\nconversation_id = 'conversation_id_example' # str | conversation ID\nbody = PureCloudPlatformClientV2.ConversationSecureAttributes() # ConversationSecureAttributes | Conversation Secure Attributes\n\ntry:\n    # Update the secure attributes on a conversation.\n    api_response = api_instance.patch_conversation_secureattributes(conversation_id, body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling ConversationsApi->patch_conversation_secureattributes: %s\\n\" % e)"
   },
+  "patch_conversation_utilizationlabel": {
+    "operationId": "patch_conversation_utilizationlabel",
+    "functionName": "patch_conversation_utilizationlabel",
+    "signature": "patch_conversation_utilizationlabel(conversation_id, body)",
+    "parameters": [
+      {
+        "name": "conversation_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "ConversationUtilizationLabelUpdate",
+        "required": "true"
+      }
+    ],
+    "return": "str",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.ConversationsApi();\nconversation_id = 'conversation_id_example' # str | conversation ID\nbody = PureCloudPlatformClientV2.ConversationUtilizationLabelUpdate() # ConversationUtilizationLabelUpdate | Conversation Utilization Label\n\ntry:\n    # Update the utilization label on a conversation. When there is no value provided, the system default label is applied\n    api_response = api_instance.patch_conversation_utilizationlabel(conversation_id, body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling ConversationsApi->patch_conversation_utilizationlabel: %s\\n\" % e)"
+  },
   "patch_conversations_aftercallwork_conversation_id_participant_communication": {
     "operationId": "patch_conversations_aftercallwork_conversation_id_participant_communication",
     "functionName": "patch_conversations_aftercallwork_conversation_id_participant_communication",

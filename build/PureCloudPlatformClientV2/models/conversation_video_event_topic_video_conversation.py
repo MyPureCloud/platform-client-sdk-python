@@ -54,7 +54,8 @@ class ConversationVideoEventTopicVideoConversation(object):
             'name': 'str',
             'participants': 'list[ConversationVideoEventTopicVideoMediaParticipant]',
             'other_media_uris': 'list[str]',
-            'address': 'str'
+            'address': 'str',
+            'utilization_label_id': 'str'
         }
 
         self.attribute_map = {
@@ -62,7 +63,8 @@ class ConversationVideoEventTopicVideoConversation(object):
             'name': 'name',
             'participants': 'participants',
             'other_media_uris': 'otherMediaUris',
-            'address': 'address'
+            'address': 'address',
+            'utilization_label_id': 'utilizationLabelId'
         }
 
         self._id = None
@@ -70,6 +72,7 @@ class ConversationVideoEventTopicVideoConversation(object):
         self._participants = None
         self._other_media_uris = None
         self._address = None
+        self._utilization_label_id = None
 
     @property
     def id(self) -> str:
@@ -190,6 +193,30 @@ class ConversationVideoEventTopicVideoConversation(object):
         
 
         self._address = address
+
+    @property
+    def utilization_label_id(self) -> str:
+        """
+        Gets the utilization_label_id of this ConversationVideoEventTopicVideoConversation.
+
+
+        :return: The utilization_label_id of this ConversationVideoEventTopicVideoConversation.
+        :rtype: str
+        """
+        return self._utilization_label_id
+
+    @utilization_label_id.setter
+    def utilization_label_id(self, utilization_label_id: str) -> None:
+        """
+        Sets the utilization_label_id of this ConversationVideoEventTopicVideoConversation.
+
+
+        :param utilization_label_id: The utilization_label_id of this ConversationVideoEventTopicVideoConversation.
+        :type: str
+        """
+        
+
+        self._utilization_label_id = utilization_label_id
 
     def to_dict(self):
         """

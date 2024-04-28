@@ -7,7 +7,7 @@ title: OutboundMessagingCampaignPostContactSmsEventTopicOutboundMessagingCampaig
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **event_time** | **datetime** |  | [optional] |
+| **event_time** | **int** |  | [optional] |
 | **conversation_id** | **str** |  | [optional] |
 | **outbound_campaign_type** | **str** |  | [optional] |
 | **sms_attributes** | [**OutboundMessagingCampaignPostContactSmsEventTopicSMSAttributes**](OutboundMessagingCampaignPostContactSmsEventTopicSMSAttributes.html) |  | [optional] |

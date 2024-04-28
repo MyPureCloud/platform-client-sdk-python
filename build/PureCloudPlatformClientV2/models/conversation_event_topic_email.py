@@ -76,7 +76,8 @@ class ConversationEventTopicEmail(object):
             'wrapup': 'ConversationEventTopicWrapup',
             'after_call_work': 'ConversationEventTopicAfterCallWork',
             'after_call_work_required': 'bool',
-            'queue_media_settings': 'ConversationEventTopicQueueMediaSettings'
+            'queue_media_settings': 'ConversationEventTopicQueueMediaSettings',
+            'resume_time': 'datetime'
         }
 
         self.attribute_map = {
@@ -102,7 +103,8 @@ class ConversationEventTopicEmail(object):
             'wrapup': 'wrapup',
             'after_call_work': 'afterCallWork',
             'after_call_work_required': 'afterCallWorkRequired',
-            'queue_media_settings': 'queueMediaSettings'
+            'queue_media_settings': 'queueMediaSettings',
+            'resume_time': 'resumeTime'
         }
 
         self._id = None
@@ -128,6 +130,7 @@ class ConversationEventTopicEmail(object):
         self._after_call_work = None
         self._after_call_work_required = None
         self._queue_media_settings = None
+        self._resume_time = None
 
     @property
     def id(self) -> str:
@@ -700,6 +703,30 @@ class ConversationEventTopicEmail(object):
         
 
         self._queue_media_settings = queue_media_settings
+
+    @property
+    def resume_time(self) -> datetime:
+        """
+        Gets the resume_time of this ConversationEventTopicEmail.
+        The time when a parked email should resume.
+
+        :return: The resume_time of this ConversationEventTopicEmail.
+        :rtype: datetime
+        """
+        return self._resume_time
+
+    @resume_time.setter
+    def resume_time(self, resume_time: datetime) -> None:
+        """
+        Sets the resume_time of this ConversationEventTopicEmail.
+        The time when a parked email should resume.
+
+        :param resume_time: The resume_time of this ConversationEventTopicEmail.
+        :type: datetime
+        """
+        
+
+        self._resume_time = resume_time
 
     def to_dict(self):
         """

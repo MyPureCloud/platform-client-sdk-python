@@ -56,6 +56,7 @@ class CallConversation(object):
             'participants': 'list[CallMediaParticipant]',
             'other_media_uris': 'list[str]',
             'recent_transfers': 'list[TransferResponse]',
+            'utilization_label_id': 'str',
             'recording_state': 'str',
             'max_participants': 'int',
             'secure_pause': 'bool',
@@ -68,6 +69,7 @@ class CallConversation(object):
             'participants': 'participants',
             'other_media_uris': 'otherMediaUris',
             'recent_transfers': 'recentTransfers',
+            'utilization_label_id': 'utilizationLabelId',
             'recording_state': 'recordingState',
             'max_participants': 'maxParticipants',
             'secure_pause': 'securePause',
@@ -79,6 +81,7 @@ class CallConversation(object):
         self._participants = None
         self._other_media_uris = None
         self._recent_transfers = None
+        self._utilization_label_id = None
         self._recording_state = None
         self._max_participants = None
         self._secure_pause = None
@@ -203,6 +206,30 @@ class CallConversation(object):
         
 
         self._recent_transfers = recent_transfers
+
+    @property
+    def utilization_label_id(self) -> str:
+        """
+        Gets the utilization_label_id of this CallConversation.
+        An optional label that categorizes the conversation.  Max-utilization settings can be configured at a per-label level
+
+        :return: The utilization_label_id of this CallConversation.
+        :rtype: str
+        """
+        return self._utilization_label_id
+
+    @utilization_label_id.setter
+    def utilization_label_id(self, utilization_label_id: str) -> None:
+        """
+        Sets the utilization_label_id of this CallConversation.
+        An optional label that categorizes the conversation.  Max-utilization settings can be configured at a per-label level
+
+        :param utilization_label_id: The utilization_label_id of this CallConversation.
+        :type: str
+        """
+        
+
+        self._utilization_label_id = utilization_label_id
 
     @property
     def recording_state(self) -> str:

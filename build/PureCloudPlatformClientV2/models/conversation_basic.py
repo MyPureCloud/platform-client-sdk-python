@@ -58,6 +58,7 @@ class ConversationBasic(object):
             'end_time': 'datetime',
             'divisions': 'list[ConversationDivisionMembership]',
             'secure_pause': 'bool',
+            'utilization_label_id': 'str',
             'self_uri': 'str',
             'participants': 'list[ParticipantBasic]'
         }
@@ -70,6 +71,7 @@ class ConversationBasic(object):
             'end_time': 'endTime',
             'divisions': 'divisions',
             'secure_pause': 'securePause',
+            'utilization_label_id': 'utilizationLabelId',
             'self_uri': 'selfUri',
             'participants': 'participants'
         }
@@ -81,6 +83,7 @@ class ConversationBasic(object):
         self._end_time = None
         self._divisions = None
         self._secure_pause = None
+        self._utilization_label_id = None
         self._self_uri = None
         self._participants = None
 
@@ -251,6 +254,30 @@ class ConversationBasic(object):
         
 
         self._secure_pause = secure_pause
+
+    @property
+    def utilization_label_id(self) -> str:
+        """
+        Gets the utilization_label_id of this ConversationBasic.
+        An optional label that categorizes the conversation.  Max-utilization settings can be configured at a per-label level
+
+        :return: The utilization_label_id of this ConversationBasic.
+        :rtype: str
+        """
+        return self._utilization_label_id
+
+    @utilization_label_id.setter
+    def utilization_label_id(self, utilization_label_id: str) -> None:
+        """
+        Sets the utilization_label_id of this ConversationBasic.
+        An optional label that categorizes the conversation.  Max-utilization settings can be configured at a per-label level
+
+        :param utilization_label_id: The utilization_label_id of this ConversationBasic.
+        :type: str
+        """
+        
+
+        self._utilization_label_id = utilization_label_id
 
     @property
     def self_uri(self) -> str:

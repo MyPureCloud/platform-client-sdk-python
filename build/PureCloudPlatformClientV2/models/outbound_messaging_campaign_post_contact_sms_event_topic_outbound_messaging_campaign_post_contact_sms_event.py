@@ -50,7 +50,7 @@ class OutboundMessagingCampaignPostContactSmsEventTopicOutboundMessagingCampaign
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'event_time': 'datetime',
+            'event_time': 'int',
             'conversation_id': 'str',
             'outbound_campaign_type': 'str',
             'sms_attributes': 'OutboundMessagingCampaignPostContactSmsEventTopicSMSAttributes',
@@ -90,24 +90,24 @@ class OutboundMessagingCampaignPostContactSmsEventTopicOutboundMessagingCampaign
         self._is_campaign_always_running = None
 
     @property
-    def event_time(self) -> datetime:
+    def event_time(self) -> int:
         """
         Gets the event_time of this OutboundMessagingCampaignPostContactSmsEventTopicOutboundMessagingCampaignPostContactSMSEvent.
 
 
         :return: The event_time of this OutboundMessagingCampaignPostContactSmsEventTopicOutboundMessagingCampaignPostContactSMSEvent.
-        :rtype: datetime
+        :rtype: int
         """
         return self._event_time
 
     @event_time.setter
-    def event_time(self, event_time: datetime) -> None:
+    def event_time(self, event_time: int) -> None:
         """
         Sets the event_time of this OutboundMessagingCampaignPostContactSmsEventTopicOutboundMessagingCampaignPostContactSMSEvent.
 
 
         :param event_time: The event_time of this OutboundMessagingCampaignPostContactSmsEventTopicOutboundMessagingCampaignPostContactSMSEvent.
-        :type: datetime
+        :type: int
         """
         
 

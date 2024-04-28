@@ -114,6 +114,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**patch_conversation_participant**](ConversationsApi.html#patch_conversation_participant) | Update a participant.|
 |[**patch_conversation_participant_attributes**](ConversationsApi.html#patch_conversation_participant_attributes) | Update the attributes on a conversation participant.|
 |[**patch_conversation_secureattributes**](ConversationsApi.html#patch_conversation_secureattributes) | Update the secure attributes on a conversation.|
+|[**patch_conversation_utilizationlabel**](ConversationsApi.html#patch_conversation_utilizationlabel) | Update the utilization label on a conversation. When there is no value provided, the system default label is applied|
 |[**patch_conversations_aftercallwork_conversation_id_participant_communication**](ConversationsApi.html#patch_conversations_aftercallwork_conversation_id_participant_communication) | Update after-call work for this conversation communication.|
 |[**patch_conversations_call**](ConversationsApi.html#patch_conversations_call) | Update a conversation by setting its recording state, merging in other conversations to create a conference, or disconnecting all of the participants|
 |[**patch_conversations_call_participant**](ConversationsApi.html#patch_conversations_call_participant) | Update conversation participant|
@@ -5606,6 +5607,59 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversation ID |  |
 | **body** | [**ConversationSecureAttributes**](ConversationSecureAttributes.html)| Conversation Secure Attributes |  |
+{: class="table table-striped"}
+
+### Return type
+
+**str**
+
+<a name="patch_conversation_utilizationlabel"></a>
+
+## str** patch_conversation_utilizationlabel(conversation_id, body)
+
+
+
+Update the utilization label on a conversation. When there is no value provided, the system default label is applied
+
+patch_conversation_utilizationlabel is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps PATCH /api/v2/conversations/{conversationId}/utilizationlabel 
+
+Requires ANY permissions: 
+
+* conversation:utilizationLabel:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+conversation_id = 'conversation_id_example' # str | conversation ID
+body = PureCloudPlatformClientV2.ConversationUtilizationLabelUpdate() # ConversationUtilizationLabelUpdate | Conversation Utilization Label
+
+try:
+    # Update the utilization label on a conversation. When there is no value provided, the system default label is applied
+    api_response = api_instance.patch_conversation_utilizationlabel(conversation_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->patch_conversation_utilizationlabel: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversation_id** | **str**| conversation ID |  |
+| **body** | [**ConversationUtilizationLabelUpdate**](ConversationUtilizationLabelUpdate.html)| Conversation Utilization Label |  |
 {: class="table table-striped"}
 
 ### Return type

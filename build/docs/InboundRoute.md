@@ -23,6 +23,7 @@ title: InboundRoute
 | **signature** | [**Signature**](Signature.html) | The configuration for the canned response signature that will be appended to outbound emails sent via this route | [optional] |
 | **history_inclusion** | **str** | The configuration to indicate how the history of a conversation has to be included in a draft | [optional] |
 | **allow_multiple_actions** | **bool** | Control if multiple actions are allowed on this route. When true the disconnect has to be done manually. When false a conversation will be disconnected by the system after every action | [optional] |
+| **imap_folder** | **str** | Imap folder routed to this route | [optional] |
 | **self_uri** | **str** | The URI for this object | [optional] |
 {: class="table table-striped"}
 

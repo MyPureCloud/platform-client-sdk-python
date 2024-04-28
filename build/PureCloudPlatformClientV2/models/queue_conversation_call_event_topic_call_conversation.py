@@ -55,6 +55,7 @@ class QueueConversationCallEventTopicCallConversation(object):
             'participants': 'list[QueueConversationCallEventTopicCallMediaParticipant]',
             'other_media_uris': 'list[str]',
             'address': 'str',
+            'utilization_label_id': 'str',
             'recording_state': 'str',
             'secure_pause': 'bool',
             'max_participants': 'int'
@@ -66,6 +67,7 @@ class QueueConversationCallEventTopicCallConversation(object):
             'participants': 'participants',
             'other_media_uris': 'otherMediaUris',
             'address': 'address',
+            'utilization_label_id': 'utilizationLabelId',
             'recording_state': 'recordingState',
             'secure_pause': 'securePause',
             'max_participants': 'maxParticipants'
@@ -76,6 +78,7 @@ class QueueConversationCallEventTopicCallConversation(object):
         self._participants = None
         self._other_media_uris = None
         self._address = None
+        self._utilization_label_id = None
         self._recording_state = None
         self._secure_pause = None
         self._max_participants = None
@@ -199,6 +202,30 @@ class QueueConversationCallEventTopicCallConversation(object):
         
 
         self._address = address
+
+    @property
+    def utilization_label_id(self) -> str:
+        """
+        Gets the utilization_label_id of this QueueConversationCallEventTopicCallConversation.
+
+
+        :return: The utilization_label_id of this QueueConversationCallEventTopicCallConversation.
+        :rtype: str
+        """
+        return self._utilization_label_id
+
+    @utilization_label_id.setter
+    def utilization_label_id(self, utilization_label_id: str) -> None:
+        """
+        Sets the utilization_label_id of this QueueConversationCallEventTopicCallConversation.
+
+
+        :param utilization_label_id: The utilization_label_id of this QueueConversationCallEventTopicCallConversation.
+        :type: str
+        """
+        
+
+        self._utilization_label_id = utilization_label_id
 
     @property
     def recording_state(self) -> str:

@@ -468,7 +468,7 @@ class V2MobiusAlertsTopicAlert(object):
         """
         if isinstance(action, int):
             action = str(action)
-        allowed_values = ["UNKNOWN", "CREATE", "UPDATE", "DELETE", "CLOSE", "RENOTIFY", "BULK_DELETE", "BULK_UPDATE"]
+        allowed_values = ["UNKNOWN", "CREATE", "UPDATE", "DELETE", "CLOSE", "RENOTIFY", "BULK_DELETE", "BULK_UPDATE", "UNREAD_COUNT_UPDATE"]
         if action.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for action -> " + action)
             self._action = "outdated_sdk_version"

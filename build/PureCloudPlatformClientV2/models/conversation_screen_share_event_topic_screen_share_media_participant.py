@@ -90,6 +90,7 @@ class ConversationScreenShareEventTopicScreenShareMediaParticipant(object):
             'journey_context': 'ConversationScreenShareEventTopicJourneyContext',
             'start_acw_time': 'datetime',
             'end_acw_time': 'datetime',
+            'resume_time': 'datetime',
             'media_roles': 'list[str]',
             'queue_media_settings': 'ConversationScreenShareEventTopicQueueMediaSettings',
             'context': 'str',
@@ -133,6 +134,7 @@ class ConversationScreenShareEventTopicScreenShareMediaParticipant(object):
             'journey_context': 'journeyContext',
             'start_acw_time': 'startAcwTime',
             'end_acw_time': 'endAcwTime',
+            'resume_time': 'resumeTime',
             'media_roles': 'mediaRoles',
             'queue_media_settings': 'queueMediaSettings',
             'context': 'context',
@@ -175,6 +177,7 @@ class ConversationScreenShareEventTopicScreenShareMediaParticipant(object):
         self._journey_context = None
         self._start_acw_time = None
         self._end_acw_time = None
+        self._resume_time = None
         self._media_roles = None
         self._queue_media_settings = None
         self._context = None
@@ -1045,6 +1048,30 @@ class ConversationScreenShareEventTopicScreenShareMediaParticipant(object):
         
 
         self._end_acw_time = end_acw_time
+
+    @property
+    def resume_time(self) -> datetime:
+        """
+        Gets the resume_time of this ConversationScreenShareEventTopicScreenShareMediaParticipant.
+
+
+        :return: The resume_time of this ConversationScreenShareEventTopicScreenShareMediaParticipant.
+        :rtype: datetime
+        """
+        return self._resume_time
+
+    @resume_time.setter
+    def resume_time(self, resume_time: datetime) -> None:
+        """
+        Sets the resume_time of this ConversationScreenShareEventTopicScreenShareMediaParticipant.
+
+
+        :param resume_time: The resume_time of this ConversationScreenShareEventTopicScreenShareMediaParticipant.
+        :type: datetime
+        """
+        
+
+        self._resume_time = resume_time
 
     @property
     def media_roles(self) -> List[str]:

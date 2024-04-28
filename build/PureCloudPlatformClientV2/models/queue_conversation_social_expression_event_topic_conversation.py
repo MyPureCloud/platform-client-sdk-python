@@ -58,6 +58,7 @@ class QueueConversationSocialExpressionEventTopicConversation(object):
             'recording_state': 'str',
             'address': 'str',
             'external_tag': 'str',
+            'utilization_label_id': 'str',
             'secure_pause': 'bool'
         }
 
@@ -69,6 +70,7 @@ class QueueConversationSocialExpressionEventTopicConversation(object):
             'recording_state': 'recordingState',
             'address': 'address',
             'external_tag': 'externalTag',
+            'utilization_label_id': 'utilizationLabelId',
             'secure_pause': 'securePause'
         }
 
@@ -79,6 +81,7 @@ class QueueConversationSocialExpressionEventTopicConversation(object):
         self._recording_state = None
         self._address = None
         self._external_tag = None
+        self._utilization_label_id = None
         self._secure_pause = None
 
     @property
@@ -248,6 +251,30 @@ class QueueConversationSocialExpressionEventTopicConversation(object):
         
 
         self._external_tag = external_tag
+
+    @property
+    def utilization_label_id(self) -> str:
+        """
+        Gets the utilization_label_id of this QueueConversationSocialExpressionEventTopicConversation.
+
+
+        :return: The utilization_label_id of this QueueConversationSocialExpressionEventTopicConversation.
+        :rtype: str
+        """
+        return self._utilization_label_id
+
+    @utilization_label_id.setter
+    def utilization_label_id(self, utilization_label_id: str) -> None:
+        """
+        Sets the utilization_label_id of this QueueConversationSocialExpressionEventTopicConversation.
+
+
+        :param utilization_label_id: The utilization_label_id of this QueueConversationSocialExpressionEventTopicConversation.
+        :type: str
+        """
+        
+
+        self._utilization_label_id = utilization_label_id
 
     @property
     def secure_pause(self) -> bool:

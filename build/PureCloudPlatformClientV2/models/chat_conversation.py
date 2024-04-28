@@ -56,6 +56,7 @@ class ChatConversation(object):
             'participants': 'list[ChatMediaParticipant]',
             'other_media_uris': 'list[str]',
             'recent_transfers': 'list[TransferResponse]',
+            'utilization_label_id': 'str',
             'self_uri': 'str'
         }
 
@@ -65,6 +66,7 @@ class ChatConversation(object):
             'participants': 'participants',
             'other_media_uris': 'otherMediaUris',
             'recent_transfers': 'recentTransfers',
+            'utilization_label_id': 'utilizationLabelId',
             'self_uri': 'selfUri'
         }
 
@@ -73,6 +75,7 @@ class ChatConversation(object):
         self._participants = None
         self._other_media_uris = None
         self._recent_transfers = None
+        self._utilization_label_id = None
         self._self_uri = None
 
     @property
@@ -194,6 +197,30 @@ class ChatConversation(object):
         
 
         self._recent_transfers = recent_transfers
+
+    @property
+    def utilization_label_id(self) -> str:
+        """
+        Gets the utilization_label_id of this ChatConversation.
+        An optional label that categorizes the conversation.  Max-utilization settings can be configured at a per-label level
+
+        :return: The utilization_label_id of this ChatConversation.
+        :rtype: str
+        """
+        return self._utilization_label_id
+
+    @utilization_label_id.setter
+    def utilization_label_id(self, utilization_label_id: str) -> None:
+        """
+        Sets the utilization_label_id of this ChatConversation.
+        An optional label that categorizes the conversation.  Max-utilization settings can be configured at a per-label level
+
+        :param utilization_label_id: The utilization_label_id of this ChatConversation.
+        :type: str
+        """
+        
+
+        self._utilization_label_id = utilization_label_id
 
     @property
     def self_uri(self) -> str:

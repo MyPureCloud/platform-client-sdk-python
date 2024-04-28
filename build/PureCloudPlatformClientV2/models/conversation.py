@@ -66,6 +66,7 @@ class Conversation(object):
             'divisions': 'list[ConversationDivisionMembership]',
             'recent_transfers': 'list[TransferResponse]',
             'secure_pause': 'bool',
+            'utilization_label_id': 'str',
             'self_uri': 'str'
         }
 
@@ -84,6 +85,7 @@ class Conversation(object):
             'divisions': 'divisions',
             'recent_transfers': 'recentTransfers',
             'secure_pause': 'securePause',
+            'utilization_label_id': 'utilizationLabelId',
             'self_uri': 'selfUri'
         }
 
@@ -101,6 +103,7 @@ class Conversation(object):
         self._divisions = None
         self._recent_transfers = None
         self._secure_pause = None
+        self._utilization_label_id = None
         self._self_uri = None
 
     @property
@@ -448,6 +451,30 @@ class Conversation(object):
         
 
         self._secure_pause = secure_pause
+
+    @property
+    def utilization_label_id(self) -> str:
+        """
+        Gets the utilization_label_id of this Conversation.
+        An optional label that categorizes the conversation.  Max-utilization settings can be configured at a per-label level
+
+        :return: The utilization_label_id of this Conversation.
+        :rtype: str
+        """
+        return self._utilization_label_id
+
+    @utilization_label_id.setter
+    def utilization_label_id(self, utilization_label_id: str) -> None:
+        """
+        Sets the utilization_label_id of this Conversation.
+        An optional label that categorizes the conversation.  Max-utilization settings can be configured at a per-label level
+
+        :param utilization_label_id: The utilization_label_id of this Conversation.
+        :type: str
+        """
+        
+
+        self._utilization_label_id = utilization_label_id
 
     @property
     def self_uri(self) -> str:

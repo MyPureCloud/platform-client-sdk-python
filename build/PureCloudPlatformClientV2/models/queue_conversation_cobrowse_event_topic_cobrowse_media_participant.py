@@ -90,6 +90,7 @@ class QueueConversationCobrowseEventTopicCobrowseMediaParticipant(object):
             'journey_context': 'QueueConversationCobrowseEventTopicJourneyContext',
             'start_acw_time': 'datetime',
             'end_acw_time': 'datetime',
+            'resume_time': 'datetime',
             'media_roles': 'list[str]',
             'queue_media_settings': 'QueueConversationCobrowseEventTopicQueueMediaSettings',
             'cobrowse_session_id': 'str',
@@ -135,6 +136,7 @@ class QueueConversationCobrowseEventTopicCobrowseMediaParticipant(object):
             'journey_context': 'journeyContext',
             'start_acw_time': 'startAcwTime',
             'end_acw_time': 'endAcwTime',
+            'resume_time': 'resumeTime',
             'media_roles': 'mediaRoles',
             'queue_media_settings': 'queueMediaSettings',
             'cobrowse_session_id': 'cobrowseSessionId',
@@ -179,6 +181,7 @@ class QueueConversationCobrowseEventTopicCobrowseMediaParticipant(object):
         self._journey_context = None
         self._start_acw_time = None
         self._end_acw_time = None
+        self._resume_time = None
         self._media_roles = None
         self._queue_media_settings = None
         self._cobrowse_session_id = None
@@ -1051,6 +1054,30 @@ class QueueConversationCobrowseEventTopicCobrowseMediaParticipant(object):
         
 
         self._end_acw_time = end_acw_time
+
+    @property
+    def resume_time(self) -> datetime:
+        """
+        Gets the resume_time of this QueueConversationCobrowseEventTopicCobrowseMediaParticipant.
+
+
+        :return: The resume_time of this QueueConversationCobrowseEventTopicCobrowseMediaParticipant.
+        :rtype: datetime
+        """
+        return self._resume_time
+
+    @resume_time.setter
+    def resume_time(self, resume_time: datetime) -> None:
+        """
+        Sets the resume_time of this QueueConversationCobrowseEventTopicCobrowseMediaParticipant.
+
+
+        :param resume_time: The resume_time of this QueueConversationCobrowseEventTopicCobrowseMediaParticipant.
+        :type: datetime
+        """
+        
+
+        self._resume_time = resume_time
 
     @property
     def media_roles(self) -> List[str]:

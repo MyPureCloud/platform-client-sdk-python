@@ -51,6 +51,7 @@ class Settings(object):
             'communication_based_acw': 'bool',
             'include_non_agent_conversation_summary': 'bool',
             'allow_callback_queue_selection': 'bool',
+            'callbacks_inherit_routing_from_inbound_call': 'bool',
             'complete_acw_when_agent_transitions_offline': 'bool',
             'total_active_callback': 'bool'
         }
@@ -59,6 +60,7 @@ class Settings(object):
             'communication_based_acw': 'communicationBasedACW',
             'include_non_agent_conversation_summary': 'includeNonAgentConversationSummary',
             'allow_callback_queue_selection': 'allowCallbackQueueSelection',
+            'callbacks_inherit_routing_from_inbound_call': 'callbacksInheritRoutingFromInboundCall',
             'complete_acw_when_agent_transitions_offline': 'completeAcwWhenAgentTransitionsOffline',
             'total_active_callback': 'totalActiveCallback'
         }
@@ -66,6 +68,7 @@ class Settings(object):
         self._communication_based_acw = None
         self._include_non_agent_conversation_summary = None
         self._allow_callback_queue_selection = None
+        self._callbacks_inherit_routing_from_inbound_call = None
         self._complete_acw_when_agent_transitions_offline = None
         self._total_active_callback = None
 
@@ -140,6 +143,30 @@ class Settings(object):
         
 
         self._allow_callback_queue_selection = allow_callback_queue_selection
+
+    @property
+    def callbacks_inherit_routing_from_inbound_call(self) -> bool:
+        """
+        Gets the callbacks_inherit_routing_from_inbound_call of this Settings.
+        Inherit callback routing data from inbound calls
+
+        :return: The callbacks_inherit_routing_from_inbound_call of this Settings.
+        :rtype: bool
+        """
+        return self._callbacks_inherit_routing_from_inbound_call
+
+    @callbacks_inherit_routing_from_inbound_call.setter
+    def callbacks_inherit_routing_from_inbound_call(self, callbacks_inherit_routing_from_inbound_call: bool) -> None:
+        """
+        Sets the callbacks_inherit_routing_from_inbound_call of this Settings.
+        Inherit callback routing data from inbound calls
+
+        :param callbacks_inherit_routing_from_inbound_call: The callbacks_inherit_routing_from_inbound_call of this Settings.
+        :type: bool
+        """
+        
+
+        self._callbacks_inherit_routing_from_inbound_call = callbacks_inherit_routing_from_inbound_call
 
     @property
     def complete_acw_when_agent_transitions_offline(self) -> bool:

@@ -34,6 +34,7 @@ from typing import Dict
 
 if TYPE_CHECKING:
     from . import DomainEntityRef
+    from . import ImapSettings
     from . import MailFromResult
 
 class InboundDomainPatchRequest(object):
@@ -52,16 +53,19 @@ class InboundDomainPatchRequest(object):
         """
         self.swagger_types = {
             'mail_from_settings': 'MailFromResult',
-            'custom_smtp_server': 'DomainEntityRef'
+            'custom_smtp_server': 'DomainEntityRef',
+            'imap_settings': 'ImapSettings'
         }
 
         self.attribute_map = {
             'mail_from_settings': 'mailFromSettings',
-            'custom_smtp_server': 'customSMTPServer'
+            'custom_smtp_server': 'customSMTPServer',
+            'imap_settings': 'imapSettings'
         }
 
         self._mail_from_settings = None
         self._custom_smtp_server = None
+        self._imap_settings = None
 
     @property
     def mail_from_settings(self) -> 'MailFromResult':
@@ -110,6 +114,30 @@ class InboundDomainPatchRequest(object):
         
 
         self._custom_smtp_server = custom_smtp_server
+
+    @property
+    def imap_settings(self) -> 'ImapSettings':
+        """
+        Gets the imap_settings of this InboundDomainPatchRequest.
+        The IMAP server integration and settings to use for processing inbound emails.
+
+        :return: The imap_settings of this InboundDomainPatchRequest.
+        :rtype: ImapSettings
+        """
+        return self._imap_settings
+
+    @imap_settings.setter
+    def imap_settings(self, imap_settings: 'ImapSettings') -> None:
+        """
+        Sets the imap_settings of this InboundDomainPatchRequest.
+        The IMAP server integration and settings to use for processing inbound emails.
+
+        :param imap_settings: The imap_settings of this InboundDomainPatchRequest.
+        :type: ImapSettings
+        """
+        
+
+        self._imap_settings = imap_settings
 
     def to_dict(self):
         """

@@ -69,6 +69,7 @@ class InboundRoute(object):
             'signature': 'Signature',
             'history_inclusion': 'str',
             'allow_multiple_actions': 'bool',
+            'imap_folder': 'str',
             'self_uri': 'str'
         }
 
@@ -89,6 +90,7 @@ class InboundRoute(object):
             'signature': 'signature',
             'history_inclusion': 'historyInclusion',
             'allow_multiple_actions': 'allowMultipleActions',
+            'imap_folder': 'imapFolder',
             'self_uri': 'selfUri'
         }
 
@@ -108,6 +110,7 @@ class InboundRoute(object):
         self._signature = None
         self._history_inclusion = None
         self._allow_multiple_actions = None
+        self._imap_folder = None
         self._self_uri = None
 
     @property
@@ -498,6 +501,30 @@ class InboundRoute(object):
         
 
         self._allow_multiple_actions = allow_multiple_actions
+
+    @property
+    def imap_folder(self) -> str:
+        """
+        Gets the imap_folder of this InboundRoute.
+        Imap folder routed to this route
+
+        :return: The imap_folder of this InboundRoute.
+        :rtype: str
+        """
+        return self._imap_folder
+
+    @imap_folder.setter
+    def imap_folder(self, imap_folder: str) -> None:
+        """
+        Sets the imap_folder of this InboundRoute.
+        Imap folder routed to this route
+
+        :param imap_folder: The imap_folder of this InboundRoute.
+        :type: str
+        """
+        
+
+        self._imap_folder = imap_folder
 
     @property
     def self_uri(self) -> str:

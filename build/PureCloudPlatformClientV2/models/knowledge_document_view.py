@@ -55,6 +55,7 @@ class KnowledgeDocumentView(object):
             'document_version_id': 'str',
             'search_id': 'str',
             'query_type': 'str',
+            'surfacing_method': 'str',
             'application': 'KnowledgeSearchClientApplication',
             'session_id': 'str',
             'conversation_context': 'KnowledgeConversationContext'
@@ -65,6 +66,7 @@ class KnowledgeDocumentView(object):
             'document_version_id': 'documentVersionId',
             'search_id': 'searchId',
             'query_type': 'queryType',
+            'surfacing_method': 'surfacingMethod',
             'application': 'application',
             'session_id': 'sessionId',
             'conversation_context': 'conversationContext'
@@ -74,6 +76,7 @@ class KnowledgeDocumentView(object):
         self._document_version_id = None
         self._search_id = None
         self._query_type = None
+        self._surfacing_method = None
         self._application = None
         self._session_id = None
         self._conversation_context = None
@@ -178,6 +181,35 @@ class KnowledgeDocumentView(object):
             self._query_type = "outdated_sdk_version"
         else:
             self._query_type = query_type
+
+    @property
+    def surfacing_method(self) -> str:
+        """
+        Gets the surfacing_method of this KnowledgeDocumentView.
+        The method how knowledge was surfaced. Article: Full article was shown. Snippet: A snippet from the article was shown. Highlight: A highlighted answer in a snippet was shown.
+
+        :return: The surfacing_method of this KnowledgeDocumentView.
+        :rtype: str
+        """
+        return self._surfacing_method
+
+    @surfacing_method.setter
+    def surfacing_method(self, surfacing_method: str) -> None:
+        """
+        Sets the surfacing_method of this KnowledgeDocumentView.
+        The method how knowledge was surfaced. Article: Full article was shown. Snippet: A snippet from the article was shown. Highlight: A highlighted answer in a snippet was shown.
+
+        :param surfacing_method: The surfacing_method of this KnowledgeDocumentView.
+        :type: str
+        """
+        if isinstance(surfacing_method, int):
+            surfacing_method = str(surfacing_method)
+        allowed_values = ["Unknown", "Article", "Snippet", "Highlight"]
+        if surfacing_method.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for surfacing_method -> " + surfacing_method)
+            self._surfacing_method = "outdated_sdk_version"
+        else:
+            self._surfacing_method = surfacing_method
 
     @property
     def application(self) -> 'KnowledgeSearchClientApplication':

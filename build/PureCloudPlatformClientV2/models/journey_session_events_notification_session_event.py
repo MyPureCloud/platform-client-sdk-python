@@ -106,7 +106,8 @@ class JourneySessionEventsNotificationSessionEvent(object):
             'authenticated': 'bool',
             'app': 'JourneySessionEventsNotificationApp',
             'sdk_library': 'JourneySessionEventsNotificationSdkLibrary',
-            'network_connectivity': 'JourneySessionEventsNotificationNetworkConnectivity'
+            'network_connectivity': 'JourneySessionEventsNotificationNetworkConnectivity',
+            'division_ids': 'list[str]'
         }
 
         self.attribute_map = {
@@ -149,7 +150,8 @@ class JourneySessionEventsNotificationSessionEvent(object):
             'authenticated': 'authenticated',
             'app': 'app',
             'sdk_library': 'sdkLibrary',
-            'network_connectivity': 'networkConnectivity'
+            'network_connectivity': 'networkConnectivity',
+            'division_ids': 'divisionIds'
         }
 
         self._id = None
@@ -192,6 +194,7 @@ class JourneySessionEventsNotificationSessionEvent(object):
         self._app = None
         self._sdk_library = None
         self._network_connectivity = None
+        self._division_ids = None
 
     @property
     def id(self) -> str:
@@ -1167,6 +1170,30 @@ class JourneySessionEventsNotificationSessionEvent(object):
         
 
         self._network_connectivity = network_connectivity
+
+    @property
+    def division_ids(self) -> List[str]:
+        """
+        Gets the division_ids of this JourneySessionEventsNotificationSessionEvent.
+
+
+        :return: The division_ids of this JourneySessionEventsNotificationSessionEvent.
+        :rtype: list[str]
+        """
+        return self._division_ids
+
+    @division_ids.setter
+    def division_ids(self, division_ids: List[str]) -> None:
+        """
+        Sets the division_ids of this JourneySessionEventsNotificationSessionEvent.
+
+
+        :param division_ids: The division_ids of this JourneySessionEventsNotificationSessionEvent.
+        :type: list[str]
+        """
+        
+
+        self._division_ids = division_ids
 
     def to_dict(self):
         """

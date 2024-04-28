@@ -54,7 +54,8 @@ class ConversationScreenShareEventTopicScreenShareConversation(object):
             'name': 'str',
             'participants': 'list[ConversationScreenShareEventTopicScreenShareMediaParticipant]',
             'other_media_uris': 'list[str]',
-            'address': 'str'
+            'address': 'str',
+            'utilization_label_id': 'str'
         }
 
         self.attribute_map = {
@@ -62,7 +63,8 @@ class ConversationScreenShareEventTopicScreenShareConversation(object):
             'name': 'name',
             'participants': 'participants',
             'other_media_uris': 'otherMediaUris',
-            'address': 'address'
+            'address': 'address',
+            'utilization_label_id': 'utilizationLabelId'
         }
 
         self._id = None
@@ -70,6 +72,7 @@ class ConversationScreenShareEventTopicScreenShareConversation(object):
         self._participants = None
         self._other_media_uris = None
         self._address = None
+        self._utilization_label_id = None
 
     @property
     def id(self) -> str:
@@ -190,6 +193,30 @@ class ConversationScreenShareEventTopicScreenShareConversation(object):
         
 
         self._address = address
+
+    @property
+    def utilization_label_id(self) -> str:
+        """
+        Gets the utilization_label_id of this ConversationScreenShareEventTopicScreenShareConversation.
+
+
+        :return: The utilization_label_id of this ConversationScreenShareEventTopicScreenShareConversation.
+        :rtype: str
+        """
+        return self._utilization_label_id
+
+    @utilization_label_id.setter
+    def utilization_label_id(self, utilization_label_id: str) -> None:
+        """
+        Sets the utilization_label_id of this ConversationScreenShareEventTopicScreenShareConversation.
+
+
+        :param utilization_label_id: The utilization_label_id of this ConversationScreenShareEventTopicScreenShareConversation.
+        :type: str
+        """
+        
+
+        self._utilization_label_id = utilization_label_id
 
     def to_dict(self):
         """
