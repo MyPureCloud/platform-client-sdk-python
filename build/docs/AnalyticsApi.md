@@ -9,10 +9,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 |Method | Description|
 |------------- | -------------|
 |[**delete_analytics_conversations_details_job**](AnalyticsApi.html#delete_analytics_conversations_details_job) | Delete/cancel an async details job|
-|[**delete_analytics_reporting_schedule**](AnalyticsApi.html#delete_analytics_reporting_schedule) | Delete a scheduled report job.|
 |[**delete_analytics_users_details_job**](AnalyticsApi.html#delete_analytics_users_details_job) | Delete/cancel an async request|
 |[**get_analytics_actions_aggregates_job**](AnalyticsApi.html#get_analytics_actions_aggregates_job) | Get status for async query for action aggregates|
 |[**get_analytics_actions_aggregates_job_results**](AnalyticsApi.html#get_analytics_actions_aggregates_job_results) | Fetch a page of results for an async aggregates query|
+|[**get_analytics_botflow_divisions_reportingturns**](AnalyticsApi.html#get_analytics_botflow_divisions_reportingturns) | Get Reporting Turns (division aware).|
 |[**get_analytics_botflow_reportingturns**](AnalyticsApi.html#get_analytics_botflow_reportingturns) | Get Reporting Turns.|
 |[**get_analytics_botflow_sessions**](AnalyticsApi.html#get_analytics_botflow_sessions) | Get Bot Flow Sessions.|
 |[**get_analytics_bots_aggregates_job**](AnalyticsApi.html#get_analytics_bots_aggregates_job) | Get status for async query for bot aggregates|
@@ -39,17 +39,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_analytics_reporting_dashboards_users**](AnalyticsApi.html#get_analytics_reporting_dashboards_users) | Get dashboards summary for users in a org|
 |[**get_analytics_reporting_exports**](AnalyticsApi.html#get_analytics_reporting_exports) | Get all view export requests for a user|
 |[**get_analytics_reporting_exports_metadata**](AnalyticsApi.html#get_analytics_reporting_exports_metadata) | Get all export metadata|
-|[**get_analytics_reporting_metadata**](AnalyticsApi.html#get_analytics_reporting_metadata) | Get list of reporting metadata.|
-|[**get_analytics_reporting_report_id_metadata**](AnalyticsApi.html#get_analytics_reporting_report_id_metadata) | Get a reporting metadata.|
-|[**get_analytics_reporting_reportformats**](AnalyticsApi.html#get_analytics_reporting_reportformats) | Get a list of report formats|
-|[**get_analytics_reporting_schedule**](AnalyticsApi.html#get_analytics_reporting_schedule) | Get a scheduled report job.|
-|[**get_analytics_reporting_schedule_history**](AnalyticsApi.html#get_analytics_reporting_schedule_history) | Get list of completed scheduled report jobs.|
-|[**get_analytics_reporting_schedule_history_latest**](AnalyticsApi.html#get_analytics_reporting_schedule_history_latest) | Get most recently completed scheduled report job.|
-|[**get_analytics_reporting_schedule_history_run_id**](AnalyticsApi.html#get_analytics_reporting_schedule_history_run_id) | A completed scheduled report job|
-|[**get_analytics_reporting_schedules**](AnalyticsApi.html#get_analytics_reporting_schedules) | Get a list of scheduled report jobs|
 |[**get_analytics_reporting_settings**](AnalyticsApi.html#get_analytics_reporting_settings) | Get AnalyticsReportingSettings for an organization|
 |[**get_analytics_reporting_settings_user_dashboards**](AnalyticsApi.html#get_analytics_reporting_settings_user_dashboards) | Get list of dashboards for an user|
-|[**get_analytics_reporting_timeperiods**](AnalyticsApi.html#get_analytics_reporting_timeperiods) | Get a list of report time periods.|
 |[**get_analytics_resolutions_aggregates_job**](AnalyticsApi.html#get_analytics_resolutions_aggregates_job) | Get status for async query for resolution aggregates|
 |[**get_analytics_resolutions_aggregates_job_results**](AnalyticsApi.html#get_analytics_resolutions_aggregates_job_results) | Fetch a page of results for an async aggregates query|
 |[**get_analytics_surveys_aggregates_job**](AnalyticsApi.html#get_analytics_surveys_aggregates_job) | Get status for async query for survey aggregates|
@@ -91,8 +82,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_analytics_ratelimits_aggregates_query**](AnalyticsApi.html#post_analytics_ratelimits_aggregates_query) | Query for limits rate limit aggregates. Data populated when limits are exceeded or are close to being exceeded|
 |[**post_analytics_reporting_dashboards_users_bulk_remove**](AnalyticsApi.html#post_analytics_reporting_dashboards_users_bulk_remove) | Bulk delete dashboards owned by other user(s)|
 |[**post_analytics_reporting_exports**](AnalyticsApi.html#post_analytics_reporting_exports) | Generate a view export request|
-|[**post_analytics_reporting_schedule_runreport**](AnalyticsApi.html#post_analytics_reporting_schedule_runreport) | Place a scheduled report immediately into the reporting queue|
-|[**post_analytics_reporting_schedules**](AnalyticsApi.html#post_analytics_reporting_schedules) | Create a scheduled report job|
 |[**post_analytics_reporting_settings_dashboards_bulk_remove**](AnalyticsApi.html#post_analytics_reporting_settings_dashboards_bulk_remove) | Bulk remove dashboard configurations|
 |[**post_analytics_reporting_settings_dashboards_query**](AnalyticsApi.html#post_analytics_reporting_settings_dashboards_query) | Query dashboard configurations|
 |[**post_analytics_resolutions_aggregates_jobs**](AnalyticsApi.html#post_analytics_resolutions_aggregates_jobs) | Query for resolution aggregates asynchronously|
@@ -111,7 +100,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_analytics_users_details_query**](AnalyticsApi.html#post_analytics_users_details_query) | Query for user details|
 |[**post_analytics_users_observations_query**](AnalyticsApi.html#post_analytics_users_observations_query) | Query for user observations|
 |[**put_analytics_dataretention_settings**](AnalyticsApi.html#put_analytics_dataretention_settings) | Update analytics data retention setting|
-|[**put_analytics_reporting_schedule**](AnalyticsApi.html#put_analytics_reporting_schedule) | Update a scheduled report job.|
 {: class="table table-striped"}
 
 <a name="delete_analytics_conversations_details_job"></a>
@@ -157,53 +145,6 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **job_id** | **str**| jobId |  |
-{: class="table table-striped"}
-
-### Return type
-
-void (empty response body)
-
-<a name="delete_analytics_reporting_schedule"></a>
-
-##  delete_analytics_reporting_schedule(schedule_id)
-
-
-
-Delete a scheduled report job.
-
-Wraps DELETE /api/v2/analytics/reporting/schedules/{scheduleId} 
-
-Requires no permissions
-
-
-### Example
-
-```{"language":"python"}
-import time
-import PureCloudPlatformClientV2
-from PureCloudPlatformClientV2.rest import ApiException
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: PureCloud OAuth
-PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = PureCloudPlatformClientV2.AnalyticsApi()
-schedule_id = 'schedule_id_example' # str | Schedule ID
-
-try:
-    # Delete a scheduled report job.
-    api_instance.delete_analytics_reporting_schedule(schedule_id)
-except ApiException as e:
-    print("Exception when calling AnalyticsApi->delete_analytics_reporting_schedule: %s\n" % e)
-```
-
-### Parameters
-
-
-|Name | Type | Description  | Notes|
-|------------- | ------------- | ------------- | -------------|
-| **schedule_id** | **str**| Schedule ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -364,15 +305,80 @@ except ApiException as e:
 
 [**ActionAsyncAggregateQueryResponse**](ActionAsyncAggregateQueryResponse.html)
 
+<a name="get_analytics_botflow_divisions_reportingturns"></a>
+
+## [**ReportingTurnsResponse**](ReportingTurnsResponse.html) get_analytics_botflow_divisions_reportingturns(bot_flow_id, after=after, page_size=page_size, interval=interval, action_id=action_id, session_id=session_id, language=language, ask_action_results=ask_action_results)
+
+
+
+Get Reporting Turns (division aware).
+
+Returns the reporting turns for the specified flow, filtered by the clients divisions and grouped by session, in reverse chronological order from the date the session was created, with the reporting turns from the most recent session appearing at the start of the list. For pagination, clients should keep sending requests using the value of 'nextUri' in the response, until it's no longer present, only then have all items have been returned. Note: resources returned by this endpoint are not persisted indefinitely, as they are deleted after approximately, but not before, 10 days.
+
+Wraps GET /api/v2/analytics/botflows/{botFlowId}/divisions/reportingturns 
+
+Requires ANY permissions: 
+
+* analytics:botFlowDivisionAwareReportingTurn:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AnalyticsApi()
+bot_flow_id = 'bot_flow_id_example' # str | ID of the bot flow.
+after = 'after_example' # str | The cursor that points to the ID of the last item in the list of entities that has been returned. (optional)
+page_size = ''50'' # str | Max number of entities to return. Maximum of 250 (optional) (default to '50')
+interval = '2023-07-17T08:15:44.586Z/2023-07-26T09:22:33.111Z' # str | Date range filter based on the date the individual resources were completed. UTC is the default if no TZ is supplied, however alternate timezones can be used e.g: '2022-11-22T09:11:11.111+08:00/2022-11-30T07:17:44.586-07'. . Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss (optional)
+action_id = 'action_id_example' # str | Optional action ID to get the reporting turns associated to a particular flow action (optional)
+session_id = 'session_id_example' # str | Optional session ID to get the reporting turns for a particular session. Specifying a session ID alongside an action ID or a language or any ask action results is not allowed. (optional)
+language = 'en-us' # str | Optional language code to get the reporting turns for a particular language (optional)
+ask_action_results = 'ask_action_results_example' # str | Optional case-insensitive comma separated list of ask action results to filter the reporting turns. (optional)
+
+try:
+    # Get Reporting Turns (division aware).
+    api_response = api_instance.get_analytics_botflow_divisions_reportingturns(bot_flow_id, after=after, page_size=page_size, interval=interval, action_id=action_id, session_id=session_id, language=language, ask_action_results=ask_action_results)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AnalyticsApi->get_analytics_botflow_divisions_reportingturns: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **bot_flow_id** | **str**| ID of the bot flow. |  |
+| **after** | **str**| The cursor that points to the ID of the last item in the list of entities that has been returned. | [optional]  |
+| **page_size** | **str**| Max number of entities to return. Maximum of 250 | [optional] [default to &#39;50&#39;] |
+| **interval** | **str**| Date range filter based on the date the individual resources were completed. UTC is the default if no TZ is supplied, however alternate timezones can be used e.g: &#39;2022-11-22T09:11:11.111+08:00/2022-11-30T07:17:44.586-07&#39;. . Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss | [optional]  |
+| **action_id** | **str**| Optional action ID to get the reporting turns associated to a particular flow action | [optional]  |
+| **session_id** | **str**| Optional session ID to get the reporting turns for a particular session. Specifying a session ID alongside an action ID or a language or any ask action results is not allowed. | [optional]  |
+| **language** | **str**| Optional language code to get the reporting turns for a particular language | [optional]  |
+| **ask_action_results** | **str**| Optional case-insensitive comma separated list of ask action results to filter the reporting turns. | [optional] <br />**Values**: AgentRequestedByUser, ConfirmationRequired, DisambiguationRequired, Error, ExpressionError, NoInputCollection, NoInputConfirmation, NoInputDisambiguation, NoMatchCollection, NoMatchConfirmation, NoMatchDisambiguation, SuccessCollection, SuccessConfirmationNo, SuccessConfirmationYes, SuccessDisambiguation, SuccessDisambiguationNone |
+{: class="table table-striped"}
+
+### Return type
+
+[**ReportingTurnsResponse**](ReportingTurnsResponse.html)
+
 <a name="get_analytics_botflow_reportingturns"></a>
 
 ## [**ReportingTurnsResponse**](ReportingTurnsResponse.html) get_analytics_botflow_reportingturns(bot_flow_id, after=after, page_size=page_size, interval=interval, action_id=action_id, session_id=session_id, language=language, ask_action_results=ask_action_results)
 
-
+<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
 
 Get Reporting Turns.
 
-Returns the reporting turns grouped by session, in reverse chronological order from the date the session was created, with the reporting turns from the most recent session appearing at the start of the list. For pagination, clients should keep sending requests using the value of 'nextUri' in the response, until it's no longer present, only then have all items have been returned. Note: resources returned by this endpoint are not persisted indefinitely, as they are deleted after approximately, but not before, 10 days.
+Deprecated: Please use GET /analytics/botflows/{botFlowId}/divisions/reportingturns instead. Returns the reporting turns grouped by session, in reverse chronological order from the date the session was created, with the reporting turns from the most recent session appearing at the start of the list. For pagination, clients should keep sending requests using the value of 'nextUri' in the response, until it's no longer present, only then have all items have been returned. Note: resources returned by this endpoint are not persisted indefinitely, as they are deleted after approximately, but not before, 10 days.
 
 Wraps GET /api/v2/analytics/botflows/{botFlowId}/reportingturns 
 
@@ -1714,409 +1720,6 @@ This endpoint does not need any parameters.
 
 [**ReportingExportMetadataJobListing**](ReportingExportMetadataJobListing.html)
 
-<a name="get_analytics_reporting_metadata"></a>
-
-## [**ReportMetaDataEntityListing**](ReportMetaDataEntityListing.html) get_analytics_reporting_metadata(page_number=page_number, page_size=page_size, locale=locale)
-
-
-
-Get list of reporting metadata.
-
-Wraps GET /api/v2/analytics/reporting/metadata 
-
-Requires ANY permissions: 
-
-* reporting:acd:view, reporting:status:view, reporting:interactions:view, reporting:outbound:view, reporting:quality:view, employee
-
-### Example
-
-```{"language":"python"}
-import time
-import PureCloudPlatformClientV2
-from PureCloudPlatformClientV2.rest import ApiException
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: PureCloud OAuth
-PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = PureCloudPlatformClientV2.AnalyticsApi()
-page_number = 1 # int | Page number (optional) (default to 1)
-page_size = 25 # int | Page size (optional) (default to 25)
-locale = 'locale_example' # str | Locale (optional)
-
-try:
-    # Get list of reporting metadata.
-    api_response = api_instance.get_analytics_reporting_metadata(page_number=page_number, page_size=page_size, locale=locale)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AnalyticsApi->get_analytics_reporting_metadata: %s\n" % e)
-```
-
-### Parameters
-
-
-|Name | Type | Description  | Notes|
-|------------- | ------------- | ------------- | -------------|
-| **page_number** | **int**| Page number | [optional] [default to 1] |
-| **page_size** | **int**| Page size | [optional] [default to 25] |
-| **locale** | **str**| Locale | [optional]  |
-{: class="table table-striped"}
-
-### Return type
-
-[**ReportMetaDataEntityListing**](ReportMetaDataEntityListing.html)
-
-<a name="get_analytics_reporting_report_id_metadata"></a>
-
-## [**ReportMetaData**](ReportMetaData.html) get_analytics_reporting_report_id_metadata(report_id, locale=locale)
-
-
-
-Get a reporting metadata.
-
-Wraps GET /api/v2/analytics/reporting/{reportId}/metadata 
-
-Requires ANY permissions: 
-
-* reporting:acd:view, reporting:status:view, reporting:interactions:view, reporting:outbound:view, reporting:quality:view, employee
-
-### Example
-
-```{"language":"python"}
-import time
-import PureCloudPlatformClientV2
-from PureCloudPlatformClientV2.rest import ApiException
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: PureCloud OAuth
-PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = PureCloudPlatformClientV2.AnalyticsApi()
-report_id = 'report_id_example' # str | Report ID
-locale = 'locale_example' # str | Locale (optional)
-
-try:
-    # Get a reporting metadata.
-    api_response = api_instance.get_analytics_reporting_report_id_metadata(report_id, locale=locale)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AnalyticsApi->get_analytics_reporting_report_id_metadata: %s\n" % e)
-```
-
-### Parameters
-
-
-|Name | Type | Description  | Notes|
-|------------- | ------------- | ------------- | -------------|
-| **report_id** | **str**| Report ID |  |
-| **locale** | **str**| Locale | [optional]  |
-{: class="table table-striped"}
-
-### Return type
-
-[**ReportMetaData**](ReportMetaData.html)
-
-<a name="get_analytics_reporting_reportformats"></a>
-
-## list[str]** get_analytics_reporting_reportformats()
-
-
-
-Get a list of report formats
-
-Get a list of report formats.
-
-Wraps GET /api/v2/analytics/reporting/reportformats 
-
-Requires no permissions
-
-
-### Example
-
-```{"language":"python"}
-import time
-import PureCloudPlatformClientV2
-from PureCloudPlatformClientV2.rest import ApiException
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: PureCloud OAuth
-PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = PureCloudPlatformClientV2.AnalyticsApi()
-
-try:
-    # Get a list of report formats
-    api_response = api_instance.get_analytics_reporting_reportformats()
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AnalyticsApi->get_analytics_reporting_reportformats: %s\n" % e)
-```
-
-### Parameters
-
-This endpoint does not need any parameters.
-
-
-### Return type
-
-**list[str]**
-
-<a name="get_analytics_reporting_schedule"></a>
-
-## [**ReportSchedule**](ReportSchedule.html) get_analytics_reporting_schedule(schedule_id)
-
-
-
-Get a scheduled report job.
-
-Wraps GET /api/v2/analytics/reporting/schedules/{scheduleId} 
-
-Requires no permissions
-
-
-### Example
-
-```{"language":"python"}
-import time
-import PureCloudPlatformClientV2
-from PureCloudPlatformClientV2.rest import ApiException
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: PureCloud OAuth
-PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = PureCloudPlatformClientV2.AnalyticsApi()
-schedule_id = 'schedule_id_example' # str | Schedule ID
-
-try:
-    # Get a scheduled report job.
-    api_response = api_instance.get_analytics_reporting_schedule(schedule_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AnalyticsApi->get_analytics_reporting_schedule: %s\n" % e)
-```
-
-### Parameters
-
-
-|Name | Type | Description  | Notes|
-|------------- | ------------- | ------------- | -------------|
-| **schedule_id** | **str**| Schedule ID |  |
-{: class="table table-striped"}
-
-### Return type
-
-[**ReportSchedule**](ReportSchedule.html)
-
-<a name="get_analytics_reporting_schedule_history"></a>
-
-## [**ReportRunEntryEntityDomainListing**](ReportRunEntryEntityDomainListing.html) get_analytics_reporting_schedule_history(schedule_id, page_number=page_number, page_size=page_size)
-
-
-
-Get list of completed scheduled report jobs.
-
-Wraps GET /api/v2/analytics/reporting/schedules/{scheduleId}/history 
-
-Requires no permissions
-
-
-### Example
-
-```{"language":"python"}
-import time
-import PureCloudPlatformClientV2
-from PureCloudPlatformClientV2.rest import ApiException
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: PureCloud OAuth
-PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = PureCloudPlatformClientV2.AnalyticsApi()
-schedule_id = 'schedule_id_example' # str | Schedule ID
-page_number = 1 # int |  (optional) (default to 1)
-page_size = 25 # int |  (optional) (default to 25)
-
-try:
-    # Get list of completed scheduled report jobs.
-    api_response = api_instance.get_analytics_reporting_schedule_history(schedule_id, page_number=page_number, page_size=page_size)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AnalyticsApi->get_analytics_reporting_schedule_history: %s\n" % e)
-```
-
-### Parameters
-
-
-|Name | Type | Description  | Notes|
-|------------- | ------------- | ------------- | -------------|
-| **schedule_id** | **str**| Schedule ID |  |
-| **page_number** | **int**|  | [optional] [default to 1] |
-| **page_size** | **int**|  | [optional] [default to 25] |
-{: class="table table-striped"}
-
-### Return type
-
-[**ReportRunEntryEntityDomainListing**](ReportRunEntryEntityDomainListing.html)
-
-<a name="get_analytics_reporting_schedule_history_latest"></a>
-
-## [**ReportRunEntry**](ReportRunEntry.html) get_analytics_reporting_schedule_history_latest(schedule_id)
-
-
-
-Get most recently completed scheduled report job.
-
-Wraps GET /api/v2/analytics/reporting/schedules/{scheduleId}/history/latest 
-
-Requires no permissions
-
-
-### Example
-
-```{"language":"python"}
-import time
-import PureCloudPlatformClientV2
-from PureCloudPlatformClientV2.rest import ApiException
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: PureCloud OAuth
-PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = PureCloudPlatformClientV2.AnalyticsApi()
-schedule_id = 'schedule_id_example' # str | Schedule ID
-
-try:
-    # Get most recently completed scheduled report job.
-    api_response = api_instance.get_analytics_reporting_schedule_history_latest(schedule_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AnalyticsApi->get_analytics_reporting_schedule_history_latest: %s\n" % e)
-```
-
-### Parameters
-
-
-|Name | Type | Description  | Notes|
-|------------- | ------------- | ------------- | -------------|
-| **schedule_id** | **str**| Schedule ID |  |
-{: class="table table-striped"}
-
-### Return type
-
-[**ReportRunEntry**](ReportRunEntry.html)
-
-<a name="get_analytics_reporting_schedule_history_run_id"></a>
-
-## [**ReportRunEntry**](ReportRunEntry.html) get_analytics_reporting_schedule_history_run_id(run_id, schedule_id)
-
-
-
-A completed scheduled report job
-
-A completed scheduled report job.
-
-Wraps GET /api/v2/analytics/reporting/schedules/{scheduleId}/history/{runId} 
-
-Requires no permissions
-
-
-### Example
-
-```{"language":"python"}
-import time
-import PureCloudPlatformClientV2
-from PureCloudPlatformClientV2.rest import ApiException
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: PureCloud OAuth
-PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = PureCloudPlatformClientV2.AnalyticsApi()
-run_id = 'run_id_example' # str | Run ID
-schedule_id = 'schedule_id_example' # str | Schedule ID
-
-try:
-    # A completed scheduled report job
-    api_response = api_instance.get_analytics_reporting_schedule_history_run_id(run_id, schedule_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AnalyticsApi->get_analytics_reporting_schedule_history_run_id: %s\n" % e)
-```
-
-### Parameters
-
-
-|Name | Type | Description  | Notes|
-|------------- | ------------- | ------------- | -------------|
-| **run_id** | **str**| Run ID |  |
-| **schedule_id** | **str**| Schedule ID |  |
-{: class="table table-striped"}
-
-### Return type
-
-[**ReportRunEntry**](ReportRunEntry.html)
-
-<a name="get_analytics_reporting_schedules"></a>
-
-## [**ReportScheduleEntityListing**](ReportScheduleEntityListing.html) get_analytics_reporting_schedules(page_number=page_number, page_size=page_size)
-
-
-
-Get a list of scheduled report jobs
-
-Get a list of scheduled report jobs.
-
-Wraps GET /api/v2/analytics/reporting/schedules 
-
-Requires ANY permissions: 
-
-* reporting:acd:view, reporting:status:view, reporting:interactions:view, reporting:outbound:view, reporting:quality:view, employee
-
-### Example
-
-```{"language":"python"}
-import time
-import PureCloudPlatformClientV2
-from PureCloudPlatformClientV2.rest import ApiException
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: PureCloud OAuth
-PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = PureCloudPlatformClientV2.AnalyticsApi()
-page_number = 1 # int | Page number (optional) (default to 1)
-page_size = 25 # int | Page size (optional) (default to 25)
-
-try:
-    # Get a list of scheduled report jobs
-    api_response = api_instance.get_analytics_reporting_schedules(page_number=page_number, page_size=page_size)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AnalyticsApi->get_analytics_reporting_schedules: %s\n" % e)
-```
-
-### Parameters
-
-
-|Name | Type | Description  | Notes|
-|------------- | ------------- | ------------- | -------------|
-| **page_number** | **int**| Page number | [optional] [default to 1] |
-| **page_size** | **int**| Page size | [optional] [default to 25] |
-{: class="table table-striped"}
-
-### Return type
-
-[**ReportScheduleEntityListing**](ReportScheduleEntityListing.html)
-
 <a name="get_analytics_reporting_settings"></a>
 
 ## [**AnalyticsReportingSettings**](AnalyticsReportingSettings.html) get_analytics_reporting_settings()
@@ -2163,7 +1766,7 @@ This endpoint does not need any parameters.
 
 <a name="get_analytics_reporting_settings_user_dashboards"></a>
 
-## [**DashboardConfigurationListing**](DashboardConfigurationListing.html) get_analytics_reporting_settings_user_dashboards(user_id, sort_by=sort_by, page_number=page_number, page_size=page_size, public_only=public_only, favorite_only=favorite_only)
+## [**DashboardConfigurationListing**](DashboardConfigurationListing.html) get_analytics_reporting_settings_user_dashboards(user_id, sort_by=sort_by, page_number=page_number, page_size=page_size, public_only=public_only, favorite_only=favorite_only, name=name)
 
 
 
@@ -2194,10 +1797,11 @@ page_number = 1 # int |  (optional) (default to 1)
 page_size = 50 # int |  (optional) (default to 50)
 public_only = True # bool | If true, retrieve only public dashboards (optional)
 favorite_only = True # bool | If true, retrieve only favorite dashboards (optional)
+name = 'name_example' # str | retrieve dashboards that match with given name (optional)
 
 try:
     # Get list of dashboards for an user
-    api_response = api_instance.get_analytics_reporting_settings_user_dashboards(user_id, sort_by=sort_by, page_number=page_number, page_size=page_size, public_only=public_only, favorite_only=favorite_only)
+    api_response = api_instance.get_analytics_reporting_settings_user_dashboards(user_id, sort_by=sort_by, page_number=page_number, page_size=page_size, public_only=public_only, favorite_only=favorite_only, name=name)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AnalyticsApi->get_analytics_reporting_settings_user_dashboards: %s\n" % e)
@@ -2214,55 +1818,12 @@ except ApiException as e:
 | **page_size** | **int**|  | [optional] [default to 50] |
 | **public_only** | **bool**| If true, retrieve only public dashboards | [optional]  |
 | **favorite_only** | **bool**| If true, retrieve only favorite dashboards | [optional]  |
+| **name** | **str**| retrieve dashboards that match with given name | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
 
 [**DashboardConfigurationListing**](DashboardConfigurationListing.html)
-
-<a name="get_analytics_reporting_timeperiods"></a>
-
-## list[str]** get_analytics_reporting_timeperiods()
-
-
-
-Get a list of report time periods.
-
-Wraps GET /api/v2/analytics/reporting/timeperiods 
-
-Requires no permissions
-
-
-### Example
-
-```{"language":"python"}
-import time
-import PureCloudPlatformClientV2
-from PureCloudPlatformClientV2.rest import ApiException
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: PureCloud OAuth
-PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = PureCloudPlatformClientV2.AnalyticsApi()
-
-try:
-    # Get a list of report time periods.
-    api_response = api_instance.get_analytics_reporting_timeperiods()
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AnalyticsApi->get_analytics_reporting_timeperiods: %s\n" % e)
-```
-
-### Parameters
-
-This endpoint does not need any parameters.
-
-
-### Return type
-
-**list[str]**
 
 <a name="get_analytics_resolutions_aggregates_job"></a>
 
@@ -3241,8 +2802,6 @@ except ApiException as e:
 
 Query for conversation activity observations
 
-post_analytics_conversations_activity_query is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps POST /api/v2/analytics/conversations/activity/query 
 
 Requires ANY permissions: 
@@ -3744,8 +3303,6 @@ except ApiException as e:
 
 
 Query for flow activity observations
-
-post_analytics_flows_activity_query is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/analytics/flows/activity/query 
 
@@ -4339,108 +3896,6 @@ except ApiException as e:
 
 [**ReportingExportJobResponse**](ReportingExportJobResponse.html)
 
-<a name="post_analytics_reporting_schedule_runreport"></a>
-
-## [**RunNowResponse**](RunNowResponse.html) post_analytics_reporting_schedule_runreport(schedule_id)
-
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
-
-Place a scheduled report immediately into the reporting queue
-
-This route is deprecated, please use POST:api/v2/analytics/reporting/exports/{exportId}/execute instead
-
-Wraps POST /api/v2/analytics/reporting/schedules/{scheduleId}/runreport 
-
-Requires ANY permissions: 
-
-* reporting:acd:view, reporting:status:view, reporting:interactions:view, reporting:outbound:view, reporting:quality:view, employee
-
-### Example
-
-```{"language":"python"}
-import time
-import PureCloudPlatformClientV2
-from PureCloudPlatformClientV2.rest import ApiException
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: PureCloud OAuth
-PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = PureCloudPlatformClientV2.AnalyticsApi()
-schedule_id = 'schedule_id_example' # str | Schedule ID
-
-try:
-    # Place a scheduled report immediately into the reporting queue
-    api_response = api_instance.post_analytics_reporting_schedule_runreport(schedule_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AnalyticsApi->post_analytics_reporting_schedule_runreport: %s\n" % e)
-```
-
-### Parameters
-
-
-|Name | Type | Description  | Notes|
-|------------- | ------------- | ------------- | -------------|
-| **schedule_id** | **str**| Schedule ID |  |
-{: class="table table-striped"}
-
-### Return type
-
-[**RunNowResponse**](RunNowResponse.html)
-
-<a name="post_analytics_reporting_schedules"></a>
-
-## [**ReportSchedule**](ReportSchedule.html) post_analytics_reporting_schedules(body)
-
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
-
-Create a scheduled report job
-
-This route is deprecated, please use POST:api/v2/analytics/reporting/exports instead
-
-Wraps POST /api/v2/analytics/reporting/schedules 
-
-Requires ANY permissions: 
-
-* reporting:acd:view, reporting:status:view, reporting:interactions:view, reporting:outbound:view, reporting:quality:view, employee
-
-### Example
-
-```{"language":"python"}
-import time
-import PureCloudPlatformClientV2
-from PureCloudPlatformClientV2.rest import ApiException
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: PureCloud OAuth
-PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = PureCloudPlatformClientV2.AnalyticsApi()
-body = PureCloudPlatformClientV2.ReportSchedule() # ReportSchedule | ReportSchedule
-
-try:
-    # Create a scheduled report job
-    api_response = api_instance.post_analytics_reporting_schedules(body)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AnalyticsApi->post_analytics_reporting_schedules: %s\n" % e)
-```
-
-### Parameters
-
-
-|Name | Type | Description  | Notes|
-|------------- | ------------- | ------------- | -------------|
-| **body** | [**ReportSchedule**](ReportSchedule.html)| ReportSchedule |  |
-{: class="table table-striped"}
-
-### Return type
-
-[**ReportSchedule**](ReportSchedule.html)
-
 <a name="post_analytics_reporting_settings_dashboards_bulk_remove"></a>
 
 ##  post_analytics_reporting_settings_dashboards_bulk_remove(body)
@@ -4596,8 +4051,6 @@ except ApiException as e:
 
 
 Query for user activity observations
-
-post_analytics_routing_activity_query is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/analytics/routing/activity/query 
 
@@ -4854,8 +4307,6 @@ except ApiException as e:
 
 Query for team activity observations
 
-post_analytics_teams_activity_query is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps POST /api/v2/analytics/teams/activity/query 
 
 Requires ANY permissions: 
@@ -5008,8 +4459,6 @@ except ApiException as e:
 
 
 Query for user activity observations
-
-post_analytics_users_activity_query is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/analytics/users/activity/query 
 
@@ -5351,57 +4800,4 @@ except ApiException as e:
 ### Return type
 
 [**AnalyticsDataRetentionResponse**](AnalyticsDataRetentionResponse.html)
-
-<a name="put_analytics_reporting_schedule"></a>
-
-## [**ReportSchedule**](ReportSchedule.html) put_analytics_reporting_schedule(schedule_id, body)
-
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
-
-Update a scheduled report job.
-
-This route is deprecated, please use PATCH:api/v2/analytics/reporting/exports/{exportId}/schedule instead
-
-Wraps PUT /api/v2/analytics/reporting/schedules/{scheduleId} 
-
-Requires ANY permissions: 
-
-* reporting:acd:view, reporting:status:view, reporting:interactions:view, reporting:outbound:view, reporting:quality:view, employee
-
-### Example
-
-```{"language":"python"}
-import time
-import PureCloudPlatformClientV2
-from PureCloudPlatformClientV2.rest import ApiException
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: PureCloud OAuth
-PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = PureCloudPlatformClientV2.AnalyticsApi()
-schedule_id = 'schedule_id_example' # str | Schedule ID
-body = PureCloudPlatformClientV2.ReportSchedule() # ReportSchedule | ReportSchedule
-
-try:
-    # Update a scheduled report job.
-    api_response = api_instance.put_analytics_reporting_schedule(schedule_id, body)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AnalyticsApi->put_analytics_reporting_schedule: %s\n" % e)
-```
-
-### Parameters
-
-
-|Name | Type | Description  | Notes|
-|------------- | ------------- | ------------- | -------------|
-| **schedule_id** | **str**| Schedule ID |  |
-| **body** | [**ReportSchedule**](ReportSchedule.html)| ReportSchedule |  |
-{: class="table table-striped"}
-
-### Return type
-
-[**ReportSchedule**](ReportSchedule.html)
 

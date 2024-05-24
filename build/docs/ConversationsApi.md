@@ -7659,8 +7659,6 @@ except ApiException as e:
 
 Query for conversation activity observations
 
-post_analytics_conversations_activity_query is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps POST /api/v2/analytics/conversations/activity/query 
 
 Requires ANY permissions: 

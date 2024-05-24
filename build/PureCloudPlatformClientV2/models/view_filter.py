@@ -228,7 +228,8 @@ class ViewFilter(object):
             'is_parked': 'bool',
             'agent_empathy_score': 'NumericRange',
             'survey_types': 'list[str]',
-            'survey_response_statuses': 'list[str]'
+            'survey_response_statuses': 'list[str]',
+            'bot_flow_types': 'list[str]'
         }
 
         self.attribute_map = {
@@ -407,7 +408,8 @@ class ViewFilter(object):
             'is_parked': 'isParked',
             'agent_empathy_score': 'agentEmpathyScore',
             'survey_types': 'surveyTypes',
-            'survey_response_statuses': 'surveyResponseStatuses'
+            'survey_response_statuses': 'surveyResponseStatuses',
+            'bot_flow_types': 'botFlowTypes'
         }
 
         self._media_types = None
@@ -586,6 +588,7 @@ class ViewFilter(object):
         self._agent_empathy_score = None
         self._survey_types = None
         self._survey_response_statuses = None
+        self._bot_flow_types = None
 
     @property
     def media_types(self) -> List[str]:
@@ -4820,6 +4823,30 @@ class ViewFilter(object):
         
 
         self._survey_response_statuses = survey_response_statuses
+
+    @property
+    def bot_flow_types(self) -> List[str]:
+        """
+        Gets the bot_flow_types of this ViewFilter.
+        The botFlowTypes is used to filter the view
+
+        :return: The bot_flow_types of this ViewFilter.
+        :rtype: list[str]
+        """
+        return self._bot_flow_types
+
+    @bot_flow_types.setter
+    def bot_flow_types(self, bot_flow_types: List[str]) -> None:
+        """
+        Sets the bot_flow_types of this ViewFilter.
+        The botFlowTypes is used to filter the view
+
+        :param bot_flow_types: The bot_flow_types of this ViewFilter.
+        :type: list[str]
+        """
+        
+
+        self._bot_flow_types = bot_flow_types
 
     def to_dict(self):
         """

@@ -91,6 +91,7 @@ class ConversationCobrowseEventTopicCobrowseMediaParticipant(object):
             'start_acw_time': 'datetime',
             'end_acw_time': 'datetime',
             'resume_time': 'datetime',
+            'park_time': 'datetime',
             'media_roles': 'list[str]',
             'queue_media_settings': 'ConversationCobrowseEventTopicQueueMediaSettings',
             'cobrowse_session_id': 'str',
@@ -137,6 +138,7 @@ class ConversationCobrowseEventTopicCobrowseMediaParticipant(object):
             'start_acw_time': 'startAcwTime',
             'end_acw_time': 'endAcwTime',
             'resume_time': 'resumeTime',
+            'park_time': 'parkTime',
             'media_roles': 'mediaRoles',
             'queue_media_settings': 'queueMediaSettings',
             'cobrowse_session_id': 'cobrowseSessionId',
@@ -182,6 +184,7 @@ class ConversationCobrowseEventTopicCobrowseMediaParticipant(object):
         self._start_acw_time = None
         self._end_acw_time = None
         self._resume_time = None
+        self._park_time = None
         self._media_roles = None
         self._queue_media_settings = None
         self._cobrowse_session_id = None
@@ -491,7 +494,7 @@ class ConversationCobrowseEventTopicCobrowseMediaParticipant(object):
         """
         if isinstance(disconnect_type, int):
             disconnect_type = str(disconnect_type)
-        allowed_values = ["endpoint", "client", "system", "transfer", "timeout", "transfer.conference", "transfer.consult", "transfer.forward", "transfer.noanswer", "transfer.notavailable", "transport.failure", "error", "peer", "other", "spam", "uncallable"]
+        allowed_values = ["endpoint", "endpoint.dnd", "client", "system", "transfer", "timeout", "transfer.conference", "transfer.consult", "transfer.forward", "transfer.noanswer", "transfer.notavailable", "transfer.dnd", "transport.failure", "error", "peer", "other", "spam", "uncallable"]
         if disconnect_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for disconnect_type -> " + disconnect_type)
             self._disconnect_type = "outdated_sdk_version"
@@ -1078,6 +1081,30 @@ class ConversationCobrowseEventTopicCobrowseMediaParticipant(object):
         
 
         self._resume_time = resume_time
+
+    @property
+    def park_time(self) -> datetime:
+        """
+        Gets the park_time of this ConversationCobrowseEventTopicCobrowseMediaParticipant.
+
+
+        :return: The park_time of this ConversationCobrowseEventTopicCobrowseMediaParticipant.
+        :rtype: datetime
+        """
+        return self._park_time
+
+    @park_time.setter
+    def park_time(self, park_time: datetime) -> None:
+        """
+        Sets the park_time of this ConversationCobrowseEventTopicCobrowseMediaParticipant.
+
+
+        :param park_time: The park_time of this ConversationCobrowseEventTopicCobrowseMediaParticipant.
+        :type: datetime
+        """
+        
+
+        self._park_time = park_time
 
     @property
     def media_roles(self) -> List[str]:

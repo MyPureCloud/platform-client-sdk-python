@@ -50,18 +50,21 @@ class JourneyViewChartMetric(object):
         self.swagger_types = {
             'id': 'str',
             'element_id': 'str',
-            'aggregate': 'str'
+            'aggregate': 'str',
+            'display_label': 'str'
         }
 
         self.attribute_map = {
             'id': 'id',
             'element_id': 'elementId',
-            'aggregate': 'aggregate'
+            'aggregate': 'aggregate',
+            'display_label': 'displayLabel'
         }
 
         self._id = None
         self._element_id = None
         self._aggregate = None
+        self._display_label = None
 
     @property
     def id(self) -> str:
@@ -139,6 +142,30 @@ class JourneyViewChartMetric(object):
             self._aggregate = "outdated_sdk_version"
         else:
             self._aggregate = aggregate
+
+    @property
+    def display_label(self) -> str:
+        """
+        Gets the display_label of this JourneyViewChartMetric.
+        A display label for the metric
+
+        :return: The display_label of this JourneyViewChartMetric.
+        :rtype: str
+        """
+        return self._display_label
+
+    @display_label.setter
+    def display_label(self, display_label: str) -> None:
+        """
+        Sets the display_label of this JourneyViewChartMetric.
+        A display label for the metric
+
+        :param display_label: The display_label of this JourneyViewChartMetric.
+        :type: str
+        """
+        
+
+        self._display_label = display_label
 
     def to_dict(self):
         """

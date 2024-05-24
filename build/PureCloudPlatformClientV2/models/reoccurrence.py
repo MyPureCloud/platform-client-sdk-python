@@ -34,6 +34,7 @@ from typing import Dict
 
 if TYPE_CHECKING:
     from . import Alteration
+    from . import NextOccurrenceDetails
     from . import Pattern
     from . import Range
 
@@ -58,7 +59,8 @@ class Reoccurrence(object):
             'time_zone': 'str',
             'pattern': 'Pattern',
             'range': 'Range',
-            'alterations': 'list[Alteration]'
+            'alterations': 'list[Alteration]',
+            'next_occurrence_details': 'NextOccurrenceDetails'
         }
 
         self.attribute_map = {
@@ -68,7 +70,8 @@ class Reoccurrence(object):
             'time_zone': 'timeZone',
             'pattern': 'pattern',
             'range': 'range',
-            'alterations': 'alterations'
+            'alterations': 'alterations',
+            'next_occurrence_details': 'nextOccurrenceDetails'
         }
 
         self._id = None
@@ -78,6 +81,7 @@ class Reoccurrence(object):
         self._pattern = None
         self._range = None
         self._alterations = None
+        self._next_occurrence_details = None
 
     @property
     def id(self) -> str:
@@ -246,6 +250,30 @@ class Reoccurrence(object):
         
 
         self._alterations = alterations
+
+    @property
+    def next_occurrence_details(self) -> 'NextOccurrenceDetails':
+        """
+        Gets the next_occurrence_details of this Reoccurrence.
+        The next occurrence details for the next start and end occurrences for the recurrence
+
+        :return: The next_occurrence_details of this Reoccurrence.
+        :rtype: NextOccurrenceDetails
+        """
+        return self._next_occurrence_details
+
+    @next_occurrence_details.setter
+    def next_occurrence_details(self, next_occurrence_details: 'NextOccurrenceDetails') -> None:
+        """
+        Sets the next_occurrence_details of this Reoccurrence.
+        The next occurrence details for the next start and end occurrences for the recurrence
+
+        :param next_occurrence_details: The next_occurrence_details of this Reoccurrence.
+        :type: NextOccurrenceDetails
+        """
+        
+
+        self._next_occurrence_details = next_occurrence_details
 
     def to_dict(self):
         """

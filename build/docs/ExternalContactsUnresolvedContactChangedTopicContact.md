@@ -31,6 +31,7 @@ title: ExternalContactsUnresolvedContactChangedTopicContact
 | **whats_app_id** | [**ExternalContactsUnresolvedContactChangedTopicWhatsAppId**](ExternalContactsUnresolvedContactChangedTopicWhatsAppId.html) |  | [optional] |
 | **facebook_id** | [**ExternalContactsUnresolvedContactChangedTopicFacebookId**](ExternalContactsUnresolvedContactChangedTopicFacebookId.html) |  | [optional] |
 | **instagram_id** | [**ExternalContactsUnresolvedContactChangedTopicInstagramId**](ExternalContactsUnresolvedContactChangedTopicInstagramId.html) |  | [optional] |
+| **external_ids** | [**list[ExternalContactsUnresolvedContactChangedTopicExternalId]**](ExternalContactsUnresolvedContactChangedTopicExternalId.html) |  | [optional] |
 | **schema** | [**ExternalContactsUnresolvedContactChangedTopicDataSchema**](ExternalContactsUnresolvedContactChangedTopicDataSchema.html) |  | [optional] |
 | **custom_fields** | **dict(str, object)** |  | [optional] |
 | **create_date** | **datetime** |  | [optional] |

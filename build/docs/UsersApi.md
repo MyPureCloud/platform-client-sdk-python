@@ -3088,8 +3088,6 @@ except ApiException as e:
 
 Query for user activity observations
 
-post_analytics_users_activity_query is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps POST /api/v2/analytics/users/activity/query 
 
 Requires ANY permissions: 

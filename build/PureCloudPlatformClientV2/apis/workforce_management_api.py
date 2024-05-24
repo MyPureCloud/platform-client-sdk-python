@@ -5925,12 +5925,13 @@ class WorkforceManagementApi(object):
         :param str management_unit_id: The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
         :param str agent_id: The agent id (required)
         :param bool exclude_capabilities: Excludes all capabilities of the agent such as queues, languages, and skills
+        :param list[str] expand: 
         :return: WfmAgent
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['management_unit_id', 'agent_id', 'exclude_capabilities']
+        all_params = ['management_unit_id', 'agent_id', 'exclude_capabilities', 'expand']
         all_params.append('callback')
 
         params = locals()
@@ -5961,6 +5962,8 @@ class WorkforceManagementApi(object):
         query_params = {}
         if 'exclude_capabilities' in params:
             query_params['excludeCapabilities'] = params['exclude_capabilities']
+        if 'expand' in params:
+            query_params['expand'] = params['expand']
 
         header_params = {}
 
@@ -7453,12 +7456,13 @@ class WorkforceManagementApi(object):
             for asynchronous request. (optional)
         :param str management_unit_id: The ID of the management unit, or 'mine' for the management unit of the logged-in user. (required)
         :param list[str] expand: Include to access additional data on the work plans
+        :param list[str] exclude: Exclude specific data on the work plans from the response
         :return: WorkPlanListResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['management_unit_id', 'expand']
+        all_params = ['management_unit_id', 'expand', 'exclude']
         all_params.append('callback')
 
         params = locals()
@@ -7484,6 +7488,8 @@ class WorkforceManagementApi(object):
         query_params = {}
         if 'expand' in params:
             query_params['expand'] = params['expand']
+        if 'exclude' in params:
+            query_params['exclude'] = params['exclude']
 
         header_params = {}
 

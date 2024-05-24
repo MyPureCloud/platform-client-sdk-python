@@ -98,7 +98,6 @@ class TaskManagementApi(object):
         """
         Delete a workbin
         
-	    delete_taskmanagement_workbin is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -177,7 +176,6 @@ class TaskManagementApi(object):
         """
         Delete a workitem
         
-	    delete_taskmanagement_workitem is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -256,7 +254,6 @@ class TaskManagementApi(object):
         """
         Delete a schema
         
-	    delete_taskmanagement_workitems_schema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -335,7 +332,6 @@ class TaskManagementApi(object):
         """
         Delete a worktype
         
-	    delete_taskmanagement_worktype is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -414,7 +410,6 @@ class TaskManagementApi(object):
         """
         Delete a status
         
-	    delete_taskmanagement_worktype_status is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -499,7 +494,6 @@ class TaskManagementApi(object):
         """
         Get a workbin
         
-	    get_taskmanagement_workbin is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -839,7 +833,6 @@ class TaskManagementApi(object):
         """
         Get a workitem
         
-	    get_taskmanagement_workitem is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -1009,7 +1002,6 @@ class TaskManagementApi(object):
         """
         Get all wrapup codes added for the given user for a workitem.
         
-	    get_taskmanagement_workitem_user_wrapups is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -1279,7 +1271,6 @@ class TaskManagementApi(object):
         """
         Get all wrapup codes added for all users for a workitem.
         
-	    get_taskmanagement_workitem_wrapups is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -1370,7 +1361,6 @@ class TaskManagementApi(object):
         """
         Get the workitem query job associated with the job id.
         
-	    get_taskmanagement_workitems_query_job is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -1449,7 +1439,6 @@ class TaskManagementApi(object):
         """
         Get results from for workitem query job 
         
-	    get_taskmanagement_workitems_query_job_results is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -1528,7 +1517,6 @@ class TaskManagementApi(object):
         """
         Get a schema
         
-	    get_taskmanagement_workitems_schema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -1607,7 +1595,6 @@ class TaskManagementApi(object):
         """
         Get a specific version of a schema
         
-	    get_taskmanagement_workitems_schema_version is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -1692,7 +1679,6 @@ class TaskManagementApi(object):
         """
         Get all versions of a schema
         
-	    get_taskmanagement_workitems_schema_versions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -1771,7 +1757,6 @@ class TaskManagementApi(object):
         """
         Get a list of schemas.
         
-	    get_taskmanagement_workitems_schemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -1844,7 +1829,6 @@ class TaskManagementApi(object):
         """
         Get a worktype
         
-	    get_taskmanagement_worktype is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -2014,7 +1998,6 @@ class TaskManagementApi(object):
         """
         Get a status
         
-	    get_taskmanagement_worktype_status is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -2099,7 +2082,6 @@ class TaskManagementApi(object):
         """
         Get list of statuses for this worktype.
         
-	    get_taskmanagement_worktype_statuses is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -2351,7 +2333,6 @@ class TaskManagementApi(object):
         """
         Update the attributes of a workbin
         
-	    patch_taskmanagement_workbin is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -2436,7 +2417,6 @@ class TaskManagementApi(object):
         """
         Update the attributes of a workitem
         
-	    patch_taskmanagement_workitem is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -2521,7 +2501,6 @@ class TaskManagementApi(object):
         """
         Attempts to manually assign a specified workitem to a specified user.  Ignores bullseye ring, PAR score, skills, and languages.
         
-	    patch_taskmanagement_workitem_assignment is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -2606,7 +2585,6 @@ class TaskManagementApi(object):
         """
         Add/Remove a wrapup code for a given user in a workitem.
         
-	    patch_taskmanagement_workitem_user_wrapups is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -2697,7 +2675,6 @@ class TaskManagementApi(object):
         """
         Add/Remove a wrapup code for the current user in a workitem.
         
-	    patch_taskmanagement_workitem_users_me_wrapups is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -2782,7 +2759,6 @@ class TaskManagementApi(object):
         """
         Update the attributes of a worktype
         
-	    patch_taskmanagement_worktype is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -2864,7 +2840,6 @@ class TaskManagementApi(object):
         """
         Update the attributes of a status
         
-	    patch_taskmanagement_worktype_status is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -2952,7 +2927,6 @@ class TaskManagementApi(object):
         """
         Create a workbin
         
-	    post_taskmanagement_workbins is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -3028,7 +3002,6 @@ class TaskManagementApi(object):
         """
         Query for workbins
         
-	    post_taskmanagement_workbins_query is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -3107,7 +3080,6 @@ class TaskManagementApi(object):
         """
         Cancel the assignment process for a workitem that is currently queued for assignment through ACD.
         
-	    post_taskmanagement_workitem_acd_cancel is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -3186,7 +3158,6 @@ class TaskManagementApi(object):
         """
         Disconnect the assignee of the workitem
         
-	    post_taskmanagement_workitem_disconnect is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -3265,7 +3236,6 @@ class TaskManagementApi(object):
         """
         Terminate a workitem
         
-	    post_taskmanagement_workitem_terminate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -3347,7 +3317,6 @@ class TaskManagementApi(object):
         """
         Create a workitem
         
-	    post_taskmanagement_workitems is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -3505,7 +3474,6 @@ class TaskManagementApi(object):
         """
         Create a workitem query job
         
-	    post_taskmanagement_workitems_query_jobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -3584,7 +3552,6 @@ class TaskManagementApi(object):
         """
         Create a schema
         
-	    post_taskmanagement_workitems_schemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -3663,7 +3630,6 @@ class TaskManagementApi(object):
         """
         Add a status to a worktype
         
-	    post_taskmanagement_worktype_statuses is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -3745,7 +3711,6 @@ class TaskManagementApi(object):
         """
         Create a worktype
         
-	    post_taskmanagement_worktypes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -3821,7 +3786,6 @@ class TaskManagementApi(object):
         """
         Query for worktypes
         
-	    post_taskmanagement_worktypes_query is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -3900,7 +3864,6 @@ class TaskManagementApi(object):
         """
         Update a schema
         
-	    put_taskmanagement_workitems_schema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

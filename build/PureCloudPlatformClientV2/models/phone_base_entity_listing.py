@@ -55,11 +55,11 @@ class PhoneBaseEntityListing(object):
             'page_number': 'int',
             'total': 'int',
             'total_number_of_entities': 'int',
-            'next_uri': 'str',
+            'previous_uri': 'str',
             'last_uri': 'str',
             'first_uri': 'str',
             'self_uri': 'str',
-            'previous_uri': 'str',
+            'next_uri': 'str',
             'page_count': 'int'
         }
 
@@ -69,11 +69,11 @@ class PhoneBaseEntityListing(object):
             'page_number': 'pageNumber',
             'total': 'total',
             'total_number_of_entities': 'totalNumberOfEntities',
-            'next_uri': 'nextUri',
+            'previous_uri': 'previousUri',
             'last_uri': 'lastUri',
             'first_uri': 'firstUri',
             'self_uri': 'selfUri',
-            'previous_uri': 'previousUri',
+            'next_uri': 'nextUri',
             'page_count': 'pageCount'
         }
 
@@ -82,11 +82,11 @@ class PhoneBaseEntityListing(object):
         self._page_number = None
         self._total = None
         self._total_number_of_entities = None
-        self._next_uri = None
+        self._previous_uri = None
         self._last_uri = None
         self._first_uri = None
         self._self_uri = None
-        self._previous_uri = None
+        self._next_uri = None
         self._page_count = None
 
     @property
@@ -210,28 +210,28 @@ class PhoneBaseEntityListing(object):
         self._total_number_of_entities = total_number_of_entities
 
     @property
-    def next_uri(self) -> str:
+    def previous_uri(self) -> str:
         """
-        Gets the next_uri of this PhoneBaseEntityListing.
+        Gets the previous_uri of this PhoneBaseEntityListing.
 
 
-        :return: The next_uri of this PhoneBaseEntityListing.
+        :return: The previous_uri of this PhoneBaseEntityListing.
         :rtype: str
         """
-        return self._next_uri
+        return self._previous_uri
 
-    @next_uri.setter
-    def next_uri(self, next_uri: str) -> None:
+    @previous_uri.setter
+    def previous_uri(self, previous_uri: str) -> None:
         """
-        Sets the next_uri of this PhoneBaseEntityListing.
+        Sets the previous_uri of this PhoneBaseEntityListing.
 
 
-        :param next_uri: The next_uri of this PhoneBaseEntityListing.
+        :param previous_uri: The previous_uri of this PhoneBaseEntityListing.
         :type: str
         """
         
 
-        self._next_uri = next_uri
+        self._previous_uri = previous_uri
 
     @property
     def last_uri(self) -> str:
@@ -306,28 +306,28 @@ class PhoneBaseEntityListing(object):
         self._self_uri = self_uri
 
     @property
-    def previous_uri(self) -> str:
+    def next_uri(self) -> str:
         """
-        Gets the previous_uri of this PhoneBaseEntityListing.
+        Gets the next_uri of this PhoneBaseEntityListing.
 
 
-        :return: The previous_uri of this PhoneBaseEntityListing.
+        :return: The next_uri of this PhoneBaseEntityListing.
         :rtype: str
         """
-        return self._previous_uri
+        return self._next_uri
 
-    @previous_uri.setter
-    def previous_uri(self, previous_uri: str) -> None:
+    @next_uri.setter
+    def next_uri(self, next_uri: str) -> None:
         """
-        Sets the previous_uri of this PhoneBaseEntityListing.
+        Sets the next_uri of this PhoneBaseEntityListing.
 
 
-        :param previous_uri: The previous_uri of this PhoneBaseEntityListing.
+        :param next_uri: The next_uri of this PhoneBaseEntityListing.
         :type: str
         """
         
 
-        self._previous_uri = previous_uri
+        self._next_uri = next_uri
 
     @property
     def page_count(self) -> int:

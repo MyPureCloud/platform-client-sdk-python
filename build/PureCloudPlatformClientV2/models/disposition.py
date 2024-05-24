@@ -52,18 +52,24 @@ class Disposition(object):
         self.swagger_types = {
             'name': 'str',
             'analyzer': 'str',
-            'disposition_parameters': 'DispositionParameters'
+            'disposition_parameters': 'DispositionParameters',
+            'detected_speech_start': 'datetime',
+            'detected_speech_end': 'datetime'
         }
 
         self.attribute_map = {
             'name': 'name',
             'analyzer': 'analyzer',
-            'disposition_parameters': 'dispositionParameters'
+            'disposition_parameters': 'dispositionParameters',
+            'detected_speech_start': 'detectedSpeechStart',
+            'detected_speech_end': 'detectedSpeechEnd'
         }
 
         self._name = None
         self._analyzer = None
         self._disposition_parameters = None
+        self._detected_speech_start = None
+        self._detected_speech_end = None
 
     @property
     def name(self) -> str:
@@ -136,6 +142,54 @@ class Disposition(object):
         
 
         self._disposition_parameters = disposition_parameters
+
+    @property
+    def detected_speech_start(self) -> datetime:
+        """
+        Gets the detected_speech_start of this Disposition.
+        Absolute time when the speech started. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :return: The detected_speech_start of this Disposition.
+        :rtype: datetime
+        """
+        return self._detected_speech_start
+
+    @detected_speech_start.setter
+    def detected_speech_start(self, detected_speech_start: datetime) -> None:
+        """
+        Sets the detected_speech_start of this Disposition.
+        Absolute time when the speech started. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :param detected_speech_start: The detected_speech_start of this Disposition.
+        :type: datetime
+        """
+        
+
+        self._detected_speech_start = detected_speech_start
+
+    @property
+    def detected_speech_end(self) -> datetime:
+        """
+        Gets the detected_speech_end of this Disposition.
+        Absolute time when the speech ended. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :return: The detected_speech_end of this Disposition.
+        :rtype: datetime
+        """
+        return self._detected_speech_end
+
+    @detected_speech_end.setter
+    def detected_speech_end(self, detected_speech_end: datetime) -> None:
+        """
+        Sets the detected_speech_end of this Disposition.
+        Absolute time when the speech ended. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :param detected_speech_end: The detected_speech_end of this Disposition.
+        :type: datetime
+        """
+        
+
+        self._detected_speech_end = detected_speech_end
 
     def to_dict(self):
         """

@@ -7,7 +7,7 @@ title: V2MobiusRulesTopicAlertNotification
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **recipient** | **str** |  | [optional] |
+| **recipient** | [**V2MobiusRulesTopicAlertNotificationRecipient**](V2MobiusRulesTopicAlertNotificationRecipient.html) |  | [optional] |
 | **notification_types** | **list[str]** |  | [optional] |
 | **locale** | **str** |  | [optional] |
 {: class="table table-striped"}

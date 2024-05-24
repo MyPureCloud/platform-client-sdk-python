@@ -70,7 +70,8 @@ class CustomerStartDetailEventTopicCustomerStartEvent(object):
             'message_type': 'str',
             'conversation_external_contact_ids': 'list[str]',
             'conversation_external_organization_ids': 'list[str]',
-            'journey_context': 'CustomerStartDetailEventTopicJourneyContext'
+            'journey_context': 'CustomerStartDetailEventTopicJourneyContext',
+            'division_id': 'str'
         }
 
         self.attribute_map = {
@@ -94,7 +95,8 @@ class CustomerStartDetailEventTopicCustomerStartEvent(object):
             'message_type': 'messageType',
             'conversation_external_contact_ids': 'conversationExternalContactIds',
             'conversation_external_organization_ids': 'conversationExternalOrganizationIds',
-            'journey_context': 'journeyContext'
+            'journey_context': 'journeyContext',
+            'division_id': 'divisionId'
         }
 
         self._event_time = None
@@ -118,6 +120,7 @@ class CustomerStartDetailEventTopicCustomerStartEvent(object):
         self._conversation_external_contact_ids = None
         self._conversation_external_organization_ids = None
         self._journey_context = None
+        self._division_id = None
 
     @property
     def event_time(self) -> int:
@@ -637,6 +640,30 @@ class CustomerStartDetailEventTopicCustomerStartEvent(object):
         
 
         self._journey_context = journey_context
+
+    @property
+    def division_id(self) -> str:
+        """
+        Gets the division_id of this CustomerStartDetailEventTopicCustomerStartEvent.
+
+
+        :return: The division_id of this CustomerStartDetailEventTopicCustomerStartEvent.
+        :rtype: str
+        """
+        return self._division_id
+
+    @division_id.setter
+    def division_id(self, division_id: str) -> None:
+        """
+        Sets the division_id of this CustomerStartDetailEventTopicCustomerStartEvent.
+
+
+        :param division_id: The division_id of this CustomerStartDetailEventTopicCustomerStartEvent.
+        :type: str
+        """
+        
+
+        self._division_id = division_id
 
     def to_dict(self):
         """

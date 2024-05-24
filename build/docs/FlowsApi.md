@@ -128,8 +128,6 @@ except ApiException as e:
 
 Query for flow activity observations
 
-post_analytics_flows_activity_query is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps POST /api/v2/analytics/flows/activity/query 
 
 Requires ANY permissions: 

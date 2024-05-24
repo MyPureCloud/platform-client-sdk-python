@@ -33,6 +33,7 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
+    from . import JourneyViewChartDisplayAttributes
     from . import JourneyViewChartGroupByAttribute
     from . import JourneyViewChartMetric
 
@@ -57,6 +58,8 @@ class JourneyViewChart(object):
             'group_by_time': 'str',
             'group_by_attributes': 'list[JourneyViewChartGroupByAttribute]',
             'metrics': 'list[JourneyViewChartMetric]',
+            'display_attributes': 'JourneyViewChartDisplayAttributes',
+            'group_by_max': 'int',
             'self_uri': 'str'
         }
 
@@ -67,6 +70,8 @@ class JourneyViewChart(object):
             'group_by_time': 'groupByTime',
             'group_by_attributes': 'groupByAttributes',
             'metrics': 'metrics',
+            'display_attributes': 'displayAttributes',
+            'group_by_max': 'groupByMax',
             'self_uri': 'selfUri'
         }
 
@@ -76,6 +81,8 @@ class JourneyViewChart(object):
         self._group_by_time = None
         self._group_by_attributes = None
         self._metrics = None
+        self._display_attributes = None
+        self._group_by_max = None
         self._self_uri = None
 
     @property
@@ -226,6 +233,54 @@ class JourneyViewChart(object):
         
 
         self._metrics = metrics
+
+    @property
+    def display_attributes(self) -> 'JourneyViewChartDisplayAttributes':
+        """
+        Gets the display_attributes of this JourneyViewChart.
+        Optional display attributes for rendering the chart
+
+        :return: The display_attributes of this JourneyViewChart.
+        :rtype: JourneyViewChartDisplayAttributes
+        """
+        return self._display_attributes
+
+    @display_attributes.setter
+    def display_attributes(self, display_attributes: 'JourneyViewChartDisplayAttributes') -> None:
+        """
+        Sets the display_attributes of this JourneyViewChart.
+        Optional display attributes for rendering the chart
+
+        :param display_attributes: The display_attributes of this JourneyViewChart.
+        :type: JourneyViewChartDisplayAttributes
+        """
+        
+
+        self._display_attributes = display_attributes
+
+    @property
+    def group_by_max(self) -> int:
+        """
+        Gets the group_by_max of this JourneyViewChart.
+        A maximum on the number of values being grouped by
+
+        :return: The group_by_max of this JourneyViewChart.
+        :rtype: int
+        """
+        return self._group_by_max
+
+    @group_by_max.setter
+    def group_by_max(self, group_by_max: int) -> None:
+        """
+        Sets the group_by_max of this JourneyViewChart.
+        A maximum on the number of values being grouped by
+
+        :param group_by_max: The group_by_max of this JourneyViewChart.
+        :type: int
+        """
+        
+
+        self._group_by_max = group_by_max
 
     @property
     def self_uri(self) -> str:

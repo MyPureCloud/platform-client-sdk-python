@@ -67,7 +67,8 @@ class ContactDetailEventTopicContactUpdateEvent(object):
             'subject': 'str',
             'message_type': 'str',
             'conversation_external_contact_ids': 'list[str]',
-            'conversation_external_organization_ids': 'list[str]'
+            'conversation_external_organization_ids': 'list[str]',
+            'division_id': 'str'
         }
 
         self.attribute_map = {
@@ -90,7 +91,8 @@ class ContactDetailEventTopicContactUpdateEvent(object):
             'subject': 'subject',
             'message_type': 'messageType',
             'conversation_external_contact_ids': 'conversationExternalContactIds',
-            'conversation_external_organization_ids': 'conversationExternalOrganizationIds'
+            'conversation_external_organization_ids': 'conversationExternalOrganizationIds',
+            'division_id': 'divisionId'
         }
 
         self._event_time = None
@@ -113,6 +115,7 @@ class ContactDetailEventTopicContactUpdateEvent(object):
         self._message_type = None
         self._conversation_external_contact_ids = None
         self._conversation_external_organization_ids = None
+        self._division_id = None
 
     @property
     def event_time(self) -> int:
@@ -608,6 +611,30 @@ class ContactDetailEventTopicContactUpdateEvent(object):
         
 
         self._conversation_external_organization_ids = conversation_external_organization_ids
+
+    @property
+    def division_id(self) -> str:
+        """
+        Gets the division_id of this ContactDetailEventTopicContactUpdateEvent.
+
+
+        :return: The division_id of this ContactDetailEventTopicContactUpdateEvent.
+        :rtype: str
+        """
+        return self._division_id
+
+    @division_id.setter
+    def division_id(self, division_id: str) -> None:
+        """
+        Sets the division_id of this ContactDetailEventTopicContactUpdateEvent.
+
+
+        :param division_id: The division_id of this ContactDetailEventTopicContactUpdateEvent.
+        :type: str
+        """
+        
+
+        self._division_id = division_id
 
     def to_dict(self):
         """

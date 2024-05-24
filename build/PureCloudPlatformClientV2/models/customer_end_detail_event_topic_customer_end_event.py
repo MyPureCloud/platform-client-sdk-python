@@ -69,7 +69,8 @@ class CustomerEndDetailEventTopicCustomerEndEvent(object):
             'message_type': 'str',
             'interacting_duration_ms': 'int',
             'conversation_external_contact_ids': 'list[str]',
-            'conversation_external_organization_ids': 'list[str]'
+            'conversation_external_organization_ids': 'list[str]',
+            'division_id': 'str'
         }
 
         self.attribute_map = {
@@ -94,7 +95,8 @@ class CustomerEndDetailEventTopicCustomerEndEvent(object):
             'message_type': 'messageType',
             'interacting_duration_ms': 'interactingDurationMs',
             'conversation_external_contact_ids': 'conversationExternalContactIds',
-            'conversation_external_organization_ids': 'conversationExternalOrganizationIds'
+            'conversation_external_organization_ids': 'conversationExternalOrganizationIds',
+            'division_id': 'divisionId'
         }
 
         self._event_time = None
@@ -119,6 +121,7 @@ class CustomerEndDetailEventTopicCustomerEndEvent(object):
         self._interacting_duration_ms = None
         self._conversation_external_contact_ids = None
         self._conversation_external_organization_ids = None
+        self._division_id = None
 
     @property
     def event_time(self) -> int:
@@ -667,6 +670,30 @@ class CustomerEndDetailEventTopicCustomerEndEvent(object):
         
 
         self._conversation_external_organization_ids = conversation_external_organization_ids
+
+    @property
+    def division_id(self) -> str:
+        """
+        Gets the division_id of this CustomerEndDetailEventTopicCustomerEndEvent.
+
+
+        :return: The division_id of this CustomerEndDetailEventTopicCustomerEndEvent.
+        :rtype: str
+        """
+        return self._division_id
+
+    @division_id.setter
+    def division_id(self, division_id: str) -> None:
+        """
+        Sets the division_id of this CustomerEndDetailEventTopicCustomerEndEvent.
+
+
+        :param division_id: The division_id of this CustomerEndDetailEventTopicCustomerEndEvent.
+        :type: str
+        """
+        
+
+        self._division_id = division_id
 
     def to_dict(self):
         """

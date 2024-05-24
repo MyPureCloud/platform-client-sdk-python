@@ -942,7 +942,7 @@ except ApiException as e:
 
 Queries Evaluations and returns a paged list
 
-Query params must include one of conversationId, evaluatorUserId, agentUserId or assigneeUserId. When querying by agentUserId (and not conversationId or evaluatorUserId), the results are sorted by release date. Evaluations set to 'Never Release' are omitted in this case. When querying by evaluatorUserId or conversationId (including when combined with agentUserId), the results are sorted by assigned date. NOTE: The count for total and pageCount might not be accurate when querying for a large number of evaluations. nextUri, if present, will indicate that there are more evaluations to fetch.
+Query params must include one of conversationId, evaluatorUserId, agentUserId or assigneeUserId. When querying by agentUserId (and not conversationId or evaluatorUserId), the results are sorted by release date. Evaluations set to 'Never Release' are omitted in this case. When querying by evaluatorUserId or conversationId (including when combined with agentUserId), the results are sorted by assigned date. NOTE: The count for total and pageCount might not be accurate when querying for a large number of evaluations. nextUri, if present, will indicate that there are more evaluations to fetch. The evaluation entities contained in the response might only contain a subset of all the properties listed below. It is often because a given property's value has not yet been populated or is not applicable in the current state of the evaluation. It might also be because the missing property in the response was not requested by the user.
 
 Wraps GET /api/v2/quality/evaluations/query 
 
@@ -981,7 +981,7 @@ form_context_id = 'form_context_id_example' # str | shared id between form versi
 evaluation_state = ['evaluation_state_example'] # list[str] |  (optional)
 is_released = True # bool | the evaluation has been released (optional)
 agent_has_read = True # bool | agent has the evaluation (optional)
-expand_answer_total_scores = True # bool | get the total scores for evaluations (optional)
+expand_answer_total_scores = True # bool | get the total scores for evaluations. NOTE: The answers will only be populated if this parameter is set to true in the request. (optional)
 maximum = 56 # int | the maximum number of results to return (optional)
 sort_order = 'sort_order_example' # str | NOTE: Does not work when conversationId is supplied. (optional)
 
@@ -1016,7 +1016,7 @@ except ApiException as e:
 | **evaluation_state** | [**list[str]**](str.html)|  | [optional]  |
 | **is_released** | **bool**| the evaluation has been released | [optional]  |
 | **agent_has_read** | **bool**| agent has the evaluation | [optional]  |
-| **expand_answer_total_scores** | **bool**| get the total scores for evaluations | [optional]  |
+| **expand_answer_total_scores** | **bool**| get the total scores for evaluations. NOTE: The answers will only be populated if this parameter is set to true in the request. | [optional]  |
 | **maximum** | **int**| the maximum number of results to return | [optional]  |
 | **sort_order** | **str**| NOTE: Does not work when conversationId is supplied. | [optional]  |
 {: class="table table-striped"}

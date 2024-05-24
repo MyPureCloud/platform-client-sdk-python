@@ -43,6 +43,7 @@ title: ConversationCallEventTopicCallMediaParticipant
 | **start_acw_time** | **datetime** |  | [optional] |
 | **end_acw_time** | **datetime** |  | [optional] |
 | **resume_time** | **datetime** |  | [optional] |
+| **park_time** | **datetime** |  | [optional] |
 | **media_roles** | **list[str]** |  | [optional] |
 | **queue_media_settings** | [**ConversationCallEventTopicQueueMediaSettings**](ConversationCallEventTopicQueueMediaSettings.html) |  | [optional] |
 | **muted** | **bool** |  | [optional] |

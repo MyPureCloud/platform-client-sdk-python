@@ -32,6 +32,8 @@ from typing import TYPE_CHECKING
 from typing import List
 from typing import Dict
 
+if TYPE_CHECKING:
+    from . import V2MobiusAlertsTopicAlertNotificationRecipient
 
 class V2MobiusAlertsTopicAlertNotification(object):
     """
@@ -48,7 +50,7 @@ class V2MobiusAlertsTopicAlertNotification(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'recipient': 'str',
+            'recipient': 'V2MobiusAlertsTopicAlertNotificationRecipient',
             'notification_types': 'list[str]',
             'locale': 'str'
         }
@@ -64,24 +66,24 @@ class V2MobiusAlertsTopicAlertNotification(object):
         self._locale = None
 
     @property
-    def recipient(self) -> str:
+    def recipient(self) -> 'V2MobiusAlertsTopicAlertNotificationRecipient':
         """
         Gets the recipient of this V2MobiusAlertsTopicAlertNotification.
 
 
         :return: The recipient of this V2MobiusAlertsTopicAlertNotification.
-        :rtype: str
+        :rtype: V2MobiusAlertsTopicAlertNotificationRecipient
         """
         return self._recipient
 
     @recipient.setter
-    def recipient(self, recipient: str) -> None:
+    def recipient(self, recipient: 'V2MobiusAlertsTopicAlertNotificationRecipient') -> None:
         """
         Sets the recipient of this V2MobiusAlertsTopicAlertNotification.
 
 
         :param recipient: The recipient of this V2MobiusAlertsTopicAlertNotification.
-        :type: str
+        :type: V2MobiusAlertsTopicAlertNotificationRecipient
         """
         
 

@@ -121,6 +121,7 @@ from .models.aggregate_view_data import AggregateViewData
 from .models.aggregation_range import AggregationRange
 from .models.aggregation_result import AggregationResult
 from .models.aggregation_result_entry import AggregationResultEntry
+from .models.ai_scoring_settings import AiScoringSettings
 from .models.alert_listing import AlertListing
 from .models.alert_notification import AlertNotification
 from .models.alert_request import AlertRequest
@@ -978,7 +979,6 @@ from .models.conversation_video_event_topic_uri_reference import ConversationVid
 from .models.conversation_video_event_topic_video_conversation import ConversationVideoEventTopicVideoConversation
 from .models.conversation_video_event_topic_video_media_participant import ConversationVideoEventTopicVideoMediaParticipant
 from .models.conversation_video_event_topic_wrapup import ConversationVideoEventTopicWrapup
-from .models.copilot_scoring import CopilotScoring
 from .models.copy_attachments_request import CopyAttachmentsRequest
 from .models.copy_bu_forecast_request import CopyBuForecastRequest
 from .models.copy_voicemail_message import CopyVoicemailMessage
@@ -1550,7 +1550,9 @@ from .models.external_contacts_contact_changed_topic_contact import ExternalCont
 from .models.external_contacts_contact_changed_topic_contact_address import ExternalContactsContactChangedTopicContactAddress
 from .models.external_contacts_contact_changed_topic_data_schema import ExternalContactsContactChangedTopicDataSchema
 from .models.external_contacts_contact_changed_topic_division import ExternalContactsContactChangedTopicDivision
+from .models.external_contacts_contact_changed_topic_external_id import ExternalContactsContactChangedTopicExternalId
 from .models.external_contacts_contact_changed_topic_external_organization import ExternalContactsContactChangedTopicExternalOrganization
+from .models.external_contacts_contact_changed_topic_external_source import ExternalContactsContactChangedTopicExternalSource
 from .models.external_contacts_contact_changed_topic_facebook_id import ExternalContactsContactChangedTopicFacebookId
 from .models.external_contacts_contact_changed_topic_facebook_scoped_id import ExternalContactsContactChangedTopicFacebookScopedId
 from .models.external_contacts_contact_changed_topic_instagram_id import ExternalContactsContactChangedTopicInstagramId
@@ -1566,7 +1568,9 @@ from .models.external_contacts_unresolved_contact_changed_topic_contact import E
 from .models.external_contacts_unresolved_contact_changed_topic_contact_address import ExternalContactsUnresolvedContactChangedTopicContactAddress
 from .models.external_contacts_unresolved_contact_changed_topic_data_schema import ExternalContactsUnresolvedContactChangedTopicDataSchema
 from .models.external_contacts_unresolved_contact_changed_topic_division import ExternalContactsUnresolvedContactChangedTopicDivision
+from .models.external_contacts_unresolved_contact_changed_topic_external_id import ExternalContactsUnresolvedContactChangedTopicExternalId
 from .models.external_contacts_unresolved_contact_changed_topic_external_organization import ExternalContactsUnresolvedContactChangedTopicExternalOrganization
+from .models.external_contacts_unresolved_contact_changed_topic_external_source import ExternalContactsUnresolvedContactChangedTopicExternalSource
 from .models.external_contacts_unresolved_contact_changed_topic_facebook_id import ExternalContactsUnresolvedContactChangedTopicFacebookId
 from .models.external_contacts_unresolved_contact_changed_topic_facebook_scoped_id import ExternalContactsUnresolvedContactChangedTopicFacebookScopedId
 from .models.external_contacts_unresolved_contact_changed_topic_instagram_id import ExternalContactsUnresolvedContactChangedTopicInstagramId
@@ -1728,6 +1732,9 @@ from .models.forecast_service_level_response import ForecastServiceLevelResponse
 from .models.forecast_source_day_pointer import ForecastSourceDayPointer
 from .models.format import Format
 from .models.forms_track_trigger import FormsTrackTrigger
+from .models.free_trial_limit import FreeTrialLimit
+from .models.free_trial_limit_docs import FreeTrialLimitDocs
+from .models.free_trial_namespace import FreeTrialNamespace
 from .models.from_email_address import FromEmailAddress
 from .models.full_day_time_off_marker import FullDayTimeOffMarker
 from .models.function import Function
@@ -1761,7 +1768,6 @@ from .models.generate_meeting_id_request import GenerateMeetingIdRequest
 from .models.generic_action_event import GenericActionEvent
 from .models.generic_event_action import GenericEventAction
 from .models.generic_saml import GenericSAML
-from .models.generic_template import GenericTemplate
 from .models.genesys_bot_connector import GenesysBotConnector
 from .models.geolocation import Geolocation
 from .models.geolocation_event_geolocation import GeolocationEventGeolocation
@@ -2002,6 +2008,7 @@ from .models.journey_session_events_notification_user import JourneySessionEvent
 from .models.journey_survey_question import JourneySurveyQuestion
 from .models.journey_view import JourneyView
 from .models.journey_view_chart import JourneyViewChart
+from .models.journey_view_chart_display_attributes import JourneyViewChartDisplayAttributes
 from .models.journey_view_chart_group_by_attribute import JourneyViewChartGroupByAttribute
 from .models.journey_view_chart_metric import JourneyViewChartMetric
 from .models.journey_view_chart_metric_result import JourneyViewChartMetricResult
@@ -2473,6 +2480,7 @@ from .models.named_entity_type_item import NamedEntityTypeItem
 from .models.named_entity_type_mechanism import NamedEntityTypeMechanism
 from .models.namespace_docs import NamespaceDocs
 from .models.network_connectivity import NetworkConnectivity
+from .models.next_occurrence_details import NextOccurrenceDetails
 from .models.nlu_confusion_matrix_column import NluConfusionMatrixColumn
 from .models.nlu_confusion_matrix_row import NluConfusionMatrixRow
 from .models.nlu_detection_context import NluDetectionContext
@@ -2531,6 +2539,7 @@ from .models.objective_template import ObjectiveTemplate
 from .models.objective_zone import ObjectiveZone
 from .models.observation_metric_data import ObservationMetricData
 from .models.observation_value import ObservationValue
+from .models.occurrence_details import OccurrenceDetails
 from .models.okta import Okta
 from .models.one_login import OneLogin
 from .models.one_on_one import OneOnOne
@@ -2646,7 +2655,6 @@ from .models.paged_namespace_listing import PagedNamespaceListing
 from .models.pageless_domain_entity_listing_evaluation_version import PagelessDomainEntityListingEvaluationVersion
 from .models.pageless_entity_listing import PagelessEntityListing
 from .models.paging_spec import PagingSpec
-from .models.parameter import Parameter
 from .models.parsed_certificate import ParsedCertificate
 from .models.participant import Participant
 from .models.participant_attributes import ParticipantAttributes
@@ -2692,6 +2700,7 @@ from .models.patch_text_style_properties import PatchTextStyleProperties
 from .models.patch_user import PatchUser
 from .models.patch_web_messaging_offer_fields import PatchWebMessagingOfferFields
 from .models.pattern import Pattern
+from .models.pause_criteria import PauseCriteria
 from .models.performance_prediction_complete_event_topic_error_body import PerformancePredictionCompleteEventTopicErrorBody
 from .models.performance_prediction_complete_event_topic_performance_prediction_calculation_notification import PerformancePredictionCompleteEventTopicPerformancePredictionCalculationNotification
 from .models.performance_prediction_outputs import PerformancePredictionOutputs
@@ -3108,8 +3117,6 @@ from .models.recording_annotation_flow import RecordingAnnotationFlow
 from .models.recording_annotation_queue import RecordingAnnotationQueue
 from .models.recording_archive_restore_topic_media_result import RecordingArchiveRestoreTopicMediaResult
 from .models.recording_archive_restore_topic_recording import RecordingArchiveRestoreTopicRecording
-from .models.recording_button_component import RecordingButtonComponent
-from .models.recording_content_actions import RecordingContentActions
 from .models.recording_content_story import RecordingContentStory
 from .models.recording_email_message import RecordingEmailMessage
 from .models.recording_encryption_configuration import RecordingEncryptionConfiguration
@@ -3139,12 +3146,6 @@ from .models.replace_request import ReplaceRequest
 from .models.replace_response import ReplaceResponse
 from .models.replacement_term import ReplacementTerm
 from .models.reply_to_email_address import ReplyToEmailAddress
-from .models.report_meta_data import ReportMetaData
-from .models.report_meta_data_entity_listing import ReportMetaDataEntityListing
-from .models.report_run_entry import ReportRunEntry
-from .models.report_run_entry_entity_domain_listing import ReportRunEntryEntityDomainListing
-from .models.report_schedule import ReportSchedule
-from .models.report_schedule_entity_listing import ReportScheduleEntityListing
 from .models.reporting_data_export_topic_data_export_notification import ReportingDataExportTopicDataExportNotification
 from .models.reporting_export_job_listing import ReportingExportJobListing
 from .models.reporting_export_job_request import ReportingExportJobRequest
@@ -3246,7 +3247,6 @@ from .models.routing_transfer_event import RoutingTransferEvent
 from .models.rule_set import RuleSet
 from .models.rule_set_diagnostic import RuleSetDiagnostic
 from .models.rule_set_entity_listing import RuleSetEntityListing
-from .models.run_now_response import RunNowResponse
 from .models.sip_search_public_request import SIPSearchPublicRequest
 from .models.sms_available_phone_number_entity_listing import SMSAvailablePhoneNumberEntityListing
 from .models.salesforce import Salesforce
@@ -3984,6 +3984,7 @@ from .models.v2_flow_execution_data_flowid_topic_quality import V2FlowExecutionD
 from .models.v2_mobius_alerts_topic_addressable_entity_ref import V2MobiusAlertsTopicAddressableEntityRef
 from .models.v2_mobius_alerts_topic_alert import V2MobiusAlertsTopicAlert
 from .models.v2_mobius_alerts_topic_alert_notification import V2MobiusAlertsTopicAlertNotification
+from .models.v2_mobius_alerts_topic_alert_notification_recipient import V2MobiusAlertsTopicAlertNotificationRecipient
 from .models.v2_mobius_alerts_topic_alert_rule_properties import V2MobiusAlertsTopicAlertRuleProperties
 from .models.v2_mobius_alerts_topic_alert_summary import V2MobiusAlertsTopicAlertSummary
 from .models.v2_mobius_alerts_topic_alert_summary_entity import V2MobiusAlertsTopicAlertSummaryEntity
@@ -3992,6 +3993,7 @@ from .models.v2_mobius_alerts_topic_condition import V2MobiusAlertsTopicConditio
 from .models.v2_mobius_alerts_topic_condition_rule_predicate import V2MobiusAlertsTopicConditionRulePredicate
 from .models.v2_mobius_alerts_topic_entity_properties import V2MobiusAlertsTopicEntityProperties
 from .models.v2_mobius_rules_topic_alert_notification import V2MobiusRulesTopicAlertNotification
+from .models.v2_mobius_rules_topic_alert_notification_recipient import V2MobiusRulesTopicAlertNotificationRecipient
 from .models.v2_mobius_rules_topic_alerting_addressable_entity_ref import V2MobiusRulesTopicAlertingAddressableEntityRef
 from .models.v2_mobius_rules_topic_condition import V2MobiusRulesTopicCondition
 from .models.v2_mobius_rules_topic_condition_rule_predicate import V2MobiusRulesTopicConditionRulePredicate
@@ -4288,6 +4290,7 @@ from .models.work_plan_constraint_conflict_message import WorkPlanConstraintConf
 from .models.work_plan_constraint_message import WorkPlanConstraintMessage
 from .models.work_plan_list_item_response import WorkPlanListItemResponse
 from .models.work_plan_list_response import WorkPlanListResponse
+from .models.work_plan_override import WorkPlanOverride
 from .models.work_plan_pattern_request import WorkPlanPatternRequest
 from .models.work_plan_pattern_response import WorkPlanPatternResponse
 from .models.work_plan_reference import WorkPlanReference

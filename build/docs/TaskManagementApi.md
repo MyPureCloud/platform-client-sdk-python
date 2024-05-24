@@ -65,8 +65,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 Delete a workbin
 
-delete_taskmanagement_workbin is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps DELETE /api/v2/taskmanagement/workbins/{workbinId} 
 
 Requires ANY permissions: 
@@ -114,8 +112,6 @@ void (empty response body)
 
 
 Delete a workitem
-
-delete_taskmanagement_workitem is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps DELETE /api/v2/taskmanagement/workitems/{workitemId} 
 
@@ -165,8 +161,6 @@ void (empty response body)
 
 Delete a schema
 
-delete_taskmanagement_workitems_schema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps DELETE /api/v2/taskmanagement/workitems/schemas/{schemaId} 
 
 Requires ANY permissions: 
@@ -215,8 +209,6 @@ void (empty response body)
 
 Delete a worktype
 
-delete_taskmanagement_worktype is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps DELETE /api/v2/taskmanagement/worktypes/{worktypeId} 
 
 Requires ANY permissions: 
@@ -264,8 +256,6 @@ void (empty response body)
 
 
 Delete a status
-
-delete_taskmanagement_worktype_status is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps DELETE /api/v2/taskmanagement/worktypes/{worktypeId}/statuses/{statusId} 
 
@@ -316,8 +306,6 @@ void (empty response body)
 
 
 Get a workbin
-
-get_taskmanagement_workbin is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/taskmanagement/workbins/{workbinId} 
 
@@ -535,8 +523,6 @@ except ApiException as e:
 
 Get a workitem
 
-get_taskmanagement_workitem is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/taskmanagement/workitems/{workitemId} 
 
 Requires ANY permissions: 
@@ -644,8 +630,6 @@ except ApiException as e:
 
 
 Get all wrapup codes added for the given user for a workitem.
-
-get_taskmanagement_workitem_user_wrapups is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/taskmanagement/workitems/{workitemId}/users/{userId}/wrapups 
 
@@ -816,8 +800,6 @@ except ApiException as e:
 
 Get all wrapup codes added for all users for a workitem.
 
-get_taskmanagement_workitem_wrapups is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/taskmanagement/workitems/{workitemId}/wrapups 
 
 Requires ANY permissions: 
@@ -875,8 +857,6 @@ except ApiException as e:
 
 Get the workitem query job associated with the job id.
 
-get_taskmanagement_workitems_query_job is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/taskmanagement/workitems/query/jobs/{jobId} 
 
 Requires ALL permissions: 
@@ -925,8 +905,6 @@ except ApiException as e:
 
 
 Get results from for workitem query job 
-
-get_taskmanagement_workitems_query_job_results is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/taskmanagement/workitems/query/jobs/{jobId}/results 
 
@@ -977,8 +955,6 @@ except ApiException as e:
 
 Get a schema
 
-get_taskmanagement_workitems_schema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/taskmanagement/workitems/schemas/{schemaId} 
 
 Requires ANY permissions: 
@@ -1027,8 +1003,6 @@ except ApiException as e:
 
 
 Get a specific version of a schema
-
-get_taskmanagement_workitems_schema_version is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/taskmanagement/workitems/schemas/{schemaId}/versions/{versionId} 
 
@@ -1081,8 +1055,6 @@ except ApiException as e:
 
 Get all versions of a schema
 
-get_taskmanagement_workitems_schema_versions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/taskmanagement/workitems/schemas/{schemaId}/versions 
 
 Requires ANY permissions: 
@@ -1132,8 +1104,6 @@ except ApiException as e:
 
 Get a list of schemas.
 
-get_taskmanagement_workitems_schemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/taskmanagement/workitems/schemas 
 
 Requires ANY permissions: 
@@ -1178,8 +1148,6 @@ This endpoint does not need any parameters.
 
 
 Get a worktype
-
-get_taskmanagement_worktype is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/taskmanagement/worktypes/{worktypeId} 
 
@@ -1289,8 +1257,6 @@ except ApiException as e:
 
 Get a status
 
-get_taskmanagement_worktype_status is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/taskmanagement/worktypes/{worktypeId}/statuses/{statusId} 
 
 Requires ANY permissions: 
@@ -1341,8 +1307,6 @@ except ApiException as e:
 
 
 Get list of statuses for this worktype.
-
-get_taskmanagement_worktype_statuses is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/taskmanagement/worktypes/{worktypeId}/statuses 
 
@@ -1503,8 +1467,6 @@ except ApiException as e:
 
 Update the attributes of a workbin
 
-patch_taskmanagement_workbin is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps PATCH /api/v2/taskmanagement/workbins/{workbinId} 
 
 Requires ANY permissions: 
@@ -1555,8 +1517,6 @@ except ApiException as e:
 
 
 Update the attributes of a workitem
-
-patch_taskmanagement_workitem is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps PATCH /api/v2/taskmanagement/workitems/{workitemId} 
 
@@ -1610,8 +1570,6 @@ except ApiException as e:
 
 Attempts to manually assign a specified workitem to a specified user.  Ignores bullseye ring, PAR score, skills, and languages.
 
-patch_taskmanagement_workitem_assignment is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps PATCH /api/v2/taskmanagement/workitems/{workitemId}/assignment 
 
 Requires ANY permissions: 
@@ -1662,8 +1620,6 @@ void (empty response body)
 
 
 Add/Remove a wrapup code for a given user in a workitem.
-
-patch_taskmanagement_workitem_user_wrapups is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps PATCH /api/v2/taskmanagement/workitems/{workitemId}/users/{userId}/wrapups 
 
@@ -1718,8 +1674,6 @@ except ApiException as e:
 
 Add/Remove a wrapup code for the current user in a workitem.
 
-patch_taskmanagement_workitem_users_me_wrapups is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps PATCH /api/v2/taskmanagement/workitems/{workitemId}/users/me/wrapups 
 
 Requires ANY permissions: 
@@ -1771,8 +1725,6 @@ except ApiException as e:
 
 Update the attributes of a worktype
 
-patch_taskmanagement_worktype is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps PATCH /api/v2/taskmanagement/worktypes/{worktypeId} 
 
 Requires ALL permissions: 
@@ -1823,8 +1775,6 @@ except ApiException as e:
 
 
 Update the attributes of a status
-
-patch_taskmanagement_worktype_status is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps PATCH /api/v2/taskmanagement/worktypes/{worktypeId}/statuses/{statusId} 
 
@@ -1879,8 +1829,6 @@ except ApiException as e:
 
 Create a workbin
 
-post_taskmanagement_workbins is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps POST /api/v2/taskmanagement/workbins 
 
 Requires ANY permissions: 
@@ -1929,8 +1877,6 @@ except ApiException as e:
 
 
 Query for workbins
-
-post_taskmanagement_workbins_query is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/taskmanagement/workbins/query 
 
@@ -1981,8 +1927,6 @@ except ApiException as e:
 
 Cancel the assignment process for a workitem that is currently queued for assignment through ACD.
 
-post_taskmanagement_workitem_acd_cancel is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps POST /api/v2/taskmanagement/workitems/{workitemId}/acd/cancel 
 
 Requires ANY permissions: 
@@ -2032,8 +1976,6 @@ except ApiException as e:
 
 Disconnect the assignee of the workitem
 
-post_taskmanagement_workitem_disconnect is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps POST /api/v2/taskmanagement/workitems/{workitemId}/disconnect 
 
 Requires ANY permissions: 
@@ -2082,8 +2024,6 @@ except ApiException as e:
 
 
 Terminate a workitem
-
-post_taskmanagement_workitem_terminate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/taskmanagement/workitems/{workitemId}/terminate 
 
@@ -2135,8 +2075,6 @@ except ApiException as e:
 
 
 Create a workitem
-
-post_taskmanagement_workitems is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/taskmanagement/workitems 
 
@@ -2240,8 +2178,6 @@ except ApiException as e:
 
 Create a workitem query job
 
-post_taskmanagement_workitems_query_jobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps POST /api/v2/taskmanagement/workitems/query/jobs 
 
 Requires ANY permissions: 
@@ -2291,8 +2227,6 @@ except ApiException as e:
 
 Create a schema
 
-post_taskmanagement_workitems_schemas is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps POST /api/v2/taskmanagement/workitems/schemas 
 
 Requires ANY permissions: 
@@ -2341,8 +2275,6 @@ except ApiException as e:
 
 
 Add a status to a worktype
-
-post_taskmanagement_worktype_statuses is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/taskmanagement/worktypes/{worktypeId}/statuses 
 
@@ -2395,8 +2327,6 @@ except ApiException as e:
 
 Create a worktype
 
-post_taskmanagement_worktypes is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps POST /api/v2/taskmanagement/worktypes 
 
 Requires ANY permissions: 
@@ -2446,8 +2376,6 @@ except ApiException as e:
 
 Query for worktypes
 
-post_taskmanagement_worktypes_query is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps POST /api/v2/taskmanagement/worktypes/query 
 
 Requires ALL permissions: 
@@ -2496,8 +2424,6 @@ except ApiException as e:
 
 
 Update a schema
-
-put_taskmanagement_workitems_schema is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps PUT /api/v2/taskmanagement/workitems/schemas/{schemaId} 
 

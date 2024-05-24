@@ -53,7 +53,11 @@ class VoicemailMailboxInfo(object):
             'unread_count': 'int',
             'deleted_count': 'int',
             'created_date': 'datetime',
-            'modified_date': 'datetime'
+            'modified_date': 'datetime',
+            'newest_unread_date': 'datetime',
+            'oldest_unread_date': 'datetime',
+            'newest_read_date': 'datetime',
+            'oldest_read_date': 'datetime'
         }
 
         self.attribute_map = {
@@ -62,7 +66,11 @@ class VoicemailMailboxInfo(object):
             'unread_count': 'unreadCount',
             'deleted_count': 'deletedCount',
             'created_date': 'createdDate',
-            'modified_date': 'modifiedDate'
+            'modified_date': 'modifiedDate',
+            'newest_unread_date': 'newestUnreadDate',
+            'oldest_unread_date': 'oldestUnreadDate',
+            'newest_read_date': 'newestReadDate',
+            'oldest_read_date': 'oldestReadDate'
         }
 
         self._usage_size_bytes = None
@@ -71,6 +79,10 @@ class VoicemailMailboxInfo(object):
         self._deleted_count = None
         self._created_date = None
         self._modified_date = None
+        self._newest_unread_date = None
+        self._oldest_unread_date = None
+        self._newest_read_date = None
+        self._oldest_read_date = None
 
     @property
     def usage_size_bytes(self) -> int:
@@ -215,6 +227,102 @@ class VoicemailMailboxInfo(object):
         
 
         self._modified_date = modified_date
+
+    @property
+    def newest_unread_date(self) -> datetime:
+        """
+        Gets the newest_unread_date of this VoicemailMailboxInfo.
+        The date of the most recent unread voicemail message. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :return: The newest_unread_date of this VoicemailMailboxInfo.
+        :rtype: datetime
+        """
+        return self._newest_unread_date
+
+    @newest_unread_date.setter
+    def newest_unread_date(self, newest_unread_date: datetime) -> None:
+        """
+        Sets the newest_unread_date of this VoicemailMailboxInfo.
+        The date of the most recent unread voicemail message. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :param newest_unread_date: The newest_unread_date of this VoicemailMailboxInfo.
+        :type: datetime
+        """
+        
+
+        self._newest_unread_date = newest_unread_date
+
+    @property
+    def oldest_unread_date(self) -> datetime:
+        """
+        Gets the oldest_unread_date of this VoicemailMailboxInfo.
+        The date of the most oldest unread voicemail message. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :return: The oldest_unread_date of this VoicemailMailboxInfo.
+        :rtype: datetime
+        """
+        return self._oldest_unread_date
+
+    @oldest_unread_date.setter
+    def oldest_unread_date(self, oldest_unread_date: datetime) -> None:
+        """
+        Sets the oldest_unread_date of this VoicemailMailboxInfo.
+        The date of the most oldest unread voicemail message. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :param oldest_unread_date: The oldest_unread_date of this VoicemailMailboxInfo.
+        :type: datetime
+        """
+        
+
+        self._oldest_unread_date = oldest_unread_date
+
+    @property
+    def newest_read_date(self) -> datetime:
+        """
+        Gets the newest_read_date of this VoicemailMailboxInfo.
+        The date of the most recent read voicemail message. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :return: The newest_read_date of this VoicemailMailboxInfo.
+        :rtype: datetime
+        """
+        return self._newest_read_date
+
+    @newest_read_date.setter
+    def newest_read_date(self, newest_read_date: datetime) -> None:
+        """
+        Sets the newest_read_date of this VoicemailMailboxInfo.
+        The date of the most recent read voicemail message. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :param newest_read_date: The newest_read_date of this VoicemailMailboxInfo.
+        :type: datetime
+        """
+        
+
+        self._newest_read_date = newest_read_date
+
+    @property
+    def oldest_read_date(self) -> datetime:
+        """
+        Gets the oldest_read_date of this VoicemailMailboxInfo.
+        The date of the most oldest read voicemail message. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :return: The oldest_read_date of this VoicemailMailboxInfo.
+        :rtype: datetime
+        """
+        return self._oldest_read_date
+
+    @oldest_read_date.setter
+    def oldest_read_date(self, oldest_read_date: datetime) -> None:
+        """
+        Sets the oldest_read_date of this VoicemailMailboxInfo.
+        The date of the most oldest read voicemail message. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :param oldest_read_date: The oldest_read_date of this VoicemailMailboxInfo.
+        :type: datetime
+        """
+        
+
+        self._oldest_read_date = oldest_read_date
 
     def to_dict(self):
         """

@@ -1455,7 +1455,7 @@ class QualityApi(object):
     def get_quality_evaluations_query(self, **kwargs) -> 'EvaluationEntityListing':
         """
         Queries Evaluations and returns a paged list
-        Query params must include one of conversationId, evaluatorUserId, agentUserId or assigneeUserId. When querying by agentUserId (and not conversationId or evaluatorUserId), the results are sorted by release date. Evaluations set to 'Never Release' are omitted in this case. When querying by evaluatorUserId or conversationId (including when combined with agentUserId), the results are sorted by assigned date. NOTE: The count for total and pageCount might not be accurate when querying for a large number of evaluations. nextUri, if present, will indicate that there are more evaluations to fetch.
+        Query params must include one of conversationId, evaluatorUserId, agentUserId or assigneeUserId. When querying by agentUserId (and not conversationId or evaluatorUserId), the results are sorted by release date. Evaluations set to 'Never Release' are omitted in this case. When querying by evaluatorUserId or conversationId (including when combined with agentUserId), the results are sorted by assigned date. NOTE: The count for total and pageCount might not be accurate when querying for a large number of evaluations. nextUri, if present, will indicate that there are more evaluations to fetch. The evaluation entities contained in the response might only contain a subset of all the properties listed below. It is often because a given property's value has not yet been populated or is not applicable in the current state of the evaluation. It might also be because the missing property in the response was not requested by the user.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -1485,7 +1485,7 @@ class QualityApi(object):
         :param list[str] evaluation_state: 
         :param bool is_released: the evaluation has been released
         :param bool agent_has_read: agent has the evaluation
-        :param bool expand_answer_total_scores: get the total scores for evaluations
+        :param bool expand_answer_total_scores: get the total scores for evaluations. NOTE: The answers will only be populated if this parameter is set to true in the request.
         :param int maximum: the maximum number of results to return
         :param str sort_order: NOTE: Does not work when conversationId is supplied.
         :return: EvaluationEntityListing

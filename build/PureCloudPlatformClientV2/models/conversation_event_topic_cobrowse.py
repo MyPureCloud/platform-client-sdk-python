@@ -199,7 +199,7 @@ class ConversationEventTopicCobrowse(object):
         """
         if isinstance(disconnect_type, int):
             disconnect_type = str(disconnect_type)
-        allowed_values = ["endpoint", "client", "system", "timeout", "transfer", "transfer.conference", "transfer.consult", "transfer.forward", "transport.failure", "error", "peer", "other", "spam", "uncallable"]
+        allowed_values = ["endpoint", "endpoint.dnd", "client", "system", "timeout", "transfer", "transfer.conference", "transfer.consult", "transfer.forward", "transfer.noanswer", "transfer.notavailable", "transfer.dnd", "transport.failure", "error", "peer", "other", "spam", "uncallable"]
         if disconnect_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for disconnect_type -> " + disconnect_type)
             self._disconnect_type = "outdated_sdk_version"

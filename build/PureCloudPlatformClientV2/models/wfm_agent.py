@@ -38,6 +38,7 @@ if TYPE_CHECKING:
     from . import RoutingSkillReference
     from . import UserReference
     from . import WfmVersionedEntityMetadata
+    from . import WorkPlanOverride
     from . import WorkPlanReference
     from . import WorkPlanRotationReference
 
@@ -61,6 +62,7 @@ class WfmAgent(object):
             'work_plan': 'WorkPlanReference',
             'work_plan_rotation': 'WorkPlanRotationReference',
             'accept_direct_shift_trades': 'bool',
+            'work_plan_overrides': 'list[WorkPlanOverride]',
             'queues': 'list[QueueReference]',
             'languages': 'list[LanguageReference]',
             'skills': 'list[RoutingSkillReference]',
@@ -75,6 +77,7 @@ class WfmAgent(object):
             'work_plan': 'workPlan',
             'work_plan_rotation': 'workPlanRotation',
             'accept_direct_shift_trades': 'acceptDirectShiftTrades',
+            'work_plan_overrides': 'workPlanOverrides',
             'queues': 'queues',
             'languages': 'languages',
             'skills': 'skills',
@@ -88,6 +91,7 @@ class WfmAgent(object):
         self._work_plan = None
         self._work_plan_rotation = None
         self._accept_direct_shift_trades = None
+        self._work_plan_overrides = None
         self._queues = None
         self._languages = None
         self._skills = None
@@ -214,6 +218,30 @@ class WfmAgent(object):
         
 
         self._accept_direct_shift_trades = accept_direct_shift_trades
+
+    @property
+    def work_plan_overrides(self) -> List['WorkPlanOverride']:
+        """
+        Gets the work_plan_overrides of this WfmAgent.
+        The work plan overrides associated with this agent. Populate with expand=workPlanOverrides
+
+        :return: The work_plan_overrides of this WfmAgent.
+        :rtype: list[WorkPlanOverride]
+        """
+        return self._work_plan_overrides
+
+    @work_plan_overrides.setter
+    def work_plan_overrides(self, work_plan_overrides: List['WorkPlanOverride']) -> None:
+        """
+        Sets the work_plan_overrides of this WfmAgent.
+        The work plan overrides associated with this agent. Populate with expand=workPlanOverrides
+
+        :param work_plan_overrides: The work_plan_overrides of this WfmAgent.
+        :type: list[WorkPlanOverride]
+        """
+        
+
+        self._work_plan_overrides = work_plan_overrides
 
     @property
     def queues(self) -> List['QueueReference']:

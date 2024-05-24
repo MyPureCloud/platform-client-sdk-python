@@ -153,7 +153,7 @@ class AlternativeShiftNotification(object):
         """
         if isinstance(granularity, int):
             granularity = str(granularity)
-        allowed_values = ["Daily", "Weekly"]
+        allowed_values = ["Daily"]
         if granularity.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for granularity -> " + granularity)
             self._granularity = "outdated_sdk_version"

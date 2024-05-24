@@ -183,6 +183,7 @@ title: ViewFilter
 | **agent_empathy_score** | [**NumericRange**](NumericRange.html) | The agentEmpathyScore is used to filter the view | [optional] |
 | **survey_types** | **list[str]** | The surveyTypes is used to filter the view | [optional] |
 | **survey_response_statuses** | **list[str]** | The list of Survey Response Status | [optional] |
+| **bot_flow_types** | **list[str]** | The botFlowTypes is used to filter the view | [optional] |
 {: class="table table-striped"}
 
 

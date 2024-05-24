@@ -200,6 +200,7 @@ PureCloudPlatformClientV2/models/aggregate_view_data.py
 PureCloudPlatformClientV2/models/aggregation_range.py
 PureCloudPlatformClientV2/models/aggregation_result.py
 PureCloudPlatformClientV2/models/aggregation_result_entry.py
+PureCloudPlatformClientV2/models/ai_scoring_settings.py
 PureCloudPlatformClientV2/models/alert_listing.py
 PureCloudPlatformClientV2/models/alert_notification.py
 PureCloudPlatformClientV2/models/alert_request.py
@@ -1057,7 +1058,6 @@ PureCloudPlatformClientV2/models/conversation_video_event_topic_uri_reference.py
 PureCloudPlatformClientV2/models/conversation_video_event_topic_video_conversation.py
 PureCloudPlatformClientV2/models/conversation_video_event_topic_video_media_participant.py
 PureCloudPlatformClientV2/models/conversation_video_event_topic_wrapup.py
-PureCloudPlatformClientV2/models/copilot_scoring.py
 PureCloudPlatformClientV2/models/copy_attachments_request.py
 PureCloudPlatformClientV2/models/copy_bu_forecast_request.py
 PureCloudPlatformClientV2/models/copy_voicemail_message.py
@@ -1629,7 +1629,9 @@ PureCloudPlatformClientV2/models/external_contacts_contact_changed_topic_contact
 PureCloudPlatformClientV2/models/external_contacts_contact_changed_topic_contact_address.py
 PureCloudPlatformClientV2/models/external_contacts_contact_changed_topic_data_schema.py
 PureCloudPlatformClientV2/models/external_contacts_contact_changed_topic_division.py
+PureCloudPlatformClientV2/models/external_contacts_contact_changed_topic_external_id.py
 PureCloudPlatformClientV2/models/external_contacts_contact_changed_topic_external_organization.py
+PureCloudPlatformClientV2/models/external_contacts_contact_changed_topic_external_source.py
 PureCloudPlatformClientV2/models/external_contacts_contact_changed_topic_facebook_id.py
 PureCloudPlatformClientV2/models/external_contacts_contact_changed_topic_facebook_scoped_id.py
 PureCloudPlatformClientV2/models/external_contacts_contact_changed_topic_instagram_id.py
@@ -1645,7 +1647,9 @@ PureCloudPlatformClientV2/models/external_contacts_unresolved_contact_changed_to
 PureCloudPlatformClientV2/models/external_contacts_unresolved_contact_changed_topic_contact_address.py
 PureCloudPlatformClientV2/models/external_contacts_unresolved_contact_changed_topic_data_schema.py
 PureCloudPlatformClientV2/models/external_contacts_unresolved_contact_changed_topic_division.py
+PureCloudPlatformClientV2/models/external_contacts_unresolved_contact_changed_topic_external_id.py
 PureCloudPlatformClientV2/models/external_contacts_unresolved_contact_changed_topic_external_organization.py
+PureCloudPlatformClientV2/models/external_contacts_unresolved_contact_changed_topic_external_source.py
 PureCloudPlatformClientV2/models/external_contacts_unresolved_contact_changed_topic_facebook_id.py
 PureCloudPlatformClientV2/models/external_contacts_unresolved_contact_changed_topic_facebook_scoped_id.py
 PureCloudPlatformClientV2/models/external_contacts_unresolved_contact_changed_topic_instagram_id.py
@@ -1807,6 +1811,9 @@ PureCloudPlatformClientV2/models/forecast_service_level_response.py
 PureCloudPlatformClientV2/models/forecast_source_day_pointer.py
 PureCloudPlatformClientV2/models/format.py
 PureCloudPlatformClientV2/models/forms_track_trigger.py
+PureCloudPlatformClientV2/models/free_trial_limit.py
+PureCloudPlatformClientV2/models/free_trial_limit_docs.py
+PureCloudPlatformClientV2/models/free_trial_namespace.py
 PureCloudPlatformClientV2/models/from_email_address.py
 PureCloudPlatformClientV2/models/full_day_time_off_marker.py
 PureCloudPlatformClientV2/models/function.py
@@ -1836,7 +1843,6 @@ PureCloudPlatformClientV2/models/generate_meeting_id_request.py
 PureCloudPlatformClientV2/models/generic_action_event.py
 PureCloudPlatformClientV2/models/generic_event_action.py
 PureCloudPlatformClientV2/models/generic_saml.py
-PureCloudPlatformClientV2/models/generic_template.py
 PureCloudPlatformClientV2/models/genesys_bot_connector.py
 PureCloudPlatformClientV2/models/geolocation.py
 PureCloudPlatformClientV2/models/geolocation_event_geolocation.py
@@ -2081,6 +2087,7 @@ PureCloudPlatformClientV2/models/journey_session_events_notification_user.py
 PureCloudPlatformClientV2/models/journey_survey_question.py
 PureCloudPlatformClientV2/models/journey_view.py
 PureCloudPlatformClientV2/models/journey_view_chart.py
+PureCloudPlatformClientV2/models/journey_view_chart_display_attributes.py
 PureCloudPlatformClientV2/models/journey_view_chart_group_by_attribute.py
 PureCloudPlatformClientV2/models/journey_view_chart_metric.py
 PureCloudPlatformClientV2/models/journey_view_chart_metric_result.py
@@ -2551,6 +2558,7 @@ PureCloudPlatformClientV2/models/named_entity_type_item.py
 PureCloudPlatformClientV2/models/named_entity_type_mechanism.py
 PureCloudPlatformClientV2/models/namespace_docs.py
 PureCloudPlatformClientV2/models/network_connectivity.py
+PureCloudPlatformClientV2/models/next_occurrence_details.py
 PureCloudPlatformClientV2/models/nlu_confusion_matrix_column.py
 PureCloudPlatformClientV2/models/nlu_confusion_matrix_row.py
 PureCloudPlatformClientV2/models/nlu_detection_context.py
@@ -2610,6 +2618,7 @@ PureCloudPlatformClientV2/models/objective_template.py
 PureCloudPlatformClientV2/models/objective_zone.py
 PureCloudPlatformClientV2/models/observation_metric_data.py
 PureCloudPlatformClientV2/models/observation_value.py
+PureCloudPlatformClientV2/models/occurrence_details.py
 PureCloudPlatformClientV2/models/okta.py
 PureCloudPlatformClientV2/models/one_login.py
 PureCloudPlatformClientV2/models/one_on_one.py
@@ -2724,7 +2733,6 @@ PureCloudPlatformClientV2/models/paged_namespace_listing.py
 PureCloudPlatformClientV2/models/pageless_domain_entity_listing_evaluation_version.py
 PureCloudPlatformClientV2/models/pageless_entity_listing.py
 PureCloudPlatformClientV2/models/paging_spec.py
-PureCloudPlatformClientV2/models/parameter.py
 PureCloudPlatformClientV2/models/parsed_certificate.py
 PureCloudPlatformClientV2/models/participant.py
 PureCloudPlatformClientV2/models/participant_attributes.py
@@ -2770,6 +2778,7 @@ PureCloudPlatformClientV2/models/patch_text_style_properties.py
 PureCloudPlatformClientV2/models/patch_user.py
 PureCloudPlatformClientV2/models/patch_web_messaging_offer_fields.py
 PureCloudPlatformClientV2/models/pattern.py
+PureCloudPlatformClientV2/models/pause_criteria.py
 PureCloudPlatformClientV2/models/performance_prediction_complete_event_topic_error_body.py
 PureCloudPlatformClientV2/models/performance_prediction_complete_event_topic_performance_prediction_calculation_notification.py
 PureCloudPlatformClientV2/models/performance_prediction_outputs.py
@@ -3187,8 +3196,6 @@ PureCloudPlatformClientV2/models/recording_annotation_flow.py
 PureCloudPlatformClientV2/models/recording_annotation_queue.py
 PureCloudPlatformClientV2/models/recording_archive_restore_topic_media_result.py
 PureCloudPlatformClientV2/models/recording_archive_restore_topic_recording.py
-PureCloudPlatformClientV2/models/recording_button_component.py
-PureCloudPlatformClientV2/models/recording_content_actions.py
 PureCloudPlatformClientV2/models/recording_content_story.py
 PureCloudPlatformClientV2/models/recording_email_message.py
 PureCloudPlatformClientV2/models/recording_encryption_configuration.py
@@ -3218,12 +3225,6 @@ PureCloudPlatformClientV2/models/replace_request.py
 PureCloudPlatformClientV2/models/replace_response.py
 PureCloudPlatformClientV2/models/replacement_term.py
 PureCloudPlatformClientV2/models/reply_to_email_address.py
-PureCloudPlatformClientV2/models/report_meta_data.py
-PureCloudPlatformClientV2/models/report_meta_data_entity_listing.py
-PureCloudPlatformClientV2/models/report_run_entry.py
-PureCloudPlatformClientV2/models/report_run_entry_entity_domain_listing.py
-PureCloudPlatformClientV2/models/report_schedule.py
-PureCloudPlatformClientV2/models/report_schedule_entity_listing.py
 PureCloudPlatformClientV2/models/reporting_data_export_topic_data_export_notification.py
 PureCloudPlatformClientV2/models/reporting_export_job_listing.py
 PureCloudPlatformClientV2/models/reporting_export_job_request.py
@@ -3325,7 +3326,6 @@ PureCloudPlatformClientV2/models/routing_transfer_event.py
 PureCloudPlatformClientV2/models/rule_set.py
 PureCloudPlatformClientV2/models/rule_set_diagnostic.py
 PureCloudPlatformClientV2/models/rule_set_entity_listing.py
-PureCloudPlatformClientV2/models/run_now_response.py
 PureCloudPlatformClientV2/models/salesforce.py
 PureCloudPlatformClientV2/models/schedule.py
 PureCloudPlatformClientV2/models/schedule_activity.py
@@ -4063,6 +4063,7 @@ PureCloudPlatformClientV2/models/v2_flow_execution_data_flowid_topic_quality.py
 PureCloudPlatformClientV2/models/v2_mobius_alerts_topic_addressable_entity_ref.py
 PureCloudPlatformClientV2/models/v2_mobius_alerts_topic_alert.py
 PureCloudPlatformClientV2/models/v2_mobius_alerts_topic_alert_notification.py
+PureCloudPlatformClientV2/models/v2_mobius_alerts_topic_alert_notification_recipient.py
 PureCloudPlatformClientV2/models/v2_mobius_alerts_topic_alert_rule_properties.py
 PureCloudPlatformClientV2/models/v2_mobius_alerts_topic_alert_summary.py
 PureCloudPlatformClientV2/models/v2_mobius_alerts_topic_alert_summary_entity.py
@@ -4071,6 +4072,7 @@ PureCloudPlatformClientV2/models/v2_mobius_alerts_topic_condition.py
 PureCloudPlatformClientV2/models/v2_mobius_alerts_topic_condition_rule_predicate.py
 PureCloudPlatformClientV2/models/v2_mobius_alerts_topic_entity_properties.py
 PureCloudPlatformClientV2/models/v2_mobius_rules_topic_alert_notification.py
+PureCloudPlatformClientV2/models/v2_mobius_rules_topic_alert_notification_recipient.py
 PureCloudPlatformClientV2/models/v2_mobius_rules_topic_alerting_addressable_entity_ref.py
 PureCloudPlatformClientV2/models/v2_mobius_rules_topic_condition.py
 PureCloudPlatformClientV2/models/v2_mobius_rules_topic_condition_rule_predicate.py
@@ -4367,6 +4369,7 @@ PureCloudPlatformClientV2/models/work_plan_constraint_conflict_message.py
 PureCloudPlatformClientV2/models/work_plan_constraint_message.py
 PureCloudPlatformClientV2/models/work_plan_list_item_response.py
 PureCloudPlatformClientV2/models/work_plan_list_response.py
+PureCloudPlatformClientV2/models/work_plan_override.py
 PureCloudPlatformClientV2/models/work_plan_pattern_request.py
 PureCloudPlatformClientV2/models/work_plan_pattern_response.py
 PureCloudPlatformClientV2/models/work_plan_reference.py
@@ -4611,6 +4614,7 @@ docs/AggregateViewData.md
 docs/AggregationRange.md
 docs/AggregationResult.md
 docs/AggregationResultEntry.md
+docs/AiScoringSettings.md
 docs/AlertListing.md
 docs/AlertNotification.md
 docs/AlertRequest.md
@@ -5490,7 +5494,6 @@ docs/ConversationVideoEventTopicVideoMediaParticipant.md
 docs/ConversationVideoEventTopicWrapup.md
 docs/ConversationsApi.json
 docs/ConversationsApi.md
-docs/CopilotScoring.md
 docs/CopyAttachmentsRequest.md
 docs/CopyBuForecastRequest.md
 docs/CopyVoicemailMessage.md
@@ -6072,7 +6075,9 @@ docs/ExternalContactsContactChangedTopicContact.md
 docs/ExternalContactsContactChangedTopicContactAddress.md
 docs/ExternalContactsContactChangedTopicDataSchema.md
 docs/ExternalContactsContactChangedTopicDivision.md
+docs/ExternalContactsContactChangedTopicExternalId.md
 docs/ExternalContactsContactChangedTopicExternalOrganization.md
+docs/ExternalContactsContactChangedTopicExternalSource.md
 docs/ExternalContactsContactChangedTopicFacebookId.md
 docs/ExternalContactsContactChangedTopicFacebookScopedId.md
 docs/ExternalContactsContactChangedTopicInstagramId.md
@@ -6088,7 +6093,9 @@ docs/ExternalContactsUnresolvedContactChangedTopicContact.md
 docs/ExternalContactsUnresolvedContactChangedTopicContactAddress.md
 docs/ExternalContactsUnresolvedContactChangedTopicDataSchema.md
 docs/ExternalContactsUnresolvedContactChangedTopicDivision.md
+docs/ExternalContactsUnresolvedContactChangedTopicExternalId.md
 docs/ExternalContactsUnresolvedContactChangedTopicExternalOrganization.md
+docs/ExternalContactsUnresolvedContactChangedTopicExternalSource.md
 docs/ExternalContactsUnresolvedContactChangedTopicFacebookId.md
 docs/ExternalContactsUnresolvedContactChangedTopicFacebookScopedId.md
 docs/ExternalContactsUnresolvedContactChangedTopicInstagramId.md
@@ -6254,6 +6261,9 @@ docs/ForecastServiceLevelResponse.md
 docs/ForecastSourceDayPointer.md
 docs/Format.md
 docs/FormsTrackTrigger.md
+docs/FreeTrialLimit.md
+docs/FreeTrialLimitDocs.md
+docs/FreeTrialNamespace.md
 docs/FromEmailAddress.md
 docs/FullDayTimeOffMarker.md
 docs/Function.md
@@ -6291,7 +6301,6 @@ docs/GenerateMeetingIdRequest.md
 docs/GenericActionEvent.md
 docs/GenericEventAction.md
 docs/GenericSAML.md
-docs/GenericTemplate.md
 docs/GenesysBotConnector.md
 docs/Geolocation.md
 docs/GeolocationApi.json
@@ -6546,6 +6555,7 @@ docs/JourneySessionEventsNotificationUser.md
 docs/JourneySurveyQuestion.md
 docs/JourneyView.md
 docs/JourneyViewChart.md
+docs/JourneyViewChartDisplayAttributes.md
 docs/JourneyViewChartGroupByAttribute.md
 docs/JourneyViewChartMetric.md
 docs/JourneyViewChartMetricResult.md
@@ -7035,6 +7045,7 @@ docs/NamedEntityTypeItem.md
 docs/NamedEntityTypeMechanism.md
 docs/NamespaceDocs.md
 docs/NetworkConnectivity.md
+docs/NextOccurrenceDetails.md
 docs/NluConfusionMatrixColumn.md
 docs/NluConfusionMatrixRow.md
 docs/NluDetectionContext.md
@@ -7099,6 +7110,7 @@ docs/ObjectsApi.json
 docs/ObjectsApi.md
 docs/ObservationMetricData.md
 docs/ObservationValue.md
+docs/OccurrenceDetails.md
 docs/Okta.md
 docs/OneLogin.md
 docs/OneOnOne.md
@@ -7222,7 +7234,6 @@ docs/PagedNamespaceListing.md
 docs/PagelessDomainEntityListingEvaluationVersion.md
 docs/PagelessEntityListing.md
 docs/PagingSpec.md
-docs/Parameter.md
 docs/ParsedCertificate.md
 docs/Participant.md
 docs/ParticipantAttributes.md
@@ -7268,6 +7279,7 @@ docs/PatchTextStyleProperties.md
 docs/PatchUser.md
 docs/PatchWebMessagingOfferFields.md
 docs/Pattern.md
+docs/PauseCriteria.md
 docs/PerformancePredictionCompleteEventTopicErrorBody.md
 docs/PerformancePredictionCompleteEventTopicPerformancePredictionCalculationNotification.md
 docs/PerformancePredictionOutputs.md
@@ -7692,8 +7704,6 @@ docs/RecordingApi.json
 docs/RecordingApi.md
 docs/RecordingArchiveRestoreTopicMediaResult.md
 docs/RecordingArchiveRestoreTopicRecording.md
-docs/RecordingButtonComponent.md
-docs/RecordingContentActions.md
 docs/RecordingContentStory.md
 docs/RecordingEmailMessage.md
 docs/RecordingEncryptionConfiguration.md
@@ -7723,12 +7733,6 @@ docs/ReplaceRequest.md
 docs/ReplaceResponse.md
 docs/ReplacementTerm.md
 docs/ReplyToEmailAddress.md
-docs/ReportMetaData.md
-docs/ReportMetaDataEntityListing.md
-docs/ReportRunEntry.md
-docs/ReportRunEntryEntityDomainListing.md
-docs/ReportSchedule.md
-docs/ReportScheduleEntityListing.md
 docs/ReportingDataExportTopicDataExportNotification.md
 docs/ReportingExportJobListing.md
 docs/ReportingExportJobRequest.md
@@ -7834,7 +7838,6 @@ docs/RoutingTransferEvent.md
 docs/RuleSet.md
 docs/RuleSetDiagnostic.md
 docs/RuleSetEntityListing.md
-docs/RunNowResponse.md
 docs/SCIMApi.json
 docs/SCIMApi.md
 docs/SIPSearchPublicRequest.md
@@ -8610,6 +8613,7 @@ docs/V2FlowExecutionDataFlowidTopicQuality.md
 docs/V2MobiusAlertsTopicAddressableEntityRef.md
 docs/V2MobiusAlertsTopicAlert.md
 docs/V2MobiusAlertsTopicAlertNotification.md
+docs/V2MobiusAlertsTopicAlertNotificationRecipient.md
 docs/V2MobiusAlertsTopicAlertRuleProperties.md
 docs/V2MobiusAlertsTopicAlertSummary.md
 docs/V2MobiusAlertsTopicAlertSummaryEntity.md
@@ -8618,6 +8622,7 @@ docs/V2MobiusAlertsTopicCondition.md
 docs/V2MobiusAlertsTopicConditionRulePredicate.md
 docs/V2MobiusAlertsTopicEntityProperties.md
 docs/V2MobiusRulesTopicAlertNotification.md
+docs/V2MobiusRulesTopicAlertNotificationRecipient.md
 docs/V2MobiusRulesTopicAlertingAddressableEntityRef.md
 docs/V2MobiusRulesTopicCondition.md
 docs/V2MobiusRulesTopicConditionRulePredicate.md
@@ -8924,6 +8929,7 @@ docs/WorkPlanConstraintConflictMessage.md
 docs/WorkPlanConstraintMessage.md
 docs/WorkPlanListItemResponse.md
 docs/WorkPlanListResponse.md
+docs/WorkPlanOverride.md
 docs/WorkPlanPatternRequest.md
 docs/WorkPlanPatternResponse.md
 docs/WorkPlanReference.md
@@ -9054,7 +9060,6 @@ docs/delete_alerting_interactionstats_rule-example.txt
 docs/delete_alerting_rule-example.txt
 docs/delete_analytics_conversations_details_job-example.txt
 docs/delete_analytics_conversations_details_job-example.txt
-docs/delete_analytics_reporting_schedule-example.txt
 docs/delete_analytics_users_details_job-example.txt
 docs/delete_analytics_users_details_job-example.txt
 docs/delete_architect_emergencygroup-example.txt
@@ -9326,6 +9331,7 @@ docs/get_alerting_interactionstats_rules-example.txt
 docs/get_alerting_rule-example.txt
 docs/get_analytics_actions_aggregates_job-example.txt
 docs/get_analytics_actions_aggregates_job_results-example.txt
+docs/get_analytics_botflow_divisions_reportingturns-example.txt
 docs/get_analytics_botflow_reportingturns-example.txt
 docs/get_analytics_botflow_sessions-example.txt
 docs/get_analytics_bots_aggregates_job-example.txt
@@ -9365,17 +9371,8 @@ docs/get_analytics_reporting_dashboards_user-example.txt
 docs/get_analytics_reporting_dashboards_users-example.txt
 docs/get_analytics_reporting_exports-example.txt
 docs/get_analytics_reporting_exports_metadata-example.txt
-docs/get_analytics_reporting_metadata-example.txt
-docs/get_analytics_reporting_report_id_metadata-example.txt
-docs/get_analytics_reporting_reportformats-example.txt
-docs/get_analytics_reporting_schedule-example.txt
-docs/get_analytics_reporting_schedule_history-example.txt
-docs/get_analytics_reporting_schedule_history_latest-example.txt
-docs/get_analytics_reporting_schedule_history_run_id-example.txt
-docs/get_analytics_reporting_schedules-example.txt
 docs/get_analytics_reporting_settings-example.txt
 docs/get_analytics_reporting_settings_user_dashboards-example.txt
-docs/get_analytics_reporting_timeperiods-example.txt
 docs/get_analytics_resolutions_aggregates_job-example.txt
 docs/get_analytics_resolutions_aggregates_job_results-example.txt
 docs/get_analytics_surveys_aggregates_job-example.txt
@@ -9477,6 +9474,7 @@ docs/get_chats_user-example.txt
 docs/get_chats_user_message-example.txt
 docs/get_chats_user_messages-example.txt
 docs/get_chats_user_settings-example.txt
+docs/get_chats_users_me_settings-example.txt
 docs/get_coaching_appointment-example.txt
 docs/get_coaching_appointment_annotation-example.txt
 docs/get_coaching_appointment_annotations-example.txt
@@ -9947,6 +9945,7 @@ docs/get_organizations_ipaddressauthentication-example.txt
 docs/get_organizations_limits_changerequest-example.txt
 docs/get_organizations_limits_changerequests-example.txt
 docs/get_organizations_limits_docs-example.txt
+docs/get_organizations_limits_docs_freetrial-example.txt
 docs/get_organizations_limits_namespace-example.txt
 docs/get_organizations_limits_namespace_defaults-example.txt
 docs/get_organizations_limits_namespaces-example.txt
@@ -10509,6 +10508,7 @@ docs/patch_chats_room_message-example.txt
 docs/patch_chats_settings-example.txt
 docs/patch_chats_user_message-example.txt
 docs/patch_chats_user_settings-example.txt
+docs/patch_chats_users_me_settings-example.txt
 docs/patch_coaching_appointment-example.txt
 docs/patch_coaching_appointment_annotation-example.txt
 docs/patch_coaching_appointment_status-example.txt
@@ -10714,8 +10714,6 @@ docs/post_analytics_queues_observations_query-example.txt
 docs/post_analytics_ratelimits_aggregates_query-example.txt
 docs/post_analytics_reporting_dashboards_users_bulk_remove-example.txt
 docs/post_analytics_reporting_exports-example.txt
-docs/post_analytics_reporting_schedule_runreport-example.txt
-docs/post_analytics_reporting_schedules-example.txt
 docs/post_analytics_reporting_settings_dashboards_bulk_remove-example.txt
 docs/post_analytics_reporting_settings_dashboards_query-example.txt
 docs/post_analytics_resolutions_aggregates_jobs-example.txt
@@ -11334,7 +11332,6 @@ docs/put_alerting_interactionstats_alert-example.txt
 docs/put_alerting_interactionstats_rule-example.txt
 docs/put_alerting_rule-example.txt
 docs/put_analytics_dataretention_settings-example.txt
-docs/put_analytics_reporting_schedule-example.txt
 docs/put_architect_emergencygroup-example.txt
 docs/put_architect_ivr-example.txt
 docs/put_architect_prompt-example.txt

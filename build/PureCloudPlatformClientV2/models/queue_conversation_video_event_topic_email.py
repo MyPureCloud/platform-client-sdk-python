@@ -77,7 +77,8 @@ class QueueConversationVideoEventTopicEmail(object):
             'after_call_work': 'QueueConversationVideoEventTopicAfterCallWork',
             'after_call_work_required': 'bool',
             'queue_media_settings': 'QueueConversationVideoEventTopicQueueMediaSettings',
-            'resume_time': 'datetime'
+            'resume_time': 'datetime',
+            'park_time': 'datetime'
         }
 
         self.attribute_map = {
@@ -104,7 +105,8 @@ class QueueConversationVideoEventTopicEmail(object):
             'after_call_work': 'afterCallWork',
             'after_call_work_required': 'afterCallWorkRequired',
             'queue_media_settings': 'queueMediaSettings',
-            'resume_time': 'resumeTime'
+            'resume_time': 'resumeTime',
+            'park_time': 'parkTime'
         }
 
         self._id = None
@@ -131,6 +133,7 @@ class QueueConversationVideoEventTopicEmail(object):
         self._after_call_work_required = None
         self._queue_media_settings = None
         self._resume_time = None
+        self._park_time = None
 
     @property
     def id(self) -> str:
@@ -727,6 +730,30 @@ class QueueConversationVideoEventTopicEmail(object):
         
 
         self._resume_time = resume_time
+
+    @property
+    def park_time(self) -> datetime:
+        """
+        Gets the park_time of this QueueConversationVideoEventTopicEmail.
+        The time when an  parked email was parked.
+
+        :return: The park_time of this QueueConversationVideoEventTopicEmail.
+        :rtype: datetime
+        """
+        return self._park_time
+
+    @park_time.setter
+    def park_time(self, park_time: datetime) -> None:
+        """
+        Sets the park_time of this QueueConversationVideoEventTopicEmail.
+        The time when an  parked email was parked.
+
+        :param park_time: The park_time of this QueueConversationVideoEventTopicEmail.
+        :type: datetime
+        """
+        
+
+        self._park_time = park_time
 
     def to_dict(self):
         """

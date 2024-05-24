@@ -31,6 +31,7 @@ title: QueueConversationEventTopicEmail
 | **after_call_work_required** | **bool** | Indicates if after-call is required for a communication. Only used when the ACW Setting is Agent Requested. | [optional] |
 | **queue_media_settings** | [**QueueConversationEventTopicQueueMediaSettings**](QueueConversationEventTopicQueueMediaSettings.html) | Represents the queue setting for this media. | [optional] |
 | **resume_time** | **datetime** | The time when a parked email should resume. | [optional] |
+| **park_time** | **datetime** | The time when an  parked email was parked. | [optional] |
 {: class="table table-striped"}
 
 

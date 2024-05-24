@@ -3985,7 +3985,7 @@ except ApiException as e:
 
 <a name="get_workforcemanagement_managementunit_agent"></a>
 
-## [**WfmAgent**](WfmAgent.html) get_workforcemanagement_managementunit_agent(management_unit_id, agent_id, exclude_capabilities=exclude_capabilities)
+## [**WfmAgent**](WfmAgent.html) get_workforcemanagement_managementunit_agent(management_unit_id, agent_id, exclude_capabilities=exclude_capabilities, expand=expand)
 
 
 
@@ -4013,10 +4013,11 @@ api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
 management_unit_id = 'management_unit_id_example' # str | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 agent_id = 'agent_id_example' # str | The agent id
 exclude_capabilities = True # bool | Excludes all capabilities of the agent such as queues, languages, and skills (optional)
+expand = ['expand_example'] # list[str] |  (optional)
 
 try:
     # Get data for agent in the management unit
-    api_response = api_instance.get_workforcemanagement_managementunit_agent(management_unit_id, agent_id, exclude_capabilities=exclude_capabilities)
+    api_response = api_instance.get_workforcemanagement_managementunit_agent(management_unit_id, agent_id, exclude_capabilities=exclude_capabilities, expand=expand)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling WorkforceManagementApi->get_workforcemanagement_managementunit_agent: %s\n" % e)
@@ -4030,6 +4031,7 @@ except ApiException as e:
 | **management_unit_id** | **str**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
 | **agent_id** | **str**| The agent id |  |
 | **exclude_capabilities** | **bool**| Excludes all capabilities of the agent such as queues, languages, and skills | [optional]  |
+| **expand** | [**list[str]**](str.html)|  | [optional] <br />**Values**: workPlanOverrides |
 {: class="table table-striped"}
 
 ### Return type
@@ -4941,7 +4943,7 @@ except ApiException as e:
 
 <a name="get_workforcemanagement_managementunit_workplans"></a>
 
-## [**WorkPlanListResponse**](WorkPlanListResponse.html) get_workforcemanagement_managementunit_workplans(management_unit_id, expand=expand)
+## [**WorkPlanListResponse**](WorkPlanListResponse.html) get_workforcemanagement_managementunit_workplans(management_unit_id, expand=expand, exclude=exclude)
 
 
 
@@ -4974,10 +4976,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
 management_unit_id = 'management_unit_id_example' # str | The ID of the management unit, or 'mine' for the management unit of the logged-in user.
 expand = ['expand_example'] # list[str] | Include to access additional data on the work plans (optional)
+exclude = ['exclude_example'] # list[str] | Exclude specific data on the work plans from the response (optional)
 
 try:
     # Get work plans
-    api_response = api_instance.get_workforcemanagement_managementunit_workplans(management_unit_id, expand=expand)
+    api_response = api_instance.get_workforcemanagement_managementunit_workplans(management_unit_id, expand=expand, exclude=exclude)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling WorkforceManagementApi->get_workforcemanagement_managementunit_workplans: %s\n" % e)
@@ -4990,6 +4993,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **management_unit_id** | **str**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
 | **expand** | [**list[str]**](str.html)| Include to access additional data on the work plans | [optional] <br />**Values**: agentCount, agents, optionalDays, shifts, shiftStartVariances, details |
+| **exclude** | [**list[str]**](str.html)| Exclude specific data on the work plans from the response | [optional] <br />**Values**: shifts.activities |
 {: class="table table-striped"}
 
 ### Return type

@@ -36,6 +36,7 @@ if TYPE_CHECKING:
     from . import ExternalContactsUnresolvedContactChangedTopicContactAddress
     from . import ExternalContactsUnresolvedContactChangedTopicDataSchema
     from . import ExternalContactsUnresolvedContactChangedTopicDivision
+    from . import ExternalContactsUnresolvedContactChangedTopicExternalId
     from . import ExternalContactsUnresolvedContactChangedTopicExternalOrganization
     from . import ExternalContactsUnresolvedContactChangedTopicFacebookId
     from . import ExternalContactsUnresolvedContactChangedTopicInstagramId
@@ -83,6 +84,7 @@ class ExternalContactsUnresolvedContactChangedTopicContact(object):
             'whats_app_id': 'ExternalContactsUnresolvedContactChangedTopicWhatsAppId',
             'facebook_id': 'ExternalContactsUnresolvedContactChangedTopicFacebookId',
             'instagram_id': 'ExternalContactsUnresolvedContactChangedTopicInstagramId',
+            'external_ids': 'list[ExternalContactsUnresolvedContactChangedTopicExternalId]',
             'schema': 'ExternalContactsUnresolvedContactChangedTopicDataSchema',
             'custom_fields': 'dict(str, object)',
             'create_date': 'datetime',
@@ -114,6 +116,7 @@ class ExternalContactsUnresolvedContactChangedTopicContact(object):
             'whats_app_id': 'whatsAppId',
             'facebook_id': 'facebookId',
             'instagram_id': 'instagramId',
+            'external_ids': 'externalIds',
             'schema': 'schema',
             'custom_fields': 'customFields',
             'create_date': 'createDate',
@@ -144,6 +147,7 @@ class ExternalContactsUnresolvedContactChangedTopicContact(object):
         self._whats_app_id = None
         self._facebook_id = None
         self._instagram_id = None
+        self._external_ids = None
         self._schema = None
         self._custom_fields = None
         self._create_date = None
@@ -729,6 +733,30 @@ class ExternalContactsUnresolvedContactChangedTopicContact(object):
         
 
         self._instagram_id = instagram_id
+
+    @property
+    def external_ids(self) -> List['ExternalContactsUnresolvedContactChangedTopicExternalId']:
+        """
+        Gets the external_ids of this ExternalContactsUnresolvedContactChangedTopicContact.
+
+
+        :return: The external_ids of this ExternalContactsUnresolvedContactChangedTopicContact.
+        :rtype: list[ExternalContactsUnresolvedContactChangedTopicExternalId]
+        """
+        return self._external_ids
+
+    @external_ids.setter
+    def external_ids(self, external_ids: List['ExternalContactsUnresolvedContactChangedTopicExternalId']) -> None:
+        """
+        Sets the external_ids of this ExternalContactsUnresolvedContactChangedTopicContact.
+
+
+        :param external_ids: The external_ids of this ExternalContactsUnresolvedContactChangedTopicContact.
+        :type: list[ExternalContactsUnresolvedContactChangedTopicExternalId]
+        """
+        
+
+        self._external_ids = external_ids
 
     @property
     def schema(self) -> 'ExternalContactsUnresolvedContactChangedTopicDataSchema':

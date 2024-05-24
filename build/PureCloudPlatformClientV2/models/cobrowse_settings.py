@@ -50,6 +50,7 @@ class CobrowseSettings(object):
         self.swagger_types = {
             'enabled': 'bool',
             'allow_agent_control': 'bool',
+            'allow_agent_navigation': 'bool',
             'mask_selectors': 'list[str]',
             'channels': 'list[str]',
             'readonly_selectors': 'list[str]'
@@ -58,6 +59,7 @@ class CobrowseSettings(object):
         self.attribute_map = {
             'enabled': 'enabled',
             'allow_agent_control': 'allowAgentControl',
+            'allow_agent_navigation': 'allowAgentNavigation',
             'mask_selectors': 'maskSelectors',
             'channels': 'channels',
             'readonly_selectors': 'readonlySelectors'
@@ -65,6 +67,7 @@ class CobrowseSettings(object):
 
         self._enabled = None
         self._allow_agent_control = None
+        self._allow_agent_navigation = None
         self._mask_selectors = None
         self._channels = None
         self._readonly_selectors = None
@@ -116,6 +119,30 @@ class CobrowseSettings(object):
         
 
         self._allow_agent_control = allow_agent_control
+
+    @property
+    def allow_agent_navigation(self) -> bool:
+        """
+        Gets the allow_agent_navigation of this CobrowseSettings.
+        Whether the viewer should have option to request navigation
+
+        :return: The allow_agent_navigation of this CobrowseSettings.
+        :rtype: bool
+        """
+        return self._allow_agent_navigation
+
+    @allow_agent_navigation.setter
+    def allow_agent_navigation(self, allow_agent_navigation: bool) -> None:
+        """
+        Sets the allow_agent_navigation of this CobrowseSettings.
+        Whether the viewer should have option to request navigation
+
+        :param allow_agent_navigation: The allow_agent_navigation of this CobrowseSettings.
+        :type: bool
+        """
+        
+
+        self._allow_agent_navigation = allow_agent_navigation
 
     @property
     def mask_selectors(self) -> List[str]:

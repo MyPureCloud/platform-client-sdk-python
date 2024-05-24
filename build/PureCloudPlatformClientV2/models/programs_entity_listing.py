@@ -52,23 +52,23 @@ class ProgramsEntityListing(object):
         self.swagger_types = {
             'entities': 'list[ListedProgram]',
             'page_size': 'int',
-            'next_uri': 'str',
             'self_uri': 'str',
+            'next_uri': 'str',
             'page_count': 'int'
         }
 
         self.attribute_map = {
             'entities': 'entities',
             'page_size': 'pageSize',
-            'next_uri': 'nextUri',
             'self_uri': 'selfUri',
+            'next_uri': 'nextUri',
             'page_count': 'pageCount'
         }
 
         self._entities = None
         self._page_size = None
-        self._next_uri = None
         self._self_uri = None
+        self._next_uri = None
         self._page_count = None
 
     @property
@@ -120,30 +120,6 @@ class ProgramsEntityListing(object):
         self._page_size = page_size
 
     @property
-    def next_uri(self) -> str:
-        """
-        Gets the next_uri of this ProgramsEntityListing.
-
-
-        :return: The next_uri of this ProgramsEntityListing.
-        :rtype: str
-        """
-        return self._next_uri
-
-    @next_uri.setter
-    def next_uri(self, next_uri: str) -> None:
-        """
-        Sets the next_uri of this ProgramsEntityListing.
-
-
-        :param next_uri: The next_uri of this ProgramsEntityListing.
-        :type: str
-        """
-        
-
-        self._next_uri = next_uri
-
-    @property
     def self_uri(self) -> str:
         """
         Gets the self_uri of this ProgramsEntityListing.
@@ -166,6 +142,30 @@ class ProgramsEntityListing(object):
         
 
         self._self_uri = self_uri
+
+    @property
+    def next_uri(self) -> str:
+        """
+        Gets the next_uri of this ProgramsEntityListing.
+
+
+        :return: The next_uri of this ProgramsEntityListing.
+        :rtype: str
+        """
+        return self._next_uri
+
+    @next_uri.setter
+    def next_uri(self, next_uri: str) -> None:
+        """
+        Sets the next_uri of this ProgramsEntityListing.
+
+
+        :param next_uri: The next_uri of this ProgramsEntityListing.
+        :type: str
+        """
+        
+
+        self._next_uri = next_uri
 
     @property
     def page_count(self) -> int:

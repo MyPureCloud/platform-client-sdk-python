@@ -101,12 +101,6 @@ from ..models import QueueObservationQuery
 from ..models import QueueObservationQueryResponse
 from ..models import RateLimitAggregateQueryResponse
 from ..models import RateLimitAggregationQuery
-from ..models import ReportMetaData
-from ..models import ReportMetaDataEntityListing
-from ..models import ReportRunEntry
-from ..models import ReportRunEntryEntityDomainListing
-from ..models import ReportSchedule
-from ..models import ReportScheduleEntityListing
 from ..models import ReportingExportJobListing
 from ..models import ReportingExportJobRequest
 from ..models import ReportingExportJobResponse
@@ -116,7 +110,6 @@ from ..models import ResolutionAsyncAggregateQueryResponse
 from ..models import ResolutionAsyncAggregationQuery
 from ..models import RoutingActivityQuery
 from ..models import RoutingActivityResponse
-from ..models import RunNowResponse
 from ..models import SessionsResponse
 from ..models import SurveyAggregateQueryResponse
 from ..models import SurveyAggregationQuery
@@ -203,84 +196,6 @@ class AnalyticsApi(object):
         path_params = {}
         if 'job_id' in params:
             path_params['jobId'] = params['job_id']
-
-        query_params = {}
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/json'])
-
-        # Authentication setting
-        auth_settings = ['PureCloud OAuth']
-
-        response = self.api_client.call_api(resource_path, 'DELETE',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type=None,
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def delete_analytics_reporting_schedule(self, schedule_id: str, **kwargs) -> None:
-        """
-        Delete a scheduled report job.
-        
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.delete_analytics_reporting_schedule(schedule_id, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param str schedule_id: Schedule ID (required)
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['schedule_id']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method delete_analytics_reporting_schedule" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        # verify the required parameter 'schedule_id' is set
-        if ('schedule_id' not in params) or (params['schedule_id'] is None):
-            raise ValueError("Missing the required parameter `schedule_id` when calling `delete_analytics_reporting_schedule`")
-
-
-        resource_path = '/api/v2/analytics/reporting/schedules/{scheduleId}'.replace('{format}', 'json')
-        path_params = {}
-        if 'schedule_id' in params:
-            path_params['scheduleId'] = params['schedule_id']
 
         query_params = {}
 
@@ -555,10 +470,110 @@ class AnalyticsApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def get_analytics_botflow_divisions_reportingturns(self, bot_flow_id: str, **kwargs) -> 'ReportingTurnsResponse':
+        """
+        Get Reporting Turns (division aware).
+        Returns the reporting turns for the specified flow, filtered by the clients divisions and grouped by session, in reverse chronological order from the date the session was created, with the reporting turns from the most recent session appearing at the start of the list. For pagination, clients should keep sending requests using the value of 'nextUri' in the response, until it's no longer present, only then have all items have been returned. Note: resources returned by this endpoint are not persisted indefinitely, as they are deleted after approximately, but not before, 10 days.
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_analytics_botflow_divisions_reportingturns(bot_flow_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str bot_flow_id: ID of the bot flow. (required)
+        :param str after: The cursor that points to the ID of the last item in the list of entities that has been returned.
+        :param str page_size: Max number of entities to return. Maximum of 250
+        :param str interval: Date range filter based on the date the individual resources were completed. UTC is the default if no TZ is supplied, however alternate timezones can be used e.g: '2022-11-22T09:11:11.111+08:00/2022-11-30T07:17:44.586-07'. . Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
+        :param str action_id: Optional action ID to get the reporting turns associated to a particular flow action
+        :param str session_id: Optional session ID to get the reporting turns for a particular session. Specifying a session ID alongside an action ID or a language or any ask action results is not allowed.
+        :param str language: Optional language code to get the reporting turns for a particular language
+        :param str ask_action_results: Optional case-insensitive comma separated list of ask action results to filter the reporting turns.
+        :return: ReportingTurnsResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['bot_flow_id', 'after', 'page_size', 'interval', 'action_id', 'session_id', 'language', 'ask_action_results']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_analytics_botflow_divisions_reportingturns" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'bot_flow_id' is set
+        if ('bot_flow_id' not in params) or (params['bot_flow_id'] is None):
+            raise ValueError("Missing the required parameter `bot_flow_id` when calling `get_analytics_botflow_divisions_reportingturns`")
+
+
+        resource_path = '/api/v2/analytics/botflows/{botFlowId}/divisions/reportingturns'.replace('{format}', 'json')
+        path_params = {}
+        if 'bot_flow_id' in params:
+            path_params['botFlowId'] = params['bot_flow_id']
+
+        query_params = {}
+        if 'after' in params:
+            query_params['after'] = params['after']
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+        if 'interval' in params:
+            query_params['interval'] = params['interval']
+        if 'action_id' in params:
+            query_params['actionId'] = params['action_id']
+        if 'session_id' in params:
+            query_params['sessionId'] = params['session_id']
+        if 'language' in params:
+            query_params['language'] = params['language']
+        if 'ask_action_results' in params:
+            query_params['askActionResults'] = params['ask_action_results']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ReportingTurnsResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    @deprecated("get_analytics_botflow_reportingturns is deprecated")
     def get_analytics_botflow_reportingturns(self, bot_flow_id: str, **kwargs) -> 'ReportingTurnsResponse':
         """
         Get Reporting Turns.
-        Returns the reporting turns grouped by session, in reverse chronological order from the date the session was created, with the reporting turns from the most recent session appearing at the start of the list. For pagination, clients should keep sending requests using the value of 'nextUri' in the response, until it's no longer present, only then have all items have been returned. Note: resources returned by this endpoint are not persisted indefinitely, as they are deleted after approximately, but not before, 10 days.
+        Deprecated: Please use GET /analytics/botflows/{botFlowId}/divisions/reportingturns instead. Returns the reporting turns grouped by session, in reverse chronological order from the date the session was created, with the reporting turns from the most recent session appearing at the start of the list. For pagination, clients should keep sending requests using the value of 'nextUri' in the response, until it's no longer present, only then have all items have been returned. Note: resources returned by this endpoint are not persisted indefinitely, as they are deleted after approximately, but not before, 10 days.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -2648,642 +2663,6 @@ class AnalyticsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_analytics_reporting_metadata(self, **kwargs) -> 'ReportMetaDataEntityListing':
-        """
-        Get list of reporting metadata.
-        
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.get_analytics_reporting_metadata(callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param int page_number: Page number
-        :param int page_size: Page size
-        :param str locale: Locale
-        :return: ReportMetaDataEntityListing
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['page_number', 'page_size', 'locale']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_analytics_reporting_metadata" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-
-
-        resource_path = '/api/v2/analytics/reporting/metadata'.replace('{format}', 'json')
-        path_params = {}
-
-        query_params = {}
-        if 'page_number' in params:
-            query_params['pageNumber'] = params['page_number']
-        if 'page_size' in params:
-            query_params['pageSize'] = params['page_size']
-        if 'locale' in params:
-            query_params['locale'] = params['locale']
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/json'])
-
-        # Authentication setting
-        auth_settings = ['PureCloud OAuth']
-
-        response = self.api_client.call_api(resource_path, 'GET',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type='ReportMetaDataEntityListing',
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def get_analytics_reporting_report_id_metadata(self, report_id: str, **kwargs) -> 'ReportMetaData':
-        """
-        Get a reporting metadata.
-        
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.get_analytics_reporting_report_id_metadata(report_id, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param str report_id: Report ID (required)
-        :param str locale: Locale
-        :return: ReportMetaData
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['report_id', 'locale']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_analytics_reporting_report_id_metadata" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        # verify the required parameter 'report_id' is set
-        if ('report_id' not in params) or (params['report_id'] is None):
-            raise ValueError("Missing the required parameter `report_id` when calling `get_analytics_reporting_report_id_metadata`")
-
-
-        resource_path = '/api/v2/analytics/reporting/{reportId}/metadata'.replace('{format}', 'json')
-        path_params = {}
-        if 'report_id' in params:
-            path_params['reportId'] = params['report_id']
-
-        query_params = {}
-        if 'locale' in params:
-            query_params['locale'] = params['locale']
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/json'])
-
-        # Authentication setting
-        auth_settings = ['PureCloud OAuth']
-
-        response = self.api_client.call_api(resource_path, 'GET',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type='ReportMetaData',
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def get_analytics_reporting_reportformats(self, **kwargs) -> List[str]:
-        """
-        Get a list of report formats
-        Get a list of report formats.
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.get_analytics_reporting_reportformats(callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :return: list[str]
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = []
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_analytics_reporting_reportformats" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-
-
-        resource_path = '/api/v2/analytics/reporting/reportformats'.replace('{format}', 'json')
-        path_params = {}
-
-        query_params = {}
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/json'])
-
-        # Authentication setting
-        auth_settings = ['PureCloud OAuth']
-
-        response = self.api_client.call_api(resource_path, 'GET',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type='list[str]',
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def get_analytics_reporting_schedule(self, schedule_id: str, **kwargs) -> 'ReportSchedule':
-        """
-        Get a scheduled report job.
-        
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.get_analytics_reporting_schedule(schedule_id, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param str schedule_id: Schedule ID (required)
-        :return: ReportSchedule
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['schedule_id']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_analytics_reporting_schedule" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        # verify the required parameter 'schedule_id' is set
-        if ('schedule_id' not in params) or (params['schedule_id'] is None):
-            raise ValueError("Missing the required parameter `schedule_id` when calling `get_analytics_reporting_schedule`")
-
-
-        resource_path = '/api/v2/analytics/reporting/schedules/{scheduleId}'.replace('{format}', 'json')
-        path_params = {}
-        if 'schedule_id' in params:
-            path_params['scheduleId'] = params['schedule_id']
-
-        query_params = {}
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/json'])
-
-        # Authentication setting
-        auth_settings = ['PureCloud OAuth']
-
-        response = self.api_client.call_api(resource_path, 'GET',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type='ReportSchedule',
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def get_analytics_reporting_schedule_history(self, schedule_id: str, **kwargs) -> 'ReportRunEntryEntityDomainListing':
-        """
-        Get list of completed scheduled report jobs.
-        
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.get_analytics_reporting_schedule_history(schedule_id, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param str schedule_id: Schedule ID (required)
-        :param int page_number: 
-        :param int page_size: 
-        :return: ReportRunEntryEntityDomainListing
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['schedule_id', 'page_number', 'page_size']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_analytics_reporting_schedule_history" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        # verify the required parameter 'schedule_id' is set
-        if ('schedule_id' not in params) or (params['schedule_id'] is None):
-            raise ValueError("Missing the required parameter `schedule_id` when calling `get_analytics_reporting_schedule_history`")
-
-
-        resource_path = '/api/v2/analytics/reporting/schedules/{scheduleId}/history'.replace('{format}', 'json')
-        path_params = {}
-        if 'schedule_id' in params:
-            path_params['scheduleId'] = params['schedule_id']
-
-        query_params = {}
-        if 'page_number' in params:
-            query_params['pageNumber'] = params['page_number']
-        if 'page_size' in params:
-            query_params['pageSize'] = params['page_size']
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/json'])
-
-        # Authentication setting
-        auth_settings = ['PureCloud OAuth']
-
-        response = self.api_client.call_api(resource_path, 'GET',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type='ReportRunEntryEntityDomainListing',
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def get_analytics_reporting_schedule_history_latest(self, schedule_id: str, **kwargs) -> 'ReportRunEntry':
-        """
-        Get most recently completed scheduled report job.
-        
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.get_analytics_reporting_schedule_history_latest(schedule_id, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param str schedule_id: Schedule ID (required)
-        :return: ReportRunEntry
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['schedule_id']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_analytics_reporting_schedule_history_latest" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        # verify the required parameter 'schedule_id' is set
-        if ('schedule_id' not in params) or (params['schedule_id'] is None):
-            raise ValueError("Missing the required parameter `schedule_id` when calling `get_analytics_reporting_schedule_history_latest`")
-
-
-        resource_path = '/api/v2/analytics/reporting/schedules/{scheduleId}/history/latest'.replace('{format}', 'json')
-        path_params = {}
-        if 'schedule_id' in params:
-            path_params['scheduleId'] = params['schedule_id']
-
-        query_params = {}
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/json'])
-
-        # Authentication setting
-        auth_settings = ['PureCloud OAuth']
-
-        response = self.api_client.call_api(resource_path, 'GET',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type='ReportRunEntry',
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def get_analytics_reporting_schedule_history_run_id(self, run_id: str, schedule_id: str, **kwargs) -> 'ReportRunEntry':
-        """
-        A completed scheduled report job
-        A completed scheduled report job.
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.get_analytics_reporting_schedule_history_run_id(run_id, schedule_id, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param str run_id: Run ID (required)
-        :param str schedule_id: Schedule ID (required)
-        :return: ReportRunEntry
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['run_id', 'schedule_id']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_analytics_reporting_schedule_history_run_id" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        # verify the required parameter 'run_id' is set
-        if ('run_id' not in params) or (params['run_id'] is None):
-            raise ValueError("Missing the required parameter `run_id` when calling `get_analytics_reporting_schedule_history_run_id`")
-        # verify the required parameter 'schedule_id' is set
-        if ('schedule_id' not in params) or (params['schedule_id'] is None):
-            raise ValueError("Missing the required parameter `schedule_id` when calling `get_analytics_reporting_schedule_history_run_id`")
-
-
-        resource_path = '/api/v2/analytics/reporting/schedules/{scheduleId}/history/{runId}'.replace('{format}', 'json')
-        path_params = {}
-        if 'run_id' in params:
-            path_params['runId'] = params['run_id']
-        if 'schedule_id' in params:
-            path_params['scheduleId'] = params['schedule_id']
-
-        query_params = {}
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/json'])
-
-        # Authentication setting
-        auth_settings = ['PureCloud OAuth']
-
-        response = self.api_client.call_api(resource_path, 'GET',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type='ReportRunEntry',
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def get_analytics_reporting_schedules(self, **kwargs) -> 'ReportScheduleEntityListing':
-        """
-        Get a list of scheduled report jobs
-        Get a list of scheduled report jobs.
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.get_analytics_reporting_schedules(callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param int page_number: Page number
-        :param int page_size: Page size
-        :return: ReportScheduleEntityListing
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['page_number', 'page_size']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_analytics_reporting_schedules" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-
-
-        resource_path = '/api/v2/analytics/reporting/schedules'.replace('{format}', 'json')
-        path_params = {}
-
-        query_params = {}
-        if 'page_number' in params:
-            query_params['pageNumber'] = params['page_number']
-        if 'page_size' in params:
-            query_params['pageSize'] = params['page_size']
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/json'])
-
-        # Authentication setting
-        auth_settings = ['PureCloud OAuth']
-
-        response = self.api_client.call_api(resource_path, 'GET',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type='ReportScheduleEntityListing',
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
     def get_analytics_reporting_settings(self, **kwargs) -> 'AnalyticsReportingSettings':
         """
         Get AnalyticsReportingSettings for an organization
@@ -3377,12 +2756,13 @@ class AnalyticsApi(object):
         :param int page_size: 
         :param bool public_only: If true, retrieve only public dashboards
         :param bool favorite_only: If true, retrieve only favorite dashboards
+        :param str name: retrieve dashboards that match with given name
         :return: DashboardConfigurationListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['user_id', 'sort_by', 'page_number', 'page_size', 'public_only', 'favorite_only']
+        all_params = ['user_id', 'sort_by', 'page_number', 'page_size', 'public_only', 'favorite_only', 'name']
         all_params.append('callback')
 
         params = locals()
@@ -3416,6 +2796,8 @@ class AnalyticsApi(object):
             query_params['publicOnly'] = params['public_only']
         if 'favorite_only' in params:
             query_params['favoriteOnly'] = params['favorite_only']
+        if 'name' in params:
+            query_params['name'] = params['name']
 
         header_params = {}
 
@@ -3445,78 +2827,6 @@ class AnalyticsApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='DashboardConfigurationListing',
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    def get_analytics_reporting_timeperiods(self, **kwargs) -> List[str]:
-        """
-        Get a list of report time periods.
-        
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.get_analytics_reporting_timeperiods(callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :return: list[str]
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = []
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method get_analytics_reporting_timeperiods" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-
-
-        resource_path = '/api/v2/analytics/reporting/timeperiods'.replace('{format}', 'json')
-        path_params = {}
-
-        query_params = {}
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/json'])
-
-        # Authentication setting
-        auth_settings = ['PureCloud OAuth']
-
-        response = self.api_client.call_api(resource_path, 'GET',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type='list[str]',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -5040,7 +4350,6 @@ class AnalyticsApi(object):
         """
         Query for conversation activity observations
         
-	    post_analytics_conversations_activity_query is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -5830,7 +5139,6 @@ class AnalyticsApi(object):
         """
         Query for flow activity observations
         
-	    post_analytics_flows_activity_query is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -6772,164 +6080,6 @@ class AnalyticsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    @deprecated("post_analytics_reporting_schedule_runreport is deprecated")
-    def post_analytics_reporting_schedule_runreport(self, schedule_id: str, **kwargs) -> 'RunNowResponse':
-        """
-        Place a scheduled report immediately into the reporting queue
-        This route is deprecated, please use POST:api/v2/analytics/reporting/exports/{exportId}/execute instead
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.post_analytics_reporting_schedule_runreport(schedule_id, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param str schedule_id: Schedule ID (required)
-        :return: RunNowResponse
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['schedule_id']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method post_analytics_reporting_schedule_runreport" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        # verify the required parameter 'schedule_id' is set
-        if ('schedule_id' not in params) or (params['schedule_id'] is None):
-            raise ValueError("Missing the required parameter `schedule_id` when calling `post_analytics_reporting_schedule_runreport`")
-
-
-        resource_path = '/api/v2/analytics/reporting/schedules/{scheduleId}/runreport'.replace('{format}', 'json')
-        path_params = {}
-        if 'schedule_id' in params:
-            path_params['scheduleId'] = params['schedule_id']
-
-        query_params = {}
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/json'])
-
-        # Authentication setting
-        auth_settings = ['PureCloud OAuth']
-
-        response = self.api_client.call_api(resource_path, 'POST',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type='RunNowResponse',
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    @deprecated("post_analytics_reporting_schedules is deprecated")
-    def post_analytics_reporting_schedules(self, body: 'ReportSchedule', **kwargs) -> 'ReportSchedule':
-        """
-        Create a scheduled report job
-        This route is deprecated, please use POST:api/v2/analytics/reporting/exports instead
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.post_analytics_reporting_schedules(body, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param ReportSchedule body: ReportSchedule (required)
-        :return: ReportSchedule
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['body']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method post_analytics_reporting_schedules" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        # verify the required parameter 'body' is set
-        if ('body' not in params) or (params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `post_analytics_reporting_schedules`")
-
-
-        resource_path = '/api/v2/analytics/reporting/schedules'.replace('{format}', 'json')
-        path_params = {}
-
-        query_params = {}
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        if 'body' in params:
-            body_params = params['body']
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/json'])
-
-        # Authentication setting
-        auth_settings = ['PureCloud OAuth']
-
-        response = self.api_client.call_api(resource_path, 'POST',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type='ReportSchedule',
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
     def post_analytics_reporting_settings_dashboards_bulk_remove(self, body: 'DashboardConfigurationBulkRequest', **kwargs) -> None:
         """
         Bulk remove dashboard configurations
@@ -7169,7 +6319,6 @@ class AnalyticsApi(object):
         """
         Query for user activity observations
         
-	    post_analytics_routing_activity_query is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -7569,7 +6718,6 @@ class AnalyticsApi(object):
         """
         Query for team activity observations
         
-	    post_analytics_teams_activity_query is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -7811,7 +6959,6 @@ class AnalyticsApi(object):
         """
         Query for user activity observations
         
-	    post_analytics_users_activity_query is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -8357,91 +7504,6 @@ class AnalyticsApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='AnalyticsDataRetentionResponse',
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    @deprecated("put_analytics_reporting_schedule is deprecated")
-    def put_analytics_reporting_schedule(self, schedule_id: str, body: 'ReportSchedule', **kwargs) -> 'ReportSchedule':
-        """
-        Update a scheduled report job.
-        This route is deprecated, please use PATCH:api/v2/analytics/reporting/exports/{exportId}/schedule instead
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.put_analytics_reporting_schedule(schedule_id, body, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param str schedule_id: Schedule ID (required)
-        :param ReportSchedule body: ReportSchedule (required)
-        :return: ReportSchedule
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['schedule_id', 'body']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method put_analytics_reporting_schedule" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        # verify the required parameter 'schedule_id' is set
-        if ('schedule_id' not in params) or (params['schedule_id'] is None):
-            raise ValueError("Missing the required parameter `schedule_id` when calling `put_analytics_reporting_schedule`")
-        # verify the required parameter 'body' is set
-        if ('body' not in params) or (params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `put_analytics_reporting_schedule`")
-
-
-        resource_path = '/api/v2/analytics/reporting/schedules/{scheduleId}'.replace('{format}', 'json')
-        path_params = {}
-        if 'schedule_id' in params:
-            path_params['scheduleId'] = params['schedule_id']
-
-        query_params = {}
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        if 'body' in params:
-            body_params = params['body']
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/json'])
-
-        # Authentication setting
-        auth_settings = ['PureCloud OAuth']
-
-        response = self.api_client.call_api(resource_path, 'PUT',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type='ReportSchedule',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

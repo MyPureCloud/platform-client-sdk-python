@@ -15,6 +15,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_organizations_limits_changerequest**](OrganizationApi.html#get_organizations_limits_changerequest) | Get a limit change request|
 |[**get_organizations_limits_changerequests**](OrganizationApi.html#get_organizations_limits_changerequests) | Get the available limit change requests|
 |[**get_organizations_limits_docs**](OrganizationApi.html#get_organizations_limits_docs) | Get limit documentation|
+|[**get_organizations_limits_docs_freetrial**](OrganizationApi.html#get_organizations_limits_docs_freetrial) | Get free trial limit documentation|
 |[**get_organizations_limits_namespace**](OrganizationApi.html#get_organizations_limits_namespace) | Get the effective limits in a namespace for an organization|
 |[**get_organizations_limits_namespace_defaults**](OrganizationApi.html#get_organizations_limits_namespace_defaults) | Get the default limits in a namespace for an organization|
 |[**get_organizations_limits_namespaces**](OrganizationApi.html#get_organizations_limits_namespaces) | Get the available limit namespaces|
@@ -365,6 +366,50 @@ This endpoint does not need any parameters.
 ### Return type
 
 [**LimitDocumentation**](LimitDocumentation.html)
+
+<a name="get_organizations_limits_docs_freetrial"></a>
+
+## [**FreeTrialLimitDocs**](FreeTrialLimitDocs.html) get_organizations_limits_docs_freetrial()
+
+
+
+Get free trial limit documentation
+
+Wraps GET /api/v2/organizations/limits/docs/freetrial 
+
+Requires no permissions
+
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.OrganizationApi()
+
+try:
+    # Get free trial limit documentation
+    api_response = api_instance.get_organizations_limits_docs_freetrial()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling OrganizationApi->get_organizations_limits_docs_freetrial: %s\n" % e)
+```
+
+### Parameters
+
+This endpoint does not need any parameters.
+
+
+### Return type
+
+[**FreeTrialLimitDocs**](FreeTrialLimitDocs.html)
 
 <a name="get_organizations_limits_namespace"></a>
 
