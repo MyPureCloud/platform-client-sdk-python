@@ -13,7 +13,6 @@ title: Event
 | **customer_id_type** | **str** | Type of primary identifier (e.g. cookie, email, phone). | [optional] |
 | **session** | [**EventSession**](EventSession.html) | The session that the event belongs to. | |
 | **event_type** | **str** | The name representing the type of event. | |
-| **generic_action_event** | [**GenericActionEvent**](GenericActionEvent.html) | Event triggered by generic actions. | [optional] |
 | **outcome_achieved_event** | [**OutcomeAchievedEvent**](OutcomeAchievedEvent.html) | Event where a customer has achieved a specific outcome or goal. | [optional] |
 | **segment_assignment_event** | [**SegmentAssignmentEvent**](SegmentAssignmentEvent.html) | Event that represents a segment being assigned. | [optional] |
 | **web_action_event** | [**WebActionEvent**](WebActionEvent.html) | Event triggered by web actions. | [optional] |

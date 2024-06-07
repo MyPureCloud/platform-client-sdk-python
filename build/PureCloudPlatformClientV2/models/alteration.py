@@ -96,7 +96,7 @@ class Alteration(object):
     def start(self) -> str:
         """
         Gets the start of this Alteration.
-        The start date of an alteration range as an ISO-8601 string in UTC time, e.g: 2023-12-21T16:30:25.000Z
+        The start date of an alteration range as an ISO-8601 string
 
         :return: The start of this Alteration.
         :rtype: str
@@ -107,7 +107,7 @@ class Alteration(object):
     def start(self, start: str) -> None:
         """
         Sets the start of this Alteration.
-        The start date of an alteration range as an ISO-8601 string in UTC time, e.g: 2023-12-21T16:30:25.000Z
+        The start date of an alteration range as an ISO-8601 string
 
         :param start: The start of this Alteration.
         :type: str
@@ -120,7 +120,7 @@ class Alteration(object):
     def end(self) -> str:
         """
         Gets the end of this Alteration.
-        The end date of an alteration range as an ISO-8601 string in UTC time, e.g: 2023-12-21T18:30:25.000Z
+        The end date of an alteration range as an ISO-8601 string
 
         :return: The end of this Alteration.
         :rtype: str
@@ -131,7 +131,7 @@ class Alteration(object):
     def end(self, end: str) -> None:
         """
         Sets the end of this Alteration.
-        The end date of an alteration range as an ISO-8601 string in UTC time, e.g: 2023-12-21T18:30:25.000Z
+        The end date of an alteration range as an ISO-8601 string
 
         :param end: The end of this Alteration.
         :type: str

@@ -1031,7 +1031,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ExternalContactsApi()
 external_organization_id = 'external_organization_id_example' # str | External Organization ID
-expand = 'expand_example' # str | which fields, if any, to expand (externalDataSources) (optional)
+expand = ['expand_example'] # list[str] | which fields, if any, to expand (externalDataSources) (optional)
 include_trustors = True # bool | (true or false) whether or not to include trustor information embedded in the externalOrganization (optional)
 
 try:
@@ -1048,7 +1048,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **external_organization_id** | **str**| External Organization ID |  |
-| **expand** | **str**| which fields, if any, to expand (externalDataSources) | [optional] <br />**Values**: externalDataSources |
+| **expand** | [**list[str]**](str.html)| which fields, if any, to expand (externalDataSources) | [optional] <br />**Values**: externalDataSources |
 | **include_trustors** | **bool**| (true or false) whether or not to include trustor information embedded in the externalOrganization | [optional]  |
 {: class="table table-striped"}
 
@@ -1259,7 +1259,7 @@ api_instance = PureCloudPlatformClientV2.ExternalContactsApi()
 external_organization_id = 'external_organization_id_example' # str | External Organization ID
 page_size = 20 # int | Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) (optional) (default to 20)
 page_number = 1 # int | Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000) (optional) (default to 1)
-expand = 'expand_example' # str | which fields, if any, to expand (optional)
+expand = ['expand_example'] # list[str] | which fields, if any, to expand (optional)
 sort_order = 'sort_order_example' # str | The Relationship field to sort by. Any of: [createDate, relationship]. Direction: [asc, desc]. e.g. \"createDate:asc\", \"relationship:desc\" (optional)
 
 try:
@@ -1278,7 +1278,7 @@ except ApiException as e:
 | **external_organization_id** | **str**| External Organization ID |  |
 | **page_size** | **int**| Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;&#x3D; 1,000) | [optional] [default to 20] |
 | **page_number** | **int**| Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;&#x3D; 1,000) | [optional] [default to 1] |
-| **expand** | **str**| which fields, if any, to expand | [optional] <br />**Values**: externalDataSources |
+| **expand** | [**list[str]**](str.html)| which fields, if any, to expand | [optional] <br />**Values**: externalDataSources |
 | **sort_order** | **str**| The Relationship field to sort by. Any of: [createDate, relationship]. Direction: [asc, desc]. e.g. \&quot;createDate:asc\&quot;, \&quot;relationship:desc\&quot; | [optional]  |
 {: class="table table-striped"}
 
@@ -1571,7 +1571,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ExternalContactsApi()
 relationship_id = 'relationship_id_example' # str | Relationship Id
-expand = 'expand_example' # str | which fields, if any, to expand (optional)
+expand = ['expand_example'] # list[str] | which fields, if any, to expand (optional)
 
 try:
     # Fetch a relationship
@@ -1587,7 +1587,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **relationship_id** | **str**| Relationship Id |  |
-| **expand** | **str**| which fields, if any, to expand | [optional] <br />**Values**: externalDataSources |
+| **expand** | [**list[str]**](str.html)| which fields, if any, to expand | [optional] <br />**Values**: externalDataSources |
 {: class="table table-striped"}
 
 ### Return type

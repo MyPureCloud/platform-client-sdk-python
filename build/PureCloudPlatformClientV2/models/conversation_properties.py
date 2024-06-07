@@ -57,6 +57,7 @@ class ConversationProperties(object):
             'is_voicemail': 'bool',
             'is_flagged': 'bool',
             'is_monitored': 'bool',
+            'is_screen_monitored': 'bool',
             'filter_wrap_up_notes': 'bool',
             'match_all': 'bool'
         }
@@ -71,6 +72,7 @@ class ConversationProperties(object):
             'is_voicemail': 'isVoicemail',
             'is_flagged': 'isFlagged',
             'is_monitored': 'isMonitored',
+            'is_screen_monitored': 'isScreenMonitored',
             'filter_wrap_up_notes': 'filterWrapUpNotes',
             'match_all': 'matchAll'
         }
@@ -84,6 +86,7 @@ class ConversationProperties(object):
         self._is_voicemail = None
         self._is_flagged = None
         self._is_monitored = None
+        self._is_screen_monitored = None
         self._filter_wrap_up_notes = None
         self._match_all = None
 
@@ -302,6 +305,30 @@ class ConversationProperties(object):
         
 
         self._is_monitored = is_monitored
+
+    @property
+    def is_screen_monitored(self) -> bool:
+        """
+        Gets the is_screen_monitored of this ConversationProperties.
+        Indicates filtering for screenMonitored
+
+        :return: The is_screen_monitored of this ConversationProperties.
+        :rtype: bool
+        """
+        return self._is_screen_monitored
+
+    @is_screen_monitored.setter
+    def is_screen_monitored(self, is_screen_monitored: bool) -> None:
+        """
+        Sets the is_screen_monitored of this ConversationProperties.
+        Indicates filtering for screenMonitored
+
+        :param is_screen_monitored: The is_screen_monitored of this ConversationProperties.
+        :type: bool
+        """
+        
+
+        self._is_screen_monitored = is_screen_monitored
 
     @property
     def filter_wrap_up_notes(self) -> bool:

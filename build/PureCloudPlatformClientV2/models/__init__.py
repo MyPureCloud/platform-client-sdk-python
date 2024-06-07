@@ -121,6 +121,8 @@ from .aggregate_view_data import AggregateViewData
 from .aggregation_range import AggregationRange
 from .aggregation_result import AggregationResult
 from .aggregation_result_entry import AggregationResultEntry
+from .ai_answer import AiAnswer
+from .ai_scoring import AiScoring
 from .ai_scoring_settings import AiScoringSettings
 from .alert_listing import AlertListing
 from .alert_notification import AlertNotification
@@ -263,6 +265,8 @@ from .audit_query_service_mapping import AuditQueryServiceMapping
 from .audit_query_sort import AuditQuerySort
 from .audit_realtime_query_request import AuditRealtimeQueryRequest
 from .audit_realtime_query_results_response import AuditRealtimeQueryResultsResponse
+from .audit_realtime_related_request import AuditRealtimeRelatedRequest
+from .audit_realtime_related_results_response import AuditRealtimeRelatedResultsResponse
 from .audit_search_result import AuditSearchResult
 from .audit_topic_addressable_entity_ref import AuditTopicAddressableEntityRef
 from .audit_topic_audit_log_message import AuditTopicAuditLogMessage
@@ -515,6 +519,9 @@ from .campaign_entity_listing import CampaignEntityListing
 from .campaign_interaction import CampaignInteraction
 from .campaign_interactions import CampaignInteractions
 from .campaign_lines_utilization import CampaignLinesUtilization
+from .campaign_outbound_lines_allocation import CampaignOutboundLinesAllocation
+from .campaign_outbound_lines_distribution import CampaignOutboundLinesDistribution
+from .campaign_outbound_lines_reservation import CampaignOutboundLinesReservation
 from .campaign_progress import CampaignProgress
 from .campaign_rule import CampaignRule
 from .campaign_rule_action import CampaignRuleAction
@@ -624,7 +631,6 @@ from .compliance import Compliance
 from .compliance_response import ComplianceResponse
 from .condition import Condition
 from .conditional_group_routing import ConditionalGroupRouting
-from .conditional_group_routing_condition import ConditionalGroupRoutingCondition
 from .conditional_group_routing_rule import ConditionalGroupRoutingRule
 from .configuration_overrides import ConfigurationOverrides
 from .confusion_details import ConfusionDetails
@@ -651,7 +657,9 @@ from .contact_address import ContactAddress
 from .contact_address_condition_settings import ContactAddressConditionSettings
 from .contact_address_type_condition_settings import ContactAddressTypeConditionSettings
 from .contact_addressable_entity_ref import ContactAddressableEntityRef
+from .contact_bulk_edit_request import ContactBulkEditRequest
 from .contact_bulk_search_criteria import ContactBulkSearchCriteria
+from .contact_bulk_search_parameters import ContactBulkSearchParameters
 from .contact_callback_request import ContactCallbackRequest
 from .contact_center_settings import ContactCenterSettings
 from .contact_column_condition_settings import ContactColumnConditionSettings
@@ -673,6 +681,8 @@ from .contact_list_template import ContactListTemplate
 from .contact_list_template_bulk_retrieve_body import ContactListTemplateBulkRetrieveBody
 from .contact_list_template_entity_listing import ContactListTemplateEntityListing
 from .contact_listing import ContactListing
+from .contact_listing_request import ContactListingRequest
+from .contact_listing_response import ContactListingResponse
 from .contact_phone_number_column import ContactPhoneNumberColumn
 from .contact_sort import ContactSort
 from .contactable_status import ContactableStatus
@@ -680,6 +690,7 @@ from .contactlist_download_ready_export_uri import ContactlistDownloadReadyExpor
 from .contactlist_download_ready_object import ContactlistDownloadReadyObject
 from .contactlist_import_status_import_status import ContactlistImportStatusImportStatus
 from .contactlist_import_status_object import ContactlistImportStatusObject
+from .contacts_bulk_operation_job import ContactsBulkOperationJob
 from .contacts_export_request import ContactsExportRequest
 from .content_actions import ContentActions
 from .content_attachment import ContentAttachment
@@ -1765,8 +1776,6 @@ from .general_topic import GeneralTopic
 from .general_topics_entity_listing import GeneralTopicsEntityListing
 from .generate_bu_forecast_request import GenerateBuForecastRequest
 from .generate_meeting_id_request import GenerateMeetingIdRequest
-from .generic_action_event import GenericActionEvent
-from .generic_event_action import GenericEventAction
 from .generic_saml import GenericSAML
 from .genesys_bot_connector import GenesysBotConnector
 from .geolocation import Geolocation
@@ -2289,9 +2298,6 @@ from .line_base import LineBase
 from .line_base_entity_listing import LineBaseEntityListing
 from .line_entity_listing import LineEntityListing
 from .line_id import LineId
-from .line_integration import LineIntegration
-from .line_integration_entity_listing import LineIntegrationEntityListing
-from .line_integration_request import LineIntegrationRequest
 from .line_status import LineStatus
 from .line_user_id import LineUserId
 from .link_configuration import LinkConfiguration
@@ -3159,8 +3165,11 @@ from .reporting_turn_intent import ReportingTurnIntent
 from .reporting_turn_intent_slot import ReportingTurnIntentSlot
 from .reporting_turn_knowledge import ReportingTurnKnowledge
 from .reporting_turn_knowledge_document import ReportingTurnKnowledgeDocument
+from .reporting_turn_knowledge_events import ReportingTurnKnowledgeEvents
 from .reporting_turn_knowledge_feedback import ReportingTurnKnowledgeFeedback
+from .reporting_turn_knowledge_feedback_event import ReportingTurnKnowledgeFeedbackEvent
 from .reporting_turn_knowledge_search import ReportingTurnKnowledgeSearch
+from .reporting_turn_knowledge_search_event import ReportingTurnKnowledgeSearchEvent
 from .reporting_turns_response import ReportingTurnsResponse
 from .request_config import RequestConfig
 from .request_context import RequestContext
@@ -3739,9 +3748,6 @@ from .tts_settings import TtsSettings
 from .tts_voice_entity import TtsVoiceEntity
 from .tts_voice_entity_listing import TtsVoiceEntityListing
 from .twitter_id import TwitterId
-from .twitter_integration import TwitterIntegration
-from .twitter_integration_entity_listing import TwitterIntegrationEntityListing
-from .twitter_integration_request import TwitterIntegrationRequest
 from .typing_setting import TypingSetting
 from .uci10n import UCI10n
 from .uc_icon import UCIcon

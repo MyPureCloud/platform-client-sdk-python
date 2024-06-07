@@ -7,7 +7,7 @@ title: WfmUserEntityListing
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **entities** | [**list[User]**](User.html) |  | [optional] |
+| **entities** | [**list[UserReference]**](UserReference.html) |  | [optional] |
 {: class="table table-striped"}
 
 

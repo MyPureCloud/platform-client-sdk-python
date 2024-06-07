@@ -200,6 +200,8 @@ PureCloudPlatformClientV2/models/aggregate_view_data.py
 PureCloudPlatformClientV2/models/aggregation_range.py
 PureCloudPlatformClientV2/models/aggregation_result.py
 PureCloudPlatformClientV2/models/aggregation_result_entry.py
+PureCloudPlatformClientV2/models/ai_answer.py
+PureCloudPlatformClientV2/models/ai_scoring.py
 PureCloudPlatformClientV2/models/ai_scoring_settings.py
 PureCloudPlatformClientV2/models/alert_listing.py
 PureCloudPlatformClientV2/models/alert_notification.py
@@ -342,6 +344,8 @@ PureCloudPlatformClientV2/models/audit_query_service_mapping.py
 PureCloudPlatformClientV2/models/audit_query_sort.py
 PureCloudPlatformClientV2/models/audit_realtime_query_request.py
 PureCloudPlatformClientV2/models/audit_realtime_query_results_response.py
+PureCloudPlatformClientV2/models/audit_realtime_related_request.py
+PureCloudPlatformClientV2/models/audit_realtime_related_results_response.py
 PureCloudPlatformClientV2/models/audit_search_result.py
 PureCloudPlatformClientV2/models/audit_topic_addressable_entity_ref.py
 PureCloudPlatformClientV2/models/audit_topic_audit_log_message.py
@@ -594,6 +598,9 @@ PureCloudPlatformClientV2/models/campaign_entity_listing.py
 PureCloudPlatformClientV2/models/campaign_interaction.py
 PureCloudPlatformClientV2/models/campaign_interactions.py
 PureCloudPlatformClientV2/models/campaign_lines_utilization.py
+PureCloudPlatformClientV2/models/campaign_outbound_lines_allocation.py
+PureCloudPlatformClientV2/models/campaign_outbound_lines_distribution.py
+PureCloudPlatformClientV2/models/campaign_outbound_lines_reservation.py
 PureCloudPlatformClientV2/models/campaign_progress.py
 PureCloudPlatformClientV2/models/campaign_rule.py
 PureCloudPlatformClientV2/models/campaign_rule_action.py
@@ -703,7 +710,6 @@ PureCloudPlatformClientV2/models/compliance.py
 PureCloudPlatformClientV2/models/compliance_response.py
 PureCloudPlatformClientV2/models/condition.py
 PureCloudPlatformClientV2/models/conditional_group_routing.py
-PureCloudPlatformClientV2/models/conditional_group_routing_condition.py
 PureCloudPlatformClientV2/models/conditional_group_routing_rule.py
 PureCloudPlatformClientV2/models/configuration_overrides.py
 PureCloudPlatformClientV2/models/confusion_details.py
@@ -730,7 +736,9 @@ PureCloudPlatformClientV2/models/contact_address.py
 PureCloudPlatformClientV2/models/contact_address_condition_settings.py
 PureCloudPlatformClientV2/models/contact_address_type_condition_settings.py
 PureCloudPlatformClientV2/models/contact_addressable_entity_ref.py
+PureCloudPlatformClientV2/models/contact_bulk_edit_request.py
 PureCloudPlatformClientV2/models/contact_bulk_search_criteria.py
+PureCloudPlatformClientV2/models/contact_bulk_search_parameters.py
 PureCloudPlatformClientV2/models/contact_callback_request.py
 PureCloudPlatformClientV2/models/contact_center_settings.py
 PureCloudPlatformClientV2/models/contact_column_condition_settings.py
@@ -752,6 +760,8 @@ PureCloudPlatformClientV2/models/contact_list_template.py
 PureCloudPlatformClientV2/models/contact_list_template_bulk_retrieve_body.py
 PureCloudPlatformClientV2/models/contact_list_template_entity_listing.py
 PureCloudPlatformClientV2/models/contact_listing.py
+PureCloudPlatformClientV2/models/contact_listing_request.py
+PureCloudPlatformClientV2/models/contact_listing_response.py
 PureCloudPlatformClientV2/models/contact_phone_number_column.py
 PureCloudPlatformClientV2/models/contact_sort.py
 PureCloudPlatformClientV2/models/contactable_status.py
@@ -759,6 +769,7 @@ PureCloudPlatformClientV2/models/contactlist_download_ready_export_uri.py
 PureCloudPlatformClientV2/models/contactlist_download_ready_object.py
 PureCloudPlatformClientV2/models/contactlist_import_status_import_status.py
 PureCloudPlatformClientV2/models/contactlist_import_status_object.py
+PureCloudPlatformClientV2/models/contacts_bulk_operation_job.py
 PureCloudPlatformClientV2/models/contacts_export_request.py
 PureCloudPlatformClientV2/models/content_actions.py
 PureCloudPlatformClientV2/models/content_attachment.py
@@ -1840,8 +1851,6 @@ PureCloudPlatformClientV2/models/general_topic.py
 PureCloudPlatformClientV2/models/general_topics_entity_listing.py
 PureCloudPlatformClientV2/models/generate_bu_forecast_request.py
 PureCloudPlatformClientV2/models/generate_meeting_id_request.py
-PureCloudPlatformClientV2/models/generic_action_event.py
-PureCloudPlatformClientV2/models/generic_event_action.py
 PureCloudPlatformClientV2/models/generic_saml.py
 PureCloudPlatformClientV2/models/genesys_bot_connector.py
 PureCloudPlatformClientV2/models/geolocation.py
@@ -2368,9 +2377,6 @@ PureCloudPlatformClientV2/models/line_base.py
 PureCloudPlatformClientV2/models/line_base_entity_listing.py
 PureCloudPlatformClientV2/models/line_entity_listing.py
 PureCloudPlatformClientV2/models/line_id.py
-PureCloudPlatformClientV2/models/line_integration.py
-PureCloudPlatformClientV2/models/line_integration_entity_listing.py
-PureCloudPlatformClientV2/models/line_integration_request.py
 PureCloudPlatformClientV2/models/line_status.py
 PureCloudPlatformClientV2/models/line_user_id.py
 PureCloudPlatformClientV2/models/link_configuration.py
@@ -3238,8 +3244,11 @@ PureCloudPlatformClientV2/models/reporting_turn_intent.py
 PureCloudPlatformClientV2/models/reporting_turn_intent_slot.py
 PureCloudPlatformClientV2/models/reporting_turn_knowledge.py
 PureCloudPlatformClientV2/models/reporting_turn_knowledge_document.py
+PureCloudPlatformClientV2/models/reporting_turn_knowledge_events.py
 PureCloudPlatformClientV2/models/reporting_turn_knowledge_feedback.py
+PureCloudPlatformClientV2/models/reporting_turn_knowledge_feedback_event.py
 PureCloudPlatformClientV2/models/reporting_turn_knowledge_search.py
+PureCloudPlatformClientV2/models/reporting_turn_knowledge_search_event.py
 PureCloudPlatformClientV2/models/reporting_turns_response.py
 PureCloudPlatformClientV2/models/request_config.py
 PureCloudPlatformClientV2/models/request_context.py
@@ -3818,9 +3827,6 @@ PureCloudPlatformClientV2/models/tts_settings.py
 PureCloudPlatformClientV2/models/tts_voice_entity.py
 PureCloudPlatformClientV2/models/tts_voice_entity_listing.py
 PureCloudPlatformClientV2/models/twitter_id.py
-PureCloudPlatformClientV2/models/twitter_integration.py
-PureCloudPlatformClientV2/models/twitter_integration_entity_listing.py
-PureCloudPlatformClientV2/models/twitter_integration_request.py
 PureCloudPlatformClientV2/models/typing_setting.py
 PureCloudPlatformClientV2/models/uc_icon.py
 PureCloudPlatformClientV2/models/uc_integration.py
@@ -4614,6 +4620,8 @@ docs/AggregateViewData.md
 docs/AggregationRange.md
 docs/AggregationResult.md
 docs/AggregationResultEntry.md
+docs/AiAnswer.md
+docs/AiScoring.md
 docs/AiScoringSettings.md
 docs/AlertListing.md
 docs/AlertNotification.md
@@ -4764,6 +4772,8 @@ docs/AuditQueryServiceMapping.md
 docs/AuditQuerySort.md
 docs/AuditRealtimeQueryRequest.md
 docs/AuditRealtimeQueryResultsResponse.md
+docs/AuditRealtimeRelatedRequest.md
+docs/AuditRealtimeRelatedResultsResponse.md
 docs/AuditSearchResult.md
 docs/AuditTopicAddressableEntityRef.md
 docs/AuditTopicAuditLogMessage.md
@@ -5020,6 +5030,9 @@ docs/CampaignEntityListing.md
 docs/CampaignInteraction.md
 docs/CampaignInteractions.md
 docs/CampaignLinesUtilization.md
+docs/CampaignOutboundLinesAllocation.md
+docs/CampaignOutboundLinesDistribution.md
+docs/CampaignOutboundLinesReservation.md
 docs/CampaignProgress.md
 docs/CampaignRule.md
 docs/CampaignRuleAction.md
@@ -5135,7 +5148,6 @@ docs/Compliance.md
 docs/ComplianceResponse.md
 docs/Condition.md
 docs/ConditionalGroupRouting.md
-docs/ConditionalGroupRoutingCondition.md
 docs/ConditionalGroupRoutingRule.md
 docs/ConfigurationOverrides.md
 docs/ConfusionDetails.md
@@ -5162,7 +5174,9 @@ docs/ContactAddress.md
 docs/ContactAddressConditionSettings.md
 docs/ContactAddressTypeConditionSettings.md
 docs/ContactAddressableEntityRef.md
+docs/ContactBulkEditRequest.md
 docs/ContactBulkSearchCriteria.md
+docs/ContactBulkSearchParameters.md
 docs/ContactCallbackRequest.md
 docs/ContactCenterSettings.md
 docs/ContactColumnConditionSettings.md
@@ -5184,6 +5198,8 @@ docs/ContactListTemplate.md
 docs/ContactListTemplateBulkRetrieveBody.md
 docs/ContactListTemplateEntityListing.md
 docs/ContactListing.md
+docs/ContactListingRequest.md
+docs/ContactListingResponse.md
 docs/ContactPhoneNumberColumn.md
 docs/ContactSort.md
 docs/ContactableStatus.md
@@ -5191,6 +5207,7 @@ docs/ContactlistDownloadReadyExportUri.md
 docs/ContactlistDownloadReadyObject.md
 docs/ContactlistImportStatusImportStatus.md
 docs/ContactlistImportStatusObject.md
+docs/ContactsBulkOperationJob.md
 docs/ContactsExportRequest.md
 docs/ContentActions.md
 docs/ContentAttachment.md
@@ -6298,8 +6315,6 @@ docs/GeneralTopic.md
 docs/GeneralTopicsEntityListing.md
 docs/GenerateBuForecastRequest.md
 docs/GenerateMeetingIdRequest.md
-docs/GenericActionEvent.md
-docs/GenericEventAction.md
 docs/GenericSAML.md
 docs/GenesysBotConnector.md
 docs/Geolocation.md
@@ -6846,9 +6861,6 @@ docs/LineBase.md
 docs/LineBaseEntityListing.md
 docs/LineEntityListing.md
 docs/LineId.md
-docs/LineIntegration.md
-docs/LineIntegrationEntityListing.md
-docs/LineIntegrationRequest.md
 docs/LineStatus.md
 docs/LineUserId.md
 docs/LinkConfiguration.md
@@ -7746,8 +7758,11 @@ docs/ReportingTurnIntent.md
 docs/ReportingTurnIntentSlot.md
 docs/ReportingTurnKnowledge.md
 docs/ReportingTurnKnowledgeDocument.md
+docs/ReportingTurnKnowledgeEvents.md
 docs/ReportingTurnKnowledgeFeedback.md
+docs/ReportingTurnKnowledgeFeedbackEvent.md
 docs/ReportingTurnKnowledgeSearch.md
+docs/ReportingTurnKnowledgeSearchEvent.md
 docs/ReportingTurnsResponse.md
 docs/RequestConfig.md
 docs/RequestContext.md
@@ -8358,9 +8373,6 @@ docs/TtsSettings.md
 docs/TtsVoiceEntity.md
 docs/TtsVoiceEntityListing.md
 docs/TwitterId.md
-docs/TwitterIntegration.md
-docs/TwitterIntegrationEntityListing.md
-docs/TwitterIntegrationRequest.md
 docs/TypingSetting.md
 docs/UCI10n.md
 docs/UCIcon.md
@@ -9101,9 +9113,7 @@ docs/delete_conversations_email_messages_draft_attachment-example.txt
 docs/delete_conversations_messages_cachedmedia_cached_media_item_id-example.txt
 docs/delete_conversations_messaging_integrations_facebook_integration_id-example.txt
 docs/delete_conversations_messaging_integrations_instagram_integration_id-example.txt
-docs/delete_conversations_messaging_integrations_line_integration_id-example.txt
 docs/delete_conversations_messaging_integrations_open_integration_id-example.txt
-docs/delete_conversations_messaging_integrations_twitter_integration_id-example.txt
 docs/delete_conversations_messaging_integrations_whatsapp_integration_id-example.txt
 docs/delete_conversations_messaging_setting-example.txt
 docs/delete_conversations_messaging_settings_default-example.txt
@@ -9567,12 +9577,8 @@ docs/get_conversations_messaging_integrations_facebook-example.txt
 docs/get_conversations_messaging_integrations_facebook_integration_id-example.txt
 docs/get_conversations_messaging_integrations_instagram-example.txt
 docs/get_conversations_messaging_integrations_instagram_integration_id-example.txt
-docs/get_conversations_messaging_integrations_line-example.txt
-docs/get_conversations_messaging_integrations_line_integration_id-example.txt
 docs/get_conversations_messaging_integrations_open-example.txt
 docs/get_conversations_messaging_integrations_open_integration_id-example.txt
-docs/get_conversations_messaging_integrations_twitter-example.txt
-docs/get_conversations_messaging_integrations_twitter_integration_id-example.txt
 docs/get_conversations_messaging_integrations_whatsapp-example.txt
 docs/get_conversations_messaging_integrations_whatsapp_integration_id-example.txt
 docs/get_conversations_messaging_setting-example.txt
@@ -9983,6 +9989,7 @@ docs/get_outbound_campaign-example.txt
 docs/get_outbound_campaign_agentownedmappingpreview_results-example.txt
 docs/get_outbound_campaign_diagnostics-example.txt
 docs/get_outbound_campaign_interactions-example.txt
+docs/get_outbound_campaign_linedistribution-example.txt
 docs/get_outbound_campaign_progress-example.txt
 docs/get_outbound_campaign_stats-example.txt
 docs/get_outbound_campaignrule-example.txt
@@ -10548,7 +10555,6 @@ docs/patch_conversations_message_participant_communication-example.txt
 docs/patch_conversations_messaging_integrations_facebook_integration_id-example.txt
 docs/patch_conversations_messaging_integrations_instagram_integration_id-example.txt
 docs/patch_conversations_messaging_integrations_open_integration_id-example.txt
-docs/patch_conversations_messaging_integrations_twitter_integration_id-example.txt
 docs/patch_conversations_messaging_integrations_whatsapp_embeddedsignup_integration_id-example.txt
 docs/patch_conversations_messaging_integrations_whatsapp_integration_id-example.txt
 docs/patch_conversations_messaging_setting-example.txt
@@ -10757,6 +10763,7 @@ docs/post_architect_systemprompt_history-example.txt
 docs/post_architect_systemprompt_resources-example.txt
 docs/post_audits_query-example.txt
 docs/post_audits_query_realtime-example.txt
+docs/post_audits_query_realtime_related-example.txt
 docs/post_authorization_division_object-example.txt
 docs/post_authorization_division_object-example.txt
 docs/post_authorization_division_restore-example.txt
@@ -10858,9 +10865,7 @@ docs/post_conversations_messages_agentless-example.txt
 docs/post_conversations_messages_inbound_open-example.txt
 docs/post_conversations_messaging_integrations_facebook-example.txt
 docs/post_conversations_messaging_integrations_instagram-example.txt
-docs/post_conversations_messaging_integrations_line-example.txt
 docs/post_conversations_messaging_integrations_open-example.txt
-docs/post_conversations_messaging_integrations_twitter-example.txt
 docs/post_conversations_messaging_integrations_whatsapp-example.txt
 docs/post_conversations_messaging_integrations_whatsapp_embeddedsignup-example.txt
 docs/post_conversations_messaging_settings-example.txt
@@ -11072,6 +11077,9 @@ docs/post_outbound_campaigns_progress-example.txt
 docs/post_outbound_contactlist_clear-example.txt
 docs/post_outbound_contactlist_contacts-example.txt
 docs/post_outbound_contactlist_contacts_bulk-example.txt
+docs/post_outbound_contactlist_contacts_bulk_remove-example.txt
+docs/post_outbound_contactlist_contacts_bulk_update-example.txt
+docs/post_outbound_contactlist_contacts_search-example.txt
 docs/post_outbound_contactlist_export-example.txt
 docs/post_outbound_contactlistfilters-example.txt
 docs/post_outbound_contactlistfilters_bulk_retrieve-example.txt
@@ -11364,7 +11372,6 @@ docs/put_conversations_email_messages_draft-example.txt
 docs/put_conversations_email_recordingstate-example.txt
 docs/put_conversations_keyconfiguration-example.txt
 docs/put_conversations_message_recordingstate-example.txt
-docs/put_conversations_messaging_integrations_line_integration_id-example.txt
 docs/put_conversations_messaging_settings_default-example.txt
 docs/put_conversations_messaging_supportedcontent_default-example.txt
 docs/put_conversations_messaging_threadingtimeline-example.txt

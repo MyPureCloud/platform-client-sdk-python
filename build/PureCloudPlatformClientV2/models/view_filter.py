@@ -229,7 +229,9 @@ class ViewFilter(object):
             'agent_empathy_score': 'NumericRange',
             'survey_types': 'list[str]',
             'survey_response_statuses': 'list[str]',
-            'bot_flow_types': 'list[str]'
+            'bot_flow_types': 'list[str]',
+            'is_screen_recorded': 'bool',
+            'screen_monitor_user_ids': 'list[str]'
         }
 
         self.attribute_map = {
@@ -409,7 +411,9 @@ class ViewFilter(object):
             'agent_empathy_score': 'agentEmpathyScore',
             'survey_types': 'surveyTypes',
             'survey_response_statuses': 'surveyResponseStatuses',
-            'bot_flow_types': 'botFlowTypes'
+            'bot_flow_types': 'botFlowTypes',
+            'is_screen_recorded': 'isScreenRecorded',
+            'screen_monitor_user_ids': 'screenMonitorUserIds'
         }
 
         self._media_types = None
@@ -589,6 +593,8 @@ class ViewFilter(object):
         self._survey_types = None
         self._survey_response_statuses = None
         self._bot_flow_types = None
+        self._is_screen_recorded = None
+        self._screen_monitor_user_ids = None
 
     @property
     def media_types(self) -> List[str]:
@@ -4847,6 +4853,54 @@ class ViewFilter(object):
         
 
         self._bot_flow_types = bot_flow_types
+
+    @property
+    def is_screen_recorded(self) -> bool:
+        """
+        Gets the is_screen_recorded of this ViewFilter.
+        Filter to indicate if the screen is recorded
+
+        :return: The is_screen_recorded of this ViewFilter.
+        :rtype: bool
+        """
+        return self._is_screen_recorded
+
+    @is_screen_recorded.setter
+    def is_screen_recorded(self, is_screen_recorded: bool) -> None:
+        """
+        Sets the is_screen_recorded of this ViewFilter.
+        Filter to indicate if the screen is recorded
+
+        :param is_screen_recorded: The is_screen_recorded of this ViewFilter.
+        :type: bool
+        """
+        
+
+        self._is_screen_recorded = is_screen_recorded
+
+    @property
+    def screen_monitor_user_ids(self) -> List[str]:
+        """
+        Gets the screen_monitor_user_ids of this ViewFilter.
+        The list of Screen Monitor User Ids
+
+        :return: The screen_monitor_user_ids of this ViewFilter.
+        :rtype: list[str]
+        """
+        return self._screen_monitor_user_ids
+
+    @screen_monitor_user_ids.setter
+    def screen_monitor_user_ids(self, screen_monitor_user_ids: List[str]) -> None:
+        """
+        Sets the screen_monitor_user_ids of this ViewFilter.
+        The list of Screen Monitor User Ids
+
+        :param screen_monitor_user_ids: The screen_monitor_user_ids of this ViewFilter.
+        :type: list[str]
+        """
+        
+
+        self._screen_monitor_user_ids = screen_monitor_user_ids
 
     def to_dict(self):
         """

@@ -448,7 +448,7 @@ class JourneySegment(object):
     def modified_date(self) -> datetime:
         """
         Gets the modified_date of this JourneySegment.
-        Timestamp indicating when the the segment was last updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+        Timestamp indicating when the segment was last updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The modified_date of this JourneySegment.
         :rtype: datetime
@@ -459,7 +459,7 @@ class JourneySegment(object):
     def modified_date(self, modified_date: datetime) -> None:
         """
         Sets the modified_date of this JourneySegment.
-        Timestamp indicating when the the segment was last updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+        Timestamp indicating when the segment was last updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param modified_date: The modified_date of this JourneySegment.
         :type: datetime

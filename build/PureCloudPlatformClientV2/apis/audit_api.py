@@ -44,6 +44,8 @@ from ..models import AuditQueryRequest
 from ..models import AuditQueryServiceMapping
 from ..models import AuditRealtimeQueryRequest
 from ..models import AuditRealtimeQueryResultsResponse
+from ..models import AuditRealtimeRelatedRequest
+from ..models import AuditRealtimeRelatedResultsResponse
 from ..models import ErrorBody
 
 class AuditApi(object):
@@ -526,6 +528,87 @@ class AuditApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='AuditRealtimeQueryResultsResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_audits_query_realtime_related(self, body: 'AuditRealtimeRelatedRequest', **kwargs) -> 'AuditRealtimeRelatedResultsResponse':
+        """
+        Often a single action results in multiple audits. The endpoint retrieves all audits created by the same action as the given audit id.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_audits_query_realtime_related(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param AuditRealtimeRelatedRequest body: query (required)
+        :param list[str] expand: Which fields, if any, to expand
+        :return: AuditRealtimeRelatedResultsResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body', 'expand']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_audits_query_realtime_related" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_audits_query_realtime_related`")
+
+
+        resource_path = '/api/v2/audits/query/realtime/related'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'expand' in params:
+            query_params['expand'] = params['expand']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='AuditRealtimeRelatedResultsResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

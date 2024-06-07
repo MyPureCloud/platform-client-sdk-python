@@ -53,7 +53,6 @@ class PhoneStatus(object):
         """
         self.swagger_types = {
             'id': 'str',
-            'name': 'str',
             'operational_status': 'str',
             'edges_status': 'str',
             'event_creation_time': 'str',
@@ -66,7 +65,6 @@ class PhoneStatus(object):
 
         self.attribute_map = {
             'id': 'id',
-            'name': 'name',
             'operational_status': 'operationalStatus',
             'edges_status': 'edgesStatus',
             'event_creation_time': 'eventCreationTime',
@@ -78,7 +76,6 @@ class PhoneStatus(object):
         }
 
         self._id = None
-        self._name = None
         self._operational_status = None
         self._edges_status = None
         self._event_creation_time = None
@@ -92,7 +89,7 @@ class PhoneStatus(object):
     def id(self) -> str:
         """
         Gets the id of this PhoneStatus.
-        The globally unique identifier for the object.
+
 
         :return: The id of this PhoneStatus.
         :rtype: str
@@ -103,7 +100,7 @@ class PhoneStatus(object):
     def id(self, id: str) -> None:
         """
         Sets the id of this PhoneStatus.
-        The globally unique identifier for the object.
+
 
         :param id: The id of this PhoneStatus.
         :type: str
@@ -111,30 +108,6 @@ class PhoneStatus(object):
         
 
         self._id = id
-
-    @property
-    def name(self) -> str:
-        """
-        Gets the name of this PhoneStatus.
-
-
-        :return: The name of this PhoneStatus.
-        :rtype: str
-        """
-        return self._name
-
-    @name.setter
-    def name(self, name: str) -> None:
-        """
-        Sets the name of this PhoneStatus.
-
-
-        :param name: The name of this PhoneStatus.
-        :type: str
-        """
-        
-
-        self._name = name
 
     @property
     def operational_status(self) -> str:

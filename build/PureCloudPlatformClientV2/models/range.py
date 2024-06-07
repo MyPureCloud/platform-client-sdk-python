@@ -96,7 +96,7 @@ class Range(object):
     def end(self) -> str:
         """
         Gets the end of this Range.
-        The end date time of the last occurrence of the range as an ISO-8601 string in UTC time, e.g: 2023-12-21T16:30:25.000Z, Required to set for EndDate range type.
+        The end date time of the last occurrence of the range as an ISO-8601 string. Required for EndDate range type.
 
         :return: The end of this Range.
         :rtype: str
@@ -107,7 +107,7 @@ class Range(object):
     def end(self, end: str) -> None:
         """
         Sets the end of this Range.
-        The end date time of the last occurrence of the range as an ISO-8601 string in UTC time, e.g: 2023-12-21T16:30:25.000Z, Required to set for EndDate range type.
+        The end date time of the last occurrence of the range as an ISO-8601 string. Required for EndDate range type.
 
         :param end: The end of this Range.
         :type: str

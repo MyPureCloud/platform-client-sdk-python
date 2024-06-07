@@ -1569,7 +1569,7 @@ class ExternalContactsApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str external_organization_id: External Organization ID (required)
-        :param str expand: which fields, if any, to expand (externalDataSources)
+        :param list[str] expand: which fields, if any, to expand (externalDataSources)
         :param bool include_trustors: (true or false) whether or not to include trustor information embedded in the externalOrganization
         :return: ExternalOrganization
                  If the method is called asynchronously,
@@ -1925,7 +1925,7 @@ class ExternalContactsApi(object):
         :param str external_organization_id: External Organization ID (required)
         :param int page_size: Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000)
         :param int page_number: Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be <= 1,000)
-        :param str expand: which fields, if any, to expand
+        :param list[str] expand: which fields, if any, to expand
         :param str sort_order: The Relationship field to sort by. Any of: [createDate, relationship]. Direction: [asc, desc]. e.g. \"createDate:asc\", \"relationship:desc\"
         :return: RelationshipListing
                  If the method is called asynchronously,
@@ -2418,7 +2418,7 @@ class ExternalContactsApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str relationship_id: Relationship Id (required)
-        :param str expand: which fields, if any, to expand
+        :param list[str] expand: which fields, if any, to expand
         :return: Relationship
                  If the method is called asynchronously,
                  returns the request thread.

@@ -35,7 +35,6 @@ from typing import Dict
 if TYPE_CHECKING:
     from . import AppEvent
     from . import EventSession
-    from . import GenericActionEvent
     from . import OutcomeAchievedEvent
     from . import SegmentAssignmentEvent
     from . import WebActionEvent
@@ -62,7 +61,6 @@ class Event(object):
             'customer_id_type': 'str',
             'session': 'EventSession',
             'event_type': 'str',
-            'generic_action_event': 'GenericActionEvent',
             'outcome_achieved_event': 'OutcomeAchievedEvent',
             'segment_assignment_event': 'SegmentAssignmentEvent',
             'web_action_event': 'WebActionEvent',
@@ -78,7 +76,6 @@ class Event(object):
             'customer_id_type': 'customerIdType',
             'session': 'session',
             'event_type': 'eventType',
-            'generic_action_event': 'genericActionEvent',
             'outcome_achieved_event': 'outcomeAchievedEvent',
             'segment_assignment_event': 'segmentAssignmentEvent',
             'web_action_event': 'webActionEvent',
@@ -93,7 +90,6 @@ class Event(object):
         self._customer_id_type = None
         self._session = None
         self._event_type = None
-        self._generic_action_event = None
         self._outcome_achieved_event = None
         self._segment_assignment_event = None
         self._web_action_event = None
@@ -244,30 +240,6 @@ class Event(object):
         
 
         self._event_type = event_type
-
-    @property
-    def generic_action_event(self) -> 'GenericActionEvent':
-        """
-        Gets the generic_action_event of this Event.
-        Event triggered by generic actions.
-
-        :return: The generic_action_event of this Event.
-        :rtype: GenericActionEvent
-        """
-        return self._generic_action_event
-
-    @generic_action_event.setter
-    def generic_action_event(self, generic_action_event: 'GenericActionEvent') -> None:
-        """
-        Sets the generic_action_event of this Event.
-        Event triggered by generic actions.
-
-        :param generic_action_event: The generic_action_event of this Event.
-        :type: GenericActionEvent
-        """
-        
-
-        self._generic_action_event = generic_action_event
 
     @property
     def outcome_achieved_event(self) -> 'OutcomeAchievedEvent':

@@ -14,6 +14,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_audits_query_transaction_id_results**](AuditApi.html#get_audits_query_transaction_id_results) | Get results of audit query|
 |[**post_audits_query**](AuditApi.html#post_audits_query) | Create audit query execution|
 |[**post_audits_query_realtime**](AuditApi.html#post_audits_query_realtime) | This endpoint will only retrieve 14 days worth of audits for certain services. Please use /query to get a full list and older audits.|
+|[**post_audits_query_realtime_related**](AuditApi.html#post_audits_query_realtime_related) | Often a single action results in multiple audits. The endpoint retrieves all audits created by the same action as the given audit id.|
 {: class="table table-striped"}
 
 <a name="get_audits_query_realtime_servicemapping"></a>
@@ -313,4 +314,55 @@ except ApiException as e:
 ### Return type
 
 [**AuditRealtimeQueryResultsResponse**](AuditRealtimeQueryResultsResponse.html)
+
+<a name="post_audits_query_realtime_related"></a>
+
+## [**AuditRealtimeRelatedResultsResponse**](AuditRealtimeRelatedResultsResponse.html) post_audits_query_realtime_related(body, expand=expand)
+
+
+
+Often a single action results in multiple audits. The endpoint retrieves all audits created by the same action as the given audit id.
+
+Wraps POST /api/v2/audits/query/realtime/related 
+
+Requires ALL permissions: 
+
+* audits:audit:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AuditApi()
+body = PureCloudPlatformClientV2.AuditRealtimeRelatedRequest() # AuditRealtimeRelatedRequest | query
+expand = ['expand_example'] # list[str] | Which fields, if any, to expand (optional)
+
+try:
+    # Often a single action results in multiple audits. The endpoint retrieves all audits created by the same action as the given audit id.
+    api_response = api_instance.post_audits_query_realtime_related(body, expand=expand)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AuditApi->post_audits_query_realtime_related: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**AuditRealtimeRelatedRequest**](AuditRealtimeRelatedRequest.html)| query |  |
+| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] <br />**Values**: user |
+{: class="table table-striped"}
+
+### Return type
+
+[**AuditRealtimeRelatedResultsResponse**](AuditRealtimeRelatedResultsResponse.html)
 

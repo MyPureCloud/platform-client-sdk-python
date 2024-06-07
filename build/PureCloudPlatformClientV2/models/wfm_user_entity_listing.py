@@ -33,7 +33,7 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
-    from . import User
+    from . import UserReference
 
 class WfmUserEntityListing(object):
     """
@@ -50,7 +50,7 @@ class WfmUserEntityListing(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'entities': 'list[User]'
+            'entities': 'list[UserReference]'
         }
 
         self.attribute_map = {
@@ -60,24 +60,24 @@ class WfmUserEntityListing(object):
         self._entities = None
 
     @property
-    def entities(self) -> List['User']:
+    def entities(self) -> List['UserReference']:
         """
         Gets the entities of this WfmUserEntityListing.
 
 
         :return: The entities of this WfmUserEntityListing.
-        :rtype: list[User]
+        :rtype: list[UserReference]
         """
         return self._entities
 
     @entities.setter
-    def entities(self, entities: List['User']) -> None:
+    def entities(self, entities: List['UserReference']) -> None:
         """
         Sets the entities of this WfmUserEntityListing.
 
 
         :param entities: The entities of this WfmUserEntityListing.
-        :type: list[User]
+        :type: list[UserReference]
         """
         
 

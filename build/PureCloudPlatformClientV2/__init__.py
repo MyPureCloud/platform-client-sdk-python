@@ -121,6 +121,8 @@ from .models.aggregate_view_data import AggregateViewData
 from .models.aggregation_range import AggregationRange
 from .models.aggregation_result import AggregationResult
 from .models.aggregation_result_entry import AggregationResultEntry
+from .models.ai_answer import AiAnswer
+from .models.ai_scoring import AiScoring
 from .models.ai_scoring_settings import AiScoringSettings
 from .models.alert_listing import AlertListing
 from .models.alert_notification import AlertNotification
@@ -263,6 +265,8 @@ from .models.audit_query_service_mapping import AuditQueryServiceMapping
 from .models.audit_query_sort import AuditQuerySort
 from .models.audit_realtime_query_request import AuditRealtimeQueryRequest
 from .models.audit_realtime_query_results_response import AuditRealtimeQueryResultsResponse
+from .models.audit_realtime_related_request import AuditRealtimeRelatedRequest
+from .models.audit_realtime_related_results_response import AuditRealtimeRelatedResultsResponse
 from .models.audit_search_result import AuditSearchResult
 from .models.audit_topic_addressable_entity_ref import AuditTopicAddressableEntityRef
 from .models.audit_topic_audit_log_message import AuditTopicAuditLogMessage
@@ -515,6 +519,9 @@ from .models.campaign_entity_listing import CampaignEntityListing
 from .models.campaign_interaction import CampaignInteraction
 from .models.campaign_interactions import CampaignInteractions
 from .models.campaign_lines_utilization import CampaignLinesUtilization
+from .models.campaign_outbound_lines_allocation import CampaignOutboundLinesAllocation
+from .models.campaign_outbound_lines_distribution import CampaignOutboundLinesDistribution
+from .models.campaign_outbound_lines_reservation import CampaignOutboundLinesReservation
 from .models.campaign_progress import CampaignProgress
 from .models.campaign_rule import CampaignRule
 from .models.campaign_rule_action import CampaignRuleAction
@@ -624,7 +631,6 @@ from .models.compliance import Compliance
 from .models.compliance_response import ComplianceResponse
 from .models.condition import Condition
 from .models.conditional_group_routing import ConditionalGroupRouting
-from .models.conditional_group_routing_condition import ConditionalGroupRoutingCondition
 from .models.conditional_group_routing_rule import ConditionalGroupRoutingRule
 from .models.configuration_overrides import ConfigurationOverrides
 from .models.confusion_details import ConfusionDetails
@@ -651,7 +657,9 @@ from .models.contact_address import ContactAddress
 from .models.contact_address_condition_settings import ContactAddressConditionSettings
 from .models.contact_address_type_condition_settings import ContactAddressTypeConditionSettings
 from .models.contact_addressable_entity_ref import ContactAddressableEntityRef
+from .models.contact_bulk_edit_request import ContactBulkEditRequest
 from .models.contact_bulk_search_criteria import ContactBulkSearchCriteria
+from .models.contact_bulk_search_parameters import ContactBulkSearchParameters
 from .models.contact_callback_request import ContactCallbackRequest
 from .models.contact_center_settings import ContactCenterSettings
 from .models.contact_column_condition_settings import ContactColumnConditionSettings
@@ -673,6 +681,8 @@ from .models.contact_list_template import ContactListTemplate
 from .models.contact_list_template_bulk_retrieve_body import ContactListTemplateBulkRetrieveBody
 from .models.contact_list_template_entity_listing import ContactListTemplateEntityListing
 from .models.contact_listing import ContactListing
+from .models.contact_listing_request import ContactListingRequest
+from .models.contact_listing_response import ContactListingResponse
 from .models.contact_phone_number_column import ContactPhoneNumberColumn
 from .models.contact_sort import ContactSort
 from .models.contactable_status import ContactableStatus
@@ -680,6 +690,7 @@ from .models.contactlist_download_ready_export_uri import ContactlistDownloadRea
 from .models.contactlist_download_ready_object import ContactlistDownloadReadyObject
 from .models.contactlist_import_status_import_status import ContactlistImportStatusImportStatus
 from .models.contactlist_import_status_object import ContactlistImportStatusObject
+from .models.contacts_bulk_operation_job import ContactsBulkOperationJob
 from .models.contacts_export_request import ContactsExportRequest
 from .models.content_actions import ContentActions
 from .models.content_attachment import ContentAttachment
@@ -1765,8 +1776,6 @@ from .models.general_topic import GeneralTopic
 from .models.general_topics_entity_listing import GeneralTopicsEntityListing
 from .models.generate_bu_forecast_request import GenerateBuForecastRequest
 from .models.generate_meeting_id_request import GenerateMeetingIdRequest
-from .models.generic_action_event import GenericActionEvent
-from .models.generic_event_action import GenericEventAction
 from .models.generic_saml import GenericSAML
 from .models.genesys_bot_connector import GenesysBotConnector
 from .models.geolocation import Geolocation
@@ -2289,9 +2298,6 @@ from .models.line_base import LineBase
 from .models.line_base_entity_listing import LineBaseEntityListing
 from .models.line_entity_listing import LineEntityListing
 from .models.line_id import LineId
-from .models.line_integration import LineIntegration
-from .models.line_integration_entity_listing import LineIntegrationEntityListing
-from .models.line_integration_request import LineIntegrationRequest
 from .models.line_status import LineStatus
 from .models.line_user_id import LineUserId
 from .models.link_configuration import LinkConfiguration
@@ -3159,8 +3165,11 @@ from .models.reporting_turn_intent import ReportingTurnIntent
 from .models.reporting_turn_intent_slot import ReportingTurnIntentSlot
 from .models.reporting_turn_knowledge import ReportingTurnKnowledge
 from .models.reporting_turn_knowledge_document import ReportingTurnKnowledgeDocument
+from .models.reporting_turn_knowledge_events import ReportingTurnKnowledgeEvents
 from .models.reporting_turn_knowledge_feedback import ReportingTurnKnowledgeFeedback
+from .models.reporting_turn_knowledge_feedback_event import ReportingTurnKnowledgeFeedbackEvent
 from .models.reporting_turn_knowledge_search import ReportingTurnKnowledgeSearch
+from .models.reporting_turn_knowledge_search_event import ReportingTurnKnowledgeSearchEvent
 from .models.reporting_turns_response import ReportingTurnsResponse
 from .models.request_config import RequestConfig
 from .models.request_context import RequestContext
@@ -3739,9 +3748,6 @@ from .models.tts_settings import TtsSettings
 from .models.tts_voice_entity import TtsVoiceEntity
 from .models.tts_voice_entity_listing import TtsVoiceEntityListing
 from .models.twitter_id import TwitterId
-from .models.twitter_integration import TwitterIntegration
-from .models.twitter_integration_entity_listing import TwitterIntegrationEntityListing
-from .models.twitter_integration_request import TwitterIntegrationRequest
 from .models.typing_setting import TypingSetting
 from .models.uci10n import UCI10n
 from .models.uc_icon import UCIcon

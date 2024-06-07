@@ -111,7 +111,7 @@ class Reoccurrence(object):
     def start(self) -> str:
         """
         Gets the start of this Reoccurrence.
-        The  start date time of the initial occurrence as an ISO-8601 string in UTC time, e.g: 2023-11-21T16:30:25.000Z
+        The start date time of the initial occurrence as an ISO-8601 string in the format YYYY-MM-DDThh:mm:ss
 
         :return: The start of this Reoccurrence.
         :rtype: str
@@ -122,7 +122,7 @@ class Reoccurrence(object):
     def start(self, start: str) -> None:
         """
         Sets the start of this Reoccurrence.
-        The  start date time of the initial occurrence as an ISO-8601 string in UTC time, e.g: 2023-11-21T16:30:25.000Z
+        The start date time of the initial occurrence as an ISO-8601 string in the format YYYY-MM-DDThh:mm:ss
 
         :param start: The start of this Reoccurrence.
         :type: str
@@ -135,7 +135,7 @@ class Reoccurrence(object):
     def end(self) -> str:
         """
         Gets the end of this Reoccurrence.
-        The end date time of the initial occurrence as an ISO-8601 string in UTC time, e.g: 2023-12-21T16:30:25.000Z
+        The end date time of the initial occurrence as an ISO-8601 string in the format YYYY-MM-DDThh:mm:ss
 
         :return: The end of this Reoccurrence.
         :rtype: str
@@ -146,7 +146,7 @@ class Reoccurrence(object):
     def end(self, end: str) -> None:
         """
         Sets the end of this Reoccurrence.
-        The end date time of the initial occurrence as an ISO-8601 string in UTC time, e.g: 2023-12-21T16:30:25.000Z
+        The end date time of the initial occurrence as an ISO-8601 string in the format YYYY-MM-DDThh:mm:ss
 
         :param end: The end of this Reoccurrence.
         :type: str

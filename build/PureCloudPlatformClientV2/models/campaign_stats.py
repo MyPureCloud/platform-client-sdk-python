@@ -33,6 +33,7 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
+    from . import CampaignLinesUtilization
     from . import ConnectRate
 
 class CampaignStats(object):
@@ -56,7 +57,8 @@ class CampaignStats(object):
             'adjusted_calls_per_agent': 'float',
             'outstanding_calls': 'int',
             'scheduled_calls': 'int',
-            'time_zone_rescheduled_calls': 'int'
+            'time_zone_rescheduled_calls': 'int',
+            'lines_utilization': 'CampaignLinesUtilization'
         }
 
         self.attribute_map = {
@@ -66,7 +68,8 @@ class CampaignStats(object):
             'adjusted_calls_per_agent': 'adjustedCallsPerAgent',
             'outstanding_calls': 'outstandingCalls',
             'scheduled_calls': 'scheduledCalls',
-            'time_zone_rescheduled_calls': 'timeZoneRescheduledCalls'
+            'time_zone_rescheduled_calls': 'timeZoneRescheduledCalls',
+            'lines_utilization': 'linesUtilization'
         }
 
         self._contact_rate = None
@@ -76,6 +79,7 @@ class CampaignStats(object):
         self._outstanding_calls = None
         self._scheduled_calls = None
         self._time_zone_rescheduled_calls = None
+        self._lines_utilization = None
 
     @property
     def contact_rate(self) -> 'ConnectRate':
@@ -244,6 +248,30 @@ class CampaignStats(object):
         
 
         self._time_zone_rescheduled_calls = time_zone_rescheduled_calls
+
+    @property
+    def lines_utilization(self) -> 'CampaignLinesUtilization':
+        """
+        Gets the lines_utilization of this CampaignStats.
+        Information on the campaign's lines utilization
+
+        :return: The lines_utilization of this CampaignStats.
+        :rtype: CampaignLinesUtilization
+        """
+        return self._lines_utilization
+
+    @lines_utilization.setter
+    def lines_utilization(self, lines_utilization: 'CampaignLinesUtilization') -> None:
+        """
+        Sets the lines_utilization of this CampaignStats.
+        Information on the campaign's lines utilization
+
+        :param lines_utilization: The lines_utilization of this CampaignStats.
+        :type: CampaignLinesUtilization
+        """
+        
+
+        self._lines_utilization = lines_utilization
 
     def to_dict(self):
         """

@@ -42,6 +42,7 @@ title: Campaign
 | **dynamic_contact_queueing_settings** | [**DynamicContactQueueingSettings**](DynamicContactQueueingSettings.html) | Settings for dynamic queueing of contacts. | [optional] |
 | **max_calls_per_agent** | **int** | The maximum number of calls that can be placed per agent on this campaign | [optional] |
 | **callback_auto_answer** | **bool** | The option manages the auto-answer callback calls | [optional] |
+| **dynamic_line_balancing_settings** | [**DynamicLineBalancingSettings**](DynamicLineBalancingSettings.html) | Dynamic line balancing settings | [optional] |
 | **self_uri** | **str** | The URI for this object | [optional] |
 {: class="table table-striped"}
 

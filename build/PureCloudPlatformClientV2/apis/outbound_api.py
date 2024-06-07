@@ -51,6 +51,7 @@ from ..models import CampaignDivisionView
 from ..models import CampaignDivisionViewListing
 from ..models import CampaignEntityListing
 from ..models import CampaignInteractions
+from ..models import CampaignOutboundLinesDistribution
 from ..models import CampaignProgress
 from ..models import CampaignRule
 from ..models import CampaignRuleEntityListing
@@ -60,6 +61,8 @@ from ..models import CampaignSequenceEntityListing
 from ..models import CampaignStats
 from ..models import CommonCampaignDivisionViewEntityListing
 from ..models import CommonCampaignEntityListing
+from ..models import ContactBulkEditRequest
+from ..models import ContactBulkSearchParameters
 from ..models import ContactCallbackRequest
 from ..models import ContactList
 from ..models import ContactListDivisionView
@@ -71,6 +74,9 @@ from ..models import ContactListFilterEntityListing
 from ..models import ContactListTemplate
 from ..models import ContactListTemplateBulkRetrieveBody
 from ..models import ContactListTemplateEntityListing
+from ..models import ContactListingRequest
+from ..models import ContactListingResponse
+from ..models import ContactsBulkOperationJob
 from ..models import ContactsExportRequest
 from ..models import DialerAuditRequest
 from ..models import DialerContact
@@ -3312,6 +3318,102 @@ class OutboundApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='CampaignInteractions',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_outbound_campaign_linedistribution(self, campaign_id: str, **kwargs) -> 'CampaignOutboundLinesDistribution':
+        """
+        Get line distribution information for campaigns using same Edge Group or Site as given campaign
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_outbound_campaign_linedistribution(campaign_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str campaign_id: Campaign ID (required)
+        :param bool include_only_active_campaigns: If true will return only active Campaigns
+        :param str edge_group_id: Edge group to be used in line distribution calculations instead of current Campaign's Edge Group. Campaign's Site and Edge Group are mutually exclusive.
+        :param str site_id: Site to be used in line distribution calculations instead of current Campaign's Site.  Campaign's Site and Edge Group are mutually exclusive.
+        :param bool use_weight: Enable usage of weight, this value overrides current Campaign's setting in line distribution calculations
+        :param int relative_weight: Relative weight to be used in line distribution calculations instead of current Campaign's relative weight
+        :param int outbound_line_count: The number of outbound lines to be used in line distribution calculations, instead of current Campaign's Outbound Lines Count
+        :return: CampaignOutboundLinesDistribution
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['campaign_id', 'include_only_active_campaigns', 'edge_group_id', 'site_id', 'use_weight', 'relative_weight', 'outbound_line_count']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_outbound_campaign_linedistribution" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'campaign_id' is set
+        if ('campaign_id' not in params) or (params['campaign_id'] is None):
+            raise ValueError("Missing the required parameter `campaign_id` when calling `get_outbound_campaign_linedistribution`")
+
+
+        resource_path = '/api/v2/outbound/campaigns/{campaignId}/linedistribution'.replace('{format}', 'json')
+        path_params = {}
+        if 'campaign_id' in params:
+            path_params['campaignId'] = params['campaign_id']
+
+        query_params = {}
+        if 'include_only_active_campaigns' in params:
+            query_params['includeOnlyActiveCampaigns'] = params['include_only_active_campaigns']
+        if 'edge_group_id' in params:
+            query_params['edgeGroupId'] = params['edge_group_id']
+        if 'site_id' in params:
+            query_params['siteId'] = params['site_id']
+        if 'use_weight' in params:
+            query_params['useWeight'] = params['use_weight']
+        if 'relative_weight' in params:
+            query_params['relativeWeight'] = params['relative_weight']
+        if 'outbound_line_count' in params:
+            query_params['outboundLineCount'] = params['outbound_line_count']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='CampaignOutboundLinesDistribution',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -9353,6 +9455,258 @@ class OutboundApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='list[DialerContact]',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_outbound_contactlist_contacts_bulk_remove(self, contact_list_id: str, body: 'ContactBulkSearchParameters', **kwargs) -> 'ContactsBulkOperationJob':
+        """
+        Start an async job to delete contacts using a filter.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_outbound_contactlist_contacts_bulk_remove(contact_list_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str contact_list_id: Contact List ID (required)
+        :param ContactBulkSearchParameters body: Contact filter information. (required)
+        :return: ContactsBulkOperationJob
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['contact_list_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_outbound_contactlist_contacts_bulk_remove" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'contact_list_id' is set
+        if ('contact_list_id' not in params) or (params['contact_list_id'] is None):
+            raise ValueError("Missing the required parameter `contact_list_id` when calling `post_outbound_contactlist_contacts_bulk_remove`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_outbound_contactlist_contacts_bulk_remove`")
+
+
+        resource_path = '/api/v2/outbound/contactlists/{contactListId}/contacts/bulk/remove'.replace('{format}', 'json')
+        path_params = {}
+        if 'contact_list_id' in params:
+            path_params['contactListId'] = params['contact_list_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ContactsBulkOperationJob',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_outbound_contactlist_contacts_bulk_update(self, contact_list_id: str, body: 'ContactBulkEditRequest', **kwargs) -> 'ContactsBulkOperationJob':
+        """
+        Start an async job to bulk edit contacts.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_outbound_contactlist_contacts_bulk_update(contact_list_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str contact_list_id: Contact List ID (required)
+        :param ContactBulkEditRequest body: Contact bulk edit request information. (required)
+        :return: ContactsBulkOperationJob
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['contact_list_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_outbound_contactlist_contacts_bulk_update" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'contact_list_id' is set
+        if ('contact_list_id' not in params) or (params['contact_list_id'] is None):
+            raise ValueError("Missing the required parameter `contact_list_id` when calling `post_outbound_contactlist_contacts_bulk_update`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_outbound_contactlist_contacts_bulk_update`")
+
+
+        resource_path = '/api/v2/outbound/contactlists/{contactListId}/contacts/bulk/update'.replace('{format}', 'json')
+        path_params = {}
+        if 'contact_list_id' in params:
+            path_params['contactListId'] = params['contact_list_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ContactsBulkOperationJob',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_outbound_contactlist_contacts_search(self, contact_list_id: str, body: 'ContactListingRequest', **kwargs) -> 'ContactListingResponse':
+        """
+        Query contacts from a contact list.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_outbound_contactlist_contacts_search(contact_list_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str contact_list_id: Contact List ID (required)
+        :param ContactListingRequest body: Contact search parameters. (required)
+        :return: ContactListingResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['contact_list_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_outbound_contactlist_contacts_search" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'contact_list_id' is set
+        if ('contact_list_id' not in params) or (params['contact_list_id'] is None):
+            raise ValueError("Missing the required parameter `contact_list_id` when calling `post_outbound_contactlist_contacts_search`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_outbound_contactlist_contacts_search`")
+
+
+        resource_path = '/api/v2/outbound/contactlists/{contactListId}/contacts/search'.replace('{format}', 'json')
+        path_params = {}
+        if 'contact_list_id' in params:
+            path_params['contactListId'] = params['contact_list_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ContactListingResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

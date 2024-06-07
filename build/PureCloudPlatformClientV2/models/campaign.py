@@ -36,6 +36,7 @@ if TYPE_CHECKING:
     from . import ContactSort
     from . import DomainEntityRef
     from . import DynamicContactQueueingSettings
+    from . import DynamicLineBalancingSettings
     from . import PhoneColumn
     from . import RestErrorDetail
 
@@ -89,6 +90,7 @@ class Campaign(object):
             'dynamic_contact_queueing_settings': 'DynamicContactQueueingSettings',
             'max_calls_per_agent': 'int',
             'callback_auto_answer': 'bool',
+            'dynamic_line_balancing_settings': 'DynamicLineBalancingSettings',
             'self_uri': 'str'
         }
 
@@ -128,6 +130,7 @@ class Campaign(object):
             'dynamic_contact_queueing_settings': 'dynamicContactQueueingSettings',
             'max_calls_per_agent': 'maxCallsPerAgent',
             'callback_auto_answer': 'callbackAutoAnswer',
+            'dynamic_line_balancing_settings': 'dynamicLineBalancingSettings',
             'self_uri': 'selfUri'
         }
 
@@ -166,6 +169,7 @@ class Campaign(object):
         self._dynamic_contact_queueing_settings = None
         self._max_calls_per_agent = None
         self._callback_auto_answer = None
+        self._dynamic_line_balancing_settings = None
         self._self_uri = None
 
     @property
@@ -1017,6 +1021,30 @@ class Campaign(object):
         
 
         self._callback_auto_answer = callback_auto_answer
+
+    @property
+    def dynamic_line_balancing_settings(self) -> 'DynamicLineBalancingSettings':
+        """
+        Gets the dynamic_line_balancing_settings of this Campaign.
+        Dynamic line balancing settings
+
+        :return: The dynamic_line_balancing_settings of this Campaign.
+        :rtype: DynamicLineBalancingSettings
+        """
+        return self._dynamic_line_balancing_settings
+
+    @dynamic_line_balancing_settings.setter
+    def dynamic_line_balancing_settings(self, dynamic_line_balancing_settings: 'DynamicLineBalancingSettings') -> None:
+        """
+        Sets the dynamic_line_balancing_settings of this Campaign.
+        Dynamic line balancing settings
+
+        :param dynamic_line_balancing_settings: The dynamic_line_balancing_settings of this Campaign.
+        :type: DynamicLineBalancingSettings
+        """
+        
+
+        self._dynamic_line_balancing_settings = dynamic_line_balancing_settings
 
     @property
     def self_uri(self) -> str:

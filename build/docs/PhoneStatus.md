@@ -7,8 +7,7 @@ title: PhoneStatus
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **id** | **str** | The globally unique identifier for the object. | [optional] |
-| **name** | **str** |  | [optional] |
+| **id** | **str** |  | [optional] |
 | **operational_status** | **str** | The Operational Status of this phone | [optional] |
 | **edges_status** | **str** | The status of the primary or secondary Edges assigned to the phone lines. | [optional] |
 | **event_creation_time** | **str** | Event Creation Time represents an ISO-8601 string. For example: UTC, UTC+01:00, or Europe/London | [optional] |

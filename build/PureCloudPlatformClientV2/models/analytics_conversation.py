@@ -204,7 +204,7 @@ class AnalyticsConversation(object):
         """
         if isinstance(conversation_initiator, int):
             conversation_initiator = str(conversation_initiator)
-        allowed_values = ["acd", "agent", "api", "botflow", "campaign", "customer", "dialer", "external", "fax", "group", "inbound", "ivr", "manual", "outbound", "station", "user", "voicemail", "workflow", "voicesurveyflow"]
+        allowed_values = ["acd", "agent", "api", "botflow", "campaign", "customer", "dialer", "external", "fax", "group", "inbound", "ivr", "manual", "outbound", "station", "user", "voicemail", "voicesurveyflow", "workflow"]
         if conversation_initiator.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for conversation_initiator -> " + conversation_initiator)
             self._conversation_initiator = "outdated_sdk_version"

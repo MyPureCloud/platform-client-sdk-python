@@ -48,6 +48,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_outbound_campaign_agentownedmappingpreview_results**](OutboundApi.html#get_outbound_campaign_agentownedmappingpreview_results) | Get a preview of how agents will be mapped to this campaign&#39;s contact list.|
 |[**get_outbound_campaign_diagnostics**](OutboundApi.html#get_outbound_campaign_diagnostics) | Get campaign diagnostics|
 |[**get_outbound_campaign_interactions**](OutboundApi.html#get_outbound_campaign_interactions) | Get dialer campaign interactions.|
+|[**get_outbound_campaign_linedistribution**](OutboundApi.html#get_outbound_campaign_linedistribution) | Get line distribution information for campaigns using same Edge Group or Site as given campaign|
 |[**get_outbound_campaign_progress**](OutboundApi.html#get_outbound_campaign_progress) | Get campaign progress|
 |[**get_outbound_campaign_stats**](OutboundApi.html#get_outbound_campaign_stats) | Get statistics about a Dialer Campaign|
 |[**get_outbound_campaignrule**](OutboundApi.html#get_outbound_campaignrule) | Get Campaign Rule|
@@ -120,6 +121,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_outbound_contactlist_clear**](OutboundApi.html#post_outbound_contactlist_clear) | Deletes all contacts out of a list. All outstanding recalls or rule-scheduled callbacks for non-preview campaigns configured with the contactlist will be cancelled.|
 |[**post_outbound_contactlist_contacts**](OutboundApi.html#post_outbound_contactlist_contacts) | Add contacts to a contact list.|
 |[**post_outbound_contactlist_contacts_bulk**](OutboundApi.html#post_outbound_contactlist_contacts_bulk) | Get contacts from a contact list.|
+|[**post_outbound_contactlist_contacts_bulk_remove**](OutboundApi.html#post_outbound_contactlist_contacts_bulk_remove) | Start an async job to delete contacts using a filter.|
+|[**post_outbound_contactlist_contacts_bulk_update**](OutboundApi.html#post_outbound_contactlist_contacts_bulk_update) | Start an async job to bulk edit contacts.|
+|[**post_outbound_contactlist_contacts_search**](OutboundApi.html#post_outbound_contactlist_contacts_search) | Query contacts from a contact list.|
 |[**post_outbound_contactlist_export**](OutboundApi.html#post_outbound_contactlist_export) | Initiate the export of a contact list.|
 |[**post_outbound_contactlistfilters**](OutboundApi.html#post_outbound_contactlistfilters) | Create Contact List Filter|
 |[**post_outbound_contactlistfilters_bulk_retrieve**](OutboundApi.html#post_outbound_contactlistfilters_bulk_retrieve) | Retrieve multiple contact list filters|
@@ -2152,6 +2156,67 @@ except ApiException as e:
 ### Return type
 
 [**CampaignInteractions**](CampaignInteractions.html)
+
+<a name="get_outbound_campaign_linedistribution"></a>
+
+## [**CampaignOutboundLinesDistribution**](CampaignOutboundLinesDistribution.html) get_outbound_campaign_linedistribution(campaign_id, include_only_active_campaigns=include_only_active_campaigns, edge_group_id=edge_group_id, site_id=site_id, use_weight=use_weight, relative_weight=relative_weight, outbound_line_count=outbound_line_count)
+
+
+
+Get line distribution information for campaigns using same Edge Group or Site as given campaign
+
+Wraps GET /api/v2/outbound/campaigns/{campaignId}/linedistribution 
+
+Requires ANY permissions: 
+
+* outbound:lineDistribution:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.OutboundApi()
+campaign_id = 'campaign_id_example' # str | Campaign ID
+include_only_active_campaigns = True # bool | If true will return only active Campaigns (optional) (default to True)
+edge_group_id = 'edge_group_id_example' # str | Edge group to be used in line distribution calculations instead of current Campaign's Edge Group. Campaign's Site and Edge Group are mutually exclusive. (optional)
+site_id = 'site_id_example' # str | Site to be used in line distribution calculations instead of current Campaign's Site.  Campaign's Site and Edge Group are mutually exclusive. (optional)
+use_weight = True # bool | Enable usage of weight, this value overrides current Campaign's setting in line distribution calculations (optional)
+relative_weight = 56 # int | Relative weight to be used in line distribution calculations instead of current Campaign's relative weight (optional)
+outbound_line_count = 56 # int | The number of outbound lines to be used in line distribution calculations, instead of current Campaign's Outbound Lines Count (optional)
+
+try:
+    # Get line distribution information for campaigns using same Edge Group or Site as given campaign
+    api_response = api_instance.get_outbound_campaign_linedistribution(campaign_id, include_only_active_campaigns=include_only_active_campaigns, edge_group_id=edge_group_id, site_id=site_id, use_weight=use_weight, relative_weight=relative_weight, outbound_line_count=outbound_line_count)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling OutboundApi->get_outbound_campaign_linedistribution: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **campaign_id** | **str**| Campaign ID |  |
+| **include_only_active_campaigns** | **bool**| If true will return only active Campaigns | [optional] [default to True] |
+| **edge_group_id** | **str**| Edge group to be used in line distribution calculations instead of current Campaign&#39;s Edge Group. Campaign&#39;s Site and Edge Group are mutually exclusive. | [optional]  |
+| **site_id** | **str**| Site to be used in line distribution calculations instead of current Campaign&#39;s Site.  Campaign&#39;s Site and Edge Group are mutually exclusive. | [optional]  |
+| **use_weight** | **bool**| Enable usage of weight, this value overrides current Campaign&#39;s setting in line distribution calculations | [optional]  |
+| **relative_weight** | **int**| Relative weight to be used in line distribution calculations instead of current Campaign&#39;s relative weight | [optional]  |
+| **outbound_line_count** | **int**| The number of outbound lines to be used in line distribution calculations, instead of current Campaign&#39;s Outbound Lines Count | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**CampaignOutboundLinesDistribution**](CampaignOutboundLinesDistribution.html)
 
 <a name="get_outbound_campaign_progress"></a>
 
@@ -6020,6 +6085,159 @@ except ApiException as e:
 ### Return type
 
 [**list[DialerContact]**](DialerContact.html)
+
+<a name="post_outbound_contactlist_contacts_bulk_remove"></a>
+
+## [**ContactsBulkOperationJob**](ContactsBulkOperationJob.html) post_outbound_contactlist_contacts_bulk_remove(contact_list_id, body)
+
+
+
+Start an async job to delete contacts using a filter.
+
+Wraps POST /api/v2/outbound/contactlists/{contactListId}/contacts/bulk/remove 
+
+Requires ANY permissions: 
+
+* outbound:contact:delete
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.OutboundApi()
+contact_list_id = 'contact_list_id_example' # str | Contact List ID
+body = PureCloudPlatformClientV2.ContactBulkSearchParameters() # ContactBulkSearchParameters | Contact filter information.
+
+try:
+    # Start an async job to delete contacts using a filter.
+    api_response = api_instance.post_outbound_contactlist_contacts_bulk_remove(contact_list_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling OutboundApi->post_outbound_contactlist_contacts_bulk_remove: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **contact_list_id** | **str**| Contact List ID |  |
+| **body** | [**ContactBulkSearchParameters**](ContactBulkSearchParameters.html)| Contact filter information. |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**ContactsBulkOperationJob**](ContactsBulkOperationJob.html)
+
+<a name="post_outbound_contactlist_contacts_bulk_update"></a>
+
+## [**ContactsBulkOperationJob**](ContactsBulkOperationJob.html) post_outbound_contactlist_contacts_bulk_update(contact_list_id, body)
+
+
+
+Start an async job to bulk edit contacts.
+
+Wraps POST /api/v2/outbound/contactlists/{contactListId}/contacts/bulk/update 
+
+Requires ANY permissions: 
+
+* outbound:contact:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.OutboundApi()
+contact_list_id = 'contact_list_id_example' # str | Contact List ID
+body = PureCloudPlatformClientV2.ContactBulkEditRequest() # ContactBulkEditRequest | Contact bulk edit request information.
+
+try:
+    # Start an async job to bulk edit contacts.
+    api_response = api_instance.post_outbound_contactlist_contacts_bulk_update(contact_list_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling OutboundApi->post_outbound_contactlist_contacts_bulk_update: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **contact_list_id** | **str**| Contact List ID |  |
+| **body** | [**ContactBulkEditRequest**](ContactBulkEditRequest.html)| Contact bulk edit request information. |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**ContactsBulkOperationJob**](ContactsBulkOperationJob.html)
+
+<a name="post_outbound_contactlist_contacts_search"></a>
+
+## [**ContactListingResponse**](ContactListingResponse.html) post_outbound_contactlist_contacts_search(contact_list_id, body)
+
+
+
+Query contacts from a contact list.
+
+Wraps POST /api/v2/outbound/contactlists/{contactListId}/contacts/search 
+
+Requires ANY permissions: 
+
+* outbound:contact:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.OutboundApi()
+contact_list_id = 'contact_list_id_example' # str | Contact List ID
+body = PureCloudPlatformClientV2.ContactListingRequest() # ContactListingRequest | Contact search parameters.
+
+try:
+    # Query contacts from a contact list.
+    api_response = api_instance.post_outbound_contactlist_contacts_search(contact_list_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling OutboundApi->post_outbound_contactlist_contacts_search: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **contact_list_id** | **str**| Contact List ID |  |
+| **body** | [**ContactListingRequest**](ContactListingRequest.html)| Contact search parameters. |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**ContactListingResponse**](ContactListingResponse.html)
 
 <a name="post_outbound_contactlist_export"></a>
 

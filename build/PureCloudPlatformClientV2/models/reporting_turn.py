@@ -37,6 +37,7 @@ if TYPE_CHECKING:
     from . import ReportingTurnAction
     from . import ReportingTurnIntent
     from . import ReportingTurnKnowledge
+    from . import ReportingTurnKnowledgeEvents
     from . import SessionEndDetails
 
 class ReportingTurn(object):
@@ -60,6 +61,7 @@ class ReportingTurn(object):
             'ask_action': 'ReportingTurnAction',
             'intent': 'ReportingTurnIntent',
             'knowledge': 'ReportingTurnKnowledge',
+            'knowledge_base_events': 'ReportingTurnKnowledgeEvents',
             'date_created': 'datetime',
             'ask_action_result': 'str',
             'session_end_details': 'SessionEndDetails',
@@ -73,6 +75,7 @@ class ReportingTurn(object):
             'ask_action': 'askAction',
             'intent': 'intent',
             'knowledge': 'knowledge',
+            'knowledge_base_events': 'knowledgeBaseEvents',
             'date_created': 'dateCreated',
             'ask_action_result': 'askActionResult',
             'session_end_details': 'sessionEndDetails',
@@ -85,6 +88,7 @@ class ReportingTurn(object):
         self._ask_action = None
         self._intent = None
         self._knowledge = None
+        self._knowledge_base_events = None
         self._date_created = None
         self._ask_action_result = None
         self._session_end_details = None
@@ -233,6 +237,30 @@ class ReportingTurn(object):
         
 
         self._knowledge = knowledge
+
+    @property
+    def knowledge_base_events(self) -> 'ReportingTurnKnowledgeEvents':
+        """
+        Gets the knowledge_base_events of this ReportingTurn.
+        The knowledge data captured during this reporting turn.
+
+        :return: The knowledge_base_events of this ReportingTurn.
+        :rtype: ReportingTurnKnowledgeEvents
+        """
+        return self._knowledge_base_events
+
+    @knowledge_base_events.setter
+    def knowledge_base_events(self, knowledge_base_events: 'ReportingTurnKnowledgeEvents') -> None:
+        """
+        Sets the knowledge_base_events of this ReportingTurn.
+        The knowledge data captured during this reporting turn.
+
+        :param knowledge_base_events: The knowledge_base_events of this ReportingTurn.
+        :type: ReportingTurnKnowledgeEvents
+        """
+        
+
+        self._knowledge_base_events = knowledge_base_events
 
     @property
     def date_created(self) -> datetime:
