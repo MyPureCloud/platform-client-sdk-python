@@ -73,6 +73,8 @@ class KnowledgeDocumentResponse(object):
             'labels': 'list[LabelResponse]',
             'knowledge_base': 'KnowledgeBaseReference',
             'external_id': 'str',
+            'source': 'AddressableEntityRef',
+            'readonly': 'bool',
             'variations': 'list[DocumentVariation]',
             'self_uri': 'str'
         }
@@ -95,6 +97,8 @@ class KnowledgeDocumentResponse(object):
             'labels': 'labels',
             'knowledge_base': 'knowledgeBase',
             'external_id': 'externalId',
+            'source': 'source',
+            'readonly': 'readonly',
             'variations': 'variations',
             'self_uri': 'selfUri'
         }
@@ -116,6 +120,8 @@ class KnowledgeDocumentResponse(object):
         self._labels = None
         self._knowledge_base = None
         self._external_id = None
+        self._source = None
+        self._readonly = None
         self._variations = None
         self._self_uri = None
 
@@ -531,6 +537,54 @@ class KnowledgeDocumentResponse(object):
         
 
         self._external_id = external_id
+
+    @property
+    def source(self) -> 'AddressableEntityRef':
+        """
+        Gets the source of this KnowledgeDocumentResponse.
+        The reference to source associated with the document.
+
+        :return: The source of this KnowledgeDocumentResponse.
+        :rtype: AddressableEntityRef
+        """
+        return self._source
+
+    @source.setter
+    def source(self, source: 'AddressableEntityRef') -> None:
+        """
+        Sets the source of this KnowledgeDocumentResponse.
+        The reference to source associated with the document.
+
+        :param source: The source of this KnowledgeDocumentResponse.
+        :type: AddressableEntityRef
+        """
+        
+
+        self._source = source
+
+    @property
+    def readonly(self) -> bool:
+        """
+        Gets the readonly of this KnowledgeDocumentResponse.
+        Whether the document is read-only.
+
+        :return: The readonly of this KnowledgeDocumentResponse.
+        :rtype: bool
+        """
+        return self._readonly
+
+    @readonly.setter
+    def readonly(self, readonly: bool) -> None:
+        """
+        Sets the readonly of this KnowledgeDocumentResponse.
+        Whether the document is read-only.
+
+        :param readonly: The readonly of this KnowledgeDocumentResponse.
+        :type: bool
+        """
+        
+
+        self._readonly = readonly
 
     @property
     def variations(self) -> List['DocumentVariation']:

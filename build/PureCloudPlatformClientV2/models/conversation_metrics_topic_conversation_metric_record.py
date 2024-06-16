@@ -129,6 +129,7 @@ class ConversationMetricsTopicConversationMetricRecord(object):
             'team_id': 'str',
             'used_routing': 'str',
             'user_id': 'str',
+            'video_present': 'bool',
             'waiting_interaction_counts': 'list[int]',
             'wrap_up_code': 'str',
             'proposed_agents': 'list[ConversationMetricsTopicConversationProposedAgent]',
@@ -214,6 +215,7 @@ class ConversationMetricsTopicConversationMetricRecord(object):
             'team_id': 'teamId',
             'used_routing': 'usedRouting',
             'user_id': 'userId',
+            'video_present': 'videoPresent',
             'waiting_interaction_counts': 'waitingInteractionCounts',
             'wrap_up_code': 'wrapUpCode',
             'proposed_agents': 'proposedAgents',
@@ -298,6 +300,7 @@ class ConversationMetricsTopicConversationMetricRecord(object):
         self._team_id = None
         self._used_routing = None
         self._user_id = None
+        self._video_present = None
         self._waiting_interaction_counts = None
         self._wrap_up_code = None
         self._proposed_agents = None
@@ -796,7 +799,7 @@ class ConversationMetricsTopicConversationMetricRecord(object):
         """
         if isinstance(delivery_status, int):
             delivery_status = str(delivery_status)
-        allowed_values = ["DeliveryFailed", "DeliverySuccess", "Failed", "Queued", "Read", "Received", "Sent"]
+        allowed_values = ["DeliveryFailed", "DeliverySuccess", "Failed", "Published", "Queued", "Read", "Received", "Sent"]
         if delivery_status.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for delivery_status -> " + delivery_status)
             self._delivery_status = "outdated_sdk_version"
@@ -2234,6 +2237,30 @@ class ConversationMetricsTopicConversationMetricRecord(object):
         
 
         self._user_id = user_id
+
+    @property
+    def video_present(self) -> bool:
+        """
+        Gets the video_present of this ConversationMetricsTopicConversationMetricRecord.
+        Flag indicating if video is present
+
+        :return: The video_present of this ConversationMetricsTopicConversationMetricRecord.
+        :rtype: bool
+        """
+        return self._video_present
+
+    @video_present.setter
+    def video_present(self, video_present: bool) -> None:
+        """
+        Sets the video_present of this ConversationMetricsTopicConversationMetricRecord.
+        Flag indicating if video is present
+
+        :param video_present: The video_present of this ConversationMetricsTopicConversationMetricRecord.
+        :type: bool
+        """
+        
+
+        self._video_present = video_present
 
     @property
     def waiting_interaction_counts(self) -> List[int]:

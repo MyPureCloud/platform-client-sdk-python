@@ -17,6 +17,8 @@ title: LearningModuleRequest
 | **length_in_minutes** | **int** | The recommended time in minutes to complete the module | [optional] |
 | **excluded_from_catalog** | **bool** | If true, learning module is excluded when retrieving modules for manual assignment | [optional] |
 | **external_id** | **str** | The external ID of the learning module. Maximum length: 50 characters. | [optional] |
+| **enforce_content_order** | **bool** | If true, learning module content should be viewed one by one in order | [optional] |
+| **review_assessment_results** | [**ReviewAssessmentResults**](ReviewAssessmentResults.html) | Allows to view Assessment results in detail | [optional] |
 {: class="table table-striped"}
 
 

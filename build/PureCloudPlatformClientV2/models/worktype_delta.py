@@ -70,6 +70,7 @@ class WorktypeDelta(object):
             'default_queue_id': 'WorkitemsAttributeChangeString',
             'schema_id': 'WorkitemsAttributeChangeString',
             'schema_version': 'WorkitemsAttributeChangeString',
+            'service_level_target': 'WorkitemsAttributeChangeInteger',
             'date_modified': 'WorkitemsAttributeChangeInstant',
             'modified_by': 'WorkitemsAttributeChangeString'
         }
@@ -91,6 +92,7 @@ class WorktypeDelta(object):
             'default_queue_id': 'defaultQueueId',
             'schema_id': 'schemaId',
             'schema_version': 'schemaVersion',
+            'service_level_target': 'serviceLevelTarget',
             'date_modified': 'dateModified',
             'modified_by': 'modifiedBy'
         }
@@ -111,6 +113,7 @@ class WorktypeDelta(object):
         self._default_queue_id = None
         self._schema_id = None
         self._schema_version = None
+        self._service_level_target = None
         self._date_modified = None
         self._modified_by = None
 
@@ -497,6 +500,30 @@ class WorktypeDelta(object):
         
 
         self._schema_version = schema_version
+
+    @property
+    def service_level_target(self) -> 'WorkitemsAttributeChangeInteger':
+        """
+        Gets the service_level_target of this WorktypeDelta.
+
+
+        :return: The service_level_target of this WorktypeDelta.
+        :rtype: WorkitemsAttributeChangeInteger
+        """
+        return self._service_level_target
+
+    @service_level_target.setter
+    def service_level_target(self, service_level_target: 'WorkitemsAttributeChangeInteger') -> None:
+        """
+        Sets the service_level_target of this WorktypeDelta.
+
+
+        :param service_level_target: The service_level_target of this WorktypeDelta.
+        :type: WorkitemsAttributeChangeInteger
+        """
+        
+
+        self._service_level_target = service_level_target
 
     @property
     def date_modified(self) -> 'WorkitemsAttributeChangeInstant':

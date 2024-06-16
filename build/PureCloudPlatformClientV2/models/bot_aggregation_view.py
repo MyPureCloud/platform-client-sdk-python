@@ -90,7 +90,7 @@ class BotAggregationView(object):
         """
         if isinstance(target, int):
             target = str(target)
-        allowed_values = ["nBotSessionTurns", "nBotSessions", "oBotIntent", "oBotSessionQuery", "oBotSessionQuerySelfServed", "oBotSessionTurn", "oBotSlot", "tBotDisconnect", "tBotExit", "tBotRecognitionFailure", "tBotSession"]
+        allowed_values = ["nBotSessionTurns", "nBotSessions", "oBotIntent", "oBotSessionCollection", "oBotSessionCollectionSelfServed", "oBotSessionQuery", "oBotSessionQuerySelfServed", "oBotSessionTurn", "oBotSlot", "tBotDisconnect", "tBotExit", "tBotRecognitionFailure", "tBotSession"]
         if target.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for target -> " + target)
             self._target = "outdated_sdk_version"

@@ -148,7 +148,7 @@ class ContactListingRequest(object):
     def page_size(self) -> int:
         """
         Gets the page_size of this ContactListingRequest.
-        Page size. The max that will be returned is 50.
+        Page size. The max that will be returned is 100.
 
         :return: The page_size of this ContactListingRequest.
         :rtype: int
@@ -159,7 +159,7 @@ class ContactListingRequest(object):
     def page_size(self, page_size: int) -> None:
         """
         Sets the page_size of this ContactListingRequest.
-        Page size. The max that will be returned is 50.
+        Page size. The max that will be returned is 100.
 
         :param page_size: The page_size of this ContactListingRequest.
         :type: int

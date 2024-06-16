@@ -49,18 +49,15 @@ class EngineIntegration(object):
         """
         self.swagger_types = {
             'id': 'str',
-            'name': 'str',
             'self_uri': 'str'
         }
 
         self.attribute_map = {
             'id': 'id',
-            'name': 'name',
             'self_uri': 'selfUri'
         }
 
         self._id = None
-        self._name = None
         self._self_uri = None
 
     @property
@@ -86,30 +83,6 @@ class EngineIntegration(object):
         
 
         self._id = id
-
-    @property
-    def name(self) -> str:
-        """
-        Gets the name of this EngineIntegration.
-        Name of the transcription engine
-
-        :return: The name of this EngineIntegration.
-        :rtype: str
-        """
-        return self._name
-
-    @name.setter
-    def name(self, name: str) -> None:
-        """
-        Sets the name of this EngineIntegration.
-        Name of the transcription engine
-
-        :param name: The name of this EngineIntegration.
-        :type: str
-        """
-        
-
-        self._name = name
 
     @property
     def self_uri(self) -> str:

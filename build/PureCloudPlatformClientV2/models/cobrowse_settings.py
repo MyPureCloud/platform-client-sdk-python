@@ -32,6 +32,8 @@ from typing import TYPE_CHECKING
 from typing import List
 from typing import Dict
 
+if TYPE_CHECKING:
+    from . import PauseCriteria
 
 class CobrowseSettings(object):
     """
@@ -53,7 +55,8 @@ class CobrowseSettings(object):
             'allow_agent_navigation': 'bool',
             'mask_selectors': 'list[str]',
             'channels': 'list[str]',
-            'readonly_selectors': 'list[str]'
+            'readonly_selectors': 'list[str]',
+            'pause_criteria': 'list[PauseCriteria]'
         }
 
         self.attribute_map = {
@@ -62,7 +65,8 @@ class CobrowseSettings(object):
             'allow_agent_navigation': 'allowAgentNavigation',
             'mask_selectors': 'maskSelectors',
             'channels': 'channels',
-            'readonly_selectors': 'readonlySelectors'
+            'readonly_selectors': 'readonlySelectors',
+            'pause_criteria': 'pauseCriteria'
         }
 
         self._enabled = None
@@ -71,6 +75,7 @@ class CobrowseSettings(object):
         self._mask_selectors = None
         self._channels = None
         self._readonly_selectors = None
+        self._pause_criteria = None
 
     @property
     def enabled(self) -> bool:
@@ -215,6 +220,30 @@ class CobrowseSettings(object):
         
 
         self._readonly_selectors = readonly_selectors
+
+    @property
+    def pause_criteria(self) -> List['PauseCriteria']:
+        """
+        Gets the pause_criteria of this CobrowseSettings.
+        Pause criteria that will pause cobrowse if some of them are met in the user's URL
+
+        :return: The pause_criteria of this CobrowseSettings.
+        :rtype: list[PauseCriteria]
+        """
+        return self._pause_criteria
+
+    @pause_criteria.setter
+    def pause_criteria(self, pause_criteria: List['PauseCriteria']) -> None:
+        """
+        Sets the pause_criteria of this CobrowseSettings.
+        Pause criteria that will pause cobrowse if some of them are met in the user's URL
+
+        :param pause_criteria: The pause_criteria of this CobrowseSettings.
+        :type: list[PauseCriteria]
+        """
+        
+
+        self._pause_criteria = pause_criteria
 
     def to_dict(self):
         """

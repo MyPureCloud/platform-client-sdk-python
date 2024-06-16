@@ -35,6 +35,7 @@ from typing import Dict
 if TYPE_CHECKING:
     from . import AssessmentForm
     from . import LearningAssessment
+    from . import LearningAssignmentStep
     from . import LearningModule
     from . import UserReference
 
@@ -61,10 +62,15 @@ class LearningAssignment(object):
             'date_modified': 'datetime',
             'is_overdue': 'bool',
             'percentage_score': 'float',
+            'assessment_percentage_score': 'float',
             'is_rule': 'bool',
             'is_manual': 'bool',
             'is_passed': 'bool',
             'is_latest': 'bool',
+            'assessment_completion_percentage': 'float',
+            'completion_percentage': 'float',
+            'steps': 'list[LearningAssignmentStep]',
+            'next_step': 'LearningAssignmentStep',
             'self_uri': 'str',
             'state': 'str',
             'date_recommended_for_completion': 'datetime',
@@ -84,10 +90,15 @@ class LearningAssignment(object):
             'date_modified': 'dateModified',
             'is_overdue': 'isOverdue',
             'percentage_score': 'percentageScore',
+            'assessment_percentage_score': 'assessmentPercentageScore',
             'is_rule': 'isRule',
             'is_manual': 'isManual',
             'is_passed': 'isPassed',
             'is_latest': 'isLatest',
+            'assessment_completion_percentage': 'assessmentCompletionPercentage',
+            'completion_percentage': 'completionPercentage',
+            'steps': 'steps',
+            'next_step': 'nextStep',
             'self_uri': 'selfUri',
             'state': 'state',
             'date_recommended_for_completion': 'dateRecommendedForCompletion',
@@ -106,10 +117,15 @@ class LearningAssignment(object):
         self._date_modified = None
         self._is_overdue = None
         self._percentage_score = None
+        self._assessment_percentage_score = None
         self._is_rule = None
         self._is_manual = None
         self._is_passed = None
         self._is_latest = None
+        self._assessment_completion_percentage = None
+        self._completion_percentage = None
+        self._steps = None
+        self._next_step = None
         self._self_uri = None
         self._state = None
         self._date_recommended_for_completion = None
@@ -312,6 +328,30 @@ class LearningAssignment(object):
         self._percentage_score = percentage_score
 
     @property
+    def assessment_percentage_score(self) -> float:
+        """
+        Gets the assessment_percentage_score of this LearningAssignment.
+        The user's percentage score for this assignment's assessment
+
+        :return: The assessment_percentage_score of this LearningAssignment.
+        :rtype: float
+        """
+        return self._assessment_percentage_score
+
+    @assessment_percentage_score.setter
+    def assessment_percentage_score(self, assessment_percentage_score: float) -> None:
+        """
+        Sets the assessment_percentage_score of this LearningAssignment.
+        The user's percentage score for this assignment's assessment
+
+        :param assessment_percentage_score: The assessment_percentage_score of this LearningAssignment.
+        :type: float
+        """
+        
+
+        self._assessment_percentage_score = assessment_percentage_score
+
+    @property
     def is_rule(self) -> bool:
         """
         Gets the is_rule of this LearningAssignment.
@@ -406,6 +446,102 @@ class LearningAssignment(object):
         
 
         self._is_latest = is_latest
+
+    @property
+    def assessment_completion_percentage(self) -> float:
+        """
+        Gets the assessment_completion_percentage of this LearningAssignment.
+        The assessment completion percentage of assignment
+
+        :return: The assessment_completion_percentage of this LearningAssignment.
+        :rtype: float
+        """
+        return self._assessment_completion_percentage
+
+    @assessment_completion_percentage.setter
+    def assessment_completion_percentage(self, assessment_completion_percentage: float) -> None:
+        """
+        Sets the assessment_completion_percentage of this LearningAssignment.
+        The assessment completion percentage of assignment
+
+        :param assessment_completion_percentage: The assessment_completion_percentage of this LearningAssignment.
+        :type: float
+        """
+        
+
+        self._assessment_completion_percentage = assessment_completion_percentage
+
+    @property
+    def completion_percentage(self) -> float:
+        """
+        Gets the completion_percentage of this LearningAssignment.
+        The overall completion percentage of assignment
+
+        :return: The completion_percentage of this LearningAssignment.
+        :rtype: float
+        """
+        return self._completion_percentage
+
+    @completion_percentage.setter
+    def completion_percentage(self, completion_percentage: float) -> None:
+        """
+        Sets the completion_percentage of this LearningAssignment.
+        The overall completion percentage of assignment
+
+        :param completion_percentage: The completion_percentage of this LearningAssignment.
+        :type: float
+        """
+        
+
+        self._completion_percentage = completion_percentage
+
+    @property
+    def steps(self) -> List['LearningAssignmentStep']:
+        """
+        Gets the steps of this LearningAssignment.
+        List of assignment steps
+
+        :return: The steps of this LearningAssignment.
+        :rtype: list[LearningAssignmentStep]
+        """
+        return self._steps
+
+    @steps.setter
+    def steps(self, steps: List['LearningAssignmentStep']) -> None:
+        """
+        Sets the steps of this LearningAssignment.
+        List of assignment steps
+
+        :param steps: The steps of this LearningAssignment.
+        :type: list[LearningAssignmentStep]
+        """
+        
+
+        self._steps = steps
+
+    @property
+    def next_step(self) -> 'LearningAssignmentStep':
+        """
+        Gets the next_step of this LearningAssignment.
+        The next assignment step
+
+        :return: The next_step of this LearningAssignment.
+        :rtype: LearningAssignmentStep
+        """
+        return self._next_step
+
+    @next_step.setter
+    def next_step(self, next_step: 'LearningAssignmentStep') -> None:
+        """
+        Sets the next_step of this LearningAssignment.
+        The next assignment step
+
+        :param next_step: The next_step of this LearningAssignment.
+        :type: LearningAssignmentStep
+        """
+        
+
+        self._next_step = next_step
 
     @property
     def self_uri(self) -> str:

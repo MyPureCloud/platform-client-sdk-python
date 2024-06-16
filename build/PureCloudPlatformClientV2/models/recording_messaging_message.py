@@ -33,6 +33,7 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
+    from . import AddressableEntityRef
     from . import ButtonResponse
     from . import Card
     from . import ExternalContact
@@ -63,6 +64,10 @@ class RecordingMessagingMessage(object):
             'to': 'str',
             'timestamp': 'datetime',
             'id': 'str',
+            'purpose': 'str',
+            'participant_id': 'str',
+            'queue': 'AddressableEntityRef',
+            'workflow': 'AddressableEntityRef',
             'message_text': 'str',
             'message_media_attachments': 'list[MessageMediaAttachment]',
             'message_sticker_attachments': 'list[MessageStickerAttachment]',
@@ -80,6 +85,10 @@ class RecordingMessagingMessage(object):
             'to': 'to',
             'timestamp': 'timestamp',
             'id': 'id',
+            'purpose': 'purpose',
+            'participant_id': 'participantId',
+            'queue': 'queue',
+            'workflow': 'workflow',
             'message_text': 'messageText',
             'message_media_attachments': 'messageMediaAttachments',
             'message_sticker_attachments': 'messageStickerAttachments',
@@ -96,6 +105,10 @@ class RecordingMessagingMessage(object):
         self._to = None
         self._timestamp = None
         self._id = None
+        self._purpose = None
+        self._participant_id = None
+        self._queue = None
+        self._workflow = None
         self._message_text = None
         self._message_media_attachments = None
         self._message_sticker_attachments = None
@@ -248,6 +261,102 @@ class RecordingMessagingMessage(object):
         
 
         self._id = id
+
+    @property
+    def purpose(self) -> str:
+        """
+        Gets the purpose of this RecordingMessagingMessage.
+        A well known string that specifies the purpose or type of the participant on this communication.
+
+        :return: The purpose of this RecordingMessagingMessage.
+        :rtype: str
+        """
+        return self._purpose
+
+    @purpose.setter
+    def purpose(self, purpose: str) -> None:
+        """
+        Sets the purpose of this RecordingMessagingMessage.
+        A well known string that specifies the purpose or type of the participant on this communication.
+
+        :param purpose: The purpose of this RecordingMessagingMessage.
+        :type: str
+        """
+        
+
+        self._purpose = purpose
+
+    @property
+    def participant_id(self) -> str:
+        """
+        Gets the participant_id of this RecordingMessagingMessage.
+        A globally unique identifier for the participant on this communication.
+
+        :return: The participant_id of this RecordingMessagingMessage.
+        :rtype: str
+        """
+        return self._participant_id
+
+    @participant_id.setter
+    def participant_id(self, participant_id: str) -> None:
+        """
+        Sets the participant_id of this RecordingMessagingMessage.
+        A globally unique identifier for the participant on this communication.
+
+        :param participant_id: The participant_id of this RecordingMessagingMessage.
+        :type: str
+        """
+        
+
+        self._participant_id = participant_id
+
+    @property
+    def queue(self) -> 'AddressableEntityRef':
+        """
+        Gets the queue of this RecordingMessagingMessage.
+        A globally unique identifier for the queue involved in this communication.
+
+        :return: The queue of this RecordingMessagingMessage.
+        :rtype: AddressableEntityRef
+        """
+        return self._queue
+
+    @queue.setter
+    def queue(self, queue: 'AddressableEntityRef') -> None:
+        """
+        Sets the queue of this RecordingMessagingMessage.
+        A globally unique identifier for the queue involved in this communication.
+
+        :param queue: The queue of this RecordingMessagingMessage.
+        :type: AddressableEntityRef
+        """
+        
+
+        self._queue = queue
+
+    @property
+    def workflow(self) -> 'AddressableEntityRef':
+        """
+        Gets the workflow of this RecordingMessagingMessage.
+        A globally unique identifier for the workflow involved in this communication.
+
+        :return: The workflow of this RecordingMessagingMessage.
+        :rtype: AddressableEntityRef
+        """
+        return self._workflow
+
+    @workflow.setter
+    def workflow(self, workflow: 'AddressableEntityRef') -> None:
+        """
+        Sets the workflow of this RecordingMessagingMessage.
+        A globally unique identifier for the workflow involved in this communication.
+
+        :param workflow: The workflow of this RecordingMessagingMessage.
+        :type: AddressableEntityRef
+        """
+        
+
+        self._workflow = workflow
 
     @property
     def message_text(self) -> str:

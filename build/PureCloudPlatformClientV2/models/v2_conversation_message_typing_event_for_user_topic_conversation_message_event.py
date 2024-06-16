@@ -33,7 +33,6 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
-    from . import V2ConversationMessageTypingEventForUserTopicConversationEventCoBrowse
     from . import V2ConversationMessageTypingEventForUserTopicConversationEventTyping
 
 class V2ConversationMessageTypingEventForUserTopicConversationMessageEvent(object):
@@ -52,18 +51,15 @@ class V2ConversationMessageTypingEventForUserTopicConversationMessageEvent(objec
         """
         self.swagger_types = {
             'event_type': 'str',
-            'co_browse': 'V2ConversationMessageTypingEventForUserTopicConversationEventCoBrowse',
             'typing': 'V2ConversationMessageTypingEventForUserTopicConversationEventTyping'
         }
 
         self.attribute_map = {
             'event_type': 'eventType',
-            'co_browse': 'coBrowse',
             'typing': 'typing'
         }
 
         self._event_type = None
-        self._co_browse = None
         self._typing = None
 
     @property
@@ -94,30 +90,6 @@ class V2ConversationMessageTypingEventForUserTopicConversationMessageEvent(objec
             self._event_type = "outdated_sdk_version"
         else:
             self._event_type = event_type
-
-    @property
-    def co_browse(self) -> 'V2ConversationMessageTypingEventForUserTopicConversationEventCoBrowse':
-        """
-        Gets the co_browse of this V2ConversationMessageTypingEventForUserTopicConversationMessageEvent.
-
-
-        :return: The co_browse of this V2ConversationMessageTypingEventForUserTopicConversationMessageEvent.
-        :rtype: V2ConversationMessageTypingEventForUserTopicConversationEventCoBrowse
-        """
-        return self._co_browse
-
-    @co_browse.setter
-    def co_browse(self, co_browse: 'V2ConversationMessageTypingEventForUserTopicConversationEventCoBrowse') -> None:
-        """
-        Sets the co_browse of this V2ConversationMessageTypingEventForUserTopicConversationMessageEvent.
-
-
-        :param co_browse: The co_browse of this V2ConversationMessageTypingEventForUserTopicConversationMessageEvent.
-        :type: V2ConversationMessageTypingEventForUserTopicConversationEventCoBrowse
-        """
-        
-
-        self._co_browse = co_browse
 
     @property
     def typing(self) -> 'V2ConversationMessageTypingEventForUserTopicConversationEventTyping':

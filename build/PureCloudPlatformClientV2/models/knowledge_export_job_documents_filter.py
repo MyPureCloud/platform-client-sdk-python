@@ -51,16 +51,19 @@ class KnowledgeExportJobDocumentsFilter(object):
         """
         self.swagger_types = {
             'interval': 'str',
-            'entities': 'list[Entity]'
+            'entities': 'list[Entity]',
+            'source_id': 'str'
         }
 
         self.attribute_map = {
             'interval': 'interval',
-            'entities': 'entities'
+            'entities': 'entities',
+            'source_id': 'sourceId'
         }
 
         self._interval = None
         self._entities = None
+        self._source_id = None
 
     @property
     def interval(self) -> str:
@@ -109,6 +112,30 @@ class KnowledgeExportJobDocumentsFilter(object):
         
 
         self._entities = entities
+
+    @property
+    def source_id(self) -> str:
+        """
+        Gets the source_id of this KnowledgeExportJobDocumentsFilter.
+
+
+        :return: The source_id of this KnowledgeExportJobDocumentsFilter.
+        :rtype: str
+        """
+        return self._source_id
+
+    @source_id.setter
+    def source_id(self, source_id: str) -> None:
+        """
+        Sets the source_id of this KnowledgeExportJobDocumentsFilter.
+
+
+        :param source_id: The source_id of this KnowledgeExportJobDocumentsFilter.
+        :type: str
+        """
+        
+
+        self._source_id = source_id
 
     def to_dict(self):
         """

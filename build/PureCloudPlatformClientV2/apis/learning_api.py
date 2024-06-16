@@ -51,6 +51,7 @@ from ..models import LearningAssignmentCreate
 from ..models import LearningAssignmentExternalUpdate
 from ..models import LearningAssignmentItem
 from ..models import LearningAssignmentReschedule
+from ..models import LearningAssignmentStep
 from ..models import LearningAssignmentUpdate
 from ..models import LearningAssignmentUserListing
 from ..models import LearningAssignmentUserQuery
@@ -59,6 +60,9 @@ from ..models import LearningModule
 from ..models import LearningModuleCoverArtResponse
 from ..models import LearningModuleJobRequest
 from ..models import LearningModuleJobResponse
+from ..models import LearningModulePreviewGetResponse
+from ..models import LearningModulePreviewUpdateRequest
+from ..models import LearningModulePreviewUpdateResponse
 from ..models import LearningModulePublishRequest
 from ..models import LearningModulePublishResponse
 from ..models import LearningModuleRequest
@@ -66,6 +70,9 @@ from ..models import LearningModuleRule
 from ..models import LearningModulesDomainEntityListing
 from ..models import LearningScheduleSlotsQueryRequest
 from ..models import LearningScheduleSlotsQueryResponse
+from ..models import LearningScormResponse
+from ..models import LearningScormUploadRequest
+from ..models import LearningScormUploadResponse
 
 class LearningApi(object):
     """
@@ -316,6 +323,96 @@ class LearningApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='LearningAssignment',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_learning_assignment_step(self, assignment_id: str, step_id: str, **kwargs) -> 'LearningAssignmentStep':
+        """
+        Get Learning Assignment Step
+        Permission not required if you are the assigned user of the learning assignment
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_learning_assignment_step(assignment_id, step_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str assignment_id: The ID of Learning Assignment (required)
+        :param str step_id: The ID of Learning Assignment Step (required)
+        :param str shareable_content_object_id: The ID of SCO to load
+        :param list[str] expand: Fields to expand in response
+        :return: LearningAssignmentStep
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['assignment_id', 'step_id', 'shareable_content_object_id', 'expand']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_learning_assignment_step" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'assignment_id' is set
+        if ('assignment_id' not in params) or (params['assignment_id'] is None):
+            raise ValueError("Missing the required parameter `assignment_id` when calling `get_learning_assignment_step`")
+        # verify the required parameter 'step_id' is set
+        if ('step_id' not in params) or (params['step_id'] is None):
+            raise ValueError("Missing the required parameter `step_id` when calling `get_learning_assignment_step`")
+
+
+        resource_path = '/api/v2/learning/assignments/{assignmentId}/steps/{stepId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'assignment_id' in params:
+            path_params['assignmentId'] = params['assignment_id']
+        if 'step_id' in params:
+            path_params['stepId'] = params['step_id']
+
+        query_params = {}
+        if 'shareable_content_object_id' in params:
+            query_params['shareableContentObjectId'] = params['shareable_content_object_id']
+        if 'expand' in params:
+            query_params['expand'] = params['expand']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='LearningAssignmentStep',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -712,6 +809,84 @@ class LearningApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='LearningModuleJobResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_learning_module_preview(self, module_id: str, **kwargs) -> 'LearningModulePreviewGetResponse':
+        """
+        Get a learning module preview
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_learning_module_preview(module_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str module_id: The ID of the learning module (required)
+        :return: LearningModulePreviewGetResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['module_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_learning_module_preview" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'module_id' is set
+        if ('module_id' not in params) or (params['module_id'] is None):
+            raise ValueError("Missing the required parameter `module_id` when calling `get_learning_module_preview`")
+
+
+        resource_path = '/api/v2/learning/modules/{moduleId}/preview'.replace('{format}', 'json')
+        path_params = {}
+        if 'module_id' in params:
+            path_params['moduleId'] = params['module_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='LearningModulePreviewGetResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -1160,6 +1335,84 @@ class LearningApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def get_learning_scorm_scorm_id(self, scorm_id: str, **kwargs) -> 'LearningScormResponse':
+        """
+        Get Learning SCORM Result
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_learning_scorm_scorm_id(scorm_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str scorm_id: The ID of the SCORM package (required)
+        :return: LearningScormResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['scorm_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_learning_scorm_scorm_id" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'scorm_id' is set
+        if ('scorm_id' not in params) or (params['scorm_id'] is None):
+            raise ValueError("Missing the required parameter `scorm_id` when calling `get_learning_scorm_scorm_id`")
+
+
+        resource_path = '/api/v2/learning/scorm/{scormId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'scorm_id' in params:
+            path_params['scormId'] = params['scorm_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='LearningScormResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def patch_learning_assignment(self, assignment_id: str, **kwargs) -> 'LearningAssignment':
         """
         Update Learning Assignment
@@ -1318,6 +1571,93 @@ class LearningApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='LearningAssignment',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def patch_learning_assignment_step(self, assignment_id: str, step_id: str, **kwargs) -> 'LearningAssignmentStep':
+        """
+        Update Learning Assignment Step
+        Permission not required if you are the assigned user of the learning assignment
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.patch_learning_assignment_step(assignment_id, step_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str assignment_id: The ID of Learning Assignment (required)
+        :param str step_id: The ID of Learning Assignment Step (required)
+        :param LearningAssignmentStep body: The Learning Assignment Step to be updated
+        :return: LearningAssignmentStep
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['assignment_id', 'step_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method patch_learning_assignment_step" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'assignment_id' is set
+        if ('assignment_id' not in params) or (params['assignment_id'] is None):
+            raise ValueError("Missing the required parameter `assignment_id` when calling `patch_learning_assignment_step`")
+        # verify the required parameter 'step_id' is set
+        if ('step_id' not in params) or (params['step_id'] is None):
+            raise ValueError("Missing the required parameter `step_id` when calling `patch_learning_assignment_step`")
+
+
+        resource_path = '/api/v2/learning/assignments/{assignmentId}/steps/{stepId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'assignment_id' in params:
+            path_params['assignmentId'] = params['assignment_id']
+        if 'step_id' in params:
+            path_params['stepId'] = params['step_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PATCH',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='LearningAssignmentStep',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -2360,6 +2700,81 @@ class LearningApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def post_learning_scorm(self, **kwargs) -> 'LearningScormUploadResponse':
+        """
+        Create a SCORM package upload request
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_learning_scorm(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param LearningScormUploadRequest body: The SCORM package to be uploaded
+        :return: LearningScormUploadResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_learning_scorm" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/learning/scorm'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='LearningScormUploadResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def put_learning_module(self, module_id: str, body: 'LearningModuleRequest', **kwargs) -> 'LearningModule':
         """
         Update a learning module
@@ -2440,6 +2855,90 @@ class LearningApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='LearningModule',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def put_learning_module_preview(self, module_id: str, body: 'LearningModulePreviewUpdateRequest', **kwargs) -> 'LearningModulePreviewUpdateResponse':
+        """
+        Update a learning module preview
+        This will update a learning module preview
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.put_learning_module_preview(module_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str module_id: The ID of the learning module (required)
+        :param LearningModulePreviewUpdateRequest body: The learning module to be updated (required)
+        :return: LearningModulePreviewUpdateResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['module_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method put_learning_module_preview" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'module_id' is set
+        if ('module_id' not in params) or (params['module_id'] is None):
+            raise ValueError("Missing the required parameter `module_id` when calling `put_learning_module_preview`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `put_learning_module_preview`")
+
+
+        resource_path = '/api/v2/learning/modules/{moduleId}/preview'.replace('{format}', 'json')
+        path_params = {}
+        if 'module_id' in params:
+            path_params['moduleId'] = params['module_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='LearningModulePreviewUpdateResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

@@ -52,21 +52,18 @@ class FieldConfigs(object):
         self.swagger_types = {
             'org': 'FieldConfig',
             'person': 'FieldConfig',
-            'group': 'FieldConfig',
-            'external_contact': 'FieldConfig'
+            'group': 'FieldConfig'
         }
 
         self.attribute_map = {
             'org': 'org',
             'person': 'person',
-            'group': 'group',
-            'external_contact': 'externalContact'
+            'group': 'group'
         }
 
         self._org = None
         self._person = None
         self._group = None
-        self._external_contact = None
 
     @property
     def org(self) -> 'FieldConfig':
@@ -139,30 +136,6 @@ class FieldConfigs(object):
         
 
         self._group = group
-
-    @property
-    def external_contact(self) -> 'FieldConfig':
-        """
-        Gets the external_contact of this FieldConfigs.
-
-
-        :return: The external_contact of this FieldConfigs.
-        :rtype: FieldConfig
-        """
-        return self._external_contact
-
-    @external_contact.setter
-    def external_contact(self, external_contact: 'FieldConfig') -> None:
-        """
-        Sets the external_contact of this FieldConfigs.
-
-
-        :param external_contact: The external_contact of this FieldConfigs.
-        :type: FieldConfig
-        """
-        
-
-        self._external_contact = external_contact
 
     def to_dict(self):
         """

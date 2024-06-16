@@ -33,10 +33,8 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
-    from . import V2ConversationMessageTypingEventForWorkflowTopicConversationMessageContent
     from . import V2ConversationMessageTypingEventForWorkflowTopicConversationMessageEvent
     from . import V2ConversationMessageTypingEventForWorkflowTopicConversationMessagingChannel
-    from . import V2ConversationMessageTypingEventForWorkflowTopicConversationReason
 
 class V2ConversationMessageTypingEventForWorkflowTopicConversationNormalizedMessage(object):
     """
@@ -53,71 +51,23 @@ class V2ConversationMessageTypingEventForWorkflowTopicConversationNormalizedMess
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'id': 'str',
             'channel': 'V2ConversationMessageTypingEventForWorkflowTopicConversationMessagingChannel',
             'type': 'str',
-            'text': 'str',
-            'content': 'list[V2ConversationMessageTypingEventForWorkflowTopicConversationMessageContent]',
             'events': 'list[V2ConversationMessageTypingEventForWorkflowTopicConversationMessageEvent]',
-            'status': 'str',
-            'reasons': 'list[V2ConversationMessageTypingEventForWorkflowTopicConversationReason]',
-            'originating_entity': 'str',
-            'is_final_receipt': 'bool',
-            'direction': 'str',
-            'metadata': 'dict(str, str)'
+            'direction': 'str'
         }
 
         self.attribute_map = {
-            'id': 'id',
             'channel': 'channel',
             'type': 'type',
-            'text': 'text',
-            'content': 'content',
             'events': 'events',
-            'status': 'status',
-            'reasons': 'reasons',
-            'originating_entity': 'originatingEntity',
-            'is_final_receipt': 'isFinalReceipt',
-            'direction': 'direction',
-            'metadata': 'metadata'
+            'direction': 'direction'
         }
 
-        self._id = None
         self._channel = None
         self._type = None
-        self._text = None
-        self._content = None
         self._events = None
-        self._status = None
-        self._reasons = None
-        self._originating_entity = None
-        self._is_final_receipt = None
         self._direction = None
-        self._metadata = None
-
-    @property
-    def id(self) -> str:
-        """
-        Gets the id of this V2ConversationMessageTypingEventForWorkflowTopicConversationNormalizedMessage.
-
-
-        :return: The id of this V2ConversationMessageTypingEventForWorkflowTopicConversationNormalizedMessage.
-        :rtype: str
-        """
-        return self._id
-
-    @id.setter
-    def id(self, id: str) -> None:
-        """
-        Sets the id of this V2ConversationMessageTypingEventForWorkflowTopicConversationNormalizedMessage.
-
-
-        :param id: The id of this V2ConversationMessageTypingEventForWorkflowTopicConversationNormalizedMessage.
-        :type: str
-        """
-        
-
-        self._id = id
 
     @property
     def channel(self) -> 'V2ConversationMessageTypingEventForWorkflowTopicConversationMessagingChannel':
@@ -165,60 +115,12 @@ class V2ConversationMessageTypingEventForWorkflowTopicConversationNormalizedMess
         """
         if isinstance(type, int):
             type = str(type)
-        allowed_values = ["Text", "Structured", "Receipt", "Event"]
+        allowed_values = ["Event"]
         if type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for type -> " + type)
             self._type = "outdated_sdk_version"
         else:
             self._type = type
-
-    @property
-    def text(self) -> str:
-        """
-        Gets the text of this V2ConversationMessageTypingEventForWorkflowTopicConversationNormalizedMessage.
-
-
-        :return: The text of this V2ConversationMessageTypingEventForWorkflowTopicConversationNormalizedMessage.
-        :rtype: str
-        """
-        return self._text
-
-    @text.setter
-    def text(self, text: str) -> None:
-        """
-        Sets the text of this V2ConversationMessageTypingEventForWorkflowTopicConversationNormalizedMessage.
-
-
-        :param text: The text of this V2ConversationMessageTypingEventForWorkflowTopicConversationNormalizedMessage.
-        :type: str
-        """
-        
-
-        self._text = text
-
-    @property
-    def content(self) -> List['V2ConversationMessageTypingEventForWorkflowTopicConversationMessageContent']:
-        """
-        Gets the content of this V2ConversationMessageTypingEventForWorkflowTopicConversationNormalizedMessage.
-
-
-        :return: The content of this V2ConversationMessageTypingEventForWorkflowTopicConversationNormalizedMessage.
-        :rtype: list[V2ConversationMessageTypingEventForWorkflowTopicConversationMessageContent]
-        """
-        return self._content
-
-    @content.setter
-    def content(self, content: List['V2ConversationMessageTypingEventForWorkflowTopicConversationMessageContent']) -> None:
-        """
-        Sets the content of this V2ConversationMessageTypingEventForWorkflowTopicConversationNormalizedMessage.
-
-
-        :param content: The content of this V2ConversationMessageTypingEventForWorkflowTopicConversationNormalizedMessage.
-        :type: list[V2ConversationMessageTypingEventForWorkflowTopicConversationMessageContent]
-        """
-        
-
-        self._content = content
 
     @property
     def events(self) -> List['V2ConversationMessageTypingEventForWorkflowTopicConversationMessageEvent']:
@@ -243,112 +145,6 @@ class V2ConversationMessageTypingEventForWorkflowTopicConversationNormalizedMess
         
 
         self._events = events
-
-    @property
-    def status(self) -> str:
-        """
-        Gets the status of this V2ConversationMessageTypingEventForWorkflowTopicConversationNormalizedMessage.
-
-
-        :return: The status of this V2ConversationMessageTypingEventForWorkflowTopicConversationNormalizedMessage.
-        :rtype: str
-        """
-        return self._status
-
-    @status.setter
-    def status(self, status: str) -> None:
-        """
-        Sets the status of this V2ConversationMessageTypingEventForWorkflowTopicConversationNormalizedMessage.
-
-
-        :param status: The status of this V2ConversationMessageTypingEventForWorkflowTopicConversationNormalizedMessage.
-        :type: str
-        """
-        if isinstance(status, int):
-            status = str(status)
-        allowed_values = ["Sent", "Delivered", "Read", "Failed", "Published", "Removed"]
-        if status.lower() not in map(str.lower, allowed_values):
-            # print("Invalid value for status -> " + status)
-            self._status = "outdated_sdk_version"
-        else:
-            self._status = status
-
-    @property
-    def reasons(self) -> List['V2ConversationMessageTypingEventForWorkflowTopicConversationReason']:
-        """
-        Gets the reasons of this V2ConversationMessageTypingEventForWorkflowTopicConversationNormalizedMessage.
-
-
-        :return: The reasons of this V2ConversationMessageTypingEventForWorkflowTopicConversationNormalizedMessage.
-        :rtype: list[V2ConversationMessageTypingEventForWorkflowTopicConversationReason]
-        """
-        return self._reasons
-
-    @reasons.setter
-    def reasons(self, reasons: List['V2ConversationMessageTypingEventForWorkflowTopicConversationReason']) -> None:
-        """
-        Sets the reasons of this V2ConversationMessageTypingEventForWorkflowTopicConversationNormalizedMessage.
-
-
-        :param reasons: The reasons of this V2ConversationMessageTypingEventForWorkflowTopicConversationNormalizedMessage.
-        :type: list[V2ConversationMessageTypingEventForWorkflowTopicConversationReason]
-        """
-        
-
-        self._reasons = reasons
-
-    @property
-    def originating_entity(self) -> str:
-        """
-        Gets the originating_entity of this V2ConversationMessageTypingEventForWorkflowTopicConversationNormalizedMessage.
-
-
-        :return: The originating_entity of this V2ConversationMessageTypingEventForWorkflowTopicConversationNormalizedMessage.
-        :rtype: str
-        """
-        return self._originating_entity
-
-    @originating_entity.setter
-    def originating_entity(self, originating_entity: str) -> None:
-        """
-        Sets the originating_entity of this V2ConversationMessageTypingEventForWorkflowTopicConversationNormalizedMessage.
-
-
-        :param originating_entity: The originating_entity of this V2ConversationMessageTypingEventForWorkflowTopicConversationNormalizedMessage.
-        :type: str
-        """
-        if isinstance(originating_entity, int):
-            originating_entity = str(originating_entity)
-        allowed_values = ["Human", "Bot"]
-        if originating_entity.lower() not in map(str.lower, allowed_values):
-            # print("Invalid value for originating_entity -> " + originating_entity)
-            self._originating_entity = "outdated_sdk_version"
-        else:
-            self._originating_entity = originating_entity
-
-    @property
-    def is_final_receipt(self) -> bool:
-        """
-        Gets the is_final_receipt of this V2ConversationMessageTypingEventForWorkflowTopicConversationNormalizedMessage.
-
-
-        :return: The is_final_receipt of this V2ConversationMessageTypingEventForWorkflowTopicConversationNormalizedMessage.
-        :rtype: bool
-        """
-        return self._is_final_receipt
-
-    @is_final_receipt.setter
-    def is_final_receipt(self, is_final_receipt: bool) -> None:
-        """
-        Sets the is_final_receipt of this V2ConversationMessageTypingEventForWorkflowTopicConversationNormalizedMessage.
-
-
-        :param is_final_receipt: The is_final_receipt of this V2ConversationMessageTypingEventForWorkflowTopicConversationNormalizedMessage.
-        :type: bool
-        """
-        
-
-        self._is_final_receipt = is_final_receipt
 
     @property
     def direction(self) -> str:
@@ -378,30 +174,6 @@ class V2ConversationMessageTypingEventForWorkflowTopicConversationNormalizedMess
             self._direction = "outdated_sdk_version"
         else:
             self._direction = direction
-
-    @property
-    def metadata(self) -> Dict[str, str]:
-        """
-        Gets the metadata of this V2ConversationMessageTypingEventForWorkflowTopicConversationNormalizedMessage.
-
-
-        :return: The metadata of this V2ConversationMessageTypingEventForWorkflowTopicConversationNormalizedMessage.
-        :rtype: dict(str, str)
-        """
-        return self._metadata
-
-    @metadata.setter
-    def metadata(self, metadata: Dict[str, str]) -> None:
-        """
-        Sets the metadata of this V2ConversationMessageTypingEventForWorkflowTopicConversationNormalizedMessage.
-
-
-        :param metadata: The metadata of this V2ConversationMessageTypingEventForWorkflowTopicConversationNormalizedMessage.
-        :type: dict(str, str)
-        """
-        
-
-        self._metadata = metadata
 
     def to_dict(self):
         """

@@ -64,7 +64,7 @@ class FunctionUploadRequest(object):
     def file_name(self) -> str:
         """
         Gets the file_name of this FunctionUploadRequest.
-        Name of the file to upload. It must not start with a dot and not end with a forward slash. Whitespace and the following characters are not allowed: \\{^}%`]\">[~<#|
+        Name of the file to upload.File name can only contain letters, numbers, and the following special characters: + - _ . ' ( )
 
         :return: The file_name of this FunctionUploadRequest.
         :rtype: str
@@ -75,12 +75,15 @@ class FunctionUploadRequest(object):
     def file_name(self, file_name: str) -> None:
         """
         Sets the file_name of this FunctionUploadRequest.
-        Name of the file to upload. It must not start with a dot and not end with a forward slash. Whitespace and the following characters are not allowed: \\{^}%`]\">[~<#|
+        Name of the file to upload.File name can only contain letters, numbers, and the following special characters: + - _ . ' ( )
 
         :param file_name: The file_name of this FunctionUploadRequest.
         :type: str
         """
         
+        if not re.search('^[a-zA-Z0-9\.\+\-\_\(\)\s]+$', file_name):
+            raise ValueError("Invalid value for `file_name`, must be a follow pattern or equal to `/^[a-zA-Z0-9\.\+\-\_\(\)\s]+$/`")
+
 
         self._file_name = file_name
 
@@ -105,6 +108,12 @@ class FunctionUploadRequest(object):
         :type: int
         """
         
+        if signed_url_timeout_seconds > 604800:
+            raise ValueError("Invalid value for `signed_url_timeout_seconds`, must be a value less than or equal to `604800`")
+
+        if signed_url_timeout_seconds < 1:
+            raise ValueError("Invalid value for `signed_url_timeout_seconds`, must be a value greater than or equal to `1`")
+
 
         self._signed_url_timeout_seconds = signed_url_timeout_seconds
 

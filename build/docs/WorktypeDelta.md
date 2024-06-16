@@ -23,6 +23,7 @@ title: WorktypeDelta
 | **default_queue_id** | [**WorkitemsAttributeChangeString**](WorkitemsAttributeChangeString.html) |  | [optional] |
 | **schema_id** | [**WorkitemsAttributeChangeString**](WorkitemsAttributeChangeString.html) |  | [optional] |
 | **schema_version** | [**WorkitemsAttributeChangeString**](WorkitemsAttributeChangeString.html) |  | [optional] |
+| **service_level_target** | [**WorkitemsAttributeChangeInteger**](WorkitemsAttributeChangeInteger.html) |  | [optional] |
 | **date_modified** | [**WorkitemsAttributeChangeInstant**](WorkitemsAttributeChangeInstant.html) |  | [optional] |
 | **modified_by** | [**WorkitemsAttributeChangeString**](WorkitemsAttributeChangeString.html) |  | [optional] |
 {: class="table table-striped"}

@@ -12,6 +12,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**delete_analytics_users_details_job**](AnalyticsApi.html#delete_analytics_users_details_job) | Delete/cancel an async request|
 |[**get_analytics_actions_aggregates_job**](AnalyticsApi.html#get_analytics_actions_aggregates_job) | Get status for async query for action aggregates|
 |[**get_analytics_actions_aggregates_job_results**](AnalyticsApi.html#get_analytics_actions_aggregates_job_results) | Fetch a page of results for an async aggregates query|
+|[**get_analytics_agentcopilots_aggregates_job**](AnalyticsApi.html#get_analytics_agentcopilots_aggregates_job) | Get status for async query for agent copilot aggregates|
+|[**get_analytics_agentcopilots_aggregates_job_results**](AnalyticsApi.html#get_analytics_agentcopilots_aggregates_job_results) | Fetch a page of results for an async aggregates query|
 |[**get_analytics_botflow_divisions_reportingturns**](AnalyticsApi.html#get_analytics_botflow_divisions_reportingturns) | Get Reporting Turns (division aware).|
 |[**get_analytics_botflow_reportingturns**](AnalyticsApi.html#get_analytics_botflow_reportingturns) | Get Reporting Turns.|
 |[**get_analytics_botflow_sessions**](AnalyticsApi.html#get_analytics_botflow_sessions) | Get Bot Flow Sessions.|
@@ -40,6 +42,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_analytics_reporting_exports**](AnalyticsApi.html#get_analytics_reporting_exports) | Get all view export requests for a user|
 |[**get_analytics_reporting_exports_metadata**](AnalyticsApi.html#get_analytics_reporting_exports_metadata) | Get all export metadata|
 |[**get_analytics_reporting_settings**](AnalyticsApi.html#get_analytics_reporting_settings) | Get AnalyticsReportingSettings for an organization|
+|[**get_analytics_reporting_settings_dashboards_query**](AnalyticsApi.html#get_analytics_reporting_settings_dashboards_query) | Get list of dashboard configurations|
 |[**get_analytics_reporting_settings_user_dashboards**](AnalyticsApi.html#get_analytics_reporting_settings_user_dashboards) | Get list of dashboards for an user|
 |[**get_analytics_resolutions_aggregates_job**](AnalyticsApi.html#get_analytics_resolutions_aggregates_job) | Get status for async query for resolution aggregates|
 |[**get_analytics_resolutions_aggregates_job_results**](AnalyticsApi.html#get_analytics_resolutions_aggregates_job_results) | Fetch a page of results for an async aggregates query|
@@ -57,6 +60,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**patch_analytics_reporting_settings**](AnalyticsApi.html#patch_analytics_reporting_settings) | Patch AnalyticsReportingSettings values for an organization|
 |[**post_analytics_actions_aggregates_jobs**](AnalyticsApi.html#post_analytics_actions_aggregates_jobs) | Query for action aggregates asynchronously|
 |[**post_analytics_actions_aggregates_query**](AnalyticsApi.html#post_analytics_actions_aggregates_query) | Query for action aggregates|
+|[**post_analytics_agentcopilots_aggregates_jobs**](AnalyticsApi.html#post_analytics_agentcopilots_aggregates_jobs) | Query for agent copilot aggregates asynchronously|
+|[**post_analytics_agentcopilots_aggregates_query**](AnalyticsApi.html#post_analytics_agentcopilots_aggregates_query) | Query for agent copilot aggregates|
 |[**post_analytics_bots_aggregates_jobs**](AnalyticsApi.html#post_analytics_bots_aggregates_jobs) | Query for bot aggregates asynchronously|
 |[**post_analytics_bots_aggregates_query**](AnalyticsApi.html#post_analytics_bots_aggregates_query) | Query for bot aggregates|
 |[**post_analytics_conversation_details_properties**](AnalyticsApi.html#post_analytics_conversation_details_properties) | Index conversation properties|
@@ -79,7 +84,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_analytics_knowledge_aggregates_jobs**](AnalyticsApi.html#post_analytics_knowledge_aggregates_jobs) | Query for knowledge aggregates asynchronously|
 |[**post_analytics_knowledge_aggregates_query**](AnalyticsApi.html#post_analytics_knowledge_aggregates_query) | Query for knowledge aggregates|
 |[**post_analytics_queues_observations_query**](AnalyticsApi.html#post_analytics_queues_observations_query) | Query for queue observations|
-|[**post_analytics_ratelimits_aggregates_query**](AnalyticsApi.html#post_analytics_ratelimits_aggregates_query) | Query for limits rate limit aggregates. Data populated when limits are exceeded or are close to being exceeded|
+|[**post_analytics_ratelimits_aggregates_query**](AnalyticsApi.html#post_analytics_ratelimits_aggregates_query) | Query for limits rate limit aggregates. Data populated when limits are exceeded or are close to being exceeded. Not a source of truth for limits hit but a best effort estimate.|
 |[**post_analytics_reporting_dashboards_users_bulk_remove**](AnalyticsApi.html#post_analytics_reporting_dashboards_users_bulk_remove) | Bulk delete dashboards owned by other user(s)|
 |[**post_analytics_reporting_exports**](AnalyticsApi.html#post_analytics_reporting_exports) | Generate a view export request|
 |[**post_analytics_reporting_settings_dashboards_bulk_remove**](AnalyticsApi.html#post_analytics_reporting_settings_dashboards_bulk_remove) | Bulk remove dashboard configurations|
@@ -304,6 +309,110 @@ except ApiException as e:
 ### Return type
 
 [**ActionAsyncAggregateQueryResponse**](ActionAsyncAggregateQueryResponse.html)
+
+<a name="get_analytics_agentcopilots_aggregates_job"></a>
+
+## [**AsyncQueryStatus**](AsyncQueryStatus.html) get_analytics_agentcopilots_aggregates_job(job_id)
+
+
+
+Get status for async query for agent copilot aggregates
+
+get_analytics_agentcopilots_aggregates_job is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/analytics/agentcopilots/aggregates/jobs/{jobId} 
+
+Requires ANY permissions: 
+
+* analytics:agentCopilotAggregate:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AnalyticsApi()
+job_id = 'job_id_example' # str | jobId
+
+try:
+    # Get status for async query for agent copilot aggregates
+    api_response = api_instance.get_analytics_agentcopilots_aggregates_job(job_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AnalyticsApi->get_analytics_agentcopilots_aggregates_job: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **job_id** | **str**| jobId |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**AsyncQueryStatus**](AsyncQueryStatus.html)
+
+<a name="get_analytics_agentcopilots_aggregates_job_results"></a>
+
+## [**AgentCopilotAsyncAggregateQueryResponse**](AgentCopilotAsyncAggregateQueryResponse.html) get_analytics_agentcopilots_aggregates_job_results(job_id, cursor=cursor)
+
+
+
+Fetch a page of results for an async aggregates query
+
+get_analytics_agentcopilots_aggregates_job_results is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/analytics/agentcopilots/aggregates/jobs/{jobId}/results 
+
+Requires ANY permissions: 
+
+* analytics:agentCopilotAggregate:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AnalyticsApi()
+job_id = 'job_id_example' # str | jobId
+cursor = 'cursor_example' # str | Cursor token to retrieve next page (optional)
+
+try:
+    # Fetch a page of results for an async aggregates query
+    api_response = api_instance.get_analytics_agentcopilots_aggregates_job_results(job_id, cursor=cursor)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AnalyticsApi->get_analytics_agentcopilots_aggregates_job_results: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **job_id** | **str**| jobId |  |
+| **cursor** | **str**| Cursor token to retrieve next page | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**AgentCopilotAsyncAggregateQueryResponse**](AgentCopilotAsyncAggregateQueryResponse.html)
 
 <a name="get_analytics_botflow_divisions_reportingturns"></a>
 
@@ -1764,6 +1873,63 @@ This endpoint does not need any parameters.
 
 [**AnalyticsReportingSettings**](AnalyticsReportingSettings.html)
 
+<a name="get_analytics_reporting_settings_dashboards_query"></a>
+
+## [**DashboardConfigurationListing**](DashboardConfigurationListing.html) get_analytics_reporting_settings_dashboards_query(dashboard_type, dashboard_access_filter, sort_by=sort_by, page_number=page_number, page_size=page_size)
+
+
+
+Get list of dashboard configurations
+
+Wraps GET /api/v2/analytics/reporting/settings/dashboards/query 
+
+Requires ALL permissions: 
+
+* analytics:dashboardConfigurations:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AnalyticsApi()
+dashboard_type = 'dashboard_type_example' # str | List dashboard of given type
+dashboard_access_filter = 'dashboard_access_filter_example' # str | Filter dashboard based on the owner of dashboard
+sort_by = ''desc'' # str |  (optional) (default to 'desc')
+page_number = 1 # int |  (optional) (default to 1)
+page_size = 9 # int |  (optional) (default to 9)
+
+try:
+    # Get list of dashboard configurations
+    api_response = api_instance.get_analytics_reporting_settings_dashboards_query(dashboard_type, dashboard_access_filter, sort_by=sort_by, page_number=page_number, page_size=page_size)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AnalyticsApi->get_analytics_reporting_settings_dashboards_query: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **dashboard_type** | **str**| List dashboard of given type | <br />**Values**: All, Public, Private, Shared, Favorites |
+| **dashboard_access_filter** | **str**| Filter dashboard based on the owner of dashboard | <br />**Values**: OwnedByMe, OwnedByAnyone, NotOwnedByMe |
+| **sort_by** | **str**|  | [optional] [default to &#39;desc&#39;] |
+| **page_number** | **int**|  | [optional] [default to 1] |
+| **page_size** | **int**|  | [optional] [default to 9] |
+{: class="table table-striped"}
+
+### Return type
+
+[**DashboardConfigurationListing**](DashboardConfigurationListing.html)
+
 <a name="get_analytics_reporting_settings_user_dashboards"></a>
 
 ## [**DashboardConfigurationListing**](DashboardConfigurationListing.html) get_analytics_reporting_settings_user_dashboards(user_id, sort_by=sort_by, page_number=page_number, page_size=page_size, public_only=public_only, favorite_only=favorite_only, name=name)
@@ -2642,6 +2808,108 @@ except ApiException as e:
 ### Return type
 
 [**ActionAggregateQueryResponse**](ActionAggregateQueryResponse.html)
+
+<a name="post_analytics_agentcopilots_aggregates_jobs"></a>
+
+## [**AsyncQueryResponse**](AsyncQueryResponse.html) post_analytics_agentcopilots_aggregates_jobs(body)
+
+
+
+Query for agent copilot aggregates asynchronously
+
+post_analytics_agentcopilots_aggregates_jobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/analytics/agentcopilots/aggregates/jobs 
+
+Requires ANY permissions: 
+
+* analytics:agentCopilotAggregate:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AnalyticsApi()
+body = PureCloudPlatformClientV2.AgentCopilotAsyncAggregationQuery() # AgentCopilotAsyncAggregationQuery | query
+
+try:
+    # Query for agent copilot aggregates asynchronously
+    api_response = api_instance.post_analytics_agentcopilots_aggregates_jobs(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AnalyticsApi->post_analytics_agentcopilots_aggregates_jobs: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**AgentCopilotAsyncAggregationQuery**](AgentCopilotAsyncAggregationQuery.html)| query |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**AsyncQueryResponse**](AsyncQueryResponse.html)
+
+<a name="post_analytics_agentcopilots_aggregates_query"></a>
+
+## [**AgentCopilotAggregateQueryResponse**](AgentCopilotAggregateQueryResponse.html) post_analytics_agentcopilots_aggregates_query(body)
+
+
+
+Query for agent copilot aggregates
+
+post_analytics_agentcopilots_aggregates_query is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/analytics/agentcopilots/aggregates/query 
+
+Requires ANY permissions: 
+
+* analytics:agentCopilotAggregate:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AnalyticsApi()
+body = PureCloudPlatformClientV2.AgentCopilotAggregationQuery() # AgentCopilotAggregationQuery | query
+
+try:
+    # Query for agent copilot aggregates
+    api_response = api_instance.post_analytics_agentcopilots_aggregates_query(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AnalyticsApi->post_analytics_agentcopilots_aggregates_query: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**AgentCopilotAggregationQuery**](AgentCopilotAggregationQuery.html)| query |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**AgentCopilotAggregateQueryResponse**](AgentCopilotAggregateQueryResponse.html)
 
 <a name="post_analytics_bots_aggregates_jobs"></a>
 
@@ -3753,7 +4021,9 @@ except ApiException as e:
 
 
 
-Query for limits rate limit aggregates. Data populated when limits are exceeded or are close to being exceeded
+Query for limits rate limit aggregates. Data populated when limits are exceeded or are close to being exceeded. Not a source of truth for limits hit but a best effort estimate.
+
+The 'max' property can be used to determine estimated rate limit value hit.
 
 Wraps POST /api/v2/analytics/ratelimits/aggregates/query 
 
@@ -3777,7 +4047,7 @@ api_instance = PureCloudPlatformClientV2.AnalyticsApi()
 body = PureCloudPlatformClientV2.RateLimitAggregationQuery() # RateLimitAggregationQuery | query
 
 try:
-    # Query for limits rate limit aggregates. Data populated when limits are exceeded or are close to being exceeded
+    # Query for limits rate limit aggregates. Data populated when limits are exceeded or are close to being exceeded. Not a source of truth for limits hit but a best effort estimate.
     api_response = api_instance.post_analytics_ratelimits_aggregates_query(body)
     pprint(api_response)
 except ApiException as e:

@@ -38,6 +38,9 @@ from typing import Dict
 from typing import Any
 
 from ..models import Empty
+from ..models import CategoriesEntityListing
+from ..models import CategoryRequest
+from ..models import ConversationCategoriesEntityListing
 from ..models import ConversationMetrics
 from ..models import DictionaryFeedback
 from ..models import DictionaryFeedbackEntityListing
@@ -60,6 +63,7 @@ from ..models import SentimentFeedback
 from ..models import SentimentFeedbackEntityListing
 from ..models import SpeechTextAnalyticsSettingsRequest
 from ..models import SpeechTextAnalyticsSettingsResponse
+from ..models import StaCategory
 from ..models import SupportedDialectsEntityListing
 from ..models import Topic
 from ..models import TopicJob
@@ -88,6 +92,84 @@ class SpeechTextAnalyticsApi(object):
             if not config.api_client:
                 config.api_client = ApiClient()
             self.api_client = config.api_client
+
+    def delete_speechandtextanalytics_category(self, category_id: str, **kwargs) -> None:
+        """
+        Delete a Speech & Text Analytics category by ID
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_speechandtextanalytics_category(category_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str category_id: The id of the category (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['category_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_speechandtextanalytics_category" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'category_id' is set
+        if ('category_id' not in params) or (params['category_id'] is None):
+            raise ValueError("Missing the required parameter `category_id` when calling `delete_speechandtextanalytics_category`")
+
+
+        resource_path = '/api/v2/speechandtextanalytics/categories/{categoryId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'category_id' in params:
+            path_params['categoryId'] = params['category_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
 
     def delete_speechandtextanalytics_dictionaryfeedback_dictionary_feedback_id(self, dictionary_feedback_id: str, **kwargs) -> None:
         """
@@ -476,6 +558,174 @@ class SpeechTextAnalyticsApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def get_speechandtextanalytics_categories(self, **kwargs) -> 'CategoriesEntityListing':
+        """
+        Get the list of Speech and Text Analytics categories
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_speechandtextanalytics_categories(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int page_size: The page size for the listing. The max that will be returned is 50.
+        :param int page_number: The page number for the listing
+        :param str name: The category name filter applied to the listing
+        :param str sort_order: The sort order for the listing
+        :param str sort_by: The field to sort by for the listing
+        :param list[str] ids: Comma separated Category IDs to filter by. Cannot be used with other filters. Maximum of 50 IDs allowed.
+        :return: CategoriesEntityListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['page_size', 'page_number', 'name', 'sort_order', 'sort_by', 'ids']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_speechandtextanalytics_categories" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/speechandtextanalytics/categories'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+        if 'page_number' in params:
+            query_params['pageNumber'] = params['page_number']
+        if 'name' in params:
+            query_params['name'] = params['name']
+        if 'sort_order' in params:
+            query_params['sortOrder'] = params['sort_order']
+        if 'sort_by' in params:
+            query_params['sortBy'] = params['sort_by']
+        if 'ids' in params:
+            query_params['ids'] = params['ids']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='CategoriesEntityListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_speechandtextanalytics_category(self, category_id: str, **kwargs) -> 'StaCategory':
+        """
+        Get a Speech & Text Analytics Category by ID
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_speechandtextanalytics_category(category_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str category_id: The id of the category (required)
+        :return: StaCategory
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['category_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_speechandtextanalytics_category" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'category_id' is set
+        if ('category_id' not in params) or (params['category_id'] is None):
+            raise ValueError("Missing the required parameter `category_id` when calling `get_speechandtextanalytics_category`")
+
+
+        resource_path = '/api/v2/speechandtextanalytics/categories/{categoryId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'category_id' in params:
+            path_params['categoryId'] = params['category_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='StaCategory',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def get_speechandtextanalytics_conversation(self, conversation_id: str, **kwargs) -> 'ConversationMetrics':
         """
         Get Speech and Text Analytics for a specific conversation
@@ -550,6 +800,90 @@ class SpeechTextAnalyticsApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='ConversationMetrics',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_speechandtextanalytics_conversation_categories(self, conversation_id: str, **kwargs) -> 'ConversationCategoriesEntityListing':
+        """
+        Get the list of detected Speech and Text Analytics categories of conversation
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_speechandtextanalytics_conversation_categories(conversation_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str conversation_id: The id of the conversation (required)
+        :param int page_size: The page size for the listing. The max that will be returned is 50.
+        :param int page_number: The page number for the listing
+        :return: ConversationCategoriesEntityListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['conversation_id', 'page_size', 'page_number']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_speechandtextanalytics_conversation_categories" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'conversation_id' is set
+        if ('conversation_id' not in params) or (params['conversation_id'] is None):
+            raise ValueError("Missing the required parameter `conversation_id` when calling `get_speechandtextanalytics_conversation_categories`")
+
+
+        resource_path = '/api/v2/speechandtextanalytics/conversations/{conversationId}/categories'.replace('{format}', 'json')
+        path_params = {}
+        if 'conversation_id' in params:
+            path_params['conversationId'] = params['conversation_id']
+
+        query_params = {}
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+        if 'page_number' in params:
+            query_params['pageNumber'] = params['page_number']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ConversationCategoriesEntityListing',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -2351,6 +2685,84 @@ class SpeechTextAnalyticsApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def post_speechandtextanalytics_categories(self, body: 'CategoryRequest', **kwargs) -> 'StaCategory':
+        """
+        Create new Speech & Text Analytics category
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_speechandtextanalytics_categories(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param CategoryRequest body: The category to create (required)
+        :return: StaCategory
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_speechandtextanalytics_categories" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_speechandtextanalytics_categories`")
+
+
+        resource_path = '/api/v2/speechandtextanalytics/categories'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='StaCategory',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def post_speechandtextanalytics_dictionaryfeedback(self, body: 'DictionaryFeedback', **kwargs) -> 'DictionaryFeedback':
         """
         Create a Speech & Text Analytics DictionaryFeedback
@@ -2971,6 +3383,90 @@ class SpeechTextAnalyticsApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='JsonSearchResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def put_speechandtextanalytics_category(self, category_id: str, body: 'CategoryRequest', **kwargs) -> 'StaCategory':
+        """
+        Update a Speech & Text Analytics category by ID
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.put_speechandtextanalytics_category(category_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str category_id: The id of the category (required)
+        :param CategoryRequest body: The updated category (required)
+        :return: StaCategory
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['category_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method put_speechandtextanalytics_category" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'category_id' is set
+        if ('category_id' not in params) or (params['category_id'] is None):
+            raise ValueError("Missing the required parameter `category_id` when calling `put_speechandtextanalytics_category`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `put_speechandtextanalytics_category`")
+
+
+        resource_path = '/api/v2/speechandtextanalytics/categories/{categoryId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'category_id' in params:
+            path_params['categoryId'] = params['category_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='StaCategory',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

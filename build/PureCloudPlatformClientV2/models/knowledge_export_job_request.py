@@ -52,17 +52,20 @@ class KnowledgeExportJobRequest(object):
         self.swagger_types = {
             'export_filter': 'KnowledgeExportJobFilter',
             'file_type': 'str',
+            'source_id': 'str',
             'json_file_version': 'int'
         }
 
         self.attribute_map = {
             'export_filter': 'exportFilter',
             'file_type': 'fileType',
+            'source_id': 'sourceId',
             'json_file_version': 'jsonFileVersion'
         }
 
         self._export_filter = None
         self._file_type = None
+        self._source_id = None
         self._json_file_version = None
 
     @property
@@ -117,6 +120,30 @@ class KnowledgeExportJobRequest(object):
             self._file_type = "outdated_sdk_version"
         else:
             self._file_type = file_type
+
+    @property
+    def source_id(self) -> str:
+        """
+        Gets the source_id of this KnowledgeExportJobRequest.
+        Knowledge integration source id.
+
+        :return: The source_id of this KnowledgeExportJobRequest.
+        :rtype: str
+        """
+        return self._source_id
+
+    @source_id.setter
+    def source_id(self, source_id: str) -> None:
+        """
+        Sets the source_id of this KnowledgeExportJobRequest.
+        Knowledge integration source id.
+
+        :param source_id: The source_id of this KnowledgeExportJobRequest.
+        :type: str
+        """
+        
+
+        self._source_id = source_id
 
     @property
     def json_file_version(self) -> int:

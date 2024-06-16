@@ -1097,7 +1097,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **type** | **str**| Field type | <br />**Values**: person, group, org, externalContact |
+| **type** | **str**| Field type | <br />**Values**: person, group, org |
 {: class="table table-striped"}
 
 ### Return type

@@ -33,6 +33,7 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
+    from . import LabelUtilizationRequest
     from . import MediaUtilization
 
 class UtilizationRequest(object):
@@ -50,14 +51,17 @@ class UtilizationRequest(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'utilization': 'dict(str, MediaUtilization)'
+            'utilization': 'dict(str, MediaUtilization)',
+            'label_utilizations': 'dict(str, LabelUtilizationRequest)'
         }
 
         self.attribute_map = {
-            'utilization': 'utilization'
+            'utilization': 'utilization',
+            'label_utilizations': 'labelUtilizations'
         }
 
         self._utilization = None
+        self._label_utilizations = None
 
     @property
     def utilization(self) -> Dict[str, 'MediaUtilization']:
@@ -82,6 +86,30 @@ class UtilizationRequest(object):
         
 
         self._utilization = utilization
+
+    @property
+    def label_utilizations(self) -> Dict[str, 'LabelUtilizationRequest']:
+        """
+        Gets the label_utilizations of this UtilizationRequest.
+        Map of label ids to utilization settings.
+
+        :return: The label_utilizations of this UtilizationRequest.
+        :rtype: dict(str, LabelUtilizationRequest)
+        """
+        return self._label_utilizations
+
+    @label_utilizations.setter
+    def label_utilizations(self, label_utilizations: Dict[str, 'LabelUtilizationRequest']) -> None:
+        """
+        Sets the label_utilizations of this UtilizationRequest.
+        Map of label ids to utilization settings.
+
+        :param label_utilizations: The label_utilizations of this UtilizationRequest.
+        :type: dict(str, LabelUtilizationRequest)
+        """
+        
+
+        self._label_utilizations = label_utilizations
 
     def to_dict(self):
         """

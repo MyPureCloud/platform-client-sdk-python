@@ -34,6 +34,7 @@ from typing import Dict
 
 if TYPE_CHECKING:
     from . import AddressableEntityRef
+    from . import DashboardsSharedWith
     from . import Widget
 
 class DashboardConfiguration(object):
@@ -63,6 +64,8 @@ class DashboardConfiguration(object):
             'date_created': 'datetime',
             'date_modified': 'datetime',
             'created_by': 'AddressableEntityRef',
+            'shared': 'bool',
+            'dashboards_shared_with': 'DashboardsSharedWith',
             'self_uri': 'str'
         }
 
@@ -79,6 +82,8 @@ class DashboardConfiguration(object):
             'date_created': 'dateCreated',
             'date_modified': 'dateModified',
             'created_by': 'createdBy',
+            'shared': 'shared',
+            'dashboards_shared_with': 'dashboardsSharedWith',
             'self_uri': 'selfUri'
         }
 
@@ -94,6 +99,8 @@ class DashboardConfiguration(object):
         self._date_created = None
         self._date_modified = None
         self._created_by = None
+        self._shared = None
+        self._dashboards_shared_with = None
         self._self_uri = None
 
     @property
@@ -388,6 +395,54 @@ class DashboardConfiguration(object):
         
 
         self._created_by = created_by
+
+    @property
+    def shared(self) -> bool:
+        """
+        Gets the shared of this DashboardConfiguration.
+        The flag to indicate if the dashboard is shared
+
+        :return: The shared of this DashboardConfiguration.
+        :rtype: bool
+        """
+        return self._shared
+
+    @shared.setter
+    def shared(self, shared: bool) -> None:
+        """
+        Sets the shared of this DashboardConfiguration.
+        The flag to indicate if the dashboard is shared
+
+        :param shared: The shared of this DashboardConfiguration.
+        :type: bool
+        """
+        
+
+        self._shared = shared
+
+    @property
+    def dashboards_shared_with(self) -> 'DashboardsSharedWith':
+        """
+        Gets the dashboards_shared_with of this DashboardConfiguration.
+        The list of users and teams the dashboard is shared with
+
+        :return: The dashboards_shared_with of this DashboardConfiguration.
+        :rtype: DashboardsSharedWith
+        """
+        return self._dashboards_shared_with
+
+    @dashboards_shared_with.setter
+    def dashboards_shared_with(self, dashboards_shared_with: 'DashboardsSharedWith') -> None:
+        """
+        Sets the dashboards_shared_with of this DashboardConfiguration.
+        The list of users and teams the dashboard is shared with
+
+        :param dashboards_shared_with: The dashboards_shared_with of this DashboardConfiguration.
+        :type: DashboardsSharedWith
+        """
+        
+
+        self._dashboards_shared_with = dashboards_shared_with
 
     @property
     def self_uri(self) -> str:

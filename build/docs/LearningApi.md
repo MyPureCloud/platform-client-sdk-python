@@ -11,17 +11,21 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**delete_learning_assignment**](LearningApi.html#delete_learning_assignment) | Delete a learning assignment|
 |[**delete_learning_module**](LearningApi.html#delete_learning_module) | Delete a learning module|
 |[**get_learning_assignment**](LearningApi.html#get_learning_assignment) | Get Learning Assignment|
+|[**get_learning_assignment_step**](LearningApi.html#get_learning_assignment_step) | Get Learning Assignment Step|
 |[**get_learning_assignments**](LearningApi.html#get_learning_assignments) | List of Learning module Assignments|
 |[**get_learning_assignments_me**](LearningApi.html#get_learning_assignments_me) | List of Learning Assignments assigned to current user|
 |[**get_learning_module**](LearningApi.html#get_learning_module) | Get a learning module|
 |[**get_learning_module_job**](LearningApi.html#get_learning_module_job) | Get a specific Learning Module job status|
+|[**get_learning_module_preview**](LearningApi.html#get_learning_module_preview) | Get a learning module preview|
 |[**get_learning_module_rule**](LearningApi.html#get_learning_module_rule) | Get a learning module rule|
 |[**get_learning_module_version**](LearningApi.html#get_learning_module_version) | Get specific version of a published module|
 |[**get_learning_modules**](LearningApi.html#get_learning_modules) | Get all learning modules of an organization|
 |[**get_learning_modules_assignments**](LearningApi.html#get_learning_modules_assignments) | Get all learning modules of an organization including assignments for a specific user|
 |[**get_learning_modules_coverart_cover_art_id**](LearningApi.html#get_learning_modules_coverart_cover_art_id) | Get a specific Learning Module cover art using ID|
+|[**get_learning_scorm_scorm_id**](LearningApi.html#get_learning_scorm_scorm_id) | Get Learning SCORM Result|
 |[**patch_learning_assignment**](LearningApi.html#patch_learning_assignment) | Update Learning Assignment|
 |[**patch_learning_assignment_reschedule**](LearningApi.html#patch_learning_assignment_reschedule) | Reschedule Learning Assignment|
+|[**patch_learning_assignment_step**](LearningApi.html#patch_learning_assignment_step) | Update Learning Assignment Step|
 |[**patch_learning_module_user_assignments**](LearningApi.html#patch_learning_module_user_assignments) | Update an external assignment for a specific user|
 |[**post_learning_assessments_scoring**](LearningApi.html#post_learning_assessments_scoring) | Score learning assessment for preview|
 |[**post_learning_assignment_reassign**](LearningApi.html#post_learning_assignment_reassign) | Reassign Learning Assignment|
@@ -35,7 +39,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_learning_modules**](LearningApi.html#post_learning_modules) | Create a new learning module|
 |[**post_learning_rules_query**](LearningApi.html#post_learning_rules_query) | Get users for learning module rule|
 |[**post_learning_scheduleslots_query**](LearningApi.html#post_learning_scheduleslots_query) | Get list of possible slots where a learning activity can be scheduled.|
+|[**post_learning_scorm**](LearningApi.html#post_learning_scorm) | Create a SCORM package upload request|
 |[**put_learning_module**](LearningApi.html#put_learning_module) | Update a learning module|
+|[**put_learning_module_preview**](LearningApi.html#put_learning_module_preview) | Update a learning module preview|
 |[**put_learning_module_rule**](LearningApi.html#put_learning_module_rule) | Update a learning module rule|
 {: class="table table-striped"}
 
@@ -189,6 +195,63 @@ except ApiException as e:
 ### Return type
 
 [**LearningAssignment**](LearningAssignment.html)
+
+<a name="get_learning_assignment_step"></a>
+
+## [**LearningAssignmentStep**](LearningAssignmentStep.html) get_learning_assignment_step(assignment_id, step_id, shareable_content_object_id=shareable_content_object_id, expand=expand)
+
+
+
+Get Learning Assignment Step
+
+Permission not required if you are the assigned user of the learning assignment
+
+Wraps GET /api/v2/learning/assignments/{assignmentId}/steps/{stepId} 
+
+Requires ANY permissions: 
+
+* learning:assignment:viewOwn
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.LearningApi()
+assignment_id = 'assignment_id_example' # str | The ID of Learning Assignment
+step_id = 'step_id_example' # str | The ID of Learning Assignment Step
+shareable_content_object_id = 'shareable_content_object_id_example' # str | The ID of SCO to load (optional)
+expand = ['expand_example'] # list[str] | Fields to expand in response (optional)
+
+try:
+    # Get Learning Assignment Step
+    api_response = api_instance.get_learning_assignment_step(assignment_id, step_id, shareable_content_object_id=shareable_content_object_id, expand=expand)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling LearningApi->get_learning_assignment_step: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **assignment_id** | **str**| The ID of Learning Assignment |  |
+| **step_id** | **str**| The ID of Learning Assignment Step |  |
+| **shareable_content_object_id** | **str**| The ID of SCO to load | [optional]  |
+| **expand** | [**list[str]**](str.html)| Fields to expand in response | [optional] <br />**Values**: moduleStep |
+{: class="table table-striped"}
+
+### Return type
+
+[**LearningAssignmentStep**](LearningAssignmentStep.html)
 
 <a name="get_learning_assignments"></a>
 
@@ -444,6 +507,55 @@ except ApiException as e:
 ### Return type
 
 [**LearningModuleJobResponse**](LearningModuleJobResponse.html)
+
+<a name="get_learning_module_preview"></a>
+
+## [**LearningModulePreviewGetResponse**](LearningModulePreviewGetResponse.html) get_learning_module_preview(module_id)
+
+
+
+Get a learning module preview
+
+Wraps GET /api/v2/learning/modules/{moduleId}/preview 
+
+Requires ANY permissions: 
+
+* learning:module:preview
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.LearningApi()
+module_id = 'module_id_example' # str | The ID of the learning module
+
+try:
+    # Get a learning module preview
+    api_response = api_instance.get_learning_module_preview(module_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling LearningApi->get_learning_module_preview: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **module_id** | **str**| The ID of the learning module |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**LearningModulePreviewGetResponse**](LearningModulePreviewGetResponse.html)
 
 <a name="get_learning_module_rule"></a>
 
@@ -727,6 +839,55 @@ except ApiException as e:
 
 [**LearningModuleCoverArtResponse**](LearningModuleCoverArtResponse.html)
 
+<a name="get_learning_scorm_scorm_id"></a>
+
+## [**LearningScormResponse**](LearningScormResponse.html) get_learning_scorm_scorm_id(scorm_id)
+
+
+
+Get Learning SCORM Result
+
+Wraps GET /api/v2/learning/scorm/{scormId} 
+
+Requires ANY permissions: 
+
+* learning:scorm:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.LearningApi()
+scorm_id = 'scorm_id_example' # str | The ID of the SCORM package
+
+try:
+    # Get Learning SCORM Result
+    api_response = api_instance.get_learning_scorm_scorm_id(scorm_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling LearningApi->get_learning_scorm_scorm_id: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **scorm_id** | **str**| The ID of the SCORM package |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**LearningScormResponse**](LearningScormResponse.html)
+
 <a name="patch_learning_assignment"></a>
 
 ## [**LearningAssignment**](LearningAssignment.html) patch_learning_assignment(assignment_id, body=body)
@@ -827,6 +988,61 @@ except ApiException as e:
 ### Return type
 
 [**LearningAssignment**](LearningAssignment.html)
+
+<a name="patch_learning_assignment_step"></a>
+
+## [**LearningAssignmentStep**](LearningAssignmentStep.html) patch_learning_assignment_step(assignment_id, step_id, body=body)
+
+
+
+Update Learning Assignment Step
+
+Permission not required if you are the assigned user of the learning assignment
+
+Wraps PATCH /api/v2/learning/assignments/{assignmentId}/steps/{stepId} 
+
+Requires ANY permissions: 
+
+* learning:assignment:editOwn
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.LearningApi()
+assignment_id = 'assignment_id_example' # str | The ID of Learning Assignment
+step_id = 'step_id_example' # str | The ID of Learning Assignment Step
+body = PureCloudPlatformClientV2.LearningAssignmentStep() # LearningAssignmentStep | The Learning Assignment Step to be updated (optional)
+
+try:
+    # Update Learning Assignment Step
+    api_response = api_instance.patch_learning_assignment_step(assignment_id, step_id, body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling LearningApi->patch_learning_assignment_step: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **assignment_id** | **str**| The ID of Learning Assignment |  |
+| **step_id** | **str**| The ID of Learning Assignment Step |  |
+| **body** | [**LearningAssignmentStep**](LearningAssignmentStep.html)| The Learning Assignment Step to be updated | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**LearningAssignmentStep**](LearningAssignmentStep.html)
 
 <a name="patch_learning_module_user_assignments"></a>
 
@@ -1489,6 +1705,55 @@ except ApiException as e:
 
 [**LearningScheduleSlotsQueryResponse**](LearningScheduleSlotsQueryResponse.html)
 
+<a name="post_learning_scorm"></a>
+
+## [**LearningScormUploadResponse**](LearningScormUploadResponse.html) post_learning_scorm(body=body)
+
+
+
+Create a SCORM package upload request
+
+Wraps POST /api/v2/learning/scorm 
+
+Requires ANY permissions: 
+
+* learning:scorm:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.LearningApi()
+body = PureCloudPlatformClientV2.LearningScormUploadRequest() # LearningScormUploadRequest | The SCORM package to be uploaded (optional)
+
+try:
+    # Create a SCORM package upload request
+    api_response = api_instance.post_learning_scorm(body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling LearningApi->post_learning_scorm: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**LearningScormUploadRequest**](LearningScormUploadRequest.html)| The SCORM package to be uploaded | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**LearningScormUploadResponse**](LearningScormUploadResponse.html)
+
 <a name="put_learning_module"></a>
 
 ## [**LearningModule**](LearningModule.html) put_learning_module(module_id, body)
@@ -1541,6 +1806,59 @@ except ApiException as e:
 ### Return type
 
 [**LearningModule**](LearningModule.html)
+
+<a name="put_learning_module_preview"></a>
+
+## [**LearningModulePreviewUpdateResponse**](LearningModulePreviewUpdateResponse.html) put_learning_module_preview(module_id, body)
+
+
+
+Update a learning module preview
+
+This will update a learning module preview
+
+Wraps PUT /api/v2/learning/modules/{moduleId}/preview 
+
+Requires ANY permissions: 
+
+* learning:module:preview
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.LearningApi()
+module_id = 'module_id_example' # str | The ID of the learning module
+body = PureCloudPlatformClientV2.LearningModulePreviewUpdateRequest() # LearningModulePreviewUpdateRequest | The learning module to be updated
+
+try:
+    # Update a learning module preview
+    api_response = api_instance.put_learning_module_preview(module_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling LearningApi->put_learning_module_preview: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **module_id** | **str**| The ID of the learning module |  |
+| **body** | [**LearningModulePreviewUpdateRequest**](LearningModulePreviewUpdateRequest.html)| The learning module to be updated |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**LearningModulePreviewUpdateResponse**](LearningModulePreviewUpdateResponse.html)
 
 <a name="put_learning_module_rule"></a>
 

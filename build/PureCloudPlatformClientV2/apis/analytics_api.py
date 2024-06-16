@@ -42,6 +42,10 @@ from ..models import ActionAggregateQueryResponse
 from ..models import ActionAggregationQuery
 from ..models import ActionAsyncAggregateQueryResponse
 from ..models import ActionAsyncAggregationQuery
+from ..models import AgentCopilotAggregateQueryResponse
+from ..models import AgentCopilotAggregationQuery
+from ..models import AgentCopilotAsyncAggregateQueryResponse
+from ..models import AgentCopilotAsyncAggregationQuery
 from ..models import AnalyticsConversationAsyncQueryResponse
 from ..models import AnalyticsConversationQueryResponse
 from ..models import AnalyticsConversationWithoutAttributes
@@ -466,6 +470,167 @@ class AnalyticsApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='ActionAsyncAggregateQueryResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_analytics_agentcopilots_aggregates_job(self, job_id: str, **kwargs) -> 'AsyncQueryStatus':
+        """
+        Get status for async query for agent copilot aggregates
+        
+	    get_analytics_agentcopilots_aggregates_job is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_analytics_agentcopilots_aggregates_job(job_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str job_id: jobId (required)
+        :return: AsyncQueryStatus
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['job_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_analytics_agentcopilots_aggregates_job" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'job_id' is set
+        if ('job_id' not in params) or (params['job_id'] is None):
+            raise ValueError("Missing the required parameter `job_id` when calling `get_analytics_agentcopilots_aggregates_job`")
+
+
+        resource_path = '/api/v2/analytics/agentcopilots/aggregates/jobs/{jobId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'job_id' in params:
+            path_params['jobId'] = params['job_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='AsyncQueryStatus',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_analytics_agentcopilots_aggregates_job_results(self, job_id: str, **kwargs) -> 'AgentCopilotAsyncAggregateQueryResponse':
+        """
+        Fetch a page of results for an async aggregates query
+        
+	    get_analytics_agentcopilots_aggregates_job_results is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_analytics_agentcopilots_aggregates_job_results(job_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str job_id: jobId (required)
+        :param str cursor: Cursor token to retrieve next page
+        :return: AgentCopilotAsyncAggregateQueryResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['job_id', 'cursor']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_analytics_agentcopilots_aggregates_job_results" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'job_id' is set
+        if ('job_id' not in params) or (params['job_id'] is None):
+            raise ValueError("Missing the required parameter `job_id` when calling `get_analytics_agentcopilots_aggregates_job_results`")
+
+
+        resource_path = '/api/v2/analytics/agentcopilots/aggregates/jobs/{jobId}/results'.replace('{format}', 'json')
+        path_params = {}
+        if 'job_id' in params:
+            path_params['jobId'] = params['job_id']
+
+        query_params = {}
+        if 'cursor' in params:
+            query_params['cursor'] = params['cursor']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='AgentCopilotAsyncAggregateQueryResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -2735,6 +2900,99 @@ class AnalyticsApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def get_analytics_reporting_settings_dashboards_query(self, dashboard_type: str, dashboard_access_filter: str, **kwargs) -> 'DashboardConfigurationListing':
+        """
+        Get list of dashboard configurations
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_analytics_reporting_settings_dashboards_query(dashboard_type, dashboard_access_filter, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str dashboard_type: List dashboard of given type (required)
+        :param str dashboard_access_filter: Filter dashboard based on the owner of dashboard (required)
+        :param str sort_by: 
+        :param int page_number: 
+        :param int page_size: 
+        :return: DashboardConfigurationListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['dashboard_type', 'dashboard_access_filter', 'sort_by', 'page_number', 'page_size']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_analytics_reporting_settings_dashboards_query" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'dashboard_type' is set
+        if ('dashboard_type' not in params) or (params['dashboard_type'] is None):
+            raise ValueError("Missing the required parameter `dashboard_type` when calling `get_analytics_reporting_settings_dashboards_query`")
+        # verify the required parameter 'dashboard_access_filter' is set
+        if ('dashboard_access_filter' not in params) or (params['dashboard_access_filter'] is None):
+            raise ValueError("Missing the required parameter `dashboard_access_filter` when calling `get_analytics_reporting_settings_dashboards_query`")
+
+
+        resource_path = '/api/v2/analytics/reporting/settings/dashboards/query'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'dashboard_type' in params:
+            query_params['dashboardType'] = params['dashboard_type']
+        if 'dashboard_access_filter' in params:
+            query_params['dashboardAccessFilter'] = params['dashboard_access_filter']
+        if 'sort_by' in params:
+            query_params['sortBy'] = params['sort_by']
+        if 'page_number' in params:
+            query_params['pageNumber'] = params['page_number']
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='DashboardConfigurationListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def get_analytics_reporting_settings_user_dashboards(self, user_id: str, **kwargs) -> 'DashboardConfigurationListing':
         """
         Get list of dashboards for an user
@@ -4101,6 +4359,164 @@ class AnalyticsApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='ActionAggregateQueryResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_analytics_agentcopilots_aggregates_jobs(self, body: 'AgentCopilotAsyncAggregationQuery', **kwargs) -> 'AsyncQueryResponse':
+        """
+        Query for agent copilot aggregates asynchronously
+        
+	    post_analytics_agentcopilots_aggregates_jobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_analytics_agentcopilots_aggregates_jobs(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param AgentCopilotAsyncAggregationQuery body: query (required)
+        :return: AsyncQueryResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_analytics_agentcopilots_aggregates_jobs" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_analytics_agentcopilots_aggregates_jobs`")
+
+
+        resource_path = '/api/v2/analytics/agentcopilots/aggregates/jobs'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='AsyncQueryResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_analytics_agentcopilots_aggregates_query(self, body: 'AgentCopilotAggregationQuery', **kwargs) -> 'AgentCopilotAggregateQueryResponse':
+        """
+        Query for agent copilot aggregates
+        
+	    post_analytics_agentcopilots_aggregates_query is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_analytics_agentcopilots_aggregates_query(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param AgentCopilotAggregationQuery body: query (required)
+        :return: AgentCopilotAggregateQueryResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_analytics_agentcopilots_aggregates_query" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_analytics_agentcopilots_aggregates_query`")
+
+
+        resource_path = '/api/v2/analytics/agentcopilots/aggregates/query'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='AgentCopilotAggregateQueryResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -5848,8 +6264,8 @@ class AnalyticsApi(object):
 
     def post_analytics_ratelimits_aggregates_query(self, body: 'RateLimitAggregationQuery', **kwargs) -> 'RateLimitAggregateQueryResponse':
         """
-        Query for limits rate limit aggregates. Data populated when limits are exceeded or are close to being exceeded
-        
+        Query for limits rate limit aggregates. Data populated when limits are exceeded or are close to being exceeded. Not a source of truth for limits hit but a best effort estimate.
+        The 'max' property can be used to determine estimated rate limit value hit.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

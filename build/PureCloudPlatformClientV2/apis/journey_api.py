@@ -47,7 +47,6 @@ from ..models import ActionTarget
 from ..models import ActionTargetListing
 from ..models import ActionTemplate
 from ..models import ActionTemplateListing
-from ..models import AddressableEntityListing
 from ..models import AppEventRequest
 from ..models import AppEventResponse
 from ..models import AsyncQueryResponse
@@ -69,6 +68,7 @@ from ..models import JourneySegment
 from ..models import JourneySegmentRequest
 from ..models import JourneyView
 from ..models import JourneyViewJob
+from ..models import JourneyViewListing
 from ..models import JourneyViewResult
 from ..models import Label
 from ..models import Outcome
@@ -2902,7 +2902,7 @@ class JourneyApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def get_journey_views(self, **kwargs) -> 'AddressableEntityListing':
+    def get_journey_views(self, **kwargs) -> 'JourneyViewListing':
         """
         Get a list of Journey Views
         
@@ -2918,7 +2918,7 @@ class JourneyApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :return: AddressableEntityListing
+        :return: JourneyViewListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -2970,7 +2970,7 @@ class JourneyApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='AddressableEntityListing',
+                                            response_type='JourneyViewListing',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

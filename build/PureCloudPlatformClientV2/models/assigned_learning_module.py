@@ -40,6 +40,7 @@ if TYPE_CHECKING:
     from . import LearningModuleReassignSummary
     from . import LearningModuleRule
     from . import LearningModuleSummary
+    from . import ReviewAssessmentResults
     from . import UserReference
 
 class AssignedLearningModule(object):
@@ -68,6 +69,8 @@ class AssignedLearningModule(object):
             'external_id': 'str',
             'source': 'str',
             'rule': 'LearningModuleRule',
+            'enforce_content_order': 'bool',
+            'review_assessment_results': 'ReviewAssessmentResults',
             'current_assignments': 'list[LearningAssignment]',
             'self_uri': 'str',
             'is_archived': 'bool',
@@ -96,6 +99,8 @@ class AssignedLearningModule(object):
             'external_id': 'externalId',
             'source': 'source',
             'rule': 'rule',
+            'enforce_content_order': 'enforceContentOrder',
+            'review_assessment_results': 'reviewAssessmentResults',
             'current_assignments': 'currentAssignments',
             'self_uri': 'selfUri',
             'is_archived': 'isArchived',
@@ -123,6 +128,8 @@ class AssignedLearningModule(object):
         self._external_id = None
         self._source = None
         self._rule = None
+        self._enforce_content_order = None
+        self._review_assessment_results = None
         self._current_assignments = None
         self._self_uri = None
         self._is_archived = None
@@ -406,6 +413,54 @@ class AssignedLearningModule(object):
         
 
         self._rule = rule
+
+    @property
+    def enforce_content_order(self) -> bool:
+        """
+        Gets the enforce_content_order of this AssignedLearningModule.
+        If true, learning module content should be viewed one by one in order
+
+        :return: The enforce_content_order of this AssignedLearningModule.
+        :rtype: bool
+        """
+        return self._enforce_content_order
+
+    @enforce_content_order.setter
+    def enforce_content_order(self, enforce_content_order: bool) -> None:
+        """
+        Sets the enforce_content_order of this AssignedLearningModule.
+        If true, learning module content should be viewed one by one in order
+
+        :param enforce_content_order: The enforce_content_order of this AssignedLearningModule.
+        :type: bool
+        """
+        
+
+        self._enforce_content_order = enforce_content_order
+
+    @property
+    def review_assessment_results(self) -> 'ReviewAssessmentResults':
+        """
+        Gets the review_assessment_results of this AssignedLearningModule.
+        Allows to view Assessment results in detail
+
+        :return: The review_assessment_results of this AssignedLearningModule.
+        :rtype: ReviewAssessmentResults
+        """
+        return self._review_assessment_results
+
+    @review_assessment_results.setter
+    def review_assessment_results(self, review_assessment_results: 'ReviewAssessmentResults') -> None:
+        """
+        Sets the review_assessment_results of this AssignedLearningModule.
+        Allows to view Assessment results in detail
+
+        :param review_assessment_results: The review_assessment_results of this AssignedLearningModule.
+        :type: ReviewAssessmentResults
+        """
+        
+
+        self._review_assessment_results = review_assessment_results
 
     @property
     def current_assignments(self) -> List['LearningAssignment']:

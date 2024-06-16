@@ -33,6 +33,7 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
+    from . import LabelUtilizationResponse
     from . import MediaUtilization
 
 class AgentMaxUtilizationResponse(object):
@@ -51,15 +52,18 @@ class AgentMaxUtilizationResponse(object):
         """
         self.swagger_types = {
             'utilization': 'dict(str, MediaUtilization)',
+            'label_utilizations': 'dict(str, LabelUtilizationResponse)',
             'level': 'str'
         }
 
         self.attribute_map = {
             'utilization': 'utilization',
+            'label_utilizations': 'labelUtilizations',
             'level': 'level'
         }
 
         self._utilization = None
+        self._label_utilizations = None
         self._level = None
 
     @property
@@ -85,6 +89,30 @@ class AgentMaxUtilizationResponse(object):
         
 
         self._utilization = utilization
+
+    @property
+    def label_utilizations(self) -> Dict[str, 'LabelUtilizationResponse']:
+        """
+        Gets the label_utilizations of this AgentMaxUtilizationResponse.
+        Map of label ids to utilization settings.
+
+        :return: The label_utilizations of this AgentMaxUtilizationResponse.
+        :rtype: dict(str, LabelUtilizationResponse)
+        """
+        return self._label_utilizations
+
+    @label_utilizations.setter
+    def label_utilizations(self, label_utilizations: Dict[str, 'LabelUtilizationResponse']) -> None:
+        """
+        Sets the label_utilizations of this AgentMaxUtilizationResponse.
+        Map of label ids to utilization settings.
+
+        :param label_utilizations: The label_utilizations of this AgentMaxUtilizationResponse.
+        :type: dict(str, LabelUtilizationResponse)
+        """
+        
+
+        self._label_utilizations = label_utilizations
 
     @property
     def level(self) -> str:

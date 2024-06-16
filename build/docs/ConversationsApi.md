@@ -94,7 +94,6 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_conversations_messaging_setting**](ConversationsApi.html#get_conversations_messaging_setting) | Get a messaging setting|
 |[**get_conversations_messaging_settings**](ConversationsApi.html#get_conversations_messaging_settings) | Get a list of messaging settings|
 |[**get_conversations_messaging_settings_default**](ConversationsApi.html#get_conversations_messaging_settings_default) | Get the organization&#39;s default settings that will be used as the default when creating an integration.|
-|[**get_conversations_messaging_sticker**](ConversationsApi.html#get_conversations_messaging_sticker) | Get a list of Messaging Stickers (Deprecated)|
 |[**get_conversations_messaging_supportedcontent**](ConversationsApi.html#get_conversations_messaging_supportedcontent) | Get a list of Supported Content profiles|
 |[**get_conversations_messaging_supportedcontent_default**](ConversationsApi.html#get_conversations_messaging_supportedcontent_default) | Get the organization&#39;s default supported content profile that will be used as the default when creating an integration.|
 |[**get_conversations_messaging_supportedcontent_supported_content_id**](ConversationsApi.html#get_conversations_messaging_supportedcontent_supported_content_id) | Get a supported content profile|
@@ -192,6 +191,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_conversations_email_messages_draft_attachments_copy**](ConversationsApi.html#post_conversations_email_messages_draft_attachments_copy) | Copy attachments from an email message to the current draft.|
 |[**post_conversations_email_participant_communication_wrapup**](ConversationsApi.html#post_conversations_email_participant_communication_wrapup) | Apply wrap-up for this conversation communication|
 |[**post_conversations_email_participant_replace**](ConversationsApi.html#post_conversations_email_participant_replace) | Replace this participant with the specified user and/or address|
+|[**post_conversations_email_reconnect**](ConversationsApi.html#post_conversations_email_reconnect) | Reconnect the user to the most recently disconnected customer on a fully disconnected email conversation|
 |[**post_conversations_emails**](ConversationsApi.html#post_conversations_emails) | Create an email conversation|
 |[**post_conversations_emails_agentless**](ConversationsApi.html#post_conversations_emails_agentless) | Create an email conversation, per API|
 |[**post_conversations_faxes**](ConversationsApi.html#post_conversations_faxes) | Create Fax Conversation|
@@ -4562,61 +4562,6 @@ This endpoint does not need any parameters.
 ### Return type
 
 [**MessagingSetting**](MessagingSetting.html)
-
-<a name="get_conversations_messaging_sticker"></a>
-
-## [**MessagingStickerEntityListing**](MessagingStickerEntityListing.html) get_conversations_messaging_sticker(messenger_type, page_size=page_size, page_number=page_number)
-
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
-
-Get a list of Messaging Stickers (Deprecated)
-
-This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-native-line-third-party-messaging-channel/
-
-Wraps GET /api/v2/conversations/messaging/stickers/{messengerType} 
-
-Requires ALL permissions: 
-
-* conversation:message:create
-
-### Example
-
-```{"language":"python"}
-import time
-import PureCloudPlatformClientV2
-from PureCloudPlatformClientV2.rest import ApiException
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: PureCloud OAuth
-PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = PureCloudPlatformClientV2.ConversationsApi()
-messenger_type = 'messenger_type_example' # str | Messenger Type
-page_size = 25 # int | Page size (optional) (default to 25)
-page_number = 1 # int | Page number (optional) (default to 1)
-
-try:
-    # Get a list of Messaging Stickers (Deprecated)
-    api_response = api_instance.get_conversations_messaging_sticker(messenger_type, page_size=page_size, page_number=page_number)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ConversationsApi->get_conversations_messaging_sticker: %s\n" % e)
-```
-
-### Parameters
-
-
-|Name | Type | Description  | Notes|
-|------------- | ------------- | ------------- | -------------|
-| **messenger_type** | **str**| Messenger Type | <br />**Values**: line |
-| **page_size** | **int**| Page size | [optional] [default to 25] |
-| **page_number** | **int**| Page number | [optional] [default to 1] |
-{: class="table table-striped"}
-
-### Return type
-
-[**MessagingStickerEntityListing**](MessagingStickerEntityListing.html)
 
 <a name="get_conversations_messaging_supportedcontent"></a>
 
@@ -9635,6 +9580,54 @@ except ApiException as e:
 | **conversation_id** | **str**| conversationId |  |
 | **participant_id** | **str**| participantId |  |
 | **body** | [**TransferRequest**](TransferRequest.html)| Transfer request |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
+
+<a name="post_conversations_email_reconnect"></a>
+
+##  post_conversations_email_reconnect(conversation_id)
+
+
+
+Reconnect the user to the most recently disconnected customer on a fully disconnected email conversation
+
+Wraps POST /api/v2/conversations/emails/{conversationId}/reconnect 
+
+Requires ANY permissions: 
+
+* conversation:communication:reconnect
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+conversation_id = 'conversation_id_example' # str | conversationId
+
+try:
+    # Reconnect the user to the most recently disconnected customer on a fully disconnected email conversation
+    api_instance.post_conversations_email_reconnect(conversation_id)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->post_conversations_email_reconnect: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversation_id** | **str**| conversationId |  |
 {: class="table table-striped"}
 
 ### Return type

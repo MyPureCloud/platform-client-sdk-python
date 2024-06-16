@@ -3667,12 +3667,13 @@ class KnowledgeApi(object):
         :param list[str] type: If specified, retrieves operations with specified operation type, comma separated values expected.
         :param list[str] status: If specified, retrieves operations with specified operation status, comma separated values expected.
         :param str interval: Retrieves the operations modified in specified date and time range. If the after and before cursor parameters are within this interval, it would return valid data, otherwise it throws an error.The dates in the interval are represented in ISO-8601 format: YYYY-MM-DDThh:mm:ssZ/YYYY-MM-DDThh:mm:ssZ
+        :param list[str] source_id: If specified, retrieves operations associated with source ids, comma separated values expected.
         :return: OperationListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['knowledge_base_id', 'before', 'after', 'page_size', 'user_id', 'type', 'status', 'interval']
+        all_params = ['knowledge_base_id', 'before', 'after', 'page_size', 'user_id', 'type', 'status', 'interval', 'source_id']
         all_params.append('callback')
 
         params = locals()
@@ -3710,6 +3711,8 @@ class KnowledgeApi(object):
             query_params['status'] = params['status']
         if 'interval' in params:
             query_params['interval'] = params['interval']
+        if 'source_id' in params:
+            query_params['sourceId'] = params['source_id']
 
         header_params = {}
 

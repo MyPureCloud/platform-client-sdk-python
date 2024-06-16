@@ -80,6 +80,8 @@ class AnalyticsSession(object):
             'delivery_status': 'str',
             'delivery_status_change_date': 'datetime',
             'destination_addresses': 'list[str]',
+            'detected_speech_end': 'datetime',
+            'detected_speech_start': 'datetime',
             'direction': 'str',
             'disposition_analyzer': 'str',
             'disposition_name': 'str',
@@ -164,6 +166,8 @@ class AnalyticsSession(object):
             'delivery_status': 'deliveryStatus',
             'delivery_status_change_date': 'deliveryStatusChangeDate',
             'destination_addresses': 'destinationAddresses',
+            'detected_speech_end': 'detectedSpeechEnd',
+            'detected_speech_start': 'detectedSpeechStart',
             'direction': 'direction',
             'disposition_analyzer': 'dispositionAnalyzer',
             'disposition_name': 'dispositionName',
@@ -247,6 +251,8 @@ class AnalyticsSession(object):
         self._delivery_status = None
         self._delivery_status_change_date = None
         self._destination_addresses = None
+        self._detected_speech_end = None
+        self._detected_speech_start = None
         self._direction = None
         self._disposition_analyzer = None
         self._disposition_name = None
@@ -908,6 +914,54 @@ class AnalyticsSession(object):
         
 
         self._destination_addresses = destination_addresses
+
+    @property
+    def detected_speech_end(self) -> datetime:
+        """
+        Gets the detected_speech_end of this AnalyticsSession.
+        Absolute time when the speech ended. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :return: The detected_speech_end of this AnalyticsSession.
+        :rtype: datetime
+        """
+        return self._detected_speech_end
+
+    @detected_speech_end.setter
+    def detected_speech_end(self, detected_speech_end: datetime) -> None:
+        """
+        Sets the detected_speech_end of this AnalyticsSession.
+        Absolute time when the speech ended. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :param detected_speech_end: The detected_speech_end of this AnalyticsSession.
+        :type: datetime
+        """
+        
+
+        self._detected_speech_end = detected_speech_end
+
+    @property
+    def detected_speech_start(self) -> datetime:
+        """
+        Gets the detected_speech_start of this AnalyticsSession.
+        Absolute time when the speech started. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :return: The detected_speech_start of this AnalyticsSession.
+        :rtype: datetime
+        """
+        return self._detected_speech_start
+
+    @detected_speech_start.setter
+    def detected_speech_start(self, detected_speech_start: datetime) -> None:
+        """
+        Sets the detected_speech_start of this AnalyticsSession.
+        Absolute time when the speech started. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :param detected_speech_start: The detected_speech_start of this AnalyticsSession.
+        :type: datetime
+        """
+        
+
+        self._detected_speech_start = detected_speech_start
 
     @property
     def direction(self) -> str:

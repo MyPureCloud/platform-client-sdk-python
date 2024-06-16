@@ -18,6 +18,8 @@ title: LearningModule
 | **external_id** | **str** | The external ID of the learning module | [optional] |
 | **source** | **str** | The source of the learning module | [optional] |
 | **rule** | [**LearningModuleRule**](LearningModuleRule.html) | The rule for learning module; read-only, and only populated when requested via expand param. | [optional] |
+| **enforce_content_order** | **bool** | If true, learning module content should be viewed one by one in order | [optional] |
+| **review_assessment_results** | [**ReviewAssessmentResults**](ReviewAssessmentResults.html) | Allows to view Assessment results in detail | [optional] |
 | **self_uri** | **str** | The URI for this object | [optional] |
 | **is_archived** | **bool** | If true, learning module is archived | [optional] |
 | **is_published** | **bool** | If true, learning module is published | [optional] |

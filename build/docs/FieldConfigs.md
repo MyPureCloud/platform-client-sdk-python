@@ -10,7 +10,6 @@ title: FieldConfigs
 | **org** | [**FieldConfig**](FieldConfig.html) |  | [optional] |
 | **person** | [**FieldConfig**](FieldConfig.html) |  | [optional] |
 | **group** | [**FieldConfig**](FieldConfig.html) |  | [optional] |
-| **external_contact** | [**FieldConfig**](FieldConfig.html) |  | [optional] |
 {: class="table table-striped"}
 
 

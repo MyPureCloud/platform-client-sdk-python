@@ -340,7 +340,7 @@ class AppEventRequest(object):
     def customer_cookie_id(self) -> str:
         """
         Gets the customer_cookie_id of this AppEventRequest.
-        Cookie ID of the customer associated with the app event. This is expected to be set per application install or device and can be used to identify a single customer across multiple sessions. This identifier, along with others passed as traits, is used for identity resolution.
+        A UUID representing the customer associated with the app event. This is expected to be set per application install or device and can be used to identify a single customer across multiple sessions. This identifier, along with others passed as traits, is used for identity resolution.
 
         :return: The customer_cookie_id of this AppEventRequest.
         :rtype: str
@@ -351,7 +351,7 @@ class AppEventRequest(object):
     def customer_cookie_id(self, customer_cookie_id: str) -> None:
         """
         Sets the customer_cookie_id of this AppEventRequest.
-        Cookie ID of the customer associated with the app event. This is expected to be set per application install or device and can be used to identify a single customer across multiple sessions. This identifier, along with others passed as traits, is used for identity resolution.
+        A UUID representing the customer associated with the app event. This is expected to be set per application install or device and can be used to identify a single customer across multiple sessions. This identifier, along with others passed as traits, is used for identity resolution.
 
         :param customer_cookie_id: The customer_cookie_id of this AppEventRequest.
         :type: str

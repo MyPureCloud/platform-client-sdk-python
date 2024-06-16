@@ -48,13 +48,65 @@ class ReviewAssessmentResults(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            
+            'by_assignees': 'bool',
+            'by_viewers': 'bool'
         }
 
         self.attribute_map = {
-            
+            'by_assignees': 'byAssignees',
+            'by_viewers': 'byViewers'
         }
 
+        self._by_assignees = None
+        self._by_viewers = None
+
+    @property
+    def by_assignees(self) -> bool:
+        """
+        Gets the by_assignees of this ReviewAssessmentResults.
+        If true, learning assignment results can be seen in detail by assignees
+
+        :return: The by_assignees of this ReviewAssessmentResults.
+        :rtype: bool
+        """
+        return self._by_assignees
+
+    @by_assignees.setter
+    def by_assignees(self, by_assignees: bool) -> None:
+        """
+        Sets the by_assignees of this ReviewAssessmentResults.
+        If true, learning assignment results can be seen in detail by assignees
+
+        :param by_assignees: The by_assignees of this ReviewAssessmentResults.
+        :type: bool
+        """
+        
+
+        self._by_assignees = by_assignees
+
+    @property
+    def by_viewers(self) -> bool:
+        """
+        Gets the by_viewers of this ReviewAssessmentResults.
+        If true, learning assignment results can be seen in detail by people who are eligible to view
+
+        :return: The by_viewers of this ReviewAssessmentResults.
+        :rtype: bool
+        """
+        return self._by_viewers
+
+    @by_viewers.setter
+    def by_viewers(self, by_viewers: bool) -> None:
+        """
+        Sets the by_viewers of this ReviewAssessmentResults.
+        If true, learning assignment results can be seen in detail by people who are eligible to view
+
+        :param by_viewers: The by_viewers of this ReviewAssessmentResults.
+        :type: bool
+        """
+        
+
+        self._by_viewers = by_viewers
 
     def to_dict(self):
         """

@@ -33,6 +33,7 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
+    from . import KnowledgeOperationSource
     from . import UserReference
 
 class OperationResponse(object):
@@ -56,6 +57,7 @@ class OperationResponse(object):
             'created_by': 'UserReference',
             'date_created': 'datetime',
             'date_modified': 'datetime',
+            'source': 'KnowledgeOperationSource',
             'self_uri': 'str'
         }
 
@@ -66,6 +68,7 @@ class OperationResponse(object):
             'created_by': 'createdBy',
             'date_created': 'dateCreated',
             'date_modified': 'dateModified',
+            'source': 'source',
             'self_uri': 'selfUri'
         }
 
@@ -75,6 +78,7 @@ class OperationResponse(object):
         self._created_by = None
         self._date_created = None
         self._date_modified = None
+        self._source = None
         self._self_uri = None
 
     @property
@@ -225,6 +229,30 @@ class OperationResponse(object):
         
 
         self._date_modified = date_modified
+
+    @property
+    def source(self) -> 'KnowledgeOperationSource':
+        """
+        Gets the source of this OperationResponse.
+        Source of the operation.
+
+        :return: The source of this OperationResponse.
+        :rtype: KnowledgeOperationSource
+        """
+        return self._source
+
+    @source.setter
+    def source(self, source: 'KnowledgeOperationSource') -> None:
+        """
+        Sets the source of this OperationResponse.
+        Source of the operation.
+
+        :param source: The source of this OperationResponse.
+        :type: KnowledgeOperationSource
+        """
+        
+
+        self._source = source
 
     @property
     def self_uri(self) -> str:

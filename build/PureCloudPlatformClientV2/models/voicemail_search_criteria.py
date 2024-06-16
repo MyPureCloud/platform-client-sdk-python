@@ -300,7 +300,7 @@ class VoicemailSearchCriteria(object):
         """
         if isinstance(type, int):
             type = str(type)
-        allowed_values = ["EXACT", "STARTS_WITH", "CONTAINS", "REGEX", "TERM", "TERMS", "REQUIRED_FIELDS", "MATCH_ALL"]
+        allowed_values = ["EXACT", "STARTS_WITH", "CONTAINS", "REGEX", "TERM", "TERMS", "REQUIRED_FIELDS", "MATCH_ALL", "DATE_RANGE"]
         if type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for type -> " + type)
             self._type = "outdated_sdk_version"

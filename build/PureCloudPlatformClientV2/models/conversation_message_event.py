@@ -36,6 +36,7 @@ if TYPE_CHECKING:
     from . import ConversationEventCoBrowse
     from . import ConversationEventPresence
     from . import ConversationEventTyping
+    from . import ConversationEventVideo
 
 class ConversationMessageEvent(object):
     """
@@ -55,20 +56,23 @@ class ConversationMessageEvent(object):
             'event_type': 'str',
             'co_browse': 'ConversationEventCoBrowse',
             'typing': 'ConversationEventTyping',
-            'presence': 'ConversationEventPresence'
+            'presence': 'ConversationEventPresence',
+            'video': 'ConversationEventVideo'
         }
 
         self.attribute_map = {
             'event_type': 'eventType',
             'co_browse': 'coBrowse',
             'typing': 'typing',
-            'presence': 'presence'
+            'presence': 'presence',
+            'video': 'video'
         }
 
         self._event_type = None
         self._co_browse = None
         self._typing = None
         self._presence = None
+        self._video = None
 
     @property
     def event_type(self) -> str:
@@ -92,7 +96,7 @@ class ConversationMessageEvent(object):
         """
         if isinstance(event_type, int):
             event_type = str(event_type)
-        allowed_values = ["CoBrowse", "Typing", "Presence", "Unknown"]
+        allowed_values = ["CoBrowse", "Typing", "Presence", "Video", "Unknown"]
         if event_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for event_type -> " + event_type)
             self._event_type = "outdated_sdk_version"
@@ -170,6 +174,30 @@ class ConversationMessageEvent(object):
         
 
         self._presence = presence
+
+    @property
+    def video(self) -> 'ConversationEventVideo':
+        """
+        Gets the video of this ConversationMessageEvent.
+        Video event.
+
+        :return: The video of this ConversationMessageEvent.
+        :rtype: ConversationEventVideo
+        """
+        return self._video
+
+    @video.setter
+    def video(self, video: 'ConversationEventVideo') -> None:
+        """
+        Sets the video of this ConversationMessageEvent.
+        Video event.
+
+        :param video: The video of this ConversationMessageEvent.
+        :type: ConversationEventVideo
+        """
+        
+
+        self._video = video
 
     def to_dict(self):
         """

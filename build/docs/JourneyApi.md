@@ -1843,7 +1843,7 @@ except ApiException as e:
 
 <a name="get_journey_views"></a>
 
-## [**AddressableEntityListing**](AddressableEntityListing.html) get_journey_views()
+## [**JourneyViewListing**](JourneyViewListing.html) get_journey_views()
 
 
 
@@ -1886,7 +1886,7 @@ This endpoint does not need any parameters.
 
 ### Return type
 
-[**AddressableEntityListing**](AddressableEntityListing.html)
+[**JourneyViewListing**](JourneyViewListing.html)
 
 <a name="get_journey_views_eventdefinition"></a>
 

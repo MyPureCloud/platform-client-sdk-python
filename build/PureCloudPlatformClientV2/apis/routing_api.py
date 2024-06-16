@@ -1491,7 +1491,6 @@ class RoutingApi(object):
         """
         Delete a utilization label
         
-	    delete_routing_utilization_label is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -6108,7 +6107,6 @@ class RoutingApi(object):
         """
         Get details about this utilization label
         
-	    get_routing_utilization_label is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -6187,7 +6185,6 @@ class RoutingApi(object):
         """
         Get list of agent ids associated with a utilization label
         
-	    get_routing_utilization_label_agents is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -6266,7 +6263,6 @@ class RoutingApi(object):
         """
         Get list of utilization labels
         
-	    get_routing_utilization_labels is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -10393,7 +10389,6 @@ class RoutingApi(object):
         """
         Create a utilization label
         
-	    post_routing_utilization_labels is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -11535,7 +11530,6 @@ class RoutingApi(object):
         """
         Update a utilization label
         
-	    put_routing_utilization_label is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

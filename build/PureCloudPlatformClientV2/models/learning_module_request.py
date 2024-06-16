@@ -36,6 +36,7 @@ if TYPE_CHECKING:
     from . import AssessmentForm
     from . import LearningModuleCoverArtRequest
     from . import LearningModuleInformStepRequest
+    from . import ReviewAssessmentResults
 
 class LearningModuleRequest(object):
     """
@@ -61,7 +62,9 @@ class LearningModuleRequest(object):
             'cover_art': 'LearningModuleCoverArtRequest',
             'length_in_minutes': 'int',
             'excluded_from_catalog': 'bool',
-            'external_id': 'str'
+            'external_id': 'str',
+            'enforce_content_order': 'bool',
+            'review_assessment_results': 'ReviewAssessmentResults'
         }
 
         self.attribute_map = {
@@ -74,7 +77,9 @@ class LearningModuleRequest(object):
             'cover_art': 'coverArt',
             'length_in_minutes': 'lengthInMinutes',
             'excluded_from_catalog': 'excludedFromCatalog',
-            'external_id': 'externalId'
+            'external_id': 'externalId',
+            'enforce_content_order': 'enforceContentOrder',
+            'review_assessment_results': 'reviewAssessmentResults'
         }
 
         self._name = None
@@ -87,6 +92,8 @@ class LearningModuleRequest(object):
         self._length_in_minutes = None
         self._excluded_from_catalog = None
         self._external_id = None
+        self._enforce_content_order = None
+        self._review_assessment_results = None
 
     @property
     def name(self) -> str:
@@ -338,6 +345,54 @@ class LearningModuleRequest(object):
 
 
         self._external_id = external_id
+
+    @property
+    def enforce_content_order(self) -> bool:
+        """
+        Gets the enforce_content_order of this LearningModuleRequest.
+        If true, learning module content should be viewed one by one in order
+
+        :return: The enforce_content_order of this LearningModuleRequest.
+        :rtype: bool
+        """
+        return self._enforce_content_order
+
+    @enforce_content_order.setter
+    def enforce_content_order(self, enforce_content_order: bool) -> None:
+        """
+        Sets the enforce_content_order of this LearningModuleRequest.
+        If true, learning module content should be viewed one by one in order
+
+        :param enforce_content_order: The enforce_content_order of this LearningModuleRequest.
+        :type: bool
+        """
+        
+
+        self._enforce_content_order = enforce_content_order
+
+    @property
+    def review_assessment_results(self) -> 'ReviewAssessmentResults':
+        """
+        Gets the review_assessment_results of this LearningModuleRequest.
+        Allows to view Assessment results in detail
+
+        :return: The review_assessment_results of this LearningModuleRequest.
+        :rtype: ReviewAssessmentResults
+        """
+        return self._review_assessment_results
+
+    @review_assessment_results.setter
+    def review_assessment_results(self, review_assessment_results: 'ReviewAssessmentResults') -> None:
+        """
+        Sets the review_assessment_results of this LearningModuleRequest.
+        Allows to view Assessment results in detail
+
+        :param review_assessment_results: The review_assessment_results of this LearningModuleRequest.
+        :type: ReviewAssessmentResults
+        """
+        
+
+        self._review_assessment_results = review_assessment_results
 
     def to_dict(self):
         """

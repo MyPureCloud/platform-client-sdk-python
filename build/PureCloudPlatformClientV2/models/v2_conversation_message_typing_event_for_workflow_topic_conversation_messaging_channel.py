@@ -33,7 +33,6 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
-    from . import V2ConversationMessageTypingEventForWorkflowTopicConversationMessagingChannelMetadata
     from . import V2ConversationMessageTypingEventForWorkflowTopicConversationMessagingFromRecipient
     from . import V2ConversationMessageTypingEventForWorkflowTopicConversationMessagingToRecipient
 
@@ -54,36 +53,24 @@ class V2ConversationMessageTypingEventForWorkflowTopicConversationMessagingChann
         self.swagger_types = {
             'id': 'str',
             'platform': 'str',
-            'message_id': 'str',
             'to': 'V2ConversationMessageTypingEventForWorkflowTopicConversationMessagingToRecipient',
             'pcFrom': 'V2ConversationMessageTypingEventForWorkflowTopicConversationMessagingFromRecipient',
-            'time': 'datetime',
-            'date_modified': 'datetime',
-            'date_deleted': 'datetime',
-            'metadata': 'V2ConversationMessageTypingEventForWorkflowTopicConversationMessagingChannelMetadata'
+            'time': 'datetime'
         }
 
         self.attribute_map = {
             'id': 'id',
             'platform': 'platform',
-            'message_id': 'messageId',
             'to': 'to',
             'pcFrom': 'from',
-            'time': 'time',
-            'date_modified': 'dateModified',
-            'date_deleted': 'dateDeleted',
-            'metadata': 'metadata'
+            'time': 'time'
         }
 
         self._id = None
         self._platform = None
-        self._message_id = None
         self._to = None
         self._pcFrom = None
         self._time = None
-        self._date_modified = None
-        self._date_deleted = None
-        self._metadata = None
 
     @property
     def id(self) -> str:
@@ -137,30 +124,6 @@ class V2ConversationMessageTypingEventForWorkflowTopicConversationMessagingChann
             self._platform = "outdated_sdk_version"
         else:
             self._platform = platform
-
-    @property
-    def message_id(self) -> str:
-        """
-        Gets the message_id of this V2ConversationMessageTypingEventForWorkflowTopicConversationMessagingChannel.
-
-
-        :return: The message_id of this V2ConversationMessageTypingEventForWorkflowTopicConversationMessagingChannel.
-        :rtype: str
-        """
-        return self._message_id
-
-    @message_id.setter
-    def message_id(self, message_id: str) -> None:
-        """
-        Sets the message_id of this V2ConversationMessageTypingEventForWorkflowTopicConversationMessagingChannel.
-
-
-        :param message_id: The message_id of this V2ConversationMessageTypingEventForWorkflowTopicConversationMessagingChannel.
-        :type: str
-        """
-        
-
-        self._message_id = message_id
 
     @property
     def to(self) -> 'V2ConversationMessageTypingEventForWorkflowTopicConversationMessagingToRecipient':
@@ -233,78 +196,6 @@ class V2ConversationMessageTypingEventForWorkflowTopicConversationMessagingChann
         
 
         self._time = time
-
-    @property
-    def date_modified(self) -> datetime:
-        """
-        Gets the date_modified of this V2ConversationMessageTypingEventForWorkflowTopicConversationMessagingChannel.
-
-
-        :return: The date_modified of this V2ConversationMessageTypingEventForWorkflowTopicConversationMessagingChannel.
-        :rtype: datetime
-        """
-        return self._date_modified
-
-    @date_modified.setter
-    def date_modified(self, date_modified: datetime) -> None:
-        """
-        Sets the date_modified of this V2ConversationMessageTypingEventForWorkflowTopicConversationMessagingChannel.
-
-
-        :param date_modified: The date_modified of this V2ConversationMessageTypingEventForWorkflowTopicConversationMessagingChannel.
-        :type: datetime
-        """
-        
-
-        self._date_modified = date_modified
-
-    @property
-    def date_deleted(self) -> datetime:
-        """
-        Gets the date_deleted of this V2ConversationMessageTypingEventForWorkflowTopicConversationMessagingChannel.
-
-
-        :return: The date_deleted of this V2ConversationMessageTypingEventForWorkflowTopicConversationMessagingChannel.
-        :rtype: datetime
-        """
-        return self._date_deleted
-
-    @date_deleted.setter
-    def date_deleted(self, date_deleted: datetime) -> None:
-        """
-        Sets the date_deleted of this V2ConversationMessageTypingEventForWorkflowTopicConversationMessagingChannel.
-
-
-        :param date_deleted: The date_deleted of this V2ConversationMessageTypingEventForWorkflowTopicConversationMessagingChannel.
-        :type: datetime
-        """
-        
-
-        self._date_deleted = date_deleted
-
-    @property
-    def metadata(self) -> 'V2ConversationMessageTypingEventForWorkflowTopicConversationMessagingChannelMetadata':
-        """
-        Gets the metadata of this V2ConversationMessageTypingEventForWorkflowTopicConversationMessagingChannel.
-
-
-        :return: The metadata of this V2ConversationMessageTypingEventForWorkflowTopicConversationMessagingChannel.
-        :rtype: V2ConversationMessageTypingEventForWorkflowTopicConversationMessagingChannelMetadata
-        """
-        return self._metadata
-
-    @metadata.setter
-    def metadata(self, metadata: 'V2ConversationMessageTypingEventForWorkflowTopicConversationMessagingChannelMetadata') -> None:
-        """
-        Sets the metadata of this V2ConversationMessageTypingEventForWorkflowTopicConversationMessagingChannel.
-
-
-        :param metadata: The metadata of this V2ConversationMessageTypingEventForWorkflowTopicConversationMessagingChannel.
-        :type: V2ConversationMessageTypingEventForWorkflowTopicConversationMessagingChannelMetadata
-        """
-        
-
-        self._metadata = metadata
 
     def to_dict(self):
         """

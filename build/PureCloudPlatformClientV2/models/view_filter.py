@@ -230,6 +230,21 @@ class ViewFilter(object):
             'survey_types': 'list[str]',
             'survey_response_statuses': 'list[str]',
             'bot_flow_types': 'list[str]',
+            'agent_talk_duration_milliseconds': 'list[NumericRange]',
+            'customer_talk_duration_milliseconds': 'list[NumericRange]',
+            'overtalk_duration_milliseconds': 'list[NumericRange]',
+            'silence_duration_milliseconds': 'list[NumericRange]',
+            'acd_duration_milliseconds': 'list[NumericRange]',
+            'ivr_duration_milliseconds': 'list[NumericRange]',
+            'other_duration_milliseconds': 'list[NumericRange]',
+            'agent_talk_percentage': 'NumericRange',
+            'customer_talk_percentage': 'NumericRange',
+            'overtalk_percentage': 'NumericRange',
+            'silence_percentage': 'NumericRange',
+            'acd_percentage': 'NumericRange',
+            'ivr_percentage': 'NumericRange',
+            'other_percentage': 'NumericRange',
+            'overtalk_instances': 'NumericRange',
             'is_screen_recorded': 'bool',
             'screen_monitor_user_ids': 'list[str]'
         }
@@ -412,6 +427,21 @@ class ViewFilter(object):
             'survey_types': 'surveyTypes',
             'survey_response_statuses': 'surveyResponseStatuses',
             'bot_flow_types': 'botFlowTypes',
+            'agent_talk_duration_milliseconds': 'agentTalkDurationMilliseconds',
+            'customer_talk_duration_milliseconds': 'customerTalkDurationMilliseconds',
+            'overtalk_duration_milliseconds': 'overtalkDurationMilliseconds',
+            'silence_duration_milliseconds': 'silenceDurationMilliseconds',
+            'acd_duration_milliseconds': 'acdDurationMilliseconds',
+            'ivr_duration_milliseconds': 'ivrDurationMilliseconds',
+            'other_duration_milliseconds': 'otherDurationMilliseconds',
+            'agent_talk_percentage': 'agentTalkPercentage',
+            'customer_talk_percentage': 'customerTalkPercentage',
+            'overtalk_percentage': 'overtalkPercentage',
+            'silence_percentage': 'silencePercentage',
+            'acd_percentage': 'acdPercentage',
+            'ivr_percentage': 'ivrPercentage',
+            'other_percentage': 'otherPercentage',
+            'overtalk_instances': 'overtalkInstances',
             'is_screen_recorded': 'isScreenRecorded',
             'screen_monitor_user_ids': 'screenMonitorUserIds'
         }
@@ -593,6 +623,21 @@ class ViewFilter(object):
         self._survey_types = None
         self._survey_response_statuses = None
         self._bot_flow_types = None
+        self._agent_talk_duration_milliseconds = None
+        self._customer_talk_duration_milliseconds = None
+        self._overtalk_duration_milliseconds = None
+        self._silence_duration_milliseconds = None
+        self._acd_duration_milliseconds = None
+        self._ivr_duration_milliseconds = None
+        self._other_duration_milliseconds = None
+        self._agent_talk_percentage = None
+        self._customer_talk_percentage = None
+        self._overtalk_percentage = None
+        self._silence_percentage = None
+        self._acd_percentage = None
+        self._ivr_percentage = None
+        self._other_percentage = None
+        self._overtalk_instances = None
         self._is_screen_recorded = None
         self._screen_monitor_user_ids = None
 
@@ -4853,6 +4898,366 @@ class ViewFilter(object):
         
 
         self._bot_flow_types = bot_flow_types
+
+    @property
+    def agent_talk_duration_milliseconds(self) -> List['NumericRange']:
+        """
+        Gets the agent_talk_duration_milliseconds of this ViewFilter.
+        The agent talk durations in milliseconds used to filter the view
+
+        :return: The agent_talk_duration_milliseconds of this ViewFilter.
+        :rtype: list[NumericRange]
+        """
+        return self._agent_talk_duration_milliseconds
+
+    @agent_talk_duration_milliseconds.setter
+    def agent_talk_duration_milliseconds(self, agent_talk_duration_milliseconds: List['NumericRange']) -> None:
+        """
+        Sets the agent_talk_duration_milliseconds of this ViewFilter.
+        The agent talk durations in milliseconds used to filter the view
+
+        :param agent_talk_duration_milliseconds: The agent_talk_duration_milliseconds of this ViewFilter.
+        :type: list[NumericRange]
+        """
+        
+
+        self._agent_talk_duration_milliseconds = agent_talk_duration_milliseconds
+
+    @property
+    def customer_talk_duration_milliseconds(self) -> List['NumericRange']:
+        """
+        Gets the customer_talk_duration_milliseconds of this ViewFilter.
+        The customer talk durations in milliseconds used to filter the view
+
+        :return: The customer_talk_duration_milliseconds of this ViewFilter.
+        :rtype: list[NumericRange]
+        """
+        return self._customer_talk_duration_milliseconds
+
+    @customer_talk_duration_milliseconds.setter
+    def customer_talk_duration_milliseconds(self, customer_talk_duration_milliseconds: List['NumericRange']) -> None:
+        """
+        Sets the customer_talk_duration_milliseconds of this ViewFilter.
+        The customer talk durations in milliseconds used to filter the view
+
+        :param customer_talk_duration_milliseconds: The customer_talk_duration_milliseconds of this ViewFilter.
+        :type: list[NumericRange]
+        """
+        
+
+        self._customer_talk_duration_milliseconds = customer_talk_duration_milliseconds
+
+    @property
+    def overtalk_duration_milliseconds(self) -> List['NumericRange']:
+        """
+        Gets the overtalk_duration_milliseconds of this ViewFilter.
+        The overtalk durations in milliseconds used to filter the view
+
+        :return: The overtalk_duration_milliseconds of this ViewFilter.
+        :rtype: list[NumericRange]
+        """
+        return self._overtalk_duration_milliseconds
+
+    @overtalk_duration_milliseconds.setter
+    def overtalk_duration_milliseconds(self, overtalk_duration_milliseconds: List['NumericRange']) -> None:
+        """
+        Sets the overtalk_duration_milliseconds of this ViewFilter.
+        The overtalk durations in milliseconds used to filter the view
+
+        :param overtalk_duration_milliseconds: The overtalk_duration_milliseconds of this ViewFilter.
+        :type: list[NumericRange]
+        """
+        
+
+        self._overtalk_duration_milliseconds = overtalk_duration_milliseconds
+
+    @property
+    def silence_duration_milliseconds(self) -> List['NumericRange']:
+        """
+        Gets the silence_duration_milliseconds of this ViewFilter.
+        The silence durations in milliseconds used to filter the view
+
+        :return: The silence_duration_milliseconds of this ViewFilter.
+        :rtype: list[NumericRange]
+        """
+        return self._silence_duration_milliseconds
+
+    @silence_duration_milliseconds.setter
+    def silence_duration_milliseconds(self, silence_duration_milliseconds: List['NumericRange']) -> None:
+        """
+        Sets the silence_duration_milliseconds of this ViewFilter.
+        The silence durations in milliseconds used to filter the view
+
+        :param silence_duration_milliseconds: The silence_duration_milliseconds of this ViewFilter.
+        :type: list[NumericRange]
+        """
+        
+
+        self._silence_duration_milliseconds = silence_duration_milliseconds
+
+    @property
+    def acd_duration_milliseconds(self) -> List['NumericRange']:
+        """
+        Gets the acd_duration_milliseconds of this ViewFilter.
+        The acd durations in milliseconds used to filter the view
+
+        :return: The acd_duration_milliseconds of this ViewFilter.
+        :rtype: list[NumericRange]
+        """
+        return self._acd_duration_milliseconds
+
+    @acd_duration_milliseconds.setter
+    def acd_duration_milliseconds(self, acd_duration_milliseconds: List['NumericRange']) -> None:
+        """
+        Sets the acd_duration_milliseconds of this ViewFilter.
+        The acd durations in milliseconds used to filter the view
+
+        :param acd_duration_milliseconds: The acd_duration_milliseconds of this ViewFilter.
+        :type: list[NumericRange]
+        """
+        
+
+        self._acd_duration_milliseconds = acd_duration_milliseconds
+
+    @property
+    def ivr_duration_milliseconds(self) -> List['NumericRange']:
+        """
+        Gets the ivr_duration_milliseconds of this ViewFilter.
+        The ivr durations in milliseconds used to filter the view
+
+        :return: The ivr_duration_milliseconds of this ViewFilter.
+        :rtype: list[NumericRange]
+        """
+        return self._ivr_duration_milliseconds
+
+    @ivr_duration_milliseconds.setter
+    def ivr_duration_milliseconds(self, ivr_duration_milliseconds: List['NumericRange']) -> None:
+        """
+        Sets the ivr_duration_milliseconds of this ViewFilter.
+        The ivr durations in milliseconds used to filter the view
+
+        :param ivr_duration_milliseconds: The ivr_duration_milliseconds of this ViewFilter.
+        :type: list[NumericRange]
+        """
+        
+
+        self._ivr_duration_milliseconds = ivr_duration_milliseconds
+
+    @property
+    def other_duration_milliseconds(self) -> List['NumericRange']:
+        """
+        Gets the other_duration_milliseconds of this ViewFilter.
+        The other (hold/music) durations in milliseconds used to filter the view
+
+        :return: The other_duration_milliseconds of this ViewFilter.
+        :rtype: list[NumericRange]
+        """
+        return self._other_duration_milliseconds
+
+    @other_duration_milliseconds.setter
+    def other_duration_milliseconds(self, other_duration_milliseconds: List['NumericRange']) -> None:
+        """
+        Sets the other_duration_milliseconds of this ViewFilter.
+        The other (hold/music) durations in milliseconds used to filter the view
+
+        :param other_duration_milliseconds: The other_duration_milliseconds of this ViewFilter.
+        :type: list[NumericRange]
+        """
+        
+
+        self._other_duration_milliseconds = other_duration_milliseconds
+
+    @property
+    def agent_talk_percentage(self) -> 'NumericRange':
+        """
+        Gets the agent_talk_percentage of this ViewFilter.
+        The agent talk percentage used to filter the view
+
+        :return: The agent_talk_percentage of this ViewFilter.
+        :rtype: NumericRange
+        """
+        return self._agent_talk_percentage
+
+    @agent_talk_percentage.setter
+    def agent_talk_percentage(self, agent_talk_percentage: 'NumericRange') -> None:
+        """
+        Sets the agent_talk_percentage of this ViewFilter.
+        The agent talk percentage used to filter the view
+
+        :param agent_talk_percentage: The agent_talk_percentage of this ViewFilter.
+        :type: NumericRange
+        """
+        
+
+        self._agent_talk_percentage = agent_talk_percentage
+
+    @property
+    def customer_talk_percentage(self) -> 'NumericRange':
+        """
+        Gets the customer_talk_percentage of this ViewFilter.
+        The customer talk percentage used to filter the view
+
+        :return: The customer_talk_percentage of this ViewFilter.
+        :rtype: NumericRange
+        """
+        return self._customer_talk_percentage
+
+    @customer_talk_percentage.setter
+    def customer_talk_percentage(self, customer_talk_percentage: 'NumericRange') -> None:
+        """
+        Sets the customer_talk_percentage of this ViewFilter.
+        The customer talk percentage used to filter the view
+
+        :param customer_talk_percentage: The customer_talk_percentage of this ViewFilter.
+        :type: NumericRange
+        """
+        
+
+        self._customer_talk_percentage = customer_talk_percentage
+
+    @property
+    def overtalk_percentage(self) -> 'NumericRange':
+        """
+        Gets the overtalk_percentage of this ViewFilter.
+        The overtalk percentage used to filter the view
+
+        :return: The overtalk_percentage of this ViewFilter.
+        :rtype: NumericRange
+        """
+        return self._overtalk_percentage
+
+    @overtalk_percentage.setter
+    def overtalk_percentage(self, overtalk_percentage: 'NumericRange') -> None:
+        """
+        Sets the overtalk_percentage of this ViewFilter.
+        The overtalk percentage used to filter the view
+
+        :param overtalk_percentage: The overtalk_percentage of this ViewFilter.
+        :type: NumericRange
+        """
+        
+
+        self._overtalk_percentage = overtalk_percentage
+
+    @property
+    def silence_percentage(self) -> 'NumericRange':
+        """
+        Gets the silence_percentage of this ViewFilter.
+        The silence percentage used to filter the view
+
+        :return: The silence_percentage of this ViewFilter.
+        :rtype: NumericRange
+        """
+        return self._silence_percentage
+
+    @silence_percentage.setter
+    def silence_percentage(self, silence_percentage: 'NumericRange') -> None:
+        """
+        Sets the silence_percentage of this ViewFilter.
+        The silence percentage used to filter the view
+
+        :param silence_percentage: The silence_percentage of this ViewFilter.
+        :type: NumericRange
+        """
+        
+
+        self._silence_percentage = silence_percentage
+
+    @property
+    def acd_percentage(self) -> 'NumericRange':
+        """
+        Gets the acd_percentage of this ViewFilter.
+        The acd percentage used to filter the view
+
+        :return: The acd_percentage of this ViewFilter.
+        :rtype: NumericRange
+        """
+        return self._acd_percentage
+
+    @acd_percentage.setter
+    def acd_percentage(self, acd_percentage: 'NumericRange') -> None:
+        """
+        Sets the acd_percentage of this ViewFilter.
+        The acd percentage used to filter the view
+
+        :param acd_percentage: The acd_percentage of this ViewFilter.
+        :type: NumericRange
+        """
+        
+
+        self._acd_percentage = acd_percentage
+
+    @property
+    def ivr_percentage(self) -> 'NumericRange':
+        """
+        Gets the ivr_percentage of this ViewFilter.
+        The ivr percentage used to filter the view
+
+        :return: The ivr_percentage of this ViewFilter.
+        :rtype: NumericRange
+        """
+        return self._ivr_percentage
+
+    @ivr_percentage.setter
+    def ivr_percentage(self, ivr_percentage: 'NumericRange') -> None:
+        """
+        Sets the ivr_percentage of this ViewFilter.
+        The ivr percentage used to filter the view
+
+        :param ivr_percentage: The ivr_percentage of this ViewFilter.
+        :type: NumericRange
+        """
+        
+
+        self._ivr_percentage = ivr_percentage
+
+    @property
+    def other_percentage(self) -> 'NumericRange':
+        """
+        Gets the other_percentage of this ViewFilter.
+        The other (hold/music percentage used to filter the view
+
+        :return: The other_percentage of this ViewFilter.
+        :rtype: NumericRange
+        """
+        return self._other_percentage
+
+    @other_percentage.setter
+    def other_percentage(self, other_percentage: 'NumericRange') -> None:
+        """
+        Sets the other_percentage of this ViewFilter.
+        The other (hold/music percentage used to filter the view
+
+        :param other_percentage: The other_percentage of this ViewFilter.
+        :type: NumericRange
+        """
+        
+
+        self._other_percentage = other_percentage
+
+    @property
+    def overtalk_instances(self) -> 'NumericRange':
+        """
+        Gets the overtalk_instances of this ViewFilter.
+        The overtalk instance range used to filter the view
+
+        :return: The overtalk_instances of this ViewFilter.
+        :rtype: NumericRange
+        """
+        return self._overtalk_instances
+
+    @overtalk_instances.setter
+    def overtalk_instances(self, overtalk_instances: 'NumericRange') -> None:
+        """
+        Sets the overtalk_instances of this ViewFilter.
+        The overtalk instance range used to filter the view
+
+        :param overtalk_instances: The overtalk_instances of this ViewFilter.
+        :type: NumericRange
+        """
+        
+
+        self._overtalk_instances = overtalk_instances
 
     @property
     def is_screen_recorded(self) -> bool:

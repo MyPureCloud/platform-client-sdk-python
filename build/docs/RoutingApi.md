@@ -982,8 +982,6 @@ void (empty response body)
 
 Delete a utilization label
 
-delete_routing_utilization_label is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps DELETE /api/v2/routing/utilization/labels/{labelId} 
 
 Requires ALL permissions: 
@@ -3912,8 +3910,6 @@ This endpoint does not need any parameters.
 
 Get details about this utilization label
 
-get_routing_utilization_label is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/routing/utilization/labels/{labelId} 
 
 Requires ALL permissions: 
@@ -3963,8 +3959,6 @@ except ApiException as e:
 
 Get list of agent ids associated with a utilization label
 
-get_routing_utilization_label_agents is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/routing/utilization/labels/{labelId}/agents 
 
 Requires ALL permissions: 
@@ -4013,8 +4007,6 @@ except ApiException as e:
 
 
 Get list of utilization labels
-
-get_routing_utilization_labels is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/routing/utilization/labels 
 
@@ -6605,8 +6597,6 @@ except ApiException as e:
 
 Create a utilization label
 
-post_routing_utilization_labels is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps POST /api/v2/routing/utilization/labels 
 
 Requires ALL permissions: 
@@ -7311,8 +7301,6 @@ except ApiException as e:
 
 
 Update a utilization label
-
-put_routing_utilization_label is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps PUT /api/v2/routing/utilization/labels/{labelId} 
 

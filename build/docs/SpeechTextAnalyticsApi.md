@@ -8,12 +8,16 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 |Method | Description|
 |------------- | -------------|
+|[**delete_speechandtextanalytics_category**](SpeechTextAnalyticsApi.html#delete_speechandtextanalytics_category) | Delete a Speech &amp; Text Analytics category by ID|
 |[**delete_speechandtextanalytics_dictionaryfeedback_dictionary_feedback_id**](SpeechTextAnalyticsApi.html#delete_speechandtextanalytics_dictionaryfeedback_dictionary_feedback_id) | Delete a Speech &amp; Text Analytics DictionaryFeedback by Id|
 |[**delete_speechandtextanalytics_program**](SpeechTextAnalyticsApi.html#delete_speechandtextanalytics_program) | Delete a Speech &amp; Text Analytics program by id|
 |[**delete_speechandtextanalytics_sentimentfeedback**](SpeechTextAnalyticsApi.html#delete_speechandtextanalytics_sentimentfeedback) | Delete All Speech &amp; Text Analytics SentimentFeedback|
 |[**delete_speechandtextanalytics_sentimentfeedback_sentiment_feedback_id**](SpeechTextAnalyticsApi.html#delete_speechandtextanalytics_sentimentfeedback_sentiment_feedback_id) | Delete a Speech &amp; Text Analytics SentimentFeedback by Id|
 |[**delete_speechandtextanalytics_topic**](SpeechTextAnalyticsApi.html#delete_speechandtextanalytics_topic) | Delete a Speech &amp; Text Analytics topic by id|
+|[**get_speechandtextanalytics_categories**](SpeechTextAnalyticsApi.html#get_speechandtextanalytics_categories) | Get the list of Speech and Text Analytics categories|
+|[**get_speechandtextanalytics_category**](SpeechTextAnalyticsApi.html#get_speechandtextanalytics_category) | Get a Speech &amp; Text Analytics Category by ID|
 |[**get_speechandtextanalytics_conversation**](SpeechTextAnalyticsApi.html#get_speechandtextanalytics_conversation) | Get Speech and Text Analytics for a specific conversation|
+|[**get_speechandtextanalytics_conversation_categories**](SpeechTextAnalyticsApi.html#get_speechandtextanalytics_conversation_categories) | Get the list of detected Speech and Text Analytics categories of conversation|
 |[**get_speechandtextanalytics_conversation_communication_transcripturl**](SpeechTextAnalyticsApi.html#get_speechandtextanalytics_conversation_communication_transcripturl) | Get the pre-signed S3 URL for the transcript of a specific communication of a conversation|
 |[**get_speechandtextanalytics_conversation_communication_transcripturls**](SpeechTextAnalyticsApi.html#get_speechandtextanalytics_conversation_communication_transcripturls) | Get the list of pre-signed S3 URL for the transcripts of a specific communication of a conversation|
 |[**get_speechandtextanalytics_dictionaryfeedback**](SpeechTextAnalyticsApi.html#get_speechandtextanalytics_dictionaryfeedback) | Get the list of Speech &amp; Text Analytics dictionary feedbacks|
@@ -37,6 +41,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_speechandtextanalytics_topics_general_status**](SpeechTextAnalyticsApi.html#get_speechandtextanalytics_topics_general_status) | Get the list of general topics from the org and the system with their current status|
 |[**get_speechandtextanalytics_topics_publishjob**](SpeechTextAnalyticsApi.html#get_speechandtextanalytics_topics_publishjob) | Get a Speech &amp; Text Analytics publish topics job by id|
 |[**patch_speechandtextanalytics_settings**](SpeechTextAnalyticsApi.html#patch_speechandtextanalytics_settings) | Patch Speech And Text Analytics Settings|
+|[**post_speechandtextanalytics_categories**](SpeechTextAnalyticsApi.html#post_speechandtextanalytics_categories) | Create new Speech &amp; Text Analytics category|
 |[**post_speechandtextanalytics_dictionaryfeedback**](SpeechTextAnalyticsApi.html#post_speechandtextanalytics_dictionaryfeedback) | Create a Speech &amp; Text Analytics DictionaryFeedback|
 |[**post_speechandtextanalytics_programs**](SpeechTextAnalyticsApi.html#post_speechandtextanalytics_programs) | Create new Speech &amp; Text Analytics program|
 |[**post_speechandtextanalytics_programs_general_jobs**](SpeechTextAnalyticsApi.html#post_speechandtextanalytics_programs_general_jobs) | Create new Speech &amp; Text Analytics general program job|
@@ -45,6 +50,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_speechandtextanalytics_topics**](SpeechTextAnalyticsApi.html#post_speechandtextanalytics_topics) | Create new Speech &amp; Text Analytics topic|
 |[**post_speechandtextanalytics_topics_publishjobs**](SpeechTextAnalyticsApi.html#post_speechandtextanalytics_topics_publishjobs) | Create new Speech &amp; Text Analytics publish topics job|
 |[**post_speechandtextanalytics_transcripts_search**](SpeechTextAnalyticsApi.html#post_speechandtextanalytics_transcripts_search) | Search resources.|
+|[**put_speechandtextanalytics_category**](SpeechTextAnalyticsApi.html#put_speechandtextanalytics_category) | Update a Speech &amp; Text Analytics category by ID|
 |[**put_speechandtextanalytics_dictionaryfeedback_dictionary_feedback_id**](SpeechTextAnalyticsApi.html#put_speechandtextanalytics_dictionaryfeedback_dictionary_feedback_id) | Update existing Speech &amp; Text Analytics dictionary feedback by id|
 |[**put_speechandtextanalytics_program**](SpeechTextAnalyticsApi.html#put_speechandtextanalytics_program) | Update existing Speech &amp; Text Analytics program|
 |[**put_speechandtextanalytics_program_mappings**](SpeechTextAnalyticsApi.html#put_speechandtextanalytics_program_mappings) | Set Speech &amp; Text Analytics program mappings to queues and flows|
@@ -52,6 +58,54 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**put_speechandtextanalytics_settings**](SpeechTextAnalyticsApi.html#put_speechandtextanalytics_settings) | Update Speech And Text Analytics Settings|
 |[**put_speechandtextanalytics_topic**](SpeechTextAnalyticsApi.html#put_speechandtextanalytics_topic) | Update existing Speech &amp; Text Analytics topic|
 {: class="table table-striped"}
+
+<a name="delete_speechandtextanalytics_category"></a>
+
+##  delete_speechandtextanalytics_category(category_id)
+
+
+
+Delete a Speech & Text Analytics category by ID
+
+Wraps DELETE /api/v2/speechandtextanalytics/categories/{categoryId} 
+
+Requires ALL permissions: 
+
+* speechAndTextAnalytics:category:delete
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.SpeechTextAnalyticsApi()
+category_id = 'category_id_example' # str | The id of the category
+
+try:
+    # Delete a Speech & Text Analytics category by ID
+    api_instance.delete_speechandtextanalytics_category(category_id)
+except ApiException as e:
+    print("Exception when calling SpeechTextAnalyticsApi->delete_speechandtextanalytics_category: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **category_id** | **str**| The id of the category |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
 
 <a name="delete_speechandtextanalytics_dictionaryfeedback_dictionary_feedback_id"></a>
 
@@ -291,6 +345,114 @@ except ApiException as e:
 
 void (empty response body)
 
+<a name="get_speechandtextanalytics_categories"></a>
+
+## [**CategoriesEntityListing**](CategoriesEntityListing.html) get_speechandtextanalytics_categories(page_size=page_size, page_number=page_number, name=name, sort_order=sort_order, sort_by=sort_by, ids=ids)
+
+
+
+Get the list of Speech and Text Analytics categories
+
+Wraps GET /api/v2/speechandtextanalytics/categories 
+
+Requires ALL permissions: 
+
+* speechAndTextAnalytics:category:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.SpeechTextAnalyticsApi()
+page_size = 25 # int | The page size for the listing. The max that will be returned is 50. (optional) (default to 25)
+page_number = 1 # int | The page number for the listing (optional) (default to 1)
+name = 'name_example' # str | The category name filter applied to the listing (optional)
+sort_order = ''asc'' # str | The sort order for the listing (optional) (default to 'asc')
+sort_by = ''name'' # str | The field to sort by for the listing (optional) (default to 'name')
+ids = ['ids_example'] # list[str] | Comma separated Category IDs to filter by. Cannot be used with other filters. Maximum of 50 IDs allowed. (optional)
+
+try:
+    # Get the list of Speech and Text Analytics categories
+    api_response = api_instance.get_speechandtextanalytics_categories(page_size=page_size, page_number=page_number, name=name, sort_order=sort_order, sort_by=sort_by, ids=ids)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling SpeechTextAnalyticsApi->get_speechandtextanalytics_categories: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **page_size** | **int**| The page size for the listing. The max that will be returned is 50. | [optional] [default to 25] |
+| **page_number** | **int**| The page number for the listing | [optional] [default to 1] |
+| **name** | **str**| The category name filter applied to the listing | [optional]  |
+| **sort_order** | **str**| The sort order for the listing | [optional] [default to &#39;asc&#39;]<br />**Values**: asc, desc |
+| **sort_by** | **str**| The field to sort by for the listing | [optional] [default to &#39;name&#39;]<br />**Values**: name, description |
+| **ids** | [**list[str]**](str.html)| Comma separated Category IDs to filter by. Cannot be used with other filters. Maximum of 50 IDs allowed. | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**CategoriesEntityListing**](CategoriesEntityListing.html)
+
+<a name="get_speechandtextanalytics_category"></a>
+
+## [**StaCategory**](StaCategory.html) get_speechandtextanalytics_category(category_id)
+
+
+
+Get a Speech & Text Analytics Category by ID
+
+Wraps GET /api/v2/speechandtextanalytics/categories/{categoryId} 
+
+Requires ALL permissions: 
+
+* speechAndTextAnalytics:category:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.SpeechTextAnalyticsApi()
+category_id = 'category_id_example' # str | The id of the category
+
+try:
+    # Get a Speech & Text Analytics Category by ID
+    api_response = api_instance.get_speechandtextanalytics_category(category_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling SpeechTextAnalyticsApi->get_speechandtextanalytics_category: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **category_id** | **str**| The id of the category |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**StaCategory**](StaCategory.html)
+
 <a name="get_speechandtextanalytics_conversation"></a>
 
 ## [**ConversationMetrics**](ConversationMetrics.html) get_speechandtextanalytics_conversation(conversation_id)
@@ -340,6 +502,59 @@ except ApiException as e:
 ### Return type
 
 [**ConversationMetrics**](ConversationMetrics.html)
+
+<a name="get_speechandtextanalytics_conversation_categories"></a>
+
+## [**ConversationCategoriesEntityListing**](ConversationCategoriesEntityListing.html) get_speechandtextanalytics_conversation_categories(conversation_id, page_size=page_size, page_number=page_number)
+
+
+
+Get the list of detected Speech and Text Analytics categories of conversation
+
+Wraps GET /api/v2/speechandtextanalytics/conversations/{conversationId}/categories 
+
+Requires ALL permissions: 
+
+* speechAndTextAnalytics:data:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.SpeechTextAnalyticsApi()
+conversation_id = 'conversation_id_example' # str | The id of the conversation
+page_size = 25 # int | The page size for the listing. The max that will be returned is 50. (optional) (default to 25)
+page_number = 1 # int | The page number for the listing (optional) (default to 1)
+
+try:
+    # Get the list of detected Speech and Text Analytics categories of conversation
+    api_response = api_instance.get_speechandtextanalytics_conversation_categories(conversation_id, page_size=page_size, page_number=page_number)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling SpeechTextAnalyticsApi->get_speechandtextanalytics_conversation_categories: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversation_id** | **str**| The id of the conversation |  |
+| **page_size** | **int**| The page size for the listing. The max that will be returned is 50. | [optional] [default to 25] |
+| **page_number** | **int**| The page number for the listing | [optional] [default to 1] |
+{: class="table table-striped"}
+
+### Return type
+
+[**ConversationCategoriesEntityListing**](ConversationCategoriesEntityListing.html)
 
 <a name="get_speechandtextanalytics_conversation_communication_transcripturl"></a>
 
@@ -1484,6 +1699,55 @@ except ApiException as e:
 
 [**SpeechTextAnalyticsSettingsResponse**](SpeechTextAnalyticsSettingsResponse.html)
 
+<a name="post_speechandtextanalytics_categories"></a>
+
+## [**StaCategory**](StaCategory.html) post_speechandtextanalytics_categories(body)
+
+
+
+Create new Speech & Text Analytics category
+
+Wraps POST /api/v2/speechandtextanalytics/categories 
+
+Requires ALL permissions: 
+
+* speechAndTextAnalytics:category:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.SpeechTextAnalyticsApi()
+body = PureCloudPlatformClientV2.CategoryRequest() # CategoryRequest | The category to create
+
+try:
+    # Create new Speech & Text Analytics category
+    api_response = api_instance.post_speechandtextanalytics_categories(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling SpeechTextAnalyticsApi->post_speechandtextanalytics_categories: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**CategoryRequest**](CategoryRequest.html)| The category to create |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**StaCategory**](StaCategory.html)
+
 <a name="post_speechandtextanalytics_dictionaryfeedback"></a>
 
 ## [**DictionaryFeedback**](DictionaryFeedback.html) post_speechandtextanalytics_dictionaryfeedback(body)
@@ -1879,6 +2143,57 @@ except ApiException as e:
 ### Return type
 
 [**JsonSearchResponse**](JsonSearchResponse.html)
+
+<a name="put_speechandtextanalytics_category"></a>
+
+## [**StaCategory**](StaCategory.html) put_speechandtextanalytics_category(category_id, body)
+
+
+
+Update a Speech & Text Analytics category by ID
+
+Wraps PUT /api/v2/speechandtextanalytics/categories/{categoryId} 
+
+Requires ALL permissions: 
+
+* speechAndTextAnalytics:category:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.SpeechTextAnalyticsApi()
+category_id = 'category_id_example' # str | The id of the category
+body = PureCloudPlatformClientV2.CategoryRequest() # CategoryRequest | The updated category
+
+try:
+    # Update a Speech & Text Analytics category by ID
+    api_response = api_instance.put_speechandtextanalytics_category(category_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling SpeechTextAnalyticsApi->put_speechandtextanalytics_category: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **category_id** | **str**| The id of the category |  |
+| **body** | [**CategoryRequest**](CategoryRequest.html)| The updated category |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**StaCategory**](StaCategory.html)
 
 <a name="put_speechandtextanalytics_dictionaryfeedback_dictionary_feedback_id"></a>
 

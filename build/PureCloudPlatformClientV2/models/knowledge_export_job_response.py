@@ -36,6 +36,7 @@ if TYPE_CHECKING:
     from . import ErrorBody
     from . import KnowledgeBase
     from . import KnowledgeExportJobFilter
+    from . import KnowledgeOperationSource
     from . import UserReference
 
 class KnowledgeExportJobResponse(object):
@@ -65,6 +66,7 @@ class KnowledgeExportJobResponse(object):
             'date_created': 'datetime',
             'date_modified': 'datetime',
             'error_information': 'ErrorBody',
+            'source': 'KnowledgeOperationSource',
             'self_uri': 'str'
         }
 
@@ -81,6 +83,7 @@ class KnowledgeExportJobResponse(object):
             'date_created': 'dateCreated',
             'date_modified': 'dateModified',
             'error_information': 'errorInformation',
+            'source': 'source',
             'self_uri': 'selfUri'
         }
 
@@ -96,6 +99,7 @@ class KnowledgeExportJobResponse(object):
         self._date_created = None
         self._date_modified = None
         self._error_information = None
+        self._source = None
         self._self_uri = None
 
     @property
@@ -395,6 +399,30 @@ class KnowledgeExportJobResponse(object):
         
 
         self._error_information = error_information
+
+    @property
+    def source(self) -> 'KnowledgeOperationSource':
+        """
+        Gets the source of this KnowledgeExportJobResponse.
+        Source of the export job.
+
+        :return: The source of this KnowledgeExportJobResponse.
+        :rtype: KnowledgeOperationSource
+        """
+        return self._source
+
+    @source.setter
+    def source(self, source: 'KnowledgeOperationSource') -> None:
+        """
+        Sets the source of this KnowledgeExportJobResponse.
+        Source of the export job.
+
+        :param source: The source of this KnowledgeExportJobResponse.
+        :type: KnowledgeOperationSource
+        """
+        
+
+        self._source = source
 
     @property
     def self_uri(self) -> str:

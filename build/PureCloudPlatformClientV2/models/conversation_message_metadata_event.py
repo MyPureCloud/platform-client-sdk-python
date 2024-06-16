@@ -82,7 +82,7 @@ class ConversationMessageMetadataEvent(object):
         """
         if isinstance(event_type, int):
             event_type = str(event_type)
-        allowed_values = ["CoBrowse", "Typing", "Presence", "Unknown"]
+        allowed_values = ["CoBrowse", "Typing", "Presence", "Video", "Unknown"]
         if event_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for event_type -> " + event_type)
             self._event_type = "outdated_sdk_version"
