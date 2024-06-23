@@ -60,6 +60,7 @@ class Room(object):
             'participant_limit': 'int',
             'owners': 'list[UserReference]',
             'pinned_messages': 'list[AddressableEntityRef]',
+            'jid': 'str',
             'self_uri': 'str'
         }
 
@@ -73,6 +74,7 @@ class Room(object):
             'participant_limit': 'participantLimit',
             'owners': 'owners',
             'pinned_messages': 'pinnedMessages',
+            'jid': 'jid',
             'self_uri': 'selfUri'
         }
 
@@ -85,13 +87,14 @@ class Room(object):
         self._participant_limit = None
         self._owners = None
         self._pinned_messages = None
+        self._jid = None
         self._self_uri = None
 
     @property
     def id(self) -> str:
         """
         Gets the id of this Room.
-        The jid of the room
+        The jid of the room if adhoc, the id of the group for group rooms
 
         :return: The id of this Room.
         :rtype: str
@@ -102,7 +105,7 @@ class Room(object):
     def id(self, id: str) -> None:
         """
         Sets the id of this Room.
-        The jid of the room
+        The jid of the room if adhoc, the id of the group for group rooms
 
         :param id: The id of this Room.
         :type: str
@@ -307,6 +310,30 @@ class Room(object):
         
 
         self._pinned_messages = pinned_messages
+
+    @property
+    def jid(self) -> str:
+        """
+        Gets the jid of this Room.
+        The jid of the room
+
+        :return: The jid of this Room.
+        :rtype: str
+        """
+        return self._jid
+
+    @jid.setter
+    def jid(self, jid: str) -> None:
+        """
+        Sets the jid of this Room.
+        The jid of the room
+
+        :param jid: The jid of this Room.
+        :type: str
+        """
+        
+
+        self._jid = jid
 
     @property
     def self_uri(self) -> str:

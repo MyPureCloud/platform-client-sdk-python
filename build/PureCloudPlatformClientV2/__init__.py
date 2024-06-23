@@ -520,6 +520,7 @@ from .models.callback_media_settings import CallbackMediaSettings
 from .models.callheader import Callheader
 from .models.callmessage import Callmessage
 from .models.campaign import Campaign
+from .models.campaign_business_category_metrics import CampaignBusinessCategoryMetrics
 from .models.campaign_diagnostics import CampaignDiagnostics
 from .models.campaign_division_view import CampaignDivisionView
 from .models.campaign_division_view_listing import CampaignDivisionViewListing
@@ -2043,6 +2044,7 @@ from .models.journey_view_element_attributes import JourneyViewElementAttributes
 from .models.journey_view_element_filter import JourneyViewElementFilter
 from .models.journey_view_element_filter_predicate import JourneyViewElementFilterPredicate
 from .models.journey_view_job import JourneyViewJob
+from .models.journey_view_job_listing import JourneyViewJobListing
 from .models.journey_view_link import JourneyViewLink
 from .models.journey_view_link_time_constraint import JourneyViewLinkTimeConstraint
 from .models.journey_view_listing import JourneyViewListing

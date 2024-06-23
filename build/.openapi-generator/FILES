@@ -599,6 +599,7 @@ PureCloudPlatformClientV2/models/callback_media_settings.py
 PureCloudPlatformClientV2/models/callheader.py
 PureCloudPlatformClientV2/models/callmessage.py
 PureCloudPlatformClientV2/models/campaign.py
+PureCloudPlatformClientV2/models/campaign_business_category_metrics.py
 PureCloudPlatformClientV2/models/campaign_diagnostics.py
 PureCloudPlatformClientV2/models/campaign_division_view.py
 PureCloudPlatformClientV2/models/campaign_division_view_listing.py
@@ -2122,6 +2123,7 @@ PureCloudPlatformClientV2/models/journey_view_element_attributes.py
 PureCloudPlatformClientV2/models/journey_view_element_filter.py
 PureCloudPlatformClientV2/models/journey_view_element_filter_predicate.py
 PureCloudPlatformClientV2/models/journey_view_job.py
+PureCloudPlatformClientV2/models/journey_view_job_listing.py
 PureCloudPlatformClientV2/models/journey_view_link.py
 PureCloudPlatformClientV2/models/journey_view_link_time_constraint.py
 PureCloudPlatformClientV2/models/journey_view_listing.py
@@ -5031,6 +5033,7 @@ docs/CallbackMediaSettings.md
 docs/Callheader.md
 docs/Callmessage.md
 docs/Campaign.md
+docs/CampaignBusinessCategoryMetrics.md
 docs/CampaignDiagnostics.md
 docs/CampaignDivisionView.md
 docs/CampaignDivisionViewListing.md
@@ -6596,6 +6599,7 @@ docs/JourneyViewElementAttributes.md
 docs/JourneyViewElementFilter.md
 docs/JourneyViewElementFilterPredicate.md
 docs/JourneyViewJob.md
+docs/JourneyViewJobListing.md
 docs/JourneyViewLink.md
 docs/JourneyViewLinkTimeConstraint.md
 docs/JourneyViewListing.md
@@ -9848,6 +9852,7 @@ docs/get_journey_view_version_jobs_latest-example.txt
 docs/get_journey_views-example.txt
 docs/get_journey_views_eventdefinition-example.txt
 docs/get_journey_views_eventdefinitions-example.txt
+docs/get_journey_views_jobs-example.txt
 docs/get_knowledge_guest_session_categories-example.txt
 docs/get_knowledge_guest_session_document-example.txt
 docs/get_knowledge_guest_session_documents-example.txt

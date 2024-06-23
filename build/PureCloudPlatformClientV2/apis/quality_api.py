@@ -1469,9 +1469,7 @@ class QualityApi(object):
             for asynchronous request. (optional)
         :param int page_size: The total page size requested
         :param int page_number: The page number requested
-        :param str sort_by: NOTE: Does not work when querying evaluations
         :param list[str] expand: variable name requested by expand list
-        :param str next_page: NOTE: Does not work when querying evaluations
         :param str previous_page: Previous page token
         :param str conversation_id: conversationId specified
         :param str agent_user_id: user id of the agent
@@ -1493,7 +1491,7 @@ class QualityApi(object):
                  returns the request thread.
         """
 
-        all_params = ['page_size', 'page_number', 'sort_by', 'expand', 'next_page', 'previous_page', 'conversation_id', 'agent_user_id', 'agent_team_id', 'evaluator_user_id', 'assignee_user_id', 'queue_id', 'start_time', 'end_time', 'form_context_id', 'evaluation_state', 'is_released', 'agent_has_read', 'expand_answer_total_scores', 'maximum', 'sort_order']
+        all_params = ['page_size', 'page_number', 'expand', 'previous_page', 'conversation_id', 'agent_user_id', 'agent_team_id', 'evaluator_user_id', 'assignee_user_id', 'queue_id', 'start_time', 'end_time', 'form_context_id', 'evaluation_state', 'is_released', 'agent_has_read', 'expand_answer_total_scores', 'maximum', 'sort_order']
         all_params.append('callback')
 
         params = locals()
@@ -1516,12 +1514,8 @@ class QualityApi(object):
             query_params['pageSize'] = params['page_size']
         if 'page_number' in params:
             query_params['pageNumber'] = params['page_number']
-        if 'sort_by' in params:
-            query_params['sortBy'] = params['sort_by']
         if 'expand' in params:
             query_params['expand'] = params['expand']
-        if 'next_page' in params:
-            query_params['nextPage'] = params['next_page']
         if 'previous_page' in params:
             query_params['previousPage'] = params['previous_page']
         if 'conversation_id' in params:

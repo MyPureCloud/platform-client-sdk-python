@@ -68,6 +68,7 @@ from ..models import JourneySegment
 from ..models import JourneySegmentRequest
 from ..models import JourneyView
 from ..models import JourneyViewJob
+from ..models import JourneyViewJobListing
 from ..models import JourneyViewListing
 from ..models import JourneyViewResult
 from ..models import Label
@@ -3123,6 +3124,91 @@ class JourneyApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='JourneyEventDefinitionListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_journey_views_jobs(self, **kwargs) -> 'JourneyViewJobListing':
+        """
+        Get the jobs for an organization.
+        
+	    get_journey_views_jobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_journey_views_jobs(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param int page_number: The number of the page to return
+        :param int page_size: Max number of entities to return
+        :param str interval: An absolute timeframe for filtering the jobs, expressed as an ISO 8601 interval.
+        :param str statuses: Job statuses to filter for
+        :return: JourneyViewJobListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['page_number', 'page_size', 'interval', 'statuses']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_journey_views_jobs" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/journey/views/jobs'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'page_number' in params:
+            query_params['pageNumber'] = params['page_number']
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+        if 'interval' in params:
+            query_params['interval'] = params['interval']
+        if 'statuses' in params:
+            query_params['statuses'] = params['statuses']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='JourneyViewJobListing',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

@@ -3271,7 +3271,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **page_size** | **int**| Page size | [optional] [default to 25] |
-| **sort_by** | **str**| The field to sort by | [optional] [default to &#39;name&#39;]<br />**Values**: name, status.operationalStatus, secondaryStatus.operationalStatus |
+| **sort_by** | **str**| The field to sort by | [optional] [default to &#39;name&#39;]<br />**Values**: id, name, status.operationalStatus, secondaryStatus.operationalStatus |
 | **sort_order** | **str**| Sort order | [optional] [default to &#39;ASC&#39;] |
 | **site_id** | **str**| Filter by site.id | [optional]  |
 | **web_rtc_user_id** | **str**| Filter by webRtcUser.id | [optional]  |

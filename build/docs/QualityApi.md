@@ -936,7 +936,7 @@ except ApiException as e:
 
 <a name="get_quality_evaluations_query"></a>
 
-## [**EvaluationEntityListing**](EvaluationEntityListing.html) get_quality_evaluations_query(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, conversation_id=conversation_id, agent_user_id=agent_user_id, agent_team_id=agent_team_id, evaluator_user_id=evaluator_user_id, assignee_user_id=assignee_user_id, queue_id=queue_id, start_time=start_time, end_time=end_time, form_context_id=form_context_id, evaluation_state=evaluation_state, is_released=is_released, agent_has_read=agent_has_read, expand_answer_total_scores=expand_answer_total_scores, maximum=maximum, sort_order=sort_order)
+## [**EvaluationEntityListing**](EvaluationEntityListing.html) get_quality_evaluations_query(page_size=page_size, page_number=page_number, expand=expand, previous_page=previous_page, conversation_id=conversation_id, agent_user_id=agent_user_id, agent_team_id=agent_team_id, evaluator_user_id=evaluator_user_id, assignee_user_id=assignee_user_id, queue_id=queue_id, start_time=start_time, end_time=end_time, form_context_id=form_context_id, evaluation_state=evaluation_state, is_released=is_released, agent_has_read=agent_has_read, expand_answer_total_scores=expand_answer_total_scores, maximum=maximum, sort_order=sort_order)
 
 
 
@@ -965,9 +965,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.QualityApi()
 page_size = 25 # int | The total page size requested (optional) (default to 25)
 page_number = 1 # int | The page number requested (optional) (default to 1)
-sort_by = 'sort_by_example' # str | NOTE: Does not work when querying evaluations (optional)
 expand = ['expand_example'] # list[str] | variable name requested by expand list (optional)
-next_page = 'next_page_example' # str | NOTE: Does not work when querying evaluations (optional)
 previous_page = 'previous_page_example' # str | Previous page token (optional)
 conversation_id = 'conversation_id_example' # str | conversationId specified (optional)
 agent_user_id = 'agent_user_id_example' # str | user id of the agent (optional)
@@ -987,7 +985,7 @@ sort_order = 'sort_order_example' # str | NOTE: Does not work when conversationI
 
 try:
     # Queries Evaluations and returns a paged list
-    api_response = api_instance.get_quality_evaluations_query(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, conversation_id=conversation_id, agent_user_id=agent_user_id, agent_team_id=agent_team_id, evaluator_user_id=evaluator_user_id, assignee_user_id=assignee_user_id, queue_id=queue_id, start_time=start_time, end_time=end_time, form_context_id=form_context_id, evaluation_state=evaluation_state, is_released=is_released, agent_has_read=agent_has_read, expand_answer_total_scores=expand_answer_total_scores, maximum=maximum, sort_order=sort_order)
+    api_response = api_instance.get_quality_evaluations_query(page_size=page_size, page_number=page_number, expand=expand, previous_page=previous_page, conversation_id=conversation_id, agent_user_id=agent_user_id, agent_team_id=agent_team_id, evaluator_user_id=evaluator_user_id, assignee_user_id=assignee_user_id, queue_id=queue_id, start_time=start_time, end_time=end_time, form_context_id=form_context_id, evaluation_state=evaluation_state, is_released=is_released, agent_has_read=agent_has_read, expand_answer_total_scores=expand_answer_total_scores, maximum=maximum, sort_order=sort_order)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling QualityApi->get_quality_evaluations_query: %s\n" % e)
@@ -1000,9 +998,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **page_size** | **int**| The total page size requested | [optional] [default to 25] |
 | **page_number** | **int**| The page number requested | [optional] [default to 1] |
-| **sort_by** | **str**| NOTE: Does not work when querying evaluations | [optional]  |
 | **expand** | [**list[str]**](str.html)| variable name requested by expand list | [optional]  |
-| **next_page** | **str**| NOTE: Does not work when querying evaluations | [optional]  |
 | **previous_page** | **str**| Previous page token | [optional]  |
 | **conversation_id** | **str**| conversationId specified | [optional]  |
 | **agent_user_id** | **str**| user id of the agent | [optional]  |

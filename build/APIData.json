@@ -19239,6 +19239,35 @@
     "return": "JourneyEventDefinitionListing",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.JourneyApi();\n\ntry:\n    # Get a list of Event Definitions\n    api_response = api_instance.get_journey_views_eventdefinitions()\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling JourneyApi->get_journey_views_eventdefinitions: %s\\n\" % e)"
   },
+  "get_journey_views_jobs": {
+    "operationId": "get_journey_views_jobs",
+    "functionName": "get_journey_views_jobs",
+    "signature": "get_journey_views_jobs(page_number, page_size, interval, statuses)",
+    "parameters": [
+      {
+        "name": "page_number",
+        "type": "int",
+        "required": "false"
+      },
+      {
+        "name": "page_size",
+        "type": "int",
+        "required": "false"
+      },
+      {
+        "name": "interval",
+        "type": "str",
+        "required": "false"
+      },
+      {
+        "name": "statuses",
+        "type": "str",
+        "required": "false"
+      }
+    ],
+    "return": "JourneyViewJobListing",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.JourneyApi();\npage_number = 1 # int | The number of the page to return (optional) (default to 1)\npage_size = 25 # int | Max number of entities to return (optional) (default to 25)\ninterval = '2023-07-17T00:00:00Z/2023-07-18T00:00:00Z' # str | An absolute timeframe for filtering the jobs, expressed as an ISO 8601 interval. (optional)\nstatuses = 'statuses=Accepted,Executing,Complete,Failed' # str | Job statuses to filter for (optional)\n\ntry:\n    # Get the jobs for an organization.\n    api_response = api_instance.get_journey_views_jobs(page_number=page_number, page_size=page_size, interval=interval, statuses=statuses)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling JourneyApi->get_journey_views_jobs: %s\\n\" % e)"
+  },
   "patch_journey_actionmap": {
     "operationId": "patch_journey_actionmap",
     "functionName": "patch_journey_actionmap",
@@ -30000,7 +30029,7 @@
   "get_quality_evaluations_query": {
     "operationId": "get_quality_evaluations_query",
     "functionName": "get_quality_evaluations_query",
-    "signature": "get_quality_evaluations_query(page_size, page_number, sort_by, expand, next_page, previous_page, conversation_id, agent_user_id, agent_team_id, evaluator_user_id, assignee_user_id, queue_id, start_time, end_time, form_context_id, evaluation_state, is_released, agent_has_read, expand_answer_total_scores, maximum, sort_order)",
+    "signature": "get_quality_evaluations_query(page_size, page_number, expand, previous_page, conversation_id, agent_user_id, agent_team_id, evaluator_user_id, assignee_user_id, queue_id, start_time, end_time, form_context_id, evaluation_state, is_released, agent_has_read, expand_answer_total_scores, maximum, sort_order)",
     "parameters": [
       {
         "name": "page_size",
@@ -30013,18 +30042,8 @@
         "required": "false"
       },
       {
-        "name": "sort_by",
-        "type": "str",
-        "required": "false"
-      },
-      {
         "name": "expand",
         "type": "list[str]",
-        "required": "false"
-      },
-      {
-        "name": "next_page",
-        "type": "str",
         "required": "false"
       },
       {
@@ -30109,7 +30128,7 @@
       }
     ],
     "return": "EvaluationEntityListing",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.QualityApi();\npage_size = 25 # int | The total page size requested (optional) (default to 25)\npage_number = 1 # int | The page number requested (optional) (default to 1)\nsort_by = 'sort_by_example' # str | NOTE: Does not work when querying evaluations (optional)\nexpand = ['expand_example'] # list[str] | variable name requested by expand list (optional)\nnext_page = 'next_page_example' # str | NOTE: Does not work when querying evaluations (optional)\nprevious_page = 'previous_page_example' # str | Previous page token (optional)\nconversation_id = 'conversation_id_example' # str | conversationId specified (optional)\nagent_user_id = 'agent_user_id_example' # str | user id of the agent (optional)\nagent_team_id = 'agent_team_id_example' # str | team id of the agent (optional)\nevaluator_user_id = 'evaluator_user_id_example' # str | evaluator user id (optional)\nassignee_user_id = 'assignee_user_id_example' # str | assignee user id (optional)\nqueue_id = 'queue_id_example' # str | queue id (optional)\nstart_time = 'start_time_example' # str | start time of the evaluation query (optional)\nend_time = 'end_time_example' # str | end time of the evaluation query (optional)\nform_context_id = 'form_context_id_example' # str | shared id between form versions (optional)\nevaluation_state = ['evaluation_state_example'] # list[str] |  (optional)\nis_released = True # bool | the evaluation has been released (optional)\nagent_has_read = True # bool | agent has the evaluation (optional)\nexpand_answer_total_scores = True # bool | get the total scores for evaluations. NOTE: The answers will only be populated if this parameter is set to true in the request. (optional)\nmaximum = 56 # int | the maximum number of results to return (optional)\nsort_order = 'sort_order_example' # str | NOTE: Does not work when conversationId is supplied. (optional)\n\ntry:\n    # Queries Evaluations and returns a paged list\n    api_response = api_instance.get_quality_evaluations_query(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, conversation_id=conversation_id, agent_user_id=agent_user_id, agent_team_id=agent_team_id, evaluator_user_id=evaluator_user_id, assignee_user_id=assignee_user_id, queue_id=queue_id, start_time=start_time, end_time=end_time, form_context_id=form_context_id, evaluation_state=evaluation_state, is_released=is_released, agent_has_read=agent_has_read, expand_answer_total_scores=expand_answer_total_scores, maximum=maximum, sort_order=sort_order)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling QualityApi->get_quality_evaluations_query: %s\\n\" % e)"
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.QualityApi();\npage_size = 25 # int | The total page size requested (optional) (default to 25)\npage_number = 1 # int | The page number requested (optional) (default to 1)\nexpand = ['expand_example'] # list[str] | variable name requested by expand list (optional)\nprevious_page = 'previous_page_example' # str | Previous page token (optional)\nconversation_id = 'conversation_id_example' # str | conversationId specified (optional)\nagent_user_id = 'agent_user_id_example' # str | user id of the agent (optional)\nagent_team_id = 'agent_team_id_example' # str | team id of the agent (optional)\nevaluator_user_id = 'evaluator_user_id_example' # str | evaluator user id (optional)\nassignee_user_id = 'assignee_user_id_example' # str | assignee user id (optional)\nqueue_id = 'queue_id_example' # str | queue id (optional)\nstart_time = 'start_time_example' # str | start time of the evaluation query (optional)\nend_time = 'end_time_example' # str | end time of the evaluation query (optional)\nform_context_id = 'form_context_id_example' # str | shared id between form versions (optional)\nevaluation_state = ['evaluation_state_example'] # list[str] |  (optional)\nis_released = True # bool | the evaluation has been released (optional)\nagent_has_read = True # bool | agent has the evaluation (optional)\nexpand_answer_total_scores = True # bool | get the total scores for evaluations. NOTE: The answers will only be populated if this parameter is set to true in the request. (optional)\nmaximum = 56 # int | the maximum number of results to return (optional)\nsort_order = 'sort_order_example' # str | NOTE: Does not work when conversationId is supplied. (optional)\n\ntry:\n    # Queries Evaluations and returns a paged list\n    api_response = api_instance.get_quality_evaluations_query(page_size=page_size, page_number=page_number, expand=expand, previous_page=previous_page, conversation_id=conversation_id, agent_user_id=agent_user_id, agent_team_id=agent_team_id, evaluator_user_id=evaluator_user_id, assignee_user_id=assignee_user_id, queue_id=queue_id, start_time=start_time, end_time=end_time, form_context_id=form_context_id, evaluation_state=evaluation_state, is_released=is_released, agent_has_read=agent_has_read, expand_answer_total_scores=expand_answer_total_scores, maximum=maximum, sort_order=sort_order)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling QualityApi->get_quality_evaluations_query: %s\\n\" % e)"
   },
   "get_quality_evaluators_activity": {
     "operationId": "get_quality_evaluators_activity",

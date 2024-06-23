@@ -57,6 +57,7 @@ class FlowExecutionDataQueryResult(object):
             'conversation_id': 'str',
             'flow_type': 'str',
             'flow_error_reason': 'str',
+            'flow_warning_reason': 'str',
             'flow_name': 'str',
             'self_uri': 'str'
         }
@@ -71,6 +72,7 @@ class FlowExecutionDataQueryResult(object):
             'conversation_id': 'conversationId',
             'flow_type': 'flowType',
             'flow_error_reason': 'flowErrorReason',
+            'flow_warning_reason': 'flowWarningReason',
             'flow_name': 'flowName',
             'self_uri': 'selfUri'
         }
@@ -84,6 +86,7 @@ class FlowExecutionDataQueryResult(object):
         self._conversation_id = None
         self._flow_type = None
         self._flow_error_reason = None
+        self._flow_warning_reason = None
         self._flow_name = None
         self._self_uri = None
 
@@ -307,6 +310,30 @@ class FlowExecutionDataQueryResult(object):
         
 
         self._flow_error_reason = flow_error_reason
+
+    @property
+    def flow_warning_reason(self) -> str:
+        """
+        Gets the flow_warning_reason of this FlowExecutionDataQueryResult.
+        If the flow had a warning, this is the reason.
+
+        :return: The flow_warning_reason of this FlowExecutionDataQueryResult.
+        :rtype: str
+        """
+        return self._flow_warning_reason
+
+    @flow_warning_reason.setter
+    def flow_warning_reason(self, flow_warning_reason: str) -> None:
+        """
+        Sets the flow_warning_reason of this FlowExecutionDataQueryResult.
+        If the flow had a warning, this is the reason.
+
+        :param flow_warning_reason: The flow_warning_reason of this FlowExecutionDataQueryResult.
+        :type: str
+        """
+        
+
+        self._flow_warning_reason = flow_warning_reason
 
     @property
     def flow_name(self) -> str:
