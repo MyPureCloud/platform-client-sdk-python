@@ -5876,12 +5876,13 @@ class RoutingApi(object):
         :param str sort_order: Sort order
         :param str language: A language tag (which is sometimes referred to as a \"locale identifier\") to use to localize country field and sort operations
         :param str integration_id: Filter on the Genesys Cloud integration id to which the phone number belongs to
+        :param str supported_content_id: Filter based on the supported content ID
         :return: SmsPhoneNumberEntityListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['phone_number', 'phone_number_type', 'phone_number_status', 'country_code', 'page_size', 'page_number', 'sort_by', 'sort_order', 'language', 'integration_id']
+        all_params = ['phone_number', 'phone_number_type', 'phone_number_status', 'country_code', 'page_size', 'page_number', 'sort_by', 'sort_order', 'language', 'integration_id', 'supported_content_id']
         all_params.append('callback')
 
         params = locals()
@@ -5920,6 +5921,8 @@ class RoutingApi(object):
             query_params['language'] = params['language']
         if 'integration_id' in params:
             query_params['integration.id'] = params['integration_id']
+        if 'supported_content_id' in params:
+            query_params['supportedContent.id'] = params['supported_content_id']
 
         header_params = {}
 

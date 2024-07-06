@@ -42,7 +42,6 @@ from ..models import Agent
 from ..models import AgentOwnedMappingPreviewListing
 from ..models import AttemptLimits
 from ..models import AttemptLimitsEntityListing
-from ..models import AuditSearchResult
 from ..models import CallableTimeSet
 from ..models import CallableTimeSetEntityListing
 from ..models import Campaign
@@ -52,6 +51,7 @@ from ..models import CampaignDivisionViewListing
 from ..models import CampaignEntityListing
 from ..models import CampaignInteractions
 from ..models import CampaignOutboundLinesDistribution
+from ..models import CampaignPatchRequest
 from ..models import CampaignProgress
 from ..models import CampaignRule
 from ..models import CampaignRuleEntityListing
@@ -78,7 +78,6 @@ from ..models import ContactListingRequest
 from ..models import ContactListingResponse
 from ..models import ContactsBulkOperationJob
 from ..models import ContactsExportRequest
-from ..models import DialerAuditRequest
 from ..models import DialerContact
 from ..models import DialerEventEntityListing
 from ..models import DigitalRuleSet
@@ -8149,6 +8148,90 @@ class OutboundApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def patch_outbound_campaign(self, campaign_id: str, body: 'CampaignPatchRequest', **kwargs) -> None:
+        """
+        Update a campaign.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.patch_outbound_campaign(campaign_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str campaign_id: Campaign ID (required)
+        :param CampaignPatchRequest body: CampaignPatchRequest (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['campaign_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method patch_outbound_campaign" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'campaign_id' is set
+        if ('campaign_id' not in params) or (params['campaign_id'] is None):
+            raise ValueError("Missing the required parameter `campaign_id` when calling `patch_outbound_campaign`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `patch_outbound_campaign`")
+
+
+        resource_path = '/api/v2/outbound/campaigns/{campaignId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'campaign_id' in params:
+            path_params['campaignId'] = params['campaign_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PATCH',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def patch_outbound_dnclist_customexclusioncolumns(self, dnc_list_id: str, body: 'DncPatchCustomExclusionColumnsRequest', **kwargs) -> None:
         """
         Add entries to or delete entries from a DNC list.
@@ -8553,100 +8636,6 @@ class OutboundApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='AttemptLimits',
-                                            auth_settings=auth_settings,
-                                            callback=params.get('callback'))
-        return response
-
-    @deprecated("post_outbound_audits is deprecated")
-    def post_outbound_audits(self, body: 'DialerAuditRequest', **kwargs) -> 'AuditSearchResult':
-        """
-        Retrieves audits for dialer. (Deprecated)
-        This endpoint is deprecated as a result of this functionality being moved to the Audit Service. Please use \"/api/v2/audits/query\" instead.
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.post_outbound_audits(body, callback=callback_function)
-
-        :param callback function: The callback function
-            for asynchronous request. (optional)
-        :param DialerAuditRequest body: AuditSearch (required)
-        :param int page_size: Page size
-        :param int page_number: Page number
-        :param str sort_by: Sort by
-        :param str sort_order: Sort order
-        :param bool facets_only: Facets only
-        :return: AuditSearchResult
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['body', 'page_size', 'page_number', 'sort_by', 'sort_order', 'facets_only']
-        all_params.append('callback')
-
-        params = locals()
-        for key, val in iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method post_outbound_audits" % key
-                )
-            params[key] = val
-        del params['kwargs']
-
-        # verify the required parameter 'body' is set
-        if ('body' not in params) or (params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `post_outbound_audits`")
-
-
-        resource_path = '/api/v2/outbound/audits'.replace('{format}', 'json')
-        path_params = {}
-
-        query_params = {}
-        if 'page_size' in params:
-            query_params['pageSize'] = params['page_size']
-        if 'page_number' in params:
-            query_params['pageNumber'] = params['page_number']
-        if 'sort_by' in params:
-            query_params['sortBy'] = params['sort_by']
-        if 'sort_order' in params:
-            query_params['sortOrder'] = params['sort_order']
-        if 'facets_only' in params:
-            query_params['facetsOnly'] = params['facets_only']
-
-        header_params = {}
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        if 'body' in params:
-            body_params = params['body']
-
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/json'])
-        if not header_params['Accept']:
-            del header_params['Accept']
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/json'])
-
-        # Authentication setting
-        auth_settings = ['PureCloud OAuth']
-
-        response = self.api_client.call_api(resource_path, 'POST',
-                                            path_params,
-                                            query_params,
-                                            header_params,
-                                            body=body_params,
-                                            post_params=form_params,
-                                            files=local_var_files,
-                                            response_type='AuditSearchResult',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

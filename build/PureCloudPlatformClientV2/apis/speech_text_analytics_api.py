@@ -42,6 +42,7 @@ from ..models import CategoriesEntityListing
 from ..models import CategoryRequest
 from ..models import ConversationCategoriesEntityListing
 from ..models import ConversationMetrics
+from ..models import DeleteProgramResponse
 from ..models import DictionaryFeedback
 from ..models import DictionaryFeedbackEntityListing
 from ..models import EntityListing
@@ -249,7 +250,7 @@ class SpeechTextAnalyticsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def delete_speechandtextanalytics_program(self, program_id: str, **kwargs) -> None:
+    def delete_speechandtextanalytics_program(self, program_id: str, **kwargs) -> 'DeleteProgramResponse':
         """
         Delete a Speech & Text Analytics program by id
         
@@ -266,7 +267,7 @@ class SpeechTextAnalyticsApi(object):
             for asynchronous request. (optional)
         :param str program_id: The id of the program (required)
         :param bool force_delete: Indicates whether the program is forced to be deleted or not. Required when the program to delete is the default program.
-        :return: None
+        :return: DeleteProgramResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -325,7 +326,7 @@ class SpeechTextAnalyticsApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type=None,
+                                            response_type='DeleteProgramResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

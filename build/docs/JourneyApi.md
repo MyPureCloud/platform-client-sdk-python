@@ -1465,7 +1465,7 @@ except ApiException as e:
 
 <a name="get_journey_session_events"></a>
 
-## [**EventListing**](EventListing.html) get_journey_session_events(session_id, page_size=page_size, after=after)
+## [**EventListing**](EventListing.html) get_journey_session_events(session_id, page_size=page_size, after=after, event_type=event_type)
 
 
 
@@ -1495,10 +1495,11 @@ api_instance = PureCloudPlatformClientV2.JourneyApi()
 session_id = 'session_id_example' # str | System-generated UUID that represents the session the event is a part of.
 page_size = 'page_size_example' # str | Number of entities to return. Maximum of 200. (optional)
 after = 'after_example' # str | The cursor that points to the end of the set of entities that has been returned. (optional)
+event_type = 'event_type_example' # str | A comma separated list of journey event types to include in the results. (optional)
 
 try:
     # Retrieve all events for a given session.
-    api_response = api_instance.get_journey_session_events(session_id, page_size=page_size, after=after)
+    api_response = api_instance.get_journey_session_events(session_id, page_size=page_size, after=after, event_type=event_type)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling JourneyApi->get_journey_session_events: %s\n" % e)
@@ -1512,6 +1513,7 @@ except ApiException as e:
 | **session_id** | **str**| System-generated UUID that represents the session the event is a part of. |  |
 | **page_size** | **str**| Number of entities to return. Maximum of 200. | [optional]  |
 | **after** | **str**| The cursor that points to the end of the set of entities that has been returned. | [optional]  |
+| **event_type** | **str**| A comma separated list of journey event types to include in the results. | [optional] <br />**Values**: com.genesys.journey.OutcomeAchievedEvent, com.genesys.journey.SegmentAssignmentEvent, com.genesys.journey.WebActionEvent, com.genesys.journey.WebEvent, com.genesys.journey.AppEvent |
 {: class="table table-striped"}
 
 ### Return type

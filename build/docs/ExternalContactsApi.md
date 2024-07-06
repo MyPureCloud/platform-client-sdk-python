@@ -460,7 +460,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ExternalContactsApi()
 contact_id = 'contact_id_example' # str | ExternalContact ID
-expand = ['expand_example'] # list[str] | which fields, if any, to expand (externalOrganization,externalDataSources) (optional)
+expand = ['expand_example'] # list[str] | which fields, if any, to expand (externalOrganization,externalDataSources,identifiers) (optional)
 
 try:
     # Fetch an external contact
@@ -476,7 +476,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **contact_id** | **str**| ExternalContact ID |  |
-| **expand** | [**list[str]**](str.html)| which fields, if any, to expand (externalOrganization,externalDataSources) | [optional] <br />**Values**: externalOrganization, externalDataSources |
+| **expand** | [**list[str]**](str.html)| which fields, if any, to expand (externalOrganization,externalDataSources,identifiers) | [optional] <br />**Values**: externalOrganization, externalDataSources, identifiers |
 {: class="table table-striped"}
 
 ### Return type
@@ -2947,7 +2947,7 @@ except ApiException as e:
 
 <a name="post_externalcontacts_identifierlookup"></a>
 
-## [**ExternalContact**](ExternalContact.html) post_externalcontacts_identifierlookup(identifier)
+## [**ExternalContact**](ExternalContact.html) post_externalcontacts_identifierlookup(identifier, expand=expand)
 
 
 
@@ -2976,10 +2976,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ExternalContactsApi()
 identifier = PureCloudPlatformClientV2.ContactIdentifier() # ContactIdentifier | 
+expand = ['expand_example'] # list[str] | which field, if any, to expand (optional)
 
 try:
     # Fetch a contact using an identifier type and value.
-    api_response = api_instance.post_externalcontacts_identifierlookup(identifier)
+    api_response = api_instance.post_externalcontacts_identifierlookup(identifier, expand=expand)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ExternalContactsApi->post_externalcontacts_identifierlookup: %s\n" % e)
@@ -2991,6 +2992,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **identifier** | [**ContactIdentifier**](ContactIdentifier.html)|  |  |
+| **expand** | [**list[str]**](str.html)| which field, if any, to expand | [optional] <br />**Values**: externalOrganization, identifiers |
 {: class="table table-striped"}
 
 ### Return type

@@ -73,6 +73,7 @@ class KnowledgeDocumentResponse(object):
             'labels': 'list[LabelResponse]',
             'knowledge_base': 'KnowledgeBaseReference',
             'external_id': 'str',
+            'external_url': 'str',
             'source': 'AddressableEntityRef',
             'readonly': 'bool',
             'variations': 'list[DocumentVariation]',
@@ -97,6 +98,7 @@ class KnowledgeDocumentResponse(object):
             'labels': 'labels',
             'knowledge_base': 'knowledgeBase',
             'external_id': 'externalId',
+            'external_url': 'externalUrl',
             'source': 'source',
             'readonly': 'readonly',
             'variations': 'variations',
@@ -120,6 +122,7 @@ class KnowledgeDocumentResponse(object):
         self._labels = None
         self._knowledge_base = None
         self._external_id = None
+        self._external_url = None
         self._source = None
         self._readonly = None
         self._variations = None
@@ -537,6 +540,30 @@ class KnowledgeDocumentResponse(object):
         
 
         self._external_id = external_id
+
+    @property
+    def external_url(self) -> str:
+        """
+        Gets the external_url of this KnowledgeDocumentResponse.
+        The URL to external document.
+
+        :return: The external_url of this KnowledgeDocumentResponse.
+        :rtype: str
+        """
+        return self._external_url
+
+    @external_url.setter
+    def external_url(self, external_url: str) -> None:
+        """
+        Sets the external_url of this KnowledgeDocumentResponse.
+        The URL to external document.
+
+        :param external_url: The external_url of this KnowledgeDocumentResponse.
+        :type: str
+        """
+        
+
+        self._external_url = external_url
 
     @property
     def source(self) -> 'AddressableEntityRef':

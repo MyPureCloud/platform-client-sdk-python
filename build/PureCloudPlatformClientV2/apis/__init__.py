@@ -1,6 +1,7 @@
 from __future__ import absolute_import
 
 # import apis into api package
+from .agent_ui_api import AgentUIApi
 from .alerting_api import AlertingApi
 from .analytics_api import AnalyticsApi
 from .architect_api import ArchitectApi
@@ -15,6 +16,7 @@ from .conversations_api import ConversationsApi
 from .data_extensions_api import DataExtensionsApi
 from .downloads_api import DownloadsApi
 from .emails_api import EmailsApi
+from .employee_engagement_api import EmployeeEngagementApi
 from .events_api import EventsApi
 from .external_contacts_api import ExternalContactsApi
 from .fax_api import FaxApi
@@ -75,6 +77,7 @@ from .web_messaging_api import WebMessagingApi
 from .web_deployments_api import WebDeploymentsApi
 from .widgets_api import WidgetsApi
 from .workforce_management_api import WorkforceManagementApi
+from .agent_ui_api import AgentUIApi
 from .alerting_api import AlertingApi
 from .analytics_api import AnalyticsApi
 from .architect_api import ArchitectApi
@@ -89,6 +92,7 @@ from .conversations_api import ConversationsApi
 from .data_extensions_api import DataExtensionsApi
 from .downloads_api import DownloadsApi
 from .emails_api import EmailsApi
+from .employee_engagement_api import EmployeeEngagementApi
 from .events_api import EventsApi
 from .external_contacts_api import ExternalContactsApi
 from .fax_api import FaxApi

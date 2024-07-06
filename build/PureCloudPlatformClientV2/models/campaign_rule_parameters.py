@@ -32,6 +32,8 @@ from typing import TYPE_CHECKING
 from typing import List
 from typing import Dict
 
+if TYPE_CHECKING:
+    from . import DomainEntityRef
 
 class CampaignRuleParameters(object):
     """
@@ -51,20 +53,35 @@ class CampaignRuleParameters(object):
             'operator': 'str',
             'value': 'str',
             'priority': 'str',
-            'dialing_mode': 'str'
+            'dialing_mode': 'str',
+            'abandon_rate': 'float',
+            'outbound_line_count': 'int',
+            'relative_weight': 'int',
+            'max_calls_per_agent': 'float',
+            'queue': 'DomainEntityRef'
         }
 
         self.attribute_map = {
             'operator': 'operator',
             'value': 'value',
             'priority': 'priority',
-            'dialing_mode': 'dialingMode'
+            'dialing_mode': 'dialingMode',
+            'abandon_rate': 'abandonRate',
+            'outbound_line_count': 'outboundLineCount',
+            'relative_weight': 'relativeWeight',
+            'max_calls_per_agent': 'maxCallsPerAgent',
+            'queue': 'queue'
         }
 
         self._operator = None
         self._value = None
         self._priority = None
         self._dialing_mode = None
+        self._abandon_rate = None
+        self._outbound_line_count = None
+        self._relative_weight = None
+        self._max_calls_per_agent = None
+        self._queue = None
 
     @property
     def operator(self) -> str:
@@ -176,6 +193,126 @@ class CampaignRuleParameters(object):
             self._dialing_mode = "outdated_sdk_version"
         else:
             self._dialing_mode = dialing_mode
+
+    @property
+    def abandon_rate(self) -> float:
+        """
+        Gets the abandon_rate of this CampaignRuleParameters.
+        The abandon rate to set a campaign to. Required for the 'setCampaignAbandonRate' action.
+
+        :return: The abandon_rate of this CampaignRuleParameters.
+        :rtype: float
+        """
+        return self._abandon_rate
+
+    @abandon_rate.setter
+    def abandon_rate(self, abandon_rate: float) -> None:
+        """
+        Sets the abandon_rate of this CampaignRuleParameters.
+        The abandon rate to set a campaign to. Required for the 'setCampaignAbandonRate' action.
+
+        :param abandon_rate: The abandon_rate of this CampaignRuleParameters.
+        :type: float
+        """
+        
+
+        self._abandon_rate = abandon_rate
+
+    @property
+    def outbound_line_count(self) -> int:
+        """
+        Gets the outbound_line_count of this CampaignRuleParameters.
+        The  number of outbound lines to set a campaign to. Required for the 'setCampaignNumberOfLines' action.
+
+        :return: The outbound_line_count of this CampaignRuleParameters.
+        :rtype: int
+        """
+        return self._outbound_line_count
+
+    @outbound_line_count.setter
+    def outbound_line_count(self, outbound_line_count: int) -> None:
+        """
+        Sets the outbound_line_count of this CampaignRuleParameters.
+        The  number of outbound lines to set a campaign to. Required for the 'setCampaignNumberOfLines' action.
+
+        :param outbound_line_count: The outbound_line_count of this CampaignRuleParameters.
+        :type: int
+        """
+        
+
+        self._outbound_line_count = outbound_line_count
+
+    @property
+    def relative_weight(self) -> int:
+        """
+        Gets the relative_weight of this CampaignRuleParameters.
+        The relative weight to set a campaign to. Required for the 'setCampaignWeight' action.
+
+        :return: The relative_weight of this CampaignRuleParameters.
+        :rtype: int
+        """
+        return self._relative_weight
+
+    @relative_weight.setter
+    def relative_weight(self, relative_weight: int) -> None:
+        """
+        Sets the relative_weight of this CampaignRuleParameters.
+        The relative weight to set a campaign to. Required for the 'setCampaignWeight' action.
+
+        :param relative_weight: The relative_weight of this CampaignRuleParameters.
+        :type: int
+        """
+        
+
+        self._relative_weight = relative_weight
+
+    @property
+    def max_calls_per_agent(self) -> float:
+        """
+        Gets the max_calls_per_agent of this CampaignRuleParameters.
+        The maximum number of calls per agent to set a campaign to. Required for the 'setCampaignMaxCallsPerAgent' action.
+
+        :return: The max_calls_per_agent of this CampaignRuleParameters.
+        :rtype: float
+        """
+        return self._max_calls_per_agent
+
+    @max_calls_per_agent.setter
+    def max_calls_per_agent(self, max_calls_per_agent: float) -> None:
+        """
+        Sets the max_calls_per_agent of this CampaignRuleParameters.
+        The maximum number of calls per agent to set a campaign to. Required for the 'setCampaignMaxCallsPerAgent' action.
+
+        :param max_calls_per_agent: The max_calls_per_agent of this CampaignRuleParameters.
+        :type: float
+        """
+        
+
+        self._max_calls_per_agent = max_calls_per_agent
+
+    @property
+    def queue(self) -> 'DomainEntityRef':
+        """
+        Gets the queue of this CampaignRuleParameters.
+        The queue a campaign to. Required for the 'changeCampaignQueue' action.
+
+        :return: The queue of this CampaignRuleParameters.
+        :rtype: DomainEntityRef
+        """
+        return self._queue
+
+    @queue.setter
+    def queue(self, queue: 'DomainEntityRef') -> None:
+        """
+        Sets the queue of this CampaignRuleParameters.
+        The queue a campaign to. Required for the 'changeCampaignQueue' action.
+
+        :param queue: The queue of this CampaignRuleParameters.
+        :type: DomainEntityRef
+        """
+        
+
+        self._queue = queue
 
     def to_dict(self):
         """

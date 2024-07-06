@@ -666,7 +666,7 @@ class ExternalContactsApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str contact_id: ExternalContact ID (required)
-        :param list[str] expand: which fields, if any, to expand (externalOrganization,externalDataSources)
+        :param list[str] expand: which fields, if any, to expand (externalOrganization,externalDataSources,identifiers)
         :return: ExternalContact
                  If the method is called asynchronously,
                  returns the request thread.
@@ -4620,12 +4620,13 @@ class ExternalContactsApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param ContactIdentifier identifier:  (required)
+        :param list[str] expand: which field, if any, to expand
         :return: ExternalContact
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['identifier']
+        all_params = ['identifier', 'expand']
         all_params.append('callback')
 
         params = locals()
@@ -4647,6 +4648,8 @@ class ExternalContactsApi(object):
         path_params = {}
 
         query_params = {}
+        if 'expand' in params:
+            query_params['expand'] = params['expand']
 
         header_params = {}
 

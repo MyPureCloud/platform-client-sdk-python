@@ -2328,12 +2328,13 @@ class JourneyApi(object):
         :param str session_id: System-generated UUID that represents the session the event is a part of. (required)
         :param str page_size: Number of entities to return. Maximum of 200.
         :param str after: The cursor that points to the end of the set of entities that has been returned.
+        :param str event_type: A comma separated list of journey event types to include in the results.
         :return: EventListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['session_id', 'page_size', 'after']
+        all_params = ['session_id', 'page_size', 'after', 'event_type']
         all_params.append('callback')
 
         params = locals()
@@ -2361,6 +2362,8 @@ class JourneyApi(object):
             query_params['pageSize'] = params['page_size']
         if 'after' in params:
             query_params['after'] = params['after']
+        if 'event_type' in params:
+            query_params['eventType'] = params['event_type']
 
         header_params = {}
 

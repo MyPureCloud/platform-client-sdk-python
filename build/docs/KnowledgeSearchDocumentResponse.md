@@ -24,6 +24,7 @@ title: KnowledgeSearchDocumentResponse
 | **labels** | [**list[LabelResponse]**](LabelResponse.html) | The references to labels associated with the document. | [optional] |
 | **knowledge_base** | [**KnowledgeBaseReference**](KnowledgeBaseReference.html) | Knowledge base to which the document belongs to. | [optional] |
 | **external_id** | **str** | The reference to external id associated with the document. | [optional] |
+| **external_url** | **str** | The URL to external document. | [optional] |
 | **source** | [**AddressableEntityRef**](AddressableEntityRef.html) | The reference to source associated with the document. | [optional] |
 | **readonly** | **bool** | Whether the document is read-only. | [optional] |
 | **variations** | [**list[DocumentVariationAnswer]**](DocumentVariationAnswer.html) | Variations of the document. | [optional] |

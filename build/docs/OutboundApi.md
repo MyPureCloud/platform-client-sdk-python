@@ -105,12 +105,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_outbound_sequences**](OutboundApi.html#get_outbound_sequences) | Query a list of dialer campaign sequences.|
 |[**get_outbound_settings**](OutboundApi.html#get_outbound_settings) | Get the outbound settings for this organization|
 |[**get_outbound_wrapupcodemappings**](OutboundApi.html#get_outbound_wrapupcodemappings) | Get the Dialer wrap up code mapping.|
+|[**patch_outbound_campaign**](OutboundApi.html#patch_outbound_campaign) | Update a campaign.|
 |[**patch_outbound_dnclist_customexclusioncolumns**](OutboundApi.html#patch_outbound_dnclist_customexclusioncolumns) | Add entries to or delete entries from a DNC list.|
 |[**patch_outbound_dnclist_emailaddresses**](OutboundApi.html#patch_outbound_dnclist_emailaddresses) | Add emails to or Delete emails from a DNC list.|
 |[**patch_outbound_dnclist_phonenumbers**](OutboundApi.html#patch_outbound_dnclist_phonenumbers) | Add numbers to or delete numbers from a DNC list.|
 |[**patch_outbound_settings**](OutboundApi.html#patch_outbound_settings) | Update the outbound settings for this organization|
 |[**post_outbound_attemptlimits**](OutboundApi.html#post_outbound_attemptlimits) | Create attempt limits|
-|[**post_outbound_audits**](OutboundApi.html#post_outbound_audits) | Retrieves audits for dialer. (Deprecated)|
 |[**post_outbound_callabletimesets**](OutboundApi.html#post_outbound_callabletimesets) | Create callable time set|
 |[**post_outbound_callanalysisresponsesets**](OutboundApi.html#post_outbound_callanalysisresponsesets) | Create a dialer call analysis response set.|
 |[**post_outbound_campaign_agentownedmappingpreview**](OutboundApi.html#post_outbound_campaign_agentownedmappingpreview) | Initiate request for a preview of how agents will be mapped to this campaign&#39;s contact list.|
@@ -5268,6 +5268,56 @@ This endpoint does not need any parameters.
 
 [**WrapUpCodeMapping**](WrapUpCodeMapping.html)
 
+<a name="patch_outbound_campaign"></a>
+
+##  patch_outbound_campaign(campaign_id, body)
+
+
+
+Update a campaign.
+
+Wraps PATCH /api/v2/outbound/campaigns/{campaignId} 
+
+Requires ALL permissions: 
+
+* outbound:campaign:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.OutboundApi()
+campaign_id = 'campaign_id_example' # str | Campaign ID
+body = PureCloudPlatformClientV2.CampaignPatchRequest() # CampaignPatchRequest | CampaignPatchRequest
+
+try:
+    # Update a campaign.
+    api_instance.patch_outbound_campaign(campaign_id, body)
+except ApiException as e:
+    print("Exception when calling OutboundApi->patch_outbound_campaign: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **campaign_id** | **str**| Campaign ID |  |
+| **body** | [**CampaignPatchRequest**](CampaignPatchRequest.html)| CampaignPatchRequest |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
+
 <a name="patch_outbound_dnclist_customexclusioncolumns"></a>
 
 ##  patch_outbound_dnclist_customexclusioncolumns(dnc_list_id, body)
@@ -5520,67 +5570,6 @@ except ApiException as e:
 ### Return type
 
 [**AttemptLimits**](AttemptLimits.html)
-
-<a name="post_outbound_audits"></a>
-
-## [**AuditSearchResult**](AuditSearchResult.html) post_outbound_audits(body, page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order, facets_only=facets_only)
-
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
-
-Retrieves audits for dialer. (Deprecated)
-
-This endpoint is deprecated as a result of this functionality being moved to the Audit Service. Please use \"/api/v2/audits/query\" instead.
-
-Wraps POST /api/v2/outbound/audits 
-
-Requires ANY permissions: 
-
-* outbound:audit:view
-
-### Example
-
-```{"language":"python"}
-import time
-import PureCloudPlatformClientV2
-from PureCloudPlatformClientV2.rest import ApiException
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: PureCloud OAuth
-PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = PureCloudPlatformClientV2.OutboundApi()
-body = PureCloudPlatformClientV2.DialerAuditRequest() # DialerAuditRequest | AuditSearch
-page_size = 25 # int | Page size (optional) (default to 25)
-page_number = 1 # int | Page number (optional) (default to 1)
-sort_by = ''entity.name'' # str | Sort by (optional) (default to 'entity.name')
-sort_order = ''ascending'' # str | Sort order (optional) (default to 'ascending')
-facets_only = False # bool | Facets only (optional) (default to False)
-
-try:
-    # Retrieves audits for dialer. (Deprecated)
-    api_response = api_instance.post_outbound_audits(body, page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order, facets_only=facets_only)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling OutboundApi->post_outbound_audits: %s\n" % e)
-```
-
-### Parameters
-
-
-|Name | Type | Description  | Notes|
-|------------- | ------------- | ------------- | -------------|
-| **body** | [**DialerAuditRequest**](DialerAuditRequest.html)| AuditSearch |  |
-| **page_size** | **int**| Page size | [optional] [default to 25] |
-| **page_number** | **int**| Page number | [optional] [default to 1] |
-| **sort_by** | **str**| Sort by | [optional] [default to &#39;entity.name&#39;] |
-| **sort_order** | **str**| Sort order | [optional] [default to &#39;ascending&#39;] |
-| **facets_only** | **bool**| Facets only | [optional] [default to False] |
-{: class="table table-striped"}
-
-### Return type
-
-[**AuditSearchResult**](AuditSearchResult.html)
 
 <a name="post_outbound_callabletimesets"></a>
 

@@ -61,7 +61,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **bot_type** | [**list[str]**](str.html)| Bot types | [optional] <br />**Values**: GenesysBotConnector, GenesysDialogEngine, AmazonLex, GoogleDialogFlowES, GoogleDialogFlowCX, NuanceDlg, GenesysBotFlow |
+| **bot_type** | [**list[str]**](str.html)| Bot types | [optional] <br />**Values**: GenesysBotConnector, GenesysDialogEngine, AmazonLex, GoogleDialogFlowES, GoogleDialogFlowCX, NuanceDlg, GenesysBotFlow, GenesysDigitalBotFlow, GenesysVoiceSurveyFlow |
 | **bot_name** | **str**| Bot name | [optional]  |
 | **bot_id** | [**list[str]**](str.html)| Bot IDs | [optional]  |
 | **page_size** | **int**| The maximum results to return | [optional] [default to 25] |

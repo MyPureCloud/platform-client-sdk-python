@@ -54,7 +54,8 @@ class ContentAttachment(object):
             'mime': 'str',
             'text': 'str',
             'sha256': 'str',
-            'filename': 'str'
+            'filename': 'str',
+            'content_size_bytes': 'int'
         }
 
         self.attribute_map = {
@@ -64,7 +65,8 @@ class ContentAttachment(object):
             'mime': 'mime',
             'text': 'text',
             'sha256': 'sha256',
-            'filename': 'filename'
+            'filename': 'filename',
+            'content_size_bytes': 'contentSizeBytes'
         }
 
         self._id = None
@@ -74,6 +76,7 @@ class ContentAttachment(object):
         self._text = None
         self._sha256 = None
         self._filename = None
+        self._content_size_bytes = None
 
     @property
     def id(self) -> str:
@@ -247,6 +250,30 @@ class ContentAttachment(object):
         
 
         self._filename = filename
+
+    @property
+    def content_size_bytes(self) -> int:
+        """
+        Gets the content_size_bytes of this ContentAttachment.
+        Size in bytes of the attachment content.
+
+        :return: The content_size_bytes of this ContentAttachment.
+        :rtype: int
+        """
+        return self._content_size_bytes
+
+    @content_size_bytes.setter
+    def content_size_bytes(self, content_size_bytes: int) -> None:
+        """
+        Sets the content_size_bytes of this ContentAttachment.
+        Size in bytes of the attachment content.
+
+        :param content_size_bytes: The content_size_bytes of this ContentAttachment.
+        :type: int
+        """
+        
+
+        self._content_size_bytes = content_size_bytes
 
     def to_dict(self):
         """

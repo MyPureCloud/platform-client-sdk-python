@@ -34,6 +34,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_conversation_participant_wrapup**](ConversationsApi.html#get_conversation_participant_wrapup) | Get the wrap-up for this conversation participant. |
 |[**get_conversation_participant_wrapupcodes**](ConversationsApi.html#get_conversation_participant_wrapupcodes) | Get list of wrapup codes for this conversation participant|
 |[**get_conversation_secureattributes**](ConversationsApi.html#get_conversation_secureattributes) | Get the secure attributes on a conversation.|
+|[**get_conversation_suggestion**](ConversationsApi.html#get_conversation_suggestion) | Get Suggestion.|
+|[**get_conversation_suggestions**](ConversationsApi.html#get_conversation_suggestions) | Get all suggestions for a conversation.|
 |[**get_conversations**](ConversationsApi.html#get_conversations) | Get active conversations for the logged in user|
 |[**get_conversations_call**](ConversationsApi.html#get_conversations_call) | Get call conversation|
 |[**get_conversations_call_participant_communication_wrapup**](ConversationsApi.html#get_conversations_call_participant_communication_wrapup) | Get the wrap-up for this conversation communication. |
@@ -161,6 +163,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_conversation_participant_replace_external**](ConversationsApi.html#post_conversation_participant_replace_external) | Replace this participant with the an external contact|
 |[**post_conversation_participant_replace_queue**](ConversationsApi.html#post_conversation_participant_replace_queue) | Replace this participant with the specified queue|
 |[**post_conversation_participant_secureivrsessions**](ConversationsApi.html#post_conversation_participant_secureivrsessions) | Create secure IVR session. Only a participant in the conversation can invoke a secure IVR.|
+|[**post_conversation_suggestion_engagement**](ConversationsApi.html#post_conversation_suggestion_engagement) | Save an engagement on the suggestion.|
+|[**post_conversation_suggestions_feedback**](ConversationsApi.html#post_conversation_suggestions_feedback) | Suggestion feedback.|
 |[**post_conversation_summary_feedback**](ConversationsApi.html#post_conversation_summary_feedback) | Submit feedback for the summary.|
 |[**post_conversations_call**](ConversationsApi.html#post_conversations_call) | Place a new call as part of a callback conversation.|
 |[**post_conversations_call_participant_barge**](ConversationsApi.html#post_conversations_call_participant_barge) | Barge a given participant&#39;s call creating a barged in conference of connected participants.|
@@ -1528,6 +1532,116 @@ except ApiException as e:
 ### Return type
 
 [**ConversationSecureAttributes**](ConversationSecureAttributes.html)
+
+<a name="get_conversation_suggestion"></a>
+
+## [**Suggestion**](Suggestion.html) get_conversation_suggestion(conversation_id, suggestion_id)
+
+
+
+Get Suggestion.
+
+Wraps GET /api/v2/conversations/{conversationId}/suggestions/{suggestionId} 
+
+Requires ALL permissions: 
+
+* conversation:suggestion:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+conversation_id = 'conversation_id_example' # str | Conversation ID
+suggestion_id = 'suggestion_id_example' # str | Suggestion ID
+
+try:
+    # Get Suggestion.
+    api_response = api_instance.get_conversation_suggestion(conversation_id, suggestion_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->get_conversation_suggestion: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversation_id** | **str**| Conversation ID |  |
+| **suggestion_id** | **str**| Suggestion ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**Suggestion**](Suggestion.html)
+
+<a name="get_conversation_suggestions"></a>
+
+## [**SuggestionListing**](SuggestionListing.html) get_conversation_suggestions(conversation_id, before=before, after=after, page_size=page_size, type=type, state=state)
+
+
+
+Get all suggestions for a conversation.
+
+Wraps GET /api/v2/conversations/{conversationId}/suggestions 
+
+Requires ALL permissions: 
+
+* conversation:suggestion:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+conversation_id = 'conversation_id_example' # str | Conversation ID
+before = 'before_example' # str | The cursor that points to the start of the set of entities that has been returned. (optional)
+after = 'after_example' # str | The cursor that points to the end of the set of entities that has been returned. (optional)
+page_size = 'page_size_example' # str | Number of entities to return. Maximum of 200. (optional)
+type = 'type_example' # str | Suggestion type to filter by. (optional)
+state = 'state_example' # str | Suggestion state to filter Copilot suggestions. (optional)
+
+try:
+    # Get all suggestions for a conversation.
+    api_response = api_instance.get_conversation_suggestions(conversation_id, before=before, after=after, page_size=page_size, type=type, state=state)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->get_conversation_suggestions: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversation_id** | **str**| Conversation ID |  |
+| **before** | **str**| The cursor that points to the start of the set of entities that has been returned. | [optional]  |
+| **after** | **str**| The cursor that points to the end of the set of entities that has been returned. | [optional]  |
+| **page_size** | **str**| Number of entities to return. Maximum of 200. | [optional]  |
+| **type** | **str**| Suggestion type to filter by. | [optional] <br />**Values**: Faq, Article, KnowledgeArticle, KnowledgeSearch, CannedResponse, Script |
+| **state** | **str**| Suggestion state to filter Copilot suggestions. | [optional] <br />**Values**: Suggested, Accepted, Dismissed, Failed |
+{: class="table table-striped"}
+
+### Return type
+
+[**SuggestionListing**](SuggestionListing.html)
 
 <a name="get_conversations"></a>
 
@@ -8036,6 +8150,109 @@ except ApiException as e:
 ### Return type
 
 [**SecureSession**](SecureSession.html)
+
+<a name="post_conversation_suggestion_engagement"></a>
+
+## [**SuggestionEngagement**](SuggestionEngagement.html) post_conversation_suggestion_engagement(conversation_id, suggestion_id, body)
+
+
+
+Save an engagement on the suggestion.
+
+Wraps POST /api/v2/conversations/{conversationId}/suggestions/{suggestionId}/engagement 
+
+Requires ALL permissions: 
+
+* conversation:suggestionEngagement:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+conversation_id = 'conversation_id_example' # str | Conversation ID
+suggestion_id = 'suggestion_id_example' # str | Suggestion ID
+body = PureCloudPlatformClientV2.SuggestionEngagement() # SuggestionEngagement | 
+
+try:
+    # Save an engagement on the suggestion.
+    api_response = api_instance.post_conversation_suggestion_engagement(conversation_id, suggestion_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->post_conversation_suggestion_engagement: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversation_id** | **str**| Conversation ID |  |
+| **suggestion_id** | **str**| Suggestion ID |  |
+| **body** | [**SuggestionEngagement**](SuggestionEngagement.html)|  |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**SuggestionEngagement**](SuggestionEngagement.html)
+
+<a name="post_conversation_suggestions_feedback"></a>
+
+##  post_conversation_suggestions_feedback(conversation_id, body)
+
+
+
+Suggestion feedback.
+
+Wraps POST /api/v2/conversations/{conversationId}/suggestions/feedback 
+
+Requires ANY permissions: 
+
+* conversation:suggestionFeedback:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+conversation_id = 'conversation_id_example' # str | Conversation ID
+body = PureCloudPlatformClientV2.Feedback() # Feedback | SuggestionFeedback
+
+try:
+    # Suggestion feedback.
+    api_instance.post_conversation_suggestions_feedback(conversation_id, body)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->post_conversation_suggestions_feedback: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversation_id** | **str**| Conversation ID |  |
+| **body** | [**Feedback**](Feedback.html)| SuggestionFeedback |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
 
 <a name="post_conversation_summary_feedback"></a>
 

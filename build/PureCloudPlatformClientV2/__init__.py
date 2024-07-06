@@ -217,6 +217,7 @@ from .models.architect_prompt_resource_notification_prompt_resource_notification
 from .models.architect_system_prompt_resource_notification_system_prompt_resource_notification import ArchitectSystemPromptResourceNotificationSystemPromptResourceNotification
 from .models.archive_retention import ArchiveRetention
 from .models.array_node import ArrayNode
+from .models.article import Article
 from .models.article_content import ArticleContent
 from .models.article_content_body import ArticleContentBody
 from .models.assessment_form import AssessmentForm
@@ -257,11 +258,7 @@ from .models.atzm_time_slot import AtzmTimeSlot
 from .models.atzm_time_slot_with_time_zone import AtzmTimeSlotWithTimeZone
 from .models.audio_state import AudioState
 from .models.audio_updated_event import AudioUpdatedEvent
-from .models.audit_entity import AuditEntity
-from .models.audit_facet import AuditFacet
-from .models.audit_filter import AuditFilter
 from .models.audit_log_message import AuditLogMessage
-from .models.audit_message import AuditMessage
 from .models.audit_query_entity import AuditQueryEntity
 from .models.audit_query_execution_results_response import AuditQueryExecutionResultsResponse
 from .models.audit_query_execution_status_response import AuditQueryExecutionStatusResponse
@@ -275,13 +272,11 @@ from .models.audit_realtime_query_request import AuditRealtimeQueryRequest
 from .models.audit_realtime_query_results_response import AuditRealtimeQueryResultsResponse
 from .models.audit_realtime_related_request import AuditRealtimeRelatedRequest
 from .models.audit_realtime_related_results_response import AuditRealtimeRelatedResultsResponse
-from .models.audit_search_result import AuditSearchResult
 from .models.audit_topic_addressable_entity_ref import AuditTopicAddressableEntityRef
 from .models.audit_topic_audit_log_message import AuditTopicAuditLogMessage
 from .models.audit_topic_domain_entity_ref import AuditTopicDomainEntityRef
 from .models.audit_topic_message_info import AuditTopicMessageInfo
 from .models.audit_topic_property_change import AuditTopicPropertyChange
-from .models.audit_user import AuditUser
 from .models.authentication_settings import AuthenticationSettings
 from .models.authorization_settings import AuthorizationSettings
 from .models.authz_division import AuthzDivision
@@ -291,6 +286,8 @@ from .models.authz_grant import AuthzGrant
 from .models.authz_grant_policy import AuthzGrantPolicy
 from .models.authz_grant_role import AuthzGrantRole
 from .models.authz_subject import AuthzSubject
+from .models.auto_answer_setting import AutoAnswerSetting
+from .models.auto_answer_settings import AutoAnswerSettings
 from .models.auto_start import AutoStart
 from .models.auto_status_transition_detail import AutoStatusTransitionDetail
 from .models.automatic_time_zone_mapping_settings import AutomaticTimeZoneMappingSettings
@@ -531,6 +528,7 @@ from .models.campaign_lines_utilization import CampaignLinesUtilization
 from .models.campaign_outbound_lines_allocation import CampaignOutboundLinesAllocation
 from .models.campaign_outbound_lines_distribution import CampaignOutboundLinesDistribution
 from .models.campaign_outbound_lines_reservation import CampaignOutboundLinesReservation
+from .models.campaign_patch_request import CampaignPatchRequest
 from .models.campaign_progress import CampaignProgress
 from .models.campaign_rule import CampaignRule
 from .models.campaign_rule_action import CampaignRuleAction
@@ -558,10 +556,11 @@ from .models.category_request import CategoryRequest
 from .models.category_response import CategoryResponse
 from .models.category_response_listing import CategoryResponseListing
 from .models.category_update_request import CategoryUpdateRequest
+from .models.celebration import Celebration
+from .models.celebration_state_param import CelebrationStateParam
 from .models.certificate import Certificate
 from .models.certificate_authority_entity_listing import CertificateAuthorityEntityListing
 from .models.certificate_details import CertificateDetails
-from .models.change import Change
 from .models.change_my_password_request import ChangeMyPasswordRequest
 from .models.change_password_request import ChangePasswordRequest
 from .models.channel import Channel
@@ -1037,6 +1036,7 @@ from .models.create_performance_profile import CreatePerformanceProfile
 from .models.create_planning_group_request import CreatePlanningGroupRequest
 from .models.create_predictor_request import CreatePredictorRequest
 from .models.create_queue_request import CreateQueueRequest
+from .models.create_recognition import CreateRecognition
 from .models.create_response_asset_request import CreateResponseAssetRequest
 from .models.create_response_asset_response import CreateResponseAssetResponse
 from .models.create_room_request import CreateRoomRequest
@@ -1131,6 +1131,7 @@ from .models.date_range_with_optional_end import DateRangeWithOptionalEnd
 from .models.default_greeting_list import DefaultGreetingList
 from .models.default_objective import DefaultObjective
 from .models.deletable_user_reference import DeletableUserReference
+from .models.delete_program_response import DeleteProgramResponse
 from .models.delete_retention import DeleteRetention
 from .models.dependency import Dependency
 from .models.dependency_object import DependencyObject
@@ -1162,7 +1163,6 @@ from .models.dialer_action import DialerAction
 from .models.dialer_attempt_limits_config_change_attempt_limits import DialerAttemptLimitsConfigChangeAttemptLimits
 from .models.dialer_attempt_limits_config_change_object import DialerAttemptLimitsConfigChangeObject
 from .models.dialer_attempt_limits_config_change_recall_entry import DialerAttemptLimitsConfigChangeRecallEntry
-from .models.dialer_audit_request import DialerAuditRequest
 from .models.dialer_callabletimeset_config_change_callable_time import DialerCallabletimesetConfigChangeCallableTime
 from .models.dialer_callabletimeset_config_change_callable_time_set import DialerCallabletimesetConfigChangeCallableTimeSet
 from .models.dialer_callabletimeset_config_change_object import DialerCallabletimesetConfigChangeObject
@@ -1386,6 +1386,7 @@ from .models.dynamic_group_query_preview import DynamicGroupQueryPreview
 from .models.dynamic_group_routing_skill_condition import DynamicGroupRoutingSkillCondition
 from .models.dynamic_group_skill_condition import DynamicGroupSkillCondition
 from .models.dynamic_line_balancing_settings import DynamicLineBalancingSettings
+from .models.dynamic_line_balancing_settings_patch_request import DynamicLineBalancingSettingsPatchRequest
 from .models.edge import Edge
 from .models.edge_auto_update_config import EdgeAutoUpdateConfig
 from .models.edge_change_topic_edge import EdgeChangeTopicEdge
@@ -1483,7 +1484,6 @@ from .models.entity_change import EntityChange
 from .models.entity_listing import EntityListing
 from .models.entity_reference import EntityReference
 from .models.entity_type_criteria import EntityTypeCriteria
-from .models.entry import Entry
 from .models.error_body import ErrorBody
 from .models.error_details import ErrorDetails
 from .models.error_info import ErrorInfo
@@ -1635,12 +1635,12 @@ from .models.facebook_permission_entity_listing import FacebookPermissionEntityL
 from .models.facebook_scoped_id import FacebookScopedId
 from .models.facet import Facet
 from .models.facet_entry import FacetEntry
-from .models.facet_info import FacetInfo
 from .models.facet_key_attribute import FacetKeyAttribute
 from .models.facet_statistics import FacetStatistics
 from .models.facet_term import FacetTerm
 from .models.failed_object import FailedObject
 from .models.failed_recording_entity_listing import FailedRecordingEntityListing
+from .models.faq import Faq
 from .models.fax_config import FaxConfig
 from .models.fax_document import FaxDocument
 from .models.fax_document_entity_listing import FaxDocumentEntityListing
@@ -1653,6 +1653,7 @@ from .models.fax_topic_lock_data import FaxTopicLockData
 from .models.fax_topic_user_data import FaxTopicUserData
 from .models.fax_topic_workspace_data import FaxTopicWorkspaceData
 from .models.feature_state import FeatureState
+from .models.feedback import Feedback
 from .models.feedback_add_request import FeedbackAddRequest
 from .models.field_config import FieldConfig
 from .models.field_configs import FieldConfigs
@@ -1797,6 +1798,7 @@ from .models.geolocation import Geolocation
 from .models.geolocation_event_geolocation import GeolocationEventGeolocation
 from .models.geolocation_settings import GeolocationSettings
 from .models.get_alert_query import GetAlertQuery
+from .models.get_celebration_listing import GetCelebrationListing
 from .models.get_flow_execution_data_job_result import GetFlowExecutionDataJobResult
 from .models.get_metric_definitions_response import GetMetricDefinitionsResponse
 from .models.get_metric_response import GetMetricResponse
@@ -2470,6 +2472,7 @@ from .models.messenger_settings import MessengerSettings
 from .models.messenger_styles import MessengerStyles
 from .models.meta_data import MetaData
 from .models.metabase import Metabase
+from .models.metadata_attribute import MetadataAttribute
 from .models.metadata_documentation import MetadataDocumentation
 from .models.metadata_item import MetadataItem
 from .models.metadata_presentation import MetadataPresentation
@@ -3151,6 +3154,8 @@ from .models.recipient_additional_identifier import RecipientAdditionalIdentifie
 from .models.recipient_flow import RecipientFlow
 from .models.recipient_listing import RecipientListing
 from .models.recipient_request import RecipientRequest
+from .models.recognition import Recognition
+from .models.recognition_base import RecognitionBase
 from .models.record import Record
 from .models.recording import Recording
 from .models.recording_annotation_flow import RecordingAnnotationFlow
@@ -3396,7 +3401,6 @@ from .models.sentiment_feedback import SentimentFeedback
 from .models.sentiment_feedback_entity_listing import SentimentFeedbackEntityListing
 from .models.sequence_schedule import SequenceSchedule
 from .models.server_date import ServerDate
-from .models.service_context import ServiceContext
 from .models.service_goal_template import ServiceGoalTemplate
 from .models.service_goal_template_impact_override import ServiceGoalTemplateImpactOverride
 from .models.service_goal_template_list import ServiceGoalTemplateList
@@ -3480,6 +3484,7 @@ from .models.social_handle import SocialHandle
 from .models.sort_item import SortItem
 from .models.source import Source
 from .models.source_configuration import SourceConfiguration
+from .models.source_entity import SourceEntity
 from .models.source_entity_listing import SourceEntityListing
 from .models.source_planning_group_request import SourcePlanningGroupRequest
 from .models.speech_text_analytics_settings_request import SpeechTextAnalyticsSettingsRequest
@@ -3527,6 +3532,16 @@ from .models.subscription import Subscription
 from .models.subscription_overview_usage import SubscriptionOverviewUsage
 from .models.suggest_search_criteria import SuggestSearchCriteria
 from .models.suggest_search_request import SuggestSearchRequest
+from .models.suggestion import Suggestion
+from .models.suggestion_canned_response import SuggestionCannedResponse
+from .models.suggestion_context import SuggestionContext
+from .models.suggestion_engagement import SuggestionEngagement
+from .models.suggestion_feedback import SuggestionFeedback
+from .models.suggestion_knowledge_answer import SuggestionKnowledgeAnswer
+from .models.suggestion_knowledge_article import SuggestionKnowledgeArticle
+from .models.suggestion_knowledge_search import SuggestionKnowledgeSearch
+from .models.suggestion_listing import SuggestionListing
+from .models.suggestion_script import SuggestionScript
 from .models.support_center_category import SupportCenterCategory
 from .models.support_center_compact_category_module_template import SupportCenterCompactCategoryModuleTemplate
 from .models.support_center_custom_message import SupportCenterCustomMessage
@@ -4423,6 +4438,7 @@ from .models.writable_entity import WritableEntity
 from .models.writable_starrable_division import WritableStarrableDivision
 
 # import apis into sdk package
+from .apis.agent_ui_api import AgentUIApi
 from .apis.alerting_api import AlertingApi
 from .apis.analytics_api import AnalyticsApi
 from .apis.architect_api import ArchitectApi
@@ -4437,6 +4453,7 @@ from .apis.conversations_api import ConversationsApi
 from .apis.data_extensions_api import DataExtensionsApi
 from .apis.downloads_api import DownloadsApi
 from .apis.emails_api import EmailsApi
+from .apis.employee_engagement_api import EmployeeEngagementApi
 from .apis.events_api import EventsApi
 from .apis.external_contacts_api import ExternalContactsApi
 from .apis.fax_api import FaxApi
@@ -4497,6 +4514,7 @@ from .apis.web_messaging_api import WebMessagingApi
 from .apis.web_deployments_api import WebDeploymentsApi
 from .apis.widgets_api import WidgetsApi
 from .apis.workforce_management_api import WorkforceManagementApi
+from .apis.agent_ui_api import AgentUIApi
 from .apis.alerting_api import AlertingApi
 from .apis.analytics_api import AnalyticsApi
 from .apis.architect_api import ArchitectApi
@@ -4511,6 +4529,7 @@ from .apis.conversations_api import ConversationsApi
 from .apis.data_extensions_api import DataExtensionsApi
 from .apis.downloads_api import DownloadsApi
 from .apis.emails_api import EmailsApi
+from .apis.employee_engagement_api import EmployeeEngagementApi
 from .apis.events_api import EventsApi
 from .apis.external_contacts_api import ExternalContactsApi
 from .apis.fax_api import FaxApi

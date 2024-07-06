@@ -61,6 +61,7 @@ class Program(object):
             'date_modified': 'datetime',
             'published_by': 'AddressableEntityRef',
             'date_published': 'datetime',
+            'topic_links_job': 'AddressableEntityRef',
             'self_uri': 'str'
         }
 
@@ -75,6 +76,7 @@ class Program(object):
             'date_modified': 'dateModified',
             'published_by': 'publishedBy',
             'date_published': 'datePublished',
+            'topic_links_job': 'topicLinksJob',
             'self_uri': 'selfUri'
         }
 
@@ -88,6 +90,7 @@ class Program(object):
         self._date_modified = None
         self._published_by = None
         self._date_published = None
+        self._topic_links_job = None
         self._self_uri = None
 
     @property
@@ -329,6 +332,30 @@ class Program(object):
         
 
         self._date_published = date_published
+
+    @property
+    def topic_links_job(self) -> 'AddressableEntityRef':
+        """
+        Gets the topic_links_job of this Program.
+
+
+        :return: The topic_links_job of this Program.
+        :rtype: AddressableEntityRef
+        """
+        return self._topic_links_job
+
+    @topic_links_job.setter
+    def topic_links_job(self, topic_links_job: 'AddressableEntityRef') -> None:
+        """
+        Sets the topic_links_job of this Program.
+
+
+        :param topic_links_job: The topic_links_job of this Program.
+        :type: AddressableEntityRef
+        """
+        
+
+        self._topic_links_job = topic_links_job
 
     @property
     def self_uri(self) -> str:

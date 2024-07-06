@@ -345,13 +345,14 @@ class LearningApi(object):
         :param str assignment_id: The ID of Learning Assignment (required)
         :param str step_id: The ID of Learning Assignment Step (required)
         :param str shareable_content_object_id: The ID of SCO to load
+        :param str default_shareable_content_object: The default SCO to retrieve
         :param list[str] expand: Fields to expand in response
         :return: LearningAssignmentStep
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['assignment_id', 'step_id', 'shareable_content_object_id', 'expand']
+        all_params = ['assignment_id', 'step_id', 'shareable_content_object_id', 'default_shareable_content_object', 'expand']
         all_params.append('callback')
 
         params = locals()
@@ -382,6 +383,8 @@ class LearningApi(object):
         query_params = {}
         if 'shareable_content_object_id' in params:
             query_params['shareableContentObjectId'] = params['shareable_content_object_id']
+        if 'default_shareable_content_object' in params:
+            query_params['defaultShareableContentObject'] = params['default_shareable_content_object']
         if 'expand' in params:
             query_params['expand'] = params['expand']
 

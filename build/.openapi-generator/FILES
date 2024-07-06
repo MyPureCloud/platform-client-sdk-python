@@ -3,6 +3,7 @@
 PureCloudPlatformClientV2/__init__.py
 PureCloudPlatformClientV2/api_client.py
 PureCloudPlatformClientV2/apis/__init__.py
+PureCloudPlatformClientV2/apis/agent_ui_api.py
 PureCloudPlatformClientV2/apis/alerting_api.py
 PureCloudPlatformClientV2/apis/analytics_api.py
 PureCloudPlatformClientV2/apis/architect_api.py
@@ -17,6 +18,7 @@ PureCloudPlatformClientV2/apis/conversations_api.py
 PureCloudPlatformClientV2/apis/data_extensions_api.py
 PureCloudPlatformClientV2/apis/downloads_api.py
 PureCloudPlatformClientV2/apis/emails_api.py
+PureCloudPlatformClientV2/apis/employee_engagement_api.py
 PureCloudPlatformClientV2/apis/events_api.py
 PureCloudPlatformClientV2/apis/external_contacts_api.py
 PureCloudPlatformClientV2/apis/fax_api.py
@@ -296,6 +298,7 @@ PureCloudPlatformClientV2/models/architect_prompt_resource_notification_prompt_r
 PureCloudPlatformClientV2/models/architect_system_prompt_resource_notification_system_prompt_resource_notification.py
 PureCloudPlatformClientV2/models/archive_retention.py
 PureCloudPlatformClientV2/models/array_node.py
+PureCloudPlatformClientV2/models/article.py
 PureCloudPlatformClientV2/models/article_content.py
 PureCloudPlatformClientV2/models/article_content_body.py
 PureCloudPlatformClientV2/models/assessment_form.py
@@ -336,11 +339,7 @@ PureCloudPlatformClientV2/models/atzm_time_slot.py
 PureCloudPlatformClientV2/models/atzm_time_slot_with_time_zone.py
 PureCloudPlatformClientV2/models/audio_state.py
 PureCloudPlatformClientV2/models/audio_updated_event.py
-PureCloudPlatformClientV2/models/audit_entity.py
-PureCloudPlatformClientV2/models/audit_facet.py
-PureCloudPlatformClientV2/models/audit_filter.py
 PureCloudPlatformClientV2/models/audit_log_message.py
-PureCloudPlatformClientV2/models/audit_message.py
 PureCloudPlatformClientV2/models/audit_query_entity.py
 PureCloudPlatformClientV2/models/audit_query_execution_results_response.py
 PureCloudPlatformClientV2/models/audit_query_execution_status_response.py
@@ -354,13 +353,11 @@ PureCloudPlatformClientV2/models/audit_realtime_query_request.py
 PureCloudPlatformClientV2/models/audit_realtime_query_results_response.py
 PureCloudPlatformClientV2/models/audit_realtime_related_request.py
 PureCloudPlatformClientV2/models/audit_realtime_related_results_response.py
-PureCloudPlatformClientV2/models/audit_search_result.py
 PureCloudPlatformClientV2/models/audit_topic_addressable_entity_ref.py
 PureCloudPlatformClientV2/models/audit_topic_audit_log_message.py
 PureCloudPlatformClientV2/models/audit_topic_domain_entity_ref.py
 PureCloudPlatformClientV2/models/audit_topic_message_info.py
 PureCloudPlatformClientV2/models/audit_topic_property_change.py
-PureCloudPlatformClientV2/models/audit_user.py
 PureCloudPlatformClientV2/models/authentication_settings.py
 PureCloudPlatformClientV2/models/authorization_settings.py
 PureCloudPlatformClientV2/models/authz_division.py
@@ -370,6 +367,8 @@ PureCloudPlatformClientV2/models/authz_grant.py
 PureCloudPlatformClientV2/models/authz_grant_policy.py
 PureCloudPlatformClientV2/models/authz_grant_role.py
 PureCloudPlatformClientV2/models/authz_subject.py
+PureCloudPlatformClientV2/models/auto_answer_setting.py
+PureCloudPlatformClientV2/models/auto_answer_settings.py
 PureCloudPlatformClientV2/models/auto_start.py
 PureCloudPlatformClientV2/models/auto_status_transition_detail.py
 PureCloudPlatformClientV2/models/automatic_time_zone_mapping_settings.py
@@ -610,6 +609,7 @@ PureCloudPlatformClientV2/models/campaign_lines_utilization.py
 PureCloudPlatformClientV2/models/campaign_outbound_lines_allocation.py
 PureCloudPlatformClientV2/models/campaign_outbound_lines_distribution.py
 PureCloudPlatformClientV2/models/campaign_outbound_lines_reservation.py
+PureCloudPlatformClientV2/models/campaign_patch_request.py
 PureCloudPlatformClientV2/models/campaign_progress.py
 PureCloudPlatformClientV2/models/campaign_rule.py
 PureCloudPlatformClientV2/models/campaign_rule_action.py
@@ -637,10 +637,11 @@ PureCloudPlatformClientV2/models/category_request.py
 PureCloudPlatformClientV2/models/category_response.py
 PureCloudPlatformClientV2/models/category_response_listing.py
 PureCloudPlatformClientV2/models/category_update_request.py
+PureCloudPlatformClientV2/models/celebration.py
+PureCloudPlatformClientV2/models/celebration_state_param.py
 PureCloudPlatformClientV2/models/certificate.py
 PureCloudPlatformClientV2/models/certificate_authority_entity_listing.py
 PureCloudPlatformClientV2/models/certificate_details.py
-PureCloudPlatformClientV2/models/change.py
 PureCloudPlatformClientV2/models/change_my_password_request.py
 PureCloudPlatformClientV2/models/change_password_request.py
 PureCloudPlatformClientV2/models/channel.py
@@ -1116,6 +1117,7 @@ PureCloudPlatformClientV2/models/create_performance_profile.py
 PureCloudPlatformClientV2/models/create_planning_group_request.py
 PureCloudPlatformClientV2/models/create_predictor_request.py
 PureCloudPlatformClientV2/models/create_queue_request.py
+PureCloudPlatformClientV2/models/create_recognition.py
 PureCloudPlatformClientV2/models/create_response_asset_request.py
 PureCloudPlatformClientV2/models/create_response_asset_response.py
 PureCloudPlatformClientV2/models/create_room_request.py
@@ -1204,6 +1206,7 @@ PureCloudPlatformClientV2/models/date_range_with_optional_end.py
 PureCloudPlatformClientV2/models/default_greeting_list.py
 PureCloudPlatformClientV2/models/default_objective.py
 PureCloudPlatformClientV2/models/deletable_user_reference.py
+PureCloudPlatformClientV2/models/delete_program_response.py
 PureCloudPlatformClientV2/models/delete_retention.py
 PureCloudPlatformClientV2/models/dependency.py
 PureCloudPlatformClientV2/models/dependency_object.py
@@ -1235,7 +1238,6 @@ PureCloudPlatformClientV2/models/dialer_action.py
 PureCloudPlatformClientV2/models/dialer_attempt_limits_config_change_attempt_limits.py
 PureCloudPlatformClientV2/models/dialer_attempt_limits_config_change_object.py
 PureCloudPlatformClientV2/models/dialer_attempt_limits_config_change_recall_entry.py
-PureCloudPlatformClientV2/models/dialer_audit_request.py
 PureCloudPlatformClientV2/models/dialer_callabletimeset_config_change_callable_time.py
 PureCloudPlatformClientV2/models/dialer_callabletimeset_config_change_callable_time_set.py
 PureCloudPlatformClientV2/models/dialer_callabletimeset_config_change_object.py
@@ -1465,6 +1467,7 @@ PureCloudPlatformClientV2/models/dynamic_group_query_preview.py
 PureCloudPlatformClientV2/models/dynamic_group_routing_skill_condition.py
 PureCloudPlatformClientV2/models/dynamic_group_skill_condition.py
 PureCloudPlatformClientV2/models/dynamic_line_balancing_settings.py
+PureCloudPlatformClientV2/models/dynamic_line_balancing_settings_patch_request.py
 PureCloudPlatformClientV2/models/edge.py
 PureCloudPlatformClientV2/models/edge_auto_update_config.py
 PureCloudPlatformClientV2/models/edge_change_topic_edge.py
@@ -1562,7 +1565,6 @@ PureCloudPlatformClientV2/models/entity_change.py
 PureCloudPlatformClientV2/models/entity_listing.py
 PureCloudPlatformClientV2/models/entity_reference.py
 PureCloudPlatformClientV2/models/entity_type_criteria.py
-PureCloudPlatformClientV2/models/entry.py
 PureCloudPlatformClientV2/models/error_body.py
 PureCloudPlatformClientV2/models/error_details.py
 PureCloudPlatformClientV2/models/error_info.py
@@ -1714,12 +1716,12 @@ PureCloudPlatformClientV2/models/facebook_permission_entity_listing.py
 PureCloudPlatformClientV2/models/facebook_scoped_id.py
 PureCloudPlatformClientV2/models/facet.py
 PureCloudPlatformClientV2/models/facet_entry.py
-PureCloudPlatformClientV2/models/facet_info.py
 PureCloudPlatformClientV2/models/facet_key_attribute.py
 PureCloudPlatformClientV2/models/facet_statistics.py
 PureCloudPlatformClientV2/models/facet_term.py
 PureCloudPlatformClientV2/models/failed_object.py
 PureCloudPlatformClientV2/models/failed_recording_entity_listing.py
+PureCloudPlatformClientV2/models/faq.py
 PureCloudPlatformClientV2/models/fax_config.py
 PureCloudPlatformClientV2/models/fax_document.py
 PureCloudPlatformClientV2/models/fax_document_entity_listing.py
@@ -1732,6 +1734,7 @@ PureCloudPlatformClientV2/models/fax_topic_lock_data.py
 PureCloudPlatformClientV2/models/fax_topic_user_data.py
 PureCloudPlatformClientV2/models/fax_topic_workspace_data.py
 PureCloudPlatformClientV2/models/feature_state.py
+PureCloudPlatformClientV2/models/feedback.py
 PureCloudPlatformClientV2/models/feedback_add_request.py
 PureCloudPlatformClientV2/models/field_config.py
 PureCloudPlatformClientV2/models/field_configs.py
@@ -1872,6 +1875,7 @@ PureCloudPlatformClientV2/models/geolocation.py
 PureCloudPlatformClientV2/models/geolocation_event_geolocation.py
 PureCloudPlatformClientV2/models/geolocation_settings.py
 PureCloudPlatformClientV2/models/get_alert_query.py
+PureCloudPlatformClientV2/models/get_celebration_listing.py
 PureCloudPlatformClientV2/models/get_flow_execution_data_job_result.py
 PureCloudPlatformClientV2/models/get_metric_definitions_response.py
 PureCloudPlatformClientV2/models/get_metric_response.py
@@ -2549,6 +2553,7 @@ PureCloudPlatformClientV2/models/messenger_settings.py
 PureCloudPlatformClientV2/models/messenger_styles.py
 PureCloudPlatformClientV2/models/meta_data.py
 PureCloudPlatformClientV2/models/metabase.py
+PureCloudPlatformClientV2/models/metadata_attribute.py
 PureCloudPlatformClientV2/models/metadata_documentation.py
 PureCloudPlatformClientV2/models/metadata_item.py
 PureCloudPlatformClientV2/models/metadata_presentation.py
@@ -3230,6 +3235,8 @@ PureCloudPlatformClientV2/models/recipient_additional_identifier.py
 PureCloudPlatformClientV2/models/recipient_flow.py
 PureCloudPlatformClientV2/models/recipient_listing.py
 PureCloudPlatformClientV2/models/recipient_request.py
+PureCloudPlatformClientV2/models/recognition.py
+PureCloudPlatformClientV2/models/recognition_base.py
 PureCloudPlatformClientV2/models/record.py
 PureCloudPlatformClientV2/models/recording.py
 PureCloudPlatformClientV2/models/recording_annotation_flow.py
@@ -3473,7 +3480,6 @@ PureCloudPlatformClientV2/models/sentiment_feedback.py
 PureCloudPlatformClientV2/models/sentiment_feedback_entity_listing.py
 PureCloudPlatformClientV2/models/sequence_schedule.py
 PureCloudPlatformClientV2/models/server_date.py
-PureCloudPlatformClientV2/models/service_context.py
 PureCloudPlatformClientV2/models/service_goal_template.py
 PureCloudPlatformClientV2/models/service_goal_template_impact_override.py
 PureCloudPlatformClientV2/models/service_goal_template_list.py
@@ -3559,6 +3565,7 @@ PureCloudPlatformClientV2/models/social_handle.py
 PureCloudPlatformClientV2/models/sort_item.py
 PureCloudPlatformClientV2/models/source.py
 PureCloudPlatformClientV2/models/source_configuration.py
+PureCloudPlatformClientV2/models/source_entity.py
 PureCloudPlatformClientV2/models/source_entity_listing.py
 PureCloudPlatformClientV2/models/source_planning_group_request.py
 PureCloudPlatformClientV2/models/speech_text_analytics_settings_request.py
@@ -3606,6 +3613,16 @@ PureCloudPlatformClientV2/models/subscription.py
 PureCloudPlatformClientV2/models/subscription_overview_usage.py
 PureCloudPlatformClientV2/models/suggest_search_criteria.py
 PureCloudPlatformClientV2/models/suggest_search_request.py
+PureCloudPlatformClientV2/models/suggestion.py
+PureCloudPlatformClientV2/models/suggestion_canned_response.py
+PureCloudPlatformClientV2/models/suggestion_context.py
+PureCloudPlatformClientV2/models/suggestion_engagement.py
+PureCloudPlatformClientV2/models/suggestion_feedback.py
+PureCloudPlatformClientV2/models/suggestion_knowledge_answer.py
+PureCloudPlatformClientV2/models/suggestion_knowledge_article.py
+PureCloudPlatformClientV2/models/suggestion_knowledge_search.py
+PureCloudPlatformClientV2/models/suggestion_listing.py
+PureCloudPlatformClientV2/models/suggestion_script.py
 PureCloudPlatformClientV2/models/support_center_category.py
 PureCloudPlatformClientV2/models/support_center_compact_category_module_template.py
 PureCloudPlatformClientV2/models/support_center_custom_message.py
@@ -4621,6 +4638,8 @@ docs/AgentQueryAdherenceExplanationsRequest.md
 docs/AgentQueryAdherenceExplanationsResponse.md
 docs/AgentQueueTimeRequest.md
 docs/AgentTimeOffRequestPatch.md
+docs/AgentUIApi.json
+docs/AgentUIApi.md
 docs/AgentVideoSettings.md
 docs/AgentlessEmailSendRequestDto.md
 docs/AgentlessEmailSendResponseDto.md
@@ -4724,6 +4743,7 @@ docs/ArchitectPromptResourceNotificationPromptResourceNotification.md
 docs/ArchitectSystemPromptResourceNotificationSystemPromptResourceNotification.md
 docs/ArchiveRetention.md
 docs/ArrayNode.md
+docs/Article.md
 docs/ArticleContent.md
 docs/ArticleContentBody.md
 docs/AssessmentForm.md
@@ -4766,11 +4786,7 @@ docs/AudioState.md
 docs/AudioUpdatedEvent.md
 docs/AuditApi.json
 docs/AuditApi.md
-docs/AuditEntity.md
-docs/AuditFacet.md
-docs/AuditFilter.md
 docs/AuditLogMessage.md
-docs/AuditMessage.md
 docs/AuditQueryEntity.md
 docs/AuditQueryExecutionResultsResponse.md
 docs/AuditQueryExecutionStatusResponse.md
@@ -4784,13 +4800,11 @@ docs/AuditRealtimeQueryRequest.md
 docs/AuditRealtimeQueryResultsResponse.md
 docs/AuditRealtimeRelatedRequest.md
 docs/AuditRealtimeRelatedResultsResponse.md
-docs/AuditSearchResult.md
 docs/AuditTopicAddressableEntityRef.md
 docs/AuditTopicAuditLogMessage.md
 docs/AuditTopicDomainEntityRef.md
 docs/AuditTopicMessageInfo.md
 docs/AuditTopicPropertyChange.md
-docs/AuditUser.md
 docs/AuthenticationSettings.md
 docs/AuthorizationApi.json
 docs/AuthorizationApi.md
@@ -4802,6 +4816,8 @@ docs/AuthzGrant.md
 docs/AuthzGrantPolicy.md
 docs/AuthzGrantRole.md
 docs/AuthzSubject.md
+docs/AutoAnswerSetting.md
+docs/AutoAnswerSettings.md
 docs/AutoStart.md
 docs/AutoStatusTransitionDetail.md
 docs/AutomaticTimeZoneMappingSettings.md
@@ -5044,6 +5060,7 @@ docs/CampaignLinesUtilization.md
 docs/CampaignOutboundLinesAllocation.md
 docs/CampaignOutboundLinesDistribution.md
 docs/CampaignOutboundLinesReservation.md
+docs/CampaignPatchRequest.md
 docs/CampaignProgress.md
 docs/CampaignRule.md
 docs/CampaignRuleAction.md
@@ -5073,10 +5090,11 @@ docs/CategoryRequest.md
 docs/CategoryResponse.md
 docs/CategoryResponseListing.md
 docs/CategoryUpdateRequest.md
+docs/Celebration.md
+docs/CelebrationStateParam.md
 docs/Certificate.md
 docs/CertificateAuthorityEntityListing.md
 docs/CertificateDetails.md
-docs/Change.md
 docs/ChangeMyPasswordRequest.md
 docs/ChangePasswordRequest.md
 docs/Channel.md
@@ -5560,6 +5578,7 @@ docs/CreatePerformanceProfile.md
 docs/CreatePlanningGroupRequest.md
 docs/CreatePredictorRequest.md
 docs/CreateQueueRequest.md
+docs/CreateRecognition.md
 docs/CreateResponseAssetRequest.md
 docs/CreateResponseAssetResponse.md
 docs/CreateRoomRequest.md
@@ -5656,6 +5675,7 @@ docs/DateRangeWithOptionalEnd.md
 docs/DefaultGreetingList.md
 docs/DefaultObjective.md
 docs/DeletableUserReference.md
+docs/DeleteProgramResponse.md
 docs/DeleteRetention.md
 docs/Dependency.md
 docs/DependencyObject.md
@@ -5687,7 +5707,6 @@ docs/DialerAction.md
 docs/DialerAttemptLimitsConfigChangeAttemptLimits.md
 docs/DialerAttemptLimitsConfigChangeObject.md
 docs/DialerAttemptLimitsConfigChangeRecallEntry.md
-docs/DialerAuditRequest.md
 docs/DialerCallabletimesetConfigChangeCallableTime.md
 docs/DialerCallabletimesetConfigChangeCallableTimeSet.md
 docs/DialerCallabletimesetConfigChangeObject.md
@@ -5913,6 +5932,7 @@ docs/DynamicGroupQueryPreview.md
 docs/DynamicGroupRoutingSkillCondition.md
 docs/DynamicGroupSkillCondition.md
 docs/DynamicLineBalancingSettings.md
+docs/DynamicLineBalancingSettingsPatchRequest.md
 docs/Edge.md
 docs/EdgeAutoUpdateConfig.md
 docs/EdgeChangeTopicEdge.md
@@ -5999,6 +6019,8 @@ docs/EmergencyGroupDivisionViewEntityListing.md
 docs/EmergencyGroupListing.md
 docs/EmergencyLocation.md
 docs/EmpathyScore.md
+docs/EmployeeEngagementApi.json
+docs/EmployeeEngagementApi.md
 docs/EmployerInfo.md
 docs/Empty.md
 docs/EncryptionKey.md
@@ -6012,7 +6034,6 @@ docs/EntityChange.md
 docs/EntityListing.md
 docs/EntityReference.md
 docs/EntityTypeCriteria.md
-docs/Entry.md
 docs/ErrorBody.md
 docs/ErrorDetails.md
 docs/ErrorInfo.md
@@ -6168,12 +6189,12 @@ docs/FacebookPermissionEntityListing.md
 docs/FacebookScopedId.md
 docs/Facet.md
 docs/FacetEntry.md
-docs/FacetInfo.md
 docs/FacetKeyAttribute.md
 docs/FacetStatistics.md
 docs/FacetTerm.md
 docs/FailedObject.md
 docs/FailedRecordingEntityListing.md
+docs/Faq.md
 docs/FaxApi.json
 docs/FaxApi.md
 docs/FaxConfig.md
@@ -6188,6 +6209,7 @@ docs/FaxTopicLockData.md
 docs/FaxTopicUserData.md
 docs/FaxTopicWorkspaceData.md
 docs/FeatureState.md
+docs/Feedback.md
 docs/FeedbackAddRequest.md
 docs/FieldConfig.md
 docs/FieldConfigs.md
@@ -6340,6 +6362,7 @@ docs/GeolocationApi.md
 docs/GeolocationEventGeolocation.md
 docs/GeolocationSettings.md
 docs/GetAlertQuery.md
+docs/GetCelebrationListing.md
 docs/GetFlowExecutionDataJobResult.md
 docs/GetMetricDefinitionsResponse.md
 docs/GetMetricResponse.md
@@ -7041,6 +7064,7 @@ docs/MessengerSettings.md
 docs/MessengerStyles.md
 docs/MetaData.md
 docs/Metabase.md
+docs/MetadataAttribute.md
 docs/MetadataDocumentation.md
 docs/MetadataItem.md
 docs/MetadataPresentation.md
@@ -7744,6 +7768,8 @@ docs/RecipientAdditionalIdentifier.md
 docs/RecipientFlow.md
 docs/RecipientListing.md
 docs/RecipientRequest.md
+docs/Recognition.md
+docs/RecognitionBase.md
 docs/Record.md
 docs/Recording.md
 docs/RecordingAnnotationFlow.md
@@ -8003,7 +8029,6 @@ docs/SentimentFeedback.md
 docs/SentimentFeedbackEntityListing.md
 docs/SequenceSchedule.md
 docs/ServerDate.md
-docs/ServiceContext.md
 docs/ServiceGoalTemplate.md
 docs/ServiceGoalTemplateImpactOverride.md
 docs/ServiceGoalTemplateList.md
@@ -8089,6 +8114,7 @@ docs/SocialHandle.md
 docs/SortItem.md
 docs/Source.md
 docs/SourceConfiguration.md
+docs/SourceEntity.md
 docs/SourceEntityListing.md
 docs/SourcePlanningGroupRequest.md
 docs/SpeechTextAnalyticsApi.json
@@ -8142,6 +8168,16 @@ docs/SuggestApi.json
 docs/SuggestApi.md
 docs/SuggestSearchCriteria.md
 docs/SuggestSearchRequest.md
+docs/Suggestion.md
+docs/SuggestionCannedResponse.md
+docs/SuggestionContext.md
+docs/SuggestionEngagement.md
+docs/SuggestionFeedback.md
+docs/SuggestionKnowledgeAnswer.md
+docs/SuggestionKnowledgeArticle.md
+docs/SuggestionKnowledgeSearch.md
+docs/SuggestionListing.md
+docs/SuggestionScript.md
 docs/SupportCenterCategory.md
 docs/SupportCenterCompactCategoryModuleTemplate.md
 docs/SupportCenterCustomMessage.md
@@ -9123,6 +9159,7 @@ docs/delete_conversations_messaging_setting-example.txt
 docs/delete_conversations_messaging_settings_default-example.txt
 docs/delete_conversations_messaging_supportedcontent_supported_content_id-example.txt
 docs/delete_diagnostics_logcapture_browser_user-example.txt
+docs/delete_employeeengagement_celebration-example.txt
 docs/delete_employeeperformance_externalmetrics_definition-example.txt
 docs/delete_externalcontacts_contact-example.txt
 docs/delete_externalcontacts_contact_note-example.txt
@@ -9310,6 +9347,8 @@ docs/delete_user_station_associatedstation-example.txt
 docs/delete_user_station_defaultstation-example.txt
 docs/delete_user_verifier-example.txt
 docs/delete_userrecording-example.txt
+docs/delete_users_agentui_agents_autoanswer_agent_id_settings-example.txt
+docs/delete_users_agentui_agents_autoanswer_agent_id_settings-example.txt
 docs/delete_voicemail_message-example.txt
 docs/delete_voicemail_messages-example.txt
 docs/delete_webchat_deployment-example.txt
@@ -9532,6 +9571,8 @@ docs/get_conversation_recordingmetadata-example.txt
 docs/get_conversation_recordingmetadata_recording_id-example.txt
 docs/get_conversation_recordings-example.txt
 docs/get_conversation_secureattributes-example.txt
+docs/get_conversation_suggestion-example.txt
+docs/get_conversation_suggestions-example.txt
 docs/get_conversations-example.txt
 docs/get_conversations_call-example.txt
 docs/get_conversations_call_participant_communication_wrapup-example.txt
@@ -9614,6 +9655,8 @@ docs/get_documentation_search-example.txt
 docs/get_download-example.txt
 docs/get_emails_settings-example.txt
 docs/get_emails_settings-example.txt
+docs/get_employeeengagement_celebrations-example.txt
+docs/get_employeeengagement_recognition-example.txt
 docs/get_employeeperformance_externalmetrics_definition-example.txt
 docs/get_employeeperformance_externalmetrics_definitions-example.txt
 docs/get_externalcontacts_contact-example.txt
@@ -10390,6 +10433,8 @@ docs/get_userrecording_media-example.txt
 docs/get_userrecordings-example.txt
 docs/get_userrecordings_summary-example.txt
 docs/get_users-example.txt
+docs/get_users_agentui_agents_autoanswer_agent_id_settings-example.txt
+docs/get_users_agentui_agents_autoanswer_agent_id_settings-example.txt
 docs/get_users_development_activities-example.txt
 docs/get_users_development_activities_me-example.txt
 docs/get_users_development_activity-example.txt
@@ -10576,6 +10621,7 @@ docs/patch_conversations_messaging_supportedcontent_supported_content_id-example
 docs/patch_conversations_settings-example.txt
 docs/patch_emails_settings-example.txt
 docs/patch_emails_settings-example.txt
+docs/patch_employeeengagement_celebration-example.txt
 docs/patch_employeeperformance_externalmetrics_definition-example.txt
 docs/patch_externalcontacts_contact_identifiers-example.txt
 docs/patch_flows_instances_settings_executiondata-example.txt
@@ -10613,6 +10659,7 @@ docs/patch_messaging_setting-example.txt
 docs/patch_messaging_supportedcontent_supported_content_id-example.txt
 docs/patch_organizations_authentication_settings-example.txt
 docs/patch_organizations_feature-example.txt
+docs/patch_outbound_campaign-example.txt
 docs/patch_outbound_dnclist_customexclusioncolumns-example.txt
 docs/patch_outbound_dnclist_emailaddresses-example.txt
 docs/patch_outbound_dnclist_phonenumbers-example.txt
@@ -10663,6 +10710,8 @@ docs/patch_user_routinglanguages_bulk-example.txt
 docs/patch_user_routinglanguages_bulk-example.txt
 docs/patch_user_routingskills_bulk-example.txt
 docs/patch_user_routingskills_bulk-example.txt
+docs/patch_users_agentui_agents_autoanswer_agent_id_settings-example.txt
+docs/patch_users_agentui_agents_autoanswer_agent_id_settings-example.txt
 docs/patch_users_bulk-example.txt
 docs/patch_voicemail_group_policy-example.txt
 docs/patch_voicemail_me_policy-example.txt
@@ -10832,6 +10881,8 @@ docs/post_conversation_participant_replace_external-example.txt
 docs/post_conversation_participant_replace_queue-example.txt
 docs/post_conversation_participant_secureivrsessions-example.txt
 docs/post_conversation_recording_annotations-example.txt
+docs/post_conversation_suggestion_engagement-example.txt
+docs/post_conversation_suggestions_feedback-example.txt
 docs/post_conversation_summary_feedback-example.txt
 docs/post_conversations_call-example.txt
 docs/post_conversations_call_participant_barge-example.txt
@@ -10900,6 +10951,7 @@ docs/post_diagnostics_logcapture_browser_user-example.txt
 docs/post_documentation_all_search-example.txt
 docs/post_documentation_gkn_search-example.txt
 docs/post_documentation_search-example.txt
+docs/post_employeeengagement_recognitions-example.txt
 docs/post_employeeperformance_externalmetrics_data-example.txt
 docs/post_employeeperformance_externalmetrics_definitions-example.txt
 docs/post_events_conversations-example.txt
@@ -11085,7 +11137,6 @@ docs/post_orgauthorization_trustees_audits-example.txt
 docs/post_orgauthorization_trustees_default-example.txt
 docs/post_orgauthorization_trustor_audits-example.txt
 docs/post_outbound_attemptlimits-example.txt
-docs/post_outbound_audits-example.txt
 docs/post_outbound_callabletimesets-example.txt
 docs/post_outbound_callanalysisresponsesets-example.txt
 docs/post_outbound_campaign_agentownedmappingpreview-example.txt
@@ -11563,6 +11614,8 @@ docs/put_user_station_associatedstation_station_id-example.txt
 docs/put_user_station_defaultstation_station_id-example.txt
 docs/put_user_verifier-example.txt
 docs/put_userrecording-example.txt
+docs/put_users_agentui_agents_autoanswer_agent_id_settings-example.txt
+docs/put_users_agentui_agents_autoanswer_agent_id_settings-example.txt
 docs/put_users_presences_bulk-example.txt
 docs/put_voicemail_message-example.txt
 docs/put_voicemail_policy-example.txt

@@ -198,7 +198,7 @@ except ApiException as e:
 
 <a name="get_learning_assignment_step"></a>
 
-## [**LearningAssignmentStep**](LearningAssignmentStep.html) get_learning_assignment_step(assignment_id, step_id, shareable_content_object_id=shareable_content_object_id, expand=expand)
+## [**LearningAssignmentStep**](LearningAssignmentStep.html) get_learning_assignment_step(assignment_id, step_id, shareable_content_object_id=shareable_content_object_id, default_shareable_content_object=default_shareable_content_object, expand=expand)
 
 
 
@@ -228,11 +228,12 @@ api_instance = PureCloudPlatformClientV2.LearningApi()
 assignment_id = 'assignment_id_example' # str | The ID of Learning Assignment
 step_id = 'step_id_example' # str | The ID of Learning Assignment Step
 shareable_content_object_id = 'shareable_content_object_id_example' # str | The ID of SCO to load (optional)
+default_shareable_content_object = 'default_shareable_content_object_example' # str | The default SCO to retrieve (optional)
 expand = ['expand_example'] # list[str] | Fields to expand in response (optional)
 
 try:
     # Get Learning Assignment Step
-    api_response = api_instance.get_learning_assignment_step(assignment_id, step_id, shareable_content_object_id=shareable_content_object_id, expand=expand)
+    api_response = api_instance.get_learning_assignment_step(assignment_id, step_id, shareable_content_object_id=shareable_content_object_id, default_shareable_content_object=default_shareable_content_object, expand=expand)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling LearningApi->get_learning_assignment_step: %s\n" % e)
@@ -246,6 +247,7 @@ except ApiException as e:
 | **assignment_id** | **str**| The ID of Learning Assignment |  |
 | **step_id** | **str**| The ID of Learning Assignment Step |  |
 | **shareable_content_object_id** | **str**| The ID of SCO to load | [optional]  |
+| **default_shareable_content_object** | **str**| The default SCO to retrieve | [optional] <br />**Values**: First, Last, Next |
 | **expand** | [**list[str]**](str.html)| Fields to expand in response | [optional] <br />**Values**: moduleStep |
 {: class="table table-striped"}
 

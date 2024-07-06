@@ -157,7 +157,7 @@ void (empty response body)
 
 <a name="delete_speechandtextanalytics_program"></a>
 
-##  delete_speechandtextanalytics_program(program_id, force_delete=force_delete)
+## [**DeleteProgramResponse**](DeleteProgramResponse.html) delete_speechandtextanalytics_program(program_id, force_delete=force_delete)
 
 
 
@@ -187,7 +187,8 @@ force_delete = False # bool | Indicates whether the program is forced to be dele
 
 try:
     # Delete a Speech & Text Analytics program by id
-    api_instance.delete_speechandtextanalytics_program(program_id, force_delete=force_delete)
+    api_response = api_instance.delete_speechandtextanalytics_program(program_id, force_delete=force_delete)
+    pprint(api_response)
 except ApiException as e:
     print("Exception when calling SpeechTextAnalyticsApi->delete_speechandtextanalytics_program: %s\n" % e)
 ```
@@ -203,7 +204,7 @@ except ApiException as e:
 
 ### Return type
 
-void (empty response body)
+[**DeleteProgramResponse**](DeleteProgramResponse.html)
 
 <a name="delete_speechandtextanalytics_sentimentfeedback"></a>
 

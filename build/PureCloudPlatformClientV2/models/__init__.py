@@ -217,6 +217,7 @@ from .architect_prompt_resource_notification_prompt_resource_notification import
 from .architect_system_prompt_resource_notification_system_prompt_resource_notification import ArchitectSystemPromptResourceNotificationSystemPromptResourceNotification
 from .archive_retention import ArchiveRetention
 from .array_node import ArrayNode
+from .article import Article
 from .article_content import ArticleContent
 from .article_content_body import ArticleContentBody
 from .assessment_form import AssessmentForm
@@ -257,11 +258,7 @@ from .atzm_time_slot import AtzmTimeSlot
 from .atzm_time_slot_with_time_zone import AtzmTimeSlotWithTimeZone
 from .audio_state import AudioState
 from .audio_updated_event import AudioUpdatedEvent
-from .audit_entity import AuditEntity
-from .audit_facet import AuditFacet
-from .audit_filter import AuditFilter
 from .audit_log_message import AuditLogMessage
-from .audit_message import AuditMessage
 from .audit_query_entity import AuditQueryEntity
 from .audit_query_execution_results_response import AuditQueryExecutionResultsResponse
 from .audit_query_execution_status_response import AuditQueryExecutionStatusResponse
@@ -275,13 +272,11 @@ from .audit_realtime_query_request import AuditRealtimeQueryRequest
 from .audit_realtime_query_results_response import AuditRealtimeQueryResultsResponse
 from .audit_realtime_related_request import AuditRealtimeRelatedRequest
 from .audit_realtime_related_results_response import AuditRealtimeRelatedResultsResponse
-from .audit_search_result import AuditSearchResult
 from .audit_topic_addressable_entity_ref import AuditTopicAddressableEntityRef
 from .audit_topic_audit_log_message import AuditTopicAuditLogMessage
 from .audit_topic_domain_entity_ref import AuditTopicDomainEntityRef
 from .audit_topic_message_info import AuditTopicMessageInfo
 from .audit_topic_property_change import AuditTopicPropertyChange
-from .audit_user import AuditUser
 from .authentication_settings import AuthenticationSettings
 from .authorization_settings import AuthorizationSettings
 from .authz_division import AuthzDivision
@@ -291,6 +286,8 @@ from .authz_grant import AuthzGrant
 from .authz_grant_policy import AuthzGrantPolicy
 from .authz_grant_role import AuthzGrantRole
 from .authz_subject import AuthzSubject
+from .auto_answer_setting import AutoAnswerSetting
+from .auto_answer_settings import AutoAnswerSettings
 from .auto_start import AutoStart
 from .auto_status_transition_detail import AutoStatusTransitionDetail
 from .automatic_time_zone_mapping_settings import AutomaticTimeZoneMappingSettings
@@ -531,6 +528,7 @@ from .campaign_lines_utilization import CampaignLinesUtilization
 from .campaign_outbound_lines_allocation import CampaignOutboundLinesAllocation
 from .campaign_outbound_lines_distribution import CampaignOutboundLinesDistribution
 from .campaign_outbound_lines_reservation import CampaignOutboundLinesReservation
+from .campaign_patch_request import CampaignPatchRequest
 from .campaign_progress import CampaignProgress
 from .campaign_rule import CampaignRule
 from .campaign_rule_action import CampaignRuleAction
@@ -558,10 +556,11 @@ from .category_request import CategoryRequest
 from .category_response import CategoryResponse
 from .category_response_listing import CategoryResponseListing
 from .category_update_request import CategoryUpdateRequest
+from .celebration import Celebration
+from .celebration_state_param import CelebrationStateParam
 from .certificate import Certificate
 from .certificate_authority_entity_listing import CertificateAuthorityEntityListing
 from .certificate_details import CertificateDetails
-from .change import Change
 from .change_my_password_request import ChangeMyPasswordRequest
 from .change_password_request import ChangePasswordRequest
 from .channel import Channel
@@ -1037,6 +1036,7 @@ from .create_performance_profile import CreatePerformanceProfile
 from .create_planning_group_request import CreatePlanningGroupRequest
 from .create_predictor_request import CreatePredictorRequest
 from .create_queue_request import CreateQueueRequest
+from .create_recognition import CreateRecognition
 from .create_response_asset_request import CreateResponseAssetRequest
 from .create_response_asset_response import CreateResponseAssetResponse
 from .create_room_request import CreateRoomRequest
@@ -1131,6 +1131,7 @@ from .date_range_with_optional_end import DateRangeWithOptionalEnd
 from .default_greeting_list import DefaultGreetingList
 from .default_objective import DefaultObjective
 from .deletable_user_reference import DeletableUserReference
+from .delete_program_response import DeleteProgramResponse
 from .delete_retention import DeleteRetention
 from .dependency import Dependency
 from .dependency_object import DependencyObject
@@ -1162,7 +1163,6 @@ from .dialer_action import DialerAction
 from .dialer_attempt_limits_config_change_attempt_limits import DialerAttemptLimitsConfigChangeAttemptLimits
 from .dialer_attempt_limits_config_change_object import DialerAttemptLimitsConfigChangeObject
 from .dialer_attempt_limits_config_change_recall_entry import DialerAttemptLimitsConfigChangeRecallEntry
-from .dialer_audit_request import DialerAuditRequest
 from .dialer_callabletimeset_config_change_callable_time import DialerCallabletimesetConfigChangeCallableTime
 from .dialer_callabletimeset_config_change_callable_time_set import DialerCallabletimesetConfigChangeCallableTimeSet
 from .dialer_callabletimeset_config_change_object import DialerCallabletimesetConfigChangeObject
@@ -1386,6 +1386,7 @@ from .dynamic_group_query_preview import DynamicGroupQueryPreview
 from .dynamic_group_routing_skill_condition import DynamicGroupRoutingSkillCondition
 from .dynamic_group_skill_condition import DynamicGroupSkillCondition
 from .dynamic_line_balancing_settings import DynamicLineBalancingSettings
+from .dynamic_line_balancing_settings_patch_request import DynamicLineBalancingSettingsPatchRequest
 from .edge import Edge
 from .edge_auto_update_config import EdgeAutoUpdateConfig
 from .edge_change_topic_edge import EdgeChangeTopicEdge
@@ -1483,7 +1484,6 @@ from .entity_change import EntityChange
 from .entity_listing import EntityListing
 from .entity_reference import EntityReference
 from .entity_type_criteria import EntityTypeCriteria
-from .entry import Entry
 from .error_body import ErrorBody
 from .error_details import ErrorDetails
 from .error_info import ErrorInfo
@@ -1635,12 +1635,12 @@ from .facebook_permission_entity_listing import FacebookPermissionEntityListing
 from .facebook_scoped_id import FacebookScopedId
 from .facet import Facet
 from .facet_entry import FacetEntry
-from .facet_info import FacetInfo
 from .facet_key_attribute import FacetKeyAttribute
 from .facet_statistics import FacetStatistics
 from .facet_term import FacetTerm
 from .failed_object import FailedObject
 from .failed_recording_entity_listing import FailedRecordingEntityListing
+from .faq import Faq
 from .fax_config import FaxConfig
 from .fax_document import FaxDocument
 from .fax_document_entity_listing import FaxDocumentEntityListing
@@ -1653,6 +1653,7 @@ from .fax_topic_lock_data import FaxTopicLockData
 from .fax_topic_user_data import FaxTopicUserData
 from .fax_topic_workspace_data import FaxTopicWorkspaceData
 from .feature_state import FeatureState
+from .feedback import Feedback
 from .feedback_add_request import FeedbackAddRequest
 from .field_config import FieldConfig
 from .field_configs import FieldConfigs
@@ -1797,6 +1798,7 @@ from .geolocation import Geolocation
 from .geolocation_event_geolocation import GeolocationEventGeolocation
 from .geolocation_settings import GeolocationSettings
 from .get_alert_query import GetAlertQuery
+from .get_celebration_listing import GetCelebrationListing
 from .get_flow_execution_data_job_result import GetFlowExecutionDataJobResult
 from .get_metric_definitions_response import GetMetricDefinitionsResponse
 from .get_metric_response import GetMetricResponse
@@ -2470,6 +2472,7 @@ from .messenger_settings import MessengerSettings
 from .messenger_styles import MessengerStyles
 from .meta_data import MetaData
 from .metabase import Metabase
+from .metadata_attribute import MetadataAttribute
 from .metadata_documentation import MetadataDocumentation
 from .metadata_item import MetadataItem
 from .metadata_presentation import MetadataPresentation
@@ -3151,6 +3154,8 @@ from .recipient_additional_identifier import RecipientAdditionalIdentifier
 from .recipient_flow import RecipientFlow
 from .recipient_listing import RecipientListing
 from .recipient_request import RecipientRequest
+from .recognition import Recognition
+from .recognition_base import RecognitionBase
 from .record import Record
 from .recording import Recording
 from .recording_annotation_flow import RecordingAnnotationFlow
@@ -3396,7 +3401,6 @@ from .sentiment_feedback import SentimentFeedback
 from .sentiment_feedback_entity_listing import SentimentFeedbackEntityListing
 from .sequence_schedule import SequenceSchedule
 from .server_date import ServerDate
-from .service_context import ServiceContext
 from .service_goal_template import ServiceGoalTemplate
 from .service_goal_template_impact_override import ServiceGoalTemplateImpactOverride
 from .service_goal_template_list import ServiceGoalTemplateList
@@ -3480,6 +3484,7 @@ from .social_handle import SocialHandle
 from .sort_item import SortItem
 from .source import Source
 from .source_configuration import SourceConfiguration
+from .source_entity import SourceEntity
 from .source_entity_listing import SourceEntityListing
 from .source_planning_group_request import SourcePlanningGroupRequest
 from .speech_text_analytics_settings_request import SpeechTextAnalyticsSettingsRequest
@@ -3527,6 +3532,16 @@ from .subscription import Subscription
 from .subscription_overview_usage import SubscriptionOverviewUsage
 from .suggest_search_criteria import SuggestSearchCriteria
 from .suggest_search_request import SuggestSearchRequest
+from .suggestion import Suggestion
+from .suggestion_canned_response import SuggestionCannedResponse
+from .suggestion_context import SuggestionContext
+from .suggestion_engagement import SuggestionEngagement
+from .suggestion_feedback import SuggestionFeedback
+from .suggestion_knowledge_answer import SuggestionKnowledgeAnswer
+from .suggestion_knowledge_article import SuggestionKnowledgeArticle
+from .suggestion_knowledge_search import SuggestionKnowledgeSearch
+from .suggestion_listing import SuggestionListing
+from .suggestion_script import SuggestionScript
 from .support_center_category import SupportCenterCategory
 from .support_center_compact_category_module_template import SupportCenterCompactCategoryModuleTemplate
 from .support_center_custom_message import SupportCenterCustomMessage
