@@ -90,7 +90,7 @@ class DocumentBodyTableProperties(object):
     def width(self) -> float:
         """
         Gets the width of this DocumentBodyTableProperties.
-        The width for the table. The valid values in 'em'.
+        The width of the table converted to em unit.
 
         :return: The width of this DocumentBodyTableProperties.
         :rtype: float
@@ -101,7 +101,7 @@ class DocumentBodyTableProperties(object):
     def width(self, width: float) -> None:
         """
         Sets the width of this DocumentBodyTableProperties.
-        The width for the table. The valid values in 'em'.
+        The width of the table converted to em unit.
 
         :param width: The width of this DocumentBodyTableProperties.
         :type: float

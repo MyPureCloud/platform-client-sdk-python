@@ -32,8 +32,6 @@ from typing import TYPE_CHECKING
 from typing import List
 from typing import Dict
 
-if TYPE_CHECKING:
-    from . import SecondaryPresence
 
 class ActivityCodeReference(object):
     """
@@ -51,21 +49,15 @@ class ActivityCodeReference(object):
         """
         self.swagger_types = {
             'id': 'str',
-            'name': 'str',
-            'secondary_presences': 'list[SecondaryPresence]',
             'self_uri': 'str'
         }
 
         self.attribute_map = {
             'id': 'id',
-            'name': 'name',
-            'secondary_presences': 'secondaryPresences',
             'self_uri': 'selfUri'
         }
 
         self._id = None
-        self._name = None
-        self._secondary_presences = None
         self._self_uri = None
 
     @property
@@ -91,54 +83,6 @@ class ActivityCodeReference(object):
         
 
         self._id = id
-
-    @property
-    def name(self) -> str:
-        """
-        Gets the name of this ActivityCodeReference.
-
-
-        :return: The name of this ActivityCodeReference.
-        :rtype: str
-        """
-        return self._name
-
-    @name.setter
-    def name(self, name: str) -> None:
-        """
-        Sets the name of this ActivityCodeReference.
-
-
-        :param name: The name of this ActivityCodeReference.
-        :type: str
-        """
-        
-
-        self._name = name
-
-    @property
-    def secondary_presences(self) -> List['SecondaryPresence']:
-        """
-        Gets the secondary_presences of this ActivityCodeReference.
-        The secondary presences of this activity code.
-
-        :return: The secondary_presences of this ActivityCodeReference.
-        :rtype: list[SecondaryPresence]
-        """
-        return self._secondary_presences
-
-    @secondary_presences.setter
-    def secondary_presences(self, secondary_presences: List['SecondaryPresence']) -> None:
-        """
-        Sets the secondary_presences of this ActivityCodeReference.
-        The secondary presences of this activity code.
-
-        :param secondary_presences: The secondary_presences of this ActivityCodeReference.
-        :type: list[SecondaryPresence]
-        """
-        
-
-        self._secondary_presences = secondary_presences
 
     @property
     def self_uri(self) -> str:

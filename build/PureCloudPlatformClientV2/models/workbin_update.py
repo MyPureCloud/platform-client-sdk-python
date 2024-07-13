@@ -88,7 +88,7 @@ class WorkbinUpdate(object):
     def description(self) -> str:
         """
         Gets the description of this WorkbinUpdate.
-        Workbin description. Maximum length of 4096 characters.
+        Workbin description. Maximum length of 512 characters.
 
         :return: The description of this WorkbinUpdate.
         :rtype: str
@@ -99,7 +99,7 @@ class WorkbinUpdate(object):
     def description(self, description: str) -> None:
         """
         Sets the description of this WorkbinUpdate.
-        Workbin description. Maximum length of 4096 characters.
+        Workbin description. Maximum length of 512 characters.
 
         :param description: The description of this WorkbinUpdate.
         :type: str

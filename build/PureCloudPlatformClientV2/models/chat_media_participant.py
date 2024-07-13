@@ -88,6 +88,7 @@ class ChatMediaParticipant(object):
             'conversation_routing_data': 'ConversationRoutingData',
             'start_acw_time': 'datetime',
             'end_acw_time': 'datetime',
+            'park_time': 'datetime',
             'room_id': 'str',
             'avatar_image_url': 'str'
         }
@@ -127,6 +128,7 @@ class ChatMediaParticipant(object):
             'conversation_routing_data': 'conversationRoutingData',
             'start_acw_time': 'startAcwTime',
             'end_acw_time': 'endAcwTime',
+            'park_time': 'parkTime',
             'room_id': 'roomId',
             'avatar_image_url': 'avatarImageUrl'
         }
@@ -165,6 +167,7 @@ class ChatMediaParticipant(object):
         self._conversation_routing_data = None
         self._start_acw_time = None
         self._end_acw_time = None
+        self._park_time = None
         self._room_id = None
         self._avatar_image_url = None
 
@@ -1003,6 +1006,30 @@ class ChatMediaParticipant(object):
         
 
         self._end_acw_time = end_acw_time
+
+    @property
+    def park_time(self) -> datetime:
+        """
+        Gets the park_time of this ChatMediaParticipant.
+        The time when this participant's communication was last parked.  Does not reset on resume. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :return: The park_time of this ChatMediaParticipant.
+        :rtype: datetime
+        """
+        return self._park_time
+
+    @park_time.setter
+    def park_time(self, park_time: datetime) -> None:
+        """
+        Sets the park_time of this ChatMediaParticipant.
+        The time when this participant's communication was last parked.  Does not reset on resume. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :param park_time: The park_time of this ChatMediaParticipant.
+        :type: datetime
+        """
+        
+
+        self._park_time = park_time
 
     @property
     def room_id(self) -> str:

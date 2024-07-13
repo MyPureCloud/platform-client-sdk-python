@@ -90,6 +90,7 @@ class CallMediaParticipant(object):
             'conversation_routing_data': 'ConversationRoutingData',
             'start_acw_time': 'datetime',
             'end_acw_time': 'datetime',
+            'park_time': 'datetime',
             'muted': 'bool',
             'confined': 'bool',
             'recording': 'bool',
@@ -144,6 +145,7 @@ class CallMediaParticipant(object):
             'conversation_routing_data': 'conversationRoutingData',
             'start_acw_time': 'startAcwTime',
             'end_acw_time': 'endAcwTime',
+            'park_time': 'parkTime',
             'muted': 'muted',
             'confined': 'confined',
             'recording': 'recording',
@@ -197,6 +199,7 @@ class CallMediaParticipant(object):
         self._conversation_routing_data = None
         self._start_acw_time = None
         self._end_acw_time = None
+        self._park_time = None
         self._muted = None
         self._confined = None
         self._recording = None
@@ -1050,6 +1053,30 @@ class CallMediaParticipant(object):
         
 
         self._end_acw_time = end_acw_time
+
+    @property
+    def park_time(self) -> datetime:
+        """
+        Gets the park_time of this CallMediaParticipant.
+        The time when this participant's communication was last parked.  Does not reset on resume. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :return: The park_time of this CallMediaParticipant.
+        :rtype: datetime
+        """
+        return self._park_time
+
+    @park_time.setter
+    def park_time(self, park_time: datetime) -> None:
+        """
+        Sets the park_time of this CallMediaParticipant.
+        The time when this participant's communication was last parked.  Does not reset on resume. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :param park_time: The park_time of this CallMediaParticipant.
+        :type: datetime
+        """
+        
+
+        self._park_time = park_time
 
     @property
     def muted(self) -> bool:

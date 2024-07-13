@@ -64,7 +64,7 @@ class FileUploadMode(object):
     def file_types(self) -> List[str]:
         """
         Gets the file_types of this FileUploadMode.
-        A list of supported content types for uploading files
+        A list of supported content types for uploading files.
 
         :return: The file_types of this FileUploadMode.
         :rtype: list[str]
@@ -75,7 +75,7 @@ class FileUploadMode(object):
     def file_types(self, file_types: List[str]) -> None:
         """
         Sets the file_types of this FileUploadMode.
-        A list of supported content types for uploading files
+        A list of supported content types for uploading files.
 
         :param file_types: The file_types of this FileUploadMode.
         :type: list[str]

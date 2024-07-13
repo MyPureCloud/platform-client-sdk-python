@@ -1089,7 +1089,7 @@ class ExternalContactsApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str contact_id: ExternalContact ID (required)
-        :param list[str] expand: which fields, if any, to expand (externalOrganization,externalDataSources)
+        :param list[str] expand: which fields, if any, to expand (externalOrganization,externalDataSources,identifiers)
         :return: ExternalContact
                  If the method is called asynchronously,
                  returns the request thread.

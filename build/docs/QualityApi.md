@@ -67,6 +67,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**put_quality_conversation_evaluation**](QualityApi.html#put_quality_conversation_evaluation) | Update an evaluation|
 |[**put_quality_form**](QualityApi.html#put_quality_form) | Update an evaluation form.|
 |[**put_quality_forms_evaluation**](QualityApi.html#put_quality_forms_evaluation) | Update an evaluation form.|
+|[**put_quality_forms_evaluation_predictivescoring_settings**](QualityApi.html#put_quality_forms_evaluation_predictivescoring_settings) | Update the Predictive Scoring settings of an evaluation form.|
 |[**put_quality_forms_survey**](QualityApi.html#put_quality_forms_survey) | Update a survey form.|
 |[**put_quality_surveys_scorable**](QualityApi.html#put_quality_surveys_scorable) | Update a survey as an end-customer, for the purposes of scoring it.|
 {: class="table table-striped"}
@@ -3199,6 +3200,59 @@ except ApiException as e:
 ### Return type
 
 [**EvaluationFormResponse**](EvaluationFormResponse.html)
+
+<a name="put_quality_forms_evaluation_predictivescoring_settings"></a>
+
+## [**PredictiveScoringSettings**](PredictiveScoringSettings.html) put_quality_forms_evaluation_predictivescoring_settings(form_id, body)
+
+
+
+Update the Predictive Scoring settings of an evaluation form.
+
+put_quality_forms_evaluation_predictivescoring_settings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps PUT /api/v2/quality/forms/evaluations/{formId}/predictivescoring/settings 
+
+Requires ANY permissions: 
+
+* quality:evaluationForm:predictiveScoringEdit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.QualityApi()
+form_id = 'form_id_example' # str | Form ID
+body = PureCloudPlatformClientV2.PredictiveScoringSettings() # PredictiveScoringSettings | Predictive Scoring Settings
+
+try:
+    # Update the Predictive Scoring settings of an evaluation form.
+    api_response = api_instance.put_quality_forms_evaluation_predictivescoring_settings(form_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling QualityApi->put_quality_forms_evaluation_predictivescoring_settings: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **form_id** | **str**| Form ID |  |
+| **body** | [**PredictiveScoringSettings**](PredictiveScoringSettings.html)| Predictive Scoring Settings |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**PredictiveScoringSettings**](PredictiveScoringSettings.html)
 
 <a name="put_quality_forms_survey"></a>
 

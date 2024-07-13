@@ -52,6 +52,20 @@ from .models.active_alert_count import ActiveAlertCount
 from .models.activity_code import ActivityCode
 from .models.activity_code_container import ActivityCodeContainer
 from .models.activity_code_reference import ActivityCodeReference
+from .models.activity_code_summary import ActivityCodeSummary
+from .models.activity_plan_abandon_rate_impact_override import ActivityPlanAbandonRateImpactOverride
+from .models.activity_plan_asa_impact_override import ActivityPlanAsaImpactOverride
+from .models.activity_plan_job_exception import ActivityPlanJobException
+from .models.activity_plan_job_listing import ActivityPlanJobListing
+from .models.activity_plan_job_response import ActivityPlanJobResponse
+from .models.activity_plan_list_item import ActivityPlanListItem
+from .models.activity_plan_listing import ActivityPlanListing
+from .models.activity_plan_occurrence_reference import ActivityPlanOccurrenceReference
+from .models.activity_plan_reference import ActivityPlanReference
+from .models.activity_plan_response import ActivityPlanResponse
+from .models.activity_plan_run_job_response import ActivityPlanRunJobResponse
+from .models.activity_plan_service_goal_impact_overrides import ActivityPlanServiceGoalImpactOverrides
+from .models.activity_plan_service_level_impact_override import ActivityPlanServiceLevelImpactOverride
 from .models.acw_detail_event_topic_after_call_work_event import AcwDetailEventTopicAfterCallWorkEvent
 from .models.acw_settings import AcwSettings
 from .models.add_adherence_explanation_admin_request import AddAdherenceExplanationAdminRequest
@@ -129,9 +143,6 @@ from .models.aggregate_view_data import AggregateViewData
 from .models.aggregation_range import AggregationRange
 from .models.aggregation_result import AggregationResult
 from .models.aggregation_result_entry import AggregationResultEntry
-from .models.ai_answer import AiAnswer
-from .models.ai_scoring import AiScoring
-from .models.ai_scoring_settings import AiScoringSettings
 from .models.alert_listing import AlertListing
 from .models.alert_notification import AlertNotification
 from .models.alert_request import AlertRequest
@@ -291,6 +302,7 @@ from .models.auto_answer_settings import AutoAnswerSettings
 from .models.auto_start import AutoStart
 from .models.auto_status_transition_detail import AutoStatusTransitionDetail
 from .models.automatic_time_zone_mapping_settings import AutomaticTimeZoneMappingSettings
+from .models.availability_range import AvailabilityRange
 from .models.available_media_type import AvailableMediaType
 from .models.available_media_type_entity_listing import AvailableMediaTypeEntityListing
 from .models.available_time import AvailableTime
@@ -948,6 +960,7 @@ from .models.conversation_notification_template_parameter import ConversationNot
 from .models.conversation_participant_search_criteria import ConversationParticipantSearchCriteria
 from .models.conversation_participant_search_request import ConversationParticipantSearchRequest
 from .models.conversation_properties import ConversationProperties
+from .models.conversation_public_metadata import ConversationPublicMetadata
 from .models.conversation_query import ConversationQuery
 from .models.conversation_queue_media_settings import ConversationQueueMediaSettings
 from .models.conversation_reason import ConversationReason
@@ -1012,6 +1025,7 @@ from .models.coretype import Coretype
 from .models.coretype_listing import CoretypeListing
 from .models.cover_sheet import CoverSheet
 from .models.create_activity_code_request import CreateActivityCodeRequest
+from .models.create_activity_plan_request import CreateActivityPlanRequest
 from .models.create_admin_time_off_request import CreateAdminTimeOffRequest
 from .models.create_agent_time_off_request import CreateAgentTimeOffRequest
 from .models.create_benefit_assessment_job_request import CreateBenefitAssessmentJobRequest
@@ -1032,6 +1046,7 @@ from .models.create_management_unit_settings_request import CreateManagementUnit
 from .models.create_metric import CreateMetric
 from .models.create_objective import CreateObjective
 from .models.create_outbound_messaging_conversation_request import CreateOutboundMessagingConversationRequest
+from .models.create_outbound_messaging_conversation_response import CreateOutboundMessagingConversationResponse
 from .models.create_performance_profile import CreatePerformanceProfile
 from .models.create_planning_group_request import CreatePlanningGroupRequest
 from .models.create_predictor_request import CreatePredictorRequest
@@ -1231,8 +1246,12 @@ from .models.dialer_ruleset_config_change_uri_reference import DialerRulesetConf
 from .models.dialer_sequence_config_change_campaign_sequence import DialerSequenceConfigChangeCampaignSequence
 from .models.dialer_sequence_config_change_object import DialerSequenceConfigChangeObject
 from .models.dialer_sequence_config_change_uri_reference import DialerSequenceConfigChangeUriReference
+from .models.dialer_sequence_schedule_config_change_alteration import DialerSequenceScheduleConfigChangeAlteration
 from .models.dialer_sequence_schedule_config_change_object import DialerSequenceScheduleConfigChangeObject
+from .models.dialer_sequence_schedule_config_change_recurrence_pattern import DialerSequenceScheduleConfigChangeRecurrencePattern
+from .models.dialer_sequence_schedule_config_change_recurrence_range import DialerSequenceScheduleConfigChangeRecurrenceRange
 from .models.dialer_sequence_schedule_config_change_schedule_interval import DialerSequenceScheduleConfigChangeScheduleInterval
+from .models.dialer_sequence_schedule_config_change_schedule_recurrence import DialerSequenceScheduleConfigChangeScheduleRecurrence
 from .models.dialer_sequence_schedule_config_change_sequence_schedule import DialerSequenceScheduleConfigChangeSequenceSchedule
 from .models.dialer_sequence_schedule_config_change_uri_reference import DialerSequenceScheduleConfigChangeUriReference
 from .models.dialer_wrapupcodemapping_config_change_wrap_up_code_mapping import DialerWrapupcodemappingConfigChangeWrapUpCodeMapping
@@ -1314,6 +1333,7 @@ from .models.document_category_input import DocumentCategoryInput
 from .models.document_content_block import DocumentContentBlock
 from .models.document_content_block_with_highlight import DocumentContentBlockWithHighlight
 from .models.document_content_highlight_index import DocumentContentHighlightIndex
+from .models.document_element_length import DocumentElementLength
 from .models.document_entity_listing import DocumentEntityListing
 from .models.document_faq import DocumentFaq
 from .models.document_list_content_block import DocumentListContentBlock
@@ -1664,6 +1684,7 @@ from .models.file_upload_mode import FileUploadMode
 from .models.file_upload_settings import FileUploadSettings
 from .models.filter import Filter
 from .models.filter_preview_response import FilterPreviewResponse
+from .models.fixed_availability import FixedAvailability
 from .models.flow import Flow
 from .models.flow_activity_data import FlowActivityData
 from .models.flow_activity_entity_data import FlowActivityEntityData
@@ -1793,6 +1814,7 @@ from .models.general_topics_entity_listing import GeneralTopicsEntityListing
 from .models.generate_bu_forecast_request import GenerateBuForecastRequest
 from .models.generate_meeting_id_request import GenerateMeetingIdRequest
 from .models.generic_saml import GenericSAML
+from .models.generic_template import GenericTemplate
 from .models.genesys_bot_connector import GenesysBotConnector
 from .models.geolocation import Geolocation
 from .models.geolocation_event_geolocation import GeolocationEventGeolocation
@@ -1832,6 +1854,7 @@ from .models.group_profile import GroupProfile
 from .models.group_profile_entity_listing import GroupProfileEntityListing
 from .models.group_search_criteria import GroupSearchCriteria
 from .models.group_search_request import GroupSearchRequest
+from .models.group_settings import GroupSettings
 from .models.group_update import GroupUpdate
 from .models.groups_search_response import GroupsSearchResponse
 from .models.guest_category_reference import GuestCategoryReference
@@ -2337,6 +2360,7 @@ from .models.line_status import LineStatus
 from .models.line_user_id import LineUserId
 from .models.link_configuration import LinkConfiguration
 from .models.list_item_component import ListItemComponent
+from .models.list_wrapper_fixed_availability import ListWrapperFixedAvailability
 from .models.list_wrapper_interval import ListWrapperInterval
 from .models.list_wrapper_secondary_presence import ListWrapperSecondaryPresence
 from .models.list_wrapper_shift_start_variance import ListWrapperShiftStartVariance
@@ -2498,8 +2522,6 @@ from .models.miner_topic_phrase import MinerTopicPhrase
 from .models.miner_topics_listing import MinerTopicsListing
 from .models.mobile_notification_settings import MobileNotificationSettings
 from .models.mobile_settings import MobileSettings
-from .models.modeling_processing_error import ModelingProcessingError
-from .models.modeling_status_response import ModelingStatusResponse
 from .models.modifiable_rule_properties import ModifiableRuleProperties
 from .models.move_agent_response import MoveAgentResponse
 from .models.move_agents_request import MoveAgentsRequest
@@ -2550,6 +2572,7 @@ from .models.notification_template_footer import NotificationTemplateFooter
 from .models.notification_template_header import NotificationTemplateHeader
 from .models.notification_template_parameter import NotificationTemplateParameter
 from .models.notifications_response import NotificationsResponse
+from .models.notifications_settings import NotificationsSettings
 from .models.nuance_application import NuanceApplication
 from .models.nuance_bot import NuanceBot
 from .models.nuance_bot_credentials import NuanceBotCredentials
@@ -2698,6 +2721,7 @@ from .models.paged_namespace_listing import PagedNamespaceListing
 from .models.pageless_domain_entity_listing_evaluation_version import PagelessDomainEntityListingEvaluationVersion
 from .models.pageless_entity_listing import PagelessEntityListing
 from .models.paging_spec import PagingSpec
+from .models.parking_state_request import ParkingStateRequest
 from .models.parsed_certificate import ParsedCertificate
 from .models.participant import Participant
 from .models.participant_attributes import ParticipantAttributes
@@ -2804,8 +2828,12 @@ from .models.post_output_contract import PostOutputContract
 from .models.post_text_message import PostTextMessage
 from .models.post_text_request import PostTextRequest
 from .models.post_text_response import PostTextResponse
+from .models.predicted_answer import PredictedAnswer
+from .models.predicted_scoring import PredictedScoring
 from .models.prediction_results import PredictionResults
 from .models.predictive_routing import PredictiveRouting
+from .models.predictive_scoring_setting import PredictiveScoringSetting
+from .models.predictive_scoring_settings import PredictiveScoringSettings
 from .models.predictor import Predictor
 from .models.predictor_listing import PredictorListing
 from .models.predictor_model import PredictorModel
@@ -2832,6 +2860,7 @@ from .models.program_job_request import ProgramJobRequest
 from .models.program_mappings import ProgramMappings
 from .models.program_mappings_request import ProgramMappingsRequest
 from .models.program_request import ProgramRequest
+from .models.program_topic_links_topics_definitions_job import ProgramTopicLinksTopicsDefinitionsJob
 from .models.program_transcription_engine import ProgramTranscriptionEngine
 from .models.program_transcription_engines import ProgramTranscriptionEngines
 from .models.programs_entity_listing import ProgramsEntityListing
@@ -2881,6 +2910,8 @@ from .models.query_time_off_limit_values_request import QueryTimeOffLimitValuesR
 from .models.query_time_off_limit_values_response import QueryTimeOffLimitValuesResponse
 from .models.query_user_staffing_group_list_request import QueryUserStaffingGroupListRequest
 from .models.query_waitlist_positions_request import QueryWaitlistPositionsRequest
+from .models.question_group_settings import QuestionGroupSettings
+from .models.question_settings import QuestionSettings
 from .models.queue import Queue
 from .models.queue_conversation_call_event_topic_call_conversation import QueueConversationCallEventTopicCallConversation
 from .models.queue_conversation_call_event_topic_call_media_participant import QueueConversationCallEventTopicCallMediaParticipant
@@ -3162,6 +3193,8 @@ from .models.recording_annotation_flow import RecordingAnnotationFlow
 from .models.recording_annotation_queue import RecordingAnnotationQueue
 from .models.recording_archive_restore_topic_media_result import RecordingArchiveRestoreTopicMediaResult
 from .models.recording_archive_restore_topic_recording import RecordingArchiveRestoreTopicRecording
+from .models.recording_button_component import RecordingButtonComponent
+from .models.recording_content_actions import RecordingContentActions
 from .models.recording_content_story import RecordingContentStory
 from .models.recording_email_message import RecordingEmailMessage
 from .models.recording_encryption_configuration import RecordingEncryptionConfiguration
@@ -3181,6 +3214,9 @@ from .models.recording_transcode_complete_topic_media_result import RecordingTra
 from .models.recording_transcode_complete_topic_recording import RecordingTranscodeCompleteTopicRecording
 from .models.recording_upload_report import RecordingUploadReport
 from .models.recording_upload_report_request import RecordingUploadReportRequest
+from .models.recurrence_end_settings import RecurrenceEndSettings
+from .models.recurrence_period import RecurrencePeriod
+from .models.recurrence_settings import RecurrenceSettings
 from .models.referrer import Referrer
 from .models.region_time_zone import RegionTimeZone
 from .models.register_architect_job_response import RegisterArchitectJobResponse
@@ -3220,7 +3256,9 @@ from .models.request_external_segment import RequestExternalSegment
 from .models.request_journey import RequestJourney
 from .models.request_journey_pattern import RequestJourneyPattern
 from .models.request_mapping import RequestMapping
+from .models.request_page import RequestPage
 from .models.request_scored_agent import RequestScoredAgent
+from .models.required_local_date_range import RequiredLocalDateRange
 from .models.rescheduling_management_unit_response import ReschedulingManagementUnitResponse
 from .models.rescheduling_options_run_response import ReschedulingOptionsRunResponse
 from .models.resolution_aggregate_data_container import ResolutionAggregateDataContainer
@@ -3247,6 +3285,7 @@ from .models.response_config import ResponseConfig
 from .models.response_entity_list import ResponseEntityList
 from .models.response_entity_listing import ResponseEntityListing
 from .models.response_filter import ResponseFilter
+from .models.response_page import ResponsePage
 from .models.response_query_request import ResponseQueryRequest
 from .models.response_query_results import ResponseQueryResults
 from .models.response_set import ResponseSet
@@ -3318,6 +3357,7 @@ from .models.scheduler_message_type_severity import SchedulerMessageTypeSeverity
 from .models.schedules_division_view import SchedulesDivisionView
 from .models.scheduling_no_forecast_options_request import SchedulingNoForecastOptionsRequest
 from .models.scheduling_options_request import SchedulingOptionsRequest
+from .models.scheduling_period import SchedulingPeriod
 from .models.scheduling_processing_error import SchedulingProcessingError
 from .models.scheduling_settings_request import SchedulingSettingsRequest
 from .models.scheduling_settings_response import SchedulingSettingsResponse
@@ -3823,6 +3863,7 @@ from .models.unread_metric import UnreadMetric
 from .models.unread_status import UnreadStatus
 from .models.update_action_input import UpdateActionInput
 from .models.update_activity_code_request import UpdateActivityCodeRequest
+from .models.update_activity_plan_request import UpdateActivityPlanRequest
 from .models.update_adherence_explanation_status_request import UpdateAdherenceExplanationStatusRequest
 from .models.update_analytics_data_retention_request import UpdateAnalyticsDataRetentionRequest
 from .models.update_business_unit_request import UpdateBusinessUnitRequest
@@ -3953,6 +3994,8 @@ from .models.user_schedule_full_day_time_off_marker import UserScheduleFullDayTi
 from .models.user_schedule_shift import UserScheduleShift
 from .models.user_search_criteria import UserSearchCriteria
 from .models.user_search_request import UserSearchRequest
+from .models.user_search_rule import UserSearchRule
+from .models.user_search_rule_part import UserSearchRulePart
 from .models.user_skill_entity_listing import UserSkillEntityListing
 from .models.user_skill_group_entity_listing import UserSkillGroupEntityListing
 from .models.user_staffing_group_listing import UserStaffingGroupListing
@@ -4022,6 +4065,9 @@ from .models.v2_mobius_rules_topic_condition import V2MobiusRulesTopicCondition
 from .models.v2_mobius_rules_topic_condition_rule_predicate import V2MobiusRulesTopicConditionRulePredicate
 from .models.v2_mobius_rules_topic_entity_properties import V2MobiusRulesTopicEntityProperties
 from .models.v2_mobius_rules_topic_rule import V2MobiusRulesTopicRule
+from .models.v2_wem_engagement_celebration_updates_topic_engagement_celebration import V2WemEngagementCelebrationUpdatesTopicEngagementCelebration
+from .models.v2_wem_engagement_celebration_updates_topic_source_entity import V2WemEngagementCelebrationUpdatesTopicSourceEntity
+from .models.v2_wem_engagement_celebration_updates_topic_user_id import V2WemEngagementCelebrationUpdatesTopicUserId
 from .models.validate_address_request import ValidateAddressRequest
 from .models.validate_address_response import ValidateAddressResponse
 from .models.validate_assign_users import ValidateAssignUsers
@@ -4029,10 +4075,13 @@ from .models.validate_work_plan_messages import ValidateWorkPlanMessages
 from .models.validate_work_plan_response import ValidateWorkPlanResponse
 from .models.validation_limits import ValidationLimits
 from .models.validation_service_request import ValidationServiceRequest
+from .models.value_wrapper_activity_plan_service_goal_impact_overrides import ValueWrapperActivityPlanServiceGoalImpactOverrides
 from .models.value_wrapper_date import ValueWrapperDate
+from .models.value_wrapper_group_settings import ValueWrapperGroupSettings
 from .models.value_wrapper_hris_time_off_type import ValueWrapperHrisTimeOffType
 from .models.value_wrapper_planning_period_settings import ValueWrapperPlanningPeriodSettings
 from .models.value_wrapper_string import ValueWrapperString
+from .models.value_wrapper_user_search_rule import ValueWrapperUserSearchRule
 from .models.verification_result import VerificationResult
 from .models.verifier import Verifier
 from .models.verifier_entity_listing import VerifierEntityListing
@@ -4096,6 +4145,11 @@ from .models.web_deployments_o_auth_exchange_request import WebDeploymentsOAuthE
 from .models.web_deployments_o_auth_request_parameters import WebDeploymentsOAuthRequestParameters
 from .models.web_deployments_refresh_jwt_request import WebDeploymentsRefreshJWTRequest
 from .models.web_event import WebEvent
+from .models.web_event_browser import WebEventBrowser
+from .models.web_event_device import WebEventDevice
+from .models.web_event_request import WebEventRequest
+from .models.web_event_response import WebEventResponse
+from .models.web_event_response_session import WebEventResponseSession
 from .models.web_messaging_attachment import WebMessagingAttachment
 from .models.web_messaging_button_response import WebMessagingButtonResponse
 from .models.web_messaging_channel import WebMessagingChannel
@@ -4121,6 +4175,16 @@ from .models.week_shift_trade_matches_summary_response import WeekShiftTradeMatc
 from .models.week_shift_trade_response import WeekShiftTradeResponse
 from .models.wem_coaching_user_notification_topic_coaching_appointment_reference import WemCoachingUserNotificationTopicCoachingAppointmentReference
 from .models.wem_coaching_user_notification_topic_coaching_user_notification import WemCoachingUserNotificationTopicCoachingUserNotification
+from .models.wfm_activity_plan_job_complete_topic_activity_plan_job_exception import WfmActivityPlanJobCompleteTopicActivityPlanJobException
+from .models.wfm_activity_plan_job_complete_topic_activity_plan_occurrence_deletion_job_complete_notification import WfmActivityPlanJobCompleteTopicActivityPlanOccurrenceDeletionJobCompleteNotification
+from .models.wfm_activity_plan_job_complete_topic_activity_plan_occurrence_reference import WfmActivityPlanJobCompleteTopicActivityPlanOccurrenceReference
+from .models.wfm_activity_plan_job_complete_topic_activity_plan_reference import WfmActivityPlanJobCompleteTopicActivityPlanReference
+from .models.wfm_activity_plan_job_complete_topic_error_body import WfmActivityPlanJobCompleteTopicErrorBody
+from .models.wfm_activity_plan_run_job_complete_topic_activity_plan_job_exception import WfmActivityPlanRunJobCompleteTopicActivityPlanJobException
+from .models.wfm_activity_plan_run_job_complete_topic_activity_plan_occurrence_reference import WfmActivityPlanRunJobCompleteTopicActivityPlanOccurrenceReference
+from .models.wfm_activity_plan_run_job_complete_topic_activity_plan_reference import WfmActivityPlanRunJobCompleteTopicActivityPlanReference
+from .models.wfm_activity_plan_run_job_complete_topic_activity_plan_run_job_complete_notification import WfmActivityPlanRunJobCompleteTopicActivityPlanRunJobCompleteNotification
+from .models.wfm_activity_plan_run_job_complete_topic_error_body import WfmActivityPlanRunJobCompleteTopicErrorBody
 from .models.wfm_adherence_explanation_job_complete_topic_adherence_explanation_changed_notification import WfmAdherenceExplanationJobCompleteTopicAdherenceExplanationChangedNotification
 from .models.wfm_adherence_explanation_job_complete_topic_adherence_explanation_job_notification import WfmAdherenceExplanationJobCompleteTopicAdherenceExplanationJobNotification
 from .models.wfm_adherence_explanation_job_complete_topic_business_unit import WfmAdherenceExplanationJobCompleteTopicBusinessUnit

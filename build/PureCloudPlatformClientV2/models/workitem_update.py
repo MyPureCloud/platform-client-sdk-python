@@ -345,7 +345,7 @@ class WorkitemUpdate(object):
     def description(self) -> str:
         """
         Gets the description of this WorkitemUpdate.
-        The description of the Workitem. Maximum length of 4096 characters.
+        The description of the Workitem. Maximum length of 512 characters.
 
         :return: The description of this WorkitemUpdate.
         :rtype: str
@@ -356,7 +356,7 @@ class WorkitemUpdate(object):
     def description(self, description: str) -> None:
         """
         Sets the description of this WorkitemUpdate.
-        The description of the Workitem. Maximum length of 4096 characters.
+        The description of the Workitem. Maximum length of 512 characters.
 
         :param description: The description of this WorkitemUpdate.
         :type: str

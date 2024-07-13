@@ -1953,7 +1953,7 @@ class OutboundApi(object):
     def delete_outbound_messagingcampaign_progress(self, messaging_campaign_id: str, **kwargs) -> None:
         """
         Reset messaging campaign progress and recycle the messaging campaign
-        
+        Documented permissions are applicable based on campaign type.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

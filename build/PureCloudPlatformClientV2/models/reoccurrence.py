@@ -159,7 +159,7 @@ class Reoccurrence(object):
     def time_zone(self) -> str:
         """
         Gets the time_zone of this Reoccurrence.
-        The time zone of the schedule e.g.:  America/New_York
+        The time zone for the recurrence. The time zone of the recurrence is determined by prioritizing the recurrence's time zone if specified, then the schedule's time zone if set, and finally defaulting to UTC if neither defines a time zone.
 
         :return: The time_zone of this Reoccurrence.
         :rtype: str
@@ -170,7 +170,7 @@ class Reoccurrence(object):
     def time_zone(self, time_zone: str) -> None:
         """
         Sets the time_zone of this Reoccurrence.
-        The time zone of the schedule e.g.:  America/New_York
+        The time zone for the recurrence. The time zone of the recurrence is determined by prioritizing the recurrence's time zone if specified, then the schedule's time zone if set, and finally defaulting to UTC if neither defines a time zone.
 
         :param time_zone: The time_zone of this Reoccurrence.
         :type: str

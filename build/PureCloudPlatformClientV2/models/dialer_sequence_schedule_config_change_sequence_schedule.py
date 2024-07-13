@@ -34,6 +34,7 @@ from typing import Dict
 
 if TYPE_CHECKING:
     from . import DialerSequenceScheduleConfigChangeScheduleInterval
+    from . import DialerSequenceScheduleConfigChangeScheduleRecurrence
     from . import DialerSequenceScheduleConfigChangeUriReference
 
 class DialerSequenceScheduleConfigChangeSequenceSchedule(object):
@@ -52,6 +53,7 @@ class DialerSequenceScheduleConfigChangeSequenceSchedule(object):
         """
         self.swagger_types = {
             'intervals': 'list[DialerSequenceScheduleConfigChangeScheduleInterval]',
+            'recurrences': 'list[DialerSequenceScheduleConfigChangeScheduleRecurrence]',
             'time_zone': 'str',
             'sequence': 'DialerSequenceScheduleConfigChangeUriReference',
             'additional_properties': 'dict(str, object)',
@@ -64,6 +66,7 @@ class DialerSequenceScheduleConfigChangeSequenceSchedule(object):
 
         self.attribute_map = {
             'intervals': 'intervals',
+            'recurrences': 'recurrences',
             'time_zone': 'timeZone',
             'sequence': 'sequence',
             'additional_properties': 'additionalProperties',
@@ -75,6 +78,7 @@ class DialerSequenceScheduleConfigChangeSequenceSchedule(object):
         }
 
         self._intervals = None
+        self._recurrences = None
         self._time_zone = None
         self._sequence = None
         self._additional_properties = None
@@ -107,6 +111,30 @@ class DialerSequenceScheduleConfigChangeSequenceSchedule(object):
         
 
         self._intervals = intervals
+
+    @property
+    def recurrences(self) -> List['DialerSequenceScheduleConfigChangeScheduleRecurrence']:
+        """
+        Gets the recurrences of this DialerSequenceScheduleConfigChangeSequenceSchedule.
+        a list of recurrences for a schedule
+
+        :return: The recurrences of this DialerSequenceScheduleConfigChangeSequenceSchedule.
+        :rtype: list[DialerSequenceScheduleConfigChangeScheduleRecurrence]
+        """
+        return self._recurrences
+
+    @recurrences.setter
+    def recurrences(self, recurrences: List['DialerSequenceScheduleConfigChangeScheduleRecurrence']) -> None:
+        """
+        Sets the recurrences of this DialerSequenceScheduleConfigChangeSequenceSchedule.
+        a list of recurrences for a schedule
+
+        :param recurrences: The recurrences of this DialerSequenceScheduleConfigChangeSequenceSchedule.
+        :type: list[DialerSequenceScheduleConfigChangeScheduleRecurrence]
+        """
+        
+
+        self._recurrences = recurrences
 
     @property
     def time_zone(self) -> str:

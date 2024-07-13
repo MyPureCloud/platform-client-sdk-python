@@ -1926,12 +1926,13 @@ class TaskManagementApi(object):
         :param str after: The cursor that points to the end of the set of entities that has been returned.
         :param int page_size: Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200.
         :param str sort_order: Ascending or descending sort order
+        :param list[str] fields: Comma-separated list of fields. The response will contain only versions created as a result of changes to these fields.
         :return: WorktypeChangeListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['worktype_id', 'after', 'page_size', 'sort_order']
+        all_params = ['worktype_id', 'after', 'page_size', 'sort_order', 'fields']
         all_params.append('callback')
 
         params = locals()
@@ -1961,6 +1962,8 @@ class TaskManagementApi(object):
             query_params['pageSize'] = params['page_size']
         if 'sort_order' in params:
             query_params['sortOrder'] = params['sort_order']
+        if 'fields' in params:
+            query_params['fields'] = params['fields']
 
         header_params = {}
 

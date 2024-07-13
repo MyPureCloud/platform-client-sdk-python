@@ -97,6 +97,7 @@ from ..models import CreateCallbackOnConversationCommand
 from ..models import CreateCallbackResponse
 from ..models import CreateEmailRequest
 from ..models import CreateOutboundMessagingConversationRequest
+from ..models import CreateOutboundMessagingConversationResponse
 from ..models import CreateSecureSession
 from ..models import CreateWebChatMessageRequest
 from ..models import CreateWebChatRequest
@@ -152,6 +153,7 @@ from ..models import OpenIntegrationUpdateRequest
 from ..models import OpenMessageNormalizedMessage
 from ..models import OpenNormalizedMessage
 from ..models import OpenReceiptNormalizedMessage
+from ..models import ParkingStateRequest
 from ..models import ParticipantAttributes
 from ..models import PatchCallbackRequest
 from ..models import PatchCallbackResponse
@@ -10683,6 +10685,97 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def patch_conversations_email_participant_parkingstate(self, conversation_id: str, participant_id: str, body: 'ParkingStateRequest', **kwargs) -> None:
+        """
+        Update conversation by setting its parking state
+        
+	    patch_conversations_email_participant_parkingstate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.patch_conversations_email_participant_parkingstate(conversation_id, participant_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str conversation_id: conversationId (required)
+        :param str participant_id: participantId (required)
+        :param ParkingStateRequest body: Parking update request (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['conversation_id', 'participant_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method patch_conversations_email_participant_parkingstate" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'conversation_id' is set
+        if ('conversation_id' not in params) or (params['conversation_id'] is None):
+            raise ValueError("Missing the required parameter `conversation_id` when calling `patch_conversations_email_participant_parkingstate`")
+        # verify the required parameter 'participant_id' is set
+        if ('participant_id' not in params) or (params['participant_id'] is None):
+            raise ValueError("Missing the required parameter `participant_id` when calling `patch_conversations_email_participant_parkingstate`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `patch_conversations_email_participant_parkingstate`")
+
+
+        resource_path = '/api/v2/conversations/emails/{conversationId}/participants/{participantId}/parkingstate'.replace('{format}', 'json')
+        path_params = {}
+        if 'conversation_id' in params:
+            path_params['conversationId'] = params['conversation_id']
+        if 'participant_id' in params:
+            path_params['participantId'] = params['participant_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PATCH',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def patch_conversations_message(self, conversation_id: str, body: 'Conversation', **kwargs) -> 'Conversation':
         """
         Update a conversation by disconnecting all of the participants
@@ -17234,7 +17327,7 @@ class ConversationsApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_conversations_messages(self, body: 'CreateOutboundMessagingConversationRequest', **kwargs) -> 'MessageConversation':
+    def post_conversations_messages(self, body: 'CreateOutboundMessagingConversationRequest', **kwargs) -> 'CreateOutboundMessagingConversationResponse':
         """
         Create an outbound messaging conversation.
         If there is an existing conversation between the remote address and the address associated with the queue specified in createOutboundRequest then the result of this request depends on the state of that conversation and the useExistingConversation field of createOutboundRequest. If the existing conversation is in alerting or connected state, then the request will fail. If the existing conversation is disconnected but still within the conversation window then the request will fail unless useExistingConversation is set to true.
@@ -17250,7 +17343,7 @@ class ConversationsApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param CreateOutboundMessagingConversationRequest body: Create outbound messaging conversation (required)
-        :return: MessageConversation
+        :return: CreateOutboundMessagingConversationResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -17307,7 +17400,7 @@ class ConversationsApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='MessageConversation',
+                                            response_type='CreateOutboundMessagingConversationResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

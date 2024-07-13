@@ -29,13 +29,16 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_workforcemanagement_adherence_explanations_job**](WorkforceManagementApi.html#get_workforcemanagement_adherence_explanations_job) | Query the status of an adherence explanation operation. Only the user who started the operation can query the status|
 |[**get_workforcemanagement_adherence_historical_bulk_job**](WorkforceManagementApi.html#get_workforcemanagement_adherence_historical_bulk_job) | Request to fetch the status of the historical adherence bulk job. Only the user who started the operation can query the status|
 |[**get_workforcemanagement_adherence_historical_job**](WorkforceManagementApi.html#get_workforcemanagement_adherence_historical_job) | Query the status of a historical adherence request operation. Only the user who started the operation can query the status|
-|[**get_workforcemanagement_adhocmodelingjob**](WorkforceManagementApi.html#get_workforcemanagement_adhocmodelingjob) | To get status of the modeling job.|
 |[**get_workforcemanagement_agent_adherence_explanation**](WorkforceManagementApi.html#get_workforcemanagement_agent_adherence_explanation) | Get an adherence explanation|
 |[**get_workforcemanagement_agent_managementunit**](WorkforceManagementApi.html#get_workforcemanagement_agent_managementunit) | Get the management unit to which the agent belongs|
 |[**get_workforcemanagement_agents_me_managementunit**](WorkforceManagementApi.html#get_workforcemanagement_agents_me_managementunit) | Get the management unit to which the currently logged in agent belongs|
 |[**get_workforcemanagement_businessunit**](WorkforceManagementApi.html#get_workforcemanagement_businessunit) | Get business unit|
 |[**get_workforcemanagement_businessunit_activitycode**](WorkforceManagementApi.html#get_workforcemanagement_businessunit_activitycode) | Get an activity code|
 |[**get_workforcemanagement_businessunit_activitycodes**](WorkforceManagementApi.html#get_workforcemanagement_businessunit_activitycodes) | Get activity codes|
+|[**get_workforcemanagement_businessunit_activityplan**](WorkforceManagementApi.html#get_workforcemanagement_businessunit_activityplan) | Get an activity plan|
+|[**get_workforcemanagement_businessunit_activityplan_runs_job**](WorkforceManagementApi.html#get_workforcemanagement_businessunit_activityplan_runs_job) | Gets an activity plan run job|
+|[**get_workforcemanagement_businessunit_activityplans**](WorkforceManagementApi.html#get_workforcemanagement_businessunit_activityplans) | Get activity plans|
+|[**get_workforcemanagement_businessunit_activityplans_jobs**](WorkforceManagementApi.html#get_workforcemanagement_businessunit_activityplans_jobs) | Gets the latest job for all activity plans in the business unit|
 |[**get_workforcemanagement_businessunit_intraday_planninggroups**](WorkforceManagementApi.html#get_workforcemanagement_businessunit_intraday_planninggroups) | Get intraday planning groups for the given date|
 |[**get_workforcemanagement_businessunit_managementunits**](WorkforceManagementApi.html#get_workforcemanagement_businessunit_managementunits) | Get all authorized management units in the business unit|
 |[**get_workforcemanagement_businessunit_planninggroup**](WorkforceManagementApi.html#get_workforcemanagement_businessunit_planninggroup) | Get a planning group|
@@ -108,6 +111,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**patch_workforcemanagement_agent_adherence_explanation**](WorkforceManagementApi.html#patch_workforcemanagement_agent_adherence_explanation) | Update an adherence explanation|
 |[**patch_workforcemanagement_businessunit**](WorkforceManagementApi.html#patch_workforcemanagement_businessunit) | Update business unit|
 |[**patch_workforcemanagement_businessunit_activitycode**](WorkforceManagementApi.html#patch_workforcemanagement_businessunit_activitycode) | Update an activity code|
+|[**patch_workforcemanagement_businessunit_activityplan**](WorkforceManagementApi.html#patch_workforcemanagement_businessunit_activityplan) | Update an activity plan|
 |[**patch_workforcemanagement_businessunit_planninggroup**](WorkforceManagementApi.html#patch_workforcemanagement_businessunit_planninggroup) | Updates the planning group|
 |[**patch_workforcemanagement_businessunit_scheduling_run**](WorkforceManagementApi.html#patch_workforcemanagement_businessunit_scheduling_run) | Mark a schedule run as applied|
 |[**patch_workforcemanagement_businessunit_servicegoaltemplate**](WorkforceManagementApi.html#patch_workforcemanagement_businessunit_servicegoaltemplate) | Updates a service goal template|
@@ -134,6 +138,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_workforcemanagement_agents_me_possibleworkshifts**](WorkforceManagementApi.html#post_workforcemanagement_agents_me_possibleworkshifts) | Get agent possible work shifts for requested time frame|
 |[**post_workforcemanagement_agentschedules_mine**](WorkforceManagementApi.html#post_workforcemanagement_agentschedules_mine) | Get published schedule for the current user|
 |[**post_workforcemanagement_businessunit_activitycodes**](WorkforceManagementApi.html#post_workforcemanagement_businessunit_activitycodes) | Create a new activity code|
+|[**post_workforcemanagement_businessunit_activityplan_runs_jobs**](WorkforceManagementApi.html#post_workforcemanagement_businessunit_activityplan_runs_jobs) | Run an activity plan manually|
+|[**post_workforcemanagement_businessunit_activityplans**](WorkforceManagementApi.html#post_workforcemanagement_businessunit_activityplans) | Create an activity plan|
 |[**post_workforcemanagement_businessunit_adherence_explanations_query**](WorkforceManagementApi.html#post_workforcemanagement_businessunit_adherence_explanations_query) | Query adherence explanations across an entire business unit for the requested period|
 |[**post_workforcemanagement_businessunit_agentschedules_search**](WorkforceManagementApi.html#post_workforcemanagement_businessunit_agentschedules_search) | Search published schedules|
 |[**post_workforcemanagement_businessunit_intraday**](WorkforceManagementApi.html#post_workforcemanagement_businessunit_intraday) | Get intraday data for the given date for the requested planningGroupIds|
@@ -1251,57 +1257,6 @@ except ApiException as e:
 
 [**WfmHistoricalAdherenceResponse**](WfmHistoricalAdherenceResponse.html)
 
-<a name="get_workforcemanagement_adhocmodelingjob"></a>
-
-## [**ModelingStatusResponse**](ModelingStatusResponse.html) get_workforcemanagement_adhocmodelingjob(job_id)
-
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
-
-To get status of the modeling job.
-
-This Endpoint is Deprecated, and not recommended to be used.
-
-Wraps GET /api/v2/workforcemanagement/adhocmodelingjobs/{jobId} 
-
-Requires ANY permissions: 
-
-* wfm:adhocModel:view
-
-### Example
-
-```{"language":"python"}
-import time
-import PureCloudPlatformClientV2
-from PureCloudPlatformClientV2.rest import ApiException
-from pprint import pprint
-
-# Configure OAuth2 access token for authorization: PureCloud OAuth
-PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
-
-# create an instance of the API class
-api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
-job_id = 'job_id_example' # str | The id of the modeling job
-
-try:
-    # To get status of the modeling job.
-    api_response = api_instance.get_workforcemanagement_adhocmodelingjob(job_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_adhocmodelingjob: %s\n" % e)
-```
-
-### Parameters
-
-
-|Name | Type | Description  | Notes|
-|------------- | ------------- | ------------- | -------------|
-| **job_id** | **str**| The id of the modeling job |  |
-{: class="table table-striped"}
-
-### Return type
-
-[**ModelingStatusResponse**](ModelingStatusResponse.html)
-
 <a name="get_workforcemanagement_agent_adherence_explanation"></a>
 
 ## [**AdherenceExplanationResponse**](AdherenceExplanationResponse.html) get_workforcemanagement_agent_adherence_explanation(agent_id, explanation_id)
@@ -1792,6 +1747,218 @@ except ApiException as e:
 ### Return type
 
 [**BusinessUnitActivityCodeListing**](BusinessUnitActivityCodeListing.html)
+
+<a name="get_workforcemanagement_businessunit_activityplan"></a>
+
+## [**ActivityPlanResponse**](ActivityPlanResponse.html) get_workforcemanagement_businessunit_activityplan(business_unit_id, activity_plan_id)
+
+
+
+Get an activity plan
+
+get_workforcemanagement_businessunit_activityplan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId} 
+
+Requires ANY permissions: 
+
+* wfm:activityPlan:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+activity_plan_id = 'activity_plan_id_example' # str | The ID of the activity plan to fetch
+
+try:
+    # Get an activity plan
+    api_response = api_instance.get_workforcemanagement_businessunit_activityplan(business_unit_id, activity_plan_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_activityplan: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **activity_plan_id** | **str**| The ID of the activity plan to fetch |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**ActivityPlanResponse**](ActivityPlanResponse.html)
+
+<a name="get_workforcemanagement_businessunit_activityplan_runs_job"></a>
+
+## [**ActivityPlanRunJobResponse**](ActivityPlanRunJobResponse.html) get_workforcemanagement_businessunit_activityplan_runs_job(business_unit_id, activity_plan_id, job_id)
+
+
+
+Gets an activity plan run job
+
+get_workforcemanagement_businessunit_activityplan_runs_job is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/runs/jobs/{jobId} 
+
+Requires ANY permissions: 
+
+* wfm:activityPlanRunJob:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+activity_plan_id = 'activity_plan_id_example' # str | The ID of the activity plan associated with the run job
+job_id = 'job_id_example' # str | The ID of the activity plan run job
+
+try:
+    # Gets an activity plan run job
+    api_response = api_instance.get_workforcemanagement_businessunit_activityplan_runs_job(business_unit_id, activity_plan_id, job_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_activityplan_runs_job: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **activity_plan_id** | **str**| The ID of the activity plan associated with the run job |  |
+| **job_id** | **str**| The ID of the activity plan run job |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**ActivityPlanRunJobResponse**](ActivityPlanRunJobResponse.html)
+
+<a name="get_workforcemanagement_businessunit_activityplans"></a>
+
+## [**ActivityPlanListing**](ActivityPlanListing.html) get_workforcemanagement_businessunit_activityplans(business_unit_id, state=state)
+
+
+
+Get activity plans
+
+get_workforcemanagement_businessunit_activityplans is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans 
+
+Requires ANY permissions: 
+
+* wfm:activityPlan:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+state = 'state_example' # str | Optionally filter by activity plan state (optional)
+
+try:
+    # Get activity plans
+    api_response = api_instance.get_workforcemanagement_businessunit_activityplans(business_unit_id, state=state)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_activityplans: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **state** | **str**| Optionally filter by activity plan state | [optional] <br />**Values**: Active, Inactive |
+{: class="table table-striped"}
+
+### Return type
+
+[**ActivityPlanListing**](ActivityPlanListing.html)
+
+<a name="get_workforcemanagement_businessunit_activityplans_jobs"></a>
+
+## [**ActivityPlanJobListing**](ActivityPlanJobListing.html) get_workforcemanagement_businessunit_activityplans_jobs(business_unit_id)
+
+
+
+Gets the latest job for all activity plans in the business unit
+
+get_workforcemanagement_businessunit_activityplans_jobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/jobs 
+
+Requires ANY permissions: 
+
+* wfm:activityPlan:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+
+try:
+    # Gets the latest job for all activity plans in the business unit
+    api_response = api_instance.get_workforcemanagement_businessunit_activityplans_jobs(business_unit_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_activityplans_jobs: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**ActivityPlanJobListing**](ActivityPlanJobListing.html)
 
 <a name="get_workforcemanagement_businessunit_intraday_planninggroups"></a>
 
@@ -5649,6 +5816,63 @@ except ApiException as e:
 
 [**BusinessUnitActivityCode**](BusinessUnitActivityCode.html)
 
+<a name="patch_workforcemanagement_businessunit_activityplan"></a>
+
+## [**ActivityPlanResponse**](ActivityPlanResponse.html) patch_workforcemanagement_businessunit_activityplan(business_unit_id, activity_plan_id, body)
+
+
+
+Update an activity plan
+
+If a job associated with the activity plan is in 'Processing' state the activity plan cannot be updated
+
+patch_workforcemanagement_businessunit_activityplan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId} 
+
+Requires ANY permissions: 
+
+* wfm:activityPlan:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+activity_plan_id = 'activity_plan_id_example' # str | The ID of the activity plan to update
+body = PureCloudPlatformClientV2.UpdateActivityPlanRequest() # UpdateActivityPlanRequest | body
+
+try:
+    # Update an activity plan
+    api_response = api_instance.patch_workforcemanagement_businessunit_activityplan(business_unit_id, activity_plan_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->patch_workforcemanagement_businessunit_activityplan: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **activity_plan_id** | **str**| The ID of the activity plan to update |  |
+| **body** | [**UpdateActivityPlanRequest**](UpdateActivityPlanRequest.html)| body |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**ActivityPlanResponse**](ActivityPlanResponse.html)
+
 <a name="patch_workforcemanagement_businessunit_planninggroup"></a>
 
 ## [**PlanningGroup**](PlanningGroup.html) patch_workforcemanagement_businessunit_planninggroup(business_unit_id, planning_group_id, body=body)
@@ -6998,6 +7222,114 @@ except ApiException as e:
 ### Return type
 
 [**BusinessUnitActivityCode**](BusinessUnitActivityCode.html)
+
+<a name="post_workforcemanagement_businessunit_activityplan_runs_jobs"></a>
+
+## [**ActivityPlanJobResponse**](ActivityPlanJobResponse.html) post_workforcemanagement_businessunit_activityplan_runs_jobs(business_unit_id, activity_plan_id)
+
+
+
+Run an activity plan manually
+
+Triggers a job running the activity plan. The activity plan cannot be updated until the job completes
+
+post_workforcemanagement_businessunit_activityplan_runs_jobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/runs/jobs 
+
+Requires ANY permissions: 
+
+* wfm:activityPlanRunJob:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+activity_plan_id = 'activity_plan_id_example' # str | The ID of the activity plan to run
+
+try:
+    # Run an activity plan manually
+    api_response = api_instance.post_workforcemanagement_businessunit_activityplan_runs_jobs(business_unit_id, activity_plan_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_businessunit_activityplan_runs_jobs: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **activity_plan_id** | **str**| The ID of the activity plan to run |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**ActivityPlanJobResponse**](ActivityPlanJobResponse.html)
+
+<a name="post_workforcemanagement_businessunit_activityplans"></a>
+
+## [**ActivityPlanResponse**](ActivityPlanResponse.html) post_workforcemanagement_businessunit_activityplans(business_unit_id, body)
+
+
+
+Create an activity plan
+
+post_workforcemanagement_businessunit_activityplans is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans 
+
+Requires ANY permissions: 
+
+* wfm:activityPlan:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+body = PureCloudPlatformClientV2.CreateActivityPlanRequest() # CreateActivityPlanRequest | body
+
+try:
+    # Create an activity plan
+    api_response = api_instance.post_workforcemanagement_businessunit_activityplans(business_unit_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_businessunit_activityplans: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **body** | [**CreateActivityPlanRequest**](CreateActivityPlanRequest.html)| body |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**ActivityPlanResponse**](ActivityPlanResponse.html)
 
 <a name="post_workforcemanagement_businessunit_adherence_explanations_query"></a>
 

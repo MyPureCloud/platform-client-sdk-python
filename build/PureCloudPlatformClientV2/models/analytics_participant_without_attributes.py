@@ -56,6 +56,7 @@ class AnalyticsParticipantWithoutAttributes(object):
             'participant_id': 'str',
             'participant_name': 'str',
             'purpose': 'str',
+            'screen_recording': 'bool',
             'team_id': 'str',
             'user_id': 'str',
             'sessions': 'list[AnalyticsSession]'
@@ -68,6 +69,7 @@ class AnalyticsParticipantWithoutAttributes(object):
             'participant_id': 'participantId',
             'participant_name': 'participantName',
             'purpose': 'purpose',
+            'screen_recording': 'screenRecording',
             'team_id': 'teamId',
             'user_id': 'userId',
             'sessions': 'sessions'
@@ -79,6 +81,7 @@ class AnalyticsParticipantWithoutAttributes(object):
         self._participant_id = None
         self._participant_name = None
         self._purpose = None
+        self._screen_recording = None
         self._team_id = None
         self._user_id = None
         self._sessions = None
@@ -236,6 +239,30 @@ class AnalyticsParticipantWithoutAttributes(object):
             self._purpose = "outdated_sdk_version"
         else:
             self._purpose = purpose
+
+    @property
+    def screen_recording(self) -> bool:
+        """
+        Gets the screen_recording of this AnalyticsParticipantWithoutAttributes.
+        Flag determining if a screen recording was started or not
+
+        :return: The screen_recording of this AnalyticsParticipantWithoutAttributes.
+        :rtype: bool
+        """
+        return self._screen_recording
+
+    @screen_recording.setter
+    def screen_recording(self, screen_recording: bool) -> None:
+        """
+        Sets the screen_recording of this AnalyticsParticipantWithoutAttributes.
+        Flag determining if a screen recording was started or not
+
+        :param screen_recording: The screen_recording of this AnalyticsParticipantWithoutAttributes.
+        :type: bool
+        """
+        
+
+        self._screen_recording = screen_recording
 
     @property
     def team_id(self) -> str:

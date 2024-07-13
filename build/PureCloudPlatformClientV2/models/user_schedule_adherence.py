@@ -33,7 +33,7 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
-    from . import ActivityCodeReference
+    from . import ActivityCodeSummary
     from . import BusinessUnitReference
     from . import ManagementUnitReference
     from . import QueueReference
@@ -63,7 +63,7 @@ class UserScheduleAdherence(object):
             'management_unit': 'ManagementUnitReference',
             'team': 'TeamReference',
             'scheduled_activity_category': 'str',
-            'scheduled_activity_code': 'ActivityCodeReference',
+            'scheduled_activity_code': 'ActivityCodeSummary',
             'system_presence': 'str',
             'organization_secondary_presence_id': 'str',
             'routing_status': 'str',
@@ -302,24 +302,24 @@ class UserScheduleAdherence(object):
             self._scheduled_activity_category = scheduled_activity_category
 
     @property
-    def scheduled_activity_code(self) -> 'ActivityCodeReference':
+    def scheduled_activity_code(self) -> 'ActivityCodeSummary':
         """
         Gets the scheduled_activity_code of this UserScheduleAdherence.
         Activity code for which the user is currently scheduled
 
         :return: The scheduled_activity_code of this UserScheduleAdherence.
-        :rtype: ActivityCodeReference
+        :rtype: ActivityCodeSummary
         """
         return self._scheduled_activity_code
 
     @scheduled_activity_code.setter
-    def scheduled_activity_code(self, scheduled_activity_code: 'ActivityCodeReference') -> None:
+    def scheduled_activity_code(self, scheduled_activity_code: 'ActivityCodeSummary') -> None:
         """
         Sets the scheduled_activity_code of this UserScheduleAdherence.
         Activity code for which the user is currently scheduled
 
         :param scheduled_activity_code: The scheduled_activity_code of this UserScheduleAdherence.
-        :type: ActivityCodeReference
+        :type: ActivityCodeSummary
         """
         
 

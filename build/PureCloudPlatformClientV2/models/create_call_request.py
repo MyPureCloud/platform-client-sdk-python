@@ -57,6 +57,7 @@ class CreateCallRequest(object):
             'call_queue_id': 'str',
             'call_user_id': 'str',
             'priority': 'int',
+            'attributes': 'dict(str, str)',
             'language_id': 'str',
             'routing_skills_ids': 'list[str]',
             'conversation_ids': 'list[str]',
@@ -74,6 +75,7 @@ class CreateCallRequest(object):
             'call_queue_id': 'callQueueId',
             'call_user_id': 'callUserId',
             'priority': 'priority',
+            'attributes': 'attributes',
             'language_id': 'languageId',
             'routing_skills_ids': 'routingSkillsIds',
             'conversation_ids': 'conversationIds',
@@ -90,6 +92,7 @@ class CreateCallRequest(object):
         self._call_queue_id = None
         self._call_user_id = None
         self._priority = None
+        self._attributes = None
         self._language_id = None
         self._routing_skills_ids = None
         self._conversation_ids = None
@@ -265,6 +268,30 @@ class CreateCallRequest(object):
         
 
         self._priority = priority
+
+    @property
+    def attributes(self) -> Dict[str, str]:
+        """
+        Gets the attributes of this CreateCallRequest.
+        The list of attributes to associate with the customer participant.
+
+        :return: The attributes of this CreateCallRequest.
+        :rtype: dict(str, str)
+        """
+        return self._attributes
+
+    @attributes.setter
+    def attributes(self, attributes: Dict[str, str]) -> None:
+        """
+        Sets the attributes of this CreateCallRequest.
+        The list of attributes to associate with the customer participant.
+
+        :param attributes: The attributes of this CreateCallRequest.
+        :type: dict(str, str)
+        """
+        
+
+        self._attributes = attributes
 
     @property
     def language_id(self) -> str:

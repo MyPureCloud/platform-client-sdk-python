@@ -63,6 +63,7 @@ class ReportingTurn(object):
             'knowledge': 'ReportingTurnKnowledge',
             'knowledge_base_events': 'ReportingTurnKnowledgeEvents',
             'date_created': 'datetime',
+            'date_completed': 'datetime',
             'ask_action_result': 'str',
             'session_end_details': 'SessionEndDetails',
             'conversation': 'AddressableEntityRef'
@@ -77,6 +78,7 @@ class ReportingTurn(object):
             'knowledge': 'knowledge',
             'knowledge_base_events': 'knowledgeBaseEvents',
             'date_created': 'dateCreated',
+            'date_completed': 'dateCompleted',
             'ask_action_result': 'askActionResult',
             'session_end_details': 'sessionEndDetails',
             'conversation': 'conversation'
@@ -90,6 +92,7 @@ class ReportingTurn(object):
         self._knowledge = None
         self._knowledge_base_events = None
         self._date_created = None
+        self._date_completed = None
         self._ask_action_result = None
         self._session_end_details = None
         self._conversation = None
@@ -285,6 +288,30 @@ class ReportingTurn(object):
         
 
         self._date_created = date_created
+
+    @property
+    def date_completed(self) -> datetime:
+        """
+        Gets the date_completed of this ReportingTurn.
+        Timestamp indicating when the original turn was completed. Note: The 'interval' query param uses this timestamp to filter the output. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :return: The date_completed of this ReportingTurn.
+        :rtype: datetime
+        """
+        return self._date_completed
+
+    @date_completed.setter
+    def date_completed(self, date_completed: datetime) -> None:
+        """
+        Sets the date_completed of this ReportingTurn.
+        Timestamp indicating when the original turn was completed. Note: The 'interval' query param uses this timestamp to filter the output. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :param date_completed: The date_completed of this ReportingTurn.
+        :type: datetime
+        """
+        
+
+        self._date_completed = date_completed
 
     @property
     def ask_action_result(self) -> str:

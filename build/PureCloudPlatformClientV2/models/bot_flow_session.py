@@ -60,6 +60,7 @@ class BotFlowSession(object):
             'bot_result': 'str',
             'bot_result_category': 'str',
             'date_created': 'datetime',
+            'date_completed': 'datetime',
             'conversation': 'AddressableEntityRef'
         }
 
@@ -72,6 +73,7 @@ class BotFlowSession(object):
             'bot_result': 'botResult',
             'bot_result_category': 'botResultCategory',
             'date_created': 'dateCreated',
+            'date_completed': 'dateCompleted',
             'conversation': 'conversation'
         }
 
@@ -83,6 +85,7 @@ class BotFlowSession(object):
         self._bot_result = None
         self._bot_result_category = None
         self._date_created = None
+        self._date_completed = None
         self._conversation = None
 
     @property
@@ -286,6 +289,30 @@ class BotFlowSession(object):
         
 
         self._date_created = date_created
+
+    @property
+    def date_completed(self) -> datetime:
+        """
+        Gets the date_completed of this BotFlowSession.
+        Timestamp indicating when the session was completed. Note: The 'interval' query param uses this timestamp to filter the output. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :return: The date_completed of this BotFlowSession.
+        :rtype: datetime
+        """
+        return self._date_completed
+
+    @date_completed.setter
+    def date_completed(self, date_completed: datetime) -> None:
+        """
+        Sets the date_completed of this BotFlowSession.
+        Timestamp indicating when the session was completed. Note: The 'interval' query param uses this timestamp to filter the output. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :param date_completed: The date_completed of this BotFlowSession.
+        :type: datetime
+        """
+        
+
+        self._date_completed = date_completed
 
     @property
     def conversation(self) -> 'AddressableEntityRef':

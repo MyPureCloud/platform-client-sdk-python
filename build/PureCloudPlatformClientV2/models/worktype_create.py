@@ -109,7 +109,7 @@ class WorktypeCreate(object):
     def name(self) -> str:
         """
         Gets the name of this WorktypeCreate.
-        The name of the Worktype. Length between 3 and 256 characters.
+        The name of the Worktype. Valid length between 3 and 256 characters.
 
         :return: The name of this WorktypeCreate.
         :rtype: str
@@ -120,7 +120,7 @@ class WorktypeCreate(object):
     def name(self, name: str) -> None:
         """
         Sets the name of this WorktypeCreate.
-        The name of the Worktype. Length between 3 and 256 characters.
+        The name of the Worktype. Valid length between 3 and 256 characters.
 
         :param name: The name of this WorktypeCreate.
         :type: str
@@ -355,7 +355,7 @@ class WorktypeCreate(object):
     def description(self) -> str:
         """
         Gets the description of this WorktypeCreate.
-        The description of the Worktype. Maximum length of 4096 characters.
+        The description of the Worktype. Maximum length of 512 characters.
 
         :return: The description of this WorktypeCreate.
         :rtype: str
@@ -366,7 +366,7 @@ class WorktypeCreate(object):
     def description(self, description: str) -> None:
         """
         Sets the description of this WorktypeCreate.
-        The description of the Worktype. Maximum length of 4096 characters.
+        The description of the Worktype. Maximum length of 512 characters.
 
         :param description: The description of this WorktypeCreate.
         :type: str

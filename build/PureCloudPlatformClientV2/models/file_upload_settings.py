@@ -66,7 +66,7 @@ class FileUploadSettings(object):
     def enable_attachments(self) -> bool:
         """
         Gets the enable_attachments of this FileUploadSettings.
-        whether or not attachments is enabled
+        whether or not attachments are enabled
 
         :return: The enable_attachments of this FileUploadSettings.
         :rtype: bool
@@ -77,7 +77,7 @@ class FileUploadSettings(object):
     def enable_attachments(self, enable_attachments: bool) -> None:
         """
         Sets the enable_attachments of this FileUploadSettings.
-        whether or not attachments is enabled
+        whether or not attachments are enabled
 
         :param enable_attachments: The enable_attachments of this FileUploadSettings.
         :type: bool

@@ -123,7 +123,7 @@ class DocumentBodyTableCellBlockProperties(object):
     def width(self) -> float:
         """
         Gets the width of this DocumentBodyTableCellBlockProperties.
-        The width for the table cell.
+        The width of the table cell converted to em unit.
 
         :return: The width of this DocumentBodyTableCellBlockProperties.
         :rtype: float
@@ -134,7 +134,7 @@ class DocumentBodyTableCellBlockProperties(object):
     def width(self, width: float) -> None:
         """
         Sets the width of this DocumentBodyTableCellBlockProperties.
-        The width for the table cell.
+        The width of the table cell converted to em unit.
 
         :param width: The width of this DocumentBodyTableCellBlockProperties.
         :type: float

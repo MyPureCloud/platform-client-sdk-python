@@ -13,6 +13,7 @@ title: AnalyticsParticipant
 | **participant_id** | **str** | Unique identifier for the participant | [optional] |
 | **participant_name** | **str** | A human readable name identifying the participant | [optional] |
 | **purpose** | **str** | The participant&#39;s purpose | [optional] |
+| **screen_recording** | **bool** | Flag determining if a screen recording was started or not | [optional] |
 | **team_id** | **str** | The team ID the user is a member of | [optional] |
 | **user_id** | **str** | Unique identifier for the user | [optional] |
 | **sessions** | [**list[AnalyticsSession]**](AnalyticsSession.html) | List of sessions associated to this participant | [optional] |

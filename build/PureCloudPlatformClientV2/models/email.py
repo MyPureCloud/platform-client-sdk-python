@@ -80,7 +80,8 @@ class Email(object):
             'wrapup': 'Wrapup',
             'after_call_work': 'AfterCallWork',
             'after_call_work_required': 'bool',
-            'queue_media_settings': 'ConversationQueueMediaSettings'
+            'queue_media_settings': 'ConversationQueueMediaSettings',
+            'park_time': 'datetime'
         }
 
         self.attribute_map = {
@@ -109,7 +110,8 @@ class Email(object):
             'wrapup': 'wrapup',
             'after_call_work': 'afterCallWork',
             'after_call_work_required': 'afterCallWorkRequired',
-            'queue_media_settings': 'queueMediaSettings'
+            'queue_media_settings': 'queueMediaSettings',
+            'park_time': 'parkTime'
         }
 
         self._state = None
@@ -138,6 +140,7 @@ class Email(object):
         self._after_call_work = None
         self._after_call_work_required = None
         self._queue_media_settings = None
+        self._park_time = None
 
     @property
     def state(self) -> str:
@@ -782,6 +785,30 @@ class Email(object):
         
 
         self._queue_media_settings = queue_media_settings
+
+    @property
+    def park_time(self) -> datetime:
+        """
+        Gets the park_time of this Email.
+        Represents the time when an email was put into parked state. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :return: The park_time of this Email.
+        :rtype: datetime
+        """
+        return self._park_time
+
+    @park_time.setter
+    def park_time(self, park_time: datetime) -> None:
+        """
+        Sets the park_time of this Email.
+        Represents the time when an email was put into parked state. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :param park_time: The park_time of this Email.
+        :type: datetime
+        """
+        
+
+        self._park_time = park_time
 
     def to_dict(self):
         """

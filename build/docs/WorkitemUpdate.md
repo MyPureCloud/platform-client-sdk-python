@@ -16,7 +16,7 @@ title: WorkitemUpdate
 | **status_id** | **str** | The ID of the Status of the Workitem. | [optional] |
 | **workbin_id** | **str** | The ID of Workbin that contains the Workitem. | [optional] |
 | **auto_status_transition** | **bool** | Set it to false to disable auto status transition. By default, it is enabled. | [optional] |
-| **description** | **str** | The description of the Workitem. Maximum length of 4096 characters. | [optional] |
+| **description** | **str** | The description of the Workitem. Maximum length of 512 characters. | [optional] |
 | **date_closed** | **datetime** | The closed date of the Workitem. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
 | **assignment_state** | **str** | The assignment state of the Workitem. | [optional] |
 | **assignment_operation** | **str** | Set this value to AgentAssignmentAlerting and supply an &#39;assigneeId&#39; to assign the workitem to an agent and alert the agent of the assignment. Set this value to QueueAssignmentAlerting and supply a &#39;queueId&#39; to route the workitem to an agent who is a member of the queue and alert the agent. | [optional] |

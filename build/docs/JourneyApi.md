@@ -58,6 +58,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_journey_actiontemplates**](JourneyApi.html#post_journey_actiontemplates) | Create a single action template.|
 |[**post_journey_deployment_actionevent**](JourneyApi.html#post_journey_deployment_actionevent) | Sends an action event, which is used for changing the state of actions that have been offered to the user.|
 |[**post_journey_deployment_appevents**](JourneyApi.html#post_journey_deployment_appevents) | Send a journey app event, used for tracking customer activity on an application.|
+|[**post_journey_deployment_webevents**](JourneyApi.html#post_journey_deployment_webevents) | Send a journey web event, used for tracking customer activity on a website.|
 |[**post_journey_flows_paths_query**](JourneyApi.html#post_journey_flows_paths_query) | Query for flow paths.|
 |[**post_journey_outcomes**](JourneyApi.html#post_journey_outcomes) | Create an outcome.|
 |[**post_journey_outcomes_attributions_jobs**](JourneyApi.html#post_journey_outcomes_attributions_jobs) | Create Outcome Attributions|
@@ -1471,8 +1472,6 @@ except ApiException as e:
 
 Retrieve all events for a given session.
 
-get_journey_session_events is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/journey/sessions/{sessionId}/events 
 
 Requires ANY permissions: 
@@ -2640,6 +2639,53 @@ except ApiException as e:
 ### Return type
 
 [**AppEventResponse**](AppEventResponse.html)
+
+<a name="post_journey_deployment_webevents"></a>
+
+## [**WebEventResponse**](WebEventResponse.html) post_journey_deployment_webevents(deployment_id, body=body)
+
+
+
+Send a journey web event, used for tracking customer activity on a website.
+
+Wraps POST /api/v2/journey/deployments/{deploymentId}/webevents 
+
+Requires no permissions
+
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.JourneyApi()
+deployment_id = 'deployment_id_example' # str | The ID of the deployment sending the web event.
+body = PureCloudPlatformClientV2.WebEventRequest() # WebEventRequest |  (optional)
+
+try:
+    # Send a journey web event, used for tracking customer activity on a website.
+    api_response = api_instance.post_journey_deployment_webevents(deployment_id, body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling JourneyApi->post_journey_deployment_webevents: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **deployment_id** | **str**| The ID of the deployment sending the web event. |  |
+| **body** | [**WebEventRequest**](WebEventRequest.html)|  | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**WebEventResponse**](WebEventResponse.html)
 
 <a name="post_journey_flows_paths_query"></a>
 

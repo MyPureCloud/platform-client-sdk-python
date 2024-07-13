@@ -1923,7 +1923,7 @@ class UsersApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str user_id: User ID (required)
-        :param list[str] expand: Which fields, if any, to expand
+        :param list[str] expand: Which fields, if any, to expand. Note, expand parameters are resolved with a best effort approach and not guaranteed to be returned. If requested expand information is absolutely required, it's recommended to use specific API requests instead.
         :param str integration_presence_source: Gets an integration presence for a user instead of their default.
         :param str state: Search for a user with this state
         :return: User
@@ -3576,7 +3576,7 @@ class UsersApi(object):
         :param list[str] id: A list of user IDs to fetch by bulk
         :param list[str] jabber_id: A list of jabberIds to fetch by bulk (cannot be used with the \"id\" parameter)
         :param str sort_order: Ascending or descending sort order
-        :param list[str] expand: Which fields, if any, to expand
+        :param list[str] expand: Which fields, if any, to expand. Note, expand parameters are resolved with a best effort approach and not guaranteed to be returned. If requested expand information is absolutely required, it's recommended to use specific API requests instead.
         :param str integration_presence_source: Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an \"expand\". When using this parameter the maximum number of users that can be returned is 100.
         :param str state: Only list users of this state
         :return: UserEntityListing

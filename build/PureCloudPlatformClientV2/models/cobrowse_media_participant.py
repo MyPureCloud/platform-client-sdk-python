@@ -88,6 +88,7 @@ class CobrowseMediaParticipant(object):
             'conversation_routing_data': 'ConversationRoutingData',
             'start_acw_time': 'datetime',
             'end_acw_time': 'datetime',
+            'park_time': 'datetime',
             'cobrowse_session_id': 'str',
             'cobrowse_role': 'str',
             'controlling': 'list[str]',
@@ -130,6 +131,7 @@ class CobrowseMediaParticipant(object):
             'conversation_routing_data': 'conversationRoutingData',
             'start_acw_time': 'startAcwTime',
             'end_acw_time': 'endAcwTime',
+            'park_time': 'parkTime',
             'cobrowse_session_id': 'cobrowseSessionId',
             'cobrowse_role': 'cobrowseRole',
             'controlling': 'controlling',
@@ -171,6 +173,7 @@ class CobrowseMediaParticipant(object):
         self._conversation_routing_data = None
         self._start_acw_time = None
         self._end_acw_time = None
+        self._park_time = None
         self._cobrowse_session_id = None
         self._cobrowse_role = None
         self._controlling = None
@@ -1012,6 +1015,30 @@ class CobrowseMediaParticipant(object):
         
 
         self._end_acw_time = end_acw_time
+
+    @property
+    def park_time(self) -> datetime:
+        """
+        Gets the park_time of this CobrowseMediaParticipant.
+        The time when this participant's communication was last parked.  Does not reset on resume. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :return: The park_time of this CobrowseMediaParticipant.
+        :rtype: datetime
+        """
+        return self._park_time
+
+    @park_time.setter
+    def park_time(self, park_time: datetime) -> None:
+        """
+        Sets the park_time of this CobrowseMediaParticipant.
+        The time when this participant's communication was last parked.  Does not reset on resume. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+
+        :param park_time: The park_time of this CobrowseMediaParticipant.
+        :type: datetime
+        """
+        
+
+        self._park_time = park_time
 
     @property
     def cobrowse_session_id(self) -> str:

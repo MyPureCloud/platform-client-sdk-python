@@ -134,6 +134,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**patch_conversations_email_participant**](ConversationsApi.html#patch_conversations_email_participant) | Update conversation participant|
 |[**patch_conversations_email_participant_attributes**](ConversationsApi.html#patch_conversations_email_participant_attributes) | Update the attributes on a conversation participant.|
 |[**patch_conversations_email_participant_communication**](ConversationsApi.html#patch_conversations_email_participant_communication) | Update conversation participant&#39;s communication by disconnecting it.|
+|[**patch_conversations_email_participant_parkingstate**](ConversationsApi.html#patch_conversations_email_participant_parkingstate) | Update conversation by setting its parking state|
 |[**patch_conversations_message**](ConversationsApi.html#patch_conversations_message) | Update a conversation by disconnecting all of the participants|
 |[**patch_conversations_message_participant**](ConversationsApi.html#patch_conversations_message_participant) | Update conversation participant|
 |[**patch_conversations_message_participant_attributes**](ConversationsApi.html#patch_conversations_message_participant_attributes) | Update the attributes on a conversation participant.|
@@ -6654,6 +6655,60 @@ except ApiException as e:
 
 **object**
 
+<a name="patch_conversations_email_participant_parkingstate"></a>
+
+##  patch_conversations_email_participant_parkingstate(conversation_id, participant_id, body)
+
+
+
+Update conversation by setting its parking state
+
+patch_conversations_email_participant_parkingstate is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps PATCH /api/v2/conversations/emails/{conversationId}/participants/{participantId}/parkingstate 
+
+Requires ANY permissions: 
+
+* conversation:email:park
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+conversation_id = 'conversation_id_example' # str | conversationId
+participant_id = 'participant_id_example' # str | participantId
+body = PureCloudPlatformClientV2.ParkingStateRequest() # ParkingStateRequest | Parking update request
+
+try:
+    # Update conversation by setting its parking state
+    api_instance.patch_conversations_email_participant_parkingstate(conversation_id, participant_id, body)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->patch_conversations_email_participant_parkingstate: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversation_id** | **str**| conversationId |  |
+| **participant_id** | **str**| participantId |  |
+| **body** | [**ParkingStateRequest**](ParkingStateRequest.html)| Parking update request |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
+
 <a name="patch_conversations_message"></a>
 
 ## [**Conversation**](Conversation.html) patch_conversations_message(conversation_id, body)
@@ -10172,6 +10227,7 @@ Requires ANY permissions:
 
 * conversation:message:create
 * conversation:webmessaging:create
+* conversation:socialmedia:create
 
 ### Example
 
@@ -10638,7 +10694,7 @@ void (empty response body)
 
 <a name="post_conversations_messages"></a>
 
-## [**MessageConversation**](MessageConversation.html) post_conversations_messages(body)
+## [**CreateOutboundMessagingConversationResponse**](CreateOutboundMessagingConversationResponse.html) post_conversations_messages(body)
 
 
 
@@ -10685,7 +10741,7 @@ except ApiException as e:
 
 ### Return type
 
-[**MessageConversation**](MessageConversation.html)
+[**CreateOutboundMessagingConversationResponse**](CreateOutboundMessagingConversationResponse.html)
 
 <a name="post_conversations_messages_agentless"></a>
 
