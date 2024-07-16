@@ -143,6 +143,10 @@ from .aggregate_view_data import AggregateViewData
 from .aggregation_range import AggregationRange
 from .aggregation_result import AggregationResult
 from .aggregation_result_entry import AggregationResultEntry
+from .ai_answer import AiAnswer
+from .ai_scoring import AiScoring
+from .ai_scoring_setting import AiScoringSetting
+from .ai_scoring_settings import AiScoringSettings
 from .alert_listing import AlertListing
 from .alert_notification import AlertNotification
 from .alert_request import AlertRequest
@@ -2828,12 +2832,8 @@ from .post_output_contract import PostOutputContract
 from .post_text_message import PostTextMessage
 from .post_text_request import PostTextRequest
 from .post_text_response import PostTextResponse
-from .predicted_answer import PredictedAnswer
-from .predicted_scoring import PredictedScoring
 from .prediction_results import PredictionResults
 from .predictive_routing import PredictiveRouting
-from .predictive_scoring_setting import PredictiveScoringSetting
-from .predictive_scoring_settings import PredictiveScoringSettings
 from .predictor import Predictor
 from .predictor_listing import PredictorListing
 from .predictor_model import PredictorModel

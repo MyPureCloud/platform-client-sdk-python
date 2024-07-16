@@ -7699,8 +7699,6 @@ except ApiException as e:
 
 Barge a conversation creating a barged in conference of connected participants.
 
-post_conversation_barge is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps POST /api/v2/conversations/{conversationId}/barge 
 
 Requires ANY permissions: 
@@ -8418,8 +8416,6 @@ except ApiException as e:
 
 
 Barge a given participant's call creating a barged in conference of connected participants.
-
-post_conversations_call_participant_barge is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/barge 
 

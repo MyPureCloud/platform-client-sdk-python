@@ -1,7 +1,7 @@
 ---
-title: PredictiveScoringSettings
+title: AiScoringSettings
 ---
-## PredictiveScoringSettings
+## AiScoringSettings
 
 ## Properties
 

@@ -34,6 +34,7 @@ title: Widget
 | **show_time_in_status** | **bool** | Indicates the show time in status of a widget configuration. | [optional] |
 | **show_offline_agents** | **bool** | Indicates to show offline agent widget. | [optional] |
 | **selected_statuses** | **list[str]** | Indicates the selected statuses used to filter the agent widget in the dashboard. | [optional] |
+| **agent_interaction_sort_order** | **str** | The sort order of the interactions in the agent status widget. | [optional] |
 {: class="table table-striped"}
 
 

@@ -224,6 +224,10 @@ PureCloudPlatformClientV2/models/aggregate_view_data.py
 PureCloudPlatformClientV2/models/aggregation_range.py
 PureCloudPlatformClientV2/models/aggregation_result.py
 PureCloudPlatformClientV2/models/aggregation_result_entry.py
+PureCloudPlatformClientV2/models/ai_answer.py
+PureCloudPlatformClientV2/models/ai_scoring.py
+PureCloudPlatformClientV2/models/ai_scoring_setting.py
+PureCloudPlatformClientV2/models/ai_scoring_settings.py
 PureCloudPlatformClientV2/models/alert_listing.py
 PureCloudPlatformClientV2/models/alert_notification.py
 PureCloudPlatformClientV2/models/alert_request.py
@@ -2909,12 +2913,8 @@ PureCloudPlatformClientV2/models/post_output_contract.py
 PureCloudPlatformClientV2/models/post_text_message.py
 PureCloudPlatformClientV2/models/post_text_request.py
 PureCloudPlatformClientV2/models/post_text_response.py
-PureCloudPlatformClientV2/models/predicted_answer.py
-PureCloudPlatformClientV2/models/predicted_scoring.py
 PureCloudPlatformClientV2/models/prediction_results.py
 PureCloudPlatformClientV2/models/predictive_routing.py
-PureCloudPlatformClientV2/models/predictive_scoring_setting.py
-PureCloudPlatformClientV2/models/predictive_scoring_settings.py
 PureCloudPlatformClientV2/models/predictor.py
 PureCloudPlatformClientV2/models/predictor_listing.py
 PureCloudPlatformClientV2/models/predictor_model.py
@@ -4727,6 +4727,10 @@ docs/AggregateViewData.md
 docs/AggregationRange.md
 docs/AggregationResult.md
 docs/AggregationResultEntry.md
+docs/AiAnswer.md
+docs/AiScoring.md
+docs/AiScoringSetting.md
+docs/AiScoringSettings.md
 docs/AlertListing.md
 docs/AlertNotification.md
 docs/AlertRequest.md
@@ -7500,12 +7504,8 @@ docs/PostOutputContract.md
 docs/PostTextMessage.md
 docs/PostTextRequest.md
 docs/PostTextResponse.md
-docs/PredictedAnswer.md
-docs/PredictedScoring.md
 docs/PredictionResults.md
 docs/PredictiveRouting.md
-docs/PredictiveScoringSetting.md
-docs/PredictiveScoringSettings.md
 docs/Predictor.md
 docs/PredictorListing.md
 docs/PredictorModel.md
@@ -11683,7 +11683,7 @@ docs/put_quality_calibration-example.txt
 docs/put_quality_conversation_evaluation-example.txt
 docs/put_quality_form-example.txt
 docs/put_quality_forms_evaluation-example.txt
-docs/put_quality_forms_evaluation_predictivescoring_settings-example.txt
+docs/put_quality_forms_evaluation_aiscoring_settings-example.txt
 docs/put_quality_forms_survey-example.txt
 docs/put_quality_surveys_scorable-example.txt
 docs/put_recording_crossplatform_mediaretentionpolicy-example.txt

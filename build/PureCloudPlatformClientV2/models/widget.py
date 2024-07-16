@@ -77,7 +77,8 @@ class Widget(object):
             'warnings': 'list[Warning]',
             'show_time_in_status': 'bool',
             'show_offline_agents': 'bool',
-            'selected_statuses': 'list[str]'
+            'selected_statuses': 'list[str]',
+            'agent_interaction_sort_order': 'str'
         }
 
         self.attribute_map = {
@@ -107,7 +108,8 @@ class Widget(object):
             'warnings': 'warnings',
             'show_time_in_status': 'showTimeInStatus',
             'show_offline_agents': 'showOfflineAgents',
-            'selected_statuses': 'selectedStatuses'
+            'selected_statuses': 'selectedStatuses',
+            'agent_interaction_sort_order': 'agentInteractionSortOrder'
         }
 
         self._row = None
@@ -137,6 +139,7 @@ class Widget(object):
         self._show_time_in_status = None
         self._show_offline_agents = None
         self._selected_statuses = None
+        self._agent_interaction_sort_order = None
 
     @property
     def row(self) -> int:
@@ -800,6 +803,35 @@ class Widget(object):
         
 
         self._selected_statuses = selected_statuses
+
+    @property
+    def agent_interaction_sort_order(self) -> str:
+        """
+        Gets the agent_interaction_sort_order of this Widget.
+        The sort order of the interactions in the agent status widget.
+
+        :return: The agent_interaction_sort_order of this Widget.
+        :rtype: str
+        """
+        return self._agent_interaction_sort_order
+
+    @agent_interaction_sort_order.setter
+    def agent_interaction_sort_order(self, agent_interaction_sort_order: str) -> None:
+        """
+        Sets the agent_interaction_sort_order of this Widget.
+        The sort order of the interactions in the agent status widget.
+
+        :param agent_interaction_sort_order: The agent_interaction_sort_order of this Widget.
+        :type: str
+        """
+        if isinstance(agent_interaction_sort_order, int):
+            agent_interaction_sort_order = str(agent_interaction_sort_order)
+        allowed_values = ["ascending", "descending"]
+        if agent_interaction_sort_order.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for agent_interaction_sort_order -> " + agent_interaction_sort_order)
+            self._agent_interaction_sort_order = "outdated_sdk_version"
+        else:
+            self._agent_interaction_sort_order = agent_interaction_sort_order
 
     def to_dict(self):
         """

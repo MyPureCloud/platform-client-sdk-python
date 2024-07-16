@@ -39,6 +39,7 @@ from typing import Any
 
 from ..models import Empty
 from ..models import AgentActivityEntityListing
+from ..models import AiScoringSettings
 from ..models import AsyncQueryResponse
 from ..models import AsyncQueryStatus
 from ..models import Calibration
@@ -60,7 +61,6 @@ from ..models import EvaluationFormResponseEntityListing
 from ..models import EvaluationResponse
 from ..models import EvaluationScoringSet
 from ..models import EvaluatorActivityEntityListing
-from ..models import PredictiveScoringSettings
 from ..models import PublishForm
 from ..models import QMAuditQueryRequest
 from ..models import QualityAuditQueryExecutionResultsResponse
@@ -5045,11 +5045,11 @@ class QualityApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def put_quality_forms_evaluation_predictivescoring_settings(self, form_id: str, body: 'PredictiveScoringSettings', **kwargs) -> 'PredictiveScoringSettings':
+    def put_quality_forms_evaluation_aiscoring_settings(self, form_id: str, body: 'AiScoringSettings', **kwargs) -> 'AiScoringSettings':
         """
-        Update the Predictive Scoring settings of an evaluation form.
+        Update the AI Scoring settings of an evaluation form.
         
-	    put_quality_forms_evaluation_predictivescoring_settings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+	    put_quality_forms_evaluation_aiscoring_settings is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -5057,13 +5057,13 @@ class QualityApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.put_quality_forms_evaluation_predictivescoring_settings(form_id, body, callback=callback_function)
+        >>> thread = api.put_quality_forms_evaluation_aiscoring_settings(form_id, body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str form_id: Form ID (required)
-        :param PredictiveScoringSettings body: Predictive Scoring Settings (required)
-        :return: PredictiveScoringSettings
+        :param AiScoringSettings body: AI Scoring Settings (required)
+        :return: AiScoringSettings
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -5076,20 +5076,20 @@ class QualityApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method put_quality_forms_evaluation_predictivescoring_settings" % key
+                    " to method put_quality_forms_evaluation_aiscoring_settings" % key
                 )
             params[key] = val
         del params['kwargs']
 
         # verify the required parameter 'form_id' is set
         if ('form_id' not in params) or (params['form_id'] is None):
-            raise ValueError("Missing the required parameter `form_id` when calling `put_quality_forms_evaluation_predictivescoring_settings`")
+            raise ValueError("Missing the required parameter `form_id` when calling `put_quality_forms_evaluation_aiscoring_settings`")
         # verify the required parameter 'body' is set
         if ('body' not in params) or (params['body'] is None):
-            raise ValueError("Missing the required parameter `body` when calling `put_quality_forms_evaluation_predictivescoring_settings`")
+            raise ValueError("Missing the required parameter `body` when calling `put_quality_forms_evaluation_aiscoring_settings`")
 
 
-        resource_path = '/api/v2/quality/forms/evaluations/{formId}/predictivescoring/settings'.replace('{format}', 'json')
+        resource_path = '/api/v2/quality/forms/evaluations/{formId}/aiscoring/settings'.replace('{format}', 'json')
         path_params = {}
         if 'form_id' in params:
             path_params['formId'] = params['form_id']
@@ -5125,7 +5125,7 @@ class QualityApi(object):
                                             body=body_params,
                                             post_params=form_params,
                                             files=local_var_files,
-                                            response_type='PredictiveScoringSettings',
+                                            response_type='AiScoringSettings',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

@@ -61,7 +61,7 @@ class ChatSettings(object):
     def message_retention_period_days(self) -> int:
         """
         Gets the message_retention_period_days of this ChatSettings.
-        Retention time for messages in days
+        Retention time for messages in days, expressed as int in the range [10,3650]
 
         :return: The message_retention_period_days of this ChatSettings.
         :rtype: int
@@ -72,7 +72,7 @@ class ChatSettings(object):
     def message_retention_period_days(self, message_retention_period_days: int) -> None:
         """
         Sets the message_retention_period_days of this ChatSettings.
-        Retention time for messages in days
+        Retention time for messages in days, expressed as int in the range [10,3650]
 
         :param message_retention_period_days: The message_retention_period_days of this ChatSettings.
         :type: int

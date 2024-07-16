@@ -1,13 +1,12 @@
 ---
-title: PredictiveScoringSetting
+title: AiScoring
 ---
-## PredictiveScoringSetting
+## AiScoring
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **enabled** | **bool** | True if Predictive Scoring feature is configured. | [optional] |
 {: class="table table-striped"}
 
 

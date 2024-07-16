@@ -59,6 +59,7 @@ class InfrastructureascodeJob(object):
             'status': 'str',
             'error_info': 'ErrorInfo',
             'results': 'str',
+            'rollback_results': 'str',
             'self_uri': 'str'
         }
 
@@ -71,6 +72,7 @@ class InfrastructureascodeJob(object):
             'status': 'status',
             'error_info': 'errorInfo',
             'results': 'results',
+            'rollback_results': 'rollbackResults',
             'self_uri': 'selfUri'
         }
 
@@ -82,6 +84,7 @@ class InfrastructureascodeJob(object):
         self._status = None
         self._error_info = None
         self._results = None
+        self._rollback_results = None
         self._self_uri = None
 
     @property
@@ -112,7 +115,7 @@ class InfrastructureascodeJob(object):
     def dry_run(self) -> bool:
         """
         Gets the dry_run of this InfrastructureascodeJob.
-        dryRun
+        Whether or not the job was a dry run
 
         :return: The dry_run of this InfrastructureascodeJob.
         :rtype: bool
@@ -123,7 +126,7 @@ class InfrastructureascodeJob(object):
     def dry_run(self, dry_run: bool) -> None:
         """
         Sets the dry_run of this InfrastructureascodeJob.
-        dryRun
+        Whether or not the job was a dry run
 
         :param dry_run: The dry_run of this InfrastructureascodeJob.
         :type: bool
@@ -136,7 +139,7 @@ class InfrastructureascodeJob(object):
     def accelerator_id(self) -> str:
         """
         Gets the accelerator_id of this InfrastructureascodeJob.
-        acceleratorId
+        Accelerator associated with the job
 
         :return: The accelerator_id of this InfrastructureascodeJob.
         :rtype: str
@@ -147,7 +150,7 @@ class InfrastructureascodeJob(object):
     def accelerator_id(self, accelerator_id: str) -> None:
         """
         Sets the accelerator_id of this InfrastructureascodeJob.
-        acceleratorId
+        Accelerator associated with the job
 
         :param accelerator_id: The accelerator_id of this InfrastructureascodeJob.
         :type: str
@@ -160,7 +163,7 @@ class InfrastructureascodeJob(object):
     def date_submitted(self) -> datetime:
         """
         Gets the date_submitted of this InfrastructureascodeJob.
-        dateSubmitted. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+        Date and time on which job was submitted. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :return: The date_submitted of this InfrastructureascodeJob.
         :rtype: datetime
@@ -171,7 +174,7 @@ class InfrastructureascodeJob(object):
     def date_submitted(self, date_submitted: datetime) -> None:
         """
         Sets the date_submitted of this InfrastructureascodeJob.
-        dateSubmitted. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+        Date and time on which job was submitted. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
 
         :param date_submitted: The date_submitted of this InfrastructureascodeJob.
         :type: datetime
@@ -184,7 +187,7 @@ class InfrastructureascodeJob(object):
     def submitted_by(self) -> 'UserReference':
         """
         Gets the submitted_by of this InfrastructureascodeJob.
-        submittedBy
+        User who submitted the job
 
         :return: The submitted_by of this InfrastructureascodeJob.
         :rtype: UserReference
@@ -195,7 +198,7 @@ class InfrastructureascodeJob(object):
     def submitted_by(self, submitted_by: 'UserReference') -> None:
         """
         Sets the submitted_by of this InfrastructureascodeJob.
-        submittedBy
+        User who submitted the job
 
         :param submitted_by: The submitted_by of this InfrastructureascodeJob.
         :type: UserReference
@@ -208,7 +211,7 @@ class InfrastructureascodeJob(object):
     def status(self) -> str:
         """
         Gets the status of this InfrastructureascodeJob.
-        status
+        Job status
 
         :return: The status of this InfrastructureascodeJob.
         :rtype: str
@@ -219,7 +222,7 @@ class InfrastructureascodeJob(object):
     def status(self, status: str) -> None:
         """
         Sets the status of this InfrastructureascodeJob.
-        status
+        Job status
 
         :param status: The status of this InfrastructureascodeJob.
         :type: str
@@ -237,7 +240,7 @@ class InfrastructureascodeJob(object):
     def error_info(self) -> 'ErrorInfo':
         """
         Gets the error_info of this InfrastructureascodeJob.
-        errorInfo
+        Information about errors, if any
 
         :return: The error_info of this InfrastructureascodeJob.
         :rtype: ErrorInfo
@@ -248,7 +251,7 @@ class InfrastructureascodeJob(object):
     def error_info(self, error_info: 'ErrorInfo') -> None:
         """
         Sets the error_info of this InfrastructureascodeJob.
-        errorInfo
+        Information about errors, if any
 
         :param error_info: The error_info of this InfrastructureascodeJob.
         :type: ErrorInfo
@@ -261,7 +264,7 @@ class InfrastructureascodeJob(object):
     def results(self) -> str:
         """
         Gets the results of this InfrastructureascodeJob.
-        results
+        The output results of the terraform job
 
         :return: The results of this InfrastructureascodeJob.
         :rtype: str
@@ -272,7 +275,7 @@ class InfrastructureascodeJob(object):
     def results(self, results: str) -> None:
         """
         Sets the results of this InfrastructureascodeJob.
-        results
+        The output results of the terraform job
 
         :param results: The results of this InfrastructureascodeJob.
         :type: str
@@ -280,6 +283,30 @@ class InfrastructureascodeJob(object):
         
 
         self._results = results
+
+    @property
+    def rollback_results(self) -> str:
+        """
+        Gets the rollback_results of this InfrastructureascodeJob.
+        The results of rolling back the job if there were errors.  Not returned if job was successful.
+
+        :return: The rollback_results of this InfrastructureascodeJob.
+        :rtype: str
+        """
+        return self._rollback_results
+
+    @rollback_results.setter
+    def rollback_results(self, rollback_results: str) -> None:
+        """
+        Sets the rollback_results of this InfrastructureascodeJob.
+        The results of rolling back the job if there were errors.  Not returned if job was successful.
+
+        :param rollback_results: The rollback_results of this InfrastructureascodeJob.
+        :type: str
+        """
+        
+
+        self._rollback_results = rollback_results
 
     @property
     def self_uri(self) -> str:

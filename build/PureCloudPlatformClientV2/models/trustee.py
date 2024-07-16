@@ -54,6 +54,8 @@ class Trustee(object):
             'id': 'str',
             'enabled': 'bool',
             'uses_default_role': 'bool',
+            'has_full_access': 'bool',
+            'is_trusted_user': 'bool',
             'date_created': 'datetime',
             'date_expired': 'datetime',
             'created_by': 'OrgUser',
@@ -65,6 +67,8 @@ class Trustee(object):
             'id': 'id',
             'enabled': 'enabled',
             'uses_default_role': 'usesDefaultRole',
+            'has_full_access': 'hasFullAccess',
+            'is_trusted_user': 'isTrustedUser',
             'date_created': 'dateCreated',
             'date_expired': 'dateExpired',
             'created_by': 'createdBy',
@@ -75,6 +79,8 @@ class Trustee(object):
         self._id = None
         self._enabled = None
         self._uses_default_role = None
+        self._has_full_access = None
+        self._is_trusted_user = None
         self._date_created = None
         self._date_expired = None
         self._created_by = None
@@ -152,6 +158,54 @@ class Trustee(object):
         
 
         self._uses_default_role = uses_default_role
+
+    @property
+    def has_full_access(self) -> bool:
+        """
+        Gets the has_full_access of this Trustee.
+        Denotes if trustee uses full access role by default.
+
+        :return: The has_full_access of this Trustee.
+        :rtype: bool
+        """
+        return self._has_full_access
+
+    @has_full_access.setter
+    def has_full_access(self, has_full_access: bool) -> None:
+        """
+        Sets the has_full_access of this Trustee.
+        Denotes if trustee uses full access role by default.
+
+        :param has_full_access: The has_full_access of this Trustee.
+        :type: bool
+        """
+        
+
+        self._has_full_access = has_full_access
+
+    @property
+    def is_trusted_user(self) -> bool:
+        """
+        Gets the is_trusted_user of this Trustee.
+        Denotes if trustee is given Trusted User access by default.
+
+        :return: The is_trusted_user of this Trustee.
+        :rtype: bool
+        """
+        return self._is_trusted_user
+
+    @is_trusted_user.setter
+    def is_trusted_user(self, is_trusted_user: bool) -> None:
+        """
+        Sets the is_trusted_user of this Trustee.
+        Denotes if trustee is given Trusted User access by default.
+
+        :param is_trusted_user: The is_trusted_user of this Trustee.
+        :type: bool
+        """
+        
+
+        self._is_trusted_user = is_trusted_user
 
     @property
     def date_created(self) -> datetime:

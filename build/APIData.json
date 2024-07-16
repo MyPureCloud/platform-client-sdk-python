@@ -31236,10 +31236,10 @@
     "return": "EvaluationFormResponse",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.QualityApi();\nform_id = 'form_id_example' # str | Form ID\nbody = PureCloudPlatformClientV2.EvaluationForm() # EvaluationForm | Evaluation form\n\ntry:\n    # Update an evaluation form.\n    api_response = api_instance.put_quality_forms_evaluation(form_id, body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling QualityApi->put_quality_forms_evaluation: %s\\n\" % e)"
   },
-  "put_quality_forms_evaluation_predictivescoring_settings": {
-    "operationId": "put_quality_forms_evaluation_predictivescoring_settings",
-    "functionName": "put_quality_forms_evaluation_predictivescoring_settings",
-    "signature": "put_quality_forms_evaluation_predictivescoring_settings(form_id, body)",
+  "put_quality_forms_evaluation_aiscoring_settings": {
+    "operationId": "put_quality_forms_evaluation_aiscoring_settings",
+    "functionName": "put_quality_forms_evaluation_aiscoring_settings",
+    "signature": "put_quality_forms_evaluation_aiscoring_settings(form_id, body)",
     "parameters": [
       {
         "name": "form_id",
@@ -31248,12 +31248,12 @@
       },
       {
         "name": "body",
-        "type": "PredictiveScoringSettings",
+        "type": "AiScoringSettings",
         "required": "true"
       }
     ],
-    "return": "PredictiveScoringSettings",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.QualityApi();\nform_id = 'form_id_example' # str | Form ID\nbody = PureCloudPlatformClientV2.PredictiveScoringSettings() # PredictiveScoringSettings | Predictive Scoring Settings\n\ntry:\n    # Update the Predictive Scoring settings of an evaluation form.\n    api_response = api_instance.put_quality_forms_evaluation_predictivescoring_settings(form_id, body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling QualityApi->put_quality_forms_evaluation_predictivescoring_settings: %s\\n\" % e)"
+    "return": "AiScoringSettings",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.QualityApi();\nform_id = 'form_id_example' # str | Form ID\nbody = PureCloudPlatformClientV2.AiScoringSettings() # AiScoringSettings | AI Scoring Settings\n\ntry:\n    # Update the AI Scoring settings of an evaluation form.\n    api_response = api_instance.put_quality_forms_evaluation_aiscoring_settings(form_id, body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling QualityApi->put_quality_forms_evaluation_aiscoring_settings: %s\\n\" % e)"
   },
   "put_quality_forms_survey": {
     "operationId": "put_quality_forms_survey",

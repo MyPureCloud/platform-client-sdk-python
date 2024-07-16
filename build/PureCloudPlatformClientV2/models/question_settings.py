@@ -33,7 +33,7 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
-    from . import PredictiveScoringSetting
+    from . import AiScoringSetting
 
 class QuestionSettings(object):
     """
@@ -51,7 +51,7 @@ class QuestionSettings(object):
         """
         self.swagger_types = {
             'question_index': 'int',
-            'settings': 'PredictiveScoringSetting'
+            'settings': 'AiScoringSetting'
         }
 
         self.attribute_map = {
@@ -87,24 +87,24 @@ class QuestionSettings(object):
         self._question_index = question_index
 
     @property
-    def settings(self) -> 'PredictiveScoringSetting':
+    def settings(self) -> 'AiScoringSetting':
         """
         Gets the settings of this QuestionSettings.
 
 
         :return: The settings of this QuestionSettings.
-        :rtype: PredictiveScoringSetting
+        :rtype: AiScoringSetting
         """
         return self._settings
 
     @settings.setter
-    def settings(self, settings: 'PredictiveScoringSetting') -> None:
+    def settings(self, settings: 'AiScoringSetting') -> None:
         """
         Sets the settings of this QuestionSettings.
 
 
         :param settings: The settings of this QuestionSettings.
-        :type: PredictiveScoringSetting
+        :type: AiScoringSetting
         """
         
 
