@@ -3023,10 +3023,11 @@ class RecordingApi(object):
                                             callback=params.get('callback'))
         return response
 
+    @deprecated("patch_recordings_screensession is deprecated")
     def patch_recordings_screensession(self, recording_session_id: str, **kwargs) -> None:
         """
         Update a screen recording session
-        
+        This API is deprecated and the functionality to stop screen recording will be no longer supported.
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

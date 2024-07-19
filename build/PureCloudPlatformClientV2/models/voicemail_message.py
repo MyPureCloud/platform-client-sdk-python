@@ -60,6 +60,7 @@ class VoicemailMessage(object):
             'read': 'bool',
             'audio_recording_duration_seconds': 'int',
             'audio_recording_size_bytes': 'int',
+            'transcription': 'str',
             'created_date': 'datetime',
             'modified_date': 'datetime',
             'deleted_date': 'datetime',
@@ -83,6 +84,7 @@ class VoicemailMessage(object):
             'read': 'read',
             'audio_recording_duration_seconds': 'audioRecordingDurationSeconds',
             'audio_recording_size_bytes': 'audioRecordingSizeBytes',
+            'transcription': 'transcription',
             'created_date': 'createdDate',
             'modified_date': 'modifiedDate',
             'deleted_date': 'deletedDate',
@@ -105,6 +107,7 @@ class VoicemailMessage(object):
         self._read = None
         self._audio_recording_duration_seconds = None
         self._audio_recording_size_bytes = None
+        self._transcription = None
         self._created_date = None
         self._modified_date = None
         self._deleted_date = None
@@ -240,6 +243,30 @@ class VoicemailMessage(object):
         
 
         self._audio_recording_size_bytes = audio_recording_size_bytes
+
+    @property
+    def transcription(self) -> str:
+        """
+        Gets the transcription of this VoicemailMessage.
+        The transcription of the voicemail's audio
+
+        :return: The transcription of this VoicemailMessage.
+        :rtype: str
+        """
+        return self._transcription
+
+    @transcription.setter
+    def transcription(self, transcription: str) -> None:
+        """
+        Sets the transcription of this VoicemailMessage.
+        The transcription of the voicemail's audio
+
+        :param transcription: The transcription of this VoicemailMessage.
+        :type: str
+        """
+        
+
+        self._transcription = transcription
 
     @property
     def created_date(self) -> datetime:

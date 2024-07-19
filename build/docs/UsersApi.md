@@ -10,6 +10,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |------------- | -------------|
 |[**delete_analytics_users_details_job**](UsersApi.html#delete_analytics_users_details_job) | Delete/cancel an async request|
 |[**delete_authorization_subject_division_role**](UsersApi.html#delete_authorization_subject_division_role) | Delete a grant of a role in a division|
+|[**delete_routing_directroutingbackup_settings_me**](UsersApi.html#delete_routing_directroutingbackup_settings_me) | Delete the user&#39;s Direct Routing Backup settings and revert to the Direct Routing Queue default.|
+|[**delete_routing_user_directroutingbackup_settings**](UsersApi.html#delete_routing_user_directroutingbackup_settings) | Delete the user&#39;s Direct Routing Backup settings and revert to the Direct Routing Queue default.|
 |[**delete_routing_user_utilization**](UsersApi.html#delete_routing_user_utilization) | Delete the user&#39;s max utilization settings and revert to the organization-wide default.|
 |[**delete_user**](UsersApi.html#delete_user) | Delete user|
 |[**delete_user_routinglanguage**](UsersApi.html#delete_user_routinglanguage) | Remove routing language from user|
@@ -29,6 +31,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_authorization_subjects_me**](UsersApi.html#get_authorization_subjects_me) | Returns a listing of roles and permissions for the currently authenticated user.|
 |[**get_fieldconfig**](UsersApi.html#get_fieldconfig) | Fetch field config for an entity type|
 |[**get_profiles_users**](UsersApi.html#get_profiles_users) | Get a user profile listing|
+|[**get_routing_directroutingbackup_settings_me**](UsersApi.html#get_routing_directroutingbackup_settings_me) | Get the user&#39;s Direct Routing Backup settings.|
+|[**get_routing_user_directroutingbackup_settings**](UsersApi.html#get_routing_user_directroutingbackup_settings) | Get the user&#39;s Direct Routing Backup settings.|
 |[**get_routing_user_utilization**](UsersApi.html#get_routing_user_utilization) | Get the user&#39;s max utilization settings.  If not configured, the organization-wide default is returned.|
 |[**get_user**](UsersApi.html#get_user) | Get user.|
 |[**get_user_adjacents**](UsersApi.html#get_user_adjacents) | Get adjacents|
@@ -87,6 +91,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_users_search_conversation_target**](UsersApi.html#post_users_search_conversation_target) | Search users as conversation targets|
 |[**post_users_search_queuemembers_manage**](UsersApi.html#post_users_search_queuemembers_manage) | Search manage queue member|
 |[**post_users_search_teams_assign**](UsersApi.html#post_users_search_teams_assign) | Search users assigned to teams|
+|[**put_routing_directroutingbackup_settings_me**](UsersApi.html#put_routing_directroutingbackup_settings_me) | Update the user&#39;s Direct Routing Backup settings.|
+|[**put_routing_user_directroutingbackup_settings**](UsersApi.html#put_routing_user_directroutingbackup_settings) | Update the user&#39;s Direct Routing Backup settings.|
 |[**put_routing_user_utilization**](UsersApi.html#put_routing_user_utilization) | Update the user&#39;s max utilization settings.  Include only those media types requiring custom configuration.|
 |[**put_user_callforwarding**](UsersApi.html#put_user_callforwarding) | Update a user&#39;s CallForwarding|
 |[**put_user_outofoffice**](UsersApi.html#put_user_outofoffice) | Update an OutOfOffice|
@@ -195,6 +201,98 @@ except ApiException as e:
 | **subject_id** | **str**| Subject ID (user or group) |  |
 | **division_id** | **str**| the id of the division of the grant |  |
 | **role_id** | **str**| the id of the role of the grant |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
+
+<a name="delete_routing_directroutingbackup_settings_me"></a>
+
+##  delete_routing_directroutingbackup_settings_me()
+
+
+
+Delete the user's Direct Routing Backup settings and revert to the Direct Routing Queue default.
+
+Wraps DELETE /api/v2/routing/directroutingbackup/settings/me 
+
+Requires ANY permissions: 
+
+* routing:directRoutingBackup:selfDelete
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.UsersApi()
+
+try:
+    # Delete the user's Direct Routing Backup settings and revert to the Direct Routing Queue default.
+    api_instance.delete_routing_directroutingbackup_settings_me()
+except ApiException as e:
+    print("Exception when calling UsersApi->delete_routing_directroutingbackup_settings_me: %s\n" % e)
+```
+
+### Parameters
+
+This endpoint does not need any parameters.
+
+
+### Return type
+
+void (empty response body)
+
+<a name="delete_routing_user_directroutingbackup_settings"></a>
+
+##  delete_routing_user_directroutingbackup_settings(user_id)
+
+
+
+Delete the user's Direct Routing Backup settings and revert to the Direct Routing Queue default.
+
+Wraps DELETE /api/v2/routing/users/{userId}/directroutingbackup/settings 
+
+Requires ANY permissions: 
+
+* routing:directRoutingBackup:delete
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.UsersApi()
+user_id = 'user_id_example' # str | User ID
+
+try:
+    # Delete the user's Direct Routing Backup settings and revert to the Direct Routing Queue default.
+    api_instance.delete_routing_user_directroutingbackup_settings(user_id)
+except ApiException as e:
+    print("Exception when calling UsersApi->delete_routing_user_directroutingbackup_settings: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **user_id** | **str**| User ID |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1165,6 +1263,100 @@ except ApiException as e:
 ### Return type
 
 [**UserProfileEntityListing**](UserProfileEntityListing.html)
+
+<a name="get_routing_directroutingbackup_settings_me"></a>
+
+## [**AgentDirectRoutingBackupSettings**](AgentDirectRoutingBackupSettings.html) get_routing_directroutingbackup_settings_me()
+
+
+
+Get the user's Direct Routing Backup settings.
+
+Wraps GET /api/v2/routing/directroutingbackup/settings/me 
+
+Requires ANY permissions: 
+
+* routing:directRoutingBackup:selfView
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.UsersApi()
+
+try:
+    # Get the user's Direct Routing Backup settings.
+    api_response = api_instance.get_routing_directroutingbackup_settings_me()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling UsersApi->get_routing_directroutingbackup_settings_me: %s\n" % e)
+```
+
+### Parameters
+
+This endpoint does not need any parameters.
+
+
+### Return type
+
+[**AgentDirectRoutingBackupSettings**](AgentDirectRoutingBackupSettings.html)
+
+<a name="get_routing_user_directroutingbackup_settings"></a>
+
+## [**AgentDirectRoutingBackupSettings**](AgentDirectRoutingBackupSettings.html) get_routing_user_directroutingbackup_settings(user_id)
+
+
+
+Get the user's Direct Routing Backup settings.
+
+Wraps GET /api/v2/routing/users/{userId}/directroutingbackup/settings 
+
+Requires ANY permissions: 
+
+* routing:directRoutingBackup:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.UsersApi()
+user_id = 'user_id_example' # str | User ID
+
+try:
+    # Get the user's Direct Routing Backup settings.
+    api_response = api_instance.get_routing_user_directroutingbackup_settings(user_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling UsersApi->get_routing_user_directroutingbackup_settings: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **user_id** | **str**| User ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**AgentDirectRoutingBackupSettings**](AgentDirectRoutingBackupSettings.html)
 
 <a name="get_routing_user_utilization"></a>
 
@@ -4198,6 +4390,106 @@ except ApiException as e:
 ### Return type
 
 [**UsersSearchResponse**](UsersSearchResponse.html)
+
+<a name="put_routing_directroutingbackup_settings_me"></a>
+
+## [**AgentDirectRoutingBackupSettings**](AgentDirectRoutingBackupSettings.html) put_routing_directroutingbackup_settings_me(body)
+
+
+
+Update the user's Direct Routing Backup settings.
+
+Wraps PUT /api/v2/routing/directroutingbackup/settings/me 
+
+Requires ANY permissions: 
+
+* routing:directRoutingBackup:selfEdit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.UsersApi()
+body = PureCloudPlatformClientV2.AgentDirectRoutingBackupSettings() # AgentDirectRoutingBackupSettings | directRoutingBackup
+
+try:
+    # Update the user's Direct Routing Backup settings.
+    api_response = api_instance.put_routing_directroutingbackup_settings_me(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling UsersApi->put_routing_directroutingbackup_settings_me: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**AgentDirectRoutingBackupSettings**](AgentDirectRoutingBackupSettings.html)| directRoutingBackup |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**AgentDirectRoutingBackupSettings**](AgentDirectRoutingBackupSettings.html)
+
+<a name="put_routing_user_directroutingbackup_settings"></a>
+
+## [**AgentDirectRoutingBackupSettings**](AgentDirectRoutingBackupSettings.html) put_routing_user_directroutingbackup_settings(user_id, body)
+
+
+
+Update the user's Direct Routing Backup settings.
+
+Wraps PUT /api/v2/routing/users/{userId}/directroutingbackup/settings 
+
+Requires ANY permissions: 
+
+* routing:directRoutingBackup:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.UsersApi()
+user_id = 'user_id_example' # str | User ID
+body = PureCloudPlatformClientV2.AgentDirectRoutingBackupSettings() # AgentDirectRoutingBackupSettings | directRoutingBackup
+
+try:
+    # Update the user's Direct Routing Backup settings.
+    api_response = api_instance.put_routing_user_directroutingbackup_settings(user_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling UsersApi->put_routing_user_directroutingbackup_settings: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **user_id** | **str**| User ID |  |
+| **body** | [**AgentDirectRoutingBackupSettings**](AgentDirectRoutingBackupSettings.html)| directRoutingBackup |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**AgentDirectRoutingBackupSettings**](AgentDirectRoutingBackupSettings.html)
 
 <a name="put_routing_user_utilization"></a>
 

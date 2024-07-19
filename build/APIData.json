@@ -5482,7 +5482,7 @@
   "get_audits_query_transaction_id_results": {
     "operationId": "get_audits_query_transaction_id_results",
     "functionName": "get_audits_query_transaction_id_results",
-    "signature": "get_audits_query_transaction_id_results(transaction_id, cursor, page_size, expand)",
+    "signature": "get_audits_query_transaction_id_results(transaction_id, cursor, page_size, expand, allow_redirect)",
     "parameters": [
       {
         "name": "transaction_id",
@@ -5503,10 +5503,15 @@
         "name": "expand",
         "type": "list[str]",
         "required": "false"
+      },
+      {
+        "name": "allow_redirect",
+        "type": "bool",
+        "required": "false"
       }
     ],
     "return": "AuditQueryExecutionResultsResponse",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.AuditApi();\ntransaction_id = 'transaction_id_example' # str | Transaction ID\ncursor = 'cursor_example' # str | Indicates where to resume query results (not required for first page) (optional)\npage_size = 25 # int | Indicates maximum number of results in response. Default page size is 25 results. The maximum page size is 500. (optional) (default to 25)\nexpand = ['expand_example'] # list[str] | Which fields, if any, to expand (optional)\n\ntry:\n    # Get results of audit query\n    api_response = api_instance.get_audits_query_transaction_id_results(transaction_id, cursor=cursor, page_size=page_size, expand=expand)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling AuditApi->get_audits_query_transaction_id_results: %s\\n\" % e)"
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.AuditApi();\ntransaction_id = 'transaction_id_example' # str | Transaction ID\ncursor = 'cursor_example' # str | Indicates where to resume query results (not required for first page) (optional)\npage_size = 25 # int | Indicates maximum number of results in response. Default page size is 25 results. The maximum page size is 500. (optional) (default to 25)\nexpand = ['expand_example'] # list[str] | Which fields, if any, to expand (optional)\nallow_redirect = True # bool | Result sets with large amounts of data will respond with a download url (optional)\n\ntry:\n    # Get results of audit query\n    api_response = api_instance.get_audits_query_transaction_id_results(transaction_id, cursor=cursor, page_size=page_size, expand=expand, allow_redirect=allow_redirect)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling AuditApi->get_audits_query_transaction_id_results: %s\\n\" % e)"
   },
   "post_audits_query": {
     "operationId": "post_audits_query",
@@ -19490,9 +19495,31 @@
   "get_journey_views": {
     "operationId": "get_journey_views",
     "functionName": "get_journey_views",
-    "signature": "get_journey_views()",
+    "signature": "get_journey_views(page_number, page_size, name_or_created_by, expand)",
+    "parameters": [
+      {
+        "name": "page_number",
+        "type": "int",
+        "required": "false"
+      },
+      {
+        "name": "page_size",
+        "type": "int",
+        "required": "false"
+      },
+      {
+        "name": "name_or_created_by",
+        "type": "str",
+        "required": "false"
+      },
+      {
+        "name": "expand",
+        "type": "str",
+        "required": "false"
+      }
+    ],
     "return": "JourneyViewListing",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.JourneyApi();\n\ntry:\n    # Get a list of Journey Views\n    api_response = api_instance.get_journey_views()\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling JourneyApi->get_journey_views: %s\\n\" % e)"
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.JourneyApi();\npage_number = 1 # int | Page number (optional) (default to 1)\npage_size = 25 # int | Page size (optional) (default to 25)\nname_or_created_by = 'name_or_created_by_example' # str | Journey View Name or Created By (optional)\nexpand = 'expand_example' # str | Parameter to request additional data to return in Journey payload (optional)\n\ntry:\n    # Get a list of Journey Views\n    api_response = api_instance.get_journey_views(page_number=page_number, page_size=page_size, name_or_created_by=name_or_created_by, expand=expand)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling JourneyApi->get_journey_views: %s\\n\" % e)"
   },
   "get_journey_views_eventdefinition": {
     "operationId": "get_journey_views_eventdefinition",
@@ -32833,6 +32860,12 @@
     ],
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.RoutingApi();\nassessment_id = 'assessment_id_example' # str | Benefit Assessment ID\n\ntry:\n    # Delete single benefit assessment.\n    api_instance.delete_routing_assessment(assessment_id)\nexcept ApiException as e:\n    print(\"Exception when calling RoutingApi->delete_routing_assessment: %s\\n\" % e)"
   },
+  "delete_routing_directroutingbackup_settings_me": {
+    "operationId": "delete_routing_directroutingbackup_settings_me",
+    "functionName": "delete_routing_directroutingbackup_settings_me",
+    "signature": "delete_routing_directroutingbackup_settings_me()",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.UsersApi();\n\ntry:\n    # Delete the user's Direct Routing Backup settings and revert to the Direct Routing Queue default.\n    api_instance.delete_routing_directroutingbackup_settings_me()\nexcept ApiException as e:\n    print(\"Exception when calling UsersApi->delete_routing_directroutingbackup_settings_me: %s\\n\" % e)"
+  },
   "delete_routing_email_domain": {
     "operationId": "delete_routing_email_domain",
     "functionName": "delete_routing_email_domain",
@@ -33033,6 +33066,19 @@
     ],
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.RoutingApi();\naddress_id = 'address_id_example' # str | Address ID\n\ntry:\n    # Delete a phone number provisioned for SMS.\n    api_instance.delete_routing_sms_phonenumber(address_id)\nexcept ApiException as e:\n    print(\"Exception when calling RoutingApi->delete_routing_sms_phonenumber: %s\\n\" % e)"
   },
+  "delete_routing_user_directroutingbackup_settings": {
+    "operationId": "delete_routing_user_directroutingbackup_settings",
+    "functionName": "delete_routing_user_directroutingbackup_settings",
+    "signature": "delete_routing_user_directroutingbackup_settings(user_id)",
+    "parameters": [
+      {
+        "name": "user_id",
+        "type": "str",
+        "required": "true"
+      }
+    ],
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.UsersApi();\nuser_id = 'user_id_example' # str | User ID\n\ntry:\n    # Delete the user's Direct Routing Backup settings and revert to the Direct Routing Queue default.\n    api_instance.delete_routing_user_directroutingbackup_settings(user_id)\nexcept ApiException as e:\n    print(\"Exception when calling UsersApi->delete_routing_user_directroutingbackup_settings: %s\\n\" % e)"
+  },
   "delete_routing_user_utilization": {
     "operationId": "delete_routing_user_utilization",
     "functionName": "delete_routing_user_utilization",
@@ -33219,6 +33265,13 @@
     "signature": "get_routing_availablemediatypes()",
     "return": "AvailableMediaTypeEntityListing",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.RoutingApi();\n\ntry:\n    # Get available media types\n    api_response = api_instance.get_routing_availablemediatypes()\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling RoutingApi->get_routing_availablemediatypes: %s\\n\" % e)"
+  },
+  "get_routing_directroutingbackup_settings_me": {
+    "operationId": "get_routing_directroutingbackup_settings_me",
+    "functionName": "get_routing_directroutingbackup_settings_me",
+    "signature": "get_routing_directroutingbackup_settings_me()",
+    "return": "AgentDirectRoutingBackupSettings",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.UsersApi();\n\ntry:\n    # Get the user's Direct Routing Backup settings.\n    api_response = api_instance.get_routing_directroutingbackup_settings_me()\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling UsersApi->get_routing_directroutingbackup_settings_me: %s\\n\" % e)"
   },
   "get_routing_email_domain": {
     "operationId": "get_routing_email_domain",
@@ -34287,6 +34340,20 @@
     ],
     "return": "SmsPhoneNumberEntityListing",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.RoutingApi();\nphone_number = 'phone_number_example' # str | Filter on phone number address. Allowable characters are the digits '0-9' and the wild card character '\\\\*'. If just digits are present, a contains search is done on the address pattern. For example, '317' could be matched anywhere in the address. An '\\\\*' will match multiple digits. For example, to match a specific area code within the US a pattern like '1317*' could be used. (optional)\nphone_number_type = ['phone_number_type_example'] # list[str] | Filter on phone number type (optional)\nphone_number_status = ['phone_number_status_example'] # list[str] | Filter on phone number status (optional)\ncountry_code = ['country_code_example'] # list[str] | Filter on country code (optional)\npage_size = 25 # int | Page size (optional) (default to 25)\npage_number = 1 # int | Page number (optional) (default to 1)\nsort_by = 'sort_by_example' # str | Optional field to sort results (optional)\nsort_order = 'sort_order_example' # str | Sort order (optional)\nlanguage = ''en-US'' # str | A language tag (which is sometimes referred to as a \\\"locale identifier\\\") to use to localize country field and sort operations (optional) (default to 'en-US')\nintegration_id = 'integration_id_example' # str | Filter on the Genesys Cloud integration id to which the phone number belongs to (optional)\nsupported_content_id = 'supported_content_id_example' # str | Filter based on the supported content ID (optional)\n\ntry:\n    # Get a list of provisioned phone numbers.\n    api_response = api_instance.get_routing_sms_phonenumbers(phone_number=phone_number, phone_number_type=phone_number_type, phone_number_status=phone_number_status, country_code=country_code, page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order, language=language, integration_id=integration_id, supported_content_id=supported_content_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling RoutingApi->get_routing_sms_phonenumbers: %s\\n\" % e)"
+  },
+  "get_routing_user_directroutingbackup_settings": {
+    "operationId": "get_routing_user_directroutingbackup_settings",
+    "functionName": "get_routing_user_directroutingbackup_settings",
+    "signature": "get_routing_user_directroutingbackup_settings(user_id)",
+    "parameters": [
+      {
+        "name": "user_id",
+        "type": "str",
+        "required": "true"
+      }
+    ],
+    "return": "AgentDirectRoutingBackupSettings",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.UsersApi();\nuser_id = 'user_id_example' # str | User ID\n\ntry:\n    # Get the user's Direct Routing Backup settings.\n    api_response = api_instance.get_routing_user_directroutingbackup_settings(user_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling UsersApi->get_routing_user_directroutingbackup_settings: %s\\n\" % e)"
   },
   "get_routing_user_utilization": {
     "operationId": "get_routing_user_utilization",
@@ -35368,6 +35435,20 @@
     "return": "UserRoutingSkill",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.UsersApi();\nuser_id = 'user_id_example' # str | User ID\nbody = PureCloudPlatformClientV2.UserRoutingSkillPost() # UserRoutingSkillPost | Skill\n\ntry:\n    # Add routing skill to user\n    api_response = api_instance.post_user_routingskills(user_id, body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling UsersApi->post_user_routingskills: %s\\n\" % e)"
   },
+  "put_routing_directroutingbackup_settings_me": {
+    "operationId": "put_routing_directroutingbackup_settings_me",
+    "functionName": "put_routing_directroutingbackup_settings_me",
+    "signature": "put_routing_directroutingbackup_settings_me(body)",
+    "parameters": [
+      {
+        "name": "body",
+        "type": "AgentDirectRoutingBackupSettings",
+        "required": "true"
+      }
+    ],
+    "return": "AgentDirectRoutingBackupSettings",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.UsersApi();\nbody = PureCloudPlatformClientV2.AgentDirectRoutingBackupSettings() # AgentDirectRoutingBackupSettings | directRoutingBackup\n\ntry:\n    # Update the user's Direct Routing Backup settings.\n    api_response = api_instance.put_routing_directroutingbackup_settings_me(body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling UsersApi->put_routing_directroutingbackup_settings_me: %s\\n\" % e)"
+  },
   "put_routing_email_domain_route": {
     "operationId": "put_routing_email_domain_route",
     "functionName": "put_routing_email_domain_route",
@@ -35490,6 +35571,25 @@
     ],
     "return": "SmsPhoneNumber",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.RoutingApi();\naddress_id = 'address_id_example' # str | Address ID\nbody = PureCloudPlatformClientV2.SmsPhoneNumber() # SmsPhoneNumber | SmsPhoneNumber\n\ntry:\n    # Update a phone number provisioned for SMS.\n    api_response = api_instance.put_routing_sms_phonenumber(address_id, body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling RoutingApi->put_routing_sms_phonenumber: %s\\n\" % e)"
+  },
+  "put_routing_user_directroutingbackup_settings": {
+    "operationId": "put_routing_user_directroutingbackup_settings",
+    "functionName": "put_routing_user_directroutingbackup_settings",
+    "signature": "put_routing_user_directroutingbackup_settings(user_id, body)",
+    "parameters": [
+      {
+        "name": "user_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "body",
+        "type": "AgentDirectRoutingBackupSettings",
+        "required": "true"
+      }
+    ],
+    "return": "AgentDirectRoutingBackupSettings",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.UsersApi();\nuser_id = 'user_id_example' # str | User ID\nbody = PureCloudPlatformClientV2.AgentDirectRoutingBackupSettings() # AgentDirectRoutingBackupSettings | directRoutingBackup\n\ntry:\n    # Update the user's Direct Routing Backup settings.\n    api_response = api_instance.put_routing_user_directroutingbackup_settings(user_id, body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling UsersApi->put_routing_user_directroutingbackup_settings: %s\\n\" % e)"
   },
   "put_routing_user_utilization": {
     "operationId": "put_routing_user_utilization",

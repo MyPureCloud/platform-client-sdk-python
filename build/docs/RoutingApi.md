@@ -9,6 +9,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |Method | Description|
 |------------- | -------------|
 |[**delete_routing_assessment**](RoutingApi.html#delete_routing_assessment) | Delete single benefit assessment.|
+|[**delete_routing_directroutingbackup_settings_me**](RoutingApi.html#delete_routing_directroutingbackup_settings_me) | Delete the user&#39;s Direct Routing Backup settings and revert to the Direct Routing Queue default.|
 |[**delete_routing_email_domain**](RoutingApi.html#delete_routing_email_domain) | Delete a domain|
 |[**delete_routing_email_domain_route**](RoutingApi.html#delete_routing_email_domain_route) | Delete a route|
 |[**delete_routing_email_outbound_domain**](RoutingApi.html#delete_routing_email_outbound_domain) | Delete an outbound domain|
@@ -23,6 +24,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**delete_routing_skillgroup**](RoutingApi.html#delete_routing_skillgroup) | Remove skill group definition|
 |[**delete_routing_sms_address**](RoutingApi.html#delete_routing_sms_address) | Delete an Address by Id for SMS|
 |[**delete_routing_sms_phonenumber**](RoutingApi.html#delete_routing_sms_phonenumber) | Delete a phone number provisioned for SMS.|
+|[**delete_routing_user_directroutingbackup_settings**](RoutingApi.html#delete_routing_user_directroutingbackup_settings) | Delete the user&#39;s Direct Routing Backup settings and revert to the Direct Routing Queue default.|
 |[**delete_routing_user_utilization**](RoutingApi.html#delete_routing_user_utilization) | Delete the user&#39;s max utilization settings and revert to the organization-wide default.|
 |[**delete_routing_utilization**](RoutingApi.html#delete_routing_utilization) | Delete the organization-wide max utilization settings and revert to the system default.|
 |[**delete_routing_utilization_label**](RoutingApi.html#delete_routing_utilization_label) | Delete a utilization label|
@@ -35,6 +37,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_routing_assessments_job**](RoutingApi.html#get_routing_assessments_job) | Retrieve a single benefit assessments job.|
 |[**get_routing_assessments_jobs**](RoutingApi.html#get_routing_assessments_jobs) | Retrieve all benefit assessment jobs.|
 |[**get_routing_availablemediatypes**](RoutingApi.html#get_routing_availablemediatypes) | Get available media types|
+|[**get_routing_directroutingbackup_settings_me**](RoutingApi.html#get_routing_directroutingbackup_settings_me) | Get the user&#39;s Direct Routing Backup settings.|
 |[**get_routing_email_domain**](RoutingApi.html#get_routing_email_domain) | Get domain|
 |[**get_routing_email_domain_route**](RoutingApi.html#get_routing_email_domain_route) | Get a route|
 |[**get_routing_email_domain_routes**](RoutingApi.html#get_routing_email_domain_routes) | Get routes|
@@ -79,6 +82,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_routing_sms_availablephonenumbers**](RoutingApi.html#get_routing_sms_availablephonenumbers) | Get a list of available phone numbers for SMS provisioning.|
 |[**get_routing_sms_phonenumber**](RoutingApi.html#get_routing_sms_phonenumber) | Get a phone number provisioned for SMS.|
 |[**get_routing_sms_phonenumbers**](RoutingApi.html#get_routing_sms_phonenumbers) | Get a list of provisioned phone numbers.|
+|[**get_routing_user_directroutingbackup_settings**](RoutingApi.html#get_routing_user_directroutingbackup_settings) | Get the user&#39;s Direct Routing Backup settings.|
 |[**get_routing_user_utilization**](RoutingApi.html#get_routing_user_utilization) | Get the user&#39;s max utilization settings.  If not configured, the organization-wide default is returned.|
 |[**get_routing_utilization**](RoutingApi.html#get_routing_utilization) | Get the organization-wide max utilization settings.|
 |[**get_routing_utilization_label**](RoutingApi.html#get_routing_utilization_label) | Get details about this utilization label|
@@ -138,6 +142,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_routing_wrapupcodes**](RoutingApi.html#post_routing_wrapupcodes) | Create a wrap-up code|
 |[**post_user_routinglanguages**](RoutingApi.html#post_user_routinglanguages) | Add routing language to user|
 |[**post_user_routingskills**](RoutingApi.html#post_user_routingskills) | Add routing skill to user|
+|[**put_routing_directroutingbackup_settings_me**](RoutingApi.html#put_routing_directroutingbackup_settings_me) | Update the user&#39;s Direct Routing Backup settings.|
 |[**put_routing_email_domain_route**](RoutingApi.html#put_routing_email_domain_route) | Update a route|
 |[**put_routing_email_outbound_domain_activation**](RoutingApi.html#put_routing_email_outbound_domain_activation) | Request an activation status (cname + dkim) update of an outbound domain|
 |[**put_routing_message_recipient**](RoutingApi.html#put_routing_message_recipient) | Update a recipient|
@@ -145,6 +150,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**put_routing_settings**](RoutingApi.html#put_routing_settings) | Update an organization&#39;s routing settings|
 |[**put_routing_settings_transcription**](RoutingApi.html#put_routing_settings_transcription) | Update Transcription Settings|
 |[**put_routing_sms_phonenumber**](RoutingApi.html#put_routing_sms_phonenumber) | Update a phone number provisioned for SMS.|
+|[**put_routing_user_directroutingbackup_settings**](RoutingApi.html#put_routing_user_directroutingbackup_settings) | Update the user&#39;s Direct Routing Backup settings.|
 |[**put_routing_user_utilization**](RoutingApi.html#put_routing_user_utilization) | Update the user&#39;s max utilization settings.  Include only those media types requiring custom configuration.|
 |[**put_routing_utilization**](RoutingApi.html#put_routing_utilization) | Update the organization-wide max utilization settings.  Include only those media types requiring custom configuration.|
 |[**put_routing_utilization_label**](RoutingApi.html#put_routing_utilization_label) | Update a utilization label|
@@ -196,6 +202,50 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **assessment_id** | **str**| Benefit Assessment ID |  |
 {: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
+
+<a name="delete_routing_directroutingbackup_settings_me"></a>
+
+##  delete_routing_directroutingbackup_settings_me()
+
+
+
+Delete the user's Direct Routing Backup settings and revert to the Direct Routing Queue default.
+
+Wraps DELETE /api/v2/routing/directroutingbackup/settings/me 
+
+Requires ANY permissions: 
+
+* routing:directRoutingBackup:selfDelete
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RoutingApi()
+
+try:
+    # Delete the user's Direct Routing Backup settings and revert to the Direct Routing Queue default.
+    api_instance.delete_routing_directroutingbackup_settings_me()
+except ApiException as e:
+    print("Exception when calling RoutingApi->delete_routing_directroutingbackup_settings_me: %s\n" % e)
+```
+
+### Parameters
+
+This endpoint does not need any parameters.
+
 
 ### Return type
 
@@ -882,6 +932,54 @@ except ApiException as e:
 
 void (empty response body)
 
+<a name="delete_routing_user_directroutingbackup_settings"></a>
+
+##  delete_routing_user_directroutingbackup_settings(user_id)
+
+
+
+Delete the user's Direct Routing Backup settings and revert to the Direct Routing Queue default.
+
+Wraps DELETE /api/v2/routing/users/{userId}/directroutingbackup/settings 
+
+Requires ANY permissions: 
+
+* routing:directRoutingBackup:delete
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RoutingApi()
+user_id = 'user_id_example' # str | User ID
+
+try:
+    # Delete the user's Direct Routing Backup settings and revert to the Direct Routing Queue default.
+    api_instance.delete_routing_user_directroutingbackup_settings(user_id)
+except ApiException as e:
+    print("Exception when calling RoutingApi->delete_routing_user_directroutingbackup_settings: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **user_id** | **str**| User ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
+
 <a name="delete_routing_user_utilization"></a>
 
 ##  delete_routing_user_utilization(user_id)
@@ -1473,6 +1571,51 @@ This endpoint does not need any parameters.
 ### Return type
 
 [**AvailableMediaTypeEntityListing**](AvailableMediaTypeEntityListing.html)
+
+<a name="get_routing_directroutingbackup_settings_me"></a>
+
+## [**AgentDirectRoutingBackupSettings**](AgentDirectRoutingBackupSettings.html) get_routing_directroutingbackup_settings_me()
+
+
+
+Get the user's Direct Routing Backup settings.
+
+Wraps GET /api/v2/routing/directroutingbackup/settings/me 
+
+Requires ANY permissions: 
+
+* routing:directRoutingBackup:selfView
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RoutingApi()
+
+try:
+    # Get the user's Direct Routing Backup settings.
+    api_response = api_instance.get_routing_directroutingbackup_settings_me()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling RoutingApi->get_routing_directroutingbackup_settings_me: %s\n" % e)
+```
+
+### Parameters
+
+This endpoint does not need any parameters.
+
+
+### Return type
+
+[**AgentDirectRoutingBackupSettings**](AgentDirectRoutingBackupSettings.html)
 
 <a name="get_routing_email_domain"></a>
 
@@ -3807,6 +3950,55 @@ except ApiException as e:
 ### Return type
 
 [**SmsPhoneNumberEntityListing**](SmsPhoneNumberEntityListing.html)
+
+<a name="get_routing_user_directroutingbackup_settings"></a>
+
+## [**AgentDirectRoutingBackupSettings**](AgentDirectRoutingBackupSettings.html) get_routing_user_directroutingbackup_settings(user_id)
+
+
+
+Get the user's Direct Routing Backup settings.
+
+Wraps GET /api/v2/routing/users/{userId}/directroutingbackup/settings 
+
+Requires ANY permissions: 
+
+* routing:directRoutingBackup:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RoutingApi()
+user_id = 'user_id_example' # str | User ID
+
+try:
+    # Get the user's Direct Routing Backup settings.
+    api_response = api_instance.get_routing_user_directroutingbackup_settings(user_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling RoutingApi->get_routing_user_directroutingbackup_settings: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **user_id** | **str**| User ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**AgentDirectRoutingBackupSettings**](AgentDirectRoutingBackupSettings.html)
 
 <a name="get_routing_user_utilization"></a>
 
@@ -6843,6 +7035,55 @@ except ApiException as e:
 
 [**UserRoutingSkill**](UserRoutingSkill.html)
 
+<a name="put_routing_directroutingbackup_settings_me"></a>
+
+## [**AgentDirectRoutingBackupSettings**](AgentDirectRoutingBackupSettings.html) put_routing_directroutingbackup_settings_me(body)
+
+
+
+Update the user's Direct Routing Backup settings.
+
+Wraps PUT /api/v2/routing/directroutingbackup/settings/me 
+
+Requires ANY permissions: 
+
+* routing:directRoutingBackup:selfEdit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RoutingApi()
+body = PureCloudPlatformClientV2.AgentDirectRoutingBackupSettings() # AgentDirectRoutingBackupSettings | directRoutingBackup
+
+try:
+    # Update the user's Direct Routing Backup settings.
+    api_response = api_instance.put_routing_directroutingbackup_settings_me(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling RoutingApi->put_routing_directroutingbackup_settings_me: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**AgentDirectRoutingBackupSettings**](AgentDirectRoutingBackupSettings.html)| directRoutingBackup |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**AgentDirectRoutingBackupSettings**](AgentDirectRoutingBackupSettings.html)
+
 <a name="put_routing_email_domain_route"></a>
 
 ## [**InboundRoute**](InboundRoute.html) put_routing_email_domain_route(domain_name, route_id, body)
@@ -7195,6 +7436,57 @@ except ApiException as e:
 ### Return type
 
 [**SmsPhoneNumber**](SmsPhoneNumber.html)
+
+<a name="put_routing_user_directroutingbackup_settings"></a>
+
+## [**AgentDirectRoutingBackupSettings**](AgentDirectRoutingBackupSettings.html) put_routing_user_directroutingbackup_settings(user_id, body)
+
+
+
+Update the user's Direct Routing Backup settings.
+
+Wraps PUT /api/v2/routing/users/{userId}/directroutingbackup/settings 
+
+Requires ANY permissions: 
+
+* routing:directRoutingBackup:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RoutingApi()
+user_id = 'user_id_example' # str | User ID
+body = PureCloudPlatformClientV2.AgentDirectRoutingBackupSettings() # AgentDirectRoutingBackupSettings | directRoutingBackup
+
+try:
+    # Update the user's Direct Routing Backup settings.
+    api_response = api_instance.put_routing_user_directroutingbackup_settings(user_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling RoutingApi->put_routing_user_directroutingbackup_settings: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **user_id** | **str**| User ID |  |
+| **body** | [**AgentDirectRoutingBackupSettings**](AgentDirectRoutingBackupSettings.html)| directRoutingBackup |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**AgentDirectRoutingBackupSettings**](AgentDirectRoutingBackupSettings.html)
 
 <a name="put_routing_user_utilization"></a>
 

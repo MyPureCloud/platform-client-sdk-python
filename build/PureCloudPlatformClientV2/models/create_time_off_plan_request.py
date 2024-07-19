@@ -171,7 +171,7 @@ class CreateTimeOffPlanRequest(object):
         """
         if isinstance(auto_approval_rule, int):
             auto_approval_rule = str(auto_approval_rule)
-        allowed_values = ["Never", "Always", "CheckLimits"]
+        allowed_values = ["Never", "Always", "CheckLimits", "CheckActivityCodes", "CheckLimitsAndActivityCodes"]
         if auto_approval_rule.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for auto_approval_rule -> " + auto_approval_rule)
             self._auto_approval_rule = "outdated_sdk_version"

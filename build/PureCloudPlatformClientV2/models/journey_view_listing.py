@@ -50,44 +50,41 @@ class JourneyViewListing(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'total': 'int',
             'entities': 'list[JourneyView]',
-            'self_uri': 'str'
+            'page_size': 'int',
+            'page_number': 'int',
+            'total': 'int',
+            'last_uri': 'str',
+            'first_uri': 'str',
+            'self_uri': 'str',
+            'next_uri': 'str',
+            'previous_uri': 'str',
+            'page_count': 'int'
         }
 
         self.attribute_map = {
-            'total': 'total',
             'entities': 'entities',
-            'self_uri': 'selfUri'
+            'page_size': 'pageSize',
+            'page_number': 'pageNumber',
+            'total': 'total',
+            'last_uri': 'lastUri',
+            'first_uri': 'firstUri',
+            'self_uri': 'selfUri',
+            'next_uri': 'nextUri',
+            'previous_uri': 'previousUri',
+            'page_count': 'pageCount'
         }
 
-        self._total = None
         self._entities = None
+        self._page_size = None
+        self._page_number = None
+        self._total = None
+        self._last_uri = None
+        self._first_uri = None
         self._self_uri = None
-
-    @property
-    def total(self) -> int:
-        """
-        Gets the total of this JourneyViewListing.
-
-
-        :return: The total of this JourneyViewListing.
-        :rtype: int
-        """
-        return self._total
-
-    @total.setter
-    def total(self, total: int) -> None:
-        """
-        Sets the total of this JourneyViewListing.
-
-
-        :param total: The total of this JourneyViewListing.
-        :type: int
-        """
-        
-
-        self._total = total
+        self._next_uri = None
+        self._previous_uri = None
+        self._page_count = None
 
     @property
     def entities(self) -> List['JourneyView']:
@@ -114,6 +111,126 @@ class JourneyViewListing(object):
         self._entities = entities
 
     @property
+    def page_size(self) -> int:
+        """
+        Gets the page_size of this JourneyViewListing.
+
+
+        :return: The page_size of this JourneyViewListing.
+        :rtype: int
+        """
+        return self._page_size
+
+    @page_size.setter
+    def page_size(self, page_size: int) -> None:
+        """
+        Sets the page_size of this JourneyViewListing.
+
+
+        :param page_size: The page_size of this JourneyViewListing.
+        :type: int
+        """
+        
+
+        self._page_size = page_size
+
+    @property
+    def page_number(self) -> int:
+        """
+        Gets the page_number of this JourneyViewListing.
+
+
+        :return: The page_number of this JourneyViewListing.
+        :rtype: int
+        """
+        return self._page_number
+
+    @page_number.setter
+    def page_number(self, page_number: int) -> None:
+        """
+        Sets the page_number of this JourneyViewListing.
+
+
+        :param page_number: The page_number of this JourneyViewListing.
+        :type: int
+        """
+        
+
+        self._page_number = page_number
+
+    @property
+    def total(self) -> int:
+        """
+        Gets the total of this JourneyViewListing.
+
+
+        :return: The total of this JourneyViewListing.
+        :rtype: int
+        """
+        return self._total
+
+    @total.setter
+    def total(self, total: int) -> None:
+        """
+        Sets the total of this JourneyViewListing.
+
+
+        :param total: The total of this JourneyViewListing.
+        :type: int
+        """
+        
+
+        self._total = total
+
+    @property
+    def last_uri(self) -> str:
+        """
+        Gets the last_uri of this JourneyViewListing.
+
+
+        :return: The last_uri of this JourneyViewListing.
+        :rtype: str
+        """
+        return self._last_uri
+
+    @last_uri.setter
+    def last_uri(self, last_uri: str) -> None:
+        """
+        Sets the last_uri of this JourneyViewListing.
+
+
+        :param last_uri: The last_uri of this JourneyViewListing.
+        :type: str
+        """
+        
+
+        self._last_uri = last_uri
+
+    @property
+    def first_uri(self) -> str:
+        """
+        Gets the first_uri of this JourneyViewListing.
+
+
+        :return: The first_uri of this JourneyViewListing.
+        :rtype: str
+        """
+        return self._first_uri
+
+    @first_uri.setter
+    def first_uri(self, first_uri: str) -> None:
+        """
+        Sets the first_uri of this JourneyViewListing.
+
+
+        :param first_uri: The first_uri of this JourneyViewListing.
+        :type: str
+        """
+        
+
+        self._first_uri = first_uri
+
+    @property
     def self_uri(self) -> str:
         """
         Gets the self_uri of this JourneyViewListing.
@@ -136,6 +253,78 @@ class JourneyViewListing(object):
         
 
         self._self_uri = self_uri
+
+    @property
+    def next_uri(self) -> str:
+        """
+        Gets the next_uri of this JourneyViewListing.
+
+
+        :return: The next_uri of this JourneyViewListing.
+        :rtype: str
+        """
+        return self._next_uri
+
+    @next_uri.setter
+    def next_uri(self, next_uri: str) -> None:
+        """
+        Sets the next_uri of this JourneyViewListing.
+
+
+        :param next_uri: The next_uri of this JourneyViewListing.
+        :type: str
+        """
+        
+
+        self._next_uri = next_uri
+
+    @property
+    def previous_uri(self) -> str:
+        """
+        Gets the previous_uri of this JourneyViewListing.
+
+
+        :return: The previous_uri of this JourneyViewListing.
+        :rtype: str
+        """
+        return self._previous_uri
+
+    @previous_uri.setter
+    def previous_uri(self, previous_uri: str) -> None:
+        """
+        Sets the previous_uri of this JourneyViewListing.
+
+
+        :param previous_uri: The previous_uri of this JourneyViewListing.
+        :type: str
+        """
+        
+
+        self._previous_uri = previous_uri
+
+    @property
+    def page_count(self) -> int:
+        """
+        Gets the page_count of this JourneyViewListing.
+
+
+        :return: The page_count of this JourneyViewListing.
+        :rtype: int
+        """
+        return self._page_count
+
+    @page_count.setter
+    def page_count(self, page_count: int) -> None:
+        """
+        Sets the page_count of this JourneyViewListing.
+
+
+        :param page_count: The page_count of this JourneyViewListing.
+        :type: int
+        """
+        
+
+        self._page_count = page_count
 
     def to_dict(self):
         """

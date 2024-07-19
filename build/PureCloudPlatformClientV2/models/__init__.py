@@ -53,6 +53,7 @@ from .activity_code import ActivityCode
 from .activity_code_container import ActivityCodeContainer
 from .activity_code_reference import ActivityCodeReference
 from .activity_code_summary import ActivityCodeSummary
+from .activity_codes_reference import ActivityCodesReference
 from .activity_plan_abandon_rate_impact_override import ActivityPlanAbandonRateImpactOverride
 from .activity_plan_asa_impact_override import ActivityPlanAsaImpactOverride
 from .activity_plan_job_exception import ActivityPlanJobException
@@ -118,6 +119,7 @@ from .agent_copilot_aggregation_query import AgentCopilotAggregationQuery
 from .agent_copilot_aggregation_view import AgentCopilotAggregationView
 from .agent_copilot_async_aggregate_query_response import AgentCopilotAsyncAggregateQueryResponse
 from .agent_copilot_async_aggregation_query import AgentCopilotAsyncAggregationQuery
+from .agent_direct_routing_backup_settings import AgentDirectRoutingBackupSettings
 from .agent_evaluator_activity import AgentEvaluatorActivity
 from .agent_integration_association_request import AgentIntegrationAssociationRequest
 from .agent_integration_association_response import AgentIntegrationAssociationResponse
@@ -275,6 +277,7 @@ from .audio_state import AudioState
 from .audio_updated_event import AudioUpdatedEvent
 from .audit_log_message import AuditLogMessage
 from .audit_query_entity import AuditQueryEntity
+from .audit_query_execution_large_results_response import AuditQueryExecutionLargeResultsResponse
 from .audit_query_execution_results_response import AuditQueryExecutionResultsResponse
 from .audit_query_execution_status_response import AuditQueryExecutionStatusResponse
 from .audit_query_filter import AuditQueryFilter
@@ -1901,6 +1904,7 @@ from .identifier_claim_request import IdentifierClaimRequest
 from .identity_now import IdentityNow
 from .identity_provider import IdentityProvider
 from .identity_provider_entity_listing import IdentityProviderEntityListing
+from .identity_resolution_config import IdentityResolutionConfig
 from .idle_event_trigger import IdleEventTrigger
 from .idle_token_timeout import IdleTokenTimeout
 from .ignored_activity_categories import IgnoredActivityCategories

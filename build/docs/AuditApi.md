@@ -158,7 +158,7 @@ except ApiException as e:
 
 <a name="get_audits_query_transaction_id_results"></a>
 
-## [**AuditQueryExecutionResultsResponse**](AuditQueryExecutionResultsResponse.html) get_audits_query_transaction_id_results(transaction_id, cursor=cursor, page_size=page_size, expand=expand)
+## [**AuditQueryExecutionResultsResponse**](AuditQueryExecutionResultsResponse.html) get_audits_query_transaction_id_results(transaction_id, cursor=cursor, page_size=page_size, expand=expand, allow_redirect=allow_redirect)
 
 
 
@@ -187,10 +187,11 @@ transaction_id = 'transaction_id_example' # str | Transaction ID
 cursor = 'cursor_example' # str | Indicates where to resume query results (not required for first page) (optional)
 page_size = 25 # int | Indicates maximum number of results in response. Default page size is 25 results. The maximum page size is 500. (optional) (default to 25)
 expand = ['expand_example'] # list[str] | Which fields, if any, to expand (optional)
+allow_redirect = True # bool | Result sets with large amounts of data will respond with a download url (optional)
 
 try:
     # Get results of audit query
-    api_response = api_instance.get_audits_query_transaction_id_results(transaction_id, cursor=cursor, page_size=page_size, expand=expand)
+    api_response = api_instance.get_audits_query_transaction_id_results(transaction_id, cursor=cursor, page_size=page_size, expand=expand, allow_redirect=allow_redirect)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AuditApi->get_audits_query_transaction_id_results: %s\n" % e)
@@ -205,6 +206,7 @@ except ApiException as e:
 | **cursor** | **str**| Indicates where to resume query results (not required for first page) | [optional]  |
 | **page_size** | **int**| Indicates maximum number of results in response. Default page size is 25 results. The maximum page size is 500. | [optional] [default to 25] |
 | **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] <br />**Values**: user |
+| **allow_redirect** | **bool**| Result sets with large amounts of data will respond with a download url | [optional]  |
 {: class="table table-striped"}
 
 ### Return type

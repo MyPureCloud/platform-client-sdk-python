@@ -2923,12 +2923,16 @@ class JourneyApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
+        :param int page_number: Page number
+        :param int page_size: Page size
+        :param str name_or_created_by: Journey View Name or Created By
+        :param str expand: Parameter to request additional data to return in Journey payload
         :return: JourneyViewListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = []
+        all_params = ['page_number', 'page_size', 'name_or_created_by', 'expand']
         all_params.append('callback')
 
         params = locals()
@@ -2947,6 +2951,14 @@ class JourneyApi(object):
         path_params = {}
 
         query_params = {}
+        if 'page_number' in params:
+            query_params['pageNumber'] = params['page_number']
+        if 'page_size' in params:
+            query_params['pageSize'] = params['page_size']
+        if 'name_or_created_by' in params:
+            query_params['nameOrCreatedBy'] = params['name_or_created_by']
+        if 'expand' in params:
+            query_params['expand'] = params['expand']
 
         header_params = {}
 

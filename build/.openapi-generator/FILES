@@ -133,6 +133,7 @@ PureCloudPlatformClientV2/models/activity_code.py
 PureCloudPlatformClientV2/models/activity_code_container.py
 PureCloudPlatformClientV2/models/activity_code_reference.py
 PureCloudPlatformClientV2/models/activity_code_summary.py
+PureCloudPlatformClientV2/models/activity_codes_reference.py
 PureCloudPlatformClientV2/models/activity_plan_abandon_rate_impact_override.py
 PureCloudPlatformClientV2/models/activity_plan_asa_impact_override.py
 PureCloudPlatformClientV2/models/activity_plan_job_exception.py
@@ -199,6 +200,7 @@ PureCloudPlatformClientV2/models/agent_copilot_aggregation_query.py
 PureCloudPlatformClientV2/models/agent_copilot_aggregation_view.py
 PureCloudPlatformClientV2/models/agent_copilot_async_aggregate_query_response.py
 PureCloudPlatformClientV2/models/agent_copilot_async_aggregation_query.py
+PureCloudPlatformClientV2/models/agent_direct_routing_backup_settings.py
 PureCloudPlatformClientV2/models/agent_evaluator_activity.py
 PureCloudPlatformClientV2/models/agent_integration_association_request.py
 PureCloudPlatformClientV2/models/agent_integration_association_response.py
@@ -356,6 +358,7 @@ PureCloudPlatformClientV2/models/audio_state.py
 PureCloudPlatformClientV2/models/audio_updated_event.py
 PureCloudPlatformClientV2/models/audit_log_message.py
 PureCloudPlatformClientV2/models/audit_query_entity.py
+PureCloudPlatformClientV2/models/audit_query_execution_large_results_response.py
 PureCloudPlatformClientV2/models/audit_query_execution_results_response.py
 PureCloudPlatformClientV2/models/audit_query_execution_status_response.py
 PureCloudPlatformClientV2/models/audit_query_filter.py
@@ -1978,6 +1981,7 @@ PureCloudPlatformClientV2/models/identifier_claim_request.py
 PureCloudPlatformClientV2/models/identity_now.py
 PureCloudPlatformClientV2/models/identity_provider.py
 PureCloudPlatformClientV2/models/identity_provider_entity_listing.py
+PureCloudPlatformClientV2/models/identity_resolution_config.py
 PureCloudPlatformClientV2/models/idle_event_trigger.py
 PureCloudPlatformClientV2/models/idle_token_timeout.py
 PureCloudPlatformClientV2/models/ignored_activity_categories.py
@@ -4635,6 +4639,7 @@ docs/ActivityCode.md
 docs/ActivityCodeContainer.md
 docs/ActivityCodeReference.md
 docs/ActivityCodeSummary.md
+docs/ActivityCodesReference.md
 docs/ActivityPlanAbandonRateImpactOverride.md
 docs/ActivityPlanAsaImpactOverride.md
 docs/ActivityPlanJobException.md
@@ -4700,6 +4705,7 @@ docs/AgentCopilotAggregationQuery.md
 docs/AgentCopilotAggregationView.md
 docs/AgentCopilotAsyncAggregateQueryResponse.md
 docs/AgentCopilotAsyncAggregationQuery.md
+docs/AgentDirectRoutingBackupSettings.md
 docs/AgentEvaluatorActivity.md
 docs/AgentIntegrationAssociationRequest.md
 docs/AgentIntegrationAssociationResponse.md
@@ -4867,6 +4873,7 @@ docs/AuditApi.json
 docs/AuditApi.md
 docs/AuditLogMessage.md
 docs/AuditQueryEntity.md
+docs/AuditQueryExecutionLargeResultsResponse.md
 docs/AuditQueryExecutionResultsResponse.md
 docs/AuditQueryExecutionStatusResponse.md
 docs/AuditQueryFilter.md
@@ -6535,6 +6542,7 @@ docs/IdentityProvider.md
 docs/IdentityProviderApi.json
 docs/IdentityProviderApi.md
 docs/IdentityProviderEntityListing.md
+docs/IdentityResolutionConfig.md
 docs/IdleEventTrigger.md
 docs/IdleTokenTimeout.md
 docs/IgnoredActivityCategories.md
@@ -9416,6 +9424,8 @@ docs/delete_responsemanagement_library-example.txt
 docs/delete_responsemanagement_response-example.txt
 docs/delete_responsemanagement_responseasset-example.txt
 docs/delete_routing_assessment-example.txt
+docs/delete_routing_directroutingbackup_settings_me-example.txt
+docs/delete_routing_directroutingbackup_settings_me-example.txt
 docs/delete_routing_email_domain-example.txt
 docs/delete_routing_email_domain_route-example.txt
 docs/delete_routing_email_outbound_domain-example.txt
@@ -9430,6 +9440,8 @@ docs/delete_routing_skill-example.txt
 docs/delete_routing_skillgroup-example.txt
 docs/delete_routing_sms_address-example.txt
 docs/delete_routing_sms_phonenumber-example.txt
+docs/delete_routing_user_directroutingbackup_settings-example.txt
+docs/delete_routing_user_directroutingbackup_settings-example.txt
 docs/delete_routing_user_utilization-example.txt
 docs/delete_routing_user_utilization-example.txt
 docs/delete_routing_utilization-example.txt
@@ -10298,6 +10310,8 @@ docs/get_routing_assessments-example.txt
 docs/get_routing_assessments_job-example.txt
 docs/get_routing_assessments_jobs-example.txt
 docs/get_routing_availablemediatypes-example.txt
+docs/get_routing_directroutingbackup_settings_me-example.txt
+docs/get_routing_directroutingbackup_settings_me-example.txt
 docs/get_routing_email_domain-example.txt
 docs/get_routing_email_domain_route-example.txt
 docs/get_routing_email_domain_routes-example.txt
@@ -10342,6 +10356,8 @@ docs/get_routing_sms_addresses-example.txt
 docs/get_routing_sms_availablephonenumbers-example.txt
 docs/get_routing_sms_phonenumber-example.txt
 docs/get_routing_sms_phonenumbers-example.txt
+docs/get_routing_user_directroutingbackup_settings-example.txt
+docs/get_routing_user_directroutingbackup_settings-example.txt
 docs/get_routing_user_utilization-example.txt
 docs/get_routing_user_utilization-example.txt
 docs/get_routing_utilization-example.txt
@@ -11696,6 +11712,8 @@ docs/put_recordings_deletionprotection-example.txt
 docs/put_responsemanagement_library-example.txt
 docs/put_responsemanagement_response-example.txt
 docs/put_responsemanagement_responseasset-example.txt
+docs/put_routing_directroutingbackup_settings_me-example.txt
+docs/put_routing_directroutingbackup_settings_me-example.txt
 docs/put_routing_email_domain_route-example.txt
 docs/put_routing_email_outbound_domain_activation-example.txt
 docs/put_routing_message_recipient-example.txt
@@ -11703,6 +11721,8 @@ docs/put_routing_queue-example.txt
 docs/put_routing_settings-example.txt
 docs/put_routing_settings_transcription-example.txt
 docs/put_routing_sms_phonenumber-example.txt
+docs/put_routing_user_directroutingbackup_settings-example.txt
+docs/put_routing_user_directroutingbackup_settings-example.txt
 docs/put_routing_user_utilization-example.txt
 docs/put_routing_user_utilization-example.txt
 docs/put_routing_utilization-example.txt

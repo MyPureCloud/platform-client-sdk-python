@@ -1845,7 +1845,7 @@ except ApiException as e:
 
 <a name="get_journey_views"></a>
 
-## [**JourneyViewListing**](JourneyViewListing.html) get_journey_views()
+## [**JourneyViewListing**](JourneyViewListing.html) get_journey_views(page_number=page_number, page_size=page_size, name_or_created_by=name_or_created_by, expand=expand)
 
 
 
@@ -1872,10 +1872,14 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.JourneyApi()
+page_number = 1 # int | Page number (optional) (default to 1)
+page_size = 25 # int | Page size (optional) (default to 25)
+name_or_created_by = 'name_or_created_by_example' # str | Journey View Name or Created By (optional)
+expand = 'expand_example' # str | Parameter to request additional data to return in Journey payload (optional)
 
 try:
     # Get a list of Journey Views
-    api_response = api_instance.get_journey_views()
+    api_response = api_instance.get_journey_views(page_number=page_number, page_size=page_size, name_or_created_by=name_or_created_by, expand=expand)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling JourneyApi->get_journey_views: %s\n" % e)
@@ -1883,8 +1887,14 @@ except ApiException as e:
 
 ### Parameters
 
-This endpoint does not need any parameters.
 
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+| **name_or_created_by** | **str**| Journey View Name or Created By | [optional]  |
+| **expand** | **str**| Parameter to request additional data to return in Journey payload | [optional] <br />**Values**: charts |
+{: class="table table-striped"}
 
 ### Return type
 

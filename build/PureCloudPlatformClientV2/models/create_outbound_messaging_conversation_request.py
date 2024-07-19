@@ -52,7 +52,8 @@ class CreateOutboundMessagingConversationRequest(object):
             'to_address': 'str',
             'to_address_messenger_type': 'str',
             'use_existing_conversation': 'bool',
-            'external_contact_id': 'str'
+            'external_contact_id': 'str',
+            'use_user_from_address': 'bool'
         }
 
         self.attribute_map = {
@@ -60,7 +61,8 @@ class CreateOutboundMessagingConversationRequest(object):
             'to_address': 'toAddress',
             'to_address_messenger_type': 'toAddressMessengerType',
             'use_existing_conversation': 'useExistingConversation',
-            'external_contact_id': 'externalContactId'
+            'external_contact_id': 'externalContactId',
+            'use_user_from_address': 'useUserFromAddress'
         }
 
         self._queue_id = None
@@ -68,12 +70,13 @@ class CreateOutboundMessagingConversationRequest(object):
         self._to_address_messenger_type = None
         self._use_existing_conversation = None
         self._external_contact_id = None
+        self._use_user_from_address = None
 
     @property
     def queue_id(self) -> str:
         """
         Gets the queue_id of this CreateOutboundMessagingConversationRequest.
-        The ID of the queue to be associated with the message. This will determine the fromAddress of the message.
+        The ID of the queue to be associated with the message. This will determine the fromAddress of the message, unless useUserFromAddress is true and the queue is configured to use the agent's Direct Routing address as the fromAddress.
 
         :return: The queue_id of this CreateOutboundMessagingConversationRequest.
         :rtype: str
@@ -84,7 +87,7 @@ class CreateOutboundMessagingConversationRequest(object):
     def queue_id(self, queue_id: str) -> None:
         """
         Sets the queue_id of this CreateOutboundMessagingConversationRequest.
-        The ID of the queue to be associated with the message. This will determine the fromAddress of the message.
+        The ID of the queue to be associated with the message. This will determine the fromAddress of the message, unless useUserFromAddress is true and the queue is configured to use the agent's Direct Routing address as the fromAddress.
 
         :param queue_id: The queue_id of this CreateOutboundMessagingConversationRequest.
         :type: str
@@ -193,6 +196,30 @@ class CreateOutboundMessagingConversationRequest(object):
         
 
         self._external_contact_id = external_contact_id
+
+    @property
+    def use_user_from_address(self) -> bool:
+        """
+        Gets the use_user_from_address of this CreateOutboundMessagingConversationRequest.
+        An override to attempt to use the user's configured direct routing address as the fromAddress.  If set to true, users configured address with 'directrouting' integration will be used as fromAddress.  If set to false or not set, the queueId will be used for determining fromAddress.
+
+        :return: The use_user_from_address of this CreateOutboundMessagingConversationRequest.
+        :rtype: bool
+        """
+        return self._use_user_from_address
+
+    @use_user_from_address.setter
+    def use_user_from_address(self, use_user_from_address: bool) -> None:
+        """
+        Sets the use_user_from_address of this CreateOutboundMessagingConversationRequest.
+        An override to attempt to use the user's configured direct routing address as the fromAddress.  If set to true, users configured address with 'directrouting' integration will be used as fromAddress.  If set to false or not set, the queueId will be used for determining fromAddress.
+
+        :param use_user_from_address: The use_user_from_address of this CreateOutboundMessagingConversationRequest.
+        :type: bool
+        """
+        
+
+        self._use_user_from_address = use_user_from_address
 
     def to_dict(self):
         """
