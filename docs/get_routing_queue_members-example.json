@@ -1,0 +1,30 @@
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'your_access_token'
+# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RoutingApi();
+queue_id = 'queue_id_example' # str | Queue ID
+page_number = 1 # int |  (optional) (default to 1)
+page_size = 25 # int | Max value is 100 (optional) (default to 25)
+sort_order = ''asc'' # str | Note: results are sorted by name. (optional) (default to 'asc')
+expand = ['expand_example'] # list[str] | Which fields, if any, to expand. (optional)
+name = 'name_example' # str | Filter by queue member name (contains-style search) (optional)
+profile_skills = ['profile_skills_example'] # list[str] | Filter by profile skill (contains-style search) (optional)
+skills = ['skills_example'] # list[str] | Filter by skill (contains-style search) (optional)
+languages = ['languages_example'] # list[str] | Filter by language (contains-style search) (optional)
+routing_status = ['routing_status_example'] # list[str] | Filter by routing status (optional)
+presence = ['presence_example'] # list[str] | Filter by presence (optional)
+member_by = 'member_by_example' # str | Filter by member type (optional)
+joined = True # bool | Filter by joined status (optional)
+
+try:
+    # Get the members of this queue.
+    api_response = api_instance.get_routing_queue_members(queue_id, page_number=page_number, page_size=page_size, sort_order=sort_order, expand=expand, name=name, profile_skills=profile_skills, skills=skills, languages=languages, routing_status=routing_status, presence=presence, member_by=member_by, joined=joined)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling RoutingApi->get_routing_queue_members: %s\n" % e)

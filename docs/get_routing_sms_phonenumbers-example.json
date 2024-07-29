@@ -1,0 +1,28 @@
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'your_access_token'
+# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RoutingApi();
+phone_number = 'phone_number_example' # str | Filter on phone number address. Allowable characters are the digits '0-9' and the wild card character '\\*'. If just digits are present, a contains search is done on the address pattern. For example, '317' could be matched anywhere in the address. An '\\*' will match multiple digits. For example, to match a specific area code within the US a pattern like '1317*' could be used. (optional)
+phone_number_type = ['phone_number_type_example'] # list[str] | Filter on phone number type (optional)
+phone_number_status = ['phone_number_status_example'] # list[str] | Filter on phone number status (optional)
+country_code = ['country_code_example'] # list[str] | Filter on country code (optional)
+page_size = 25 # int | Page size (optional) (default to 25)
+page_number = 1 # int | Page number (optional) (default to 1)
+sort_by = 'sort_by_example' # str | Optional field to sort results (optional)
+sort_order = 'sort_order_example' # str | Sort order (optional)
+language = ''en-US'' # str | A language tag (which is sometimes referred to as a \"locale identifier\") to use to localize country field and sort operations (optional) (default to 'en-US')
+integration_id = 'integration_id_example' # str | Filter on the Genesys Cloud integration id to which the phone number belongs to (optional)
+supported_content_id = 'supported_content_id_example' # str | Filter based on the supported content ID (optional)
+
+try:
+    # Get a list of provisioned phone numbers.
+    api_response = api_instance.get_routing_sms_phonenumbers(phone_number=phone_number, phone_number_type=phone_number_type, phone_number_status=phone_number_status, country_code=country_code, page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order, language=language, integration_id=integration_id, supported_content_id=supported_content_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling RoutingApi->get_routing_sms_phonenumbers: %s\n" % e)

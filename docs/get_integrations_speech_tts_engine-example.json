@@ -1,0 +1,19 @@
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'your_access_token'
+# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.IntegrationsApi();
+engine_id = 'engine_id_example' # str | The engine ID
+include_voices = False # bool | Include voices for the engine (optional) (default to False)
+
+try:
+    # Get details about a TTS engine
+    api_response = api_instance.get_integrations_speech_tts_engine(engine_id, include_voices=include_voices)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling IntegrationsApi->get_integrations_speech_tts_engine: %s\n" % e)

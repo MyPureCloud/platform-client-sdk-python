@@ -1,0 +1,20 @@
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'your_access_token'
+# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.KnowledgeApi();
+knowledge_base_id = 'knowledge_base_id_example' # str | Knowledge base ID
+parse_job_id = 'parse_job_id_example' # str | Parse job ID
+expand = ['expand_example'] # list[str] | If expand contains 'urls' downloadURL and failedEntitiesURL will be filled. (optional)
+
+try:
+    # Get parse job report
+    api_response = api_instance.get_knowledge_knowledgebase_parse_job(knowledge_base_id, parse_job_id, expand=expand)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling KnowledgeApi->get_knowledge_knowledgebase_parse_job: %s\n" % e)

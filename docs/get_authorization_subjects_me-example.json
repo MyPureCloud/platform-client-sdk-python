@@ -1,0 +1,18 @@
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'your_access_token'
+# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.UsersApi();
+include_duplicates = False # bool | Include multiple entries with the same role and division but different subjects (optional) (default to False)
+
+try:
+    # Returns a listing of roles and permissions for the currently authenticated user.
+    api_response = api_instance.get_authorization_subjects_me(include_duplicates=include_duplicates)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling UsersApi->get_authorization_subjects_me: %s\n" % e)

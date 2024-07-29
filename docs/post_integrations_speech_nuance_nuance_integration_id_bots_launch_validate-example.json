@@ -1,0 +1,18 @@
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'your_access_token'
+# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.IntegrationsApi();
+nuance_integration_id = 'nuance_integration_id_example' # str | The integration ID for this group of bots
+settings = PureCloudPlatformClientV2.BotExecutionConfiguration() # BotExecutionConfiguration | 
+
+try:
+    # Try out a single credential for a Nuance bot to know if the secret is correct
+    api_instance.post_integrations_speech_nuance_nuance_integration_id_bots_launch_validate(nuance_integration_id, settings)
+except ApiException as e:
+    print("Exception when calling IntegrationsApi->post_integrations_speech_nuance_nuance_integration_id_bots_launch_validate: %s\n" % e)

@@ -1,0 +1,22 @@
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'your_access_token'
+# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TaskManagementApi();
+worktype_id = 'worktype_id_example' # str | Worktype id
+after = 'after_example' # str | The cursor that points to the end of the set of entities that has been returned. (optional)
+page_size = 25 # int | Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an `after` key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200. (optional) (default to 25)
+sort_order = ''descending'' # str | Ascending or descending sort order (optional) (default to 'descending')
+fields = ['fields_example'] # list[str] | Comma-separated list of fields. The response will contain only versions created as a result of changes to these fields. (optional)
+
+try:
+    # Get a listing of a worktype's attribute change history
+    api_response = api_instance.get_taskmanagement_worktype_history(worktype_id, after=after, page_size=page_size, sort_order=sort_order, fields=fields)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling TaskManagementApi->get_taskmanagement_worktype_history: %s\n" % e)

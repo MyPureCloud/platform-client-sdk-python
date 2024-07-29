@@ -1,0 +1,26 @@
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'your_access_token'
+# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RoutingApi();
+page_number = 1 # int | Page number (optional) (default to 1)
+page_size = 25 # int | Page size (optional) (default to 25)
+sort_order = ''asc'' # str | Note: results are sorted by name. (optional) (default to 'asc')
+name = 'name_example' # str | Include only queues with the given name (leading and trailing asterisks allowed) (optional)
+id = ['id_example'] # list[str] | Include only queues with the specified ID(s) (optional)
+division_id = ['division_id_example'] # list[str] | Include only queues in the specified division ID(s) (optional)
+peer_id = ['peer_id_example'] # list[str] | Include only queues with the specified peer ID(s) (optional)
+canned_response_library_id = 'canned_response_library_id_example' # str | Include only queues explicitly associated with the specified canned response library ID (optional)
+has_peer = True # bool | Include only queues with a peer ID (optional)
+
+try:
+    # Get list of queues.
+    api_response = api_instance.get_routing_queues(page_number=page_number, page_size=page_size, sort_order=sort_order, name=name, id=id, division_id=division_id, peer_id=peer_id, canned_response_library_id=canned_response_library_id, has_peer=has_peer)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling RoutingApi->get_routing_queues: %s\n" % e)

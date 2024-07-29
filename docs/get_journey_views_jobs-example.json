@@ -1,0 +1,21 @@
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'your_access_token'
+# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.JourneyApi();
+page_number = 1 # int | The number of the page to return (optional) (default to 1)
+page_size = 25 # int | Max number of entities to return (optional) (default to 25)
+interval = '2023-07-17T00:00:00Z/2023-07-18T00:00:00Z' # str | An absolute timeframe for filtering the jobs, expressed as an ISO 8601 interval. (optional)
+statuses = 'statuses=Accepted,Executing,Complete,Failed' # str | Job statuses to filter for (optional)
+
+try:
+    # Get the jobs for an organization.
+    api_response = api_instance.get_journey_views_jobs(page_number=page_number, page_size=page_size, interval=interval, statuses=statuses)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling JourneyApi->get_journey_views_jobs: %s\n" % e)

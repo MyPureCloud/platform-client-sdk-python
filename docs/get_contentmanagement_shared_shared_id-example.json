@@ -1,0 +1,22 @@
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'your_access_token'
+# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ContentManagementApi();
+shared_id = 'shared_id_example' # str | Shared ID
+redirect = True # bool | Turn on or off redirect (optional) (default to True)
+disposition = ''attachment'' # str | Request how the share content will be downloaded: attached as a file or inline. Default is attachment. (optional) (default to 'attachment')
+content_type = 'content_type_example' # str | The requested format for the specified document. If supported, the document will be returned in that format. Example contentType=audio/wav (optional)
+expand = 'expand_example' # str | Expand some document fields (optional)
+
+try:
+    # Get shared documents. Securely download a shared document.
+    api_response = api_instance.get_contentmanagement_shared_shared_id(shared_id, redirect=redirect, disposition=disposition, content_type=content_type, expand=expand)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ContentManagementApi->get_contentmanagement_shared_shared_id: %s\n" % e)

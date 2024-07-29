@@ -1,0 +1,22 @@
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'your_access_token'
+# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RecordingApi();
+job_id = 'job_id_example' # str | jobId
+page_size = 25 # int | Page size. Maximum is 100. (optional) (default to 25)
+page_number = 1 # int | Page number (optional) (default to 1)
+include_total = True # bool | If false, cursor will be used to locate the page instead of pageNumber. (optional)
+cursor = 'cursor_example' # str | Indicates where to resume query results (not required for first page) (optional)
+
+try:
+    # Get IDs of recordings that the bulk job failed for
+    api_response = api_instance.get_recording_job_failedrecordings(job_id, page_size=page_size, page_number=page_number, include_total=include_total, cursor=cursor)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling RecordingApi->get_recording_job_failedrecordings: %s\n" % e)

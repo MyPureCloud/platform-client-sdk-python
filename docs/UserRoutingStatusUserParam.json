@@ -1,0 +1,15 @@
+---
+title: UserRoutingStatusUserParam
+---
+## UserRoutingStatusUserParam
+
+## Properties
+
+|Name | Type | Description | Notes|
+|------------ | ------------- | ------------- | -------------|
+| **key** | **str** |  | [optional] |
+| **value** | **str** |  | [optional] |
+| **additional_properties** | **dict(str, object)** |  | [optional] |
+{: class="table table-striped"}
+
+

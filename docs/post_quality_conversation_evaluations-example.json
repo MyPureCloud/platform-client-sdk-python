@@ -1,0 +1,20 @@
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'your_access_token'
+# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.QualityApi();
+conversation_id = 'conversation_id_example' # str | conversationId
+body = PureCloudPlatformClientV2.EvaluationCreateBody() # EvaluationCreateBody | evaluation
+expand = 'expand_example' # str | evaluatorId (optional)
+
+try:
+    # Create an evaluation
+    api_response = api_instance.post_quality_conversation_evaluations(conversation_id, body, expand=expand)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling QualityApi->post_quality_conversation_evaluations: %s\n" % e)

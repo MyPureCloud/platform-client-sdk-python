@@ -1,0 +1,28 @@
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'your_access_token'
+# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.GamificationApi();
+filter_type = 'filter_type_example' # str | Filter type for the query request.
+filter_id = 'filter_id_example' # str | ID for the filter type.
+granularity = 'granularity_example' # str | Granularity
+comparative_period_start_workday = '2013-10-20' # date | The start work day of comparative period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+primary_period_start_workday = '2013-10-20' # date | The start work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
+page_size = 25 # int | Page size (optional) (default to 25)
+page_number = 1 # int | Page number (optional) (default to 1)
+sort_key = 'sort_key_example' # str | Sort key (optional)
+sort_metric_id = 'sort_metric_id_example' # str | Sort Metric Id (optional)
+sort_order = ''asc'' # str | Sort order (optional) (default to 'asc')
+user_ids = 'user_ids_example' # str | A list of up to 100 comma-separated user Ids (optional)
+
+try:
+    # Get insights summary
+    api_response = api_instance.get_gamification_insights(filter_type, filter_id, granularity, comparative_period_start_workday, primary_period_start_workday, page_size=page_size, page_number=page_number, sort_key=sort_key, sort_metric_id=sort_metric_id, sort_order=sort_order, user_ids=user_ids)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling GamificationApi->get_gamification_insights: %s\n" % e)

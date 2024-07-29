@@ -1,0 +1,25 @@
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'your_access_token'
+# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RecordingApi();
+page_size = 25 # int | Page size (optional) (default to 25)
+page_number = 1 # int | Page number (optional) (default to 1)
+sort_by = ''userId'' # str | Sort by (optional) (default to 'userId')
+state = 'state_example' # str | Filter by state (optional)
+show_only_my_jobs = True # bool | Show only my jobs (optional)
+job_type = 'job_type_example' # str | Job Type (Can be left empty for both) (optional)
+include_total = True # bool | If false, cursor will be used to locate the page instead of pageNumber. (optional)
+cursor = 'cursor_example' # str | Indicates where to resume query results (not required for first page) (optional)
+
+try:
+    # Get the status of all jobs within the user's organization
+    api_response = api_instance.get_recording_jobs(page_size=page_size, page_number=page_number, sort_by=sort_by, state=state, show_only_my_jobs=show_only_my_jobs, job_type=job_type, include_total=include_total, cursor=cursor)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling RecordingApi->get_recording_jobs: %s\n" % e)

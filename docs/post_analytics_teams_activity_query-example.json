@@ -1,0 +1,20 @@
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'your_access_token'
+# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TeamsApi();
+body = PureCloudPlatformClientV2.TeamActivityQuery() # TeamActivityQuery | query
+page_size = 56 # int | The desired page size (optional)
+page_number = 56 # int | The desired page number (optional)
+
+try:
+    # Query for team activity observations
+    api_response = api_instance.post_analytics_teams_activity_query(body, page_size=page_size, page_number=page_number)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling TeamsApi->post_analytics_teams_activity_query: %s\n" % e)

@@ -1,0 +1,14 @@
+---
+title: PatchWebMessagingOfferFields
+---
+## PatchWebMessagingOfferFields
+
+## Properties
+
+|Name | Type | Description | Notes|
+|------------ | ------------- | ------------- | -------------|
+| **offer_text** | **str** | Text value to be used when inviting a visitor to engage with a web messaging offer. | [optional] |
+| **architect_flow** | [**AddressableEntityRef**](AddressableEntityRef.html) | Flow to be invoked, overrides default flow when specified. | [optional] |
+{: class="table table-striped"}
+
+

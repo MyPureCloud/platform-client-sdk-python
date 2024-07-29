@@ -1,0 +1,19 @@
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'your_access_token'
+# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.KnowledgeApi();
+knowledge_base_id = 'knowledge_base_id_example' # str | The ID of knowledge base containing the documents to query.
+search_id = 'search_id_example' # str | Search Result ID
+body = PureCloudPlatformClientV2.SearchUpdateRequest() # SearchUpdateRequest |  (optional)
+
+try:
+    # Update search result.
+    api_instance.patch_knowledge_knowledgebase_documents_search_search_id(knowledge_base_id, search_id, body=body)
+except ApiException as e:
+    print("Exception when calling KnowledgeApi->patch_knowledge_knowledgebase_documents_search_search_id: %s\n" % e)
