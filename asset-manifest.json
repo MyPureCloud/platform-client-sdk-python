@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/platform-client-sdk-go/static/css/main.3ec26233.css",
-    "main.js": "/platform-client-sdk-go/static/js/main.4033a736.js",
-    "static/js/453.ff9ed959.chunk.js": "/platform-client-sdk-go/static/js/453.ff9ed959.chunk.js",
-    "index.html": "/platform-client-sdk-go/index.html",
-    "main.3ec26233.css.map": "/platform-client-sdk-go/static/css/main.3ec26233.css.map",
-    "main.4033a736.js.map": "/platform-client-sdk-go/static/js/main.4033a736.js.map",
-    "453.ff9ed959.chunk.js.map": "/platform-client-sdk-go/static/js/453.ff9ed959.chunk.js.map"
+    "main.css": "/platform-client-sdk-python/static/css/main.3ec26233.css",
+    "main.js": "/platform-client-sdk-python/static/js/main.86c64d30.js",
+    "static/js/453.5c2a4d52.chunk.js": "/platform-client-sdk-python/static/js/453.5c2a4d52.chunk.js",
+    "index.html": "/platform-client-sdk-python/index.html",
+    "main.3ec26233.css.map": "/platform-client-sdk-python/static/css/main.3ec26233.css.map",
+    "main.86c64d30.js.map": "/platform-client-sdk-python/static/js/main.86c64d30.js.map",
+    "453.5c2a4d52.chunk.js.map": "/platform-client-sdk-python/static/js/453.5c2a4d52.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.3ec26233.css",
-    "static/js/main.4033a736.js"
+    "static/js/main.86c64d30.js"
   ]
 }
