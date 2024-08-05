@@ -2536,7 +2536,7 @@ pcPass = ''Any'' # str | Specifies if only the failed (pass is \"False\") or pas
 page_size = 25 # int | Page size (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
 sort_order = ''Desc'' # str | Specifies result set sort order sorted by the date due; if not specified, default sort order is descending (Desc) (optional) (default to 'Desc')
-types = ['types_example'] # list[str] | Specifies the activity types. (optional)
+types = ['types_example'] # list[str] | Specifies the activity types. Informational, AssessedContent and Assessment are deprecated (optional)
 statuses = ['statuses_example'] # list[str] | Specifies the activity statuses to filter by (optional)
 relationship = ['relationship_example'] # list[str] | Specifies how the current user relation should be interpreted, and filters the activities returned to only the activities that have the specified relationship. If a value besides Attendee is specified, it will only return Coaching Appointments. If not specified, no filtering is applied. (optional)
 
@@ -2562,7 +2562,7 @@ except ApiException as e:
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **sort_order** | **str**| Specifies result set sort order sorted by the date due; if not specified, default sort order is descending (Desc) | [optional] [default to &#39;Desc&#39;]<br />**Values**: Asc, Desc |
-| **types** | [**list[str]**](str.html)| Specifies the activity types. | [optional] <br />**Values**: Informational, Coaching, AssessedContent, Assessment |
+| **types** | [**list[str]**](str.html)| Specifies the activity types. Informational, AssessedContent and Assessment are deprecated | [optional] <br />**Values**: Informational, Coaching, AssessedContent, Assessment, External, Native |
 | **statuses** | [**list[str]**](str.html)| Specifies the activity statuses to filter by | [optional] <br />**Values**: Planned, InProgress, Completed, InvalidSchedule, NotCompleted |
 | **relationship** | [**list[str]**](str.html)| Specifies how the current user relation should be interpreted, and filters the activities returned to only the activities that have the specified relationship. If a value besides Attendee is specified, it will only return Coaching Appointments. If not specified, no filtering is applied. | [optional] <br />**Values**: Creator, Facilitator, Attendee |
 {: class="table table-striped"}
@@ -2607,7 +2607,7 @@ pcPass = ''Any'' # str | Specifies if only the failed (pass is \"False\") or pas
 page_size = 25 # int | Page size (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
 sort_order = ''Desc'' # str | Specifies result set sort order sorted by the date due; if not specified, default sort order is descending (Desc) (optional) (default to 'Desc')
-types = ['types_example'] # list[str] | Specifies the activity types. (optional)
+types = ['types_example'] # list[str] | Specifies the activity types. Informational, AssessedContent and Assessment are deprecated (optional)
 statuses = ['statuses_example'] # list[str] | Specifies the activity statuses to filter by (optional)
 relationship = ['relationship_example'] # list[str] | Specifies how the current user relation should be interpreted, and filters the activities returned to only the activities that have the specified relationship. If a value besides Attendee is specified, it will only return Coaching Appointments. If not specified, no filtering is applied. (optional)
 
@@ -2632,7 +2632,7 @@ except ApiException as e:
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **sort_order** | **str**| Specifies result set sort order sorted by the date due; if not specified, default sort order is descending (Desc) | [optional] [default to &#39;Desc&#39;]<br />**Values**: Asc, Desc |
-| **types** | [**list[str]**](str.html)| Specifies the activity types. | [optional] <br />**Values**: Informational, Coaching, AssessedContent, Assessment |
+| **types** | [**list[str]**](str.html)| Specifies the activity types. Informational, AssessedContent and Assessment are deprecated | [optional] <br />**Values**: Informational, Coaching, AssessedContent, Assessment, External, Native |
 | **statuses** | [**list[str]**](str.html)| Specifies the activity statuses to filter by | [optional] <br />**Values**: Planned, InProgress, Completed, InvalidSchedule, NotCompleted |
 | **relationship** | [**list[str]**](str.html)| Specifies how the current user relation should be interpreted, and filters the activities returned to only the activities that have the specified relationship. If a value besides Attendee is specified, it will only return Coaching Appointments. If not specified, no filtering is applied. | [optional] <br />**Values**: Creator, Facilitator, Attendee |
 {: class="table table-striped"}
@@ -2672,7 +2672,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.UsersApi()
 activity_id = 'activity_id_example' # str | Specifies the activity ID, maps to either assignment or appointment ID
-type = 'type_example' # str | Specifies the activity type.
+type = 'type_example' # str | Specifies the activity type. Informational, AssessedContent and Assessment are deprecated
 
 try:
     # Get a Development Activity
@@ -2688,7 +2688,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **activity_id** | **str**| Specifies the activity ID, maps to either assignment or appointment ID |  |
-| **type** | **str**| Specifies the activity type. | <br />**Values**: Informational, Coaching, AssessedContent, Assessment, External |
+| **type** | **str**| Specifies the activity type. Informational, AssessedContent and Assessment are deprecated | <br />**Values**: Informational, Coaching, AssessedContent, Assessment, External, Native |
 {: class="table table-striped"}
 
 ### Return type

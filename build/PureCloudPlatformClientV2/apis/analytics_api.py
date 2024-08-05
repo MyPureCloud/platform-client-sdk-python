@@ -6264,8 +6264,8 @@ class AnalyticsApi(object):
 
     def post_analytics_ratelimits_aggregates_query(self, body: 'RateLimitAggregationQuery', **kwargs) -> 'RateLimitAggregateQueryResponse':
         """
-        Query for limits rate limit aggregates. Data populated when limits are exceeded or are close to being exceeded. Not a source of truth for limits hit but a best effort estimate.
-        The 'max' property can be used to determine estimated rate limit value hit.
+        Query for limits rate limit aggregates. Data populated when limits reach 90% of the maximum. Not a source of truth for limits hit but a best effort estimate.
+        The 'max' property can be used to determine estimated rate limit value hit. See https://developer.genesys.cloud/organization/organization/limits#available-limits for limits that are trackable (Operational Events Enabled).
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

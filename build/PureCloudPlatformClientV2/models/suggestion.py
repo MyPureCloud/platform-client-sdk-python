@@ -335,7 +335,7 @@ class Suggestion(object):
         """
         if isinstance(state, int):
             state = str(state)
-        allowed_values = ["Suggested", "Accepted", "Dismissed", "Failed"]
+        allowed_values = ["Suggested", "Accepted", "Dismissed", "Failed", "Rated"]
         if state.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for state -> " + state)
             self._state = "outdated_sdk_version"

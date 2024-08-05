@@ -93,7 +93,7 @@ class LearningAssignmentAggregateQueryRequestPredicate(object):
     def value(self) -> str:
         """
         Gets the value of this LearningAssignmentAggregateQueryRequestPredicate.
-        Corresponding value for dimensions in predicates. If the dimension is type, Valid Values: Informational, AssessedContent, Assessment, External
+        Corresponding value for dimensions in predicates. If the dimension is type, Valid Values: Informational (deprecated), AssessedContent (deprecated), Assessment (deprecated), External, Native
 
         :return: The value of this LearningAssignmentAggregateQueryRequestPredicate.
         :rtype: str
@@ -104,7 +104,7 @@ class LearningAssignmentAggregateQueryRequestPredicate(object):
     def value(self, value: str) -> None:
         """
         Sets the value of this LearningAssignmentAggregateQueryRequestPredicate.
-        Corresponding value for dimensions in predicates. If the dimension is type, Valid Values: Informational, AssessedContent, Assessment, External
+        Corresponding value for dimensions in predicates. If the dimension is type, Valid Values: Informational (deprecated), AssessedContent (deprecated), Assessment (deprecated), External, Native
 
         :param value: The value of this LearningAssignmentAggregateQueryRequestPredicate.
         :type: str

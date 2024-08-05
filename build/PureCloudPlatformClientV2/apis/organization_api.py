@@ -46,6 +46,7 @@ from ..models import FreeTrialLimitDocs
 from ..models import IpAddressAuthentication
 from ..models import LimitChangeRequestDetails
 from ..models import LimitChangeRequestsEntityListing
+from ..models import LimitCountListing
 from ..models import LimitDocumentation
 from ..models import LimitsEntityListing
 from ..models import OrgAuthSettings
@@ -753,6 +754,93 @@ class OrganizationApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def get_organizations_limits_namespace_counts(self, namespace_name: str, **kwargs) -> 'LimitCountListing':
+        """
+        Get estimated limit counts for a namespace. This is not a source of truth for limit values but a record of estimates to facilitate limit threshold tracking.
+        See https://developer.genesys.cloud/organization/organization/limits#available-limits for limits that are trackable (Operational Events Enabled).
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_organizations_limits_namespace_counts(namespace_name, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str namespace_name: The namespace to get (required)
+        :param str cursor: Cursor provided when retrieving the last page
+        :param str entity_id: entity id of the count
+        :param str user_id: userid of the count
+        :return: LimitCountListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['namespace_name', 'cursor', 'entity_id', 'user_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_organizations_limits_namespace_counts" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'namespace_name' is set
+        if ('namespace_name' not in params) or (params['namespace_name'] is None):
+            raise ValueError("Missing the required parameter `namespace_name` when calling `get_organizations_limits_namespace_counts`")
+
+
+        resource_path = '/api/v2/organizations/limits/namespaces/{namespaceName}/counts'.replace('{format}', 'json')
+        path_params = {}
+        if 'namespace_name' in params:
+            path_params['namespaceName'] = params['namespace_name']
+
+        query_params = {}
+        if 'cursor' in params:
+            query_params['cursor'] = params['cursor']
+        if 'entity_id' in params:
+            query_params['entityId'] = params['entity_id']
+        if 'user_id' in params:
+            query_params['userId'] = params['user_id']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='LimitCountListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def get_organizations_limits_namespace_defaults(self, namespace_name: str, **kwargs) -> 'LimitsEntityListing':
         """
         Get the default limits in a namespace for an organization
@@ -827,6 +915,99 @@ class OrganizationApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='LimitsEntityListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_organizations_limits_namespace_limit_counts(self, namespace_name: str, limit_name: str, **kwargs) -> 'LimitCountListing':
+        """
+        Get estimated limit counts for a namespace and limit name. This is not a source of truth for limit values but a record of estimates to facilitate limit threshold tracking.
+        See https://developer.genesys.cloud/organization/organization/limits#available-limits for limits that are trackable (Operational Events Enabled).
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_organizations_limits_namespace_limit_counts(namespace_name, limit_name, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str namespace_name: The namespace to get (required)
+        :param str limit_name: The limit to get (required)
+        :param str entity_id: entity id of the count
+        :param str user_id: userid of the count
+        :param str cursor: Cursor provided when retrieving the last page
+        :return: LimitCountListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['namespace_name', 'limit_name', 'entity_id', 'user_id', 'cursor']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_organizations_limits_namespace_limit_counts" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'namespace_name' is set
+        if ('namespace_name' not in params) or (params['namespace_name'] is None):
+            raise ValueError("Missing the required parameter `namespace_name` when calling `get_organizations_limits_namespace_limit_counts`")
+        # verify the required parameter 'limit_name' is set
+        if ('limit_name' not in params) or (params['limit_name'] is None):
+            raise ValueError("Missing the required parameter `limit_name` when calling `get_organizations_limits_namespace_limit_counts`")
+
+
+        resource_path = '/api/v2/organizations/limits/namespaces/{namespaceName}/limits/{limitName}/counts'.replace('{format}', 'json')
+        path_params = {}
+        if 'namespace_name' in params:
+            path_params['namespaceName'] = params['namespace_name']
+        if 'limit_name' in params:
+            path_params['limitName'] = params['limit_name']
+
+        query_params = {}
+        if 'entity_id' in params:
+            query_params['entityId'] = params['entity_id']
+        if 'user_id' in params:
+            query_params['userId'] = params['user_id']
+        if 'cursor' in params:
+            query_params['cursor'] = params['cursor']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='LimitCountListing',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

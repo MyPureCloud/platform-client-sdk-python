@@ -12,7 +12,9 @@ title: TranscriptionTopicTranscriptResult
 | **channel** | **str** |  | [optional] |
 | **alternatives** | [**list[TranscriptionTopicTranscriptAlternative]**](TranscriptionTopicTranscriptAlternative.html) |  | [optional] |
 | **agent_assistant_id** | **str** |  | [optional] |
+| **engine_provider** | **str** |  | [optional] |
 | **engine_id** | **str** |  | [optional] |
+| **engine_name** | **str** |  | [optional] |
 | **dialect** | **str** |  | [optional] |
 | **speech_text_analytics_program_id** | **str** |  | [optional] |
 | **agent_assist_enabled** | **bool** |  | [optional] |

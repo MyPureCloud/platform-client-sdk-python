@@ -77,6 +77,7 @@ class Flow(object):
             'nlu_info': 'NluInfo',
             'supported_languages': 'list[SupportedLanguage]',
             'compatible_flow_types': 'list[str]',
+            'worktype_id': 'str',
             'self_uri': 'str'
         }
 
@@ -102,6 +103,7 @@ class Flow(object):
             'nlu_info': 'nluInfo',
             'supported_languages': 'supportedLanguages',
             'compatible_flow_types': 'compatibleFlowTypes',
+            'worktype_id': 'worktypeId',
             'self_uri': 'selfUri'
         }
 
@@ -126,6 +128,7 @@ class Flow(object):
         self._nlu_info = None
         self._supported_languages = None
         self._compatible_flow_types = None
+        self._worktype_id = None
         self._self_uri = None
 
     @property
@@ -636,6 +639,30 @@ class Flow(object):
         
 
         self._compatible_flow_types = compatible_flow_types
+
+    @property
+    def worktype_id(self) -> str:
+        """
+        Gets the worktype_id of this Flow.
+
+
+        :return: The worktype_id of this Flow.
+        :rtype: str
+        """
+        return self._worktype_id
+
+    @worktype_id.setter
+    def worktype_id(self, worktype_id: str) -> None:
+        """
+        Sets the worktype_id of this Flow.
+
+
+        :param worktype_id: The worktype_id of this Flow.
+        :type: str
+        """
+        
+
+        self._worktype_id = worktype_id
 
     @property
     def self_uri(self) -> str:

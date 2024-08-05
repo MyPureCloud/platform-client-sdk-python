@@ -13,6 +13,7 @@ title: MessengerSettings
 | **file_upload** | [**FileUploadSettings**](FileUploadSettings.html) | The file upload settings for messenger | [optional] |
 | **apps** | [**MessengerApps**](MessengerApps.html) | The apps embedded in the messenger | [optional] |
 | **home_screen** | [**MessengerHomeScreen**](MessengerHomeScreen.html) | The homescreen settings for messenger | [optional] |
+| **session_persistence_type** | **str** | The session persistence type for messenger | [optional] |
 {: class="table table-striped"}
 
 

@@ -135,7 +135,7 @@ class CampaignRuleCondition(object):
         """
         if isinstance(condition_type, int):
             condition_type = str(condition_type)
-        allowed_values = ["campaignProgress", "campaignAgents"]
+        allowed_values = ["campaignProgress", "campaignAgents", "campaignRecordsAttempted", "campaignBusinessSuccess", "campaignBusinessFailure", "campaignBusinessNeutral", "campaignValidAttempts", "campaignRightPartyContacts"]
         if condition_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for condition_type -> " + condition_type)
             self._condition_type = "outdated_sdk_version"

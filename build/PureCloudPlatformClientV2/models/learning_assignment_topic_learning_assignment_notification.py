@@ -62,7 +62,10 @@ class LearningAssignmentTopicLearningAssignmentNotification(object):
             'modified_by': 'LearningAssignmentTopicUserReference',
             'date_modified': 'datetime',
             'is_overdue': 'bool',
-            'length_in_minutes': 'int'
+            'length_in_minutes': 'int',
+            'percentage_score': 'float',
+            'is_passed': 'bool',
+            'type': 'str'
         }
 
         self.attribute_map = {
@@ -77,7 +80,10 @@ class LearningAssignmentTopicLearningAssignmentNotification(object):
             'modified_by': 'modifiedBy',
             'date_modified': 'dateModified',
             'is_overdue': 'isOverdue',
-            'length_in_minutes': 'lengthInMinutes'
+            'length_in_minutes': 'lengthInMinutes',
+            'percentage_score': 'percentageScore',
+            'is_passed': 'isPassed',
+            'type': 'type'
         }
 
         self._id = None
@@ -92,6 +98,9 @@ class LearningAssignmentTopicLearningAssignmentNotification(object):
         self._date_modified = None
         self._is_overdue = None
         self._length_in_minutes = None
+        self._percentage_score = None
+        self._is_passed = None
+        self._type = None
 
     @property
     def id(self) -> str:
@@ -385,6 +394,83 @@ class LearningAssignmentTopicLearningAssignmentNotification(object):
         
 
         self._length_in_minutes = length_in_minutes
+
+    @property
+    def percentage_score(self) -> float:
+        """
+        Gets the percentage_score of this LearningAssignmentTopicLearningAssignmentNotification.
+
+
+        :return: The percentage_score of this LearningAssignmentTopicLearningAssignmentNotification.
+        :rtype: float
+        """
+        return self._percentage_score
+
+    @percentage_score.setter
+    def percentage_score(self, percentage_score: float) -> None:
+        """
+        Sets the percentage_score of this LearningAssignmentTopicLearningAssignmentNotification.
+
+
+        :param percentage_score: The percentage_score of this LearningAssignmentTopicLearningAssignmentNotification.
+        :type: float
+        """
+        
+
+        self._percentage_score = percentage_score
+
+    @property
+    def is_passed(self) -> bool:
+        """
+        Gets the is_passed of this LearningAssignmentTopicLearningAssignmentNotification.
+
+
+        :return: The is_passed of this LearningAssignmentTopicLearningAssignmentNotification.
+        :rtype: bool
+        """
+        return self._is_passed
+
+    @is_passed.setter
+    def is_passed(self, is_passed: bool) -> None:
+        """
+        Sets the is_passed of this LearningAssignmentTopicLearningAssignmentNotification.
+
+
+        :param is_passed: The is_passed of this LearningAssignmentTopicLearningAssignmentNotification.
+        :type: bool
+        """
+        
+
+        self._is_passed = is_passed
+
+    @property
+    def type(self) -> str:
+        """
+        Gets the type of this LearningAssignmentTopicLearningAssignmentNotification.
+
+
+        :return: The type of this LearningAssignmentTopicLearningAssignmentNotification.
+        :rtype: str
+        """
+        return self._type
+
+    @type.setter
+    def type(self, type: str) -> None:
+        """
+        Sets the type of this LearningAssignmentTopicLearningAssignmentNotification.
+
+
+        :param type: The type of this LearningAssignmentTopicLearningAssignmentNotification.
+        :type: str
+        """
+        if isinstance(type, int):
+            type = str(type)
+        allowed_values = ["Unknown", "Native", "External"]
+        if type.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for type -> " + type)
+            self._type = "outdated_sdk_version"
+        else:
+            self._type = type
 
     def to_dict(self):
         """

@@ -2758,7 +2758,7 @@ class TaskManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def patch_taskmanagement_worktype(self, worktype_id: str, **kwargs) -> 'Worktype':
+    def patch_taskmanagement_worktype(self, worktype_id: str, body: 'WorktypeUpdate', **kwargs) -> 'Worktype':
         """
         Update the attributes of a worktype
         
@@ -2769,12 +2769,12 @@ class TaskManagementApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.patch_taskmanagement_worktype(worktype_id, callback=callback_function)
+        >>> thread = api.patch_taskmanagement_worktype(worktype_id, body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str worktype_id: Worktype id (required)
-        :param WorktypeUpdate body: body
+        :param WorktypeUpdate body: Worktype (required)
         :return: Worktype
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2796,6 +2796,9 @@ class TaskManagementApi(object):
         # verify the required parameter 'worktype_id' is set
         if ('worktype_id' not in params) or (params['worktype_id'] is None):
             raise ValueError("Missing the required parameter `worktype_id` when calling `patch_taskmanagement_worktype`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `patch_taskmanagement_worktype`")
 
 
         resource_path = '/api/v2/taskmanagement/worktypes/{worktypeId}'.replace('{format}', 'json')
@@ -2839,7 +2842,7 @@ class TaskManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def patch_taskmanagement_worktype_status(self, worktype_id: str, status_id: str, **kwargs) -> 'WorkitemStatus':
+    def patch_taskmanagement_worktype_status(self, worktype_id: str, status_id: str, body: 'WorkitemStatusUpdate', **kwargs) -> 'WorkitemStatus':
         """
         Update the attributes of a status
         
@@ -2850,13 +2853,13 @@ class TaskManagementApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.patch_taskmanagement_worktype_status(worktype_id, status_id, callback=callback_function)
+        >>> thread = api.patch_taskmanagement_worktype_status(worktype_id, status_id, body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str worktype_id: Worktype id (required)
         :param str status_id: Status id (required)
-        :param WorkitemStatusUpdate body: body
+        :param WorkitemStatusUpdate body: Status (required)
         :return: WorkitemStatus
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2881,6 +2884,9 @@ class TaskManagementApi(object):
         # verify the required parameter 'status_id' is set
         if ('status_id' not in params) or (params['status_id'] is None):
             raise ValueError("Missing the required parameter `status_id` when calling `patch_taskmanagement_worktype_status`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `patch_taskmanagement_worktype_status`")
 
 
         resource_path = '/api/v2/taskmanagement/worktypes/{worktypeId}/statuses/{statusId}'.replace('{format}', 'json')
@@ -2926,7 +2932,7 @@ class TaskManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_taskmanagement_workbins(self, **kwargs) -> 'Workbin':
+    def post_taskmanagement_workbins(self, body: 'WorkbinCreate', **kwargs) -> 'Workbin':
         """
         Create a workbin
         
@@ -2937,11 +2943,11 @@ class TaskManagementApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.post_taskmanagement_workbins(callback=callback_function)
+        >>> thread = api.post_taskmanagement_workbins(body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param WorkbinCreate body: body
+        :param WorkbinCreate body: Workbin (required)
         :return: Workbin
                  If the method is called asynchronously,
                  returns the request thread.
@@ -2960,6 +2966,9 @@ class TaskManagementApi(object):
             params[key] = val
         del params['kwargs']
 
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_taskmanagement_workbins`")
 
 
         resource_path = '/api/v2/taskmanagement/workbins'.replace('{format}', 'json')
@@ -3629,7 +3638,7 @@ class TaskManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_taskmanagement_worktype_statuses(self, worktype_id: str, **kwargs) -> 'WorkitemStatus':
+    def post_taskmanagement_worktype_statuses(self, worktype_id: str, body: 'WorkitemStatusCreate', **kwargs) -> 'WorkitemStatus':
         """
         Add a status to a worktype
         
@@ -3640,12 +3649,12 @@ class TaskManagementApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.post_taskmanagement_worktype_statuses(worktype_id, callback=callback_function)
+        >>> thread = api.post_taskmanagement_worktype_statuses(worktype_id, body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str worktype_id: Worktype id (required)
-        :param WorkitemStatusCreate body: body
+        :param WorkitemStatusCreate body: Status (required)
         :return: WorkitemStatus
                  If the method is called asynchronously,
                  returns the request thread.
@@ -3667,6 +3676,9 @@ class TaskManagementApi(object):
         # verify the required parameter 'worktype_id' is set
         if ('worktype_id' not in params) or (params['worktype_id'] is None):
             raise ValueError("Missing the required parameter `worktype_id` when calling `post_taskmanagement_worktype_statuses`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_taskmanagement_worktype_statuses`")
 
 
         resource_path = '/api/v2/taskmanagement/worktypes/{worktypeId}/statuses'.replace('{format}', 'json')
@@ -3710,7 +3722,7 @@ class TaskManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
-    def post_taskmanagement_worktypes(self, **kwargs) -> 'Worktype':
+    def post_taskmanagement_worktypes(self, body: 'WorktypeCreate', **kwargs) -> 'Worktype':
         """
         Create a worktype
         
@@ -3721,11 +3733,11 @@ class TaskManagementApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.post_taskmanagement_worktypes(callback=callback_function)
+        >>> thread = api.post_taskmanagement_worktypes(body, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param WorktypeCreate body: body
+        :param WorktypeCreate body: Worktype (required)
         :return: Worktype
                  If the method is called asynchronously,
                  returns the request thread.
@@ -3744,6 +3756,9 @@ class TaskManagementApi(object):
             params[key] = val
         del params['kwargs']
 
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_taskmanagement_worktypes`")
 
 
         resource_path = '/api/v2/taskmanagement/worktypes'.replace('{format}', 'json')

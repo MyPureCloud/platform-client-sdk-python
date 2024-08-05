@@ -27,6 +27,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_integrations_actions**](IntegrationsApi.html#get_integrations_actions) | Retrieves all actions associated with filters passed in via query param.|
 |[**get_integrations_actions_categories**](IntegrationsApi.html#get_integrations_actions_categories) | Retrieves all categories of available Actions|
 |[**get_integrations_actions_certificates**](IntegrationsApi.html#get_integrations_actions_certificates) | Retrieves the available mTLS client certificates in use. This endpoint will return inconsistent results while a certificate rotation is in progress.|
+|[**get_integrations_actions_certificates_truststore**](IntegrationsApi.html#get_integrations_actions_certificates_truststore) | Retrieves basic info about trusted root CA certificates|
 |[**get_integrations_actions_drafts**](IntegrationsApi.html#get_integrations_actions_drafts) | Retrieves all action drafts associated with the filters passed in via query param.|
 |[**get_integrations_actions_functions_runtimes**](IntegrationsApi.html#get_integrations_actions_functions_runtimes) | Get action function settings for Action|
 |[**get_integrations_botconnector_integration_id_bot**](IntegrationsApi.html#get_integrations_botconnector_integration_id_bot) | Get a specific botConnector bot, plus versions, for this integration|
@@ -1103,6 +1104,51 @@ except ApiException as e:
 ### Return type
 
 [**ActionCertificateListing**](ActionCertificateListing.html)
+
+<a name="get_integrations_actions_certificates_truststore"></a>
+
+## [**TrustedCertificates**](TrustedCertificates.html) get_integrations_actions_certificates_truststore()
+
+
+
+Retrieves basic info about trusted root CA certificates
+
+Wraps GET /api/v2/integrations/actions/certificates/truststore 
+
+Requires ANY permissions: 
+
+* integrations:actionCertificate:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.IntegrationsApi()
+
+try:
+    # Retrieves basic info about trusted root CA certificates
+    api_response = api_instance.get_integrations_actions_certificates_truststore()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling IntegrationsApi->get_integrations_actions_certificates_truststore: %s\n" % e)
+```
+
+### Parameters
+
+This endpoint does not need any parameters.
+
+
+### Return type
+
+[**TrustedCertificates**](TrustedCertificates.html)
 
 <a name="get_integrations_actions_drafts"></a>
 

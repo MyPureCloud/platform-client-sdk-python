@@ -68,7 +68,8 @@ class KnowledgeDocumentSearchRequest(object):
             'application': 'KnowledgeSearchClientApplication',
             'conversation_context': 'KnowledgeConversationContext',
             'confidence_threshold': 'float',
-            'answer_highlight_top_results': 'int'
+            'answer_highlight_top_results': 'int',
+            'answer_mode': 'list[str]'
         }
 
         self.attribute_map = {
@@ -87,7 +88,8 @@ class KnowledgeDocumentSearchRequest(object):
             'application': 'application',
             'conversation_context': 'conversationContext',
             'confidence_threshold': 'confidenceThreshold',
-            'answer_highlight_top_results': 'answerHighlightTopResults'
+            'answer_highlight_top_results': 'answerHighlightTopResults',
+            'answer_mode': 'answerMode'
         }
 
         self._query = None
@@ -106,6 +108,7 @@ class KnowledgeDocumentSearchRequest(object):
         self._conversation_context = None
         self._confidence_threshold = None
         self._answer_highlight_top_results = None
+        self._answer_mode = None
 
     @property
     def query(self) -> str:
@@ -517,6 +520,30 @@ class KnowledgeDocumentSearchRequest(object):
 
 
         self._answer_highlight_top_results = answer_highlight_top_results
+
+    @property
+    def answer_mode(self) -> List[str]:
+        """
+        Gets the answer_mode of this KnowledgeDocumentSearchRequest.
+        Allows extracted answers from an article (AnswerHighlight) and/or AI-generated answers (AnswerGeneration). Default mode: AnswerHighlight. Use this property with answerHighlightTopResults.
+
+        :return: The answer_mode of this KnowledgeDocumentSearchRequest.
+        :rtype: list[str]
+        """
+        return self._answer_mode
+
+    @answer_mode.setter
+    def answer_mode(self, answer_mode: List[str]) -> None:
+        """
+        Sets the answer_mode of this KnowledgeDocumentSearchRequest.
+        Allows extracted answers from an article (AnswerHighlight) and/or AI-generated answers (AnswerGeneration). Default mode: AnswerHighlight. Use this property with answerHighlightTopResults.
+
+        :param answer_mode: The answer_mode of this KnowledgeDocumentSearchRequest.
+        :type: list[str]
+        """
+        
+
+        self._answer_mode = answer_mode
 
     def to_dict(self):
         """

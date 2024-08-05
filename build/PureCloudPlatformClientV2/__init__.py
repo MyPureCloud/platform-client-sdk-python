@@ -99,6 +99,10 @@ from .models.adhoc_recording_topic_user_data import AdhocRecordingTopicUserData
 from .models.adhoc_recording_topic_workspace_data import AdhocRecordingTopicWorkspaceData
 from .models.adjacents import Adjacents
 from .models.adjustable_live_speaker_detection import AdjustableLiveSpeakerDetection
+from .models.admin_agent_work_plan_bidding_preference import AdminAgentWorkPlanBiddingPreference
+from .models.admin_agent_work_plan_preference_response import AdminAgentWorkPlanPreferenceResponse
+from .models.admin_bulk_update_alternative_shift_trade_state import AdminBulkUpdateAlternativeShiftTradeState
+from .models.admin_bulk_update_alternative_shift_trade_state_request import AdminBulkUpdateAlternativeShiftTradeStateRequest
 from .models.admin_time_off_request_patch import AdminTimeOffRequestPatch
 from .models.after_call_work import AfterCallWork
 from .models.after_call_work_update import AfterCallWorkUpdate
@@ -110,6 +114,7 @@ from .models.agent_activity_changed_topic_out_of_office import AgentActivityChan
 from .models.agent_activity_changed_topic_presence import AgentActivityChangedTopicPresence
 from .models.agent_activity_changed_topic_routing_status import AgentActivityChangedTopicRoutingStatus
 from .models.agent_activity_entity_listing import AgentActivityEntityListing
+from .models.agent_bid_work_plan_override_request import AgentBidWorkPlanOverrideRequest
 from .models.agent_copilot_aggregate_data_container import AgentCopilotAggregateDataContainer
 from .models.agent_copilot_aggregate_query_clause import AgentCopilotAggregateQueryClause
 from .models.agent_copilot_aggregate_query_filter import AgentCopilotAggregateQueryFilter
@@ -119,6 +124,7 @@ from .models.agent_copilot_aggregation_query import AgentCopilotAggregationQuery
 from .models.agent_copilot_aggregation_view import AgentCopilotAggregationView
 from .models.agent_copilot_async_aggregate_query_response import AgentCopilotAsyncAggregateQueryResponse
 from .models.agent_copilot_async_aggregation_query import AgentCopilotAsyncAggregationQuery
+from .models.agent_count_range import AgentCountRange
 from .models.agent_direct_routing_backup_settings import AgentDirectRoutingBackupSettings
 from .models.agent_evaluator_activity import AgentEvaluatorActivity
 from .models.agent_integration_association_request import AgentIntegrationAssociationRequest
@@ -136,9 +142,20 @@ from .models.agent_query_adherence_explanations_request import AgentQueryAdheren
 from .models.agent_query_adherence_explanations_response import AgentQueryAdherenceExplanationsResponse
 from .models.agent_queue_time_request import AgentQueueTimeRequest
 from .models.agent_time_off_request_patch import AgentTimeOffRequestPatch
+from .models.agent_update_alternative_shift_trade_request import AgentUpdateAlternativeShiftTradeRequest
 from .models.agent_video_settings import AgentVideoSettings
+from .models.agent_work_plan import AgentWorkPlan
+from .models.agent_work_plan_activity import AgentWorkPlanActivity
+from .models.agent_work_plan_bid import AgentWorkPlanBid
+from .models.agent_work_plan_bidding_preference import AgentWorkPlanBiddingPreference
+from .models.agent_work_plan_bidding_preference_request import AgentWorkPlanBiddingPreferenceRequest
+from .models.agent_work_plan_bidding_preference_response import AgentWorkPlanBiddingPreferenceResponse
+from .models.agent_work_plan_bids import AgentWorkPlanBids
+from .models.agent_work_plan_list_response import AgentWorkPlanListResponse
+from .models.agent_work_plan_shift import AgentWorkPlanShift
 from .models.agentless_email_send_request_dto import AgentlessEmailSendRequestDto
 from .models.agentless_email_send_response_dto import AgentlessEmailSendResponseDto
+from .models.agents_bid_assigned_work_plan_override_request import AgentsBidAssignedWorkPlanOverrideRequest
 from .models.agents_integrations_listing import AgentsIntegrationsListing
 from .models.aggregate_metric_data import AggregateMetricData
 from .models.aggregate_view_data import AggregateViewData
@@ -158,7 +175,21 @@ from .models.alert_summary_entity import AlertSummaryEntity
 from .models.alerting_unread_status import AlertingUnreadStatus
 from .models.all_time_points import AllTimePoints
 from .models.alteration import Alteration
+from .models.alternative_shift_agent_scheduled_shift import AlternativeShiftAgentScheduledShift
+from .models.alternative_shift_async_response import AlternativeShiftAsyncResponse
+from .models.alternative_shift_bu_settings_response import AlternativeShiftBuSettingsResponse
+from .models.alternative_shift_bulk_update_trades_response_template import AlternativeShiftBulkUpdateTradesResponseTemplate
+from .models.alternative_shift_job_reference import AlternativeShiftJobReference
+from .models.alternative_shift_job_response import AlternativeShiftJobResponse
 from .models.alternative_shift_notification import AlternativeShiftNotification
+from .models.alternative_shift_offers_request import AlternativeShiftOffersRequest
+from .models.alternative_shift_offers_view_response_template import AlternativeShiftOffersViewResponseTemplate
+from .models.alternative_shift_schedule_lookup import AlternativeShiftScheduleLookup
+from .models.alternative_shift_search_offers_request import AlternativeShiftSearchOffersRequest
+from .models.alternative_shift_trade_bulk_update_template_item import AlternativeShiftTradeBulkUpdateTemplateItem
+from .models.alternative_shift_trade_listing import AlternativeShiftTradeListing
+from .models.alternative_shift_trade_response import AlternativeShiftTradeResponse
+from .models.alternative_shift_trades_view_response_template import AlternativeShiftTradesViewResponseTemplate
 from .models.amazon_lex_request import AmazonLexRequest
 from .models.analytics_agent_group import AnalyticsAgentGroup
 from .models.analytics_conversation import AnalyticsConversation
@@ -189,6 +220,7 @@ from .models.analytics_user_details_async_query_response import AnalyticsUserDet
 from .models.analytics_user_details_query_response import AnalyticsUserDetailsQueryResponse
 from .models.analytics_user_presence_record import AnalyticsUserPresenceRecord
 from .models.annotation import Annotation
+from .models.answer_generation_document import AnswerGenerationDocument
 from .models.answer_option import AnswerOption
 from .models.api_usage_client_query import ApiUsageClientQuery
 from .models.api_usage_organization_query import ApiUsageOrganizationQuery
@@ -334,6 +366,8 @@ from .models.batch_user_presence_event_request import BatchUserPresenceEventRequ
 from .models.batch_user_routing_status_event_request import BatchUserRoutingStatusEventRequest
 from .models.benefit_assessment import BenefitAssessment
 from .models.benefit_assessment_job import BenefitAssessmentJob
+from .models.bid_group_work_plan_request import BidGroupWorkPlanRequest
+from .models.bid_group_work_plan_response import BidGroupWorkPlanResponse
 from .models.billing_usage import BillingUsage
 from .models.billing_usage_report import BillingUsageReport
 from .models.billing_usage_resource import BillingUsageResource
@@ -378,6 +412,7 @@ from .models.bu_agent_schedule_shift import BuAgentScheduleShift
 from .models.bu_agent_schedule_update import BuAgentScheduleUpdate
 from .models.bu_agent_schedules_query_response import BuAgentSchedulesQueryResponse
 from .models.bu_agent_schedules_search_response import BuAgentSchedulesSearchResponse
+from .models.bu_alternative_shift_job_response import BuAlternativeShiftJobResponse
 from .models.bu_async_agent_schedules_query_response import BuAsyncAgentSchedulesQueryResponse
 from .models.bu_async_agent_schedules_search_response import BuAsyncAgentSchedulesSearchResponse
 from .models.bu_async_schedule_response import BuAsyncScheduleResponse
@@ -407,6 +442,7 @@ from .models.bu_intraday_data_group import BuIntradayDataGroup
 from .models.bu_intraday_forecast_data import BuIntradayForecastData
 from .models.bu_intraday_response import BuIntradayResponse
 from .models.bu_intraday_schedule_data import BuIntradayScheduleData
+from .models.bu_list_alternative_shift_trades_response import BuListAlternativeShiftTradesResponse
 from .models.bu_management_unit_schedule_summary import BuManagementUnitScheduleSummary
 from .models.bu_planning_group_headcount_forecast import BuPlanningGroupHeadcountForecast
 from .models.bu_query_adherence_explanations_request import BuQueryAdherenceExplanationsRequest
@@ -431,6 +467,7 @@ from .models.bu_short_term_forecast import BuShortTermForecast
 from .models.bu_short_term_forecast_list_item import BuShortTermForecastListItem
 from .models.bu_short_term_forecast_listing import BuShortTermForecastListing
 from .models.bu_short_term_forecast_reference import BuShortTermForecastReference
+from .models.bu_short_term_forecast_week_reference import BuShortTermForecastWeekReference
 from .models.bu_short_term_forecasting_settings import BuShortTermForecastingSettings
 from .models.bu_time_off_limit_listing import BuTimeOffLimitListing
 from .models.bu_time_off_limit_range import BuTimeOffLimitRange
@@ -1027,6 +1064,7 @@ from .models.copy_attachments_request import CopyAttachmentsRequest
 from .models.copy_bu_forecast_request import CopyBuForecastRequest
 from .models.copy_voicemail_message import CopyVoicemailMessage
 from .models.copy_work_plan import CopyWorkPlan
+from .models.copy_work_plan_bid import CopyWorkPlanBid
 from .models.copy_work_plan_rotation_request import CopyWorkPlanRotationRequest
 from .models.coretype import Coretype
 from .models.coretype_listing import CoretypeListing
@@ -1035,6 +1073,7 @@ from .models.create_activity_code_request import CreateActivityCodeRequest
 from .models.create_activity_plan_request import CreateActivityPlanRequest
 from .models.create_admin_time_off_request import CreateAdminTimeOffRequest
 from .models.create_agent_time_off_request import CreateAgentTimeOffRequest
+from .models.create_alternative_shift_trade_request import CreateAlternativeShiftTradeRequest
 from .models.create_benefit_assessment_job_request import CreateBenefitAssessmentJobRequest
 from .models.create_benefit_assessment_request import CreateBenefitAssessmentRequest
 from .models.create_business_unit_request import CreateBusinessUnitRequest
@@ -1085,6 +1124,7 @@ from .models.create_web_chat_message_request import CreateWebChatMessageRequest
 from .models.create_web_chat_request import CreateWebChatRequest
 from .models.create_work_plan import CreateWorkPlan
 from .models.create_work_plan_activity import CreateWorkPlanActivity
+from .models.create_work_plan_bid import CreateWorkPlanBid
 from .models.create_work_plan_shift import CreateWorkPlanShift
 from .models.credential import Credential
 from .models.credential_info import CredentialInfo
@@ -1934,6 +1974,7 @@ from .models.infrastructureascode_job import InfrastructureascodeJob
 from .models.initial_configuration import InitialConfiguration
 from .models.initiate_screen_recording import InitiateScreenRecording
 from .models.initiating_action import InitiatingAction
+from .models.initiating_alternative_shift import InitiatingAlternativeShift
 from .models.insights_agent_item import InsightsAgentItem
 from .models.insights_agents import InsightsAgents
 from .models.insights_details import InsightsDetails
@@ -2075,7 +2116,10 @@ from .models.journey_view_chart_result import JourneyViewChartResult
 from .models.journey_view_element import JourneyViewElement
 from .models.journey_view_element_attributes import JourneyViewElementAttributes
 from .models.journey_view_element_filter import JourneyViewElementFilter
+from .models.journey_view_element_filter_number_predicate import JourneyViewElementFilterNumberPredicate
 from .models.journey_view_element_filter_predicate import JourneyViewElementFilterPredicate
+from .models.journey_view_element_filter_range import JourneyViewElementFilterRange
+from .models.journey_view_element_filter_range_data import JourneyViewElementFilterRangeData
 from .models.journey_view_job import JourneyViewJob
 from .models.journey_view_job_listing import JourneyViewJobListing
 from .models.journey_view_link import JourneyViewLink
@@ -2147,6 +2191,7 @@ from .models.knowledge_aggregate_query_predicate import KnowledgeAggregateQueryP
 from .models.knowledge_aggregate_query_response import KnowledgeAggregateQueryResponse
 from .models.knowledge_aggregation_query import KnowledgeAggregationQuery
 from .models.knowledge_aggregation_view import KnowledgeAggregationView
+from .models.knowledge_answer_generation_response import KnowledgeAnswerGenerationResponse
 from .models.knowledge_async_aggregate_query_response import KnowledgeAsyncAggregateQueryResponse
 from .models.knowledge_async_aggregation_query import KnowledgeAsyncAggregationQuery
 from .models.knowledge_base import KnowledgeBase
@@ -2356,6 +2401,8 @@ from .models.license_user import LicenseUser
 from .models.limit import Limit
 from .models.limit_change_request_details import LimitChangeRequestDetails
 from .models.limit_change_requests_entity_listing import LimitChangeRequestsEntityListing
+from .models.limit_count import LimitCount
+from .models.limit_count_listing import LimitCountListing
 from .models.limit_docs import LimitDocs
 from .models.limit_documentation import LimitDocumentation
 from .models.limits_entity_listing import LimitsEntityListing
@@ -2367,7 +2414,12 @@ from .models.line_id import LineId
 from .models.line_status import LineStatus
 from .models.line_user_id import LineUserId
 from .models.link_configuration import LinkConfiguration
+from .models.list_alternative_shift_trades_response import ListAlternativeShiftTradesResponse
 from .models.list_item_component import ListItemComponent
+from .models.list_wrapper_agent_work_plan_field import ListWrapperAgentWorkPlanField
+from .models.list_wrapper_alternative_shift_bu_settings_activity_category import ListWrapperAlternativeShiftBuSettingsActivityCategory
+from .models.list_wrapper_alternative_shift_bu_settings_granularity import ListWrapperAlternativeShiftBuSettingsGranularity
+from .models.list_wrapper_bid_group_work_plan_request import ListWrapperBidGroupWorkPlanRequest
 from .models.list_wrapper_fixed_availability import ListWrapperFixedAvailability
 from .models.list_wrapper_interval import ListWrapperInterval
 from .models.list_wrapper_secondary_presence import ListWrapperSecondaryPresence
@@ -3414,6 +3466,7 @@ from .models.script_entity_listing import ScriptEntityListing
 from .models.scroll_percentage_event_trigger import ScrollPercentageEventTrigger
 from .models.sdk_library import SdkLibrary
 from .models.search_aggregation import SearchAggregation
+from .models.search_alternative_shift_trades_request import SearchAlternativeShiftTradesRequest
 from .models.search_criteria import SearchCriteria
 from .models.search_request import SearchRequest
 from .models.search_shift_trade_response import SearchShiftTradeResponse
@@ -3830,6 +3883,8 @@ from .models.trust_update import TrustUpdate
 from .models.trust_user import TrustUser
 from .models.trust_user_details import TrustUserDetails
 from .models.trust_user_entity_listing import TrustUserEntityListing
+from .models.trusted_certificate_info import TrustedCertificateInfo
+from .models.trusted_certificates import TrustedCertificates
 from .models.trustee import Trustee
 from .models.trustee_audit_query_request import TrusteeAuditQueryRequest
 from .models.trustee_authorization import TrusteeAuthorization
@@ -3869,6 +3924,8 @@ from .models.update_action_input import UpdateActionInput
 from .models.update_activity_code_request import UpdateActivityCodeRequest
 from .models.update_activity_plan_request import UpdateActivityPlanRequest
 from .models.update_adherence_explanation_status_request import UpdateAdherenceExplanationStatusRequest
+from .models.update_agent_work_plan_bidding_preference import UpdateAgentWorkPlanBiddingPreference
+from .models.update_alternative_shift_bu_settings_request import UpdateAlternativeShiftBuSettingsRequest
 from .models.update_analytics_data_retention_request import UpdateAnalyticsDataRetentionRequest
 from .models.update_business_unit_request import UpdateBusinessUnitRequest
 from .models.update_business_unit_settings_request import UpdateBusinessUnitSettingsRequest
@@ -3894,6 +3951,7 @@ from .models.update_trigger_request import UpdateTriggerRequest
 from .models.update_user import UpdateUser
 from .models.update_utilization_label_request import UpdateUtilizationLabelRequest
 from .models.update_verifier_request import UpdateVerifierRequest
+from .models.update_work_plan_bid import UpdateWorkPlanBid
 from .models.update_work_plan_rotation_agent_request import UpdateWorkPlanRotationAgentRequest
 from .models.update_work_plan_rotation_request import UpdateWorkPlanRotationRequest
 from .models.upload_url_request import UploadUrlRequest
@@ -4375,6 +4433,15 @@ from .models.widget_deployment import WidgetDeployment
 from .models.widget_deployment_entity_listing import WidgetDeploymentEntityListing
 from .models.work_plan import WorkPlan
 from .models.work_plan_activity import WorkPlanActivity
+from .models.work_plan_bid import WorkPlanBid
+from .models.work_plan_bid_group import WorkPlanBidGroup
+from .models.work_plan_bid_group_create import WorkPlanBidGroupCreate
+from .models.work_plan_bid_group_response import WorkPlanBidGroupResponse
+from .models.work_plan_bid_group_summary import WorkPlanBidGroupSummary
+from .models.work_plan_bid_group_summary_list import WorkPlanBidGroupSummaryList
+from .models.work_plan_bid_group_update import WorkPlanBidGroupUpdate
+from .models.work_plan_bid_list_response import WorkPlanBidListResponse
+from .models.work_plan_bid_metadata import WorkPlanBidMetadata
 from .models.work_plan_bid_ranks import WorkPlanBidRanks
 from .models.work_plan_configuration_violation_message import WorkPlanConfigurationViolationMessage
 from .models.work_plan_constraint_conflict_message import WorkPlanConstraintConflictMessage

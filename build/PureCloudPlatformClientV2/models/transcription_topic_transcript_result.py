@@ -55,7 +55,9 @@ class TranscriptionTopicTranscriptResult(object):
             'channel': 'str',
             'alternatives': 'list[TranscriptionTopicTranscriptAlternative]',
             'agent_assistant_id': 'str',
+            'engine_provider': 'str',
             'engine_id': 'str',
+            'engine_name': 'str',
             'dialect': 'str',
             'speech_text_analytics_program_id': 'str',
             'agent_assist_enabled': 'bool',
@@ -68,7 +70,9 @@ class TranscriptionTopicTranscriptResult(object):
             'channel': 'channel',
             'alternatives': 'alternatives',
             'agent_assistant_id': 'agentAssistantId',
+            'engine_provider': 'engineProvider',
             'engine_id': 'engineId',
+            'engine_name': 'engineName',
             'dialect': 'dialect',
             'speech_text_analytics_program_id': 'speechTextAnalyticsProgramId',
             'agent_assist_enabled': 'agentAssistEnabled',
@@ -80,7 +84,9 @@ class TranscriptionTopicTranscriptResult(object):
         self._channel = None
         self._alternatives = None
         self._agent_assistant_id = None
+        self._engine_provider = None
         self._engine_id = None
+        self._engine_name = None
         self._dialect = None
         self._speech_text_analytics_program_id = None
         self._agent_assist_enabled = None
@@ -212,6 +218,30 @@ class TranscriptionTopicTranscriptResult(object):
         self._agent_assistant_id = agent_assistant_id
 
     @property
+    def engine_provider(self) -> str:
+        """
+        Gets the engine_provider of this TranscriptionTopicTranscriptResult.
+
+
+        :return: The engine_provider of this TranscriptionTopicTranscriptResult.
+        :rtype: str
+        """
+        return self._engine_provider
+
+    @engine_provider.setter
+    def engine_provider(self, engine_provider: str) -> None:
+        """
+        Sets the engine_provider of this TranscriptionTopicTranscriptResult.
+
+
+        :param engine_provider: The engine_provider of this TranscriptionTopicTranscriptResult.
+        :type: str
+        """
+        
+
+        self._engine_provider = engine_provider
+
+    @property
     def engine_id(self) -> str:
         """
         Gets the engine_id of this TranscriptionTopicTranscriptResult.
@@ -234,6 +264,30 @@ class TranscriptionTopicTranscriptResult(object):
         
 
         self._engine_id = engine_id
+
+    @property
+    def engine_name(self) -> str:
+        """
+        Gets the engine_name of this TranscriptionTopicTranscriptResult.
+
+
+        :return: The engine_name of this TranscriptionTopicTranscriptResult.
+        :rtype: str
+        """
+        return self._engine_name
+
+    @engine_name.setter
+    def engine_name(self, engine_name: str) -> None:
+        """
+        Sets the engine_name of this TranscriptionTopicTranscriptResult.
+
+
+        :param engine_name: The engine_name of this TranscriptionTopicTranscriptResult.
+        :type: str
+        """
+        
+
+        self._engine_name = engine_name
 
     @property
     def dialect(self) -> str:

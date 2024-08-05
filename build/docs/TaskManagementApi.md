@@ -1721,7 +1721,7 @@ except ApiException as e:
 
 <a name="patch_taskmanagement_worktype"></a>
 
-## [**Worktype**](Worktype.html) patch_taskmanagement_worktype(worktype_id, body=body)
+## [**Worktype**](Worktype.html) patch_taskmanagement_worktype(worktype_id, body)
 
 
 
@@ -1747,11 +1747,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.TaskManagementApi()
 worktype_id = 'worktype_id_example' # str | Worktype id
-body = PureCloudPlatformClientV2.WorktypeUpdate() # WorktypeUpdate | body (optional)
+body = PureCloudPlatformClientV2.WorktypeUpdate() # WorktypeUpdate | Worktype
 
 try:
     # Update the attributes of a worktype
-    api_response = api_instance.patch_taskmanagement_worktype(worktype_id, body=body)
+    api_response = api_instance.patch_taskmanagement_worktype(worktype_id, body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling TaskManagementApi->patch_taskmanagement_worktype: %s\n" % e)
@@ -1763,7 +1763,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **worktype_id** | **str**| Worktype id |  |
-| **body** | [**WorktypeUpdate**](WorktypeUpdate.html)| body | [optional]  |
+| **body** | [**WorktypeUpdate**](WorktypeUpdate.html)| Worktype |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1772,7 +1772,7 @@ except ApiException as e:
 
 <a name="patch_taskmanagement_worktype_status"></a>
 
-## [**WorkitemStatus**](WorkitemStatus.html) patch_taskmanagement_worktype_status(worktype_id, status_id, body=body)
+## [**WorkitemStatus**](WorkitemStatus.html) patch_taskmanagement_worktype_status(worktype_id, status_id, body)
 
 
 
@@ -1799,11 +1799,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.TaskManagementApi()
 worktype_id = 'worktype_id_example' # str | Worktype id
 status_id = 'status_id_example' # str | Status id
-body = PureCloudPlatformClientV2.WorkitemStatusUpdate() # WorkitemStatusUpdate | body (optional)
+body = PureCloudPlatformClientV2.WorkitemStatusUpdate() # WorkitemStatusUpdate | Status
 
 try:
     # Update the attributes of a status
-    api_response = api_instance.patch_taskmanagement_worktype_status(worktype_id, status_id, body=body)
+    api_response = api_instance.patch_taskmanagement_worktype_status(worktype_id, status_id, body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling TaskManagementApi->patch_taskmanagement_worktype_status: %s\n" % e)
@@ -1816,7 +1816,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **worktype_id** | **str**| Worktype id |  |
 | **status_id** | **str**| Status id |  |
-| **body** | [**WorkitemStatusUpdate**](WorkitemStatusUpdate.html)| body | [optional]  |
+| **body** | [**WorkitemStatusUpdate**](WorkitemStatusUpdate.html)| Status |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1825,7 +1825,7 @@ except ApiException as e:
 
 <a name="post_taskmanagement_workbins"></a>
 
-## [**Workbin**](Workbin.html) post_taskmanagement_workbins(body=body)
+## [**Workbin**](Workbin.html) post_taskmanagement_workbins(body)
 
 
 
@@ -1850,11 +1850,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.TaskManagementApi()
-body = PureCloudPlatformClientV2.WorkbinCreate() # WorkbinCreate | body (optional)
+body = PureCloudPlatformClientV2.WorkbinCreate() # WorkbinCreate | Workbin
 
 try:
     # Create a workbin
-    api_response = api_instance.post_taskmanagement_workbins(body=body)
+    api_response = api_instance.post_taskmanagement_workbins(body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling TaskManagementApi->post_taskmanagement_workbins: %s\n" % e)
@@ -1865,7 +1865,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**WorkbinCreate**](WorkbinCreate.html)| body | [optional]  |
+| **body** | [**WorkbinCreate**](WorkbinCreate.html)| Workbin |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2272,7 +2272,7 @@ except ApiException as e:
 
 <a name="post_taskmanagement_worktype_statuses"></a>
 
-## [**WorkitemStatus**](WorkitemStatus.html) post_taskmanagement_worktype_statuses(worktype_id, body=body)
+## [**WorkitemStatus**](WorkitemStatus.html) post_taskmanagement_worktype_statuses(worktype_id, body)
 
 
 
@@ -2298,11 +2298,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.TaskManagementApi()
 worktype_id = 'worktype_id_example' # str | Worktype id
-body = PureCloudPlatformClientV2.WorkitemStatusCreate() # WorkitemStatusCreate | body (optional)
+body = PureCloudPlatformClientV2.WorkitemStatusCreate() # WorkitemStatusCreate | Status
 
 try:
     # Add a status to a worktype
-    api_response = api_instance.post_taskmanagement_worktype_statuses(worktype_id, body=body)
+    api_response = api_instance.post_taskmanagement_worktype_statuses(worktype_id, body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling TaskManagementApi->post_taskmanagement_worktype_statuses: %s\n" % e)
@@ -2314,7 +2314,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **worktype_id** | **str**| Worktype id |  |
-| **body** | [**WorkitemStatusCreate**](WorkitemStatusCreate.html)| body | [optional]  |
+| **body** | [**WorkitemStatusCreate**](WorkitemStatusCreate.html)| Status |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2323,7 +2323,7 @@ except ApiException as e:
 
 <a name="post_taskmanagement_worktypes"></a>
 
-## [**Worktype**](Worktype.html) post_taskmanagement_worktypes(body=body)
+## [**Worktype**](Worktype.html) post_taskmanagement_worktypes(body)
 
 
 
@@ -2348,11 +2348,11 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.TaskManagementApi()
-body = PureCloudPlatformClientV2.WorktypeCreate() # WorktypeCreate | body (optional)
+body = PureCloudPlatformClientV2.WorktypeCreate() # WorktypeCreate | Worktype
 
 try:
     # Create a worktype
-    api_response = api_instance.post_taskmanagement_worktypes(body=body)
+    api_response = api_instance.post_taskmanagement_worktypes(body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling TaskManagementApi->post_taskmanagement_worktypes: %s\n" % e)
@@ -2363,7 +2363,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**WorktypeCreate**](WorktypeCreate.html)| body | [optional]  |
+| **body** | [**WorktypeCreate**](WorktypeCreate.html)| Worktype |  |
 {: class="table table-striped"}
 
 ### Return type

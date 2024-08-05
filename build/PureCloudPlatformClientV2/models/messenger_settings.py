@@ -59,7 +59,8 @@ class MessengerSettings(object):
             'launcher_button': 'LauncherButtonSettings',
             'file_upload': 'FileUploadSettings',
             'apps': 'MessengerApps',
-            'home_screen': 'MessengerHomeScreen'
+            'home_screen': 'MessengerHomeScreen',
+            'session_persistence_type': 'str'
         }
 
         self.attribute_map = {
@@ -68,7 +69,8 @@ class MessengerSettings(object):
             'launcher_button': 'launcherButton',
             'file_upload': 'fileUpload',
             'apps': 'apps',
-            'home_screen': 'homeScreen'
+            'home_screen': 'homeScreen',
+            'session_persistence_type': 'sessionPersistenceType'
         }
 
         self._enabled = None
@@ -77,6 +79,7 @@ class MessengerSettings(object):
         self._file_upload = None
         self._apps = None
         self._home_screen = None
+        self._session_persistence_type = None
 
     @property
     def enabled(self) -> bool:
@@ -221,6 +224,35 @@ class MessengerSettings(object):
         
 
         self._home_screen = home_screen
+
+    @property
+    def session_persistence_type(self) -> str:
+        """
+        Gets the session_persistence_type of this MessengerSettings.
+        The session persistence type for messenger
+
+        :return: The session_persistence_type of this MessengerSettings.
+        :rtype: str
+        """
+        return self._session_persistence_type
+
+    @session_persistence_type.setter
+    def session_persistence_type(self, session_persistence_type: str) -> None:
+        """
+        Sets the session_persistence_type of this MessengerSettings.
+        The session persistence type for messenger
+
+        :param session_persistence_type: The session_persistence_type of this MessengerSettings.
+        :type: str
+        """
+        if isinstance(session_persistence_type, int):
+            session_persistence_type = str(session_persistence_type)
+        allowed_values = ["AcrossSubdomains", "DomainOrSubdomainOnly"]
+        if session_persistence_type.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for session_persistence_type -> " + session_persistence_type)
+            self._session_persistence_type = "outdated_sdk_version"
+        else:
+            self._session_persistence_type = session_persistence_type
 
     def to_dict(self):
         """

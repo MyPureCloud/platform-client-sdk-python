@@ -11,7 +11,7 @@ title: LearningModuleRequest
 | **description** | **str** | The description of learning module | [optional] |
 | **completion_time_in_days** | **int** | The completion time of learning module in days | |
 | **inform_steps** | [**list[LearningModuleInformStepRequest]**](LearningModuleInformStepRequest.html) | The list of inform steps in a learning module | [optional] |
-| **type** | **str** | The type for the learning module | [optional] |
+| **type** | **str** | The type for the learning module. Informational, AssessedContent and Assessment are deprecated | [optional] |
 | **assessment_form** | [**AssessmentForm**](AssessmentForm.html) | The assessment form for learning module | [optional] |
 | **cover_art** | [**LearningModuleCoverArtRequest**](LearningModuleCoverArtRequest.html) | The cover art for the learning module | [optional] |
 | **length_in_minutes** | **int** | The recommended time in minutes to complete the module | [optional] |

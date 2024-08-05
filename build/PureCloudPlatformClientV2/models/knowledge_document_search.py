@@ -33,6 +33,7 @@ from typing import List
 from typing import Dict
 
 if TYPE_CHECKING:
+    from . import KnowledgeAnswerGenerationResponse
     from . import KnowledgeConversationContextResponse
     from . import KnowledgeDocumentSearchResult
     from . import KnowledgeSearchClientApplication
@@ -62,7 +63,8 @@ class KnowledgeDocumentSearch(object):
             'results': 'list[KnowledgeDocumentSearchResult]',
             'application': 'KnowledgeSearchClientApplication',
             'conversation_context': 'KnowledgeConversationContextResponse',
-            'confidence_threshold': 'float'
+            'confidence_threshold': 'float',
+            'answer_generation': 'KnowledgeAnswerGenerationResponse'
         }
 
         self.attribute_map = {
@@ -76,7 +78,8 @@ class KnowledgeDocumentSearch(object):
             'results': 'results',
             'application': 'application',
             'conversation_context': 'conversationContext',
-            'confidence_threshold': 'confidenceThreshold'
+            'confidence_threshold': 'confidenceThreshold',
+            'answer_generation': 'answerGeneration'
         }
 
         self._query = None
@@ -90,6 +93,7 @@ class KnowledgeDocumentSearch(object):
         self._application = None
         self._conversation_context = None
         self._confidence_threshold = None
+        self._answer_generation = None
 
     @property
     def query(self) -> str:
@@ -365,6 +369,30 @@ class KnowledgeDocumentSearch(object):
         
 
         self._confidence_threshold = confidence_threshold
+
+    @property
+    def answer_generation(self) -> 'KnowledgeAnswerGenerationResponse':
+        """
+        Gets the answer_generation of this KnowledgeDocumentSearch.
+        The results with AI-generated answer if the answerMode request property contains \"AnswerGeneration\".
+
+        :return: The answer_generation of this KnowledgeDocumentSearch.
+        :rtype: KnowledgeAnswerGenerationResponse
+        """
+        return self._answer_generation
+
+    @answer_generation.setter
+    def answer_generation(self, answer_generation: 'KnowledgeAnswerGenerationResponse') -> None:
+        """
+        Sets the answer_generation of this KnowledgeDocumentSearch.
+        The results with AI-generated answer if the answerMode request property contains \"AnswerGeneration\".
+
+        :param answer_generation: The answer_generation of this KnowledgeDocumentSearch.
+        :type: KnowledgeAnswerGenerationResponse
+        """
+        
+
+        self._answer_generation = answer_generation
 
     def to_dict(self):
         """

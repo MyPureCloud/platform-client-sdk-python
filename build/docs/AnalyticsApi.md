@@ -84,7 +84,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_analytics_knowledge_aggregates_jobs**](AnalyticsApi.html#post_analytics_knowledge_aggregates_jobs) | Query for knowledge aggregates asynchronously|
 |[**post_analytics_knowledge_aggregates_query**](AnalyticsApi.html#post_analytics_knowledge_aggregates_query) | Query for knowledge aggregates|
 |[**post_analytics_queues_observations_query**](AnalyticsApi.html#post_analytics_queues_observations_query) | Query for queue observations|
-|[**post_analytics_ratelimits_aggregates_query**](AnalyticsApi.html#post_analytics_ratelimits_aggregates_query) | Query for limits rate limit aggregates. Data populated when limits are exceeded or are close to being exceeded. Not a source of truth for limits hit but a best effort estimate.|
+|[**post_analytics_ratelimits_aggregates_query**](AnalyticsApi.html#post_analytics_ratelimits_aggregates_query) | Query for limits rate limit aggregates. Data populated when limits reach 90% of the maximum. Not a source of truth for limits hit but a best effort estimate.|
 |[**post_analytics_reporting_dashboards_users_bulk_remove**](AnalyticsApi.html#post_analytics_reporting_dashboards_users_bulk_remove) | Bulk delete dashboards owned by other user(s)|
 |[**post_analytics_reporting_exports**](AnalyticsApi.html#post_analytics_reporting_exports) | Generate a view export request|
 |[**post_analytics_reporting_settings_dashboards_bulk_remove**](AnalyticsApi.html#post_analytics_reporting_settings_dashboards_bulk_remove) | Bulk remove dashboard configurations|
@@ -4021,9 +4021,9 @@ except ApiException as e:
 
 
 
-Query for limits rate limit aggregates. Data populated when limits are exceeded or are close to being exceeded. Not a source of truth for limits hit but a best effort estimate.
+Query for limits rate limit aggregates. Data populated when limits reach 90% of the maximum. Not a source of truth for limits hit but a best effort estimate.
 
-The 'max' property can be used to determine estimated rate limit value hit.
+The 'max' property can be used to determine estimated rate limit value hit. See https://developer.genesys.cloud/organization/organization/limits#available-limits for limits that are trackable (Operational Events Enabled).
 
 Wraps POST /api/v2/analytics/ratelimits/aggregates/query 
 
@@ -4047,7 +4047,7 @@ api_instance = PureCloudPlatformClientV2.AnalyticsApi()
 body = PureCloudPlatformClientV2.RateLimitAggregationQuery() # RateLimitAggregationQuery | query
 
 try:
-    # Query for limits rate limit aggregates. Data populated when limits are exceeded or are close to being exceeded. Not a source of truth for limits hit but a best effort estimate.
+    # Query for limits rate limit aggregates. Data populated when limits reach 90% of the maximum. Not a source of truth for limits hit but a best effort estimate.
     api_response = api_instance.post_analytics_ratelimits_aggregates_query(body)
     pprint(api_response)
 except ApiException as e:

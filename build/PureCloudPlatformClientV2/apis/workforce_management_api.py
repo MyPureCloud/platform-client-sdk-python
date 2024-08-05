@@ -51,6 +51,8 @@ from ..models import AddWorkPlanRotationRequest
 from ..models import AdherenceExplanationAsyncResponse
 from ..models import AdherenceExplanationJob
 from ..models import AdherenceExplanationResponse
+from ..models import AdminAgentWorkPlanPreferenceResponse
+from ..models import AdminBulkUpdateAlternativeShiftTradeStateRequest
 from ..models import AdminTimeOffRequestPatch
 from ..models import AgentIntegrationsRequest
 from ..models import AgentIntegrationsResponse
@@ -60,12 +62,24 @@ from ..models import AgentPossibleWorkShiftsResponse
 from ..models import AgentQueryAdherenceExplanationsRequest
 from ..models import AgentQueryAdherenceExplanationsResponse
 from ..models import AgentTimeOffRequestPatch
+from ..models import AgentUpdateAlternativeShiftTradeRequest
+from ..models import AgentWorkPlanBiddingPreferenceResponse
+from ..models import AgentWorkPlanBids
+from ..models import AgentWorkPlanListResponse
+from ..models import AgentsBidAssignedWorkPlanOverrideRequest
 from ..models import AgentsIntegrationsListing
+from ..models import AlternativeShiftAsyncResponse
+from ..models import AlternativeShiftBuSettingsResponse
+from ..models import AlternativeShiftJobResponse
+from ..models import AlternativeShiftOffersRequest
+from ..models import AlternativeShiftSearchOffersRequest
+from ..models import AlternativeShiftTradeResponse
 from ..models import AsyncForecastOperationResult
 from ..models import AsyncIntradayResponse
 from ..models import AvailableTimeOffRequest
 from ..models import AvailableTimeOffResponse
 from ..models import BuAgentScheduleHistoryResponse
+from ..models import BuAlternativeShiftJobResponse
 from ..models import BuAsyncAgentSchedulesQueryResponse
 from ..models import BuAsyncAgentSchedulesSearchResponse
 from ..models import BuAsyncScheduleResponse
@@ -81,6 +95,7 @@ from ..models import BuForecastStaffingRequirementsResultResponse
 from ..models import BuGenerateScheduleRequest
 from ..models import BuGetCurrentAgentScheduleRequest
 from ..models import BuHeadcountForecastResponse
+from ..models import BuListAlternativeShiftTradesResponse
 from ..models import BuQueryAdherenceExplanationsRequest
 from ..models import BuQueryAdherenceExplanationsResponse
 from ..models import BuQueryAgentSchedulesRequest
@@ -109,11 +124,13 @@ from ..models import BusinessUnitResponse
 from ..models import CalendarUrlResponse
 from ..models import CopyBuForecastRequest
 from ..models import CopyWorkPlan
+from ..models import CopyWorkPlanBid
 from ..models import CopyWorkPlanRotationRequest
 from ..models import CreateActivityCodeRequest
 from ..models import CreateActivityPlanRequest
 from ..models import CreateAdminTimeOffRequest
 from ..models import CreateAgentTimeOffRequest
+from ..models import CreateAlternativeShiftTradeRequest
 from ..models import CreateBusinessUnitRequest
 from ..models import CreateManagementUnitApiRequest
 from ..models import CreatePlanningGroupRequest
@@ -122,8 +139,10 @@ from ..models import CreateStaffingGroupRequest
 from ..models import CreateTimeOffLimitRequest
 from ..models import CreateTimeOffPlanRequest
 from ..models import CreateWorkPlan
+from ..models import CreateWorkPlanBid
 from ..models import CurrentUserScheduleRequestBody
 from ..models import CurrentUserTimeOffIntegrationStatusRequest
+from ..models import EntityListing
 from ..models import ErrorBody
 from ..models import EstimateAvailableTimeOffRequest
 from ..models import EstimateAvailableTimeOffResponse
@@ -137,6 +156,7 @@ from ..models import ImportForecastResponse
 from ..models import ImportForecastUploadResponse
 from ..models import ImportScheduleUploadResponse
 from ..models import IntradayPlanningGroupRequest
+from ..models import ListAlternativeShiftTradesResponse
 from ..models import LongTermForecastResultResponse
 from ..models import ManagementUnit
 from ..models import ManagementUnitListing
@@ -165,6 +185,7 @@ from ..models import QueryWaitlistPositionsRequest
 from ..models import ScheduleGenerationResult
 from ..models import ScheduleUploadProcessingResponse
 from ..models import SchedulingStatusResponse
+from ..models import SearchAlternativeShiftTradesRequest
 from ..models import SearchShiftTradesRequest
 from ..models import SearchShiftTradesResponse
 from ..models import ServiceGoalTemplate
@@ -191,6 +212,8 @@ from ..models import TimeOffRequestResponse
 from ..models import UpdateActivityCodeRequest
 from ..models import UpdateActivityPlanRequest
 from ..models import UpdateAdherenceExplanationStatusRequest
+from ..models import UpdateAgentWorkPlanBiddingPreference
+from ..models import UpdateAlternativeShiftBuSettingsRequest
 from ..models import UpdateBusinessUnitRequest
 from ..models import UpdateManagementUnitRequest
 from ..models import UpdateMuAgentsRequest
@@ -202,6 +225,7 @@ from ..models import UpdateServiceGoalTemplate
 from ..models import UpdateStaffingGroupRequest
 from ..models import UpdateTimeOffLimitRequest
 from ..models import UpdateTimeOffPlanRequest
+from ..models import UpdateWorkPlanBid
 from ..models import UpdateWorkPlanRotationRequest
 from ..models import UploadUrlRequestBody
 from ..models import UserListScheduleRequestBody
@@ -232,6 +256,13 @@ from ..models import WfmIntradayPlanningGroupListing
 from ..models import WfmProcessUploadRequest
 from ..models import WfmUserEntityListing
 from ..models import WorkPlan
+from ..models import WorkPlanBid
+from ..models import WorkPlanBidGroupCreate
+from ..models import WorkPlanBidGroupResponse
+from ..models import WorkPlanBidGroupSummaryList
+from ..models import WorkPlanBidGroupUpdate
+from ..models import WorkPlanBidListResponse
+from ..models import WorkPlanBidRanks
 from ..models import WorkPlanListResponse
 from ..models import WorkPlanRotationListResponse
 from ..models import WorkPlanRotationResponse
@@ -1064,6 +1095,180 @@ class WorkforceManagementApi(object):
             path_params['weekDateId'] = params['week_date_id']
         if 'forecast_id' in params:
             path_params['forecastId'] = params['forecast_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def delete_workforcemanagement_businessunit_workplanbid(self, business_unit_id: str, bid_id: str, **kwargs) -> None:
+        """
+        Delete a work plan bid
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_workforcemanagement_businessunit_workplanbid(business_unit_id, bid_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str business_unit_id: The ID of the business unit (required)
+        :param str bid_id: The ID of the work plan bid (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['business_unit_id', 'bid_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_workforcemanagement_businessunit_workplanbid" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'business_unit_id' is set
+        if ('business_unit_id' not in params) or (params['business_unit_id'] is None):
+            raise ValueError("Missing the required parameter `business_unit_id` when calling `delete_workforcemanagement_businessunit_workplanbid`")
+        # verify the required parameter 'bid_id' is set
+        if ('bid_id' not in params) or (params['bid_id'] is None):
+            raise ValueError("Missing the required parameter `bid_id` when calling `delete_workforcemanagement_businessunit_workplanbid`")
+
+
+        resource_path = '/api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids/{bidId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'business_unit_id' in params:
+            path_params['businessUnitId'] = params['business_unit_id']
+        if 'bid_id' in params:
+            path_params['bidId'] = params['bid_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def delete_workforcemanagement_businessunit_workplanbid_group(self, business_unit_id: str, bid_id: str, bid_group_id: str, **kwargs) -> None:
+        """
+        Delete a bid group by bid group Id
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_workforcemanagement_businessunit_workplanbid_group(business_unit_id, bid_id, bid_group_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str business_unit_id: The ID of the business unit (required)
+        :param str bid_id: The work plan bid id of the bid groups (required)
+        :param str bid_group_id: Work Plan Bid Group id (required)
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['business_unit_id', 'bid_id', 'bid_group_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_workforcemanagement_businessunit_workplanbid_group" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'business_unit_id' is set
+        if ('business_unit_id' not in params) or (params['business_unit_id'] is None):
+            raise ValueError("Missing the required parameter `business_unit_id` when calling `delete_workforcemanagement_businessunit_workplanbid_group`")
+        # verify the required parameter 'bid_id' is set
+        if ('bid_id' not in params) or (params['bid_id'] is None):
+            raise ValueError("Missing the required parameter `bid_id` when calling `delete_workforcemanagement_businessunit_workplanbid_group`")
+        # verify the required parameter 'bid_group_id' is set
+        if ('bid_group_id' not in params) or (params['bid_group_id'] is None):
+            raise ValueError("Missing the required parameter `bid_group_id` when calling `delete_workforcemanagement_businessunit_workplanbid_group`")
+
+
+        resource_path = '/api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids/{bidId}/groups/{bidGroupId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'business_unit_id' in params:
+            path_params['businessUnitId'] = params['business_unit_id']
+        if 'bid_id' in params:
+            path_params['bidId'] = params['bid_id']
+        if 'bid_group_id' in params:
+            path_params['bidGroupId'] = params['bid_group_id']
 
         query_params = {}
 
@@ -2209,6 +2414,543 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def get_workforcemanagement_alternativeshifts_offers_job(self, job_id: str, **kwargs) -> 'AlternativeShiftJobResponse':
+        """
+        Query the status of an alternative shift offers operation. Only the user who started the operation can query the status
+        Job details are only retained if the initial request returned a 202 ACCEPTED response
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_workforcemanagement_alternativeshifts_offers_job(job_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str job_id: The ID of the job (required)
+        :return: AlternativeShiftJobResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['job_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_workforcemanagement_alternativeshifts_offers_job" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'job_id' is set
+        if ('job_id' not in params) or (params['job_id'] is None):
+            raise ValueError("Missing the required parameter `job_id` when calling `get_workforcemanagement_alternativeshifts_offers_job`")
+
+
+        resource_path = '/api/v2/workforcemanagement/alternativeshifts/offers/jobs/{jobId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'job_id' in params:
+            path_params['jobId'] = params['job_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='AlternativeShiftJobResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_workforcemanagement_alternativeshifts_offers_search_job(self, job_id: str, **kwargs) -> 'AlternativeShiftJobResponse':
+        """
+        Query the status of an alternative shift search offers operation. Only the user who started the operation can query the status
+        Job details are only retained if the initial request returned a 202 ACCEPTED response
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_workforcemanagement_alternativeshifts_offers_search_job(job_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str job_id: The ID of the job (required)
+        :return: AlternativeShiftJobResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['job_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_workforcemanagement_alternativeshifts_offers_search_job" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'job_id' is set
+        if ('job_id' not in params) or (params['job_id'] is None):
+            raise ValueError("Missing the required parameter `job_id` when calling `get_workforcemanagement_alternativeshifts_offers_search_job`")
+
+
+        resource_path = '/api/v2/workforcemanagement/alternativeshifts/offers/search/jobs/{jobId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'job_id' in params:
+            path_params['jobId'] = params['job_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='AlternativeShiftJobResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_workforcemanagement_alternativeshifts_settings(self, **kwargs) -> 'AlternativeShiftBuSettingsResponse':
+        """
+        Get alternative shifts settings from the current logged in agent’s business unit
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_workforcemanagement_alternativeshifts_settings(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :return: AlternativeShiftBuSettingsResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = []
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_workforcemanagement_alternativeshifts_settings" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/workforcemanagement/alternativeshifts/settings'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='AlternativeShiftBuSettingsResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_workforcemanagement_alternativeshifts_trade(self, trade_id: str, **kwargs) -> 'AlternativeShiftTradeResponse':
+        """
+        Get my alternative shift trade by trade ID
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_workforcemanagement_alternativeshifts_trade(trade_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str trade_id: The ID of the alternative shift trade (required)
+        :return: AlternativeShiftTradeResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['trade_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_workforcemanagement_alternativeshifts_trade" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'trade_id' is set
+        if ('trade_id' not in params) or (params['trade_id'] is None):
+            raise ValueError("Missing the required parameter `trade_id` when calling `get_workforcemanagement_alternativeshifts_trade`")
+
+
+        resource_path = '/api/v2/workforcemanagement/alternativeshifts/trades/{tradeId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'trade_id' in params:
+            path_params['tradeId'] = params['trade_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='AlternativeShiftTradeResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_workforcemanagement_alternativeshifts_trades(self, **kwargs) -> 'ListAlternativeShiftTradesResponse':
+        """
+        Get a list of my alternative shifts trades
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_workforcemanagement_alternativeshifts_trades(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param bool force_async: Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes
+        :return: ListAlternativeShiftTradesResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['force_async']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_workforcemanagement_alternativeshifts_trades" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/workforcemanagement/alternativeshifts/trades'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'force_async' in params:
+            query_params['forceAsync'] = params['force_async']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ListAlternativeShiftTradesResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_workforcemanagement_alternativeshifts_trades_job(self, job_id: str, **kwargs) -> 'AlternativeShiftJobResponse':
+        """
+        Query the status of an alternative shift trades operation. Only the user who started the operation can query the status
+        Job details are only retained if the initial request returned a 202 ACCEPTED response
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_workforcemanagement_alternativeshifts_trades_job(job_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str job_id: The ID of the job (required)
+        :return: AlternativeShiftJobResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['job_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_workforcemanagement_alternativeshifts_trades_job" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'job_id' is set
+        if ('job_id' not in params) or (params['job_id'] is None):
+            raise ValueError("Missing the required parameter `job_id` when calling `get_workforcemanagement_alternativeshifts_trades_job`")
+
+
+        resource_path = '/api/v2/workforcemanagement/alternativeshifts/trades/jobs/{jobId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'job_id' in params:
+            path_params['jobId'] = params['job_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='AlternativeShiftJobResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_workforcemanagement_alternativeshifts_trades_state_job(self, job_id: str, **kwargs) -> 'AlternativeShiftJobResponse':
+        """
+        Query the status of an alternative shift trade state operation. Only the user who started the operation can query the status
+        Job details are only retained if the initial request returned a 202 ACCEPTED response
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_workforcemanagement_alternativeshifts_trades_state_job(job_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str job_id: The ID of the job (required)
+        :return: AlternativeShiftJobResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['job_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_workforcemanagement_alternativeshifts_trades_state_job" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'job_id' is set
+        if ('job_id' not in params) or (params['job_id'] is None):
+            raise ValueError("Missing the required parameter `job_id` when calling `get_workforcemanagement_alternativeshifts_trades_state_job`")
+
+
+        resource_path = '/api/v2/workforcemanagement/alternativeshifts/trades/state/jobs/{jobId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'job_id' in params:
+            path_params['jobId'] = params['job_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='AlternativeShiftJobResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def get_workforcemanagement_businessunit(self, business_unit_id: str, **kwargs) -> 'BusinessUnitResponse':
         """
         Get business unit
@@ -2788,6 +3530,252 @@ class WorkforceManagementApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='ActivityPlanJobListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_workforcemanagement_businessunit_alternativeshifts_settings(self, business_unit_id: str, **kwargs) -> 'AlternativeShiftBuSettingsResponse':
+        """
+        Get alternative shifts settings for a business unit
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_workforcemanagement_businessunit_alternativeshifts_settings(business_unit_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str business_unit_id: The ID of the business unit (required)
+        :return: AlternativeShiftBuSettingsResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['business_unit_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_workforcemanagement_businessunit_alternativeshifts_settings" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'business_unit_id' is set
+        if ('business_unit_id' not in params) or (params['business_unit_id'] is None):
+            raise ValueError("Missing the required parameter `business_unit_id` when calling `get_workforcemanagement_businessunit_alternativeshifts_settings`")
+
+
+        resource_path = '/api/v2/workforcemanagement/businessunits/{businessUnitId}/alternativeshifts/settings'.replace('{format}', 'json')
+        path_params = {}
+        if 'business_unit_id' in params:
+            path_params['businessUnitId'] = params['business_unit_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='AlternativeShiftBuSettingsResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_workforcemanagement_businessunit_alternativeshifts_trade(self, business_unit_id: str, trade_id: str, **kwargs) -> 'AlternativeShiftTradeResponse':
+        """
+        Get an alternative shifts trade in a business unit for a given trade ID
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_workforcemanagement_businessunit_alternativeshifts_trade(business_unit_id, trade_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str business_unit_id: The ID of the business unit (required)
+        :param str trade_id: The ID of the alternative shift trade (required)
+        :return: AlternativeShiftTradeResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['business_unit_id', 'trade_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_workforcemanagement_businessunit_alternativeshifts_trade" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'business_unit_id' is set
+        if ('business_unit_id' not in params) or (params['business_unit_id'] is None):
+            raise ValueError("Missing the required parameter `business_unit_id` when calling `get_workforcemanagement_businessunit_alternativeshifts_trade`")
+        # verify the required parameter 'trade_id' is set
+        if ('trade_id' not in params) or (params['trade_id'] is None):
+            raise ValueError("Missing the required parameter `trade_id` when calling `get_workforcemanagement_businessunit_alternativeshifts_trade`")
+
+
+        resource_path = '/api/v2/workforcemanagement/businessunits/{businessUnitId}/alternativeshifts/trades/{tradeId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'business_unit_id' in params:
+            path_params['businessUnitId'] = params['business_unit_id']
+        if 'trade_id' in params:
+            path_params['tradeId'] = params['trade_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='AlternativeShiftTradeResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_workforcemanagement_businessunit_alternativeshifts_trades_search_job(self, business_unit_id: str, job_id: str, **kwargs) -> 'BuAlternativeShiftJobResponse':
+        """
+        Query the status of an alternative shift search trade operation. Only the user who started the operation can query the status
+        Job details are only retained if the initial request returned a 202 ACCEPTED response
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_workforcemanagement_businessunit_alternativeshifts_trades_search_job(business_unit_id, job_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str business_unit_id: The ID of the business unit (required)
+        :param str job_id: The ID of the job (required)
+        :return: BuAlternativeShiftJobResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['business_unit_id', 'job_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_workforcemanagement_businessunit_alternativeshifts_trades_search_job" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'business_unit_id' is set
+        if ('business_unit_id' not in params) or (params['business_unit_id'] is None):
+            raise ValueError("Missing the required parameter `business_unit_id` when calling `get_workforcemanagement_businessunit_alternativeshifts_trades_search_job`")
+        # verify the required parameter 'job_id' is set
+        if ('job_id' not in params) or (params['job_id'] is None):
+            raise ValueError("Missing the required parameter `job_id` when calling `get_workforcemanagement_businessunit_alternativeshifts_trades_search_job`")
+
+
+        resource_path = '/api/v2/workforcemanagement/businessunits/{businessUnitId}/alternativeshifts/trades/search/jobs/{jobId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'business_unit_id' in params:
+            path_params['businessUnitId'] = params['business_unit_id']
+        if 'job_id' in params:
+            path_params['jobId'] = params['job_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='BuAlternativeShiftJobResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -5329,6 +6317,432 @@ class WorkforceManagementApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='BuShortTermForecastListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_workforcemanagement_businessunit_workplanbid(self, business_unit_id: str, bid_id: str, **kwargs) -> 'WorkPlanBid':
+        """
+        Get a work plan bid
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_workforcemanagement_businessunit_workplanbid(business_unit_id, bid_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str business_unit_id: The ID of the business unit (required)
+        :param str bid_id: The id of the workplanbid (required)
+        :return: WorkPlanBid
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['business_unit_id', 'bid_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_workforcemanagement_businessunit_workplanbid" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'business_unit_id' is set
+        if ('business_unit_id' not in params) or (params['business_unit_id'] is None):
+            raise ValueError("Missing the required parameter `business_unit_id` when calling `get_workforcemanagement_businessunit_workplanbid`")
+        # verify the required parameter 'bid_id' is set
+        if ('bid_id' not in params) or (params['bid_id'] is None):
+            raise ValueError("Missing the required parameter `bid_id` when calling `get_workforcemanagement_businessunit_workplanbid`")
+
+
+        resource_path = '/api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids/{bidId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'business_unit_id' in params:
+            path_params['businessUnitId'] = params['business_unit_id']
+        if 'bid_id' in params:
+            path_params['bidId'] = params['bid_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='WorkPlanBid',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_workforcemanagement_businessunit_workplanbid_group(self, business_unit_id: str, bid_id: str, bid_group_id: str, **kwargs) -> 'WorkPlanBidGroupResponse':
+        """
+        Get a bid group by bid group Id
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_workforcemanagement_businessunit_workplanbid_group(business_unit_id, bid_id, bid_group_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str business_unit_id: The ID of the business unit (required)
+        :param str bid_id: The work plan bid id of the bid groups (required)
+        :param str bid_group_id: Work Plan Bid Group id (required)
+        :return: WorkPlanBidGroupResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['business_unit_id', 'bid_id', 'bid_group_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_workforcemanagement_businessunit_workplanbid_group" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'business_unit_id' is set
+        if ('business_unit_id' not in params) or (params['business_unit_id'] is None):
+            raise ValueError("Missing the required parameter `business_unit_id` when calling `get_workforcemanagement_businessunit_workplanbid_group`")
+        # verify the required parameter 'bid_id' is set
+        if ('bid_id' not in params) or (params['bid_id'] is None):
+            raise ValueError("Missing the required parameter `bid_id` when calling `get_workforcemanagement_businessunit_workplanbid_group`")
+        # verify the required parameter 'bid_group_id' is set
+        if ('bid_group_id' not in params) or (params['bid_group_id'] is None):
+            raise ValueError("Missing the required parameter `bid_group_id` when calling `get_workforcemanagement_businessunit_workplanbid_group`")
+
+
+        resource_path = '/api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids/{bidId}/groups/{bidGroupId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'business_unit_id' in params:
+            path_params['businessUnitId'] = params['business_unit_id']
+        if 'bid_id' in params:
+            path_params['bidId'] = params['bid_id']
+        if 'bid_group_id' in params:
+            path_params['bidGroupId'] = params['bid_group_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='WorkPlanBidGroupResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_workforcemanagement_businessunit_workplanbid_group_preferences(self, business_unit_id: str, bid_id: str, bid_group_id: str, **kwargs) -> 'AdminAgentWorkPlanPreferenceResponse':
+        """
+        Gets the work plan preferences of all the agents in the work plan bid group
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_workforcemanagement_businessunit_workplanbid_group_preferences(business_unit_id, bid_id, bid_group_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str business_unit_id: The ID of the business unit (required)
+        :param str bid_id: The work plan bid id of the bid groups (required)
+        :param str bid_group_id: The ID of the work plan bid group (required)
+        :return: AdminAgentWorkPlanPreferenceResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['business_unit_id', 'bid_id', 'bid_group_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_workforcemanagement_businessunit_workplanbid_group_preferences" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'business_unit_id' is set
+        if ('business_unit_id' not in params) or (params['business_unit_id'] is None):
+            raise ValueError("Missing the required parameter `business_unit_id` when calling `get_workforcemanagement_businessunit_workplanbid_group_preferences`")
+        # verify the required parameter 'bid_id' is set
+        if ('bid_id' not in params) or (params['bid_id'] is None):
+            raise ValueError("Missing the required parameter `bid_id` when calling `get_workforcemanagement_businessunit_workplanbid_group_preferences`")
+        # verify the required parameter 'bid_group_id' is set
+        if ('bid_group_id' not in params) or (params['bid_group_id'] is None):
+            raise ValueError("Missing the required parameter `bid_group_id` when calling `get_workforcemanagement_businessunit_workplanbid_group_preferences`")
+
+
+        resource_path = '/api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids/{bidId}/groups/{bidGroupId}/preferences'.replace('{format}', 'json')
+        path_params = {}
+        if 'business_unit_id' in params:
+            path_params['businessUnitId'] = params['business_unit_id']
+        if 'bid_id' in params:
+            path_params['bidId'] = params['bid_id']
+        if 'bid_group_id' in params:
+            path_params['bidGroupId'] = params['bid_group_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='AdminAgentWorkPlanPreferenceResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_workforcemanagement_businessunit_workplanbid_groups_summary(self, business_unit_id: str, bid_id: str, **kwargs) -> 'WorkPlanBidGroupSummaryList':
+        """
+        Get summary of bid groups that belong to a work plan bid
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_workforcemanagement_businessunit_workplanbid_groups_summary(business_unit_id, bid_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str business_unit_id: The ID of the business unit (required)
+        :param str bid_id: The work plan bid id of the bid groups (required)
+        :return: WorkPlanBidGroupSummaryList
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['business_unit_id', 'bid_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_workforcemanagement_businessunit_workplanbid_groups_summary" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'business_unit_id' is set
+        if ('business_unit_id' not in params) or (params['business_unit_id'] is None):
+            raise ValueError("Missing the required parameter `business_unit_id` when calling `get_workforcemanagement_businessunit_workplanbid_groups_summary`")
+        # verify the required parameter 'bid_id' is set
+        if ('bid_id' not in params) or (params['bid_id'] is None):
+            raise ValueError("Missing the required parameter `bid_id` when calling `get_workforcemanagement_businessunit_workplanbid_groups_summary`")
+
+
+        resource_path = '/api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids/{bidId}/groups/summary'.replace('{format}', 'json')
+        path_params = {}
+        if 'business_unit_id' in params:
+            path_params['businessUnitId'] = params['business_unit_id']
+        if 'bid_id' in params:
+            path_params['bidId'] = params['bid_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='WorkPlanBidGroupSummaryList',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_workforcemanagement_businessunit_workplanbids(self, business_unit_id: str, **kwargs) -> 'WorkPlanBidListResponse':
+        """
+        Get list of work plan bids
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_workforcemanagement_businessunit_workplanbids(business_unit_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str business_unit_id: The ID of the business unit (required)
+        :return: WorkPlanBidListResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['business_unit_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_workforcemanagement_businessunit_workplanbids" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'business_unit_id' is set
+        if ('business_unit_id' not in params) or (params['business_unit_id'] is None):
+            raise ValueError("Missing the required parameter `business_unit_id` when calling `get_workforcemanagement_businessunit_workplanbids`")
+
+
+        resource_path = '/api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids'.replace('{format}', 'json')
+        path_params = {}
+        if 'business_unit_id' in params:
+            path_params['businessUnitId'] = params['business_unit_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='WorkPlanBidListResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -8558,6 +9972,312 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def get_workforcemanagement_user_workplanbidranks(self, user_id: str, **kwargs) -> 'WorkPlanBidRanks':
+        """
+        Get work plan bid ranks for a user
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_workforcemanagement_user_workplanbidranks(user_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str user_id: The userId to whom the work plan bid ranks apply. (required)
+        :return: WorkPlanBidRanks
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['user_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_workforcemanagement_user_workplanbidranks" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'user_id' is set
+        if ('user_id' not in params) or (params['user_id'] is None):
+            raise ValueError("Missing the required parameter `user_id` when calling `get_workforcemanagement_user_workplanbidranks`")
+
+
+        resource_path = '/api/v2/workforcemanagement/users/{userId}/workplanbidranks'.replace('{format}', 'json')
+        path_params = {}
+        if 'user_id' in params:
+            path_params['userId'] = params['user_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='WorkPlanBidRanks',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_workforcemanagement_workplanbid_preferences(self, bid_id: str, **kwargs) -> 'AgentWorkPlanBiddingPreferenceResponse':
+        """
+        Gets an agent's work plan bidding preference
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_workforcemanagement_workplanbid_preferences(bid_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str bid_id: The ID of the work plan bid (required)
+        :return: AgentWorkPlanBiddingPreferenceResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['bid_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_workforcemanagement_workplanbid_preferences" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'bid_id' is set
+        if ('bid_id' not in params) or (params['bid_id'] is None):
+            raise ValueError("Missing the required parameter `bid_id` when calling `get_workforcemanagement_workplanbid_preferences`")
+
+
+        resource_path = '/api/v2/workforcemanagement/workplanbids/{bidId}/preferences'.replace('{format}', 'json')
+        path_params = {}
+        if 'bid_id' in params:
+            path_params['bidId'] = params['bid_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='AgentWorkPlanBiddingPreferenceResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_workforcemanagement_workplanbid_workplans(self, bid_id: str, **kwargs) -> 'AgentWorkPlanListResponse':
+        """
+        Gets an agent's work plans for a bid
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_workforcemanagement_workplanbid_workplans(bid_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str bid_id: The ID of the work plan bid (required)
+        :return: AgentWorkPlanListResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['bid_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_workforcemanagement_workplanbid_workplans" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'bid_id' is set
+        if ('bid_id' not in params) or (params['bid_id'] is None):
+            raise ValueError("Missing the required parameter `bid_id` when calling `get_workforcemanagement_workplanbid_workplans`")
+
+
+        resource_path = '/api/v2/workforcemanagement/workplanbids/{bidId}/workplans'.replace('{format}', 'json')
+        path_params = {}
+        if 'bid_id' in params:
+            path_params['bidId'] = params['bid_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='AgentWorkPlanListResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_workforcemanagement_workplanbids(self, **kwargs) -> 'AgentWorkPlanBids':
+        """
+        Gets the list of work plan bids that belong to an agent
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_workforcemanagement_workplanbids(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :return: AgentWorkPlanBids
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = []
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_workforcemanagement_workplanbids" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/workforcemanagement/workplanbids'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='AgentWorkPlanBids',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def patch_workforcemanagement_agent_adherence_explanation(self, agent_id: str, explanation_id: str, body: 'UpdateAdherenceExplanationStatusRequest', **kwargs) -> 'AdherenceExplanationAsyncResponse':
         """
         Update an adherence explanation
@@ -8644,6 +10364,165 @@ class WorkforceManagementApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='AdherenceExplanationAsyncResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def patch_workforcemanagement_alternativeshifts_trade(self, trade_id: str, **kwargs) -> 'AlternativeShiftTradeResponse':
+        """
+        Update my alternative shifts trade by trade ID
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.patch_workforcemanagement_alternativeshifts_trade(trade_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str trade_id: The ID of the alternative shift trade (required)
+        :param AgentUpdateAlternativeShiftTradeRequest body: body
+        :return: AlternativeShiftTradeResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['trade_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method patch_workforcemanagement_alternativeshifts_trade" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'trade_id' is set
+        if ('trade_id' not in params) or (params['trade_id'] is None):
+            raise ValueError("Missing the required parameter `trade_id` when calling `patch_workforcemanagement_alternativeshifts_trade`")
+
+
+        resource_path = '/api/v2/workforcemanagement/alternativeshifts/trades/{tradeId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'trade_id' in params:
+            path_params['tradeId'] = params['trade_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PATCH',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='AlternativeShiftTradeResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def patch_workforcemanagement_alternativeshifts_trades_state_jobs(self, body: 'AdminBulkUpdateAlternativeShiftTradeStateRequest', **kwargs) -> 'AlternativeShiftAsyncResponse':
+        """
+        Bulk update alternative shift trade states
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.patch_workforcemanagement_alternativeshifts_trades_state_jobs(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param AdminBulkUpdateAlternativeShiftTradeStateRequest body: The request body (required)
+        :return: AlternativeShiftAsyncResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method patch_workforcemanagement_alternativeshifts_trades_state_jobs" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `patch_workforcemanagement_alternativeshifts_trades_state_jobs`")
+
+
+        resource_path = '/api/v2/workforcemanagement/alternativeshifts/trades/state/jobs'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PATCH',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='AlternativeShiftAsyncResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -8903,6 +10782,87 @@ class WorkforceManagementApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='ActivityPlanResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def patch_workforcemanagement_businessunit_alternativeshifts_settings(self, business_unit_id: str, **kwargs) -> 'AlternativeShiftBuSettingsResponse':
+        """
+        Update alternative shifts settings for a business unit
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.patch_workforcemanagement_businessunit_alternativeshifts_settings(business_unit_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str business_unit_id: The ID of the business unit (required)
+        :param UpdateAlternativeShiftBuSettingsRequest body: body
+        :return: AlternativeShiftBuSettingsResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['business_unit_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method patch_workforcemanagement_businessunit_alternativeshifts_settings" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'business_unit_id' is set
+        if ('business_unit_id' not in params) or (params['business_unit_id'] is None):
+            raise ValueError("Missing the required parameter `business_unit_id` when calling `patch_workforcemanagement_businessunit_alternativeshifts_settings`")
+
+
+        resource_path = '/api/v2/workforcemanagement/businessunits/{businessUnitId}/alternativeshifts/settings'.replace('{format}', 'json')
+        path_params = {}
+        if 'business_unit_id' in params:
+            path_params['businessUnitId'] = params['business_unit_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PATCH',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='AlternativeShiftBuSettingsResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -9338,6 +11298,282 @@ class WorkforceManagementApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='BuTimeOffPlanResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def patch_workforcemanagement_businessunit_workplanbid(self, business_unit_id: str, bid_id: str, body: 'UpdateWorkPlanBid', **kwargs) -> 'WorkPlanBid':
+        """
+        Update work plan bid
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.patch_workforcemanagement_businessunit_workplanbid(business_unit_id, bid_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str business_unit_id: The ID of the business unit (required)
+        :param str bid_id: The id of the workplanbid (required)
+        :param UpdateWorkPlanBid body: The work plan bid to be updated (required)
+        :return: WorkPlanBid
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['business_unit_id', 'bid_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method patch_workforcemanagement_businessunit_workplanbid" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'business_unit_id' is set
+        if ('business_unit_id' not in params) or (params['business_unit_id'] is None):
+            raise ValueError("Missing the required parameter `business_unit_id` when calling `patch_workforcemanagement_businessunit_workplanbid`")
+        # verify the required parameter 'bid_id' is set
+        if ('bid_id' not in params) or (params['bid_id'] is None):
+            raise ValueError("Missing the required parameter `bid_id` when calling `patch_workforcemanagement_businessunit_workplanbid`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `patch_workforcemanagement_businessunit_workplanbid`")
+
+
+        resource_path = '/api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids/{bidId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'business_unit_id' in params:
+            path_params['businessUnitId'] = params['business_unit_id']
+        if 'bid_id' in params:
+            path_params['bidId'] = params['bid_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PATCH',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='WorkPlanBid',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def patch_workforcemanagement_businessunit_workplanbid_group(self, business_unit_id: str, bid_id: str, bid_group_id: str, **kwargs) -> 'WorkPlanBidGroupResponse':
+        """
+        Update a bid group by bid group Id
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.patch_workforcemanagement_businessunit_workplanbid_group(business_unit_id, bid_id, bid_group_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str business_unit_id: The ID of the business unit (required)
+        :param str bid_id: The work plan bid id of the bid groups (required)
+        :param str bid_group_id: Work Plan Bid Group id (required)
+        :param WorkPlanBidGroupUpdate body: body
+        :return: WorkPlanBidGroupResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['business_unit_id', 'bid_id', 'bid_group_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method patch_workforcemanagement_businessunit_workplanbid_group" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'business_unit_id' is set
+        if ('business_unit_id' not in params) or (params['business_unit_id'] is None):
+            raise ValueError("Missing the required parameter `business_unit_id` when calling `patch_workforcemanagement_businessunit_workplanbid_group`")
+        # verify the required parameter 'bid_id' is set
+        if ('bid_id' not in params) or (params['bid_id'] is None):
+            raise ValueError("Missing the required parameter `bid_id` when calling `patch_workforcemanagement_businessunit_workplanbid_group`")
+        # verify the required parameter 'bid_group_id' is set
+        if ('bid_group_id' not in params) or (params['bid_group_id'] is None):
+            raise ValueError("Missing the required parameter `bid_group_id` when calling `patch_workforcemanagement_businessunit_workplanbid_group`")
+
+
+        resource_path = '/api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids/{bidId}/groups/{bidGroupId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'business_unit_id' in params:
+            path_params['businessUnitId'] = params['business_unit_id']
+        if 'bid_id' in params:
+            path_params['bidId'] = params['bid_id']
+        if 'bid_group_id' in params:
+            path_params['bidGroupId'] = params['bid_group_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PATCH',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='WorkPlanBidGroupResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def patch_workforcemanagement_businessunit_workplanbid_group_preferences(self, business_unit_id: str, bid_id: str, bid_group_id: str, **kwargs) -> 'AdminAgentWorkPlanPreferenceResponse':
+        """
+        Overrides the assigned work plan for the specified agents
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.patch_workforcemanagement_businessunit_workplanbid_group_preferences(business_unit_id, bid_id, bid_group_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str business_unit_id: The ID of the business unit (required)
+        :param str bid_id: The work plan bid id of the bid groups (required)
+        :param str bid_group_id: The ID of the work plan bid group (required)
+        :param AgentsBidAssignedWorkPlanOverrideRequest body: body
+        :return: AdminAgentWorkPlanPreferenceResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['business_unit_id', 'bid_id', 'bid_group_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method patch_workforcemanagement_businessunit_workplanbid_group_preferences" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'business_unit_id' is set
+        if ('business_unit_id' not in params) or (params['business_unit_id'] is None):
+            raise ValueError("Missing the required parameter `business_unit_id` when calling `patch_workforcemanagement_businessunit_workplanbid_group_preferences`")
+        # verify the required parameter 'bid_id' is set
+        if ('bid_id' not in params) or (params['bid_id'] is None):
+            raise ValueError("Missing the required parameter `bid_id` when calling `patch_workforcemanagement_businessunit_workplanbid_group_preferences`")
+        # verify the required parameter 'bid_group_id' is set
+        if ('bid_group_id' not in params) or (params['bid_group_id'] is None):
+            raise ValueError("Missing the required parameter `bid_group_id` when calling `patch_workforcemanagement_businessunit_workplanbid_group_preferences`")
+
+
+        resource_path = '/api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids/{bidId}/groups/{bidGroupId}/preferences'.replace('{format}', 'json')
+        path_params = {}
+        if 'business_unit_id' in params:
+            path_params['businessUnitId'] = params['business_unit_id']
+        if 'bid_id' in params:
+            path_params['bidId'] = params['bid_id']
+        if 'bid_group_id' in params:
+            path_params['bidGroupId'] = params['bid_group_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PATCH',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='AdminAgentWorkPlanPreferenceResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -10218,6 +12454,246 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def patch_workforcemanagement_user_workplanbidranks(self, user_id: str, **kwargs) -> 'WorkPlanBidRanks':
+        """
+        Update work plan bid ranks for a user
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.patch_workforcemanagement_user_workplanbidranks(user_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str user_id: The userId to whom the work plan bid ranks apply. (required)
+        :param WorkPlanBidRanks body: body
+        :return: WorkPlanBidRanks
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['user_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method patch_workforcemanagement_user_workplanbidranks" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'user_id' is set
+        if ('user_id' not in params) or (params['user_id'] is None):
+            raise ValueError("Missing the required parameter `user_id` when calling `patch_workforcemanagement_user_workplanbidranks`")
+
+
+        resource_path = '/api/v2/workforcemanagement/users/{userId}/workplanbidranks'.replace('{format}', 'json')
+        path_params = {}
+        if 'user_id' in params:
+            path_params['userId'] = params['user_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PATCH',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='WorkPlanBidRanks',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def patch_workforcemanagement_users_workplanbidranks_bulk(self, body: List['WorkPlanBidRanks'], **kwargs) -> 'EntityListing':
+        """
+        Update bulk work plan bid ranks on users. Max 50 users can be updated at a time.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.patch_workforcemanagement_users_workplanbidranks_bulk(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param list[WorkPlanBidRanks] body: Users (required)
+        :return: EntityListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method patch_workforcemanagement_users_workplanbidranks_bulk" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `patch_workforcemanagement_users_workplanbidranks_bulk`")
+
+
+        resource_path = '/api/v2/workforcemanagement/users/workplanbidranks/bulk'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PATCH',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='EntityListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def patch_workforcemanagement_workplanbid_preferences(self, bid_id: str, **kwargs) -> 'AgentWorkPlanBiddingPreferenceResponse':
+        """
+        Update an agent's work plan bidding preference
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.patch_workforcemanagement_workplanbid_preferences(bid_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str bid_id: The ID of the work plan bid (required)
+        :param UpdateAgentWorkPlanBiddingPreference body: body
+        :return: AgentWorkPlanBiddingPreferenceResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['bid_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method patch_workforcemanagement_workplanbid_preferences" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'bid_id' is set
+        if ('bid_id' not in params) or (params['bid_id'] is None):
+            raise ValueError("Missing the required parameter `bid_id` when calling `patch_workforcemanagement_workplanbid_preferences`")
+
+
+        resource_path = '/api/v2/workforcemanagement/workplanbids/{bidId}/preferences'.replace('{format}', 'json')
+        path_params = {}
+        if 'bid_id' in params:
+            path_params['bidId'] = params['bid_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PATCH',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='AgentWorkPlanBiddingPreferenceResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def post_workforcemanagement_adherence_explanations(self, body: 'AddAdherenceExplanationAgentRequest', **kwargs) -> 'AdherenceExplanationAsyncResponse':
         """
         Submit an adherence explanation for the current user
@@ -11008,6 +13484,240 @@ class WorkforceManagementApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def post_workforcemanagement_alternativeshifts_offers_jobs(self, body: 'AlternativeShiftOffersRequest', **kwargs) -> 'AlternativeShiftAsyncResponse':
+        """
+        Request a list of alternative shift offers for a given schedule
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_workforcemanagement_alternativeshifts_offers_jobs(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param AlternativeShiftOffersRequest body: The request body (required)
+        :return: AlternativeShiftAsyncResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_workforcemanagement_alternativeshifts_offers_jobs" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_workforcemanagement_alternativeshifts_offers_jobs`")
+
+
+        resource_path = '/api/v2/workforcemanagement/alternativeshifts/offers/jobs'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='AlternativeShiftAsyncResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_workforcemanagement_alternativeshifts_offers_search_jobs(self, body: 'AlternativeShiftSearchOffersRequest', **kwargs) -> 'AlternativeShiftAsyncResponse':
+        """
+        Request a search of alternative shift offers for a given shift
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_workforcemanagement_alternativeshifts_offers_search_jobs(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param AlternativeShiftSearchOffersRequest body: The request body (required)
+        :return: AlternativeShiftAsyncResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_workforcemanagement_alternativeshifts_offers_search_jobs" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_workforcemanagement_alternativeshifts_offers_search_jobs`")
+
+
+        resource_path = '/api/v2/workforcemanagement/alternativeshifts/offers/search/jobs'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='AlternativeShiftAsyncResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_workforcemanagement_alternativeshifts_trades(self, body: 'CreateAlternativeShiftTradeRequest', **kwargs) -> 'AlternativeShiftTradeResponse':
+        """
+        Create my alternative shift trade using an existing offer's jobId
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_workforcemanagement_alternativeshifts_trades(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param CreateAlternativeShiftTradeRequest body: The request body (required)
+        :return: AlternativeShiftTradeResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_workforcemanagement_alternativeshifts_trades" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_workforcemanagement_alternativeshifts_trades`")
+
+
+        resource_path = '/api/v2/workforcemanagement/alternativeshifts/trades'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='AlternativeShiftTradeResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def post_workforcemanagement_businessunit_activitycodes(self, business_unit_id: str, **kwargs) -> 'BusinessUnitActivityCode':
         """
         Create a new activity code
@@ -11432,6 +14142,93 @@ class WorkforceManagementApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='BuAsyncAgentSchedulesSearchResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_workforcemanagement_businessunit_alternativeshifts_trades_search(self, business_unit_id: str, body: 'SearchAlternativeShiftTradesRequest', **kwargs) -> 'BuListAlternativeShiftTradesResponse':
+        """
+        List alternative shifts trades for a given management unit or agent
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_workforcemanagement_businessunit_alternativeshifts_trades_search(business_unit_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str business_unit_id: The ID of the business unit (required)
+        :param SearchAlternativeShiftTradesRequest body: The request body (required)
+        :param bool force_async: Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes
+        :return: BuListAlternativeShiftTradesResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['business_unit_id', 'body', 'force_async']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_workforcemanagement_businessunit_alternativeshifts_trades_search" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'business_unit_id' is set
+        if ('business_unit_id' not in params) or (params['business_unit_id'] is None):
+            raise ValueError("Missing the required parameter `business_unit_id` when calling `post_workforcemanagement_businessunit_alternativeshifts_trades_search`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_workforcemanagement_businessunit_alternativeshifts_trades_search`")
+
+
+        resource_path = '/api/v2/workforcemanagement/businessunits/{businessUnitId}/alternativeshifts/trades/search'.replace('{format}', 'json')
+        path_params = {}
+        if 'business_unit_id' in params:
+            path_params['businessUnitId'] = params['business_unit_id']
+
+        query_params = {}
+        if 'force_async' in params:
+            query_params['forceAsync'] = params['force_async']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='BuListAlternativeShiftTradesResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -13487,6 +16284,261 @@ class WorkforceManagementApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='ImportForecastUploadResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_workforcemanagement_businessunit_workplanbid_copy(self, business_unit_id: str, bid_id: str, **kwargs) -> 'WorkPlanBid':
+        """
+        Copy a work plan bid
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_workforcemanagement_businessunit_workplanbid_copy(business_unit_id, bid_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str business_unit_id: The ID of the business unit (required)
+        :param str bid_id: The ID of the work plan bid to copy (required)
+        :param CopyWorkPlanBid body: body
+        :return: WorkPlanBid
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['business_unit_id', 'bid_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_workforcemanagement_businessunit_workplanbid_copy" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'business_unit_id' is set
+        if ('business_unit_id' not in params) or (params['business_unit_id'] is None):
+            raise ValueError("Missing the required parameter `business_unit_id` when calling `post_workforcemanagement_businessunit_workplanbid_copy`")
+        # verify the required parameter 'bid_id' is set
+        if ('bid_id' not in params) or (params['bid_id'] is None):
+            raise ValueError("Missing the required parameter `bid_id` when calling `post_workforcemanagement_businessunit_workplanbid_copy`")
+
+
+        resource_path = '/api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids/{bidId}/copy'.replace('{format}', 'json')
+        path_params = {}
+        if 'business_unit_id' in params:
+            path_params['businessUnitId'] = params['business_unit_id']
+        if 'bid_id' in params:
+            path_params['bidId'] = params['bid_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='WorkPlanBid',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_workforcemanagement_businessunit_workplanbid_groups(self, business_unit_id: str, bid_id: str, **kwargs) -> 'WorkPlanBidGroupResponse':
+        """
+        Add a bid group in a given work plan bid
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_workforcemanagement_businessunit_workplanbid_groups(business_unit_id, bid_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str business_unit_id: The ID of the business unit (required)
+        :param str bid_id: The work plan bid id of the bid groups (required)
+        :param WorkPlanBidGroupCreate body: body
+        :return: WorkPlanBidGroupResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['business_unit_id', 'bid_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_workforcemanagement_businessunit_workplanbid_groups" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'business_unit_id' is set
+        if ('business_unit_id' not in params) or (params['business_unit_id'] is None):
+            raise ValueError("Missing the required parameter `business_unit_id` when calling `post_workforcemanagement_businessunit_workplanbid_groups`")
+        # verify the required parameter 'bid_id' is set
+        if ('bid_id' not in params) or (params['bid_id'] is None):
+            raise ValueError("Missing the required parameter `bid_id` when calling `post_workforcemanagement_businessunit_workplanbid_groups`")
+
+
+        resource_path = '/api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids/{bidId}/groups'.replace('{format}', 'json')
+        path_params = {}
+        if 'business_unit_id' in params:
+            path_params['businessUnitId'] = params['business_unit_id']
+        if 'bid_id' in params:
+            path_params['bidId'] = params['bid_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='WorkPlanBidGroupResponse',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_workforcemanagement_businessunit_workplanbids(self, business_unit_id: str, **kwargs) -> 'WorkPlanBid':
+        """
+        Create a new work plan bid
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_workforcemanagement_businessunit_workplanbids(business_unit_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str business_unit_id: The ID of the business unit (required)
+        :param CreateWorkPlanBid body: The work plan bid to be created
+        :return: WorkPlanBid
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['business_unit_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_workforcemanagement_businessunit_workplanbids" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'business_unit_id' is set
+        if ('business_unit_id' not in params) or (params['business_unit_id'] is None):
+            raise ValueError("Missing the required parameter `business_unit_id` when calling `post_workforcemanagement_businessunit_workplanbids`")
+
+
+        resource_path = '/api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids'.replace('{format}', 'json')
+        path_params = {}
+        if 'business_unit_id' in params:
+            path_params['businessUnitId'] = params['business_unit_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='WorkPlanBid',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

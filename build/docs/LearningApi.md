@@ -296,7 +296,7 @@ max_percentage_score = 3.4 # float | The maximum assessment score for an assignm
 sort_order = ''Desc'' # str | Specifies result set sort order; if not specified, default sort order is descending (Desc) (optional) (default to 'Desc')
 sort_by = 'sort_by_example' # str | Specifies which field to sort the results by, default sort is by recommendedCompletionDate (optional)
 user_id = ['user_id_example'] # list[str] | Specifies the list of user IDs to be queried, up to 100 user IDs. (optional)
-types = ['types_example'] # list[str] | Specifies the module types to filter by (optional)
+types = ['types_example'] # list[str] | Specifies the module types to filter by. Informational, AssessedContent and Assessment are deprecated (optional)
 states = ['states_example'] # list[str] | Specifies the assignment states to filter by (optional)
 expand = ['expand_example'] # list[str] | Specifies the expand option for returning additional information (optional)
 
@@ -325,7 +325,7 @@ except ApiException as e:
 | **sort_order** | **str**| Specifies result set sort order; if not specified, default sort order is descending (Desc) | [optional] [default to &#39;Desc&#39;]<br />**Values**: Asc, Desc |
 | **sort_by** | **str**| Specifies which field to sort the results by, default sort is by recommendedCompletionDate | [optional] <br />**Values**: RecommendedCompletionDate, DateModified |
 | **user_id** | [**list[str]**](str.html)| Specifies the list of user IDs to be queried, up to 100 user IDs. | [optional]  |
-| **types** | [**list[str]**](str.html)| Specifies the module types to filter by | [optional] <br />**Values**: Informational, AssessedContent, Assessment, External |
+| **types** | [**list[str]**](str.html)| Specifies the module types to filter by. Informational, AssessedContent and Assessment are deprecated | [optional] <br />**Values**: Informational, AssessedContent, Assessment, External, Native |
 | **states** | [**list[str]**](str.html)| Specifies the assignment states to filter by | [optional] <br />**Values**: Assigned, InProgress, Completed, NotCompleted, InvalidSchedule |
 | **expand** | [**list[str]**](str.html)| Specifies the expand option for returning additional information | [optional] <br />**Values**: ModuleSummary |
 {: class="table table-striped"}
@@ -371,7 +371,7 @@ min_percentage_score = 3.4 # float | The minimum assessment score for an assignm
 max_percentage_score = 3.4 # float | The maximum assessment score for an assignment (completed with assessment) to be included in the results (inclusive) (optional)
 sort_order = ''Desc'' # str | Specifies result set sort order; if not specified, default sort order is descending (Desc) (optional) (default to 'Desc')
 sort_by = 'sort_by_example' # str | Specifies which field to sort the results by, default sort is by recommendedCompletionDate (optional)
-types = ['types_example'] # list[str] | Specifies the module types to filter by (optional)
+types = ['types_example'] # list[str] | Specifies the module types to filter by. Informational, AssessedContent and Assessment are deprecated (optional)
 states = ['states_example'] # list[str] | Specifies the assignment states to filter by (optional)
 expand = ['expand_example'] # list[str] | Specifies the expand option for returning additional information (optional)
 
@@ -399,7 +399,7 @@ except ApiException as e:
 | **max_percentage_score** | **float**| The maximum assessment score for an assignment (completed with assessment) to be included in the results (inclusive) | [optional]  |
 | **sort_order** | **str**| Specifies result set sort order; if not specified, default sort order is descending (Desc) | [optional] [default to &#39;Desc&#39;]<br />**Values**: Asc, Desc |
 | **sort_by** | **str**| Specifies which field to sort the results by, default sort is by recommendedCompletionDate | [optional] <br />**Values**: RecommendedCompletionDate, DateModified |
-| **types** | [**list[str]**](str.html)| Specifies the module types to filter by | [optional] <br />**Values**: Informational, AssessedContent, Assessment, External |
+| **types** | [**list[str]**](str.html)| Specifies the module types to filter by. Informational, AssessedContent and Assessment are deprecated | [optional] <br />**Values**: Informational, AssessedContent, Assessment, External, Native |
 | **states** | [**list[str]**](str.html)| Specifies the assignment states to filter by | [optional] <br />**Values**: Assigned, InProgress, Completed, NotCompleted, InvalidSchedule |
 | **expand** | [**list[str]**](str.html)| Specifies the expand option for returning additional information | [optional] <br />**Values**: ModuleSummary |
 {: class="table table-striped"}
@@ -689,7 +689,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.LearningApi()
 is_archived = False # bool | Archive status (optional) (default to False)
-types = ['types_example'] # list[str] | Specifies the module types. (optional)
+types = ['types_example'] # list[str] | Specifies the module types. Informational, AssessedContent and Assessment are deprecated (optional)
 page_size = 25 # int | Page size (optional) (default to 25)
 page_number = 1 # int | Page number (optional) (default to 1)
 sort_order = ''ascending'' # str | Sort order (optional) (default to 'ascending')
@@ -714,7 +714,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **is_archived** | **bool**| Archive status | [optional] [default to False] |
-| **types** | [**list[str]**](str.html)| Specifies the module types. | [optional] <br />**Values**: Informational, AssessedContent, Assessment, External |
+| **types** | [**list[str]**](str.html)| Specifies the module types. Informational, AssessedContent and Assessment are deprecated | [optional] <br />**Values**: Informational, AssessedContent, Assessment, External, Native |
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **sort_order** | **str**| Sort order | [optional] [default to &#39;ascending&#39;]<br />**Values**: ascending, descending |

@@ -66,6 +66,7 @@ if TYPE_CHECKING:
     from . import UserRoutingLanguage
     from . import UserRoutingSkill
     from . import UserStations
+    from . import WorkPlanBidRanks
 
 class UserMe(object):
     """
@@ -112,6 +113,7 @@ class UserMe(object):
             'locations': 'list[Location]',
             'groups': 'list[Group]',
             'team': 'Team',
+            'work_plan_bid_ranks': 'WorkPlanBidRanks',
             'skills': 'list[UserRoutingSkill]',
             'languages': 'list[UserRoutingLanguage]',
             'acd_auto_answer': 'bool',
@@ -168,6 +170,7 @@ class UserMe(object):
             'locations': 'locations',
             'groups': 'groups',
             'team': 'team',
+            'work_plan_bid_ranks': 'workPlanBidRanks',
             'skills': 'skills',
             'languages': 'languages',
             'acd_auto_answer': 'acdAutoAnswer',
@@ -223,6 +226,7 @@ class UserMe(object):
         self._locations = None
         self._groups = None
         self._team = None
+        self._work_plan_bid_ranks = None
         self._skills = None
         self._languages = None
         self._acd_auto_answer = None
@@ -971,6 +975,30 @@ class UserMe(object):
         
 
         self._team = team
+
+    @property
+    def work_plan_bid_ranks(self) -> 'WorkPlanBidRanks':
+        """
+        Gets the work_plan_bid_ranks of this UserMe.
+        The WFM work plan bid rank settings for the user
+
+        :return: The work_plan_bid_ranks of this UserMe.
+        :rtype: WorkPlanBidRanks
+        """
+        return self._work_plan_bid_ranks
+
+    @work_plan_bid_ranks.setter
+    def work_plan_bid_ranks(self, work_plan_bid_ranks: 'WorkPlanBidRanks') -> None:
+        """
+        Sets the work_plan_bid_ranks of this UserMe.
+        The WFM work plan bid rank settings for the user
+
+        :param work_plan_bid_ranks: The work_plan_bid_ranks of this UserMe.
+        :type: WorkPlanBidRanks
+        """
+        
+
+        self._work_plan_bid_ranks = work_plan_bid_ranks
 
     @property
     def skills(self) -> List['UserRoutingSkill']:

@@ -18,6 +18,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**delete_workforcemanagement_businessunit_timeoffplan**](WorkforceManagementApi.html#delete_workforcemanagement_businessunit_timeoffplan) | Deletes a time-off plan|
 |[**delete_workforcemanagement_businessunit_week_schedule**](WorkforceManagementApi.html#delete_workforcemanagement_businessunit_week_schedule) | Delete a schedule|
 |[**delete_workforcemanagement_businessunit_week_shorttermforecast**](WorkforceManagementApi.html#delete_workforcemanagement_businessunit_week_shorttermforecast) | Delete a short term forecast|
+|[**delete_workforcemanagement_businessunit_workplanbid**](WorkforceManagementApi.html#delete_workforcemanagement_businessunit_workplanbid) | Delete a work plan bid|
+|[**delete_workforcemanagement_businessunit_workplanbid_group**](WorkforceManagementApi.html#delete_workforcemanagement_businessunit_workplanbid_group) | Delete a bid group by bid group Id|
 |[**delete_workforcemanagement_calendar_url_ics**](WorkforceManagementApi.html#delete_workforcemanagement_calendar_url_ics) | Disable generated calendar link for the current user|
 |[**delete_workforcemanagement_managementunit**](WorkforceManagementApi.html#delete_workforcemanagement_managementunit) | Delete management unit|
 |[**delete_workforcemanagement_managementunit_timeofflimit**](WorkforceManagementApi.html#delete_workforcemanagement_managementunit_timeofflimit) | Deletes a time off limit object|
@@ -32,6 +34,13 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_workforcemanagement_agent_adherence_explanation**](WorkforceManagementApi.html#get_workforcemanagement_agent_adherence_explanation) | Get an adherence explanation|
 |[**get_workforcemanagement_agent_managementunit**](WorkforceManagementApi.html#get_workforcemanagement_agent_managementunit) | Get the management unit to which the agent belongs|
 |[**get_workforcemanagement_agents_me_managementunit**](WorkforceManagementApi.html#get_workforcemanagement_agents_me_managementunit) | Get the management unit to which the currently logged in agent belongs|
+|[**get_workforcemanagement_alternativeshifts_offers_job**](WorkforceManagementApi.html#get_workforcemanagement_alternativeshifts_offers_job) | Query the status of an alternative shift offers operation. Only the user who started the operation can query the status|
+|[**get_workforcemanagement_alternativeshifts_offers_search_job**](WorkforceManagementApi.html#get_workforcemanagement_alternativeshifts_offers_search_job) | Query the status of an alternative shift search offers operation. Only the user who started the operation can query the status|
+|[**get_workforcemanagement_alternativeshifts_settings**](WorkforceManagementApi.html#get_workforcemanagement_alternativeshifts_settings) | Get alternative shifts settings from the current logged in agent’s business unit|
+|[**get_workforcemanagement_alternativeshifts_trade**](WorkforceManagementApi.html#get_workforcemanagement_alternativeshifts_trade) | Get my alternative shift trade by trade ID|
+|[**get_workforcemanagement_alternativeshifts_trades**](WorkforceManagementApi.html#get_workforcemanagement_alternativeshifts_trades) | Get a list of my alternative shifts trades|
+|[**get_workforcemanagement_alternativeshifts_trades_job**](WorkforceManagementApi.html#get_workforcemanagement_alternativeshifts_trades_job) | Query the status of an alternative shift trades operation. Only the user who started the operation can query the status|
+|[**get_workforcemanagement_alternativeshifts_trades_state_job**](WorkforceManagementApi.html#get_workforcemanagement_alternativeshifts_trades_state_job) | Query the status of an alternative shift trade state operation. Only the user who started the operation can query the status|
 |[**get_workforcemanagement_businessunit**](WorkforceManagementApi.html#get_workforcemanagement_businessunit) | Get business unit|
 |[**get_workforcemanagement_businessunit_activitycode**](WorkforceManagementApi.html#get_workforcemanagement_businessunit_activitycode) | Get an activity code|
 |[**get_workforcemanagement_businessunit_activitycodes**](WorkforceManagementApi.html#get_workforcemanagement_businessunit_activitycodes) | Get activity codes|
@@ -39,6 +48,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_workforcemanagement_businessunit_activityplan_runs_job**](WorkforceManagementApi.html#get_workforcemanagement_businessunit_activityplan_runs_job) | Gets an activity plan run job|
 |[**get_workforcemanagement_businessunit_activityplans**](WorkforceManagementApi.html#get_workforcemanagement_businessunit_activityplans) | Get activity plans|
 |[**get_workforcemanagement_businessunit_activityplans_jobs**](WorkforceManagementApi.html#get_workforcemanagement_businessunit_activityplans_jobs) | Gets the latest job for all activity plans in the business unit|
+|[**get_workforcemanagement_businessunit_alternativeshifts_settings**](WorkforceManagementApi.html#get_workforcemanagement_businessunit_alternativeshifts_settings) | Get alternative shifts settings for a business unit|
+|[**get_workforcemanagement_businessunit_alternativeshifts_trade**](WorkforceManagementApi.html#get_workforcemanagement_businessunit_alternativeshifts_trade) | Get an alternative shifts trade in a business unit for a given trade ID|
+|[**get_workforcemanagement_businessunit_alternativeshifts_trades_search_job**](WorkforceManagementApi.html#get_workforcemanagement_businessunit_alternativeshifts_trades_search_job) | Query the status of an alternative shift search trade operation. Only the user who started the operation can query the status|
 |[**get_workforcemanagement_businessunit_intraday_planninggroups**](WorkforceManagementApi.html#get_workforcemanagement_businessunit_intraday_planninggroups) | Get intraday planning groups for the given date|
 |[**get_workforcemanagement_businessunit_managementunits**](WorkforceManagementApi.html#get_workforcemanagement_businessunit_managementunits) | Get all authorized management units in the business unit|
 |[**get_workforcemanagement_businessunit_planninggroup**](WorkforceManagementApi.html#get_workforcemanagement_businessunit_planninggroup) | Get a planning group|
@@ -68,6 +80,11 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_workforcemanagement_businessunit_week_shorttermforecast_planninggroups**](WorkforceManagementApi.html#get_workforcemanagement_businessunit_week_shorttermforecast_planninggroups) | Gets the forecast planning group snapshot|
 |[**get_workforcemanagement_businessunit_week_shorttermforecast_staffingrequirement**](WorkforceManagementApi.html#get_workforcemanagement_businessunit_week_shorttermforecast_staffingrequirement) | Get the staffing requirement by planning group for a forecast|
 |[**get_workforcemanagement_businessunit_week_shorttermforecasts**](WorkforceManagementApi.html#get_workforcemanagement_businessunit_week_shorttermforecasts) | Get short term forecasts|
+|[**get_workforcemanagement_businessunit_workplanbid**](WorkforceManagementApi.html#get_workforcemanagement_businessunit_workplanbid) | Get a work plan bid|
+|[**get_workforcemanagement_businessunit_workplanbid_group**](WorkforceManagementApi.html#get_workforcemanagement_businessunit_workplanbid_group) | Get a bid group by bid group Id|
+|[**get_workforcemanagement_businessunit_workplanbid_group_preferences**](WorkforceManagementApi.html#get_workforcemanagement_businessunit_workplanbid_group_preferences) | Gets the work plan preferences of all the agents in the work plan bid group|
+|[**get_workforcemanagement_businessunit_workplanbid_groups_summary**](WorkforceManagementApi.html#get_workforcemanagement_businessunit_workplanbid_groups_summary) | Get summary of bid groups that belong to a work plan bid|
+|[**get_workforcemanagement_businessunit_workplanbids**](WorkforceManagementApi.html#get_workforcemanagement_businessunit_workplanbids) | Get list of work plan bids|
 |[**get_workforcemanagement_businessunits**](WorkforceManagementApi.html#get_workforcemanagement_businessunits) | Get business units|
 |[**get_workforcemanagement_businessunits_divisionviews**](WorkforceManagementApi.html#get_workforcemanagement_businessunits_divisionviews) | Get business units across divisions|
 |[**get_workforcemanagement_calendar_data_ics**](WorkforceManagementApi.html#get_workforcemanagement_calendar_data_ics) | Get ics formatted calendar based on shareable link|
@@ -108,15 +125,25 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_workforcemanagement_timeoffrequest**](WorkforceManagementApi.html#get_workforcemanagement_timeoffrequest) | Get a time off request for the current user|
 |[**get_workforcemanagement_timeoffrequest_waitlistpositions**](WorkforceManagementApi.html#get_workforcemanagement_timeoffrequest_waitlistpositions) | Get the daily waitlist positions of a time off request for the current user|
 |[**get_workforcemanagement_timeoffrequests**](WorkforceManagementApi.html#get_workforcemanagement_timeoffrequests) | Get a list of time off requests for the current user|
+|[**get_workforcemanagement_user_workplanbidranks**](WorkforceManagementApi.html#get_workforcemanagement_user_workplanbidranks) | Get work plan bid ranks for a user|
+|[**get_workforcemanagement_workplanbid_preferences**](WorkforceManagementApi.html#get_workforcemanagement_workplanbid_preferences) | Gets an agent&#39;s work plan bidding preference|
+|[**get_workforcemanagement_workplanbid_workplans**](WorkforceManagementApi.html#get_workforcemanagement_workplanbid_workplans) | Gets an agent&#39;s work plans for a bid|
+|[**get_workforcemanagement_workplanbids**](WorkforceManagementApi.html#get_workforcemanagement_workplanbids) | Gets the list of work plan bids that belong to an agent|
 |[**patch_workforcemanagement_agent_adherence_explanation**](WorkforceManagementApi.html#patch_workforcemanagement_agent_adherence_explanation) | Update an adherence explanation|
+|[**patch_workforcemanagement_alternativeshifts_trade**](WorkforceManagementApi.html#patch_workforcemanagement_alternativeshifts_trade) | Update my alternative shifts trade by trade ID|
+|[**patch_workforcemanagement_alternativeshifts_trades_state_jobs**](WorkforceManagementApi.html#patch_workforcemanagement_alternativeshifts_trades_state_jobs) | Bulk update alternative shift trade states|
 |[**patch_workforcemanagement_businessunit**](WorkforceManagementApi.html#patch_workforcemanagement_businessunit) | Update business unit|
 |[**patch_workforcemanagement_businessunit_activitycode**](WorkforceManagementApi.html#patch_workforcemanagement_businessunit_activitycode) | Update an activity code|
 |[**patch_workforcemanagement_businessunit_activityplan**](WorkforceManagementApi.html#patch_workforcemanagement_businessunit_activityplan) | Update an activity plan|
+|[**patch_workforcemanagement_businessunit_alternativeshifts_settings**](WorkforceManagementApi.html#patch_workforcemanagement_businessunit_alternativeshifts_settings) | Update alternative shifts settings for a business unit|
 |[**patch_workforcemanagement_businessunit_planninggroup**](WorkforceManagementApi.html#patch_workforcemanagement_businessunit_planninggroup) | Updates the planning group|
 |[**patch_workforcemanagement_businessunit_scheduling_run**](WorkforceManagementApi.html#patch_workforcemanagement_businessunit_scheduling_run) | Mark a schedule run as applied|
 |[**patch_workforcemanagement_businessunit_servicegoaltemplate**](WorkforceManagementApi.html#patch_workforcemanagement_businessunit_servicegoaltemplate) | Updates a service goal template|
 |[**patch_workforcemanagement_businessunit_staffinggroup**](WorkforceManagementApi.html#patch_workforcemanagement_businessunit_staffinggroup) | Updates a staffing group|
 |[**patch_workforcemanagement_businessunit_timeoffplan**](WorkforceManagementApi.html#patch_workforcemanagement_businessunit_timeoffplan) | Updates a time-off plan|
+|[**patch_workforcemanagement_businessunit_workplanbid**](WorkforceManagementApi.html#patch_workforcemanagement_businessunit_workplanbid) | Update work plan bid|
+|[**patch_workforcemanagement_businessunit_workplanbid_group**](WorkforceManagementApi.html#patch_workforcemanagement_businessunit_workplanbid_group) | Update a bid group by bid group Id|
+|[**patch_workforcemanagement_businessunit_workplanbid_group_preferences**](WorkforceManagementApi.html#patch_workforcemanagement_businessunit_workplanbid_group_preferences) | Overrides the assigned work plan for the specified agents|
 |[**patch_workforcemanagement_managementunit**](WorkforceManagementApi.html#patch_workforcemanagement_managementunit) | Update the requested management unit|
 |[**patch_workforcemanagement_managementunit_agents**](WorkforceManagementApi.html#patch_workforcemanagement_managementunit_agents) | Update agent configurations|
 |[**patch_workforcemanagement_managementunit_timeofflimit**](WorkforceManagementApi.html#patch_workforcemanagement_managementunit_timeofflimit) | Updates a time off limit object.|
@@ -127,6 +154,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**patch_workforcemanagement_managementunit_workplan**](WorkforceManagementApi.html#patch_workforcemanagement_managementunit_workplan) | Update a work plan|
 |[**patch_workforcemanagement_managementunit_workplanrotation**](WorkforceManagementApi.html#patch_workforcemanagement_managementunit_workplanrotation) | Update a work plan rotation|
 |[**patch_workforcemanagement_timeoffrequest**](WorkforceManagementApi.html#patch_workforcemanagement_timeoffrequest) | Update a time off request for the current user|
+|[**patch_workforcemanagement_user_workplanbidranks**](WorkforceManagementApi.html#patch_workforcemanagement_user_workplanbidranks) | Update work plan bid ranks for a user|
+|[**patch_workforcemanagement_users_workplanbidranks_bulk**](WorkforceManagementApi.html#patch_workforcemanagement_users_workplanbidranks_bulk) | Update bulk work plan bid ranks on users. Max 50 users can be updated at a time.|
+|[**patch_workforcemanagement_workplanbid_preferences**](WorkforceManagementApi.html#patch_workforcemanagement_workplanbid_preferences) | Update an agent&#39;s work plan bidding preference|
 |[**post_workforcemanagement_adherence_explanations**](WorkforceManagementApi.html#post_workforcemanagement_adherence_explanations) | Submit an adherence explanation for the current user|
 |[**post_workforcemanagement_adherence_explanations_query**](WorkforceManagementApi.html#post_workforcemanagement_adherence_explanations_query) | Query adherence explanations for the current user|
 |[**post_workforcemanagement_adherence_historical**](WorkforceManagementApi.html#post_workforcemanagement_adherence_historical) | Deprecated. Use bulk routes instead (/adherence/historical/bulk)|
@@ -137,11 +167,15 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_workforcemanagement_agents_integrations_hris_query**](WorkforceManagementApi.html#post_workforcemanagement_agents_integrations_hris_query) | Query integrations for agents|
 |[**post_workforcemanagement_agents_me_possibleworkshifts**](WorkforceManagementApi.html#post_workforcemanagement_agents_me_possibleworkshifts) | Get agent possible work shifts for requested time frame|
 |[**post_workforcemanagement_agentschedules_mine**](WorkforceManagementApi.html#post_workforcemanagement_agentschedules_mine) | Get published schedule for the current user|
+|[**post_workforcemanagement_alternativeshifts_offers_jobs**](WorkforceManagementApi.html#post_workforcemanagement_alternativeshifts_offers_jobs) | Request a list of alternative shift offers for a given schedule|
+|[**post_workforcemanagement_alternativeshifts_offers_search_jobs**](WorkforceManagementApi.html#post_workforcemanagement_alternativeshifts_offers_search_jobs) | Request a search of alternative shift offers for a given shift|
+|[**post_workforcemanagement_alternativeshifts_trades**](WorkforceManagementApi.html#post_workforcemanagement_alternativeshifts_trades) | Create my alternative shift trade using an existing offer&#39;s jobId|
 |[**post_workforcemanagement_businessunit_activitycodes**](WorkforceManagementApi.html#post_workforcemanagement_businessunit_activitycodes) | Create a new activity code|
 |[**post_workforcemanagement_businessunit_activityplan_runs_jobs**](WorkforceManagementApi.html#post_workforcemanagement_businessunit_activityplan_runs_jobs) | Run an activity plan manually|
 |[**post_workforcemanagement_businessunit_activityplans**](WorkforceManagementApi.html#post_workforcemanagement_businessunit_activityplans) | Create an activity plan|
 |[**post_workforcemanagement_businessunit_adherence_explanations_query**](WorkforceManagementApi.html#post_workforcemanagement_businessunit_adherence_explanations_query) | Query adherence explanations across an entire business unit for the requested period|
 |[**post_workforcemanagement_businessunit_agentschedules_search**](WorkforceManagementApi.html#post_workforcemanagement_businessunit_agentschedules_search) | Search published schedules|
+|[**post_workforcemanagement_businessunit_alternativeshifts_trades_search**](WorkforceManagementApi.html#post_workforcemanagement_businessunit_alternativeshifts_trades_search) | List alternative shifts trades for a given management unit or agent|
 |[**post_workforcemanagement_businessunit_intraday**](WorkforceManagementApi.html#post_workforcemanagement_businessunit_intraday) | Get intraday data for the given date for the requested planningGroupIds|
 |[**post_workforcemanagement_businessunit_planninggroups**](WorkforceManagementApi.html#post_workforcemanagement_businessunit_planninggroups) | Adds a new planning group|
 |[**post_workforcemanagement_businessunit_servicegoaltemplates**](WorkforceManagementApi.html#post_workforcemanagement_businessunit_servicegoaltemplates) | Adds a new service goal template|
@@ -165,6 +199,9 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_workforcemanagement_businessunit_week_shorttermforecasts_generate**](WorkforceManagementApi.html#post_workforcemanagement_businessunit_week_shorttermforecasts_generate) | Generate a short term forecast|
 |[**post_workforcemanagement_businessunit_week_shorttermforecasts_import**](WorkforceManagementApi.html#post_workforcemanagement_businessunit_week_shorttermforecasts_import) | Starts importing the uploaded short term forecast|
 |[**post_workforcemanagement_businessunit_week_shorttermforecasts_import_uploadurl**](WorkforceManagementApi.html#post_workforcemanagement_businessunit_week_shorttermforecasts_import_uploadurl) | Creates a signed upload URL for importing a short term forecast|
+|[**post_workforcemanagement_businessunit_workplanbid_copy**](WorkforceManagementApi.html#post_workforcemanagement_businessunit_workplanbid_copy) | Copy a work plan bid|
+|[**post_workforcemanagement_businessunit_workplanbid_groups**](WorkforceManagementApi.html#post_workforcemanagement_businessunit_workplanbid_groups) | Add a bid group in a given work plan bid|
+|[**post_workforcemanagement_businessunit_workplanbids**](WorkforceManagementApi.html#post_workforcemanagement_businessunit_workplanbids) | Create a new work plan bid|
 |[**post_workforcemanagement_businessunits**](WorkforceManagementApi.html#post_workforcemanagement_businessunits) | Add a new business unit|
 |[**post_workforcemanagement_calendar_url_ics**](WorkforceManagementApi.html#post_workforcemanagement_calendar_url_ics) | Create a newly generated calendar link for the current user; if the current user has previously generated one, the generated link will be returned|
 |[**post_workforcemanagement_historicaldata_deletejob**](WorkforceManagementApi.html#post_workforcemanagement_historicaldata_deletejob) | Delete the entries of the historical data imports in the organization|
@@ -710,6 +747,108 @@ except ApiException as e:
 | **business_unit_id** | **str**| The ID of the business unit to which the forecast belongs |  |
 | **week_date_id** | **date**| The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
 | **forecast_id** | **str**| The ID of the forecast |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
+
+<a name="delete_workforcemanagement_businessunit_workplanbid"></a>
+
+##  delete_workforcemanagement_businessunit_workplanbid(business_unit_id, bid_id)
+
+
+
+Delete a work plan bid
+
+Wraps DELETE /api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids/{bidId} 
+
+Requires ANY permissions: 
+
+* wfm:workPlanBid:delete
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+bid_id = 'bid_id_example' # str | The ID of the work plan bid
+
+try:
+    # Delete a work plan bid
+    api_instance.delete_workforcemanagement_businessunit_workplanbid(business_unit_id, bid_id)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->delete_workforcemanagement_businessunit_workplanbid: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **bid_id** | **str**| The ID of the work plan bid |  |
+{: class="table table-striped"}
+
+### Return type
+
+void (empty response body)
+
+<a name="delete_workforcemanagement_businessunit_workplanbid_group"></a>
+
+##  delete_workforcemanagement_businessunit_workplanbid_group(business_unit_id, bid_id, bid_group_id)
+
+
+
+Delete a bid group by bid group Id
+
+Wraps DELETE /api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids/{bidId}/groups/{bidGroupId} 
+
+Requires ANY permissions: 
+
+* wfm:workPlanBidGroup:delete
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+bid_id = 'bid_id_example' # str | The work plan bid id of the bid groups
+bid_group_id = 'bid_group_id_example' # str | Work Plan Bid Group id
+
+try:
+    # Delete a bid group by bid group Id
+    api_instance.delete_workforcemanagement_businessunit_workplanbid_group(business_unit_id, bid_id, bid_group_id)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->delete_workforcemanagement_businessunit_workplanbid_group: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **bid_id** | **str**| The work plan bid id of the bid groups |  |
+| **bid_group_id** | **str**| Work Plan Bid Group id |  |
 {: class="table table-striped"}
 
 ### Return type
@@ -1465,6 +1604,353 @@ This endpoint does not need any parameters.
 
 [**AgentManagementUnitReference**](AgentManagementUnitReference.html)
 
+<a name="get_workforcemanagement_alternativeshifts_offers_job"></a>
+
+## [**AlternativeShiftJobResponse**](AlternativeShiftJobResponse.html) get_workforcemanagement_alternativeshifts_offers_job(job_id)
+
+
+
+Query the status of an alternative shift offers operation. Only the user who started the operation can query the status
+
+Job details are only retained if the initial request returned a 202 ACCEPTED response
+
+Wraps GET /api/v2/workforcemanagement/alternativeshifts/offers/jobs/{jobId} 
+
+Requires ANY permissions: 
+
+* wfm:agentAlternativeShift:submit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+job_id = 'job_id_example' # str | The ID of the job
+
+try:
+    # Query the status of an alternative shift offers operation. Only the user who started the operation can query the status
+    api_response = api_instance.get_workforcemanagement_alternativeshifts_offers_job(job_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_alternativeshifts_offers_job: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **job_id** | **str**| The ID of the job |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**AlternativeShiftJobResponse**](AlternativeShiftJobResponse.html)
+
+<a name="get_workforcemanagement_alternativeshifts_offers_search_job"></a>
+
+## [**AlternativeShiftJobResponse**](AlternativeShiftJobResponse.html) get_workforcemanagement_alternativeshifts_offers_search_job(job_id)
+
+
+
+Query the status of an alternative shift search offers operation. Only the user who started the operation can query the status
+
+Job details are only retained if the initial request returned a 202 ACCEPTED response
+
+Wraps GET /api/v2/workforcemanagement/alternativeshifts/offers/search/jobs/{jobId} 
+
+Requires ANY permissions: 
+
+* wfm:agentAlternativeShift:submit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+job_id = 'job_id_example' # str | The ID of the job
+
+try:
+    # Query the status of an alternative shift search offers operation. Only the user who started the operation can query the status
+    api_response = api_instance.get_workforcemanagement_alternativeshifts_offers_search_job(job_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_alternativeshifts_offers_search_job: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **job_id** | **str**| The ID of the job |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**AlternativeShiftJobResponse**](AlternativeShiftJobResponse.html)
+
+<a name="get_workforcemanagement_alternativeshifts_settings"></a>
+
+## [**AlternativeShiftBuSettingsResponse**](AlternativeShiftBuSettingsResponse.html) get_workforcemanagement_alternativeshifts_settings()
+
+
+
+Get alternative shifts settings from the current logged in agent’s business unit
+
+Wraps GET /api/v2/workforcemanagement/alternativeshifts/settings 
+
+Requires ANY permissions: 
+
+* wfm:agentAlternativeShift:submit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+
+try:
+    # Get alternative shifts settings from the current logged in agent’s business unit
+    api_response = api_instance.get_workforcemanagement_alternativeshifts_settings()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_alternativeshifts_settings: %s\n" % e)
+```
+
+### Parameters
+
+This endpoint does not need any parameters.
+
+
+### Return type
+
+[**AlternativeShiftBuSettingsResponse**](AlternativeShiftBuSettingsResponse.html)
+
+<a name="get_workforcemanagement_alternativeshifts_trade"></a>
+
+## [**AlternativeShiftTradeResponse**](AlternativeShiftTradeResponse.html) get_workforcemanagement_alternativeshifts_trade(trade_id)
+
+
+
+Get my alternative shift trade by trade ID
+
+Wraps GET /api/v2/workforcemanagement/alternativeshifts/trades/{tradeId} 
+
+Requires ANY permissions: 
+
+* wfm:agentAlternativeShift:submit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+trade_id = 'trade_id_example' # str | The ID of the alternative shift trade
+
+try:
+    # Get my alternative shift trade by trade ID
+    api_response = api_instance.get_workforcemanagement_alternativeshifts_trade(trade_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_alternativeshifts_trade: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **trade_id** | **str**| The ID of the alternative shift trade |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**AlternativeShiftTradeResponse**](AlternativeShiftTradeResponse.html)
+
+<a name="get_workforcemanagement_alternativeshifts_trades"></a>
+
+## [**ListAlternativeShiftTradesResponse**](ListAlternativeShiftTradesResponse.html) get_workforcemanagement_alternativeshifts_trades(force_async=force_async)
+
+
+
+Get a list of my alternative shifts trades
+
+Wraps GET /api/v2/workforcemanagement/alternativeshifts/trades 
+
+Requires ANY permissions: 
+
+* wfm:agentAlternativeShift:submit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+force_async = True # bool | Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes (optional)
+
+try:
+    # Get a list of my alternative shifts trades
+    api_response = api_instance.get_workforcemanagement_alternativeshifts_trades(force_async=force_async)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_alternativeshifts_trades: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **force_async** | **bool**| Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**ListAlternativeShiftTradesResponse**](ListAlternativeShiftTradesResponse.html)
+
+<a name="get_workforcemanagement_alternativeshifts_trades_job"></a>
+
+## [**AlternativeShiftJobResponse**](AlternativeShiftJobResponse.html) get_workforcemanagement_alternativeshifts_trades_job(job_id)
+
+
+
+Query the status of an alternative shift trades operation. Only the user who started the operation can query the status
+
+Job details are only retained if the initial request returned a 202 ACCEPTED response
+
+Wraps GET /api/v2/workforcemanagement/alternativeshifts/trades/jobs/{jobId} 
+
+Requires ANY permissions: 
+
+* wfm:agentAlternativeShift:submit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+job_id = 'job_id_example' # str | The ID of the job
+
+try:
+    # Query the status of an alternative shift trades operation. Only the user who started the operation can query the status
+    api_response = api_instance.get_workforcemanagement_alternativeshifts_trades_job(job_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_alternativeshifts_trades_job: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **job_id** | **str**| The ID of the job |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**AlternativeShiftJobResponse**](AlternativeShiftJobResponse.html)
+
+<a name="get_workforcemanagement_alternativeshifts_trades_state_job"></a>
+
+## [**AlternativeShiftJobResponse**](AlternativeShiftJobResponse.html) get_workforcemanagement_alternativeshifts_trades_state_job(job_id)
+
+
+
+Query the status of an alternative shift trade state operation. Only the user who started the operation can query the status
+
+Job details are only retained if the initial request returned a 202 ACCEPTED response
+
+Wraps GET /api/v2/workforcemanagement/alternativeshifts/trades/state/jobs/{jobId} 
+
+Requires ANY permissions: 
+
+* wfm:alternativeShift:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+job_id = 'job_id_example' # str | The ID of the job
+
+try:
+    # Query the status of an alternative shift trade state operation. Only the user who started the operation can query the status
+    api_response = api_instance.get_workforcemanagement_alternativeshifts_trades_state_job(job_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_alternativeshifts_trades_state_job: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **job_id** | **str**| The ID of the job |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**AlternativeShiftJobResponse**](AlternativeShiftJobResponse.html)
+
 <a name="get_workforcemanagement_businessunit"></a>
 
 ## [**BusinessUnitResponse**](BusinessUnitResponse.html) get_workforcemanagement_businessunit(business_unit_id, expand=expand)
@@ -1959,6 +2445,159 @@ except ApiException as e:
 ### Return type
 
 [**ActivityPlanJobListing**](ActivityPlanJobListing.html)
+
+<a name="get_workforcemanagement_businessunit_alternativeshifts_settings"></a>
+
+## [**AlternativeShiftBuSettingsResponse**](AlternativeShiftBuSettingsResponse.html) get_workforcemanagement_businessunit_alternativeshifts_settings(business_unit_id)
+
+
+
+Get alternative shifts settings for a business unit
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/alternativeshifts/settings 
+
+Requires ANY permissions: 
+
+* wfm:businessUnit:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+
+try:
+    # Get alternative shifts settings for a business unit
+    api_response = api_instance.get_workforcemanagement_businessunit_alternativeshifts_settings(business_unit_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_alternativeshifts_settings: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**AlternativeShiftBuSettingsResponse**](AlternativeShiftBuSettingsResponse.html)
+
+<a name="get_workforcemanagement_businessunit_alternativeshifts_trade"></a>
+
+## [**AlternativeShiftTradeResponse**](AlternativeShiftTradeResponse.html) get_workforcemanagement_businessunit_alternativeshifts_trade(business_unit_id, trade_id)
+
+
+
+Get an alternative shifts trade in a business unit for a given trade ID
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/alternativeshifts/trades/{tradeId} 
+
+Requires ANY permissions: 
+
+* wfm:alternativeShift:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+trade_id = 'trade_id_example' # str | The ID of the alternative shift trade
+
+try:
+    # Get an alternative shifts trade in a business unit for a given trade ID
+    api_response = api_instance.get_workforcemanagement_businessunit_alternativeshifts_trade(business_unit_id, trade_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_alternativeshifts_trade: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **trade_id** | **str**| The ID of the alternative shift trade |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**AlternativeShiftTradeResponse**](AlternativeShiftTradeResponse.html)
+
+<a name="get_workforcemanagement_businessunit_alternativeshifts_trades_search_job"></a>
+
+## [**BuAlternativeShiftJobResponse**](BuAlternativeShiftJobResponse.html) get_workforcemanagement_businessunit_alternativeshifts_trades_search_job(business_unit_id, job_id)
+
+
+
+Query the status of an alternative shift search trade operation. Only the user who started the operation can query the status
+
+Job details are only retained if the initial request returned a 202 ACCEPTED response
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/alternativeshifts/trades/search/jobs/{jobId} 
+
+Requires ANY permissions: 
+
+* wfm:alternativeShift:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+job_id = 'job_id_example' # str | The ID of the job
+
+try:
+    # Query the status of an alternative shift search trade operation. Only the user who started the operation can query the status
+    api_response = api_instance.get_workforcemanagement_businessunit_alternativeshifts_trades_search_job(business_unit_id, job_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_alternativeshifts_trades_search_job: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **job_id** | **str**| The ID of the job |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**BuAlternativeShiftJobResponse**](BuAlternativeShiftJobResponse.html)
 
 <a name="get_workforcemanagement_businessunit_intraday_planninggroups"></a>
 
@@ -3520,6 +4159,263 @@ except ApiException as e:
 ### Return type
 
 [**BuShortTermForecastListing**](BuShortTermForecastListing.html)
+
+<a name="get_workforcemanagement_businessunit_workplanbid"></a>
+
+## [**WorkPlanBid**](WorkPlanBid.html) get_workforcemanagement_businessunit_workplanbid(business_unit_id, bid_id)
+
+
+
+Get a work plan bid
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids/{bidId} 
+
+Requires ANY permissions: 
+
+* wfm:workPlanBid:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+bid_id = 'bid_id_example' # str | The id of the workplanbid
+
+try:
+    # Get a work plan bid
+    api_response = api_instance.get_workforcemanagement_businessunit_workplanbid(business_unit_id, bid_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_workplanbid: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **bid_id** | **str**| The id of the workplanbid |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**WorkPlanBid**](WorkPlanBid.html)
+
+<a name="get_workforcemanagement_businessunit_workplanbid_group"></a>
+
+## [**WorkPlanBidGroupResponse**](WorkPlanBidGroupResponse.html) get_workforcemanagement_businessunit_workplanbid_group(business_unit_id, bid_id, bid_group_id)
+
+
+
+Get a bid group by bid group Id
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids/{bidId}/groups/{bidGroupId} 
+
+Requires ANY permissions: 
+
+* wfm:workPlanBidGroup:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+bid_id = 'bid_id_example' # str | The work plan bid id of the bid groups
+bid_group_id = 'bid_group_id_example' # str | Work Plan Bid Group id
+
+try:
+    # Get a bid group by bid group Id
+    api_response = api_instance.get_workforcemanagement_businessunit_workplanbid_group(business_unit_id, bid_id, bid_group_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_workplanbid_group: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **bid_id** | **str**| The work plan bid id of the bid groups |  |
+| **bid_group_id** | **str**| Work Plan Bid Group id |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**WorkPlanBidGroupResponse**](WorkPlanBidGroupResponse.html)
+
+<a name="get_workforcemanagement_businessunit_workplanbid_group_preferences"></a>
+
+## [**AdminAgentWorkPlanPreferenceResponse**](AdminAgentWorkPlanPreferenceResponse.html) get_workforcemanagement_businessunit_workplanbid_group_preferences(business_unit_id, bid_id, bid_group_id)
+
+
+
+Gets the work plan preferences of all the agents in the work plan bid group
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids/{bidId}/groups/{bidGroupId}/preferences 
+
+Requires ANY permissions: 
+
+* wfm:workPlanBidGroup:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+bid_id = 'bid_id_example' # str | The work plan bid id of the bid groups
+bid_group_id = 'bid_group_id_example' # str | The ID of the work plan bid group
+
+try:
+    # Gets the work plan preferences of all the agents in the work plan bid group
+    api_response = api_instance.get_workforcemanagement_businessunit_workplanbid_group_preferences(business_unit_id, bid_id, bid_group_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_workplanbid_group_preferences: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **bid_id** | **str**| The work plan bid id of the bid groups |  |
+| **bid_group_id** | **str**| The ID of the work plan bid group |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**AdminAgentWorkPlanPreferenceResponse**](AdminAgentWorkPlanPreferenceResponse.html)
+
+<a name="get_workforcemanagement_businessunit_workplanbid_groups_summary"></a>
+
+## [**WorkPlanBidGroupSummaryList**](WorkPlanBidGroupSummaryList.html) get_workforcemanagement_businessunit_workplanbid_groups_summary(business_unit_id, bid_id)
+
+
+
+Get summary of bid groups that belong to a work plan bid
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids/{bidId}/groups/summary 
+
+Requires ANY permissions: 
+
+* wfm:workPlanBidGroup:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+bid_id = 'bid_id_example' # str | The work plan bid id of the bid groups
+
+try:
+    # Get summary of bid groups that belong to a work plan bid
+    api_response = api_instance.get_workforcemanagement_businessunit_workplanbid_groups_summary(business_unit_id, bid_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_workplanbid_groups_summary: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **bid_id** | **str**| The work plan bid id of the bid groups |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**WorkPlanBidGroupSummaryList**](WorkPlanBidGroupSummaryList.html)
+
+<a name="get_workforcemanagement_businessunit_workplanbids"></a>
+
+## [**WorkPlanBidListResponse**](WorkPlanBidListResponse.html) get_workforcemanagement_businessunit_workplanbids(business_unit_id)
+
+
+
+Get list of work plan bids
+
+Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids 
+
+Requires ANY permissions: 
+
+* wfm:workPlanBid:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+
+try:
+    # Get list of work plan bids
+    api_response = api_instance.get_workforcemanagement_businessunit_workplanbids(business_unit_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_businessunit_workplanbids: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**WorkPlanBidListResponse**](WorkPlanBidListResponse.html)
 
 <a name="get_workforcemanagement_businessunits"></a>
 
@@ -5659,6 +6555,198 @@ except ApiException as e:
 
 [**TimeOffRequestList**](TimeOffRequestList.html)
 
+<a name="get_workforcemanagement_user_workplanbidranks"></a>
+
+## [**WorkPlanBidRanks**](WorkPlanBidRanks.html) get_workforcemanagement_user_workplanbidranks(user_id)
+
+
+
+Get work plan bid ranks for a user
+
+Wraps GET /api/v2/workforcemanagement/users/{userId}/workplanbidranks 
+
+Requires ANY permissions: 
+
+* wfm:workPlanBid:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+user_id = 'user_id_example' # str | The userId to whom the work plan bid ranks apply.
+
+try:
+    # Get work plan bid ranks for a user
+    api_response = api_instance.get_workforcemanagement_user_workplanbidranks(user_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_user_workplanbidranks: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **user_id** | **str**| The userId to whom the work plan bid ranks apply. |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**WorkPlanBidRanks**](WorkPlanBidRanks.html)
+
+<a name="get_workforcemanagement_workplanbid_preferences"></a>
+
+## [**AgentWorkPlanBiddingPreferenceResponse**](AgentWorkPlanBiddingPreferenceResponse.html) get_workforcemanagement_workplanbid_preferences(bid_id)
+
+
+
+Gets an agent's work plan bidding preference
+
+Wraps GET /api/v2/workforcemanagement/workplanbids/{bidId}/preferences 
+
+Requires ANY permissions: 
+
+* wfm:agentWorkPlanBid:submit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+bid_id = 'bid_id_example' # str | The ID of the work plan bid
+
+try:
+    # Gets an agent's work plan bidding preference
+    api_response = api_instance.get_workforcemanagement_workplanbid_preferences(bid_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_workplanbid_preferences: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **bid_id** | **str**| The ID of the work plan bid |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**AgentWorkPlanBiddingPreferenceResponse**](AgentWorkPlanBiddingPreferenceResponse.html)
+
+<a name="get_workforcemanagement_workplanbid_workplans"></a>
+
+## [**AgentWorkPlanListResponse**](AgentWorkPlanListResponse.html) get_workforcemanagement_workplanbid_workplans(bid_id)
+
+
+
+Gets an agent's work plans for a bid
+
+Wraps GET /api/v2/workforcemanagement/workplanbids/{bidId}/workplans 
+
+Requires ANY permissions: 
+
+* wfm:agentWorkPlanBid:submit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+bid_id = 'bid_id_example' # str | The ID of the work plan bid
+
+try:
+    # Gets an agent's work plans for a bid
+    api_response = api_instance.get_workforcemanagement_workplanbid_workplans(bid_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_workplanbid_workplans: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **bid_id** | **str**| The ID of the work plan bid |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**AgentWorkPlanListResponse**](AgentWorkPlanListResponse.html)
+
+<a name="get_workforcemanagement_workplanbids"></a>
+
+## [**AgentWorkPlanBids**](AgentWorkPlanBids.html) get_workforcemanagement_workplanbids()
+
+
+
+Gets the list of work plan bids that belong to an agent
+
+Wraps GET /api/v2/workforcemanagement/workplanbids 
+
+Requires ANY permissions: 
+
+* wfm:agentWorkPlanBid:submit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+
+try:
+    # Gets the list of work plan bids that belong to an agent
+    api_response = api_instance.get_workforcemanagement_workplanbids()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->get_workforcemanagement_workplanbids: %s\n" % e)
+```
+
+### Parameters
+
+This endpoint does not need any parameters.
+
+
+### Return type
+
+[**AgentWorkPlanBids**](AgentWorkPlanBids.html)
+
 <a name="patch_workforcemanagement_agent_adherence_explanation"></a>
 
 ## [**AdherenceExplanationAsyncResponse**](AdherenceExplanationAsyncResponse.html) patch_workforcemanagement_agent_adherence_explanation(agent_id, explanation_id, body)
@@ -5711,6 +6799,106 @@ except ApiException as e:
 ### Return type
 
 [**AdherenceExplanationAsyncResponse**](AdherenceExplanationAsyncResponse.html)
+
+<a name="patch_workforcemanagement_alternativeshifts_trade"></a>
+
+## [**AlternativeShiftTradeResponse**](AlternativeShiftTradeResponse.html) patch_workforcemanagement_alternativeshifts_trade(trade_id, body=body)
+
+
+
+Update my alternative shifts trade by trade ID
+
+Wraps PATCH /api/v2/workforcemanagement/alternativeshifts/trades/{tradeId} 
+
+Requires ANY permissions: 
+
+* wfm:agentAlternativeShift:submit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+trade_id = 'trade_id_example' # str | The ID of the alternative shift trade
+body = PureCloudPlatformClientV2.AgentUpdateAlternativeShiftTradeRequest() # AgentUpdateAlternativeShiftTradeRequest | body (optional)
+
+try:
+    # Update my alternative shifts trade by trade ID
+    api_response = api_instance.patch_workforcemanagement_alternativeshifts_trade(trade_id, body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->patch_workforcemanagement_alternativeshifts_trade: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **trade_id** | **str**| The ID of the alternative shift trade |  |
+| **body** | [**AgentUpdateAlternativeShiftTradeRequest**](AgentUpdateAlternativeShiftTradeRequest.html)| body | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**AlternativeShiftTradeResponse**](AlternativeShiftTradeResponse.html)
+
+<a name="patch_workforcemanagement_alternativeshifts_trades_state_jobs"></a>
+
+## [**AlternativeShiftAsyncResponse**](AlternativeShiftAsyncResponse.html) patch_workforcemanagement_alternativeshifts_trades_state_jobs(body)
+
+
+
+Bulk update alternative shift trade states
+
+Wraps PATCH /api/v2/workforcemanagement/alternativeshifts/trades/state/jobs 
+
+Requires ANY permissions: 
+
+* wfm:alternativeShift:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+body = PureCloudPlatformClientV2.AdminBulkUpdateAlternativeShiftTradeStateRequest() # AdminBulkUpdateAlternativeShiftTradeStateRequest | The request body
+
+try:
+    # Bulk update alternative shift trade states
+    api_response = api_instance.patch_workforcemanagement_alternativeshifts_trades_state_jobs(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->patch_workforcemanagement_alternativeshifts_trades_state_jobs: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**AdminBulkUpdateAlternativeShiftTradeStateRequest**](AdminBulkUpdateAlternativeShiftTradeStateRequest.html)| The request body |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**AlternativeShiftAsyncResponse**](AlternativeShiftAsyncResponse.html)
 
 <a name="patch_workforcemanagement_businessunit"></a>
 
@@ -5872,6 +7060,57 @@ except ApiException as e:
 ### Return type
 
 [**ActivityPlanResponse**](ActivityPlanResponse.html)
+
+<a name="patch_workforcemanagement_businessunit_alternativeshifts_settings"></a>
+
+## [**AlternativeShiftBuSettingsResponse**](AlternativeShiftBuSettingsResponse.html) patch_workforcemanagement_businessunit_alternativeshifts_settings(business_unit_id, body=body)
+
+
+
+Update alternative shifts settings for a business unit
+
+Wraps PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}/alternativeshifts/settings 
+
+Requires ANY permissions: 
+
+* wfm:businessUnit:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+body = PureCloudPlatformClientV2.UpdateAlternativeShiftBuSettingsRequest() # UpdateAlternativeShiftBuSettingsRequest | body (optional)
+
+try:
+    # Update alternative shifts settings for a business unit
+    api_response = api_instance.patch_workforcemanagement_businessunit_alternativeshifts_settings(business_unit_id, body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->patch_workforcemanagement_businessunit_alternativeshifts_settings: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **body** | [**UpdateAlternativeShiftBuSettingsRequest**](UpdateAlternativeShiftBuSettingsRequest.html)| body | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**AlternativeShiftBuSettingsResponse**](AlternativeShiftBuSettingsResponse.html)
 
 <a name="patch_workforcemanagement_businessunit_planninggroup"></a>
 
@@ -6136,6 +7375,169 @@ except ApiException as e:
 ### Return type
 
 [**BuTimeOffPlanResponse**](BuTimeOffPlanResponse.html)
+
+<a name="patch_workforcemanagement_businessunit_workplanbid"></a>
+
+## [**WorkPlanBid**](WorkPlanBid.html) patch_workforcemanagement_businessunit_workplanbid(business_unit_id, bid_id, body)
+
+
+
+Update work plan bid
+
+Wraps PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids/{bidId} 
+
+Requires ANY permissions: 
+
+* wfm:workPlanBid:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+bid_id = 'bid_id_example' # str | The id of the workplanbid
+body = PureCloudPlatformClientV2.UpdateWorkPlanBid() # UpdateWorkPlanBid | The work plan bid to be updated
+
+try:
+    # Update work plan bid
+    api_response = api_instance.patch_workforcemanagement_businessunit_workplanbid(business_unit_id, bid_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->patch_workforcemanagement_businessunit_workplanbid: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **bid_id** | **str**| The id of the workplanbid |  |
+| **body** | [**UpdateWorkPlanBid**](UpdateWorkPlanBid.html)| The work plan bid to be updated |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**WorkPlanBid**](WorkPlanBid.html)
+
+<a name="patch_workforcemanagement_businessunit_workplanbid_group"></a>
+
+## [**WorkPlanBidGroupResponse**](WorkPlanBidGroupResponse.html) patch_workforcemanagement_businessunit_workplanbid_group(business_unit_id, bid_id, bid_group_id, body=body)
+
+
+
+Update a bid group by bid group Id
+
+Wraps PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids/{bidId}/groups/{bidGroupId} 
+
+Requires ANY permissions: 
+
+* wfm:workPlanBidGroup:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+bid_id = 'bid_id_example' # str | The work plan bid id of the bid groups
+bid_group_id = 'bid_group_id_example' # str | Work Plan Bid Group id
+body = PureCloudPlatformClientV2.WorkPlanBidGroupUpdate() # WorkPlanBidGroupUpdate | body (optional)
+
+try:
+    # Update a bid group by bid group Id
+    api_response = api_instance.patch_workforcemanagement_businessunit_workplanbid_group(business_unit_id, bid_id, bid_group_id, body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->patch_workforcemanagement_businessunit_workplanbid_group: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **bid_id** | **str**| The work plan bid id of the bid groups |  |
+| **bid_group_id** | **str**| Work Plan Bid Group id |  |
+| **body** | [**WorkPlanBidGroupUpdate**](WorkPlanBidGroupUpdate.html)| body | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**WorkPlanBidGroupResponse**](WorkPlanBidGroupResponse.html)
+
+<a name="patch_workforcemanagement_businessunit_workplanbid_group_preferences"></a>
+
+## [**AdminAgentWorkPlanPreferenceResponse**](AdminAgentWorkPlanPreferenceResponse.html) patch_workforcemanagement_businessunit_workplanbid_group_preferences(business_unit_id, bid_id, bid_group_id, body=body)
+
+
+
+Overrides the assigned work plan for the specified agents
+
+Wraps PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids/{bidId}/groups/{bidGroupId}/preferences 
+
+Requires ANY permissions: 
+
+* wfm:workPlanBidGroup:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+bid_id = 'bid_id_example' # str | The work plan bid id of the bid groups
+bid_group_id = 'bid_group_id_example' # str | The ID of the work plan bid group
+body = PureCloudPlatformClientV2.AgentsBidAssignedWorkPlanOverrideRequest() # AgentsBidAssignedWorkPlanOverrideRequest | body (optional)
+
+try:
+    # Overrides the assigned work plan for the specified agents
+    api_response = api_instance.patch_workforcemanagement_businessunit_workplanbid_group_preferences(business_unit_id, bid_id, bid_group_id, body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->patch_workforcemanagement_businessunit_workplanbid_group_preferences: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **bid_id** | **str**| The work plan bid id of the bid groups |  |
+| **bid_group_id** | **str**| The ID of the work plan bid group |  |
+| **body** | [**AgentsBidAssignedWorkPlanOverrideRequest**](AgentsBidAssignedWorkPlanOverrideRequest.html)| body | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**AdminAgentWorkPlanPreferenceResponse**](AdminAgentWorkPlanPreferenceResponse.html)
 
 <a name="patch_workforcemanagement_managementunit"></a>
 
@@ -6670,6 +8072,157 @@ except ApiException as e:
 
 [**TimeOffRequestResponse**](TimeOffRequestResponse.html)
 
+<a name="patch_workforcemanagement_user_workplanbidranks"></a>
+
+## [**WorkPlanBidRanks**](WorkPlanBidRanks.html) patch_workforcemanagement_user_workplanbidranks(user_id, body=body)
+
+
+
+Update work plan bid ranks for a user
+
+Wraps PATCH /api/v2/workforcemanagement/users/{userId}/workplanbidranks 
+
+Requires ANY permissions: 
+
+* wfm:workPlanBid:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+user_id = 'user_id_example' # str | The userId to whom the work plan bid ranks apply.
+body = PureCloudPlatformClientV2.WorkPlanBidRanks() # WorkPlanBidRanks | body (optional)
+
+try:
+    # Update work plan bid ranks for a user
+    api_response = api_instance.patch_workforcemanagement_user_workplanbidranks(user_id, body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->patch_workforcemanagement_user_workplanbidranks: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **user_id** | **str**| The userId to whom the work plan bid ranks apply. |  |
+| **body** | [**WorkPlanBidRanks**](WorkPlanBidRanks.html)| body | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**WorkPlanBidRanks**](WorkPlanBidRanks.html)
+
+<a name="patch_workforcemanagement_users_workplanbidranks_bulk"></a>
+
+## [**EntityListing**](EntityListing.html) patch_workforcemanagement_users_workplanbidranks_bulk(body)
+
+
+
+Update bulk work plan bid ranks on users. Max 50 users can be updated at a time.
+
+Wraps PATCH /api/v2/workforcemanagement/users/workplanbidranks/bulk 
+
+Requires ANY permissions: 
+
+* wfm:workPlanBid:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+body = [PureCloudPlatformClientV2.WorkPlanBidRanks()] # list[WorkPlanBidRanks] | Users
+
+try:
+    # Update bulk work plan bid ranks on users. Max 50 users can be updated at a time.
+    api_response = api_instance.patch_workforcemanagement_users_workplanbidranks_bulk(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->patch_workforcemanagement_users_workplanbidranks_bulk: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**list[WorkPlanBidRanks]**](WorkPlanBidRanks.html)| Users |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**EntityListing**](EntityListing.html)
+
+<a name="patch_workforcemanagement_workplanbid_preferences"></a>
+
+## [**AgentWorkPlanBiddingPreferenceResponse**](AgentWorkPlanBiddingPreferenceResponse.html) patch_workforcemanagement_workplanbid_preferences(bid_id, body=body)
+
+
+
+Update an agent's work plan bidding preference
+
+Wraps PATCH /api/v2/workforcemanagement/workplanbids/{bidId}/preferences 
+
+Requires ANY permissions: 
+
+* wfm:agentWorkPlanBid:submit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+bid_id = 'bid_id_example' # str | The ID of the work plan bid
+body = PureCloudPlatformClientV2.UpdateAgentWorkPlanBiddingPreference() # UpdateAgentWorkPlanBiddingPreference | body (optional)
+
+try:
+    # Update an agent's work plan bidding preference
+    api_response = api_instance.patch_workforcemanagement_workplanbid_preferences(bid_id, body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->patch_workforcemanagement_workplanbid_preferences: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **bid_id** | **str**| The ID of the work plan bid |  |
+| **body** | [**UpdateAgentWorkPlanBiddingPreference**](UpdateAgentWorkPlanBiddingPreference.html)| body | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**AgentWorkPlanBiddingPreferenceResponse**](AgentWorkPlanBiddingPreferenceResponse.html)
+
 <a name="post_workforcemanagement_adherence_explanations"></a>
 
 ## [**AdherenceExplanationAsyncResponse**](AdherenceExplanationAsyncResponse.html) post_workforcemanagement_adherence_explanations(body)
@@ -7172,6 +8725,153 @@ except ApiException as e:
 
 [**BuCurrentAgentScheduleSearchResponse**](BuCurrentAgentScheduleSearchResponse.html)
 
+<a name="post_workforcemanagement_alternativeshifts_offers_jobs"></a>
+
+## [**AlternativeShiftAsyncResponse**](AlternativeShiftAsyncResponse.html) post_workforcemanagement_alternativeshifts_offers_jobs(body)
+
+
+
+Request a list of alternative shift offers for a given schedule
+
+Wraps POST /api/v2/workforcemanagement/alternativeshifts/offers/jobs 
+
+Requires ANY permissions: 
+
+* wfm:agentAlternativeShift:submit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+body = PureCloudPlatformClientV2.AlternativeShiftOffersRequest() # AlternativeShiftOffersRequest | The request body
+
+try:
+    # Request a list of alternative shift offers for a given schedule
+    api_response = api_instance.post_workforcemanagement_alternativeshifts_offers_jobs(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_alternativeshifts_offers_jobs: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**AlternativeShiftOffersRequest**](AlternativeShiftOffersRequest.html)| The request body |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**AlternativeShiftAsyncResponse**](AlternativeShiftAsyncResponse.html)
+
+<a name="post_workforcemanagement_alternativeshifts_offers_search_jobs"></a>
+
+## [**AlternativeShiftAsyncResponse**](AlternativeShiftAsyncResponse.html) post_workforcemanagement_alternativeshifts_offers_search_jobs(body)
+
+
+
+Request a search of alternative shift offers for a given shift
+
+Wraps POST /api/v2/workforcemanagement/alternativeshifts/offers/search/jobs 
+
+Requires ANY permissions: 
+
+* wfm:agentAlternativeShift:submit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+body = PureCloudPlatformClientV2.AlternativeShiftSearchOffersRequest() # AlternativeShiftSearchOffersRequest | The request body
+
+try:
+    # Request a search of alternative shift offers for a given shift
+    api_response = api_instance.post_workforcemanagement_alternativeshifts_offers_search_jobs(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_alternativeshifts_offers_search_jobs: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**AlternativeShiftSearchOffersRequest**](AlternativeShiftSearchOffersRequest.html)| The request body |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**AlternativeShiftAsyncResponse**](AlternativeShiftAsyncResponse.html)
+
+<a name="post_workforcemanagement_alternativeshifts_trades"></a>
+
+## [**AlternativeShiftTradeResponse**](AlternativeShiftTradeResponse.html) post_workforcemanagement_alternativeshifts_trades(body)
+
+
+
+Create my alternative shift trade using an existing offer's jobId
+
+Wraps POST /api/v2/workforcemanagement/alternativeshifts/trades 
+
+Requires ANY permissions: 
+
+* wfm:agentAlternativeShift:submit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+body = PureCloudPlatformClientV2.CreateAlternativeShiftTradeRequest() # CreateAlternativeShiftTradeRequest | The request body
+
+try:
+    # Create my alternative shift trade using an existing offer's jobId
+    api_response = api_instance.post_workforcemanagement_alternativeshifts_trades(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_alternativeshifts_trades: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**CreateAlternativeShiftTradeRequest**](CreateAlternativeShiftTradeRequest.html)| The request body |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**AlternativeShiftTradeResponse**](AlternativeShiftTradeResponse.html)
+
 <a name="post_workforcemanagement_businessunit_activitycodes"></a>
 
 ## [**BusinessUnitActivityCode**](BusinessUnitActivityCode.html) post_workforcemanagement_businessunit_activitycodes(business_unit_id, body=body)
@@ -7441,6 +9141,59 @@ except ApiException as e:
 ### Return type
 
 [**BuAsyncAgentSchedulesSearchResponse**](BuAsyncAgentSchedulesSearchResponse.html)
+
+<a name="post_workforcemanagement_businessunit_alternativeshifts_trades_search"></a>
+
+## [**BuListAlternativeShiftTradesResponse**](BuListAlternativeShiftTradesResponse.html) post_workforcemanagement_businessunit_alternativeshifts_trades_search(business_unit_id, body, force_async=force_async)
+
+
+
+List alternative shifts trades for a given management unit or agent
+
+Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/alternativeshifts/trades/search 
+
+Requires ANY permissions: 
+
+* wfm:alternativeShift:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+body = PureCloudPlatformClientV2.SearchAlternativeShiftTradesRequest() # SearchAlternativeShiftTradesRequest | The request body
+force_async = True # bool | Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes (optional)
+
+try:
+    # List alternative shifts trades for a given management unit or agent
+    api_response = api_instance.post_workforcemanagement_businessunit_alternativeshifts_trades_search(business_unit_id, body, force_async=force_async)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_businessunit_alternativeshifts_trades_search: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **body** | [**SearchAlternativeShiftTradesRequest**](SearchAlternativeShiftTradesRequest.html)| The request body |  |
+| **force_async** | **bool**| Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**BuListAlternativeShiftTradesResponse**](BuListAlternativeShiftTradesResponse.html)
 
 <a name="post_workforcemanagement_businessunit_intraday"></a>
 
@@ -8683,6 +10436,163 @@ except ApiException as e:
 ### Return type
 
 [**ImportForecastUploadResponse**](ImportForecastUploadResponse.html)
+
+<a name="post_workforcemanagement_businessunit_workplanbid_copy"></a>
+
+## [**WorkPlanBid**](WorkPlanBid.html) post_workforcemanagement_businessunit_workplanbid_copy(business_unit_id, bid_id, body=body)
+
+
+
+Copy a work plan bid
+
+Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids/{bidId}/copy 
+
+Requires ANY permissions: 
+
+* wfm:workPlanBid:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+bid_id = 'bid_id_example' # str | The ID of the work plan bid to copy
+body = PureCloudPlatformClientV2.CopyWorkPlanBid() # CopyWorkPlanBid | body (optional)
+
+try:
+    # Copy a work plan bid
+    api_response = api_instance.post_workforcemanagement_businessunit_workplanbid_copy(business_unit_id, bid_id, body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_businessunit_workplanbid_copy: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **bid_id** | **str**| The ID of the work plan bid to copy |  |
+| **body** | [**CopyWorkPlanBid**](CopyWorkPlanBid.html)| body | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**WorkPlanBid**](WorkPlanBid.html)
+
+<a name="post_workforcemanagement_businessunit_workplanbid_groups"></a>
+
+## [**WorkPlanBidGroupResponse**](WorkPlanBidGroupResponse.html) post_workforcemanagement_businessunit_workplanbid_groups(business_unit_id, bid_id, body=body)
+
+
+
+Add a bid group in a given work plan bid
+
+Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids/{bidId}/groups 
+
+Requires ANY permissions: 
+
+* wfm:workPlanBidGroup:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+bid_id = 'bid_id_example' # str | The work plan bid id of the bid groups
+body = PureCloudPlatformClientV2.WorkPlanBidGroupCreate() # WorkPlanBidGroupCreate | body (optional)
+
+try:
+    # Add a bid group in a given work plan bid
+    api_response = api_instance.post_workforcemanagement_businessunit_workplanbid_groups(business_unit_id, bid_id, body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_businessunit_workplanbid_groups: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **bid_id** | **str**| The work plan bid id of the bid groups |  |
+| **body** | [**WorkPlanBidGroupCreate**](WorkPlanBidGroupCreate.html)| body | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**WorkPlanBidGroupResponse**](WorkPlanBidGroupResponse.html)
+
+<a name="post_workforcemanagement_businessunit_workplanbids"></a>
+
+## [**WorkPlanBid**](WorkPlanBid.html) post_workforcemanagement_businessunit_workplanbids(business_unit_id, body=body)
+
+
+
+Create a new work plan bid
+
+Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids 
+
+Requires ANY permissions: 
+
+* wfm:workPlanBid:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.WorkforceManagementApi()
+business_unit_id = 'business_unit_id_example' # str | The ID of the business unit
+body = PureCloudPlatformClientV2.CreateWorkPlanBid() # CreateWorkPlanBid | The work plan bid to be created (optional)
+
+try:
+    # Create a new work plan bid
+    api_response = api_instance.post_workforcemanagement_businessunit_workplanbids(business_unit_id, body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling WorkforceManagementApi->post_workforcemanagement_businessunit_workplanbids: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **business_unit_id** | **str**| The ID of the business unit |  |
+| **body** | [**CreateWorkPlanBid**](CreateWorkPlanBid.html)| The work plan bid to be created | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**WorkPlanBid**](WorkPlanBid.html)
 
 <a name="post_workforcemanagement_businessunits"></a>
 

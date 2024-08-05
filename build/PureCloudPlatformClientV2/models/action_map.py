@@ -271,7 +271,7 @@ class ActionMap(object):
     def trigger_with_outcome_probability_conditions(self) -> List['OutcomeProbabilityCondition']:
         """
         Gets the trigger_with_outcome_probability_conditions of this ActionMap.
-        Probability conditions for outcomes that must be satisfied to trigger the action map.
+        (deprecated - use triggerWithOutcomeQuantileConditions instead) Probability conditions for outcomes that must be satisfied to trigger the action map.
 
         :return: The trigger_with_outcome_probability_conditions of this ActionMap.
         :rtype: list[OutcomeProbabilityCondition]
@@ -282,7 +282,7 @@ class ActionMap(object):
     def trigger_with_outcome_probability_conditions(self, trigger_with_outcome_probability_conditions: List['OutcomeProbabilityCondition']) -> None:
         """
         Sets the trigger_with_outcome_probability_conditions of this ActionMap.
-        Probability conditions for outcomes that must be satisfied to trigger the action map.
+        (deprecated - use triggerWithOutcomeQuantileConditions instead) Probability conditions for outcomes that must be satisfied to trigger the action map.
 
         :param trigger_with_outcome_probability_conditions: The trigger_with_outcome_probability_conditions of this ActionMap.
         :type: list[OutcomeProbabilityCondition]

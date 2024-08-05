@@ -195,7 +195,7 @@ class LearningModuleRequest(object):
     def type(self) -> str:
         """
         Gets the type of this LearningModuleRequest.
-        The type for the learning module
+        The type for the learning module. Informational, AssessedContent and Assessment are deprecated
 
         :return: The type of this LearningModuleRequest.
         :rtype: str
@@ -206,14 +206,14 @@ class LearningModuleRequest(object):
     def type(self, type: str) -> None:
         """
         Sets the type of this LearningModuleRequest.
-        The type for the learning module
+        The type for the learning module. Informational, AssessedContent and Assessment are deprecated
 
         :param type: The type of this LearningModuleRequest.
         :type: str
         """
         if isinstance(type, int):
             type = str(type)
-        allowed_values = ["Informational", "AssessedContent", "Assessment", "External"]
+        allowed_values = ["Informational", "AssessedContent", "Assessment", "External", "Native"]
         if type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for type -> " + type)
             self._type = "outdated_sdk_version"

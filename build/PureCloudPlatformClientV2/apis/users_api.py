@@ -3977,7 +3977,7 @@ class UsersApi(object):
         :param int page_size: Page size
         :param int page_number: Page number
         :param str sort_order: Specifies result set sort order sorted by the date due; if not specified, default sort order is descending (Desc)
-        :param list[str] types: Specifies the activity types.
+        :param list[str] types: Specifies the activity types. Informational, AssessedContent and Assessment are deprecated
         :param list[str] statuses: Specifies the activity statuses to filter by
         :param list[str] relationship: Specifies how the current user relation should be interpreted, and filters the activities returned to only the activities that have the specified relationship. If a value besides Attendee is specified, it will only return Coaching Appointments. If not specified, no filtering is applied.
         :return: DevelopmentActivityListing
@@ -4084,7 +4084,7 @@ class UsersApi(object):
         :param int page_size: Page size
         :param int page_number: Page number
         :param str sort_order: Specifies result set sort order sorted by the date due; if not specified, default sort order is descending (Desc)
-        :param list[str] types: Specifies the activity types.
+        :param list[str] types: Specifies the activity types. Informational, AssessedContent and Assessment are deprecated
         :param list[str] statuses: Specifies the activity statuses to filter by
         :param list[str] relationship: Specifies how the current user relation should be interpreted, and filters the activities returned to only the activities that have the specified relationship. If a value besides Attendee is specified, it will only return Coaching Appointments. If not specified, no filtering is applied.
         :return: DevelopmentActivityListing
@@ -4182,7 +4182,7 @@ class UsersApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str activity_id: Specifies the activity ID, maps to either assignment or appointment ID (required)
-        :param str type: Specifies the activity type. (required)
+        :param str type: Specifies the activity type. Informational, AssessedContent and Assessment are deprecated (required)
         :return: DevelopmentActivity
                  If the method is called asynchronously,
                  returns the request thread.

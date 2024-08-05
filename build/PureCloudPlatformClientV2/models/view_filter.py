@@ -246,7 +246,9 @@ class ViewFilter(object):
             'other_percentage': 'NumericRange',
             'overtalk_instances': 'NumericRange',
             'is_screen_recorded': 'bool',
-            'screen_monitor_user_ids': 'list[str]'
+            'screen_monitor_user_ids': 'list[str]',
+            'dashboard_type': 'str',
+            'dashboard_access_filter': 'str'
         }
 
         self.attribute_map = {
@@ -443,7 +445,9 @@ class ViewFilter(object):
             'other_percentage': 'otherPercentage',
             'overtalk_instances': 'overtalkInstances',
             'is_screen_recorded': 'isScreenRecorded',
-            'screen_monitor_user_ids': 'screenMonitorUserIds'
+            'screen_monitor_user_ids': 'screenMonitorUserIds',
+            'dashboard_type': 'dashboardType',
+            'dashboard_access_filter': 'dashboardAccessFilter'
         }
 
         self._media_types = None
@@ -640,6 +644,8 @@ class ViewFilter(object):
         self._overtalk_instances = None
         self._is_screen_recorded = None
         self._screen_monitor_user_ids = None
+        self._dashboard_type = None
+        self._dashboard_access_filter = None
 
     @property
     def media_types(self) -> List[str]:
@@ -5306,6 +5312,64 @@ class ViewFilter(object):
         
 
         self._screen_monitor_user_ids = screen_monitor_user_ids
+
+    @property
+    def dashboard_type(self) -> str:
+        """
+        Gets the dashboard_type of this ViewFilter.
+        The type of dashboard being filtered
+
+        :return: The dashboard_type of this ViewFilter.
+        :rtype: str
+        """
+        return self._dashboard_type
+
+    @dashboard_type.setter
+    def dashboard_type(self, dashboard_type: str) -> None:
+        """
+        Sets the dashboard_type of this ViewFilter.
+        The type of dashboard being filtered
+
+        :param dashboard_type: The dashboard_type of this ViewFilter.
+        :type: str
+        """
+        if isinstance(dashboard_type, int):
+            dashboard_type = str(dashboard_type)
+        allowed_values = ["All", "Public", "Private", "Shared", "Favorites"]
+        if dashboard_type.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for dashboard_type -> " + dashboard_type)
+            self._dashboard_type = "outdated_sdk_version"
+        else:
+            self._dashboard_type = dashboard_type
+
+    @property
+    def dashboard_access_filter(self) -> str:
+        """
+        Gets the dashboard_access_filter of this ViewFilter.
+        The type of dashboard access being filtered
+
+        :return: The dashboard_access_filter of this ViewFilter.
+        :rtype: str
+        """
+        return self._dashboard_access_filter
+
+    @dashboard_access_filter.setter
+    def dashboard_access_filter(self, dashboard_access_filter: str) -> None:
+        """
+        Sets the dashboard_access_filter of this ViewFilter.
+        The type of dashboard access being filtered
+
+        :param dashboard_access_filter: The dashboard_access_filter of this ViewFilter.
+        :type: str
+        """
+        if isinstance(dashboard_access_filter, int):
+            dashboard_access_filter = str(dashboard_access_filter)
+        allowed_values = ["OwnedByMe", "OwnedByAnyone", "NotOwnedByMe"]
+        if dashboard_access_filter.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for dashboard_access_filter -> " + dashboard_access_filter)
+            self._dashboard_access_filter = "outdated_sdk_version"
+        else:
+            self._dashboard_access_filter = dashboard_access_filter
 
     def to_dict(self):
         """

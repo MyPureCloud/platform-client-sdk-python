@@ -73,6 +73,7 @@ class UserEndDetailEventTopicUserEndEvent(object):
             'alerting_duration_ms': 'int',
             'contacting_duration_ms': 'int',
             'dialing_duration_ms': 'int',
+            'callback_duration_ms': 'int',
             'conversation_external_contact_ids': 'list[str]',
             'conversation_external_organization_ids': 'list[str]'
         }
@@ -103,6 +104,7 @@ class UserEndDetailEventTopicUserEndEvent(object):
             'alerting_duration_ms': 'alertingDurationMs',
             'contacting_duration_ms': 'contactingDurationMs',
             'dialing_duration_ms': 'dialingDurationMs',
+            'callback_duration_ms': 'callbackDurationMs',
             'conversation_external_contact_ids': 'conversationExternalContactIds',
             'conversation_external_organization_ids': 'conversationExternalOrganizationIds'
         }
@@ -132,6 +134,7 @@ class UserEndDetailEventTopicUserEndEvent(object):
         self._alerting_duration_ms = None
         self._contacting_duration_ms = None
         self._dialing_duration_ms = None
+        self._callback_duration_ms = None
         self._conversation_external_contact_ids = None
         self._conversation_external_organization_ids = None
 
@@ -754,6 +757,30 @@ class UserEndDetailEventTopicUserEndEvent(object):
         
 
         self._dialing_duration_ms = dialing_duration_ms
+
+    @property
+    def callback_duration_ms(self) -> int:
+        """
+        Gets the callback_duration_ms of this UserEndDetailEventTopicUserEndEvent.
+
+
+        :return: The callback_duration_ms of this UserEndDetailEventTopicUserEndEvent.
+        :rtype: int
+        """
+        return self._callback_duration_ms
+
+    @callback_duration_ms.setter
+    def callback_duration_ms(self, callback_duration_ms: int) -> None:
+        """
+        Sets the callback_duration_ms of this UserEndDetailEventTopicUserEndEvent.
+
+
+        :param callback_duration_ms: The callback_duration_ms of this UserEndDetailEventTopicUserEndEvent.
+        :type: int
+        """
+        
+
+        self._callback_duration_ms = callback_duration_ms
 
     @property
     def conversation_external_contact_ids(self) -> List[str]:
