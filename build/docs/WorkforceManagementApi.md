@@ -2242,8 +2242,6 @@ except ApiException as e:
 
 Get an activity plan
 
-get_workforcemanagement_businessunit_activityplan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId} 
 
 Requires ANY permissions: 
@@ -2294,8 +2292,6 @@ except ApiException as e:
 
 
 Gets an activity plan run job
-
-get_workforcemanagement_businessunit_activityplan_runs_job is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/runs/jobs/{jobId} 
 
@@ -2350,8 +2346,6 @@ except ApiException as e:
 
 Get activity plans
 
-get_workforcemanagement_businessunit_activityplans is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans 
 
 Requires ANY permissions: 
@@ -2402,8 +2396,6 @@ except ApiException as e:
 
 
 Gets the latest job for all activity plans in the business unit
-
-get_workforcemanagement_businessunit_activityplans_jobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/jobs 
 
@@ -7014,8 +7006,6 @@ Update an activity plan
 
 If a job associated with the activity plan is in 'Processing' state the activity plan cannot be updated
 
-patch_workforcemanagement_businessunit_activityplan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps PATCH /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId} 
 
 Requires ANY permissions: 
@@ -8933,8 +8923,6 @@ Run an activity plan manually
 
 Triggers a job running the activity plan. The activity plan cannot be updated until the job completes
 
-post_workforcemanagement_businessunit_activityplan_runs_jobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans/{activityPlanId}/runs/jobs 
 
 Requires ANY permissions: 
@@ -8985,8 +8973,6 @@ except ApiException as e:
 
 
 Create an activity plan
-
-post_workforcemanagement_businessunit_activityplans is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/workforcemanagement/businessunits/{businessUnitId}/activityplans 
 

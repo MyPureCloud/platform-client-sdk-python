@@ -29,6 +29,7 @@ title: Flow
 | **supported_languages** | [**list[SupportedLanguage]**](SupportedLanguage.html) | List of supported languages for the published version of the flow. | [optional] |
 | **compatible_flow_types** | **list[str]** | Compatible flow types designate which flow types are allowed to embed a flow’s configuration within their own flow configuration.  Currently the only flows that can be embedded are Common Module flows and the embedding flow can invoke them using the Call Common Module action. | [optional] |
 | **worktype_id** | **str** |  | [optional] |
+| **virtual_agent_enabled** | **bool** |  | [optional] |
 | **self_uri** | **str** | The URI for this object | [optional] |
 {: class="table table-striped"}
 

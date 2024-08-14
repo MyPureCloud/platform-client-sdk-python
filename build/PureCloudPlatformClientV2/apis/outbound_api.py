@@ -77,6 +77,7 @@ from ..models import ContactListTemplateEntityListing
 from ..models import ContactListingRequest
 from ..models import ContactListingResponse
 from ..models import ContactsBulkOperationJob
+from ..models import ContactsBulkOperationJobListing
 from ..models import ContactsExportRequest
 from ..models import DialerContact
 from ..models import DialerEventEntityListing
@@ -4376,6 +4377,168 @@ class OutboundApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='DialerContact',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_outbound_contactlist_contacts_bulk_job(self, contact_list_id: str, job_id: str, **kwargs) -> 'ContactsBulkOperationJob':
+        """
+        Get bulk operation job.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_outbound_contactlist_contacts_bulk_job(contact_list_id, job_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str contact_list_id: Contact List ID (required)
+        :param str job_id: Job ID (required)
+        :return: ContactsBulkOperationJob
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['contact_list_id', 'job_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_outbound_contactlist_contacts_bulk_job" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'contact_list_id' is set
+        if ('contact_list_id' not in params) or (params['contact_list_id'] is None):
+            raise ValueError("Missing the required parameter `contact_list_id` when calling `get_outbound_contactlist_contacts_bulk_job`")
+        # verify the required parameter 'job_id' is set
+        if ('job_id' not in params) or (params['job_id'] is None):
+            raise ValueError("Missing the required parameter `job_id` when calling `get_outbound_contactlist_contacts_bulk_job`")
+
+
+        resource_path = '/api/v2/outbound/contactlists/{contactListId}/contacts/bulk/jobs/{jobId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'contact_list_id' in params:
+            path_params['contactListId'] = params['contact_list_id']
+        if 'job_id' in params:
+            path_params['jobId'] = params['job_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ContactsBulkOperationJob',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_outbound_contactlist_contacts_bulk_jobs(self, contact_list_id: str, **kwargs) -> 'ContactsBulkOperationJobListing':
+        """
+        Get 10 most recent bulk operation jobs associated with contact list.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_outbound_contactlist_contacts_bulk_jobs(contact_list_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str contact_list_id: Contact List ID (required)
+        :return: ContactsBulkOperationJobListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['contact_list_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_outbound_contactlist_contacts_bulk_jobs" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'contact_list_id' is set
+        if ('contact_list_id' not in params) or (params['contact_list_id'] is None):
+            raise ValueError("Missing the required parameter `contact_list_id` when calling `get_outbound_contactlist_contacts_bulk_jobs`")
+
+
+        resource_path = '/api/v2/outbound/contactlists/{contactListId}/contacts/bulk/jobs'.replace('{format}', 'json')
+        path_params = {}
+        if 'contact_list_id' in params:
+            path_params['contactListId'] = params['contact_list_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ContactsBulkOperationJobListing',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

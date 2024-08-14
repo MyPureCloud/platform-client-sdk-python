@@ -54,9 +54,10 @@ class TrunkEntityListing(object):
             'page_size': 'int',
             'page_number': 'int',
             'total': 'int',
-            'last_uri': 'str',
+            'total_number_of_entities': 'int',
             'first_uri': 'str',
             'self_uri': 'str',
+            'last_uri': 'str',
             'next_uri': 'str',
             'previous_uri': 'str',
             'page_count': 'int'
@@ -67,9 +68,10 @@ class TrunkEntityListing(object):
             'page_size': 'pageSize',
             'page_number': 'pageNumber',
             'total': 'total',
-            'last_uri': 'lastUri',
+            'total_number_of_entities': 'totalNumberOfEntities',
             'first_uri': 'firstUri',
             'self_uri': 'selfUri',
+            'last_uri': 'lastUri',
             'next_uri': 'nextUri',
             'previous_uri': 'previousUri',
             'page_count': 'pageCount'
@@ -79,9 +81,10 @@ class TrunkEntityListing(object):
         self._page_size = None
         self._page_number = None
         self._total = None
-        self._last_uri = None
+        self._total_number_of_entities = None
         self._first_uri = None
         self._self_uri = None
+        self._last_uri = None
         self._next_uri = None
         self._previous_uri = None
         self._page_count = None
@@ -183,28 +186,28 @@ class TrunkEntityListing(object):
         self._total = total
 
     @property
-    def last_uri(self) -> str:
+    def total_number_of_entities(self) -> int:
         """
-        Gets the last_uri of this TrunkEntityListing.
+        Gets the total_number_of_entities of this TrunkEntityListing.
+        The total organization-wide number of entities.
 
-
-        :return: The last_uri of this TrunkEntityListing.
-        :rtype: str
+        :return: The total_number_of_entities of this TrunkEntityListing.
+        :rtype: int
         """
-        return self._last_uri
+        return self._total_number_of_entities
 
-    @last_uri.setter
-    def last_uri(self, last_uri: str) -> None:
+    @total_number_of_entities.setter
+    def total_number_of_entities(self, total_number_of_entities: int) -> None:
         """
-        Sets the last_uri of this TrunkEntityListing.
+        Sets the total_number_of_entities of this TrunkEntityListing.
+        The total organization-wide number of entities.
 
-
-        :param last_uri: The last_uri of this TrunkEntityListing.
-        :type: str
+        :param total_number_of_entities: The total_number_of_entities of this TrunkEntityListing.
+        :type: int
         """
         
 
-        self._last_uri = last_uri
+        self._total_number_of_entities = total_number_of_entities
 
     @property
     def first_uri(self) -> str:
@@ -253,6 +256,30 @@ class TrunkEntityListing(object):
         
 
         self._self_uri = self_uri
+
+    @property
+    def last_uri(self) -> str:
+        """
+        Gets the last_uri of this TrunkEntityListing.
+
+
+        :return: The last_uri of this TrunkEntityListing.
+        :rtype: str
+        """
+        return self._last_uri
+
+    @last_uri.setter
+    def last_uri(self, last_uri: str) -> None:
+        """
+        Sets the last_uri of this TrunkEntityListing.
+
+
+        :param last_uri: The last_uri of this TrunkEntityListing.
+        :type: str
+        """
+        
+
+        self._last_uri = last_uri
 
     @property
     def next_uri(self) -> str:

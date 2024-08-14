@@ -32,6 +32,12 @@ from typing import TYPE_CHECKING
 from typing import List
 from typing import Dict
 
+if TYPE_CHECKING:
+    from . import ExternalContactsUnresolvedContactChangedTopicContactAddress
+    from . import ExternalContactsUnresolvedContactChangedTopicDivision
+    from . import ExternalContactsUnresolvedContactChangedTopicPhoneNumber
+    from . import ExternalContactsUnresolvedContactChangedTopicTicker
+    from . import ExternalContactsUnresolvedContactChangedTopicTwitterId
 
 class ExternalContactsUnresolvedContactChangedTopicExternalOrganization(object):
     """
@@ -48,14 +54,68 @@ class ExternalContactsUnresolvedContactChangedTopicExternalOrganization(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'id': 'str'
+            'id': 'str',
+            'division': 'ExternalContactsUnresolvedContactChangedTopicDivision',
+            'name': 'str',
+            'company_type': 'str',
+            'industry': 'str',
+            'primary_contact_id': 'str',
+            'address': 'ExternalContactsUnresolvedContactChangedTopicContactAddress',
+            'phone_number': 'ExternalContactsUnresolvedContactChangedTopicPhoneNumber',
+            'fax_number': 'ExternalContactsUnresolvedContactChangedTopicPhoneNumber',
+            'employee_count': 'int',
+            'revenue': 'int',
+            'tags': 'list[str]',
+            'websites': 'list[str]',
+            'tickers': 'list[ExternalContactsUnresolvedContactChangedTopicTicker]',
+            'twitter_id': 'ExternalContactsUnresolvedContactChangedTopicTwitterId',
+            'external_system_url': 'str',
+            'custom_fields': 'dict(str, object)',
+            'create_date': 'datetime',
+            'modify_date': 'datetime'
         }
 
         self.attribute_map = {
-            'id': 'id'
+            'id': 'id',
+            'division': 'division',
+            'name': 'name',
+            'company_type': 'companyType',
+            'industry': 'industry',
+            'primary_contact_id': 'primaryContactId',
+            'address': 'address',
+            'phone_number': 'phoneNumber',
+            'fax_number': 'faxNumber',
+            'employee_count': 'employeeCount',
+            'revenue': 'revenue',
+            'tags': 'tags',
+            'websites': 'websites',
+            'tickers': 'tickers',
+            'twitter_id': 'twitterId',
+            'external_system_url': 'externalSystemUrl',
+            'custom_fields': 'customFields',
+            'create_date': 'createDate',
+            'modify_date': 'modifyDate'
         }
 
         self._id = None
+        self._division = None
+        self._name = None
+        self._company_type = None
+        self._industry = None
+        self._primary_contact_id = None
+        self._address = None
+        self._phone_number = None
+        self._fax_number = None
+        self._employee_count = None
+        self._revenue = None
+        self._tags = None
+        self._websites = None
+        self._tickers = None
+        self._twitter_id = None
+        self._external_system_url = None
+        self._custom_fields = None
+        self._create_date = None
+        self._modify_date = None
 
     @property
     def id(self) -> str:
@@ -80,6 +140,438 @@ class ExternalContactsUnresolvedContactChangedTopicExternalOrganization(object):
         
 
         self._id = id
+
+    @property
+    def division(self) -> 'ExternalContactsUnresolvedContactChangedTopicDivision':
+        """
+        Gets the division of this ExternalContactsUnresolvedContactChangedTopicExternalOrganization.
+
+
+        :return: The division of this ExternalContactsUnresolvedContactChangedTopicExternalOrganization.
+        :rtype: ExternalContactsUnresolvedContactChangedTopicDivision
+        """
+        return self._division
+
+    @division.setter
+    def division(self, division: 'ExternalContactsUnresolvedContactChangedTopicDivision') -> None:
+        """
+        Sets the division of this ExternalContactsUnresolvedContactChangedTopicExternalOrganization.
+
+
+        :param division: The division of this ExternalContactsUnresolvedContactChangedTopicExternalOrganization.
+        :type: ExternalContactsUnresolvedContactChangedTopicDivision
+        """
+        
+
+        self._division = division
+
+    @property
+    def name(self) -> str:
+        """
+        Gets the name of this ExternalContactsUnresolvedContactChangedTopicExternalOrganization.
+
+
+        :return: The name of this ExternalContactsUnresolvedContactChangedTopicExternalOrganization.
+        :rtype: str
+        """
+        return self._name
+
+    @name.setter
+    def name(self, name: str) -> None:
+        """
+        Sets the name of this ExternalContactsUnresolvedContactChangedTopicExternalOrganization.
+
+
+        :param name: The name of this ExternalContactsUnresolvedContactChangedTopicExternalOrganization.
+        :type: str
+        """
+        
+
+        self._name = name
+
+    @property
+    def company_type(self) -> str:
+        """
+        Gets the company_type of this ExternalContactsUnresolvedContactChangedTopicExternalOrganization.
+
+
+        :return: The company_type of this ExternalContactsUnresolvedContactChangedTopicExternalOrganization.
+        :rtype: str
+        """
+        return self._company_type
+
+    @company_type.setter
+    def company_type(self, company_type: str) -> None:
+        """
+        Sets the company_type of this ExternalContactsUnresolvedContactChangedTopicExternalOrganization.
+
+
+        :param company_type: The company_type of this ExternalContactsUnresolvedContactChangedTopicExternalOrganization.
+        :type: str
+        """
+        
+
+        self._company_type = company_type
+
+    @property
+    def industry(self) -> str:
+        """
+        Gets the industry of this ExternalContactsUnresolvedContactChangedTopicExternalOrganization.
+
+
+        :return: The industry of this ExternalContactsUnresolvedContactChangedTopicExternalOrganization.
+        :rtype: str
+        """
+        return self._industry
+
+    @industry.setter
+    def industry(self, industry: str) -> None:
+        """
+        Sets the industry of this ExternalContactsUnresolvedContactChangedTopicExternalOrganization.
+
+
+        :param industry: The industry of this ExternalContactsUnresolvedContactChangedTopicExternalOrganization.
+        :type: str
+        """
+        
+
+        self._industry = industry
+
+    @property
+    def primary_contact_id(self) -> str:
+        """
+        Gets the primary_contact_id of this ExternalContactsUnresolvedContactChangedTopicExternalOrganization.
+
+
+        :return: The primary_contact_id of this ExternalContactsUnresolvedContactChangedTopicExternalOrganization.
+        :rtype: str
+        """
+        return self._primary_contact_id
+
+    @primary_contact_id.setter
+    def primary_contact_id(self, primary_contact_id: str) -> None:
+        """
+        Sets the primary_contact_id of this ExternalContactsUnresolvedContactChangedTopicExternalOrganization.
+
+
+        :param primary_contact_id: The primary_contact_id of this ExternalContactsUnresolvedContactChangedTopicExternalOrganization.
+        :type: str
+        """
+        
+
+        self._primary_contact_id = primary_contact_id
+
+    @property
+    def address(self) -> 'ExternalContactsUnresolvedContactChangedTopicContactAddress':
+        """
+        Gets the address of this ExternalContactsUnresolvedContactChangedTopicExternalOrganization.
+
+
+        :return: The address of this ExternalContactsUnresolvedContactChangedTopicExternalOrganization.
+        :rtype: ExternalContactsUnresolvedContactChangedTopicContactAddress
+        """
+        return self._address
+
+    @address.setter
+    def address(self, address: 'ExternalContactsUnresolvedContactChangedTopicContactAddress') -> None:
+        """
+        Sets the address of this ExternalContactsUnresolvedContactChangedTopicExternalOrganization.
+
+
+        :param address: The address of this ExternalContactsUnresolvedContactChangedTopicExternalOrganization.
+        :type: ExternalContactsUnresolvedContactChangedTopicContactAddress
+        """
+        
+
+        self._address = address
+
+    @property
+    def phone_number(self) -> 'ExternalContactsUnresolvedContactChangedTopicPhoneNumber':
+        """
+        Gets the phone_number of this ExternalContactsUnresolvedContactChangedTopicExternalOrganization.
+
+
+        :return: The phone_number of this ExternalContactsUnresolvedContactChangedTopicExternalOrganization.
+        :rtype: ExternalContactsUnresolvedContactChangedTopicPhoneNumber
+        """
+        return self._phone_number
+
+    @phone_number.setter
+    def phone_number(self, phone_number: 'ExternalContactsUnresolvedContactChangedTopicPhoneNumber') -> None:
+        """
+        Sets the phone_number of this ExternalContactsUnresolvedContactChangedTopicExternalOrganization.
+
+
+        :param phone_number: The phone_number of this ExternalContactsUnresolvedContactChangedTopicExternalOrganization.
+        :type: ExternalContactsUnresolvedContactChangedTopicPhoneNumber
+        """
+        
+
+        self._phone_number = phone_number
+
+    @property
+    def fax_number(self) -> 'ExternalContactsUnresolvedContactChangedTopicPhoneNumber':
+        """
+        Gets the fax_number of this ExternalContactsUnresolvedContactChangedTopicExternalOrganization.
+
+
+        :return: The fax_number of this ExternalContactsUnresolvedContactChangedTopicExternalOrganization.
+        :rtype: ExternalContactsUnresolvedContactChangedTopicPhoneNumber
+        """
+        return self._fax_number
+
+    @fax_number.setter
+    def fax_number(self, fax_number: 'ExternalContactsUnresolvedContactChangedTopicPhoneNumber') -> None:
+        """
+        Sets the fax_number of this ExternalContactsUnresolvedContactChangedTopicExternalOrganization.
+
+
+        :param fax_number: The fax_number of this ExternalContactsUnresolvedContactChangedTopicExternalOrganization.
+        :type: ExternalContactsUnresolvedContactChangedTopicPhoneNumber
+        """
+        
+
+        self._fax_number = fax_number
+
+    @property
+    def employee_count(self) -> int:
+        """
+        Gets the employee_count of this ExternalContactsUnresolvedContactChangedTopicExternalOrganization.
+
+
+        :return: The employee_count of this ExternalContactsUnresolvedContactChangedTopicExternalOrganization.
+        :rtype: int
+        """
+        return self._employee_count
+
+    @employee_count.setter
+    def employee_count(self, employee_count: int) -> None:
+        """
+        Sets the employee_count of this ExternalContactsUnresolvedContactChangedTopicExternalOrganization.
+
+
+        :param employee_count: The employee_count of this ExternalContactsUnresolvedContactChangedTopicExternalOrganization.
+        :type: int
+        """
+        
+
+        self._employee_count = employee_count
+
+    @property
+    def revenue(self) -> int:
+        """
+        Gets the revenue of this ExternalContactsUnresolvedContactChangedTopicExternalOrganization.
+
+
+        :return: The revenue of this ExternalContactsUnresolvedContactChangedTopicExternalOrganization.
+        :rtype: int
+        """
+        return self._revenue
+
+    @revenue.setter
+    def revenue(self, revenue: int) -> None:
+        """
+        Sets the revenue of this ExternalContactsUnresolvedContactChangedTopicExternalOrganization.
+
+
+        :param revenue: The revenue of this ExternalContactsUnresolvedContactChangedTopicExternalOrganization.
+        :type: int
+        """
+        
+
+        self._revenue = revenue
+
+    @property
+    def tags(self) -> List[str]:
+        """
+        Gets the tags of this ExternalContactsUnresolvedContactChangedTopicExternalOrganization.
+
+
+        :return: The tags of this ExternalContactsUnresolvedContactChangedTopicExternalOrganization.
+        :rtype: list[str]
+        """
+        return self._tags
+
+    @tags.setter
+    def tags(self, tags: List[str]) -> None:
+        """
+        Sets the tags of this ExternalContactsUnresolvedContactChangedTopicExternalOrganization.
+
+
+        :param tags: The tags of this ExternalContactsUnresolvedContactChangedTopicExternalOrganization.
+        :type: list[str]
+        """
+        
+
+        self._tags = tags
+
+    @property
+    def websites(self) -> List[str]:
+        """
+        Gets the websites of this ExternalContactsUnresolvedContactChangedTopicExternalOrganization.
+
+
+        :return: The websites of this ExternalContactsUnresolvedContactChangedTopicExternalOrganization.
+        :rtype: list[str]
+        """
+        return self._websites
+
+    @websites.setter
+    def websites(self, websites: List[str]) -> None:
+        """
+        Sets the websites of this ExternalContactsUnresolvedContactChangedTopicExternalOrganization.
+
+
+        :param websites: The websites of this ExternalContactsUnresolvedContactChangedTopicExternalOrganization.
+        :type: list[str]
+        """
+        
+
+        self._websites = websites
+
+    @property
+    def tickers(self) -> List['ExternalContactsUnresolvedContactChangedTopicTicker']:
+        """
+        Gets the tickers of this ExternalContactsUnresolvedContactChangedTopicExternalOrganization.
+
+
+        :return: The tickers of this ExternalContactsUnresolvedContactChangedTopicExternalOrganization.
+        :rtype: list[ExternalContactsUnresolvedContactChangedTopicTicker]
+        """
+        return self._tickers
+
+    @tickers.setter
+    def tickers(self, tickers: List['ExternalContactsUnresolvedContactChangedTopicTicker']) -> None:
+        """
+        Sets the tickers of this ExternalContactsUnresolvedContactChangedTopicExternalOrganization.
+
+
+        :param tickers: The tickers of this ExternalContactsUnresolvedContactChangedTopicExternalOrganization.
+        :type: list[ExternalContactsUnresolvedContactChangedTopicTicker]
+        """
+        
+
+        self._tickers = tickers
+
+    @property
+    def twitter_id(self) -> 'ExternalContactsUnresolvedContactChangedTopicTwitterId':
+        """
+        Gets the twitter_id of this ExternalContactsUnresolvedContactChangedTopicExternalOrganization.
+
+
+        :return: The twitter_id of this ExternalContactsUnresolvedContactChangedTopicExternalOrganization.
+        :rtype: ExternalContactsUnresolvedContactChangedTopicTwitterId
+        """
+        return self._twitter_id
+
+    @twitter_id.setter
+    def twitter_id(self, twitter_id: 'ExternalContactsUnresolvedContactChangedTopicTwitterId') -> None:
+        """
+        Sets the twitter_id of this ExternalContactsUnresolvedContactChangedTopicExternalOrganization.
+
+
+        :param twitter_id: The twitter_id of this ExternalContactsUnresolvedContactChangedTopicExternalOrganization.
+        :type: ExternalContactsUnresolvedContactChangedTopicTwitterId
+        """
+        
+
+        self._twitter_id = twitter_id
+
+    @property
+    def external_system_url(self) -> str:
+        """
+        Gets the external_system_url of this ExternalContactsUnresolvedContactChangedTopicExternalOrganization.
+
+
+        :return: The external_system_url of this ExternalContactsUnresolvedContactChangedTopicExternalOrganization.
+        :rtype: str
+        """
+        return self._external_system_url
+
+    @external_system_url.setter
+    def external_system_url(self, external_system_url: str) -> None:
+        """
+        Sets the external_system_url of this ExternalContactsUnresolvedContactChangedTopicExternalOrganization.
+
+
+        :param external_system_url: The external_system_url of this ExternalContactsUnresolvedContactChangedTopicExternalOrganization.
+        :type: str
+        """
+        
+
+        self._external_system_url = external_system_url
+
+    @property
+    def custom_fields(self) -> Dict[str, object]:
+        """
+        Gets the custom_fields of this ExternalContactsUnresolvedContactChangedTopicExternalOrganization.
+
+
+        :return: The custom_fields of this ExternalContactsUnresolvedContactChangedTopicExternalOrganization.
+        :rtype: dict(str, object)
+        """
+        return self._custom_fields
+
+    @custom_fields.setter
+    def custom_fields(self, custom_fields: Dict[str, object]) -> None:
+        """
+        Sets the custom_fields of this ExternalContactsUnresolvedContactChangedTopicExternalOrganization.
+
+
+        :param custom_fields: The custom_fields of this ExternalContactsUnresolvedContactChangedTopicExternalOrganization.
+        :type: dict(str, object)
+        """
+        
+
+        self._custom_fields = custom_fields
+
+    @property
+    def create_date(self) -> datetime:
+        """
+        Gets the create_date of this ExternalContactsUnresolvedContactChangedTopicExternalOrganization.
+
+
+        :return: The create_date of this ExternalContactsUnresolvedContactChangedTopicExternalOrganization.
+        :rtype: datetime
+        """
+        return self._create_date
+
+    @create_date.setter
+    def create_date(self, create_date: datetime) -> None:
+        """
+        Sets the create_date of this ExternalContactsUnresolvedContactChangedTopicExternalOrganization.
+
+
+        :param create_date: The create_date of this ExternalContactsUnresolvedContactChangedTopicExternalOrganization.
+        :type: datetime
+        """
+        
+
+        self._create_date = create_date
+
+    @property
+    def modify_date(self) -> datetime:
+        """
+        Gets the modify_date of this ExternalContactsUnresolvedContactChangedTopicExternalOrganization.
+
+
+        :return: The modify_date of this ExternalContactsUnresolvedContactChangedTopicExternalOrganization.
+        :rtype: datetime
+        """
+        return self._modify_date
+
+    @modify_date.setter
+    def modify_date(self, modify_date: datetime) -> None:
+        """
+        Sets the modify_date of this ExternalContactsUnresolvedContactChangedTopicExternalOrganization.
+
+
+        :param modify_date: The modify_date of this ExternalContactsUnresolvedContactChangedTopicExternalOrganization.
+        :type: datetime
+        """
+        
+
+        self._modify_date = modify_date
 
     def to_dict(self):
         """

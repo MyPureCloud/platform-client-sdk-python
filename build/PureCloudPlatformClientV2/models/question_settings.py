@@ -51,15 +51,18 @@ class QuestionSettings(object):
         """
         self.swagger_types = {
             'question_index': 'int',
+            'question_context_id': 'str',
             'settings': 'AiScoringSetting'
         }
 
         self.attribute_map = {
             'question_index': 'questionIndex',
+            'question_context_id': 'questionContextId',
             'settings': 'settings'
         }
 
         self._question_index = None
+        self._question_context_id = None
         self._settings = None
 
     @property
@@ -85,6 +88,30 @@ class QuestionSettings(object):
         
 
         self._question_index = question_index
+
+    @property
+    def question_context_id(self) -> str:
+        """
+        Gets the question_context_id of this QuestionSettings.
+        The context id of the question in the group
+
+        :return: The question_context_id of this QuestionSettings.
+        :rtype: str
+        """
+        return self._question_context_id
+
+    @question_context_id.setter
+    def question_context_id(self, question_context_id: str) -> None:
+        """
+        Sets the question_context_id of this QuestionSettings.
+        The context id of the question in the group
+
+        :param question_context_id: The question_context_id of this QuestionSettings.
+        :type: str
+        """
+        
+
+        self._question_context_id = question_context_id
 
     @property
     def settings(self) -> 'AiScoringSetting':

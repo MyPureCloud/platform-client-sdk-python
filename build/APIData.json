@@ -27268,6 +27268,39 @@
     "return": "DialerContact",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.OutboundApi();\ncontact_list_id = 'contact_list_id_example' # str | Contact List ID\ncontact_id = 'contact_id_example' # str | Contact ID\n\ntry:\n    # Get a contact.\n    api_response = api_instance.get_outbound_contactlist_contact(contact_list_id, contact_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling OutboundApi->get_outbound_contactlist_contact: %s\\n\" % e)"
   },
+  "get_outbound_contactlist_contacts_bulk_job": {
+    "operationId": "get_outbound_contactlist_contacts_bulk_job",
+    "functionName": "get_outbound_contactlist_contacts_bulk_job",
+    "signature": "get_outbound_contactlist_contacts_bulk_job(contact_list_id, job_id)",
+    "parameters": [
+      {
+        "name": "contact_list_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "job_id",
+        "type": "str",
+        "required": "true"
+      }
+    ],
+    "return": "ContactsBulkOperationJob",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.OutboundApi();\ncontact_list_id = 'contact_list_id_example' # str | Contact List ID\njob_id = 'job_id_example' # str | Job ID\n\ntry:\n    # Get bulk operation job.\n    api_response = api_instance.get_outbound_contactlist_contacts_bulk_job(contact_list_id, job_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling OutboundApi->get_outbound_contactlist_contacts_bulk_job: %s\\n\" % e)"
+  },
+  "get_outbound_contactlist_contacts_bulk_jobs": {
+    "operationId": "get_outbound_contactlist_contacts_bulk_jobs",
+    "functionName": "get_outbound_contactlist_contacts_bulk_jobs",
+    "signature": "get_outbound_contactlist_contacts_bulk_jobs(contact_list_id)",
+    "parameters": [
+      {
+        "name": "contact_list_id",
+        "type": "str",
+        "required": "true"
+      }
+    ],
+    "return": "ContactsBulkOperationJobListing",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.OutboundApi();\ncontact_list_id = 'contact_list_id_example' # str | Contact List ID\n\ntry:\n    # Get 10 most recent bulk operation jobs associated with contact list.\n    api_response = api_instance.get_outbound_contactlist_contacts_bulk_jobs(contact_list_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling OutboundApi->get_outbound_contactlist_contacts_bulk_jobs: %s\\n\" % e)"
+  },
   "get_outbound_contactlist_export": {
     "operationId": "get_outbound_contactlist_export",
     "functionName": "get_outbound_contactlist_export",
@@ -31785,7 +31818,7 @@
       }
     ],
     "return": "BatchDownloadJobStatusResult",
-    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.RecordingApi();\njob_id = 'job_id_example' # str | jobId\n\ntry:\n    # Get the status and results for a batch request job, only the user that submitted the job may retrieve results\n    api_response = api_instance.get_recording_batchrequest(job_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling RecordingApi->get_recording_batchrequest: %s\\n\" % e)"
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.RecordingApi();\njob_id = 'job_id_example' # str | jobId\n\ntry:\n    # Get the status and results for a batch request job, only the user that submitted the job may retrieve results. Each result may contain either a URL to a recording or an error; additionally, a recording could be associated with multiple results.\n    api_response = api_instance.get_recording_batchrequest(job_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling RecordingApi->get_recording_batchrequest: %s\\n\" % e)"
   },
   "get_recording_crossplatform_mediaretentionpolicies": {
     "operationId": "get_recording_crossplatform_mediaretentionpolicies",
@@ -41930,6 +41963,25 @@
     ],
     "return": "DownloadResponse",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.UserRecordingsApi();\nrecording_id = 'recording_id_example' # str | User Recording ID\nformat_id = ''WEBM'' # str | The desired media format. (optional) (default to 'WEBM')\nasync = True # bool | When set to true, api will return 202 response until the recording is ready for download (optional)\n\ntry:\n    # Download a user recording.\n    api_response = api_instance.get_userrecording_media(recording_id, format_id=format_id, async=async)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling UserRecordingsApi->get_userrecording_media: %s\\n\" % e)"
+  },
+  "get_userrecording_transcoding": {
+    "operationId": "get_userrecording_transcoding",
+    "functionName": "get_userrecording_transcoding",
+    "signature": "get_userrecording_transcoding(recording_id, format_id)",
+    "parameters": [
+      {
+        "name": "recording_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "format_id",
+        "type": "str",
+        "required": "false"
+      }
+    ],
+    "return": "DownloadResponse",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.UserRecordingsApi();\nrecording_id = 'recording_id_example' # str | User Recording ID\nformat_id = ''WEBM'' # str | The desired media format. (optional) (default to 'WEBM')\n\ntry:\n    # Download a user recording.\n    api_response = api_instance.get_userrecording_transcoding(recording_id, format_id=format_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling UserRecordingsApi->get_userrecording_transcoding: %s\\n\" % e)"
   },
   "get_userrecordings": {
     "operationId": "get_userrecordings",

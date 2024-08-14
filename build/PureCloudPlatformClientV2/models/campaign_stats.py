@@ -58,6 +58,7 @@ class CampaignStats(object):
             'outstanding_calls': 'int',
             'scheduled_calls': 'int',
             'time_zone_rescheduled_calls': 'int',
+            'filtered_out_contacts_count': 'int',
             'lines_utilization': 'CampaignLinesUtilization'
         }
 
@@ -69,6 +70,7 @@ class CampaignStats(object):
             'outstanding_calls': 'outstandingCalls',
             'scheduled_calls': 'scheduledCalls',
             'time_zone_rescheduled_calls': 'timeZoneRescheduledCalls',
+            'filtered_out_contacts_count': 'filteredOutContactsCount',
             'lines_utilization': 'linesUtilization'
         }
 
@@ -79,6 +81,7 @@ class CampaignStats(object):
         self._outstanding_calls = None
         self._scheduled_calls = None
         self._time_zone_rescheduled_calls = None
+        self._filtered_out_contacts_count = None
         self._lines_utilization = None
 
     @property
@@ -248,6 +251,30 @@ class CampaignStats(object):
         
 
         self._time_zone_rescheduled_calls = time_zone_rescheduled_calls
+
+    @property
+    def filtered_out_contacts_count(self) -> int:
+        """
+        Gets the filtered_out_contacts_count of this CampaignStats.
+        Number of contacts that don't match filter. This is currently supported only for Campaigns with dynamic filter on.
+
+        :return: The filtered_out_contacts_count of this CampaignStats.
+        :rtype: int
+        """
+        return self._filtered_out_contacts_count
+
+    @filtered_out_contacts_count.setter
+    def filtered_out_contacts_count(self, filtered_out_contacts_count: int) -> None:
+        """
+        Sets the filtered_out_contacts_count of this CampaignStats.
+        Number of contacts that don't match filter. This is currently supported only for Campaigns with dynamic filter on.
+
+        :param filtered_out_contacts_count: The filtered_out_contacts_count of this CampaignStats.
+        :type: int
+        """
+        
+
+        self._filtered_out_contacts_count = filtered_out_contacts_count
 
     @property
     def lines_utilization(self) -> 'CampaignLinesUtilization':

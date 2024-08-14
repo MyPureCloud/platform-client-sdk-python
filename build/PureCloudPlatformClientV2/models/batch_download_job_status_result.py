@@ -105,7 +105,7 @@ class BatchDownloadJobStatusResult(object):
     def job_id(self) -> str:
         """
         Gets the job_id of this BatchDownloadJobStatusResult.
-        JobId returned when job was initially submitted
+        JobId returned when job was initially submitted.
 
         :return: The job_id of this BatchDownloadJobStatusResult.
         :rtype: str
@@ -116,7 +116,7 @@ class BatchDownloadJobStatusResult(object):
     def job_id(self, job_id: str) -> None:
         """
         Sets the job_id of this BatchDownloadJobStatusResult.
-        JobId returned when job was initially submitted
+        JobId returned when job was initially submitted.
 
         :param job_id: The job_id of this BatchDownloadJobStatusResult.
         :type: str
@@ -129,7 +129,7 @@ class BatchDownloadJobStatusResult(object):
     def expected_result_count(self) -> int:
         """
         Gets the expected_result_count of this BatchDownloadJobStatusResult.
-        Number of results expected when job is completed
+        Number of results expected when job is completed, this includes both success and error results. This number could change as recordings are being discovered and processed.
 
         :return: The expected_result_count of this BatchDownloadJobStatusResult.
         :rtype: int
@@ -140,7 +140,7 @@ class BatchDownloadJobStatusResult(object):
     def expected_result_count(self, expected_result_count: int) -> None:
         """
         Sets the expected_result_count of this BatchDownloadJobStatusResult.
-        Number of results expected when job is completed
+        Number of results expected when job is completed, this includes both success and error results. This number could change as recordings are being discovered and processed.
 
         :param expected_result_count: The expected_result_count of this BatchDownloadJobStatusResult.
         :type: int
@@ -153,7 +153,7 @@ class BatchDownloadJobStatusResult(object):
     def result_count(self) -> int:
         """
         Gets the result_count of this BatchDownloadJobStatusResult.
-        Current number of results available
+        Current number of results available, this includes both success and error results.
 
         :return: The result_count of this BatchDownloadJobStatusResult.
         :rtype: int
@@ -164,7 +164,7 @@ class BatchDownloadJobStatusResult(object):
     def result_count(self, result_count: int) -> None:
         """
         Sets the result_count of this BatchDownloadJobStatusResult.
-        Current number of results available
+        Current number of results available, this includes both success and error results.
 
         :param result_count: The result_count of this BatchDownloadJobStatusResult.
         :type: int
@@ -177,7 +177,7 @@ class BatchDownloadJobStatusResult(object):
     def error_count(self) -> int:
         """
         Gets the error_count of this BatchDownloadJobStatusResult.
-        Number of error results produced so far
+        Current number of error results.
 
         :return: The error_count of this BatchDownloadJobStatusResult.
         :rtype: int
@@ -188,7 +188,7 @@ class BatchDownloadJobStatusResult(object):
     def error_count(self, error_count: int) -> None:
         """
         Sets the error_count of this BatchDownloadJobStatusResult.
-        Number of error results produced so far
+        Current number of error results.
 
         :param error_count: The error_count of this BatchDownloadJobStatusResult.
         :type: int
@@ -201,7 +201,7 @@ class BatchDownloadJobStatusResult(object):
     def results(self) -> List['BatchDownloadJobResult']:
         """
         Gets the results of this BatchDownloadJobStatusResult.
-        Current set of results for the job
+        Current set of results for the job.
 
         :return: The results of this BatchDownloadJobStatusResult.
         :rtype: list[BatchDownloadJobResult]
@@ -212,7 +212,7 @@ class BatchDownloadJobStatusResult(object):
     def results(self, results: List['BatchDownloadJobResult']) -> None:
         """
         Sets the results of this BatchDownloadJobStatusResult.
-        Current set of results for the job
+        Current set of results for the job.
 
         :param results: The results of this BatchDownloadJobStatusResult.
         :type: list[BatchDownloadJobResult]

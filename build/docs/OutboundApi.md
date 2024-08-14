@@ -60,6 +60,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_outbound_campaigns_divisionviews**](OutboundApi.html#get_outbound_campaigns_divisionviews) | Query a list of basic Campaign information objects|
 |[**get_outbound_contactlist**](OutboundApi.html#get_outbound_contactlist) | Get a dialer contact list.|
 |[**get_outbound_contactlist_contact**](OutboundApi.html#get_outbound_contactlist_contact) | Get a contact.|
+|[**get_outbound_contactlist_contacts_bulk_job**](OutboundApi.html#get_outbound_contactlist_contacts_bulk_job) | Get bulk operation job.|
+|[**get_outbound_contactlist_contacts_bulk_jobs**](OutboundApi.html#get_outbound_contactlist_contacts_bulk_jobs) | Get 10 most recent bulk operation jobs associated with contact list.|
 |[**get_outbound_contactlist_export**](OutboundApi.html#get_outbound_contactlist_export) | Get the URI of a contact list export.|
 |[**get_outbound_contactlist_importstatus**](OutboundApi.html#get_outbound_contactlist_importstatus) | Get dialer contactList import status.|
 |[**get_outbound_contactlist_timezonemappingpreview**](OutboundApi.html#get_outbound_contactlist_timezonemappingpreview) | Preview the result of applying Automatic Time Zone Mapping to a contact list|
@@ -2847,6 +2849,106 @@ except ApiException as e:
 ### Return type
 
 [**DialerContact**](DialerContact.html)
+
+<a name="get_outbound_contactlist_contacts_bulk_job"></a>
+
+## [**ContactsBulkOperationJob**](ContactsBulkOperationJob.html) get_outbound_contactlist_contacts_bulk_job(contact_list_id, job_id)
+
+
+
+Get bulk operation job.
+
+Wraps GET /api/v2/outbound/contactlists/{contactListId}/contacts/bulk/jobs/{jobId} 
+
+Requires ANY permissions: 
+
+* outbound:contactList:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.OutboundApi()
+contact_list_id = 'contact_list_id_example' # str | Contact List ID
+job_id = 'job_id_example' # str | Job ID
+
+try:
+    # Get bulk operation job.
+    api_response = api_instance.get_outbound_contactlist_contacts_bulk_job(contact_list_id, job_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling OutboundApi->get_outbound_contactlist_contacts_bulk_job: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **contact_list_id** | **str**| Contact List ID |  |
+| **job_id** | **str**| Job ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**ContactsBulkOperationJob**](ContactsBulkOperationJob.html)
+
+<a name="get_outbound_contactlist_contacts_bulk_jobs"></a>
+
+## [**ContactsBulkOperationJobListing**](ContactsBulkOperationJobListing.html) get_outbound_contactlist_contacts_bulk_jobs(contact_list_id)
+
+
+
+Get 10 most recent bulk operation jobs associated with contact list.
+
+Wraps GET /api/v2/outbound/contactlists/{contactListId}/contacts/bulk/jobs 
+
+Requires ANY permissions: 
+
+* outbound:contactList:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.OutboundApi()
+contact_list_id = 'contact_list_id_example' # str | Contact List ID
+
+try:
+    # Get 10 most recent bulk operation jobs associated with contact list.
+    api_response = api_instance.get_outbound_contactlist_contacts_bulk_jobs(contact_list_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling OutboundApi->get_outbound_contactlist_contacts_bulk_jobs: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **contact_list_id** | **str**| Contact List ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**ContactsBulkOperationJobListing**](ContactsBulkOperationJobListing.html)
 
 <a name="get_outbound_contactlist_export"></a>
 

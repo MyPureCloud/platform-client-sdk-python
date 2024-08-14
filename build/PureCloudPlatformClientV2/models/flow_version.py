@@ -71,6 +71,7 @@ class FlowVersion(object):
             'publish_result_uri': 'str',
             'input_schema': 'JsonSchemaDocument',
             'output_schema': 'JsonSchemaDocument',
+            'virtual_agent_enabled': 'bool',
             'date_published': 'datetime',
             'date_published_end': 'datetime',
             'nlu_info': 'NluInfo',
@@ -97,6 +98,7 @@ class FlowVersion(object):
             'publish_result_uri': 'publishResultUri',
             'input_schema': 'inputSchema',
             'output_schema': 'outputSchema',
+            'virtual_agent_enabled': 'virtualAgentEnabled',
             'date_published': 'datePublished',
             'date_published_end': 'datePublishedEnd',
             'nlu_info': 'nluInfo',
@@ -122,6 +124,7 @@ class FlowVersion(object):
         self._publish_result_uri = None
         self._input_schema = None
         self._output_schema = None
+        self._virtual_agent_enabled = None
         self._date_published = None
         self._date_published_end = None
         self._nlu_info = None
@@ -541,6 +544,30 @@ class FlowVersion(object):
         
 
         self._output_schema = output_schema
+
+    @property
+    def virtual_agent_enabled(self) -> bool:
+        """
+        Gets the virtual_agent_enabled of this FlowVersion.
+
+
+        :return: The virtual_agent_enabled of this FlowVersion.
+        :rtype: bool
+        """
+        return self._virtual_agent_enabled
+
+    @virtual_agent_enabled.setter
+    def virtual_agent_enabled(self, virtual_agent_enabled: bool) -> None:
+        """
+        Sets the virtual_agent_enabled of this FlowVersion.
+
+
+        :param virtual_agent_enabled: The virtual_agent_enabled of this FlowVersion.
+        :type: bool
+        """
+        
+
+        self._virtual_agent_enabled = virtual_agent_enabled
 
     @property
     def date_published(self) -> datetime:

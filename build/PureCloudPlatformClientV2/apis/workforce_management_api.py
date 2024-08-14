@@ -3201,7 +3201,6 @@ class WorkforceManagementApi(object):
         """
         Get an activity plan
         
-	    get_workforcemanagement_businessunit_activityplan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -3286,7 +3285,6 @@ class WorkforceManagementApi(object):
         """
         Gets an activity plan run job
         
-	    get_workforcemanagement_businessunit_activityplan_runs_job is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -3377,7 +3375,6 @@ class WorkforceManagementApi(object):
         """
         Get activity plans
         
-	    get_workforcemanagement_businessunit_activityplans is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -3459,7 +3456,6 @@ class WorkforceManagementApi(object):
         """
         Gets the latest job for all activity plans in the business unit
         
-	    get_workforcemanagement_businessunit_activityplans_jobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -10699,7 +10695,6 @@ class WorkforceManagementApi(object):
         """
         Update an activity plan
         If a job associated with the activity plan is in 'Processing' state the activity plan cannot be updated
-	    patch_workforcemanagement_businessunit_activityplan is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -13803,7 +13798,6 @@ class WorkforceManagementApi(object):
         """
         Run an activity plan manually
         Triggers a job running the activity plan. The activity plan cannot be updated until the job completes
-	    post_workforcemanagement_businessunit_activityplan_runs_jobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -13888,7 +13882,6 @@ class WorkforceManagementApi(object):
         """
         Create an activity plan
         
-	    post_workforcemanagement_businessunit_activityplans is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

@@ -93,7 +93,7 @@ class AcwSettings(object):
     def timeout_ms(self) -> int:
         """
         Gets the timeout_ms of this AcwSettings.
-        The amount of time the agent can stay in ACW (Min: 1 sec, Max: 60 min).  Can only be used when ACW is MANDATORY_TIMEOUT or MANDATORY_FORCED_TIMEOUT.
+        The amount of time the agent can stay in ACW (Min: 1 sec, Max: 60 min).  Can only be used when ACW is AGENT_REQUESTED, MANDATORY_TIMEOUT or MANDATORY_FORCED_TIMEOUT.
 
         :return: The timeout_ms of this AcwSettings.
         :rtype: int
@@ -104,7 +104,7 @@ class AcwSettings(object):
     def timeout_ms(self, timeout_ms: int) -> None:
         """
         Sets the timeout_ms of this AcwSettings.
-        The amount of time the agent can stay in ACW (Min: 1 sec, Max: 60 min).  Can only be used when ACW is MANDATORY_TIMEOUT or MANDATORY_FORCED_TIMEOUT.
+        The amount of time the agent can stay in ACW (Min: 1 sec, Max: 60 min).  Can only be used when ACW is AGENT_REQUESTED, MANDATORY_TIMEOUT or MANDATORY_FORCED_TIMEOUT.
 
         :param timeout_ms: The timeout_ms of this AcwSettings.
         :type: int

@@ -51,15 +51,18 @@ class QuestionGroupSettings(object):
         """
         self.swagger_types = {
             'question_group_index': 'int',
+            'question_group_context_id': 'str',
             'question_settings': 'list[QuestionSettings]'
         }
 
         self.attribute_map = {
             'question_group_index': 'questionGroupIndex',
+            'question_group_context_id': 'questionGroupContextId',
             'question_settings': 'questionSettings'
         }
 
         self._question_group_index = None
+        self._question_group_context_id = None
         self._question_settings = None
 
     @property
@@ -85,6 +88,30 @@ class QuestionGroupSettings(object):
         
 
         self._question_group_index = question_group_index
+
+    @property
+    def question_group_context_id(self) -> str:
+        """
+        Gets the question_group_context_id of this QuestionGroupSettings.
+        The context id of the question group in the form.
+
+        :return: The question_group_context_id of this QuestionGroupSettings.
+        :rtype: str
+        """
+        return self._question_group_context_id
+
+    @question_group_context_id.setter
+    def question_group_context_id(self, question_group_context_id: str) -> None:
+        """
+        Sets the question_group_context_id of this QuestionGroupSettings.
+        The context id of the question group in the form.
+
+        :param question_group_context_id: The question_group_context_id of this QuestionGroupSettings.
+        :type: str
+        """
+        
+
+        self._question_group_context_id = question_group_context_id
 
     @property
     def question_settings(self) -> List['QuestionSettings']:

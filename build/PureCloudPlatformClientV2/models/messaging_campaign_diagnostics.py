@@ -48,14 +48,17 @@ class MessagingCampaignDiagnostics(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'time_zone_rescheduled_contacts_count': 'int'
+            'time_zone_rescheduled_contacts_count': 'int',
+            'filtered_out_contacts_count': 'int'
         }
 
         self.attribute_map = {
-            'time_zone_rescheduled_contacts_count': 'timeZoneRescheduledContactsCount'
+            'time_zone_rescheduled_contacts_count': 'timeZoneRescheduledContactsCount',
+            'filtered_out_contacts_count': 'filteredOutContactsCount'
         }
 
         self._time_zone_rescheduled_contacts_count = None
+        self._filtered_out_contacts_count = None
 
     @property
     def time_zone_rescheduled_contacts_count(self) -> int:
@@ -80,6 +83,30 @@ class MessagingCampaignDiagnostics(object):
         
 
         self._time_zone_rescheduled_contacts_count = time_zone_rescheduled_contacts_count
+
+    @property
+    def filtered_out_contacts_count(self) -> int:
+        """
+        Gets the filtered_out_contacts_count of this MessagingCampaignDiagnostics.
+        Number of contacts that don't match filter. This is currently supported only for Campaigns with dynamic filter on.
+
+        :return: The filtered_out_contacts_count of this MessagingCampaignDiagnostics.
+        :rtype: int
+        """
+        return self._filtered_out_contacts_count
+
+    @filtered_out_contacts_count.setter
+    def filtered_out_contacts_count(self, filtered_out_contacts_count: int) -> None:
+        """
+        Sets the filtered_out_contacts_count of this MessagingCampaignDiagnostics.
+        Number of contacts that don't match filter. This is currently supported only for Campaigns with dynamic filter on.
+
+        :param filtered_out_contacts_count: The filtered_out_contacts_count of this MessagingCampaignDiagnostics.
+        :type: int
+        """
+        
+
+        self._filtered_out_contacts_count = filtered_out_contacts_count
 
     def to_dict(self):
         """

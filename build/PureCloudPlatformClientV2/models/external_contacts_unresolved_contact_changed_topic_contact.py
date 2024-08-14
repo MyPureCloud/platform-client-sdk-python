@@ -41,6 +41,7 @@ if TYPE_CHECKING:
     from . import ExternalContactsUnresolvedContactChangedTopicFacebookId
     from . import ExternalContactsUnresolvedContactChangedTopicInstagramId
     from . import ExternalContactsUnresolvedContactChangedTopicLineId
+    from . import ExternalContactsUnresolvedContactChangedTopicMergeOperation
     from . import ExternalContactsUnresolvedContactChangedTopicPhoneNumber
     from . import ExternalContactsUnresolvedContactChangedTopicTwitterId
     from . import ExternalContactsUnresolvedContactChangedTopicWhatsAppId
@@ -85,8 +86,13 @@ class ExternalContactsUnresolvedContactChangedTopicContact(object):
             'facebook_id': 'ExternalContactsUnresolvedContactChangedTopicFacebookId',
             'instagram_id': 'ExternalContactsUnresolvedContactChangedTopicInstagramId',
             'external_ids': 'list[ExternalContactsUnresolvedContactChangedTopicExternalId]',
+            'canonical_contact_id': 'str',
             'schema': 'ExternalContactsUnresolvedContactChangedTopicDataSchema',
             'custom_fields': 'dict(str, object)',
+            'merge_set': 'list[str]',
+            'merged_from': 'list[str]',
+            'merged_to': 'str',
+            'merge_operation': 'ExternalContactsUnresolvedContactChangedTopicMergeOperation',
             'create_date': 'datetime',
             'modify_date': 'datetime'
         }
@@ -117,8 +123,13 @@ class ExternalContactsUnresolvedContactChangedTopicContact(object):
             'facebook_id': 'facebookId',
             'instagram_id': 'instagramId',
             'external_ids': 'externalIds',
+            'canonical_contact_id': 'canonicalContactId',
             'schema': 'schema',
             'custom_fields': 'customFields',
+            'merge_set': 'mergeSet',
+            'merged_from': 'mergedFrom',
+            'merged_to': 'mergedTo',
+            'merge_operation': 'mergeOperation',
             'create_date': 'createDate',
             'modify_date': 'modifyDate'
         }
@@ -148,8 +159,13 @@ class ExternalContactsUnresolvedContactChangedTopicContact(object):
         self._facebook_id = None
         self._instagram_id = None
         self._external_ids = None
+        self._canonical_contact_id = None
         self._schema = None
         self._custom_fields = None
+        self._merge_set = None
+        self._merged_from = None
+        self._merged_to = None
+        self._merge_operation = None
         self._create_date = None
         self._modify_date = None
 
@@ -759,6 +775,30 @@ class ExternalContactsUnresolvedContactChangedTopicContact(object):
         self._external_ids = external_ids
 
     @property
+    def canonical_contact_id(self) -> str:
+        """
+        Gets the canonical_contact_id of this ExternalContactsUnresolvedContactChangedTopicContact.
+
+
+        :return: The canonical_contact_id of this ExternalContactsUnresolvedContactChangedTopicContact.
+        :rtype: str
+        """
+        return self._canonical_contact_id
+
+    @canonical_contact_id.setter
+    def canonical_contact_id(self, canonical_contact_id: str) -> None:
+        """
+        Sets the canonical_contact_id of this ExternalContactsUnresolvedContactChangedTopicContact.
+
+
+        :param canonical_contact_id: The canonical_contact_id of this ExternalContactsUnresolvedContactChangedTopicContact.
+        :type: str
+        """
+        
+
+        self._canonical_contact_id = canonical_contact_id
+
+    @property
     def schema(self) -> 'ExternalContactsUnresolvedContactChangedTopicDataSchema':
         """
         Gets the schema of this ExternalContactsUnresolvedContactChangedTopicContact.
@@ -805,6 +845,102 @@ class ExternalContactsUnresolvedContactChangedTopicContact(object):
         
 
         self._custom_fields = custom_fields
+
+    @property
+    def merge_set(self) -> List[str]:
+        """
+        Gets the merge_set of this ExternalContactsUnresolvedContactChangedTopicContact.
+
+
+        :return: The merge_set of this ExternalContactsUnresolvedContactChangedTopicContact.
+        :rtype: list[str]
+        """
+        return self._merge_set
+
+    @merge_set.setter
+    def merge_set(self, merge_set: List[str]) -> None:
+        """
+        Sets the merge_set of this ExternalContactsUnresolvedContactChangedTopicContact.
+
+
+        :param merge_set: The merge_set of this ExternalContactsUnresolvedContactChangedTopicContact.
+        :type: list[str]
+        """
+        
+
+        self._merge_set = merge_set
+
+    @property
+    def merged_from(self) -> List[str]:
+        """
+        Gets the merged_from of this ExternalContactsUnresolvedContactChangedTopicContact.
+
+
+        :return: The merged_from of this ExternalContactsUnresolvedContactChangedTopicContact.
+        :rtype: list[str]
+        """
+        return self._merged_from
+
+    @merged_from.setter
+    def merged_from(self, merged_from: List[str]) -> None:
+        """
+        Sets the merged_from of this ExternalContactsUnresolvedContactChangedTopicContact.
+
+
+        :param merged_from: The merged_from of this ExternalContactsUnresolvedContactChangedTopicContact.
+        :type: list[str]
+        """
+        
+
+        self._merged_from = merged_from
+
+    @property
+    def merged_to(self) -> str:
+        """
+        Gets the merged_to of this ExternalContactsUnresolvedContactChangedTopicContact.
+
+
+        :return: The merged_to of this ExternalContactsUnresolvedContactChangedTopicContact.
+        :rtype: str
+        """
+        return self._merged_to
+
+    @merged_to.setter
+    def merged_to(self, merged_to: str) -> None:
+        """
+        Sets the merged_to of this ExternalContactsUnresolvedContactChangedTopicContact.
+
+
+        :param merged_to: The merged_to of this ExternalContactsUnresolvedContactChangedTopicContact.
+        :type: str
+        """
+        
+
+        self._merged_to = merged_to
+
+    @property
+    def merge_operation(self) -> 'ExternalContactsUnresolvedContactChangedTopicMergeOperation':
+        """
+        Gets the merge_operation of this ExternalContactsUnresolvedContactChangedTopicContact.
+
+
+        :return: The merge_operation of this ExternalContactsUnresolvedContactChangedTopicContact.
+        :rtype: ExternalContactsUnresolvedContactChangedTopicMergeOperation
+        """
+        return self._merge_operation
+
+    @merge_operation.setter
+    def merge_operation(self, merge_operation: 'ExternalContactsUnresolvedContactChangedTopicMergeOperation') -> None:
+        """
+        Sets the merge_operation of this ExternalContactsUnresolvedContactChangedTopicContact.
+
+
+        :param merge_operation: The merge_operation of this ExternalContactsUnresolvedContactChangedTopicContact.
+        :type: ExternalContactsUnresolvedContactChangedTopicMergeOperation
+        """
+        
+
+        self._merge_operation = merge_operation
 
     @property
     def create_date(self) -> datetime:

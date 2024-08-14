@@ -54,8 +54,8 @@ class ManagementUnitListing(object):
             'page_size': 'int',
             'page_number': 'int',
             'total': 'int',
-            'last_uri': 'str',
             'first_uri': 'str',
+            'last_uri': 'str',
             'next_uri': 'str',
             'page_count': 'int',
             'previous_uri': 'str',
@@ -67,8 +67,8 @@ class ManagementUnitListing(object):
             'page_size': 'pageSize',
             'page_number': 'pageNumber',
             'total': 'total',
-            'last_uri': 'lastUri',
             'first_uri': 'firstUri',
+            'last_uri': 'lastUri',
             'next_uri': 'nextUri',
             'page_count': 'pageCount',
             'previous_uri': 'previousUri',
@@ -79,8 +79,8 @@ class ManagementUnitListing(object):
         self._page_size = None
         self._page_number = None
         self._total = None
-        self._last_uri = None
         self._first_uri = None
+        self._last_uri = None
         self._next_uri = None
         self._page_count = None
         self._previous_uri = None
@@ -183,30 +183,6 @@ class ManagementUnitListing(object):
         self._total = total
 
     @property
-    def last_uri(self) -> str:
-        """
-        Gets the last_uri of this ManagementUnitListing.
-        Deprecated, paging is not supported
-
-        :return: The last_uri of this ManagementUnitListing.
-        :rtype: str
-        """
-        return self._last_uri
-
-    @last_uri.setter
-    def last_uri(self, last_uri: str) -> None:
-        """
-        Sets the last_uri of this ManagementUnitListing.
-        Deprecated, paging is not supported
-
-        :param last_uri: The last_uri of this ManagementUnitListing.
-        :type: str
-        """
-        
-
-        self._last_uri = last_uri
-
-    @property
     def first_uri(self) -> str:
         """
         Gets the first_uri of this ManagementUnitListing.
@@ -229,6 +205,30 @@ class ManagementUnitListing(object):
         
 
         self._first_uri = first_uri
+
+    @property
+    def last_uri(self) -> str:
+        """
+        Gets the last_uri of this ManagementUnitListing.
+        Deprecated, paging is not supported
+
+        :return: The last_uri of this ManagementUnitListing.
+        :rtype: str
+        """
+        return self._last_uri
+
+    @last_uri.setter
+    def last_uri(self, last_uri: str) -> None:
+        """
+        Sets the last_uri of this ManagementUnitListing.
+        Deprecated, paging is not supported
+
+        :param last_uri: The last_uri of this ManagementUnitListing.
+        :type: str
+        """
+        
+
+        self._last_uri = last_uri
 
     @property
     def next_uri(self) -> str:

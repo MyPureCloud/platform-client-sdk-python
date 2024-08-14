@@ -57,7 +57,8 @@ class HistoryEntry(object):
             'user': 'User',
             'client': 'DomainEntityRef',
             'version': 'str',
-            'secure': 'bool'
+            'secure': 'bool',
+            'virtual_agent_enabled': 'bool'
         }
 
         self.attribute_map = {
@@ -67,7 +68,8 @@ class HistoryEntry(object):
             'user': 'user',
             'client': 'client',
             'version': 'version',
-            'secure': 'secure'
+            'secure': 'secure',
+            'virtual_agent_enabled': 'virtualAgentEnabled'
         }
 
         self._action = None
@@ -77,6 +79,7 @@ class HistoryEntry(object):
         self._client = None
         self._version = None
         self._secure = None
+        self._virtual_agent_enabled = None
 
     @property
     def action(self) -> str:
@@ -250,6 +253,30 @@ class HistoryEntry(object):
         
 
         self._secure = secure
+
+    @property
+    def virtual_agent_enabled(self) -> bool:
+        """
+        Gets the virtual_agent_enabled of this HistoryEntry.
+
+
+        :return: The virtual_agent_enabled of this HistoryEntry.
+        :rtype: bool
+        """
+        return self._virtual_agent_enabled
+
+    @virtual_agent_enabled.setter
+    def virtual_agent_enabled(self, virtual_agent_enabled: bool) -> None:
+        """
+        Sets the virtual_agent_enabled of this HistoryEntry.
+
+
+        :param virtual_agent_enabled: The virtual_agent_enabled of this HistoryEntry.
+        :type: bool
+        """
+        
+
+        self._virtual_agent_enabled = virtual_agent_enabled
 
     def to_dict(self):
         """

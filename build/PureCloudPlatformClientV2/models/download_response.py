@@ -50,20 +50,56 @@ class DownloadResponse(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
+            'id': 'str',
             'content_location_uri': 'str',
             'image_uri': 'str',
-            'thumbnails': 'list[DocumentThumbnail]'
+            'thumbnails': 'list[DocumentThumbnail]',
+            'state': 'str',
+            'result_uri': 'str',
+            'self_uri': 'str'
         }
 
         self.attribute_map = {
+            'id': 'id',
             'content_location_uri': 'contentLocationUri',
             'image_uri': 'imageUri',
-            'thumbnails': 'thumbnails'
+            'thumbnails': 'thumbnails',
+            'state': 'state',
+            'result_uri': 'resultUri',
+            'self_uri': 'selfUri'
         }
 
+        self._id = None
         self._content_location_uri = None
         self._image_uri = None
         self._thumbnails = None
+        self._state = None
+        self._result_uri = None
+        self._self_uri = None
+
+    @property
+    def id(self) -> str:
+        """
+        Gets the id of this DownloadResponse.
+
+
+        :return: The id of this DownloadResponse.
+        :rtype: str
+        """
+        return self._id
+
+    @id.setter
+    def id(self, id: str) -> None:
+        """
+        Sets the id of this DownloadResponse.
+
+
+        :param id: The id of this DownloadResponse.
+        :type: str
+        """
+        
+
+        self._id = id
 
     @property
     def content_location_uri(self) -> str:
@@ -136,6 +172,83 @@ class DownloadResponse(object):
         
 
         self._thumbnails = thumbnails
+
+    @property
+    def state(self) -> str:
+        """
+        Gets the state of this DownloadResponse.
+
+
+        :return: The state of this DownloadResponse.
+        :rtype: str
+        """
+        return self._state
+
+    @state.setter
+    def state(self, state: str) -> None:
+        """
+        Sets the state of this DownloadResponse.
+
+
+        :param state: The state of this DownloadResponse.
+        :type: str
+        """
+        if isinstance(state, int):
+            state = str(state)
+        allowed_values = ["Running", "Completed"]
+        if state.lower() not in map(str.lower, allowed_values):
+            # print("Invalid value for state -> " + state)
+            self._state = "outdated_sdk_version"
+        else:
+            self._state = state
+
+    @property
+    def result_uri(self) -> str:
+        """
+        Gets the result_uri of this DownloadResponse.
+
+
+        :return: The result_uri of this DownloadResponse.
+        :rtype: str
+        """
+        return self._result_uri
+
+    @result_uri.setter
+    def result_uri(self, result_uri: str) -> None:
+        """
+        Sets the result_uri of this DownloadResponse.
+
+
+        :param result_uri: The result_uri of this DownloadResponse.
+        :type: str
+        """
+        
+
+        self._result_uri = result_uri
+
+    @property
+    def self_uri(self) -> str:
+        """
+        Gets the self_uri of this DownloadResponse.
+
+
+        :return: The self_uri of this DownloadResponse.
+        :rtype: str
+        """
+        return self._self_uri
+
+    @self_uri.setter
+    def self_uri(self, self_uri: str) -> None:
+        """
+        Sets the self_uri of this DownloadResponse.
+
+
+        :param self_uri: The self_uri of this DownloadResponse.
+        :type: str
+        """
+        
+
+        self._self_uri = self_uri
 
     def to_dict(self):
         """

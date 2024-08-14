@@ -78,6 +78,7 @@ class Flow(object):
             'supported_languages': 'list[SupportedLanguage]',
             'compatible_flow_types': 'list[str]',
             'worktype_id': 'str',
+            'virtual_agent_enabled': 'bool',
             'self_uri': 'str'
         }
 
@@ -104,6 +105,7 @@ class Flow(object):
             'supported_languages': 'supportedLanguages',
             'compatible_flow_types': 'compatibleFlowTypes',
             'worktype_id': 'worktypeId',
+            'virtual_agent_enabled': 'virtualAgentEnabled',
             'self_uri': 'selfUri'
         }
 
@@ -129,6 +131,7 @@ class Flow(object):
         self._supported_languages = None
         self._compatible_flow_types = None
         self._worktype_id = None
+        self._virtual_agent_enabled = None
         self._self_uri = None
 
     @property
@@ -663,6 +666,30 @@ class Flow(object):
         
 
         self._worktype_id = worktype_id
+
+    @property
+    def virtual_agent_enabled(self) -> bool:
+        """
+        Gets the virtual_agent_enabled of this Flow.
+
+
+        :return: The virtual_agent_enabled of this Flow.
+        :rtype: bool
+        """
+        return self._virtual_agent_enabled
+
+    @virtual_agent_enabled.setter
+    def virtual_agent_enabled(self, virtual_agent_enabled: bool) -> None:
+        """
+        Sets the virtual_agent_enabled of this Flow.
+
+
+        :param virtual_agent_enabled: The virtual_agent_enabled of this Flow.
+        :type: bool
+        """
+        
+
+        self._virtual_agent_enabled = virtual_agent_enabled
 
     @property
     def self_uri(self) -> str:

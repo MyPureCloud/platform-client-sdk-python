@@ -1461,7 +1461,7 @@ class RecordingApi(object):
 
     def get_recording_batchrequest(self, job_id: str, **kwargs) -> 'BatchDownloadJobStatusResult':
         """
-        Get the status and results for a batch request job, only the user that submitted the job may retrieve results
+        Get the status and results for a batch request job, only the user that submitted the job may retrieve results. Each result may contain either a URL to a recording or an error; additionally, a recording could be associated with multiple results.
         
 
         This method makes a synchronous HTTP request by default. To make an

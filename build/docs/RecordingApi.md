@@ -24,7 +24,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_orphanrecording**](RecordingApi.html#get_orphanrecording) | Gets a single orphan recording|
 |[**get_orphanrecording_media**](RecordingApi.html#get_orphanrecording_media) | Gets the media of a single orphan recording|
 |[**get_orphanrecordings**](RecordingApi.html#get_orphanrecordings) | Gets all orphan recordings|
-|[**get_recording_batchrequest**](RecordingApi.html#get_recording_batchrequest) | Get the status and results for a batch request job, only the user that submitted the job may retrieve results|
+|[**get_recording_batchrequest**](RecordingApi.html#get_recording_batchrequest) | Get the status and results for a batch request job, only the user that submitted the job may retrieve results. Each result may contain either a URL to a recording or an error; additionally, a recording could be associated with multiple results.|
 |[**get_recording_crossplatform_mediaretentionpolicies**](RecordingApi.html#get_recording_crossplatform_mediaretentionpolicies) | Gets media retention policy list with query options to filter on name and enabled.|
 |[**get_recording_crossplatform_mediaretentionpolicy**](RecordingApi.html#get_recording_crossplatform_mediaretentionpolicy) | Get a media retention policy|
 |[**get_recording_job**](RecordingApi.html#get_recording_job) | Get the status of the job associated with the job id.|
@@ -929,7 +929,7 @@ except ApiException as e:
 
 
 
-Get the status and results for a batch request job, only the user that submitted the job may retrieve results
+Get the status and results for a batch request job, only the user that submitted the job may retrieve results. Each result may contain either a URL to a recording or an error; additionally, a recording could be associated with multiple results.
 
 Wraps GET /api/v2/recording/batchrequests/{jobId} 
 
@@ -952,7 +952,7 @@ api_instance = PureCloudPlatformClientV2.RecordingApi()
 job_id = 'job_id_example' # str | jobId
 
 try:
-    # Get the status and results for a batch request job, only the user that submitted the job may retrieve results
+    # Get the status and results for a batch request job, only the user that submitted the job may retrieve results. Each result may contain either a URL to a recording or an error; additionally, a recording could be associated with multiple results.
     api_response = api_instance.get_recording_batchrequest(job_id)
     pprint(api_response)
 except ApiException as e:

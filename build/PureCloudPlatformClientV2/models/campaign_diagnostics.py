@@ -59,6 +59,7 @@ class CampaignDiagnostics(object):
             'outstanding_interactions_count': 'int',
             'scheduled_interactions_count': 'int',
             'time_zone_rescheduled_calls_count': 'int',
+            'filtered_out_contacts_count': 'int',
             'campaign_skill_statistics': 'CampaignSkillStatistics'
         }
 
@@ -69,6 +70,7 @@ class CampaignDiagnostics(object):
             'outstanding_interactions_count': 'outstandingInteractionsCount',
             'scheduled_interactions_count': 'scheduledInteractionsCount',
             'time_zone_rescheduled_calls_count': 'timeZoneRescheduledCallsCount',
+            'filtered_out_contacts_count': 'filteredOutContactsCount',
             'campaign_skill_statistics': 'campaignSkillStatistics'
         }
 
@@ -78,6 +80,7 @@ class CampaignDiagnostics(object):
         self._outstanding_interactions_count = None
         self._scheduled_interactions_count = None
         self._time_zone_rescheduled_calls_count = None
+        self._filtered_out_contacts_count = None
         self._campaign_skill_statistics = None
 
     @property
@@ -223,6 +226,30 @@ class CampaignDiagnostics(object):
         
 
         self._time_zone_rescheduled_calls_count = time_zone_rescheduled_calls_count
+
+    @property
+    def filtered_out_contacts_count(self) -> int:
+        """
+        Gets the filtered_out_contacts_count of this CampaignDiagnostics.
+        Number of contacts that don't match filter. This is currently supported only for Campaigns with dynamic filter on.
+
+        :return: The filtered_out_contacts_count of this CampaignDiagnostics.
+        :rtype: int
+        """
+        return self._filtered_out_contacts_count
+
+    @filtered_out_contacts_count.setter
+    def filtered_out_contacts_count(self, filtered_out_contacts_count: int) -> None:
+        """
+        Sets the filtered_out_contacts_count of this CampaignDiagnostics.
+        Number of contacts that don't match filter. This is currently supported only for Campaigns with dynamic filter on.
+
+        :param filtered_out_contacts_count: The filtered_out_contacts_count of this CampaignDiagnostics.
+        :type: int
+        """
+        
+
+        self._filtered_out_contacts_count = filtered_out_contacts_count
 
     @property
     def campaign_skill_statistics(self) -> 'CampaignSkillStatistics':

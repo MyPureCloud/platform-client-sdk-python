@@ -32,8 +32,13 @@ title: ExternalContactsUnresolvedContactChangedTopicContact
 | **facebook_id** | [**ExternalContactsUnresolvedContactChangedTopicFacebookId**](ExternalContactsUnresolvedContactChangedTopicFacebookId.html) |  | [optional] |
 | **instagram_id** | [**ExternalContactsUnresolvedContactChangedTopicInstagramId**](ExternalContactsUnresolvedContactChangedTopicInstagramId.html) |  | [optional] |
 | **external_ids** | [**list[ExternalContactsUnresolvedContactChangedTopicExternalId]**](ExternalContactsUnresolvedContactChangedTopicExternalId.html) |  | [optional] |
+| **canonical_contact_id** | **str** |  | [optional] |
 | **schema** | [**ExternalContactsUnresolvedContactChangedTopicDataSchema**](ExternalContactsUnresolvedContactChangedTopicDataSchema.html) |  | [optional] |
 | **custom_fields** | **dict(str, object)** |  | [optional] |
+| **merge_set** | **list[str]** |  | [optional] |
+| **merged_from** | **list[str]** |  | [optional] |
+| **merged_to** | **str** |  | [optional] |
+| **merge_operation** | [**ExternalContactsUnresolvedContactChangedTopicMergeOperation**](ExternalContactsUnresolvedContactChangedTopicMergeOperation.html) |  | [optional] |
 | **create_date** | **datetime** |  | [optional] |
 | **modify_date** | **datetime** |  | [optional] |
 {: class="table table-striped"}

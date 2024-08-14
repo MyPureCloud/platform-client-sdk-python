@@ -48,14 +48,17 @@ class DynamicContactQueueingSettings(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'sort': 'bool'
+            'sort': 'bool',
+            'filter': 'bool'
         }
 
         self.attribute_map = {
-            'sort': 'sort'
+            'sort': 'sort',
+            'filter': 'filter'
         }
 
         self._sort = None
+        self._filter = None
 
     @property
     def sort(self) -> bool:
@@ -80,6 +83,30 @@ class DynamicContactQueueingSettings(object):
         
 
         self._sort = sort
+
+    @property
+    def filter(self) -> bool:
+        """
+        Gets the filter of this DynamicContactQueueingSettings.
+        Whether to filter contacts dynamically
+
+        :return: The filter of this DynamicContactQueueingSettings.
+        :rtype: bool
+        """
+        return self._filter
+
+    @filter.setter
+    def filter(self, filter: bool) -> None:
+        """
+        Sets the filter of this DynamicContactQueueingSettings.
+        Whether to filter contacts dynamically
+
+        :param filter: The filter of this DynamicContactQueueingSettings.
+        :type: bool
+        """
+        
+
+        self._filter = filter
 
     def to_dict(self):
         """
