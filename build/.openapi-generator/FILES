@@ -2330,6 +2330,8 @@ PureCloudPlatformClientV2/models/knowledge_document_guest_search.py
 PureCloudPlatformClientV2/models/knowledge_document_guest_search_request.py
 PureCloudPlatformClientV2/models/knowledge_document_guest_search_result.py
 PureCloudPlatformClientV2/models/knowledge_document_presentation.py
+PureCloudPlatformClientV2/models/knowledge_document_query.py
+PureCloudPlatformClientV2/models/knowledge_document_query_response.py
 PureCloudPlatformClientV2/models/knowledge_document_reference.py
 PureCloudPlatformClientV2/models/knowledge_document_req.py
 PureCloudPlatformClientV2/models/knowledge_document_request.py
@@ -3466,6 +3468,7 @@ PureCloudPlatformClientV2/models/ring.py
 PureCloudPlatformClientV2/models/role_division.py
 PureCloudPlatformClientV2/models/role_division_grants.py
 PureCloudPlatformClientV2/models/role_division_pair.py
+PureCloudPlatformClientV2/models/role_settings.py
 PureCloudPlatformClientV2/models/room.py
 PureCloudPlatformClientV2/models/room_participant.py
 PureCloudPlatformClientV2/models/room_participant_response.py
@@ -6992,6 +6995,8 @@ docs/KnowledgeDocumentGuestSearch.md
 docs/KnowledgeDocumentGuestSearchRequest.md
 docs/KnowledgeDocumentGuestSearchResult.md
 docs/KnowledgeDocumentPresentation.md
+docs/KnowledgeDocumentQuery.md
+docs/KnowledgeDocumentQueryResponse.md
 docs/KnowledgeDocumentReference.md
 docs/KnowledgeDocumentReq.md
 docs/KnowledgeDocumentRequest.md
@@ -8168,6 +8173,7 @@ docs/Ring.md
 docs/RoleDivision.md
 docs/RoleDivisionGrants.md
 docs/RoleDivisionPair.md
+docs/RoleSettings.md
 docs/Room.md
 docs/RoomParticipant.md
 docs/RoomParticipantResponse.md
@@ -9846,6 +9852,7 @@ docs/get_authorization_role_comparedefault_right_role_id-example.txt
 docs/get_authorization_role_subjectgrants-example.txt
 docs/get_authorization_role_users-example.txt
 docs/get_authorization_roles-example.txt
+docs/get_authorization_roles_settings-example.txt
 docs/get_authorization_settings-example.txt
 docs/get_authorization_subject-example.txt
 docs/get_authorization_subject-example.txt
@@ -11450,6 +11457,7 @@ docs/post_knowledge_knowledgebase_documents-example.txt
 docs/post_knowledge_knowledgebase_documents_bulk_remove-example.txt
 docs/post_knowledge_knowledgebase_documents_bulk_update-example.txt
 docs/post_knowledge_knowledgebase_documents_presentations-example.txt
+docs/post_knowledge_knowledgebase_documents_query-example.txt
 docs/post_knowledge_knowledgebase_documents_search-example.txt
 docs/post_knowledge_knowledgebase_documents_search_suggestions-example.txt
 docs/post_knowledge_knowledgebase_documents_versions_bulk_add-example.txt
@@ -11813,6 +11821,7 @@ docs/put_authorization_role-example.txt
 docs/put_authorization_role_users_add-example.txt
 docs/put_authorization_role_users_remove-example.txt
 docs/put_authorization_roles_default-example.txt
+docs/put_authorization_roles_settings-example.txt
 docs/put_chats_message_reactions-example.txt
 docs/put_chats_settings-example.txt
 docs/put_contentmanagement_workspace-example.txt

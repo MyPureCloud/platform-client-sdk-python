@@ -72,6 +72,8 @@ from ..models import KnowledgeDocumentFeedbackResponseListing
 from ..models import KnowledgeDocumentGuestSearch
 from ..models import KnowledgeDocumentGuestSearchRequest
 from ..models import KnowledgeDocumentPresentation
+from ..models import KnowledgeDocumentQuery
+from ..models import KnowledgeDocumentQueryResponse
 from ..models import KnowledgeDocumentReq
 from ..models import KnowledgeDocumentRequest
 from ..models import KnowledgeDocumentResponse
@@ -7181,6 +7183,90 @@ class KnowledgeApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def post_knowledge_knowledgebase_documents_query(self, knowledge_base_id: str, **kwargs) -> 'KnowledgeDocumentQueryResponse':
+        """
+        Query for knowledge documents.
+        
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_knowledge_knowledgebase_documents_query(knowledge_base_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str knowledge_base_id: Knowledge Base ID (required)
+        :param list[str] expand: Fields, if any, to expand for each document in the search result matching the query.
+        :param KnowledgeDocumentQuery body: 
+        :return: KnowledgeDocumentQueryResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['knowledge_base_id', 'expand', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_knowledge_knowledgebase_documents_query" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'knowledge_base_id' is set
+        if ('knowledge_base_id' not in params) or (params['knowledge_base_id'] is None):
+            raise ValueError("Missing the required parameter `knowledge_base_id` when calling `post_knowledge_knowledgebase_documents_query`")
+
+
+        resource_path = '/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/query'.replace('{format}', 'json')
+        path_params = {}
+        if 'knowledge_base_id' in params:
+            path_params['knowledgeBaseId'] = params['knowledge_base_id']
+
+        query_params = {}
+        if 'expand' in params:
+            query_params['expand'] = params['expand']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='KnowledgeDocumentQueryResponse',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

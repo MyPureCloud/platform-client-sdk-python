@@ -70,7 +70,7 @@ class WorkPlanBidRanks(object):
     def id(self) -> str:
         """
         Gets the id of this WorkPlanBidRanks.
-        The globally unique identifier for the object.
+        The globally unique identifier for the user.
 
         :return: The id of this WorkPlanBidRanks.
         :rtype: str
@@ -81,7 +81,7 @@ class WorkPlanBidRanks(object):
     def id(self, id: str) -> None:
         """
         Sets the id of this WorkPlanBidRanks.
-        The globally unique identifier for the object.
+        The globally unique identifier for the user.
 
         :param id: The id of this WorkPlanBidRanks.
         :type: str

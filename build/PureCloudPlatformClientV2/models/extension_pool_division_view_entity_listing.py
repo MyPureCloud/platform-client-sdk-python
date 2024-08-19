@@ -55,9 +55,9 @@ class ExtensionPoolDivisionViewEntityListing(object):
             'page_number': 'int',
             'total': 'int',
             'total_number_of_entities': 'int',
+            'last_uri': 'str',
             'first_uri': 'str',
             'self_uri': 'str',
-            'last_uri': 'str',
             'next_uri': 'str',
             'previous_uri': 'str',
             'page_count': 'int'
@@ -69,9 +69,9 @@ class ExtensionPoolDivisionViewEntityListing(object):
             'page_number': 'pageNumber',
             'total': 'total',
             'total_number_of_entities': 'totalNumberOfEntities',
+            'last_uri': 'lastUri',
             'first_uri': 'firstUri',
             'self_uri': 'selfUri',
-            'last_uri': 'lastUri',
             'next_uri': 'nextUri',
             'previous_uri': 'previousUri',
             'page_count': 'pageCount'
@@ -82,9 +82,9 @@ class ExtensionPoolDivisionViewEntityListing(object):
         self._page_number = None
         self._total = None
         self._total_number_of_entities = None
+        self._last_uri = None
         self._first_uri = None
         self._self_uri = None
-        self._last_uri = None
         self._next_uri = None
         self._previous_uri = None
         self._page_count = None
@@ -210,6 +210,30 @@ class ExtensionPoolDivisionViewEntityListing(object):
         self._total_number_of_entities = total_number_of_entities
 
     @property
+    def last_uri(self) -> str:
+        """
+        Gets the last_uri of this ExtensionPoolDivisionViewEntityListing.
+
+
+        :return: The last_uri of this ExtensionPoolDivisionViewEntityListing.
+        :rtype: str
+        """
+        return self._last_uri
+
+    @last_uri.setter
+    def last_uri(self, last_uri: str) -> None:
+        """
+        Sets the last_uri of this ExtensionPoolDivisionViewEntityListing.
+
+
+        :param last_uri: The last_uri of this ExtensionPoolDivisionViewEntityListing.
+        :type: str
+        """
+        
+
+        self._last_uri = last_uri
+
+    @property
     def first_uri(self) -> str:
         """
         Gets the first_uri of this ExtensionPoolDivisionViewEntityListing.
@@ -256,30 +280,6 @@ class ExtensionPoolDivisionViewEntityListing(object):
         
 
         self._self_uri = self_uri
-
-    @property
-    def last_uri(self) -> str:
-        """
-        Gets the last_uri of this ExtensionPoolDivisionViewEntityListing.
-
-
-        :return: The last_uri of this ExtensionPoolDivisionViewEntityListing.
-        :rtype: str
-        """
-        return self._last_uri
-
-    @last_uri.setter
-    def last_uri(self, last_uri: str) -> None:
-        """
-        Sets the last_uri of this ExtensionPoolDivisionViewEntityListing.
-
-
-        :param last_uri: The last_uri of this ExtensionPoolDivisionViewEntityListing.
-        :type: str
-        """
-        
-
-        self._last_uri = last_uri
 
     @property
     def next_uri(self) -> str:

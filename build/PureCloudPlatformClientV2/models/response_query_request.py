@@ -52,17 +52,20 @@ class ResponseQueryRequest(object):
         self.swagger_types = {
             'query_phrase': 'str',
             'page_size': 'int',
+            'page_number': 'int',
             'filters': 'list[ResponseFilter]'
         }
 
         self.attribute_map = {
             'query_phrase': 'queryPhrase',
             'page_size': 'pageSize',
+            'page_number': 'pageNumber',
             'filters': 'filters'
         }
 
         self._query_phrase = None
         self._page_size = None
+        self._page_number = None
         self._filters = None
 
     @property
@@ -112,6 +115,30 @@ class ResponseQueryRequest(object):
         
 
         self._page_size = page_size
+
+    @property
+    def page_number(self) -> int:
+        """
+        Gets the page_number of this ResponseQueryRequest.
+        Page Number
+
+        :return: The page_number of this ResponseQueryRequest.
+        :rtype: int
+        """
+        return self._page_number
+
+    @page_number.setter
+    def page_number(self, page_number: int) -> None:
+        """
+        Sets the page_number of this ResponseQueryRequest.
+        Page Number
+
+        :param page_number: The page_number of this ResponseQueryRequest.
+        :type: int
+        """
+        
+
+        self._page_number = page_number
 
     @property
     def filters(self) -> List['ResponseFilter']:

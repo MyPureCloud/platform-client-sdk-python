@@ -26,6 +26,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_authorization_role_subjectgrants**](AuthorizationApi.html#get_authorization_role_subjectgrants) | Get the subjects&#39; granted divisions in the specified role.|
 |[**get_authorization_role_users**](AuthorizationApi.html#get_authorization_role_users) | Get a list of the users in a specified role.|
 |[**get_authorization_roles**](AuthorizationApi.html#get_authorization_roles) | Retrieve a list of all roles defined for the organization|
+|[**get_authorization_roles_settings**](AuthorizationApi.html#get_authorization_roles_settings) | Get authorization role settings|
 |[**get_authorization_settings**](AuthorizationApi.html#get_authorization_settings) | Get authorization settings|
 |[**get_authorization_subject**](AuthorizationApi.html#get_authorization_subject) | Returns a listing of roles and permissions for a user.|
 |[**get_authorization_subjects_me**](AuthorizationApi.html#get_authorization_subjects_me) | Returns a listing of roles and permissions for the currently authenticated user.|
@@ -49,6 +50,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**put_authorization_role_users_add**](AuthorizationApi.html#put_authorization_role_users_add) | Sets the users for the role|
 |[**put_authorization_role_users_remove**](AuthorizationApi.html#put_authorization_role_users_remove) | Removes the users from the role|
 |[**put_authorization_roles_default**](AuthorizationApi.html#put_authorization_roles_default) | Restore specified default roles|
+|[**put_authorization_roles_settings**](AuthorizationApi.html#put_authorization_roles_settings) | Change authorization role settings|
 |[**put_user_roles**](AuthorizationApi.html#put_user_roles) | Sets the user&#39;s roles|
 {: class="table table-striped"}
 
@@ -1018,6 +1020,52 @@ except ApiException as e:
 ### Return type
 
 [**OrganizationRoleEntityListing**](OrganizationRoleEntityListing.html)
+
+<a name="get_authorization_roles_settings"></a>
+
+## [**RoleSettings**](RoleSettings.html) get_authorization_roles_settings()
+
+
+
+Get authorization role settings
+
+Wraps GET /api/v2/authorization/roles/settings 
+
+Requires ANY permissions: 
+
+* directory:organization:admin
+* authorization:settings:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AuthorizationApi()
+
+try:
+    # Get authorization role settings
+    api_response = api_instance.get_authorization_roles_settings()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AuthorizationApi->get_authorization_roles_settings: %s\n" % e)
+```
+
+### Parameters
+
+This endpoint does not need any parameters.
+
+
+### Return type
+
+[**RoleSettings**](RoleSettings.html)
 
 <a name="get_authorization_settings"></a>
 
@@ -2193,6 +2241,58 @@ except ApiException as e:
 ### Return type
 
 [**OrganizationRoleEntityListing**](OrganizationRoleEntityListing.html)
+
+<a name="put_authorization_roles_settings"></a>
+
+## [**RoleSettings**](RoleSettings.html) put_authorization_roles_settings(body)
+
+
+
+Change authorization role settings
+
+Change role settings
+
+Wraps PUT /api/v2/authorization/roles/settings 
+
+Requires ANY permissions: 
+
+* directory:organization:admin
+* authorization:settings:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.AuthorizationApi()
+body = PureCloudPlatformClientV2.RoleSettings() # RoleSettings | Authorization Role Settings
+
+try:
+    # Change authorization role settings
+    api_response = api_instance.put_authorization_roles_settings(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AuthorizationApi->put_authorization_roles_settings: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**RoleSettings**](RoleSettings.html)| Authorization Role Settings |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**RoleSettings**](RoleSettings.html)
 
 <a name="put_user_roles"></a>
 

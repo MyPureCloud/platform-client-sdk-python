@@ -54,23 +54,20 @@ class ContactBulkEditRequest(object):
             'contact_list_filter_id': 'str',
             'criteria': 'ContactBulkSearchCriteria',
             'contact_ids': 'list[str]',
-            'contact': 'DialerContact',
-            'generate_download_uri': 'bool'
+            'contact': 'DialerContact'
         }
 
         self.attribute_map = {
             'contact_list_filter_id': 'contactListFilterId',
             'criteria': 'criteria',
             'contact_ids': 'contactIds',
-            'contact': 'contact',
-            'generate_download_uri': 'generateDownloadUri'
+            'contact': 'contact'
         }
 
         self._contact_list_filter_id = None
         self._criteria = None
         self._contact_ids = None
         self._contact = None
-        self._generate_download_uri = None
 
     @property
     def contact_list_filter_id(self) -> str:
@@ -167,30 +164,6 @@ class ContactBulkEditRequest(object):
         
 
         self._contact = contact
-
-    @property
-    def generate_download_uri(self) -> bool:
-        """
-        Gets the generate_download_uri of this ContactBulkEditRequest.
-
-
-        :return: The generate_download_uri of this ContactBulkEditRequest.
-        :rtype: bool
-        """
-        return self._generate_download_uri
-
-    @generate_download_uri.setter
-    def generate_download_uri(self, generate_download_uri: bool) -> None:
-        """
-        Sets the generate_download_uri of this ContactBulkEditRequest.
-
-
-        :param generate_download_uri: The generate_download_uri of this ContactBulkEditRequest.
-        :type: bool
-        """
-        
-
-        self._generate_download_uri = generate_download_uri
 
     def to_dict(self):
         """

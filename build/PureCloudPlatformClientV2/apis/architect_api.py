@@ -1267,7 +1267,6 @@ class ArchitectApi(object):
         """
         Deletes a log level for a flow by flow id.
         Deletes the associated log level for a flow by flow id
-	    delete_flow_instances_settings_loglevels is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -1589,7 +1588,6 @@ class ArchitectApi(object):
         """
         Resets the org log level to default, base
         Resets the org log level to default, base
-	    delete_flows_instances_settings_loglevels_default is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -4959,7 +4957,6 @@ class ArchitectApi(object):
         """
         Retrieves the log level for a flow by flow id.
         Retrieves the log level for a flow by flow id.
-	    get_flow_instances_settings_loglevels is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -6994,7 +6991,6 @@ class ArchitectApi(object):
         """
         Get the execution history enabled setting.
         Get the execution history enabled setting.
-	    get_flows_instances_settings_executiondata is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -7067,7 +7063,6 @@ class ArchitectApi(object):
         """
         Retrieve a list of LogLevels for the organization.
         Returns a paged set of LogLevels per flow id
-	    get_flows_instances_settings_loglevels is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -7149,7 +7144,6 @@ class ArchitectApi(object):
         """
         Gets the available flow log level characteristics for this organization.
         Log levels can be customized and this returns the set of available characteristics that can be enabled/disabled.
-	    get_flows_instances_settings_loglevels_characteristics is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -7222,7 +7216,6 @@ class ArchitectApi(object):
         """
         Returns the flow default log level.
         Returns the flow default log level which will be used if no specific flow id log level is found.
-	    get_flows_instances_settings_loglevels_default is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -8089,7 +8082,6 @@ class ArchitectApi(object):
         """
         Edit the execution history enabled setting.
         Edit the execution history enabled setting.
-	    patch_flows_instances_settings_executiondata is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -9378,7 +9370,6 @@ class ArchitectApi(object):
         """
         Set the logLevel for a particular flow id
         Assigns a new loglevel to a flow id
-	    post_flow_instances_settings_loglevels is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -11575,7 +11566,6 @@ class ArchitectApi(object):
         """
         Edit the logLevel for a particular flow id
         Updates the loglevel for a flow id
-	    put_flow_instances_settings_loglevels is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -11837,7 +11827,6 @@ class ArchitectApi(object):
         """
         Edit the flow default log level.
         Edit the flow default log level.
-	    put_flows_instances_settings_loglevels_default is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

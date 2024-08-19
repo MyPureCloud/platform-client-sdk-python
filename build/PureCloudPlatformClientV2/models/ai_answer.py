@@ -133,7 +133,7 @@ class AiAnswer(object):
         """
         if isinstance(failure_type, int):
             failure_type = str(failure_type)
-        allowed_values = ["LowConfidenceError", "ParsingError", "ServiceError"]
+        allowed_values = ["LowConfidenceError", "ParsingError", "ServiceError", "LowHistoricalAccuracyError"]
         if failure_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for failure_type -> " + failure_type)
             self._failure_type = "outdated_sdk_version"

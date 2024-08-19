@@ -86,6 +86,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_knowledge_knowledgebase_documents_bulk_remove**](KnowledgeApi.html#post_knowledge_knowledgebase_documents_bulk_remove) | Bulk remove documents.|
 |[**post_knowledge_knowledgebase_documents_bulk_update**](KnowledgeApi.html#post_knowledge_knowledgebase_documents_bulk_update) | Bulk update documents.|
 |[**post_knowledge_knowledgebase_documents_presentations**](KnowledgeApi.html#post_knowledge_knowledgebase_documents_presentations) | Indicate that documents were presented to the user.|
+|[**post_knowledge_knowledgebase_documents_query**](KnowledgeApi.html#post_knowledge_knowledgebase_documents_query) | Query for knowledge documents.|
 |[**post_knowledge_knowledgebase_documents_search**](KnowledgeApi.html#post_knowledge_knowledgebase_documents_search) | Search the documents in a knowledge base.|
 |[**post_knowledge_knowledgebase_documents_search_suggestions**](KnowledgeApi.html#post_knowledge_knowledgebase_documents_search_suggestions) | Query the knowledge documents to provide suggestions for auto completion.|
 |[**post_knowledge_knowledgebase_documents_versions_bulk_add**](KnowledgeApi.html#post_knowledge_knowledgebase_documents_versions_bulk_add) | Bulk add document versions.|
@@ -4322,6 +4323,59 @@ except ApiException as e:
 ### Return type
 
 void (empty response body)
+
+<a name="post_knowledge_knowledgebase_documents_query"></a>
+
+## [**KnowledgeDocumentQueryResponse**](KnowledgeDocumentQueryResponse.html) post_knowledge_knowledgebase_documents_query(knowledge_base_id, expand=expand, body=body)
+
+
+
+Query for knowledge documents.
+
+Wraps POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/query 
+
+Requires ALL permissions: 
+
+* knowledge:document:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.KnowledgeApi()
+knowledge_base_id = 'knowledge_base_id_example' # str | Knowledge Base ID
+expand = ['expand_example'] # list[str] | Fields, if any, to expand for each document in the search result matching the query. (optional)
+body = PureCloudPlatformClientV2.KnowledgeDocumentQuery() # KnowledgeDocumentQuery |  (optional)
+
+try:
+    # Query for knowledge documents.
+    api_response = api_instance.post_knowledge_knowledgebase_documents_query(knowledge_base_id, expand=expand, body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling KnowledgeApi->post_knowledge_knowledgebase_documents_query: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **knowledge_base_id** | **str**| Knowledge Base ID |  |
+| **expand** | [**list[str]**](str.html)| Fields, if any, to expand for each document in the search result matching the query. | [optional] <br />**Values**: documentVariations, documentAlternatives, knowledgeBaseLanguageCode |
+| **body** | [**KnowledgeDocumentQuery**](KnowledgeDocumentQuery.html)|  | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**KnowledgeDocumentQueryResponse**](KnowledgeDocumentQueryResponse.html)
 
 <a name="post_knowledge_knowledgebase_documents_search"></a>
 

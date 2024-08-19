@@ -79,7 +79,7 @@ class TextBotUserAgent(object):
         """
         if isinstance(name, int):
             name = str(name)
-        allowed_values = ["Phone", "SMS", "GenesysWebWidget", "FacebookMessenger", "WeChat", "Whatsapp", "AppleBusinessChat", "Telegram", "Slack", "Signal", "Line", "Discord", "TwitterDirectMessage", "Other", "Unknown"]
+        allowed_values = ["Phone", "SMS", "GenesysWebWidget", "FacebookMessenger", "WeChat", "Whatsapp", "AppleBusinessChat", "Telegram", "Slack", "Signal", "Line", "Discord", "TwitterDirectMessage", "Open", "Instagram", "Other", "Unknown"]
         if name.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for name -> " + name)
             self._name = "outdated_sdk_version"

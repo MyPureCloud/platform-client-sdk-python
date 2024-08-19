@@ -1,194 +1,93 @@
-Platform API version: 8336
+Platform API version: 8358
 
 
 
 
-# Major Changes (1 change)
+# Major Changes (4 changes)
 
-**GET /api/v2/userrecordings/{recordingId}/media** (1 change)
+**InboundRoute** (1 change)
 
-* Has been deprecated
+* Property imapFolder was removed
+
+**ContactBulkSearchParameters** (1 change)
+
+* Property generateDownloadUri was removed
+
+**ContactBulkEditRequest** (1 change)
+
+* Property generateDownloadUri was removed
+
+**InboundDomain** (1 change)
+
+* Property imapSettings was removed
 
 
-# Minor Changes (47 changes)
+# Minor Changes (20 changes)
 
-**/api/v2/outbound/contactlists/{contactListId}/contacts/bulk/jobs** (2 changes)
+**/api/v2/authorization/roles/settings** (3 changes)
 
 * Path was added
 * Operation GET was added
+* Operation PUT was added
 
-**/api/v2/outbound/contactlists/{contactListId}/contacts/bulk/jobs/{jobId}** (2 changes)
-
-* Path was added
-* Operation GET was added
-
-**/api/v2/userrecordings/{recordingId}/transcoding** (2 changes)
+**/api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/query** (2 changes)
 
 * Path was added
-* Operation GET was added
+* Operation POST was added
 
-**Limit** (1 change)
+**WorkPlanBidRanks** (1 change)
 
-* Enum value internal.messaging was added to property namespace
+* id is no longer readonly
 
-**QuestionGroupSettings** (1 change)
+**FlowAggregationQuery** (1 change)
 
-* Optional property questionGroupContextId was added
+* Enum value flowSubType was added to property groupBy
 
-**QuestionSettings** (1 change)
+**TextBotUserAgent** (2 changes)
 
-* Optional property questionContextId was added
+* Enum value Open was added to property name
+* Enum value Instagram was added to property name
 
-**DownloadResponse** (4 changes)
-
-* Optional property id was added
-* Optional property state was added
-* Optional property resultUri was added
-* Optional property selfUri was added
-
-**DynamicContactQueueingSettings** (1 change)
-
-* Optional property filter was added
-
-**CampaignDiagnostics** (1 change)
-
-* Optional property filteredOutContactsCount was added
-
-**CampaignStats** (1 change)
-
-* Optional property filteredOutContactsCount was added
-
-**ContactsBulkOperationJobListing** (1 change)
+**RoleSettings** (1 change)
 
 * Model was added
 
-**MessagingCampaignDiagnostics** (1 change)
+**AiAnswer** (1 change)
 
-* Optional property filteredOutContactsCount was added
+* Enum value LowHistoricalAccuracyError was added to property failureType
 
-**ApprovalNamespace** (1 change)
+**KnowledgeDocumentQueryResponse** (1 change)
 
-* Enum value internal.messaging was added to property namespace
+* Model was added
 
-**LimitChangeRequestDetails** (1 change)
+**KnowledgeDocumentQuery** (1 change)
 
-* Enum value internal.messaging was added to property namespace
+* Model was added
 
-**StatusChange** (1 change)
+**ResponseQueryRequest** (1 change)
 
-* Enum value internal.messaging was added to property namespace
+* Optional property pageNumber was added
 
-**Flow** (1 change)
+**PostTextRequest** (2 changes)
 
-* Optional property virtualAgentEnabled was added
+* Enum value Open was added to property messagingPlatformType
+* Enum value Instagram was added to property messagingPlatformType
 
-**FlowVersion** (1 change)
+**FlowAsyncAggregationQuery** (1 change)
 
-* Optional property virtualAgentEnabled was added
+* Enum value flowSubType was added to property groupBy
 
-**StationEntityListing** (1 change)
+**TaskManagementAggregationView** (1 change)
 
-* Optional property totalNumberOfEntities was added
+* Enum value tWorkitemsAgentFocusComplete was added to property target
 
-**EdgeEntityListing** (1 change)
+**TaskManagementAsyncAggregationQuery** (1 change)
 
-* Optional property totalNumberOfEntities was added
+* Enum value tWorkitemsAgentFocusComplete was added to property metrics
 
-**DIDPoolEntityListing** (1 change)
+**TaskManagementAggregationQuery** (1 change)
 
-* Optional property totalNumberOfEntities was added
+* Enum value tWorkitemsAgentFocusComplete was added to property metrics
 
-**DIDEntityListing** (1 change)
 
-* Optional property totalNumberOfEntities was added
-
-**EdgeGroupEntityListing** (1 change)
-
-* Optional property totalNumberOfEntities was added
-
-**ExtensionPoolDivisionViewEntityListing** (1 change)
-
-* Optional property totalNumberOfEntities was added
-
-**ExtensionPoolEntityListing** (1 change)
-
-* Optional property totalNumberOfEntities was added
-
-**ExtensionEntityListing** (1 change)
-
-* Optional property totalNumberOfEntities was added
-
-**LineBaseEntityListing** (1 change)
-
-* Optional property totalNumberOfEntities was added
-
-**LineEntityListing** (1 change)
-
-* Optional property totalNumberOfEntities was added
-
-**OutboundRouteEntityListing** (1 change)
-
-* Optional property totalNumberOfEntities was added
-
-**PhoneEntityListing** (1 change)
-
-* Optional property totalNumberOfEntities was added
-
-**SiteEntityListing** (1 change)
-
-* Optional property totalNumberOfEntities was added
-
-**OutboundRouteBaseEntityListing** (1 change)
-
-* Optional property totalNumberOfEntities was added
-
-**TrunkBaseEntityListing** (1 change)
-
-* Optional property totalNumberOfEntities was added
-
-**TrunkEntityListing** (1 change)
-
-* Optional property totalNumberOfEntities was added
-
-**EmergencyGroupDivisionViewEntityListing** (1 change)
-
-* Optional property totalNumberOfEntities was added
-
-**HistoryEntry** (1 change)
-
-* Optional property virtualAgentEnabled was added
-
-**IVREntityListing** (1 change)
-
-* Optional property totalNumberOfEntities was added
-
-**IVRDivisionViewEntityListing** (1 change)
-
-* Optional property totalNumberOfEntities was added
-
-**ScheduleGroupDivisionViewEntityListing** (1 change)
-
-* Optional property totalNumberOfEntities was added
-
-**ScheduleGroupEntityListing** (1 change)
-
-* Optional property totalNumberOfEntities was added
-
-**ScheduleDivisionViewEntityListing** (1 change)
-
-* Optional property totalNumberOfEntities was added
-
-**ScheduleEntityListing** (1 change)
-
-* Optional property totalNumberOfEntities was added
-
-
-# Point Changes (2 changes)
-
-**GET /api/v2/recording/batchrequests/{jobId}** (1 change)
-
-* Summary was changed
-
-**GET /api/v2/userrecordings/{recordingId}/media** (1 change)
-
-* Description was changed
+# Point Changes (0 changes)

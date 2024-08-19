@@ -34,7 +34,6 @@ from typing import Dict
 
 if TYPE_CHECKING:
     from . import DomainEntityRef
-    from . import ImapSettings
     from . import MailFromResult
 
 class InboundDomain(object):
@@ -58,7 +57,6 @@ class InboundDomain(object):
             'sub_domain': 'bool',
             'mail_from_settings': 'MailFromResult',
             'custom_smtp_server': 'DomainEntityRef',
-            'imap_settings': 'ImapSettings',
             'self_uri': 'str'
         }
 
@@ -69,7 +67,6 @@ class InboundDomain(object):
             'sub_domain': 'subDomain',
             'mail_from_settings': 'mailFromSettings',
             'custom_smtp_server': 'customSMTPServer',
-            'imap_settings': 'imapSettings',
             'self_uri': 'selfUri'
         }
 
@@ -79,7 +76,6 @@ class InboundDomain(object):
         self._sub_domain = None
         self._mail_from_settings = None
         self._custom_smtp_server = None
-        self._imap_settings = None
         self._self_uri = None
 
     @property
@@ -230,30 +226,6 @@ class InboundDomain(object):
         
 
         self._custom_smtp_server = custom_smtp_server
-
-    @property
-    def imap_settings(self) -> 'ImapSettings':
-        """
-        Gets the imap_settings of this InboundDomain.
-        The IMAP server integration and settings to use for processing inbound emails.
-
-        :return: The imap_settings of this InboundDomain.
-        :rtype: ImapSettings
-        """
-        return self._imap_settings
-
-    @imap_settings.setter
-    def imap_settings(self, imap_settings: 'ImapSettings') -> None:
-        """
-        Sets the imap_settings of this InboundDomain.
-        The IMAP server integration and settings to use for processing inbound emails.
-
-        :param imap_settings: The imap_settings of this InboundDomain.
-        :type: ImapSettings
-        """
-        
-
-        self._imap_settings = imap_settings
 
     @property
     def self_uri(self) -> str:

@@ -2249,6 +2249,8 @@ from .knowledge_document_guest_search import KnowledgeDocumentGuestSearch
 from .knowledge_document_guest_search_request import KnowledgeDocumentGuestSearchRequest
 from .knowledge_document_guest_search_result import KnowledgeDocumentGuestSearchResult
 from .knowledge_document_presentation import KnowledgeDocumentPresentation
+from .knowledge_document_query import KnowledgeDocumentQuery
+from .knowledge_document_query_response import KnowledgeDocumentQueryResponse
 from .knowledge_document_reference import KnowledgeDocumentReference
 from .knowledge_document_req import KnowledgeDocumentReq
 from .knowledge_document_request import KnowledgeDocumentRequest
@@ -3385,6 +3387,7 @@ from .ring import Ring
 from .role_division import RoleDivision
 from .role_division_grants import RoleDivisionGrants
 from .role_division_pair import RoleDivisionPair
+from .role_settings import RoleSettings
 from .room import Room
 from .room_participant import RoomParticipant
 from .room_participant_response import RoomParticipantResponse

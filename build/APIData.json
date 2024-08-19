@@ -6013,6 +6013,13 @@
     "return": "OrganizationRoleEntityListing",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.AuthorizationApi();\npage_size = 25 # int | The total page size requested (optional) (default to 25)\npage_number = 1 # int | The page number requested (optional) (default to 1)\nsort_by = 'sort_by_example' # str | variable name requested to sort by (optional)\nexpand = ['expand_example'] # list[str] | variable name requested by expand list (optional)\nnext_page = 'next_page_example' # str | next page token (optional)\nprevious_page = 'previous_page_example' # str | Previous page token (optional)\nname = 'name_example' # str |  (optional)\npermission = ['permission_example'] # list[str] |  (optional)\ndefault_role_id = ['default_role_id_example'] # list[str] |  (optional)\nuser_count = True # bool |  (optional) (default to True)\nid = ['id_example'] # list[str] | id (optional)\n\ntry:\n    # Retrieve a list of all roles defined for the organization\n    api_response = api_instance.get_authorization_roles(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, name=name, permission=permission, default_role_id=default_role_id, user_count=user_count, id=id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling AuthorizationApi->get_authorization_roles: %s\\n\" % e)"
   },
+  "get_authorization_roles_settings": {
+    "operationId": "get_authorization_roles_settings",
+    "functionName": "get_authorization_roles_settings",
+    "signature": "get_authorization_roles_settings()",
+    "return": "RoleSettings",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.AuthorizationApi();\n\ntry:\n    # Get authorization role settings\n    api_response = api_instance.get_authorization_roles_settings()\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling AuthorizationApi->get_authorization_roles_settings: %s\\n\" % e)"
+  },
   "get_authorization_settings": {
     "operationId": "get_authorization_settings",
     "functionName": "get_authorization_settings",
@@ -6426,6 +6433,20 @@
     ],
     "return": "OrganizationRoleEntityListing",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.AuthorizationApi();\nbody = [PureCloudPlatformClientV2.DomainOrganizationRole()] # list[DomainOrganizationRole] | Organization roles list\n\ntry:\n    # Restore specified default roles\n    api_response = api_instance.put_authorization_roles_default(body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling AuthorizationApi->put_authorization_roles_default: %s\\n\" % e)"
+  },
+  "put_authorization_roles_settings": {
+    "operationId": "put_authorization_roles_settings",
+    "functionName": "put_authorization_roles_settings",
+    "signature": "put_authorization_roles_settings(body)",
+    "parameters": [
+      {
+        "name": "body",
+        "type": "RoleSettings",
+        "required": "true"
+      }
+    ],
+    "return": "RoleSettings",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.AuthorizationApi();\nbody = PureCloudPlatformClientV2.RoleSettings() # RoleSettings | Authorization Role Settings\n\ntry:\n    # Change authorization role settings\n    api_response = api_instance.put_authorization_roles_settings(body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling AuthorizationApi->put_authorization_roles_settings: %s\\n\" % e)"
   },
   "put_user_roles": {
     "operationId": "put_user_roles",
@@ -22069,6 +22090,30 @@
       }
     ],
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.KnowledgeApi();\nknowledge_base_id = 'knowledge_base_id_example' # str | Knowledge base ID.\nbody = PureCloudPlatformClientV2.KnowledgeDocumentPresentation() # KnowledgeDocumentPresentation |  (optional)\n\ntry:\n    # Indicate that documents were presented to the user.\n    api_instance.post_knowledge_knowledgebase_documents_presentations(knowledge_base_id, body=body)\nexcept ApiException as e:\n    print(\"Exception when calling KnowledgeApi->post_knowledge_knowledgebase_documents_presentations: %s\\n\" % e)"
+  },
+  "post_knowledge_knowledgebase_documents_query": {
+    "operationId": "post_knowledge_knowledgebase_documents_query",
+    "functionName": "post_knowledge_knowledgebase_documents_query",
+    "signature": "post_knowledge_knowledgebase_documents_query(knowledge_base_id, expand, body)",
+    "parameters": [
+      {
+        "name": "knowledge_base_id",
+        "type": "str",
+        "required": "true"
+      },
+      {
+        "name": "expand",
+        "type": "list[str]",
+        "required": "false"
+      },
+      {
+        "name": "body",
+        "type": "KnowledgeDocumentQuery",
+        "required": "false"
+      }
+    ],
+    "return": "KnowledgeDocumentQueryResponse",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.KnowledgeApi();\nknowledge_base_id = 'knowledge_base_id_example' # str | Knowledge Base ID\nexpand = ['expand_example'] # list[str] | Fields, if any, to expand for each document in the search result matching the query. (optional)\nbody = PureCloudPlatformClientV2.KnowledgeDocumentQuery() # KnowledgeDocumentQuery |  (optional)\n\ntry:\n    # Query for knowledge documents.\n    api_response = api_instance.post_knowledge_knowledgebase_documents_query(knowledge_base_id, expand=expand, body=body)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling KnowledgeApi->post_knowledge_knowledgebase_documents_query: %s\\n\" % e)"
   },
   "post_knowledge_knowledgebase_documents_search": {
     "operationId": "post_knowledge_knowledgebase_documents_search",
