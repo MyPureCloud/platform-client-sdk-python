@@ -56,6 +56,7 @@ from ..models import ContactIdentifier
 from ..models import ContactListing
 from ..models import ConversationAssociation
 from ..models import CursorContactListing
+from ..models import CursorExternalSourceListing
 from ..models import CursorNoteListing
 from ..models import CursorOrganizationListing
 from ..models import CursorRelationshipListing
@@ -67,6 +68,7 @@ from ..models import ExternalContact
 from ..models import ExternalOrganization
 from ..models import ExternalOrganizationListing
 from ..models import ExternalOrganizationTrustorLink
+from ..models import ExternalSource
 from ..models import IdentifierClaimRequest
 from ..models import MergeRequest
 from ..models import Note
@@ -328,6 +330,85 @@ class ExternalContactsApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def delete_externalcontacts_externalsource(self, external_source_id: str, **kwargs) -> object:
+        """
+        Delete an External Source. WARNING: Any records that reference this External Source will not be automatically cleaned up. Those records will still be editable, but their External IDs may not be fully viewable.
+        
+	    delete_externalcontacts_externalsource is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_externalcontacts_externalsource(external_source_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str external_source_id: External Source ID (required)
+        :return: object
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['external_source_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_externalcontacts_externalsource" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'external_source_id' is set
+        if ('external_source_id' not in params) or (params['external_source_id'] is None):
+            raise ValueError("Missing the required parameter `external_source_id` when calling `delete_externalcontacts_externalsource`")
+
+
+        resource_path = '/api/v2/externalcontacts/externalsources/{externalSourceId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'external_source_id' in params:
+            path_params['externalSourceId'] = params['external_source_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'DELETE',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='object',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -666,7 +747,7 @@ class ExternalContactsApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str contact_id: ExternalContact ID (required)
-        :param list[str] expand: which fields, if any, to expand (externalOrganization,externalDataSources,identifiers)
+        :param list[str] expand: which fields, if any, to expand
         :return: ExternalContact
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1549,6 +1630,170 @@ class ExternalContactsApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type='DataSchemaListing',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_externalcontacts_externalsource(self, external_source_id: str, **kwargs) -> 'ExternalSource':
+        """
+        Fetch an External Source
+        
+	    get_externalcontacts_externalsource is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_externalcontacts_externalsource(external_source_id, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str external_source_id: External Source ID (required)
+        :return: ExternalSource
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['external_source_id']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_externalcontacts_externalsource" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'external_source_id' is set
+        if ('external_source_id' not in params) or (params['external_source_id'] is None):
+            raise ValueError("Missing the required parameter `external_source_id` when calling `get_externalcontacts_externalsource`")
+
+
+        resource_path = '/api/v2/externalcontacts/externalsources/{externalSourceId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'external_source_id' in params:
+            path_params['externalSourceId'] = params['external_source_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ExternalSource',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def get_externalcontacts_externalsources(self, **kwargs) -> 'CursorExternalSourceListing':
+        """
+        Fetch a list of External Sources
+        
+	    get_externalcontacts_externalsources is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_externalcontacts_externalsources(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str cursor: Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL
+        :param int limit: The number of ExternalSources per page; must be between 10 and 200, default is 100
+        :param str name: Filter by external source name. Filtering is prefix filtering and not an exact match
+        :param bool active: Filter by active status of external source
+        :return: CursorExternalSourceListing
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['cursor', 'limit', 'name', 'active']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_externalcontacts_externalsources" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+
+        resource_path = '/api/v2/externalcontacts/externalsources'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+        if 'cursor' in params:
+            query_params['cursor'] = params['cursor']
+        if 'limit' in params:
+            query_params['limit'] = params['limit']
+        if 'name' in params:
+            query_params['name'] = params['name']
+        if 'active' in params:
+            query_params['active'] = params['active']
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'GET',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='CursorExternalSourceListing',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response
@@ -4604,6 +4849,85 @@ class ExternalContactsApi(object):
                                             callback=params.get('callback'))
         return response
 
+    def post_externalcontacts_externalsources(self, body: 'ExternalSource', **kwargs) -> 'ExternalSource':
+        """
+        Create an External Source
+        
+	    post_externalcontacts_externalsources is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.post_externalcontacts_externalsources(body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param ExternalSource body: External Source (required)
+        :return: ExternalSource
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method post_externalcontacts_externalsources" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `post_externalcontacts_externalsources`")
+
+
+        resource_path = '/api/v2/externalcontacts/externalsources'.replace('{format}', 'json')
+        path_params = {}
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'POST',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ExternalSource',
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
     def post_externalcontacts_identifierlookup(self, identifier: 'ContactIdentifier', **kwargs) -> 'ExternalContact':
         """
         Fetch a contact using an identifier type and value.
@@ -5419,6 +5743,91 @@ class ExternalContactsApi(object):
                                             post_params=form_params,
                                             files=local_var_files,
                                             response_type=None,
+                                            auth_settings=auth_settings,
+                                            callback=params.get('callback'))
+        return response
+
+    def put_externalcontacts_externalsource(self, external_source_id: str, body: 'ExternalSource', **kwargs) -> 'ExternalSource':
+        """
+        Update an External Source
+        
+	    put_externalcontacts_externalsource is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.put_externalcontacts_externalsource(external_source_id, body, callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param str external_source_id: External Source ID (required)
+        :param ExternalSource body: External Source (required)
+        :return: ExternalSource
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['external_source_id', 'body']
+        all_params.append('callback')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method put_externalcontacts_externalsource" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        # verify the required parameter 'external_source_id' is set
+        if ('external_source_id' not in params) or (params['external_source_id'] is None):
+            raise ValueError("Missing the required parameter `external_source_id` when calling `put_externalcontacts_externalsource`")
+        # verify the required parameter 'body' is set
+        if ('body' not in params) or (params['body'] is None):
+            raise ValueError("Missing the required parameter `body` when calling `put_externalcontacts_externalsource`")
+
+
+        resource_path = '/api/v2/externalcontacts/externalsources/{externalSourceId}'.replace('{format}', 'json')
+        path_params = {}
+        if 'external_source_id' in params:
+            path_params['externalSourceId'] = params['external_source_id']
+
+        query_params = {}
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+        if not header_params['Accept']:
+            del header_params['Accept']
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['PureCloud OAuth']
+
+        response = self.api_client.call_api(resource_path, 'PUT',
+                                            path_params,
+                                            query_params,
+                                            header_params,
+                                            body=body_params,
+                                            post_params=form_params,
+                                            files=local_var_files,
+                                            response_type='ExternalSource',
                                             auth_settings=auth_settings,
                                             callback=params.get('callback'))
         return response

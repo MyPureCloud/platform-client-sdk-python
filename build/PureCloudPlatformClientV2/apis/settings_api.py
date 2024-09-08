@@ -214,7 +214,6 @@ class SettingsApi(object):
         """
         Get the execution history enabled setting.
         Get the execution history enabled setting.
-	    get_settings_executiondata is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -440,7 +439,6 @@ class SettingsApi(object):
         """
         Edit the execution history on off setting.
         Edit the execution history on off setting.
-	    patch_settings_executiondata is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

@@ -54,6 +54,7 @@ class FunctionConfig(object):
             'id': 'str',
             'function': 'Function',
             'zip': 'FunctionZipConfig',
+            'upload_exception_history': 'list[FunctionZipConfig]',
             'self_uri': 'str'
         }
 
@@ -61,12 +62,14 @@ class FunctionConfig(object):
             'id': 'id',
             'function': 'function',
             'zip': 'zip',
+            'upload_exception_history': 'uploadExceptionHistory',
             'self_uri': 'selfUri'
         }
 
         self._id = None
         self._function = None
         self._zip = None
+        self._upload_exception_history = None
         self._self_uri = None
 
     @property
@@ -140,6 +143,30 @@ class FunctionConfig(object):
         
 
         self._zip = zip
+
+    @property
+    def upload_exception_history(self) -> List['FunctionZipConfig']:
+        """
+        Gets the upload_exception_history of this FunctionConfig.
+        History of failed zip upload file configuration including their state and error messages. Contains no more than last ten failures.
+
+        :return: The upload_exception_history of this FunctionConfig.
+        :rtype: list[FunctionZipConfig]
+        """
+        return self._upload_exception_history
+
+    @upload_exception_history.setter
+    def upload_exception_history(self, upload_exception_history: List['FunctionZipConfig']) -> None:
+        """
+        Sets the upload_exception_history of this FunctionConfig.
+        History of failed zip upload file configuration including their state and error messages. Contains no more than last ten failures.
+
+        :param upload_exception_history: The upload_exception_history of this FunctionConfig.
+        :type: list[FunctionZipConfig]
+        """
+        
+
+        self._upload_exception_history = upload_exception_history
 
     @property
     def self_uri(self) -> str:

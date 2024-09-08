@@ -49,6 +49,7 @@ class TransferRequest(object):
         """
         self.swagger_types = {
             'transfer_type': 'str',
+            'keep_internal_message_alive': 'bool',
             'user_id': 'str',
             'address': 'str',
             'user_name': 'str',
@@ -58,6 +59,7 @@ class TransferRequest(object):
 
         self.attribute_map = {
             'transfer_type': 'transferType',
+            'keep_internal_message_alive': 'keepInternalMessageAlive',
             'user_id': 'userId',
             'address': 'address',
             'user_name': 'userName',
@@ -66,6 +68,7 @@ class TransferRequest(object):
         }
 
         self._transfer_type = None
+        self._keep_internal_message_alive = None
         self._user_id = None
         self._address = None
         self._user_name = None
@@ -100,6 +103,30 @@ class TransferRequest(object):
             self._transfer_type = "outdated_sdk_version"
         else:
             self._transfer_type = transfer_type
+
+    @property
+    def keep_internal_message_alive(self) -> bool:
+        """
+        Gets the keep_internal_message_alive of this TransferRequest.
+        If true, the digital internal message will NOT be terminated.
+
+        :return: The keep_internal_message_alive of this TransferRequest.
+        :rtype: bool
+        """
+        return self._keep_internal_message_alive
+
+    @keep_internal_message_alive.setter
+    def keep_internal_message_alive(self, keep_internal_message_alive: bool) -> None:
+        """
+        Sets the keep_internal_message_alive of this TransferRequest.
+        If true, the digital internal message will NOT be terminated.
+
+        :param keep_internal_message_alive: The keep_internal_message_alive of this TransferRequest.
+        :type: bool
+        """
+        
+
+        self._keep_internal_message_alive = keep_internal_message_alive
 
     @property
     def user_id(self) -> str:

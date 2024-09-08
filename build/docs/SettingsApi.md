@@ -121,8 +121,6 @@ Get the execution history enabled setting.
 
 Get the execution history enabled setting.
 
-get_settings_executiondata is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/settings/executiondata 
 
 Requires ANY permissions: 
@@ -267,8 +265,6 @@ except ApiException as e:
 Edit the execution history on off setting.
 
 Edit the execution history on off setting.
-
-patch_settings_executiondata is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps PATCH /api/v2/settings/executiondata 
 

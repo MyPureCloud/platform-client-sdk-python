@@ -49,15 +49,18 @@ class TransferToExternalRequest(object):
         """
         self.swagger_types = {
             'transfer_type': 'str',
+            'keep_internal_message_alive': 'bool',
             'address': 'str'
         }
 
         self.attribute_map = {
             'transfer_type': 'transferType',
+            'keep_internal_message_alive': 'keepInternalMessageAlive',
             'address': 'address'
         }
 
         self._transfer_type = None
+        self._keep_internal_message_alive = None
         self._address = None
 
     @property
@@ -88,6 +91,30 @@ class TransferToExternalRequest(object):
             self._transfer_type = "outdated_sdk_version"
         else:
             self._transfer_type = transfer_type
+
+    @property
+    def keep_internal_message_alive(self) -> bool:
+        """
+        Gets the keep_internal_message_alive of this TransferToExternalRequest.
+        If true, the digital internal message will NOT be terminated.
+
+        :return: The keep_internal_message_alive of this TransferToExternalRequest.
+        :rtype: bool
+        """
+        return self._keep_internal_message_alive
+
+    @keep_internal_message_alive.setter
+    def keep_internal_message_alive(self, keep_internal_message_alive: bool) -> None:
+        """
+        Sets the keep_internal_message_alive of this TransferToExternalRequest.
+        If true, the digital internal message will NOT be terminated.
+
+        :param keep_internal_message_alive: The keep_internal_message_alive of this TransferToExternalRequest.
+        :type: bool
+        """
+        
+
+        self._keep_internal_message_alive = keep_internal_message_alive
 
     @property
     def address(self) -> str:

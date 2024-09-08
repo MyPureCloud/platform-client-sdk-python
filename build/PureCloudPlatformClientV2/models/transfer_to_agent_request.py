@@ -49,6 +49,7 @@ class TransferToAgentRequest(object):
         """
         self.swagger_types = {
             'transfer_type': 'str',
+            'keep_internal_message_alive': 'bool',
             'user_id': 'str',
             'user_name': 'str',
             'user_display_name': 'str',
@@ -57,6 +58,7 @@ class TransferToAgentRequest(object):
 
         self.attribute_map = {
             'transfer_type': 'transferType',
+            'keep_internal_message_alive': 'keepInternalMessageAlive',
             'user_id': 'userId',
             'user_name': 'userName',
             'user_display_name': 'userDisplayName',
@@ -64,6 +66,7 @@ class TransferToAgentRequest(object):
         }
 
         self._transfer_type = None
+        self._keep_internal_message_alive = None
         self._user_id = None
         self._user_name = None
         self._user_display_name = None
@@ -97,6 +100,30 @@ class TransferToAgentRequest(object):
             self._transfer_type = "outdated_sdk_version"
         else:
             self._transfer_type = transfer_type
+
+    @property
+    def keep_internal_message_alive(self) -> bool:
+        """
+        Gets the keep_internal_message_alive of this TransferToAgentRequest.
+        If true, the digital internal message will NOT be terminated.
+
+        :return: The keep_internal_message_alive of this TransferToAgentRequest.
+        :rtype: bool
+        """
+        return self._keep_internal_message_alive
+
+    @keep_internal_message_alive.setter
+    def keep_internal_message_alive(self, keep_internal_message_alive: bool) -> None:
+        """
+        Sets the keep_internal_message_alive of this TransferToAgentRequest.
+        If true, the digital internal message will NOT be terminated.
+
+        :param keep_internal_message_alive: The keep_internal_message_alive of this TransferToAgentRequest.
+        :type: bool
+        """
+        
+
+        self._keep_internal_message_alive = keep_internal_message_alive
 
     @property
     def user_id(self) -> str:

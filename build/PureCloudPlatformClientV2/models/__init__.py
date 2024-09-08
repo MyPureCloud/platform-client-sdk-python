@@ -220,6 +220,7 @@ from .analytics_user_details_async_query_response import AnalyticsUserDetailsAsy
 from .analytics_user_details_query_response import AnalyticsUserDetailsQueryResponse
 from .analytics_user_presence_record import AnalyticsUserPresenceRecord
 from .annotation import Annotation
+from .answer_generation_config import AnswerGenerationConfig
 from .answer_generation_document import AnswerGenerationDocument
 from .answer_option import AnswerOption
 from .api_usage_client_query import ApiUsageClientQuery
@@ -286,6 +287,10 @@ from .assignment import Assignment
 from .assignment_error import AssignmentError
 from .assignment_validation import AssignmentValidation
 from .assistance_condition import AssistanceCondition
+from .assistant import Assistant
+from .assistant_listing import AssistantListing
+from .assistant_queue import AssistantQueue
+from .assistant_queue_listing import AssistantQueueListing
 from .associated_value_field import AssociatedValueField
 from .async_conversation_query import AsyncConversationQuery
 from .async_forecast_operation_result import AsyncForecastOperationResult
@@ -398,6 +403,8 @@ from .bot_summary import BotSummary
 from .bot_version_summary import BotVersionSummary
 from .browser import Browser
 from .bu_abandon_rate import BuAbandonRate
+from .bu_activity_settings_request import BuActivitySettingsRequest
+from .bu_activity_settings_response import BuActivitySettingsResponse
 from .bu_agent_schedule_activity import BuAgentScheduleActivity
 from .bu_agent_schedule_history_change import BuAgentScheduleHistoryChange
 from .bu_agent_schedule_history_change_metadata import BuAgentScheduleHistoryChangeMetadata
@@ -444,6 +451,8 @@ from .bu_intraday_response import BuIntradayResponse
 from .bu_intraday_schedule_data import BuIntradayScheduleData
 from .bu_list_alternative_shift_trades_response import BuListAlternativeShiftTradesResponse
 from .bu_management_unit_schedule_summary import BuManagementUnitScheduleSummary
+from .bu_notification_settings_request import BuNotificationSettingsRequest
+from .bu_notification_settings_response import BuNotificationSettingsResponse
 from .bu_planning_group_headcount_forecast import BuPlanningGroupHeadcountForecast
 from .bu_query_adherence_explanations_request import BuQueryAdherenceExplanationsRequest
 from .bu_query_adherence_explanations_response import BuQueryAdherenceExplanationsResponse
@@ -454,6 +463,9 @@ from .bu_reschedule_result import BuRescheduleResult
 from .bu_schedule_list_item import BuScheduleListItem
 from .bu_schedule_listing import BuScheduleListing
 from .bu_schedule_metadata import BuScheduleMetadata
+from .bu_schedule_notifications_category_settings import BuScheduleNotificationsCategorySettings
+from .bu_schedule_notifications_settings_request import BuScheduleNotificationsSettingsRequest
+from .bu_schedule_notifications_settings_response import BuScheduleNotificationsSettingsResponse
 from .bu_schedule_reference import BuScheduleReference
 from .bu_schedule_reference_for_mu_route import BuScheduleReferenceForMuRoute
 from .bu_schedule_run import BuScheduleRun
@@ -590,6 +602,7 @@ from .campaign_rule import CampaignRule
 from .campaign_rule_action import CampaignRuleAction
 from .campaign_rule_action_entities import CampaignRuleActionEntities
 from .campaign_rule_condition import CampaignRuleCondition
+from .campaign_rule_condition_group import CampaignRuleConditionGroup
 from .campaign_rule_entities import CampaignRuleEntities
 from .campaign_rule_entity_listing import CampaignRuleEntityListing
 from .campaign_rule_parameters import CampaignRuleParameters
@@ -1004,6 +1017,7 @@ from .conversation_notification_template_header import ConversationNotificationT
 from .conversation_notification_template_parameter import ConversationNotificationTemplateParameter
 from .conversation_participant_search_criteria import ConversationParticipantSearchCriteria
 from .conversation_participant_search_request import ConversationParticipantSearchRequest
+from .conversation_profile import ConversationProfile
 from .conversation_properties import ConversationProperties
 from .conversation_public_metadata import ConversationPublicMetadata
 from .conversation_query import ConversationQuery
@@ -1061,6 +1075,13 @@ from .conversation_video_event_topic_uri_reference import ConversationVideoEvent
 from .conversation_video_event_topic_video_conversation import ConversationVideoEventTopicVideoConversation
 from .conversation_video_event_topic_video_media_participant import ConversationVideoEventTopicVideoMediaParticipant
 from .conversation_video_event_topic_wrapup import ConversationVideoEventTopicWrapup
+from .copilot import Copilot
+from .copilot_action import CopilotAction
+from .copilot_condition import CopilotCondition
+from .copilot_fallback_action import CopilotFallbackAction
+from .copilot_nlu_domain import CopilotNluDomain
+from .copilot_nlu_domain_version import CopilotNluDomainVersion
+from .copilot_rule import CopilotRule
 from .copy_attachments_request import CopyAttachmentsRequest
 from .copy_bu_forecast_request import CopyBuForecastRequest
 from .copy_voicemail_message import CopyVoicemailMessage
@@ -1151,6 +1172,7 @@ from .cta_button_style_properties import CtaButtonStyleProperties
 from .current_user_schedule_request_body import CurrentUserScheduleRequestBody
 from .current_user_time_off_integration_status_request import CurrentUserTimeOffIntegrationStatusRequest
 from .cursor_contact_listing import CursorContactListing
+from .cursor_external_source_listing import CursorExternalSourceListing
 from .cursor_note_listing import CursorNoteListing
 from .cursor_organization_listing import CursorOrganizationListing
 from .cursor_relationship_listing import CursorRelationshipListing
@@ -1734,6 +1756,7 @@ from .facet_statistics import FacetStatistics
 from .facet_term import FacetTerm
 from .failed_object import FailedObject
 from .failed_recording_entity_listing import FailedRecordingEntityListing
+from .fallback import Fallback
 from .faq import Faq
 from .fax_config import FaxConfig
 from .fax_document import FaxDocument
@@ -1903,6 +1926,7 @@ from .get_profiles_response import GetProfilesResponse
 from .get_rules_query import GetRulesQuery
 from .get_templates_response import GetTemplatesResponse
 from .get_upload_source_url_job_status_response import GetUploadSourceUrlJobStatusResponse
+from .google_dialogflow_config import GoogleDialogflowConfig
 from .google_dialogflow_custom_settings import GoogleDialogflowCustomSettings
 from .grammar import Grammar
 from .grammar_file_upload_request import GrammarFileUploadRequest
@@ -2218,6 +2242,9 @@ from .knowledge_aggregate_query_predicate import KnowledgeAggregateQueryPredicat
 from .knowledge_aggregate_query_response import KnowledgeAggregateQueryResponse
 from .knowledge_aggregation_query import KnowledgeAggregationQuery
 from .knowledge_aggregation_view import KnowledgeAggregationView
+from .knowledge_answer_config import KnowledgeAnswerConfig
+from .knowledge_answer_document_response import KnowledgeAnswerDocumentResponse
+from .knowledge_answer_documents_response import KnowledgeAnswerDocumentsResponse
 from .knowledge_answer_generation_response import KnowledgeAnswerGenerationResponse
 from .knowledge_async_aggregate_query_response import KnowledgeAsyncAggregateQueryResponse
 from .knowledge_async_aggregation_query import KnowledgeAsyncAggregationQuery
@@ -2226,6 +2253,7 @@ from .knowledge_base_create_request import KnowledgeBaseCreateRequest
 from .knowledge_base_listing import KnowledgeBaseListing
 from .knowledge_base_reference import KnowledgeBaseReference
 from .knowledge_base_update_request import KnowledgeBaseUpdateRequest
+from .knowledge_base_with_dialect_reference import KnowledgeBaseWithDialectReference
 from .knowledge_category import KnowledgeCategory
 from .knowledge_category_request import KnowledgeCategoryRequest
 from .knowledge_context_reference import KnowledgeContextReference
@@ -2245,6 +2273,7 @@ from .knowledge_document_copy import KnowledgeDocumentCopy
 from .knowledge_document_feedback import KnowledgeDocumentFeedback
 from .knowledge_document_feedback_response import KnowledgeDocumentFeedbackResponse
 from .knowledge_document_feedback_response_listing import KnowledgeDocumentFeedbackResponseListing
+from .knowledge_document_feedback_update_request import KnowledgeDocumentFeedbackUpdateRequest
 from .knowledge_document_guest_search import KnowledgeDocumentGuestSearch
 from .knowledge_document_guest_search_request import KnowledgeDocumentGuestSearchRequest
 from .knowledge_document_guest_search_result import KnowledgeDocumentGuestSearchResult
@@ -2270,12 +2299,15 @@ from .knowledge_document_version_variation import KnowledgeDocumentVersionVariat
 from .knowledge_document_version_variation_listing import KnowledgeDocumentVersionVariationListing
 from .knowledge_document_version_variation_reference import KnowledgeDocumentVersionVariationReference
 from .knowledge_document_view import KnowledgeDocumentView
+from .knowledge_documents_answer_filter import KnowledgeDocumentsAnswerFilter
 from .knowledge_export_job_documents_filter import KnowledgeExportJobDocumentsFilter
 from .knowledge_export_job_filter import KnowledgeExportJobFilter
 from .knowledge_export_job_request import KnowledgeExportJobRequest
 from .knowledge_export_job_response import KnowledgeExportJobResponse
 from .knowledge_extended_category import KnowledgeExtendedCategory
 from .knowledge_group_statistics import KnowledgeGroupStatistics
+from .knowledge_guest_answer_document_response import KnowledgeGuestAnswerDocumentResponse
+from .knowledge_guest_answer_documents_response import KnowledgeGuestAnswerDocumentsResponse
 from .knowledge_guest_document_copy import KnowledgeGuestDocumentCopy
 from .knowledge_guest_document_feedback import KnowledgeGuestDocumentFeedback
 from .knowledge_guest_document_presentation import KnowledgeGuestDocumentPresentation
@@ -2313,6 +2345,7 @@ from .knowledge_search_document_response import KnowledgeSearchDocumentResponse
 from .knowledge_search_document_v1 import KnowledgeSearchDocumentV1
 from .knowledge_search_request import KnowledgeSearchRequest
 from .knowledge_search_response import KnowledgeSearchResponse
+from .knowledge_suggestion_config import KnowledgeSuggestionConfig
 from .knowledge_training import KnowledgeTraining
 from .kpi_result import KpiResult
 from .label import Label
@@ -2632,6 +2665,7 @@ from .named_entity_type_mechanism import NamedEntityTypeMechanism
 from .namespace_docs import NamespaceDocs
 from .network_connectivity import NetworkConnectivity
 from .next_occurrence_details import NextOccurrenceDetails
+from .nlu_config import NluConfig
 from .nlu_confusion_matrix_column import NluConfusionMatrixColumn
 from .nlu_confusion_matrix_row import NluConfusionMatrixRow
 from .nlu_detection_context import NluDetectionContext
@@ -3417,6 +3451,8 @@ from .routing_status_detail_query_clause import RoutingStatusDetailQueryClause
 from .routing_status_detail_query_filter import RoutingStatusDetailQueryFilter
 from .routing_status_detail_query_predicate import RoutingStatusDetailQueryPredicate
 from .routing_transfer_event import RoutingTransferEvent
+from .rule_config import RuleConfig
+from .rule_engine_config import RuleEngineConfig
 from .rule_set import RuleSet
 from .rule_set_diagnostic import RuleSetDiagnostic
 from .rule_set_entity_listing import RuleSetEntityListing
@@ -3669,6 +3705,7 @@ from .suggestion_knowledge_article import SuggestionKnowledgeArticle
 from .suggestion_knowledge_search import SuggestionKnowledgeSearch
 from .suggestion_listing import SuggestionListing
 from .suggestion_script import SuggestionScript
+from .summary_generation_config import SummaryGenerationConfig
 from .support_center_category import SupportCenterCategory
 from .support_center_compact_category_module_template import SupportCenterCompactCategoryModuleTemplate
 from .support_center_custom_message import SupportCenterCustomMessage
@@ -3855,6 +3892,7 @@ from .transcript_topic import TranscriptTopic
 from .transcript_topics import TranscriptTopics
 from .transcript_url import TranscriptUrl
 from .transcript_urls import TranscriptUrls
+from .transcription_config import TranscriptionConfig
 from .transcription_engines_request import TranscriptionEnginesRequest
 from .transcription_settings import TranscriptionSettings
 from .transcription_topic_transcript_alternative import TranscriptionTopicTranscriptAlternative
@@ -4517,6 +4555,7 @@ from .workitem_change_listing import WorkitemChangeListing
 from .workitem_create import WorkitemCreate
 from .workitem_delta import WorkitemDelta
 from .workitem_filter import WorkitemFilter
+from .workitem_flow_reference import WorkitemFlowReference
 from .workitem_manual_assign import WorkitemManualAssign
 from .workitem_paged_entity_listing import WorkitemPagedEntityListing
 from .workitem_post_query_entity_listing import WorkitemPostQueryEntityListing
@@ -4529,6 +4568,7 @@ from .workitem_query_post_request import WorkitemQueryPostRequest
 from .workitem_query_sort import WorkitemQuerySort
 from .workitem_queue_reference import WorkitemQueueReference
 from .workitem_reference import WorkitemReference
+from .workitem_rule_settings import WorkitemRuleSettings
 from .workitem_schema import WorkitemSchema
 from .workitem_scored_agent import WorkitemScoredAgent
 from .workitem_scored_agent_request import WorkitemScoredAgentRequest
@@ -4596,6 +4636,7 @@ from .wrap_up_code_reference import WrapUpCodeReference
 from .wrapup import Wrapup
 from .wrapup_code import WrapupCode
 from .wrapup_code_entity_listing import WrapupCodeEntityListing
+from .wrapup_code_prediction_config import WrapupCodePredictionConfig
 from .wrapup_code_request import WrapupCodeRequest
 from .wrapup_detail_event_topic_wrapup_event import WrapupDetailEventTopicWrapupEvent
 from .wrapup_id_reference import WrapupIdReference

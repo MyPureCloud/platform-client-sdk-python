@@ -48,44 +48,17 @@ class ActivityCodesReference(object):
                                   and the value is json key in definition.
         """
         self.swagger_types = {
-            'id': 'str',
             'ids': 'list[str]',
             'self_uri': 'str'
         }
 
         self.attribute_map = {
-            'id': 'id',
             'ids': 'ids',
             'self_uri': 'selfUri'
         }
 
-        self._id = None
         self._ids = None
         self._self_uri = None
-
-    @property
-    def id(self) -> str:
-        """
-        Gets the id of this ActivityCodesReference.
-        The globally unique identifier for the object.
-
-        :return: The id of this ActivityCodesReference.
-        :rtype: str
-        """
-        return self._id
-
-    @id.setter
-    def id(self, id: str) -> None:
-        """
-        Sets the id of this ActivityCodesReference.
-        The globally unique identifier for the object.
-
-        :param id: The id of this ActivityCodesReference.
-        :type: str
-        """
-        
-
-        self._id = id
 
     @property
     def ids(self) -> List[str]:

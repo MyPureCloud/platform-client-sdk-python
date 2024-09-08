@@ -77,7 +77,9 @@ class AcdEndDetailEventTopicAcdEndEvent(object):
             'routing_priority': 'int',
             'connected_duration_ms': 'int',
             'conversation_external_contact_ids': 'list[str]',
-            'conversation_external_organization_ids': 'list[str]'
+            'conversation_external_organization_ids': 'list[str]',
+            'utilization_label': 'str',
+            'flow_type': 'str'
         }
 
         self.attribute_map = {
@@ -110,7 +112,9 @@ class AcdEndDetailEventTopicAcdEndEvent(object):
             'routing_priority': 'routingPriority',
             'connected_duration_ms': 'connectedDurationMs',
             'conversation_external_contact_ids': 'conversationExternalContactIds',
-            'conversation_external_organization_ids': 'conversationExternalOrganizationIds'
+            'conversation_external_organization_ids': 'conversationExternalOrganizationIds',
+            'utilization_label': 'utilizationLabel',
+            'flow_type': 'flowType'
         }
 
         self._event_time = None
@@ -143,6 +147,8 @@ class AcdEndDetailEventTopicAcdEndEvent(object):
         self._connected_duration_ms = None
         self._conversation_external_contact_ids = None
         self._conversation_external_organization_ids = None
+        self._utilization_label = None
+        self._flow_type = None
 
     @property
     def event_time(self) -> int:
@@ -565,7 +571,7 @@ class AcdEndDetailEventTopicAcdEndEvent(object):
         """
         if isinstance(message_type, int):
             message_type = str(message_type)
-        allowed_values = ["UNKNOWN", "SMS", "TWITTER", "FACEBOOK", "LINE", "WHATSAPP", "WEBMESSAGING", "OPEN", "INSTAGRAM"]
+        allowed_values = ["UNKNOWN", "SMS", "TWITTER", "FACEBOOK", "LINE", "WHATSAPP", "WEBMESSAGING", "OPEN", "INSTAGRAM", "APPLE"]
         if message_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for message_type -> " + message_type)
             self._message_type = "outdated_sdk_version"
@@ -893,6 +899,54 @@ class AcdEndDetailEventTopicAcdEndEvent(object):
         
 
         self._conversation_external_organization_ids = conversation_external_organization_ids
+
+    @property
+    def utilization_label(self) -> str:
+        """
+        Gets the utilization_label of this AcdEndDetailEventTopicAcdEndEvent.
+
+
+        :return: The utilization_label of this AcdEndDetailEventTopicAcdEndEvent.
+        :rtype: str
+        """
+        return self._utilization_label
+
+    @utilization_label.setter
+    def utilization_label(self, utilization_label: str) -> None:
+        """
+        Sets the utilization_label of this AcdEndDetailEventTopicAcdEndEvent.
+
+
+        :param utilization_label: The utilization_label of this AcdEndDetailEventTopicAcdEndEvent.
+        :type: str
+        """
+        
+
+        self._utilization_label = utilization_label
+
+    @property
+    def flow_type(self) -> str:
+        """
+        Gets the flow_type of this AcdEndDetailEventTopicAcdEndEvent.
+
+
+        :return: The flow_type of this AcdEndDetailEventTopicAcdEndEvent.
+        :rtype: str
+        """
+        return self._flow_type
+
+    @flow_type.setter
+    def flow_type(self, flow_type: str) -> None:
+        """
+        Sets the flow_type of this AcdEndDetailEventTopicAcdEndEvent.
+
+
+        :param flow_type: The flow_type of this AcdEndDetailEventTopicAcdEndEvent.
+        :type: str
+        """
+        
+
+        self._flow_type = flow_type
 
     def to_dict(self):
         """

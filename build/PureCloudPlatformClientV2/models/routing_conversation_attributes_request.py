@@ -53,6 +53,7 @@ class RoutingConversationAttributesRequest(object):
             'priority': 'int',
             'skill_ids': 'list[str]',
             'language_id': 'str',
+            'label_id': 'str',
             'request_scored_agents': 'list[RequestScoredAgent]'
         }
 
@@ -60,12 +61,14 @@ class RoutingConversationAttributesRequest(object):
             'priority': 'priority',
             'skill_ids': 'skillIds',
             'language_id': 'languageId',
+            'label_id': 'labelId',
             'request_scored_agents': 'requestScoredAgents'
         }
 
         self._priority = None
         self._skill_ids = None
         self._language_id = None
+        self._label_id = None
         self._request_scored_agents = None
 
     @property
@@ -145,6 +148,30 @@ class RoutingConversationAttributesRequest(object):
         
 
         self._language_id = language_id
+
+    @property
+    def label_id(self) -> str:
+        """
+        Gets the label_id of this RoutingConversationAttributesRequest.
+        Label requirement for the conversation.  To remove the label requirement (setting it to System Default Label), specify an empty string, i.e., \"\".
+
+        :return: The label_id of this RoutingConversationAttributesRequest.
+        :rtype: str
+        """
+        return self._label_id
+
+    @label_id.setter
+    def label_id(self, label_id: str) -> None:
+        """
+        Sets the label_id of this RoutingConversationAttributesRequest.
+        Label requirement for the conversation.  To remove the label requirement (setting it to System Default Label), specify an empty string, i.e., \"\".
+
+        :param label_id: The label_id of this RoutingConversationAttributesRequest.
+        :type: str
+        """
+        
+
+        self._label_id = label_id
 
     @property
     def request_scored_agents(self) -> List['RequestScoredAgent']:

@@ -3,6 +3,8 @@
 PureCloudPlatformClientV2/__init__.py
 PureCloudPlatformClientV2/api_client.py
 PureCloudPlatformClientV2/apis/__init__.py
+PureCloudPlatformClientV2/apis/agent_assistants_api.py
+PureCloudPlatformClientV2/apis/agent_copilot_api.py
 PureCloudPlatformClientV2/apis/agent_ui_api.py
 PureCloudPlatformClientV2/apis/alerting_api.py
 PureCloudPlatformClientV2/apis/analytics_api.py
@@ -301,6 +303,7 @@ PureCloudPlatformClientV2/models/analytics_user_details_async_query_response.py
 PureCloudPlatformClientV2/models/analytics_user_details_query_response.py
 PureCloudPlatformClientV2/models/analytics_user_presence_record.py
 PureCloudPlatformClientV2/models/annotation.py
+PureCloudPlatformClientV2/models/answer_generation_config.py
 PureCloudPlatformClientV2/models/answer_generation_document.py
 PureCloudPlatformClientV2/models/answer_option.py
 PureCloudPlatformClientV2/models/api_usage_client_query.py
@@ -367,6 +370,10 @@ PureCloudPlatformClientV2/models/assignment.py
 PureCloudPlatformClientV2/models/assignment_error.py
 PureCloudPlatformClientV2/models/assignment_validation.py
 PureCloudPlatformClientV2/models/assistance_condition.py
+PureCloudPlatformClientV2/models/assistant.py
+PureCloudPlatformClientV2/models/assistant_listing.py
+PureCloudPlatformClientV2/models/assistant_queue.py
+PureCloudPlatformClientV2/models/assistant_queue_listing.py
 PureCloudPlatformClientV2/models/associated_value_field.py
 PureCloudPlatformClientV2/models/async_conversation_query.py
 PureCloudPlatformClientV2/models/async_forecast_operation_result.py
@@ -479,6 +486,8 @@ PureCloudPlatformClientV2/models/bot_summary.py
 PureCloudPlatformClientV2/models/bot_version_summary.py
 PureCloudPlatformClientV2/models/browser.py
 PureCloudPlatformClientV2/models/bu_abandon_rate.py
+PureCloudPlatformClientV2/models/bu_activity_settings_request.py
+PureCloudPlatformClientV2/models/bu_activity_settings_response.py
 PureCloudPlatformClientV2/models/bu_agent_schedule_activity.py
 PureCloudPlatformClientV2/models/bu_agent_schedule_history_change.py
 PureCloudPlatformClientV2/models/bu_agent_schedule_history_change_metadata.py
@@ -525,6 +534,8 @@ PureCloudPlatformClientV2/models/bu_intraday_response.py
 PureCloudPlatformClientV2/models/bu_intraday_schedule_data.py
 PureCloudPlatformClientV2/models/bu_list_alternative_shift_trades_response.py
 PureCloudPlatformClientV2/models/bu_management_unit_schedule_summary.py
+PureCloudPlatformClientV2/models/bu_notification_settings_request.py
+PureCloudPlatformClientV2/models/bu_notification_settings_response.py
 PureCloudPlatformClientV2/models/bu_planning_group_headcount_forecast.py
 PureCloudPlatformClientV2/models/bu_query_adherence_explanations_request.py
 PureCloudPlatformClientV2/models/bu_query_adherence_explanations_response.py
@@ -535,6 +546,9 @@ PureCloudPlatformClientV2/models/bu_reschedule_result.py
 PureCloudPlatformClientV2/models/bu_schedule_list_item.py
 PureCloudPlatformClientV2/models/bu_schedule_listing.py
 PureCloudPlatformClientV2/models/bu_schedule_metadata.py
+PureCloudPlatformClientV2/models/bu_schedule_notifications_category_settings.py
+PureCloudPlatformClientV2/models/bu_schedule_notifications_settings_request.py
+PureCloudPlatformClientV2/models/bu_schedule_notifications_settings_response.py
 PureCloudPlatformClientV2/models/bu_schedule_reference.py
 PureCloudPlatformClientV2/models/bu_schedule_reference_for_mu_route.py
 PureCloudPlatformClientV2/models/bu_schedule_run.py
@@ -671,6 +685,7 @@ PureCloudPlatformClientV2/models/campaign_rule.py
 PureCloudPlatformClientV2/models/campaign_rule_action.py
 PureCloudPlatformClientV2/models/campaign_rule_action_entities.py
 PureCloudPlatformClientV2/models/campaign_rule_condition.py
+PureCloudPlatformClientV2/models/campaign_rule_condition_group.py
 PureCloudPlatformClientV2/models/campaign_rule_entities.py
 PureCloudPlatformClientV2/models/campaign_rule_entity_listing.py
 PureCloudPlatformClientV2/models/campaign_rule_parameters.py
@@ -1085,6 +1100,7 @@ PureCloudPlatformClientV2/models/conversation_notification_template_header.py
 PureCloudPlatformClientV2/models/conversation_notification_template_parameter.py
 PureCloudPlatformClientV2/models/conversation_participant_search_criteria.py
 PureCloudPlatformClientV2/models/conversation_participant_search_request.py
+PureCloudPlatformClientV2/models/conversation_profile.py
 PureCloudPlatformClientV2/models/conversation_properties.py
 PureCloudPlatformClientV2/models/conversation_public_metadata.py
 PureCloudPlatformClientV2/models/conversation_query.py
@@ -1142,6 +1158,13 @@ PureCloudPlatformClientV2/models/conversation_video_event_topic_uri_reference.py
 PureCloudPlatformClientV2/models/conversation_video_event_topic_video_conversation.py
 PureCloudPlatformClientV2/models/conversation_video_event_topic_video_media_participant.py
 PureCloudPlatformClientV2/models/conversation_video_event_topic_wrapup.py
+PureCloudPlatformClientV2/models/copilot.py
+PureCloudPlatformClientV2/models/copilot_action.py
+PureCloudPlatformClientV2/models/copilot_condition.py
+PureCloudPlatformClientV2/models/copilot_fallback_action.py
+PureCloudPlatformClientV2/models/copilot_nlu_domain.py
+PureCloudPlatformClientV2/models/copilot_nlu_domain_version.py
+PureCloudPlatformClientV2/models/copilot_rule.py
 PureCloudPlatformClientV2/models/copy_attachments_request.py
 PureCloudPlatformClientV2/models/copy_bu_forecast_request.py
 PureCloudPlatformClientV2/models/copy_voicemail_message.py
@@ -1232,6 +1255,7 @@ PureCloudPlatformClientV2/models/cta_button_style_properties.py
 PureCloudPlatformClientV2/models/current_user_schedule_request_body.py
 PureCloudPlatformClientV2/models/current_user_time_off_integration_status_request.py
 PureCloudPlatformClientV2/models/cursor_contact_listing.py
+PureCloudPlatformClientV2/models/cursor_external_source_listing.py
 PureCloudPlatformClientV2/models/cursor_note_listing.py
 PureCloudPlatformClientV2/models/cursor_organization_listing.py
 PureCloudPlatformClientV2/models/cursor_relationship_listing.py
@@ -1815,6 +1839,7 @@ PureCloudPlatformClientV2/models/facet_statistics.py
 PureCloudPlatformClientV2/models/facet_term.py
 PureCloudPlatformClientV2/models/failed_object.py
 PureCloudPlatformClientV2/models/failed_recording_entity_listing.py
+PureCloudPlatformClientV2/models/fallback.py
 PureCloudPlatformClientV2/models/faq.py
 PureCloudPlatformClientV2/models/fax_config.py
 PureCloudPlatformClientV2/models/fax_document.py
@@ -1984,6 +2009,7 @@ PureCloudPlatformClientV2/models/gkn_documentation_result.py
 PureCloudPlatformClientV2/models/gkn_documentation_search_criteria.py
 PureCloudPlatformClientV2/models/gkn_documentation_search_request.py
 PureCloudPlatformClientV2/models/gkn_documentation_search_response.py
+PureCloudPlatformClientV2/models/google_dialogflow_config.py
 PureCloudPlatformClientV2/models/google_dialogflow_custom_settings.py
 PureCloudPlatformClientV2/models/grammar.py
 PureCloudPlatformClientV2/models/grammar_file_upload_request.py
@@ -2299,6 +2325,9 @@ PureCloudPlatformClientV2/models/knowledge_aggregate_query_predicate.py
 PureCloudPlatformClientV2/models/knowledge_aggregate_query_response.py
 PureCloudPlatformClientV2/models/knowledge_aggregation_query.py
 PureCloudPlatformClientV2/models/knowledge_aggregation_view.py
+PureCloudPlatformClientV2/models/knowledge_answer_config.py
+PureCloudPlatformClientV2/models/knowledge_answer_document_response.py
+PureCloudPlatformClientV2/models/knowledge_answer_documents_response.py
 PureCloudPlatformClientV2/models/knowledge_answer_generation_response.py
 PureCloudPlatformClientV2/models/knowledge_async_aggregate_query_response.py
 PureCloudPlatformClientV2/models/knowledge_async_aggregation_query.py
@@ -2307,6 +2336,7 @@ PureCloudPlatformClientV2/models/knowledge_base_create_request.py
 PureCloudPlatformClientV2/models/knowledge_base_listing.py
 PureCloudPlatformClientV2/models/knowledge_base_reference.py
 PureCloudPlatformClientV2/models/knowledge_base_update_request.py
+PureCloudPlatformClientV2/models/knowledge_base_with_dialect_reference.py
 PureCloudPlatformClientV2/models/knowledge_category.py
 PureCloudPlatformClientV2/models/knowledge_category_request.py
 PureCloudPlatformClientV2/models/knowledge_context_reference.py
@@ -2326,6 +2356,7 @@ PureCloudPlatformClientV2/models/knowledge_document_copy.py
 PureCloudPlatformClientV2/models/knowledge_document_feedback.py
 PureCloudPlatformClientV2/models/knowledge_document_feedback_response.py
 PureCloudPlatformClientV2/models/knowledge_document_feedback_response_listing.py
+PureCloudPlatformClientV2/models/knowledge_document_feedback_update_request.py
 PureCloudPlatformClientV2/models/knowledge_document_guest_search.py
 PureCloudPlatformClientV2/models/knowledge_document_guest_search_request.py
 PureCloudPlatformClientV2/models/knowledge_document_guest_search_result.py
@@ -2351,12 +2382,15 @@ PureCloudPlatformClientV2/models/knowledge_document_version_variation.py
 PureCloudPlatformClientV2/models/knowledge_document_version_variation_listing.py
 PureCloudPlatformClientV2/models/knowledge_document_version_variation_reference.py
 PureCloudPlatformClientV2/models/knowledge_document_view.py
+PureCloudPlatformClientV2/models/knowledge_documents_answer_filter.py
 PureCloudPlatformClientV2/models/knowledge_export_job_documents_filter.py
 PureCloudPlatformClientV2/models/knowledge_export_job_filter.py
 PureCloudPlatformClientV2/models/knowledge_export_job_request.py
 PureCloudPlatformClientV2/models/knowledge_export_job_response.py
 PureCloudPlatformClientV2/models/knowledge_extended_category.py
 PureCloudPlatformClientV2/models/knowledge_group_statistics.py
+PureCloudPlatformClientV2/models/knowledge_guest_answer_document_response.py
+PureCloudPlatformClientV2/models/knowledge_guest_answer_documents_response.py
 PureCloudPlatformClientV2/models/knowledge_guest_document_copy.py
 PureCloudPlatformClientV2/models/knowledge_guest_document_feedback.py
 PureCloudPlatformClientV2/models/knowledge_guest_document_presentation.py
@@ -2394,6 +2428,7 @@ PureCloudPlatformClientV2/models/knowledge_search_document_response.py
 PureCloudPlatformClientV2/models/knowledge_search_document_v1.py
 PureCloudPlatformClientV2/models/knowledge_search_request.py
 PureCloudPlatformClientV2/models/knowledge_search_response.py
+PureCloudPlatformClientV2/models/knowledge_suggestion_config.py
 PureCloudPlatformClientV2/models/knowledge_training.py
 PureCloudPlatformClientV2/models/kpi_result.py
 PureCloudPlatformClientV2/models/label.py
@@ -2712,6 +2747,7 @@ PureCloudPlatformClientV2/models/named_entity_type_mechanism.py
 PureCloudPlatformClientV2/models/namespace_docs.py
 PureCloudPlatformClientV2/models/network_connectivity.py
 PureCloudPlatformClientV2/models/next_occurrence_details.py
+PureCloudPlatformClientV2/models/nlu_config.py
 PureCloudPlatformClientV2/models/nlu_confusion_matrix_column.py
 PureCloudPlatformClientV2/models/nlu_confusion_matrix_row.py
 PureCloudPlatformClientV2/models/nlu_detection_context.py
@@ -3498,6 +3534,8 @@ PureCloudPlatformClientV2/models/routing_status_detail_query_clause.py
 PureCloudPlatformClientV2/models/routing_status_detail_query_filter.py
 PureCloudPlatformClientV2/models/routing_status_detail_query_predicate.py
 PureCloudPlatformClientV2/models/routing_transfer_event.py
+PureCloudPlatformClientV2/models/rule_config.py
+PureCloudPlatformClientV2/models/rule_engine_config.py
 PureCloudPlatformClientV2/models/rule_set.py
 PureCloudPlatformClientV2/models/rule_set_diagnostic.py
 PureCloudPlatformClientV2/models/rule_set_entity_listing.py
@@ -3750,6 +3788,7 @@ PureCloudPlatformClientV2/models/suggestion_knowledge_article.py
 PureCloudPlatformClientV2/models/suggestion_knowledge_search.py
 PureCloudPlatformClientV2/models/suggestion_listing.py
 PureCloudPlatformClientV2/models/suggestion_script.py
+PureCloudPlatformClientV2/models/summary_generation_config.py
 PureCloudPlatformClientV2/models/support_center_category.py
 PureCloudPlatformClientV2/models/support_center_compact_category_module_template.py
 PureCloudPlatformClientV2/models/support_center_custom_message.py
@@ -3936,6 +3975,7 @@ PureCloudPlatformClientV2/models/transcript_topic.py
 PureCloudPlatformClientV2/models/transcript_topics.py
 PureCloudPlatformClientV2/models/transcript_url.py
 PureCloudPlatformClientV2/models/transcript_urls.py
+PureCloudPlatformClientV2/models/transcription_config.py
 PureCloudPlatformClientV2/models/transcription_engines_request.py
 PureCloudPlatformClientV2/models/transcription_settings.py
 PureCloudPlatformClientV2/models/transcription_topic_transcript_alternative.py
@@ -4598,6 +4638,7 @@ PureCloudPlatformClientV2/models/workitem_change_listing.py
 PureCloudPlatformClientV2/models/workitem_create.py
 PureCloudPlatformClientV2/models/workitem_delta.py
 PureCloudPlatformClientV2/models/workitem_filter.py
+PureCloudPlatformClientV2/models/workitem_flow_reference.py
 PureCloudPlatformClientV2/models/workitem_manual_assign.py
 PureCloudPlatformClientV2/models/workitem_paged_entity_listing.py
 PureCloudPlatformClientV2/models/workitem_post_query_entity_listing.py
@@ -4610,6 +4651,7 @@ PureCloudPlatformClientV2/models/workitem_query_post_request.py
 PureCloudPlatformClientV2/models/workitem_query_sort.py
 PureCloudPlatformClientV2/models/workitem_queue_reference.py
 PureCloudPlatformClientV2/models/workitem_reference.py
+PureCloudPlatformClientV2/models/workitem_rule_settings.py
 PureCloudPlatformClientV2/models/workitem_schema.py
 PureCloudPlatformClientV2/models/workitem_scored_agent.py
 PureCloudPlatformClientV2/models/workitem_scored_agent_request.py
@@ -4677,6 +4719,7 @@ PureCloudPlatformClientV2/models/wrap_up_code_reference.py
 PureCloudPlatformClientV2/models/wrapup.py
 PureCloudPlatformClientV2/models/wrapup_code.py
 PureCloudPlatformClientV2/models/wrapup_code_entity_listing.py
+PureCloudPlatformClientV2/models/wrapup_code_prediction_config.py
 PureCloudPlatformClientV2/models/wrapup_code_request.py
 PureCloudPlatformClientV2/models/wrapup_detail_event_topic_wrapup_event.py
 PureCloudPlatformClientV2/models/wrapup_id_reference.py
@@ -4800,6 +4843,8 @@ docs/AgentActivityChangedTopicOutOfOffice.md
 docs/AgentActivityChangedTopicPresence.md
 docs/AgentActivityChangedTopicRoutingStatus.md
 docs/AgentActivityEntityListing.md
+docs/AgentAssistantsApi.json
+docs/AgentAssistantsApi.md
 docs/AgentBidWorkPlanOverrideRequest.md
 docs/AgentCopilotAggregateDataContainer.md
 docs/AgentCopilotAggregateQueryClause.md
@@ -4808,6 +4853,8 @@ docs/AgentCopilotAggregateQueryPredicate.md
 docs/AgentCopilotAggregateQueryResponse.md
 docs/AgentCopilotAggregationQuery.md
 docs/AgentCopilotAggregationView.md
+docs/AgentCopilotApi.json
+docs/AgentCopilotApi.md
 docs/AgentCopilotAsyncAggregateQueryResponse.md
 docs/AgentCopilotAsyncAggregationQuery.md
 docs/AgentCountRange.md
@@ -4912,6 +4959,7 @@ docs/AnalyticsUserDetailsAsyncQueryResponse.md
 docs/AnalyticsUserDetailsQueryResponse.md
 docs/AnalyticsUserPresenceRecord.md
 docs/Annotation.md
+docs/AnswerGenerationConfig.md
 docs/AnswerGenerationDocument.md
 docs/AnswerOption.md
 docs/ApiUsageClientQuery.md
@@ -4980,6 +5028,10 @@ docs/Assignment.md
 docs/AssignmentError.md
 docs/AssignmentValidation.md
 docs/AssistanceCondition.md
+docs/Assistant.md
+docs/AssistantListing.md
+docs/AssistantQueue.md
+docs/AssistantQueueListing.md
 docs/AssociatedValueField.md
 docs/AsyncConversationQuery.md
 docs/AsyncForecastOperationResult.md
@@ -5098,6 +5150,8 @@ docs/BotSummary.md
 docs/BotVersionSummary.md
 docs/Browser.md
 docs/BuAbandonRate.md
+docs/BuActivitySettingsRequest.md
+docs/BuActivitySettingsResponse.md
 docs/BuAgentScheduleActivity.md
 docs/BuAgentScheduleHistoryChange.md
 docs/BuAgentScheduleHistoryChangeMetadata.md
@@ -5144,6 +5198,8 @@ docs/BuIntradayResponse.md
 docs/BuIntradayScheduleData.md
 docs/BuListAlternativeShiftTradesResponse.md
 docs/BuManagementUnitScheduleSummary.md
+docs/BuNotificationSettingsRequest.md
+docs/BuNotificationSettingsResponse.md
 docs/BuPlanningGroupHeadcountForecast.md
 docs/BuQueryAdherenceExplanationsRequest.md
 docs/BuQueryAdherenceExplanationsResponse.md
@@ -5154,6 +5210,9 @@ docs/BuRescheduleResult.md
 docs/BuScheduleListItem.md
 docs/BuScheduleListing.md
 docs/BuScheduleMetadata.md
+docs/BuScheduleNotificationsCategorySettings.md
+docs/BuScheduleNotificationsSettingsRequest.md
+docs/BuScheduleNotificationsSettingsResponse.md
 docs/BuScheduleReference.md
 docs/BuScheduleReferenceForMuRoute.md
 docs/BuScheduleRun.md
@@ -5290,6 +5349,7 @@ docs/CampaignRule.md
 docs/CampaignRuleAction.md
 docs/CampaignRuleActionEntities.md
 docs/CampaignRuleCondition.md
+docs/CampaignRuleConditionGroup.md
 docs/CampaignRuleEntities.md
 docs/CampaignRuleEntityListing.md
 docs/CampaignRuleParameters.md
@@ -5712,6 +5772,7 @@ docs/ConversationNotificationTemplateHeader.md
 docs/ConversationNotificationTemplateParameter.md
 docs/ConversationParticipantSearchCriteria.md
 docs/ConversationParticipantSearchRequest.md
+docs/ConversationProfile.md
 docs/ConversationProperties.md
 docs/ConversationPublicMetadata.md
 docs/ConversationQuery.md
@@ -5771,6 +5832,13 @@ docs/ConversationVideoEventTopicVideoMediaParticipant.md
 docs/ConversationVideoEventTopicWrapup.md
 docs/ConversationsApi.json
 docs/ConversationsApi.md
+docs/Copilot.md
+docs/CopilotAction.md
+docs/CopilotCondition.md
+docs/CopilotFallbackAction.md
+docs/CopilotNluDomain.md
+docs/CopilotNluDomainVersion.md
+docs/CopilotRule.md
 docs/CopyAttachmentsRequest.md
 docs/CopyBuForecastRequest.md
 docs/CopyVoicemailMessage.md
@@ -5861,6 +5929,7 @@ docs/CtaButtonStyleProperties.md
 docs/CurrentUserScheduleRequestBody.md
 docs/CurrentUserTimeOffIntegrationStatusRequest.md
 docs/CursorContactListing.md
+docs/CursorExternalSourceListing.md
 docs/CursorNoteListing.md
 docs/CursorOrganizationListing.md
 docs/CursorRelationshipListing.md
@@ -6456,6 +6525,7 @@ docs/FacetStatistics.md
 docs/FacetTerm.md
 docs/FailedObject.md
 docs/FailedRecordingEntityListing.md
+docs/Fallback.md
 docs/Faq.md
 docs/FaxApi.json
 docs/FaxApi.md
@@ -6635,6 +6705,7 @@ docs/GetProfilesResponse.md
 docs/GetRulesQuery.md
 docs/GetTemplatesResponse.md
 docs/GetUploadSourceUrlJobStatusResponse.md
+docs/GoogleDialogflowConfig.md
 docs/GoogleDialogflowCustomSettings.md
 docs/Grammar.md
 docs/GrammarFileUploadRequest.md
@@ -6962,6 +7033,9 @@ docs/KnowledgeAggregateQueryPredicate.md
 docs/KnowledgeAggregateQueryResponse.md
 docs/KnowledgeAggregationQuery.md
 docs/KnowledgeAggregationView.md
+docs/KnowledgeAnswerConfig.md
+docs/KnowledgeAnswerDocumentResponse.md
+docs/KnowledgeAnswerDocumentsResponse.md
 docs/KnowledgeAnswerGenerationResponse.md
 docs/KnowledgeApi.json
 docs/KnowledgeApi.md
@@ -6972,6 +7046,7 @@ docs/KnowledgeBaseCreateRequest.md
 docs/KnowledgeBaseListing.md
 docs/KnowledgeBaseReference.md
 docs/KnowledgeBaseUpdateRequest.md
+docs/KnowledgeBaseWithDialectReference.md
 docs/KnowledgeCategory.md
 docs/KnowledgeCategoryRequest.md
 docs/KnowledgeContextReference.md
@@ -6991,6 +7066,7 @@ docs/KnowledgeDocumentCopy.md
 docs/KnowledgeDocumentFeedback.md
 docs/KnowledgeDocumentFeedbackResponse.md
 docs/KnowledgeDocumentFeedbackResponseListing.md
+docs/KnowledgeDocumentFeedbackUpdateRequest.md
 docs/KnowledgeDocumentGuestSearch.md
 docs/KnowledgeDocumentGuestSearchRequest.md
 docs/KnowledgeDocumentGuestSearchResult.md
@@ -7016,12 +7092,15 @@ docs/KnowledgeDocumentVersionVariation.md
 docs/KnowledgeDocumentVersionVariationListing.md
 docs/KnowledgeDocumentVersionVariationReference.md
 docs/KnowledgeDocumentView.md
+docs/KnowledgeDocumentsAnswerFilter.md
 docs/KnowledgeExportJobDocumentsFilter.md
 docs/KnowledgeExportJobFilter.md
 docs/KnowledgeExportJobRequest.md
 docs/KnowledgeExportJobResponse.md
 docs/KnowledgeExtendedCategory.md
 docs/KnowledgeGroupStatistics.md
+docs/KnowledgeGuestAnswerDocumentResponse.md
+docs/KnowledgeGuestAnswerDocumentsResponse.md
 docs/KnowledgeGuestDocumentCopy.md
 docs/KnowledgeGuestDocumentFeedback.md
 docs/KnowledgeGuestDocumentPresentation.md
@@ -7059,6 +7138,7 @@ docs/KnowledgeSearchDocumentResponse.md
 docs/KnowledgeSearchDocumentV1.md
 docs/KnowledgeSearchRequest.md
 docs/KnowledgeSearchResponse.md
+docs/KnowledgeSuggestionConfig.md
 docs/KnowledgeTraining.md
 docs/KpiResult.md
 docs/Label.md
@@ -7394,6 +7474,7 @@ docs/NamedEntityTypeMechanism.md
 docs/NamespaceDocs.md
 docs/NetworkConnectivity.md
 docs/NextOccurrenceDetails.md
+docs/NluConfig.md
 docs/NluConfusionMatrixColumn.md
 docs/NluConfusionMatrixRow.md
 docs/NluDetectionContext.md
@@ -8205,6 +8286,8 @@ docs/RoutingStatusDetailQueryClause.md
 docs/RoutingStatusDetailQueryFilter.md
 docs/RoutingStatusDetailQueryPredicate.md
 docs/RoutingTransferEvent.md
+docs/RuleConfig.md
+docs/RuleEngineConfig.md
 docs/RuleSet.md
 docs/RuleSetDiagnostic.md
 docs/RuleSetEntityListing.md
@@ -8473,6 +8556,7 @@ docs/SuggestionKnowledgeArticle.md
 docs/SuggestionKnowledgeSearch.md
 docs/SuggestionListing.md
 docs/SuggestionScript.md
+docs/SummaryGenerationConfig.md
 docs/SupportCenterCategory.md
 docs/SupportCenterCompactCategoryModuleTemplate.md
 docs/SupportCenterCustomMessage.md
@@ -8671,6 +8755,7 @@ docs/TranscriptTopic.md
 docs/TranscriptTopics.md
 docs/TranscriptUrl.md
 docs/TranscriptUrls.md
+docs/TranscriptionConfig.md
 docs/TranscriptionEnginesRequest.md
 docs/TranscriptionSettings.md
 docs/TranscriptionTopicTranscriptAlternative.md
@@ -9355,6 +9440,7 @@ docs/WorkitemChangeListing.md
 docs/WorkitemCreate.md
 docs/WorkitemDelta.md
 docs/WorkitemFilter.md
+docs/WorkitemFlowReference.md
 docs/WorkitemManualAssign.md
 docs/WorkitemPagedEntityListing.md
 docs/WorkitemPostQueryEntityListing.md
@@ -9367,6 +9453,7 @@ docs/WorkitemQueryPostRequest.md
 docs/WorkitemQuerySort.md
 docs/WorkitemQueueReference.md
 docs/WorkitemReference.md
+docs/WorkitemRuleSettings.md
 docs/WorkitemSchema.md
 docs/WorkitemScoredAgent.md
 docs/WorkitemScoredAgentRequest.md
@@ -9434,6 +9521,7 @@ docs/WrapUpCodeReference.md
 docs/Wrapup.md
 docs/WrapupCode.md
 docs/WrapupCodeEntityListing.md
+docs/WrapupCodePredictionConfig.md
 docs/WrapupCodeRequest.md
 docs/WrapupDetailEventTopicWrapupEvent.md
 docs/WrapupIdReference.md
@@ -9463,6 +9551,9 @@ docs/delete_architect_prompts-example.txt
 docs/delete_architect_schedule-example.txt
 docs/delete_architect_schedulegroup-example.txt
 docs/delete_architect_systemprompt_resource-example.txt
+docs/delete_assistant-example.txt
+docs/delete_assistant_queue-example.txt
+docs/delete_assistant_queues-example.txt
 docs/delete_authorization_division-example.txt
 docs/delete_authorization_division-example.txt
 docs/delete_authorization_role-example.txt
@@ -9500,6 +9591,7 @@ docs/delete_employeeperformance_externalmetrics_definition-example.txt
 docs/delete_externalcontacts_contact-example.txt
 docs/delete_externalcontacts_contact_note-example.txt
 docs/delete_externalcontacts_contacts_schema-example.txt
+docs/delete_externalcontacts_externalsource-example.txt
 docs/delete_externalcontacts_organization-example.txt
 docs/delete_externalcontacts_organization_note-example.txt
 docs/delete_externalcontacts_organization_trustor-example.txt
@@ -9826,6 +9918,12 @@ docs/get_architect_systemprompt_history_history_id-example.txt
 docs/get_architect_systemprompt_resource-example.txt
 docs/get_architect_systemprompt_resources-example.txt
 docs/get_architect_systemprompts-example.txt
+docs/get_assistant-example.txt
+docs/get_assistant_copilot-example.txt
+docs/get_assistant_queue-example.txt
+docs/get_assistant_queues-example.txt
+docs/get_assistants-example.txt
+docs/get_assistants_queues-example.txt
 docs/get_audits_query_realtime_servicemapping-example.txt
 docs/get_audits_query_servicemapping-example.txt
 docs/get_audits_query_transaction_id-example.txt
@@ -10014,6 +10112,8 @@ docs/get_externalcontacts_contacts_schema-example.txt
 docs/get_externalcontacts_contacts_schema_version-example.txt
 docs/get_externalcontacts_contacts_schema_versions-example.txt
 docs/get_externalcontacts_contacts_schemas-example.txt
+docs/get_externalcontacts_externalsource-example.txt
+docs/get_externalcontacts_externalsources-example.txt
 docs/get_externalcontacts_organization-example.txt
 docs/get_externalcontacts_organization_contacts-example.txt
 docs/get_externalcontacts_organization_note-example.txt
@@ -10539,6 +10639,7 @@ docs/get_routing_predictor_models-example.txt
 docs/get_routing_predictors-example.txt
 docs/get_routing_predictors_keyperformanceindicators-example.txt
 docs/get_routing_queue-example.txt
+docs/get_routing_queue_assistant-example.txt
 docs/get_routing_queue_comparisonperiod-example.txt
 docs/get_routing_queue_comparisonperiods-example.txt
 docs/get_routing_queue_estimatedwaittime-example.txt
@@ -10942,6 +11043,8 @@ docs/patch_alerting_rules_bulk-example.txt
 docs/patch_analytics_reporting_settings-example.txt
 docs/patch_architect_grammar-example.txt
 docs/patch_architect_grammar_language-example.txt
+docs/patch_assistant-example.txt
+docs/patch_assistant_queues-example.txt
 docs/patch_authorization_role-example.txt
 docs/patch_authorization_settings-example.txt
 docs/patch_chats_room-example.txt
@@ -11014,6 +11117,7 @@ docs/patch_knowledge_guest_session_documents_search_search_id-example.txt
 docs/patch_knowledge_knowledgebase-example.txt
 docs/patch_knowledge_knowledgebase_category-example.txt
 docs/patch_knowledge_knowledgebase_document-example.txt
+docs/patch_knowledge_knowledgebase_document_feedback_feedback_id-example.txt
 docs/patch_knowledge_knowledgebase_document_variation-example.txt
 docs/patch_knowledge_knowledgebase_documents_search_search_id-example.txt
 docs/patch_knowledge_knowledgebase_import_job-example.txt
@@ -11213,6 +11317,7 @@ docs/post_architect_schedulegroups-example.txt
 docs/post_architect_schedules-example.txt
 docs/post_architect_systemprompt_history-example.txt
 docs/post_architect_systemprompt_resources-example.txt
+docs/post_assistants-example.txt
 docs/post_audits_query-example.txt
 docs/post_audits_query_realtime-example.txt
 docs/post_audits_query_realtime_related-example.txt
@@ -11364,6 +11469,7 @@ docs/post_externalcontacts_contact_notes-example.txt
 docs/post_externalcontacts_contact_promotion-example.txt
 docs/post_externalcontacts_contacts-example.txt
 docs/post_externalcontacts_contacts_schemas-example.txt
+docs/post_externalcontacts_externalsources-example.txt
 docs/post_externalcontacts_identifierlookup-example.txt
 docs/post_externalcontacts_merge_contacts-example.txt
 docs/post_externalcontacts_organization_notes-example.txt
@@ -11443,6 +11549,7 @@ docs/post_knowledge_documentuploads-example.txt
 docs/post_knowledge_guest_session_document_copies-example.txt
 docs/post_knowledge_guest_session_document_feedback-example.txt
 docs/post_knowledge_guest_session_document_views-example.txt
+docs/post_knowledge_guest_session_documents_answers-example.txt
 docs/post_knowledge_guest_session_documents_presentations-example.txt
 docs/post_knowledge_guest_session_documents_search-example.txt
 docs/post_knowledge_guest_session_documents_search_suggestions-example.txt
@@ -11454,6 +11561,7 @@ docs/post_knowledge_knowledgebase_document_variations-example.txt
 docs/post_knowledge_knowledgebase_document_versions-example.txt
 docs/post_knowledge_knowledgebase_document_views-example.txt
 docs/post_knowledge_knowledgebase_documents-example.txt
+docs/post_knowledge_knowledgebase_documents_answers-example.txt
 docs/post_knowledge_knowledgebase_documents_bulk_remove-example.txt
 docs/post_knowledge_knowledgebase_documents_bulk_update-example.txt
 docs/post_knowledge_knowledgebase_documents_presentations-example.txt
@@ -11815,6 +11923,8 @@ docs/put_architect_prompt_resource-example.txt
 docs/put_architect_schedule-example.txt
 docs/put_architect_schedulegroup-example.txt
 docs/put_architect_systemprompt_resource-example.txt
+docs/put_assistant_copilot-example.txt
+docs/put_assistant_queue-example.txt
 docs/put_authorization_division-example.txt
 docs/put_authorization_division-example.txt
 docs/put_authorization_role-example.txt
@@ -11851,6 +11961,7 @@ docs/put_externalcontacts_contact-example.txt
 docs/put_externalcontacts_contact_note-example.txt
 docs/put_externalcontacts_contacts_schema-example.txt
 docs/put_externalcontacts_conversation-example.txt
+docs/put_externalcontacts_externalsource-example.txt
 docs/put_externalcontacts_organization-example.txt
 docs/put_externalcontacts_organization_note-example.txt
 docs/put_externalcontacts_organization_trustor_trustor_id-example.txt

@@ -67,7 +67,10 @@ class AcdStartDetailEventTopicAcdStartEvent(object):
             'queue_id': 'str',
             'division_id': 'str',
             'conversation_external_contact_ids': 'list[str]',
-            'conversation_external_organization_ids': 'list[str]'
+            'conversation_external_organization_ids': 'list[str]',
+            'utilization_label': 'str',
+            'routing_priority': 'int',
+            'requested_routing_skill_ids': 'list[str]'
         }
 
         self.attribute_map = {
@@ -90,7 +93,10 @@ class AcdStartDetailEventTopicAcdStartEvent(object):
             'queue_id': 'queueId',
             'division_id': 'divisionId',
             'conversation_external_contact_ids': 'conversationExternalContactIds',
-            'conversation_external_organization_ids': 'conversationExternalOrganizationIds'
+            'conversation_external_organization_ids': 'conversationExternalOrganizationIds',
+            'utilization_label': 'utilizationLabel',
+            'routing_priority': 'routingPriority',
+            'requested_routing_skill_ids': 'requestedRoutingSkillIds'
         }
 
         self._event_time = None
@@ -113,6 +119,9 @@ class AcdStartDetailEventTopicAcdStartEvent(object):
         self._division_id = None
         self._conversation_external_contact_ids = None
         self._conversation_external_organization_ids = None
+        self._utilization_label = None
+        self._routing_priority = None
+        self._requested_routing_skill_ids = None
 
     @property
     def event_time(self) -> int:
@@ -506,7 +515,7 @@ class AcdStartDetailEventTopicAcdStartEvent(object):
         """
         if isinstance(message_type, int):
             message_type = str(message_type)
-        allowed_values = ["UNKNOWN", "SMS", "TWITTER", "FACEBOOK", "LINE", "WHATSAPP", "WEBMESSAGING", "OPEN", "INSTAGRAM"]
+        allowed_values = ["UNKNOWN", "SMS", "TWITTER", "FACEBOOK", "LINE", "WHATSAPP", "WEBMESSAGING", "OPEN", "INSTAGRAM", "APPLE"]
         if message_type.lower() not in map(str.lower, allowed_values):
             # print("Invalid value for message_type -> " + message_type)
             self._message_type = "outdated_sdk_version"
@@ -608,6 +617,78 @@ class AcdStartDetailEventTopicAcdStartEvent(object):
         
 
         self._conversation_external_organization_ids = conversation_external_organization_ids
+
+    @property
+    def utilization_label(self) -> str:
+        """
+        Gets the utilization_label of this AcdStartDetailEventTopicAcdStartEvent.
+
+
+        :return: The utilization_label of this AcdStartDetailEventTopicAcdStartEvent.
+        :rtype: str
+        """
+        return self._utilization_label
+
+    @utilization_label.setter
+    def utilization_label(self, utilization_label: str) -> None:
+        """
+        Sets the utilization_label of this AcdStartDetailEventTopicAcdStartEvent.
+
+
+        :param utilization_label: The utilization_label of this AcdStartDetailEventTopicAcdStartEvent.
+        :type: str
+        """
+        
+
+        self._utilization_label = utilization_label
+
+    @property
+    def routing_priority(self) -> int:
+        """
+        Gets the routing_priority of this AcdStartDetailEventTopicAcdStartEvent.
+
+
+        :return: The routing_priority of this AcdStartDetailEventTopicAcdStartEvent.
+        :rtype: int
+        """
+        return self._routing_priority
+
+    @routing_priority.setter
+    def routing_priority(self, routing_priority: int) -> None:
+        """
+        Sets the routing_priority of this AcdStartDetailEventTopicAcdStartEvent.
+
+
+        :param routing_priority: The routing_priority of this AcdStartDetailEventTopicAcdStartEvent.
+        :type: int
+        """
+        
+
+        self._routing_priority = routing_priority
+
+    @property
+    def requested_routing_skill_ids(self) -> List[str]:
+        """
+        Gets the requested_routing_skill_ids of this AcdStartDetailEventTopicAcdStartEvent.
+
+
+        :return: The requested_routing_skill_ids of this AcdStartDetailEventTopicAcdStartEvent.
+        :rtype: list[str]
+        """
+        return self._requested_routing_skill_ids
+
+    @requested_routing_skill_ids.setter
+    def requested_routing_skill_ids(self, requested_routing_skill_ids: List[str]) -> None:
+        """
+        Sets the requested_routing_skill_ids of this AcdStartDetailEventTopicAcdStartEvent.
+
+
+        :param requested_routing_skill_ids: The requested_routing_skill_ids of this AcdStartDetailEventTopicAcdStartEvent.
+        :type: list[str]
+        """
+        
+
+        self._requested_routing_skill_ids = requested_routing_skill_ids
 
     def to_dict(self):
         """

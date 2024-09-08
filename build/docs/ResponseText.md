@@ -9,6 +9,7 @@ title: ResponseText
 |------------ | ------------- | ------------- | -------------|
 | **content** | **str** | Response text content. | |
 | **content_type** | **str** | Response text content type. | [optional] |
+| **type** | **str** | Response text type. | [optional] |
 {: class="table table-striped"}
 
 

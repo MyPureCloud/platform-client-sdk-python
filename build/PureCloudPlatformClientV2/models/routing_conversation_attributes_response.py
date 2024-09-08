@@ -36,6 +36,7 @@ if TYPE_CHECKING:
     from . import Language
     from . import RoutingSkill
     from . import ScoredAgent
+    from . import UtilizationLabel
 
 class RoutingConversationAttributesResponse(object):
     """
@@ -55,6 +56,7 @@ class RoutingConversationAttributesResponse(object):
             'priority': 'int',
             'skills': 'list[RoutingSkill]',
             'language': 'Language',
+            'label': 'UtilizationLabel',
             'scored_agents': 'list[ScoredAgent]'
         }
 
@@ -62,12 +64,14 @@ class RoutingConversationAttributesResponse(object):
             'priority': 'priority',
             'skills': 'skills',
             'language': 'language',
+            'label': 'label',
             'scored_agents': 'scoredAgents'
         }
 
         self._priority = None
         self._skills = None
         self._language = None
+        self._label = None
         self._scored_agents = None
 
     @property
@@ -141,6 +145,30 @@ class RoutingConversationAttributesResponse(object):
         
 
         self._language = language
+
+    @property
+    def label(self) -> 'UtilizationLabel':
+        """
+        Gets the label of this RoutingConversationAttributesResponse.
+        Current label on in-queue conversation
+
+        :return: The label of this RoutingConversationAttributesResponse.
+        :rtype: UtilizationLabel
+        """
+        return self._label
+
+    @label.setter
+    def label(self, label: 'UtilizationLabel') -> None:
+        """
+        Sets the label of this RoutingConversationAttributesResponse.
+        Current label on in-queue conversation
+
+        :param label: The label of this RoutingConversationAttributesResponse.
+        :type: UtilizationLabel
+        """
+        
+
+        self._label = label
 
     @property
     def scored_agents(self) -> List['ScoredAgent']:

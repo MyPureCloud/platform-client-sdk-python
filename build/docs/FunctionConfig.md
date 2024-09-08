@@ -10,6 +10,7 @@ title: FunctionConfig
 | **id** | **str** | Action identifier. | [optional] |
 | **function** | [**Function**](Function.html) | Function configuration. | [optional] |
 | **zip** | [**FunctionZipConfig**](FunctionZipConfig.html) | Zip file configuration and state. | [optional] |
+| **upload_exception_history** | [**list[FunctionZipConfig]**](FunctionZipConfig.html) | History of failed zip upload file configuration including their state and error messages. Contains no more than last ten failures. | [optional] |
 | **self_uri** | **str** | The URI for this object | [optional] |
 {: class="table table-striped"}
 

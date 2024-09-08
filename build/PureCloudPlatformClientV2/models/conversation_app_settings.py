@@ -38,6 +38,7 @@ if TYPE_CHECKING:
     from . import ConversationDisconnectSettings
     from . import Humanize
     from . import Markdown
+    from . import NotificationsSettings
 
 class ConversationAppSettings(object):
     """
@@ -61,7 +62,8 @@ class ConversationAppSettings(object):
             'markdown': 'Markdown',
             'conversation_disconnect': 'ConversationDisconnectSettings',
             'conversation_clear': 'ConversationClearSettings',
-            'humanize': 'Humanize'
+            'humanize': 'Humanize',
+            'notifications': 'NotificationsSettings'
         }
 
         self.attribute_map = {
@@ -72,7 +74,8 @@ class ConversationAppSettings(object):
             'markdown': 'markdown',
             'conversation_disconnect': 'conversationDisconnect',
             'conversation_clear': 'conversationClear',
-            'humanize': 'humanize'
+            'humanize': 'humanize',
+            'notifications': 'notifications'
         }
 
         self._enabled = None
@@ -83,6 +86,7 @@ class ConversationAppSettings(object):
         self._conversation_disconnect = None
         self._conversation_clear = None
         self._humanize = None
+        self._notifications = None
 
     @property
     def enabled(self) -> bool:
@@ -275,6 +279,30 @@ class ConversationAppSettings(object):
         
 
         self._humanize = humanize
+
+    @property
+    def notifications(self) -> 'NotificationsSettings':
+        """
+        Gets the notifications of this ConversationAppSettings.
+        The notification settings for messenger apps
+
+        :return: The notifications of this ConversationAppSettings.
+        :rtype: NotificationsSettings
+        """
+        return self._notifications
+
+    @notifications.setter
+    def notifications(self, notifications: 'NotificationsSettings') -> None:
+        """
+        Sets the notifications of this ConversationAppSettings.
+        The notification settings for messenger apps
+
+        :param notifications: The notifications of this ConversationAppSettings.
+        :type: NotificationsSettings
+        """
+        
+
+        self._notifications = notifications
 
     def to_dict(self):
         """

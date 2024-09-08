@@ -27,6 +27,9 @@ title: AcdStartDetailEventTopicAcdStartEvent
 | **division_id** | **str** |  | [optional] |
 | **conversation_external_contact_ids** | **list[str]** |  | [optional] |
 | **conversation_external_organization_ids** | **list[str]** |  | [optional] |
+| **utilization_label** | **str** |  | [optional] |
+| **routing_priority** | **int** |  | [optional] |
+| **requested_routing_skill_ids** | **list[str]** |  | [optional] |
 {: class="table table-striped"}
 
 

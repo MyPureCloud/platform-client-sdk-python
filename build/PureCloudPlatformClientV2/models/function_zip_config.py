@@ -51,20 +51,26 @@ class FunctionZipConfig(object):
             'status': 'str',
             'id': 'str',
             'name': 'str',
-            'date_created': 'datetime'
+            'date_created': 'datetime',
+            'error_message': 'str',
+            'request_id': 'str'
         }
 
         self.attribute_map = {
             'status': 'status',
             'id': 'id',
             'name': 'name',
-            'date_created': 'dateCreated'
+            'date_created': 'dateCreated',
+            'error_message': 'errorMessage',
+            'request_id': 'requestId'
         }
 
         self._status = None
         self._id = None
         self._name = None
         self._date_created = None
+        self._error_message = None
+        self._request_id = None
 
     @property
     def status(self) -> str:
@@ -166,6 +172,54 @@ class FunctionZipConfig(object):
         
 
         self._date_created = date_created
+
+    @property
+    def error_message(self) -> str:
+        """
+        Gets the error_message of this FunctionZipConfig.
+        Error message if upload failed.
+
+        :return: The error_message of this FunctionZipConfig.
+        :rtype: str
+        """
+        return self._error_message
+
+    @error_message.setter
+    def error_message(self, error_message: str) -> None:
+        """
+        Sets the error_message of this FunctionZipConfig.
+        Error message if upload failed.
+
+        :param error_message: The error_message of this FunctionZipConfig.
+        :type: str
+        """
+        
+
+        self._error_message = error_message
+
+    @property
+    def request_id(self) -> str:
+        """
+        Gets the request_id of this FunctionZipConfig.
+        Upload request id used for zip upload
+
+        :return: The request_id of this FunctionZipConfig.
+        :rtype: str
+        """
+        return self._request_id
+
+    @request_id.setter
+    def request_id(self, request_id: str) -> None:
+        """
+        Sets the request_id of this FunctionZipConfig.
+        Upload request id used for zip upload
+
+        :param request_id: The request_id of this FunctionZipConfig.
+        :type: str
+        """
+        
+
+        self._request_id = request_id
 
     def to_dict(self):
         """

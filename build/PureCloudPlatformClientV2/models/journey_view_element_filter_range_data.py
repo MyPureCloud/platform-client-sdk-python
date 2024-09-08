@@ -49,7 +49,7 @@ class JourneyViewElementFilterRangeData(object):
         """
         self.swagger_types = {
             'duration': 'str',
-            'number': 'int'
+            'number': 'float'
         }
 
         self.attribute_map = {
@@ -64,7 +64,7 @@ class JourneyViewElementFilterRangeData(object):
     def duration(self) -> str:
         """
         Gets the duration of this JourneyViewElementFilterRangeData.
-        an ISO 8601 time duration.Only one of number or duration must be specified. Periods are represented as an ISO-8601 string. For example: P1D or P1DT12H
+        An ISO 8601 time duration. Only one of number or duration must be specified.
 
         :return: The duration of this JourneyViewElementFilterRangeData.
         :rtype: str
@@ -75,7 +75,7 @@ class JourneyViewElementFilterRangeData(object):
     def duration(self, duration: str) -> None:
         """
         Sets the duration of this JourneyViewElementFilterRangeData.
-        an ISO 8601 time duration.Only one of number or duration must be specified. Periods are represented as an ISO-8601 string. For example: P1D or P1DT12H
+        An ISO 8601 time duration. Only one of number or duration must be specified.
 
         :param duration: The duration of this JourneyViewElementFilterRangeData.
         :type: str
@@ -85,24 +85,24 @@ class JourneyViewElementFilterRangeData(object):
         self._duration = duration
 
     @property
-    def number(self) -> int:
+    def number(self) -> float:
         """
         Gets the number of this JourneyViewElementFilterRangeData.
-        an Integer value.Only one of number or duration must be specified.
+        A numeric value. Only one of number or duration must be specified.
 
         :return: The number of this JourneyViewElementFilterRangeData.
-        :rtype: int
+        :rtype: float
         """
         return self._number
 
     @number.setter
-    def number(self, number: int) -> None:
+    def number(self, number: float) -> None:
         """
         Sets the number of this JourneyViewElementFilterRangeData.
-        an Integer value.Only one of number or duration must be specified.
+        A numeric value. Only one of number or duration must be specified.
 
         :param number: The number of this JourneyViewElementFilterRangeData.
-        :type: int
+        :type: float
         """
         
 

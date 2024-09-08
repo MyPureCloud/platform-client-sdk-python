@@ -11,6 +11,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**delete_externalcontacts_contact**](ExternalContactsApi.html#delete_externalcontacts_contact) | Delete an external contact|
 |[**delete_externalcontacts_contact_note**](ExternalContactsApi.html#delete_externalcontacts_contact_note) | Delete a note for an external contact|
 |[**delete_externalcontacts_contacts_schema**](ExternalContactsApi.html#delete_externalcontacts_contacts_schema) | Delete a schema|
+|[**delete_externalcontacts_externalsource**](ExternalContactsApi.html#delete_externalcontacts_externalsource) | Delete an External Source. WARNING: Any records that reference this External Source will not be automatically cleaned up. Those records will still be editable, but their External IDs may not be fully viewable.|
 |[**delete_externalcontacts_organization**](ExternalContactsApi.html#delete_externalcontacts_organization) | Delete an external organization|
 |[**delete_externalcontacts_organization_note**](ExternalContactsApi.html#delete_externalcontacts_organization_note) | Delete a note for an external organization|
 |[**delete_externalcontacts_organization_trustor**](ExternalContactsApi.html#delete_externalcontacts_organization_trustor) | Unlink the Trustor for this External Organization|
@@ -26,6 +27,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_externalcontacts_contacts_schema_version**](ExternalContactsApi.html#get_externalcontacts_contacts_schema_version) | Get a specific version of a schema|
 |[**get_externalcontacts_contacts_schema_versions**](ExternalContactsApi.html#get_externalcontacts_contacts_schema_versions) | Get all versions of an external contact&#39;s schema|
 |[**get_externalcontacts_contacts_schemas**](ExternalContactsApi.html#get_externalcontacts_contacts_schemas) | Get a list of schemas.|
+|[**get_externalcontacts_externalsource**](ExternalContactsApi.html#get_externalcontacts_externalsource) | Fetch an External Source|
+|[**get_externalcontacts_externalsources**](ExternalContactsApi.html#get_externalcontacts_externalsources) | Fetch a list of External Sources|
 |[**get_externalcontacts_organization**](ExternalContactsApi.html#get_externalcontacts_organization) | Fetch an external organization|
 |[**get_externalcontacts_organization_contacts**](ExternalContactsApi.html#get_externalcontacts_organization_contacts) | Search for external contacts in an external organization|
 |[**get_externalcontacts_organization_note**](ExternalContactsApi.html#get_externalcontacts_organization_note) | Fetch a note for an external organization|
@@ -64,6 +67,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_externalcontacts_contact_promotion**](ExternalContactsApi.html#post_externalcontacts_contact_promotion) | Promote an observed contact (ephemeral or identified) to a curated contact|
 |[**post_externalcontacts_contacts**](ExternalContactsApi.html#post_externalcontacts_contacts) | Create an external contact|
 |[**post_externalcontacts_contacts_schemas**](ExternalContactsApi.html#post_externalcontacts_contacts_schemas) | Create a schema|
+|[**post_externalcontacts_externalsources**](ExternalContactsApi.html#post_externalcontacts_externalsources) | Create an External Source|
 |[**post_externalcontacts_identifierlookup**](ExternalContactsApi.html#post_externalcontacts_identifierlookup) | Fetch a contact using an identifier type and value.|
 |[**post_externalcontacts_merge_contacts**](ExternalContactsApi.html#post_externalcontacts_merge_contacts) | Merge two contacts into a new contact record|
 |[**post_externalcontacts_organization_notes**](ExternalContactsApi.html#post_externalcontacts_organization_notes) | Create a note for an external organization|
@@ -74,6 +78,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**put_externalcontacts_contact_note**](ExternalContactsApi.html#put_externalcontacts_contact_note) | Update a note for an external contact|
 |[**put_externalcontacts_contacts_schema**](ExternalContactsApi.html#put_externalcontacts_contacts_schema) | Update a schema|
 |[**put_externalcontacts_conversation**](ExternalContactsApi.html#put_externalcontacts_conversation) | Associate/disassociate an external contact with a conversation|
+|[**put_externalcontacts_externalsource**](ExternalContactsApi.html#put_externalcontacts_externalsource) | Update an External Source|
 |[**put_externalcontacts_organization**](ExternalContactsApi.html#put_externalcontacts_organization) | Update an external organization|
 |[**put_externalcontacts_organization_note**](ExternalContactsApi.html#put_externalcontacts_organization_note) | Update a note for an external organization|
 |[**put_externalcontacts_organization_trustor_trustor_id**](ExternalContactsApi.html#put_externalcontacts_organization_trustor_trustor_id) | Links a Trustor with an External Organization|
@@ -230,6 +235,57 @@ except ApiException as e:
 ### Return type
 
 void (empty response body)
+
+<a name="delete_externalcontacts_externalsource"></a>
+
+## object** delete_externalcontacts_externalsource(external_source_id)
+
+
+
+Delete an External Source. WARNING: Any records that reference this External Source will not be automatically cleaned up. Those records will still be editable, but their External IDs may not be fully viewable.
+
+delete_externalcontacts_externalsource is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps DELETE /api/v2/externalcontacts/externalsources/{externalSourceId} 
+
+Requires ANY permissions: 
+
+* externalContacts:externalSource:delete
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ExternalContactsApi()
+external_source_id = 'external_source_id_example' # str | External Source ID
+
+try:
+    # Delete an External Source. WARNING: Any records that reference this External Source will not be automatically cleaned up. Those records will still be editable, but their External IDs may not be fully viewable.
+    api_response = api_instance.delete_externalcontacts_externalsource(external_source_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ExternalContactsApi->delete_externalcontacts_externalsource: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **external_source_id** | **str**| External Source ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+**object**
 
 <a name="delete_externalcontacts_organization"></a>
 
@@ -460,7 +516,7 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 # create an instance of the API class
 api_instance = PureCloudPlatformClientV2.ExternalContactsApi()
 contact_id = 'contact_id_example' # str | ExternalContact ID
-expand = ['expand_example'] # list[str] | which fields, if any, to expand (externalOrganization,externalDataSources,identifiers) (optional)
+expand = ['expand_example'] # list[str] | which fields, if any, to expand (optional)
 
 try:
     # Fetch an external contact
@@ -476,7 +532,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **contact_id** | **str**| ExternalContact ID |  |
-| **expand** | [**list[str]**](str.html)| which fields, if any, to expand (externalOrganization,externalDataSources,identifiers) | [optional] <br />**Values**: externalOrganization, externalDataSources, identifiers |
+| **expand** | [**list[str]**](str.html)| which fields, if any, to expand | [optional] <br />**Values**: externalOrganization, externalDataSources, identifiers, externalSources |
 {: class="table table-striped"}
 
 ### Return type
@@ -801,7 +857,7 @@ except ApiException as e:
 | **page_number** | **int**| Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;&#x3D; 1,000) | [optional] [default to 1] |
 | **q** | **str**| User supplied search keywords (no special syntax is currently supported) | [optional]  |
 | **sort_order** | **str**| The External Contact field to sort by. Any of: [firstName, lastName, middleName, title]. Direction: [asc, desc]. e.g. \&quot;firstName:asc\&quot;, \&quot;title:desc\&quot; | [optional]  |
-| **expand** | [**list[str]**](str.html)| which fields, if any, to expand | [optional] <br />**Values**: externalOrganization, externalDataSources, identifiers |
+| **expand** | [**list[str]**](str.html)| which fields, if any, to expand | [optional] <br />**Values**: externalOrganization, externalDataSources, identifiers, externalSources |
 {: class="table table-striped"}
 
 ### Return type
@@ -1002,6 +1058,118 @@ This endpoint does not need any parameters.
 
 [**DataSchemaListing**](DataSchemaListing.html)
 
+<a name="get_externalcontacts_externalsource"></a>
+
+## [**ExternalSource**](ExternalSource.html) get_externalcontacts_externalsource(external_source_id)
+
+
+
+Fetch an External Source
+
+get_externalcontacts_externalsource is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/externalcontacts/externalsources/{externalSourceId} 
+
+Requires ANY permissions: 
+
+* externalContacts:externalSource:view
+* externalContacts:contact:view
+* externalContacts:externalOrganization:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ExternalContactsApi()
+external_source_id = 'external_source_id_example' # str | External Source ID
+
+try:
+    # Fetch an External Source
+    api_response = api_instance.get_externalcontacts_externalsource(external_source_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ExternalContactsApi->get_externalcontacts_externalsource: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **external_source_id** | **str**| External Source ID |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**ExternalSource**](ExternalSource.html)
+
+<a name="get_externalcontacts_externalsources"></a>
+
+## [**CursorExternalSourceListing**](CursorExternalSourceListing.html) get_externalcontacts_externalsources(cursor=cursor, limit=limit, name=name, active=active)
+
+
+
+Fetch a list of External Sources
+
+get_externalcontacts_externalsources is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/externalcontacts/externalsources 
+
+Requires ANY permissions: 
+
+* externalContacts:externalSource:view
+* externalContacts:contact:view
+* externalContacts:externalOrganization:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ExternalContactsApi()
+cursor = 'cursor_example' # str | Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL (optional)
+limit = 56 # int | The number of ExternalSources per page; must be between 10 and 200, default is 100 (optional)
+name = 'name_example' # str | Filter by external source name. Filtering is prefix filtering and not an exact match (optional)
+active = True # bool | Filter by active status of external source (optional)
+
+try:
+    # Fetch a list of External Sources
+    api_response = api_instance.get_externalcontacts_externalsources(cursor=cursor, limit=limit, name=name, active=active)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ExternalContactsApi->get_externalcontacts_externalsources: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **cursor** | **str**| Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL | [optional]  |
+| **limit** | **int**| The number of ExternalSources per page; must be between 10 and 200, default is 100 | [optional]  |
+| **name** | **str**| Filter by external source name. Filtering is prefix filtering and not an exact match | [optional]  |
+| **active** | **bool**| Filter by active status of external source | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**CursorExternalSourceListing**](CursorExternalSourceListing.html)
+
 <a name="get_externalcontacts_organization"></a>
 
 ## [**ExternalOrganization**](ExternalOrganization.html) get_externalcontacts_organization(external_organization_id, expand=expand, include_trustors=include_trustors)
@@ -1109,7 +1277,7 @@ except ApiException as e:
 | **page_number** | **int**| Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;&#x3D; 1,000) | [optional] [default to 1] |
 | **q** | **str**| User supplied search keywords (no special syntax is currently supported) | [optional]  |
 | **sort_order** | **str**| The External Contact field to sort by. Any of: [firstName, lastName, middleName, title]. Direction: [asc, desc]. e.g. \&quot;firstName:asc\&quot;, \&quot;title:desc\&quot; | [optional]  |
-| **expand** | [**list[str]**](str.html)| which fields, if any, to expand | [optional] <br />**Values**: externalOrganization, externalDataSources, identifiers |
+| **expand** | [**list[str]**](str.html)| which fields, if any, to expand | [optional] <br />**Values**: externalOrganization, externalDataSources, identifiers, externalSources |
 {: class="table table-striped"}
 
 ### Return type
@@ -2945,6 +3113,57 @@ except ApiException as e:
 
 [**DataSchema**](DataSchema.html)
 
+<a name="post_externalcontacts_externalsources"></a>
+
+## [**ExternalSource**](ExternalSource.html) post_externalcontacts_externalsources(body)
+
+
+
+Create an External Source
+
+post_externalcontacts_externalsources is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/externalcontacts/externalsources 
+
+Requires ANY permissions: 
+
+* externalContacts:externalSource:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ExternalContactsApi()
+body = PureCloudPlatformClientV2.ExternalSource() # ExternalSource | External Source
+
+try:
+    # Create an External Source
+    api_response = api_instance.post_externalcontacts_externalsources(body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ExternalContactsApi->post_externalcontacts_externalsources: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**ExternalSource**](ExternalSource.html)| External Source |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**ExternalSource**](ExternalSource.html)
+
 <a name="post_externalcontacts_identifierlookup"></a>
 
 ## [**ExternalContact**](ExternalContact.html) post_externalcontacts_identifierlookup(identifier, expand=expand)
@@ -2992,7 +3211,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **identifier** | [**ContactIdentifier**](ContactIdentifier.html)|  |  |
-| **expand** | [**list[str]**](str.html)| which field, if any, to expand | [optional] <br />**Values**: externalOrganization, identifiers |
+| **expand** | [**list[str]**](str.html)| which field, if any, to expand | [optional] <br />**Values**: externalOrganization, identifiers, externalSources |
 {: class="table table-striped"}
 
 ### Return type
@@ -3460,6 +3679,59 @@ except ApiException as e:
 ### Return type
 
 void (empty response body)
+
+<a name="put_externalcontacts_externalsource"></a>
+
+## [**ExternalSource**](ExternalSource.html) put_externalcontacts_externalsource(external_source_id, body)
+
+
+
+Update an External Source
+
+put_externalcontacts_externalsource is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps PUT /api/v2/externalcontacts/externalsources/{externalSourceId} 
+
+Requires ANY permissions: 
+
+* externalContacts:externalSource:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ExternalContactsApi()
+external_source_id = 'external_source_id_example' # str | External Source ID
+body = PureCloudPlatformClientV2.ExternalSource() # ExternalSource | External Source
+
+try:
+    # Update an External Source
+    api_response = api_instance.put_externalcontacts_externalsource(external_source_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ExternalContactsApi->put_externalcontacts_externalsource: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **external_source_id** | **str**| External Source ID |  |
+| **body** | [**ExternalSource**](ExternalSource.html)| External Source |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**ExternalSource**](ExternalSource.html)
 
 <a name="put_externalcontacts_organization"></a>
 

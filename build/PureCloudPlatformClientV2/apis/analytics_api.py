@@ -2917,6 +2917,7 @@ class AnalyticsApi(object):
             for asynchronous request. (optional)
         :param str dashboard_type: List dashboard of given type (required)
         :param str dashboard_access_filter: Filter dashboard based on the owner of dashboard (required)
+        :param str name: name of the dashboard
         :param str sort_by: 
         :param int page_number: 
         :param int page_size: 
@@ -2925,7 +2926,7 @@ class AnalyticsApi(object):
                  returns the request thread.
         """
 
-        all_params = ['dashboard_type', 'dashboard_access_filter', 'sort_by', 'page_number', 'page_size']
+        all_params = ['dashboard_type', 'dashboard_access_filter', 'name', 'sort_by', 'page_number', 'page_size']
         all_params.append('callback')
 
         params = locals()
@@ -2950,6 +2951,8 @@ class AnalyticsApi(object):
         path_params = {}
 
         query_params = {}
+        if 'name' in params:
+            query_params['name'] = params['name']
         if 'dashboard_type' in params:
             query_params['dashboardType'] = params['dashboard_type']
         if 'dashboard_access_filter' in params:
@@ -4446,7 +4449,6 @@ class AnalyticsApi(object):
         """
         Query for agent copilot aggregates
         
-	    post_analytics_agentcopilots_aggregates_query is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

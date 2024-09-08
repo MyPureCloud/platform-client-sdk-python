@@ -322,8 +322,6 @@ Delete a Journey View by ID
 
 deletes all versions
 
-delete_journey_view is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps DELETE /api/v2/journey/views/{viewId} 
 
 Requires ALL permissions: 
@@ -1578,8 +1576,6 @@ Get a Journey View by ID
 
 returns the latest version
 
-get_journey_view is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/journey/views/{viewId} 
 
 Requires ALL permissions: 
@@ -1628,8 +1624,6 @@ except ApiException as e:
 
 
 Get a Journey View by ID and version
-
-get_journey_view_version is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/journey/views/{viewId}/versions/{versionId} 
 
@@ -1683,8 +1677,6 @@ except ApiException as e:
 Get the job for a journey view version.
 
 used for long descriptions
-
-get_journey_view_version_job is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/journey/views/{viewId}/versions/{journeyVersionId}/jobs/{jobId} 
 
@@ -1741,8 +1733,6 @@ Get the result of a job for a journey view version.
 
 used for long descriptions
 
-get_journey_view_version_job_results is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/journey/views/{viewId}/versions/{journeyViewVersion}/jobs/{jobId}/results 
 
 Requires ALL permissions: 
@@ -1798,8 +1788,6 @@ Get the latest job of a journey view version.
 
 used for long descriptions
 
-get_journey_view_version_jobs_latest is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/journey/views/{viewId}/versions/{journeyVersionId}/jobs/latest 
 
 Requires ALL permissions: 
@@ -1845,13 +1833,11 @@ except ApiException as e:
 
 <a name="get_journey_views"></a>
 
-## [**JourneyViewListing**](JourneyViewListing.html) get_journey_views(page_number=page_number, page_size=page_size, name_or_created_by=name_or_created_by, expand=expand)
+## [**JourneyViewListing**](JourneyViewListing.html) get_journey_views(page_number=page_number, page_size=page_size, name_or_created_by=name_or_created_by, expand=expand, id=id)
 
 
 
 Get a list of Journey Views
-
-get_journey_views is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/journey/views 
 
@@ -1876,10 +1862,11 @@ page_number = 1 # int | Page number (optional) (default to 1)
 page_size = 25 # int | Page size (optional) (default to 25)
 name_or_created_by = 'name_or_created_by_example' # str | Journey View Name or Created By (optional)
 expand = 'expand_example' # str | Parameter to request additional data to return in Journey payload (optional)
+id = 'id_example' # str | Parameter to request a list of Journey Views by id, separated by commas. Limit of 100 items. (optional)
 
 try:
     # Get a list of Journey Views
-    api_response = api_instance.get_journey_views(page_number=page_number, page_size=page_size, name_or_created_by=name_or_created_by, expand=expand)
+    api_response = api_instance.get_journey_views(page_number=page_number, page_size=page_size, name_or_created_by=name_or_created_by, expand=expand, id=id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling JourneyApi->get_journey_views: %s\n" % e)
@@ -1894,6 +1881,7 @@ except ApiException as e:
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **name_or_created_by** | **str**| Journey View Name or Created By | [optional]  |
 | **expand** | **str**| Parameter to request additional data to return in Journey payload | [optional] <br />**Values**: charts |
+| **id** | **str**| Parameter to request a list of Journey Views by id, separated by commas. Limit of 100 items. | [optional]  |
 {: class="table table-striped"}
 
 ### Return type
@@ -2005,8 +1993,6 @@ This endpoint does not need any parameters.
 
 
 Get the jobs for an organization.
-
-get_journey_views_jobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/journey/views/jobs 
 
@@ -2954,8 +2940,6 @@ Submit a job request for a journey view version.
 
 used for long descriptions
 
-post_journey_view_version_jobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps POST /api/v2/journey/views/{viewId}/versions/{journeyVersionId}/jobs 
 
 Requires ALL permissions: 
@@ -3009,8 +2993,6 @@ Update a Journey View by ID
 
 creates a new version
 
-post_journey_view_versions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps POST /api/v2/journey/views/{viewId}/versions 
 
 Requires ALL permissions: 
@@ -3061,8 +3043,6 @@ except ApiException as e:
 
 
 Create a new Journey View
-
-post_journey_views is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/journey/views 
 

@@ -57,6 +57,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_routing_predictors**](RoutingApi.html#get_routing_predictors) | Retrieve all predictors.|
 |[**get_routing_predictors_keyperformanceindicators**](RoutingApi.html#get_routing_predictors_keyperformanceindicators) | Get a list of Key Performance Indicators|
 |[**get_routing_queue**](RoutingApi.html#get_routing_queue) | Get details about this queue.|
+|[**get_routing_queue_assistant**](RoutingApi.html#get_routing_queue_assistant) | Get an assistant associated with a queue.|
 |[**get_routing_queue_comparisonperiod**](RoutingApi.html#get_routing_queue_comparisonperiod) | Get a Comparison Period.|
 |[**get_routing_queue_comparisonperiods**](RoutingApi.html#get_routing_queue_comparisonperiods) | Get list of comparison periods|
 |[**get_routing_queue_estimatedwaittime**](RoutingApi.html#get_routing_queue_estimatedwaittime) | Get Estimated Wait Time|
@@ -2582,6 +2583,57 @@ except ApiException as e:
 ### Return type
 
 [**Queue**](Queue.html)
+
+<a name="get_routing_queue_assistant"></a>
+
+## [**AssistantQueue**](AssistantQueue.html) get_routing_queue_assistant(queue_id, expand=expand)
+
+
+
+Get an assistant associated with a queue.
+
+Wraps GET /api/v2/routing/queues/{queueId}/assistant 
+
+Requires ALL permissions: 
+
+* assistants:queue:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.RoutingApi()
+queue_id = 'queue_id_example' # str | Queue ID
+expand = 'expand_example' # str | Which fields, if any, to expand. (optional)
+
+try:
+    # Get an assistant associated with a queue.
+    api_response = api_instance.get_routing_queue_assistant(queue_id, expand=expand)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling RoutingApi->get_routing_queue_assistant: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **queue_id** | **str**| Queue ID |  |
+| **expand** | **str**| Which fields, if any, to expand. | [optional] <br />**Values**: assistant |
+{: class="table table-striped"}
+
+### Return type
+
+[**AssistantQueue**](AssistantQueue.html)
 
 <a name="get_routing_queue_comparisonperiod"></a>
 

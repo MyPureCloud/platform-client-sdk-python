@@ -58,6 +58,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**patch_knowledge_knowledgebase**](KnowledgeApi.html#patch_knowledge_knowledgebase) | Update knowledge base|
 |[**patch_knowledge_knowledgebase_category**](KnowledgeApi.html#patch_knowledge_knowledgebase_category) | Update category|
 |[**patch_knowledge_knowledgebase_document**](KnowledgeApi.html#patch_knowledge_knowledgebase_document) | Update document.|
+|[**patch_knowledge_knowledgebase_document_feedback_feedback_id**](KnowledgeApi.html#patch_knowledge_knowledgebase_document_feedback_feedback_id) | Update feedback on a document|
 |[**patch_knowledge_knowledgebase_document_variation**](KnowledgeApi.html#patch_knowledge_knowledgebase_document_variation) | Update a variation for a document.|
 |[**patch_knowledge_knowledgebase_documents_search_search_id**](KnowledgeApi.html#patch_knowledge_knowledgebase_documents_search_search_id) | Update search result.|
 |[**patch_knowledge_knowledgebase_import_job**](KnowledgeApi.html#patch_knowledge_knowledgebase_import_job) | Start import job|
@@ -72,6 +73,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_knowledge_guest_session_document_copies**](KnowledgeApi.html#post_knowledge_guest_session_document_copies) | Indicate that the document was copied by the user.|
 |[**post_knowledge_guest_session_document_feedback**](KnowledgeApi.html#post_knowledge_guest_session_document_feedback) | Give feedback on a document|
 |[**post_knowledge_guest_session_document_views**](KnowledgeApi.html#post_knowledge_guest_session_document_views) | Create view event for a document.|
+|[**post_knowledge_guest_session_documents_answers**](KnowledgeApi.html#post_knowledge_guest_session_documents_answers) | Answer documents.|
 |[**post_knowledge_guest_session_documents_presentations**](KnowledgeApi.html#post_knowledge_guest_session_documents_presentations) | Indicate that documents were presented to the user.|
 |[**post_knowledge_guest_session_documents_search**](KnowledgeApi.html#post_knowledge_guest_session_documents_search) | Search the documents in a guest session.|
 |[**post_knowledge_guest_session_documents_search_suggestions**](KnowledgeApi.html#post_knowledge_guest_session_documents_search_suggestions) | Query the knowledge documents to provide suggestions for auto completion.|
@@ -83,6 +85,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_knowledge_knowledgebase_document_versions**](KnowledgeApi.html#post_knowledge_knowledgebase_document_versions) | Creates or restores a document version.|
 |[**post_knowledge_knowledgebase_document_views**](KnowledgeApi.html#post_knowledge_knowledgebase_document_views) | Create view for a document.|
 |[**post_knowledge_knowledgebase_documents**](KnowledgeApi.html#post_knowledge_knowledgebase_documents) | Create document.|
+|[**post_knowledge_knowledgebase_documents_answers**](KnowledgeApi.html#post_knowledge_knowledgebase_documents_answers) | Answer documents.|
 |[**post_knowledge_knowledgebase_documents_bulk_remove**](KnowledgeApi.html#post_knowledge_knowledgebase_documents_bulk_remove) | Bulk remove documents.|
 |[**post_knowledge_knowledgebase_documents_bulk_update**](KnowledgeApi.html#post_knowledge_knowledgebase_documents_bulk_update) | Bulk update documents.|
 |[**post_knowledge_knowledgebase_documents_presentations**](KnowledgeApi.html#post_knowledge_knowledgebase_documents_presentations) | Indicate that documents were presented to the user.|
@@ -2879,6 +2882,61 @@ except ApiException as e:
 
 [**KnowledgeDocumentResponse**](KnowledgeDocumentResponse.html)
 
+<a name="patch_knowledge_knowledgebase_document_feedback_feedback_id"></a>
+
+## [**KnowledgeDocumentFeedbackResponse**](KnowledgeDocumentFeedbackResponse.html) patch_knowledge_knowledgebase_document_feedback_feedback_id(knowledge_base_id, document_id, feedback_id, body=body)
+
+
+
+Update feedback on a document
+
+Wraps PATCH /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/{documentId}/feedback/{feedbackId} 
+
+Requires ANY permissions: 
+
+* knowledge:feedback:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.KnowledgeApi()
+knowledge_base_id = 'knowledge_base_id_example' # str | Knowledge base ID.
+document_id = 'document_id_example' # str | Document ID.
+feedback_id = 'feedback_id_example' # str | Feedback ID.
+body = PureCloudPlatformClientV2.KnowledgeDocumentFeedbackUpdateRequest() # KnowledgeDocumentFeedbackUpdateRequest |  (optional)
+
+try:
+    # Update feedback on a document
+    api_response = api_instance.patch_knowledge_knowledgebase_document_feedback_feedback_id(knowledge_base_id, document_id, feedback_id, body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling KnowledgeApi->patch_knowledge_knowledgebase_document_feedback_feedback_id: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **knowledge_base_id** | **str**| Knowledge base ID. |  |
+| **document_id** | **str**| Document ID. |  |
+| **feedback_id** | **str**| Feedback ID. |  |
+| **body** | [**KnowledgeDocumentFeedbackUpdateRequest**](KnowledgeDocumentFeedbackUpdateRequest.html)|  | [optional]  |
+{: class="table table-striped"}
+
+### Return type
+
+[**KnowledgeDocumentFeedbackResponse**](KnowledgeDocumentFeedbackResponse.html)
+
 <a name="patch_knowledge_knowledgebase_document_variation"></a>
 
 ## [**DocumentVariation**](DocumentVariation.html) patch_knowledge_knowledgebase_document_variation(document_variation_id, document_id, knowledge_base_id, body)
@@ -3615,6 +3673,53 @@ except ApiException as e:
 
 void (empty response body)
 
+<a name="post_knowledge_guest_session_documents_answers"></a>
+
+## [**KnowledgeGuestAnswerDocumentsResponse**](KnowledgeGuestAnswerDocumentsResponse.html) post_knowledge_guest_session_documents_answers(session_id, body)
+
+
+
+Answer documents.
+
+Wraps POST /api/v2/knowledge/guest/sessions/{sessionId}/documents/answers 
+
+Requires no permissions
+
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.KnowledgeApi()
+session_id = 'session_id_example' # str | Knowledge guest session ID.
+body = PureCloudPlatformClientV2.KnowledgeDocumentsAnswerFilter() # KnowledgeDocumentsAnswerFilter | 
+
+try:
+    # Answer documents.
+    api_response = api_instance.post_knowledge_guest_session_documents_answers(session_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling KnowledgeApi->post_knowledge_guest_session_documents_answers: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **session_id** | **str**| Knowledge guest session ID. |  |
+| **body** | [**KnowledgeDocumentsAnswerFilter**](KnowledgeDocumentsAnswerFilter.html)|  |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**KnowledgeGuestAnswerDocumentsResponse**](KnowledgeGuestAnswerDocumentsResponse.html)
+
 <a name="post_knowledge_guest_session_documents_presentations"></a>
 
 ##  post_knowledge_guest_session_documents_presentations(session_id, body=body)
@@ -4167,6 +4272,58 @@ except ApiException as e:
 ### Return type
 
 [**KnowledgeDocumentResponse**](KnowledgeDocumentResponse.html)
+
+<a name="post_knowledge_knowledgebase_documents_answers"></a>
+
+## [**KnowledgeAnswerDocumentsResponse**](KnowledgeAnswerDocumentsResponse.html) post_knowledge_knowledgebase_documents_answers(knowledge_base_id, body)
+
+
+
+Answer documents.
+
+Wraps POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/documents/answers 
+
+Requires ALL permissions: 
+
+* knowledge:document:view
+* knowledge:documentAnswer:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.KnowledgeApi()
+knowledge_base_id = 'knowledge_base_id_example' # str | Knowledge base ID
+body = PureCloudPlatformClientV2.KnowledgeDocumentsAnswerFilter() # KnowledgeDocumentsAnswerFilter | 
+
+try:
+    # Answer documents.
+    api_response = api_instance.post_knowledge_knowledgebase_documents_answers(knowledge_base_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling KnowledgeApi->post_knowledge_knowledgebase_documents_answers: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **knowledge_base_id** | **str**| Knowledge base ID |  |
+| **body** | [**KnowledgeDocumentsAnswerFilter**](KnowledgeDocumentsAnswerFilter.html)|  |  |
+{: class="table table-striped"}
+
+### Return type
+
+[**KnowledgeAnswerDocumentsResponse**](KnowledgeAnswerDocumentsResponse.html)
 
 <a name="post_knowledge_knowledgebase_documents_bulk_remove"></a>
 

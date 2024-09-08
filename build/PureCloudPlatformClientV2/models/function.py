@@ -250,7 +250,7 @@ class Function(object):
     def timeout_seconds(self) -> int:
         """
         Gets the timeout_seconds of this Function.
-        Execution timeout to apply to function. Value is in seconds. Range allowed 1 to 60. Default value 15 seconds.
+        Execution timeout to apply to function. Value is in seconds. Range allowed 1 to 15. Default value 15 seconds.
 
         :return: The timeout_seconds of this Function.
         :rtype: int
@@ -261,12 +261,18 @@ class Function(object):
     def timeout_seconds(self, timeout_seconds: int) -> None:
         """
         Sets the timeout_seconds of this Function.
-        Execution timeout to apply to function. Value is in seconds. Range allowed 1 to 60. Default value 15 seconds.
+        Execution timeout to apply to function. Value is in seconds. Range allowed 1 to 15. Default value 15 seconds.
 
         :param timeout_seconds: The timeout_seconds of this Function.
         :type: int
         """
         
+        if timeout_seconds > 15:
+            raise ValueError("Invalid value for `timeout_seconds`, must be a value less than or equal to `15`")
+
+        if timeout_seconds < 1:
+            raise ValueError("Invalid value for `timeout_seconds`, must be a value greater than or equal to `1`")
+
 
         self._timeout_seconds = timeout_seconds
 

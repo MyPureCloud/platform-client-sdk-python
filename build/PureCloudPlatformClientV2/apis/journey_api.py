@@ -507,7 +507,6 @@ class JourneyApi(object):
         """
         Delete a Journey View by ID
         deletes all versions
-	    delete_journey_view is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -2480,7 +2479,6 @@ class JourneyApi(object):
         """
         Get a Journey View by ID
         returns the latest version
-	    get_journey_view is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -2559,7 +2557,6 @@ class JourneyApi(object):
         """
         Get a Journey View by ID and version
         
-	    get_journey_view_version is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -2644,7 +2641,6 @@ class JourneyApi(object):
         """
         Get the job for a journey view version.
         used for long descriptions
-	    get_journey_view_version_job is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -2735,7 +2731,6 @@ class JourneyApi(object):
         """
         Get the result of a job for a journey view version.
         used for long descriptions
-	    get_journey_view_version_job_results is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -2826,7 +2821,6 @@ class JourneyApi(object):
         """
         Get the latest job of a journey view version.
         used for long descriptions
-	    get_journey_view_version_jobs_latest is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -2911,7 +2905,6 @@ class JourneyApi(object):
         """
         Get a list of Journey Views
         
-	    get_journey_views is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -2927,12 +2920,13 @@ class JourneyApi(object):
         :param int page_size: Page size
         :param str name_or_created_by: Journey View Name or Created By
         :param str expand: Parameter to request additional data to return in Journey payload
+        :param str id: Parameter to request a list of Journey Views by id, separated by commas. Limit of 100 items.
         :return: JourneyViewListing
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['page_number', 'page_size', 'name_or_created_by', 'expand']
+        all_params = ['page_number', 'page_size', 'name_or_created_by', 'expand', 'id']
         all_params.append('callback')
 
         params = locals()
@@ -2959,6 +2953,8 @@ class JourneyApi(object):
             query_params['nameOrCreatedBy'] = params['name_or_created_by']
         if 'expand' in params:
             query_params['expand'] = params['expand']
+        if 'id' in params:
+            query_params['id'] = params['id']
 
         header_params = {}
 
@@ -3148,7 +3144,6 @@ class JourneyApi(object):
         """
         Get the jobs for an organization.
         
-	    get_journey_views_jobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -4645,7 +4640,6 @@ class JourneyApi(object):
         """
         Submit a job request for a journey view version.
         used for long descriptions
-	    post_journey_view_version_jobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -4730,7 +4724,6 @@ class JourneyApi(object):
         """
         Update a Journey View by ID
         creates a new version
-	    post_journey_view_versions is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
@@ -4815,7 +4808,6 @@ class JourneyApi(object):
         """
         Create a new Journey View
         
-	    post_journey_views is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

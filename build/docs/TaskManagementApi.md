@@ -1185,7 +1185,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **worktype_id** | **str**| Worktype id |  |
-| **expands** | [**list[str]**](str.html)| Which fields, if any, to expand. | [optional] <br />**Values**: defaultQueue, defaultSkills, defaultLanguage, schema |
+| **expands** | [**list[str]**](str.html)| Which fields, if any, to expand. | [optional] <br />**Values**: defaultQueue, defaultSkills, defaultLanguage, schema, flow |
 {: class="table table-striped"}
 
 ### Return type

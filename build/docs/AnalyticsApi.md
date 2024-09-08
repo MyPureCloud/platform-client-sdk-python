@@ -1875,7 +1875,7 @@ This endpoint does not need any parameters.
 
 <a name="get_analytics_reporting_settings_dashboards_query"></a>
 
-## [**DashboardConfigurationListing**](DashboardConfigurationListing.html) get_analytics_reporting_settings_dashboards_query(dashboard_type, dashboard_access_filter, sort_by=sort_by, page_number=page_number, page_size=page_size)
+## [**DashboardConfigurationListing**](DashboardConfigurationListing.html) get_analytics_reporting_settings_dashboards_query(dashboard_type, dashboard_access_filter, name=name, sort_by=sort_by, page_number=page_number, page_size=page_size)
 
 
 
@@ -1902,13 +1902,14 @@ PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
 api_instance = PureCloudPlatformClientV2.AnalyticsApi()
 dashboard_type = 'dashboard_type_example' # str | List dashboard of given type
 dashboard_access_filter = 'dashboard_access_filter_example' # str | Filter dashboard based on the owner of dashboard
+name = 'name_example' # str | name of the dashboard (optional)
 sort_by = ''desc'' # str |  (optional) (default to 'desc')
 page_number = 1 # int |  (optional) (default to 1)
 page_size = 9 # int |  (optional) (default to 9)
 
 try:
     # Get list of dashboard configurations
-    api_response = api_instance.get_analytics_reporting_settings_dashboards_query(dashboard_type, dashboard_access_filter, sort_by=sort_by, page_number=page_number, page_size=page_size)
+    api_response = api_instance.get_analytics_reporting_settings_dashboards_query(dashboard_type, dashboard_access_filter, name=name, sort_by=sort_by, page_number=page_number, page_size=page_size)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AnalyticsApi->get_analytics_reporting_settings_dashboards_query: %s\n" % e)
@@ -1921,6 +1922,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **dashboard_type** | **str**| List dashboard of given type | <br />**Values**: All, Public, Private, Shared, Favorites |
 | **dashboard_access_filter** | **str**| Filter dashboard based on the owner of dashboard | <br />**Values**: OwnedByMe, OwnedByAnyone, NotOwnedByMe |
+| **name** | **str**| name of the dashboard | [optional]  |
 | **sort_by** | **str**|  | [optional] [default to &#39;desc&#39;] |
 | **page_number** | **int**|  | [optional] [default to 1] |
 | **page_size** | **int**|  | [optional] [default to 9] |
@@ -2867,8 +2869,6 @@ except ApiException as e:
 
 
 Query for agent copilot aggregates
-
-post_analytics_agentcopilots_aggregates_query is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/analytics/agentcopilots/aggregates/query 
 
