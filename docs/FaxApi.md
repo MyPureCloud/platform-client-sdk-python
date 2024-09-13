@@ -14,13 +14,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_fax_summary**](#get_fax_summary) | Get fax summary|
 |[**put_fax_document**](#put_fax_document) | Update a fax document.|
 |[**put_fax_settings**](#put_fax_settings) | Update/write organization config for given organization|
-{: class="table table-striped"}
+
 
 
 ## delete_fax_document
 
 >  delete_fax_document(document_id)
-
 
 
 Delete a fax document.
@@ -69,7 +68,6 @@ void (empty response body)
 > [**FaxDocument**](FaxDocument) get_fax_document(document_id)
 
 
-
 Get a document.
 
 Wraps GET /api/v2/fax/documents/{documentId} 
@@ -109,13 +107,12 @@ except ApiException as e:
 
 ### Return type
 
-[**FaxDocument**](FaxDocument.html)
+[**FaxDocument**](FaxDocument)
 
 
 ## get_fax_document_content
 
 > [**DownloadResponse**](DownloadResponse) get_fax_document_content(document_id)
-
 
 
 Download a fax document.
@@ -157,13 +154,12 @@ except ApiException as e:
 
 ### Return type
 
-[**DownloadResponse**](DownloadResponse.html)
+[**DownloadResponse**](DownloadResponse)
 
 
 ## get_fax_documents
 
 > [**FaxDocumentEntityListing**](FaxDocumentEntityListing) get_fax_documents(page_size=page_size, page_number=page_number)
-
 
 
 Get a list of fax documents.
@@ -207,13 +203,12 @@ except ApiException as e:
 
 ### Return type
 
-[**FaxDocumentEntityListing**](FaxDocumentEntityListing.html)
+[**FaxDocumentEntityListing**](FaxDocumentEntityListing)
 
 
 ## get_fax_settings
 
 > [**FaxConfig**](FaxConfig) get_fax_settings()
-
 
 
 Get organization config for given organization
@@ -251,13 +246,12 @@ This endpoint does not need any parameters.
 
 ### Return type
 
-[**FaxConfig**](FaxConfig.html)
+[**FaxConfig**](FaxConfig)
 
 
 ## get_fax_summary
 
 > [**FaxSummary**](FaxSummary) get_fax_summary()
-
 
 
 Get fax summary
@@ -295,13 +289,12 @@ This endpoint does not need any parameters.
 
 ### Return type
 
-[**FaxSummary**](FaxSummary.html)
+[**FaxSummary**](FaxSummary)
 
 
 ## put_fax_document
 
 > [**FaxDocument**](FaxDocument) put_fax_document(document_id, body)
-
 
 
 Update a fax document.
@@ -341,17 +334,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **document_id** | **str**| Document ID |  |
-| **body** | [**FaxDocument**](FaxDocument.html)| Document |  |
+| **body** | [**FaxDocument**](FaxDocument)| Document |  |
 
 ### Return type
 
-[**FaxDocument**](FaxDocument.html)
+[**FaxDocument**](FaxDocument)
 
 
 ## put_fax_settings
 
 > [**FaxConfig**](FaxConfig) put_fax_settings(body=body)
-
 
 
 Update/write organization config for given organization
@@ -390,11 +382,11 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**FaxConfig**](FaxConfig.html)|  | [optional]  |
+| **body** | [**FaxConfig**](FaxConfig)|  | [optional]  |
 
 ### Return type
 
-[**FaxConfig**](FaxConfig.html)
+[**FaxConfig**](FaxConfig)
 
 
-_PureCloudPlatformClientV2 210.0.0_
+_PureCloudPlatformClientV2 211.0.0_

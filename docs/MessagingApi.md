@@ -19,14 +19,16 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_messaging_settings**](#post_messaging_settings) | Create a messaging setting|
 |[**post_messaging_supportedcontent**](#post_messaging_supportedcontent) | Create a Supported Content profile|
 |[**put_messaging_settings_default**](#put_messaging_settings_default) | Set the organization&#39;s default settings that may be applied to an integration when it is created.|
-{: class="table table-striped"}
+
 
 
 ## delete_messaging_setting
 
 >  delete_messaging_setting(message_setting_id)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 Delete a messaging setting
 
@@ -74,7 +76,9 @@ void (empty response body)
 
 >  delete_messaging_settings_default()
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 Delete the organization's default setting, a global default will be applied to integrations without settings
 
@@ -120,7 +124,9 @@ void (empty response body)
 
 >  delete_messaging_supportedcontent_supported_content_id(supported_content_id)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 Delete a supported content profile
 
@@ -170,7 +176,9 @@ void (empty response body)
 
 > [**MessagingSetting**](MessagingSetting) get_messaging_setting(message_setting_id)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 Get a messaging setting
 
@@ -212,14 +220,16 @@ except ApiException as e:
 
 ### Return type
 
-[**MessagingSetting**](MessagingSetting.html)
+[**MessagingSetting**](MessagingSetting)
 
 
 ## get_messaging_settings
 
 > [**MessagingConfigListing**](MessagingConfigListing) get_messaging_settings(page_size=page_size, page_number=page_number)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 Get a list of messaging settings
 
@@ -263,14 +273,16 @@ except ApiException as e:
 
 ### Return type
 
-[**MessagingConfigListing**](MessagingConfigListing.html)
+[**MessagingConfigListing**](MessagingConfigListing)
 
 
 ## get_messaging_settings_default
 
 > [**MessagingSetting**](MessagingSetting) get_messaging_settings_default()
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 Get the organization's default settings that will be used as the default when creating an integration.
 
@@ -310,14 +322,16 @@ This endpoint does not need any parameters.
 
 ### Return type
 
-[**MessagingSetting**](MessagingSetting.html)
+[**MessagingSetting**](MessagingSetting)
 
 
 ## get_messaging_supportedcontent
 
 > [**SupportedContentListing**](SupportedContentListing) get_messaging_supportedcontent(page_size=page_size, page_number=page_number)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 Get a list of Supported Content profiles
 
@@ -363,14 +377,16 @@ except ApiException as e:
 
 ### Return type
 
-[**SupportedContentListing**](SupportedContentListing.html)
+[**SupportedContentListing**](SupportedContentListing)
 
 
 ## get_messaging_supportedcontent_supported_content_id
 
 > [**SupportedContent**](SupportedContent) get_messaging_supportedcontent_supported_content_id(supported_content_id)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 Get a supported content profile
 
@@ -414,14 +430,16 @@ except ApiException as e:
 
 ### Return type
 
-[**SupportedContent**](SupportedContent.html)
+[**SupportedContent**](SupportedContent)
 
 
 ## patch_messaging_setting
 
 > [**MessagingSetting**](MessagingSetting) patch_messaging_setting(message_setting_id, body)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 Update a messaging setting
 
@@ -461,18 +479,20 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **message_setting_id** | **str**| Message Settings ID |  |
-| **body** | [**MessagingSettingRequest**](MessagingSettingRequest.html)| MessagingSetting |  |
+| **body** | [**MessagingSettingRequest**](MessagingSettingRequest)| MessagingSetting |  |
 
 ### Return type
 
-[**MessagingSetting**](MessagingSetting.html)
+[**MessagingSetting**](MessagingSetting)
 
 
 ## patch_messaging_supportedcontent_supported_content_id
 
 > [**SupportedContent**](SupportedContent) patch_messaging_supportedcontent_supported_content_id(supported_content_id, body)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 Update a supported content profile
 
@@ -514,18 +534,20 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **supported_content_id** | **str**| Supported Content ID |  |
-| **body** | [**SupportedContent**](SupportedContent.html)| SupportedContent |  |
+| **body** | [**SupportedContent**](SupportedContent)| SupportedContent |  |
 
 ### Return type
 
-[**SupportedContent**](SupportedContent.html)
+[**SupportedContent**](SupportedContent)
 
 
 ## post_messaging_settings
 
 > [**MessagingSetting**](MessagingSetting) post_messaging_settings(body)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 Create a messaging setting
 
@@ -563,18 +585,20 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**MessagingSettingRequest**](MessagingSettingRequest.html)| MessagingSetting |  |
+| **body** | [**MessagingSettingRequest**](MessagingSettingRequest)| MessagingSetting |  |
 
 ### Return type
 
-[**MessagingSetting**](MessagingSetting.html)
+[**MessagingSetting**](MessagingSetting)
 
 
 ## post_messaging_supportedcontent
 
 > [**SupportedContent**](SupportedContent) post_messaging_supportedcontent(body)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 Create a Supported Content profile
 
@@ -614,18 +638,20 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**SupportedContent**](SupportedContent.html)| SupportedContent |  |
+| **body** | [**SupportedContent**](SupportedContent)| SupportedContent |  |
 
 ### Return type
 
-[**SupportedContent**](SupportedContent.html)
+[**SupportedContent**](SupportedContent)
 
 
 ## put_messaging_settings_default
 
 > [**MessagingSetting**](MessagingSetting) put_messaging_settings_default(body)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 Set the organization's default settings that may be applied to an integration when it is created.
 
@@ -665,11 +691,11 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**MessagingSettingDefaultRequest**](MessagingSettingDefaultRequest.html)| Messaging Setting ID |  |
+| **body** | [**MessagingSettingDefaultRequest**](MessagingSettingDefaultRequest)| Messaging Setting ID |  |
 
 ### Return type
 
-[**MessagingSetting**](MessagingSetting.html)
+[**MessagingSetting**](MessagingSetting)
 
 
-_PureCloudPlatformClientV2 210.0.0_
+_PureCloudPlatformClientV2 211.0.0_

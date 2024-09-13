@@ -8,13 +8,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 |------------- | -------------|
 |[**get_usage_events_definition**](#get_usage_events_definition) | Get an operational event definition by its id|
 |[**get_usage_events_definitions**](#get_usage_events_definitions) | Get all operational event definitions|
-{: class="table table-striped"}
+
 
 
 ## get_usage_events_definition
 
 > [**EventDefinition**](EventDefinition) get_usage_events_definition(event_definition_id)
-
 
 
 Get an operational event definition by its id
@@ -57,13 +56,12 @@ except ApiException as e:
 
 ### Return type
 
-[**EventDefinition**](EventDefinition.html)
+[**EventDefinition**](EventDefinition)
 
 
 ## get_usage_events_definitions
 
 > [**EventDefinitionListing**](EventDefinitionListing) get_usage_events_definitions()
-
 
 
 Get all operational event definitions
@@ -102,7 +100,7 @@ This endpoint does not need any parameters.
 
 ### Return type
 
-[**EventDefinitionListing**](EventDefinitionListing.html)
+[**EventDefinitionListing**](EventDefinitionListing)
 
 
-_PureCloudPlatformClientV2 210.0.0_
+_PureCloudPlatformClientV2 211.0.0_

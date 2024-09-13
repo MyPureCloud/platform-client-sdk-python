@@ -10,8 +10,8 @@
 | **page_size** | int | Deprecated, paging is not supported | [optional] |
 | **page_number** | int | Deprecated, paging is not supported | [optional] |
 | **total** | int | Deprecated, paging is not supported | [optional] |
-| **last_uri** | str | Deprecated, paging is not supported | [optional] |
 | **first_uri** | str | Deprecated, paging is not supported | [optional] |
+| **last_uri** | str | Deprecated, paging is not supported | [optional] |
 | **next_uri** | str | Deprecated, paging is not supported | [optional] |
 | **page_count** | int | Deprecated, paging is not supported | [optional] |
 | **previous_uri** | str | Deprecated, paging is not supported | [optional] |
@@ -19,4 +19,4 @@
 
 
 
-_PureCloudPlatformClientV2 210.0.0_
+_PureCloudPlatformClientV2 211.0.0_

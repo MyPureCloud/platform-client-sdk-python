@@ -7,13 +7,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 |Method | Description|
 |------------- | -------------|
 |[**post_screenrecording_token**](#post_screenrecording_token) | Sign identifying information for screen recording|
-{: class="table table-striped"}
+
 
 
 ## post_screenrecording_token
 
 > [**SignedData**](SignedData) post_screenrecording_token(body=body)
-
 
 
 Sign identifying information for screen recording
@@ -51,11 +50,11 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**ScreenRecordingUserAuthenticatedInfo**](ScreenRecordingUserAuthenticatedInfo.html)|  | [optional]  |
+| **body** | [**ScreenRecordingUserAuthenticatedInfo**](ScreenRecordingUserAuthenticatedInfo)|  | [optional]  |
 
 ### Return type
 
-[**SignedData**](SignedData.html)
+[**SignedData**](SignedData)
 
 
-_PureCloudPlatformClientV2 210.0.0_
+_PureCloudPlatformClientV2 211.0.0_

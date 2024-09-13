@@ -33,13 +33,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**put_presence_user_primarysource**](#put_presence_user_primarysource) | Update a user&#39;s Primary Presence Source|
 |[**put_presencedefinition**](#put_presencedefinition) | Update a Presence Definition. Apps should migrate to use PUT /api/v2/presence/definitions/{definitionId} instead)|
 |[**put_users_presences_bulk**](#put_users_presences_bulk) | Update bulk user Presences|
-{: class="table table-striped"}
+
 
 
 ## delete_presence_definition
 
 >  delete_presence_definition(definition_id)
-
 
 
 Delete a Presence Definition
@@ -90,7 +89,6 @@ void (empty response body)
 >  delete_presence_source(source_id)
 
 
-
 Delete a Presence Source
 
 Wraps DELETE /api/v2/presence/sources/{sourceId} 
@@ -138,7 +136,9 @@ void (empty response body)
 
 >  delete_presencedefinition(presence_id)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 Delete a Presence Definition. Apps should migrate to use DELETE /api/v2/presence/definitions/{definitionId} instead
 
@@ -187,7 +187,6 @@ void (empty response body)
 > [**OrganizationPresenceDefinition**](OrganizationPresenceDefinition) get_presence_definition(definition_id, locale_code=locale_code)
 
 
-
 Get a Presence Definition
 
 Wraps GET /api/v2/presence/definitions/{definitionId} 
@@ -230,13 +229,12 @@ except ApiException as e:
 
 ### Return type
 
-[**OrganizationPresenceDefinition**](OrganizationPresenceDefinition.html)
+[**OrganizationPresenceDefinition**](OrganizationPresenceDefinition)
 
 
 ## get_presence_definitions
 
 > [**OrganizationPresenceDefinitionEntityListing**](OrganizationPresenceDefinitionEntityListing) get_presence_definitions(deactivated=deactivated, division_id=division_id, locale_code=locale_code)
-
 
 
 Get a list of Presence Definitions
@@ -278,18 +276,17 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **deactivated** | **str**| Deactivated query can be TRUE or FALSE | [optional] [default to &#39;false&#39;] |
-| **division_id** | [**list[str]**](str.html)| One or more division IDs. If nothing is provided, the definitions associated withthe list of divisions that the user has access to will be returned. | [optional]  |
+| **division_id** | [**list[str]**](str)| One or more division IDs. If nothing is provided, the definitions associated withthe list of divisions that the user has access to will be returned. | [optional]  |
 | **locale_code** | **str**| The locale code to fetch for the presence definition. Use ALL to fetch everything. | [optional] <br />**Values**: ALL, he, fr, en_US, da, de, it, cs, es, fi, ar, ja, ko, nl, no, pl, pt_BR, pt_PT, ru, sv, th, tr, uk, zh_CN, zh_TW |
 
 ### Return type
 
-[**OrganizationPresenceDefinitionEntityListing**](OrganizationPresenceDefinitionEntityListing.html)
+[**OrganizationPresenceDefinitionEntityListing**](OrganizationPresenceDefinitionEntityListing)
 
 
 ## get_presence_settings
 
 > [**PresenceSettings**](PresenceSettings) get_presence_settings()
-
 
 
 Get the presence settings
@@ -328,13 +325,12 @@ This endpoint does not need any parameters.
 
 ### Return type
 
-[**PresenceSettings**](PresenceSettings.html)
+[**PresenceSettings**](PresenceSettings)
 
 
 ## get_presence_source
 
 > [**Source**](Source) get_presence_source(source_id)
-
 
 
 Get a Presence Source
@@ -377,13 +373,12 @@ except ApiException as e:
 
 ### Return type
 
-[**Source**](Source.html)
+[**Source**](Source)
 
 
 ## get_presence_sources
 
 > [**SourceEntityListing**](SourceEntityListing) get_presence_sources(deactivated=deactivated)
-
 
 
 Get a list of Presence Sources
@@ -426,13 +421,12 @@ except ApiException as e:
 
 ### Return type
 
-[**SourceEntityListing**](SourceEntityListing.html)
+[**SourceEntityListing**](SourceEntityListing)
 
 
 ## get_presence_user_primarysource
 
 > [**UserPrimarySource**](UserPrimarySource) get_presence_user_primarysource(user_id)
-
 
 
 Get a user's Primary Presence Source
@@ -475,14 +469,16 @@ except ApiException as e:
 
 ### Return type
 
-[**UserPrimarySource**](UserPrimarySource.html)
+[**UserPrimarySource**](UserPrimarySource)
 
 
 ## get_presencedefinition
 
 > [**OrganizationPresence**](OrganizationPresence) get_presencedefinition(presence_id, locale_code=locale_code)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 Get a Presence Definition. Apps should migrate to use GET /api/v2/presence/definitions/{definitionId} instead
 
@@ -526,14 +522,16 @@ except ApiException as e:
 
 ### Return type
 
-[**OrganizationPresence**](OrganizationPresence.html)
+[**OrganizationPresence**](OrganizationPresence)
 
 
 ## get_presencedefinitions
 
 > [**OrganizationPresenceEntityListing**](OrganizationPresenceEntityListing) get_presencedefinitions(page_number=page_number, page_size=page_size, deleted=deleted, locale_code=locale_code)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 Get an Organization's list of Presence Definitions. Apps should migrate to use GET /api/v2/presence/definitions instead
 
@@ -580,13 +578,12 @@ except ApiException as e:
 
 ### Return type
 
-[**OrganizationPresenceEntityListing**](OrganizationPresenceEntityListing.html)
+[**OrganizationPresenceEntityListing**](OrganizationPresenceEntityListing)
 
 
 ## get_systempresences
 
 > [**list[SystemPresence]**](SystemPresence) get_systempresences()
-
 
 
 Get the list of SystemPresences
@@ -624,13 +621,12 @@ This endpoint does not need any parameters.
 
 ### Return type
 
-[**list[SystemPresence]**](SystemPresence.html)
+[**list[SystemPresence]**](SystemPresence)
 
 
 ## get_user_presence
 
 > [**UserPresence**](UserPresence) get_user_presence(user_id, source_id)
-
 
 
 Get a user's Presence
@@ -676,13 +672,12 @@ except ApiException as e:
 
 ### Return type
 
-[**UserPresence**](UserPresence.html)
+[**UserPresence**](UserPresence)
 
 
 ## get_user_presences_purecloud
 
 > [**UserPresence**](UserPresence) get_user_presences_purecloud(user_id)
-
 
 
 Get a user's Genesys Cloud presence.
@@ -726,13 +721,12 @@ except ApiException as e:
 
 ### Return type
 
-[**UserPresence**](UserPresence.html)
+[**UserPresence**](UserPresence)
 
 
 ## get_users_presence_bulk
 
 > [**list[UcUserPresence]**](UcUserPresence) get_users_presence_bulk(source_id, id=id)
-
 
 
 Get bulk user presences for a single presence source
@@ -772,17 +766,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **source_id** | **str**| The requested presence source ID. |  |
-| **id** | [**list[str]**](str.html)| A comma separated list of user IDs to fetch their presence status in bulk. Limit 50. | [optional]  |
+| **id** | [**list[str]**](str)| A comma separated list of user IDs to fetch their presence status in bulk. Limit 50. | [optional]  |
 
 ### Return type
 
-[**list[UcUserPresence]**](UcUserPresence.html)
+[**list[UcUserPresence]**](UcUserPresence)
 
 
 ## get_users_presences_purecloud_bulk
 
 > [**list[UcUserPresence]**](UcUserPresence) get_users_presences_purecloud_bulk(id=id)
-
 
 
 Get bulk user presences for a Genesys Cloud (PURECLOUD) presence source
@@ -820,17 +813,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **id** | [**list[str]**](str.html)| A comma separated list of user IDs to fetch their presence status in bulk. Limit 50. | [optional]  |
+| **id** | [**list[str]**](str)| A comma separated list of user IDs to fetch their presence status in bulk. Limit 50. | [optional]  |
 
 ### Return type
 
-[**list[UcUserPresence]**](UcUserPresence.html)
+[**list[UcUserPresence]**](UcUserPresence)
 
 
 ## patch_user_presence
 
 > [**UserPresence**](UserPresence) patch_user_presence(user_id, source_id, body)
-
 
 
 Patch a user's Presence
@@ -874,17 +866,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **user_id** | **str**| user Id |  |
 | **source_id** | **str**| Presence source ID |  |
-| **body** | [**UserPresence**](UserPresence.html)| User presence |  |
+| **body** | [**UserPresence**](UserPresence)| User presence |  |
 
 ### Return type
 
-[**UserPresence**](UserPresence.html)
+[**UserPresence**](UserPresence)
 
 
 ## patch_user_presences_purecloud
 
 > [**UserPresence**](UserPresence) patch_user_presences_purecloud(user_id, body)
-
 
 
 Patch a Genesys Cloud user's presence
@@ -926,17 +917,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **user_id** | **str**| user Id |  |
-| **body** | [**UserPresence**](UserPresence.html)| User presence |  |
+| **body** | [**UserPresence**](UserPresence)| User presence |  |
 
 ### Return type
 
-[**UserPresence**](UserPresence.html)
+[**UserPresence**](UserPresence)
 
 
 ## post_presence_definitions
 
 > [**OrganizationPresenceDefinition**](OrganizationPresenceDefinition) post_presence_definitions(body)
-
 
 
 Create a Presence Definition
@@ -975,17 +965,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**OrganizationPresenceDefinition**](OrganizationPresenceDefinition.html)| The Presence Definition to create |  |
+| **body** | [**OrganizationPresenceDefinition**](OrganizationPresenceDefinition)| The Presence Definition to create |  |
 
 ### Return type
 
-[**OrganizationPresenceDefinition**](OrganizationPresenceDefinition.html)
+[**OrganizationPresenceDefinition**](OrganizationPresenceDefinition)
 
 
 ## post_presence_sources
 
 > [**Source**](Source) post_presence_sources(body)
-
 
 
 Create a Presence Source
@@ -1024,18 +1013,20 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**Source**](Source.html)| The Presence Source to create |  |
+| **body** | [**Source**](Source)| The Presence Source to create |  |
 
 ### Return type
 
-[**Source**](Source.html)
+[**Source**](Source)
 
 
 ## post_presencedefinitions
 
 > [**OrganizationPresence**](OrganizationPresence) post_presencedefinitions(body)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 Create a Presence Definition. Apps should migrate to use POST /api/v2/presence/definitions instead
 
@@ -1073,17 +1064,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**OrganizationPresence**](OrganizationPresence.html)| The Presence Definition to create |  |
+| **body** | [**OrganizationPresence**](OrganizationPresence)| The Presence Definition to create |  |
 
 ### Return type
 
-[**OrganizationPresence**](OrganizationPresence.html)
+[**OrganizationPresence**](OrganizationPresence)
 
 
 ## put_presence_definition
 
 > [**OrganizationPresenceDefinition**](OrganizationPresenceDefinition) put_presence_definition(definition_id, body)
-
 
 
 Update a Presence Definition
@@ -1124,17 +1114,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **definition_id** | **str**| Presence Definition ID |  |
-| **body** | [**OrganizationPresenceDefinition**](OrganizationPresenceDefinition.html)| The updated Presence Definition |  |
+| **body** | [**OrganizationPresenceDefinition**](OrganizationPresenceDefinition)| The updated Presence Definition |  |
 
 ### Return type
 
-[**OrganizationPresenceDefinition**](OrganizationPresenceDefinition.html)
+[**OrganizationPresenceDefinition**](OrganizationPresenceDefinition)
 
 
 ## put_presence_settings
 
 > [**PresenceSettings**](PresenceSettings) put_presence_settings(body)
-
 
 
 Update the presence settings
@@ -1173,17 +1162,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**PresenceSettings**](PresenceSettings.html)| Presence Settings |  |
+| **body** | [**PresenceSettings**](PresenceSettings)| Presence Settings |  |
 
 ### Return type
 
-[**PresenceSettings**](PresenceSettings.html)
+[**PresenceSettings**](PresenceSettings)
 
 
 ## put_presence_source
 
 > [**Source**](Source) put_presence_source(source_id, body)
-
 
 
 Update a Presence Source
@@ -1224,17 +1212,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **source_id** | **str**| Presence Source ID |  |
-| **body** | [**Source**](Source.html)| The updated Presence Source |  |
+| **body** | [**Source**](Source)| The updated Presence Source |  |
 
 ### Return type
 
-[**Source**](Source.html)
+[**Source**](Source)
 
 
 ## put_presence_user_primarysource
 
 > [**UserPrimarySource**](UserPrimarySource) put_presence_user_primarysource(user_id, body)
-
 
 
 Update a user's Primary Presence Source
@@ -1275,18 +1262,20 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **user_id** | **str**| user ID |  |
-| **body** | [**UserPrimarySource**](UserPrimarySource.html)| Primary Source |  |
+| **body** | [**UserPrimarySource**](UserPrimarySource)| Primary Source |  |
 
 ### Return type
 
-[**UserPrimarySource**](UserPrimarySource.html)
+[**UserPrimarySource**](UserPrimarySource)
 
 
 ## put_presencedefinition
 
 > [**OrganizationPresence**](OrganizationPresence) put_presencedefinition(presence_id, body)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 Update a Presence Definition. Apps should migrate to use PUT /api/v2/presence/definitions/{definitionId} instead)
 
@@ -1326,17 +1315,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **presence_id** | **str**| Organization Presence ID |  |
-| **body** | [**OrganizationPresence**](OrganizationPresence.html)| The OrganizationPresence to update |  |
+| **body** | [**OrganizationPresence**](OrganizationPresence)| The OrganizationPresence to update |  |
 
 ### Return type
 
-[**OrganizationPresence**](OrganizationPresence.html)
+[**OrganizationPresence**](OrganizationPresence)
 
 
 ## put_users_presences_bulk
 
 > [**list[UserPresence]**](UserPresence) put_users_presences_bulk(body)
-
 
 
 Update bulk user Presences
@@ -1375,11 +1363,11 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**list[MutableUserPresence]**](MutableUserPresence.html)| List of User presences |  |
+| **body** | [**list[MutableUserPresence]**](MutableUserPresence)| List of User presences |  |
 
 ### Return type
 
-[**list[UserPresence]**](UserPresence.html)
+[**list[UserPresence]**](UserPresence)
 
 
-_PureCloudPlatformClientV2 210.0.0_
+_PureCloudPlatformClientV2 211.0.0_

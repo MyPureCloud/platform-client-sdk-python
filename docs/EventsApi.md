@@ -9,13 +9,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_events_conversations**](#post_events_conversations) | Publish Conversation Batch Events|
 |[**post_events_users_presence**](#post_events_users_presence) | Publish User Presence Status Batch Events|
 |[**post_events_users_routingstatus**](#post_events_users_routingstatus) | Publish Agent Routing Status Batch Events|
-{: class="table table-striped"}
+
 
 
 ## post_events_conversations
 
 > [**BatchEventResponse**](BatchEventResponse) post_events_conversations(body)
-
 
 
 Publish Conversation Batch Events
@@ -54,17 +53,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**BatchConversationEventRequest**](BatchConversationEventRequest.html)| batchRequest |  |
+| **body** | [**BatchConversationEventRequest**](BatchConversationEventRequest)| batchRequest |  |
 
 ### Return type
 
-[**BatchEventResponse**](BatchEventResponse.html)
+[**BatchEventResponse**](BatchEventResponse)
 
 
 ## post_events_users_presence
 
 > [**BatchEventResponse**](BatchEventResponse) post_events_users_presence(body)
-
 
 
 Publish User Presence Status Batch Events
@@ -103,17 +101,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**BatchUserPresenceEventRequest**](BatchUserPresenceEventRequest.html)| batchRequest |  |
+| **body** | [**BatchUserPresenceEventRequest**](BatchUserPresenceEventRequest)| batchRequest |  |
 
 ### Return type
 
-[**BatchEventResponse**](BatchEventResponse.html)
+[**BatchEventResponse**](BatchEventResponse)
 
 
 ## post_events_users_routingstatus
 
 > [**BatchEventResponse**](BatchEventResponse) post_events_users_routingstatus(body)
-
 
 
 Publish Agent Routing Status Batch Events
@@ -152,11 +149,11 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**BatchUserRoutingStatusEventRequest**](BatchUserRoutingStatusEventRequest.html)| batchRequest |  |
+| **body** | [**BatchUserRoutingStatusEventRequest**](BatchUserRoutingStatusEventRequest)| batchRequest |  |
 
 ### Return type
 
-[**BatchEventResponse**](BatchEventResponse.html)
+[**BatchEventResponse**](BatchEventResponse)
 
 
-_PureCloudPlatformClientV2 210.0.0_
+_PureCloudPlatformClientV2 211.0.0_

@@ -8,13 +8,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 |------------- | -------------|
 |[**get_emails_settings**](#get_emails_settings) | Get email Contact Center settings|
 |[**patch_emails_settings**](#patch_emails_settings) | Patch email Contact Center settings|
-{: class="table table-striped"}
+
 
 
 ## get_emails_settings
 
 > [**EmailSettings**](EmailSettings) get_emails_settings()
-
 
 
 Get email Contact Center settings
@@ -53,13 +52,12 @@ This endpoint does not need any parameters.
 
 ### Return type
 
-[**EmailSettings**](EmailSettings.html)
+[**EmailSettings**](EmailSettings)
 
 
 ## patch_emails_settings
 
 > [**EmailSettings**](EmailSettings) patch_emails_settings(body=body)
-
 
 
 Patch email Contact Center settings
@@ -98,11 +96,11 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**EmailSettings**](EmailSettings.html)|  | [optional]  |
+| **body** | [**EmailSettings**](EmailSettings)|  | [optional]  |
 
 ### Return type
 
-[**EmailSettings**](EmailSettings.html)
+[**EmailSettings**](EmailSettings)
 
 
-_PureCloudPlatformClientV2 210.0.0_
+_PureCloudPlatformClientV2 211.0.0_

@@ -12,13 +12,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_analytics_flows_aggregates_jobs**](#post_analytics_flows_aggregates_jobs) | Query for flow aggregates asynchronously|
 |[**post_analytics_flows_aggregates_query**](#post_analytics_flows_aggregates_query) | Query for flow aggregates|
 |[**post_analytics_flows_observations_query**](#post_analytics_flows_observations_query) | Query for flow observations|
-{: class="table table-striped"}
+
 
 
 ## get_analytics_flows_aggregates_job
 
 > [**AsyncQueryStatus**](AsyncQueryStatus) get_analytics_flows_aggregates_job(job_id)
-
 
 
 Get status for async query for Flow aggregates
@@ -63,13 +62,12 @@ except ApiException as e:
 
 ### Return type
 
-[**AsyncQueryStatus**](AsyncQueryStatus.html)
+[**AsyncQueryStatus**](AsyncQueryStatus)
 
 
 ## get_analytics_flows_aggregates_job_results
 
 > [**FlowAsyncAggregateQueryResponse**](FlowAsyncAggregateQueryResponse) get_analytics_flows_aggregates_job_results(job_id, cursor=cursor)
-
 
 
 Fetch a page of results for an async aggregates query
@@ -116,13 +114,12 @@ except ApiException as e:
 
 ### Return type
 
-[**FlowAsyncAggregateQueryResponse**](FlowAsyncAggregateQueryResponse.html)
+[**FlowAsyncAggregateQueryResponse**](FlowAsyncAggregateQueryResponse)
 
 
 ## post_analytics_flows_activity_query
 
 > [**FlowActivityResponse**](FlowActivityResponse) post_analytics_flows_activity_query(body, page_size=page_size, page_number=page_number)
-
 
 
 Query for flow activity observations
@@ -163,19 +160,18 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**FlowActivityQuery**](FlowActivityQuery.html)| query |  |
+| **body** | [**FlowActivityQuery**](FlowActivityQuery)| query |  |
 | **page_size** | **int**| The desired page size | [optional]  |
 | **page_number** | **int**| The desired page number | [optional]  |
 
 ### Return type
 
-[**FlowActivityResponse**](FlowActivityResponse.html)
+[**FlowActivityResponse**](FlowActivityResponse)
 
 
 ## post_analytics_flows_aggregates_jobs
 
 > [**AsyncQueryResponse**](AsyncQueryResponse) post_analytics_flows_aggregates_jobs(body)
-
 
 
 Query for flow aggregates asynchronously
@@ -216,17 +212,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**FlowAsyncAggregationQuery**](FlowAsyncAggregationQuery.html)| query |  |
+| **body** | [**FlowAsyncAggregationQuery**](FlowAsyncAggregationQuery)| query |  |
 
 ### Return type
 
-[**AsyncQueryResponse**](AsyncQueryResponse.html)
+[**AsyncQueryResponse**](AsyncQueryResponse)
 
 
 ## post_analytics_flows_aggregates_query
 
 > [**FlowAggregateQueryResponse**](FlowAggregateQueryResponse) post_analytics_flows_aggregates_query(body)
-
 
 
 Query for flow aggregates
@@ -265,17 +260,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**FlowAggregationQuery**](FlowAggregationQuery.html)| query |  |
+| **body** | [**FlowAggregationQuery**](FlowAggregationQuery)| query |  |
 
 ### Return type
 
-[**FlowAggregateQueryResponse**](FlowAggregateQueryResponse.html)
+[**FlowAggregateQueryResponse**](FlowAggregateQueryResponse)
 
 
 ## post_analytics_flows_observations_query
 
 > [**FlowObservationQueryResponse**](FlowObservationQueryResponse) post_analytics_flows_observations_query(body)
-
 
 
 Query for flow observations
@@ -314,11 +308,11 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**FlowObservationQuery**](FlowObservationQuery.html)| query |  |
+| **body** | [**FlowObservationQuery**](FlowObservationQuery)| query |  |
 
 ### Return type
 
-[**FlowObservationQueryResponse**](FlowObservationQueryResponse.html)
+[**FlowObservationQueryResponse**](FlowObservationQueryResponse)
 
 
-_PureCloudPlatformClientV2 210.0.0_
+_PureCloudPlatformClientV2 211.0.0_

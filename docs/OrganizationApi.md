@@ -27,14 +27,16 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**put_organizations_ipaddressauthentication**](#put_organizations_ipaddressauthentication) | Update organization IP address whitelist settings|
 |[**put_organizations_me**](#put_organizations_me) | Update organization.|
 |[**put_organizations_whitelist**](#put_organizations_whitelist) | This route is deprecated, please use /api/v2/organizations/authentication/settings instead|
-{: class="table table-striped"}
+
 
 
 ## get_fieldconfig
 
 > [**FieldConfig**](FieldConfig) get_fieldconfig(type)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 Fetch field config for an entity type
 
@@ -75,13 +77,12 @@ except ApiException as e:
 
 ### Return type
 
-[**FieldConfig**](FieldConfig.html)
+[**FieldConfig**](FieldConfig)
 
 
 ## get_organizations_authentication_settings
 
 > [**OrgAuthSettings**](OrgAuthSettings) get_organizations_authentication_settings()
-
 
 
 Gets the organization's settings
@@ -120,14 +121,16 @@ This endpoint does not need any parameters.
 
 ### Return type
 
-[**OrgAuthSettings**](OrgAuthSettings.html)
+[**OrgAuthSettings**](OrgAuthSettings)
 
 
 ## get_organizations_embeddedintegration
 
 > [**EmbeddedIntegration**](EmbeddedIntegration) get_organizations_embeddedintegration()
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 Get the list of domains that will be allowed to embed PureCloud applications
 
@@ -166,14 +169,16 @@ This endpoint does not need any parameters.
 
 ### Return type
 
-[**EmbeddedIntegration**](EmbeddedIntegration.html)
+[**EmbeddedIntegration**](EmbeddedIntegration)
 
 
 ## get_organizations_ipaddressauthentication
 
 > [**IpAddressAuthentication**](IpAddressAuthentication) get_organizations_ipaddressauthentication()
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 Get organization IP address whitelist settings
 
@@ -213,13 +218,12 @@ This endpoint does not need any parameters.
 
 ### Return type
 
-[**IpAddressAuthentication**](IpAddressAuthentication.html)
+[**IpAddressAuthentication**](IpAddressAuthentication)
 
 
 ## get_organizations_limits_changerequest
 
 > [**LimitChangeRequestDetails**](LimitChangeRequestDetails) get_organizations_limits_changerequest(request_id)
-
 
 
 Get a limit change request
@@ -262,13 +266,12 @@ except ApiException as e:
 
 ### Return type
 
-[**LimitChangeRequestDetails**](LimitChangeRequestDetails.html)
+[**LimitChangeRequestDetails**](LimitChangeRequestDetails)
 
 
 ## get_organizations_limits_changerequests
 
 > [**LimitChangeRequestsEntityListing**](LimitChangeRequestsEntityListing) get_organizations_limits_changerequests(after=after, before=before, status=status, page_size=page_size, expand=expand)
-
 
 
 Get the available limit change requests
@@ -317,17 +320,16 @@ except ApiException as e:
 | **before** | **int**| Timestamp indicating the date to end before when searching for requests. | [optional]  |
 | **status** | **str**| Status of the request to be filtered by | [optional] <br />**Values**: Approved, Rejected, Rollback, Pending, Open, SecondaryApprovalNamespacesAdded, ReviewerApproved, ReviewerRejected, ReviewerRollback, ImplementingChange, ChangeImplemented, ImplementingRollback, RollbackImplemented |
 | **page_size** | **int**| Page Size | [optional] [default to 25] |
-| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand. | [optional] <br />**Values**: statusHistory |
+| **expand** | [**list[str]**](str)| Which fields, if any, to expand. | [optional] <br />**Values**: statusHistory |
 
 ### Return type
 
-[**LimitChangeRequestsEntityListing**](LimitChangeRequestsEntityListing.html)
+[**LimitChangeRequestsEntityListing**](LimitChangeRequestsEntityListing)
 
 
 ## get_organizations_limits_docs
 
 > [**LimitDocumentation**](LimitDocumentation) get_organizations_limits_docs()
-
 
 
 Get limit documentation
@@ -365,13 +367,12 @@ This endpoint does not need any parameters.
 
 ### Return type
 
-[**LimitDocumentation**](LimitDocumentation.html)
+[**LimitDocumentation**](LimitDocumentation)
 
 
 ## get_organizations_limits_docs_freetrial
 
 > [**FreeTrialLimitDocs**](FreeTrialLimitDocs) get_organizations_limits_docs_freetrial()
-
 
 
 Get free trial limit documentation
@@ -409,13 +410,12 @@ This endpoint does not need any parameters.
 
 ### Return type
 
-[**FreeTrialLimitDocs**](FreeTrialLimitDocs.html)
+[**FreeTrialLimitDocs**](FreeTrialLimitDocs)
 
 
 ## get_organizations_limits_namespace
 
 > [**LimitsEntityListing**](LimitsEntityListing) get_organizations_limits_namespace(namespace_name)
-
 
 
 Get the effective limits in a namespace for an organization
@@ -457,13 +457,12 @@ except ApiException as e:
 
 ### Return type
 
-[**LimitsEntityListing**](LimitsEntityListing.html)
+[**LimitsEntityListing**](LimitsEntityListing)
 
 
 ## get_organizations_limits_namespace_counts
 
 > [**LimitCountListing**](LimitCountListing) get_organizations_limits_namespace_counts(namespace_name, cursor=cursor, entity_id=entity_id, user_id=user_id)
-
 
 
 Get estimated limit counts for a namespace. This is not a source of truth for limit values but a record of estimates to facilitate limit threshold tracking.
@@ -514,13 +513,12 @@ except ApiException as e:
 
 ### Return type
 
-[**LimitCountListing**](LimitCountListing.html)
+[**LimitCountListing**](LimitCountListing)
 
 
 ## get_organizations_limits_namespace_defaults
 
 > [**LimitsEntityListing**](LimitsEntityListing) get_organizations_limits_namespace_defaults(namespace_name)
-
 
 
 Get the default limits in a namespace for an organization
@@ -562,13 +560,12 @@ except ApiException as e:
 
 ### Return type
 
-[**LimitsEntityListing**](LimitsEntityListing.html)
+[**LimitsEntityListing**](LimitsEntityListing)
 
 
 ## get_organizations_limits_namespace_limit_counts
 
 > [**LimitCountListing**](LimitCountListing) get_organizations_limits_namespace_limit_counts(namespace_name, limit_name, entity_id=entity_id, user_id=user_id, cursor=cursor)
-
 
 
 Get estimated limit counts for a namespace and limit name. This is not a source of truth for limit values but a record of estimates to facilitate limit threshold tracking.
@@ -621,13 +618,12 @@ except ApiException as e:
 
 ### Return type
 
-[**LimitCountListing**](LimitCountListing.html)
+[**LimitCountListing**](LimitCountListing)
 
 
 ## get_organizations_limits_namespaces
 
 > object** get_organizations_limits_namespaces(page_size=page_size, page_number=page_number)
-
 
 
 Get the available limit namespaces
@@ -679,7 +675,6 @@ except ApiException as e:
 > [**Organization**](Organization) get_organizations_me()
 
 
-
 Get organization.
 
 Wraps GET /api/v2/organizations/me 
@@ -715,14 +710,16 @@ This endpoint does not need any parameters.
 
 ### Return type
 
-[**Organization**](Organization.html)
+[**Organization**](Organization)
 
 
 ## get_organizations_whitelist
 
 > [**OrgWhitelistSettings**](OrgWhitelistSettings) get_organizations_whitelist()
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 This route is deprecated, please use /api/v2/organizations/authentication/settings instead
 
@@ -759,13 +756,12 @@ This endpoint does not need any parameters.
 
 ### Return type
 
-[**OrgWhitelistSettings**](OrgWhitelistSettings.html)
+[**OrgWhitelistSettings**](OrgWhitelistSettings)
 
 
 ## patch_organizations_authentication_settings
 
 > [**OrgAuthSettings**](OrgAuthSettings) patch_organizations_authentication_settings(body)
-
 
 
 Update the organization's settings
@@ -804,17 +800,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**OrgAuthSettings**](OrgAuthSettings.html)| Org settings |  |
+| **body** | [**OrgAuthSettings**](OrgAuthSettings)| Org settings |  |
 
 ### Return type
 
-[**OrgAuthSettings**](OrgAuthSettings.html)
+[**OrgAuthSettings**](OrgAuthSettings)
 
 
 ## patch_organizations_feature
 
 > [**OrganizationFeatures**](OrganizationFeatures) patch_organizations_feature(feature_name, enabled)
-
 
 
 Update organization
@@ -855,18 +850,20 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **feature_name** | **str**| Organization feature | <br />**Values**: realtimeCIC, purecloud, hipaa, ucEnabled, pci, purecloudVoice, xmppFederation, chat, informalPhotos, directory, contactCenter, unifiedCommunications, custserv |
-| **enabled** | [**FeatureState**](FeatureState.html)| New state of feature |  |
+| **enabled** | [**FeatureState**](FeatureState)| New state of feature |  |
 
 ### Return type
 
-[**OrganizationFeatures**](OrganizationFeatures.html)
+[**OrganizationFeatures**](OrganizationFeatures)
 
 
 ## put_organizations_embeddedintegration
 
 > [**EmbeddedIntegration**](EmbeddedIntegration) put_organizations_embeddedintegration(body)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 Update the list of domains that will be allowed to embed PureCloud applications
 
@@ -906,18 +903,20 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**EmbeddedIntegration**](EmbeddedIntegration.html)| Whitelist settings |  |
+| **body** | [**EmbeddedIntegration**](EmbeddedIntegration)| Whitelist settings |  |
 
 ### Return type
 
-[**EmbeddedIntegration**](EmbeddedIntegration.html)
+[**EmbeddedIntegration**](EmbeddedIntegration)
 
 
 ## put_organizations_ipaddressauthentication
 
 > [**IpAddressAuthentication**](IpAddressAuthentication) put_organizations_ipaddressauthentication(body)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 Update organization IP address whitelist settings
 
@@ -957,17 +956,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**IpAddressAuthentication**](IpAddressAuthentication.html)| IP address Whitelist settings |  |
+| **body** | [**IpAddressAuthentication**](IpAddressAuthentication)| IP address Whitelist settings |  |
 
 ### Return type
 
-[**IpAddressAuthentication**](IpAddressAuthentication.html)
+[**IpAddressAuthentication**](IpAddressAuthentication)
 
 
 ## put_organizations_me
 
 > [**Organization**](Organization) put_organizations_me(body=body)
-
 
 
 Update organization.
@@ -1006,18 +1004,20 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**Organization**](Organization.html)| Organization | [optional]  |
+| **body** | [**Organization**](Organization)| Organization | [optional]  |
 
 ### Return type
 
-[**Organization**](Organization.html)
+[**Organization**](Organization)
 
 
 ## put_organizations_whitelist
 
 > [**OrgWhitelistSettings**](OrgWhitelistSettings) put_organizations_whitelist(body)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 This route is deprecated, please use /api/v2/organizations/authentication/settings instead
 
@@ -1055,11 +1055,11 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**OrgWhitelistSettings**](OrgWhitelistSettings.html)| Whitelist settings |  |
+| **body** | [**OrgWhitelistSettings**](OrgWhitelistSettings)| Whitelist settings |  |
 
 ### Return type
 
-[**OrgWhitelistSettings**](OrgWhitelistSettings.html)
+[**OrgWhitelistSettings**](OrgWhitelistSettings)
 
 
-_PureCloudPlatformClientV2 210.0.0_
+_PureCloudPlatformClientV2 211.0.0_

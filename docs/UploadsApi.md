@@ -15,13 +15,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_uploads_publicassets_images**](#post_uploads_publicassets_images) | Creates presigned url for uploading a public asset image|
 |[**post_uploads_recordings**](#post_uploads_recordings) | Creates presigned url for uploading a recording file|
 |[**post_uploads_workforcemanagement_historicaldata_csv**](#post_uploads_workforcemanagement_historicaldata_csv) | Creates presigned url for uploading WFM historical data file. Requires data in csv format.|
-{: class="table table-striped"}
+
 
 
 ## get_knowledge_knowledgebase_uploads_urls_job
 
 > [**GetUploadSourceUrlJobStatusResponse**](GetUploadSourceUrlJobStatusResponse) get_knowledge_knowledgebase_uploads_urls_job(knowledge_base_id, job_id)
-
 
 
 Get content upload from URL job status
@@ -68,13 +67,12 @@ except ApiException as e:
 
 ### Return type
 
-[**GetUploadSourceUrlJobStatusResponse**](GetUploadSourceUrlJobStatusResponse.html)
+[**GetUploadSourceUrlJobStatusResponse**](GetUploadSourceUrlJobStatusResponse)
 
 
 ## post_integrations_action_draft_function_upload
 
 > [**FunctionUploadResponse**](FunctionUploadResponse) post_integrations_action_draft_function_upload(action_id, body)
-
 
 
 Create upload presigned URL for draft function package file.
@@ -117,17 +115,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **action_id** | **str**| actionId |  |
-| **body** | [**FunctionUploadRequest**](FunctionUploadRequest.html)| Input used to request URL upload. |  |
+| **body** | [**FunctionUploadRequest**](FunctionUploadRequest)| Input used to request URL upload. |  |
 
 ### Return type
 
-[**FunctionUploadResponse**](FunctionUploadResponse.html)
+[**FunctionUploadResponse**](FunctionUploadResponse)
 
 
 ## post_knowledge_documentuploads
 
 > [**UploadUrlResponse**](UploadUrlResponse) post_knowledge_documentuploads(body)
-
 
 
 Creates a presigned URL for uploading a knowledge import file with a set of documents
@@ -166,17 +163,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**UploadUrlRequest**](UploadUrlRequest.html)| query |  |
+| **body** | [**UploadUrlRequest**](UploadUrlRequest)| query |  |
 
 ### Return type
 
-[**UploadUrlResponse**](UploadUrlResponse.html)
+[**UploadUrlResponse**](UploadUrlResponse)
 
 
 ## post_knowledge_knowledgebase_uploads_urls_jobs
 
 > [**CreateUploadSourceUrlJobResponse**](CreateUploadSourceUrlJobResponse) post_knowledge_knowledgebase_uploads_urls_jobs(knowledge_base_id, body)
-
 
 
 Create content upload from URL job
@@ -219,17 +215,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **knowledge_base_id** | **str**| Knowledge base ID |  |
-| **body** | [**CreateUploadSourceUrlJobRequest**](CreateUploadSourceUrlJobRequest.html)| uploadRequest |  |
+| **body** | [**CreateUploadSourceUrlJobRequest**](CreateUploadSourceUrlJobRequest)| uploadRequest |  |
 
 ### Return type
 
-[**CreateUploadSourceUrlJobResponse**](CreateUploadSourceUrlJobResponse.html)
+[**CreateUploadSourceUrlJobResponse**](CreateUploadSourceUrlJobResponse)
 
 
 ## post_languageunderstanding_miner_uploads
 
 > [**UploadUrlResponse**](UploadUrlResponse) post_languageunderstanding_miner_uploads(miner_id, body)
-
 
 
 Creates a presigned URL for uploading a chat corpus which will be used for mining by intent miner
@@ -274,13 +269,12 @@ except ApiException as e:
 
 ### Return type
 
-[**UploadUrlResponse**](UploadUrlResponse.html)
+[**UploadUrlResponse**](UploadUrlResponse)
 
 
 ## post_uploads_learning_coverart
 
 > [**UploadUrlResponse**](UploadUrlResponse) post_uploads_learning_coverart(body)
-
 
 
 Generates pre-signed URL to upload cover art for learning modules
@@ -319,17 +313,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**LearningCoverArtUploadUrlRequest**](LearningCoverArtUploadUrlRequest.html)| query |  |
+| **body** | [**LearningCoverArtUploadUrlRequest**](LearningCoverArtUploadUrlRequest)| query |  |
 
 ### Return type
 
-[**UploadUrlResponse**](UploadUrlResponse.html)
+[**UploadUrlResponse**](UploadUrlResponse)
 
 
 ## post_uploads_publicassets_images
 
 > [**UploadUrlResponse**](UploadUrlResponse) post_uploads_publicassets_images(body)
-
 
 
 Creates presigned url for uploading a public asset image
@@ -368,17 +361,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**UploadUrlRequest**](UploadUrlRequest.html)| query |  |
+| **body** | [**UploadUrlRequest**](UploadUrlRequest)| query |  |
 
 ### Return type
 
-[**UploadUrlResponse**](UploadUrlResponse.html)
+[**UploadUrlResponse**](UploadUrlResponse)
 
 
 ## post_uploads_recordings
 
 > [**UploadUrlResponse**](UploadUrlResponse) post_uploads_recordings(body)
-
 
 
 Creates presigned url for uploading a recording file
@@ -417,17 +409,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**UploadUrlRequest**](UploadUrlRequest.html)| query |  |
+| **body** | [**UploadUrlRequest**](UploadUrlRequest)| query |  |
 
 ### Return type
 
-[**UploadUrlResponse**](UploadUrlResponse.html)
+[**UploadUrlResponse**](UploadUrlResponse)
 
 
 ## post_uploads_workforcemanagement_historicaldata_csv
 
 > [**UploadUrlResponse**](UploadUrlResponse) post_uploads_workforcemanagement_historicaldata_csv(body)
-
 
 
 Creates presigned url for uploading WFM historical data file. Requires data in csv format.
@@ -466,11 +457,11 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**UploadUrlRequest**](UploadUrlRequest.html)| query |  |
+| **body** | [**UploadUrlRequest**](UploadUrlRequest)| query |  |
 
 ### Return type
 
-[**UploadUrlResponse**](UploadUrlResponse.html)
+[**UploadUrlResponse**](UploadUrlResponse)
 
 
-_PureCloudPlatformClientV2 210.0.0_
+_PureCloudPlatformClientV2 211.0.0_

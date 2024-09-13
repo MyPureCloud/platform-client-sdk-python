@@ -8,13 +8,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 |------------- | -------------|
 |[**get_carrierservices_integrations_emergencylocations_me**](#get_carrierservices_integrations_emergencylocations_me) | Get location for the logged in user|
 |[**post_carrierservices_integrations_emergencylocations_me**](#post_carrierservices_integrations_emergencylocations_me) | Set current location for the logged in user|
-{: class="table table-striped"}
+
 
 
 ## get_carrierservices_integrations_emergencylocations_me
 
 > [**EmergencyLocation**](EmergencyLocation) get_carrierservices_integrations_emergencylocations_me(phone_number)
-
 
 
 Get location for the logged in user
@@ -56,13 +55,12 @@ except ApiException as e:
 
 ### Return type
 
-[**EmergencyLocation**](EmergencyLocation.html)
+[**EmergencyLocation**](EmergencyLocation)
 
 
 ## post_carrierservices_integrations_emergencylocations_me
 
 > [**EmergencyLocation**](EmergencyLocation) post_carrierservices_integrations_emergencylocations_me(body=body)
-
 
 
 Set current location for the logged in user
@@ -100,11 +98,11 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**EmergencyLocation**](EmergencyLocation.html)|  | [optional]  |
+| **body** | [**EmergencyLocation**](EmergencyLocation)|  | [optional]  |
 
 ### Return type
 
-[**EmergencyLocation**](EmergencyLocation.html)
+[**EmergencyLocation**](EmergencyLocation)
 
 
-_PureCloudPlatformClientV2 210.0.0_
+_PureCloudPlatformClientV2 211.0.0_

@@ -9,13 +9,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_dataextensions_coretype**](#get_dataextensions_coretype) | Get a specific named core type.|
 |[**get_dataextensions_coretypes**](#get_dataextensions_coretypes) | Get the core types from which all schemas are built.|
 |[**get_dataextensions_limits**](#get_dataextensions_limits) | Get quantitative limits on schemas|
-{: class="table table-striped"}
+
 
 
 ## get_dataextensions_coretype
 
 > [**Coretype**](Coretype) get_dataextensions_coretype(coretype_name)
-
 
 
 Get a specific named core type.
@@ -58,13 +57,12 @@ except ApiException as e:
 
 ### Return type
 
-[**Coretype**](Coretype.html)
+[**Coretype**](Coretype)
 
 
 ## get_dataextensions_coretypes
 
 > [**CoretypeListing**](CoretypeListing) get_dataextensions_coretypes()
-
 
 
 Get the core types from which all schemas are built.
@@ -103,13 +101,12 @@ This endpoint does not need any parameters.
 
 ### Return type
 
-[**CoretypeListing**](CoretypeListing.html)
+[**CoretypeListing**](CoretypeListing)
 
 
 ## get_dataextensions_limits
 
 > [**SchemaQuantityLimits**](SchemaQuantityLimits) get_dataextensions_limits()
-
 
 
 Get quantitative limits on schemas
@@ -148,7 +145,7 @@ This endpoint does not need any parameters.
 
 ### Return type
 
-[**SchemaQuantityLimits**](SchemaQuantityLimits.html)
+[**SchemaQuantityLimits**](SchemaQuantityLimits)
 
 
-_PureCloudPlatformClientV2 210.0.0_
+_PureCloudPlatformClientV2 211.0.0_

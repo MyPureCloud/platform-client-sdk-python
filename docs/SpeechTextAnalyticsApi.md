@@ -55,13 +55,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**put_speechandtextanalytics_program_transcriptionengines**](#put_speechandtextanalytics_program_transcriptionengines) | Update transcription engine settings of a program|
 |[**put_speechandtextanalytics_settings**](#put_speechandtextanalytics_settings) | Update Speech And Text Analytics Settings|
 |[**put_speechandtextanalytics_topic**](#put_speechandtextanalytics_topic) | Update existing Speech &amp; Text Analytics topic|
-{: class="table table-striped"}
+
 
 
 ## delete_speechandtextanalytics_category
 
 >  delete_speechandtextanalytics_category(category_id)
-
 
 
 Delete a Speech & Text Analytics category by ID
@@ -111,7 +110,6 @@ void (empty response body)
 >  delete_speechandtextanalytics_dictionaryfeedback_dictionary_feedback_id(dictionary_feedback_id)
 
 
-
 Delete a Speech & Text Analytics DictionaryFeedback by Id
 
 Wraps DELETE /api/v2/speechandtextanalytics/dictionaryfeedback/{dictionaryFeedbackId} 
@@ -159,7 +157,6 @@ void (empty response body)
 > [**DeleteProgramResponse**](DeleteProgramResponse) delete_speechandtextanalytics_program(program_id, force_delete=force_delete)
 
 
-
 Delete a Speech & Text Analytics program by id
 
 Wraps DELETE /api/v2/speechandtextanalytics/programs/{programId} 
@@ -202,13 +199,12 @@ except ApiException as e:
 
 ### Return type
 
-[**DeleteProgramResponse**](DeleteProgramResponse.html)
+[**DeleteProgramResponse**](DeleteProgramResponse)
 
 
 ## delete_speechandtextanalytics_sentimentfeedback
 
 >  delete_speechandtextanalytics_sentimentfeedback()
-
 
 
 Delete All Speech & Text Analytics SentimentFeedback
@@ -252,7 +248,6 @@ void (empty response body)
 ## delete_speechandtextanalytics_sentimentfeedback_sentiment_feedback_id
 
 >  delete_speechandtextanalytics_sentimentfeedback_sentiment_feedback_id(sentiment_feedback_id)
-
 
 
 Delete a Speech & Text Analytics SentimentFeedback by Id
@@ -302,7 +297,6 @@ void (empty response body)
 >  delete_speechandtextanalytics_topic(topic_id)
 
 
-
 Delete a Speech & Text Analytics topic by id
 
 Wraps DELETE /api/v2/speechandtextanalytics/topics/{topicId} 
@@ -348,7 +342,6 @@ void (empty response body)
 ## get_speechandtextanalytics_categories
 
 > [**CategoriesEntityListing**](CategoriesEntityListing) get_speechandtextanalytics_categories(page_size=page_size, page_number=page_number, name=name, sort_order=sort_order, sort_by=sort_by, ids=ids)
-
 
 
 Get the list of Speech and Text Analytics categories
@@ -397,17 +390,16 @@ except ApiException as e:
 | **name** | **str**| The category name filter applied to the listing | [optional]  |
 | **sort_order** | **str**| The sort order for the listing | [optional] [default to &#39;asc&#39;]<br />**Values**: asc, desc |
 | **sort_by** | **str**| The field to sort by for the listing | [optional] [default to &#39;name&#39;]<br />**Values**: name, description |
-| **ids** | [**list[str]**](str.html)| Comma separated Category IDs to filter by. Cannot be used with other filters. Maximum of 50 IDs allowed. | [optional]  |
+| **ids** | [**list[str]**](str)| Comma separated Category IDs to filter by. Cannot be used with other filters. Maximum of 50 IDs allowed. | [optional]  |
 
 ### Return type
 
-[**CategoriesEntityListing**](CategoriesEntityListing.html)
+[**CategoriesEntityListing**](CategoriesEntityListing)
 
 
 ## get_speechandtextanalytics_category
 
 > [**StaCategory**](StaCategory) get_speechandtextanalytics_category(category_id)
-
 
 
 Get a Speech & Text Analytics Category by ID
@@ -450,13 +442,12 @@ except ApiException as e:
 
 ### Return type
 
-[**StaCategory**](StaCategory.html)
+[**StaCategory**](StaCategory)
 
 
 ## get_speechandtextanalytics_conversation
 
 > [**ConversationMetrics**](ConversationMetrics) get_speechandtextanalytics_conversation(conversation_id)
-
 
 
 Get Speech and Text Analytics for a specific conversation
@@ -500,13 +491,12 @@ except ApiException as e:
 
 ### Return type
 
-[**ConversationMetrics**](ConversationMetrics.html)
+[**ConversationMetrics**](ConversationMetrics)
 
 
 ## get_speechandtextanalytics_conversation_categories
 
 > [**ConversationCategoriesEntityListing**](ConversationCategoriesEntityListing) get_speechandtextanalytics_conversation_categories(conversation_id, page_size=page_size, page_number=page_number)
-
 
 
 Get the list of detected Speech and Text Analytics categories of conversation
@@ -553,13 +543,12 @@ except ApiException as e:
 
 ### Return type
 
-[**ConversationCategoriesEntityListing**](ConversationCategoriesEntityListing.html)
+[**ConversationCategoriesEntityListing**](ConversationCategoriesEntityListing)
 
 
 ## get_speechandtextanalytics_conversation_communication_transcripturl
 
 > [**TranscriptUrl**](TranscriptUrl) get_speechandtextanalytics_conversation_communication_transcripturl(conversation_id, communication_id)
-
 
 
 Get the pre-signed S3 URL for the transcript of a specific communication of a conversation
@@ -605,13 +594,12 @@ except ApiException as e:
 
 ### Return type
 
-[**TranscriptUrl**](TranscriptUrl.html)
+[**TranscriptUrl**](TranscriptUrl)
 
 
 ## get_speechandtextanalytics_conversation_communication_transcripturls
 
 > [**TranscriptUrls**](TranscriptUrls) get_speechandtextanalytics_conversation_communication_transcripturls(conversation_id, communication_id)
-
 
 
 Get the list of pre-signed S3 URL for the transcripts of a specific communication of a conversation
@@ -657,13 +645,12 @@ except ApiException as e:
 
 ### Return type
 
-[**TranscriptUrls**](TranscriptUrls.html)
+[**TranscriptUrls**](TranscriptUrls)
 
 
 ## get_speechandtextanalytics_dictionaryfeedback
 
 > [**DictionaryFeedbackEntityListing**](DictionaryFeedbackEntityListing) get_speechandtextanalytics_dictionaryfeedback(dialect=dialect, next_page=next_page, page_size=page_size)
-
 
 
 Get the list of Speech & Text Analytics dictionary feedbacks
@@ -710,13 +697,12 @@ except ApiException as e:
 
 ### Return type
 
-[**DictionaryFeedbackEntityListing**](DictionaryFeedbackEntityListing.html)
+[**DictionaryFeedbackEntityListing**](DictionaryFeedbackEntityListing)
 
 
 ## get_speechandtextanalytics_dictionaryfeedback_dictionary_feedback_id
 
 > [**DictionaryFeedback**](DictionaryFeedback) get_speechandtextanalytics_dictionaryfeedback_dictionary_feedback_id(dictionary_feedback_id)
-
 
 
 Get a Speech & Text Analytics dictionary feedback by id
@@ -759,13 +745,12 @@ except ApiException as e:
 
 ### Return type
 
-[**DictionaryFeedback**](DictionaryFeedback.html)
+[**DictionaryFeedback**](DictionaryFeedback)
 
 
 ## get_speechandtextanalytics_program
 
 > [**Program**](Program) get_speechandtextanalytics_program(program_id)
-
 
 
 Get a Speech & Text Analytics program by id
@@ -808,13 +793,12 @@ except ApiException as e:
 
 ### Return type
 
-[**Program**](Program.html)
+[**Program**](Program)
 
 
 ## get_speechandtextanalytics_program_mappings
 
 > [**ProgramMappings**](ProgramMappings) get_speechandtextanalytics_program_mappings(program_id)
-
 
 
 Get Speech & Text Analytics program mappings to queues and flows by id
@@ -857,13 +841,12 @@ except ApiException as e:
 
 ### Return type
 
-[**ProgramMappings**](ProgramMappings.html)
+[**ProgramMappings**](ProgramMappings)
 
 
 ## get_speechandtextanalytics_program_transcriptionengines
 
 > [**ProgramTranscriptionEngines**](ProgramTranscriptionEngines) get_speechandtextanalytics_program_transcriptionengines(program_id)
-
 
 
 Get transcription engine settings of a program
@@ -906,13 +889,12 @@ except ApiException as e:
 
 ### Return type
 
-[**ProgramTranscriptionEngines**](ProgramTranscriptionEngines.html)
+[**ProgramTranscriptionEngines**](ProgramTranscriptionEngines)
 
 
 ## get_speechandtextanalytics_programs
 
 > [**ProgramsEntityListing**](ProgramsEntityListing) get_speechandtextanalytics_programs(next_page=next_page, page_size=page_size, state=state)
-
 
 
 Get the list of Speech & Text Analytics programs
@@ -959,13 +941,12 @@ except ApiException as e:
 
 ### Return type
 
-[**ProgramsEntityListing**](ProgramsEntityListing.html)
+[**ProgramsEntityListing**](ProgramsEntityListing)
 
 
 ## get_speechandtextanalytics_programs_general_job
 
 > [**GeneralProgramJob**](GeneralProgramJob) get_speechandtextanalytics_programs_general_job(job_id)
-
 
 
 Get a Speech & Text Analytics general program job by id
@@ -1011,13 +992,12 @@ except ApiException as e:
 
 ### Return type
 
-[**GeneralProgramJob**](GeneralProgramJob.html)
+[**GeneralProgramJob**](GeneralProgramJob)
 
 
 ## get_speechandtextanalytics_programs_mappings
 
 > [**ProgramsMappingsEntityListing**](ProgramsMappingsEntityListing) get_speechandtextanalytics_programs_mappings(next_page=next_page, page_size=page_size)
-
 
 
 Get the list of Speech & Text Analytics programs mappings to queues and flows
@@ -1062,13 +1042,12 @@ except ApiException as e:
 
 ### Return type
 
-[**ProgramsMappingsEntityListing**](ProgramsMappingsEntityListing.html)
+[**ProgramsMappingsEntityListing**](ProgramsMappingsEntityListing)
 
 
 ## get_speechandtextanalytics_programs_publishjob
 
 > [**ProgramJob**](ProgramJob) get_speechandtextanalytics_programs_publishjob(job_id)
-
 
 
 Get a Speech & Text Analytics publish programs job by id
@@ -1111,13 +1090,12 @@ except ApiException as e:
 
 ### Return type
 
-[**ProgramJob**](ProgramJob.html)
+[**ProgramJob**](ProgramJob)
 
 
 ## get_speechandtextanalytics_programs_transcriptionengines_dialects
 
 > [**SupportedDialectsEntityListing**](SupportedDialectsEntityListing) get_speechandtextanalytics_programs_transcriptionengines_dialects()
-
 
 
 Get supported dialects for each transcription engine
@@ -1155,13 +1133,12 @@ This endpoint does not need any parameters.
 
 ### Return type
 
-[**SupportedDialectsEntityListing**](SupportedDialectsEntityListing.html)
+[**SupportedDialectsEntityListing**](SupportedDialectsEntityListing)
 
 
 ## get_speechandtextanalytics_programs_unpublished
 
 > [**UnpublishedProgramsEntityListing**](UnpublishedProgramsEntityListing) get_speechandtextanalytics_programs_unpublished(next_page=next_page, page_size=page_size)
-
 
 
 Get the list of Speech & Text Analytics unpublished programs
@@ -1206,13 +1183,12 @@ except ApiException as e:
 
 ### Return type
 
-[**UnpublishedProgramsEntityListing**](UnpublishedProgramsEntityListing.html)
+[**UnpublishedProgramsEntityListing**](UnpublishedProgramsEntityListing)
 
 
 ## get_speechandtextanalytics_sentiment_dialects
 
 > [**EntityListing**](EntityListing) get_speechandtextanalytics_sentiment_dialects()
-
 
 
 Get the list of Speech & Text Analytics sentiment supported dialects
@@ -1250,13 +1226,12 @@ This endpoint does not need any parameters.
 
 ### Return type
 
-[**EntityListing**](EntityListing.html)
+[**EntityListing**](EntityListing)
 
 
 ## get_speechandtextanalytics_sentimentfeedback
 
 > [**SentimentFeedbackEntityListing**](SentimentFeedbackEntityListing) get_speechandtextanalytics_sentimentfeedback(dialect=dialect)
-
 
 
 Get the list of Speech & Text Analytics SentimentFeedback
@@ -1299,13 +1274,12 @@ except ApiException as e:
 
 ### Return type
 
-[**SentimentFeedbackEntityListing**](SentimentFeedbackEntityListing.html)
+[**SentimentFeedbackEntityListing**](SentimentFeedbackEntityListing)
 
 
 ## get_speechandtextanalytics_settings
 
 > [**SpeechTextAnalyticsSettingsResponse**](SpeechTextAnalyticsSettingsResponse) get_speechandtextanalytics_settings()
-
 
 
 Get Speech And Text Analytics Settings
@@ -1344,13 +1318,12 @@ This endpoint does not need any parameters.
 
 ### Return type
 
-[**SpeechTextAnalyticsSettingsResponse**](SpeechTextAnalyticsSettingsResponse.html)
+[**SpeechTextAnalyticsSettingsResponse**](SpeechTextAnalyticsSettingsResponse)
 
 
 ## get_speechandtextanalytics_topic
 
 > [**Topic**](Topic) get_speechandtextanalytics_topic(topic_id)
-
 
 
 Get a Speech & Text Analytics topic by id
@@ -1393,13 +1366,12 @@ except ApiException as e:
 
 ### Return type
 
-[**Topic**](Topic.html)
+[**Topic**](Topic)
 
 
 ## get_speechandtextanalytics_topics
 
 > [**TopicsEntityListing**](TopicsEntityListing) get_speechandtextanalytics_topics(next_page=next_page, page_size=page_size, state=state, name=name, ids=ids, dialects=dialects, sort_by=sort_by, sort_order=sort_order)
-
 
 
 Get the list of Speech & Text Analytics topics
@@ -1449,20 +1421,19 @@ except ApiException as e:
 | **page_size** | **int**| The page size for the listing. The max that will be returned is 500. | [optional] [default to 20] |
 | **state** | **str**| Topic state. Defaults to latest | [optional] <br />**Values**: latest, published |
 | **name** | **str**| Case insensitive partial name to filter by | [optional]  |
-| **ids** | [**list[str]**](str.html)| Comma separated Topic IDs to filter by. Cannot be used with other filters. Maximum of 50 IDs allowed. | [optional]  |
-| **dialects** | [**list[str]**](str.html)| Comma separated dialect strings to filter by. Maximum of 15 dialects allowed. | [optional] <br />**Values**: en-US, es-US, en-AU, en-GB, en-ZA, es-ES, en-IN, fr-FR, fr-CA, it-IT, de-DE, pt-BR, pl-PL, pt-PT, nl-NL, ko-KR |
+| **ids** | [**list[str]**](str)| Comma separated Topic IDs to filter by. Cannot be used with other filters. Maximum of 50 IDs allowed. | [optional]  |
+| **dialects** | [**list[str]**](str)| Comma separated dialect strings to filter by. Maximum of 15 dialects allowed. | [optional] <br />**Values**: en-US, es-US, en-AU, en-GB, en-ZA, es-ES, en-IN, fr-FR, fr-CA, it-IT, de-DE, pt-BR, pl-PL, pt-PT, nl-NL, ko-KR |
 | **sort_by** | **str**| Sort results by. Defaults to name | [optional] <br />**Values**: name |
 | **sort_order** | **str**| Sort order. Defaults to asc | [optional] <br />**Values**: asc, desc |
 
 ### Return type
 
-[**TopicsEntityListing**](TopicsEntityListing.html)
+[**TopicsEntityListing**](TopicsEntityListing)
 
 
 ## get_speechandtextanalytics_topics_dialects
 
 > [**EntityListing**](EntityListing) get_speechandtextanalytics_topics_dialects()
-
 
 
 Get list of supported Speech & Text Analytics topics dialects
@@ -1500,13 +1471,12 @@ This endpoint does not need any parameters.
 
 ### Return type
 
-[**EntityListing**](EntityListing.html)
+[**EntityListing**](EntityListing)
 
 
 ## get_speechandtextanalytics_topics_general
 
 > [**GeneralTopicsEntityListing**](GeneralTopicsEntityListing) get_speechandtextanalytics_topics_general(dialect=dialect)
-
 
 
 Get the Speech & Text Analytics general topics for a given dialect
@@ -1549,13 +1519,12 @@ except ApiException as e:
 
 ### Return type
 
-[**GeneralTopicsEntityListing**](GeneralTopicsEntityListing.html)
+[**GeneralTopicsEntityListing**](GeneralTopicsEntityListing)
 
 
 ## get_speechandtextanalytics_topics_general_status
 
 > [**UnifiedGeneralTopicEntityListing**](UnifiedGeneralTopicEntityListing) get_speechandtextanalytics_topics_general_status(dialect=dialect)
-
 
 
 Get the list of general topics from the org and the system with their current status
@@ -1598,13 +1567,12 @@ except ApiException as e:
 
 ### Return type
 
-[**UnifiedGeneralTopicEntityListing**](UnifiedGeneralTopicEntityListing.html)
+[**UnifiedGeneralTopicEntityListing**](UnifiedGeneralTopicEntityListing)
 
 
 ## get_speechandtextanalytics_topics_publishjob
 
 > [**TopicJob**](TopicJob) get_speechandtextanalytics_topics_publishjob(job_id)
-
 
 
 Get a Speech & Text Analytics publish topics job by id
@@ -1647,13 +1615,12 @@ except ApiException as e:
 
 ### Return type
 
-[**TopicJob**](TopicJob.html)
+[**TopicJob**](TopicJob)
 
 
 ## patch_speechandtextanalytics_settings
 
 > [**SpeechTextAnalyticsSettingsResponse**](SpeechTextAnalyticsSettingsResponse) patch_speechandtextanalytics_settings(body)
-
 
 
 Patch Speech And Text Analytics Settings
@@ -1692,17 +1659,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**SpeechTextAnalyticsSettingsRequest**](SpeechTextAnalyticsSettingsRequest.html)| Speech And Text Analytics Settings |  |
+| **body** | [**SpeechTextAnalyticsSettingsRequest**](SpeechTextAnalyticsSettingsRequest)| Speech And Text Analytics Settings |  |
 
 ### Return type
 
-[**SpeechTextAnalyticsSettingsResponse**](SpeechTextAnalyticsSettingsResponse.html)
+[**SpeechTextAnalyticsSettingsResponse**](SpeechTextAnalyticsSettingsResponse)
 
 
 ## post_speechandtextanalytics_categories
 
 > [**StaCategory**](StaCategory) post_speechandtextanalytics_categories(body)
-
 
 
 Create new Speech & Text Analytics category
@@ -1741,17 +1707,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**CategoryRequest**](CategoryRequest.html)| The category to create |  |
+| **body** | [**CategoryRequest**](CategoryRequest)| The category to create |  |
 
 ### Return type
 
-[**StaCategory**](StaCategory.html)
+[**StaCategory**](StaCategory)
 
 
 ## post_speechandtextanalytics_dictionaryfeedback
 
 > [**DictionaryFeedback**](DictionaryFeedback) post_speechandtextanalytics_dictionaryfeedback(body)
-
 
 
 Create a Speech & Text Analytics DictionaryFeedback
@@ -1790,17 +1755,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**DictionaryFeedback**](DictionaryFeedback.html)| The DictionaryFeedback to create |  |
+| **body** | [**DictionaryFeedback**](DictionaryFeedback)| The DictionaryFeedback to create |  |
 
 ### Return type
 
-[**DictionaryFeedback**](DictionaryFeedback.html)
+[**DictionaryFeedback**](DictionaryFeedback)
 
 
 ## post_speechandtextanalytics_programs
 
 > [**Program**](Program) post_speechandtextanalytics_programs(body)
-
 
 
 Create new Speech & Text Analytics program
@@ -1839,17 +1803,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**ProgramRequest**](ProgramRequest.html)| The program to create |  |
+| **body** | [**ProgramRequest**](ProgramRequest)| The program to create |  |
 
 ### Return type
 
-[**Program**](Program.html)
+[**Program**](Program)
 
 
 ## post_speechandtextanalytics_programs_general_jobs
 
 > [**GeneralProgramJob**](GeneralProgramJob) post_speechandtextanalytics_programs_general_jobs(body)
-
 
 
 Create new Speech & Text Analytics general program job
@@ -1891,17 +1854,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**GeneralProgramJobRequest**](GeneralProgramJobRequest.html)| The general programs job to create |  |
+| **body** | [**GeneralProgramJobRequest**](GeneralProgramJobRequest)| The general programs job to create |  |
 
 ### Return type
 
-[**GeneralProgramJob**](GeneralProgramJob.html)
+[**GeneralProgramJob**](GeneralProgramJob)
 
 
 ## post_speechandtextanalytics_programs_publishjobs
 
 > [**ProgramJob**](ProgramJob) post_speechandtextanalytics_programs_publishjobs(body)
-
 
 
 Create new Speech & Text Analytics publish programs job
@@ -1940,17 +1902,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**ProgramJobRequest**](ProgramJobRequest.html)| The publish programs job to create |  |
+| **body** | [**ProgramJobRequest**](ProgramJobRequest)| The publish programs job to create |  |
 
 ### Return type
 
-[**ProgramJob**](ProgramJob.html)
+[**ProgramJob**](ProgramJob)
 
 
 ## post_speechandtextanalytics_sentimentfeedback
 
 > [**SentimentFeedback**](SentimentFeedback) post_speechandtextanalytics_sentimentfeedback(body)
-
 
 
 Create a Speech & Text Analytics SentimentFeedback
@@ -1989,17 +1950,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**SentimentFeedback**](SentimentFeedback.html)| The SentimentFeedback to create |  |
+| **body** | [**SentimentFeedback**](SentimentFeedback)| The SentimentFeedback to create |  |
 
 ### Return type
 
-[**SentimentFeedback**](SentimentFeedback.html)
+[**SentimentFeedback**](SentimentFeedback)
 
 
 ## post_speechandtextanalytics_topics
 
 > [**Topic**](Topic) post_speechandtextanalytics_topics(body)
-
 
 
 Create new Speech & Text Analytics topic
@@ -2038,17 +1998,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**TopicRequest**](TopicRequest.html)| The topic to create |  |
+| **body** | [**TopicRequest**](TopicRequest)| The topic to create |  |
 
 ### Return type
 
-[**Topic**](Topic.html)
+[**Topic**](Topic)
 
 
 ## post_speechandtextanalytics_topics_publishjobs
 
 > [**TopicJob**](TopicJob) post_speechandtextanalytics_topics_publishjobs(body)
-
 
 
 Create new Speech & Text Analytics publish topics job
@@ -2087,17 +2046,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**TopicJobRequest**](TopicJobRequest.html)| The publish topics job to create |  |
+| **body** | [**TopicJobRequest**](TopicJobRequest)| The publish topics job to create |  |
 
 ### Return type
 
-[**TopicJob**](TopicJob.html)
+[**TopicJob**](TopicJob)
 
 
 ## post_speechandtextanalytics_transcripts_search
 
 > [**JsonSearchResponse**](JsonSearchResponse) post_speechandtextanalytics_transcripts_search(body)
-
 
 
 Search resources.
@@ -2137,17 +2095,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**TranscriptSearchRequest**](TranscriptSearchRequest.html)| Search request options |  |
+| **body** | [**TranscriptSearchRequest**](TranscriptSearchRequest)| Search request options |  |
 
 ### Return type
 
-[**JsonSearchResponse**](JsonSearchResponse.html)
+[**JsonSearchResponse**](JsonSearchResponse)
 
 
 ## put_speechandtextanalytics_category
 
 > [**StaCategory**](StaCategory) put_speechandtextanalytics_category(category_id, body)
-
 
 
 Update a Speech & Text Analytics category by ID
@@ -2188,17 +2145,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **category_id** | **str**| The id of the category |  |
-| **body** | [**CategoryRequest**](CategoryRequest.html)| The updated category |  |
+| **body** | [**CategoryRequest**](CategoryRequest)| The updated category |  |
 
 ### Return type
 
-[**StaCategory**](StaCategory.html)
+[**StaCategory**](StaCategory)
 
 
 ## put_speechandtextanalytics_dictionaryfeedback_dictionary_feedback_id
 
 > [**DictionaryFeedback**](DictionaryFeedback) put_speechandtextanalytics_dictionaryfeedback_dictionary_feedback_id(dictionary_feedback_id, body=body)
-
 
 
 Update existing Speech & Text Analytics dictionary feedback by id
@@ -2239,17 +2195,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **dictionary_feedback_id** | **str**| The Id of the Dictionary Feedback |  |
-| **body** | [**DictionaryFeedback**](DictionaryFeedback.html)|  | [optional]  |
+| **body** | [**DictionaryFeedback**](DictionaryFeedback)|  | [optional]  |
 
 ### Return type
 
-[**DictionaryFeedback**](DictionaryFeedback.html)
+[**DictionaryFeedback**](DictionaryFeedback)
 
 
 ## put_speechandtextanalytics_program
 
 > [**Program**](Program) put_speechandtextanalytics_program(program_id, body)
-
 
 
 Update existing Speech & Text Analytics program
@@ -2290,17 +2245,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **program_id** | **str**| The id of the program |  |
-| **body** | [**ProgramRequest**](ProgramRequest.html)| The program to update |  |
+| **body** | [**ProgramRequest**](ProgramRequest)| The program to update |  |
 
 ### Return type
 
-[**Program**](Program.html)
+[**Program**](Program)
 
 
 ## put_speechandtextanalytics_program_mappings
 
 > [**ProgramMappings**](ProgramMappings) put_speechandtextanalytics_program_mappings(program_id, body)
-
 
 
 Set Speech & Text Analytics program mappings to queues and flows
@@ -2341,17 +2295,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **program_id** | **str**| The id of the program |  |
-| **body** | [**ProgramMappingsRequest**](ProgramMappingsRequest.html)| The program to set mappings for |  |
+| **body** | [**ProgramMappingsRequest**](ProgramMappingsRequest)| The program to set mappings for |  |
 
 ### Return type
 
-[**ProgramMappings**](ProgramMappings.html)
+[**ProgramMappings**](ProgramMappings)
 
 
 ## put_speechandtextanalytics_program_transcriptionengines
 
 > [**ProgramTranscriptionEngines**](ProgramTranscriptionEngines) put_speechandtextanalytics_program_transcriptionengines(program_id, body)
-
 
 
 Update transcription engine settings of a program
@@ -2392,17 +2345,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **program_id** | **str**| The id of the program |  |
-| **body** | [**TranscriptionEnginesRequest**](TranscriptionEnginesRequest.html)| Program transcription engine setting |  |
+| **body** | [**TranscriptionEnginesRequest**](TranscriptionEnginesRequest)| Program transcription engine setting |  |
 
 ### Return type
 
-[**ProgramTranscriptionEngines**](ProgramTranscriptionEngines.html)
+[**ProgramTranscriptionEngines**](ProgramTranscriptionEngines)
 
 
 ## put_speechandtextanalytics_settings
 
 > [**SpeechTextAnalyticsSettingsResponse**](SpeechTextAnalyticsSettingsResponse) put_speechandtextanalytics_settings(body)
-
 
 
 Update Speech And Text Analytics Settings
@@ -2441,17 +2393,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**SpeechTextAnalyticsSettingsRequest**](SpeechTextAnalyticsSettingsRequest.html)| Speech And Text Analytics Settings |  |
+| **body** | [**SpeechTextAnalyticsSettingsRequest**](SpeechTextAnalyticsSettingsRequest)| Speech And Text Analytics Settings |  |
 
 ### Return type
 
-[**SpeechTextAnalyticsSettingsResponse**](SpeechTextAnalyticsSettingsResponse.html)
+[**SpeechTextAnalyticsSettingsResponse**](SpeechTextAnalyticsSettingsResponse)
 
 
 ## put_speechandtextanalytics_topic
 
 > [**Topic**](Topic) put_speechandtextanalytics_topic(topic_id, body)
-
 
 
 Update existing Speech & Text Analytics topic
@@ -2492,11 +2443,11 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **topic_id** | **str**| The id of the topic |  |
-| **body** | [**TopicRequest**](TopicRequest.html)| The topic to update |  |
+| **body** | [**TopicRequest**](TopicRequest)| The topic to update |  |
 
 ### Return type
 
-[**Topic**](Topic.html)
+[**Topic**](Topic)
 
 
-_PureCloudPlatformClientV2 210.0.0_
+_PureCloudPlatformClientV2 211.0.0_

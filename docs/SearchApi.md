@@ -31,13 +31,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_users_search_queuemembers_manage**](#post_users_search_queuemembers_manage) | Search manage queue member|
 |[**post_users_search_teams_assign**](#post_users_search_teams_assign) | Search users assigned to teams|
 |[**post_voicemail_search**](#post_voicemail_search) | Search voicemails|
-{: class="table table-striped"}
+
 
 
 ## get_documentation_gkn_search
 
 > [**GKNDocumentationSearchResponse**](GKNDocumentationSearchResponse) get_documentation_gkn_search(q64)
-
 
 
 Search gkn documentation using the q64 value returned from a previous search
@@ -76,13 +75,12 @@ except ApiException as e:
 
 ### Return type
 
-[**GKNDocumentationSearchResponse**](GKNDocumentationSearchResponse.html)
+[**GKNDocumentationSearchResponse**](GKNDocumentationSearchResponse)
 
 
 ## get_documentation_search
 
 > [**DocumentationSearchResponse**](DocumentationSearchResponse) get_documentation_search(q64)
-
 
 
 Search documentation using the q64 value returned from a previous search
@@ -121,13 +119,12 @@ except ApiException as e:
 
 ### Return type
 
-[**DocumentationSearchResponse**](DocumentationSearchResponse.html)
+[**DocumentationSearchResponse**](DocumentationSearchResponse)
 
 
 ## get_groups_search
 
 > [**GroupsSearchResponse**](GroupsSearchResponse) get_groups_search(q64, expand=expand)
-
 
 
 Search groups using the q64 value returned from a previous search
@@ -167,17 +164,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **q64** | **str**| q64 |  |
-| **expand** | [**list[str]**](str.html)| expand | [optional]  |
+| **expand** | [**list[str]**](str)| expand | [optional]  |
 
 ### Return type
 
-[**GroupsSearchResponse**](GroupsSearchResponse.html)
+[**GroupsSearchResponse**](GroupsSearchResponse)
 
 
 ## get_locations_search
 
 > [**LocationsSearchResponse**](LocationsSearchResponse) get_locations_search(q64, expand=expand)
-
 
 
 Search locations using the q64 value returned from a previous search
@@ -217,17 +213,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **q64** | **str**| q64 |  |
-| **expand** | [**list[str]**](str.html)| Provides more details about a specified resource | [optional] <br />**Values**: images, addressVerificationDetails |
+| **expand** | [**list[str]**](str)| Provides more details about a specified resource | [optional] <br />**Values**: images, addressVerificationDetails |
 
 ### Return type
 
-[**LocationsSearchResponse**](LocationsSearchResponse.html)
+[**LocationsSearchResponse**](LocationsSearchResponse)
 
 
 ## get_search
 
 > [**JsonNodeSearchResponse**](JsonNodeSearchResponse) get_search(q64, expand=expand, profile=profile)
-
 
 
 Search using the q64 value returned from a previous search.
@@ -269,18 +264,17 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **q64** | **str**| q64 |  |
-| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography, dateLastLogin, callerUser.routingStatus, callerUser.primaryPresence, callerUser.conversationSummary, callerUser.outOfOffice, callerUser.geolocation, conversations, transcription, images, addressVerificationDetails |
+| **expand** | [**list[str]**](str)| Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography, dateLastLogin, callerUser.routingStatus, callerUser.primaryPresence, callerUser.conversationSummary, callerUser.outOfOffice, callerUser.geolocation, conversations, transcription, images, addressVerificationDetails |
 | **profile** | **bool**| profile | [optional] [default to True] |
 
 ### Return type
 
-[**JsonNodeSearchResponse**](JsonNodeSearchResponse.html)
+[**JsonNodeSearchResponse**](JsonNodeSearchResponse)
 
 
 ## get_search_suggest
 
 > [**JsonNodeSearchResponse**](JsonNodeSearchResponse) get_search_suggest(q64, expand=expand, profile=profile)
-
 
 
 Suggest resources using the q64 value returned from a previous suggest query.
@@ -322,18 +316,17 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **q64** | **str**| q64 |  |
-| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography, dateLastLogin, callerUser.routingStatus, callerUser.primaryPresence, callerUser.conversationSummary, callerUser.outOfOffice, callerUser.geolocation, conversations, transcription, images, addressVerificationDetails |
+| **expand** | [**list[str]**](str)| Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography, dateLastLogin, callerUser.routingStatus, callerUser.primaryPresence, callerUser.conversationSummary, callerUser.outOfOffice, callerUser.geolocation, conversations, transcription, images, addressVerificationDetails |
 | **profile** | **bool**| profile | [optional] [default to True] |
 
 ### Return type
 
-[**JsonNodeSearchResponse**](JsonNodeSearchResponse.html)
+[**JsonNodeSearchResponse**](JsonNodeSearchResponse)
 
 
 ## get_users_search
 
 > [**UsersSearchResponse**](UsersSearchResponse) get_users_search(q64, expand=expand, integration_presence_source=integration_presence_source)
-
 
 
 Search users using the q64 value returned from a previous search
@@ -375,18 +368,17 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **q64** | **str**| q64 |  |
-| **expand** | [**list[str]**](str.html)| expand | [optional]  |
+| **expand** | [**list[str]**](str)| expand | [optional]  |
 | **integration_presence_source** | **str**| integrationPresenceSource | [optional] <br />**Values**: MicrosoftTeams, ZoomPhone, EightByEight |
 
 ### Return type
 
-[**UsersSearchResponse**](UsersSearchResponse.html)
+[**UsersSearchResponse**](UsersSearchResponse)
 
 
 ## get_voicemail_search
 
 > [**VoicemailsSearchResponse**](VoicemailsSearchResponse) get_voicemail_search(q64, expand=expand)
-
 
 
 Search voicemails using the q64 value returned from a previous search
@@ -426,17 +418,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **q64** | **str**| q64 |  |
-| **expand** | [**list[str]**](str.html)| expand | [optional]  |
+| **expand** | [**list[str]**](str)| expand | [optional]  |
 
 ### Return type
 
-[**VoicemailsSearchResponse**](VoicemailsSearchResponse.html)
+[**VoicemailsSearchResponse**](VoicemailsSearchResponse)
 
 
 ## post_analytics_conversations_transcripts_query
 
 > [**AnalyticsConversationWithoutAttributesMultiGetResponse**](AnalyticsConversationWithoutAttributesMultiGetResponse) post_analytics_conversations_transcripts_query(body)
-
 
 
 Search resources.
@@ -475,17 +466,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**TranscriptConversationDetailSearchRequest**](TranscriptConversationDetailSearchRequest.html)| Search request options |  |
+| **body** | [**TranscriptConversationDetailSearchRequest**](TranscriptConversationDetailSearchRequest)| Search request options |  |
 
 ### Return type
 
-[**AnalyticsConversationWithoutAttributesMultiGetResponse**](AnalyticsConversationWithoutAttributesMultiGetResponse.html)
+[**AnalyticsConversationWithoutAttributesMultiGetResponse**](AnalyticsConversationWithoutAttributesMultiGetResponse)
 
 
 ## post_conversations_participants_attributes_search
 
 > [**JsonCursorSearchResponse**](JsonCursorSearchResponse) post_conversations_participants_attributes_search(body)
-
 
 
 Search conversations
@@ -524,17 +514,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**ConversationParticipantSearchRequest**](ConversationParticipantSearchRequest.html)| Search request options |  |
+| **body** | [**ConversationParticipantSearchRequest**](ConversationParticipantSearchRequest)| Search request options |  |
 
 ### Return type
 
-[**JsonCursorSearchResponse**](JsonCursorSearchResponse.html)
+[**JsonCursorSearchResponse**](JsonCursorSearchResponse)
 
 
 ## post_documentation_all_search
 
 > [**JsonNodeSearchResponse**](JsonNodeSearchResponse) post_documentation_all_search(body)
-
 
 
 Search all documents
@@ -571,17 +560,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**DocumentationV2SearchRequest**](DocumentationV2SearchRequest.html)| Search request options |  |
+| **body** | [**DocumentationV2SearchRequest**](DocumentationV2SearchRequest)| Search request options |  |
 
 ### Return type
 
-[**JsonNodeSearchResponse**](JsonNodeSearchResponse.html)
+[**JsonNodeSearchResponse**](JsonNodeSearchResponse)
 
 
 ## post_documentation_gkn_search
 
 > [**GKNDocumentationSearchResponse**](GKNDocumentationSearchResponse) post_documentation_gkn_search(body)
-
 
 
 Search gkn documentation
@@ -616,17 +604,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**GKNDocumentationSearchRequest**](GKNDocumentationSearchRequest.html)| Search request options |  |
+| **body** | [**GKNDocumentationSearchRequest**](GKNDocumentationSearchRequest)| Search request options |  |
 
 ### Return type
 
-[**GKNDocumentationSearchResponse**](GKNDocumentationSearchResponse.html)
+[**GKNDocumentationSearchResponse**](GKNDocumentationSearchResponse)
 
 
 ## post_documentation_search
 
 > [**DocumentationSearchResponse**](DocumentationSearchResponse) post_documentation_search(body)
-
 
 
 Search documentation
@@ -661,17 +648,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**DocumentationSearchRequest**](DocumentationSearchRequest.html)| Search request options |  |
+| **body** | [**DocumentationSearchRequest**](DocumentationSearchRequest)| Search request options |  |
 
 ### Return type
 
-[**DocumentationSearchResponse**](DocumentationSearchResponse.html)
+[**DocumentationSearchResponse**](DocumentationSearchResponse)
 
 
 ## post_groups_search
 
 > [**GroupsSearchResponse**](GroupsSearchResponse) post_groups_search(body)
-
 
 
 Search groups
@@ -709,18 +695,20 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**GroupSearchRequest**](GroupSearchRequest.html)| Search request options |  |
+| **body** | [**GroupSearchRequest**](GroupSearchRequest)| Search request options |  |
 
 ### Return type
 
-[**GroupsSearchResponse**](GroupsSearchResponse.html)
+[**GroupsSearchResponse**](GroupsSearchResponse)
 
 
 ## post_knowledge_knowledgebase_search
 
 > [**KnowledgeSearchResponse**](KnowledgeSearchResponse) post_knowledge_knowledgebase_search(knowledge_base_id, body=body)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 Search Documents
 
@@ -760,17 +748,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **knowledge_base_id** | **str**| Knowledge base ID |  |
-| **body** | [**KnowledgeSearchRequest**](KnowledgeSearchRequest.html)|  | [optional]  |
+| **body** | [**KnowledgeSearchRequest**](KnowledgeSearchRequest)|  | [optional]  |
 
 ### Return type
 
-[**KnowledgeSearchResponse**](KnowledgeSearchResponse.html)
+[**KnowledgeSearchResponse**](KnowledgeSearchResponse)
 
 
 ## post_locations_search
 
 > [**LocationsSearchResponse**](LocationsSearchResponse) post_locations_search(body)
-
 
 
 Search locations
@@ -808,17 +795,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**LocationSearchRequest**](LocationSearchRequest.html)| Search request options |  |
+| **body** | [**LocationSearchRequest**](LocationSearchRequest)| Search request options |  |
 
 ### Return type
 
-[**LocationsSearchResponse**](LocationsSearchResponse.html)
+[**LocationsSearchResponse**](LocationsSearchResponse)
 
 
 ## post_search
 
 > [**JsonNodeSearchResponse**](JsonNodeSearchResponse) post_search(body, profile=profile)
-
 
 
 Search resources.
@@ -858,18 +844,17 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**SearchRequest**](SearchRequest.html)| Search request options |  |
+| **body** | [**SearchRequest**](SearchRequest)| Search request options |  |
 | **profile** | **bool**| profile | [optional] [default to True] |
 
 ### Return type
 
-[**JsonNodeSearchResponse**](JsonNodeSearchResponse.html)
+[**JsonNodeSearchResponse**](JsonNodeSearchResponse)
 
 
 ## post_search_suggest
 
 > [**JsonNodeSearchResponse**](JsonNodeSearchResponse) post_search_suggest(body, profile=profile)
-
 
 
 Suggest resources.
@@ -909,18 +894,17 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**SuggestSearchRequest**](SuggestSearchRequest.html)| Search request options |  |
+| **body** | [**SuggestSearchRequest**](SuggestSearchRequest)| Search request options |  |
 | **profile** | **bool**| profile | [optional] [default to True] |
 
 ### Return type
 
-[**JsonNodeSearchResponse**](JsonNodeSearchResponse.html)
+[**JsonNodeSearchResponse**](JsonNodeSearchResponse)
 
 
 ## post_speechandtextanalytics_transcripts_search
 
 > [**JsonSearchResponse**](JsonSearchResponse) post_speechandtextanalytics_transcripts_search(body)
-
 
 
 Search resources.
@@ -960,17 +944,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**TranscriptSearchRequest**](TranscriptSearchRequest.html)| Search request options |  |
+| **body** | [**TranscriptSearchRequest**](TranscriptSearchRequest)| Search request options |  |
 
 ### Return type
 
-[**JsonSearchResponse**](JsonSearchResponse.html)
+[**JsonSearchResponse**](JsonSearchResponse)
 
 
 ## post_teams_search
 
 > [**TeamsSearchResponse**](TeamsSearchResponse) post_teams_search(body)
-
 
 
 Search resources.
@@ -1009,17 +992,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**TeamSearchRequest**](TeamSearchRequest.html)| Search request options |  |
+| **body** | [**TeamSearchRequest**](TeamSearchRequest)| Search request options |  |
 
 ### Return type
 
-[**TeamsSearchResponse**](TeamsSearchResponse.html)
+[**TeamsSearchResponse**](TeamsSearchResponse)
 
 
 ## post_users_search
 
 > [**UsersSearchResponse**](UsersSearchResponse) post_users_search(body)
-
 
 
 Search users
@@ -1058,17 +1040,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**UserSearchRequest**](UserSearchRequest.html)| Search request options |  |
+| **body** | [**UserSearchRequest**](UserSearchRequest)| Search request options |  |
 
 ### Return type
 
-[**UsersSearchResponse**](UsersSearchResponse.html)
+[**UsersSearchResponse**](UsersSearchResponse)
 
 
 ## post_users_search_conversation_target
 
 > [**UsersSearchResponse**](UsersSearchResponse) post_users_search_conversation_target(body)
-
 
 
 Search users as conversation targets
@@ -1109,17 +1090,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**UserSearchRequest**](UserSearchRequest.html)| Search request options |  |
+| **body** | [**UserSearchRequest**](UserSearchRequest)| Search request options |  |
 
 ### Return type
 
-[**UsersSearchResponse**](UsersSearchResponse.html)
+[**UsersSearchResponse**](UsersSearchResponse)
 
 
 ## post_users_search_queuemembers_manage
 
 > [**UsersSearchResponse**](UsersSearchResponse) post_users_search_queuemembers_manage(body)
-
 
 
 Search manage queue member
@@ -1161,17 +1141,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**UserSearchRequest**](UserSearchRequest.html)| Search request options |  |
+| **body** | [**UserSearchRequest**](UserSearchRequest)| Search request options |  |
 
 ### Return type
 
-[**UsersSearchResponse**](UsersSearchResponse.html)
+[**UsersSearchResponse**](UsersSearchResponse)
 
 
 ## post_users_search_teams_assign
 
 > [**UsersSearchResponse**](UsersSearchResponse) post_users_search_teams_assign(body)
-
 
 
 Search users assigned to teams
@@ -1210,17 +1189,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**UserSearchRequest**](UserSearchRequest.html)| Search request options |  |
+| **body** | [**UserSearchRequest**](UserSearchRequest)| Search request options |  |
 
 ### Return type
 
-[**UsersSearchResponse**](UsersSearchResponse.html)
+[**UsersSearchResponse**](UsersSearchResponse)
 
 
 ## post_voicemail_search
 
 > [**VoicemailsSearchResponse**](VoicemailsSearchResponse) post_voicemail_search(body)
-
 
 
 Search voicemails
@@ -1258,11 +1236,11 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**VoicemailSearchRequest**](VoicemailSearchRequest.html)| Search request options |  |
+| **body** | [**VoicemailSearchRequest**](VoicemailSearchRequest)| Search request options |  |
 
 ### Return type
 
-[**VoicemailsSearchResponse**](VoicemailsSearchResponse.html)
+[**VoicemailsSearchResponse**](VoicemailsSearchResponse)
 
 
-_PureCloudPlatformClientV2 210.0.0_
+_PureCloudPlatformClientV2 211.0.0_

@@ -50,13 +50,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**put_authorization_roles_default**](#put_authorization_roles_default) | Restore specified default roles|
 |[**put_authorization_roles_settings**](#put_authorization_roles_settings) | Change authorization role settings|
 |[**put_user_roles**](#put_user_roles) | Sets the user&#39;s roles|
-{: class="table table-striped"}
+
 
 
 ## delete_authorization_division
 
 >  delete_authorization_division(division_id, force=force)
-
 
 
 Delete a division.
@@ -108,7 +107,6 @@ void (empty response body)
 >  delete_authorization_role(role_id)
 
 
-
 Delete an organization role.
 
 Wraps DELETE /api/v2/authorization/roles/{roleId} 
@@ -154,7 +152,6 @@ void (empty response body)
 ## delete_authorization_subject_division_role
 
 >  delete_authorization_subject_division_role(subject_id, division_id, role_id)
-
 
 
 Delete a grant of a role in a division
@@ -208,7 +205,6 @@ void (empty response body)
 > [**AuthzDivision**](AuthzDivision) get_authorization_division(division_id, object_count=object_count)
 
 
-
 Returns an authorization division.
 
 Wraps GET /api/v2/authorization/divisions/{divisionId} 
@@ -250,13 +246,12 @@ except ApiException as e:
 
 ### Return type
 
-[**AuthzDivision**](AuthzDivision.html)
+[**AuthzDivision**](AuthzDivision)
 
 
 ## get_authorization_division_grants
 
 > [**AuthzDivisionGrantEntityListing**](AuthzDivisionGrantEntityListing) get_authorization_division_grants(division_id, page_number=page_number, page_size=page_size)
-
 
 
 Gets all grants for a given division.
@@ -305,13 +300,12 @@ except ApiException as e:
 
 ### Return type
 
-[**AuthzDivisionGrantEntityListing**](AuthzDivisionGrantEntityListing.html)
+[**AuthzDivisionGrantEntityListing**](AuthzDivisionGrantEntityListing)
 
 
 ## get_authorization_divisions
 
 > [**AuthzDivisionEntityListing**](AuthzDivisionEntityListing) get_authorization_divisions(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, object_count=object_count, id=id, name=name)
-
 
 
 Retrieve a list of all divisions defined for the organization
@@ -362,22 +356,21 @@ except ApiException as e:
 | **page_size** | **int**| The total page size requested | [optional] [default to 25] |
 | **page_number** | **int**| The page number requested | [optional] [default to 1] |
 | **sort_by** | **str**| variable name requested to sort by | [optional]  |
-| **expand** | [**list[str]**](str.html)| variable name requested by expand list | [optional]  |
+| **expand** | [**list[str]**](str)| variable name requested by expand list | [optional]  |
 | **next_page** | **str**| next page token | [optional]  |
 | **previous_page** | **str**| Previous page token | [optional]  |
 | **object_count** | **bool**| Include the count of objects contained in the division | [optional] [default to False] |
-| **id** | [**list[str]**](str.html)| Optionally request specific divisions by their IDs | [optional]  |
+| **id** | [**list[str]**](str)| Optionally request specific divisions by their IDs | [optional]  |
 | **name** | **str**| Search term to filter by division name | [optional]  |
 
 ### Return type
 
-[**AuthzDivisionEntityListing**](AuthzDivisionEntityListing.html)
+[**AuthzDivisionEntityListing**](AuthzDivisionEntityListing)
 
 
 ## get_authorization_divisions_home
 
 > [**AuthzDivision**](AuthzDivision) get_authorization_divisions_home()
-
 
 
 Retrieve the home division for the organization.
@@ -417,13 +410,12 @@ This endpoint does not need any parameters.
 
 ### Return type
 
-[**AuthzDivision**](AuthzDivision.html)
+[**AuthzDivision**](AuthzDivision)
 
 
 ## get_authorization_divisions_limit
 
 > int** get_authorization_divisions_limit()
-
 
 
 Returns the maximum allowed number of divisions.
@@ -468,7 +460,9 @@ This endpoint does not need any parameters.
 
 > [**list[AuthzDivision]**](AuthzDivision) get_authorization_divisionspermitted_me(permission, name=name)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 Returns which divisions the current user has the given permission in.
 
@@ -513,13 +507,12 @@ except ApiException as e:
 
 ### Return type
 
-[**list[AuthzDivision]**](AuthzDivision.html)
+[**list[AuthzDivision]**](AuthzDivision)
 
 
 ## get_authorization_divisionspermitted_paged_me
 
 > [**DivsPermittedEntityListing**](DivsPermittedEntityListing) get_authorization_divisionspermitted_paged_me(permission, page_number=page_number, page_size=page_size)
-
 
 
 Returns which divisions the current user has the given permission in.
@@ -565,14 +558,16 @@ except ApiException as e:
 
 ### Return type
 
-[**DivsPermittedEntityListing**](DivsPermittedEntityListing.html)
+[**DivsPermittedEntityListing**](DivsPermittedEntityListing)
 
 
 ## get_authorization_divisionspermitted_paged_subject_id
 
 > [**DivsPermittedEntityListing**](DivsPermittedEntityListing) get_authorization_divisionspermitted_paged_subject_id(subject_id, permission, page_number=page_number, page_size=page_size)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 Returns which divisions the specified user has the given permission in.
 
@@ -621,13 +616,12 @@ except ApiException as e:
 
 ### Return type
 
-[**DivsPermittedEntityListing**](DivsPermittedEntityListing.html)
+[**DivsPermittedEntityListing**](DivsPermittedEntityListing)
 
 
 ## get_authorization_permissions
 
 > [**PermissionCollectionEntityListing**](PermissionCollectionEntityListing) get_authorization_permissions(page_size=page_size, page_number=page_number, query_type=query_type, query=query)
-
 
 
 Get all permissions.
@@ -677,13 +671,12 @@ except ApiException as e:
 
 ### Return type
 
-[**PermissionCollectionEntityListing**](PermissionCollectionEntityListing.html)
+[**PermissionCollectionEntityListing**](PermissionCollectionEntityListing)
 
 
 ## get_authorization_products
 
 > [**OrganizationProductEntityListing**](OrganizationProductEntityListing) get_authorization_products()
-
 
 
 Get the list of enabled products
@@ -723,13 +716,12 @@ This endpoint does not need any parameters.
 
 ### Return type
 
-[**OrganizationProductEntityListing**](OrganizationProductEntityListing.html)
+[**OrganizationProductEntityListing**](OrganizationProductEntityListing)
 
 
 ## get_authorization_role
 
 > [**DomainOrganizationRole**](DomainOrganizationRole) get_authorization_role(role_id, user_count=user_count, expand=expand)
-
 
 
 Get a single organization role.
@@ -774,17 +766,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **role_id** | **str**| Role ID |  |
 | **user_count** | **bool**| Fetch the count of users who have this role granted in at least one division. Setting this value or defaulting to &#39;true&#39; can lead to slower load times or timeouts for role queries with large member counts. | [optional] [default to True]<br />**Values**: true, false |
-| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand. \&quot;unusedPermissions\&quot; returns the permissions not used for the role | [optional] <br />**Values**: unusedPermissions |
+| **expand** | [**list[str]**](str)| Which fields, if any, to expand. \&quot;unusedPermissions\&quot; returns the permissions not used for the role | [optional] <br />**Values**: unusedPermissions |
 
 ### Return type
 
-[**DomainOrganizationRole**](DomainOrganizationRole.html)
+[**DomainOrganizationRole**](DomainOrganizationRole)
 
 
 ## get_authorization_role_comparedefault_right_role_id
 
 > [**DomainOrgRoleDifference**](DomainOrgRoleDifference) get_authorization_role_comparedefault_right_role_id(left_role_id, right_role_id)
-
 
 
 Get an org role to default role comparison
@@ -831,13 +822,12 @@ except ApiException as e:
 
 ### Return type
 
-[**DomainOrgRoleDifference**](DomainOrgRoleDifference.html)
+[**DomainOrgRoleDifference**](DomainOrgRoleDifference)
 
 
 ## get_authorization_role_subjectgrants
 
 > [**SubjectDivisionGrantsEntityListing**](SubjectDivisionGrantsEntityListing) get_authorization_role_subjectgrants(role_id, page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page)
-
 
 
 Get the subjects' granted divisions in the specified role.
@@ -888,19 +878,18 @@ except ApiException as e:
 | **page_size** | **int**| The total page size requested | [optional] [default to 25] |
 | **page_number** | **int**| The page number requested | [optional] [default to 1] |
 | **sort_by** | **str**| variable name requested to sort by | [optional]  |
-| **expand** | [**list[str]**](str.html)| variable name requested by expand list | [optional]  |
+| **expand** | [**list[str]**](str)| variable name requested by expand list | [optional]  |
 | **next_page** | **str**| next page token | [optional]  |
 | **previous_page** | **str**| Previous page token | [optional]  |
 
 ### Return type
 
-[**SubjectDivisionGrantsEntityListing**](SubjectDivisionGrantsEntityListing.html)
+[**SubjectDivisionGrantsEntityListing**](SubjectDivisionGrantsEntityListing)
 
 
 ## get_authorization_role_users
 
 > [**UserEntityListing**](UserEntityListing) get_authorization_role_users(role_id, page_size=page_size, page_number=page_number)
-
 
 
 Get a list of the users in a specified role.
@@ -948,13 +937,12 @@ except ApiException as e:
 
 ### Return type
 
-[**UserEntityListing**](UserEntityListing.html)
+[**UserEntityListing**](UserEntityListing)
 
 
 ## get_authorization_roles
 
 > [**OrganizationRoleEntityListing**](OrganizationRoleEntityListing) get_authorization_roles(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, name=name, permission=permission, default_role_id=default_role_id, user_count=user_count, id=id)
-
 
 
 Retrieve a list of all roles defined for the organization
@@ -1006,24 +994,23 @@ except ApiException as e:
 | **page_size** | **int**| The total page size requested | [optional] [default to 25] |
 | **page_number** | **int**| The page number requested | [optional] [default to 1] |
 | **sort_by** | **str**| variable name requested to sort by | [optional]  |
-| **expand** | [**list[str]**](str.html)| variable name requested by expand list | [optional]  |
+| **expand** | [**list[str]**](str)| variable name requested by expand list | [optional]  |
 | **next_page** | **str**| next page token | [optional]  |
 | **previous_page** | **str**| Previous page token | [optional]  |
 | **name** | **str**|  | [optional]  |
-| **permission** | [**list[str]**](str.html)|  | [optional]  |
-| **default_role_id** | [**list[str]**](str.html)|  | [optional]  |
+| **permission** | [**list[str]**](str)|  | [optional]  |
+| **default_role_id** | [**list[str]**](str)|  | [optional]  |
 | **user_count** | **bool**|  | [optional] [default to True] |
-| **id** | [**list[str]**](str.html)| id | [optional]  |
+| **id** | [**list[str]**](str)| id | [optional]  |
 
 ### Return type
 
-[**OrganizationRoleEntityListing**](OrganizationRoleEntityListing.html)
+[**OrganizationRoleEntityListing**](OrganizationRoleEntityListing)
 
 
 ## get_authorization_roles_settings
 
 > [**RoleSettings**](RoleSettings) get_authorization_roles_settings()
-
 
 
 Get authorization role settings
@@ -1063,13 +1050,12 @@ This endpoint does not need any parameters.
 
 ### Return type
 
-[**RoleSettings**](RoleSettings.html)
+[**RoleSettings**](RoleSettings)
 
 
 ## get_authorization_settings
 
 > [**AuthorizationSettings**](AuthorizationSettings) get_authorization_settings()
-
 
 
 Get authorization settings
@@ -1109,13 +1095,12 @@ This endpoint does not need any parameters.
 
 ### Return type
 
-[**AuthorizationSettings**](AuthorizationSettings.html)
+[**AuthorizationSettings**](AuthorizationSettings)
 
 
 ## get_authorization_subject
 
 > [**AuthzSubject**](AuthzSubject) get_authorization_subject(subject_id, include_duplicates=include_duplicates)
-
 
 
 Returns a listing of roles and permissions for a user.
@@ -1160,13 +1145,12 @@ except ApiException as e:
 
 ### Return type
 
-[**AuthzSubject**](AuthzSubject.html)
+[**AuthzSubject**](AuthzSubject)
 
 
 ## get_authorization_subjects_me
 
 > [**AuthzSubject**](AuthzSubject) get_authorization_subjects_me(include_duplicates=include_duplicates)
-
 
 
 Returns a listing of roles and permissions for the currently authenticated user.
@@ -1208,13 +1192,12 @@ except ApiException as e:
 
 ### Return type
 
-[**AuthzSubject**](AuthzSubject.html)
+[**AuthzSubject**](AuthzSubject)
 
 
 ## get_authorization_subjects_rolecounts
 
 > dict(str, object)** get_authorization_subjects_rolecounts(id=id)
-
 
 
 Get the count of roles granted to a list of subjects
@@ -1253,7 +1236,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **id** | [**list[str]**](str.html)| id | [optional]  |
+| **id** | [**list[str]**](str)| id | [optional]  |
 
 ### Return type
 
@@ -1263,7 +1246,6 @@ except ApiException as e:
 ## get_user_roles
 
 > [**UserAuthorization**](UserAuthorization) get_user_roles(subject_id)
-
 
 
 Returns a listing of roles and permissions for a user.
@@ -1306,13 +1288,12 @@ except ApiException as e:
 
 ### Return type
 
-[**UserAuthorization**](UserAuthorization.html)
+[**UserAuthorization**](UserAuthorization)
 
 
 ## patch_authorization_role
 
 > [**DomainOrganizationRole**](DomainOrganizationRole) patch_authorization_role(role_id, body)
-
 
 
 Patch Organization Role for needsUpdate Field
@@ -1355,17 +1336,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **role_id** | **str**| Role ID |  |
-| **body** | [**DomainOrganizationRole**](DomainOrganizationRole.html)| Organization role |  |
+| **body** | [**DomainOrganizationRole**](DomainOrganizationRole)| Organization role |  |
 
 ### Return type
 
-[**DomainOrganizationRole**](DomainOrganizationRole.html)
+[**DomainOrganizationRole**](DomainOrganizationRole)
 
 
 ## patch_authorization_settings
 
 > [**AuthorizationSettings**](AuthorizationSettings) patch_authorization_settings(body)
-
 
 
 Change authorization settings
@@ -1407,17 +1387,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**AuthorizationSettings**](AuthorizationSettings.html)| Authorization Settings |  |
+| **body** | [**AuthorizationSettings**](AuthorizationSettings)| Authorization Settings |  |
 
 ### Return type
 
-[**AuthorizationSettings**](AuthorizationSettings.html)
+[**AuthorizationSettings**](AuthorizationSettings)
 
 
 ## post_authorization_division_object
 
 >  post_authorization_division_object(division_id, object_type, body)
-
 
 
 Assign a list of objects to a division
@@ -1460,7 +1439,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **division_id** | **str**| Division ID |  |
 | **object_type** | **str**| The type of the objects. Must be one of the valid object types | <br />**Values**: QUEUE, CAMPAIGN, CONTACTLIST, DNCLIST, EMAILCAMPAIGN, MESSAGINGCAMPAIGN, MANAGEMENTUNIT, BUSINESSUNIT, FLOW, FLOWMILESTONE, FLOWOUTCOME, USER, CALLROUTE, EMERGENCYGROUPS, ROUTINGSCHEDULES, ROUTINGSCHEDULEGROUPS, DATATABLES, TEAM, WORKBIN, WORKTYPE, EXTENSIONPOOL, SKILLGROUP, SCRIPT |
-| **body** | [**list[str]**](str.html)| Object Id List |  |
+| **body** | [**list[str]**](str)| Object Id List |  |
 
 ### Return type
 
@@ -1470,7 +1449,6 @@ void (empty response body)
 ## post_authorization_division_restore
 
 > [**AuthzDivision**](AuthzDivision) post_authorization_division_restore(division_id, body=body)
-
 
 
 Recreate a previously deleted division.
@@ -1511,17 +1489,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **division_id** | **str**| Division ID |  |
-| **body** | [**AuthzDivision**](AuthzDivision.html)| Recreated division data | [optional]  |
+| **body** | [**AuthzDivision**](AuthzDivision)| Recreated division data | [optional]  |
 
 ### Return type
 
-[**AuthzDivision**](AuthzDivision.html)
+[**AuthzDivision**](AuthzDivision)
 
 
 ## post_authorization_divisions
 
 > [**AuthzDivision**](AuthzDivision) post_authorization_divisions(body)
-
 
 
 Create a division.
@@ -1561,17 +1538,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**AuthzDivision**](AuthzDivision.html)| Division |  |
+| **body** | [**AuthzDivision**](AuthzDivision)| Division |  |
 
 ### Return type
 
-[**AuthzDivision**](AuthzDivision.html)
+[**AuthzDivision**](AuthzDivision)
 
 
 ## post_authorization_role
 
 >  post_authorization_role(role_id, body, subject_type=subject_type)
-
 
 
 Bulk-grant subjects and divisions with an organization role.
@@ -1612,7 +1588,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **role_id** | **str**| Role ID |  |
-| **body** | [**SubjectDivisions**](SubjectDivisions.html)| Subjects and Divisions |  |
+| **body** | [**SubjectDivisions**](SubjectDivisions)| Subjects and Divisions |  |
 | **subject_type** | **str**| what the type of the subjects are (PC_GROUP, PC_USER or PC_OAUTH_CLIENT) | [optional] [default to &#39;PC_USER&#39;] |
 
 ### Return type
@@ -1623,7 +1599,6 @@ void (empty response body)
 ## post_authorization_role_comparedefault_right_role_id
 
 > [**DomainOrgRoleDifference**](DomainOrgRoleDifference) post_authorization_role_comparedefault_right_role_id(left_role_id, right_role_id, body)
-
 
 
 Get an unsaved org role to default role comparison
@@ -1668,17 +1643,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **left_role_id** | **str**| Left Role ID |  |
 | **right_role_id** | **str**| Right Role id |  |
-| **body** | [**DomainOrganizationRole**](DomainOrganizationRole.html)| Organization role |  |
+| **body** | [**DomainOrganizationRole**](DomainOrganizationRole)| Organization role |  |
 
 ### Return type
 
-[**DomainOrgRoleDifference**](DomainOrgRoleDifference.html)
+[**DomainOrgRoleDifference**](DomainOrgRoleDifference)
 
 
 ## post_authorization_roles
 
 > [**DomainOrganizationRole**](DomainOrganizationRole) post_authorization_roles(body)
-
 
 
 Create an organization role.
@@ -1717,17 +1691,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**DomainOrganizationRoleCreate**](DomainOrganizationRoleCreate.html)| Organization role |  |
+| **body** | [**DomainOrganizationRoleCreate**](DomainOrganizationRoleCreate)| Organization role |  |
 
 ### Return type
 
-[**DomainOrganizationRole**](DomainOrganizationRole.html)
+[**DomainOrganizationRole**](DomainOrganizationRole)
 
 
 ## post_authorization_roles_default
 
 > [**OrganizationRoleEntityListing**](OrganizationRoleEntityListing) post_authorization_roles_default(force=force)
-
 
 
 Restores all default roles
@@ -1772,13 +1745,12 @@ except ApiException as e:
 
 ### Return type
 
-[**OrganizationRoleEntityListing**](OrganizationRoleEntityListing.html)
+[**OrganizationRoleEntityListing**](OrganizationRoleEntityListing)
 
 
 ## post_authorization_subject_bulkadd
 
 >  post_authorization_subject_bulkadd(subject_id, body, subject_type=subject_type)
-
 
 
 Bulk-grant roles and divisions to a subject.
@@ -1819,7 +1791,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **subject_id** | **str**| Subject ID (user or group) |  |
-| **body** | [**RoleDivisionGrants**](RoleDivisionGrants.html)| Pairs of role and division IDs |  |
+| **body** | [**RoleDivisionGrants**](RoleDivisionGrants)| Pairs of role and division IDs |  |
 | **subject_type** | **str**| what the type of the subject is (PC_GROUP, PC_USER or PC_OAUTH_CLIENT) | [optional] [default to &#39;PC_USER&#39;] |
 
 ### Return type
@@ -1830,7 +1802,6 @@ void (empty response body)
 ## post_authorization_subject_bulkremove
 
 >  post_authorization_subject_bulkremove(subject_id, body)
-
 
 
 Bulk-remove grants from a subject.
@@ -1870,7 +1841,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **subject_id** | **str**| Subject ID (user or group) |  |
-| **body** | [**RoleDivisionGrants**](RoleDivisionGrants.html)| Pairs of role and division IDs |  |
+| **body** | [**RoleDivisionGrants**](RoleDivisionGrants)| Pairs of role and division IDs |  |
 
 ### Return type
 
@@ -1880,7 +1851,6 @@ void (empty response body)
 ## post_authorization_subject_bulkreplace
 
 >  post_authorization_subject_bulkreplace(subject_id, body, subject_type=subject_type)
-
 
 
 Replace subject's roles and divisions with the exact list supplied in the request.
@@ -1924,7 +1894,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **subject_id** | **str**| Subject ID (user or group) |  |
-| **body** | [**RoleDivisionGrants**](RoleDivisionGrants.html)| Pairs of role and division IDs |  |
+| **body** | [**RoleDivisionGrants**](RoleDivisionGrants)| Pairs of role and division IDs |  |
 | **subject_type** | **str**| what the type of the subject is (PC_GROUP, PC_USER or PC_OAUTH_CLIENT) | [optional] [default to &#39;PC_USER&#39;] |
 
 ### Return type
@@ -1935,7 +1905,6 @@ void (empty response body)
 ## post_authorization_subject_division_role
 
 >  post_authorization_subject_division_role(subject_id, division_id, role_id, subject_type=subject_type)
-
 
 
 Make a grant of a role in a division
@@ -1991,7 +1960,6 @@ void (empty response body)
 > [**AuthzDivision**](AuthzDivision) put_authorization_division(division_id, body)
 
 
-
 Update a division.
 
 Wraps PUT /api/v2/authorization/divisions/{divisionId} 
@@ -2030,17 +1998,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **division_id** | **str**| Division ID |  |
-| **body** | [**AuthzDivision**](AuthzDivision.html)| Updated division data |  |
+| **body** | [**AuthzDivision**](AuthzDivision)| Updated division data |  |
 
 ### Return type
 
-[**AuthzDivision**](AuthzDivision.html)
+[**AuthzDivision**](AuthzDivision)
 
 
 ## put_authorization_role
 
 > [**DomainOrganizationRole**](DomainOrganizationRole) put_authorization_role(role_id, body)
-
 
 
 Update an organization role.
@@ -2083,17 +2050,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **role_id** | **str**| Role ID |  |
-| **body** | [**DomainOrganizationRoleUpdate**](DomainOrganizationRoleUpdate.html)| Organization role |  |
+| **body** | [**DomainOrganizationRoleUpdate**](DomainOrganizationRoleUpdate)| Organization role |  |
 
 ### Return type
 
-[**DomainOrganizationRole**](DomainOrganizationRole.html)
+[**DomainOrganizationRole**](DomainOrganizationRole)
 
 
 ## put_authorization_role_users_add
 
 > list[str]** put_authorization_role_users_add(role_id, body)
-
 
 
 Sets the users for the role
@@ -2134,7 +2100,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **role_id** | **str**| Role ID |  |
-| **body** | [**list[str]**](str.html)| List of user IDs |  |
+| **body** | [**list[str]**](str)| List of user IDs |  |
 
 ### Return type
 
@@ -2144,7 +2110,6 @@ except ApiException as e:
 ## put_authorization_role_users_remove
 
 > list[str]** put_authorization_role_users_remove(role_id, body)
-
 
 
 Removes the users from the role
@@ -2185,7 +2150,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **role_id** | **str**| Role ID |  |
-| **body** | [**list[str]**](str.html)| List of user IDs |  |
+| **body** | [**list[str]**](str)| List of user IDs |  |
 
 ### Return type
 
@@ -2195,7 +2160,6 @@ except ApiException as e:
 ## put_authorization_roles_default
 
 > [**OrganizationRoleEntityListing**](OrganizationRoleEntityListing) put_authorization_roles_default(body)
-
 
 
 Restore specified default roles
@@ -2234,17 +2198,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**list[DomainOrganizationRole]**](DomainOrganizationRole.html)| Organization roles list |  |
+| **body** | [**list[DomainOrganizationRole]**](DomainOrganizationRole)| Organization roles list |  |
 
 ### Return type
 
-[**OrganizationRoleEntityListing**](OrganizationRoleEntityListing.html)
+[**OrganizationRoleEntityListing**](OrganizationRoleEntityListing)
 
 
 ## put_authorization_roles_settings
 
 > [**RoleSettings**](RoleSettings) put_authorization_roles_settings(body)
-
 
 
 Change authorization role settings
@@ -2286,17 +2249,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**RoleSettings**](RoleSettings.html)| Authorization Role Settings |  |
+| **body** | [**RoleSettings**](RoleSettings)| Authorization Role Settings |  |
 
 ### Return type
 
-[**RoleSettings**](RoleSettings.html)
+[**RoleSettings**](RoleSettings)
 
 
 ## put_user_roles
 
 > [**UserAuthorization**](UserAuthorization) put_user_roles(subject_id, body)
-
 
 
 Sets the user's roles
@@ -2337,11 +2299,11 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **subject_id** | **str**| User ID |  |
-| **body** | [**list[str]**](str.html)| List of roles |  |
+| **body** | [**list[str]**](str)| List of roles |  |
 
 ### Return type
 
-[**UserAuthorization**](UserAuthorization.html)
+[**UserAuthorization**](UserAuthorization)
 
 
-_PureCloudPlatformClientV2 210.0.0_
+_PureCloudPlatformClientV2 211.0.0_

@@ -8,13 +8,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 |------------- | -------------|
 |[**get_billing_reports_billableusage**](#get_billing_reports_billableusage) | Get a report of the billable license usages|
 |[**get_billing_trusteebillingoverview_trustor_org_id**](#get_billing_trusteebillingoverview_trustor_org_id) | Get the billing overview for an organization that is managed by a partner.|
-{: class="table table-striped"}
+
 
 
 ## get_billing_reports_billableusage
 
 > [**BillingUsageReport**](BillingUsageReport) get_billing_reports_billableusage(start_date, end_date)
-
 
 
 Get a report of the billable license usages
@@ -62,13 +61,12 @@ except ApiException as e:
 
 ### Return type
 
-[**BillingUsageReport**](BillingUsageReport.html)
+[**BillingUsageReport**](BillingUsageReport)
 
 
 ## get_billing_trusteebillingoverview_trustor_org_id
 
 > [**TrusteeBillingOverview**](TrusteeBillingOverview) get_billing_trusteebillingoverview_trustor_org_id(trustor_org_id, billing_period_index=billing_period_index)
-
 
 
 Get the billing overview for an organization that is managed by a partner.
@@ -115,7 +113,7 @@ except ApiException as e:
 
 ### Return type
 
-[**TrusteeBillingOverview**](TrusteeBillingOverview.html)
+[**TrusteeBillingOverview**](TrusteeBillingOverview)
 
 
-_PureCloudPlatformClientV2 210.0.0_
+_PureCloudPlatformClientV2 211.0.0_

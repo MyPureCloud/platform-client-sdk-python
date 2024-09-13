@@ -53,13 +53,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_taskmanagement_worktypes**](#post_taskmanagement_worktypes) | Create a worktype|
 |[**post_taskmanagement_worktypes_query**](#post_taskmanagement_worktypes_query) | Query for worktypes|
 |[**put_taskmanagement_workitems_schema**](#put_taskmanagement_workitems_schema) | Update a schema|
-{: class="table table-striped"}
+
 
 
 ## delete_taskmanagement_workbin
 
 >  delete_taskmanagement_workbin(workbin_id)
-
 
 
 Delete a workbin
@@ -109,7 +108,6 @@ void (empty response body)
 >  delete_taskmanagement_workitem(workitem_id)
 
 
-
 Delete a workitem
 
 Wraps DELETE /api/v2/taskmanagement/workitems/{workitemId} 
@@ -155,7 +153,6 @@ void (empty response body)
 ## delete_taskmanagement_workitems_schema
 
 >  delete_taskmanagement_workitems_schema(schema_id)
-
 
 
 Delete a schema
@@ -205,7 +202,6 @@ void (empty response body)
 >  delete_taskmanagement_worktype(worktype_id)
 
 
-
 Delete a worktype
 
 Wraps DELETE /api/v2/taskmanagement/worktypes/{worktypeId} 
@@ -251,7 +247,6 @@ void (empty response body)
 ## delete_taskmanagement_worktype_status
 
 >  delete_taskmanagement_worktype_status(worktype_id, status_id)
-
 
 
 Delete a status
@@ -303,7 +298,6 @@ void (empty response body)
 > [**Workbin**](Workbin) get_taskmanagement_workbin(workbin_id)
 
 
-
 Get a workbin
 
 Wraps GET /api/v2/taskmanagement/workbins/{workbinId} 
@@ -344,13 +338,12 @@ except ApiException as e:
 
 ### Return type
 
-[**Workbin**](Workbin.html)
+[**Workbin**](Workbin)
 
 
 ## get_taskmanagement_workbin_history
 
 > [**WorkbinChangeListing**](WorkbinChangeListing) get_taskmanagement_workbin_history(workbin_id, after=after, page_size=page_size, sort_order=sort_order)
-
 
 
 Get a listing of a workbin's attribute change history
@@ -401,13 +394,12 @@ except ApiException as e:
 
 ### Return type
 
-[**WorkbinChangeListing**](WorkbinChangeListing.html)
+[**WorkbinChangeListing**](WorkbinChangeListing)
 
 
 ## get_taskmanagement_workbin_version
 
 > [**WorkbinVersion**](WorkbinVersion) get_taskmanagement_workbin_version(workbin_id, entity_version)
-
 
 
 Get a version of a workbin
@@ -454,13 +446,12 @@ except ApiException as e:
 
 ### Return type
 
-[**WorkbinVersion**](WorkbinVersion.html)
+[**WorkbinVersion**](WorkbinVersion)
 
 
 ## get_taskmanagement_workbin_versions
 
 > [**WorkbinVersionListing**](WorkbinVersionListing) get_taskmanagement_workbin_versions(workbin_id, after=after, page_size=page_size, sort_order=sort_order)
-
 
 
 Get all versions of a workbin
@@ -511,13 +502,12 @@ except ApiException as e:
 
 ### Return type
 
-[**WorkbinVersionListing**](WorkbinVersionListing.html)
+[**WorkbinVersionListing**](WorkbinVersionListing)
 
 
 ## get_taskmanagement_workitem
 
 > [**Workitem**](Workitem) get_taskmanagement_workitem(workitem_id, expands=expands)
-
 
 
 Get a workitem
@@ -562,13 +552,12 @@ except ApiException as e:
 
 ### Return type
 
-[**Workitem**](Workitem.html)
+[**Workitem**](Workitem)
 
 
 ## get_taskmanagement_workitem_history
 
 > [**WorkitemChangeListing**](WorkitemChangeListing) get_taskmanagement_workitem_history(workitem_id, after=after, page_size=page_size, sort_order=sort_order)
-
 
 
 Get a listing of a workitem's attribute change history
@@ -619,13 +608,12 @@ except ApiException as e:
 
 ### Return type
 
-[**WorkitemChangeListing**](WorkitemChangeListing.html)
+[**WorkitemChangeListing**](WorkitemChangeListing)
 
 
 ## get_taskmanagement_workitem_user_wrapups
 
 > [**WorkitemWrapup**](WorkitemWrapup) get_taskmanagement_workitem_user_wrapups(workitem_id, user_id, expands=expands, after=after, page_size=page_size, sort_order=sort_order)
-
 
 
 Get all wrapup codes added for the given user for a workitem.
@@ -678,13 +666,12 @@ except ApiException as e:
 
 ### Return type
 
-[**WorkitemWrapup**](WorkitemWrapup.html)
+[**WorkitemWrapup**](WorkitemWrapup)
 
 
 ## get_taskmanagement_workitem_version
 
 > [**WorkitemVersion**](WorkitemVersion) get_taskmanagement_workitem_version(workitem_id, entity_version)
-
 
 
 Get a version of a workitem
@@ -731,13 +718,12 @@ except ApiException as e:
 
 ### Return type
 
-[**WorkitemVersion**](WorkitemVersion.html)
+[**WorkitemVersion**](WorkitemVersion)
 
 
 ## get_taskmanagement_workitem_versions
 
 > [**WorkitemVersionListing**](WorkitemVersionListing) get_taskmanagement_workitem_versions(workitem_id, after=after, page_size=page_size, sort_order=sort_order)
-
 
 
 Get all versions of a workitem
@@ -788,13 +774,12 @@ except ApiException as e:
 
 ### Return type
 
-[**WorkitemVersionListing**](WorkitemVersionListing.html)
+[**WorkitemVersionListing**](WorkitemVersionListing)
 
 
 ## get_taskmanagement_workitem_wrapups
 
 > [**WorkitemWrapupEntityListing**](WorkitemWrapupEntityListing) get_taskmanagement_workitem_wrapups(workitem_id, expands=expands, after=after, page_size=page_size, sort_order=sort_order)
-
 
 
 Get all wrapup codes added for all users for a workitem.
@@ -845,13 +830,12 @@ except ApiException as e:
 
 ### Return type
 
-[**WorkitemWrapupEntityListing**](WorkitemWrapupEntityListing.html)
+[**WorkitemWrapupEntityListing**](WorkitemWrapupEntityListing)
 
 
 ## get_taskmanagement_workitems_query_job
 
 > [**WorkitemQueryJobResponse**](WorkitemQueryJobResponse) get_taskmanagement_workitems_query_job(job_id)
-
 
 
 Get the workitem query job associated with the job id.
@@ -894,13 +878,12 @@ except ApiException as e:
 
 ### Return type
 
-[**WorkitemQueryJobResponse**](WorkitemQueryJobResponse.html)
+[**WorkitemQueryJobResponse**](WorkitemQueryJobResponse)
 
 
 ## get_taskmanagement_workitems_query_job_results
 
 > [**WorkitemPagedEntityListing**](WorkitemPagedEntityListing) get_taskmanagement_workitems_query_job_results(job_id)
-
 
 
 Get results from for workitem query job 
@@ -943,13 +926,12 @@ except ApiException as e:
 
 ### Return type
 
-[**WorkitemPagedEntityListing**](WorkitemPagedEntityListing.html)
+[**WorkitemPagedEntityListing**](WorkitemPagedEntityListing)
 
 
 ## get_taskmanagement_workitems_schema
 
 > [**DataSchema**](DataSchema) get_taskmanagement_workitems_schema(schema_id)
-
 
 
 Get a schema
@@ -992,13 +974,12 @@ except ApiException as e:
 
 ### Return type
 
-[**DataSchema**](DataSchema.html)
+[**DataSchema**](DataSchema)
 
 
 ## get_taskmanagement_workitems_schema_version
 
 > [**DataSchema**](DataSchema) get_taskmanagement_workitems_schema_version(schema_id, version_id)
-
 
 
 Get a specific version of a schema
@@ -1043,13 +1024,12 @@ except ApiException as e:
 
 ### Return type
 
-[**DataSchema**](DataSchema.html)
+[**DataSchema**](DataSchema)
 
 
 ## get_taskmanagement_workitems_schema_versions
 
 > [**DataSchema**](DataSchema) get_taskmanagement_workitems_schema_versions(schema_id)
-
 
 
 Get all versions of a schema
@@ -1092,13 +1072,12 @@ except ApiException as e:
 
 ### Return type
 
-[**DataSchema**](DataSchema.html)
+[**DataSchema**](DataSchema)
 
 
 ## get_taskmanagement_workitems_schemas
 
 > [**DataSchemaListing**](DataSchemaListing) get_taskmanagement_workitems_schemas()
-
 
 
 Get a list of schemas.
@@ -1137,13 +1116,12 @@ This endpoint does not need any parameters.
 
 ### Return type
 
-[**DataSchemaListing**](DataSchemaListing.html)
+[**DataSchemaListing**](DataSchemaListing)
 
 
 ## get_taskmanagement_worktype
 
 > [**Worktype**](Worktype) get_taskmanagement_worktype(worktype_id, expands=expands)
-
 
 
 Get a worktype
@@ -1184,17 +1162,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **worktype_id** | **str**| Worktype id |  |
-| **expands** | [**list[str]**](str.html)| Which fields, if any, to expand. | [optional] <br />**Values**: defaultQueue, defaultSkills, defaultLanguage, schema |
+| **expands** | [**list[str]**](str)| Which fields, if any, to expand. | [optional] <br />**Values**: defaultQueue, defaultSkills, defaultLanguage, schema, flow |
 
 ### Return type
 
-[**Worktype**](Worktype.html)
+[**Worktype**](Worktype)
 
 
 ## get_taskmanagement_worktype_history
 
 > [**WorktypeChangeListing**](WorktypeChangeListing) get_taskmanagement_worktype_history(worktype_id, after=after, page_size=page_size, sort_order=sort_order, fields=fields)
-
 
 
 Get a listing of a worktype's attribute change history
@@ -1243,17 +1220,16 @@ except ApiException as e:
 | **after** | **str**| The cursor that points to the end of the set of entities that has been returned. | [optional]  |
 | **page_size** | **int**| Limit the number of entities to return. It is not guaranteed that the requested number of entities will be filled in a single request. If an &#x60;after&#x60; key is returned as part of the response it is possible that more entities that match the filter criteria exist. Maximum of 200. | [optional] [default to 25] |
 | **sort_order** | **str**| Ascending or descending sort order | [optional] [default to &#39;descending&#39;]<br />**Values**: ascending, descending |
-| **fields** | [**list[str]**](str.html)| Comma-separated list of fields. The response will contain only versions created as a result of changes to these fields. | [optional] <br />**Values**: name, serviceLevelTarget, defaultWorkbinId, defaultDueDurationSeconds, defaultExpirationSeconds, defaultPriority, defaultLanguageId, defaultSkillIds, defaultQueueId, assignmentEnabled, defaultStatusId, statuses |
+| **fields** | [**list[str]**](str)| Comma-separated list of fields. The response will contain only versions created as a result of changes to these fields. | [optional] <br />**Values**: name, serviceLevelTarget, defaultWorkbinId, defaultDueDurationSeconds, defaultExpirationSeconds, defaultPriority, defaultLanguageId, defaultSkillIds, defaultQueueId, assignmentEnabled, defaultStatusId, statuses |
 
 ### Return type
 
-[**WorktypeChangeListing**](WorktypeChangeListing.html)
+[**WorktypeChangeListing**](WorktypeChangeListing)
 
 
 ## get_taskmanagement_worktype_status
 
 > [**WorkitemStatus**](WorkitemStatus) get_taskmanagement_worktype_status(worktype_id, status_id)
-
 
 
 Get a status
@@ -1298,13 +1274,12 @@ except ApiException as e:
 
 ### Return type
 
-[**WorkitemStatus**](WorkitemStatus.html)
+[**WorkitemStatus**](WorkitemStatus)
 
 
 ## get_taskmanagement_worktype_statuses
 
 > [**WorkitemStatusListing**](WorkitemStatusListing) get_taskmanagement_worktype_statuses(worktype_id)
-
 
 
 Get list of statuses for this worktype.
@@ -1347,13 +1322,12 @@ except ApiException as e:
 
 ### Return type
 
-[**WorkitemStatusListing**](WorkitemStatusListing.html)
+[**WorkitemStatusListing**](WorkitemStatusListing)
 
 
 ## get_taskmanagement_worktype_version
 
 > [**WorktypeVersion**](WorktypeVersion) get_taskmanagement_worktype_version(worktype_id, entity_version)
-
 
 
 Get a version of a worktype
@@ -1400,13 +1374,12 @@ except ApiException as e:
 
 ### Return type
 
-[**WorktypeVersion**](WorktypeVersion.html)
+[**WorktypeVersion**](WorktypeVersion)
 
 
 ## get_taskmanagement_worktype_versions
 
 > [**WorktypeVersionListing**](WorktypeVersionListing) get_taskmanagement_worktype_versions(worktype_id, after=after, page_size=page_size, sort_order=sort_order)
-
 
 
 Get all versions of a worktype
@@ -1457,13 +1430,12 @@ except ApiException as e:
 
 ### Return type
 
-[**WorktypeVersionListing**](WorktypeVersionListing.html)
+[**WorktypeVersionListing**](WorktypeVersionListing)
 
 
 ## patch_taskmanagement_workbin
 
 > [**Workbin**](Workbin) patch_taskmanagement_workbin(workbin_id, body)
-
 
 
 Update the attributes of a workbin
@@ -1504,17 +1476,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **workbin_id** | **str**| Workbin ID |  |
-| **body** | [**WorkbinUpdate**](WorkbinUpdate.html)| Json with attributes and their new values: {\&quot;description\&quot;:\&quot;new description\&quot;, \&quot;name\&quot;:\&quot;new name\&quot;}. |  |
+| **body** | [**WorkbinUpdate**](WorkbinUpdate)| Json with attributes and their new values: {\&quot;description\&quot;:\&quot;new description\&quot;, \&quot;name\&quot;:\&quot;new name\&quot;}. |  |
 
 ### Return type
 
-[**Workbin**](Workbin.html)
+[**Workbin**](Workbin)
 
 
 ## patch_taskmanagement_workitem
 
 > [**Workitem**](Workitem) patch_taskmanagement_workitem(workitem_id, body)
-
 
 
 Update the attributes of a workitem
@@ -1556,17 +1527,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **workitem_id** | **str**| Workitem ID |  |
-| **body** | [**WorkitemUpdate**](WorkitemUpdate.html)| Workitem |  |
+| **body** | [**WorkitemUpdate**](WorkitemUpdate)| Workitem |  |
 
 ### Return type
 
-[**Workitem**](Workitem.html)
+[**Workitem**](Workitem)
 
 
 ## patch_taskmanagement_workitem_assignment
 
 >  patch_taskmanagement_workitem_assignment(workitem_id, body)
-
 
 
 Attempts to manually assign a specified workitem to a specified user.  Ignores bullseye ring, PAR score, skills, and languages.
@@ -1607,7 +1577,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **workitem_id** | **str**| Workitem ID |  |
-| **body** | [**WorkitemManualAssign**](WorkitemManualAssign.html)| Targeted user |  |
+| **body** | [**WorkitemManualAssign**](WorkitemManualAssign)| Targeted user |  |
 
 ### Return type
 
@@ -1617,7 +1587,6 @@ void (empty response body)
 ## patch_taskmanagement_workitem_user_wrapups
 
 > [**WorkitemWrapup**](WorkitemWrapup) patch_taskmanagement_workitem_user_wrapups(workitem_id, user_id, body)
-
 
 
 Add/Remove a wrapup code for a given user in a workitem.
@@ -1660,17 +1629,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **workitem_id** | **str**| The ID of the Workitem. |  |
 | **user_id** | **str**| The ID of the user |  |
-| **body** | [**WorkitemWrapupUpdate**](WorkitemWrapupUpdate.html)| Request body to add/remove a wrapup code for a workitem |  |
+| **body** | [**WorkitemWrapupUpdate**](WorkitemWrapupUpdate)| Request body to add/remove a wrapup code for a workitem |  |
 
 ### Return type
 
-[**WorkitemWrapup**](WorkitemWrapup.html)
+[**WorkitemWrapup**](WorkitemWrapup)
 
 
 ## patch_taskmanagement_workitem_users_me_wrapups
 
 > [**WorkitemWrapup**](WorkitemWrapup) patch_taskmanagement_workitem_users_me_wrapups(workitem_id, body)
-
 
 
 Add/Remove a wrapup code for the current user in a workitem.
@@ -1711,17 +1679,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **workitem_id** | **str**| The ID of the Workitem. |  |
-| **body** | [**WorkitemWrapupUpdate**](WorkitemWrapupUpdate.html)| Request body to add/remove the wrapup code for workitem |  |
+| **body** | [**WorkitemWrapupUpdate**](WorkitemWrapupUpdate)| Request body to add/remove the wrapup code for workitem |  |
 
 ### Return type
 
-[**WorkitemWrapup**](WorkitemWrapup.html)
+[**WorkitemWrapup**](WorkitemWrapup)
 
 
 ## patch_taskmanagement_worktype
 
 > [**Worktype**](Worktype) patch_taskmanagement_worktype(worktype_id, body)
-
 
 
 Update the attributes of a worktype
@@ -1762,17 +1729,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **worktype_id** | **str**| Worktype id |  |
-| **body** | [**WorktypeUpdate**](WorktypeUpdate.html)| Worktype |  |
+| **body** | [**WorktypeUpdate**](WorktypeUpdate)| Worktype |  |
 
 ### Return type
 
-[**Worktype**](Worktype.html)
+[**Worktype**](Worktype)
 
 
 ## patch_taskmanagement_worktype_status
 
 > [**WorkitemStatus**](WorkitemStatus) patch_taskmanagement_worktype_status(worktype_id, status_id, body)
-
 
 
 Update the attributes of a status
@@ -1815,17 +1781,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **worktype_id** | **str**| Worktype id |  |
 | **status_id** | **str**| Status id |  |
-| **body** | [**WorkitemStatusUpdate**](WorkitemStatusUpdate.html)| Status |  |
+| **body** | [**WorkitemStatusUpdate**](WorkitemStatusUpdate)| Status |  |
 
 ### Return type
 
-[**WorkitemStatus**](WorkitemStatus.html)
+[**WorkitemStatus**](WorkitemStatus)
 
 
 ## post_taskmanagement_workbins
 
 > [**Workbin**](Workbin) post_taskmanagement_workbins(body)
-
 
 
 Create a workbin
@@ -1864,17 +1829,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**WorkbinCreate**](WorkbinCreate.html)| Workbin |  |
+| **body** | [**WorkbinCreate**](WorkbinCreate)| Workbin |  |
 
 ### Return type
 
-[**Workbin**](Workbin.html)
+[**Workbin**](Workbin)
 
 
 ## post_taskmanagement_workbins_query
 
 > [**WorkbinQueryEntityListing**](WorkbinQueryEntityListing) post_taskmanagement_workbins_query(body)
-
 
 
 Query for workbins
@@ -1913,17 +1877,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**WorkbinQueryRequest**](WorkbinQueryRequest.html)| QueryPostRequest |  |
+| **body** | [**WorkbinQueryRequest**](WorkbinQueryRequest)| QueryPostRequest |  |
 
 ### Return type
 
-[**WorkbinQueryEntityListing**](WorkbinQueryEntityListing.html)
+[**WorkbinQueryEntityListing**](WorkbinQueryEntityListing)
 
 
 ## post_taskmanagement_workitem_acd_cancel
 
 > [**Workitem**](Workitem) post_taskmanagement_workitem_acd_cancel(workitem_id)
-
 
 
 Cancel the assignment process for a workitem that is currently queued for assignment through ACD.
@@ -1966,13 +1929,12 @@ except ApiException as e:
 
 ### Return type
 
-[**Workitem**](Workitem.html)
+[**Workitem**](Workitem)
 
 
 ## post_taskmanagement_workitem_disconnect
 
 > [**Workitem**](Workitem) post_taskmanagement_workitem_disconnect(workitem_id)
-
 
 
 Disconnect the assignee of the workitem
@@ -2015,13 +1977,12 @@ except ApiException as e:
 
 ### Return type
 
-[**Workitem**](Workitem.html)
+[**Workitem**](Workitem)
 
 
 ## post_taskmanagement_workitem_terminate
 
 > [**Workitem**](Workitem) post_taskmanagement_workitem_terminate(workitem_id, body=body)
-
 
 
 Terminate a workitem
@@ -2062,17 +2023,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **workitem_id** | **str**| Workitem ID |  |
-| **body** | [**WorkitemTerminate**](WorkitemTerminate.html)| Terminated request | [optional]  |
+| **body** | [**WorkitemTerminate**](WorkitemTerminate)| Terminated request | [optional]  |
 
 ### Return type
 
-[**Workitem**](Workitem.html)
+[**Workitem**](Workitem)
 
 
 ## post_taskmanagement_workitems
 
 > [**Workitem**](Workitem) post_taskmanagement_workitems(body)
-
 
 
 Create a workitem
@@ -2111,17 +2071,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**WorkitemCreate**](WorkitemCreate.html)| Workitem |  |
+| **body** | [**WorkitemCreate**](WorkitemCreate)| Workitem |  |
 
 ### Return type
 
-[**Workitem**](Workitem.html)
+[**Workitem**](Workitem)
 
 
 ## post_taskmanagement_workitems_query
 
 > [**WorkitemPostQueryEntityListing**](WorkitemPostQueryEntityListing) post_taskmanagement_workitems_query(body)
-
 
 
 Query for workitems
@@ -2164,17 +2123,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**WorkitemQueryPostRequest**](WorkitemQueryPostRequest.html)| WorkitemQueryPostRequest |  |
+| **body** | [**WorkitemQueryPostRequest**](WorkitemQueryPostRequest)| WorkitemQueryPostRequest |  |
 
 ### Return type
 
-[**WorkitemPostQueryEntityListing**](WorkitemPostQueryEntityListing.html)
+[**WorkitemPostQueryEntityListing**](WorkitemPostQueryEntityListing)
 
 
 ## post_taskmanagement_workitems_query_jobs
 
 > [**WorkitemQueryJobResponse**](WorkitemQueryJobResponse) post_taskmanagement_workitems_query_jobs(body)
-
 
 
 Create a workitem query job
@@ -2213,17 +2171,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**WorkitemQueryJobCreate**](WorkitemQueryJobCreate.html)| WorkitemQueryJobCreate |  |
+| **body** | [**WorkitemQueryJobCreate**](WorkitemQueryJobCreate)| WorkitemQueryJobCreate |  |
 
 ### Return type
 
-[**WorkitemQueryJobResponse**](WorkitemQueryJobResponse.html)
+[**WorkitemQueryJobResponse**](WorkitemQueryJobResponse)
 
 
 ## post_taskmanagement_workitems_schemas
 
 > [**DataSchema**](DataSchema) post_taskmanagement_workitems_schemas(body)
-
 
 
 Create a schema
@@ -2262,17 +2219,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**DataSchema**](DataSchema.html)| Schema |  |
+| **body** | [**DataSchema**](DataSchema)| Schema |  |
 
 ### Return type
 
-[**DataSchema**](DataSchema.html)
+[**DataSchema**](DataSchema)
 
 
 ## post_taskmanagement_worktype_statuses
 
 > [**WorkitemStatus**](WorkitemStatus) post_taskmanagement_worktype_statuses(worktype_id, body)
-
 
 
 Add a status to a worktype
@@ -2313,17 +2269,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **worktype_id** | **str**| Worktype id |  |
-| **body** | [**WorkitemStatusCreate**](WorkitemStatusCreate.html)| Status |  |
+| **body** | [**WorkitemStatusCreate**](WorkitemStatusCreate)| Status |  |
 
 ### Return type
 
-[**WorkitemStatus**](WorkitemStatus.html)
+[**WorkitemStatus**](WorkitemStatus)
 
 
 ## post_taskmanagement_worktypes
 
 > [**Worktype**](Worktype) post_taskmanagement_worktypes(body)
-
 
 
 Create a worktype
@@ -2362,17 +2317,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**WorktypeCreate**](WorktypeCreate.html)| Worktype |  |
+| **body** | [**WorktypeCreate**](WorktypeCreate)| Worktype |  |
 
 ### Return type
 
-[**Worktype**](Worktype.html)
+[**Worktype**](Worktype)
 
 
 ## post_taskmanagement_worktypes_query
 
 > [**WorktypeQueryEntityListing**](WorktypeQueryEntityListing) post_taskmanagement_worktypes_query(body)
-
 
 
 Query for worktypes
@@ -2411,17 +2365,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**WorktypeQueryRequest**](WorktypeQueryRequest.html)| QueryPostRequest |  |
+| **body** | [**WorktypeQueryRequest**](WorktypeQueryRequest)| QueryPostRequest |  |
 
 ### Return type
 
-[**WorktypeQueryEntityListing**](WorktypeQueryEntityListing.html)
+[**WorktypeQueryEntityListing**](WorktypeQueryEntityListing)
 
 
 ## put_taskmanagement_workitems_schema
 
 > [**DataSchema**](DataSchema) put_taskmanagement_workitems_schema(schema_id, body)
-
 
 
 Update a schema
@@ -2462,11 +2415,11 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **schema_id** | **str**| Schema ID |  |
-| **body** | [**DataSchema**](DataSchema.html)| Data Schema |  |
+| **body** | [**DataSchema**](DataSchema)| Data Schema |  |
 
 ### Return type
 
-[**DataSchema**](DataSchema.html)
+[**DataSchema**](DataSchema)
 
 
-_PureCloudPlatformClientV2 210.0.0_
+_PureCloudPlatformClientV2 211.0.0_

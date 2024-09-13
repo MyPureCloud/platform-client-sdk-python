@@ -14,13 +14,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**patch_settings_executiondata**](#patch_settings_executiondata) | Edit the execution history on off setting.|
 |[**patch_users_agentui_agents_autoanswer_agent_id_settings**](#patch_users_agentui_agents_autoanswer_agent_id_settings) | Update agent auto answer settings|
 |[**put_users_agentui_agents_autoanswer_agent_id_settings**](#put_users_agentui_agents_autoanswer_agent_id_settings) | Set agent auto answer settings|
-{: class="table table-striped"}
+
 
 
 ## delete_users_agentui_agents_autoanswer_agent_id_settings
 
 >  delete_users_agentui_agents_autoanswer_agent_id_settings(agent_id)
-
 
 
 Delete agent auto answer settings
@@ -70,7 +69,6 @@ void (empty response body)
 > [**EmailSettings**](EmailSettings) get_emails_settings()
 
 
-
 Get email Contact Center settings
 
 Wraps GET /api/v2/emails/settings 
@@ -107,7 +105,7 @@ This endpoint does not need any parameters.
 
 ### Return type
 
-[**EmailSettings**](EmailSettings.html)
+[**EmailSettings**](EmailSettings)
 
 
 ## get_settings_executiondata
@@ -115,12 +113,9 @@ This endpoint does not need any parameters.
 > [**ExecutionDataGlobalSettingsResponse**](ExecutionDataGlobalSettingsResponse) get_settings_executiondata()
 
 
-
 Get the execution history enabled setting.
 
 Get the execution history enabled setting.
-
-get_settings_executiondata is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/settings/executiondata 
 
@@ -156,13 +151,12 @@ This endpoint does not need any parameters.
 
 ### Return type
 
-[**ExecutionDataGlobalSettingsResponse**](ExecutionDataGlobalSettingsResponse.html)
+[**ExecutionDataGlobalSettingsResponse**](ExecutionDataGlobalSettingsResponse)
 
 
 ## get_users_agentui_agents_autoanswer_agent_id_settings
 
 > [**AutoAnswerSettings**](AutoAnswerSettings) get_users_agentui_agents_autoanswer_agent_id_settings(agent_id)
-
 
 
 Get agent auto answer settings
@@ -205,13 +199,12 @@ except ApiException as e:
 
 ### Return type
 
-[**AutoAnswerSettings**](AutoAnswerSettings.html)
+[**AutoAnswerSettings**](AutoAnswerSettings)
 
 
 ## patch_emails_settings
 
 > [**EmailSettings**](EmailSettings) patch_emails_settings(body=body)
-
 
 
 Patch email Contact Center settings
@@ -250,11 +243,11 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**EmailSettings**](EmailSettings.html)|  | [optional]  |
+| **body** | [**EmailSettings**](EmailSettings)|  | [optional]  |
 
 ### Return type
 
-[**EmailSettings**](EmailSettings.html)
+[**EmailSettings**](EmailSettings)
 
 
 ## patch_settings_executiondata
@@ -262,12 +255,9 @@ except ApiException as e:
 > [**ExecutionDataGlobalSettingsResponse**](ExecutionDataGlobalSettingsResponse) patch_settings_executiondata(body)
 
 
-
 Edit the execution history on off setting.
 
 Edit the execution history on off setting.
-
-patch_settings_executiondata is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps PATCH /api/v2/settings/executiondata 
 
@@ -303,17 +293,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**ExecutionDataSettingsRequest**](ExecutionDataSettingsRequest.html)| New Execution Data Setting |  |
+| **body** | [**ExecutionDataSettingsRequest**](ExecutionDataSettingsRequest)| New Execution Data Setting |  |
 
 ### Return type
 
-[**ExecutionDataGlobalSettingsResponse**](ExecutionDataGlobalSettingsResponse.html)
+[**ExecutionDataGlobalSettingsResponse**](ExecutionDataGlobalSettingsResponse)
 
 
 ## patch_users_agentui_agents_autoanswer_agent_id_settings
 
 > [**AutoAnswerSettings**](AutoAnswerSettings) patch_users_agentui_agents_autoanswer_agent_id_settings(agent_id, body)
-
 
 
 Update agent auto answer settings
@@ -354,17 +343,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **agent_id** | **str**| The agent to apply the auto answer settings to |  |
-| **body** | [**AutoAnswerSettings**](AutoAnswerSettings.html)| AutoAnswerSettings |  |
+| **body** | [**AutoAnswerSettings**](AutoAnswerSettings)| AutoAnswerSettings |  |
 
 ### Return type
 
-[**AutoAnswerSettings**](AutoAnswerSettings.html)
+[**AutoAnswerSettings**](AutoAnswerSettings)
 
 
 ## put_users_agentui_agents_autoanswer_agent_id_settings
 
 > [**AutoAnswerSettings**](AutoAnswerSettings) put_users_agentui_agents_autoanswer_agent_id_settings(agent_id, body)
-
 
 
 Set agent auto answer settings
@@ -405,11 +393,11 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **agent_id** | **str**| The agent to apply the auto answer settings to |  |
-| **body** | [**AutoAnswerSettings**](AutoAnswerSettings.html)| AutoAnswerSettings |  |
+| **body** | [**AutoAnswerSettings**](AutoAnswerSettings)| AutoAnswerSettings |  |
 
 ### Return type
 
-[**AutoAnswerSettings**](AutoAnswerSettings.html)
+[**AutoAnswerSettings**](AutoAnswerSettings)
 
 
-_PureCloudPlatformClientV2 210.0.0_
+_PureCloudPlatformClientV2 211.0.0_

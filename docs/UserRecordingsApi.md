@@ -13,13 +13,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_userrecordings**](#get_userrecordings) | Get a list of user recordings.|
 |[**get_userrecordings_summary**](#get_userrecordings_summary) | Get user recording summary|
 |[**put_userrecording**](#put_userrecording) | Update a user recording.|
-{: class="table table-striped"}
+
 
 
 ## delete_userrecording
 
 >  delete_userrecording(recording_id)
-
 
 
 Delete a user recording.
@@ -68,7 +67,6 @@ void (empty response body)
 > [**UserRecording**](UserRecording) get_userrecording(recording_id, expand=expand)
 
 
-
 Get a user recording.
 
 Wraps GET /api/v2/userrecordings/{recordingId} 
@@ -106,18 +104,20 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **recording_id** | **str**| User Recording ID |  |
-| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand. | [optional] <br />**Values**: conversation |
+| **expand** | [**list[str]**](str)| Which fields, if any, to expand. | [optional] <br />**Values**: conversation |
 
 ### Return type
 
-[**UserRecording**](UserRecording.html)
+[**UserRecording**](UserRecording)
 
 
 ## get_userrecording_media
 
 > [**DownloadResponse**](DownloadResponse) get_userrecording_media(recording_id, format_id=format_id, async=async)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 Download a user recording.
 
@@ -164,13 +164,12 @@ except ApiException as e:
 
 ### Return type
 
-[**DownloadResponse**](DownloadResponse.html)
+[**DownloadResponse**](DownloadResponse)
 
 
 ## get_userrecording_transcoding
 
 > [**DownloadResponse**](DownloadResponse) get_userrecording_transcoding(recording_id, format_id=format_id)
-
 
 
 Download a user recording.
@@ -215,13 +214,12 @@ except ApiException as e:
 
 ### Return type
 
-[**DownloadResponse**](DownloadResponse.html)
+[**DownloadResponse**](DownloadResponse)
 
 
 ## get_userrecordings
 
 > [**UserRecordingEntityListing**](UserRecordingEntityListing) get_userrecordings(page_size=page_size, page_number=page_number, expand=expand)
-
 
 
 Get a list of user recordings.
@@ -263,17 +261,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
-| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand. | [optional] <br />**Values**: conversation |
+| **expand** | [**list[str]**](str)| Which fields, if any, to expand. | [optional] <br />**Values**: conversation |
 
 ### Return type
 
-[**UserRecordingEntityListing**](UserRecordingEntityListing.html)
+[**UserRecordingEntityListing**](UserRecordingEntityListing)
 
 
 ## get_userrecordings_summary
 
 > [**FaxSummary**](FaxSummary) get_userrecordings_summary()
-
 
 
 Get user recording summary
@@ -311,13 +308,12 @@ This endpoint does not need any parameters.
 
 ### Return type
 
-[**FaxSummary**](FaxSummary.html)
+[**FaxSummary**](FaxSummary)
 
 
 ## put_userrecording
 
 > [**UserRecording**](UserRecording) put_userrecording(recording_id, body, expand=expand)
-
 
 
 Update a user recording.
@@ -358,12 +354,12 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **recording_id** | **str**| User Recording ID |  |
-| **body** | [**UserRecording**](UserRecording.html)| UserRecording |  |
-| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand. | [optional] <br />**Values**: conversation |
+| **body** | [**UserRecording**](UserRecording)| UserRecording |  |
+| **expand** | [**list[str]**](str)| Which fields, if any, to expand. | [optional] <br />**Values**: conversation |
 
 ### Return type
 
-[**UserRecording**](UserRecording.html)
+[**UserRecording**](UserRecording)
 
 
-_PureCloudPlatformClientV2 210.0.0_
+_PureCloudPlatformClientV2 211.0.0_

@@ -103,13 +103,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**put_user_station_associatedstation_station_id**](#put_user_station_associatedstation_station_id) | Set associated station|
 |[**put_user_station_defaultstation_station_id**](#put_user_station_defaultstation_station_id) | Set default station|
 |[**put_user_verifier**](#put_user_verifier) | Update a verifier|
-{: class="table table-striped"}
+
 
 
 ## delete_analytics_users_details_job
 
 >  delete_analytics_users_details_job(job_id)
-
 
 
 Delete/cancel an async request
@@ -157,7 +156,6 @@ void (empty response body)
 ## delete_authorization_subject_division_role
 
 >  delete_authorization_subject_division_role(subject_id, division_id, role_id)
-
 
 
 Delete a grant of a role in a division
@@ -211,7 +209,6 @@ void (empty response body)
 >  delete_routing_directroutingbackup_settings_me()
 
 
-
 Delete the user's Direct Routing Backup settings and revert to the Direct Routing Queue default.
 
 Wraps DELETE /api/v2/routing/directroutingbackup/settings/me 
@@ -253,7 +250,6 @@ void (empty response body)
 ## delete_routing_user_directroutingbackup_settings
 
 >  delete_routing_user_directroutingbackup_settings(user_id)
-
 
 
 Delete the user's Direct Routing Backup settings and revert to the Direct Routing Queue default.
@@ -303,7 +299,6 @@ void (empty response body)
 >  delete_routing_user_utilization(user_id)
 
 
-
 Delete the user's max utilization settings and revert to the organization-wide default.
 
 Wraps DELETE /api/v2/routing/users/{userId}/utilization 
@@ -351,13 +346,13 @@ void (empty response body)
 > object** delete_user(user_id)
 
 
-
 Delete user
 
 Wraps DELETE /api/v2/users/{userId} 
 
 Requires ANY permissions: 
 
+* admin
 * directory:user:delete
 * directory:organization:admin
 
@@ -399,7 +394,6 @@ except ApiException as e:
 ## delete_user_routinglanguage
 
 >  delete_user_routinglanguage(user_id, language_id)
-
 
 
 Remove routing language from user
@@ -452,7 +446,6 @@ void (empty response body)
 >  delete_user_routingskill(user_id, skill_id)
 
 
-
 Remove routing skill from user
 
 Wraps DELETE /api/v2/users/{userId}/routingskills/{skillId} 
@@ -502,7 +495,6 @@ void (empty response body)
 >  delete_user_station_associatedstation(user_id)
 
 
-
 Clear associated station
 
 Wraps DELETE /api/v2/users/{userId}/station/associatedstation 
@@ -547,7 +539,6 @@ void (empty response body)
 ## delete_user_station_defaultstation
 
 >  delete_user_station_defaultstation(user_id)
-
 
 
 Clear default station
@@ -596,7 +587,6 @@ void (empty response body)
 ## delete_user_verifier
 
 >  delete_user_verifier(user_id, verifier_id)
-
 
 
 Delete a verifier
@@ -648,7 +638,6 @@ void (empty response body)
 > [**AsyncQueryStatus**](AsyncQueryStatus) get_analytics_users_aggregates_job(job_id)
 
 
-
 Get status for async query for user aggregates
 
 get_analytics_users_aggregates_job is a preview method and is subject to both breaking and non-breaking changes at any time without notice
@@ -691,13 +680,12 @@ except ApiException as e:
 
 ### Return type
 
-[**AsyncQueryStatus**](AsyncQueryStatus.html)
+[**AsyncQueryStatus**](AsyncQueryStatus)
 
 
 ## get_analytics_users_aggregates_job_results
 
 > [**UserAsyncAggregateQueryResponse**](UserAsyncAggregateQueryResponse) get_analytics_users_aggregates_job_results(job_id, cursor=cursor)
-
 
 
 Fetch a page of results for an async aggregates query
@@ -744,13 +732,12 @@ except ApiException as e:
 
 ### Return type
 
-[**UserAsyncAggregateQueryResponse**](UserAsyncAggregateQueryResponse.html)
+[**UserAsyncAggregateQueryResponse**](UserAsyncAggregateQueryResponse)
 
 
 ## get_analytics_users_details_job
 
 > [**AsyncQueryStatus**](AsyncQueryStatus) get_analytics_users_details_job(job_id)
-
 
 
 Get status for async query for user details
@@ -793,13 +780,12 @@ except ApiException as e:
 
 ### Return type
 
-[**AsyncQueryStatus**](AsyncQueryStatus.html)
+[**AsyncQueryStatus**](AsyncQueryStatus)
 
 
 ## get_analytics_users_details_job_results
 
 > [**AnalyticsUserDetailsAsyncQueryResponse**](AnalyticsUserDetailsAsyncQueryResponse) get_analytics_users_details_job_results(job_id, cursor=cursor, page_size=page_size)
-
 
 
 Fetch a page of results for an async query
@@ -846,13 +832,12 @@ except ApiException as e:
 
 ### Return type
 
-[**AnalyticsUserDetailsAsyncQueryResponse**](AnalyticsUserDetailsAsyncQueryResponse.html)
+[**AnalyticsUserDetailsAsyncQueryResponse**](AnalyticsUserDetailsAsyncQueryResponse)
 
 
 ## get_analytics_users_details_jobs_availability
 
 > [**DataAvailabilityResponse**](DataAvailabilityResponse) get_analytics_users_details_jobs_availability()
-
 
 
 Lookup the datalake availability date and time
@@ -891,14 +876,16 @@ This endpoint does not need any parameters.
 
 ### Return type
 
-[**DataAvailabilityResponse**](DataAvailabilityResponse.html)
+[**DataAvailabilityResponse**](DataAvailabilityResponse)
 
 
 ## get_authorization_divisionspermitted_me
 
 > [**list[AuthzDivision]**](AuthzDivision) get_authorization_divisionspermitted_me(permission, name=name)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 Returns which divisions the current user has the given permission in.
 
@@ -943,13 +930,12 @@ except ApiException as e:
 
 ### Return type
 
-[**list[AuthzDivision]**](AuthzDivision.html)
+[**list[AuthzDivision]**](AuthzDivision)
 
 
 ## get_authorization_divisionspermitted_paged_me
 
 > [**DivsPermittedEntityListing**](DivsPermittedEntityListing) get_authorization_divisionspermitted_paged_me(permission, page_number=page_number, page_size=page_size)
-
 
 
 Returns which divisions the current user has the given permission in.
@@ -995,14 +981,16 @@ except ApiException as e:
 
 ### Return type
 
-[**DivsPermittedEntityListing**](DivsPermittedEntityListing.html)
+[**DivsPermittedEntityListing**](DivsPermittedEntityListing)
 
 
 ## get_authorization_divisionspermitted_paged_subject_id
 
 > [**DivsPermittedEntityListing**](DivsPermittedEntityListing) get_authorization_divisionspermitted_paged_subject_id(subject_id, permission, page_number=page_number, page_size=page_size)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 Returns which divisions the specified user has the given permission in.
 
@@ -1051,13 +1039,12 @@ except ApiException as e:
 
 ### Return type
 
-[**DivsPermittedEntityListing**](DivsPermittedEntityListing.html)
+[**DivsPermittedEntityListing**](DivsPermittedEntityListing)
 
 
 ## get_authorization_subject
 
 > [**AuthzSubject**](AuthzSubject) get_authorization_subject(subject_id, include_duplicates=include_duplicates)
-
 
 
 Returns a listing of roles and permissions for a user.
@@ -1102,13 +1089,12 @@ except ApiException as e:
 
 ### Return type
 
-[**AuthzSubject**](AuthzSubject.html)
+[**AuthzSubject**](AuthzSubject)
 
 
 ## get_authorization_subjects_me
 
 > [**AuthzSubject**](AuthzSubject) get_authorization_subjects_me(include_duplicates=include_duplicates)
-
 
 
 Returns a listing of roles and permissions for the currently authenticated user.
@@ -1150,14 +1136,16 @@ except ApiException as e:
 
 ### Return type
 
-[**AuthzSubject**](AuthzSubject.html)
+[**AuthzSubject**](AuthzSubject)
 
 
 ## get_fieldconfig
 
 > [**FieldConfig**](FieldConfig) get_fieldconfig(type)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 Fetch field config for an entity type
 
@@ -1198,14 +1186,16 @@ except ApiException as e:
 
 ### Return type
 
-[**FieldConfig**](FieldConfig.html)
+[**FieldConfig**](FieldConfig)
 
 
 ## get_profiles_users
 
 > [**UserProfileEntityListing**](UserProfileEntityListing) get_profiles_users(page_size=page_size, page_number=page_number, id=id, jid=jid, sort_order=sort_order, expand=expand, integration_presence_source=integration_presence_source)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 Get a user profile listing
 
@@ -1252,21 +1242,20 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
-| **id** | [**list[str]**](str.html)| id | [optional]  |
-| **jid** | [**list[str]**](str.html)| jid | [optional]  |
+| **id** | [**list[str]**](str)| id | [optional]  |
+| **jid** | [**list[str]**](str)| jid | [optional]  |
 | **sort_order** | **str**| Ascending or descending sort order | [optional] [default to &#39;ASC&#39;]<br />**Values**: ascending, descending |
-| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization |
+| **expand** | [**list[str]**](str)| Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization |
 | **integration_presence_source** | **str**| Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an \&quot;expand\&quot;. | [optional] <br />**Values**: MicrosoftTeams, ZoomPhone, EightByEight |
 
 ### Return type
 
-[**UserProfileEntityListing**](UserProfileEntityListing.html)
+[**UserProfileEntityListing**](UserProfileEntityListing)
 
 
 ## get_routing_directroutingbackup_settings_me
 
 > [**AgentDirectRoutingBackupSettings**](AgentDirectRoutingBackupSettings) get_routing_directroutingbackup_settings_me()
-
 
 
 Get the user's Direct Routing Backup settings.
@@ -1305,13 +1294,12 @@ This endpoint does not need any parameters.
 
 ### Return type
 
-[**AgentDirectRoutingBackupSettings**](AgentDirectRoutingBackupSettings.html)
+[**AgentDirectRoutingBackupSettings**](AgentDirectRoutingBackupSettings)
 
 
 ## get_routing_user_directroutingbackup_settings
 
 > [**AgentDirectRoutingBackupSettings**](AgentDirectRoutingBackupSettings) get_routing_user_directroutingbackup_settings(user_id)
-
 
 
 Get the user's Direct Routing Backup settings.
@@ -1354,13 +1342,12 @@ except ApiException as e:
 
 ### Return type
 
-[**AgentDirectRoutingBackupSettings**](AgentDirectRoutingBackupSettings.html)
+[**AgentDirectRoutingBackupSettings**](AgentDirectRoutingBackupSettings)
 
 
 ## get_routing_user_utilization
 
 > [**AgentMaxUtilizationResponse**](AgentMaxUtilizationResponse) get_routing_user_utilization(user_id)
-
 
 
 Get the user's max utilization settings.  If not configured, the organization-wide default is returned.
@@ -1404,13 +1391,12 @@ except ApiException as e:
 
 ### Return type
 
-[**AgentMaxUtilizationResponse**](AgentMaxUtilizationResponse.html)
+[**AgentMaxUtilizationResponse**](AgentMaxUtilizationResponse)
 
 
 ## get_user
 
 > [**User**](User) get_user(user_id, expand=expand, integration_presence_source=integration_presence_source, state=state)
-
 
 
 Get user.
@@ -1452,19 +1438,18 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **user_id** | **str**| User ID |  |
-| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand. Note, expand parameters are resolved with a best effort approach and not guaranteed to be returned. If requested expand information is absolutely required, it&#39;s recommended to use specific API requests instead. | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography, dateLastLogin |
+| **expand** | [**list[str]**](str)| Which fields, if any, to expand. Note, expand parameters are resolved with a best effort approach and not guaranteed to be returned. If requested expand information is absolutely required, it&#39;s recommended to use specific API requests instead. | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography, dateLastLogin |
 | **integration_presence_source** | **str**| Gets an integration presence for a user instead of their default. | [optional] <br />**Values**: MicrosoftTeams, ZoomPhone, EightByEight |
 | **state** | **str**| Search for a user with this state | [optional] [default to &#39;active&#39;]<br />**Values**: active, deleted |
 
 ### Return type
 
-[**User**](User.html)
+[**User**](User)
 
 
 ## get_user_adjacents
 
 > [**Adjacents**](Adjacents) get_user_adjacents(user_id, expand=expand)
-
 
 
 Get adjacents
@@ -1504,17 +1489,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **user_id** | **str**| User ID |  |
-| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography, dateLastLogin |
+| **expand** | [**list[str]**](str)| Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography, dateLastLogin |
 
 ### Return type
 
-[**Adjacents**](Adjacents.html)
+[**Adjacents**](Adjacents)
 
 
 ## get_user_callforwarding
 
 > [**CallForwarding**](CallForwarding) get_user_callforwarding(user_id)
-
 
 
 Get a user's CallForwarding
@@ -1556,13 +1540,12 @@ except ApiException as e:
 
 ### Return type
 
-[**CallForwarding**](CallForwarding.html)
+[**CallForwarding**](CallForwarding)
 
 
 ## get_user_directreports
 
 > [**list[User]**](User) get_user_directreports(user_id, expand=expand)
-
 
 
 Get direct reports
@@ -1602,18 +1585,20 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **user_id** | **str**| User ID |  |
-| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography, dateLastLogin |
+| **expand** | [**list[str]**](str)| Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography, dateLastLogin |
 
 ### Return type
 
-[**list[User]**](User.html)
+[**list[User]**](User)
 
 
 ## get_user_favorites
 
 > [**UserEntityListing**](UserEntityListing) get_user_favorites(user_id, page_size=page_size, page_number=page_number, sort_order=sort_order, expand=expand)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 Deprecated; will be revived with new contract
 
@@ -1658,17 +1643,16 @@ except ApiException as e:
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **sort_order** | **str**| Sort order | [optional] [default to &#39;ASC&#39;] |
-| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography, dateLastLogin |
+| **expand** | [**list[str]**](str)| Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography, dateLastLogin |
 
 ### Return type
 
-[**UserEntityListing**](UserEntityListing.html)
+[**UserEntityListing**](UserEntityListing)
 
 
 ## get_user_geolocation
 
 > [**Geolocation**](Geolocation) get_user_geolocation(user_id, client_id)
-
 
 
 Get a user's Geolocation
@@ -1712,13 +1696,12 @@ except ApiException as e:
 
 ### Return type
 
-[**Geolocation**](Geolocation.html)
+[**Geolocation**](Geolocation)
 
 
 ## get_user_outofoffice
 
 > [**OutOfOffice**](OutOfOffice) get_user_outofoffice(user_id)
-
 
 
 Get a OutOfOffice
@@ -1760,14 +1743,16 @@ except ApiException as e:
 
 ### Return type
 
-[**OutOfOffice**](OutOfOffice.html)
+[**OutOfOffice**](OutOfOffice)
 
 
 ## get_user_profile
 
 > [**UserProfile**](UserProfile) get_user_profile(user_id, expand=expand, integration_presence_source=integration_presence_source)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 Get user profile
 
@@ -1809,18 +1794,17 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **user_id** | **str**| userId |  |
-| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks |
+| **expand** | [**list[str]**](str)| Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks |
 | **integration_presence_source** | **str**| Gets an integration presence for a user instead of their default. | [optional] <br />**Values**: MicrosoftTeams, ZoomPhone, EightByEight |
 
 ### Return type
 
-[**UserProfile**](UserProfile.html)
+[**UserProfile**](UserProfile)
 
 
 ## get_user_profileskills
 
 > list[str]** get_user_profileskills(user_id)
-
 
 
 List profile skills for a user
@@ -1871,7 +1855,6 @@ except ApiException as e:
 > [**UserQueueEntityListing**](UserQueueEntityListing) get_user_queues(user_id, page_size=page_size, page_number=page_number, joined=joined, division_id=division_id)
 
 
-
 Get queues for user
 
 Wraps GET /api/v2/users/{userId}/queues 
@@ -1918,17 +1901,16 @@ except ApiException as e:
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **joined** | **bool**| Is joined to the queue | [optional] [default to True] |
-| **division_id** | [**list[str]**](str.html)| Division ID(s) | [optional]  |
+| **division_id** | [**list[str]**](str)| Division ID(s) | [optional]  |
 
 ### Return type
 
-[**UserQueueEntityListing**](UserQueueEntityListing.html)
+[**UserQueueEntityListing**](UserQueueEntityListing)
 
 
 ## get_user_roles
 
 > [**UserAuthorization**](UserAuthorization) get_user_roles(subject_id)
-
 
 
 Returns a listing of roles and permissions for a user.
@@ -1971,13 +1953,12 @@ except ApiException as e:
 
 ### Return type
 
-[**UserAuthorization**](UserAuthorization.html)
+[**UserAuthorization**](UserAuthorization)
 
 
 ## get_user_routinglanguages
 
 > [**UserLanguageEntityListing**](UserLanguageEntityListing) get_user_routinglanguages(user_id, page_size=page_size, page_number=page_number, sort_order=sort_order)
-
 
 
 List routing language for user
@@ -2025,13 +2006,12 @@ except ApiException as e:
 
 ### Return type
 
-[**UserLanguageEntityListing**](UserLanguageEntityListing.html)
+[**UserLanguageEntityListing**](UserLanguageEntityListing)
 
 
 ## get_user_routingskills
 
 > [**UserSkillEntityListing**](UserSkillEntityListing) get_user_routingskills(user_id, page_size=page_size, page_number=page_number, sort_order=sort_order)
-
 
 
 List routing skills for user
@@ -2079,13 +2059,12 @@ except ApiException as e:
 
 ### Return type
 
-[**UserSkillEntityListing**](UserSkillEntityListing.html)
+[**UserSkillEntityListing**](UserSkillEntityListing)
 
 
 ## get_user_routingstatus
 
 > [**RoutingStatus**](RoutingStatus) get_user_routingstatus(user_id)
-
 
 
 Fetch the routing status of a user
@@ -2127,13 +2106,12 @@ except ApiException as e:
 
 ### Return type
 
-[**RoutingStatus**](RoutingStatus.html)
+[**RoutingStatus**](RoutingStatus)
 
 
 ## get_user_skillgroups
 
 > [**UserSkillGroupEntityListing**](UserSkillGroupEntityListing) get_user_skillgroups(user_id, page_size=page_size, after=after, before=before)
-
 
 
 Get skill groups for a user
@@ -2182,13 +2160,12 @@ except ApiException as e:
 
 ### Return type
 
-[**UserSkillGroupEntityListing**](UserSkillGroupEntityListing.html)
+[**UserSkillGroupEntityListing**](UserSkillGroupEntityListing)
 
 
 ## get_user_state
 
 > [**UserState**](UserState) get_user_state(user_id)
-
 
 
 Get user state information.
@@ -2231,13 +2208,12 @@ except ApiException as e:
 
 ### Return type
 
-[**UserState**](UserState.html)
+[**UserState**](UserState)
 
 
 ## get_user_station
 
 > [**UserStations**](UserStations) get_user_station(user_id)
-
 
 
 Get station information for user
@@ -2279,13 +2255,12 @@ except ApiException as e:
 
 ### Return type
 
-[**UserStations**](UserStations.html)
+[**UserStations**](UserStations)
 
 
 ## get_user_superiors
 
 > [**list[User]**](User) get_user_superiors(user_id, expand=expand)
-
 
 
 Get superiors
@@ -2325,17 +2300,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **user_id** | **str**| User ID |  |
-| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography, dateLastLogin |
+| **expand** | [**list[str]**](str)| Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography, dateLastLogin |
 
 ### Return type
 
-[**list[User]**](User.html)
+[**list[User]**](User)
 
 
 ## get_user_trustors
 
 > [**TrustorEntityListing**](TrustorEntityListing) get_user_trustors(user_id, page_size=page_size, page_number=page_number)
-
 
 
 List the organizations that have authorized/trusted the user.
@@ -2382,13 +2356,12 @@ except ApiException as e:
 
 ### Return type
 
-[**TrustorEntityListing**](TrustorEntityListing.html)
+[**TrustorEntityListing**](TrustorEntityListing)
 
 
 ## get_user_verifiers
 
 > [**VerifierEntityListing**](VerifierEntityListing) get_user_verifiers(user_id)
-
 
 
 Get a list of verifiers
@@ -2431,13 +2404,12 @@ except ApiException as e:
 
 ### Return type
 
-[**VerifierEntityListing**](VerifierEntityListing.html)
+[**VerifierEntityListing**](VerifierEntityListing)
 
 
 ## get_users
 
 > [**UserEntityListing**](UserEntityListing) get_users(page_size=page_size, page_number=page_number, id=id, jabber_id=jabber_id, sort_order=sort_order, expand=expand, integration_presence_source=integration_presence_source, state=state)
-
 
 
 Get the list of available users.
@@ -2484,22 +2456,21 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
-| **id** | [**list[str]**](str.html)| A list of user IDs to fetch by bulk | [optional]  |
-| **jabber_id** | [**list[str]**](str.html)| A list of jabberIds to fetch by bulk (cannot be used with the \&quot;id\&quot; parameter) | [optional]  |
+| **id** | [**list[str]**](str)| A list of user IDs to fetch by bulk | [optional]  |
+| **jabber_id** | [**list[str]**](str)| A list of jabberIds to fetch by bulk (cannot be used with the \&quot;id\&quot; parameter) | [optional]  |
 | **sort_order** | **str**| Ascending or descending sort order | [optional] [default to &#39;ASC&#39;]<br />**Values**: ascending, descending |
-| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand. Note, expand parameters are resolved with a best effort approach and not guaranteed to be returned. If requested expand information is absolutely required, it&#39;s recommended to use specific API requests instead. | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography, dateLastLogin |
+| **expand** | [**list[str]**](str)| Which fields, if any, to expand. Note, expand parameters are resolved with a best effort approach and not guaranteed to be returned. If requested expand information is absolutely required, it&#39;s recommended to use specific API requests instead. | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography, dateLastLogin |
 | **integration_presence_source** | **str**| Gets an integration presence for users instead of their defaults. This parameter will only be used when presence is provided as an \&quot;expand\&quot;. When using this parameter the maximum number of users that can be returned is 100. | [optional] <br />**Values**: MicrosoftTeams, ZoomPhone, EightByEight |
 | **state** | **str**| Only list users of this state | [optional] [default to &#39;active&#39;]<br />**Values**: active, inactive, deleted, any |
 
 ### Return type
 
-[**UserEntityListing**](UserEntityListing.html)
+[**UserEntityListing**](UserEntityListing)
 
 
 ## get_users_development_activities
 
 > [**DevelopmentActivityListing**](DevelopmentActivityListing) get_users_development_activities(user_id=user_id, module_id=module_id, interval=interval, completion_interval=completion_interval, overdue=overdue, pcPass=pcPass, page_size=page_size, page_number=page_number, sort_order=sort_order, types=types, statuses=statuses, relationship=relationship)
-
 
 
 Get list of Development Activities
@@ -2552,7 +2523,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **user_id** | [**list[str]**](str.html)| Specifies the list of user IDs to be queried, up to 100 user IDs. It searches for any relationship for the userId. | [optional]  |
+| **user_id** | [**list[str]**](str)| Specifies the list of user IDs to be queried, up to 100 user IDs. It searches for any relationship for the userId. | [optional]  |
 | **module_id** | **str**| Specifies the ID of the learning module. | [optional]  |
 | **interval** | **str**| Specifies the dateDue range to be queried. Milliseconds will be truncated. A maximum of 1 year can be specified in the range. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss | [optional]  |
 | **completion_interval** | **str**| Specifies the range of completion dates to be used for filtering. A maximum of 1 year can be specified in the range. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss | [optional]  |
@@ -2561,19 +2532,18 @@ except ApiException as e:
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **sort_order** | **str**| Specifies result set sort order sorted by the date due; if not specified, default sort order is descending (Desc) | [optional] [default to &#39;Desc&#39;]<br />**Values**: Asc, Desc |
-| **types** | [**list[str]**](str.html)| Specifies the activity types. Informational, AssessedContent and Assessment are deprecated | [optional] <br />**Values**: Informational, Coaching, AssessedContent, Assessment, External, Native |
-| **statuses** | [**list[str]**](str.html)| Specifies the activity statuses to filter by | [optional] <br />**Values**: Planned, InProgress, Completed, InvalidSchedule, NotCompleted |
-| **relationship** | [**list[str]**](str.html)| Specifies how the current user relation should be interpreted, and filters the activities returned to only the activities that have the specified relationship. If a value besides Attendee is specified, it will only return Coaching Appointments. If not specified, no filtering is applied. | [optional] <br />**Values**: Creator, Facilitator, Attendee |
+| **types** | [**list[str]**](str)| Specifies the activity types. Informational, AssessedContent and Assessment are deprecated | [optional] <br />**Values**: Informational, Coaching, AssessedContent, Assessment, External, Native |
+| **statuses** | [**list[str]**](str)| Specifies the activity statuses to filter by | [optional] <br />**Values**: Planned, InProgress, Completed, InvalidSchedule, NotCompleted |
+| **relationship** | [**list[str]**](str)| Specifies how the current user relation should be interpreted, and filters the activities returned to only the activities that have the specified relationship. If a value besides Attendee is specified, it will only return Coaching Appointments. If not specified, no filtering is applied. | [optional] <br />**Values**: Creator, Facilitator, Attendee |
 
 ### Return type
 
-[**DevelopmentActivityListing**](DevelopmentActivityListing.html)
+[**DevelopmentActivityListing**](DevelopmentActivityListing)
 
 
 ## get_users_development_activities_me
 
 > [**DevelopmentActivityListing**](DevelopmentActivityListing) get_users_development_activities_me(module_id=module_id, interval=interval, completion_interval=completion_interval, overdue=overdue, pcPass=pcPass, page_size=page_size, page_number=page_number, sort_order=sort_order, types=types, statuses=statuses, relationship=relationship)
-
 
 
 Get list of Development Activities for current user
@@ -2631,19 +2601,18 @@ except ApiException as e:
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **sort_order** | **str**| Specifies result set sort order sorted by the date due; if not specified, default sort order is descending (Desc) | [optional] [default to &#39;Desc&#39;]<br />**Values**: Asc, Desc |
-| **types** | [**list[str]**](str.html)| Specifies the activity types. Informational, AssessedContent and Assessment are deprecated | [optional] <br />**Values**: Informational, Coaching, AssessedContent, Assessment, External, Native |
-| **statuses** | [**list[str]**](str.html)| Specifies the activity statuses to filter by | [optional] <br />**Values**: Planned, InProgress, Completed, InvalidSchedule, NotCompleted |
-| **relationship** | [**list[str]**](str.html)| Specifies how the current user relation should be interpreted, and filters the activities returned to only the activities that have the specified relationship. If a value besides Attendee is specified, it will only return Coaching Appointments. If not specified, no filtering is applied. | [optional] <br />**Values**: Creator, Facilitator, Attendee |
+| **types** | [**list[str]**](str)| Specifies the activity types. Informational, AssessedContent and Assessment are deprecated | [optional] <br />**Values**: Informational, Coaching, AssessedContent, Assessment, External, Native |
+| **statuses** | [**list[str]**](str)| Specifies the activity statuses to filter by | [optional] <br />**Values**: Planned, InProgress, Completed, InvalidSchedule, NotCompleted |
+| **relationship** | [**list[str]**](str)| Specifies how the current user relation should be interpreted, and filters the activities returned to only the activities that have the specified relationship. If a value besides Attendee is specified, it will only return Coaching Appointments. If not specified, no filtering is applied. | [optional] <br />**Values**: Creator, Facilitator, Attendee |
 
 ### Return type
 
-[**DevelopmentActivityListing**](DevelopmentActivityListing.html)
+[**DevelopmentActivityListing**](DevelopmentActivityListing)
 
 
 ## get_users_development_activity
 
 > [**DevelopmentActivity**](DevelopmentActivity) get_users_development_activity(activity_id, type)
-
 
 
 Get a Development Activity
@@ -2691,13 +2660,12 @@ except ApiException as e:
 
 ### Return type
 
-[**DevelopmentActivity**](DevelopmentActivity.html)
+[**DevelopmentActivity**](DevelopmentActivity)
 
 
 ## get_users_me
 
 > [**UserMe**](UserMe) get_users_me(expand=expand, integration_presence_source=integration_presence_source)
-
 
 
 Get current user details.
@@ -2738,18 +2706,17 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand. | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography, dateLastLogin, date, geolocationsettings, organization, presencedefinitions, divisionedpresencedefinitions, locationdefinitions, orgauthorization, orgproducts, favorites, superiors, directreports, adjacents, routingskills, routinglanguages, fieldconfigs, token, trustors, logCapture |
+| **expand** | [**list[str]**](str)| Which fields, if any, to expand. | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography, dateLastLogin, date, geolocationsettings, organization, presencedefinitions, divisionedpresencedefinitions, locationdefinitions, orgauthorization, orgproducts, favorites, superiors, directreports, adjacents, routingskills, routinglanguages, fieldconfigs, token, trustors, logCapture |
 | **integration_presence_source** | **str**| Get your presence for a given integration. This parameter will only be used when presence is provided as an \&quot;expand\&quot;. | [optional] <br />**Values**: MicrosoftTeams, ZoomPhone, EightByEight |
 
 ### Return type
 
-[**UserMe**](UserMe.html)
+[**UserMe**](UserMe)
 
 
 ## get_users_search
 
 > [**UsersSearchResponse**](UsersSearchResponse) get_users_search(q64, expand=expand, integration_presence_source=integration_presence_source)
-
 
 
 Search users using the q64 value returned from a previous search
@@ -2791,18 +2758,17 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **q64** | **str**| q64 |  |
-| **expand** | [**list[str]**](str.html)| expand | [optional]  |
+| **expand** | [**list[str]**](str)| expand | [optional]  |
 | **integration_presence_source** | **str**| integrationPresenceSource | [optional] <br />**Values**: MicrosoftTeams, ZoomPhone, EightByEight |
 
 ### Return type
 
-[**UsersSearchResponse**](UsersSearchResponse.html)
+[**UsersSearchResponse**](UsersSearchResponse)
 
 
 ## patch_user
 
 > [**User**](User) patch_user(user_id, body)
-
 
 
 Update user
@@ -2811,6 +2777,7 @@ Wraps PATCH /api/v2/users/{userId}
 
 Requires ANY permissions: 
 
+* admin
 * directory:user:edit
 * directory:organization:admin
 
@@ -2844,17 +2811,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **user_id** | **str**| User ID |  |
-| **body** | [**UpdateUser**](UpdateUser.html)| User |  |
+| **body** | [**UpdateUser**](UpdateUser)| User |  |
 
 ### Return type
 
-[**User**](User.html)
+[**User**](User)
 
 
 ## patch_user_callforwarding
 
 > [**CallForwarding**](CallForwarding) patch_user_callforwarding(user_id, body)
-
 
 
 Patch a user's CallForwarding
@@ -2895,17 +2861,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **user_id** | **str**| User ID |  |
-| **body** | [**CallForwarding**](CallForwarding.html)| Call forwarding |  |
+| **body** | [**CallForwarding**](CallForwarding)| Call forwarding |  |
 
 ### Return type
 
-[**CallForwarding**](CallForwarding.html)
+[**CallForwarding**](CallForwarding)
 
 
 ## patch_user_geolocation
 
 > [**Geolocation**](Geolocation) patch_user_geolocation(user_id, client_id, body)
-
 
 
 Patch a user's Geolocation
@@ -2949,17 +2914,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **user_id** | **str**| user Id |  |
 | **client_id** | **str**| client Id |  |
-| **body** | [**Geolocation**](Geolocation.html)| Geolocation |  |
+| **body** | [**Geolocation**](Geolocation)| Geolocation |  |
 
 ### Return type
 
-[**Geolocation**](Geolocation.html)
+[**Geolocation**](Geolocation)
 
 
 ## patch_user_queue
 
 > [**UserQueue**](UserQueue) patch_user_queue(queue_id, user_id, body)
-
 
 
 Join or unjoin a queue for a user
@@ -3003,17 +2967,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **queue_id** | **str**| Queue ID |  |
 | **user_id** | **str**| User ID |  |
-| **body** | [**UserQueue**](UserQueue.html)| Queue Member |  |
+| **body** | [**UserQueue**](UserQueue)| Queue Member |  |
 
 ### Return type
 
-[**UserQueue**](UserQueue.html)
+[**UserQueue**](UserQueue)
 
 
 ## patch_user_queues
 
 > [**UserQueueEntityListing**](UserQueueEntityListing) patch_user_queues(user_id, body, division_id=division_id)
-
 
 
 Join or unjoin a set of queues for a user
@@ -3056,18 +3019,17 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **user_id** | **str**| User ID |  |
-| **body** | [**list[UserQueue]**](UserQueue.html)| User Queues |  |
-| **division_id** | [**list[str]**](str.html)| Division ID(s) | [optional]  |
+| **body** | [**list[UserQueue]**](UserQueue)| User Queues |  |
+| **division_id** | [**list[str]**](str)| Division ID(s) | [optional]  |
 
 ### Return type
 
-[**UserQueueEntityListing**](UserQueueEntityListing.html)
+[**UserQueueEntityListing**](UserQueueEntityListing)
 
 
 ## patch_user_routinglanguage
 
 > [**UserRoutingLanguage**](UserRoutingLanguage) patch_user_routinglanguage(user_id, language_id, body)
-
 
 
 Update routing language proficiency or state.
@@ -3111,17 +3073,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **user_id** | **str**| User ID |  |
 | **language_id** | **str**| languageId |  |
-| **body** | [**UserRoutingLanguage**](UserRoutingLanguage.html)| Language |  |
+| **body** | [**UserRoutingLanguage**](UserRoutingLanguage)| Language |  |
 
 ### Return type
 
-[**UserRoutingLanguage**](UserRoutingLanguage.html)
+[**UserRoutingLanguage**](UserRoutingLanguage)
 
 
 ## patch_user_routinglanguages_bulk
 
 > [**UserLanguageEntityListing**](UserLanguageEntityListing) patch_user_routinglanguages_bulk(user_id, body)
-
 
 
 Add bulk routing language to user. Max limit 50 languages
@@ -3163,17 +3124,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **user_id** | **str**| User ID |  |
-| **body** | [**list[UserRoutingLanguagePost]**](UserRoutingLanguagePost.html)| Language |  |
+| **body** | [**list[UserRoutingLanguagePost]**](UserRoutingLanguagePost)| Language |  |
 
 ### Return type
 
-[**UserLanguageEntityListing**](UserLanguageEntityListing.html)
+[**UserLanguageEntityListing**](UserLanguageEntityListing)
 
 
 ## patch_user_routingskills_bulk
 
 > [**UserSkillEntityListing**](UserSkillEntityListing) patch_user_routingskills_bulk(user_id, body)
-
 
 
 Bulk add routing skills to user
@@ -3214,17 +3174,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **user_id** | **str**| User ID |  |
-| **body** | [**list[UserRoutingSkillPost]**](UserRoutingSkillPost.html)| Skill |  |
+| **body** | [**list[UserRoutingSkillPost]**](UserRoutingSkillPost)| Skill |  |
 
 ### Return type
 
-[**UserSkillEntityListing**](UserSkillEntityListing.html)
+[**UserSkillEntityListing**](UserSkillEntityListing)
 
 
 ## patch_users_bulk
 
 > [**UserEntityListing**](UserEntityListing) patch_users_bulk(body)
-
 
 
 Update bulk acd autoanswer on users. Max 50 users can be updated at a time.
@@ -3264,17 +3223,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**list[PatchUser]**](PatchUser.html)| Users |  |
+| **body** | [**list[PatchUser]**](PatchUser)| Users |  |
 
 ### Return type
 
-[**UserEntityListing**](UserEntityListing.html)
+[**UserEntityListing**](UserEntityListing)
 
 
 ## post_analytics_users_activity_query
 
 > [**UserActivityResponse**](UserActivityResponse) post_analytics_users_activity_query(body, page_size=page_size, page_number=page_number)
-
 
 
 Query for user activity observations
@@ -3315,19 +3273,18 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**UserActivityQuery**](UserActivityQuery.html)| query |  |
+| **body** | [**UserActivityQuery**](UserActivityQuery)| query |  |
 | **page_size** | **int**| The desired page size | [optional]  |
 | **page_number** | **int**| The desired page number | [optional]  |
 
 ### Return type
 
-[**UserActivityResponse**](UserActivityResponse.html)
+[**UserActivityResponse**](UserActivityResponse)
 
 
 ## post_analytics_users_aggregates_jobs
 
 > [**AsyncQueryResponse**](AsyncQueryResponse) post_analytics_users_aggregates_jobs(body)
-
 
 
 Query for user aggregates asynchronously
@@ -3368,17 +3325,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**UserAsyncAggregationQuery**](UserAsyncAggregationQuery.html)| query |  |
+| **body** | [**UserAsyncAggregationQuery**](UserAsyncAggregationQuery)| query |  |
 
 ### Return type
 
-[**AsyncQueryResponse**](AsyncQueryResponse.html)
+[**AsyncQueryResponse**](AsyncQueryResponse)
 
 
 ## post_analytics_users_aggregates_query
 
 > [**UserAggregateQueryResponse**](UserAggregateQueryResponse) post_analytics_users_aggregates_query(body)
-
 
 
 Query for user aggregates
@@ -3417,17 +3373,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**UserAggregationQuery**](UserAggregationQuery.html)| query |  |
+| **body** | [**UserAggregationQuery**](UserAggregationQuery)| query |  |
 
 ### Return type
 
-[**UserAggregateQueryResponse**](UserAggregateQueryResponse.html)
+[**UserAggregateQueryResponse**](UserAggregateQueryResponse)
 
 
 ## post_analytics_users_details_jobs
 
 > [**AsyncQueryResponse**](AsyncQueryResponse) post_analytics_users_details_jobs(body)
-
 
 
 Query for user details asynchronously
@@ -3466,17 +3421,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**AsyncUserDetailsQuery**](AsyncUserDetailsQuery.html)| query |  |
+| **body** | [**AsyncUserDetailsQuery**](AsyncUserDetailsQuery)| query |  |
 
 ### Return type
 
-[**AsyncQueryResponse**](AsyncQueryResponse.html)
+[**AsyncQueryResponse**](AsyncQueryResponse)
 
 
 ## post_analytics_users_details_query
 
 > [**AnalyticsUserDetailsQueryResponse**](AnalyticsUserDetailsQueryResponse) post_analytics_users_details_query(body)
-
 
 
 Query for user details
@@ -3515,17 +3469,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**UserDetailsQuery**](UserDetailsQuery.html)| query |  |
+| **body** | [**UserDetailsQuery**](UserDetailsQuery)| query |  |
 
 ### Return type
 
-[**AnalyticsUserDetailsQueryResponse**](AnalyticsUserDetailsQueryResponse.html)
+[**AnalyticsUserDetailsQueryResponse**](AnalyticsUserDetailsQueryResponse)
 
 
 ## post_analytics_users_observations_query
 
 > [**UserObservationQueryResponse**](UserObservationQueryResponse) post_analytics_users_observations_query(body)
-
 
 
 Query for user observations
@@ -3564,17 +3517,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**UserObservationQuery**](UserObservationQuery.html)| query |  |
+| **body** | [**UserObservationQuery**](UserObservationQuery)| query |  |
 
 ### Return type
 
-[**UserObservationQueryResponse**](UserObservationQueryResponse.html)
+[**UserObservationQueryResponse**](UserObservationQueryResponse)
 
 
 ## post_authorization_subject_bulkadd
 
 >  post_authorization_subject_bulkadd(subject_id, body, subject_type=subject_type)
-
 
 
 Bulk-grant roles and divisions to a subject.
@@ -3615,7 +3567,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **subject_id** | **str**| Subject ID (user or group) |  |
-| **body** | [**RoleDivisionGrants**](RoleDivisionGrants.html)| Pairs of role and division IDs |  |
+| **body** | [**RoleDivisionGrants**](RoleDivisionGrants)| Pairs of role and division IDs |  |
 | **subject_type** | **str**| what the type of the subject is (PC_GROUP, PC_USER or PC_OAUTH_CLIENT) | [optional] [default to &#39;PC_USER&#39;] |
 
 ### Return type
@@ -3626,7 +3578,6 @@ void (empty response body)
 ## post_authorization_subject_bulkremove
 
 >  post_authorization_subject_bulkremove(subject_id, body)
-
 
 
 Bulk-remove grants from a subject.
@@ -3666,7 +3617,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **subject_id** | **str**| Subject ID (user or group) |  |
-| **body** | [**RoleDivisionGrants**](RoleDivisionGrants.html)| Pairs of role and division IDs |  |
+| **body** | [**RoleDivisionGrants**](RoleDivisionGrants)| Pairs of role and division IDs |  |
 
 ### Return type
 
@@ -3676,7 +3627,6 @@ void (empty response body)
 ## post_authorization_subject_bulkreplace
 
 >  post_authorization_subject_bulkreplace(subject_id, body, subject_type=subject_type)
-
 
 
 Replace subject's roles and divisions with the exact list supplied in the request.
@@ -3720,7 +3670,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **subject_id** | **str**| Subject ID (user or group) |  |
-| **body** | [**RoleDivisionGrants**](RoleDivisionGrants.html)| Pairs of role and division IDs |  |
+| **body** | [**RoleDivisionGrants**](RoleDivisionGrants)| Pairs of role and division IDs |  |
 | **subject_type** | **str**| what the type of the subject is (PC_GROUP, PC_USER or PC_OAUTH_CLIENT) | [optional] [default to &#39;PC_USER&#39;] |
 
 ### Return type
@@ -3731,7 +3681,6 @@ void (empty response body)
 ## post_authorization_subject_division_role
 
 >  post_authorization_subject_division_role(subject_id, division_id, role_id, subject_type=subject_type)
-
 
 
 Make a grant of a role in a division
@@ -3787,7 +3736,6 @@ void (empty response body)
 > [**list[UserExternalIdentifier]**](UserExternalIdentifier) post_user_externalid(user_id, body)
 
 
-
 Create mapping between external identifier and user. Limit 100 per entity.
 
 Authority Name and External key are case sensitive.
@@ -3828,17 +3776,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **user_id** | **str**| User ID |  |
-| **body** | [**UserExternalIdentifier**](UserExternalIdentifier.html)|  |  |
+| **body** | [**UserExternalIdentifier**](UserExternalIdentifier)|  |  |
 
 ### Return type
 
-[**list[UserExternalIdentifier]**](UserExternalIdentifier.html)
+[**list[UserExternalIdentifier]**](UserExternalIdentifier)
 
 
 ## post_user_invite
 
 >  post_user_invite(user_id, force=force)
-
 
 
 Send an activation email to the user
@@ -3847,6 +3794,7 @@ Wraps POST /api/v2/users/{userId}/invite
 
 Requires ANY permissions: 
 
+* admin
 * directory:organization:admin
 * directory:userPassword:edit
 
@@ -3891,7 +3839,6 @@ void (empty response body)
 >  post_user_password(user_id, body)
 
 
-
 Change a users password
 
 Wraps POST /api/v2/users/{userId}/password 
@@ -3929,7 +3876,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **user_id** | **str**| User ID |  |
-| **body** | [**ChangePasswordRequest**](ChangePasswordRequest.html)| Password |  |
+| **body** | [**ChangePasswordRequest**](ChangePasswordRequest)| Password |  |
 
 ### Return type
 
@@ -3939,7 +3886,6 @@ void (empty response body)
 ## post_user_routinglanguages
 
 > [**UserRoutingLanguage**](UserRoutingLanguage) post_user_routinglanguages(user_id, body)
-
 
 
 Add routing language to user
@@ -3981,17 +3927,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **user_id** | **str**| User ID |  |
-| **body** | [**UserRoutingLanguagePost**](UserRoutingLanguagePost.html)| Language |  |
+| **body** | [**UserRoutingLanguagePost**](UserRoutingLanguagePost)| Language |  |
 
 ### Return type
 
-[**UserRoutingLanguage**](UserRoutingLanguage.html)
+[**UserRoutingLanguage**](UserRoutingLanguage)
 
 
 ## post_user_routingskills
 
 > [**UserRoutingSkill**](UserRoutingSkill) post_user_routingskills(user_id, body)
-
 
 
 Add routing skill to user
@@ -4032,17 +3977,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **user_id** | **str**| User ID |  |
-| **body** | [**UserRoutingSkillPost**](UserRoutingSkillPost.html)| Skill |  |
+| **body** | [**UserRoutingSkillPost**](UserRoutingSkillPost)| Skill |  |
 
 ### Return type
 
-[**UserRoutingSkill**](UserRoutingSkill.html)
+[**UserRoutingSkill**](UserRoutingSkill)
 
 
 ## post_users
 
 > [**User**](User) post_users(body)
-
 
 
 Create user
@@ -4083,17 +4027,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**CreateUser**](CreateUser.html)| User |  |
+| **body** | [**CreateUser**](CreateUser)| User |  |
 
 ### Return type
 
-[**User**](User.html)
+[**User**](User)
 
 
 ## post_users_development_activities_aggregates_query
 
 > [**DevelopmentActivityAggregateResponse**](DevelopmentActivityAggregateResponse) post_users_development_activities_aggregates_query(body)
-
 
 
 Retrieve aggregated development activity data
@@ -4135,17 +4078,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**DevelopmentActivityAggregateParam**](DevelopmentActivityAggregateParam.html)| Aggregate Request |  |
+| **body** | [**DevelopmentActivityAggregateParam**](DevelopmentActivityAggregateParam)| Aggregate Request |  |
 
 ### Return type
 
-[**DevelopmentActivityAggregateResponse**](DevelopmentActivityAggregateResponse.html)
+[**DevelopmentActivityAggregateResponse**](DevelopmentActivityAggregateResponse)
 
 
 ## post_users_me_password
 
 >  post_users_me_password(body)
-
 
 
 Change your password
@@ -4182,7 +4124,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**ChangeMyPasswordRequest**](ChangeMyPasswordRequest.html)| Password |  |
+| **body** | [**ChangeMyPasswordRequest**](ChangeMyPasswordRequest)| Password |  |
 
 ### Return type
 
@@ -4192,7 +4134,6 @@ void (empty response body)
 ## post_users_search
 
 > [**UsersSearchResponse**](UsersSearchResponse) post_users_search(body)
-
 
 
 Search users
@@ -4231,17 +4172,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**UserSearchRequest**](UserSearchRequest.html)| Search request options |  |
+| **body** | [**UserSearchRequest**](UserSearchRequest)| Search request options |  |
 
 ### Return type
 
-[**UsersSearchResponse**](UsersSearchResponse.html)
+[**UsersSearchResponse**](UsersSearchResponse)
 
 
 ## post_users_search_conversation_target
 
 > [**UsersSearchResponse**](UsersSearchResponse) post_users_search_conversation_target(body)
-
 
 
 Search users as conversation targets
@@ -4282,17 +4222,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**UserSearchRequest**](UserSearchRequest.html)| Search request options |  |
+| **body** | [**UserSearchRequest**](UserSearchRequest)| Search request options |  |
 
 ### Return type
 
-[**UsersSearchResponse**](UsersSearchResponse.html)
+[**UsersSearchResponse**](UsersSearchResponse)
 
 
 ## post_users_search_queuemembers_manage
 
 > [**UsersSearchResponse**](UsersSearchResponse) post_users_search_queuemembers_manage(body)
-
 
 
 Search manage queue member
@@ -4334,17 +4273,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**UserSearchRequest**](UserSearchRequest.html)| Search request options |  |
+| **body** | [**UserSearchRequest**](UserSearchRequest)| Search request options |  |
 
 ### Return type
 
-[**UsersSearchResponse**](UsersSearchResponse.html)
+[**UsersSearchResponse**](UsersSearchResponse)
 
 
 ## post_users_search_teams_assign
 
 > [**UsersSearchResponse**](UsersSearchResponse) post_users_search_teams_assign(body)
-
 
 
 Search users assigned to teams
@@ -4383,17 +4321,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**UserSearchRequest**](UserSearchRequest.html)| Search request options |  |
+| **body** | [**UserSearchRequest**](UserSearchRequest)| Search request options |  |
 
 ### Return type
 
-[**UsersSearchResponse**](UsersSearchResponse.html)
+[**UsersSearchResponse**](UsersSearchResponse)
 
 
 ## put_routing_directroutingbackup_settings_me
 
 > [**AgentDirectRoutingBackupSettings**](AgentDirectRoutingBackupSettings) put_routing_directroutingbackup_settings_me(body)
-
 
 
 Update the user's Direct Routing Backup settings.
@@ -4432,17 +4369,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**AgentDirectRoutingBackupSettings**](AgentDirectRoutingBackupSettings.html)| directRoutingBackup |  |
+| **body** | [**AgentDirectRoutingBackupSettings**](AgentDirectRoutingBackupSettings)| directRoutingBackup |  |
 
 ### Return type
 
-[**AgentDirectRoutingBackupSettings**](AgentDirectRoutingBackupSettings.html)
+[**AgentDirectRoutingBackupSettings**](AgentDirectRoutingBackupSettings)
 
 
 ## put_routing_user_directroutingbackup_settings
 
 > [**AgentDirectRoutingBackupSettings**](AgentDirectRoutingBackupSettings) put_routing_user_directroutingbackup_settings(user_id, body)
-
 
 
 Update the user's Direct Routing Backup settings.
@@ -4483,17 +4419,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **user_id** | **str**| User ID |  |
-| **body** | [**AgentDirectRoutingBackupSettings**](AgentDirectRoutingBackupSettings.html)| directRoutingBackup |  |
+| **body** | [**AgentDirectRoutingBackupSettings**](AgentDirectRoutingBackupSettings)| directRoutingBackup |  |
 
 ### Return type
 
-[**AgentDirectRoutingBackupSettings**](AgentDirectRoutingBackupSettings.html)
+[**AgentDirectRoutingBackupSettings**](AgentDirectRoutingBackupSettings)
 
 
 ## put_routing_user_utilization
 
 > [**AgentMaxUtilizationResponse**](AgentMaxUtilizationResponse) put_routing_user_utilization(user_id, body)
-
 
 
 Update the user's max utilization settings.  Include only those media types requiring custom configuration.
@@ -4534,17 +4469,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **user_id** | **str**| User ID |  |
-| **body** | [**UtilizationRequest**](UtilizationRequest.html)| utilization |  |
+| **body** | [**UtilizationRequest**](UtilizationRequest)| utilization |  |
 
 ### Return type
 
-[**AgentMaxUtilizationResponse**](AgentMaxUtilizationResponse.html)
+[**AgentMaxUtilizationResponse**](AgentMaxUtilizationResponse)
 
 
 ## put_user_callforwarding
 
 > [**CallForwarding**](CallForwarding) put_user_callforwarding(user_id, body)
-
 
 
 Update a user's CallForwarding
@@ -4585,17 +4519,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **user_id** | **str**| User ID |  |
-| **body** | [**CallForwarding**](CallForwarding.html)| Call forwarding |  |
+| **body** | [**CallForwarding**](CallForwarding)| Call forwarding |  |
 
 ### Return type
 
-[**CallForwarding**](CallForwarding.html)
+[**CallForwarding**](CallForwarding)
 
 
 ## put_user_outofoffice
 
 > [**OutOfOffice**](OutOfOffice) put_user_outofoffice(user_id, body)
-
 
 
 Update an OutOfOffice
@@ -4635,17 +4568,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **user_id** | **str**| User ID |  |
-| **body** | [**OutOfOffice**](OutOfOffice.html)| The updated OutOffOffice |  |
+| **body** | [**OutOfOffice**](OutOfOffice)| The updated OutOffOffice |  |
 
 ### Return type
 
-[**OutOfOffice**](OutOfOffice.html)
+[**OutOfOffice**](OutOfOffice)
 
 
 ## put_user_profileskills
 
 > list[str]** put_user_profileskills(user_id, body)
-
 
 
 Update profile skills for a user
@@ -4686,7 +4618,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **user_id** | **str**| User ID |  |
-| **body** | [**list[str]**](str.html)| Skills |  |
+| **body** | [**list[str]**](str)| Skills |  |
 
 ### Return type
 
@@ -4696,7 +4628,6 @@ except ApiException as e:
 ## put_user_roles
 
 > [**UserAuthorization**](UserAuthorization) put_user_roles(subject_id, body)
-
 
 
 Sets the user's roles
@@ -4737,17 +4668,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **subject_id** | **str**| User ID |  |
-| **body** | [**list[str]**](str.html)| List of roles |  |
+| **body** | [**list[str]**](str)| List of roles |  |
 
 ### Return type
 
-[**UserAuthorization**](UserAuthorization.html)
+[**UserAuthorization**](UserAuthorization)
 
 
 ## put_user_routingskill
 
 > [**UserRoutingSkill**](UserRoutingSkill) put_user_routingskill(user_id, skill_id, body)
-
 
 
 Update routing skill proficiency or state.
@@ -4790,17 +4720,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **user_id** | **str**| User ID |  |
 | **skill_id** | **str**| skillId |  |
-| **body** | [**UserRoutingSkill**](UserRoutingSkill.html)| Skill |  |
+| **body** | [**UserRoutingSkill**](UserRoutingSkill)| Skill |  |
 
 ### Return type
 
-[**UserRoutingSkill**](UserRoutingSkill.html)
+[**UserRoutingSkill**](UserRoutingSkill)
 
 
 ## put_user_routingskills_bulk
 
 > [**UserSkillEntityListing**](UserSkillEntityListing) put_user_routingskills_bulk(user_id, body)
-
 
 
 Replace all routing skills assigned to a user
@@ -4841,17 +4770,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **user_id** | **str**| User ID |  |
-| **body** | [**list[UserRoutingSkillPost]**](UserRoutingSkillPost.html)| Skill |  |
+| **body** | [**list[UserRoutingSkillPost]**](UserRoutingSkillPost)| Skill |  |
 
 ### Return type
 
-[**UserSkillEntityListing**](UserSkillEntityListing.html)
+[**UserSkillEntityListing**](UserSkillEntityListing)
 
 
 ## put_user_routingstatus
 
 > [**RoutingStatus**](RoutingStatus) put_user_routingstatus(user_id, body)
-
 
 
 Update the routing status of a user
@@ -4891,17 +4819,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **user_id** | **str**| User ID |  |
-| **body** | [**RoutingStatus**](RoutingStatus.html)| Routing Status |  |
+| **body** | [**RoutingStatus**](RoutingStatus)| Routing Status |  |
 
 ### Return type
 
-[**RoutingStatus**](RoutingStatus.html)
+[**RoutingStatus**](RoutingStatus)
 
 
 ## put_user_state
 
 > [**UserState**](UserState) put_user_state(user_id, body)
-
 
 
 Update user state information.
@@ -4942,17 +4869,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **user_id** | **str**| User ID |  |
-| **body** | [**UserState**](UserState.html)| User |  |
+| **body** | [**UserState**](UserState)| User |  |
 
 ### Return type
 
-[**UserState**](UserState.html)
+[**UserState**](UserState)
 
 
 ## put_user_station_associatedstation_station_id
 
 >  put_user_station_associatedstation_station_id(user_id, station_id)
-
 
 
 Set associated station
@@ -5001,7 +4927,6 @@ void (empty response body)
 ## put_user_station_defaultstation_station_id
 
 >  put_user_station_defaultstation_station_id(user_id, station_id)
-
 
 
 Set default station
@@ -5054,7 +4979,6 @@ void (empty response body)
 > [**Verifier**](Verifier) put_user_verifier(user_id, verifier_id, body)
 
 
-
 Update a verifier
 
 Wraps PUT /api/v2/users/{userId}/verifiers/{verifierId} 
@@ -5095,11 +5019,11 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **user_id** | **str**| User ID |  |
 | **verifier_id** | **str**| Verifier ID |  |
-| **body** | [**UpdateVerifierRequest**](UpdateVerifierRequest.html)| Verifier Update |  |
+| **body** | [**UpdateVerifierRequest**](UpdateVerifierRequest)| Verifier Update |  |
 
 ### Return type
 
-[**Verifier**](Verifier.html)
+[**Verifier**](Verifier)
 
 
-_PureCloudPlatformClientV2 210.0.0_
+_PureCloudPlatformClientV2 211.0.0_

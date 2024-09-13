@@ -243,13 +243,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**put_conversations_screenshare_recordingstate**](#put_conversations_screenshare_recordingstate) | Update a conversation by setting its recording state|
 |[**put_conversations_social_recordingstate**](#put_conversations_social_recordingstate) | Update a conversation by setting its recording state|
 |[**put_conversations_video_recordingstate**](#put_conversations_video_recordingstate) | Update a conversation by setting its recording state|
-{: class="table table-striped"}
+
 
 
 ## delete_analytics_conversations_details_job
 
 >  delete_analytics_conversations_details_job(job_id)
-
 
 
 Delete/cancel an async details job
@@ -298,7 +297,6 @@ void (empty response body)
 ## delete_conversation_participant_code
 
 >  delete_conversation_participant_code(conversation_id, participant_id, add_communication_code)
-
 
 
 Delete a code used to add a communication to this participant
@@ -351,7 +349,6 @@ void (empty response body)
 >  delete_conversation_participant_flaggedreason(conversation_id, participant_id)
 
 
-
 Remove flagged reason from conversation participant.
 
 Wraps DELETE /api/v2/conversations/{conversationId}/participants/{participantId}/flaggedreason 
@@ -398,7 +395,6 @@ void (empty response body)
 ## delete_conversations_call_participant_consult
 
 >  delete_conversations_call_participant_consult(conversation_id, participant_id)
-
 
 
 Cancel the transfer
@@ -449,7 +445,6 @@ void (empty response body)
 >  delete_conversations_email_messages_draft_attachment(conversation_id, attachment_id)
 
 
-
 Delete attachment from draft
 
 Wraps DELETE /api/v2/conversations/emails/{conversationId}/messages/draft/attachments/{attachmentId} 
@@ -496,7 +491,6 @@ void (empty response body)
 ## delete_conversations_messages_cachedmedia_cached_media_item_id
 
 >  delete_conversations_messages_cachedmedia_cached_media_item_id(cached_media_item_id)
-
 
 
 Remove a cached media item asychronously
@@ -546,7 +540,6 @@ void (empty response body)
 >  delete_conversations_messaging_integrations_facebook_integration_id(integration_id)
 
 
-
 Delete a Facebook messaging integration
 
 Wraps DELETE /api/v2/conversations/messaging/integrations/facebook/{integrationId} 
@@ -594,7 +587,6 @@ void (empty response body)
 >  delete_conversations_messaging_integrations_instagram_integration_id(integration_id)
 
 
-
 Delete Instagram messaging integration
 
 Wraps DELETE /api/v2/conversations/messaging/integrations/instagram/{integrationId} 
@@ -640,7 +632,6 @@ void (empty response body)
 ## delete_conversations_messaging_integrations_open_integration_id
 
 >  delete_conversations_messaging_integrations_open_integration_id(integration_id)
-
 
 
 Delete an Open messaging integration
@@ -692,7 +683,6 @@ void (empty response body)
 > [**WhatsAppIntegration**](WhatsAppIntegration) delete_conversations_messaging_integrations_whatsapp_integration_id(integration_id)
 
 
-
 Delete a WhatsApp messaging integration
 
 Wraps DELETE /api/v2/conversations/messaging/integrations/whatsapp/{integrationId} 
@@ -733,13 +723,12 @@ except ApiException as e:
 
 ### Return type
 
-[**WhatsAppIntegration**](WhatsAppIntegration.html)
+[**WhatsAppIntegration**](WhatsAppIntegration)
 
 
 ## delete_conversations_messaging_setting
 
 >  delete_conversations_messaging_setting(message_setting_id)
-
 
 
 Delete a messaging setting
@@ -789,7 +778,6 @@ void (empty response body)
 >  delete_conversations_messaging_settings_default()
 
 
-
 Delete the organization's default setting, a global default will be applied to integrations without settings
 
 When an integration is created a settings ID may be assigned to it. If the settings ID is not supplied, the default settings will be assigned to it.
@@ -833,7 +821,6 @@ void (empty response body)
 ## delete_conversations_messaging_supportedcontent_supported_content_id
 
 >  delete_conversations_messaging_supportedcontent_supported_content_id(supported_content_id)
-
 
 
 Delete a supported content profile
@@ -883,7 +870,6 @@ void (empty response body)
 > [**AnalyticsConversationWithoutAttributes**](AnalyticsConversationWithoutAttributes) get_analytics_conversation_details(conversation_id)
 
 
-
 Get a conversation by id
 
 Wraps GET /api/v2/analytics/conversations/{conversationId}/details 
@@ -925,13 +911,12 @@ except ApiException as e:
 
 ### Return type
 
-[**AnalyticsConversationWithoutAttributes**](AnalyticsConversationWithoutAttributes.html)
+[**AnalyticsConversationWithoutAttributes**](AnalyticsConversationWithoutAttributes)
 
 
 ## get_analytics_conversations_aggregates_job
 
 > [**AsyncQueryStatus**](AsyncQueryStatus) get_analytics_conversations_aggregates_job(job_id)
-
 
 
 Get status for async query for conversation aggregates
@@ -976,13 +961,12 @@ except ApiException as e:
 
 ### Return type
 
-[**AsyncQueryStatus**](AsyncQueryStatus.html)
+[**AsyncQueryStatus**](AsyncQueryStatus)
 
 
 ## get_analytics_conversations_aggregates_job_results
 
 > [**ConversationAsyncAggregateQueryResponse**](ConversationAsyncAggregateQueryResponse) get_analytics_conversations_aggregates_job_results(job_id, cursor=cursor)
-
 
 
 Fetch a page of results for an async aggregates query
@@ -1029,13 +1013,12 @@ except ApiException as e:
 
 ### Return type
 
-[**ConversationAsyncAggregateQueryResponse**](ConversationAsyncAggregateQueryResponse.html)
+[**ConversationAsyncAggregateQueryResponse**](ConversationAsyncAggregateQueryResponse)
 
 
 ## get_analytics_conversations_details
 
 > [**AnalyticsConversationWithoutAttributesMultiGetResponse**](AnalyticsConversationWithoutAttributesMultiGetResponse) get_analytics_conversations_details(id=id)
-
 
 
 Gets multiple conversations by id
@@ -1075,17 +1058,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **id** | [**list[str]**](str.html)| Comma-separated conversation ids | [optional]  |
+| **id** | [**list[str]**](str)| Comma-separated conversation ids | [optional]  |
 
 ### Return type
 
-[**AnalyticsConversationWithoutAttributesMultiGetResponse**](AnalyticsConversationWithoutAttributesMultiGetResponse.html)
+[**AnalyticsConversationWithoutAttributesMultiGetResponse**](AnalyticsConversationWithoutAttributesMultiGetResponse)
 
 
 ## get_analytics_conversations_details_job
 
 > [**AsyncQueryStatus**](AsyncQueryStatus) get_analytics_conversations_details_job(job_id)
-
 
 
 Get status for async query for conversation details
@@ -1129,13 +1111,12 @@ except ApiException as e:
 
 ### Return type
 
-[**AsyncQueryStatus**](AsyncQueryStatus.html)
+[**AsyncQueryStatus**](AsyncQueryStatus)
 
 
 ## get_analytics_conversations_details_job_results
 
 > [**AnalyticsConversationAsyncQueryResponse**](AnalyticsConversationAsyncQueryResponse) get_analytics_conversations_details_job_results(job_id, cursor=cursor, page_size=page_size)
-
 
 
 Fetch a page of results for an async details job
@@ -1183,13 +1164,12 @@ except ApiException as e:
 
 ### Return type
 
-[**AnalyticsConversationAsyncQueryResponse**](AnalyticsConversationAsyncQueryResponse.html)
+[**AnalyticsConversationAsyncQueryResponse**](AnalyticsConversationAsyncQueryResponse)
 
 
 ## get_analytics_conversations_details_jobs_availability
 
 > [**DataAvailabilityResponse**](DataAvailabilityResponse) get_analytics_conversations_details_jobs_availability()
-
 
 
 Lookup the datalake availability date and time
@@ -1228,13 +1208,12 @@ This endpoint does not need any parameters.
 
 ### Return type
 
-[**DataAvailabilityResponse**](DataAvailabilityResponse.html)
+[**DataAvailabilityResponse**](DataAvailabilityResponse)
 
 
 ## get_conversation
 
 > [**Conversation**](Conversation) get_conversation(conversation_id)
-
 
 
 Get conversation
@@ -1277,13 +1256,12 @@ except ApiException as e:
 
 ### Return type
 
-[**Conversation**](Conversation.html)
+[**Conversation**](Conversation)
 
 
 ## get_conversation_participant_secureivrsession
 
 > [**SecureSession**](SecureSession) get_conversation_participant_secureivrsession(conversation_id, participant_id, secure_session_id)
-
 
 
 Fetch info on a secure session
@@ -1329,13 +1307,12 @@ except ApiException as e:
 
 ### Return type
 
-[**SecureSession**](SecureSession.html)
+[**SecureSession**](SecureSession)
 
 
 ## get_conversation_participant_secureivrsessions
 
 > [**SecureSessionEntityListing**](SecureSessionEntityListing) get_conversation_participant_secureivrsessions(conversation_id, participant_id)
-
 
 
 Get a list of secure sessions for this participant.
@@ -1379,13 +1356,12 @@ except ApiException as e:
 
 ### Return type
 
-[**SecureSessionEntityListing**](SecureSessionEntityListing.html)
+[**SecureSessionEntityListing**](SecureSessionEntityListing)
 
 
 ## get_conversation_participant_wrapup
 
 > [**AssignedWrapupCode**](AssignedWrapupCode) get_conversation_participant_wrapup(conversation_id, participant_id, provisional=provisional)
-
 
 
 Get the wrap-up for this conversation participant. 
@@ -1431,13 +1407,12 @@ except ApiException as e:
 
 ### Return type
 
-[**AssignedWrapupCode**](AssignedWrapupCode.html)
+[**AssignedWrapupCode**](AssignedWrapupCode)
 
 
 ## get_conversation_participant_wrapupcodes
 
 > [**list[WrapupCode]**](WrapupCode) get_conversation_participant_wrapupcodes(conversation_id, participant_id)
-
 
 
 Get list of wrapup codes for this conversation participant
@@ -1481,13 +1456,12 @@ except ApiException as e:
 
 ### Return type
 
-[**list[WrapupCode]**](WrapupCode.html)
+[**list[WrapupCode]**](WrapupCode)
 
 
 ## get_conversation_secureattributes
 
 > [**ConversationSecureAttributes**](ConversationSecureAttributes) get_conversation_secureattributes(conversation_id)
-
 
 
 Get the secure attributes on a conversation.
@@ -1530,13 +1504,12 @@ except ApiException as e:
 
 ### Return type
 
-[**ConversationSecureAttributes**](ConversationSecureAttributes.html)
+[**ConversationSecureAttributes**](ConversationSecureAttributes)
 
 
 ## get_conversation_suggestion
 
 > [**Suggestion**](Suggestion) get_conversation_suggestion(conversation_id, suggestion_id)
-
 
 
 Get Suggestion.
@@ -1581,13 +1554,12 @@ except ApiException as e:
 
 ### Return type
 
-[**Suggestion**](Suggestion.html)
+[**Suggestion**](Suggestion)
 
 
 ## get_conversation_suggestions
 
 > [**SuggestionListing**](SuggestionListing) get_conversation_suggestions(conversation_id, before=before, after=after, page_size=page_size, type=type, state=state)
-
 
 
 Get all suggestions for a conversation.
@@ -1640,13 +1612,12 @@ except ApiException as e:
 
 ### Return type
 
-[**SuggestionListing**](SuggestionListing.html)
+[**SuggestionListing**](SuggestionListing)
 
 
 ## get_conversations
 
 > [**ConversationEntityListing**](ConversationEntityListing) get_conversations(communication_type=communication_type)
-
 
 
 Get active conversations for the logged in user
@@ -1688,13 +1659,12 @@ except ApiException as e:
 
 ### Return type
 
-[**ConversationEntityListing**](ConversationEntityListing.html)
+[**ConversationEntityListing**](ConversationEntityListing)
 
 
 ## get_conversations_call
 
 > [**CallConversation**](CallConversation) get_conversations_call(conversation_id)
-
 
 
 Get call conversation
@@ -1736,13 +1706,12 @@ except ApiException as e:
 
 ### Return type
 
-[**CallConversation**](CallConversation.html)
+[**CallConversation**](CallConversation)
 
 
 ## get_conversations_call_participant_communication_wrapup
 
 > [**AssignedWrapupCode**](AssignedWrapupCode) get_conversations_call_participant_communication_wrapup(conversation_id, participant_id, communication_id, provisional=provisional)
-
 
 
 Get the wrap-up for this conversation communication. 
@@ -1790,13 +1759,12 @@ except ApiException as e:
 
 ### Return type
 
-[**AssignedWrapupCode**](AssignedWrapupCode.html)
+[**AssignedWrapupCode**](AssignedWrapupCode)
 
 
 ## get_conversations_call_participant_wrapup
 
 > [**AssignedWrapupCode**](AssignedWrapupCode) get_conversations_call_participant_wrapup(conversation_id, participant_id, provisional=provisional)
-
 
 
 Get the wrap-up for this conversation participant. 
@@ -1842,13 +1810,12 @@ except ApiException as e:
 
 ### Return type
 
-[**AssignedWrapupCode**](AssignedWrapupCode.html)
+[**AssignedWrapupCode**](AssignedWrapupCode)
 
 
 ## get_conversations_call_participant_wrapupcodes
 
 > [**list[WrapupCode]**](WrapupCode) get_conversations_call_participant_wrapupcodes(conversation_id, participant_id)
-
 
 
 Get list of wrapup codes for this conversation participant
@@ -1892,13 +1859,12 @@ except ApiException as e:
 
 ### Return type
 
-[**list[WrapupCode]**](WrapupCode.html)
+[**list[WrapupCode]**](WrapupCode)
 
 
 ## get_conversations_callback
 
 > [**CallbackConversation**](CallbackConversation) get_conversations_callback(conversation_id)
-
 
 
 Get callback conversation
@@ -1940,13 +1906,12 @@ except ApiException as e:
 
 ### Return type
 
-[**CallbackConversation**](CallbackConversation.html)
+[**CallbackConversation**](CallbackConversation)
 
 
 ## get_conversations_callback_participant_communication_wrapup
 
 > [**AssignedWrapupCode**](AssignedWrapupCode) get_conversations_callback_participant_communication_wrapup(conversation_id, participant_id, communication_id, provisional=provisional)
-
 
 
 Get the wrap-up for this conversation communication. 
@@ -1994,13 +1959,12 @@ except ApiException as e:
 
 ### Return type
 
-[**AssignedWrapupCode**](AssignedWrapupCode.html)
+[**AssignedWrapupCode**](AssignedWrapupCode)
 
 
 ## get_conversations_callback_participant_wrapup
 
 > [**AssignedWrapupCode**](AssignedWrapupCode) get_conversations_callback_participant_wrapup(conversation_id, participant_id, provisional=provisional)
-
 
 
 Get the wrap-up for this conversation participant. 
@@ -2046,13 +2010,12 @@ except ApiException as e:
 
 ### Return type
 
-[**AssignedWrapupCode**](AssignedWrapupCode.html)
+[**AssignedWrapupCode**](AssignedWrapupCode)
 
 
 ## get_conversations_callback_participant_wrapupcodes
 
 > [**list[WrapupCode]**](WrapupCode) get_conversations_callback_participant_wrapupcodes(conversation_id, participant_id)
-
 
 
 Get list of wrapup codes for this conversation participant
@@ -2096,13 +2059,12 @@ except ApiException as e:
 
 ### Return type
 
-[**list[WrapupCode]**](WrapupCode.html)
+[**list[WrapupCode]**](WrapupCode)
 
 
 ## get_conversations_callbacks
 
 > [**CallbackConversationEntityListing**](CallbackConversationEntityListing) get_conversations_callbacks()
-
 
 
 Get active callback conversations for the logged in user
@@ -2140,13 +2102,12 @@ This endpoint does not need any parameters.
 
 ### Return type
 
-[**CallbackConversationEntityListing**](CallbackConversationEntityListing.html)
+[**CallbackConversationEntityListing**](CallbackConversationEntityListing)
 
 
 ## get_conversations_calls
 
 > [**CallConversationEntityListing**](CallConversationEntityListing) get_conversations_calls()
-
 
 
 Get active call conversations for the logged in user
@@ -2184,13 +2145,12 @@ This endpoint does not need any parameters.
 
 ### Return type
 
-[**CallConversationEntityListing**](CallConversationEntityListing.html)
+[**CallConversationEntityListing**](CallConversationEntityListing)
 
 
 ## get_conversations_calls_history
 
 > [**CallHistoryConversationEntityListing**](CallHistoryConversationEntityListing) get_conversations_calls_history(page_size=page_size, page_number=page_number, interval=interval, expand=expand)
-
 
 
 Get call history
@@ -2234,17 +2194,16 @@ except ApiException as e:
 | **page_size** | **int**| Page size, maximum 50 | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **interval** | **str**| Interval string; format is ISO-8601. Separate start and end times with forward slash &#39;/&#39; | [optional]  |
-| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand. | [optional] <br />**Values**: externalorganization, externalcontact, user, queue, group |
+| **expand** | [**list[str]**](str)| Which fields, if any, to expand. | [optional] <br />**Values**: externalorganization, externalcontact, user, queue, group |
 
 ### Return type
 
-[**CallHistoryConversationEntityListing**](CallHistoryConversationEntityListing.html)
+[**CallHistoryConversationEntityListing**](CallHistoryConversationEntityListing)
 
 
 ## get_conversations_calls_maximumconferenceparties
 
 > [**MaxParticipants**](MaxParticipants) get_conversations_calls_maximumconferenceparties()
-
 
 
 Get the maximum number of participants that this user can have on a conference
@@ -2282,13 +2241,12 @@ This endpoint does not need any parameters.
 
 ### Return type
 
-[**MaxParticipants**](MaxParticipants.html)
+[**MaxParticipants**](MaxParticipants)
 
 
 ## get_conversations_chat
 
 > [**ChatConversation**](ChatConversation) get_conversations_chat(conversation_id)
-
 
 
 Get chat conversation
@@ -2330,13 +2288,12 @@ except ApiException as e:
 
 ### Return type
 
-[**ChatConversation**](ChatConversation.html)
+[**ChatConversation**](ChatConversation)
 
 
 ## get_conversations_chat_message
 
 > [**WebChatMessage**](WebChatMessage) get_conversations_chat_message(conversation_id, message_id)
-
 
 
 Get a web chat conversation message
@@ -2382,13 +2339,12 @@ except ApiException as e:
 
 ### Return type
 
-[**WebChatMessage**](WebChatMessage.html)
+[**WebChatMessage**](WebChatMessage)
 
 
 ## get_conversations_chat_messages
 
 > [**WebChatMessageEntityList**](WebChatMessageEntityList) get_conversations_chat_messages(conversation_id, after=after, before=before, sort_order=sort_order, max_results=max_results)
-
 
 
 Get the messages of a chat conversation.
@@ -2440,13 +2396,12 @@ except ApiException as e:
 
 ### Return type
 
-[**WebChatMessageEntityList**](WebChatMessageEntityList.html)
+[**WebChatMessageEntityList**](WebChatMessageEntityList)
 
 
 ## get_conversations_chat_participant_communication_wrapup
 
 > [**AssignedWrapupCode**](AssignedWrapupCode) get_conversations_chat_participant_communication_wrapup(conversation_id, participant_id, communication_id, provisional=provisional)
-
 
 
 Get the wrap-up for this conversation communication. 
@@ -2494,13 +2449,12 @@ except ApiException as e:
 
 ### Return type
 
-[**AssignedWrapupCode**](AssignedWrapupCode.html)
+[**AssignedWrapupCode**](AssignedWrapupCode)
 
 
 ## get_conversations_chat_participant_wrapup
 
 > [**AssignedWrapupCode**](AssignedWrapupCode) get_conversations_chat_participant_wrapup(conversation_id, participant_id, provisional=provisional)
-
 
 
 Get the wrap-up for this conversation participant. 
@@ -2546,13 +2500,12 @@ except ApiException as e:
 
 ### Return type
 
-[**AssignedWrapupCode**](AssignedWrapupCode.html)
+[**AssignedWrapupCode**](AssignedWrapupCode)
 
 
 ## get_conversations_chat_participant_wrapupcodes
 
 > [**list[WrapupCode]**](WrapupCode) get_conversations_chat_participant_wrapupcodes(conversation_id, participant_id)
-
 
 
 Get list of wrapup codes for this conversation participant
@@ -2596,13 +2549,12 @@ except ApiException as e:
 
 ### Return type
 
-[**list[WrapupCode]**](WrapupCode.html)
+[**list[WrapupCode]**](WrapupCode)
 
 
 ## get_conversations_chats
 
 > [**ChatConversationEntityListing**](ChatConversationEntityListing) get_conversations_chats()
-
 
 
 Get active chat conversations for the logged in user
@@ -2640,13 +2592,12 @@ This endpoint does not need any parameters.
 
 ### Return type
 
-[**ChatConversationEntityListing**](ChatConversationEntityListing.html)
+[**ChatConversationEntityListing**](ChatConversationEntityListing)
 
 
 ## get_conversations_cobrowsesession
 
 > [**CobrowseConversation**](CobrowseConversation) get_conversations_cobrowsesession(conversation_id)
-
 
 
 Get cobrowse conversation
@@ -2688,14 +2639,16 @@ except ApiException as e:
 
 ### Return type
 
-[**CobrowseConversation**](CobrowseConversation.html)
+[**CobrowseConversation**](CobrowseConversation)
 
 
 ## get_conversations_cobrowsesession_participant_communication_wrapup
 
 > [**AssignedWrapupCode**](AssignedWrapupCode) get_conversations_cobrowsesession_participant_communication_wrapup(conversation_id, participant_id, communication_id, provisional=provisional)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 Get the wrap-up for this conversation communication. 
 
@@ -2744,14 +2697,16 @@ except ApiException as e:
 
 ### Return type
 
-[**AssignedWrapupCode**](AssignedWrapupCode.html)
+[**AssignedWrapupCode**](AssignedWrapupCode)
 
 
 ## get_conversations_cobrowsesession_participant_wrapup
 
 > [**AssignedWrapupCode**](AssignedWrapupCode) get_conversations_cobrowsesession_participant_wrapup(conversation_id, participant_id, provisional=provisional)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 Get the wrap-up for this conversation participant. 
 
@@ -2798,14 +2753,16 @@ except ApiException as e:
 
 ### Return type
 
-[**AssignedWrapupCode**](AssignedWrapupCode.html)
+[**AssignedWrapupCode**](AssignedWrapupCode)
 
 
 ## get_conversations_cobrowsesession_participant_wrapupcodes
 
 > [**list[WrapupCode]**](WrapupCode) get_conversations_cobrowsesession_participant_wrapupcodes(conversation_id, participant_id)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 Get list of wrapup codes for this conversation participant
 
@@ -2850,13 +2807,12 @@ except ApiException as e:
 
 ### Return type
 
-[**list[WrapupCode]**](WrapupCode.html)
+[**list[WrapupCode]**](WrapupCode)
 
 
 ## get_conversations_cobrowsesessions
 
 > [**CobrowseConversationEntityListing**](CobrowseConversationEntityListing) get_conversations_cobrowsesessions()
-
 
 
 Get active cobrowse conversations for the logged in user
@@ -2894,13 +2850,12 @@ This endpoint does not need any parameters.
 
 ### Return type
 
-[**CobrowseConversationEntityListing**](CobrowseConversationEntityListing.html)
+[**CobrowseConversationEntityListing**](CobrowseConversationEntityListing)
 
 
 ## get_conversations_email
 
 > [**EmailConversation**](EmailConversation) get_conversations_email(conversation_id)
-
 
 
 Get email conversation
@@ -2942,13 +2897,12 @@ except ApiException as e:
 
 ### Return type
 
-[**EmailConversation**](EmailConversation.html)
+[**EmailConversation**](EmailConversation)
 
 
 ## get_conversations_email_message
 
 > [**EmailMessage**](EmailMessage) get_conversations_email_message(conversation_id, message_id)
-
 
 
 Get conversation message
@@ -2992,13 +2946,12 @@ except ApiException as e:
 
 ### Return type
 
-[**EmailMessage**](EmailMessage.html)
+[**EmailMessage**](EmailMessage)
 
 
 ## get_conversations_email_messages
 
 > [**EmailMessagePreviewListing**](EmailMessagePreviewListing) get_conversations_email_messages(conversation_id)
-
 
 
 Get conversation messages
@@ -3040,13 +2993,12 @@ except ApiException as e:
 
 ### Return type
 
-[**EmailMessagePreviewListing**](EmailMessagePreviewListing.html)
+[**EmailMessagePreviewListing**](EmailMessagePreviewListing)
 
 
 ## get_conversations_email_messages_draft
 
 > [**EmailMessage**](EmailMessage) get_conversations_email_messages_draft(conversation_id)
-
 
 
 Get conversation draft reply
@@ -3088,13 +3040,12 @@ except ApiException as e:
 
 ### Return type
 
-[**EmailMessage**](EmailMessage.html)
+[**EmailMessage**](EmailMessage)
 
 
 ## get_conversations_email_participant_communication_wrapup
 
 > [**AssignedWrapupCode**](AssignedWrapupCode) get_conversations_email_participant_communication_wrapup(conversation_id, participant_id, communication_id, provisional=provisional)
-
 
 
 Get the wrap-up for this conversation communication. 
@@ -3142,13 +3093,12 @@ except ApiException as e:
 
 ### Return type
 
-[**AssignedWrapupCode**](AssignedWrapupCode.html)
+[**AssignedWrapupCode**](AssignedWrapupCode)
 
 
 ## get_conversations_email_participant_wrapup
 
 > [**AssignedWrapupCode**](AssignedWrapupCode) get_conversations_email_participant_wrapup(conversation_id, participant_id, provisional=provisional)
-
 
 
 Get the wrap-up for this conversation participant. 
@@ -3194,13 +3144,12 @@ except ApiException as e:
 
 ### Return type
 
-[**AssignedWrapupCode**](AssignedWrapupCode.html)
+[**AssignedWrapupCode**](AssignedWrapupCode)
 
 
 ## get_conversations_email_participant_wrapupcodes
 
 > [**list[WrapupCode]**](WrapupCode) get_conversations_email_participant_wrapupcodes(conversation_id, participant_id)
-
 
 
 Get list of wrapup codes for this conversation participant
@@ -3244,13 +3193,12 @@ except ApiException as e:
 
 ### Return type
 
-[**list[WrapupCode]**](WrapupCode.html)
+[**list[WrapupCode]**](WrapupCode)
 
 
 ## get_conversations_email_settings
 
 > [**EmailsSettings**](EmailsSettings) get_conversations_email_settings(conversation_id)
-
 
 
 Get emails settings for a given conversation
@@ -3292,13 +3240,12 @@ except ApiException as e:
 
 ### Return type
 
-[**EmailsSettings**](EmailsSettings.html)
+[**EmailsSettings**](EmailsSettings)
 
 
 ## get_conversations_emails
 
 > [**EmailConversationEntityListing**](EmailConversationEntityListing) get_conversations_emails()
-
 
 
 Get active email conversations for the logged in user
@@ -3336,13 +3283,12 @@ This endpoint does not need any parameters.
 
 ### Return type
 
-[**EmailConversationEntityListing**](EmailConversationEntityListing.html)
+[**EmailConversationEntityListing**](EmailConversationEntityListing)
 
 
 ## get_conversations_keyconfiguration
 
 > [**ConversationEncryptionConfiguration**](ConversationEncryptionConfiguration) get_conversations_keyconfiguration(keyconfigurations_id)
-
 
 
 Get the encryption key configurations
@@ -3385,13 +3331,12 @@ except ApiException as e:
 
 ### Return type
 
-[**ConversationEncryptionConfiguration**](ConversationEncryptionConfiguration.html)
+[**ConversationEncryptionConfiguration**](ConversationEncryptionConfiguration)
 
 
 ## get_conversations_keyconfigurations
 
 > [**ConversationEncryptionConfigurationListing**](ConversationEncryptionConfigurationListing) get_conversations_keyconfigurations()
-
 
 
 Get a list of key configurations data
@@ -3430,13 +3375,12 @@ This endpoint does not need any parameters.
 
 ### Return type
 
-[**ConversationEncryptionConfigurationListing**](ConversationEncryptionConfigurationListing.html)
+[**ConversationEncryptionConfigurationListing**](ConversationEncryptionConfigurationListing)
 
 
 ## get_conversations_message
 
 > [**MessageConversation**](MessageConversation) get_conversations_message(conversation_id)
-
 
 
 Get message conversation
@@ -3478,13 +3422,12 @@ except ApiException as e:
 
 ### Return type
 
-[**MessageConversation**](MessageConversation.html)
+[**MessageConversation**](MessageConversation)
 
 
 ## get_conversations_message_communication_messages_media_media_id
 
 > [**MessageMediaData**](MessageMediaData) get_conversations_message_communication_messages_media_media_id(conversation_id, communication_id, media_id)
-
 
 
 Get media
@@ -3534,13 +3477,12 @@ except ApiException as e:
 
 ### Return type
 
-[**MessageMediaData**](MessageMediaData.html)
+[**MessageMediaData**](MessageMediaData)
 
 
 ## get_conversations_message_details
 
 > [**MessageData**](MessageData) get_conversations_message_details(message_id, use_normalized_message=use_normalized_message)
-
 
 
 Get message
@@ -3586,13 +3528,12 @@ except ApiException as e:
 
 ### Return type
 
-[**MessageData**](MessageData.html)
+[**MessageData**](MessageData)
 
 
 ## get_conversations_message_message
 
 > [**MessageData**](MessageData) get_conversations_message_message(conversation_id, message_id, use_normalized_message=use_normalized_message)
-
 
 
 Get conversation message
@@ -3640,13 +3581,12 @@ except ApiException as e:
 
 ### Return type
 
-[**MessageData**](MessageData.html)
+[**MessageData**](MessageData)
 
 
 ## get_conversations_message_participant_communication_wrapup
 
 > [**AssignedWrapupCode**](AssignedWrapupCode) get_conversations_message_participant_communication_wrapup(conversation_id, participant_id, communication_id, provisional=provisional)
-
 
 
 Get the wrap-up for this conversation communication. 
@@ -3694,13 +3634,12 @@ except ApiException as e:
 
 ### Return type
 
-[**AssignedWrapupCode**](AssignedWrapupCode.html)
+[**AssignedWrapupCode**](AssignedWrapupCode)
 
 
 ## get_conversations_message_participant_wrapup
 
 > [**AssignedWrapupCode**](AssignedWrapupCode) get_conversations_message_participant_wrapup(conversation_id, participant_id, provisional=provisional)
-
 
 
 Get the wrap-up for this conversation participant. 
@@ -3746,13 +3685,12 @@ except ApiException as e:
 
 ### Return type
 
-[**AssignedWrapupCode**](AssignedWrapupCode.html)
+[**AssignedWrapupCode**](AssignedWrapupCode)
 
 
 ## get_conversations_message_participant_wrapupcodes
 
 > [**list[WrapupCode]**](WrapupCode) get_conversations_message_participant_wrapupcodes(conversation_id, participant_id)
-
 
 
 Get list of wrapup codes for this conversation participant
@@ -3796,13 +3734,12 @@ except ApiException as e:
 
 ### Return type
 
-[**list[WrapupCode]**](WrapupCode.html)
+[**list[WrapupCode]**](WrapupCode)
 
 
 ## get_conversations_messages
 
 > [**MessageConversationEntityListing**](MessageConversationEntityListing) get_conversations_messages()
-
 
 
 Get active message conversations for the logged in user
@@ -3840,13 +3777,12 @@ This endpoint does not need any parameters.
 
 ### Return type
 
-[**MessageConversationEntityListing**](MessageConversationEntityListing.html)
+[**MessageConversationEntityListing**](MessageConversationEntityListing)
 
 
 ## get_conversations_messages_cachedmedia
 
 > [**CachedMediaItemEntityListing**](CachedMediaItemEntityListing) get_conversations_messages_cachedmedia(page_size=page_size, page_number=page_number, url=url)
-
 
 
 Get a list of cached media items
@@ -3893,13 +3829,12 @@ except ApiException as e:
 
 ### Return type
 
-[**CachedMediaItemEntityListing**](CachedMediaItemEntityListing.html)
+[**CachedMediaItemEntityListing**](CachedMediaItemEntityListing)
 
 
 ## get_conversations_messages_cachedmedia_cached_media_item_id
 
 > [**CachedMediaItem**](CachedMediaItem) get_conversations_messages_cachedmedia_cached_media_item_id(cached_media_item_id)
-
 
 
 Get a cached media item
@@ -3942,13 +3877,12 @@ except ApiException as e:
 
 ### Return type
 
-[**CachedMediaItem**](CachedMediaItem.html)
+[**CachedMediaItem**](CachedMediaItem)
 
 
 ## get_conversations_messaging_facebook_app
 
 > [**FacebookAppCredentials**](FacebookAppCredentials) get_conversations_messaging_facebook_app()
-
 
 
 Get Genesys Facebook App Id
@@ -3987,13 +3921,12 @@ This endpoint does not need any parameters.
 
 ### Return type
 
-[**FacebookAppCredentials**](FacebookAppCredentials.html)
+[**FacebookAppCredentials**](FacebookAppCredentials)
 
 
 ## get_conversations_messaging_facebook_permissions
 
 > [**FacebookPermissionEntityListing**](FacebookPermissionEntityListing) get_conversations_messaging_facebook_permissions()
-
 
 
 Get a list of Facebook Permissions
@@ -4034,13 +3967,12 @@ This endpoint does not need any parameters.
 
 ### Return type
 
-[**FacebookPermissionEntityListing**](FacebookPermissionEntityListing.html)
+[**FacebookPermissionEntityListing**](FacebookPermissionEntityListing)
 
 
 ## get_conversations_messaging_integrations
 
 > [**MessagingIntegrationEntityListing**](MessagingIntegrationEntityListing) get_conversations_messaging_integrations(page_size=page_size, page_number=page_number, expand=expand, supported_content_id=supported_content_id, messaging_setting_id=messaging_setting_id)
-
 
 
 Get a list of Integrations
@@ -4085,19 +4017,18 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
-| **expand** | [**list[str]**](str.html)| Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting |
+| **expand** | [**list[str]**](str)| Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting |
 | **supported_content_id** | **str**| Filter integrations returned based on the supported content ID | [optional]  |
 | **messaging_setting_id** | **str**| Filter integrations returned based on the setting ID | [optional]  |
 
 ### Return type
 
-[**MessagingIntegrationEntityListing**](MessagingIntegrationEntityListing.html)
+[**MessagingIntegrationEntityListing**](MessagingIntegrationEntityListing)
 
 
 ## get_conversations_messaging_integrations_facebook
 
 > [**FacebookIntegrationEntityListing**](FacebookIntegrationEntityListing) get_conversations_messaging_integrations_facebook(page_size=page_size, page_number=page_number, expand=expand, supported_content_id=supported_content_id, messaging_setting_id=messaging_setting_id)
-
 
 
 Get a list of Facebook Integrations
@@ -4148,13 +4079,12 @@ except ApiException as e:
 
 ### Return type
 
-[**FacebookIntegrationEntityListing**](FacebookIntegrationEntityListing.html)
+[**FacebookIntegrationEntityListing**](FacebookIntegrationEntityListing)
 
 
 ## get_conversations_messaging_integrations_facebook_integration_id
 
 > [**FacebookIntegration**](FacebookIntegration) get_conversations_messaging_integrations_facebook_integration_id(integration_id, expand=expand)
-
 
 
 Get a Facebook messaging integration
@@ -4199,13 +4129,12 @@ except ApiException as e:
 
 ### Return type
 
-[**FacebookIntegration**](FacebookIntegration.html)
+[**FacebookIntegration**](FacebookIntegration)
 
 
 ## get_conversations_messaging_integrations_instagram
 
 > [**InstagramIntegrationEntityListing**](InstagramIntegrationEntityListing) get_conversations_messaging_integrations_instagram(page_size=page_size, page_number=page_number, expand=expand, supported_content_id=supported_content_id, messaging_setting_id=messaging_setting_id)
-
 
 
 Get a list of Instagram Integrations
@@ -4256,13 +4185,12 @@ except ApiException as e:
 
 ### Return type
 
-[**InstagramIntegrationEntityListing**](InstagramIntegrationEntityListing.html)
+[**InstagramIntegrationEntityListing**](InstagramIntegrationEntityListing)
 
 
 ## get_conversations_messaging_integrations_instagram_integration_id
 
 > [**InstagramIntegration**](InstagramIntegration) get_conversations_messaging_integrations_instagram_integration_id(integration_id, expand=expand)
-
 
 
 Get Instagram messaging integration
@@ -4307,13 +4235,12 @@ except ApiException as e:
 
 ### Return type
 
-[**InstagramIntegration**](InstagramIntegration.html)
+[**InstagramIntegration**](InstagramIntegration)
 
 
 ## get_conversations_messaging_integrations_open
 
 > [**OpenIntegrationEntityListing**](OpenIntegrationEntityListing) get_conversations_messaging_integrations_open(page_size=page_size, page_number=page_number, expand=expand, supported_content_id=supported_content_id, messaging_setting_id=messaging_setting_id)
-
 
 
 Get a list of Open messaging integrations
@@ -4366,13 +4293,12 @@ except ApiException as e:
 
 ### Return type
 
-[**OpenIntegrationEntityListing**](OpenIntegrationEntityListing.html)
+[**OpenIntegrationEntityListing**](OpenIntegrationEntityListing)
 
 
 ## get_conversations_messaging_integrations_open_integration_id
 
 > [**OpenIntegration**](OpenIntegration) get_conversations_messaging_integrations_open_integration_id(integration_id, expand=expand)
-
 
 
 Get an Open messaging integration
@@ -4419,13 +4345,12 @@ except ApiException as e:
 
 ### Return type
 
-[**OpenIntegration**](OpenIntegration.html)
+[**OpenIntegration**](OpenIntegration)
 
 
 ## get_conversations_messaging_integrations_whatsapp
 
 > [**WhatsAppIntegrationEntityListing**](WhatsAppIntegrationEntityListing) get_conversations_messaging_integrations_whatsapp(page_size=page_size, page_number=page_number, expand=expand, supported_content_id=supported_content_id, messaging_setting_id=messaging_setting_id)
-
 
 
 Get a list of WhatsApp Integrations
@@ -4476,13 +4401,12 @@ except ApiException as e:
 
 ### Return type
 
-[**WhatsAppIntegrationEntityListing**](WhatsAppIntegrationEntityListing.html)
+[**WhatsAppIntegrationEntityListing**](WhatsAppIntegrationEntityListing)
 
 
 ## get_conversations_messaging_integrations_whatsapp_integration_id
 
 > [**WhatsAppIntegration**](WhatsAppIntegration) get_conversations_messaging_integrations_whatsapp_integration_id(integration_id, expand=expand)
-
 
 
 Get a WhatsApp messaging integration
@@ -4527,13 +4451,12 @@ except ApiException as e:
 
 ### Return type
 
-[**WhatsAppIntegration**](WhatsAppIntegration.html)
+[**WhatsAppIntegration**](WhatsAppIntegration)
 
 
 ## get_conversations_messaging_setting
 
 > [**MessagingSetting**](MessagingSetting) get_conversations_messaging_setting(message_setting_id)
-
 
 
 Get a messaging setting
@@ -4576,13 +4499,12 @@ except ApiException as e:
 
 ### Return type
 
-[**MessagingSetting**](MessagingSetting.html)
+[**MessagingSetting**](MessagingSetting)
 
 
 ## get_conversations_messaging_settings
 
 > [**MessagingConfigListing**](MessagingConfigListing) get_conversations_messaging_settings(page_size=page_size, page_number=page_number)
-
 
 
 Get a list of messaging settings
@@ -4627,13 +4549,12 @@ except ApiException as e:
 
 ### Return type
 
-[**MessagingConfigListing**](MessagingConfigListing.html)
+[**MessagingConfigListing**](MessagingConfigListing)
 
 
 ## get_conversations_messaging_settings_default
 
 > [**MessagingSetting**](MessagingSetting) get_conversations_messaging_settings_default()
-
 
 
 Get the organization's default settings that will be used as the default when creating an integration.
@@ -4674,13 +4595,12 @@ This endpoint does not need any parameters.
 
 ### Return type
 
-[**MessagingSetting**](MessagingSetting.html)
+[**MessagingSetting**](MessagingSetting)
 
 
 ## get_conversations_messaging_supportedcontent
 
 > [**SupportedContentListing**](SupportedContentListing) get_conversations_messaging_supportedcontent(page_size=page_size, page_number=page_number)
-
 
 
 Get a list of Supported Content profiles
@@ -4725,13 +4645,12 @@ except ApiException as e:
 
 ### Return type
 
-[**SupportedContentListing**](SupportedContentListing.html)
+[**SupportedContentListing**](SupportedContentListing)
 
 
 ## get_conversations_messaging_supportedcontent_default
 
 > [**SupportedContent**](SupportedContent) get_conversations_messaging_supportedcontent_default()
-
 
 
 Get the organization's default supported content profile that will be used as the default when creating an integration.
@@ -4772,13 +4691,12 @@ This endpoint does not need any parameters.
 
 ### Return type
 
-[**SupportedContent**](SupportedContent.html)
+[**SupportedContent**](SupportedContent)
 
 
 ## get_conversations_messaging_supportedcontent_supported_content_id
 
 > [**SupportedContent**](SupportedContent) get_conversations_messaging_supportedcontent_supported_content_id(supported_content_id)
-
 
 
 Get a supported content profile
@@ -4821,13 +4739,12 @@ except ApiException as e:
 
 ### Return type
 
-[**SupportedContent**](SupportedContent.html)
+[**SupportedContent**](SupportedContent)
 
 
 ## get_conversations_messaging_threadingtimeline
 
 > [**ConversationThreadingWindow**](ConversationThreadingWindow) get_conversations_messaging_threadingtimeline()
-
 
 
 Get conversation threading window timeline for each messaging type
@@ -4868,14 +4785,16 @@ This endpoint does not need any parameters.
 
 ### Return type
 
-[**ConversationThreadingWindow**](ConversationThreadingWindow.html)
+[**ConversationThreadingWindow**](ConversationThreadingWindow)
 
 
 ## get_conversations_screenshare_participant_communication_wrapup
 
 > [**AssignedWrapupCode**](AssignedWrapupCode) get_conversations_screenshare_participant_communication_wrapup(conversation_id, participant_id, communication_id, provisional=provisional)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 Get the wrap-up for this conversation communication. 
 
@@ -4924,13 +4843,12 @@ except ApiException as e:
 
 ### Return type
 
-[**AssignedWrapupCode**](AssignedWrapupCode.html)
+[**AssignedWrapupCode**](AssignedWrapupCode)
 
 
 ## get_conversations_settings
 
 > [**Settings**](Settings) get_conversations_settings()
-
 
 
 Get Settings
@@ -4969,13 +4887,12 @@ This endpoint does not need any parameters.
 
 ### Return type
 
-[**Settings**](Settings.html)
+[**Settings**](Settings)
 
 
 ## get_conversations_social_participant_communication_wrapup
 
 > [**AssignedWrapupCode**](AssignedWrapupCode) get_conversations_social_participant_communication_wrapup(conversation_id, participant_id, communication_id, provisional=provisional)
-
 
 
 Get the wrap-up for this conversation communication. 
@@ -5023,13 +4940,12 @@ except ApiException as e:
 
 ### Return type
 
-[**AssignedWrapupCode**](AssignedWrapupCode.html)
+[**AssignedWrapupCode**](AssignedWrapupCode)
 
 
 ## get_conversations_video_details
 
 > [**VideoConferenceDetails**](VideoConferenceDetails) get_conversations_video_details(conference_id)
-
 
 
 Get video conference details (e.g. the current number of active participants).
@@ -5074,13 +4990,12 @@ except ApiException as e:
 
 ### Return type
 
-[**VideoConferenceDetails**](VideoConferenceDetails.html)
+[**VideoConferenceDetails**](VideoConferenceDetails)
 
 
 ## get_conversations_video_participant_communication_wrapup
 
 > [**AssignedWrapupCode**](AssignedWrapupCode) get_conversations_video_participant_communication_wrapup(conversation_id, participant_id, communication_id, provisional=provisional)
-
 
 
 Get the wrap-up for this conversation communication. 
@@ -5128,13 +5043,12 @@ except ApiException as e:
 
 ### Return type
 
-[**AssignedWrapupCode**](AssignedWrapupCode.html)
+[**AssignedWrapupCode**](AssignedWrapupCode)
 
 
 ## get_conversations_videos_meeting
 
 > [**MeetingIdRecord**](MeetingIdRecord) get_conversations_videos_meeting(meeting_id)
-
 
 
 Gets a record for a given meetingId
@@ -5179,13 +5093,12 @@ except ApiException as e:
 
 ### Return type
 
-[**MeetingIdRecord**](MeetingIdRecord.html)
+[**MeetingIdRecord**](MeetingIdRecord)
 
 
 ## patch_conversation_participant
 
 >  patch_conversation_participant(conversation_id, participant_id, body)
-
 
 
 Update a participant.
@@ -5229,7 +5142,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversation ID |  |
 | **participant_id** | **str**| participant ID |  |
-| **body** | [**MediaParticipantRequest**](MediaParticipantRequest.html)| Update request |  |
+| **body** | [**MediaParticipantRequest**](MediaParticipantRequest)| Update request |  |
 
 ### Return type
 
@@ -5239,7 +5152,6 @@ void (empty response body)
 ## patch_conversation_participant_attributes
 
 >  patch_conversation_participant_attributes(conversation_id, participant_id, body)
-
 
 
 Update the attributes on a conversation participant.
@@ -5280,7 +5192,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversation ID |  |
 | **participant_id** | **str**| participant ID |  |
-| **body** | [**ParticipantAttributes**](ParticipantAttributes.html)| Participant attributes |  |
+| **body** | [**ParticipantAttributes**](ParticipantAttributes)| Participant attributes |  |
 
 ### Return type
 
@@ -5290,7 +5202,6 @@ void (empty response body)
 ## patch_conversation_secureattributes
 
 > str** patch_conversation_secureattributes(conversation_id, body)
-
 
 
 Update the secure attributes on a conversation.
@@ -5331,7 +5242,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversation ID |  |
-| **body** | [**ConversationSecureAttributes**](ConversationSecureAttributes.html)| Conversation Secure Attributes |  |
+| **body** | [**ConversationSecureAttributes**](ConversationSecureAttributes)| Conversation Secure Attributes |  |
 
 ### Return type
 
@@ -5341,7 +5252,6 @@ except ApiException as e:
 ## patch_conversation_utilizationlabel
 
 > str** patch_conversation_utilizationlabel(conversation_id, body)
-
 
 
 Update the utilization label on a conversation. When there is no value provided, the system default label is applied
@@ -5384,7 +5294,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversation ID |  |
-| **body** | [**ConversationUtilizationLabelUpdate**](ConversationUtilizationLabelUpdate.html)| Conversation Utilization Label |  |
+| **body** | [**ConversationUtilizationLabelUpdate**](ConversationUtilizationLabelUpdate)| Conversation Utilization Label |  |
 
 ### Return type
 
@@ -5394,7 +5304,6 @@ except ApiException as e:
 ## patch_conversations_aftercallwork_conversation_id_participant_communication
 
 > [**AfterCallWorkUpdate**](AfterCallWorkUpdate) patch_conversations_aftercallwork_conversation_id_participant_communication(conversation_id, participant_id, communication_id, body)
-
 
 
 Update after-call work for this conversation communication.
@@ -5439,17 +5348,16 @@ except ApiException as e:
 | **conversation_id** | **str**| conversationId |  |
 | **participant_id** | **str**| participantId |  |
 | **communication_id** | **str**| communicationId |  |
-| **body** | [**AfterCallWorkUpdate**](AfterCallWorkUpdate.html)| AfterCallWorkUpdate |  |
+| **body** | [**AfterCallWorkUpdate**](AfterCallWorkUpdate)| AfterCallWorkUpdate |  |
 
 ### Return type
 
-[**AfterCallWorkUpdate**](AfterCallWorkUpdate.html)
+[**AfterCallWorkUpdate**](AfterCallWorkUpdate)
 
 
 ## patch_conversations_call
 
 > [**Conversation**](Conversation) patch_conversations_call(conversation_id, body)
-
 
 
 Update a conversation by setting its recording state, merging in other conversations to create a conference, or disconnecting all of the participants
@@ -5490,17 +5398,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
-| **body** | [**Conversation**](Conversation.html)| Conversation |  |
+| **body** | [**Conversation**](Conversation)| Conversation |  |
 
 ### Return type
 
-[**Conversation**](Conversation.html)
+[**Conversation**](Conversation)
 
 
 ## patch_conversations_call_participant
 
 >  patch_conversations_call_participant(conversation_id, participant_id, body)
-
 
 
 Update conversation participant
@@ -5542,7 +5449,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
 | **participant_id** | **str**| participantId |  |
-| **body** | [**MediaParticipantRequest**](MediaParticipantRequest.html)| Participant request |  |
+| **body** | [**MediaParticipantRequest**](MediaParticipantRequest)| Participant request |  |
 
 ### Return type
 
@@ -5552,7 +5459,6 @@ void (empty response body)
 ## patch_conversations_call_participant_attributes
 
 > [**ParticipantAttributes**](ParticipantAttributes) patch_conversations_call_participant_attributes(conversation_id, participant_id, body)
-
 
 
 Update the attributes on a conversation participant.
@@ -5594,17 +5500,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
 | **participant_id** | **str**| participantId |  |
-| **body** | [**ParticipantAttributes**](ParticipantAttributes.html)| Participant attributes |  |
+| **body** | [**ParticipantAttributes**](ParticipantAttributes)| Participant attributes |  |
 
 ### Return type
 
-[**ParticipantAttributes**](ParticipantAttributes.html)
+[**ParticipantAttributes**](ParticipantAttributes)
 
 
 ## patch_conversations_call_participant_communication
 
 > object** patch_conversations_call_participant_communication(conversation_id, participant_id, communication_id, body)
-
 
 
 Update conversation participant's communication by disconnecting it.
@@ -5648,7 +5553,7 @@ except ApiException as e:
 | **conversation_id** | **str**| conversationId |  |
 | **participant_id** | **str**| participantId |  |
 | **communication_id** | **str**| communicationId |  |
-| **body** | [**MediaParticipantRequest**](MediaParticipantRequest.html)| Participant |  |
+| **body** | [**MediaParticipantRequest**](MediaParticipantRequest)| Participant |  |
 
 ### Return type
 
@@ -5658,7 +5563,6 @@ except ApiException as e:
 ## patch_conversations_call_participant_consult
 
 > [**ConsultTransferResponse**](ConsultTransferResponse) patch_conversations_call_participant_consult(conversation_id, participant_id, body)
-
 
 
 Change who can speak
@@ -5700,17 +5604,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
 | **participant_id** | **str**| participantId |  |
-| **body** | [**ConsultTransferUpdate**](ConsultTransferUpdate.html)| new speak to |  |
+| **body** | [**ConsultTransferUpdate**](ConsultTransferUpdate)| new speak to |  |
 
 ### Return type
 
-[**ConsultTransferResponse**](ConsultTransferResponse.html)
+[**ConsultTransferResponse**](ConsultTransferResponse)
 
 
 ## patch_conversations_callback
 
 > [**Conversation**](Conversation) patch_conversations_callback(conversation_id, body)
-
 
 
 Update a conversation by disconnecting all of the participants
@@ -5751,17 +5654,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
-| **body** | [**Conversation**](Conversation.html)| Conversation |  |
+| **body** | [**Conversation**](Conversation)| Conversation |  |
 
 ### Return type
 
-[**Conversation**](Conversation.html)
+[**Conversation**](Conversation)
 
 
 ## patch_conversations_callback_participant
 
 >  patch_conversations_callback_participant(conversation_id, participant_id, body)
-
 
 
 Update conversation participant
@@ -5803,7 +5705,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
 | **participant_id** | **str**| participantId |  |
-| **body** | [**MediaParticipantRequest**](MediaParticipantRequest.html)| Participant |  |
+| **body** | [**MediaParticipantRequest**](MediaParticipantRequest)| Participant |  |
 
 ### Return type
 
@@ -5813,7 +5715,6 @@ void (empty response body)
 ## patch_conversations_callback_participant_attributes
 
 > [**ParticipantAttributes**](ParticipantAttributes) patch_conversations_callback_participant_attributes(conversation_id, participant_id, body)
-
 
 
 Update the attributes on a conversation participant.
@@ -5855,17 +5756,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
 | **participant_id** | **str**| participantId |  |
-| **body** | [**ParticipantAttributes**](ParticipantAttributes.html)| Attributes |  |
+| **body** | [**ParticipantAttributes**](ParticipantAttributes)| Attributes |  |
 
 ### Return type
 
-[**ParticipantAttributes**](ParticipantAttributes.html)
+[**ParticipantAttributes**](ParticipantAttributes)
 
 
 ## patch_conversations_callback_participant_communication
 
 > object** patch_conversations_callback_participant_communication(conversation_id, participant_id, communication_id, body)
-
 
 
 Update conversation participant's communication by disconnecting it.
@@ -5909,7 +5809,7 @@ except ApiException as e:
 | **conversation_id** | **str**| conversationId |  |
 | **participant_id** | **str**| participantId |  |
 | **communication_id** | **str**| communicationId |  |
-| **body** | [**MediaParticipantRequest**](MediaParticipantRequest.html)| Participant |  |
+| **body** | [**MediaParticipantRequest**](MediaParticipantRequest)| Participant |  |
 
 ### Return type
 
@@ -5919,7 +5819,6 @@ except ApiException as e:
 ## patch_conversations_callbacks
 
 > [**PatchCallbackResponse**](PatchCallbackResponse) patch_conversations_callbacks(body)
-
 
 
 Update a scheduled callback
@@ -5958,17 +5857,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**PatchCallbackRequest**](PatchCallbackRequest.html)| PatchCallbackRequest |  |
+| **body** | [**PatchCallbackRequest**](PatchCallbackRequest)| PatchCallbackRequest |  |
 
 ### Return type
 
-[**PatchCallbackResponse**](PatchCallbackResponse.html)
+[**PatchCallbackResponse**](PatchCallbackResponse)
 
 
 ## patch_conversations_chat
 
 > [**Conversation**](Conversation) patch_conversations_chat(conversation_id, body)
-
 
 
 Update a conversation by disconnecting all of the participants
@@ -6009,17 +5907,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
-| **body** | [**Conversation**](Conversation.html)| Conversation |  |
+| **body** | [**Conversation**](Conversation)| Conversation |  |
 
 ### Return type
 
-[**Conversation**](Conversation.html)
+[**Conversation**](Conversation)
 
 
 ## patch_conversations_chat_participant
 
 >  patch_conversations_chat_participant(conversation_id, participant_id, body)
-
 
 
 Update conversation participant
@@ -6061,7 +5958,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
 | **participant_id** | **str**| participantId |  |
-| **body** | [**MediaParticipantRequest**](MediaParticipantRequest.html)| Update request |  |
+| **body** | [**MediaParticipantRequest**](MediaParticipantRequest)| Update request |  |
 
 ### Return type
 
@@ -6071,7 +5968,6 @@ void (empty response body)
 ## patch_conversations_chat_participant_attributes
 
 > [**ParticipantAttributes**](ParticipantAttributes) patch_conversations_chat_participant_attributes(conversation_id, participant_id, body)
-
 
 
 Update the attributes on a conversation participant.
@@ -6113,17 +6009,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
 | **participant_id** | **str**| participantId |  |
-| **body** | [**ParticipantAttributes**](ParticipantAttributes.html)| Participant attributes |  |
+| **body** | [**ParticipantAttributes**](ParticipantAttributes)| Participant attributes |  |
 
 ### Return type
 
-[**ParticipantAttributes**](ParticipantAttributes.html)
+[**ParticipantAttributes**](ParticipantAttributes)
 
 
 ## patch_conversations_chat_participant_communication
 
 > object** patch_conversations_chat_participant_communication(conversation_id, participant_id, communication_id, body)
-
 
 
 Update conversation participant's communication by disconnecting it.
@@ -6167,7 +6062,7 @@ except ApiException as e:
 | **conversation_id** | **str**| conversationId |  |
 | **participant_id** | **str**| participantId |  |
 | **communication_id** | **str**| communicationId |  |
-| **body** | [**MediaParticipantRequest**](MediaParticipantRequest.html)| Participant |  |
+| **body** | [**MediaParticipantRequest**](MediaParticipantRequest)| Participant |  |
 
 ### Return type
 
@@ -6178,7 +6073,9 @@ except ApiException as e:
 
 > [**Conversation**](Conversation) patch_conversations_cobrowsesession(conversation_id, body)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 Update a conversation by disconnecting all of the participants
 
@@ -6220,18 +6117,20 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
-| **body** | [**Conversation**](Conversation.html)| Conversation |  |
+| **body** | [**Conversation**](Conversation)| Conversation |  |
 
 ### Return type
 
-[**Conversation**](Conversation.html)
+[**Conversation**](Conversation)
 
 
 ## patch_conversations_cobrowsesession_participant
 
 >  patch_conversations_cobrowsesession_participant(conversation_id, participant_id, body=body)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 Update conversation participant
 
@@ -6274,7 +6173,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
 | **participant_id** | **str**| participantId |  |
-| **body** | [**MediaParticipantRequest**](MediaParticipantRequest.html)|  | [optional]  |
+| **body** | [**MediaParticipantRequest**](MediaParticipantRequest)|  | [optional]  |
 
 ### Return type
 
@@ -6285,7 +6184,9 @@ void (empty response body)
 
 > [**ParticipantAttributes**](ParticipantAttributes) patch_conversations_cobrowsesession_participant_attributes(conversation_id, participant_id, body=body)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 Update the attributes on a conversation participant.
 
@@ -6328,18 +6229,20 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
 | **participant_id** | **str**| participantId |  |
-| **body** | [**ParticipantAttributes**](ParticipantAttributes.html)|  | [optional]  |
+| **body** | [**ParticipantAttributes**](ParticipantAttributes)|  | [optional]  |
 
 ### Return type
 
-[**ParticipantAttributes**](ParticipantAttributes.html)
+[**ParticipantAttributes**](ParticipantAttributes)
 
 
 ## patch_conversations_cobrowsesession_participant_communication
 
 > object** patch_conversations_cobrowsesession_participant_communication(conversation_id, participant_id, communication_id, body)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 Update conversation participant's communication by disconnecting it.
 
@@ -6384,7 +6287,7 @@ except ApiException as e:
 | **conversation_id** | **str**| conversationId |  |
 | **participant_id** | **str**| participantId |  |
 | **communication_id** | **str**| communicationId |  |
-| **body** | [**MediaParticipantRequest**](MediaParticipantRequest.html)| Participant |  |
+| **body** | [**MediaParticipantRequest**](MediaParticipantRequest)| Participant |  |
 
 ### Return type
 
@@ -6394,7 +6297,6 @@ except ApiException as e:
 ## patch_conversations_email
 
 > [**Conversation**](Conversation) patch_conversations_email(conversation_id, body)
-
 
 
 Update a conversation by disconnecting all of the participants
@@ -6435,17 +6337,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
-| **body** | [**Conversation**](Conversation.html)| Conversation |  |
+| **body** | [**Conversation**](Conversation)| Conversation |  |
 
 ### Return type
 
-[**Conversation**](Conversation.html)
+[**Conversation**](Conversation)
 
 
 ## patch_conversations_email_messages_draft
 
 > [**EmailMessage**](EmailMessage) patch_conversations_email_messages_draft(conversation_id, auto_fill=auto_fill, discard=discard, body=body)
-
 
 
 Reset conversation draft to its initial state and/or auto-fill draft content
@@ -6489,17 +6390,16 @@ except ApiException as e:
 | **conversation_id** | **str**| conversationId |  |
 | **auto_fill** | **bool**| autoFill | [optional]  |
 | **discard** | **bool**| discard | [optional]  |
-| **body** | [**DraftManipulationRequest**](DraftManipulationRequest.html)| Draft Manipulation Request | [optional]  |
+| **body** | [**DraftManipulationRequest**](DraftManipulationRequest)| Draft Manipulation Request | [optional]  |
 
 ### Return type
 
-[**EmailMessage**](EmailMessage.html)
+[**EmailMessage**](EmailMessage)
 
 
 ## patch_conversations_email_participant
 
 >  patch_conversations_email_participant(conversation_id, participant_id, body)
-
 
 
 Update conversation participant
@@ -6541,7 +6441,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
 | **participant_id** | **str**| participantId |  |
-| **body** | [**MediaParticipantRequest**](MediaParticipantRequest.html)| Update request |  |
+| **body** | [**MediaParticipantRequest**](MediaParticipantRequest)| Update request |  |
 
 ### Return type
 
@@ -6551,7 +6451,6 @@ void (empty response body)
 ## patch_conversations_email_participant_attributes
 
 > [**ParticipantAttributes**](ParticipantAttributes) patch_conversations_email_participant_attributes(conversation_id, participant_id, body)
-
 
 
 Update the attributes on a conversation participant.
@@ -6593,17 +6492,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
 | **participant_id** | **str**| participantId |  |
-| **body** | [**ParticipantAttributes**](ParticipantAttributes.html)| Participant attributes |  |
+| **body** | [**ParticipantAttributes**](ParticipantAttributes)| Participant attributes |  |
 
 ### Return type
 
-[**ParticipantAttributes**](ParticipantAttributes.html)
+[**ParticipantAttributes**](ParticipantAttributes)
 
 
 ## patch_conversations_email_participant_communication
 
 > object** patch_conversations_email_participant_communication(conversation_id, participant_id, communication_id, body)
-
 
 
 Update conversation participant's communication by disconnecting it.
@@ -6647,7 +6545,7 @@ except ApiException as e:
 | **conversation_id** | **str**| conversationId |  |
 | **participant_id** | **str**| participantId |  |
 | **communication_id** | **str**| communicationId |  |
-| **body** | [**MediaParticipantRequest**](MediaParticipantRequest.html)| Participant |  |
+| **body** | [**MediaParticipantRequest**](MediaParticipantRequest)| Participant |  |
 
 ### Return type
 
@@ -6657,7 +6555,6 @@ except ApiException as e:
 ## patch_conversations_email_participant_parkingstate
 
 >  patch_conversations_email_participant_parkingstate(conversation_id, participant_id, body)
-
 
 
 Update conversation by setting its parking state
@@ -6701,7 +6598,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
 | **participant_id** | **str**| participantId |  |
-| **body** | [**ParkingStateRequest**](ParkingStateRequest.html)| Parking update request |  |
+| **body** | [**ParkingStateRequest**](ParkingStateRequest)| Parking update request |  |
 
 ### Return type
 
@@ -6711,7 +6608,6 @@ void (empty response body)
 ## patch_conversations_message
 
 > [**Conversation**](Conversation) patch_conversations_message(conversation_id, body)
-
 
 
 Update a conversation by disconnecting all of the participants
@@ -6752,17 +6648,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
-| **body** | [**Conversation**](Conversation.html)| Conversation |  |
+| **body** | [**Conversation**](Conversation)| Conversation |  |
 
 ### Return type
 
-[**Conversation**](Conversation.html)
+[**Conversation**](Conversation)
 
 
 ## patch_conversations_message_participant
 
 >  patch_conversations_message_participant(conversation_id, participant_id, body=body)
-
 
 
 Update conversation participant
@@ -6804,7 +6699,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
 | **participant_id** | **str**| participantId |  |
-| **body** | [**MediaParticipantRequest**](MediaParticipantRequest.html)|  | [optional]  |
+| **body** | [**MediaParticipantRequest**](MediaParticipantRequest)|  | [optional]  |
 
 ### Return type
 
@@ -6814,7 +6709,6 @@ void (empty response body)
 ## patch_conversations_message_participant_attributes
 
 > [**ParticipantAttributes**](ParticipantAttributes) patch_conversations_message_participant_attributes(conversation_id, participant_id, body=body)
-
 
 
 Update the attributes on a conversation participant.
@@ -6856,17 +6750,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
 | **participant_id** | **str**| participantId |  |
-| **body** | [**ParticipantAttributes**](ParticipantAttributes.html)|  | [optional]  |
+| **body** | [**ParticipantAttributes**](ParticipantAttributes)|  | [optional]  |
 
 ### Return type
 
-[**ParticipantAttributes**](ParticipantAttributes.html)
+[**ParticipantAttributes**](ParticipantAttributes)
 
 
 ## patch_conversations_message_participant_communication
 
 > object** patch_conversations_message_participant_communication(conversation_id, participant_id, communication_id, body)
-
 
 
 Update conversation participant's communication by disconnecting it.
@@ -6910,7 +6803,7 @@ except ApiException as e:
 | **conversation_id** | **str**| conversationId |  |
 | **participant_id** | **str**| participantId |  |
 | **communication_id** | **str**| communicationId |  |
-| **body** | [**MediaParticipantRequest**](MediaParticipantRequest.html)| Participant |  |
+| **body** | [**MediaParticipantRequest**](MediaParticipantRequest)| Participant |  |
 
 ### Return type
 
@@ -6920,7 +6813,6 @@ except ApiException as e:
 ## patch_conversations_messaging_integrations_facebook_integration_id
 
 > [**FacebookIntegration**](FacebookIntegration) patch_conversations_messaging_integrations_facebook_integration_id(integration_id, body)
-
 
 
 Update Facebook messaging integration
@@ -6961,17 +6853,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **integration_id** | **str**| Integration ID |  |
-| **body** | [**FacebookIntegrationUpdateRequest**](FacebookIntegrationUpdateRequest.html)| FacebookIntegrationUpdateRequest |  |
+| **body** | [**FacebookIntegrationUpdateRequest**](FacebookIntegrationUpdateRequest)| FacebookIntegrationUpdateRequest |  |
 
 ### Return type
 
-[**FacebookIntegration**](FacebookIntegration.html)
+[**FacebookIntegration**](FacebookIntegration)
 
 
 ## patch_conversations_messaging_integrations_instagram_integration_id
 
 > [**InstagramIntegration**](InstagramIntegration) patch_conversations_messaging_integrations_instagram_integration_id(integration_id, body)
-
 
 
 Update Instagram messaging integration
@@ -7012,17 +6903,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **integration_id** | **str**| Integration ID |  |
-| **body** | [**InstagramIntegrationUpdateRequest**](InstagramIntegrationUpdateRequest.html)| InstagramIntegrationUpdateRequest |  |
+| **body** | [**InstagramIntegrationUpdateRequest**](InstagramIntegrationUpdateRequest)| InstagramIntegrationUpdateRequest |  |
 
 ### Return type
 
-[**InstagramIntegration**](InstagramIntegration.html)
+[**InstagramIntegration**](InstagramIntegration)
 
 
 ## patch_conversations_messaging_integrations_open_integration_id
 
 > [**OpenIntegration**](OpenIntegration) patch_conversations_messaging_integrations_open_integration_id(integration_id, body)
-
 
 
 Update an Open messaging integration
@@ -7065,17 +6955,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **integration_id** | **str**| Integration ID |  |
-| **body** | [**OpenIntegrationUpdateRequest**](OpenIntegrationUpdateRequest.html)| OpenIntegrationUpdateRequest |  |
+| **body** | [**OpenIntegrationUpdateRequest**](OpenIntegrationUpdateRequest)| OpenIntegrationUpdateRequest |  |
 
 ### Return type
 
-[**OpenIntegration**](OpenIntegration.html)
+[**OpenIntegration**](OpenIntegration)
 
 
 ## patch_conversations_messaging_integrations_whatsapp_embeddedsignup_integration_id
 
 > [**WhatsAppIntegration**](WhatsAppIntegration) patch_conversations_messaging_integrations_whatsapp_embeddedsignup_integration_id(integration_id, body)
-
 
 
 Activate a WhatsApp messaging integration created using the WhatsApp embedded signup flow
@@ -7118,17 +7007,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **integration_id** | **str**| Integration ID |  |
-| **body** | [**WhatsAppEmbeddedSignupIntegrationActivationRequest**](WhatsAppEmbeddedSignupIntegrationActivationRequest.html)| WhatsAppEmbeddedSignupIntegrationActivationRequest |  |
+| **body** | [**WhatsAppEmbeddedSignupIntegrationActivationRequest**](WhatsAppEmbeddedSignupIntegrationActivationRequest)| WhatsAppEmbeddedSignupIntegrationActivationRequest |  |
 
 ### Return type
 
-[**WhatsAppIntegration**](WhatsAppIntegration.html)
+[**WhatsAppIntegration**](WhatsAppIntegration)
 
 
 ## patch_conversations_messaging_integrations_whatsapp_integration_id
 
 > [**WhatsAppIntegration**](WhatsAppIntegration) patch_conversations_messaging_integrations_whatsapp_integration_id(integration_id, body)
-
 
 
 Update a WhatsApp messaging integration
@@ -7169,17 +7057,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **integration_id** | **str**| Integration ID |  |
-| **body** | [**WhatsAppIntegrationUpdateRequest**](WhatsAppIntegrationUpdateRequest.html)| WhatsAppIntegrationUpdateRequest |  |
+| **body** | [**WhatsAppIntegrationUpdateRequest**](WhatsAppIntegrationUpdateRequest)| WhatsAppIntegrationUpdateRequest |  |
 
 ### Return type
 
-[**WhatsAppIntegration**](WhatsAppIntegration.html)
+[**WhatsAppIntegration**](WhatsAppIntegration)
 
 
 ## patch_conversations_messaging_setting
 
 > [**MessagingSetting**](MessagingSetting) patch_conversations_messaging_setting(message_setting_id, body)
-
 
 
 Update a messaging setting
@@ -7220,17 +7107,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **message_setting_id** | **str**| Message Setting ID |  |
-| **body** | [**MessagingSettingPatchRequest**](MessagingSettingPatchRequest.html)| MessagingSetting |  |
+| **body** | [**MessagingSettingPatchRequest**](MessagingSettingPatchRequest)| MessagingSetting |  |
 
 ### Return type
 
-[**MessagingSetting**](MessagingSetting.html)
+[**MessagingSetting**](MessagingSetting)
 
 
 ## patch_conversations_messaging_supportedcontent_supported_content_id
 
 > [**SupportedContent**](SupportedContent) patch_conversations_messaging_supportedcontent_supported_content_id(supported_content_id, body)
-
 
 
 Update a supported content profile
@@ -7271,17 +7157,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **supported_content_id** | **str**| Supported Content ID |  |
-| **body** | [**SupportedContent**](SupportedContent.html)| SupportedContent |  |
+| **body** | [**SupportedContent**](SupportedContent)| SupportedContent |  |
 
 ### Return type
 
-[**SupportedContent**](SupportedContent.html)
+[**SupportedContent**](SupportedContent)
 
 
 ## patch_conversations_settings
 
 >  patch_conversations_settings(body)
-
 
 
 Update Settings
@@ -7319,7 +7204,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**Settings**](Settings.html)| Settings |  |
+| **body** | [**Settings**](Settings)| Settings |  |
 
 ### Return type
 
@@ -7329,7 +7214,6 @@ void (empty response body)
 ## post_analytics_conversation_details_properties
 
 > [**PropertyIndexRequest**](PropertyIndexRequest) post_analytics_conversation_details_properties(conversation_id, body)
-
 
 
 Index conversation properties
@@ -7370,17 +7254,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
-| **body** | [**PropertyIndexRequest**](PropertyIndexRequest.html)| request |  |
+| **body** | [**PropertyIndexRequest**](PropertyIndexRequest)| request |  |
 
 ### Return type
 
-[**PropertyIndexRequest**](PropertyIndexRequest.html)
+[**PropertyIndexRequest**](PropertyIndexRequest)
 
 
 ## post_analytics_conversations_activity_query
 
 > [**ConversationActivityResponse**](ConversationActivityResponse) post_analytics_conversations_activity_query(body, page_size=page_size, page_number=page_number)
-
 
 
 Query for conversation activity observations
@@ -7421,19 +7304,18 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**ConversationActivityQuery**](ConversationActivityQuery.html)| query |  |
+| **body** | [**ConversationActivityQuery**](ConversationActivityQuery)| query |  |
 | **page_size** | **int**| The desired page size | [optional]  |
 | **page_number** | **int**| The desired page number | [optional]  |
 
 ### Return type
 
-[**ConversationActivityResponse**](ConversationActivityResponse.html)
+[**ConversationActivityResponse**](ConversationActivityResponse)
 
 
 ## post_analytics_conversations_aggregates_jobs
 
 > [**AsyncQueryResponse**](AsyncQueryResponse) post_analytics_conversations_aggregates_jobs(body)
-
 
 
 Query for conversation aggregates asynchronously
@@ -7474,17 +7356,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**ConversationAsyncAggregationQuery**](ConversationAsyncAggregationQuery.html)| query |  |
+| **body** | [**ConversationAsyncAggregationQuery**](ConversationAsyncAggregationQuery)| query |  |
 
 ### Return type
 
-[**AsyncQueryResponse**](AsyncQueryResponse.html)
+[**AsyncQueryResponse**](AsyncQueryResponse)
 
 
 ## post_analytics_conversations_aggregates_query
 
 > [**ConversationAggregateQueryResponse**](ConversationAggregateQueryResponse) post_analytics_conversations_aggregates_query(body)
-
 
 
 Query for conversation aggregates
@@ -7523,17 +7404,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**ConversationAggregationQuery**](ConversationAggregationQuery.html)| query |  |
+| **body** | [**ConversationAggregationQuery**](ConversationAggregationQuery)| query |  |
 
 ### Return type
 
-[**ConversationAggregateQueryResponse**](ConversationAggregateQueryResponse.html)
+[**ConversationAggregateQueryResponse**](ConversationAggregateQueryResponse)
 
 
 ## post_analytics_conversations_details_jobs
 
 > [**AsyncQueryResponse**](AsyncQueryResponse) post_analytics_conversations_details_jobs(body)
-
 
 
 Query for conversation details asynchronously
@@ -7573,17 +7453,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**AsyncConversationQuery**](AsyncConversationQuery.html)| query |  |
+| **body** | [**AsyncConversationQuery**](AsyncConversationQuery)| query |  |
 
 ### Return type
 
-[**AsyncQueryResponse**](AsyncQueryResponse.html)
+[**AsyncQueryResponse**](AsyncQueryResponse)
 
 
 ## post_analytics_conversations_details_query
 
 > [**AnalyticsConversationQueryResponse**](AnalyticsConversationQueryResponse) post_analytics_conversations_details_query(body)
-
 
 
 Query for conversation details
@@ -7623,17 +7502,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**ConversationQuery**](ConversationQuery.html)| query |  |
+| **body** | [**ConversationQuery**](ConversationQuery)| query |  |
 
 ### Return type
 
-[**AnalyticsConversationQueryResponse**](AnalyticsConversationQueryResponse.html)
+[**AnalyticsConversationQueryResponse**](AnalyticsConversationQueryResponse)
 
 
 ## post_conversation_assign
 
 > str** post_conversation_assign(conversation_id, body)
-
 
 
 Attempts to manually assign a specified conversation to a specified user.  Ignores bullseye ring, PAR score, skills, and languages.
@@ -7683,7 +7561,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversation ID |  |
-| **body** | [**ConversationUser**](ConversationUser.html)| Targeted user |  |
+| **body** | [**ConversationUser**](ConversationUser)| Targeted user |  |
 
 ### Return type
 
@@ -7693,7 +7571,6 @@ except ApiException as e:
 ## post_conversation_barge
 
 >  post_conversation_barge(conversation_id)
-
 
 
 Barge a conversation creating a barged in conference of connected participants.
@@ -7743,7 +7620,6 @@ void (empty response body)
 > [**CobrowseWebMessagingSession**](CobrowseWebMessagingSession) post_conversation_cobrowse(conversation_id)
 
 
-
 Creates a cobrowse session. Requires \"conversation:cobrowse:add\" (for web messaging) or \"conversation:cobrowsevoice:add\" permission.
 
 Wraps POST /api/v2/conversations/{conversationId}/cobrowse 
@@ -7785,13 +7661,12 @@ except ApiException as e:
 
 ### Return type
 
-[**CobrowseWebMessagingSession**](CobrowseWebMessagingSession.html)
+[**CobrowseWebMessagingSession**](CobrowseWebMessagingSession)
 
 
 ## post_conversation_disconnect
 
 > str** post_conversation_disconnect(conversation_id)
-
 
 
 Performs a full conversation teardown. Issues disconnect requests for any connected media. Applies a system wrap-up code to any participants that are pending wrap-up. This is not intended to be the normal way of ending interactions but is available in the event of problems with the application to allow a resynchronization of state across all components. It is recommended that users submit a support case if they are relying on this endpoint systematically as there is likely something that needs investigation.
@@ -7842,7 +7717,6 @@ except ApiException as e:
 >  post_conversation_participant_callbacks(conversation_id, participant_id, body=body)
 
 
-
 Create a new callback for the specified participant on the conversation.
 
 Wraps POST /api/v2/conversations/{conversationId}/participants/{participantId}/callbacks 
@@ -7882,7 +7756,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversation ID |  |
 | **participant_id** | **str**| participant ID |  |
-| **body** | [**CreateCallbackOnConversationCommand**](CreateCallbackOnConversationCommand.html)|  | [optional]  |
+| **body** | [**CreateCallbackOnConversationCommand**](CreateCallbackOnConversationCommand)|  | [optional]  |
 
 ### Return type
 
@@ -7892,7 +7766,6 @@ void (empty response body)
 ## post_conversation_participant_digits
 
 >  post_conversation_participant_digits(conversation_id, participant_id, body=body)
-
 
 
 Sends DTMF to the participant
@@ -7933,7 +7806,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversation ID |  |
 | **participant_id** | **str**| participant ID |  |
-| **body** | [**Digits**](Digits.html)| Digits | [optional]  |
+| **body** | [**Digits**](Digits)| Digits | [optional]  |
 
 ### Return type
 
@@ -7943,7 +7816,6 @@ void (empty response body)
 ## post_conversation_participant_replace
 
 >  post_conversation_participant_replace(conversation_id, participant_id, body)
-
 
 
 Replace this participant with the specified user and/or address
@@ -7985,7 +7857,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversation ID |  |
 | **participant_id** | **str**| participant ID |  |
-| **body** | [**TransferRequest**](TransferRequest.html)| Transfer request |  |
+| **body** | [**TransferRequest**](TransferRequest)| Transfer request |  |
 
 ### Return type
 
@@ -7995,7 +7867,6 @@ void (empty response body)
 ## post_conversation_participant_replace_agent
 
 >  post_conversation_participant_replace_agent(conversation_id, participant_id, body)
-
 
 
 Replace this participant with the specified agent
@@ -8038,7 +7909,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversation ID |  |
 | **participant_id** | **str**| participant ID |  |
-| **body** | [**TransferToAgentRequest**](TransferToAgentRequest.html)| Transfer request |  |
+| **body** | [**TransferToAgentRequest**](TransferToAgentRequest)| Transfer request |  |
 
 ### Return type
 
@@ -8048,7 +7919,6 @@ void (empty response body)
 ## post_conversation_participant_replace_external
 
 >  post_conversation_participant_replace_external(conversation_id, participant_id, body)
-
 
 
 Replace this participant with the an external contact
@@ -8091,7 +7961,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversation ID |  |
 | **participant_id** | **str**| participant ID |  |
-| **body** | [**TransferToExternalRequest**](TransferToExternalRequest.html)| Transfer request |  |
+| **body** | [**TransferToExternalRequest**](TransferToExternalRequest)| Transfer request |  |
 
 ### Return type
 
@@ -8101,7 +7971,6 @@ void (empty response body)
 ## post_conversation_participant_replace_queue
 
 >  post_conversation_participant_replace_queue(conversation_id, participant_id, body)
-
 
 
 Replace this participant with the specified queue
@@ -8144,7 +8013,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversation ID |  |
 | **participant_id** | **str**| participant ID |  |
-| **body** | [**TransferToQueueRequest**](TransferToQueueRequest.html)| Transfer request |  |
+| **body** | [**TransferToQueueRequest**](TransferToQueueRequest)| Transfer request |  |
 
 ### Return type
 
@@ -8154,7 +8023,6 @@ void (empty response body)
 ## post_conversation_participant_secureivrsessions
 
 > [**SecureSession**](SecureSession) post_conversation_participant_secureivrsessions(conversation_id, participant_id, body=body)
-
 
 
 Create secure IVR session. Only a participant in the conversation can invoke a secure IVR.
@@ -8196,17 +8064,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversation ID |  |
 | **participant_id** | **str**| participant ID |  |
-| **body** | [**CreateSecureSession**](CreateSecureSession.html)|  | [optional]  |
+| **body** | [**CreateSecureSession**](CreateSecureSession)|  | [optional]  |
 
 ### Return type
 
-[**SecureSession**](SecureSession.html)
+[**SecureSession**](SecureSession)
 
 
 ## post_conversation_suggestion_engagement
 
 > [**SuggestionEngagement**](SuggestionEngagement) post_conversation_suggestion_engagement(conversation_id, suggestion_id, body)
-
 
 
 Save an engagement on the suggestion.
@@ -8249,17 +8116,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| Conversation ID |  |
 | **suggestion_id** | **str**| Suggestion ID |  |
-| **body** | [**SuggestionEngagement**](SuggestionEngagement.html)|  |  |
+| **body** | [**SuggestionEngagement**](SuggestionEngagement)|  |  |
 
 ### Return type
 
-[**SuggestionEngagement**](SuggestionEngagement.html)
+[**SuggestionEngagement**](SuggestionEngagement)
 
 
 ## post_conversation_suggestions_feedback
 
 >  post_conversation_suggestions_feedback(conversation_id, body)
-
 
 
 Suggestion feedback.
@@ -8299,7 +8165,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| Conversation ID |  |
-| **body** | [**Feedback**](Feedback.html)| SuggestionFeedback |  |
+| **body** | [**Feedback**](Feedback)| SuggestionFeedback |  |
 
 ### Return type
 
@@ -8309,7 +8175,6 @@ void (empty response body)
 ## post_conversation_summary_feedback
 
 >  post_conversation_summary_feedback(conversation_id, summary_id, body=body)
-
 
 
 Submit feedback for the summary.
@@ -8351,7 +8216,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| Conversation ID |  |
 | **summary_id** | **str**| Summary ID |  |
-| **body** | [**FeedbackAddRequest**](FeedbackAddRequest.html)|  | [optional]  |
+| **body** | [**FeedbackAddRequest**](FeedbackAddRequest)|  | [optional]  |
 
 ### Return type
 
@@ -8361,7 +8226,6 @@ void (empty response body)
 ## post_conversations_call
 
 > [**Conversation**](Conversation) post_conversations_call(conversation_id, body)
-
 
 
 Place a new call as part of a callback conversation.
@@ -8401,17 +8265,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
-| **body** | [**CallCommand**](CallCommand.html)| Conversation |  |
+| **body** | [**CallCommand**](CallCommand)| Conversation |  |
 
 ### Return type
 
-[**Conversation**](Conversation.html)
+[**Conversation**](Conversation)
 
 
 ## post_conversations_call_participant_barge
 
 >  post_conversations_call_participant_barge(conversation_id, participant_id)
-
 
 
 Barge a given participant's call creating a barged in conference of connected participants.
@@ -8463,7 +8326,6 @@ void (empty response body)
 >  post_conversations_call_participant_coach(conversation_id, participant_id)
 
 
-
 Listen in on the conversation from the point of view of a given participant while speaking to just the given participant.
 
 Wraps POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/coach 
@@ -8513,7 +8375,6 @@ void (empty response body)
 >  post_conversations_call_participant_communication_wrapup(conversation_id, participant_id, communication_id, body=body)
 
 
-
 Apply wrap-up for this conversation communication
 
 Wraps POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/communications/{communicationId}/wrapup 
@@ -8555,7 +8416,7 @@ except ApiException as e:
 | **conversation_id** | **str**| conversationId |  |
 | **participant_id** | **str**| participantId |  |
 | **communication_id** | **str**| communicationId |  |
-| **body** | [**WrapupInput**](WrapupInput.html)| Wrap-up | [optional]  |
+| **body** | [**WrapupInput**](WrapupInput)| Wrap-up | [optional]  |
 
 ### Return type
 
@@ -8565,7 +8426,6 @@ void (empty response body)
 ## post_conversations_call_participant_consult
 
 > [**ConsultTransferResponse**](ConsultTransferResponse) post_conversations_call_participant_consult(conversation_id, participant_id, body)
-
 
 
 Initiate and update consult transfer
@@ -8608,17 +8468,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
 | **participant_id** | **str**| participantId |  |
-| **body** | [**ConsultTransfer**](ConsultTransfer.html)| Destination address &amp; initial speak to |  |
+| **body** | [**ConsultTransfer**](ConsultTransfer)| Destination address &amp; initial speak to |  |
 
 ### Return type
 
-[**ConsultTransferResponse**](ConsultTransferResponse.html)
+[**ConsultTransferResponse**](ConsultTransferResponse)
 
 
 ## post_conversations_call_participant_consult_agent
 
 > [**ConsultTransferResponse**](ConsultTransferResponse) post_conversations_call_participant_consult_agent(conversation_id, participant_id, body)
-
 
 
 Initiate a consult transfer to an agent
@@ -8662,17 +8521,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
 | **participant_id** | **str**| participantId |  |
-| **body** | [**ConsultTransferToAgent**](ConsultTransferToAgent.html)| Destination agent &amp; initial speak to |  |
+| **body** | [**ConsultTransferToAgent**](ConsultTransferToAgent)| Destination agent &amp; initial speak to |  |
 
 ### Return type
 
-[**ConsultTransferResponse**](ConsultTransferResponse.html)
+[**ConsultTransferResponse**](ConsultTransferResponse)
 
 
 ## post_conversations_call_participant_consult_external
 
 > [**ConsultTransferResponse**](ConsultTransferResponse) post_conversations_call_participant_consult_external(conversation_id, participant_id, body)
-
 
 
 Initiate a consult transfer to an external contact
@@ -8716,17 +8574,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
 | **participant_id** | **str**| participantId |  |
-| **body** | [**ConsultTransferToExternal**](ConsultTransferToExternal.html)| Destination address &amp; initial speak to |  |
+| **body** | [**ConsultTransferToExternal**](ConsultTransferToExternal)| Destination address &amp; initial speak to |  |
 
 ### Return type
 
-[**ConsultTransferResponse**](ConsultTransferResponse.html)
+[**ConsultTransferResponse**](ConsultTransferResponse)
 
 
 ## post_conversations_call_participant_consult_queue
 
 > [**ConsultTransferResponse**](ConsultTransferResponse) post_conversations_call_participant_consult_queue(conversation_id, participant_id, body)
-
 
 
 Initiate a consult transfer to a queue
@@ -8770,17 +8627,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
 | **participant_id** | **str**| participantId |  |
-| **body** | [**ConsultTransferToQueue**](ConsultTransferToQueue.html)| Destination queue &amp; initial speak to |  |
+| **body** | [**ConsultTransferToQueue**](ConsultTransferToQueue)| Destination queue &amp; initial speak to |  |
 
 ### Return type
 
-[**ConsultTransferResponse**](ConsultTransferResponse.html)
+[**ConsultTransferResponse**](ConsultTransferResponse)
 
 
 ## post_conversations_call_participant_monitor
 
 >  post_conversations_call_participant_monitor(conversation_id, participant_id)
-
 
 
 Listen in on the conversation from the point of view of a given participant.
@@ -8832,7 +8688,6 @@ void (empty response body)
 >  post_conversations_call_participant_replace(conversation_id, participant_id, body)
 
 
-
 Replace this participant with the specified user and/or address
 
 Wraps POST /api/v2/conversations/calls/{conversationId}/participants/{participantId}/replace 
@@ -8872,7 +8727,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
 | **participant_id** | **str**| participantId |  |
-| **body** | [**TransferRequest**](TransferRequest.html)| Transfer request |  |
+| **body** | [**TransferRequest**](TransferRequest)| Transfer request |  |
 
 ### Return type
 
@@ -8882,7 +8737,6 @@ void (empty response body)
 ## post_conversations_call_participants
 
 > [**Conversation**](Conversation) post_conversations_call_participants(conversation_id, body)
-
 
 
 Add participants to a conversation
@@ -8922,17 +8776,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
-| **body** | [**Conversation**](Conversation.html)| Conversation |  |
+| **body** | [**Conversation**](Conversation)| Conversation |  |
 
 ### Return type
 
-[**Conversation**](Conversation.html)
+[**Conversation**](Conversation)
 
 
 ## post_conversations_callback_participant_communication_wrapup
 
 >  post_conversations_callback_participant_communication_wrapup(conversation_id, participant_id, communication_id, body=body)
-
 
 
 Apply wrap-up for this conversation communication
@@ -8976,7 +8829,7 @@ except ApiException as e:
 | **conversation_id** | **str**| conversationId |  |
 | **participant_id** | **str**| participantId |  |
 | **communication_id** | **str**| communicationId |  |
-| **body** | [**WrapupInput**](WrapupInput.html)| Wrap-up | [optional]  |
+| **body** | [**WrapupInput**](WrapupInput)| Wrap-up | [optional]  |
 
 ### Return type
 
@@ -8986,7 +8839,6 @@ void (empty response body)
 ## post_conversations_callback_participant_replace
 
 >  post_conversations_callback_participant_replace(conversation_id, participant_id, body)
-
 
 
 Replace this participant with the specified user and/or address
@@ -9028,7 +8880,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
 | **participant_id** | **str**| participantId |  |
-| **body** | [**TransferRequest**](TransferRequest.html)| Transfer request |  |
+| **body** | [**TransferRequest**](TransferRequest)| Transfer request |  |
 
 ### Return type
 
@@ -9038,7 +8890,6 @@ void (empty response body)
 ## post_conversations_callbacks
 
 > [**CreateCallbackResponse**](CreateCallbackResponse) post_conversations_callbacks(body)
-
 
 
 Create a Callback
@@ -9077,17 +8928,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**CreateCallbackCommand**](CreateCallbackCommand.html)| Callback |  |
+| **body** | [**CreateCallbackCommand**](CreateCallbackCommand)| Callback |  |
 
 ### Return type
 
-[**CreateCallbackResponse**](CreateCallbackResponse.html)
+[**CreateCallbackResponse**](CreateCallbackResponse)
 
 
 ## post_conversations_callbacks_bulk_disconnect
 
 >  post_conversations_callbacks_bulk_disconnect(body)
-
 
 
 Disconnect multiple scheduled callbacks
@@ -9125,7 +8975,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**BulkCallbackDisconnectRequest**](BulkCallbackDisconnectRequest.html)| BulkCallbackDisconnectRequest |  |
+| **body** | [**BulkCallbackDisconnectRequest**](BulkCallbackDisconnectRequest)| BulkCallbackDisconnectRequest |  |
 
 ### Return type
 
@@ -9135,7 +8985,6 @@ void (empty response body)
 ## post_conversations_callbacks_bulk_update
 
 > [**BulkCallbackPatchResponse**](BulkCallbackPatchResponse) post_conversations_callbacks_bulk_update(body)
-
 
 
 Update multiple scheduled callbacks
@@ -9174,17 +9023,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**BulkCallbackPatchRequest**](BulkCallbackPatchRequest.html)| BulkCallbackPatchRequest |  |
+| **body** | [**BulkCallbackPatchRequest**](BulkCallbackPatchRequest)| BulkCallbackPatchRequest |  |
 
 ### Return type
 
-[**BulkCallbackPatchResponse**](BulkCallbackPatchResponse.html)
+[**BulkCallbackPatchResponse**](BulkCallbackPatchResponse)
 
 
 ## post_conversations_calls
 
 > [**CreateCallResponse**](CreateCallResponse) post_conversations_calls(body)
-
 
 
 Create a call conversation
@@ -9223,17 +9071,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**CreateCallRequest**](CreateCallRequest.html)| Call request |  |
+| **body** | [**CreateCallRequest**](CreateCallRequest)| Call request |  |
 
 ### Return type
 
-[**CreateCallResponse**](CreateCallResponse.html)
+[**CreateCallResponse**](CreateCallResponse)
 
 
 ## post_conversations_chat_communication_messages
 
 > [**WebChatMessage**](WebChatMessage) post_conversations_chat_communication_messages(conversation_id, communication_id, body)
-
 
 
 Send a message on behalf of a communication in a chat conversation.
@@ -9275,17 +9122,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
 | **communication_id** | **str**| communicationId |  |
-| **body** | [**CreateWebChatMessageRequest**](CreateWebChatMessageRequest.html)| Message |  |
+| **body** | [**CreateWebChatMessageRequest**](CreateWebChatMessageRequest)| Message |  |
 
 ### Return type
 
-[**WebChatMessage**](WebChatMessage.html)
+[**WebChatMessage**](WebChatMessage)
 
 
 ## post_conversations_chat_communication_typing
 
 > [**WebChatTyping**](WebChatTyping) post_conversations_chat_communication_typing(conversation_id, communication_id)
-
 
 
 Send a typing-indicator on behalf of a communication in a chat conversation.
@@ -9329,13 +9175,12 @@ except ApiException as e:
 
 ### Return type
 
-[**WebChatTyping**](WebChatTyping.html)
+[**WebChatTyping**](WebChatTyping)
 
 
 ## post_conversations_chat_participant_communication_wrapup
 
 >  post_conversations_chat_participant_communication_wrapup(conversation_id, participant_id, communication_id, body=body)
-
 
 
 Apply wrap-up for this conversation communication
@@ -9379,7 +9224,7 @@ except ApiException as e:
 | **conversation_id** | **str**| conversationId |  |
 | **participant_id** | **str**| participantId |  |
 | **communication_id** | **str**| communicationId |  |
-| **body** | [**WrapupInput**](WrapupInput.html)| Wrap-up | [optional]  |
+| **body** | [**WrapupInput**](WrapupInput)| Wrap-up | [optional]  |
 
 ### Return type
 
@@ -9389,7 +9234,6 @@ void (empty response body)
 ## post_conversations_chat_participant_replace
 
 >  post_conversations_chat_participant_replace(conversation_id, participant_id, body)
-
 
 
 Replace this participant with the specified user and/or address
@@ -9431,7 +9275,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
 | **participant_id** | **str**| participantId |  |
-| **body** | [**TransferRequest**](TransferRequest.html)| Transfer request |  |
+| **body** | [**TransferRequest**](TransferRequest)| Transfer request |  |
 
 ### Return type
 
@@ -9441,7 +9285,6 @@ void (empty response body)
 ## post_conversations_chats
 
 > [**ChatConversation**](ChatConversation) post_conversations_chats(body)
-
 
 
 Create a web chat conversation
@@ -9480,18 +9323,20 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**CreateWebChatRequest**](CreateWebChatRequest.html)| Create web chat request |  |
+| **body** | [**CreateWebChatRequest**](CreateWebChatRequest)| Create web chat request |  |
 
 ### Return type
 
-[**ChatConversation**](ChatConversation.html)
+[**ChatConversation**](ChatConversation)
 
 
 ## post_conversations_cobrowsesession_participant_communication_wrapup
 
 >  post_conversations_cobrowsesession_participant_communication_wrapup(conversation_id, participant_id, communication_id, body=body)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 Apply wrap-up for this conversation communication
 
@@ -9536,7 +9381,7 @@ except ApiException as e:
 | **conversation_id** | **str**| conversationId |  |
 | **participant_id** | **str**| participantId |  |
 | **communication_id** | **str**| communicationId |  |
-| **body** | [**WrapupInput**](WrapupInput.html)| Wrap-up | [optional]  |
+| **body** | [**WrapupInput**](WrapupInput)| Wrap-up | [optional]  |
 
 ### Return type
 
@@ -9547,7 +9392,9 @@ void (empty response body)
 
 >  post_conversations_cobrowsesession_participant_replace(conversation_id, participant_id, body=body)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 Replace this participant with the specified user and/or address
 
@@ -9590,7 +9437,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
 | **participant_id** | **str**| participantId |  |
-| **body** | [**TransferRequest**](TransferRequest.html)|  | [optional]  |
+| **body** | [**TransferRequest**](TransferRequest)|  | [optional]  |
 
 ### Return type
 
@@ -9600,7 +9447,6 @@ void (empty response body)
 ## post_conversations_email_inboundmessages
 
 > [**EmailConversation**](EmailConversation) post_conversations_email_inboundmessages(conversation_id, body)
-
 
 
 Send an email to an external conversation. An external conversation is one where the provider is not PureCloud based. This endpoint allows the sender of the external email to reply or send a new message to the existing conversation. The new message will be treated as part of the existing conversation and chained to it.
@@ -9640,17 +9486,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
-| **body** | [**InboundMessageRequest**](InboundMessageRequest.html)| Send external email reply |  |
+| **body** | [**InboundMessageRequest**](InboundMessageRequest)| Send external email reply |  |
 
 ### Return type
 
-[**EmailConversation**](EmailConversation.html)
+[**EmailConversation**](EmailConversation)
 
 
 ## post_conversations_email_messages
 
 > [**EmailMessageReply**](EmailMessageReply) post_conversations_email_messages(conversation_id, body)
-
 
 
 Send an email reply
@@ -9690,17 +9535,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
-| **body** | [**EmailMessage**](EmailMessage.html)| Reply |  |
+| **body** | [**EmailMessage**](EmailMessage)| Reply |  |
 
 ### Return type
 
-[**EmailMessageReply**](EmailMessageReply.html)
+[**EmailMessageReply**](EmailMessageReply)
 
 
 ## post_conversations_email_messages_draft_attachments_copy
 
 > [**EmailMessage**](EmailMessage) post_conversations_email_messages_draft_attachments_copy(conversation_id, body)
-
 
 
 Copy attachments from an email message to the current draft.
@@ -9740,17 +9584,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
-| **body** | [**CopyAttachmentsRequest**](CopyAttachmentsRequest.html)| Copy Attachment Request |  |
+| **body** | [**CopyAttachmentsRequest**](CopyAttachmentsRequest)| Copy Attachment Request |  |
 
 ### Return type
 
-[**EmailMessage**](EmailMessage.html)
+[**EmailMessage**](EmailMessage)
 
 
 ## post_conversations_email_participant_communication_wrapup
 
 >  post_conversations_email_participant_communication_wrapup(conversation_id, participant_id, communication_id, body=body)
-
 
 
 Apply wrap-up for this conversation communication
@@ -9794,7 +9637,7 @@ except ApiException as e:
 | **conversation_id** | **str**| conversationId |  |
 | **participant_id** | **str**| participantId |  |
 | **communication_id** | **str**| communicationId |  |
-| **body** | [**WrapupInput**](WrapupInput.html)| Wrap-up | [optional]  |
+| **body** | [**WrapupInput**](WrapupInput)| Wrap-up | [optional]  |
 
 ### Return type
 
@@ -9804,7 +9647,6 @@ void (empty response body)
 ## post_conversations_email_participant_replace
 
 >  post_conversations_email_participant_replace(conversation_id, participant_id, body)
-
 
 
 Replace this participant with the specified user and/or address
@@ -9846,7 +9688,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
 | **participant_id** | **str**| participantId |  |
-| **body** | [**TransferRequest**](TransferRequest.html)| Transfer request |  |
+| **body** | [**TransferRequest**](TransferRequest)| Transfer request |  |
 
 ### Return type
 
@@ -9856,7 +9698,6 @@ void (empty response body)
 ## post_conversations_email_reconnect
 
 >  post_conversations_email_reconnect(conversation_id)
-
 
 
 Reconnect the user to the most recently disconnected customer on a fully disconnected email conversation
@@ -9906,7 +9747,6 @@ void (empty response body)
 > [**EmailConversation**](EmailConversation) post_conversations_emails(body)
 
 
-
 Create an email conversation
 
 If the direction of the request is INBOUND, this will create an external conversation with a third party provider. If the direction of the the request is OUTBOUND, this will create a conversation to send outbound emails on behalf of a queue.
@@ -9945,17 +9785,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**CreateEmailRequest**](CreateEmailRequest.html)| Create email request |  |
+| **body** | [**CreateEmailRequest**](CreateEmailRequest)| Create email request |  |
 
 ### Return type
 
-[**EmailConversation**](EmailConversation.html)
+[**EmailConversation**](EmailConversation)
 
 
 ## post_conversations_emails_agentless
 
 > [**AgentlessEmailSendResponseDto**](AgentlessEmailSendResponseDto) post_conversations_emails_agentless(body)
-
 
 
 Create an email conversation, per API
@@ -9995,17 +9834,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**AgentlessEmailSendRequestDto**](AgentlessEmailSendRequestDto.html)| Create agentless email request |  |
+| **body** | [**AgentlessEmailSendRequestDto**](AgentlessEmailSendRequestDto)| Create agentless email request |  |
 
 ### Return type
 
-[**AgentlessEmailSendResponseDto**](AgentlessEmailSendResponseDto.html)
+[**AgentlessEmailSendResponseDto**](AgentlessEmailSendResponseDto)
 
 
 ## post_conversations_faxes
 
 > [**FaxSendResponse**](FaxSendResponse) post_conversations_faxes(body)
-
 
 
 Create Fax Conversation
@@ -10043,17 +9881,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**FaxSendRequest**](FaxSendRequest.html)| Fax |  |
+| **body** | [**FaxSendRequest**](FaxSendRequest)| Fax |  |
 
 ### Return type
 
-[**FaxSendResponse**](FaxSendResponse.html)
+[**FaxSendResponse**](FaxSendResponse)
 
 
 ## post_conversations_keyconfigurations
 
 > [**ConversationEncryptionConfiguration**](ConversationEncryptionConfiguration) post_conversations_keyconfigurations(body)
-
 
 
 Setup configurations for encryption key creation
@@ -10092,17 +9929,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**ConversationEncryptionConfiguration**](ConversationEncryptionConfiguration.html)| Encryption Configuration |  |
+| **body** | [**ConversationEncryptionConfiguration**](ConversationEncryptionConfiguration)| Encryption Configuration |  |
 
 ### Return type
 
-[**ConversationEncryptionConfiguration**](ConversationEncryptionConfiguration.html)
+[**ConversationEncryptionConfiguration**](ConversationEncryptionConfiguration)
 
 
 ## post_conversations_keyconfigurations_validate
 
 > [**ConversationEncryptionConfiguration**](ConversationEncryptionConfiguration) post_conversations_keyconfigurations_validate(body)
-
 
 
 Validate encryption key configurations without saving it
@@ -10141,17 +9977,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**ConversationEncryptionConfiguration**](ConversationEncryptionConfiguration.html)| Encryption Configuration |  |
+| **body** | [**ConversationEncryptionConfiguration**](ConversationEncryptionConfiguration)| Encryption Configuration |  |
 
 ### Return type
 
-[**ConversationEncryptionConfiguration**](ConversationEncryptionConfiguration.html)
+[**ConversationEncryptionConfiguration**](ConversationEncryptionConfiguration)
 
 
 ## post_conversations_message_communication_messages
 
 > [**MessageData**](MessageData) post_conversations_message_communication_messages(conversation_id, communication_id, body, use_normalized_message=use_normalized_message)
-
 
 
 Send message
@@ -10198,18 +10033,17 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
 | **communication_id** | **str**| communicationId |  |
-| **body** | [**AdditionalMessage**](AdditionalMessage.html)| Message |  |
+| **body** | [**AdditionalMessage**](AdditionalMessage)| Message |  |
 | **use_normalized_message** | **bool**| If true, response removes deprecated fields (textBody, media, stickers) | [optional] [default to False] |
 
 ### Return type
 
-[**MessageData**](MessageData.html)
+[**MessageData**](MessageData)
 
 
 ## post_conversations_message_communication_messages_media
 
 > [**MessageMediaData**](MessageMediaData) post_conversations_message_communication_messages_media(conversation_id, communication_id)
-
 
 
 Create media
@@ -10258,13 +10092,12 @@ except ApiException as e:
 
 ### Return type
 
-[**MessageMediaData**](MessageMediaData.html)
+[**MessageMediaData**](MessageMediaData)
 
 
 ## post_conversations_message_communication_typing
 
 >  post_conversations_message_communication_typing(conversation_id, communication_id, body)
-
 
 
 Send message typing event
@@ -10309,7 +10142,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
 | **communication_id** | **str**| communicationId |  |
-| **body** | [**MessageTypingEventRequest**](MessageTypingEventRequest.html)| MessageTypingEvent |  |
+| **body** | [**MessageTypingEventRequest**](MessageTypingEventRequest)| MessageTypingEvent |  |
 
 ### Return type
 
@@ -10319,7 +10152,6 @@ void (empty response body)
 ## post_conversations_message_inbound_open_event
 
 > [**OpenEventNormalizedMessage**](OpenEventNormalizedMessage) post_conversations_message_inbound_open_event(integration_id, body)
-
 
 
 Send an inbound Open Event Message
@@ -10362,17 +10194,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **integration_id** | **str**| integrationId |  |
-| **body** | [**OpenInboundNormalizedEvent**](OpenInboundNormalizedEvent.html)| NormalizedMessage |  |
+| **body** | [**OpenInboundNormalizedEvent**](OpenInboundNormalizedEvent)| NormalizedMessage |  |
 
 ### Return type
 
-[**OpenEventNormalizedMessage**](OpenEventNormalizedMessage.html)
+[**OpenEventNormalizedMessage**](OpenEventNormalizedMessage)
 
 
 ## post_conversations_message_inbound_open_message
 
 > [**OpenMessageNormalizedMessage**](OpenMessageNormalizedMessage) post_conversations_message_inbound_open_message(integration_id, body)
-
 
 
 Send inbound Open Message
@@ -10415,17 +10246,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **integration_id** | **str**| integrationId |  |
-| **body** | [**OpenInboundNormalizedMessage**](OpenInboundNormalizedMessage.html)| NormalizedMessage |  |
+| **body** | [**OpenInboundNormalizedMessage**](OpenInboundNormalizedMessage)| NormalizedMessage |  |
 
 ### Return type
 
-[**OpenMessageNormalizedMessage**](OpenMessageNormalizedMessage.html)
+[**OpenMessageNormalizedMessage**](OpenMessageNormalizedMessage)
 
 
 ## post_conversations_message_inbound_open_receipt
 
 > [**OpenReceiptNormalizedMessage**](OpenReceiptNormalizedMessage) post_conversations_message_inbound_open_receipt(integration_id, body)
-
 
 
 Send an inbound Open Receipt Message
@@ -10468,17 +10298,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **integration_id** | **str**| integrationId |  |
-| **body** | [**OpenInboundNormalizedReceipt**](OpenInboundNormalizedReceipt.html)| NormalizedMessage |  |
+| **body** | [**OpenInboundNormalizedReceipt**](OpenInboundNormalizedReceipt)| NormalizedMessage |  |
 
 ### Return type
 
-[**OpenReceiptNormalizedMessage**](OpenReceiptNormalizedMessage.html)
+[**OpenReceiptNormalizedMessage**](OpenReceiptNormalizedMessage)
 
 
 ## post_conversations_message_messages_bulk
 
 > [**TextMessageListing**](TextMessageListing) post_conversations_message_messages_bulk(conversation_id, use_normalized_message=use_normalized_message, body=body)
-
 
 
 Get messages in batch
@@ -10524,17 +10353,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**|  |  |
 | **use_normalized_message** | **bool**| If true, response removes deprecated fields (textBody, media, stickers) | [optional] [default to False] |
-| **body** | [**list[str]**](str.html)| messageIds | [optional]  |
+| **body** | [**list[str]**](str)| messageIds | [optional]  |
 
 ### Return type
 
-[**TextMessageListing**](TextMessageListing.html)
+[**TextMessageListing**](TextMessageListing)
 
 
 ## post_conversations_message_participant_communication_wrapup
 
 >  post_conversations_message_participant_communication_wrapup(conversation_id, participant_id, communication_id, body=body)
-
 
 
 Apply wrap-up for this conversation communication
@@ -10578,7 +10406,7 @@ except ApiException as e:
 | **conversation_id** | **str**| conversationId |  |
 | **participant_id** | **str**| participantId |  |
 | **communication_id** | **str**| communicationId |  |
-| **body** | [**WrapupInput**](WrapupInput.html)| Wrap-up | [optional]  |
+| **body** | [**WrapupInput**](WrapupInput)| Wrap-up | [optional]  |
 
 ### Return type
 
@@ -10588,7 +10416,6 @@ void (empty response body)
 ## post_conversations_message_participant_monitor
 
 >  post_conversations_message_participant_monitor(conversation_id, participant_id)
-
 
 
 Listen in on the conversation from the point of view of a given participant.
@@ -10640,7 +10467,6 @@ void (empty response body)
 >  post_conversations_message_participant_replace(conversation_id, participant_id, body)
 
 
-
 Replace this participant with the specified user and/or address
 
 Wraps POST /api/v2/conversations/messages/{conversationId}/participants/{participantId}/replace 
@@ -10680,7 +10506,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
 | **participant_id** | **str**| participantId |  |
-| **body** | [**TransferRequest**](TransferRequest.html)| Transfer request |  |
+| **body** | [**TransferRequest**](TransferRequest)| Transfer request |  |
 
 ### Return type
 
@@ -10690,7 +10516,6 @@ void (empty response body)
 ## post_conversations_messages
 
 > [**CreateOutboundMessagingConversationResponse**](CreateOutboundMessagingConversationResponse) post_conversations_messages(body)
-
 
 
 Create an outbound messaging conversation.
@@ -10731,17 +10556,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**CreateOutboundMessagingConversationRequest**](CreateOutboundMessagingConversationRequest.html)| Create outbound messaging conversation |  |
+| **body** | [**CreateOutboundMessagingConversationRequest**](CreateOutboundMessagingConversationRequest)| Create outbound messaging conversation |  |
 
 ### Return type
 
-[**CreateOutboundMessagingConversationResponse**](CreateOutboundMessagingConversationResponse.html)
+[**CreateOutboundMessagingConversationResponse**](CreateOutboundMessagingConversationResponse)
 
 
 ## post_conversations_messages_agentless
 
 > [**SendAgentlessOutboundMessageResponse**](SendAgentlessOutboundMessageResponse) post_conversations_messages_agentless(body)
-
 
 
 Send an agentless outbound message
@@ -10782,18 +10606,20 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**SendAgentlessOutboundMessageRequest**](SendAgentlessOutboundMessageRequest.html)| Create agentless outbound messaging request |  |
+| **body** | [**SendAgentlessOutboundMessageRequest**](SendAgentlessOutboundMessageRequest)| Create agentless outbound messaging request |  |
 
 ### Return type
 
-[**SendAgentlessOutboundMessageResponse**](SendAgentlessOutboundMessageResponse.html)
+[**SendAgentlessOutboundMessageResponse**](SendAgentlessOutboundMessageResponse)
 
 
 ## post_conversations_messages_inbound_open
 
 > [**OpenNormalizedMessage**](OpenNormalizedMessage) post_conversations_messages_inbound_open(body)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 Send an inbound Open Message
 
@@ -10833,17 +10659,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**OpenNormalizedMessage**](OpenNormalizedMessage.html)| NormalizedMessage |  |
+| **body** | [**OpenNormalizedMessage**](OpenNormalizedMessage)| NormalizedMessage |  |
 
 ### Return type
 
-[**OpenNormalizedMessage**](OpenNormalizedMessage.html)
+[**OpenNormalizedMessage**](OpenNormalizedMessage)
 
 
 ## post_conversations_messaging_integrations_facebook
 
 > [**FacebookIntegration**](FacebookIntegration) post_conversations_messaging_integrations_facebook(body)
-
 
 
 Create a Facebook Integration
@@ -10882,17 +10707,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**FacebookIntegrationRequest**](FacebookIntegrationRequest.html)| FacebookIntegrationRequest |  |
+| **body** | [**FacebookIntegrationRequest**](FacebookIntegrationRequest)| FacebookIntegrationRequest |  |
 
 ### Return type
 
-[**FacebookIntegration**](FacebookIntegration.html)
+[**FacebookIntegration**](FacebookIntegration)
 
 
 ## post_conversations_messaging_integrations_instagram
 
 > [**InstagramIntegration**](InstagramIntegration) post_conversations_messaging_integrations_instagram(body)
-
 
 
 Create Instagram Integration
@@ -10931,17 +10755,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**InstagramIntegrationRequest**](InstagramIntegrationRequest.html)| InstagramIntegrationRequest |  |
+| **body** | [**InstagramIntegrationRequest**](InstagramIntegrationRequest)| InstagramIntegrationRequest |  |
 
 ### Return type
 
-[**InstagramIntegration**](InstagramIntegration.html)
+[**InstagramIntegration**](InstagramIntegration)
 
 
 ## post_conversations_messaging_integrations_open
 
 > [**OpenIntegration**](OpenIntegration) post_conversations_messaging_integrations_open(body)
-
 
 
 Create an Open messaging integration
@@ -10982,18 +10805,20 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**OpenIntegrationRequest**](OpenIntegrationRequest.html)| OpenIntegrationRequest |  |
+| **body** | [**OpenIntegrationRequest**](OpenIntegrationRequest)| OpenIntegrationRequest |  |
 
 ### Return type
 
-[**OpenIntegration**](OpenIntegration.html)
+[**OpenIntegration**](OpenIntegration)
 
 
 ## post_conversations_messaging_integrations_whatsapp
 
 > [**WhatsAppIntegration**](WhatsAppIntegration) post_conversations_messaging_integrations_whatsapp(body)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 [This API is deprecated. Use POST /api/v2/conversations/messaging/integrations/whatsapp/embeddedsignup instead] Create a WhatsApp Integration
 
@@ -11033,17 +10858,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**WhatsAppIntegrationRequest**](WhatsAppIntegrationRequest.html)| WhatsAppIntegrationRequest |  |
+| **body** | [**WhatsAppIntegrationRequest**](WhatsAppIntegrationRequest)| WhatsAppIntegrationRequest |  |
 
 ### Return type
 
-[**WhatsAppIntegration**](WhatsAppIntegration.html)
+[**WhatsAppIntegration**](WhatsAppIntegration)
 
 
 ## post_conversations_messaging_integrations_whatsapp_embeddedsignup
 
 > [**WhatsAppIntegration**](WhatsAppIntegration) post_conversations_messaging_integrations_whatsapp_embeddedsignup(body)
-
 
 
 Create a WhatsApp Integration using the WhatsApp embedded signup flow
@@ -11084,17 +10908,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**WhatsAppEmbeddedSignupIntegrationRequest**](WhatsAppEmbeddedSignupIntegrationRequest.html)| WhatsAppEmbeddedSignupIntegrationRequest |  |
+| **body** | [**WhatsAppEmbeddedSignupIntegrationRequest**](WhatsAppEmbeddedSignupIntegrationRequest)| WhatsAppEmbeddedSignupIntegrationRequest |  |
 
 ### Return type
 
-[**WhatsAppIntegration**](WhatsAppIntegration.html)
+[**WhatsAppIntegration**](WhatsAppIntegration)
 
 
 ## post_conversations_messaging_settings
 
 > [**MessagingSetting**](MessagingSetting) post_conversations_messaging_settings(body)
-
 
 
 Create a messaging setting
@@ -11133,17 +10956,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**MessagingSettingRequest**](MessagingSettingRequest.html)| MessagingSetting |  |
+| **body** | [**MessagingSettingRequest**](MessagingSettingRequest)| MessagingSetting |  |
 
 ### Return type
 
-[**MessagingSetting**](MessagingSetting.html)
+[**MessagingSetting**](MessagingSetting)
 
 
 ## post_conversations_messaging_supportedcontent
 
 > [**SupportedContent**](SupportedContent) post_conversations_messaging_supportedcontent(body)
-
 
 
 Create a Supported Content profile
@@ -11182,17 +11004,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**SupportedContent**](SupportedContent.html)| SupportedContent |  |
+| **body** | [**SupportedContent**](SupportedContent)| SupportedContent |  |
 
 ### Return type
 
-[**SupportedContent**](SupportedContent.html)
+[**SupportedContent**](SupportedContent)
 
 
 ## post_conversations_participants_attributes_search
 
 > [**JsonCursorSearchResponse**](JsonCursorSearchResponse) post_conversations_participants_attributes_search(body)
-
 
 
 Search conversations
@@ -11231,18 +11052,20 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**ConversationParticipantSearchRequest**](ConversationParticipantSearchRequest.html)| Search request options |  |
+| **body** | [**ConversationParticipantSearchRequest**](ConversationParticipantSearchRequest)| Search request options |  |
 
 ### Return type
 
-[**JsonCursorSearchResponse**](JsonCursorSearchResponse.html)
+[**JsonCursorSearchResponse**](JsonCursorSearchResponse)
 
 
 ## post_conversations_screenshare_participant_communication_wrapup
 
 >  post_conversations_screenshare_participant_communication_wrapup(conversation_id, participant_id, communication_id, body=body)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 Apply wrap-up for this conversation communication
 
@@ -11287,7 +11110,7 @@ except ApiException as e:
 | **conversation_id** | **str**| conversationId |  |
 | **participant_id** | **str**| participantId |  |
 | **communication_id** | **str**| communicationId |  |
-| **body** | [**WrapupInput**](WrapupInput.html)| Wrap-up | [optional]  |
+| **body** | [**WrapupInput**](WrapupInput)| Wrap-up | [optional]  |
 
 ### Return type
 
@@ -11297,7 +11120,6 @@ void (empty response body)
 ## post_conversations_social_participant_communication_wrapup
 
 >  post_conversations_social_participant_communication_wrapup(conversation_id, participant_id, communication_id, body=body)
-
 
 
 Apply wrap-up for this conversation communication
@@ -11341,7 +11163,7 @@ except ApiException as e:
 | **conversation_id** | **str**| conversationId |  |
 | **participant_id** | **str**| participantId |  |
 | **communication_id** | **str**| communicationId |  |
-| **body** | [**WrapupInput**](WrapupInput.html)| Wrap-up | [optional]  |
+| **body** | [**WrapupInput**](WrapupInput)| Wrap-up | [optional]  |
 
 ### Return type
 
@@ -11351,7 +11173,6 @@ void (empty response body)
 ## post_conversations_video_participant_communication_wrapup
 
 >  post_conversations_video_participant_communication_wrapup(conversation_id, participant_id, communication_id, body=body)
-
 
 
 Apply wrap-up for this conversation communication
@@ -11395,7 +11216,7 @@ except ApiException as e:
 | **conversation_id** | **str**| conversationId |  |
 | **participant_id** | **str**| participantId |  |
 | **communication_id** | **str**| communicationId |  |
-| **body** | [**WrapupInput**](WrapupInput.html)| Wrap-up | [optional]  |
+| **body** | [**WrapupInput**](WrapupInput)| Wrap-up | [optional]  |
 
 ### Return type
 
@@ -11405,7 +11226,6 @@ void (empty response body)
 ## post_conversations_videos_meetings
 
 > [**MeetingIdRecord**](MeetingIdRecord) post_conversations_videos_meetings(body)
-
 
 
 Generate a meetingId for a given conferenceId
@@ -11446,17 +11266,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**GenerateMeetingIdRequest**](GenerateMeetingIdRequest.html)| MeetingIdRequest |  |
+| **body** | [**GenerateMeetingIdRequest**](GenerateMeetingIdRequest)| MeetingIdRequest |  |
 
 ### Return type
 
-[**MeetingIdRecord**](MeetingIdRecord.html)
+[**MeetingIdRecord**](MeetingIdRecord)
 
 
 ## put_conversation_participant_flaggedreason
 
 >  put_conversation_participant_flaggedreason(conversation_id, participant_id)
-
 
 
 Set flagged reason on conversation participant to indicate bad conversation quality.
@@ -11507,7 +11326,6 @@ void (empty response body)
 > str** put_conversation_secureattributes(conversation_id, body)
 
 
-
 Set the secure attributes on a conversation.
 
 Wraps PUT /api/v2/conversations/{conversationId}/secureattributes 
@@ -11546,7 +11364,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversation ID |  |
-| **body** | [**ConversationSecureAttributes**](ConversationSecureAttributes.html)| Conversation Secure Attributes |  |
+| **body** | [**ConversationSecureAttributes**](ConversationSecureAttributes)| Conversation Secure Attributes |  |
 
 ### Return type
 
@@ -11556,7 +11374,6 @@ except ApiException as e:
 ## put_conversation_tags
 
 > str** put_conversation_tags(conversation_id, body)
-
 
 
 Update the tags on a conversation.
@@ -11597,7 +11414,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversation ID |  |
-| **body** | [**ConversationTagsUpdate**](ConversationTagsUpdate.html)| Conversation Tags |  |
+| **body** | [**ConversationTagsUpdate**](ConversationTagsUpdate)| Conversation Tags |  |
 
 ### Return type
 
@@ -11607,7 +11424,6 @@ except ApiException as e:
 ## put_conversations_call_participant_communication_uuidata
 
 > object** put_conversations_call_participant_communication_uuidata(conversation_id, participant_id, communication_id, body)
-
 
 
 Set uuiData to be sent on future commands.
@@ -11651,7 +11467,7 @@ except ApiException as e:
 | **conversation_id** | **str**| conversationId |  |
 | **participant_id** | **str**| participantId |  |
 | **communication_id** | **str**| communicationId |  |
-| **body** | [**SetUuiDataRequest**](SetUuiDataRequest.html)| UUIData Request |  |
+| **body** | [**SetUuiDataRequest**](SetUuiDataRequest)| UUIData Request |  |
 
 ### Return type
 
@@ -11661,7 +11477,6 @@ except ApiException as e:
 ## put_conversations_call_recordingstate
 
 > str** put_conversations_call_recordingstate(conversation_id, body)
-
 
 
 Update a conversation by setting its recording state
@@ -11702,7 +11517,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
-| **body** | [**SetRecordingState**](SetRecordingState.html)| SetRecordingState |  |
+| **body** | [**SetRecordingState**](SetRecordingState)| SetRecordingState |  |
 
 ### Return type
 
@@ -11712,7 +11527,6 @@ except ApiException as e:
 ## put_conversations_callback_recordingstate
 
 > str** put_conversations_callback_recordingstate(conversation_id, body)
-
 
 
 Update a conversation by setting its recording state
@@ -11753,7 +11567,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
-| **body** | [**SetRecordingState**](SetRecordingState.html)| SetRecordingState |  |
+| **body** | [**SetRecordingState**](SetRecordingState)| SetRecordingState |  |
 
 ### Return type
 
@@ -11763,7 +11577,6 @@ except ApiException as e:
 ## put_conversations_chat_recordingstate
 
 > str** put_conversations_chat_recordingstate(conversation_id, body)
-
 
 
 Update a conversation by setting its recording state
@@ -11804,7 +11617,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
-| **body** | [**SetRecordingState**](SetRecordingState.html)| SetRecordingState |  |
+| **body** | [**SetRecordingState**](SetRecordingState)| SetRecordingState |  |
 
 ### Return type
 
@@ -11814,7 +11627,6 @@ except ApiException as e:
 ## put_conversations_cobrowsesession_recordingstate
 
 > str** put_conversations_cobrowsesession_recordingstate(conversation_id, body)
-
 
 
 Update a conversation by setting its recording state
@@ -11855,7 +11667,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
-| **body** | [**SetRecordingState**](SetRecordingState.html)| SetRecordingState |  |
+| **body** | [**SetRecordingState**](SetRecordingState)| SetRecordingState |  |
 
 ### Return type
 
@@ -11865,7 +11677,6 @@ except ApiException as e:
 ## put_conversations_email_messages_draft
 
 > [**EmailMessage**](EmailMessage) put_conversations_email_messages_draft(conversation_id, body)
-
 
 
 Update conversation draft reply
@@ -11905,17 +11716,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
-| **body** | [**EmailMessage**](EmailMessage.html)| Draft |  |
+| **body** | [**EmailMessage**](EmailMessage)| Draft |  |
 
 ### Return type
 
-[**EmailMessage**](EmailMessage.html)
+[**EmailMessage**](EmailMessage)
 
 
 ## put_conversations_email_recordingstate
 
 > str** put_conversations_email_recordingstate(conversation_id, body)
-
 
 
 Update a conversation by setting its recording state
@@ -11956,7 +11766,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
-| **body** | [**SetRecordingState**](SetRecordingState.html)| SetRecordingState |  |
+| **body** | [**SetRecordingState**](SetRecordingState)| SetRecordingState |  |
 
 ### Return type
 
@@ -11966,7 +11776,6 @@ except ApiException as e:
 ## put_conversations_keyconfiguration
 
 > [**ConversationEncryptionConfiguration**](ConversationEncryptionConfiguration) put_conversations_keyconfiguration(keyconfigurations_id, body)
-
 
 
 Update the encryption key configurations
@@ -12007,17 +11816,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **keyconfigurations_id** | **str**| Key Configurations Id |  |
-| **body** | [**ConversationEncryptionConfiguration**](ConversationEncryptionConfiguration.html)| Encryption key configuration metadata |  |
+| **body** | [**ConversationEncryptionConfiguration**](ConversationEncryptionConfiguration)| Encryption key configuration metadata |  |
 
 ### Return type
 
-[**ConversationEncryptionConfiguration**](ConversationEncryptionConfiguration.html)
+[**ConversationEncryptionConfiguration**](ConversationEncryptionConfiguration)
 
 
 ## put_conversations_message_recordingstate
 
 > str** put_conversations_message_recordingstate(conversation_id, body)
-
 
 
 Update a conversation by setting its recording state
@@ -12058,7 +11866,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
-| **body** | [**SetRecordingState**](SetRecordingState.html)| SetRecordingState |  |
+| **body** | [**SetRecordingState**](SetRecordingState)| SetRecordingState |  |
 
 ### Return type
 
@@ -12068,7 +11876,6 @@ except ApiException as e:
 ## put_conversations_messaging_settings_default
 
 > [**MessagingSetting**](MessagingSetting) put_conversations_messaging_settings_default(body)
-
 
 
 Set the organization's default setting that may be applied to to integrations without settings
@@ -12109,17 +11916,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**MessagingSettingDefaultRequest**](MessagingSettingDefaultRequest.html)| MessagingSetting |  |
+| **body** | [**MessagingSettingDefaultRequest**](MessagingSettingDefaultRequest)| MessagingSetting |  |
 
 ### Return type
 
-[**MessagingSetting**](MessagingSetting.html)
+[**MessagingSetting**](MessagingSetting)
 
 
 ## put_conversations_messaging_supportedcontent_default
 
 > [**SupportedContent**](SupportedContent) put_conversations_messaging_supportedcontent_default(body)
-
 
 
 Set the organization's default supported content profile that may be assigned to an integration when it is created.
@@ -12160,17 +11966,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**SupportedContentReference**](SupportedContentReference.html)| SupportedContent |  |
+| **body** | [**SupportedContentReference**](SupportedContentReference)| SupportedContent |  |
 
 ### Return type
 
-[**SupportedContent**](SupportedContent.html)
+[**SupportedContent**](SupportedContent)
 
 
 ## put_conversations_messaging_threadingtimeline
 
 > [**ConversationThreadingWindow**](ConversationThreadingWindow) put_conversations_messaging_threadingtimeline(body)
-
 
 
 Update conversation threading window timeline for each messaging type
@@ -12211,18 +12016,20 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**ConversationThreadingWindow**](ConversationThreadingWindow.html)| ConversationThreadingWindowRequest |  |
+| **body** | [**ConversationThreadingWindow**](ConversationThreadingWindow)| ConversationThreadingWindowRequest |  |
 
 ### Return type
 
-[**ConversationThreadingWindow**](ConversationThreadingWindow.html)
+[**ConversationThreadingWindow**](ConversationThreadingWindow)
 
 
 ## put_conversations_screenshare_recordingstate
 
 > str** put_conversations_screenshare_recordingstate(conversation_id, body)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 Update a conversation by setting its recording state
 
@@ -12264,7 +12071,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
-| **body** | [**SetRecordingState**](SetRecordingState.html)| SetRecordingState |  |
+| **body** | [**SetRecordingState**](SetRecordingState)| SetRecordingState |  |
 
 ### Return type
 
@@ -12274,7 +12081,6 @@ except ApiException as e:
 ## put_conversations_social_recordingstate
 
 > str** put_conversations_social_recordingstate(conversation_id, body)
-
 
 
 Update a conversation by setting its recording state
@@ -12315,7 +12121,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
-| **body** | [**SetRecordingState**](SetRecordingState.html)| SetRecordingState |  |
+| **body** | [**SetRecordingState**](SetRecordingState)| SetRecordingState |  |
 
 ### Return type
 
@@ -12325,7 +12131,6 @@ except ApiException as e:
 ## put_conversations_video_recordingstate
 
 > str** put_conversations_video_recordingstate(conversation_id, body)
-
 
 
 Update a conversation by setting its recording state
@@ -12366,11 +12171,11 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
-| **body** | [**SetRecordingState**](SetRecordingState.html)| SetRecordingState |  |
+| **body** | [**SetRecordingState**](SetRecordingState)| SetRecordingState |  |
 
 ### Return type
 
 **str**
 
 
-_PureCloudPlatformClientV2 210.0.0_
+_PureCloudPlatformClientV2 211.0.0_

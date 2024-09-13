@@ -13,13 +13,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_oauth_client_usage_query**](#post_oauth_client_usage_query) | Query for OAuth client API usage|
 |[**post_usage_query**](#post_usage_query) | Query organization API Usage - |
 |[**post_usage_simplesearch**](#post_usage_simplesearch) | Search organization API Usage|
-{: class="table table-striped"}
+
 
 
 ## get_oauth_client_usage_query_result
 
 > [**ApiUsageQueryResult**](ApiUsageQueryResult) get_oauth_client_usage_query_result(execution_id, client_id)
-
 
 
 Get the results of a usage query
@@ -65,13 +64,12 @@ except ApiException as e:
 
 ### Return type
 
-[**ApiUsageQueryResult**](ApiUsageQueryResult.html)
+[**ApiUsageQueryResult**](ApiUsageQueryResult)
 
 
 ## get_oauth_client_usage_summary
 
 > [**UsageExecutionResult**](UsageExecutionResult) get_oauth_client_usage_summary(client_id, days=days)
-
 
 
 Get a summary of OAuth client API usage
@@ -119,13 +117,12 @@ except ApiException as e:
 
 ### Return type
 
-[**UsageExecutionResult**](UsageExecutionResult.html)
+[**UsageExecutionResult**](UsageExecutionResult)
 
 
 ## get_usage_query_execution_id_results
 
 > [**ApiUsageQueryResult**](ApiUsageQueryResult) get_usage_query_execution_id_results(execution_id)
-
 
 
 Get the results of a usage query
@@ -169,13 +166,12 @@ except ApiException as e:
 
 ### Return type
 
-[**ApiUsageQueryResult**](ApiUsageQueryResult.html)
+[**ApiUsageQueryResult**](ApiUsageQueryResult)
 
 
 ## get_usage_simplesearch_execution_id_results
 
 > [**ApiUsageQueryResult**](ApiUsageQueryResult) get_usage_simplesearch_execution_id_results(execution_id, after=after, page_size=page_size)
-
 
 
 Get the results of a usage search. Number of records to be returned is limited to 20,000 results.
@@ -223,13 +219,12 @@ except ApiException as e:
 
 ### Return type
 
-[**ApiUsageQueryResult**](ApiUsageQueryResult.html)
+[**ApiUsageQueryResult**](ApiUsageQueryResult)
 
 
 ## post_oauth_client_usage_query
 
 > [**UsageExecutionResult**](UsageExecutionResult) post_oauth_client_usage_query(client_id, body)
-
 
 
 Query for OAuth client API usage
@@ -273,17 +268,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **client_id** | **str**| Client ID |  |
-| **body** | [**ApiUsageClientQuery**](ApiUsageClientQuery.html)| Query |  |
+| **body** | [**ApiUsageClientQuery**](ApiUsageClientQuery)| Query |  |
 
 ### Return type
 
-[**UsageExecutionResult**](UsageExecutionResult.html)
+[**UsageExecutionResult**](UsageExecutionResult)
 
 
 ## post_usage_query
 
 > [**UsageExecutionResult**](UsageExecutionResult) post_usage_query(body)
-
 
 
 Query organization API Usage - 
@@ -325,17 +319,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**ApiUsageOrganizationQuery**](ApiUsageOrganizationQuery.html)| Query |  |
+| **body** | [**ApiUsageOrganizationQuery**](ApiUsageOrganizationQuery)| Query |  |
 
 ### Return type
 
-[**UsageExecutionResult**](UsageExecutionResult.html)
+[**UsageExecutionResult**](UsageExecutionResult)
 
 
 ## post_usage_simplesearch
 
 > [**UsageExecutionResult**](UsageExecutionResult) post_usage_simplesearch(body)
-
 
 
 Search organization API Usage
@@ -377,11 +370,11 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**ApiUsageSimpleSearch**](ApiUsageSimpleSearch.html)| SimpleSearch |  |
+| **body** | [**ApiUsageSimpleSearch**](ApiUsageSimpleSearch)| SimpleSearch |  |
 
 ### Return type
 
-[**UsageExecutionResult**](UsageExecutionResult.html)
+[**UsageExecutionResult**](UsageExecutionResult)
 
 
-_PureCloudPlatformClientV2 210.0.0_
+_PureCloudPlatformClientV2 211.0.0_

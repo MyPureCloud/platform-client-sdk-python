@@ -11,13 +11,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_mobiledevices**](#get_mobiledevices) | Get a list of all devices.|
 |[**post_mobiledevices**](#post_mobiledevices) | Create User device|
 |[**put_mobiledevice**](#put_mobiledevice) | Update device|
-{: class="table table-striped"}
+
 
 
 ## delete_mobiledevice
 
 >  delete_mobiledevice(device_id)
-
 
 
 Delete device
@@ -66,7 +65,6 @@ void (empty response body)
 > [**UserDevice**](UserDevice) get_mobiledevice(device_id)
 
 
-
 Get device
 
 Wraps GET /api/v2/mobiledevices/{deviceId} 
@@ -106,13 +104,12 @@ except ApiException as e:
 
 ### Return type
 
-[**UserDevice**](UserDevice.html)
+[**UserDevice**](UserDevice)
 
 
 ## get_mobiledevices
 
 > [**DirectoryUserDevicesListing**](DirectoryUserDevicesListing) get_mobiledevices(page_size=page_size, page_number=page_number, sort_order=sort_order)
-
 
 
 Get a list of all devices.
@@ -158,13 +155,12 @@ except ApiException as e:
 
 ### Return type
 
-[**DirectoryUserDevicesListing**](DirectoryUserDevicesListing.html)
+[**DirectoryUserDevicesListing**](DirectoryUserDevicesListing)
 
 
 ## post_mobiledevices
 
 > [**UserDevice**](UserDevice) post_mobiledevices(body)
-
 
 
 Create User device
@@ -202,17 +198,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**UserDevice**](UserDevice.html)| Device |  |
+| **body** | [**UserDevice**](UserDevice)| Device |  |
 
 ### Return type
 
-[**UserDevice**](UserDevice.html)
+[**UserDevice**](UserDevice)
 
 
 ## put_mobiledevice
 
 > [**UserDevice**](UserDevice) put_mobiledevice(device_id, body=body)
-
 
 
 Update device
@@ -252,11 +247,11 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **device_id** | **str**| Device ID |  |
-| **body** | [**UserDevice**](UserDevice.html)| Device | [optional]  |
+| **body** | [**UserDevice**](UserDevice)| Device | [optional]  |
 
 ### Return type
 
-[**UserDevice**](UserDevice.html)
+[**UserDevice**](UserDevice)
 
 
-_PureCloudPlatformClientV2 210.0.0_
+_PureCloudPlatformClientV2 211.0.0_

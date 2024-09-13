@@ -44,13 +44,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**put_identityproviders_purecloud**](#put_identityproviders_purecloud) | Update/Create PureCloud Identity Provider|
 |[**put_identityproviders_pureengage**](#put_identityproviders_pureengage) | Update/Create PureEngage Identity Provider|
 |[**put_identityproviders_salesforce**](#put_identityproviders_salesforce) | Update/Create Salesforce Identity Provider|
-{: class="table table-striped"}
+
 
 
 ## delete_identityprovider
 
 >  delete_identityprovider(provider_id)
-
 
 
 Delete Identity Provider
@@ -100,7 +99,6 @@ void (empty response body)
 > object** delete_identityproviders_adfs()
 
 
-
 Delete ADFS Identity Provider
 
 Wraps DELETE /api/v2/identityproviders/adfs 
@@ -143,7 +141,6 @@ This endpoint does not need any parameters.
 ## delete_identityproviders_cic
 
 > object** delete_identityproviders_cic()
-
 
 
 Delete Customer Interaction Center (CIC) Identity Provider
@@ -190,7 +187,6 @@ This endpoint does not need any parameters.
 > object** delete_identityproviders_generic()
 
 
-
 Delete Generic SAML Identity Provider
 
 Wraps DELETE /api/v2/identityproviders/generic 
@@ -233,7 +229,6 @@ This endpoint does not need any parameters.
 ## delete_identityproviders_gsuite
 
 > object** delete_identityproviders_gsuite()
-
 
 
 Delete G Suite Identity Provider
@@ -280,7 +275,6 @@ This endpoint does not need any parameters.
 > object** delete_identityproviders_identitynow()
 
 
-
 Delete IdentityNow Provider
 
 Wraps DELETE /api/v2/identityproviders/identitynow 
@@ -323,7 +317,6 @@ This endpoint does not need any parameters.
 ## delete_identityproviders_okta
 
 > object** delete_identityproviders_okta()
-
 
 
 Delete Okta Identity Provider
@@ -370,7 +363,6 @@ This endpoint does not need any parameters.
 > object** delete_identityproviders_onelogin()
 
 
-
 Delete OneLogin Identity Provider
 
 Wraps DELETE /api/v2/identityproviders/onelogin 
@@ -413,7 +405,6 @@ This endpoint does not need any parameters.
 ## delete_identityproviders_ping
 
 > object** delete_identityproviders_ping()
-
 
 
 Delete Ping Identity Provider
@@ -460,7 +451,6 @@ This endpoint does not need any parameters.
 > object** delete_identityproviders_purecloud()
 
 
-
 Delete PureCloud Identity Provider
 
 Wraps DELETE /api/v2/identityproviders/purecloud 
@@ -503,7 +493,6 @@ This endpoint does not need any parameters.
 ## delete_identityproviders_pureengage
 
 > object** delete_identityproviders_pureengage()
-
 
 
 Delete PureEngage Identity Provider
@@ -550,7 +539,6 @@ This endpoint does not need any parameters.
 > object** delete_identityproviders_salesforce()
 
 
-
 Delete Salesforce Identity Provider
 
 Wraps DELETE /api/v2/identityproviders/salesforce 
@@ -595,7 +583,6 @@ This endpoint does not need any parameters.
 > [**CustomProvider**](CustomProvider) get_identityprovider(provider_id)
 
 
-
 Get Identity Provider
 
 Wraps GET /api/v2/identityproviders/{providerId} 
@@ -636,13 +623,12 @@ except ApiException as e:
 
 ### Return type
 
-[**CustomProvider**](CustomProvider.html)
+[**CustomProvider**](CustomProvider)
 
 
 ## get_identityproviders
 
 > [**IdentityProviderEntityListing**](IdentityProviderEntityListing) get_identityproviders()
-
 
 
 The list of identity providers
@@ -681,13 +667,12 @@ This endpoint does not need any parameters.
 
 ### Return type
 
-[**IdentityProviderEntityListing**](IdentityProviderEntityListing.html)
+[**IdentityProviderEntityListing**](IdentityProviderEntityListing)
 
 
 ## get_identityproviders_adfs
 
 > [**ADFS**](ADFS) get_identityproviders_adfs()
-
 
 
 Get ADFS Identity Provider
@@ -726,13 +711,12 @@ This endpoint does not need any parameters.
 
 ### Return type
 
-[**ADFS**](ADFS.html)
+[**ADFS**](ADFS)
 
 
 ## get_identityproviders_cic
 
 > [**CustomerInteractionCenter**](CustomerInteractionCenter) get_identityproviders_cic()
-
 
 
 Get Customer Interaction Center (CIC) Identity Provider
@@ -771,13 +755,12 @@ This endpoint does not need any parameters.
 
 ### Return type
 
-[**CustomerInteractionCenter**](CustomerInteractionCenter.html)
+[**CustomerInteractionCenter**](CustomerInteractionCenter)
 
 
 ## get_identityproviders_generic
 
 > [**GenericSAML**](GenericSAML) get_identityproviders_generic()
-
 
 
 Get Generic SAML Identity Provider
@@ -816,13 +799,12 @@ This endpoint does not need any parameters.
 
 ### Return type
 
-[**GenericSAML**](GenericSAML.html)
+[**GenericSAML**](GenericSAML)
 
 
 ## get_identityproviders_gsuite
 
 > [**GSuite**](GSuite) get_identityproviders_gsuite()
-
 
 
 Get G Suite Identity Provider
@@ -861,13 +843,12 @@ This endpoint does not need any parameters.
 
 ### Return type
 
-[**GSuite**](GSuite.html)
+[**GSuite**](GSuite)
 
 
 ## get_identityproviders_identitynow
 
 > [**IdentityNow**](IdentityNow) get_identityproviders_identitynow()
-
 
 
 Get IdentityNow Provider
@@ -906,13 +887,12 @@ This endpoint does not need any parameters.
 
 ### Return type
 
-[**IdentityNow**](IdentityNow.html)
+[**IdentityNow**](IdentityNow)
 
 
 ## get_identityproviders_okta
 
 > [**Okta**](Okta) get_identityproviders_okta()
-
 
 
 Get Okta Identity Provider
@@ -951,13 +931,12 @@ This endpoint does not need any parameters.
 
 ### Return type
 
-[**Okta**](Okta.html)
+[**Okta**](Okta)
 
 
 ## get_identityproviders_onelogin
 
 > [**OneLogin**](OneLogin) get_identityproviders_onelogin()
-
 
 
 Get OneLogin Identity Provider
@@ -996,13 +975,12 @@ This endpoint does not need any parameters.
 
 ### Return type
 
-[**OneLogin**](OneLogin.html)
+[**OneLogin**](OneLogin)
 
 
 ## get_identityproviders_ping
 
 > [**PingIdentity**](PingIdentity) get_identityproviders_ping()
-
 
 
 Get Ping Identity Provider
@@ -1041,13 +1019,12 @@ This endpoint does not need any parameters.
 
 ### Return type
 
-[**PingIdentity**](PingIdentity.html)
+[**PingIdentity**](PingIdentity)
 
 
 ## get_identityproviders_purecloud
 
 > [**PureCloud**](PureCloud) get_identityproviders_purecloud()
-
 
 
 Get PureCloud Identity Provider
@@ -1086,13 +1063,12 @@ This endpoint does not need any parameters.
 
 ### Return type
 
-[**PureCloud**](PureCloud.html)
+[**PureCloud**](PureCloud)
 
 
 ## get_identityproviders_pureengage
 
 > [**PureEngage**](PureEngage) get_identityproviders_pureengage()
-
 
 
 Get PureEngage Identity Provider
@@ -1131,13 +1107,12 @@ This endpoint does not need any parameters.
 
 ### Return type
 
-[**PureEngage**](PureEngage.html)
+[**PureEngage**](PureEngage)
 
 
 ## get_identityproviders_salesforce
 
 > [**Salesforce**](Salesforce) get_identityproviders_salesforce()
-
 
 
 Get Salesforce Identity Provider
@@ -1176,13 +1151,12 @@ This endpoint does not need any parameters.
 
 ### Return type
 
-[**Salesforce**](Salesforce.html)
+[**Salesforce**](Salesforce)
 
 
 ## post_identityproviders
 
 > [**CustomProvider**](CustomProvider) post_identityproviders(body)
-
 
 
 Create Identity Provider
@@ -1221,17 +1195,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**CustomProvider**](CustomProvider.html)| Provider |  |
+| **body** | [**CustomProvider**](CustomProvider)| Provider |  |
 
 ### Return type
 
-[**CustomProvider**](CustomProvider.html)
+[**CustomProvider**](CustomProvider)
 
 
 ## put_identityprovider
 
 > [**CustomProvider**](CustomProvider) put_identityprovider(provider_id, body)
-
 
 
 Update Identity Provider
@@ -1272,17 +1245,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **provider_id** | **str**| Provider ID |  |
-| **body** | [**CustomProvider**](CustomProvider.html)| Provider |  |
+| **body** | [**CustomProvider**](CustomProvider)| Provider |  |
 
 ### Return type
 
-[**CustomProvider**](CustomProvider.html)
+[**CustomProvider**](CustomProvider)
 
 
 ## put_identityproviders_adfs
 
 > [**IdentityProvider**](IdentityProvider) put_identityproviders_adfs(body)
-
 
 
 Update/Create ADFS Identity Provider
@@ -1322,17 +1294,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**ADFS**](ADFS.html)| Provider |  |
+| **body** | [**ADFS**](ADFS)| Provider |  |
 
 ### Return type
 
-[**IdentityProvider**](IdentityProvider.html)
+[**IdentityProvider**](IdentityProvider)
 
 
 ## put_identityproviders_cic
 
 > [**IdentityProvider**](IdentityProvider) put_identityproviders_cic(body)
-
 
 
 Update/Create Customer Interaction Center (CIC) Identity Provider
@@ -1372,17 +1343,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**CustomerInteractionCenter**](CustomerInteractionCenter.html)| Provider |  |
+| **body** | [**CustomerInteractionCenter**](CustomerInteractionCenter)| Provider |  |
 
 ### Return type
 
-[**IdentityProvider**](IdentityProvider.html)
+[**IdentityProvider**](IdentityProvider)
 
 
 ## put_identityproviders_generic
 
 > [**IdentityProvider**](IdentityProvider) put_identityproviders_generic(body)
-
 
 
 Update/Create Generic SAML Identity Provider
@@ -1422,17 +1392,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**GenericSAML**](GenericSAML.html)| Provider |  |
+| **body** | [**GenericSAML**](GenericSAML)| Provider |  |
 
 ### Return type
 
-[**IdentityProvider**](IdentityProvider.html)
+[**IdentityProvider**](IdentityProvider)
 
 
 ## put_identityproviders_gsuite
 
 > [**IdentityProvider**](IdentityProvider) put_identityproviders_gsuite(body)
-
 
 
 Update/Create G Suite Identity Provider
@@ -1472,17 +1441,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**GSuite**](GSuite.html)| Provider |  |
+| **body** | [**GSuite**](GSuite)| Provider |  |
 
 ### Return type
 
-[**IdentityProvider**](IdentityProvider.html)
+[**IdentityProvider**](IdentityProvider)
 
 
 ## put_identityproviders_identitynow
 
 > [**IdentityNow**](IdentityNow) put_identityproviders_identitynow(body)
-
 
 
 Update/Create IdentityNow Provider
@@ -1522,17 +1490,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**IdentityNow**](IdentityNow.html)| Provider |  |
+| **body** | [**IdentityNow**](IdentityNow)| Provider |  |
 
 ### Return type
 
-[**IdentityNow**](IdentityNow.html)
+[**IdentityNow**](IdentityNow)
 
 
 ## put_identityproviders_okta
 
 > [**IdentityProvider**](IdentityProvider) put_identityproviders_okta(body)
-
 
 
 Update/Create Okta Identity Provider
@@ -1572,17 +1539,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**Okta**](Okta.html)| Provider |  |
+| **body** | [**Okta**](Okta)| Provider |  |
 
 ### Return type
 
-[**IdentityProvider**](IdentityProvider.html)
+[**IdentityProvider**](IdentityProvider)
 
 
 ## put_identityproviders_onelogin
 
 > [**IdentityProvider**](IdentityProvider) put_identityproviders_onelogin(body)
-
 
 
 Update/Create OneLogin Identity Provider
@@ -1622,17 +1588,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**OneLogin**](OneLogin.html)| Provider |  |
+| **body** | [**OneLogin**](OneLogin)| Provider |  |
 
 ### Return type
 
-[**IdentityProvider**](IdentityProvider.html)
+[**IdentityProvider**](IdentityProvider)
 
 
 ## put_identityproviders_ping
 
 > [**IdentityProvider**](IdentityProvider) put_identityproviders_ping(body)
-
 
 
 Update/Create Ping Identity Provider
@@ -1672,17 +1637,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**PingIdentity**](PingIdentity.html)| Provider |  |
+| **body** | [**PingIdentity**](PingIdentity)| Provider |  |
 
 ### Return type
 
-[**IdentityProvider**](IdentityProvider.html)
+[**IdentityProvider**](IdentityProvider)
 
 
 ## put_identityproviders_purecloud
 
 > [**IdentityProvider**](IdentityProvider) put_identityproviders_purecloud(body)
-
 
 
 Update/Create PureCloud Identity Provider
@@ -1722,17 +1686,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**PureCloud**](PureCloud.html)| Provider |  |
+| **body** | [**PureCloud**](PureCloud)| Provider |  |
 
 ### Return type
 
-[**IdentityProvider**](IdentityProvider.html)
+[**IdentityProvider**](IdentityProvider)
 
 
 ## put_identityproviders_pureengage
 
 > [**IdentityProvider**](IdentityProvider) put_identityproviders_pureengage(body)
-
 
 
 Update/Create PureEngage Identity Provider
@@ -1772,17 +1735,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**PureEngage**](PureEngage.html)| Provider |  |
+| **body** | [**PureEngage**](PureEngage)| Provider |  |
 
 ### Return type
 
-[**IdentityProvider**](IdentityProvider.html)
+[**IdentityProvider**](IdentityProvider)
 
 
 ## put_identityproviders_salesforce
 
 > [**IdentityProvider**](IdentityProvider) put_identityproviders_salesforce(body)
-
 
 
 Update/Create Salesforce Identity Provider
@@ -1822,11 +1784,11 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**Salesforce**](Salesforce.html)| Provider |  |
+| **body** | [**Salesforce**](Salesforce)| Provider |  |
 
 ### Return type
 
-[**IdentityProvider**](IdentityProvider.html)
+[**IdentityProvider**](IdentityProvider)
 
 
-_PureCloudPlatformClientV2 210.0.0_
+_PureCloudPlatformClientV2 211.0.0_

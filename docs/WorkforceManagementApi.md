@@ -242,13 +242,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**put_workforcemanagement_agent_integrations_hris**](#put_workforcemanagement_agent_integrations_hris) | Update integrations for agent|
 |[**put_workforcemanagement_businessunit_timeofflimit_values**](#put_workforcemanagement_businessunit_timeofflimit_values) | Sets daily values for a date range of time-off limit object|
 |[**put_workforcemanagement_managementunit_timeofflimit_values**](#put_workforcemanagement_managementunit_timeofflimit_values) | Sets daily values for a date range of time off limit object|
-{: class="table table-striped"}
+
 
 
 ## delete_workforcemanagement_businessunit
 
 >  delete_workforcemanagement_businessunit(business_unit_id)
-
 
 
 Delete business unit
@@ -300,7 +299,6 @@ void (empty response body)
 >  delete_workforcemanagement_businessunit_activitycode(business_unit_id, activity_code_id)
 
 
-
 Deletes an activity code
 
 Wraps DELETE /api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes/{activityCodeId} 
@@ -348,7 +346,6 @@ void (empty response body)
 ## delete_workforcemanagement_businessunit_planninggroup
 
 >  delete_workforcemanagement_businessunit_planninggroup(business_unit_id, planning_group_id)
-
 
 
 Deletes the planning group
@@ -400,7 +397,6 @@ void (empty response body)
 >  delete_workforcemanagement_businessunit_scheduling_run(business_unit_id, run_id)
 
 
-
 Cancel a scheduling run
 
 Wraps DELETE /api/v2/workforcemanagement/businessunits/{businessUnitId}/scheduling/runs/{runId} 
@@ -448,7 +444,6 @@ void (empty response body)
 ## delete_workforcemanagement_businessunit_servicegoaltemplate
 
 >  delete_workforcemanagement_businessunit_servicegoaltemplate(business_unit_id, service_goal_template_id)
-
 
 
 Delete a service goal template
@@ -500,7 +495,6 @@ void (empty response body)
 >  delete_workforcemanagement_businessunit_staffinggroup(business_unit_id, staffing_group_id)
 
 
-
 Deletes a staffing group
 
 Wraps DELETE /api/v2/workforcemanagement/businessunits/{businessUnitId}/staffinggroups/{staffingGroupId} 
@@ -548,7 +542,6 @@ void (empty response body)
 ## delete_workforcemanagement_businessunit_timeofflimit
 
 >  delete_workforcemanagement_businessunit_timeofflimit(business_unit_id, time_off_limit_id)
-
 
 
 Deletes a time-off limit object
@@ -600,7 +593,6 @@ void (empty response body)
 >  delete_workforcemanagement_businessunit_timeoffplan(business_unit_id, time_off_plan_id)
 
 
-
 Deletes a time-off plan
 
 Wraps DELETE /api/v2/workforcemanagement/businessunits/{businessUnitId}/timeoffplans/{timeOffPlanId} 
@@ -650,7 +642,6 @@ void (empty response body)
 > [**BuAsyncScheduleResponse**](BuAsyncScheduleResponse) delete_workforcemanagement_businessunit_week_schedule(business_unit_id, week_id, schedule_id)
 
 
-
 Delete a schedule
 
 Wraps DELETE /api/v2/workforcemanagement/businessunits/{businessUnitId}/weeks/{weekId}/schedules/{scheduleId} 
@@ -695,13 +686,12 @@ except ApiException as e:
 
 ### Return type
 
-[**BuAsyncScheduleResponse**](BuAsyncScheduleResponse.html)
+[**BuAsyncScheduleResponse**](BuAsyncScheduleResponse)
 
 
 ## delete_workforcemanagement_businessunit_week_shorttermforecast
 
 >  delete_workforcemanagement_businessunit_week_shorttermforecast(business_unit_id, week_date_id, forecast_id)
-
 
 
 Delete a short term forecast
@@ -757,7 +747,6 @@ void (empty response body)
 >  delete_workforcemanagement_businessunit_workplanbid(business_unit_id, bid_id)
 
 
-
 Delete a work plan bid
 
 Wraps DELETE /api/v2/workforcemanagement/businessunits/{businessUnitId}/workplanbids/{bidId} 
@@ -805,7 +794,6 @@ void (empty response body)
 ## delete_workforcemanagement_businessunit_workplanbid_group
 
 >  delete_workforcemanagement_businessunit_workplanbid_group(business_unit_id, bid_id, bid_group_id)
-
 
 
 Delete a bid group by bid group Id
@@ -859,7 +847,6 @@ void (empty response body)
 >  delete_workforcemanagement_calendar_url_ics()
 
 
-
 Disable generated calendar link for the current user
 
 Wraps DELETE /api/v2/workforcemanagement/calendar/url/ics 
@@ -901,7 +888,6 @@ void (empty response body)
 ## delete_workforcemanagement_managementunit
 
 >  delete_workforcemanagement_managementunit(management_unit_id)
-
 
 
 Delete management unit
@@ -949,7 +935,6 @@ void (empty response body)
 ## delete_workforcemanagement_managementunit_timeofflimit
 
 >  delete_workforcemanagement_managementunit_timeofflimit(management_unit_id, time_off_limit_id)
-
 
 
 Deletes a time off limit object
@@ -1001,7 +986,6 @@ void (empty response body)
 >  delete_workforcemanagement_managementunit_timeoffplan(management_unit_id, time_off_plan_id)
 
 
-
 Deletes a time off plan
 
 Wraps DELETE /api/v2/workforcemanagement/managementunits/{managementUnitId}/timeoffplans/{timeOffPlanId} 
@@ -1049,7 +1033,6 @@ void (empty response body)
 ## delete_workforcemanagement_managementunit_workplan
 
 >  delete_workforcemanagement_managementunit_workplan(management_unit_id, work_plan_id)
-
 
 
 Delete a work plan
@@ -1101,7 +1084,6 @@ void (empty response body)
 >  delete_workforcemanagement_managementunit_workplanrotation(management_unit_id, work_plan_rotation_id)
 
 
-
 Delete a work plan rotation
 
 Wraps DELETE /api/v2/workforcemanagement/managementunits/{managementUnitId}/workplanrotations/{workPlanRotationId} 
@@ -1151,7 +1133,6 @@ void (empty response body)
 > [**list[UserScheduleAdherence]**](UserScheduleAdherence) get_workforcemanagement_adherence(user_id)
 
 
-
 Get a list of UserScheduleAdherence records for the requested users
 
 Wraps GET /api/v2/workforcemanagement/adherence 
@@ -1188,17 +1169,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **user_id** | [**list[str]**](str.html)| User Id(s) for which to fetch current schedule adherence information.  Min 1, Max of 100 userIds per request |  |
+| **user_id** | [**list[str]**](str)| User Id(s) for which to fetch current schedule adherence information.  Min 1, Max of 100 userIds per request |  |
 
 ### Return type
 
-[**list[UserScheduleAdherence]**](UserScheduleAdherence.html)
+[**list[UserScheduleAdherence]**](UserScheduleAdherence)
 
 
 ## get_workforcemanagement_adherence_explanation
 
 > [**AdherenceExplanationResponse**](AdherenceExplanationResponse) get_workforcemanagement_adherence_explanation(explanation_id)
-
 
 
 Get an adherence explanation for the current user
@@ -1241,13 +1221,12 @@ except ApiException as e:
 
 ### Return type
 
-[**AdherenceExplanationResponse**](AdherenceExplanationResponse.html)
+[**AdherenceExplanationResponse**](AdherenceExplanationResponse)
 
 
 ## get_workforcemanagement_adherence_explanations_job
 
 > [**AdherenceExplanationJob**](AdherenceExplanationJob) get_workforcemanagement_adherence_explanations_job(job_id)
-
 
 
 Query the status of an adherence explanation operation. Only the user who started the operation can query the status
@@ -1291,13 +1270,12 @@ except ApiException as e:
 
 ### Return type
 
-[**AdherenceExplanationJob**](AdherenceExplanationJob.html)
+[**AdherenceExplanationJob**](AdherenceExplanationJob)
 
 
 ## get_workforcemanagement_adherence_historical_bulk_job
 
 > [**WfmHistoricalAdherenceBulkResponse**](WfmHistoricalAdherenceBulkResponse) get_workforcemanagement_adherence_historical_bulk_job(job_id)
-
 
 
 Request to fetch the status of the historical adherence bulk job. Only the user who started the operation can query the status
@@ -1341,13 +1319,12 @@ except ApiException as e:
 
 ### Return type
 
-[**WfmHistoricalAdherenceBulkResponse**](WfmHistoricalAdherenceBulkResponse.html)
+[**WfmHistoricalAdherenceBulkResponse**](WfmHistoricalAdherenceBulkResponse)
 
 
 ## get_workforcemanagement_adherence_historical_job
 
 > [**WfmHistoricalAdherenceResponse**](WfmHistoricalAdherenceResponse) get_workforcemanagement_adherence_historical_job(job_id)
-
 
 
 Query the status of a historical adherence request operation. Only the user who started the operation can query the status
@@ -1392,13 +1369,12 @@ except ApiException as e:
 
 ### Return type
 
-[**WfmHistoricalAdherenceResponse**](WfmHistoricalAdherenceResponse.html)
+[**WfmHistoricalAdherenceResponse**](WfmHistoricalAdherenceResponse)
 
 
 ## get_workforcemanagement_agent_adherence_explanation
 
 > [**AdherenceExplanationResponse**](AdherenceExplanationResponse) get_workforcemanagement_agent_adherence_explanation(agent_id, explanation_id)
-
 
 
 Get an adherence explanation
@@ -1443,13 +1419,12 @@ except ApiException as e:
 
 ### Return type
 
-[**AdherenceExplanationResponse**](AdherenceExplanationResponse.html)
+[**AdherenceExplanationResponse**](AdherenceExplanationResponse)
 
 
 ## get_workforcemanagement_agent_managementunit
 
 > [**AgentManagementUnitReference**](AgentManagementUnitReference) get_workforcemanagement_agent_managementunit(agent_id)
-
 
 
 Get the management unit to which the agent belongs
@@ -1498,13 +1473,12 @@ except ApiException as e:
 
 ### Return type
 
-[**AgentManagementUnitReference**](AgentManagementUnitReference.html)
+[**AgentManagementUnitReference**](AgentManagementUnitReference)
 
 
 ## get_workforcemanagement_agents_me_managementunit
 
 > [**AgentManagementUnitReference**](AgentManagementUnitReference) get_workforcemanagement_agents_me_managementunit()
-
 
 
 Get the management unit to which the currently logged in agent belongs
@@ -1600,13 +1574,12 @@ This endpoint does not need any parameters.
 
 ### Return type
 
-[**AgentManagementUnitReference**](AgentManagementUnitReference.html)
+[**AgentManagementUnitReference**](AgentManagementUnitReference)
 
 
 ## get_workforcemanagement_alternativeshifts_offers_job
 
 > [**AlternativeShiftJobResponse**](AlternativeShiftJobResponse) get_workforcemanagement_alternativeshifts_offers_job(job_id)
-
 
 
 Query the status of an alternative shift offers operation. Only the user who started the operation can query the status
@@ -1651,13 +1624,12 @@ except ApiException as e:
 
 ### Return type
 
-[**AlternativeShiftJobResponse**](AlternativeShiftJobResponse.html)
+[**AlternativeShiftJobResponse**](AlternativeShiftJobResponse)
 
 
 ## get_workforcemanagement_alternativeshifts_offers_search_job
 
 > [**AlternativeShiftJobResponse**](AlternativeShiftJobResponse) get_workforcemanagement_alternativeshifts_offers_search_job(job_id)
-
 
 
 Query the status of an alternative shift search offers operation. Only the user who started the operation can query the status
@@ -1702,13 +1674,12 @@ except ApiException as e:
 
 ### Return type
 
-[**AlternativeShiftJobResponse**](AlternativeShiftJobResponse.html)
+[**AlternativeShiftJobResponse**](AlternativeShiftJobResponse)
 
 
 ## get_workforcemanagement_alternativeshifts_settings
 
 > [**AlternativeShiftBuSettingsResponse**](AlternativeShiftBuSettingsResponse) get_workforcemanagement_alternativeshifts_settings()
-
 
 
 Get alternative shifts settings from the current logged in agent’s business unit
@@ -1747,13 +1718,12 @@ This endpoint does not need any parameters.
 
 ### Return type
 
-[**AlternativeShiftBuSettingsResponse**](AlternativeShiftBuSettingsResponse.html)
+[**AlternativeShiftBuSettingsResponse**](AlternativeShiftBuSettingsResponse)
 
 
 ## get_workforcemanagement_alternativeshifts_trade
 
 > [**AlternativeShiftTradeResponse**](AlternativeShiftTradeResponse) get_workforcemanagement_alternativeshifts_trade(trade_id)
-
 
 
 Get my alternative shift trade by trade ID
@@ -1796,13 +1766,12 @@ except ApiException as e:
 
 ### Return type
 
-[**AlternativeShiftTradeResponse**](AlternativeShiftTradeResponse.html)
+[**AlternativeShiftTradeResponse**](AlternativeShiftTradeResponse)
 
 
 ## get_workforcemanagement_alternativeshifts_trades
 
 > [**ListAlternativeShiftTradesResponse**](ListAlternativeShiftTradesResponse) get_workforcemanagement_alternativeshifts_trades(force_async=force_async)
-
 
 
 Get a list of my alternative shifts trades
@@ -1845,13 +1814,12 @@ except ApiException as e:
 
 ### Return type
 
-[**ListAlternativeShiftTradesResponse**](ListAlternativeShiftTradesResponse.html)
+[**ListAlternativeShiftTradesResponse**](ListAlternativeShiftTradesResponse)
 
 
 ## get_workforcemanagement_alternativeshifts_trades_job
 
 > [**AlternativeShiftJobResponse**](AlternativeShiftJobResponse) get_workforcemanagement_alternativeshifts_trades_job(job_id)
-
 
 
 Query the status of an alternative shift trades operation. Only the user who started the operation can query the status
@@ -1896,13 +1864,12 @@ except ApiException as e:
 
 ### Return type
 
-[**AlternativeShiftJobResponse**](AlternativeShiftJobResponse.html)
+[**AlternativeShiftJobResponse**](AlternativeShiftJobResponse)
 
 
 ## get_workforcemanagement_alternativeshifts_trades_state_job
 
 > [**AlternativeShiftJobResponse**](AlternativeShiftJobResponse) get_workforcemanagement_alternativeshifts_trades_state_job(job_id)
-
 
 
 Query the status of an alternative shift trade state operation. Only the user who started the operation can query the status
@@ -1947,13 +1914,12 @@ except ApiException as e:
 
 ### Return type
 
-[**AlternativeShiftJobResponse**](AlternativeShiftJobResponse.html)
+[**AlternativeShiftJobResponse**](AlternativeShiftJobResponse)
 
 
 ## get_workforcemanagement_businessunit
 
 > [**BusinessUnitResponse**](BusinessUnitResponse) get_workforcemanagement_businessunit(business_unit_id, expand=expand)
-
 
 
 Get business unit
@@ -2066,17 +2032,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **business_unit_id** | **str**| The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. |  |
-| **expand** | [**list[str]**](str.html)| Include to access additional data on the business unit | [optional] <br />**Values**: settings, settings.timeZone, settings.startDayOfWeek, settings.shortTermForecasting, settings.scheduling |
+| **expand** | [**list[str]**](str)| Include to access additional data on the business unit | [optional] <br />**Values**: settings, settings.timeZone, settings.startDayOfWeek, settings.shortTermForecasting, settings.scheduling, settings.notifications.scheduling, settings.learning, settings.coaching |
 
 ### Return type
 
-[**BusinessUnitResponse**](BusinessUnitResponse.html)
+[**BusinessUnitResponse**](BusinessUnitResponse)
 
 
 ## get_workforcemanagement_businessunit_activitycode
 
 > [**BusinessUnitActivityCode**](BusinessUnitActivityCode) get_workforcemanagement_businessunit_activitycode(business_unit_id, activity_code_id)
-
 
 
 Get an activity code
@@ -2121,13 +2086,12 @@ except ApiException as e:
 
 ### Return type
 
-[**BusinessUnitActivityCode**](BusinessUnitActivityCode.html)
+[**BusinessUnitActivityCode**](BusinessUnitActivityCode)
 
 
 ## get_workforcemanagement_businessunit_activitycodes
 
 > [**BusinessUnitActivityCodeListing**](BusinessUnitActivityCodeListing) get_workforcemanagement_businessunit_activitycodes(business_unit_id, force_download_service=force_download_service)
-
 
 
 Get activity codes
@@ -2230,13 +2194,12 @@ except ApiException as e:
 
 ### Return type
 
-[**BusinessUnitActivityCodeListing**](BusinessUnitActivityCodeListing.html)
+[**BusinessUnitActivityCodeListing**](BusinessUnitActivityCodeListing)
 
 
 ## get_workforcemanagement_businessunit_activityplan
 
 > [**ActivityPlanResponse**](ActivityPlanResponse) get_workforcemanagement_businessunit_activityplan(business_unit_id, activity_plan_id)
-
 
 
 Get an activity plan
@@ -2281,13 +2244,12 @@ except ApiException as e:
 
 ### Return type
 
-[**ActivityPlanResponse**](ActivityPlanResponse.html)
+[**ActivityPlanResponse**](ActivityPlanResponse)
 
 
 ## get_workforcemanagement_businessunit_activityplan_runs_job
 
 > [**ActivityPlanRunJobResponse**](ActivityPlanRunJobResponse) get_workforcemanagement_businessunit_activityplan_runs_job(business_unit_id, activity_plan_id, job_id)
-
 
 
 Gets an activity plan run job
@@ -2334,13 +2296,12 @@ except ApiException as e:
 
 ### Return type
 
-[**ActivityPlanRunJobResponse**](ActivityPlanRunJobResponse.html)
+[**ActivityPlanRunJobResponse**](ActivityPlanRunJobResponse)
 
 
 ## get_workforcemanagement_businessunit_activityplans
 
 > [**ActivityPlanListing**](ActivityPlanListing) get_workforcemanagement_businessunit_activityplans(business_unit_id, state=state)
-
 
 
 Get activity plans
@@ -2385,13 +2346,12 @@ except ApiException as e:
 
 ### Return type
 
-[**ActivityPlanListing**](ActivityPlanListing.html)
+[**ActivityPlanListing**](ActivityPlanListing)
 
 
 ## get_workforcemanagement_businessunit_activityplans_jobs
 
 > [**ActivityPlanJobListing**](ActivityPlanJobListing) get_workforcemanagement_businessunit_activityplans_jobs(business_unit_id)
-
 
 
 Gets the latest job for all activity plans in the business unit
@@ -2434,13 +2394,12 @@ except ApiException as e:
 
 ### Return type
 
-[**ActivityPlanJobListing**](ActivityPlanJobListing.html)
+[**ActivityPlanJobListing**](ActivityPlanJobListing)
 
 
 ## get_workforcemanagement_businessunit_alternativeshifts_settings
 
 > [**AlternativeShiftBuSettingsResponse**](AlternativeShiftBuSettingsResponse) get_workforcemanagement_businessunit_alternativeshifts_settings(business_unit_id)
-
 
 
 Get alternative shifts settings for a business unit
@@ -2483,13 +2442,12 @@ except ApiException as e:
 
 ### Return type
 
-[**AlternativeShiftBuSettingsResponse**](AlternativeShiftBuSettingsResponse.html)
+[**AlternativeShiftBuSettingsResponse**](AlternativeShiftBuSettingsResponse)
 
 
 ## get_workforcemanagement_businessunit_alternativeshifts_trade
 
 > [**AlternativeShiftTradeResponse**](AlternativeShiftTradeResponse) get_workforcemanagement_businessunit_alternativeshifts_trade(business_unit_id, trade_id)
-
 
 
 Get an alternative shifts trade in a business unit for a given trade ID
@@ -2534,13 +2492,12 @@ except ApiException as e:
 
 ### Return type
 
-[**AlternativeShiftTradeResponse**](AlternativeShiftTradeResponse.html)
+[**AlternativeShiftTradeResponse**](AlternativeShiftTradeResponse)
 
 
 ## get_workforcemanagement_businessunit_alternativeshifts_trades_search_job
 
 > [**BuAlternativeShiftJobResponse**](BuAlternativeShiftJobResponse) get_workforcemanagement_businessunit_alternativeshifts_trades_search_job(business_unit_id, job_id)
-
 
 
 Query the status of an alternative shift search trade operation. Only the user who started the operation can query the status
@@ -2587,13 +2544,12 @@ except ApiException as e:
 
 ### Return type
 
-[**BuAlternativeShiftJobResponse**](BuAlternativeShiftJobResponse.html)
+[**BuAlternativeShiftJobResponse**](BuAlternativeShiftJobResponse)
 
 
 ## get_workforcemanagement_businessunit_intraday_planninggroups
 
 > [**WfmIntradayPlanningGroupListing**](WfmIntradayPlanningGroupListing) get_workforcemanagement_businessunit_intraday_planninggroups(business_unit_id, date)
-
 
 
 Get intraday planning groups for the given date
@@ -2638,13 +2594,12 @@ except ApiException as e:
 
 ### Return type
 
-[**WfmIntradayPlanningGroupListing**](WfmIntradayPlanningGroupListing.html)
+[**WfmIntradayPlanningGroupListing**](WfmIntradayPlanningGroupListing)
 
 
 ## get_workforcemanagement_businessunit_managementunits
 
 > [**ManagementUnitListing**](ManagementUnitListing) get_workforcemanagement_businessunit_managementunits(business_unit_id, feature=feature, division_id=division_id)
-
 
 
 Get all authorized management units in the business unit
@@ -2690,13 +2645,12 @@ except ApiException as e:
 
 ### Return type
 
-[**ManagementUnitListing**](ManagementUnitListing.html)
+[**ManagementUnitListing**](ManagementUnitListing)
 
 
 ## get_workforcemanagement_businessunit_planninggroup
 
 > [**PlanningGroup**](PlanningGroup) get_workforcemanagement_businessunit_planninggroup(business_unit_id, planning_group_id)
-
 
 
 Get a planning group
@@ -2741,13 +2695,12 @@ except ApiException as e:
 
 ### Return type
 
-[**PlanningGroup**](PlanningGroup.html)
+[**PlanningGroup**](PlanningGroup)
 
 
 ## get_workforcemanagement_businessunit_planninggroups
 
 > [**PlanningGroupList**](PlanningGroupList) get_workforcemanagement_businessunit_planninggroups(business_unit_id)
-
 
 
 Gets list of planning groups
@@ -2795,13 +2748,12 @@ except ApiException as e:
 
 ### Return type
 
-[**PlanningGroupList**](PlanningGroupList.html)
+[**PlanningGroupList**](PlanningGroupList)
 
 
 ## get_workforcemanagement_businessunit_scheduling_run
 
 > [**BuScheduleRun**](BuScheduleRun) get_workforcemanagement_businessunit_scheduling_run(business_unit_id, run_id)
-
 
 
 Get a scheduling run
@@ -2847,13 +2799,12 @@ except ApiException as e:
 
 ### Return type
 
-[**BuScheduleRun**](BuScheduleRun.html)
+[**BuScheduleRun**](BuScheduleRun)
 
 
 ## get_workforcemanagement_businessunit_scheduling_run_result
 
 > [**BuRescheduleResult**](BuRescheduleResult) get_workforcemanagement_businessunit_scheduling_run_result(business_unit_id, run_id, management_unit_ids, expand)
-
 
 
 Get the result of a rescheduling operation
@@ -2898,18 +2849,17 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **business_unit_id** | **str**| The ID of the business unit |  |
 | **run_id** | **str**| The ID of the schedule run |  |
-| **management_unit_ids** | [**list[str]**](str.html)| The IDs of the management units for which to fetch the reschedule results |  |
-| **expand** | [**list[str]**](str.html)| The fields to expand. Omitting will return an empty response | <br />**Values**: headcountForecast, generationResults, agentSchedules |
+| **management_unit_ids** | [**list[str]**](str)| The IDs of the management units for which to fetch the reschedule results |  |
+| **expand** | [**list[str]**](str)| The fields to expand. Omitting will return an empty response | <br />**Values**: headcountForecast, generationResults, agentSchedules |
 
 ### Return type
 
-[**BuRescheduleResult**](BuRescheduleResult.html)
+[**BuRescheduleResult**](BuRescheduleResult)
 
 
 ## get_workforcemanagement_businessunit_scheduling_runs
 
 > [**BuScheduleRunListing**](BuScheduleRunListing) get_workforcemanagement_businessunit_scheduling_runs(business_unit_id)
-
 
 
 Get the list of scheduling runs
@@ -2953,13 +2903,12 @@ except ApiException as e:
 
 ### Return type
 
-[**BuScheduleRunListing**](BuScheduleRunListing.html)
+[**BuScheduleRunListing**](BuScheduleRunListing)
 
 
 ## get_workforcemanagement_businessunit_servicegoaltemplate
 
 > [**ServiceGoalTemplate**](ServiceGoalTemplate) get_workforcemanagement_businessunit_servicegoaltemplate(business_unit_id, service_goal_template_id, expand=expand)
-
 
 
 Get a service goal template
@@ -3002,17 +2951,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **business_unit_id** | **str**| The ID of the business unit. |  |
 | **service_goal_template_id** | **str**| The ID of a service goal template to fetch |  |
-| **expand** | [**list[str]**](str.html)| Include to access additional data on the service goal template | [optional] <br />**Values**: impactOverride |
+| **expand** | [**list[str]**](str)| Include to access additional data on the service goal template | [optional] <br />**Values**: impactOverride |
 
 ### Return type
 
-[**ServiceGoalTemplate**](ServiceGoalTemplate.html)
+[**ServiceGoalTemplate**](ServiceGoalTemplate)
 
 
 ## get_workforcemanagement_businessunit_servicegoaltemplates
 
 > [**ServiceGoalTemplateList**](ServiceGoalTemplateList) get_workforcemanagement_businessunit_servicegoaltemplates(business_unit_id, expand=expand)
-
 
 
 Gets list of service goal templates
@@ -3055,17 +3003,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **business_unit_id** | **str**| The ID of the business unit. |  |
-| **expand** | [**list[str]**](str.html)| Include to access additional data on the service goal template | [optional] <br />**Values**: impactOverride |
+| **expand** | [**list[str]**](str)| Include to access additional data on the service goal template | [optional] <br />**Values**: impactOverride |
 
 ### Return type
 
-[**ServiceGoalTemplateList**](ServiceGoalTemplateList.html)
+[**ServiceGoalTemplateList**](ServiceGoalTemplateList)
 
 
 ## get_workforcemanagement_businessunit_staffinggroup
 
 > [**StaffingGroupResponse**](StaffingGroupResponse) get_workforcemanagement_businessunit_staffinggroup(business_unit_id, staffing_group_id)
-
 
 
 Gets a staffing group
@@ -3110,13 +3057,12 @@ except ApiException as e:
 
 ### Return type
 
-[**StaffingGroupResponse**](StaffingGroupResponse.html)
+[**StaffingGroupResponse**](StaffingGroupResponse)
 
 
 ## get_workforcemanagement_businessunit_staffinggroups
 
 > [**StaffingGroupListing**](StaffingGroupListing) get_workforcemanagement_businessunit_staffinggroups(business_unit_id, management_unit_id=management_unit_id)
-
 
 
 Gets a list of staffing groups
@@ -3161,13 +3107,12 @@ except ApiException as e:
 
 ### Return type
 
-[**StaffingGroupListing**](StaffingGroupListing.html)
+[**StaffingGroupListing**](StaffingGroupListing)
 
 
 ## get_workforcemanagement_businessunit_timeofflimit
 
 > [**BuTimeOffLimitResponse**](BuTimeOffLimitResponse) get_workforcemanagement_businessunit_timeofflimit(business_unit_id, time_off_limit_id)
-
 
 
 Gets a time-off limit object
@@ -3214,13 +3159,12 @@ except ApiException as e:
 
 ### Return type
 
-[**BuTimeOffLimitResponse**](BuTimeOffLimitResponse.html)
+[**BuTimeOffLimitResponse**](BuTimeOffLimitResponse)
 
 
 ## get_workforcemanagement_businessunit_timeofflimits
 
 > [**BuTimeOffLimitListing**](BuTimeOffLimitListing) get_workforcemanagement_businessunit_timeofflimits(business_unit_id, management_unit_id=management_unit_id)
-
 
 
 Gets a list of time-off limit objects
@@ -3266,13 +3210,12 @@ except ApiException as e:
 
 ### Return type
 
-[**BuTimeOffLimitListing**](BuTimeOffLimitListing.html)
+[**BuTimeOffLimitListing**](BuTimeOffLimitListing)
 
 
 ## get_workforcemanagement_businessunit_timeoffplan
 
 > [**BuTimeOffPlanResponse**](BuTimeOffPlanResponse) get_workforcemanagement_businessunit_timeoffplan(business_unit_id, time_off_plan_id)
-
 
 
 Gets a time-off plan
@@ -3317,13 +3260,12 @@ except ApiException as e:
 
 ### Return type
 
-[**BuTimeOffPlanResponse**](BuTimeOffPlanResponse.html)
+[**BuTimeOffPlanResponse**](BuTimeOffPlanResponse)
 
 
 ## get_workforcemanagement_businessunit_timeoffplans
 
 > [**BuTimeOffPlanListing**](BuTimeOffPlanListing) get_workforcemanagement_businessunit_timeoffplans(business_unit_id, management_unit_id=management_unit_id, force_download_service=force_download_service)
-
 
 
 Gets a list of time-off plans
@@ -3370,13 +3312,12 @@ except ApiException as e:
 
 ### Return type
 
-[**BuTimeOffPlanListing**](BuTimeOffPlanListing.html)
+[**BuTimeOffPlanListing**](BuTimeOffPlanListing)
 
 
 ## get_workforcemanagement_businessunit_week_schedule
 
 > [**BuScheduleMetadata**](BuScheduleMetadata) get_workforcemanagement_businessunit_week_schedule(business_unit_id, week_id, schedule_id, expand=expand)
-
 
 
 Get the metadata for the schedule, describing which management units and agents are in the scheduleSchedule data can then be loaded with the query route
@@ -3426,13 +3367,12 @@ except ApiException as e:
 
 ### Return type
 
-[**BuScheduleMetadata**](BuScheduleMetadata.html)
+[**BuScheduleMetadata**](BuScheduleMetadata)
 
 
 ## get_workforcemanagement_businessunit_week_schedule_generationresults
 
 > [**ScheduleGenerationResult**](ScheduleGenerationResult) get_workforcemanagement_businessunit_week_schedule_generationresults(business_unit_id, week_id, schedule_id)
-
 
 
 Get the generation results for a generated schedule
@@ -3480,13 +3420,12 @@ except ApiException as e:
 
 ### Return type
 
-[**ScheduleGenerationResult**](ScheduleGenerationResult.html)
+[**ScheduleGenerationResult**](ScheduleGenerationResult)
 
 
 ## get_workforcemanagement_businessunit_week_schedule_headcountforecast
 
 > [**BuHeadcountForecastResponse**](BuHeadcountForecastResponse) get_workforcemanagement_businessunit_week_schedule_headcountforecast(business_unit_id, week_id, schedule_id, force_download=force_download)
-
 
 
 Get the headcount forecast by planning group for the schedule
@@ -3536,13 +3475,12 @@ except ApiException as e:
 
 ### Return type
 
-[**BuHeadcountForecastResponse**](BuHeadcountForecastResponse.html)
+[**BuHeadcountForecastResponse**](BuHeadcountForecastResponse)
 
 
 ## get_workforcemanagement_businessunit_week_schedule_history_agent
 
 > [**BuAgentScheduleHistoryResponse**](BuAgentScheduleHistoryResponse) get_workforcemanagement_businessunit_week_schedule_history_agent(business_unit_id, week_id, schedule_id, agent_id)
-
 
 
 Loads agent's schedule history.
@@ -3592,13 +3530,12 @@ except ApiException as e:
 
 ### Return type
 
-[**BuAgentScheduleHistoryResponse**](BuAgentScheduleHistoryResponse.html)
+[**BuAgentScheduleHistoryResponse**](BuAgentScheduleHistoryResponse)
 
 
 ## get_workforcemanagement_businessunit_week_schedule_performancepredictions
 
 > [**PerformancePredictionResponse**](PerformancePredictionResponse) get_workforcemanagement_businessunit_week_schedule_performancepredictions(business_unit_id, week_id, schedule_id)
-
 
 
 Get the performance prediction for the associated schedule
@@ -3646,13 +3583,12 @@ except ApiException as e:
 
 ### Return type
 
-[**PerformancePredictionResponse**](PerformancePredictionResponse.html)
+[**PerformancePredictionResponse**](PerformancePredictionResponse)
 
 
 ## get_workforcemanagement_businessunit_week_schedule_performancepredictions_recalculation
 
 > [**PerformancePredictionRecalculationResponse**](PerformancePredictionRecalculationResponse) get_workforcemanagement_businessunit_week_schedule_performancepredictions_recalculation(business_unit_id, week_id, schedule_id, recalculation_id)
-
 
 
 Get recalculated performance prediction result
@@ -3702,13 +3638,12 @@ except ApiException as e:
 
 ### Return type
 
-[**PerformancePredictionRecalculationResponse**](PerformancePredictionRecalculationResponse.html)
+[**PerformancePredictionRecalculationResponse**](PerformancePredictionRecalculationResponse)
 
 
 ## get_workforcemanagement_businessunit_week_schedules
 
 > [**BuScheduleListing**](BuScheduleListing) get_workforcemanagement_businessunit_week_schedules(business_unit_id, week_id, include_only_published=include_only_published, expand=expand)
-
 
 
 Get the list of week schedules for the specified week
@@ -3760,13 +3695,12 @@ except ApiException as e:
 
 ### Return type
 
-[**BuScheduleListing**](BuScheduleListing.html)
+[**BuScheduleListing**](BuScheduleListing)
 
 
 ## get_workforcemanagement_businessunit_week_shorttermforecast
 
 > [**BuShortTermForecast**](BuShortTermForecast) get_workforcemanagement_businessunit_week_shorttermforecast(business_unit_id, week_date_id, forecast_id, expand=expand)
-
 
 
 Get a short term forecast
@@ -3811,17 +3745,16 @@ except ApiException as e:
 | **business_unit_id** | **str**| The ID of the business unit to which the forecast belongs |  |
 | **week_date_id** | **date**| The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
 | **forecast_id** | **str**| The ID of the forecast |  |
-| **expand** | [**list[str]**](str.html)| Include to access additional data on the forecast | [optional] <br />**Values**: planningGroups, generationResults |
+| **expand** | [**list[str]**](str)| Include to access additional data on the forecast | [optional] <br />**Values**: planningGroups, generationResults |
 
 ### Return type
 
-[**BuShortTermForecast**](BuShortTermForecast.html)
+[**BuShortTermForecast**](BuShortTermForecast)
 
 
 ## get_workforcemanagement_businessunit_week_shorttermforecast_data
 
 > [**BuForecastResultResponse**](BuForecastResultResponse) get_workforcemanagement_businessunit_week_shorttermforecast_data(business_unit_id, week_date_id, forecast_id, week_number=week_number, force_download_service=force_download_service)
-
 
 
 Get the result of a short term forecast calculation
@@ -3874,13 +3807,12 @@ except ApiException as e:
 
 ### Return type
 
-[**BuForecastResultResponse**](BuForecastResultResponse.html)
+[**BuForecastResultResponse**](BuForecastResultResponse)
 
 
 ## get_workforcemanagement_businessunit_week_shorttermforecast_generationresults
 
 > [**BuForecastGenerationResult**](BuForecastGenerationResult) get_workforcemanagement_businessunit_week_shorttermforecast_generationresults(business_unit_id, week_date_id, forecast_id)
-
 
 
 Gets the forecast generation results
@@ -3927,13 +3859,12 @@ except ApiException as e:
 
 ### Return type
 
-[**BuForecastGenerationResult**](BuForecastGenerationResult.html)
+[**BuForecastGenerationResult**](BuForecastGenerationResult)
 
 
 ## get_workforcemanagement_businessunit_week_shorttermforecast_longtermforecastdata
 
 > [**LongTermForecastResultResponse**](LongTermForecastResultResponse) get_workforcemanagement_businessunit_week_shorttermforecast_longtermforecastdata(business_unit_id, week_date_id, forecast_id, force_download_service=force_download_service)
-
 
 
 Get the result of a long term forecast calculation
@@ -3984,13 +3915,12 @@ except ApiException as e:
 
 ### Return type
 
-[**LongTermForecastResultResponse**](LongTermForecastResultResponse.html)
+[**LongTermForecastResultResponse**](LongTermForecastResultResponse)
 
 
 ## get_workforcemanagement_businessunit_week_shorttermforecast_planninggroups
 
 > [**ForecastPlanningGroupsResponse**](ForecastPlanningGroupsResponse) get_workforcemanagement_businessunit_week_shorttermforecast_planninggroups(business_unit_id, week_date_id, forecast_id)
-
 
 
 Gets the forecast planning group snapshot
@@ -4039,13 +3969,12 @@ except ApiException as e:
 
 ### Return type
 
-[**ForecastPlanningGroupsResponse**](ForecastPlanningGroupsResponse.html)
+[**ForecastPlanningGroupsResponse**](ForecastPlanningGroupsResponse)
 
 
 ## get_workforcemanagement_businessunit_week_shorttermforecast_staffingrequirement
 
 > [**BuForecastStaffingRequirementsResultResponse**](BuForecastStaffingRequirementsResultResponse) get_workforcemanagement_businessunit_week_shorttermforecast_staffingrequirement(business_unit_id, week_date_id, forecast_id, week_numbers=week_numbers)
-
 
 
 Get the staffing requirement by planning group for a forecast
@@ -4090,17 +4019,16 @@ except ApiException as e:
 | **business_unit_id** | **str**| The ID of the business unit to which the forecast belongs |  |
 | **week_date_id** | **date**| The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
 | **forecast_id** | **str**| The ID of the forecast |  |
-| **week_numbers** | [**list[str]**](str.html)| The week numbers to fetch (for multi-week forecasts) staffing requirements. Returns all week data if the list is not specified | [optional]  |
+| **week_numbers** | [**list[str]**](str)| The week numbers to fetch (for multi-week forecasts) staffing requirements. Returns all week data if the list is not specified | [optional]  |
 
 ### Return type
 
-[**BuForecastStaffingRequirementsResultResponse**](BuForecastStaffingRequirementsResultResponse.html)
+[**BuForecastStaffingRequirementsResultResponse**](BuForecastStaffingRequirementsResultResponse)
 
 
 ## get_workforcemanagement_businessunit_week_shorttermforecasts
 
 > [**BuShortTermForecastListing**](BuShortTermForecastListing) get_workforcemanagement_businessunit_week_shorttermforecasts(business_unit_id, week_date_id)
-
 
 
 Get short term forecasts
@@ -4148,13 +4076,12 @@ except ApiException as e:
 
 ### Return type
 
-[**BuShortTermForecastListing**](BuShortTermForecastListing.html)
+[**BuShortTermForecastListing**](BuShortTermForecastListing)
 
 
 ## get_workforcemanagement_businessunit_workplanbid
 
 > [**WorkPlanBid**](WorkPlanBid) get_workforcemanagement_businessunit_workplanbid(business_unit_id, bid_id)
-
 
 
 Get a work plan bid
@@ -4199,13 +4126,12 @@ except ApiException as e:
 
 ### Return type
 
-[**WorkPlanBid**](WorkPlanBid.html)
+[**WorkPlanBid**](WorkPlanBid)
 
 
 ## get_workforcemanagement_businessunit_workplanbid_group
 
 > [**WorkPlanBidGroupResponse**](WorkPlanBidGroupResponse) get_workforcemanagement_businessunit_workplanbid_group(business_unit_id, bid_id, bid_group_id)
-
 
 
 Get a bid group by bid group Id
@@ -4252,13 +4178,12 @@ except ApiException as e:
 
 ### Return type
 
-[**WorkPlanBidGroupResponse**](WorkPlanBidGroupResponse.html)
+[**WorkPlanBidGroupResponse**](WorkPlanBidGroupResponse)
 
 
 ## get_workforcemanagement_businessunit_workplanbid_group_preferences
 
 > [**AdminAgentWorkPlanPreferenceResponse**](AdminAgentWorkPlanPreferenceResponse) get_workforcemanagement_businessunit_workplanbid_group_preferences(business_unit_id, bid_id, bid_group_id)
-
 
 
 Gets the work plan preferences of all the agents in the work plan bid group
@@ -4305,13 +4230,12 @@ except ApiException as e:
 
 ### Return type
 
-[**AdminAgentWorkPlanPreferenceResponse**](AdminAgentWorkPlanPreferenceResponse.html)
+[**AdminAgentWorkPlanPreferenceResponse**](AdminAgentWorkPlanPreferenceResponse)
 
 
 ## get_workforcemanagement_businessunit_workplanbid_groups_summary
 
 > [**WorkPlanBidGroupSummaryList**](WorkPlanBidGroupSummaryList) get_workforcemanagement_businessunit_workplanbid_groups_summary(business_unit_id, bid_id)
-
 
 
 Get summary of bid groups that belong to a work plan bid
@@ -4356,13 +4280,12 @@ except ApiException as e:
 
 ### Return type
 
-[**WorkPlanBidGroupSummaryList**](WorkPlanBidGroupSummaryList.html)
+[**WorkPlanBidGroupSummaryList**](WorkPlanBidGroupSummaryList)
 
 
 ## get_workforcemanagement_businessunit_workplanbids
 
 > [**WorkPlanBidListResponse**](WorkPlanBidListResponse) get_workforcemanagement_businessunit_workplanbids(business_unit_id)
-
 
 
 Get list of work plan bids
@@ -4405,13 +4328,12 @@ except ApiException as e:
 
 ### Return type
 
-[**WorkPlanBidListResponse**](WorkPlanBidListResponse.html)
+[**WorkPlanBidListResponse**](WorkPlanBidListResponse)
 
 
 ## get_workforcemanagement_businessunits
 
 > [**BusinessUnitListing**](BusinessUnitListing) get_workforcemanagement_businessunits(feature=feature, division_id=division_id)
-
 
 
 Get business units
@@ -4455,13 +4377,12 @@ except ApiException as e:
 
 ### Return type
 
-[**BusinessUnitListing**](BusinessUnitListing.html)
+[**BusinessUnitListing**](BusinessUnitListing)
 
 
 ## get_workforcemanagement_businessunits_divisionviews
 
 > [**BusinessUnitListing**](BusinessUnitListing) get_workforcemanagement_businessunits_divisionviews(division_id=division_id)
-
 
 
 Get business units across divisions
@@ -4500,17 +4421,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **division_id** | [**list[str]**](str.html)| The divisionIds to filter by. If omitted, will return business units in all divisions | [optional]  |
+| **division_id** | [**list[str]**](str)| The divisionIds to filter by. If omitted, will return business units in all divisions | [optional]  |
 
 ### Return type
 
-[**BusinessUnitListing**](BusinessUnitListing.html)
+[**BusinessUnitListing**](BusinessUnitListing)
 
 
 ## get_workforcemanagement_calendar_data_ics
 
 > str** get_workforcemanagement_calendar_data_ics(calendar_id)
-
 
 
 Get ics formatted calendar based on shareable link
@@ -4557,7 +4477,6 @@ except ApiException as e:
 > [**CalendarUrlResponse**](CalendarUrlResponse) get_workforcemanagement_calendar_url_ics()
 
 
-
 Get existing calendar link for the current user
 
 Wraps GET /api/v2/workforcemanagement/calendar/url/ics 
@@ -4595,13 +4514,12 @@ This endpoint does not need any parameters.
 
 ### Return type
 
-[**CalendarUrlResponse**](CalendarUrlResponse.html)
+[**CalendarUrlResponse**](CalendarUrlResponse)
 
 
 ## get_workforcemanagement_historicaldata_deletejob
 
 > [**HistoricalImportDeleteJobResponse**](HistoricalImportDeleteJobResponse) get_workforcemanagement_historicaldata_deletejob()
-
 
 
 Retrieves delete job status for historical data imports of the organization
@@ -4640,13 +4558,12 @@ This endpoint does not need any parameters.
 
 ### Return type
 
-[**HistoricalImportDeleteJobResponse**](HistoricalImportDeleteJobResponse.html)
+[**HistoricalImportDeleteJobResponse**](HistoricalImportDeleteJobResponse)
 
 
 ## get_workforcemanagement_historicaldata_importstatus
 
 > [**HistoricalImportStatusListing**](HistoricalImportStatusListing) get_workforcemanagement_historicaldata_importstatus()
-
 
 
 Retrieves status of the historical data imports of the organization
@@ -4685,13 +4602,12 @@ This endpoint does not need any parameters.
 
 ### Return type
 
-[**HistoricalImportStatusListing**](HistoricalImportStatusListing.html)
+[**HistoricalImportStatusListing**](HistoricalImportStatusListing)
 
 
 ## get_workforcemanagement_integrations_hris
 
 > [**WfmIntegrationListing**](WfmIntegrationListing) get_workforcemanagement_integrations_hris()
-
 
 
 Get integrations
@@ -4730,13 +4646,12 @@ This endpoint does not need any parameters.
 
 ### Return type
 
-[**WfmIntegrationListing**](WfmIntegrationListing.html)
+[**WfmIntegrationListing**](WfmIntegrationListing)
 
 
 ## get_workforcemanagement_integrations_hris_timeofftypes_job
 
 > [**HrisTimeOffTypesJobResponse**](HrisTimeOffTypesJobResponse) get_workforcemanagement_integrations_hris_timeofftypes_job(job_id)
-
 
 
 Query the results of time off types job
@@ -4778,13 +4693,12 @@ except ApiException as e:
 
 ### Return type
 
-[**HrisTimeOffTypesJobResponse**](HrisTimeOffTypesJobResponse.html)
+[**HrisTimeOffTypesJobResponse**](HrisTimeOffTypesJobResponse)
 
 
 ## get_workforcemanagement_managementunit
 
 > [**ManagementUnit**](ManagementUnit) get_workforcemanagement_managementunit(management_unit_id, expand=expand)
-
 
 
 Get management unit
@@ -4890,18 +4804,20 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **management_unit_id** | **str**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
-| **expand** | [**list[str]**](str.html)|  | [optional] <br />**Values**: settings, settings.adherence, settings.timeOff, settings.scheduling, settings.shortTermForecasting, settings.shiftTrading |
+| **expand** | [**list[str]**](str)|  | [optional] <br />**Values**: settings, settings.adherence, settings.timeOff, settings.scheduling, settings.shortTermForecasting, settings.shiftTrading |
 
 ### Return type
 
-[**ManagementUnit**](ManagementUnit.html)
+[**ManagementUnit**](ManagementUnit)
 
 
 ## get_workforcemanagement_managementunit_activitycodes
 
 > [**ActivityCodeContainer**](ActivityCodeContainer) get_workforcemanagement_managementunit_activitycodes(management_unit_id)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 Deprecated: Instead use /api/v2/workforcemanagement/businessunits/{businessUnitId}/activitycodes. Get the list of activity codes
 
@@ -4983,13 +4899,12 @@ except ApiException as e:
 
 ### Return type
 
-[**ActivityCodeContainer**](ActivityCodeContainer.html)
+[**ActivityCodeContainer**](ActivityCodeContainer)
 
 
 ## get_workforcemanagement_managementunit_adherence
 
 > [**UserScheduleAdherenceListing**](UserScheduleAdherenceListing) get_workforcemanagement_managementunit_adherence(management_unit_id, force_download_service=force_download_service)
-
 
 
 Get a list of user schedule adherence records for the requested management unit
@@ -5034,13 +4949,12 @@ except ApiException as e:
 
 ### Return type
 
-[**UserScheduleAdherenceListing**](UserScheduleAdherenceListing.html)
+[**UserScheduleAdherenceListing**](UserScheduleAdherenceListing)
 
 
 ## get_workforcemanagement_managementunit_agent
 
 > [**WfmAgent**](WfmAgent) get_workforcemanagement_managementunit_agent(management_unit_id, agent_id, exclude_capabilities=exclude_capabilities, expand=expand)
-
 
 
 Get data for agent in the management unit
@@ -5085,17 +4999,16 @@ except ApiException as e:
 | **management_unit_id** | **str**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
 | **agent_id** | **str**| The agent id |  |
 | **exclude_capabilities** | **bool**| Excludes all capabilities of the agent such as queues, languages, and skills | [optional]  |
-| **expand** | [**list[str]**](str.html)|  | [optional] <br />**Values**: workPlanOverrides |
+| **expand** | [**list[str]**](str)|  | [optional] <br />**Values**: workPlanOverrides |
 
 ### Return type
 
-[**WfmAgent**](WfmAgent.html)
+[**WfmAgent**](WfmAgent)
 
 
 ## get_workforcemanagement_managementunit_agent_shifttrades
 
 > [**ShiftTradeListResponse**](ShiftTradeListResponse) get_workforcemanagement_managementunit_agent_shifttrades(management_unit_id, agent_id)
-
 
 
 Gets all the shift trades for a given agent
@@ -5141,13 +5054,12 @@ except ApiException as e:
 
 ### Return type
 
-[**ShiftTradeListResponse**](ShiftTradeListResponse.html)
+[**ShiftTradeListResponse**](ShiftTradeListResponse)
 
 
 ## get_workforcemanagement_managementunit_shifttrades_matched
 
 > [**ShiftTradeMatchesSummaryResponse**](ShiftTradeMatchesSummaryResponse) get_workforcemanagement_managementunit_shifttrades_matched(management_unit_id)
-
 
 
 Gets a summary of all shift trades in the matched state
@@ -5191,13 +5103,12 @@ except ApiException as e:
 
 ### Return type
 
-[**ShiftTradeMatchesSummaryResponse**](ShiftTradeMatchesSummaryResponse.html)
+[**ShiftTradeMatchesSummaryResponse**](ShiftTradeMatchesSummaryResponse)
 
 
 ## get_workforcemanagement_managementunit_shifttrades_users
 
 > [**WfmUserEntityListing**](WfmUserEntityListing) get_workforcemanagement_managementunit_shifttrades_users(management_unit_id)
-
 
 
 Gets list of users available for whom you can send direct shift trade requests
@@ -5240,13 +5151,12 @@ except ApiException as e:
 
 ### Return type
 
-[**WfmUserEntityListing**](WfmUserEntityListing.html)
+[**WfmUserEntityListing**](WfmUserEntityListing)
 
 
 ## get_workforcemanagement_managementunit_timeofflimit
 
 > [**TimeOffLimit**](TimeOffLimit) get_workforcemanagement_managementunit_timeofflimit(management_unit_id, time_off_limit_id)
-
 
 
 Gets a time off limit object
@@ -5293,13 +5203,12 @@ except ApiException as e:
 
 ### Return type
 
-[**TimeOffLimit**](TimeOffLimit.html)
+[**TimeOffLimit**](TimeOffLimit)
 
 
 ## get_workforcemanagement_managementunit_timeofflimits
 
 > [**TimeOffLimitListing**](TimeOffLimitListing) get_workforcemanagement_managementunit_timeofflimits(management_unit_id)
-
 
 
 Gets a list of time off limit objects under management unit.
@@ -5345,13 +5254,12 @@ except ApiException as e:
 
 ### Return type
 
-[**TimeOffLimitListing**](TimeOffLimitListing.html)
+[**TimeOffLimitListing**](TimeOffLimitListing)
 
 
 ## get_workforcemanagement_managementunit_timeoffplan
 
 > [**TimeOffPlan**](TimeOffPlan) get_workforcemanagement_managementunit_timeoffplan(management_unit_id, time_off_plan_id)
-
 
 
 Gets a time off plan
@@ -5396,13 +5304,12 @@ except ApiException as e:
 
 ### Return type
 
-[**TimeOffPlan**](TimeOffPlan.html)
+[**TimeOffPlan**](TimeOffPlan)
 
 
 ## get_workforcemanagement_managementunit_timeoffplans
 
 > [**TimeOffPlanListing**](TimeOffPlanListing) get_workforcemanagement_managementunit_timeoffplans(management_unit_id)
-
 
 
 Gets a list of time off plans
@@ -5445,13 +5352,12 @@ except ApiException as e:
 
 ### Return type
 
-[**TimeOffPlanListing**](TimeOffPlanListing.html)
+[**TimeOffPlanListing**](TimeOffPlanListing)
 
 
 ## get_workforcemanagement_managementunit_user_timeoffrequest
 
 > [**TimeOffRequestResponse**](TimeOffRequestResponse) get_workforcemanagement_managementunit_user_timeoffrequest(management_unit_id, user_id, time_off_request_id)
-
 
 
 Get a time off request
@@ -5498,13 +5404,12 @@ except ApiException as e:
 
 ### Return type
 
-[**TimeOffRequestResponse**](TimeOffRequestResponse.html)
+[**TimeOffRequestResponse**](TimeOffRequestResponse)
 
 
 ## get_workforcemanagement_managementunit_user_timeoffrequest_timeofflimits
 
 > [**QueryTimeOffLimitValuesResponse**](QueryTimeOffLimitValuesResponse) get_workforcemanagement_managementunit_user_timeoffrequest_timeofflimits(management_unit_id, user_id, time_off_request_id)
-
 
 
 Retrieves time off limit, allocated and waitlisted values according to specific time off request
@@ -5552,13 +5457,12 @@ except ApiException as e:
 
 ### Return type
 
-[**QueryTimeOffLimitValuesResponse**](QueryTimeOffLimitValuesResponse.html)
+[**QueryTimeOffLimitValuesResponse**](QueryTimeOffLimitValuesResponse)
 
 
 ## get_workforcemanagement_managementunit_user_timeoffrequests
 
 > [**TimeOffRequestList**](TimeOffRequestList) get_workforcemanagement_managementunit_user_timeoffrequests(management_unit_id, user_id, recently_reviewed=recently_reviewed)
-
 
 
 Get a list of time off requests for a given user
@@ -5605,13 +5509,12 @@ except ApiException as e:
 
 ### Return type
 
-[**TimeOffRequestList**](TimeOffRequestList.html)
+[**TimeOffRequestList**](TimeOffRequestList)
 
 
 ## get_workforcemanagement_managementunit_users
 
 > [**WfmUserEntityListing**](WfmUserEntityListing) get_workforcemanagement_managementunit_users(management_unit_id)
-
 
 
 Get users in the management unit
@@ -5662,14 +5565,16 @@ except ApiException as e:
 
 ### Return type
 
-[**WfmUserEntityListing**](WfmUserEntityListing.html)
+[**WfmUserEntityListing**](WfmUserEntityListing)
 
 
 ## get_workforcemanagement_managementunit_week_schedule
 
 > [**WeekScheduleResponse**](WeekScheduleResponse) get_workforcemanagement_managementunit_week_schedule(management_unit_id, week_id, schedule_id, expand=expand, force_download_service=force_download_service)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 Deprecated.  Use the equivalent business unit resource instead. Get a week schedule
 
@@ -5720,14 +5625,16 @@ except ApiException as e:
 
 ### Return type
 
-[**WeekScheduleResponse**](WeekScheduleResponse.html)
+[**WeekScheduleResponse**](WeekScheduleResponse)
 
 
 ## get_workforcemanagement_managementunit_week_schedules
 
 > [**WeekScheduleListResponse**](WeekScheduleListResponse) get_workforcemanagement_managementunit_week_schedules(management_unit_id, week_id, include_only_published=include_only_published, earliest_week_date=earliest_week_date, latest_week_date=latest_week_date)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 Deprecated.  Use the equivalent business unit resource instead. Get the list of schedules in a week in management unit
 
@@ -5778,13 +5685,12 @@ except ApiException as e:
 
 ### Return type
 
-[**WeekScheduleListResponse**](WeekScheduleListResponse.html)
+[**WeekScheduleListResponse**](WeekScheduleListResponse)
 
 
 ## get_workforcemanagement_managementunit_week_shifttrades
 
 > [**WeekShiftTradeListResponse**](WeekShiftTradeListResponse) get_workforcemanagement_managementunit_week_shifttrades(management_unit_id, week_date_id, evaluate_matches=evaluate_matches, force_download_service=force_download_service)
-
 
 
 Gets all the shift trades for a given week
@@ -5834,13 +5740,12 @@ except ApiException as e:
 
 ### Return type
 
-[**WeekShiftTradeListResponse**](WeekShiftTradeListResponse.html)
+[**WeekShiftTradeListResponse**](WeekShiftTradeListResponse)
 
 
 ## get_workforcemanagement_managementunit_workplan
 
 > [**WorkPlan**](WorkPlan) get_workforcemanagement_managementunit_workplan(management_unit_id, work_plan_id, include_only=include_only)
-
 
 
 Get a work plan
@@ -5885,17 +5790,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **management_unit_id** | **str**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
 | **work_plan_id** | **str**| The ID of the work plan to fetch |  |
-| **include_only** | [**list[str]**](str.html)| limit response to the specified fields | [optional] <br />**Values**: agentCount, agents, optionalDays, shifts, shiftStartVariances |
+| **include_only** | [**list[str]**](str)| limit response to the specified fields | [optional] <br />**Values**: agentCount, agents, optionalDays, shifts, shiftStartVariances |
 
 ### Return type
 
-[**WorkPlan**](WorkPlan.html)
+[**WorkPlan**](WorkPlan)
 
 
 ## get_workforcemanagement_managementunit_workplanrotation
 
 > [**WorkPlanRotationResponse**](WorkPlanRotationResponse) get_workforcemanagement_managementunit_workplanrotation(management_unit_id, work_plan_rotation_id)
-
 
 
 Get a work plan rotation
@@ -5940,13 +5844,12 @@ except ApiException as e:
 
 ### Return type
 
-[**WorkPlanRotationResponse**](WorkPlanRotationResponse.html)
+[**WorkPlanRotationResponse**](WorkPlanRotationResponse)
 
 
 ## get_workforcemanagement_managementunit_workplanrotations
 
 > [**WorkPlanRotationListResponse**](WorkPlanRotationListResponse) get_workforcemanagement_managementunit_workplanrotations(management_unit_id, expand=expand)
-
 
 
 Get work plan rotations
@@ -5988,17 +5891,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **management_unit_id** | **str**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
-| **expand** | [**list[str]**](str.html)|  | [optional] <br />**Values**: agents |
+| **expand** | [**list[str]**](str)|  | [optional] <br />**Values**: agents |
 
 ### Return type
 
-[**WorkPlanRotationListResponse**](WorkPlanRotationListResponse.html)
+[**WorkPlanRotationListResponse**](WorkPlanRotationListResponse)
 
 
 ## get_workforcemanagement_managementunit_workplans
 
 > [**WorkPlanListResponse**](WorkPlanListResponse) get_workforcemanagement_managementunit_workplans(management_unit_id, expand=expand, exclude=exclude)
-
 
 
 Get work plans
@@ -6046,18 +5948,17 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **management_unit_id** | **str**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
-| **expand** | [**list[str]**](str.html)| Include to access additional data on the work plans | [optional] <br />**Values**: agentCount, agents, optionalDays, shifts, shiftStartVariances, details |
-| **exclude** | [**list[str]**](str.html)| Exclude specific data on the work plans from the response | [optional] <br />**Values**: shifts.activities |
+| **expand** | [**list[str]**](str)| Include to access additional data on the work plans | [optional] <br />**Values**: agentCount, agents, optionalDays, shifts, shiftStartVariances, details |
+| **exclude** | [**list[str]**](str)| Exclude specific data on the work plans from the response | [optional] <br />**Values**: shifts.activities |
 
 ### Return type
 
-[**WorkPlanListResponse**](WorkPlanListResponse.html)
+[**WorkPlanListResponse**](WorkPlanListResponse)
 
 
 ## get_workforcemanagement_managementunits
 
 > [**ManagementUnitListing**](ManagementUnitListing) get_workforcemanagement_managementunits(page_size=page_size, page_number=page_number, expand=expand, feature=feature, division_id=division_id)
-
 
 
 Get management units
@@ -6107,13 +6008,12 @@ except ApiException as e:
 
 ### Return type
 
-[**ManagementUnitListing**](ManagementUnitListing.html)
+[**ManagementUnitListing**](ManagementUnitListing)
 
 
 ## get_workforcemanagement_managementunits_divisionviews
 
 > [**ManagementUnitListing**](ManagementUnitListing) get_workforcemanagement_managementunits_divisionviews(division_id=division_id)
-
 
 
 Get management units across divisions
@@ -6152,17 +6052,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **division_id** | [**list[str]**](str.html)| The divisionIds to filter by. If omitted, will return all divisions | [optional]  |
+| **division_id** | [**list[str]**](str)| The divisionIds to filter by. If omitted, will return all divisions | [optional]  |
 
 ### Return type
 
-[**ManagementUnitListing**](ManagementUnitListing.html)
+[**ManagementUnitListing**](ManagementUnitListing)
 
 
 ## get_workforcemanagement_notifications
 
 > [**NotificationsResponse**](NotificationsResponse) get_workforcemanagement_notifications()
-
 
 
 Get a list of notifications for the current user
@@ -6202,13 +6101,12 @@ This endpoint does not need any parameters.
 
 ### Return type
 
-[**NotificationsResponse**](NotificationsResponse.html)
+[**NotificationsResponse**](NotificationsResponse)
 
 
 ## get_workforcemanagement_schedulingjob
 
 > [**SchedulingStatusResponse**](SchedulingStatusResponse) get_workforcemanagement_schedulingjob(job_id)
-
 
 
 Get status of the scheduling job
@@ -6251,13 +6149,12 @@ except ApiException as e:
 
 ### Return type
 
-[**SchedulingStatusResponse**](SchedulingStatusResponse.html)
+[**SchedulingStatusResponse**](SchedulingStatusResponse)
 
 
 ## get_workforcemanagement_shifttrades
 
 > [**ShiftTradeListResponse**](ShiftTradeListResponse) get_workforcemanagement_shifttrades()
-
 
 
 Gets all of my shift trades
@@ -6298,13 +6195,12 @@ This endpoint does not need any parameters.
 
 ### Return type
 
-[**ShiftTradeListResponse**](ShiftTradeListResponse.html)
+[**ShiftTradeListResponse**](ShiftTradeListResponse)
 
 
 ## get_workforcemanagement_shrinkage_job
 
 > [**WfmHistoricalShrinkageResponse**](WfmHistoricalShrinkageResponse) get_workforcemanagement_shrinkage_job(job_id)
-
 
 
 Request to fetch the status of the historical shrinkage query
@@ -6346,13 +6242,12 @@ except ApiException as e:
 
 ### Return type
 
-[**WfmHistoricalShrinkageResponse**](WfmHistoricalShrinkageResponse.html)
+[**WfmHistoricalShrinkageResponse**](WfmHistoricalShrinkageResponse)
 
 
 ## get_workforcemanagement_timeoffbalance_job
 
 > [**TimeOffBalanceJobResponse**](TimeOffBalanceJobResponse) get_workforcemanagement_timeoffbalance_job(job_id)
-
 
 
 Query the results of time off types job
@@ -6394,13 +6289,12 @@ except ApiException as e:
 
 ### Return type
 
-[**TimeOffBalanceJobResponse**](TimeOffBalanceJobResponse.html)
+[**TimeOffBalanceJobResponse**](TimeOffBalanceJobResponse)
 
 
 ## get_workforcemanagement_timeoffrequest
 
 > [**TimeOffRequestResponse**](TimeOffRequestResponse) get_workforcemanagement_timeoffrequest(time_off_request_id)
-
 
 
 Get a time off request for the current user
@@ -6444,13 +6338,12 @@ except ApiException as e:
 
 ### Return type
 
-[**TimeOffRequestResponse**](TimeOffRequestResponse.html)
+[**TimeOffRequestResponse**](TimeOffRequestResponse)
 
 
 ## get_workforcemanagement_timeoffrequest_waitlistpositions
 
 > [**WaitlistPositionListing**](WaitlistPositionListing) get_workforcemanagement_timeoffrequest_waitlistpositions(time_off_request_id)
-
 
 
 Get the daily waitlist positions of a time off request for the current user
@@ -6493,13 +6386,12 @@ except ApiException as e:
 
 ### Return type
 
-[**WaitlistPositionListing**](WaitlistPositionListing.html)
+[**WaitlistPositionListing**](WaitlistPositionListing)
 
 
 ## get_workforcemanagement_timeoffrequests
 
 > [**TimeOffRequestList**](TimeOffRequestList) get_workforcemanagement_timeoffrequests(recently_reviewed=recently_reviewed)
-
 
 
 Get a list of time off requests for the current user
@@ -6543,13 +6435,12 @@ except ApiException as e:
 
 ### Return type
 
-[**TimeOffRequestList**](TimeOffRequestList.html)
+[**TimeOffRequestList**](TimeOffRequestList)
 
 
 ## get_workforcemanagement_user_workplanbidranks
 
 > [**WorkPlanBidRanks**](WorkPlanBidRanks) get_workforcemanagement_user_workplanbidranks(user_id)
-
 
 
 Get work plan bid ranks for a user
@@ -6592,13 +6483,12 @@ except ApiException as e:
 
 ### Return type
 
-[**WorkPlanBidRanks**](WorkPlanBidRanks.html)
+[**WorkPlanBidRanks**](WorkPlanBidRanks)
 
 
 ## get_workforcemanagement_workplanbid_preferences
 
 > [**AgentWorkPlanBiddingPreferenceResponse**](AgentWorkPlanBiddingPreferenceResponse) get_workforcemanagement_workplanbid_preferences(bid_id)
-
 
 
 Gets an agent's work plan bidding preference
@@ -6641,13 +6531,12 @@ except ApiException as e:
 
 ### Return type
 
-[**AgentWorkPlanBiddingPreferenceResponse**](AgentWorkPlanBiddingPreferenceResponse.html)
+[**AgentWorkPlanBiddingPreferenceResponse**](AgentWorkPlanBiddingPreferenceResponse)
 
 
 ## get_workforcemanagement_workplanbid_workplans
 
 > [**AgentWorkPlanListResponse**](AgentWorkPlanListResponse) get_workforcemanagement_workplanbid_workplans(bid_id)
-
 
 
 Gets an agent's work plans for a bid
@@ -6690,13 +6579,12 @@ except ApiException as e:
 
 ### Return type
 
-[**AgentWorkPlanListResponse**](AgentWorkPlanListResponse.html)
+[**AgentWorkPlanListResponse**](AgentWorkPlanListResponse)
 
 
 ## get_workforcemanagement_workplanbids
 
 > [**AgentWorkPlanBids**](AgentWorkPlanBids) get_workforcemanagement_workplanbids()
-
 
 
 Gets the list of work plan bids that belong to an agent
@@ -6735,13 +6623,12 @@ This endpoint does not need any parameters.
 
 ### Return type
 
-[**AgentWorkPlanBids**](AgentWorkPlanBids.html)
+[**AgentWorkPlanBids**](AgentWorkPlanBids)
 
 
 ## patch_workforcemanagement_agent_adherence_explanation
 
 > [**AdherenceExplanationAsyncResponse**](AdherenceExplanationAsyncResponse) patch_workforcemanagement_agent_adherence_explanation(agent_id, explanation_id, body)
-
 
 
 Update an adherence explanation
@@ -6784,17 +6671,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **agent_id** | **str**| The ID of the agent to query |  |
 | **explanation_id** | **str**| The ID of the explanation to update |  |
-| **body** | [**UpdateAdherenceExplanationStatusRequest**](UpdateAdherenceExplanationStatusRequest.html)| The request body |  |
+| **body** | [**UpdateAdherenceExplanationStatusRequest**](UpdateAdherenceExplanationStatusRequest)| The request body |  |
 
 ### Return type
 
-[**AdherenceExplanationAsyncResponse**](AdherenceExplanationAsyncResponse.html)
+[**AdherenceExplanationAsyncResponse**](AdherenceExplanationAsyncResponse)
 
 
 ## patch_workforcemanagement_alternativeshifts_trade
 
 > [**AlternativeShiftTradeResponse**](AlternativeShiftTradeResponse) patch_workforcemanagement_alternativeshifts_trade(trade_id, body=body)
-
 
 
 Update my alternative shifts trade by trade ID
@@ -6835,17 +6721,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **trade_id** | **str**| The ID of the alternative shift trade |  |
-| **body** | [**AgentUpdateAlternativeShiftTradeRequest**](AgentUpdateAlternativeShiftTradeRequest.html)| body | [optional]  |
+| **body** | [**AgentUpdateAlternativeShiftTradeRequest**](AgentUpdateAlternativeShiftTradeRequest)| body | [optional]  |
 
 ### Return type
 
-[**AlternativeShiftTradeResponse**](AlternativeShiftTradeResponse.html)
+[**AlternativeShiftTradeResponse**](AlternativeShiftTradeResponse)
 
 
 ## patch_workforcemanagement_alternativeshifts_trades_state_jobs
 
 > [**AlternativeShiftAsyncResponse**](AlternativeShiftAsyncResponse) patch_workforcemanagement_alternativeshifts_trades_state_jobs(body)
-
 
 
 Bulk update alternative shift trade states
@@ -6884,17 +6769,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**AdminBulkUpdateAlternativeShiftTradeStateRequest**](AdminBulkUpdateAlternativeShiftTradeStateRequest.html)| The request body |  |
+| **body** | [**AdminBulkUpdateAlternativeShiftTradeStateRequest**](AdminBulkUpdateAlternativeShiftTradeStateRequest)| The request body |  |
 
 ### Return type
 
-[**AlternativeShiftAsyncResponse**](AlternativeShiftAsyncResponse.html)
+[**AlternativeShiftAsyncResponse**](AlternativeShiftAsyncResponse)
 
 
 ## patch_workforcemanagement_businessunit
 
 > [**BusinessUnitResponse**](BusinessUnitResponse) patch_workforcemanagement_businessunit(business_unit_id, body=body)
-
 
 
 Update business unit
@@ -6935,17 +6819,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **business_unit_id** | **str**| The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. |  |
-| **body** | [**UpdateBusinessUnitRequest**](UpdateBusinessUnitRequest.html)| body | [optional]  |
+| **body** | [**UpdateBusinessUnitRequest**](UpdateBusinessUnitRequest)| body | [optional]  |
 
 ### Return type
 
-[**BusinessUnitResponse**](BusinessUnitResponse.html)
+[**BusinessUnitResponse**](BusinessUnitResponse)
 
 
 ## patch_workforcemanagement_businessunit_activitycode
 
 > [**BusinessUnitActivityCode**](BusinessUnitActivityCode) patch_workforcemanagement_businessunit_activitycode(business_unit_id, activity_code_id, body=body)
-
 
 
 Update an activity code
@@ -6988,17 +6871,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **business_unit_id** | **str**| The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. |  |
 | **activity_code_id** | **str**| The ID of the activity code to update |  |
-| **body** | [**UpdateActivityCodeRequest**](UpdateActivityCodeRequest.html)| body | [optional]  |
+| **body** | [**UpdateActivityCodeRequest**](UpdateActivityCodeRequest)| body | [optional]  |
 
 ### Return type
 
-[**BusinessUnitActivityCode**](BusinessUnitActivityCode.html)
+[**BusinessUnitActivityCode**](BusinessUnitActivityCode)
 
 
 ## patch_workforcemanagement_businessunit_activityplan
 
 > [**ActivityPlanResponse**](ActivityPlanResponse) patch_workforcemanagement_businessunit_activityplan(business_unit_id, activity_plan_id, body)
-
 
 
 Update an activity plan
@@ -7043,17 +6925,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **business_unit_id** | **str**| The ID of the business unit |  |
 | **activity_plan_id** | **str**| The ID of the activity plan to update |  |
-| **body** | [**UpdateActivityPlanRequest**](UpdateActivityPlanRequest.html)| body |  |
+| **body** | [**UpdateActivityPlanRequest**](UpdateActivityPlanRequest)| body |  |
 
 ### Return type
 
-[**ActivityPlanResponse**](ActivityPlanResponse.html)
+[**ActivityPlanResponse**](ActivityPlanResponse)
 
 
 ## patch_workforcemanagement_businessunit_alternativeshifts_settings
 
 > [**AlternativeShiftBuSettingsResponse**](AlternativeShiftBuSettingsResponse) patch_workforcemanagement_businessunit_alternativeshifts_settings(business_unit_id, body=body)
-
 
 
 Update alternative shifts settings for a business unit
@@ -7094,17 +6975,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **business_unit_id** | **str**| The ID of the business unit |  |
-| **body** | [**UpdateAlternativeShiftBuSettingsRequest**](UpdateAlternativeShiftBuSettingsRequest.html)| body | [optional]  |
+| **body** | [**UpdateAlternativeShiftBuSettingsRequest**](UpdateAlternativeShiftBuSettingsRequest)| body | [optional]  |
 
 ### Return type
 
-[**AlternativeShiftBuSettingsResponse**](AlternativeShiftBuSettingsResponse.html)
+[**AlternativeShiftBuSettingsResponse**](AlternativeShiftBuSettingsResponse)
 
 
 ## patch_workforcemanagement_businessunit_planninggroup
 
 > [**PlanningGroup**](PlanningGroup) patch_workforcemanagement_businessunit_planninggroup(business_unit_id, planning_group_id, body=body)
-
 
 
 Updates the planning group
@@ -7147,17 +7027,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **business_unit_id** | **str**| The ID of the business unit. |  |
 | **planning_group_id** | **str**| The ID of a planning group to update |  |
-| **body** | [**UpdatePlanningGroupRequest**](UpdatePlanningGroupRequest.html)| body | [optional]  |
+| **body** | [**UpdatePlanningGroupRequest**](UpdatePlanningGroupRequest)| body | [optional]  |
 
 ### Return type
 
-[**PlanningGroup**](PlanningGroup.html)
+[**PlanningGroup**](PlanningGroup)
 
 
 ## patch_workforcemanagement_businessunit_scheduling_run
 
 >  patch_workforcemanagement_businessunit_scheduling_run(business_unit_id, run_id, body=body)
-
 
 
 Mark a schedule run as applied
@@ -7199,7 +7078,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **business_unit_id** | **str**| The ID of the business unit |  |
 | **run_id** | **str**| The ID of the schedule run |  |
-| **body** | [**PatchBuScheduleRunRequest**](PatchBuScheduleRunRequest.html)| body | [optional]  |
+| **body** | [**PatchBuScheduleRunRequest**](PatchBuScheduleRunRequest)| body | [optional]  |
 
 ### Return type
 
@@ -7209,7 +7088,6 @@ void (empty response body)
 ## patch_workforcemanagement_businessunit_servicegoaltemplate
 
 > [**ServiceGoalTemplate**](ServiceGoalTemplate) patch_workforcemanagement_businessunit_servicegoaltemplate(business_unit_id, service_goal_template_id, body=body)
-
 
 
 Updates a service goal template
@@ -7252,17 +7130,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **business_unit_id** | **str**| The ID of the business unit. |  |
 | **service_goal_template_id** | **str**| The ID of a service goal template to update |  |
-| **body** | [**UpdateServiceGoalTemplate**](UpdateServiceGoalTemplate.html)| body | [optional]  |
+| **body** | [**UpdateServiceGoalTemplate**](UpdateServiceGoalTemplate)| body | [optional]  |
 
 ### Return type
 
-[**ServiceGoalTemplate**](ServiceGoalTemplate.html)
+[**ServiceGoalTemplate**](ServiceGoalTemplate)
 
 
 ## patch_workforcemanagement_businessunit_staffinggroup
 
 > [**StaffingGroupResponse**](StaffingGroupResponse) patch_workforcemanagement_businessunit_staffinggroup(business_unit_id, staffing_group_id, body=body)
-
 
 
 Updates a staffing group
@@ -7305,17 +7182,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **business_unit_id** | **str**| The ID of the business unit |  |
 | **staffing_group_id** | **str**| The ID of the staffing group to update |  |
-| **body** | [**UpdateStaffingGroupRequest**](UpdateStaffingGroupRequest.html)| body | [optional]  |
+| **body** | [**UpdateStaffingGroupRequest**](UpdateStaffingGroupRequest)| body | [optional]  |
 
 ### Return type
 
-[**StaffingGroupResponse**](StaffingGroupResponse.html)
+[**StaffingGroupResponse**](StaffingGroupResponse)
 
 
 ## patch_workforcemanagement_businessunit_timeoffplan
 
 > [**BuTimeOffPlanResponse**](BuTimeOffPlanResponse) patch_workforcemanagement_businessunit_timeoffplan(business_unit_id, time_off_plan_id, body=body)
-
 
 
 Updates a time-off plan
@@ -7358,17 +7234,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **business_unit_id** | **str**| The ID of the business unit |  |
 | **time_off_plan_id** | **str**| The ID of the time-off plan to update |  |
-| **body** | [**BuUpdateTimeOffPlanRequest**](BuUpdateTimeOffPlanRequest.html)| body | [optional]  |
+| **body** | [**BuUpdateTimeOffPlanRequest**](BuUpdateTimeOffPlanRequest)| body | [optional]  |
 
 ### Return type
 
-[**BuTimeOffPlanResponse**](BuTimeOffPlanResponse.html)
+[**BuTimeOffPlanResponse**](BuTimeOffPlanResponse)
 
 
 ## patch_workforcemanagement_businessunit_workplanbid
 
 > [**WorkPlanBid**](WorkPlanBid) patch_workforcemanagement_businessunit_workplanbid(business_unit_id, bid_id, body)
-
 
 
 Update work plan bid
@@ -7411,17 +7286,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **business_unit_id** | **str**| The ID of the business unit |  |
 | **bid_id** | **str**| The id of the workplanbid |  |
-| **body** | [**UpdateWorkPlanBid**](UpdateWorkPlanBid.html)| The work plan bid to be updated |  |
+| **body** | [**UpdateWorkPlanBid**](UpdateWorkPlanBid)| The work plan bid to be updated |  |
 
 ### Return type
 
-[**WorkPlanBid**](WorkPlanBid.html)
+[**WorkPlanBid**](WorkPlanBid)
 
 
 ## patch_workforcemanagement_businessunit_workplanbid_group
 
 > [**WorkPlanBidGroupResponse**](WorkPlanBidGroupResponse) patch_workforcemanagement_businessunit_workplanbid_group(business_unit_id, bid_id, bid_group_id, body=body)
-
 
 
 Update a bid group by bid group Id
@@ -7466,17 +7340,16 @@ except ApiException as e:
 | **business_unit_id** | **str**| The ID of the business unit |  |
 | **bid_id** | **str**| The work plan bid id of the bid groups |  |
 | **bid_group_id** | **str**| Work Plan Bid Group id |  |
-| **body** | [**WorkPlanBidGroupUpdate**](WorkPlanBidGroupUpdate.html)| body | [optional]  |
+| **body** | [**WorkPlanBidGroupUpdate**](WorkPlanBidGroupUpdate)| body | [optional]  |
 
 ### Return type
 
-[**WorkPlanBidGroupResponse**](WorkPlanBidGroupResponse.html)
+[**WorkPlanBidGroupResponse**](WorkPlanBidGroupResponse)
 
 
 ## patch_workforcemanagement_businessunit_workplanbid_group_preferences
 
 > [**AdminAgentWorkPlanPreferenceResponse**](AdminAgentWorkPlanPreferenceResponse) patch_workforcemanagement_businessunit_workplanbid_group_preferences(business_unit_id, bid_id, bid_group_id, body=body)
-
 
 
 Overrides the assigned work plan for the specified agents
@@ -7521,17 +7394,16 @@ except ApiException as e:
 | **business_unit_id** | **str**| The ID of the business unit |  |
 | **bid_id** | **str**| The work plan bid id of the bid groups |  |
 | **bid_group_id** | **str**| The ID of the work plan bid group |  |
-| **body** | [**AgentsBidAssignedWorkPlanOverrideRequest**](AgentsBidAssignedWorkPlanOverrideRequest.html)| body | [optional]  |
+| **body** | [**AgentsBidAssignedWorkPlanOverrideRequest**](AgentsBidAssignedWorkPlanOverrideRequest)| body | [optional]  |
 
 ### Return type
 
-[**AdminAgentWorkPlanPreferenceResponse**](AdminAgentWorkPlanPreferenceResponse.html)
+[**AdminAgentWorkPlanPreferenceResponse**](AdminAgentWorkPlanPreferenceResponse)
 
 
 ## patch_workforcemanagement_managementunit
 
 > [**ManagementUnit**](ManagementUnit) patch_workforcemanagement_managementunit(management_unit_id, body=body)
-
 
 
 Update the requested management unit
@@ -7572,17 +7444,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **management_unit_id** | **str**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
-| **body** | [**UpdateManagementUnitRequest**](UpdateManagementUnitRequest.html)| body | [optional]  |
+| **body** | [**UpdateManagementUnitRequest**](UpdateManagementUnitRequest)| body | [optional]  |
 
 ### Return type
 
-[**ManagementUnit**](ManagementUnit.html)
+[**ManagementUnit**](ManagementUnit)
 
 
 ## patch_workforcemanagement_managementunit_agents
 
 >  patch_workforcemanagement_managementunit_agents(management_unit_id, body=body)
-
 
 
 Update agent configurations
@@ -7622,7 +7493,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **management_unit_id** | **str**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
-| **body** | [**UpdateMuAgentsRequest**](UpdateMuAgentsRequest.html)| body | [optional]  |
+| **body** | [**UpdateMuAgentsRequest**](UpdateMuAgentsRequest)| body | [optional]  |
 
 ### Return type
 
@@ -7632,7 +7503,6 @@ void (empty response body)
 ## patch_workforcemanagement_managementunit_timeofflimit
 
 > [**TimeOffLimit**](TimeOffLimit) patch_workforcemanagement_managementunit_timeofflimit(management_unit_id, time_off_limit_id, body=body)
-
 
 
 Updates a time off limit object.
@@ -7677,17 +7547,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **management_unit_id** | **str**| The ID of the management unit. |  |
 | **time_off_limit_id** | **str**| The id of time off limit object to update |  |
-| **body** | [**UpdateTimeOffLimitRequest**](UpdateTimeOffLimitRequest.html)| body | [optional]  |
+| **body** | [**UpdateTimeOffLimitRequest**](UpdateTimeOffLimitRequest)| body | [optional]  |
 
 ### Return type
 
-[**TimeOffLimit**](TimeOffLimit.html)
+[**TimeOffLimit**](TimeOffLimit)
 
 
 ## patch_workforcemanagement_managementunit_timeoffplan
 
 > [**TimeOffPlan**](TimeOffPlan) patch_workforcemanagement_managementunit_timeoffplan(management_unit_id, time_off_plan_id, body=body)
-
 
 
 Updates a time off plan
@@ -7730,17 +7599,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **management_unit_id** | **str**| The ID of the management unit |  |
 | **time_off_plan_id** | **str**| The ID of the time off plan to update |  |
-| **body** | [**UpdateTimeOffPlanRequest**](UpdateTimeOffPlanRequest.html)| body | [optional]  |
+| **body** | [**UpdateTimeOffPlanRequest**](UpdateTimeOffPlanRequest)| body | [optional]  |
 
 ### Return type
 
-[**TimeOffPlan**](TimeOffPlan.html)
+[**TimeOffPlan**](TimeOffPlan)
 
 
 ## patch_workforcemanagement_managementunit_timeoffrequest_user_integrationstatus
 
 > [**UserTimeOffIntegrationStatusResponse**](UserTimeOffIntegrationStatusResponse) patch_workforcemanagement_managementunit_timeoffrequest_user_integrationstatus(management_unit_id, time_off_request_id, user_id, body=body)
-
 
 
 Set integration status for a time off request.
@@ -7785,17 +7653,16 @@ except ApiException as e:
 | **management_unit_id** | **str**| The ID of the management unit. |  |
 | **time_off_request_id** | **str**| The ID of the time off request. |  |
 | **user_id** | **str**| The ID of user to whom the time off request belongs. |  |
-| **body** | [**SetTimeOffIntegrationStatusRequest**](SetTimeOffIntegrationStatusRequest.html)| body | [optional]  |
+| **body** | [**SetTimeOffIntegrationStatusRequest**](SetTimeOffIntegrationStatusRequest)| body | [optional]  |
 
 ### Return type
 
-[**UserTimeOffIntegrationStatusResponse**](UserTimeOffIntegrationStatusResponse.html)
+[**UserTimeOffIntegrationStatusResponse**](UserTimeOffIntegrationStatusResponse)
 
 
 ## patch_workforcemanagement_managementunit_user_timeoffrequest
 
 > [**TimeOffRequestResponse**](TimeOffRequestResponse) patch_workforcemanagement_managementunit_user_timeoffrequest(management_unit_id, user_id, time_off_request_id, body=body)
-
 
 
 Update a time off request
@@ -7840,17 +7707,16 @@ except ApiException as e:
 | **management_unit_id** | **str**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
 | **user_id** | **str**| The id of the user the requested time off request belongs to |  |
 | **time_off_request_id** | **str**| The id of the time off request to update |  |
-| **body** | [**AdminTimeOffRequestPatch**](AdminTimeOffRequestPatch.html)| body | [optional]  |
+| **body** | [**AdminTimeOffRequestPatch**](AdminTimeOffRequestPatch)| body | [optional]  |
 
 ### Return type
 
-[**TimeOffRequestResponse**](TimeOffRequestResponse.html)
+[**TimeOffRequestResponse**](TimeOffRequestResponse)
 
 
 ## patch_workforcemanagement_managementunit_week_shifttrade
 
 > [**ShiftTradeResponse**](ShiftTradeResponse) patch_workforcemanagement_managementunit_week_shifttrade(management_unit_id, week_date_id, trade_id, body)
-
 
 
 Updates a shift trade. This route can only be called by the initiating agent
@@ -7895,17 +7761,16 @@ except ApiException as e:
 | **management_unit_id** | **str**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
 | **week_date_id** | **date**| The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
 | **trade_id** | **str**| The ID of the shift trade to update |  |
-| **body** | [**PatchShiftTradeRequest**](PatchShiftTradeRequest.html)| body |  |
+| **body** | [**PatchShiftTradeRequest**](PatchShiftTradeRequest)| body |  |
 
 ### Return type
 
-[**ShiftTradeResponse**](ShiftTradeResponse.html)
+[**ShiftTradeResponse**](ShiftTradeResponse)
 
 
 ## patch_workforcemanagement_managementunit_workplan
 
 > [**WorkPlan**](WorkPlan) patch_workforcemanagement_managementunit_workplan(management_unit_id, work_plan_id, validation_mode=validation_mode, body=body)
-
 
 
 Update a work plan
@@ -7950,17 +7815,16 @@ except ApiException as e:
 | **management_unit_id** | **str**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
 | **work_plan_id** | **str**| The ID of the work plan to update |  |
 | **validation_mode** | **str**| Allows to update work plan even if validation result is invalid | [optional] <br />**Values**: Ignore |
-| **body** | [**WorkPlan**](WorkPlan.html)| body | [optional]  |
+| **body** | [**WorkPlan**](WorkPlan)| body | [optional]  |
 
 ### Return type
 
-[**WorkPlan**](WorkPlan.html)
+[**WorkPlan**](WorkPlan)
 
 
 ## patch_workforcemanagement_managementunit_workplanrotation
 
 > [**WorkPlanRotationResponse**](WorkPlanRotationResponse) patch_workforcemanagement_managementunit_workplanrotation(management_unit_id, work_plan_rotation_id, body=body)
-
 
 
 Update a work plan rotation
@@ -8003,17 +7867,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **management_unit_id** | **str**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
 | **work_plan_rotation_id** | **str**| The ID of the work plan rotation to update |  |
-| **body** | [**UpdateWorkPlanRotationRequest**](UpdateWorkPlanRotationRequest.html)| body | [optional]  |
+| **body** | [**UpdateWorkPlanRotationRequest**](UpdateWorkPlanRotationRequest)| body | [optional]  |
 
 ### Return type
 
-[**WorkPlanRotationResponse**](WorkPlanRotationResponse.html)
+[**WorkPlanRotationResponse**](WorkPlanRotationResponse)
 
 
 ## patch_workforcemanagement_timeoffrequest
 
 > [**TimeOffRequestResponse**](TimeOffRequestResponse) patch_workforcemanagement_timeoffrequest(time_off_request_id, body=body)
-
 
 
 Update a time off request for the current user
@@ -8054,17 +7917,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **time_off_request_id** | **str**| The ID of the time off request |  |
-| **body** | [**AgentTimeOffRequestPatch**](AgentTimeOffRequestPatch.html)| body | [optional]  |
+| **body** | [**AgentTimeOffRequestPatch**](AgentTimeOffRequestPatch)| body | [optional]  |
 
 ### Return type
 
-[**TimeOffRequestResponse**](TimeOffRequestResponse.html)
+[**TimeOffRequestResponse**](TimeOffRequestResponse)
 
 
 ## patch_workforcemanagement_user_workplanbidranks
 
 > [**WorkPlanBidRanks**](WorkPlanBidRanks) patch_workforcemanagement_user_workplanbidranks(user_id, body=body)
-
 
 
 Update work plan bid ranks for a user
@@ -8105,17 +7967,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **user_id** | **str**| The userId to whom the work plan bid ranks apply. |  |
-| **body** | [**WorkPlanBidRanks**](WorkPlanBidRanks.html)| body | [optional]  |
+| **body** | [**WorkPlanBidRanks**](WorkPlanBidRanks)| body | [optional]  |
 
 ### Return type
 
-[**WorkPlanBidRanks**](WorkPlanBidRanks.html)
+[**WorkPlanBidRanks**](WorkPlanBidRanks)
 
 
 ## patch_workforcemanagement_users_workplanbidranks_bulk
 
 > [**EntityListing**](EntityListing) patch_workforcemanagement_users_workplanbidranks_bulk(body)
-
 
 
 Update bulk work plan bid ranks on users. Max 50 users can be updated at a time.
@@ -8154,17 +8015,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**list[WorkPlanBidRanks]**](WorkPlanBidRanks.html)| Users |  |
+| **body** | [**list[WorkPlanBidRanks]**](WorkPlanBidRanks)| Users |  |
 
 ### Return type
 
-[**EntityListing**](EntityListing.html)
+[**EntityListing**](EntityListing)
 
 
 ## patch_workforcemanagement_workplanbid_preferences
 
 > [**AgentWorkPlanBiddingPreferenceResponse**](AgentWorkPlanBiddingPreferenceResponse) patch_workforcemanagement_workplanbid_preferences(bid_id, body=body)
-
 
 
 Update an agent's work plan bidding preference
@@ -8205,17 +8065,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **bid_id** | **str**| The ID of the work plan bid |  |
-| **body** | [**UpdateAgentWorkPlanBiddingPreference**](UpdateAgentWorkPlanBiddingPreference.html)| body | [optional]  |
+| **body** | [**UpdateAgentWorkPlanBiddingPreference**](UpdateAgentWorkPlanBiddingPreference)| body | [optional]  |
 
 ### Return type
 
-[**AgentWorkPlanBiddingPreferenceResponse**](AgentWorkPlanBiddingPreferenceResponse.html)
+[**AgentWorkPlanBiddingPreferenceResponse**](AgentWorkPlanBiddingPreferenceResponse)
 
 
 ## post_workforcemanagement_adherence_explanations
 
 > [**AdherenceExplanationAsyncResponse**](AdherenceExplanationAsyncResponse) post_workforcemanagement_adherence_explanations(body)
-
 
 
 Submit an adherence explanation for the current user
@@ -8254,17 +8113,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**AddAdherenceExplanationAgentRequest**](AddAdherenceExplanationAgentRequest.html)| The request body |  |
+| **body** | [**AddAdherenceExplanationAgentRequest**](AddAdherenceExplanationAgentRequest)| The request body |  |
 
 ### Return type
 
-[**AdherenceExplanationAsyncResponse**](AdherenceExplanationAsyncResponse.html)
+[**AdherenceExplanationAsyncResponse**](AdherenceExplanationAsyncResponse)
 
 
 ## post_workforcemanagement_adherence_explanations_query
 
 > [**QueryAdherenceExplanationsResponse**](QueryAdherenceExplanationsResponse) post_workforcemanagement_adherence_explanations_query(body, force_async=force_async, force_download_service=force_download_service)
-
 
 
 Query adherence explanations for the current user
@@ -8305,20 +8163,22 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**AgentQueryAdherenceExplanationsRequest**](AgentQueryAdherenceExplanationsRequest.html)| The request body |  |
+| **body** | [**AgentQueryAdherenceExplanationsRequest**](AgentQueryAdherenceExplanationsRequest)| The request body |  |
 | **force_async** | **bool**| Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes | [optional]  |
 | **force_download_service** | **bool**| Force the result of this operation to be sent via download service. For testing/app development purposes | [optional]  |
 
 ### Return type
 
-[**QueryAdherenceExplanationsResponse**](QueryAdherenceExplanationsResponse.html)
+[**QueryAdherenceExplanationsResponse**](QueryAdherenceExplanationsResponse)
 
 
 ## post_workforcemanagement_adherence_historical
 
 > [**WfmHistoricalAdherenceResponse**](WfmHistoricalAdherenceResponse) post_workforcemanagement_adherence_historical(body=body)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 Deprecated. Use bulk routes instead (/adherence/historical/bulk)
 
@@ -8356,17 +8216,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**WfmHistoricalAdherenceQueryForUsers**](WfmHistoricalAdherenceQueryForUsers.html)| body | [optional]  |
+| **body** | [**WfmHistoricalAdherenceQueryForUsers**](WfmHistoricalAdherenceQueryForUsers)| body | [optional]  |
 
 ### Return type
 
-[**WfmHistoricalAdherenceResponse**](WfmHistoricalAdherenceResponse.html)
+[**WfmHistoricalAdherenceResponse**](WfmHistoricalAdherenceResponse)
 
 
 ## post_workforcemanagement_adherence_historical_bulk
 
 > [**WfmHistoricalAdherenceBulkResponse**](WfmHistoricalAdherenceBulkResponse) post_workforcemanagement_adherence_historical_bulk(body=body)
-
 
 
 Request a historical adherence report in bulk
@@ -8405,17 +8264,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**WfmHistoricalAdherenceBulkQuery**](WfmHistoricalAdherenceBulkQuery.html)| body | [optional]  |
+| **body** | [**WfmHistoricalAdherenceBulkQuery**](WfmHistoricalAdherenceBulkQuery)| body | [optional]  |
 
 ### Return type
 
-[**WfmHistoricalAdherenceBulkResponse**](WfmHistoricalAdherenceBulkResponse.html)
+[**WfmHistoricalAdherenceBulkResponse**](WfmHistoricalAdherenceBulkResponse)
 
 
 ## post_workforcemanagement_agent_adherence_explanations
 
 > [**AdherenceExplanationAsyncResponse**](AdherenceExplanationAsyncResponse) post_workforcemanagement_agent_adherence_explanations(agent_id, body)
-
 
 
 Add an adherence explanation for the requested user
@@ -8456,17 +8314,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **agent_id** | **str**| The ID of the agent to query |  |
-| **body** | [**AddAdherenceExplanationAdminRequest**](AddAdherenceExplanationAdminRequest.html)| The request body |  |
+| **body** | [**AddAdherenceExplanationAdminRequest**](AddAdherenceExplanationAdminRequest)| The request body |  |
 
 ### Return type
 
-[**AdherenceExplanationAsyncResponse**](AdherenceExplanationAsyncResponse.html)
+[**AdherenceExplanationAsyncResponse**](AdherenceExplanationAsyncResponse)
 
 
 ## post_workforcemanagement_agent_adherence_explanations_query
 
 > [**AgentQueryAdherenceExplanationsResponse**](AgentQueryAdherenceExplanationsResponse) post_workforcemanagement_agent_adherence_explanations_query(agent_id, body, force_async=force_async, force_download_service=force_download_service)
-
 
 
 Query adherence explanations for the given agent across a specified range
@@ -8509,19 +8366,18 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **agent_id** | **str**| The ID of the agent to query |  |
-| **body** | [**AgentQueryAdherenceExplanationsRequest**](AgentQueryAdherenceExplanationsRequest.html)| The request body |  |
+| **body** | [**AgentQueryAdherenceExplanationsRequest**](AgentQueryAdherenceExplanationsRequest)| The request body |  |
 | **force_async** | **bool**| Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes | [optional]  |
 | **force_download_service** | **bool**| Force the result of this operation to be sent via download service. For testing/app development purposes | [optional]  |
 
 ### Return type
 
-[**AgentQueryAdherenceExplanationsResponse**](AgentQueryAdherenceExplanationsResponse.html)
+[**AgentQueryAdherenceExplanationsResponse**](AgentQueryAdherenceExplanationsResponse)
 
 
 ## post_workforcemanagement_agents
 
 > [**MoveAgentsResponse**](MoveAgentsResponse) post_workforcemanagement_agents(body=body)
-
 
 
 Move agents in and out of management unit
@@ -8560,17 +8416,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**MoveAgentsRequest**](MoveAgentsRequest.html)| body | [optional]  |
+| **body** | [**MoveAgentsRequest**](MoveAgentsRequest)| body | [optional]  |
 
 ### Return type
 
-[**MoveAgentsResponse**](MoveAgentsResponse.html)
+[**MoveAgentsResponse**](MoveAgentsResponse)
 
 
 ## post_workforcemanagement_agents_integrations_hris_query
 
 > [**AgentsIntegrationsListing**](AgentsIntegrationsListing) post_workforcemanagement_agents_integrations_hris_query(body=body)
-
 
 
 Query integrations for agents
@@ -8609,17 +8464,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**QueryAgentsIntegrationsRequest**](QueryAgentsIntegrationsRequest.html)| body | [optional]  |
+| **body** | [**QueryAgentsIntegrationsRequest**](QueryAgentsIntegrationsRequest)| body | [optional]  |
 
 ### Return type
 
-[**AgentsIntegrationsListing**](AgentsIntegrationsListing.html)
+[**AgentsIntegrationsListing**](AgentsIntegrationsListing)
 
 
 ## post_workforcemanagement_agents_me_possibleworkshifts
 
 > [**AgentPossibleWorkShiftsResponse**](AgentPossibleWorkShiftsResponse) post_workforcemanagement_agents_me_possibleworkshifts(body)
-
 
 
 Get agent possible work shifts for requested time frame
@@ -8658,17 +8512,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**AgentPossibleWorkShiftsRequest**](AgentPossibleWorkShiftsRequest.html)| body |  |
+| **body** | [**AgentPossibleWorkShiftsRequest**](AgentPossibleWorkShiftsRequest)| body |  |
 
 ### Return type
 
-[**AgentPossibleWorkShiftsResponse**](AgentPossibleWorkShiftsResponse.html)
+[**AgentPossibleWorkShiftsResponse**](AgentPossibleWorkShiftsResponse)
 
 
 ## post_workforcemanagement_agentschedules_mine
 
 > [**BuCurrentAgentScheduleSearchResponse**](BuCurrentAgentScheduleSearchResponse) post_workforcemanagement_agentschedules_mine(body=body)
-
 
 
 Get published schedule for the current user
@@ -8707,17 +8560,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**BuGetCurrentAgentScheduleRequest**](BuGetCurrentAgentScheduleRequest.html)| body | [optional]  |
+| **body** | [**BuGetCurrentAgentScheduleRequest**](BuGetCurrentAgentScheduleRequest)| body | [optional]  |
 
 ### Return type
 
-[**BuCurrentAgentScheduleSearchResponse**](BuCurrentAgentScheduleSearchResponse.html)
+[**BuCurrentAgentScheduleSearchResponse**](BuCurrentAgentScheduleSearchResponse)
 
 
 ## post_workforcemanagement_alternativeshifts_offers_jobs
 
 > [**AlternativeShiftAsyncResponse**](AlternativeShiftAsyncResponse) post_workforcemanagement_alternativeshifts_offers_jobs(body)
-
 
 
 Request a list of alternative shift offers for a given schedule
@@ -8756,17 +8608,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**AlternativeShiftOffersRequest**](AlternativeShiftOffersRequest.html)| The request body |  |
+| **body** | [**AlternativeShiftOffersRequest**](AlternativeShiftOffersRequest)| The request body |  |
 
 ### Return type
 
-[**AlternativeShiftAsyncResponse**](AlternativeShiftAsyncResponse.html)
+[**AlternativeShiftAsyncResponse**](AlternativeShiftAsyncResponse)
 
 
 ## post_workforcemanagement_alternativeshifts_offers_search_jobs
 
 > [**AlternativeShiftAsyncResponse**](AlternativeShiftAsyncResponse) post_workforcemanagement_alternativeshifts_offers_search_jobs(body)
-
 
 
 Request a search of alternative shift offers for a given shift
@@ -8805,17 +8656,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**AlternativeShiftSearchOffersRequest**](AlternativeShiftSearchOffersRequest.html)| The request body |  |
+| **body** | [**AlternativeShiftSearchOffersRequest**](AlternativeShiftSearchOffersRequest)| The request body |  |
 
 ### Return type
 
-[**AlternativeShiftAsyncResponse**](AlternativeShiftAsyncResponse.html)
+[**AlternativeShiftAsyncResponse**](AlternativeShiftAsyncResponse)
 
 
 ## post_workforcemanagement_alternativeshifts_trades
 
 > [**AlternativeShiftTradeResponse**](AlternativeShiftTradeResponse) post_workforcemanagement_alternativeshifts_trades(body)
-
 
 
 Create my alternative shift trade using an existing offer's jobId
@@ -8854,17 +8704,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**CreateAlternativeShiftTradeRequest**](CreateAlternativeShiftTradeRequest.html)| The request body |  |
+| **body** | [**CreateAlternativeShiftTradeRequest**](CreateAlternativeShiftTradeRequest)| The request body |  |
 
 ### Return type
 
-[**AlternativeShiftTradeResponse**](AlternativeShiftTradeResponse.html)
+[**AlternativeShiftTradeResponse**](AlternativeShiftTradeResponse)
 
 
 ## post_workforcemanagement_businessunit_activitycodes
 
 > [**BusinessUnitActivityCode**](BusinessUnitActivityCode) post_workforcemanagement_businessunit_activitycodes(business_unit_id, body=body)
-
 
 
 Create a new activity code
@@ -8905,17 +8754,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **business_unit_id** | **str**| The ID of the business unit, or &#39;mine&#39; for the business unit of the logged-in user. |  |
-| **body** | [**CreateActivityCodeRequest**](CreateActivityCodeRequest.html)| body | [optional]  |
+| **body** | [**CreateActivityCodeRequest**](CreateActivityCodeRequest)| body | [optional]  |
 
 ### Return type
 
-[**BusinessUnitActivityCode**](BusinessUnitActivityCode.html)
+[**BusinessUnitActivityCode**](BusinessUnitActivityCode)
 
 
 ## post_workforcemanagement_businessunit_activityplan_runs_jobs
 
 > [**ActivityPlanJobResponse**](ActivityPlanJobResponse) post_workforcemanagement_businessunit_activityplan_runs_jobs(business_unit_id, activity_plan_id)
-
 
 
 Run an activity plan manually
@@ -8962,13 +8810,12 @@ except ApiException as e:
 
 ### Return type
 
-[**ActivityPlanJobResponse**](ActivityPlanJobResponse.html)
+[**ActivityPlanJobResponse**](ActivityPlanJobResponse)
 
 
 ## post_workforcemanagement_businessunit_activityplans
 
 > [**ActivityPlanResponse**](ActivityPlanResponse) post_workforcemanagement_businessunit_activityplans(business_unit_id, body)
-
 
 
 Create an activity plan
@@ -9009,17 +8856,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **business_unit_id** | **str**| The ID of the business unit |  |
-| **body** | [**CreateActivityPlanRequest**](CreateActivityPlanRequest.html)| body |  |
+| **body** | [**CreateActivityPlanRequest**](CreateActivityPlanRequest)| body |  |
 
 ### Return type
 
-[**ActivityPlanResponse**](ActivityPlanResponse.html)
+[**ActivityPlanResponse**](ActivityPlanResponse)
 
 
 ## post_workforcemanagement_businessunit_adherence_explanations_query
 
 > [**BuQueryAdherenceExplanationsResponse**](BuQueryAdherenceExplanationsResponse) post_workforcemanagement_businessunit_adherence_explanations_query(business_unit_id, body, force_async=force_async, force_download_service=force_download_service)
-
 
 
 Query adherence explanations across an entire business unit for the requested period
@@ -9062,19 +8908,18 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **business_unit_id** | **str**| The ID of the business unit |  |
-| **body** | [**BuQueryAdherenceExplanationsRequest**](BuQueryAdherenceExplanationsRequest.html)| The request body |  |
+| **body** | [**BuQueryAdherenceExplanationsRequest**](BuQueryAdherenceExplanationsRequest)| The request body |  |
 | **force_async** | **bool**| Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes | [optional]  |
 | **force_download_service** | **bool**| Force the result of this operation to be sent via download service. For testing/app development purposes | [optional]  |
 
 ### Return type
 
-[**BuQueryAdherenceExplanationsResponse**](BuQueryAdherenceExplanationsResponse.html)
+[**BuQueryAdherenceExplanationsResponse**](BuQueryAdherenceExplanationsResponse)
 
 
 ## post_workforcemanagement_businessunit_agentschedules_search
 
 > [**BuAsyncAgentSchedulesSearchResponse**](BuAsyncAgentSchedulesSearchResponse) post_workforcemanagement_businessunit_agentschedules_search(business_unit_id, force_async=force_async, force_download_service=force_download_service, body=body)
-
 
 
 Search published schedules
@@ -9120,17 +8965,16 @@ except ApiException as e:
 | **business_unit_id** | **str**| The ID of the business unit |  |
 | **force_async** | **bool**| Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes | [optional]  |
 | **force_download_service** | **bool**| Force the result of this operation to be sent via download service. For testing/app development purposes | [optional]  |
-| **body** | [**BuSearchAgentSchedulesRequest**](BuSearchAgentSchedulesRequest.html)| body | [optional]  |
+| **body** | [**BuSearchAgentSchedulesRequest**](BuSearchAgentSchedulesRequest)| body | [optional]  |
 
 ### Return type
 
-[**BuAsyncAgentSchedulesSearchResponse**](BuAsyncAgentSchedulesSearchResponse.html)
+[**BuAsyncAgentSchedulesSearchResponse**](BuAsyncAgentSchedulesSearchResponse)
 
 
 ## post_workforcemanagement_businessunit_alternativeshifts_trades_search
 
 > [**BuListAlternativeShiftTradesResponse**](BuListAlternativeShiftTradesResponse) post_workforcemanagement_businessunit_alternativeshifts_trades_search(business_unit_id, body, force_async=force_async)
-
 
 
 List alternative shifts trades for a given management unit or agent
@@ -9172,18 +9016,17 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **business_unit_id** | **str**| The ID of the business unit |  |
-| **body** | [**SearchAlternativeShiftTradesRequest**](SearchAlternativeShiftTradesRequest.html)| The request body |  |
+| **body** | [**SearchAlternativeShiftTradesRequest**](SearchAlternativeShiftTradesRequest)| The request body |  |
 | **force_async** | **bool**| Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes | [optional]  |
 
 ### Return type
 
-[**BuListAlternativeShiftTradesResponse**](BuListAlternativeShiftTradesResponse.html)
+[**BuListAlternativeShiftTradesResponse**](BuListAlternativeShiftTradesResponse)
 
 
 ## post_workforcemanagement_businessunit_intraday
 
 > [**AsyncIntradayResponse**](AsyncIntradayResponse) post_workforcemanagement_businessunit_intraday(business_unit_id, force_async=force_async, body=body)
-
 
 
 Get intraday data for the given date for the requested planningGroupIds
@@ -9226,17 +9069,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **business_unit_id** | **str**| The ID of the business unit |  |
 | **force_async** | **bool**| Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes | [optional]  |
-| **body** | [**IntradayPlanningGroupRequest**](IntradayPlanningGroupRequest.html)| body | [optional]  |
+| **body** | [**IntradayPlanningGroupRequest**](IntradayPlanningGroupRequest)| body | [optional]  |
 
 ### Return type
 
-[**AsyncIntradayResponse**](AsyncIntradayResponse.html)
+[**AsyncIntradayResponse**](AsyncIntradayResponse)
 
 
 ## post_workforcemanagement_businessunit_planninggroups
 
 > [**PlanningGroup**](PlanningGroup) post_workforcemanagement_businessunit_planninggroups(business_unit_id, body=body)
-
 
 
 Adds a new planning group
@@ -9277,17 +9119,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **business_unit_id** | **str**| The ID of the business unit. |  |
-| **body** | [**CreatePlanningGroupRequest**](CreatePlanningGroupRequest.html)| body | [optional]  |
+| **body** | [**CreatePlanningGroupRequest**](CreatePlanningGroupRequest)| body | [optional]  |
 
 ### Return type
 
-[**PlanningGroup**](PlanningGroup.html)
+[**PlanningGroup**](PlanningGroup)
 
 
 ## post_workforcemanagement_businessunit_servicegoaltemplates
 
 > [**ServiceGoalTemplate**](ServiceGoalTemplate) post_workforcemanagement_businessunit_servicegoaltemplates(business_unit_id, body=body)
-
 
 
 Adds a new service goal template
@@ -9328,17 +9169,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **business_unit_id** | **str**| The ID of the business unit. |  |
-| **body** | [**CreateServiceGoalTemplate**](CreateServiceGoalTemplate.html)| body | [optional]  |
+| **body** | [**CreateServiceGoalTemplate**](CreateServiceGoalTemplate)| body | [optional]  |
 
 ### Return type
 
-[**ServiceGoalTemplate**](ServiceGoalTemplate.html)
+[**ServiceGoalTemplate**](ServiceGoalTemplate)
 
 
 ## post_workforcemanagement_businessunit_staffinggroups
 
 > [**StaffingGroupResponse**](StaffingGroupResponse) post_workforcemanagement_businessunit_staffinggroups(business_unit_id, body=body)
-
 
 
 Creates a new staffing group
@@ -9379,17 +9219,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **business_unit_id** | **str**| The ID of the business unit |  |
-| **body** | [**CreateStaffingGroupRequest**](CreateStaffingGroupRequest.html)| body | [optional]  |
+| **body** | [**CreateStaffingGroupRequest**](CreateStaffingGroupRequest)| body | [optional]  |
 
 ### Return type
 
-[**StaffingGroupResponse**](StaffingGroupResponse.html)
+[**StaffingGroupResponse**](StaffingGroupResponse)
 
 
 ## post_workforcemanagement_businessunit_staffinggroups_query
 
 > [**UserStaffingGroupListing**](UserStaffingGroupListing) post_workforcemanagement_businessunit_staffinggroups_query(business_unit_id, body=body)
-
 
 
 Gets staffing group associations for a list of user IDs
@@ -9430,17 +9269,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **business_unit_id** | **str**| The ID of the business unit |  |
-| **body** | [**QueryUserStaffingGroupListRequest**](QueryUserStaffingGroupListRequest.html)| body | [optional]  |
+| **body** | [**QueryUserStaffingGroupListRequest**](QueryUserStaffingGroupListRequest)| body | [optional]  |
 
 ### Return type
 
-[**UserStaffingGroupListing**](UserStaffingGroupListing.html)
+[**UserStaffingGroupListing**](UserStaffingGroupListing)
 
 
 ## post_workforcemanagement_businessunit_timeofflimits
 
 > [**BuTimeOffLimitResponse**](BuTimeOffLimitResponse) post_workforcemanagement_businessunit_timeofflimits(business_unit_id, body=body)
-
 
 
 Creates a new time-off limit object
@@ -9481,17 +9319,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **business_unit_id** | **str**| The ID of the business unit |  |
-| **body** | [**BuCreateTimeOffLimitRequest**](BuCreateTimeOffLimitRequest.html)| body | [optional]  |
+| **body** | [**BuCreateTimeOffLimitRequest**](BuCreateTimeOffLimitRequest)| body | [optional]  |
 
 ### Return type
 
-[**BuTimeOffLimitResponse**](BuTimeOffLimitResponse.html)
+[**BuTimeOffLimitResponse**](BuTimeOffLimitResponse)
 
 
 ## post_workforcemanagement_businessunit_timeofflimits_values_query
 
 > [**BuTimeOffLimitValuesResponse**](BuTimeOffLimitValuesResponse) post_workforcemanagement_businessunit_timeofflimits_values_query(business_unit_id, body=body)
-
 
 
 Retrieves time-off limit related values based on a given set of filters.
@@ -9532,17 +9369,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **business_unit_id** | **str**| The ID of the business unit |  |
-| **body** | [**QueryTimeOffLimitValuesRequest**](QueryTimeOffLimitValuesRequest.html)| body | [optional]  |
+| **body** | [**QueryTimeOffLimitValuesRequest**](QueryTimeOffLimitValuesRequest)| body | [optional]  |
 
 ### Return type
 
-[**BuTimeOffLimitValuesResponse**](BuTimeOffLimitValuesResponse.html)
+[**BuTimeOffLimitValuesResponse**](BuTimeOffLimitValuesResponse)
 
 
 ## post_workforcemanagement_businessunit_timeoffplans
 
 > [**BuTimeOffPlanResponse**](BuTimeOffPlanResponse) post_workforcemanagement_businessunit_timeoffplans(business_unit_id, body=body)
-
 
 
 Creates a new time-off plan
@@ -9583,17 +9419,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **business_unit_id** | **str**| The ID of the business unit |  |
-| **body** | [**BuCreateTimeOffPlanRequest**](BuCreateTimeOffPlanRequest.html)| body | [optional]  |
+| **body** | [**BuCreateTimeOffPlanRequest**](BuCreateTimeOffPlanRequest)| body | [optional]  |
 
 ### Return type
 
-[**BuTimeOffPlanResponse**](BuTimeOffPlanResponse.html)
+[**BuTimeOffPlanResponse**](BuTimeOffPlanResponse)
 
 
 ## post_workforcemanagement_businessunit_week_schedule_agentschedules_query
 
 > [**BuAsyncAgentSchedulesQueryResponse**](BuAsyncAgentSchedulesQueryResponse) post_workforcemanagement_businessunit_week_schedule_agentschedules_query(business_unit_id, week_id, schedule_id, body, force_async=force_async, force_download_service=force_download_service)
-
 
 
 Loads agent schedule data from the schedule. Used in combination with the metadata route
@@ -9641,19 +9476,18 @@ except ApiException as e:
 | **business_unit_id** | **str**| The ID of the business unit |  |
 | **week_id** | **date**| First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
 | **schedule_id** | **str**| The ID of the schedule |  |
-| **body** | [**BuQueryAgentSchedulesRequest**](BuQueryAgentSchedulesRequest.html)| body |  |
+| **body** | [**BuQueryAgentSchedulesRequest**](BuQueryAgentSchedulesRequest)| body |  |
 | **force_async** | **bool**| Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes | [optional]  |
 | **force_download_service** | **bool**| Force the result of this operation to be sent via download service. For testing/app development purposes | [optional]  |
 
 ### Return type
 
-[**BuAsyncAgentSchedulesQueryResponse**](BuAsyncAgentSchedulesQueryResponse.html)
+[**BuAsyncAgentSchedulesQueryResponse**](BuAsyncAgentSchedulesQueryResponse)
 
 
 ## post_workforcemanagement_businessunit_week_schedule_copy
 
 > [**BuAsyncScheduleResponse**](BuAsyncScheduleResponse) post_workforcemanagement_businessunit_week_schedule_copy(business_unit_id, week_id, schedule_id, body)
-
 
 
 Copy a schedule
@@ -9698,17 +9532,16 @@ except ApiException as e:
 | **business_unit_id** | **str**| The ID of the business unit |  |
 | **week_id** | **date**| First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
 | **schedule_id** | **str**| The ID of the schedule to copy |  |
-| **body** | [**BuCopyScheduleRequest**](BuCopyScheduleRequest.html)| body |  |
+| **body** | [**BuCopyScheduleRequest**](BuCopyScheduleRequest)| body |  |
 
 ### Return type
 
-[**BuAsyncScheduleResponse**](BuAsyncScheduleResponse.html)
+[**BuAsyncScheduleResponse**](BuAsyncScheduleResponse)
 
 
 ## post_workforcemanagement_businessunit_week_schedule_performancepredictions_recalculations
 
 > [**PerformancePredictionRecalculationResponse**](PerformancePredictionRecalculationResponse) post_workforcemanagement_businessunit_week_schedule_performancepredictions_recalculations(business_unit_id, week_id, schedule_id, body=body)
-
 
 
 Request a daily recalculation of the performance prediction for the associated schedule
@@ -9753,17 +9586,16 @@ except ApiException as e:
 | **business_unit_id** | **str**| The ID of the business unit to which the performance prediction belongs |  |
 | **week_id** | **str**| First day of schedule week in yyyy-MM-dd format |  |
 | **schedule_id** | **str**| The ID of the schedule the performance prediction belongs to |  |
-| **body** | [**WfmProcessUploadRequest**](WfmProcessUploadRequest.html)| body | [optional]  |
+| **body** | [**WfmProcessUploadRequest**](WfmProcessUploadRequest)| body | [optional]  |
 
 ### Return type
 
-[**PerformancePredictionRecalculationResponse**](PerformancePredictionRecalculationResponse.html)
+[**PerformancePredictionRecalculationResponse**](PerformancePredictionRecalculationResponse)
 
 
 ## post_workforcemanagement_businessunit_week_schedule_performancepredictions_recalculations_uploadurl
 
 > [**PerformancePredictionRecalculationUploadResponse**](PerformancePredictionRecalculationUploadResponse) post_workforcemanagement_businessunit_week_schedule_performancepredictions_recalculations_uploadurl(business_unit_id, week_id, schedule_id, body=body)
-
 
 
 Upload daily activity changes to be able to request a performance prediction recalculation
@@ -9808,17 +9640,16 @@ except ApiException as e:
 | **business_unit_id** | **str**| The ID of the business unit to which the performance prediction belongs |  |
 | **week_id** | **str**| First day of schedule week in yyyy-MM-dd format |  |
 | **schedule_id** | **str**| The ID of the schedule the performance prediction belongs to |  |
-| **body** | [**UploadUrlRequestBody**](UploadUrlRequestBody.html)| body | [optional]  |
+| **body** | [**UploadUrlRequestBody**](UploadUrlRequestBody)| body | [optional]  |
 
 ### Return type
 
-[**PerformancePredictionRecalculationUploadResponse**](PerformancePredictionRecalculationUploadResponse.html)
+[**PerformancePredictionRecalculationUploadResponse**](PerformancePredictionRecalculationUploadResponse)
 
 
 ## post_workforcemanagement_businessunit_week_schedule_reschedule
 
 > [**BuAsyncScheduleRunResponse**](BuAsyncScheduleRunResponse) post_workforcemanagement_businessunit_week_schedule_reschedule(business_unit_id, week_id, schedule_id, body)
-
 
 
 Start a rescheduling run
@@ -9863,17 +9694,16 @@ except ApiException as e:
 | **business_unit_id** | **str**| The ID of the business unit |  |
 | **week_id** | **date**| First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
 | **schedule_id** | **str**| The ID of the schedule |  |
-| **body** | [**BuRescheduleRequest**](BuRescheduleRequest.html)| body |  |
+| **body** | [**BuRescheduleRequest**](BuRescheduleRequest)| body |  |
 
 ### Return type
 
-[**BuAsyncScheduleRunResponse**](BuAsyncScheduleRunResponse.html)
+[**BuAsyncScheduleRunResponse**](BuAsyncScheduleRunResponse)
 
 
 ## post_workforcemanagement_businessunit_week_schedule_update
 
 > [**BuAsyncScheduleResponse**](BuAsyncScheduleResponse) post_workforcemanagement_businessunit_week_schedule_update(business_unit_id, week_id, schedule_id, body)
-
 
 
 Starts processing a schedule update
@@ -9920,17 +9750,16 @@ except ApiException as e:
 | **business_unit_id** | **str**| The ID of the business unit |  |
 | **week_id** | **date**| First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
 | **schedule_id** | **str**| The ID of the schedule |  |
-| **body** | [**ProcessScheduleUpdateUploadRequest**](ProcessScheduleUpdateUploadRequest.html)| body |  |
+| **body** | [**ProcessScheduleUpdateUploadRequest**](ProcessScheduleUpdateUploadRequest)| body |  |
 
 ### Return type
 
-[**BuAsyncScheduleResponse**](BuAsyncScheduleResponse.html)
+[**BuAsyncScheduleResponse**](BuAsyncScheduleResponse)
 
 
 ## post_workforcemanagement_businessunit_week_schedule_update_uploadurl
 
 > [**UpdateScheduleUploadResponse**](UpdateScheduleUploadResponse) post_workforcemanagement_businessunit_week_schedule_update_uploadurl(business_unit_id, week_id, schedule_id, body)
-
 
 
 Creates a signed upload URL for updating a schedule
@@ -9977,17 +9806,16 @@ except ApiException as e:
 | **business_unit_id** | **str**| The ID of the business unit |  |
 | **week_id** | **date**| First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
 | **schedule_id** | **str**| The ID of the schedule |  |
-| **body** | [**UploadUrlRequestBody**](UploadUrlRequestBody.html)| body |  |
+| **body** | [**UploadUrlRequestBody**](UploadUrlRequestBody)| body |  |
 
 ### Return type
 
-[**UpdateScheduleUploadResponse**](UpdateScheduleUploadResponse.html)
+[**UpdateScheduleUploadResponse**](UpdateScheduleUploadResponse)
 
 
 ## post_workforcemanagement_businessunit_week_schedules
 
 > [**BuScheduleMetadata**](BuScheduleMetadata) post_workforcemanagement_businessunit_week_schedules(business_unit_id, week_id, body)
-
 
 
 Create a blank schedule
@@ -10030,17 +9858,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **business_unit_id** | **str**| The ID of the business unit |  |
 | **week_id** | **date**| First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
-| **body** | [**BuCreateBlankScheduleRequest**](BuCreateBlankScheduleRequest.html)| body |  |
+| **body** | [**BuCreateBlankScheduleRequest**](BuCreateBlankScheduleRequest)| body |  |
 
 ### Return type
 
-[**BuScheduleMetadata**](BuScheduleMetadata.html)
+[**BuScheduleMetadata**](BuScheduleMetadata)
 
 
 ## post_workforcemanagement_businessunit_week_schedules_generate
 
 > [**BuAsyncScheduleRunResponse**](BuAsyncScheduleRunResponse) post_workforcemanagement_businessunit_week_schedules_generate(business_unit_id, week_id, body)
-
 
 
 Generate a schedule
@@ -10083,17 +9910,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **business_unit_id** | **str**| The ID of the business unit |  |
 | **week_id** | **date**| First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
-| **body** | [**BuGenerateScheduleRequest**](BuGenerateScheduleRequest.html)| body |  |
+| **body** | [**BuGenerateScheduleRequest**](BuGenerateScheduleRequest)| body |  |
 
 ### Return type
 
-[**BuAsyncScheduleRunResponse**](BuAsyncScheduleRunResponse.html)
+[**BuAsyncScheduleRunResponse**](BuAsyncScheduleRunResponse)
 
 
 ## post_workforcemanagement_businessunit_week_schedules_import
 
 > [**ScheduleUploadProcessingResponse**](ScheduleUploadProcessingResponse) post_workforcemanagement_businessunit_week_schedules_import(business_unit_id, week_id, body)
-
 
 
 Starts processing a schedule import
@@ -10138,17 +9964,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **business_unit_id** | **str**| The ID of the business unit |  |
 | **week_id** | **date**| First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
-| **body** | [**WfmProcessUploadRequest**](WfmProcessUploadRequest.html)|  |  |
+| **body** | [**WfmProcessUploadRequest**](WfmProcessUploadRequest)|  |  |
 
 ### Return type
 
-[**ScheduleUploadProcessingResponse**](ScheduleUploadProcessingResponse.html)
+[**ScheduleUploadProcessingResponse**](ScheduleUploadProcessingResponse)
 
 
 ## post_workforcemanagement_businessunit_week_schedules_import_uploadurl
 
 > [**ImportScheduleUploadResponse**](ImportScheduleUploadResponse) post_workforcemanagement_businessunit_week_schedules_import_uploadurl(business_unit_id, week_id, body)
-
 
 
 Creates a signed upload URL for importing a schedule
@@ -10193,17 +10018,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **business_unit_id** | **str**| The ID of the business unit |  |
 | **week_id** | **date**| First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
-| **body** | [**UploadUrlRequestBody**](UploadUrlRequestBody.html)| body |  |
+| **body** | [**UploadUrlRequestBody**](UploadUrlRequestBody)| body |  |
 
 ### Return type
 
-[**ImportScheduleUploadResponse**](ImportScheduleUploadResponse.html)
+[**ImportScheduleUploadResponse**](ImportScheduleUploadResponse)
 
 
 ## post_workforcemanagement_businessunit_week_shorttermforecast_copy
 
 > [**AsyncForecastOperationResult**](AsyncForecastOperationResult) post_workforcemanagement_businessunit_week_shorttermforecast_copy(business_unit_id, week_date_id, forecast_id, body, force_async=force_async)
-
 
 
 Copy a short term forecast
@@ -10249,18 +10073,17 @@ except ApiException as e:
 | **business_unit_id** | **str**| The ID of the business unit to which the forecast belongs |  |
 | **week_date_id** | **date**| The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
 | **forecast_id** | **str**| The ID of the forecast to copy |  |
-| **body** | [**CopyBuForecastRequest**](CopyBuForecastRequest.html)| body |  |
+| **body** | [**CopyBuForecastRequest**](CopyBuForecastRequest)| body |  |
 | **force_async** | **bool**| Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes | [optional]  |
 
 ### Return type
 
-[**AsyncForecastOperationResult**](AsyncForecastOperationResult.html)
+[**AsyncForecastOperationResult**](AsyncForecastOperationResult)
 
 
 ## post_workforcemanagement_businessunit_week_shorttermforecasts_generate
 
 > [**AsyncForecastOperationResult**](AsyncForecastOperationResult) post_workforcemanagement_businessunit_week_shorttermforecasts_generate(business_unit_id, week_date_id, body, force_async=force_async)
-
 
 
 Generate a short term forecast
@@ -10304,18 +10127,17 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **business_unit_id** | **str**| The ID of the business unit to which the forecast belongs |  |
 | **week_date_id** | **date**| The week start date of the forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
-| **body** | [**GenerateBuForecastRequest**](GenerateBuForecastRequest.html)| body |  |
+| **body** | [**GenerateBuForecastRequest**](GenerateBuForecastRequest)| body |  |
 | **force_async** | **bool**| Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes | [optional]  |
 
 ### Return type
 
-[**AsyncForecastOperationResult**](AsyncForecastOperationResult.html)
+[**AsyncForecastOperationResult**](AsyncForecastOperationResult)
 
 
 ## post_workforcemanagement_businessunit_week_shorttermforecasts_import
 
 > [**ImportForecastResponse**](ImportForecastResponse) post_workforcemanagement_businessunit_week_shorttermforecasts_import(business_unit_id, week_date_id, body)
-
 
 
 Starts importing the uploaded short term forecast
@@ -10360,17 +10182,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **business_unit_id** | **str**| The ID of the business unit to which the forecast belongs |  |
 | **week_date_id** | **date**| First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
-| **body** | [**WfmProcessUploadRequest**](WfmProcessUploadRequest.html)| body |  |
+| **body** | [**WfmProcessUploadRequest**](WfmProcessUploadRequest)| body |  |
 
 ### Return type
 
-[**ImportForecastResponse**](ImportForecastResponse.html)
+[**ImportForecastResponse**](ImportForecastResponse)
 
 
 ## post_workforcemanagement_businessunit_week_shorttermforecasts_import_uploadurl
 
 > [**ImportForecastUploadResponse**](ImportForecastUploadResponse) post_workforcemanagement_businessunit_week_shorttermforecasts_import_uploadurl(business_unit_id, week_date_id, body)
-
 
 
 Creates a signed upload URL for importing a short term forecast
@@ -10415,17 +10236,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **business_unit_id** | **str**| The ID of the business unit to which the forecast belongs |  |
 | **week_date_id** | **date**| First day of schedule week in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
-| **body** | [**UploadUrlRequestBody**](UploadUrlRequestBody.html)| body |  |
+| **body** | [**UploadUrlRequestBody**](UploadUrlRequestBody)| body |  |
 
 ### Return type
 
-[**ImportForecastUploadResponse**](ImportForecastUploadResponse.html)
+[**ImportForecastUploadResponse**](ImportForecastUploadResponse)
 
 
 ## post_workforcemanagement_businessunit_workplanbid_copy
 
 > [**WorkPlanBid**](WorkPlanBid) post_workforcemanagement_businessunit_workplanbid_copy(business_unit_id, bid_id, body=body)
-
 
 
 Copy a work plan bid
@@ -10468,17 +10288,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **business_unit_id** | **str**| The ID of the business unit |  |
 | **bid_id** | **str**| The ID of the work plan bid to copy |  |
-| **body** | [**CopyWorkPlanBid**](CopyWorkPlanBid.html)| body | [optional]  |
+| **body** | [**CopyWorkPlanBid**](CopyWorkPlanBid)| body | [optional]  |
 
 ### Return type
 
-[**WorkPlanBid**](WorkPlanBid.html)
+[**WorkPlanBid**](WorkPlanBid)
 
 
 ## post_workforcemanagement_businessunit_workplanbid_groups
 
 > [**WorkPlanBidGroupResponse**](WorkPlanBidGroupResponse) post_workforcemanagement_businessunit_workplanbid_groups(business_unit_id, bid_id, body=body)
-
 
 
 Add a bid group in a given work plan bid
@@ -10521,17 +10340,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **business_unit_id** | **str**| The ID of the business unit |  |
 | **bid_id** | **str**| The work plan bid id of the bid groups |  |
-| **body** | [**WorkPlanBidGroupCreate**](WorkPlanBidGroupCreate.html)| body | [optional]  |
+| **body** | [**WorkPlanBidGroupCreate**](WorkPlanBidGroupCreate)| body | [optional]  |
 
 ### Return type
 
-[**WorkPlanBidGroupResponse**](WorkPlanBidGroupResponse.html)
+[**WorkPlanBidGroupResponse**](WorkPlanBidGroupResponse)
 
 
 ## post_workforcemanagement_businessunit_workplanbids
 
 > [**WorkPlanBid**](WorkPlanBid) post_workforcemanagement_businessunit_workplanbids(business_unit_id, body=body)
-
 
 
 Create a new work plan bid
@@ -10572,17 +10390,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **business_unit_id** | **str**| The ID of the business unit |  |
-| **body** | [**CreateWorkPlanBid**](CreateWorkPlanBid.html)| The work plan bid to be created | [optional]  |
+| **body** | [**CreateWorkPlanBid**](CreateWorkPlanBid)| The work plan bid to be created | [optional]  |
 
 ### Return type
 
-[**WorkPlanBid**](WorkPlanBid.html)
+[**WorkPlanBid**](WorkPlanBid)
 
 
 ## post_workforcemanagement_businessunits
 
 > [**BusinessUnitResponse**](BusinessUnitResponse) post_workforcemanagement_businessunits(body=body)
-
 
 
 Add a new business unit
@@ -10623,17 +10440,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**CreateBusinessUnitRequest**](CreateBusinessUnitRequest.html)| body | [optional]  |
+| **body** | [**CreateBusinessUnitRequest**](CreateBusinessUnitRequest)| body | [optional]  |
 
 ### Return type
 
-[**BusinessUnitResponse**](BusinessUnitResponse.html)
+[**BusinessUnitResponse**](BusinessUnitResponse)
 
 
 ## post_workforcemanagement_calendar_url_ics
 
 > [**CalendarUrlResponse**](CalendarUrlResponse) post_workforcemanagement_calendar_url_ics(language=language)
-
 
 
 Create a newly generated calendar link for the current user; if the current user has previously generated one, the generated link will be returned
@@ -10677,13 +10493,12 @@ except ApiException as e:
 
 ### Return type
 
-[**CalendarUrlResponse**](CalendarUrlResponse.html)
+[**CalendarUrlResponse**](CalendarUrlResponse)
 
 
 ## post_workforcemanagement_historicaldata_deletejob
 
 > [**HistoricalImportDeleteJobResponse**](HistoricalImportDeleteJobResponse) post_workforcemanagement_historicaldata_deletejob()
-
 
 
 Delete the entries of the historical data imports in the organization
@@ -10722,13 +10537,12 @@ This endpoint does not need any parameters.
 
 ### Return type
 
-[**HistoricalImportDeleteJobResponse**](HistoricalImportDeleteJobResponse.html)
+[**HistoricalImportDeleteJobResponse**](HistoricalImportDeleteJobResponse)
 
 
 ## post_workforcemanagement_historicaldata_validate
 
 >  post_workforcemanagement_historicaldata_validate(body=body)
-
 
 
 Trigger validation process for historical import
@@ -10766,7 +10580,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**ValidationServiceRequest**](ValidationServiceRequest.html)| body | [optional]  |
+| **body** | [**ValidationServiceRequest**](ValidationServiceRequest)| body | [optional]  |
 
 ### Return type
 
@@ -10776,7 +10590,6 @@ void (empty response body)
 ## post_workforcemanagement_integrations_hri_timeofftypes_jobs
 
 > [**HrisTimeOffTypesResponse**](HrisTimeOffTypesResponse) post_workforcemanagement_integrations_hri_timeofftypes_jobs(hris_integration_id)
-
 
 
 Get list of time off types configured in integration
@@ -10819,13 +10632,12 @@ except ApiException as e:
 
 ### Return type
 
-[**HrisTimeOffTypesResponse**](HrisTimeOffTypesResponse.html)
+[**HrisTimeOffTypesResponse**](HrisTimeOffTypesResponse)
 
 
 ## post_workforcemanagement_managementunit_agentschedules_search
 
 > [**BuAsyncAgentSchedulesSearchResponse**](BuAsyncAgentSchedulesSearchResponse) post_workforcemanagement_managementunit_agentschedules_search(management_unit_id, force_async=force_async, force_download_service=force_download_service, body=body)
-
 
 
 Query published schedules for given given time range for set of users
@@ -10871,17 +10683,16 @@ except ApiException as e:
 | **management_unit_id** | **str**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
 | **force_async** | **bool**| Force the result of this operation to be sent asynchronously via notification. For testing/app development purposes | [optional]  |
 | **force_download_service** | **bool**| Force the result of this operation to be sent via download service. For testing/app development purposes | [optional]  |
-| **body** | [**BuSearchAgentSchedulesRequest**](BuSearchAgentSchedulesRequest.html)| body | [optional]  |
+| **body** | [**BuSearchAgentSchedulesRequest**](BuSearchAgentSchedulesRequest)| body | [optional]  |
 
 ### Return type
 
-[**BuAsyncAgentSchedulesSearchResponse**](BuAsyncAgentSchedulesSearchResponse.html)
+[**BuAsyncAgentSchedulesSearchResponse**](BuAsyncAgentSchedulesSearchResponse)
 
 
 ## post_workforcemanagement_managementunit_historicaladherencequery
 
 > [**WfmHistoricalAdherenceResponse**](WfmHistoricalAdherenceResponse) post_workforcemanagement_managementunit_historicaladherencequery(management_unit_id, body=body)
-
 
 
 Request a historical adherence report
@@ -10924,17 +10735,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **management_unit_id** | **str**| The ID of the management unit |  |
-| **body** | [**WfmHistoricalAdherenceQuery**](WfmHistoricalAdherenceQuery.html)| body | [optional]  |
+| **body** | [**WfmHistoricalAdherenceQuery**](WfmHistoricalAdherenceQuery)| body | [optional]  |
 
 ### Return type
 
-[**WfmHistoricalAdherenceResponse**](WfmHistoricalAdherenceResponse.html)
+[**WfmHistoricalAdherenceResponse**](WfmHistoricalAdherenceResponse)
 
 
 ## post_workforcemanagement_managementunit_move
 
 > [**MoveManagementUnitResponse**](MoveManagementUnitResponse) post_workforcemanagement_managementunit_move(management_unit_id, body=body)
-
 
 
 Move the requested management unit to a new business unit
@@ -10977,18 +10787,20 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **management_unit_id** | **str**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
-| **body** | [**MoveManagementUnitRequest**](MoveManagementUnitRequest.html)| body | [optional]  |
+| **body** | [**MoveManagementUnitRequest**](MoveManagementUnitRequest)| body | [optional]  |
 
 ### Return type
 
-[**MoveManagementUnitResponse**](MoveManagementUnitResponse.html)
+[**MoveManagementUnitResponse**](MoveManagementUnitResponse)
 
 
 ## post_workforcemanagement_managementunit_schedules_search
 
 > [**UserScheduleContainer**](UserScheduleContainer) post_workforcemanagement_managementunit_schedules_search(management_unit_id, body=body)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 Query published schedules for given given time range for set of users
 
@@ -11029,17 +10841,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **management_unit_id** | **str**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
-| **body** | [**UserListScheduleRequestBody**](UserListScheduleRequestBody.html)| body | [optional]  |
+| **body** | [**UserListScheduleRequestBody**](UserListScheduleRequestBody)| body | [optional]  |
 
 ### Return type
 
-[**UserScheduleContainer**](UserScheduleContainer.html)
+[**UserScheduleContainer**](UserScheduleContainer)
 
 
 ## post_workforcemanagement_managementunit_shrinkage_jobs
 
 > [**WfmHistoricalShrinkageResponse**](WfmHistoricalShrinkageResponse) post_workforcemanagement_managementunit_shrinkage_jobs(management_unit_id, body=body)
-
 
 
 Request a historical shrinkage report
@@ -11082,17 +10893,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **management_unit_id** | **str**| The ID of the management unit |  |
-| **body** | [**WfmHistoricalShrinkageRequest**](WfmHistoricalShrinkageRequest.html)| body | [optional]  |
+| **body** | [**WfmHistoricalShrinkageRequest**](WfmHistoricalShrinkageRequest)| body | [optional]  |
 
 ### Return type
 
-[**WfmHistoricalShrinkageResponse**](WfmHistoricalShrinkageResponse.html)
+[**WfmHistoricalShrinkageResponse**](WfmHistoricalShrinkageResponse)
 
 
 ## post_workforcemanagement_managementunit_timeofflimits
 
 > [**TimeOffLimit**](TimeOffLimit) post_workforcemanagement_managementunit_timeofflimits(management_unit_id, body=body)
-
 
 
 Creates a new time off limit object under management unit.
@@ -11135,17 +10945,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **management_unit_id** | **str**| The ID of the management unit. |  |
-| **body** | [**CreateTimeOffLimitRequest**](CreateTimeOffLimitRequest.html)| body | [optional]  |
+| **body** | [**CreateTimeOffLimitRequest**](CreateTimeOffLimitRequest)| body | [optional]  |
 
 ### Return type
 
-[**TimeOffLimit**](TimeOffLimit.html)
+[**TimeOffLimit**](TimeOffLimit)
 
 
 ## post_workforcemanagement_managementunit_timeofflimits_values_query
 
 > [**QueryTimeOffLimitValuesResponse**](QueryTimeOffLimitValuesResponse) post_workforcemanagement_managementunit_timeofflimits_values_query(management_unit_id, body=body)
-
 
 
 Retrieves time off limit related values based on a given set of filters.
@@ -11186,17 +10995,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **management_unit_id** | **str**| The ID of the management unit. |  |
-| **body** | [**QueryTimeOffLimitValuesRequest**](QueryTimeOffLimitValuesRequest.html)| body | [optional]  |
+| **body** | [**QueryTimeOffLimitValuesRequest**](QueryTimeOffLimitValuesRequest)| body | [optional]  |
 
 ### Return type
 
-[**QueryTimeOffLimitValuesResponse**](QueryTimeOffLimitValuesResponse.html)
+[**QueryTimeOffLimitValuesResponse**](QueryTimeOffLimitValuesResponse)
 
 
 ## post_workforcemanagement_managementunit_timeoffplans
 
 > [**TimeOffPlan**](TimeOffPlan) post_workforcemanagement_managementunit_timeoffplans(management_unit_id, body=body)
-
 
 
 Creates a new time off plan
@@ -11237,17 +11045,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **management_unit_id** | **str**| The ID of the management unit |  |
-| **body** | [**CreateTimeOffPlanRequest**](CreateTimeOffPlanRequest.html)| body | [optional]  |
+| **body** | [**CreateTimeOffPlanRequest**](CreateTimeOffPlanRequest)| body | [optional]  |
 
 ### Return type
 
-[**TimeOffPlan**](TimeOffPlan.html)
+[**TimeOffPlan**](TimeOffPlan)
 
 
 ## post_workforcemanagement_managementunit_timeoffrequests
 
 > [**TimeOffRequestList**](TimeOffRequestList) post_workforcemanagement_managementunit_timeoffrequests(management_unit_id, body=body)
-
 
 
 Create a new time off request
@@ -11288,17 +11095,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **management_unit_id** | **str**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
-| **body** | [**CreateAdminTimeOffRequest**](CreateAdminTimeOffRequest.html)| body | [optional]  |
+| **body** | [**CreateAdminTimeOffRequest**](CreateAdminTimeOffRequest)| body | [optional]  |
 
 ### Return type
 
-[**TimeOffRequestList**](TimeOffRequestList.html)
+[**TimeOffRequestList**](TimeOffRequestList)
 
 
 ## post_workforcemanagement_managementunit_timeoffrequests_integrationstatus_query
 
 > [**UserTimeOffIntegrationStatusResponseListing**](UserTimeOffIntegrationStatusResponseListing) post_workforcemanagement_managementunit_timeoffrequests_integrationstatus_query(management_unit_id, body=body)
-
 
 
 Retrieves integration statuses for a list of time off requests
@@ -11339,17 +11145,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **management_unit_id** | **str**| The ID of the management unit. |  |
-| **body** | [**QueryTimeOffIntegrationStatusRequest**](QueryTimeOffIntegrationStatusRequest.html)| body | [optional]  |
+| **body** | [**QueryTimeOffIntegrationStatusRequest**](QueryTimeOffIntegrationStatusRequest)| body | [optional]  |
 
 ### Return type
 
-[**UserTimeOffIntegrationStatusResponseListing**](UserTimeOffIntegrationStatusResponseListing.html)
+[**UserTimeOffIntegrationStatusResponseListing**](UserTimeOffIntegrationStatusResponseListing)
 
 
 ## post_workforcemanagement_managementunit_timeoffrequests_query
 
 > [**TimeOffRequestListing**](TimeOffRequestListing) post_workforcemanagement_managementunit_timeoffrequests_query(management_unit_id, force_download_service=force_download_service, body=body)
-
 
 
 Fetches time off requests matching the conditions specified in the request body
@@ -11394,17 +11199,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **management_unit_id** | **str**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
 | **force_download_service** | **bool**| Force the result of this operation to be sent via download service. For testing/app development purposes | [optional]  |
-| **body** | [**TimeOffRequestQueryBody**](TimeOffRequestQueryBody.html)| body | [optional]  |
+| **body** | [**TimeOffRequestQueryBody**](TimeOffRequestQueryBody)| body | [optional]  |
 
 ### Return type
 
-[**TimeOffRequestListing**](TimeOffRequestListing.html)
+[**TimeOffRequestListing**](TimeOffRequestListing)
 
 
 ## post_workforcemanagement_managementunit_timeoffrequests_waitlistpositions_query
 
 > [**WaitlistPositionListing**](WaitlistPositionListing) post_workforcemanagement_managementunit_timeoffrequests_waitlistpositions_query(management_unit_id, body=body)
-
 
 
 Retrieves daily waitlist position for a list of time off requests
@@ -11445,17 +11249,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **management_unit_id** | **str**| The ID of the management unit. |  |
-| **body** | [**QueryWaitlistPositionsRequest**](QueryWaitlistPositionsRequest.html)| body | [optional]  |
+| **body** | [**QueryWaitlistPositionsRequest**](QueryWaitlistPositionsRequest)| body | [optional]  |
 
 ### Return type
 
-[**WaitlistPositionListing**](WaitlistPositionListing.html)
+[**WaitlistPositionListing**](WaitlistPositionListing)
 
 
 ## post_workforcemanagement_managementunit_user_timeoffbalance_jobs
 
 > [**TimeOffBalancesResponse**](TimeOffBalancesResponse) post_workforcemanagement_managementunit_user_timeoffbalance_jobs(management_unit_id, user_id, body)
-
 
 
 Query time off balances for a given user for specified activity code and dates
@@ -11498,17 +11301,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **management_unit_id** | **str**| The ID of the management unit |  |
 | **user_id** | **str**| The ID of the user |  |
-| **body** | [**TimeOffBalanceRequest**](TimeOffBalanceRequest.html)| The request body |  |
+| **body** | [**TimeOffBalanceRequest**](TimeOffBalanceRequest)| The request body |  |
 
 ### Return type
 
-[**TimeOffBalancesResponse**](TimeOffBalancesResponse.html)
+[**TimeOffBalancesResponse**](TimeOffBalancesResponse)
 
 
 ## post_workforcemanagement_managementunit_user_timeoffrequest_timeoffbalance_jobs
 
 > [**TimeOffBalancesResponse**](TimeOffBalancesResponse) post_workforcemanagement_managementunit_user_timeoffrequest_timeoffbalance_jobs(management_unit_id, user_id, time_off_request_id)
-
 
 
 Query time off balances for dates spanned by a given time off request
@@ -11555,13 +11357,12 @@ except ApiException as e:
 
 ### Return type
 
-[**TimeOffBalancesResponse**](TimeOffBalancesResponse.html)
+[**TimeOffBalancesResponse**](TimeOffBalancesResponse)
 
 
 ## post_workforcemanagement_managementunit_user_timeoffrequests_estimate
 
 > [**EstimateAvailableTimeOffResponse**](EstimateAvailableTimeOffResponse) post_workforcemanagement_managementunit_user_timeoffrequests_estimate(management_unit_id, user_id, body=body)
-
 
 
 Estimates available time off for an agent
@@ -11604,17 +11405,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **management_unit_id** | **str**| The ID of the management unit |  |
 | **user_id** | **str**| The id of the user for whom the time off request estimate is requested |  |
-| **body** | [**EstimateAvailableTimeOffRequest**](EstimateAvailableTimeOffRequest.html)| body | [optional]  |
+| **body** | [**EstimateAvailableTimeOffRequest**](EstimateAvailableTimeOffRequest)| body | [optional]  |
 
 ### Return type
 
-[**EstimateAvailableTimeOffResponse**](EstimateAvailableTimeOffResponse.html)
+[**EstimateAvailableTimeOffResponse**](EstimateAvailableTimeOffResponse)
 
 
 ## post_workforcemanagement_managementunit_week_shifttrade_match
 
 > [**MatchShiftTradeResponse**](MatchShiftTradeResponse) post_workforcemanagement_managementunit_week_shifttrade_match(management_unit_id, week_date_id, trade_id, body)
-
 
 
 Matches a shift trade. This route can only be called by the receiving agent
@@ -11659,17 +11459,16 @@ except ApiException as e:
 | **management_unit_id** | **str**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
 | **week_date_id** | **date**| The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
 | **trade_id** | **str**| The ID of the shift trade to update |  |
-| **body** | [**MatchShiftTradeRequest**](MatchShiftTradeRequest.html)| body |  |
+| **body** | [**MatchShiftTradeRequest**](MatchShiftTradeRequest)| body |  |
 
 ### Return type
 
-[**MatchShiftTradeResponse**](MatchShiftTradeResponse.html)
+[**MatchShiftTradeResponse**](MatchShiftTradeResponse)
 
 
 ## post_workforcemanagement_managementunit_week_shifttrades
 
 > [**ShiftTradeResponse**](ShiftTradeResponse) post_workforcemanagement_managementunit_week_shifttrades(management_unit_id, week_date_id, body)
-
 
 
 Adds a shift trade
@@ -11712,17 +11511,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **management_unit_id** | **str**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
 | **week_date_id** | **date**| The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
-| **body** | [**AddShiftTradeRequest**](AddShiftTradeRequest.html)| body |  |
+| **body** | [**AddShiftTradeRequest**](AddShiftTradeRequest)| body |  |
 
 ### Return type
 
-[**ShiftTradeResponse**](ShiftTradeResponse.html)
+[**ShiftTradeResponse**](ShiftTradeResponse)
 
 
 ## post_workforcemanagement_managementunit_week_shifttrades_search
 
 > [**SearchShiftTradesResponse**](SearchShiftTradesResponse) post_workforcemanagement_managementunit_week_shifttrades_search(management_unit_id, week_date_id, body, force_download_service=force_download_service)
-
 
 
 Searches for potential shift trade matches for the current agent
@@ -11766,18 +11564,17 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **management_unit_id** | **str**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
 | **week_date_id** | **date**| The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
-| **body** | [**SearchShiftTradesRequest**](SearchShiftTradesRequest.html)| body |  |
+| **body** | [**SearchShiftTradesRequest**](SearchShiftTradesRequest)| body |  |
 | **force_download_service** | **bool**| Force the result of this operation to be sent via download service. For testing/app development purposes | [optional]  |
 
 ### Return type
 
-[**SearchShiftTradesResponse**](SearchShiftTradesResponse.html)
+[**SearchShiftTradesResponse**](SearchShiftTradesResponse)
 
 
 ## post_workforcemanagement_managementunit_week_shifttrades_state_bulk
 
 > [**BulkUpdateShiftTradeStateResponse**](BulkUpdateShiftTradeStateResponse) post_workforcemanagement_managementunit_week_shifttrades_state_bulk(management_unit_id, week_date_id, body, force_async=force_async)
-
 
 
 Updates the state of a batch of shift trades
@@ -11824,18 +11621,17 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **management_unit_id** | **str**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
 | **week_date_id** | **date**| The start date of the week schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
-| **body** | [**BulkShiftTradeStateUpdateRequest**](BulkShiftTradeStateUpdateRequest.html)| body |  |
+| **body** | [**BulkShiftTradeStateUpdateRequest**](BulkShiftTradeStateUpdateRequest)| body |  |
 | **force_async** | **bool**| Force the result of this operation to be sent asynchronously via notification.  For testing/app development purposes | [optional]  |
 
 ### Return type
 
-[**BulkUpdateShiftTradeStateResponse**](BulkUpdateShiftTradeStateResponse.html)
+[**BulkUpdateShiftTradeStateResponse**](BulkUpdateShiftTradeStateResponse)
 
 
 ## post_workforcemanagement_managementunit_workplan_copy
 
 > [**WorkPlan**](WorkPlan) post_workforcemanagement_managementunit_workplan_copy(management_unit_id, work_plan_id, body=body)
-
 
 
 Create a copy of work plan
@@ -11878,17 +11674,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **management_unit_id** | **str**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
 | **work_plan_id** | **str**| The ID of the work plan to create a copy |  |
-| **body** | [**CopyWorkPlan**](CopyWorkPlan.html)| body | [optional]  |
+| **body** | [**CopyWorkPlan**](CopyWorkPlan)| body | [optional]  |
 
 ### Return type
 
-[**WorkPlan**](WorkPlan.html)
+[**WorkPlan**](WorkPlan)
 
 
 ## post_workforcemanagement_managementunit_workplan_validate
 
 > [**ValidateWorkPlanResponse**](ValidateWorkPlanResponse) post_workforcemanagement_managementunit_workplan_validate(management_unit_id, work_plan_id, expand=expand, body=body)
-
 
 
 Validate Work Plan
@@ -11933,18 +11728,17 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **management_unit_id** | **str**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
 | **work_plan_id** | **str**| The ID of the work plan to validate. For new work plan, use the word &#39;new&#39; for the ID. |  |
-| **expand** | [**list[str]**](str.html)|  | [optional] <br />**Values**: messages |
-| **body** | [**WorkPlanValidationRequest**](WorkPlanValidationRequest.html)| body | [optional]  |
+| **expand** | [**list[str]**](str)|  | [optional] <br />**Values**: messages |
+| **body** | [**WorkPlanValidationRequest**](WorkPlanValidationRequest)| body | [optional]  |
 
 ### Return type
 
-[**ValidateWorkPlanResponse**](ValidateWorkPlanResponse.html)
+[**ValidateWorkPlanResponse**](ValidateWorkPlanResponse)
 
 
 ## post_workforcemanagement_managementunit_workplanrotation_copy
 
 > [**WorkPlanRotationResponse**](WorkPlanRotationResponse) post_workforcemanagement_managementunit_workplanrotation_copy(management_unit_id, work_plan_rotation_id, body=body)
-
 
 
 Create a copy of work plan rotation
@@ -11987,17 +11781,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **management_unit_id** | **str**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
 | **work_plan_rotation_id** | **str**| The ID of the work plan rotation to create a copy |  |
-| **body** | [**CopyWorkPlanRotationRequest**](CopyWorkPlanRotationRequest.html)| body | [optional]  |
+| **body** | [**CopyWorkPlanRotationRequest**](CopyWorkPlanRotationRequest)| body | [optional]  |
 
 ### Return type
 
-[**WorkPlanRotationResponse**](WorkPlanRotationResponse.html)
+[**WorkPlanRotationResponse**](WorkPlanRotationResponse)
 
 
 ## post_workforcemanagement_managementunit_workplanrotations
 
 > [**WorkPlanRotationResponse**](WorkPlanRotationResponse) post_workforcemanagement_managementunit_workplanrotations(management_unit_id, body=body)
-
 
 
 Create a new work plan rotation
@@ -12038,17 +11831,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **management_unit_id** | **str**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
-| **body** | [**AddWorkPlanRotationRequest**](AddWorkPlanRotationRequest.html)| body | [optional]  |
+| **body** | [**AddWorkPlanRotationRequest**](AddWorkPlanRotationRequest)| body | [optional]  |
 
 ### Return type
 
-[**WorkPlanRotationResponse**](WorkPlanRotationResponse.html)
+[**WorkPlanRotationResponse**](WorkPlanRotationResponse)
 
 
 ## post_workforcemanagement_managementunit_workplans
 
 > [**WorkPlan**](WorkPlan) post_workforcemanagement_managementunit_workplans(management_unit_id, validation_mode=validation_mode, body=body)
-
 
 
 Create a new work plan
@@ -12091,17 +11883,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **management_unit_id** | **str**| The ID of the management unit, or &#39;mine&#39; for the management unit of the logged-in user. |  |
 | **validation_mode** | **str**| Allows to create work plan even if the validation result is invalid | [optional] <br />**Values**: Ignore |
-| **body** | [**CreateWorkPlan**](CreateWorkPlan.html)| body | [optional]  |
+| **body** | [**CreateWorkPlan**](CreateWorkPlan)| body | [optional]  |
 
 ### Return type
 
-[**WorkPlan**](WorkPlan.html)
+[**WorkPlan**](WorkPlan)
 
 
 ## post_workforcemanagement_managementunits
 
 > [**ManagementUnit**](ManagementUnit) post_workforcemanagement_managementunits(body=body)
-
 
 
 Add a management unit
@@ -12142,17 +11933,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**CreateManagementUnitApiRequest**](CreateManagementUnitApiRequest.html)| body | [optional]  |
+| **body** | [**CreateManagementUnitApiRequest**](CreateManagementUnitApiRequest)| body | [optional]  |
 
 ### Return type
 
-[**ManagementUnit**](ManagementUnit.html)
+[**ManagementUnit**](ManagementUnit)
 
 
 ## post_workforcemanagement_notifications_update
 
 > [**UpdateNotificationsResponse**](UpdateNotificationsResponse) post_workforcemanagement_notifications_update(body=body)
-
 
 
 Mark a list of notifications as read or unread
@@ -12190,18 +11980,20 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**UpdateNotificationsRequest**](UpdateNotificationsRequest.html)| body | [optional]  |
+| **body** | [**UpdateNotificationsRequest**](UpdateNotificationsRequest)| body | [optional]  |
 
 ### Return type
 
-[**UpdateNotificationsResponse**](UpdateNotificationsResponse.html)
+[**UpdateNotificationsResponse**](UpdateNotificationsResponse)
 
 
 ## post_workforcemanagement_schedules
 
 > [**UserScheduleContainer**](UserScheduleContainer) post_workforcemanagement_schedules(body=body)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 Get published schedule for the current user
 
@@ -12239,17 +12031,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**CurrentUserScheduleRequestBody**](CurrentUserScheduleRequestBody.html)| body | [optional]  |
+| **body** | [**CurrentUserScheduleRequestBody**](CurrentUserScheduleRequestBody)| body | [optional]  |
 
 ### Return type
 
-[**UserScheduleContainer**](UserScheduleContainer.html)
+[**UserScheduleContainer**](UserScheduleContainer)
 
 
 ## post_workforcemanagement_team_adherence_historical
 
 > [**WfmHistoricalAdherenceResponse**](WfmHistoricalAdherenceResponse) post_workforcemanagement_team_adherence_historical(team_id, body=body)
-
 
 
 Request a teams historical adherence report
@@ -12292,17 +12083,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **team_id** | **str**| The ID of the team |  |
-| **body** | [**WfmHistoricalAdherenceQueryForTeams**](WfmHistoricalAdherenceQueryForTeams.html)| body | [optional]  |
+| **body** | [**WfmHistoricalAdherenceQueryForTeams**](WfmHistoricalAdherenceQueryForTeams)| body | [optional]  |
 
 ### Return type
 
-[**WfmHistoricalAdherenceResponse**](WfmHistoricalAdherenceResponse.html)
+[**WfmHistoricalAdherenceResponse**](WfmHistoricalAdherenceResponse)
 
 
 ## post_workforcemanagement_team_shrinkage_jobs
 
 > [**WfmHistoricalShrinkageResponse**](WfmHistoricalShrinkageResponse) post_workforcemanagement_team_shrinkage_jobs(team_id, body=body)
-
 
 
 Request a historical shrinkage report
@@ -12345,17 +12135,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **team_id** | **str**| The ID of the team |  |
-| **body** | [**WfmHistoricalShrinkageTeamsRequest**](WfmHistoricalShrinkageTeamsRequest.html)| body | [optional]  |
+| **body** | [**WfmHistoricalShrinkageTeamsRequest**](WfmHistoricalShrinkageTeamsRequest)| body | [optional]  |
 
 ### Return type
 
-[**WfmHistoricalShrinkageResponse**](WfmHistoricalShrinkageResponse.html)
+[**WfmHistoricalShrinkageResponse**](WfmHistoricalShrinkageResponse)
 
 
 ## post_workforcemanagement_timeoffbalance_jobs
 
 > [**TimeOffBalancesResponse**](TimeOffBalancesResponse) post_workforcemanagement_timeoffbalance_jobs(body)
-
 
 
 Query time off balances for the current user for specified activity code and dates
@@ -12394,17 +12183,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**TimeOffBalanceRequest**](TimeOffBalanceRequest.html)| The request body |  |
+| **body** | [**TimeOffBalanceRequest**](TimeOffBalanceRequest)| The request body |  |
 
 ### Return type
 
-[**TimeOffBalancesResponse**](TimeOffBalancesResponse.html)
+[**TimeOffBalancesResponse**](TimeOffBalancesResponse)
 
 
 ## post_workforcemanagement_timeofflimits_available_query
 
 > [**AvailableTimeOffResponse**](AvailableTimeOffResponse) post_workforcemanagement_timeofflimits_available_query(body=body)
-
 
 
 Queries available time off for the current user
@@ -12443,17 +12231,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**AvailableTimeOffRequest**](AvailableTimeOffRequest.html)| body | [optional]  |
+| **body** | [**AvailableTimeOffRequest**](AvailableTimeOffRequest)| body | [optional]  |
 
 ### Return type
 
-[**AvailableTimeOffResponse**](AvailableTimeOffResponse.html)
+[**AvailableTimeOffResponse**](AvailableTimeOffResponse)
 
 
 ## post_workforcemanagement_timeoffrequests
 
 > [**TimeOffRequestResponse**](TimeOffRequestResponse) post_workforcemanagement_timeoffrequests(body=body)
-
 
 
 Create a time off request for the current user
@@ -12492,17 +12279,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**CreateAgentTimeOffRequest**](CreateAgentTimeOffRequest.html)| body | [optional]  |
+| **body** | [**CreateAgentTimeOffRequest**](CreateAgentTimeOffRequest)| body | [optional]  |
 
 ### Return type
 
-[**TimeOffRequestResponse**](TimeOffRequestResponse.html)
+[**TimeOffRequestResponse**](TimeOffRequestResponse)
 
 
 ## post_workforcemanagement_timeoffrequests_estimate
 
 > [**EstimateAvailableTimeOffResponse**](EstimateAvailableTimeOffResponse) post_workforcemanagement_timeoffrequests_estimate(body=body)
-
 
 
 Estimates available time off for current user
@@ -12541,17 +12327,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**EstimateAvailableTimeOffRequest**](EstimateAvailableTimeOffRequest.html)| body | [optional]  |
+| **body** | [**EstimateAvailableTimeOffRequest**](EstimateAvailableTimeOffRequest)| body | [optional]  |
 
 ### Return type
 
-[**EstimateAvailableTimeOffResponse**](EstimateAvailableTimeOffResponse.html)
+[**EstimateAvailableTimeOffResponse**](EstimateAvailableTimeOffResponse)
 
 
 ## post_workforcemanagement_timeoffrequests_integrationstatus_query
 
 > [**TimeOffIntegrationStatusResponseListing**](TimeOffIntegrationStatusResponseListing) post_workforcemanagement_timeoffrequests_integrationstatus_query(body=body)
-
 
 
 Retrieves integration statuses for a list of current user time off requests
@@ -12590,17 +12375,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**CurrentUserTimeOffIntegrationStatusRequest**](CurrentUserTimeOffIntegrationStatusRequest.html)| body | [optional]  |
+| **body** | [**CurrentUserTimeOffIntegrationStatusRequest**](CurrentUserTimeOffIntegrationStatusRequest)| body | [optional]  |
 
 ### Return type
 
-[**TimeOffIntegrationStatusResponseListing**](TimeOffIntegrationStatusResponseListing.html)
+[**TimeOffIntegrationStatusResponseListing**](TimeOffIntegrationStatusResponseListing)
 
 
 ## put_workforcemanagement_agent_integrations_hris
 
 > [**AgentIntegrationsResponse**](AgentIntegrationsResponse) put_workforcemanagement_agent_integrations_hris(agent_id, body)
-
 
 
 Update integrations for agent
@@ -12641,17 +12425,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **agent_id** | **str**| The ID of the agent |  |
-| **body** | [**AgentIntegrationsRequest**](AgentIntegrationsRequest.html)| body |  |
+| **body** | [**AgentIntegrationsRequest**](AgentIntegrationsRequest)| body |  |
 
 ### Return type
 
-[**AgentIntegrationsResponse**](AgentIntegrationsResponse.html)
+[**AgentIntegrationsResponse**](AgentIntegrationsResponse)
 
 
 ## put_workforcemanagement_businessunit_timeofflimit_values
 
 > [**BuTimeOffLimitResponse**](BuTimeOffLimitResponse) put_workforcemanagement_businessunit_timeofflimit_values(business_unit_id, time_off_limit_id, body=body)
-
 
 
 Sets daily values for a date range of time-off limit object
@@ -12696,17 +12479,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **business_unit_id** | **str**| The ID of the business unit |  |
 | **time_off_limit_id** | **str**| The ID of the time-off limit object to set values for |  |
-| **body** | [**BuSetTimeOffLimitValuesRequest**](BuSetTimeOffLimitValuesRequest.html)| body | [optional]  |
+| **body** | [**BuSetTimeOffLimitValuesRequest**](BuSetTimeOffLimitValuesRequest)| body | [optional]  |
 
 ### Return type
 
-[**BuTimeOffLimitResponse**](BuTimeOffLimitResponse.html)
+[**BuTimeOffLimitResponse**](BuTimeOffLimitResponse)
 
 
 ## put_workforcemanagement_managementunit_timeofflimit_values
 
 > [**TimeOffLimit**](TimeOffLimit) put_workforcemanagement_managementunit_timeofflimit_values(management_unit_id, time_off_limit_id, body=body)
-
 
 
 Sets daily values for a date range of time off limit object
@@ -12751,11 +12533,11 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **management_unit_id** | **str**| The ID of the management unit. |  |
 | **time_off_limit_id** | **str**| The ID of the time off limit object to set values for |  |
-| **body** | [**SetTimeOffLimitValuesRequest**](SetTimeOffLimitValuesRequest.html)| body | [optional]  |
+| **body** | [**SetTimeOffLimitValuesRequest**](SetTimeOffLimitValuesRequest)| body | [optional]  |
 
 ### Return type
 
-[**TimeOffLimit**](TimeOffLimit.html)
+[**TimeOffLimit**](TimeOffLimit)
 
 
-_PureCloudPlatformClientV2 210.0.0_
+_PureCloudPlatformClientV2 211.0.0_

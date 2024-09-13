@@ -69,13 +69,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**put_gamification_profile**](#put_gamification_profile) | Updates a performance profile|
 |[**put_gamification_profile_metric**](#put_gamification_profile_metric) | Updates a metric in performance profile|
 |[**put_gamification_status**](#put_gamification_status) | Update gamification activation status|
-{: class="table table-striped"}
+
 
 
 ## delete_employeeperformance_externalmetrics_definition
 
 >  delete_employeeperformance_externalmetrics_definition(metric_id)
-
 
 
 Delete an External Metric Definition
@@ -125,7 +124,6 @@ void (empty response body)
 > [**ExternalMetricDefinition**](ExternalMetricDefinition) get_employeeperformance_externalmetrics_definition(metric_id)
 
 
-
 Get an External Metric Definition
 
 Wraps GET /api/v2/employeeperformance/externalmetrics/definitions/{metricId} 
@@ -166,13 +164,12 @@ except ApiException as e:
 
 ### Return type
 
-[**ExternalMetricDefinition**](ExternalMetricDefinition.html)
+[**ExternalMetricDefinition**](ExternalMetricDefinition)
 
 
 ## get_employeeperformance_externalmetrics_definitions
 
 > [**ExternalMetricDefinitionListing**](ExternalMetricDefinitionListing) get_employeeperformance_externalmetrics_definitions(page_size=page_size, page_number=page_number)
-
 
 
 Get a list of External Metric Definitions of an organization, sorted by name in ascending order
@@ -217,13 +214,12 @@ except ApiException as e:
 
 ### Return type
 
-[**ExternalMetricDefinitionListing**](ExternalMetricDefinitionListing.html)
+[**ExternalMetricDefinitionListing**](ExternalMetricDefinitionListing)
 
 
 ## get_gamification_insights
 
 > [**InsightsSummary**](InsightsSummary) get_gamification_insights(filter_type, filter_id, granularity, comparative_period_start_workday, primary_period_start_workday, page_size=page_size, page_number=page_number, sort_key=sort_key, sort_metric_id=sort_metric_id, sort_order=sort_order, user_ids=user_ids)
-
 
 
 Get insights summary
@@ -286,13 +282,12 @@ except ApiException as e:
 
 ### Return type
 
-[**InsightsSummary**](InsightsSummary.html)
+[**InsightsSummary**](InsightsSummary)
 
 
 ## get_gamification_insights_details
 
 > [**InsightsDetails**](InsightsDetails) get_gamification_insights_details(filter_type, filter_id, granularity, comparative_period_start_workday, primary_period_start_workday)
-
 
 
 Get insights details for the current user
@@ -343,13 +338,12 @@ except ApiException as e:
 
 ### Return type
 
-[**InsightsDetails**](InsightsDetails.html)
+[**InsightsDetails**](InsightsDetails)
 
 
 ## get_gamification_insights_groups_trends
 
 > [**InsightsTrend**](InsightsTrend) get_gamification_insights_groups_trends(filter_type, filter_id, granularity, comparative_period_start_workday, comparative_period_end_workday, primary_period_start_workday, primary_period_end_workday)
-
 
 
 Get insights overall trend for the current user
@@ -404,13 +398,12 @@ except ApiException as e:
 
 ### Return type
 
-[**InsightsTrend**](InsightsTrend.html)
+[**InsightsTrend**](InsightsTrend)
 
 
 ## get_gamification_insights_groups_trends_all
 
 > [**InsightsTrend**](InsightsTrend) get_gamification_insights_groups_trends_all(filter_type, filter_id, granularity, comparative_period_start_workday, comparative_period_end_workday, primary_period_start_workday, primary_period_end_workday)
-
 
 
 Get insights overall trend
@@ -465,13 +458,12 @@ except ApiException as e:
 
 ### Return type
 
-[**InsightsTrend**](InsightsTrend.html)
+[**InsightsTrend**](InsightsTrend)
 
 
 ## get_gamification_insights_members
 
 > [**InsightsAgents**](InsightsAgents) get_gamification_insights_members(filter_type, filter_id, granularity, start_workday)
-
 
 
 Query users in a profile during a period of time
@@ -520,13 +512,12 @@ except ApiException as e:
 
 ### Return type
 
-[**InsightsAgents**](InsightsAgents.html)
+[**InsightsAgents**](InsightsAgents)
 
 
 ## get_gamification_insights_trends
 
 > [**UserInsightsTrend**](UserInsightsTrend) get_gamification_insights_trends(filter_type, filter_id, granularity, comparative_period_start_workday, comparative_period_end_workday, primary_period_start_workday, primary_period_end_workday)
-
 
 
 Get insights user trend for the current user
@@ -581,13 +572,12 @@ except ApiException as e:
 
 ### Return type
 
-[**UserInsightsTrend**](UserInsightsTrend.html)
+[**UserInsightsTrend**](UserInsightsTrend)
 
 
 ## get_gamification_insights_user_details
 
 > [**InsightsDetails**](InsightsDetails) get_gamification_insights_user_details(user_id, filter_type, filter_id, granularity, comparative_period_start_workday, primary_period_start_workday)
-
 
 
 Get insights details for the user
@@ -640,13 +630,12 @@ except ApiException as e:
 
 ### Return type
 
-[**InsightsDetails**](InsightsDetails.html)
+[**InsightsDetails**](InsightsDetails)
 
 
 ## get_gamification_insights_user_trends
 
 > [**UserInsightsTrend**](UserInsightsTrend) get_gamification_insights_user_trends(user_id, filter_type, filter_id, granularity, comparative_period_start_workday, comparative_period_end_workday, primary_period_start_workday, primary_period_end_workday)
-
 
 
 Get insights user trend for the user
@@ -703,13 +692,12 @@ except ApiException as e:
 
 ### Return type
 
-[**UserInsightsTrend**](UserInsightsTrend.html)
+[**UserInsightsTrend**](UserInsightsTrend)
 
 
 ## get_gamification_leaderboard
 
 > [**Leaderboard**](Leaderboard) get_gamification_leaderboard(start_workday, end_workday, metric_id=metric_id)
-
 
 
 Leaderboard of the requesting user's division or performance profile
@@ -756,13 +744,12 @@ except ApiException as e:
 
 ### Return type
 
-[**Leaderboard**](Leaderboard.html)
+[**Leaderboard**](Leaderboard)
 
 
 ## get_gamification_leaderboard_all
 
 > [**Leaderboard**](Leaderboard) get_gamification_leaderboard_all(filter_type, filter_id, start_workday, end_workday, metric_id=metric_id)
-
 
 
 Leaderboard by filter type
@@ -813,13 +800,12 @@ except ApiException as e:
 
 ### Return type
 
-[**Leaderboard**](Leaderboard.html)
+[**Leaderboard**](Leaderboard)
 
 
 ## get_gamification_leaderboard_all_bestpoints
 
 > [**OverallBestPoints**](OverallBestPoints) get_gamification_leaderboard_all_bestpoints(filter_type, filter_id)
-
 
 
 Best Points by division or performance profile
@@ -864,13 +850,12 @@ except ApiException as e:
 
 ### Return type
 
-[**OverallBestPoints**](OverallBestPoints.html)
+[**OverallBestPoints**](OverallBestPoints)
 
 
 ## get_gamification_leaderboard_bestpoints
 
 > [**OverallBestPoints**](OverallBestPoints) get_gamification_leaderboard_bestpoints()
-
 
 
 Best Points of the requesting user's current performance profile or division
@@ -909,13 +894,12 @@ This endpoint does not need any parameters.
 
 ### Return type
 
-[**OverallBestPoints**](OverallBestPoints.html)
+[**OverallBestPoints**](OverallBestPoints)
 
 
 ## get_gamification_metricdefinition
 
 > [**MetricDefinition**](MetricDefinition) get_gamification_metricdefinition(metric_definition_id)
-
 
 
 Metric definition by id
@@ -958,13 +942,12 @@ except ApiException as e:
 
 ### Return type
 
-[**MetricDefinition**](MetricDefinition.html)
+[**MetricDefinition**](MetricDefinition)
 
 
 ## get_gamification_metricdefinitions
 
 > [**GetMetricDefinitionsResponse**](GetMetricDefinitionsResponse) get_gamification_metricdefinitions()
-
 
 
 All metric definitions
@@ -1005,13 +988,12 @@ This endpoint does not need any parameters.
 
 ### Return type
 
-[**GetMetricDefinitionsResponse**](GetMetricDefinitionsResponse.html)
+[**GetMetricDefinitionsResponse**](GetMetricDefinitionsResponse)
 
 
 ## get_gamification_profile
 
 > [**PerformanceProfile**](PerformanceProfile) get_gamification_profile(profile_id)
-
 
 
 Performance profile by id
@@ -1056,13 +1038,12 @@ except ApiException as e:
 
 ### Return type
 
-[**PerformanceProfile**](PerformanceProfile.html)
+[**PerformanceProfile**](PerformanceProfile)
 
 
 ## get_gamification_profile_members
 
 > [**MemberListing**](MemberListing) get_gamification_profile_members(profile_id)
-
 
 
 Members of a given performance profile
@@ -1105,13 +1086,12 @@ except ApiException as e:
 
 ### Return type
 
-[**MemberListing**](MemberListing.html)
+[**MemberListing**](MemberListing)
 
 
 ## get_gamification_profile_metric
 
 > [**Metric**](Metric) get_gamification_profile_metric(profile_id, metric_id, workday=workday)
-
 
 
 Performance profile gamified metric by id
@@ -1160,13 +1140,12 @@ except ApiException as e:
 
 ### Return type
 
-[**Metric**](Metric.html)
+[**Metric**](Metric)
 
 
 ## get_gamification_profile_metrics
 
 > [**GetMetricResponse**](GetMetricResponse) get_gamification_profile_metrics(profile_id, expand=expand, workday=workday, metric_ids=metric_ids)
-
 
 
 All gamified metrics for a given performance profile
@@ -1211,19 +1190,18 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **profile_id** | **str**| Performance Profile Id |  |
-| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand. | [optional] <br />**Values**: objective |
+| **expand** | [**list[str]**](str)| Which fields, if any, to expand. | [optional] <br />**Values**: objective |
 | **workday** | **date**| The objective query workday. If not specified, then it retrieves the current objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional]  |
 | **metric_ids** | **str**| List of metric ids to filter the response (Optional, comma-separated). | [optional]  |
 
 ### Return type
 
-[**GetMetricResponse**](GetMetricResponse.html)
+[**GetMetricResponse**](GetMetricResponse)
 
 
 ## get_gamification_profile_metrics_objectivedetails
 
 > [**GetMetricsResponse**](GetMetricsResponse) get_gamification_profile_metrics_objectivedetails(profile_id, workday=workday)
-
 
 
 All metrics for a given performance profile with objective details such as order and maxPoints
@@ -1270,13 +1248,12 @@ except ApiException as e:
 
 ### Return type
 
-[**GetMetricsResponse**](GetMetricsResponse.html)
+[**GetMetricsResponse**](GetMetricsResponse)
 
 
 ## get_gamification_profiles
 
 > [**GetProfilesResponse**](GetProfilesResponse) get_gamification_profiles()
-
 
 
 All performance profiles
@@ -1317,13 +1294,12 @@ This endpoint does not need any parameters.
 
 ### Return type
 
-[**GetProfilesResponse**](GetProfilesResponse.html)
+[**GetProfilesResponse**](GetProfilesResponse)
 
 
 ## get_gamification_profiles_user
 
 > [**PerformanceProfile**](PerformanceProfile) get_gamification_profiles_user(user_id, workday=workday)
-
 
 
 Performance profile of a user
@@ -1370,13 +1346,12 @@ except ApiException as e:
 
 ### Return type
 
-[**PerformanceProfile**](PerformanceProfile.html)
+[**PerformanceProfile**](PerformanceProfile)
 
 
 ## get_gamification_profiles_users_me
 
 > [**PerformanceProfile**](PerformanceProfile) get_gamification_profiles_users_me(workday=workday)
-
 
 
 Performance profile of the requesting user
@@ -1418,13 +1393,12 @@ except ApiException as e:
 
 ### Return type
 
-[**PerformanceProfile**](PerformanceProfile.html)
+[**PerformanceProfile**](PerformanceProfile)
 
 
 ## get_gamification_scorecards
 
 > [**WorkdayMetricListing**](WorkdayMetricListing) get_gamification_scorecards(workday, expand=expand)
-
 
 
 Workday performance metrics of the requesting user
@@ -1465,17 +1439,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **workday** | **date**| Target querying workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
-| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand. | [optional] <br />**Values**: objective |
+| **expand** | [**list[str]**](str)| Which fields, if any, to expand. | [optional] <br />**Values**: objective |
 
 ### Return type
 
-[**WorkdayMetricListing**](WorkdayMetricListing.html)
+[**WorkdayMetricListing**](WorkdayMetricListing)
 
 
 ## get_gamification_scorecards_attendance
 
 > [**AttendanceStatusListing**](AttendanceStatusListing) get_gamification_scorecards_attendance(start_workday, end_workday)
-
 
 
 Attendance status metrics of the requesting user
@@ -1520,13 +1493,12 @@ except ApiException as e:
 
 ### Return type
 
-[**AttendanceStatusListing**](AttendanceStatusListing.html)
+[**AttendanceStatusListing**](AttendanceStatusListing)
 
 
 ## get_gamification_scorecards_bestpoints
 
 > [**UserBestPoints**](UserBestPoints) get_gamification_scorecards_bestpoints()
-
 
 
 Best points of the requesting user
@@ -1565,13 +1537,12 @@ This endpoint does not need any parameters.
 
 ### Return type
 
-[**UserBestPoints**](UserBestPoints.html)
+[**UserBestPoints**](UserBestPoints)
 
 
 ## get_gamification_scorecards_points_alltime
 
 > [**AllTimePoints**](AllTimePoints) get_gamification_scorecards_points_alltime(end_workday)
-
 
 
 All-time points of the requesting user
@@ -1614,13 +1585,12 @@ except ApiException as e:
 
 ### Return type
 
-[**AllTimePoints**](AllTimePoints.html)
+[**AllTimePoints**](AllTimePoints)
 
 
 ## get_gamification_scorecards_points_average
 
 > [**SingleWorkdayAveragePoints**](SingleWorkdayAveragePoints) get_gamification_scorecards_points_average(workday)
-
 
 
 Average points of the requesting user's division or performance profile
@@ -1663,13 +1633,12 @@ except ApiException as e:
 
 ### Return type
 
-[**SingleWorkdayAveragePoints**](SingleWorkdayAveragePoints.html)
+[**SingleWorkdayAveragePoints**](SingleWorkdayAveragePoints)
 
 
 ## get_gamification_scorecards_points_trends
 
 > [**WorkdayPointsTrend**](WorkdayPointsTrend) get_gamification_scorecards_points_trends(start_workday, end_workday, day_of_week=day_of_week)
-
 
 
 Points trends of the requesting user
@@ -1716,13 +1685,12 @@ except ApiException as e:
 
 ### Return type
 
-[**WorkdayPointsTrend**](WorkdayPointsTrend.html)
+[**WorkdayPointsTrend**](WorkdayPointsTrend)
 
 
 ## get_gamification_scorecards_profile_metric_user_values_trends
 
 > [**MetricValueTrendAverage**](MetricValueTrendAverage) get_gamification_scorecards_profile_metric_user_values_trends(profile_id, metric_id, user_id, start_workday, end_workday, reference_workday=reference_workday, time_zone=time_zone)
-
 
 
 Average performance values trends by metric of a user
@@ -1777,13 +1745,12 @@ except ApiException as e:
 
 ### Return type
 
-[**MetricValueTrendAverage**](MetricValueTrendAverage.html)
+[**MetricValueTrendAverage**](MetricValueTrendAverage)
 
 
 ## get_gamification_scorecards_profile_metric_users_values_trends
 
 > [**MetricValueTrendAverage**](MetricValueTrendAverage) get_gamification_scorecards_profile_metric_users_values_trends(profile_id, metric_id, filter_type, start_workday, end_workday, filter_id=filter_id, reference_workday=reference_workday, time_zone=time_zone)
-
 
 
 Average performance values trends by metric of a division or a performance profile
@@ -1840,13 +1807,12 @@ except ApiException as e:
 
 ### Return type
 
-[**MetricValueTrendAverage**](MetricValueTrendAverage.html)
+[**MetricValueTrendAverage**](MetricValueTrendAverage)
 
 
 ## get_gamification_scorecards_profile_metric_values_trends
 
 > [**MetricValueTrendAverage**](MetricValueTrendAverage) get_gamification_scorecards_profile_metric_values_trends(profile_id, metric_id, start_workday, end_workday, filter_type=filter_type, reference_workday=reference_workday, time_zone=time_zone)
-
 
 
 Average performance values trends by metric of the requesting user
@@ -1901,13 +1867,12 @@ except ApiException as e:
 
 ### Return type
 
-[**MetricValueTrendAverage**](MetricValueTrendAverage.html)
+[**MetricValueTrendAverage**](MetricValueTrendAverage)
 
 
 ## get_gamification_scorecards_user
 
 > [**WorkdayMetricListing**](WorkdayMetricListing) get_gamification_scorecards_user(user_id, workday, expand=expand)
-
 
 
 Workday performance metrics for a user
@@ -1950,17 +1915,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **user_id** | **str**|  |  |
 | **workday** | **date**| Target querying workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd |  |
-| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand. | [optional] <br />**Values**: objective |
+| **expand** | [**list[str]**](str)| Which fields, if any, to expand. | [optional] <br />**Values**: objective |
 
 ### Return type
 
-[**WorkdayMetricListing**](WorkdayMetricListing.html)
+[**WorkdayMetricListing**](WorkdayMetricListing)
 
 
 ## get_gamification_scorecards_user_attendance
 
 > [**AttendanceStatusListing**](AttendanceStatusListing) get_gamification_scorecards_user_attendance(user_id, start_workday, end_workday)
-
 
 
 Attendance status metrics for a user
@@ -2007,13 +1971,12 @@ except ApiException as e:
 
 ### Return type
 
-[**AttendanceStatusListing**](AttendanceStatusListing.html)
+[**AttendanceStatusListing**](AttendanceStatusListing)
 
 
 ## get_gamification_scorecards_user_bestpoints
 
 > [**UserBestPoints**](UserBestPoints) get_gamification_scorecards_user_bestpoints(user_id)
-
 
 
 Best points of a user
@@ -2056,13 +2019,12 @@ except ApiException as e:
 
 ### Return type
 
-[**UserBestPoints**](UserBestPoints.html)
+[**UserBestPoints**](UserBestPoints)
 
 
 ## get_gamification_scorecards_user_points_alltime
 
 > [**AllTimePoints**](AllTimePoints) get_gamification_scorecards_user_points_alltime(user_id, end_workday)
-
 
 
 All-time points for a user
@@ -2107,13 +2069,12 @@ except ApiException as e:
 
 ### Return type
 
-[**AllTimePoints**](AllTimePoints.html)
+[**AllTimePoints**](AllTimePoints)
 
 
 ## get_gamification_scorecards_user_points_trends
 
 > [**WorkdayPointsTrend**](WorkdayPointsTrend) get_gamification_scorecards_user_points_trends(user_id, start_workday, end_workday, day_of_week=day_of_week)
-
 
 
 Points trend for a user
@@ -2162,13 +2123,12 @@ except ApiException as e:
 
 ### Return type
 
-[**WorkdayPointsTrend**](WorkdayPointsTrend.html)
+[**WorkdayPointsTrend**](WorkdayPointsTrend)
 
 
 ## get_gamification_scorecards_user_values_trends
 
 > [**WorkdayValuesTrend**](WorkdayValuesTrend) get_gamification_scorecards_user_values_trends(user_id, start_workday, end_workday, time_zone=time_zone)
-
 
 
 Values trends of a user
@@ -2217,13 +2177,12 @@ except ApiException as e:
 
 ### Return type
 
-[**WorkdayValuesTrend**](WorkdayValuesTrend.html)
+[**WorkdayValuesTrend**](WorkdayValuesTrend)
 
 
 ## get_gamification_scorecards_users_points_average
 
 > [**SingleWorkdayAveragePoints**](SingleWorkdayAveragePoints) get_gamification_scorecards_users_points_average(filter_type, filter_id, workday)
-
 
 
 Workday average points by target group
@@ -2270,13 +2229,12 @@ except ApiException as e:
 
 ### Return type
 
-[**SingleWorkdayAveragePoints**](SingleWorkdayAveragePoints.html)
+[**SingleWorkdayAveragePoints**](SingleWorkdayAveragePoints)
 
 
 ## get_gamification_scorecards_users_values_average
 
 > [**SingleWorkdayAverageValues**](SingleWorkdayAverageValues) get_gamification_scorecards_users_values_average(filter_type, filter_id, workday, time_zone=time_zone)
-
 
 
 Workday average values by target group
@@ -2325,13 +2283,12 @@ except ApiException as e:
 
 ### Return type
 
-[**SingleWorkdayAverageValues**](SingleWorkdayAverageValues.html)
+[**SingleWorkdayAverageValues**](SingleWorkdayAverageValues)
 
 
 ## get_gamification_scorecards_users_values_trends
 
 > [**WorkdayValuesTrend**](WorkdayValuesTrend) get_gamification_scorecards_users_values_trends(filter_type, filter_id, start_workday, end_workday, time_zone=time_zone)
-
 
 
 Values trend by target group
@@ -2382,13 +2339,12 @@ except ApiException as e:
 
 ### Return type
 
-[**WorkdayValuesTrend**](WorkdayValuesTrend.html)
+[**WorkdayValuesTrend**](WorkdayValuesTrend)
 
 
 ## get_gamification_scorecards_values_average
 
 > [**SingleWorkdayAverageValues**](SingleWorkdayAverageValues) get_gamification_scorecards_values_average(workday, time_zone=time_zone)
-
 
 
 Average values of the requesting user's division or performance profile
@@ -2433,13 +2389,12 @@ except ApiException as e:
 
 ### Return type
 
-[**SingleWorkdayAverageValues**](SingleWorkdayAverageValues.html)
+[**SingleWorkdayAverageValues**](SingleWorkdayAverageValues)
 
 
 ## get_gamification_scorecards_values_trends
 
 > [**WorkdayValuesTrend**](WorkdayValuesTrend) get_gamification_scorecards_values_trends(start_workday, end_workday, filter_type=filter_type, reference_workday=reference_workday, time_zone=time_zone)
-
 
 
 Values trends of the requesting user or group
@@ -2490,13 +2445,12 @@ except ApiException as e:
 
 ### Return type
 
-[**WorkdayValuesTrend**](WorkdayValuesTrend.html)
+[**WorkdayValuesTrend**](WorkdayValuesTrend)
 
 
 ## get_gamification_status
 
 > [**GamificationStatus**](GamificationStatus) get_gamification_status()
-
 
 
 Gamification activation status
@@ -2537,13 +2491,12 @@ This endpoint does not need any parameters.
 
 ### Return type
 
-[**GamificationStatus**](GamificationStatus.html)
+[**GamificationStatus**](GamificationStatus)
 
 
 ## get_gamification_template
 
 > [**ObjectiveTemplate**](ObjectiveTemplate) get_gamification_template(template_id)
-
 
 
 Objective template by id
@@ -2586,13 +2539,12 @@ except ApiException as e:
 
 ### Return type
 
-[**ObjectiveTemplate**](ObjectiveTemplate.html)
+[**ObjectiveTemplate**](ObjectiveTemplate)
 
 
 ## get_gamification_templates
 
 > [**GetTemplatesResponse**](GetTemplatesResponse) get_gamification_templates()
-
 
 
 All objective templates
@@ -2631,13 +2583,12 @@ This endpoint does not need any parameters.
 
 ### Return type
 
-[**GetTemplatesResponse**](GetTemplatesResponse.html)
+[**GetTemplatesResponse**](GetTemplatesResponse)
 
 
 ## patch_employeeperformance_externalmetrics_definition
 
 > [**ExternalMetricDefinition**](ExternalMetricDefinition) patch_employeeperformance_externalmetrics_definition(metric_id, body)
-
 
 
 Update External Metric Definition
@@ -2678,17 +2629,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **metric_id** | **str**| Specifies the metric definition ID |  |
-| **body** | [**ExternalMetricDefinitionUpdateRequest**](ExternalMetricDefinitionUpdateRequest.html)| The External Metric Definition parameters to be updated |  |
+| **body** | [**ExternalMetricDefinitionUpdateRequest**](ExternalMetricDefinitionUpdateRequest)| The External Metric Definition parameters to be updated |  |
 
 ### Return type
 
-[**ExternalMetricDefinition**](ExternalMetricDefinition.html)
+[**ExternalMetricDefinition**](ExternalMetricDefinition)
 
 
 ## post_employeeperformance_externalmetrics_data
 
 > [**ExternalMetricDataWriteResponse**](ExternalMetricDataWriteResponse) post_employeeperformance_externalmetrics_data(body=body)
-
 
 
 Write External Metric Data
@@ -2727,17 +2677,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**ExternalMetricDataWriteRequest**](ExternalMetricDataWriteRequest.html)| The External Metric Data to be added | [optional]  |
+| **body** | [**ExternalMetricDataWriteRequest**](ExternalMetricDataWriteRequest)| The External Metric Data to be added | [optional]  |
 
 ### Return type
 
-[**ExternalMetricDataWriteResponse**](ExternalMetricDataWriteResponse.html)
+[**ExternalMetricDataWriteResponse**](ExternalMetricDataWriteResponse)
 
 
 ## post_employeeperformance_externalmetrics_definitions
 
 > [**ExternalMetricDefinition**](ExternalMetricDefinition) post_employeeperformance_externalmetrics_definitions(body=body)
-
 
 
 Create External Metric Definition
@@ -2776,17 +2725,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**ExternalMetricDefinitionCreateRequest**](ExternalMetricDefinitionCreateRequest.html)| The External Metric Definition to be created | [optional]  |
+| **body** | [**ExternalMetricDefinitionCreateRequest**](ExternalMetricDefinitionCreateRequest)| The External Metric Definition to be created | [optional]  |
 
 ### Return type
 
-[**ExternalMetricDefinition**](ExternalMetricDefinition.html)
+[**ExternalMetricDefinition**](ExternalMetricDefinition)
 
 
 ## post_gamification_profile_activate
 
 > [**PerformanceProfile**](PerformanceProfile) post_gamification_profile_activate(profile_id)
-
 
 
 Activate a performance profile
@@ -2829,13 +2777,12 @@ except ApiException as e:
 
 ### Return type
 
-[**PerformanceProfile**](PerformanceProfile.html)
+[**PerformanceProfile**](PerformanceProfile)
 
 
 ## post_gamification_profile_deactivate
 
 > [**PerformanceProfile**](PerformanceProfile) post_gamification_profile_deactivate(profile_id)
-
 
 
 Deactivate a performance profile
@@ -2878,13 +2825,12 @@ except ApiException as e:
 
 ### Return type
 
-[**PerformanceProfile**](PerformanceProfile.html)
+[**PerformanceProfile**](PerformanceProfile)
 
 
 ## post_gamification_profile_members
 
 > [**Assignment**](Assignment) post_gamification_profile_members(profile_id, body)
-
 
 
 Assign members to a given performance profile
@@ -2925,17 +2871,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **profile_id** | **str**| Profile Id |  |
-| **body** | [**AssignUsers**](AssignUsers.html)| assignUsers |  |
+| **body** | [**AssignUsers**](AssignUsers)| assignUsers |  |
 
 ### Return type
 
-[**Assignment**](Assignment.html)
+[**Assignment**](Assignment)
 
 
 ## post_gamification_profile_members_validate
 
 > [**AssignmentValidation**](AssignmentValidation) post_gamification_profile_members_validate(profile_id, body)
-
 
 
 Validate member assignment
@@ -2976,17 +2921,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **profile_id** | **str**| Profile Id |  |
-| **body** | [**ValidateAssignUsers**](ValidateAssignUsers.html)| memberAssignments |  |
+| **body** | [**ValidateAssignUsers**](ValidateAssignUsers)| memberAssignments |  |
 
 ### Return type
 
-[**AssignmentValidation**](AssignmentValidation.html)
+[**AssignmentValidation**](AssignmentValidation)
 
 
 ## post_gamification_profile_metric_link
 
 > [**Metric**](Metric) post_gamification_profile_metric_link(source_profile_id, source_metric_id, body)
-
 
 
 Creates a linked metric
@@ -3029,17 +2973,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **source_profile_id** | **str**| Source Performance Profile Id |  |
 | **source_metric_id** | **str**| Source Metric Id |  |
-| **body** | [**TargetPerformanceProfile**](TargetPerformanceProfile.html)| linkedMetric |  |
+| **body** | [**TargetPerformanceProfile**](TargetPerformanceProfile)| linkedMetric |  |
 
 ### Return type
 
-[**Metric**](Metric.html)
+[**Metric**](Metric)
 
 
 ## post_gamification_profile_metrics
 
 > [**Metric**](Metric) post_gamification_profile_metrics(profile_id, body)
-
 
 
 Creates a gamified metric with a given metric definition and metric objective under in a performance profile
@@ -3080,17 +3023,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **profile_id** | **str**| Performance Profile Id |  |
-| **body** | [**CreateMetric**](CreateMetric.html)| Metric |  |
+| **body** | [**CreateMetric**](CreateMetric)| Metric |  |
 
 ### Return type
 
-[**Metric**](Metric.html)
+[**Metric**](Metric)
 
 
 ## post_gamification_profiles
 
 > [**PerformanceProfile**](PerformanceProfile) post_gamification_profiles(body, copy_metrics=copy_metrics)
-
 
 
 Create a new custom performance profile
@@ -3130,18 +3072,17 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**CreatePerformanceProfile**](CreatePerformanceProfile.html)| performanceProfile |  |
+| **body** | [**CreatePerformanceProfile**](CreatePerformanceProfile)| performanceProfile |  |
 | **copy_metrics** | **bool**| Flag to copy metrics. If set to false, there will be no metrics associated with the new profile. If set to true or is absent (the default behavior), all metrics from the default profile will be copied over into the new profile. | [optional] [default to True] |
 
 ### Return type
 
-[**PerformanceProfile**](PerformanceProfile.html)
+[**PerformanceProfile**](PerformanceProfile)
 
 
 ## post_gamification_profiles_user_query
 
 > [**UserProfilesInDateRange**](UserProfilesInDateRange) post_gamification_profiles_user_query(user_id, body)
-
 
 
 Query performance profiles in date range for a user
@@ -3182,17 +3123,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **user_id** | **str**| The ID of a user. |  |
-| **body** | [**UserProfilesInDateRangeRequest**](UserProfilesInDateRangeRequest.html)| The date range of work day. |  |
+| **body** | [**UserProfilesInDateRangeRequest**](UserProfilesInDateRangeRequest)| The date range of work day. |  |
 
 ### Return type
 
-[**UserProfilesInDateRange**](UserProfilesInDateRange.html)
+[**UserProfilesInDateRange**](UserProfilesInDateRange)
 
 
 ## post_gamification_profiles_users_me_query
 
 > [**UserProfilesInDateRange**](UserProfilesInDateRange) post_gamification_profiles_users_me_query(body)
-
 
 
 Query performance profiles in date range for the current user
@@ -3230,17 +3170,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**UserProfilesInDateRangeRequest**](UserProfilesInDateRangeRequest.html)| The date range of work day. |  |
+| **body** | [**UserProfilesInDateRangeRequest**](UserProfilesInDateRangeRequest)| The date range of work day. |  |
 
 ### Return type
 
-[**UserProfilesInDateRange**](UserProfilesInDateRange.html)
+[**UserProfilesInDateRange**](UserProfilesInDateRange)
 
 
 ## put_gamification_profile
 
 > [**PerformanceProfile**](PerformanceProfile) put_gamification_profile(profile_id, body=body)
-
 
 
 Updates a performance profile
@@ -3281,17 +3220,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **profile_id** | **str**| performanceProfileId |  |
-| **body** | [**PerformanceProfile**](PerformanceProfile.html)| performanceProfile | [optional]  |
+| **body** | [**PerformanceProfile**](PerformanceProfile)| performanceProfile | [optional]  |
 
 ### Return type
 
-[**PerformanceProfile**](PerformanceProfile.html)
+[**PerformanceProfile**](PerformanceProfile)
 
 
 ## put_gamification_profile_metric
 
 > [**Metric**](Metric) put_gamification_profile_metric(profile_id, metric_id, body)
-
 
 
 Updates a metric in performance profile
@@ -3334,17 +3272,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **profile_id** | **str**| Performance Profile Id |  |
 | **metric_id** | **str**| Metric Id |  |
-| **body** | [**CreateMetric**](CreateMetric.html)| Metric |  |
+| **body** | [**CreateMetric**](CreateMetric)| Metric |  |
 
 ### Return type
 
-[**Metric**](Metric.html)
+[**Metric**](Metric)
 
 
 ## put_gamification_status
 
 > [**GamificationStatus**](GamificationStatus) put_gamification_status(status)
-
 
 
 Update gamification activation status
@@ -3383,11 +3320,11 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **status** | [**GamificationStatus**](GamificationStatus.html)| Gamification status |  |
+| **status** | [**GamificationStatus**](GamificationStatus)| Gamification status |  |
 
 ### Return type
 
-[**GamificationStatus**](GamificationStatus.html)
+[**GamificationStatus**](GamificationStatus)
 
 
-_PureCloudPlatformClientV2 210.0.0_
+_PureCloudPlatformClientV2 211.0.0_

@@ -31,13 +31,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**put_voicemail_message**](#put_voicemail_message) | Update a voicemail message|
 |[**put_voicemail_policy**](#put_voicemail_policy) | Update a policy|
 |[**put_voicemail_userpolicy**](#put_voicemail_userpolicy) | Update a user&#39;s voicemail policy|
-{: class="table table-striped"}
+
 
 
 ## delete_voicemail_message
 
 >  delete_voicemail_message(message_id)
-
 
 
 Delete a voicemail message.
@@ -88,7 +87,6 @@ void (empty response body)
 >  delete_voicemail_messages()
 
 
-
 Delete all voicemail messages
 
 Wraps DELETE /api/v2/voicemail/messages 
@@ -131,7 +129,6 @@ void (empty response body)
 > [**VoicemailMailboxInfo**](VoicemailMailboxInfo) get_voicemail_group_mailbox(group_id)
 
 
-
 Get the group's mailbox information
 
 Wraps GET /api/v2/voicemail/groups/{groupId}/mailbox 
@@ -171,13 +168,12 @@ except ApiException as e:
 
 ### Return type
 
-[**VoicemailMailboxInfo**](VoicemailMailboxInfo.html)
+[**VoicemailMailboxInfo**](VoicemailMailboxInfo)
 
 
 ## get_voicemail_group_messages
 
 > [**VoicemailMessageEntityListing**](VoicemailMessageEntityListing) get_voicemail_group_messages(group_id, page_size=page_size, page_number=page_number)
-
 
 
 List voicemail messages
@@ -223,13 +219,12 @@ except ApiException as e:
 
 ### Return type
 
-[**VoicemailMessageEntityListing**](VoicemailMessageEntityListing.html)
+[**VoicemailMessageEntityListing**](VoicemailMessageEntityListing)
 
 
 ## get_voicemail_group_policy
 
 > [**VoicemailGroupPolicy**](VoicemailGroupPolicy) get_voicemail_group_policy(group_id)
-
 
 
 Get a group's voicemail policy
@@ -273,13 +268,12 @@ except ApiException as e:
 
 ### Return type
 
-[**VoicemailGroupPolicy**](VoicemailGroupPolicy.html)
+[**VoicemailGroupPolicy**](VoicemailGroupPolicy)
 
 
 ## get_voicemail_mailbox
 
 > [**VoicemailMailboxInfo**](VoicemailMailboxInfo) get_voicemail_mailbox()
-
 
 
 Get the current user's mailbox information
@@ -317,13 +311,12 @@ This endpoint does not need any parameters.
 
 ### Return type
 
-[**VoicemailMailboxInfo**](VoicemailMailboxInfo.html)
+[**VoicemailMailboxInfo**](VoicemailMailboxInfo)
 
 
 ## get_voicemail_me_mailbox
 
 > [**VoicemailMailboxInfo**](VoicemailMailboxInfo) get_voicemail_me_mailbox()
-
 
 
 Get the current user's mailbox information
@@ -361,13 +354,12 @@ This endpoint does not need any parameters.
 
 ### Return type
 
-[**VoicemailMailboxInfo**](VoicemailMailboxInfo.html)
+[**VoicemailMailboxInfo**](VoicemailMailboxInfo)
 
 
 ## get_voicemail_me_messages
 
 > [**VoicemailMessageEntityListing**](VoicemailMessageEntityListing) get_voicemail_me_messages(page_size=page_size, page_number=page_number)
-
 
 
 List voicemail messages
@@ -411,13 +403,12 @@ except ApiException as e:
 
 ### Return type
 
-[**VoicemailMessageEntityListing**](VoicemailMessageEntityListing.html)
+[**VoicemailMessageEntityListing**](VoicemailMessageEntityListing)
 
 
 ## get_voicemail_me_policy
 
 > [**VoicemailUserPolicy**](VoicemailUserPolicy) get_voicemail_me_policy()
-
 
 
 Get the current user's voicemail policy
@@ -455,13 +446,12 @@ This endpoint does not need any parameters.
 
 ### Return type
 
-[**VoicemailUserPolicy**](VoicemailUserPolicy.html)
+[**VoicemailUserPolicy**](VoicemailUserPolicy)
 
 
 ## get_voicemail_message
 
 > [**VoicemailMessage**](VoicemailMessage) get_voicemail_message(message_id, expand=expand)
-
 
 
 Get a voicemail message
@@ -501,17 +491,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **message_id** | **str**| Message ID |  |
-| **expand** | [**list[str]**](str.html)| If the caller is a known user, which fields, if any, to expand | [optional] <br />**Values**: callerUser.routingStatus, callerUser.primaryPresence, callerUser.conversationSummary, callerUser.outOfOffice, callerUser.geolocation, conversations, transcription |
+| **expand** | [**list[str]**](str)| If the caller is a known user, which fields, if any, to expand | [optional] <br />**Values**: callerUser.routingStatus, callerUser.primaryPresence, callerUser.conversationSummary, callerUser.outOfOffice, callerUser.geolocation, conversations, transcription |
 
 ### Return type
 
-[**VoicemailMessage**](VoicemailMessage.html)
+[**VoicemailMessage**](VoicemailMessage)
 
 
 ## get_voicemail_message_media
 
 > [**VoicemailMediaInfo**](VoicemailMediaInfo) get_voicemail_message_media(message_id, format_id=format_id)
-
 
 
 Get media playback URI for this voicemail message
@@ -555,13 +544,12 @@ except ApiException as e:
 
 ### Return type
 
-[**VoicemailMediaInfo**](VoicemailMediaInfo.html)
+[**VoicemailMediaInfo**](VoicemailMediaInfo)
 
 
 ## get_voicemail_messages
 
 > [**VoicemailMessageEntityListing**](VoicemailMessageEntityListing) get_voicemail_messages(ids=ids, expand=expand)
-
 
 
 List voicemail messages
@@ -601,17 +589,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **ids** | **str**| An optional comma separated list of VoicemailMessage ids | [optional]  |
-| **expand** | [**list[str]**](str.html)| If the caller is a known user, which fields, if any, to expand | [optional] <br />**Values**: callerUser.routingStatus, callerUser.primaryPresence, callerUser.conversationSummary, callerUser.outOfOffice, callerUser.geolocation, conversations, transcription |
+| **expand** | [**list[str]**](str)| If the caller is a known user, which fields, if any, to expand | [optional] <br />**Values**: callerUser.routingStatus, callerUser.primaryPresence, callerUser.conversationSummary, callerUser.outOfOffice, callerUser.geolocation, conversations, transcription |
 
 ### Return type
 
-[**VoicemailMessageEntityListing**](VoicemailMessageEntityListing.html)
+[**VoicemailMessageEntityListing**](VoicemailMessageEntityListing)
 
 
 ## get_voicemail_policy
 
 > [**VoicemailOrganizationPolicy**](VoicemailOrganizationPolicy) get_voicemail_policy()
-
 
 
 Get a policy
@@ -650,13 +637,12 @@ This endpoint does not need any parameters.
 
 ### Return type
 
-[**VoicemailOrganizationPolicy**](VoicemailOrganizationPolicy.html)
+[**VoicemailOrganizationPolicy**](VoicemailOrganizationPolicy)
 
 
 ## get_voicemail_queue_messages
 
 > [**VoicemailMessageEntityListing**](VoicemailMessageEntityListing) get_voicemail_queue_messages(queue_id, page_size=page_size, page_number=page_number)
-
 
 
 List voicemail messages
@@ -703,13 +689,12 @@ except ApiException as e:
 
 ### Return type
 
-[**VoicemailMessageEntityListing**](VoicemailMessageEntityListing.html)
+[**VoicemailMessageEntityListing**](VoicemailMessageEntityListing)
 
 
 ## get_voicemail_search
 
 > [**VoicemailsSearchResponse**](VoicemailsSearchResponse) get_voicemail_search(q64, expand=expand)
-
 
 
 Search voicemails using the q64 value returned from a previous search
@@ -749,17 +734,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **q64** | **str**| q64 |  |
-| **expand** | [**list[str]**](str.html)| expand | [optional]  |
+| **expand** | [**list[str]**](str)| expand | [optional]  |
 
 ### Return type
 
-[**VoicemailsSearchResponse**](VoicemailsSearchResponse.html)
+[**VoicemailsSearchResponse**](VoicemailsSearchResponse)
 
 
 ## get_voicemail_userpolicy
 
 > [**VoicemailUserPolicy**](VoicemailUserPolicy) get_voicemail_userpolicy(user_id)
-
 
 
 Get a user's voicemail policy
@@ -801,13 +785,12 @@ except ApiException as e:
 
 ### Return type
 
-[**VoicemailUserPolicy**](VoicemailUserPolicy.html)
+[**VoicemailUserPolicy**](VoicemailUserPolicy)
 
 
 ## patch_voicemail_group_policy
 
 > [**VoicemailGroupPolicy**](VoicemailGroupPolicy) patch_voicemail_group_policy(group_id, body)
-
 
 
 Update a group's voicemail policy
@@ -849,17 +832,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **group_id** | **str**| Group ID |  |
-| **body** | [**VoicemailGroupPolicy**](VoicemailGroupPolicy.html)| The group&#39;s voicemail policy |  |
+| **body** | [**VoicemailGroupPolicy**](VoicemailGroupPolicy)| The group&#39;s voicemail policy |  |
 
 ### Return type
 
-[**VoicemailGroupPolicy**](VoicemailGroupPolicy.html)
+[**VoicemailGroupPolicy**](VoicemailGroupPolicy)
 
 
 ## patch_voicemail_me_policy
 
 > [**VoicemailUserPolicy**](VoicemailUserPolicy) patch_voicemail_me_policy(body)
-
 
 
 Update the current user's voicemail policy
@@ -897,17 +879,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**VoicemailUserPolicy**](VoicemailUserPolicy.html)| The user&#39;s voicemail policy |  |
+| **body** | [**VoicemailUserPolicy**](VoicemailUserPolicy)| The user&#39;s voicemail policy |  |
 
 ### Return type
 
-[**VoicemailUserPolicy**](VoicemailUserPolicy.html)
+[**VoicemailUserPolicy**](VoicemailUserPolicy)
 
 
 ## patch_voicemail_message
 
 > [**VoicemailMessage**](VoicemailMessage) patch_voicemail_message(message_id, body)
-
 
 
 Update a voicemail message
@@ -949,17 +930,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **message_id** | **str**| Message ID |  |
-| **body** | [**VoicemailMessage**](VoicemailMessage.html)| VoicemailMessage |  |
+| **body** | [**VoicemailMessage**](VoicemailMessage)| VoicemailMessage |  |
 
 ### Return type
 
-[**VoicemailMessage**](VoicemailMessage.html)
+[**VoicemailMessage**](VoicemailMessage)
 
 
 ## patch_voicemail_userpolicy
 
 > [**VoicemailUserPolicy**](VoicemailUserPolicy) patch_voicemail_userpolicy(user_id, body)
-
 
 
 Update a user's voicemail policy
@@ -999,17 +979,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **user_id** | **str**| User ID |  |
-| **body** | [**VoicemailUserPolicy**](VoicemailUserPolicy.html)| The user&#39;s voicemail policy |  |
+| **body** | [**VoicemailUserPolicy**](VoicemailUserPolicy)| The user&#39;s voicemail policy |  |
 
 ### Return type
 
-[**VoicemailUserPolicy**](VoicemailUserPolicy.html)
+[**VoicemailUserPolicy**](VoicemailUserPolicy)
 
 
 ## post_voicemail_messages
 
 > [**VoicemailMessage**](VoicemailMessage) post_voicemail_messages(body=body)
-
 
 
 Copy a voicemail message to a user or group
@@ -1047,17 +1026,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**CopyVoicemailMessage**](CopyVoicemailMessage.html)|  | [optional]  |
+| **body** | [**CopyVoicemailMessage**](CopyVoicemailMessage)|  | [optional]  |
 
 ### Return type
 
-[**VoicemailMessage**](VoicemailMessage.html)
+[**VoicemailMessage**](VoicemailMessage)
 
 
 ## post_voicemail_search
 
 > [**VoicemailsSearchResponse**](VoicemailsSearchResponse) post_voicemail_search(body)
-
 
 
 Search voicemails
@@ -1095,17 +1073,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**VoicemailSearchRequest**](VoicemailSearchRequest.html)| Search request options |  |
+| **body** | [**VoicemailSearchRequest**](VoicemailSearchRequest)| Search request options |  |
 
 ### Return type
 
-[**VoicemailsSearchResponse**](VoicemailsSearchResponse.html)
+[**VoicemailsSearchResponse**](VoicemailsSearchResponse)
 
 
 ## put_voicemail_message
 
 > [**VoicemailMessage**](VoicemailMessage) put_voicemail_message(message_id, body)
-
 
 
 Update a voicemail message
@@ -1147,17 +1124,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **message_id** | **str**| Message ID |  |
-| **body** | [**VoicemailMessage**](VoicemailMessage.html)| VoicemailMessage |  |
+| **body** | [**VoicemailMessage**](VoicemailMessage)| VoicemailMessage |  |
 
 ### Return type
 
-[**VoicemailMessage**](VoicemailMessage.html)
+[**VoicemailMessage**](VoicemailMessage)
 
 
 ## put_voicemail_policy
 
 > [**VoicemailOrganizationPolicy**](VoicemailOrganizationPolicy) put_voicemail_policy(body)
-
 
 
 Update a policy
@@ -1196,17 +1172,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**VoicemailOrganizationPolicy**](VoicemailOrganizationPolicy.html)| Policy |  |
+| **body** | [**VoicemailOrganizationPolicy**](VoicemailOrganizationPolicy)| Policy |  |
 
 ### Return type
 
-[**VoicemailOrganizationPolicy**](VoicemailOrganizationPolicy.html)
+[**VoicemailOrganizationPolicy**](VoicemailOrganizationPolicy)
 
 
 ## put_voicemail_userpolicy
 
 > [**VoicemailUserPolicy**](VoicemailUserPolicy) put_voicemail_userpolicy(user_id, body)
-
 
 
 Update a user's voicemail policy
@@ -1247,11 +1222,11 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **user_id** | **str**| User ID |  |
-| **body** | [**VoicemailUserPolicy**](VoicemailUserPolicy.html)| The user&#39;s voicemail policy |  |
+| **body** | [**VoicemailUserPolicy**](VoicemailUserPolicy)| The user&#39;s voicemail policy |  |
 
 ### Return type
 
-[**VoicemailUserPolicy**](VoicemailUserPolicy.html)
+[**VoicemailUserPolicy**](VoicemailUserPolicy)
 
 
-_PureCloudPlatformClientV2 210.0.0_
+_PureCloudPlatformClientV2 211.0.0_

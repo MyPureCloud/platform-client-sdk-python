@@ -25,14 +25,16 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_webchat_guest_conversations**](#post_webchat_guest_conversations) | Create an ACD chat conversation from an external customer.|
 |[**put_webchat_deployment**](#put_webchat_deployment) | Update a WebChat deployment|
 |[**put_webchat_settings**](#put_webchat_settings) | Update WebChat deployment settings|
-{: class="table table-striped"}
+
 
 
 ## delete_webchat_deployment
 
 >  delete_webchat_deployment(deployment_id)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 Delete a WebChat deployment
 
@@ -79,7 +81,6 @@ void (empty response body)
 ## delete_webchat_guest_conversation_member
 
 >  delete_webchat_guest_conversation_member(conversation_id, member_id)
-
 
 
 Remove a member from a chat conversation
@@ -132,7 +133,6 @@ void (empty response body)
 >  delete_webchat_settings()
 
 
-
 Remove WebChat deployment settings
 
 Wraps DELETE /api/v2/webchat/settings 
@@ -175,7 +175,9 @@ void (empty response body)
 
 > [**WebChatDeployment**](WebChatDeployment) get_webchat_deployment(deployment_id)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 Get a WebChat deployment
 
@@ -217,14 +219,16 @@ except ApiException as e:
 
 ### Return type
 
-[**WebChatDeployment**](WebChatDeployment.html)
+[**WebChatDeployment**](WebChatDeployment)
 
 
 ## get_webchat_deployments
 
 > [**WebChatDeploymentEntityListing**](WebChatDeploymentEntityListing) get_webchat_deployments()
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 List WebChat deployments
 
@@ -262,14 +266,16 @@ This endpoint does not need any parameters.
 
 ### Return type
 
-[**WebChatDeploymentEntityListing**](WebChatDeploymentEntityListing.html)
+[**WebChatDeploymentEntityListing**](WebChatDeploymentEntityListing)
 
 
 ## get_webchat_guest_conversation_mediarequest
 
 > [**WebChatGuestMediaRequest**](WebChatGuestMediaRequest) get_webchat_guest_conversation_mediarequest(conversation_id, media_request_id)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 Get a media request in the conversation
 
@@ -316,13 +322,12 @@ except ApiException as e:
 
 ### Return type
 
-[**WebChatGuestMediaRequest**](WebChatGuestMediaRequest.html)
+[**WebChatGuestMediaRequest**](WebChatGuestMediaRequest)
 
 
 ## get_webchat_guest_conversation_mediarequests
 
 > [**WebChatGuestMediaRequestEntityList**](WebChatGuestMediaRequestEntityList) get_webchat_guest_conversation_mediarequests(conversation_id)
-
 
 
 Get all media requests to the guest in the conversation
@@ -366,13 +371,12 @@ except ApiException as e:
 
 ### Return type
 
-[**WebChatGuestMediaRequestEntityList**](WebChatGuestMediaRequestEntityList.html)
+[**WebChatGuestMediaRequestEntityList**](WebChatGuestMediaRequestEntityList)
 
 
 ## get_webchat_guest_conversation_member
 
 > [**WebChatMemberInfo**](WebChatMemberInfo) get_webchat_guest_conversation_member(conversation_id, member_id)
-
 
 
 Get a web chat conversation member
@@ -418,13 +422,12 @@ except ApiException as e:
 
 ### Return type
 
-[**WebChatMemberInfo**](WebChatMemberInfo.html)
+[**WebChatMemberInfo**](WebChatMemberInfo)
 
 
 ## get_webchat_guest_conversation_members
 
 > [**WebChatMemberInfoEntityList**](WebChatMemberInfoEntityList) get_webchat_guest_conversation_members(conversation_id, page_size=page_size, page_number=page_number, exclude_disconnected_members=exclude_disconnected_members)
-
 
 
 Get the members of a chat conversation.
@@ -474,13 +477,12 @@ except ApiException as e:
 
 ### Return type
 
-[**WebChatMemberInfoEntityList**](WebChatMemberInfoEntityList.html)
+[**WebChatMemberInfoEntityList**](WebChatMemberInfoEntityList)
 
 
 ## get_webchat_guest_conversation_message
 
 > [**WebChatMessage**](WebChatMessage) get_webchat_guest_conversation_message(conversation_id, message_id)
-
 
 
 Get a web chat conversation message
@@ -526,13 +528,12 @@ except ApiException as e:
 
 ### Return type
 
-[**WebChatMessage**](WebChatMessage.html)
+[**WebChatMessage**](WebChatMessage)
 
 
 ## get_webchat_guest_conversation_messages
 
 > [**WebChatMessageEntityList**](WebChatMessageEntityList) get_webchat_guest_conversation_messages(conversation_id, after=after, before=before, sort_order=sort_order, max_results=max_results)
-
 
 
 Get the messages of a chat conversation.
@@ -584,13 +585,12 @@ except ApiException as e:
 
 ### Return type
 
-[**WebChatMessageEntityList**](WebChatMessageEntityList.html)
+[**WebChatMessageEntityList**](WebChatMessageEntityList)
 
 
 ## get_webchat_settings
 
 > [**WebChatSettings**](WebChatSettings) get_webchat_settings()
-
 
 
 Get WebChat deployment settings
@@ -629,14 +629,16 @@ This endpoint does not need any parameters.
 
 ### Return type
 
-[**WebChatSettings**](WebChatSettings.html)
+[**WebChatSettings**](WebChatSettings)
 
 
 ## patch_webchat_guest_conversation_mediarequest
 
 > [**WebChatGuestMediaRequest**](WebChatGuestMediaRequest) patch_webchat_guest_conversation_mediarequest(conversation_id, media_request_id, body)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 Update a media request in the conversation, setting the state to ACCEPTED/DECLINED/ERRORED
 
@@ -681,18 +683,20 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
 | **media_request_id** | **str**| mediaRequestId |  |
-| **body** | [**WebChatGuestMediaRequest**](WebChatGuestMediaRequest.html)| Request |  |
+| **body** | [**WebChatGuestMediaRequest**](WebChatGuestMediaRequest)| Request |  |
 
 ### Return type
 
-[**WebChatGuestMediaRequest**](WebChatGuestMediaRequest.html)
+[**WebChatGuestMediaRequest**](WebChatGuestMediaRequest)
 
 
 ## post_webchat_deployments
 
 > [**WebChatDeployment**](WebChatDeployment) post_webchat_deployments(body)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 Create WebChat deployment
 
@@ -730,17 +734,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**WebChatDeployment**](WebChatDeployment.html)| Deployment |  |
+| **body** | [**WebChatDeployment**](WebChatDeployment)| Deployment |  |
 
 ### Return type
 
-[**WebChatDeployment**](WebChatDeployment.html)
+[**WebChatDeployment**](WebChatDeployment)
 
 
 ## post_webchat_guest_conversation_member_messages
 
 > [**WebChatMessage**](WebChatMessage) post_webchat_guest_conversation_member_messages(conversation_id, member_id, body)
-
 
 
 Send a message in a chat conversation.
@@ -784,17 +787,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
 | **member_id** | **str**| memberId |  |
-| **body** | [**CreateWebChatMessageRequest**](CreateWebChatMessageRequest.html)| Message |  |
+| **body** | [**CreateWebChatMessageRequest**](CreateWebChatMessageRequest)| Message |  |
 
 ### Return type
 
-[**WebChatMessage**](WebChatMessage.html)
+[**WebChatMessage**](WebChatMessage)
 
 
 ## post_webchat_guest_conversation_member_typing
 
 > [**WebChatTyping**](WebChatTyping) post_webchat_guest_conversation_member_typing(conversation_id, member_id)
-
 
 
 Send a typing-indicator in a chat conversation.
@@ -840,13 +842,12 @@ except ApiException as e:
 
 ### Return type
 
-[**WebChatTyping**](WebChatTyping.html)
+[**WebChatTyping**](WebChatTyping)
 
 
 ## post_webchat_guest_conversations
 
 > [**CreateWebChatConversationResponse**](CreateWebChatConversationResponse) post_webchat_guest_conversations(body)
-
 
 
 Create an ACD chat conversation from an external customer.
@@ -883,18 +884,20 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**CreateWebChatConversationRequest**](CreateWebChatConversationRequest.html)| CreateConversationRequest |  |
+| **body** | [**CreateWebChatConversationRequest**](CreateWebChatConversationRequest)| CreateConversationRequest |  |
 
 ### Return type
 
-[**CreateWebChatConversationResponse**](CreateWebChatConversationResponse.html)
+[**CreateWebChatConversationResponse**](CreateWebChatConversationResponse)
 
 
 ## put_webchat_deployment
 
 > [**WebChatDeployment**](WebChatDeployment) put_webchat_deployment(deployment_id, body)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 Update a WebChat deployment
 
@@ -934,17 +937,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **deployment_id** | **str**| Deployment Id |  |
-| **body** | [**WebChatDeployment**](WebChatDeployment.html)| Deployment |  |
+| **body** | [**WebChatDeployment**](WebChatDeployment)| Deployment |  |
 
 ### Return type
 
-[**WebChatDeployment**](WebChatDeployment.html)
+[**WebChatDeployment**](WebChatDeployment)
 
 
 ## put_webchat_settings
 
 > [**WebChatSettings**](WebChatSettings) put_webchat_settings(body)
-
 
 
 Update WebChat deployment settings
@@ -983,11 +985,11 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**WebChatSettings**](WebChatSettings.html)| webChatSettings |  |
+| **body** | [**WebChatSettings**](WebChatSettings)| webChatSettings |  |
 
 ### Return type
 
-[**WebChatSettings**](WebChatSettings.html)
+[**WebChatSettings**](WebChatSettings)
 
 
-_PureCloudPlatformClientV2 210.0.0_
+_PureCloudPlatformClientV2 211.0.0_

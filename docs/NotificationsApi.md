@@ -14,13 +14,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_notifications_channel_subscriptions**](#post_notifications_channel_subscriptions) | Add a list of subscriptions to the existing list of subscriptions|
 |[**post_notifications_channels**](#post_notifications_channels) | Create a new channel|
 |[**put_notifications_channel_subscriptions**](#put_notifications_channel_subscriptions) | Replace the current list of subscriptions with a new list.|
-{: class="table table-striped"}
+
 
 
 ## delete_notifications_channel_subscriptions
 
 >  delete_notifications_channel_subscriptions(channel_id)
-
 
 
 Remove all subscriptions
@@ -69,7 +68,6 @@ void (empty response body)
 > [**AvailableTopicEntityListing**](AvailableTopicEntityListing) get_notifications_availabletopics(expand=expand, include_preview=include_preview)
 
 
-
 Get available notification topics.
 
 Wraps GET /api/v2/notifications/availabletopics 
@@ -106,18 +104,17 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] <br />**Values**: description, enforced, schema, visibility, transports, publicApiTemplateUriPaths, requiresPermissions, permissionDetails, topicParameters |
+| **expand** | [**list[str]**](str)| Which fields, if any, to expand | [optional] <br />**Values**: description, enforced, schema, visibility, transports, publicApiTemplateUriPaths, requiresPermissions, permissionDetails, topicParameters |
 | **include_preview** | **bool**| Whether or not to include Preview topics | [optional] [default to True] |
 
 ### Return type
 
-[**AvailableTopicEntityListing**](AvailableTopicEntityListing.html)
+[**AvailableTopicEntityListing**](AvailableTopicEntityListing)
 
 
 ## get_notifications_channel_subscriptions
 
 > [**ChannelTopicEntityListing**](ChannelTopicEntityListing) get_notifications_channel_subscriptions(channel_id)
-
 
 
 The list of all subscriptions for this channel
@@ -159,13 +156,12 @@ except ApiException as e:
 
 ### Return type
 
-[**ChannelTopicEntityListing**](ChannelTopicEntityListing.html)
+[**ChannelTopicEntityListing**](ChannelTopicEntityListing)
 
 
 ## get_notifications_channels
 
 > [**ChannelEntityListing**](ChannelEntityListing) get_notifications_channels(includechannels=includechannels)
-
 
 
 The list of existing channels
@@ -207,13 +203,12 @@ except ApiException as e:
 
 ### Return type
 
-[**ChannelEntityListing**](ChannelEntityListing.html)
+[**ChannelEntityListing**](ChannelEntityListing)
 
 
 ## head_notifications_channel
 
 >  head_notifications_channel(channel_id)
-
 
 
 Verify a channel still exists and is valid
@@ -264,7 +259,6 @@ void (empty response body)
 > [**ChannelTopicEntityListing**](ChannelTopicEntityListing) post_notifications_channel_subscriptions(channel_id, body, ignore_errors=ignore_errors)
 
 
-
 Add a list of subscriptions to the existing list of subscriptions
 
 Wraps POST /api/v2/notifications/channels/{channelId}/subscriptions 
@@ -303,18 +297,17 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **channel_id** | **str**| Channel ID |  |
-| **body** | [**list[ChannelTopic]**](ChannelTopic.html)| Body |  |
+| **body** | [**list[ChannelTopic]**](ChannelTopic)| Body |  |
 | **ignore_errors** | **bool**| Optionally prevent throwing of errors for failed permissions checks. | [optional] [default to False] |
 
 ### Return type
 
-[**ChannelTopicEntityListing**](ChannelTopicEntityListing.html)
+[**ChannelTopicEntityListing**](ChannelTopicEntityListing)
 
 
 ## post_notifications_channels
 
 > [**Channel**](Channel) post_notifications_channels()
-
 
 
 Create a new channel
@@ -354,13 +347,12 @@ This endpoint does not need any parameters.
 
 ### Return type
 
-[**Channel**](Channel.html)
+[**Channel**](Channel)
 
 
 ## put_notifications_channel_subscriptions
 
 > [**ChannelTopicEntityListing**](ChannelTopicEntityListing) put_notifications_channel_subscriptions(channel_id, body, ignore_errors=ignore_errors)
-
 
 
 Replace the current list of subscriptions with a new list.
@@ -401,12 +393,12 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **channel_id** | **str**| Channel ID |  |
-| **body** | [**list[ChannelTopic]**](ChannelTopic.html)| Body |  |
+| **body** | [**list[ChannelTopic]**](ChannelTopic)| Body |  |
 | **ignore_errors** | **bool**| Optionally prevent throwing of errors for failed permissions checks. | [optional] [default to False] |
 
 ### Return type
 
-[**ChannelTopicEntityListing**](ChannelTopicEntityListing.html)
+[**ChannelTopicEntityListing**](ChannelTopicEntityListing)
 
 
-_PureCloudPlatformClientV2 210.0.0_
+_PureCloudPlatformClientV2 211.0.0_

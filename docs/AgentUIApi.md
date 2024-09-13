@@ -10,13 +10,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_users_agentui_agents_autoanswer_agent_id_settings**](#get_users_agentui_agents_autoanswer_agent_id_settings) | Get agent auto answer settings|
 |[**patch_users_agentui_agents_autoanswer_agent_id_settings**](#patch_users_agentui_agents_autoanswer_agent_id_settings) | Update agent auto answer settings|
 |[**put_users_agentui_agents_autoanswer_agent_id_settings**](#put_users_agentui_agents_autoanswer_agent_id_settings) | Set agent auto answer settings|
-{: class="table table-striped"}
+
 
 
 ## delete_users_agentui_agents_autoanswer_agent_id_settings
 
 >  delete_users_agentui_agents_autoanswer_agent_id_settings(agent_id)
-
 
 
 Delete agent auto answer settings
@@ -66,7 +65,6 @@ void (empty response body)
 > [**AutoAnswerSettings**](AutoAnswerSettings) get_users_agentui_agents_autoanswer_agent_id_settings(agent_id)
 
 
-
 Get agent auto answer settings
 
 Wraps GET /api/v2/users/agentui/agents/autoanswer/{agentId}/settings 
@@ -107,13 +105,12 @@ except ApiException as e:
 
 ### Return type
 
-[**AutoAnswerSettings**](AutoAnswerSettings.html)
+[**AutoAnswerSettings**](AutoAnswerSettings)
 
 
 ## patch_users_agentui_agents_autoanswer_agent_id_settings
 
 > [**AutoAnswerSettings**](AutoAnswerSettings) patch_users_agentui_agents_autoanswer_agent_id_settings(agent_id, body)
-
 
 
 Update agent auto answer settings
@@ -154,17 +151,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **agent_id** | **str**| The agent to apply the auto answer settings to |  |
-| **body** | [**AutoAnswerSettings**](AutoAnswerSettings.html)| AutoAnswerSettings |  |
+| **body** | [**AutoAnswerSettings**](AutoAnswerSettings)| AutoAnswerSettings |  |
 
 ### Return type
 
-[**AutoAnswerSettings**](AutoAnswerSettings.html)
+[**AutoAnswerSettings**](AutoAnswerSettings)
 
 
 ## put_users_agentui_agents_autoanswer_agent_id_settings
 
 > [**AutoAnswerSettings**](AutoAnswerSettings) put_users_agentui_agents_autoanswer_agent_id_settings(agent_id, body)
-
 
 
 Set agent auto answer settings
@@ -205,11 +201,11 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **agent_id** | **str**| The agent to apply the auto answer settings to |  |
-| **body** | [**AutoAnswerSettings**](AutoAnswerSettings.html)| AutoAnswerSettings |  |
+| **body** | [**AutoAnswerSettings**](AutoAnswerSettings)| AutoAnswerSettings |  |
 
 ### Return type
 
-[**AutoAnswerSettings**](AutoAnswerSettings.html)
+[**AutoAnswerSettings**](AutoAnswerSettings)
 
 
-_PureCloudPlatformClientV2 210.0.0_
+_PureCloudPlatformClientV2 211.0.0_

@@ -9,13 +9,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**delete_station_associateduser**](#delete_station_associateduser) | Unassigns the user assigned to this station|
 |[**get_station**](#get_station) | Get station.|
 |[**get_stations**](#get_stations) | Get the list of available stations.|
-{: class="table table-striped"}
+
 
 
 ## delete_station_associateduser
 
 >  delete_station_associateduser(station_id)
-
 
 
 Unassigns the user assigned to this station
@@ -64,7 +63,6 @@ void (empty response body)
 > [**Station**](Station) get_station(station_id)
 
 
-
 Get station.
 
 Wraps GET /api/v2/stations/{stationId} 
@@ -104,13 +102,12 @@ except ApiException as e:
 
 ### Return type
 
-[**Station**](Station.html)
+[**Station**](Station)
 
 
 ## get_stations
 
 > [**StationEntityListing**](StationEntityListing) get_stations(page_size=page_size, page_number=page_number, sort_by=sort_by, name=name, user_selectable=user_selectable, web_rtc_user_id=web_rtc_user_id, id=id, line_appearance_id=line_appearance_id)
-
 
 
 Get the list of available stations.
@@ -166,7 +163,7 @@ except ApiException as e:
 
 ### Return type
 
-[**StationEntityListing**](StationEntityListing.html)
+[**StationEntityListing**](StationEntityListing)
 
 
-_PureCloudPlatformClientV2 210.0.0_
+_PureCloudPlatformClientV2 211.0.0_

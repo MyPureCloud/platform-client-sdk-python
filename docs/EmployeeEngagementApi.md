@@ -11,13 +11,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_employeeengagement_recognition**](#get_employeeengagement_recognition) | Gets a single recognition|
 |[**patch_employeeengagement_celebration**](#patch_employeeengagement_celebration) | Set a state for a celebration|
 |[**post_employeeengagement_recognitions**](#post_employeeengagement_recognitions) | Creates a recognition|
-{: class="table table-striped"}
+
 
 
 ## delete_employeeengagement_celebration
 
 >  delete_employeeengagement_celebration(celebration_id)
-
 
 
 Deletes a celebration
@@ -67,7 +66,6 @@ void (empty response body)
 > [**GetCelebrationListing**](GetCelebrationListing) get_employeeengagement_celebrations(page_number=page_number, page_size=page_size)
 
 
-
 Get all celebrations
 
 Wraps GET /api/v2/employeeengagement/celebrations 
@@ -110,13 +108,12 @@ except ApiException as e:
 
 ### Return type
 
-[**GetCelebrationListing**](GetCelebrationListing.html)
+[**GetCelebrationListing**](GetCelebrationListing)
 
 
 ## get_employeeengagement_recognition
 
 > [**Recognition**](Recognition) get_employeeengagement_recognition(recognition_id)
-
 
 
 Gets a single recognition
@@ -159,13 +156,12 @@ except ApiException as e:
 
 ### Return type
 
-[**Recognition**](Recognition.html)
+[**Recognition**](Recognition)
 
 
 ## patch_employeeengagement_celebration
 
 >  patch_employeeengagement_celebration(celebration_id, body)
-
 
 
 Set a state for a celebration
@@ -205,7 +201,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **celebration_id** | **str**| The ID of the celebration |  |
-| **body** | [**CelebrationStateParam**](CelebrationStateParam.html)| Patch Celebration state |  |
+| **body** | [**CelebrationStateParam**](CelebrationStateParam)| Patch Celebration state |  |
 
 ### Return type
 
@@ -215,7 +211,6 @@ void (empty response body)
 ## post_employeeengagement_recognitions
 
 > [**RecognitionBase**](RecognitionBase) post_employeeengagement_recognitions(body)
-
 
 
 Creates a recognition
@@ -254,11 +249,11 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**CreateRecognition**](CreateRecognition.html)| Create Recognition |  |
+| **body** | [**CreateRecognition**](CreateRecognition)| Create Recognition |  |
 
 ### Return type
 
-[**RecognitionBase**](RecognitionBase.html)
+[**RecognitionBase**](RecognitionBase)
 
 
-_PureCloudPlatformClientV2 210.0.0_
+_PureCloudPlatformClientV2 211.0.0_

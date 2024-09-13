@@ -41,13 +41,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**put_learning_module**](#put_learning_module) | Update a learning module|
 |[**put_learning_module_preview**](#put_learning_module_preview) | Update a learning module preview|
 |[**put_learning_module_rule**](#put_learning_module_rule) | Update a learning module rule|
-{: class="table table-striped"}
+
 
 
 ## delete_learning_assignment
 
 >  delete_learning_assignment(assignment_id)
-
 
 
 Delete a learning assignment
@@ -95,7 +94,6 @@ void (empty response body)
 ## delete_learning_module
 
 >  delete_learning_module(module_id)
-
 
 
 Delete a learning module
@@ -147,7 +145,6 @@ void (empty response body)
 > [**LearningAssignment**](LearningAssignment) get_learning_assignment(assignment_id, expand=expand)
 
 
-
 Get Learning Assignment
 
 Permission not required if you are the assigned user of the learning assignment
@@ -188,17 +185,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **assignment_id** | **str**| The ID of Learning Assignment |  |
-| **expand** | [**list[str]**](str.html)| Fields to expand in response | [optional] <br />**Values**: module, assessment, assessmentForm, module.coverArt, step, step.moduleStep |
+| **expand** | [**list[str]**](str)| Fields to expand in response | [optional] <br />**Values**: module, assessment, assessmentForm, module.coverArt, step, step.moduleStep |
 
 ### Return type
 
-[**LearningAssignment**](LearningAssignment.html)
+[**LearningAssignment**](LearningAssignment)
 
 
 ## get_learning_assignment_step
 
 > [**LearningAssignmentStep**](LearningAssignmentStep) get_learning_assignment_step(assignment_id, step_id, shareable_content_object_id=shareable_content_object_id, default_shareable_content_object=default_shareable_content_object, expand=expand)
-
 
 
 Get Learning Assignment Step
@@ -247,17 +243,16 @@ except ApiException as e:
 | **step_id** | **str**| The ID of Learning Assignment Step |  |
 | **shareable_content_object_id** | **str**| The ID of SCO to load | [optional]  |
 | **default_shareable_content_object** | **str**| The default SCO to retrieve | [optional] <br />**Values**: First, Last, Next |
-| **expand** | [**list[str]**](str.html)| Fields to expand in response | [optional] <br />**Values**: moduleStep |
+| **expand** | [**list[str]**](str)| Fields to expand in response | [optional] <br />**Values**: moduleStep |
 
 ### Return type
 
-[**LearningAssignmentStep**](LearningAssignmentStep.html)
+[**LearningAssignmentStep**](LearningAssignmentStep)
 
 
 ## get_learning_assignments
 
 > [**LearningAssignmentsDomainEntity**](LearningAssignmentsDomainEntity) get_learning_assignments(module_id=module_id, interval=interval, completion_interval=completion_interval, overdue=overdue, page_size=page_size, page_number=page_number, pcPass=pcPass, min_percentage_score=min_percentage_score, max_percentage_score=max_percentage_score, sort_order=sort_order, sort_by=sort_by, user_id=user_id, types=types, states=states, expand=expand)
-
 
 
 List of Learning module Assignments
@@ -323,20 +318,19 @@ except ApiException as e:
 | **max_percentage_score** | **float**| The maximum assessment score for an assignment (completed with assessment) to be included in the results (inclusive) | [optional]  |
 | **sort_order** | **str**| Specifies result set sort order; if not specified, default sort order is descending (Desc) | [optional] [default to &#39;Desc&#39;]<br />**Values**: Asc, Desc |
 | **sort_by** | **str**| Specifies which field to sort the results by, default sort is by recommendedCompletionDate | [optional] <br />**Values**: RecommendedCompletionDate, DateModified |
-| **user_id** | [**list[str]**](str.html)| Specifies the list of user IDs to be queried, up to 100 user IDs. | [optional]  |
-| **types** | [**list[str]**](str.html)| Specifies the module types to filter by. Informational, AssessedContent and Assessment are deprecated | [optional] <br />**Values**: Informational, AssessedContent, Assessment, External, Native |
-| **states** | [**list[str]**](str.html)| Specifies the assignment states to filter by | [optional] <br />**Values**: Assigned, InProgress, Completed, NotCompleted, InvalidSchedule |
-| **expand** | [**list[str]**](str.html)| Specifies the expand option for returning additional information | [optional] <br />**Values**: ModuleSummary |
+| **user_id** | [**list[str]**](str)| Specifies the list of user IDs to be queried, up to 100 user IDs. | [optional]  |
+| **types** | [**list[str]**](str)| Specifies the module types to filter by. Informational, AssessedContent and Assessment are deprecated | [optional] <br />**Values**: Informational, AssessedContent, Assessment, External, Native |
+| **states** | [**list[str]**](str)| Specifies the assignment states to filter by | [optional] <br />**Values**: Assigned, InProgress, Completed, NotCompleted, InvalidSchedule |
+| **expand** | [**list[str]**](str)| Specifies the expand option for returning additional information | [optional] <br />**Values**: ModuleSummary |
 
 ### Return type
 
-[**LearningAssignmentsDomainEntity**](LearningAssignmentsDomainEntity.html)
+[**LearningAssignmentsDomainEntity**](LearningAssignmentsDomainEntity)
 
 
 ## get_learning_assignments_me
 
 > [**LearningAssignmentsDomainEntity**](LearningAssignmentsDomainEntity) get_learning_assignments_me(module_id=module_id, interval=interval, completion_interval=completion_interval, overdue=overdue, page_size=page_size, page_number=page_number, pcPass=pcPass, min_percentage_score=min_percentage_score, max_percentage_score=max_percentage_score, sort_order=sort_order, sort_by=sort_by, types=types, states=states, expand=expand)
-
 
 
 List of Learning Assignments assigned to current user
@@ -398,19 +392,18 @@ except ApiException as e:
 | **max_percentage_score** | **float**| The maximum assessment score for an assignment (completed with assessment) to be included in the results (inclusive) | [optional]  |
 | **sort_order** | **str**| Specifies result set sort order; if not specified, default sort order is descending (Desc) | [optional] [default to &#39;Desc&#39;]<br />**Values**: Asc, Desc |
 | **sort_by** | **str**| Specifies which field to sort the results by, default sort is by recommendedCompletionDate | [optional] <br />**Values**: RecommendedCompletionDate, DateModified |
-| **types** | [**list[str]**](str.html)| Specifies the module types to filter by. Informational, AssessedContent and Assessment are deprecated | [optional] <br />**Values**: Informational, AssessedContent, Assessment, External, Native |
-| **states** | [**list[str]**](str.html)| Specifies the assignment states to filter by | [optional] <br />**Values**: Assigned, InProgress, Completed, NotCompleted, InvalidSchedule |
-| **expand** | [**list[str]**](str.html)| Specifies the expand option for returning additional information | [optional] <br />**Values**: ModuleSummary |
+| **types** | [**list[str]**](str)| Specifies the module types to filter by. Informational, AssessedContent and Assessment are deprecated | [optional] <br />**Values**: Informational, AssessedContent, Assessment, External, Native |
+| **states** | [**list[str]**](str)| Specifies the assignment states to filter by | [optional] <br />**Values**: Assigned, InProgress, Completed, NotCompleted, InvalidSchedule |
+| **expand** | [**list[str]**](str)| Specifies the expand option for returning additional information | [optional] <br />**Values**: ModuleSummary |
 
 ### Return type
 
-[**LearningAssignmentsDomainEntity**](LearningAssignmentsDomainEntity.html)
+[**LearningAssignmentsDomainEntity**](LearningAssignmentsDomainEntity)
 
 
 ## get_learning_module
 
 > [**LearningModule**](LearningModule) get_learning_module(module_id, expand=expand)
-
 
 
 Get a learning module
@@ -451,17 +444,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **module_id** | **str**| The ID of the learning module |  |
-| **expand** | [**list[str]**](str.html)| Fields to expand in response(case insensitive) | [optional] <br />**Values**: assessmentForm, coverArt |
+| **expand** | [**list[str]**](str)| Fields to expand in response(case insensitive) | [optional] <br />**Values**: assessmentForm, coverArt |
 
 ### Return type
 
-[**LearningModule**](LearningModule.html)
+[**LearningModule**](LearningModule)
 
 
 ## get_learning_module_job
 
 > [**LearningModuleJobResponse**](LearningModuleJobResponse) get_learning_module_job(module_id, job_id)
-
 
 
 Get a specific Learning Module job status
@@ -506,13 +498,12 @@ except ApiException as e:
 
 ### Return type
 
-[**LearningModuleJobResponse**](LearningModuleJobResponse.html)
+[**LearningModuleJobResponse**](LearningModuleJobResponse)
 
 
 ## get_learning_module_preview
 
 > [**LearningModulePreviewGetResponse**](LearningModulePreviewGetResponse) get_learning_module_preview(module_id)
-
 
 
 Get a learning module preview
@@ -555,13 +546,12 @@ except ApiException as e:
 
 ### Return type
 
-[**LearningModulePreviewGetResponse**](LearningModulePreviewGetResponse.html)
+[**LearningModulePreviewGetResponse**](LearningModulePreviewGetResponse)
 
 
 ## get_learning_module_rule
 
 > [**LearningModuleRule**](LearningModuleRule) get_learning_module_rule(module_id)
-
 
 
 Get a learning module rule
@@ -604,13 +594,12 @@ except ApiException as e:
 
 ### Return type
 
-[**LearningModuleRule**](LearningModuleRule.html)
+[**LearningModuleRule**](LearningModuleRule)
 
 
 ## get_learning_module_version
 
 > [**LearningModule**](LearningModule) get_learning_module_version(module_id, version_id, expand=expand)
-
 
 
 Get specific version of a published module
@@ -653,17 +642,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **module_id** | **str**| The ID of the learning module |  |
 | **version_id** | **str**| The version of learning module |  |
-| **expand** | [**list[str]**](str.html)| Fields to expand in response(case insensitive) | [optional] <br />**Values**: assessmentForm, coverArt |
+| **expand** | [**list[str]**](str)| Fields to expand in response(case insensitive) | [optional] <br />**Values**: assessmentForm, coverArt |
 
 ### Return type
 
-[**LearningModule**](LearningModule.html)
+[**LearningModule**](LearningModule)
 
 
 ## get_learning_modules
 
 > [**LearningModulesDomainEntityListing**](LearningModulesDomainEntityListing) get_learning_modules(is_archived=is_archived, types=types, page_size=page_size, page_number=page_number, sort_order=sort_order, sort_by=sort_by, search_term=search_term, expand=expand, is_published=is_published, statuses=statuses, external_ids=external_ids)
-
 
 
 Get all learning modules of an organization
@@ -713,26 +701,25 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **is_archived** | **bool**| Archive status | [optional] [default to False] |
-| **types** | [**list[str]**](str.html)| Specifies the module types. Informational, AssessedContent and Assessment are deprecated | [optional] <br />**Values**: Informational, AssessedContent, Assessment, External, Native |
+| **types** | [**list[str]**](str)| Specifies the module types. Informational, AssessedContent and Assessment are deprecated | [optional] <br />**Values**: Informational, AssessedContent, Assessment, External, Native |
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **sort_order** | **str**| Sort order | [optional] [default to &#39;ascending&#39;]<br />**Values**: ascending, descending |
 | **sort_by** | **str**| Sort by | [optional] [default to &#39;name&#39;]<br />**Values**: name, createddate, percentpassed, averagescore |
 | **search_term** | **str**| Search Term (searchable by name) | [optional]  |
-| **expand** | [**list[str]**](str.html)| Fields to expand in response(case insensitive) | [optional] <br />**Values**: rule, summaryData |
+| **expand** | [**list[str]**](str)| Fields to expand in response(case insensitive) | [optional] <br />**Values**: rule, summaryData |
 | **is_published** | **str**| Specifies if only the Unpublished (isPublished is \&quot;False\&quot;) or Published (isPublished is \&quot;True\&quot;) modules are returned. If isPublished is \&quot;Any\&quot; or omitted, both types are returned | [optional] [default to &#39;Any&#39;]<br />**Values**: True, False, Any |
-| **statuses** | [**list[str]**](str.html)| Specifies the module statuses to filter by | [optional] <br />**Values**: Unpublished, Published, Archived |
-| **external_ids** | [**list[str]**](str.html)| Specifies the module external IDs to filter by. Only one ID is allowed | [optional]  |
+| **statuses** | [**list[str]**](str)| Specifies the module statuses to filter by | [optional] <br />**Values**: Unpublished, Published, Archived |
+| **external_ids** | [**list[str]**](str)| Specifies the module external IDs to filter by. Only one ID is allowed | [optional]  |
 
 ### Return type
 
-[**LearningModulesDomainEntityListing**](LearningModulesDomainEntityListing.html)
+[**LearningModulesDomainEntityListing**](LearningModulesDomainEntityListing)
 
 
 ## get_learning_modules_assignments
 
 > [**AssignedLearningModuleDomainEntityListing**](AssignedLearningModuleDomainEntityListing) get_learning_modules_assignments(user_ids, page_size=page_size, page_number=page_number, search_term=search_term, overdue=overdue, assignment_states=assignment_states, expand=expand)
-
 
 
 Get all learning modules of an organization including assignments for a specific user
@@ -778,23 +765,22 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **user_ids** | [**list[str]**](str.html)| The IDs of the users to include |  |
+| **user_ids** | [**list[str]**](str)| The IDs of the users to include |  |
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **search_term** | **str**| Search Term (searches by name and description) | [optional]  |
 | **overdue** | **str**| Specifies if only modules with overdue/not overdue (overdue is \&quot;True\&quot; or \&quot;False\&quot;) assignments are returned. If overdue is \&quot;Any\&quot; or omitted, both are returned and can including modules that are unassigned. | [optional] [default to &#39;Any&#39;]<br />**Values**: True, False, Any |
-| **assignment_states** | [**list[str]**](str.html)| Specifies the assignment states to return. | [optional] <br />**Values**: NotAssigned, Assigned, InProgress, Completed, InvalidSchedule |
-| **expand** | [**list[str]**](str.html)| Fields to expand in response(case insensitive) | [optional] <br />**Values**: coverArt |
+| **assignment_states** | [**list[str]**](str)| Specifies the assignment states to return. | [optional] <br />**Values**: NotAssigned, Assigned, InProgress, Completed, InvalidSchedule |
+| **expand** | [**list[str]**](str)| Fields to expand in response(case insensitive) | [optional] <br />**Values**: coverArt |
 
 ### Return type
 
-[**AssignedLearningModuleDomainEntityListing**](AssignedLearningModuleDomainEntityListing.html)
+[**AssignedLearningModuleDomainEntityListing**](AssignedLearningModuleDomainEntityListing)
 
 
 ## get_learning_modules_coverart_cover_art_id
 
 > [**LearningModuleCoverArtResponse**](LearningModuleCoverArtResponse) get_learning_modules_coverart_cover_art_id(cover_art_id)
-
 
 
 Get a specific Learning Module cover art using ID
@@ -837,13 +823,12 @@ except ApiException as e:
 
 ### Return type
 
-[**LearningModuleCoverArtResponse**](LearningModuleCoverArtResponse.html)
+[**LearningModuleCoverArtResponse**](LearningModuleCoverArtResponse)
 
 
 ## get_learning_scorm_scorm_id
 
 > [**LearningScormResponse**](LearningScormResponse) get_learning_scorm_scorm_id(scorm_id)
-
 
 
 Get Learning SCORM Result
@@ -886,13 +871,12 @@ except ApiException as e:
 
 ### Return type
 
-[**LearningScormResponse**](LearningScormResponse.html)
+[**LearningScormResponse**](LearningScormResponse)
 
 
 ## patch_learning_assignment
 
 > [**LearningAssignment**](LearningAssignment) patch_learning_assignment(assignment_id, body=body)
-
 
 
 Update Learning Assignment
@@ -932,17 +916,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **assignment_id** | **str**| The ID of Learning Assignment |  |
-| **body** | [**LearningAssignmentUpdate**](LearningAssignmentUpdate.html)| The Learning Assignment to be updated | [optional]  |
+| **body** | [**LearningAssignmentUpdate**](LearningAssignmentUpdate)| The Learning Assignment to be updated | [optional]  |
 
 ### Return type
 
-[**LearningAssignment**](LearningAssignment.html)
+[**LearningAssignment**](LearningAssignment)
 
 
 ## patch_learning_assignment_reschedule
 
 > [**LearningAssignment**](LearningAssignment) patch_learning_assignment_reschedule(assignment_id, body=body)
-
 
 
 Reschedule Learning Assignment
@@ -983,17 +966,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **assignment_id** | **str**| The ID of Learning Assignment |  |
-| **body** | [**LearningAssignmentReschedule**](LearningAssignmentReschedule.html)| The Learning assignment reschedule model | [optional]  |
+| **body** | [**LearningAssignmentReschedule**](LearningAssignmentReschedule)| The Learning assignment reschedule model | [optional]  |
 
 ### Return type
 
-[**LearningAssignment**](LearningAssignment.html)
+[**LearningAssignment**](LearningAssignment)
 
 
 ## patch_learning_assignment_step
 
 > [**LearningAssignmentStep**](LearningAssignmentStep) patch_learning_assignment_step(assignment_id, step_id, body=body)
-
 
 
 Update Learning Assignment Step
@@ -1038,17 +1020,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **assignment_id** | **str**| The ID of Learning Assignment |  |
 | **step_id** | **str**| The ID of Learning Assignment Step |  |
-| **body** | [**LearningAssignmentStep**](LearningAssignmentStep.html)| The Learning Assignment Step to be updated | [optional]  |
+| **body** | [**LearningAssignmentStep**](LearningAssignmentStep)| The Learning Assignment Step to be updated | [optional]  |
 
 ### Return type
 
-[**LearningAssignmentStep**](LearningAssignmentStep.html)
+[**LearningAssignmentStep**](LearningAssignmentStep)
 
 
 ## patch_learning_module_user_assignments
 
 > [**LearningAssignment**](LearningAssignment) patch_learning_module_user_assignments(module_id, user_id, body)
-
 
 
 Update an external assignment for a specific user
@@ -1091,17 +1072,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **module_id** | **str**| Key identifier for the module |  |
 | **user_id** | **str**| Key identifier for the user |  |
-| **body** | [**LearningAssignmentExternalUpdate**](LearningAssignmentExternalUpdate.html)| The learning request for updating the assignment |  |
+| **body** | [**LearningAssignmentExternalUpdate**](LearningAssignmentExternalUpdate)| The learning request for updating the assignment |  |
 
 ### Return type
 
-[**LearningAssignment**](LearningAssignment.html)
+[**LearningAssignment**](LearningAssignment)
 
 
 ## post_learning_assessments_scoring
 
 > [**AssessmentScoringSet**](AssessmentScoringSet) post_learning_assessments_scoring(body)
-
 
 
 Score learning assessment for preview
@@ -1142,17 +1122,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**LearningAssessmentScoringRequest**](LearningAssessmentScoringRequest.html)| Assessment form and answers to score |  |
+| **body** | [**LearningAssessmentScoringRequest**](LearningAssessmentScoringRequest)| Assessment form and answers to score |  |
 
 ### Return type
 
-[**AssessmentScoringSet**](AssessmentScoringSet.html)
+[**AssessmentScoringSet**](AssessmentScoringSet)
 
 
 ## post_learning_assignment_reassign
 
 > [**LearningAssignment**](LearningAssignment) post_learning_assignment_reassign(assignment_id)
-
 
 
 Reassign Learning Assignment
@@ -1197,13 +1176,12 @@ except ApiException as e:
 
 ### Return type
 
-[**LearningAssignment**](LearningAssignment.html)
+[**LearningAssignment**](LearningAssignment)
 
 
 ## post_learning_assignment_reset
 
 > [**LearningAssignment**](LearningAssignment) post_learning_assignment_reset(assignment_id)
-
 
 
 Reset Learning Assignment
@@ -1248,13 +1226,12 @@ except ApiException as e:
 
 ### Return type
 
-[**LearningAssignment**](LearningAssignment.html)
+[**LearningAssignment**](LearningAssignment)
 
 
 ## post_learning_assignments
 
 > [**LearningAssignment**](LearningAssignment) post_learning_assignments(body=body)
-
 
 
 Create Learning Assignment
@@ -1293,17 +1270,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**LearningAssignmentCreate**](LearningAssignmentCreate.html)| The Learning Assignment to be created | [optional]  |
+| **body** | [**LearningAssignmentCreate**](LearningAssignmentCreate)| The Learning Assignment to be created | [optional]  |
 
 ### Return type
 
-[**LearningAssignment**](LearningAssignment.html)
+[**LearningAssignment**](LearningAssignment)
 
 
 ## post_learning_assignments_aggregates_query
 
 > [**LearningAssignmentAggregateResponse**](LearningAssignmentAggregateResponse) post_learning_assignments_aggregates_query(body)
-
 
 
 Retrieve aggregated assignment data
@@ -1342,17 +1318,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**LearningAssignmentAggregateParam**](LearningAssignmentAggregateParam.html)| Aggregate Request |  |
+| **body** | [**LearningAssignmentAggregateParam**](LearningAssignmentAggregateParam)| Aggregate Request |  |
 
 ### Return type
 
-[**LearningAssignmentAggregateResponse**](LearningAssignmentAggregateResponse.html)
+[**LearningAssignmentAggregateResponse**](LearningAssignmentAggregateResponse)
 
 
 ## post_learning_assignments_bulkadd
 
 > [**LearningAssignmentBulkAddResponse**](LearningAssignmentBulkAddResponse) post_learning_assignments_bulkadd(body=body)
-
 
 
 Add multiple learning assignments
@@ -1391,17 +1366,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**list[LearningAssignmentItem]**](LearningAssignmentItem.html)| The learning assignments to be created | [optional]  |
+| **body** | [**list[LearningAssignmentItem]**](LearningAssignmentItem)| The learning assignments to be created | [optional]  |
 
 ### Return type
 
-[**LearningAssignmentBulkAddResponse**](LearningAssignmentBulkAddResponse.html)
+[**LearningAssignmentBulkAddResponse**](LearningAssignmentBulkAddResponse)
 
 
 ## post_learning_assignments_bulkremove
 
 > [**LearningAssignmentBulkRemoveResponse**](LearningAssignmentBulkRemoveResponse) post_learning_assignments_bulkremove(body=body)
-
 
 
 Remove multiple Learning Assignments
@@ -1440,17 +1414,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**list[str]**](str.html)| The IDs of the learning assignments to be removed | [optional]  |
+| **body** | [**list[str]**](str)| The IDs of the learning assignments to be removed | [optional]  |
 
 ### Return type
 
-[**LearningAssignmentBulkRemoveResponse**](LearningAssignmentBulkRemoveResponse.html)
+[**LearningAssignmentBulkRemoveResponse**](LearningAssignmentBulkRemoveResponse)
 
 
 ## post_learning_module_jobs
 
 > [**LearningModuleJobResponse**](LearningModuleJobResponse) post_learning_module_jobs(module_id, body)
-
 
 
 Starts a specified operation on learning module
@@ -1493,17 +1466,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **module_id** | **str**| The ID of the learning module |  |
-| **body** | [**LearningModuleJobRequest**](LearningModuleJobRequest.html)| The learning module job request |  |
+| **body** | [**LearningModuleJobRequest**](LearningModuleJobRequest)| The learning module job request |  |
 
 ### Return type
 
-[**LearningModuleJobResponse**](LearningModuleJobResponse.html)
+[**LearningModuleJobResponse**](LearningModuleJobResponse)
 
 
 ## post_learning_module_publish
 
 > [**LearningModulePublishResponse**](LearningModulePublishResponse) post_learning_module_publish(module_id, body=body)
-
 
 
 Publish a Learning module
@@ -1544,17 +1516,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **module_id** | **str**| The ID of the learning module |  |
-| **body** | [**LearningModulePublishRequest**](LearningModulePublishRequest.html)| The request body | [optional]  |
+| **body** | [**LearningModulePublishRequest**](LearningModulePublishRequest)| The request body | [optional]  |
 
 ### Return type
 
-[**LearningModulePublishResponse**](LearningModulePublishResponse.html)
+[**LearningModulePublishResponse**](LearningModulePublishResponse)
 
 
 ## post_learning_modules
 
 > [**LearningModule**](LearningModule) post_learning_modules(body)
-
 
 
 Create a new learning module
@@ -1595,17 +1566,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**LearningModuleRequest**](LearningModuleRequest.html)| The learning module to be created |  |
+| **body** | [**LearningModuleRequest**](LearningModuleRequest)| The learning module to be created |  |
 
 ### Return type
 
-[**LearningModule**](LearningModule.html)
+[**LearningModule**](LearningModule)
 
 
 ## post_learning_rules_query
 
 > [**LearningAssignmentUserListing**](LearningAssignmentUserListing) post_learning_rules_query(page_size, page_number, body)
-
 
 
 Get users for learning module rule
@@ -1650,17 +1620,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **page_size** | **int**| Page size | [default to 50] |
 | **page_number** | **int**| Page number | [default to 1] |
-| **body** | [**LearningAssignmentUserQuery**](LearningAssignmentUserQuery.html)| The learning module rule to fetch users |  |
+| **body** | [**LearningAssignmentUserQuery**](LearningAssignmentUserQuery)| The learning module rule to fetch users |  |
 
 ### Return type
 
-[**LearningAssignmentUserListing**](LearningAssignmentUserListing.html)
+[**LearningAssignmentUserListing**](LearningAssignmentUserListing)
 
 
 ## post_learning_scheduleslots_query
 
 > [**LearningScheduleSlotsQueryResponse**](LearningScheduleSlotsQueryResponse) post_learning_scheduleslots_query(body)
-
 
 
 Get list of possible slots where a learning activity can be scheduled.
@@ -1699,17 +1668,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**LearningScheduleSlotsQueryRequest**](LearningScheduleSlotsQueryRequest.html)| The slot search request |  |
+| **body** | [**LearningScheduleSlotsQueryRequest**](LearningScheduleSlotsQueryRequest)| The slot search request |  |
 
 ### Return type
 
-[**LearningScheduleSlotsQueryResponse**](LearningScheduleSlotsQueryResponse.html)
+[**LearningScheduleSlotsQueryResponse**](LearningScheduleSlotsQueryResponse)
 
 
 ## post_learning_scorm
 
 > [**LearningScormUploadResponse**](LearningScormUploadResponse) post_learning_scorm(body=body)
-
 
 
 Create a SCORM package upload request
@@ -1748,17 +1716,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**LearningScormUploadRequest**](LearningScormUploadRequest.html)| The SCORM package to be uploaded | [optional]  |
+| **body** | [**LearningScormUploadRequest**](LearningScormUploadRequest)| The SCORM package to be uploaded | [optional]  |
 
 ### Return type
 
-[**LearningScormUploadResponse**](LearningScormUploadResponse.html)
+[**LearningScormUploadResponse**](LearningScormUploadResponse)
 
 
 ## put_learning_module
 
 > [**LearningModule**](LearningModule) put_learning_module(module_id, body)
-
 
 
 Update a learning module
@@ -1801,17 +1768,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **module_id** | **str**| The ID of the learning module |  |
-| **body** | [**LearningModuleRequest**](LearningModuleRequest.html)| The learning module to be updated |  |
+| **body** | [**LearningModuleRequest**](LearningModuleRequest)| The learning module to be updated |  |
 
 ### Return type
 
-[**LearningModule**](LearningModule.html)
+[**LearningModule**](LearningModule)
 
 
 ## put_learning_module_preview
 
 > [**LearningModulePreviewUpdateResponse**](LearningModulePreviewUpdateResponse) put_learning_module_preview(module_id, body)
-
 
 
 Update a learning module preview
@@ -1854,17 +1820,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **module_id** | **str**| The ID of the learning module |  |
-| **body** | [**LearningModulePreviewUpdateRequest**](LearningModulePreviewUpdateRequest.html)| The learning module to be updated |  |
+| **body** | [**LearningModulePreviewUpdateRequest**](LearningModulePreviewUpdateRequest)| The learning module to be updated |  |
 
 ### Return type
 
-[**LearningModulePreviewUpdateResponse**](LearningModulePreviewUpdateResponse.html)
+[**LearningModulePreviewUpdateResponse**](LearningModulePreviewUpdateResponse)
 
 
 ## put_learning_module_rule
 
 > [**LearningModuleRule**](LearningModuleRule) put_learning_module_rule(module_id, body)
-
 
 
 Update a learning module rule
@@ -1907,11 +1872,11 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **module_id** | **str**| The ID of the learning module |  |
-| **body** | [**LearningModuleRule**](LearningModuleRule.html)| The learning module rule to be updated |  |
+| **body** | [**LearningModuleRule**](LearningModuleRule)| The learning module rule to be updated |  |
 
 ### Return type
 
-[**LearningModuleRule**](LearningModuleRule.html)
+[**LearningModuleRule**](LearningModuleRule)
 
 
-_PureCloudPlatformClientV2 210.0.0_
+_PureCloudPlatformClientV2 211.0.0_

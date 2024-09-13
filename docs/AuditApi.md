@@ -13,13 +13,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_audits_query**](#post_audits_query) | Create audit query execution|
 |[**post_audits_query_realtime**](#post_audits_query_realtime) | This endpoint will only retrieve 14 days worth of audits for certain services. Please use /query to get a full list and older audits.|
 |[**post_audits_query_realtime_related**](#post_audits_query_realtime_related) | Often a single action results in multiple audits. The endpoint retrieves all audits created by the same action as the given audit id.|
-{: class="table table-striped"}
+
 
 
 ## get_audits_query_realtime_servicemapping
 
 > [**AuditQueryServiceMapping**](AuditQueryServiceMapping) get_audits_query_realtime_servicemapping()
-
 
 
 Get service mapping information used in realtime audits.
@@ -58,13 +57,12 @@ This endpoint does not need any parameters.
 
 ### Return type
 
-[**AuditQueryServiceMapping**](AuditQueryServiceMapping.html)
+[**AuditQueryServiceMapping**](AuditQueryServiceMapping)
 
 
 ## get_audits_query_servicemapping
 
 > [**AuditQueryServiceMapping**](AuditQueryServiceMapping) get_audits_query_servicemapping()
-
 
 
 Get service mapping information used in audits.
@@ -103,13 +101,12 @@ This endpoint does not need any parameters.
 
 ### Return type
 
-[**AuditQueryServiceMapping**](AuditQueryServiceMapping.html)
+[**AuditQueryServiceMapping**](AuditQueryServiceMapping)
 
 
 ## get_audits_query_transaction_id
 
 > [**AuditQueryExecutionStatusResponse**](AuditQueryExecutionStatusResponse) get_audits_query_transaction_id(transaction_id)
-
 
 
 Get status of audit query execution
@@ -152,13 +149,12 @@ except ApiException as e:
 
 ### Return type
 
-[**AuditQueryExecutionStatusResponse**](AuditQueryExecutionStatusResponse.html)
+[**AuditQueryExecutionStatusResponse**](AuditQueryExecutionStatusResponse)
 
 
 ## get_audits_query_transaction_id_results
 
 > [**AuditQueryExecutionResultsResponse**](AuditQueryExecutionResultsResponse) get_audits_query_transaction_id_results(transaction_id, cursor=cursor, page_size=page_size, expand=expand, allow_redirect=allow_redirect)
-
 
 
 Get results of audit query
@@ -204,18 +200,17 @@ except ApiException as e:
 | **transaction_id** | **str**| Transaction ID |  |
 | **cursor** | **str**| Indicates where to resume query results (not required for first page) | [optional]  |
 | **page_size** | **int**| Indicates maximum number of results in response. Default page size is 25 results. The maximum page size is 500. | [optional] [default to 25] |
-| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] <br />**Values**: user |
+| **expand** | [**list[str]**](str)| Which fields, if any, to expand | [optional] <br />**Values**: user |
 | **allow_redirect** | **bool**| Result sets with large amounts of data will respond with a download url | [optional]  |
 
 ### Return type
 
-[**AuditQueryExecutionResultsResponse**](AuditQueryExecutionResultsResponse.html)
+[**AuditQueryExecutionResultsResponse**](AuditQueryExecutionResultsResponse)
 
 
 ## post_audits_query
 
 > [**AuditQueryExecutionStatusResponse**](AuditQueryExecutionStatusResponse) post_audits_query(body)
-
 
 
 Create audit query execution
@@ -256,17 +251,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**AuditQueryRequest**](AuditQueryRequest.html)| query |  |
+| **body** | [**AuditQueryRequest**](AuditQueryRequest)| query |  |
 
 ### Return type
 
-[**AuditQueryExecutionStatusResponse**](AuditQueryExecutionStatusResponse.html)
+[**AuditQueryExecutionStatusResponse**](AuditQueryExecutionStatusResponse)
 
 
 ## post_audits_query_realtime
 
 > [**AuditRealtimeQueryResultsResponse**](AuditRealtimeQueryResultsResponse) post_audits_query_realtime(body, expand=expand)
-
 
 
 This endpoint will only retrieve 14 days worth of audits for certain services. Please use /query to get a full list and older audits.
@@ -308,18 +302,17 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**AuditRealtimeQueryRequest**](AuditRealtimeQueryRequest.html)| query |  |
-| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] <br />**Values**: user |
+| **body** | [**AuditRealtimeQueryRequest**](AuditRealtimeQueryRequest)| query |  |
+| **expand** | [**list[str]**](str)| Which fields, if any, to expand | [optional] <br />**Values**: user |
 
 ### Return type
 
-[**AuditRealtimeQueryResultsResponse**](AuditRealtimeQueryResultsResponse.html)
+[**AuditRealtimeQueryResultsResponse**](AuditRealtimeQueryResultsResponse)
 
 
 ## post_audits_query_realtime_related
 
 > [**AuditRealtimeRelatedResultsResponse**](AuditRealtimeRelatedResultsResponse) post_audits_query_realtime_related(body, expand=expand)
-
 
 
 Often a single action results in multiple audits. The endpoint retrieves all audits created by the same action as the given audit id.
@@ -359,12 +352,12 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**AuditRealtimeRelatedRequest**](AuditRealtimeRelatedRequest.html)| query |  |
-| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] <br />**Values**: user |
+| **body** | [**AuditRealtimeRelatedRequest**](AuditRealtimeRelatedRequest)| query |  |
+| **expand** | [**list[str]**](str)| Which fields, if any, to expand | [optional] <br />**Values**: user |
 
 ### Return type
 
-[**AuditRealtimeRelatedResultsResponse**](AuditRealtimeRelatedResultsResponse.html)
+[**AuditRealtimeRelatedResultsResponse**](AuditRealtimeRelatedResultsResponse)
 
 
-_PureCloudPlatformClientV2 210.0.0_
+_PureCloudPlatformClientV2 211.0.0_

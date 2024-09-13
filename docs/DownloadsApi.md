@@ -7,13 +7,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 |Method | Description|
 |------------- | -------------|
 |[**get_download**](#get_download) | Issues a redirect to a signed secure download URL for specified download|
-{: class="table table-striped"}
+
 
 
 ## get_download
 
 > [**UrlResponse**](UrlResponse) get_download(download_id, content_disposition=content_disposition, issue_redirect=issue_redirect, redirect_to_auth=redirect_to_auth)
-
 
 
 Issues a redirect to a signed secure download URL for specified download
@@ -63,7 +62,7 @@ except ApiException as e:
 
 ### Return type
 
-[**UrlResponse**](UrlResponse.html)
+[**UrlResponse**](UrlResponse)
 
 
-_PureCloudPlatformClientV2 210.0.0_
+_PureCloudPlatformClientV2 211.0.0_

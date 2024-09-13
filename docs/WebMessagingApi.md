@@ -7,13 +7,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 |Method | Description|
 |------------- | -------------|
 |[**get_webmessaging_messages**](#get_webmessaging_messages) | Get the messages for a web messaging session.|
-{: class="table table-striped"}
+
 
 
 ## get_webmessaging_messages
 
 > [**WebMessagingMessageEntityList**](WebMessagingMessageEntityList) get_webmessaging_messages(page_size=page_size, page_number=page_number)
-
 
 
 Get the messages for a web messaging session.
@@ -54,7 +53,7 @@ except ApiException as e:
 
 ### Return type
 
-[**WebMessagingMessageEntityList**](WebMessagingMessageEntityList.html)
+[**WebMessagingMessageEntityList**](WebMessagingMessageEntityList)
 
 
-_PureCloudPlatformClientV2 210.0.0_
+_PureCloudPlatformClientV2 211.0.0_

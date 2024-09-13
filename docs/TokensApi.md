@@ -12,13 +12,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_tokens_timeout**](#get_tokens_timeout) | Get the current Idle Token Timeout Value|
 |[**head_tokens_me**](#head_tokens_me) | Verify user token|
 |[**put_tokens_timeout**](#put_tokens_timeout) | Update or Enable/Disable the Idle Token Timeout|
-{: class="table table-striped"}
+
 
 
 ## delete_token
 
 >  delete_token(user_id)
-
 
 
 Delete all auth tokens for the specified user.
@@ -68,7 +67,6 @@ void (empty response body)
 >  delete_tokens_me()
 
 
-
 Delete auth token used to make the request.
 
 Wraps DELETE /api/v2/tokens/me 
@@ -111,7 +109,6 @@ void (empty response body)
 > [**TokenInfo**](TokenInfo) get_tokens_me(preserve_idle_ttl=preserve_idle_ttl)
 
 
-
 Fetch information about the current token
 
 Wraps GET /api/v2/tokens/me 
@@ -151,13 +148,12 @@ except ApiException as e:
 
 ### Return type
 
-[**TokenInfo**](TokenInfo.html)
+[**TokenInfo**](TokenInfo)
 
 
 ## get_tokens_timeout
 
 > [**IdleTokenTimeout**](IdleTokenTimeout) get_tokens_timeout()
-
 
 
 Get the current Idle Token Timeout Value
@@ -196,13 +192,12 @@ This endpoint does not need any parameters.
 
 ### Return type
 
-[**IdleTokenTimeout**](IdleTokenTimeout.html)
+[**IdleTokenTimeout**](IdleTokenTimeout)
 
 
 ## head_tokens_me
 
 >  head_tokens_me()
-
 
 
 Verify user token
@@ -247,7 +242,6 @@ void (empty response body)
 > [**IdleTokenTimeout**](IdleTokenTimeout) put_tokens_timeout(body=body)
 
 
-
 Update or Enable/Disable the Idle Token Timeout
 
 Wraps PUT /api/v2/tokens/timeout 
@@ -284,11 +278,11 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**IdleTokenTimeout**](IdleTokenTimeout.html)|  | [optional]  |
+| **body** | [**IdleTokenTimeout**](IdleTokenTimeout)|  | [optional]  |
 
 ### Return type
 
-[**IdleTokenTimeout**](IdleTokenTimeout.html)
+[**IdleTokenTimeout**](IdleTokenTimeout)
 
 
-_PureCloudPlatformClientV2 210.0.0_
+_PureCloudPlatformClientV2 211.0.0_

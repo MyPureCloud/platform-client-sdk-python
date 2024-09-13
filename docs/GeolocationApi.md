@@ -10,13 +10,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_user_geolocation**](#get_user_geolocation) | Get a user&#39;s Geolocation|
 |[**patch_geolocations_settings**](#patch_geolocations_settings) | Patch a organization&#39;s GeolocationSettings|
 |[**patch_user_geolocation**](#patch_user_geolocation) | Patch a user&#39;s Geolocation|
-{: class="table table-striped"}
+
 
 
 ## get_geolocations_settings
 
 > [**GeolocationSettings**](GeolocationSettings) get_geolocations_settings()
-
 
 
 Get a organization's GeolocationSettings
@@ -54,13 +53,12 @@ This endpoint does not need any parameters.
 
 ### Return type
 
-[**GeolocationSettings**](GeolocationSettings.html)
+[**GeolocationSettings**](GeolocationSettings)
 
 
 ## get_user_geolocation
 
 > [**Geolocation**](Geolocation) get_user_geolocation(user_id, client_id)
-
 
 
 Get a user's Geolocation
@@ -104,13 +102,12 @@ except ApiException as e:
 
 ### Return type
 
-[**Geolocation**](Geolocation.html)
+[**Geolocation**](Geolocation)
 
 
 ## patch_geolocations_settings
 
 > [**GeolocationSettings**](GeolocationSettings) patch_geolocations_settings(body)
-
 
 
 Patch a organization's GeolocationSettings
@@ -149,17 +146,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**GeolocationSettings**](GeolocationSettings.html)| Geolocation settings |  |
+| **body** | [**GeolocationSettings**](GeolocationSettings)| Geolocation settings |  |
 
 ### Return type
 
-[**GeolocationSettings**](GeolocationSettings.html)
+[**GeolocationSettings**](GeolocationSettings)
 
 
 ## patch_user_geolocation
 
 > [**Geolocation**](Geolocation) patch_user_geolocation(user_id, client_id, body)
-
 
 
 Patch a user's Geolocation
@@ -203,11 +199,11 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **user_id** | **str**| user Id |  |
 | **client_id** | **str**| client Id |  |
-| **body** | [**Geolocation**](Geolocation.html)| Geolocation |  |
+| **body** | [**Geolocation**](Geolocation)| Geolocation |  |
 
 ### Return type
 
-[**Geolocation**](Geolocation.html)
+[**Geolocation**](Geolocation)
 
 
-_PureCloudPlatformClientV2 210.0.0_
+_PureCloudPlatformClientV2 211.0.0_

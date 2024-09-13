@@ -89,13 +89,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**put_integrations_speech_nuance_nuance_integration_id_bots_launch_settings**](#put_integrations_speech_nuance_nuance_integration_id_bots_launch_settings) | Update the Nuance bot list for the specific bots made available to Genesys Cloud in the specified Integration|
 |[**put_integrations_speech_tts_settings**](#put_integrations_speech_tts_settings) | Update TTS settings for an org|
 |[**put_integrations_unifiedcommunication_thirdpartypresences**](#put_integrations_unifiedcommunication_thirdpartypresences) | Bulk integration presence ingestion|
-{: class="table table-striped"}
+
 
 
 ## delete_integration
 
 > [**Integration**](Integration) delete_integration(integration_id)
-
 
 
 Delete integration.
@@ -138,13 +137,12 @@ except ApiException as e:
 
 ### Return type
 
-[**Integration**](Integration.html)
+[**Integration**](Integration)
 
 
 ## delete_integrations_action
 
 >  delete_integrations_action(action_id)
-
 
 
 Delete an Action
@@ -194,7 +192,6 @@ void (empty response body)
 >  delete_integrations_action_draft(action_id)
 
 
-
 Delete a Draft
 
 Wraps DELETE /api/v2/integrations/actions/{actionId}/draft 
@@ -240,7 +237,6 @@ void (empty response body)
 ## delete_integrations_credential
 
 >  delete_integrations_credential(credential_id)
-
 
 
 Delete a set of credentials
@@ -290,7 +286,6 @@ void (empty response body)
 > [**Integration**](Integration) get_integration(integration_id, page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page)
 
 
-
 Get integration.
 
 Wraps GET /api/v2/integrations/{integrationId} 
@@ -337,19 +332,18 @@ except ApiException as e:
 | **page_size** | **int**| The total page size requested | [optional] [default to 25] |
 | **page_number** | **int**| The page number requested | [optional] [default to 1] |
 | **sort_by** | **str**| variable name requested to sort by | [optional]  |
-| **expand** | [**list[str]**](str.html)| variable name requested by expand list | [optional]  |
+| **expand** | [**list[str]**](str)| variable name requested by expand list | [optional]  |
 | **next_page** | **str**| next page token | [optional]  |
 | **previous_page** | **str**| Previous page token | [optional]  |
 
 ### Return type
 
-[**Integration**](Integration.html)
+[**Integration**](Integration)
 
 
 ## get_integration_config_current
 
 > [**IntegrationConfiguration**](IntegrationConfiguration) get_integration_config_current(integration_id)
-
 
 
 Get integration configuration.
@@ -392,13 +386,12 @@ except ApiException as e:
 
 ### Return type
 
-[**IntegrationConfiguration**](IntegrationConfiguration.html)
+[**IntegrationConfiguration**](IntegrationConfiguration)
 
 
 ## get_integrations
 
 > [**IntegrationEntityListing**](IntegrationEntityListing) get_integrations(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page)
-
 
 
 List integrations
@@ -445,19 +438,18 @@ except ApiException as e:
 | **page_size** | **int**| The total page size requested | [optional] [default to 25] |
 | **page_number** | **int**| The page number requested | [optional] [default to 1] |
 | **sort_by** | **str**| variable name requested to sort by | [optional]  |
-| **expand** | [**list[str]**](str.html)| variable name requested by expand list | [optional]  |
+| **expand** | [**list[str]**](str)| variable name requested by expand list | [optional]  |
 | **next_page** | **str**| next page token | [optional]  |
 | **previous_page** | **str**| Previous page token | [optional]  |
 
 ### Return type
 
-[**IntegrationEntityListing**](IntegrationEntityListing.html)
+[**IntegrationEntityListing**](IntegrationEntityListing)
 
 
 ## get_integrations_action
 
 > [**Action**](Action) get_integrations_action(action_id, expand=expand, include_config=include_config)
-
 
 
 Retrieves a single Action matching id.
@@ -505,13 +497,12 @@ except ApiException as e:
 
 ### Return type
 
-[**Action**](Action.html)
+[**Action**](Action)
 
 
 ## get_integrations_action_draft
 
 > [**Action**](Action) get_integrations_action_draft(action_id, expand=expand, include_config=include_config)
-
 
 
 Retrieve a Draft
@@ -559,13 +550,12 @@ except ApiException as e:
 
 ### Return type
 
-[**Action**](Action.html)
+[**Action**](Action)
 
 
 ## get_integrations_action_draft_function
 
 > [**FunctionConfig**](FunctionConfig) get_integrations_action_draft_function(action_id)
-
 
 
 Get draft function settings for Action
@@ -610,13 +600,12 @@ except ApiException as e:
 
 ### Return type
 
-[**FunctionConfig**](FunctionConfig.html)
+[**FunctionConfig**](FunctionConfig)
 
 
 ## get_integrations_action_draft_schema
 
 > [**JsonSchemaDocument**](JsonSchemaDocument) get_integrations_action_draft_schema(action_id, file_name)
-
 
 
 Retrieve schema for a Draft based on filename.
@@ -662,13 +651,12 @@ except ApiException as e:
 
 ### Return type
 
-[**JsonSchemaDocument**](JsonSchemaDocument.html)
+[**JsonSchemaDocument**](JsonSchemaDocument)
 
 
 ## get_integrations_action_draft_template
 
 > str** get_integrations_action_draft_template(action_id, file_name)
-
 
 
 Retrieve templates for a Draft based on filename.
@@ -722,7 +710,6 @@ except ApiException as e:
 > [**DraftValidationResult**](DraftValidationResult) get_integrations_action_draft_validation(action_id)
 
 
-
 Validate current Draft configuration.
 
 Wraps GET /api/v2/integrations/actions/{actionId}/draft/validation 
@@ -763,13 +750,12 @@ except ApiException as e:
 
 ### Return type
 
-[**DraftValidationResult**](DraftValidationResult.html)
+[**DraftValidationResult**](DraftValidationResult)
 
 
 ## get_integrations_action_function
 
 > [**FunctionConfig**](FunctionConfig) get_integrations_action_function(action_id)
-
 
 
 Get published function settings for Action
@@ -814,13 +800,12 @@ except ApiException as e:
 
 ### Return type
 
-[**FunctionConfig**](FunctionConfig.html)
+[**FunctionConfig**](FunctionConfig)
 
 
 ## get_integrations_action_schema
 
 > [**JsonSchemaDocument**](JsonSchemaDocument) get_integrations_action_schema(action_id, file_name)
-
 
 
 Retrieve schema for an action based on filename.
@@ -866,13 +851,12 @@ except ApiException as e:
 
 ### Return type
 
-[**JsonSchemaDocument**](JsonSchemaDocument.html)
+[**JsonSchemaDocument**](JsonSchemaDocument)
 
 
 ## get_integrations_action_template
 
 > str** get_integrations_action_template(action_id, file_name)
-
 
 
 Retrieve text of templates for an action based on filename.
@@ -924,7 +908,6 @@ except ApiException as e:
 ## get_integrations_actions
 
 > [**ActionEntityListing**](ActionEntityListing) get_integrations_actions(page_size=page_size, page_number=page_number, next_page=next_page, previous_page=previous_page, sort_by=sort_by, sort_order=sort_order, category=category, name=name, ids=ids, secure=secure, include_auth_actions=include_auth_actions)
-
 
 
 Retrieves all actions associated with filters passed in via query param.
@@ -988,13 +971,12 @@ except ApiException as e:
 
 ### Return type
 
-[**ActionEntityListing**](ActionEntityListing.html)
+[**ActionEntityListing**](ActionEntityListing)
 
 
 ## get_integrations_actions_categories
 
 > [**CategoryEntityListing**](CategoryEntityListing) get_integrations_actions_categories(page_size=page_size, page_number=page_number, next_page=next_page, previous_page=previous_page, sort_by=sort_by, sort_order=sort_order, secure=secure)
-
 
 
 Retrieves all categories of available Actions
@@ -1050,13 +1032,12 @@ except ApiException as e:
 
 ### Return type
 
-[**CategoryEntityListing**](CategoryEntityListing.html)
+[**CategoryEntityListing**](CategoryEntityListing)
 
 
 ## get_integrations_actions_certificates
 
 > [**ActionCertificateListing**](ActionCertificateListing) get_integrations_actions_certificates(status=status, type=type)
-
 
 
 Retrieves the available mTLS client certificates in use. This endpoint will return inconsistent results while a certificate rotation is in progress.
@@ -1101,13 +1082,12 @@ except ApiException as e:
 
 ### Return type
 
-[**ActionCertificateListing**](ActionCertificateListing.html)
+[**ActionCertificateListing**](ActionCertificateListing)
 
 
 ## get_integrations_actions_certificates_truststore
 
 > [**TrustedCertificates**](TrustedCertificates) get_integrations_actions_certificates_truststore()
-
 
 
 Retrieves basic info about trusted root CA certificates
@@ -1146,13 +1126,12 @@ This endpoint does not need any parameters.
 
 ### Return type
 
-[**TrustedCertificates**](TrustedCertificates.html)
+[**TrustedCertificates**](TrustedCertificates)
 
 
 ## get_integrations_actions_drafts
 
 > [**ActionEntityListing**](ActionEntityListing) get_integrations_actions_drafts(page_size=page_size, page_number=page_number, next_page=next_page, previous_page=previous_page, sort_by=sort_by, sort_order=sort_order, category=category, name=name, ids=ids, secure=secure, include_auth_actions=include_auth_actions)
-
 
 
 Retrieves all action drafts associated with the filters passed in via query param.
@@ -1216,13 +1195,12 @@ except ApiException as e:
 
 ### Return type
 
-[**ActionEntityListing**](ActionEntityListing.html)
+[**ActionEntityListing**](ActionEntityListing)
 
 
 ## get_integrations_actions_functions_runtimes
 
 > [**list[FunctionRuntime]**](FunctionRuntime) get_integrations_actions_functions_runtimes()
-
 
 
 Get action function settings for Action
@@ -1263,13 +1241,12 @@ This endpoint does not need any parameters.
 
 ### Return type
 
-[**list[FunctionRuntime]**](FunctionRuntime.html)
+[**list[FunctionRuntime]**](FunctionRuntime)
 
 
 ## get_integrations_botconnector_integration_id_bot
 
 > [**BotConnectorBot**](BotConnectorBot) get_integrations_botconnector_integration_id_bot(integration_id, bot_id, version=version)
-
 
 
 Get a specific botConnector bot, plus versions, for this integration
@@ -1316,13 +1293,12 @@ except ApiException as e:
 
 ### Return type
 
-[**BotConnectorBot**](BotConnectorBot.html)
+[**BotConnectorBot**](BotConnectorBot)
 
 
 ## get_integrations_botconnector_integration_id_bot_versions
 
 > [**BotConnectorBotVersionSummaryEntityListing**](BotConnectorBotVersionSummaryEntityListing) get_integrations_botconnector_integration_id_bot_versions(integration_id, bot_id, page_number=page_number, page_size=page_size)
-
 
 
 Get a list of bot versions for a bot
@@ -1371,13 +1347,12 @@ except ApiException as e:
 
 ### Return type
 
-[**BotConnectorBotVersionSummaryEntityListing**](BotConnectorBotVersionSummaryEntityListing.html)
+[**BotConnectorBotVersionSummaryEntityListing**](BotConnectorBotVersionSummaryEntityListing)
 
 
 ## get_integrations_botconnector_integration_id_bots
 
 > [**BotList**](BotList) get_integrations_botconnector_integration_id_bots(integration_id)
-
 
 
 Get a list of botConnector bots for this integration
@@ -1420,13 +1395,12 @@ except ApiException as e:
 
 ### Return type
 
-[**BotList**](BotList.html)
+[**BotList**](BotList)
 
 
 ## get_integrations_botconnector_integration_id_bots_summaries
 
 > [**BotConnectorBotSummaryEntityListing**](BotConnectorBotSummaryEntityListing) get_integrations_botconnector_integration_id_bots_summaries(integration_id, page_number=page_number, page_size=page_size)
-
 
 
 Get a summary list of botConnector bots for this integration
@@ -1473,13 +1447,12 @@ except ApiException as e:
 
 ### Return type
 
-[**BotConnectorBotSummaryEntityListing**](BotConnectorBotSummaryEntityListing.html)
+[**BotConnectorBotSummaryEntityListing**](BotConnectorBotSummaryEntityListing)
 
 
 ## get_integrations_clientapps
 
 > [**ClientAppEntityListing**](ClientAppEntityListing) get_integrations_clientapps(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page)
-
 
 
 List permitted client app integrations for the logged in user
@@ -1525,20 +1498,22 @@ except ApiException as e:
 | **page_size** | **int**| The total page size requested | [optional] [default to 25] |
 | **page_number** | **int**| The page number requested | [optional] [default to 1] |
 | **sort_by** | **str**| variable name requested to sort by | [optional]  |
-| **expand** | [**list[str]**](str.html)| variable name requested by expand list | [optional]  |
+| **expand** | [**list[str]**](str)| variable name requested by expand list | [optional]  |
 | **next_page** | **str**| next page token | [optional]  |
 | **previous_page** | **str**| Previous page token | [optional]  |
 
 ### Return type
 
-[**ClientAppEntityListing**](ClientAppEntityListing.html)
+[**ClientAppEntityListing**](ClientAppEntityListing)
 
 
 ## get_integrations_clientapps_unifiedcommunications
 
 > [**UCIntegrationListing**](UCIntegrationListing) get_integrations_clientapps_unifiedcommunications(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 UC integration client application configuration.
 
@@ -1586,19 +1561,18 @@ except ApiException as e:
 | **page_size** | **int**| The total page size requested | [optional] [default to 25] |
 | **page_number** | **int**| The page number requested | [optional] [default to 1] |
 | **sort_by** | **str**| variable name requested to sort by | [optional]  |
-| **expand** | [**list[str]**](str.html)| variable name requested by expand list | [optional]  |
+| **expand** | [**list[str]**](str)| variable name requested by expand list | [optional]  |
 | **next_page** | **str**| next page token | [optional]  |
 | **previous_page** | **str**| Previous page token | [optional]  |
 
 ### Return type
 
-[**UCIntegrationListing**](UCIntegrationListing.html)
+[**UCIntegrationListing**](UCIntegrationListing)
 
 
 ## get_integrations_credential
 
 > [**Credential**](Credential) get_integrations_credential(credential_id)
-
 
 
 Get a single credential with sensitive fields redacted
@@ -1641,13 +1615,12 @@ except ApiException as e:
 
 ### Return type
 
-[**Credential**](Credential.html)
+[**Credential**](Credential)
 
 
 ## get_integrations_credentials
 
 > [**CredentialInfoListing**](CredentialInfoListing) get_integrations_credentials(page_number=page_number, page_size=page_size)
-
 
 
 List multiple sets of credentials
@@ -1692,13 +1665,12 @@ except ApiException as e:
 
 ### Return type
 
-[**CredentialInfoListing**](CredentialInfoListing.html)
+[**CredentialInfoListing**](CredentialInfoListing)
 
 
 ## get_integrations_credentials_types
 
 > [**CredentialTypeListing**](CredentialTypeListing) get_integrations_credentials_types()
-
 
 
 List all credential types
@@ -1737,13 +1709,12 @@ This endpoint does not need any parameters.
 
 ### Return type
 
-[**CredentialTypeListing**](CredentialTypeListing.html)
+[**CredentialTypeListing**](CredentialTypeListing)
 
 
 ## get_integrations_speech_dialogflow_agent
 
 > [**DialogflowAgent**](DialogflowAgent) get_integrations_speech_dialogflow_agent(agent_id)
-
 
 
 Get details about a Dialogflow agent
@@ -1786,13 +1757,12 @@ except ApiException as e:
 
 ### Return type
 
-[**DialogflowAgent**](DialogflowAgent.html)
+[**DialogflowAgent**](DialogflowAgent)
 
 
 ## get_integrations_speech_dialogflow_agents
 
 > [**DialogflowAgentSummaryEntityListing**](DialogflowAgentSummaryEntityListing) get_integrations_speech_dialogflow_agents(page_number=page_number, page_size=page_size, name=name)
-
 
 
 Get a list of Dialogflow agents in the customers' Google accounts
@@ -1839,13 +1809,12 @@ except ApiException as e:
 
 ### Return type
 
-[**DialogflowAgentSummaryEntityListing**](DialogflowAgentSummaryEntityListing.html)
+[**DialogflowAgentSummaryEntityListing**](DialogflowAgentSummaryEntityListing)
 
 
 ## get_integrations_speech_dialogflowcx_agent
 
 > [**DialogflowCXAgent**](DialogflowCXAgent) get_integrations_speech_dialogflowcx_agent(agent_id)
-
 
 
 Get details about a Dialogflow CX agent
@@ -1888,13 +1857,12 @@ except ApiException as e:
 
 ### Return type
 
-[**DialogflowCXAgent**](DialogflowCXAgent.html)
+[**DialogflowCXAgent**](DialogflowCXAgent)
 
 
 ## get_integrations_speech_dialogflowcx_agents
 
 > [**DialogflowCXAgentSummaryEntityListing**](DialogflowCXAgentSummaryEntityListing) get_integrations_speech_dialogflowcx_agents(page_number=page_number, page_size=page_size, name=name)
-
 
 
 Get a list of Dialogflow CX agents in the customers' Google accounts
@@ -1941,13 +1909,12 @@ except ApiException as e:
 
 ### Return type
 
-[**DialogflowCXAgentSummaryEntityListing**](DialogflowCXAgentSummaryEntityListing.html)
+[**DialogflowCXAgentSummaryEntityListing**](DialogflowCXAgentSummaryEntityListing)
 
 
 ## get_integrations_speech_lex_bot_alias
 
 > [**LexBotAlias**](LexBotAlias) get_integrations_speech_lex_bot_alias(alias_id)
-
 
 
 Get details about a Lex bot alias
@@ -1990,13 +1957,12 @@ except ApiException as e:
 
 ### Return type
 
-[**LexBotAlias**](LexBotAlias.html)
+[**LexBotAlias**](LexBotAlias)
 
 
 ## get_integrations_speech_lex_bot_bot_id_aliases
 
 > [**LexBotAliasEntityListing**](LexBotAliasEntityListing) get_integrations_speech_lex_bot_bot_id_aliases(bot_id, page_number=page_number, page_size=page_size, status=status, name=name)
-
 
 
 Get a list of aliases for a bot in the customer's AWS accounts
@@ -2047,13 +2013,12 @@ except ApiException as e:
 
 ### Return type
 
-[**LexBotAliasEntityListing**](LexBotAliasEntityListing.html)
+[**LexBotAliasEntityListing**](LexBotAliasEntityListing)
 
 
 ## get_integrations_speech_lex_bots
 
 > [**LexBotEntityListing**](LexBotEntityListing) get_integrations_speech_lex_bots(page_number=page_number, page_size=page_size, name=name)
-
 
 
 Get a list of Lex bots in the customers' AWS accounts
@@ -2100,13 +2065,12 @@ except ApiException as e:
 
 ### Return type
 
-[**LexBotEntityListing**](LexBotEntityListing.html)
+[**LexBotEntityListing**](LexBotEntityListing)
 
 
 ## get_integrations_speech_lexv2_bot_alias
 
 > [**LexV2BotAlias**](LexV2BotAlias) get_integrations_speech_lexv2_bot_alias(alias_id)
-
 
 
 Get details about a Lex V2 bot alias
@@ -2149,13 +2113,12 @@ except ApiException as e:
 
 ### Return type
 
-[**LexV2BotAlias**](LexV2BotAlias.html)
+[**LexV2BotAlias**](LexV2BotAlias)
 
 
 ## get_integrations_speech_lexv2_bot_bot_id_aliases
 
 > [**LexV2BotAliasEntityListing**](LexV2BotAliasEntityListing) get_integrations_speech_lexv2_bot_bot_id_aliases(bot_id, page_number=page_number, page_size=page_size, status=status, name=name)
-
 
 
 Get a list of aliases for a Lex V2 bot
@@ -2206,13 +2169,12 @@ except ApiException as e:
 
 ### Return type
 
-[**LexV2BotAliasEntityListing**](LexV2BotAliasEntityListing.html)
+[**LexV2BotAliasEntityListing**](LexV2BotAliasEntityListing)
 
 
 ## get_integrations_speech_lexv2_bots
 
 > [**LexV2BotEntityListing**](LexV2BotEntityListing) get_integrations_speech_lexv2_bots(page_number=page_number, page_size=page_size, name=name)
-
 
 
 Get a list of Lex V2 bots
@@ -2259,13 +2221,12 @@ except ApiException as e:
 
 ### Return type
 
-[**LexV2BotEntityListing**](LexV2BotEntityListing.html)
+[**LexV2BotEntityListing**](LexV2BotEntityListing)
 
 
 ## get_integrations_speech_nuance_nuance_integration_id_bot
 
 > [**NuanceBot**](NuanceBot) get_integrations_speech_nuance_nuance_integration_id_bot(nuance_integration_id, bot_id, expand=expand, target_channel=target_channel)
-
 
 
 Get a Nuance bot in the specified Integration
@@ -2309,18 +2270,17 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **nuance_integration_id** | **str**| The integration ID for this group of bots |  |
 | **bot_id** | **str**| The Nuance bot ID to get |  |
-| **expand** | [**list[str]**](str.html)| expand | [optional] <br />**Values**: variables, transferNodes, channels, locales |
+| **expand** | [**list[str]**](str)| expand | [optional] <br />**Values**: variables, transferNodes, channels, locales |
 | **target_channel** | **str**| targetChannel | [optional] <br />**Values**: digital, voice |
 
 ### Return type
 
-[**NuanceBot**](NuanceBot.html)
+[**NuanceBot**](NuanceBot)
 
 
 ## get_integrations_speech_nuance_nuance_integration_id_bot_job
 
 > [**AsyncJob**](AsyncJob) get_integrations_speech_nuance_nuance_integration_id_bot_job(nuance_integration_id, bot_id, job_id)
-
 
 
 Get the status of an asynchronous Nuance bot GET job
@@ -2367,13 +2327,12 @@ except ApiException as e:
 
 ### Return type
 
-[**AsyncJob**](AsyncJob.html)
+[**AsyncJob**](AsyncJob)
 
 
 ## get_integrations_speech_nuance_nuance_integration_id_bot_job_results
 
 > [**NuanceBot**](NuanceBot) get_integrations_speech_nuance_nuance_integration_id_bot_job_results(nuance_integration_id, bot_id, job_id)
-
 
 
 Get the result of an asynchronous Nuance bot GET job
@@ -2420,13 +2379,12 @@ except ApiException as e:
 
 ### Return type
 
-[**NuanceBot**](NuanceBot.html)
+[**NuanceBot**](NuanceBot)
 
 
 ## get_integrations_speech_nuance_nuance_integration_id_bots
 
 > [**NuanceBotEntityListing**](NuanceBotEntityListing) get_integrations_speech_nuance_nuance_integration_id_bots(nuance_integration_id, page_number=page_number, page_size=page_size, only_registered_bots=only_registered_bots)
-
 
 
 Get a list of Nuance bots available in the specified Integration
@@ -2477,13 +2435,12 @@ except ApiException as e:
 
 ### Return type
 
-[**NuanceBotEntityListing**](NuanceBotEntityListing.html)
+[**NuanceBotEntityListing**](NuanceBotEntityListing)
 
 
 ## get_integrations_speech_nuance_nuance_integration_id_bots_job
 
 > [**AsyncJob**](AsyncJob) get_integrations_speech_nuance_nuance_integration_id_bots_job(nuance_integration_id, job_id)
-
 
 
 Get the status of an asynchronous Nuance bots GET job
@@ -2528,13 +2485,12 @@ except ApiException as e:
 
 ### Return type
 
-[**AsyncJob**](AsyncJob.html)
+[**AsyncJob**](AsyncJob)
 
 
 ## get_integrations_speech_nuance_nuance_integration_id_bots_job_results
 
 > [**NuanceBotEntityListing**](NuanceBotEntityListing) get_integrations_speech_nuance_nuance_integration_id_bots_job_results(nuance_integration_id, job_id)
-
 
 
 Get the result of an asynchronous Nuance bots GET job
@@ -2579,13 +2535,12 @@ except ApiException as e:
 
 ### Return type
 
-[**NuanceBotEntityListing**](NuanceBotEntityListing.html)
+[**NuanceBotEntityListing**](NuanceBotEntityListing)
 
 
 ## get_integrations_speech_stt_engine
 
 > [**SttEngineEntity**](SttEngineEntity) get_integrations_speech_stt_engine(engine_id)
-
 
 
 Get details about a STT engine
@@ -2628,13 +2583,12 @@ except ApiException as e:
 
 ### Return type
 
-[**SttEngineEntity**](SttEngineEntity.html)
+[**SttEngineEntity**](SttEngineEntity)
 
 
 ## get_integrations_speech_stt_engines
 
 > [**SttEngineEntityListing**](SttEngineEntityListing) get_integrations_speech_stt_engines(page_number=page_number, page_size=page_size, name=name)
-
 
 
 Get a list of STT engines enabled for org
@@ -2681,13 +2635,12 @@ except ApiException as e:
 
 ### Return type
 
-[**SttEngineEntityListing**](SttEngineEntityListing.html)
+[**SttEngineEntityListing**](SttEngineEntityListing)
 
 
 ## get_integrations_speech_tts_engine
 
 > [**TtsEngineEntity**](TtsEngineEntity) get_integrations_speech_tts_engine(engine_id, include_voices=include_voices)
-
 
 
 Get details about a TTS engine
@@ -2732,13 +2685,12 @@ except ApiException as e:
 
 ### Return type
 
-[**TtsEngineEntity**](TtsEngineEntity.html)
+[**TtsEngineEntity**](TtsEngineEntity)
 
 
 ## get_integrations_speech_tts_engine_voice
 
 > [**TtsVoiceEntity**](TtsVoiceEntity) get_integrations_speech_tts_engine_voice(engine_id, voice_id)
-
 
 
 Get details about a specific voice for a TTS engine
@@ -2783,13 +2735,12 @@ except ApiException as e:
 
 ### Return type
 
-[**TtsVoiceEntity**](TtsVoiceEntity.html)
+[**TtsVoiceEntity**](TtsVoiceEntity)
 
 
 ## get_integrations_speech_tts_engine_voices
 
 > [**TtsVoiceEntityListing**](TtsVoiceEntityListing) get_integrations_speech_tts_engine_voices(engine_id, page_number=page_number, page_size=page_size)
-
 
 
 Get a list of voices for a TTS engine
@@ -2836,13 +2787,12 @@ except ApiException as e:
 
 ### Return type
 
-[**TtsVoiceEntityListing**](TtsVoiceEntityListing.html)
+[**TtsVoiceEntityListing**](TtsVoiceEntityListing)
 
 
 ## get_integrations_speech_tts_engines
 
 > [**TtsEngineEntityListing**](TtsEngineEntityListing) get_integrations_speech_tts_engines(page_number=page_number, page_size=page_size, include_voices=include_voices, name=name, language=language)
-
 
 
 Get a list of TTS engines enabled for org
@@ -2893,13 +2843,12 @@ except ApiException as e:
 
 ### Return type
 
-[**TtsEngineEntityListing**](TtsEngineEntityListing.html)
+[**TtsEngineEntityListing**](TtsEngineEntityListing)
 
 
 ## get_integrations_speech_tts_settings
 
 > [**TtsSettings**](TtsSettings) get_integrations_speech_tts_settings()
-
 
 
 Get TTS settings for an org
@@ -2938,13 +2887,12 @@ This endpoint does not need any parameters.
 
 ### Return type
 
-[**TtsSettings**](TtsSettings.html)
+[**TtsSettings**](TtsSettings)
 
 
 ## get_integrations_type
 
 > [**IntegrationType**](IntegrationType) get_integrations_type(type_id)
-
 
 
 Get integration type.
@@ -2987,13 +2935,12 @@ except ApiException as e:
 
 ### Return type
 
-[**IntegrationType**](IntegrationType.html)
+[**IntegrationType**](IntegrationType)
 
 
 ## get_integrations_type_configschema
 
 > [**JsonSchemaDocument**](JsonSchemaDocument) get_integrations_type_configschema(type_id, config_type)
-
 
 
 Get properties config schema for an integration type.
@@ -3038,13 +2985,12 @@ except ApiException as e:
 
 ### Return type
 
-[**JsonSchemaDocument**](JsonSchemaDocument.html)
+[**JsonSchemaDocument**](JsonSchemaDocument)
 
 
 ## get_integrations_types
 
 > [**IntegrationTypeEntityListing**](IntegrationTypeEntityListing) get_integrations_types(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page)
-
 
 
 List integration types
@@ -3091,19 +3037,18 @@ except ApiException as e:
 | **page_size** | **int**| The total page size requested | [optional] [default to 25] |
 | **page_number** | **int**| The page number requested | [optional] [default to 1] |
 | **sort_by** | **str**| variable name requested to sort by | [optional]  |
-| **expand** | [**list[str]**](str.html)| variable name requested by expand list | [optional]  |
+| **expand** | [**list[str]**](str)| variable name requested by expand list | [optional]  |
 | **next_page** | **str**| next page token | [optional]  |
 | **previous_page** | **str**| Previous page token | [optional]  |
 
 ### Return type
 
-[**IntegrationTypeEntityListing**](IntegrationTypeEntityListing.html)
+[**IntegrationTypeEntityListing**](IntegrationTypeEntityListing)
 
 
 ## get_integrations_unifiedcommunications_clientapp
 
 > [**UnifiedCommunicationsIntegration**](UnifiedCommunicationsIntegration) get_integrations_unifiedcommunications_clientapp(uc_integration_id)
-
 
 
 UC integration client application configuration.
@@ -3148,13 +3093,12 @@ except ApiException as e:
 
 ### Return type
 
-[**UnifiedCommunicationsIntegration**](UnifiedCommunicationsIntegration.html)
+[**UnifiedCommunicationsIntegration**](UnifiedCommunicationsIntegration)
 
 
 ## get_integrations_unifiedcommunications_clientapps
 
 > [**UnifiedCommunicationsIntegrationListing**](UnifiedCommunicationsIntegrationListing) get_integrations_unifiedcommunications_clientapps(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page)
-
 
 
 List UC integration client application configurations.
@@ -3203,19 +3147,18 @@ except ApiException as e:
 | **page_size** | **int**| The total page size requested | [optional] [default to 25] |
 | **page_number** | **int**| The page number requested | [optional] [default to 1] |
 | **sort_by** | **str**| variable name requested to sort by | [optional]  |
-| **expand** | [**list[str]**](str.html)| variable name requested by expand list | [optional]  |
+| **expand** | [**list[str]**](str)| variable name requested by expand list | [optional]  |
 | **next_page** | **str**| next page token | [optional]  |
 | **previous_page** | **str**| Previous page token | [optional]  |
 
 ### Return type
 
-[**UnifiedCommunicationsIntegrationListing**](UnifiedCommunicationsIntegrationListing.html)
+[**UnifiedCommunicationsIntegrationListing**](UnifiedCommunicationsIntegrationListing)
 
 
 ## get_integrations_userapps
 
 > [**UserAppEntityListing**](UserAppEntityListing) get_integrations_userapps(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, app_host=app_host)
-
 
 
 List permitted user app integrations for the logged in user
@@ -3262,20 +3205,19 @@ except ApiException as e:
 | **page_size** | **int**| The total page size requested | [optional] [default to 25] |
 | **page_number** | **int**| The page number requested | [optional] [default to 1] |
 | **sort_by** | **str**| variable name requested to sort by | [optional]  |
-| **expand** | [**list[str]**](str.html)| variable name requested by expand list | [optional]  |
+| **expand** | [**list[str]**](str)| variable name requested by expand list | [optional]  |
 | **next_page** | **str**| next page token | [optional]  |
 | **previous_page** | **str**| Previous page token | [optional]  |
 | **app_host** | **str**| The type of UserApp to filter by | [optional]  |
 
 ### Return type
 
-[**UserAppEntityListing**](UserAppEntityListing.html)
+[**UserAppEntityListing**](UserAppEntityListing)
 
 
 ## patch_integration
 
 > [**Integration**](Integration) patch_integration(integration_id, page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, body=body)
-
 
 
 Update an integration.
@@ -3325,20 +3267,19 @@ except ApiException as e:
 | **page_size** | **int**| The total page size requested | [optional] [default to 25] |
 | **page_number** | **int**| The page number requested | [optional] [default to 1] |
 | **sort_by** | **str**| variable name requested to sort by | [optional]  |
-| **expand** | [**list[str]**](str.html)| variable name requested by expand list | [optional]  |
+| **expand** | [**list[str]**](str)| variable name requested by expand list | [optional]  |
 | **next_page** | **str**| next page token | [optional]  |
 | **previous_page** | **str**| Previous page token | [optional]  |
-| **body** | [**Integration**](Integration.html)| Integration Update | [optional]  |
+| **body** | [**Integration**](Integration)| Integration Update | [optional]  |
 
 ### Return type
 
-[**Integration**](Integration.html)
+[**Integration**](Integration)
 
 
 ## patch_integrations_action
 
 > [**Action**](Action) patch_integrations_action(action_id, body)
-
 
 
 Patch an Action
@@ -3379,17 +3320,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **action_id** | **str**| actionId |  |
-| **body** | [**UpdateActionInput**](UpdateActionInput.html)| Input used to patch the Action. |  |
+| **body** | [**UpdateActionInput**](UpdateActionInput)| Input used to patch the Action. |  |
 
 ### Return type
 
-[**Action**](Action.html)
+[**Action**](Action)
 
 
 ## patch_integrations_action_draft
 
 > [**Action**](Action) patch_integrations_action_draft(action_id, body)
-
 
 
 Update an existing Draft
@@ -3430,17 +3370,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **action_id** | **str**| actionId |  |
-| **body** | [**UpdateDraftInput**](UpdateDraftInput.html)| Input used to patch the Action Draft. |  |
+| **body** | [**UpdateDraftInput**](UpdateDraftInput)| Input used to patch the Action Draft. |  |
 
 ### Return type
 
-[**Action**](Action.html)
+[**Action**](Action)
 
 
 ## post_integrations
 
 > [**Integration**](Integration) post_integrations(body=body)
-
 
 
 Create an integration.
@@ -3479,17 +3418,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**CreateIntegrationRequest**](CreateIntegrationRequest.html)| Integration | [optional]  |
+| **body** | [**CreateIntegrationRequest**](CreateIntegrationRequest)| Integration | [optional]  |
 
 ### Return type
 
-[**Integration**](Integration.html)
+[**Integration**](Integration)
 
 
 ## post_integrations_action_draft
 
 > [**Action**](Action) post_integrations_action_draft(action_id)
-
 
 
 Create a new Draft from existing Action
@@ -3532,13 +3470,12 @@ except ApiException as e:
 
 ### Return type
 
-[**Action**](Action.html)
+[**Action**](Action)
 
 
 ## post_integrations_action_draft_function_upload
 
 > [**FunctionUploadResponse**](FunctionUploadResponse) post_integrations_action_draft_function_upload(action_id, body)
-
 
 
 Create upload presigned URL for draft function package file.
@@ -3581,17 +3518,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **action_id** | **str**| actionId |  |
-| **body** | [**FunctionUploadRequest**](FunctionUploadRequest.html)| Input used to request URL upload. |  |
+| **body** | [**FunctionUploadRequest**](FunctionUploadRequest)| Input used to request URL upload. |  |
 
 ### Return type
 
-[**FunctionUploadResponse**](FunctionUploadResponse.html)
+[**FunctionUploadResponse**](FunctionUploadResponse)
 
 
 ## post_integrations_action_draft_publish
 
 > [**Action**](Action) post_integrations_action_draft_publish(action_id, body)
-
 
 
 Publish a Draft and make it the active Action configuration
@@ -3632,17 +3568,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **action_id** | **str**| actionId |  |
-| **body** | [**PublishDraftInput**](PublishDraftInput.html)| Input used to patch the Action. |  |
+| **body** | [**PublishDraftInput**](PublishDraftInput)| Input used to patch the Action. |  |
 
 ### Return type
 
-[**Action**](Action.html)
+[**Action**](Action)
 
 
 ## post_integrations_action_draft_test
 
 > [**TestExecutionResult**](TestExecutionResult) post_integrations_action_draft_test(action_id, body)
-
 
 
 Test the execution of a draft. Responses will show execution steps broken out with intermediate results to help in debugging.
@@ -3683,17 +3618,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **action_id** | **str**| actionId |  |
-| **body** | [**object**](object.html)| Map of parameters used for variable substitution. |  |
+| **body** | [**object**](object)| Map of parameters used for variable substitution. |  |
 
 ### Return type
 
-[**TestExecutionResult**](TestExecutionResult.html)
+[**TestExecutionResult**](TestExecutionResult)
 
 
 ## post_integrations_action_execute
 
 > object** post_integrations_action_execute(action_id, body)
-
 
 
 Execute Action and return response from 3rd party.  Responses will follow the schemas defined on the Action for success and error.
@@ -3735,7 +3669,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **action_id** | **str**| actionId |  |
-| **body** | [**object**](object.html)| Map of parameters used for variable substitution. |  |
+| **body** | [**object**](object)| Map of parameters used for variable substitution. |  |
 
 ### Return type
 
@@ -3745,7 +3679,6 @@ except ApiException as e:
 ## post_integrations_action_test
 
 > [**TestExecutionResult**](TestExecutionResult) post_integrations_action_test(action_id, body)
-
 
 
 Test the execution of an action. Responses will show execution steps broken out with intermediate results to help in debugging.
@@ -3787,17 +3720,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **action_id** | **str**| actionId |  |
-| **body** | [**object**](object.html)| Map of parameters used for variable substitution. |  |
+| **body** | [**object**](object)| Map of parameters used for variable substitution. |  |
 
 ### Return type
 
-[**TestExecutionResult**](TestExecutionResult.html)
+[**TestExecutionResult**](TestExecutionResult)
 
 
 ## post_integrations_actions
 
 > [**Action**](Action) post_integrations_actions(body)
-
 
 
 Create a new Action. Not supported for 'Function Integration' actions. Function integrations must be created as drafts to allow managing of uploading required ZIP function package before they may be used as a published action.
@@ -3836,17 +3768,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**PostActionInput**](PostActionInput.html)| Input used to create Action. |  |
+| **body** | [**PostActionInput**](PostActionInput)| Input used to create Action. |  |
 
 ### Return type
 
-[**Action**](Action.html)
+[**Action**](Action)
 
 
 ## post_integrations_actions_drafts
 
 > [**Action**](Action) post_integrations_actions_drafts(body)
-
 
 
 Create a new Draft
@@ -3885,17 +3816,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**PostActionInput**](PostActionInput.html)| Input used to create Action Draft. |  |
+| **body** | [**PostActionInput**](PostActionInput)| Input used to create Action Draft. |  |
 
 ### Return type
 
-[**Action**](Action.html)
+[**Action**](Action)
 
 
 ## post_integrations_credentials
 
 > [**CredentialInfo**](CredentialInfo) post_integrations_credentials(body=body)
-
 
 
 Create a set of credentials
@@ -3934,17 +3864,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**Credential**](Credential.html)| Credential | [optional]  |
+| **body** | [**Credential**](Credential)| Credential | [optional]  |
 
 ### Return type
 
-[**CredentialInfo**](CredentialInfo.html)
+[**CredentialInfo**](CredentialInfo)
 
 
 ## post_integrations_speech_nuance_nuance_integration_id_bot_jobs
 
 > [**AsyncJob**](AsyncJob) post_integrations_speech_nuance_nuance_integration_id_bot_jobs(nuance_integration_id, bot_id, expand=expand, body=body)
-
 
 
 Get a Nuance bot in the specified Integration asynchronously
@@ -3988,18 +3917,17 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **nuance_integration_id** | **str**| The integration ID for this group of bots |  |
 | **bot_id** | **str**| The Nuance bot ID |  |
-| **expand** | [**list[str]**](str.html)| expand | [optional] <br />**Values**: variables, transferNodes, channels, locales |
+| **expand** | [**list[str]**](str)| expand | [optional] <br />**Values**: variables, transferNodes, channels, locales |
 | **body** | **str**| targetChannel | [optional]  |
 
 ### Return type
 
-[**AsyncJob**](AsyncJob.html)
+[**AsyncJob**](AsyncJob)
 
 
 ## post_integrations_speech_nuance_nuance_integration_id_bots_jobs
 
 > [**AsyncJob**](AsyncJob) post_integrations_speech_nuance_nuance_integration_id_bots_jobs(nuance_integration_id, page_number=page_number, page_size=page_size, only_registered_bots=only_registered_bots)
-
 
 
 Get a list of Nuance bots in the specified Integration asynchronously
@@ -4048,13 +3976,12 @@ except ApiException as e:
 
 ### Return type
 
-[**AsyncJob**](AsyncJob.html)
+[**AsyncJob**](AsyncJob)
 
 
 ## post_integrations_speech_nuance_nuance_integration_id_bots_launch_validate
 
 >  post_integrations_speech_nuance_nuance_integration_id_bots_launch_validate(nuance_integration_id, settings)
-
 
 
 Try out a single credential for a Nuance bot to know if the secret is correct
@@ -4094,7 +4021,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **nuance_integration_id** | **str**| The integration ID for this group of bots |  |
-| **settings** | [**BotExecutionConfiguration**](BotExecutionConfiguration.html)|  |  |
+| **settings** | [**BotExecutionConfiguration**](BotExecutionConfiguration)|  |  |
 
 ### Return type
 
@@ -4104,7 +4031,6 @@ void (empty response body)
 ## put_integration_config_current
 
 > [**IntegrationConfiguration**](IntegrationConfiguration) put_integration_config_current(integration_id, body=body)
-
 
 
 Update integration configuration.
@@ -4145,17 +4071,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **integration_id** | **str**| Integration Id |  |
-| **body** | [**IntegrationConfiguration**](IntegrationConfiguration.html)| Integration Configuration | [optional]  |
+| **body** | [**IntegrationConfiguration**](IntegrationConfiguration)| Integration Configuration | [optional]  |
 
 ### Return type
 
-[**IntegrationConfiguration**](IntegrationConfiguration.html)
+[**IntegrationConfiguration**](IntegrationConfiguration)
 
 
 ## put_integrations_action_draft_function
 
 > [**FunctionConfig**](FunctionConfig) put_integrations_action_draft_function(action_id, body)
-
 
 
 Update draft function settings.
@@ -4198,17 +4123,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **action_id** | **str**| actionId |  |
-| **body** | [**Function**](Function.html)| Input used to update function settings. |  |
+| **body** | [**Function**](Function)| Input used to update function settings. |  |
 
 ### Return type
 
-[**FunctionConfig**](FunctionConfig.html)
+[**FunctionConfig**](FunctionConfig)
 
 
 ## put_integrations_botconnector_integration_id_bots
 
 >  put_integrations_botconnector_integration_id_bots(integration_id, bot_list)
-
 
 
 Set a list of botConnector bots plus versions for this integration
@@ -4248,7 +4172,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **integration_id** | **str**| The integration ID for this group of bots |  |
-| **bot_list** | [**BotList**](BotList.html)|  |  |
+| **bot_list** | [**BotList**](BotList)|  |  |
 
 ### Return type
 
@@ -4258,7 +4182,6 @@ void (empty response body)
 ## put_integrations_credential
 
 > [**CredentialInfo**](CredentialInfo) put_integrations_credential(credential_id, body=body)
-
 
 
 Update a set of credentials
@@ -4299,17 +4222,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **credential_id** | **str**| Credential ID |  |
-| **body** | [**Credential**](Credential.html)| Credential | [optional]  |
+| **body** | [**Credential**](Credential)| Credential | [optional]  |
 
 ### Return type
 
-[**CredentialInfo**](CredentialInfo.html)
+[**CredentialInfo**](CredentialInfo)
 
 
 ## put_integrations_speech_nuance_nuance_integration_id_bots_launch_settings
 
 >  put_integrations_speech_nuance_nuance_integration_id_bots_launch_settings(nuance_integration_id, settings)
-
 
 
 Update the Nuance bot list for the specific bots made available to Genesys Cloud in the specified Integration
@@ -4349,7 +4271,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **nuance_integration_id** | **str**| The integration ID for this group of bots |  |
-| **settings** | [**NuanceBotLaunchSettings**](NuanceBotLaunchSettings.html)|  |  |
+| **settings** | [**NuanceBotLaunchSettings**](NuanceBotLaunchSettings)|  |  |
 
 ### Return type
 
@@ -4359,7 +4281,6 @@ void (empty response body)
 ## put_integrations_speech_tts_settings
 
 > [**TtsSettings**](TtsSettings) put_integrations_speech_tts_settings(body)
-
 
 
 Update TTS settings for an org
@@ -4398,17 +4319,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**TtsSettings**](TtsSettings.html)| Updated TtsSettings |  |
+| **body** | [**TtsSettings**](TtsSettings)| Updated TtsSettings |  |
 
 ### Return type
 
-[**TtsSettings**](TtsSettings.html)
+[**TtsSettings**](TtsSettings)
 
 
 ## put_integrations_unifiedcommunication_thirdpartypresences
 
 > str** put_integrations_unifiedcommunication_thirdpartypresences(uc_integration_id, body)
-
 
 
 Bulk integration presence ingestion
@@ -4451,11 +4371,11 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **uc_integration_id** | **str**| UC Integration ID |  |
-| **body** | [**list[UCThirdPartyPresence]**](UCThirdPartyPresence.html)| List of User presences |  |
+| **body** | [**list[UCThirdPartyPresence]**](UCThirdPartyPresence)| List of User presences |  |
 
 ### Return type
 
 **str**
 
 
-_PureCloudPlatformClientV2 210.0.0_
+_PureCloudPlatformClientV2 211.0.0_

@@ -14,7 +14,8 @@
 | **conversation_disconnect** | [ConversationDisconnectSettings](ConversationDisconnectSettings) | The conversation disconnect settings for the messenger app | [optional] |
 | **conversation_clear** | [ConversationClearSettings](ConversationClearSettings) | The conversation clear settings for the messenger app | [optional] |
 | **humanize** | [Humanize](Humanize) | The humanize conversations settings for the messenger app | [optional] |
+| **notifications** | [NotificationsSettings](NotificationsSettings) | The notification settings for messenger apps | [optional] |
 
 
 
-_PureCloudPlatformClientV2 210.0.0_
+_PureCloudPlatformClientV2 211.0.0_

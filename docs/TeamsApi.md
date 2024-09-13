@@ -16,13 +16,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_team_members**](#post_team_members) | Add team members|
 |[**post_teams**](#post_teams) | Create a team|
 |[**post_teams_search**](#post_teams_search) | Search resources.|
-{: class="table table-striped"}
+
 
 
 ## delete_team
 
 >  delete_team(team_id)
-
 
 
 Delete team
@@ -70,7 +69,6 @@ void (empty response body)
 ## delete_team_members
 
 >  delete_team_members(team_id, id)
-
 
 
 Delete team members
@@ -122,7 +120,6 @@ void (empty response body)
 > [**Team**](Team) get_team(team_id)
 
 
-
 Get team
 
 Wraps GET /api/v2/teams/{teamId} 
@@ -163,13 +160,12 @@ except ApiException as e:
 
 ### Return type
 
-[**Team**](Team.html)
+[**Team**](Team)
 
 
 ## get_team_members
 
 > [**TeamMemberEntityListing**](TeamMemberEntityListing) get_team_members(team_id, page_size=page_size, before=before, after=after, expand=expand)
-
 
 
 Get team membership
@@ -220,13 +216,12 @@ except ApiException as e:
 
 ### Return type
 
-[**TeamMemberEntityListing**](TeamMemberEntityListing.html)
+[**TeamMemberEntityListing**](TeamMemberEntityListing)
 
 
 ## get_teams
 
 > [**TeamEntityListing**](TeamEntityListing) get_teams(page_size=page_size, name=name, after=after, before=before, expand=expand)
-
 
 
 Get Team listing
@@ -277,13 +272,12 @@ except ApiException as e:
 
 ### Return type
 
-[**TeamEntityListing**](TeamEntityListing.html)
+[**TeamEntityListing**](TeamEntityListing)
 
 
 ## patch_team
 
 > [**Team**](Team) patch_team(team_id, body)
-
 
 
 Update team
@@ -324,17 +318,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **team_id** | **str**| Team ID |  |
-| **body** | [**Team**](Team.html)| Team |  |
+| **body** | [**Team**](Team)| Team |  |
 
 ### Return type
 
-[**Team**](Team.html)
+[**Team**](Team)
 
 
 ## post_analytics_teams_activity_query
 
 > [**TeamActivityResponse**](TeamActivityResponse) post_analytics_teams_activity_query(body, page_size=page_size, page_number=page_number)
-
 
 
 Query for team activity observations
@@ -375,19 +368,18 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**TeamActivityQuery**](TeamActivityQuery.html)| query |  |
+| **body** | [**TeamActivityQuery**](TeamActivityQuery)| query |  |
 | **page_size** | **int**| The desired page size | [optional]  |
 | **page_number** | **int**| The desired page number | [optional]  |
 
 ### Return type
 
-[**TeamActivityResponse**](TeamActivityResponse.html)
+[**TeamActivityResponse**](TeamActivityResponse)
 
 
 ## post_team_members
 
 > [**TeamMemberAddListingResponse**](TeamMemberAddListingResponse) post_team_members(team_id, body)
-
 
 
 Add team members
@@ -428,17 +420,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **team_id** | **str**| Team ID |  |
-| **body** | [**TeamMembers**](TeamMembers.html)| TeamMembers |  |
+| **body** | [**TeamMembers**](TeamMembers)| TeamMembers |  |
 
 ### Return type
 
-[**TeamMemberAddListingResponse**](TeamMemberAddListingResponse.html)
+[**TeamMemberAddListingResponse**](TeamMemberAddListingResponse)
 
 
 ## post_teams
 
 > [**Team**](Team) post_teams(body)
-
 
 
 Create a team
@@ -477,17 +468,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**Team**](Team.html)| Team |  |
+| **body** | [**Team**](Team)| Team |  |
 
 ### Return type
 
-[**Team**](Team.html)
+[**Team**](Team)
 
 
 ## post_teams_search
 
 > [**TeamsSearchResponse**](TeamsSearchResponse) post_teams_search(body)
-
 
 
 Search resources.
@@ -526,11 +516,11 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**TeamSearchRequest**](TeamSearchRequest.html)| Search request options |  |
+| **body** | [**TeamSearchRequest**](TeamSearchRequest)| Search request options |  |
 
 ### Return type
 
-[**TeamsSearchResponse**](TeamsSearchResponse.html)
+[**TeamsSearchResponse**](TeamsSearchResponse)
 
 
-_PureCloudPlatformClientV2 210.0.0_
+_PureCloudPlatformClientV2 211.0.0_

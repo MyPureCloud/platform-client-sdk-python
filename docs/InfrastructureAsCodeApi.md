@@ -11,13 +11,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_infrastructureascode_job**](#get_infrastructureascode_job) | Get job status and results|
 |[**get_infrastructureascode_jobs**](#get_infrastructureascode_jobs) | Get job history|
 |[**post_infrastructureascode_jobs**](#post_infrastructureascode_jobs) | Create a Job|
-{: class="table table-striped"}
+
 
 
 ## get_infrastructureascode_accelerator
 
 > [**AcceleratorSpecification**](AcceleratorSpecification) get_infrastructureascode_accelerator(accelerator_id, preferred_language=preferred_language)
-
 
 
 Get information about an accelerator
@@ -64,13 +63,12 @@ except ApiException as e:
 
 ### Return type
 
-[**AcceleratorSpecification**](AcceleratorSpecification.html)
+[**AcceleratorSpecification**](AcceleratorSpecification)
 
 
 ## get_infrastructureascode_accelerators
 
 > [**AcceleratorList**](AcceleratorList) get_infrastructureascode_accelerators(page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order, name=name, description=description, origin=origin, type=type, classification=classification, tags=tags)
-
 
 
 Get a list of available accelerators
@@ -133,13 +131,12 @@ except ApiException as e:
 
 ### Return type
 
-[**AcceleratorList**](AcceleratorList.html)
+[**AcceleratorList**](AcceleratorList)
 
 
 ## get_infrastructureascode_job
 
 > [**InfrastructureascodeJob**](InfrastructureascodeJob) get_infrastructureascode_job(job_id, details=details)
-
 
 
 Get job status and results
@@ -186,13 +183,12 @@ except ApiException as e:
 
 ### Return type
 
-[**InfrastructureascodeJob**](InfrastructureascodeJob.html)
+[**InfrastructureascodeJob**](InfrastructureascodeJob)
 
 
 ## get_infrastructureascode_jobs
 
 > [**InfrastructureascodeJob**](InfrastructureascodeJob) get_infrastructureascode_jobs(max_results=max_results, include_errors=include_errors, sort_by=sort_by, sort_order=sort_order, accelerator_id=accelerator_id, submitted_by=submitted_by, status=status)
-
 
 
 Get job history
@@ -249,13 +245,12 @@ except ApiException as e:
 
 ### Return type
 
-[**InfrastructureascodeJob**](InfrastructureascodeJob.html)
+[**InfrastructureascodeJob**](InfrastructureascodeJob)
 
 
 ## post_infrastructureascode_jobs
 
 > [**InfrastructureascodeJob**](InfrastructureascodeJob) post_infrastructureascode_jobs(body)
-
 
 
 Create a Job
@@ -296,11 +291,11 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**AcceleratorInput**](AcceleratorInput.html)|  |  |
+| **body** | [**AcceleratorInput**](AcceleratorInput)|  |  |
 
 ### Return type
 
-[**InfrastructureascodeJob**](InfrastructureascodeJob.html)
+[**InfrastructureascodeJob**](InfrastructureascodeJob)
 
 
-_PureCloudPlatformClientV2 210.0.0_
+_PureCloudPlatformClientV2 211.0.0_

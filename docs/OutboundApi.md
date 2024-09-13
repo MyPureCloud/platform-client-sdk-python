@@ -167,13 +167,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**put_outbound_schedules_sequence**](#put_outbound_schedules_sequence) | Update a new sequence schedule.|
 |[**put_outbound_sequence**](#put_outbound_sequence) | Update a new campaign sequence.|
 |[**put_outbound_wrapupcodemappings**](#put_outbound_wrapupcodemappings) | Update the Dialer wrap up code mapping.|
-{: class="table table-striped"}
+
 
 
 ## delete_outbound_attemptlimit
 
 >  delete_outbound_attemptlimit(attempt_limits_id)
-
 
 
 Delete attempt limits
@@ -223,7 +222,6 @@ void (empty response body)
 >  delete_outbound_callabletimeset(callable_time_set_id)
 
 
-
 Delete callable time set
 
 Wraps DELETE /api/v2/outbound/callabletimesets/{callableTimeSetId} 
@@ -269,7 +267,6 @@ void (empty response body)
 ## delete_outbound_callanalysisresponseset
 
 >  delete_outbound_callanalysisresponseset(call_analysis_set_id)
-
 
 
 Delete a dialer call analysis response set.
@@ -319,7 +316,6 @@ void (empty response body)
 > [**Campaign**](Campaign) delete_outbound_campaign(campaign_id)
 
 
-
 Delete a campaign.
 
 Wraps DELETE /api/v2/outbound/campaigns/{campaignId} 
@@ -360,13 +356,12 @@ except ApiException as e:
 
 ### Return type
 
-[**Campaign**](Campaign.html)
+[**Campaign**](Campaign)
 
 
 ## delete_outbound_campaign_progress
 
 >  delete_outbound_campaign_progress(campaign_id)
-
 
 
 Reset campaign progress and recycle the campaign
@@ -417,7 +412,6 @@ void (empty response body)
 >  delete_outbound_campaignrule(campaign_rule_id)
 
 
-
 Delete Campaign Rule
 
 Wraps DELETE /api/v2/outbound/campaignrules/{campaignRuleId} 
@@ -465,7 +459,6 @@ void (empty response body)
 >  delete_outbound_contactlist(contact_list_id)
 
 
-
 Delete a contact list.
 
 Wraps DELETE /api/v2/outbound/contactlists/{contactListId} 
@@ -511,7 +504,6 @@ void (empty response body)
 ## delete_outbound_contactlist_contact
 
 >  delete_outbound_contactlist_contact(contact_list_id, contact_id)
-
 
 
 Delete a contact.
@@ -563,7 +555,6 @@ void (empty response body)
 >  delete_outbound_contactlist_contacts(contact_list_id, contact_ids)
 
 
-
 Delete contacts from a contact list.
 
 Wraps DELETE /api/v2/outbound/contactlists/{contactListId}/contacts 
@@ -601,7 +592,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **contact_list_id** | **str**| Contact List ID |  |
-| **contact_ids** | [**list[str]**](str.html)| ContactIds to delete. |  |
+| **contact_ids** | [**list[str]**](str)| ContactIds to delete. |  |
 
 ### Return type
 
@@ -611,7 +602,6 @@ void (empty response body)
 ## delete_outbound_contactlistfilter
 
 >  delete_outbound_contactlistfilter(contact_list_filter_id)
-
 
 
 Delete Contact List Filter
@@ -661,7 +651,6 @@ void (empty response body)
 >  delete_outbound_contactlists(id)
 
 
-
 Delete multiple contact lists.
 
 Wraps DELETE /api/v2/outbound/contactlists 
@@ -697,7 +686,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **id** | [**list[str]**](str.html)| contact list id(s) to delete |  |
+| **id** | [**list[str]**](str)| contact list id(s) to delete |  |
 
 ### Return type
 
@@ -707,7 +696,6 @@ void (empty response body)
 ## delete_outbound_contactlisttemplate
 
 >  delete_outbound_contactlisttemplate(contact_list_template_id)
-
 
 
 Delete Contact List Template
@@ -757,7 +745,6 @@ void (empty response body)
 >  delete_outbound_contactlisttemplates(id)
 
 
-
 Delete multiple contact list templates.
 
 Wraps DELETE /api/v2/outbound/contactlisttemplates 
@@ -793,7 +780,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **id** | [**list[str]**](str.html)| contact list template id(s) to delete |  |
+| **id** | [**list[str]**](str)| contact list template id(s) to delete |  |
 
 ### Return type
 
@@ -803,7 +790,6 @@ void (empty response body)
 ## delete_outbound_digitalruleset
 
 >  delete_outbound_digitalruleset(digital_rule_set_id)
-
 
 
 Delete an Outbound Digital Rule Set
@@ -853,7 +839,6 @@ void (empty response body)
 >  delete_outbound_dnclist(dnc_list_id)
 
 
-
 Delete dialer DNC list
 
 Wraps DELETE /api/v2/outbound/dnclists/{dncListId} 
@@ -899,7 +884,6 @@ void (empty response body)
 ## delete_outbound_dnclist_customexclusioncolumns
 
 >  delete_outbound_dnclist_customexclusioncolumns(dnc_list_id, expired_only=expired_only)
-
 
 
 Deletes all or expired custom exclusion column entries from a DNC list.
@@ -953,7 +937,6 @@ void (empty response body)
 >  delete_outbound_dnclist_emailaddresses(dnc_list_id, expired_only=expired_only)
 
 
-
 Deletes all or expired email addresses from a DNC list.
 
 This operation is Only for Internal DNC lists of email addresses
@@ -1003,7 +986,6 @@ void (empty response body)
 ## delete_outbound_dnclist_phonenumbers
 
 >  delete_outbound_dnclist_phonenumbers(dnc_list_id, expired_only=expired_only)
-
 
 
 Deletes all or expired phone numbers from a DNC list.
@@ -1057,7 +1039,6 @@ void (empty response body)
 >  delete_outbound_filespecificationtemplate(file_specification_template_id)
 
 
-
 Delete File Specification Template
 
 Wraps DELETE /api/v2/outbound/filespecificationtemplates/{fileSpecificationTemplateId} 
@@ -1105,7 +1086,6 @@ void (empty response body)
 >  delete_outbound_filespecificationtemplates_bulk(id)
 
 
-
 Delete multiple file specification templates.
 
 Wraps DELETE /api/v2/outbound/filespecificationtemplates/bulk 
@@ -1141,7 +1121,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **id** | [**list[str]**](str.html)| File Specification template id(s) to delete |  |
+| **id** | [**list[str]**](str)| File Specification template id(s) to delete |  |
 
 ### Return type
 
@@ -1151,7 +1131,6 @@ void (empty response body)
 ## delete_outbound_importtemplate
 
 >  delete_outbound_importtemplate(import_template_id)
-
 
 
 Delete Import Template
@@ -1201,7 +1180,6 @@ void (empty response body)
 >  delete_outbound_importtemplates(id)
 
 
-
 Delete multiple import templates.
 
 Wraps DELETE /api/v2/outbound/importtemplates 
@@ -1237,7 +1215,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **id** | [**list[str]**](str.html)| import template id(s) to delete |  |
+| **id** | [**list[str]**](str)| import template id(s) to delete |  |
 
 ### Return type
 
@@ -1247,7 +1225,6 @@ void (empty response body)
 ## delete_outbound_messagingcampaign
 
 > [**MessagingCampaign**](MessagingCampaign) delete_outbound_messagingcampaign(messaging_campaign_id)
-
 
 
 Delete an Outbound Messaging Campaign
@@ -1291,13 +1268,12 @@ except ApiException as e:
 
 ### Return type
 
-[**MessagingCampaign**](MessagingCampaign.html)
+[**MessagingCampaign**](MessagingCampaign)
 
 
 ## delete_outbound_messagingcampaign_progress
 
 >  delete_outbound_messagingcampaign_progress(messaging_campaign_id)
-
 
 
 Reset messaging campaign progress and recycle the messaging campaign
@@ -1352,7 +1328,6 @@ void (empty response body)
 >  delete_outbound_ruleset(rule_set_id)
 
 
-
 Delete a Rule Set.
 
 Wraps DELETE /api/v2/outbound/rulesets/{ruleSetId} 
@@ -1398,7 +1373,6 @@ void (empty response body)
 ## delete_outbound_schedules_campaign
 
 >  delete_outbound_schedules_campaign(campaign_id)
-
 
 
 Delete a dialer campaign schedule.
@@ -1448,7 +1422,6 @@ void (empty response body)
 >  delete_outbound_schedules_emailcampaign(email_campaign_id)
 
 
-
 Delete an email campaign schedule.
 
 Wraps DELETE /api/v2/outbound/schedules/emailcampaigns/{emailCampaignId} 
@@ -1494,7 +1467,6 @@ void (empty response body)
 ## delete_outbound_schedules_messagingcampaign
 
 >  delete_outbound_schedules_messagingcampaign(messaging_campaign_id)
-
 
 
 Delete a messaging campaign schedule.
@@ -1544,7 +1516,6 @@ void (empty response body)
 >  delete_outbound_schedules_sequence(sequence_id)
 
 
-
 Delete a dialer sequence schedule.
 
 Wraps DELETE /api/v2/outbound/schedules/sequences/{sequenceId} 
@@ -1590,7 +1561,6 @@ void (empty response body)
 ## delete_outbound_sequence
 
 >  delete_outbound_sequence(sequence_id)
-
 
 
 Delete a dialer campaign sequence.
@@ -1640,7 +1610,6 @@ void (empty response body)
 > [**AttemptLimits**](AttemptLimits) get_outbound_attemptlimit(attempt_limits_id)
 
 
-
 Get attempt limits
 
 Wraps GET /api/v2/outbound/attemptlimits/{attemptLimitsId} 
@@ -1681,13 +1650,12 @@ except ApiException as e:
 
 ### Return type
 
-[**AttemptLimits**](AttemptLimits.html)
+[**AttemptLimits**](AttemptLimits)
 
 
 ## get_outbound_attemptlimits
 
 > [**AttemptLimitsEntityListing**](AttemptLimitsEntityListing) get_outbound_attemptlimits(page_size=page_size, page_number=page_number, allow_empty_result=allow_empty_result, filter_type=filter_type, name=name, sort_by=sort_by, sort_order=sort_order)
-
 
 
 Query attempt limits list
@@ -1742,13 +1710,12 @@ except ApiException as e:
 
 ### Return type
 
-[**AttemptLimitsEntityListing**](AttemptLimitsEntityListing.html)
+[**AttemptLimitsEntityListing**](AttemptLimitsEntityListing)
 
 
 ## get_outbound_callabletimeset
 
 > [**CallableTimeSet**](CallableTimeSet) get_outbound_callabletimeset(callable_time_set_id)
-
 
 
 Get callable time set
@@ -1791,13 +1758,12 @@ except ApiException as e:
 
 ### Return type
 
-[**CallableTimeSet**](CallableTimeSet.html)
+[**CallableTimeSet**](CallableTimeSet)
 
 
 ## get_outbound_callabletimesets
 
 > [**CallableTimeSetEntityListing**](CallableTimeSetEntityListing) get_outbound_callabletimesets(page_size=page_size, page_number=page_number, allow_empty_result=allow_empty_result, filter_type=filter_type, name=name, sort_by=sort_by, sort_order=sort_order)
-
 
 
 Query callable time set list
@@ -1852,13 +1818,12 @@ except ApiException as e:
 
 ### Return type
 
-[**CallableTimeSetEntityListing**](CallableTimeSetEntityListing.html)
+[**CallableTimeSetEntityListing**](CallableTimeSetEntityListing)
 
 
 ## get_outbound_callanalysisresponseset
 
 > [**ResponseSet**](ResponseSet) get_outbound_callanalysisresponseset(call_analysis_set_id)
-
 
 
 Get a dialer call analysis response set.
@@ -1901,13 +1866,12 @@ except ApiException as e:
 
 ### Return type
 
-[**ResponseSet**](ResponseSet.html)
+[**ResponseSet**](ResponseSet)
 
 
 ## get_outbound_callanalysisresponsesets
 
 > [**ResponseSetEntityListing**](ResponseSetEntityListing) get_outbound_callanalysisresponsesets(page_size=page_size, page_number=page_number, allow_empty_result=allow_empty_result, filter_type=filter_type, name=name, sort_by=sort_by, sort_order=sort_order)
-
 
 
 Query a list of dialer call analysis response sets.
@@ -1962,13 +1926,12 @@ except ApiException as e:
 
 ### Return type
 
-[**ResponseSetEntityListing**](ResponseSetEntityListing.html)
+[**ResponseSetEntityListing**](ResponseSetEntityListing)
 
 
 ## get_outbound_campaign
 
 > [**Campaign**](Campaign) get_outbound_campaign(campaign_id)
-
 
 
 Get dialer campaign.
@@ -2011,13 +1974,12 @@ except ApiException as e:
 
 ### Return type
 
-[**Campaign**](Campaign.html)
+[**Campaign**](Campaign)
 
 
 ## get_outbound_campaign_agentownedmappingpreview_results
 
 > [**AgentOwnedMappingPreviewListing**](AgentOwnedMappingPreviewListing) get_outbound_campaign_agentownedmappingpreview_results(campaign_id)
-
 
 
 Get a preview of how agents will be mapped to this campaign's contact list.
@@ -2062,13 +2024,12 @@ except ApiException as e:
 
 ### Return type
 
-[**AgentOwnedMappingPreviewListing**](AgentOwnedMappingPreviewListing.html)
+[**AgentOwnedMappingPreviewListing**](AgentOwnedMappingPreviewListing)
 
 
 ## get_outbound_campaign_diagnostics
 
 > [**CampaignDiagnostics**](CampaignDiagnostics) get_outbound_campaign_diagnostics(campaign_id)
-
 
 
 Get campaign diagnostics
@@ -2111,13 +2072,12 @@ except ApiException as e:
 
 ### Return type
 
-[**CampaignDiagnostics**](CampaignDiagnostics.html)
+[**CampaignDiagnostics**](CampaignDiagnostics)
 
 
 ## get_outbound_campaign_interactions
 
 > [**CampaignInteractions**](CampaignInteractions) get_outbound_campaign_interactions(campaign_id)
-
 
 
 Get dialer campaign interactions.
@@ -2160,13 +2120,12 @@ except ApiException as e:
 
 ### Return type
 
-[**CampaignInteractions**](CampaignInteractions.html)
+[**CampaignInteractions**](CampaignInteractions)
 
 
 ## get_outbound_campaign_linedistribution
 
 > [**CampaignOutboundLinesDistribution**](CampaignOutboundLinesDistribution) get_outbound_campaign_linedistribution(campaign_id, include_only_active_campaigns=include_only_active_campaigns, edge_group_id=edge_group_id, site_id=site_id, use_weight=use_weight, relative_weight=relative_weight, outbound_line_count=outbound_line_count)
-
 
 
 Get line distribution information for campaigns using same Edge Group or Site as given campaign
@@ -2221,13 +2180,12 @@ except ApiException as e:
 
 ### Return type
 
-[**CampaignOutboundLinesDistribution**](CampaignOutboundLinesDistribution.html)
+[**CampaignOutboundLinesDistribution**](CampaignOutboundLinesDistribution)
 
 
 ## get_outbound_campaign_progress
 
 > [**CampaignProgress**](CampaignProgress) get_outbound_campaign_progress(campaign_id)
-
 
 
 Get campaign progress
@@ -2270,13 +2228,12 @@ except ApiException as e:
 
 ### Return type
 
-[**CampaignProgress**](CampaignProgress.html)
+[**CampaignProgress**](CampaignProgress)
 
 
 ## get_outbound_campaign_stats
 
 > [**CampaignStats**](CampaignStats) get_outbound_campaign_stats(campaign_id)
-
 
 
 Get statistics about a Dialer Campaign
@@ -2319,13 +2276,12 @@ except ApiException as e:
 
 ### Return type
 
-[**CampaignStats**](CampaignStats.html)
+[**CampaignStats**](CampaignStats)
 
 
 ## get_outbound_campaignrule
 
 > [**CampaignRule**](CampaignRule) get_outbound_campaignrule(campaign_rule_id)
-
 
 
 Get Campaign Rule
@@ -2368,13 +2324,12 @@ except ApiException as e:
 
 ### Return type
 
-[**CampaignRule**](CampaignRule.html)
+[**CampaignRule**](CampaignRule)
 
 
 ## get_outbound_campaignrules
 
 > [**CampaignRuleEntityListing**](CampaignRuleEntityListing) get_outbound_campaignrules(page_size=page_size, page_number=page_number, allow_empty_result=allow_empty_result, filter_type=filter_type, name=name, sort_by=sort_by, sort_order=sort_order)
-
 
 
 Query Campaign Rule list
@@ -2429,13 +2384,12 @@ except ApiException as e:
 
 ### Return type
 
-[**CampaignRuleEntityListing**](CampaignRuleEntityListing.html)
+[**CampaignRuleEntityListing**](CampaignRuleEntityListing)
 
 
 ## get_outbound_campaigns
 
 > [**CampaignEntityListing**](CampaignEntityListing) get_outbound_campaigns(page_size=page_size, page_number=page_number, filter_type=filter_type, name=name, id=id, contact_list_id=contact_list_id, dnc_list_ids=dnc_list_ids, distribution_queue_id=distribution_queue_id, edge_group_id=edge_group_id, call_analysis_response_set_id=call_analysis_response_set_id, division_id=division_id, sort_by=sort_by, sort_order=sort_order)
-
 
 
 Query a list of dialer campaigns.
@@ -2490,25 +2444,24 @@ except ApiException as e:
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **filter_type** | **str**| Filter type | [optional] [default to &#39;Prefix&#39;]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
 | **name** | **str**| Name | [optional]  |
-| **id** | [**list[str]**](str.html)| id | [optional]  |
+| **id** | [**list[str]**](str)| id | [optional]  |
 | **contact_list_id** | **str**| Contact List ID | [optional]  |
 | **dnc_list_ids** | **str**| DNC list ID | [optional]  |
 | **distribution_queue_id** | **str**| Distribution queue ID | [optional]  |
 | **edge_group_id** | **str**| Edge group ID | [optional]  |
 | **call_analysis_response_set_id** | **str**| Call analysis response set ID | [optional]  |
-| **division_id** | [**list[str]**](str.html)| Division ID(s) | [optional]  |
+| **division_id** | [**list[str]**](str)| Division ID(s) | [optional]  |
 | **sort_by** | **str**| Sort by | [optional]  |
 | **sort_order** | **str**| Sort order | [optional] [default to &#39;a&#39;]<br />**Values**: ascending, descending |
 
 ### Return type
 
-[**CampaignEntityListing**](CampaignEntityListing.html)
+[**CampaignEntityListing**](CampaignEntityListing)
 
 
 ## get_outbound_campaigns_all
 
 > [**CommonCampaignEntityListing**](CommonCampaignEntityListing) get_outbound_campaigns_all(page_size=page_size, page_number=page_number, id=id, name=name, division_id=division_id, media_type=media_type, sort_order=sort_order)
-
 
 
 Query across all types of campaigns by division
@@ -2557,21 +2510,20 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
-| **id** | [**list[str]**](str.html)| Campaign ID(s) | [optional]  |
+| **id** | [**list[str]**](str)| Campaign ID(s) | [optional]  |
 | **name** | **str**| Campaign name(s) | [optional]  |
-| **division_id** | [**list[str]**](str.html)| Division ID(s) | [optional]  |
-| **media_type** | [**list[str]**](str.html)| Media type(s) | [optional] <br />**Values**: email, sms, voice |
+| **division_id** | [**list[str]**](str)| Division ID(s) | [optional]  |
+| **media_type** | [**list[str]**](str)| Media type(s) | [optional] <br />**Values**: email, sms, voice |
 | **sort_order** | **str**| Sort order | [optional] [default to &#39;a&#39;]<br />**Values**: ascending, descending |
 
 ### Return type
 
-[**CommonCampaignEntityListing**](CommonCampaignEntityListing.html)
+[**CommonCampaignEntityListing**](CommonCampaignEntityListing)
 
 
 ## get_outbound_campaigns_all_divisionviews
 
 > [**CommonCampaignDivisionViewEntityListing**](CommonCampaignDivisionViewEntityListing) get_outbound_campaigns_all_divisionviews(page_size=page_size, page_number=page_number, id=id, name=name, division_id=division_id, media_type=media_type, sort_order=sort_order)
-
 
 
 Query across all types of campaigns
@@ -2620,21 +2572,20 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
-| **id** | [**list[str]**](str.html)| Campaign ID(s) | [optional]  |
+| **id** | [**list[str]**](str)| Campaign ID(s) | [optional]  |
 | **name** | **str**| Campaign name(s) | [optional]  |
-| **division_id** | [**list[str]**](str.html)| Division ID(s) | [optional]  |
-| **media_type** | [**list[str]**](str.html)| Media type(s) | [optional] <br />**Values**: email, sms, voice |
+| **division_id** | [**list[str]**](str)| Division ID(s) | [optional]  |
+| **media_type** | [**list[str]**](str)| Media type(s) | [optional] <br />**Values**: email, sms, voice |
 | **sort_order** | **str**| Sort order | [optional] [default to &#39;a&#39;]<br />**Values**: ascending, descending |
 
 ### Return type
 
-[**CommonCampaignDivisionViewEntityListing**](CommonCampaignDivisionViewEntityListing.html)
+[**CommonCampaignDivisionViewEntityListing**](CommonCampaignDivisionViewEntityListing)
 
 
 ## get_outbound_campaigns_divisionview
 
 > [**CampaignDivisionView**](CampaignDivisionView) get_outbound_campaigns_divisionview(campaign_id)
-
 
 
 Get a basic Campaign information object
@@ -2679,13 +2630,12 @@ except ApiException as e:
 
 ### Return type
 
-[**CampaignDivisionView**](CampaignDivisionView.html)
+[**CampaignDivisionView**](CampaignDivisionView)
 
 
 ## get_outbound_campaigns_divisionviews
 
 > [**CampaignDivisionViewListing**](CampaignDivisionViewListing) get_outbound_campaigns_divisionviews(page_size=page_size, page_number=page_number, filter_type=filter_type, name=name, id=id, sort_by=sort_by, sort_order=sort_order)
-
 
 
 Query a list of basic Campaign information objects
@@ -2736,19 +2686,18 @@ except ApiException as e:
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **filter_type** | **str**| Filter type | [optional] [default to &#39;Prefix&#39;]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
 | **name** | **str**| Name | [optional]  |
-| **id** | [**list[str]**](str.html)| id | [optional]  |
+| **id** | [**list[str]**](str)| id | [optional]  |
 | **sort_by** | **str**| Sort by | [optional]  |
 | **sort_order** | **str**| Sort order | [optional] [default to &#39;a&#39;]<br />**Values**: ascending, descending |
 
 ### Return type
 
-[**CampaignDivisionViewListing**](CampaignDivisionViewListing.html)
+[**CampaignDivisionViewListing**](CampaignDivisionViewListing)
 
 
 ## get_outbound_contactlist
 
 > [**ContactList**](ContactList) get_outbound_contactlist(contact_list_id, include_import_status=include_import_status, include_size=include_size)
-
 
 
 Get a dialer contact list.
@@ -2795,13 +2744,12 @@ except ApiException as e:
 
 ### Return type
 
-[**ContactList**](ContactList.html)
+[**ContactList**](ContactList)
 
 
 ## get_outbound_contactlist_contact
 
 > [**DialerContact**](DialerContact) get_outbound_contactlist_contact(contact_list_id, contact_id)
-
 
 
 Get a contact.
@@ -2846,13 +2794,12 @@ except ApiException as e:
 
 ### Return type
 
-[**DialerContact**](DialerContact.html)
+[**DialerContact**](DialerContact)
 
 
 ## get_outbound_contactlist_contacts_bulk_job
 
 > [**ContactsBulkOperationJob**](ContactsBulkOperationJob) get_outbound_contactlist_contacts_bulk_job(contact_list_id, job_id)
-
 
 
 Get bulk operation job.
@@ -2897,13 +2844,12 @@ except ApiException as e:
 
 ### Return type
 
-[**ContactsBulkOperationJob**](ContactsBulkOperationJob.html)
+[**ContactsBulkOperationJob**](ContactsBulkOperationJob)
 
 
 ## get_outbound_contactlist_contacts_bulk_jobs
 
 > [**ContactsBulkOperationJobListing**](ContactsBulkOperationJobListing) get_outbound_contactlist_contacts_bulk_jobs(contact_list_id)
-
 
 
 Get 10 most recent bulk operation jobs associated with contact list.
@@ -2946,13 +2892,12 @@ except ApiException as e:
 
 ### Return type
 
-[**ContactsBulkOperationJobListing**](ContactsBulkOperationJobListing.html)
+[**ContactsBulkOperationJobListing**](ContactsBulkOperationJobListing)
 
 
 ## get_outbound_contactlist_export
 
 > [**ExportUri**](ExportUri) get_outbound_contactlist_export(contact_list_id, download=download)
-
 
 
 Get the URI of a contact list export.
@@ -2998,13 +2943,12 @@ except ApiException as e:
 
 ### Return type
 
-[**ExportUri**](ExportUri.html)
+[**ExportUri**](ExportUri)
 
 
 ## get_outbound_contactlist_importstatus
 
 > [**ImportStatus**](ImportStatus) get_outbound_contactlist_importstatus(contact_list_id)
-
 
 
 Get dialer contactList import status.
@@ -3047,13 +2991,12 @@ except ApiException as e:
 
 ### Return type
 
-[**ImportStatus**](ImportStatus.html)
+[**ImportStatus**](ImportStatus)
 
 
 ## get_outbound_contactlist_timezonemappingpreview
 
 > [**TimeZoneMappingPreview**](TimeZoneMappingPreview) get_outbound_contactlist_timezonemappingpreview(contact_list_id)
-
 
 
 Preview the result of applying Automatic Time Zone Mapping to a contact list
@@ -3096,13 +3039,12 @@ except ApiException as e:
 
 ### Return type
 
-[**TimeZoneMappingPreview**](TimeZoneMappingPreview.html)
+[**TimeZoneMappingPreview**](TimeZoneMappingPreview)
 
 
 ## get_outbound_contactlistfilter
 
 > [**ContactListFilter**](ContactListFilter) get_outbound_contactlistfilter(contact_list_filter_id)
-
 
 
 Get Contact list filter
@@ -3145,13 +3087,12 @@ except ApiException as e:
 
 ### Return type
 
-[**ContactListFilter**](ContactListFilter.html)
+[**ContactListFilter**](ContactListFilter)
 
 
 ## get_outbound_contactlistfilters
 
 > [**ContactListFilterEntityListing**](ContactListFilterEntityListing) get_outbound_contactlistfilters(page_size=page_size, page_number=page_number, allow_empty_result=allow_empty_result, filter_type=filter_type, name=name, sort_by=sort_by, sort_order=sort_order, contact_list_id=contact_list_id)
-
 
 
 Query Contact list filters
@@ -3208,13 +3149,12 @@ except ApiException as e:
 
 ### Return type
 
-[**ContactListFilterEntityListing**](ContactListFilterEntityListing.html)
+[**ContactListFilterEntityListing**](ContactListFilterEntityListing)
 
 
 ## get_outbound_contactlists
 
 > [**ContactListEntityListing**](ContactListEntityListing) get_outbound_contactlists(include_import_status=include_import_status, include_size=include_size, page_size=page_size, page_number=page_number, allow_empty_result=allow_empty_result, filter_type=filter_type, name=name, id=id, division_id=division_id, sort_by=sort_by, sort_order=sort_order)
-
 
 
 Query a list of contact lists.
@@ -3270,20 +3210,19 @@ except ApiException as e:
 | **allow_empty_result** | **bool**| Whether to return an empty page when there are no results for that page | [optional] [default to False] |
 | **filter_type** | **str**| Filter type | [optional] [default to &#39;Prefix&#39;]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
 | **name** | **str**| Name | [optional]  |
-| **id** | [**list[str]**](str.html)| id | [optional]  |
-| **division_id** | [**list[str]**](str.html)| Division ID(s) | [optional]  |
+| **id** | [**list[str]**](str)| id | [optional]  |
+| **division_id** | [**list[str]**](str)| Division ID(s) | [optional]  |
 | **sort_by** | **str**| Sort by | [optional]  |
 | **sort_order** | **str**| Sort order | [optional] [default to &#39;a&#39;]<br />**Values**: ascending, descending |
 
 ### Return type
 
-[**ContactListEntityListing**](ContactListEntityListing.html)
+[**ContactListEntityListing**](ContactListEntityListing)
 
 
 ## get_outbound_contactlists_divisionview
 
 > [**ContactListDivisionView**](ContactListDivisionView) get_outbound_contactlists_divisionview(contact_list_id, include_import_status=include_import_status, include_size=include_size)
-
 
 
 Get a basic ContactList information object
@@ -3332,13 +3271,12 @@ except ApiException as e:
 
 ### Return type
 
-[**ContactListDivisionView**](ContactListDivisionView.html)
+[**ContactListDivisionView**](ContactListDivisionView)
 
 
 ## get_outbound_contactlists_divisionviews
 
 > [**ContactListDivisionViewListing**](ContactListDivisionViewListing) get_outbound_contactlists_divisionviews(include_import_status=include_import_status, include_size=include_size, page_size=page_size, page_number=page_number, filter_type=filter_type, name=name, id=id, sort_by=sort_by, sort_order=sort_order)
-
 
 
 Query a list of simplified contact list objects.
@@ -3393,19 +3331,18 @@ except ApiException as e:
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **filter_type** | **str**| Filter type | [optional] [default to &#39;Prefix&#39;]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
 | **name** | **str**| Name | [optional]  |
-| **id** | [**list[str]**](str.html)| id | [optional]  |
+| **id** | [**list[str]**](str)| id | [optional]  |
 | **sort_by** | **str**| Sort by | [optional]  |
 | **sort_order** | **str**| Sort order | [optional] [default to &#39;a&#39;]<br />**Values**: ascending, descending |
 
 ### Return type
 
-[**ContactListDivisionViewListing**](ContactListDivisionViewListing.html)
+[**ContactListDivisionViewListing**](ContactListDivisionViewListing)
 
 
 ## get_outbound_contactlisttemplate
 
 > [**ContactListTemplate**](ContactListTemplate) get_outbound_contactlisttemplate(contact_list_template_id)
-
 
 
 Get Contact List Template
@@ -3448,13 +3385,12 @@ except ApiException as e:
 
 ### Return type
 
-[**ContactListTemplate**](ContactListTemplate.html)
+[**ContactListTemplate**](ContactListTemplate)
 
 
 ## get_outbound_contactlisttemplates
 
 > [**ContactListTemplateEntityListing**](ContactListTemplateEntityListing) get_outbound_contactlisttemplates(page_size=page_size, page_number=page_number, allow_empty_result=allow_empty_result, filter_type=filter_type, name=name, sort_by=sort_by, sort_order=sort_order)
-
 
 
 Query a list of contact list templates
@@ -3509,13 +3445,12 @@ except ApiException as e:
 
 ### Return type
 
-[**ContactListTemplateEntityListing**](ContactListTemplateEntityListing.html)
+[**ContactListTemplateEntityListing**](ContactListTemplateEntityListing)
 
 
 ## get_outbound_digitalruleset
 
 > [**DigitalRuleSet**](DigitalRuleSet) get_outbound_digitalruleset(digital_rule_set_id)
-
 
 
 Get an Outbound Digital Rule Set
@@ -3558,13 +3493,12 @@ except ApiException as e:
 
 ### Return type
 
-[**DigitalRuleSet**](DigitalRuleSet.html)
+[**DigitalRuleSet**](DigitalRuleSet)
 
 
 ## get_outbound_digitalrulesets
 
 > [**DigitalRuleSetEntityListing**](DigitalRuleSetEntityListing) get_outbound_digitalrulesets(page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order, name=name, id=id)
-
 
 
 Query a list of Outbound Digital Rule Sets
@@ -3613,17 +3547,16 @@ except ApiException as e:
 | **sort_by** | **str**| The field to sort by | [optional] [default to &#39;name&#39;]<br />**Values**: name |
 | **sort_order** | **str**| The direction to sort | [optional] [default to &#39;ascending&#39;]<br />**Values**: ascending, descending |
 | **name** | **str**| Name | [optional]  |
-| **id** | [**list[str]**](str.html)| A list of digital rule set ids to bulk fetch | [optional]  |
+| **id** | [**list[str]**](str)| A list of digital rule set ids to bulk fetch | [optional]  |
 
 ### Return type
 
-[**DigitalRuleSetEntityListing**](DigitalRuleSetEntityListing.html)
+[**DigitalRuleSetEntityListing**](DigitalRuleSetEntityListing)
 
 
 ## get_outbound_dnclist
 
 > [**DncList**](DncList) get_outbound_dnclist(dnc_list_id, include_import_status=include_import_status, include_size=include_size)
-
 
 
 Get dialer DNC list
@@ -3670,13 +3603,12 @@ except ApiException as e:
 
 ### Return type
 
-[**DncList**](DncList.html)
+[**DncList**](DncList)
 
 
 ## get_outbound_dnclist_export
 
 > [**ExportUri**](ExportUri) get_outbound_dnclist_export(dnc_list_id, download=download)
-
 
 
 Get the URI of a DNC list export.
@@ -3722,13 +3654,12 @@ except ApiException as e:
 
 ### Return type
 
-[**ExportUri**](ExportUri.html)
+[**ExportUri**](ExportUri)
 
 
 ## get_outbound_dnclist_importstatus
 
 > [**ImportStatus**](ImportStatus) get_outbound_dnclist_importstatus(dnc_list_id)
-
 
 
 Get dialer dncList import status.
@@ -3771,13 +3702,12 @@ except ApiException as e:
 
 ### Return type
 
-[**ImportStatus**](ImportStatus.html)
+[**ImportStatus**](ImportStatus)
 
 
 ## get_outbound_dnclists
 
 > [**DncListEntityListing**](DncListEntityListing) get_outbound_dnclists(include_import_status=include_import_status, include_size=include_size, page_size=page_size, page_number=page_number, allow_empty_result=allow_empty_result, filter_type=filter_type, name=name, dnc_source_type=dnc_source_type, division_id=division_id, sort_by=sort_by, sort_order=sort_order)
-
 
 
 Query dialer DNC lists
@@ -3834,19 +3764,18 @@ except ApiException as e:
 | **filter_type** | **str**| Filter type | [optional] [default to &#39;Prefix&#39;]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
 | **name** | **str**| Name | [optional]  |
 | **dnc_source_type** | **str**| DncSourceType | [optional] <br />**Values**: rds, rds_custom, dnc.com, gryphon |
-| **division_id** | [**list[str]**](str.html)| Division ID(s) | [optional]  |
+| **division_id** | [**list[str]**](str)| Division ID(s) | [optional]  |
 | **sort_by** | **str**| Sort by | [optional]  |
 | **sort_order** | **str**| Sort order | [optional] <br />**Values**: ascending, descending |
 
 ### Return type
 
-[**DncListEntityListing**](DncListEntityListing.html)
+[**DncListEntityListing**](DncListEntityListing)
 
 
 ## get_outbound_dnclists_divisionview
 
 > [**DncListDivisionView**](DncListDivisionView) get_outbound_dnclists_divisionview(dnc_list_id, include_import_status=include_import_status, include_size=include_size)
-
 
 
 Get a basic DncList information object
@@ -3895,13 +3824,12 @@ except ApiException as e:
 
 ### Return type
 
-[**DncListDivisionView**](DncListDivisionView.html)
+[**DncListDivisionView**](DncListDivisionView)
 
 
 ## get_outbound_dnclists_divisionviews
 
 > [**DncListDivisionViewListing**](DncListDivisionViewListing) get_outbound_dnclists_divisionviews(include_import_status=include_import_status, include_size=include_size, page_size=page_size, page_number=page_number, filter_type=filter_type, name=name, dnc_source_type=dnc_source_type, id=id, sort_by=sort_by, sort_order=sort_order)
-
 
 
 Query a list of simplified dnc list objects.
@@ -3958,19 +3886,18 @@ except ApiException as e:
 | **filter_type** | **str**| Filter type | [optional] [default to &#39;Prefix&#39;]<br />**Values**: Equals, RegEx, Contains, Prefix, LessThan, LessThanEqualTo, GreaterThan, GreaterThanEqualTo, BeginsWith, EndsWith |
 | **name** | **str**| Name | [optional]  |
 | **dnc_source_type** | **str**| DncSourceType | [optional] <br />**Values**: rds, rds_custom, dnc.com, gryphon |
-| **id** | [**list[str]**](str.html)| id | [optional]  |
+| **id** | [**list[str]**](str)| id | [optional]  |
 | **sort_by** | **str**| Sort by | [optional]  |
 | **sort_order** | **str**| Sort order | [optional] [default to &#39;a&#39;]<br />**Values**: ascending, descending |
 
 ### Return type
 
-[**DncListDivisionViewListing**](DncListDivisionViewListing.html)
+[**DncListDivisionViewListing**](DncListDivisionViewListing)
 
 
 ## get_outbound_event
 
 > [**EventLog**](EventLog) get_outbound_event(event_id)
-
 
 
 Get Dialer Event
@@ -4013,13 +3940,12 @@ except ApiException as e:
 
 ### Return type
 
-[**EventLog**](EventLog.html)
+[**EventLog**](EventLog)
 
 
 ## get_outbound_events
 
 > [**DialerEventEntityListing**](DialerEventEntityListing) get_outbound_events(page_size=page_size, page_number=page_number, filter_type=filter_type, category=category, level=level, sort_by=sort_by, sort_order=sort_order)
-
 
 
 Query Event Logs
@@ -4074,13 +4000,12 @@ except ApiException as e:
 
 ### Return type
 
-[**DialerEventEntityListing**](DialerEventEntityListing.html)
+[**DialerEventEntityListing**](DialerEventEntityListing)
 
 
 ## get_outbound_filespecificationtemplate
 
 > [**FileSpecificationTemplate**](FileSpecificationTemplate) get_outbound_filespecificationtemplate(file_specification_template_id)
-
 
 
 Get File Specification Template
@@ -4123,13 +4048,12 @@ except ApiException as e:
 
 ### Return type
 
-[**FileSpecificationTemplate**](FileSpecificationTemplate.html)
+[**FileSpecificationTemplate**](FileSpecificationTemplate)
 
 
 ## get_outbound_filespecificationtemplates
 
 > [**FileSpecificationTemplateEntityListing**](FileSpecificationTemplateEntityListing) get_outbound_filespecificationtemplates(page_size=page_size, page_number=page_number, allow_empty_result=allow_empty_result, filter_type=filter_type, name=name, sort_by=sort_by, sort_order=sort_order)
-
 
 
 Query File Specification Templates
@@ -4184,13 +4108,12 @@ except ApiException as e:
 
 ### Return type
 
-[**FileSpecificationTemplateEntityListing**](FileSpecificationTemplateEntityListing.html)
+[**FileSpecificationTemplateEntityListing**](FileSpecificationTemplateEntityListing)
 
 
 ## get_outbound_importtemplate
 
 > [**ImportTemplate**](ImportTemplate) get_outbound_importtemplate(import_template_id, include_import_status=include_import_status)
-
 
 
 Get Import Template
@@ -4235,13 +4158,12 @@ except ApiException as e:
 
 ### Return type
 
-[**ImportTemplate**](ImportTemplate.html)
+[**ImportTemplate**](ImportTemplate)
 
 
 ## get_outbound_importtemplate_importstatus
 
 > [**ImportStatus**](ImportStatus) get_outbound_importtemplate_importstatus(import_template_id, list_name_prefix=list_name_prefix)
-
 
 
 Get the import status for an import template.
@@ -4286,13 +4208,12 @@ except ApiException as e:
 
 ### Return type
 
-[**ImportStatus**](ImportStatus.html)
+[**ImportStatus**](ImportStatus)
 
 
 ## get_outbound_importtemplates
 
 > [**ImportTemplateEntityListing**](ImportTemplateEntityListing) get_outbound_importtemplates(include_import_status=include_import_status, page_size=page_size, page_number=page_number, allow_empty_result=allow_empty_result, filter_type=filter_type, name=name, sort_by=sort_by, sort_order=sort_order, contact_list_template_id=contact_list_template_id)
-
 
 
 Query Import Templates
@@ -4351,13 +4272,12 @@ except ApiException as e:
 
 ### Return type
 
-[**ImportTemplateEntityListing**](ImportTemplateEntityListing.html)
+[**ImportTemplateEntityListing**](ImportTemplateEntityListing)
 
 
 ## get_outbound_messagingcampaign
 
 > [**MessagingCampaign**](MessagingCampaign) get_outbound_messagingcampaign(messaging_campaign_id)
-
 
 
 Get an Outbound Messaging Campaign
@@ -4401,13 +4321,12 @@ except ApiException as e:
 
 ### Return type
 
-[**MessagingCampaign**](MessagingCampaign.html)
+[**MessagingCampaign**](MessagingCampaign)
 
 
 ## get_outbound_messagingcampaign_diagnostics
 
 > [**MessagingCampaignDiagnostics**](MessagingCampaignDiagnostics) get_outbound_messagingcampaign_diagnostics(messaging_campaign_id)
-
 
 
 Get messaging campaign diagnostics
@@ -4451,13 +4370,12 @@ except ApiException as e:
 
 ### Return type
 
-[**MessagingCampaignDiagnostics**](MessagingCampaignDiagnostics.html)
+[**MessagingCampaignDiagnostics**](MessagingCampaignDiagnostics)
 
 
 ## get_outbound_messagingcampaign_progress
 
 > [**CampaignProgress**](CampaignProgress) get_outbound_messagingcampaign_progress(messaging_campaign_id)
-
 
 
 Get messaging campaign's progress
@@ -4501,13 +4419,12 @@ except ApiException as e:
 
 ### Return type
 
-[**CampaignProgress**](CampaignProgress.html)
+[**CampaignProgress**](CampaignProgress)
 
 
 ## get_outbound_messagingcampaigns
 
 > [**MessagingCampaignEntityListing**](MessagingCampaignEntityListing) get_outbound_messagingcampaigns(page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order, name=name, contact_list_id=contact_list_id, division_id=division_id, type=type, sender_sms_phone_number=sender_sms_phone_number, id=id)
-
 
 
 Query a list of Messaging Campaigns
@@ -4562,20 +4479,19 @@ except ApiException as e:
 | **sort_order** | **str**| The direction to sort | [optional] [default to &#39;ascending&#39;]<br />**Values**: ascending, descending |
 | **name** | **str**| Name | [optional]  |
 | **contact_list_id** | **str**| Contact List ID | [optional]  |
-| **division_id** | [**list[str]**](str.html)| Division ID(s) | [optional]  |
+| **division_id** | [**list[str]**](str)| Division ID(s) | [optional]  |
 | **type** | **str**| Campaign Type | [optional] <br />**Values**: EMAIL, SMS |
 | **sender_sms_phone_number** | **str**| Sender SMS Phone Number | [optional]  |
-| **id** | [**list[str]**](str.html)| A list of messaging campaign ids to bulk fetch | [optional]  |
+| **id** | [**list[str]**](str)| A list of messaging campaign ids to bulk fetch | [optional]  |
 
 ### Return type
 
-[**MessagingCampaignEntityListing**](MessagingCampaignEntityListing.html)
+[**MessagingCampaignEntityListing**](MessagingCampaignEntityListing)
 
 
 ## get_outbound_messagingcampaigns_divisionview
 
 > [**MessagingCampaignDivisionView**](MessagingCampaignDivisionView) get_outbound_messagingcampaigns_divisionview(messaging_campaign_id)
-
 
 
 Get a basic Messaging Campaign information object
@@ -4621,13 +4537,12 @@ except ApiException as e:
 
 ### Return type
 
-[**MessagingCampaignDivisionView**](MessagingCampaignDivisionView.html)
+[**MessagingCampaignDivisionView**](MessagingCampaignDivisionView)
 
 
 ## get_outbound_messagingcampaigns_divisionviews
 
 > [**MessagingCampaignDivisionViewEntityListing**](MessagingCampaignDivisionViewEntityListing) get_outbound_messagingcampaigns_divisionviews(page_size=page_size, page_number=page_number, sort_order=sort_order, name=name, type=type, id=id, sender_sms_phone_number=sender_sms_phone_number)
-
 
 
 Query a list of basic Messaging Campaign information objects
@@ -4680,18 +4595,17 @@ except ApiException as e:
 | **sort_order** | **str**| The direction to sort | [optional] [default to &#39;a&#39;]<br />**Values**: ascending, descending |
 | **name** | **str**| Name | [optional]  |
 | **type** | **str**| Campaign Type | [optional] <br />**Values**: EMAIL, SMS |
-| **id** | [**list[str]**](str.html)| id | [optional]  |
+| **id** | [**list[str]**](str)| id | [optional]  |
 | **sender_sms_phone_number** | **str**| Sender SMS Phone Number | [optional]  |
 
 ### Return type
 
-[**MessagingCampaignDivisionViewEntityListing**](MessagingCampaignDivisionViewEntityListing.html)
+[**MessagingCampaignDivisionViewEntityListing**](MessagingCampaignDivisionViewEntityListing)
 
 
 ## get_outbound_ruleset
 
 > [**RuleSet**](RuleSet) get_outbound_ruleset(rule_set_id)
-
 
 
 Get a Rule Set by ID.
@@ -4734,13 +4648,12 @@ except ApiException as e:
 
 ### Return type
 
-[**RuleSet**](RuleSet.html)
+[**RuleSet**](RuleSet)
 
 
 ## get_outbound_rulesets
 
 > [**RuleSetEntityListing**](RuleSetEntityListing) get_outbound_rulesets(page_size=page_size, page_number=page_number, allow_empty_result=allow_empty_result, filter_type=filter_type, name=name, sort_by=sort_by, sort_order=sort_order)
-
 
 
 Query a list of Rule Sets.
@@ -4795,13 +4708,12 @@ except ApiException as e:
 
 ### Return type
 
-[**RuleSetEntityListing**](RuleSetEntityListing.html)
+[**RuleSetEntityListing**](RuleSetEntityListing)
 
 
 ## get_outbound_schedules_campaign
 
 > [**CampaignSchedule**](CampaignSchedule) get_outbound_schedules_campaign(campaign_id)
-
 
 
 Get a dialer campaign schedule.
@@ -4844,13 +4756,12 @@ except ApiException as e:
 
 ### Return type
 
-[**CampaignSchedule**](CampaignSchedule.html)
+[**CampaignSchedule**](CampaignSchedule)
 
 
 ## get_outbound_schedules_campaigns
 
 > [**list[CampaignSchedule]**](CampaignSchedule) get_outbound_schedules_campaigns()
-
 
 
 Query for a list of dialer campaign schedules.
@@ -4889,13 +4800,12 @@ This endpoint does not need any parameters.
 
 ### Return type
 
-[**list[CampaignSchedule]**](CampaignSchedule.html)
+[**list[CampaignSchedule]**](CampaignSchedule)
 
 
 ## get_outbound_schedules_emailcampaign
 
 > [**EmailCampaignSchedule**](EmailCampaignSchedule) get_outbound_schedules_emailcampaign(email_campaign_id)
-
 
 
 Get an email campaign schedule.
@@ -4938,13 +4848,12 @@ except ApiException as e:
 
 ### Return type
 
-[**EmailCampaignSchedule**](EmailCampaignSchedule.html)
+[**EmailCampaignSchedule**](EmailCampaignSchedule)
 
 
 ## get_outbound_schedules_emailcampaigns
 
 > [**EmailCampaignScheduleEntityListing**](EmailCampaignScheduleEntityListing) get_outbound_schedules_emailcampaigns()
-
 
 
 Query for a list of email campaign schedules.
@@ -4983,13 +4892,12 @@ This endpoint does not need any parameters.
 
 ### Return type
 
-[**EmailCampaignScheduleEntityListing**](EmailCampaignScheduleEntityListing.html)
+[**EmailCampaignScheduleEntityListing**](EmailCampaignScheduleEntityListing)
 
 
 ## get_outbound_schedules_messagingcampaign
 
 > [**MessagingCampaignSchedule**](MessagingCampaignSchedule) get_outbound_schedules_messagingcampaign(messaging_campaign_id)
-
 
 
 Get a messaging campaign schedule.
@@ -5032,13 +4940,12 @@ except ApiException as e:
 
 ### Return type
 
-[**MessagingCampaignSchedule**](MessagingCampaignSchedule.html)
+[**MessagingCampaignSchedule**](MessagingCampaignSchedule)
 
 
 ## get_outbound_schedules_messagingcampaigns
 
 > [**MessagingCampaignScheduleEntityListing**](MessagingCampaignScheduleEntityListing) get_outbound_schedules_messagingcampaigns()
-
 
 
 Query for a list of messaging campaign schedules.
@@ -5077,13 +4984,12 @@ This endpoint does not need any parameters.
 
 ### Return type
 
-[**MessagingCampaignScheduleEntityListing**](MessagingCampaignScheduleEntityListing.html)
+[**MessagingCampaignScheduleEntityListing**](MessagingCampaignScheduleEntityListing)
 
 
 ## get_outbound_schedules_sequence
 
 > [**SequenceSchedule**](SequenceSchedule) get_outbound_schedules_sequence(sequence_id)
-
 
 
 Get a dialer sequence schedule.
@@ -5126,13 +5032,12 @@ except ApiException as e:
 
 ### Return type
 
-[**SequenceSchedule**](SequenceSchedule.html)
+[**SequenceSchedule**](SequenceSchedule)
 
 
 ## get_outbound_schedules_sequences
 
 > [**list[SequenceSchedule]**](SequenceSchedule) get_outbound_schedules_sequences()
-
 
 
 Query for a list of dialer sequence schedules.
@@ -5171,13 +5076,12 @@ This endpoint does not need any parameters.
 
 ### Return type
 
-[**list[SequenceSchedule]**](SequenceSchedule.html)
+[**list[SequenceSchedule]**](SequenceSchedule)
 
 
 ## get_outbound_sequence
 
 > [**CampaignSequence**](CampaignSequence) get_outbound_sequence(sequence_id)
-
 
 
 Get a dialer campaign sequence.
@@ -5220,13 +5124,12 @@ except ApiException as e:
 
 ### Return type
 
-[**CampaignSequence**](CampaignSequence.html)
+[**CampaignSequence**](CampaignSequence)
 
 
 ## get_outbound_sequences
 
 > [**CampaignSequenceEntityListing**](CampaignSequenceEntityListing) get_outbound_sequences(page_size=page_size, page_number=page_number, allow_empty_result=allow_empty_result, filter_type=filter_type, name=name, sort_by=sort_by, sort_order=sort_order)
-
 
 
 Query a list of dialer campaign sequences.
@@ -5281,13 +5184,12 @@ except ApiException as e:
 
 ### Return type
 
-[**CampaignSequenceEntityListing**](CampaignSequenceEntityListing.html)
+[**CampaignSequenceEntityListing**](CampaignSequenceEntityListing)
 
 
 ## get_outbound_settings
 
 > [**OutboundSettings**](OutboundSettings) get_outbound_settings()
-
 
 
 Get the outbound settings for this organization
@@ -5326,13 +5228,12 @@ This endpoint does not need any parameters.
 
 ### Return type
 
-[**OutboundSettings**](OutboundSettings.html)
+[**OutboundSettings**](OutboundSettings)
 
 
 ## get_outbound_wrapupcodemappings
 
 > [**WrapUpCodeMapping**](WrapUpCodeMapping) get_outbound_wrapupcodemappings()
-
 
 
 Get the Dialer wrap up code mapping.
@@ -5371,13 +5272,12 @@ This endpoint does not need any parameters.
 
 ### Return type
 
-[**WrapUpCodeMapping**](WrapUpCodeMapping.html)
+[**WrapUpCodeMapping**](WrapUpCodeMapping)
 
 
 ## patch_outbound_campaign
 
 >  patch_outbound_campaign(campaign_id, body)
-
 
 
 Update a campaign.
@@ -5417,7 +5317,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **campaign_id** | **str**| Campaign ID |  |
-| **body** | [**CampaignPatchRequest**](CampaignPatchRequest.html)| CampaignPatchRequest |  |
+| **body** | [**CampaignPatchRequest**](CampaignPatchRequest)| CampaignPatchRequest |  |
 
 ### Return type
 
@@ -5427,7 +5327,6 @@ void (empty response body)
 ## patch_outbound_dnclist_customexclusioncolumns
 
 >  patch_outbound_dnclist_customexclusioncolumns(dnc_list_id, body)
-
 
 
 Add entries to or delete entries from a DNC list.
@@ -5469,7 +5368,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **dnc_list_id** | **str**| DncList ID |  |
-| **body** | [**DncPatchCustomExclusionColumnsRequest**](DncPatchCustomExclusionColumnsRequest.html)| DNC Custom exclusion column entries |  |
+| **body** | [**DncPatchCustomExclusionColumnsRequest**](DncPatchCustomExclusionColumnsRequest)| DNC Custom exclusion column entries |  |
 
 ### Return type
 
@@ -5479,7 +5378,6 @@ void (empty response body)
 ## patch_outbound_dnclist_emailaddresses
 
 >  patch_outbound_dnclist_emailaddresses(dnc_list_id, body)
-
 
 
 Add emails to or Delete emails from a DNC list.
@@ -5521,7 +5419,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **dnc_list_id** | **str**| DncList ID |  |
-| **body** | [**DncPatchEmailsRequest**](DncPatchEmailsRequest.html)| DNC Emails |  |
+| **body** | [**DncPatchEmailsRequest**](DncPatchEmailsRequest)| DNC Emails |  |
 
 ### Return type
 
@@ -5531,7 +5429,6 @@ void (empty response body)
 ## patch_outbound_dnclist_phonenumbers
 
 >  patch_outbound_dnclist_phonenumbers(dnc_list_id, body)
-
 
 
 Add numbers to or delete numbers from a DNC list.
@@ -5573,7 +5470,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **dnc_list_id** | **str**| DncList ID |  |
-| **body** | [**DncPatchPhoneNumbersRequest**](DncPatchPhoneNumbersRequest.html)| DNC Phone Numbers |  |
+| **body** | [**DncPatchPhoneNumbersRequest**](DncPatchPhoneNumbersRequest)| DNC Phone Numbers |  |
 
 ### Return type
 
@@ -5583,7 +5480,6 @@ void (empty response body)
 ## patch_outbound_settings
 
 >  patch_outbound_settings(body)
-
 
 
 Update the outbound settings for this organization
@@ -5621,7 +5517,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**OutboundSettings**](OutboundSettings.html)| outboundSettings |  |
+| **body** | [**OutboundSettings**](OutboundSettings)| outboundSettings |  |
 
 ### Return type
 
@@ -5631,7 +5527,6 @@ void (empty response body)
 ## post_outbound_attemptlimits
 
 > [**AttemptLimits**](AttemptLimits) post_outbound_attemptlimits(body)
-
 
 
 Create attempt limits
@@ -5670,17 +5565,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**AttemptLimits**](AttemptLimits.html)| AttemptLimits |  |
+| **body** | [**AttemptLimits**](AttemptLimits)| AttemptLimits |  |
 
 ### Return type
 
-[**AttemptLimits**](AttemptLimits.html)
+[**AttemptLimits**](AttemptLimits)
 
 
 ## post_outbound_callabletimesets
 
 > [**CallableTimeSet**](CallableTimeSet) post_outbound_callabletimesets(body)
-
 
 
 Create callable time set
@@ -5719,17 +5613,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**CallableTimeSet**](CallableTimeSet.html)| DialerCallableTimeSet |  |
+| **body** | [**CallableTimeSet**](CallableTimeSet)| DialerCallableTimeSet |  |
 
 ### Return type
 
-[**CallableTimeSet**](CallableTimeSet.html)
+[**CallableTimeSet**](CallableTimeSet)
 
 
 ## post_outbound_callanalysisresponsesets
 
 > [**ResponseSet**](ResponseSet) post_outbound_callanalysisresponsesets(body)
-
 
 
 Create a dialer call analysis response set.
@@ -5768,17 +5661,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**ResponseSet**](ResponseSet.html)| ResponseSet |  |
+| **body** | [**ResponseSet**](ResponseSet)| ResponseSet |  |
 
 ### Return type
 
-[**ResponseSet**](ResponseSet.html)
+[**ResponseSet**](ResponseSet)
 
 
 ## post_outbound_campaign_agentownedmappingpreview
 
 > object** post_outbound_campaign_agentownedmappingpreview(campaign_id)
-
 
 
 Initiate request for a preview of how agents will be mapped to this campaign's contact list.
@@ -5830,7 +5722,9 @@ except ApiException as e:
 
 > [**ContactCallbackRequest**](ContactCallbackRequest) post_outbound_campaign_callback_schedule(campaign_id, body)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 Schedule a Callback for a Dialer Campaign (Deprecated)
 
@@ -5871,17 +5765,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **campaign_id** | **str**| Campaign ID |  |
-| **body** | [**ContactCallbackRequest**](ContactCallbackRequest.html)| ContactCallbackRequest |  |
+| **body** | [**ContactCallbackRequest**](ContactCallbackRequest)| ContactCallbackRequest |  |
 
 ### Return type
 
-[**ContactCallbackRequest**](ContactCallbackRequest.html)
+[**ContactCallbackRequest**](ContactCallbackRequest)
 
 
 ## post_outbound_campaignrules
 
 > [**CampaignRule**](CampaignRule) post_outbound_campaignrules(body)
-
 
 
 Create Campaign Rule
@@ -5920,17 +5813,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**CampaignRule**](CampaignRule.html)| CampaignRule |  |
+| **body** | [**CampaignRule**](CampaignRule)| CampaignRule |  |
 
 ### Return type
 
-[**CampaignRule**](CampaignRule.html)
+[**CampaignRule**](CampaignRule)
 
 
 ## post_outbound_campaigns
 
 > [**Campaign**](Campaign) post_outbound_campaigns(body)
-
 
 
 Create a campaign.
@@ -5969,17 +5861,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**Campaign**](Campaign.html)| Campaign |  |
+| **body** | [**Campaign**](Campaign)| Campaign |  |
 
 ### Return type
 
-[**Campaign**](Campaign.html)
+[**Campaign**](Campaign)
 
 
 ## post_outbound_campaigns_progress
 
 > [**list[CampaignProgress]**](CampaignProgress) post_outbound_campaigns_progress(body)
-
 
 
 Get progress for a list of campaigns
@@ -6018,17 +5909,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**list[str]**](str.html)| Campaign IDs |  |
+| **body** | [**list[str]**](str)| Campaign IDs |  |
 
 ### Return type
 
-[**list[CampaignProgress]**](CampaignProgress.html)
+[**list[CampaignProgress]**](CampaignProgress)
 
 
 ## post_outbound_contactlist_clear
 
 >  post_outbound_contactlist_clear(contact_list_id)
-
 
 
 Deletes all contacts out of a list. All outstanding recalls or rule-scheduled callbacks for non-preview campaigns configured with the contactlist will be cancelled.
@@ -6078,7 +5968,6 @@ void (empty response body)
 > [**list[DialerContact]**](DialerContact) post_outbound_contactlist_contacts(contact_list_id, body, priority=priority, clear_system_data=clear_system_data, do_not_queue=do_not_queue)
 
 
-
 Add contacts to a contact list.
 
 Wraps POST /api/v2/outbound/contactlists/{contactListId}/contacts 
@@ -6120,20 +6009,19 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **contact_list_id** | **str**| Contact List ID |  |
-| **body** | [**list[WritableDialerContact]**](WritableDialerContact.html)| Contact |  |
+| **body** | [**list[WritableDialerContact]**](WritableDialerContact)| Contact |  |
 | **priority** | **bool**| Contact priority. True means the contact(s) will be dialed next; false means the contact will go to the end of the contact queue. | [optional]  |
 | **clear_system_data** | **bool**| Clear system data. True means the system columns (attempts, callable status, etc) stored on the contact will be cleared if the contact already exists; false means they won&#39;t. | [optional]  |
 | **do_not_queue** | **bool**| Do not queue. True means that updated contacts will not have their positions in the queue altered, so contacts that have already been dialed will not be redialed. For new contacts, this parameter has no effect; False means that updated contacts will be re-queued, according to the &#39;priority&#39; parameter. | [optional]  |
 
 ### Return type
 
-[**list[DialerContact]**](DialerContact.html)
+[**list[DialerContact]**](DialerContact)
 
 
 ## post_outbound_contactlist_contacts_bulk
 
 > [**list[DialerContact]**](DialerContact) post_outbound_contactlist_contacts_bulk(contact_list_id, body)
-
 
 
 Get contacts from a contact list.
@@ -6174,17 +6062,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **contact_list_id** | **str**| Contact List ID |  |
-| **body** | [**list[str]**](str.html)| ContactIds to get. |  |
+| **body** | [**list[str]**](str)| ContactIds to get. |  |
 
 ### Return type
 
-[**list[DialerContact]**](DialerContact.html)
+[**list[DialerContact]**](DialerContact)
 
 
 ## post_outbound_contactlist_contacts_bulk_remove
 
 > [**ContactsBulkOperationJob**](ContactsBulkOperationJob) post_outbound_contactlist_contacts_bulk_remove(contact_list_id, body)
-
 
 
 Start an async job to delete contacts using a filter.
@@ -6225,17 +6112,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **contact_list_id** | **str**| Contact List ID |  |
-| **body** | [**ContactBulkSearchParameters**](ContactBulkSearchParameters.html)| Contact filter information. |  |
+| **body** | [**ContactBulkSearchParameters**](ContactBulkSearchParameters)| Contact filter information. |  |
 
 ### Return type
 
-[**ContactsBulkOperationJob**](ContactsBulkOperationJob.html)
+[**ContactsBulkOperationJob**](ContactsBulkOperationJob)
 
 
 ## post_outbound_contactlist_contacts_bulk_update
 
 > [**ContactsBulkOperationJob**](ContactsBulkOperationJob) post_outbound_contactlist_contacts_bulk_update(contact_list_id, body)
-
 
 
 Start an async job to bulk edit contacts.
@@ -6276,17 +6162,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **contact_list_id** | **str**| Contact List ID |  |
-| **body** | [**ContactBulkEditRequest**](ContactBulkEditRequest.html)| Contact bulk edit request information. |  |
+| **body** | [**ContactBulkEditRequest**](ContactBulkEditRequest)| Contact bulk edit request information. |  |
 
 ### Return type
 
-[**ContactsBulkOperationJob**](ContactsBulkOperationJob.html)
+[**ContactsBulkOperationJob**](ContactsBulkOperationJob)
 
 
 ## post_outbound_contactlist_contacts_search
 
 > [**ContactListingResponse**](ContactListingResponse) post_outbound_contactlist_contacts_search(contact_list_id, body)
-
 
 
 Query contacts from a contact list.
@@ -6327,17 +6212,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **contact_list_id** | **str**| Contact List ID |  |
-| **body** | [**ContactListingRequest**](ContactListingRequest.html)| Contact search parameters. |  |
+| **body** | [**ContactListingRequest**](ContactListingRequest)| Contact search parameters. |  |
 
 ### Return type
 
-[**ContactListingResponse**](ContactListingResponse.html)
+[**ContactListingResponse**](ContactListingResponse)
 
 
 ## post_outbound_contactlist_export
 
 > [**DomainEntityRef**](DomainEntityRef) post_outbound_contactlist_export(contact_list_id, body=body)
-
 
 
 Initiate the export of a contact list.
@@ -6381,17 +6265,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **contact_list_id** | **str**| ContactList ID |  |
-| **body** | [**ContactsExportRequest**](ContactsExportRequest.html)| Export information to get | [optional]  |
+| **body** | [**ContactsExportRequest**](ContactsExportRequest)| Export information to get | [optional]  |
 
 ### Return type
 
-[**DomainEntityRef**](DomainEntityRef.html)
+[**DomainEntityRef**](DomainEntityRef)
 
 
 ## post_outbound_contactlistfilters
 
 > [**ContactListFilter**](ContactListFilter) post_outbound_contactlistfilters(body)
-
 
 
 Create Contact List Filter
@@ -6430,17 +6313,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**ContactListFilter**](ContactListFilter.html)| ContactListFilter |  |
+| **body** | [**ContactListFilter**](ContactListFilter)| ContactListFilter |  |
 
 ### Return type
 
-[**ContactListFilter**](ContactListFilter.html)
+[**ContactListFilter**](ContactListFilter)
 
 
 ## post_outbound_contactlistfilters_bulk_retrieve
 
 > [**ContactListFilterEntityListing**](ContactListFilterEntityListing) post_outbound_contactlistfilters_bulk_retrieve(body)
-
 
 
 Retrieve multiple contact list filters
@@ -6479,17 +6361,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**ContactListFilterBulkRetrieveBody**](ContactListFilterBulkRetrieveBody.html)| The contact list filters to retrieve |  |
+| **body** | [**ContactListFilterBulkRetrieveBody**](ContactListFilterBulkRetrieveBody)| The contact list filters to retrieve |  |
 
 ### Return type
 
-[**ContactListFilterEntityListing**](ContactListFilterEntityListing.html)
+[**ContactListFilterEntityListing**](ContactListFilterEntityListing)
 
 
 ## post_outbound_contactlistfilters_preview
 
 > [**FilterPreviewResponse**](FilterPreviewResponse) post_outbound_contactlistfilters_preview(body)
-
 
 
 Get a preview of the output of a contact list filter
@@ -6528,17 +6409,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**ContactListFilter**](ContactListFilter.html)| ContactListFilter |  |
+| **body** | [**ContactListFilter**](ContactListFilter)| ContactListFilter |  |
 
 ### Return type
 
-[**FilterPreviewResponse**](FilterPreviewResponse.html)
+[**FilterPreviewResponse**](FilterPreviewResponse)
 
 
 ## post_outbound_contactlists
 
 > [**ContactList**](ContactList) post_outbound_contactlists(body)
-
 
 
 Create a contact List.
@@ -6577,17 +6457,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**ContactList**](ContactList.html)| ContactList |  |
+| **body** | [**ContactList**](ContactList)| ContactList |  |
 
 ### Return type
 
-[**ContactList**](ContactList.html)
+[**ContactList**](ContactList)
 
 
 ## post_outbound_contactlisttemplates
 
 > [**ContactListTemplate**](ContactListTemplate) post_outbound_contactlisttemplates(body)
-
 
 
 Create Contact List Template
@@ -6626,17 +6505,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**ContactListTemplate**](ContactListTemplate.html)| ContactListTemplate |  |
+| **body** | [**ContactListTemplate**](ContactListTemplate)| ContactListTemplate |  |
 
 ### Return type
 
-[**ContactListTemplate**](ContactListTemplate.html)
+[**ContactListTemplate**](ContactListTemplate)
 
 
 ## post_outbound_contactlisttemplates_bulk_add
 
 > [**ContactListTemplateEntityListing**](ContactListTemplateEntityListing) post_outbound_contactlisttemplates_bulk_add(body)
-
 
 
 Add multiple contact list templates
@@ -6675,17 +6553,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**list[ContactListTemplate]**](ContactListTemplate.html)| contact list template(s) to add |  |
+| **body** | [**list[ContactListTemplate]**](ContactListTemplate)| contact list template(s) to add |  |
 
 ### Return type
 
-[**ContactListTemplateEntityListing**](ContactListTemplateEntityListing.html)
+[**ContactListTemplateEntityListing**](ContactListTemplateEntityListing)
 
 
 ## post_outbound_contactlisttemplates_bulk_retrieve
 
 > [**ContactListTemplateEntityListing**](ContactListTemplateEntityListing) post_outbound_contactlisttemplates_bulk_retrieve(body)
-
 
 
 Get multiple contact list templates
@@ -6724,17 +6601,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**ContactListTemplateBulkRetrieveBody**](ContactListTemplateBulkRetrieveBody.html)| contact list templates to get |  |
+| **body** | [**ContactListTemplateBulkRetrieveBody**](ContactListTemplateBulkRetrieveBody)| contact list templates to get |  |
 
 ### Return type
 
-[**ContactListTemplateEntityListing**](ContactListTemplateEntityListing.html)
+[**ContactListTemplateEntityListing**](ContactListTemplateEntityListing)
 
 
 ## post_outbound_conversation_dnc
 
 >  post_outbound_conversation_dnc(conversation_id)
-
 
 
 Add phone numbers to a Dialer DNC list.
@@ -6784,7 +6660,6 @@ void (empty response body)
 > [**DigitalRuleSet**](DigitalRuleSet) post_outbound_digitalrulesets(body)
 
 
-
 Create an Outbound Digital Rule Set
 
 Wraps POST /api/v2/outbound/digitalrulesets 
@@ -6821,17 +6696,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**DigitalRuleSet**](DigitalRuleSet.html)| Digital Rule Set |  |
+| **body** | [**DigitalRuleSet**](DigitalRuleSet)| Digital Rule Set |  |
 
 ### Return type
 
-[**DigitalRuleSet**](DigitalRuleSet.html)
+[**DigitalRuleSet**](DigitalRuleSet)
 
 
 ## post_outbound_dnclist_emailaddresses
 
 >  post_outbound_dnclist_emailaddresses(dnc_list_id, body)
-
 
 
 Add email addresses to a DNC list.
@@ -6873,7 +6747,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **dnc_list_id** | **str**| DncList ID |  |
-| **body** | [**list[str]**](str.html)| DNC email addresses |  |
+| **body** | [**list[str]**](str)| DNC email addresses |  |
 
 ### Return type
 
@@ -6883,7 +6757,6 @@ void (empty response body)
 ## post_outbound_dnclist_export
 
 > [**DomainEntityRef**](DomainEntityRef) post_outbound_dnclist_export(dnc_list_id)
-
 
 
 Initiate the export of a dnc list.
@@ -6929,13 +6802,12 @@ except ApiException as e:
 
 ### Return type
 
-[**DomainEntityRef**](DomainEntityRef.html)
+[**DomainEntityRef**](DomainEntityRef)
 
 
 ## post_outbound_dnclist_phonenumbers
 
 >  post_outbound_dnclist_phonenumbers(dnc_list_id, body, expiration_date_time=expiration_date_time)
-
 
 
 Add phone numbers to a DNC list.
@@ -6978,7 +6850,7 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **dnc_list_id** | **str**| DncList ID |  |
-| **body** | [**list[str]**](str.html)| DNC Phone Numbers |  |
+| **body** | [**list[str]**](str)| DNC Phone Numbers |  |
 | **expiration_date_time** | **str**| Expiration date for DNC phone numbers in yyyy-MM-ddTHH:mmZ format | [optional]  |
 
 ### Return type
@@ -6989,7 +6861,6 @@ void (empty response body)
 ## post_outbound_dnclists
 
 > [**DncList**](DncList) post_outbound_dnclists(body)
-
 
 
 Create dialer DNC list
@@ -7028,17 +6899,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**DncListCreate**](DncListCreate.html)| DncList |  |
+| **body** | [**DncListCreate**](DncListCreate)| DncList |  |
 
 ### Return type
 
-[**DncList**](DncList.html)
+[**DncList**](DncList)
 
 
 ## post_outbound_filespecificationtemplates
 
 > [**FileSpecificationTemplate**](FileSpecificationTemplate) post_outbound_filespecificationtemplates(body)
-
 
 
 Create File Specification Template
@@ -7077,17 +6947,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**FileSpecificationTemplate**](FileSpecificationTemplate.html)| FileSpecificationTemplate |  |
+| **body** | [**FileSpecificationTemplate**](FileSpecificationTemplate)| FileSpecificationTemplate |  |
 
 ### Return type
 
-[**FileSpecificationTemplate**](FileSpecificationTemplate.html)
+[**FileSpecificationTemplate**](FileSpecificationTemplate)
 
 
 ## post_outbound_importtemplates
 
 > [**ImportTemplate**](ImportTemplate) post_outbound_importtemplates(body)
-
 
 
 Create Import Template
@@ -7126,17 +6995,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**ImportTemplate**](ImportTemplate.html)| ImportTemplate |  |
+| **body** | [**ImportTemplate**](ImportTemplate)| ImportTemplate |  |
 
 ### Return type
 
-[**ImportTemplate**](ImportTemplate.html)
+[**ImportTemplate**](ImportTemplate)
 
 
 ## post_outbound_importtemplates_bulk_add
 
 > [**ImportTemplateEntityListing**](ImportTemplateEntityListing) post_outbound_importtemplates_bulk_add(body)
-
 
 
 Add multiple import templates
@@ -7175,17 +7043,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**list[ImportTemplate]**](ImportTemplate.html)| import template(s) to add |  |
+| **body** | [**list[ImportTemplate]**](ImportTemplate)| import template(s) to add |  |
 
 ### Return type
 
-[**ImportTemplateEntityListing**](ImportTemplateEntityListing.html)
+[**ImportTemplateEntityListing**](ImportTemplateEntityListing)
 
 
 ## post_outbound_messagingcampaigns
 
 > [**MessagingCampaign**](MessagingCampaign) post_outbound_messagingcampaigns(body)
-
 
 
 Create a Messaging Campaign
@@ -7225,17 +7092,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**MessagingCampaign**](MessagingCampaign.html)| Messaging Campaign |  |
+| **body** | [**MessagingCampaign**](MessagingCampaign)| Messaging Campaign |  |
 
 ### Return type
 
-[**MessagingCampaign**](MessagingCampaign.html)
+[**MessagingCampaign**](MessagingCampaign)
 
 
 ## post_outbound_messagingcampaigns_progress
 
 > [**list[CampaignProgress]**](CampaignProgress) post_outbound_messagingcampaigns_progress(body)
-
 
 
 Get progress for a list of messaging campaigns
@@ -7275,17 +7141,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**list[str]**](str.html)| Messaging Campaign IDs |  |
+| **body** | [**list[str]**](str)| Messaging Campaign IDs |  |
 
 ### Return type
 
-[**list[CampaignProgress]**](CampaignProgress.html)
+[**list[CampaignProgress]**](CampaignProgress)
 
 
 ## post_outbound_rulesets
 
 > [**RuleSet**](RuleSet) post_outbound_rulesets(body)
-
 
 
 Create a Rule Set.
@@ -7324,17 +7189,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**RuleSet**](RuleSet.html)| RuleSet |  |
+| **body** | [**RuleSet**](RuleSet)| RuleSet |  |
 
 ### Return type
 
-[**RuleSet**](RuleSet.html)
+[**RuleSet**](RuleSet)
 
 
 ## post_outbound_sequences
 
 > [**CampaignSequence**](CampaignSequence) post_outbound_sequences(body)
-
 
 
 Create a new campaign sequence.
@@ -7373,17 +7237,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**CampaignSequence**](CampaignSequence.html)| Organization |  |
+| **body** | [**CampaignSequence**](CampaignSequence)| Organization |  |
 
 ### Return type
 
-[**CampaignSequence**](CampaignSequence.html)
+[**CampaignSequence**](CampaignSequence)
 
 
 ## put_outbound_attemptlimit
 
 > [**AttemptLimits**](AttemptLimits) put_outbound_attemptlimit(attempt_limits_id, body)
-
 
 
 Update attempt limits
@@ -7424,17 +7287,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **attempt_limits_id** | **str**| Attempt limits ID |  |
-| **body** | [**AttemptLimits**](AttemptLimits.html)| AttemptLimits |  |
+| **body** | [**AttemptLimits**](AttemptLimits)| AttemptLimits |  |
 
 ### Return type
 
-[**AttemptLimits**](AttemptLimits.html)
+[**AttemptLimits**](AttemptLimits)
 
 
 ## put_outbound_callabletimeset
 
 > [**CallableTimeSet**](CallableTimeSet) put_outbound_callabletimeset(callable_time_set_id, body)
-
 
 
 Update callable time set
@@ -7475,17 +7337,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **callable_time_set_id** | **str**| Callable Time Set ID |  |
-| **body** | [**CallableTimeSet**](CallableTimeSet.html)| DialerCallableTimeSet |  |
+| **body** | [**CallableTimeSet**](CallableTimeSet)| DialerCallableTimeSet |  |
 
 ### Return type
 
-[**CallableTimeSet**](CallableTimeSet.html)
+[**CallableTimeSet**](CallableTimeSet)
 
 
 ## put_outbound_callanalysisresponseset
 
 > [**ResponseSet**](ResponseSet) put_outbound_callanalysisresponseset(call_analysis_set_id, body)
-
 
 
 Update a dialer call analysis response set.
@@ -7526,17 +7387,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **call_analysis_set_id** | **str**| Call Analysis Response Set ID |  |
-| **body** | [**ResponseSet**](ResponseSet.html)| ResponseSet |  |
+| **body** | [**ResponseSet**](ResponseSet)| ResponseSet |  |
 
 ### Return type
 
-[**ResponseSet**](ResponseSet.html)
+[**ResponseSet**](ResponseSet)
 
 
 ## put_outbound_campaign
 
 > [**Campaign**](Campaign) put_outbound_campaign(campaign_id, body)
-
 
 
 Update a campaign.
@@ -7577,17 +7437,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **campaign_id** | **str**| Campaign ID |  |
-| **body** | [**Campaign**](Campaign.html)| Campaign |  |
+| **body** | [**Campaign**](Campaign)| Campaign |  |
 
 ### Return type
 
-[**Campaign**](Campaign.html)
+[**Campaign**](Campaign)
 
 
 ## put_outbound_campaign_agent
 
 > str** put_outbound_campaign_agent(campaign_id, user_id, body)
-
 
 
 Send notification that an agent's state changed 
@@ -7631,7 +7490,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **campaign_id** | **str**| Campaign ID |  |
 | **user_id** | **str**| Agent&#39;s user ID |  |
-| **body** | [**Agent**](Agent.html)| agent |  |
+| **body** | [**Agent**](Agent)| agent |  |
 
 ### Return type
 
@@ -7641,7 +7500,6 @@ except ApiException as e:
 ## put_outbound_campaignrule
 
 > [**CampaignRule**](CampaignRule) put_outbound_campaignrule(campaign_rule_id, body)
-
 
 
 Update Campaign Rule
@@ -7682,17 +7540,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **campaign_rule_id** | **str**| Campaign Rule ID |  |
-| **body** | [**CampaignRule**](CampaignRule.html)| CampaignRule |  |
+| **body** | [**CampaignRule**](CampaignRule)| CampaignRule |  |
 
 ### Return type
 
-[**CampaignRule**](CampaignRule.html)
+[**CampaignRule**](CampaignRule)
 
 
 ## put_outbound_contactlist
 
 > [**ContactList**](ContactList) put_outbound_contactlist(contact_list_id, body)
-
 
 
 Update a contact list.
@@ -7733,17 +7590,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **contact_list_id** | **str**| ContactList ID |  |
-| **body** | [**ContactList**](ContactList.html)| ContactList |  |
+| **body** | [**ContactList**](ContactList)| ContactList |  |
 
 ### Return type
 
-[**ContactList**](ContactList.html)
+[**ContactList**](ContactList)
 
 
 ## put_outbound_contactlist_contact
 
 > [**DialerContact**](DialerContact) put_outbound_contactlist_contact(contact_list_id, contact_id, body)
-
 
 
 Update a contact.
@@ -7786,17 +7642,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **contact_list_id** | **str**| Contact List ID |  |
 | **contact_id** | **str**| Contact ID |  |
-| **body** | [**DialerContact**](DialerContact.html)| Contact |  |
+| **body** | [**DialerContact**](DialerContact)| Contact |  |
 
 ### Return type
 
-[**DialerContact**](DialerContact.html)
+[**DialerContact**](DialerContact)
 
 
 ## put_outbound_contactlistfilter
 
 > [**ContactListFilter**](ContactListFilter) put_outbound_contactlistfilter(contact_list_filter_id, body)
-
 
 
 Update Contact List Filter
@@ -7837,17 +7692,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **contact_list_filter_id** | **str**| Contact List Filter ID |  |
-| **body** | [**ContactListFilter**](ContactListFilter.html)| ContactListFilter |  |
+| **body** | [**ContactListFilter**](ContactListFilter)| ContactListFilter |  |
 
 ### Return type
 
-[**ContactListFilter**](ContactListFilter.html)
+[**ContactListFilter**](ContactListFilter)
 
 
 ## put_outbound_contactlisttemplate
 
 > [**ContactListTemplate**](ContactListTemplate) put_outbound_contactlisttemplate(contact_list_template_id, body)
-
 
 
 Update a contact list template.
@@ -7888,17 +7742,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **contact_list_template_id** | **str**| ContactListTemplate ID |  |
-| **body** | [**ContactListTemplate**](ContactListTemplate.html)| ContactListTemplate |  |
+| **body** | [**ContactListTemplate**](ContactListTemplate)| ContactListTemplate |  |
 
 ### Return type
 
-[**ContactListTemplate**](ContactListTemplate.html)
+[**ContactListTemplate**](ContactListTemplate)
 
 
 ## put_outbound_digitalruleset
 
 > [**DigitalRuleSet**](DigitalRuleSet) put_outbound_digitalruleset(digital_rule_set_id, body)
-
 
 
 Update an Outbound Digital Rule Set
@@ -7939,17 +7792,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **digital_rule_set_id** | **str**| The Digital Rule Set ID |  |
-| **body** | [**DigitalRuleSet**](DigitalRuleSet.html)| Digital Rule Set |  |
+| **body** | [**DigitalRuleSet**](DigitalRuleSet)| Digital Rule Set |  |
 
 ### Return type
 
-[**DigitalRuleSet**](DigitalRuleSet.html)
+[**DigitalRuleSet**](DigitalRuleSet)
 
 
 ## put_outbound_dnclist
 
 > [**DncList**](DncList) put_outbound_dnclist(dnc_list_id, body)
-
 
 
 Update dialer DNC list
@@ -7990,17 +7842,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **dnc_list_id** | **str**| DncList ID |  |
-| **body** | [**DncList**](DncList.html)| DncList |  |
+| **body** | [**DncList**](DncList)| DncList |  |
 
 ### Return type
 
-[**DncList**](DncList.html)
+[**DncList**](DncList)
 
 
 ## put_outbound_filespecificationtemplate
 
 > [**FileSpecificationTemplate**](FileSpecificationTemplate) put_outbound_filespecificationtemplate(file_specification_template_id, body)
-
 
 
 Update File Specification Template
@@ -8041,17 +7892,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **file_specification_template_id** | **str**| File Specification Template ID |  |
-| **body** | [**FileSpecificationTemplate**](FileSpecificationTemplate.html)| fileSpecificationTemplate |  |
+| **body** | [**FileSpecificationTemplate**](FileSpecificationTemplate)| fileSpecificationTemplate |  |
 
 ### Return type
 
-[**FileSpecificationTemplate**](FileSpecificationTemplate.html)
+[**FileSpecificationTemplate**](FileSpecificationTemplate)
 
 
 ## put_outbound_importtemplate
 
 > [**ImportTemplate**](ImportTemplate) put_outbound_importtemplate(import_template_id, body)
-
 
 
 Update Import Template
@@ -8092,17 +7942,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **import_template_id** | **str**| Import Template ID |  |
-| **body** | [**ImportTemplate**](ImportTemplate.html)| importTemplate |  |
+| **body** | [**ImportTemplate**](ImportTemplate)| importTemplate |  |
 
 ### Return type
 
-[**ImportTemplate**](ImportTemplate.html)
+[**ImportTemplate**](ImportTemplate)
 
 
 ## put_outbound_messagingcampaign
 
 > [**MessagingCampaign**](MessagingCampaign) put_outbound_messagingcampaign(messaging_campaign_id, body)
-
 
 
 Update an Outbound Messaging Campaign
@@ -8144,17 +7993,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **messaging_campaign_id** | **str**| The Messaging Campaign ID |  |
-| **body** | [**MessagingCampaign**](MessagingCampaign.html)| MessagingCampaign |  |
+| **body** | [**MessagingCampaign**](MessagingCampaign)| MessagingCampaign |  |
 
 ### Return type
 
-[**MessagingCampaign**](MessagingCampaign.html)
+[**MessagingCampaign**](MessagingCampaign)
 
 
 ## put_outbound_ruleset
 
 > [**RuleSet**](RuleSet) put_outbound_ruleset(rule_set_id, body)
-
 
 
 Update a Rule Set.
@@ -8195,17 +8043,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **rule_set_id** | **str**| Rule Set ID |  |
-| **body** | [**RuleSet**](RuleSet.html)| RuleSet |  |
+| **body** | [**RuleSet**](RuleSet)| RuleSet |  |
 
 ### Return type
 
-[**RuleSet**](RuleSet.html)
+[**RuleSet**](RuleSet)
 
 
 ## put_outbound_schedules_campaign
 
 > [**CampaignSchedule**](CampaignSchedule) put_outbound_schedules_campaign(campaign_id, body)
-
 
 
 Update a new campaign schedule.
@@ -8246,17 +8093,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **campaign_id** | **str**| Campaign ID |  |
-| **body** | [**CampaignSchedule**](CampaignSchedule.html)| CampaignSchedule |  |
+| **body** | [**CampaignSchedule**](CampaignSchedule)| CampaignSchedule |  |
 
 ### Return type
 
-[**CampaignSchedule**](CampaignSchedule.html)
+[**CampaignSchedule**](CampaignSchedule)
 
 
 ## put_outbound_schedules_emailcampaign
 
 > [**EmailCampaignSchedule**](EmailCampaignSchedule) put_outbound_schedules_emailcampaign(email_campaign_id, body)
-
 
 
 Update an email campaign schedule.
@@ -8297,17 +8143,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **email_campaign_id** | **str**| Email Campaign ID |  |
-| **body** | [**EmailCampaignSchedule**](EmailCampaignSchedule.html)| EmailCampaignSchedule |  |
+| **body** | [**EmailCampaignSchedule**](EmailCampaignSchedule)| EmailCampaignSchedule |  |
 
 ### Return type
 
-[**EmailCampaignSchedule**](EmailCampaignSchedule.html)
+[**EmailCampaignSchedule**](EmailCampaignSchedule)
 
 
 ## put_outbound_schedules_messagingcampaign
 
 > [**MessagingCampaignSchedule**](MessagingCampaignSchedule) put_outbound_schedules_messagingcampaign(messaging_campaign_id, body)
-
 
 
 Update a new messaging campaign schedule.
@@ -8348,17 +8193,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **messaging_campaign_id** | **str**| Messaging Campaign ID |  |
-| **body** | [**MessagingCampaignSchedule**](MessagingCampaignSchedule.html)| MessagingCampaignSchedule |  |
+| **body** | [**MessagingCampaignSchedule**](MessagingCampaignSchedule)| MessagingCampaignSchedule |  |
 
 ### Return type
 
-[**MessagingCampaignSchedule**](MessagingCampaignSchedule.html)
+[**MessagingCampaignSchedule**](MessagingCampaignSchedule)
 
 
 ## put_outbound_schedules_sequence
 
 > [**SequenceSchedule**](SequenceSchedule) put_outbound_schedules_sequence(sequence_id, body)
-
 
 
 Update a new sequence schedule.
@@ -8399,17 +8243,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **sequence_id** | **str**| Sequence ID |  |
-| **body** | [**SequenceSchedule**](SequenceSchedule.html)| SequenceSchedule |  |
+| **body** | [**SequenceSchedule**](SequenceSchedule)| SequenceSchedule |  |
 
 ### Return type
 
-[**SequenceSchedule**](SequenceSchedule.html)
+[**SequenceSchedule**](SequenceSchedule)
 
 
 ## put_outbound_sequence
 
 > [**CampaignSequence**](CampaignSequence) put_outbound_sequence(sequence_id, body)
-
 
 
 Update a new campaign sequence.
@@ -8450,17 +8293,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **sequence_id** | **str**| Campaign Sequence ID |  |
-| **body** | [**CampaignSequence**](CampaignSequence.html)| Organization |  |
+| **body** | [**CampaignSequence**](CampaignSequence)| Organization |  |
 
 ### Return type
 
-[**CampaignSequence**](CampaignSequence.html)
+[**CampaignSequence**](CampaignSequence)
 
 
 ## put_outbound_wrapupcodemappings
 
 > [**WrapUpCodeMapping**](WrapUpCodeMapping) put_outbound_wrapupcodemappings(body)
-
 
 
 Update the Dialer wrap up code mapping.
@@ -8499,11 +8341,11 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**WrapUpCodeMapping**](WrapUpCodeMapping.html)| wrapUpCodeMapping |  |
+| **body** | [**WrapUpCodeMapping**](WrapUpCodeMapping)| wrapUpCodeMapping |  |
 
 ### Return type
 
-[**WrapUpCodeMapping**](WrapUpCodeMapping.html)
+[**WrapUpCodeMapping**](WrapUpCodeMapping)
 
 
-_PureCloudPlatformClientV2 210.0.0_
+_PureCloudPlatformClientV2 211.0.0_

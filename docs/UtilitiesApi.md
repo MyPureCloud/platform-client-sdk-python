@@ -10,13 +10,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_ipranges**](#get_ipranges) | Get public ip address ranges for Genesys Cloud|
 |[**get_timezones**](#get_timezones) | Get time zones list|
 |[**post_certificate_details**](#post_certificate_details) | Returns the information about an X509 PEM encoded certificate or certificate chain.|
-{: class="table table-striped"}
+
 
 
 ## get_date
 
 > [**ServerDate**](ServerDate) get_date()
-
 
 
 Get the current system date/time
@@ -54,13 +53,12 @@ This endpoint does not need any parameters.
 
 ### Return type
 
-[**ServerDate**](ServerDate.html)
+[**ServerDate**](ServerDate)
 
 
 ## get_ipranges
 
 > [**IpAddressRangeListing**](IpAddressRangeListing) get_ipranges()
-
 
 
 Get public ip address ranges for Genesys Cloud
@@ -98,13 +96,12 @@ This endpoint does not need any parameters.
 
 ### Return type
 
-[**IpAddressRangeListing**](IpAddressRangeListing.html)
+[**IpAddressRangeListing**](IpAddressRangeListing)
 
 
 ## get_timezones
 
 > [**TimeZoneEntityListing**](TimeZoneEntityListing) get_timezones(page_size=page_size, page_number=page_number)
-
 
 
 Get time zones list
@@ -148,13 +145,12 @@ except ApiException as e:
 
 ### Return type
 
-[**TimeZoneEntityListing**](TimeZoneEntityListing.html)
+[**TimeZoneEntityListing**](TimeZoneEntityListing)
 
 
 ## post_certificate_details
 
 > [**ParsedCertificate**](ParsedCertificate) post_certificate_details(body)
-
 
 
 Returns the information about an X509 PEM encoded certificate or certificate chain.
@@ -192,11 +188,11 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**Certificate**](Certificate.html)| Certificate |  |
+| **body** | [**Certificate**](Certificate)| Certificate |  |
 
 ### Return type
 
-[**ParsedCertificate**](ParsedCertificate.html)
+[**ParsedCertificate**](ParsedCertificate)
 
 
-_PureCloudPlatformClientV2 210.0.0_
+_PureCloudPlatformClientV2 211.0.0_

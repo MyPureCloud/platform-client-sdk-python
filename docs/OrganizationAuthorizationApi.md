@@ -52,13 +52,12 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**put_orgauthorization_trustor_cloneduser**](#put_orgauthorization_trustor_cloneduser) | Creates a clone of the trustee user in the trustor org.|
 |[**put_orgauthorization_trustor_group**](#put_orgauthorization_trustor_group) | Add a Trustee Group to the trust.|
 |[**put_orgauthorization_trustor_user**](#put_orgauthorization_trustor_user) | Add a Trustee user to the trust.|
-{: class="table table-striped"}
+
 
 
 ## delete_orgauthorization_trustee
 
 >  delete_orgauthorization_trustee(trustee_org_id)
-
 
 
 Delete Org Trust
@@ -106,7 +105,6 @@ void (empty response body)
 ## delete_orgauthorization_trustee_cloneduser
 
 >  delete_orgauthorization_trustee_cloneduser(trustee_org_id, trustee_user_id)
-
 
 
 Deletes cloned user
@@ -158,7 +156,6 @@ void (empty response body)
 >  delete_orgauthorization_trustee_group(trustee_org_id, trustee_group_id)
 
 
-
 Delete Trustee Group
 
 Wraps DELETE /api/v2/orgauthorization/trustees/{trusteeOrgId}/groups/{trusteeGroupId} 
@@ -206,7 +203,6 @@ void (empty response body)
 ## delete_orgauthorization_trustee_group_roles
 
 >  delete_orgauthorization_trustee_group_roles(trustee_org_id, trustee_group_id)
-
 
 
 Delete Trustee Group Roles
@@ -258,7 +254,6 @@ void (empty response body)
 >  delete_orgauthorization_trustee_user(trustee_org_id, trustee_user_id)
 
 
-
 Delete Trustee User
 
 Wraps DELETE /api/v2/orgauthorization/trustees/{trusteeOrgId}/users/{trusteeUserId} 
@@ -306,7 +301,6 @@ void (empty response body)
 ## delete_orgauthorization_trustee_user_roles
 
 >  delete_orgauthorization_trustee_user_roles(trustee_org_id, trustee_user_id)
-
 
 
 Delete Trustee User Roles
@@ -358,7 +352,6 @@ void (empty response body)
 >  delete_orgauthorization_trustees(id)
 
 
-
 Delete Bulk Org Trustees
 
 delete_orgauthorization_trustees is a preview method and is subject to both breaking and non-breaking changes at any time without notice
@@ -396,7 +389,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **id** | [**list[str]**](str.html)| Comma separated list of trustee ids to remove |  |
+| **id** | [**list[str]**](str)| Comma separated list of trustee ids to remove |  |
 
 ### Return type
 
@@ -406,7 +399,6 @@ void (empty response body)
 ## delete_orgauthorization_trustor
 
 >  delete_orgauthorization_trustor(trustor_org_id)
-
 
 
 Delete Org Trust
@@ -454,7 +446,6 @@ void (empty response body)
 ## delete_orgauthorization_trustor_cloneduser
 
 >  delete_orgauthorization_trustor_cloneduser(trustor_org_id, trustee_user_id)
-
 
 
 Delete Cloned User
@@ -506,7 +497,6 @@ void (empty response body)
 >  delete_orgauthorization_trustor_group(trustor_org_id, trustor_group_id)
 
 
-
 Delete Trustee Group
 
 Wraps DELETE /api/v2/orgauthorization/trustors/{trustorOrgId}/groups/{trustorGroupId} 
@@ -554,7 +544,6 @@ void (empty response body)
 ## delete_orgauthorization_trustor_user
 
 >  delete_orgauthorization_trustor_user(trustor_org_id, trustee_user_id)
-
 
 
 Delete Trustee User
@@ -606,7 +595,6 @@ void (empty response body)
 >  delete_orgauthorization_trustors(id)
 
 
-
 Delete Bulk Org Trustors
 
 delete_orgauthorization_trustors is a preview method and is subject to both breaking and non-breaking changes at any time without notice
@@ -644,7 +632,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **id** | [**list[str]**](str.html)| Comma separated list of trustor ids to remove |  |
+| **id** | [**list[str]**](str)| Comma separated list of trustor ids to remove |  |
 
 ### Return type
 
@@ -654,7 +642,6 @@ void (empty response body)
 ## get_orgauthorization_pairing
 
 > [**TrustRequest**](TrustRequest) get_orgauthorization_pairing(pairing_id)
-
 
 
 Get Pairing Info
@@ -698,13 +685,12 @@ except ApiException as e:
 
 ### Return type
 
-[**TrustRequest**](TrustRequest.html)
+[**TrustRequest**](TrustRequest)
 
 
 ## get_orgauthorization_trustee
 
 > [**Trustee**](Trustee) get_orgauthorization_trustee(trustee_org_id)
-
 
 
 Get Org Trust
@@ -747,13 +733,12 @@ except ApiException as e:
 
 ### Return type
 
-[**Trustee**](Trustee.html)
+[**Trustee**](Trustee)
 
 
 ## get_orgauthorization_trustee_clonedusers
 
 > [**ClonedUserEntityListing**](ClonedUserEntityListing) get_orgauthorization_trustee_clonedusers(trustee_org_id)
-
 
 
 The list of cloned users from the trustee organization (i.e. users with a native user record).
@@ -798,13 +783,12 @@ except ApiException as e:
 
 ### Return type
 
-[**ClonedUserEntityListing**](ClonedUserEntityListing.html)
+[**ClonedUserEntityListing**](ClonedUserEntityListing)
 
 
 ## get_orgauthorization_trustee_group
 
 > [**TrustGroup**](TrustGroup) get_orgauthorization_trustee_group(trustee_org_id, trustee_group_id)
-
 
 
 Get Trustee Group
@@ -849,13 +833,12 @@ except ApiException as e:
 
 ### Return type
 
-[**TrustGroup**](TrustGroup.html)
+[**TrustGroup**](TrustGroup)
 
 
 ## get_orgauthorization_trustee_group_roles
 
 > [**UserAuthorization**](UserAuthorization) get_orgauthorization_trustee_group_roles(trustee_org_id, trustee_group_id)
-
 
 
 Get Trustee Group Roles
@@ -900,13 +883,12 @@ except ApiException as e:
 
 ### Return type
 
-[**UserAuthorization**](UserAuthorization.html)
+[**UserAuthorization**](UserAuthorization)
 
 
 ## get_orgauthorization_trustee_groups
 
 > [**TrustGroupEntityListing**](TrustGroupEntityListing) get_orgauthorization_trustee_groups(trustee_org_id, page_size=page_size, page_number=page_number)
-
 
 
 The list of trustee groups for this organization (i.e. groups granted access to this organization).
@@ -953,13 +935,12 @@ except ApiException as e:
 
 ### Return type
 
-[**TrustGroupEntityListing**](TrustGroupEntityListing.html)
+[**TrustGroupEntityListing**](TrustGroupEntityListing)
 
 
 ## get_orgauthorization_trustee_user
 
 > [**TrustUser**](TrustUser) get_orgauthorization_trustee_user(trustee_org_id, trustee_user_id)
-
 
 
 Get Trustee User
@@ -1004,13 +985,12 @@ except ApiException as e:
 
 ### Return type
 
-[**TrustUser**](TrustUser.html)
+[**TrustUser**](TrustUser)
 
 
 ## get_orgauthorization_trustee_user_roles
 
 > [**UserAuthorization**](UserAuthorization) get_orgauthorization_trustee_user_roles(trustee_org_id, trustee_user_id)
-
 
 
 Get Trustee User Roles
@@ -1055,13 +1035,12 @@ except ApiException as e:
 
 ### Return type
 
-[**UserAuthorization**](UserAuthorization.html)
+[**UserAuthorization**](UserAuthorization)
 
 
 ## get_orgauthorization_trustee_users
 
 > [**TrustUserEntityListing**](TrustUserEntityListing) get_orgauthorization_trustee_users(trustee_org_id, page_size=page_size, page_number=page_number)
-
 
 
 The list of trustee users for this organization (i.e. users granted access to this organization).
@@ -1108,13 +1087,12 @@ except ApiException as e:
 
 ### Return type
 
-[**TrustUserEntityListing**](TrustUserEntityListing.html)
+[**TrustUserEntityListing**](TrustUserEntityListing)
 
 
 ## get_orgauthorization_trustees
 
 > [**TrustEntityListing**](TrustEntityListing) get_orgauthorization_trustees(page_size=page_size, page_number=page_number)
-
 
 
 The list of trustees for this organization (i.e. organizations granted access to this organization).
@@ -1159,13 +1137,12 @@ except ApiException as e:
 
 ### Return type
 
-[**TrustEntityListing**](TrustEntityListing.html)
+[**TrustEntityListing**](TrustEntityListing)
 
 
 ## get_orgauthorization_trustees_default
 
 > [**Trustee**](Trustee) get_orgauthorization_trustees_default()
-
 
 
 Get organization authorization trust with Customer Care, if one exists.
@@ -1205,13 +1182,12 @@ This endpoint does not need any parameters.
 
 ### Return type
 
-[**Trustee**](Trustee.html)
+[**Trustee**](Trustee)
 
 
 ## get_orgauthorization_trustor
 
 > [**Trustor**](Trustor) get_orgauthorization_trustor(trustor_org_id)
-
 
 
 Get Org Trust
@@ -1254,13 +1230,12 @@ except ApiException as e:
 
 ### Return type
 
-[**Trustor**](Trustor.html)
+[**Trustor**](Trustor)
 
 
 ## get_orgauthorization_trustor_cloneduser
 
 > [**ClonedUser**](ClonedUser) get_orgauthorization_trustor_cloneduser(trustor_org_id, trustee_user_id)
-
 
 
 Get Cloned User
@@ -1305,13 +1280,12 @@ except ApiException as e:
 
 ### Return type
 
-[**ClonedUser**](ClonedUser.html)
+[**ClonedUser**](ClonedUser)
 
 
 ## get_orgauthorization_trustor_clonedusers
 
 > [**ClonedUserEntityListing**](ClonedUserEntityListing) get_orgauthorization_trustor_clonedusers(trustor_org_id)
-
 
 
 The list of cloned users in the trustor organization (i.e. users with a native user record).
@@ -1354,13 +1328,12 @@ except ApiException as e:
 
 ### Return type
 
-[**ClonedUserEntityListing**](ClonedUserEntityListing.html)
+[**ClonedUserEntityListing**](ClonedUserEntityListing)
 
 
 ## get_orgauthorization_trustor_group
 
 > [**TrustGroup**](TrustGroup) get_orgauthorization_trustor_group(trustor_org_id, trustor_group_id)
-
 
 
 Get Trustee Group
@@ -1405,13 +1378,12 @@ except ApiException as e:
 
 ### Return type
 
-[**TrustGroup**](TrustGroup.html)
+[**TrustGroup**](TrustGroup)
 
 
 ## get_orgauthorization_trustor_groups
 
 > [**TrustGroupEntityListing**](TrustGroupEntityListing) get_orgauthorization_trustor_groups(trustor_org_id, page_size=page_size, page_number=page_number)
-
 
 
 The list of groups in the trustor organization (i.e. groups granted access).
@@ -1458,13 +1430,12 @@ except ApiException as e:
 
 ### Return type
 
-[**TrustGroupEntityListing**](TrustGroupEntityListing.html)
+[**TrustGroupEntityListing**](TrustGroupEntityListing)
 
 
 ## get_orgauthorization_trustor_user
 
 > [**TrustUser**](TrustUser) get_orgauthorization_trustor_user(trustor_org_id, trustee_user_id)
-
 
 
 Get Trustee User
@@ -1509,13 +1480,12 @@ except ApiException as e:
 
 ### Return type
 
-[**TrustUser**](TrustUser.html)
+[**TrustUser**](TrustUser)
 
 
 ## get_orgauthorization_trustor_users
 
 > [**TrustUserEntityListing**](TrustUserEntityListing) get_orgauthorization_trustor_users(trustor_org_id, page_size=page_size, page_number=page_number)
-
 
 
 The list of users in the trustor organization (i.e. users granted access).
@@ -1562,13 +1532,12 @@ except ApiException as e:
 
 ### Return type
 
-[**TrustUserEntityListing**](TrustUserEntityListing.html)
+[**TrustUserEntityListing**](TrustUserEntityListing)
 
 
 ## get_orgauthorization_trustors
 
 > [**TrustorEntityListing**](TrustorEntityListing) get_orgauthorization_trustors(page_size=page_size, page_number=page_number)
-
 
 
 The list of organizations that have authorized/trusted your organization.
@@ -1613,13 +1582,12 @@ except ApiException as e:
 
 ### Return type
 
-[**TrustorEntityListing**](TrustorEntityListing.html)
+[**TrustorEntityListing**](TrustorEntityListing)
 
 
 ## post_orgauthorization_pairings
 
 > [**TrustRequest**](TrustRequest) post_orgauthorization_pairings(body)
-
 
 
 A pairing id is created by the trustee and given to the trustor to create a trust.
@@ -1658,17 +1626,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**TrustRequestCreate**](TrustRequestCreate.html)| Pairing Info |  |
+| **body** | [**TrustRequestCreate**](TrustRequestCreate)| Pairing Info |  |
 
 ### Return type
 
-[**TrustRequest**](TrustRequest.html)
+[**TrustRequest**](TrustRequest)
 
 
 ## post_orgauthorization_trustee_groups
 
 > [**TrustGroup**](TrustGroup) post_orgauthorization_trustee_groups(trustee_org_id, body)
-
 
 
 Add a group to the trust.
@@ -1709,17 +1676,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **trustee_org_id** | **str**| Trustee Organization Id |  |
-| **body** | [**TrustMemberCreate**](TrustMemberCreate.html)| Trust |  |
+| **body** | [**TrustMemberCreate**](TrustMemberCreate)| Trust |  |
 
 ### Return type
 
-[**TrustGroup**](TrustGroup.html)
+[**TrustGroup**](TrustGroup)
 
 
 ## post_orgauthorization_trustee_users
 
 > [**TrustUser**](TrustUser) post_orgauthorization_trustee_users(trustee_org_id, body)
-
 
 
 Add a user to the trust.
@@ -1760,17 +1726,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **trustee_org_id** | **str**| Trustee Organization Id |  |
-| **body** | [**TrustMemberCreate**](TrustMemberCreate.html)| Trust |  |
+| **body** | [**TrustMemberCreate**](TrustMemberCreate)| Trust |  |
 
 ### Return type
 
-[**TrustUser**](TrustUser.html)
+[**TrustUser**](TrustUser)
 
 
 ## post_orgauthorization_trustees
 
 > [**Trustee**](Trustee) post_orgauthorization_trustees(body)
-
 
 
 Create a new organization authorization trust. This is required to grant other organizations access to your organization.
@@ -1810,17 +1775,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**TrustCreate**](TrustCreate.html)| Trust |  |
+| **body** | [**TrustCreate**](TrustCreate)| Trust |  |
 
 ### Return type
 
-[**Trustee**](Trustee.html)
+[**Trustee**](Trustee)
 
 
 ## post_orgauthorization_trustees_audits
 
 > object** post_orgauthorization_trustees_audits(body, page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order)
-
 
 
 Get Org Trustee Audits
@@ -1863,7 +1827,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**TrusteeAuditQueryRequest**](TrusteeAuditQueryRequest.html)| Values to scope the request. |  |
+| **body** | [**TrusteeAuditQueryRequest**](TrusteeAuditQueryRequest)| Values to scope the request. |  |
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **sort_by** | **str**| Sort by | [optional] [default to &#39;timestamp&#39;] |
@@ -1877,7 +1841,6 @@ except ApiException as e:
 ## post_orgauthorization_trustees_default
 
 > [**Trustee**](Trustee) post_orgauthorization_trustees_default(assign_default_role=assign_default_role, auto_expire=auto_expire)
-
 
 
 Create a new organization authorization trust with Customer Care. This is required to grant your regional Customer Care organization access to your organization.
@@ -1923,13 +1886,12 @@ except ApiException as e:
 
 ### Return type
 
-[**Trustee**](Trustee.html)
+[**Trustee**](Trustee)
 
 
 ## post_orgauthorization_trustor_audits
 
 > object** post_orgauthorization_trustor_audits(body, page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order)
-
 
 
 Get Org Trustor Audits
@@ -1972,7 +1934,7 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**TrustorAuditQueryRequest**](TrustorAuditQueryRequest.html)| Values to scope the request. |  |
+| **body** | [**TrustorAuditQueryRequest**](TrustorAuditQueryRequest)| Values to scope the request. |  |
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **sort_by** | **str**| Sort by | [optional] [default to &#39;timestamp&#39;] |
@@ -1986,7 +1948,6 @@ except ApiException as e:
 ## put_orgauthorization_trustee
 
 > [**Trustee**](Trustee) put_orgauthorization_trustee(trustee_org_id, body)
-
 
 
 Update Org Trust
@@ -2027,17 +1988,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **trustee_org_id** | **str**| Trustee Organization Id |  |
-| **body** | [**TrustUpdate**](TrustUpdate.html)| Client |  |
+| **body** | [**TrustUpdate**](TrustUpdate)| Client |  |
 
 ### Return type
 
-[**Trustee**](Trustee.html)
+[**Trustee**](Trustee)
 
 
 ## put_orgauthorization_trustee_group_roledivisions
 
 > [**UserAuthorization**](UserAuthorization) put_orgauthorization_trustee_group_roledivisions(trustee_org_id, trustee_group_id, body)
-
 
 
 Update Trustee Group Roles
@@ -2080,17 +2040,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **trustee_org_id** | **str**| Trustee Organization Id |  |
 | **trustee_group_id** | **str**| Trustee Group Id |  |
-| **body** | [**RoleDivisionGrants**](RoleDivisionGrants.html)| Set of roles with corresponding divisions to apply |  |
+| **body** | [**RoleDivisionGrants**](RoleDivisionGrants)| Set of roles with corresponding divisions to apply |  |
 
 ### Return type
 
-[**UserAuthorization**](UserAuthorization.html)
+[**UserAuthorization**](UserAuthorization)
 
 
 ## put_orgauthorization_trustee_group_roles
 
 > [**UserAuthorization**](UserAuthorization) put_orgauthorization_trustee_group_roles(trustee_org_id, trustee_group_id, body)
-
 
 
 Update Trustee Group Roles
@@ -2133,17 +2092,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **trustee_org_id** | **str**| Trustee Organization Id |  |
 | **trustee_group_id** | **str**| Trustee Group Id |  |
-| **body** | [**list[str]**](str.html)| List of roles |  |
+| **body** | [**list[str]**](str)| List of roles |  |
 
 ### Return type
 
-[**UserAuthorization**](UserAuthorization.html)
+[**UserAuthorization**](UserAuthorization)
 
 
 ## put_orgauthorization_trustee_user_roledivisions
 
 > [**UserAuthorization**](UserAuthorization) put_orgauthorization_trustee_user_roledivisions(trustee_org_id, trustee_user_id, body)
-
 
 
 Update Trustee User Roles
@@ -2186,17 +2144,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **trustee_org_id** | **str**| Trustee Organization Id |  |
 | **trustee_user_id** | **str**| Trustee User Id |  |
-| **body** | [**RoleDivisionGrants**](RoleDivisionGrants.html)| Set of roles with corresponding divisions to apply |  |
+| **body** | [**RoleDivisionGrants**](RoleDivisionGrants)| Set of roles with corresponding divisions to apply |  |
 
 ### Return type
 
-[**UserAuthorization**](UserAuthorization.html)
+[**UserAuthorization**](UserAuthorization)
 
 
 ## put_orgauthorization_trustee_user_roles
 
 > [**UserAuthorization**](UserAuthorization) put_orgauthorization_trustee_user_roles(trustee_org_id, trustee_user_id, body)
-
 
 
 Update Trustee User Roles
@@ -2239,17 +2196,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **trustee_org_id** | **str**| Trustee Organization Id |  |
 | **trustee_user_id** | **str**| Trustee User Id |  |
-| **body** | [**list[str]**](str.html)| List of roles |  |
+| **body** | [**list[str]**](str)| List of roles |  |
 
 ### Return type
 
-[**UserAuthorization**](UserAuthorization.html)
+[**UserAuthorization**](UserAuthorization)
 
 
 ## put_orgauthorization_trustor_cloneduser
 
 > [**ClonedUser**](ClonedUser) put_orgauthorization_trustor_cloneduser(trustor_org_id, trustee_user_id)
-
 
 
 Creates a clone of the trustee user in the trustor org.
@@ -2294,13 +2250,12 @@ except ApiException as e:
 
 ### Return type
 
-[**ClonedUser**](ClonedUser.html)
+[**ClonedUser**](ClonedUser)
 
 
 ## put_orgauthorization_trustor_group
 
 > [**TrustGroup**](TrustGroup) put_orgauthorization_trustor_group(trustor_org_id, trustor_group_id)
-
 
 
 Add a Trustee Group to the trust.
@@ -2345,13 +2300,12 @@ except ApiException as e:
 
 ### Return type
 
-[**TrustGroup**](TrustGroup.html)
+[**TrustGroup**](TrustGroup)
 
 
 ## put_orgauthorization_trustor_user
 
 > [**TrustUser**](TrustUser) put_orgauthorization_trustor_user(trustor_org_id, trustee_user_id)
-
 
 
 Add a Trustee user to the trust.
@@ -2396,7 +2350,7 @@ except ApiException as e:
 
 ### Return type
 
-[**TrustUser**](TrustUser.html)
+[**TrustUser**](TrustUser)
 
 
-_PureCloudPlatformClientV2 210.0.0_
+_PureCloudPlatformClientV2 211.0.0_
