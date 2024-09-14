@@ -8348,4 +8348,4 @@ except ApiException as e:
 [**WrapUpCodeMapping**](WrapUpCodeMapping)
 
 
-_PureCloudPlatformClientV2 211.0.0_
+_PureCloudPlatformClientV2 211.1.0_

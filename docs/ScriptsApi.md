@@ -648,7 +648,7 @@ Wraps GET /api/v2/scripts/uploads/{uploadId}/status
 
 Requires ANY permissions: 
 
-* scripter:script:search
+* scripter:script:view
 
 ### Example
 
@@ -787,4 +787,4 @@ except ApiException as e:
 [**Script**](Script)
 
 
-_PureCloudPlatformClientV2 211.0.0_
+_PureCloudPlatformClientV2 211.1.0_

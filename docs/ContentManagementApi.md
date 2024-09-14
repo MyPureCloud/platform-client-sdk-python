@@ -54,8 +54,9 @@ Delete a document.
 
 Wraps DELETE /api/v2/contentmanagement/documents/{documentId} 
 
-Requires no permissions
+Requires ANY permissions: 
 
+* content_management_user
 
 ### Example
 
@@ -342,8 +343,9 @@ Get a document.
 
 Wraps GET /api/v2/contentmanagement/documents/{documentId} 
 
-Requires no permissions
+Requires ANY permissions: 
 
+* content_management_user
 
 ### Example
 
@@ -391,8 +393,9 @@ Download a document.
 
 Wraps GET /api/v2/contentmanagement/documents/{documentId}/content 
 
-Requires no permissions
+Requires ANY permissions: 
 
+* content_management_user
 
 ### Example
 
@@ -1322,8 +1325,9 @@ Update a document.
 
 Wraps POST /api/v2/contentmanagement/documents/{documentId} 
 
-Requires no permissions
+Requires ANY permissions: 
 
+* content_management_user
 
 ### Example
 
@@ -1375,8 +1379,9 @@ Replace the contents of a document.
 
 Wraps POST /api/v2/contentmanagement/documents/{documentId}/content 
 
-Requires no permissions
+Requires ANY permissions: 
 
+* content_management_user
 
 ### Example
 
@@ -1864,4 +1869,4 @@ except ApiException as e:
 [**TagValue**](TagValue)
 
 
-_PureCloudPlatformClientV2 211.0.0_
+_PureCloudPlatformClientV2 211.1.0_

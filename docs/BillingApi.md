@@ -116,4 +116,4 @@ except ApiException as e:
 [**TrusteeBillingOverview**](TrusteeBillingOverview)
 
 
-_PureCloudPlatformClientV2 211.0.0_
+_PureCloudPlatformClientV2 211.1.0_

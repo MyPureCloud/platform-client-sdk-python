@@ -1791,4 +1791,4 @@ except ApiException as e:
 [**IdentityProvider**](IdentityProvider)
 
 
-_PureCloudPlatformClientV2 211.0.0_
+_PureCloudPlatformClientV2 211.1.0_

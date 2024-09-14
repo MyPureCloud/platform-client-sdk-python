@@ -204,8 +204,6 @@ void (empty response body)
 
 Delete a grammar.
 
-delete_architect_grammar is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps DELETE /api/v2/architect/grammars/{grammarId} 
 
 Requires ALL permissions: 
@@ -253,8 +251,6 @@ except ApiException as e:
 
 
 Delete specified grammar language
-
-delete_architect_grammar_language is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps DELETE /api/v2/architect/grammars/{grammarId}/languages/{languageCode} 
 
@@ -305,8 +301,6 @@ void (empty response body)
 
 Clear the DTMF mode file for the grammar language if there is one
 
-delete_architect_grammar_language_files_dtmf is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps DELETE /api/v2/architect/grammars/{grammarId}/languages/{languageCode}/files/dtmf 
 
 Requires ALL permissions: 
@@ -355,8 +349,6 @@ void (empty response body)
 
 
 Clear the voice mode file for the grammar language if there is one
-
-delete_architect_grammar_language_files_voice is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps DELETE /api/v2/architect/grammars/{grammarId}/languages/{languageCode}/files/voice 
 
@@ -1806,8 +1798,6 @@ Get a grammar
 
 Returns a specified grammar
 
-get_architect_grammar is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps GET /api/v2/architect/grammars/{grammarId} 
 
 Requires ALL permissions: 
@@ -1857,8 +1847,6 @@ except ApiException as e:
 
 
 Get a grammar language.
-
-get_architect_grammar_language is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/architect/grammars/{grammarId}/languages/{languageCode} 
 
@@ -1911,8 +1899,6 @@ except ApiException as e:
 Get a pageable list of grammars, filtered by query parameters
 
 Multiple IDs can be specified, in which case all matching grammars will be returned, and no other parameters will be evaluated.
-
-get_architect_grammars is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps GET /api/v2/architect/grammars 
 
@@ -5047,8 +5033,6 @@ except ApiException as e:
 
 Updates a grammar
 
-patch_architect_grammar is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps PATCH /api/v2/architect/grammars/{grammarId} 
 
 Requires ALL permissions: 
@@ -5098,8 +5082,6 @@ except ApiException as e:
 
 
 Updates a grammar language
-
-patch_architect_grammar_language is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps PATCH /api/v2/architect/grammars/{grammarId}/languages/{languageCode} 
 
@@ -5296,8 +5278,6 @@ except ApiException as e:
 
 Creates a presigned URL for uploading a grammar DTMF mode file
 
-post_architect_grammar_language_files_dtmf is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps POST /api/v2/architect/grammars/{grammarId}/languages/{languageCode}/files/dtmf 
 
 Requires ALL permissions: 
@@ -5349,8 +5329,6 @@ except ApiException as e:
 
 
 Creates a presigned URL for uploading a grammar voice mode file
-
-post_architect_grammar_language_files_voice is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/architect/grammars/{grammarId}/languages/{languageCode}/files/voice 
 
@@ -5404,8 +5382,6 @@ except ApiException as e:
 
 Create a new language for a given grammar
 
-post_architect_grammar_languages is a preview method and is subject to both breaking and non-breaking changes at any time without notice
-
 Wraps POST /api/v2/architect/grammars/{grammarId}/languages 
 
 Requires ALL permissions: 
@@ -5455,8 +5431,6 @@ except ApiException as e:
 
 
 Create a new grammar
-
-post_architect_grammars is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps POST /api/v2/architect/grammars 
 
@@ -7619,4 +7593,4 @@ except ApiException as e:
 [**Operation**](Operation)
 
 
-_PureCloudPlatformClientV2 211.0.0_
+_PureCloudPlatformClientV2 211.1.0_

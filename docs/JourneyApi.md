@@ -3077,4 +3077,4 @@ except ApiException as e:
 [**EntityListing**](EntityListing)
 
 
-_PureCloudPlatformClientV2 211.0.0_
+_PureCloudPlatformClientV2 211.1.0_

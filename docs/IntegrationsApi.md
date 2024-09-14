@@ -37,6 +37,8 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_integrations_credential**](#get_integrations_credential) | Get a single credential with sensitive fields redacted|
 |[**get_integrations_credentials**](#get_integrations_credentials) | List multiple sets of credentials|
 |[**get_integrations_credentials_types**](#get_integrations_credentials_types) | List all credential types|
+|[**get_integrations_speech_audioconnector**](#get_integrations_speech_audioconnector) | Get a list of Audio Connector integrations|
+|[**get_integrations_speech_audioconnector_integration_id**](#get_integrations_speech_audioconnector_integration_id) | Get an Audio Connector integration|
 |[**get_integrations_speech_dialogflow_agent**](#get_integrations_speech_dialogflow_agent) | Get details about a Dialogflow agent|
 |[**get_integrations_speech_dialogflow_agents**](#get_integrations_speech_dialogflow_agents) | Get a list of Dialogflow agents in the customers&#39; Google accounts|
 |[**get_integrations_speech_dialogflowcx_agent**](#get_integrations_speech_dialogflowcx_agent) | Get details about a Dialogflow CX agent|
@@ -1710,6 +1712,104 @@ This endpoint does not need any parameters.
 ### Return type
 
 [**CredentialTypeListing**](CredentialTypeListing)
+
+
+## get_integrations_speech_audioconnector
+
+> [**AudioConnectorIntegrationEntityListing**](AudioConnectorIntegrationEntityListing) get_integrations_speech_audioconnector(page_number=page_number, page_size=page_size)
+
+
+Get a list of Audio Connector integrations
+
+Wraps GET /api/v2/integrations/speech/audioconnector 
+
+Requires ANY permissions: 
+
+* integrations:integration:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.IntegrationsApi()
+page_number = 1 # int | Page number (optional) (default to 1)
+page_size = 25 # int | Page size (optional) (default to 25)
+
+try:
+    # Get a list of Audio Connector integrations
+    api_response = api_instance.get_integrations_speech_audioconnector(page_number=page_number, page_size=page_size)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling IntegrationsApi->get_integrations_speech_audioconnector: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **page_number** | **int**| Page number | [optional] [default to 1] |
+| **page_size** | **int**| Page size | [optional] [default to 25] |
+
+### Return type
+
+[**AudioConnectorIntegrationEntityListing**](AudioConnectorIntegrationEntityListing)
+
+
+## get_integrations_speech_audioconnector_integration_id
+
+> [**AudioConnectorIntegration**](AudioConnectorIntegration) get_integrations_speech_audioconnector_integration_id(integration_id)
+
+
+Get an Audio Connector integration
+
+Wraps GET /api/v2/integrations/speech/audioconnector/{integrationId} 
+
+Requires ANY permissions: 
+
+* integrations:integration:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.IntegrationsApi()
+integration_id = 'integration_id_example' # str | The integration ID
+
+try:
+    # Get an Audio Connector integration
+    api_response = api_instance.get_integrations_speech_audioconnector_integration_id(integration_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling IntegrationsApi->get_integrations_speech_audioconnector_integration_id: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **integration_id** | **str**| The integration ID |  |
+
+### Return type
+
+[**AudioConnectorIntegration**](AudioConnectorIntegration)
 
 
 ## get_integrations_speech_dialogflow_agent
@@ -4378,4 +4478,4 @@ except ApiException as e:
 **str**
 
 
-_PureCloudPlatformClientV2 211.0.0_
+_PureCloudPlatformClientV2 211.1.0_
