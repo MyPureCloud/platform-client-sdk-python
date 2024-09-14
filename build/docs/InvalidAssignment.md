@@ -1,14 +1,14 @@
----
-title: InvalidAssignment
----
+# InvalidAssignment
+
 ## InvalidAssignment
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **user** | [**UserReference**](UserReference.html) | Invalid user for validation | [optional] |
-| **message** | **str** | The reason for the invalid input for validation | [optional] |
-{: class="table table-striped"}
+| **user** | [UserReference](UserReference) | Invalid user for validation | [optional] |
+| **message** | str | The reason for the invalid input for validation | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

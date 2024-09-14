@@ -1,14 +1,14 @@
----
-title: DocumentBodyTable
----
+# DocumentBodyTable
+
 ## DocumentBodyTable
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **rows** | [**list[DocumentBodyTableRowBlock]**](DocumentBodyTableRowBlock.html) | The list of rows for the table. | |
-| **properties** | [**DocumentBodyTableProperties**](DocumentBodyTableProperties.html) | The properties for the table. | [optional] |
-{: class="table table-striped"}
+| **rows** | [list[DocumentBodyTableRowBlock]](DocumentBodyTableRowBlock) | The list of rows for the table. | |
+| **properties** | [DocumentBodyTableProperties](DocumentBodyTableProperties) | The properties for the table. | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

@@ -1,17 +1,17 @@
----
-title: EmailOutboundDomainResult
----
+# EmailOutboundDomainResult
+
 ## EmailOutboundDomainResult
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **dns_cname_bounce_record** | [**DnsRecordEntry**](DnsRecordEntry.html) |  | [optional] |
-| **dns_txt_sending_record** | [**DnsRecordEntry**](DnsRecordEntry.html) |  | [optional] |
-| **domain_name** | **str** |  | [optional] |
-| **sender_status** | **str** |  | [optional] |
-| **sender_type** | **str** |  | [optional] |
-{: class="table table-striped"}
+| **dns_cname_bounce_record** | [DnsRecordEntry](DnsRecordEntry) |  | [optional] |
+| **dns_txt_sending_record** | [DnsRecordEntry](DnsRecordEntry) |  | [optional] |
+| **domain_name** | str |  | [optional] |
+| **sender_status** | str |  | [optional] |
+| **sender_type** | str |  | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

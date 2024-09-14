@@ -1,13 +1,13 @@
----
-title: LineUserId
----
+# LineUserId
+
 ## LineUserId
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **user_id** | **str** | The unique channel-specific userId for the user | [optional] |
-{: class="table table-striped"}
+| **user_id** | str | The unique channel-specific userId for the user | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

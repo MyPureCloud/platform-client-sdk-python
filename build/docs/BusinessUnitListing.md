@@ -1,13 +1,13 @@
----
-title: BusinessUnitListing
----
+# BusinessUnitListing
+
 ## BusinessUnitListing
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **entities** | [**list[BusinessUnitListItem]**](BusinessUnitListItem.html) |  | [optional] |
-{: class="table table-striped"}
+| **entities** | [list[BusinessUnitListItem]](BusinessUnitListItem) |  | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

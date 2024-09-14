@@ -1,14 +1,14 @@
----
-title: RoleDivisionPair
----
+# RoleDivisionPair
+
 ## RoleDivisionPair
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **role_id** | **str** | The ID of the role | |
-| **division_id** | **str** | The ID of the division | |
-{: class="table table-striped"}
+| **role_id** | str | The ID of the role | |
+| **division_id** | str | The ID of the division | |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

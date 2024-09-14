@@ -1,14 +1,14 @@
----
-title: WfmMoveAgentsCompleteTopicWfmMoveAgentData
----
+# WfmMoveAgentsCompleteTopicWfmMoveAgentData
+
 ## WfmMoveAgentsCompleteTopicWfmMoveAgentData
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **user** | [**WfmMoveAgentsCompleteTopicUserReference**](WfmMoveAgentsCompleteTopicUserReference.html) |  | [optional] |
-| **result** | **str** |  | [optional] |
-{: class="table table-striped"}
+| **user** | [WfmMoveAgentsCompleteTopicUserReference](WfmMoveAgentsCompleteTopicUserReference) |  | [optional] |
+| **result** | str |  | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

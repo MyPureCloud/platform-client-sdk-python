@@ -1,13 +1,13 @@
----
-title: SegmentAssignmentEvent
----
+# SegmentAssignmentEvent
+
 ## SegmentAssignmentEvent
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **segment** | [**AddressableEntityRef**](AddressableEntityRef.html) | The segment which was assigned. | |
-{: class="table table-striped"}
+| **segment** | [AddressableEntityRef](AddressableEntityRef) | The segment which was assigned. | |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

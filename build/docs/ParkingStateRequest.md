@@ -1,13 +1,13 @@
----
-title: ParkingStateRequest
----
+# ParkingStateRequest
+
 ## ParkingStateRequest
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **state** | **str** | State to set the participant. | |
-{: class="table table-striped"}
+| **state** | str | State to set the participant. | |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

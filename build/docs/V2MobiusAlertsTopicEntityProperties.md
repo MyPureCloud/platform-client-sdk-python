@@ -1,17 +1,17 @@
----
-title: V2MobiusAlertsTopicEntityProperties
----
+# V2MobiusAlertsTopicEntityProperties
+
 ## V2MobiusAlertsTopicEntityProperties
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **entity_type** | **str** |  | [optional] |
-| **user** | [**V2MobiusAlertsTopicAlertingAddressableEntityRef**](V2MobiusAlertsTopicAlertingAddressableEntityRef.html) |  | [optional] |
-| **group** | [**V2MobiusAlertsTopicAlertingAddressableEntityRef**](V2MobiusAlertsTopicAlertingAddressableEntityRef.html) |  | [optional] |
-| **queue** | [**V2MobiusAlertsTopicAlertingAddressableEntityRef**](V2MobiusAlertsTopicAlertingAddressableEntityRef.html) |  | [optional] |
-| **team** | [**V2MobiusAlertsTopicAlertingAddressableEntityRef**](V2MobiusAlertsTopicAlertingAddressableEntityRef.html) |  | [optional] |
-{: class="table table-striped"}
+| **entity_type** | str |  | [optional] |
+| **user** | [V2MobiusAlertsTopicAlertingAddressableEntityRef](V2MobiusAlertsTopicAlertingAddressableEntityRef) |  | [optional] |
+| **group** | [V2MobiusAlertsTopicAlertingAddressableEntityRef](V2MobiusAlertsTopicAlertingAddressableEntityRef) |  | [optional] |
+| **queue** | [V2MobiusAlertsTopicAlertingAddressableEntityRef](V2MobiusAlertsTopicAlertingAddressableEntityRef) |  | [optional] |
+| **team** | [V2MobiusAlertsTopicAlertingAddressableEntityRef](V2MobiusAlertsTopicAlertingAddressableEntityRef) |  | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

@@ -1,6 +1,4 @@
----
-title: StationsApi
----
+# StationsApi
 
 ## PureCloudPlatformClientV2.StationsApi
 
@@ -8,15 +6,15 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 |Method | Description|
 |------------- | -------------|
-|[**delete_station_associateduser**](StationsApi.html#delete_station_associateduser) | Unassigns the user assigned to this station|
-|[**get_station**](StationsApi.html#get_station) | Get station.|
-|[**get_stations**](StationsApi.html#get_stations) | Get the list of available stations.|
-{: class="table table-striped"}
+|[**delete_station_associateduser**](#delete_station_associateduser) | Unassigns the user assigned to this station|
+|[**get_station**](#get_station) | Get station.|
+|[**get_stations**](#get_stations) | Get the list of available stations.|
 
-<a name="delete_station_associateduser"></a>
 
-##  delete_station_associateduser(station_id)
 
+## delete_station_associateduser
+
+>  delete_station_associateduser(station_id)
 
 
 Unassigns the user assigned to this station
@@ -54,16 +52,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **station_id** | **str**| Station ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (empty response body)
 
-<a name="get_station"></a>
 
-## [**Station**](Station.html) get_station(station_id)
+## get_station
 
+> [**Station**](Station) get_station(station_id)
 
 
 Get station.
@@ -102,16 +99,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **station_id** | **str**| Station ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**Station**](Station.html)
+[**Station**](Station)
 
-<a name="get_stations"></a>
 
-## [**StationEntityListing**](StationEntityListing.html) get_stations(page_size=page_size, page_number=page_number, sort_by=sort_by, name=name, user_selectable=user_selectable, web_rtc_user_id=web_rtc_user_id, id=id, line_appearance_id=line_appearance_id)
+## get_stations
 
+> [**StationEntityListing**](StationEntityListing) get_stations(page_size=page_size, page_number=page_number, sort_by=sort_by, name=name, user_selectable=user_selectable, web_rtc_user_id=web_rtc_user_id, id=id, line_appearance_id=line_appearance_id)
 
 
 Get the list of available stations.
@@ -164,9 +160,10 @@ except ApiException as e:
 | **web_rtc_user_id** | **str**| Filter for the webRtc station of the webRtcUserId | [optional]  |
 | **id** | **str**| Comma separated list of stationIds | [optional]  |
 | **line_appearance_id** | **str**| lineAppearanceId | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**StationEntityListing**](StationEntityListing.html)
+[**StationEntityListing**](StationEntityListing)
 
+
+_PureCloudPlatformClientV2 211.1.0_

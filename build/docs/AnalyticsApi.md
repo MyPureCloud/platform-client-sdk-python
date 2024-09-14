@@ -1,6 +1,4 @@
----
-title: AnalyticsApi
----
+# AnalyticsApi
 
 ## PureCloudPlatformClientV2.AnalyticsApi
 
@@ -8,109 +6,109 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 |Method | Description|
 |------------- | -------------|
-|[**delete_analytics_conversations_details_job**](AnalyticsApi.html#delete_analytics_conversations_details_job) | Delete/cancel an async details job|
-|[**delete_analytics_users_details_job**](AnalyticsApi.html#delete_analytics_users_details_job) | Delete/cancel an async request|
-|[**get_analytics_actions_aggregates_job**](AnalyticsApi.html#get_analytics_actions_aggregates_job) | Get status for async query for action aggregates|
-|[**get_analytics_actions_aggregates_job_results**](AnalyticsApi.html#get_analytics_actions_aggregates_job_results) | Fetch a page of results for an async aggregates query|
-|[**get_analytics_agentcopilots_aggregates_job**](AnalyticsApi.html#get_analytics_agentcopilots_aggregates_job) | Get status for async query for agent copilot aggregates|
-|[**get_analytics_agentcopilots_aggregates_job_results**](AnalyticsApi.html#get_analytics_agentcopilots_aggregates_job_results) | Fetch a page of results for an async aggregates query|
-|[**get_analytics_botflow_divisions_reportingturns**](AnalyticsApi.html#get_analytics_botflow_divisions_reportingturns) | Get Reporting Turns (division aware).|
-|[**get_analytics_botflow_reportingturns**](AnalyticsApi.html#get_analytics_botflow_reportingturns) | Get Reporting Turns.|
-|[**get_analytics_botflow_sessions**](AnalyticsApi.html#get_analytics_botflow_sessions) | Get Bot Flow Sessions.|
-|[**get_analytics_bots_aggregates_job**](AnalyticsApi.html#get_analytics_bots_aggregates_job) | Get status for async query for bot aggregates|
-|[**get_analytics_bots_aggregates_job_results**](AnalyticsApi.html#get_analytics_bots_aggregates_job_results) | Fetch a page of results for an async aggregates query|
-|[**get_analytics_conversation_details**](AnalyticsApi.html#get_analytics_conversation_details) | Get a conversation by id|
-|[**get_analytics_conversations_aggregates_job**](AnalyticsApi.html#get_analytics_conversations_aggregates_job) | Get status for async query for conversation aggregates|
-|[**get_analytics_conversations_aggregates_job_results**](AnalyticsApi.html#get_analytics_conversations_aggregates_job_results) | Fetch a page of results for an async aggregates query|
-|[**get_analytics_conversations_details**](AnalyticsApi.html#get_analytics_conversations_details) | Gets multiple conversations by id|
-|[**get_analytics_conversations_details_job**](AnalyticsApi.html#get_analytics_conversations_details_job) | Get status for async query for conversation details|
-|[**get_analytics_conversations_details_job_results**](AnalyticsApi.html#get_analytics_conversations_details_job_results) | Fetch a page of results for an async details job|
-|[**get_analytics_conversations_details_jobs_availability**](AnalyticsApi.html#get_analytics_conversations_details_jobs_availability) | Lookup the datalake availability date and time|
-|[**get_analytics_dataretention_settings**](AnalyticsApi.html#get_analytics_dataretention_settings) | Get analytics data retention setting|
-|[**get_analytics_evaluations_aggregates_job**](AnalyticsApi.html#get_analytics_evaluations_aggregates_job) | Get status for async query for evaluation aggregates|
-|[**get_analytics_evaluations_aggregates_job_results**](AnalyticsApi.html#get_analytics_evaluations_aggregates_job_results) | Fetch a page of results for an async aggregates query|
-|[**get_analytics_flowexecutions_aggregates_job**](AnalyticsApi.html#get_analytics_flowexecutions_aggregates_job) | Get status for async query for flow execution aggregates|
-|[**get_analytics_flowexecutions_aggregates_job_results**](AnalyticsApi.html#get_analytics_flowexecutions_aggregates_job_results) | Fetch a page of results for an async aggregates query|
-|[**get_analytics_flows_aggregates_job**](AnalyticsApi.html#get_analytics_flows_aggregates_job) | Get status for async query for Flow aggregates|
-|[**get_analytics_flows_aggregates_job_results**](AnalyticsApi.html#get_analytics_flows_aggregates_job_results) | Fetch a page of results for an async aggregates query|
-|[**get_analytics_journeys_aggregates_job**](AnalyticsApi.html#get_analytics_journeys_aggregates_job) | Get status for async query for journey aggregates|
-|[**get_analytics_journeys_aggregates_job_results**](AnalyticsApi.html#get_analytics_journeys_aggregates_job_results) | Fetch a page of results for an async aggregates query|
-|[**get_analytics_knowledge_aggregates_job**](AnalyticsApi.html#get_analytics_knowledge_aggregates_job) | Get status for async query for knowledge aggregates|
-|[**get_analytics_knowledge_aggregates_job_results**](AnalyticsApi.html#get_analytics_knowledge_aggregates_job_results) | Fetch a page of results for an async aggregates query|
-|[**get_analytics_reporting_dashboards_user**](AnalyticsApi.html#get_analytics_reporting_dashboards_user) | Get dashboards summary for a user|
-|[**get_analytics_reporting_dashboards_users**](AnalyticsApi.html#get_analytics_reporting_dashboards_users) | Get dashboards summary for users in a org|
-|[**get_analytics_reporting_exports**](AnalyticsApi.html#get_analytics_reporting_exports) | Get all view export requests for a user|
-|[**get_analytics_reporting_exports_metadata**](AnalyticsApi.html#get_analytics_reporting_exports_metadata) | Get all export metadata|
-|[**get_analytics_reporting_settings**](AnalyticsApi.html#get_analytics_reporting_settings) | Get AnalyticsReportingSettings for an organization|
-|[**get_analytics_reporting_settings_dashboards_query**](AnalyticsApi.html#get_analytics_reporting_settings_dashboards_query) | Get list of dashboard configurations|
-|[**get_analytics_reporting_settings_user_dashboards**](AnalyticsApi.html#get_analytics_reporting_settings_user_dashboards) | Get list of dashboards for an user|
-|[**get_analytics_resolutions_aggregates_job**](AnalyticsApi.html#get_analytics_resolutions_aggregates_job) | Get status for async query for resolution aggregates|
-|[**get_analytics_resolutions_aggregates_job_results**](AnalyticsApi.html#get_analytics_resolutions_aggregates_job_results) | Fetch a page of results for an async aggregates query|
-|[**get_analytics_surveys_aggregates_job**](AnalyticsApi.html#get_analytics_surveys_aggregates_job) | Get status for async query for survey aggregates|
-|[**get_analytics_surveys_aggregates_job_results**](AnalyticsApi.html#get_analytics_surveys_aggregates_job_results) | Fetch a page of results for an async aggregates query|
-|[**get_analytics_taskmanagement_aggregates_job**](AnalyticsApi.html#get_analytics_taskmanagement_aggregates_job) | Get status for async query for task management aggregates|
-|[**get_analytics_taskmanagement_aggregates_job_results**](AnalyticsApi.html#get_analytics_taskmanagement_aggregates_job_results) | Fetch a page of results for an async task management query|
-|[**get_analytics_transcripts_aggregates_job**](AnalyticsApi.html#get_analytics_transcripts_aggregates_job) | Get status for async query for transcript aggregates|
-|[**get_analytics_transcripts_aggregates_job_results**](AnalyticsApi.html#get_analytics_transcripts_aggregates_job_results) | Fetch a page of results for an async aggregates query|
-|[**get_analytics_users_aggregates_job**](AnalyticsApi.html#get_analytics_users_aggregates_job) | Get status for async query for user aggregates|
-|[**get_analytics_users_aggregates_job_results**](AnalyticsApi.html#get_analytics_users_aggregates_job_results) | Fetch a page of results for an async aggregates query|
-|[**get_analytics_users_details_job**](AnalyticsApi.html#get_analytics_users_details_job) | Get status for async query for user details|
-|[**get_analytics_users_details_job_results**](AnalyticsApi.html#get_analytics_users_details_job_results) | Fetch a page of results for an async query|
-|[**get_analytics_users_details_jobs_availability**](AnalyticsApi.html#get_analytics_users_details_jobs_availability) | Lookup the datalake availability date and time|
-|[**patch_analytics_reporting_settings**](AnalyticsApi.html#patch_analytics_reporting_settings) | Patch AnalyticsReportingSettings values for an organization|
-|[**post_analytics_actions_aggregates_jobs**](AnalyticsApi.html#post_analytics_actions_aggregates_jobs) | Query for action aggregates asynchronously|
-|[**post_analytics_actions_aggregates_query**](AnalyticsApi.html#post_analytics_actions_aggregates_query) | Query for action aggregates|
-|[**post_analytics_agentcopilots_aggregates_jobs**](AnalyticsApi.html#post_analytics_agentcopilots_aggregates_jobs) | Query for agent copilot aggregates asynchronously|
-|[**post_analytics_agentcopilots_aggregates_query**](AnalyticsApi.html#post_analytics_agentcopilots_aggregates_query) | Query for agent copilot aggregates|
-|[**post_analytics_bots_aggregates_jobs**](AnalyticsApi.html#post_analytics_bots_aggregates_jobs) | Query for bot aggregates asynchronously|
-|[**post_analytics_bots_aggregates_query**](AnalyticsApi.html#post_analytics_bots_aggregates_query) | Query for bot aggregates|
-|[**post_analytics_conversation_details_properties**](AnalyticsApi.html#post_analytics_conversation_details_properties) | Index conversation properties|
-|[**post_analytics_conversations_activity_query**](AnalyticsApi.html#post_analytics_conversations_activity_query) | Query for conversation activity observations|
-|[**post_analytics_conversations_aggregates_jobs**](AnalyticsApi.html#post_analytics_conversations_aggregates_jobs) | Query for conversation aggregates asynchronously|
-|[**post_analytics_conversations_aggregates_query**](AnalyticsApi.html#post_analytics_conversations_aggregates_query) | Query for conversation aggregates|
-|[**post_analytics_conversations_details_jobs**](AnalyticsApi.html#post_analytics_conversations_details_jobs) | Query for conversation details asynchronously|
-|[**post_analytics_conversations_details_query**](AnalyticsApi.html#post_analytics_conversations_details_query) | Query for conversation details|
-|[**post_analytics_conversations_transcripts_query**](AnalyticsApi.html#post_analytics_conversations_transcripts_query) | Search resources.|
-|[**post_analytics_evaluations_aggregates_jobs**](AnalyticsApi.html#post_analytics_evaluations_aggregates_jobs) | Query for evaluation aggregates asynchronously|
-|[**post_analytics_evaluations_aggregates_query**](AnalyticsApi.html#post_analytics_evaluations_aggregates_query) | Query for evaluation aggregates|
-|[**post_analytics_flowexecutions_aggregates_jobs**](AnalyticsApi.html#post_analytics_flowexecutions_aggregates_jobs) | Query for flow execution aggregates asynchronously|
-|[**post_analytics_flowexecutions_aggregates_query**](AnalyticsApi.html#post_analytics_flowexecutions_aggregates_query) | Query for flow execution aggregates|
-|[**post_analytics_flows_activity_query**](AnalyticsApi.html#post_analytics_flows_activity_query) | Query for flow activity observations|
-|[**post_analytics_flows_aggregates_jobs**](AnalyticsApi.html#post_analytics_flows_aggregates_jobs) | Query for flow aggregates asynchronously|
-|[**post_analytics_flows_aggregates_query**](AnalyticsApi.html#post_analytics_flows_aggregates_query) | Query for flow aggregates|
-|[**post_analytics_flows_observations_query**](AnalyticsApi.html#post_analytics_flows_observations_query) | Query for flow observations|
-|[**post_analytics_journeys_aggregates_jobs**](AnalyticsApi.html#post_analytics_journeys_aggregates_jobs) | Query for journey aggregates asynchronously|
-|[**post_analytics_journeys_aggregates_query**](AnalyticsApi.html#post_analytics_journeys_aggregates_query) | Query for journey aggregates|
-|[**post_analytics_knowledge_aggregates_jobs**](AnalyticsApi.html#post_analytics_knowledge_aggregates_jobs) | Query for knowledge aggregates asynchronously|
-|[**post_analytics_knowledge_aggregates_query**](AnalyticsApi.html#post_analytics_knowledge_aggregates_query) | Query for knowledge aggregates|
-|[**post_analytics_queues_observations_query**](AnalyticsApi.html#post_analytics_queues_observations_query) | Query for queue observations|
-|[**post_analytics_ratelimits_aggregates_query**](AnalyticsApi.html#post_analytics_ratelimits_aggregates_query) | Query for limits rate limit aggregates. Data populated when limits reach 90% of the maximum. Not a source of truth for limits hit but a best effort estimate.|
-|[**post_analytics_reporting_dashboards_users_bulk_remove**](AnalyticsApi.html#post_analytics_reporting_dashboards_users_bulk_remove) | Bulk delete dashboards owned by other user(s)|
-|[**post_analytics_reporting_exports**](AnalyticsApi.html#post_analytics_reporting_exports) | Generate a view export request|
-|[**post_analytics_reporting_settings_dashboards_bulk_remove**](AnalyticsApi.html#post_analytics_reporting_settings_dashboards_bulk_remove) | Bulk remove dashboard configurations|
-|[**post_analytics_reporting_settings_dashboards_query**](AnalyticsApi.html#post_analytics_reporting_settings_dashboards_query) | Query dashboard configurations|
-|[**post_analytics_resolutions_aggregates_jobs**](AnalyticsApi.html#post_analytics_resolutions_aggregates_jobs) | Query for resolution aggregates asynchronously|
-|[**post_analytics_routing_activity_query**](AnalyticsApi.html#post_analytics_routing_activity_query) | Query for user activity observations|
-|[**post_analytics_surveys_aggregates_jobs**](AnalyticsApi.html#post_analytics_surveys_aggregates_jobs) | Query for survey aggregates asynchronously|
-|[**post_analytics_surveys_aggregates_query**](AnalyticsApi.html#post_analytics_surveys_aggregates_query) | Query for survey aggregates|
-|[**post_analytics_taskmanagement_aggregates_jobs**](AnalyticsApi.html#post_analytics_taskmanagement_aggregates_jobs) | Query for task management aggregates asynchronously|
-|[**post_analytics_taskmanagement_aggregates_query**](AnalyticsApi.html#post_analytics_taskmanagement_aggregates_query) | Query for task management aggregates|
-|[**post_analytics_teams_activity_query**](AnalyticsApi.html#post_analytics_teams_activity_query) | Query for team activity observations|
-|[**post_analytics_transcripts_aggregates_jobs**](AnalyticsApi.html#post_analytics_transcripts_aggregates_jobs) | Query for transcript aggregates asynchronously|
-|[**post_analytics_transcripts_aggregates_query**](AnalyticsApi.html#post_analytics_transcripts_aggregates_query) | Query for transcript aggregates|
-|[**post_analytics_users_activity_query**](AnalyticsApi.html#post_analytics_users_activity_query) | Query for user activity observations|
-|[**post_analytics_users_aggregates_jobs**](AnalyticsApi.html#post_analytics_users_aggregates_jobs) | Query for user aggregates asynchronously|
-|[**post_analytics_users_aggregates_query**](AnalyticsApi.html#post_analytics_users_aggregates_query) | Query for user aggregates|
-|[**post_analytics_users_details_jobs**](AnalyticsApi.html#post_analytics_users_details_jobs) | Query for user details asynchronously|
-|[**post_analytics_users_details_query**](AnalyticsApi.html#post_analytics_users_details_query) | Query for user details|
-|[**post_analytics_users_observations_query**](AnalyticsApi.html#post_analytics_users_observations_query) | Query for user observations|
-|[**put_analytics_dataretention_settings**](AnalyticsApi.html#put_analytics_dataretention_settings) | Update analytics data retention setting|
-{: class="table table-striped"}
+|[**delete_analytics_conversations_details_job**](#delete_analytics_conversations_details_job) | Delete/cancel an async details job|
+|[**delete_analytics_users_details_job**](#delete_analytics_users_details_job) | Delete/cancel an async request|
+|[**get_analytics_actions_aggregates_job**](#get_analytics_actions_aggregates_job) | Get status for async query for action aggregates|
+|[**get_analytics_actions_aggregates_job_results**](#get_analytics_actions_aggregates_job_results) | Fetch a page of results for an async aggregates query|
+|[**get_analytics_agentcopilots_aggregates_job**](#get_analytics_agentcopilots_aggregates_job) | Get status for async query for agent copilot aggregates|
+|[**get_analytics_agentcopilots_aggregates_job_results**](#get_analytics_agentcopilots_aggregates_job_results) | Fetch a page of results for an async aggregates query|
+|[**get_analytics_botflow_divisions_reportingturns**](#get_analytics_botflow_divisions_reportingturns) | Get Reporting Turns (division aware).|
+|[**get_analytics_botflow_reportingturns**](#get_analytics_botflow_reportingturns) | Get Reporting Turns.|
+|[**get_analytics_botflow_sessions**](#get_analytics_botflow_sessions) | Get Bot Flow Sessions.|
+|[**get_analytics_bots_aggregates_job**](#get_analytics_bots_aggregates_job) | Get status for async query for bot aggregates|
+|[**get_analytics_bots_aggregates_job_results**](#get_analytics_bots_aggregates_job_results) | Fetch a page of results for an async aggregates query|
+|[**get_analytics_conversation_details**](#get_analytics_conversation_details) | Get a conversation by id|
+|[**get_analytics_conversations_aggregates_job**](#get_analytics_conversations_aggregates_job) | Get status for async query for conversation aggregates|
+|[**get_analytics_conversations_aggregates_job_results**](#get_analytics_conversations_aggregates_job_results) | Fetch a page of results for an async aggregates query|
+|[**get_analytics_conversations_details**](#get_analytics_conversations_details) | Gets multiple conversations by id|
+|[**get_analytics_conversations_details_job**](#get_analytics_conversations_details_job) | Get status for async query for conversation details|
+|[**get_analytics_conversations_details_job_results**](#get_analytics_conversations_details_job_results) | Fetch a page of results for an async details job|
+|[**get_analytics_conversations_details_jobs_availability**](#get_analytics_conversations_details_jobs_availability) | Lookup the datalake availability date and time|
+|[**get_analytics_dataretention_settings**](#get_analytics_dataretention_settings) | Get analytics data retention setting|
+|[**get_analytics_evaluations_aggregates_job**](#get_analytics_evaluations_aggregates_job) | Get status for async query for evaluation aggregates|
+|[**get_analytics_evaluations_aggregates_job_results**](#get_analytics_evaluations_aggregates_job_results) | Fetch a page of results for an async aggregates query|
+|[**get_analytics_flowexecutions_aggregates_job**](#get_analytics_flowexecutions_aggregates_job) | Get status for async query for flow execution aggregates|
+|[**get_analytics_flowexecutions_aggregates_job_results**](#get_analytics_flowexecutions_aggregates_job_results) | Fetch a page of results for an async aggregates query|
+|[**get_analytics_flows_aggregates_job**](#get_analytics_flows_aggregates_job) | Get status for async query for Flow aggregates|
+|[**get_analytics_flows_aggregates_job_results**](#get_analytics_flows_aggregates_job_results) | Fetch a page of results for an async aggregates query|
+|[**get_analytics_journeys_aggregates_job**](#get_analytics_journeys_aggregates_job) | Get status for async query for journey aggregates|
+|[**get_analytics_journeys_aggregates_job_results**](#get_analytics_journeys_aggregates_job_results) | Fetch a page of results for an async aggregates query|
+|[**get_analytics_knowledge_aggregates_job**](#get_analytics_knowledge_aggregates_job) | Get status for async query for knowledge aggregates|
+|[**get_analytics_knowledge_aggregates_job_results**](#get_analytics_knowledge_aggregates_job_results) | Fetch a page of results for an async aggregates query|
+|[**get_analytics_reporting_dashboards_user**](#get_analytics_reporting_dashboards_user) | Get dashboards summary for a user|
+|[**get_analytics_reporting_dashboards_users**](#get_analytics_reporting_dashboards_users) | Get dashboards summary for users in a org|
+|[**get_analytics_reporting_exports**](#get_analytics_reporting_exports) | Get all view export requests for a user|
+|[**get_analytics_reporting_exports_metadata**](#get_analytics_reporting_exports_metadata) | Get all export metadata|
+|[**get_analytics_reporting_settings**](#get_analytics_reporting_settings) | Get AnalyticsReportingSettings for an organization|
+|[**get_analytics_reporting_settings_dashboards_query**](#get_analytics_reporting_settings_dashboards_query) | Get list of dashboard configurations|
+|[**get_analytics_reporting_settings_user_dashboards**](#get_analytics_reporting_settings_user_dashboards) | Get list of dashboards for an user|
+|[**get_analytics_resolutions_aggregates_job**](#get_analytics_resolutions_aggregates_job) | Get status for async query for resolution aggregates|
+|[**get_analytics_resolutions_aggregates_job_results**](#get_analytics_resolutions_aggregates_job_results) | Fetch a page of results for an async aggregates query|
+|[**get_analytics_surveys_aggregates_job**](#get_analytics_surveys_aggregates_job) | Get status for async query for survey aggregates|
+|[**get_analytics_surveys_aggregates_job_results**](#get_analytics_surveys_aggregates_job_results) | Fetch a page of results for an async aggregates query|
+|[**get_analytics_taskmanagement_aggregates_job**](#get_analytics_taskmanagement_aggregates_job) | Get status for async query for task management aggregates|
+|[**get_analytics_taskmanagement_aggregates_job_results**](#get_analytics_taskmanagement_aggregates_job_results) | Fetch a page of results for an async task management query|
+|[**get_analytics_transcripts_aggregates_job**](#get_analytics_transcripts_aggregates_job) | Get status for async query for transcript aggregates|
+|[**get_analytics_transcripts_aggregates_job_results**](#get_analytics_transcripts_aggregates_job_results) | Fetch a page of results for an async aggregates query|
+|[**get_analytics_users_aggregates_job**](#get_analytics_users_aggregates_job) | Get status for async query for user aggregates|
+|[**get_analytics_users_aggregates_job_results**](#get_analytics_users_aggregates_job_results) | Fetch a page of results for an async aggregates query|
+|[**get_analytics_users_details_job**](#get_analytics_users_details_job) | Get status for async query for user details|
+|[**get_analytics_users_details_job_results**](#get_analytics_users_details_job_results) | Fetch a page of results for an async query|
+|[**get_analytics_users_details_jobs_availability**](#get_analytics_users_details_jobs_availability) | Lookup the datalake availability date and time|
+|[**patch_analytics_reporting_settings**](#patch_analytics_reporting_settings) | Patch AnalyticsReportingSettings values for an organization|
+|[**post_analytics_actions_aggregates_jobs**](#post_analytics_actions_aggregates_jobs) | Query for action aggregates asynchronously|
+|[**post_analytics_actions_aggregates_query**](#post_analytics_actions_aggregates_query) | Query for action aggregates|
+|[**post_analytics_agentcopilots_aggregates_jobs**](#post_analytics_agentcopilots_aggregates_jobs) | Query for agent copilot aggregates asynchronously|
+|[**post_analytics_agentcopilots_aggregates_query**](#post_analytics_agentcopilots_aggregates_query) | Query for agent copilot aggregates|
+|[**post_analytics_bots_aggregates_jobs**](#post_analytics_bots_aggregates_jobs) | Query for bot aggregates asynchronously|
+|[**post_analytics_bots_aggregates_query**](#post_analytics_bots_aggregates_query) | Query for bot aggregates|
+|[**post_analytics_conversation_details_properties**](#post_analytics_conversation_details_properties) | Index conversation properties|
+|[**post_analytics_conversations_activity_query**](#post_analytics_conversations_activity_query) | Query for conversation activity observations|
+|[**post_analytics_conversations_aggregates_jobs**](#post_analytics_conversations_aggregates_jobs) | Query for conversation aggregates asynchronously|
+|[**post_analytics_conversations_aggregates_query**](#post_analytics_conversations_aggregates_query) | Query for conversation aggregates|
+|[**post_analytics_conversations_details_jobs**](#post_analytics_conversations_details_jobs) | Query for conversation details asynchronously|
+|[**post_analytics_conversations_details_query**](#post_analytics_conversations_details_query) | Query for conversation details|
+|[**post_analytics_conversations_transcripts_query**](#post_analytics_conversations_transcripts_query) | Search resources.|
+|[**post_analytics_evaluations_aggregates_jobs**](#post_analytics_evaluations_aggregates_jobs) | Query for evaluation aggregates asynchronously|
+|[**post_analytics_evaluations_aggregates_query**](#post_analytics_evaluations_aggregates_query) | Query for evaluation aggregates|
+|[**post_analytics_flowexecutions_aggregates_jobs**](#post_analytics_flowexecutions_aggregates_jobs) | Query for flow execution aggregates asynchronously|
+|[**post_analytics_flowexecutions_aggregates_query**](#post_analytics_flowexecutions_aggregates_query) | Query for flow execution aggregates|
+|[**post_analytics_flows_activity_query**](#post_analytics_flows_activity_query) | Query for flow activity observations|
+|[**post_analytics_flows_aggregates_jobs**](#post_analytics_flows_aggregates_jobs) | Query for flow aggregates asynchronously|
+|[**post_analytics_flows_aggregates_query**](#post_analytics_flows_aggregates_query) | Query for flow aggregates|
+|[**post_analytics_flows_observations_query**](#post_analytics_flows_observations_query) | Query for flow observations|
+|[**post_analytics_journeys_aggregates_jobs**](#post_analytics_journeys_aggregates_jobs) | Query for journey aggregates asynchronously|
+|[**post_analytics_journeys_aggregates_query**](#post_analytics_journeys_aggregates_query) | Query for journey aggregates|
+|[**post_analytics_knowledge_aggregates_jobs**](#post_analytics_knowledge_aggregates_jobs) | Query for knowledge aggregates asynchronously|
+|[**post_analytics_knowledge_aggregates_query**](#post_analytics_knowledge_aggregates_query) | Query for knowledge aggregates|
+|[**post_analytics_queues_observations_query**](#post_analytics_queues_observations_query) | Query for queue observations|
+|[**post_analytics_ratelimits_aggregates_query**](#post_analytics_ratelimits_aggregates_query) | Query for limits rate limit aggregates. Data populated when limits reach 90% of the maximum. Not a source of truth for limits hit but a best effort estimate.|
+|[**post_analytics_reporting_dashboards_users_bulk_remove**](#post_analytics_reporting_dashboards_users_bulk_remove) | Bulk delete dashboards owned by other user(s)|
+|[**post_analytics_reporting_exports**](#post_analytics_reporting_exports) | Generate a view export request|
+|[**post_analytics_reporting_settings_dashboards_bulk_remove**](#post_analytics_reporting_settings_dashboards_bulk_remove) | Bulk remove dashboard configurations|
+|[**post_analytics_reporting_settings_dashboards_query**](#post_analytics_reporting_settings_dashboards_query) | Query dashboard configurations|
+|[**post_analytics_resolutions_aggregates_jobs**](#post_analytics_resolutions_aggregates_jobs) | Query for resolution aggregates asynchronously|
+|[**post_analytics_routing_activity_query**](#post_analytics_routing_activity_query) | Query for user activity observations|
+|[**post_analytics_surveys_aggregates_jobs**](#post_analytics_surveys_aggregates_jobs) | Query for survey aggregates asynchronously|
+|[**post_analytics_surveys_aggregates_query**](#post_analytics_surveys_aggregates_query) | Query for survey aggregates|
+|[**post_analytics_taskmanagement_aggregates_jobs**](#post_analytics_taskmanagement_aggregates_jobs) | Query for task management aggregates asynchronously|
+|[**post_analytics_taskmanagement_aggregates_query**](#post_analytics_taskmanagement_aggregates_query) | Query for task management aggregates|
+|[**post_analytics_teams_activity_query**](#post_analytics_teams_activity_query) | Query for team activity observations|
+|[**post_analytics_transcripts_aggregates_jobs**](#post_analytics_transcripts_aggregates_jobs) | Query for transcript aggregates asynchronously|
+|[**post_analytics_transcripts_aggregates_query**](#post_analytics_transcripts_aggregates_query) | Query for transcript aggregates|
+|[**post_analytics_users_activity_query**](#post_analytics_users_activity_query) | Query for user activity observations|
+|[**post_analytics_users_aggregates_jobs**](#post_analytics_users_aggregates_jobs) | Query for user aggregates asynchronously|
+|[**post_analytics_users_aggregates_query**](#post_analytics_users_aggregates_query) | Query for user aggregates|
+|[**post_analytics_users_details_jobs**](#post_analytics_users_details_jobs) | Query for user details asynchronously|
+|[**post_analytics_users_details_query**](#post_analytics_users_details_query) | Query for user details|
+|[**post_analytics_users_observations_query**](#post_analytics_users_observations_query) | Query for user observations|
+|[**put_analytics_dataretention_settings**](#put_analytics_dataretention_settings) | Update analytics data retention setting|
 
-<a name="delete_analytics_conversations_details_job"></a>
 
-##  delete_analytics_conversations_details_job(job_id)
 
+## delete_analytics_conversations_details_job
+
+>  delete_analytics_conversations_details_job(job_id)
 
 
 Delete/cancel an async details job
@@ -150,16 +148,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **job_id** | **str**| jobId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (empty response body)
 
-<a name="delete_analytics_users_details_job"></a>
 
-##  delete_analytics_users_details_job(job_id)
+## delete_analytics_users_details_job
 
+>  delete_analytics_users_details_job(job_id)
 
 
 Delete/cancel an async request
@@ -198,16 +195,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **job_id** | **str**| jobId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (empty response body)
 
-<a name="get_analytics_actions_aggregates_job"></a>
 
-## [**AsyncQueryStatus**](AsyncQueryStatus.html) get_analytics_actions_aggregates_job(job_id)
+## get_analytics_actions_aggregates_job
 
+> [**AsyncQueryStatus**](AsyncQueryStatus) get_analytics_actions_aggregates_job(job_id)
 
 
 Get status for async query for action aggregates
@@ -250,16 +246,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **job_id** | **str**| jobId |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**AsyncQueryStatus**](AsyncQueryStatus.html)
+[**AsyncQueryStatus**](AsyncQueryStatus)
 
-<a name="get_analytics_actions_aggregates_job_results"></a>
 
-## [**ActionAsyncAggregateQueryResponse**](ActionAsyncAggregateQueryResponse.html) get_analytics_actions_aggregates_job_results(job_id, cursor=cursor)
+## get_analytics_actions_aggregates_job_results
 
+> [**ActionAsyncAggregateQueryResponse**](ActionAsyncAggregateQueryResponse) get_analytics_actions_aggregates_job_results(job_id, cursor=cursor)
 
 
 Fetch a page of results for an async aggregates query
@@ -304,16 +299,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **job_id** | **str**| jobId |  |
 | **cursor** | **str**| Cursor token to retrieve next page | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**ActionAsyncAggregateQueryResponse**](ActionAsyncAggregateQueryResponse.html)
+[**ActionAsyncAggregateQueryResponse**](ActionAsyncAggregateQueryResponse)
 
-<a name="get_analytics_agentcopilots_aggregates_job"></a>
 
-## [**AsyncQueryStatus**](AsyncQueryStatus.html) get_analytics_agentcopilots_aggregates_job(job_id)
+## get_analytics_agentcopilots_aggregates_job
 
+> [**AsyncQueryStatus**](AsyncQueryStatus) get_analytics_agentcopilots_aggregates_job(job_id)
 
 
 Get status for async query for agent copilot aggregates
@@ -355,16 +349,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **job_id** | **str**| jobId |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**AsyncQueryStatus**](AsyncQueryStatus.html)
+[**AsyncQueryStatus**](AsyncQueryStatus)
 
-<a name="get_analytics_agentcopilots_aggregates_job_results"></a>
 
-## [**AgentCopilotAsyncAggregateQueryResponse**](AgentCopilotAsyncAggregateQueryResponse.html) get_analytics_agentcopilots_aggregates_job_results(job_id, cursor=cursor)
+## get_analytics_agentcopilots_aggregates_job_results
 
+> [**AgentCopilotAsyncAggregateQueryResponse**](AgentCopilotAsyncAggregateQueryResponse) get_analytics_agentcopilots_aggregates_job_results(job_id, cursor=cursor)
 
 
 Fetch a page of results for an async aggregates query
@@ -408,16 +401,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **job_id** | **str**| jobId |  |
 | **cursor** | **str**| Cursor token to retrieve next page | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**AgentCopilotAsyncAggregateQueryResponse**](AgentCopilotAsyncAggregateQueryResponse.html)
+[**AgentCopilotAsyncAggregateQueryResponse**](AgentCopilotAsyncAggregateQueryResponse)
 
-<a name="get_analytics_botflow_divisions_reportingturns"></a>
 
-## [**ReportingTurnsResponse**](ReportingTurnsResponse.html) get_analytics_botflow_divisions_reportingturns(bot_flow_id, after=after, page_size=page_size, interval=interval, action_id=action_id, session_id=session_id, language=language, ask_action_results=ask_action_results)
+## get_analytics_botflow_divisions_reportingturns
 
+> [**ReportingTurnsResponse**](ReportingTurnsResponse) get_analytics_botflow_divisions_reportingturns(bot_flow_id, after=after, page_size=page_size, interval=interval, action_id=action_id, session_id=session_id, language=language, ask_action_results=ask_action_results)
 
 
 Get Reporting Turns (division aware).
@@ -473,17 +465,19 @@ except ApiException as e:
 | **session_id** | **str**| Optional session ID to get the reporting turns for a particular session. Specifying a session ID alongside an action ID or a language or any ask action results is not allowed. | [optional]  |
 | **language** | **str**| Optional language code to get the reporting turns for a particular language | [optional]  |
 | **ask_action_results** | **str**| Optional case-insensitive comma separated list of ask action results to filter the reporting turns. | [optional] <br />**Values**: AgentRequestedByUser, ConfirmationRequired, DisambiguationRequired, Error, ExpressionError, NoInputCollection, NoInputConfirmation, NoInputDisambiguation, NoMatchCollection, NoMatchConfirmation, NoMatchDisambiguation, SuccessCollection, SuccessConfirmationNo, SuccessConfirmationYes, SuccessDisambiguation, SuccessDisambiguationNone |
-{: class="table table-striped"}
 
 ### Return type
 
-[**ReportingTurnsResponse**](ReportingTurnsResponse.html)
+[**ReportingTurnsResponse**](ReportingTurnsResponse)
 
-<a name="get_analytics_botflow_reportingturns"></a>
 
-## [**ReportingTurnsResponse**](ReportingTurnsResponse.html) get_analytics_botflow_reportingturns(bot_flow_id, after=after, page_size=page_size, interval=interval, action_id=action_id, session_id=session_id, language=language, ask_action_results=ask_action_results)
+## get_analytics_botflow_reportingturns
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+> [**ReportingTurnsResponse**](ReportingTurnsResponse) get_analytics_botflow_reportingturns(bot_flow_id, after=after, page_size=page_size, interval=interval, action_id=action_id, session_id=session_id, language=language, ask_action_results=ask_action_results)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 Get Reporting Turns.
 
@@ -538,16 +532,15 @@ except ApiException as e:
 | **session_id** | **str**| Optional session ID to get the reporting turns for a particular session. Specifying a session ID alongside an action ID or a language or any ask action results is not allowed. | [optional]  |
 | **language** | **str**| Optional language code to get the reporting turns for a particular language | [optional]  |
 | **ask_action_results** | **str**| Optional case-insensitive comma separated list of ask action results to filter the reporting turns. | [optional] <br />**Values**: AgentRequestedByUser, ConfirmationRequired, DisambiguationRequired, Error, ExpressionError, NoInputCollection, NoInputConfirmation, NoInputDisambiguation, NoMatchCollection, NoMatchConfirmation, NoMatchDisambiguation, SuccessCollection, SuccessConfirmationNo, SuccessConfirmationYes, SuccessDisambiguation, SuccessDisambiguationNone |
-{: class="table table-striped"}
 
 ### Return type
 
-[**ReportingTurnsResponse**](ReportingTurnsResponse.html)
+[**ReportingTurnsResponse**](ReportingTurnsResponse)
 
-<a name="get_analytics_botflow_sessions"></a>
 
-## [**SessionsResponse**](SessionsResponse.html) get_analytics_botflow_sessions(bot_flow_id, after=after, page_size=page_size, interval=interval, bot_result_categories=bot_result_categories, end_language=end_language)
+## get_analytics_botflow_sessions
 
+> [**SessionsResponse**](SessionsResponse) get_analytics_botflow_sessions(bot_flow_id, after=after, page_size=page_size, interval=interval, bot_result_categories=bot_result_categories, end_language=end_language)
 
 
 Get Bot Flow Sessions.
@@ -599,16 +592,15 @@ except ApiException as e:
 | **interval** | **str**| Date range filter based on the date the individual resources were completed. UTC is the default if no TZ is supplied, however alternate timezones can be used e.g: &#39;2022-11-22T09:11:11.111+08:00/2022-11-30T07:17:44.586-07&#39;. . Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss | [optional]  |
 | **bot_result_categories** | **str**| Optional case-insensitive comma separated list of Bot Result Categories to filter sessions by. | [optional] <br />**Values**: Unknown, UserExit, BotExit, Error, RecognitionFailure, UserDisconnect, BotDisconnect, SessionExpired, Transfer |
 | **end_language** | **str**| Optional case-insensitive language code to filter sessions by the language the sessions ended in. | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**SessionsResponse**](SessionsResponse.html)
+[**SessionsResponse**](SessionsResponse)
 
-<a name="get_analytics_bots_aggregates_job"></a>
 
-## [**AsyncQueryStatus**](AsyncQueryStatus.html) get_analytics_bots_aggregates_job(job_id)
+## get_analytics_bots_aggregates_job
 
+> [**AsyncQueryStatus**](AsyncQueryStatus) get_analytics_bots_aggregates_job(job_id)
 
 
 Get status for async query for bot aggregates
@@ -650,16 +642,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **job_id** | **str**| jobId |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**AsyncQueryStatus**](AsyncQueryStatus.html)
+[**AsyncQueryStatus**](AsyncQueryStatus)
 
-<a name="get_analytics_bots_aggregates_job_results"></a>
 
-## [**BotAsyncAggregateQueryResponse**](BotAsyncAggregateQueryResponse.html) get_analytics_bots_aggregates_job_results(job_id, cursor=cursor)
+## get_analytics_bots_aggregates_job_results
 
+> [**BotAsyncAggregateQueryResponse**](BotAsyncAggregateQueryResponse) get_analytics_bots_aggregates_job_results(job_id, cursor=cursor)
 
 
 Fetch a page of results for an async aggregates query
@@ -703,16 +694,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **job_id** | **str**| jobId |  |
 | **cursor** | **str**| Cursor token to retrieve next page | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**BotAsyncAggregateQueryResponse**](BotAsyncAggregateQueryResponse.html)
+[**BotAsyncAggregateQueryResponse**](BotAsyncAggregateQueryResponse)
 
-<a name="get_analytics_conversation_details"></a>
 
-## [**AnalyticsConversationWithoutAttributes**](AnalyticsConversationWithoutAttributes.html) get_analytics_conversation_details(conversation_id)
+## get_analytics_conversation_details
 
+> [**AnalyticsConversationWithoutAttributes**](AnalyticsConversationWithoutAttributes) get_analytics_conversation_details(conversation_id)
 
 
 Get a conversation by id
@@ -753,16 +743,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**AnalyticsConversationWithoutAttributes**](AnalyticsConversationWithoutAttributes.html)
+[**AnalyticsConversationWithoutAttributes**](AnalyticsConversationWithoutAttributes)
 
-<a name="get_analytics_conversations_aggregates_job"></a>
 
-## [**AsyncQueryStatus**](AsyncQueryStatus.html) get_analytics_conversations_aggregates_job(job_id)
+## get_analytics_conversations_aggregates_job
 
+> [**AsyncQueryStatus**](AsyncQueryStatus) get_analytics_conversations_aggregates_job(job_id)
 
 
 Get status for async query for conversation aggregates
@@ -804,16 +793,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **job_id** | **str**| jobId |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**AsyncQueryStatus**](AsyncQueryStatus.html)
+[**AsyncQueryStatus**](AsyncQueryStatus)
 
-<a name="get_analytics_conversations_aggregates_job_results"></a>
 
-## [**ConversationAsyncAggregateQueryResponse**](ConversationAsyncAggregateQueryResponse.html) get_analytics_conversations_aggregates_job_results(job_id, cursor=cursor)
+## get_analytics_conversations_aggregates_job_results
 
+> [**ConversationAsyncAggregateQueryResponse**](ConversationAsyncAggregateQueryResponse) get_analytics_conversations_aggregates_job_results(job_id, cursor=cursor)
 
 
 Fetch a page of results for an async aggregates query
@@ -857,16 +845,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **job_id** | **str**| jobId |  |
 | **cursor** | **str**| Cursor token to retrieve next page | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**ConversationAsyncAggregateQueryResponse**](ConversationAsyncAggregateQueryResponse.html)
+[**ConversationAsyncAggregateQueryResponse**](ConversationAsyncAggregateQueryResponse)
 
-<a name="get_analytics_conversations_details"></a>
 
-## [**AnalyticsConversationWithoutAttributesMultiGetResponse**](AnalyticsConversationWithoutAttributesMultiGetResponse.html) get_analytics_conversations_details(id=id)
+## get_analytics_conversations_details
 
+> [**AnalyticsConversationWithoutAttributesMultiGetResponse**](AnalyticsConversationWithoutAttributesMultiGetResponse) get_analytics_conversations_details(id=id)
 
 
 Gets multiple conversations by id
@@ -906,17 +893,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **id** | [**list[str]**](str.html)| Comma-separated conversation ids | [optional]  |
-{: class="table table-striped"}
+| **id** | [**list[str]**](str)| Comma-separated conversation ids | [optional]  |
 
 ### Return type
 
-[**AnalyticsConversationWithoutAttributesMultiGetResponse**](AnalyticsConversationWithoutAttributesMultiGetResponse.html)
+[**AnalyticsConversationWithoutAttributesMultiGetResponse**](AnalyticsConversationWithoutAttributesMultiGetResponse)
 
-<a name="get_analytics_conversations_details_job"></a>
 
-## [**AsyncQueryStatus**](AsyncQueryStatus.html) get_analytics_conversations_details_job(job_id)
+## get_analytics_conversations_details_job
 
+> [**AsyncQueryStatus**](AsyncQueryStatus) get_analytics_conversations_details_job(job_id)
 
 
 Get status for async query for conversation details
@@ -957,16 +943,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **job_id** | **str**| jobId |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**AsyncQueryStatus**](AsyncQueryStatus.html)
+[**AsyncQueryStatus**](AsyncQueryStatus)
 
-<a name="get_analytics_conversations_details_job_results"></a>
 
-## [**AnalyticsConversationAsyncQueryResponse**](AnalyticsConversationAsyncQueryResponse.html) get_analytics_conversations_details_job_results(job_id, cursor=cursor, page_size=page_size)
+## get_analytics_conversations_details_job_results
 
+> [**AnalyticsConversationAsyncQueryResponse**](AnalyticsConversationAsyncQueryResponse) get_analytics_conversations_details_job_results(job_id, cursor=cursor, page_size=page_size)
 
 
 Fetch a page of results for an async details job
@@ -1011,16 +996,15 @@ except ApiException as e:
 | **job_id** | **str**| jobId |  |
 | **cursor** | **str**| Indicates where to resume query results (not required for first page) | [optional]  |
 | **page_size** | **int**| The desired maximum number of results | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**AnalyticsConversationAsyncQueryResponse**](AnalyticsConversationAsyncQueryResponse.html)
+[**AnalyticsConversationAsyncQueryResponse**](AnalyticsConversationAsyncQueryResponse)
 
-<a name="get_analytics_conversations_details_jobs_availability"></a>
 
-## [**DataAvailabilityResponse**](DataAvailabilityResponse.html) get_analytics_conversations_details_jobs_availability()
+## get_analytics_conversations_details_jobs_availability
 
+> [**DataAvailabilityResponse**](DataAvailabilityResponse) get_analytics_conversations_details_jobs_availability()
 
 
 Lookup the datalake availability date and time
@@ -1057,15 +1041,14 @@ except ApiException as e:
 
 This endpoint does not need any parameters.
 
-
 ### Return type
 
-[**DataAvailabilityResponse**](DataAvailabilityResponse.html)
+[**DataAvailabilityResponse**](DataAvailabilityResponse)
 
-<a name="get_analytics_dataretention_settings"></a>
 
-## [**AnalyticsDataRetentionResponse**](AnalyticsDataRetentionResponse.html) get_analytics_dataretention_settings()
+## get_analytics_dataretention_settings
 
+> [**AnalyticsDataRetentionResponse**](AnalyticsDataRetentionResponse) get_analytics_dataretention_settings()
 
 
 Get analytics data retention setting
@@ -1102,15 +1085,14 @@ except ApiException as e:
 
 This endpoint does not need any parameters.
 
-
 ### Return type
 
-[**AnalyticsDataRetentionResponse**](AnalyticsDataRetentionResponse.html)
+[**AnalyticsDataRetentionResponse**](AnalyticsDataRetentionResponse)
 
-<a name="get_analytics_evaluations_aggregates_job"></a>
 
-## [**AsyncQueryStatus**](AsyncQueryStatus.html) get_analytics_evaluations_aggregates_job(job_id)
+## get_analytics_evaluations_aggregates_job
 
+> [**AsyncQueryStatus**](AsyncQueryStatus) get_analytics_evaluations_aggregates_job(job_id)
 
 
 Get status for async query for evaluation aggregates
@@ -1152,16 +1134,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **job_id** | **str**| jobId |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**AsyncQueryStatus**](AsyncQueryStatus.html)
+[**AsyncQueryStatus**](AsyncQueryStatus)
 
-<a name="get_analytics_evaluations_aggregates_job_results"></a>
 
-## [**EvaluationAsyncAggregateQueryResponse**](EvaluationAsyncAggregateQueryResponse.html) get_analytics_evaluations_aggregates_job_results(job_id, cursor=cursor)
+## get_analytics_evaluations_aggregates_job_results
 
+> [**EvaluationAsyncAggregateQueryResponse**](EvaluationAsyncAggregateQueryResponse) get_analytics_evaluations_aggregates_job_results(job_id, cursor=cursor)
 
 
 Fetch a page of results for an async aggregates query
@@ -1205,16 +1186,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **job_id** | **str**| jobId |  |
 | **cursor** | **str**| Cursor token to retrieve next page | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**EvaluationAsyncAggregateQueryResponse**](EvaluationAsyncAggregateQueryResponse.html)
+[**EvaluationAsyncAggregateQueryResponse**](EvaluationAsyncAggregateQueryResponse)
 
-<a name="get_analytics_flowexecutions_aggregates_job"></a>
 
-## [**AsyncQueryStatus**](AsyncQueryStatus.html) get_analytics_flowexecutions_aggregates_job(job_id)
+## get_analytics_flowexecutions_aggregates_job
 
+> [**AsyncQueryStatus**](AsyncQueryStatus) get_analytics_flowexecutions_aggregates_job(job_id)
 
 
 Get status for async query for flow execution aggregates
@@ -1256,16 +1236,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **job_id** | **str**| jobId |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**AsyncQueryStatus**](AsyncQueryStatus.html)
+[**AsyncQueryStatus**](AsyncQueryStatus)
 
-<a name="get_analytics_flowexecutions_aggregates_job_results"></a>
 
-## [**FlowExecutionAsyncAggregateQueryResponse**](FlowExecutionAsyncAggregateQueryResponse.html) get_analytics_flowexecutions_aggregates_job_results(job_id, cursor=cursor)
+## get_analytics_flowexecutions_aggregates_job_results
 
+> [**FlowExecutionAsyncAggregateQueryResponse**](FlowExecutionAsyncAggregateQueryResponse) get_analytics_flowexecutions_aggregates_job_results(job_id, cursor=cursor)
 
 
 Fetch a page of results for an async aggregates query
@@ -1309,16 +1288,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **job_id** | **str**| jobId |  |
 | **cursor** | **str**| Cursor token to retrieve next page | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**FlowExecutionAsyncAggregateQueryResponse**](FlowExecutionAsyncAggregateQueryResponse.html)
+[**FlowExecutionAsyncAggregateQueryResponse**](FlowExecutionAsyncAggregateQueryResponse)
 
-<a name="get_analytics_flows_aggregates_job"></a>
 
-## [**AsyncQueryStatus**](AsyncQueryStatus.html) get_analytics_flows_aggregates_job(job_id)
+## get_analytics_flows_aggregates_job
 
+> [**AsyncQueryStatus**](AsyncQueryStatus) get_analytics_flows_aggregates_job(job_id)
 
 
 Get status for async query for Flow aggregates
@@ -1360,16 +1338,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **job_id** | **str**| jobId |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**AsyncQueryStatus**](AsyncQueryStatus.html)
+[**AsyncQueryStatus**](AsyncQueryStatus)
 
-<a name="get_analytics_flows_aggregates_job_results"></a>
 
-## [**FlowAsyncAggregateQueryResponse**](FlowAsyncAggregateQueryResponse.html) get_analytics_flows_aggregates_job_results(job_id, cursor=cursor)
+## get_analytics_flows_aggregates_job_results
 
+> [**FlowAsyncAggregateQueryResponse**](FlowAsyncAggregateQueryResponse) get_analytics_flows_aggregates_job_results(job_id, cursor=cursor)
 
 
 Fetch a page of results for an async aggregates query
@@ -1413,16 +1390,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **job_id** | **str**| jobId |  |
 | **cursor** | **str**| Cursor token to retrieve next page | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**FlowAsyncAggregateQueryResponse**](FlowAsyncAggregateQueryResponse.html)
+[**FlowAsyncAggregateQueryResponse**](FlowAsyncAggregateQueryResponse)
 
-<a name="get_analytics_journeys_aggregates_job"></a>
 
-## [**AsyncQueryStatus**](AsyncQueryStatus.html) get_analytics_journeys_aggregates_job(job_id)
+## get_analytics_journeys_aggregates_job
 
+> [**AsyncQueryStatus**](AsyncQueryStatus) get_analytics_journeys_aggregates_job(job_id)
 
 
 Get status for async query for journey aggregates
@@ -1464,16 +1440,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **job_id** | **str**| jobId |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**AsyncQueryStatus**](AsyncQueryStatus.html)
+[**AsyncQueryStatus**](AsyncQueryStatus)
 
-<a name="get_analytics_journeys_aggregates_job_results"></a>
 
-## [**JourneyAsyncAggregateQueryResponse**](JourneyAsyncAggregateQueryResponse.html) get_analytics_journeys_aggregates_job_results(job_id, cursor=cursor)
+## get_analytics_journeys_aggregates_job_results
 
+> [**JourneyAsyncAggregateQueryResponse**](JourneyAsyncAggregateQueryResponse) get_analytics_journeys_aggregates_job_results(job_id, cursor=cursor)
 
 
 Fetch a page of results for an async aggregates query
@@ -1517,16 +1492,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **job_id** | **str**| jobId |  |
 | **cursor** | **str**| Cursor token to retrieve next page | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**JourneyAsyncAggregateQueryResponse**](JourneyAsyncAggregateQueryResponse.html)
+[**JourneyAsyncAggregateQueryResponse**](JourneyAsyncAggregateQueryResponse)
 
-<a name="get_analytics_knowledge_aggregates_job"></a>
 
-## [**AsyncQueryStatus**](AsyncQueryStatus.html) get_analytics_knowledge_aggregates_job(job_id)
+## get_analytics_knowledge_aggregates_job
 
+> [**AsyncQueryStatus**](AsyncQueryStatus) get_analytics_knowledge_aggregates_job(job_id)
 
 
 Get status for async query for knowledge aggregates
@@ -1568,16 +1542,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **job_id** | **str**| jobId |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**AsyncQueryStatus**](AsyncQueryStatus.html)
+[**AsyncQueryStatus**](AsyncQueryStatus)
 
-<a name="get_analytics_knowledge_aggregates_job_results"></a>
 
-## [**KnowledgeAsyncAggregateQueryResponse**](KnowledgeAsyncAggregateQueryResponse.html) get_analytics_knowledge_aggregates_job_results(job_id, cursor=cursor)
+## get_analytics_knowledge_aggregates_job_results
 
+> [**KnowledgeAsyncAggregateQueryResponse**](KnowledgeAsyncAggregateQueryResponse) get_analytics_knowledge_aggregates_job_results(job_id, cursor=cursor)
 
 
 Fetch a page of results for an async aggregates query
@@ -1621,16 +1594,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **job_id** | **str**| jobId |  |
 | **cursor** | **str**| Cursor token to retrieve next page | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**KnowledgeAsyncAggregateQueryResponse**](KnowledgeAsyncAggregateQueryResponse.html)
+[**KnowledgeAsyncAggregateQueryResponse**](KnowledgeAsyncAggregateQueryResponse)
 
-<a name="get_analytics_reporting_dashboards_user"></a>
 
-## [**DashboardUser**](DashboardUser.html) get_analytics_reporting_dashboards_user(user_id)
+## get_analytics_reporting_dashboards_user
 
+> [**DashboardUser**](DashboardUser) get_analytics_reporting_dashboards_user(user_id)
 
 
 Get dashboards summary for a user
@@ -1670,16 +1642,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **user_id** | **str**| User ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**DashboardUser**](DashboardUser.html)
+[**DashboardUser**](DashboardUser)
 
-<a name="get_analytics_reporting_dashboards_users"></a>
 
-## [**DashboardUserListing**](DashboardUserListing.html) get_analytics_reporting_dashboards_users(sort_by=sort_by, page_number=page_number, page_size=page_size, id=id, state=state)
+## get_analytics_reporting_dashboards_users
 
+> [**DashboardUserListing**](DashboardUserListing) get_analytics_reporting_dashboards_users(sort_by=sort_by, page_number=page_number, page_size=page_size, id=id, state=state)
 
 
 Get dashboards summary for users in a org
@@ -1725,18 +1696,17 @@ except ApiException as e:
 | **sort_by** | **str**|  | [optional] [default to &#39;asc&#39;] |
 | **page_number** | **int**|  | [optional] [default to 1] |
 | **page_size** | **int**|  | [optional] [default to 25] |
-| **id** | [**list[str]**](str.html)| A list of user IDs to fetch by bulk | [optional]  |
+| **id** | [**list[str]**](str)| A list of user IDs to fetch by bulk | [optional]  |
 | **state** | **str**| Only list users of this state | [optional] <br />**Values**: active, inactive |
-{: class="table table-striped"}
 
 ### Return type
 
-[**DashboardUserListing**](DashboardUserListing.html)
+[**DashboardUserListing**](DashboardUserListing)
 
-<a name="get_analytics_reporting_exports"></a>
 
-## [**ReportingExportJobListing**](ReportingExportJobListing.html) get_analytics_reporting_exports(page_number=page_number, page_size=page_size)
+## get_analytics_reporting_exports
 
+> [**ReportingExportJobListing**](ReportingExportJobListing) get_analytics_reporting_exports(page_number=page_number, page_size=page_size)
 
 
 Get all view export requests for a user
@@ -1778,16 +1748,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **page_size** | **int**| Page size | [optional] [default to 25] |
-{: class="table table-striped"}
 
 ### Return type
 
-[**ReportingExportJobListing**](ReportingExportJobListing.html)
+[**ReportingExportJobListing**](ReportingExportJobListing)
 
-<a name="get_analytics_reporting_exports_metadata"></a>
 
-## [**ReportingExportMetadataJobListing**](ReportingExportMetadataJobListing.html) get_analytics_reporting_exports_metadata()
+## get_analytics_reporting_exports_metadata
 
+> [**ReportingExportMetadataJobListing**](ReportingExportMetadataJobListing) get_analytics_reporting_exports_metadata()
 
 
 Get all export metadata
@@ -1824,15 +1793,14 @@ except ApiException as e:
 
 This endpoint does not need any parameters.
 
-
 ### Return type
 
-[**ReportingExportMetadataJobListing**](ReportingExportMetadataJobListing.html)
+[**ReportingExportMetadataJobListing**](ReportingExportMetadataJobListing)
 
-<a name="get_analytics_reporting_settings"></a>
 
-## [**AnalyticsReportingSettings**](AnalyticsReportingSettings.html) get_analytics_reporting_settings()
+## get_analytics_reporting_settings
 
+> [**AnalyticsReportingSettings**](AnalyticsReportingSettings) get_analytics_reporting_settings()
 
 
 Get AnalyticsReportingSettings for an organization
@@ -1868,15 +1836,14 @@ except ApiException as e:
 
 This endpoint does not need any parameters.
 
-
 ### Return type
 
-[**AnalyticsReportingSettings**](AnalyticsReportingSettings.html)
+[**AnalyticsReportingSettings**](AnalyticsReportingSettings)
 
-<a name="get_analytics_reporting_settings_dashboards_query"></a>
 
-## [**DashboardConfigurationListing**](DashboardConfigurationListing.html) get_analytics_reporting_settings_dashboards_query(dashboard_type, dashboard_access_filter, name=name, sort_by=sort_by, page_number=page_number, page_size=page_size)
+## get_analytics_reporting_settings_dashboards_query
 
+> [**DashboardConfigurationListing**](DashboardConfigurationListing) get_analytics_reporting_settings_dashboards_query(dashboard_type, dashboard_access_filter, name=name, sort_by=sort_by, page_number=page_number, page_size=page_size)
 
 
 Get list of dashboard configurations
@@ -1926,16 +1893,15 @@ except ApiException as e:
 | **sort_by** | **str**|  | [optional] [default to &#39;desc&#39;] |
 | **page_number** | **int**|  | [optional] [default to 1] |
 | **page_size** | **int**|  | [optional] [default to 9] |
-{: class="table table-striped"}
 
 ### Return type
 
-[**DashboardConfigurationListing**](DashboardConfigurationListing.html)
+[**DashboardConfigurationListing**](DashboardConfigurationListing)
 
-<a name="get_analytics_reporting_settings_user_dashboards"></a>
 
-## [**DashboardConfigurationListing**](DashboardConfigurationListing.html) get_analytics_reporting_settings_user_dashboards(user_id, sort_by=sort_by, page_number=page_number, page_size=page_size, public_only=public_only, favorite_only=favorite_only, name=name)
+## get_analytics_reporting_settings_user_dashboards
 
+> [**DashboardConfigurationListing**](DashboardConfigurationListing) get_analytics_reporting_settings_user_dashboards(user_id, sort_by=sort_by, page_number=page_number, page_size=page_size, public_only=public_only, favorite_only=favorite_only, name=name)
 
 
 Get list of dashboards for an user
@@ -1987,16 +1953,15 @@ except ApiException as e:
 | **public_only** | **bool**| If true, retrieve only public dashboards | [optional]  |
 | **favorite_only** | **bool**| If true, retrieve only favorite dashboards | [optional]  |
 | **name** | **str**| retrieve dashboards that match with given name | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**DashboardConfigurationListing**](DashboardConfigurationListing.html)
+[**DashboardConfigurationListing**](DashboardConfigurationListing)
 
-<a name="get_analytics_resolutions_aggregates_job"></a>
 
-## [**AsyncQueryStatus**](AsyncQueryStatus.html) get_analytics_resolutions_aggregates_job(job_id)
+## get_analytics_resolutions_aggregates_job
 
+> [**AsyncQueryStatus**](AsyncQueryStatus) get_analytics_resolutions_aggregates_job(job_id)
 
 
 Get status for async query for resolution aggregates
@@ -2038,16 +2003,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **job_id** | **str**| jobId |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**AsyncQueryStatus**](AsyncQueryStatus.html)
+[**AsyncQueryStatus**](AsyncQueryStatus)
 
-<a name="get_analytics_resolutions_aggregates_job_results"></a>
 
-## [**ResolutionAsyncAggregateQueryResponse**](ResolutionAsyncAggregateQueryResponse.html) get_analytics_resolutions_aggregates_job_results(job_id, cursor=cursor)
+## get_analytics_resolutions_aggregates_job_results
 
+> [**ResolutionAsyncAggregateQueryResponse**](ResolutionAsyncAggregateQueryResponse) get_analytics_resolutions_aggregates_job_results(job_id, cursor=cursor)
 
 
 Fetch a page of results for an async aggregates query
@@ -2091,16 +2055,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **job_id** | **str**| jobId |  |
 | **cursor** | **str**| Cursor token to retrieve next page | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**ResolutionAsyncAggregateQueryResponse**](ResolutionAsyncAggregateQueryResponse.html)
+[**ResolutionAsyncAggregateQueryResponse**](ResolutionAsyncAggregateQueryResponse)
 
-<a name="get_analytics_surveys_aggregates_job"></a>
 
-## [**AsyncQueryStatus**](AsyncQueryStatus.html) get_analytics_surveys_aggregates_job(job_id)
+## get_analytics_surveys_aggregates_job
 
+> [**AsyncQueryStatus**](AsyncQueryStatus) get_analytics_surveys_aggregates_job(job_id)
 
 
 Get status for async query for survey aggregates
@@ -2142,16 +2105,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **job_id** | **str**| jobId |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**AsyncQueryStatus**](AsyncQueryStatus.html)
+[**AsyncQueryStatus**](AsyncQueryStatus)
 
-<a name="get_analytics_surveys_aggregates_job_results"></a>
 
-## [**SurveyAsyncAggregateQueryResponse**](SurveyAsyncAggregateQueryResponse.html) get_analytics_surveys_aggregates_job_results(job_id, cursor=cursor)
+## get_analytics_surveys_aggregates_job_results
 
+> [**SurveyAsyncAggregateQueryResponse**](SurveyAsyncAggregateQueryResponse) get_analytics_surveys_aggregates_job_results(job_id, cursor=cursor)
 
 
 Fetch a page of results for an async aggregates query
@@ -2195,16 +2157,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **job_id** | **str**| jobId |  |
 | **cursor** | **str**| Cursor token to retrieve next page | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**SurveyAsyncAggregateQueryResponse**](SurveyAsyncAggregateQueryResponse.html)
+[**SurveyAsyncAggregateQueryResponse**](SurveyAsyncAggregateQueryResponse)
 
-<a name="get_analytics_taskmanagement_aggregates_job"></a>
 
-## [**AsyncQueryStatus**](AsyncQueryStatus.html) get_analytics_taskmanagement_aggregates_job(job_id)
+## get_analytics_taskmanagement_aggregates_job
 
+> [**AsyncQueryStatus**](AsyncQueryStatus) get_analytics_taskmanagement_aggregates_job(job_id)
 
 
 Get status for async query for task management aggregates
@@ -2246,16 +2207,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **job_id** | **str**| jobId |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**AsyncQueryStatus**](AsyncQueryStatus.html)
+[**AsyncQueryStatus**](AsyncQueryStatus)
 
-<a name="get_analytics_taskmanagement_aggregates_job_results"></a>
 
-## [**TaskManagementAsyncAggregateQueryResponse**](TaskManagementAsyncAggregateQueryResponse.html) get_analytics_taskmanagement_aggregates_job_results(job_id, cursor=cursor)
+## get_analytics_taskmanagement_aggregates_job_results
 
+> [**TaskManagementAsyncAggregateQueryResponse**](TaskManagementAsyncAggregateQueryResponse) get_analytics_taskmanagement_aggregates_job_results(job_id, cursor=cursor)
 
 
 Fetch a page of results for an async task management query
@@ -2299,16 +2259,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **job_id** | **str**| jobId |  |
 | **cursor** | **str**| Cursor token to retrieve next page | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**TaskManagementAsyncAggregateQueryResponse**](TaskManagementAsyncAggregateQueryResponse.html)
+[**TaskManagementAsyncAggregateQueryResponse**](TaskManagementAsyncAggregateQueryResponse)
 
-<a name="get_analytics_transcripts_aggregates_job"></a>
 
-## [**AsyncQueryStatus**](AsyncQueryStatus.html) get_analytics_transcripts_aggregates_job(job_id)
+## get_analytics_transcripts_aggregates_job
 
+> [**AsyncQueryStatus**](AsyncQueryStatus) get_analytics_transcripts_aggregates_job(job_id)
 
 
 Get status for async query for transcript aggregates
@@ -2350,16 +2309,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **job_id** | **str**| jobId |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**AsyncQueryStatus**](AsyncQueryStatus.html)
+[**AsyncQueryStatus**](AsyncQueryStatus)
 
-<a name="get_analytics_transcripts_aggregates_job_results"></a>
 
-## [**TranscriptAsyncAggregateQueryResponse**](TranscriptAsyncAggregateQueryResponse.html) get_analytics_transcripts_aggregates_job_results(job_id, cursor=cursor)
+## get_analytics_transcripts_aggregates_job_results
 
+> [**TranscriptAsyncAggregateQueryResponse**](TranscriptAsyncAggregateQueryResponse) get_analytics_transcripts_aggregates_job_results(job_id, cursor=cursor)
 
 
 Fetch a page of results for an async aggregates query
@@ -2403,16 +2361,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **job_id** | **str**| jobId |  |
 | **cursor** | **str**| Cursor token to retrieve next page | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**TranscriptAsyncAggregateQueryResponse**](TranscriptAsyncAggregateQueryResponse.html)
+[**TranscriptAsyncAggregateQueryResponse**](TranscriptAsyncAggregateQueryResponse)
 
-<a name="get_analytics_users_aggregates_job"></a>
 
-## [**AsyncQueryStatus**](AsyncQueryStatus.html) get_analytics_users_aggregates_job(job_id)
+## get_analytics_users_aggregates_job
 
+> [**AsyncQueryStatus**](AsyncQueryStatus) get_analytics_users_aggregates_job(job_id)
 
 
 Get status for async query for user aggregates
@@ -2454,16 +2411,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **job_id** | **str**| jobId |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**AsyncQueryStatus**](AsyncQueryStatus.html)
+[**AsyncQueryStatus**](AsyncQueryStatus)
 
-<a name="get_analytics_users_aggregates_job_results"></a>
 
-## [**UserAsyncAggregateQueryResponse**](UserAsyncAggregateQueryResponse.html) get_analytics_users_aggregates_job_results(job_id, cursor=cursor)
+## get_analytics_users_aggregates_job_results
 
+> [**UserAsyncAggregateQueryResponse**](UserAsyncAggregateQueryResponse) get_analytics_users_aggregates_job_results(job_id, cursor=cursor)
 
 
 Fetch a page of results for an async aggregates query
@@ -2507,16 +2463,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **job_id** | **str**| jobId |  |
 | **cursor** | **str**| Cursor token to retrieve next page | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**UserAsyncAggregateQueryResponse**](UserAsyncAggregateQueryResponse.html)
+[**UserAsyncAggregateQueryResponse**](UserAsyncAggregateQueryResponse)
 
-<a name="get_analytics_users_details_job"></a>
 
-## [**AsyncQueryStatus**](AsyncQueryStatus.html) get_analytics_users_details_job(job_id)
+## get_analytics_users_details_job
 
+> [**AsyncQueryStatus**](AsyncQueryStatus) get_analytics_users_details_job(job_id)
 
 
 Get status for async query for user details
@@ -2556,16 +2511,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **job_id** | **str**| jobId |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**AsyncQueryStatus**](AsyncQueryStatus.html)
+[**AsyncQueryStatus**](AsyncQueryStatus)
 
-<a name="get_analytics_users_details_job_results"></a>
 
-## [**AnalyticsUserDetailsAsyncQueryResponse**](AnalyticsUserDetailsAsyncQueryResponse.html) get_analytics_users_details_job_results(job_id, cursor=cursor, page_size=page_size)
+## get_analytics_users_details_job_results
 
+> [**AnalyticsUserDetailsAsyncQueryResponse**](AnalyticsUserDetailsAsyncQueryResponse) get_analytics_users_details_job_results(job_id, cursor=cursor, page_size=page_size)
 
 
 Fetch a page of results for an async query
@@ -2609,16 +2563,15 @@ except ApiException as e:
 | **job_id** | **str**| jobId |  |
 | **cursor** | **str**| Indicates where to resume query results (not required for first page) | [optional]  |
 | **page_size** | **int**| The desired maximum number of results | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**AnalyticsUserDetailsAsyncQueryResponse**](AnalyticsUserDetailsAsyncQueryResponse.html)
+[**AnalyticsUserDetailsAsyncQueryResponse**](AnalyticsUserDetailsAsyncQueryResponse)
 
-<a name="get_analytics_users_details_jobs_availability"></a>
 
-## [**DataAvailabilityResponse**](DataAvailabilityResponse.html) get_analytics_users_details_jobs_availability()
+## get_analytics_users_details_jobs_availability
 
+> [**DataAvailabilityResponse**](DataAvailabilityResponse) get_analytics_users_details_jobs_availability()
 
 
 Lookup the datalake availability date and time
@@ -2655,15 +2608,14 @@ except ApiException as e:
 
 This endpoint does not need any parameters.
 
-
 ### Return type
 
-[**DataAvailabilityResponse**](DataAvailabilityResponse.html)
+[**DataAvailabilityResponse**](DataAvailabilityResponse)
 
-<a name="patch_analytics_reporting_settings"></a>
 
-## [**AnalyticsReportingSettings**](AnalyticsReportingSettings.html) patch_analytics_reporting_settings(body)
+## patch_analytics_reporting_settings
 
+> [**AnalyticsReportingSettings**](AnalyticsReportingSettings) patch_analytics_reporting_settings(body)
 
 
 Patch AnalyticsReportingSettings values for an organization
@@ -2702,17 +2654,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**AnalyticsReportingSettings**](AnalyticsReportingSettings.html)| AnalyticsReportingSettingsRequest |  |
-{: class="table table-striped"}
+| **body** | [**AnalyticsReportingSettings**](AnalyticsReportingSettings)| AnalyticsReportingSettingsRequest |  |
 
 ### Return type
 
-[**AnalyticsReportingSettings**](AnalyticsReportingSettings.html)
+[**AnalyticsReportingSettings**](AnalyticsReportingSettings)
 
-<a name="post_analytics_actions_aggregates_jobs"></a>
 
-## [**AsyncQueryResponse**](AsyncQueryResponse.html) post_analytics_actions_aggregates_jobs(body)
+## post_analytics_actions_aggregates_jobs
 
+> [**AsyncQueryResponse**](AsyncQueryResponse) post_analytics_actions_aggregates_jobs(body)
 
 
 Query for action aggregates asynchronously
@@ -2754,17 +2705,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**ActionAsyncAggregationQuery**](ActionAsyncAggregationQuery.html)| query |  |
-{: class="table table-striped"}
+| **body** | [**ActionAsyncAggregationQuery**](ActionAsyncAggregationQuery)| query |  |
 
 ### Return type
 
-[**AsyncQueryResponse**](AsyncQueryResponse.html)
+[**AsyncQueryResponse**](AsyncQueryResponse)
 
-<a name="post_analytics_actions_aggregates_query"></a>
 
-## [**ActionAggregateQueryResponse**](ActionAggregateQueryResponse.html) post_analytics_actions_aggregates_query(body)
+## post_analytics_actions_aggregates_query
 
+> [**ActionAggregateQueryResponse**](ActionAggregateQueryResponse) post_analytics_actions_aggregates_query(body)
 
 
 Query for action aggregates
@@ -2804,17 +2754,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**ActionAggregationQuery**](ActionAggregationQuery.html)| query |  |
-{: class="table table-striped"}
+| **body** | [**ActionAggregationQuery**](ActionAggregationQuery)| query |  |
 
 ### Return type
 
-[**ActionAggregateQueryResponse**](ActionAggregateQueryResponse.html)
+[**ActionAggregateQueryResponse**](ActionAggregateQueryResponse)
 
-<a name="post_analytics_agentcopilots_aggregates_jobs"></a>
 
-## [**AsyncQueryResponse**](AsyncQueryResponse.html) post_analytics_agentcopilots_aggregates_jobs(body)
+## post_analytics_agentcopilots_aggregates_jobs
 
+> [**AsyncQueryResponse**](AsyncQueryResponse) post_analytics_agentcopilots_aggregates_jobs(body)
 
 
 Query for agent copilot aggregates asynchronously
@@ -2855,17 +2804,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**AgentCopilotAsyncAggregationQuery**](AgentCopilotAsyncAggregationQuery.html)| query |  |
-{: class="table table-striped"}
+| **body** | [**AgentCopilotAsyncAggregationQuery**](AgentCopilotAsyncAggregationQuery)| query |  |
 
 ### Return type
 
-[**AsyncQueryResponse**](AsyncQueryResponse.html)
+[**AsyncQueryResponse**](AsyncQueryResponse)
 
-<a name="post_analytics_agentcopilots_aggregates_query"></a>
 
-## [**AgentCopilotAggregateQueryResponse**](AgentCopilotAggregateQueryResponse.html) post_analytics_agentcopilots_aggregates_query(body)
+## post_analytics_agentcopilots_aggregates_query
 
+> [**AgentCopilotAggregateQueryResponse**](AgentCopilotAggregateQueryResponse) post_analytics_agentcopilots_aggregates_query(body)
 
 
 Query for agent copilot aggregates
@@ -2904,17 +2852,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**AgentCopilotAggregationQuery**](AgentCopilotAggregationQuery.html)| query |  |
-{: class="table table-striped"}
+| **body** | [**AgentCopilotAggregationQuery**](AgentCopilotAggregationQuery)| query |  |
 
 ### Return type
 
-[**AgentCopilotAggregateQueryResponse**](AgentCopilotAggregateQueryResponse.html)
+[**AgentCopilotAggregateQueryResponse**](AgentCopilotAggregateQueryResponse)
 
-<a name="post_analytics_bots_aggregates_jobs"></a>
 
-## [**AsyncQueryResponse**](AsyncQueryResponse.html) post_analytics_bots_aggregates_jobs(body)
+## post_analytics_bots_aggregates_jobs
 
+> [**AsyncQueryResponse**](AsyncQueryResponse) post_analytics_bots_aggregates_jobs(body)
 
 
 Query for bot aggregates asynchronously
@@ -2955,17 +2902,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**BotAsyncAggregationQuery**](BotAsyncAggregationQuery.html)| query |  |
-{: class="table table-striped"}
+| **body** | [**BotAsyncAggregationQuery**](BotAsyncAggregationQuery)| query |  |
 
 ### Return type
 
-[**AsyncQueryResponse**](AsyncQueryResponse.html)
+[**AsyncQueryResponse**](AsyncQueryResponse)
 
-<a name="post_analytics_bots_aggregates_query"></a>
 
-## [**BotAggregateQueryResponse**](BotAggregateQueryResponse.html) post_analytics_bots_aggregates_query(body)
+## post_analytics_bots_aggregates_query
 
+> [**BotAggregateQueryResponse**](BotAggregateQueryResponse) post_analytics_bots_aggregates_query(body)
 
 
 Query for bot aggregates
@@ -3004,17 +2950,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**BotAggregationQuery**](BotAggregationQuery.html)| query |  |
-{: class="table table-striped"}
+| **body** | [**BotAggregationQuery**](BotAggregationQuery)| query |  |
 
 ### Return type
 
-[**BotAggregateQueryResponse**](BotAggregateQueryResponse.html)
+[**BotAggregateQueryResponse**](BotAggregateQueryResponse)
 
-<a name="post_analytics_conversation_details_properties"></a>
 
-## [**PropertyIndexRequest**](PropertyIndexRequest.html) post_analytics_conversation_details_properties(conversation_id, body)
+## post_analytics_conversation_details_properties
 
+> [**PropertyIndexRequest**](PropertyIndexRequest) post_analytics_conversation_details_properties(conversation_id, body)
 
 
 Index conversation properties
@@ -3055,17 +3000,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
-| **body** | [**PropertyIndexRequest**](PropertyIndexRequest.html)| request |  |
-{: class="table table-striped"}
+| **body** | [**PropertyIndexRequest**](PropertyIndexRequest)| request |  |
 
 ### Return type
 
-[**PropertyIndexRequest**](PropertyIndexRequest.html)
+[**PropertyIndexRequest**](PropertyIndexRequest)
 
-<a name="post_analytics_conversations_activity_query"></a>
 
-## [**ConversationActivityResponse**](ConversationActivityResponse.html) post_analytics_conversations_activity_query(body, page_size=page_size, page_number=page_number)
+## post_analytics_conversations_activity_query
 
+> [**ConversationActivityResponse**](ConversationActivityResponse) post_analytics_conversations_activity_query(body, page_size=page_size, page_number=page_number)
 
 
 Query for conversation activity observations
@@ -3106,19 +3050,18 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**ConversationActivityQuery**](ConversationActivityQuery.html)| query |  |
+| **body** | [**ConversationActivityQuery**](ConversationActivityQuery)| query |  |
 | **page_size** | **int**| The desired page size | [optional]  |
 | **page_number** | **int**| The desired page number | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**ConversationActivityResponse**](ConversationActivityResponse.html)
+[**ConversationActivityResponse**](ConversationActivityResponse)
 
-<a name="post_analytics_conversations_aggregates_jobs"></a>
 
-## [**AsyncQueryResponse**](AsyncQueryResponse.html) post_analytics_conversations_aggregates_jobs(body)
+## post_analytics_conversations_aggregates_jobs
 
+> [**AsyncQueryResponse**](AsyncQueryResponse) post_analytics_conversations_aggregates_jobs(body)
 
 
 Query for conversation aggregates asynchronously
@@ -3159,17 +3102,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**ConversationAsyncAggregationQuery**](ConversationAsyncAggregationQuery.html)| query |  |
-{: class="table table-striped"}
+| **body** | [**ConversationAsyncAggregationQuery**](ConversationAsyncAggregationQuery)| query |  |
 
 ### Return type
 
-[**AsyncQueryResponse**](AsyncQueryResponse.html)
+[**AsyncQueryResponse**](AsyncQueryResponse)
 
-<a name="post_analytics_conversations_aggregates_query"></a>
 
-## [**ConversationAggregateQueryResponse**](ConversationAggregateQueryResponse.html) post_analytics_conversations_aggregates_query(body)
+## post_analytics_conversations_aggregates_query
 
+> [**ConversationAggregateQueryResponse**](ConversationAggregateQueryResponse) post_analytics_conversations_aggregates_query(body)
 
 
 Query for conversation aggregates
@@ -3208,17 +3150,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**ConversationAggregationQuery**](ConversationAggregationQuery.html)| query |  |
-{: class="table table-striped"}
+| **body** | [**ConversationAggregationQuery**](ConversationAggregationQuery)| query |  |
 
 ### Return type
 
-[**ConversationAggregateQueryResponse**](ConversationAggregateQueryResponse.html)
+[**ConversationAggregateQueryResponse**](ConversationAggregateQueryResponse)
 
-<a name="post_analytics_conversations_details_jobs"></a>
 
-## [**AsyncQueryResponse**](AsyncQueryResponse.html) post_analytics_conversations_details_jobs(body)
+## post_analytics_conversations_details_jobs
 
+> [**AsyncQueryResponse**](AsyncQueryResponse) post_analytics_conversations_details_jobs(body)
 
 
 Query for conversation details asynchronously
@@ -3258,17 +3199,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**AsyncConversationQuery**](AsyncConversationQuery.html)| query |  |
-{: class="table table-striped"}
+| **body** | [**AsyncConversationQuery**](AsyncConversationQuery)| query |  |
 
 ### Return type
 
-[**AsyncQueryResponse**](AsyncQueryResponse.html)
+[**AsyncQueryResponse**](AsyncQueryResponse)
 
-<a name="post_analytics_conversations_details_query"></a>
 
-## [**AnalyticsConversationQueryResponse**](AnalyticsConversationQueryResponse.html) post_analytics_conversations_details_query(body)
+## post_analytics_conversations_details_query
 
+> [**AnalyticsConversationQueryResponse**](AnalyticsConversationQueryResponse) post_analytics_conversations_details_query(body)
 
 
 Query for conversation details
@@ -3308,17 +3248,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**ConversationQuery**](ConversationQuery.html)| query |  |
-{: class="table table-striped"}
+| **body** | [**ConversationQuery**](ConversationQuery)| query |  |
 
 ### Return type
 
-[**AnalyticsConversationQueryResponse**](AnalyticsConversationQueryResponse.html)
+[**AnalyticsConversationQueryResponse**](AnalyticsConversationQueryResponse)
 
-<a name="post_analytics_conversations_transcripts_query"></a>
 
-## [**AnalyticsConversationWithoutAttributesMultiGetResponse**](AnalyticsConversationWithoutAttributesMultiGetResponse.html) post_analytics_conversations_transcripts_query(body)
+## post_analytics_conversations_transcripts_query
 
+> [**AnalyticsConversationWithoutAttributesMultiGetResponse**](AnalyticsConversationWithoutAttributesMultiGetResponse) post_analytics_conversations_transcripts_query(body)
 
 
 Search resources.
@@ -3357,17 +3296,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**TranscriptConversationDetailSearchRequest**](TranscriptConversationDetailSearchRequest.html)| Search request options |  |
-{: class="table table-striped"}
+| **body** | [**TranscriptConversationDetailSearchRequest**](TranscriptConversationDetailSearchRequest)| Search request options |  |
 
 ### Return type
 
-[**AnalyticsConversationWithoutAttributesMultiGetResponse**](AnalyticsConversationWithoutAttributesMultiGetResponse.html)
+[**AnalyticsConversationWithoutAttributesMultiGetResponse**](AnalyticsConversationWithoutAttributesMultiGetResponse)
 
-<a name="post_analytics_evaluations_aggregates_jobs"></a>
 
-## [**AsyncQueryResponse**](AsyncQueryResponse.html) post_analytics_evaluations_aggregates_jobs(body)
+## post_analytics_evaluations_aggregates_jobs
 
+> [**AsyncQueryResponse**](AsyncQueryResponse) post_analytics_evaluations_aggregates_jobs(body)
 
 
 Query for evaluation aggregates asynchronously
@@ -3408,17 +3346,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**EvaluationAsyncAggregationQuery**](EvaluationAsyncAggregationQuery.html)| query |  |
-{: class="table table-striped"}
+| **body** | [**EvaluationAsyncAggregationQuery**](EvaluationAsyncAggregationQuery)| query |  |
 
 ### Return type
 
-[**AsyncQueryResponse**](AsyncQueryResponse.html)
+[**AsyncQueryResponse**](AsyncQueryResponse)
 
-<a name="post_analytics_evaluations_aggregates_query"></a>
 
-## [**EvaluationAggregateQueryResponse**](EvaluationAggregateQueryResponse.html) post_analytics_evaluations_aggregates_query(body)
+## post_analytics_evaluations_aggregates_query
 
+> [**EvaluationAggregateQueryResponse**](EvaluationAggregateQueryResponse) post_analytics_evaluations_aggregates_query(body)
 
 
 Query for evaluation aggregates
@@ -3457,17 +3394,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**EvaluationAggregationQuery**](EvaluationAggregationQuery.html)| query |  |
-{: class="table table-striped"}
+| **body** | [**EvaluationAggregationQuery**](EvaluationAggregationQuery)| query |  |
 
 ### Return type
 
-[**EvaluationAggregateQueryResponse**](EvaluationAggregateQueryResponse.html)
+[**EvaluationAggregateQueryResponse**](EvaluationAggregateQueryResponse)
 
-<a name="post_analytics_flowexecutions_aggregates_jobs"></a>
 
-## [**AsyncQueryResponse**](AsyncQueryResponse.html) post_analytics_flowexecutions_aggregates_jobs(body)
+## post_analytics_flowexecutions_aggregates_jobs
 
+> [**AsyncQueryResponse**](AsyncQueryResponse) post_analytics_flowexecutions_aggregates_jobs(body)
 
 
 Query for flow execution aggregates asynchronously
@@ -3508,17 +3444,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**FlowExecutionAsyncAggregationQuery**](FlowExecutionAsyncAggregationQuery.html)| query |  |
-{: class="table table-striped"}
+| **body** | [**FlowExecutionAsyncAggregationQuery**](FlowExecutionAsyncAggregationQuery)| query |  |
 
 ### Return type
 
-[**AsyncQueryResponse**](AsyncQueryResponse.html)
+[**AsyncQueryResponse**](AsyncQueryResponse)
 
-<a name="post_analytics_flowexecutions_aggregates_query"></a>
 
-## [**FlowExecutionAggregateQueryResponse**](FlowExecutionAggregateQueryResponse.html) post_analytics_flowexecutions_aggregates_query(body)
+## post_analytics_flowexecutions_aggregates_query
 
+> [**FlowExecutionAggregateQueryResponse**](FlowExecutionAggregateQueryResponse) post_analytics_flowexecutions_aggregates_query(body)
 
 
 Query for flow execution aggregates
@@ -3557,17 +3492,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**FlowExecutionAggregationQuery**](FlowExecutionAggregationQuery.html)| query |  |
-{: class="table table-striped"}
+| **body** | [**FlowExecutionAggregationQuery**](FlowExecutionAggregationQuery)| query |  |
 
 ### Return type
 
-[**FlowExecutionAggregateQueryResponse**](FlowExecutionAggregateQueryResponse.html)
+[**FlowExecutionAggregateQueryResponse**](FlowExecutionAggregateQueryResponse)
 
-<a name="post_analytics_flows_activity_query"></a>
 
-## [**FlowActivityResponse**](FlowActivityResponse.html) post_analytics_flows_activity_query(body, page_size=page_size, page_number=page_number)
+## post_analytics_flows_activity_query
 
+> [**FlowActivityResponse**](FlowActivityResponse) post_analytics_flows_activity_query(body, page_size=page_size, page_number=page_number)
 
 
 Query for flow activity observations
@@ -3608,19 +3542,18 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**FlowActivityQuery**](FlowActivityQuery.html)| query |  |
+| **body** | [**FlowActivityQuery**](FlowActivityQuery)| query |  |
 | **page_size** | **int**| The desired page size | [optional]  |
 | **page_number** | **int**| The desired page number | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**FlowActivityResponse**](FlowActivityResponse.html)
+[**FlowActivityResponse**](FlowActivityResponse)
 
-<a name="post_analytics_flows_aggregates_jobs"></a>
 
-## [**AsyncQueryResponse**](AsyncQueryResponse.html) post_analytics_flows_aggregates_jobs(body)
+## post_analytics_flows_aggregates_jobs
 
+> [**AsyncQueryResponse**](AsyncQueryResponse) post_analytics_flows_aggregates_jobs(body)
 
 
 Query for flow aggregates asynchronously
@@ -3661,17 +3594,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**FlowAsyncAggregationQuery**](FlowAsyncAggregationQuery.html)| query |  |
-{: class="table table-striped"}
+| **body** | [**FlowAsyncAggregationQuery**](FlowAsyncAggregationQuery)| query |  |
 
 ### Return type
 
-[**AsyncQueryResponse**](AsyncQueryResponse.html)
+[**AsyncQueryResponse**](AsyncQueryResponse)
 
-<a name="post_analytics_flows_aggregates_query"></a>
 
-## [**FlowAggregateQueryResponse**](FlowAggregateQueryResponse.html) post_analytics_flows_aggregates_query(body)
+## post_analytics_flows_aggregates_query
 
+> [**FlowAggregateQueryResponse**](FlowAggregateQueryResponse) post_analytics_flows_aggregates_query(body)
 
 
 Query for flow aggregates
@@ -3710,17 +3642,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**FlowAggregationQuery**](FlowAggregationQuery.html)| query |  |
-{: class="table table-striped"}
+| **body** | [**FlowAggregationQuery**](FlowAggregationQuery)| query |  |
 
 ### Return type
 
-[**FlowAggregateQueryResponse**](FlowAggregateQueryResponse.html)
+[**FlowAggregateQueryResponse**](FlowAggregateQueryResponse)
 
-<a name="post_analytics_flows_observations_query"></a>
 
-## [**FlowObservationQueryResponse**](FlowObservationQueryResponse.html) post_analytics_flows_observations_query(body)
+## post_analytics_flows_observations_query
 
+> [**FlowObservationQueryResponse**](FlowObservationQueryResponse) post_analytics_flows_observations_query(body)
 
 
 Query for flow observations
@@ -3759,17 +3690,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**FlowObservationQuery**](FlowObservationQuery.html)| query |  |
-{: class="table table-striped"}
+| **body** | [**FlowObservationQuery**](FlowObservationQuery)| query |  |
 
 ### Return type
 
-[**FlowObservationQueryResponse**](FlowObservationQueryResponse.html)
+[**FlowObservationQueryResponse**](FlowObservationQueryResponse)
 
-<a name="post_analytics_journeys_aggregates_jobs"></a>
 
-## [**AsyncQueryResponse**](AsyncQueryResponse.html) post_analytics_journeys_aggregates_jobs(body)
+## post_analytics_journeys_aggregates_jobs
 
+> [**AsyncQueryResponse**](AsyncQueryResponse) post_analytics_journeys_aggregates_jobs(body)
 
 
 Query for journey aggregates asynchronously
@@ -3810,17 +3740,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**JourneyAsyncAggregationQuery**](JourneyAsyncAggregationQuery.html)| query |  |
-{: class="table table-striped"}
+| **body** | [**JourneyAsyncAggregationQuery**](JourneyAsyncAggregationQuery)| query |  |
 
 ### Return type
 
-[**AsyncQueryResponse**](AsyncQueryResponse.html)
+[**AsyncQueryResponse**](AsyncQueryResponse)
 
-<a name="post_analytics_journeys_aggregates_query"></a>
 
-## [**JourneyAggregateQueryResponse**](JourneyAggregateQueryResponse.html) post_analytics_journeys_aggregates_query(body)
+## post_analytics_journeys_aggregates_query
 
+> [**JourneyAggregateQueryResponse**](JourneyAggregateQueryResponse) post_analytics_journeys_aggregates_query(body)
 
 
 Query for journey aggregates
@@ -3859,17 +3788,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**JourneyAggregationQuery**](JourneyAggregationQuery.html)| query |  |
-{: class="table table-striped"}
+| **body** | [**JourneyAggregationQuery**](JourneyAggregationQuery)| query |  |
 
 ### Return type
 
-[**JourneyAggregateQueryResponse**](JourneyAggregateQueryResponse.html)
+[**JourneyAggregateQueryResponse**](JourneyAggregateQueryResponse)
 
-<a name="post_analytics_knowledge_aggregates_jobs"></a>
 
-## [**AsyncQueryResponse**](AsyncQueryResponse.html) post_analytics_knowledge_aggregates_jobs(body)
+## post_analytics_knowledge_aggregates_jobs
 
+> [**AsyncQueryResponse**](AsyncQueryResponse) post_analytics_knowledge_aggregates_jobs(body)
 
 
 Query for knowledge aggregates asynchronously
@@ -3910,17 +3838,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**KnowledgeAsyncAggregationQuery**](KnowledgeAsyncAggregationQuery.html)| query |  |
-{: class="table table-striped"}
+| **body** | [**KnowledgeAsyncAggregationQuery**](KnowledgeAsyncAggregationQuery)| query |  |
 
 ### Return type
 
-[**AsyncQueryResponse**](AsyncQueryResponse.html)
+[**AsyncQueryResponse**](AsyncQueryResponse)
 
-<a name="post_analytics_knowledge_aggregates_query"></a>
 
-## [**KnowledgeAggregateQueryResponse**](KnowledgeAggregateQueryResponse.html) post_analytics_knowledge_aggregates_query(body)
+## post_analytics_knowledge_aggregates_query
 
+> [**KnowledgeAggregateQueryResponse**](KnowledgeAggregateQueryResponse) post_analytics_knowledge_aggregates_query(body)
 
 
 Query for knowledge aggregates
@@ -3959,17 +3886,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**KnowledgeAggregationQuery**](KnowledgeAggregationQuery.html)| query |  |
-{: class="table table-striped"}
+| **body** | [**KnowledgeAggregationQuery**](KnowledgeAggregationQuery)| query |  |
 
 ### Return type
 
-[**KnowledgeAggregateQueryResponse**](KnowledgeAggregateQueryResponse.html)
+[**KnowledgeAggregateQueryResponse**](KnowledgeAggregateQueryResponse)
 
-<a name="post_analytics_queues_observations_query"></a>
 
-## [**QueueObservationQueryResponse**](QueueObservationQueryResponse.html) post_analytics_queues_observations_query(body)
+## post_analytics_queues_observations_query
 
+> [**QueueObservationQueryResponse**](QueueObservationQueryResponse) post_analytics_queues_observations_query(body)
 
 
 Query for queue observations
@@ -4008,17 +3934,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**QueueObservationQuery**](QueueObservationQuery.html)| query |  |
-{: class="table table-striped"}
+| **body** | [**QueueObservationQuery**](QueueObservationQuery)| query |  |
 
 ### Return type
 
-[**QueueObservationQueryResponse**](QueueObservationQueryResponse.html)
+[**QueueObservationQueryResponse**](QueueObservationQueryResponse)
 
-<a name="post_analytics_ratelimits_aggregates_query"></a>
 
-## [**RateLimitAggregateQueryResponse**](RateLimitAggregateQueryResponse.html) post_analytics_ratelimits_aggregates_query(body)
+## post_analytics_ratelimits_aggregates_query
 
+> [**RateLimitAggregateQueryResponse**](RateLimitAggregateQueryResponse) post_analytics_ratelimits_aggregates_query(body)
 
 
 Query for limits rate limit aggregates. Data populated when limits reach 90% of the maximum. Not a source of truth for limits hit but a best effort estimate.
@@ -4059,17 +3984,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**RateLimitAggregationQuery**](RateLimitAggregationQuery.html)| query |  |
-{: class="table table-striped"}
+| **body** | [**RateLimitAggregationQuery**](RateLimitAggregationQuery)| query |  |
 
 ### Return type
 
-[**RateLimitAggregateQueryResponse**](RateLimitAggregateQueryResponse.html)
+[**RateLimitAggregateQueryResponse**](RateLimitAggregateQueryResponse)
 
-<a name="post_analytics_reporting_dashboards_users_bulk_remove"></a>
 
-##  post_analytics_reporting_dashboards_users_bulk_remove(body)
+## post_analytics_reporting_dashboards_users_bulk_remove
 
+>  post_analytics_reporting_dashboards_users_bulk_remove(body)
 
 
 Bulk delete dashboards owned by other user(s)
@@ -4108,17 +4032,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**list[str]**](str.html)| List of userIds |  |
-{: class="table table-striped"}
+| **body** | [**list[str]**](str)| List of userIds |  |
 
 ### Return type
 
 void (empty response body)
 
-<a name="post_analytics_reporting_exports"></a>
 
-## [**ReportingExportJobResponse**](ReportingExportJobResponse.html) post_analytics_reporting_exports(body)
+## post_analytics_reporting_exports
 
+> [**ReportingExportJobResponse**](ReportingExportJobResponse) post_analytics_reporting_exports(body)
 
 
 Generate a view export request
@@ -4159,17 +4082,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**ReportingExportJobRequest**](ReportingExportJobRequest.html)| ReportingExportJobRequest |  |
-{: class="table table-striped"}
+| **body** | [**ReportingExportJobRequest**](ReportingExportJobRequest)| ReportingExportJobRequest |  |
 
 ### Return type
 
-[**ReportingExportJobResponse**](ReportingExportJobResponse.html)
+[**ReportingExportJobResponse**](ReportingExportJobResponse)
 
-<a name="post_analytics_reporting_settings_dashboards_bulk_remove"></a>
 
-##  post_analytics_reporting_settings_dashboards_bulk_remove(body)
+## post_analytics_reporting_settings_dashboards_bulk_remove
 
+>  post_analytics_reporting_settings_dashboards_bulk_remove(body)
 
 
 Bulk remove dashboard configurations
@@ -4207,17 +4129,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**DashboardConfigurationBulkRequest**](DashboardConfigurationBulkRequest.html)|  |  |
-{: class="table table-striped"}
+| **body** | [**DashboardConfigurationBulkRequest**](DashboardConfigurationBulkRequest)|  |  |
 
 ### Return type
 
 void (empty response body)
 
-<a name="post_analytics_reporting_settings_dashboards_query"></a>
 
-## [**DashboardConfigurationListing**](DashboardConfigurationListing.html) post_analytics_reporting_settings_dashboards_query(body)
+## post_analytics_reporting_settings_dashboards_query
 
+> [**DashboardConfigurationListing**](DashboardConfigurationListing) post_analytics_reporting_settings_dashboards_query(body)
 
 
 Query dashboard configurations
@@ -4256,17 +4177,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**DashboardConfigurationQueryRequest**](DashboardConfigurationQueryRequest.html)|  |  |
-{: class="table table-striped"}
+| **body** | [**DashboardConfigurationQueryRequest**](DashboardConfigurationQueryRequest)|  |  |
 
 ### Return type
 
-[**DashboardConfigurationListing**](DashboardConfigurationListing.html)
+[**DashboardConfigurationListing**](DashboardConfigurationListing)
 
-<a name="post_analytics_resolutions_aggregates_jobs"></a>
 
-## [**AsyncQueryResponse**](AsyncQueryResponse.html) post_analytics_resolutions_aggregates_jobs(body)
+## post_analytics_resolutions_aggregates_jobs
 
+> [**AsyncQueryResponse**](AsyncQueryResponse) post_analytics_resolutions_aggregates_jobs(body)
 
 
 Query for resolution aggregates asynchronously
@@ -4307,17 +4227,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**ResolutionAsyncAggregationQuery**](ResolutionAsyncAggregationQuery.html)| query |  |
-{: class="table table-striped"}
+| **body** | [**ResolutionAsyncAggregationQuery**](ResolutionAsyncAggregationQuery)| query |  |
 
 ### Return type
 
-[**AsyncQueryResponse**](AsyncQueryResponse.html)
+[**AsyncQueryResponse**](AsyncQueryResponse)
 
-<a name="post_analytics_routing_activity_query"></a>
 
-## [**RoutingActivityResponse**](RoutingActivityResponse.html) post_analytics_routing_activity_query(body, page_size=page_size, page_number=page_number)
+## post_analytics_routing_activity_query
 
+> [**RoutingActivityResponse**](RoutingActivityResponse) post_analytics_routing_activity_query(body, page_size=page_size, page_number=page_number)
 
 
 Query for user activity observations
@@ -4358,19 +4277,18 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**RoutingActivityQuery**](RoutingActivityQuery.html)| query |  |
+| **body** | [**RoutingActivityQuery**](RoutingActivityQuery)| query |  |
 | **page_size** | **int**| The desired page size | [optional]  |
 | **page_number** | **int**| The desired page number | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**RoutingActivityResponse**](RoutingActivityResponse.html)
+[**RoutingActivityResponse**](RoutingActivityResponse)
 
-<a name="post_analytics_surveys_aggregates_jobs"></a>
 
-## [**AsyncQueryResponse**](AsyncQueryResponse.html) post_analytics_surveys_aggregates_jobs(body)
+## post_analytics_surveys_aggregates_jobs
 
+> [**AsyncQueryResponse**](AsyncQueryResponse) post_analytics_surveys_aggregates_jobs(body)
 
 
 Query for survey aggregates asynchronously
@@ -4411,17 +4329,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**SurveyAsyncAggregationQuery**](SurveyAsyncAggregationQuery.html)| query |  |
-{: class="table table-striped"}
+| **body** | [**SurveyAsyncAggregationQuery**](SurveyAsyncAggregationQuery)| query |  |
 
 ### Return type
 
-[**AsyncQueryResponse**](AsyncQueryResponse.html)
+[**AsyncQueryResponse**](AsyncQueryResponse)
 
-<a name="post_analytics_surveys_aggregates_query"></a>
 
-## [**SurveyAggregateQueryResponse**](SurveyAggregateQueryResponse.html) post_analytics_surveys_aggregates_query(body)
+## post_analytics_surveys_aggregates_query
 
+> [**SurveyAggregateQueryResponse**](SurveyAggregateQueryResponse) post_analytics_surveys_aggregates_query(body)
 
 
 Query for survey aggregates
@@ -4460,17 +4377,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**SurveyAggregationQuery**](SurveyAggregationQuery.html)| query |  |
-{: class="table table-striped"}
+| **body** | [**SurveyAggregationQuery**](SurveyAggregationQuery)| query |  |
 
 ### Return type
 
-[**SurveyAggregateQueryResponse**](SurveyAggregateQueryResponse.html)
+[**SurveyAggregateQueryResponse**](SurveyAggregateQueryResponse)
 
-<a name="post_analytics_taskmanagement_aggregates_jobs"></a>
 
-## [**AsyncQueryResponse**](AsyncQueryResponse.html) post_analytics_taskmanagement_aggregates_jobs(body)
+## post_analytics_taskmanagement_aggregates_jobs
 
+> [**AsyncQueryResponse**](AsyncQueryResponse) post_analytics_taskmanagement_aggregates_jobs(body)
 
 
 Query for task management aggregates asynchronously
@@ -4511,17 +4427,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**TaskManagementAsyncAggregationQuery**](TaskManagementAsyncAggregationQuery.html)| query |  |
-{: class="table table-striped"}
+| **body** | [**TaskManagementAsyncAggregationQuery**](TaskManagementAsyncAggregationQuery)| query |  |
 
 ### Return type
 
-[**AsyncQueryResponse**](AsyncQueryResponse.html)
+[**AsyncQueryResponse**](AsyncQueryResponse)
 
-<a name="post_analytics_taskmanagement_aggregates_query"></a>
 
-## [**TaskManagementAggregateQueryResponse**](TaskManagementAggregateQueryResponse.html) post_analytics_taskmanagement_aggregates_query(body)
+## post_analytics_taskmanagement_aggregates_query
 
+> [**TaskManagementAggregateQueryResponse**](TaskManagementAggregateQueryResponse) post_analytics_taskmanagement_aggregates_query(body)
 
 
 Query for task management aggregates
@@ -4562,17 +4477,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**TaskManagementAggregationQuery**](TaskManagementAggregationQuery.html)| query |  |
-{: class="table table-striped"}
+| **body** | [**TaskManagementAggregationQuery**](TaskManagementAggregationQuery)| query |  |
 
 ### Return type
 
-[**TaskManagementAggregateQueryResponse**](TaskManagementAggregateQueryResponse.html)
+[**TaskManagementAggregateQueryResponse**](TaskManagementAggregateQueryResponse)
 
-<a name="post_analytics_teams_activity_query"></a>
 
-## [**TeamActivityResponse**](TeamActivityResponse.html) post_analytics_teams_activity_query(body, page_size=page_size, page_number=page_number)
+## post_analytics_teams_activity_query
 
+> [**TeamActivityResponse**](TeamActivityResponse) post_analytics_teams_activity_query(body, page_size=page_size, page_number=page_number)
 
 
 Query for team activity observations
@@ -4613,19 +4527,18 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**TeamActivityQuery**](TeamActivityQuery.html)| query |  |
+| **body** | [**TeamActivityQuery**](TeamActivityQuery)| query |  |
 | **page_size** | **int**| The desired page size | [optional]  |
 | **page_number** | **int**| The desired page number | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**TeamActivityResponse**](TeamActivityResponse.html)
+[**TeamActivityResponse**](TeamActivityResponse)
 
-<a name="post_analytics_transcripts_aggregates_jobs"></a>
 
-## [**AsyncQueryResponse**](AsyncQueryResponse.html) post_analytics_transcripts_aggregates_jobs(body)
+## post_analytics_transcripts_aggregates_jobs
 
+> [**AsyncQueryResponse**](AsyncQueryResponse) post_analytics_transcripts_aggregates_jobs(body)
 
 
 Query for transcript aggregates asynchronously
@@ -4666,17 +4579,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**TranscriptAsyncAggregationQuery**](TranscriptAsyncAggregationQuery.html)| query |  |
-{: class="table table-striped"}
+| **body** | [**TranscriptAsyncAggregationQuery**](TranscriptAsyncAggregationQuery)| query |  |
 
 ### Return type
 
-[**AsyncQueryResponse**](AsyncQueryResponse.html)
+[**AsyncQueryResponse**](AsyncQueryResponse)
 
-<a name="post_analytics_transcripts_aggregates_query"></a>
 
-## [**TranscriptAggregateQueryResponse**](TranscriptAggregateQueryResponse.html) post_analytics_transcripts_aggregates_query(body)
+## post_analytics_transcripts_aggregates_query
 
+> [**TranscriptAggregateQueryResponse**](TranscriptAggregateQueryResponse) post_analytics_transcripts_aggregates_query(body)
 
 
 Query for transcript aggregates
@@ -4715,17 +4627,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**TranscriptAggregationQuery**](TranscriptAggregationQuery.html)| query |  |
-{: class="table table-striped"}
+| **body** | [**TranscriptAggregationQuery**](TranscriptAggregationQuery)| query |  |
 
 ### Return type
 
-[**TranscriptAggregateQueryResponse**](TranscriptAggregateQueryResponse.html)
+[**TranscriptAggregateQueryResponse**](TranscriptAggregateQueryResponse)
 
-<a name="post_analytics_users_activity_query"></a>
 
-## [**UserActivityResponse**](UserActivityResponse.html) post_analytics_users_activity_query(body, page_size=page_size, page_number=page_number)
+## post_analytics_users_activity_query
 
+> [**UserActivityResponse**](UserActivityResponse) post_analytics_users_activity_query(body, page_size=page_size, page_number=page_number)
 
 
 Query for user activity observations
@@ -4766,19 +4677,18 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**UserActivityQuery**](UserActivityQuery.html)| query |  |
+| **body** | [**UserActivityQuery**](UserActivityQuery)| query |  |
 | **page_size** | **int**| The desired page size | [optional]  |
 | **page_number** | **int**| The desired page number | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**UserActivityResponse**](UserActivityResponse.html)
+[**UserActivityResponse**](UserActivityResponse)
 
-<a name="post_analytics_users_aggregates_jobs"></a>
 
-## [**AsyncQueryResponse**](AsyncQueryResponse.html) post_analytics_users_aggregates_jobs(body)
+## post_analytics_users_aggregates_jobs
 
+> [**AsyncQueryResponse**](AsyncQueryResponse) post_analytics_users_aggregates_jobs(body)
 
 
 Query for user aggregates asynchronously
@@ -4819,17 +4729,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**UserAsyncAggregationQuery**](UserAsyncAggregationQuery.html)| query |  |
-{: class="table table-striped"}
+| **body** | [**UserAsyncAggregationQuery**](UserAsyncAggregationQuery)| query |  |
 
 ### Return type
 
-[**AsyncQueryResponse**](AsyncQueryResponse.html)
+[**AsyncQueryResponse**](AsyncQueryResponse)
 
-<a name="post_analytics_users_aggregates_query"></a>
 
-## [**UserAggregateQueryResponse**](UserAggregateQueryResponse.html) post_analytics_users_aggregates_query(body)
+## post_analytics_users_aggregates_query
 
+> [**UserAggregateQueryResponse**](UserAggregateQueryResponse) post_analytics_users_aggregates_query(body)
 
 
 Query for user aggregates
@@ -4868,17 +4777,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**UserAggregationQuery**](UserAggregationQuery.html)| query |  |
-{: class="table table-striped"}
+| **body** | [**UserAggregationQuery**](UserAggregationQuery)| query |  |
 
 ### Return type
 
-[**UserAggregateQueryResponse**](UserAggregateQueryResponse.html)
+[**UserAggregateQueryResponse**](UserAggregateQueryResponse)
 
-<a name="post_analytics_users_details_jobs"></a>
 
-## [**AsyncQueryResponse**](AsyncQueryResponse.html) post_analytics_users_details_jobs(body)
+## post_analytics_users_details_jobs
 
+> [**AsyncQueryResponse**](AsyncQueryResponse) post_analytics_users_details_jobs(body)
 
 
 Query for user details asynchronously
@@ -4917,17 +4825,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**AsyncUserDetailsQuery**](AsyncUserDetailsQuery.html)| query |  |
-{: class="table table-striped"}
+| **body** | [**AsyncUserDetailsQuery**](AsyncUserDetailsQuery)| query |  |
 
 ### Return type
 
-[**AsyncQueryResponse**](AsyncQueryResponse.html)
+[**AsyncQueryResponse**](AsyncQueryResponse)
 
-<a name="post_analytics_users_details_query"></a>
 
-## [**AnalyticsUserDetailsQueryResponse**](AnalyticsUserDetailsQueryResponse.html) post_analytics_users_details_query(body)
+## post_analytics_users_details_query
 
+> [**AnalyticsUserDetailsQueryResponse**](AnalyticsUserDetailsQueryResponse) post_analytics_users_details_query(body)
 
 
 Query for user details
@@ -4966,17 +4873,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**UserDetailsQuery**](UserDetailsQuery.html)| query |  |
-{: class="table table-striped"}
+| **body** | [**UserDetailsQuery**](UserDetailsQuery)| query |  |
 
 ### Return type
 
-[**AnalyticsUserDetailsQueryResponse**](AnalyticsUserDetailsQueryResponse.html)
+[**AnalyticsUserDetailsQueryResponse**](AnalyticsUserDetailsQueryResponse)
 
-<a name="post_analytics_users_observations_query"></a>
 
-## [**UserObservationQueryResponse**](UserObservationQueryResponse.html) post_analytics_users_observations_query(body)
+## post_analytics_users_observations_query
 
+> [**UserObservationQueryResponse**](UserObservationQueryResponse) post_analytics_users_observations_query(body)
 
 
 Query for user observations
@@ -5015,17 +4921,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**UserObservationQuery**](UserObservationQuery.html)| query |  |
-{: class="table table-striped"}
+| **body** | [**UserObservationQuery**](UserObservationQuery)| query |  |
 
 ### Return type
 
-[**UserObservationQueryResponse**](UserObservationQueryResponse.html)
+[**UserObservationQueryResponse**](UserObservationQueryResponse)
 
-<a name="put_analytics_dataretention_settings"></a>
 
-## [**AnalyticsDataRetentionResponse**](AnalyticsDataRetentionResponse.html) put_analytics_dataretention_settings(body)
+## put_analytics_dataretention_settings
 
+> [**AnalyticsDataRetentionResponse**](AnalyticsDataRetentionResponse) put_analytics_dataretention_settings(body)
 
 
 Update analytics data retention setting
@@ -5064,10 +4969,11 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**UpdateAnalyticsDataRetentionRequest**](UpdateAnalyticsDataRetentionRequest.html)| retentionDays |  |
-{: class="table table-striped"}
+| **body** | [**UpdateAnalyticsDataRetentionRequest**](UpdateAnalyticsDataRetentionRequest)| retentionDays |  |
 
 ### Return type
 
-[**AnalyticsDataRetentionResponse**](AnalyticsDataRetentionResponse.html)
+[**AnalyticsDataRetentionResponse**](AnalyticsDataRetentionResponse)
 
+
+_PureCloudPlatformClientV2 211.1.0_

@@ -1,14 +1,14 @@
----
-title: RecordingJobFailedRecording
----
+# RecordingJobFailedRecording
+
 ## RecordingJobFailedRecording
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **conversation** | [**AddressableEntityRef**](AddressableEntityRef.html) | Conversation | [optional] |
-| **recording** | [**AddressableEntityRef**](AddressableEntityRef.html) | Recording | [optional] |
-{: class="table table-striped"}
+| **conversation** | [AddressableEntityRef](AddressableEntityRef) | Conversation | [optional] |
+| **recording** | [AddressableEntityRef](AddressableEntityRef) | Recording | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

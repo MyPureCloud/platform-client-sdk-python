@@ -1,6 +1,4 @@
----
-title: CarrierServicesApi
----
+# CarrierServicesApi
 
 ## PureCloudPlatformClientV2.CarrierServicesApi
 
@@ -8,14 +6,14 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 |Method | Description|
 |------------- | -------------|
-|[**get_carrierservices_integrations_emergencylocations_me**](CarrierServicesApi.html#get_carrierservices_integrations_emergencylocations_me) | Get location for the logged in user|
-|[**post_carrierservices_integrations_emergencylocations_me**](CarrierServicesApi.html#post_carrierservices_integrations_emergencylocations_me) | Set current location for the logged in user|
-{: class="table table-striped"}
+|[**get_carrierservices_integrations_emergencylocations_me**](#get_carrierservices_integrations_emergencylocations_me) | Get location for the logged in user|
+|[**post_carrierservices_integrations_emergencylocations_me**](#post_carrierservices_integrations_emergencylocations_me) | Set current location for the logged in user|
 
-<a name="get_carrierservices_integrations_emergencylocations_me"></a>
 
-## [**EmergencyLocation**](EmergencyLocation.html) get_carrierservices_integrations_emergencylocations_me(phone_number)
 
+## get_carrierservices_integrations_emergencylocations_me
+
+> [**EmergencyLocation**](EmergencyLocation) get_carrierservices_integrations_emergencylocations_me(phone_number)
 
 
 Get location for the logged in user
@@ -54,16 +52,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **phone_number** | **str**| Phone number in E164 format |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**EmergencyLocation**](EmergencyLocation.html)
+[**EmergencyLocation**](EmergencyLocation)
 
-<a name="post_carrierservices_integrations_emergencylocations_me"></a>
 
-## [**EmergencyLocation**](EmergencyLocation.html) post_carrierservices_integrations_emergencylocations_me(body=body)
+## post_carrierservices_integrations_emergencylocations_me
 
+> [**EmergencyLocation**](EmergencyLocation) post_carrierservices_integrations_emergencylocations_me(body=body)
 
 
 Set current location for the logged in user
@@ -101,10 +98,11 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**EmergencyLocation**](EmergencyLocation.html)|  | [optional]  |
-{: class="table table-striped"}
+| **body** | [**EmergencyLocation**](EmergencyLocation)|  | [optional]  |
 
 ### Return type
 
-[**EmergencyLocation**](EmergencyLocation.html)
+[**EmergencyLocation**](EmergencyLocation)
 
+
+_PureCloudPlatformClientV2 211.1.0_

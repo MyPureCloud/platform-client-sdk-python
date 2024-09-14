@@ -1,13 +1,13 @@
----
-title: ArchitectPromptNotificationErrorMessageParams
----
+# ArchitectPromptNotificationErrorMessageParams
+
 ## ArchitectPromptNotificationErrorMessageParams
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **additional_properties** | **dict(str, str)** |  | [optional] |
-{: class="table table-striped"}
+| **additional_properties** | dict(str, str) |  | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

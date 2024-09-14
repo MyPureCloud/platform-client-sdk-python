@@ -1,13 +1,13 @@
----
-title: DisableSiteConnectionsRequest
----
+# DisableSiteConnectionsRequest
+
 ## DisableSiteConnectionsRequest
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **enabled** | **bool** |  | [optional] |
-{: class="table table-striped"}
+| **enabled** | bool |  | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

@@ -1,6 +1,4 @@
----
-title: ChatApi
----
+# ChatApi
 
 ## PureCloudPlatformClientV2.ChatApi
 
@@ -8,44 +6,44 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 |Method | Description|
 |------------- | -------------|
-|[**delete_chats_room_message**](ChatApi.html#delete_chats_room_message) | Delete a message in a room|
-|[**delete_chats_room_messages_pin**](ChatApi.html#delete_chats_room_messages_pin) | Remove a pinned message from a room|
-|[**delete_chats_room_participant**](ChatApi.html#delete_chats_room_participant) | Remove a user from a room.|
-|[**delete_chats_user_message**](ChatApi.html#delete_chats_user_message) | Delete a message to a user|
-|[**delete_chats_user_messages_pin**](ChatApi.html#delete_chats_user_messages_pin) | Remove a pinned message from a 1on1|
-|[**get_chats_message**](ChatApi.html#get_chats_message) | Get a message|
-|[**get_chats_room**](ChatApi.html#get_chats_room) | Get a room|
-|[**get_chats_room_message**](ChatApi.html#get_chats_room_message) | Get messages by id(s) from a room|
-|[**get_chats_room_messages**](ChatApi.html#get_chats_room_messages) | Get a room&#39;s message history|
-|[**get_chats_room_participant**](ChatApi.html#get_chats_room_participant) | Get a room participant|
-|[**get_chats_room_participants**](ChatApi.html#get_chats_room_participants) | Get room participants in a room|
-|[**get_chats_settings**](ChatApi.html#get_chats_settings) | Get Chat Settings.|
-|[**get_chats_thread_messages**](ChatApi.html#get_chats_thread_messages) | Get history by thread|
-|[**get_chats_user**](ChatApi.html#get_chats_user) | Get information for a 1on1|
-|[**get_chats_user_message**](ChatApi.html#get_chats_user_message) | Get messages by id(s) from a 1on1|
-|[**get_chats_user_messages**](ChatApi.html#get_chats_user_messages) | Get 1on1 History between a user|
-|[**get_chats_user_settings**](ChatApi.html#get_chats_user_settings) | Get a user&#39;s chat settings|
-|[**get_chats_users_me_settings**](ChatApi.html#get_chats_users_me_settings) | Get a user&#39;s chat settings|
-|[**patch_chats_room**](ChatApi.html#patch_chats_room) | Set properties for a room|
-|[**patch_chats_room_message**](ChatApi.html#patch_chats_room_message) | Edit a message in a room|
-|[**patch_chats_settings**](ChatApi.html#patch_chats_settings) | Patch Chat Settings.|
-|[**patch_chats_user_message**](ChatApi.html#patch_chats_user_message) | Edit a message to a user|
-|[**patch_chats_user_settings**](ChatApi.html#patch_chats_user_settings) | Update a user&#39;s chat settings|
-|[**patch_chats_users_me_settings**](ChatApi.html#patch_chats_users_me_settings) | Update a user&#39;s chat settings|
-|[**post_chats_room_messages**](ChatApi.html#post_chats_room_messages) | Send a message to a room|
-|[**post_chats_room_messages_pins**](ChatApi.html#post_chats_room_messages_pins) | Add pinned messages for a room, up to a maximum of 5 pinned messages|
-|[**post_chats_room_participant**](ChatApi.html#post_chats_room_participant) | Join a room|
-|[**post_chats_rooms**](ChatApi.html#post_chats_rooms) | Create an adhoc room|
-|[**post_chats_user_messages**](ChatApi.html#post_chats_user_messages) | Send a message to a user|
-|[**post_chats_user_messages_pins**](ChatApi.html#post_chats_user_messages_pins) | Add pinned messages for a 1on1, up to a maximum of 5 pinned messages|
-|[**put_chats_message_reactions**](ChatApi.html#put_chats_message_reactions) | Update reactions to a message|
-|[**put_chats_settings**](ChatApi.html#put_chats_settings) | Update Chat Settings.|
-{: class="table table-striped"}
+|[**delete_chats_room_message**](#delete_chats_room_message) | Delete a message in a room|
+|[**delete_chats_room_messages_pin**](#delete_chats_room_messages_pin) | Remove a pinned message from a room|
+|[**delete_chats_room_participant**](#delete_chats_room_participant) | Remove a user from a room.|
+|[**delete_chats_user_message**](#delete_chats_user_message) | Delete a message to a user|
+|[**delete_chats_user_messages_pin**](#delete_chats_user_messages_pin) | Remove a pinned message from a 1on1|
+|[**get_chats_message**](#get_chats_message) | Get a message|
+|[**get_chats_room**](#get_chats_room) | Get a room|
+|[**get_chats_room_message**](#get_chats_room_message) | Get messages by id(s) from a room|
+|[**get_chats_room_messages**](#get_chats_room_messages) | Get a room&#39;s message history|
+|[**get_chats_room_participant**](#get_chats_room_participant) | Get a room participant|
+|[**get_chats_room_participants**](#get_chats_room_participants) | Get room participants in a room|
+|[**get_chats_settings**](#get_chats_settings) | Get Chat Settings.|
+|[**get_chats_thread_messages**](#get_chats_thread_messages) | Get history by thread|
+|[**get_chats_user**](#get_chats_user) | Get information for a 1on1|
+|[**get_chats_user_message**](#get_chats_user_message) | Get messages by id(s) from a 1on1|
+|[**get_chats_user_messages**](#get_chats_user_messages) | Get 1on1 History between a user|
+|[**get_chats_user_settings**](#get_chats_user_settings) | Get a user&#39;s chat settings|
+|[**get_chats_users_me_settings**](#get_chats_users_me_settings) | Get a user&#39;s chat settings|
+|[**patch_chats_room**](#patch_chats_room) | Set properties for a room|
+|[**patch_chats_room_message**](#patch_chats_room_message) | Edit a message in a room|
+|[**patch_chats_settings**](#patch_chats_settings) | Patch Chat Settings.|
+|[**patch_chats_user_message**](#patch_chats_user_message) | Edit a message to a user|
+|[**patch_chats_user_settings**](#patch_chats_user_settings) | Update a user&#39;s chat settings|
+|[**patch_chats_users_me_settings**](#patch_chats_users_me_settings) | Update a user&#39;s chat settings|
+|[**post_chats_room_messages**](#post_chats_room_messages) | Send a message to a room|
+|[**post_chats_room_messages_pins**](#post_chats_room_messages_pins) | Add pinned messages for a room, up to a maximum of 5 pinned messages|
+|[**post_chats_room_participant**](#post_chats_room_participant) | Join a room|
+|[**post_chats_rooms**](#post_chats_rooms) | Create an adhoc room|
+|[**post_chats_user_messages**](#post_chats_user_messages) | Send a message to a user|
+|[**post_chats_user_messages_pins**](#post_chats_user_messages_pins) | Add pinned messages for a 1on1, up to a maximum of 5 pinned messages|
+|[**put_chats_message_reactions**](#put_chats_message_reactions) | Update reactions to a message|
+|[**put_chats_settings**](#put_chats_settings) | Update Chat Settings.|
 
-<a name="delete_chats_room_message"></a>
 
-##  delete_chats_room_message(room_jid, message_id)
 
+## delete_chats_room_message
+
+>  delete_chats_room_message(room_jid, message_id)
 
 
 Delete a message in a room
@@ -87,16 +85,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **room_jid** | **str**| roomId |  |
 | **message_id** | **str**| messageId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (empty response body)
 
-<a name="delete_chats_room_messages_pin"></a>
 
-##  delete_chats_room_messages_pin(room_jid, pinned_message_id)
+## delete_chats_room_messages_pin
 
+>  delete_chats_room_messages_pin(room_jid, pinned_message_id)
 
 
 Remove a pinned message from a room
@@ -138,16 +135,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **room_jid** | **str**| roomJid |  |
 | **pinned_message_id** | **str**| pinnedMessageId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (empty response body)
 
-<a name="delete_chats_room_participant"></a>
 
-##  delete_chats_room_participant(room_jid, user_id)
+## delete_chats_room_participant
 
+>  delete_chats_room_participant(room_jid, user_id)
 
 
 Remove a user from a room.
@@ -189,16 +185,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **room_jid** | **str**| roomJid |  |
 | **user_id** | **str**| userId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (empty response body)
 
-<a name="delete_chats_user_message"></a>
 
-##  delete_chats_user_message(user_id, message_id)
+## delete_chats_user_message
 
+>  delete_chats_user_message(user_id, message_id)
 
 
 Delete a message to a user
@@ -240,16 +235,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **user_id** | **str**| userId |  |
 | **message_id** | **str**| messageId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (empty response body)
 
-<a name="delete_chats_user_messages_pin"></a>
 
-##  delete_chats_user_messages_pin(user_id, pinned_message_id)
+## delete_chats_user_messages_pin
 
+>  delete_chats_user_messages_pin(user_id, pinned_message_id)
 
 
 Remove a pinned message from a 1on1
@@ -293,16 +287,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **user_id** | **str**| userId |  |
 | **pinned_message_id** | **str**| pinnedMessageId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (empty response body)
 
-<a name="get_chats_message"></a>
 
-## [**ChatMessageResponse**](ChatMessageResponse.html) get_chats_message(message_id)
+## get_chats_message
 
+> [**ChatMessageResponse**](ChatMessageResponse) get_chats_message(message_id)
 
 
 Get a message
@@ -344,16 +337,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **message_id** | **str**| messageId |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**ChatMessageResponse**](ChatMessageResponse.html)
+[**ChatMessageResponse**](ChatMessageResponse)
 
-<a name="get_chats_room"></a>
 
-## [**Room**](Room.html) get_chats_room(room_jid)
+## get_chats_room
 
+> [**Room**](Room) get_chats_room(room_jid)
 
 
 Get a room
@@ -394,16 +386,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **room_jid** | **str**| roomJid |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**Room**](Room.html)
+[**Room**](Room)
 
-<a name="get_chats_room_message"></a>
 
-## [**ChatMessageEntityListing**](ChatMessageEntityListing.html) get_chats_room_message(room_jid, message_ids)
+## get_chats_room_message
 
+> [**ChatMessageEntityListing**](ChatMessageEntityListing) get_chats_room_message(room_jid, message_ids)
 
 
 Get messages by id(s) from a room
@@ -446,16 +437,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **room_jid** | **str**| roomJid |  |
 | **message_ids** | **str**| messageIds, comma separated |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**ChatMessageEntityListing**](ChatMessageEntityListing.html)
+[**ChatMessageEntityListing**](ChatMessageEntityListing)
 
-<a name="get_chats_room_messages"></a>
 
-## [**ChatMessageEntityListing**](ChatMessageEntityListing.html) get_chats_room_messages(room_jid, limit=limit, before=before, after=after)
+## get_chats_room_messages
 
+> [**ChatMessageEntityListing**](ChatMessageEntityListing) get_chats_room_messages(room_jid, limit=limit, before=before, after=after)
 
 
 Get a room's message history
@@ -502,16 +492,15 @@ except ApiException as e:
 | **limit** | **str**| The maximum number of messages to retrieve | [optional]  |
 | **before** | **str**| The cutoff date for messages to retrieve | [optional]  |
 | **after** | **str**| The beginning date for messages to retrieve | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**ChatMessageEntityListing**](ChatMessageEntityListing.html)
+[**ChatMessageEntityListing**](ChatMessageEntityListing)
 
-<a name="get_chats_room_participant"></a>
 
-## [**RoomParticipant**](RoomParticipant.html) get_chats_room_participant(room_jid, participant_jid)
+## get_chats_room_participant
 
+> [**RoomParticipant**](RoomParticipant) get_chats_room_participant(room_jid, participant_jid)
 
 
 Get a room participant
@@ -552,16 +541,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **room_jid** | **str**| roomJid |  |
 | **participant_jid** | **str**| participantJid |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**RoomParticipant**](RoomParticipant.html)
+[**RoomParticipant**](RoomParticipant)
 
-<a name="get_chats_room_participants"></a>
 
-## [**RoomParticipantsResponse**](RoomParticipantsResponse.html) get_chats_room_participants(room_jid)
+## get_chats_room_participants
 
+> [**RoomParticipantsResponse**](RoomParticipantsResponse) get_chats_room_participants(room_jid)
 
 
 Get room participants in a room
@@ -602,16 +590,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **room_jid** | **str**| roomJid |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**RoomParticipantsResponse**](RoomParticipantsResponse.html)
+[**RoomParticipantsResponse**](RoomParticipantsResponse)
 
-<a name="get_chats_settings"></a>
 
-## [**ChatSettings**](ChatSettings.html) get_chats_settings()
+## get_chats_settings
 
+> [**ChatSettings**](ChatSettings) get_chats_settings()
 
 
 Get Chat Settings.
@@ -649,15 +636,14 @@ except ApiException as e:
 
 This endpoint does not need any parameters.
 
-
 ### Return type
 
-[**ChatSettings**](ChatSettings.html)
+[**ChatSettings**](ChatSettings)
 
-<a name="get_chats_thread_messages"></a>
 
-## [**ChatMessageEntityListing**](ChatMessageEntityListing.html) get_chats_thread_messages(thread_id, limit=limit, before=before, after=after)
+## get_chats_thread_messages
 
+> [**ChatMessageEntityListing**](ChatMessageEntityListing) get_chats_thread_messages(thread_id, limit=limit, before=before, after=after)
 
 
 Get history by thread
@@ -704,16 +690,15 @@ except ApiException as e:
 | **limit** | **str**| The maximum number of messages to retrieve | [optional]  |
 | **before** | **str**| The cutoff date for messages to retrieve | [optional]  |
 | **after** | **str**| The beginning date for messages to retrieve | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**ChatMessageEntityListing**](ChatMessageEntityListing.html)
+[**ChatMessageEntityListing**](ChatMessageEntityListing)
 
-<a name="get_chats_user"></a>
 
-## [**OneOnOne**](OneOnOne.html) get_chats_user(user_id)
+## get_chats_user
 
+> [**OneOnOne**](OneOnOne) get_chats_user(user_id)
 
 
 Get information for a 1on1
@@ -756,16 +741,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **user_id** | **str**| userId |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**OneOnOne**](OneOnOne.html)
+[**OneOnOne**](OneOnOne)
 
-<a name="get_chats_user_message"></a>
 
-## [**ChatMessageEntityListing**](ChatMessageEntityListing.html) get_chats_user_message(user_id, message_ids)
+## get_chats_user_message
 
+> [**ChatMessageEntityListing**](ChatMessageEntityListing) get_chats_user_message(user_id, message_ids)
 
 
 Get messages by id(s) from a 1on1
@@ -808,16 +792,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **user_id** | **str**| userId |  |
 | **message_ids** | **str**| messageIds, comma separated |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**ChatMessageEntityListing**](ChatMessageEntityListing.html)
+[**ChatMessageEntityListing**](ChatMessageEntityListing)
 
-<a name="get_chats_user_messages"></a>
 
-## [**ChatMessageResponse**](ChatMessageResponse.html) get_chats_user_messages(user_id, limit=limit, before=before, after=after)
+## get_chats_user_messages
 
+> [**ChatMessageResponse**](ChatMessageResponse) get_chats_user_messages(user_id, limit=limit, before=before, after=after)
 
 
 Get 1on1 History between a user
@@ -864,16 +847,15 @@ except ApiException as e:
 | **limit** | **str**| The maximum number of messages to retrieve | [optional]  |
 | **before** | **str**| The cutoff date for messages to retrieve | [optional]  |
 | **after** | **str**| The beginning date for messages to retrieve | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**ChatMessageResponse**](ChatMessageResponse.html)
+[**ChatMessageResponse**](ChatMessageResponse)
 
-<a name="get_chats_user_settings"></a>
 
-## [**ChatUserSettings**](ChatUserSettings.html) get_chats_user_settings(user_id)
+## get_chats_user_settings
 
+> [**ChatUserSettings**](ChatUserSettings) get_chats_user_settings(user_id)
 
 
 Get a user's chat settings
@@ -916,16 +898,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **user_id** | **str**| User ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**ChatUserSettings**](ChatUserSettings.html)
+[**ChatUserSettings**](ChatUserSettings)
 
-<a name="get_chats_users_me_settings"></a>
 
-## [**ChatUserSettings**](ChatUserSettings.html) get_chats_users_me_settings()
+## get_chats_users_me_settings
 
+> [**ChatUserSettings**](ChatUserSettings) get_chats_users_me_settings()
 
 
 Get a user's chat settings
@@ -963,15 +944,14 @@ except ApiException as e:
 
 This endpoint does not need any parameters.
 
-
 ### Return type
 
-[**ChatUserSettings**](ChatUserSettings.html)
+[**ChatUserSettings**](ChatUserSettings)
 
-<a name="patch_chats_room"></a>
 
-##  patch_chats_room(room_jid, body)
+## patch_chats_room
 
+>  patch_chats_room(room_jid, body)
 
 
 Set properties for a room
@@ -1012,17 +992,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **room_jid** | **str**| roomJid |  |
-| **body** | [**RoomUpdateRequest**](RoomUpdateRequest.html)| Room properties |  |
-{: class="table table-striped"}
+| **body** | [**RoomUpdateRequest**](RoomUpdateRequest)| Room properties |  |
 
 ### Return type
 
 void (empty response body)
 
-<a name="patch_chats_room_message"></a>
 
-## [**ChatSendMessageResponse**](ChatSendMessageResponse.html) patch_chats_room_message(room_jid, message_id, body)
+## patch_chats_room_message
 
+> [**ChatSendMessageResponse**](ChatSendMessageResponse) patch_chats_room_message(room_jid, message_id, body)
 
 
 Edit a message in a room
@@ -1066,17 +1045,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **room_jid** | **str**| roomId |  |
 | **message_id** | **str**| messageId |  |
-| **body** | [**SendMessageBody**](SendMessageBody.html)| messageBody |  |
-{: class="table table-striped"}
+| **body** | [**SendMessageBody**](SendMessageBody)| messageBody |  |
 
 ### Return type
 
-[**ChatSendMessageResponse**](ChatSendMessageResponse.html)
+[**ChatSendMessageResponse**](ChatSendMessageResponse)
 
-<a name="patch_chats_settings"></a>
 
-## [**ChatSettings**](ChatSettings.html) patch_chats_settings(body)
+## patch_chats_settings
 
+> [**ChatSettings**](ChatSettings) patch_chats_settings(body)
 
 
 Patch Chat Settings.
@@ -1115,17 +1093,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**ChatSettings**](ChatSettings.html)| Chat |  |
-{: class="table table-striped"}
+| **body** | [**ChatSettings**](ChatSettings)| Chat |  |
 
 ### Return type
 
-[**ChatSettings**](ChatSettings.html)
+[**ChatSettings**](ChatSettings)
 
-<a name="patch_chats_user_message"></a>
 
-## [**ChatSendMessageResponse**](ChatSendMessageResponse.html) patch_chats_user_message(user_id, message_id, body)
+## patch_chats_user_message
 
+> [**ChatSendMessageResponse**](ChatSendMessageResponse) patch_chats_user_message(user_id, message_id, body)
 
 
 Edit a message to a user
@@ -1169,17 +1146,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **user_id** | **str**| userId |  |
 | **message_id** | **str**| messageId |  |
-| **body** | [**SendMessageBody**](SendMessageBody.html)| message body |  |
-{: class="table table-striped"}
+| **body** | [**SendMessageBody**](SendMessageBody)| message body |  |
 
 ### Return type
 
-[**ChatSendMessageResponse**](ChatSendMessageResponse.html)
+[**ChatSendMessageResponse**](ChatSendMessageResponse)
 
-<a name="patch_chats_user_settings"></a>
 
-## [**ChatUserSettings**](ChatUserSettings.html) patch_chats_user_settings(user_id, body)
+## patch_chats_user_settings
 
+> [**ChatUserSettings**](ChatUserSettings) patch_chats_user_settings(user_id, body)
 
 
 Update a user's chat settings
@@ -1223,17 +1199,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **user_id** | **str**| User ID |  |
-| **body** | [**ChatUserSettings**](ChatUserSettings.html)|  |  |
-{: class="table table-striped"}
+| **body** | [**ChatUserSettings**](ChatUserSettings)|  |  |
 
 ### Return type
 
-[**ChatUserSettings**](ChatUserSettings.html)
+[**ChatUserSettings**](ChatUserSettings)
 
-<a name="patch_chats_users_me_settings"></a>
 
-## [**ChatUserSettings**](ChatUserSettings.html) patch_chats_users_me_settings(body)
+## patch_chats_users_me_settings
 
+> [**ChatUserSettings**](ChatUserSettings) patch_chats_users_me_settings(body)
 
 
 Update a user's chat settings
@@ -1273,17 +1248,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**ChatUserSettings**](ChatUserSettings.html)|  |  |
-{: class="table table-striped"}
+| **body** | [**ChatUserSettings**](ChatUserSettings)|  |  |
 
 ### Return type
 
-[**ChatUserSettings**](ChatUserSettings.html)
+[**ChatUserSettings**](ChatUserSettings)
 
-<a name="post_chats_room_messages"></a>
 
-## [**ChatSendMessageResponse**](ChatSendMessageResponse.html) post_chats_room_messages(room_jid, body)
+## post_chats_room_messages
 
+> [**ChatSendMessageResponse**](ChatSendMessageResponse) post_chats_room_messages(room_jid, body)
 
 
 Send a message to a room
@@ -1325,17 +1299,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **room_jid** | **str**| roomId |  |
-| **body** | [**SendMessageBody**](SendMessageBody.html)| messageBody |  |
-{: class="table table-striped"}
+| **body** | [**SendMessageBody**](SendMessageBody)| messageBody |  |
 
 ### Return type
 
-[**ChatSendMessageResponse**](ChatSendMessageResponse.html)
+[**ChatSendMessageResponse**](ChatSendMessageResponse)
 
-<a name="post_chats_room_messages_pins"></a>
 
-##  post_chats_room_messages_pins(room_jid, body)
+## post_chats_room_messages_pins
 
+>  post_chats_room_messages_pins(room_jid, body)
 
 
 Add pinned messages for a room, up to a maximum of 5 pinned messages
@@ -1376,17 +1349,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **room_jid** | **str**| roomJid |  |
-| **body** | [**PinnedMessageRequest**](PinnedMessageRequest.html)| Pinned Message Ids |  |
-{: class="table table-striped"}
+| **body** | [**PinnedMessageRequest**](PinnedMessageRequest)| Pinned Message Ids |  |
 
 ### Return type
 
 void (empty response body)
 
-<a name="post_chats_room_participant"></a>
 
-##  post_chats_room_participant(room_jid, user_id)
+## post_chats_room_participant
 
+>  post_chats_room_participant(room_jid, user_id)
 
 
 Join a room
@@ -1428,16 +1400,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **room_jid** | **str**| roomJid |  |
 | **user_id** | **str**| userId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (empty response body)
 
-<a name="post_chats_rooms"></a>
 
-## [**CreateRoomResponse**](CreateRoomResponse.html) post_chats_rooms(body)
+## post_chats_rooms
 
+> [**CreateRoomResponse**](CreateRoomResponse) post_chats_rooms(body)
 
 
 Create an adhoc room
@@ -1477,17 +1448,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**CreateRoomRequest**](CreateRoomRequest.html)| Room properties |  |
-{: class="table table-striped"}
+| **body** | [**CreateRoomRequest**](CreateRoomRequest)| Room properties |  |
 
 ### Return type
 
-[**CreateRoomResponse**](CreateRoomResponse.html)
+[**CreateRoomResponse**](CreateRoomResponse)
 
-<a name="post_chats_user_messages"></a>
 
-## [**ChatSendMessageResponse**](ChatSendMessageResponse.html) post_chats_user_messages(user_id, body)
+## post_chats_user_messages
 
+> [**ChatSendMessageResponse**](ChatSendMessageResponse) post_chats_user_messages(user_id, body)
 
 
 Send a message to a user
@@ -1529,17 +1499,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **user_id** | **str**| userId |  |
-| **body** | [**SendMessageBody**](SendMessageBody.html)| message body |  |
-{: class="table table-striped"}
+| **body** | [**SendMessageBody**](SendMessageBody)| message body |  |
 
 ### Return type
 
-[**ChatSendMessageResponse**](ChatSendMessageResponse.html)
+[**ChatSendMessageResponse**](ChatSendMessageResponse)
 
-<a name="post_chats_user_messages_pins"></a>
 
-##  post_chats_user_messages_pins(user_id, body)
+## post_chats_user_messages_pins
 
+>  post_chats_user_messages_pins(user_id, body)
 
 
 Add pinned messages for a 1on1, up to a maximum of 5 pinned messages
@@ -1582,17 +1551,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **user_id** | **str**| userId |  |
-| **body** | [**PinnedMessageRequest**](PinnedMessageRequest.html)| Pinned Message Ids |  |
-{: class="table table-striped"}
+| **body** | [**PinnedMessageRequest**](PinnedMessageRequest)| Pinned Message Ids |  |
 
 ### Return type
 
 void (empty response body)
 
-<a name="put_chats_message_reactions"></a>
 
-##  put_chats_message_reactions(message_id, body)
+## put_chats_message_reactions
 
+>  put_chats_message_reactions(message_id, body)
 
 
 Update reactions to a message
@@ -1633,17 +1601,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **message_id** | **str**| messageId |  |
-| **body** | [**ChatReactionUpdate**](ChatReactionUpdate.html)| reactionUpdate |  |
-{: class="table table-striped"}
+| **body** | [**ChatReactionUpdate**](ChatReactionUpdate)| reactionUpdate |  |
 
 ### Return type
 
 void (empty response body)
 
-<a name="put_chats_settings"></a>
 
-## [**ChatSettings**](ChatSettings.html) put_chats_settings(body)
+## put_chats_settings
 
+> [**ChatSettings**](ChatSettings) put_chats_settings(body)
 
 
 Update Chat Settings.
@@ -1682,10 +1649,11 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**ChatSettings**](ChatSettings.html)| Chat |  |
-{: class="table table-striped"}
+| **body** | [**ChatSettings**](ChatSettings)| Chat |  |
 
 ### Return type
 
-[**ChatSettings**](ChatSettings.html)
+[**ChatSettings**](ChatSettings)
 
+
+_PureCloudPlatformClientV2 211.1.0_

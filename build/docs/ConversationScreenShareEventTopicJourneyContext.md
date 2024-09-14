@@ -1,15 +1,15 @@
----
-title: ConversationScreenShareEventTopicJourneyContext
----
+# ConversationScreenShareEventTopicJourneyContext
+
 ## ConversationScreenShareEventTopicJourneyContext
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **customer** | [**ConversationScreenShareEventTopicJourneyCustomer**](ConversationScreenShareEventTopicJourneyCustomer.html) |  | [optional] |
-| **customer_session** | [**ConversationScreenShareEventTopicJourneyCustomerSession**](ConversationScreenShareEventTopicJourneyCustomerSession.html) |  | [optional] |
-| **triggering_action** | [**ConversationScreenShareEventTopicJourneyAction**](ConversationScreenShareEventTopicJourneyAction.html) |  | [optional] |
-{: class="table table-striped"}
+| **customer** | [ConversationScreenShareEventTopicJourneyCustomer](ConversationScreenShareEventTopicJourneyCustomer) |  | [optional] |
+| **customer_session** | [ConversationScreenShareEventTopicJourneyCustomerSession](ConversationScreenShareEventTopicJourneyCustomerSession) |  | [optional] |
+| **triggering_action** | [ConversationScreenShareEventTopicJourneyAction](ConversationScreenShareEventTopicJourneyAction) |  | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

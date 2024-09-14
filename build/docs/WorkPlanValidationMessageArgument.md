@@ -1,14 +1,14 @@
----
-title: WorkPlanValidationMessageArgument
----
+# WorkPlanValidationMessageArgument
+
 ## WorkPlanValidationMessageArgument
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **type** | **str** | The type of the argument associated with violation messages | [optional] |
-| **value** | **str** | The value of the argument | [optional] |
-{: class="table table-striped"}
+| **type** | str | The type of the argument associated with violation messages | [optional] |
+| **value** | str | The value of the argument | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

@@ -1,6 +1,4 @@
----
-title: ProcessAutomationApi
----
+# ProcessAutomationApi
 
 ## PureCloudPlatformClientV2.ProcessAutomationApi
 
@@ -8,20 +6,20 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 |Method | Description|
 |------------- | -------------|
-|[**delete_processautomation_trigger**](ProcessAutomationApi.html#delete_processautomation_trigger) | Delete a Trigger|
-|[**get_processautomation_trigger**](ProcessAutomationApi.html#get_processautomation_trigger) | Retrieve a single Trigger matching id|
-|[**get_processautomation_triggers**](ProcessAutomationApi.html#get_processautomation_triggers) | Retrieves all triggers, optionally filtered by query parameters.|
-|[**get_processautomation_triggers_topics**](ProcessAutomationApi.html#get_processautomation_triggers_topics) | Get topics available for organization|
-|[**post_processautomation_trigger_test**](ProcessAutomationApi.html#post_processautomation_trigger_test) | Test the matching of a Trigger based on provided event body|
-|[**post_processautomation_triggers**](ProcessAutomationApi.html#post_processautomation_triggers) | Create a Trigger|
-|[**post_processautomation_triggers_topic_test**](ProcessAutomationApi.html#post_processautomation_triggers_topic_test) | Test the matching of all organization Triggers on given topic using provided event body|
-|[**put_processautomation_trigger**](ProcessAutomationApi.html#put_processautomation_trigger) | Update a Trigger|
-{: class="table table-striped"}
+|[**delete_processautomation_trigger**](#delete_processautomation_trigger) | Delete a Trigger|
+|[**get_processautomation_trigger**](#get_processautomation_trigger) | Retrieve a single Trigger matching id|
+|[**get_processautomation_triggers**](#get_processautomation_triggers) | Retrieves all triggers, optionally filtered by query parameters.|
+|[**get_processautomation_triggers_topics**](#get_processautomation_triggers_topics) | Get topics available for organization|
+|[**post_processautomation_trigger_test**](#post_processautomation_trigger_test) | Test the matching of a Trigger based on provided event body|
+|[**post_processautomation_triggers**](#post_processautomation_triggers) | Create a Trigger|
+|[**post_processautomation_triggers_topic_test**](#post_processautomation_triggers_topic_test) | Test the matching of all organization Triggers on given topic using provided event body|
+|[**put_processautomation_trigger**](#put_processautomation_trigger) | Update a Trigger|
 
-<a name="delete_processautomation_trigger"></a>
 
-##  delete_processautomation_trigger(trigger_id)
 
+## delete_processautomation_trigger
+
+>  delete_processautomation_trigger(trigger_id)
 
 
 Delete a Trigger
@@ -60,16 +58,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **trigger_id** | **str**| triggerId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (empty response body)
 
-<a name="get_processautomation_trigger"></a>
 
-## [**Trigger**](Trigger.html) get_processautomation_trigger(trigger_id)
+## get_processautomation_trigger
 
+> [**Trigger**](Trigger) get_processautomation_trigger(trigger_id)
 
 
 Retrieve a single Trigger matching id
@@ -110,16 +107,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **trigger_id** | **str**| triggerId |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**Trigger**](Trigger.html)
+[**Trigger**](Trigger)
 
-<a name="get_processautomation_triggers"></a>
 
-## [**TriggerEntityListing**](TriggerEntityListing.html) get_processautomation_triggers(before=before, after=after, page_size=page_size, topic_name=topic_name, enabled=enabled, has_delay_by=has_delay_by)
+## get_processautomation_triggers
 
+> [**TriggerEntityListing**](TriggerEntityListing) get_processautomation_triggers(before=before, after=after, page_size=page_size, topic_name=topic_name, enabled=enabled, has_delay_by=has_delay_by)
 
 
 Retrieves all triggers, optionally filtered by query parameters.
@@ -170,16 +166,15 @@ except ApiException as e:
 | **topic_name** | **str**| Topic name(s). Separated by commas | [optional]  |
 | **enabled** | **bool**| Boolean indicating desired enabled state of triggers | [optional]  |
 | **has_delay_by** | **bool**| Boolean to filter based on delayBySeconds being set in triggers. Default returns all, true returns only those with delayBySeconds set, false returns those without delayBySeconds set. | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**TriggerEntityListing**](TriggerEntityListing.html)
+[**TriggerEntityListing**](TriggerEntityListing)
 
-<a name="get_processautomation_triggers_topics"></a>
 
-## [**TopicCursorEntityListing**](TopicCursorEntityListing.html) get_processautomation_triggers_topics(before=before, after=after, page_size=page_size)
+## get_processautomation_triggers_topics
 
+> [**TopicCursorEntityListing**](TopicCursorEntityListing) get_processautomation_triggers_topics(before=before, after=after, page_size=page_size)
 
 
 Get topics available for organization
@@ -224,16 +219,15 @@ except ApiException as e:
 | **before** | **str**| The cursor that points to the start of the set of entities that has been returned. | [optional]  |
 | **after** | **str**| The cursor that points to the end of the set of entities that has been returned. | [optional]  |
 | **page_size** | **str**| Number of entities to return. Maximum of 200. | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**TopicCursorEntityListing**](TopicCursorEntityListing.html)
+[**TopicCursorEntityListing**](TopicCursorEntityListing)
 
-<a name="post_processautomation_trigger_test"></a>
 
-## [**TestModeResults**](TestModeResults.html) post_processautomation_trigger_test(trigger_id, body=body)
+## post_processautomation_trigger_test
 
+> [**TestModeResults**](TestModeResults) post_processautomation_trigger_test(trigger_id, body=body)
 
 
 Test the matching of a Trigger based on provided event body
@@ -275,16 +269,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **trigger_id** | **str**| triggerId |  |
 | **body** | **str**| eventBody | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**TestModeResults**](TestModeResults.html)
+[**TestModeResults**](TestModeResults)
 
-<a name="post_processautomation_triggers"></a>
 
-## [**Trigger**](Trigger.html) post_processautomation_triggers(body)
+## post_processautomation_triggers
 
+> [**Trigger**](Trigger) post_processautomation_triggers(body)
 
 
 Create a Trigger
@@ -323,17 +316,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**CreateTriggerRequest**](CreateTriggerRequest.html)| Input used to create a Trigger. |  |
-{: class="table table-striped"}
+| **body** | [**CreateTriggerRequest**](CreateTriggerRequest)| Input used to create a Trigger. |  |
 
 ### Return type
 
-[**Trigger**](Trigger.html)
+[**Trigger**](Trigger)
 
-<a name="post_processautomation_triggers_topic_test"></a>
 
-## [**TestModeEventResults**](TestModeEventResults.html) post_processautomation_triggers_topic_test(topic_name, body=body)
+## post_processautomation_triggers_topic_test
 
+> [**TestModeEventResults**](TestModeEventResults) post_processautomation_triggers_topic_test(topic_name, body=body)
 
 
 Test the matching of all organization Triggers on given topic using provided event body
@@ -375,16 +367,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **topic_name** | **str**| topicName |  |
 | **body** | **str**| eventBody | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**TestModeEventResults**](TestModeEventResults.html)
+[**TestModeEventResults**](TestModeEventResults)
 
-<a name="put_processautomation_trigger"></a>
 
-## [**Trigger**](Trigger.html) put_processautomation_trigger(trigger_id, body)
+## put_processautomation_trigger
 
+> [**Trigger**](Trigger) put_processautomation_trigger(trigger_id, body)
 
 
 Update a Trigger
@@ -425,10 +416,11 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **trigger_id** | **str**| triggerId |  |
-| **body** | [**UpdateTriggerRequest**](UpdateTriggerRequest.html)| Input to update Trigger. (topicName cannot be updated, a new trigger must be created to use a new topicName) |  |
-{: class="table table-striped"}
+| **body** | [**UpdateTriggerRequest**](UpdateTriggerRequest)| Input to update Trigger. (topicName cannot be updated, a new trigger must be created to use a new topicName) |  |
 
 ### Return type
 
-[**Trigger**](Trigger.html)
+[**Trigger**](Trigger)
 
+
+_PureCloudPlatformClientV2 211.1.0_

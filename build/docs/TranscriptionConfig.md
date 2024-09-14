@@ -1,13 +1,13 @@
----
-title: TranscriptionConfig
----
+# TranscriptionConfig
+
 ## TranscriptionConfig
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **vendor_name** | **str** | The name of the vendor used for speech transcription. | |
-{: class="table table-striped"}
+| **vendor_name** | str | The name of the vendor used for speech transcription. | |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

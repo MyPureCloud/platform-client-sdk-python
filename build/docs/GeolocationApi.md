@@ -1,6 +1,4 @@
----
-title: GeolocationApi
----
+# GeolocationApi
 
 ## PureCloudPlatformClientV2.GeolocationApi
 
@@ -8,16 +6,16 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 |Method | Description|
 |------------- | -------------|
-|[**get_geolocations_settings**](GeolocationApi.html#get_geolocations_settings) | Get a organization&#39;s GeolocationSettings|
-|[**get_user_geolocation**](GeolocationApi.html#get_user_geolocation) | Get a user&#39;s Geolocation|
-|[**patch_geolocations_settings**](GeolocationApi.html#patch_geolocations_settings) | Patch a organization&#39;s GeolocationSettings|
-|[**patch_user_geolocation**](GeolocationApi.html#patch_user_geolocation) | Patch a user&#39;s Geolocation|
-{: class="table table-striped"}
+|[**get_geolocations_settings**](#get_geolocations_settings) | Get a organization&#39;s GeolocationSettings|
+|[**get_user_geolocation**](#get_user_geolocation) | Get a user&#39;s Geolocation|
+|[**patch_geolocations_settings**](#patch_geolocations_settings) | Patch a organization&#39;s GeolocationSettings|
+|[**patch_user_geolocation**](#patch_user_geolocation) | Patch a user&#39;s Geolocation|
 
-<a name="get_geolocations_settings"></a>
 
-## [**GeolocationSettings**](GeolocationSettings.html) get_geolocations_settings()
 
+## get_geolocations_settings
+
+> [**GeolocationSettings**](GeolocationSettings) get_geolocations_settings()
 
 
 Get a organization's GeolocationSettings
@@ -53,15 +51,14 @@ except ApiException as e:
 
 This endpoint does not need any parameters.
 
-
 ### Return type
 
-[**GeolocationSettings**](GeolocationSettings.html)
+[**GeolocationSettings**](GeolocationSettings)
 
-<a name="get_user_geolocation"></a>
 
-## [**Geolocation**](Geolocation.html) get_user_geolocation(user_id, client_id)
+## get_user_geolocation
 
+> [**Geolocation**](Geolocation) get_user_geolocation(user_id, client_id)
 
 
 Get a user's Geolocation
@@ -102,16 +99,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **user_id** | **str**| user Id |  |
 | **client_id** | **str**| client Id |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**Geolocation**](Geolocation.html)
+[**Geolocation**](Geolocation)
 
-<a name="patch_geolocations_settings"></a>
 
-## [**GeolocationSettings**](GeolocationSettings.html) patch_geolocations_settings(body)
+## patch_geolocations_settings
 
+> [**GeolocationSettings**](GeolocationSettings) patch_geolocations_settings(body)
 
 
 Patch a organization's GeolocationSettings
@@ -150,17 +146,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**GeolocationSettings**](GeolocationSettings.html)| Geolocation settings |  |
-{: class="table table-striped"}
+| **body** | [**GeolocationSettings**](GeolocationSettings)| Geolocation settings |  |
 
 ### Return type
 
-[**GeolocationSettings**](GeolocationSettings.html)
+[**GeolocationSettings**](GeolocationSettings)
 
-<a name="patch_user_geolocation"></a>
 
-## [**Geolocation**](Geolocation.html) patch_user_geolocation(user_id, client_id, body)
+## patch_user_geolocation
 
+> [**Geolocation**](Geolocation) patch_user_geolocation(user_id, client_id, body)
 
 
 Patch a user's Geolocation
@@ -204,10 +199,11 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **user_id** | **str**| user Id |  |
 | **client_id** | **str**| client Id |  |
-| **body** | [**Geolocation**](Geolocation.html)| Geolocation |  |
-{: class="table table-striped"}
+| **body** | [**Geolocation**](Geolocation)| Geolocation |  |
 
 ### Return type
 
-[**Geolocation**](Geolocation.html)
+[**Geolocation**](Geolocation)
 
+
+_PureCloudPlatformClientV2 211.1.0_

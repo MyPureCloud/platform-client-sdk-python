@@ -1,14 +1,14 @@
----
-title: WorkitemsQueueEventsNotificationCustomAttribute
----
+# WorkitemsQueueEventsNotificationCustomAttribute
+
 ## WorkitemsQueueEventsNotificationCustomAttribute
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **data_type** | **str** |  | [optional] |
-| **value** | **str** |  | [optional] |
-{: class="table table-striped"}
+| **data_type** | str |  | [optional] |
+| **value** | str |  | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

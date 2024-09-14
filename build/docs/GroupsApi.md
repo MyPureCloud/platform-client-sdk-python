@@ -1,6 +1,4 @@
----
-title: GroupsApi
----
+# GroupsApi
 
 ## PureCloudPlatformClientV2.GroupsApi
 
@@ -8,30 +6,30 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 |Method | Description|
 |------------- | -------------|
-|[**delete_group**](GroupsApi.html#delete_group) | Delete group|
-|[**delete_group_dynamicsettings**](GroupsApi.html#delete_group_dynamicsettings) | Remove dynamic group definition|
-|[**delete_group_members**](GroupsApi.html#delete_group_members) | Remove members|
-|[**get_fieldconfig**](GroupsApi.html#get_fieldconfig) | Fetch field config for an entity type|
-|[**get_group**](GroupsApi.html#get_group) | Get group|
-|[**get_group_dynamicsettings**](GroupsApi.html#get_group_dynamicsettings) | Get dynamic group definition|
-|[**get_group_individuals**](GroupsApi.html#get_group_individuals) | Get all individuals associated with the group|
-|[**get_group_members**](GroupsApi.html#get_group_members) | Get group members, includes individuals, owners, and dynamically included people|
-|[**get_group_profile**](GroupsApi.html#get_group_profile) | Get group profile|
-|[**get_groups**](GroupsApi.html#get_groups) | Get a group list|
-|[**get_groups_search**](GroupsApi.html#get_groups_search) | Search groups using the q64 value returned from a previous search|
-|[**get_profiles_groups**](GroupsApi.html#get_profiles_groups) | Get group profile listing|
-|[**post_group_members**](GroupsApi.html#post_group_members) | Add members|
-|[**post_groups**](GroupsApi.html#post_groups) | Create a group|
-|[**post_groups_dynamicsettings_preview**](GroupsApi.html#post_groups_dynamicsettings_preview) | Preview the number of users selected for a dynamic group definition query|
-|[**post_groups_search**](GroupsApi.html#post_groups_search) | Search groups|
-|[**put_group**](GroupsApi.html#put_group) | Update group|
-|[**put_group_dynamicsettings**](GroupsApi.html#put_group_dynamicsettings) | Create / Update dynamic group definition|
-{: class="table table-striped"}
+|[**delete_group**](#delete_group) | Delete group|
+|[**delete_group_dynamicsettings**](#delete_group_dynamicsettings) | Remove dynamic group definition|
+|[**delete_group_members**](#delete_group_members) | Remove members|
+|[**get_fieldconfig**](#get_fieldconfig) | Fetch field config for an entity type|
+|[**get_group**](#get_group) | Get group|
+|[**get_group_dynamicsettings**](#get_group_dynamicsettings) | Get dynamic group definition|
+|[**get_group_individuals**](#get_group_individuals) | Get all individuals associated with the group|
+|[**get_group_members**](#get_group_members) | Get group members, includes individuals, owners, and dynamically included people|
+|[**get_group_profile**](#get_group_profile) | Get group profile|
+|[**get_groups**](#get_groups) | Get a group list|
+|[**get_groups_search**](#get_groups_search) | Search groups using the q64 value returned from a previous search|
+|[**get_profiles_groups**](#get_profiles_groups) | Get group profile listing|
+|[**post_group_members**](#post_group_members) | Add members|
+|[**post_groups**](#post_groups) | Create a group|
+|[**post_groups_dynamicsettings_preview**](#post_groups_dynamicsettings_preview) | Preview the number of users selected for a dynamic group definition query|
+|[**post_groups_search**](#post_groups_search) | Search groups|
+|[**put_group**](#put_group) | Update group|
+|[**put_group_dynamicsettings**](#put_group_dynamicsettings) | Create / Update dynamic group definition|
 
-<a name="delete_group"></a>
 
-##  delete_group(group_id)
 
+## delete_group
+
+>  delete_group(group_id)
 
 
 Delete group
@@ -70,16 +68,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **group_id** | **str**| Group ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (empty response body)
 
-<a name="delete_group_dynamicsettings"></a>
 
-##  delete_group_dynamicsettings(group_id)
+## delete_group_dynamicsettings
 
+>  delete_group_dynamicsettings(group_id)
 
 
 Remove dynamic group definition
@@ -120,16 +117,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **group_id** | **str**| Group ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (empty response body)
 
-<a name="delete_group_members"></a>
 
-## object** delete_group_members(group_id, ids)
+## delete_group_members
 
+> object** delete_group_members(group_id, ids)
 
 
 Remove members
@@ -170,17 +166,19 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **group_id** | **str**| Group ID |  |
 | **ids** | **str**| Comma separated list of userIds to remove |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **object**
 
-<a name="get_fieldconfig"></a>
 
-## [**FieldConfig**](FieldConfig.html) get_fieldconfig(type)
+## get_fieldconfig
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+> [**FieldConfig**](FieldConfig) get_fieldconfig(type)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 Fetch field config for an entity type
 
@@ -218,16 +216,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **type** | **str**| Field type | <br />**Values**: person, group, org |
-{: class="table table-striped"}
 
 ### Return type
 
-[**FieldConfig**](FieldConfig.html)
+[**FieldConfig**](FieldConfig)
 
-<a name="get_group"></a>
 
-## [**Group**](Group.html) get_group(group_id)
+## get_group
 
+> [**Group**](Group) get_group(group_id)
 
 
 Get group
@@ -266,16 +263,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **group_id** | **str**| Group ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**Group**](Group.html)
+[**Group**](Group)
 
-<a name="get_group_dynamicsettings"></a>
 
-## [**DynamicGroupDefinition**](DynamicGroupDefinition.html) get_group_dynamicsettings(group_id)
+## get_group_dynamicsettings
 
+> [**DynamicGroupDefinition**](DynamicGroupDefinition) get_group_dynamicsettings(group_id)
 
 
 Get dynamic group definition
@@ -317,16 +313,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **group_id** | **str**| Group ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**DynamicGroupDefinition**](DynamicGroupDefinition.html)
+[**DynamicGroupDefinition**](DynamicGroupDefinition)
 
-<a name="get_group_individuals"></a>
 
-## [**UserEntityListing**](UserEntityListing.html) get_group_individuals(group_id)
+## get_group_individuals
 
+> [**UserEntityListing**](UserEntityListing) get_group_individuals(group_id)
 
 
 Get all individuals associated with the group
@@ -365,16 +360,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **group_id** | **str**| Group ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**UserEntityListing**](UserEntityListing.html)
+[**UserEntityListing**](UserEntityListing)
 
-<a name="get_group_members"></a>
 
-## [**UserEntityListing**](UserEntityListing.html) get_group_members(group_id, page_size=page_size, page_number=page_number, sort_order=sort_order, expand=expand)
+## get_group_members
 
+> [**UserEntityListing**](UserEntityListing) get_group_members(group_id, page_size=page_size, page_number=page_number, sort_order=sort_order, expand=expand)
 
 
 Get group members, includes individuals, owners, and dynamically included people
@@ -420,18 +414,20 @@ except ApiException as e:
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **sort_order** | **str**| Ascending or descending sort order | [optional] [default to &#39;ASC&#39;]<br />**Values**: ascending, descending |
-| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography, dateLastLogin |
-{: class="table table-striped"}
+| **expand** | [**list[str]**](str)| Which fields, if any, to expand | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography, dateLastLogin |
 
 ### Return type
 
-[**UserEntityListing**](UserEntityListing.html)
+[**UserEntityListing**](UserEntityListing)
 
-<a name="get_group_profile"></a>
 
-## [**GroupProfile**](GroupProfile.html) get_group_profile(group_id, fields=fields)
+## get_group_profile
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+> [**GroupProfile**](GroupProfile) get_group_profile(group_id, fields=fields)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 Get group profile
 
@@ -473,16 +469,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **group_id** | **str**| groupId |  |
 | **fields** | **str**| Comma separated fields to return.  Allowable values can be found by querying /api/v2/fieldconfig?type&#x3D;group and using the key for the elements returned by the fieldList | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**GroupProfile**](GroupProfile.html)
+[**GroupProfile**](GroupProfile)
 
-<a name="get_groups"></a>
 
-## [**GroupEntityListing**](GroupEntityListing.html) get_groups(page_size=page_size, page_number=page_number, id=id, jabber_id=jabber_id, sort_order=sort_order)
+## get_groups
 
+> [**GroupEntityListing**](GroupEntityListing) get_groups(page_size=page_size, page_number=page_number, id=id, jabber_id=jabber_id, sort_order=sort_order)
 
 
 Get a group list
@@ -526,19 +521,18 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
-| **id** | [**list[str]**](str.html)| id | [optional]  |
-| **jabber_id** | [**list[str]**](str.html)| A list of jabberIds to fetch by bulk (cannot be used with the \&quot;id\&quot; parameter) | [optional]  |
+| **id** | [**list[str]**](str)| id | [optional]  |
+| **jabber_id** | [**list[str]**](str)| A list of jabberIds to fetch by bulk (cannot be used with the \&quot;id\&quot; parameter) | [optional]  |
 | **sort_order** | **str**| Ascending or descending sort order | [optional] [default to &#39;ASC&#39;]<br />**Values**: ascending, descending |
-{: class="table table-striped"}
 
 ### Return type
 
-[**GroupEntityListing**](GroupEntityListing.html)
+[**GroupEntityListing**](GroupEntityListing)
 
-<a name="get_groups_search"></a>
 
-## [**GroupsSearchResponse**](GroupsSearchResponse.html) get_groups_search(q64, expand=expand)
+## get_groups_search
 
+> [**GroupsSearchResponse**](GroupsSearchResponse) get_groups_search(q64, expand=expand)
 
 
 Search groups using the q64 value returned from a previous search
@@ -578,18 +572,20 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **q64** | **str**| q64 |  |
-| **expand** | [**list[str]**](str.html)| expand | [optional]  |
-{: class="table table-striped"}
+| **expand** | [**list[str]**](str)| expand | [optional]  |
 
 ### Return type
 
-[**GroupsSearchResponse**](GroupsSearchResponse.html)
+[**GroupsSearchResponse**](GroupsSearchResponse)
 
-<a name="get_profiles_groups"></a>
 
-## [**GroupProfileEntityListing**](GroupProfileEntityListing.html) get_profiles_groups(page_size=page_size, page_number=page_number, id=id, jabber_id=jabber_id, sort_order=sort_order)
+## get_profiles_groups
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+> [**GroupProfileEntityListing**](GroupProfileEntityListing) get_profiles_groups(page_size=page_size, page_number=page_number, id=id, jabber_id=jabber_id, sort_order=sort_order)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 Get group profile listing
 
@@ -634,19 +630,18 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
-| **id** | [**list[str]**](str.html)| id | [optional]  |
-| **jabber_id** | [**list[str]**](str.html)| A list of jabberIds to fetch by bulk (cannot be used with the \&quot;id\&quot; parameter) | [optional]  |
+| **id** | [**list[str]**](str)| id | [optional]  |
+| **jabber_id** | [**list[str]**](str)| A list of jabberIds to fetch by bulk (cannot be used with the \&quot;id\&quot; parameter) | [optional]  |
 | **sort_order** | **str**| Ascending or descending sort order | [optional] [default to &#39;ASC&#39;]<br />**Values**: ascending, descending |
-{: class="table table-striped"}
 
 ### Return type
 
-[**GroupProfileEntityListing**](GroupProfileEntityListing.html)
+[**GroupProfileEntityListing**](GroupProfileEntityListing)
 
-<a name="post_group_members"></a>
 
-## object** post_group_members(group_id, body)
+## post_group_members
 
+> object** post_group_members(group_id, body)
 
 
 Add members
@@ -686,17 +681,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **group_id** | **str**| Group ID |  |
-| **body** | [**GroupMembersUpdate**](GroupMembersUpdate.html)| Add members |  |
-{: class="table table-striped"}
+| **body** | [**GroupMembersUpdate**](GroupMembersUpdate)| Add members |  |
 
 ### Return type
 
 **object**
 
-<a name="post_groups"></a>
 
-## [**Group**](Group.html) post_groups(body)
+## post_groups
 
+> [**Group**](Group) post_groups(body)
 
 
 Create a group
@@ -735,18 +729,20 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**GroupCreate**](GroupCreate.html)| Group |  |
-{: class="table table-striped"}
+| **body** | [**GroupCreate**](GroupCreate)| Group |  |
 
 ### Return type
 
-[**Group**](Group.html)
+[**Group**](Group)
 
-<a name="post_groups_dynamicsettings_preview"></a>
 
-## [**DynamicGroupQueryPreview**](DynamicGroupQueryPreview.html) post_groups_dynamicsettings_preview(body)
+## post_groups_dynamicsettings_preview
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+> [**DynamicGroupQueryPreview**](DynamicGroupQueryPreview) post_groups_dynamicsettings_preview(body)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 Preview the number of users selected for a dynamic group definition query
 
@@ -786,17 +782,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**DynamicGroupQuery**](DynamicGroupQuery.html)| Group query to preview |  |
-{: class="table table-striped"}
+| **body** | [**DynamicGroupQuery**](DynamicGroupQuery)| Group query to preview |  |
 
 ### Return type
 
-[**DynamicGroupQueryPreview**](DynamicGroupQueryPreview.html)
+[**DynamicGroupQueryPreview**](DynamicGroupQueryPreview)
 
-<a name="post_groups_search"></a>
 
-## [**GroupsSearchResponse**](GroupsSearchResponse.html) post_groups_search(body)
+## post_groups_search
 
+> [**GroupsSearchResponse**](GroupsSearchResponse) post_groups_search(body)
 
 
 Search groups
@@ -834,17 +829,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**GroupSearchRequest**](GroupSearchRequest.html)| Search request options |  |
-{: class="table table-striped"}
+| **body** | [**GroupSearchRequest**](GroupSearchRequest)| Search request options |  |
 
 ### Return type
 
-[**GroupsSearchResponse**](GroupsSearchResponse.html)
+[**GroupsSearchResponse**](GroupsSearchResponse)
 
-<a name="put_group"></a>
 
-## [**Group**](Group.html) put_group(group_id, body=body)
+## put_group
 
+> [**Group**](Group) put_group(group_id, body=body)
 
 
 Update group
@@ -885,17 +879,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **group_id** | **str**| Group ID |  |
-| **body** | [**GroupUpdate**](GroupUpdate.html)| Group | [optional]  |
-{: class="table table-striped"}
+| **body** | [**GroupUpdate**](GroupUpdate)| Group | [optional]  |
 
 ### Return type
 
-[**Group**](Group.html)
+[**Group**](Group)
 
-<a name="put_group_dynamicsettings"></a>
 
-##  put_group_dynamicsettings(group_id, body)
+## put_group_dynamicsettings
 
+>  put_group_dynamicsettings(group_id, body)
 
 
 Create / Update dynamic group definition
@@ -937,10 +930,11 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **group_id** | **str**| Group ID |  |
-| **body** | [**DynamicGroupQuery**](DynamicGroupQuery.html)| Create/Update dynamic groups |  |
-{: class="table table-striped"}
+| **body** | [**DynamicGroupQuery**](DynamicGroupQuery)| Create/Update dynamic groups |  |
 
 ### Return type
 
 void (empty response body)
 
+
+_PureCloudPlatformClientV2 211.1.0_

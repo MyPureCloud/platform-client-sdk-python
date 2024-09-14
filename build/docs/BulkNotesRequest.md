@@ -1,13 +1,13 @@
----
-title: BulkNotesRequest
----
+# BulkNotesRequest
+
 ## BulkNotesRequest
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **entities** | [**list[Note]**](Note.html) |  | [optional] |
-{: class="table table-striped"}
+| **entities** | [list[Note]](Note) |  | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

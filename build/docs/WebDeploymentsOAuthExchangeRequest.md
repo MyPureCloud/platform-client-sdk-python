@@ -1,15 +1,15 @@
----
-title: WebDeploymentsOAuthExchangeRequest
----
+# WebDeploymentsOAuthExchangeRequest
+
 ## WebDeploymentsOAuthExchangeRequest
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **deployment_id** | **str** | The WebDeployment ID | |
-| **journey_context** | [**WebDeploymentsJourneyContext**](WebDeploymentsJourneyContext.html) | A Customer journey context. | [optional] |
-| **oauth** | [**WebDeploymentsOAuthRequestParameters**](WebDeploymentsOAuthRequestParameters.html) |  | [optional] |
-{: class="table table-striped"}
+| **deployment_id** | str | The WebDeployment ID | |
+| **journey_context** | [WebDeploymentsJourneyContext](WebDeploymentsJourneyContext) | A Customer journey context. | [optional] |
+| **oauth** | [WebDeploymentsOAuthRequestParameters](WebDeploymentsOAuthRequestParameters) |  | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

@@ -1,6 +1,4 @@
----
-title: ConversationsApi
----
+# ConversationsApi
 
 ## PureCloudPlatformClientV2.ConversationsApi
 
@@ -8,249 +6,249 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 |Method | Description|
 |------------- | -------------|
-|[**delete_analytics_conversations_details_job**](ConversationsApi.html#delete_analytics_conversations_details_job) | Delete/cancel an async details job|
-|[**delete_conversation_participant_code**](ConversationsApi.html#delete_conversation_participant_code) | Delete a code used to add a communication to this participant|
-|[**delete_conversation_participant_flaggedreason**](ConversationsApi.html#delete_conversation_participant_flaggedreason) | Remove flagged reason from conversation participant.|
-|[**delete_conversations_call_participant_consult**](ConversationsApi.html#delete_conversations_call_participant_consult) | Cancel the transfer|
-|[**delete_conversations_email_messages_draft_attachment**](ConversationsApi.html#delete_conversations_email_messages_draft_attachment) | Delete attachment from draft|
-|[**delete_conversations_messages_cachedmedia_cached_media_item_id**](ConversationsApi.html#delete_conversations_messages_cachedmedia_cached_media_item_id) | Remove a cached media item asychronously|
-|[**delete_conversations_messaging_integrations_facebook_integration_id**](ConversationsApi.html#delete_conversations_messaging_integrations_facebook_integration_id) | Delete a Facebook messaging integration|
-|[**delete_conversations_messaging_integrations_instagram_integration_id**](ConversationsApi.html#delete_conversations_messaging_integrations_instagram_integration_id) | Delete Instagram messaging integration|
-|[**delete_conversations_messaging_integrations_open_integration_id**](ConversationsApi.html#delete_conversations_messaging_integrations_open_integration_id) | Delete an Open messaging integration|
-|[**delete_conversations_messaging_integrations_whatsapp_integration_id**](ConversationsApi.html#delete_conversations_messaging_integrations_whatsapp_integration_id) | Delete a WhatsApp messaging integration|
-|[**delete_conversations_messaging_setting**](ConversationsApi.html#delete_conversations_messaging_setting) | Delete a messaging setting|
-|[**delete_conversations_messaging_settings_default**](ConversationsApi.html#delete_conversations_messaging_settings_default) | Delete the organization&#39;s default setting, a global default will be applied to integrations without settings|
-|[**delete_conversations_messaging_supportedcontent_supported_content_id**](ConversationsApi.html#delete_conversations_messaging_supportedcontent_supported_content_id) | Delete a supported content profile|
-|[**get_analytics_conversation_details**](ConversationsApi.html#get_analytics_conversation_details) | Get a conversation by id|
-|[**get_analytics_conversations_aggregates_job**](ConversationsApi.html#get_analytics_conversations_aggregates_job) | Get status for async query for conversation aggregates|
-|[**get_analytics_conversations_aggregates_job_results**](ConversationsApi.html#get_analytics_conversations_aggregates_job_results) | Fetch a page of results for an async aggregates query|
-|[**get_analytics_conversations_details**](ConversationsApi.html#get_analytics_conversations_details) | Gets multiple conversations by id|
-|[**get_analytics_conversations_details_job**](ConversationsApi.html#get_analytics_conversations_details_job) | Get status for async query for conversation details|
-|[**get_analytics_conversations_details_job_results**](ConversationsApi.html#get_analytics_conversations_details_job_results) | Fetch a page of results for an async details job|
-|[**get_analytics_conversations_details_jobs_availability**](ConversationsApi.html#get_analytics_conversations_details_jobs_availability) | Lookup the datalake availability date and time|
-|[**get_conversation**](ConversationsApi.html#get_conversation) | Get conversation|
-|[**get_conversation_participant_secureivrsession**](ConversationsApi.html#get_conversation_participant_secureivrsession) | Fetch info on a secure session|
-|[**get_conversation_participant_secureivrsessions**](ConversationsApi.html#get_conversation_participant_secureivrsessions) | Get a list of secure sessions for this participant.|
-|[**get_conversation_participant_wrapup**](ConversationsApi.html#get_conversation_participant_wrapup) | Get the wrap-up for this conversation participant. |
-|[**get_conversation_participant_wrapupcodes**](ConversationsApi.html#get_conversation_participant_wrapupcodes) | Get list of wrapup codes for this conversation participant|
-|[**get_conversation_secureattributes**](ConversationsApi.html#get_conversation_secureattributes) | Get the secure attributes on a conversation.|
-|[**get_conversation_suggestion**](ConversationsApi.html#get_conversation_suggestion) | Get Suggestion.|
-|[**get_conversation_suggestions**](ConversationsApi.html#get_conversation_suggestions) | Get all suggestions for a conversation.|
-|[**get_conversations**](ConversationsApi.html#get_conversations) | Get active conversations for the logged in user|
-|[**get_conversations_call**](ConversationsApi.html#get_conversations_call) | Get call conversation|
-|[**get_conversations_call_participant_communication_wrapup**](ConversationsApi.html#get_conversations_call_participant_communication_wrapup) | Get the wrap-up for this conversation communication. |
-|[**get_conversations_call_participant_wrapup**](ConversationsApi.html#get_conversations_call_participant_wrapup) | Get the wrap-up for this conversation participant. |
-|[**get_conversations_call_participant_wrapupcodes**](ConversationsApi.html#get_conversations_call_participant_wrapupcodes) | Get list of wrapup codes for this conversation participant|
-|[**get_conversations_callback**](ConversationsApi.html#get_conversations_callback) | Get callback conversation|
-|[**get_conversations_callback_participant_communication_wrapup**](ConversationsApi.html#get_conversations_callback_participant_communication_wrapup) | Get the wrap-up for this conversation communication. |
-|[**get_conversations_callback_participant_wrapup**](ConversationsApi.html#get_conversations_callback_participant_wrapup) | Get the wrap-up for this conversation participant. |
-|[**get_conversations_callback_participant_wrapupcodes**](ConversationsApi.html#get_conversations_callback_participant_wrapupcodes) | Get list of wrapup codes for this conversation participant|
-|[**get_conversations_callbacks**](ConversationsApi.html#get_conversations_callbacks) | Get active callback conversations for the logged in user|
-|[**get_conversations_calls**](ConversationsApi.html#get_conversations_calls) | Get active call conversations for the logged in user|
-|[**get_conversations_calls_history**](ConversationsApi.html#get_conversations_calls_history) | Get call history|
-|[**get_conversations_calls_maximumconferenceparties**](ConversationsApi.html#get_conversations_calls_maximumconferenceparties) | Get the maximum number of participants that this user can have on a conference|
-|[**get_conversations_chat**](ConversationsApi.html#get_conversations_chat) | Get chat conversation|
-|[**get_conversations_chat_message**](ConversationsApi.html#get_conversations_chat_message) | Get a web chat conversation message|
-|[**get_conversations_chat_messages**](ConversationsApi.html#get_conversations_chat_messages) | Get the messages of a chat conversation.|
-|[**get_conversations_chat_participant_communication_wrapup**](ConversationsApi.html#get_conversations_chat_participant_communication_wrapup) | Get the wrap-up for this conversation communication. |
-|[**get_conversations_chat_participant_wrapup**](ConversationsApi.html#get_conversations_chat_participant_wrapup) | Get the wrap-up for this conversation participant. |
-|[**get_conversations_chat_participant_wrapupcodes**](ConversationsApi.html#get_conversations_chat_participant_wrapupcodes) | Get list of wrapup codes for this conversation participant|
-|[**get_conversations_chats**](ConversationsApi.html#get_conversations_chats) | Get active chat conversations for the logged in user|
-|[**get_conversations_cobrowsesession**](ConversationsApi.html#get_conversations_cobrowsesession) | Get cobrowse conversation|
-|[**get_conversations_cobrowsesession_participant_communication_wrapup**](ConversationsApi.html#get_conversations_cobrowsesession_participant_communication_wrapup) | Get the wrap-up for this conversation communication. |
-|[**get_conversations_cobrowsesession_participant_wrapup**](ConversationsApi.html#get_conversations_cobrowsesession_participant_wrapup) | Get the wrap-up for this conversation participant. |
-|[**get_conversations_cobrowsesession_participant_wrapupcodes**](ConversationsApi.html#get_conversations_cobrowsesession_participant_wrapupcodes) | Get list of wrapup codes for this conversation participant|
-|[**get_conversations_cobrowsesessions**](ConversationsApi.html#get_conversations_cobrowsesessions) | Get active cobrowse conversations for the logged in user|
-|[**get_conversations_email**](ConversationsApi.html#get_conversations_email) | Get email conversation|
-|[**get_conversations_email_message**](ConversationsApi.html#get_conversations_email_message) | Get conversation message|
-|[**get_conversations_email_messages**](ConversationsApi.html#get_conversations_email_messages) | Get conversation messages|
-|[**get_conversations_email_messages_draft**](ConversationsApi.html#get_conversations_email_messages_draft) | Get conversation draft reply|
-|[**get_conversations_email_participant_communication_wrapup**](ConversationsApi.html#get_conversations_email_participant_communication_wrapup) | Get the wrap-up for this conversation communication. |
-|[**get_conversations_email_participant_wrapup**](ConversationsApi.html#get_conversations_email_participant_wrapup) | Get the wrap-up for this conversation participant. |
-|[**get_conversations_email_participant_wrapupcodes**](ConversationsApi.html#get_conversations_email_participant_wrapupcodes) | Get list of wrapup codes for this conversation participant|
-|[**get_conversations_email_settings**](ConversationsApi.html#get_conversations_email_settings) | Get emails settings for a given conversation|
-|[**get_conversations_emails**](ConversationsApi.html#get_conversations_emails) | Get active email conversations for the logged in user|
-|[**get_conversations_keyconfiguration**](ConversationsApi.html#get_conversations_keyconfiguration) | Get the encryption key configurations|
-|[**get_conversations_keyconfigurations**](ConversationsApi.html#get_conversations_keyconfigurations) | Get a list of key configurations data|
-|[**get_conversations_message**](ConversationsApi.html#get_conversations_message) | Get message conversation|
-|[**get_conversations_message_communication_messages_media_media_id**](ConversationsApi.html#get_conversations_message_communication_messages_media_media_id) | Get media|
-|[**get_conversations_message_details**](ConversationsApi.html#get_conversations_message_details) | Get message|
-|[**get_conversations_message_message**](ConversationsApi.html#get_conversations_message_message) | Get conversation message|
-|[**get_conversations_message_participant_communication_wrapup**](ConversationsApi.html#get_conversations_message_participant_communication_wrapup) | Get the wrap-up for this conversation communication. |
-|[**get_conversations_message_participant_wrapup**](ConversationsApi.html#get_conversations_message_participant_wrapup) | Get the wrap-up for this conversation participant. |
-|[**get_conversations_message_participant_wrapupcodes**](ConversationsApi.html#get_conversations_message_participant_wrapupcodes) | Get list of wrapup codes for this conversation participant|
-|[**get_conversations_messages**](ConversationsApi.html#get_conversations_messages) | Get active message conversations for the logged in user|
-|[**get_conversations_messages_cachedmedia**](ConversationsApi.html#get_conversations_messages_cachedmedia) | Get a list of cached media items|
-|[**get_conversations_messages_cachedmedia_cached_media_item_id**](ConversationsApi.html#get_conversations_messages_cachedmedia_cached_media_item_id) | Get a cached media item|
-|[**get_conversations_messaging_facebook_app**](ConversationsApi.html#get_conversations_messaging_facebook_app) | Get Genesys Facebook App Id|
-|[**get_conversations_messaging_facebook_permissions**](ConversationsApi.html#get_conversations_messaging_facebook_permissions) | Get a list of Facebook Permissions|
-|[**get_conversations_messaging_integrations**](ConversationsApi.html#get_conversations_messaging_integrations) | Get a list of Integrations|
-|[**get_conversations_messaging_integrations_facebook**](ConversationsApi.html#get_conversations_messaging_integrations_facebook) | Get a list of Facebook Integrations|
-|[**get_conversations_messaging_integrations_facebook_integration_id**](ConversationsApi.html#get_conversations_messaging_integrations_facebook_integration_id) | Get a Facebook messaging integration|
-|[**get_conversations_messaging_integrations_instagram**](ConversationsApi.html#get_conversations_messaging_integrations_instagram) | Get a list of Instagram Integrations|
-|[**get_conversations_messaging_integrations_instagram_integration_id**](ConversationsApi.html#get_conversations_messaging_integrations_instagram_integration_id) | Get Instagram messaging integration|
-|[**get_conversations_messaging_integrations_open**](ConversationsApi.html#get_conversations_messaging_integrations_open) | Get a list of Open messaging integrations|
-|[**get_conversations_messaging_integrations_open_integration_id**](ConversationsApi.html#get_conversations_messaging_integrations_open_integration_id) | Get an Open messaging integration|
-|[**get_conversations_messaging_integrations_whatsapp**](ConversationsApi.html#get_conversations_messaging_integrations_whatsapp) | Get a list of WhatsApp Integrations|
-|[**get_conversations_messaging_integrations_whatsapp_integration_id**](ConversationsApi.html#get_conversations_messaging_integrations_whatsapp_integration_id) | Get a WhatsApp messaging integration|
-|[**get_conversations_messaging_setting**](ConversationsApi.html#get_conversations_messaging_setting) | Get a messaging setting|
-|[**get_conversations_messaging_settings**](ConversationsApi.html#get_conversations_messaging_settings) | Get a list of messaging settings|
-|[**get_conversations_messaging_settings_default**](ConversationsApi.html#get_conversations_messaging_settings_default) | Get the organization&#39;s default settings that will be used as the default when creating an integration.|
-|[**get_conversations_messaging_supportedcontent**](ConversationsApi.html#get_conversations_messaging_supportedcontent) | Get a list of Supported Content profiles|
-|[**get_conversations_messaging_supportedcontent_default**](ConversationsApi.html#get_conversations_messaging_supportedcontent_default) | Get the organization&#39;s default supported content profile that will be used as the default when creating an integration.|
-|[**get_conversations_messaging_supportedcontent_supported_content_id**](ConversationsApi.html#get_conversations_messaging_supportedcontent_supported_content_id) | Get a supported content profile|
-|[**get_conversations_messaging_threadingtimeline**](ConversationsApi.html#get_conversations_messaging_threadingtimeline) | Get conversation threading window timeline for each messaging type|
-|[**get_conversations_screenshare_participant_communication_wrapup**](ConversationsApi.html#get_conversations_screenshare_participant_communication_wrapup) | Get the wrap-up for this conversation communication. |
-|[**get_conversations_settings**](ConversationsApi.html#get_conversations_settings) | Get Settings|
-|[**get_conversations_social_participant_communication_wrapup**](ConversationsApi.html#get_conversations_social_participant_communication_wrapup) | Get the wrap-up for this conversation communication. |
-|[**get_conversations_video_details**](ConversationsApi.html#get_conversations_video_details) | Get video conference details (e.g. the current number of active participants).|
-|[**get_conversations_video_participant_communication_wrapup**](ConversationsApi.html#get_conversations_video_participant_communication_wrapup) | Get the wrap-up for this conversation communication. |
-|[**get_conversations_videos_meeting**](ConversationsApi.html#get_conversations_videos_meeting) | Gets a record for a given meetingId|
-|[**patch_conversation_participant**](ConversationsApi.html#patch_conversation_participant) | Update a participant.|
-|[**patch_conversation_participant_attributes**](ConversationsApi.html#patch_conversation_participant_attributes) | Update the attributes on a conversation participant.|
-|[**patch_conversation_secureattributes**](ConversationsApi.html#patch_conversation_secureattributes) | Update the secure attributes on a conversation.|
-|[**patch_conversation_utilizationlabel**](ConversationsApi.html#patch_conversation_utilizationlabel) | Update the utilization label on a conversation. When there is no value provided, the system default label is applied|
-|[**patch_conversations_aftercallwork_conversation_id_participant_communication**](ConversationsApi.html#patch_conversations_aftercallwork_conversation_id_participant_communication) | Update after-call work for this conversation communication.|
-|[**patch_conversations_call**](ConversationsApi.html#patch_conversations_call) | Update a conversation by setting its recording state, merging in other conversations to create a conference, or disconnecting all of the participants|
-|[**patch_conversations_call_participant**](ConversationsApi.html#patch_conversations_call_participant) | Update conversation participant|
-|[**patch_conversations_call_participant_attributes**](ConversationsApi.html#patch_conversations_call_participant_attributes) | Update the attributes on a conversation participant.|
-|[**patch_conversations_call_participant_communication**](ConversationsApi.html#patch_conversations_call_participant_communication) | Update conversation participant&#39;s communication by disconnecting it.|
-|[**patch_conversations_call_participant_consult**](ConversationsApi.html#patch_conversations_call_participant_consult) | Change who can speak|
-|[**patch_conversations_callback**](ConversationsApi.html#patch_conversations_callback) | Update a conversation by disconnecting all of the participants|
-|[**patch_conversations_callback_participant**](ConversationsApi.html#patch_conversations_callback_participant) | Update conversation participant|
-|[**patch_conversations_callback_participant_attributes**](ConversationsApi.html#patch_conversations_callback_participant_attributes) | Update the attributes on a conversation participant.|
-|[**patch_conversations_callback_participant_communication**](ConversationsApi.html#patch_conversations_callback_participant_communication) | Update conversation participant&#39;s communication by disconnecting it.|
-|[**patch_conversations_callbacks**](ConversationsApi.html#patch_conversations_callbacks) | Update a scheduled callback|
-|[**patch_conversations_chat**](ConversationsApi.html#patch_conversations_chat) | Update a conversation by disconnecting all of the participants|
-|[**patch_conversations_chat_participant**](ConversationsApi.html#patch_conversations_chat_participant) | Update conversation participant|
-|[**patch_conversations_chat_participant_attributes**](ConversationsApi.html#patch_conversations_chat_participant_attributes) | Update the attributes on a conversation participant.|
-|[**patch_conversations_chat_participant_communication**](ConversationsApi.html#patch_conversations_chat_participant_communication) | Update conversation participant&#39;s communication by disconnecting it.|
-|[**patch_conversations_cobrowsesession**](ConversationsApi.html#patch_conversations_cobrowsesession) | Update a conversation by disconnecting all of the participants|
-|[**patch_conversations_cobrowsesession_participant**](ConversationsApi.html#patch_conversations_cobrowsesession_participant) | Update conversation participant|
-|[**patch_conversations_cobrowsesession_participant_attributes**](ConversationsApi.html#patch_conversations_cobrowsesession_participant_attributes) | Update the attributes on a conversation participant.|
-|[**patch_conversations_cobrowsesession_participant_communication**](ConversationsApi.html#patch_conversations_cobrowsesession_participant_communication) | Update conversation participant&#39;s communication by disconnecting it.|
-|[**patch_conversations_email**](ConversationsApi.html#patch_conversations_email) | Update a conversation by disconnecting all of the participants|
-|[**patch_conversations_email_messages_draft**](ConversationsApi.html#patch_conversations_email_messages_draft) | Reset conversation draft to its initial state and/or auto-fill draft content|
-|[**patch_conversations_email_participant**](ConversationsApi.html#patch_conversations_email_participant) | Update conversation participant|
-|[**patch_conversations_email_participant_attributes**](ConversationsApi.html#patch_conversations_email_participant_attributes) | Update the attributes on a conversation participant.|
-|[**patch_conversations_email_participant_communication**](ConversationsApi.html#patch_conversations_email_participant_communication) | Update conversation participant&#39;s communication by disconnecting it.|
-|[**patch_conversations_email_participant_parkingstate**](ConversationsApi.html#patch_conversations_email_participant_parkingstate) | Update conversation by setting its parking state|
-|[**patch_conversations_message**](ConversationsApi.html#patch_conversations_message) | Update a conversation by disconnecting all of the participants|
-|[**patch_conversations_message_participant**](ConversationsApi.html#patch_conversations_message_participant) | Update conversation participant|
-|[**patch_conversations_message_participant_attributes**](ConversationsApi.html#patch_conversations_message_participant_attributes) | Update the attributes on a conversation participant.|
-|[**patch_conversations_message_participant_communication**](ConversationsApi.html#patch_conversations_message_participant_communication) | Update conversation participant&#39;s communication by disconnecting it.|
-|[**patch_conversations_messaging_integrations_facebook_integration_id**](ConversationsApi.html#patch_conversations_messaging_integrations_facebook_integration_id) | Update Facebook messaging integration|
-|[**patch_conversations_messaging_integrations_instagram_integration_id**](ConversationsApi.html#patch_conversations_messaging_integrations_instagram_integration_id) | Update Instagram messaging integration|
-|[**patch_conversations_messaging_integrations_open_integration_id**](ConversationsApi.html#patch_conversations_messaging_integrations_open_integration_id) | Update an Open messaging integration|
-|[**patch_conversations_messaging_integrations_whatsapp_embeddedsignup_integration_id**](ConversationsApi.html#patch_conversations_messaging_integrations_whatsapp_embeddedsignup_integration_id) | Activate a WhatsApp messaging integration created using the WhatsApp embedded signup flow|
-|[**patch_conversations_messaging_integrations_whatsapp_integration_id**](ConversationsApi.html#patch_conversations_messaging_integrations_whatsapp_integration_id) | Update a WhatsApp messaging integration|
-|[**patch_conversations_messaging_setting**](ConversationsApi.html#patch_conversations_messaging_setting) | Update a messaging setting|
-|[**patch_conversations_messaging_supportedcontent_supported_content_id**](ConversationsApi.html#patch_conversations_messaging_supportedcontent_supported_content_id) | Update a supported content profile|
-|[**patch_conversations_settings**](ConversationsApi.html#patch_conversations_settings) | Update Settings|
-|[**post_analytics_conversation_details_properties**](ConversationsApi.html#post_analytics_conversation_details_properties) | Index conversation properties|
-|[**post_analytics_conversations_activity_query**](ConversationsApi.html#post_analytics_conversations_activity_query) | Query for conversation activity observations|
-|[**post_analytics_conversations_aggregates_jobs**](ConversationsApi.html#post_analytics_conversations_aggregates_jobs) | Query for conversation aggregates asynchronously|
-|[**post_analytics_conversations_aggregates_query**](ConversationsApi.html#post_analytics_conversations_aggregates_query) | Query for conversation aggregates|
-|[**post_analytics_conversations_details_jobs**](ConversationsApi.html#post_analytics_conversations_details_jobs) | Query for conversation details asynchronously|
-|[**post_analytics_conversations_details_query**](ConversationsApi.html#post_analytics_conversations_details_query) | Query for conversation details|
-|[**post_conversation_assign**](ConversationsApi.html#post_conversation_assign) | Attempts to manually assign a specified conversation to a specified user.  Ignores bullseye ring, PAR score, skills, and languages.|
-|[**post_conversation_barge**](ConversationsApi.html#post_conversation_barge) | Barge a conversation creating a barged in conference of connected participants.|
-|[**post_conversation_cobrowse**](ConversationsApi.html#post_conversation_cobrowse) | Creates a cobrowse session. Requires \&quot;conversation:cobrowse:add\&quot; (for web messaging) or \&quot;conversation:cobrowsevoice:add\&quot; permission.|
-|[**post_conversation_disconnect**](ConversationsApi.html#post_conversation_disconnect) | Performs a full conversation teardown. Issues disconnect requests for any connected media. Applies a system wrap-up code to any participants that are pending wrap-up. This is not intended to be the normal way of ending interactions but is available in the event of problems with the application to allow a resynchronization of state across all components. It is recommended that users submit a support case if they are relying on this endpoint systematically as there is likely something that needs investigation.|
-|[**post_conversation_participant_callbacks**](ConversationsApi.html#post_conversation_participant_callbacks) | Create a new callback for the specified participant on the conversation.|
-|[**post_conversation_participant_digits**](ConversationsApi.html#post_conversation_participant_digits) | Sends DTMF to the participant|
-|[**post_conversation_participant_replace**](ConversationsApi.html#post_conversation_participant_replace) | Replace this participant with the specified user and/or address|
-|[**post_conversation_participant_replace_agent**](ConversationsApi.html#post_conversation_participant_replace_agent) | Replace this participant with the specified agent|
-|[**post_conversation_participant_replace_external**](ConversationsApi.html#post_conversation_participant_replace_external) | Replace this participant with the an external contact|
-|[**post_conversation_participant_replace_queue**](ConversationsApi.html#post_conversation_participant_replace_queue) | Replace this participant with the specified queue|
-|[**post_conversation_participant_secureivrsessions**](ConversationsApi.html#post_conversation_participant_secureivrsessions) | Create secure IVR session. Only a participant in the conversation can invoke a secure IVR.|
-|[**post_conversation_suggestion_engagement**](ConversationsApi.html#post_conversation_suggestion_engagement) | Save an engagement on the suggestion.|
-|[**post_conversation_suggestions_feedback**](ConversationsApi.html#post_conversation_suggestions_feedback) | Suggestion feedback.|
-|[**post_conversation_summary_feedback**](ConversationsApi.html#post_conversation_summary_feedback) | Submit feedback for the summary.|
-|[**post_conversations_call**](ConversationsApi.html#post_conversations_call) | Place a new call as part of a callback conversation.|
-|[**post_conversations_call_participant_barge**](ConversationsApi.html#post_conversations_call_participant_barge) | Barge a given participant&#39;s call creating a barged in conference of connected participants.|
-|[**post_conversations_call_participant_coach**](ConversationsApi.html#post_conversations_call_participant_coach) | Listen in on the conversation from the point of view of a given participant while speaking to just the given participant.|
-|[**post_conversations_call_participant_communication_wrapup**](ConversationsApi.html#post_conversations_call_participant_communication_wrapup) | Apply wrap-up for this conversation communication|
-|[**post_conversations_call_participant_consult**](ConversationsApi.html#post_conversations_call_participant_consult) | Initiate and update consult transfer|
-|[**post_conversations_call_participant_consult_agent**](ConversationsApi.html#post_conversations_call_participant_consult_agent) | Initiate a consult transfer to an agent|
-|[**post_conversations_call_participant_consult_external**](ConversationsApi.html#post_conversations_call_participant_consult_external) | Initiate a consult transfer to an external contact|
-|[**post_conversations_call_participant_consult_queue**](ConversationsApi.html#post_conversations_call_participant_consult_queue) | Initiate a consult transfer to a queue|
-|[**post_conversations_call_participant_monitor**](ConversationsApi.html#post_conversations_call_participant_monitor) | Listen in on the conversation from the point of view of a given participant.|
-|[**post_conversations_call_participant_replace**](ConversationsApi.html#post_conversations_call_participant_replace) | Replace this participant with the specified user and/or address|
-|[**post_conversations_call_participants**](ConversationsApi.html#post_conversations_call_participants) | Add participants to a conversation|
-|[**post_conversations_callback_participant_communication_wrapup**](ConversationsApi.html#post_conversations_callback_participant_communication_wrapup) | Apply wrap-up for this conversation communication|
-|[**post_conversations_callback_participant_replace**](ConversationsApi.html#post_conversations_callback_participant_replace) | Replace this participant with the specified user and/or address|
-|[**post_conversations_callbacks**](ConversationsApi.html#post_conversations_callbacks) | Create a Callback|
-|[**post_conversations_callbacks_bulk_disconnect**](ConversationsApi.html#post_conversations_callbacks_bulk_disconnect) | Disconnect multiple scheduled callbacks|
-|[**post_conversations_callbacks_bulk_update**](ConversationsApi.html#post_conversations_callbacks_bulk_update) | Update multiple scheduled callbacks|
-|[**post_conversations_calls**](ConversationsApi.html#post_conversations_calls) | Create a call conversation|
-|[**post_conversations_chat_communication_messages**](ConversationsApi.html#post_conversations_chat_communication_messages) | Send a message on behalf of a communication in a chat conversation.|
-|[**post_conversations_chat_communication_typing**](ConversationsApi.html#post_conversations_chat_communication_typing) | Send a typing-indicator on behalf of a communication in a chat conversation.|
-|[**post_conversations_chat_participant_communication_wrapup**](ConversationsApi.html#post_conversations_chat_participant_communication_wrapup) | Apply wrap-up for this conversation communication|
-|[**post_conversations_chat_participant_replace**](ConversationsApi.html#post_conversations_chat_participant_replace) | Replace this participant with the specified user and/or address|
-|[**post_conversations_chats**](ConversationsApi.html#post_conversations_chats) | Create a web chat conversation|
-|[**post_conversations_cobrowsesession_participant_communication_wrapup**](ConversationsApi.html#post_conversations_cobrowsesession_participant_communication_wrapup) | Apply wrap-up for this conversation communication|
-|[**post_conversations_cobrowsesession_participant_replace**](ConversationsApi.html#post_conversations_cobrowsesession_participant_replace) | Replace this participant with the specified user and/or address|
-|[**post_conversations_email_inboundmessages**](ConversationsApi.html#post_conversations_email_inboundmessages) | Send an email to an external conversation. An external conversation is one where the provider is not PureCloud based. This endpoint allows the sender of the external email to reply or send a new message to the existing conversation. The new message will be treated as part of the existing conversation and chained to it.|
-|[**post_conversations_email_messages**](ConversationsApi.html#post_conversations_email_messages) | Send an email reply|
-|[**post_conversations_email_messages_draft_attachments_copy**](ConversationsApi.html#post_conversations_email_messages_draft_attachments_copy) | Copy attachments from an email message to the current draft.|
-|[**post_conversations_email_participant_communication_wrapup**](ConversationsApi.html#post_conversations_email_participant_communication_wrapup) | Apply wrap-up for this conversation communication|
-|[**post_conversations_email_participant_replace**](ConversationsApi.html#post_conversations_email_participant_replace) | Replace this participant with the specified user and/or address|
-|[**post_conversations_email_reconnect**](ConversationsApi.html#post_conversations_email_reconnect) | Reconnect the user to the most recently disconnected customer on a fully disconnected email conversation|
-|[**post_conversations_emails**](ConversationsApi.html#post_conversations_emails) | Create an email conversation|
-|[**post_conversations_emails_agentless**](ConversationsApi.html#post_conversations_emails_agentless) | Create an email conversation, per API|
-|[**post_conversations_faxes**](ConversationsApi.html#post_conversations_faxes) | Create Fax Conversation|
-|[**post_conversations_keyconfigurations**](ConversationsApi.html#post_conversations_keyconfigurations) | Setup configurations for encryption key creation|
-|[**post_conversations_keyconfigurations_validate**](ConversationsApi.html#post_conversations_keyconfigurations_validate) | Validate encryption key configurations without saving it|
-|[**post_conversations_message_communication_messages**](ConversationsApi.html#post_conversations_message_communication_messages) | Send message|
-|[**post_conversations_message_communication_messages_media**](ConversationsApi.html#post_conversations_message_communication_messages_media) | Create media|
-|[**post_conversations_message_communication_typing**](ConversationsApi.html#post_conversations_message_communication_typing) | Send message typing event|
-|[**post_conversations_message_inbound_open_event**](ConversationsApi.html#post_conversations_message_inbound_open_event) | Send an inbound Open Event Message|
-|[**post_conversations_message_inbound_open_message**](ConversationsApi.html#post_conversations_message_inbound_open_message) | Send inbound Open Message|
-|[**post_conversations_message_inbound_open_receipt**](ConversationsApi.html#post_conversations_message_inbound_open_receipt) | Send an inbound Open Receipt Message|
-|[**post_conversations_message_messages_bulk**](ConversationsApi.html#post_conversations_message_messages_bulk) | Get messages in batch|
-|[**post_conversations_message_participant_communication_wrapup**](ConversationsApi.html#post_conversations_message_participant_communication_wrapup) | Apply wrap-up for this conversation communication|
-|[**post_conversations_message_participant_monitor**](ConversationsApi.html#post_conversations_message_participant_monitor) | Listen in on the conversation from the point of view of a given participant.|
-|[**post_conversations_message_participant_replace**](ConversationsApi.html#post_conversations_message_participant_replace) | Replace this participant with the specified user and/or address|
-|[**post_conversations_messages**](ConversationsApi.html#post_conversations_messages) | Create an outbound messaging conversation.|
-|[**post_conversations_messages_agentless**](ConversationsApi.html#post_conversations_messages_agentless) | Send an agentless outbound message|
-|[**post_conversations_messages_inbound_open**](ConversationsApi.html#post_conversations_messages_inbound_open) | Send an inbound Open Message|
-|[**post_conversations_messaging_integrations_facebook**](ConversationsApi.html#post_conversations_messaging_integrations_facebook) | Create a Facebook Integration|
-|[**post_conversations_messaging_integrations_instagram**](ConversationsApi.html#post_conversations_messaging_integrations_instagram) | Create Instagram Integration|
-|[**post_conversations_messaging_integrations_open**](ConversationsApi.html#post_conversations_messaging_integrations_open) | Create an Open messaging integration|
-|[**post_conversations_messaging_integrations_whatsapp**](ConversationsApi.html#post_conversations_messaging_integrations_whatsapp) | [This API is deprecated. Use POST /api/v2/conversations/messaging/integrations/whatsapp/embeddedsignup instead] Create a WhatsApp Integration|
-|[**post_conversations_messaging_integrations_whatsapp_embeddedsignup**](ConversationsApi.html#post_conversations_messaging_integrations_whatsapp_embeddedsignup) | Create a WhatsApp Integration using the WhatsApp embedded signup flow|
-|[**post_conversations_messaging_settings**](ConversationsApi.html#post_conversations_messaging_settings) | Create a messaging setting|
-|[**post_conversations_messaging_supportedcontent**](ConversationsApi.html#post_conversations_messaging_supportedcontent) | Create a Supported Content profile|
-|[**post_conversations_participants_attributes_search**](ConversationsApi.html#post_conversations_participants_attributes_search) | Search conversations|
-|[**post_conversations_screenshare_participant_communication_wrapup**](ConversationsApi.html#post_conversations_screenshare_participant_communication_wrapup) | Apply wrap-up for this conversation communication|
-|[**post_conversations_social_participant_communication_wrapup**](ConversationsApi.html#post_conversations_social_participant_communication_wrapup) | Apply wrap-up for this conversation communication|
-|[**post_conversations_video_participant_communication_wrapup**](ConversationsApi.html#post_conversations_video_participant_communication_wrapup) | Apply wrap-up for this conversation communication|
-|[**post_conversations_videos_meetings**](ConversationsApi.html#post_conversations_videos_meetings) | Generate a meetingId for a given conferenceId|
-|[**put_conversation_participant_flaggedreason**](ConversationsApi.html#put_conversation_participant_flaggedreason) | Set flagged reason on conversation participant to indicate bad conversation quality.|
-|[**put_conversation_secureattributes**](ConversationsApi.html#put_conversation_secureattributes) | Set the secure attributes on a conversation.|
-|[**put_conversation_tags**](ConversationsApi.html#put_conversation_tags) | Update the tags on a conversation.|
-|[**put_conversations_call_participant_communication_uuidata**](ConversationsApi.html#put_conversations_call_participant_communication_uuidata) | Set uuiData to be sent on future commands.|
-|[**put_conversations_call_recordingstate**](ConversationsApi.html#put_conversations_call_recordingstate) | Update a conversation by setting its recording state|
-|[**put_conversations_callback_recordingstate**](ConversationsApi.html#put_conversations_callback_recordingstate) | Update a conversation by setting its recording state|
-|[**put_conversations_chat_recordingstate**](ConversationsApi.html#put_conversations_chat_recordingstate) | Update a conversation by setting its recording state|
-|[**put_conversations_cobrowsesession_recordingstate**](ConversationsApi.html#put_conversations_cobrowsesession_recordingstate) | Update a conversation by setting its recording state|
-|[**put_conversations_email_messages_draft**](ConversationsApi.html#put_conversations_email_messages_draft) | Update conversation draft reply|
-|[**put_conversations_email_recordingstate**](ConversationsApi.html#put_conversations_email_recordingstate) | Update a conversation by setting its recording state|
-|[**put_conversations_keyconfiguration**](ConversationsApi.html#put_conversations_keyconfiguration) | Update the encryption key configurations|
-|[**put_conversations_message_recordingstate**](ConversationsApi.html#put_conversations_message_recordingstate) | Update a conversation by setting its recording state|
-|[**put_conversations_messaging_settings_default**](ConversationsApi.html#put_conversations_messaging_settings_default) | Set the organization&#39;s default setting that may be applied to to integrations without settings|
-|[**put_conversations_messaging_supportedcontent_default**](ConversationsApi.html#put_conversations_messaging_supportedcontent_default) | Set the organization&#39;s default supported content profile that may be assigned to an integration when it is created.|
-|[**put_conversations_messaging_threadingtimeline**](ConversationsApi.html#put_conversations_messaging_threadingtimeline) | Update conversation threading window timeline for each messaging type|
-|[**put_conversations_screenshare_recordingstate**](ConversationsApi.html#put_conversations_screenshare_recordingstate) | Update a conversation by setting its recording state|
-|[**put_conversations_social_recordingstate**](ConversationsApi.html#put_conversations_social_recordingstate) | Update a conversation by setting its recording state|
-|[**put_conversations_video_recordingstate**](ConversationsApi.html#put_conversations_video_recordingstate) | Update a conversation by setting its recording state|
-{: class="table table-striped"}
+|[**delete_analytics_conversations_details_job**](#delete_analytics_conversations_details_job) | Delete/cancel an async details job|
+|[**delete_conversation_participant_code**](#delete_conversation_participant_code) | Delete a code used to add a communication to this participant|
+|[**delete_conversation_participant_flaggedreason**](#delete_conversation_participant_flaggedreason) | Remove flagged reason from conversation participant.|
+|[**delete_conversations_call_participant_consult**](#delete_conversations_call_participant_consult) | Cancel the transfer|
+|[**delete_conversations_email_messages_draft_attachment**](#delete_conversations_email_messages_draft_attachment) | Delete attachment from draft|
+|[**delete_conversations_messages_cachedmedia_cached_media_item_id**](#delete_conversations_messages_cachedmedia_cached_media_item_id) | Remove a cached media item asychronously|
+|[**delete_conversations_messaging_integrations_facebook_integration_id**](#delete_conversations_messaging_integrations_facebook_integration_id) | Delete a Facebook messaging integration|
+|[**delete_conversations_messaging_integrations_instagram_integration_id**](#delete_conversations_messaging_integrations_instagram_integration_id) | Delete Instagram messaging integration|
+|[**delete_conversations_messaging_integrations_open_integration_id**](#delete_conversations_messaging_integrations_open_integration_id) | Delete an Open messaging integration|
+|[**delete_conversations_messaging_integrations_whatsapp_integration_id**](#delete_conversations_messaging_integrations_whatsapp_integration_id) | Delete a WhatsApp messaging integration|
+|[**delete_conversations_messaging_setting**](#delete_conversations_messaging_setting) | Delete a messaging setting|
+|[**delete_conversations_messaging_settings_default**](#delete_conversations_messaging_settings_default) | Delete the organization&#39;s default setting, a global default will be applied to integrations without settings|
+|[**delete_conversations_messaging_supportedcontent_supported_content_id**](#delete_conversations_messaging_supportedcontent_supported_content_id) | Delete a supported content profile|
+|[**get_analytics_conversation_details**](#get_analytics_conversation_details) | Get a conversation by id|
+|[**get_analytics_conversations_aggregates_job**](#get_analytics_conversations_aggregates_job) | Get status for async query for conversation aggregates|
+|[**get_analytics_conversations_aggregates_job_results**](#get_analytics_conversations_aggregates_job_results) | Fetch a page of results for an async aggregates query|
+|[**get_analytics_conversations_details**](#get_analytics_conversations_details) | Gets multiple conversations by id|
+|[**get_analytics_conversations_details_job**](#get_analytics_conversations_details_job) | Get status for async query for conversation details|
+|[**get_analytics_conversations_details_job_results**](#get_analytics_conversations_details_job_results) | Fetch a page of results for an async details job|
+|[**get_analytics_conversations_details_jobs_availability**](#get_analytics_conversations_details_jobs_availability) | Lookup the datalake availability date and time|
+|[**get_conversation**](#get_conversation) | Get conversation|
+|[**get_conversation_participant_secureivrsession**](#get_conversation_participant_secureivrsession) | Fetch info on a secure session|
+|[**get_conversation_participant_secureivrsessions**](#get_conversation_participant_secureivrsessions) | Get a list of secure sessions for this participant.|
+|[**get_conversation_participant_wrapup**](#get_conversation_participant_wrapup) | Get the wrap-up for this conversation participant. |
+|[**get_conversation_participant_wrapupcodes**](#get_conversation_participant_wrapupcodes) | Get list of wrapup codes for this conversation participant|
+|[**get_conversation_secureattributes**](#get_conversation_secureattributes) | Get the secure attributes on a conversation.|
+|[**get_conversation_suggestion**](#get_conversation_suggestion) | Get Suggestion.|
+|[**get_conversation_suggestions**](#get_conversation_suggestions) | Get all suggestions for a conversation.|
+|[**get_conversations**](#get_conversations) | Get active conversations for the logged in user|
+|[**get_conversations_call**](#get_conversations_call) | Get call conversation|
+|[**get_conversations_call_participant_communication_wrapup**](#get_conversations_call_participant_communication_wrapup) | Get the wrap-up for this conversation communication. |
+|[**get_conversations_call_participant_wrapup**](#get_conversations_call_participant_wrapup) | Get the wrap-up for this conversation participant. |
+|[**get_conversations_call_participant_wrapupcodes**](#get_conversations_call_participant_wrapupcodes) | Get list of wrapup codes for this conversation participant|
+|[**get_conversations_callback**](#get_conversations_callback) | Get callback conversation|
+|[**get_conversations_callback_participant_communication_wrapup**](#get_conversations_callback_participant_communication_wrapup) | Get the wrap-up for this conversation communication. |
+|[**get_conversations_callback_participant_wrapup**](#get_conversations_callback_participant_wrapup) | Get the wrap-up for this conversation participant. |
+|[**get_conversations_callback_participant_wrapupcodes**](#get_conversations_callback_participant_wrapupcodes) | Get list of wrapup codes for this conversation participant|
+|[**get_conversations_callbacks**](#get_conversations_callbacks) | Get active callback conversations for the logged in user|
+|[**get_conversations_calls**](#get_conversations_calls) | Get active call conversations for the logged in user|
+|[**get_conversations_calls_history**](#get_conversations_calls_history) | Get call history|
+|[**get_conversations_calls_maximumconferenceparties**](#get_conversations_calls_maximumconferenceparties) | Get the maximum number of participants that this user can have on a conference|
+|[**get_conversations_chat**](#get_conversations_chat) | Get chat conversation|
+|[**get_conversations_chat_message**](#get_conversations_chat_message) | Get a web chat conversation message|
+|[**get_conversations_chat_messages**](#get_conversations_chat_messages) | Get the messages of a chat conversation.|
+|[**get_conversations_chat_participant_communication_wrapup**](#get_conversations_chat_participant_communication_wrapup) | Get the wrap-up for this conversation communication. |
+|[**get_conversations_chat_participant_wrapup**](#get_conversations_chat_participant_wrapup) | Get the wrap-up for this conversation participant. |
+|[**get_conversations_chat_participant_wrapupcodes**](#get_conversations_chat_participant_wrapupcodes) | Get list of wrapup codes for this conversation participant|
+|[**get_conversations_chats**](#get_conversations_chats) | Get active chat conversations for the logged in user|
+|[**get_conversations_cobrowsesession**](#get_conversations_cobrowsesession) | Get cobrowse conversation|
+|[**get_conversations_cobrowsesession_participant_communication_wrapup**](#get_conversations_cobrowsesession_participant_communication_wrapup) | Get the wrap-up for this conversation communication. |
+|[**get_conversations_cobrowsesession_participant_wrapup**](#get_conversations_cobrowsesession_participant_wrapup) | Get the wrap-up for this conversation participant. |
+|[**get_conversations_cobrowsesession_participant_wrapupcodes**](#get_conversations_cobrowsesession_participant_wrapupcodes) | Get list of wrapup codes for this conversation participant|
+|[**get_conversations_cobrowsesessions**](#get_conversations_cobrowsesessions) | Get active cobrowse conversations for the logged in user|
+|[**get_conversations_email**](#get_conversations_email) | Get email conversation|
+|[**get_conversations_email_message**](#get_conversations_email_message) | Get conversation message|
+|[**get_conversations_email_messages**](#get_conversations_email_messages) | Get conversation messages|
+|[**get_conversations_email_messages_draft**](#get_conversations_email_messages_draft) | Get conversation draft reply|
+|[**get_conversations_email_participant_communication_wrapup**](#get_conversations_email_participant_communication_wrapup) | Get the wrap-up for this conversation communication. |
+|[**get_conversations_email_participant_wrapup**](#get_conversations_email_participant_wrapup) | Get the wrap-up for this conversation participant. |
+|[**get_conversations_email_participant_wrapupcodes**](#get_conversations_email_participant_wrapupcodes) | Get list of wrapup codes for this conversation participant|
+|[**get_conversations_email_settings**](#get_conversations_email_settings) | Get emails settings for a given conversation|
+|[**get_conversations_emails**](#get_conversations_emails) | Get active email conversations for the logged in user|
+|[**get_conversations_keyconfiguration**](#get_conversations_keyconfiguration) | Get the encryption key configurations|
+|[**get_conversations_keyconfigurations**](#get_conversations_keyconfigurations) | Get a list of key configurations data|
+|[**get_conversations_message**](#get_conversations_message) | Get message conversation|
+|[**get_conversations_message_communication_messages_media_media_id**](#get_conversations_message_communication_messages_media_media_id) | Get media|
+|[**get_conversations_message_details**](#get_conversations_message_details) | Get message|
+|[**get_conversations_message_message**](#get_conversations_message_message) | Get conversation message|
+|[**get_conversations_message_participant_communication_wrapup**](#get_conversations_message_participant_communication_wrapup) | Get the wrap-up for this conversation communication. |
+|[**get_conversations_message_participant_wrapup**](#get_conversations_message_participant_wrapup) | Get the wrap-up for this conversation participant. |
+|[**get_conversations_message_participant_wrapupcodes**](#get_conversations_message_participant_wrapupcodes) | Get list of wrapup codes for this conversation participant|
+|[**get_conversations_messages**](#get_conversations_messages) | Get active message conversations for the logged in user|
+|[**get_conversations_messages_cachedmedia**](#get_conversations_messages_cachedmedia) | Get a list of cached media items|
+|[**get_conversations_messages_cachedmedia_cached_media_item_id**](#get_conversations_messages_cachedmedia_cached_media_item_id) | Get a cached media item|
+|[**get_conversations_messaging_facebook_app**](#get_conversations_messaging_facebook_app) | Get Genesys Facebook App Id|
+|[**get_conversations_messaging_facebook_permissions**](#get_conversations_messaging_facebook_permissions) | Get a list of Facebook Permissions|
+|[**get_conversations_messaging_integrations**](#get_conversations_messaging_integrations) | Get a list of Integrations|
+|[**get_conversations_messaging_integrations_facebook**](#get_conversations_messaging_integrations_facebook) | Get a list of Facebook Integrations|
+|[**get_conversations_messaging_integrations_facebook_integration_id**](#get_conversations_messaging_integrations_facebook_integration_id) | Get a Facebook messaging integration|
+|[**get_conversations_messaging_integrations_instagram**](#get_conversations_messaging_integrations_instagram) | Get a list of Instagram Integrations|
+|[**get_conversations_messaging_integrations_instagram_integration_id**](#get_conversations_messaging_integrations_instagram_integration_id) | Get Instagram messaging integration|
+|[**get_conversations_messaging_integrations_open**](#get_conversations_messaging_integrations_open) | Get a list of Open messaging integrations|
+|[**get_conversations_messaging_integrations_open_integration_id**](#get_conversations_messaging_integrations_open_integration_id) | Get an Open messaging integration|
+|[**get_conversations_messaging_integrations_whatsapp**](#get_conversations_messaging_integrations_whatsapp) | Get a list of WhatsApp Integrations|
+|[**get_conversations_messaging_integrations_whatsapp_integration_id**](#get_conversations_messaging_integrations_whatsapp_integration_id) | Get a WhatsApp messaging integration|
+|[**get_conversations_messaging_setting**](#get_conversations_messaging_setting) | Get a messaging setting|
+|[**get_conversations_messaging_settings**](#get_conversations_messaging_settings) | Get a list of messaging settings|
+|[**get_conversations_messaging_settings_default**](#get_conversations_messaging_settings_default) | Get the organization&#39;s default settings that will be used as the default when creating an integration.|
+|[**get_conversations_messaging_supportedcontent**](#get_conversations_messaging_supportedcontent) | Get a list of Supported Content profiles|
+|[**get_conversations_messaging_supportedcontent_default**](#get_conversations_messaging_supportedcontent_default) | Get the organization&#39;s default supported content profile that will be used as the default when creating an integration.|
+|[**get_conversations_messaging_supportedcontent_supported_content_id**](#get_conversations_messaging_supportedcontent_supported_content_id) | Get a supported content profile|
+|[**get_conversations_messaging_threadingtimeline**](#get_conversations_messaging_threadingtimeline) | Get conversation threading window timeline for each messaging type|
+|[**get_conversations_screenshare_participant_communication_wrapup**](#get_conversations_screenshare_participant_communication_wrapup) | Get the wrap-up for this conversation communication. |
+|[**get_conversations_settings**](#get_conversations_settings) | Get Settings|
+|[**get_conversations_social_participant_communication_wrapup**](#get_conversations_social_participant_communication_wrapup) | Get the wrap-up for this conversation communication. |
+|[**get_conversations_video_details**](#get_conversations_video_details) | Get video conference details (e.g. the current number of active participants).|
+|[**get_conversations_video_participant_communication_wrapup**](#get_conversations_video_participant_communication_wrapup) | Get the wrap-up for this conversation communication. |
+|[**get_conversations_videos_meeting**](#get_conversations_videos_meeting) | Gets a record for a given meetingId|
+|[**patch_conversation_participant**](#patch_conversation_participant) | Update a participant.|
+|[**patch_conversation_participant_attributes**](#patch_conversation_participant_attributes) | Update the attributes on a conversation participant.|
+|[**patch_conversation_secureattributes**](#patch_conversation_secureattributes) | Update the secure attributes on a conversation.|
+|[**patch_conversation_utilizationlabel**](#patch_conversation_utilizationlabel) | Update the utilization label on a conversation. When there is no value provided, the system default label is applied|
+|[**patch_conversations_aftercallwork_conversation_id_participant_communication**](#patch_conversations_aftercallwork_conversation_id_participant_communication) | Update after-call work for this conversation communication.|
+|[**patch_conversations_call**](#patch_conversations_call) | Update a conversation by setting its recording state, merging in other conversations to create a conference, or disconnecting all of the participants|
+|[**patch_conversations_call_participant**](#patch_conversations_call_participant) | Update conversation participant|
+|[**patch_conversations_call_participant_attributes**](#patch_conversations_call_participant_attributes) | Update the attributes on a conversation participant.|
+|[**patch_conversations_call_participant_communication**](#patch_conversations_call_participant_communication) | Update conversation participant&#39;s communication by disconnecting it.|
+|[**patch_conversations_call_participant_consult**](#patch_conversations_call_participant_consult) | Change who can speak|
+|[**patch_conversations_callback**](#patch_conversations_callback) | Update a conversation by disconnecting all of the participants|
+|[**patch_conversations_callback_participant**](#patch_conversations_callback_participant) | Update conversation participant|
+|[**patch_conversations_callback_participant_attributes**](#patch_conversations_callback_participant_attributes) | Update the attributes on a conversation participant.|
+|[**patch_conversations_callback_participant_communication**](#patch_conversations_callback_participant_communication) | Update conversation participant&#39;s communication by disconnecting it.|
+|[**patch_conversations_callbacks**](#patch_conversations_callbacks) | Update a scheduled callback|
+|[**patch_conversations_chat**](#patch_conversations_chat) | Update a conversation by disconnecting all of the participants|
+|[**patch_conversations_chat_participant**](#patch_conversations_chat_participant) | Update conversation participant|
+|[**patch_conversations_chat_participant_attributes**](#patch_conversations_chat_participant_attributes) | Update the attributes on a conversation participant.|
+|[**patch_conversations_chat_participant_communication**](#patch_conversations_chat_participant_communication) | Update conversation participant&#39;s communication by disconnecting it.|
+|[**patch_conversations_cobrowsesession**](#patch_conversations_cobrowsesession) | Update a conversation by disconnecting all of the participants|
+|[**patch_conversations_cobrowsesession_participant**](#patch_conversations_cobrowsesession_participant) | Update conversation participant|
+|[**patch_conversations_cobrowsesession_participant_attributes**](#patch_conversations_cobrowsesession_participant_attributes) | Update the attributes on a conversation participant.|
+|[**patch_conversations_cobrowsesession_participant_communication**](#patch_conversations_cobrowsesession_participant_communication) | Update conversation participant&#39;s communication by disconnecting it.|
+|[**patch_conversations_email**](#patch_conversations_email) | Update a conversation by disconnecting all of the participants|
+|[**patch_conversations_email_messages_draft**](#patch_conversations_email_messages_draft) | Reset conversation draft to its initial state and/or auto-fill draft content|
+|[**patch_conversations_email_participant**](#patch_conversations_email_participant) | Update conversation participant|
+|[**patch_conversations_email_participant_attributes**](#patch_conversations_email_participant_attributes) | Update the attributes on a conversation participant.|
+|[**patch_conversations_email_participant_communication**](#patch_conversations_email_participant_communication) | Update conversation participant&#39;s communication by disconnecting it.|
+|[**patch_conversations_email_participant_parkingstate**](#patch_conversations_email_participant_parkingstate) | Update conversation by setting its parking state|
+|[**patch_conversations_message**](#patch_conversations_message) | Update a conversation by disconnecting all of the participants|
+|[**patch_conversations_message_participant**](#patch_conversations_message_participant) | Update conversation participant|
+|[**patch_conversations_message_participant_attributes**](#patch_conversations_message_participant_attributes) | Update the attributes on a conversation participant.|
+|[**patch_conversations_message_participant_communication**](#patch_conversations_message_participant_communication) | Update conversation participant&#39;s communication by disconnecting it.|
+|[**patch_conversations_messaging_integrations_facebook_integration_id**](#patch_conversations_messaging_integrations_facebook_integration_id) | Update Facebook messaging integration|
+|[**patch_conversations_messaging_integrations_instagram_integration_id**](#patch_conversations_messaging_integrations_instagram_integration_id) | Update Instagram messaging integration|
+|[**patch_conversations_messaging_integrations_open_integration_id**](#patch_conversations_messaging_integrations_open_integration_id) | Update an Open messaging integration|
+|[**patch_conversations_messaging_integrations_whatsapp_embeddedsignup_integration_id**](#patch_conversations_messaging_integrations_whatsapp_embeddedsignup_integration_id) | Activate a WhatsApp messaging integration created using the WhatsApp embedded signup flow|
+|[**patch_conversations_messaging_integrations_whatsapp_integration_id**](#patch_conversations_messaging_integrations_whatsapp_integration_id) | Update a WhatsApp messaging integration|
+|[**patch_conversations_messaging_setting**](#patch_conversations_messaging_setting) | Update a messaging setting|
+|[**patch_conversations_messaging_supportedcontent_supported_content_id**](#patch_conversations_messaging_supportedcontent_supported_content_id) | Update a supported content profile|
+|[**patch_conversations_settings**](#patch_conversations_settings) | Update Settings|
+|[**post_analytics_conversation_details_properties**](#post_analytics_conversation_details_properties) | Index conversation properties|
+|[**post_analytics_conversations_activity_query**](#post_analytics_conversations_activity_query) | Query for conversation activity observations|
+|[**post_analytics_conversations_aggregates_jobs**](#post_analytics_conversations_aggregates_jobs) | Query for conversation aggregates asynchronously|
+|[**post_analytics_conversations_aggregates_query**](#post_analytics_conversations_aggregates_query) | Query for conversation aggregates|
+|[**post_analytics_conversations_details_jobs**](#post_analytics_conversations_details_jobs) | Query for conversation details asynchronously|
+|[**post_analytics_conversations_details_query**](#post_analytics_conversations_details_query) | Query for conversation details|
+|[**post_conversation_assign**](#post_conversation_assign) | Attempts to manually assign a specified conversation to a specified user.  Ignores bullseye ring, PAR score, skills, and languages.|
+|[**post_conversation_barge**](#post_conversation_barge) | Barge a conversation creating a barged in conference of connected participants.|
+|[**post_conversation_cobrowse**](#post_conversation_cobrowse) | Creates a cobrowse session. Requires \&quot;conversation:cobrowse:add\&quot; (for web messaging) or \&quot;conversation:cobrowsevoice:add\&quot; permission.|
+|[**post_conversation_disconnect**](#post_conversation_disconnect) | Performs a full conversation teardown. Issues disconnect requests for any connected media. Applies a system wrap-up code to any participants that are pending wrap-up. This is not intended to be the normal way of ending interactions but is available in the event of problems with the application to allow a resynchronization of state across all components. It is recommended that users submit a support case if they are relying on this endpoint systematically as there is likely something that needs investigation.|
+|[**post_conversation_participant_callbacks**](#post_conversation_participant_callbacks) | Create a new callback for the specified participant on the conversation.|
+|[**post_conversation_participant_digits**](#post_conversation_participant_digits) | Sends DTMF to the participant|
+|[**post_conversation_participant_replace**](#post_conversation_participant_replace) | Replace this participant with the specified user and/or address|
+|[**post_conversation_participant_replace_agent**](#post_conversation_participant_replace_agent) | Replace this participant with the specified agent|
+|[**post_conversation_participant_replace_external**](#post_conversation_participant_replace_external) | Replace this participant with the an external contact|
+|[**post_conversation_participant_replace_queue**](#post_conversation_participant_replace_queue) | Replace this participant with the specified queue|
+|[**post_conversation_participant_secureivrsessions**](#post_conversation_participant_secureivrsessions) | Create secure IVR session. Only a participant in the conversation can invoke a secure IVR.|
+|[**post_conversation_suggestion_engagement**](#post_conversation_suggestion_engagement) | Save an engagement on the suggestion.|
+|[**post_conversation_suggestions_feedback**](#post_conversation_suggestions_feedback) | Suggestion feedback.|
+|[**post_conversation_summary_feedback**](#post_conversation_summary_feedback) | Submit feedback for the summary.|
+|[**post_conversations_call**](#post_conversations_call) | Place a new call as part of a callback conversation.|
+|[**post_conversations_call_participant_barge**](#post_conversations_call_participant_barge) | Barge a given participant&#39;s call creating a barged in conference of connected participants.|
+|[**post_conversations_call_participant_coach**](#post_conversations_call_participant_coach) | Listen in on the conversation from the point of view of a given participant while speaking to just the given participant.|
+|[**post_conversations_call_participant_communication_wrapup**](#post_conversations_call_participant_communication_wrapup) | Apply wrap-up for this conversation communication|
+|[**post_conversations_call_participant_consult**](#post_conversations_call_participant_consult) | Initiate and update consult transfer|
+|[**post_conversations_call_participant_consult_agent**](#post_conversations_call_participant_consult_agent) | Initiate a consult transfer to an agent|
+|[**post_conversations_call_participant_consult_external**](#post_conversations_call_participant_consult_external) | Initiate a consult transfer to an external contact|
+|[**post_conversations_call_participant_consult_queue**](#post_conversations_call_participant_consult_queue) | Initiate a consult transfer to a queue|
+|[**post_conversations_call_participant_monitor**](#post_conversations_call_participant_monitor) | Listen in on the conversation from the point of view of a given participant.|
+|[**post_conversations_call_participant_replace**](#post_conversations_call_participant_replace) | Replace this participant with the specified user and/or address|
+|[**post_conversations_call_participants**](#post_conversations_call_participants) | Add participants to a conversation|
+|[**post_conversations_callback_participant_communication_wrapup**](#post_conversations_callback_participant_communication_wrapup) | Apply wrap-up for this conversation communication|
+|[**post_conversations_callback_participant_replace**](#post_conversations_callback_participant_replace) | Replace this participant with the specified user and/or address|
+|[**post_conversations_callbacks**](#post_conversations_callbacks) | Create a Callback|
+|[**post_conversations_callbacks_bulk_disconnect**](#post_conversations_callbacks_bulk_disconnect) | Disconnect multiple scheduled callbacks|
+|[**post_conversations_callbacks_bulk_update**](#post_conversations_callbacks_bulk_update) | Update multiple scheduled callbacks|
+|[**post_conversations_calls**](#post_conversations_calls) | Create a call conversation|
+|[**post_conversations_chat_communication_messages**](#post_conversations_chat_communication_messages) | Send a message on behalf of a communication in a chat conversation.|
+|[**post_conversations_chat_communication_typing**](#post_conversations_chat_communication_typing) | Send a typing-indicator on behalf of a communication in a chat conversation.|
+|[**post_conversations_chat_participant_communication_wrapup**](#post_conversations_chat_participant_communication_wrapup) | Apply wrap-up for this conversation communication|
+|[**post_conversations_chat_participant_replace**](#post_conversations_chat_participant_replace) | Replace this participant with the specified user and/or address|
+|[**post_conversations_chats**](#post_conversations_chats) | Create a web chat conversation|
+|[**post_conversations_cobrowsesession_participant_communication_wrapup**](#post_conversations_cobrowsesession_participant_communication_wrapup) | Apply wrap-up for this conversation communication|
+|[**post_conversations_cobrowsesession_participant_replace**](#post_conversations_cobrowsesession_participant_replace) | Replace this participant with the specified user and/or address|
+|[**post_conversations_email_inboundmessages**](#post_conversations_email_inboundmessages) | Send an email to an external conversation. An external conversation is one where the provider is not PureCloud based. This endpoint allows the sender of the external email to reply or send a new message to the existing conversation. The new message will be treated as part of the existing conversation and chained to it.|
+|[**post_conversations_email_messages**](#post_conversations_email_messages) | Send an email reply|
+|[**post_conversations_email_messages_draft_attachments_copy**](#post_conversations_email_messages_draft_attachments_copy) | Copy attachments from an email message to the current draft.|
+|[**post_conversations_email_participant_communication_wrapup**](#post_conversations_email_participant_communication_wrapup) | Apply wrap-up for this conversation communication|
+|[**post_conversations_email_participant_replace**](#post_conversations_email_participant_replace) | Replace this participant with the specified user and/or address|
+|[**post_conversations_email_reconnect**](#post_conversations_email_reconnect) | Reconnect the user to the most recently disconnected customer on a fully disconnected email conversation|
+|[**post_conversations_emails**](#post_conversations_emails) | Create an email conversation|
+|[**post_conversations_emails_agentless**](#post_conversations_emails_agentless) | Create an email conversation, per API|
+|[**post_conversations_faxes**](#post_conversations_faxes) | Create Fax Conversation|
+|[**post_conversations_keyconfigurations**](#post_conversations_keyconfigurations) | Setup configurations for encryption key creation|
+|[**post_conversations_keyconfigurations_validate**](#post_conversations_keyconfigurations_validate) | Validate encryption key configurations without saving it|
+|[**post_conversations_message_communication_messages**](#post_conversations_message_communication_messages) | Send message|
+|[**post_conversations_message_communication_messages_media**](#post_conversations_message_communication_messages_media) | Create media|
+|[**post_conversations_message_communication_typing**](#post_conversations_message_communication_typing) | Send message typing event|
+|[**post_conversations_message_inbound_open_event**](#post_conversations_message_inbound_open_event) | Send an inbound Open Event Message|
+|[**post_conversations_message_inbound_open_message**](#post_conversations_message_inbound_open_message) | Send inbound Open Message|
+|[**post_conversations_message_inbound_open_receipt**](#post_conversations_message_inbound_open_receipt) | Send an inbound Open Receipt Message|
+|[**post_conversations_message_messages_bulk**](#post_conversations_message_messages_bulk) | Get messages in batch|
+|[**post_conversations_message_participant_communication_wrapup**](#post_conversations_message_participant_communication_wrapup) | Apply wrap-up for this conversation communication|
+|[**post_conversations_message_participant_monitor**](#post_conversations_message_participant_monitor) | Listen in on the conversation from the point of view of a given participant.|
+|[**post_conversations_message_participant_replace**](#post_conversations_message_participant_replace) | Replace this participant with the specified user and/or address|
+|[**post_conversations_messages**](#post_conversations_messages) | Create an outbound messaging conversation.|
+|[**post_conversations_messages_agentless**](#post_conversations_messages_agentless) | Send an agentless outbound message|
+|[**post_conversations_messages_inbound_open**](#post_conversations_messages_inbound_open) | Send an inbound Open Message|
+|[**post_conversations_messaging_integrations_facebook**](#post_conversations_messaging_integrations_facebook) | Create a Facebook Integration|
+|[**post_conversations_messaging_integrations_instagram**](#post_conversations_messaging_integrations_instagram) | Create Instagram Integration|
+|[**post_conversations_messaging_integrations_open**](#post_conversations_messaging_integrations_open) | Create an Open messaging integration|
+|[**post_conversations_messaging_integrations_whatsapp**](#post_conversations_messaging_integrations_whatsapp) | [This API is deprecated. Use POST /api/v2/conversations/messaging/integrations/whatsapp/embeddedsignup instead] Create a WhatsApp Integration|
+|[**post_conversations_messaging_integrations_whatsapp_embeddedsignup**](#post_conversations_messaging_integrations_whatsapp_embeddedsignup) | Create a WhatsApp Integration using the WhatsApp embedded signup flow|
+|[**post_conversations_messaging_settings**](#post_conversations_messaging_settings) | Create a messaging setting|
+|[**post_conversations_messaging_supportedcontent**](#post_conversations_messaging_supportedcontent) | Create a Supported Content profile|
+|[**post_conversations_participants_attributes_search**](#post_conversations_participants_attributes_search) | Search conversations|
+|[**post_conversations_screenshare_participant_communication_wrapup**](#post_conversations_screenshare_participant_communication_wrapup) | Apply wrap-up for this conversation communication|
+|[**post_conversations_social_participant_communication_wrapup**](#post_conversations_social_participant_communication_wrapup) | Apply wrap-up for this conversation communication|
+|[**post_conversations_video_participant_communication_wrapup**](#post_conversations_video_participant_communication_wrapup) | Apply wrap-up for this conversation communication|
+|[**post_conversations_videos_meetings**](#post_conversations_videos_meetings) | Generate a meetingId for a given conferenceId|
+|[**put_conversation_participant_flaggedreason**](#put_conversation_participant_flaggedreason) | Set flagged reason on conversation participant to indicate bad conversation quality.|
+|[**put_conversation_secureattributes**](#put_conversation_secureattributes) | Set the secure attributes on a conversation.|
+|[**put_conversation_tags**](#put_conversation_tags) | Update the tags on a conversation.|
+|[**put_conversations_call_participant_communication_uuidata**](#put_conversations_call_participant_communication_uuidata) | Set uuiData to be sent on future commands.|
+|[**put_conversations_call_recordingstate**](#put_conversations_call_recordingstate) | Update a conversation by setting its recording state|
+|[**put_conversations_callback_recordingstate**](#put_conversations_callback_recordingstate) | Update a conversation by setting its recording state|
+|[**put_conversations_chat_recordingstate**](#put_conversations_chat_recordingstate) | Update a conversation by setting its recording state|
+|[**put_conversations_cobrowsesession_recordingstate**](#put_conversations_cobrowsesession_recordingstate) | Update a conversation by setting its recording state|
+|[**put_conversations_email_messages_draft**](#put_conversations_email_messages_draft) | Update conversation draft reply|
+|[**put_conversations_email_recordingstate**](#put_conversations_email_recordingstate) | Update a conversation by setting its recording state|
+|[**put_conversations_keyconfiguration**](#put_conversations_keyconfiguration) | Update the encryption key configurations|
+|[**put_conversations_message_recordingstate**](#put_conversations_message_recordingstate) | Update a conversation by setting its recording state|
+|[**put_conversations_messaging_settings_default**](#put_conversations_messaging_settings_default) | Set the organization&#39;s default setting that may be applied to to integrations without settings|
+|[**put_conversations_messaging_supportedcontent_default**](#put_conversations_messaging_supportedcontent_default) | Set the organization&#39;s default supported content profile that may be assigned to an integration when it is created.|
+|[**put_conversations_messaging_threadingtimeline**](#put_conversations_messaging_threadingtimeline) | Update conversation threading window timeline for each messaging type|
+|[**put_conversations_screenshare_recordingstate**](#put_conversations_screenshare_recordingstate) | Update a conversation by setting its recording state|
+|[**put_conversations_social_recordingstate**](#put_conversations_social_recordingstate) | Update a conversation by setting its recording state|
+|[**put_conversations_video_recordingstate**](#put_conversations_video_recordingstate) | Update a conversation by setting its recording state|
 
-<a name="delete_analytics_conversations_details_job"></a>
 
-##  delete_analytics_conversations_details_job(job_id)
 
+## delete_analytics_conversations_details_job
+
+>  delete_analytics_conversations_details_job(job_id)
 
 
 Delete/cancel an async details job
@@ -290,16 +288,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **job_id** | **str**| jobId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (empty response body)
 
-<a name="delete_conversation_participant_code"></a>
 
-##  delete_conversation_participant_code(conversation_id, participant_id, add_communication_code)
+## delete_conversation_participant_code
 
+>  delete_conversation_participant_code(conversation_id, participant_id, add_communication_code)
 
 
 Delete a code used to add a communication to this participant
@@ -341,16 +338,15 @@ except ApiException as e:
 | **conversation_id** | **str**| conversation ID |  |
 | **participant_id** | **str**| participant ID |  |
 | **add_communication_code** | **str**| addCommunicationCode |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (empty response body)
 
-<a name="delete_conversation_participant_flaggedreason"></a>
 
-##  delete_conversation_participant_flaggedreason(conversation_id, participant_id)
+## delete_conversation_participant_flaggedreason
 
+>  delete_conversation_participant_flaggedreason(conversation_id, participant_id)
 
 
 Remove flagged reason from conversation participant.
@@ -390,16 +386,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversation ID |  |
 | **participant_id** | **str**| participant ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (empty response body)
 
-<a name="delete_conversations_call_participant_consult"></a>
 
-##  delete_conversations_call_participant_consult(conversation_id, participant_id)
+## delete_conversations_call_participant_consult
 
+>  delete_conversations_call_participant_consult(conversation_id, participant_id)
 
 
 Cancel the transfer
@@ -439,16 +434,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
 | **participant_id** | **str**| participantId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (empty response body)
 
-<a name="delete_conversations_email_messages_draft_attachment"></a>
 
-##  delete_conversations_email_messages_draft_attachment(conversation_id, attachment_id)
+## delete_conversations_email_messages_draft_attachment
 
+>  delete_conversations_email_messages_draft_attachment(conversation_id, attachment_id)
 
 
 Delete attachment from draft
@@ -488,16 +482,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
 | **attachment_id** | **str**| attachmentId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (empty response body)
 
-<a name="delete_conversations_messages_cachedmedia_cached_media_item_id"></a>
 
-##  delete_conversations_messages_cachedmedia_cached_media_item_id(cached_media_item_id)
+## delete_conversations_messages_cachedmedia_cached_media_item_id
 
+>  delete_conversations_messages_cachedmedia_cached_media_item_id(cached_media_item_id)
 
 
 Remove a cached media item asychronously
@@ -536,16 +529,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **cached_media_item_id** | **str**| cachedMediaItemId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (empty response body)
 
-<a name="delete_conversations_messaging_integrations_facebook_integration_id"></a>
 
-##  delete_conversations_messaging_integrations_facebook_integration_id(integration_id)
+## delete_conversations_messaging_integrations_facebook_integration_id
 
+>  delete_conversations_messaging_integrations_facebook_integration_id(integration_id)
 
 
 Delete a Facebook messaging integration
@@ -584,16 +576,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **integration_id** | **str**| Integration ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (empty response body)
 
-<a name="delete_conversations_messaging_integrations_instagram_integration_id"></a>
 
-##  delete_conversations_messaging_integrations_instagram_integration_id(integration_id)
+## delete_conversations_messaging_integrations_instagram_integration_id
 
+>  delete_conversations_messaging_integrations_instagram_integration_id(integration_id)
 
 
 Delete Instagram messaging integration
@@ -632,16 +623,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **integration_id** | **str**| Integration ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (empty response body)
 
-<a name="delete_conversations_messaging_integrations_open_integration_id"></a>
 
-##  delete_conversations_messaging_integrations_open_integration_id(integration_id)
+## delete_conversations_messaging_integrations_open_integration_id
 
+>  delete_conversations_messaging_integrations_open_integration_id(integration_id)
 
 
 Delete an Open messaging integration
@@ -682,16 +672,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **integration_id** | **str**| Integration ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (empty response body)
 
-<a name="delete_conversations_messaging_integrations_whatsapp_integration_id"></a>
 
-## [**WhatsAppIntegration**](WhatsAppIntegration.html) delete_conversations_messaging_integrations_whatsapp_integration_id(integration_id)
+## delete_conversations_messaging_integrations_whatsapp_integration_id
 
+> [**WhatsAppIntegration**](WhatsAppIntegration) delete_conversations_messaging_integrations_whatsapp_integration_id(integration_id)
 
 
 Delete a WhatsApp messaging integration
@@ -731,16 +720,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **integration_id** | **str**| Integration ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**WhatsAppIntegration**](WhatsAppIntegration.html)
+[**WhatsAppIntegration**](WhatsAppIntegration)
 
-<a name="delete_conversations_messaging_setting"></a>
 
-##  delete_conversations_messaging_setting(message_setting_id)
+## delete_conversations_messaging_setting
 
+>  delete_conversations_messaging_setting(message_setting_id)
 
 
 Delete a messaging setting
@@ -779,16 +767,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **message_setting_id** | **str**| Message Setting ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (empty response body)
 
-<a name="delete_conversations_messaging_settings_default"></a>
 
-##  delete_conversations_messaging_settings_default()
+## delete_conversations_messaging_settings_default
 
+>  delete_conversations_messaging_settings_default()
 
 
 Delete the organization's default setting, a global default will be applied to integrations without settings
@@ -826,15 +813,14 @@ except ApiException as e:
 
 This endpoint does not need any parameters.
 
-
 ### Return type
 
 void (empty response body)
 
-<a name="delete_conversations_messaging_supportedcontent_supported_content_id"></a>
 
-##  delete_conversations_messaging_supportedcontent_supported_content_id(supported_content_id)
+## delete_conversations_messaging_supportedcontent_supported_content_id
 
+>  delete_conversations_messaging_supportedcontent_supported_content_id(supported_content_id)
 
 
 Delete a supported content profile
@@ -873,16 +859,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **supported_content_id** | **str**| Supported Content ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (empty response body)
 
-<a name="get_analytics_conversation_details"></a>
 
-## [**AnalyticsConversationWithoutAttributes**](AnalyticsConversationWithoutAttributes.html) get_analytics_conversation_details(conversation_id)
+## get_analytics_conversation_details
 
+> [**AnalyticsConversationWithoutAttributes**](AnalyticsConversationWithoutAttributes) get_analytics_conversation_details(conversation_id)
 
 
 Get a conversation by id
@@ -923,16 +908,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**AnalyticsConversationWithoutAttributes**](AnalyticsConversationWithoutAttributes.html)
+[**AnalyticsConversationWithoutAttributes**](AnalyticsConversationWithoutAttributes)
 
-<a name="get_analytics_conversations_aggregates_job"></a>
 
-## [**AsyncQueryStatus**](AsyncQueryStatus.html) get_analytics_conversations_aggregates_job(job_id)
+## get_analytics_conversations_aggregates_job
 
+> [**AsyncQueryStatus**](AsyncQueryStatus) get_analytics_conversations_aggregates_job(job_id)
 
 
 Get status for async query for conversation aggregates
@@ -974,16 +958,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **job_id** | **str**| jobId |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**AsyncQueryStatus**](AsyncQueryStatus.html)
+[**AsyncQueryStatus**](AsyncQueryStatus)
 
-<a name="get_analytics_conversations_aggregates_job_results"></a>
 
-## [**ConversationAsyncAggregateQueryResponse**](ConversationAsyncAggregateQueryResponse.html) get_analytics_conversations_aggregates_job_results(job_id, cursor=cursor)
+## get_analytics_conversations_aggregates_job_results
 
+> [**ConversationAsyncAggregateQueryResponse**](ConversationAsyncAggregateQueryResponse) get_analytics_conversations_aggregates_job_results(job_id, cursor=cursor)
 
 
 Fetch a page of results for an async aggregates query
@@ -1027,16 +1010,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **job_id** | **str**| jobId |  |
 | **cursor** | **str**| Cursor token to retrieve next page | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**ConversationAsyncAggregateQueryResponse**](ConversationAsyncAggregateQueryResponse.html)
+[**ConversationAsyncAggregateQueryResponse**](ConversationAsyncAggregateQueryResponse)
 
-<a name="get_analytics_conversations_details"></a>
 
-## [**AnalyticsConversationWithoutAttributesMultiGetResponse**](AnalyticsConversationWithoutAttributesMultiGetResponse.html) get_analytics_conversations_details(id=id)
+## get_analytics_conversations_details
 
+> [**AnalyticsConversationWithoutAttributesMultiGetResponse**](AnalyticsConversationWithoutAttributesMultiGetResponse) get_analytics_conversations_details(id=id)
 
 
 Gets multiple conversations by id
@@ -1076,17 +1058,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **id** | [**list[str]**](str.html)| Comma-separated conversation ids | [optional]  |
-{: class="table table-striped"}
+| **id** | [**list[str]**](str)| Comma-separated conversation ids | [optional]  |
 
 ### Return type
 
-[**AnalyticsConversationWithoutAttributesMultiGetResponse**](AnalyticsConversationWithoutAttributesMultiGetResponse.html)
+[**AnalyticsConversationWithoutAttributesMultiGetResponse**](AnalyticsConversationWithoutAttributesMultiGetResponse)
 
-<a name="get_analytics_conversations_details_job"></a>
 
-## [**AsyncQueryStatus**](AsyncQueryStatus.html) get_analytics_conversations_details_job(job_id)
+## get_analytics_conversations_details_job
 
+> [**AsyncQueryStatus**](AsyncQueryStatus) get_analytics_conversations_details_job(job_id)
 
 
 Get status for async query for conversation details
@@ -1127,16 +1108,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **job_id** | **str**| jobId |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**AsyncQueryStatus**](AsyncQueryStatus.html)
+[**AsyncQueryStatus**](AsyncQueryStatus)
 
-<a name="get_analytics_conversations_details_job_results"></a>
 
-## [**AnalyticsConversationAsyncQueryResponse**](AnalyticsConversationAsyncQueryResponse.html) get_analytics_conversations_details_job_results(job_id, cursor=cursor, page_size=page_size)
+## get_analytics_conversations_details_job_results
 
+> [**AnalyticsConversationAsyncQueryResponse**](AnalyticsConversationAsyncQueryResponse) get_analytics_conversations_details_job_results(job_id, cursor=cursor, page_size=page_size)
 
 
 Fetch a page of results for an async details job
@@ -1181,16 +1161,15 @@ except ApiException as e:
 | **job_id** | **str**| jobId |  |
 | **cursor** | **str**| Indicates where to resume query results (not required for first page) | [optional]  |
 | **page_size** | **int**| The desired maximum number of results | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**AnalyticsConversationAsyncQueryResponse**](AnalyticsConversationAsyncQueryResponse.html)
+[**AnalyticsConversationAsyncQueryResponse**](AnalyticsConversationAsyncQueryResponse)
 
-<a name="get_analytics_conversations_details_jobs_availability"></a>
 
-## [**DataAvailabilityResponse**](DataAvailabilityResponse.html) get_analytics_conversations_details_jobs_availability()
+## get_analytics_conversations_details_jobs_availability
 
+> [**DataAvailabilityResponse**](DataAvailabilityResponse) get_analytics_conversations_details_jobs_availability()
 
 
 Lookup the datalake availability date and time
@@ -1227,15 +1206,14 @@ except ApiException as e:
 
 This endpoint does not need any parameters.
 
-
 ### Return type
 
-[**DataAvailabilityResponse**](DataAvailabilityResponse.html)
+[**DataAvailabilityResponse**](DataAvailabilityResponse)
 
-<a name="get_conversation"></a>
 
-## [**Conversation**](Conversation.html) get_conversation(conversation_id)
+## get_conversation
 
+> [**Conversation**](Conversation) get_conversation(conversation_id)
 
 
 Get conversation
@@ -1275,16 +1253,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversation ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**Conversation**](Conversation.html)
+[**Conversation**](Conversation)
 
-<a name="get_conversation_participant_secureivrsession"></a>
 
-## [**SecureSession**](SecureSession.html) get_conversation_participant_secureivrsession(conversation_id, participant_id, secure_session_id)
+## get_conversation_participant_secureivrsession
 
+> [**SecureSession**](SecureSession) get_conversation_participant_secureivrsession(conversation_id, participant_id, secure_session_id)
 
 
 Fetch info on a secure session
@@ -1327,16 +1304,15 @@ except ApiException as e:
 | **conversation_id** | **str**| conversation ID |  |
 | **participant_id** | **str**| participant ID |  |
 | **secure_session_id** | **str**| secure IVR session ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**SecureSession**](SecureSession.html)
+[**SecureSession**](SecureSession)
 
-<a name="get_conversation_participant_secureivrsessions"></a>
 
-## [**SecureSessionEntityListing**](SecureSessionEntityListing.html) get_conversation_participant_secureivrsessions(conversation_id, participant_id)
+## get_conversation_participant_secureivrsessions
 
+> [**SecureSessionEntityListing**](SecureSessionEntityListing) get_conversation_participant_secureivrsessions(conversation_id, participant_id)
 
 
 Get a list of secure sessions for this participant.
@@ -1377,16 +1353,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversation ID |  |
 | **participant_id** | **str**| participant ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**SecureSessionEntityListing**](SecureSessionEntityListing.html)
+[**SecureSessionEntityListing**](SecureSessionEntityListing)
 
-<a name="get_conversation_participant_wrapup"></a>
 
-## [**AssignedWrapupCode**](AssignedWrapupCode.html) get_conversation_participant_wrapup(conversation_id, participant_id, provisional=provisional)
+## get_conversation_participant_wrapup
 
+> [**AssignedWrapupCode**](AssignedWrapupCode) get_conversation_participant_wrapup(conversation_id, participant_id, provisional=provisional)
 
 
 Get the wrap-up for this conversation participant. 
@@ -1429,16 +1404,15 @@ except ApiException as e:
 | **conversation_id** | **str**| conversation ID |  |
 | **participant_id** | **str**| participant ID |  |
 | **provisional** | **bool**| Indicates if the wrap-up code is provisional. | [optional] [default to False] |
-{: class="table table-striped"}
 
 ### Return type
 
-[**AssignedWrapupCode**](AssignedWrapupCode.html)
+[**AssignedWrapupCode**](AssignedWrapupCode)
 
-<a name="get_conversation_participant_wrapupcodes"></a>
 
-## [**list[WrapupCode]**](WrapupCode.html) get_conversation_participant_wrapupcodes(conversation_id, participant_id)
+## get_conversation_participant_wrapupcodes
 
+> [**list[WrapupCode]**](WrapupCode) get_conversation_participant_wrapupcodes(conversation_id, participant_id)
 
 
 Get list of wrapup codes for this conversation participant
@@ -1479,16 +1453,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversation ID |  |
 | **participant_id** | **str**| participant ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**list[WrapupCode]**](WrapupCode.html)
+[**list[WrapupCode]**](WrapupCode)
 
-<a name="get_conversation_secureattributes"></a>
 
-## [**ConversationSecureAttributes**](ConversationSecureAttributes.html) get_conversation_secureattributes(conversation_id)
+## get_conversation_secureattributes
 
+> [**ConversationSecureAttributes**](ConversationSecureAttributes) get_conversation_secureattributes(conversation_id)
 
 
 Get the secure attributes on a conversation.
@@ -1528,16 +1501,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversation ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**ConversationSecureAttributes**](ConversationSecureAttributes.html)
+[**ConversationSecureAttributes**](ConversationSecureAttributes)
 
-<a name="get_conversation_suggestion"></a>
 
-## [**Suggestion**](Suggestion.html) get_conversation_suggestion(conversation_id, suggestion_id)
+## get_conversation_suggestion
 
+> [**Suggestion**](Suggestion) get_conversation_suggestion(conversation_id, suggestion_id)
 
 
 Get Suggestion.
@@ -1579,16 +1551,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| Conversation ID |  |
 | **suggestion_id** | **str**| Suggestion ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**Suggestion**](Suggestion.html)
+[**Suggestion**](Suggestion)
 
-<a name="get_conversation_suggestions"></a>
 
-## [**SuggestionListing**](SuggestionListing.html) get_conversation_suggestions(conversation_id, before=before, after=after, page_size=page_size, type=type, state=state)
+## get_conversation_suggestions
 
+> [**SuggestionListing**](SuggestionListing) get_conversation_suggestions(conversation_id, before=before, after=after, page_size=page_size, type=type, state=state)
 
 
 Get all suggestions for a conversation.
@@ -1638,16 +1609,15 @@ except ApiException as e:
 | **page_size** | **str**| Number of entities to return. Maximum of 200. | [optional]  |
 | **type** | **str**| Suggestion type to filter by. | [optional] <br />**Values**: Faq, Article, KnowledgeArticle, KnowledgeSearch, CannedResponse, Script |
 | **state** | **str**| Suggestion state to filter Copilot suggestions. | [optional] <br />**Values**: Suggested, Accepted, Dismissed, Failed, Rated |
-{: class="table table-striped"}
 
 ### Return type
 
-[**SuggestionListing**](SuggestionListing.html)
+[**SuggestionListing**](SuggestionListing)
 
-<a name="get_conversations"></a>
 
-## [**ConversationEntityListing**](ConversationEntityListing.html) get_conversations(communication_type=communication_type)
+## get_conversations
 
+> [**ConversationEntityListing**](ConversationEntityListing) get_conversations(communication_type=communication_type)
 
 
 Get active conversations for the logged in user
@@ -1686,16 +1656,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **communication_type** | **str**| Call or Chat communication filtering | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**ConversationEntityListing**](ConversationEntityListing.html)
+[**ConversationEntityListing**](ConversationEntityListing)
 
-<a name="get_conversations_call"></a>
 
-## [**CallConversation**](CallConversation.html) get_conversations_call(conversation_id)
+## get_conversations_call
 
+> [**CallConversation**](CallConversation) get_conversations_call(conversation_id)
 
 
 Get call conversation
@@ -1734,16 +1703,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**CallConversation**](CallConversation.html)
+[**CallConversation**](CallConversation)
 
-<a name="get_conversations_call_participant_communication_wrapup"></a>
 
-## [**AssignedWrapupCode**](AssignedWrapupCode.html) get_conversations_call_participant_communication_wrapup(conversation_id, participant_id, communication_id, provisional=provisional)
+## get_conversations_call_participant_communication_wrapup
 
+> [**AssignedWrapupCode**](AssignedWrapupCode) get_conversations_call_participant_communication_wrapup(conversation_id, participant_id, communication_id, provisional=provisional)
 
 
 Get the wrap-up for this conversation communication. 
@@ -1788,16 +1756,15 @@ except ApiException as e:
 | **participant_id** | **str**| participantId |  |
 | **communication_id** | **str**| communicationId |  |
 | **provisional** | **bool**| Indicates if the wrap-up code is provisional. | [optional] [default to False] |
-{: class="table table-striped"}
 
 ### Return type
 
-[**AssignedWrapupCode**](AssignedWrapupCode.html)
+[**AssignedWrapupCode**](AssignedWrapupCode)
 
-<a name="get_conversations_call_participant_wrapup"></a>
 
-## [**AssignedWrapupCode**](AssignedWrapupCode.html) get_conversations_call_participant_wrapup(conversation_id, participant_id, provisional=provisional)
+## get_conversations_call_participant_wrapup
 
+> [**AssignedWrapupCode**](AssignedWrapupCode) get_conversations_call_participant_wrapup(conversation_id, participant_id, provisional=provisional)
 
 
 Get the wrap-up for this conversation participant. 
@@ -1840,16 +1807,15 @@ except ApiException as e:
 | **conversation_id** | **str**| conversationId |  |
 | **participant_id** | **str**| participantId |  |
 | **provisional** | **bool**| Indicates if the wrap-up code is provisional. | [optional] [default to False] |
-{: class="table table-striped"}
 
 ### Return type
 
-[**AssignedWrapupCode**](AssignedWrapupCode.html)
+[**AssignedWrapupCode**](AssignedWrapupCode)
 
-<a name="get_conversations_call_participant_wrapupcodes"></a>
 
-## [**list[WrapupCode]**](WrapupCode.html) get_conversations_call_participant_wrapupcodes(conversation_id, participant_id)
+## get_conversations_call_participant_wrapupcodes
 
+> [**list[WrapupCode]**](WrapupCode) get_conversations_call_participant_wrapupcodes(conversation_id, participant_id)
 
 
 Get list of wrapup codes for this conversation participant
@@ -1890,16 +1856,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
 | **participant_id** | **str**| participantId |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**list[WrapupCode]**](WrapupCode.html)
+[**list[WrapupCode]**](WrapupCode)
 
-<a name="get_conversations_callback"></a>
 
-## [**CallbackConversation**](CallbackConversation.html) get_conversations_callback(conversation_id)
+## get_conversations_callback
 
+> [**CallbackConversation**](CallbackConversation) get_conversations_callback(conversation_id)
 
 
 Get callback conversation
@@ -1938,16 +1903,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**CallbackConversation**](CallbackConversation.html)
+[**CallbackConversation**](CallbackConversation)
 
-<a name="get_conversations_callback_participant_communication_wrapup"></a>
 
-## [**AssignedWrapupCode**](AssignedWrapupCode.html) get_conversations_callback_participant_communication_wrapup(conversation_id, participant_id, communication_id, provisional=provisional)
+## get_conversations_callback_participant_communication_wrapup
 
+> [**AssignedWrapupCode**](AssignedWrapupCode) get_conversations_callback_participant_communication_wrapup(conversation_id, participant_id, communication_id, provisional=provisional)
 
 
 Get the wrap-up for this conversation communication. 
@@ -1992,16 +1956,15 @@ except ApiException as e:
 | **participant_id** | **str**| participantId |  |
 | **communication_id** | **str**| communicationId |  |
 | **provisional** | **bool**| Indicates if the wrap-up code is provisional. | [optional] [default to False] |
-{: class="table table-striped"}
 
 ### Return type
 
-[**AssignedWrapupCode**](AssignedWrapupCode.html)
+[**AssignedWrapupCode**](AssignedWrapupCode)
 
-<a name="get_conversations_callback_participant_wrapup"></a>
 
-## [**AssignedWrapupCode**](AssignedWrapupCode.html) get_conversations_callback_participant_wrapup(conversation_id, participant_id, provisional=provisional)
+## get_conversations_callback_participant_wrapup
 
+> [**AssignedWrapupCode**](AssignedWrapupCode) get_conversations_callback_participant_wrapup(conversation_id, participant_id, provisional=provisional)
 
 
 Get the wrap-up for this conversation participant. 
@@ -2044,16 +2007,15 @@ except ApiException as e:
 | **conversation_id** | **str**| conversationId |  |
 | **participant_id** | **str**| participantId |  |
 | **provisional** | **bool**| Indicates if the wrap-up code is provisional. | [optional] [default to False] |
-{: class="table table-striped"}
 
 ### Return type
 
-[**AssignedWrapupCode**](AssignedWrapupCode.html)
+[**AssignedWrapupCode**](AssignedWrapupCode)
 
-<a name="get_conversations_callback_participant_wrapupcodes"></a>
 
-## [**list[WrapupCode]**](WrapupCode.html) get_conversations_callback_participant_wrapupcodes(conversation_id, participant_id)
+## get_conversations_callback_participant_wrapupcodes
 
+> [**list[WrapupCode]**](WrapupCode) get_conversations_callback_participant_wrapupcodes(conversation_id, participant_id)
 
 
 Get list of wrapup codes for this conversation participant
@@ -2094,16 +2056,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
 | **participant_id** | **str**| participantId |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**list[WrapupCode]**](WrapupCode.html)
+[**list[WrapupCode]**](WrapupCode)
 
-<a name="get_conversations_callbacks"></a>
 
-## [**CallbackConversationEntityListing**](CallbackConversationEntityListing.html) get_conversations_callbacks()
+## get_conversations_callbacks
 
+> [**CallbackConversationEntityListing**](CallbackConversationEntityListing) get_conversations_callbacks()
 
 
 Get active callback conversations for the logged in user
@@ -2139,15 +2100,14 @@ except ApiException as e:
 
 This endpoint does not need any parameters.
 
-
 ### Return type
 
-[**CallbackConversationEntityListing**](CallbackConversationEntityListing.html)
+[**CallbackConversationEntityListing**](CallbackConversationEntityListing)
 
-<a name="get_conversations_calls"></a>
 
-## [**CallConversationEntityListing**](CallConversationEntityListing.html) get_conversations_calls()
+## get_conversations_calls
 
+> [**CallConversationEntityListing**](CallConversationEntityListing) get_conversations_calls()
 
 
 Get active call conversations for the logged in user
@@ -2183,15 +2143,14 @@ except ApiException as e:
 
 This endpoint does not need any parameters.
 
-
 ### Return type
 
-[**CallConversationEntityListing**](CallConversationEntityListing.html)
+[**CallConversationEntityListing**](CallConversationEntityListing)
 
-<a name="get_conversations_calls_history"></a>
 
-## [**CallHistoryConversationEntityListing**](CallHistoryConversationEntityListing.html) get_conversations_calls_history(page_size=page_size, page_number=page_number, interval=interval, expand=expand)
+## get_conversations_calls_history
 
+> [**CallHistoryConversationEntityListing**](CallHistoryConversationEntityListing) get_conversations_calls_history(page_size=page_size, page_number=page_number, interval=interval, expand=expand)
 
 
 Get call history
@@ -2235,17 +2194,16 @@ except ApiException as e:
 | **page_size** | **int**| Page size, maximum 50 | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **interval** | **str**| Interval string; format is ISO-8601. Separate start and end times with forward slash &#39;/&#39; | [optional]  |
-| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand. | [optional] <br />**Values**: externalorganization, externalcontact, user, queue, group |
-{: class="table table-striped"}
+| **expand** | [**list[str]**](str)| Which fields, if any, to expand. | [optional] <br />**Values**: externalorganization, externalcontact, user, queue, group |
 
 ### Return type
 
-[**CallHistoryConversationEntityListing**](CallHistoryConversationEntityListing.html)
+[**CallHistoryConversationEntityListing**](CallHistoryConversationEntityListing)
 
-<a name="get_conversations_calls_maximumconferenceparties"></a>
 
-## [**MaxParticipants**](MaxParticipants.html) get_conversations_calls_maximumconferenceparties()
+## get_conversations_calls_maximumconferenceparties
 
+> [**MaxParticipants**](MaxParticipants) get_conversations_calls_maximumconferenceparties()
 
 
 Get the maximum number of participants that this user can have on a conference
@@ -2281,15 +2239,14 @@ except ApiException as e:
 
 This endpoint does not need any parameters.
 
-
 ### Return type
 
-[**MaxParticipants**](MaxParticipants.html)
+[**MaxParticipants**](MaxParticipants)
 
-<a name="get_conversations_chat"></a>
 
-## [**ChatConversation**](ChatConversation.html) get_conversations_chat(conversation_id)
+## get_conversations_chat
 
+> [**ChatConversation**](ChatConversation) get_conversations_chat(conversation_id)
 
 
 Get chat conversation
@@ -2328,16 +2285,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**ChatConversation**](ChatConversation.html)
+[**ChatConversation**](ChatConversation)
 
-<a name="get_conversations_chat_message"></a>
 
-## [**WebChatMessage**](WebChatMessage.html) get_conversations_chat_message(conversation_id, message_id)
+## get_conversations_chat_message
 
+> [**WebChatMessage**](WebChatMessage) get_conversations_chat_message(conversation_id, message_id)
 
 
 Get a web chat conversation message
@@ -2380,16 +2336,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
 | **message_id** | **str**| messageId |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**WebChatMessage**](WebChatMessage.html)
+[**WebChatMessage**](WebChatMessage)
 
-<a name="get_conversations_chat_messages"></a>
 
-## [**WebChatMessageEntityList**](WebChatMessageEntityList.html) get_conversations_chat_messages(conversation_id, after=after, before=before, sort_order=sort_order, max_results=max_results)
+## get_conversations_chat_messages
 
+> [**WebChatMessageEntityList**](WebChatMessageEntityList) get_conversations_chat_messages(conversation_id, after=after, before=before, sort_order=sort_order, max_results=max_results)
 
 
 Get the messages of a chat conversation.
@@ -2438,16 +2393,15 @@ except ApiException as e:
 | **before** | **str**| If specified, get the messages chronologically before the id of this message | [optional]  |
 | **sort_order** | **str**| Sort order | [optional] [default to &#39;ascending&#39;]<br />**Values**: ascending, descending |
 | **max_results** | **int**| Limit the returned number of messages, up to a maximum of 100 | [optional] [default to 100] |
-{: class="table table-striped"}
 
 ### Return type
 
-[**WebChatMessageEntityList**](WebChatMessageEntityList.html)
+[**WebChatMessageEntityList**](WebChatMessageEntityList)
 
-<a name="get_conversations_chat_participant_communication_wrapup"></a>
 
-## [**AssignedWrapupCode**](AssignedWrapupCode.html) get_conversations_chat_participant_communication_wrapup(conversation_id, participant_id, communication_id, provisional=provisional)
+## get_conversations_chat_participant_communication_wrapup
 
+> [**AssignedWrapupCode**](AssignedWrapupCode) get_conversations_chat_participant_communication_wrapup(conversation_id, participant_id, communication_id, provisional=provisional)
 
 
 Get the wrap-up for this conversation communication. 
@@ -2492,16 +2446,15 @@ except ApiException as e:
 | **participant_id** | **str**| participantId |  |
 | **communication_id** | **str**| communicationId |  |
 | **provisional** | **bool**| Indicates if the wrap-up code is provisional. | [optional] [default to False] |
-{: class="table table-striped"}
 
 ### Return type
 
-[**AssignedWrapupCode**](AssignedWrapupCode.html)
+[**AssignedWrapupCode**](AssignedWrapupCode)
 
-<a name="get_conversations_chat_participant_wrapup"></a>
 
-## [**AssignedWrapupCode**](AssignedWrapupCode.html) get_conversations_chat_participant_wrapup(conversation_id, participant_id, provisional=provisional)
+## get_conversations_chat_participant_wrapup
 
+> [**AssignedWrapupCode**](AssignedWrapupCode) get_conversations_chat_participant_wrapup(conversation_id, participant_id, provisional=provisional)
 
 
 Get the wrap-up for this conversation participant. 
@@ -2544,16 +2497,15 @@ except ApiException as e:
 | **conversation_id** | **str**| conversationId |  |
 | **participant_id** | **str**| participantId |  |
 | **provisional** | **bool**| Indicates if the wrap-up code is provisional. | [optional] [default to False] |
-{: class="table table-striped"}
 
 ### Return type
 
-[**AssignedWrapupCode**](AssignedWrapupCode.html)
+[**AssignedWrapupCode**](AssignedWrapupCode)
 
-<a name="get_conversations_chat_participant_wrapupcodes"></a>
 
-## [**list[WrapupCode]**](WrapupCode.html) get_conversations_chat_participant_wrapupcodes(conversation_id, participant_id)
+## get_conversations_chat_participant_wrapupcodes
 
+> [**list[WrapupCode]**](WrapupCode) get_conversations_chat_participant_wrapupcodes(conversation_id, participant_id)
 
 
 Get list of wrapup codes for this conversation participant
@@ -2594,16 +2546,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
 | **participant_id** | **str**| participantId |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**list[WrapupCode]**](WrapupCode.html)
+[**list[WrapupCode]**](WrapupCode)
 
-<a name="get_conversations_chats"></a>
 
-## [**ChatConversationEntityListing**](ChatConversationEntityListing.html) get_conversations_chats()
+## get_conversations_chats
 
+> [**ChatConversationEntityListing**](ChatConversationEntityListing) get_conversations_chats()
 
 
 Get active chat conversations for the logged in user
@@ -2639,15 +2590,14 @@ except ApiException as e:
 
 This endpoint does not need any parameters.
 
-
 ### Return type
 
-[**ChatConversationEntityListing**](ChatConversationEntityListing.html)
+[**ChatConversationEntityListing**](ChatConversationEntityListing)
 
-<a name="get_conversations_cobrowsesession"></a>
 
-## [**CobrowseConversation**](CobrowseConversation.html) get_conversations_cobrowsesession(conversation_id)
+## get_conversations_cobrowsesession
 
+> [**CobrowseConversation**](CobrowseConversation) get_conversations_cobrowsesession(conversation_id)
 
 
 Get cobrowse conversation
@@ -2686,17 +2636,19 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**CobrowseConversation**](CobrowseConversation.html)
+[**CobrowseConversation**](CobrowseConversation)
 
-<a name="get_conversations_cobrowsesession_participant_communication_wrapup"></a>
 
-## [**AssignedWrapupCode**](AssignedWrapupCode.html) get_conversations_cobrowsesession_participant_communication_wrapup(conversation_id, participant_id, communication_id, provisional=provisional)
+## get_conversations_cobrowsesession_participant_communication_wrapup
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+> [**AssignedWrapupCode**](AssignedWrapupCode) get_conversations_cobrowsesession_participant_communication_wrapup(conversation_id, participant_id, communication_id, provisional=provisional)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 Get the wrap-up for this conversation communication. 
 
@@ -2742,17 +2694,19 @@ except ApiException as e:
 | **participant_id** | **str**| participantId |  |
 | **communication_id** | **str**| communicationId |  |
 | **provisional** | **bool**| Indicates if the wrap-up code is provisional. | [optional] [default to False] |
-{: class="table table-striped"}
 
 ### Return type
 
-[**AssignedWrapupCode**](AssignedWrapupCode.html)
+[**AssignedWrapupCode**](AssignedWrapupCode)
 
-<a name="get_conversations_cobrowsesession_participant_wrapup"></a>
 
-## [**AssignedWrapupCode**](AssignedWrapupCode.html) get_conversations_cobrowsesession_participant_wrapup(conversation_id, participant_id, provisional=provisional)
+## get_conversations_cobrowsesession_participant_wrapup
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+> [**AssignedWrapupCode**](AssignedWrapupCode) get_conversations_cobrowsesession_participant_wrapup(conversation_id, participant_id, provisional=provisional)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 Get the wrap-up for this conversation participant. 
 
@@ -2796,17 +2750,19 @@ except ApiException as e:
 | **conversation_id** | **str**| conversationId |  |
 | **participant_id** | **str**| participantId |  |
 | **provisional** | **bool**| Indicates if the wrap-up code is provisional. | [optional] [default to False] |
-{: class="table table-striped"}
 
 ### Return type
 
-[**AssignedWrapupCode**](AssignedWrapupCode.html)
+[**AssignedWrapupCode**](AssignedWrapupCode)
 
-<a name="get_conversations_cobrowsesession_participant_wrapupcodes"></a>
 
-## [**list[WrapupCode]**](WrapupCode.html) get_conversations_cobrowsesession_participant_wrapupcodes(conversation_id, participant_id)
+## get_conversations_cobrowsesession_participant_wrapupcodes
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+> [**list[WrapupCode]**](WrapupCode) get_conversations_cobrowsesession_participant_wrapupcodes(conversation_id, participant_id)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 Get list of wrapup codes for this conversation participant
 
@@ -2848,16 +2804,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
 | **participant_id** | **str**| participantId |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**list[WrapupCode]**](WrapupCode.html)
+[**list[WrapupCode]**](WrapupCode)
 
-<a name="get_conversations_cobrowsesessions"></a>
 
-## [**CobrowseConversationEntityListing**](CobrowseConversationEntityListing.html) get_conversations_cobrowsesessions()
+## get_conversations_cobrowsesessions
 
+> [**CobrowseConversationEntityListing**](CobrowseConversationEntityListing) get_conversations_cobrowsesessions()
 
 
 Get active cobrowse conversations for the logged in user
@@ -2893,15 +2848,14 @@ except ApiException as e:
 
 This endpoint does not need any parameters.
 
-
 ### Return type
 
-[**CobrowseConversationEntityListing**](CobrowseConversationEntityListing.html)
+[**CobrowseConversationEntityListing**](CobrowseConversationEntityListing)
 
-<a name="get_conversations_email"></a>
 
-## [**EmailConversation**](EmailConversation.html) get_conversations_email(conversation_id)
+## get_conversations_email
 
+> [**EmailConversation**](EmailConversation) get_conversations_email(conversation_id)
 
 
 Get email conversation
@@ -2940,16 +2894,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**EmailConversation**](EmailConversation.html)
+[**EmailConversation**](EmailConversation)
 
-<a name="get_conversations_email_message"></a>
 
-## [**EmailMessage**](EmailMessage.html) get_conversations_email_message(conversation_id, message_id)
+## get_conversations_email_message
 
+> [**EmailMessage**](EmailMessage) get_conversations_email_message(conversation_id, message_id)
 
 
 Get conversation message
@@ -2990,16 +2943,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
 | **message_id** | **str**| messageId |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**EmailMessage**](EmailMessage.html)
+[**EmailMessage**](EmailMessage)
 
-<a name="get_conversations_email_messages"></a>
 
-## [**EmailMessagePreviewListing**](EmailMessagePreviewListing.html) get_conversations_email_messages(conversation_id)
+## get_conversations_email_messages
 
+> [**EmailMessagePreviewListing**](EmailMessagePreviewListing) get_conversations_email_messages(conversation_id)
 
 
 Get conversation messages
@@ -3038,16 +2990,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**EmailMessagePreviewListing**](EmailMessagePreviewListing.html)
+[**EmailMessagePreviewListing**](EmailMessagePreviewListing)
 
-<a name="get_conversations_email_messages_draft"></a>
 
-## [**EmailMessage**](EmailMessage.html) get_conversations_email_messages_draft(conversation_id)
+## get_conversations_email_messages_draft
 
+> [**EmailMessage**](EmailMessage) get_conversations_email_messages_draft(conversation_id)
 
 
 Get conversation draft reply
@@ -3086,16 +3037,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**EmailMessage**](EmailMessage.html)
+[**EmailMessage**](EmailMessage)
 
-<a name="get_conversations_email_participant_communication_wrapup"></a>
 
-## [**AssignedWrapupCode**](AssignedWrapupCode.html) get_conversations_email_participant_communication_wrapup(conversation_id, participant_id, communication_id, provisional=provisional)
+## get_conversations_email_participant_communication_wrapup
 
+> [**AssignedWrapupCode**](AssignedWrapupCode) get_conversations_email_participant_communication_wrapup(conversation_id, participant_id, communication_id, provisional=provisional)
 
 
 Get the wrap-up for this conversation communication. 
@@ -3140,16 +3090,15 @@ except ApiException as e:
 | **participant_id** | **str**| participantId |  |
 | **communication_id** | **str**| communicationId |  |
 | **provisional** | **bool**| Indicates if the wrap-up code is provisional. | [optional] [default to False] |
-{: class="table table-striped"}
 
 ### Return type
 
-[**AssignedWrapupCode**](AssignedWrapupCode.html)
+[**AssignedWrapupCode**](AssignedWrapupCode)
 
-<a name="get_conversations_email_participant_wrapup"></a>
 
-## [**AssignedWrapupCode**](AssignedWrapupCode.html) get_conversations_email_participant_wrapup(conversation_id, participant_id, provisional=provisional)
+## get_conversations_email_participant_wrapup
 
+> [**AssignedWrapupCode**](AssignedWrapupCode) get_conversations_email_participant_wrapup(conversation_id, participant_id, provisional=provisional)
 
 
 Get the wrap-up for this conversation participant. 
@@ -3192,16 +3141,15 @@ except ApiException as e:
 | **conversation_id** | **str**| conversationId |  |
 | **participant_id** | **str**| participantId |  |
 | **provisional** | **bool**| Indicates if the wrap-up code is provisional. | [optional] [default to False] |
-{: class="table table-striped"}
 
 ### Return type
 
-[**AssignedWrapupCode**](AssignedWrapupCode.html)
+[**AssignedWrapupCode**](AssignedWrapupCode)
 
-<a name="get_conversations_email_participant_wrapupcodes"></a>
 
-## [**list[WrapupCode]**](WrapupCode.html) get_conversations_email_participant_wrapupcodes(conversation_id, participant_id)
+## get_conversations_email_participant_wrapupcodes
 
+> [**list[WrapupCode]**](WrapupCode) get_conversations_email_participant_wrapupcodes(conversation_id, participant_id)
 
 
 Get list of wrapup codes for this conversation participant
@@ -3242,16 +3190,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
 | **participant_id** | **str**| participantId |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**list[WrapupCode]**](WrapupCode.html)
+[**list[WrapupCode]**](WrapupCode)
 
-<a name="get_conversations_email_settings"></a>
 
-## [**EmailsSettings**](EmailsSettings.html) get_conversations_email_settings(conversation_id)
+## get_conversations_email_settings
 
+> [**EmailsSettings**](EmailsSettings) get_conversations_email_settings(conversation_id)
 
 
 Get emails settings for a given conversation
@@ -3290,16 +3237,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**EmailsSettings**](EmailsSettings.html)
+[**EmailsSettings**](EmailsSettings)
 
-<a name="get_conversations_emails"></a>
 
-## [**EmailConversationEntityListing**](EmailConversationEntityListing.html) get_conversations_emails()
+## get_conversations_emails
 
+> [**EmailConversationEntityListing**](EmailConversationEntityListing) get_conversations_emails()
 
 
 Get active email conversations for the logged in user
@@ -3335,15 +3281,14 @@ except ApiException as e:
 
 This endpoint does not need any parameters.
 
-
 ### Return type
 
-[**EmailConversationEntityListing**](EmailConversationEntityListing.html)
+[**EmailConversationEntityListing**](EmailConversationEntityListing)
 
-<a name="get_conversations_keyconfiguration"></a>
 
-## [**ConversationEncryptionConfiguration**](ConversationEncryptionConfiguration.html) get_conversations_keyconfiguration(keyconfigurations_id)
+## get_conversations_keyconfiguration
 
+> [**ConversationEncryptionConfiguration**](ConversationEncryptionConfiguration) get_conversations_keyconfiguration(keyconfigurations_id)
 
 
 Get the encryption key configurations
@@ -3383,16 +3328,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **keyconfigurations_id** | **str**| Key Configurations Id |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**ConversationEncryptionConfiguration**](ConversationEncryptionConfiguration.html)
+[**ConversationEncryptionConfiguration**](ConversationEncryptionConfiguration)
 
-<a name="get_conversations_keyconfigurations"></a>
 
-## [**ConversationEncryptionConfigurationListing**](ConversationEncryptionConfigurationListing.html) get_conversations_keyconfigurations()
+## get_conversations_keyconfigurations
 
+> [**ConversationEncryptionConfigurationListing**](ConversationEncryptionConfigurationListing) get_conversations_keyconfigurations()
 
 
 Get a list of key configurations data
@@ -3429,15 +3373,14 @@ except ApiException as e:
 
 This endpoint does not need any parameters.
 
-
 ### Return type
 
-[**ConversationEncryptionConfigurationListing**](ConversationEncryptionConfigurationListing.html)
+[**ConversationEncryptionConfigurationListing**](ConversationEncryptionConfigurationListing)
 
-<a name="get_conversations_message"></a>
 
-## [**MessageConversation**](MessageConversation.html) get_conversations_message(conversation_id)
+## get_conversations_message
 
+> [**MessageConversation**](MessageConversation) get_conversations_message(conversation_id)
 
 
 Get message conversation
@@ -3476,16 +3419,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**MessageConversation**](MessageConversation.html)
+[**MessageConversation**](MessageConversation)
 
-<a name="get_conversations_message_communication_messages_media_media_id"></a>
 
-## [**MessageMediaData**](MessageMediaData.html) get_conversations_message_communication_messages_media_media_id(conversation_id, communication_id, media_id)
+## get_conversations_message_communication_messages_media_media_id
 
+> [**MessageMediaData**](MessageMediaData) get_conversations_message_communication_messages_media_media_id(conversation_id, communication_id, media_id)
 
 
 Get media
@@ -3532,16 +3474,15 @@ except ApiException as e:
 | **conversation_id** | **str**| conversationId |  |
 | **communication_id** | **str**| communicationId |  |
 | **media_id** | **str**| mediaId |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**MessageMediaData**](MessageMediaData.html)
+[**MessageMediaData**](MessageMediaData)
 
-<a name="get_conversations_message_details"></a>
 
-## [**MessageData**](MessageData.html) get_conversations_message_details(message_id, use_normalized_message=use_normalized_message)
+## get_conversations_message_details
 
+> [**MessageData**](MessageData) get_conversations_message_details(message_id, use_normalized_message=use_normalized_message)
 
 
 Get message
@@ -3584,16 +3525,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **message_id** | **str**| messageId |  |
 | **use_normalized_message** | **bool**| If true, response removes deprecated fields (textBody, media, stickers) | [optional] [default to False] |
-{: class="table table-striped"}
 
 ### Return type
 
-[**MessageData**](MessageData.html)
+[**MessageData**](MessageData)
 
-<a name="get_conversations_message_message"></a>
 
-## [**MessageData**](MessageData.html) get_conversations_message_message(conversation_id, message_id, use_normalized_message=use_normalized_message)
+## get_conversations_message_message
 
+> [**MessageData**](MessageData) get_conversations_message_message(conversation_id, message_id, use_normalized_message=use_normalized_message)
 
 
 Get conversation message
@@ -3638,16 +3578,15 @@ except ApiException as e:
 | **conversation_id** | **str**| conversationId |  |
 | **message_id** | **str**| messageId |  |
 | **use_normalized_message** | **bool**| If true, response removes deprecated fields (textBody, media, stickers) | [optional] [default to False] |
-{: class="table table-striped"}
 
 ### Return type
 
-[**MessageData**](MessageData.html)
+[**MessageData**](MessageData)
 
-<a name="get_conversations_message_participant_communication_wrapup"></a>
 
-## [**AssignedWrapupCode**](AssignedWrapupCode.html) get_conversations_message_participant_communication_wrapup(conversation_id, participant_id, communication_id, provisional=provisional)
+## get_conversations_message_participant_communication_wrapup
 
+> [**AssignedWrapupCode**](AssignedWrapupCode) get_conversations_message_participant_communication_wrapup(conversation_id, participant_id, communication_id, provisional=provisional)
 
 
 Get the wrap-up for this conversation communication. 
@@ -3692,16 +3631,15 @@ except ApiException as e:
 | **participant_id** | **str**| participantId |  |
 | **communication_id** | **str**| communicationId |  |
 | **provisional** | **bool**| Indicates if the wrap-up code is provisional. | [optional] [default to False] |
-{: class="table table-striped"}
 
 ### Return type
 
-[**AssignedWrapupCode**](AssignedWrapupCode.html)
+[**AssignedWrapupCode**](AssignedWrapupCode)
 
-<a name="get_conversations_message_participant_wrapup"></a>
 
-## [**AssignedWrapupCode**](AssignedWrapupCode.html) get_conversations_message_participant_wrapup(conversation_id, participant_id, provisional=provisional)
+## get_conversations_message_participant_wrapup
 
+> [**AssignedWrapupCode**](AssignedWrapupCode) get_conversations_message_participant_wrapup(conversation_id, participant_id, provisional=provisional)
 
 
 Get the wrap-up for this conversation participant. 
@@ -3744,16 +3682,15 @@ except ApiException as e:
 | **conversation_id** | **str**| conversationId |  |
 | **participant_id** | **str**| participantId |  |
 | **provisional** | **bool**| Indicates if the wrap-up code is provisional. | [optional] [default to False] |
-{: class="table table-striped"}
 
 ### Return type
 
-[**AssignedWrapupCode**](AssignedWrapupCode.html)
+[**AssignedWrapupCode**](AssignedWrapupCode)
 
-<a name="get_conversations_message_participant_wrapupcodes"></a>
 
-## [**list[WrapupCode]**](WrapupCode.html) get_conversations_message_participant_wrapupcodes(conversation_id, participant_id)
+## get_conversations_message_participant_wrapupcodes
 
+> [**list[WrapupCode]**](WrapupCode) get_conversations_message_participant_wrapupcodes(conversation_id, participant_id)
 
 
 Get list of wrapup codes for this conversation participant
@@ -3794,16 +3731,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
 | **participant_id** | **str**| participantId |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**list[WrapupCode]**](WrapupCode.html)
+[**list[WrapupCode]**](WrapupCode)
 
-<a name="get_conversations_messages"></a>
 
-## [**MessageConversationEntityListing**](MessageConversationEntityListing.html) get_conversations_messages()
+## get_conversations_messages
 
+> [**MessageConversationEntityListing**](MessageConversationEntityListing) get_conversations_messages()
 
 
 Get active message conversations for the logged in user
@@ -3839,15 +3775,14 @@ except ApiException as e:
 
 This endpoint does not need any parameters.
 
-
 ### Return type
 
-[**MessageConversationEntityListing**](MessageConversationEntityListing.html)
+[**MessageConversationEntityListing**](MessageConversationEntityListing)
 
-<a name="get_conversations_messages_cachedmedia"></a>
 
-## [**CachedMediaItemEntityListing**](CachedMediaItemEntityListing.html) get_conversations_messages_cachedmedia(page_size=page_size, page_number=page_number, url=url)
+## get_conversations_messages_cachedmedia
 
+> [**CachedMediaItemEntityListing**](CachedMediaItemEntityListing) get_conversations_messages_cachedmedia(page_size=page_size, page_number=page_number, url=url)
 
 
 Get a list of cached media items
@@ -3891,16 +3826,15 @@ except ApiException as e:
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **url** | **str**| URL to search for | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**CachedMediaItemEntityListing**](CachedMediaItemEntityListing.html)
+[**CachedMediaItemEntityListing**](CachedMediaItemEntityListing)
 
-<a name="get_conversations_messages_cachedmedia_cached_media_item_id"></a>
 
-## [**CachedMediaItem**](CachedMediaItem.html) get_conversations_messages_cachedmedia_cached_media_item_id(cached_media_item_id)
+## get_conversations_messages_cachedmedia_cached_media_item_id
 
+> [**CachedMediaItem**](CachedMediaItem) get_conversations_messages_cachedmedia_cached_media_item_id(cached_media_item_id)
 
 
 Get a cached media item
@@ -3940,16 +3874,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **cached_media_item_id** | **str**| cachedMediaItemId |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**CachedMediaItem**](CachedMediaItem.html)
+[**CachedMediaItem**](CachedMediaItem)
 
-<a name="get_conversations_messaging_facebook_app"></a>
 
-## [**FacebookAppCredentials**](FacebookAppCredentials.html) get_conversations_messaging_facebook_app()
+## get_conversations_messaging_facebook_app
 
+> [**FacebookAppCredentials**](FacebookAppCredentials) get_conversations_messaging_facebook_app()
 
 
 Get Genesys Facebook App Id
@@ -3986,15 +3919,14 @@ except ApiException as e:
 
 This endpoint does not need any parameters.
 
-
 ### Return type
 
-[**FacebookAppCredentials**](FacebookAppCredentials.html)
+[**FacebookAppCredentials**](FacebookAppCredentials)
 
-<a name="get_conversations_messaging_facebook_permissions"></a>
 
-## [**FacebookPermissionEntityListing**](FacebookPermissionEntityListing.html) get_conversations_messaging_facebook_permissions()
+## get_conversations_messaging_facebook_permissions
 
+> [**FacebookPermissionEntityListing**](FacebookPermissionEntityListing) get_conversations_messaging_facebook_permissions()
 
 
 Get a list of Facebook Permissions
@@ -4033,15 +3965,14 @@ except ApiException as e:
 
 This endpoint does not need any parameters.
 
-
 ### Return type
 
-[**FacebookPermissionEntityListing**](FacebookPermissionEntityListing.html)
+[**FacebookPermissionEntityListing**](FacebookPermissionEntityListing)
 
-<a name="get_conversations_messaging_integrations"></a>
 
-## [**MessagingIntegrationEntityListing**](MessagingIntegrationEntityListing.html) get_conversations_messaging_integrations(page_size=page_size, page_number=page_number, expand=expand, supported_content_id=supported_content_id, messaging_setting_id=messaging_setting_id)
+## get_conversations_messaging_integrations
 
+> [**MessagingIntegrationEntityListing**](MessagingIntegrationEntityListing) get_conversations_messaging_integrations(page_size=page_size, page_number=page_number, expand=expand, supported_content_id=supported_content_id, messaging_setting_id=messaging_setting_id)
 
 
 Get a list of Integrations
@@ -4086,19 +4017,18 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
-| **expand** | [**list[str]**](str.html)| Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting |
+| **expand** | [**list[str]**](str)| Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting |
 | **supported_content_id** | **str**| Filter integrations returned based on the supported content ID | [optional]  |
 | **messaging_setting_id** | **str**| Filter integrations returned based on the setting ID | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**MessagingIntegrationEntityListing**](MessagingIntegrationEntityListing.html)
+[**MessagingIntegrationEntityListing**](MessagingIntegrationEntityListing)
 
-<a name="get_conversations_messaging_integrations_facebook"></a>
 
-## [**FacebookIntegrationEntityListing**](FacebookIntegrationEntityListing.html) get_conversations_messaging_integrations_facebook(page_size=page_size, page_number=page_number, expand=expand, supported_content_id=supported_content_id, messaging_setting_id=messaging_setting_id)
+## get_conversations_messaging_integrations_facebook
 
+> [**FacebookIntegrationEntityListing**](FacebookIntegrationEntityListing) get_conversations_messaging_integrations_facebook(page_size=page_size, page_number=page_number, expand=expand, supported_content_id=supported_content_id, messaging_setting_id=messaging_setting_id)
 
 
 Get a list of Facebook Integrations
@@ -4146,16 +4076,15 @@ except ApiException as e:
 | **expand** | **str**| Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting |
 | **supported_content_id** | **str**| Filter integrations returned based on the supported content ID | [optional]  |
 | **messaging_setting_id** | **str**| Filter integrations returned based on the setting ID | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**FacebookIntegrationEntityListing**](FacebookIntegrationEntityListing.html)
+[**FacebookIntegrationEntityListing**](FacebookIntegrationEntityListing)
 
-<a name="get_conversations_messaging_integrations_facebook_integration_id"></a>
 
-## [**FacebookIntegration**](FacebookIntegration.html) get_conversations_messaging_integrations_facebook_integration_id(integration_id, expand=expand)
+## get_conversations_messaging_integrations_facebook_integration_id
 
+> [**FacebookIntegration**](FacebookIntegration) get_conversations_messaging_integrations_facebook_integration_id(integration_id, expand=expand)
 
 
 Get a Facebook messaging integration
@@ -4197,16 +4126,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **integration_id** | **str**| Integration ID |  |
 | **expand** | **str**| Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting |
-{: class="table table-striped"}
 
 ### Return type
 
-[**FacebookIntegration**](FacebookIntegration.html)
+[**FacebookIntegration**](FacebookIntegration)
 
-<a name="get_conversations_messaging_integrations_instagram"></a>
 
-## [**InstagramIntegrationEntityListing**](InstagramIntegrationEntityListing.html) get_conversations_messaging_integrations_instagram(page_size=page_size, page_number=page_number, expand=expand, supported_content_id=supported_content_id, messaging_setting_id=messaging_setting_id)
+## get_conversations_messaging_integrations_instagram
 
+> [**InstagramIntegrationEntityListing**](InstagramIntegrationEntityListing) get_conversations_messaging_integrations_instagram(page_size=page_size, page_number=page_number, expand=expand, supported_content_id=supported_content_id, messaging_setting_id=messaging_setting_id)
 
 
 Get a list of Instagram Integrations
@@ -4254,16 +4182,15 @@ except ApiException as e:
 | **expand** | **str**| Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting |
 | **supported_content_id** | **str**| Filter integrations returned based on the supported content ID | [optional]  |
 | **messaging_setting_id** | **str**| Filter integrations returned based on the setting ID | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**InstagramIntegrationEntityListing**](InstagramIntegrationEntityListing.html)
+[**InstagramIntegrationEntityListing**](InstagramIntegrationEntityListing)
 
-<a name="get_conversations_messaging_integrations_instagram_integration_id"></a>
 
-## [**InstagramIntegration**](InstagramIntegration.html) get_conversations_messaging_integrations_instagram_integration_id(integration_id, expand=expand)
+## get_conversations_messaging_integrations_instagram_integration_id
 
+> [**InstagramIntegration**](InstagramIntegration) get_conversations_messaging_integrations_instagram_integration_id(integration_id, expand=expand)
 
 
 Get Instagram messaging integration
@@ -4305,16 +4232,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **integration_id** | **str**| Integration ID |  |
 | **expand** | **str**| Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting |
-{: class="table table-striped"}
 
 ### Return type
 
-[**InstagramIntegration**](InstagramIntegration.html)
+[**InstagramIntegration**](InstagramIntegration)
 
-<a name="get_conversations_messaging_integrations_open"></a>
 
-## [**OpenIntegrationEntityListing**](OpenIntegrationEntityListing.html) get_conversations_messaging_integrations_open(page_size=page_size, page_number=page_number, expand=expand, supported_content_id=supported_content_id, messaging_setting_id=messaging_setting_id)
+## get_conversations_messaging_integrations_open
 
+> [**OpenIntegrationEntityListing**](OpenIntegrationEntityListing) get_conversations_messaging_integrations_open(page_size=page_size, page_number=page_number, expand=expand, supported_content_id=supported_content_id, messaging_setting_id=messaging_setting_id)
 
 
 Get a list of Open messaging integrations
@@ -4364,16 +4290,15 @@ except ApiException as e:
 | **expand** | **str**| Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting |
 | **supported_content_id** | **str**| Filter integrations returned based on the supported content ID | [optional]  |
 | **messaging_setting_id** | **str**| Filter integrations returned based on the setting ID | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**OpenIntegrationEntityListing**](OpenIntegrationEntityListing.html)
+[**OpenIntegrationEntityListing**](OpenIntegrationEntityListing)
 
-<a name="get_conversations_messaging_integrations_open_integration_id"></a>
 
-## [**OpenIntegration**](OpenIntegration.html) get_conversations_messaging_integrations_open_integration_id(integration_id, expand=expand)
+## get_conversations_messaging_integrations_open_integration_id
 
+> [**OpenIntegration**](OpenIntegration) get_conversations_messaging_integrations_open_integration_id(integration_id, expand=expand)
 
 
 Get an Open messaging integration
@@ -4417,16 +4342,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **integration_id** | **str**| Integration ID |  |
 | **expand** | **str**| Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting |
-{: class="table table-striped"}
 
 ### Return type
 
-[**OpenIntegration**](OpenIntegration.html)
+[**OpenIntegration**](OpenIntegration)
 
-<a name="get_conversations_messaging_integrations_whatsapp"></a>
 
-## [**WhatsAppIntegrationEntityListing**](WhatsAppIntegrationEntityListing.html) get_conversations_messaging_integrations_whatsapp(page_size=page_size, page_number=page_number, expand=expand, supported_content_id=supported_content_id, messaging_setting_id=messaging_setting_id)
+## get_conversations_messaging_integrations_whatsapp
 
+> [**WhatsAppIntegrationEntityListing**](WhatsAppIntegrationEntityListing) get_conversations_messaging_integrations_whatsapp(page_size=page_size, page_number=page_number, expand=expand, supported_content_id=supported_content_id, messaging_setting_id=messaging_setting_id)
 
 
 Get a list of WhatsApp Integrations
@@ -4474,16 +4398,15 @@ except ApiException as e:
 | **expand** | **str**| Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting |
 | **supported_content_id** | **str**| Filter integrations returned based on the supported content ID | [optional]  |
 | **messaging_setting_id** | **str**| Filter integrations returned based on the setting ID | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**WhatsAppIntegrationEntityListing**](WhatsAppIntegrationEntityListing.html)
+[**WhatsAppIntegrationEntityListing**](WhatsAppIntegrationEntityListing)
 
-<a name="get_conversations_messaging_integrations_whatsapp_integration_id"></a>
 
-## [**WhatsAppIntegration**](WhatsAppIntegration.html) get_conversations_messaging_integrations_whatsapp_integration_id(integration_id, expand=expand)
+## get_conversations_messaging_integrations_whatsapp_integration_id
 
+> [**WhatsAppIntegration**](WhatsAppIntegration) get_conversations_messaging_integrations_whatsapp_integration_id(integration_id, expand=expand)
 
 
 Get a WhatsApp messaging integration
@@ -4525,16 +4448,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **integration_id** | **str**| Integration ID |  |
 | **expand** | **str**| Expand instructions for the return value. | [optional] <br />**Values**: supportedContent, messagingSetting |
-{: class="table table-striped"}
 
 ### Return type
 
-[**WhatsAppIntegration**](WhatsAppIntegration.html)
+[**WhatsAppIntegration**](WhatsAppIntegration)
 
-<a name="get_conversations_messaging_setting"></a>
 
-## [**MessagingSetting**](MessagingSetting.html) get_conversations_messaging_setting(message_setting_id)
+## get_conversations_messaging_setting
 
+> [**MessagingSetting**](MessagingSetting) get_conversations_messaging_setting(message_setting_id)
 
 
 Get a messaging setting
@@ -4574,16 +4496,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **message_setting_id** | **str**| Message Setting ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**MessagingSetting**](MessagingSetting.html)
+[**MessagingSetting**](MessagingSetting)
 
-<a name="get_conversations_messaging_settings"></a>
 
-## [**MessagingConfigListing**](MessagingConfigListing.html) get_conversations_messaging_settings(page_size=page_size, page_number=page_number)
+## get_conversations_messaging_settings
 
+> [**MessagingConfigListing**](MessagingConfigListing) get_conversations_messaging_settings(page_size=page_size, page_number=page_number)
 
 
 Get a list of messaging settings
@@ -4625,16 +4546,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
-{: class="table table-striped"}
 
 ### Return type
 
-[**MessagingConfigListing**](MessagingConfigListing.html)
+[**MessagingConfigListing**](MessagingConfigListing)
 
-<a name="get_conversations_messaging_settings_default"></a>
 
-## [**MessagingSetting**](MessagingSetting.html) get_conversations_messaging_settings_default()
+## get_conversations_messaging_settings_default
 
+> [**MessagingSetting**](MessagingSetting) get_conversations_messaging_settings_default()
 
 
 Get the organization's default settings that will be used as the default when creating an integration.
@@ -4673,15 +4593,14 @@ except ApiException as e:
 
 This endpoint does not need any parameters.
 
-
 ### Return type
 
-[**MessagingSetting**](MessagingSetting.html)
+[**MessagingSetting**](MessagingSetting)
 
-<a name="get_conversations_messaging_supportedcontent"></a>
 
-## [**SupportedContentListing**](SupportedContentListing.html) get_conversations_messaging_supportedcontent(page_size=page_size, page_number=page_number)
+## get_conversations_messaging_supportedcontent
 
+> [**SupportedContentListing**](SupportedContentListing) get_conversations_messaging_supportedcontent(page_size=page_size, page_number=page_number)
 
 
 Get a list of Supported Content profiles
@@ -4723,16 +4642,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
-{: class="table table-striped"}
 
 ### Return type
 
-[**SupportedContentListing**](SupportedContentListing.html)
+[**SupportedContentListing**](SupportedContentListing)
 
-<a name="get_conversations_messaging_supportedcontent_default"></a>
 
-## [**SupportedContent**](SupportedContent.html) get_conversations_messaging_supportedcontent_default()
+## get_conversations_messaging_supportedcontent_default
 
+> [**SupportedContent**](SupportedContent) get_conversations_messaging_supportedcontent_default()
 
 
 Get the organization's default supported content profile that will be used as the default when creating an integration.
@@ -4771,15 +4689,14 @@ except ApiException as e:
 
 This endpoint does not need any parameters.
 
-
 ### Return type
 
-[**SupportedContent**](SupportedContent.html)
+[**SupportedContent**](SupportedContent)
 
-<a name="get_conversations_messaging_supportedcontent_supported_content_id"></a>
 
-## [**SupportedContent**](SupportedContent.html) get_conversations_messaging_supportedcontent_supported_content_id(supported_content_id)
+## get_conversations_messaging_supportedcontent_supported_content_id
 
+> [**SupportedContent**](SupportedContent) get_conversations_messaging_supportedcontent_supported_content_id(supported_content_id)
 
 
 Get a supported content profile
@@ -4819,16 +4736,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **supported_content_id** | **str**| Supported Content ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**SupportedContent**](SupportedContent.html)
+[**SupportedContent**](SupportedContent)
 
-<a name="get_conversations_messaging_threadingtimeline"></a>
 
-## [**ConversationThreadingWindow**](ConversationThreadingWindow.html) get_conversations_messaging_threadingtimeline()
+## get_conversations_messaging_threadingtimeline
 
+> [**ConversationThreadingWindow**](ConversationThreadingWindow) get_conversations_messaging_threadingtimeline()
 
 
 Get conversation threading window timeline for each messaging type
@@ -4867,16 +4783,18 @@ except ApiException as e:
 
 This endpoint does not need any parameters.
 
-
 ### Return type
 
-[**ConversationThreadingWindow**](ConversationThreadingWindow.html)
+[**ConversationThreadingWindow**](ConversationThreadingWindow)
 
-<a name="get_conversations_screenshare_participant_communication_wrapup"></a>
 
-## [**AssignedWrapupCode**](AssignedWrapupCode.html) get_conversations_screenshare_participant_communication_wrapup(conversation_id, participant_id, communication_id, provisional=provisional)
+## get_conversations_screenshare_participant_communication_wrapup
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+> [**AssignedWrapupCode**](AssignedWrapupCode) get_conversations_screenshare_participant_communication_wrapup(conversation_id, participant_id, communication_id, provisional=provisional)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 Get the wrap-up for this conversation communication. 
 
@@ -4922,16 +4840,15 @@ except ApiException as e:
 | **participant_id** | **str**| participantId |  |
 | **communication_id** | **str**| communicationId |  |
 | **provisional** | **bool**| Indicates if the wrap-up code is provisional. | [optional] [default to False] |
-{: class="table table-striped"}
 
 ### Return type
 
-[**AssignedWrapupCode**](AssignedWrapupCode.html)
+[**AssignedWrapupCode**](AssignedWrapupCode)
 
-<a name="get_conversations_settings"></a>
 
-## [**Settings**](Settings.html) get_conversations_settings()
+## get_conversations_settings
 
+> [**Settings**](Settings) get_conversations_settings()
 
 
 Get Settings
@@ -4968,15 +4885,14 @@ except ApiException as e:
 
 This endpoint does not need any parameters.
 
-
 ### Return type
 
-[**Settings**](Settings.html)
+[**Settings**](Settings)
 
-<a name="get_conversations_social_participant_communication_wrapup"></a>
 
-## [**AssignedWrapupCode**](AssignedWrapupCode.html) get_conversations_social_participant_communication_wrapup(conversation_id, participant_id, communication_id, provisional=provisional)
+## get_conversations_social_participant_communication_wrapup
 
+> [**AssignedWrapupCode**](AssignedWrapupCode) get_conversations_social_participant_communication_wrapup(conversation_id, participant_id, communication_id, provisional=provisional)
 
 
 Get the wrap-up for this conversation communication. 
@@ -5021,16 +4937,15 @@ except ApiException as e:
 | **participant_id** | **str**| participantId |  |
 | **communication_id** | **str**| communicationId |  |
 | **provisional** | **bool**| Indicates if the wrap-up code is provisional. | [optional] [default to False] |
-{: class="table table-striped"}
 
 ### Return type
 
-[**AssignedWrapupCode**](AssignedWrapupCode.html)
+[**AssignedWrapupCode**](AssignedWrapupCode)
 
-<a name="get_conversations_video_details"></a>
 
-## [**VideoConferenceDetails**](VideoConferenceDetails.html) get_conversations_video_details(conference_id)
+## get_conversations_video_details
 
+> [**VideoConferenceDetails**](VideoConferenceDetails) get_conversations_video_details(conference_id)
 
 
 Get video conference details (e.g. the current number of active participants).
@@ -5072,16 +4987,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **conference_id** | **str**| conferenceId |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**VideoConferenceDetails**](VideoConferenceDetails.html)
+[**VideoConferenceDetails**](VideoConferenceDetails)
 
-<a name="get_conversations_video_participant_communication_wrapup"></a>
 
-## [**AssignedWrapupCode**](AssignedWrapupCode.html) get_conversations_video_participant_communication_wrapup(conversation_id, participant_id, communication_id, provisional=provisional)
+## get_conversations_video_participant_communication_wrapup
 
+> [**AssignedWrapupCode**](AssignedWrapupCode) get_conversations_video_participant_communication_wrapup(conversation_id, participant_id, communication_id, provisional=provisional)
 
 
 Get the wrap-up for this conversation communication. 
@@ -5126,16 +5040,15 @@ except ApiException as e:
 | **participant_id** | **str**| participantId |  |
 | **communication_id** | **str**| communicationId |  |
 | **provisional** | **bool**| Indicates if the wrap-up code is provisional. | [optional] [default to False] |
-{: class="table table-striped"}
 
 ### Return type
 
-[**AssignedWrapupCode**](AssignedWrapupCode.html)
+[**AssignedWrapupCode**](AssignedWrapupCode)
 
-<a name="get_conversations_videos_meeting"></a>
 
-## [**MeetingIdRecord**](MeetingIdRecord.html) get_conversations_videos_meeting(meeting_id)
+## get_conversations_videos_meeting
 
+> [**MeetingIdRecord**](MeetingIdRecord) get_conversations_videos_meeting(meeting_id)
 
 
 Gets a record for a given meetingId
@@ -5177,16 +5090,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **meeting_id** | **str**| meetingId |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**MeetingIdRecord**](MeetingIdRecord.html)
+[**MeetingIdRecord**](MeetingIdRecord)
 
-<a name="patch_conversation_participant"></a>
 
-##  patch_conversation_participant(conversation_id, participant_id, body)
+## patch_conversation_participant
 
+>  patch_conversation_participant(conversation_id, participant_id, body)
 
 
 Update a participant.
@@ -5230,17 +5142,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversation ID |  |
 | **participant_id** | **str**| participant ID |  |
-| **body** | [**MediaParticipantRequest**](MediaParticipantRequest.html)| Update request |  |
-{: class="table table-striped"}
+| **body** | [**MediaParticipantRequest**](MediaParticipantRequest)| Update request |  |
 
 ### Return type
 
 void (empty response body)
 
-<a name="patch_conversation_participant_attributes"></a>
 
-##  patch_conversation_participant_attributes(conversation_id, participant_id, body)
+## patch_conversation_participant_attributes
 
+>  patch_conversation_participant_attributes(conversation_id, participant_id, body)
 
 
 Update the attributes on a conversation participant.
@@ -5281,17 +5192,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversation ID |  |
 | **participant_id** | **str**| participant ID |  |
-| **body** | [**ParticipantAttributes**](ParticipantAttributes.html)| Participant attributes |  |
-{: class="table table-striped"}
+| **body** | [**ParticipantAttributes**](ParticipantAttributes)| Participant attributes |  |
 
 ### Return type
 
 void (empty response body)
 
-<a name="patch_conversation_secureattributes"></a>
 
-## str** patch_conversation_secureattributes(conversation_id, body)
+## patch_conversation_secureattributes
 
+> str** patch_conversation_secureattributes(conversation_id, body)
 
 
 Update the secure attributes on a conversation.
@@ -5332,22 +5242,19 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversation ID |  |
-| **body** | [**ConversationSecureAttributes**](ConversationSecureAttributes.html)| Conversation Secure Attributes |  |
-{: class="table table-striped"}
+| **body** | [**ConversationSecureAttributes**](ConversationSecureAttributes)| Conversation Secure Attributes |  |
 
 ### Return type
 
 **str**
 
-<a name="patch_conversation_utilizationlabel"></a>
 
-## str** patch_conversation_utilizationlabel(conversation_id, body)
+## patch_conversation_utilizationlabel
 
+> str** patch_conversation_utilizationlabel(conversation_id, body)
 
 
 Update the utilization label on a conversation. When there is no value provided, the system default label is applied
-
-patch_conversation_utilizationlabel is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
 Wraps PATCH /api/v2/conversations/{conversationId}/utilizationlabel 
 
@@ -5385,17 +5292,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversation ID |  |
-| **body** | [**ConversationUtilizationLabelUpdate**](ConversationUtilizationLabelUpdate.html)| Conversation Utilization Label |  |
-{: class="table table-striped"}
+| **body** | [**ConversationUtilizationLabelUpdate**](ConversationUtilizationLabelUpdate)| Conversation Utilization Label |  |
 
 ### Return type
 
 **str**
 
-<a name="patch_conversations_aftercallwork_conversation_id_participant_communication"></a>
 
-## [**AfterCallWorkUpdate**](AfterCallWorkUpdate.html) patch_conversations_aftercallwork_conversation_id_participant_communication(conversation_id, participant_id, communication_id, body)
+## patch_conversations_aftercallwork_conversation_id_participant_communication
 
+> [**AfterCallWorkUpdate**](AfterCallWorkUpdate) patch_conversations_aftercallwork_conversation_id_participant_communication(conversation_id, participant_id, communication_id, body)
 
 
 Update after-call work for this conversation communication.
@@ -5440,17 +5346,16 @@ except ApiException as e:
 | **conversation_id** | **str**| conversationId |  |
 | **participant_id** | **str**| participantId |  |
 | **communication_id** | **str**| communicationId |  |
-| **body** | [**AfterCallWorkUpdate**](AfterCallWorkUpdate.html)| AfterCallWorkUpdate |  |
-{: class="table table-striped"}
+| **body** | [**AfterCallWorkUpdate**](AfterCallWorkUpdate)| AfterCallWorkUpdate |  |
 
 ### Return type
 
-[**AfterCallWorkUpdate**](AfterCallWorkUpdate.html)
+[**AfterCallWorkUpdate**](AfterCallWorkUpdate)
 
-<a name="patch_conversations_call"></a>
 
-## [**Conversation**](Conversation.html) patch_conversations_call(conversation_id, body)
+## patch_conversations_call
 
+> [**Conversation**](Conversation) patch_conversations_call(conversation_id, body)
 
 
 Update a conversation by setting its recording state, merging in other conversations to create a conference, or disconnecting all of the participants
@@ -5491,17 +5396,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
-| **body** | [**Conversation**](Conversation.html)| Conversation |  |
-{: class="table table-striped"}
+| **body** | [**Conversation**](Conversation)| Conversation |  |
 
 ### Return type
 
-[**Conversation**](Conversation.html)
+[**Conversation**](Conversation)
 
-<a name="patch_conversations_call_participant"></a>
 
-##  patch_conversations_call_participant(conversation_id, participant_id, body)
+## patch_conversations_call_participant
 
+>  patch_conversations_call_participant(conversation_id, participant_id, body)
 
 
 Update conversation participant
@@ -5543,17 +5447,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
 | **participant_id** | **str**| participantId |  |
-| **body** | [**MediaParticipantRequest**](MediaParticipantRequest.html)| Participant request |  |
-{: class="table table-striped"}
+| **body** | [**MediaParticipantRequest**](MediaParticipantRequest)| Participant request |  |
 
 ### Return type
 
 void (empty response body)
 
-<a name="patch_conversations_call_participant_attributes"></a>
 
-## [**ParticipantAttributes**](ParticipantAttributes.html) patch_conversations_call_participant_attributes(conversation_id, participant_id, body)
+## patch_conversations_call_participant_attributes
 
+> [**ParticipantAttributes**](ParticipantAttributes) patch_conversations_call_participant_attributes(conversation_id, participant_id, body)
 
 
 Update the attributes on a conversation participant.
@@ -5595,17 +5498,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
 | **participant_id** | **str**| participantId |  |
-| **body** | [**ParticipantAttributes**](ParticipantAttributes.html)| Participant attributes |  |
-{: class="table table-striped"}
+| **body** | [**ParticipantAttributes**](ParticipantAttributes)| Participant attributes |  |
 
 ### Return type
 
-[**ParticipantAttributes**](ParticipantAttributes.html)
+[**ParticipantAttributes**](ParticipantAttributes)
 
-<a name="patch_conversations_call_participant_communication"></a>
 
-## object** patch_conversations_call_participant_communication(conversation_id, participant_id, communication_id, body)
+## patch_conversations_call_participant_communication
 
+> object** patch_conversations_call_participant_communication(conversation_id, participant_id, communication_id, body)
 
 
 Update conversation participant's communication by disconnecting it.
@@ -5649,17 +5551,16 @@ except ApiException as e:
 | **conversation_id** | **str**| conversationId |  |
 | **participant_id** | **str**| participantId |  |
 | **communication_id** | **str**| communicationId |  |
-| **body** | [**MediaParticipantRequest**](MediaParticipantRequest.html)| Participant |  |
-{: class="table table-striped"}
+| **body** | [**MediaParticipantRequest**](MediaParticipantRequest)| Participant |  |
 
 ### Return type
 
 **object**
 
-<a name="patch_conversations_call_participant_consult"></a>
 
-## [**ConsultTransferResponse**](ConsultTransferResponse.html) patch_conversations_call_participant_consult(conversation_id, participant_id, body)
+## patch_conversations_call_participant_consult
 
+> [**ConsultTransferResponse**](ConsultTransferResponse) patch_conversations_call_participant_consult(conversation_id, participant_id, body)
 
 
 Change who can speak
@@ -5701,17 +5602,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
 | **participant_id** | **str**| participantId |  |
-| **body** | [**ConsultTransferUpdate**](ConsultTransferUpdate.html)| new speak to |  |
-{: class="table table-striped"}
+| **body** | [**ConsultTransferUpdate**](ConsultTransferUpdate)| new speak to |  |
 
 ### Return type
 
-[**ConsultTransferResponse**](ConsultTransferResponse.html)
+[**ConsultTransferResponse**](ConsultTransferResponse)
 
-<a name="patch_conversations_callback"></a>
 
-## [**Conversation**](Conversation.html) patch_conversations_callback(conversation_id, body)
+## patch_conversations_callback
 
+> [**Conversation**](Conversation) patch_conversations_callback(conversation_id, body)
 
 
 Update a conversation by disconnecting all of the participants
@@ -5752,17 +5652,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
-| **body** | [**Conversation**](Conversation.html)| Conversation |  |
-{: class="table table-striped"}
+| **body** | [**Conversation**](Conversation)| Conversation |  |
 
 ### Return type
 
-[**Conversation**](Conversation.html)
+[**Conversation**](Conversation)
 
-<a name="patch_conversations_callback_participant"></a>
 
-##  patch_conversations_callback_participant(conversation_id, participant_id, body)
+## patch_conversations_callback_participant
 
+>  patch_conversations_callback_participant(conversation_id, participant_id, body)
 
 
 Update conversation participant
@@ -5804,17 +5703,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
 | **participant_id** | **str**| participantId |  |
-| **body** | [**MediaParticipantRequest**](MediaParticipantRequest.html)| Participant |  |
-{: class="table table-striped"}
+| **body** | [**MediaParticipantRequest**](MediaParticipantRequest)| Participant |  |
 
 ### Return type
 
 void (empty response body)
 
-<a name="patch_conversations_callback_participant_attributes"></a>
 
-## [**ParticipantAttributes**](ParticipantAttributes.html) patch_conversations_callback_participant_attributes(conversation_id, participant_id, body)
+## patch_conversations_callback_participant_attributes
 
+> [**ParticipantAttributes**](ParticipantAttributes) patch_conversations_callback_participant_attributes(conversation_id, participant_id, body)
 
 
 Update the attributes on a conversation participant.
@@ -5856,17 +5754,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
 | **participant_id** | **str**| participantId |  |
-| **body** | [**ParticipantAttributes**](ParticipantAttributes.html)| Attributes |  |
-{: class="table table-striped"}
+| **body** | [**ParticipantAttributes**](ParticipantAttributes)| Attributes |  |
 
 ### Return type
 
-[**ParticipantAttributes**](ParticipantAttributes.html)
+[**ParticipantAttributes**](ParticipantAttributes)
 
-<a name="patch_conversations_callback_participant_communication"></a>
 
-## object** patch_conversations_callback_participant_communication(conversation_id, participant_id, communication_id, body)
+## patch_conversations_callback_participant_communication
 
+> object** patch_conversations_callback_participant_communication(conversation_id, participant_id, communication_id, body)
 
 
 Update conversation participant's communication by disconnecting it.
@@ -5910,17 +5807,16 @@ except ApiException as e:
 | **conversation_id** | **str**| conversationId |  |
 | **participant_id** | **str**| participantId |  |
 | **communication_id** | **str**| communicationId |  |
-| **body** | [**MediaParticipantRequest**](MediaParticipantRequest.html)| Participant |  |
-{: class="table table-striped"}
+| **body** | [**MediaParticipantRequest**](MediaParticipantRequest)| Participant |  |
 
 ### Return type
 
 **object**
 
-<a name="patch_conversations_callbacks"></a>
 
-## [**PatchCallbackResponse**](PatchCallbackResponse.html) patch_conversations_callbacks(body)
+## patch_conversations_callbacks
 
+> [**PatchCallbackResponse**](PatchCallbackResponse) patch_conversations_callbacks(body)
 
 
 Update a scheduled callback
@@ -5959,17 +5855,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**PatchCallbackRequest**](PatchCallbackRequest.html)| PatchCallbackRequest |  |
-{: class="table table-striped"}
+| **body** | [**PatchCallbackRequest**](PatchCallbackRequest)| PatchCallbackRequest |  |
 
 ### Return type
 
-[**PatchCallbackResponse**](PatchCallbackResponse.html)
+[**PatchCallbackResponse**](PatchCallbackResponse)
 
-<a name="patch_conversations_chat"></a>
 
-## [**Conversation**](Conversation.html) patch_conversations_chat(conversation_id, body)
+## patch_conversations_chat
 
+> [**Conversation**](Conversation) patch_conversations_chat(conversation_id, body)
 
 
 Update a conversation by disconnecting all of the participants
@@ -6010,17 +5905,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
-| **body** | [**Conversation**](Conversation.html)| Conversation |  |
-{: class="table table-striped"}
+| **body** | [**Conversation**](Conversation)| Conversation |  |
 
 ### Return type
 
-[**Conversation**](Conversation.html)
+[**Conversation**](Conversation)
 
-<a name="patch_conversations_chat_participant"></a>
 
-##  patch_conversations_chat_participant(conversation_id, participant_id, body)
+## patch_conversations_chat_participant
 
+>  patch_conversations_chat_participant(conversation_id, participant_id, body)
 
 
 Update conversation participant
@@ -6062,17 +5956,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
 | **participant_id** | **str**| participantId |  |
-| **body** | [**MediaParticipantRequest**](MediaParticipantRequest.html)| Update request |  |
-{: class="table table-striped"}
+| **body** | [**MediaParticipantRequest**](MediaParticipantRequest)| Update request |  |
 
 ### Return type
 
 void (empty response body)
 
-<a name="patch_conversations_chat_participant_attributes"></a>
 
-## [**ParticipantAttributes**](ParticipantAttributes.html) patch_conversations_chat_participant_attributes(conversation_id, participant_id, body)
+## patch_conversations_chat_participant_attributes
 
+> [**ParticipantAttributes**](ParticipantAttributes) patch_conversations_chat_participant_attributes(conversation_id, participant_id, body)
 
 
 Update the attributes on a conversation participant.
@@ -6114,17 +6007,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
 | **participant_id** | **str**| participantId |  |
-| **body** | [**ParticipantAttributes**](ParticipantAttributes.html)| Participant attributes |  |
-{: class="table table-striped"}
+| **body** | [**ParticipantAttributes**](ParticipantAttributes)| Participant attributes |  |
 
 ### Return type
 
-[**ParticipantAttributes**](ParticipantAttributes.html)
+[**ParticipantAttributes**](ParticipantAttributes)
 
-<a name="patch_conversations_chat_participant_communication"></a>
 
-## object** patch_conversations_chat_participant_communication(conversation_id, participant_id, communication_id, body)
+## patch_conversations_chat_participant_communication
 
+> object** patch_conversations_chat_participant_communication(conversation_id, participant_id, communication_id, body)
 
 
 Update conversation participant's communication by disconnecting it.
@@ -6168,18 +6060,20 @@ except ApiException as e:
 | **conversation_id** | **str**| conversationId |  |
 | **participant_id** | **str**| participantId |  |
 | **communication_id** | **str**| communicationId |  |
-| **body** | [**MediaParticipantRequest**](MediaParticipantRequest.html)| Participant |  |
-{: class="table table-striped"}
+| **body** | [**MediaParticipantRequest**](MediaParticipantRequest)| Participant |  |
 
 ### Return type
 
 **object**
 
-<a name="patch_conversations_cobrowsesession"></a>
 
-## [**Conversation**](Conversation.html) patch_conversations_cobrowsesession(conversation_id, body)
+## patch_conversations_cobrowsesession
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+> [**Conversation**](Conversation) patch_conversations_cobrowsesession(conversation_id, body)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 Update a conversation by disconnecting all of the participants
 
@@ -6221,18 +6115,20 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
-| **body** | [**Conversation**](Conversation.html)| Conversation |  |
-{: class="table table-striped"}
+| **body** | [**Conversation**](Conversation)| Conversation |  |
 
 ### Return type
 
-[**Conversation**](Conversation.html)
+[**Conversation**](Conversation)
 
-<a name="patch_conversations_cobrowsesession_participant"></a>
 
-##  patch_conversations_cobrowsesession_participant(conversation_id, participant_id, body=body)
+## patch_conversations_cobrowsesession_participant
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+>  patch_conversations_cobrowsesession_participant(conversation_id, participant_id, body=body)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 Update conversation participant
 
@@ -6275,18 +6171,20 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
 | **participant_id** | **str**| participantId |  |
-| **body** | [**MediaParticipantRequest**](MediaParticipantRequest.html)|  | [optional]  |
-{: class="table table-striped"}
+| **body** | [**MediaParticipantRequest**](MediaParticipantRequest)|  | [optional]  |
 
 ### Return type
 
 void (empty response body)
 
-<a name="patch_conversations_cobrowsesession_participant_attributes"></a>
 
-## [**ParticipantAttributes**](ParticipantAttributes.html) patch_conversations_cobrowsesession_participant_attributes(conversation_id, participant_id, body=body)
+## patch_conversations_cobrowsesession_participant_attributes
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+> [**ParticipantAttributes**](ParticipantAttributes) patch_conversations_cobrowsesession_participant_attributes(conversation_id, participant_id, body=body)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 Update the attributes on a conversation participant.
 
@@ -6329,18 +6227,20 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
 | **participant_id** | **str**| participantId |  |
-| **body** | [**ParticipantAttributes**](ParticipantAttributes.html)|  | [optional]  |
-{: class="table table-striped"}
+| **body** | [**ParticipantAttributes**](ParticipantAttributes)|  | [optional]  |
 
 ### Return type
 
-[**ParticipantAttributes**](ParticipantAttributes.html)
+[**ParticipantAttributes**](ParticipantAttributes)
 
-<a name="patch_conversations_cobrowsesession_participant_communication"></a>
 
-## object** patch_conversations_cobrowsesession_participant_communication(conversation_id, participant_id, communication_id, body)
+## patch_conversations_cobrowsesession_participant_communication
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+> object** patch_conversations_cobrowsesession_participant_communication(conversation_id, participant_id, communication_id, body)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 Update conversation participant's communication by disconnecting it.
 
@@ -6385,17 +6285,16 @@ except ApiException as e:
 | **conversation_id** | **str**| conversationId |  |
 | **participant_id** | **str**| participantId |  |
 | **communication_id** | **str**| communicationId |  |
-| **body** | [**MediaParticipantRequest**](MediaParticipantRequest.html)| Participant |  |
-{: class="table table-striped"}
+| **body** | [**MediaParticipantRequest**](MediaParticipantRequest)| Participant |  |
 
 ### Return type
 
 **object**
 
-<a name="patch_conversations_email"></a>
 
-## [**Conversation**](Conversation.html) patch_conversations_email(conversation_id, body)
+## patch_conversations_email
 
+> [**Conversation**](Conversation) patch_conversations_email(conversation_id, body)
 
 
 Update a conversation by disconnecting all of the participants
@@ -6436,17 +6335,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
-| **body** | [**Conversation**](Conversation.html)| Conversation |  |
-{: class="table table-striped"}
+| **body** | [**Conversation**](Conversation)| Conversation |  |
 
 ### Return type
 
-[**Conversation**](Conversation.html)
+[**Conversation**](Conversation)
 
-<a name="patch_conversations_email_messages_draft"></a>
 
-## [**EmailMessage**](EmailMessage.html) patch_conversations_email_messages_draft(conversation_id, auto_fill=auto_fill, discard=discard, body=body)
+## patch_conversations_email_messages_draft
 
+> [**EmailMessage**](EmailMessage) patch_conversations_email_messages_draft(conversation_id, auto_fill=auto_fill, discard=discard, body=body)
 
 
 Reset conversation draft to its initial state and/or auto-fill draft content
@@ -6490,17 +6388,16 @@ except ApiException as e:
 | **conversation_id** | **str**| conversationId |  |
 | **auto_fill** | **bool**| autoFill | [optional]  |
 | **discard** | **bool**| discard | [optional]  |
-| **body** | [**DraftManipulationRequest**](DraftManipulationRequest.html)| Draft Manipulation Request | [optional]  |
-{: class="table table-striped"}
+| **body** | [**DraftManipulationRequest**](DraftManipulationRequest)| Draft Manipulation Request | [optional]  |
 
 ### Return type
 
-[**EmailMessage**](EmailMessage.html)
+[**EmailMessage**](EmailMessage)
 
-<a name="patch_conversations_email_participant"></a>
 
-##  patch_conversations_email_participant(conversation_id, participant_id, body)
+## patch_conversations_email_participant
 
+>  patch_conversations_email_participant(conversation_id, participant_id, body)
 
 
 Update conversation participant
@@ -6542,17 +6439,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
 | **participant_id** | **str**| participantId |  |
-| **body** | [**MediaParticipantRequest**](MediaParticipantRequest.html)| Update request |  |
-{: class="table table-striped"}
+| **body** | [**MediaParticipantRequest**](MediaParticipantRequest)| Update request |  |
 
 ### Return type
 
 void (empty response body)
 
-<a name="patch_conversations_email_participant_attributes"></a>
 
-## [**ParticipantAttributes**](ParticipantAttributes.html) patch_conversations_email_participant_attributes(conversation_id, participant_id, body)
+## patch_conversations_email_participant_attributes
 
+> [**ParticipantAttributes**](ParticipantAttributes) patch_conversations_email_participant_attributes(conversation_id, participant_id, body)
 
 
 Update the attributes on a conversation participant.
@@ -6594,17 +6490,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
 | **participant_id** | **str**| participantId |  |
-| **body** | [**ParticipantAttributes**](ParticipantAttributes.html)| Participant attributes |  |
-{: class="table table-striped"}
+| **body** | [**ParticipantAttributes**](ParticipantAttributes)| Participant attributes |  |
 
 ### Return type
 
-[**ParticipantAttributes**](ParticipantAttributes.html)
+[**ParticipantAttributes**](ParticipantAttributes)
 
-<a name="patch_conversations_email_participant_communication"></a>
 
-## object** patch_conversations_email_participant_communication(conversation_id, participant_id, communication_id, body)
+## patch_conversations_email_participant_communication
 
+> object** patch_conversations_email_participant_communication(conversation_id, participant_id, communication_id, body)
 
 
 Update conversation participant's communication by disconnecting it.
@@ -6648,17 +6543,16 @@ except ApiException as e:
 | **conversation_id** | **str**| conversationId |  |
 | **participant_id** | **str**| participantId |  |
 | **communication_id** | **str**| communicationId |  |
-| **body** | [**MediaParticipantRequest**](MediaParticipantRequest.html)| Participant |  |
-{: class="table table-striped"}
+| **body** | [**MediaParticipantRequest**](MediaParticipantRequest)| Participant |  |
 
 ### Return type
 
 **object**
 
-<a name="patch_conversations_email_participant_parkingstate"></a>
 
-##  patch_conversations_email_participant_parkingstate(conversation_id, participant_id, body)
+## patch_conversations_email_participant_parkingstate
 
+>  patch_conversations_email_participant_parkingstate(conversation_id, participant_id, body)
 
 
 Update conversation by setting its parking state
@@ -6702,17 +6596,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
 | **participant_id** | **str**| participantId |  |
-| **body** | [**ParkingStateRequest**](ParkingStateRequest.html)| Parking update request |  |
-{: class="table table-striped"}
+| **body** | [**ParkingStateRequest**](ParkingStateRequest)| Parking update request |  |
 
 ### Return type
 
 void (empty response body)
 
-<a name="patch_conversations_message"></a>
 
-## [**Conversation**](Conversation.html) patch_conversations_message(conversation_id, body)
+## patch_conversations_message
 
+> [**Conversation**](Conversation) patch_conversations_message(conversation_id, body)
 
 
 Update a conversation by disconnecting all of the participants
@@ -6753,17 +6646,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
-| **body** | [**Conversation**](Conversation.html)| Conversation |  |
-{: class="table table-striped"}
+| **body** | [**Conversation**](Conversation)| Conversation |  |
 
 ### Return type
 
-[**Conversation**](Conversation.html)
+[**Conversation**](Conversation)
 
-<a name="patch_conversations_message_participant"></a>
 
-##  patch_conversations_message_participant(conversation_id, participant_id, body=body)
+## patch_conversations_message_participant
 
+>  patch_conversations_message_participant(conversation_id, participant_id, body=body)
 
 
 Update conversation participant
@@ -6805,17 +6697,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
 | **participant_id** | **str**| participantId |  |
-| **body** | [**MediaParticipantRequest**](MediaParticipantRequest.html)|  | [optional]  |
-{: class="table table-striped"}
+| **body** | [**MediaParticipantRequest**](MediaParticipantRequest)|  | [optional]  |
 
 ### Return type
 
 void (empty response body)
 
-<a name="patch_conversations_message_participant_attributes"></a>
 
-## [**ParticipantAttributes**](ParticipantAttributes.html) patch_conversations_message_participant_attributes(conversation_id, participant_id, body=body)
+## patch_conversations_message_participant_attributes
 
+> [**ParticipantAttributes**](ParticipantAttributes) patch_conversations_message_participant_attributes(conversation_id, participant_id, body=body)
 
 
 Update the attributes on a conversation participant.
@@ -6857,17 +6748,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
 | **participant_id** | **str**| participantId |  |
-| **body** | [**ParticipantAttributes**](ParticipantAttributes.html)|  | [optional]  |
-{: class="table table-striped"}
+| **body** | [**ParticipantAttributes**](ParticipantAttributes)|  | [optional]  |
 
 ### Return type
 
-[**ParticipantAttributes**](ParticipantAttributes.html)
+[**ParticipantAttributes**](ParticipantAttributes)
 
-<a name="patch_conversations_message_participant_communication"></a>
 
-## object** patch_conversations_message_participant_communication(conversation_id, participant_id, communication_id, body)
+## patch_conversations_message_participant_communication
 
+> object** patch_conversations_message_participant_communication(conversation_id, participant_id, communication_id, body)
 
 
 Update conversation participant's communication by disconnecting it.
@@ -6911,17 +6801,16 @@ except ApiException as e:
 | **conversation_id** | **str**| conversationId |  |
 | **participant_id** | **str**| participantId |  |
 | **communication_id** | **str**| communicationId |  |
-| **body** | [**MediaParticipantRequest**](MediaParticipantRequest.html)| Participant |  |
-{: class="table table-striped"}
+| **body** | [**MediaParticipantRequest**](MediaParticipantRequest)| Participant |  |
 
 ### Return type
 
 **object**
 
-<a name="patch_conversations_messaging_integrations_facebook_integration_id"></a>
 
-## [**FacebookIntegration**](FacebookIntegration.html) patch_conversations_messaging_integrations_facebook_integration_id(integration_id, body)
+## patch_conversations_messaging_integrations_facebook_integration_id
 
+> [**FacebookIntegration**](FacebookIntegration) patch_conversations_messaging_integrations_facebook_integration_id(integration_id, body)
 
 
 Update Facebook messaging integration
@@ -6962,17 +6851,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **integration_id** | **str**| Integration ID |  |
-| **body** | [**FacebookIntegrationUpdateRequest**](FacebookIntegrationUpdateRequest.html)| FacebookIntegrationUpdateRequest |  |
-{: class="table table-striped"}
+| **body** | [**FacebookIntegrationUpdateRequest**](FacebookIntegrationUpdateRequest)| FacebookIntegrationUpdateRequest |  |
 
 ### Return type
 
-[**FacebookIntegration**](FacebookIntegration.html)
+[**FacebookIntegration**](FacebookIntegration)
 
-<a name="patch_conversations_messaging_integrations_instagram_integration_id"></a>
 
-## [**InstagramIntegration**](InstagramIntegration.html) patch_conversations_messaging_integrations_instagram_integration_id(integration_id, body)
+## patch_conversations_messaging_integrations_instagram_integration_id
 
+> [**InstagramIntegration**](InstagramIntegration) patch_conversations_messaging_integrations_instagram_integration_id(integration_id, body)
 
 
 Update Instagram messaging integration
@@ -7013,17 +6901,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **integration_id** | **str**| Integration ID |  |
-| **body** | [**InstagramIntegrationUpdateRequest**](InstagramIntegrationUpdateRequest.html)| InstagramIntegrationUpdateRequest |  |
-{: class="table table-striped"}
+| **body** | [**InstagramIntegrationUpdateRequest**](InstagramIntegrationUpdateRequest)| InstagramIntegrationUpdateRequest |  |
 
 ### Return type
 
-[**InstagramIntegration**](InstagramIntegration.html)
+[**InstagramIntegration**](InstagramIntegration)
 
-<a name="patch_conversations_messaging_integrations_open_integration_id"></a>
 
-## [**OpenIntegration**](OpenIntegration.html) patch_conversations_messaging_integrations_open_integration_id(integration_id, body)
+## patch_conversations_messaging_integrations_open_integration_id
 
+> [**OpenIntegration**](OpenIntegration) patch_conversations_messaging_integrations_open_integration_id(integration_id, body)
 
 
 Update an Open messaging integration
@@ -7066,17 +6953,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **integration_id** | **str**| Integration ID |  |
-| **body** | [**OpenIntegrationUpdateRequest**](OpenIntegrationUpdateRequest.html)| OpenIntegrationUpdateRequest |  |
-{: class="table table-striped"}
+| **body** | [**OpenIntegrationUpdateRequest**](OpenIntegrationUpdateRequest)| OpenIntegrationUpdateRequest |  |
 
 ### Return type
 
-[**OpenIntegration**](OpenIntegration.html)
+[**OpenIntegration**](OpenIntegration)
 
-<a name="patch_conversations_messaging_integrations_whatsapp_embeddedsignup_integration_id"></a>
 
-## [**WhatsAppIntegration**](WhatsAppIntegration.html) patch_conversations_messaging_integrations_whatsapp_embeddedsignup_integration_id(integration_id, body)
+## patch_conversations_messaging_integrations_whatsapp_embeddedsignup_integration_id
 
+> [**WhatsAppIntegration**](WhatsAppIntegration) patch_conversations_messaging_integrations_whatsapp_embeddedsignup_integration_id(integration_id, body)
 
 
 Activate a WhatsApp messaging integration created using the WhatsApp embedded signup flow
@@ -7119,17 +7005,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **integration_id** | **str**| Integration ID |  |
-| **body** | [**WhatsAppEmbeddedSignupIntegrationActivationRequest**](WhatsAppEmbeddedSignupIntegrationActivationRequest.html)| WhatsAppEmbeddedSignupIntegrationActivationRequest |  |
-{: class="table table-striped"}
+| **body** | [**WhatsAppEmbeddedSignupIntegrationActivationRequest**](WhatsAppEmbeddedSignupIntegrationActivationRequest)| WhatsAppEmbeddedSignupIntegrationActivationRequest |  |
 
 ### Return type
 
-[**WhatsAppIntegration**](WhatsAppIntegration.html)
+[**WhatsAppIntegration**](WhatsAppIntegration)
 
-<a name="patch_conversations_messaging_integrations_whatsapp_integration_id"></a>
 
-## [**WhatsAppIntegration**](WhatsAppIntegration.html) patch_conversations_messaging_integrations_whatsapp_integration_id(integration_id, body)
+## patch_conversations_messaging_integrations_whatsapp_integration_id
 
+> [**WhatsAppIntegration**](WhatsAppIntegration) patch_conversations_messaging_integrations_whatsapp_integration_id(integration_id, body)
 
 
 Update a WhatsApp messaging integration
@@ -7170,17 +7055,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **integration_id** | **str**| Integration ID |  |
-| **body** | [**WhatsAppIntegrationUpdateRequest**](WhatsAppIntegrationUpdateRequest.html)| WhatsAppIntegrationUpdateRequest |  |
-{: class="table table-striped"}
+| **body** | [**WhatsAppIntegrationUpdateRequest**](WhatsAppIntegrationUpdateRequest)| WhatsAppIntegrationUpdateRequest |  |
 
 ### Return type
 
-[**WhatsAppIntegration**](WhatsAppIntegration.html)
+[**WhatsAppIntegration**](WhatsAppIntegration)
 
-<a name="patch_conversations_messaging_setting"></a>
 
-## [**MessagingSetting**](MessagingSetting.html) patch_conversations_messaging_setting(message_setting_id, body)
+## patch_conversations_messaging_setting
 
+> [**MessagingSetting**](MessagingSetting) patch_conversations_messaging_setting(message_setting_id, body)
 
 
 Update a messaging setting
@@ -7221,17 +7105,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **message_setting_id** | **str**| Message Setting ID |  |
-| **body** | [**MessagingSettingPatchRequest**](MessagingSettingPatchRequest.html)| MessagingSetting |  |
-{: class="table table-striped"}
+| **body** | [**MessagingSettingPatchRequest**](MessagingSettingPatchRequest)| MessagingSetting |  |
 
 ### Return type
 
-[**MessagingSetting**](MessagingSetting.html)
+[**MessagingSetting**](MessagingSetting)
 
-<a name="patch_conversations_messaging_supportedcontent_supported_content_id"></a>
 
-## [**SupportedContent**](SupportedContent.html) patch_conversations_messaging_supportedcontent_supported_content_id(supported_content_id, body)
+## patch_conversations_messaging_supportedcontent_supported_content_id
 
+> [**SupportedContent**](SupportedContent) patch_conversations_messaging_supportedcontent_supported_content_id(supported_content_id, body)
 
 
 Update a supported content profile
@@ -7272,17 +7155,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **supported_content_id** | **str**| Supported Content ID |  |
-| **body** | [**SupportedContent**](SupportedContent.html)| SupportedContent |  |
-{: class="table table-striped"}
+| **body** | [**SupportedContent**](SupportedContent)| SupportedContent |  |
 
 ### Return type
 
-[**SupportedContent**](SupportedContent.html)
+[**SupportedContent**](SupportedContent)
 
-<a name="patch_conversations_settings"></a>
 
-##  patch_conversations_settings(body)
+## patch_conversations_settings
 
+>  patch_conversations_settings(body)
 
 
 Update Settings
@@ -7320,17 +7202,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**Settings**](Settings.html)| Settings |  |
-{: class="table table-striped"}
+| **body** | [**Settings**](Settings)| Settings |  |
 
 ### Return type
 
 void (empty response body)
 
-<a name="post_analytics_conversation_details_properties"></a>
 
-## [**PropertyIndexRequest**](PropertyIndexRequest.html) post_analytics_conversation_details_properties(conversation_id, body)
+## post_analytics_conversation_details_properties
 
+> [**PropertyIndexRequest**](PropertyIndexRequest) post_analytics_conversation_details_properties(conversation_id, body)
 
 
 Index conversation properties
@@ -7371,17 +7252,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
-| **body** | [**PropertyIndexRequest**](PropertyIndexRequest.html)| request |  |
-{: class="table table-striped"}
+| **body** | [**PropertyIndexRequest**](PropertyIndexRequest)| request |  |
 
 ### Return type
 
-[**PropertyIndexRequest**](PropertyIndexRequest.html)
+[**PropertyIndexRequest**](PropertyIndexRequest)
 
-<a name="post_analytics_conversations_activity_query"></a>
 
-## [**ConversationActivityResponse**](ConversationActivityResponse.html) post_analytics_conversations_activity_query(body, page_size=page_size, page_number=page_number)
+## post_analytics_conversations_activity_query
 
+> [**ConversationActivityResponse**](ConversationActivityResponse) post_analytics_conversations_activity_query(body, page_size=page_size, page_number=page_number)
 
 
 Query for conversation activity observations
@@ -7422,19 +7302,18 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**ConversationActivityQuery**](ConversationActivityQuery.html)| query |  |
+| **body** | [**ConversationActivityQuery**](ConversationActivityQuery)| query |  |
 | **page_size** | **int**| The desired page size | [optional]  |
 | **page_number** | **int**| The desired page number | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**ConversationActivityResponse**](ConversationActivityResponse.html)
+[**ConversationActivityResponse**](ConversationActivityResponse)
 
-<a name="post_analytics_conversations_aggregates_jobs"></a>
 
-## [**AsyncQueryResponse**](AsyncQueryResponse.html) post_analytics_conversations_aggregates_jobs(body)
+## post_analytics_conversations_aggregates_jobs
 
+> [**AsyncQueryResponse**](AsyncQueryResponse) post_analytics_conversations_aggregates_jobs(body)
 
 
 Query for conversation aggregates asynchronously
@@ -7475,17 +7354,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**ConversationAsyncAggregationQuery**](ConversationAsyncAggregationQuery.html)| query |  |
-{: class="table table-striped"}
+| **body** | [**ConversationAsyncAggregationQuery**](ConversationAsyncAggregationQuery)| query |  |
 
 ### Return type
 
-[**AsyncQueryResponse**](AsyncQueryResponse.html)
+[**AsyncQueryResponse**](AsyncQueryResponse)
 
-<a name="post_analytics_conversations_aggregates_query"></a>
 
-## [**ConversationAggregateQueryResponse**](ConversationAggregateQueryResponse.html) post_analytics_conversations_aggregates_query(body)
+## post_analytics_conversations_aggregates_query
 
+> [**ConversationAggregateQueryResponse**](ConversationAggregateQueryResponse) post_analytics_conversations_aggregates_query(body)
 
 
 Query for conversation aggregates
@@ -7524,17 +7402,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**ConversationAggregationQuery**](ConversationAggregationQuery.html)| query |  |
-{: class="table table-striped"}
+| **body** | [**ConversationAggregationQuery**](ConversationAggregationQuery)| query |  |
 
 ### Return type
 
-[**ConversationAggregateQueryResponse**](ConversationAggregateQueryResponse.html)
+[**ConversationAggregateQueryResponse**](ConversationAggregateQueryResponse)
 
-<a name="post_analytics_conversations_details_jobs"></a>
 
-## [**AsyncQueryResponse**](AsyncQueryResponse.html) post_analytics_conversations_details_jobs(body)
+## post_analytics_conversations_details_jobs
 
+> [**AsyncQueryResponse**](AsyncQueryResponse) post_analytics_conversations_details_jobs(body)
 
 
 Query for conversation details asynchronously
@@ -7574,17 +7451,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**AsyncConversationQuery**](AsyncConversationQuery.html)| query |  |
-{: class="table table-striped"}
+| **body** | [**AsyncConversationQuery**](AsyncConversationQuery)| query |  |
 
 ### Return type
 
-[**AsyncQueryResponse**](AsyncQueryResponse.html)
+[**AsyncQueryResponse**](AsyncQueryResponse)
 
-<a name="post_analytics_conversations_details_query"></a>
 
-## [**AnalyticsConversationQueryResponse**](AnalyticsConversationQueryResponse.html) post_analytics_conversations_details_query(body)
+## post_analytics_conversations_details_query
 
+> [**AnalyticsConversationQueryResponse**](AnalyticsConversationQueryResponse) post_analytics_conversations_details_query(body)
 
 
 Query for conversation details
@@ -7624,17 +7500,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**ConversationQuery**](ConversationQuery.html)| query |  |
-{: class="table table-striped"}
+| **body** | [**ConversationQuery**](ConversationQuery)| query |  |
 
 ### Return type
 
-[**AnalyticsConversationQueryResponse**](AnalyticsConversationQueryResponse.html)
+[**AnalyticsConversationQueryResponse**](AnalyticsConversationQueryResponse)
 
-<a name="post_conversation_assign"></a>
 
-## str** post_conversation_assign(conversation_id, body)
+## post_conversation_assign
 
+> str** post_conversation_assign(conversation_id, body)
 
 
 Attempts to manually assign a specified conversation to a specified user.  Ignores bullseye ring, PAR score, skills, and languages.
@@ -7684,17 +7559,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversation ID |  |
-| **body** | [**ConversationUser**](ConversationUser.html)| Targeted user |  |
-{: class="table table-striped"}
+| **body** | [**ConversationUser**](ConversationUser)| Targeted user |  |
 
 ### Return type
 
 **str**
 
-<a name="post_conversation_barge"></a>
 
-##  post_conversation_barge(conversation_id)
+## post_conversation_barge
 
+>  post_conversation_barge(conversation_id)
 
 
 Barge a conversation creating a barged in conference of connected participants.
@@ -7733,16 +7607,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversation ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (empty response body)
 
-<a name="post_conversation_cobrowse"></a>
 
-## [**CobrowseWebMessagingSession**](CobrowseWebMessagingSession.html) post_conversation_cobrowse(conversation_id)
+## post_conversation_cobrowse
 
+> [**CobrowseWebMessagingSession**](CobrowseWebMessagingSession) post_conversation_cobrowse(conversation_id)
 
 
 Creates a cobrowse session. Requires \"conversation:cobrowse:add\" (for web messaging) or \"conversation:cobrowsevoice:add\" permission.
@@ -7783,16 +7656,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| Conversation ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**CobrowseWebMessagingSession**](CobrowseWebMessagingSession.html)
+[**CobrowseWebMessagingSession**](CobrowseWebMessagingSession)
 
-<a name="post_conversation_disconnect"></a>
 
-## str** post_conversation_disconnect(conversation_id)
+## post_conversation_disconnect
 
+> str** post_conversation_disconnect(conversation_id)
 
 
 Performs a full conversation teardown. Issues disconnect requests for any connected media. Applies a system wrap-up code to any participants that are pending wrap-up. This is not intended to be the normal way of ending interactions but is available in the event of problems with the application to allow a resynchronization of state across all components. It is recommended that users submit a support case if they are relying on this endpoint systematically as there is likely something that needs investigation.
@@ -7832,16 +7704,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversation ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **str**
 
-<a name="post_conversation_participant_callbacks"></a>
 
-##  post_conversation_participant_callbacks(conversation_id, participant_id, body=body)
+## post_conversation_participant_callbacks
 
+>  post_conversation_participant_callbacks(conversation_id, participant_id, body=body)
 
 
 Create a new callback for the specified participant on the conversation.
@@ -7883,17 +7754,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversation ID |  |
 | **participant_id** | **str**| participant ID |  |
-| **body** | [**CreateCallbackOnConversationCommand**](CreateCallbackOnConversationCommand.html)|  | [optional]  |
-{: class="table table-striped"}
+| **body** | [**CreateCallbackOnConversationCommand**](CreateCallbackOnConversationCommand)|  | [optional]  |
 
 ### Return type
 
 void (empty response body)
 
-<a name="post_conversation_participant_digits"></a>
 
-##  post_conversation_participant_digits(conversation_id, participant_id, body=body)
+## post_conversation_participant_digits
 
+>  post_conversation_participant_digits(conversation_id, participant_id, body=body)
 
 
 Sends DTMF to the participant
@@ -7934,17 +7804,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversation ID |  |
 | **participant_id** | **str**| participant ID |  |
-| **body** | [**Digits**](Digits.html)| Digits | [optional]  |
-{: class="table table-striped"}
+| **body** | [**Digits**](Digits)| Digits | [optional]  |
 
 ### Return type
 
 void (empty response body)
 
-<a name="post_conversation_participant_replace"></a>
 
-##  post_conversation_participant_replace(conversation_id, participant_id, body)
+## post_conversation_participant_replace
 
+>  post_conversation_participant_replace(conversation_id, participant_id, body)
 
 
 Replace this participant with the specified user and/or address
@@ -7986,17 +7855,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversation ID |  |
 | **participant_id** | **str**| participant ID |  |
-| **body** | [**TransferRequest**](TransferRequest.html)| Transfer request |  |
-{: class="table table-striped"}
+| **body** | [**TransferRequest**](TransferRequest)| Transfer request |  |
 
 ### Return type
 
 void (empty response body)
 
-<a name="post_conversation_participant_replace_agent"></a>
 
-##  post_conversation_participant_replace_agent(conversation_id, participant_id, body)
+## post_conversation_participant_replace_agent
 
+>  post_conversation_participant_replace_agent(conversation_id, participant_id, body)
 
 
 Replace this participant with the specified agent
@@ -8039,17 +7907,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversation ID |  |
 | **participant_id** | **str**| participant ID |  |
-| **body** | [**TransferToAgentRequest**](TransferToAgentRequest.html)| Transfer request |  |
-{: class="table table-striped"}
+| **body** | [**TransferToAgentRequest**](TransferToAgentRequest)| Transfer request |  |
 
 ### Return type
 
 void (empty response body)
 
-<a name="post_conversation_participant_replace_external"></a>
 
-##  post_conversation_participant_replace_external(conversation_id, participant_id, body)
+## post_conversation_participant_replace_external
 
+>  post_conversation_participant_replace_external(conversation_id, participant_id, body)
 
 
 Replace this participant with the an external contact
@@ -8092,17 +7959,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversation ID |  |
 | **participant_id** | **str**| participant ID |  |
-| **body** | [**TransferToExternalRequest**](TransferToExternalRequest.html)| Transfer request |  |
-{: class="table table-striped"}
+| **body** | [**TransferToExternalRequest**](TransferToExternalRequest)| Transfer request |  |
 
 ### Return type
 
 void (empty response body)
 
-<a name="post_conversation_participant_replace_queue"></a>
 
-##  post_conversation_participant_replace_queue(conversation_id, participant_id, body)
+## post_conversation_participant_replace_queue
 
+>  post_conversation_participant_replace_queue(conversation_id, participant_id, body)
 
 
 Replace this participant with the specified queue
@@ -8145,17 +8011,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversation ID |  |
 | **participant_id** | **str**| participant ID |  |
-| **body** | [**TransferToQueueRequest**](TransferToQueueRequest.html)| Transfer request |  |
-{: class="table table-striped"}
+| **body** | [**TransferToQueueRequest**](TransferToQueueRequest)| Transfer request |  |
 
 ### Return type
 
 void (empty response body)
 
-<a name="post_conversation_participant_secureivrsessions"></a>
 
-## [**SecureSession**](SecureSession.html) post_conversation_participant_secureivrsessions(conversation_id, participant_id, body=body)
+## post_conversation_participant_secureivrsessions
 
+> [**SecureSession**](SecureSession) post_conversation_participant_secureivrsessions(conversation_id, participant_id, body=body)
 
 
 Create secure IVR session. Only a participant in the conversation can invoke a secure IVR.
@@ -8197,17 +8062,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversation ID |  |
 | **participant_id** | **str**| participant ID |  |
-| **body** | [**CreateSecureSession**](CreateSecureSession.html)|  | [optional]  |
-{: class="table table-striped"}
+| **body** | [**CreateSecureSession**](CreateSecureSession)|  | [optional]  |
 
 ### Return type
 
-[**SecureSession**](SecureSession.html)
+[**SecureSession**](SecureSession)
 
-<a name="post_conversation_suggestion_engagement"></a>
 
-## [**SuggestionEngagement**](SuggestionEngagement.html) post_conversation_suggestion_engagement(conversation_id, suggestion_id, body)
+## post_conversation_suggestion_engagement
 
+> [**SuggestionEngagement**](SuggestionEngagement) post_conversation_suggestion_engagement(conversation_id, suggestion_id, body)
 
 
 Save an engagement on the suggestion.
@@ -8250,17 +8114,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| Conversation ID |  |
 | **suggestion_id** | **str**| Suggestion ID |  |
-| **body** | [**SuggestionEngagement**](SuggestionEngagement.html)|  |  |
-{: class="table table-striped"}
+| **body** | [**SuggestionEngagement**](SuggestionEngagement)|  |  |
 
 ### Return type
 
-[**SuggestionEngagement**](SuggestionEngagement.html)
+[**SuggestionEngagement**](SuggestionEngagement)
 
-<a name="post_conversation_suggestions_feedback"></a>
 
-##  post_conversation_suggestions_feedback(conversation_id, body)
+## post_conversation_suggestions_feedback
 
+>  post_conversation_suggestions_feedback(conversation_id, body)
 
 
 Suggestion feedback.
@@ -8300,17 +8163,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| Conversation ID |  |
-| **body** | [**Feedback**](Feedback.html)| SuggestionFeedback |  |
-{: class="table table-striped"}
+| **body** | [**Feedback**](Feedback)| SuggestionFeedback |  |
 
 ### Return type
 
 void (empty response body)
 
-<a name="post_conversation_summary_feedback"></a>
 
-##  post_conversation_summary_feedback(conversation_id, summary_id, body=body)
+## post_conversation_summary_feedback
 
+>  post_conversation_summary_feedback(conversation_id, summary_id, body=body)
 
 
 Submit feedback for the summary.
@@ -8352,17 +8214,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| Conversation ID |  |
 | **summary_id** | **str**| Summary ID |  |
-| **body** | [**FeedbackAddRequest**](FeedbackAddRequest.html)|  | [optional]  |
-{: class="table table-striped"}
+| **body** | [**FeedbackAddRequest**](FeedbackAddRequest)|  | [optional]  |
 
 ### Return type
 
 void (empty response body)
 
-<a name="post_conversations_call"></a>
 
-## [**Conversation**](Conversation.html) post_conversations_call(conversation_id, body)
+## post_conversations_call
 
+> [**Conversation**](Conversation) post_conversations_call(conversation_id, body)
 
 
 Place a new call as part of a callback conversation.
@@ -8402,17 +8263,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
-| **body** | [**CallCommand**](CallCommand.html)| Conversation |  |
-{: class="table table-striped"}
+| **body** | [**CallCommand**](CallCommand)| Conversation |  |
 
 ### Return type
 
-[**Conversation**](Conversation.html)
+[**Conversation**](Conversation)
 
-<a name="post_conversations_call_participant_barge"></a>
 
-##  post_conversations_call_participant_barge(conversation_id, participant_id)
+## post_conversations_call_participant_barge
 
+>  post_conversations_call_participant_barge(conversation_id, participant_id)
 
 
 Barge a given participant's call creating a barged in conference of connected participants.
@@ -8453,16 +8313,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
 | **participant_id** | **str**| participantId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (empty response body)
 
-<a name="post_conversations_call_participant_coach"></a>
 
-##  post_conversations_call_participant_coach(conversation_id, participant_id)
+## post_conversations_call_participant_coach
 
+>  post_conversations_call_participant_coach(conversation_id, participant_id)
 
 
 Listen in on the conversation from the point of view of a given participant while speaking to just the given participant.
@@ -8503,16 +8362,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
 | **participant_id** | **str**| participantId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (empty response body)
 
-<a name="post_conversations_call_participant_communication_wrapup"></a>
 
-##  post_conversations_call_participant_communication_wrapup(conversation_id, participant_id, communication_id, body=body)
+## post_conversations_call_participant_communication_wrapup
 
+>  post_conversations_call_participant_communication_wrapup(conversation_id, participant_id, communication_id, body=body)
 
 
 Apply wrap-up for this conversation communication
@@ -8556,17 +8414,16 @@ except ApiException as e:
 | **conversation_id** | **str**| conversationId |  |
 | **participant_id** | **str**| participantId |  |
 | **communication_id** | **str**| communicationId |  |
-| **body** | [**WrapupInput**](WrapupInput.html)| Wrap-up | [optional]  |
-{: class="table table-striped"}
+| **body** | [**WrapupInput**](WrapupInput)| Wrap-up | [optional]  |
 
 ### Return type
 
 void (empty response body)
 
-<a name="post_conversations_call_participant_consult"></a>
 
-## [**ConsultTransferResponse**](ConsultTransferResponse.html) post_conversations_call_participant_consult(conversation_id, participant_id, body)
+## post_conversations_call_participant_consult
 
+> [**ConsultTransferResponse**](ConsultTransferResponse) post_conversations_call_participant_consult(conversation_id, participant_id, body)
 
 
 Initiate and update consult transfer
@@ -8609,17 +8466,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
 | **participant_id** | **str**| participantId |  |
-| **body** | [**ConsultTransfer**](ConsultTransfer.html)| Destination address &amp; initial speak to |  |
-{: class="table table-striped"}
+| **body** | [**ConsultTransfer**](ConsultTransfer)| Destination address &amp; initial speak to |  |
 
 ### Return type
 
-[**ConsultTransferResponse**](ConsultTransferResponse.html)
+[**ConsultTransferResponse**](ConsultTransferResponse)
 
-<a name="post_conversations_call_participant_consult_agent"></a>
 
-## [**ConsultTransferResponse**](ConsultTransferResponse.html) post_conversations_call_participant_consult_agent(conversation_id, participant_id, body)
+## post_conversations_call_participant_consult_agent
 
+> [**ConsultTransferResponse**](ConsultTransferResponse) post_conversations_call_participant_consult_agent(conversation_id, participant_id, body)
 
 
 Initiate a consult transfer to an agent
@@ -8663,17 +8519,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
 | **participant_id** | **str**| participantId |  |
-| **body** | [**ConsultTransferToAgent**](ConsultTransferToAgent.html)| Destination agent &amp; initial speak to |  |
-{: class="table table-striped"}
+| **body** | [**ConsultTransferToAgent**](ConsultTransferToAgent)| Destination agent &amp; initial speak to |  |
 
 ### Return type
 
-[**ConsultTransferResponse**](ConsultTransferResponse.html)
+[**ConsultTransferResponse**](ConsultTransferResponse)
 
-<a name="post_conversations_call_participant_consult_external"></a>
 
-## [**ConsultTransferResponse**](ConsultTransferResponse.html) post_conversations_call_participant_consult_external(conversation_id, participant_id, body)
+## post_conversations_call_participant_consult_external
 
+> [**ConsultTransferResponse**](ConsultTransferResponse) post_conversations_call_participant_consult_external(conversation_id, participant_id, body)
 
 
 Initiate a consult transfer to an external contact
@@ -8717,17 +8572,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
 | **participant_id** | **str**| participantId |  |
-| **body** | [**ConsultTransferToExternal**](ConsultTransferToExternal.html)| Destination address &amp; initial speak to |  |
-{: class="table table-striped"}
+| **body** | [**ConsultTransferToExternal**](ConsultTransferToExternal)| Destination address &amp; initial speak to |  |
 
 ### Return type
 
-[**ConsultTransferResponse**](ConsultTransferResponse.html)
+[**ConsultTransferResponse**](ConsultTransferResponse)
 
-<a name="post_conversations_call_participant_consult_queue"></a>
 
-## [**ConsultTransferResponse**](ConsultTransferResponse.html) post_conversations_call_participant_consult_queue(conversation_id, participant_id, body)
+## post_conversations_call_participant_consult_queue
 
+> [**ConsultTransferResponse**](ConsultTransferResponse) post_conversations_call_participant_consult_queue(conversation_id, participant_id, body)
 
 
 Initiate a consult transfer to a queue
@@ -8771,17 +8625,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
 | **participant_id** | **str**| participantId |  |
-| **body** | [**ConsultTransferToQueue**](ConsultTransferToQueue.html)| Destination queue &amp; initial speak to |  |
-{: class="table table-striped"}
+| **body** | [**ConsultTransferToQueue**](ConsultTransferToQueue)| Destination queue &amp; initial speak to |  |
 
 ### Return type
 
-[**ConsultTransferResponse**](ConsultTransferResponse.html)
+[**ConsultTransferResponse**](ConsultTransferResponse)
 
-<a name="post_conversations_call_participant_monitor"></a>
 
-##  post_conversations_call_participant_monitor(conversation_id, participant_id)
+## post_conversations_call_participant_monitor
 
+>  post_conversations_call_participant_monitor(conversation_id, participant_id)
 
 
 Listen in on the conversation from the point of view of a given participant.
@@ -8822,16 +8675,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
 | **participant_id** | **str**| participantId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (empty response body)
 
-<a name="post_conversations_call_participant_replace"></a>
 
-##  post_conversations_call_participant_replace(conversation_id, participant_id, body)
+## post_conversations_call_participant_replace
 
+>  post_conversations_call_participant_replace(conversation_id, participant_id, body)
 
 
 Replace this participant with the specified user and/or address
@@ -8873,17 +8725,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
 | **participant_id** | **str**| participantId |  |
-| **body** | [**TransferRequest**](TransferRequest.html)| Transfer request |  |
-{: class="table table-striped"}
+| **body** | [**TransferRequest**](TransferRequest)| Transfer request |  |
 
 ### Return type
 
 void (empty response body)
 
-<a name="post_conversations_call_participants"></a>
 
-## [**Conversation**](Conversation.html) post_conversations_call_participants(conversation_id, body)
+## post_conversations_call_participants
 
+> [**Conversation**](Conversation) post_conversations_call_participants(conversation_id, body)
 
 
 Add participants to a conversation
@@ -8923,17 +8774,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
-| **body** | [**Conversation**](Conversation.html)| Conversation |  |
-{: class="table table-striped"}
+| **body** | [**Conversation**](Conversation)| Conversation |  |
 
 ### Return type
 
-[**Conversation**](Conversation.html)
+[**Conversation**](Conversation)
 
-<a name="post_conversations_callback_participant_communication_wrapup"></a>
 
-##  post_conversations_callback_participant_communication_wrapup(conversation_id, participant_id, communication_id, body=body)
+## post_conversations_callback_participant_communication_wrapup
 
+>  post_conversations_callback_participant_communication_wrapup(conversation_id, participant_id, communication_id, body=body)
 
 
 Apply wrap-up for this conversation communication
@@ -8977,17 +8827,16 @@ except ApiException as e:
 | **conversation_id** | **str**| conversationId |  |
 | **participant_id** | **str**| participantId |  |
 | **communication_id** | **str**| communicationId |  |
-| **body** | [**WrapupInput**](WrapupInput.html)| Wrap-up | [optional]  |
-{: class="table table-striped"}
+| **body** | [**WrapupInput**](WrapupInput)| Wrap-up | [optional]  |
 
 ### Return type
 
 void (empty response body)
 
-<a name="post_conversations_callback_participant_replace"></a>
 
-##  post_conversations_callback_participant_replace(conversation_id, participant_id, body)
+## post_conversations_callback_participant_replace
 
+>  post_conversations_callback_participant_replace(conversation_id, participant_id, body)
 
 
 Replace this participant with the specified user and/or address
@@ -9029,17 +8878,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
 | **participant_id** | **str**| participantId |  |
-| **body** | [**TransferRequest**](TransferRequest.html)| Transfer request |  |
-{: class="table table-striped"}
+| **body** | [**TransferRequest**](TransferRequest)| Transfer request |  |
 
 ### Return type
 
 void (empty response body)
 
-<a name="post_conversations_callbacks"></a>
 
-## [**CreateCallbackResponse**](CreateCallbackResponse.html) post_conversations_callbacks(body)
+## post_conversations_callbacks
 
+> [**CreateCallbackResponse**](CreateCallbackResponse) post_conversations_callbacks(body)
 
 
 Create a Callback
@@ -9078,17 +8926,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**CreateCallbackCommand**](CreateCallbackCommand.html)| Callback |  |
-{: class="table table-striped"}
+| **body** | [**CreateCallbackCommand**](CreateCallbackCommand)| Callback |  |
 
 ### Return type
 
-[**CreateCallbackResponse**](CreateCallbackResponse.html)
+[**CreateCallbackResponse**](CreateCallbackResponse)
 
-<a name="post_conversations_callbacks_bulk_disconnect"></a>
 
-##  post_conversations_callbacks_bulk_disconnect(body)
+## post_conversations_callbacks_bulk_disconnect
 
+>  post_conversations_callbacks_bulk_disconnect(body)
 
 
 Disconnect multiple scheduled callbacks
@@ -9126,17 +8973,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**BulkCallbackDisconnectRequest**](BulkCallbackDisconnectRequest.html)| BulkCallbackDisconnectRequest |  |
-{: class="table table-striped"}
+| **body** | [**BulkCallbackDisconnectRequest**](BulkCallbackDisconnectRequest)| BulkCallbackDisconnectRequest |  |
 
 ### Return type
 
 void (empty response body)
 
-<a name="post_conversations_callbacks_bulk_update"></a>
 
-## [**BulkCallbackPatchResponse**](BulkCallbackPatchResponse.html) post_conversations_callbacks_bulk_update(body)
+## post_conversations_callbacks_bulk_update
 
+> [**BulkCallbackPatchResponse**](BulkCallbackPatchResponse) post_conversations_callbacks_bulk_update(body)
 
 
 Update multiple scheduled callbacks
@@ -9175,17 +9021,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**BulkCallbackPatchRequest**](BulkCallbackPatchRequest.html)| BulkCallbackPatchRequest |  |
-{: class="table table-striped"}
+| **body** | [**BulkCallbackPatchRequest**](BulkCallbackPatchRequest)| BulkCallbackPatchRequest |  |
 
 ### Return type
 
-[**BulkCallbackPatchResponse**](BulkCallbackPatchResponse.html)
+[**BulkCallbackPatchResponse**](BulkCallbackPatchResponse)
 
-<a name="post_conversations_calls"></a>
 
-## [**CreateCallResponse**](CreateCallResponse.html) post_conversations_calls(body)
+## post_conversations_calls
 
+> [**CreateCallResponse**](CreateCallResponse) post_conversations_calls(body)
 
 
 Create a call conversation
@@ -9224,17 +9069,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**CreateCallRequest**](CreateCallRequest.html)| Call request |  |
-{: class="table table-striped"}
+| **body** | [**CreateCallRequest**](CreateCallRequest)| Call request |  |
 
 ### Return type
 
-[**CreateCallResponse**](CreateCallResponse.html)
+[**CreateCallResponse**](CreateCallResponse)
 
-<a name="post_conversations_chat_communication_messages"></a>
 
-## [**WebChatMessage**](WebChatMessage.html) post_conversations_chat_communication_messages(conversation_id, communication_id, body)
+## post_conversations_chat_communication_messages
 
+> [**WebChatMessage**](WebChatMessage) post_conversations_chat_communication_messages(conversation_id, communication_id, body)
 
 
 Send a message on behalf of a communication in a chat conversation.
@@ -9276,17 +9120,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
 | **communication_id** | **str**| communicationId |  |
-| **body** | [**CreateWebChatMessageRequest**](CreateWebChatMessageRequest.html)| Message |  |
-{: class="table table-striped"}
+| **body** | [**CreateWebChatMessageRequest**](CreateWebChatMessageRequest)| Message |  |
 
 ### Return type
 
-[**WebChatMessage**](WebChatMessage.html)
+[**WebChatMessage**](WebChatMessage)
 
-<a name="post_conversations_chat_communication_typing"></a>
 
-## [**WebChatTyping**](WebChatTyping.html) post_conversations_chat_communication_typing(conversation_id, communication_id)
+## post_conversations_chat_communication_typing
 
+> [**WebChatTyping**](WebChatTyping) post_conversations_chat_communication_typing(conversation_id, communication_id)
 
 
 Send a typing-indicator on behalf of a communication in a chat conversation.
@@ -9327,16 +9170,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
 | **communication_id** | **str**| communicationId |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**WebChatTyping**](WebChatTyping.html)
+[**WebChatTyping**](WebChatTyping)
 
-<a name="post_conversations_chat_participant_communication_wrapup"></a>
 
-##  post_conversations_chat_participant_communication_wrapup(conversation_id, participant_id, communication_id, body=body)
+## post_conversations_chat_participant_communication_wrapup
 
+>  post_conversations_chat_participant_communication_wrapup(conversation_id, participant_id, communication_id, body=body)
 
 
 Apply wrap-up for this conversation communication
@@ -9380,17 +9222,16 @@ except ApiException as e:
 | **conversation_id** | **str**| conversationId |  |
 | **participant_id** | **str**| participantId |  |
 | **communication_id** | **str**| communicationId |  |
-| **body** | [**WrapupInput**](WrapupInput.html)| Wrap-up | [optional]  |
-{: class="table table-striped"}
+| **body** | [**WrapupInput**](WrapupInput)| Wrap-up | [optional]  |
 
 ### Return type
 
 void (empty response body)
 
-<a name="post_conversations_chat_participant_replace"></a>
 
-##  post_conversations_chat_participant_replace(conversation_id, participant_id, body)
+## post_conversations_chat_participant_replace
 
+>  post_conversations_chat_participant_replace(conversation_id, participant_id, body)
 
 
 Replace this participant with the specified user and/or address
@@ -9432,17 +9273,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
 | **participant_id** | **str**| participantId |  |
-| **body** | [**TransferRequest**](TransferRequest.html)| Transfer request |  |
-{: class="table table-striped"}
+| **body** | [**TransferRequest**](TransferRequest)| Transfer request |  |
 
 ### Return type
 
 void (empty response body)
 
-<a name="post_conversations_chats"></a>
 
-## [**ChatConversation**](ChatConversation.html) post_conversations_chats(body)
+## post_conversations_chats
 
+> [**ChatConversation**](ChatConversation) post_conversations_chats(body)
 
 
 Create a web chat conversation
@@ -9481,18 +9321,20 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**CreateWebChatRequest**](CreateWebChatRequest.html)| Create web chat request |  |
-{: class="table table-striped"}
+| **body** | [**CreateWebChatRequest**](CreateWebChatRequest)| Create web chat request |  |
 
 ### Return type
 
-[**ChatConversation**](ChatConversation.html)
+[**ChatConversation**](ChatConversation)
 
-<a name="post_conversations_cobrowsesession_participant_communication_wrapup"></a>
 
-##  post_conversations_cobrowsesession_participant_communication_wrapup(conversation_id, participant_id, communication_id, body=body)
+## post_conversations_cobrowsesession_participant_communication_wrapup
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+>  post_conversations_cobrowsesession_participant_communication_wrapup(conversation_id, participant_id, communication_id, body=body)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 Apply wrap-up for this conversation communication
 
@@ -9537,18 +9379,20 @@ except ApiException as e:
 | **conversation_id** | **str**| conversationId |  |
 | **participant_id** | **str**| participantId |  |
 | **communication_id** | **str**| communicationId |  |
-| **body** | [**WrapupInput**](WrapupInput.html)| Wrap-up | [optional]  |
-{: class="table table-striped"}
+| **body** | [**WrapupInput**](WrapupInput)| Wrap-up | [optional]  |
 
 ### Return type
 
 void (empty response body)
 
-<a name="post_conversations_cobrowsesession_participant_replace"></a>
 
-##  post_conversations_cobrowsesession_participant_replace(conversation_id, participant_id, body=body)
+## post_conversations_cobrowsesession_participant_replace
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+>  post_conversations_cobrowsesession_participant_replace(conversation_id, participant_id, body=body)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 Replace this participant with the specified user and/or address
 
@@ -9591,17 +9435,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
 | **participant_id** | **str**| participantId |  |
-| **body** | [**TransferRequest**](TransferRequest.html)|  | [optional]  |
-{: class="table table-striped"}
+| **body** | [**TransferRequest**](TransferRequest)|  | [optional]  |
 
 ### Return type
 
 void (empty response body)
 
-<a name="post_conversations_email_inboundmessages"></a>
 
-## [**EmailConversation**](EmailConversation.html) post_conversations_email_inboundmessages(conversation_id, body)
+## post_conversations_email_inboundmessages
 
+> [**EmailConversation**](EmailConversation) post_conversations_email_inboundmessages(conversation_id, body)
 
 
 Send an email to an external conversation. An external conversation is one where the provider is not PureCloud based. This endpoint allows the sender of the external email to reply or send a new message to the existing conversation. The new message will be treated as part of the existing conversation and chained to it.
@@ -9641,17 +9484,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
-| **body** | [**InboundMessageRequest**](InboundMessageRequest.html)| Send external email reply |  |
-{: class="table table-striped"}
+| **body** | [**InboundMessageRequest**](InboundMessageRequest)| Send external email reply |  |
 
 ### Return type
 
-[**EmailConversation**](EmailConversation.html)
+[**EmailConversation**](EmailConversation)
 
-<a name="post_conversations_email_messages"></a>
 
-## [**EmailMessageReply**](EmailMessageReply.html) post_conversations_email_messages(conversation_id, body)
+## post_conversations_email_messages
 
+> [**EmailMessageReply**](EmailMessageReply) post_conversations_email_messages(conversation_id, body)
 
 
 Send an email reply
@@ -9691,17 +9533,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
-| **body** | [**EmailMessage**](EmailMessage.html)| Reply |  |
-{: class="table table-striped"}
+| **body** | [**EmailMessage**](EmailMessage)| Reply |  |
 
 ### Return type
 
-[**EmailMessageReply**](EmailMessageReply.html)
+[**EmailMessageReply**](EmailMessageReply)
 
-<a name="post_conversations_email_messages_draft_attachments_copy"></a>
 
-## [**EmailMessage**](EmailMessage.html) post_conversations_email_messages_draft_attachments_copy(conversation_id, body)
+## post_conversations_email_messages_draft_attachments_copy
 
+> [**EmailMessage**](EmailMessage) post_conversations_email_messages_draft_attachments_copy(conversation_id, body)
 
 
 Copy attachments from an email message to the current draft.
@@ -9741,17 +9582,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
-| **body** | [**CopyAttachmentsRequest**](CopyAttachmentsRequest.html)| Copy Attachment Request |  |
-{: class="table table-striped"}
+| **body** | [**CopyAttachmentsRequest**](CopyAttachmentsRequest)| Copy Attachment Request |  |
 
 ### Return type
 
-[**EmailMessage**](EmailMessage.html)
+[**EmailMessage**](EmailMessage)
 
-<a name="post_conversations_email_participant_communication_wrapup"></a>
 
-##  post_conversations_email_participant_communication_wrapup(conversation_id, participant_id, communication_id, body=body)
+## post_conversations_email_participant_communication_wrapup
 
+>  post_conversations_email_participant_communication_wrapup(conversation_id, participant_id, communication_id, body=body)
 
 
 Apply wrap-up for this conversation communication
@@ -9795,17 +9635,16 @@ except ApiException as e:
 | **conversation_id** | **str**| conversationId |  |
 | **participant_id** | **str**| participantId |  |
 | **communication_id** | **str**| communicationId |  |
-| **body** | [**WrapupInput**](WrapupInput.html)| Wrap-up | [optional]  |
-{: class="table table-striped"}
+| **body** | [**WrapupInput**](WrapupInput)| Wrap-up | [optional]  |
 
 ### Return type
 
 void (empty response body)
 
-<a name="post_conversations_email_participant_replace"></a>
 
-##  post_conversations_email_participant_replace(conversation_id, participant_id, body)
+## post_conversations_email_participant_replace
 
+>  post_conversations_email_participant_replace(conversation_id, participant_id, body)
 
 
 Replace this participant with the specified user and/or address
@@ -9847,17 +9686,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
 | **participant_id** | **str**| participantId |  |
-| **body** | [**TransferRequest**](TransferRequest.html)| Transfer request |  |
-{: class="table table-striped"}
+| **body** | [**TransferRequest**](TransferRequest)| Transfer request |  |
 
 ### Return type
 
 void (empty response body)
 
-<a name="post_conversations_email_reconnect"></a>
 
-##  post_conversations_email_reconnect(conversation_id)
+## post_conversations_email_reconnect
 
+>  post_conversations_email_reconnect(conversation_id)
 
 
 Reconnect the user to the most recently disconnected customer on a fully disconnected email conversation
@@ -9896,16 +9734,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (empty response body)
 
-<a name="post_conversations_emails"></a>
 
-## [**EmailConversation**](EmailConversation.html) post_conversations_emails(body)
+## post_conversations_emails
 
+> [**EmailConversation**](EmailConversation) post_conversations_emails(body)
 
 
 Create an email conversation
@@ -9946,17 +9783,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**CreateEmailRequest**](CreateEmailRequest.html)| Create email request |  |
-{: class="table table-striped"}
+| **body** | [**CreateEmailRequest**](CreateEmailRequest)| Create email request |  |
 
 ### Return type
 
-[**EmailConversation**](EmailConversation.html)
+[**EmailConversation**](EmailConversation)
 
-<a name="post_conversations_emails_agentless"></a>
 
-## [**AgentlessEmailSendResponseDto**](AgentlessEmailSendResponseDto.html) post_conversations_emails_agentless(body)
+## post_conversations_emails_agentless
 
+> [**AgentlessEmailSendResponseDto**](AgentlessEmailSendResponseDto) post_conversations_emails_agentless(body)
 
 
 Create an email conversation, per API
@@ -9996,17 +9832,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**AgentlessEmailSendRequestDto**](AgentlessEmailSendRequestDto.html)| Create agentless email request |  |
-{: class="table table-striped"}
+| **body** | [**AgentlessEmailSendRequestDto**](AgentlessEmailSendRequestDto)| Create agentless email request |  |
 
 ### Return type
 
-[**AgentlessEmailSendResponseDto**](AgentlessEmailSendResponseDto.html)
+[**AgentlessEmailSendResponseDto**](AgentlessEmailSendResponseDto)
 
-<a name="post_conversations_faxes"></a>
 
-## [**FaxSendResponse**](FaxSendResponse.html) post_conversations_faxes(body)
+## post_conversations_faxes
 
+> [**FaxSendResponse**](FaxSendResponse) post_conversations_faxes(body)
 
 
 Create Fax Conversation
@@ -10044,17 +9879,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**FaxSendRequest**](FaxSendRequest.html)| Fax |  |
-{: class="table table-striped"}
+| **body** | [**FaxSendRequest**](FaxSendRequest)| Fax |  |
 
 ### Return type
 
-[**FaxSendResponse**](FaxSendResponse.html)
+[**FaxSendResponse**](FaxSendResponse)
 
-<a name="post_conversations_keyconfigurations"></a>
 
-## [**ConversationEncryptionConfiguration**](ConversationEncryptionConfiguration.html) post_conversations_keyconfigurations(body)
+## post_conversations_keyconfigurations
 
+> [**ConversationEncryptionConfiguration**](ConversationEncryptionConfiguration) post_conversations_keyconfigurations(body)
 
 
 Setup configurations for encryption key creation
@@ -10093,17 +9927,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**ConversationEncryptionConfiguration**](ConversationEncryptionConfiguration.html)| Encryption Configuration |  |
-{: class="table table-striped"}
+| **body** | [**ConversationEncryptionConfiguration**](ConversationEncryptionConfiguration)| Encryption Configuration |  |
 
 ### Return type
 
-[**ConversationEncryptionConfiguration**](ConversationEncryptionConfiguration.html)
+[**ConversationEncryptionConfiguration**](ConversationEncryptionConfiguration)
 
-<a name="post_conversations_keyconfigurations_validate"></a>
 
-## [**ConversationEncryptionConfiguration**](ConversationEncryptionConfiguration.html) post_conversations_keyconfigurations_validate(body)
+## post_conversations_keyconfigurations_validate
 
+> [**ConversationEncryptionConfiguration**](ConversationEncryptionConfiguration) post_conversations_keyconfigurations_validate(body)
 
 
 Validate encryption key configurations without saving it
@@ -10142,17 +9975,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**ConversationEncryptionConfiguration**](ConversationEncryptionConfiguration.html)| Encryption Configuration |  |
-{: class="table table-striped"}
+| **body** | [**ConversationEncryptionConfiguration**](ConversationEncryptionConfiguration)| Encryption Configuration |  |
 
 ### Return type
 
-[**ConversationEncryptionConfiguration**](ConversationEncryptionConfiguration.html)
+[**ConversationEncryptionConfiguration**](ConversationEncryptionConfiguration)
 
-<a name="post_conversations_message_communication_messages"></a>
 
-## [**MessageData**](MessageData.html) post_conversations_message_communication_messages(conversation_id, communication_id, body, use_normalized_message=use_normalized_message)
+## post_conversations_message_communication_messages
 
+> [**MessageData**](MessageData) post_conversations_message_communication_messages(conversation_id, communication_id, body, use_normalized_message=use_normalized_message)
 
 
 Send message
@@ -10199,18 +10031,17 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
 | **communication_id** | **str**| communicationId |  |
-| **body** | [**AdditionalMessage**](AdditionalMessage.html)| Message |  |
+| **body** | [**AdditionalMessage**](AdditionalMessage)| Message |  |
 | **use_normalized_message** | **bool**| If true, response removes deprecated fields (textBody, media, stickers) | [optional] [default to False] |
-{: class="table table-striped"}
 
 ### Return type
 
-[**MessageData**](MessageData.html)
+[**MessageData**](MessageData)
 
-<a name="post_conversations_message_communication_messages_media"></a>
 
-## [**MessageMediaData**](MessageMediaData.html) post_conversations_message_communication_messages_media(conversation_id, communication_id)
+## post_conversations_message_communication_messages_media
 
+> [**MessageMediaData**](MessageMediaData) post_conversations_message_communication_messages_media(conversation_id, communication_id)
 
 
 Create media
@@ -10256,16 +10087,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
 | **communication_id** | **str**| communicationId |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**MessageMediaData**](MessageMediaData.html)
+[**MessageMediaData**](MessageMediaData)
 
-<a name="post_conversations_message_communication_typing"></a>
 
-##  post_conversations_message_communication_typing(conversation_id, communication_id, body)
+## post_conversations_message_communication_typing
 
+>  post_conversations_message_communication_typing(conversation_id, communication_id, body)
 
 
 Send message typing event
@@ -10310,17 +10140,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
 | **communication_id** | **str**| communicationId |  |
-| **body** | [**MessageTypingEventRequest**](MessageTypingEventRequest.html)| MessageTypingEvent |  |
-{: class="table table-striped"}
+| **body** | [**MessageTypingEventRequest**](MessageTypingEventRequest)| MessageTypingEvent |  |
 
 ### Return type
 
 void (empty response body)
 
-<a name="post_conversations_message_inbound_open_event"></a>
 
-## [**OpenEventNormalizedMessage**](OpenEventNormalizedMessage.html) post_conversations_message_inbound_open_event(integration_id, body)
+## post_conversations_message_inbound_open_event
 
+> [**OpenEventNormalizedMessage**](OpenEventNormalizedMessage) post_conversations_message_inbound_open_event(integration_id, body)
 
 
 Send an inbound Open Event Message
@@ -10363,17 +10192,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **integration_id** | **str**| integrationId |  |
-| **body** | [**OpenInboundNormalizedEvent**](OpenInboundNormalizedEvent.html)| NormalizedMessage |  |
-{: class="table table-striped"}
+| **body** | [**OpenInboundNormalizedEvent**](OpenInboundNormalizedEvent)| NormalizedMessage |  |
 
 ### Return type
 
-[**OpenEventNormalizedMessage**](OpenEventNormalizedMessage.html)
+[**OpenEventNormalizedMessage**](OpenEventNormalizedMessage)
 
-<a name="post_conversations_message_inbound_open_message"></a>
 
-## [**OpenMessageNormalizedMessage**](OpenMessageNormalizedMessage.html) post_conversations_message_inbound_open_message(integration_id, body)
+## post_conversations_message_inbound_open_message
 
+> [**OpenMessageNormalizedMessage**](OpenMessageNormalizedMessage) post_conversations_message_inbound_open_message(integration_id, body)
 
 
 Send inbound Open Message
@@ -10416,17 +10244,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **integration_id** | **str**| integrationId |  |
-| **body** | [**OpenInboundNormalizedMessage**](OpenInboundNormalizedMessage.html)| NormalizedMessage |  |
-{: class="table table-striped"}
+| **body** | [**OpenInboundNormalizedMessage**](OpenInboundNormalizedMessage)| NormalizedMessage |  |
 
 ### Return type
 
-[**OpenMessageNormalizedMessage**](OpenMessageNormalizedMessage.html)
+[**OpenMessageNormalizedMessage**](OpenMessageNormalizedMessage)
 
-<a name="post_conversations_message_inbound_open_receipt"></a>
 
-## [**OpenReceiptNormalizedMessage**](OpenReceiptNormalizedMessage.html) post_conversations_message_inbound_open_receipt(integration_id, body)
+## post_conversations_message_inbound_open_receipt
 
+> [**OpenReceiptNormalizedMessage**](OpenReceiptNormalizedMessage) post_conversations_message_inbound_open_receipt(integration_id, body)
 
 
 Send an inbound Open Receipt Message
@@ -10469,17 +10296,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **integration_id** | **str**| integrationId |  |
-| **body** | [**OpenInboundNormalizedReceipt**](OpenInboundNormalizedReceipt.html)| NormalizedMessage |  |
-{: class="table table-striped"}
+| **body** | [**OpenInboundNormalizedReceipt**](OpenInboundNormalizedReceipt)| NormalizedMessage |  |
 
 ### Return type
 
-[**OpenReceiptNormalizedMessage**](OpenReceiptNormalizedMessage.html)
+[**OpenReceiptNormalizedMessage**](OpenReceiptNormalizedMessage)
 
-<a name="post_conversations_message_messages_bulk"></a>
 
-## [**TextMessageListing**](TextMessageListing.html) post_conversations_message_messages_bulk(conversation_id, use_normalized_message=use_normalized_message, body=body)
+## post_conversations_message_messages_bulk
 
+> [**TextMessageListing**](TextMessageListing) post_conversations_message_messages_bulk(conversation_id, use_normalized_message=use_normalized_message, body=body)
 
 
 Get messages in batch
@@ -10525,17 +10351,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**|  |  |
 | **use_normalized_message** | **bool**| If true, response removes deprecated fields (textBody, media, stickers) | [optional] [default to False] |
-| **body** | [**list[str]**](str.html)| messageIds | [optional]  |
-{: class="table table-striped"}
+| **body** | [**list[str]**](str)| messageIds | [optional]  |
 
 ### Return type
 
-[**TextMessageListing**](TextMessageListing.html)
+[**TextMessageListing**](TextMessageListing)
 
-<a name="post_conversations_message_participant_communication_wrapup"></a>
 
-##  post_conversations_message_participant_communication_wrapup(conversation_id, participant_id, communication_id, body=body)
+## post_conversations_message_participant_communication_wrapup
 
+>  post_conversations_message_participant_communication_wrapup(conversation_id, participant_id, communication_id, body=body)
 
 
 Apply wrap-up for this conversation communication
@@ -10579,17 +10404,16 @@ except ApiException as e:
 | **conversation_id** | **str**| conversationId |  |
 | **participant_id** | **str**| participantId |  |
 | **communication_id** | **str**| communicationId |  |
-| **body** | [**WrapupInput**](WrapupInput.html)| Wrap-up | [optional]  |
-{: class="table table-striped"}
+| **body** | [**WrapupInput**](WrapupInput)| Wrap-up | [optional]  |
 
 ### Return type
 
 void (empty response body)
 
-<a name="post_conversations_message_participant_monitor"></a>
 
-##  post_conversations_message_participant_monitor(conversation_id, participant_id)
+## post_conversations_message_participant_monitor
 
+>  post_conversations_message_participant_monitor(conversation_id, participant_id)
 
 
 Listen in on the conversation from the point of view of a given participant.
@@ -10630,16 +10454,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
 | **participant_id** | **str**| participantId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (empty response body)
 
-<a name="post_conversations_message_participant_replace"></a>
 
-##  post_conversations_message_participant_replace(conversation_id, participant_id, body)
+## post_conversations_message_participant_replace
 
+>  post_conversations_message_participant_replace(conversation_id, participant_id, body)
 
 
 Replace this participant with the specified user and/or address
@@ -10681,17 +10504,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
 | **participant_id** | **str**| participantId |  |
-| **body** | [**TransferRequest**](TransferRequest.html)| Transfer request |  |
-{: class="table table-striped"}
+| **body** | [**TransferRequest**](TransferRequest)| Transfer request |  |
 
 ### Return type
 
 void (empty response body)
 
-<a name="post_conversations_messages"></a>
 
-## [**CreateOutboundMessagingConversationResponse**](CreateOutboundMessagingConversationResponse.html) post_conversations_messages(body)
+## post_conversations_messages
 
+> [**CreateOutboundMessagingConversationResponse**](CreateOutboundMessagingConversationResponse) post_conversations_messages(body)
 
 
 Create an outbound messaging conversation.
@@ -10732,17 +10554,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**CreateOutboundMessagingConversationRequest**](CreateOutboundMessagingConversationRequest.html)| Create outbound messaging conversation |  |
-{: class="table table-striped"}
+| **body** | [**CreateOutboundMessagingConversationRequest**](CreateOutboundMessagingConversationRequest)| Create outbound messaging conversation |  |
 
 ### Return type
 
-[**CreateOutboundMessagingConversationResponse**](CreateOutboundMessagingConversationResponse.html)
+[**CreateOutboundMessagingConversationResponse**](CreateOutboundMessagingConversationResponse)
 
-<a name="post_conversations_messages_agentless"></a>
 
-## [**SendAgentlessOutboundMessageResponse**](SendAgentlessOutboundMessageResponse.html) post_conversations_messages_agentless(body)
+## post_conversations_messages_agentless
 
+> [**SendAgentlessOutboundMessageResponse**](SendAgentlessOutboundMessageResponse) post_conversations_messages_agentless(body)
 
 
 Send an agentless outbound message
@@ -10783,18 +10604,20 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**SendAgentlessOutboundMessageRequest**](SendAgentlessOutboundMessageRequest.html)| Create agentless outbound messaging request |  |
-{: class="table table-striped"}
+| **body** | [**SendAgentlessOutboundMessageRequest**](SendAgentlessOutboundMessageRequest)| Create agentless outbound messaging request |  |
 
 ### Return type
 
-[**SendAgentlessOutboundMessageResponse**](SendAgentlessOutboundMessageResponse.html)
+[**SendAgentlessOutboundMessageResponse**](SendAgentlessOutboundMessageResponse)
 
-<a name="post_conversations_messages_inbound_open"></a>
 
-## [**OpenNormalizedMessage**](OpenNormalizedMessage.html) post_conversations_messages_inbound_open(body)
+## post_conversations_messages_inbound_open
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+> [**OpenNormalizedMessage**](OpenNormalizedMessage) post_conversations_messages_inbound_open(body)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 Send an inbound Open Message
 
@@ -10834,17 +10657,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**OpenNormalizedMessage**](OpenNormalizedMessage.html)| NormalizedMessage |  |
-{: class="table table-striped"}
+| **body** | [**OpenNormalizedMessage**](OpenNormalizedMessage)| NormalizedMessage |  |
 
 ### Return type
 
-[**OpenNormalizedMessage**](OpenNormalizedMessage.html)
+[**OpenNormalizedMessage**](OpenNormalizedMessage)
 
-<a name="post_conversations_messaging_integrations_facebook"></a>
 
-## [**FacebookIntegration**](FacebookIntegration.html) post_conversations_messaging_integrations_facebook(body)
+## post_conversations_messaging_integrations_facebook
 
+> [**FacebookIntegration**](FacebookIntegration) post_conversations_messaging_integrations_facebook(body)
 
 
 Create a Facebook Integration
@@ -10883,17 +10705,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**FacebookIntegrationRequest**](FacebookIntegrationRequest.html)| FacebookIntegrationRequest |  |
-{: class="table table-striped"}
+| **body** | [**FacebookIntegrationRequest**](FacebookIntegrationRequest)| FacebookIntegrationRequest |  |
 
 ### Return type
 
-[**FacebookIntegration**](FacebookIntegration.html)
+[**FacebookIntegration**](FacebookIntegration)
 
-<a name="post_conversations_messaging_integrations_instagram"></a>
 
-## [**InstagramIntegration**](InstagramIntegration.html) post_conversations_messaging_integrations_instagram(body)
+## post_conversations_messaging_integrations_instagram
 
+> [**InstagramIntegration**](InstagramIntegration) post_conversations_messaging_integrations_instagram(body)
 
 
 Create Instagram Integration
@@ -10932,17 +10753,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**InstagramIntegrationRequest**](InstagramIntegrationRequest.html)| InstagramIntegrationRequest |  |
-{: class="table table-striped"}
+| **body** | [**InstagramIntegrationRequest**](InstagramIntegrationRequest)| InstagramIntegrationRequest |  |
 
 ### Return type
 
-[**InstagramIntegration**](InstagramIntegration.html)
+[**InstagramIntegration**](InstagramIntegration)
 
-<a name="post_conversations_messaging_integrations_open"></a>
 
-## [**OpenIntegration**](OpenIntegration.html) post_conversations_messaging_integrations_open(body)
+## post_conversations_messaging_integrations_open
 
+> [**OpenIntegration**](OpenIntegration) post_conversations_messaging_integrations_open(body)
 
 
 Create an Open messaging integration
@@ -10983,18 +10803,20 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**OpenIntegrationRequest**](OpenIntegrationRequest.html)| OpenIntegrationRequest |  |
-{: class="table table-striped"}
+| **body** | [**OpenIntegrationRequest**](OpenIntegrationRequest)| OpenIntegrationRequest |  |
 
 ### Return type
 
-[**OpenIntegration**](OpenIntegration.html)
+[**OpenIntegration**](OpenIntegration)
 
-<a name="post_conversations_messaging_integrations_whatsapp"></a>
 
-## [**WhatsAppIntegration**](WhatsAppIntegration.html) post_conversations_messaging_integrations_whatsapp(body)
+## post_conversations_messaging_integrations_whatsapp
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+> [**WhatsAppIntegration**](WhatsAppIntegration) post_conversations_messaging_integrations_whatsapp(body)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 [This API is deprecated. Use POST /api/v2/conversations/messaging/integrations/whatsapp/embeddedsignup instead] Create a WhatsApp Integration
 
@@ -11034,17 +10856,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**WhatsAppIntegrationRequest**](WhatsAppIntegrationRequest.html)| WhatsAppIntegrationRequest |  |
-{: class="table table-striped"}
+| **body** | [**WhatsAppIntegrationRequest**](WhatsAppIntegrationRequest)| WhatsAppIntegrationRequest |  |
 
 ### Return type
 
-[**WhatsAppIntegration**](WhatsAppIntegration.html)
+[**WhatsAppIntegration**](WhatsAppIntegration)
 
-<a name="post_conversations_messaging_integrations_whatsapp_embeddedsignup"></a>
 
-## [**WhatsAppIntegration**](WhatsAppIntegration.html) post_conversations_messaging_integrations_whatsapp_embeddedsignup(body)
+## post_conversations_messaging_integrations_whatsapp_embeddedsignup
 
+> [**WhatsAppIntegration**](WhatsAppIntegration) post_conversations_messaging_integrations_whatsapp_embeddedsignup(body)
 
 
 Create a WhatsApp Integration using the WhatsApp embedded signup flow
@@ -11085,17 +10906,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**WhatsAppEmbeddedSignupIntegrationRequest**](WhatsAppEmbeddedSignupIntegrationRequest.html)| WhatsAppEmbeddedSignupIntegrationRequest |  |
-{: class="table table-striped"}
+| **body** | [**WhatsAppEmbeddedSignupIntegrationRequest**](WhatsAppEmbeddedSignupIntegrationRequest)| WhatsAppEmbeddedSignupIntegrationRequest |  |
 
 ### Return type
 
-[**WhatsAppIntegration**](WhatsAppIntegration.html)
+[**WhatsAppIntegration**](WhatsAppIntegration)
 
-<a name="post_conversations_messaging_settings"></a>
 
-## [**MessagingSetting**](MessagingSetting.html) post_conversations_messaging_settings(body)
+## post_conversations_messaging_settings
 
+> [**MessagingSetting**](MessagingSetting) post_conversations_messaging_settings(body)
 
 
 Create a messaging setting
@@ -11134,17 +10954,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**MessagingSettingRequest**](MessagingSettingRequest.html)| MessagingSetting |  |
-{: class="table table-striped"}
+| **body** | [**MessagingSettingRequest**](MessagingSettingRequest)| MessagingSetting |  |
 
 ### Return type
 
-[**MessagingSetting**](MessagingSetting.html)
+[**MessagingSetting**](MessagingSetting)
 
-<a name="post_conversations_messaging_supportedcontent"></a>
 
-## [**SupportedContent**](SupportedContent.html) post_conversations_messaging_supportedcontent(body)
+## post_conversations_messaging_supportedcontent
 
+> [**SupportedContent**](SupportedContent) post_conversations_messaging_supportedcontent(body)
 
 
 Create a Supported Content profile
@@ -11183,17 +11002,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**SupportedContent**](SupportedContent.html)| SupportedContent |  |
-{: class="table table-striped"}
+| **body** | [**SupportedContent**](SupportedContent)| SupportedContent |  |
 
 ### Return type
 
-[**SupportedContent**](SupportedContent.html)
+[**SupportedContent**](SupportedContent)
 
-<a name="post_conversations_participants_attributes_search"></a>
 
-## [**JsonCursorSearchResponse**](JsonCursorSearchResponse.html) post_conversations_participants_attributes_search(body)
+## post_conversations_participants_attributes_search
 
+> [**JsonCursorSearchResponse**](JsonCursorSearchResponse) post_conversations_participants_attributes_search(body)
 
 
 Search conversations
@@ -11232,18 +11050,20 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**ConversationParticipantSearchRequest**](ConversationParticipantSearchRequest.html)| Search request options |  |
-{: class="table table-striped"}
+| **body** | [**ConversationParticipantSearchRequest**](ConversationParticipantSearchRequest)| Search request options |  |
 
 ### Return type
 
-[**JsonCursorSearchResponse**](JsonCursorSearchResponse.html)
+[**JsonCursorSearchResponse**](JsonCursorSearchResponse)
 
-<a name="post_conversations_screenshare_participant_communication_wrapup"></a>
 
-##  post_conversations_screenshare_participant_communication_wrapup(conversation_id, participant_id, communication_id, body=body)
+## post_conversations_screenshare_participant_communication_wrapup
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+>  post_conversations_screenshare_participant_communication_wrapup(conversation_id, participant_id, communication_id, body=body)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 Apply wrap-up for this conversation communication
 
@@ -11288,17 +11108,16 @@ except ApiException as e:
 | **conversation_id** | **str**| conversationId |  |
 | **participant_id** | **str**| participantId |  |
 | **communication_id** | **str**| communicationId |  |
-| **body** | [**WrapupInput**](WrapupInput.html)| Wrap-up | [optional]  |
-{: class="table table-striped"}
+| **body** | [**WrapupInput**](WrapupInput)| Wrap-up | [optional]  |
 
 ### Return type
 
 void (empty response body)
 
-<a name="post_conversations_social_participant_communication_wrapup"></a>
 
-##  post_conversations_social_participant_communication_wrapup(conversation_id, participant_id, communication_id, body=body)
+## post_conversations_social_participant_communication_wrapup
 
+>  post_conversations_social_participant_communication_wrapup(conversation_id, participant_id, communication_id, body=body)
 
 
 Apply wrap-up for this conversation communication
@@ -11342,17 +11161,16 @@ except ApiException as e:
 | **conversation_id** | **str**| conversationId |  |
 | **participant_id** | **str**| participantId |  |
 | **communication_id** | **str**| communicationId |  |
-| **body** | [**WrapupInput**](WrapupInput.html)| Wrap-up | [optional]  |
-{: class="table table-striped"}
+| **body** | [**WrapupInput**](WrapupInput)| Wrap-up | [optional]  |
 
 ### Return type
 
 void (empty response body)
 
-<a name="post_conversations_video_participant_communication_wrapup"></a>
 
-##  post_conversations_video_participant_communication_wrapup(conversation_id, participant_id, communication_id, body=body)
+## post_conversations_video_participant_communication_wrapup
 
+>  post_conversations_video_participant_communication_wrapup(conversation_id, participant_id, communication_id, body=body)
 
 
 Apply wrap-up for this conversation communication
@@ -11396,17 +11214,16 @@ except ApiException as e:
 | **conversation_id** | **str**| conversationId |  |
 | **participant_id** | **str**| participantId |  |
 | **communication_id** | **str**| communicationId |  |
-| **body** | [**WrapupInput**](WrapupInput.html)| Wrap-up | [optional]  |
-{: class="table table-striped"}
+| **body** | [**WrapupInput**](WrapupInput)| Wrap-up | [optional]  |
 
 ### Return type
 
 void (empty response body)
 
-<a name="post_conversations_videos_meetings"></a>
 
-## [**MeetingIdRecord**](MeetingIdRecord.html) post_conversations_videos_meetings(body)
+## post_conversations_videos_meetings
 
+> [**MeetingIdRecord**](MeetingIdRecord) post_conversations_videos_meetings(body)
 
 
 Generate a meetingId for a given conferenceId
@@ -11447,17 +11264,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**GenerateMeetingIdRequest**](GenerateMeetingIdRequest.html)| MeetingIdRequest |  |
-{: class="table table-striped"}
+| **body** | [**GenerateMeetingIdRequest**](GenerateMeetingIdRequest)| MeetingIdRequest |  |
 
 ### Return type
 
-[**MeetingIdRecord**](MeetingIdRecord.html)
+[**MeetingIdRecord**](MeetingIdRecord)
 
-<a name="put_conversation_participant_flaggedreason"></a>
 
-##  put_conversation_participant_flaggedreason(conversation_id, participant_id)
+## put_conversation_participant_flaggedreason
 
+>  put_conversation_participant_flaggedreason(conversation_id, participant_id)
 
 
 Set flagged reason on conversation participant to indicate bad conversation quality.
@@ -11497,16 +11313,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversation ID |  |
 | **participant_id** | **str**| participant ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (empty response body)
 
-<a name="put_conversation_secureattributes"></a>
 
-## str** put_conversation_secureattributes(conversation_id, body)
+## put_conversation_secureattributes
 
+> str** put_conversation_secureattributes(conversation_id, body)
 
 
 Set the secure attributes on a conversation.
@@ -11547,17 +11362,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversation ID |  |
-| **body** | [**ConversationSecureAttributes**](ConversationSecureAttributes.html)| Conversation Secure Attributes |  |
-{: class="table table-striped"}
+| **body** | [**ConversationSecureAttributes**](ConversationSecureAttributes)| Conversation Secure Attributes |  |
 
 ### Return type
 
 **str**
 
-<a name="put_conversation_tags"></a>
 
-## str** put_conversation_tags(conversation_id, body)
+## put_conversation_tags
 
+> str** put_conversation_tags(conversation_id, body)
 
 
 Update the tags on a conversation.
@@ -11598,17 +11412,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversation ID |  |
-| **body** | [**ConversationTagsUpdate**](ConversationTagsUpdate.html)| Conversation Tags |  |
-{: class="table table-striped"}
+| **body** | [**ConversationTagsUpdate**](ConversationTagsUpdate)| Conversation Tags |  |
 
 ### Return type
 
 **str**
 
-<a name="put_conversations_call_participant_communication_uuidata"></a>
 
-## object** put_conversations_call_participant_communication_uuidata(conversation_id, participant_id, communication_id, body)
+## put_conversations_call_participant_communication_uuidata
 
+> object** put_conversations_call_participant_communication_uuidata(conversation_id, participant_id, communication_id, body)
 
 
 Set uuiData to be sent on future commands.
@@ -11652,17 +11465,16 @@ except ApiException as e:
 | **conversation_id** | **str**| conversationId |  |
 | **participant_id** | **str**| participantId |  |
 | **communication_id** | **str**| communicationId |  |
-| **body** | [**SetUuiDataRequest**](SetUuiDataRequest.html)| UUIData Request |  |
-{: class="table table-striped"}
+| **body** | [**SetUuiDataRequest**](SetUuiDataRequest)| UUIData Request |  |
 
 ### Return type
 
 **object**
 
-<a name="put_conversations_call_recordingstate"></a>
 
-## str** put_conversations_call_recordingstate(conversation_id, body)
+## put_conversations_call_recordingstate
 
+> str** put_conversations_call_recordingstate(conversation_id, body)
 
 
 Update a conversation by setting its recording state
@@ -11703,17 +11515,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
-| **body** | [**SetRecordingState**](SetRecordingState.html)| SetRecordingState |  |
-{: class="table table-striped"}
+| **body** | [**SetRecordingState**](SetRecordingState)| SetRecordingState |  |
 
 ### Return type
 
 **str**
 
-<a name="put_conversations_callback_recordingstate"></a>
 
-## str** put_conversations_callback_recordingstate(conversation_id, body)
+## put_conversations_callback_recordingstate
 
+> str** put_conversations_callback_recordingstate(conversation_id, body)
 
 
 Update a conversation by setting its recording state
@@ -11754,17 +11565,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
-| **body** | [**SetRecordingState**](SetRecordingState.html)| SetRecordingState |  |
-{: class="table table-striped"}
+| **body** | [**SetRecordingState**](SetRecordingState)| SetRecordingState |  |
 
 ### Return type
 
 **str**
 
-<a name="put_conversations_chat_recordingstate"></a>
 
-## str** put_conversations_chat_recordingstate(conversation_id, body)
+## put_conversations_chat_recordingstate
 
+> str** put_conversations_chat_recordingstate(conversation_id, body)
 
 
 Update a conversation by setting its recording state
@@ -11805,17 +11615,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
-| **body** | [**SetRecordingState**](SetRecordingState.html)| SetRecordingState |  |
-{: class="table table-striped"}
+| **body** | [**SetRecordingState**](SetRecordingState)| SetRecordingState |  |
 
 ### Return type
 
 **str**
 
-<a name="put_conversations_cobrowsesession_recordingstate"></a>
 
-## str** put_conversations_cobrowsesession_recordingstate(conversation_id, body)
+## put_conversations_cobrowsesession_recordingstate
 
+> str** put_conversations_cobrowsesession_recordingstate(conversation_id, body)
 
 
 Update a conversation by setting its recording state
@@ -11856,17 +11665,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
-| **body** | [**SetRecordingState**](SetRecordingState.html)| SetRecordingState |  |
-{: class="table table-striped"}
+| **body** | [**SetRecordingState**](SetRecordingState)| SetRecordingState |  |
 
 ### Return type
 
 **str**
 
-<a name="put_conversations_email_messages_draft"></a>
 
-## [**EmailMessage**](EmailMessage.html) put_conversations_email_messages_draft(conversation_id, body)
+## put_conversations_email_messages_draft
 
+> [**EmailMessage**](EmailMessage) put_conversations_email_messages_draft(conversation_id, body)
 
 
 Update conversation draft reply
@@ -11906,17 +11714,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
-| **body** | [**EmailMessage**](EmailMessage.html)| Draft |  |
-{: class="table table-striped"}
+| **body** | [**EmailMessage**](EmailMessage)| Draft |  |
 
 ### Return type
 
-[**EmailMessage**](EmailMessage.html)
+[**EmailMessage**](EmailMessage)
 
-<a name="put_conversations_email_recordingstate"></a>
 
-## str** put_conversations_email_recordingstate(conversation_id, body)
+## put_conversations_email_recordingstate
 
+> str** put_conversations_email_recordingstate(conversation_id, body)
 
 
 Update a conversation by setting its recording state
@@ -11957,17 +11764,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
-| **body** | [**SetRecordingState**](SetRecordingState.html)| SetRecordingState |  |
-{: class="table table-striped"}
+| **body** | [**SetRecordingState**](SetRecordingState)| SetRecordingState |  |
 
 ### Return type
 
 **str**
 
-<a name="put_conversations_keyconfiguration"></a>
 
-## [**ConversationEncryptionConfiguration**](ConversationEncryptionConfiguration.html) put_conversations_keyconfiguration(keyconfigurations_id, body)
+## put_conversations_keyconfiguration
 
+> [**ConversationEncryptionConfiguration**](ConversationEncryptionConfiguration) put_conversations_keyconfiguration(keyconfigurations_id, body)
 
 
 Update the encryption key configurations
@@ -12008,17 +11814,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **keyconfigurations_id** | **str**| Key Configurations Id |  |
-| **body** | [**ConversationEncryptionConfiguration**](ConversationEncryptionConfiguration.html)| Encryption key configuration metadata |  |
-{: class="table table-striped"}
+| **body** | [**ConversationEncryptionConfiguration**](ConversationEncryptionConfiguration)| Encryption key configuration metadata |  |
 
 ### Return type
 
-[**ConversationEncryptionConfiguration**](ConversationEncryptionConfiguration.html)
+[**ConversationEncryptionConfiguration**](ConversationEncryptionConfiguration)
 
-<a name="put_conversations_message_recordingstate"></a>
 
-## str** put_conversations_message_recordingstate(conversation_id, body)
+## put_conversations_message_recordingstate
 
+> str** put_conversations_message_recordingstate(conversation_id, body)
 
 
 Update a conversation by setting its recording state
@@ -12059,17 +11864,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
-| **body** | [**SetRecordingState**](SetRecordingState.html)| SetRecordingState |  |
-{: class="table table-striped"}
+| **body** | [**SetRecordingState**](SetRecordingState)| SetRecordingState |  |
 
 ### Return type
 
 **str**
 
-<a name="put_conversations_messaging_settings_default"></a>
 
-## [**MessagingSetting**](MessagingSetting.html) put_conversations_messaging_settings_default(body)
+## put_conversations_messaging_settings_default
 
+> [**MessagingSetting**](MessagingSetting) put_conversations_messaging_settings_default(body)
 
 
 Set the organization's default setting that may be applied to to integrations without settings
@@ -12110,17 +11914,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**MessagingSettingDefaultRequest**](MessagingSettingDefaultRequest.html)| MessagingSetting |  |
-{: class="table table-striped"}
+| **body** | [**MessagingSettingDefaultRequest**](MessagingSettingDefaultRequest)| MessagingSetting |  |
 
 ### Return type
 
-[**MessagingSetting**](MessagingSetting.html)
+[**MessagingSetting**](MessagingSetting)
 
-<a name="put_conversations_messaging_supportedcontent_default"></a>
 
-## [**SupportedContent**](SupportedContent.html) put_conversations_messaging_supportedcontent_default(body)
+## put_conversations_messaging_supportedcontent_default
 
+> [**SupportedContent**](SupportedContent) put_conversations_messaging_supportedcontent_default(body)
 
 
 Set the organization's default supported content profile that may be assigned to an integration when it is created.
@@ -12161,17 +11964,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**SupportedContentReference**](SupportedContentReference.html)| SupportedContent |  |
-{: class="table table-striped"}
+| **body** | [**SupportedContentReference**](SupportedContentReference)| SupportedContent |  |
 
 ### Return type
 
-[**SupportedContent**](SupportedContent.html)
+[**SupportedContent**](SupportedContent)
 
-<a name="put_conversations_messaging_threadingtimeline"></a>
 
-## [**ConversationThreadingWindow**](ConversationThreadingWindow.html) put_conversations_messaging_threadingtimeline(body)
+## put_conversations_messaging_threadingtimeline
 
+> [**ConversationThreadingWindow**](ConversationThreadingWindow) put_conversations_messaging_threadingtimeline(body)
 
 
 Update conversation threading window timeline for each messaging type
@@ -12212,18 +12014,20 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**ConversationThreadingWindow**](ConversationThreadingWindow.html)| ConversationThreadingWindowRequest |  |
-{: class="table table-striped"}
+| **body** | [**ConversationThreadingWindow**](ConversationThreadingWindow)| ConversationThreadingWindowRequest |  |
 
 ### Return type
 
-[**ConversationThreadingWindow**](ConversationThreadingWindow.html)
+[**ConversationThreadingWindow**](ConversationThreadingWindow)
 
-<a name="put_conversations_screenshare_recordingstate"></a>
 
-## str** put_conversations_screenshare_recordingstate(conversation_id, body)
+## put_conversations_screenshare_recordingstate
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+> str** put_conversations_screenshare_recordingstate(conversation_id, body)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 Update a conversation by setting its recording state
 
@@ -12265,17 +12069,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
-| **body** | [**SetRecordingState**](SetRecordingState.html)| SetRecordingState |  |
-{: class="table table-striped"}
+| **body** | [**SetRecordingState**](SetRecordingState)| SetRecordingState |  |
 
 ### Return type
 
 **str**
 
-<a name="put_conversations_social_recordingstate"></a>
 
-## str** put_conversations_social_recordingstate(conversation_id, body)
+## put_conversations_social_recordingstate
 
+> str** put_conversations_social_recordingstate(conversation_id, body)
 
 
 Update a conversation by setting its recording state
@@ -12316,17 +12119,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
-| **body** | [**SetRecordingState**](SetRecordingState.html)| SetRecordingState |  |
-{: class="table table-striped"}
+| **body** | [**SetRecordingState**](SetRecordingState)| SetRecordingState |  |
 
 ### Return type
 
 **str**
 
-<a name="put_conversations_video_recordingstate"></a>
 
-## str** put_conversations_video_recordingstate(conversation_id, body)
+## put_conversations_video_recordingstate
 
+> str** put_conversations_video_recordingstate(conversation_id, body)
 
 
 Update a conversation by setting its recording state
@@ -12367,10 +12169,11 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
-| **body** | [**SetRecordingState**](SetRecordingState.html)| SetRecordingState |  |
-{: class="table table-striped"}
+| **body** | [**SetRecordingState**](SetRecordingState)| SetRecordingState |  |
 
 ### Return type
 
 **str**
 
+
+_PureCloudPlatformClientV2 211.1.0_

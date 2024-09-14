@@ -1,17 +1,17 @@
----
-title: OutboundMessagingCampaignPostContactEmailEventTopicEmailAttributes
----
+# OutboundMessagingCampaignPostContactEmailEventTopicEmailAttributes
+
 ## OutboundMessagingCampaignPostContactEmailEventTopicEmailAttributes
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **email_subject** | **str** |  | [optional] |
-| **configured_email_address** | **str** |  | [optional] |
-| **contact_email_address** | **str** |  | [optional] |
-| **reply_to_address** | **str** |  | [optional] |
-| **contact_email_column_name** | **str** |  | [optional] |
-{: class="table table-striped"}
+| **email_subject** | str |  | [optional] |
+| **configured_email_address** | str |  | [optional] |
+| **contact_email_address** | str |  | [optional] |
+| **reply_to_address** | str |  | [optional] |
+| **contact_email_column_name** | str |  | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

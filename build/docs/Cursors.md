@@ -1,14 +1,14 @@
----
-title: Cursors
----
+# Cursors
+
 ## Cursors
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **before** | **str** |  | [optional] |
-| **after** | **str** |  | [optional] |
-{: class="table table-striped"}
+| **before** | str |  | [optional] |
+| **after** | str |  | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

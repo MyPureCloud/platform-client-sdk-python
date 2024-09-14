@@ -1,13 +1,13 @@
----
-title: ConditionalGroupRouting
----
+# ConditionalGroupRouting
+
 ## ConditionalGroupRouting
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **rules** | [**list[ConditionalGroupRoutingRule]**](ConditionalGroupRoutingRule.html) | The set of rules to be executed for each conversation | [optional] |
-{: class="table table-striped"}
+| **rules** | [list[ConditionalGroupRoutingRule]](ConditionalGroupRoutingRule) | The set of rules to be executed for each conversation | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

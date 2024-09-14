@@ -1,25 +1,25 @@
----
-title: JourneyAppEventsNotificationAppMessage
----
+# JourneyAppEventsNotificationAppMessage
+
 ## JourneyAppEventsNotificationAppMessage
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **event_name** | **str** |  | [optional] |
-| **screen_name** | **str** |  | [optional] |
-| **app** | [**JourneyAppEventsNotificationApp**](JourneyAppEventsNotificationApp.html) |  | [optional] |
-| **device** | [**JourneyAppEventsNotificationDevice**](JourneyAppEventsNotificationDevice.html) |  | [optional] |
-| **ip_address** | **str** |  | [optional] |
-| **ip_organization** | **str** |  | [optional] |
-| **geolocation** | [**JourneyAppEventsNotificationGeoLocation**](JourneyAppEventsNotificationGeoLocation.html) |  | [optional] |
-| **sdk_library** | [**JourneyAppEventsNotificationSdkLibrary**](JourneyAppEventsNotificationSdkLibrary.html) |  | [optional] |
-| **network_connectivity** | [**JourneyAppEventsNotificationNetworkConnectivity**](JourneyAppEventsNotificationNetworkConnectivity.html) |  | [optional] |
-| **mkt_campaign** | [**JourneyAppEventsNotificationMktCampaign**](JourneyAppEventsNotificationMktCampaign.html) |  | [optional] |
-| **search_query** | **str** |  | [optional] |
-| **attributes** | [**dict(str, JourneyAppEventsNotificationCustomEventAttribute)**](JourneyAppEventsNotificationCustomEventAttribute.html) |  | [optional] |
-| **traits** | [**dict(str, JourneyAppEventsNotificationCustomEventAttribute)**](JourneyAppEventsNotificationCustomEventAttribute.html) |  | [optional] |
-{: class="table table-striped"}
+| **event_name** | str |  | [optional] |
+| **screen_name** | str |  | [optional] |
+| **app** | [JourneyAppEventsNotificationApp](JourneyAppEventsNotificationApp) |  | [optional] |
+| **device** | [JourneyAppEventsNotificationDevice](JourneyAppEventsNotificationDevice) |  | [optional] |
+| **ip_address** | str |  | [optional] |
+| **ip_organization** | str |  | [optional] |
+| **geolocation** | [JourneyAppEventsNotificationGeoLocation](JourneyAppEventsNotificationGeoLocation) |  | [optional] |
+| **sdk_library** | [JourneyAppEventsNotificationSdkLibrary](JourneyAppEventsNotificationSdkLibrary) |  | [optional] |
+| **network_connectivity** | [JourneyAppEventsNotificationNetworkConnectivity](JourneyAppEventsNotificationNetworkConnectivity) |  | [optional] |
+| **mkt_campaign** | [JourneyAppEventsNotificationMktCampaign](JourneyAppEventsNotificationMktCampaign) |  | [optional] |
+| **search_query** | str |  | [optional] |
+| **attributes** | [dict(str, JourneyAppEventsNotificationCustomEventAttribute)](JourneyAppEventsNotificationCustomEventAttribute) |  | [optional] |
+| **traits** | [dict(str, JourneyAppEventsNotificationCustomEventAttribute)](JourneyAppEventsNotificationCustomEventAttribute) |  | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

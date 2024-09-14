@@ -1,6 +1,4 @@
----
-title: WidgetsApi
----
+# WidgetsApi
 
 ## PureCloudPlatformClientV2.WidgetsApi
 
@@ -8,17 +6,17 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 |Method | Description|
 |------------- | -------------|
-|[**delete_widgets_deployment**](WidgetsApi.html#delete_widgets_deployment) | Delete a Widget deployment|
-|[**get_widgets_deployment**](WidgetsApi.html#get_widgets_deployment) | Get a Widget deployment|
-|[**get_widgets_deployments**](WidgetsApi.html#get_widgets_deployments) | List Widget deployments|
-|[**post_widgets_deployments**](WidgetsApi.html#post_widgets_deployments) | Create Widget deployment|
-|[**put_widgets_deployment**](WidgetsApi.html#put_widgets_deployment) | Update a Widget deployment|
-{: class="table table-striped"}
+|[**delete_widgets_deployment**](#delete_widgets_deployment) | Delete a Widget deployment|
+|[**get_widgets_deployment**](#get_widgets_deployment) | Get a Widget deployment|
+|[**get_widgets_deployments**](#get_widgets_deployments) | List Widget deployments|
+|[**post_widgets_deployments**](#post_widgets_deployments) | Create Widget deployment|
+|[**put_widgets_deployment**](#put_widgets_deployment) | Update a Widget deployment|
 
-<a name="delete_widgets_deployment"></a>
 
-##  delete_widgets_deployment(deployment_id)
 
+## delete_widgets_deployment
+
+>  delete_widgets_deployment(deployment_id)
 
 
 Delete a Widget deployment
@@ -58,16 +56,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **deployment_id** | **str**| Widget Config Id |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (empty response body)
 
-<a name="get_widgets_deployment"></a>
 
-## [**WidgetDeployment**](WidgetDeployment.html) get_widgets_deployment(deployment_id)
+## get_widgets_deployment
 
+> [**WidgetDeployment**](WidgetDeployment) get_widgets_deployment(deployment_id)
 
 
 Get a Widget deployment
@@ -108,16 +105,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **deployment_id** | **str**| Widget Config Id |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**WidgetDeployment**](WidgetDeployment.html)
+[**WidgetDeployment**](WidgetDeployment)
 
-<a name="get_widgets_deployments"></a>
 
-## [**WidgetDeploymentEntityListing**](WidgetDeploymentEntityListing.html) get_widgets_deployments()
+## get_widgets_deployments
 
+> [**WidgetDeploymentEntityListing**](WidgetDeploymentEntityListing) get_widgets_deployments()
 
 
 List Widget deployments
@@ -155,15 +151,14 @@ except ApiException as e:
 
 This endpoint does not need any parameters.
 
-
 ### Return type
 
-[**WidgetDeploymentEntityListing**](WidgetDeploymentEntityListing.html)
+[**WidgetDeploymentEntityListing**](WidgetDeploymentEntityListing)
 
-<a name="post_widgets_deployments"></a>
 
-## [**WidgetDeployment**](WidgetDeployment.html) post_widgets_deployments(body)
+## post_widgets_deployments
 
+> [**WidgetDeployment**](WidgetDeployment) post_widgets_deployments(body)
 
 
 Create Widget deployment
@@ -203,17 +198,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**WidgetDeployment**](WidgetDeployment.html)| Deployment |  |
-{: class="table table-striped"}
+| **body** | [**WidgetDeployment**](WidgetDeployment)| Deployment |  |
 
 ### Return type
 
-[**WidgetDeployment**](WidgetDeployment.html)
+[**WidgetDeployment**](WidgetDeployment)
 
-<a name="put_widgets_deployment"></a>
 
-## [**WidgetDeployment**](WidgetDeployment.html) put_widgets_deployment(deployment_id, body)
+## put_widgets_deployment
 
+> [**WidgetDeployment**](WidgetDeployment) put_widgets_deployment(deployment_id, body)
 
 
 Update a Widget deployment
@@ -255,10 +249,11 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **deployment_id** | **str**| Widget Config Id |  |
-| **body** | [**WidgetDeployment**](WidgetDeployment.html)| Deployment |  |
-{: class="table table-striped"}
+| **body** | [**WidgetDeployment**](WidgetDeployment)| Deployment |  |
 
 ### Return type
 
-[**WidgetDeployment**](WidgetDeployment.html)
+[**WidgetDeployment**](WidgetDeployment)
 
+
+_PureCloudPlatformClientV2 211.1.0_

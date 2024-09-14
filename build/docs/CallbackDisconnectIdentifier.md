@@ -1,14 +1,14 @@
----
-title: CallbackDisconnectIdentifier
----
+# CallbackDisconnectIdentifier
+
 ## CallbackDisconnectIdentifier
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **conversation_id** | **str** | The Conversation Id. | |
-| **callback_id** | **str** | The callback id. | |
-{: class="table table-striped"}
+| **conversation_id** | str | The Conversation Id. | |
+| **callback_id** | str | The callback id. | |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

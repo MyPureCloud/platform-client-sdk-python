@@ -1,14 +1,14 @@
----
-title: StorySetting
----
+# StorySetting
+
 ## StorySetting
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **mention** | [**InboundOnlySetting**](InboundOnlySetting.html) | Setting relating to Story Mentions | [optional] |
-| **reply** | [**InboundOnlySetting**](InboundOnlySetting.html) | Setting relating to Story Replies | [optional] |
-{: class="table table-striped"}
+| **mention** | [InboundOnlySetting](InboundOnlySetting) | Setting relating to Story Mentions | [optional] |
+| **reply** | [InboundOnlySetting](InboundOnlySetting) | Setting relating to Story Replies | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

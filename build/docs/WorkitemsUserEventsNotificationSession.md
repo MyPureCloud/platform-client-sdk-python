@@ -1,18 +1,18 @@
----
-title: WorkitemsUserEventsNotificationSession
----
+# WorkitemsUserEventsNotificationSession
+
 ## WorkitemsUserEventsNotificationSession
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **type** | **str** |  | [optional] |
-| **id** | **str** |  | [optional] |
-| **status** | **str** |  | [optional] |
-| **date_session_start** | **str** |  | [optional] |
-| **date_session_end** | **str** |  | [optional] |
-| **assignment_segments** | [**list[WorkitemsUserEventsNotificationAssignmentSegment]**](WorkitemsUserEventsNotificationAssignmentSegment.html) |  | [optional] |
-{: class="table table-striped"}
+| **type** | str |  | [optional] |
+| **id** | str |  | [optional] |
+| **status** | str |  | [optional] |
+| **date_session_start** | str |  | [optional] |
+| **date_session_end** | str |  | [optional] |
+| **assignment_segments** | [list[WorkitemsUserEventsNotificationAssignmentSegment]](WorkitemsUserEventsNotificationAssignmentSegment) |  | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

@@ -1,6 +1,4 @@
----
-title: LicenseApi
----
+# LicenseApi
 
 ## PureCloudPlatformClientV2.LicenseApi
 
@@ -8,21 +6,21 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 |Method | Description|
 |------------- | -------------|
-|[**get_license_definition**](LicenseApi.html#get_license_definition) | Get PureCloud license definition.|
-|[**get_license_definitions**](LicenseApi.html#get_license_definitions) | Get all PureCloud license definitions available for the organization.|
-|[**get_license_toggle**](LicenseApi.html#get_license_toggle) | Deprecated - no alternative required. This operation will always return &#39;true&#39; for requested toggles|
-|[**get_license_user**](LicenseApi.html#get_license_user) | Get licenses for specified user.|
-|[**get_license_users**](LicenseApi.html#get_license_users) | Get a page of users and their licenses|
-|[**post_license_infer**](LicenseApi.html#post_license_infer) | Get a list of licenses inferred based on a list of roleIds|
-|[**post_license_organization**](LicenseApi.html#post_license_organization) | Update the organization&#39;s license assignments in a batch.|
-|[**post_license_toggle**](LicenseApi.html#post_license_toggle) | Deprecated. No alternative required - this endpoint has no effect|
-|[**post_license_users**](LicenseApi.html#post_license_users) | Fetch user licenses in a batch.|
-{: class="table table-striped"}
+|[**get_license_definition**](#get_license_definition) | Get PureCloud license definition.|
+|[**get_license_definitions**](#get_license_definitions) | Get all PureCloud license definitions available for the organization.|
+|[**get_license_toggle**](#get_license_toggle) | Deprecated - no alternative required. This operation will always return &#39;true&#39; for requested toggles|
+|[**get_license_user**](#get_license_user) | Get licenses for specified user.|
+|[**get_license_users**](#get_license_users) | Get a page of users and their licenses|
+|[**post_license_infer**](#post_license_infer) | Get a list of licenses inferred based on a list of roleIds|
+|[**post_license_organization**](#post_license_organization) | Update the organization&#39;s license assignments in a batch.|
+|[**post_license_toggle**](#post_license_toggle) | Deprecated. No alternative required - this endpoint has no effect|
+|[**post_license_users**](#post_license_users) | Fetch user licenses in a batch.|
 
-<a name="get_license_definition"></a>
 
-## [**LicenseDefinition**](LicenseDefinition.html) get_license_definition(license_id)
 
+## get_license_definition
+
+> [**LicenseDefinition**](LicenseDefinition) get_license_definition(license_id)
 
 
 Get PureCloud license definition.
@@ -63,16 +61,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **license_id** | **str**| ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**LicenseDefinition**](LicenseDefinition.html)
+[**LicenseDefinition**](LicenseDefinition)
 
-<a name="get_license_definitions"></a>
 
-## [**list[LicenseDefinition]**](LicenseDefinition.html) get_license_definitions()
+## get_license_definitions
 
+> [**list[LicenseDefinition]**](LicenseDefinition) get_license_definitions()
 
 
 Get all PureCloud license definitions available for the organization.
@@ -110,15 +107,14 @@ except ApiException as e:
 
 This endpoint does not need any parameters.
 
-
 ### Return type
 
-[**list[LicenseDefinition]**](LicenseDefinition.html)
+[**list[LicenseDefinition]**](LicenseDefinition)
 
-<a name="get_license_toggle"></a>
 
-## [**LicenseOrgToggle**](LicenseOrgToggle.html) get_license_toggle(feature_name)
+## get_license_toggle
 
+> [**LicenseOrgToggle**](LicenseOrgToggle) get_license_toggle(feature_name)
 
 
 Deprecated - no alternative required. This operation will always return 'true' for requested toggles
@@ -157,16 +153,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **feature_name** | **str**| featureName |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**LicenseOrgToggle**](LicenseOrgToggle.html)
+[**LicenseOrgToggle**](LicenseOrgToggle)
 
-<a name="get_license_user"></a>
 
-## [**LicenseUser**](LicenseUser.html) get_license_user(user_id)
+## get_license_user
 
+> [**LicenseUser**](LicenseUser) get_license_user(user_id)
 
 
 Get licenses for specified user.
@@ -207,16 +202,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **user_id** | **str**| ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**LicenseUser**](LicenseUser.html)
+[**LicenseUser**](LicenseUser)
 
-<a name="get_license_users"></a>
 
-## [**UserLicensesEntityListing**](UserLicensesEntityListing.html) get_license_users(page_size=page_size, page_number=page_number)
+## get_license_users
 
+> [**UserLicensesEntityListing**](UserLicensesEntityListing) get_license_users(page_size=page_size, page_number=page_number)
 
 
 Get a page of users and their licenses
@@ -259,16 +253,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
-{: class="table table-striped"}
 
 ### Return type
 
-[**UserLicensesEntityListing**](UserLicensesEntityListing.html)
+[**UserLicensesEntityListing**](UserLicensesEntityListing)
 
-<a name="post_license_infer"></a>
 
-## list[str]** post_license_infer(body=body)
+## post_license_infer
 
+> list[str]** post_license_infer(body=body)
 
 
 Get a list of licenses inferred based on a list of roleIds
@@ -306,17 +299,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**list[str]**](str.html)| The roleIds to use while inferring licenses | [optional]  |
-{: class="table table-striped"}
+| **body** | [**list[str]**](str)| The roleIds to use while inferring licenses | [optional]  |
 
 ### Return type
 
 **list[str]**
 
-<a name="post_license_organization"></a>
 
-## [**list[LicenseUpdateStatus]**](LicenseUpdateStatus.html) post_license_organization(body=body)
+## post_license_organization
 
+> [**list[LicenseUpdateStatus]**](LicenseUpdateStatus) post_license_organization(body=body)
 
 
 Update the organization's license assignments in a batch.
@@ -355,17 +347,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**LicenseBatchAssignmentRequest**](LicenseBatchAssignmentRequest.html)| The license assignments to update. | [optional]  |
-{: class="table table-striped"}
+| **body** | [**LicenseBatchAssignmentRequest**](LicenseBatchAssignmentRequest)| The license assignments to update. | [optional]  |
 
 ### Return type
 
-[**list[LicenseUpdateStatus]**](LicenseUpdateStatus.html)
+[**list[LicenseUpdateStatus]**](LicenseUpdateStatus)
 
-<a name="post_license_toggle"></a>
 
-## [**LicenseOrgToggle**](LicenseOrgToggle.html) post_license_toggle(feature_name)
+## post_license_toggle
 
+> [**LicenseOrgToggle**](LicenseOrgToggle) post_license_toggle(feature_name)
 
 
 Deprecated. No alternative required - this endpoint has no effect
@@ -404,16 +395,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **feature_name** | **str**| featureName |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**LicenseOrgToggle**](LicenseOrgToggle.html)
+[**LicenseOrgToggle**](LicenseOrgToggle)
 
-<a name="post_license_users"></a>
 
-## dict(str, object)** post_license_users(body=body)
+## post_license_users
 
+> dict(str, object)** post_license_users(body=body)
 
 
 Fetch user licenses in a batch.
@@ -453,10 +443,11 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**list[str]**](str.html)| The user IDs to fetch. | [optional]  |
-{: class="table table-striped"}
+| **body** | [**list[str]**](str)| The user IDs to fetch. | [optional]  |
 
 ### Return type
 
 **dict(str, object)**
 
+
+_PureCloudPlatformClientV2 211.1.0_

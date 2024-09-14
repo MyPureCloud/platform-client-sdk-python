@@ -1,15 +1,15 @@
----
-title: ConversationVideoEventTopicJourneyContext
----
+# ConversationVideoEventTopicJourneyContext
+
 ## ConversationVideoEventTopicJourneyContext
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **customer** | [**ConversationVideoEventTopicJourneyCustomer**](ConversationVideoEventTopicJourneyCustomer.html) |  | [optional] |
-| **customer_session** | [**ConversationVideoEventTopicJourneyCustomerSession**](ConversationVideoEventTopicJourneyCustomerSession.html) |  | [optional] |
-| **triggering_action** | [**ConversationVideoEventTopicJourneyAction**](ConversationVideoEventTopicJourneyAction.html) |  | [optional] |
-{: class="table table-striped"}
+| **customer** | [ConversationVideoEventTopicJourneyCustomer](ConversationVideoEventTopicJourneyCustomer) |  | [optional] |
+| **customer_session** | [ConversationVideoEventTopicJourneyCustomerSession](ConversationVideoEventTopicJourneyCustomerSession) |  | [optional] |
+| **triggering_action** | [ConversationVideoEventTopicJourneyAction](ConversationVideoEventTopicJourneyAction) |  | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

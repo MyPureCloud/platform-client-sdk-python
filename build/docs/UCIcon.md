@@ -1,13 +1,13 @@
----
-title: UCIcon
----
+# UCIcon
+
 ## UCIcon
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **vector** | **str** | vector | |
-{: class="table table-striped"}
+| **vector** | str | vector | |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

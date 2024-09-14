@@ -1,13 +1,13 @@
----
-title: PatchActionSurvey
----
+# PatchActionSurvey
+
 ## PatchActionSurvey
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **questions** | [**list[PatchSurveyQuestion]**](PatchSurveyQuestion.html) | Questions shown to the user. | |
-{: class="table table-striped"}
+| **questions** | [list[PatchSurveyQuestion]](PatchSurveyQuestion) | Questions shown to the user. | |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

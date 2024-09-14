@@ -1,14 +1,14 @@
----
-title: QueueConversationEventTopicMessageSticker
----
+# QueueConversationEventTopicMessageSticker
+
 ## QueueConversationEventTopicMessageSticker
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **url** | **str** | The location of the sticker, useful for retrieving it | [optional] |
-| **id** | **str** | The unique id of the the sticker object. | [optional] |
-{: class="table table-striped"}
+| **url** | str | The location of the sticker, useful for retrieving it | [optional] |
+| **id** | str | The unique id of the the sticker object. | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

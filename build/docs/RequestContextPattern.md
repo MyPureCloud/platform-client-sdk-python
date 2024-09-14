@@ -1,13 +1,13 @@
----
-title: RequestContextPattern
----
+# RequestContextPattern
+
 ## RequestContextPattern
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **criteria** | [**list[RequestEntityTypeCriteria]**](RequestEntityTypeCriteria.html) | A list of one or more criteria to satisfy. | |
-{: class="table table-striped"}
+| **criteria** | [list[RequestEntityTypeCriteria]](RequestEntityTypeCriteria) | A list of one or more criteria to satisfy. | |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

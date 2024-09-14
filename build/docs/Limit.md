@@ -1,15 +1,15 @@
----
-title: Limit
----
+# Limit
+
 ## Limit
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **key** | **str** |  | [optional] |
-| **namespace** | **str** |  | [optional] |
-| **value** | **int** |  | [optional] |
-{: class="table table-striped"}
+| **key** | str |  | [optional] |
+| **namespace** | str |  | [optional] |
+| **value** | int |  | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

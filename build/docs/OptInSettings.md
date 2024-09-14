@@ -1,14 +1,14 @@
----
-title: OptInSettings
----
+# OptInSettings
+
 ## OptInSettings
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **keyword** | **list[str]** | List of keywords for compliance | |
-| **response** | [**ComplianceResponse**](ComplianceResponse.html) | The response configuration for the keywords | |
-{: class="table table-striped"}
+| **keyword** | list[str] | List of keywords for compliance | |
+| **response** | [ComplianceResponse](ComplianceResponse) | The response configuration for the keywords | |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

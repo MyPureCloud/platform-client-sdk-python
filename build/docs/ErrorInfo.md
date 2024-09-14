@@ -1,14 +1,14 @@
----
-title: ErrorInfo
----
+# ErrorInfo
+
 ## ErrorInfo
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **message** | **str** |  | [optional] |
-| **code** | **str** |  | [optional] |
-{: class="table table-striped"}
+| **message** | str |  | [optional] |
+| **code** | str |  | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

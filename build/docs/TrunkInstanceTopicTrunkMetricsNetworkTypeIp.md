@@ -1,14 +1,14 @@
----
-title: TrunkInstanceTopicTrunkMetricsNetworkTypeIp
----
+# TrunkInstanceTopicTrunkMetricsNetworkTypeIp
+
 ## TrunkInstanceTopicTrunkMetricsNetworkTypeIp
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **address** | **str** |  | [optional] |
-| **error_info** | [**TrunkInstanceTopicTrunkErrorInfo**](TrunkInstanceTopicTrunkErrorInfo.html) |  | [optional] |
-{: class="table table-striped"}
+| **address** | str |  | [optional] |
+| **error_info** | [TrunkInstanceTopicTrunkErrorInfo](TrunkInstanceTopicTrunkErrorInfo) |  | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

@@ -1,6 +1,4 @@
----
-title: TextbotsApi
----
+# TextbotsApi
 
 ## PureCloudPlatformClientV2.TextbotsApi
 
@@ -8,16 +6,16 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 |Method | Description|
 |------------- | -------------|
-|[**get_textbots_bots_search**](TextbotsApi.html#get_textbots_bots_search) | Find bots using the currently configured friendly name or ID.|
-|[**post_textbots_botflows_session_turns**](TextbotsApi.html#post_textbots_botflows_session_turns) | Issue a bot flow turn event|
-|[**post_textbots_botflows_sessions**](TextbotsApi.html#post_textbots_botflows_sessions) | Create an execution instance of a bot flow definition.|
-|[**post_textbots_bots_execute**](TextbotsApi.html#post_textbots_bots_execute) | Send an intent to a bot to start a dialog/interact with it via text|
-{: class="table table-striped"}
+|[**get_textbots_bots_search**](#get_textbots_bots_search) | Find bots using the currently configured friendly name or ID.|
+|[**post_textbots_botflows_session_turns**](#post_textbots_botflows_session_turns) | Issue a bot flow turn event|
+|[**post_textbots_botflows_sessions**](#post_textbots_botflows_sessions) | Create an execution instance of a bot flow definition.|
+|[**post_textbots_bots_execute**](#post_textbots_bots_execute) | Send an intent to a bot to start a dialog/interact with it via text|
 
-<a name="get_textbots_bots_search"></a>
 
-## [**BotSearchResponseEntityListing**](BotSearchResponseEntityListing.html) get_textbots_bots_search(bot_type=bot_type, bot_name=bot_name, bot_id=bot_id, page_size=page_size)
 
+## get_textbots_bots_search
+
+> [**BotSearchResponseEntityListing**](BotSearchResponseEntityListing) get_textbots_bots_search(bot_type=bot_type, bot_name=bot_name, bot_id=bot_id, page_size=page_size)
 
 
 Find bots using the currently configured friendly name or ID.
@@ -61,20 +59,19 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **bot_type** | [**list[str]**](str.html)| Bot types | [optional] <br />**Values**: GenesysBotConnector, GenesysDialogEngine, AmazonLex, GoogleDialogFlowES, GoogleDialogFlowCX, NuanceDlg, GenesysBotFlow, GenesysDigitalBotFlow, GenesysVoiceSurveyFlow |
+| **bot_type** | [**list[str]**](str)| Bot types | [optional] <br />**Values**: GenesysBotConnector, GenesysDialogEngine, AmazonLex, GoogleDialogFlowES, GoogleDialogFlowCX, NuanceDlg, GenesysBotFlow, GenesysDigitalBotFlow, GenesysVoiceSurveyFlow |
 | **bot_name** | **str**| Bot name | [optional]  |
-| **bot_id** | [**list[str]**](str.html)| Bot IDs | [optional]  |
+| **bot_id** | [**list[str]**](str)| Bot IDs | [optional]  |
 | **page_size** | **int**| The maximum results to return | [optional] [default to 25] |
-{: class="table table-striped"}
 
 ### Return type
 
-[**BotSearchResponseEntityListing**](BotSearchResponseEntityListing.html)
+[**BotSearchResponseEntityListing**](BotSearchResponseEntityListing)
 
-<a name="post_textbots_botflows_session_turns"></a>
 
-## [**TextBotFlowTurnResponse**](TextBotFlowTurnResponse.html) post_textbots_botflows_session_turns(session_id, turn_request)
+## post_textbots_botflows_session_turns
 
+> [**TextBotFlowTurnResponse**](TextBotFlowTurnResponse) post_textbots_botflows_session_turns(session_id, turn_request)
 
 
 Issue a bot flow turn event
@@ -117,17 +114,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **session_id** | **str**| The bot flow session ID, typically obtained from &#39;POST /api/v2/textbots/botflows/sessions&#39; |  |
-| **turn_request** | [**TextBotFlowTurnRequest**](TextBotFlowTurnRequest.html)|  |  |
-{: class="table table-striped"}
+| **turn_request** | [**TextBotFlowTurnRequest**](TextBotFlowTurnRequest)|  |  |
 
 ### Return type
 
-[**TextBotFlowTurnResponse**](TextBotFlowTurnResponse.html)
+[**TextBotFlowTurnResponse**](TextBotFlowTurnResponse)
 
-<a name="post_textbots_botflows_sessions"></a>
 
-## [**TextBotFlowLaunchResponse**](TextBotFlowLaunchResponse.html) post_textbots_botflows_sessions(launch_request)
+## post_textbots_botflows_sessions
 
+> [**TextBotFlowLaunchResponse**](TextBotFlowLaunchResponse) post_textbots_botflows_sessions(launch_request)
 
 
 Create an execution instance of a bot flow definition.
@@ -168,17 +164,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **launch_request** | [**TextBotFlowLaunchRequest**](TextBotFlowLaunchRequest.html)|  |  |
-{: class="table table-striped"}
+| **launch_request** | [**TextBotFlowLaunchRequest**](TextBotFlowLaunchRequest)|  |  |
 
 ### Return type
 
-[**TextBotFlowLaunchResponse**](TextBotFlowLaunchResponse.html)
+[**TextBotFlowLaunchResponse**](TextBotFlowLaunchResponse)
 
-<a name="post_textbots_bots_execute"></a>
 
-## [**PostTextResponse**](PostTextResponse.html) post_textbots_bots_execute(post_text_request)
+## post_textbots_bots_execute
 
+> [**PostTextResponse**](PostTextResponse) post_textbots_bots_execute(post_text_request)
 
 
 Send an intent to a bot to start a dialog/interact with it via text
@@ -219,10 +214,11 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **post_text_request** | [**PostTextRequest**](PostTextRequest.html)|  |  |
-{: class="table table-striped"}
+| **post_text_request** | [**PostTextRequest**](PostTextRequest)|  |  |
 
 ### Return type
 
-[**PostTextResponse**](PostTextResponse.html)
+[**PostTextResponse**](PostTextResponse)
 
+
+_PureCloudPlatformClientV2 211.1.0_

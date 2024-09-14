@@ -1,16 +1,16 @@
----
-title: FailedObject
----
+# FailedObject
+
 ## FailedObject
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **id** | **str** |  | [optional] |
-| **version** | **str** |  | [optional] |
-| **name** | **str** |  | [optional] |
-| **error_code** | **str** |  | [optional] |
-{: class="table table-striped"}
+| **id** | str |  | [optional] |
+| **version** | str |  | [optional] |
+| **name** | str |  | [optional] |
+| **error_code** | str |  | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

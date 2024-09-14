@@ -1,16 +1,16 @@
----
-title: LogCaptureQueryResponse
----
+# LogCaptureQueryResponse
+
 ## LogCaptureQueryResponse
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **entities** | [**list[LogEntry]**](LogEntry.html) |  | [optional] |
-| **next_uri** | **str** |  | [optional] |
-| **self_uri** | **str** |  | [optional] |
-| **previous_uri** | **str** |  | [optional] |
-{: class="table table-striped"}
+| **entities** | [list[LogEntry]](LogEntry) |  | [optional] |
+| **next_uri** | str |  | [optional] |
+| **self_uri** | str |  | [optional] |
+| **previous_uri** | str |  | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

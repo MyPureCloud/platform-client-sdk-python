@@ -1,6 +1,4 @@
----
-title: RecordingApi
----
+# RecordingApi
 
 ## PureCloudPlatformClientV2.RecordingApi
 
@@ -8,71 +6,71 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 |Method | Description|
 |------------- | -------------|
-|[**delete_conversation_recording_annotation**](RecordingApi.html#delete_conversation_recording_annotation) | Delete annotation|
-|[**delete_orphanrecording**](RecordingApi.html#delete_orphanrecording) | Deletes a single orphan recording|
-|[**delete_recording_crossplatform_mediaretentionpolicies**](RecordingApi.html#delete_recording_crossplatform_mediaretentionpolicies) | Delete media retention policies|
-|[**delete_recording_crossplatform_mediaretentionpolicy**](RecordingApi.html#delete_recording_crossplatform_mediaretentionpolicy) | Delete a media retention policy|
-|[**delete_recording_job**](RecordingApi.html#delete_recording_job) | Delete the recording bulk job|
-|[**delete_recording_mediaretentionpolicies**](RecordingApi.html#delete_recording_mediaretentionpolicies) | Delete media retention policies|
-|[**delete_recording_mediaretentionpolicy**](RecordingApi.html#delete_recording_mediaretentionpolicy) | Delete a media retention policy|
-|[**get_conversation_recording**](RecordingApi.html#get_conversation_recording) | Gets a specific recording.|
-|[**get_conversation_recording_annotation**](RecordingApi.html#get_conversation_recording_annotation) | Get annotation|
-|[**get_conversation_recording_annotations**](RecordingApi.html#get_conversation_recording_annotations) | Get annotations for recording|
-|[**get_conversation_recordingmetadata**](RecordingApi.html#get_conversation_recordingmetadata) | Get recording metadata for a conversation. Does not return playable media. Annotations won&#39;t be included in the response if either recording:recording:view or recording:annotation:view permission is missing.|
-|[**get_conversation_recordingmetadata_recording_id**](RecordingApi.html#get_conversation_recordingmetadata_recording_id) | Get metadata for a specific recording. Does not return playable media.|
-|[**get_conversation_recordings**](RecordingApi.html#get_conversation_recordings) | Get all of a Conversation&#39;s Recordings.|
-|[**get_orphanrecording**](RecordingApi.html#get_orphanrecording) | Gets a single orphan recording|
-|[**get_orphanrecording_media**](RecordingApi.html#get_orphanrecording_media) | Gets the media of a single orphan recording|
-|[**get_orphanrecordings**](RecordingApi.html#get_orphanrecordings) | Gets all orphan recordings|
-|[**get_recording_batchrequest**](RecordingApi.html#get_recording_batchrequest) | Get the status and results for a batch request job, only the user that submitted the job may retrieve results. Each result may contain either a URL to a recording or an error; additionally, a recording could be associated with multiple results.|
-|[**get_recording_crossplatform_mediaretentionpolicies**](RecordingApi.html#get_recording_crossplatform_mediaretentionpolicies) | Gets media retention policy list with query options to filter on name and enabled.|
-|[**get_recording_crossplatform_mediaretentionpolicy**](RecordingApi.html#get_recording_crossplatform_mediaretentionpolicy) | Get a media retention policy|
-|[**get_recording_job**](RecordingApi.html#get_recording_job) | Get the status of the job associated with the job id.|
-|[**get_recording_job_failedrecordings**](RecordingApi.html#get_recording_job_failedrecordings) | Get IDs of recordings that the bulk job failed for|
-|[**get_recording_jobs**](RecordingApi.html#get_recording_jobs) | Get the status of all jobs within the user&#39;s organization|
-|[**get_recording_keyconfiguration**](RecordingApi.html#get_recording_keyconfiguration) | Get the encryption key configurations|
-|[**get_recording_keyconfigurations**](RecordingApi.html#get_recording_keyconfigurations) | Get a list of key configurations data|
-|[**get_recording_mediaretentionpolicies**](RecordingApi.html#get_recording_mediaretentionpolicies) | Gets media retention policy list with query options to filter on name and enabled.|
-|[**get_recording_mediaretentionpolicy**](RecordingApi.html#get_recording_mediaretentionpolicy) | Get a media retention policy|
-|[**get_recording_recordingkeys**](RecordingApi.html#get_recording_recordingkeys) | Get encryption key list|
-|[**get_recording_recordingkeys_rotationschedule**](RecordingApi.html#get_recording_recordingkeys_rotationschedule) | Get key rotation schedule|
-|[**get_recording_settings**](RecordingApi.html#get_recording_settings) | Get the Recording Settings for the Organization|
-|[**get_recording_uploads_report**](RecordingApi.html#get_recording_uploads_report) | Get the status of a recording upload status report|
-|[**get_recordings_retention_query**](RecordingApi.html#get_recordings_retention_query) | Query for recording retention data|
-|[**get_recordings_screensessions**](RecordingApi.html#get_recordings_screensessions) | Retrieves a paged listing of screen recording sessions|
-|[**get_recordings_screensessions_details**](RecordingApi.html#get_recordings_screensessions_details) | Retrieves an object containing the total number of concurrent active screen recordings|
-|[**patch_recording_crossplatform_mediaretentionpolicy**](RecordingApi.html#patch_recording_crossplatform_mediaretentionpolicy) | Patch a media retention policy|
-|[**patch_recording_mediaretentionpolicy**](RecordingApi.html#patch_recording_mediaretentionpolicy) | Patch a media retention policy|
-|[**patch_recordings_screensession**](RecordingApi.html#patch_recordings_screensession) | Update a screen recording session|
-|[**post_conversation_recording_annotations**](RecordingApi.html#post_conversation_recording_annotations) | Create annotation|
-|[**post_recording_batchrequests**](RecordingApi.html#post_recording_batchrequests) | Submit a batch download request for recordings. Recordings in response will be in their original format/codec - configured in the Trunk configuration.|
-|[**post_recording_crossplatform_mediaretentionpolicies**](RecordingApi.html#post_recording_crossplatform_mediaretentionpolicies) | Create media retention policy|
-|[**post_recording_jobs**](RecordingApi.html#post_recording_jobs) | Create a recording bulk job.|
-|[**post_recording_keyconfigurations**](RecordingApi.html#post_recording_keyconfigurations) | Setup configurations for encryption key creation|
-|[**post_recording_keyconfigurations_validate**](RecordingApi.html#post_recording_keyconfigurations_validate) | Validate encryption key configurations without saving it|
-|[**post_recording_localkeys**](RecordingApi.html#post_recording_localkeys) | create a local key management recording key|
-|[**post_recording_mediaretentionpolicies**](RecordingApi.html#post_recording_mediaretentionpolicies) | Create media retention policy|
-|[**post_recording_recordingkeys**](RecordingApi.html#post_recording_recordingkeys) | Create encryption key|
-|[**post_recording_uploads_reports**](RecordingApi.html#post_recording_uploads_reports) | Creates a recording upload status report|
-|[**post_recordings_deletionprotection**](RecordingApi.html#post_recordings_deletionprotection) | Get a list of conversations with protected recordings|
-|[**post_recordings_screensessions_acknowledge**](RecordingApi.html#post_recordings_screensessions_acknowledge) | Acknowledge a screen recording.|
-|[**post_recordings_screensessions_metadata**](RecordingApi.html#post_recordings_screensessions_metadata) | Provide meta-data a screen recording.|
-|[**put_conversation_recording**](RecordingApi.html#put_conversation_recording) | Updates the retention records on a recording.|
-|[**put_conversation_recording_annotation**](RecordingApi.html#put_conversation_recording_annotation) | Update annotation|
-|[**put_orphanrecording**](RecordingApi.html#put_orphanrecording) | Updates an orphan recording to a regular recording with retention values|
-|[**put_recording_crossplatform_mediaretentionpolicy**](RecordingApi.html#put_recording_crossplatform_mediaretentionpolicy) | Update a media retention policy|
-|[**put_recording_job**](RecordingApi.html#put_recording_job) | Execute the recording bulk job.|
-|[**put_recording_keyconfiguration**](RecordingApi.html#put_recording_keyconfiguration) | Update the encryption key configurations|
-|[**put_recording_mediaretentionpolicy**](RecordingApi.html#put_recording_mediaretentionpolicy) | Update a media retention policy|
-|[**put_recording_recordingkeys_rotationschedule**](RecordingApi.html#put_recording_recordingkeys_rotationschedule) | Update key rotation schedule|
-|[**put_recording_settings**](RecordingApi.html#put_recording_settings) | Update the Recording Settings for the Organization|
-|[**put_recordings_deletionprotection**](RecordingApi.html#put_recordings_deletionprotection) | Apply or revoke recording protection for conversations|
-{: class="table table-striped"}
+|[**delete_conversation_recording_annotation**](#delete_conversation_recording_annotation) | Delete annotation|
+|[**delete_orphanrecording**](#delete_orphanrecording) | Deletes a single orphan recording|
+|[**delete_recording_crossplatform_mediaretentionpolicies**](#delete_recording_crossplatform_mediaretentionpolicies) | Delete media retention policies|
+|[**delete_recording_crossplatform_mediaretentionpolicy**](#delete_recording_crossplatform_mediaretentionpolicy) | Delete a media retention policy|
+|[**delete_recording_job**](#delete_recording_job) | Delete the recording bulk job|
+|[**delete_recording_mediaretentionpolicies**](#delete_recording_mediaretentionpolicies) | Delete media retention policies|
+|[**delete_recording_mediaretentionpolicy**](#delete_recording_mediaretentionpolicy) | Delete a media retention policy|
+|[**get_conversation_recording**](#get_conversation_recording) | Gets a specific recording.|
+|[**get_conversation_recording_annotation**](#get_conversation_recording_annotation) | Get annotation|
+|[**get_conversation_recording_annotations**](#get_conversation_recording_annotations) | Get annotations for recording|
+|[**get_conversation_recordingmetadata**](#get_conversation_recordingmetadata) | Get recording metadata for a conversation. Does not return playable media. Annotations won&#39;t be included in the response if either recording:recording:view or recording:annotation:view permission is missing.|
+|[**get_conversation_recordingmetadata_recording_id**](#get_conversation_recordingmetadata_recording_id) | Get metadata for a specific recording. Does not return playable media.|
+|[**get_conversation_recordings**](#get_conversation_recordings) | Get all of a Conversation&#39;s Recordings.|
+|[**get_orphanrecording**](#get_orphanrecording) | Gets a single orphan recording|
+|[**get_orphanrecording_media**](#get_orphanrecording_media) | Gets the media of a single orphan recording|
+|[**get_orphanrecordings**](#get_orphanrecordings) | Gets all orphan recordings|
+|[**get_recording_batchrequest**](#get_recording_batchrequest) | Get the status and results for a batch request job, only the user that submitted the job may retrieve results. Each result may contain either a URL to a recording or an error; additionally, a recording could be associated with multiple results.|
+|[**get_recording_crossplatform_mediaretentionpolicies**](#get_recording_crossplatform_mediaretentionpolicies) | Gets media retention policy list with query options to filter on name and enabled.|
+|[**get_recording_crossplatform_mediaretentionpolicy**](#get_recording_crossplatform_mediaretentionpolicy) | Get a media retention policy|
+|[**get_recording_job**](#get_recording_job) | Get the status of the job associated with the job id.|
+|[**get_recording_job_failedrecordings**](#get_recording_job_failedrecordings) | Get IDs of recordings that the bulk job failed for|
+|[**get_recording_jobs**](#get_recording_jobs) | Get the status of all jobs within the user&#39;s organization|
+|[**get_recording_keyconfiguration**](#get_recording_keyconfiguration) | Get the encryption key configurations|
+|[**get_recording_keyconfigurations**](#get_recording_keyconfigurations) | Get a list of key configurations data|
+|[**get_recording_mediaretentionpolicies**](#get_recording_mediaretentionpolicies) | Gets media retention policy list with query options to filter on name and enabled.|
+|[**get_recording_mediaretentionpolicy**](#get_recording_mediaretentionpolicy) | Get a media retention policy|
+|[**get_recording_recordingkeys**](#get_recording_recordingkeys) | Get encryption key list|
+|[**get_recording_recordingkeys_rotationschedule**](#get_recording_recordingkeys_rotationschedule) | Get key rotation schedule|
+|[**get_recording_settings**](#get_recording_settings) | Get the Recording Settings for the Organization|
+|[**get_recording_uploads_report**](#get_recording_uploads_report) | Get the status of a recording upload status report|
+|[**get_recordings_retention_query**](#get_recordings_retention_query) | Query for recording retention data|
+|[**get_recordings_screensessions**](#get_recordings_screensessions) | Retrieves a paged listing of screen recording sessions|
+|[**get_recordings_screensessions_details**](#get_recordings_screensessions_details) | Retrieves an object containing the total number of concurrent active screen recordings|
+|[**patch_recording_crossplatform_mediaretentionpolicy**](#patch_recording_crossplatform_mediaretentionpolicy) | Patch a media retention policy|
+|[**patch_recording_mediaretentionpolicy**](#patch_recording_mediaretentionpolicy) | Patch a media retention policy|
+|[**patch_recordings_screensession**](#patch_recordings_screensession) | Update a screen recording session|
+|[**post_conversation_recording_annotations**](#post_conversation_recording_annotations) | Create annotation|
+|[**post_recording_batchrequests**](#post_recording_batchrequests) | Submit a batch download request for recordings. Recordings in response will be in their original format/codec - configured in the Trunk configuration.|
+|[**post_recording_crossplatform_mediaretentionpolicies**](#post_recording_crossplatform_mediaretentionpolicies) | Create media retention policy|
+|[**post_recording_jobs**](#post_recording_jobs) | Create a recording bulk job.|
+|[**post_recording_keyconfigurations**](#post_recording_keyconfigurations) | Setup configurations for encryption key creation|
+|[**post_recording_keyconfigurations_validate**](#post_recording_keyconfigurations_validate) | Validate encryption key configurations without saving it|
+|[**post_recording_localkeys**](#post_recording_localkeys) | create a local key management recording key|
+|[**post_recording_mediaretentionpolicies**](#post_recording_mediaretentionpolicies) | Create media retention policy|
+|[**post_recording_recordingkeys**](#post_recording_recordingkeys) | Create encryption key|
+|[**post_recording_uploads_reports**](#post_recording_uploads_reports) | Creates a recording upload status report|
+|[**post_recordings_deletionprotection**](#post_recordings_deletionprotection) | Get a list of conversations with protected recordings|
+|[**post_recordings_screensessions_acknowledge**](#post_recordings_screensessions_acknowledge) | Acknowledge a screen recording.|
+|[**post_recordings_screensessions_metadata**](#post_recordings_screensessions_metadata) | Provide meta-data a screen recording.|
+|[**put_conversation_recording**](#put_conversation_recording) | Updates the retention records on a recording.|
+|[**put_conversation_recording_annotation**](#put_conversation_recording_annotation) | Update annotation|
+|[**put_orphanrecording**](#put_orphanrecording) | Updates an orphan recording to a regular recording with retention values|
+|[**put_recording_crossplatform_mediaretentionpolicy**](#put_recording_crossplatform_mediaretentionpolicy) | Update a media retention policy|
+|[**put_recording_job**](#put_recording_job) | Execute the recording bulk job.|
+|[**put_recording_keyconfiguration**](#put_recording_keyconfiguration) | Update the encryption key configurations|
+|[**put_recording_mediaretentionpolicy**](#put_recording_mediaretentionpolicy) | Update a media retention policy|
+|[**put_recording_recordingkeys_rotationschedule**](#put_recording_recordingkeys_rotationschedule) | Update key rotation schedule|
+|[**put_recording_settings**](#put_recording_settings) | Update the Recording Settings for the Organization|
+|[**put_recordings_deletionprotection**](#put_recordings_deletionprotection) | Apply or revoke recording protection for conversations|
 
-<a name="delete_conversation_recording_annotation"></a>
 
-##  delete_conversation_recording_annotation(conversation_id, recording_id, annotation_id)
 
+## delete_conversation_recording_annotation
+
+>  delete_conversation_recording_annotation(conversation_id, recording_id, annotation_id)
 
 
 Delete annotation
@@ -115,16 +113,15 @@ except ApiException as e:
 | **conversation_id** | **str**| Conversation ID |  |
 | **recording_id** | **str**| Recording ID |  |
 | **annotation_id** | **str**| Annotation ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (empty response body)
 
-<a name="delete_orphanrecording"></a>
 
-## [**OrphanRecording**](OrphanRecording.html) delete_orphanrecording(orphan_id)
+## delete_orphanrecording
 
+> [**OrphanRecording**](OrphanRecording) delete_orphanrecording(orphan_id)
 
 
 Deletes a single orphan recording
@@ -164,16 +161,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **orphan_id** | **str**| Orphan ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**OrphanRecording**](OrphanRecording.html)
+[**OrphanRecording**](OrphanRecording)
 
-<a name="delete_recording_crossplatform_mediaretentionpolicies"></a>
 
-##  delete_recording_crossplatform_mediaretentionpolicies(ids)
+## delete_recording_crossplatform_mediaretentionpolicies
 
+>  delete_recording_crossplatform_mediaretentionpolicies(ids)
 
 
 Delete media retention policies
@@ -214,16 +210,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **ids** | **str**|  |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (empty response body)
 
-<a name="delete_recording_crossplatform_mediaretentionpolicy"></a>
 
-##  delete_recording_crossplatform_mediaretentionpolicy(policy_id)
+## delete_recording_crossplatform_mediaretentionpolicy
 
+>  delete_recording_crossplatform_mediaretentionpolicy(policy_id)
 
 
 Delete a media retention policy
@@ -262,16 +257,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **policy_id** | **str**| Policy ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (empty response body)
 
-<a name="delete_recording_job"></a>
 
-##  delete_recording_job(job_id)
+## delete_recording_job
 
+>  delete_recording_job(job_id)
 
 
 Delete the recording bulk job
@@ -310,16 +304,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **job_id** | **str**| jobId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (empty response body)
 
-<a name="delete_recording_mediaretentionpolicies"></a>
 
-##  delete_recording_mediaretentionpolicies(ids)
+## delete_recording_mediaretentionpolicies
 
+>  delete_recording_mediaretentionpolicies(ids)
 
 
 Delete media retention policies
@@ -360,16 +353,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **ids** | **str**|  |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (empty response body)
 
-<a name="delete_recording_mediaretentionpolicy"></a>
 
-##  delete_recording_mediaretentionpolicy(policy_id)
+## delete_recording_mediaretentionpolicy
 
+>  delete_recording_mediaretentionpolicy(policy_id)
 
 
 Delete a media retention policy
@@ -408,16 +400,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **policy_id** | **str**| Policy ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (empty response body)
 
-<a name="get_conversation_recording"></a>
 
-## [**Recording**](Recording.html) get_conversation_recording(conversation_id, recording_id, format_id=format_id, email_format_id=email_format_id, chat_format_id=chat_format_id, message_format_id=message_format_id, download=download, file_name=file_name, locale=locale, media_formats=media_formats)
+## get_conversation_recording
 
+> [**Recording**](Recording) get_conversation_recording(conversation_id, recording_id, format_id=format_id, email_format_id=email_format_id, chat_format_id=chat_format_id, message_format_id=message_format_id, download=download, file_name=file_name, locale=locale, media_formats=media_formats)
 
 
 Gets a specific recording.
@@ -475,17 +466,16 @@ except ApiException as e:
 | **download** | **bool**| requesting a download format of the recording. Valid values:true,false | [optional] [default to False]<br />**Values**: true, false |
 | **file_name** | **str**| the name of the downloaded fileName | [optional]  |
 | **locale** | **str**| The locale for the requested file when downloading, as an ISO 639-1 code | [optional]  |
-| **media_formats** | [**list[str]**](str.html)| All acceptable media formats. Overrides formatId. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3 | [optional]  |
-{: class="table table-striped"}
+| **media_formats** | [**list[str]**](str)| All acceptable media formats. Overrides formatId. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3 | [optional]  |
 
 ### Return type
 
-[**Recording**](Recording.html)
+[**Recording**](Recording)
 
-<a name="get_conversation_recording_annotation"></a>
 
-## [**Annotation**](Annotation.html) get_conversation_recording_annotation(conversation_id, recording_id, annotation_id)
+## get_conversation_recording_annotation
 
+> [**Annotation**](Annotation) get_conversation_recording_annotation(conversation_id, recording_id, annotation_id)
 
 
 Get annotation
@@ -529,16 +519,15 @@ except ApiException as e:
 | **conversation_id** | **str**| Conversation ID |  |
 | **recording_id** | **str**| Recording ID |  |
 | **annotation_id** | **str**| Annotation ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**Annotation**](Annotation.html)
+[**Annotation**](Annotation)
 
-<a name="get_conversation_recording_annotations"></a>
 
-## [**list[Annotation]**](Annotation.html) get_conversation_recording_annotations(conversation_id, recording_id)
+## get_conversation_recording_annotations
 
+> [**list[Annotation]**](Annotation) get_conversation_recording_annotations(conversation_id, recording_id)
 
 
 Get annotations for recording
@@ -580,16 +569,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| Conversation ID |  |
 | **recording_id** | **str**| Recording ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**list[Annotation]**](Annotation.html)
+[**list[Annotation]**](Annotation)
 
-<a name="get_conversation_recordingmetadata"></a>
 
-## [**list[RecordingMetadata]**](RecordingMetadata.html) get_conversation_recordingmetadata(conversation_id)
+## get_conversation_recordingmetadata
 
+> [**list[RecordingMetadata]**](RecordingMetadata) get_conversation_recordingmetadata(conversation_id)
 
 
 Get recording metadata for a conversation. Does not return playable media. Annotations won't be included in the response if either recording:recording:view or recording:annotation:view permission is missing.
@@ -630,16 +618,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| Conversation ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**list[RecordingMetadata]**](RecordingMetadata.html)
+[**list[RecordingMetadata]**](RecordingMetadata)
 
-<a name="get_conversation_recordingmetadata_recording_id"></a>
 
-## [**RecordingMetadata**](RecordingMetadata.html) get_conversation_recordingmetadata_recording_id(conversation_id, recording_id)
+## get_conversation_recordingmetadata_recording_id
 
+> [**RecordingMetadata**](RecordingMetadata) get_conversation_recordingmetadata_recording_id(conversation_id, recording_id)
 
 
 Get metadata for a specific recording. Does not return playable media.
@@ -682,16 +669,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| Conversation ID |  |
 | **recording_id** | **str**| Recording ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**RecordingMetadata**](RecordingMetadata.html)
+[**RecordingMetadata**](RecordingMetadata)
 
-<a name="get_conversation_recordings"></a>
 
-## [**list[Recording]**](Recording.html) get_conversation_recordings(conversation_id, max_wait_ms=max_wait_ms, format_id=format_id, media_formats=media_formats)
+## get_conversation_recordings
 
+> [**list[Recording]**](Recording) get_conversation_recordings(conversation_id, max_wait_ms=max_wait_ms, format_id=format_id, media_formats=media_formats)
 
 
 Get all of a Conversation's Recordings.
@@ -737,17 +723,16 @@ except ApiException as e:
 | **conversation_id** | **str**| Conversation ID |  |
 | **max_wait_ms** | **int**| The maximum number of milliseconds to wait for the recording to be ready. Must be a positive value. | [optional] [default to 5000] |
 | **format_id** | **str**| The desired media format. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3,NONE. | [optional] [default to &#39;WEBM&#39;]<br />**Values**: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, MP3, NONE |
-| **media_formats** | [**list[str]**](str.html)| All acceptable media formats. Overrides formatId. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3. | [optional]  |
-{: class="table table-striped"}
+| **media_formats** | [**list[str]**](str)| All acceptable media formats. Overrides formatId. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3. | [optional]  |
 
 ### Return type
 
-[**list[Recording]**](Recording.html)
+[**list[Recording]**](Recording)
 
-<a name="get_orphanrecording"></a>
 
-## [**OrphanRecording**](OrphanRecording.html) get_orphanrecording(orphan_id)
+## get_orphanrecording
 
+> [**OrphanRecording**](OrphanRecording) get_orphanrecording(orphan_id)
 
 
 Gets a single orphan recording
@@ -787,16 +772,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **orphan_id** | **str**| Orphan ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**OrphanRecording**](OrphanRecording.html)
+[**OrphanRecording**](OrphanRecording)
 
-<a name="get_orphanrecording_media"></a>
 
-## [**Recording**](Recording.html) get_orphanrecording_media(orphan_id, format_id=format_id, email_format_id=email_format_id, chat_format_id=chat_format_id, message_format_id=message_format_id, download=download, file_name=file_name, locale=locale, media_formats=media_formats)
+## get_orphanrecording_media
 
+> [**Recording**](Recording) get_orphanrecording_media(orphan_id, format_id=format_id, email_format_id=email_format_id, chat_format_id=chat_format_id, message_format_id=message_format_id, download=download, file_name=file_name, locale=locale, media_formats=media_formats)
 
 
 Gets the media of a single orphan recording
@@ -853,17 +837,16 @@ except ApiException as e:
 | **download** | **bool**| requesting a download format of the recording | [optional] [default to False]<br />**Values**: true, false |
 | **file_name** | **str**| the name of the downloaded fileName | [optional]  |
 | **locale** | **str**| The locale for the requested file when downloading, as an ISO 639-1 code | [optional]  |
-| **media_formats** | [**list[str]**](str.html)| All acceptable media formats. Overrides formatId. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3 | [optional]  |
-{: class="table table-striped"}
+| **media_formats** | [**list[str]**](str)| All acceptable media formats. Overrides formatId. Valid values:WAV,WEBM,WAV_ULAW,OGG_VORBIS,OGG_OPUS,MP3 | [optional]  |
 
 ### Return type
 
-[**Recording**](Recording.html)
+[**Recording**](Recording)
 
-<a name="get_orphanrecordings"></a>
 
-## [**OrphanRecordingListing**](OrphanRecordingListing.html) get_orphanrecordings(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, has_conversation=has_conversation, media=media)
+## get_orphanrecordings
 
+> [**OrphanRecordingListing**](OrphanRecordingListing) get_orphanrecordings(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, has_conversation=has_conversation, media=media)
 
 
 Gets all orphan recordings
@@ -912,21 +895,20 @@ except ApiException as e:
 | **page_size** | **int**| The total page size requested | [optional] [default to 25] |
 | **page_number** | **int**| The page number requested | [optional] [default to 1] |
 | **sort_by** | **str**| variable name requested to sort by | [optional]  |
-| **expand** | [**list[str]**](str.html)| variable name requested by expand list | [optional]  |
+| **expand** | [**list[str]**](str)| variable name requested by expand list | [optional]  |
 | **next_page** | **str**| next page token | [optional]  |
 | **previous_page** | **str**| Previous page token | [optional]  |
 | **has_conversation** | **bool**| Filter resulting orphans by whether the conversation is known. False returns all orphans for the organization. | [optional] [default to False] |
 | **media** | **str**| Filter resulting orphans based on their media type | [optional] <br />**Values**: Call, Screen |
-{: class="table table-striped"}
 
 ### Return type
 
-[**OrphanRecordingListing**](OrphanRecordingListing.html)
+[**OrphanRecordingListing**](OrphanRecordingListing)
 
-<a name="get_recording_batchrequest"></a>
 
-## [**BatchDownloadJobStatusResult**](BatchDownloadJobStatusResult.html) get_recording_batchrequest(job_id)
+## get_recording_batchrequest
 
+> [**BatchDownloadJobStatusResult**](BatchDownloadJobStatusResult) get_recording_batchrequest(job_id)
 
 
 Get the status and results for a batch request job, only the user that submitted the job may retrieve results. Each result may contain either a URL to a recording or an error; additionally, a recording could be associated with multiple results.
@@ -965,16 +947,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **job_id** | **str**| jobId |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**BatchDownloadJobStatusResult**](BatchDownloadJobStatusResult.html)
+[**BatchDownloadJobStatusResult**](BatchDownloadJobStatusResult)
 
-<a name="get_recording_crossplatform_mediaretentionpolicies"></a>
 
-## [**PolicyEntityListing**](PolicyEntityListing.html) get_recording_crossplatform_mediaretentionpolicies(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, name=name, enabled=enabled, summary=summary, has_errors=has_errors, delete_days_threshold=delete_days_threshold)
+## get_recording_crossplatform_mediaretentionpolicies
 
+> [**PolicyEntityListing**](PolicyEntityListing) get_recording_crossplatform_mediaretentionpolicies(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, name=name, enabled=enabled, summary=summary, has_errors=has_errors, delete_days_threshold=delete_days_threshold)
 
 
 Gets media retention policy list with query options to filter on name and enabled.
@@ -1028,7 +1009,7 @@ except ApiException as e:
 | **page_size** | **int**| The total page size requested | [optional] [default to 25] |
 | **page_number** | **int**| The page number requested | [optional] [default to 1] |
 | **sort_by** | **str**| variable name requested to sort by | [optional]  |
-| **expand** | [**list[str]**](str.html)| variable name requested by expand list | [optional]  |
+| **expand** | [**list[str]**](str)| variable name requested by expand list | [optional]  |
 | **next_page** | **str**| next page token | [optional]  |
 | **previous_page** | **str**| Previous page token | [optional]  |
 | **name** | **str**| the policy name - used for filtering results in searches. | [optional]  |
@@ -1036,16 +1017,15 @@ except ApiException as e:
 | **summary** | **bool**| provides a less verbose response of policy lists. | [optional] [default to False] |
 | **has_errors** | **bool**| provides a way to fetch all policies with errors or policies that do not have errors | [optional]  |
 | **delete_days_threshold** | **int**| provides a way to fetch all policies with any actions having deleteDays exceeding the provided value | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**PolicyEntityListing**](PolicyEntityListing.html)
+[**PolicyEntityListing**](PolicyEntityListing)
 
-<a name="get_recording_crossplatform_mediaretentionpolicy"></a>
 
-## [**CrossPlatformPolicy**](CrossPlatformPolicy.html) get_recording_crossplatform_mediaretentionpolicy(policy_id)
+## get_recording_crossplatform_mediaretentionpolicy
 
+> [**CrossPlatformPolicy**](CrossPlatformPolicy) get_recording_crossplatform_mediaretentionpolicy(policy_id)
 
 
 Get a media retention policy
@@ -1085,16 +1065,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **policy_id** | **str**| Policy ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**CrossPlatformPolicy**](CrossPlatformPolicy.html)
+[**CrossPlatformPolicy**](CrossPlatformPolicy)
 
-<a name="get_recording_job"></a>
 
-## [**RecordingJob**](RecordingJob.html) get_recording_job(job_id)
+## get_recording_job
 
+> [**RecordingJob**](RecordingJob) get_recording_job(job_id)
 
 
 Get the status of the job associated with the job id.
@@ -1134,16 +1113,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **job_id** | **str**| jobId |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**RecordingJob**](RecordingJob.html)
+[**RecordingJob**](RecordingJob)
 
-<a name="get_recording_job_failedrecordings"></a>
 
-## [**FailedRecordingEntityListing**](FailedRecordingEntityListing.html) get_recording_job_failedrecordings(job_id, page_size=page_size, page_number=page_number, include_total=include_total, cursor=cursor)
+## get_recording_job_failedrecordings
 
+> [**FailedRecordingEntityListing**](FailedRecordingEntityListing) get_recording_job_failedrecordings(job_id, page_size=page_size, page_number=page_number, include_total=include_total, cursor=cursor)
 
 
 Get IDs of recordings that the bulk job failed for
@@ -1191,16 +1169,15 @@ except ApiException as e:
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **include_total** | **bool**| If false, cursor will be used to locate the page instead of pageNumber. | [optional]  |
 | **cursor** | **str**| Indicates where to resume query results (not required for first page) | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**FailedRecordingEntityListing**](FailedRecordingEntityListing.html)
+[**FailedRecordingEntityListing**](FailedRecordingEntityListing)
 
-<a name="get_recording_jobs"></a>
 
-## [**RecordingJobEntityListing**](RecordingJobEntityListing.html) get_recording_jobs(page_size=page_size, page_number=page_number, sort_by=sort_by, state=state, show_only_my_jobs=show_only_my_jobs, job_type=job_type, include_total=include_total, cursor=cursor)
+## get_recording_jobs
 
+> [**RecordingJobEntityListing**](RecordingJobEntityListing) get_recording_jobs(page_size=page_size, page_number=page_number, sort_by=sort_by, state=state, show_only_my_jobs=show_only_my_jobs, job_type=job_type, include_total=include_total, cursor=cursor)
 
 
 Get the status of all jobs within the user's organization
@@ -1254,16 +1231,15 @@ except ApiException as e:
 | **job_type** | **str**| Job Type (Can be left empty for both) | [optional] <br />**Values**: ARCHIVE, DELETE, EXPORT |
 | **include_total** | **bool**| If false, cursor will be used to locate the page instead of pageNumber. | [optional]  |
 | **cursor** | **str**| Indicates where to resume query results (not required for first page) | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**RecordingJobEntityListing**](RecordingJobEntityListing.html)
+[**RecordingJobEntityListing**](RecordingJobEntityListing)
 
-<a name="get_recording_keyconfiguration"></a>
 
-## [**RecordingEncryptionConfiguration**](RecordingEncryptionConfiguration.html) get_recording_keyconfiguration(key_configuration_id)
+## get_recording_keyconfiguration
 
+> [**RecordingEncryptionConfiguration**](RecordingEncryptionConfiguration) get_recording_keyconfiguration(key_configuration_id)
 
 
 Get the encryption key configurations
@@ -1303,16 +1279,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **key_configuration_id** | **str**| Key Configurations Id |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**RecordingEncryptionConfiguration**](RecordingEncryptionConfiguration.html)
+[**RecordingEncryptionConfiguration**](RecordingEncryptionConfiguration)
 
-<a name="get_recording_keyconfigurations"></a>
 
-## [**RecordingEncryptionConfigurationListing**](RecordingEncryptionConfigurationListing.html) get_recording_keyconfigurations()
+## get_recording_keyconfigurations
 
+> [**RecordingEncryptionConfigurationListing**](RecordingEncryptionConfigurationListing) get_recording_keyconfigurations()
 
 
 Get a list of key configurations data
@@ -1349,15 +1324,14 @@ except ApiException as e:
 
 This endpoint does not need any parameters.
 
-
 ### Return type
 
-[**RecordingEncryptionConfigurationListing**](RecordingEncryptionConfigurationListing.html)
+[**RecordingEncryptionConfigurationListing**](RecordingEncryptionConfigurationListing)
 
-<a name="get_recording_mediaretentionpolicies"></a>
 
-## [**PolicyEntityListing**](PolicyEntityListing.html) get_recording_mediaretentionpolicies(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, name=name, enabled=enabled, summary=summary, has_errors=has_errors, delete_days_threshold=delete_days_threshold)
+## get_recording_mediaretentionpolicies
 
+> [**PolicyEntityListing**](PolicyEntityListing) get_recording_mediaretentionpolicies(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, name=name, enabled=enabled, summary=summary, has_errors=has_errors, delete_days_threshold=delete_days_threshold)
 
 
 Gets media retention policy list with query options to filter on name and enabled.
@@ -1411,7 +1385,7 @@ except ApiException as e:
 | **page_size** | **int**| The total page size requested | [optional] [default to 25] |
 | **page_number** | **int**| The page number requested | [optional] [default to 1] |
 | **sort_by** | **str**| variable name requested to sort by | [optional]  |
-| **expand** | [**list[str]**](str.html)| variable name requested by expand list | [optional]  |
+| **expand** | [**list[str]**](str)| variable name requested by expand list | [optional]  |
 | **next_page** | **str**| next page token | [optional]  |
 | **previous_page** | **str**| Previous page token | [optional]  |
 | **name** | **str**| the policy name - used for filtering results in searches. | [optional]  |
@@ -1419,16 +1393,15 @@ except ApiException as e:
 | **summary** | **bool**| provides a less verbose response of policy lists. | [optional] [default to False] |
 | **has_errors** | **bool**| provides a way to fetch all policies with errors or policies that do not have errors | [optional]  |
 | **delete_days_threshold** | **int**| provides a way to fetch all policies with any actions having deleteDays exceeding the provided value | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**PolicyEntityListing**](PolicyEntityListing.html)
+[**PolicyEntityListing**](PolicyEntityListing)
 
-<a name="get_recording_mediaretentionpolicy"></a>
 
-## [**Policy**](Policy.html) get_recording_mediaretentionpolicy(policy_id)
+## get_recording_mediaretentionpolicy
 
+> [**Policy**](Policy) get_recording_mediaretentionpolicy(policy_id)
 
 
 Get a media retention policy
@@ -1468,16 +1441,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **policy_id** | **str**| Policy ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**Policy**](Policy.html)
+[**Policy**](Policy)
 
-<a name="get_recording_recordingkeys"></a>
 
-## [**EncryptionKeyEntityListing**](EncryptionKeyEntityListing.html) get_recording_recordingkeys(page_size=page_size, page_number=page_number)
+## get_recording_recordingkeys
 
+> [**EncryptionKeyEntityListing**](EncryptionKeyEntityListing) get_recording_recordingkeys(page_size=page_size, page_number=page_number)
 
 
 Get encryption key list
@@ -1519,16 +1491,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
-{: class="table table-striped"}
 
 ### Return type
 
-[**EncryptionKeyEntityListing**](EncryptionKeyEntityListing.html)
+[**EncryptionKeyEntityListing**](EncryptionKeyEntityListing)
 
-<a name="get_recording_recordingkeys_rotationschedule"></a>
 
-## [**KeyRotationSchedule**](KeyRotationSchedule.html) get_recording_recordingkeys_rotationschedule()
+## get_recording_recordingkeys_rotationschedule
 
+> [**KeyRotationSchedule**](KeyRotationSchedule) get_recording_recordingkeys_rotationschedule()
 
 
 Get key rotation schedule
@@ -1565,15 +1536,14 @@ except ApiException as e:
 
 This endpoint does not need any parameters.
 
-
 ### Return type
 
-[**KeyRotationSchedule**](KeyRotationSchedule.html)
+[**KeyRotationSchedule**](KeyRotationSchedule)
 
-<a name="get_recording_settings"></a>
 
-## [**RecordingSettings**](RecordingSettings.html) get_recording_settings(create_default=create_default)
+## get_recording_settings
 
+> [**RecordingSettings**](RecordingSettings) get_recording_settings(create_default=create_default)
 
 
 Get the Recording Settings for the Organization
@@ -1614,16 +1584,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **create_default** | **bool**| If no settings are found, a new one is created with default values | [optional] [default to False] |
-{: class="table table-striped"}
 
 ### Return type
 
-[**RecordingSettings**](RecordingSettings.html)
+[**RecordingSettings**](RecordingSettings)
 
-<a name="get_recording_uploads_report"></a>
 
-## [**RecordingUploadReport**](RecordingUploadReport.html) get_recording_uploads_report(report_id)
+## get_recording_uploads_report
 
+> [**RecordingUploadReport**](RecordingUploadReport) get_recording_uploads_report(report_id)
 
 
 Get the status of a recording upload status report
@@ -1663,16 +1632,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **report_id** | **str**| reportId |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**RecordingUploadReport**](RecordingUploadReport.html)
+[**RecordingUploadReport**](RecordingUploadReport)
 
-<a name="get_recordings_retention_query"></a>
 
-## [**RecordingRetentionCursorEntityListing**](RecordingRetentionCursorEntityListing.html) get_recordings_retention_query(retention_threshold_days, cursor=cursor, page_size=page_size)
+## get_recordings_retention_query
 
+> [**RecordingRetentionCursorEntityListing**](RecordingRetentionCursorEntityListing) get_recordings_retention_query(retention_threshold_days, cursor=cursor, page_size=page_size)
 
 
 Query for recording retention data
@@ -1716,17 +1684,19 @@ except ApiException as e:
 | **retention_threshold_days** | **int**| Fetch retention data for recordings retained for more days than the provided value. |  |
 | **cursor** | **str**| Indicates where to resume query results (not required for first page) | [optional]  |
 | **page_size** | **int**| Page size. Maximum is 500. | [optional] [default to 25] |
-{: class="table table-striped"}
 
 ### Return type
 
-[**RecordingRetentionCursorEntityListing**](RecordingRetentionCursorEntityListing.html)
+[**RecordingRetentionCursorEntityListing**](RecordingRetentionCursorEntityListing)
 
-<a name="get_recordings_screensessions"></a>
 
-## [**ScreenRecordingSessionListing**](ScreenRecordingSessionListing.html) get_recordings_screensessions(page_size=page_size, page_number=page_number)
+## get_recordings_screensessions
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+> [**ScreenRecordingSessionListing**](ScreenRecordingSessionListing) get_recordings_screensessions(page_size=page_size, page_number=page_number)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 Retrieves a paged listing of screen recording sessions
 
@@ -1769,16 +1739,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
-{: class="table table-striped"}
 
 ### Return type
 
-[**ScreenRecordingSessionListing**](ScreenRecordingSessionListing.html)
+[**ScreenRecordingSessionListing**](ScreenRecordingSessionListing)
 
-<a name="get_recordings_screensessions_details"></a>
 
-## [**ScreenRecordingActiveSessions**](ScreenRecordingActiveSessions.html) get_recordings_screensessions_details()
+## get_recordings_screensessions_details
 
+> [**ScreenRecordingActiveSessions**](ScreenRecordingActiveSessions) get_recordings_screensessions_details()
 
 
 Retrieves an object containing the total number of concurrent active screen recordings
@@ -1815,15 +1784,14 @@ except ApiException as e:
 
 This endpoint does not need any parameters.
 
-
 ### Return type
 
-[**ScreenRecordingActiveSessions**](ScreenRecordingActiveSessions.html)
+[**ScreenRecordingActiveSessions**](ScreenRecordingActiveSessions)
 
-<a name="patch_recording_crossplatform_mediaretentionpolicy"></a>
 
-## [**CrossPlatformPolicy**](CrossPlatformPolicy.html) patch_recording_crossplatform_mediaretentionpolicy(policy_id, body)
+## patch_recording_crossplatform_mediaretentionpolicy
 
+> [**CrossPlatformPolicy**](CrossPlatformPolicy) patch_recording_crossplatform_mediaretentionpolicy(policy_id, body)
 
 
 Patch a media retention policy
@@ -1864,17 +1832,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **policy_id** | **str**| Policy ID |  |
-| **body** | [**CrossPlatformPolicyUpdate**](CrossPlatformPolicyUpdate.html)| Policy |  |
-{: class="table table-striped"}
+| **body** | [**CrossPlatformPolicyUpdate**](CrossPlatformPolicyUpdate)| Policy |  |
 
 ### Return type
 
-[**CrossPlatformPolicy**](CrossPlatformPolicy.html)
+[**CrossPlatformPolicy**](CrossPlatformPolicy)
 
-<a name="patch_recording_mediaretentionpolicy"></a>
 
-## [**Policy**](Policy.html) patch_recording_mediaretentionpolicy(policy_id, body)
+## patch_recording_mediaretentionpolicy
 
+> [**Policy**](Policy) patch_recording_mediaretentionpolicy(policy_id, body)
 
 
 Patch a media retention policy
@@ -1915,18 +1882,20 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **policy_id** | **str**| Policy ID |  |
-| **body** | [**PolicyUpdate**](PolicyUpdate.html)| Policy |  |
-{: class="table table-striped"}
+| **body** | [**PolicyUpdate**](PolicyUpdate)| Policy |  |
 
 ### Return type
 
-[**Policy**](Policy.html)
+[**Policy**](Policy)
 
-<a name="patch_recordings_screensession"></a>
 
-##  patch_recordings_screensession(recording_session_id, body=body)
+## patch_recordings_screensession
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+>  patch_recordings_screensession(recording_session_id, body=body)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 Update a screen recording session
 
@@ -1967,17 +1936,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **recording_session_id** | **str**| Screen recording session ID |  |
-| **body** | [**ScreenRecordingSessionRequest**](ScreenRecordingSessionRequest.html)|  | [optional]  |
-{: class="table table-striped"}
+| **body** | [**ScreenRecordingSessionRequest**](ScreenRecordingSessionRequest)|  | [optional]  |
 
 ### Return type
 
 void (empty response body)
 
-<a name="post_conversation_recording_annotations"></a>
 
-## [**Annotation**](Annotation.html) post_conversation_recording_annotations(conversation_id, recording_id, body)
+## post_conversation_recording_annotations
 
+> [**Annotation**](Annotation) post_conversation_recording_annotations(conversation_id, recording_id, body)
 
 
 Create annotation
@@ -2020,17 +1988,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| Conversation ID |  |
 | **recording_id** | **str**| Recording ID |  |
-| **body** | [**Annotation**](Annotation.html)| annotation |  |
-{: class="table table-striped"}
+| **body** | [**Annotation**](Annotation)| annotation |  |
 
 ### Return type
 
-[**Annotation**](Annotation.html)
+[**Annotation**](Annotation)
 
-<a name="post_recording_batchrequests"></a>
 
-## [**BatchDownloadJobSubmissionResult**](BatchDownloadJobSubmissionResult.html) post_recording_batchrequests(body)
+## post_recording_batchrequests
 
+> [**BatchDownloadJobSubmissionResult**](BatchDownloadJobSubmissionResult) post_recording_batchrequests(body)
 
 
 Submit a batch download request for recordings. Recordings in response will be in their original format/codec - configured in the Trunk configuration.
@@ -2070,17 +2037,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**BatchDownloadJobSubmission**](BatchDownloadJobSubmission.html)| Job submission criteria |  |
-{: class="table table-striped"}
+| **body** | [**BatchDownloadJobSubmission**](BatchDownloadJobSubmission)| Job submission criteria |  |
 
 ### Return type
 
-[**BatchDownloadJobSubmissionResult**](BatchDownloadJobSubmissionResult.html)
+[**BatchDownloadJobSubmissionResult**](BatchDownloadJobSubmissionResult)
 
-<a name="post_recording_crossplatform_mediaretentionpolicies"></a>
 
-## [**CrossPlatformPolicy**](CrossPlatformPolicy.html) post_recording_crossplatform_mediaretentionpolicies(body)
+## post_recording_crossplatform_mediaretentionpolicies
 
+> [**CrossPlatformPolicy**](CrossPlatformPolicy) post_recording_crossplatform_mediaretentionpolicies(body)
 
 
 Create media retention policy
@@ -2121,17 +2087,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**CrossPlatformPolicyCreate**](CrossPlatformPolicyCreate.html)| Policy |  |
-{: class="table table-striped"}
+| **body** | [**CrossPlatformPolicyCreate**](CrossPlatformPolicyCreate)| Policy |  |
 
 ### Return type
 
-[**CrossPlatformPolicy**](CrossPlatformPolicy.html)
+[**CrossPlatformPolicy**](CrossPlatformPolicy)
 
-<a name="post_recording_jobs"></a>
 
-## [**RecordingJob**](RecordingJob.html) post_recording_jobs(body)
+## post_recording_jobs
 
+> [**RecordingJob**](RecordingJob) post_recording_jobs(body)
 
 
 Create a recording bulk job.
@@ -2172,17 +2137,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**RecordingJobsQuery**](RecordingJobsQuery.html)| query |  |
-{: class="table table-striped"}
+| **body** | [**RecordingJobsQuery**](RecordingJobsQuery)| query |  |
 
 ### Return type
 
-[**RecordingJob**](RecordingJob.html)
+[**RecordingJob**](RecordingJob)
 
-<a name="post_recording_keyconfigurations"></a>
 
-## [**RecordingEncryptionConfiguration**](RecordingEncryptionConfiguration.html) post_recording_keyconfigurations(body)
+## post_recording_keyconfigurations
 
+> [**RecordingEncryptionConfiguration**](RecordingEncryptionConfiguration) post_recording_keyconfigurations(body)
 
 
 Setup configurations for encryption key creation
@@ -2221,17 +2185,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**RecordingEncryptionConfiguration**](RecordingEncryptionConfiguration.html)| Encryption Configuration |  |
-{: class="table table-striped"}
+| **body** | [**RecordingEncryptionConfiguration**](RecordingEncryptionConfiguration)| Encryption Configuration |  |
 
 ### Return type
 
-[**RecordingEncryptionConfiguration**](RecordingEncryptionConfiguration.html)
+[**RecordingEncryptionConfiguration**](RecordingEncryptionConfiguration)
 
-<a name="post_recording_keyconfigurations_validate"></a>
 
-## [**RecordingEncryptionConfiguration**](RecordingEncryptionConfiguration.html) post_recording_keyconfigurations_validate(body)
+## post_recording_keyconfigurations_validate
 
+> [**RecordingEncryptionConfiguration**](RecordingEncryptionConfiguration) post_recording_keyconfigurations_validate(body)
 
 
 Validate encryption key configurations without saving it
@@ -2270,17 +2233,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**RecordingEncryptionConfiguration**](RecordingEncryptionConfiguration.html)| Encryption Configuration |  |
-{: class="table table-striped"}
+| **body** | [**RecordingEncryptionConfiguration**](RecordingEncryptionConfiguration)| Encryption Configuration |  |
 
 ### Return type
 
-[**RecordingEncryptionConfiguration**](RecordingEncryptionConfiguration.html)
+[**RecordingEncryptionConfiguration**](RecordingEncryptionConfiguration)
 
-<a name="post_recording_localkeys"></a>
 
-## [**EncryptionKey**](EncryptionKey.html) post_recording_localkeys(body)
+## post_recording_localkeys
 
+> [**EncryptionKey**](EncryptionKey) post_recording_localkeys(body)
 
 
 create a local key management recording key
@@ -2319,17 +2281,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**LocalEncryptionKeyRequest**](LocalEncryptionKeyRequest.html)| Local Encryption body |  |
-{: class="table table-striped"}
+| **body** | [**LocalEncryptionKeyRequest**](LocalEncryptionKeyRequest)| Local Encryption body |  |
 
 ### Return type
 
-[**EncryptionKey**](EncryptionKey.html)
+[**EncryptionKey**](EncryptionKey)
 
-<a name="post_recording_mediaretentionpolicies"></a>
 
-## [**Policy**](Policy.html) post_recording_mediaretentionpolicies(body)
+## post_recording_mediaretentionpolicies
 
+> [**Policy**](Policy) post_recording_mediaretentionpolicies(body)
 
 
 Create media retention policy
@@ -2370,17 +2331,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**PolicyCreate**](PolicyCreate.html)| Policy |  |
-{: class="table table-striped"}
+| **body** | [**PolicyCreate**](PolicyCreate)| Policy |  |
 
 ### Return type
 
-[**Policy**](Policy.html)
+[**Policy**](Policy)
 
-<a name="post_recording_recordingkeys"></a>
 
-## [**EncryptionKey**](EncryptionKey.html) post_recording_recordingkeys()
+## post_recording_recordingkeys
 
+> [**EncryptionKey**](EncryptionKey) post_recording_recordingkeys()
 
 
 Create encryption key
@@ -2417,15 +2377,14 @@ except ApiException as e:
 
 This endpoint does not need any parameters.
 
-
 ### Return type
 
-[**EncryptionKey**](EncryptionKey.html)
+[**EncryptionKey**](EncryptionKey)
 
-<a name="post_recording_uploads_reports"></a>
 
-## [**RecordingUploadReport**](RecordingUploadReport.html) post_recording_uploads_reports(body)
+## post_recording_uploads_reports
 
+> [**RecordingUploadReport**](RecordingUploadReport) post_recording_uploads_reports(body)
 
 
 Creates a recording upload status report
@@ -2464,17 +2423,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**RecordingUploadReportRequest**](RecordingUploadReportRequest.html)| Report parameters |  |
-{: class="table table-striped"}
+| **body** | [**RecordingUploadReportRequest**](RecordingUploadReportRequest)| Report parameters |  |
 
 ### Return type
 
-[**RecordingUploadReport**](RecordingUploadReport.html)
+[**RecordingUploadReport**](RecordingUploadReport)
 
-<a name="post_recordings_deletionprotection"></a>
 
-## [**list[AddressableEntityRef]**](AddressableEntityRef.html) post_recordings_deletionprotection(body)
+## post_recordings_deletionprotection
 
+> [**list[AddressableEntityRef]**](AddressableEntityRef) post_recordings_deletionprotection(body)
 
 
 Get a list of conversations with protected recordings
@@ -2512,17 +2470,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**ConversationDeletionProtectionQuery**](ConversationDeletionProtectionQuery.html)| conversationIds |  |
-{: class="table table-striped"}
+| **body** | [**ConversationDeletionProtectionQuery**](ConversationDeletionProtectionQuery)| conversationIds |  |
 
 ### Return type
 
-[**list[AddressableEntityRef]**](AddressableEntityRef.html)
+[**list[AddressableEntityRef]**](AddressableEntityRef)
 
-<a name="post_recordings_screensessions_acknowledge"></a>
 
-##  post_recordings_screensessions_acknowledge(body)
+## post_recordings_screensessions_acknowledge
 
+>  post_recordings_screensessions_acknowledge(body)
 
 
 Acknowledge a screen recording.
@@ -2559,17 +2516,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**AcknowledgeScreenRecordingRequest**](AcknowledgeScreenRecordingRequest.html)| AcknowledgeScreenRecordingRequest |  |
-{: class="table table-striped"}
+| **body** | [**AcknowledgeScreenRecordingRequest**](AcknowledgeScreenRecordingRequest)| AcknowledgeScreenRecordingRequest |  |
 
 ### Return type
 
 void (empty response body)
 
-<a name="post_recordings_screensessions_metadata"></a>
 
-##  post_recordings_screensessions_metadata(body)
+## post_recordings_screensessions_metadata
 
+>  post_recordings_screensessions_metadata(body)
 
 
 Provide meta-data a screen recording.
@@ -2606,17 +2562,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**ScreenRecordingMetaDataRequest**](ScreenRecordingMetaDataRequest.html)| ScreenRecordingMetaDataRequest |  |
-{: class="table table-striped"}
+| **body** | [**ScreenRecordingMetaDataRequest**](ScreenRecordingMetaDataRequest)| ScreenRecordingMetaDataRequest |  |
 
 ### Return type
 
 void (empty response body)
 
-<a name="put_conversation_recording"></a>
 
-## [**Recording**](Recording.html) put_conversation_recording(conversation_id, recording_id, body, clear_export=clear_export)
+## put_conversation_recording
 
+> [**Recording**](Recording) put_conversation_recording(conversation_id, recording_id, body, clear_export=clear_export)
 
 
 Updates the retention records on a recording.
@@ -2664,18 +2619,17 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| Conversation ID |  |
 | **recording_id** | **str**| Recording ID |  |
-| **body** | [**Recording**](Recording.html)| recording |  |
+| **body** | [**Recording**](Recording)| recording |  |
 | **clear_export** | **bool**| Whether to clear the pending export for the recording | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**Recording**](Recording.html)
+[**Recording**](Recording)
 
-<a name="put_conversation_recording_annotation"></a>
 
-## [**Annotation**](Annotation.html) put_conversation_recording_annotation(conversation_id, recording_id, annotation_id, body)
+## put_conversation_recording_annotation
 
+> [**Annotation**](Annotation) put_conversation_recording_annotation(conversation_id, recording_id, annotation_id, body)
 
 
 Update annotation
@@ -2722,17 +2676,16 @@ except ApiException as e:
 | **conversation_id** | **str**| Conversation ID |  |
 | **recording_id** | **str**| Recording ID |  |
 | **annotation_id** | **str**| Annotation ID |  |
-| **body** | [**Annotation**](Annotation.html)| annotation |  |
-{: class="table table-striped"}
+| **body** | [**Annotation**](Annotation)| annotation |  |
 
 ### Return type
 
-[**Annotation**](Annotation.html)
+[**Annotation**](Annotation)
 
-<a name="put_orphanrecording"></a>
 
-## [**Recording**](Recording.html) put_orphanrecording(orphan_id, body=body)
+## put_orphanrecording
 
+> [**Recording**](Recording) put_orphanrecording(orphan_id, body=body)
 
 
 Updates an orphan recording to a regular recording with retention values
@@ -2775,17 +2728,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **orphan_id** | **str**| Orphan ID |  |
-| **body** | [**OrphanUpdateRequest**](OrphanUpdateRequest.html)|  | [optional]  |
-{: class="table table-striped"}
+| **body** | [**OrphanUpdateRequest**](OrphanUpdateRequest)|  | [optional]  |
 
 ### Return type
 
-[**Recording**](Recording.html)
+[**Recording**](Recording)
 
-<a name="put_recording_crossplatform_mediaretentionpolicy"></a>
 
-## [**CrossPlatformPolicy**](CrossPlatformPolicy.html) put_recording_crossplatform_mediaretentionpolicy(policy_id, body)
+## put_recording_crossplatform_mediaretentionpolicy
 
+> [**CrossPlatformPolicy**](CrossPlatformPolicy) put_recording_crossplatform_mediaretentionpolicy(policy_id, body)
 
 
 Update a media retention policy
@@ -2828,17 +2780,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **policy_id** | **str**| Policy ID |  |
-| **body** | [**CrossPlatformPolicy**](CrossPlatformPolicy.html)| Policy |  |
-{: class="table table-striped"}
+| **body** | [**CrossPlatformPolicy**](CrossPlatformPolicy)| Policy |  |
 
 ### Return type
 
-[**CrossPlatformPolicy**](CrossPlatformPolicy.html)
+[**CrossPlatformPolicy**](CrossPlatformPolicy)
 
-<a name="put_recording_job"></a>
 
-## [**RecordingJob**](RecordingJob.html) put_recording_job(job_id, body)
+## put_recording_job
 
+> [**RecordingJob**](RecordingJob) put_recording_job(job_id, body)
 
 
 Execute the recording bulk job.
@@ -2883,17 +2834,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **job_id** | **str**| jobId |  |
-| **body** | [**ExecuteRecordingJobsQuery**](ExecuteRecordingJobsQuery.html)| query |  |
-{: class="table table-striped"}
+| **body** | [**ExecuteRecordingJobsQuery**](ExecuteRecordingJobsQuery)| query |  |
 
 ### Return type
 
-[**RecordingJob**](RecordingJob.html)
+[**RecordingJob**](RecordingJob)
 
-<a name="put_recording_keyconfiguration"></a>
 
-## [**RecordingEncryptionConfiguration**](RecordingEncryptionConfiguration.html) put_recording_keyconfiguration(key_configuration_id, body)
+## put_recording_keyconfiguration
 
+> [**RecordingEncryptionConfiguration**](RecordingEncryptionConfiguration) put_recording_keyconfiguration(key_configuration_id, body)
 
 
 Update the encryption key configurations
@@ -2934,17 +2884,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **key_configuration_id** | **str**| Key Configurations Id |  |
-| **body** | [**RecordingEncryptionConfiguration**](RecordingEncryptionConfiguration.html)| Encryption key configuration metadata |  |
-{: class="table table-striped"}
+| **body** | [**RecordingEncryptionConfiguration**](RecordingEncryptionConfiguration)| Encryption key configuration metadata |  |
 
 ### Return type
 
-[**RecordingEncryptionConfiguration**](RecordingEncryptionConfiguration.html)
+[**RecordingEncryptionConfiguration**](RecordingEncryptionConfiguration)
 
-<a name="put_recording_mediaretentionpolicy"></a>
 
-## [**Policy**](Policy.html) put_recording_mediaretentionpolicy(policy_id, body)
+## put_recording_mediaretentionpolicy
 
+> [**Policy**](Policy) put_recording_mediaretentionpolicy(policy_id, body)
 
 
 Update a media retention policy
@@ -2987,17 +2936,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **policy_id** | **str**| Policy ID |  |
-| **body** | [**Policy**](Policy.html)| Policy |  |
-{: class="table table-striped"}
+| **body** | [**Policy**](Policy)| Policy |  |
 
 ### Return type
 
-[**Policy**](Policy.html)
+[**Policy**](Policy)
 
-<a name="put_recording_recordingkeys_rotationschedule"></a>
 
-## [**KeyRotationSchedule**](KeyRotationSchedule.html) put_recording_recordingkeys_rotationschedule(body)
+## put_recording_recordingkeys_rotationschedule
 
+> [**KeyRotationSchedule**](KeyRotationSchedule) put_recording_recordingkeys_rotationschedule(body)
 
 
 Update key rotation schedule
@@ -3036,17 +2984,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**KeyRotationSchedule**](KeyRotationSchedule.html)| KeyRotationSchedule |  |
-{: class="table table-striped"}
+| **body** | [**KeyRotationSchedule**](KeyRotationSchedule)| KeyRotationSchedule |  |
 
 ### Return type
 
-[**KeyRotationSchedule**](KeyRotationSchedule.html)
+[**KeyRotationSchedule**](KeyRotationSchedule)
 
-<a name="put_recording_settings"></a>
 
-## [**RecordingSettings**](RecordingSettings.html) put_recording_settings(body)
+## put_recording_settings
 
+> [**RecordingSettings**](RecordingSettings) put_recording_settings(body)
 
 
 Update the Recording Settings for the Organization
@@ -3085,17 +3032,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**RecordingSettings**](RecordingSettings.html)| Recording settings |  |
-{: class="table table-striped"}
+| **body** | [**RecordingSettings**](RecordingSettings)| Recording settings |  |
 
 ### Return type
 
-[**RecordingSettings**](RecordingSettings.html)
+[**RecordingSettings**](RecordingSettings)
 
-<a name="put_recordings_deletionprotection"></a>
 
-##  put_recordings_deletionprotection(protect=protect, body=body)
+## put_recordings_deletionprotection
 
+>  put_recordings_deletionprotection(protect=protect, body=body)
 
 
 Apply or revoke recording protection for conversations
@@ -3136,10 +3082,11 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **protect** | **bool**| Check for apply, uncheck for revoke (each action requires the respective permission) | [optional] [default to True] |
-| **body** | [**ConversationDeletionProtectionQuery**](ConversationDeletionProtectionQuery.html)|  | [optional]  |
-{: class="table table-striped"}
+| **body** | [**ConversationDeletionProtectionQuery**](ConversationDeletionProtectionQuery)|  | [optional]  |
 
 ### Return type
 
 void (empty response body)
 
+
+_PureCloudPlatformClientV2 211.1.0_

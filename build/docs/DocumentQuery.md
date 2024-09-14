@@ -1,14 +1,14 @@
----
-title: DocumentQuery
----
+# DocumentQuery
+
 ## DocumentQuery
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **clauses** | [**list[DocumentQueryClause]**](DocumentQueryClause.html) | Documents filter clauses/criteria. Limit of 20 clauses. | |
-| **operator** | **str** | Specifies how the filter clauses will be applied together. | |
-{: class="table table-striped"}
+| **clauses** | [list[DocumentQueryClause]](DocumentQueryClause) | Documents filter clauses/criteria. Limit of 20 clauses. | |
+| **operator** | str | Specifies how the filter clauses will be applied together. | |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

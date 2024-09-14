@@ -1,6 +1,4 @@
----
-title: AgentAssistantsApi
----
+# AgentAssistantsApi
 
 ## PureCloudPlatformClientV2.AgentAssistantsApi
 
@@ -8,24 +6,24 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 |Method | Description|
 |------------- | -------------|
-|[**delete_assistant**](AgentAssistantsApi.html#delete_assistant) | Delete an assistant.|
-|[**delete_assistant_queue**](AgentAssistantsApi.html#delete_assistant_queue) | Disassociate a queue from an assistant.|
-|[**delete_assistant_queues**](AgentAssistantsApi.html#delete_assistant_queues) | Disassociate the queues from an assistant for the given assistant ID and queue IDs.|
-|[**get_assistant**](AgentAssistantsApi.html#get_assistant) | Get an assistant.|
-|[**get_assistant_queue**](AgentAssistantsApi.html#get_assistant_queue) | Get queue Information for an assistant.|
-|[**get_assistant_queues**](AgentAssistantsApi.html#get_assistant_queues) | Get all the queues associated with an assistant.|
-|[**get_assistants**](AgentAssistantsApi.html#get_assistants) | Get all assistants.|
-|[**get_assistants_queues**](AgentAssistantsApi.html#get_assistants_queues) | Get all queues assigned to any assistant.|
-|[**patch_assistant**](AgentAssistantsApi.html#patch_assistant) | Update an assistant.|
-|[**patch_assistant_queues**](AgentAssistantsApi.html#patch_assistant_queues) | Update Queues for an Assistant.|
-|[**post_assistants**](AgentAssistantsApi.html#post_assistants) | Create an Assistant.|
-|[**put_assistant_queue**](AgentAssistantsApi.html#put_assistant_queue) | Create a queue assistant association.|
-{: class="table table-striped"}
+|[**delete_assistant**](#delete_assistant) | Delete an assistant.|
+|[**delete_assistant_queue**](#delete_assistant_queue) | Disassociate a queue from an assistant.|
+|[**delete_assistant_queues**](#delete_assistant_queues) | Disassociate the queues from an assistant for the given assistant ID and queue IDs.|
+|[**get_assistant**](#get_assistant) | Get an assistant.|
+|[**get_assistant_queue**](#get_assistant_queue) | Get queue Information for an assistant.|
+|[**get_assistant_queues**](#get_assistant_queues) | Get all the queues associated with an assistant.|
+|[**get_assistants**](#get_assistants) | Get all assistants.|
+|[**get_assistants_queues**](#get_assistants_queues) | Get all queues assigned to any assistant.|
+|[**patch_assistant**](#patch_assistant) | Update an assistant.|
+|[**patch_assistant_queues**](#patch_assistant_queues) | Update Queues for an Assistant.|
+|[**post_assistants**](#post_assistants) | Create an Assistant.|
+|[**put_assistant_queue**](#put_assistant_queue) | Create a queue assistant association.|
 
-<a name="delete_assistant"></a>
 
-##  delete_assistant(assistant_id)
 
+## delete_assistant
+
+>  delete_assistant(assistant_id)
 
 
 Delete an assistant.
@@ -64,16 +62,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **assistant_id** | **str**| Assistant ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (empty response body)
 
-<a name="delete_assistant_queue"></a>
 
-##  delete_assistant_queue(assistant_id, queue_id)
+## delete_assistant_queue
 
+>  delete_assistant_queue(assistant_id, queue_id)
 
 
 Disassociate a queue from an assistant.
@@ -114,16 +111,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **assistant_id** | **str**| Assistant ID |  |
 | **queue_id** | **str**| Queue ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (empty response body)
 
-<a name="delete_assistant_queues"></a>
 
-##  delete_assistant_queues(assistant_id, queue_ids=queue_ids)
+## delete_assistant_queues
 
+>  delete_assistant_queues(assistant_id, queue_ids=queue_ids)
 
 
 Disassociate the queues from an assistant for the given assistant ID and queue IDs.
@@ -164,16 +160,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **assistant_id** | **str**| Assistant ID |  |
 | **queue_ids** | **str**| Comma-separated identifiers of the queues that need to be deleted. | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (empty response body)
 
-<a name="get_assistant"></a>
 
-## [**Assistant**](Assistant.html) get_assistant(assistant_id, expand=expand)
+## get_assistant
 
+> [**Assistant**](Assistant) get_assistant(assistant_id, expand=expand)
 
 
 Get an assistant.
@@ -215,16 +210,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **assistant_id** | **str**| Assistant ID |  |
 | **expand** | **str**| Which fields, if any, to expand. | [optional] <br />**Values**: copilot |
-{: class="table table-striped"}
 
 ### Return type
 
-[**Assistant**](Assistant.html)
+[**Assistant**](Assistant)
 
-<a name="get_assistant_queue"></a>
 
-## [**AssistantQueue**](AssistantQueue.html) get_assistant_queue(assistant_id, queue_id, expand=expand)
+## get_assistant_queue
 
+> [**AssistantQueue**](AssistantQueue) get_assistant_queue(assistant_id, queue_id, expand=expand)
 
 
 Get queue Information for an assistant.
@@ -268,16 +262,15 @@ except ApiException as e:
 | **assistant_id** | **str**| Assistant ID |  |
 | **queue_id** | **str**| Queue ID |  |
 | **expand** | **str**| Which fields, if any, to expand. | [optional] <br />**Values**: assistant |
-{: class="table table-striped"}
 
 ### Return type
 
-[**AssistantQueue**](AssistantQueue.html)
+[**AssistantQueue**](AssistantQueue)
 
-<a name="get_assistant_queues"></a>
 
-## [**AssistantQueueListing**](AssistantQueueListing.html) get_assistant_queues(assistant_id, before=before, after=after, page_size=page_size, expand=expand)
+## get_assistant_queues
 
+> [**AssistantQueueListing**](AssistantQueueListing) get_assistant_queues(assistant_id, before=before, after=after, page_size=page_size, expand=expand)
 
 
 Get all the queues associated with an assistant.
@@ -325,16 +318,15 @@ except ApiException as e:
 | **after** | **str**| The cursor that points to the end of the set of entities that has been returned. | [optional]  |
 | **page_size** | **str**| Number of entities to return. Maximum of 200. | [optional]  |
 | **expand** | **str**| Which fields, if any, to expand. | [optional] <br />**Values**: assistant |
-{: class="table table-striped"}
 
 ### Return type
 
-[**AssistantQueueListing**](AssistantQueueListing.html)
+[**AssistantQueueListing**](AssistantQueueListing)
 
-<a name="get_assistants"></a>
 
-## [**AssistantListing**](AssistantListing.html) get_assistants(before=before, after=after, limit=limit, page_size=page_size, name=name)
+## get_assistants
 
+> [**AssistantListing**](AssistantListing) get_assistants(before=before, after=after, limit=limit, page_size=page_size, name=name)
 
 
 Get all assistants.
@@ -382,16 +374,15 @@ except ApiException as e:
 | **limit** | **str**| Number of entities to return. Maximum of 200. Deprecated in favour of pageSize | [optional]  |
 | **page_size** | **str**| Number of entities to return. Maximum of 200. | [optional]  |
 | **name** | **str**| Return the assistant by the given name. | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**AssistantListing**](AssistantListing.html)
+[**AssistantListing**](AssistantListing)
 
-<a name="get_assistants_queues"></a>
 
-## [**AssistantQueueListing**](AssistantQueueListing.html) get_assistants_queues(before=before, after=after, page_size=page_size, queue_ids=queue_ids, expand=expand)
+## get_assistants_queues
 
+> [**AssistantQueueListing**](AssistantQueueListing) get_assistants_queues(before=before, after=after, page_size=page_size, queue_ids=queue_ids, expand=expand)
 
 
 Get all queues assigned to any assistant.
@@ -439,16 +430,15 @@ except ApiException as e:
 | **page_size** | **str**| Number of entities to return. Maximum of 200. | [optional]  |
 | **queue_ids** | **str**| Comma-separated identifiers of the queues that need to be retrieved. | [optional]  |
 | **expand** | **str**| Which fields, if any, to expand. | [optional] <br />**Values**: assistant |
-{: class="table table-striped"}
 
 ### Return type
 
-[**AssistantQueueListing**](AssistantQueueListing.html)
+[**AssistantQueueListing**](AssistantQueueListing)
 
-<a name="patch_assistant"></a>
 
-## [**Assistant**](Assistant.html) patch_assistant(assistant_id, body)
+## patch_assistant
 
+> [**Assistant**](Assistant) patch_assistant(assistant_id, body)
 
 
 Update an assistant.
@@ -489,17 +479,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **assistant_id** | **str**| Assistant ID |  |
-| **body** | [**Assistant**](Assistant.html)|  |  |
-{: class="table table-striped"}
+| **body** | [**Assistant**](Assistant)|  |  |
 
 ### Return type
 
-[**Assistant**](Assistant.html)
+[**Assistant**](Assistant)
 
-<a name="patch_assistant_queues"></a>
 
-## [**AssistantQueueListing**](AssistantQueueListing.html) patch_assistant_queues(assistant_id, body)
+## patch_assistant_queues
 
+> [**AssistantQueueListing**](AssistantQueueListing) patch_assistant_queues(assistant_id, body)
 
 
 Update Queues for an Assistant.
@@ -540,17 +529,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **assistant_id** | **str**| Assistant ID |  |
-| **body** | [**list[AssistantQueue]**](AssistantQueue.html)|  |  |
-{: class="table table-striped"}
+| **body** | [**list[AssistantQueue]**](AssistantQueue)|  |  |
 
 ### Return type
 
-[**AssistantQueueListing**](AssistantQueueListing.html)
+[**AssistantQueueListing**](AssistantQueueListing)
 
-<a name="post_assistants"></a>
 
-## [**Assistant**](Assistant.html) post_assistants(body)
+## post_assistants
 
+> [**Assistant**](Assistant) post_assistants(body)
 
 
 Create an Assistant.
@@ -589,17 +577,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**Assistant**](Assistant.html)|  |  |
-{: class="table table-striped"}
+| **body** | [**Assistant**](Assistant)|  |  |
 
 ### Return type
 
-[**Assistant**](Assistant.html)
+[**Assistant**](Assistant)
 
-<a name="put_assistant_queue"></a>
 
-## [**AssistantQueue**](AssistantQueue.html) put_assistant_queue(assistant_id, queue_id, body)
+## put_assistant_queue
 
+> [**AssistantQueue**](AssistantQueue) put_assistant_queue(assistant_id, queue_id, body)
 
 
 Create a queue assistant association.
@@ -642,10 +629,11 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **assistant_id** | **str**| Assistant ID |  |
 | **queue_id** | **str**| Queue ID |  |
-| **body** | [**AssistantQueue**](AssistantQueue.html)|  |  |
-{: class="table table-striped"}
+| **body** | [**AssistantQueue**](AssistantQueue)|  |  |
 
 ### Return type
 
-[**AssistantQueue**](AssistantQueue.html)
+[**AssistantQueue**](AssistantQueue)
 
+
+_PureCloudPlatformClientV2 211.1.0_

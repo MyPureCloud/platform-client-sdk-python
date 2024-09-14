@@ -1,15 +1,15 @@
----
-title: OverallBestPoints
----
+# OverallBestPoints
+
 ## OverallBestPoints
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **division** | [**Division**](Division.html) | The requested division | [optional] |
-| **best_points** | [**list[OverallBestPointsItem]**](OverallBestPointsItem.html) | List of gamification best point items | [optional] |
-| **performance_profile** | [**AddressableEntityRef**](AddressableEntityRef.html) | The targeted performance profile for the average points | [optional] |
-{: class="table table-striped"}
+| **division** | [Division](Division) | The requested division | [optional] |
+| **best_points** | [list[OverallBestPointsItem]](OverallBestPointsItem) | List of gamification best point items | [optional] |
+| **performance_profile** | [AddressableEntityRef](AddressableEntityRef) | The targeted performance profile for the average points | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

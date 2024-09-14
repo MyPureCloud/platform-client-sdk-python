@@ -1,6 +1,4 @@
----
-title: DownloadsApi
----
+# DownloadsApi
 
 ## PureCloudPlatformClientV2.DownloadsApi
 
@@ -8,13 +6,13 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 |Method | Description|
 |------------- | -------------|
-|[**get_download**](DownloadsApi.html#get_download) | Issues a redirect to a signed secure download URL for specified download|
-{: class="table table-striped"}
+|[**get_download**](#get_download) | Issues a redirect to a signed secure download URL for specified download|
 
-<a name="get_download"></a>
 
-## [**UrlResponse**](UrlResponse.html) get_download(download_id, content_disposition=content_disposition, issue_redirect=issue_redirect, redirect_to_auth=redirect_to_auth)
 
+## get_download
+
+> [**UrlResponse**](UrlResponse) get_download(download_id, content_disposition=content_disposition, issue_redirect=issue_redirect, redirect_to_auth=redirect_to_auth)
 
 
 Issues a redirect to a signed secure download URL for specified download
@@ -61,9 +59,10 @@ except ApiException as e:
 | **content_disposition** | **str**|  | [optional]  |
 | **issue_redirect** | **bool**|  | [optional] [default to True] |
 | **redirect_to_auth** | **bool**|  | [optional] [default to True] |
-{: class="table table-striped"}
 
 ### Return type
 
-[**UrlResponse**](UrlResponse.html)
+[**UrlResponse**](UrlResponse)
 
+
+_PureCloudPlatformClientV2 211.1.0_

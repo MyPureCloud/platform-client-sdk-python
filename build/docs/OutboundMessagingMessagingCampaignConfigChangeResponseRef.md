@@ -1,13 +1,13 @@
----
-title: OutboundMessagingMessagingCampaignConfigChangeResponseRef
----
+# OutboundMessagingMessagingCampaignConfigChangeResponseRef
+
 ## OutboundMessagingMessagingCampaignConfigChangeResponseRef
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **id** | **str** | The unique response id | [optional] |
-{: class="table table-striped"}
+| **id** | str | The unique response id | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

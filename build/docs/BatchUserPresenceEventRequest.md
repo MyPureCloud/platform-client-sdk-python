@@ -1,13 +1,13 @@
----
-title: BatchUserPresenceEventRequest
----
+# BatchUserPresenceEventRequest
+
 ## BatchUserPresenceEventRequest
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **user_presence_events** | [**list[UserPresenceEvent]**](UserPresenceEvent.html) | UserPresence events for this batch | [optional] |
-{: class="table table-striped"}
+| **user_presence_events** | [list[UserPresenceEvent]](UserPresenceEvent) | UserPresence events for this batch | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

@@ -1,13 +1,13 @@
----
-title: KnowledgeAggregateQueryResponse
----
+# KnowledgeAggregateQueryResponse
+
 ## KnowledgeAggregateQueryResponse
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **results** | [**list[KnowledgeAggregateDataContainer]**](KnowledgeAggregateDataContainer.html) |  | [optional] |
-{: class="table table-striped"}
+| **results** | [list[KnowledgeAggregateDataContainer]](KnowledgeAggregateDataContainer) |  | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

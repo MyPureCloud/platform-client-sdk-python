@@ -1,17 +1,17 @@
----
-title: QueueUserEventTopicQueueMember
----
+# QueueUserEventTopicQueueMember
+
 ## QueueUserEventTopicQueueMember
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **id** | **str** |  | [optional] |
-| **user** | [**QueueUserEventTopicUserReference**](QueueUserEventTopicUserReference.html) |  | [optional] |
-| **queue_id** | **str** |  | [optional] |
-| **joined** | **bool** |  | [optional] |
-| **additional_properties** | **dict(str, object)** |  | [optional] |
-{: class="table table-striped"}
+| **id** | str |  | [optional] |
+| **user** | [QueueUserEventTopicUserReference](QueueUserEventTopicUserReference) |  | [optional] |
+| **queue_id** | str |  | [optional] |
+| **joined** | bool |  | [optional] |
+| **additional_properties** | dict(str, object) |  | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

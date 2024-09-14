@@ -1,19 +1,19 @@
----
-title: WfmActivityPlanJobCompleteTopicActivityPlanOccurrenceDeletionJobCompleteNotification
----
+# WfmActivityPlanJobCompleteTopicActivityPlanOccurrenceDeletionJobCompleteNotification
+
 ## WfmActivityPlanJobCompleteTopicActivityPlanOccurrenceDeletionJobCompleteNotification
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **id** | **str** |  | [optional] |
-| **type** | **str** |  | [optional] |
-| **activity_plan** | [**WfmActivityPlanJobCompleteTopicActivityPlanReference**](WfmActivityPlanJobCompleteTopicActivityPlanReference.html) |  | [optional] |
-| **status** | **str** |  | [optional] |
-| **exceptions** | [**list[WfmActivityPlanJobCompleteTopicActivityPlanJobException]**](WfmActivityPlanJobCompleteTopicActivityPlanJobException.html) |  | [optional] |
-| **error** | [**WfmActivityPlanJobCompleteTopicErrorBody**](WfmActivityPlanJobCompleteTopicErrorBody.html) |  | [optional] |
-| **occurrence** | [**WfmActivityPlanJobCompleteTopicActivityPlanOccurrenceReference**](WfmActivityPlanJobCompleteTopicActivityPlanOccurrenceReference.html) |  | [optional] |
-{: class="table table-striped"}
+| **id** | str |  | [optional] |
+| **type** | str |  | [optional] |
+| **activity_plan** | [WfmActivityPlanJobCompleteTopicActivityPlanReference](WfmActivityPlanJobCompleteTopicActivityPlanReference) |  | [optional] |
+| **status** | str |  | [optional] |
+| **exceptions** | [list[WfmActivityPlanJobCompleteTopicActivityPlanJobException]](WfmActivityPlanJobCompleteTopicActivityPlanJobException) |  | [optional] |
+| **error** | [WfmActivityPlanJobCompleteTopicErrorBody](WfmActivityPlanJobCompleteTopicErrorBody) |  | [optional] |
+| **occurrence** | [WfmActivityPlanJobCompleteTopicActivityPlanOccurrenceReference](WfmActivityPlanJobCompleteTopicActivityPlanOccurrenceReference) |  | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

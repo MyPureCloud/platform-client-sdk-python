@@ -1,13 +1,13 @@
----
-title: AvailableMediaTypeEntityListing
----
+# AvailableMediaTypeEntityListing
+
 ## AvailableMediaTypeEntityListing
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **entities** | [**list[AvailableMediaType]**](AvailableMediaType.html) |  | [optional] |
-{: class="table table-striped"}
+| **entities** | [list[AvailableMediaType]](AvailableMediaType) |  | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

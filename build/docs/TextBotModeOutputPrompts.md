@@ -1,13 +1,13 @@
----
-title: TextBotModeOutputPrompts
----
+# TextBotModeOutputPrompts
+
 ## TextBotModeOutputPrompts
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **segments** | [**list[TextBotPromptSegment]**](TextBotPromptSegment.html) | The list of prompt segments. | |
-{: class="table table-striped"}
+| **segments** | [list[TextBotPromptSegment]](TextBotPromptSegment) | The list of prompt segments. | |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

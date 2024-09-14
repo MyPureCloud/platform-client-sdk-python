@@ -1,16 +1,16 @@
----
-title: TimeInterval
----
+# TimeInterval
+
 ## TimeInterval
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **months** | **int** |  | [optional] |
-| **weeks** | **int** |  | [optional] |
-| **days** | **int** |  | [optional] |
-| **hours** | **int** |  | [optional] |
-{: class="table table-striped"}
+| **months** | int |  | [optional] |
+| **weeks** | int |  | [optional] |
+| **days** | int |  | [optional] |
+| **hours** | int |  | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

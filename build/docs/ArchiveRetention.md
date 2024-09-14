@@ -1,14 +1,14 @@
----
-title: ArchiveRetention
----
+# ArchiveRetention
+
 ## ArchiveRetention
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **days** | **int** |  | [optional] |
-| **storage_medium** | **str** |  | [optional] |
-{: class="table table-striped"}
+| **days** | int |  | [optional] |
+| **storage_medium** | str |  | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

@@ -1,15 +1,15 @@
----
-title: ProgramTranscriptionEngine
----
+# ProgramTranscriptionEngine
+
 ## ProgramTranscriptionEngine
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **engine** | **str** |  | [optional] |
-| **dialects** | **list[str]** |  | [optional] |
-| **engine_integration** | [**EngineIntegration**](EngineIntegration.html) |  | [optional] |
-{: class="table table-striped"}
+| **engine** | str |  | [optional] |
+| **dialects** | list[str] |  | [optional] |
+| **engine_integration** | [EngineIntegration](EngineIntegration) |  | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

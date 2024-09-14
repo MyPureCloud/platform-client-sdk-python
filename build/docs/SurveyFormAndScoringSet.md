@@ -1,14 +1,14 @@
----
-title: SurveyFormAndScoringSet
----
+# SurveyFormAndScoringSet
+
 ## SurveyFormAndScoringSet
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **survey_form** | [**SurveyForm**](SurveyForm.html) |  | [optional] |
-| **answers** | [**SurveyScoringSet**](SurveyScoringSet.html) |  | [optional] |
-{: class="table table-striped"}
+| **survey_form** | [SurveyForm](SurveyForm) |  | [optional] |
+| **answers** | [SurveyScoringSet](SurveyScoringSet) |  | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

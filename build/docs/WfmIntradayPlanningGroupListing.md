@@ -1,14 +1,14 @@
----
-title: WfmIntradayPlanningGroupListing
----
+# WfmIntradayPlanningGroupListing
+
 ## WfmIntradayPlanningGroupListing
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **entities** | [**list[ForecastPlanningGroupResponse]**](ForecastPlanningGroupResponse.html) |  | [optional] |
-| **no_data_reason** | **str** | The reason there was no data for the request | [optional] |
-{: class="table table-striped"}
+| **entities** | [list[ForecastPlanningGroupResponse]](ForecastPlanningGroupResponse) |  | [optional] |
+| **no_data_reason** | str | The reason there was no data for the request | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

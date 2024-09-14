@@ -1,6 +1,4 @@
----
-title: EmployeeEngagementApi
----
+# EmployeeEngagementApi
 
 ## PureCloudPlatformClientV2.EmployeeEngagementApi
 
@@ -8,17 +6,17 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 |Method | Description|
 |------------- | -------------|
-|[**delete_employeeengagement_celebration**](EmployeeEngagementApi.html#delete_employeeengagement_celebration) | Deletes a celebration|
-|[**get_employeeengagement_celebrations**](EmployeeEngagementApi.html#get_employeeengagement_celebrations) | Get all celebrations|
-|[**get_employeeengagement_recognition**](EmployeeEngagementApi.html#get_employeeengagement_recognition) | Gets a single recognition|
-|[**patch_employeeengagement_celebration**](EmployeeEngagementApi.html#patch_employeeengagement_celebration) | Set a state for a celebration|
-|[**post_employeeengagement_recognitions**](EmployeeEngagementApi.html#post_employeeengagement_recognitions) | Creates a recognition|
-{: class="table table-striped"}
+|[**delete_employeeengagement_celebration**](#delete_employeeengagement_celebration) | Deletes a celebration|
+|[**get_employeeengagement_celebrations**](#get_employeeengagement_celebrations) | Get all celebrations|
+|[**get_employeeengagement_recognition**](#get_employeeengagement_recognition) | Gets a single recognition|
+|[**patch_employeeengagement_celebration**](#patch_employeeengagement_celebration) | Set a state for a celebration|
+|[**post_employeeengagement_recognitions**](#post_employeeengagement_recognitions) | Creates a recognition|
 
-<a name="delete_employeeengagement_celebration"></a>
 
-##  delete_employeeengagement_celebration(celebration_id)
 
+## delete_employeeengagement_celebration
+
+>  delete_employeeengagement_celebration(celebration_id)
 
 
 Deletes a celebration
@@ -57,16 +55,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **celebration_id** | **str**| The ID of the celebration |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (empty response body)
 
-<a name="get_employeeengagement_celebrations"></a>
 
-## [**GetCelebrationListing**](GetCelebrationListing.html) get_employeeengagement_celebrations(page_number=page_number, page_size=page_size)
+## get_employeeengagement_celebrations
 
+> [**GetCelebrationListing**](GetCelebrationListing) get_employeeengagement_celebrations(page_number=page_number, page_size=page_size)
 
 
 Get all celebrations
@@ -108,16 +105,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **page_number** | **int**|  | [optional] [default to 1] |
 | **page_size** | **int**|  | [optional] [default to 25] |
-{: class="table table-striped"}
 
 ### Return type
 
-[**GetCelebrationListing**](GetCelebrationListing.html)
+[**GetCelebrationListing**](GetCelebrationListing)
 
-<a name="get_employeeengagement_recognition"></a>
 
-## [**Recognition**](Recognition.html) get_employeeengagement_recognition(recognition_id)
+## get_employeeengagement_recognition
 
+> [**Recognition**](Recognition) get_employeeengagement_recognition(recognition_id)
 
 
 Gets a single recognition
@@ -157,16 +153,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **recognition_id** | **str**| The Recognition ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**Recognition**](Recognition.html)
+[**Recognition**](Recognition)
 
-<a name="patch_employeeengagement_celebration"></a>
 
-##  patch_employeeengagement_celebration(celebration_id, body)
+## patch_employeeengagement_celebration
 
+>  patch_employeeengagement_celebration(celebration_id, body)
 
 
 Set a state for a celebration
@@ -206,17 +201,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **celebration_id** | **str**| The ID of the celebration |  |
-| **body** | [**CelebrationStateParam**](CelebrationStateParam.html)| Patch Celebration state |  |
-{: class="table table-striped"}
+| **body** | [**CelebrationStateParam**](CelebrationStateParam)| Patch Celebration state |  |
 
 ### Return type
 
 void (empty response body)
 
-<a name="post_employeeengagement_recognitions"></a>
 
-## [**RecognitionBase**](RecognitionBase.html) post_employeeengagement_recognitions(body)
+## post_employeeengagement_recognitions
 
+> [**RecognitionBase**](RecognitionBase) post_employeeengagement_recognitions(body)
 
 
 Creates a recognition
@@ -255,10 +249,11 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**CreateRecognition**](CreateRecognition.html)| Create Recognition |  |
-{: class="table table-striped"}
+| **body** | [**CreateRecognition**](CreateRecognition)| Create Recognition |  |
 
 ### Return type
 
-[**RecognitionBase**](RecognitionBase.html)
+[**RecognitionBase**](RecognitionBase)
 
+
+_PureCloudPlatformClientV2 211.1.0_

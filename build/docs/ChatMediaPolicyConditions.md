@@ -1,20 +1,20 @@
----
-title: ChatMediaPolicyConditions
----
+# ChatMediaPolicyConditions
+
 ## ChatMediaPolicyConditions
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **for_users** | [**list[User]**](User.html) |  | [optional] |
-| **date_ranges** | **list[str]** |  | [optional] |
-| **for_queues** | [**list[Queue]**](Queue.html) |  | [optional] |
-| **wrapup_codes** | [**list[WrapupCode]**](WrapupCode.html) |  | [optional] |
-| **languages** | [**list[Language]**](Language.html) |  | [optional] |
-| **time_allowed** | [**TimeAllowed**](TimeAllowed.html) |  | [optional] |
-| **teams** | [**list[Team]**](Team.html) | Teams to match conversations against | [optional] |
-| **duration** | [**DurationCondition**](DurationCondition.html) |  | [optional] |
-{: class="table table-striped"}
+| **for_users** | [list[User]](User) |  | [optional] |
+| **date_ranges** | list[str] |  | [optional] |
+| **for_queues** | [list[Queue]](Queue) |  | [optional] |
+| **wrapup_codes** | [list[WrapupCode]](WrapupCode) |  | [optional] |
+| **languages** | [list[Language]](Language) |  | [optional] |
+| **time_allowed** | [TimeAllowed](TimeAllowed) |  | [optional] |
+| **teams** | [list[Team]](Team) | Teams to match conversations against | [optional] |
+| **duration** | [DurationCondition](DurationCondition) |  | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

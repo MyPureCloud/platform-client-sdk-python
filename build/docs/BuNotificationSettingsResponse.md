@@ -1,13 +1,13 @@
----
-title: BuNotificationSettingsResponse
----
+# BuNotificationSettingsResponse
+
 ## BuNotificationSettingsResponse
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **scheduling** | [**BuScheduleNotificationsSettingsResponse**](BuScheduleNotificationsSettingsResponse.html) | Schedule notification settings | [optional] |
-{: class="table table-striped"}
+| **scheduling** | [BuScheduleNotificationsSettingsResponse](BuScheduleNotificationsSettingsResponse) | Schedule notification settings | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

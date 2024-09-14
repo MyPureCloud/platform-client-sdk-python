@@ -1,14 +1,14 @@
----
-title: KnowledgeParseJobRequestImport
----
+# KnowledgeParseJobRequestImport
+
 ## KnowledgeParseJobRequestImport
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **edits** | [**list[KnowledgeParseRecord]**](KnowledgeParseRecord.html) | Override of the result of the parse. | [optional] |
-| **excludes** | **list[str]** | Excluded results. | [optional] |
-{: class="table table-striped"}
+| **edits** | [list[KnowledgeParseRecord]](KnowledgeParseRecord) | Override of the result of the parse. | [optional] |
+| **excludes** | list[str] | Excluded results. | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

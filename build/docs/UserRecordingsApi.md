@@ -1,6 +1,4 @@
----
-title: UserRecordingsApi
----
+# UserRecordingsApi
 
 ## PureCloudPlatformClientV2.UserRecordingsApi
 
@@ -8,19 +6,19 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 |Method | Description|
 |------------- | -------------|
-|[**delete_userrecording**](UserRecordingsApi.html#delete_userrecording) | Delete a user recording.|
-|[**get_userrecording**](UserRecordingsApi.html#get_userrecording) | Get a user recording.|
-|[**get_userrecording_media**](UserRecordingsApi.html#get_userrecording_media) | Download a user recording.|
-|[**get_userrecording_transcoding**](UserRecordingsApi.html#get_userrecording_transcoding) | Download a user recording.|
-|[**get_userrecordings**](UserRecordingsApi.html#get_userrecordings) | Get a list of user recordings.|
-|[**get_userrecordings_summary**](UserRecordingsApi.html#get_userrecordings_summary) | Get user recording summary|
-|[**put_userrecording**](UserRecordingsApi.html#put_userrecording) | Update a user recording.|
-{: class="table table-striped"}
+|[**delete_userrecording**](#delete_userrecording) | Delete a user recording.|
+|[**get_userrecording**](#get_userrecording) | Get a user recording.|
+|[**get_userrecording_media**](#get_userrecording_media) | Download a user recording.|
+|[**get_userrecording_transcoding**](#get_userrecording_transcoding) | Download a user recording.|
+|[**get_userrecordings**](#get_userrecordings) | Get a list of user recordings.|
+|[**get_userrecordings_summary**](#get_userrecordings_summary) | Get user recording summary|
+|[**put_userrecording**](#put_userrecording) | Update a user recording.|
 
-<a name="delete_userrecording"></a>
 
-##  delete_userrecording(recording_id)
 
+## delete_userrecording
+
+>  delete_userrecording(recording_id)
 
 
 Delete a user recording.
@@ -58,16 +56,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **recording_id** | **str**| User Recording ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (empty response body)
 
-<a name="get_userrecording"></a>
 
-## [**UserRecording**](UserRecording.html) get_userrecording(recording_id, expand=expand)
+## get_userrecording
 
+> [**UserRecording**](UserRecording) get_userrecording(recording_id, expand=expand)
 
 
 Get a user recording.
@@ -107,18 +104,20 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **recording_id** | **str**| User Recording ID |  |
-| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand. | [optional] <br />**Values**: conversation |
-{: class="table table-striped"}
+| **expand** | [**list[str]**](str)| Which fields, if any, to expand. | [optional] <br />**Values**: conversation |
 
 ### Return type
 
-[**UserRecording**](UserRecording.html)
+[**UserRecording**](UserRecording)
 
-<a name="get_userrecording_media"></a>
 
-## [**DownloadResponse**](DownloadResponse.html) get_userrecording_media(recording_id, format_id=format_id, async=async)
+## get_userrecording_media
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+> [**DownloadResponse**](DownloadResponse) get_userrecording_media(recording_id, format_id=format_id, async=async)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 Download a user recording.
 
@@ -162,16 +161,15 @@ except ApiException as e:
 | **recording_id** | **str**| User Recording ID |  |
 | **format_id** | **str**| The desired media format. | [optional] [default to &#39;WEBM&#39;]<br />**Values**: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, MP3, NONE |
 | **async** | **bool**| When set to true, api will return 202 response until the recording is ready for download | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**DownloadResponse**](DownloadResponse.html)
+[**DownloadResponse**](DownloadResponse)
 
-<a name="get_userrecording_transcoding"></a>
 
-## [**DownloadResponse**](DownloadResponse.html) get_userrecording_transcoding(recording_id, format_id=format_id)
+## get_userrecording_transcoding
 
+> [**DownloadResponse**](DownloadResponse) get_userrecording_transcoding(recording_id, format_id=format_id)
 
 
 Download a user recording.
@@ -213,16 +211,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **recording_id** | **str**| User Recording ID |  |
 | **format_id** | **str**| The desired media format. | [optional] [default to &#39;WEBM&#39;]<br />**Values**: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, MP3, NONE |
-{: class="table table-striped"}
 
 ### Return type
 
-[**DownloadResponse**](DownloadResponse.html)
+[**DownloadResponse**](DownloadResponse)
 
-<a name="get_userrecordings"></a>
 
-## [**UserRecordingEntityListing**](UserRecordingEntityListing.html) get_userrecordings(page_size=page_size, page_number=page_number, expand=expand)
+## get_userrecordings
 
+> [**UserRecordingEntityListing**](UserRecordingEntityListing) get_userrecordings(page_size=page_size, page_number=page_number, expand=expand)
 
 
 Get a list of user recordings.
@@ -264,17 +261,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
-| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand. | [optional] <br />**Values**: conversation |
-{: class="table table-striped"}
+| **expand** | [**list[str]**](str)| Which fields, if any, to expand. | [optional] <br />**Values**: conversation |
 
 ### Return type
 
-[**UserRecordingEntityListing**](UserRecordingEntityListing.html)
+[**UserRecordingEntityListing**](UserRecordingEntityListing)
 
-<a name="get_userrecordings_summary"></a>
 
-## [**FaxSummary**](FaxSummary.html) get_userrecordings_summary()
+## get_userrecordings_summary
 
+> [**FaxSummary**](FaxSummary) get_userrecordings_summary()
 
 
 Get user recording summary
@@ -310,15 +306,14 @@ except ApiException as e:
 
 This endpoint does not need any parameters.
 
-
 ### Return type
 
-[**FaxSummary**](FaxSummary.html)
+[**FaxSummary**](FaxSummary)
 
-<a name="put_userrecording"></a>
 
-## [**UserRecording**](UserRecording.html) put_userrecording(recording_id, body, expand=expand)
+## put_userrecording
 
+> [**UserRecording**](UserRecording) put_userrecording(recording_id, body, expand=expand)
 
 
 Update a user recording.
@@ -359,11 +354,12 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **recording_id** | **str**| User Recording ID |  |
-| **body** | [**UserRecording**](UserRecording.html)| UserRecording |  |
-| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand. | [optional] <br />**Values**: conversation |
-{: class="table table-striped"}
+| **body** | [**UserRecording**](UserRecording)| UserRecording |  |
+| **expand** | [**list[str]**](str)| Which fields, if any, to expand. | [optional] <br />**Values**: conversation |
 
 ### Return type
 
-[**UserRecording**](UserRecording.html)
+[**UserRecording**](UserRecording)
 
+
+_PureCloudPlatformClientV2 211.1.0_

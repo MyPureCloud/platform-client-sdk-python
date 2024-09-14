@@ -1,6 +1,4 @@
----
-title: RoutingApi
----
+# RoutingApi
 
 ## PureCloudPlatformClientV2.RoutingApi
 
@@ -8,162 +6,162 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 |Method | Description|
 |------------- | -------------|
-|[**delete_routing_assessment**](RoutingApi.html#delete_routing_assessment) | Delete single benefit assessment.|
-|[**delete_routing_directroutingbackup_settings_me**](RoutingApi.html#delete_routing_directroutingbackup_settings_me) | Delete the user&#39;s Direct Routing Backup settings and revert to the Direct Routing Queue default.|
-|[**delete_routing_email_domain**](RoutingApi.html#delete_routing_email_domain) | Delete a domain|
-|[**delete_routing_email_domain_route**](RoutingApi.html#delete_routing_email_domain_route) | Delete a route|
-|[**delete_routing_email_outbound_domain**](RoutingApi.html#delete_routing_email_outbound_domain) | Delete an outbound domain|
-|[**delete_routing_language**](RoutingApi.html#delete_routing_language) | Delete a routing language|
-|[**delete_routing_predictor**](RoutingApi.html#delete_routing_predictor) | Delete single predictor.|
-|[**delete_routing_queue**](RoutingApi.html#delete_routing_queue) | Delete a queue|
-|[**delete_routing_queue_member**](RoutingApi.html#delete_routing_queue_member) | Delete a queue member.|
-|[**delete_routing_queue_user**](RoutingApi.html#delete_routing_queue_user) | DEPRECATED: use DELETE /routing/queues/{queueId}/members/{memberId}.  Delete queue member.|
-|[**delete_routing_queue_wrapupcode**](RoutingApi.html#delete_routing_queue_wrapupcode) | Delete a wrap-up code from a queue|
-|[**delete_routing_settings**](RoutingApi.html#delete_routing_settings) | Delete an organization&#39;s routing settings|
-|[**delete_routing_skill**](RoutingApi.html#delete_routing_skill) | Delete Routing Skill|
-|[**delete_routing_skillgroup**](RoutingApi.html#delete_routing_skillgroup) | Remove skill group definition|
-|[**delete_routing_sms_address**](RoutingApi.html#delete_routing_sms_address) | Delete an Address by Id for SMS|
-|[**delete_routing_sms_phonenumber**](RoutingApi.html#delete_routing_sms_phonenumber) | Delete a phone number provisioned for SMS.|
-|[**delete_routing_user_directroutingbackup_settings**](RoutingApi.html#delete_routing_user_directroutingbackup_settings) | Delete the user&#39;s Direct Routing Backup settings and revert to the Direct Routing Queue default.|
-|[**delete_routing_user_utilization**](RoutingApi.html#delete_routing_user_utilization) | Delete the user&#39;s max utilization settings and revert to the organization-wide default.|
-|[**delete_routing_utilization**](RoutingApi.html#delete_routing_utilization) | Delete the organization-wide max utilization settings and revert to the system default.|
-|[**delete_routing_utilization_label**](RoutingApi.html#delete_routing_utilization_label) | Delete a utilization label|
-|[**delete_routing_utilization_tag**](RoutingApi.html#delete_routing_utilization_tag) | Delete an utilization tag|
-|[**delete_routing_wrapupcode**](RoutingApi.html#delete_routing_wrapupcode) | Delete wrap-up code|
-|[**delete_user_routinglanguage**](RoutingApi.html#delete_user_routinglanguage) | Remove routing language from user|
-|[**delete_user_routingskill**](RoutingApi.html#delete_user_routingskill) | Remove routing skill from user|
-|[**get_routing_assessment**](RoutingApi.html#get_routing_assessment) | Retrieve a single benefit assessment.|
-|[**get_routing_assessments**](RoutingApi.html#get_routing_assessments) | Retrieve all benefit assessments.|
-|[**get_routing_assessments_job**](RoutingApi.html#get_routing_assessments_job) | Retrieve a single benefit assessments job.|
-|[**get_routing_assessments_jobs**](RoutingApi.html#get_routing_assessments_jobs) | Retrieve all benefit assessment jobs.|
-|[**get_routing_availablemediatypes**](RoutingApi.html#get_routing_availablemediatypes) | Get available media types|
-|[**get_routing_directroutingbackup_settings_me**](RoutingApi.html#get_routing_directroutingbackup_settings_me) | Get the user&#39;s Direct Routing Backup settings.|
-|[**get_routing_email_domain**](RoutingApi.html#get_routing_email_domain) | Get domain|
-|[**get_routing_email_domain_route**](RoutingApi.html#get_routing_email_domain_route) | Get a route|
-|[**get_routing_email_domain_routes**](RoutingApi.html#get_routing_email_domain_routes) | Get routes|
-|[**get_routing_email_domains**](RoutingApi.html#get_routing_email_domains) | Get domains|
-|[**get_routing_email_outbound_domain**](RoutingApi.html#get_routing_email_outbound_domain) | Get domain|
-|[**get_routing_email_outbound_domain_activation**](RoutingApi.html#get_routing_email_outbound_domain_activation) | Get activation status (cname + dkim) of an outbound domain|
-|[**get_routing_email_outbound_domain_search**](RoutingApi.html#get_routing_email_outbound_domain_search) | Search a domain across organizations|
-|[**get_routing_email_outbound_domains**](RoutingApi.html#get_routing_email_outbound_domains) | Get outbound domains|
-|[**get_routing_email_setup**](RoutingApi.html#get_routing_email_setup) | Get email setup|
-|[**get_routing_language**](RoutingApi.html#get_routing_language) | Get a routing language|
-|[**get_routing_languages**](RoutingApi.html#get_routing_languages) | Get the list of supported languages.|
-|[**get_routing_message_recipient**](RoutingApi.html#get_routing_message_recipient) | Get a recipient|
-|[**get_routing_message_recipients**](RoutingApi.html#get_routing_message_recipients) | Get recipients|
-|[**get_routing_predictor**](RoutingApi.html#get_routing_predictor) | Retrieve a single predictor.|
-|[**get_routing_predictor_model_features**](RoutingApi.html#get_routing_predictor_model_features) | Retrieve Predictor Model Features.|
-|[**get_routing_predictor_models**](RoutingApi.html#get_routing_predictor_models) | Retrieve Predictor Models and Top Features.|
-|[**get_routing_predictors**](RoutingApi.html#get_routing_predictors) | Retrieve all predictors.|
-|[**get_routing_predictors_keyperformanceindicators**](RoutingApi.html#get_routing_predictors_keyperformanceindicators) | Get a list of Key Performance Indicators|
-|[**get_routing_queue**](RoutingApi.html#get_routing_queue) | Get details about this queue.|
-|[**get_routing_queue_assistant**](RoutingApi.html#get_routing_queue_assistant) | Get an assistant associated with a queue.|
-|[**get_routing_queue_comparisonperiod**](RoutingApi.html#get_routing_queue_comparisonperiod) | Get a Comparison Period.|
-|[**get_routing_queue_comparisonperiods**](RoutingApi.html#get_routing_queue_comparisonperiods) | Get list of comparison periods|
-|[**get_routing_queue_estimatedwaittime**](RoutingApi.html#get_routing_queue_estimatedwaittime) | Get Estimated Wait Time|
-|[**get_routing_queue_mediatype_estimatedwaittime**](RoutingApi.html#get_routing_queue_mediatype_estimatedwaittime) | Get Estimated Wait Time|
-|[**get_routing_queue_members**](RoutingApi.html#get_routing_queue_members) | Get the members of this queue.|
-|[**get_routing_queue_users**](RoutingApi.html#get_routing_queue_users) | DEPRECATED: use GET /routing/queues/{queueId}/members.  Get the members of this queue.|
-|[**get_routing_queue_wrapupcodes**](RoutingApi.html#get_routing_queue_wrapupcodes) | Get the wrap-up codes for a queue|
-|[**get_routing_queues**](RoutingApi.html#get_routing_queues) | Get list of queues.|
-|[**get_routing_queues_divisionviews**](RoutingApi.html#get_routing_queues_divisionviews) | Get a paged listing of simplified queue objects, filterable by name, queue ID(s), or division ID(s).|
-|[**get_routing_queues_divisionviews_all**](RoutingApi.html#get_routing_queues_divisionviews_all) | Get a paged listing of simplified queue objects, sorted by name.  Can be used to get a digest of all queues in an organization.|
-|[**get_routing_queues_me**](RoutingApi.html#get_routing_queues_me) | Get a paged listing of queues the user is a member of.|
-|[**get_routing_settings**](RoutingApi.html#get_routing_settings) | Get an organization&#39;s routing settings|
-|[**get_routing_settings_contactcenter**](RoutingApi.html#get_routing_settings_contactcenter) | Get Contact Center Settings|
-|[**get_routing_settings_transcription**](RoutingApi.html#get_routing_settings_transcription) | Get Transcription Settings|
-|[**get_routing_skill**](RoutingApi.html#get_routing_skill) | Get Routing Skill|
-|[**get_routing_skillgroup**](RoutingApi.html#get_routing_skillgroup) | Get skill group|
-|[**get_routing_skillgroup_members**](RoutingApi.html#get_routing_skillgroup_members) | Get skill group members|
-|[**get_routing_skillgroup_members_divisions**](RoutingApi.html#get_routing_skillgroup_members_divisions) | Get list of member divisions for this skill group.|
-|[**get_routing_skillgroups**](RoutingApi.html#get_routing_skillgroups) | Get skill group listing|
-|[**get_routing_skills**](RoutingApi.html#get_routing_skills) | Get the list of routing skills.|
-|[**get_routing_sms_address**](RoutingApi.html#get_routing_sms_address) | Get an Address by Id for SMS|
-|[**get_routing_sms_addresses**](RoutingApi.html#get_routing_sms_addresses) | Get a list of Addresses for SMS|
-|[**get_routing_sms_availablephonenumbers**](RoutingApi.html#get_routing_sms_availablephonenumbers) | Get a list of available phone numbers for SMS provisioning.|
-|[**get_routing_sms_phonenumber**](RoutingApi.html#get_routing_sms_phonenumber) | Get a phone number provisioned for SMS.|
-|[**get_routing_sms_phonenumbers**](RoutingApi.html#get_routing_sms_phonenumbers) | Get a list of provisioned phone numbers.|
-|[**get_routing_user_directroutingbackup_settings**](RoutingApi.html#get_routing_user_directroutingbackup_settings) | Get the user&#39;s Direct Routing Backup settings.|
-|[**get_routing_user_utilization**](RoutingApi.html#get_routing_user_utilization) | Get the user&#39;s max utilization settings.  If not configured, the organization-wide default is returned.|
-|[**get_routing_utilization**](RoutingApi.html#get_routing_utilization) | Get the organization-wide max utilization settings.|
-|[**get_routing_utilization_label**](RoutingApi.html#get_routing_utilization_label) | Get details about this utilization label|
-|[**get_routing_utilization_label_agents**](RoutingApi.html#get_routing_utilization_label_agents) | Get list of agent ids associated with a utilization label|
-|[**get_routing_utilization_labels**](RoutingApi.html#get_routing_utilization_labels) | Get list of utilization labels|
-|[**get_routing_utilization_tag**](RoutingApi.html#get_routing_utilization_tag) | Get details about this utilization tag|
-|[**get_routing_utilization_tag_agents**](RoutingApi.html#get_routing_utilization_tag_agents) | Get list of agent ids associated with a utilization tag|
-|[**get_routing_utilization_tags**](RoutingApi.html#get_routing_utilization_tags) | Get list of utilization tags|
-|[**get_routing_wrapupcode**](RoutingApi.html#get_routing_wrapupcode) | Get details about this wrap-up code.|
-|[**get_routing_wrapupcodes**](RoutingApi.html#get_routing_wrapupcodes) | Get list of wrapup codes.|
-|[**get_routing_wrapupcodes_divisionview**](RoutingApi.html#get_routing_wrapupcodes_divisionview) | Get a simplified wrap-up code.|
-|[**get_routing_wrapupcodes_divisionviews**](RoutingApi.html#get_routing_wrapupcodes_divisionviews) | Get a paged listing of simplified wrapup code objects, filterable by name, wrapup code ID(s), or division ID(s).|
-|[**get_user_queues**](RoutingApi.html#get_user_queues) | Get queues for user|
-|[**get_user_routinglanguages**](RoutingApi.html#get_user_routinglanguages) | List routing language for user|
-|[**get_user_routingskills**](RoutingApi.html#get_user_routingskills) | List routing skills for user|
-|[**get_user_skillgroups**](RoutingApi.html#get_user_skillgroups) | Get skill groups for a user|
-|[**patch_routing_conversation**](RoutingApi.html#patch_routing_conversation) | Update attributes of an in-queue conversation|
-|[**patch_routing_email_domain**](RoutingApi.html#patch_routing_email_domain) | Update domain settings|
-|[**patch_routing_email_domain_validate**](RoutingApi.html#patch_routing_email_domain_validate) | Validate domain settings|
-|[**patch_routing_predictor**](RoutingApi.html#patch_routing_predictor) | Update single predictor.|
-|[**patch_routing_queue_member**](RoutingApi.html#patch_routing_queue_member) | Update the ring number OR joined status for a queue member.|
-|[**patch_routing_queue_members**](RoutingApi.html#patch_routing_queue_members) | Join or unjoin a set of users for a queue|
-|[**patch_routing_queue_user**](RoutingApi.html#patch_routing_queue_user) | DEPRECATED: use PATCH /routing/queues/{queueId}/members/{memberId}.  Update the ring number OR joined status for a User in a Queue.|
-|[**patch_routing_queue_users**](RoutingApi.html#patch_routing_queue_users) | DEPRECATED: use PATCH /routing/queues/{queueId}/members.  Join or unjoin a set of users for a queue.|
-|[**patch_routing_settings_contactcenter**](RoutingApi.html#patch_routing_settings_contactcenter) | Update Contact Center Settings|
-|[**patch_routing_settings_transcription**](RoutingApi.html#patch_routing_settings_transcription) | Patch Transcription Settings|
-|[**patch_routing_skillgroup**](RoutingApi.html#patch_routing_skillgroup) | Update skill group definition|
-|[**patch_user_queue**](RoutingApi.html#patch_user_queue) | Join or unjoin a queue for a user|
-|[**patch_user_queues**](RoutingApi.html#patch_user_queues) | Join or unjoin a set of queues for a user|
-|[**patch_user_routinglanguage**](RoutingApi.html#patch_user_routinglanguage) | Update routing language proficiency or state.|
-|[**patch_user_routinglanguages_bulk**](RoutingApi.html#patch_user_routinglanguages_bulk) | Add bulk routing language to user. Max limit 50 languages|
-|[**patch_user_routingskills_bulk**](RoutingApi.html#patch_user_routingskills_bulk) | Bulk add routing skills to user|
-|[**post_analytics_queues_observations_query**](RoutingApi.html#post_analytics_queues_observations_query) | Query for queue observations|
-|[**post_analytics_routing_activity_query**](RoutingApi.html#post_analytics_routing_activity_query) | Query for user activity observations|
-|[**post_routing_assessments**](RoutingApi.html#post_routing_assessments) | Create a benefit assessment.|
-|[**post_routing_assessments_jobs**](RoutingApi.html#post_routing_assessments_jobs) | Create a benefit assessment job.|
-|[**post_routing_email_domain_routes**](RoutingApi.html#post_routing_email_domain_routes) | Create a route|
-|[**post_routing_email_domain_testconnection**](RoutingApi.html#post_routing_email_domain_testconnection) | Tests the custom SMTP server integration connection set on this domain|
-|[**post_routing_email_domains**](RoutingApi.html#post_routing_email_domains) | Create a domain|
-|[**post_routing_email_outbound_domains**](RoutingApi.html#post_routing_email_outbound_domains) | Create a domain|
-|[**post_routing_email_outbound_domains_simulated**](RoutingApi.html#post_routing_email_outbound_domains_simulated) | Create a simulated domain|
-|[**post_routing_languages**](RoutingApi.html#post_routing_languages) | Create Language|
-|[**post_routing_predictors**](RoutingApi.html#post_routing_predictors) | Create a predictor.|
-|[**post_routing_queue_members**](RoutingApi.html#post_routing_queue_members) | Bulk add or delete up to 100 queue members|
-|[**post_routing_queue_users**](RoutingApi.html#post_routing_queue_users) | DEPRECATED: use POST /routing/queues/{queueId}/members.  Bulk add or delete up to 100 queue members.|
-|[**post_routing_queue_wrapupcodes**](RoutingApi.html#post_routing_queue_wrapupcodes) | Add up to 100 wrap-up codes to a queue|
-|[**post_routing_queues**](RoutingApi.html#post_routing_queues) | Create a queue|
-|[**post_routing_skillgroup_members_divisions**](RoutingApi.html#post_routing_skillgroup_members_divisions) | Add or remove member divisions for this skill group.|
-|[**post_routing_skillgroups**](RoutingApi.html#post_routing_skillgroups) | Create a skill group|
-|[**post_routing_skills**](RoutingApi.html#post_routing_skills) | Create Skill|
-|[**post_routing_sms_addresses**](RoutingApi.html#post_routing_sms_addresses) | Provision an Address for SMS|
-|[**post_routing_sms_phonenumbers**](RoutingApi.html#post_routing_sms_phonenumbers) | Provision a phone number for SMS|
-|[**post_routing_sms_phonenumbers_alphanumeric**](RoutingApi.html#post_routing_sms_phonenumbers_alphanumeric) | Provision an alphanumeric number for SMS|
-|[**post_routing_sms_phonenumbers_import**](RoutingApi.html#post_routing_sms_phonenumbers_import) | Imports a phone number for SMS|
-|[**post_routing_utilization_labels**](RoutingApi.html#post_routing_utilization_labels) | Create a utilization label|
-|[**post_routing_utilization_tags**](RoutingApi.html#post_routing_utilization_tags) | Create an utilization tag|
-|[**post_routing_wrapupcodes**](RoutingApi.html#post_routing_wrapupcodes) | Create a wrap-up code|
-|[**post_user_routinglanguages**](RoutingApi.html#post_user_routinglanguages) | Add routing language to user|
-|[**post_user_routingskills**](RoutingApi.html#post_user_routingskills) | Add routing skill to user|
-|[**put_routing_directroutingbackup_settings_me**](RoutingApi.html#put_routing_directroutingbackup_settings_me) | Update the user&#39;s Direct Routing Backup settings.|
-|[**put_routing_email_domain_route**](RoutingApi.html#put_routing_email_domain_route) | Update a route|
-|[**put_routing_email_outbound_domain_activation**](RoutingApi.html#put_routing_email_outbound_domain_activation) | Request an activation status (cname + dkim) update of an outbound domain|
-|[**put_routing_message_recipient**](RoutingApi.html#put_routing_message_recipient) | Update a recipient|
-|[**put_routing_queue**](RoutingApi.html#put_routing_queue) | Update a queue|
-|[**put_routing_settings**](RoutingApi.html#put_routing_settings) | Update an organization&#39;s routing settings|
-|[**put_routing_settings_transcription**](RoutingApi.html#put_routing_settings_transcription) | Update Transcription Settings|
-|[**put_routing_sms_phonenumber**](RoutingApi.html#put_routing_sms_phonenumber) | Update a phone number provisioned for SMS.|
-|[**put_routing_user_directroutingbackup_settings**](RoutingApi.html#put_routing_user_directroutingbackup_settings) | Update the user&#39;s Direct Routing Backup settings.|
-|[**put_routing_user_utilization**](RoutingApi.html#put_routing_user_utilization) | Update the user&#39;s max utilization settings.  Include only those media types requiring custom configuration.|
-|[**put_routing_utilization**](RoutingApi.html#put_routing_utilization) | Update the organization-wide max utilization settings.  Include only those media types requiring custom configuration.|
-|[**put_routing_utilization_label**](RoutingApi.html#put_routing_utilization_label) | Update a utilization label|
-|[**put_routing_wrapupcode**](RoutingApi.html#put_routing_wrapupcode) | Update wrap-up code|
-|[**put_user_routingskill**](RoutingApi.html#put_user_routingskill) | Update routing skill proficiency or state.|
-|[**put_user_routingskills_bulk**](RoutingApi.html#put_user_routingskills_bulk) | Replace all routing skills assigned to a user|
-{: class="table table-striped"}
+|[**delete_routing_assessment**](#delete_routing_assessment) | Delete single benefit assessment.|
+|[**delete_routing_directroutingbackup_settings_me**](#delete_routing_directroutingbackup_settings_me) | Delete the user&#39;s Direct Routing Backup settings and revert to the Direct Routing Queue default.|
+|[**delete_routing_email_domain**](#delete_routing_email_domain) | Delete a domain|
+|[**delete_routing_email_domain_route**](#delete_routing_email_domain_route) | Delete a route|
+|[**delete_routing_email_outbound_domain**](#delete_routing_email_outbound_domain) | Delete an outbound domain|
+|[**delete_routing_language**](#delete_routing_language) | Delete a routing language|
+|[**delete_routing_predictor**](#delete_routing_predictor) | Delete single predictor.|
+|[**delete_routing_queue**](#delete_routing_queue) | Delete a queue|
+|[**delete_routing_queue_member**](#delete_routing_queue_member) | Delete a queue member.|
+|[**delete_routing_queue_user**](#delete_routing_queue_user) | DEPRECATED: use DELETE /routing/queues/{queueId}/members/{memberId}.  Delete queue member.|
+|[**delete_routing_queue_wrapupcode**](#delete_routing_queue_wrapupcode) | Delete a wrap-up code from a queue|
+|[**delete_routing_settings**](#delete_routing_settings) | Delete an organization&#39;s routing settings|
+|[**delete_routing_skill**](#delete_routing_skill) | Delete Routing Skill|
+|[**delete_routing_skillgroup**](#delete_routing_skillgroup) | Remove skill group definition|
+|[**delete_routing_sms_address**](#delete_routing_sms_address) | Delete an Address by Id for SMS|
+|[**delete_routing_sms_phonenumber**](#delete_routing_sms_phonenumber) | Delete a phone number provisioned for SMS.|
+|[**delete_routing_user_directroutingbackup_settings**](#delete_routing_user_directroutingbackup_settings) | Delete the user&#39;s Direct Routing Backup settings and revert to the Direct Routing Queue default.|
+|[**delete_routing_user_utilization**](#delete_routing_user_utilization) | Delete the user&#39;s max utilization settings and revert to the organization-wide default.|
+|[**delete_routing_utilization**](#delete_routing_utilization) | Delete the organization-wide max utilization settings and revert to the system default.|
+|[**delete_routing_utilization_label**](#delete_routing_utilization_label) | Delete a utilization label|
+|[**delete_routing_utilization_tag**](#delete_routing_utilization_tag) | Delete an utilization tag|
+|[**delete_routing_wrapupcode**](#delete_routing_wrapupcode) | Delete wrap-up code|
+|[**delete_user_routinglanguage**](#delete_user_routinglanguage) | Remove routing language from user|
+|[**delete_user_routingskill**](#delete_user_routingskill) | Remove routing skill from user|
+|[**get_routing_assessment**](#get_routing_assessment) | Retrieve a single benefit assessment.|
+|[**get_routing_assessments**](#get_routing_assessments) | Retrieve all benefit assessments.|
+|[**get_routing_assessments_job**](#get_routing_assessments_job) | Retrieve a single benefit assessments job.|
+|[**get_routing_assessments_jobs**](#get_routing_assessments_jobs) | Retrieve all benefit assessment jobs.|
+|[**get_routing_availablemediatypes**](#get_routing_availablemediatypes) | Get available media types|
+|[**get_routing_directroutingbackup_settings_me**](#get_routing_directroutingbackup_settings_me) | Get the user&#39;s Direct Routing Backup settings.|
+|[**get_routing_email_domain**](#get_routing_email_domain) | Get domain|
+|[**get_routing_email_domain_route**](#get_routing_email_domain_route) | Get a route|
+|[**get_routing_email_domain_routes**](#get_routing_email_domain_routes) | Get routes|
+|[**get_routing_email_domains**](#get_routing_email_domains) | Get domains|
+|[**get_routing_email_outbound_domain**](#get_routing_email_outbound_domain) | Get domain|
+|[**get_routing_email_outbound_domain_activation**](#get_routing_email_outbound_domain_activation) | Get activation status (cname + dkim) of an outbound domain|
+|[**get_routing_email_outbound_domain_search**](#get_routing_email_outbound_domain_search) | Search a domain across organizations|
+|[**get_routing_email_outbound_domains**](#get_routing_email_outbound_domains) | Get outbound domains|
+|[**get_routing_email_setup**](#get_routing_email_setup) | Get email setup|
+|[**get_routing_language**](#get_routing_language) | Get a routing language|
+|[**get_routing_languages**](#get_routing_languages) | Get the list of supported languages.|
+|[**get_routing_message_recipient**](#get_routing_message_recipient) | Get a recipient|
+|[**get_routing_message_recipients**](#get_routing_message_recipients) | Get recipients|
+|[**get_routing_predictor**](#get_routing_predictor) | Retrieve a single predictor.|
+|[**get_routing_predictor_model_features**](#get_routing_predictor_model_features) | Retrieve Predictor Model Features.|
+|[**get_routing_predictor_models**](#get_routing_predictor_models) | Retrieve Predictor Models and Top Features.|
+|[**get_routing_predictors**](#get_routing_predictors) | Retrieve all predictors.|
+|[**get_routing_predictors_keyperformanceindicators**](#get_routing_predictors_keyperformanceindicators) | Get a list of Key Performance Indicators|
+|[**get_routing_queue**](#get_routing_queue) | Get details about this queue.|
+|[**get_routing_queue_assistant**](#get_routing_queue_assistant) | Get an assistant associated with a queue.|
+|[**get_routing_queue_comparisonperiod**](#get_routing_queue_comparisonperiod) | Get a Comparison Period.|
+|[**get_routing_queue_comparisonperiods**](#get_routing_queue_comparisonperiods) | Get list of comparison periods|
+|[**get_routing_queue_estimatedwaittime**](#get_routing_queue_estimatedwaittime) | Get Estimated Wait Time|
+|[**get_routing_queue_mediatype_estimatedwaittime**](#get_routing_queue_mediatype_estimatedwaittime) | Get Estimated Wait Time|
+|[**get_routing_queue_members**](#get_routing_queue_members) | Get the members of this queue.|
+|[**get_routing_queue_users**](#get_routing_queue_users) | DEPRECATED: use GET /routing/queues/{queueId}/members.  Get the members of this queue.|
+|[**get_routing_queue_wrapupcodes**](#get_routing_queue_wrapupcodes) | Get the wrap-up codes for a queue|
+|[**get_routing_queues**](#get_routing_queues) | Get list of queues.|
+|[**get_routing_queues_divisionviews**](#get_routing_queues_divisionviews) | Get a paged listing of simplified queue objects, filterable by name, queue ID(s), or division ID(s).|
+|[**get_routing_queues_divisionviews_all**](#get_routing_queues_divisionviews_all) | Get a paged listing of simplified queue objects, sorted by name.  Can be used to get a digest of all queues in an organization.|
+|[**get_routing_queues_me**](#get_routing_queues_me) | Get a paged listing of queues the user is a member of.|
+|[**get_routing_settings**](#get_routing_settings) | Get an organization&#39;s routing settings|
+|[**get_routing_settings_contactcenter**](#get_routing_settings_contactcenter) | Get Contact Center Settings|
+|[**get_routing_settings_transcription**](#get_routing_settings_transcription) | Get Transcription Settings|
+|[**get_routing_skill**](#get_routing_skill) | Get Routing Skill|
+|[**get_routing_skillgroup**](#get_routing_skillgroup) | Get skill group|
+|[**get_routing_skillgroup_members**](#get_routing_skillgroup_members) | Get skill group members|
+|[**get_routing_skillgroup_members_divisions**](#get_routing_skillgroup_members_divisions) | Get list of member divisions for this skill group.|
+|[**get_routing_skillgroups**](#get_routing_skillgroups) | Get skill group listing|
+|[**get_routing_skills**](#get_routing_skills) | Get the list of routing skills.|
+|[**get_routing_sms_address**](#get_routing_sms_address) | Get an Address by Id for SMS|
+|[**get_routing_sms_addresses**](#get_routing_sms_addresses) | Get a list of Addresses for SMS|
+|[**get_routing_sms_availablephonenumbers**](#get_routing_sms_availablephonenumbers) | Get a list of available phone numbers for SMS provisioning.|
+|[**get_routing_sms_phonenumber**](#get_routing_sms_phonenumber) | Get a phone number provisioned for SMS.|
+|[**get_routing_sms_phonenumbers**](#get_routing_sms_phonenumbers) | Get a list of provisioned phone numbers.|
+|[**get_routing_user_directroutingbackup_settings**](#get_routing_user_directroutingbackup_settings) | Get the user&#39;s Direct Routing Backup settings.|
+|[**get_routing_user_utilization**](#get_routing_user_utilization) | Get the user&#39;s max utilization settings.  If not configured, the organization-wide default is returned.|
+|[**get_routing_utilization**](#get_routing_utilization) | Get the organization-wide max utilization settings.|
+|[**get_routing_utilization_label**](#get_routing_utilization_label) | Get details about this utilization label|
+|[**get_routing_utilization_label_agents**](#get_routing_utilization_label_agents) | Get list of agent ids associated with a utilization label|
+|[**get_routing_utilization_labels**](#get_routing_utilization_labels) | Get list of utilization labels|
+|[**get_routing_utilization_tag**](#get_routing_utilization_tag) | Get details about this utilization tag|
+|[**get_routing_utilization_tag_agents**](#get_routing_utilization_tag_agents) | Get list of agent ids associated with a utilization tag|
+|[**get_routing_utilization_tags**](#get_routing_utilization_tags) | Get list of utilization tags|
+|[**get_routing_wrapupcode**](#get_routing_wrapupcode) | Get details about this wrap-up code.|
+|[**get_routing_wrapupcodes**](#get_routing_wrapupcodes) | Get list of wrapup codes.|
+|[**get_routing_wrapupcodes_divisionview**](#get_routing_wrapupcodes_divisionview) | Get a simplified wrap-up code.|
+|[**get_routing_wrapupcodes_divisionviews**](#get_routing_wrapupcodes_divisionviews) | Get a paged listing of simplified wrapup code objects, filterable by name, wrapup code ID(s), or division ID(s).|
+|[**get_user_queues**](#get_user_queues) | Get queues for user|
+|[**get_user_routinglanguages**](#get_user_routinglanguages) | List routing language for user|
+|[**get_user_routingskills**](#get_user_routingskills) | List routing skills for user|
+|[**get_user_skillgroups**](#get_user_skillgroups) | Get skill groups for a user|
+|[**patch_routing_conversation**](#patch_routing_conversation) | Update attributes of an in-queue conversation|
+|[**patch_routing_email_domain**](#patch_routing_email_domain) | Update domain settings|
+|[**patch_routing_email_domain_validate**](#patch_routing_email_domain_validate) | Validate domain settings|
+|[**patch_routing_predictor**](#patch_routing_predictor) | Update single predictor.|
+|[**patch_routing_queue_member**](#patch_routing_queue_member) | Update the ring number OR joined status for a queue member.|
+|[**patch_routing_queue_members**](#patch_routing_queue_members) | Join or unjoin a set of users for a queue|
+|[**patch_routing_queue_user**](#patch_routing_queue_user) | DEPRECATED: use PATCH /routing/queues/{queueId}/members/{memberId}.  Update the ring number OR joined status for a User in a Queue.|
+|[**patch_routing_queue_users**](#patch_routing_queue_users) | DEPRECATED: use PATCH /routing/queues/{queueId}/members.  Join or unjoin a set of users for a queue.|
+|[**patch_routing_settings_contactcenter**](#patch_routing_settings_contactcenter) | Update Contact Center Settings|
+|[**patch_routing_settings_transcription**](#patch_routing_settings_transcription) | Patch Transcription Settings|
+|[**patch_routing_skillgroup**](#patch_routing_skillgroup) | Update skill group definition|
+|[**patch_user_queue**](#patch_user_queue) | Join or unjoin a queue for a user|
+|[**patch_user_queues**](#patch_user_queues) | Join or unjoin a set of queues for a user|
+|[**patch_user_routinglanguage**](#patch_user_routinglanguage) | Update routing language proficiency or state.|
+|[**patch_user_routinglanguages_bulk**](#patch_user_routinglanguages_bulk) | Add bulk routing language to user. Max limit 50 languages|
+|[**patch_user_routingskills_bulk**](#patch_user_routingskills_bulk) | Bulk add routing skills to user|
+|[**post_analytics_queues_observations_query**](#post_analytics_queues_observations_query) | Query for queue observations|
+|[**post_analytics_routing_activity_query**](#post_analytics_routing_activity_query) | Query for user activity observations|
+|[**post_routing_assessments**](#post_routing_assessments) | Create a benefit assessment.|
+|[**post_routing_assessments_jobs**](#post_routing_assessments_jobs) | Create a benefit assessment job.|
+|[**post_routing_email_domain_routes**](#post_routing_email_domain_routes) | Create a route|
+|[**post_routing_email_domain_testconnection**](#post_routing_email_domain_testconnection) | Tests the custom SMTP server integration connection set on this domain|
+|[**post_routing_email_domains**](#post_routing_email_domains) | Create a domain|
+|[**post_routing_email_outbound_domains**](#post_routing_email_outbound_domains) | Create a domain|
+|[**post_routing_email_outbound_domains_simulated**](#post_routing_email_outbound_domains_simulated) | Create a simulated domain|
+|[**post_routing_languages**](#post_routing_languages) | Create Language|
+|[**post_routing_predictors**](#post_routing_predictors) | Create a predictor.|
+|[**post_routing_queue_members**](#post_routing_queue_members) | Bulk add or delete up to 100 queue members|
+|[**post_routing_queue_users**](#post_routing_queue_users) | DEPRECATED: use POST /routing/queues/{queueId}/members.  Bulk add or delete up to 100 queue members.|
+|[**post_routing_queue_wrapupcodes**](#post_routing_queue_wrapupcodes) | Add up to 100 wrap-up codes to a queue|
+|[**post_routing_queues**](#post_routing_queues) | Create a queue|
+|[**post_routing_skillgroup_members_divisions**](#post_routing_skillgroup_members_divisions) | Add or remove member divisions for this skill group.|
+|[**post_routing_skillgroups**](#post_routing_skillgroups) | Create a skill group|
+|[**post_routing_skills**](#post_routing_skills) | Create Skill|
+|[**post_routing_sms_addresses**](#post_routing_sms_addresses) | Provision an Address for SMS|
+|[**post_routing_sms_phonenumbers**](#post_routing_sms_phonenumbers) | Provision a phone number for SMS|
+|[**post_routing_sms_phonenumbers_alphanumeric**](#post_routing_sms_phonenumbers_alphanumeric) | Provision an alphanumeric number for SMS|
+|[**post_routing_sms_phonenumbers_import**](#post_routing_sms_phonenumbers_import) | Imports a phone number for SMS|
+|[**post_routing_utilization_labels**](#post_routing_utilization_labels) | Create a utilization label|
+|[**post_routing_utilization_tags**](#post_routing_utilization_tags) | Create an utilization tag|
+|[**post_routing_wrapupcodes**](#post_routing_wrapupcodes) | Create a wrap-up code|
+|[**post_user_routinglanguages**](#post_user_routinglanguages) | Add routing language to user|
+|[**post_user_routingskills**](#post_user_routingskills) | Add routing skill to user|
+|[**put_routing_directroutingbackup_settings_me**](#put_routing_directroutingbackup_settings_me) | Update the user&#39;s Direct Routing Backup settings.|
+|[**put_routing_email_domain_route**](#put_routing_email_domain_route) | Update a route|
+|[**put_routing_email_outbound_domain_activation**](#put_routing_email_outbound_domain_activation) | Request an activation status (cname + dkim) update of an outbound domain|
+|[**put_routing_message_recipient**](#put_routing_message_recipient) | Update a recipient|
+|[**put_routing_queue**](#put_routing_queue) | Update a queue|
+|[**put_routing_settings**](#put_routing_settings) | Update an organization&#39;s routing settings|
+|[**put_routing_settings_transcription**](#put_routing_settings_transcription) | Update Transcription Settings|
+|[**put_routing_sms_phonenumber**](#put_routing_sms_phonenumber) | Update a phone number provisioned for SMS.|
+|[**put_routing_user_directroutingbackup_settings**](#put_routing_user_directroutingbackup_settings) | Update the user&#39;s Direct Routing Backup settings.|
+|[**put_routing_user_utilization**](#put_routing_user_utilization) | Update the user&#39;s max utilization settings.  Include only those media types requiring custom configuration.|
+|[**put_routing_utilization**](#put_routing_utilization) | Update the organization-wide max utilization settings.  Include only those media types requiring custom configuration.|
+|[**put_routing_utilization_label**](#put_routing_utilization_label) | Update a utilization label|
+|[**put_routing_wrapupcode**](#put_routing_wrapupcode) | Update wrap-up code|
+|[**put_user_routingskill**](#put_user_routingskill) | Update routing skill proficiency or state.|
+|[**put_user_routingskills_bulk**](#put_user_routingskills_bulk) | Replace all routing skills assigned to a user|
 
-<a name="delete_routing_assessment"></a>
 
-##  delete_routing_assessment(assessment_id)
 
+## delete_routing_assessment
+
+>  delete_routing_assessment(assessment_id)
 
 
 Delete single benefit assessment.
@@ -202,16 +200,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **assessment_id** | **str**| Benefit Assessment ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (empty response body)
 
-<a name="delete_routing_directroutingbackup_settings_me"></a>
 
-##  delete_routing_directroutingbackup_settings_me()
+## delete_routing_directroutingbackup_settings_me
 
+>  delete_routing_directroutingbackup_settings_me()
 
 
 Delete the user's Direct Routing Backup settings and revert to the Direct Routing Queue default.
@@ -247,15 +244,14 @@ except ApiException as e:
 
 This endpoint does not need any parameters.
 
-
 ### Return type
 
 void (empty response body)
 
-<a name="delete_routing_email_domain"></a>
 
-##  delete_routing_email_domain(domain_id)
+## delete_routing_email_domain
 
+>  delete_routing_email_domain(domain_id)
 
 
 Delete a domain
@@ -294,16 +290,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **domain_id** | **str**| domain ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (empty response body)
 
-<a name="delete_routing_email_domain_route"></a>
 
-##  delete_routing_email_domain_route(domain_name, route_id)
+## delete_routing_email_domain_route
 
+>  delete_routing_email_domain_route(domain_name, route_id)
 
 
 Delete a route
@@ -344,16 +339,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **domain_name** | **str**| email domain |  |
 | **route_id** | **str**| route ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (empty response body)
 
-<a name="delete_routing_email_outbound_domain"></a>
 
-##  delete_routing_email_outbound_domain(domain_id)
+## delete_routing_email_outbound_domain
 
+>  delete_routing_email_outbound_domain(domain_id)
 
 
 Delete an outbound domain
@@ -392,16 +386,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **domain_id** | **str**| domain ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (empty response body)
 
-<a name="delete_routing_language"></a>
 
-##  delete_routing_language(language_id)
+## delete_routing_language
 
+>  delete_routing_language(language_id)
 
 
 Delete a routing language
@@ -440,16 +433,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **language_id** | **str**| Language ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (empty response body)
 
-<a name="delete_routing_predictor"></a>
 
-##  delete_routing_predictor(predictor_id)
+## delete_routing_predictor
 
+>  delete_routing_predictor(predictor_id)
 
 
 Delete single predictor.
@@ -489,16 +481,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **predictor_id** | **str**| Predictor ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (empty response body)
 
-<a name="delete_routing_queue"></a>
 
-##  delete_routing_queue(queue_id, force_delete=force_delete)
+## delete_routing_queue
 
+>  delete_routing_queue(queue_id, force_delete=force_delete)
 
 
 Delete a queue
@@ -539,16 +530,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **queue_id** | **str**| Queue ID |  |
 | **force_delete** | **bool**| forceDelete | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (empty response body)
 
-<a name="delete_routing_queue_member"></a>
 
-##  delete_routing_queue_member(queue_id, member_id)
+## delete_routing_queue_member
 
+>  delete_routing_queue_member(queue_id, member_id)
 
 
 Delete a queue member.
@@ -590,17 +580,19 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **queue_id** | **str**| Queue ID |  |
 | **member_id** | **str**| Member ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (empty response body)
 
-<a name="delete_routing_queue_user"></a>
 
-##  delete_routing_queue_user(queue_id, member_id)
+## delete_routing_queue_user
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+>  delete_routing_queue_user(queue_id, member_id)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 DEPRECATED: use DELETE /routing/queues/{queueId}/members/{memberId}.  Delete queue member.
 
@@ -641,16 +633,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **queue_id** | **str**| Queue ID |  |
 | **member_id** | **str**| Member ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (empty response body)
 
-<a name="delete_routing_queue_wrapupcode"></a>
 
-##  delete_routing_queue_wrapupcode(queue_id, code_id)
+## delete_routing_queue_wrapupcode
 
+>  delete_routing_queue_wrapupcode(queue_id, code_id)
 
 
 Delete a wrap-up code from a queue
@@ -691,16 +682,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **queue_id** | **str**| Queue ID |  |
 | **code_id** | **str**| Code ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (empty response body)
 
-<a name="delete_routing_settings"></a>
 
-##  delete_routing_settings()
+## delete_routing_settings
 
+>  delete_routing_settings()
 
 
 Delete an organization's routing settings
@@ -736,15 +726,14 @@ except ApiException as e:
 
 This endpoint does not need any parameters.
 
-
 ### Return type
 
 void (empty response body)
 
-<a name="delete_routing_skill"></a>
 
-##  delete_routing_skill(skill_id)
+## delete_routing_skill
 
+>  delete_routing_skill(skill_id)
 
 
 Delete Routing Skill
@@ -783,16 +772,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **skill_id** | **str**| Skill ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (empty response body)
 
-<a name="delete_routing_skillgroup"></a>
 
-##  delete_routing_skillgroup(skill_group_id)
+## delete_routing_skillgroup
 
+>  delete_routing_skillgroup(skill_group_id)
 
 
 Remove skill group definition
@@ -831,16 +819,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **skill_group_id** | **str**| Skill Group ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (empty response body)
 
-<a name="delete_routing_sms_address"></a>
 
-##  delete_routing_sms_address(address_id)
+## delete_routing_sms_address
 
+>  delete_routing_sms_address(address_id)
 
 
 Delete an Address by Id for SMS
@@ -879,16 +866,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **address_id** | **str**| Address ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (empty response body)
 
-<a name="delete_routing_sms_phonenumber"></a>
 
-##  delete_routing_sms_phonenumber(address_id)
+## delete_routing_sms_phonenumber
 
+>  delete_routing_sms_phonenumber(address_id)
 
 
 Delete a phone number provisioned for SMS.
@@ -927,16 +913,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **address_id** | **str**| Address ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (empty response body)
 
-<a name="delete_routing_user_directroutingbackup_settings"></a>
 
-##  delete_routing_user_directroutingbackup_settings(user_id)
+## delete_routing_user_directroutingbackup_settings
 
+>  delete_routing_user_directroutingbackup_settings(user_id)
 
 
 Delete the user's Direct Routing Backup settings and revert to the Direct Routing Queue default.
@@ -975,16 +960,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **user_id** | **str**| User ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (empty response body)
 
-<a name="delete_routing_user_utilization"></a>
 
-##  delete_routing_user_utilization(user_id)
+## delete_routing_user_utilization
 
+>  delete_routing_user_utilization(user_id)
 
 
 Delete the user's max utilization settings and revert to the organization-wide default.
@@ -1023,16 +1007,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **user_id** | **str**| User ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (empty response body)
 
-<a name="delete_routing_utilization"></a>
 
-##  delete_routing_utilization()
+## delete_routing_utilization
 
+>  delete_routing_utilization()
 
 
 Delete the organization-wide max utilization settings and revert to the system default.
@@ -1068,15 +1051,14 @@ except ApiException as e:
 
 This endpoint does not need any parameters.
 
-
 ### Return type
 
 void (empty response body)
 
-<a name="delete_routing_utilization_label"></a>
 
-##  delete_routing_utilization_label(label_id, force_delete=force_delete)
+## delete_routing_utilization_label
 
+>  delete_routing_utilization_label(label_id, force_delete=force_delete)
 
 
 Delete a utilization label
@@ -1117,16 +1099,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **label_id** | **str**| Utilization Label ID |  |
 | **force_delete** | **bool**| Remove all label usages (if found) without warning | [optional] [default to False] |
-{: class="table table-striped"}
 
 ### Return type
 
 void (empty response body)
 
-<a name="delete_routing_utilization_tag"></a>
 
-##  delete_routing_utilization_tag(tag_id, force_delete=force_delete)
+## delete_routing_utilization_tag
 
+>  delete_routing_utilization_tag(tag_id, force_delete=force_delete)
 
 
 Delete an utilization tag
@@ -1169,16 +1150,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **tag_id** | **str**| Utilization Tag ID |  |
 | **force_delete** | **bool**| Remove all tag usages (if found) without warning | [optional] [default to False] |
-{: class="table table-striped"}
 
 ### Return type
 
 void (empty response body)
 
-<a name="delete_routing_wrapupcode"></a>
 
-##  delete_routing_wrapupcode(code_id)
+## delete_routing_wrapupcode
 
+>  delete_routing_wrapupcode(code_id)
 
 
 Delete wrap-up code
@@ -1217,16 +1197,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **code_id** | **str**| Wrapup Code ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (empty response body)
 
-<a name="delete_user_routinglanguage"></a>
 
-##  delete_user_routinglanguage(user_id, language_id)
+## delete_user_routinglanguage
 
+>  delete_user_routinglanguage(user_id, language_id)
 
 
 Remove routing language from user
@@ -1268,16 +1247,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **user_id** | **str**| User ID |  |
 | **language_id** | **str**| languageId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (empty response body)
 
-<a name="delete_user_routingskill"></a>
 
-##  delete_user_routingskill(user_id, skill_id)
+## delete_user_routingskill
 
+>  delete_user_routingskill(user_id, skill_id)
 
 
 Remove routing skill from user
@@ -1318,16 +1296,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **user_id** | **str**| User ID |  |
 | **skill_id** | **str**| skillId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (empty response body)
 
-<a name="get_routing_assessment"></a>
 
-## [**BenefitAssessment**](BenefitAssessment.html) get_routing_assessment(assessment_id)
+## get_routing_assessment
 
+> [**BenefitAssessment**](BenefitAssessment) get_routing_assessment(assessment_id)
 
 
 Retrieve a single benefit assessment.
@@ -1367,16 +1344,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **assessment_id** | **str**| Benefit Assessment ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**BenefitAssessment**](BenefitAssessment.html)
+[**BenefitAssessment**](BenefitAssessment)
 
-<a name="get_routing_assessments"></a>
 
-## [**AssessmentListing**](AssessmentListing.html) get_routing_assessments(before=before, after=after, limit=limit, page_size=page_size, queue_id=queue_id)
+## get_routing_assessments
 
+> [**AssessmentListing**](AssessmentListing) get_routing_assessments(before=before, after=after, limit=limit, page_size=page_size, queue_id=queue_id)
 
 
 Retrieve all benefit assessments.
@@ -1424,17 +1400,16 @@ except ApiException as e:
 | **after** | **str**| The cursor that points to the end of the set of entities that has been returned. | [optional]  |
 | **limit** | **str**| Number of entities to return. Maximum of 200. Deprecated in favour of pageSize | [optional]  |
 | **page_size** | **str**| Number of entities to return. Maximum of 200. | [optional]  |
-| **queue_id** | [**list[str]**](str.html)| Queue ID(s) to filter assessments by. | [optional]  |
-{: class="table table-striped"}
+| **queue_id** | [**list[str]**](str)| Queue ID(s) to filter assessments by. | [optional]  |
 
 ### Return type
 
-[**AssessmentListing**](AssessmentListing.html)
+[**AssessmentListing**](AssessmentListing)
 
-<a name="get_routing_assessments_job"></a>
 
-## [**BenefitAssessmentJob**](BenefitAssessmentJob.html) get_routing_assessments_job(job_id)
+## get_routing_assessments_job
 
+> [**BenefitAssessmentJob**](BenefitAssessmentJob) get_routing_assessments_job(job_id)
 
 
 Retrieve a single benefit assessments job.
@@ -1474,16 +1449,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **job_id** | **str**| Benefit Assessment Job ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**BenefitAssessmentJob**](BenefitAssessmentJob.html)
+[**BenefitAssessmentJob**](BenefitAssessmentJob)
 
-<a name="get_routing_assessments_jobs"></a>
 
-## [**AssessmentJobListing**](AssessmentJobListing.html) get_routing_assessments_jobs(division_id=division_id)
+## get_routing_assessments_jobs
 
+> [**AssessmentJobListing**](AssessmentJobListing) get_routing_assessments_jobs(division_id=division_id)
 
 
 Retrieve all benefit assessment jobs.
@@ -1522,17 +1496,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **division_id** | [**list[str]**](str.html)| Division ID(s) to filter assessment jobs by. | [optional]  |
-{: class="table table-striped"}
+| **division_id** | [**list[str]**](str)| Division ID(s) to filter assessment jobs by. | [optional]  |
 
 ### Return type
 
-[**AssessmentJobListing**](AssessmentJobListing.html)
+[**AssessmentJobListing**](AssessmentJobListing)
 
-<a name="get_routing_availablemediatypes"></a>
 
-## [**AvailableMediaTypeEntityListing**](AvailableMediaTypeEntityListing.html) get_routing_availablemediatypes()
+## get_routing_availablemediatypes
 
+> [**AvailableMediaTypeEntityListing**](AvailableMediaTypeEntityListing) get_routing_availablemediatypes()
 
 
 Get available media types
@@ -1568,15 +1541,14 @@ except ApiException as e:
 
 This endpoint does not need any parameters.
 
-
 ### Return type
 
-[**AvailableMediaTypeEntityListing**](AvailableMediaTypeEntityListing.html)
+[**AvailableMediaTypeEntityListing**](AvailableMediaTypeEntityListing)
 
-<a name="get_routing_directroutingbackup_settings_me"></a>
 
-## [**AgentDirectRoutingBackupSettings**](AgentDirectRoutingBackupSettings.html) get_routing_directroutingbackup_settings_me()
+## get_routing_directroutingbackup_settings_me
 
+> [**AgentDirectRoutingBackupSettings**](AgentDirectRoutingBackupSettings) get_routing_directroutingbackup_settings_me()
 
 
 Get the user's Direct Routing Backup settings.
@@ -1613,15 +1585,14 @@ except ApiException as e:
 
 This endpoint does not need any parameters.
 
-
 ### Return type
 
-[**AgentDirectRoutingBackupSettings**](AgentDirectRoutingBackupSettings.html)
+[**AgentDirectRoutingBackupSettings**](AgentDirectRoutingBackupSettings)
 
-<a name="get_routing_email_domain"></a>
 
-## [**InboundDomain**](InboundDomain.html) get_routing_email_domain(domain_id)
+## get_routing_email_domain
 
+> [**InboundDomain**](InboundDomain) get_routing_email_domain(domain_id)
 
 
 Get domain
@@ -1661,16 +1632,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **domain_id** | **str**| domain ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**InboundDomain**](InboundDomain.html)
+[**InboundDomain**](InboundDomain)
 
-<a name="get_routing_email_domain_route"></a>
 
-## [**InboundRoute**](InboundRoute.html) get_routing_email_domain_route(domain_name, route_id)
+## get_routing_email_domain_route
 
+> [**InboundRoute**](InboundRoute) get_routing_email_domain_route(domain_name, route_id)
 
 
 Get a route
@@ -1712,16 +1682,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **domain_name** | **str**| email domain |  |
 | **route_id** | **str**| route ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**InboundRoute**](InboundRoute.html)
+[**InboundRoute**](InboundRoute)
 
-<a name="get_routing_email_domain_routes"></a>
 
-## [**InboundRouteEntityListing**](InboundRouteEntityListing.html) get_routing_email_domain_routes(domain_name, page_size=page_size, page_number=page_number, pattern=pattern)
+## get_routing_email_domain_routes
 
+> [**InboundRouteEntityListing**](InboundRouteEntityListing) get_routing_email_domain_routes(domain_name, page_size=page_size, page_number=page_number, pattern=pattern)
 
 
 Get routes
@@ -1767,16 +1736,15 @@ except ApiException as e:
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **pattern** | **str**| Filter routes by the route&#39;s pattern property | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**InboundRouteEntityListing**](InboundRouteEntityListing.html)
+[**InboundRouteEntityListing**](InboundRouteEntityListing)
 
-<a name="get_routing_email_domains"></a>
 
-## [**InboundDomainEntityListing**](InboundDomainEntityListing.html) get_routing_email_domains(page_size=page_size, page_number=page_number, exclude_status=exclude_status, filter=filter)
+## get_routing_email_domains
 
+> [**InboundDomainEntityListing**](InboundDomainEntityListing) get_routing_email_domains(page_size=page_size, page_number=page_number, exclude_status=exclude_status, filter=filter)
 
 
 Get domains
@@ -1822,16 +1790,15 @@ except ApiException as e:
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **exclude_status** | **bool**| Exclude MX record data | [optional] [default to False] |
 | **filter** | **str**| Optional search filter | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**InboundDomainEntityListing**](InboundDomainEntityListing.html)
+[**InboundDomainEntityListing**](InboundDomainEntityListing)
 
-<a name="get_routing_email_outbound_domain"></a>
 
-## [**OutboundDomain**](OutboundDomain.html) get_routing_email_outbound_domain(domain_id)
+## get_routing_email_outbound_domain
 
+> [**OutboundDomain**](OutboundDomain) get_routing_email_outbound_domain(domain_id)
 
 
 Get domain
@@ -1871,16 +1838,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **domain_id** | **str**| domain ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**OutboundDomain**](OutboundDomain.html)
+[**OutboundDomain**](OutboundDomain)
 
-<a name="get_routing_email_outbound_domain_activation"></a>
 
-## [**EmailOutboundDomainResult**](EmailOutboundDomainResult.html) get_routing_email_outbound_domain_activation(domain_id)
+## get_routing_email_outbound_domain_activation
 
+> [**EmailOutboundDomainResult**](EmailOutboundDomainResult) get_routing_email_outbound_domain_activation(domain_id)
 
 
 Get activation status (cname + dkim) of an outbound domain
@@ -1920,16 +1886,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **domain_id** | **str**| domain ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**EmailOutboundDomainResult**](EmailOutboundDomainResult.html)
+[**EmailOutboundDomainResult**](EmailOutboundDomainResult)
 
-<a name="get_routing_email_outbound_domain_search"></a>
 
-## [**OutboundDomain**](OutboundDomain.html) get_routing_email_outbound_domain_search(domain_id)
+## get_routing_email_outbound_domain_search
 
+> [**OutboundDomain**](OutboundDomain) get_routing_email_outbound_domain_search(domain_id)
 
 
 Search a domain across organizations
@@ -1969,16 +1934,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **domain_id** | **str**| domain ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**OutboundDomain**](OutboundDomain.html)
+[**OutboundDomain**](OutboundDomain)
 
-<a name="get_routing_email_outbound_domains"></a>
 
-## [**OutboundDomainEntityListing**](OutboundDomainEntityListing.html) get_routing_email_outbound_domains(filter=filter)
+## get_routing_email_outbound_domains
 
+> [**OutboundDomainEntityListing**](OutboundDomainEntityListing) get_routing_email_outbound_domains(filter=filter)
 
 
 Get outbound domains
@@ -2018,16 +1982,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **filter** | **str**| Optional search filter | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**OutboundDomainEntityListing**](OutboundDomainEntityListing.html)
+[**OutboundDomainEntityListing**](OutboundDomainEntityListing)
 
-<a name="get_routing_email_setup"></a>
 
-## [**EmailSetup**](EmailSetup.html) get_routing_email_setup()
+## get_routing_email_setup
 
+> [**EmailSetup**](EmailSetup) get_routing_email_setup()
 
 
 Get email setup
@@ -2064,15 +2027,14 @@ except ApiException as e:
 
 This endpoint does not need any parameters.
 
-
 ### Return type
 
-[**EmailSetup**](EmailSetup.html)
+[**EmailSetup**](EmailSetup)
 
-<a name="get_routing_language"></a>
 
-## [**Language**](Language.html) get_routing_language(language_id)
+## get_routing_language
 
+> [**Language**](Language) get_routing_language(language_id)
 
 
 Get a routing language
@@ -2111,16 +2073,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **language_id** | **str**| Language ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**Language**](Language.html)
+[**Language**](Language)
 
-<a name="get_routing_languages"></a>
 
-## [**LanguageEntityListing**](LanguageEntityListing.html) get_routing_languages(page_size=page_size, page_number=page_number, sort_order=sort_order, name=name, id=id)
+## get_routing_languages
 
+> [**LanguageEntityListing**](LanguageEntityListing) get_routing_languages(page_size=page_size, page_number=page_number, sort_order=sort_order, name=name, id=id)
 
 
 Get the list of supported languages.
@@ -2166,17 +2127,16 @@ except ApiException as e:
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **sort_order** | **str**| Ascending or descending sort order | [optional] [default to &#39;ASC&#39;]<br />**Values**: ascending, descending |
 | **name** | **str**| Name | [optional]  |
-| **id** | [**list[str]**](str.html)| id | [optional]  |
-{: class="table table-striped"}
+| **id** | [**list[str]**](str)| id | [optional]  |
 
 ### Return type
 
-[**LanguageEntityListing**](LanguageEntityListing.html)
+[**LanguageEntityListing**](LanguageEntityListing)
 
-<a name="get_routing_message_recipient"></a>
 
-## [**Recipient**](Recipient.html) get_routing_message_recipient(recipient_id)
+## get_routing_message_recipient
 
+> [**Recipient**](Recipient) get_routing_message_recipient(recipient_id)
 
 
 Get a recipient
@@ -2216,16 +2176,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **recipient_id** | **str**| Recipient ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**Recipient**](Recipient.html)
+[**Recipient**](Recipient)
 
-<a name="get_routing_message_recipients"></a>
 
-## [**RecipientListing**](RecipientListing.html) get_routing_message_recipients(messenger_type=messenger_type, name=name, page_size=page_size, page_number=page_number)
+## get_routing_message_recipients
 
+> [**RecipientListing**](RecipientListing) get_routing_message_recipients(messenger_type=messenger_type, name=name, page_size=page_size, page_number=page_number)
 
 
 Get recipients
@@ -2271,16 +2230,15 @@ except ApiException as e:
 | **name** | **str**| Recipient Name | [optional]  |
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
-{: class="table table-striped"}
 
 ### Return type
 
-[**RecipientListing**](RecipientListing.html)
+[**RecipientListing**](RecipientListing)
 
-<a name="get_routing_predictor"></a>
 
-## [**Predictor**](Predictor.html) get_routing_predictor(predictor_id)
+## get_routing_predictor
 
+> [**Predictor**](Predictor) get_routing_predictor(predictor_id)
 
 
 Retrieve a single predictor.
@@ -2320,16 +2278,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **predictor_id** | **str**| Predictor ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**Predictor**](Predictor.html)
+[**Predictor**](Predictor)
 
-<a name="get_routing_predictor_model_features"></a>
 
-## [**PredictorModelFeatureListing**](PredictorModelFeatureListing.html) get_routing_predictor_model_features(predictor_id, model_id)
+## get_routing_predictor_model_features
 
+> [**PredictorModelFeatureListing**](PredictorModelFeatureListing) get_routing_predictor_model_features(predictor_id, model_id)
 
 
 Retrieve Predictor Model Features.
@@ -2371,16 +2328,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **predictor_id** | **str**| Predictor ID |  |
 | **model_id** | **str**| Model ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**PredictorModelFeatureListing**](PredictorModelFeatureListing.html)
+[**PredictorModelFeatureListing**](PredictorModelFeatureListing)
 
-<a name="get_routing_predictor_models"></a>
 
-## [**PredictorModels**](PredictorModels.html) get_routing_predictor_models(predictor_id)
+## get_routing_predictor_models
 
+> [**PredictorModels**](PredictorModels) get_routing_predictor_models(predictor_id)
 
 
 Retrieve Predictor Models and Top Features.
@@ -2420,16 +2376,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **predictor_id** | **str**| Predictor ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**PredictorModels**](PredictorModels.html)
+[**PredictorModels**](PredictorModels)
 
-<a name="get_routing_predictors"></a>
 
-## [**PredictorListing**](PredictorListing.html) get_routing_predictors(before=before, after=after, limit=limit, page_size=page_size, queue_id=queue_id)
+## get_routing_predictors
 
+> [**PredictorListing**](PredictorListing) get_routing_predictors(before=before, after=after, limit=limit, page_size=page_size, queue_id=queue_id)
 
 
 Retrieve all predictors.
@@ -2477,17 +2432,16 @@ except ApiException as e:
 | **after** | **str**| The cursor that points to the end of the set of entities that has been returned. | [optional]  |
 | **limit** | **str**| Number of entities to return. Maximum of 200. Deprecated in favour of pageSize | [optional]  |
 | **page_size** | **str**| Number of entities to return. Maximum of 200. | [optional]  |
-| **queue_id** | [**list[str]**](str.html)| Comma-separated list of queue Ids to filter by. | [optional]  |
-{: class="table table-striped"}
+| **queue_id** | [**list[str]**](str)| Comma-separated list of queue Ids to filter by. | [optional]  |
 
 ### Return type
 
-[**PredictorListing**](PredictorListing.html)
+[**PredictorListing**](PredictorListing)
 
-<a name="get_routing_predictors_keyperformanceindicators"></a>
 
-## [**list[KeyPerformanceIndicator]**](KeyPerformanceIndicator.html) get_routing_predictors_keyperformanceindicators(kpi_group=kpi_group, expand=expand)
+## get_routing_predictors_keyperformanceindicators
 
+> [**list[KeyPerformanceIndicator]**](KeyPerformanceIndicator) get_routing_predictors_keyperformanceindicators(kpi_group=kpi_group, expand=expand)
 
 
 Get a list of Key Performance Indicators
@@ -2528,17 +2482,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **kpi_group** | **str**| The Group of Key Performance Indicators to return | [optional] <br />**Values**: Standard, Custom |
-| **expand** | [**list[str]**](str.html)| Parameter to request additional data to return in KPI payload | [optional] <br />**Values**: queues |
-{: class="table table-striped"}
+| **expand** | [**list[str]**](str)| Parameter to request additional data to return in KPI payload | [optional] <br />**Values**: queues |
 
 ### Return type
 
-[**list[KeyPerformanceIndicator]**](KeyPerformanceIndicator.html)
+[**list[KeyPerformanceIndicator]**](KeyPerformanceIndicator)
 
-<a name="get_routing_queue"></a>
 
-## [**Queue**](Queue.html) get_routing_queue(queue_id)
+## get_routing_queue
 
+> [**Queue**](Queue) get_routing_queue(queue_id)
 
 
 Get details about this queue.
@@ -2578,16 +2531,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **queue_id** | **str**| Queue ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**Queue**](Queue.html)
+[**Queue**](Queue)
 
-<a name="get_routing_queue_assistant"></a>
 
-## [**AssistantQueue**](AssistantQueue.html) get_routing_queue_assistant(queue_id, expand=expand)
+## get_routing_queue_assistant
 
+> [**AssistantQueue**](AssistantQueue) get_routing_queue_assistant(queue_id, expand=expand)
 
 
 Get an assistant associated with a queue.
@@ -2629,16 +2581,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **queue_id** | **str**| Queue ID |  |
 | **expand** | **str**| Which fields, if any, to expand. | [optional] <br />**Values**: assistant |
-{: class="table table-striped"}
 
 ### Return type
 
-[**AssistantQueue**](AssistantQueue.html)
+[**AssistantQueue**](AssistantQueue)
 
-<a name="get_routing_queue_comparisonperiod"></a>
 
-## [**ComparisonPeriod**](ComparisonPeriod.html) get_routing_queue_comparisonperiod(queue_id, comparison_period_id)
+## get_routing_queue_comparisonperiod
 
+> [**ComparisonPeriod**](ComparisonPeriod) get_routing_queue_comparisonperiod(queue_id, comparison_period_id)
 
 
 Get a Comparison Period.
@@ -2681,16 +2632,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **queue_id** | **str**| Queue id |  |
 | **comparison_period_id** | **str**| ComparisonPeriod id |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**ComparisonPeriod**](ComparisonPeriod.html)
+[**ComparisonPeriod**](ComparisonPeriod)
 
-<a name="get_routing_queue_comparisonperiods"></a>
 
-## [**ComparisonPeriodListing**](ComparisonPeriodListing.html) get_routing_queue_comparisonperiods(queue_id)
+## get_routing_queue_comparisonperiods
 
+> [**ComparisonPeriodListing**](ComparisonPeriodListing) get_routing_queue_comparisonperiods(queue_id)
 
 
 Get list of comparison periods
@@ -2731,16 +2681,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **queue_id** | **str**| Queue id |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**ComparisonPeriodListing**](ComparisonPeriodListing.html)
+[**ComparisonPeriodListing**](ComparisonPeriodListing)
 
-<a name="get_routing_queue_estimatedwaittime"></a>
 
-## [**EstimatedWaitTimePredictions**](EstimatedWaitTimePredictions.html) get_routing_queue_estimatedwaittime(queue_id, conversation_id=conversation_id)
+## get_routing_queue_estimatedwaittime
 
+> [**EstimatedWaitTimePredictions**](EstimatedWaitTimePredictions) get_routing_queue_estimatedwaittime(queue_id, conversation_id=conversation_id)
 
 
 Get Estimated Wait Time
@@ -2782,16 +2731,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **queue_id** | **str**| queueId |  |
 | **conversation_id** | **str**| conversationId | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**EstimatedWaitTimePredictions**](EstimatedWaitTimePredictions.html)
+[**EstimatedWaitTimePredictions**](EstimatedWaitTimePredictions)
 
-<a name="get_routing_queue_mediatype_estimatedwaittime"></a>
 
-## [**EstimatedWaitTimePredictions**](EstimatedWaitTimePredictions.html) get_routing_queue_mediatype_estimatedwaittime(queue_id, media_type)
+## get_routing_queue_mediatype_estimatedwaittime
 
+> [**EstimatedWaitTimePredictions**](EstimatedWaitTimePredictions) get_routing_queue_mediatype_estimatedwaittime(queue_id, media_type)
 
 
 Get Estimated Wait Time
@@ -2833,16 +2781,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **queue_id** | **str**| queueId |  |
 | **media_type** | **str**| mediaType |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**EstimatedWaitTimePredictions**](EstimatedWaitTimePredictions.html)
+[**EstimatedWaitTimePredictions**](EstimatedWaitTimePredictions)
 
-<a name="get_routing_queue_members"></a>
 
-## [**QueueMemberEntityListing**](QueueMemberEntityListing.html) get_routing_queue_members(queue_id, page_number=page_number, page_size=page_size, sort_order=sort_order, expand=expand, name=name, profile_skills=profile_skills, skills=skills, languages=languages, routing_status=routing_status, presence=presence, member_by=member_by, joined=joined)
+## get_routing_queue_members
 
+> [**QueueMemberEntityListing**](QueueMemberEntityListing) get_routing_queue_members(queue_id, page_number=page_number, page_size=page_size, sort_order=sort_order, expand=expand, name=name, profile_skills=profile_skills, skills=skills, languages=languages, routing_status=routing_status, presence=presence, member_by=member_by, joined=joined)
 
 
 Get the members of this queue.
@@ -2900,26 +2847,28 @@ except ApiException as e:
 | **page_number** | **int**|  | [optional] [default to 1] |
 | **page_size** | **int**| Max value is 100 | [optional] [default to 25] |
 | **sort_order** | **str**| Note: results are sorted by name. | [optional] [default to &#39;asc&#39;]<br />**Values**: asc, desc |
-| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand. | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography, dateLastLogin |
+| **expand** | [**list[str]**](str)| Which fields, if any, to expand. | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography, dateLastLogin |
 | **name** | **str**| Filter by queue member name (contains-style search) | [optional]  |
-| **profile_skills** | [**list[str]**](str.html)| Filter by profile skill (contains-style search) | [optional]  |
-| **skills** | [**list[str]**](str.html)| Filter by skill (contains-style search) | [optional]  |
-| **languages** | [**list[str]**](str.html)| Filter by language (contains-style search) | [optional]  |
-| **routing_status** | [**list[str]**](str.html)| Filter by routing status | [optional]  |
-| **presence** | [**list[str]**](str.html)| Filter by presence | [optional]  |
+| **profile_skills** | [**list[str]**](str)| Filter by profile skill (contains-style search) | [optional]  |
+| **skills** | [**list[str]**](str)| Filter by skill (contains-style search) | [optional]  |
+| **languages** | [**list[str]**](str)| Filter by language (contains-style search) | [optional]  |
+| **routing_status** | [**list[str]**](str)| Filter by routing status | [optional]  |
+| **presence** | [**list[str]**](str)| Filter by presence | [optional]  |
 | **member_by** | **str**| Filter by member type | [optional] <br />**Values**: user, group |
 | **joined** | **bool**| Filter by joined status | [optional] <br />**Values**: true, false |
-{: class="table table-striped"}
 
 ### Return type
 
-[**QueueMemberEntityListing**](QueueMemberEntityListing.html)
+[**QueueMemberEntityListing**](QueueMemberEntityListing)
 
-<a name="get_routing_queue_users"></a>
 
-## [**QueueMemberEntityListingV1**](QueueMemberEntityListingV1.html) get_routing_queue_users(queue_id, page_number=page_number, page_size=page_size, sort_order=sort_order, expand=expand, joined=joined, name=name, profile_skills=profile_skills, skills=skills, languages=languages, routing_status=routing_status, presence=presence)
+## get_routing_queue_users
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+> [**QueueMemberEntityListingV1**](QueueMemberEntityListingV1) get_routing_queue_users(queue_id, page_number=page_number, page_size=page_size, sort_order=sort_order, expand=expand, joined=joined, name=name, profile_skills=profile_skills, skills=skills, languages=languages, routing_status=routing_status, presence=presence)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 DEPRECATED: use GET /routing/queues/{queueId}/members.  Get the members of this queue.
 
@@ -2973,24 +2922,23 @@ except ApiException as e:
 | **page_number** | **int**|  | [optional] [default to 1] |
 | **page_size** | **int**| Max value is 100 | [optional] [default to 25] |
 | **sort_order** | **str**| Note: results are sorted by name. | [optional] [default to &#39;asc&#39;]<br />**Values**: asc, desc |
-| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand. | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography, dateLastLogin |
+| **expand** | [**list[str]**](str)| Which fields, if any, to expand. | [optional] <br />**Values**: routingStatus, presence, integrationPresence, conversationSummary, outOfOffice, geolocation, station, authorization, lasttokenissued, authorization.unusedRoles, team, workPlanBidRanks, profileSkills, certifications, locations, groups, skills, languages, languagePreference, employerInfo, biography, dateLastLogin |
 | **joined** | **bool**| Filter by joined status | [optional]  |
 | **name** | **str**| Filter by queue member name | [optional]  |
-| **profile_skills** | [**list[str]**](str.html)| Filter by profile skill | [optional]  |
-| **skills** | [**list[str]**](str.html)| Filter by skill | [optional]  |
-| **languages** | [**list[str]**](str.html)| Filter by language | [optional]  |
-| **routing_status** | [**list[str]**](str.html)| Filter by routing status | [optional]  |
-| **presence** | [**list[str]**](str.html)| Filter by presence | [optional]  |
-{: class="table table-striped"}
+| **profile_skills** | [**list[str]**](str)| Filter by profile skill | [optional]  |
+| **skills** | [**list[str]**](str)| Filter by skill | [optional]  |
+| **languages** | [**list[str]**](str)| Filter by language | [optional]  |
+| **routing_status** | [**list[str]**](str)| Filter by routing status | [optional]  |
+| **presence** | [**list[str]**](str)| Filter by presence | [optional]  |
 
 ### Return type
 
-[**QueueMemberEntityListingV1**](QueueMemberEntityListingV1.html)
+[**QueueMemberEntityListingV1**](QueueMemberEntityListingV1)
 
-<a name="get_routing_queue_wrapupcodes"></a>
 
-## [**WrapupCodeEntityListing**](WrapupCodeEntityListing.html) get_routing_queue_wrapupcodes(queue_id, page_size=page_size, page_number=page_number)
+## get_routing_queue_wrapupcodes
 
+> [**WrapupCodeEntityListing**](WrapupCodeEntityListing) get_routing_queue_wrapupcodes(queue_id, page_size=page_size, page_number=page_number)
 
 
 Get the wrap-up codes for a queue
@@ -3034,16 +2982,15 @@ except ApiException as e:
 | **queue_id** | **str**| Queue ID |  |
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
-{: class="table table-striped"}
 
 ### Return type
 
-[**WrapupCodeEntityListing**](WrapupCodeEntityListing.html)
+[**WrapupCodeEntityListing**](WrapupCodeEntityListing)
 
-<a name="get_routing_queues"></a>
 
-## [**QueueEntityListing**](QueueEntityListing.html) get_routing_queues(page_number=page_number, page_size=page_size, sort_order=sort_order, name=name, id=id, division_id=division_id, peer_id=peer_id, canned_response_library_id=canned_response_library_id, has_peer=has_peer)
+## get_routing_queues
 
+> [**QueueEntityListing**](QueueEntityListing) get_routing_queues(page_number=page_number, page_size=page_size, sort_order=sort_order, name=name, id=id, division_id=division_id, peer_id=peer_id, canned_response_library_id=canned_response_library_id, has_peer=has_peer)
 
 
 Get list of queues.
@@ -3094,21 +3041,20 @@ except ApiException as e:
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **sort_order** | **str**| Note: results are sorted by name. | [optional] [default to &#39;asc&#39;]<br />**Values**: asc, desc |
 | **name** | **str**| Include only queues with the given name (leading and trailing asterisks allowed) | [optional]  |
-| **id** | [**list[str]**](str.html)| Include only queues with the specified ID(s) | [optional]  |
-| **division_id** | [**list[str]**](str.html)| Include only queues in the specified division ID(s) | [optional]  |
-| **peer_id** | [**list[str]**](str.html)| Include only queues with the specified peer ID(s) | [optional]  |
+| **id** | [**list[str]**](str)| Include only queues with the specified ID(s) | [optional]  |
+| **division_id** | [**list[str]**](str)| Include only queues in the specified division ID(s) | [optional]  |
+| **peer_id** | [**list[str]**](str)| Include only queues with the specified peer ID(s) | [optional]  |
 | **canned_response_library_id** | **str**| Include only queues explicitly associated with the specified canned response library ID | [optional]  |
 | **has_peer** | **bool**| Include only queues with a peer ID | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**QueueEntityListing**](QueueEntityListing.html)
+[**QueueEntityListing**](QueueEntityListing)
 
-<a name="get_routing_queues_divisionviews"></a>
 
-## [**QueueEntityListing**](QueueEntityListing.html) get_routing_queues_divisionviews(page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order, name=name, id=id, division_id=division_id)
+## get_routing_queues_divisionviews
 
+> [**QueueEntityListing**](QueueEntityListing) get_routing_queues_divisionviews(page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order, name=name, id=id, division_id=division_id)
 
 
 Get a paged listing of simplified queue objects, filterable by name, queue ID(s), or division ID(s).
@@ -3158,18 +3104,17 @@ except ApiException as e:
 | **sort_by** | **str**| Sort by | [optional] [default to &#39;name&#39;]<br />**Values**: name, id, divisionId |
 | **sort_order** | **str**| Sort order | [optional] [default to &#39;asc&#39;]<br />**Values**: asc, desc |
 | **name** | **str**| Name | [optional]  |
-| **id** | [**list[str]**](str.html)| Queue ID(s) | [optional]  |
-| **division_id** | [**list[str]**](str.html)| Division ID(s) | [optional]  |
-{: class="table table-striped"}
+| **id** | [**list[str]**](str)| Queue ID(s) | [optional]  |
+| **division_id** | [**list[str]**](str)| Division ID(s) | [optional]  |
 
 ### Return type
 
-[**QueueEntityListing**](QueueEntityListing.html)
+[**QueueEntityListing**](QueueEntityListing)
 
-<a name="get_routing_queues_divisionviews_all"></a>
 
-## [**QueueEntityListing**](QueueEntityListing.html) get_routing_queues_divisionviews_all(page_size=page_size, page_number=page_number, sort_order=sort_order)
+## get_routing_queues_divisionviews_all
 
+> [**QueueEntityListing**](QueueEntityListing) get_routing_queues_divisionviews_all(page_size=page_size, page_number=page_number, sort_order=sort_order)
 
 
 Get a paged listing of simplified queue objects, sorted by name.  Can be used to get a digest of all queues in an organization.
@@ -3213,16 +3158,15 @@ except ApiException as e:
 | **page_size** | **int**| Page size [max value is 500] | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **sort_order** | **str**| Sort order | [optional] [default to &#39;asc&#39;]<br />**Values**: asc, desc |
-{: class="table table-striped"}
 
 ### Return type
 
-[**QueueEntityListing**](QueueEntityListing.html)
+[**QueueEntityListing**](QueueEntityListing)
 
-<a name="get_routing_queues_me"></a>
 
-## [**UserQueueEntityListing**](UserQueueEntityListing.html) get_routing_queues_me(page_number=page_number, page_size=page_size, joined=joined, sort_order=sort_order)
+## get_routing_queues_me
 
+> [**UserQueueEntityListing**](UserQueueEntityListing) get_routing_queues_me(page_number=page_number, page_size=page_size, joined=joined, sort_order=sort_order)
 
 
 Get a paged listing of queues the user is a member of.
@@ -3267,16 +3211,15 @@ except ApiException as e:
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **joined** | **bool**| Filter by joined status. | [optional] <br />**Values**: true, false |
 | **sort_order** | **str**| Note: results are sorted by name. | [optional] [default to &#39;asc&#39;]<br />**Values**: asc, desc |
-{: class="table table-striped"}
 
 ### Return type
 
-[**UserQueueEntityListing**](UserQueueEntityListing.html)
+[**UserQueueEntityListing**](UserQueueEntityListing)
 
-<a name="get_routing_settings"></a>
 
-## [**RoutingSettings**](RoutingSettings.html) get_routing_settings()
+## get_routing_settings
 
+> [**RoutingSettings**](RoutingSettings) get_routing_settings()
 
 
 Get an organization's routing settings
@@ -3312,15 +3255,14 @@ except ApiException as e:
 
 This endpoint does not need any parameters.
 
-
 ### Return type
 
-[**RoutingSettings**](RoutingSettings.html)
+[**RoutingSettings**](RoutingSettings)
 
-<a name="get_routing_settings_contactcenter"></a>
 
-## [**ContactCenterSettings**](ContactCenterSettings.html) get_routing_settings_contactcenter()
+## get_routing_settings_contactcenter
 
+> [**ContactCenterSettings**](ContactCenterSettings) get_routing_settings_contactcenter()
 
 
 Get Contact Center Settings
@@ -3356,15 +3298,14 @@ except ApiException as e:
 
 This endpoint does not need any parameters.
 
-
 ### Return type
 
-[**ContactCenterSettings**](ContactCenterSettings.html)
+[**ContactCenterSettings**](ContactCenterSettings)
 
-<a name="get_routing_settings_transcription"></a>
 
-## [**TranscriptionSettings**](TranscriptionSettings.html) get_routing_settings_transcription()
+## get_routing_settings_transcription
 
+> [**TranscriptionSettings**](TranscriptionSettings) get_routing_settings_transcription()
 
 
 Get Transcription Settings
@@ -3401,15 +3342,14 @@ except ApiException as e:
 
 This endpoint does not need any parameters.
 
-
 ### Return type
 
-[**TranscriptionSettings**](TranscriptionSettings.html)
+[**TranscriptionSettings**](TranscriptionSettings)
 
-<a name="get_routing_skill"></a>
 
-## [**RoutingSkill**](RoutingSkill.html) get_routing_skill(skill_id)
+## get_routing_skill
 
+> [**RoutingSkill**](RoutingSkill) get_routing_skill(skill_id)
 
 
 Get Routing Skill
@@ -3448,16 +3388,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **skill_id** | **str**| Skill ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**RoutingSkill**](RoutingSkill.html)
+[**RoutingSkill**](RoutingSkill)
 
-<a name="get_routing_skillgroup"></a>
 
-## [**SkillGroup**](SkillGroup.html) get_routing_skillgroup(skill_group_id)
+## get_routing_skillgroup
 
+> [**SkillGroup**](SkillGroup) get_routing_skillgroup(skill_group_id)
 
 
 Get skill group
@@ -3497,16 +3436,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **skill_group_id** | **str**| Skill Group ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**SkillGroup**](SkillGroup.html)
+[**SkillGroup**](SkillGroup)
 
-<a name="get_routing_skillgroup_members"></a>
 
-## [**SkillGroupMemberEntityListing**](SkillGroupMemberEntityListing.html) get_routing_skillgroup_members(skill_group_id, page_size=page_size, after=after, before=before, expand=expand)
+## get_routing_skillgroup_members
 
+> [**SkillGroupMemberEntityListing**](SkillGroupMemberEntityListing) get_routing_skillgroup_members(skill_group_id, page_size=page_size, after=after, before=before, expand=expand)
 
 
 Get skill group members
@@ -3554,16 +3492,15 @@ except ApiException as e:
 | **after** | **str**| The cursor that points to the next item | [optional]  |
 | **before** | **str**| The cursor that points to the previous item | [optional]  |
 | **expand** | **str**| Expand the name on each user | [optional] <br />**Values**: entities |
-{: class="table table-striped"}
 
 ### Return type
 
-[**SkillGroupMemberEntityListing**](SkillGroupMemberEntityListing.html)
+[**SkillGroupMemberEntityListing**](SkillGroupMemberEntityListing)
 
-<a name="get_routing_skillgroup_members_divisions"></a>
 
-## [**SkillGroupMemberDivisionList**](SkillGroupMemberDivisionList.html) get_routing_skillgroup_members_divisions(skill_group_id, expand=expand)
+## get_routing_skillgroup_members_divisions
 
+> [**SkillGroupMemberDivisionList**](SkillGroupMemberDivisionList) get_routing_skillgroup_members_divisions(skill_group_id, expand=expand)
 
 
 Get list of member divisions for this skill group.
@@ -3605,16 +3542,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **skill_group_id** | **str**| Skill Group ID |  |
 | **expand** | **str**| Expand the name on each user | [optional] <br />**Values**: entities |
-{: class="table table-striped"}
 
 ### Return type
 
-[**SkillGroupMemberDivisionList**](SkillGroupMemberDivisionList.html)
+[**SkillGroupMemberDivisionList**](SkillGroupMemberDivisionList)
 
-<a name="get_routing_skillgroups"></a>
 
-## [**SkillGroupEntityListing**](SkillGroupEntityListing.html) get_routing_skillgroups(page_size=page_size, name=name, after=after, before=before)
+## get_routing_skillgroups
 
+> [**SkillGroupEntityListing**](SkillGroupEntityListing) get_routing_skillgroups(page_size=page_size, name=name, after=after, before=before)
 
 
 Get skill group listing
@@ -3660,16 +3596,15 @@ except ApiException as e:
 | **name** | **str**| Return only skill group names whose names start with this value (case-insensitive matching) | [optional]  |
 | **after** | **str**| The cursor that points to the next item | [optional]  |
 | **before** | **str**| The cursor that points to the previous item | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**SkillGroupEntityListing**](SkillGroupEntityListing.html)
+[**SkillGroupEntityListing**](SkillGroupEntityListing)
 
-<a name="get_routing_skills"></a>
 
-## [**SkillEntityListing**](SkillEntityListing.html) get_routing_skills(page_size=page_size, page_number=page_number, name=name, id=id)
+## get_routing_skills
 
+> [**SkillEntityListing**](SkillEntityListing) get_routing_skills(page_size=page_size, page_number=page_number, name=name, id=id)
 
 
 Get the list of routing skills.
@@ -3713,17 +3648,16 @@ except ApiException as e:
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **name** | **str**| Filter for results that start with this value | [optional]  |
-| **id** | [**list[str]**](str.html)| id | [optional]  |
-{: class="table table-striped"}
+| **id** | [**list[str]**](str)| id | [optional]  |
 
 ### Return type
 
-[**SkillEntityListing**](SkillEntityListing.html)
+[**SkillEntityListing**](SkillEntityListing)
 
-<a name="get_routing_sms_address"></a>
 
-## [**SmsAddress**](SmsAddress.html) get_routing_sms_address(address_id)
+## get_routing_sms_address
 
+> [**SmsAddress**](SmsAddress) get_routing_sms_address(address_id)
 
 
 Get an Address by Id for SMS
@@ -3763,16 +3697,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **address_id** | **str**| Address ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**SmsAddress**](SmsAddress.html)
+[**SmsAddress**](SmsAddress)
 
-<a name="get_routing_sms_addresses"></a>
 
-## [**SmsAddressEntityListing**](SmsAddressEntityListing.html) get_routing_sms_addresses(page_size=page_size, page_number=page_number)
+## get_routing_sms_addresses
 
+> [**SmsAddressEntityListing**](SmsAddressEntityListing) get_routing_sms_addresses(page_size=page_size, page_number=page_number)
 
 
 Get a list of Addresses for SMS
@@ -3814,16 +3747,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
-{: class="table table-striped"}
 
 ### Return type
 
-[**SmsAddressEntityListing**](SmsAddressEntityListing.html)
+[**SmsAddressEntityListing**](SmsAddressEntityListing)
 
-<a name="get_routing_sms_availablephonenumbers"></a>
 
-## [**SMSAvailablePhoneNumberEntityListing**](SMSAvailablePhoneNumberEntityListing.html) get_routing_sms_availablephonenumbers(country_code, phone_number_type, region=region, city=city, area_code=area_code, pattern=pattern, address_requirement=address_requirement)
+## get_routing_sms_availablephonenumbers
 
+> [**SMSAvailablePhoneNumberEntityListing**](SMSAvailablePhoneNumberEntityListing) get_routing_sms_availablephonenumbers(country_code, phone_number_type, region=region, city=city, area_code=area_code, pattern=pattern, address_requirement=address_requirement)
 
 
 Get a list of available phone numbers for SMS provisioning.
@@ -3877,16 +3809,15 @@ except ApiException as e:
 | **area_code** | **str**| Area code that can be used to restrict the numbers returned | [optional]  |
 | **pattern** | **str**| A pattern to match phone numbers. Valid characters are &#39;*&#39; and [0-9a-zA-Z]. The &#39;*&#39; character will match any single digit. | [optional]  |
 | **address_requirement** | **str**| This indicates whether the phone number requires to have an Address registered. | [optional] <br />**Values**: none, any, local, foreign |
-{: class="table table-striped"}
 
 ### Return type
 
-[**SMSAvailablePhoneNumberEntityListing**](SMSAvailablePhoneNumberEntityListing.html)
+[**SMSAvailablePhoneNumberEntityListing**](SMSAvailablePhoneNumberEntityListing)
 
-<a name="get_routing_sms_phonenumber"></a>
 
-## [**SmsPhoneNumber**](SmsPhoneNumber.html) get_routing_sms_phonenumber(address_id, expand=expand)
+## get_routing_sms_phonenumber
 
+> [**SmsPhoneNumber**](SmsPhoneNumber) get_routing_sms_phonenumber(address_id, expand=expand)
 
 
 Get a phone number provisioned for SMS.
@@ -3928,16 +3859,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **address_id** | **str**| Address ID |  |
 | **expand** | **str**| Expand response with additional information | [optional] <br />**Values**: compliance, supportedContent |
-{: class="table table-striped"}
 
 ### Return type
 
-[**SmsPhoneNumber**](SmsPhoneNumber.html)
+[**SmsPhoneNumber**](SmsPhoneNumber)
 
-<a name="get_routing_sms_phonenumbers"></a>
 
-## [**SmsPhoneNumberEntityListing**](SmsPhoneNumberEntityListing.html) get_routing_sms_phonenumbers(phone_number=phone_number, phone_number_type=phone_number_type, phone_number_status=phone_number_status, country_code=country_code, page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order, language=language, integration_id=integration_id, supported_content_id=supported_content_id)
+## get_routing_sms_phonenumbers
 
+> [**SmsPhoneNumberEntityListing**](SmsPhoneNumberEntityListing) get_routing_sms_phonenumbers(phone_number=phone_number, phone_number_type=phone_number_type, phone_number_status=phone_number_status, country_code=country_code, page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order, language=language, integration_id=integration_id, supported_content_id=supported_content_id)
 
 
 Get a list of provisioned phone numbers.
@@ -3987,9 +3917,9 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **phone_number** | **str**| Filter on phone number address. Allowable characters are the digits &#39;0-9&#39; and the wild card character &#39;\\*&#39;. If just digits are present, a contains search is done on the address pattern. For example, &#39;317&#39; could be matched anywhere in the address. An &#39;\\*&#39; will match multiple digits. For example, to match a specific area code within the US a pattern like &#39;1317*&#39; could be used. | [optional]  |
-| **phone_number_type** | [**list[str]**](str.html)| Filter on phone number type | [optional] <br />**Values**: local, mobile, tollfree, shortcode, alphanumeric |
-| **phone_number_status** | [**list[str]**](str.html)| Filter on phone number status | [optional] <br />**Values**: active, invalid, initiated, porting, pending, pending-cancellation |
-| **country_code** | [**list[str]**](str.html)| Filter on country code | [optional]  |
+| **phone_number_type** | [**list[str]**](str)| Filter on phone number type | [optional] <br />**Values**: local, mobile, tollfree, shortcode, alphanumeric |
+| **phone_number_status** | [**list[str]**](str)| Filter on phone number status | [optional] <br />**Values**: active, invalid, initiated, porting, pending, pending-cancellation |
+| **country_code** | [**list[str]**](str)| Filter on country code | [optional]  |
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **sort_by** | **str**| Optional field to sort results | [optional] <br />**Values**: phoneNumber, countryCode, country, dateCreated, dateModified, phoneNumberStatus, phoneNumberType, purchaseDate, supportsMms, supportsSms, supportsVoice |
@@ -3997,16 +3927,15 @@ except ApiException as e:
 | **language** | **str**| A language tag (which is sometimes referred to as a \&quot;locale identifier\&quot;) to use to localize country field and sort operations | [optional] [default to &#39;en-US&#39;] |
 | **integration_id** | **str**| Filter on the Genesys Cloud integration id to which the phone number belongs to | [optional]  |
 | **supported_content_id** | **str**| Filter based on the supported content ID | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**SmsPhoneNumberEntityListing**](SmsPhoneNumberEntityListing.html)
+[**SmsPhoneNumberEntityListing**](SmsPhoneNumberEntityListing)
 
-<a name="get_routing_user_directroutingbackup_settings"></a>
 
-## [**AgentDirectRoutingBackupSettings**](AgentDirectRoutingBackupSettings.html) get_routing_user_directroutingbackup_settings(user_id)
+## get_routing_user_directroutingbackup_settings
 
+> [**AgentDirectRoutingBackupSettings**](AgentDirectRoutingBackupSettings) get_routing_user_directroutingbackup_settings(user_id)
 
 
 Get the user's Direct Routing Backup settings.
@@ -4046,16 +3975,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **user_id** | **str**| User ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**AgentDirectRoutingBackupSettings**](AgentDirectRoutingBackupSettings.html)
+[**AgentDirectRoutingBackupSettings**](AgentDirectRoutingBackupSettings)
 
-<a name="get_routing_user_utilization"></a>
 
-## [**AgentMaxUtilizationResponse**](AgentMaxUtilizationResponse.html) get_routing_user_utilization(user_id)
+## get_routing_user_utilization
 
+> [**AgentMaxUtilizationResponse**](AgentMaxUtilizationResponse) get_routing_user_utilization(user_id)
 
 
 Get the user's max utilization settings.  If not configured, the organization-wide default is returned.
@@ -4096,16 +4024,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **user_id** | **str**| User ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**AgentMaxUtilizationResponse**](AgentMaxUtilizationResponse.html)
+[**AgentMaxUtilizationResponse**](AgentMaxUtilizationResponse)
 
-<a name="get_routing_utilization"></a>
 
-## [**UtilizationResponse**](UtilizationResponse.html) get_routing_utilization()
+## get_routing_utilization
 
+> [**UtilizationResponse**](UtilizationResponse) get_routing_utilization()
 
 
 Get the organization-wide max utilization settings.
@@ -4143,15 +4070,14 @@ except ApiException as e:
 
 This endpoint does not need any parameters.
 
-
 ### Return type
 
-[**UtilizationResponse**](UtilizationResponse.html)
+[**UtilizationResponse**](UtilizationResponse)
 
-<a name="get_routing_utilization_label"></a>
 
-## [**UtilizationLabel**](UtilizationLabel.html) get_routing_utilization_label(label_id)
+## get_routing_utilization_label
 
+> [**UtilizationLabel**](UtilizationLabel) get_routing_utilization_label(label_id)
 
 
 Get details about this utilization label
@@ -4191,16 +4117,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **label_id** | **str**| Utilization Label ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**UtilizationLabel**](UtilizationLabel.html)
+[**UtilizationLabel**](UtilizationLabel)
 
-<a name="get_routing_utilization_label_agents"></a>
 
-## list[object]** get_routing_utilization_label_agents(label_id)
+## get_routing_utilization_label_agents
 
+> list[object]** get_routing_utilization_label_agents(label_id)
 
 
 Get list of agent ids associated with a utilization label
@@ -4240,16 +4165,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **label_id** | **str**| Utilization Label ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **list[object]**
 
-<a name="get_routing_utilization_labels"></a>
 
-## [**UtilizationLabelEntityListing**](UtilizationLabelEntityListing.html) get_routing_utilization_labels(page_size=page_size, page_number=page_number, sort_order=sort_order, name=name)
+## get_routing_utilization_labels
 
+> [**UtilizationLabelEntityListing**](UtilizationLabelEntityListing) get_routing_utilization_labels(page_size=page_size, page_number=page_number, sort_order=sort_order, name=name)
 
 
 Get list of utilization labels
@@ -4295,16 +4219,15 @@ except ApiException as e:
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **sort_order** | **str**| Sort order by name | [optional] [default to &#39;ascending&#39;]<br />**Values**: ascending, descending |
 | **name** | **str**| Utilization label&#39;s name (Wildcard is supported, e.g., &#39;label1*&#39;, &#39;*label*&#39; | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**UtilizationLabelEntityListing**](UtilizationLabelEntityListing.html)
+[**UtilizationLabelEntityListing**](UtilizationLabelEntityListing)
 
-<a name="get_routing_utilization_tag"></a>
 
-## [**UtilizationTag**](UtilizationTag.html) get_routing_utilization_tag(tag_id)
+## get_routing_utilization_tag
 
+> [**UtilizationTag**](UtilizationTag) get_routing_utilization_tag(tag_id)
 
 
 Get details about this utilization tag
@@ -4346,16 +4269,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **tag_id** | **str**| Utilization Tag ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**UtilizationTag**](UtilizationTag.html)
+[**UtilizationTag**](UtilizationTag)
 
-<a name="get_routing_utilization_tag_agents"></a>
 
-## list[object]** get_routing_utilization_tag_agents(tag_id)
+## get_routing_utilization_tag_agents
 
+> list[object]** get_routing_utilization_tag_agents(tag_id)
 
 
 Get list of agent ids associated with a utilization tag
@@ -4397,16 +4319,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **tag_id** | **str**| Utilization Tag ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **list[object]**
 
-<a name="get_routing_utilization_tags"></a>
 
-## [**UtilizationTagEntityListing**](UtilizationTagEntityListing.html) get_routing_utilization_tags(page_size=page_size, page_number=page_number, sort_order=sort_order, name=name)
+## get_routing_utilization_tags
 
+> [**UtilizationTagEntityListing**](UtilizationTagEntityListing) get_routing_utilization_tags(page_size=page_size, page_number=page_number, sort_order=sort_order, name=name)
 
 
 Get list of utilization tags
@@ -4454,16 +4375,15 @@ except ApiException as e:
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **sort_order** | **str**| Sort order by name | [optional] [default to &#39;ascending&#39;]<br />**Values**: ascending, descending |
 | **name** | **str**| Utilization tag&#39;s name (Wildcard is supported, e.g., &#39;tag1*&#39;) | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**UtilizationTagEntityListing**](UtilizationTagEntityListing.html)
+[**UtilizationTagEntityListing**](UtilizationTagEntityListing)
 
-<a name="get_routing_wrapupcode"></a>
 
-## [**WrapupCode**](WrapupCode.html) get_routing_wrapupcode(code_id)
+## get_routing_wrapupcode
 
+> [**WrapupCode**](WrapupCode) get_routing_wrapupcode(code_id)
 
 
 Get details about this wrap-up code.
@@ -4503,16 +4423,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **code_id** | **str**| Wrapup Code ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**WrapupCode**](WrapupCode.html)
+[**WrapupCode**](WrapupCode)
 
-<a name="get_routing_wrapupcodes"></a>
 
-## [**WrapupCodeEntityListing**](WrapupCodeEntityListing.html) get_routing_wrapupcodes(page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order, name=name, id=id, division_id=division_id)
+## get_routing_wrapupcodes
 
+> [**WrapupCodeEntityListing**](WrapupCodeEntityListing) get_routing_wrapupcodes(page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order, name=name, id=id, division_id=division_id)
 
 
 Get list of wrapup codes.
@@ -4562,18 +4481,17 @@ except ApiException as e:
 | **sort_by** | **str**| Sort by | [optional] [default to &#39;name&#39;]<br />**Values**: name, id |
 | **sort_order** | **str**| Sort order | [optional] [default to &#39;ascending&#39;]<br />**Values**: ascending, descending |
 | **name** | **str**| Wrapup code&#39;s name (&#39;Sort by&#39; param is ignored unless this field is provided) | [optional]  |
-| **id** | [**list[str]**](str.html)| Filter by wrapup code ID(s) | [optional]  |
-| **division_id** | [**list[str]**](str.html)| Filter by division ID(s) | [optional]  |
-{: class="table table-striped"}
+| **id** | [**list[str]**](str)| Filter by wrapup code ID(s) | [optional]  |
+| **division_id** | [**list[str]**](str)| Filter by division ID(s) | [optional]  |
 
 ### Return type
 
-[**WrapupCodeEntityListing**](WrapupCodeEntityListing.html)
+[**WrapupCodeEntityListing**](WrapupCodeEntityListing)
 
-<a name="get_routing_wrapupcodes_divisionview"></a>
 
-## [**WrapupCode**](WrapupCode.html) get_routing_wrapupcodes_divisionview(code_id)
+## get_routing_wrapupcodes_divisionview
 
+> [**WrapupCode**](WrapupCode) get_routing_wrapupcodes_divisionview(code_id)
 
 
 Get a simplified wrap-up code.
@@ -4613,16 +4531,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **code_id** | **str**| Wrapup Code ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**WrapupCode**](WrapupCode.html)
+[**WrapupCode**](WrapupCode)
 
-<a name="get_routing_wrapupcodes_divisionviews"></a>
 
-## [**WrapupCodeEntityListing**](WrapupCodeEntityListing.html) get_routing_wrapupcodes_divisionviews(page_size=page_size, page_number=page_number, name=name, id=id, division_id=division_id, include_state=include_state)
+## get_routing_wrapupcodes_divisionviews
 
+> [**WrapupCodeEntityListing**](WrapupCodeEntityListing) get_routing_wrapupcodes_divisionviews(page_size=page_size, page_number=page_number, name=name, id=id, division_id=division_id, include_state=include_state)
 
 
 Get a paged listing of simplified wrapup code objects, filterable by name, wrapup code ID(s), or division ID(s).
@@ -4671,19 +4588,18 @@ except ApiException as e:
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **name** | **str**| Name (trailing asterisks allowed) | [optional]  |
-| **id** | [**list[str]**](str.html)| Wrapup code ID(s) | [optional]  |
-| **division_id** | [**list[str]**](str.html)| Division ID(s) | [optional]  |
+| **id** | [**list[str]**](str)| Wrapup code ID(s) | [optional]  |
+| **division_id** | [**list[str]**](str)| Division ID(s) | [optional]  |
 | **include_state** | **str**| Wrapup code state(s) to include | [optional] <br />**Values**: Active, Deleted, ActiveAndDeleted |
-{: class="table table-striped"}
 
 ### Return type
 
-[**WrapupCodeEntityListing**](WrapupCodeEntityListing.html)
+[**WrapupCodeEntityListing**](WrapupCodeEntityListing)
 
-<a name="get_user_queues"></a>
 
-## [**UserQueueEntityListing**](UserQueueEntityListing.html) get_user_queues(user_id, page_size=page_size, page_number=page_number, joined=joined, division_id=division_id)
+## get_user_queues
 
+> [**UserQueueEntityListing**](UserQueueEntityListing) get_user_queues(user_id, page_size=page_size, page_number=page_number, joined=joined, division_id=division_id)
 
 
 Get queues for user
@@ -4732,17 +4648,16 @@ except ApiException as e:
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **joined** | **bool**| Is joined to the queue | [optional] [default to True] |
-| **division_id** | [**list[str]**](str.html)| Division ID(s) | [optional]  |
-{: class="table table-striped"}
+| **division_id** | [**list[str]**](str)| Division ID(s) | [optional]  |
 
 ### Return type
 
-[**UserQueueEntityListing**](UserQueueEntityListing.html)
+[**UserQueueEntityListing**](UserQueueEntityListing)
 
-<a name="get_user_routinglanguages"></a>
 
-## [**UserLanguageEntityListing**](UserLanguageEntityListing.html) get_user_routinglanguages(user_id, page_size=page_size, page_number=page_number, sort_order=sort_order)
+## get_user_routinglanguages
 
+> [**UserLanguageEntityListing**](UserLanguageEntityListing) get_user_routinglanguages(user_id, page_size=page_size, page_number=page_number, sort_order=sort_order)
 
 
 List routing language for user
@@ -4787,16 +4702,15 @@ except ApiException as e:
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **sort_order** | **str**| Ascending or descending sort order | [optional] [default to &#39;ASC&#39;]<br />**Values**: ascending, descending |
-{: class="table table-striped"}
 
 ### Return type
 
-[**UserLanguageEntityListing**](UserLanguageEntityListing.html)
+[**UserLanguageEntityListing**](UserLanguageEntityListing)
 
-<a name="get_user_routingskills"></a>
 
-## [**UserSkillEntityListing**](UserSkillEntityListing.html) get_user_routingskills(user_id, page_size=page_size, page_number=page_number, sort_order=sort_order)
+## get_user_routingskills
 
+> [**UserSkillEntityListing**](UserSkillEntityListing) get_user_routingskills(user_id, page_size=page_size, page_number=page_number, sort_order=sort_order)
 
 
 List routing skills for user
@@ -4841,16 +4755,15 @@ except ApiException as e:
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **sort_order** | **str**| Ascending or descending sort order | [optional] [default to &#39;ASC&#39;]<br />**Values**: ascending, descending |
-{: class="table table-striped"}
 
 ### Return type
 
-[**UserSkillEntityListing**](UserSkillEntityListing.html)
+[**UserSkillEntityListing**](UserSkillEntityListing)
 
-<a name="get_user_skillgroups"></a>
 
-## [**UserSkillGroupEntityListing**](UserSkillGroupEntityListing.html) get_user_skillgroups(user_id, page_size=page_size, after=after, before=before)
+## get_user_skillgroups
 
+> [**UserSkillGroupEntityListing**](UserSkillGroupEntityListing) get_user_skillgroups(user_id, page_size=page_size, after=after, before=before)
 
 
 Get skill groups for a user
@@ -4896,16 +4809,15 @@ except ApiException as e:
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **after** | **str**| The cursor that points to the next page | [optional]  |
 | **before** | **str**| The cursor that points to the previous page | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**UserSkillGroupEntityListing**](UserSkillGroupEntityListing.html)
+[**UserSkillGroupEntityListing**](UserSkillGroupEntityListing)
 
-<a name="patch_routing_conversation"></a>
 
-## [**RoutingConversationAttributesResponse**](RoutingConversationAttributesResponse.html) patch_routing_conversation(conversation_id, body)
+## patch_routing_conversation
 
+> [**RoutingConversationAttributesResponse**](RoutingConversationAttributesResponse) patch_routing_conversation(conversation_id, body)
 
 
 Update attributes of an in-queue conversation
@@ -4948,17 +4860,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| Conversation ID |  |
-| **body** | [**RoutingConversationAttributesRequest**](RoutingConversationAttributesRequest.html)| Conversation Attributes |  |
-{: class="table table-striped"}
+| **body** | [**RoutingConversationAttributesRequest**](RoutingConversationAttributesRequest)| Conversation Attributes |  |
 
 ### Return type
 
-[**RoutingConversationAttributesResponse**](RoutingConversationAttributesResponse.html)
+[**RoutingConversationAttributesResponse**](RoutingConversationAttributesResponse)
 
-<a name="patch_routing_email_domain"></a>
 
-## [**InboundDomain**](InboundDomain.html) patch_routing_email_domain(domain_id, body)
+## patch_routing_email_domain
 
+> [**InboundDomain**](InboundDomain) patch_routing_email_domain(domain_id, body)
 
 
 Update domain settings
@@ -4999,17 +4910,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **domain_id** | **str**| domain ID |  |
-| **body** | [**InboundDomainPatchRequest**](InboundDomainPatchRequest.html)| Domain settings |  |
-{: class="table table-striped"}
+| **body** | [**InboundDomainPatchRequest**](InboundDomainPatchRequest)| Domain settings |  |
 
 ### Return type
 
-[**InboundDomain**](InboundDomain.html)
+[**InboundDomain**](InboundDomain)
 
-<a name="patch_routing_email_domain_validate"></a>
 
-## [**InboundDomain**](InboundDomain.html) patch_routing_email_domain_validate(domain_id, body)
+## patch_routing_email_domain_validate
 
+> [**InboundDomain**](InboundDomain) patch_routing_email_domain_validate(domain_id, body)
 
 
 Validate domain settings
@@ -5050,17 +4960,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **domain_id** | **str**| domain ID |  |
-| **body** | [**InboundDomainPatchRequest**](InboundDomainPatchRequest.html)| Domain settings |  |
-{: class="table table-striped"}
+| **body** | [**InboundDomainPatchRequest**](InboundDomainPatchRequest)| Domain settings |  |
 
 ### Return type
 
-[**InboundDomain**](InboundDomain.html)
+[**InboundDomain**](InboundDomain)
 
-<a name="patch_routing_predictor"></a>
 
-## [**Predictor**](Predictor.html) patch_routing_predictor(predictor_id, body=body)
+## patch_routing_predictor
 
+> [**Predictor**](Predictor) patch_routing_predictor(predictor_id, body=body)
 
 
 Update single predictor.
@@ -5102,17 +5011,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **predictor_id** | **str**| Predictor ID |  |
-| **body** | [**PatchPredictorRequest**](PatchPredictorRequest.html)|  | [optional]  |
-{: class="table table-striped"}
+| **body** | [**PatchPredictorRequest**](PatchPredictorRequest)|  | [optional]  |
 
 ### Return type
 
-[**Predictor**](Predictor.html)
+[**Predictor**](Predictor)
 
-<a name="patch_routing_queue_member"></a>
 
-##  patch_routing_queue_member(queue_id, member_id, body)
+## patch_routing_queue_member
 
+>  patch_routing_queue_member(queue_id, member_id, body)
 
 
 Update the ring number OR joined status for a queue member.
@@ -5155,17 +5063,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **queue_id** | **str**| Queue ID |  |
 | **member_id** | **str**| Member ID |  |
-| **body** | [**QueueMember**](QueueMember.html)| Queue Member |  |
-{: class="table table-striped"}
+| **body** | [**QueueMember**](QueueMember)| Queue Member |  |
 
 ### Return type
 
 void (empty response body)
 
-<a name="patch_routing_queue_members"></a>
 
-## [**QueueMemberEntityListing**](QueueMemberEntityListing.html) patch_routing_queue_members(queue_id, body)
+## patch_routing_queue_members
 
+> [**QueueMemberEntityListing**](QueueMemberEntityListing) patch_routing_queue_members(queue_id, body)
 
 
 Join or unjoin a set of users for a queue
@@ -5207,18 +5114,20 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **queue_id** | **str**| Queue ID |  |
-| **body** | [**list[QueueMember]**](QueueMember.html)| Queue Members |  |
-{: class="table table-striped"}
+| **body** | [**list[QueueMember]**](QueueMember)| Queue Members |  |
 
 ### Return type
 
-[**QueueMemberEntityListing**](QueueMemberEntityListing.html)
+[**QueueMemberEntityListing**](QueueMemberEntityListing)
 
-<a name="patch_routing_queue_user"></a>
 
-##  patch_routing_queue_user(queue_id, member_id, body)
+## patch_routing_queue_user
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+>  patch_routing_queue_user(queue_id, member_id, body)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 DEPRECATED: use PATCH /routing/queues/{queueId}/members/{memberId}.  Update the ring number OR joined status for a User in a Queue.
 
@@ -5260,18 +5169,20 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **queue_id** | **str**| Queue ID |  |
 | **member_id** | **str**| Member ID |  |
-| **body** | [**QueueMember**](QueueMember.html)| Queue Member |  |
-{: class="table table-striped"}
+| **body** | [**QueueMember**](QueueMember)| Queue Member |  |
 
 ### Return type
 
 void (empty response body)
 
-<a name="patch_routing_queue_users"></a>
 
-## [**QueueMemberEntityListingV1**](QueueMemberEntityListingV1.html) patch_routing_queue_users(queue_id, body)
+## patch_routing_queue_users
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+> [**QueueMemberEntityListingV1**](QueueMemberEntityListingV1) patch_routing_queue_users(queue_id, body)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 DEPRECATED: use PATCH /routing/queues/{queueId}/members.  Join or unjoin a set of users for a queue.
 
@@ -5312,17 +5223,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **queue_id** | **str**| Queue ID |  |
-| **body** | [**list[QueueMember]**](QueueMember.html)| Queue Members |  |
-{: class="table table-striped"}
+| **body** | [**list[QueueMember]**](QueueMember)| Queue Members |  |
 
 ### Return type
 
-[**QueueMemberEntityListingV1**](QueueMemberEntityListingV1.html)
+[**QueueMemberEntityListingV1**](QueueMemberEntityListingV1)
 
-<a name="patch_routing_settings_contactcenter"></a>
 
-##  patch_routing_settings_contactcenter(body)
+## patch_routing_settings_contactcenter
 
+>  patch_routing_settings_contactcenter(body)
 
 
 Update Contact Center Settings
@@ -5360,17 +5270,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**ContactCenterSettings**](ContactCenterSettings.html)| Contact Center Settings |  |
-{: class="table table-striped"}
+| **body** | [**ContactCenterSettings**](ContactCenterSettings)| Contact Center Settings |  |
 
 ### Return type
 
 void (empty response body)
 
-<a name="patch_routing_settings_transcription"></a>
 
-## [**TranscriptionSettings**](TranscriptionSettings.html) patch_routing_settings_transcription(body)
+## patch_routing_settings_transcription
 
+> [**TranscriptionSettings**](TranscriptionSettings) patch_routing_settings_transcription(body)
 
 
 Patch Transcription Settings
@@ -5409,17 +5318,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**TranscriptionSettings**](TranscriptionSettings.html)| Organization Settings |  |
-{: class="table table-striped"}
+| **body** | [**TranscriptionSettings**](TranscriptionSettings)| Organization Settings |  |
 
 ### Return type
 
-[**TranscriptionSettings**](TranscriptionSettings.html)
+[**TranscriptionSettings**](TranscriptionSettings)
 
-<a name="patch_routing_skillgroup"></a>
 
-## [**SkillGroup**](SkillGroup.html) patch_routing_skillgroup(skill_group_id, body)
+## patch_routing_skillgroup
 
+> [**SkillGroup**](SkillGroup) patch_routing_skillgroup(skill_group_id, body)
 
 
 Update skill group definition
@@ -5460,17 +5368,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **skill_group_id** | **str**| Skill Group ID |  |
-| **body** | [**SkillGroup**](SkillGroup.html)| Update skill groups |  |
-{: class="table table-striped"}
+| **body** | [**SkillGroup**](SkillGroup)| Update skill groups |  |
 
 ### Return type
 
-[**SkillGroup**](SkillGroup.html)
+[**SkillGroup**](SkillGroup)
 
-<a name="patch_user_queue"></a>
 
-## [**UserQueue**](UserQueue.html) patch_user_queue(queue_id, user_id, body)
+## patch_user_queue
 
+> [**UserQueue**](UserQueue) patch_user_queue(queue_id, user_id, body)
 
 
 Join or unjoin a queue for a user
@@ -5514,17 +5421,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **queue_id** | **str**| Queue ID |  |
 | **user_id** | **str**| User ID |  |
-| **body** | [**UserQueue**](UserQueue.html)| Queue Member |  |
-{: class="table table-striped"}
+| **body** | [**UserQueue**](UserQueue)| Queue Member |  |
 
 ### Return type
 
-[**UserQueue**](UserQueue.html)
+[**UserQueue**](UserQueue)
 
-<a name="patch_user_queues"></a>
 
-## [**UserQueueEntityListing**](UserQueueEntityListing.html) patch_user_queues(user_id, body, division_id=division_id)
+## patch_user_queues
 
+> [**UserQueueEntityListing**](UserQueueEntityListing) patch_user_queues(user_id, body, division_id=division_id)
 
 
 Join or unjoin a set of queues for a user
@@ -5567,18 +5473,17 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **user_id** | **str**| User ID |  |
-| **body** | [**list[UserQueue]**](UserQueue.html)| User Queues |  |
-| **division_id** | [**list[str]**](str.html)| Division ID(s) | [optional]  |
-{: class="table table-striped"}
+| **body** | [**list[UserQueue]**](UserQueue)| User Queues |  |
+| **division_id** | [**list[str]**](str)| Division ID(s) | [optional]  |
 
 ### Return type
 
-[**UserQueueEntityListing**](UserQueueEntityListing.html)
+[**UserQueueEntityListing**](UserQueueEntityListing)
 
-<a name="patch_user_routinglanguage"></a>
 
-## [**UserRoutingLanguage**](UserRoutingLanguage.html) patch_user_routinglanguage(user_id, language_id, body)
+## patch_user_routinglanguage
 
+> [**UserRoutingLanguage**](UserRoutingLanguage) patch_user_routinglanguage(user_id, language_id, body)
 
 
 Update routing language proficiency or state.
@@ -5622,17 +5527,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **user_id** | **str**| User ID |  |
 | **language_id** | **str**| languageId |  |
-| **body** | [**UserRoutingLanguage**](UserRoutingLanguage.html)| Language |  |
-{: class="table table-striped"}
+| **body** | [**UserRoutingLanguage**](UserRoutingLanguage)| Language |  |
 
 ### Return type
 
-[**UserRoutingLanguage**](UserRoutingLanguage.html)
+[**UserRoutingLanguage**](UserRoutingLanguage)
 
-<a name="patch_user_routinglanguages_bulk"></a>
 
-## [**UserLanguageEntityListing**](UserLanguageEntityListing.html) patch_user_routinglanguages_bulk(user_id, body)
+## patch_user_routinglanguages_bulk
 
+> [**UserLanguageEntityListing**](UserLanguageEntityListing) patch_user_routinglanguages_bulk(user_id, body)
 
 
 Add bulk routing language to user. Max limit 50 languages
@@ -5674,17 +5578,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **user_id** | **str**| User ID |  |
-| **body** | [**list[UserRoutingLanguagePost]**](UserRoutingLanguagePost.html)| Language |  |
-{: class="table table-striped"}
+| **body** | [**list[UserRoutingLanguagePost]**](UserRoutingLanguagePost)| Language |  |
 
 ### Return type
 
-[**UserLanguageEntityListing**](UserLanguageEntityListing.html)
+[**UserLanguageEntityListing**](UserLanguageEntityListing)
 
-<a name="patch_user_routingskills_bulk"></a>
 
-## [**UserSkillEntityListing**](UserSkillEntityListing.html) patch_user_routingskills_bulk(user_id, body)
+## patch_user_routingskills_bulk
 
+> [**UserSkillEntityListing**](UserSkillEntityListing) patch_user_routingskills_bulk(user_id, body)
 
 
 Bulk add routing skills to user
@@ -5725,17 +5628,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **user_id** | **str**| User ID |  |
-| **body** | [**list[UserRoutingSkillPost]**](UserRoutingSkillPost.html)| Skill |  |
-{: class="table table-striped"}
+| **body** | [**list[UserRoutingSkillPost]**](UserRoutingSkillPost)| Skill |  |
 
 ### Return type
 
-[**UserSkillEntityListing**](UserSkillEntityListing.html)
+[**UserSkillEntityListing**](UserSkillEntityListing)
 
-<a name="post_analytics_queues_observations_query"></a>
 
-## [**QueueObservationQueryResponse**](QueueObservationQueryResponse.html) post_analytics_queues_observations_query(body)
+## post_analytics_queues_observations_query
 
+> [**QueueObservationQueryResponse**](QueueObservationQueryResponse) post_analytics_queues_observations_query(body)
 
 
 Query for queue observations
@@ -5774,17 +5676,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**QueueObservationQuery**](QueueObservationQuery.html)| query |  |
-{: class="table table-striped"}
+| **body** | [**QueueObservationQuery**](QueueObservationQuery)| query |  |
 
 ### Return type
 
-[**QueueObservationQueryResponse**](QueueObservationQueryResponse.html)
+[**QueueObservationQueryResponse**](QueueObservationQueryResponse)
 
-<a name="post_analytics_routing_activity_query"></a>
 
-## [**RoutingActivityResponse**](RoutingActivityResponse.html) post_analytics_routing_activity_query(body, page_size=page_size, page_number=page_number)
+## post_analytics_routing_activity_query
 
+> [**RoutingActivityResponse**](RoutingActivityResponse) post_analytics_routing_activity_query(body, page_size=page_size, page_number=page_number)
 
 
 Query for user activity observations
@@ -5825,19 +5726,18 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**RoutingActivityQuery**](RoutingActivityQuery.html)| query |  |
+| **body** | [**RoutingActivityQuery**](RoutingActivityQuery)| query |  |
 | **page_size** | **int**| The desired page size | [optional]  |
 | **page_number** | **int**| The desired page number | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**RoutingActivityResponse**](RoutingActivityResponse.html)
+[**RoutingActivityResponse**](RoutingActivityResponse)
 
-<a name="post_routing_assessments"></a>
 
-## [**BenefitAssessment**](BenefitAssessment.html) post_routing_assessments(body=body)
+## post_routing_assessments
 
+> [**BenefitAssessment**](BenefitAssessment) post_routing_assessments(body=body)
 
 
 Create a benefit assessment.
@@ -5877,17 +5777,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**CreateBenefitAssessmentRequest**](CreateBenefitAssessmentRequest.html)|  | [optional]  |
-{: class="table table-striped"}
+| **body** | [**CreateBenefitAssessmentRequest**](CreateBenefitAssessmentRequest)|  | [optional]  |
 
 ### Return type
 
-[**BenefitAssessment**](BenefitAssessment.html)
+[**BenefitAssessment**](BenefitAssessment)
 
-<a name="post_routing_assessments_jobs"></a>
 
-## [**BenefitAssessmentJob**](BenefitAssessmentJob.html) post_routing_assessments_jobs(body=body)
+## post_routing_assessments_jobs
 
+> [**BenefitAssessmentJob**](BenefitAssessmentJob) post_routing_assessments_jobs(body=body)
 
 
 Create a benefit assessment job.
@@ -5926,17 +5825,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**CreateBenefitAssessmentJobRequest**](CreateBenefitAssessmentJobRequest.html)|  | [optional]  |
-{: class="table table-striped"}
+| **body** | [**CreateBenefitAssessmentJobRequest**](CreateBenefitAssessmentJobRequest)|  | [optional]  |
 
 ### Return type
 
-[**BenefitAssessmentJob**](BenefitAssessmentJob.html)
+[**BenefitAssessmentJob**](BenefitAssessmentJob)
 
-<a name="post_routing_email_domain_routes"></a>
 
-## [**InboundRoute**](InboundRoute.html) post_routing_email_domain_routes(domain_name, body)
+## post_routing_email_domain_routes
 
+> [**InboundRoute**](InboundRoute) post_routing_email_domain_routes(domain_name, body)
 
 
 Create a route
@@ -5977,17 +5875,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **domain_name** | **str**| email domain |  |
-| **body** | [**InboundRoute**](InboundRoute.html)| Route |  |
-{: class="table table-striped"}
+| **body** | [**InboundRoute**](InboundRoute)| Route |  |
 
 ### Return type
 
-[**InboundRoute**](InboundRoute.html)
+[**InboundRoute**](InboundRoute)
 
-<a name="post_routing_email_domain_testconnection"></a>
 
-## [**TestMessage**](TestMessage.html) post_routing_email_domain_testconnection(domain_id, body=body)
+## post_routing_email_domain_testconnection
 
+> [**TestMessage**](TestMessage) post_routing_email_domain_testconnection(domain_id, body=body)
 
 
 Tests the custom SMTP server integration connection set on this domain
@@ -6030,17 +5927,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **domain_id** | **str**| domain ID |  |
-| **body** | [**TestMessage**](TestMessage.html)| TestMessage | [optional]  |
-{: class="table table-striped"}
+| **body** | [**TestMessage**](TestMessage)| TestMessage | [optional]  |
 
 ### Return type
 
-[**TestMessage**](TestMessage.html)
+[**TestMessage**](TestMessage)
 
-<a name="post_routing_email_domains"></a>
 
-## [**InboundDomain**](InboundDomain.html) post_routing_email_domains(body)
+## post_routing_email_domains
 
+> [**InboundDomain**](InboundDomain) post_routing_email_domains(body)
 
 
 Create a domain
@@ -6079,17 +5975,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**InboundDomain**](InboundDomain.html)| Domain |  |
-{: class="table table-striped"}
+| **body** | [**InboundDomain**](InboundDomain)| Domain |  |
 
 ### Return type
 
-[**InboundDomain**](InboundDomain.html)
+[**InboundDomain**](InboundDomain)
 
-<a name="post_routing_email_outbound_domains"></a>
 
-## [**EmailOutboundDomainResult**](EmailOutboundDomainResult.html) post_routing_email_outbound_domains(body)
+## post_routing_email_outbound_domains
 
+> [**EmailOutboundDomainResult**](EmailOutboundDomainResult) post_routing_email_outbound_domains(body)
 
 
 Create a domain
@@ -6128,17 +6023,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**OutboundDomain**](OutboundDomain.html)| Domain |  |
-{: class="table table-striped"}
+| **body** | [**OutboundDomain**](OutboundDomain)| Domain |  |
 
 ### Return type
 
-[**EmailOutboundDomainResult**](EmailOutboundDomainResult.html)
+[**EmailOutboundDomainResult**](EmailOutboundDomainResult)
 
-<a name="post_routing_email_outbound_domains_simulated"></a>
 
-## [**EmailOutboundDomainResult**](EmailOutboundDomainResult.html) post_routing_email_outbound_domains_simulated(body)
+## post_routing_email_outbound_domains_simulated
 
+> [**EmailOutboundDomainResult**](EmailOutboundDomainResult) post_routing_email_outbound_domains_simulated(body)
 
 
 Create a simulated domain
@@ -6177,17 +6071,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**OutboundDomain**](OutboundDomain.html)| Domain |  |
-{: class="table table-striped"}
+| **body** | [**OutboundDomain**](OutboundDomain)| Domain |  |
 
 ### Return type
 
-[**EmailOutboundDomainResult**](EmailOutboundDomainResult.html)
+[**EmailOutboundDomainResult**](EmailOutboundDomainResult)
 
-<a name="post_routing_languages"></a>
 
-## [**Language**](Language.html) post_routing_languages(body)
+## post_routing_languages
 
+> [**Language**](Language) post_routing_languages(body)
 
 
 Create Language
@@ -6226,17 +6119,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**Language**](Language.html)| Language |  |
-{: class="table table-striped"}
+| **body** | [**Language**](Language)| Language |  |
 
 ### Return type
 
-[**Language**](Language.html)
+[**Language**](Language)
 
-<a name="post_routing_predictors"></a>
 
-## [**Predictor**](Predictor.html) post_routing_predictors(body=body)
+## post_routing_predictors
 
+> [**Predictor**](Predictor) post_routing_predictors(body=body)
 
 
 Create a predictor.
@@ -6276,17 +6168,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**CreatePredictorRequest**](CreatePredictorRequest.html)|  | [optional]  |
-{: class="table table-striped"}
+| **body** | [**CreatePredictorRequest**](CreatePredictorRequest)|  | [optional]  |
 
 ### Return type
 
-[**Predictor**](Predictor.html)
+[**Predictor**](Predictor)
 
-<a name="post_routing_queue_members"></a>
 
-##  post_routing_queue_members(queue_id, body, delete=delete)
+## post_routing_queue_members
 
+>  post_routing_queue_members(queue_id, body, delete=delete)
 
 
 Bulk add or delete up to 100 queue members
@@ -6328,19 +6219,21 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **queue_id** | **str**| Queue ID |  |
-| **body** | [**list[WritableEntity]**](WritableEntity.html)| Queue Members |  |
+| **body** | [**list[WritableEntity]**](WritableEntity)| Queue Members |  |
 | **delete** | **bool**| True to delete queue members | [optional] [default to False] |
-{: class="table table-striped"}
 
 ### Return type
 
 void (empty response body)
 
-<a name="post_routing_queue_users"></a>
 
-##  post_routing_queue_users(queue_id, body, delete=delete)
+## post_routing_queue_users
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+>  post_routing_queue_users(queue_id, body, delete=delete)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 DEPRECATED: use POST /routing/queues/{queueId}/members.  Bulk add or delete up to 100 queue members.
 
@@ -6381,18 +6274,17 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **queue_id** | **str**| Queue ID |  |
-| **body** | [**list[WritableEntity]**](WritableEntity.html)| Queue Members |  |
+| **body** | [**list[WritableEntity]**](WritableEntity)| Queue Members |  |
 | **delete** | **bool**| True to delete queue members | [optional] [default to False] |
-{: class="table table-striped"}
 
 ### Return type
 
 void (empty response body)
 
-<a name="post_routing_queue_wrapupcodes"></a>
 
-## [**list[WrapupCode]**](WrapupCode.html) post_routing_queue_wrapupcodes(queue_id, body)
+## post_routing_queue_wrapupcodes
 
+> [**list[WrapupCode]**](WrapupCode) post_routing_queue_wrapupcodes(queue_id, body)
 
 
 Add up to 100 wrap-up codes to a queue
@@ -6433,17 +6325,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **queue_id** | **str**| Queue ID |  |
-| **body** | [**list[WrapUpCodeReference]**](WrapUpCodeReference.html)| List of wrapup codes |  |
-{: class="table table-striped"}
+| **body** | [**list[WrapUpCodeReference]**](WrapUpCodeReference)| List of wrapup codes |  |
 
 ### Return type
 
-[**list[WrapupCode]**](WrapupCode.html)
+[**list[WrapupCode]**](WrapupCode)
 
-<a name="post_routing_queues"></a>
 
-## [**Queue**](Queue.html) post_routing_queues(body)
+## post_routing_queues
 
+> [**Queue**](Queue) post_routing_queues(body)
 
 
 Create a queue
@@ -6482,17 +6373,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**CreateQueueRequest**](CreateQueueRequest.html)| Queue |  |
-{: class="table table-striped"}
+| **body** | [**CreateQueueRequest**](CreateQueueRequest)| Queue |  |
 
 ### Return type
 
-[**Queue**](Queue.html)
+[**Queue**](Queue)
 
-<a name="post_routing_skillgroup_members_divisions"></a>
 
-##  post_routing_skillgroup_members_divisions(skill_group_id, body=body)
+## post_routing_skillgroup_members_divisions
 
+>  post_routing_skillgroup_members_divisions(skill_group_id, body=body)
 
 
 Add or remove member divisions for this skill group.
@@ -6532,17 +6422,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **skill_group_id** | **str**| Skill Group ID |  |
-| **body** | [**SkillGroupMemberDivisions**](SkillGroupMemberDivisions.html)|  | [optional]  |
-{: class="table table-striped"}
+| **body** | [**SkillGroupMemberDivisions**](SkillGroupMemberDivisions)|  | [optional]  |
 
 ### Return type
 
 void (empty response body)
 
-<a name="post_routing_skillgroups"></a>
 
-## [**SkillGroupWithMemberDivisions**](SkillGroupWithMemberDivisions.html) post_routing_skillgroups(body)
+## post_routing_skillgroups
 
+> [**SkillGroupWithMemberDivisions**](SkillGroupWithMemberDivisions) post_routing_skillgroups(body)
 
 
 Create a skill group
@@ -6581,17 +6470,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**SkillGroupWithMemberDivisions**](SkillGroupWithMemberDivisions.html)| Create skill group |  |
-{: class="table table-striped"}
+| **body** | [**SkillGroupWithMemberDivisions**](SkillGroupWithMemberDivisions)| Create skill group |  |
 
 ### Return type
 
-[**SkillGroupWithMemberDivisions**](SkillGroupWithMemberDivisions.html)
+[**SkillGroupWithMemberDivisions**](SkillGroupWithMemberDivisions)
 
-<a name="post_routing_skills"></a>
 
-## [**RoutingSkill**](RoutingSkill.html) post_routing_skills(body)
+## post_routing_skills
 
+> [**RoutingSkill**](RoutingSkill) post_routing_skills(body)
 
 
 Create Skill
@@ -6630,17 +6518,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**RoutingSkill**](RoutingSkill.html)| Skill |  |
-{: class="table table-striped"}
+| **body** | [**RoutingSkill**](RoutingSkill)| Skill |  |
 
 ### Return type
 
-[**RoutingSkill**](RoutingSkill.html)
+[**RoutingSkill**](RoutingSkill)
 
-<a name="post_routing_sms_addresses"></a>
 
-## [**SmsAddress**](SmsAddress.html) post_routing_sms_addresses(body)
+## post_routing_sms_addresses
 
+> [**SmsAddress**](SmsAddress) post_routing_sms_addresses(body)
 
 
 Provision an Address for SMS
@@ -6679,17 +6566,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**SmsAddressProvision**](SmsAddressProvision.html)| SmsAddress |  |
-{: class="table table-striped"}
+| **body** | [**SmsAddressProvision**](SmsAddressProvision)| SmsAddress |  |
 
 ### Return type
 
-[**SmsAddress**](SmsAddress.html)
+[**SmsAddress**](SmsAddress)
 
-<a name="post_routing_sms_phonenumbers"></a>
 
-## [**SmsPhoneNumber**](SmsPhoneNumber.html) post_routing_sms_phonenumbers(body)
+## post_routing_sms_phonenumbers
 
+> [**SmsPhoneNumber**](SmsPhoneNumber) post_routing_sms_phonenumbers(body)
 
 
 Provision a phone number for SMS
@@ -6728,17 +6614,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**SmsPhoneNumberProvision**](SmsPhoneNumberProvision.html)| SmsPhoneNumber |  |
-{: class="table table-striped"}
+| **body** | [**SmsPhoneNumberProvision**](SmsPhoneNumberProvision)| SmsPhoneNumber |  |
 
 ### Return type
 
-[**SmsPhoneNumber**](SmsPhoneNumber.html)
+[**SmsPhoneNumber**](SmsPhoneNumber)
 
-<a name="post_routing_sms_phonenumbers_alphanumeric"></a>
 
-## [**SmsPhoneNumber**](SmsPhoneNumber.html) post_routing_sms_phonenumbers_alphanumeric(body)
+## post_routing_sms_phonenumbers_alphanumeric
 
+> [**SmsPhoneNumber**](SmsPhoneNumber) post_routing_sms_phonenumbers_alphanumeric(body)
 
 
 Provision an alphanumeric number for SMS
@@ -6779,17 +6664,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**SmsAlphanumericProvision**](SmsAlphanumericProvision.html)| SmsPhoneNumber |  |
-{: class="table table-striped"}
+| **body** | [**SmsAlphanumericProvision**](SmsAlphanumericProvision)| SmsPhoneNumber |  |
 
 ### Return type
 
-[**SmsPhoneNumber**](SmsPhoneNumber.html)
+[**SmsPhoneNumber**](SmsPhoneNumber)
 
-<a name="post_routing_sms_phonenumbers_import"></a>
 
-## [**SmsPhoneNumber**](SmsPhoneNumber.html) post_routing_sms_phonenumbers_import(body)
+## post_routing_sms_phonenumbers_import
 
+> [**SmsPhoneNumber**](SmsPhoneNumber) post_routing_sms_phonenumbers_import(body)
 
 
 Imports a phone number for SMS
@@ -6828,17 +6712,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**SmsPhoneNumberImport**](SmsPhoneNumberImport.html)| SmsPhoneNumber |  |
-{: class="table table-striped"}
+| **body** | [**SmsPhoneNumberImport**](SmsPhoneNumberImport)| SmsPhoneNumber |  |
 
 ### Return type
 
-[**SmsPhoneNumber**](SmsPhoneNumber.html)
+[**SmsPhoneNumber**](SmsPhoneNumber)
 
-<a name="post_routing_utilization_labels"></a>
 
-## [**UtilizationLabel**](UtilizationLabel.html) post_routing_utilization_labels(body)
+## post_routing_utilization_labels
 
+> [**UtilizationLabel**](UtilizationLabel) post_routing_utilization_labels(body)
 
 
 Create a utilization label
@@ -6877,17 +6760,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**CreateUtilizationLabelRequest**](CreateUtilizationLabelRequest.html)| UtilizationLabel |  |
-{: class="table table-striped"}
+| **body** | [**CreateUtilizationLabelRequest**](CreateUtilizationLabelRequest)| UtilizationLabel |  |
 
 ### Return type
 
-[**UtilizationLabel**](UtilizationLabel.html)
+[**UtilizationLabel**](UtilizationLabel)
 
-<a name="post_routing_utilization_tags"></a>
 
-## [**UtilizationTag**](UtilizationTag.html) post_routing_utilization_tags(body)
+## post_routing_utilization_tags
 
+> [**UtilizationTag**](UtilizationTag) post_routing_utilization_tags(body)
 
 
 Create an utilization tag
@@ -6928,17 +6810,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**CreateUtilizationTagRequest**](CreateUtilizationTagRequest.html)| UtilizationTag |  |
-{: class="table table-striped"}
+| **body** | [**CreateUtilizationTagRequest**](CreateUtilizationTagRequest)| UtilizationTag |  |
 
 ### Return type
 
-[**UtilizationTag**](UtilizationTag.html)
+[**UtilizationTag**](UtilizationTag)
 
-<a name="post_routing_wrapupcodes"></a>
 
-## [**WrapupCode**](WrapupCode.html) post_routing_wrapupcodes(body)
+## post_routing_wrapupcodes
 
+> [**WrapupCode**](WrapupCode) post_routing_wrapupcodes(body)
 
 
 Create a wrap-up code
@@ -6977,17 +6858,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**WrapupCodeRequest**](WrapupCodeRequest.html)| WrapupCode |  |
-{: class="table table-striped"}
+| **body** | [**WrapupCodeRequest**](WrapupCodeRequest)| WrapupCode |  |
 
 ### Return type
 
-[**WrapupCode**](WrapupCode.html)
+[**WrapupCode**](WrapupCode)
 
-<a name="post_user_routinglanguages"></a>
 
-## [**UserRoutingLanguage**](UserRoutingLanguage.html) post_user_routinglanguages(user_id, body)
+## post_user_routinglanguages
 
+> [**UserRoutingLanguage**](UserRoutingLanguage) post_user_routinglanguages(user_id, body)
 
 
 Add routing language to user
@@ -7029,17 +6909,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **user_id** | **str**| User ID |  |
-| **body** | [**UserRoutingLanguagePost**](UserRoutingLanguagePost.html)| Language |  |
-{: class="table table-striped"}
+| **body** | [**UserRoutingLanguagePost**](UserRoutingLanguagePost)| Language |  |
 
 ### Return type
 
-[**UserRoutingLanguage**](UserRoutingLanguage.html)
+[**UserRoutingLanguage**](UserRoutingLanguage)
 
-<a name="post_user_routingskills"></a>
 
-## [**UserRoutingSkill**](UserRoutingSkill.html) post_user_routingskills(user_id, body)
+## post_user_routingskills
 
+> [**UserRoutingSkill**](UserRoutingSkill) post_user_routingskills(user_id, body)
 
 
 Add routing skill to user
@@ -7080,17 +6959,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **user_id** | **str**| User ID |  |
-| **body** | [**UserRoutingSkillPost**](UserRoutingSkillPost.html)| Skill |  |
-{: class="table table-striped"}
+| **body** | [**UserRoutingSkillPost**](UserRoutingSkillPost)| Skill |  |
 
 ### Return type
 
-[**UserRoutingSkill**](UserRoutingSkill.html)
+[**UserRoutingSkill**](UserRoutingSkill)
 
-<a name="put_routing_directroutingbackup_settings_me"></a>
 
-## [**AgentDirectRoutingBackupSettings**](AgentDirectRoutingBackupSettings.html) put_routing_directroutingbackup_settings_me(body)
+## put_routing_directroutingbackup_settings_me
 
+> [**AgentDirectRoutingBackupSettings**](AgentDirectRoutingBackupSettings) put_routing_directroutingbackup_settings_me(body)
 
 
 Update the user's Direct Routing Backup settings.
@@ -7129,17 +7007,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**AgentDirectRoutingBackupSettings**](AgentDirectRoutingBackupSettings.html)| directRoutingBackup |  |
-{: class="table table-striped"}
+| **body** | [**AgentDirectRoutingBackupSettings**](AgentDirectRoutingBackupSettings)| directRoutingBackup |  |
 
 ### Return type
 
-[**AgentDirectRoutingBackupSettings**](AgentDirectRoutingBackupSettings.html)
+[**AgentDirectRoutingBackupSettings**](AgentDirectRoutingBackupSettings)
 
-<a name="put_routing_email_domain_route"></a>
 
-## [**InboundRoute**](InboundRoute.html) put_routing_email_domain_route(domain_name, route_id, body)
+## put_routing_email_domain_route
 
+> [**InboundRoute**](InboundRoute) put_routing_email_domain_route(domain_name, route_id, body)
 
 
 Update a route
@@ -7182,17 +7059,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **domain_name** | **str**| email domain |  |
 | **route_id** | **str**| route ID |  |
-| **body** | [**InboundRoute**](InboundRoute.html)| Route |  |
-{: class="table table-striped"}
+| **body** | [**InboundRoute**](InboundRoute)| Route |  |
 
 ### Return type
 
-[**InboundRoute**](InboundRoute.html)
+[**InboundRoute**](InboundRoute)
 
-<a name="put_routing_email_outbound_domain_activation"></a>
 
-## [**EmailOutboundDomainResult**](EmailOutboundDomainResult.html) put_routing_email_outbound_domain_activation(domain_id)
+## put_routing_email_outbound_domain_activation
 
+> [**EmailOutboundDomainResult**](EmailOutboundDomainResult) put_routing_email_outbound_domain_activation(domain_id)
 
 
 Request an activation status (cname + dkim) update of an outbound domain
@@ -7232,16 +7108,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **domain_id** | **str**| domain ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**EmailOutboundDomainResult**](EmailOutboundDomainResult.html)
+[**EmailOutboundDomainResult**](EmailOutboundDomainResult)
 
-<a name="put_routing_message_recipient"></a>
 
-## [**Recipient**](Recipient.html) put_routing_message_recipient(recipient_id, body)
+## put_routing_message_recipient
 
+> [**Recipient**](Recipient) put_routing_message_recipient(recipient_id, body)
 
 
 Update a recipient
@@ -7282,17 +7157,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **recipient_id** | **str**| Recipient ID |  |
-| **body** | [**RecipientRequest**](RecipientRequest.html)| Recipient |  |
-{: class="table table-striped"}
+| **body** | [**RecipientRequest**](RecipientRequest)| Recipient |  |
 
 ### Return type
 
-[**Recipient**](Recipient.html)
+[**Recipient**](Recipient)
 
-<a name="put_routing_queue"></a>
 
-## [**Queue**](Queue.html) put_routing_queue(queue_id, body)
+## put_routing_queue
 
+> [**Queue**](Queue) put_routing_queue(queue_id, body)
 
 
 Update a queue
@@ -7333,17 +7207,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **queue_id** | **str**| Queue ID |  |
-| **body** | [**QueueRequest**](QueueRequest.html)| Queue |  |
-{: class="table table-striped"}
+| **body** | [**QueueRequest**](QueueRequest)| Queue |  |
 
 ### Return type
 
-[**Queue**](Queue.html)
+[**Queue**](Queue)
 
-<a name="put_routing_settings"></a>
 
-## [**RoutingSettings**](RoutingSettings.html) put_routing_settings(body)
+## put_routing_settings
 
+> [**RoutingSettings**](RoutingSettings) put_routing_settings(body)
 
 
 Update an organization's routing settings
@@ -7382,17 +7255,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**RoutingSettings**](RoutingSettings.html)| Organization Settings |  |
-{: class="table table-striped"}
+| **body** | [**RoutingSettings**](RoutingSettings)| Organization Settings |  |
 
 ### Return type
 
-[**RoutingSettings**](RoutingSettings.html)
+[**RoutingSettings**](RoutingSettings)
 
-<a name="put_routing_settings_transcription"></a>
 
-## [**TranscriptionSettings**](TranscriptionSettings.html) put_routing_settings_transcription(body)
+## put_routing_settings_transcription
 
+> [**TranscriptionSettings**](TranscriptionSettings) put_routing_settings_transcription(body)
 
 
 Update Transcription Settings
@@ -7431,17 +7303,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**TranscriptionSettings**](TranscriptionSettings.html)| Organization Settings |  |
-{: class="table table-striped"}
+| **body** | [**TranscriptionSettings**](TranscriptionSettings)| Organization Settings |  |
 
 ### Return type
 
-[**TranscriptionSettings**](TranscriptionSettings.html)
+[**TranscriptionSettings**](TranscriptionSettings)
 
-<a name="put_routing_sms_phonenumber"></a>
 
-## [**SmsPhoneNumber**](SmsPhoneNumber.html) put_routing_sms_phonenumber(address_id, body)
+## put_routing_sms_phonenumber
 
+> [**SmsPhoneNumber**](SmsPhoneNumber) put_routing_sms_phonenumber(address_id, body)
 
 
 Update a phone number provisioned for SMS.
@@ -7482,17 +7353,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **address_id** | **str**| Address ID |  |
-| **body** | [**SmsPhoneNumber**](SmsPhoneNumber.html)| SmsPhoneNumber |  |
-{: class="table table-striped"}
+| **body** | [**SmsPhoneNumber**](SmsPhoneNumber)| SmsPhoneNumber |  |
 
 ### Return type
 
-[**SmsPhoneNumber**](SmsPhoneNumber.html)
+[**SmsPhoneNumber**](SmsPhoneNumber)
 
-<a name="put_routing_user_directroutingbackup_settings"></a>
 
-## [**AgentDirectRoutingBackupSettings**](AgentDirectRoutingBackupSettings.html) put_routing_user_directroutingbackup_settings(user_id, body)
+## put_routing_user_directroutingbackup_settings
 
+> [**AgentDirectRoutingBackupSettings**](AgentDirectRoutingBackupSettings) put_routing_user_directroutingbackup_settings(user_id, body)
 
 
 Update the user's Direct Routing Backup settings.
@@ -7533,17 +7403,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **user_id** | **str**| User ID |  |
-| **body** | [**AgentDirectRoutingBackupSettings**](AgentDirectRoutingBackupSettings.html)| directRoutingBackup |  |
-{: class="table table-striped"}
+| **body** | [**AgentDirectRoutingBackupSettings**](AgentDirectRoutingBackupSettings)| directRoutingBackup |  |
 
 ### Return type
 
-[**AgentDirectRoutingBackupSettings**](AgentDirectRoutingBackupSettings.html)
+[**AgentDirectRoutingBackupSettings**](AgentDirectRoutingBackupSettings)
 
-<a name="put_routing_user_utilization"></a>
 
-## [**AgentMaxUtilizationResponse**](AgentMaxUtilizationResponse.html) put_routing_user_utilization(user_id, body)
+## put_routing_user_utilization
 
+> [**AgentMaxUtilizationResponse**](AgentMaxUtilizationResponse) put_routing_user_utilization(user_id, body)
 
 
 Update the user's max utilization settings.  Include only those media types requiring custom configuration.
@@ -7584,17 +7453,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **user_id** | **str**| User ID |  |
-| **body** | [**UtilizationRequest**](UtilizationRequest.html)| utilization |  |
-{: class="table table-striped"}
+| **body** | [**UtilizationRequest**](UtilizationRequest)| utilization |  |
 
 ### Return type
 
-[**AgentMaxUtilizationResponse**](AgentMaxUtilizationResponse.html)
+[**AgentMaxUtilizationResponse**](AgentMaxUtilizationResponse)
 
-<a name="put_routing_utilization"></a>
 
-## [**UtilizationResponse**](UtilizationResponse.html) put_routing_utilization(body)
+## put_routing_utilization
 
+> [**UtilizationResponse**](UtilizationResponse) put_routing_utilization(body)
 
 
 Update the organization-wide max utilization settings.  Include only those media types requiring custom configuration.
@@ -7633,17 +7501,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**UtilizationRequest**](UtilizationRequest.html)| utilization |  |
-{: class="table table-striped"}
+| **body** | [**UtilizationRequest**](UtilizationRequest)| utilization |  |
 
 ### Return type
 
-[**UtilizationResponse**](UtilizationResponse.html)
+[**UtilizationResponse**](UtilizationResponse)
 
-<a name="put_routing_utilization_label"></a>
 
-## [**UtilizationLabel**](UtilizationLabel.html) put_routing_utilization_label(label_id, body)
+## put_routing_utilization_label
 
+> [**UtilizationLabel**](UtilizationLabel) put_routing_utilization_label(label_id, body)
 
 
 Update a utilization label
@@ -7684,17 +7551,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **label_id** | **str**| Utilization Label ID |  |
-| **body** | [**UpdateUtilizationLabelRequest**](UpdateUtilizationLabelRequest.html)| UtilizationLabel |  |
-{: class="table table-striped"}
+| **body** | [**UpdateUtilizationLabelRequest**](UpdateUtilizationLabelRequest)| UtilizationLabel |  |
 
 ### Return type
 
-[**UtilizationLabel**](UtilizationLabel.html)
+[**UtilizationLabel**](UtilizationLabel)
 
-<a name="put_routing_wrapupcode"></a>
 
-## [**WrapupCode**](WrapupCode.html) put_routing_wrapupcode(code_id, body)
+## put_routing_wrapupcode
 
+> [**WrapupCode**](WrapupCode) put_routing_wrapupcode(code_id, body)
 
 
 Update wrap-up code
@@ -7735,17 +7601,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **code_id** | **str**| Wrapup Code ID |  |
-| **body** | [**WrapupCodeRequest**](WrapupCodeRequest.html)| WrapupCode |  |
-{: class="table table-striped"}
+| **body** | [**WrapupCodeRequest**](WrapupCodeRequest)| WrapupCode |  |
 
 ### Return type
 
-[**WrapupCode**](WrapupCode.html)
+[**WrapupCode**](WrapupCode)
 
-<a name="put_user_routingskill"></a>
 
-## [**UserRoutingSkill**](UserRoutingSkill.html) put_user_routingskill(user_id, skill_id, body)
+## put_user_routingskill
 
+> [**UserRoutingSkill**](UserRoutingSkill) put_user_routingskill(user_id, skill_id, body)
 
 
 Update routing skill proficiency or state.
@@ -7788,17 +7653,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **user_id** | **str**| User ID |  |
 | **skill_id** | **str**| skillId |  |
-| **body** | [**UserRoutingSkill**](UserRoutingSkill.html)| Skill |  |
-{: class="table table-striped"}
+| **body** | [**UserRoutingSkill**](UserRoutingSkill)| Skill |  |
 
 ### Return type
 
-[**UserRoutingSkill**](UserRoutingSkill.html)
+[**UserRoutingSkill**](UserRoutingSkill)
 
-<a name="put_user_routingskills_bulk"></a>
 
-## [**UserSkillEntityListing**](UserSkillEntityListing.html) put_user_routingskills_bulk(user_id, body)
+## put_user_routingskills_bulk
 
+> [**UserSkillEntityListing**](UserSkillEntityListing) put_user_routingskills_bulk(user_id, body)
 
 
 Replace all routing skills assigned to a user
@@ -7839,10 +7703,11 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **user_id** | **str**| User ID |  |
-| **body** | [**list[UserRoutingSkillPost]**](UserRoutingSkillPost.html)| Skill |  |
-{: class="table table-striped"}
+| **body** | [**list[UserRoutingSkillPost]**](UserRoutingSkillPost)| Skill |  |
 
 ### Return type
 
-[**UserSkillEntityListing**](UserSkillEntityListing.html)
+[**UserSkillEntityListing**](UserSkillEntityListing)
 
+
+_PureCloudPlatformClientV2 211.1.0_

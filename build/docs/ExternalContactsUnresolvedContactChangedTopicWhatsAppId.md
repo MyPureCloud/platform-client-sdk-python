@@ -1,14 +1,14 @@
----
-title: ExternalContactsUnresolvedContactChangedTopicWhatsAppId
----
+# ExternalContactsUnresolvedContactChangedTopicWhatsAppId
+
 ## ExternalContactsUnresolvedContactChangedTopicWhatsAppId
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **phone_number** | [**ExternalContactsUnresolvedContactChangedTopicPhoneNumber**](ExternalContactsUnresolvedContactChangedTopicPhoneNumber.html) |  | [optional] |
-| **display_name** | **str** |  | [optional] |
-{: class="table table-striped"}
+| **phone_number** | [ExternalContactsUnresolvedContactChangedTopicPhoneNumber](ExternalContactsUnresolvedContactChangedTopicPhoneNumber) |  | [optional] |
+| **display_name** | str |  | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

@@ -1,13 +1,13 @@
----
-title: WhatsAppAvailablePhoneNumberDetailsListing
----
+# WhatsAppAvailablePhoneNumberDetailsListing
+
 ## WhatsAppAvailablePhoneNumberDetailsListing
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **entities** | [**list[WhatsAppAvailablePhoneNumberDetails]**](WhatsAppAvailablePhoneNumberDetails.html) |  | [optional] |
-{: class="table table-striped"}
+| **entities** | [list[WhatsAppAvailablePhoneNumberDetails]](WhatsAppAvailablePhoneNumberDetails) |  | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

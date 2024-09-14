@@ -1,15 +1,15 @@
----
-title: WfmScheduleActivity
----
+# WfmScheduleActivity
+
 ## WfmScheduleActivity
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **user_reference** | [**UserReference**](UserReference.html) | ID of user that the schedule is for | [optional] |
-| **activities** | [**list[ScheduleActivity]**](ScheduleActivity.html) | List of user&#39;s scheduled activities | [optional] |
-| **full_day_time_off_markers** | [**list[FullDayTimeOffMarker]**](FullDayTimeOffMarker.html) | List of user&#39;s days off | [optional] |
-{: class="table table-striped"}
+| **user_reference** | [UserReference](UserReference) | ID of user that the schedule is for | [optional] |
+| **activities** | [list[ScheduleActivity]](ScheduleActivity) | List of user&#39;s scheduled activities | [optional] |
+| **full_day_time_off_markers** | [list[FullDayTimeOffMarker]](FullDayTimeOffMarker) | List of user&#39;s days off | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

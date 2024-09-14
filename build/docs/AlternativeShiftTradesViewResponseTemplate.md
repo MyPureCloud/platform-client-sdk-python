@@ -1,13 +1,13 @@
----
-title: AlternativeShiftTradesViewResponseTemplate
----
+# AlternativeShiftTradesViewResponseTemplate
+
 ## AlternativeShiftTradesViewResponseTemplate
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **entities** | [**list[AlternativeShiftTradeResponse]**](AlternativeShiftTradeResponse.html) |  | [optional] |
-{: class="table table-striped"}
+| **entities** | [list[AlternativeShiftTradeResponse]](AlternativeShiftTradeResponse) |  | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

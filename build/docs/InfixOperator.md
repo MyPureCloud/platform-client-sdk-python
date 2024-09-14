@@ -1,14 +1,14 @@
----
-title: InfixOperator
----
+# InfixOperator
+
 ## InfixOperator
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **operator_type** | **str** | The logical operation that is applied on the operand against the following operand | |
-| **operator_position** | [**OperatorPosition**](OperatorPosition.html) | Dictates when the following operand should occur relative to current operand | [optional] |
-{: class="table table-striped"}
+| **operator_type** | str | The logical operation that is applied on the operand against the following operand | |
+| **operator_position** | [OperatorPosition](OperatorPosition) | Dictates when the following operand should occur relative to current operand | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

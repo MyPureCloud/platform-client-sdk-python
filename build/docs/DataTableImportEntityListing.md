@@ -1,17 +1,17 @@
----
-title: DataTableImportEntityListing
----
+# DataTableImportEntityListing
+
 ## DataTableImportEntityListing
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **entities** | [**list[DataTableImportJob]**](DataTableImportJob.html) |  | [optional] |
-| **page_size** | **int** |  | [optional] |
-| **page_number** | **int** |  | [optional] |
-| **total** | **int** |  | [optional] |
-| **page_count** | **int** |  | [optional] |
-{: class="table table-striped"}
+| **entities** | [list[DataTableImportJob]](DataTableImportJob) |  | [optional] |
+| **page_size** | int |  | [optional] |
+| **page_number** | int |  | [optional] |
+| **total** | int |  | [optional] |
+| **page_count** | int |  | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

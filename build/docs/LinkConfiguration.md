@@ -1,13 +1,13 @@
----
-title: LinkConfiguration
----
+# LinkConfiguration
+
 ## LinkConfiguration
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **uri_template** | **str** |  | [optional] |
-{: class="table table-striped"}
+| **uri_template** | str |  | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

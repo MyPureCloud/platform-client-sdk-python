@@ -1,14 +1,14 @@
----
-title: SearchSort
----
+# SearchSort
+
 ## SearchSort
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **sort_order** | **str** | The sort order for results | [optional] |
-| **sort_by** | **str** | The field in the resource that you want to sort the results by | [optional] |
-{: class="table table-striped"}
+| **sort_order** | str | The sort order for results | [optional] |
+| **sort_by** | str | The field in the resource that you want to sort the results by | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

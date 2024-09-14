@@ -1,13 +1,13 @@
----
-title: TextMessageListing
----
+# TextMessageListing
+
 ## TextMessageListing
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **entities** | [**list[MessageData]**](MessageData.html) |  | [optional] |
-{: class="table table-striped"}
+| **entities** | [list[MessageData]](MessageData) |  | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

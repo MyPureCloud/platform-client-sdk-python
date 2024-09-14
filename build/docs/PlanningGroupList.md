@@ -1,14 +1,14 @@
----
-title: PlanningGroupList
----
+# PlanningGroupList
+
 ## PlanningGroupList
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **entities** | [**list[PlanningGroup]**](PlanningGroup.html) |  | [optional] |
-| **metadata** | [**WfmVersionedEntityMetadata**](WfmVersionedEntityMetadata.html) | Version metadata for the planning groups | [optional] |
-{: class="table table-striped"}
+| **entities** | [list[PlanningGroup]](PlanningGroup) |  | [optional] |
+| **metadata** | [WfmVersionedEntityMetadata](WfmVersionedEntityMetadata) | Version metadata for the planning groups | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

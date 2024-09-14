@@ -1,14 +1,14 @@
----
-title: ResultCounters
----
+# ResultCounters
+
 ## ResultCounters
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **success** | **int** |  | [optional] |
-| **failure** | **int** |  | [optional] |
-{: class="table table-striped"}
+| **success** | int |  | [optional] |
+| **failure** | int |  | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

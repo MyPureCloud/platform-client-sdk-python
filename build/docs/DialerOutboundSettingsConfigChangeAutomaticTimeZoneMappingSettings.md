@@ -1,13 +1,13 @@
----
-title: DialerOutboundSettingsConfigChangeAutomaticTimeZoneMappingSettings
----
+# DialerOutboundSettingsConfigChangeAutomaticTimeZoneMappingSettings
+
 ## DialerOutboundSettingsConfigChangeAutomaticTimeZoneMappingSettings
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **callable_windows** | [**list[DialerOutboundSettingsConfigChangeCallableWindow]**](DialerOutboundSettingsConfigChangeCallableWindow.html) | The time intervals to use for automatic time zone mapping | [optional] |
-{: class="table table-striped"}
+| **callable_windows** | [list[DialerOutboundSettingsConfigChangeCallableWindow]](DialerOutboundSettingsConfigChangeCallableWindow) | The time intervals to use for automatic time zone mapping | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

@@ -1,13 +1,13 @@
----
-title: GeneralTopicsEntityListing
----
+# GeneralTopicsEntityListing
+
 ## GeneralTopicsEntityListing
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **entities** | [**list[GeneralTopic]**](GeneralTopic.html) |  | [optional] |
-{: class="table table-striped"}
+| **entities** | [list[GeneralTopic]](GeneralTopic) |  | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

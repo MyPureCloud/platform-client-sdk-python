@@ -1,6 +1,4 @@
----
-title: LanguagesApi
----
+# LanguagesApi
 
 ## PureCloudPlatformClientV2.LanguagesApi
 
@@ -8,21 +6,24 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 |Method | Description|
 |------------- | -------------|
-|[**delete_language**](LanguagesApi.html#delete_language) | Delete Language (Deprecated)|
-|[**get_language**](LanguagesApi.html#get_language) | Get Language (Deprecated)|
-|[**get_languages**](LanguagesApi.html#get_languages) | Get the list of supported languages. (Deprecated)|
-|[**get_languages_translations**](LanguagesApi.html#get_languages_translations) | Get all available languages for translation|
-|[**get_languages_translations_builtin**](LanguagesApi.html#get_languages_translations_builtin) | Get the builtin translation for a language|
-|[**get_languages_translations_organization**](LanguagesApi.html#get_languages_translations_organization) | Get effective translation for an organization by language|
-|[**get_languages_translations_user**](LanguagesApi.html#get_languages_translations_user) | Get effective language translation for a user|
-|[**post_languages**](LanguagesApi.html#post_languages) | Create Language (Deprecated)|
-{: class="table table-striped"}
+|[**delete_language**](#delete_language) | Delete Language (Deprecated)|
+|[**get_language**](#get_language) | Get Language (Deprecated)|
+|[**get_languages**](#get_languages) | Get the list of supported languages. (Deprecated)|
+|[**get_languages_translations**](#get_languages_translations) | Get all available languages for translation|
+|[**get_languages_translations_builtin**](#get_languages_translations_builtin) | Get the builtin translation for a language|
+|[**get_languages_translations_organization**](#get_languages_translations_organization) | Get effective translation for an organization by language|
+|[**get_languages_translations_user**](#get_languages_translations_user) | Get effective language translation for a user|
+|[**post_languages**](#post_languages) | Create Language (Deprecated)|
 
-<a name="delete_language"></a>
 
-##  delete_language(language_id)
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+## delete_language
+
+>  delete_language(language_id)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 Delete Language (Deprecated)
 
@@ -62,17 +63,19 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **language_id** | **str**| Language ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (empty response body)
 
-<a name="get_language"></a>
 
-## [**Language**](Language.html) get_language(language_id)
+## get_language
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+> [**Language**](Language) get_language(language_id)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 Get Language (Deprecated)
 
@@ -113,17 +116,19 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **language_id** | **str**| Language ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**Language**](Language.html)
+[**Language**](Language)
 
-<a name="get_languages"></a>
 
-## [**LanguageEntityListing**](LanguageEntityListing.html) get_languages(page_size=page_size, page_number=page_number, sort_order=sort_order, name=name)
+## get_languages
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+> [**LanguageEntityListing**](LanguageEntityListing) get_languages(page_size=page_size, page_number=page_number, sort_order=sort_order, name=name)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 Get the list of supported languages. (Deprecated)
 
@@ -170,16 +175,15 @@ except ApiException as e:
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **sort_order** | **str**| Ascending or descending sort order | [optional] [default to &#39;ASC&#39;]<br />**Values**: ascending, descending |
 | **name** | **str**| Name | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**LanguageEntityListing**](LanguageEntityListing.html)
+[**LanguageEntityListing**](LanguageEntityListing)
 
-<a name="get_languages_translations"></a>
 
-## [**AvailableTranslations**](AvailableTranslations.html) get_languages_translations()
+## get_languages_translations
 
+> [**AvailableTranslations**](AvailableTranslations) get_languages_translations()
 
 
 Get all available languages for translation
@@ -215,15 +219,14 @@ except ApiException as e:
 
 This endpoint does not need any parameters.
 
-
 ### Return type
 
-[**AvailableTranslations**](AvailableTranslations.html)
+[**AvailableTranslations**](AvailableTranslations)
 
-<a name="get_languages_translations_builtin"></a>
 
-## dict(str, object)** get_languages_translations_builtin(language)
+## get_languages_translations_builtin
 
+> dict(str, object)** get_languages_translations_builtin(language)
 
 
 Get the builtin translation for a language
@@ -262,16 +265,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **language** | **str**| The language of the builtin translation to retrieve |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **dict(str, object)**
 
-<a name="get_languages_translations_organization"></a>
 
-## dict(str, object)** get_languages_translations_organization(language)
+## get_languages_translations_organization
 
+> dict(str, object)** get_languages_translations_organization(language)
 
 
 Get effective translation for an organization by language
@@ -310,16 +312,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **language** | **str**| The language of the translation to retrieve for the organization |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **dict(str, object)**
 
-<a name="get_languages_translations_user"></a>
 
-## dict(str, object)** get_languages_translations_user(user_id)
+## get_languages_translations_user
 
+> dict(str, object)** get_languages_translations_user(user_id)
 
 
 Get effective language translation for a user
@@ -358,17 +359,19 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **user_id** | **str**| The user id |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **dict(str, object)**
 
-<a name="post_languages"></a>
 
-## [**Language**](Language.html) post_languages(body)
+## post_languages
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+> [**Language**](Language) post_languages(body)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 Create Language (Deprecated)
 
@@ -408,10 +411,11 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**Language**](Language.html)| Language |  |
-{: class="table table-striped"}
+| **body** | [**Language**](Language)| Language |  |
 
 ### Return type
 
-[**Language**](Language.html)
+[**Language**](Language)
 
+
+_PureCloudPlatformClientV2 211.1.0_

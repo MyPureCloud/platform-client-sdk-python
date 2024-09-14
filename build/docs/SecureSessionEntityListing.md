@@ -1,13 +1,13 @@
----
-title: SecureSessionEntityListing
----
+# SecureSessionEntityListing
+
 ## SecureSessionEntityListing
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **entities** | [**list[SecureSession]**](SecureSession.html) |  | [optional] |
-{: class="table table-striped"}
+| **entities** | [list[SecureSession]](SecureSession) |  | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

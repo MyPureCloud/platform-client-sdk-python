@@ -61,7 +61,7 @@ class BuActivitySettingsRequest(object):
     def default_activity_code_id(self) -> str:
         """
         Gets the default_activity_code_id of this BuActivitySettingsRequest.
-        Default Activity Code ID settings
+        The ID of the activity code. This is the activity code that will be used by default for agent development activities added to the schedule
 
         :return: The default_activity_code_id of this BuActivitySettingsRequest.
         :rtype: str
@@ -72,7 +72,7 @@ class BuActivitySettingsRequest(object):
     def default_activity_code_id(self, default_activity_code_id: str) -> None:
         """
         Sets the default_activity_code_id of this BuActivitySettingsRequest.
-        Default Activity Code ID settings
+        The ID of the activity code. This is the activity code that will be used by default for agent development activities added to the schedule
 
         :param default_activity_code_id: The default_activity_code_id of this BuActivitySettingsRequest.
         :type: str

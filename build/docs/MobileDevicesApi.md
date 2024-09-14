@@ -1,6 +1,4 @@
----
-title: MobileDevicesApi
----
+# MobileDevicesApi
 
 ## PureCloudPlatformClientV2.MobileDevicesApi
 
@@ -8,17 +6,17 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 |Method | Description|
 |------------- | -------------|
-|[**delete_mobiledevice**](MobileDevicesApi.html#delete_mobiledevice) | Delete device|
-|[**get_mobiledevice**](MobileDevicesApi.html#get_mobiledevice) | Get device|
-|[**get_mobiledevices**](MobileDevicesApi.html#get_mobiledevices) | Get a list of all devices.|
-|[**post_mobiledevices**](MobileDevicesApi.html#post_mobiledevices) | Create User device|
-|[**put_mobiledevice**](MobileDevicesApi.html#put_mobiledevice) | Update device|
-{: class="table table-striped"}
+|[**delete_mobiledevice**](#delete_mobiledevice) | Delete device|
+|[**get_mobiledevice**](#get_mobiledevice) | Get device|
+|[**get_mobiledevices**](#get_mobiledevices) | Get a list of all devices.|
+|[**post_mobiledevices**](#post_mobiledevices) | Create User device|
+|[**put_mobiledevice**](#put_mobiledevice) | Update device|
 
-<a name="delete_mobiledevice"></a>
 
-##  delete_mobiledevice(device_id)
 
+## delete_mobiledevice
+
+>  delete_mobiledevice(device_id)
 
 
 Delete device
@@ -56,16 +54,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **device_id** | **str**| Device ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (empty response body)
 
-<a name="get_mobiledevice"></a>
 
-## [**UserDevice**](UserDevice.html) get_mobiledevice(device_id)
+## get_mobiledevice
 
+> [**UserDevice**](UserDevice) get_mobiledevice(device_id)
 
 
 Get device
@@ -104,16 +101,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **device_id** | **str**| Device ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**UserDevice**](UserDevice.html)
+[**UserDevice**](UserDevice)
 
-<a name="get_mobiledevices"></a>
 
-## [**DirectoryUserDevicesListing**](DirectoryUserDevicesListing.html) get_mobiledevices(page_size=page_size, page_number=page_number, sort_order=sort_order)
+## get_mobiledevices
 
+> [**DirectoryUserDevicesListing**](DirectoryUserDevicesListing) get_mobiledevices(page_size=page_size, page_number=page_number, sort_order=sort_order)
 
 
 Get a list of all devices.
@@ -156,16 +152,15 @@ except ApiException as e:
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **sort_order** | **str**| Ascending or descending sort order | [optional] [default to &#39;ascending&#39;]<br />**Values**: ascending, descending |
-{: class="table table-striped"}
 
 ### Return type
 
-[**DirectoryUserDevicesListing**](DirectoryUserDevicesListing.html)
+[**DirectoryUserDevicesListing**](DirectoryUserDevicesListing)
 
-<a name="post_mobiledevices"></a>
 
-## [**UserDevice**](UserDevice.html) post_mobiledevices(body)
+## post_mobiledevices
 
+> [**UserDevice**](UserDevice) post_mobiledevices(body)
 
 
 Create User device
@@ -203,17 +198,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**UserDevice**](UserDevice.html)| Device |  |
-{: class="table table-striped"}
+| **body** | [**UserDevice**](UserDevice)| Device |  |
 
 ### Return type
 
-[**UserDevice**](UserDevice.html)
+[**UserDevice**](UserDevice)
 
-<a name="put_mobiledevice"></a>
 
-## [**UserDevice**](UserDevice.html) put_mobiledevice(device_id, body=body)
+## put_mobiledevice
 
+> [**UserDevice**](UserDevice) put_mobiledevice(device_id, body=body)
 
 
 Update device
@@ -253,10 +247,11 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **device_id** | **str**| Device ID |  |
-| **body** | [**UserDevice**](UserDevice.html)| Device | [optional]  |
-{: class="table table-striped"}
+| **body** | [**UserDevice**](UserDevice)| Device | [optional]  |
 
 ### Return type
 
-[**UserDevice**](UserDevice.html)
+[**UserDevice**](UserDevice)
 
+
+_PureCloudPlatformClientV2 211.1.0_

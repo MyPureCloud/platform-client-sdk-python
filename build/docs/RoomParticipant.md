@@ -1,13 +1,13 @@
----
-title: RoomParticipant
----
+# RoomParticipant
+
 ## RoomParticipant
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **participant_jid** | **str** | participantJid | |
-{: class="table table-striped"}
+| **participant_jid** | str | participantJid | |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

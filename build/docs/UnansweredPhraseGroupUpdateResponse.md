@@ -1,14 +1,14 @@
----
-title: UnansweredPhraseGroupUpdateResponse
----
+# UnansweredPhraseGroupUpdateResponse
+
 ## UnansweredPhraseGroupUpdateResponse
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **phrase_associations** | [**list[PhraseAssociations]**](PhraseAssociations.html) | List of phrases and documents linked in the patch request | [optional] |
-| **group** | [**UnansweredGroup**](UnansweredGroup.html) | Knowledge base unanswered group response | [optional] |
-{: class="table table-striped"}
+| **phrase_associations** | [list[PhraseAssociations]](PhraseAssociations) | List of phrases and documents linked in the patch request | [optional] |
+| **group** | [UnansweredGroup](UnansweredGroup) | Knowledge base unanswered group response | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

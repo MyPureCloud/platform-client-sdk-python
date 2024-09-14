@@ -1,6 +1,4 @@
----
-title: ScriptsApi
----
+# ScriptsApi
 
 ## PureCloudPlatformClientV2.ScriptsApi
 
@@ -8,26 +6,26 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 |Method | Description|
 |------------- | -------------|
-|[**get_script**](ScriptsApi.html#get_script) | Get a script|
-|[**get_script_page**](ScriptsApi.html#get_script_page) | Get a page|
-|[**get_script_pages**](ScriptsApi.html#get_script_pages) | Get the list of pages|
-|[**get_scripts**](ScriptsApi.html#get_scripts) | Get the list of scripts|
-|[**get_scripts_divisionviews**](ScriptsApi.html#get_scripts_divisionviews) | Get the metadata for a list of scripts|
-|[**get_scripts_published**](ScriptsApi.html#get_scripts_published) | Get the published scripts.|
-|[**get_scripts_published_divisionviews**](ScriptsApi.html#get_scripts_published_divisionviews) | Get the published scripts metadata.|
-|[**get_scripts_published_script_id**](ScriptsApi.html#get_scripts_published_script_id) | Get the published script.|
-|[**get_scripts_published_script_id_page**](ScriptsApi.html#get_scripts_published_script_id_page) | Get the published page.|
-|[**get_scripts_published_script_id_pages**](ScriptsApi.html#get_scripts_published_script_id_pages) | Get the list of published pages|
-|[**get_scripts_published_script_id_variables**](ScriptsApi.html#get_scripts_published_script_id_variables) | Get the published variables|
-|[**get_scripts_upload_status**](ScriptsApi.html#get_scripts_upload_status) | Get the upload status of an imported script|
-|[**post_script_export**](ScriptsApi.html#post_script_export) | Export a script via download service.|
-|[**post_scripts_published**](ScriptsApi.html#post_scripts_published) | Publish a script.|
-{: class="table table-striped"}
+|[**get_script**](#get_script) | Get a script|
+|[**get_script_page**](#get_script_page) | Get a page|
+|[**get_script_pages**](#get_script_pages) | Get the list of pages|
+|[**get_scripts**](#get_scripts) | Get the list of scripts|
+|[**get_scripts_divisionviews**](#get_scripts_divisionviews) | Get the metadata for a list of scripts|
+|[**get_scripts_published**](#get_scripts_published) | Get the published scripts.|
+|[**get_scripts_published_divisionviews**](#get_scripts_published_divisionviews) | Get the published scripts metadata.|
+|[**get_scripts_published_script_id**](#get_scripts_published_script_id) | Get the published script.|
+|[**get_scripts_published_script_id_page**](#get_scripts_published_script_id_page) | Get the published page.|
+|[**get_scripts_published_script_id_pages**](#get_scripts_published_script_id_pages) | Get the list of published pages|
+|[**get_scripts_published_script_id_variables**](#get_scripts_published_script_id_variables) | Get the published variables|
+|[**get_scripts_upload_status**](#get_scripts_upload_status) | Get the upload status of an imported script|
+|[**post_script_export**](#post_script_export) | Export a script via download service.|
+|[**post_scripts_published**](#post_scripts_published) | Publish a script.|
 
-<a name="get_script"></a>
 
-## [**Script**](Script.html) get_script(script_id)
 
+## get_script
+
+> [**Script**](Script) get_script(script_id)
 
 
 Get a script
@@ -67,16 +65,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **script_id** | **str**| Script ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**Script**](Script.html)
+[**Script**](Script)
 
-<a name="get_script_page"></a>
 
-## [**Page**](Page.html) get_script_page(script_id, page_id, script_data_version=script_data_version)
+## get_script_page
 
+> [**Page**](Page) get_script_page(script_id, page_id, script_data_version=script_data_version)
 
 
 Get a page
@@ -120,16 +117,15 @@ except ApiException as e:
 | **script_id** | **str**| Script ID |  |
 | **page_id** | **str**| Page ID |  |
 | **script_data_version** | **str**| Advanced usage - controls the data version of the script | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**Page**](Page.html)
+[**Page**](Page)
 
-<a name="get_script_pages"></a>
 
-## [**list[Page]**](Page.html) get_script_pages(script_id, script_data_version=script_data_version)
+## get_script_pages
 
+> [**list[Page]**](Page) get_script_pages(script_id, script_data_version=script_data_version)
 
 
 Get the list of pages
@@ -171,16 +167,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **script_id** | **str**| Script ID |  |
 | **script_data_version** | **str**| Advanced usage - controls the data version of the script | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**list[Page]**](Page.html)
+[**list[Page]**](Page)
 
-<a name="get_scripts"></a>
 
-## [**ScriptEntityListing**](ScriptEntityListing.html) get_scripts(page_size=page_size, page_number=page_number, expand=expand, name=name, feature=feature, flow_id=flow_id, sort_by=sort_by, sort_order=sort_order, script_data_version=script_data_version, division_ids=division_ids)
+## get_scripts
 
+> [**ScriptEntityListing**](ScriptEntityListing) get_scripts(page_size=page_size, page_number=page_number, expand=expand, name=name, feature=feature, flow_id=flow_id, sort_by=sort_by, sort_order=sort_order, script_data_version=script_data_version, division_ids=division_ids)
 
 
 Get the list of scripts
@@ -238,16 +233,15 @@ except ApiException as e:
 | **sort_order** | **str**| SortOrder | [optional] <br />**Values**: ascending, descending |
 | **script_data_version** | **str**| Advanced usage - controls the data version of the script | [optional]  |
 | **division_ids** | **str**| Filters scripts to requested divisionIds | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**ScriptEntityListing**](ScriptEntityListing.html)
+[**ScriptEntityListing**](ScriptEntityListing)
 
-<a name="get_scripts_divisionviews"></a>
 
-## [**ScriptEntityListing**](ScriptEntityListing.html) get_scripts_divisionviews(page_size=page_size, page_number=page_number, expand=expand, name=name, feature=feature, flow_id=flow_id, sort_by=sort_by, sort_order=sort_order, script_data_version=script_data_version, division_ids=division_ids)
+## get_scripts_divisionviews
 
+> [**ScriptEntityListing**](ScriptEntityListing) get_scripts_divisionviews(page_size=page_size, page_number=page_number, expand=expand, name=name, feature=feature, flow_id=flow_id, sort_by=sort_by, sort_order=sort_order, script_data_version=script_data_version, division_ids=division_ids)
 
 
 Get the metadata for a list of scripts
@@ -305,16 +299,15 @@ except ApiException as e:
 | **sort_order** | **str**| SortOrder | [optional] <br />**Values**: ascending, descending |
 | **script_data_version** | **str**| Advanced usage - controls the data version of the script | [optional]  |
 | **division_ids** | **str**| Filters scripts to requested divisionIds | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**ScriptEntityListing**](ScriptEntityListing.html)
+[**ScriptEntityListing**](ScriptEntityListing)
 
-<a name="get_scripts_published"></a>
 
-## [**ScriptEntityListing**](ScriptEntityListing.html) get_scripts_published(page_size=page_size, page_number=page_number, expand=expand, name=name, feature=feature, flow_id=flow_id, script_data_version=script_data_version, division_ids=division_ids)
+## get_scripts_published
 
+> [**ScriptEntityListing**](ScriptEntityListing) get_scripts_published(page_size=page_size, page_number=page_number, expand=expand, name=name, feature=feature, flow_id=flow_id, script_data_version=script_data_version, division_ids=division_ids)
 
 
 Get the published scripts.
@@ -368,16 +361,15 @@ except ApiException as e:
 | **flow_id** | **str**| Secure flow id filter | [optional]  |
 | **script_data_version** | **str**| Advanced usage - controls the data version of the script | [optional]  |
 | **division_ids** | **str**| Filters scripts to requested divisionIds | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**ScriptEntityListing**](ScriptEntityListing.html)
+[**ScriptEntityListing**](ScriptEntityListing)
 
-<a name="get_scripts_published_divisionviews"></a>
 
-## [**ScriptEntityListing**](ScriptEntityListing.html) get_scripts_published_divisionviews(page_size=page_size, page_number=page_number, expand=expand, name=name, feature=feature, flow_id=flow_id, script_data_version=script_data_version, division_ids=division_ids)
+## get_scripts_published_divisionviews
 
+> [**ScriptEntityListing**](ScriptEntityListing) get_scripts_published_divisionviews(page_size=page_size, page_number=page_number, expand=expand, name=name, feature=feature, flow_id=flow_id, script_data_version=script_data_version, division_ids=division_ids)
 
 
 Get the published scripts metadata.
@@ -431,16 +423,15 @@ except ApiException as e:
 | **flow_id** | **str**| Secure flow id filter | [optional]  |
 | **script_data_version** | **str**| Advanced usage - controls the data version of the script | [optional]  |
 | **division_ids** | **str**| Filters scripts to requested divisionIds | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**ScriptEntityListing**](ScriptEntityListing.html)
+[**ScriptEntityListing**](ScriptEntityListing)
 
-<a name="get_scripts_published_script_id"></a>
 
-## [**Script**](Script.html) get_scripts_published_script_id(script_id, script_data_version=script_data_version)
+## get_scripts_published_script_id
 
+> [**Script**](Script) get_scripts_published_script_id(script_id, script_data_version=script_data_version)
 
 
 Get the published script.
@@ -482,16 +473,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **script_id** | **str**| Script ID |  |
 | **script_data_version** | **str**| Advanced usage - controls the data version of the script | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**Script**](Script.html)
+[**Script**](Script)
 
-<a name="get_scripts_published_script_id_page"></a>
 
-## [**Page**](Page.html) get_scripts_published_script_id_page(script_id, page_id, script_data_version=script_data_version)
+## get_scripts_published_script_id_page
 
+> [**Page**](Page) get_scripts_published_script_id_page(script_id, page_id, script_data_version=script_data_version)
 
 
 Get the published page.
@@ -535,16 +525,15 @@ except ApiException as e:
 | **script_id** | **str**| Script ID |  |
 | **page_id** | **str**| Page ID |  |
 | **script_data_version** | **str**| Advanced usage - controls the data version of the script | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**Page**](Page.html)
+[**Page**](Page)
 
-<a name="get_scripts_published_script_id_pages"></a>
 
-## [**list[Page]**](Page.html) get_scripts_published_script_id_pages(script_id, script_data_version=script_data_version)
+## get_scripts_published_script_id_pages
 
+> [**list[Page]**](Page) get_scripts_published_script_id_pages(script_id, script_data_version=script_data_version)
 
 
 Get the list of published pages
@@ -586,16 +575,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **script_id** | **str**| Script ID |  |
 | **script_data_version** | **str**| Advanced usage - controls the data version of the script | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**list[Page]**](Page.html)
+[**list[Page]**](Page)
 
-<a name="get_scripts_published_script_id_variables"></a>
 
-## object** get_scripts_published_script_id_variables(script_id, input=input, output=output, type=type, script_data_version=script_data_version)
+## get_scripts_published_script_id_variables
 
+> object** get_scripts_published_script_id_variables(script_id, input=input, output=output, type=type, script_data_version=script_data_version)
 
 
 Get the published variables
@@ -643,16 +631,15 @@ except ApiException as e:
 | **output** | **str**| output | [optional] <br />**Values**: true, false |
 | **type** | **str**| type | [optional] <br />**Values**: string, number, boolean |
 | **script_data_version** | **str**| Advanced usage - controls the data version of the script | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 **object**
 
-<a name="get_scripts_upload_status"></a>
 
-## [**ImportScriptStatusResponse**](ImportScriptStatusResponse.html) get_scripts_upload_status(upload_id, long_poll=long_poll)
+## get_scripts_upload_status
 
+> [**ImportScriptStatusResponse**](ImportScriptStatusResponse) get_scripts_upload_status(upload_id, long_poll=long_poll)
 
 
 Get the upload status of an imported script
@@ -661,7 +648,7 @@ Wraps GET /api/v2/scripts/uploads/{uploadId}/status
 
 Requires ANY permissions: 
 
-* scripter:script:search
+* scripter:script:view
 
 ### Example
 
@@ -694,16 +681,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **upload_id** | **str**| Upload ID |  |
 | **long_poll** | **bool**| Enable longPolling endpoint | [optional] [default to False] |
-{: class="table table-striped"}
 
 ### Return type
 
-[**ImportScriptStatusResponse**](ImportScriptStatusResponse.html)
+[**ImportScriptStatusResponse**](ImportScriptStatusResponse)
 
-<a name="post_script_export"></a>
 
-## [**ExportScriptResponse**](ExportScriptResponse.html) post_script_export(script_id, body=body)
+## post_script_export
 
+> [**ExportScriptResponse**](ExportScriptResponse) post_script_export(script_id, body=body)
 
 
 Export a script via download service.
@@ -744,17 +730,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **script_id** | **str**| Script ID |  |
-| **body** | [**ExportScriptRequest**](ExportScriptRequest.html)|  | [optional]  |
-{: class="table table-striped"}
+| **body** | [**ExportScriptRequest**](ExportScriptRequest)|  | [optional]  |
 
 ### Return type
 
-[**ExportScriptResponse**](ExportScriptResponse.html)
+[**ExportScriptResponse**](ExportScriptResponse)
 
-<a name="post_scripts_published"></a>
 
-## [**Script**](Script.html) post_scripts_published(script_data_version=script_data_version, body=body)
+## post_scripts_published
 
+> [**Script**](Script) post_scripts_published(script_data_version=script_data_version, body=body)
 
 
 Publish a script.
@@ -795,10 +780,11 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **script_data_version** | **str**| Advanced usage - controls the data version of the script | [optional]  |
-| **body** | [**PublishScriptRequestData**](PublishScriptRequestData.html)| body | [optional]  |
-{: class="table table-striped"}
+| **body** | [**PublishScriptRequestData**](PublishScriptRequestData)| body | [optional]  |
 
 ### Return type
 
-[**Script**](Script.html)
+[**Script**](Script)
 
+
+_PureCloudPlatformClientV2 211.1.0_

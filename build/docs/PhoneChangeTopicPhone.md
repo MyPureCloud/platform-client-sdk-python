@@ -1,16 +1,16 @@
----
-title: PhoneChangeTopicPhone
----
+# PhoneChangeTopicPhone
+
 ## PhoneChangeTopicPhone
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **user_agent_info** | [**PhoneChangeTopicUserAgentInfo**](PhoneChangeTopicUserAgentInfo.html) |  | [optional] |
-| **id** | **str** |  | [optional] |
-| **status** | [**PhoneChangeTopicPhoneStatus**](PhoneChangeTopicPhoneStatus.html) |  | [optional] |
-| **secondary_status** | [**PhoneChangeTopicPhoneStatus**](PhoneChangeTopicPhoneStatus.html) |  | [optional] |
-{: class="table table-striped"}
+| **user_agent_info** | [PhoneChangeTopicUserAgentInfo](PhoneChangeTopicUserAgentInfo) |  | [optional] |
+| **id** | str |  | [optional] |
+| **status** | [PhoneChangeTopicPhoneStatus](PhoneChangeTopicPhoneStatus) |  | [optional] |
+| **secondary_status** | [PhoneChangeTopicPhoneStatus](PhoneChangeTopicPhoneStatus) |  | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

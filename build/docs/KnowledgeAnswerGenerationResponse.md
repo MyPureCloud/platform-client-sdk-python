@@ -1,14 +1,14 @@
----
-title: KnowledgeAnswerGenerationResponse
----
+# KnowledgeAnswerGenerationResponse
+
 ## KnowledgeAnswerGenerationResponse
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **answer** | **str** | The AI-generated answer. | [optional] |
-| **documents** | [**list[AnswerGenerationDocument]**](AnswerGenerationDocument.html) | The documents used for answer generation. | [optional] |
-{: class="table table-striped"}
+| **answer** | str | The AI-generated answer. | [optional] |
+| **documents** | [list[AnswerGenerationDocument]](AnswerGenerationDocument) | The documents used for answer generation. | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

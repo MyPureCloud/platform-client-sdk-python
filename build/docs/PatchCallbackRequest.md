@@ -1,16 +1,16 @@
----
-title: PatchCallbackRequest
----
+# PatchCallbackRequest
+
 ## PatchCallbackRequest
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **conversation_id** | **str** | The conversationId. | |
-| **queue_id** | **str** | The identifier of the queue to be used for the callback. | [optional] |
-| **agent_id** | **str** | The agentId. | |
-| **callback_scheduled_time** | **datetime** | The scheduled date-time for the callback. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
-{: class="table table-striped"}
+| **conversation_id** | str | The conversationId. | |
+| **queue_id** | str | The identifier of the queue to be used for the callback. | [optional] |
+| **agent_id** | str | The agentId. | |
+| **callback_scheduled_time** | datetime | The scheduled date-time for the callback. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

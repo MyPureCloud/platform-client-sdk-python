@@ -1,6 +1,4 @@
----
-title: LanguageUnderstandingApi
----
+# LanguageUnderstandingApi
 
 ## PureCloudPlatformClientV2.LanguageUnderstandingApi
 
@@ -8,46 +6,46 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 |Method | Description|
 |------------- | -------------|
-|[**delete_languageunderstanding_domain**](LanguageUnderstandingApi.html#delete_languageunderstanding_domain) | Delete an NLU Domain.|
-|[**delete_languageunderstanding_domain_feedback_feedback_id**](LanguageUnderstandingApi.html#delete_languageunderstanding_domain_feedback_feedback_id) | Delete the feedback on the NLU Domain Version.|
-|[**delete_languageunderstanding_domain_version**](LanguageUnderstandingApi.html#delete_languageunderstanding_domain_version) | Delete an NLU Domain Version|
-|[**delete_languageunderstanding_miner**](LanguageUnderstandingApi.html#delete_languageunderstanding_miner) | Delete a miner.|
-|[**delete_languageunderstanding_miner_draft**](LanguageUnderstandingApi.html#delete_languageunderstanding_miner_draft) | Delete a draft|
-|[**get_languageunderstanding_domain**](LanguageUnderstandingApi.html#get_languageunderstanding_domain) | Find an NLU Domain.|
-|[**get_languageunderstanding_domain_feedback**](LanguageUnderstandingApi.html#get_languageunderstanding_domain_feedback) | Get all feedback in the given NLU Domain Version.|
-|[**get_languageunderstanding_domain_feedback_feedback_id**](LanguageUnderstandingApi.html#get_languageunderstanding_domain_feedback_feedback_id) | Find a Feedback|
-|[**get_languageunderstanding_domain_version**](LanguageUnderstandingApi.html#get_languageunderstanding_domain_version) | Find an NLU Domain Version.|
-|[**get_languageunderstanding_domain_version_report**](LanguageUnderstandingApi.html#get_languageunderstanding_domain_version_report) | Retrieved quality report for the specified NLU Domain Version|
-|[**get_languageunderstanding_domain_versions**](LanguageUnderstandingApi.html#get_languageunderstanding_domain_versions) | Get all NLU Domain Versions for a given Domain.|
-|[**get_languageunderstanding_domains**](LanguageUnderstandingApi.html#get_languageunderstanding_domains) | Get all NLU Domains.|
-|[**get_languageunderstanding_miner**](LanguageUnderstandingApi.html#get_languageunderstanding_miner) | Get information about a miner.|
-|[**get_languageunderstanding_miner_draft**](LanguageUnderstandingApi.html#get_languageunderstanding_miner_draft) | Get information about a draft.|
-|[**get_languageunderstanding_miner_drafts**](LanguageUnderstandingApi.html#get_languageunderstanding_miner_drafts) | Retrieve the list of drafts created.|
-|[**get_languageunderstanding_miner_intent**](LanguageUnderstandingApi.html#get_languageunderstanding_miner_intent) | Get information about a mined intent|
-|[**get_languageunderstanding_miner_intents**](LanguageUnderstandingApi.html#get_languageunderstanding_miner_intents) | Retrieve a list of mined intents.|
-|[**get_languageunderstanding_miner_topic**](LanguageUnderstandingApi.html#get_languageunderstanding_miner_topic) | Retrieves details of a particular topic.|
-|[**get_languageunderstanding_miner_topic_phrase**](LanguageUnderstandingApi.html#get_languageunderstanding_miner_topic_phrase) | Retrieves utterances related to a phrase in a topic.|
-|[**get_languageunderstanding_miner_topics**](LanguageUnderstandingApi.html#get_languageunderstanding_miner_topics) | Retrieve a list of mined topics.|
-|[**get_languageunderstanding_miners**](LanguageUnderstandingApi.html#get_languageunderstanding_miners) | Retrieve the list of miners created.|
-|[**get_languageunderstanding_settings**](LanguageUnderstandingApi.html#get_languageunderstanding_settings) | Get Organization Configuration|
-|[**patch_languageunderstanding_domain**](LanguageUnderstandingApi.html#patch_languageunderstanding_domain) | Update an NLU Domain.|
-|[**patch_languageunderstanding_miner_draft**](LanguageUnderstandingApi.html#patch_languageunderstanding_miner_draft) | Save information for the draft. Either topic draft or intent draft should be sent.|
-|[**post_languageunderstanding_domain_feedback**](LanguageUnderstandingApi.html#post_languageunderstanding_domain_feedback) | Create feedback for the NLU Domain Version.|
-|[**post_languageunderstanding_domain_version_detect**](LanguageUnderstandingApi.html#post_languageunderstanding_domain_version_detect) | Detect intent, entities, etc. in the submitted text using the specified NLU domain version.|
-|[**post_languageunderstanding_domain_version_publish**](LanguageUnderstandingApi.html#post_languageunderstanding_domain_version_publish) | Publish the draft NLU Domain Version.|
-|[**post_languageunderstanding_domain_version_train**](LanguageUnderstandingApi.html#post_languageunderstanding_domain_version_train) | Train the draft NLU Domain Version.|
-|[**post_languageunderstanding_domain_versions**](LanguageUnderstandingApi.html#post_languageunderstanding_domain_versions) | Create an NLU Domain Version.|
-|[**post_languageunderstanding_domains**](LanguageUnderstandingApi.html#post_languageunderstanding_domains) | Create an NLU Domain.|
-|[**post_languageunderstanding_miner_drafts**](LanguageUnderstandingApi.html#post_languageunderstanding_miner_drafts) | Create a new draft resource.|
-|[**post_languageunderstanding_miner_execute**](LanguageUnderstandingApi.html#post_languageunderstanding_miner_execute) | Start the mining process. Specify date range pair with mediaType, queueIds, participantType for mining data from Genesys Cloud. Specify only uploadKey for mining through an external file.|
-|[**post_languageunderstanding_miners**](LanguageUnderstandingApi.html#post_languageunderstanding_miners) | Create a unique miner.|
-|[**put_languageunderstanding_domain_version**](LanguageUnderstandingApi.html#put_languageunderstanding_domain_version) | Update an NLU Domain Version.|
-{: class="table table-striped"}
+|[**delete_languageunderstanding_domain**](#delete_languageunderstanding_domain) | Delete an NLU Domain.|
+|[**delete_languageunderstanding_domain_feedback_feedback_id**](#delete_languageunderstanding_domain_feedback_feedback_id) | Delete the feedback on the NLU Domain Version.|
+|[**delete_languageunderstanding_domain_version**](#delete_languageunderstanding_domain_version) | Delete an NLU Domain Version|
+|[**delete_languageunderstanding_miner**](#delete_languageunderstanding_miner) | Delete a miner.|
+|[**delete_languageunderstanding_miner_draft**](#delete_languageunderstanding_miner_draft) | Delete a draft|
+|[**get_languageunderstanding_domain**](#get_languageunderstanding_domain) | Find an NLU Domain.|
+|[**get_languageunderstanding_domain_feedback**](#get_languageunderstanding_domain_feedback) | Get all feedback in the given NLU Domain Version.|
+|[**get_languageunderstanding_domain_feedback_feedback_id**](#get_languageunderstanding_domain_feedback_feedback_id) | Find a Feedback|
+|[**get_languageunderstanding_domain_version**](#get_languageunderstanding_domain_version) | Find an NLU Domain Version.|
+|[**get_languageunderstanding_domain_version_report**](#get_languageunderstanding_domain_version_report) | Retrieved quality report for the specified NLU Domain Version|
+|[**get_languageunderstanding_domain_versions**](#get_languageunderstanding_domain_versions) | Get all NLU Domain Versions for a given Domain.|
+|[**get_languageunderstanding_domains**](#get_languageunderstanding_domains) | Get all NLU Domains.|
+|[**get_languageunderstanding_miner**](#get_languageunderstanding_miner) | Get information about a miner.|
+|[**get_languageunderstanding_miner_draft**](#get_languageunderstanding_miner_draft) | Get information about a draft.|
+|[**get_languageunderstanding_miner_drafts**](#get_languageunderstanding_miner_drafts) | Retrieve the list of drafts created.|
+|[**get_languageunderstanding_miner_intent**](#get_languageunderstanding_miner_intent) | Get information about a mined intent|
+|[**get_languageunderstanding_miner_intents**](#get_languageunderstanding_miner_intents) | Retrieve a list of mined intents.|
+|[**get_languageunderstanding_miner_topic**](#get_languageunderstanding_miner_topic) | Retrieves details of a particular topic.|
+|[**get_languageunderstanding_miner_topic_phrase**](#get_languageunderstanding_miner_topic_phrase) | Retrieves utterances related to a phrase in a topic.|
+|[**get_languageunderstanding_miner_topics**](#get_languageunderstanding_miner_topics) | Retrieve a list of mined topics.|
+|[**get_languageunderstanding_miners**](#get_languageunderstanding_miners) | Retrieve the list of miners created.|
+|[**get_languageunderstanding_settings**](#get_languageunderstanding_settings) | Get Organization Configuration|
+|[**patch_languageunderstanding_domain**](#patch_languageunderstanding_domain) | Update an NLU Domain.|
+|[**patch_languageunderstanding_miner_draft**](#patch_languageunderstanding_miner_draft) | Save information for the draft. Either topic draft or intent draft should be sent.|
+|[**post_languageunderstanding_domain_feedback**](#post_languageunderstanding_domain_feedback) | Create feedback for the NLU Domain Version.|
+|[**post_languageunderstanding_domain_version_detect**](#post_languageunderstanding_domain_version_detect) | Detect intent, entities, etc. in the submitted text using the specified NLU domain version.|
+|[**post_languageunderstanding_domain_version_publish**](#post_languageunderstanding_domain_version_publish) | Publish the draft NLU Domain Version.|
+|[**post_languageunderstanding_domain_version_train**](#post_languageunderstanding_domain_version_train) | Train the draft NLU Domain Version.|
+|[**post_languageunderstanding_domain_versions**](#post_languageunderstanding_domain_versions) | Create an NLU Domain Version.|
+|[**post_languageunderstanding_domains**](#post_languageunderstanding_domains) | Create an NLU Domain.|
+|[**post_languageunderstanding_miner_drafts**](#post_languageunderstanding_miner_drafts) | Create a new draft resource.|
+|[**post_languageunderstanding_miner_execute**](#post_languageunderstanding_miner_execute) | Start the mining process. Specify date range pair with mediaType, queueIds, participantType for mining data from Genesys Cloud. Specify only uploadKey for mining through an external file.|
+|[**post_languageunderstanding_miners**](#post_languageunderstanding_miners) | Create a unique miner.|
+|[**put_languageunderstanding_domain_version**](#put_languageunderstanding_domain_version) | Update an NLU Domain Version.|
 
-<a name="delete_languageunderstanding_domain"></a>
 
-##  delete_languageunderstanding_domain(domain_id)
 
+## delete_languageunderstanding_domain
+
+>  delete_languageunderstanding_domain(domain_id)
 
 
 Delete an NLU Domain.
@@ -87,16 +85,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **domain_id** | **str**| ID of the NLU domain. |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (empty response body)
 
-<a name="delete_languageunderstanding_domain_feedback_feedback_id"></a>
 
-##  delete_languageunderstanding_domain_feedback_feedback_id(domain_id, feedback_id)
+## delete_languageunderstanding_domain_feedback_feedback_id
 
+>  delete_languageunderstanding_domain_feedback_feedback_id(domain_id, feedback_id)
 
 
 Delete the feedback on the NLU Domain Version.
@@ -138,16 +135,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **domain_id** | **str**| ID of the NLU domain. |  |
 | **feedback_id** | **str**| ID of the Feedback |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (empty response body)
 
-<a name="delete_languageunderstanding_domain_version"></a>
 
-##  delete_languageunderstanding_domain_version(domain_id, domain_version_id)
+## delete_languageunderstanding_domain_version
 
+>  delete_languageunderstanding_domain_version(domain_id, domain_version_id)
 
 
 Delete an NLU Domain Version
@@ -189,16 +185,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **domain_id** | **str**| ID of the NLU domain. |  |
 | **domain_version_id** | **str**| ID of the NLU domain version. |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (empty response body)
 
-<a name="delete_languageunderstanding_miner"></a>
 
-##  delete_languageunderstanding_miner(miner_id)
+## delete_languageunderstanding_miner
 
+>  delete_languageunderstanding_miner(miner_id)
 
 
 Delete a miner.
@@ -237,16 +232,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **miner_id** | **str**| Miner ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (empty response body)
 
-<a name="delete_languageunderstanding_miner_draft"></a>
 
-##  delete_languageunderstanding_miner_draft(miner_id, draft_id)
+## delete_languageunderstanding_miner_draft
 
+>  delete_languageunderstanding_miner_draft(miner_id, draft_id)
 
 
 Delete a draft
@@ -287,16 +281,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **miner_id** | **str**| Miner ID |  |
 | **draft_id** | **str**| Draft ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (empty response body)
 
-<a name="get_languageunderstanding_domain"></a>
 
-## [**NluDomain**](NluDomain.html) get_languageunderstanding_domain(domain_id)
+## get_languageunderstanding_domain
 
+> [**NluDomain**](NluDomain) get_languageunderstanding_domain(domain_id)
 
 
 Find an NLU Domain.
@@ -337,16 +330,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **domain_id** | **str**| ID of the NLU domain. |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**NluDomain**](NluDomain.html)
+[**NluDomain**](NluDomain)
 
-<a name="get_languageunderstanding_domain_feedback"></a>
 
-## [**NluFeedbackListing**](NluFeedbackListing.html) get_languageunderstanding_domain_feedback(domain_id, intent_name=intent_name, assessment=assessment, date_start=date_start, date_end=date_end, include_deleted=include_deleted, language=language, page_number=page_number, page_size=page_size, enable_cursor_pagination=enable_cursor_pagination, include_training_utterances=include_training_utterances, after=after, fields=fields)
+## get_languageunderstanding_domain_feedback
 
+> [**NluFeedbackListing**](NluFeedbackListing) get_languageunderstanding_domain_feedback(domain_id, intent_name=intent_name, assessment=assessment, date_start=date_start, date_end=date_end, include_deleted=include_deleted, language=language, page_number=page_number, page_size=page_size, enable_cursor_pagination=enable_cursor_pagination, include_training_utterances=include_training_utterances, after=after, fields=fields)
 
 
 Get all feedback in the given NLU Domain Version.
@@ -410,17 +402,16 @@ except ApiException as e:
 | **enable_cursor_pagination** | **bool**| Enable Cursor Pagination | [optional] [default to False] |
 | **include_training_utterances** | **bool**| Include Training Utterances. By default they&#39;re included. | [optional] [default to True] |
 | **after** | **str**| The cursor that points to the end of the set of entities that has been returned. This is considered only when enableCursorPagination&#x3D;true | [optional]  |
-| **fields** | [**list[str]**](str.html)| Fields and properties to get, comma-separated | [optional] <br />**Values**: version, dateCreated, text, intents |
-{: class="table table-striped"}
+| **fields** | [**list[str]**](str)| Fields and properties to get, comma-separated | [optional] <br />**Values**: version, dateCreated, text, intents |
 
 ### Return type
 
-[**NluFeedbackListing**](NluFeedbackListing.html)
+[**NluFeedbackListing**](NluFeedbackListing)
 
-<a name="get_languageunderstanding_domain_feedback_feedback_id"></a>
 
-## [**NluFeedbackResponse**](NluFeedbackResponse.html) get_languageunderstanding_domain_feedback_feedback_id(domain_id, feedback_id, fields=fields)
+## get_languageunderstanding_domain_feedback_feedback_id
 
+> [**NluFeedbackResponse**](NluFeedbackResponse) get_languageunderstanding_domain_feedback_feedback_id(domain_id, feedback_id, fields=fields)
 
 
 Find a Feedback
@@ -464,17 +455,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **domain_id** | **str**| ID of the NLU domain. |  |
 | **feedback_id** | **str**| ID of the Feedback |  |
-| **fields** | [**list[str]**](str.html)| Fields and properties to get, comma-separated | [optional] <br />**Values**: version, dateCreated, text, intents |
-{: class="table table-striped"}
+| **fields** | [**list[str]**](str)| Fields and properties to get, comma-separated | [optional] <br />**Values**: version, dateCreated, text, intents |
 
 ### Return type
 
-[**NluFeedbackResponse**](NluFeedbackResponse.html)
+[**NluFeedbackResponse**](NluFeedbackResponse)
 
-<a name="get_languageunderstanding_domain_version"></a>
 
-## [**NluDomainVersion**](NluDomainVersion.html) get_languageunderstanding_domain_version(domain_id, domain_version_id, include_utterances=include_utterances)
+## get_languageunderstanding_domain_version
 
+> [**NluDomainVersion**](NluDomainVersion) get_languageunderstanding_domain_version(domain_id, domain_version_id, include_utterances=include_utterances)
 
 
 Find an NLU Domain Version.
@@ -519,16 +509,15 @@ except ApiException as e:
 | **domain_id** | **str**| ID of the NLU domain. |  |
 | **domain_version_id** | **str**| ID of the NLU domain version. |  |
 | **include_utterances** | **bool**| Whether utterances for intent definition should be included when marshalling response. | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**NluDomainVersion**](NluDomainVersion.html)
+[**NluDomainVersion**](NluDomainVersion)
 
-<a name="get_languageunderstanding_domain_version_report"></a>
 
-## [**NluDomainVersionQualityReport**](NluDomainVersionQualityReport.html) get_languageunderstanding_domain_version_report(domain_id, domain_version_id)
+## get_languageunderstanding_domain_version_report
 
+> [**NluDomainVersionQualityReport**](NluDomainVersionQualityReport) get_languageunderstanding_domain_version_report(domain_id, domain_version_id)
 
 
 Retrieved quality report for the specified NLU Domain Version
@@ -571,16 +560,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **domain_id** | **str**| ID of the NLU domain. |  |
 | **domain_version_id** | **str**| ID of the NLU domain version. |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**NluDomainVersionQualityReport**](NluDomainVersionQualityReport.html)
+[**NluDomainVersionQualityReport**](NluDomainVersionQualityReport)
 
-<a name="get_languageunderstanding_domain_versions"></a>
 
-## [**NluDomainVersionListing**](NluDomainVersionListing.html) get_languageunderstanding_domain_versions(domain_id, include_utterances=include_utterances, page_number=page_number, page_size=page_size)
+## get_languageunderstanding_domain_versions
 
+> [**NluDomainVersionListing**](NluDomainVersionListing) get_languageunderstanding_domain_versions(domain_id, include_utterances=include_utterances, page_number=page_number, page_size=page_size)
 
 
 Get all NLU Domain Versions for a given Domain.
@@ -627,16 +615,15 @@ except ApiException as e:
 | **include_utterances** | **bool**| Whether utterances for intent definition should be included when marshalling response. | [optional]  |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **page_size** | **int**| Page size | [optional] [default to 25] |
-{: class="table table-striped"}
 
 ### Return type
 
-[**NluDomainVersionListing**](NluDomainVersionListing.html)
+[**NluDomainVersionListing**](NluDomainVersionListing)
 
-<a name="get_languageunderstanding_domains"></a>
 
-## [**NluDomainListing**](NluDomainListing.html) get_languageunderstanding_domains(page_number=page_number, page_size=page_size)
+## get_languageunderstanding_domains
 
+> [**NluDomainListing**](NluDomainListing) get_languageunderstanding_domains(page_number=page_number, page_size=page_size)
 
 
 Get all NLU Domains.
@@ -679,16 +666,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **page_size** | **int**| Page size | [optional] [default to 25] |
-{: class="table table-striped"}
 
 ### Return type
 
-[**NluDomainListing**](NluDomainListing.html)
+[**NluDomainListing**](NluDomainListing)
 
-<a name="get_languageunderstanding_miner"></a>
 
-## [**Miner**](Miner.html) get_languageunderstanding_miner(miner_id)
+## get_languageunderstanding_miner
 
+> [**Miner**](Miner) get_languageunderstanding_miner(miner_id)
 
 
 Get information about a miner.
@@ -728,16 +714,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **miner_id** | **str**| Miner ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**Miner**](Miner.html)
+[**Miner**](Miner)
 
-<a name="get_languageunderstanding_miner_draft"></a>
 
-## [**Draft**](Draft.html) get_languageunderstanding_miner_draft(miner_id, draft_id, draft_intent_id=draft_intent_id, draft_topic_id=draft_topic_id)
+## get_languageunderstanding_miner_draft
 
+> [**Draft**](Draft) get_languageunderstanding_miner_draft(miner_id, draft_id, draft_intent_id=draft_intent_id, draft_topic_id=draft_topic_id)
 
 
 Get information about a draft.
@@ -783,16 +768,15 @@ except ApiException as e:
 | **draft_id** | **str**| Draft ID |  |
 | **draft_intent_id** | **str**| Parameter to filter a specific intent. | [optional]  |
 | **draft_topic_id** | **str**| Parameter to filter a specific topic. | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**Draft**](Draft.html)
+[**Draft**](Draft)
 
-<a name="get_languageunderstanding_miner_drafts"></a>
 
-## [**DraftListing**](DraftListing.html) get_languageunderstanding_miner_drafts(miner_id)
+## get_languageunderstanding_miner_drafts
 
+> [**DraftListing**](DraftListing) get_languageunderstanding_miner_drafts(miner_id)
 
 
 Retrieve the list of drafts created.
@@ -832,16 +816,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **miner_id** | **str**| Miner ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**DraftListing**](DraftListing.html)
+[**DraftListing**](DraftListing)
 
-<a name="get_languageunderstanding_miner_intent"></a>
 
-## [**MinerIntent**](MinerIntent.html) get_languageunderstanding_miner_intent(miner_id, intent_id, expand=expand)
+## get_languageunderstanding_miner_intent
 
+> [**MinerIntent**](MinerIntent) get_languageunderstanding_miner_intent(miner_id, intent_id, expand=expand)
 
 
 Get information about a mined intent
@@ -885,16 +868,15 @@ except ApiException as e:
 | **miner_id** | **str**| Miner ID |  |
 | **intent_id** | **str**| The ID of the intent to be retrieved. |  |
 | **expand** | **str**| Option to fetch utterances | [optional] <br />**Values**: phrases, utterances |
-{: class="table table-striped"}
 
 ### Return type
 
-[**MinerIntent**](MinerIntent.html)
+[**MinerIntent**](MinerIntent)
 
-<a name="get_languageunderstanding_miner_intents"></a>
 
-## [**MinedIntentsListing**](MinedIntentsListing.html) get_languageunderstanding_miner_intents(miner_id, expand=expand)
+## get_languageunderstanding_miner_intents
 
+> [**MinedIntentsListing**](MinedIntentsListing) get_languageunderstanding_miner_intents(miner_id, expand=expand)
 
 
 Retrieve a list of mined intents.
@@ -936,16 +918,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **miner_id** | **str**| Miner ID |  |
 | **expand** | **str**| Option to fetch utterances. | [optional] <br />**Values**: phrases, utterances |
-{: class="table table-striped"}
 
 ### Return type
 
-[**MinedIntentsListing**](MinedIntentsListing.html)
+[**MinedIntentsListing**](MinedIntentsListing)
 
-<a name="get_languageunderstanding_miner_topic"></a>
 
-## [**MinerTopic**](MinerTopic.html) get_languageunderstanding_miner_topic(miner_id, topic_id, expand=expand)
+## get_languageunderstanding_miner_topic
 
+> [**MinerTopic**](MinerTopic) get_languageunderstanding_miner_topic(miner_id, topic_id, expand=expand)
 
 
 Retrieves details of a particular topic.
@@ -989,16 +970,15 @@ except ApiException as e:
 | **miner_id** | **str**| Miner ID |  |
 | **topic_id** | **str**| The ID of the topic to be retrieved. |  |
 | **expand** | **str**| Option to fetch phrases | [optional] <br />**Values**: phrases, utterances |
-{: class="table table-striped"}
 
 ### Return type
 
-[**MinerTopic**](MinerTopic.html)
+[**MinerTopic**](MinerTopic)
 
-<a name="get_languageunderstanding_miner_topic_phrase"></a>
 
-## [**MinerTopicPhrase**](MinerTopicPhrase.html) get_languageunderstanding_miner_topic_phrase(miner_id, topic_id, phrase_id)
+## get_languageunderstanding_miner_topic_phrase
 
+> [**MinerTopicPhrase**](MinerTopicPhrase) get_languageunderstanding_miner_topic_phrase(miner_id, topic_id, phrase_id)
 
 
 Retrieves utterances related to a phrase in a topic.
@@ -1042,16 +1022,15 @@ except ApiException as e:
 | **miner_id** | **str**| Miner ID |  |
 | **topic_id** | **str**| The ID of the topic to be retrieved. |  |
 | **phrase_id** | **str**| The ID of the phrase to be retrieved. |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**MinerTopicPhrase**](MinerTopicPhrase.html)
+[**MinerTopicPhrase**](MinerTopicPhrase)
 
-<a name="get_languageunderstanding_miner_topics"></a>
 
-## [**MinerTopicsListing**](MinerTopicsListing.html) get_languageunderstanding_miner_topics(miner_id)
+## get_languageunderstanding_miner_topics
 
+> [**MinerTopicsListing**](MinerTopicsListing) get_languageunderstanding_miner_topics(miner_id)
 
 
 Retrieve a list of mined topics.
@@ -1091,16 +1070,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **miner_id** | **str**| Miner ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**MinerTopicsListing**](MinerTopicsListing.html)
+[**MinerTopicsListing**](MinerTopicsListing)
 
-<a name="get_languageunderstanding_miners"></a>
 
-## [**MinerListing**](MinerListing.html) get_languageunderstanding_miners(miner_type=miner_type)
+## get_languageunderstanding_miners
 
+> [**MinerListing**](MinerListing) get_languageunderstanding_miners(miner_type=miner_type)
 
 
 Retrieve the list of miners created.
@@ -1140,16 +1118,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **miner_type** | **str**| Type of miner, either intent or topic | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**MinerListing**](MinerListing.html)
+[**MinerListing**](MinerListing)
 
-<a name="get_languageunderstanding_settings"></a>
 
-## [**NluOrganization**](NluOrganization.html) get_languageunderstanding_settings()
+## get_languageunderstanding_settings
 
+> [**NluOrganization**](NluOrganization) get_languageunderstanding_settings()
 
 
 Get Organization Configuration
@@ -1188,15 +1165,14 @@ except ApiException as e:
 
 This endpoint does not need any parameters.
 
-
 ### Return type
 
-[**NluOrganization**](NluOrganization.html)
+[**NluOrganization**](NluOrganization)
 
-<a name="patch_languageunderstanding_domain"></a>
 
-## [**NluDomain**](NluDomain.html) patch_languageunderstanding_domain(domain_id, body)
+## patch_languageunderstanding_domain
 
+> [**NluDomain**](NluDomain) patch_languageunderstanding_domain(domain_id, body)
 
 
 Update an NLU Domain.
@@ -1238,17 +1214,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **domain_id** | **str**| ID of the NLU domain. |  |
-| **body** | [**NluDomain**](NluDomain.html)| The updated NLU Domain. |  |
-{: class="table table-striped"}
+| **body** | [**NluDomain**](NluDomain)| The updated NLU Domain. |  |
 
 ### Return type
 
-[**NluDomain**](NluDomain.html)
+[**NluDomain**](NluDomain)
 
-<a name="patch_languageunderstanding_miner_draft"></a>
 
-## [**Draft**](Draft.html) patch_languageunderstanding_miner_draft(miner_id, draft_id, body=body)
+## patch_languageunderstanding_miner_draft
 
+> [**Draft**](Draft) patch_languageunderstanding_miner_draft(miner_id, draft_id, body=body)
 
 
 Save information for the draft. Either topic draft or intent draft should be sent.
@@ -1291,17 +1266,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **miner_id** | **str**| Miner ID |  |
 | **draft_id** | **str**| Draft ID |  |
-| **body** | [**DraftRequest**](DraftRequest.html)|  | [optional]  |
-{: class="table table-striped"}
+| **body** | [**DraftRequest**](DraftRequest)|  | [optional]  |
 
 ### Return type
 
-[**Draft**](Draft.html)
+[**Draft**](Draft)
 
-<a name="post_languageunderstanding_domain_feedback"></a>
 
-## [**NluFeedbackResponse**](NluFeedbackResponse.html) post_languageunderstanding_domain_feedback(domain_id, body)
+## post_languageunderstanding_domain_feedback
 
+> [**NluFeedbackResponse**](NluFeedbackResponse) post_languageunderstanding_domain_feedback(domain_id, body)
 
 
 Create feedback for the NLU Domain Version.
@@ -1343,17 +1317,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **domain_id** | **str**| ID of the NLU domain. |  |
-| **body** | [**NluFeedbackRequest**](NluFeedbackRequest.html)| The Feedback to create. |  |
-{: class="table table-striped"}
+| **body** | [**NluFeedbackRequest**](NluFeedbackRequest)| The Feedback to create. |  |
 
 ### Return type
 
-[**NluFeedbackResponse**](NluFeedbackResponse.html)
+[**NluFeedbackResponse**](NluFeedbackResponse)
 
-<a name="post_languageunderstanding_domain_version_detect"></a>
 
-## [**NluDetectionResponse**](NluDetectionResponse.html) post_languageunderstanding_domain_version_detect(domain_id, domain_version_id, body)
+## post_languageunderstanding_domain_version_detect
 
+> [**NluDetectionResponse**](NluDetectionResponse) post_languageunderstanding_domain_version_detect(domain_id, domain_version_id, body)
 
 
 Detect intent, entities, etc. in the submitted text using the specified NLU domain version.
@@ -1397,17 +1370,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **domain_id** | **str**| ID of the NLU domain. |  |
 | **domain_version_id** | **str**| ID of the NLU domain version. |  |
-| **body** | [**NluDetectionRequest**](NluDetectionRequest.html)| The input data to perform detection on. |  |
-{: class="table table-striped"}
+| **body** | [**NluDetectionRequest**](NluDetectionRequest)| The input data to perform detection on. |  |
 
 ### Return type
 
-[**NluDetectionResponse**](NluDetectionResponse.html)
+[**NluDetectionResponse**](NluDetectionResponse)
 
-<a name="post_languageunderstanding_domain_version_publish"></a>
 
-## [**NluDomainVersion**](NluDomainVersion.html) post_languageunderstanding_domain_version_publish(domain_id, domain_version_id)
+## post_languageunderstanding_domain_version_publish
 
+> [**NluDomainVersion**](NluDomainVersion) post_languageunderstanding_domain_version_publish(domain_id, domain_version_id)
 
 
 Publish the draft NLU Domain Version.
@@ -1450,16 +1422,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **domain_id** | **str**| ID of the NLU domain. |  |
 | **domain_version_id** | **str**| ID of the NLU domain version. |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**NluDomainVersion**](NluDomainVersion.html)
+[**NluDomainVersion**](NluDomainVersion)
 
-<a name="post_languageunderstanding_domain_version_train"></a>
 
-## [**NluDomainVersionTrainingResponse**](NluDomainVersionTrainingResponse.html) post_languageunderstanding_domain_version_train(domain_id, domain_version_id)
+## post_languageunderstanding_domain_version_train
 
+> [**NluDomainVersionTrainingResponse**](NluDomainVersionTrainingResponse) post_languageunderstanding_domain_version_train(domain_id, domain_version_id)
 
 
 Train the draft NLU Domain Version.
@@ -1502,16 +1473,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **domain_id** | **str**| ID of the NLU domain. |  |
 | **domain_version_id** | **str**| ID of the NLU domain version. |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**NluDomainVersionTrainingResponse**](NluDomainVersionTrainingResponse.html)
+[**NluDomainVersionTrainingResponse**](NluDomainVersionTrainingResponse)
 
-<a name="post_languageunderstanding_domain_versions"></a>
 
-## [**NluDomainVersion**](NluDomainVersion.html) post_languageunderstanding_domain_versions(domain_id, body, include_utterances=include_utterances)
+## post_languageunderstanding_domain_versions
 
+> [**NluDomainVersion**](NluDomainVersion) post_languageunderstanding_domain_versions(domain_id, body, include_utterances=include_utterances)
 
 
 Create an NLU Domain Version.
@@ -1554,18 +1524,17 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **domain_id** | **str**| ID of the NLU domain. |  |
-| **body** | [**NluDomainVersion**](NluDomainVersion.html)| The NLU Domain Version to create. |  |
+| **body** | [**NluDomainVersion**](NluDomainVersion)| The NLU Domain Version to create. |  |
 | **include_utterances** | **bool**| Whether utterances for intent definition should be included when marshalling response. | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**NluDomainVersion**](NluDomainVersion.html)
+[**NluDomainVersion**](NluDomainVersion)
 
-<a name="post_languageunderstanding_domains"></a>
 
-## [**NluDomain**](NluDomain.html) post_languageunderstanding_domains(body)
+## post_languageunderstanding_domains
 
+> [**NluDomain**](NluDomain) post_languageunderstanding_domains(body)
 
 
 Create an NLU Domain.
@@ -1605,17 +1574,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**NluDomain**](NluDomain.html)| The NLU Domain to create. |  |
-{: class="table table-striped"}
+| **body** | [**NluDomain**](NluDomain)| The NLU Domain to create. |  |
 
 ### Return type
 
-[**NluDomain**](NluDomain.html)
+[**NluDomain**](NluDomain)
 
-<a name="post_languageunderstanding_miner_drafts"></a>
 
-## [**Draft**](Draft.html) post_languageunderstanding_miner_drafts(miner_id, body)
+## post_languageunderstanding_miner_drafts
 
+> [**Draft**](Draft) post_languageunderstanding_miner_drafts(miner_id, body)
 
 
 Create a new draft resource.
@@ -1656,17 +1624,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **miner_id** | **str**| Miner ID |  |
-| **body** | [**Draft**](Draft.html)| Details for creating draft resource |  |
-{: class="table table-striped"}
+| **body** | [**Draft**](Draft)| Details for creating draft resource |  |
 
 ### Return type
 
-[**Draft**](Draft.html)
+[**Draft**](Draft)
 
-<a name="post_languageunderstanding_miner_execute"></a>
 
-## [**Miner**](Miner.html) post_languageunderstanding_miner_execute(miner_id, body=body)
+## post_languageunderstanding_miner_execute
 
+> [**Miner**](Miner) post_languageunderstanding_miner_execute(miner_id, body=body)
 
 
 Start the mining process. Specify date range pair with mediaType, queueIds, participantType for mining data from Genesys Cloud. Specify only uploadKey for mining through an external file.
@@ -1707,17 +1674,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **miner_id** | **str**| Miner ID |  |
-| **body** | [**MinerExecuteRequest**](MinerExecuteRequest.html)|  | [optional]  |
-{: class="table table-striped"}
+| **body** | [**MinerExecuteRequest**](MinerExecuteRequest)|  | [optional]  |
 
 ### Return type
 
-[**Miner**](Miner.html)
+[**Miner**](Miner)
 
-<a name="post_languageunderstanding_miners"></a>
 
-## [**Miner**](Miner.html) post_languageunderstanding_miners(body)
+## post_languageunderstanding_miners
 
+> [**Miner**](Miner) post_languageunderstanding_miners(body)
 
 
 Create a unique miner.
@@ -1756,17 +1722,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**Miner**](Miner.html)| Details for creating a new miner resource. |  |
-{: class="table table-striped"}
+| **body** | [**Miner**](Miner)| Details for creating a new miner resource. |  |
 
 ### Return type
 
-[**Miner**](Miner.html)
+[**Miner**](Miner)
 
-<a name="put_languageunderstanding_domain_version"></a>
 
-## [**NluDomainVersion**](NluDomainVersion.html) put_languageunderstanding_domain_version(domain_id, domain_version_id, body)
+## put_languageunderstanding_domain_version
 
+> [**NluDomainVersion**](NluDomainVersion) put_languageunderstanding_domain_version(domain_id, domain_version_id, body)
 
 
 Update an NLU Domain Version.
@@ -1810,10 +1775,11 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **domain_id** | **str**| ID of the NLU domain. |  |
 | **domain_version_id** | **str**| ID of the NLU domain version. |  |
-| **body** | [**NluDomainVersion**](NluDomainVersion.html)| The updated NLU Domain Version. |  |
-{: class="table table-striped"}
+| **body** | [**NluDomainVersion**](NluDomainVersion)| The updated NLU Domain Version. |  |
 
 ### Return type
 
-[**NluDomainVersion**](NluDomainVersion.html)
+[**NluDomainVersion**](NluDomainVersion)
 
+
+_PureCloudPlatformClientV2 211.1.0_

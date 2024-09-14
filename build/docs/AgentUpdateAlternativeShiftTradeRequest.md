@@ -1,14 +1,14 @@
----
-title: AgentUpdateAlternativeShiftTradeRequest
----
+# AgentUpdateAlternativeShiftTradeRequest
+
 ## AgentUpdateAlternativeShiftTradeRequest
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **state** | **str** | The new state of this alternative shift trade | [optional] |
-| **metadata** | [**WfmVersionedEntityMetadata**](WfmVersionedEntityMetadata.html) | Version metadata for this alternative shift trade | |
-{: class="table table-striped"}
+| **state** | str | The new state of this alternative shift trade | [optional] |
+| **metadata** | [WfmVersionedEntityMetadata](WfmVersionedEntityMetadata) | Version metadata for this alternative shift trade | |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

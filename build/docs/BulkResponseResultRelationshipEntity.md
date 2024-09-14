@@ -1,16 +1,16 @@
----
-title: BulkResponseResultRelationshipEntity
----
+# BulkResponseResultRelationshipEntity
+
 ## BulkResponseResultRelationshipEntity
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **id** | **str** |  | [optional] |
-| **success** | **bool** |  | [optional] |
-| **entity** | [**Relationship**](Relationship.html) |  | [optional] |
-| **error** | [**BulkErrorEntity**](BulkErrorEntity.html) |  | [optional] |
-{: class="table table-striped"}
+| **id** | str |  | [optional] |
+| **success** | bool |  | [optional] |
+| **entity** | [Relationship](Relationship) |  | [optional] |
+| **error** | [BulkErrorEntity](BulkErrorEntity) |  | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

@@ -1,13 +1,13 @@
----
-title: WorkPlanRotationListResponse
----
+# WorkPlanRotationListResponse
+
 ## WorkPlanRotationListResponse
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **entities** | [**list[WorkPlanRotationResponse]**](WorkPlanRotationResponse.html) |  | [optional] |
-{: class="table table-striped"}
+| **entities** | [list[WorkPlanRotationResponse]](WorkPlanRotationResponse) |  | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

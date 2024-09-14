@@ -1,14 +1,14 @@
----
-title: ExternalContactsUnresolvedContactChangedTopicTicker
----
+# ExternalContactsUnresolvedContactChangedTopicTicker
+
 ## ExternalContactsUnresolvedContactChangedTopicTicker
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **symbol** | **str** |  | [optional] |
-| **exchange** | **str** |  | [optional] |
-{: class="table table-striped"}
+| **symbol** | str |  | [optional] |
+| **exchange** | str |  | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

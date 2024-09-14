@@ -1,15 +1,15 @@
----
-title: WfmBuShortTermForecastImportCompleteTopicBuShortTermForecastNotification
----
+# WfmBuShortTermForecastImportCompleteTopicBuShortTermForecastNotification
+
 ## WfmBuShortTermForecastImportCompleteTopicBuShortTermForecastNotification
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **status** | **str** |  | [optional] |
-| **result** | [**WfmBuShortTermForecastImportCompleteTopicBuShortTermForecast**](WfmBuShortTermForecastImportCompleteTopicBuShortTermForecast.html) |  | [optional] |
-| **operation_id** | **str** |  | [optional] |
-{: class="table table-striped"}
+| **status** | str |  | [optional] |
+| **result** | [WfmBuShortTermForecastImportCompleteTopicBuShortTermForecast](WfmBuShortTermForecastImportCompleteTopicBuShortTermForecast) |  | [optional] |
+| **operation_id** | str |  | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

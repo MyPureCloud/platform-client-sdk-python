@@ -1,13 +1,13 @@
----
-title: LearningAssignmentEntity
----
+# LearningAssignmentEntity
+
 ## LearningAssignmentEntity
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **assignment_id** | **str** |  | [optional] |
-{: class="table table-striped"}
+| **assignment_id** | str |  | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

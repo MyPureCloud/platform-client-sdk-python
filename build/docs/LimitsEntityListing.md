@@ -1,13 +1,13 @@
----
-title: LimitsEntityListing
----
+# LimitsEntityListing
+
 ## LimitsEntityListing
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **entities** | [**list[Limit]**](Limit.html) |  | [optional] |
-{: class="table table-striped"}
+| **entities** | [list[Limit]](Limit) |  | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

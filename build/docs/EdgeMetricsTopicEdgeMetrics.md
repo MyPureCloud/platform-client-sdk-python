@@ -1,20 +1,20 @@
----
-title: EdgeMetricsTopicEdgeMetrics
----
+# EdgeMetricsTopicEdgeMetrics
+
 ## EdgeMetricsTopicEdgeMetrics
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **edge** | [**EdgeMetricsTopicUriReference**](EdgeMetricsTopicUriReference.html) |  | [optional] |
-| **event_time** | **datetime** |  | [optional] |
-| **up_time_msec** | **int** |  | [optional] |
-| **processors** | [**list[EdgeMetricsTopicEdgeMetricProcessor]**](EdgeMetricsTopicEdgeMetricProcessor.html) |  | [optional] |
-| **memory** | [**list[EdgeMetricsTopicEdgeMetricMemory]**](EdgeMetricsTopicEdgeMetricMemory.html) |  | [optional] |
-| **disks** | [**list[EdgeMetricsTopicEdgeMetricDisk]**](EdgeMetricsTopicEdgeMetricDisk.html) |  | [optional] |
-| **subsystems** | [**list[EdgeMetricsTopicEdgeMetricSubsystem]**](EdgeMetricsTopicEdgeMetricSubsystem.html) |  | [optional] |
-| **networks** | [**list[EdgeMetricsTopicEdgeMetricNetworks]**](EdgeMetricsTopicEdgeMetricNetworks.html) |  | [optional] |
-{: class="table table-striped"}
+| **edge** | [EdgeMetricsTopicUriReference](EdgeMetricsTopicUriReference) |  | [optional] |
+| **event_time** | datetime |  | [optional] |
+| **up_time_msec** | int |  | [optional] |
+| **processors** | [list[EdgeMetricsTopicEdgeMetricProcessor]](EdgeMetricsTopicEdgeMetricProcessor) |  | [optional] |
+| **memory** | [list[EdgeMetricsTopicEdgeMetricMemory]](EdgeMetricsTopicEdgeMetricMemory) |  | [optional] |
+| **disks** | [list[EdgeMetricsTopicEdgeMetricDisk]](EdgeMetricsTopicEdgeMetricDisk) |  | [optional] |
+| **subsystems** | [list[EdgeMetricsTopicEdgeMetricSubsystem]](EdgeMetricsTopicEdgeMetricSubsystem) |  | [optional] |
+| **networks** | [list[EdgeMetricsTopicEdgeMetricNetworks]](EdgeMetricsTopicEdgeMetricNetworks) |  | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

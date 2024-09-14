@@ -1,6 +1,4 @@
----
-title: NotificationsApi
----
+# NotificationsApi
 
 ## PureCloudPlatformClientV2.NotificationsApi
 
@@ -8,20 +6,20 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 |Method | Description|
 |------------- | -------------|
-|[**delete_notifications_channel_subscriptions**](NotificationsApi.html#delete_notifications_channel_subscriptions) | Remove all subscriptions|
-|[**get_notifications_availabletopics**](NotificationsApi.html#get_notifications_availabletopics) | Get available notification topics.|
-|[**get_notifications_channel_subscriptions**](NotificationsApi.html#get_notifications_channel_subscriptions) | The list of all subscriptions for this channel|
-|[**get_notifications_channels**](NotificationsApi.html#get_notifications_channels) | The list of existing channels|
-|[**head_notifications_channel**](NotificationsApi.html#head_notifications_channel) | Verify a channel still exists and is valid|
-|[**post_notifications_channel_subscriptions**](NotificationsApi.html#post_notifications_channel_subscriptions) | Add a list of subscriptions to the existing list of subscriptions|
-|[**post_notifications_channels**](NotificationsApi.html#post_notifications_channels) | Create a new channel|
-|[**put_notifications_channel_subscriptions**](NotificationsApi.html#put_notifications_channel_subscriptions) | Replace the current list of subscriptions with a new list.|
-{: class="table table-striped"}
+|[**delete_notifications_channel_subscriptions**](#delete_notifications_channel_subscriptions) | Remove all subscriptions|
+|[**get_notifications_availabletopics**](#get_notifications_availabletopics) | Get available notification topics.|
+|[**get_notifications_channel_subscriptions**](#get_notifications_channel_subscriptions) | The list of all subscriptions for this channel|
+|[**get_notifications_channels**](#get_notifications_channels) | The list of existing channels|
+|[**head_notifications_channel**](#head_notifications_channel) | Verify a channel still exists and is valid|
+|[**post_notifications_channel_subscriptions**](#post_notifications_channel_subscriptions) | Add a list of subscriptions to the existing list of subscriptions|
+|[**post_notifications_channels**](#post_notifications_channels) | Create a new channel|
+|[**put_notifications_channel_subscriptions**](#put_notifications_channel_subscriptions) | Replace the current list of subscriptions with a new list.|
 
-<a name="delete_notifications_channel_subscriptions"></a>
 
-##  delete_notifications_channel_subscriptions(channel_id)
 
+## delete_notifications_channel_subscriptions
+
+>  delete_notifications_channel_subscriptions(channel_id)
 
 
 Remove all subscriptions
@@ -59,16 +57,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **channel_id** | **str**| Channel ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (empty response body)
 
-<a name="get_notifications_availabletopics"></a>
 
-## [**AvailableTopicEntityListing**](AvailableTopicEntityListing.html) get_notifications_availabletopics(expand=expand, include_preview=include_preview)
+## get_notifications_availabletopics
 
+> [**AvailableTopicEntityListing**](AvailableTopicEntityListing) get_notifications_availabletopics(expand=expand, include_preview=include_preview)
 
 
 Get available notification topics.
@@ -107,18 +104,17 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] <br />**Values**: description, enforced, schema, visibility, transports, publicApiTemplateUriPaths, requiresPermissions, permissionDetails, topicParameters |
+| **expand** | [**list[str]**](str)| Which fields, if any, to expand | [optional] <br />**Values**: description, enforced, schema, visibility, transports, publicApiTemplateUriPaths, requiresPermissions, permissionDetails, topicParameters |
 | **include_preview** | **bool**| Whether or not to include Preview topics | [optional] [default to True] |
-{: class="table table-striped"}
 
 ### Return type
 
-[**AvailableTopicEntityListing**](AvailableTopicEntityListing.html)
+[**AvailableTopicEntityListing**](AvailableTopicEntityListing)
 
-<a name="get_notifications_channel_subscriptions"></a>
 
-## [**ChannelTopicEntityListing**](ChannelTopicEntityListing.html) get_notifications_channel_subscriptions(channel_id)
+## get_notifications_channel_subscriptions
 
+> [**ChannelTopicEntityListing**](ChannelTopicEntityListing) get_notifications_channel_subscriptions(channel_id)
 
 
 The list of all subscriptions for this channel
@@ -157,16 +153,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **channel_id** | **str**| Channel ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**ChannelTopicEntityListing**](ChannelTopicEntityListing.html)
+[**ChannelTopicEntityListing**](ChannelTopicEntityListing)
 
-<a name="get_notifications_channels"></a>
 
-## [**ChannelEntityListing**](ChannelEntityListing.html) get_notifications_channels(includechannels=includechannels)
+## get_notifications_channels
 
+> [**ChannelEntityListing**](ChannelEntityListing) get_notifications_channels(includechannels=includechannels)
 
 
 The list of existing channels
@@ -205,16 +200,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **includechannels** | **str**| Show user&#39;s channels for this specific token or across all tokens for this user and app.  Channel Ids for other access tokens will not be shown, but will be presented to show their existence. | [optional] [default to &#39;token&#39;]<br />**Values**: token, oauthclient |
-{: class="table table-striped"}
 
 ### Return type
 
-[**ChannelEntityListing**](ChannelEntityListing.html)
+[**ChannelEntityListing**](ChannelEntityListing)
 
-<a name="head_notifications_channel"></a>
 
-##  head_notifications_channel(channel_id)
+## head_notifications_channel
 
+>  head_notifications_channel(channel_id)
 
 
 Verify a channel still exists and is valid
@@ -254,16 +248,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **channel_id** | **str**| Channel ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (empty response body)
 
-<a name="post_notifications_channel_subscriptions"></a>
 
-## [**ChannelTopicEntityListing**](ChannelTopicEntityListing.html) post_notifications_channel_subscriptions(channel_id, body, ignore_errors=ignore_errors)
+## post_notifications_channel_subscriptions
 
+> [**ChannelTopicEntityListing**](ChannelTopicEntityListing) post_notifications_channel_subscriptions(channel_id, body, ignore_errors=ignore_errors)
 
 
 Add a list of subscriptions to the existing list of subscriptions
@@ -304,18 +297,17 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **channel_id** | **str**| Channel ID |  |
-| **body** | [**list[ChannelTopic]**](ChannelTopic.html)| Body |  |
+| **body** | [**list[ChannelTopic]**](ChannelTopic)| Body |  |
 | **ignore_errors** | **bool**| Optionally prevent throwing of errors for failed permissions checks. | [optional] [default to False] |
-{: class="table table-striped"}
 
 ### Return type
 
-[**ChannelTopicEntityListing**](ChannelTopicEntityListing.html)
+[**ChannelTopicEntityListing**](ChannelTopicEntityListing)
 
-<a name="post_notifications_channels"></a>
 
-## [**Channel**](Channel.html) post_notifications_channels()
+## post_notifications_channels
 
+> [**Channel**](Channel) post_notifications_channels()
 
 
 Create a new channel
@@ -353,15 +345,14 @@ except ApiException as e:
 
 This endpoint does not need any parameters.
 
-
 ### Return type
 
-[**Channel**](Channel.html)
+[**Channel**](Channel)
 
-<a name="put_notifications_channel_subscriptions"></a>
 
-## [**ChannelTopicEntityListing**](ChannelTopicEntityListing.html) put_notifications_channel_subscriptions(channel_id, body, ignore_errors=ignore_errors)
+## put_notifications_channel_subscriptions
 
+> [**ChannelTopicEntityListing**](ChannelTopicEntityListing) put_notifications_channel_subscriptions(channel_id, body, ignore_errors=ignore_errors)
 
 
 Replace the current list of subscriptions with a new list.
@@ -402,11 +393,12 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **channel_id** | **str**| Channel ID |  |
-| **body** | [**list[ChannelTopic]**](ChannelTopic.html)| Body |  |
+| **body** | [**list[ChannelTopic]**](ChannelTopic)| Body |  |
 | **ignore_errors** | **bool**| Optionally prevent throwing of errors for failed permissions checks. | [optional] [default to False] |
-{: class="table table-striped"}
 
 ### Return type
 
-[**ChannelTopicEntityListing**](ChannelTopicEntityListing.html)
+[**ChannelTopicEntityListing**](ChannelTopicEntityListing)
 
+
+_PureCloudPlatformClientV2 211.1.0_

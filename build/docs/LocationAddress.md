@@ -1,19 +1,19 @@
----
-title: LocationAddress
----
+# LocationAddress
+
 ## LocationAddress
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **city** | **str** |  | [optional] |
-| **country** | **str** |  | [optional] |
-| **country_name** | **str** |  | [optional] |
-| **state** | **str** |  | [optional] |
-| **street1** | **str** |  | [optional] |
-| **street2** | **str** |  | [optional] |
-| **zipcode** | **str** |  | [optional] |
-{: class="table table-striped"}
+| **city** | str |  | [optional] |
+| **country** | str |  | [optional] |
+| **country_name** | str |  | [optional] |
+| **state** | str |  | [optional] |
+| **street1** | str |  | [optional] |
+| **street2** | str |  | [optional] |
+| **zipcode** | str |  | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

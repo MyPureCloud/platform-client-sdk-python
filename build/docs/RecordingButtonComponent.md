@@ -1,15 +1,15 @@
----
-title: RecordingButtonComponent
----
+# RecordingButtonComponent
+
 ## RecordingButtonComponent
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **title** | **str** |  | [optional] |
-| **actions** | [**RecordingContentActions**](RecordingContentActions.html) |  | [optional] |
-| **is_selected** | **bool** |  | [optional] |
-{: class="table table-striped"}
+| **title** | str |  | [optional] |
+| **actions** | [RecordingContentActions](RecordingContentActions) |  | [optional] |
+| **is_selected** | bool |  | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

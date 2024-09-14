@@ -1,13 +1,13 @@
----
-title: ChatSendMessageResponse
----
+# ChatSendMessageResponse
+
 ## ChatSendMessageResponse
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **id** | **str** | The id of the created message | |
-{: class="table table-striped"}
+| **id** | str | The id of the created message | |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

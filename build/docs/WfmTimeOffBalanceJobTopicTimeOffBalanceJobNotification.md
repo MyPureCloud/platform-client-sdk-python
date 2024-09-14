@@ -1,16 +1,16 @@
----
-title: WfmTimeOffBalanceJobTopicTimeOffBalanceJobNotification
----
+# WfmTimeOffBalanceJobTopicTimeOffBalanceJobNotification
+
 ## WfmTimeOffBalanceJobTopicTimeOffBalanceJobNotification
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **id** | **str** |  | [optional] |
-| **entities** | [**list[WfmTimeOffBalanceJobTopicTimeOffBalance]**](WfmTimeOffBalanceJobTopicTimeOffBalance.html) |  | [optional] |
-| **status** | **str** |  | [optional] |
-| **error** | [**WfmTimeOffBalanceJobTopicErrorBody**](WfmTimeOffBalanceJobTopicErrorBody.html) |  | [optional] |
-{: class="table table-striped"}
+| **id** | str |  | [optional] |
+| **entities** | [list[WfmTimeOffBalanceJobTopicTimeOffBalance]](WfmTimeOffBalanceJobTopicTimeOffBalance) |  | [optional] |
+| **status** | str |  | [optional] |
+| **error** | [WfmTimeOffBalanceJobTopicErrorBody](WfmTimeOffBalanceJobTopicErrorBody) |  | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

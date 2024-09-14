@@ -1,13 +1,13 @@
----
-title: CallForwardingEventCall
----
+# CallForwardingEventCall
+
 ## CallForwardingEventCall
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **targets** | [**list[CallForwardingEventTarget]**](CallForwardingEventTarget.html) |  | [optional] |
-{: class="table table-striped"}
+| **targets** | [list[CallForwardingEventTarget]](CallForwardingEventTarget) |  | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

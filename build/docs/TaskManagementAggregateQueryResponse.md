@@ -1,13 +1,13 @@
----
-title: TaskManagementAggregateQueryResponse
----
+# TaskManagementAggregateQueryResponse
+
 ## TaskManagementAggregateQueryResponse
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **results** | [**list[TaskManagementAggregateDataContainer]**](TaskManagementAggregateDataContainer.html) |  | [optional] |
-{: class="table table-striped"}
+| **results** | [list[TaskManagementAggregateDataContainer]](TaskManagementAggregateDataContainer) |  | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

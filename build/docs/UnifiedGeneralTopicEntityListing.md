@@ -1,13 +1,13 @@
----
-title: UnifiedGeneralTopicEntityListing
----
+# UnifiedGeneralTopicEntityListing
+
 ## UnifiedGeneralTopicEntityListing
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **entities** | [**list[UnifiedGeneralTopic]**](UnifiedGeneralTopic.html) |  | [optional] |
-{: class="table table-striped"}
+| **entities** | [list[UnifiedGeneralTopic]](UnifiedGeneralTopic) |  | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

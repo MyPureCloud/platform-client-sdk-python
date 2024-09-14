@@ -1,13 +1,13 @@
----
-title: JourneyAppEventsNotificationSegmentAssignmentMessage
----
+# JourneyAppEventsNotificationSegmentAssignmentMessage
+
 ## JourneyAppEventsNotificationSegmentAssignmentMessage
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **segment** | [**JourneyAppEventsNotificationSegment**](JourneyAppEventsNotificationSegment.html) |  | [optional] |
-{: class="table table-striped"}
+| **segment** | [JourneyAppEventsNotificationSegment](JourneyAppEventsNotificationSegment) |  | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

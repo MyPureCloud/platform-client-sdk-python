@@ -1,14 +1,14 @@
----
-title: KeyValue
----
+# KeyValue
+
 ## KeyValue
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **key** | **str** | Key for free-form data. | |
-| **value** | **str** | Value for free-form data. | |
-{: class="table table-striped"}
+| **key** | str | Key for free-form data. | |
+| **value** | str | Value for free-form data. | |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

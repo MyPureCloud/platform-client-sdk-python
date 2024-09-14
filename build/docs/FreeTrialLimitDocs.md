@@ -1,13 +1,13 @@
----
-title: FreeTrialLimitDocs
----
+# FreeTrialLimitDocs
+
 ## FreeTrialLimitDocs
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **namespaces** | [**list[FreeTrialNamespace]**](FreeTrialNamespace.html) |  | [optional] |
-{: class="table table-striped"}
+| **namespaces** | [list[FreeTrialNamespace]](FreeTrialNamespace) |  | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

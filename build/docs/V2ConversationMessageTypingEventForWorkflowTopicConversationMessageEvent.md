@@ -1,14 +1,14 @@
----
-title: V2ConversationMessageTypingEventForWorkflowTopicConversationMessageEvent
----
+# V2ConversationMessageTypingEventForWorkflowTopicConversationMessageEvent
+
 ## V2ConversationMessageTypingEventForWorkflowTopicConversationMessageEvent
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **event_type** | **str** |  | [optional] |
-| **typing** | [**V2ConversationMessageTypingEventForWorkflowTopicConversationEventTyping**](V2ConversationMessageTypingEventForWorkflowTopicConversationEventTyping.html) |  | [optional] |
-{: class="table table-striped"}
+| **event_type** | str |  | [optional] |
+| **typing** | [V2ConversationMessageTypingEventForWorkflowTopicConversationEventTyping](V2ConversationMessageTypingEventForWorkflowTopicConversationEventTyping) |  | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

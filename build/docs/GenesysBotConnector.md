@@ -1,13 +1,13 @@
----
-title: GenesysBotConnector
----
+# GenesysBotConnector
+
 ## GenesysBotConnector
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **query_parameters** | **dict(str, str)** | User defined name/value parameters passed to the BotConnector bot. | [optional] |
-{: class="table table-striped"}
+| **query_parameters** | dict(str, str) | User defined name/value parameters passed to the BotConnector bot. | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

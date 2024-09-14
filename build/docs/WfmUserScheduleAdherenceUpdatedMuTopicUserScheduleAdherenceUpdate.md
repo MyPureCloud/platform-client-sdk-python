@@ -1,30 +1,30 @@
----
-title: WfmUserScheduleAdherenceUpdatedMuTopicUserScheduleAdherenceUpdate
----
+# WfmUserScheduleAdherenceUpdatedMuTopicUserScheduleAdherenceUpdate
+
 ## WfmUserScheduleAdherenceUpdatedMuTopicUserScheduleAdherenceUpdate
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **user** | [**WfmUserScheduleAdherenceUpdatedMuTopicUserReference**](WfmUserScheduleAdherenceUpdatedMuTopicUserReference.html) |  | [optional] |
-| **management_unit_id** | **str** |  | [optional] |
-| **team** | [**WfmUserScheduleAdherenceUpdatedMuTopicUriReference**](WfmUserScheduleAdherenceUpdatedMuTopicUriReference.html) |  | [optional] |
-| **scheduled_activity_category** | **str** |  | [optional] |
-| **scheduled_activity_code** | [**WfmUserScheduleAdherenceUpdatedMuTopicActivityCodeReference**](WfmUserScheduleAdherenceUpdatedMuTopicActivityCodeReference.html) |  | [optional] |
-| **system_presence** | **str** |  | [optional] |
-| **organization_secondary_presence_id** | **str** |  | [optional] |
-| **routing_status** | **str** |  | [optional] |
-| **actual_activity_category** | **str** |  | [optional] |
-| **is_out_of_office** | **bool** |  | [optional] |
-| **adherence_state** | **str** |  | [optional] |
-| **impact** | **str** |  | [optional] |
-| **adherence_explanation** | [**WfmUserScheduleAdherenceUpdatedMuTopicRealTimeAdherenceExplanation**](WfmUserScheduleAdherenceUpdatedMuTopicRealTimeAdherenceExplanation.html) |  | [optional] |
-| **adherence_change_time** | **datetime** |  | [optional] |
-| **presence_update_time** | **datetime** |  | [optional] |
-| **active_queues** | [**list[WfmUserScheduleAdherenceUpdatedMuTopicQueueReference]**](WfmUserScheduleAdherenceUpdatedMuTopicQueueReference.html) |  | [optional] |
-| **active_queues_modified_time** | **datetime** |  | [optional] |
-| **removed_from_management_unit** | **bool** |  | [optional] |
-{: class="table table-striped"}
+| **user** | [WfmUserScheduleAdherenceUpdatedMuTopicUserReference](WfmUserScheduleAdherenceUpdatedMuTopicUserReference) |  | [optional] |
+| **management_unit_id** | str |  | [optional] |
+| **team** | [WfmUserScheduleAdherenceUpdatedMuTopicUriReference](WfmUserScheduleAdherenceUpdatedMuTopicUriReference) |  | [optional] |
+| **scheduled_activity_category** | str |  | [optional] |
+| **scheduled_activity_code** | [WfmUserScheduleAdherenceUpdatedMuTopicActivityCodeReference](WfmUserScheduleAdherenceUpdatedMuTopicActivityCodeReference) |  | [optional] |
+| **system_presence** | str |  | [optional] |
+| **organization_secondary_presence_id** | str |  | [optional] |
+| **routing_status** | str |  | [optional] |
+| **actual_activity_category** | str |  | [optional] |
+| **is_out_of_office** | bool |  | [optional] |
+| **adherence_state** | str |  | [optional] |
+| **impact** | str |  | [optional] |
+| **adherence_explanation** | [WfmUserScheduleAdherenceUpdatedMuTopicRealTimeAdherenceExplanation](WfmUserScheduleAdherenceUpdatedMuTopicRealTimeAdherenceExplanation) |  | [optional] |
+| **adherence_change_time** | datetime |  | [optional] |
+| **presence_update_time** | datetime |  | [optional] |
+| **active_queues** | [list[WfmUserScheduleAdherenceUpdatedMuTopicQueueReference]](WfmUserScheduleAdherenceUpdatedMuTopicQueueReference) |  | [optional] |
+| **active_queues_modified_time** | datetime |  | [optional] |
+| **removed_from_management_unit** | bool |  | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

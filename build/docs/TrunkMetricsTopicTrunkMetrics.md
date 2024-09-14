@@ -1,16 +1,16 @@
----
-title: TrunkMetricsTopicTrunkMetrics
----
+# TrunkMetricsTopicTrunkMetrics
+
 ## TrunkMetricsTopicTrunkMetrics
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **calls** | [**TrunkMetricsTopicTrunkMetricsCalls**](TrunkMetricsTopicTrunkMetricsCalls.html) |  | [optional] |
-| **event_time** | **datetime** |  | [optional] |
-| **qos** | [**TrunkMetricsTopicTrunkMetricsQoS**](TrunkMetricsTopicTrunkMetricsQoS.html) |  | [optional] |
-| **trunk** | [**TrunkMetricsTopicUriReference**](TrunkMetricsTopicUriReference.html) |  | [optional] |
-{: class="table table-striped"}
+| **calls** | [TrunkMetricsTopicTrunkMetricsCalls](TrunkMetricsTopicTrunkMetricsCalls) |  | [optional] |
+| **event_time** | datetime |  | [optional] |
+| **qos** | [TrunkMetricsTopicTrunkMetricsQoS](TrunkMetricsTopicTrunkMetricsQoS) |  | [optional] |
+| **trunk** | [TrunkMetricsTopicUriReference](TrunkMetricsTopicUriReference) |  | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

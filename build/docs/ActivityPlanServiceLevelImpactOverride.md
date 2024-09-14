@@ -1,13 +1,13 @@
----
-title: ActivityPlanServiceLevelImpactOverride
----
+# ActivityPlanServiceLevelImpactOverride
+
 ## ActivityPlanServiceLevelImpactOverride
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **decrease_by_percent** | **float** | Allowed service level decrease percent, from 0.0 to 100.0 | |
-{: class="table table-striped"}
+| **decrease_by_percent** | float | Allowed service level decrease percent, from 0.0 to 100.0 | |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

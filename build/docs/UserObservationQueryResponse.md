@@ -1,13 +1,13 @@
----
-title: UserObservationQueryResponse
----
+# UserObservationQueryResponse
+
 ## UserObservationQueryResponse
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **results** | [**list[UserObservationDataContainer]**](UserObservationDataContainer.html) |  | [optional] |
-{: class="table table-striped"}
+| **results** | [list[UserObservationDataContainer]](UserObservationDataContainer) |  | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

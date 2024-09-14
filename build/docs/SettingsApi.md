@@ -1,6 +1,4 @@
----
-title: SettingsApi
----
+# SettingsApi
 
 ## PureCloudPlatformClientV2.SettingsApi
 
@@ -8,20 +6,20 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 |Method | Description|
 |------------- | -------------|
-|[**delete_users_agentui_agents_autoanswer_agent_id_settings**](SettingsApi.html#delete_users_agentui_agents_autoanswer_agent_id_settings) | Delete agent auto answer settings|
-|[**get_emails_settings**](SettingsApi.html#get_emails_settings) | Get email Contact Center settings|
-|[**get_settings_executiondata**](SettingsApi.html#get_settings_executiondata) | Get the execution history enabled setting.|
-|[**get_users_agentui_agents_autoanswer_agent_id_settings**](SettingsApi.html#get_users_agentui_agents_autoanswer_agent_id_settings) | Get agent auto answer settings|
-|[**patch_emails_settings**](SettingsApi.html#patch_emails_settings) | Patch email Contact Center settings|
-|[**patch_settings_executiondata**](SettingsApi.html#patch_settings_executiondata) | Edit the execution history on off setting.|
-|[**patch_users_agentui_agents_autoanswer_agent_id_settings**](SettingsApi.html#patch_users_agentui_agents_autoanswer_agent_id_settings) | Update agent auto answer settings|
-|[**put_users_agentui_agents_autoanswer_agent_id_settings**](SettingsApi.html#put_users_agentui_agents_autoanswer_agent_id_settings) | Set agent auto answer settings|
-{: class="table table-striped"}
+|[**delete_users_agentui_agents_autoanswer_agent_id_settings**](#delete_users_agentui_agents_autoanswer_agent_id_settings) | Delete agent auto answer settings|
+|[**get_emails_settings**](#get_emails_settings) | Get email Contact Center settings|
+|[**get_settings_executiondata**](#get_settings_executiondata) | Get the execution history enabled setting.|
+|[**get_users_agentui_agents_autoanswer_agent_id_settings**](#get_users_agentui_agents_autoanswer_agent_id_settings) | Get agent auto answer settings|
+|[**patch_emails_settings**](#patch_emails_settings) | Patch email Contact Center settings|
+|[**patch_settings_executiondata**](#patch_settings_executiondata) | Edit the execution history on off setting.|
+|[**patch_users_agentui_agents_autoanswer_agent_id_settings**](#patch_users_agentui_agents_autoanswer_agent_id_settings) | Update agent auto answer settings|
+|[**put_users_agentui_agents_autoanswer_agent_id_settings**](#put_users_agentui_agents_autoanswer_agent_id_settings) | Set agent auto answer settings|
 
-<a name="delete_users_agentui_agents_autoanswer_agent_id_settings"></a>
 
-##  delete_users_agentui_agents_autoanswer_agent_id_settings(agent_id)
 
+## delete_users_agentui_agents_autoanswer_agent_id_settings
+
+>  delete_users_agentui_agents_autoanswer_agent_id_settings(agent_id)
 
 
 Delete agent auto answer settings
@@ -60,16 +58,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **agent_id** | **str**| The agent to apply the auto answer settings to |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (empty response body)
 
-<a name="get_emails_settings"></a>
 
-## [**EmailSettings**](EmailSettings.html) get_emails_settings()
+## get_emails_settings
 
+> [**EmailSettings**](EmailSettings) get_emails_settings()
 
 
 Get email Contact Center settings
@@ -106,15 +103,14 @@ except ApiException as e:
 
 This endpoint does not need any parameters.
 
-
 ### Return type
 
-[**EmailSettings**](EmailSettings.html)
+[**EmailSettings**](EmailSettings)
 
-<a name="get_settings_executiondata"></a>
 
-## [**ExecutionDataGlobalSettingsResponse**](ExecutionDataGlobalSettingsResponse.html) get_settings_executiondata()
+## get_settings_executiondata
 
+> [**ExecutionDataGlobalSettingsResponse**](ExecutionDataGlobalSettingsResponse) get_settings_executiondata()
 
 
 Get the execution history enabled setting.
@@ -153,15 +149,14 @@ except ApiException as e:
 
 This endpoint does not need any parameters.
 
-
 ### Return type
 
-[**ExecutionDataGlobalSettingsResponse**](ExecutionDataGlobalSettingsResponse.html)
+[**ExecutionDataGlobalSettingsResponse**](ExecutionDataGlobalSettingsResponse)
 
-<a name="get_users_agentui_agents_autoanswer_agent_id_settings"></a>
 
-## [**AutoAnswerSettings**](AutoAnswerSettings.html) get_users_agentui_agents_autoanswer_agent_id_settings(agent_id)
+## get_users_agentui_agents_autoanswer_agent_id_settings
 
+> [**AutoAnswerSettings**](AutoAnswerSettings) get_users_agentui_agents_autoanswer_agent_id_settings(agent_id)
 
 
 Get agent auto answer settings
@@ -201,16 +196,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **agent_id** | **str**| The agent to apply the auto answer settings to |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**AutoAnswerSettings**](AutoAnswerSettings.html)
+[**AutoAnswerSettings**](AutoAnswerSettings)
 
-<a name="patch_emails_settings"></a>
 
-## [**EmailSettings**](EmailSettings.html) patch_emails_settings(body=body)
+## patch_emails_settings
 
+> [**EmailSettings**](EmailSettings) patch_emails_settings(body=body)
 
 
 Patch email Contact Center settings
@@ -249,17 +243,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**EmailSettings**](EmailSettings.html)|  | [optional]  |
-{: class="table table-striped"}
+| **body** | [**EmailSettings**](EmailSettings)|  | [optional]  |
 
 ### Return type
 
-[**EmailSettings**](EmailSettings.html)
+[**EmailSettings**](EmailSettings)
 
-<a name="patch_settings_executiondata"></a>
 
-## [**ExecutionDataGlobalSettingsResponse**](ExecutionDataGlobalSettingsResponse.html) patch_settings_executiondata(body)
+## patch_settings_executiondata
 
+> [**ExecutionDataGlobalSettingsResponse**](ExecutionDataGlobalSettingsResponse) patch_settings_executiondata(body)
 
 
 Edit the execution history on off setting.
@@ -300,17 +293,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**ExecutionDataSettingsRequest**](ExecutionDataSettingsRequest.html)| New Execution Data Setting |  |
-{: class="table table-striped"}
+| **body** | [**ExecutionDataSettingsRequest**](ExecutionDataSettingsRequest)| New Execution Data Setting |  |
 
 ### Return type
 
-[**ExecutionDataGlobalSettingsResponse**](ExecutionDataGlobalSettingsResponse.html)
+[**ExecutionDataGlobalSettingsResponse**](ExecutionDataGlobalSettingsResponse)
 
-<a name="patch_users_agentui_agents_autoanswer_agent_id_settings"></a>
 
-## [**AutoAnswerSettings**](AutoAnswerSettings.html) patch_users_agentui_agents_autoanswer_agent_id_settings(agent_id, body)
+## patch_users_agentui_agents_autoanswer_agent_id_settings
 
+> [**AutoAnswerSettings**](AutoAnswerSettings) patch_users_agentui_agents_autoanswer_agent_id_settings(agent_id, body)
 
 
 Update agent auto answer settings
@@ -351,17 +343,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **agent_id** | **str**| The agent to apply the auto answer settings to |  |
-| **body** | [**AutoAnswerSettings**](AutoAnswerSettings.html)| AutoAnswerSettings |  |
-{: class="table table-striped"}
+| **body** | [**AutoAnswerSettings**](AutoAnswerSettings)| AutoAnswerSettings |  |
 
 ### Return type
 
-[**AutoAnswerSettings**](AutoAnswerSettings.html)
+[**AutoAnswerSettings**](AutoAnswerSettings)
 
-<a name="put_users_agentui_agents_autoanswer_agent_id_settings"></a>
 
-## [**AutoAnswerSettings**](AutoAnswerSettings.html) put_users_agentui_agents_autoanswer_agent_id_settings(agent_id, body)
+## put_users_agentui_agents_autoanswer_agent_id_settings
 
+> [**AutoAnswerSettings**](AutoAnswerSettings) put_users_agentui_agents_autoanswer_agent_id_settings(agent_id, body)
 
 
 Set agent auto answer settings
@@ -402,10 +393,11 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **agent_id** | **str**| The agent to apply the auto answer settings to |  |
-| **body** | [**AutoAnswerSettings**](AutoAnswerSettings.html)| AutoAnswerSettings |  |
-{: class="table table-striped"}
+| **body** | [**AutoAnswerSettings**](AutoAnswerSettings)| AutoAnswerSettings |  |
 
 ### Return type
 
-[**AutoAnswerSettings**](AutoAnswerSettings.html)
+[**AutoAnswerSettings**](AutoAnswerSettings)
 
+
+_PureCloudPlatformClientV2 211.1.0_

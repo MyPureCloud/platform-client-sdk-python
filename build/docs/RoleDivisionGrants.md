@@ -1,13 +1,13 @@
----
-title: RoleDivisionGrants
----
+# RoleDivisionGrants
+
 ## RoleDivisionGrants
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **grants** | [**list[RoleDivisionPair]**](RoleDivisionPair.html) | A list containing pairs of role and division IDs | |
-{: class="table table-striped"}
+| **grants** | [list[RoleDivisionPair]](RoleDivisionPair) | A list containing pairs of role and division IDs | |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

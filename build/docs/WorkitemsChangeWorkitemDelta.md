@@ -1,15 +1,15 @@
----
-title: WorkitemsChangeWorkitemDelta
----
+# WorkitemsChangeWorkitemDelta
+
 ## WorkitemsChangeWorkitemDelta
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **version** | **int** | Version | [optional] |
-| **modified_by** | [**UserReference**](UserReference.html) | modifiedBy | [optional] |
-| **delta** | [**WorkitemDelta**](WorkitemDelta.html) | The changes that originated this version | [optional] |
-{: class="table table-striped"}
+| **version** | int | Version | [optional] |
+| **modified_by** | [UserReference](UserReference) | modifiedBy | [optional] |
+| **delta** | [WorkitemDelta](WorkitemDelta) | The changes that originated this version | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

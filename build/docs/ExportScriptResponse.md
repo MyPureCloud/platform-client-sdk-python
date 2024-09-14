@@ -1,13 +1,13 @@
----
-title: ExportScriptResponse
----
+# ExportScriptResponse
+
 ## ExportScriptResponse
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **url** | **str** |  | [optional] |
-{: class="table table-striped"}
+| **url** | str |  | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

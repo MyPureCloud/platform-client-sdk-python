@@ -1,13 +1,13 @@
----
-title: AutoAnswerSettings
----
+# AutoAnswerSettings
+
 ## AutoAnswerSettings
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **settings** | [**dict(str, AutoAnswerSetting)**](AutoAnswerSetting.html) | Map of conversation media type enabled status. | |
-{: class="table table-striped"}
+| **settings** | [dict(str, AutoAnswerSetting)](AutoAnswerSetting) | Map of conversation media type enabled status. | |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

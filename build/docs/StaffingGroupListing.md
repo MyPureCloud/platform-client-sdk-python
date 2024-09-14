@@ -1,13 +1,13 @@
----
-title: StaffingGroupListing
----
+# StaffingGroupListing
+
 ## StaffingGroupListing
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **entities** | [**list[StaffingGroupResponse]**](StaffingGroupResponse.html) |  | [optional] |
-{: class="table table-striped"}
+| **entities** | [list[StaffingGroupResponse]](StaffingGroupResponse) |  | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

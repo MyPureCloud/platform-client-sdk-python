@@ -1,6 +1,4 @@
----
-title: UtilitiesApi
----
+# UtilitiesApi
 
 ## PureCloudPlatformClientV2.UtilitiesApi
 
@@ -8,16 +6,16 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 |Method | Description|
 |------------- | -------------|
-|[**get_date**](UtilitiesApi.html#get_date) | Get the current system date/time|
-|[**get_ipranges**](UtilitiesApi.html#get_ipranges) | Get public ip address ranges for Genesys Cloud|
-|[**get_timezones**](UtilitiesApi.html#get_timezones) | Get time zones list|
-|[**post_certificate_details**](UtilitiesApi.html#post_certificate_details) | Returns the information about an X509 PEM encoded certificate or certificate chain.|
-{: class="table table-striped"}
+|[**get_date**](#get_date) | Get the current system date/time|
+|[**get_ipranges**](#get_ipranges) | Get public ip address ranges for Genesys Cloud|
+|[**get_timezones**](#get_timezones) | Get time zones list|
+|[**post_certificate_details**](#post_certificate_details) | Returns the information about an X509 PEM encoded certificate or certificate chain.|
 
-<a name="get_date"></a>
 
-## [**ServerDate**](ServerDate.html) get_date()
 
+## get_date
+
+> [**ServerDate**](ServerDate) get_date()
 
 
 Get the current system date/time
@@ -53,15 +51,14 @@ except ApiException as e:
 
 This endpoint does not need any parameters.
 
-
 ### Return type
 
-[**ServerDate**](ServerDate.html)
+[**ServerDate**](ServerDate)
 
-<a name="get_ipranges"></a>
 
-## [**IpAddressRangeListing**](IpAddressRangeListing.html) get_ipranges()
+## get_ipranges
 
+> [**IpAddressRangeListing**](IpAddressRangeListing) get_ipranges()
 
 
 Get public ip address ranges for Genesys Cloud
@@ -97,15 +94,14 @@ except ApiException as e:
 
 This endpoint does not need any parameters.
 
-
 ### Return type
 
-[**IpAddressRangeListing**](IpAddressRangeListing.html)
+[**IpAddressRangeListing**](IpAddressRangeListing)
 
-<a name="get_timezones"></a>
 
-## [**TimeZoneEntityListing**](TimeZoneEntityListing.html) get_timezones(page_size=page_size, page_number=page_number)
+## get_timezones
 
+> [**TimeZoneEntityListing**](TimeZoneEntityListing) get_timezones(page_size=page_size, page_number=page_number)
 
 
 Get time zones list
@@ -146,16 +142,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
-{: class="table table-striped"}
 
 ### Return type
 
-[**TimeZoneEntityListing**](TimeZoneEntityListing.html)
+[**TimeZoneEntityListing**](TimeZoneEntityListing)
 
-<a name="post_certificate_details"></a>
 
-## [**ParsedCertificate**](ParsedCertificate.html) post_certificate_details(body)
+## post_certificate_details
 
+> [**ParsedCertificate**](ParsedCertificate) post_certificate_details(body)
 
 
 Returns the information about an X509 PEM encoded certificate or certificate chain.
@@ -193,10 +188,11 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**Certificate**](Certificate.html)| Certificate |  |
-{: class="table table-striped"}
+| **body** | [**Certificate**](Certificate)| Certificate |  |
 
 ### Return type
 
-[**ParsedCertificate**](ParsedCertificate.html)
+[**ParsedCertificate**](ParsedCertificate)
 
+
+_PureCloudPlatformClientV2 211.1.0_

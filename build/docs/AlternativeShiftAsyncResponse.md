@@ -1,13 +1,13 @@
----
-title: AlternativeShiftAsyncResponse
----
+# AlternativeShiftAsyncResponse
+
 ## AlternativeShiftAsyncResponse
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **job** | [**AlternativeShiftJobReference**](AlternativeShiftJobReference.html) | The job related to the async request | |
-{: class="table table-striped"}
+| **job** | [AlternativeShiftJobReference](AlternativeShiftJobReference) | The job related to the async request | |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

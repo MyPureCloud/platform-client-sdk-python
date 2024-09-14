@@ -1,14 +1,14 @@
----
-title: VoicemailMessagesTopicVoicemailCopyRecord
----
+# VoicemailMessagesTopicVoicemailCopyRecord
+
 ## VoicemailMessagesTopicVoicemailCopyRecord
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **user** | [**VoicemailMessagesTopicOwner**](VoicemailMessagesTopicOwner.html) |  | [optional] |
-| **group** | [**VoicemailMessagesTopicOwner**](VoicemailMessagesTopicOwner.html) |  | [optional] |
-{: class="table table-striped"}
+| **user** | [VoicemailMessagesTopicOwner](VoicemailMessagesTopicOwner) |  | [optional] |
+| **group** | [VoicemailMessagesTopicOwner](VoicemailMessagesTopicOwner) |  | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

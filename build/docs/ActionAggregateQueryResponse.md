@@ -1,13 +1,13 @@
----
-title: ActionAggregateQueryResponse
----
+# ActionAggregateQueryResponse
+
 ## ActionAggregateQueryResponse
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **results** | [**list[ActionAggregateDataContainer]**](ActionAggregateDataContainer.html) |  | [optional] |
-{: class="table table-striped"}
+| **results** | [list[ActionAggregateDataContainer]](ActionAggregateDataContainer) |  | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

@@ -1,14 +1,14 @@
----
-title: AddConversationResponse
----
+# AddConversationResponse
+
 ## AddConversationResponse
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **conversation** | [**ConversationReference**](ConversationReference.html) | The conversation reference | [optional] |
-| **appointment** | [**CoachingAppointmentReference**](CoachingAppointmentReference.html) | The appointment reference | [optional] |
-{: class="table table-striped"}
+| **conversation** | [ConversationReference](ConversationReference) | The conversation reference | [optional] |
+| **appointment** | [CoachingAppointmentReference](CoachingAppointmentReference) | The appointment reference | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

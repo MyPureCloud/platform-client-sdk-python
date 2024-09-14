@@ -1,15 +1,15 @@
----
-title: ResponseSubstitution
----
+# ResponseSubstitution
+
 ## ResponseSubstitution
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **id** | **str** | Response substitution identifier. | |
-| **description** | **str** | Response substitution description. | [optional] |
-| **default_value** | **str** | Response substitution default value. | [optional] |
-{: class="table table-striped"}
+| **id** | str | Response substitution identifier. | |
+| **description** | str | Response substitution description. | [optional] |
+| **default_value** | str | Response substitution default value. | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

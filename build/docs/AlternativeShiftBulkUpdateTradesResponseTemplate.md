@@ -1,13 +1,13 @@
----
-title: AlternativeShiftBulkUpdateTradesResponseTemplate
----
+# AlternativeShiftBulkUpdateTradesResponseTemplate
+
 ## AlternativeShiftBulkUpdateTradesResponseTemplate
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **entities** | [**list[AlternativeShiftTradeBulkUpdateTemplateItem]**](AlternativeShiftTradeBulkUpdateTemplateItem.html) |  | [optional] |
-{: class="table table-striped"}
+| **entities** | [list[AlternativeShiftTradeBulkUpdateTemplateItem]](AlternativeShiftTradeBulkUpdateTemplateItem) |  | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

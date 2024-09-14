@@ -1,6 +1,4 @@
----
-title: GreetingsApi
----
+# GreetingsApi
 
 ## PureCloudPlatformClientV2.GreetingsApi
 
@@ -8,28 +6,28 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 |Method | Description|
 |------------- | -------------|
-|[**delete_greeting**](GreetingsApi.html#delete_greeting) | Deletes a Greeting with the given GreetingId|
-|[**get_greeting**](GreetingsApi.html#get_greeting) | Get a Greeting with the given GreetingId|
-|[**get_greeting_media**](GreetingsApi.html#get_greeting_media) | Get media playback URI for this greeting|
-|[**get_greetings**](GreetingsApi.html#get_greetings) | Gets an Organization&#39;s Greetings|
-|[**get_greetings_defaults**](GreetingsApi.html#get_greetings_defaults) | Get an Organization&#39;s DefaultGreetingList|
-|[**get_group_greetings**](GreetingsApi.html#get_group_greetings) | Get a list of the Group&#39;s Greetings|
-|[**get_group_greetings_defaults**](GreetingsApi.html#get_group_greetings_defaults) | Grabs the list of Default Greetings given a Group&#39;s ID|
-|[**get_user_greetings**](GreetingsApi.html#get_user_greetings) | Get a list of the User&#39;s Greetings|
-|[**get_user_greetings_defaults**](GreetingsApi.html#get_user_greetings_defaults) | Grabs the list of Default Greetings given a User&#39;s ID|
-|[**post_greetings**](GreetingsApi.html#post_greetings) | Create a Greeting for an Organization|
-|[**post_group_greetings**](GreetingsApi.html#post_group_greetings) | Creates a Greeting for a Group|
-|[**post_user_greetings**](GreetingsApi.html#post_user_greetings) | Creates a Greeting for a User|
-|[**put_greeting**](GreetingsApi.html#put_greeting) | Updates the Greeting with the given GreetingId|
-|[**put_greetings_defaults**](GreetingsApi.html#put_greetings_defaults) | Update an Organization&#39;s DefaultGreetingList|
-|[**put_group_greetings_defaults**](GreetingsApi.html#put_group_greetings_defaults) | Updates the DefaultGreetingList of the specified Group|
-|[**put_user_greetings_defaults**](GreetingsApi.html#put_user_greetings_defaults) | Updates the DefaultGreetingList of the specified User|
-{: class="table table-striped"}
+|[**delete_greeting**](#delete_greeting) | Deletes a Greeting with the given GreetingId|
+|[**get_greeting**](#get_greeting) | Get a Greeting with the given GreetingId|
+|[**get_greeting_media**](#get_greeting_media) | Get media playback URI for this greeting|
+|[**get_greetings**](#get_greetings) | Gets an Organization&#39;s Greetings|
+|[**get_greetings_defaults**](#get_greetings_defaults) | Get an Organization&#39;s DefaultGreetingList|
+|[**get_group_greetings**](#get_group_greetings) | Get a list of the Group&#39;s Greetings|
+|[**get_group_greetings_defaults**](#get_group_greetings_defaults) | Grabs the list of Default Greetings given a Group&#39;s ID|
+|[**get_user_greetings**](#get_user_greetings) | Get a list of the User&#39;s Greetings|
+|[**get_user_greetings_defaults**](#get_user_greetings_defaults) | Grabs the list of Default Greetings given a User&#39;s ID|
+|[**post_greetings**](#post_greetings) | Create a Greeting for an Organization|
+|[**post_group_greetings**](#post_group_greetings) | Creates a Greeting for a Group|
+|[**post_user_greetings**](#post_user_greetings) | Creates a Greeting for a User|
+|[**put_greeting**](#put_greeting) | Updates the Greeting with the given GreetingId|
+|[**put_greetings_defaults**](#put_greetings_defaults) | Update an Organization&#39;s DefaultGreetingList|
+|[**put_group_greetings_defaults**](#put_group_greetings_defaults) | Updates the DefaultGreetingList of the specified Group|
+|[**put_user_greetings_defaults**](#put_user_greetings_defaults) | Updates the DefaultGreetingList of the specified User|
 
-<a name="delete_greeting"></a>
 
-##  delete_greeting(greeting_id)
 
+## delete_greeting
+
+>  delete_greeting(greeting_id)
 
 
 Deletes a Greeting with the given GreetingId
@@ -67,16 +65,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **greeting_id** | **str**| Greeting ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (empty response body)
 
-<a name="get_greeting"></a>
 
-## [**Greeting**](Greeting.html) get_greeting(greeting_id)
+## get_greeting
 
+> [**Greeting**](Greeting) get_greeting(greeting_id)
 
 
 Get a Greeting with the given GreetingId
@@ -115,16 +112,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **greeting_id** | **str**| Greeting ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**Greeting**](Greeting.html)
+[**Greeting**](Greeting)
 
-<a name="get_greeting_media"></a>
 
-## [**GreetingMediaInfo**](GreetingMediaInfo.html) get_greeting_media(greeting_id, format_id=format_id)
+## get_greeting_media
 
+> [**GreetingMediaInfo**](GreetingMediaInfo) get_greeting_media(greeting_id, format_id=format_id)
 
 
 Get media playback URI for this greeting
@@ -165,16 +161,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **greeting_id** | **str**| Greeting ID |  |
 | **format_id** | **str**| The desired media format. | [optional] [default to &#39;WAV&#39;]<br />**Values**: WAV, WEBM, WAV_ULAW, OGG_VORBIS, OGG_OPUS, MP3, NONE |
-{: class="table table-striped"}
 
 ### Return type
 
-[**GreetingMediaInfo**](GreetingMediaInfo.html)
+[**GreetingMediaInfo**](GreetingMediaInfo)
 
-<a name="get_greetings"></a>
 
-## [**DomainEntityListing**](DomainEntityListing.html) get_greetings(page_size=page_size, page_number=page_number)
+## get_greetings
 
+> [**DomainEntityListing**](DomainEntityListing) get_greetings(page_size=page_size, page_number=page_number)
 
 
 Gets an Organization's Greetings
@@ -215,16 +210,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
-{: class="table table-striped"}
 
 ### Return type
 
-[**DomainEntityListing**](DomainEntityListing.html)
+[**DomainEntityListing**](DomainEntityListing)
 
-<a name="get_greetings_defaults"></a>
 
-## [**DefaultGreetingList**](DefaultGreetingList.html) get_greetings_defaults()
+## get_greetings_defaults
 
+> [**DefaultGreetingList**](DefaultGreetingList) get_greetings_defaults()
 
 
 Get an Organization's DefaultGreetingList
@@ -260,15 +254,14 @@ except ApiException as e:
 
 This endpoint does not need any parameters.
 
-
 ### Return type
 
-[**DefaultGreetingList**](DefaultGreetingList.html)
+[**DefaultGreetingList**](DefaultGreetingList)
 
-<a name="get_group_greetings"></a>
 
-## [**GreetingListing**](GreetingListing.html) get_group_greetings(group_id, page_size=page_size, page_number=page_number)
+## get_group_greetings
 
+> [**GreetingListing**](GreetingListing) get_group_greetings(group_id, page_size=page_size, page_number=page_number)
 
 
 Get a list of the Group's Greetings
@@ -311,16 +304,15 @@ except ApiException as e:
 | **group_id** | **str**| Group ID |  |
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
-{: class="table table-striped"}
 
 ### Return type
 
-[**GreetingListing**](GreetingListing.html)
+[**GreetingListing**](GreetingListing)
 
-<a name="get_group_greetings_defaults"></a>
 
-## [**DefaultGreetingList**](DefaultGreetingList.html) get_group_greetings_defaults(group_id)
+## get_group_greetings_defaults
 
+> [**DefaultGreetingList**](DefaultGreetingList) get_group_greetings_defaults(group_id)
 
 
 Grabs the list of Default Greetings given a Group's ID
@@ -359,16 +351,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **group_id** | **str**| Group ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**DefaultGreetingList**](DefaultGreetingList.html)
+[**DefaultGreetingList**](DefaultGreetingList)
 
-<a name="get_user_greetings"></a>
 
-## [**DomainEntityListing**](DomainEntityListing.html) get_user_greetings(user_id, page_size=page_size, page_number=page_number)
+## get_user_greetings
 
+> [**DomainEntityListing**](DomainEntityListing) get_user_greetings(user_id, page_size=page_size, page_number=page_number)
 
 
 Get a list of the User's Greetings
@@ -411,16 +402,15 @@ except ApiException as e:
 | **user_id** | **str**| User ID |  |
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
-{: class="table table-striped"}
 
 ### Return type
 
-[**DomainEntityListing**](DomainEntityListing.html)
+[**DomainEntityListing**](DomainEntityListing)
 
-<a name="get_user_greetings_defaults"></a>
 
-## [**DefaultGreetingList**](DefaultGreetingList.html) get_user_greetings_defaults(user_id)
+## get_user_greetings_defaults
 
+> [**DefaultGreetingList**](DefaultGreetingList) get_user_greetings_defaults(user_id)
 
 
 Grabs the list of Default Greetings given a User's ID
@@ -459,16 +449,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **user_id** | **str**| User ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**DefaultGreetingList**](DefaultGreetingList.html)
+[**DefaultGreetingList**](DefaultGreetingList)
 
-<a name="post_greetings"></a>
 
-## [**Greeting**](Greeting.html) post_greetings(body)
+## post_greetings
 
+> [**Greeting**](Greeting) post_greetings(body)
 
 
 Create a Greeting for an Organization
@@ -506,17 +495,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**Greeting**](Greeting.html)| The Greeting to create |  |
-{: class="table table-striped"}
+| **body** | [**Greeting**](Greeting)| The Greeting to create |  |
 
 ### Return type
 
-[**Greeting**](Greeting.html)
+[**Greeting**](Greeting)
 
-<a name="post_group_greetings"></a>
 
-## [**Greeting**](Greeting.html) post_group_greetings(group_id, body)
+## post_group_greetings
 
+> [**Greeting**](Greeting) post_group_greetings(group_id, body)
 
 
 Creates a Greeting for a Group
@@ -556,17 +544,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **group_id** | **str**| Group ID |  |
-| **body** | [**Greeting**](Greeting.html)| The Greeting to create |  |
-{: class="table table-striped"}
+| **body** | [**Greeting**](Greeting)| The Greeting to create |  |
 
 ### Return type
 
-[**Greeting**](Greeting.html)
+[**Greeting**](Greeting)
 
-<a name="post_user_greetings"></a>
 
-## [**Greeting**](Greeting.html) post_user_greetings(user_id, body)
+## post_user_greetings
 
+> [**Greeting**](Greeting) post_user_greetings(user_id, body)
 
 
 Creates a Greeting for a User
@@ -606,17 +593,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **user_id** | **str**| User ID |  |
-| **body** | [**Greeting**](Greeting.html)| The Greeting to create |  |
-{: class="table table-striped"}
+| **body** | [**Greeting**](Greeting)| The Greeting to create |  |
 
 ### Return type
 
-[**Greeting**](Greeting.html)
+[**Greeting**](Greeting)
 
-<a name="put_greeting"></a>
 
-## [**Greeting**](Greeting.html) put_greeting(greeting_id, body)
+## put_greeting
 
+> [**Greeting**](Greeting) put_greeting(greeting_id, body)
 
 
 Updates the Greeting with the given GreetingId
@@ -656,17 +642,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **greeting_id** | **str**| Greeting ID |  |
-| **body** | [**Greeting**](Greeting.html)| The updated Greeting |  |
-{: class="table table-striped"}
+| **body** | [**Greeting**](Greeting)| The updated Greeting |  |
 
 ### Return type
 
-[**Greeting**](Greeting.html)
+[**Greeting**](Greeting)
 
-<a name="put_greetings_defaults"></a>
 
-## [**DefaultGreetingList**](DefaultGreetingList.html) put_greetings_defaults(body)
+## put_greetings_defaults
 
+> [**DefaultGreetingList**](DefaultGreetingList) put_greetings_defaults(body)
 
 
 Update an Organization's DefaultGreetingList
@@ -704,17 +689,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**DefaultGreetingList**](DefaultGreetingList.html)| The updated defaultGreetingList |  |
-{: class="table table-striped"}
+| **body** | [**DefaultGreetingList**](DefaultGreetingList)| The updated defaultGreetingList |  |
 
 ### Return type
 
-[**DefaultGreetingList**](DefaultGreetingList.html)
+[**DefaultGreetingList**](DefaultGreetingList)
 
-<a name="put_group_greetings_defaults"></a>
 
-## [**DefaultGreetingList**](DefaultGreetingList.html) put_group_greetings_defaults(group_id, body)
+## put_group_greetings_defaults
 
+> [**DefaultGreetingList**](DefaultGreetingList) put_group_greetings_defaults(group_id, body)
 
 
 Updates the DefaultGreetingList of the specified Group
@@ -754,17 +738,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **group_id** | **str**| Group ID |  |
-| **body** | [**DefaultGreetingList**](DefaultGreetingList.html)| The updated defaultGreetingList |  |
-{: class="table table-striped"}
+| **body** | [**DefaultGreetingList**](DefaultGreetingList)| The updated defaultGreetingList |  |
 
 ### Return type
 
-[**DefaultGreetingList**](DefaultGreetingList.html)
+[**DefaultGreetingList**](DefaultGreetingList)
 
-<a name="put_user_greetings_defaults"></a>
 
-## [**DefaultGreetingList**](DefaultGreetingList.html) put_user_greetings_defaults(user_id, body)
+## put_user_greetings_defaults
 
+> [**DefaultGreetingList**](DefaultGreetingList) put_user_greetings_defaults(user_id, body)
 
 
 Updates the DefaultGreetingList of the specified User
@@ -804,10 +787,11 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **user_id** | **str**| User ID |  |
-| **body** | [**DefaultGreetingList**](DefaultGreetingList.html)| The updated defaultGreetingList |  |
-{: class="table table-striped"}
+| **body** | [**DefaultGreetingList**](DefaultGreetingList)| The updated defaultGreetingList |  |
 
 ### Return type
 
-[**DefaultGreetingList**](DefaultGreetingList.html)
+[**DefaultGreetingList**](DefaultGreetingList)
 
+
+_PureCloudPlatformClientV2 211.1.0_

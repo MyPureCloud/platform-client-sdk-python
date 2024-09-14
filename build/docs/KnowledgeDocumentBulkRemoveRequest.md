@@ -1,13 +1,13 @@
----
-title: KnowledgeDocumentBulkRemoveRequest
----
+# KnowledgeDocumentBulkRemoveRequest
+
 ## KnowledgeDocumentBulkRemoveRequest
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **entities** | [**list[WritableEntity]**](WritableEntity.html) | List of unique identifiers referencing documents that are to be deleted | |
-{: class="table table-striped"}
+| **entities** | [list[WritableEntity]](WritableEntity) | List of unique identifiers referencing documents that are to be deleted | |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

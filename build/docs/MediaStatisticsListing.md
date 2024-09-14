@@ -1,13 +1,13 @@
----
-title: MediaStatisticsListing
----
+# MediaStatisticsListing
+
 ## MediaStatisticsListing
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **entities** | [**list[MediaStatistics]**](MediaStatistics.html) |  | [optional] |
-{: class="table table-striped"}
+| **entities** | [list[MediaStatistics]](MediaStatistics) |  | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

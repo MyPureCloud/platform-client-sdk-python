@@ -1,13 +1,13 @@
----
-title: PinnedMessageRequest
----
+# PinnedMessageRequest
+
 ## PinnedMessageRequest
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **pinned_message_ids** | **list[str]** | Ids of the messages to pin | |
-{: class="table table-striped"}
+| **pinned_message_ids** | list[str] | Ids of the messages to pin | |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

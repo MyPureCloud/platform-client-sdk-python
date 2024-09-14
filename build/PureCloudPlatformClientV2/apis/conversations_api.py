@@ -8455,7 +8455,6 @@ class ConversationsApi(object):
         """
         Update the utilization label on a conversation. When there is no value provided, the system default label is applied
         
-	    patch_conversation_utilizationlabel is a preview method and is subject to both breaking and non-breaking changes at any time without notice
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function

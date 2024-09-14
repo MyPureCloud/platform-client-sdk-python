@@ -1,14 +1,14 @@
----
-title: StatEventUserTopicIntervalMetrics
----
+# StatEventUserTopicIntervalMetrics
+
 ## StatEventUserTopicIntervalMetrics
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **interval** | **str** |  | [optional] |
-| **metrics** | [**list[StatEventUserTopicMetricStats]**](StatEventUserTopicMetricStats.html) |  | [optional] |
-{: class="table table-striped"}
+| **interval** | str |  | [optional] |
+| **metrics** | [list[StatEventUserTopicMetricStats]](StatEventUserTopicMetricStats) |  | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

@@ -1,13 +1,13 @@
----
-title: ContextPattern
----
+# ContextPattern
+
 ## ContextPattern
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **criteria** | [**list[EntityTypeCriteria]**](EntityTypeCriteria.html) | A list of one or more criteria to satisfy. | |
-{: class="table table-striped"}
+| **criteria** | [list[EntityTypeCriteria]](EntityTypeCriteria) | A list of one or more criteria to satisfy. | |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

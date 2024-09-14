@@ -1,13 +1,13 @@
----
-title: ChatMessageEntityListing
----
+# ChatMessageEntityListing
+
 ## ChatMessageEntityListing
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **entities** | [**list[ChatMessageResponse]**](ChatMessageResponse.html) |  | [optional] |
-{: class="table table-striped"}
+| **entities** | [list[ChatMessageResponse]](ChatMessageResponse) |  | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

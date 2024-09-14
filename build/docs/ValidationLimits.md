@@ -1,18 +1,18 @@
----
-title: ValidationLimits
----
+# ValidationLimits
+
 ## ValidationLimits
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **min_length** | [**MinLength**](MinLength.html) |  | [optional] |
-| **max_length** | [**MaxLength**](MaxLength.html) |  | [optional] |
-| **min_items** | [**MinLength**](MinLength.html) |  | [optional] |
-| **max_items** | [**MaxLength**](MaxLength.html) |  | [optional] |
-| **minimum** | [**MinLength**](MinLength.html) |  | [optional] |
-| **maximum** | [**MaxLength**](MaxLength.html) |  | [optional] |
-{: class="table table-striped"}
+| **min_length** | [MinLength](MinLength) |  | [optional] |
+| **max_length** | [MaxLength](MaxLength) |  | [optional] |
+| **min_items** | [MinLength](MinLength) |  | [optional] |
+| **max_items** | [MaxLength](MaxLength) |  | [optional] |
+| **minimum** | [MinLength](MinLength) |  | [optional] |
+| **maximum** | [MaxLength](MaxLength) |  | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

@@ -1,13 +1,13 @@
----
-title: ValueWrapperActivityPlanServiceGoalImpactOverrides
----
+# ValueWrapperActivityPlanServiceGoalImpactOverrides
+
 ## ValueWrapperActivityPlanServiceGoalImpactOverrides
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **value** | [**ActivityPlanServiceGoalImpactOverrides**](ActivityPlanServiceGoalImpactOverrides.html) | The value for the associated field | [optional] |
-{: class="table table-striped"}
+| **value** | [ActivityPlanServiceGoalImpactOverrides](ActivityPlanServiceGoalImpactOverrides) | The value for the associated field | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

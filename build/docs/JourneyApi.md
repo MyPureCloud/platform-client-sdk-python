@@ -1,6 +1,4 @@
----
-title: JourneyApi
----
+# JourneyApi
 
 ## PureCloudPlatformClientV2.JourneyApi
 
@@ -8,72 +6,72 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 |Method | Description|
 |------------- | -------------|
-|[**delete_journey_actionmap**](JourneyApi.html#delete_journey_actionmap) | Delete single action map.|
-|[**delete_journey_actiontemplate**](JourneyApi.html#delete_journey_actiontemplate) | Delete a single action template.|
-|[**delete_journey_outcome**](JourneyApi.html#delete_journey_outcome) | Delete an outcome.|
-|[**delete_journey_outcomes_predictor**](JourneyApi.html#delete_journey_outcomes_predictor) | Delete an outcome predictor.|
-|[**delete_journey_segment**](JourneyApi.html#delete_journey_segment) | Delete a segment.|
-|[**delete_journey_view**](JourneyApi.html#delete_journey_view) | Delete a Journey View by ID|
-|[**get_analytics_journeys_aggregates_job**](JourneyApi.html#get_analytics_journeys_aggregates_job) | Get status for async query for journey aggregates|
-|[**get_analytics_journeys_aggregates_job_results**](JourneyApi.html#get_analytics_journeys_aggregates_job_results) | Fetch a page of results for an async aggregates query|
-|[**get_externalcontacts_contact_journey_sessions**](JourneyApi.html#get_externalcontacts_contact_journey_sessions) | Retrieve all sessions for a given external contact.|
-|[**get_journey_actionmap**](JourneyApi.html#get_journey_actionmap) | Retrieve a single action map.|
-|[**get_journey_actionmaps**](JourneyApi.html#get_journey_actionmaps) | Retrieve all action maps.|
-|[**get_journey_actionmaps_estimates_job**](JourneyApi.html#get_journey_actionmaps_estimates_job) | Get status of job.|
-|[**get_journey_actionmaps_estimates_job_results**](JourneyApi.html#get_journey_actionmaps_estimates_job_results) | Get estimates from completed job.|
-|[**get_journey_actiontarget**](JourneyApi.html#get_journey_actiontarget) | Retrieve a single action target.|
-|[**get_journey_actiontargets**](JourneyApi.html#get_journey_actiontargets) | Retrieve all action targets.|
-|[**get_journey_actiontemplate**](JourneyApi.html#get_journey_actiontemplate) | Retrieve a single action template.|
-|[**get_journey_actiontemplates**](JourneyApi.html#get_journey_actiontemplates) | Retrieve all action templates.|
-|[**get_journey_deployment_customer_ping**](JourneyApi.html#get_journey_deployment_customer_ping) | Send a ping.|
-|[**get_journey_outcome**](JourneyApi.html#get_journey_outcome) | Retrieve a single outcome.|
-|[**get_journey_outcomes**](JourneyApi.html#get_journey_outcomes) | Retrieve all outcomes.|
-|[**get_journey_outcomes_attributions_job**](JourneyApi.html#get_journey_outcomes_attributions_job) | Get job status.|
-|[**get_journey_outcomes_attributions_job_results**](JourneyApi.html#get_journey_outcomes_attributions_job_results) | Get outcome attribution entities from completed job.|
-|[**get_journey_outcomes_predictor**](JourneyApi.html#get_journey_outcomes_predictor) | Retrieve a single outcome predictor.|
-|[**get_journey_outcomes_predictors**](JourneyApi.html#get_journey_outcomes_predictors) | Retrieve all outcome predictors.|
-|[**get_journey_segment**](JourneyApi.html#get_journey_segment) | Retrieve a single segment.|
-|[**get_journey_segments**](JourneyApi.html#get_journey_segments) | Retrieve all segments.|
-|[**get_journey_session**](JourneyApi.html#get_journey_session) | Retrieve a single session.|
-|[**get_journey_session_events**](JourneyApi.html#get_journey_session_events) | Retrieve all events for a given session.|
-|[**get_journey_session_outcomescores**](JourneyApi.html#get_journey_session_outcomescores) | Retrieve latest outcome score associated with a session for all outcomes.|
-|[**get_journey_view**](JourneyApi.html#get_journey_view) | Get a Journey View by ID|
-|[**get_journey_view_version**](JourneyApi.html#get_journey_view_version) | Get a Journey View by ID and version|
-|[**get_journey_view_version_job**](JourneyApi.html#get_journey_view_version_job) | Get the job for a journey view version.|
-|[**get_journey_view_version_job_results**](JourneyApi.html#get_journey_view_version_job_results) | Get the result of a job for a journey view version.|
-|[**get_journey_view_version_jobs_latest**](JourneyApi.html#get_journey_view_version_jobs_latest) | Get the latest job of a journey view version.|
-|[**get_journey_views**](JourneyApi.html#get_journey_views) | Get a list of Journey Views|
-|[**get_journey_views_eventdefinition**](JourneyApi.html#get_journey_views_eventdefinition) | Get an Event Definition|
-|[**get_journey_views_eventdefinitions**](JourneyApi.html#get_journey_views_eventdefinitions) | Get a list of Event Definitions|
-|[**get_journey_views_jobs**](JourneyApi.html#get_journey_views_jobs) | Get the jobs for an organization.|
-|[**patch_journey_actionmap**](JourneyApi.html#patch_journey_actionmap) | Update single action map.|
-|[**patch_journey_actiontarget**](JourneyApi.html#patch_journey_actiontarget) | Update a single action target.|
-|[**patch_journey_actiontemplate**](JourneyApi.html#patch_journey_actiontemplate) | Update a single action template.|
-|[**patch_journey_outcome**](JourneyApi.html#patch_journey_outcome) | Update an outcome.|
-|[**patch_journey_segment**](JourneyApi.html#patch_journey_segment) | Update a segment.|
-|[**post_analytics_journeys_aggregates_jobs**](JourneyApi.html#post_analytics_journeys_aggregates_jobs) | Query for journey aggregates asynchronously|
-|[**post_analytics_journeys_aggregates_query**](JourneyApi.html#post_analytics_journeys_aggregates_query) | Query for journey aggregates|
-|[**post_journey_actionmaps**](JourneyApi.html#post_journey_actionmaps) | Create an action map.|
-|[**post_journey_actionmaps_estimates_jobs**](JourneyApi.html#post_journey_actionmaps_estimates_jobs) | Query for estimates|
-|[**post_journey_actiontemplates**](JourneyApi.html#post_journey_actiontemplates) | Create a single action template.|
-|[**post_journey_deployment_actionevent**](JourneyApi.html#post_journey_deployment_actionevent) | Sends an action event, which is used for changing the state of actions that have been offered to the user.|
-|[**post_journey_deployment_appevents**](JourneyApi.html#post_journey_deployment_appevents) | Send a journey app event, used for tracking customer activity on an application.|
-|[**post_journey_deployment_webevents**](JourneyApi.html#post_journey_deployment_webevents) | Send a journey web event, used for tracking customer activity on a website.|
-|[**post_journey_flows_paths_query**](JourneyApi.html#post_journey_flows_paths_query) | Query for flow paths.|
-|[**post_journey_outcomes**](JourneyApi.html#post_journey_outcomes) | Create an outcome.|
-|[**post_journey_outcomes_attributions_jobs**](JourneyApi.html#post_journey_outcomes_attributions_jobs) | Create Outcome Attributions|
-|[**post_journey_outcomes_predictors**](JourneyApi.html#post_journey_outcomes_predictors) | Create an outcome predictor.|
-|[**post_journey_segments**](JourneyApi.html#post_journey_segments) | Create a segment.|
-|[**post_journey_view_version_jobs**](JourneyApi.html#post_journey_view_version_jobs) | Submit a job request for a journey view version.|
-|[**post_journey_view_versions**](JourneyApi.html#post_journey_view_versions) | Update a Journey View by ID|
-|[**post_journey_views**](JourneyApi.html#post_journey_views) | Create a new Journey View|
-|[**post_journey_views_encodings_validate**](JourneyApi.html#post_journey_views_encodings_validate) | Validate whether an encoding exist for a label/value combination.|
-{: class="table table-striped"}
+|[**delete_journey_actionmap**](#delete_journey_actionmap) | Delete single action map.|
+|[**delete_journey_actiontemplate**](#delete_journey_actiontemplate) | Delete a single action template.|
+|[**delete_journey_outcome**](#delete_journey_outcome) | Delete an outcome.|
+|[**delete_journey_outcomes_predictor**](#delete_journey_outcomes_predictor) | Delete an outcome predictor.|
+|[**delete_journey_segment**](#delete_journey_segment) | Delete a segment.|
+|[**delete_journey_view**](#delete_journey_view) | Delete a Journey View by ID|
+|[**get_analytics_journeys_aggregates_job**](#get_analytics_journeys_aggregates_job) | Get status for async query for journey aggregates|
+|[**get_analytics_journeys_aggregates_job_results**](#get_analytics_journeys_aggregates_job_results) | Fetch a page of results for an async aggregates query|
+|[**get_externalcontacts_contact_journey_sessions**](#get_externalcontacts_contact_journey_sessions) | Retrieve all sessions for a given external contact.|
+|[**get_journey_actionmap**](#get_journey_actionmap) | Retrieve a single action map.|
+|[**get_journey_actionmaps**](#get_journey_actionmaps) | Retrieve all action maps.|
+|[**get_journey_actionmaps_estimates_job**](#get_journey_actionmaps_estimates_job) | Get status of job.|
+|[**get_journey_actionmaps_estimates_job_results**](#get_journey_actionmaps_estimates_job_results) | Get estimates from completed job.|
+|[**get_journey_actiontarget**](#get_journey_actiontarget) | Retrieve a single action target.|
+|[**get_journey_actiontargets**](#get_journey_actiontargets) | Retrieve all action targets.|
+|[**get_journey_actiontemplate**](#get_journey_actiontemplate) | Retrieve a single action template.|
+|[**get_journey_actiontemplates**](#get_journey_actiontemplates) | Retrieve all action templates.|
+|[**get_journey_deployment_customer_ping**](#get_journey_deployment_customer_ping) | Send a ping.|
+|[**get_journey_outcome**](#get_journey_outcome) | Retrieve a single outcome.|
+|[**get_journey_outcomes**](#get_journey_outcomes) | Retrieve all outcomes.|
+|[**get_journey_outcomes_attributions_job**](#get_journey_outcomes_attributions_job) | Get job status.|
+|[**get_journey_outcomes_attributions_job_results**](#get_journey_outcomes_attributions_job_results) | Get outcome attribution entities from completed job.|
+|[**get_journey_outcomes_predictor**](#get_journey_outcomes_predictor) | Retrieve a single outcome predictor.|
+|[**get_journey_outcomes_predictors**](#get_journey_outcomes_predictors) | Retrieve all outcome predictors.|
+|[**get_journey_segment**](#get_journey_segment) | Retrieve a single segment.|
+|[**get_journey_segments**](#get_journey_segments) | Retrieve all segments.|
+|[**get_journey_session**](#get_journey_session) | Retrieve a single session.|
+|[**get_journey_session_events**](#get_journey_session_events) | Retrieve all events for a given session.|
+|[**get_journey_session_outcomescores**](#get_journey_session_outcomescores) | Retrieve latest outcome score associated with a session for all outcomes.|
+|[**get_journey_view**](#get_journey_view) | Get a Journey View by ID|
+|[**get_journey_view_version**](#get_journey_view_version) | Get a Journey View by ID and version|
+|[**get_journey_view_version_job**](#get_journey_view_version_job) | Get the job for a journey view version.|
+|[**get_journey_view_version_job_results**](#get_journey_view_version_job_results) | Get the result of a job for a journey view version.|
+|[**get_journey_view_version_jobs_latest**](#get_journey_view_version_jobs_latest) | Get the latest job of a journey view version.|
+|[**get_journey_views**](#get_journey_views) | Get a list of Journey Views|
+|[**get_journey_views_eventdefinition**](#get_journey_views_eventdefinition) | Get an Event Definition|
+|[**get_journey_views_eventdefinitions**](#get_journey_views_eventdefinitions) | Get a list of Event Definitions|
+|[**get_journey_views_jobs**](#get_journey_views_jobs) | Get the jobs for an organization.|
+|[**patch_journey_actionmap**](#patch_journey_actionmap) | Update single action map.|
+|[**patch_journey_actiontarget**](#patch_journey_actiontarget) | Update a single action target.|
+|[**patch_journey_actiontemplate**](#patch_journey_actiontemplate) | Update a single action template.|
+|[**patch_journey_outcome**](#patch_journey_outcome) | Update an outcome.|
+|[**patch_journey_segment**](#patch_journey_segment) | Update a segment.|
+|[**post_analytics_journeys_aggregates_jobs**](#post_analytics_journeys_aggregates_jobs) | Query for journey aggregates asynchronously|
+|[**post_analytics_journeys_aggregates_query**](#post_analytics_journeys_aggregates_query) | Query for journey aggregates|
+|[**post_journey_actionmaps**](#post_journey_actionmaps) | Create an action map.|
+|[**post_journey_actionmaps_estimates_jobs**](#post_journey_actionmaps_estimates_jobs) | Query for estimates|
+|[**post_journey_actiontemplates**](#post_journey_actiontemplates) | Create a single action template.|
+|[**post_journey_deployment_actionevent**](#post_journey_deployment_actionevent) | Sends an action event, which is used for changing the state of actions that have been offered to the user.|
+|[**post_journey_deployment_appevents**](#post_journey_deployment_appevents) | Send a journey app event, used for tracking customer activity on an application.|
+|[**post_journey_deployment_webevents**](#post_journey_deployment_webevents) | Send a journey web event, used for tracking customer activity on a website.|
+|[**post_journey_flows_paths_query**](#post_journey_flows_paths_query) | Query for flow paths.|
+|[**post_journey_outcomes**](#post_journey_outcomes) | Create an outcome.|
+|[**post_journey_outcomes_attributions_jobs**](#post_journey_outcomes_attributions_jobs) | Create Outcome Attributions|
+|[**post_journey_outcomes_predictors**](#post_journey_outcomes_predictors) | Create an outcome predictor.|
+|[**post_journey_segments**](#post_journey_segments) | Create a segment.|
+|[**post_journey_view_version_jobs**](#post_journey_view_version_jobs) | Submit a job request for a journey view version.|
+|[**post_journey_view_versions**](#post_journey_view_versions) | Update a Journey View by ID|
+|[**post_journey_views**](#post_journey_views) | Create a new Journey View|
+|[**post_journey_views_encodings_validate**](#post_journey_views_encodings_validate) | Validate whether an encoding exist for a label/value combination.|
 
-<a name="delete_journey_actionmap"></a>
 
-##  delete_journey_actionmap(action_map_id)
 
+## delete_journey_actionmap
+
+>  delete_journey_actionmap(action_map_id)
 
 
 Delete single action map.
@@ -112,16 +110,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **action_map_id** | **str**| ID of the action map. |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (empty response body)
 
-<a name="delete_journey_actiontemplate"></a>
 
-##  delete_journey_actiontemplate(action_template_id, hard_delete=hard_delete)
+## delete_journey_actiontemplate
 
+>  delete_journey_actiontemplate(action_template_id, hard_delete=hard_delete)
 
 
 Delete a single action template.
@@ -162,16 +159,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **action_template_id** | **str**| ID of the action template. |  |
 | **hard_delete** | **bool**| Determines whether Action Template should be soft-deleted (have it&#39;s state set to deleted) or hard-deleted (permanently removed). Set to false (soft-delete) by default. | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (empty response body)
 
-<a name="delete_journey_outcome"></a>
 
-##  delete_journey_outcome(outcome_id)
+## delete_journey_outcome
 
+>  delete_journey_outcome(outcome_id)
 
 
 Delete an outcome.
@@ -210,16 +206,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **outcome_id** | **str**| ID of the outcome. |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (empty response body)
 
-<a name="delete_journey_outcomes_predictor"></a>
 
-##  delete_journey_outcomes_predictor(predictor_id)
+## delete_journey_outcomes_predictor
 
+>  delete_journey_outcomes_predictor(predictor_id)
 
 
 Delete an outcome predictor.
@@ -258,16 +253,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **predictor_id** | **str**| ID of predictor |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (empty response body)
 
-<a name="delete_journey_segment"></a>
 
-##  delete_journey_segment(segment_id)
+## delete_journey_segment
 
+>  delete_journey_segment(segment_id)
 
 
 Delete a segment.
@@ -306,16 +300,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **segment_id** | **str**| ID of the segment. |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (empty response body)
 
-<a name="delete_journey_view"></a>
 
-##  delete_journey_view(view_id)
+## delete_journey_view
 
+>  delete_journey_view(view_id)
 
 
 Delete a Journey View by ID
@@ -356,16 +349,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **view_id** | **str**| viewId |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (empty response body)
 
-<a name="get_analytics_journeys_aggregates_job"></a>
 
-## [**AsyncQueryStatus**](AsyncQueryStatus.html) get_analytics_journeys_aggregates_job(job_id)
+## get_analytics_journeys_aggregates_job
 
+> [**AsyncQueryStatus**](AsyncQueryStatus) get_analytics_journeys_aggregates_job(job_id)
 
 
 Get status for async query for journey aggregates
@@ -407,16 +399,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **job_id** | **str**| jobId |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**AsyncQueryStatus**](AsyncQueryStatus.html)
+[**AsyncQueryStatus**](AsyncQueryStatus)
 
-<a name="get_analytics_journeys_aggregates_job_results"></a>
 
-## [**JourneyAsyncAggregateQueryResponse**](JourneyAsyncAggregateQueryResponse.html) get_analytics_journeys_aggregates_job_results(job_id, cursor=cursor)
+## get_analytics_journeys_aggregates_job_results
 
+> [**JourneyAsyncAggregateQueryResponse**](JourneyAsyncAggregateQueryResponse) get_analytics_journeys_aggregates_job_results(job_id, cursor=cursor)
 
 
 Fetch a page of results for an async aggregates query
@@ -460,16 +451,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **job_id** | **str**| jobId |  |
 | **cursor** | **str**| Cursor token to retrieve next page | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**JourneyAsyncAggregateQueryResponse**](JourneyAsyncAggregateQueryResponse.html)
+[**JourneyAsyncAggregateQueryResponse**](JourneyAsyncAggregateQueryResponse)
 
-<a name="get_externalcontacts_contact_journey_sessions"></a>
 
-## [**SessionListing**](SessionListing.html) get_externalcontacts_contact_journey_sessions(contact_id, page_size=page_size, after=after, include_merged=include_merged)
+## get_externalcontacts_contact_journey_sessions
 
+> [**SessionListing**](SessionListing) get_externalcontacts_contact_journey_sessions(contact_id, page_size=page_size, after=after, include_merged=include_merged)
 
 
 Retrieve all sessions for a given external contact.
@@ -515,16 +505,15 @@ except ApiException as e:
 | **page_size** | **str**| Number of entities to return. Maximum of 200. | [optional]  |
 | **after** | **str**| The cursor that points to the end of the set of entities that has been returned. | [optional]  |
 | **include_merged** | **bool**| Indicates whether to return sessions from all external contacts in the merge-set of the given one. | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**SessionListing**](SessionListing.html)
+[**SessionListing**](SessionListing)
 
-<a name="get_journey_actionmap"></a>
 
-## [**ActionMap**](ActionMap.html) get_journey_actionmap(action_map_id)
+## get_journey_actionmap
 
+> [**ActionMap**](ActionMap) get_journey_actionmap(action_map_id)
 
 
 Retrieve a single action map.
@@ -564,16 +553,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **action_map_id** | **str**| ID of the action map. |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**ActionMap**](ActionMap.html)
+[**ActionMap**](ActionMap)
 
-<a name="get_journey_actionmaps"></a>
 
-## [**ActionMapListing**](ActionMapListing.html) get_journey_actionmaps(page_number=page_number, page_size=page_size, sort_by=sort_by, filter_field=filter_field, filter_value=filter_value, action_map_ids=action_map_ids, query_fields=query_fields, query_value=query_value)
+## get_journey_actionmaps
 
+> [**ActionMapListing**](ActionMapListing) get_journey_actionmaps(page_number=page_number, page_size=page_size, sort_by=sort_by, filter_field=filter_field, filter_value=filter_value, action_map_ids=action_map_ids, query_fields=query_fields, query_value=query_value)
 
 
 Retrieve all action maps.
@@ -624,19 +612,18 @@ except ApiException as e:
 | **sort_by** | **str**| Field(s) to sort by. Prefix with &#39;-&#39; for descending (e.g. sortBy&#x3D;displayName,-createdDate). | [optional]  |
 | **filter_field** | **str**| Field to filter by (e.g. filterField&#x3D;weight or filterField&#x3D;action.actionTemplate.id). Requires &#39;filterField&#39; to also be set. | [optional]  |
 | **filter_value** | **str**| Value to filter by. Requires &#39;filterValue&#39; to also be set. | [optional]  |
-| **action_map_ids** | [**list[str]**](str.html)| IDs of action maps to return. Use of this parameter is not compatible with pagination, filtering, sorting or querying. A maximum of 100 action maps are allowed per request. | [optional]  |
-| **query_fields** | [**list[str]**](str.html)| Action Map field(s) to query on. Requires &#39;queryValue&#39; to also be set. | [optional]  |
+| **action_map_ids** | [**list[str]**](str)| IDs of action maps to return. Use of this parameter is not compatible with pagination, filtering, sorting or querying. A maximum of 100 action maps are allowed per request. | [optional]  |
+| **query_fields** | [**list[str]**](str)| Action Map field(s) to query on. Requires &#39;queryValue&#39; to also be set. | [optional]  |
 | **query_value** | **str**| Value to query on. Requires &#39;queryFields&#39; to also be set. | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**ActionMapListing**](ActionMapListing.html)
+[**ActionMapListing**](ActionMapListing)
 
-<a name="get_journey_actionmaps_estimates_job"></a>
 
-## str** get_journey_actionmaps_estimates_job(job_id)
+## get_journey_actionmaps_estimates_job
 
+> str** get_journey_actionmaps_estimates_job(job_id)
 
 
 Get status of job.
@@ -676,16 +663,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **job_id** | **str**| ID of the job. |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **str**
 
-<a name="get_journey_actionmaps_estimates_job_results"></a>
 
-## [**ActionMapEstimateResult**](ActionMapEstimateResult.html) get_journey_actionmaps_estimates_job_results(job_id)
+## get_journey_actionmaps_estimates_job_results
 
+> [**ActionMapEstimateResult**](ActionMapEstimateResult) get_journey_actionmaps_estimates_job_results(job_id)
 
 
 Get estimates from completed job.
@@ -725,16 +711,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **job_id** | **str**| ID of the job. |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**ActionMapEstimateResult**](ActionMapEstimateResult.html)
+[**ActionMapEstimateResult**](ActionMapEstimateResult)
 
-<a name="get_journey_actiontarget"></a>
 
-## [**ActionTarget**](ActionTarget.html) get_journey_actiontarget(action_target_id)
+## get_journey_actiontarget
 
+> [**ActionTarget**](ActionTarget) get_journey_actiontarget(action_target_id)
 
 
 Retrieve a single action target.
@@ -774,16 +759,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **action_target_id** | **str**| ID of the action target. |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**ActionTarget**](ActionTarget.html)
+[**ActionTarget**](ActionTarget)
 
-<a name="get_journey_actiontargets"></a>
 
-## [**ActionTargetListing**](ActionTargetListing.html) get_journey_actiontargets(page_number=page_number, page_size=page_size)
+## get_journey_actiontargets
 
+> [**ActionTargetListing**](ActionTargetListing) get_journey_actiontargets(page_number=page_number, page_size=page_size)
 
 
 Retrieve all action targets.
@@ -825,16 +809,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **page_size** | **int**| Page size | [optional] [default to 25] |
-{: class="table table-striped"}
 
 ### Return type
 
-[**ActionTargetListing**](ActionTargetListing.html)
+[**ActionTargetListing**](ActionTargetListing)
 
-<a name="get_journey_actiontemplate"></a>
 
-## [**ActionTemplate**](ActionTemplate.html) get_journey_actiontemplate(action_template_id)
+## get_journey_actiontemplate
 
+> [**ActionTemplate**](ActionTemplate) get_journey_actiontemplate(action_template_id)
 
 
 Retrieve a single action template.
@@ -874,16 +857,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **action_template_id** | **str**| ID of the action template. |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**ActionTemplate**](ActionTemplate.html)
+[**ActionTemplate**](ActionTemplate)
 
-<a name="get_journey_actiontemplates"></a>
 
-## [**ActionTemplateListing**](ActionTemplateListing.html) get_journey_actiontemplates(page_number=page_number, page_size=page_size, sort_by=sort_by, media_type=media_type, state=state, query_fields=query_fields, query_value=query_value)
+## get_journey_actiontemplates
 
+> [**ActionTemplateListing**](ActionTemplateListing) get_journey_actiontemplates(page_number=page_number, page_size=page_size, sort_by=sort_by, media_type=media_type, state=state, query_fields=query_fields, query_value=query_value)
 
 
 Retrieve all action templates.
@@ -933,18 +915,17 @@ except ApiException as e:
 | **sort_by** | **str**| Field(s) to sort by. Prefix with &#39;-&#39; for descending (e.g. sortBy&#x3D;name,-createdDate). | [optional]  |
 | **media_type** | **str**| Media type | [optional] <br />**Values**: webchat, webMessagingOffer, contentOffer, integrationAction, architectFlow, openAction |
 | **state** | **str**| Action template state. | [optional] <br />**Values**: Active, Inactive, Deleted |
-| **query_fields** | [**list[str]**](str.html)| ActionTemplate field(s) to query on. Requires &#39;queryValue&#39; to also be set. | [optional]  |
+| **query_fields** | [**list[str]**](str)| ActionTemplate field(s) to query on. Requires &#39;queryValue&#39; to also be set. | [optional]  |
 | **query_value** | **str**| Value to query on. Requires &#39;queryFields&#39; to also be set. | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**ActionTemplateListing**](ActionTemplateListing.html)
+[**ActionTemplateListing**](ActionTemplateListing)
 
-<a name="get_journey_deployment_customer_ping"></a>
 
-## [**DeploymentPing**](DeploymentPing.html) get_journey_deployment_customer_ping(deployment_id, customer_cookie_id, dl=dl, dt=dt, app_namespace=app_namespace, session_id=session_id, since_last_beacon_milliseconds=since_last_beacon_milliseconds)
+## get_journey_deployment_customer_ping
 
+> [**DeploymentPing**](DeploymentPing) get_journey_deployment_customer_ping(deployment_id, customer_cookie_id, dl=dl, dt=dt, app_namespace=app_namespace, session_id=session_id, since_last_beacon_milliseconds=since_last_beacon_milliseconds)
 
 
 Send a ping.
@@ -992,16 +973,15 @@ except ApiException as e:
 | **app_namespace** | **str**| Namespace of the application (e.g. com.genesys.bancodinero). Used for domain filtering in application sessions | [optional]  |
 | **session_id** | **str**| UUID of the customer session. Use the same Session Id for all pings, AppEvents and ActionEvents in the session | [optional]  |
 | **since_last_beacon_milliseconds** | **int**| How long (milliseconds) since the last app event or beacon was sent. The response may return a pollInternvalMilliseconds to reduce the frequency of pings. | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**DeploymentPing**](DeploymentPing.html)
+[**DeploymentPing**](DeploymentPing)
 
-<a name="get_journey_outcome"></a>
 
-## [**Outcome**](Outcome.html) get_journey_outcome(outcome_id)
+## get_journey_outcome
 
+> [**Outcome**](Outcome) get_journey_outcome(outcome_id)
 
 
 Retrieve a single outcome.
@@ -1041,16 +1021,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **outcome_id** | **str**| ID of the outcome. |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**Outcome**](Outcome.html)
+[**Outcome**](Outcome)
 
-<a name="get_journey_outcomes"></a>
 
-## [**OutcomeListing**](OutcomeListing.html) get_journey_outcomes(page_number=page_number, page_size=page_size, sort_by=sort_by, outcome_ids=outcome_ids, query_fields=query_fields, query_value=query_value)
+## get_journey_outcomes
 
+> [**OutcomeListing**](OutcomeListing) get_journey_outcomes(page_number=page_number, page_size=page_size, sort_by=sort_by, outcome_ids=outcome_ids, query_fields=query_fields, query_value=query_value)
 
 
 Retrieve all outcomes.
@@ -1097,19 +1076,18 @@ except ApiException as e:
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **sort_by** | **str**| Field(s) to sort by. The response can be sorted by any first level property on the Outcome response. Prefix with &#39;-&#39; for descending (e.g. sortBy&#x3D;displayName,-createdDate). | [optional]  |
-| **outcome_ids** | [**list[str]**](str.html)| IDs of outcomes to return. Use of this parameter is not compatible with pagination, sorting or querying. A maximum of 20 outcomes are allowed per request. | [optional]  |
-| **query_fields** | [**list[str]**](str.html)| Outcome field(s) to query on. Requires &#39;queryValue&#39; to also be set. | [optional]  |
+| **outcome_ids** | [**list[str]**](str)| IDs of outcomes to return. Use of this parameter is not compatible with pagination, sorting or querying. A maximum of 20 outcomes are allowed per request. | [optional]  |
+| **query_fields** | [**list[str]**](str)| Outcome field(s) to query on. Requires &#39;queryValue&#39; to also be set. | [optional]  |
 | **query_value** | **str**| Value to query on. Requires &#39;queryFields&#39; to also be set. | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**OutcomeListing**](OutcomeListing.html)
+[**OutcomeListing**](OutcomeListing)
 
-<a name="get_journey_outcomes_attributions_job"></a>
 
-## [**OutcomeAttributionJobStateResponse**](OutcomeAttributionJobStateResponse.html) get_journey_outcomes_attributions_job(job_id)
+## get_journey_outcomes_attributions_job
 
+> [**OutcomeAttributionJobStateResponse**](OutcomeAttributionJobStateResponse) get_journey_outcomes_attributions_job(job_id)
 
 
 Get job status.
@@ -1151,16 +1129,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **job_id** | **str**| ID of the job. |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**OutcomeAttributionJobStateResponse**](OutcomeAttributionJobStateResponse.html)
+[**OutcomeAttributionJobStateResponse**](OutcomeAttributionJobStateResponse)
 
-<a name="get_journey_outcomes_attributions_job_results"></a>
 
-## [**OutcomeAttributionResponseListing**](OutcomeAttributionResponseListing.html) get_journey_outcomes_attributions_job_results(job_id)
+## get_journey_outcomes_attributions_job_results
 
+> [**OutcomeAttributionResponseListing**](OutcomeAttributionResponseListing) get_journey_outcomes_attributions_job_results(job_id)
 
 
 Get outcome attribution entities from completed job.
@@ -1202,16 +1179,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **job_id** | **str**| ID of the job. |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**OutcomeAttributionResponseListing**](OutcomeAttributionResponseListing.html)
+[**OutcomeAttributionResponseListing**](OutcomeAttributionResponseListing)
 
-<a name="get_journey_outcomes_predictor"></a>
 
-## [**OutcomePredictor**](OutcomePredictor.html) get_journey_outcomes_predictor(predictor_id)
+## get_journey_outcomes_predictor
 
+> [**OutcomePredictor**](OutcomePredictor) get_journey_outcomes_predictor(predictor_id)
 
 
 Retrieve a single outcome predictor.
@@ -1251,16 +1227,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **predictor_id** | **str**| ID of predictor |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**OutcomePredictor**](OutcomePredictor.html)
+[**OutcomePredictor**](OutcomePredictor)
 
-<a name="get_journey_outcomes_predictors"></a>
 
-## [**OutcomePredictorListing**](OutcomePredictorListing.html) get_journey_outcomes_predictors()
+## get_journey_outcomes_predictors
 
+> [**OutcomePredictorListing**](OutcomePredictorListing) get_journey_outcomes_predictors()
 
 
 Retrieve all outcome predictors.
@@ -1297,15 +1272,14 @@ except ApiException as e:
 
 This endpoint does not need any parameters.
 
-
 ### Return type
 
-[**OutcomePredictorListing**](OutcomePredictorListing.html)
+[**OutcomePredictorListing**](OutcomePredictorListing)
 
-<a name="get_journey_segment"></a>
 
-## [**JourneySegment**](JourneySegment.html) get_journey_segment(segment_id)
+## get_journey_segment
 
+> [**JourneySegment**](JourneySegment) get_journey_segment(segment_id)
 
 
 Retrieve a single segment.
@@ -1345,16 +1319,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **segment_id** | **str**| ID of the segment. |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**JourneySegment**](JourneySegment.html)
+[**JourneySegment**](JourneySegment)
 
-<a name="get_journey_segments"></a>
 
-## [**SegmentListing**](SegmentListing.html) get_journey_segments(sort_by=sort_by, page_size=page_size, page_number=page_number, is_active=is_active, segment_ids=segment_ids, query_fields=query_fields, query_value=query_value)
+## get_journey_segments
 
+> [**SegmentListing**](SegmentListing) get_journey_segments(sort_by=sort_by, page_size=page_size, page_number=page_number, is_active=is_active, segment_ids=segment_ids, query_fields=query_fields, query_value=query_value)
 
 
 Retrieve all segments.
@@ -1403,19 +1376,18 @@ except ApiException as e:
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **is_active** | **bool**| Determines whether or not to show only active segments. | [optional]  |
-| **segment_ids** | [**list[str]**](str.html)| IDs of segments to return. Use of this parameter is not compatible with pagination, sorting or querying. A maximum of 100 segments are allowed per request. | [optional]  |
-| **query_fields** | [**list[str]**](str.html)| Segment field(s) to query on. Requires &#39;queryValue&#39; to also be set. | [optional]  |
+| **segment_ids** | [**list[str]**](str)| IDs of segments to return. Use of this parameter is not compatible with pagination, sorting or querying. A maximum of 100 segments are allowed per request. | [optional]  |
+| **query_fields** | [**list[str]**](str)| Segment field(s) to query on. Requires &#39;queryValue&#39; to also be set. | [optional]  |
 | **query_value** | **str**| Value to query on. Requires &#39;queryFields&#39; to also be set. | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**SegmentListing**](SegmentListing.html)
+[**SegmentListing**](SegmentListing)
 
-<a name="get_journey_session"></a>
 
-## [**Session**](Session.html) get_journey_session(session_id)
+## get_journey_session
 
+> [**Session**](Session) get_journey_session(session_id)
 
 
 Retrieve a single session.
@@ -1456,16 +1428,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **session_id** | **str**| ID of the session. |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**Session**](Session.html)
+[**Session**](Session)
 
-<a name="get_journey_session_events"></a>
 
-## [**EventListing**](EventListing.html) get_journey_session_events(session_id, page_size=page_size, after=after, event_type=event_type)
+## get_journey_session_events
 
+> [**EventListing**](EventListing) get_journey_session_events(session_id, page_size=page_size, after=after, event_type=event_type)
 
 
 Retrieve all events for a given session.
@@ -1511,16 +1482,15 @@ except ApiException as e:
 | **page_size** | **str**| Number of entities to return. Maximum of 200. | [optional]  |
 | **after** | **str**| The cursor that points to the end of the set of entities that has been returned. | [optional]  |
 | **event_type** | **str**| A comma separated list of journey event types to include in the results. | [optional] <br />**Values**: com.genesys.journey.OutcomeAchievedEvent, com.genesys.journey.SegmentAssignmentEvent, com.genesys.journey.WebActionEvent, com.genesys.journey.WebEvent, com.genesys.journey.AppEvent |
-{: class="table table-striped"}
 
 ### Return type
 
-[**EventListing**](EventListing.html)
+[**EventListing**](EventListing)
 
-<a name="get_journey_session_outcomescores"></a>
 
-## [**OutcomeScoresResult**](OutcomeScoresResult.html) get_journey_session_outcomescores(session_id)
+## get_journey_session_outcomescores
 
+> [**OutcomeScoresResult**](OutcomeScoresResult) get_journey_session_outcomescores(session_id)
 
 
 Retrieve latest outcome score associated with a session for all outcomes.
@@ -1560,16 +1530,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **session_id** | **str**| ID of the session. |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**OutcomeScoresResult**](OutcomeScoresResult.html)
+[**OutcomeScoresResult**](OutcomeScoresResult)
 
-<a name="get_journey_view"></a>
 
-## [**JourneyView**](JourneyView.html) get_journey_view(view_id)
+## get_journey_view
 
+> [**JourneyView**](JourneyView) get_journey_view(view_id)
 
 
 Get a Journey View by ID
@@ -1611,16 +1580,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **view_id** | **str**| viewId |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**JourneyView**](JourneyView.html)
+[**JourneyView**](JourneyView)
 
-<a name="get_journey_view_version"></a>
 
-## [**JourneyView**](JourneyView.html) get_journey_view_version(view_id, version_id)
+## get_journey_view_version
 
+> [**JourneyView**](JourneyView) get_journey_view_version(view_id, version_id)
 
 
 Get a Journey View by ID and version
@@ -1662,16 +1630,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **view_id** | **str**| viewId |  |
 | **version_id** | **str**| versionId |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**JourneyView**](JourneyView.html)
+[**JourneyView**](JourneyView)
 
-<a name="get_journey_view_version_job"></a>
 
-## [**JourneyViewJob**](JourneyViewJob.html) get_journey_view_version_job(view_id, journey_version_id, job_id)
+## get_journey_view_version_job
 
+> [**JourneyViewJob**](JourneyViewJob) get_journey_view_version_job(view_id, journey_version_id, job_id)
 
 
 Get the job for a journey view version.
@@ -1717,16 +1684,15 @@ except ApiException as e:
 | **view_id** | **str**| Journey View Id |  |
 | **journey_version_id** | **str**| Journey View Version |  |
 | **job_id** | **str**| JobId |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**JourneyViewJob**](JourneyViewJob.html)
+[**JourneyViewJob**](JourneyViewJob)
 
-<a name="get_journey_view_version_job_results"></a>
 
-## [**JourneyViewResult**](JourneyViewResult.html) get_journey_view_version_job_results(view_id, journey_view_version, job_id)
+## get_journey_view_version_job_results
 
+> [**JourneyViewResult**](JourneyViewResult) get_journey_view_version_job_results(view_id, journey_view_version, job_id)
 
 
 Get the result of a job for a journey view version.
@@ -1772,16 +1738,15 @@ except ApiException as e:
 | **view_id** | **str**| JourneyViewResult id |  |
 | **journey_view_version** | **str**| Journey View Version |  |
 | **job_id** | **str**| Id of the executing job |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**JourneyViewResult**](JourneyViewResult.html)
+[**JourneyViewResult**](JourneyViewResult)
 
-<a name="get_journey_view_version_jobs_latest"></a>
 
-## [**JourneyViewJob**](JourneyViewJob.html) get_journey_view_version_jobs_latest(view_id, journey_version_id)
+## get_journey_view_version_jobs_latest
 
+> [**JourneyViewJob**](JourneyViewJob) get_journey_view_version_jobs_latest(view_id, journey_version_id)
 
 
 Get the latest job of a journey view version.
@@ -1825,16 +1790,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **view_id** | **str**| Journey View Id |  |
 | **journey_version_id** | **str**| Journey View Version |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**JourneyViewJob**](JourneyViewJob.html)
+[**JourneyViewJob**](JourneyViewJob)
 
-<a name="get_journey_views"></a>
 
-## [**JourneyViewListing**](JourneyViewListing.html) get_journey_views(page_number=page_number, page_size=page_size, name_or_created_by=name_or_created_by, expand=expand, id=id)
+## get_journey_views
 
+> [**JourneyViewListing**](JourneyViewListing) get_journey_views(page_number=page_number, page_size=page_size, name_or_created_by=name_or_created_by, expand=expand, id=id)
 
 
 Get a list of Journey Views
@@ -1882,16 +1846,15 @@ except ApiException as e:
 | **name_or_created_by** | **str**| Journey View Name or Created By | [optional]  |
 | **expand** | **str**| Parameter to request additional data to return in Journey payload | [optional] <br />**Values**: charts |
 | **id** | **str**| Parameter to request a list of Journey Views by id, separated by commas. Limit of 100 items. | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**JourneyViewListing**](JourneyViewListing.html)
+[**JourneyViewListing**](JourneyViewListing)
 
-<a name="get_journey_views_eventdefinition"></a>
 
-## [**JourneyEventDefinition**](JourneyEventDefinition.html) get_journey_views_eventdefinition(event_definition_id)
+## get_journey_views_eventdefinition
 
+> [**JourneyEventDefinition**](JourneyEventDefinition) get_journey_views_eventdefinition(event_definition_id)
 
 
 Get an Event Definition
@@ -1933,16 +1896,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **event_definition_id** | **str**| Event Definition ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**JourneyEventDefinition**](JourneyEventDefinition.html)
+[**JourneyEventDefinition**](JourneyEventDefinition)
 
-<a name="get_journey_views_eventdefinitions"></a>
 
-## [**JourneyEventDefinitionListing**](JourneyEventDefinitionListing.html) get_journey_views_eventdefinitions()
+## get_journey_views_eventdefinitions
 
+> [**JourneyEventDefinitionListing**](JourneyEventDefinitionListing) get_journey_views_eventdefinitions()
 
 
 Get a list of Event Definitions
@@ -1981,15 +1943,14 @@ except ApiException as e:
 
 This endpoint does not need any parameters.
 
-
 ### Return type
 
-[**JourneyEventDefinitionListing**](JourneyEventDefinitionListing.html)
+[**JourneyEventDefinitionListing**](JourneyEventDefinitionListing)
 
-<a name="get_journey_views_jobs"></a>
 
-## [**JourneyViewJobListing**](JourneyViewJobListing.html) get_journey_views_jobs(page_number=page_number, page_size=page_size, interval=interval, statuses=statuses)
+## get_journey_views_jobs
 
+> [**JourneyViewJobListing**](JourneyViewJobListing) get_journey_views_jobs(page_number=page_number, page_size=page_size, interval=interval, statuses=statuses)
 
 
 Get the jobs for an organization.
@@ -2035,16 +1996,15 @@ except ApiException as e:
 | **page_size** | **int**| Max number of entities to return | [optional] [default to 25] |
 | **interval** | **str**| An absolute timeframe for filtering the jobs, expressed as an ISO 8601 interval. | [optional]  |
 | **statuses** | **str**| Job statuses to filter for | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**JourneyViewJobListing**](JourneyViewJobListing.html)
+[**JourneyViewJobListing**](JourneyViewJobListing)
 
-<a name="patch_journey_actionmap"></a>
 
-## [**ActionMap**](ActionMap.html) patch_journey_actionmap(action_map_id, body=body)
+## patch_journey_actionmap
 
+> [**ActionMap**](ActionMap) patch_journey_actionmap(action_map_id, body=body)
 
 
 Update single action map.
@@ -2085,17 +2045,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **action_map_id** | **str**| ID of the action map. |  |
-| **body** | [**PatchActionMap**](PatchActionMap.html)|  | [optional]  |
-{: class="table table-striped"}
+| **body** | [**PatchActionMap**](PatchActionMap)|  | [optional]  |
 
 ### Return type
 
-[**ActionMap**](ActionMap.html)
+[**ActionMap**](ActionMap)
 
-<a name="patch_journey_actiontarget"></a>
 
-## [**ActionTarget**](ActionTarget.html) patch_journey_actiontarget(action_target_id, body=body)
+## patch_journey_actiontarget
 
+> [**ActionTarget**](ActionTarget) patch_journey_actiontarget(action_target_id, body=body)
 
 
 Update a single action target.
@@ -2136,17 +2095,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **action_target_id** | **str**| ID of the action target. |  |
-| **body** | [**PatchActionTarget**](PatchActionTarget.html)|  | [optional]  |
-{: class="table table-striped"}
+| **body** | [**PatchActionTarget**](PatchActionTarget)|  | [optional]  |
 
 ### Return type
 
-[**ActionTarget**](ActionTarget.html)
+[**ActionTarget**](ActionTarget)
 
-<a name="patch_journey_actiontemplate"></a>
 
-## [**ActionTemplate**](ActionTemplate.html) patch_journey_actiontemplate(action_template_id, body=body)
+## patch_journey_actiontemplate
 
+> [**ActionTemplate**](ActionTemplate) patch_journey_actiontemplate(action_template_id, body=body)
 
 
 Update a single action template.
@@ -2187,17 +2145,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **action_template_id** | **str**| ID of the action template. |  |
-| **body** | [**PatchActionTemplate**](PatchActionTemplate.html)|  | [optional]  |
-{: class="table table-striped"}
+| **body** | [**PatchActionTemplate**](PatchActionTemplate)|  | [optional]  |
 
 ### Return type
 
-[**ActionTemplate**](ActionTemplate.html)
+[**ActionTemplate**](ActionTemplate)
 
-<a name="patch_journey_outcome"></a>
 
-## [**Outcome**](Outcome.html) patch_journey_outcome(outcome_id, body=body)
+## patch_journey_outcome
 
+> [**Outcome**](Outcome) patch_journey_outcome(outcome_id, body=body)
 
 
 Update an outcome.
@@ -2238,17 +2195,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **outcome_id** | **str**| ID of the outcome. |  |
-| **body** | [**PatchOutcome**](PatchOutcome.html)|  | [optional]  |
-{: class="table table-striped"}
+| **body** | [**PatchOutcome**](PatchOutcome)|  | [optional]  |
 
 ### Return type
 
-[**Outcome**](Outcome.html)
+[**Outcome**](Outcome)
 
-<a name="patch_journey_segment"></a>
 
-## [**JourneySegment**](JourneySegment.html) patch_journey_segment(segment_id, body=body)
+## patch_journey_segment
 
+> [**JourneySegment**](JourneySegment) patch_journey_segment(segment_id, body=body)
 
 
 Update a segment.
@@ -2289,17 +2245,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **segment_id** | **str**| ID of the segment. |  |
-| **body** | [**PatchSegment**](PatchSegment.html)|  | [optional]  |
-{: class="table table-striped"}
+| **body** | [**PatchSegment**](PatchSegment)|  | [optional]  |
 
 ### Return type
 
-[**JourneySegment**](JourneySegment.html)
+[**JourneySegment**](JourneySegment)
 
-<a name="post_analytics_journeys_aggregates_jobs"></a>
 
-## [**AsyncQueryResponse**](AsyncQueryResponse.html) post_analytics_journeys_aggregates_jobs(body)
+## post_analytics_journeys_aggregates_jobs
 
+> [**AsyncQueryResponse**](AsyncQueryResponse) post_analytics_journeys_aggregates_jobs(body)
 
 
 Query for journey aggregates asynchronously
@@ -2340,17 +2295,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**JourneyAsyncAggregationQuery**](JourneyAsyncAggregationQuery.html)| query |  |
-{: class="table table-striped"}
+| **body** | [**JourneyAsyncAggregationQuery**](JourneyAsyncAggregationQuery)| query |  |
 
 ### Return type
 
-[**AsyncQueryResponse**](AsyncQueryResponse.html)
+[**AsyncQueryResponse**](AsyncQueryResponse)
 
-<a name="post_analytics_journeys_aggregates_query"></a>
 
-## [**JourneyAggregateQueryResponse**](JourneyAggregateQueryResponse.html) post_analytics_journeys_aggregates_query(body)
+## post_analytics_journeys_aggregates_query
 
+> [**JourneyAggregateQueryResponse**](JourneyAggregateQueryResponse) post_analytics_journeys_aggregates_query(body)
 
 
 Query for journey aggregates
@@ -2389,17 +2343,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**JourneyAggregationQuery**](JourneyAggregationQuery.html)| query |  |
-{: class="table table-striped"}
+| **body** | [**JourneyAggregationQuery**](JourneyAggregationQuery)| query |  |
 
 ### Return type
 
-[**JourneyAggregateQueryResponse**](JourneyAggregateQueryResponse.html)
+[**JourneyAggregateQueryResponse**](JourneyAggregateQueryResponse)
 
-<a name="post_journey_actionmaps"></a>
 
-## [**ActionMap**](ActionMap.html) post_journey_actionmaps(body=body)
+## post_journey_actionmaps
 
+> [**ActionMap**](ActionMap) post_journey_actionmaps(body=body)
 
 
 Create an action map.
@@ -2438,17 +2391,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**ActionMap**](ActionMap.html)|  | [optional]  |
-{: class="table table-striped"}
+| **body** | [**ActionMap**](ActionMap)|  | [optional]  |
 
 ### Return type
 
-[**ActionMap**](ActionMap.html)
+[**ActionMap**](ActionMap)
 
-<a name="post_journey_actionmaps_estimates_jobs"></a>
 
-## [**EstimateJobAsyncResponse**](EstimateJobAsyncResponse.html) post_journey_actionmaps_estimates_jobs(body)
+## post_journey_actionmaps_estimates_jobs
 
+> [**EstimateJobAsyncResponse**](EstimateJobAsyncResponse) post_journey_actionmaps_estimates_jobs(body)
 
 
 Query for estimates
@@ -2487,17 +2439,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**ActionMapEstimateRequest**](ActionMapEstimateRequest.html)| audience estimator request |  |
-{: class="table table-striped"}
+| **body** | [**ActionMapEstimateRequest**](ActionMapEstimateRequest)| audience estimator request |  |
 
 ### Return type
 
-[**EstimateJobAsyncResponse**](EstimateJobAsyncResponse.html)
+[**EstimateJobAsyncResponse**](EstimateJobAsyncResponse)
 
-<a name="post_journey_actiontemplates"></a>
 
-## [**ActionTemplate**](ActionTemplate.html) post_journey_actiontemplates(body=body)
+## post_journey_actiontemplates
 
+> [**ActionTemplate**](ActionTemplate) post_journey_actiontemplates(body=body)
 
 
 Create a single action template.
@@ -2536,17 +2487,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**ActionTemplate**](ActionTemplate.html)|  | [optional]  |
-{: class="table table-striped"}
+| **body** | [**ActionTemplate**](ActionTemplate)|  | [optional]  |
 
 ### Return type
 
-[**ActionTemplate**](ActionTemplate.html)
+[**ActionTemplate**](ActionTemplate)
 
-<a name="post_journey_deployment_actionevent"></a>
 
-##  post_journey_deployment_actionevent(deployment_id, body)
+## post_journey_deployment_actionevent
 
+>  post_journey_deployment_actionevent(deployment_id, body)
 
 
 Sends an action event, which is used for changing the state of actions that have been offered to the user.
@@ -2582,17 +2532,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **deployment_id** | **str**| The ID of the deployment sending the beacon. |  |
-| **body** | [**ActionEventRequest**](ActionEventRequest.html)|  |  |
-{: class="table table-striped"}
+| **body** | [**ActionEventRequest**](ActionEventRequest)|  |  |
 
 ### Return type
 
 void (empty response body)
 
-<a name="post_journey_deployment_appevents"></a>
 
-## [**AppEventResponse**](AppEventResponse.html) post_journey_deployment_appevents(deployment_id, body=body)
+## post_journey_deployment_appevents
 
+> [**AppEventResponse**](AppEventResponse) post_journey_deployment_appevents(deployment_id, body=body)
 
 
 Send a journey app event, used for tracking customer activity on an application.
@@ -2629,17 +2578,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **deployment_id** | **str**| The ID of the deployment sending the app event. |  |
-| **body** | [**AppEventRequest**](AppEventRequest.html)|  | [optional]  |
-{: class="table table-striped"}
+| **body** | [**AppEventRequest**](AppEventRequest)|  | [optional]  |
 
 ### Return type
 
-[**AppEventResponse**](AppEventResponse.html)
+[**AppEventResponse**](AppEventResponse)
 
-<a name="post_journey_deployment_webevents"></a>
 
-## [**WebEventResponse**](WebEventResponse.html) post_journey_deployment_webevents(deployment_id, body=body)
+## post_journey_deployment_webevents
 
+> [**WebEventResponse**](WebEventResponse) post_journey_deployment_webevents(deployment_id, body=body)
 
 
 Send a journey web event, used for tracking customer activity on a website.
@@ -2676,17 +2624,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **deployment_id** | **str**| The ID of the deployment sending the web event. |  |
-| **body** | [**WebEventRequest**](WebEventRequest.html)|  | [optional]  |
-{: class="table table-striped"}
+| **body** | [**WebEventRequest**](WebEventRequest)|  | [optional]  |
 
 ### Return type
 
-[**WebEventResponse**](WebEventResponse.html)
+[**WebEventResponse**](WebEventResponse)
 
-<a name="post_journey_flows_paths_query"></a>
 
-## [**FlowPaths**](FlowPaths.html) post_journey_flows_paths_query(body=body)
+## post_journey_flows_paths_query
 
+> [**FlowPaths**](FlowPaths) post_journey_flows_paths_query(body=body)
 
 
 Query for flow paths.
@@ -2725,17 +2672,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**FlowPathsQuery**](FlowPathsQuery.html)|  | [optional]  |
-{: class="table table-striped"}
+| **body** | [**FlowPathsQuery**](FlowPathsQuery)|  | [optional]  |
 
 ### Return type
 
-[**FlowPaths**](FlowPaths.html)
+[**FlowPaths**](FlowPaths)
 
-<a name="post_journey_outcomes"></a>
 
-## [**Outcome**](Outcome.html) post_journey_outcomes(body=body)
+## post_journey_outcomes
 
+> [**Outcome**](Outcome) post_journey_outcomes(body=body)
 
 
 Create an outcome.
@@ -2774,17 +2720,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**OutcomeRequest**](OutcomeRequest.html)|  | [optional]  |
-{: class="table table-striped"}
+| **body** | [**OutcomeRequest**](OutcomeRequest)|  | [optional]  |
 
 ### Return type
 
-[**Outcome**](Outcome.html)
+[**Outcome**](Outcome)
 
-<a name="post_journey_outcomes_attributions_jobs"></a>
 
-## [**OutcomeAttributionAsyncResponse**](OutcomeAttributionAsyncResponse.html) post_journey_outcomes_attributions_jobs(body=body)
+## post_journey_outcomes_attributions_jobs
 
+> [**OutcomeAttributionAsyncResponse**](OutcomeAttributionAsyncResponse) post_journey_outcomes_attributions_jobs(body=body)
 
 
 Create Outcome Attributions
@@ -2825,17 +2770,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**OutcomeAttributionListing**](OutcomeAttributionListing.html)| outcome attribution request | [optional]  |
-{: class="table table-striped"}
+| **body** | [**OutcomeAttributionListing**](OutcomeAttributionListing)| outcome attribution request | [optional]  |
 
 ### Return type
 
-[**OutcomeAttributionAsyncResponse**](OutcomeAttributionAsyncResponse.html)
+[**OutcomeAttributionAsyncResponse**](OutcomeAttributionAsyncResponse)
 
-<a name="post_journey_outcomes_predictors"></a>
 
-## [**OutcomePredictor**](OutcomePredictor.html) post_journey_outcomes_predictors(body=body)
+## post_journey_outcomes_predictors
 
+> [**OutcomePredictor**](OutcomePredictor) post_journey_outcomes_predictors(body=body)
 
 
 Create an outcome predictor.
@@ -2874,17 +2818,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**OutcomePredictorRequest**](OutcomePredictorRequest.html)|  | [optional]  |
-{: class="table table-striped"}
+| **body** | [**OutcomePredictorRequest**](OutcomePredictorRequest)|  | [optional]  |
 
 ### Return type
 
-[**OutcomePredictor**](OutcomePredictor.html)
+[**OutcomePredictor**](OutcomePredictor)
 
-<a name="post_journey_segments"></a>
 
-## [**JourneySegment**](JourneySegment.html) post_journey_segments(body=body)
+## post_journey_segments
 
+> [**JourneySegment**](JourneySegment) post_journey_segments(body=body)
 
 
 Create a segment.
@@ -2923,17 +2866,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**JourneySegmentRequest**](JourneySegmentRequest.html)|  | [optional]  |
-{: class="table table-striped"}
+| **body** | [**JourneySegmentRequest**](JourneySegmentRequest)|  | [optional]  |
 
 ### Return type
 
-[**JourneySegment**](JourneySegment.html)
+[**JourneySegment**](JourneySegment)
 
-<a name="post_journey_view_version_jobs"></a>
 
-## [**JourneyViewJob**](JourneyViewJob.html) post_journey_view_version_jobs(view_id, journey_version_id)
+## post_journey_view_version_jobs
 
+> [**JourneyViewJob**](JourneyViewJob) post_journey_view_version_jobs(view_id, journey_version_id)
 
 
 Submit a job request for a journey view version.
@@ -2977,16 +2919,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **view_id** | **str**| Journey View Id |  |
 | **journey_version_id** | **str**| Journey View Version |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**JourneyViewJob**](JourneyViewJob.html)
+[**JourneyViewJob**](JourneyViewJob)
 
-<a name="post_journey_view_versions"></a>
 
-## [**JourneyView**](JourneyView.html) post_journey_view_versions(view_id, body)
+## post_journey_view_versions
 
+> [**JourneyView**](JourneyView) post_journey_view_versions(view_id, body)
 
 
 Update a Journey View by ID
@@ -3029,17 +2970,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **view_id** | **str**| viewId |  |
-| **body** | [**JourneyView**](JourneyView.html)| JourneyView |  |
-{: class="table table-striped"}
+| **body** | [**JourneyView**](JourneyView)| JourneyView |  |
 
 ### Return type
 
-[**JourneyView**](JourneyView.html)
+[**JourneyView**](JourneyView)
 
-<a name="post_journey_views"></a>
 
-## [**JourneyView**](JourneyView.html) post_journey_views(body)
+## post_journey_views
 
+> [**JourneyView**](JourneyView) post_journey_views(body)
 
 
 Create a new Journey View
@@ -3078,17 +3018,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**JourneyView**](JourneyView.html)| JourneyView |  |
-{: class="table table-striped"}
+| **body** | [**JourneyView**](JourneyView)| JourneyView |  |
 
 ### Return type
 
-[**JourneyView**](JourneyView.html)
+[**JourneyView**](JourneyView)
 
-<a name="post_journey_views_encodings_validate"></a>
 
-## [**EntityListing**](EntityListing.html) post_journey_views_encodings_validate(body=body)
+## post_journey_views_encodings_validate
 
+> [**EntityListing**](EntityListing) post_journey_views_encodings_validate(body=body)
 
 
 Validate whether an encoding exist for a label/value combination.
@@ -3131,10 +3070,11 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**list[Label]**](Label.html)|  | [optional]  |
-{: class="table table-striped"}
+| **body** | [**list[Label]**](Label)|  | [optional]  |
 
 ### Return type
 
-[**EntityListing**](EntityListing.html)
+[**EntityListing**](EntityListing)
 
+
+_PureCloudPlatformClientV2 211.1.0_

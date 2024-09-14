@@ -1,13 +1,13 @@
----
-title: PublishDraftInput
----
+# PublishDraftInput
+
 ## PublishDraftInput
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **version** | **int** | The current draft version. | |
-{: class="table table-striped"}
+| **version** | int | The current draft version. | |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

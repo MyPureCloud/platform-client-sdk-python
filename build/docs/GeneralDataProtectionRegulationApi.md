@@ -1,6 +1,4 @@
----
-title: GeneralDataProtectionRegulationApi
----
+# GeneralDataProtectionRegulationApi
 
 ## PureCloudPlatformClientV2.GeneralDataProtectionRegulationApi
 
@@ -8,16 +6,16 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 |Method | Description|
 |------------- | -------------|
-|[**get_gdpr_request**](GeneralDataProtectionRegulationApi.html#get_gdpr_request) | Get an existing GDPR request|
-|[**get_gdpr_requests**](GeneralDataProtectionRegulationApi.html#get_gdpr_requests) | Get all GDPR requests|
-|[**get_gdpr_subjects**](GeneralDataProtectionRegulationApi.html#get_gdpr_subjects) | Get GDPR subjects|
-|[**post_gdpr_requests**](GeneralDataProtectionRegulationApi.html#post_gdpr_requests) | Submit a new GDPR request|
-{: class="table table-striped"}
+|[**get_gdpr_request**](#get_gdpr_request) | Get an existing GDPR request|
+|[**get_gdpr_requests**](#get_gdpr_requests) | Get all GDPR requests|
+|[**get_gdpr_subjects**](#get_gdpr_subjects) | Get GDPR subjects|
+|[**post_gdpr_requests**](#post_gdpr_requests) | Submit a new GDPR request|
 
-<a name="get_gdpr_request"></a>
 
-## [**GDPRRequest**](GDPRRequest.html) get_gdpr_request(request_id)
 
+## get_gdpr_request
+
+> [**GDPRRequest**](GDPRRequest) get_gdpr_request(request_id)
 
 
 Get an existing GDPR request
@@ -57,16 +55,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **request_id** | **str**| Request id |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**GDPRRequest**](GDPRRequest.html)
+[**GDPRRequest**](GDPRRequest)
 
-<a name="get_gdpr_requests"></a>
 
-## [**GDPRRequestEntityListing**](GDPRRequestEntityListing.html) get_gdpr_requests(page_size=page_size, page_number=page_number)
+## get_gdpr_requests
 
+> [**GDPRRequestEntityListing**](GDPRRequestEntityListing) get_gdpr_requests(page_size=page_size, page_number=page_number)
 
 
 Get all GDPR requests
@@ -108,16 +105,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
-{: class="table table-striped"}
 
 ### Return type
 
-[**GDPRRequestEntityListing**](GDPRRequestEntityListing.html)
+[**GDPRRequestEntityListing**](GDPRRequestEntityListing)
 
-<a name="get_gdpr_subjects"></a>
 
-## [**GDPRSubjectEntityListing**](GDPRSubjectEntityListing.html) get_gdpr_subjects(search_type, search_value)
+## get_gdpr_subjects
 
+> [**GDPRSubjectEntityListing**](GDPRSubjectEntityListing) get_gdpr_subjects(search_type, search_value)
 
 
 Get GDPR subjects
@@ -159,16 +155,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **search_type** | **str**| Search Type | <br />**Values**: NAME, ADDRESS, PHONE, EMAIL, TWITTER |
 | **search_value** | **str**| Search Value |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**GDPRSubjectEntityListing**](GDPRSubjectEntityListing.html)
+[**GDPRSubjectEntityListing**](GDPRSubjectEntityListing)
 
-<a name="post_gdpr_requests"></a>
 
-## [**GDPRRequest**](GDPRRequest.html) post_gdpr_requests(body, delete_confirmed=delete_confirmed)
+## post_gdpr_requests
 
+> [**GDPRRequest**](GDPRRequest) post_gdpr_requests(body, delete_confirmed=delete_confirmed)
 
 
 Submit a new GDPR request
@@ -208,11 +203,12 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**GDPRRequest**](GDPRRequest.html)| GDPR request |  |
+| **body** | [**GDPRRequest**](GDPRRequest)| GDPR request |  |
 | **delete_confirmed** | **bool**| Confirm delete | [optional] [default to False] |
-{: class="table table-striped"}
 
 ### Return type
 
-[**GDPRRequest**](GDPRRequest.html)
+[**GDPRRequest**](GDPRRequest)
 
+
+_PureCloudPlatformClientV2 211.1.0_

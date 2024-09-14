@@ -1,15 +1,15 @@
----
-title: ContactsBulkOperationJobListing
----
+# ContactsBulkOperationJobListing
+
 ## ContactsBulkOperationJobListing
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **total** | **int** |  | [optional] |
-| **entities** | [**list[ContactsBulkOperationJob]**](ContactsBulkOperationJob.html) |  | [optional] |
-| **self_uri** | **str** |  | [optional] |
-{: class="table table-striped"}
+| **total** | int |  | [optional] |
+| **entities** | [list[ContactsBulkOperationJob]](ContactsBulkOperationJob) |  | [optional] |
+| **self_uri** | str |  | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

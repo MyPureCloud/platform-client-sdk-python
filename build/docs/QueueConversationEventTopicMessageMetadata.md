@@ -1,15 +1,15 @@
----
-title: QueueConversationEventTopicMessageMetadata
----
+# QueueConversationEventTopicMessageMetadata
+
 ## QueueConversationEventTopicMessageMetadata
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **type** | **str** | Message type. | [optional] |
-| **events** | [**list[QueueConversationEventTopicMessageMetadataEvent]**](QueueConversationEventTopicMessageMetadataEvent.html) | List of message events, if any | [optional] |
-| **content** | [**list[QueueConversationEventTopicMessageMetadataContent]**](QueueConversationEventTopicMessageMetadataContent.html) | List of message content, if any | [optional] |
-{: class="table table-striped"}
+| **type** | str | Message type. | [optional] |
+| **events** | [list[QueueConversationEventTopicMessageMetadataEvent]](QueueConversationEventTopicMessageMetadataEvent) | List of message events, if any | [optional] |
+| **content** | [list[QueueConversationEventTopicMessageMetadataContent]](QueueConversationEventTopicMessageMetadataContent) | List of message content, if any | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

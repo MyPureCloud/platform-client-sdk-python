@@ -1,13 +1,13 @@
----
-title: QueryResponseStats
----
+# QueryResponseStats
+
 ## QueryResponseStats
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **count** | **int** | The count for this metric | [optional] |
-{: class="table table-striped"}
+| **count** | int | The count for this metric | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

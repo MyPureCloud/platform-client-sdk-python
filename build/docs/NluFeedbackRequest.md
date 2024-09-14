@@ -1,16 +1,16 @@
----
-title: NluFeedbackRequest
----
+# NluFeedbackRequest
+
 ## NluFeedbackRequest
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **text** | **str** | The feedback text. | |
-| **intents** | [**list[IntentFeedback]**](IntentFeedback.html) | Detected intent of the utterance | |
-| **version_id** | **str** | The domain version ID of the feedback. | |
-| **language** | **str** | The language of the version to which feedback is linked, e.g. en-us, de-de | [optional] |
-{: class="table table-striped"}
+| **text** | str | The feedback text. | |
+| **intents** | [list[IntentFeedback]](IntentFeedback) | Detected intent of the utterance | |
+| **version_id** | str | The domain version ID of the feedback. | |
+| **language** | str | The language of the version to which feedback is linked, e.g. en-us, de-de | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

@@ -1,6 +1,4 @@
----
-title: InfrastructureAsCodeApi
----
+# InfrastructureAsCodeApi
 
 ## PureCloudPlatformClientV2.InfrastructureAsCodeApi
 
@@ -8,17 +6,17 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 |Method | Description|
 |------------- | -------------|
-|[**get_infrastructureascode_accelerator**](InfrastructureAsCodeApi.html#get_infrastructureascode_accelerator) | Get information about an accelerator|
-|[**get_infrastructureascode_accelerators**](InfrastructureAsCodeApi.html#get_infrastructureascode_accelerators) | Get a list of available accelerators|
-|[**get_infrastructureascode_job**](InfrastructureAsCodeApi.html#get_infrastructureascode_job) | Get job status and results|
-|[**get_infrastructureascode_jobs**](InfrastructureAsCodeApi.html#get_infrastructureascode_jobs) | Get job history|
-|[**post_infrastructureascode_jobs**](InfrastructureAsCodeApi.html#post_infrastructureascode_jobs) | Create a Job|
-{: class="table table-striped"}
+|[**get_infrastructureascode_accelerator**](#get_infrastructureascode_accelerator) | Get information about an accelerator|
+|[**get_infrastructureascode_accelerators**](#get_infrastructureascode_accelerators) | Get a list of available accelerators|
+|[**get_infrastructureascode_job**](#get_infrastructureascode_job) | Get job status and results|
+|[**get_infrastructureascode_jobs**](#get_infrastructureascode_jobs) | Get job history|
+|[**post_infrastructureascode_jobs**](#post_infrastructureascode_jobs) | Create a Job|
 
-<a name="get_infrastructureascode_accelerator"></a>
 
-## [**AcceleratorSpecification**](AcceleratorSpecification.html) get_infrastructureascode_accelerator(accelerator_id, preferred_language=preferred_language)
 
+## get_infrastructureascode_accelerator
+
+> [**AcceleratorSpecification**](AcceleratorSpecification) get_infrastructureascode_accelerator(accelerator_id, preferred_language=preferred_language)
 
 
 Get information about an accelerator
@@ -62,16 +60,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **accelerator_id** | **str**| Accelerator ID |  |
 | **preferred_language** | **str**| Preferred Language | [optional] [default to &#39;en-US&#39;]<br />**Values**: ar, cs, da, de, en-US, es, fi, fr, it, iw, ko, ja, nl, no, pl, pt-BR, pt-PT, sv, th, tr, zh-CN, zh-TW |
-{: class="table table-striped"}
 
 ### Return type
 
-[**AcceleratorSpecification**](AcceleratorSpecification.html)
+[**AcceleratorSpecification**](AcceleratorSpecification)
 
-<a name="get_infrastructureascode_accelerators"></a>
 
-## [**AcceleratorList**](AcceleratorList.html) get_infrastructureascode_accelerators(page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order, name=name, description=description, origin=origin, type=type, classification=classification, tags=tags)
+## get_infrastructureascode_accelerators
 
+> [**AcceleratorList**](AcceleratorList) get_infrastructureascode_accelerators(page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order, name=name, description=description, origin=origin, type=type, classification=classification, tags=tags)
 
 
 Get a list of available accelerators
@@ -131,16 +128,15 @@ except ApiException as e:
 | **type** | **str**| Filter by type | [optional] <br />**Values**: module, accelerator, blueprint |
 | **classification** | **str**| Filter by classification | [optional]  |
 | **tags** | **str**| Filter by tags | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**AcceleratorList**](AcceleratorList.html)
+[**AcceleratorList**](AcceleratorList)
 
-<a name="get_infrastructureascode_job"></a>
 
-## [**InfrastructureascodeJob**](InfrastructureascodeJob.html) get_infrastructureascode_job(job_id, details=details)
+## get_infrastructureascode_job
 
+> [**InfrastructureascodeJob**](InfrastructureascodeJob) get_infrastructureascode_job(job_id, details=details)
 
 
 Get job status and results
@@ -184,16 +180,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **job_id** | **str**| Job ID |  |
 | **details** | **bool**| Include details of execution, including job results or error information | [optional] [default to False] |
-{: class="table table-striped"}
 
 ### Return type
 
-[**InfrastructureascodeJob**](InfrastructureascodeJob.html)
+[**InfrastructureascodeJob**](InfrastructureascodeJob)
 
-<a name="get_infrastructureascode_jobs"></a>
 
-## [**InfrastructureascodeJob**](InfrastructureascodeJob.html) get_infrastructureascode_jobs(max_results=max_results, include_errors=include_errors, sort_by=sort_by, sort_order=sort_order, accelerator_id=accelerator_id, submitted_by=submitted_by, status=status)
+## get_infrastructureascode_jobs
 
+> [**InfrastructureascodeJob**](InfrastructureascodeJob) get_infrastructureascode_jobs(max_results=max_results, include_errors=include_errors, sort_by=sort_by, sort_order=sort_order, accelerator_id=accelerator_id, submitted_by=submitted_by, status=status)
 
 
 Get job history
@@ -247,16 +242,15 @@ except ApiException as e:
 | **accelerator_id** | **str**| Find only jobs associated with this accelerator | [optional]  |
 | **submitted_by** | **str**| Find only jobs submitted by this user | [optional]  |
 | **status** | **str**| Find only jobs in this state | [optional] <br />**Values**: Created, Queued, Running, Complete, Failed, Incomplete |
-{: class="table table-striped"}
 
 ### Return type
 
-[**InfrastructureascodeJob**](InfrastructureascodeJob.html)
+[**InfrastructureascodeJob**](InfrastructureascodeJob)
 
-<a name="post_infrastructureascode_jobs"></a>
 
-## [**InfrastructureascodeJob**](InfrastructureascodeJob.html) post_infrastructureascode_jobs(body)
+## post_infrastructureascode_jobs
 
+> [**InfrastructureascodeJob**](InfrastructureascodeJob) post_infrastructureascode_jobs(body)
 
 
 Create a Job
@@ -297,10 +291,11 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**AcceleratorInput**](AcceleratorInput.html)|  |  |
-{: class="table table-striped"}
+| **body** | [**AcceleratorInput**](AcceleratorInput)|  |  |
 
 ### Return type
 
-[**InfrastructureascodeJob**](InfrastructureascodeJob.html)
+[**InfrastructureascodeJob**](InfrastructureascodeJob)
 
+
+_PureCloudPlatformClientV2 211.1.0_

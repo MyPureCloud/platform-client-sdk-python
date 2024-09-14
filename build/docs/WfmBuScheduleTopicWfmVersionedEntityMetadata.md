@@ -1,15 +1,15 @@
----
-title: WfmBuScheduleTopicWfmVersionedEntityMetadata
----
+# WfmBuScheduleTopicWfmVersionedEntityMetadata
+
 ## WfmBuScheduleTopicWfmVersionedEntityMetadata
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **version** | **int** |  | [optional] |
-| **modified_by** | [**WfmBuScheduleTopicUserReference**](WfmBuScheduleTopicUserReference.html) |  | [optional] |
-| **date_modified** | **datetime** |  | [optional] |
-{: class="table table-striped"}
+| **version** | int |  | [optional] |
+| **modified_by** | [WfmBuScheduleTopicUserReference](WfmBuScheduleTopicUserReference) |  | [optional] |
+| **date_modified** | datetime |  | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

@@ -1,13 +1,13 @@
----
-title: LearningScormUploadRequest
----
+# LearningScormUploadRequest
+
 ## LearningScormUploadRequest
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **content_md5** | **str** | The MD5 content of the SCORM package | |
-{: class="table table-striped"}
+| **content_md5** | str | The MD5 content of the SCORM package | |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

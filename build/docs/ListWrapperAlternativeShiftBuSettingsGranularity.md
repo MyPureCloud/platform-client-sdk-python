@@ -1,13 +1,13 @@
----
-title: ListWrapperAlternativeShiftBuSettingsGranularity
----
+# ListWrapperAlternativeShiftBuSettingsGranularity
+
 ## ListWrapperAlternativeShiftBuSettingsGranularity
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **values** | **list[str]** |  | [optional] |
-{: class="table table-striped"}
+| **values** | list[str] |  | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

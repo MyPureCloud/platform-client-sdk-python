@@ -1,14 +1,14 @@
----
-title: QueryRequestFilter
----
+# QueryRequestFilter
+
 ## QueryRequestFilter
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **type** | **str** | The logic used to combine the clauses | |
-| **clauses** | [**list[QueryRequestClause]**](QueryRequestClause.html) | The list of clauses used to filter the data | |
-{: class="table table-striped"}
+| **type** | str | The logic used to combine the clauses | |
+| **clauses** | [list[QueryRequestClause]](QueryRequestClause) | The list of clauses used to filter the data | |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

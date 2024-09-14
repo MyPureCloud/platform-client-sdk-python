@@ -1,13 +1,13 @@
----
-title: LauncherButtonSettings
----
+# LauncherButtonSettings
+
 ## LauncherButtonSettings
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **visibility** | **str** | The visibility settings for the button | [optional] |
-{: class="table table-striped"}
+| **visibility** | str | The visibility settings for the button | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

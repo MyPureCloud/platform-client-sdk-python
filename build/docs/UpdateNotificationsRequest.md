@@ -1,13 +1,13 @@
----
-title: UpdateNotificationsRequest
----
+# UpdateNotificationsRequest
+
 ## UpdateNotificationsRequest
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **entities** | [**list[WfmUserNotification]**](WfmUserNotification.html) | The notifications to update | |
-{: class="table table-striped"}
+| **entities** | [list[WfmUserNotification]](WfmUserNotification) | The notifications to update | |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

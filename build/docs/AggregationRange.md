@@ -1,14 +1,14 @@
----
-title: AggregationRange
----
+# AggregationRange
+
 ## AggregationRange
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **gte** | **float** | Greater than or equal to | [optional] |
-| **lt** | **float** | Less than | [optional] |
-{: class="table table-striped"}
+| **gte** | float | Greater than or equal to | [optional] |
+| **lt** | float | Less than | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

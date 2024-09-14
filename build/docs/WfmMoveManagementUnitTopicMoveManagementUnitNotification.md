@@ -1,14 +1,14 @@
----
-title: WfmMoveManagementUnitTopicMoveManagementUnitNotification
----
+# WfmMoveManagementUnitTopicMoveManagementUnitNotification
+
 ## WfmMoveManagementUnitTopicMoveManagementUnitNotification
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **business_unit** | [**WfmMoveManagementUnitTopicBusinessUnit**](WfmMoveManagementUnitTopicBusinessUnit.html) |  | [optional] |
-| **status** | **str** |  | [optional] |
-{: class="table table-striped"}
+| **business_unit** | [WfmMoveManagementUnitTopicBusinessUnit](WfmMoveManagementUnitTopicBusinessUnit) |  | [optional] |
+| **status** | str |  | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

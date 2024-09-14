@@ -1,13 +1,13 @@
----
-title: FacebookPermissionEntityListing
----
+# FacebookPermissionEntityListing
+
 ## FacebookPermissionEntityListing
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **entities** | [**list[FacebookPermission]**](FacebookPermission.html) |  | [optional] |
-{: class="table table-striped"}
+| **entities** | [list[FacebookPermission]](FacebookPermission) |  | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

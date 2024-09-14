@@ -1,13 +1,13 @@
----
-title: ActionSurvey
----
+# ActionSurvey
+
 ## ActionSurvey
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **questions** | [**list[JourneySurveyQuestion]**](JourneySurveyQuestion.html) | Questions shown to the user. | |
-{: class="table table-striped"}
+| **questions** | [list[JourneySurveyQuestion]](JourneySurveyQuestion) | Questions shown to the user. | |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

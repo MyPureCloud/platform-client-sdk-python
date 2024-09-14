@@ -1,6 +1,4 @@
----
-title: ResponseManagementApi
----
+# ResponseManagementApi
 
 ## PureCloudPlatformClientV2.ResponseManagementApi
 
@@ -8,30 +6,30 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 |Method | Description|
 |------------- | -------------|
-|[**delete_responsemanagement_library**](ResponseManagementApi.html#delete_responsemanagement_library) | Delete an existing response library.|
-|[**delete_responsemanagement_response**](ResponseManagementApi.html#delete_responsemanagement_response) | Delete an existing response.|
-|[**delete_responsemanagement_responseasset**](ResponseManagementApi.html#delete_responsemanagement_responseasset) | Delete response asset|
-|[**get_responsemanagement_libraries**](ResponseManagementApi.html#get_responsemanagement_libraries) | Gets a list of existing response libraries.|
-|[**get_responsemanagement_library**](ResponseManagementApi.html#get_responsemanagement_library) | Get details about an existing response library.|
-|[**get_responsemanagement_response**](ResponseManagementApi.html#get_responsemanagement_response) | Get details about an existing response.|
-|[**get_responsemanagement_responseasset**](ResponseManagementApi.html#get_responsemanagement_responseasset) | Get response asset information|
-|[**get_responsemanagement_responseassets_status_status_id**](ResponseManagementApi.html#get_responsemanagement_responseassets_status_status_id) | Get response asset upload status|
-|[**get_responsemanagement_responses**](ResponseManagementApi.html#get_responsemanagement_responses) | Gets a list of existing responses.|
-|[**post_responsemanagement_libraries**](ResponseManagementApi.html#post_responsemanagement_libraries) | Create a response library.|
-|[**post_responsemanagement_libraries_bulk**](ResponseManagementApi.html#post_responsemanagement_libraries_bulk) | Get response libraries.|
-|[**post_responsemanagement_responseassets_search**](ResponseManagementApi.html#post_responsemanagement_responseassets_search) | Search response assets|
-|[**post_responsemanagement_responseassets_uploads**](ResponseManagementApi.html#post_responsemanagement_responseassets_uploads) | Creates pre-signed url for uploading response asset|
-|[**post_responsemanagement_responses**](ResponseManagementApi.html#post_responsemanagement_responses) | Create a response.|
-|[**post_responsemanagement_responses_query**](ResponseManagementApi.html#post_responsemanagement_responses_query) | Query responses|
-|[**put_responsemanagement_library**](ResponseManagementApi.html#put_responsemanagement_library) | Update an existing response library.|
-|[**put_responsemanagement_response**](ResponseManagementApi.html#put_responsemanagement_response) | Update an existing response.|
-|[**put_responsemanagement_responseasset**](ResponseManagementApi.html#put_responsemanagement_responseasset) | Update response asset|
-{: class="table table-striped"}
+|[**delete_responsemanagement_library**](#delete_responsemanagement_library) | Delete an existing response library.|
+|[**delete_responsemanagement_response**](#delete_responsemanagement_response) | Delete an existing response.|
+|[**delete_responsemanagement_responseasset**](#delete_responsemanagement_responseasset) | Delete response asset|
+|[**get_responsemanagement_libraries**](#get_responsemanagement_libraries) | Gets a list of existing response libraries.|
+|[**get_responsemanagement_library**](#get_responsemanagement_library) | Get details about an existing response library.|
+|[**get_responsemanagement_response**](#get_responsemanagement_response) | Get details about an existing response.|
+|[**get_responsemanagement_responseasset**](#get_responsemanagement_responseasset) | Get response asset information|
+|[**get_responsemanagement_responseassets_status_status_id**](#get_responsemanagement_responseassets_status_status_id) | Get response asset upload status|
+|[**get_responsemanagement_responses**](#get_responsemanagement_responses) | Gets a list of existing responses.|
+|[**post_responsemanagement_libraries**](#post_responsemanagement_libraries) | Create a response library.|
+|[**post_responsemanagement_libraries_bulk**](#post_responsemanagement_libraries_bulk) | Get response libraries.|
+|[**post_responsemanagement_responseassets_search**](#post_responsemanagement_responseassets_search) | Search response assets|
+|[**post_responsemanagement_responseassets_uploads**](#post_responsemanagement_responseassets_uploads) | Creates pre-signed url for uploading response asset|
+|[**post_responsemanagement_responses**](#post_responsemanagement_responses) | Create a response.|
+|[**post_responsemanagement_responses_query**](#post_responsemanagement_responses_query) | Query responses|
+|[**put_responsemanagement_library**](#put_responsemanagement_library) | Update an existing response library.|
+|[**put_responsemanagement_response**](#put_responsemanagement_response) | Update an existing response.|
+|[**put_responsemanagement_responseasset**](#put_responsemanagement_responseasset) | Update response asset|
 
-<a name="delete_responsemanagement_library"></a>
 
-##  delete_responsemanagement_library(library_id)
 
+## delete_responsemanagement_library
+
+>  delete_responsemanagement_library(library_id)
 
 
 Delete an existing response library.
@@ -72,16 +70,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **library_id** | **str**| Library ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (empty response body)
 
-<a name="delete_responsemanagement_response"></a>
 
-##  delete_responsemanagement_response(response_id)
+## delete_responsemanagement_response
 
+>  delete_responsemanagement_response(response_id)
 
 
 Delete an existing response.
@@ -122,16 +119,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **response_id** | **str**| Response ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (empty response body)
 
-<a name="delete_responsemanagement_responseasset"></a>
 
-##  delete_responsemanagement_responseasset(response_asset_id)
+## delete_responsemanagement_responseasset
 
+>  delete_responsemanagement_responseasset(response_asset_id)
 
 
 Delete response asset
@@ -170,16 +166,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **response_asset_id** | **str**| Asset Id |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (empty response body)
 
-<a name="get_responsemanagement_libraries"></a>
 
-## [**LibraryEntityListing**](LibraryEntityListing.html) get_responsemanagement_libraries(page_number=page_number, page_size=page_size, messaging_template_filter=messaging_template_filter, library_prefix=library_prefix)
+## get_responsemanagement_libraries
 
+> [**LibraryEntityListing**](LibraryEntityListing) get_responsemanagement_libraries(page_number=page_number, page_size=page_size, messaging_template_filter=messaging_template_filter, library_prefix=library_prefix)
 
 
 Gets a list of existing response libraries.
@@ -225,16 +220,15 @@ except ApiException as e:
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **messaging_template_filter** | **str**| Returns a list of libraries that contain responses with at least one messaging template defined for a specific message channel | [optional] <br />**Values**: whatsapp |
 | **library_prefix** | **str**| Returns a list of libraries that contain the prefix provided | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**LibraryEntityListing**](LibraryEntityListing.html)
+[**LibraryEntityListing**](LibraryEntityListing)
 
-<a name="get_responsemanagement_library"></a>
 
-## [**Library**](Library.html) get_responsemanagement_library(library_id)
+## get_responsemanagement_library
 
+> [**Library**](Library) get_responsemanagement_library(library_id)
 
 
 Get details about an existing response library.
@@ -274,16 +268,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **library_id** | **str**| Library ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**Library**](Library.html)
+[**Library**](Library)
 
-<a name="get_responsemanagement_response"></a>
 
-## [**Response**](Response.html) get_responsemanagement_response(response_id, expand=expand)
+## get_responsemanagement_response
 
+> [**Response**](Response) get_responsemanagement_response(response_id, expand=expand)
 
 
 Get details about an existing response.
@@ -325,16 +318,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **response_id** | **str**| Response ID |  |
 | **expand** | **str**| Expand instructions for the return value. | [optional] <br />**Values**: substitutionsSchema |
-{: class="table table-striped"}
 
 ### Return type
 
-[**Response**](Response.html)
+[**Response**](Response)
 
-<a name="get_responsemanagement_responseasset"></a>
 
-## [**ResponseAsset**](ResponseAsset.html) get_responsemanagement_responseasset(response_asset_id)
+## get_responsemanagement_responseasset
 
+> [**ResponseAsset**](ResponseAsset) get_responsemanagement_responseasset(response_asset_id)
 
 
 Get response asset information
@@ -374,16 +366,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **response_asset_id** | **str**| Asset Id |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**ResponseAsset**](ResponseAsset.html)
+[**ResponseAsset**](ResponseAsset)
 
-<a name="get_responsemanagement_responseassets_status_status_id"></a>
 
-## [**ResponseAssetStatus**](ResponseAssetStatus.html) get_responsemanagement_responseassets_status_status_id(status_id)
+## get_responsemanagement_responseassets_status_status_id
 
+> [**ResponseAssetStatus**](ResponseAssetStatus) get_responsemanagement_responseassets_status_status_id(status_id)
 
 
 Get response asset upload status
@@ -423,16 +414,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **status_id** | **str**| Status Id |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**ResponseAssetStatus**](ResponseAssetStatus.html)
+[**ResponseAssetStatus**](ResponseAssetStatus)
 
-<a name="get_responsemanagement_responses"></a>
 
-## [**ResponseEntityListing**](ResponseEntityListing.html) get_responsemanagement_responses(library_id, page_number=page_number, page_size=page_size, expand=expand)
+## get_responsemanagement_responses
 
+> [**ResponseEntityListing**](ResponseEntityListing) get_responsemanagement_responses(library_id, page_number=page_number, page_size=page_size, expand=expand)
 
 
 Gets a list of existing responses.
@@ -478,16 +468,15 @@ except ApiException as e:
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **expand** | **str**| Expand instructions for the return value. | [optional] <br />**Values**: substitutionsSchema |
-{: class="table table-striped"}
 
 ### Return type
 
-[**ResponseEntityListing**](ResponseEntityListing.html)
+[**ResponseEntityListing**](ResponseEntityListing)
 
-<a name="post_responsemanagement_libraries"></a>
 
-## [**Library**](Library.html) post_responsemanagement_libraries(body)
+## post_responsemanagement_libraries
 
+> [**Library**](Library) post_responsemanagement_libraries(body)
 
 
 Create a response library.
@@ -526,17 +515,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**Library**](Library.html)| Library |  |
-{: class="table table-striped"}
+| **body** | [**Library**](Library)| Library |  |
 
 ### Return type
 
-[**Library**](Library.html)
+[**Library**](Library)
 
-<a name="post_responsemanagement_libraries_bulk"></a>
 
-## [**LibraryEntityListing**](LibraryEntityListing.html) post_responsemanagement_libraries_bulk(body)
+## post_responsemanagement_libraries_bulk
 
+> [**LibraryEntityListing**](LibraryEntityListing) post_responsemanagement_libraries_bulk(body)
 
 
 Get response libraries.
@@ -575,17 +563,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**LibraryBatchRequest**](LibraryBatchRequest.html)| LibraryIDs (max allowed 50) |  |
-{: class="table table-striped"}
+| **body** | [**LibraryBatchRequest**](LibraryBatchRequest)| LibraryIDs (max allowed 50) |  |
 
 ### Return type
 
-[**LibraryEntityListing**](LibraryEntityListing.html)
+[**LibraryEntityListing**](LibraryEntityListing)
 
-<a name="post_responsemanagement_responseassets_search"></a>
 
-## [**ResponseAssetSearchResults**](ResponseAssetSearchResults.html) post_responsemanagement_responseassets_search(body, expand=expand)
+## post_responsemanagement_responseassets_search
 
+> [**ResponseAssetSearchResults**](ResponseAssetSearchResults) post_responsemanagement_responseassets_search(body, expand=expand)
 
 
 Search response assets
@@ -625,18 +612,17 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**ResponseAssetSearchRequest**](ResponseAssetSearchRequest.html)| request |  |
-| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] <br />**Values**: user, division |
-{: class="table table-striped"}
+| **body** | [**ResponseAssetSearchRequest**](ResponseAssetSearchRequest)| request |  |
+| **expand** | [**list[str]**](str)| Which fields, if any, to expand | [optional] <br />**Values**: user, division |
 
 ### Return type
 
-[**ResponseAssetSearchResults**](ResponseAssetSearchResults.html)
+[**ResponseAssetSearchResults**](ResponseAssetSearchResults)
 
-<a name="post_responsemanagement_responseassets_uploads"></a>
 
-## [**CreateResponseAssetResponse**](CreateResponseAssetResponse.html) post_responsemanagement_responseassets_uploads(body)
+## post_responsemanagement_responseassets_uploads
 
+> [**CreateResponseAssetResponse**](CreateResponseAssetResponse) post_responsemanagement_responseassets_uploads(body)
 
 
 Creates pre-signed url for uploading response asset
@@ -675,17 +661,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**CreateResponseAssetRequest**](CreateResponseAssetRequest.html)| request |  |
-{: class="table table-striped"}
+| **body** | [**CreateResponseAssetRequest**](CreateResponseAssetRequest)| request |  |
 
 ### Return type
 
-[**CreateResponseAssetResponse**](CreateResponseAssetResponse.html)
+[**CreateResponseAssetResponse**](CreateResponseAssetResponse)
 
-<a name="post_responsemanagement_responses"></a>
 
-## [**Response**](Response.html) post_responsemanagement_responses(body, expand=expand)
+## post_responsemanagement_responses
 
+> [**Response**](Response) post_responsemanagement_responses(body, expand=expand)
 
 
 Create a response.
@@ -725,18 +710,17 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**Response**](Response.html)| Response |  |
+| **body** | [**Response**](Response)| Response |  |
 | **expand** | **str**| Expand instructions for the return value. | [optional] <br />**Values**: substitutionsSchema |
-{: class="table table-striped"}
 
 ### Return type
 
-[**Response**](Response.html)
+[**Response**](Response)
 
-<a name="post_responsemanagement_responses_query"></a>
 
-## [**ResponseQueryResults**](ResponseQueryResults.html) post_responsemanagement_responses_query(body)
+## post_responsemanagement_responses_query
 
+> [**ResponseQueryResults**](ResponseQueryResults) post_responsemanagement_responses_query(body)
 
 
 Query responses
@@ -775,17 +759,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**ResponseQueryRequest**](ResponseQueryRequest.html)| Response |  |
-{: class="table table-striped"}
+| **body** | [**ResponseQueryRequest**](ResponseQueryRequest)| Response |  |
 
 ### Return type
 
-[**ResponseQueryResults**](ResponseQueryResults.html)
+[**ResponseQueryResults**](ResponseQueryResults)
 
-<a name="put_responsemanagement_library"></a>
 
-## [**Library**](Library.html) put_responsemanagement_library(library_id, body)
+## put_responsemanagement_library
 
+> [**Library**](Library) put_responsemanagement_library(library_id, body)
 
 
 Update an existing response library.
@@ -828,17 +811,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **library_id** | **str**| Library ID |  |
-| **body** | [**Library**](Library.html)| Library |  |
-{: class="table table-striped"}
+| **body** | [**Library**](Library)| Library |  |
 
 ### Return type
 
-[**Library**](Library.html)
+[**Library**](Library)
 
-<a name="put_responsemanagement_response"></a>
 
-## [**Response**](Response.html) put_responsemanagement_response(response_id, body, expand=expand)
+## put_responsemanagement_response
 
+> [**Response**](Response) put_responsemanagement_response(response_id, body, expand=expand)
 
 
 Update an existing response.
@@ -882,18 +864,17 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **response_id** | **str**| Response ID |  |
-| **body** | [**Response**](Response.html)| Response |  |
+| **body** | [**Response**](Response)| Response |  |
 | **expand** | **str**| Expand instructions for the return value. | [optional] <br />**Values**: substitutionsSchema |
-{: class="table table-striped"}
 
 ### Return type
 
-[**Response**](Response.html)
+[**Response**](Response)
 
-<a name="put_responsemanagement_responseasset"></a>
 
-## [**ResponseAsset**](ResponseAsset.html) put_responsemanagement_responseasset(response_asset_id, body)
+## put_responsemanagement_responseasset
 
+> [**ResponseAsset**](ResponseAsset) put_responsemanagement_responseasset(response_asset_id, body)
 
 
 Update response asset
@@ -934,10 +915,11 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **response_asset_id** | **str**| Asset Id |  |
-| **body** | [**ResponseAssetRequest**](ResponseAssetRequest.html)| request |  |
-{: class="table table-striped"}
+| **body** | [**ResponseAssetRequest**](ResponseAssetRequest)| request |  |
 
 ### Return type
 
-[**ResponseAsset**](ResponseAsset.html)
+[**ResponseAsset**](ResponseAsset)
 
+
+_PureCloudPlatformClientV2 211.1.0_

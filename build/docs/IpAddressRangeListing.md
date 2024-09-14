@@ -1,13 +1,13 @@
----
-title: IpAddressRangeListing
----
+# IpAddressRangeListing
+
 ## IpAddressRangeListing
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **entities** | [**list[IpAddressRange]**](IpAddressRange.html) |  | [optional] |
-{: class="table table-striped"}
+| **entities** | [list[IpAddressRange]](IpAddressRange) |  | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

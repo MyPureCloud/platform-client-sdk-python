@@ -1,13 +1,13 @@
----
-title: SentimentFeedbackEntityListing
----
+# SentimentFeedbackEntityListing
+
 ## SentimentFeedbackEntityListing
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **entities** | [**list[SentimentFeedback]**](SentimentFeedback.html) |  | [optional] |
-{: class="table table-striped"}
+| **entities** | [list[SentimentFeedback]](SentimentFeedback) |  | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

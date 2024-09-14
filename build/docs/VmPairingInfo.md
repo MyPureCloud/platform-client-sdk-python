@@ -1,16 +1,16 @@
----
-title: VmPairingInfo
----
+# VmPairingInfo
+
 ## VmPairingInfo
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **meta_data** | [**MetaData**](MetaData.html) | This is to be used to complete the setup process of a locally deployed virtual edge device. | [optional] |
-| **edge_id** | **str** |  | [optional] |
-| **auth_token** | **str** |  | [optional] |
-| **org_id** | **str** |  | [optional] |
-{: class="table table-striped"}
+| **meta_data** | [MetaData](MetaData) | This is to be used to complete the setup process of a locally deployed virtual edge device. | [optional] |
+| **edge_id** | str |  | [optional] |
+| **auth_token** | str |  | [optional] |
+| **org_id** | str |  | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

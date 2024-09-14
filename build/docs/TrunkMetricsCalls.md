@@ -1,14 +1,14 @@
----
-title: TrunkMetricsCalls
----
+# TrunkMetricsCalls
+
 ## TrunkMetricsCalls
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **inbound_call_count** | **int** |  | [optional] |
-| **outbound_call_count** | **int** |  | [optional] |
-{: class="table table-striped"}
+| **inbound_call_count** | int |  | [optional] |
+| **outbound_call_count** | int |  | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

@@ -1,6 +1,4 @@
----
-title: TokensApi
----
+# TokensApi
 
 ## PureCloudPlatformClientV2.TokensApi
 
@@ -8,18 +6,18 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 |Method | Description|
 |------------- | -------------|
-|[**delete_token**](TokensApi.html#delete_token) | Delete all auth tokens for the specified user.|
-|[**delete_tokens_me**](TokensApi.html#delete_tokens_me) | Delete auth token used to make the request.|
-|[**get_tokens_me**](TokensApi.html#get_tokens_me) | Fetch information about the current token|
-|[**get_tokens_timeout**](TokensApi.html#get_tokens_timeout) | Get the current Idle Token Timeout Value|
-|[**head_tokens_me**](TokensApi.html#head_tokens_me) | Verify user token|
-|[**put_tokens_timeout**](TokensApi.html#put_tokens_timeout) | Update or Enable/Disable the Idle Token Timeout|
-{: class="table table-striped"}
+|[**delete_token**](#delete_token) | Delete all auth tokens for the specified user.|
+|[**delete_tokens_me**](#delete_tokens_me) | Delete auth token used to make the request.|
+|[**get_tokens_me**](#get_tokens_me) | Fetch information about the current token|
+|[**get_tokens_timeout**](#get_tokens_timeout) | Get the current Idle Token Timeout Value|
+|[**head_tokens_me**](#head_tokens_me) | Verify user token|
+|[**put_tokens_timeout**](#put_tokens_timeout) | Update or Enable/Disable the Idle Token Timeout|
 
-<a name="delete_token"></a>
 
-##  delete_token(user_id)
 
+## delete_token
+
+>  delete_token(user_id)
 
 
 Delete all auth tokens for the specified user.
@@ -58,16 +56,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **user_id** | **str**| User ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (empty response body)
 
-<a name="delete_tokens_me"></a>
 
-##  delete_tokens_me()
+## delete_tokens_me
 
+>  delete_tokens_me()
 
 
 Delete auth token used to make the request.
@@ -102,15 +99,14 @@ except ApiException as e:
 
 This endpoint does not need any parameters.
 
-
 ### Return type
 
 void (empty response body)
 
-<a name="get_tokens_me"></a>
 
-## [**TokenInfo**](TokenInfo.html) get_tokens_me(preserve_idle_ttl=preserve_idle_ttl)
+## get_tokens_me
 
+> [**TokenInfo**](TokenInfo) get_tokens_me(preserve_idle_ttl=preserve_idle_ttl)
 
 
 Fetch information about the current token
@@ -149,16 +145,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **preserve_idle_ttl** | **bool**| preserveIdleTTL indicates whether the idle token timeout should be reset or preserved. If preserveIdleTTL is true, then TTL value is not reset. If unset or false, the value is reset. | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**TokenInfo**](TokenInfo.html)
+[**TokenInfo**](TokenInfo)
 
-<a name="get_tokens_timeout"></a>
 
-## [**IdleTokenTimeout**](IdleTokenTimeout.html) get_tokens_timeout()
+## get_tokens_timeout
 
+> [**IdleTokenTimeout**](IdleTokenTimeout) get_tokens_timeout()
 
 
 Get the current Idle Token Timeout Value
@@ -195,15 +190,14 @@ except ApiException as e:
 
 This endpoint does not need any parameters.
 
-
 ### Return type
 
-[**IdleTokenTimeout**](IdleTokenTimeout.html)
+[**IdleTokenTimeout**](IdleTokenTimeout)
 
-<a name="head_tokens_me"></a>
 
-##  head_tokens_me()
+## head_tokens_me
 
+>  head_tokens_me()
 
 
 Verify user token
@@ -238,15 +232,14 @@ except ApiException as e:
 
 This endpoint does not need any parameters.
 
-
 ### Return type
 
 void (empty response body)
 
-<a name="put_tokens_timeout"></a>
 
-## [**IdleTokenTimeout**](IdleTokenTimeout.html) put_tokens_timeout(body=body)
+## put_tokens_timeout
 
+> [**IdleTokenTimeout**](IdleTokenTimeout) put_tokens_timeout(body=body)
 
 
 Update or Enable/Disable the Idle Token Timeout
@@ -285,10 +278,11 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**IdleTokenTimeout**](IdleTokenTimeout.html)|  | [optional]  |
-{: class="table table-striped"}
+| **body** | [**IdleTokenTimeout**](IdleTokenTimeout)|  | [optional]  |
 
 ### Return type
 
-[**IdleTokenTimeout**](IdleTokenTimeout.html)
+[**IdleTokenTimeout**](IdleTokenTimeout)
 
+
+_PureCloudPlatformClientV2 211.1.0_

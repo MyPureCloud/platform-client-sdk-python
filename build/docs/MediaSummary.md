@@ -1,14 +1,14 @@
----
-title: MediaSummary
----
+# MediaSummary
+
 ## MediaSummary
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **contact_center** | [**MediaSummaryDetail**](MediaSummaryDetail.html) |  | [optional] |
-| **enterprise** | [**MediaSummaryDetail**](MediaSummaryDetail.html) |  | [optional] |
-{: class="table table-striped"}
+| **contact_center** | [MediaSummaryDetail](MediaSummaryDetail) |  | [optional] |
+| **enterprise** | [MediaSummaryDetail](MediaSummaryDetail) |  | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

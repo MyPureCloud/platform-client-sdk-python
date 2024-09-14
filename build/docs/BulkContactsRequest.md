@@ -1,13 +1,13 @@
----
-title: BulkContactsRequest
----
+# BulkContactsRequest
+
 ## BulkContactsRequest
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **entities** | [**list[ExternalContact]**](ExternalContact.html) |  | [optional] |
-{: class="table table-striped"}
+| **entities** | [list[ExternalContact]](ExternalContact) |  | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

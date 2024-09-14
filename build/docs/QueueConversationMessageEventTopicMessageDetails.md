@@ -1,20 +1,20 @@
----
-title: QueueConversationMessageEventTopicMessageDetails
----
+# QueueConversationMessageEventTopicMessageDetails
+
 ## QueueConversationMessageEventTopicMessageDetails
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **message** | [**QueueConversationMessageEventTopicUriReference**](QueueConversationMessageEventTopicUriReference.html) |  | [optional] |
-| **message_time** | **datetime** |  | [optional] |
-| **message_segment_count** | **int** |  | [optional] |
-| **message_status** | **str** |  | [optional] |
-| **media** | [**list[QueueConversationMessageEventTopicMessageMedia]**](QueueConversationMessageEventTopicMessageMedia.html) |  | [optional] |
-| **stickers** | [**list[QueueConversationMessageEventTopicMessageSticker]**](QueueConversationMessageEventTopicMessageSticker.html) |  | [optional] |
-| **error_info** | [**QueueConversationMessageEventTopicErrorDetails**](QueueConversationMessageEventTopicErrorDetails.html) |  | [optional] |
-| **message_metadata** | [**QueueConversationMessageEventTopicMessageMetadata**](QueueConversationMessageEventTopicMessageMetadata.html) |  | [optional] |
-{: class="table table-striped"}
+| **message** | [QueueConversationMessageEventTopicUriReference](QueueConversationMessageEventTopicUriReference) |  | [optional] |
+| **message_time** | datetime |  | [optional] |
+| **message_segment_count** | int |  | [optional] |
+| **message_status** | str |  | [optional] |
+| **media** | [list[QueueConversationMessageEventTopicMessageMedia]](QueueConversationMessageEventTopicMessageMedia) |  | [optional] |
+| **stickers** | [list[QueueConversationMessageEventTopicMessageSticker]](QueueConversationMessageEventTopicMessageSticker) |  | [optional] |
+| **error_info** | [QueueConversationMessageEventTopicErrorDetails](QueueConversationMessageEventTopicErrorDetails) |  | [optional] |
+| **message_metadata** | [QueueConversationMessageEventTopicMessageMetadata](QueueConversationMessageEventTopicMessageMetadata) |  | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

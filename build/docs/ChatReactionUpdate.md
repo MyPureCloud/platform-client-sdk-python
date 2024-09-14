@@ -1,13 +1,13 @@
----
-title: ChatReactionUpdate
----
+# ChatReactionUpdate
+
 ## ChatReactionUpdate
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **reactions** | **list[str]** | Reactions to update | |
-{: class="table table-striped"}
+| **reactions** | list[str] | Reactions to update | |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

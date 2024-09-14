@@ -310,6 +310,8 @@ from .models.attribute_detail_event_topic_communication import AttributeDetailEv
 from .models.attribute_filter_item import AttributeFilterItem
 from .models.atzm_time_slot import AtzmTimeSlot
 from .models.atzm_time_slot_with_time_zone import AtzmTimeSlotWithTimeZone
+from .models.audio_connector_integration import AudioConnectorIntegration
+from .models.audio_connector_integration_entity_listing import AudioConnectorIntegrationEntityListing
 from .models.audio_state import AudioState
 from .models.audio_updated_event import AudioUpdatedEvent
 from .models.audit_log_message import AuditLogMessage
@@ -904,6 +906,7 @@ from .models.conversation_content_location import ConversationContentLocation
 from .models.conversation_content_notification_template import ConversationContentNotificationTemplate
 from .models.conversation_content_quick_reply import ConversationContentQuickReply
 from .models.conversation_content_quick_reply_v2 import ConversationContentQuickReplyV2
+from .models.conversation_content_reaction import ConversationContentReaction
 from .models.conversation_content_story import ConversationContentStory
 from .models.conversation_content_text import ConversationContentText
 from .models.conversation_deletion_protection_query import ConversationDeletionProtectionQuery
@@ -930,6 +933,9 @@ from .models.conversation_email_event_topic_uri_reference import ConversationEma
 from .models.conversation_email_event_topic_wrapup import ConversationEmailEventTopicWrapup
 from .models.conversation_encryption_configuration import ConversationEncryptionConfiguration
 from .models.conversation_encryption_configuration_listing import ConversationEncryptionConfigurationListing
+from .models.conversation_enrichment import ConversationEnrichment
+from .models.conversation_enrichment_language import ConversationEnrichmentLanguage
+from .models.conversation_enrichment_sentiment_v2 import ConversationEnrichmentSentimentV2
 from .models.conversation_entity_listing import ConversationEntityListing
 from .models.conversation_event_co_browse import ConversationEventCoBrowse
 from .models.conversation_event_presence import ConversationEventPresence

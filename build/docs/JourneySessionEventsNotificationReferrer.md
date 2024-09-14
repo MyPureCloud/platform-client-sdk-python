@@ -1,21 +1,21 @@
----
-title: JourneySessionEventsNotificationReferrer
----
+# JourneySessionEventsNotificationReferrer
+
 ## JourneySessionEventsNotificationReferrer
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **url** | **str** |  | [optional] |
-| **domain** | **str** |  | [optional] |
-| **hostname** | **str** |  | [optional] |
-| **keywords** | **str** |  | [optional] |
-| **pathname** | **str** |  | [optional] |
-| **query_string** | **str** |  | [optional] |
-| **fragment** | **str** |  | [optional] |
-| **name** | **str** |  | [optional] |
-| **medium** | **str** |  | [optional] |
-{: class="table table-striped"}
+| **url** | str |  | [optional] |
+| **domain** | str |  | [optional] |
+| **hostname** | str |  | [optional] |
+| **keywords** | str |  | [optional] |
+| **pathname** | str |  | [optional] |
+| **query_string** | str |  | [optional] |
+| **fragment** | str |  | [optional] |
+| **name** | str |  | [optional] |
+| **medium** | str |  | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

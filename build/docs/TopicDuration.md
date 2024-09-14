@@ -1,13 +1,13 @@
----
-title: TopicDuration
----
+# TopicDuration
+
 ## TopicDuration
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **total_milliseconds** | **int** | The total duration of the topic phrase within the conversation | [optional] |
-{: class="table table-striped"}
+| **total_milliseconds** | int | The total duration of the topic phrase within the conversation | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

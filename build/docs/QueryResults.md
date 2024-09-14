@@ -1,14 +1,14 @@
----
-title: QueryResults
----
+# QueryResults
+
 ## QueryResults
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **results** | [**DomainEntityListingQueryResult**](DomainEntityListingQueryResult.html) |  | [optional] |
-| **facet_info** | [**QueryFacetInfo**](QueryFacetInfo.html) |  | [optional] |
-{: class="table table-striped"}
+| **results** | [DomainEntityListingQueryResult](DomainEntityListingQueryResult) |  | [optional] |
+| **facet_info** | [QueryFacetInfo](QueryFacetInfo) |  | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

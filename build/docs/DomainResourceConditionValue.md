@@ -1,16 +1,16 @@
----
-title: DomainResourceConditionValue
----
+# DomainResourceConditionValue
+
 ## DomainResourceConditionValue
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **user** | [**User**](User.html) |  | [optional] |
-| **queue** | [**Queue**](Queue.html) |  | [optional] |
-| **value** | **str** |  | [optional] |
-| **type** | **str** |  | [optional] |
-{: class="table table-striped"}
+| **user** | [User](User) |  | [optional] |
+| **queue** | [Queue](Queue) |  | [optional] |
+| **value** | str |  | [optional] |
+| **type** | str |  | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

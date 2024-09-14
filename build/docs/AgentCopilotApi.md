@@ -1,6 +1,4 @@
----
-title: AgentCopilotApi
----
+# AgentCopilotApi
 
 ## PureCloudPlatformClientV2.AgentCopilotApi
 
@@ -8,14 +6,14 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 |Method | Description|
 |------------- | -------------|
-|[**get_assistant_copilot**](AgentCopilotApi.html#get_assistant_copilot) | Get copilot configuration of an assistant.|
-|[**put_assistant_copilot**](AgentCopilotApi.html#put_assistant_copilot) | Update agent copilot configuration|
-{: class="table table-striped"}
+|[**get_assistant_copilot**](#get_assistant_copilot) | Get copilot configuration of an assistant.|
+|[**put_assistant_copilot**](#put_assistant_copilot) | Update agent copilot configuration|
 
-<a name="get_assistant_copilot"></a>
 
-## [**Copilot**](Copilot.html) get_assistant_copilot(assistant_id)
 
+## get_assistant_copilot
+
+> [**Copilot**](Copilot) get_assistant_copilot(assistant_id)
 
 
 Get copilot configuration of an assistant.
@@ -55,16 +53,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **assistant_id** | **str**| Assistant ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**Copilot**](Copilot.html)
+[**Copilot**](Copilot)
 
-<a name="put_assistant_copilot"></a>
 
-## [**Copilot**](Copilot.html) put_assistant_copilot(assistant_id, body)
+## put_assistant_copilot
 
+> [**Copilot**](Copilot) put_assistant_copilot(assistant_id, body)
 
 
 Update agent copilot configuration
@@ -105,10 +102,11 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **assistant_id** | **str**| Assistant ID |  |
-| **body** | [**Copilot**](Copilot.html)|  |  |
-{: class="table table-striped"}
+| **body** | [**Copilot**](Copilot)|  |  |
 
 ### Return type
 
-[**Copilot**](Copilot.html)
+[**Copilot**](Copilot)
 
+
+_PureCloudPlatformClientV2 211.1.0_

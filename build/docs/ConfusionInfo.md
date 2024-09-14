@@ -1,13 +1,13 @@
----
-title: ConfusionInfo
----
+# ConfusionInfo
+
 ## ConfusionInfo
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **intents** | [**list[ConfusionIntentInfo]**](ConfusionIntentInfo.html) | Confusion details between this utterance and other intents. | [optional] |
-{: class="table table-striped"}
+| **intents** | [list[ConfusionIntentInfo]](ConfusionIntentInfo) | Confusion details between this utterance and other intents. | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

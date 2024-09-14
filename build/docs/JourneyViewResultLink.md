@@ -1,15 +1,15 @@
----
-title: JourneyViewResultLink
----
+# JourneyViewResultLink
+
 ## JourneyViewResultLink
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **id** | **str** | The globally unique identifier for the object. | [optional] |
-| **connection_count** | **int** | the number of connections for the journey view link | [optional] |
-| **self_uri** | **str** | The URI for this object | [optional] |
-{: class="table table-striped"}
+| **id** | str | The globally unique identifier for the object. | [optional] |
+| **connection_count** | int | the number of connections for the journey view link | [optional] |
+| **self_uri** | str | The URI for this object | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

@@ -1,14 +1,14 @@
----
-title: WorkspaceSummary
----
+# WorkspaceSummary
+
 ## WorkspaceSummary
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **total_document_count** | **int** |  | [optional] |
-| **total_document_byte_count** | **int** |  | [optional] |
-{: class="table table-striped"}
+| **total_document_count** | int |  | [optional] |
+| **total_document_byte_count** | int |  | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

@@ -1,14 +1,14 @@
----
-title: DocumentBodyParagraph
----
+# DocumentBodyParagraph
+
 ## DocumentBodyParagraph
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **blocks** | [**list[DocumentContentBlock]**](DocumentContentBlock.html) | The list of blocks for the paragraph. | |
-| **properties** | [**DocumentBodyParagraphProperties**](DocumentBodyParagraphProperties.html) | The properties for the paragraph. | [optional] |
-{: class="table table-striped"}
+| **blocks** | [list[DocumentContentBlock]](DocumentContentBlock) | The list of blocks for the paragraph. | |
+| **properties** | [DocumentBodyParagraphProperties](DocumentBodyParagraphProperties) | The properties for the paragraph. | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

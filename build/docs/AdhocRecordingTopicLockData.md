@@ -1,15 +1,15 @@
----
-title: AdhocRecordingTopicLockData
----
+# AdhocRecordingTopicLockData
+
 ## AdhocRecordingTopicLockData
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **locked_by** | [**AdhocRecordingTopicUserData**](AdhocRecordingTopicUserData.html) |  | [optional] |
-| **date_created** | **datetime** |  | [optional] |
-| **date_expires** | **datetime** |  | [optional] |
-{: class="table table-striped"}
+| **locked_by** | [AdhocRecordingTopicUserData](AdhocRecordingTopicUserData) |  | [optional] |
+| **date_created** | datetime |  | [optional] |
+| **date_expires** | datetime |  | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

@@ -1,23 +1,23 @@
----
-title: JourneyOutcomeEventsNotificationOutcomeAchievedMessage
----
+# JourneyOutcomeEventsNotificationOutcomeAchievedMessage
+
 ## JourneyOutcomeEventsNotificationOutcomeAchievedMessage
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **outcome** | [**JourneyOutcomeEventsNotificationOutcome**](JourneyOutcomeEventsNotificationOutcome.html) |  | [optional] |
-| **browser** | [**JourneyOutcomeEventsNotificationBrowser**](JourneyOutcomeEventsNotificationBrowser.html) |  | [optional] |
-| **visit_created_date** | **datetime** |  | [optional] |
-| **ip_address** | **str** |  | [optional] |
-| **ip_organization** | **str** |  | [optional] |
-| **user_agent_string** | **str** |  | [optional] |
-| **device** | [**JourneyOutcomeEventsNotificationDevice**](JourneyOutcomeEventsNotificationDevice.html) |  | [optional] |
-| **geolocation** | [**JourneyOutcomeEventsNotificationGeoLocation**](JourneyOutcomeEventsNotificationGeoLocation.html) |  | [optional] |
-| **mkt_campaign** | [**JourneyOutcomeEventsNotificationMktCampaign**](JourneyOutcomeEventsNotificationMktCampaign.html) |  | [optional] |
-| **visit_referrer** | [**JourneyOutcomeEventsNotificationReferrer**](JourneyOutcomeEventsNotificationReferrer.html) |  | [optional] |
-| **associated_value** | [**JourneyOutcomeEventsNotificationAssociatedValue**](JourneyOutcomeEventsNotificationAssociatedValue.html) |  | [optional] |
-{: class="table table-striped"}
+| **outcome** | [JourneyOutcomeEventsNotificationOutcome](JourneyOutcomeEventsNotificationOutcome) |  | [optional] |
+| **browser** | [JourneyOutcomeEventsNotificationBrowser](JourneyOutcomeEventsNotificationBrowser) |  | [optional] |
+| **visit_created_date** | datetime |  | [optional] |
+| **ip_address** | str |  | [optional] |
+| **ip_organization** | str |  | [optional] |
+| **user_agent_string** | str |  | [optional] |
+| **device** | [JourneyOutcomeEventsNotificationDevice](JourneyOutcomeEventsNotificationDevice) |  | [optional] |
+| **geolocation** | [JourneyOutcomeEventsNotificationGeoLocation](JourneyOutcomeEventsNotificationGeoLocation) |  | [optional] |
+| **mkt_campaign** | [JourneyOutcomeEventsNotificationMktCampaign](JourneyOutcomeEventsNotificationMktCampaign) |  | [optional] |
+| **visit_referrer** | [JourneyOutcomeEventsNotificationReferrer](JourneyOutcomeEventsNotificationReferrer) |  | [optional] |
+| **associated_value** | [JourneyOutcomeEventsNotificationAssociatedValue](JourneyOutcomeEventsNotificationAssociatedValue) |  | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

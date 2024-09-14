@@ -1,14 +1,14 @@
----
-title: ExternalContactsUnresolvedContactChangedTopicFacebookId
----
+# ExternalContactsUnresolvedContactChangedTopicFacebookId
+
 ## ExternalContactsUnresolvedContactChangedTopicFacebookId
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **ids** | [**list[ExternalContactsUnresolvedContactChangedTopicFacebookScopedId]**](ExternalContactsUnresolvedContactChangedTopicFacebookScopedId.html) |  | [optional] |
-| **display_name** | **str** |  | [optional] |
-{: class="table table-striped"}
+| **ids** | [list[ExternalContactsUnresolvedContactChangedTopicFacebookScopedId]](ExternalContactsUnresolvedContactChangedTopicFacebookScopedId) |  | [optional] |
+| **display_name** | str |  | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

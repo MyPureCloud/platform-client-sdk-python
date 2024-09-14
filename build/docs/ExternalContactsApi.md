@@ -1,6 +1,4 @@
----
-title: ExternalContactsApi
----
+# ExternalContactsApi
 
 ## PureCloudPlatformClientV2.ExternalContactsApi
 
@@ -8,88 +6,88 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 |Method | Description|
 |------------- | -------------|
-|[**delete_externalcontacts_contact**](ExternalContactsApi.html#delete_externalcontacts_contact) | Delete an external contact|
-|[**delete_externalcontacts_contact_note**](ExternalContactsApi.html#delete_externalcontacts_contact_note) | Delete a note for an external contact|
-|[**delete_externalcontacts_contacts_schema**](ExternalContactsApi.html#delete_externalcontacts_contacts_schema) | Delete a schema|
-|[**delete_externalcontacts_externalsource**](ExternalContactsApi.html#delete_externalcontacts_externalsource) | Delete an External Source. WARNING: Any records that reference this External Source will not be automatically cleaned up. Those records will still be editable, but their External IDs may not be fully viewable.|
-|[**delete_externalcontacts_organization**](ExternalContactsApi.html#delete_externalcontacts_organization) | Delete an external organization|
-|[**delete_externalcontacts_organization_note**](ExternalContactsApi.html#delete_externalcontacts_organization_note) | Delete a note for an external organization|
-|[**delete_externalcontacts_organization_trustor**](ExternalContactsApi.html#delete_externalcontacts_organization_trustor) | Unlink the Trustor for this External Organization|
-|[**delete_externalcontacts_relationship**](ExternalContactsApi.html#delete_externalcontacts_relationship) | Delete a relationship|
-|[**get_externalcontacts_contact**](ExternalContactsApi.html#get_externalcontacts_contact) | Fetch an external contact|
-|[**get_externalcontacts_contact_identifiers**](ExternalContactsApi.html#get_externalcontacts_contact_identifiers) | List the identifiers for a contact|
-|[**get_externalcontacts_contact_journey_sessions**](ExternalContactsApi.html#get_externalcontacts_contact_journey_sessions) | Retrieve all sessions for a given external contact.|
-|[**get_externalcontacts_contact_note**](ExternalContactsApi.html#get_externalcontacts_contact_note) | Fetch a note for an external contact|
-|[**get_externalcontacts_contact_notes**](ExternalContactsApi.html#get_externalcontacts_contact_notes) | List notes for an external contact|
-|[**get_externalcontacts_contact_unresolved**](ExternalContactsApi.html#get_externalcontacts_contact_unresolved) | Fetch an unresolved external contact|
-|[**get_externalcontacts_contacts**](ExternalContactsApi.html#get_externalcontacts_contacts) | Search for external contacts|
-|[**get_externalcontacts_contacts_schema**](ExternalContactsApi.html#get_externalcontacts_contacts_schema) | Get a schema|
-|[**get_externalcontacts_contacts_schema_version**](ExternalContactsApi.html#get_externalcontacts_contacts_schema_version) | Get a specific version of a schema|
-|[**get_externalcontacts_contacts_schema_versions**](ExternalContactsApi.html#get_externalcontacts_contacts_schema_versions) | Get all versions of an external contact&#39;s schema|
-|[**get_externalcontacts_contacts_schemas**](ExternalContactsApi.html#get_externalcontacts_contacts_schemas) | Get a list of schemas.|
-|[**get_externalcontacts_externalsource**](ExternalContactsApi.html#get_externalcontacts_externalsource) | Fetch an External Source|
-|[**get_externalcontacts_externalsources**](ExternalContactsApi.html#get_externalcontacts_externalsources) | Fetch a list of External Sources|
-|[**get_externalcontacts_organization**](ExternalContactsApi.html#get_externalcontacts_organization) | Fetch an external organization|
-|[**get_externalcontacts_organization_contacts**](ExternalContactsApi.html#get_externalcontacts_organization_contacts) | Search for external contacts in an external organization|
-|[**get_externalcontacts_organization_note**](ExternalContactsApi.html#get_externalcontacts_organization_note) | Fetch a note for an external organization|
-|[**get_externalcontacts_organization_notes**](ExternalContactsApi.html#get_externalcontacts_organization_notes) | List notes for an external organization|
-|[**get_externalcontacts_organization_relationships**](ExternalContactsApi.html#get_externalcontacts_organization_relationships) | Fetch a relationship for an external organization|
-|[**get_externalcontacts_organizations**](ExternalContactsApi.html#get_externalcontacts_organizations) | Search for external organizations|
-|[**get_externalcontacts_organizations_schema**](ExternalContactsApi.html#get_externalcontacts_organizations_schema) | Get a schema|
-|[**get_externalcontacts_organizations_schema_version**](ExternalContactsApi.html#get_externalcontacts_organizations_schema_version) | Get a specific version of a schema|
-|[**get_externalcontacts_organizations_schema_versions**](ExternalContactsApi.html#get_externalcontacts_organizations_schema_versions) | Get all versions of an external organization&#39;s schema|
-|[**get_externalcontacts_organizations_schemas**](ExternalContactsApi.html#get_externalcontacts_organizations_schemas) | Get a list of schemas.|
-|[**get_externalcontacts_relationship**](ExternalContactsApi.html#get_externalcontacts_relationship) | Fetch a relationship|
-|[**get_externalcontacts_reversewhitepageslookup**](ExternalContactsApi.html#get_externalcontacts_reversewhitepageslookup) | Look up contacts and externalOrganizations based on an attribute. Maximum of 25 values returned.|
-|[**get_externalcontacts_scan_contacts**](ExternalContactsApi.html#get_externalcontacts_scan_contacts) | Scan for external contacts using paging|
-|[**get_externalcontacts_scan_notes**](ExternalContactsApi.html#get_externalcontacts_scan_notes) | Scan for notes using paging|
-|[**get_externalcontacts_scan_organizations**](ExternalContactsApi.html#get_externalcontacts_scan_organizations) | Scan for external organizations using paging|
-|[**get_externalcontacts_scan_relationships**](ExternalContactsApi.html#get_externalcontacts_scan_relationships) | Scan for relationships|
-|[**patch_externalcontacts_contact_identifiers**](ExternalContactsApi.html#patch_externalcontacts_contact_identifiers) | Claim or release identifiers for a contact|
-|[**post_externalcontacts_bulk_contacts**](ExternalContactsApi.html#post_externalcontacts_bulk_contacts) | Bulk fetch contacts|
-|[**post_externalcontacts_bulk_contacts_add**](ExternalContactsApi.html#post_externalcontacts_bulk_contacts_add) | Bulk add contacts|
-|[**post_externalcontacts_bulk_contacts_remove**](ExternalContactsApi.html#post_externalcontacts_bulk_contacts_remove) | Bulk remove contacts|
-|[**post_externalcontacts_bulk_contacts_unresolved**](ExternalContactsApi.html#post_externalcontacts_bulk_contacts_unresolved) | Bulk fetch unresolved ancestor contacts|
-|[**post_externalcontacts_bulk_contacts_update**](ExternalContactsApi.html#post_externalcontacts_bulk_contacts_update) | Bulk update contacts|
-|[**post_externalcontacts_bulk_notes**](ExternalContactsApi.html#post_externalcontacts_bulk_notes) | Bulk fetch notes|
-|[**post_externalcontacts_bulk_notes_add**](ExternalContactsApi.html#post_externalcontacts_bulk_notes_add) | Bulk add notes|
-|[**post_externalcontacts_bulk_notes_remove**](ExternalContactsApi.html#post_externalcontacts_bulk_notes_remove) | Bulk remove notes|
-|[**post_externalcontacts_bulk_notes_update**](ExternalContactsApi.html#post_externalcontacts_bulk_notes_update) | Bulk update notes|
-|[**post_externalcontacts_bulk_organizations**](ExternalContactsApi.html#post_externalcontacts_bulk_organizations) | Bulk fetch organizations|
-|[**post_externalcontacts_bulk_organizations_add**](ExternalContactsApi.html#post_externalcontacts_bulk_organizations_add) | Bulk add organizations|
-|[**post_externalcontacts_bulk_organizations_remove**](ExternalContactsApi.html#post_externalcontacts_bulk_organizations_remove) | Bulk remove organizations|
-|[**post_externalcontacts_bulk_organizations_update**](ExternalContactsApi.html#post_externalcontacts_bulk_organizations_update) | Bulk update organizations|
-|[**post_externalcontacts_bulk_relationships**](ExternalContactsApi.html#post_externalcontacts_bulk_relationships) | Bulk fetch relationships|
-|[**post_externalcontacts_bulk_relationships_add**](ExternalContactsApi.html#post_externalcontacts_bulk_relationships_add) | Bulk add relationships|
-|[**post_externalcontacts_bulk_relationships_remove**](ExternalContactsApi.html#post_externalcontacts_bulk_relationships_remove) | Bulk remove relationships|
-|[**post_externalcontacts_bulk_relationships_update**](ExternalContactsApi.html#post_externalcontacts_bulk_relationships_update) | Bulk update relationships|
-|[**post_externalcontacts_contact_notes**](ExternalContactsApi.html#post_externalcontacts_contact_notes) | Create a note for an external contact|
-|[**post_externalcontacts_contact_promotion**](ExternalContactsApi.html#post_externalcontacts_contact_promotion) | Promote an observed contact (ephemeral or identified) to a curated contact|
-|[**post_externalcontacts_contacts**](ExternalContactsApi.html#post_externalcontacts_contacts) | Create an external contact|
-|[**post_externalcontacts_contacts_schemas**](ExternalContactsApi.html#post_externalcontacts_contacts_schemas) | Create a schema|
-|[**post_externalcontacts_externalsources**](ExternalContactsApi.html#post_externalcontacts_externalsources) | Create an External Source|
-|[**post_externalcontacts_identifierlookup**](ExternalContactsApi.html#post_externalcontacts_identifierlookup) | Fetch a contact using an identifier type and value.|
-|[**post_externalcontacts_merge_contacts**](ExternalContactsApi.html#post_externalcontacts_merge_contacts) | Merge two contacts into a new contact record|
-|[**post_externalcontacts_organization_notes**](ExternalContactsApi.html#post_externalcontacts_organization_notes) | Create a note for an external organization|
-|[**post_externalcontacts_organizations**](ExternalContactsApi.html#post_externalcontacts_organizations) | Create an external organization|
-|[**post_externalcontacts_organizations_schemas**](ExternalContactsApi.html#post_externalcontacts_organizations_schemas) | Create a schema|
-|[**post_externalcontacts_relationships**](ExternalContactsApi.html#post_externalcontacts_relationships) | Create a relationship|
-|[**put_externalcontacts_contact**](ExternalContactsApi.html#put_externalcontacts_contact) | Update an external contact|
-|[**put_externalcontacts_contact_note**](ExternalContactsApi.html#put_externalcontacts_contact_note) | Update a note for an external contact|
-|[**put_externalcontacts_contacts_schema**](ExternalContactsApi.html#put_externalcontacts_contacts_schema) | Update a schema|
-|[**put_externalcontacts_conversation**](ExternalContactsApi.html#put_externalcontacts_conversation) | Associate/disassociate an external contact with a conversation|
-|[**put_externalcontacts_externalsource**](ExternalContactsApi.html#put_externalcontacts_externalsource) | Update an External Source|
-|[**put_externalcontacts_organization**](ExternalContactsApi.html#put_externalcontacts_organization) | Update an external organization|
-|[**put_externalcontacts_organization_note**](ExternalContactsApi.html#put_externalcontacts_organization_note) | Update a note for an external organization|
-|[**put_externalcontacts_organization_trustor_trustor_id**](ExternalContactsApi.html#put_externalcontacts_organization_trustor_trustor_id) | Links a Trustor with an External Organization|
-|[**put_externalcontacts_organizations_schema**](ExternalContactsApi.html#put_externalcontacts_organizations_schema) | Update a schema|
-|[**put_externalcontacts_relationship**](ExternalContactsApi.html#put_externalcontacts_relationship) | Update a relationship|
-{: class="table table-striped"}
+|[**delete_externalcontacts_contact**](#delete_externalcontacts_contact) | Delete an external contact|
+|[**delete_externalcontacts_contact_note**](#delete_externalcontacts_contact_note) | Delete a note for an external contact|
+|[**delete_externalcontacts_contacts_schema**](#delete_externalcontacts_contacts_schema) | Delete a schema|
+|[**delete_externalcontacts_externalsource**](#delete_externalcontacts_externalsource) | Delete an External Source. WARNING: Any records that reference this External Source will not be automatically cleaned up. Those records will still be editable, but their External IDs may not be fully viewable.|
+|[**delete_externalcontacts_organization**](#delete_externalcontacts_organization) | Delete an external organization|
+|[**delete_externalcontacts_organization_note**](#delete_externalcontacts_organization_note) | Delete a note for an external organization|
+|[**delete_externalcontacts_organization_trustor**](#delete_externalcontacts_organization_trustor) | Unlink the Trustor for this External Organization|
+|[**delete_externalcontacts_relationship**](#delete_externalcontacts_relationship) | Delete a relationship|
+|[**get_externalcontacts_contact**](#get_externalcontacts_contact) | Fetch an external contact|
+|[**get_externalcontacts_contact_identifiers**](#get_externalcontacts_contact_identifiers) | List the identifiers for a contact|
+|[**get_externalcontacts_contact_journey_sessions**](#get_externalcontacts_contact_journey_sessions) | Retrieve all sessions for a given external contact.|
+|[**get_externalcontacts_contact_note**](#get_externalcontacts_contact_note) | Fetch a note for an external contact|
+|[**get_externalcontacts_contact_notes**](#get_externalcontacts_contact_notes) | List notes for an external contact|
+|[**get_externalcontacts_contact_unresolved**](#get_externalcontacts_contact_unresolved) | Fetch an unresolved external contact|
+|[**get_externalcontacts_contacts**](#get_externalcontacts_contacts) | Search for external contacts|
+|[**get_externalcontacts_contacts_schema**](#get_externalcontacts_contacts_schema) | Get a schema|
+|[**get_externalcontacts_contacts_schema_version**](#get_externalcontacts_contacts_schema_version) | Get a specific version of a schema|
+|[**get_externalcontacts_contacts_schema_versions**](#get_externalcontacts_contacts_schema_versions) | Get all versions of an external contact&#39;s schema|
+|[**get_externalcontacts_contacts_schemas**](#get_externalcontacts_contacts_schemas) | Get a list of schemas.|
+|[**get_externalcontacts_externalsource**](#get_externalcontacts_externalsource) | Fetch an External Source|
+|[**get_externalcontacts_externalsources**](#get_externalcontacts_externalsources) | Fetch a list of External Sources|
+|[**get_externalcontacts_organization**](#get_externalcontacts_organization) | Fetch an external organization|
+|[**get_externalcontacts_organization_contacts**](#get_externalcontacts_organization_contacts) | Search for external contacts in an external organization|
+|[**get_externalcontacts_organization_note**](#get_externalcontacts_organization_note) | Fetch a note for an external organization|
+|[**get_externalcontacts_organization_notes**](#get_externalcontacts_organization_notes) | List notes for an external organization|
+|[**get_externalcontacts_organization_relationships**](#get_externalcontacts_organization_relationships) | Fetch a relationship for an external organization|
+|[**get_externalcontacts_organizations**](#get_externalcontacts_organizations) | Search for external organizations|
+|[**get_externalcontacts_organizations_schema**](#get_externalcontacts_organizations_schema) | Get a schema|
+|[**get_externalcontacts_organizations_schema_version**](#get_externalcontacts_organizations_schema_version) | Get a specific version of a schema|
+|[**get_externalcontacts_organizations_schema_versions**](#get_externalcontacts_organizations_schema_versions) | Get all versions of an external organization&#39;s schema|
+|[**get_externalcontacts_organizations_schemas**](#get_externalcontacts_organizations_schemas) | Get a list of schemas.|
+|[**get_externalcontacts_relationship**](#get_externalcontacts_relationship) | Fetch a relationship|
+|[**get_externalcontacts_reversewhitepageslookup**](#get_externalcontacts_reversewhitepageslookup) | Look up contacts and externalOrganizations based on an attribute. Maximum of 25 values returned.|
+|[**get_externalcontacts_scan_contacts**](#get_externalcontacts_scan_contacts) | Scan for external contacts using paging|
+|[**get_externalcontacts_scan_notes**](#get_externalcontacts_scan_notes) | Scan for notes using paging|
+|[**get_externalcontacts_scan_organizations**](#get_externalcontacts_scan_organizations) | Scan for external organizations using paging|
+|[**get_externalcontacts_scan_relationships**](#get_externalcontacts_scan_relationships) | Scan for relationships|
+|[**patch_externalcontacts_contact_identifiers**](#patch_externalcontacts_contact_identifiers) | Claim or release identifiers for a contact|
+|[**post_externalcontacts_bulk_contacts**](#post_externalcontacts_bulk_contacts) | Bulk fetch contacts|
+|[**post_externalcontacts_bulk_contacts_add**](#post_externalcontacts_bulk_contacts_add) | Bulk add contacts|
+|[**post_externalcontacts_bulk_contacts_remove**](#post_externalcontacts_bulk_contacts_remove) | Bulk remove contacts|
+|[**post_externalcontacts_bulk_contacts_unresolved**](#post_externalcontacts_bulk_contacts_unresolved) | Bulk fetch unresolved ancestor contacts|
+|[**post_externalcontacts_bulk_contacts_update**](#post_externalcontacts_bulk_contacts_update) | Bulk update contacts|
+|[**post_externalcontacts_bulk_notes**](#post_externalcontacts_bulk_notes) | Bulk fetch notes|
+|[**post_externalcontacts_bulk_notes_add**](#post_externalcontacts_bulk_notes_add) | Bulk add notes|
+|[**post_externalcontacts_bulk_notes_remove**](#post_externalcontacts_bulk_notes_remove) | Bulk remove notes|
+|[**post_externalcontacts_bulk_notes_update**](#post_externalcontacts_bulk_notes_update) | Bulk update notes|
+|[**post_externalcontacts_bulk_organizations**](#post_externalcontacts_bulk_organizations) | Bulk fetch organizations|
+|[**post_externalcontacts_bulk_organizations_add**](#post_externalcontacts_bulk_organizations_add) | Bulk add organizations|
+|[**post_externalcontacts_bulk_organizations_remove**](#post_externalcontacts_bulk_organizations_remove) | Bulk remove organizations|
+|[**post_externalcontacts_bulk_organizations_update**](#post_externalcontacts_bulk_organizations_update) | Bulk update organizations|
+|[**post_externalcontacts_bulk_relationships**](#post_externalcontacts_bulk_relationships) | Bulk fetch relationships|
+|[**post_externalcontacts_bulk_relationships_add**](#post_externalcontacts_bulk_relationships_add) | Bulk add relationships|
+|[**post_externalcontacts_bulk_relationships_remove**](#post_externalcontacts_bulk_relationships_remove) | Bulk remove relationships|
+|[**post_externalcontacts_bulk_relationships_update**](#post_externalcontacts_bulk_relationships_update) | Bulk update relationships|
+|[**post_externalcontacts_contact_notes**](#post_externalcontacts_contact_notes) | Create a note for an external contact|
+|[**post_externalcontacts_contact_promotion**](#post_externalcontacts_contact_promotion) | Promote an observed contact (ephemeral or identified) to a curated contact|
+|[**post_externalcontacts_contacts**](#post_externalcontacts_contacts) | Create an external contact|
+|[**post_externalcontacts_contacts_schemas**](#post_externalcontacts_contacts_schemas) | Create a schema|
+|[**post_externalcontacts_externalsources**](#post_externalcontacts_externalsources) | Create an External Source|
+|[**post_externalcontacts_identifierlookup**](#post_externalcontacts_identifierlookup) | Fetch a contact using an identifier type and value.|
+|[**post_externalcontacts_merge_contacts**](#post_externalcontacts_merge_contacts) | Merge two contacts into a new contact record|
+|[**post_externalcontacts_organization_notes**](#post_externalcontacts_organization_notes) | Create a note for an external organization|
+|[**post_externalcontacts_organizations**](#post_externalcontacts_organizations) | Create an external organization|
+|[**post_externalcontacts_organizations_schemas**](#post_externalcontacts_organizations_schemas) | Create a schema|
+|[**post_externalcontacts_relationships**](#post_externalcontacts_relationships) | Create a relationship|
+|[**put_externalcontacts_contact**](#put_externalcontacts_contact) | Update an external contact|
+|[**put_externalcontacts_contact_note**](#put_externalcontacts_contact_note) | Update a note for an external contact|
+|[**put_externalcontacts_contacts_schema**](#put_externalcontacts_contacts_schema) | Update a schema|
+|[**put_externalcontacts_conversation**](#put_externalcontacts_conversation) | Associate/disassociate an external contact with a conversation|
+|[**put_externalcontacts_externalsource**](#put_externalcontacts_externalsource) | Update an External Source|
+|[**put_externalcontacts_organization**](#put_externalcontacts_organization) | Update an external organization|
+|[**put_externalcontacts_organization_note**](#put_externalcontacts_organization_note) | Update a note for an external organization|
+|[**put_externalcontacts_organization_trustor_trustor_id**](#put_externalcontacts_organization_trustor_trustor_id) | Links a Trustor with an External Organization|
+|[**put_externalcontacts_organizations_schema**](#put_externalcontacts_organizations_schema) | Update a schema|
+|[**put_externalcontacts_relationship**](#put_externalcontacts_relationship) | Update a relationship|
 
-<a name="delete_externalcontacts_contact"></a>
 
-## object** delete_externalcontacts_contact(contact_id)
 
+## delete_externalcontacts_contact
+
+> object** delete_externalcontacts_contact(contact_id)
 
 
 Delete an external contact
@@ -130,16 +128,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **contact_id** | **str**| ExternalContact ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **object**
 
-<a name="delete_externalcontacts_contact_note"></a>
 
-## object** delete_externalcontacts_contact_note(contact_id, note_id)
+## delete_externalcontacts_contact_note
 
+> object** delete_externalcontacts_contact_note(contact_id, note_id)
 
 
 Delete a note for an external contact
@@ -182,16 +179,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **contact_id** | **str**| ExternalContact Id |  |
 | **note_id** | **str**| Note Id |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **object**
 
-<a name="delete_externalcontacts_contacts_schema"></a>
 
-##  delete_externalcontacts_contacts_schema(schema_id)
+## delete_externalcontacts_contacts_schema
 
+>  delete_externalcontacts_contacts_schema(schema_id)
 
 
 Delete a schema
@@ -230,16 +226,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **schema_id** | **str**| Schema ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (empty response body)
 
-<a name="delete_externalcontacts_externalsource"></a>
 
-## object** delete_externalcontacts_externalsource(external_source_id)
+## delete_externalcontacts_externalsource
 
+> object** delete_externalcontacts_externalsource(external_source_id)
 
 
 Delete an External Source. WARNING: Any records that reference this External Source will not be automatically cleaned up. Those records will still be editable, but their External IDs may not be fully viewable.
@@ -281,16 +276,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **external_source_id** | **str**| External Source ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **object**
 
-<a name="delete_externalcontacts_organization"></a>
 
-## object** delete_externalcontacts_organization(external_organization_id)
+## delete_externalcontacts_organization
 
+> object** delete_externalcontacts_organization(external_organization_id)
 
 
 Delete an external organization
@@ -331,16 +325,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **external_organization_id** | **str**| External Organization ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **object**
 
-<a name="delete_externalcontacts_organization_note"></a>
 
-## object** delete_externalcontacts_organization_note(external_organization_id, note_id)
+## delete_externalcontacts_organization_note
 
+> object** delete_externalcontacts_organization_note(external_organization_id, note_id)
 
 
 Delete a note for an external organization
@@ -383,16 +376,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **external_organization_id** | **str**| External Organization Id |  |
 | **note_id** | **str**| Note Id |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **object**
 
-<a name="delete_externalcontacts_organization_trustor"></a>
 
-##  delete_externalcontacts_organization_trustor(external_organization_id)
+## delete_externalcontacts_organization_trustor
 
+>  delete_externalcontacts_organization_trustor(external_organization_id)
 
 
 Unlink the Trustor for this External Organization
@@ -431,16 +423,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **external_organization_id** | **str**| External Organization ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (empty response body)
 
-<a name="delete_externalcontacts_relationship"></a>
 
-## object** delete_externalcontacts_relationship(relationship_id)
+## delete_externalcontacts_relationship
 
+> object** delete_externalcontacts_relationship(relationship_id)
 
 
 Delete a relationship
@@ -481,16 +472,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **relationship_id** | **str**| Relationship Id |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **object**
 
-<a name="get_externalcontacts_contact"></a>
 
-## [**ExternalContact**](ExternalContact.html) get_externalcontacts_contact(contact_id, expand=expand)
+## get_externalcontacts_contact
 
+> [**ExternalContact**](ExternalContact) get_externalcontacts_contact(contact_id, expand=expand)
 
 
 Fetch an external contact
@@ -532,17 +522,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **contact_id** | **str**| ExternalContact ID |  |
-| **expand** | [**list[str]**](str.html)| which fields, if any, to expand | [optional] <br />**Values**: externalOrganization, externalDataSources, identifiers, externalSources |
-{: class="table table-striped"}
+| **expand** | [**list[str]**](str)| which fields, if any, to expand | [optional] <br />**Values**: externalOrganization, externalDataSources, identifiers, externalSources |
 
 ### Return type
 
-[**ExternalContact**](ExternalContact.html)
+[**ExternalContact**](ExternalContact)
 
-<a name="get_externalcontacts_contact_identifiers"></a>
 
-## [**EntityListing**](EntityListing.html) get_externalcontacts_contact_identifiers(contact_id)
+## get_externalcontacts_contact_identifiers
 
+> [**EntityListing**](EntityListing) get_externalcontacts_contact_identifiers(contact_id)
 
 
 List the identifiers for a contact
@@ -582,16 +571,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **contact_id** | **str**| ExternalContact ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**EntityListing**](EntityListing.html)
+[**EntityListing**](EntityListing)
 
-<a name="get_externalcontacts_contact_journey_sessions"></a>
 
-## [**SessionListing**](SessionListing.html) get_externalcontacts_contact_journey_sessions(contact_id, page_size=page_size, after=after, include_merged=include_merged)
+## get_externalcontacts_contact_journey_sessions
 
+> [**SessionListing**](SessionListing) get_externalcontacts_contact_journey_sessions(contact_id, page_size=page_size, after=after, include_merged=include_merged)
 
 
 Retrieve all sessions for a given external contact.
@@ -637,16 +625,15 @@ except ApiException as e:
 | **page_size** | **str**| Number of entities to return. Maximum of 200. | [optional]  |
 | **after** | **str**| The cursor that points to the end of the set of entities that has been returned. | [optional]  |
 | **include_merged** | **bool**| Indicates whether to return sessions from all external contacts in the merge-set of the given one. | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**SessionListing**](SessionListing.html)
+[**SessionListing**](SessionListing)
 
-<a name="get_externalcontacts_contact_note"></a>
 
-## [**Note**](Note.html) get_externalcontacts_contact_note(contact_id, note_id, expand=expand)
+## get_externalcontacts_contact_note
 
+> [**Note**](Note) get_externalcontacts_contact_note(contact_id, note_id, expand=expand)
 
 
 Fetch a note for an external contact
@@ -690,17 +677,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **contact_id** | **str**| ExternalContact Id |  |
 | **note_id** | **str**| Note Id |  |
-| **expand** | [**list[str]**](str.html)| which fields, if any, to expand | [optional] <br />**Values**: author, externalDataSources |
-{: class="table table-striped"}
+| **expand** | [**list[str]**](str)| which fields, if any, to expand | [optional] <br />**Values**: author, externalDataSources |
 
 ### Return type
 
-[**Note**](Note.html)
+[**Note**](Note)
 
-<a name="get_externalcontacts_contact_notes"></a>
 
-## [**NoteListing**](NoteListing.html) get_externalcontacts_contact_notes(contact_id, page_size=page_size, page_number=page_number, sort_order=sort_order, expand=expand)
+## get_externalcontacts_contact_notes
 
+> [**NoteListing**](NoteListing) get_externalcontacts_contact_notes(contact_id, page_size=page_size, page_number=page_number, sort_order=sort_order, expand=expand)
 
 
 List notes for an external contact
@@ -748,17 +734,16 @@ except ApiException as e:
 | **page_size** | **int**| Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;&#x3D; 1,000) | [optional] [default to 20] |
 | **page_number** | **int**| Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;&#x3D; 1,000) | [optional] [default to 1] |
 | **sort_order** | **str**| The Note field to sort by. Any of: [createDate]. Direction: [asc, desc].  e.g. \&quot;createDate:asc\&quot;, \&quot;createDate:desc\&quot; | [optional]  |
-| **expand** | [**list[str]**](str.html)| which fields, if any, to expand | [optional] <br />**Values**: author, externalDataSources |
-{: class="table table-striped"}
+| **expand** | [**list[str]**](str)| which fields, if any, to expand | [optional] <br />**Values**: author, externalDataSources |
 
 ### Return type
 
-[**NoteListing**](NoteListing.html)
+[**NoteListing**](NoteListing)
 
-<a name="get_externalcontacts_contact_unresolved"></a>
 
-## [**ExternalContact**](ExternalContact.html) get_externalcontacts_contact_unresolved(contact_id, expand=expand)
+## get_externalcontacts_contact_unresolved
 
+> [**ExternalContact**](ExternalContact) get_externalcontacts_contact_unresolved(contact_id, expand=expand)
 
 
 Fetch an unresolved external contact
@@ -799,17 +784,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **contact_id** | **str**| ExternalContact ID |  |
-| **expand** | [**list[str]**](str.html)| which fields, if any, to expand (externalOrganization,externalDataSources,identifiers) | [optional] <br />**Values**: externalOrganization, externalDataSources, identifiers |
-{: class="table table-striped"}
+| **expand** | [**list[str]**](str)| which fields, if any, to expand (externalOrganization,externalDataSources,identifiers) | [optional] <br />**Values**: externalOrganization, externalDataSources, identifiers |
 
 ### Return type
 
-[**ExternalContact**](ExternalContact.html)
+[**ExternalContact**](ExternalContact)
 
-<a name="get_externalcontacts_contacts"></a>
 
-## [**ContactListing**](ContactListing.html) get_externalcontacts_contacts(page_size=page_size, page_number=page_number, q=q, sort_order=sort_order, expand=expand)
+## get_externalcontacts_contacts
 
+> [**ContactListing**](ContactListing) get_externalcontacts_contacts(page_size=page_size, page_number=page_number, q=q, sort_order=sort_order, expand=expand)
 
 
 Search for external contacts
@@ -857,17 +841,16 @@ except ApiException as e:
 | **page_number** | **int**| Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;&#x3D; 1,000) | [optional] [default to 1] |
 | **q** | **str**| User supplied search keywords (no special syntax is currently supported) | [optional]  |
 | **sort_order** | **str**| The External Contact field to sort by. Any of: [firstName, lastName, middleName, title]. Direction: [asc, desc]. e.g. \&quot;firstName:asc\&quot;, \&quot;title:desc\&quot; | [optional]  |
-| **expand** | [**list[str]**](str.html)| which fields, if any, to expand | [optional] <br />**Values**: externalOrganization, externalDataSources, identifiers, externalSources |
-{: class="table table-striped"}
+| **expand** | [**list[str]**](str)| which fields, if any, to expand | [optional] <br />**Values**: externalOrganization, externalDataSources, identifiers, externalSources |
 
 ### Return type
 
-[**ContactListing**](ContactListing.html)
+[**ContactListing**](ContactListing)
 
-<a name="get_externalcontacts_contacts_schema"></a>
 
-## [**DataSchema**](DataSchema.html) get_externalcontacts_contacts_schema(schema_id)
+## get_externalcontacts_contacts_schema
 
+> [**DataSchema**](DataSchema) get_externalcontacts_contacts_schema(schema_id)
 
 
 Get a schema
@@ -907,16 +890,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **schema_id** | **str**| Schema ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**DataSchema**](DataSchema.html)
+[**DataSchema**](DataSchema)
 
-<a name="get_externalcontacts_contacts_schema_version"></a>
 
-## [**DataSchema**](DataSchema.html) get_externalcontacts_contacts_schema_version(schema_id, version_id)
+## get_externalcontacts_contacts_schema_version
 
+> [**DataSchema**](DataSchema) get_externalcontacts_contacts_schema_version(schema_id, version_id)
 
 
 Get a specific version of a schema
@@ -958,16 +940,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **schema_id** | **str**| Schema ID |  |
 | **version_id** | **str**| Schema version |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**DataSchema**](DataSchema.html)
+[**DataSchema**](DataSchema)
 
-<a name="get_externalcontacts_contacts_schema_versions"></a>
 
-## [**DataSchema**](DataSchema.html) get_externalcontacts_contacts_schema_versions(schema_id)
+## get_externalcontacts_contacts_schema_versions
 
+> [**DataSchema**](DataSchema) get_externalcontacts_contacts_schema_versions(schema_id)
 
 
 Get all versions of an external contact's schema
@@ -1007,16 +988,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **schema_id** | **str**| Schema ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**DataSchema**](DataSchema.html)
+[**DataSchema**](DataSchema)
 
-<a name="get_externalcontacts_contacts_schemas"></a>
 
-## [**DataSchemaListing**](DataSchemaListing.html) get_externalcontacts_contacts_schemas()
+## get_externalcontacts_contacts_schemas
 
+> [**DataSchemaListing**](DataSchemaListing) get_externalcontacts_contacts_schemas()
 
 
 Get a list of schemas.
@@ -1053,15 +1033,14 @@ except ApiException as e:
 
 This endpoint does not need any parameters.
 
-
 ### Return type
 
-[**DataSchemaListing**](DataSchemaListing.html)
+[**DataSchemaListing**](DataSchemaListing)
 
-<a name="get_externalcontacts_externalsource"></a>
 
-## [**ExternalSource**](ExternalSource.html) get_externalcontacts_externalsource(external_source_id)
+## get_externalcontacts_externalsource
 
+> [**ExternalSource**](ExternalSource) get_externalcontacts_externalsource(external_source_id)
 
 
 Fetch an External Source
@@ -1105,16 +1084,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **external_source_id** | **str**| External Source ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**ExternalSource**](ExternalSource.html)
+[**ExternalSource**](ExternalSource)
 
-<a name="get_externalcontacts_externalsources"></a>
 
-## [**CursorExternalSourceListing**](CursorExternalSourceListing.html) get_externalcontacts_externalsources(cursor=cursor, limit=limit, name=name, active=active)
+## get_externalcontacts_externalsources
 
+> [**CursorExternalSourceListing**](CursorExternalSourceListing) get_externalcontacts_externalsources(cursor=cursor, limit=limit, name=name, active=active)
 
 
 Fetch a list of External Sources
@@ -1164,16 +1142,15 @@ except ApiException as e:
 | **limit** | **int**| The number of ExternalSources per page; must be between 10 and 200, default is 100 | [optional]  |
 | **name** | **str**| Filter by external source name. Filtering is prefix filtering and not an exact match | [optional]  |
 | **active** | **bool**| Filter by active status of external source | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**CursorExternalSourceListing**](CursorExternalSourceListing.html)
+[**CursorExternalSourceListing**](CursorExternalSourceListing)
 
-<a name="get_externalcontacts_organization"></a>
 
-## [**ExternalOrganization**](ExternalOrganization.html) get_externalcontacts_organization(external_organization_id, expand=expand, include_trustors=include_trustors)
+## get_externalcontacts_organization
 
+> [**ExternalOrganization**](ExternalOrganization) get_externalcontacts_organization(external_organization_id, expand=expand, include_trustors=include_trustors)
 
 
 Fetch an external organization
@@ -1216,18 +1193,17 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **external_organization_id** | **str**| External Organization ID |  |
-| **expand** | [**list[str]**](str.html)| which fields, if any, to expand (externalDataSources) | [optional] <br />**Values**: externalDataSources |
+| **expand** | [**list[str]**](str)| which fields, if any, to expand (externalDataSources) | [optional] <br />**Values**: externalDataSources |
 | **include_trustors** | **bool**| (true or false) whether or not to include trustor information embedded in the externalOrganization | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**ExternalOrganization**](ExternalOrganization.html)
+[**ExternalOrganization**](ExternalOrganization)
 
-<a name="get_externalcontacts_organization_contacts"></a>
 
-## [**ContactListing**](ContactListing.html) get_externalcontacts_organization_contacts(external_organization_id, page_size=page_size, page_number=page_number, q=q, sort_order=sort_order, expand=expand)
+## get_externalcontacts_organization_contacts
 
+> [**ContactListing**](ContactListing) get_externalcontacts_organization_contacts(external_organization_id, page_size=page_size, page_number=page_number, q=q, sort_order=sort_order, expand=expand)
 
 
 Search for external contacts in an external organization
@@ -1277,17 +1253,16 @@ except ApiException as e:
 | **page_number** | **int**| Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;&#x3D; 1,000) | [optional] [default to 1] |
 | **q** | **str**| User supplied search keywords (no special syntax is currently supported) | [optional]  |
 | **sort_order** | **str**| The External Contact field to sort by. Any of: [firstName, lastName, middleName, title]. Direction: [asc, desc]. e.g. \&quot;firstName:asc\&quot;, \&quot;title:desc\&quot; | [optional]  |
-| **expand** | [**list[str]**](str.html)| which fields, if any, to expand | [optional] <br />**Values**: externalOrganization, externalDataSources, identifiers, externalSources |
-{: class="table table-striped"}
+| **expand** | [**list[str]**](str)| which fields, if any, to expand | [optional] <br />**Values**: externalOrganization, externalDataSources, identifiers, externalSources |
 
 ### Return type
 
-[**ContactListing**](ContactListing.html)
+[**ContactListing**](ContactListing)
 
-<a name="get_externalcontacts_organization_note"></a>
 
-## [**Note**](Note.html) get_externalcontacts_organization_note(external_organization_id, note_id, expand=expand)
+## get_externalcontacts_organization_note
 
+> [**Note**](Note) get_externalcontacts_organization_note(external_organization_id, note_id, expand=expand)
 
 
 Fetch a note for an external organization
@@ -1331,17 +1306,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **external_organization_id** | **str**| External Organization Id |  |
 | **note_id** | **str**| Note Id |  |
-| **expand** | [**list[str]**](str.html)| which fields, if any, to expand | [optional] <br />**Values**: author, externalDataSources |
-{: class="table table-striped"}
+| **expand** | [**list[str]**](str)| which fields, if any, to expand | [optional] <br />**Values**: author, externalDataSources |
 
 ### Return type
 
-[**Note**](Note.html)
+[**Note**](Note)
 
-<a name="get_externalcontacts_organization_notes"></a>
 
-## [**NoteListing**](NoteListing.html) get_externalcontacts_organization_notes(external_organization_id, page_size=page_size, page_number=page_number, sort_order=sort_order, expand=expand)
+## get_externalcontacts_organization_notes
 
+> [**NoteListing**](NoteListing) get_externalcontacts_organization_notes(external_organization_id, page_size=page_size, page_number=page_number, sort_order=sort_order, expand=expand)
 
 
 List notes for an external organization
@@ -1389,17 +1363,16 @@ except ApiException as e:
 | **page_size** | **int**| Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;&#x3D; 1,000) | [optional] [default to 20] |
 | **page_number** | **int**| Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;&#x3D; 1,000) | [optional] [default to 1] |
 | **sort_order** | **str**| The Note field to sort by. Any of: [createDate]. Direction: [asc, desc]. e.g. \&quot;createDate:asc\&quot;, \&quot;createDate:desc\&quot; | [optional]  |
-| **expand** | [**list[str]**](str.html)| which fields, if any, to expand | [optional] <br />**Values**: author, externalDataSources |
-{: class="table table-striped"}
+| **expand** | [**list[str]**](str)| which fields, if any, to expand | [optional] <br />**Values**: author, externalDataSources |
 
 ### Return type
 
-[**NoteListing**](NoteListing.html)
+[**NoteListing**](NoteListing)
 
-<a name="get_externalcontacts_organization_relationships"></a>
 
-## [**RelationshipListing**](RelationshipListing.html) get_externalcontacts_organization_relationships(external_organization_id, page_size=page_size, page_number=page_number, expand=expand, sort_order=sort_order)
+## get_externalcontacts_organization_relationships
 
+> [**RelationshipListing**](RelationshipListing) get_externalcontacts_organization_relationships(external_organization_id, page_size=page_size, page_number=page_number, expand=expand, sort_order=sort_order)
 
 
 Fetch a relationship for an external organization
@@ -1446,18 +1419,17 @@ except ApiException as e:
 | **external_organization_id** | **str**| External Organization ID |  |
 | **page_size** | **int**| Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;&#x3D; 1,000) | [optional] [default to 20] |
 | **page_number** | **int**| Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;&#x3D; 1,000) | [optional] [default to 1] |
-| **expand** | [**list[str]**](str.html)| which fields, if any, to expand | [optional] <br />**Values**: externalDataSources |
+| **expand** | [**list[str]**](str)| which fields, if any, to expand | [optional] <br />**Values**: externalDataSources |
 | **sort_order** | **str**| The Relationship field to sort by. Any of: [createDate, relationship]. Direction: [asc, desc]. e.g. \&quot;createDate:asc\&quot;, \&quot;relationship:desc\&quot; | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**RelationshipListing**](RelationshipListing.html)
+[**RelationshipListing**](RelationshipListing)
 
-<a name="get_externalcontacts_organizations"></a>
 
-## [**ExternalOrganizationListing**](ExternalOrganizationListing.html) get_externalcontacts_organizations(page_size=page_size, page_number=page_number, q=q, trustor_id=trustor_id, sort_order=sort_order, expand=expand, include_trustors=include_trustors)
+## get_externalcontacts_organizations
 
+> [**ExternalOrganizationListing**](ExternalOrganizationListing) get_externalcontacts_organizations(page_size=page_size, page_number=page_number, q=q, trustor_id=trustor_id, sort_order=sort_order, expand=expand, include_trustors=include_trustors)
 
 
 Search for external organizations
@@ -1506,20 +1478,19 @@ except ApiException as e:
 | **page_size** | **int**| Page size (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;&#x3D; 1,000) | [optional] [default to 20] |
 | **page_number** | **int**| Page number (limited to fetching first 1,000 records; pageNumber * pageSize must be &lt;&#x3D; 1,000) | [optional] [default to 1] |
 | **q** | **str**| Search query | [optional]  |
-| **trustor_id** | [**list[str]**](str.html)| Search for external organizations by trustorIds (limit 25). If supplied, the &#39;q&#39; parameters is ignored. Items are returned in the order requested | [optional]  |
+| **trustor_id** | [**list[str]**](str)| Search for external organizations by trustorIds (limit 25). If supplied, the &#39;q&#39; parameters is ignored. Items are returned in the order requested | [optional]  |
 | **sort_order** | **str**| The Organization field to sort by. Any of: [companyType, industry, name]. Direction: [asc, desc]. e.g. \&quot;companyType:asc\&quot;, \&quot;industry:desc\&quot; | [optional]  |
-| **expand** | [**list[str]**](str.html)| which fields, if any, to expand | [optional] <br />**Values**: externalDataSources |
+| **expand** | [**list[str]**](str)| which fields, if any, to expand | [optional] <br />**Values**: externalDataSources |
 | **include_trustors** | **bool**| (true or false) whether or not to include trustor information embedded in the externalOrganization | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**ExternalOrganizationListing**](ExternalOrganizationListing.html)
+[**ExternalOrganizationListing**](ExternalOrganizationListing)
 
-<a name="get_externalcontacts_organizations_schema"></a>
 
-## [**DataSchema**](DataSchema.html) get_externalcontacts_organizations_schema(schema_id)
+## get_externalcontacts_organizations_schema
 
+> [**DataSchema**](DataSchema) get_externalcontacts_organizations_schema(schema_id)
 
 
 Get a schema
@@ -1559,16 +1530,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **schema_id** | **str**| Schema ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**DataSchema**](DataSchema.html)
+[**DataSchema**](DataSchema)
 
-<a name="get_externalcontacts_organizations_schema_version"></a>
 
-## [**DataSchema**](DataSchema.html) get_externalcontacts_organizations_schema_version(schema_id, version_id)
+## get_externalcontacts_organizations_schema_version
 
+> [**DataSchema**](DataSchema) get_externalcontacts_organizations_schema_version(schema_id, version_id)
 
 
 Get a specific version of a schema
@@ -1610,16 +1580,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **schema_id** | **str**| Schema ID |  |
 | **version_id** | **str**| Schema version |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**DataSchema**](DataSchema.html)
+[**DataSchema**](DataSchema)
 
-<a name="get_externalcontacts_organizations_schema_versions"></a>
 
-## [**DataSchema**](DataSchema.html) get_externalcontacts_organizations_schema_versions(schema_id)
+## get_externalcontacts_organizations_schema_versions
 
+> [**DataSchema**](DataSchema) get_externalcontacts_organizations_schema_versions(schema_id)
 
 
 Get all versions of an external organization's schema
@@ -1659,16 +1628,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **schema_id** | **str**| Schema ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**DataSchema**](DataSchema.html)
+[**DataSchema**](DataSchema)
 
-<a name="get_externalcontacts_organizations_schemas"></a>
 
-## [**DataSchemaListing**](DataSchemaListing.html) get_externalcontacts_organizations_schemas()
+## get_externalcontacts_organizations_schemas
 
+> [**DataSchemaListing**](DataSchemaListing) get_externalcontacts_organizations_schemas()
 
 
 Get a list of schemas.
@@ -1705,15 +1673,14 @@ except ApiException as e:
 
 This endpoint does not need any parameters.
 
-
 ### Return type
 
-[**DataSchemaListing**](DataSchemaListing.html)
+[**DataSchemaListing**](DataSchemaListing)
 
-<a name="get_externalcontacts_relationship"></a>
 
-## [**Relationship**](Relationship.html) get_externalcontacts_relationship(relationship_id, expand=expand)
+## get_externalcontacts_relationship
 
+> [**Relationship**](Relationship) get_externalcontacts_relationship(relationship_id, expand=expand)
 
 
 Fetch a relationship
@@ -1755,17 +1722,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **relationship_id** | **str**| Relationship Id |  |
-| **expand** | [**list[str]**](str.html)| which fields, if any, to expand | [optional] <br />**Values**: externalDataSources |
-{: class="table table-striped"}
+| **expand** | [**list[str]**](str)| which fields, if any, to expand | [optional] <br />**Values**: externalDataSources |
 
 ### Return type
 
-[**Relationship**](Relationship.html)
+[**Relationship**](Relationship)
 
-<a name="get_externalcontacts_reversewhitepageslookup"></a>
 
-## [**ReverseWhitepagesLookupResult**](ReverseWhitepagesLookupResult.html) get_externalcontacts_reversewhitepageslookup(lookup_val, expand=expand)
+## get_externalcontacts_reversewhitepageslookup
 
+> [**ReverseWhitepagesLookupResult**](ReverseWhitepagesLookupResult) get_externalcontacts_reversewhitepageslookup(lookup_val, expand=expand)
 
 
 Look up contacts and externalOrganizations based on an attribute. Maximum of 25 values returned.
@@ -1806,17 +1772,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **lookup_val** | **str**| User supplied value to lookup contacts/externalOrganizations (supports email addresses, e164 phone numbers, Twitter screen names) |  |
-| **expand** | [**list[str]**](str.html)| which field, if any, to expand | [optional] <br />**Values**: contacts.externalOrganization, externalDataSources |
-{: class="table table-striped"}
+| **expand** | [**list[str]**](str)| which field, if any, to expand | [optional] <br />**Values**: contacts.externalOrganization, externalDataSources |
 
 ### Return type
 
-[**ReverseWhitepagesLookupResult**](ReverseWhitepagesLookupResult.html)
+[**ReverseWhitepagesLookupResult**](ReverseWhitepagesLookupResult)
 
-<a name="get_externalcontacts_scan_contacts"></a>
 
-## [**CursorContactListing**](CursorContactListing.html) get_externalcontacts_scan_contacts(limit=limit, cursor=cursor)
+## get_externalcontacts_scan_contacts
 
+> [**CursorContactListing**](CursorContactListing) get_externalcontacts_scan_contacts(limit=limit, cursor=cursor)
 
 
 Scan for external contacts using paging
@@ -1859,16 +1824,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **limit** | **int**| The number of contacts per page; must be between 10 and 200, default is 100 | [optional]  |
 | **cursor** | **str**| Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**CursorContactListing**](CursorContactListing.html)
+[**CursorContactListing**](CursorContactListing)
 
-<a name="get_externalcontacts_scan_notes"></a>
 
-## [**CursorNoteListing**](CursorNoteListing.html) get_externalcontacts_scan_notes(limit=limit, cursor=cursor)
+## get_externalcontacts_scan_notes
 
+> [**CursorNoteListing**](CursorNoteListing) get_externalcontacts_scan_notes(limit=limit, cursor=cursor)
 
 
 Scan for notes using paging
@@ -1911,16 +1875,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **limit** | **int**| The number of notes per page; must be between 10 and 200, default is 100 | [optional]  |
 | **cursor** | **str**| Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**CursorNoteListing**](CursorNoteListing.html)
+[**CursorNoteListing**](CursorNoteListing)
 
-<a name="get_externalcontacts_scan_organizations"></a>
 
-## [**CursorOrganizationListing**](CursorOrganizationListing.html) get_externalcontacts_scan_organizations(limit=limit, cursor=cursor)
+## get_externalcontacts_scan_organizations
 
+> [**CursorOrganizationListing**](CursorOrganizationListing) get_externalcontacts_scan_organizations(limit=limit, cursor=cursor)
 
 
 Scan for external organizations using paging
@@ -1963,16 +1926,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **limit** | **int**| The number of organizations per page; must be between 10 and 200, default is 100 | [optional]  |
 | **cursor** | **str**| Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**CursorOrganizationListing**](CursorOrganizationListing.html)
+[**CursorOrganizationListing**](CursorOrganizationListing)
 
-<a name="get_externalcontacts_scan_relationships"></a>
 
-## [**CursorRelationshipListing**](CursorRelationshipListing.html) get_externalcontacts_scan_relationships(limit=limit, cursor=cursor)
+## get_externalcontacts_scan_relationships
 
+> [**CursorRelationshipListing**](CursorRelationshipListing) get_externalcontacts_scan_relationships(limit=limit, cursor=cursor)
 
 
 Scan for relationships
@@ -2015,16 +1977,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **limit** | **int**| The number of relationships per page; must be between 10 and 200, default is 100 | [optional]  |
 | **cursor** | **str**| Indicates where to resume query results (not required for first page), each page returns a new cursor with a 24h TTL | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**CursorRelationshipListing**](CursorRelationshipListing.html)
+[**CursorRelationshipListing**](CursorRelationshipListing)
 
-<a name="patch_externalcontacts_contact_identifiers"></a>
 
-## [**ContactIdentifier**](ContactIdentifier.html) patch_externalcontacts_contact_identifiers(contact_id, body)
+## patch_externalcontacts_contact_identifiers
 
+> [**ContactIdentifier**](ContactIdentifier) patch_externalcontacts_contact_identifiers(contact_id, body)
 
 
 Claim or release identifiers for a contact
@@ -2065,17 +2026,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **contact_id** | **str**| ExternalContact ID |  |
-| **body** | [**IdentifierClaimRequest**](IdentifierClaimRequest.html)| ClaimRequest |  |
-{: class="table table-striped"}
+| **body** | [**IdentifierClaimRequest**](IdentifierClaimRequest)| ClaimRequest |  |
 
 ### Return type
 
-[**ContactIdentifier**](ContactIdentifier.html)
+[**ContactIdentifier**](ContactIdentifier)
 
-<a name="post_externalcontacts_bulk_contacts"></a>
 
-## [**BulkFetchContactsResponse**](BulkFetchContactsResponse.html) post_externalcontacts_bulk_contacts(body)
+## post_externalcontacts_bulk_contacts
 
+> [**BulkFetchContactsResponse**](BulkFetchContactsResponse) post_externalcontacts_bulk_contacts(body)
 
 
 Bulk fetch contacts
@@ -2114,17 +2074,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**BulkIdsRequest**](BulkIdsRequest.html)| Contact ids |  |
-{: class="table table-striped"}
+| **body** | [**BulkIdsRequest**](BulkIdsRequest)| Contact ids |  |
 
 ### Return type
 
-[**BulkFetchContactsResponse**](BulkFetchContactsResponse.html)
+[**BulkFetchContactsResponse**](BulkFetchContactsResponse)
 
-<a name="post_externalcontacts_bulk_contacts_add"></a>
 
-## [**BulkContactsResponse**](BulkContactsResponse.html) post_externalcontacts_bulk_contacts_add(body)
+## post_externalcontacts_bulk_contacts_add
 
+> [**BulkContactsResponse**](BulkContactsResponse) post_externalcontacts_bulk_contacts_add(body)
 
 
 Bulk add contacts
@@ -2163,17 +2122,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**BulkContactsRequest**](BulkContactsRequest.html)| Contacts |  |
-{: class="table table-striped"}
+| **body** | [**BulkContactsRequest**](BulkContactsRequest)| Contacts |  |
 
 ### Return type
 
-[**BulkContactsResponse**](BulkContactsResponse.html)
+[**BulkContactsResponse**](BulkContactsResponse)
 
-<a name="post_externalcontacts_bulk_contacts_remove"></a>
 
-## [**BulkDeleteResponse**](BulkDeleteResponse.html) post_externalcontacts_bulk_contacts_remove(body)
+## post_externalcontacts_bulk_contacts_remove
 
+> [**BulkDeleteResponse**](BulkDeleteResponse) post_externalcontacts_bulk_contacts_remove(body)
 
 
 Bulk remove contacts
@@ -2212,17 +2170,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**BulkIdsRequest**](BulkIdsRequest.html)| Contact ids |  |
-{: class="table table-striped"}
+| **body** | [**BulkIdsRequest**](BulkIdsRequest)| Contact ids |  |
 
 ### Return type
 
-[**BulkDeleteResponse**](BulkDeleteResponse.html)
+[**BulkDeleteResponse**](BulkDeleteResponse)
 
-<a name="post_externalcontacts_bulk_contacts_unresolved"></a>
 
-## [**BulkFetchContactsResponse**](BulkFetchContactsResponse.html) post_externalcontacts_bulk_contacts_unresolved(body)
+## post_externalcontacts_bulk_contacts_unresolved
 
+> [**BulkFetchContactsResponse**](BulkFetchContactsResponse) post_externalcontacts_bulk_contacts_unresolved(body)
 
 
 Bulk fetch unresolved ancestor contacts
@@ -2261,17 +2218,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**BulkIdsRequest**](BulkIdsRequest.html)| Contact ids |  |
-{: class="table table-striped"}
+| **body** | [**BulkIdsRequest**](BulkIdsRequest)| Contact ids |  |
 
 ### Return type
 
-[**BulkFetchContactsResponse**](BulkFetchContactsResponse.html)
+[**BulkFetchContactsResponse**](BulkFetchContactsResponse)
 
-<a name="post_externalcontacts_bulk_contacts_update"></a>
 
-## [**BulkContactsResponse**](BulkContactsResponse.html) post_externalcontacts_bulk_contacts_update(body)
+## post_externalcontacts_bulk_contacts_update
 
+> [**BulkContactsResponse**](BulkContactsResponse) post_externalcontacts_bulk_contacts_update(body)
 
 
 Bulk update contacts
@@ -2310,17 +2266,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**BulkContactsRequest**](BulkContactsRequest.html)| Contacts |  |
-{: class="table table-striped"}
+| **body** | [**BulkContactsRequest**](BulkContactsRequest)| Contacts |  |
 
 ### Return type
 
-[**BulkContactsResponse**](BulkContactsResponse.html)
+[**BulkContactsResponse**](BulkContactsResponse)
 
-<a name="post_externalcontacts_bulk_notes"></a>
 
-## [**BulkFetchNotesResponse**](BulkFetchNotesResponse.html) post_externalcontacts_bulk_notes(body)
+## post_externalcontacts_bulk_notes
 
+> [**BulkFetchNotesResponse**](BulkFetchNotesResponse) post_externalcontacts_bulk_notes(body)
 
 
 Bulk fetch notes
@@ -2360,17 +2315,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**BulkIdsRequest**](BulkIdsRequest.html)| Note ids |  |
-{: class="table table-striped"}
+| **body** | [**BulkIdsRequest**](BulkIdsRequest)| Note ids |  |
 
 ### Return type
 
-[**BulkFetchNotesResponse**](BulkFetchNotesResponse.html)
+[**BulkFetchNotesResponse**](BulkFetchNotesResponse)
 
-<a name="post_externalcontacts_bulk_notes_add"></a>
 
-## [**BulkNotesResponse**](BulkNotesResponse.html) post_externalcontacts_bulk_notes_add(body)
+## post_externalcontacts_bulk_notes_add
 
+> [**BulkNotesResponse**](BulkNotesResponse) post_externalcontacts_bulk_notes_add(body)
 
 
 Bulk add notes
@@ -2410,17 +2364,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**BulkNotesRequest**](BulkNotesRequest.html)| Notes |  |
-{: class="table table-striped"}
+| **body** | [**BulkNotesRequest**](BulkNotesRequest)| Notes |  |
 
 ### Return type
 
-[**BulkNotesResponse**](BulkNotesResponse.html)
+[**BulkNotesResponse**](BulkNotesResponse)
 
-<a name="post_externalcontacts_bulk_notes_remove"></a>
 
-## [**BulkDeleteResponse**](BulkDeleteResponse.html) post_externalcontacts_bulk_notes_remove(body)
+## post_externalcontacts_bulk_notes_remove
 
+> [**BulkDeleteResponse**](BulkDeleteResponse) post_externalcontacts_bulk_notes_remove(body)
 
 
 Bulk remove notes
@@ -2460,17 +2413,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**BulkIdsRequest**](BulkIdsRequest.html)| Note ids |  |
-{: class="table table-striped"}
+| **body** | [**BulkIdsRequest**](BulkIdsRequest)| Note ids |  |
 
 ### Return type
 
-[**BulkDeleteResponse**](BulkDeleteResponse.html)
+[**BulkDeleteResponse**](BulkDeleteResponse)
 
-<a name="post_externalcontacts_bulk_notes_update"></a>
 
-## [**BulkNotesResponse**](BulkNotesResponse.html) post_externalcontacts_bulk_notes_update(body)
+## post_externalcontacts_bulk_notes_update
 
+> [**BulkNotesResponse**](BulkNotesResponse) post_externalcontacts_bulk_notes_update(body)
 
 
 Bulk update notes
@@ -2510,17 +2462,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**BulkNotesRequest**](BulkNotesRequest.html)| Notes |  |
-{: class="table table-striped"}
+| **body** | [**BulkNotesRequest**](BulkNotesRequest)| Notes |  |
 
 ### Return type
 
-[**BulkNotesResponse**](BulkNotesResponse.html)
+[**BulkNotesResponse**](BulkNotesResponse)
 
-<a name="post_externalcontacts_bulk_organizations"></a>
 
-## [**BulkFetchOrganizationsResponse**](BulkFetchOrganizationsResponse.html) post_externalcontacts_bulk_organizations(body)
+## post_externalcontacts_bulk_organizations
 
+> [**BulkFetchOrganizationsResponse**](BulkFetchOrganizationsResponse) post_externalcontacts_bulk_organizations(body)
 
 
 Bulk fetch organizations
@@ -2559,17 +2510,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**BulkIdsRequest**](BulkIdsRequest.html)| Organizations ids |  |
-{: class="table table-striped"}
+| **body** | [**BulkIdsRequest**](BulkIdsRequest)| Organizations ids |  |
 
 ### Return type
 
-[**BulkFetchOrganizationsResponse**](BulkFetchOrganizationsResponse.html)
+[**BulkFetchOrganizationsResponse**](BulkFetchOrganizationsResponse)
 
-<a name="post_externalcontacts_bulk_organizations_add"></a>
 
-## [**BulkOrganizationsResponse**](BulkOrganizationsResponse.html) post_externalcontacts_bulk_organizations_add(body)
+## post_externalcontacts_bulk_organizations_add
 
+> [**BulkOrganizationsResponse**](BulkOrganizationsResponse) post_externalcontacts_bulk_organizations_add(body)
 
 
 Bulk add organizations
@@ -2608,17 +2558,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**BulkOrganizationsRequest**](BulkOrganizationsRequest.html)| Organizations |  |
-{: class="table table-striped"}
+| **body** | [**BulkOrganizationsRequest**](BulkOrganizationsRequest)| Organizations |  |
 
 ### Return type
 
-[**BulkOrganizationsResponse**](BulkOrganizationsResponse.html)
+[**BulkOrganizationsResponse**](BulkOrganizationsResponse)
 
-<a name="post_externalcontacts_bulk_organizations_remove"></a>
 
-## [**BulkDeleteResponse**](BulkDeleteResponse.html) post_externalcontacts_bulk_organizations_remove(body)
+## post_externalcontacts_bulk_organizations_remove
 
+> [**BulkDeleteResponse**](BulkDeleteResponse) post_externalcontacts_bulk_organizations_remove(body)
 
 
 Bulk remove organizations
@@ -2657,17 +2606,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**BulkIdsRequest**](BulkIdsRequest.html)| Organization ids |  |
-{: class="table table-striped"}
+| **body** | [**BulkIdsRequest**](BulkIdsRequest)| Organization ids |  |
 
 ### Return type
 
-[**BulkDeleteResponse**](BulkDeleteResponse.html)
+[**BulkDeleteResponse**](BulkDeleteResponse)
 
-<a name="post_externalcontacts_bulk_organizations_update"></a>
 
-## [**BulkOrganizationsResponse**](BulkOrganizationsResponse.html) post_externalcontacts_bulk_organizations_update(body)
+## post_externalcontacts_bulk_organizations_update
 
+> [**BulkOrganizationsResponse**](BulkOrganizationsResponse) post_externalcontacts_bulk_organizations_update(body)
 
 
 Bulk update organizations
@@ -2706,17 +2654,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**BulkOrganizationsRequest**](BulkOrganizationsRequest.html)| Organizations |  |
-{: class="table table-striped"}
+| **body** | [**BulkOrganizationsRequest**](BulkOrganizationsRequest)| Organizations |  |
 
 ### Return type
 
-[**BulkOrganizationsResponse**](BulkOrganizationsResponse.html)
+[**BulkOrganizationsResponse**](BulkOrganizationsResponse)
 
-<a name="post_externalcontacts_bulk_relationships"></a>
 
-## [**BulkFetchRelationshipsResponse**](BulkFetchRelationshipsResponse.html) post_externalcontacts_bulk_relationships(body)
+## post_externalcontacts_bulk_relationships
 
+> [**BulkFetchRelationshipsResponse**](BulkFetchRelationshipsResponse) post_externalcontacts_bulk_relationships(body)
 
 
 Bulk fetch relationships
@@ -2756,17 +2703,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**BulkIdsRequest**](BulkIdsRequest.html)| Relationships ids |  |
-{: class="table table-striped"}
+| **body** | [**BulkIdsRequest**](BulkIdsRequest)| Relationships ids |  |
 
 ### Return type
 
-[**BulkFetchRelationshipsResponse**](BulkFetchRelationshipsResponse.html)
+[**BulkFetchRelationshipsResponse**](BulkFetchRelationshipsResponse)
 
-<a name="post_externalcontacts_bulk_relationships_add"></a>
 
-## [**BulkRelationshipsResponse**](BulkRelationshipsResponse.html) post_externalcontacts_bulk_relationships_add(body)
+## post_externalcontacts_bulk_relationships_add
 
+> [**BulkRelationshipsResponse**](BulkRelationshipsResponse) post_externalcontacts_bulk_relationships_add(body)
 
 
 Bulk add relationships
@@ -2806,17 +2752,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**BulkRelationshipsRequest**](BulkRelationshipsRequest.html)| Relationships |  |
-{: class="table table-striped"}
+| **body** | [**BulkRelationshipsRequest**](BulkRelationshipsRequest)| Relationships |  |
 
 ### Return type
 
-[**BulkRelationshipsResponse**](BulkRelationshipsResponse.html)
+[**BulkRelationshipsResponse**](BulkRelationshipsResponse)
 
-<a name="post_externalcontacts_bulk_relationships_remove"></a>
 
-## [**BulkDeleteResponse**](BulkDeleteResponse.html) post_externalcontacts_bulk_relationships_remove(body)
+## post_externalcontacts_bulk_relationships_remove
 
+> [**BulkDeleteResponse**](BulkDeleteResponse) post_externalcontacts_bulk_relationships_remove(body)
 
 
 Bulk remove relationships
@@ -2856,17 +2801,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**BulkIdsRequest**](BulkIdsRequest.html)| Relationships ids |  |
-{: class="table table-striped"}
+| **body** | [**BulkIdsRequest**](BulkIdsRequest)| Relationships ids |  |
 
 ### Return type
 
-[**BulkDeleteResponse**](BulkDeleteResponse.html)
+[**BulkDeleteResponse**](BulkDeleteResponse)
 
-<a name="post_externalcontacts_bulk_relationships_update"></a>
 
-## [**BulkRelationshipsResponse**](BulkRelationshipsResponse.html) post_externalcontacts_bulk_relationships_update(body)
+## post_externalcontacts_bulk_relationships_update
 
+> [**BulkRelationshipsResponse**](BulkRelationshipsResponse) post_externalcontacts_bulk_relationships_update(body)
 
 
 Bulk update relationships
@@ -2906,17 +2850,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**BulkRelationshipsRequest**](BulkRelationshipsRequest.html)| Relationships |  |
-{: class="table table-striped"}
+| **body** | [**BulkRelationshipsRequest**](BulkRelationshipsRequest)| Relationships |  |
 
 ### Return type
 
-[**BulkRelationshipsResponse**](BulkRelationshipsResponse.html)
+[**BulkRelationshipsResponse**](BulkRelationshipsResponse)
 
-<a name="post_externalcontacts_contact_notes"></a>
 
-## [**Note**](Note.html) post_externalcontacts_contact_notes(contact_id, body)
+## post_externalcontacts_contact_notes
 
+> [**Note**](Note) post_externalcontacts_contact_notes(contact_id, body)
 
 
 Create a note for an external contact
@@ -2958,17 +2901,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **contact_id** | **str**| ExternalContact Id |  |
-| **body** | [**Note**](Note.html)| ExternalContact |  |
-{: class="table table-striped"}
+| **body** | [**Note**](Note)| ExternalContact |  |
 
 ### Return type
 
-[**Note**](Note.html)
+[**Note**](Note)
 
-<a name="post_externalcontacts_contact_promotion"></a>
 
-## [**ExternalContact**](ExternalContact.html) post_externalcontacts_contact_promotion(contact_id)
+## post_externalcontacts_contact_promotion
 
+> [**ExternalContact**](ExternalContact) post_externalcontacts_contact_promotion(contact_id)
 
 
 Promote an observed contact (ephemeral or identified) to a curated contact
@@ -3008,16 +2950,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **contact_id** | **str**| ExternalContact ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**ExternalContact**](ExternalContact.html)
+[**ExternalContact**](ExternalContact)
 
-<a name="post_externalcontacts_contacts"></a>
 
-## [**ExternalContact**](ExternalContact.html) post_externalcontacts_contacts(body)
+## post_externalcontacts_contacts
 
+> [**ExternalContact**](ExternalContact) post_externalcontacts_contacts(body)
 
 
 Create an external contact
@@ -3057,17 +2998,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**ExternalContact**](ExternalContact.html)| ExternalContact |  |
-{: class="table table-striped"}
+| **body** | [**ExternalContact**](ExternalContact)| ExternalContact |  |
 
 ### Return type
 
-[**ExternalContact**](ExternalContact.html)
+[**ExternalContact**](ExternalContact)
 
-<a name="post_externalcontacts_contacts_schemas"></a>
 
-## [**DataSchema**](DataSchema.html) post_externalcontacts_contacts_schemas(body)
+## post_externalcontacts_contacts_schemas
 
+> [**DataSchema**](DataSchema) post_externalcontacts_contacts_schemas(body)
 
 
 Create a schema
@@ -3106,17 +3046,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**DataSchema**](DataSchema.html)| Schema |  |
-{: class="table table-striped"}
+| **body** | [**DataSchema**](DataSchema)| Schema |  |
 
 ### Return type
 
-[**DataSchema**](DataSchema.html)
+[**DataSchema**](DataSchema)
 
-<a name="post_externalcontacts_externalsources"></a>
 
-## [**ExternalSource**](ExternalSource.html) post_externalcontacts_externalsources(body)
+## post_externalcontacts_externalsources
 
+> [**ExternalSource**](ExternalSource) post_externalcontacts_externalsources(body)
 
 
 Create an External Source
@@ -3157,17 +3096,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**ExternalSource**](ExternalSource.html)| External Source |  |
-{: class="table table-striped"}
+| **body** | [**ExternalSource**](ExternalSource)| External Source |  |
 
 ### Return type
 
-[**ExternalSource**](ExternalSource.html)
+[**ExternalSource**](ExternalSource)
 
-<a name="post_externalcontacts_identifierlookup"></a>
 
-## [**ExternalContact**](ExternalContact.html) post_externalcontacts_identifierlookup(identifier, expand=expand)
+## post_externalcontacts_identifierlookup
 
+> [**ExternalContact**](ExternalContact) post_externalcontacts_identifierlookup(identifier, expand=expand)
 
 
 Fetch a contact using an identifier type and value.
@@ -3210,18 +3148,17 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **identifier** | [**ContactIdentifier**](ContactIdentifier.html)|  |  |
-| **expand** | [**list[str]**](str.html)| which field, if any, to expand | [optional] <br />**Values**: externalOrganization, identifiers, externalSources |
-{: class="table table-striped"}
+| **identifier** | [**ContactIdentifier**](ContactIdentifier)|  |  |
+| **expand** | [**list[str]**](str)| which field, if any, to expand | [optional] <br />**Values**: externalOrganization, identifiers, externalSources |
 
 ### Return type
 
-[**ExternalContact**](ExternalContact.html)
+[**ExternalContact**](ExternalContact)
 
-<a name="post_externalcontacts_merge_contacts"></a>
 
-## [**ExternalContact**](ExternalContact.html) post_externalcontacts_merge_contacts(body)
+## post_externalcontacts_merge_contacts
 
+> [**ExternalContact**](ExternalContact) post_externalcontacts_merge_contacts(body)
 
 
 Merge two contacts into a new contact record
@@ -3262,17 +3199,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**MergeRequest**](MergeRequest.html)| MergeRequest |  |
-{: class="table table-striped"}
+| **body** | [**MergeRequest**](MergeRequest)| MergeRequest |  |
 
 ### Return type
 
-[**ExternalContact**](ExternalContact.html)
+[**ExternalContact**](ExternalContact)
 
-<a name="post_externalcontacts_organization_notes"></a>
 
-## [**Note**](Note.html) post_externalcontacts_organization_notes(external_organization_id, body)
+## post_externalcontacts_organization_notes
 
+> [**Note**](Note) post_externalcontacts_organization_notes(external_organization_id, body)
 
 
 Create a note for an external organization
@@ -3314,17 +3250,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **external_organization_id** | **str**| External Organization Id |  |
-| **body** | [**Note**](Note.html)| ExternalContact |  |
-{: class="table table-striped"}
+| **body** | [**Note**](Note)| ExternalContact |  |
 
 ### Return type
 
-[**Note**](Note.html)
+[**Note**](Note)
 
-<a name="post_externalcontacts_organizations"></a>
 
-## [**ExternalOrganization**](ExternalOrganization.html) post_externalcontacts_organizations(body)
+## post_externalcontacts_organizations
 
+> [**ExternalOrganization**](ExternalOrganization) post_externalcontacts_organizations(body)
 
 
 Create an external organization
@@ -3364,17 +3299,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**ExternalOrganization**](ExternalOrganization.html)| ExternalOrganization |  |
-{: class="table table-striped"}
+| **body** | [**ExternalOrganization**](ExternalOrganization)| ExternalOrganization |  |
 
 ### Return type
 
-[**ExternalOrganization**](ExternalOrganization.html)
+[**ExternalOrganization**](ExternalOrganization)
 
-<a name="post_externalcontacts_organizations_schemas"></a>
 
-## [**DataSchema**](DataSchema.html) post_externalcontacts_organizations_schemas(body)
+## post_externalcontacts_organizations_schemas
 
+> [**DataSchema**](DataSchema) post_externalcontacts_organizations_schemas(body)
 
 
 Create a schema
@@ -3413,17 +3347,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**DataSchema**](DataSchema.html)| Schema |  |
-{: class="table table-striped"}
+| **body** | [**DataSchema**](DataSchema)| Schema |  |
 
 ### Return type
 
-[**DataSchema**](DataSchema.html)
+[**DataSchema**](DataSchema)
 
-<a name="post_externalcontacts_relationships"></a>
 
-## [**Relationship**](Relationship.html) post_externalcontacts_relationships(body)
+## post_externalcontacts_relationships
 
+> [**Relationship**](Relationship) post_externalcontacts_relationships(body)
 
 
 Create a relationship
@@ -3463,17 +3396,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**Relationship**](Relationship.html)| Relationship |  |
-{: class="table table-striped"}
+| **body** | [**Relationship**](Relationship)| Relationship |  |
 
 ### Return type
 
-[**Relationship**](Relationship.html)
+[**Relationship**](Relationship)
 
-<a name="put_externalcontacts_contact"></a>
 
-## [**ExternalContact**](ExternalContact.html) put_externalcontacts_contact(contact_id, body)
+## put_externalcontacts_contact
 
+> [**ExternalContact**](ExternalContact) put_externalcontacts_contact(contact_id, body)
 
 
 Update an external contact
@@ -3515,17 +3447,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **contact_id** | **str**| ExternalContact ID |  |
-| **body** | [**ExternalContact**](ExternalContact.html)| ExternalContact |  |
-{: class="table table-striped"}
+| **body** | [**ExternalContact**](ExternalContact)| ExternalContact |  |
 
 ### Return type
 
-[**ExternalContact**](ExternalContact.html)
+[**ExternalContact**](ExternalContact)
 
-<a name="put_externalcontacts_contact_note"></a>
 
-## [**Note**](Note.html) put_externalcontacts_contact_note(contact_id, note_id, body)
+## put_externalcontacts_contact_note
 
+> [**Note**](Note) put_externalcontacts_contact_note(contact_id, note_id, body)
 
 
 Update a note for an external contact
@@ -3569,17 +3500,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **contact_id** | **str**| ExternalContact Id |  |
 | **note_id** | **str**| Note Id |  |
-| **body** | [**Note**](Note.html)| Note |  |
-{: class="table table-striped"}
+| **body** | [**Note**](Note)| Note |  |
 
 ### Return type
 
-[**Note**](Note.html)
+[**Note**](Note)
 
-<a name="put_externalcontacts_contacts_schema"></a>
 
-## [**DataSchema**](DataSchema.html) put_externalcontacts_contacts_schema(schema_id, body)
+## put_externalcontacts_contacts_schema
 
+> [**DataSchema**](DataSchema) put_externalcontacts_contacts_schema(schema_id, body)
 
 
 Update a schema
@@ -3620,17 +3550,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **schema_id** | **str**| Schema ID |  |
-| **body** | [**DataSchema**](DataSchema.html)| Data Schema |  |
-{: class="table table-striped"}
+| **body** | [**DataSchema**](DataSchema)| Data Schema |  |
 
 ### Return type
 
-[**DataSchema**](DataSchema.html)
+[**DataSchema**](DataSchema)
 
-<a name="put_externalcontacts_conversation"></a>
 
-##  put_externalcontacts_conversation(conversation_id, body)
+## put_externalcontacts_conversation
 
+>  put_externalcontacts_conversation(conversation_id, body)
 
 
 Associate/disassociate an external contact with a conversation
@@ -3673,17 +3602,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| Conversation ID |  |
-| **body** | [**ConversationAssociation**](ConversationAssociation.html)| ConversationAssociation |  |
-{: class="table table-striped"}
+| **body** | [**ConversationAssociation**](ConversationAssociation)| ConversationAssociation |  |
 
 ### Return type
 
 void (empty response body)
 
-<a name="put_externalcontacts_externalsource"></a>
 
-## [**ExternalSource**](ExternalSource.html) put_externalcontacts_externalsource(external_source_id, body)
+## put_externalcontacts_externalsource
 
+> [**ExternalSource**](ExternalSource) put_externalcontacts_externalsource(external_source_id, body)
 
 
 Update an External Source
@@ -3726,17 +3654,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **external_source_id** | **str**| External Source ID |  |
-| **body** | [**ExternalSource**](ExternalSource.html)| External Source |  |
-{: class="table table-striped"}
+| **body** | [**ExternalSource**](ExternalSource)| External Source |  |
 
 ### Return type
 
-[**ExternalSource**](ExternalSource.html)
+[**ExternalSource**](ExternalSource)
 
-<a name="put_externalcontacts_organization"></a>
 
-## [**ExternalOrganization**](ExternalOrganization.html) put_externalcontacts_organization(external_organization_id, body)
+## put_externalcontacts_organization
 
+> [**ExternalOrganization**](ExternalOrganization) put_externalcontacts_organization(external_organization_id, body)
 
 
 Update an external organization
@@ -3778,17 +3705,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **external_organization_id** | **str**| External Organization ID |  |
-| **body** | [**ExternalOrganization**](ExternalOrganization.html)| ExternalOrganization |  |
-{: class="table table-striped"}
+| **body** | [**ExternalOrganization**](ExternalOrganization)| ExternalOrganization |  |
 
 ### Return type
 
-[**ExternalOrganization**](ExternalOrganization.html)
+[**ExternalOrganization**](ExternalOrganization)
 
-<a name="put_externalcontacts_organization_note"></a>
 
-## [**Note**](Note.html) put_externalcontacts_organization_note(external_organization_id, note_id, body)
+## put_externalcontacts_organization_note
 
+> [**Note**](Note) put_externalcontacts_organization_note(external_organization_id, note_id, body)
 
 
 Update a note for an external organization
@@ -3832,17 +3758,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **external_organization_id** | **str**| External Organization Id |  |
 | **note_id** | **str**| Note Id |  |
-| **body** | [**Note**](Note.html)| Note |  |
-{: class="table table-striped"}
+| **body** | [**Note**](Note)| Note |  |
 
 ### Return type
 
-[**Note**](Note.html)
+[**Note**](Note)
 
-<a name="put_externalcontacts_organization_trustor_trustor_id"></a>
 
-## [**ExternalOrganizationTrustorLink**](ExternalOrganizationTrustorLink.html) put_externalcontacts_organization_trustor_trustor_id(external_organization_id, trustor_id)
+## put_externalcontacts_organization_trustor_trustor_id
 
+> [**ExternalOrganizationTrustorLink**](ExternalOrganizationTrustorLink) put_externalcontacts_organization_trustor_trustor_id(external_organization_id, trustor_id)
 
 
 Links a Trustor with an External Organization
@@ -3884,16 +3809,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **external_organization_id** | **str**| External Organization ID |  |
 | **trustor_id** | **str**| Trustor ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**ExternalOrganizationTrustorLink**](ExternalOrganizationTrustorLink.html)
+[**ExternalOrganizationTrustorLink**](ExternalOrganizationTrustorLink)
 
-<a name="put_externalcontacts_organizations_schema"></a>
 
-## [**DataSchema**](DataSchema.html) put_externalcontacts_organizations_schema(schema_id, body)
+## put_externalcontacts_organizations_schema
 
+> [**DataSchema**](DataSchema) put_externalcontacts_organizations_schema(schema_id, body)
 
 
 Update a schema
@@ -3934,17 +3858,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **schema_id** | **str**| Schema ID |  |
-| **body** | [**DataSchema**](DataSchema.html)| Data Schema |  |
-{: class="table table-striped"}
+| **body** | [**DataSchema**](DataSchema)| Data Schema |  |
 
 ### Return type
 
-[**DataSchema**](DataSchema.html)
+[**DataSchema**](DataSchema)
 
-<a name="put_externalcontacts_relationship"></a>
 
-## [**Relationship**](Relationship.html) put_externalcontacts_relationship(relationship_id, body)
+## put_externalcontacts_relationship
 
+> [**Relationship**](Relationship) put_externalcontacts_relationship(relationship_id, body)
 
 
 Update a relationship
@@ -3986,10 +3909,11 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **relationship_id** | **str**| Relationship Id |  |
-| **body** | [**Relationship**](Relationship.html)| Relationship |  |
-{: class="table table-striped"}
+| **body** | [**Relationship**](Relationship)| Relationship |  |
 
 ### Return type
 
-[**Relationship**](Relationship.html)
+[**Relationship**](Relationship)
 
+
+_PureCloudPlatformClientV2 211.1.0_

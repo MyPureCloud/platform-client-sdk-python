@@ -1,6 +1,4 @@
----
-title: WebMessagingApi
----
+# WebMessagingApi
 
 ## PureCloudPlatformClientV2.WebMessagingApi
 
@@ -8,13 +6,13 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 |Method | Description|
 |------------- | -------------|
-|[**get_webmessaging_messages**](WebMessagingApi.html#get_webmessaging_messages) | Get the messages for a web messaging session.|
-{: class="table table-striped"}
+|[**get_webmessaging_messages**](#get_webmessaging_messages) | Get the messages for a web messaging session.|
 
-<a name="get_webmessaging_messages"></a>
 
-## [**WebMessagingMessageEntityList**](WebMessagingMessageEntityList.html) get_webmessaging_messages(page_size=page_size, page_number=page_number)
 
+## get_webmessaging_messages
+
+> [**WebMessagingMessageEntityList**](WebMessagingMessageEntityList) get_webmessaging_messages(page_size=page_size, page_number=page_number)
 
 
 Get the messages for a web messaging session.
@@ -52,9 +50,10 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
-{: class="table table-striped"}
 
 ### Return type
 
-[**WebMessagingMessageEntityList**](WebMessagingMessageEntityList.html)
+[**WebMessagingMessageEntityList**](WebMessagingMessageEntityList)
 
+
+_PureCloudPlatformClientV2 211.1.0_

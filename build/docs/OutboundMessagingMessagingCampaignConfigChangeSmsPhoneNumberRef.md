@@ -1,13 +1,13 @@
----
-title: OutboundMessagingMessagingCampaignConfigChangeSmsPhoneNumberRef
----
+# OutboundMessagingMessagingCampaignConfigChangeSmsPhoneNumberRef
+
 ## OutboundMessagingMessagingCampaignConfigChangeSmsPhoneNumberRef
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **phone_number** | **str** | The unique phone number | [optional] |
-{: class="table table-striped"}
+| **phone_number** | str | The unique phone number | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

@@ -1,13 +1,13 @@
----
-title: UserStationChangeTopicUserStations
----
+# UserStationChangeTopicUserStations
+
 ## UserStationChangeTopicUserStations
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **associated_station** | [**UserStationChangeTopicUserStation**](UserStationChangeTopicUserStation.html) |  | [optional] |
-{: class="table table-striped"}
+| **associated_station** | [UserStationChangeTopicUserStation](UserStationChangeTopicUserStation) |  | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

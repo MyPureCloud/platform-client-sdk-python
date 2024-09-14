@@ -1,15 +1,15 @@
----
-title: DocumentBodyListBlock
----
+# DocumentBodyListBlock
+
 ## DocumentBodyListBlock
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **type** | **str** | The type of the list block. | |
-| **blocks** | [**list[DocumentListContentBlock]**](DocumentListContentBlock.html) | The list of items for an OrderedList or an UnorderedList. | |
-| **properties** | [**DocumentBodyListItemProperties**](DocumentBodyListItemProperties.html) | The properties for the list block. | [optional] |
-{: class="table table-striped"}
+| **type** | str | The type of the list block. | |
+| **blocks** | [list[DocumentListContentBlock]](DocumentListContentBlock) | The list of items for an OrderedList or an UnorderedList. | |
+| **properties** | [DocumentBodyListItemProperties](DocumentBodyListItemProperties) | The properties for the list block. | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

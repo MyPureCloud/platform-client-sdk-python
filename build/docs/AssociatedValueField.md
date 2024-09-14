@@ -1,14 +1,14 @@
----
-title: AssociatedValueField
----
+# AssociatedValueField
+
 ## AssociatedValueField
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **data_type** | **str** | The data type of the value field. | |
-| **name** | **str** | The field name for extracting value from event. | |
-{: class="table table-striped"}
+| **data_type** | str | The data type of the value field. | |
+| **name** | str | The field name for extracting value from event. | |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

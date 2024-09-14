@@ -1,13 +1,13 @@
----
-title: SupportCenterFeedbackSettings
----
+# SupportCenterFeedbackSettings
+
 ## SupportCenterFeedbackSettings
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **enabled** | **bool** | Whether or not requesting customer feedback on article content and article search results is enabled | |
-{: class="table table-striped"}
+| **enabled** | bool | Whether or not requesting customer feedback on article content and article search results is enabled | |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

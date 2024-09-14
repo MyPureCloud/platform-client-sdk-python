@@ -18164,6 +18164,39 @@
     "return": "CredentialTypeListing",
     "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.IntegrationsApi();\n\ntry:\n    # List all credential types\n    api_response = api_instance.get_integrations_credentials_types()\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling IntegrationsApi->get_integrations_credentials_types: %s\\n\" % e)"
   },
+  "get_integrations_speech_audioconnector": {
+    "operationId": "get_integrations_speech_audioconnector",
+    "functionName": "get_integrations_speech_audioconnector",
+    "signature": "get_integrations_speech_audioconnector(page_number, page_size)",
+    "parameters": [
+      {
+        "name": "page_number",
+        "type": "int",
+        "required": "false"
+      },
+      {
+        "name": "page_size",
+        "type": "int",
+        "required": "false"
+      }
+    ],
+    "return": "AudioConnectorIntegrationEntityListing",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.IntegrationsApi();\npage_number = 1 # int | Page number (optional) (default to 1)\npage_size = 25 # int | Page size (optional) (default to 25)\n\ntry:\n    # Get a list of Audio Connector integrations\n    api_response = api_instance.get_integrations_speech_audioconnector(page_number=page_number, page_size=page_size)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling IntegrationsApi->get_integrations_speech_audioconnector: %s\\n\" % e)"
+  },
+  "get_integrations_speech_audioconnector_integration_id": {
+    "operationId": "get_integrations_speech_audioconnector_integration_id",
+    "functionName": "get_integrations_speech_audioconnector_integration_id",
+    "signature": "get_integrations_speech_audioconnector_integration_id(integration_id)",
+    "parameters": [
+      {
+        "name": "integration_id",
+        "type": "str",
+        "required": "true"
+      }
+    ],
+    "return": "AudioConnectorIntegration",
+    "example": "import PureCloudPlatformClientV2\nfrom PureCloudPlatformClientV2.rest import ApiException\nfrom pprint import pprint\n\n# Configure OAuth2 access token for authorization: PureCloud OAuth\nPureCloudPlatformClientV2.configuration.access_token = 'your_access_token'\n# or use get_client_credentials_token(...), get_saml2bearer_token(...), get_code_authorization_token(...) or get_pkce_token(...)\n\n# create an instance of the API class\napi_instance = PureCloudPlatformClientV2.IntegrationsApi();\nintegration_id = 'integration_id_example' # str | The integration ID\n\ntry:\n    # Get an Audio Connector integration\n    api_response = api_instance.get_integrations_speech_audioconnector_integration_id(integration_id)\n    pprint(api_response)\nexcept ApiException as e:\n    print(\"Exception when calling IntegrationsApi->get_integrations_speech_audioconnector_integration_id: %s\\n\" % e)"
+  },
   "get_integrations_speech_dialogflow_agent": {
     "operationId": "get_integrations_speech_dialogflow_agent",
     "functionName": "get_integrations_speech_dialogflow_agent",

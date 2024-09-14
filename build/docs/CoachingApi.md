@@ -1,6 +1,4 @@
----
-title: CoachingApi
----
+# CoachingApi
 
 ## PureCloudPlatformClientV2.CoachingApi
 
@@ -8,31 +6,31 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 |Method | Description|
 |------------- | -------------|
-|[**delete_coaching_appointment**](CoachingApi.html#delete_coaching_appointment) | Delete an existing appointment|
-|[**delete_coaching_appointment_annotation**](CoachingApi.html#delete_coaching_appointment_annotation) | Delete an existing annotation|
-|[**get_coaching_appointment**](CoachingApi.html#get_coaching_appointment) | Retrieve an appointment|
-|[**get_coaching_appointment_annotation**](CoachingApi.html#get_coaching_appointment_annotation) | Retrieve an annotation.|
-|[**get_coaching_appointment_annotations**](CoachingApi.html#get_coaching_appointment_annotations) | Get a list of annotations.|
-|[**get_coaching_appointment_statuses**](CoachingApi.html#get_coaching_appointment_statuses) | Get the list of status changes for a coaching appointment.|
-|[**get_coaching_appointments**](CoachingApi.html#get_coaching_appointments) | Get appointments for users and optional date range|
-|[**get_coaching_appointments_me**](CoachingApi.html#get_coaching_appointments_me) | Get my appointments for a given date range|
-|[**get_coaching_notification**](CoachingApi.html#get_coaching_notification) | Get an existing notification|
-|[**get_coaching_notifications**](CoachingApi.html#get_coaching_notifications) | Retrieve the list of your notifications.|
-|[**patch_coaching_appointment**](CoachingApi.html#patch_coaching_appointment) | Update an existing appointment|
-|[**patch_coaching_appointment_annotation**](CoachingApi.html#patch_coaching_appointment_annotation) | Update an existing annotation.|
-|[**patch_coaching_appointment_status**](CoachingApi.html#patch_coaching_appointment_status) | Update the status of a coaching appointment|
-|[**patch_coaching_notification**](CoachingApi.html#patch_coaching_notification) | Update an existing notification.|
-|[**post_coaching_appointment_annotations**](CoachingApi.html#post_coaching_appointment_annotations) | Create a new annotation.|
-|[**post_coaching_appointment_conversations**](CoachingApi.html#post_coaching_appointment_conversations) | Add a conversation to an appointment|
-|[**post_coaching_appointments**](CoachingApi.html#post_coaching_appointments) | Create a new appointment|
-|[**post_coaching_appointments_aggregates_query**](CoachingApi.html#post_coaching_appointments_aggregates_query) | Retrieve aggregated appointment data|
-|[**post_coaching_scheduleslots_query**](CoachingApi.html#post_coaching_scheduleslots_query) | Get list of possible slots where a coaching appointment can be scheduled.|
-{: class="table table-striped"}
+|[**delete_coaching_appointment**](#delete_coaching_appointment) | Delete an existing appointment|
+|[**delete_coaching_appointment_annotation**](#delete_coaching_appointment_annotation) | Delete an existing annotation|
+|[**get_coaching_appointment**](#get_coaching_appointment) | Retrieve an appointment|
+|[**get_coaching_appointment_annotation**](#get_coaching_appointment_annotation) | Retrieve an annotation.|
+|[**get_coaching_appointment_annotations**](#get_coaching_appointment_annotations) | Get a list of annotations.|
+|[**get_coaching_appointment_statuses**](#get_coaching_appointment_statuses) | Get the list of status changes for a coaching appointment.|
+|[**get_coaching_appointments**](#get_coaching_appointments) | Get appointments for users and optional date range|
+|[**get_coaching_appointments_me**](#get_coaching_appointments_me) | Get my appointments for a given date range|
+|[**get_coaching_notification**](#get_coaching_notification) | Get an existing notification|
+|[**get_coaching_notifications**](#get_coaching_notifications) | Retrieve the list of your notifications.|
+|[**patch_coaching_appointment**](#patch_coaching_appointment) | Update an existing appointment|
+|[**patch_coaching_appointment_annotation**](#patch_coaching_appointment_annotation) | Update an existing annotation.|
+|[**patch_coaching_appointment_status**](#patch_coaching_appointment_status) | Update the status of a coaching appointment|
+|[**patch_coaching_notification**](#patch_coaching_notification) | Update an existing notification.|
+|[**post_coaching_appointment_annotations**](#post_coaching_appointment_annotations) | Create a new annotation.|
+|[**post_coaching_appointment_conversations**](#post_coaching_appointment_conversations) | Add a conversation to an appointment|
+|[**post_coaching_appointments**](#post_coaching_appointments) | Create a new appointment|
+|[**post_coaching_appointments_aggregates_query**](#post_coaching_appointments_aggregates_query) | Retrieve aggregated appointment data|
+|[**post_coaching_scheduleslots_query**](#post_coaching_scheduleslots_query) | Get list of possible slots where a coaching appointment can be scheduled.|
 
-<a name="delete_coaching_appointment"></a>
 
-## [**CoachingAppointmentReference**](CoachingAppointmentReference.html) delete_coaching_appointment(appointment_id)
 
+## delete_coaching_appointment
+
+> [**CoachingAppointmentReference**](CoachingAppointmentReference) delete_coaching_appointment(appointment_id)
 
 
 Delete an existing appointment
@@ -74,16 +72,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **appointment_id** | **str**| The ID of the coaching appointment. |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**CoachingAppointmentReference**](CoachingAppointmentReference.html)
+[**CoachingAppointmentReference**](CoachingAppointmentReference)
 
-<a name="delete_coaching_appointment_annotation"></a>
 
-##  delete_coaching_appointment_annotation(appointment_id, annotation_id)
+## delete_coaching_appointment_annotation
 
+>  delete_coaching_appointment_annotation(appointment_id, annotation_id)
 
 
 Delete an existing annotation
@@ -127,16 +124,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **appointment_id** | **str**| The ID of the coaching appointment. |  |
 | **annotation_id** | **str**| The ID of the annotation. |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (empty response body)
 
-<a name="get_coaching_appointment"></a>
 
-## [**CoachingAppointmentResponse**](CoachingAppointmentResponse.html) get_coaching_appointment(appointment_id)
+## get_coaching_appointment
 
+> [**CoachingAppointmentResponse**](CoachingAppointmentResponse) get_coaching_appointment(appointment_id)
 
 
 Retrieve an appointment
@@ -178,16 +174,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **appointment_id** | **str**| The ID of the coaching appointment. |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**CoachingAppointmentResponse**](CoachingAppointmentResponse.html)
+[**CoachingAppointmentResponse**](CoachingAppointmentResponse)
 
-<a name="get_coaching_appointment_annotation"></a>
 
-## [**CoachingAnnotation**](CoachingAnnotation.html) get_coaching_appointment_annotation(appointment_id, annotation_id)
+## get_coaching_appointment_annotation
 
+> [**CoachingAnnotation**](CoachingAnnotation) get_coaching_appointment_annotation(appointment_id, annotation_id)
 
 
 Retrieve an annotation.
@@ -232,16 +227,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **appointment_id** | **str**| The ID of the coaching appointment. |  |
 | **annotation_id** | **str**| The ID of the annotation. |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**CoachingAnnotation**](CoachingAnnotation.html)
+[**CoachingAnnotation**](CoachingAnnotation)
 
-<a name="get_coaching_appointment_annotations"></a>
 
-## [**CoachingAnnotationList**](CoachingAnnotationList.html) get_coaching_appointment_annotations(appointment_id, page_number=page_number, page_size=page_size)
+## get_coaching_appointment_annotations
 
+> [**CoachingAnnotationList**](CoachingAnnotationList) get_coaching_appointment_annotations(appointment_id, page_number=page_number, page_size=page_size)
 
 
 Get a list of annotations.
@@ -288,16 +282,15 @@ except ApiException as e:
 | **appointment_id** | **str**| The ID of the coaching appointment. |  |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **page_size** | **int**| Page size | [optional] [default to 25] |
-{: class="table table-striped"}
 
 ### Return type
 
-[**CoachingAnnotationList**](CoachingAnnotationList.html)
+[**CoachingAnnotationList**](CoachingAnnotationList)
 
-<a name="get_coaching_appointment_statuses"></a>
 
-## [**CoachingAppointmentStatusResponseList**](CoachingAppointmentStatusResponseList.html) get_coaching_appointment_statuses(appointment_id, page_number=page_number, page_size=page_size)
+## get_coaching_appointment_statuses
 
+> [**CoachingAppointmentStatusResponseList**](CoachingAppointmentStatusResponseList) get_coaching_appointment_statuses(appointment_id, page_number=page_number, page_size=page_size)
 
 
 Get the list of status changes for a coaching appointment.
@@ -343,16 +336,15 @@ except ApiException as e:
 | **appointment_id** | **str**| The ID of the coaching appointment. |  |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **page_size** | **int**| Page size | [optional] [default to 25] |
-{: class="table table-striped"}
 
 ### Return type
 
-[**CoachingAppointmentStatusResponseList**](CoachingAppointmentStatusResponseList.html)
+[**CoachingAppointmentStatusResponseList**](CoachingAppointmentStatusResponseList)
 
-<a name="get_coaching_appointments"></a>
 
-## [**CoachingAppointmentResponseList**](CoachingAppointmentResponseList.html) get_coaching_appointments(user_ids, interval=interval, page_number=page_number, page_size=page_size, statuses=statuses, facilitator_ids=facilitator_ids, sort_order=sort_order, relationships=relationships, completion_interval=completion_interval, overdue=overdue, interval_condition=interval_condition)
+## get_coaching_appointments
 
+> [**CoachingAppointmentResponseList**](CoachingAppointmentResponseList) get_coaching_appointments(user_ids, interval=interval, page_number=page_number, page_size=page_size, statuses=statuses, facilitator_ids=facilitator_ids, sort_order=sort_order, relationships=relationships, completion_interval=completion_interval, overdue=overdue, interval_condition=interval_condition)
 
 
 Get appointments for users and optional date range
@@ -401,27 +393,26 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **user_ids** | [**list[str]**](str.html)| The user IDs for which to retrieve appointments |  |
+| **user_ids** | [**list[str]**](str)| The user IDs for which to retrieve appointments |  |
 | **interval** | **str**| Interval to filter data by. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss | [optional]  |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **page_size** | **int**| Page size | [optional] [default to 25] |
-| **statuses** | [**list[str]**](str.html)| Appointment Statuses to filter by | [optional] <br />**Values**: Scheduled, InProgress, Completed, InvalidSchedule |
-| **facilitator_ids** | [**list[str]**](str.html)| The facilitator IDs for which to retrieve appointments | [optional]  |
+| **statuses** | [**list[str]**](str)| Appointment Statuses to filter by | [optional] <br />**Values**: Scheduled, InProgress, Completed, InvalidSchedule |
+| **facilitator_ids** | [**list[str]**](str)| The facilitator IDs for which to retrieve appointments | [optional]  |
 | **sort_order** | **str**| Sort (by due date) either Asc or Desc | [optional] <br />**Values**: Desc, Asc |
-| **relationships** | [**list[str]**](str.html)| Relationships to filter by | [optional] <br />**Values**: Creator, Facilitator, Attendee |
+| **relationships** | [**list[str]**](str)| Relationships to filter by | [optional] <br />**Values**: Creator, Facilitator, Attendee |
 | **completion_interval** | **str**| Appointment completion start and end to filter by. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss | [optional]  |
 | **overdue** | **str**| Overdue status to filter by | [optional] <br />**Values**: True, False, Any |
 | **interval_condition** | **str**| Filter condition for interval | [optional] <br />**Values**: StartsIn, Overlaps |
-{: class="table table-striped"}
 
 ### Return type
 
-[**CoachingAppointmentResponseList**](CoachingAppointmentResponseList.html)
+[**CoachingAppointmentResponseList**](CoachingAppointmentResponseList)
 
-<a name="get_coaching_appointments_me"></a>
 
-## [**CoachingAppointmentResponseList**](CoachingAppointmentResponseList.html) get_coaching_appointments_me(interval=interval, page_number=page_number, page_size=page_size, statuses=statuses, facilitator_ids=facilitator_ids, sort_order=sort_order, relationships=relationships, completion_interval=completion_interval, overdue=overdue, interval_condition=interval_condition)
+## get_coaching_appointments_me
 
+> [**CoachingAppointmentResponseList**](CoachingAppointmentResponseList) get_coaching_appointments_me(interval=interval, page_number=page_number, page_size=page_size, statuses=statuses, facilitator_ids=facilitator_ids, sort_order=sort_order, relationships=relationships, completion_interval=completion_interval, overdue=overdue, interval_condition=interval_condition)
 
 
 Get my appointments for a given date range
@@ -471,23 +462,22 @@ except ApiException as e:
 | **interval** | **str**| Interval to filter data by. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss | [optional]  |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **page_size** | **int**| Page size | [optional] [default to 25] |
-| **statuses** | [**list[str]**](str.html)| Appointment Statuses to filter by | [optional] <br />**Values**: Scheduled, InProgress, Completed, InvalidSchedule |
-| **facilitator_ids** | [**list[str]**](str.html)| The facilitator IDs for which to retrieve appointments | [optional]  |
+| **statuses** | [**list[str]**](str)| Appointment Statuses to filter by | [optional] <br />**Values**: Scheduled, InProgress, Completed, InvalidSchedule |
+| **facilitator_ids** | [**list[str]**](str)| The facilitator IDs for which to retrieve appointments | [optional]  |
 | **sort_order** | **str**| Sort (by due date) either Asc or Desc | [optional] <br />**Values**: Desc, Asc |
-| **relationships** | [**list[str]**](str.html)| Relationships to filter by | [optional] <br />**Values**: Creator, Facilitator, Attendee |
+| **relationships** | [**list[str]**](str)| Relationships to filter by | [optional] <br />**Values**: Creator, Facilitator, Attendee |
 | **completion_interval** | **str**| Appointment completion start and end to filter by. End date is not inclusive. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss | [optional]  |
 | **overdue** | **str**| Overdue status to filter by | [optional] <br />**Values**: True, False, Any |
 | **interval_condition** | **str**| Filter condition for interval | [optional] <br />**Values**: StartsIn, Overlaps |
-{: class="table table-striped"}
 
 ### Return type
 
-[**CoachingAppointmentResponseList**](CoachingAppointmentResponseList.html)
+[**CoachingAppointmentResponseList**](CoachingAppointmentResponseList)
 
-<a name="get_coaching_notification"></a>
 
-## [**CoachingNotification**](CoachingNotification.html) get_coaching_notification(notification_id, expand=expand)
+## get_coaching_notification
 
+> [**CoachingNotification**](CoachingNotification) get_coaching_notification(notification_id, expand=expand)
 
 
 Get an existing notification
@@ -530,17 +520,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **notification_id** | **str**| The ID of the notification. |  |
-| **expand** | [**list[str]**](str.html)| Indicates a field in the response which should be expanded. | [optional] <br />**Values**: appointment |
-{: class="table table-striped"}
+| **expand** | [**list[str]**](str)| Indicates a field in the response which should be expanded. | [optional] <br />**Values**: appointment |
 
 ### Return type
 
-[**CoachingNotification**](CoachingNotification.html)
+[**CoachingNotification**](CoachingNotification)
 
-<a name="get_coaching_notifications"></a>
 
-## [**CoachingNotificationList**](CoachingNotificationList.html) get_coaching_notifications(page_number=page_number, page_size=page_size, expand=expand)
+## get_coaching_notifications
 
+> [**CoachingNotificationList**](CoachingNotificationList) get_coaching_notifications(page_number=page_number, page_size=page_size, expand=expand)
 
 
 Retrieve the list of your notifications.
@@ -582,17 +571,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **page_size** | **int**| Page size | [optional] [default to 25] |
-| **expand** | [**list[str]**](str.html)| Indicates a field in the response which should be expanded. | [optional] <br />**Values**: appointment |
-{: class="table table-striped"}
+| **expand** | [**list[str]**](str)| Indicates a field in the response which should be expanded. | [optional] <br />**Values**: appointment |
 
 ### Return type
 
-[**CoachingNotificationList**](CoachingNotificationList.html)
+[**CoachingNotificationList**](CoachingNotificationList)
 
-<a name="patch_coaching_appointment"></a>
 
-## [**CoachingAppointmentResponse**](CoachingAppointmentResponse.html) patch_coaching_appointment(appointment_id, body)
+## patch_coaching_appointment
 
+> [**CoachingAppointmentResponse**](CoachingAppointmentResponse) patch_coaching_appointment(appointment_id, body)
 
 
 Update an existing appointment
@@ -635,17 +623,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **appointment_id** | **str**| The ID of the coaching appointment. |  |
-| **body** | [**UpdateCoachingAppointmentRequest**](UpdateCoachingAppointmentRequest.html)| The new version of the appointment |  |
-{: class="table table-striped"}
+| **body** | [**UpdateCoachingAppointmentRequest**](UpdateCoachingAppointmentRequest)| The new version of the appointment |  |
 
 ### Return type
 
-[**CoachingAppointmentResponse**](CoachingAppointmentResponse.html)
+[**CoachingAppointmentResponse**](CoachingAppointmentResponse)
 
-<a name="patch_coaching_appointment_annotation"></a>
 
-## [**CoachingAnnotation**](CoachingAnnotation.html) patch_coaching_appointment_annotation(appointment_id, annotation_id, body)
+## patch_coaching_appointment_annotation
 
+> [**CoachingAnnotation**](CoachingAnnotation) patch_coaching_appointment_annotation(appointment_id, annotation_id, body)
 
 
 Update an existing annotation.
@@ -691,17 +678,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **appointment_id** | **str**| The ID of the coaching appointment. |  |
 | **annotation_id** | **str**| The ID of the annotation. |  |
-| **body** | [**CoachingAnnotation**](CoachingAnnotation.html)| The new version of the annotation |  |
-{: class="table table-striped"}
+| **body** | [**CoachingAnnotation**](CoachingAnnotation)| The new version of the annotation |  |
 
 ### Return type
 
-[**CoachingAnnotation**](CoachingAnnotation.html)
+[**CoachingAnnotation**](CoachingAnnotation)
 
-<a name="patch_coaching_appointment_status"></a>
 
-## [**CoachingAppointmentStatusResponse**](CoachingAppointmentStatusResponse.html) patch_coaching_appointment_status(appointment_id, body)
+## patch_coaching_appointment_status
 
+> [**CoachingAppointmentStatusResponse**](CoachingAppointmentStatusResponse) patch_coaching_appointment_status(appointment_id, body)
 
 
 Update the status of a coaching appointment
@@ -744,17 +730,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **appointment_id** | **str**| The ID of the coaching appointment. |  |
-| **body** | [**CoachingAppointmentStatusRequest**](CoachingAppointmentStatusRequest.html)| Updated status of the coaching appointment |  |
-{: class="table table-striped"}
+| **body** | [**CoachingAppointmentStatusRequest**](CoachingAppointmentStatusRequest)| Updated status of the coaching appointment |  |
 
 ### Return type
 
-[**CoachingAppointmentStatusResponse**](CoachingAppointmentStatusResponse.html)
+[**CoachingAppointmentStatusResponse**](CoachingAppointmentStatusResponse)
 
-<a name="patch_coaching_notification"></a>
 
-## [**CoachingNotification**](CoachingNotification.html) patch_coaching_notification(notification_id, body)
+## patch_coaching_notification
 
+> [**CoachingNotification**](CoachingNotification) patch_coaching_notification(notification_id, body)
 
 
 Update an existing notification.
@@ -796,17 +781,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **notification_id** | **str**| The ID of the notification. |  |
-| **body** | [**CoachingNotification**](CoachingNotification.html)| Change the read state of a notification |  |
-{: class="table table-striped"}
+| **body** | [**CoachingNotification**](CoachingNotification)| Change the read state of a notification |  |
 
 ### Return type
 
-[**CoachingNotification**](CoachingNotification.html)
+[**CoachingNotification**](CoachingNotification)
 
-<a name="post_coaching_appointment_annotations"></a>
 
-## [**CoachingAnnotation**](CoachingAnnotation.html) post_coaching_appointment_annotations(appointment_id, body)
+## post_coaching_appointment_annotations
 
+> [**CoachingAnnotation**](CoachingAnnotation) post_coaching_appointment_annotations(appointment_id, body)
 
 
 Create a new annotation.
@@ -850,17 +834,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **appointment_id** | **str**| The ID of the coaching appointment. |  |
-| **body** | [**CoachingAnnotationCreateRequest**](CoachingAnnotationCreateRequest.html)| The annotation to add |  |
-{: class="table table-striped"}
+| **body** | [**CoachingAnnotationCreateRequest**](CoachingAnnotationCreateRequest)| The annotation to add |  |
 
 ### Return type
 
-[**CoachingAnnotation**](CoachingAnnotation.html)
+[**CoachingAnnotation**](CoachingAnnotation)
 
-<a name="post_coaching_appointment_conversations"></a>
 
-## [**AddConversationResponse**](AddConversationResponse.html) post_coaching_appointment_conversations(appointment_id, body)
+## post_coaching_appointment_conversations
 
+> [**AddConversationResponse**](AddConversationResponse) post_coaching_appointment_conversations(appointment_id, body)
 
 
 Add a conversation to an appointment
@@ -904,17 +887,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **appointment_id** | **str**| The ID of the coaching appointment. |  |
-| **body** | [**AddConversationRequest**](AddConversationRequest.html)| body |  |
-{: class="table table-striped"}
+| **body** | [**AddConversationRequest**](AddConversationRequest)| body |  |
 
 ### Return type
 
-[**AddConversationResponse**](AddConversationResponse.html)
+[**AddConversationResponse**](AddConversationResponse)
 
-<a name="post_coaching_appointments"></a>
 
-## [**CoachingAppointmentResponse**](CoachingAppointmentResponse.html) post_coaching_appointments(body)
+## post_coaching_appointments
 
+> [**CoachingAppointmentResponse**](CoachingAppointmentResponse) post_coaching_appointments(body)
 
 
 Create a new appointment
@@ -953,17 +935,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**CreateCoachingAppointmentRequest**](CreateCoachingAppointmentRequest.html)| The appointment to add |  |
-{: class="table table-striped"}
+| **body** | [**CreateCoachingAppointmentRequest**](CreateCoachingAppointmentRequest)| The appointment to add |  |
 
 ### Return type
 
-[**CoachingAppointmentResponse**](CoachingAppointmentResponse.html)
+[**CoachingAppointmentResponse**](CoachingAppointmentResponse)
 
-<a name="post_coaching_appointments_aggregates_query"></a>
 
-## [**CoachingAppointmentAggregateResponse**](CoachingAppointmentAggregateResponse.html) post_coaching_appointments_aggregates_query(body)
+## post_coaching_appointments_aggregates_query
 
+> [**CoachingAppointmentAggregateResponse**](CoachingAppointmentAggregateResponse) post_coaching_appointments_aggregates_query(body)
 
 
 Retrieve aggregated appointment data
@@ -1002,17 +983,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**CoachingAppointmentAggregateRequest**](CoachingAppointmentAggregateRequest.html)| Aggregate Request |  |
-{: class="table table-striped"}
+| **body** | [**CoachingAppointmentAggregateRequest**](CoachingAppointmentAggregateRequest)| Aggregate Request |  |
 
 ### Return type
 
-[**CoachingAppointmentAggregateResponse**](CoachingAppointmentAggregateResponse.html)
+[**CoachingAppointmentAggregateResponse**](CoachingAppointmentAggregateResponse)
 
-<a name="post_coaching_scheduleslots_query"></a>
 
-## [**CoachingSlotsResponse**](CoachingSlotsResponse.html) post_coaching_scheduleslots_query(body)
+## post_coaching_scheduleslots_query
 
+> [**CoachingSlotsResponse**](CoachingSlotsResponse) post_coaching_scheduleslots_query(body)
 
 
 Get list of possible slots where a coaching appointment can be scheduled.
@@ -1051,10 +1031,11 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**CoachingSlotsRequest**](CoachingSlotsRequest.html)| The slot search request |  |
-{: class="table table-striped"}
+| **body** | [**CoachingSlotsRequest**](CoachingSlotsRequest)| The slot search request |  |
 
 ### Return type
 
-[**CoachingSlotsResponse**](CoachingSlotsResponse.html)
+[**CoachingSlotsResponse**](CoachingSlotsResponse)
 
+
+_PureCloudPlatformClientV2 211.1.0_

@@ -1,14 +1,14 @@
----
-title: ShiftTradeMatchViolation
----
+# ShiftTradeMatchViolation
+
 ## ShiftTradeMatchViolation
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **type** | **str** | The type of constraint violation | [optional] |
-| **params** | **dict(str, str)** | Clarifying user params for constructing helpful error messages | [optional] |
-{: class="table table-striped"}
+| **type** | str | The type of constraint violation | [optional] |
+| **params** | dict(str, str) | Clarifying user params for constructing helpful error messages | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

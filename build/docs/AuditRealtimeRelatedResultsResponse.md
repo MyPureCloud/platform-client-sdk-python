@@ -1,13 +1,13 @@
----
-title: AuditRealtimeRelatedResultsResponse
----
+# AuditRealtimeRelatedResultsResponse
+
 ## AuditRealtimeRelatedResultsResponse
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **entities** | [**list[AuditLogMessage]**](AuditLogMessage.html) |  | [optional] |
-{: class="table table-striped"}
+| **entities** | [list[AuditLogMessage]](AuditLogMessage) |  | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

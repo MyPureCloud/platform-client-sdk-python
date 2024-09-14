@@ -1,6 +1,4 @@
----
-title: TeamsApi
----
+# TeamsApi
 
 ## PureCloudPlatformClientV2.TeamsApi
 
@@ -8,22 +6,22 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 |Method | Description|
 |------------- | -------------|
-|[**delete_team**](TeamsApi.html#delete_team) | Delete team|
-|[**delete_team_members**](TeamsApi.html#delete_team_members) | Delete team members|
-|[**get_team**](TeamsApi.html#get_team) | Get team|
-|[**get_team_members**](TeamsApi.html#get_team_members) | Get team membership|
-|[**get_teams**](TeamsApi.html#get_teams) | Get Team listing|
-|[**patch_team**](TeamsApi.html#patch_team) | Update team|
-|[**post_analytics_teams_activity_query**](TeamsApi.html#post_analytics_teams_activity_query) | Query for team activity observations|
-|[**post_team_members**](TeamsApi.html#post_team_members) | Add team members|
-|[**post_teams**](TeamsApi.html#post_teams) | Create a team|
-|[**post_teams_search**](TeamsApi.html#post_teams_search) | Search resources.|
-{: class="table table-striped"}
+|[**delete_team**](#delete_team) | Delete team|
+|[**delete_team_members**](#delete_team_members) | Delete team members|
+|[**get_team**](#get_team) | Get team|
+|[**get_team_members**](#get_team_members) | Get team membership|
+|[**get_teams**](#get_teams) | Get Team listing|
+|[**patch_team**](#patch_team) | Update team|
+|[**post_analytics_teams_activity_query**](#post_analytics_teams_activity_query) | Query for team activity observations|
+|[**post_team_members**](#post_team_members) | Add team members|
+|[**post_teams**](#post_teams) | Create a team|
+|[**post_teams_search**](#post_teams_search) | Search resources.|
 
-<a name="delete_team"></a>
 
-##  delete_team(team_id)
 
+## delete_team
+
+>  delete_team(team_id)
 
 
 Delete team
@@ -62,16 +60,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **team_id** | **str**| Team ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (empty response body)
 
-<a name="delete_team_members"></a>
 
-##  delete_team_members(team_id, id)
+## delete_team_members
 
+>  delete_team_members(team_id, id)
 
 
 Delete team members
@@ -112,16 +109,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **team_id** | **str**| Team ID |  |
 | **id** | **str**| Comma separated list of member ids to remove |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (empty response body)
 
-<a name="get_team"></a>
 
-## [**Team**](Team.html) get_team(team_id)
+## get_team
 
+> [**Team**](Team) get_team(team_id)
 
 
 Get team
@@ -161,16 +157,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **team_id** | **str**| Team ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**Team**](Team.html)
+[**Team**](Team)
 
-<a name="get_team_members"></a>
 
-## [**TeamMemberEntityListing**](TeamMemberEntityListing.html) get_team_members(team_id, page_size=page_size, before=before, after=after, expand=expand)
+## get_team_members
 
+> [**TeamMemberEntityListing**](TeamMemberEntityListing) get_team_members(team_id, page_size=page_size, before=before, after=after, expand=expand)
 
 
 Get team membership
@@ -218,16 +213,15 @@ except ApiException as e:
 | **before** | **str**| The cursor that points to the previous item in the complete list of teams | [optional]  |
 | **after** | **str**| The cursor that points to the next item in the complete list of teams | [optional]  |
 | **expand** | **str**| Expand the name on each user | [optional] <br />**Values**: entities |
-{: class="table table-striped"}
 
 ### Return type
 
-[**TeamMemberEntityListing**](TeamMemberEntityListing.html)
+[**TeamMemberEntityListing**](TeamMemberEntityListing)
 
-<a name="get_teams"></a>
 
-## [**TeamEntityListing**](TeamEntityListing.html) get_teams(page_size=page_size, name=name, after=after, before=before, expand=expand)
+## get_teams
 
+> [**TeamEntityListing**](TeamEntityListing) get_teams(page_size=page_size, name=name, after=after, before=before, expand=expand)
 
 
 Get Team listing
@@ -275,16 +269,15 @@ except ApiException as e:
 | **after** | **str**| The cursor that points to the next item in the complete list of teams | [optional]  |
 | **before** | **str**| The cursor that points to the previous item in the complete list of teams | [optional]  |
 | **expand** | **str**| Expand the name on each user | [optional] <br />**Values**: entities.division |
-{: class="table table-striped"}
 
 ### Return type
 
-[**TeamEntityListing**](TeamEntityListing.html)
+[**TeamEntityListing**](TeamEntityListing)
 
-<a name="patch_team"></a>
 
-## [**Team**](Team.html) patch_team(team_id, body)
+## patch_team
 
+> [**Team**](Team) patch_team(team_id, body)
 
 
 Update team
@@ -325,17 +318,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **team_id** | **str**| Team ID |  |
-| **body** | [**Team**](Team.html)| Team |  |
-{: class="table table-striped"}
+| **body** | [**Team**](Team)| Team |  |
 
 ### Return type
 
-[**Team**](Team.html)
+[**Team**](Team)
 
-<a name="post_analytics_teams_activity_query"></a>
 
-## [**TeamActivityResponse**](TeamActivityResponse.html) post_analytics_teams_activity_query(body, page_size=page_size, page_number=page_number)
+## post_analytics_teams_activity_query
 
+> [**TeamActivityResponse**](TeamActivityResponse) post_analytics_teams_activity_query(body, page_size=page_size, page_number=page_number)
 
 
 Query for team activity observations
@@ -376,19 +368,18 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**TeamActivityQuery**](TeamActivityQuery.html)| query |  |
+| **body** | [**TeamActivityQuery**](TeamActivityQuery)| query |  |
 | **page_size** | **int**| The desired page size | [optional]  |
 | **page_number** | **int**| The desired page number | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**TeamActivityResponse**](TeamActivityResponse.html)
+[**TeamActivityResponse**](TeamActivityResponse)
 
-<a name="post_team_members"></a>
 
-## [**TeamMemberAddListingResponse**](TeamMemberAddListingResponse.html) post_team_members(team_id, body)
+## post_team_members
 
+> [**TeamMemberAddListingResponse**](TeamMemberAddListingResponse) post_team_members(team_id, body)
 
 
 Add team members
@@ -429,17 +420,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **team_id** | **str**| Team ID |  |
-| **body** | [**TeamMembers**](TeamMembers.html)| TeamMembers |  |
-{: class="table table-striped"}
+| **body** | [**TeamMembers**](TeamMembers)| TeamMembers |  |
 
 ### Return type
 
-[**TeamMemberAddListingResponse**](TeamMemberAddListingResponse.html)
+[**TeamMemberAddListingResponse**](TeamMemberAddListingResponse)
 
-<a name="post_teams"></a>
 
-## [**Team**](Team.html) post_teams(body)
+## post_teams
 
+> [**Team**](Team) post_teams(body)
 
 
 Create a team
@@ -478,17 +468,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**Team**](Team.html)| Team |  |
-{: class="table table-striped"}
+| **body** | [**Team**](Team)| Team |  |
 
 ### Return type
 
-[**Team**](Team.html)
+[**Team**](Team)
 
-<a name="post_teams_search"></a>
 
-## [**TeamsSearchResponse**](TeamsSearchResponse.html) post_teams_search(body)
+## post_teams_search
 
+> [**TeamsSearchResponse**](TeamsSearchResponse) post_teams_search(body)
 
 
 Search resources.
@@ -527,10 +516,11 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**TeamSearchRequest**](TeamSearchRequest.html)| Search request options |  |
-{: class="table table-striped"}
+| **body** | [**TeamSearchRequest**](TeamSearchRequest)| Search request options |  |
 
 ### Return type
 
-[**TeamsSearchResponse**](TeamsSearchResponse.html)
+[**TeamsSearchResponse**](TeamsSearchResponse)
 
+
+_PureCloudPlatformClientV2 211.1.0_

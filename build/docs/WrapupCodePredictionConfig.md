@@ -1,13 +1,13 @@
----
-title: WrapupCodePredictionConfig
----
+# WrapupCodePredictionConfig
+
 ## WrapupCodePredictionConfig
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **enabled** | **bool** | Copilot generated wrapup code prediction is enabled. | |
-{: class="table table-striped"}
+| **enabled** | bool | Copilot generated wrapup code prediction is enabled. | |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

@@ -1,6 +1,4 @@
----
-title: FaxApi
----
+# FaxApi
 
 ## PureCloudPlatformClientV2.FaxApi
 
@@ -8,20 +6,20 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 |Method | Description|
 |------------- | -------------|
-|[**delete_fax_document**](FaxApi.html#delete_fax_document) | Delete a fax document.|
-|[**get_fax_document**](FaxApi.html#get_fax_document) | Get a document.|
-|[**get_fax_document_content**](FaxApi.html#get_fax_document_content) | Download a fax document.|
-|[**get_fax_documents**](FaxApi.html#get_fax_documents) | Get a list of fax documents.|
-|[**get_fax_settings**](FaxApi.html#get_fax_settings) | Get organization config for given organization|
-|[**get_fax_summary**](FaxApi.html#get_fax_summary) | Get fax summary|
-|[**put_fax_document**](FaxApi.html#put_fax_document) | Update a fax document.|
-|[**put_fax_settings**](FaxApi.html#put_fax_settings) | Update/write organization config for given organization|
-{: class="table table-striped"}
+|[**delete_fax_document**](#delete_fax_document) | Delete a fax document.|
+|[**get_fax_document**](#get_fax_document) | Get a document.|
+|[**get_fax_document_content**](#get_fax_document_content) | Download a fax document.|
+|[**get_fax_documents**](#get_fax_documents) | Get a list of fax documents.|
+|[**get_fax_settings**](#get_fax_settings) | Get organization config for given organization|
+|[**get_fax_summary**](#get_fax_summary) | Get fax summary|
+|[**put_fax_document**](#put_fax_document) | Update a fax document.|
+|[**put_fax_settings**](#put_fax_settings) | Update/write organization config for given organization|
 
-<a name="delete_fax_document"></a>
 
-##  delete_fax_document(document_id)
 
+## delete_fax_document
+
+>  delete_fax_document(document_id)
 
 
 Delete a fax document.
@@ -59,16 +57,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **document_id** | **str**| Document ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (empty response body)
 
-<a name="get_fax_document"></a>
 
-## [**FaxDocument**](FaxDocument.html) get_fax_document(document_id)
+## get_fax_document
 
+> [**FaxDocument**](FaxDocument) get_fax_document(document_id)
 
 
 Get a document.
@@ -107,16 +104,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **document_id** | **str**| Document ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**FaxDocument**](FaxDocument.html)
+[**FaxDocument**](FaxDocument)
 
-<a name="get_fax_document_content"></a>
 
-## [**DownloadResponse**](DownloadResponse.html) get_fax_document_content(document_id)
+## get_fax_document_content
 
+> [**DownloadResponse**](DownloadResponse) get_fax_document_content(document_id)
 
 
 Download a fax document.
@@ -155,16 +151,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **document_id** | **str**| Document ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**DownloadResponse**](DownloadResponse.html)
+[**DownloadResponse**](DownloadResponse)
 
-<a name="get_fax_documents"></a>
 
-## [**FaxDocumentEntityListing**](FaxDocumentEntityListing.html) get_fax_documents(page_size=page_size, page_number=page_number)
+## get_fax_documents
 
+> [**FaxDocumentEntityListing**](FaxDocumentEntityListing) get_fax_documents(page_size=page_size, page_number=page_number)
 
 
 Get a list of fax documents.
@@ -205,16 +200,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
-{: class="table table-striped"}
 
 ### Return type
 
-[**FaxDocumentEntityListing**](FaxDocumentEntityListing.html)
+[**FaxDocumentEntityListing**](FaxDocumentEntityListing)
 
-<a name="get_fax_settings"></a>
 
-## [**FaxConfig**](FaxConfig.html) get_fax_settings()
+## get_fax_settings
 
+> [**FaxConfig**](FaxConfig) get_fax_settings()
 
 
 Get organization config for given organization
@@ -250,15 +244,14 @@ except ApiException as e:
 
 This endpoint does not need any parameters.
 
-
 ### Return type
 
-[**FaxConfig**](FaxConfig.html)
+[**FaxConfig**](FaxConfig)
 
-<a name="get_fax_summary"></a>
 
-## [**FaxSummary**](FaxSummary.html) get_fax_summary()
+## get_fax_summary
 
+> [**FaxSummary**](FaxSummary) get_fax_summary()
 
 
 Get fax summary
@@ -294,15 +287,14 @@ except ApiException as e:
 
 This endpoint does not need any parameters.
 
-
 ### Return type
 
-[**FaxSummary**](FaxSummary.html)
+[**FaxSummary**](FaxSummary)
 
-<a name="put_fax_document"></a>
 
-## [**FaxDocument**](FaxDocument.html) put_fax_document(document_id, body)
+## put_fax_document
 
+> [**FaxDocument**](FaxDocument) put_fax_document(document_id, body)
 
 
 Update a fax document.
@@ -342,17 +334,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **document_id** | **str**| Document ID |  |
-| **body** | [**FaxDocument**](FaxDocument.html)| Document |  |
-{: class="table table-striped"}
+| **body** | [**FaxDocument**](FaxDocument)| Document |  |
 
 ### Return type
 
-[**FaxDocument**](FaxDocument.html)
+[**FaxDocument**](FaxDocument)
 
-<a name="put_fax_settings"></a>
 
-## [**FaxConfig**](FaxConfig.html) put_fax_settings(body=body)
+## put_fax_settings
 
+> [**FaxConfig**](FaxConfig) put_fax_settings(body=body)
 
 
 Update/write organization config for given organization
@@ -391,10 +382,11 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**FaxConfig**](FaxConfig.html)|  | [optional]  |
-{: class="table table-striped"}
+| **body** | [**FaxConfig**](FaxConfig)|  | [optional]  |
 
 ### Return type
 
-[**FaxConfig**](FaxConfig.html)
+[**FaxConfig**](FaxConfig)
 
+
+_PureCloudPlatformClientV2 211.1.0_

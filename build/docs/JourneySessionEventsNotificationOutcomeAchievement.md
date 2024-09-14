@@ -1,14 +1,14 @@
----
-title: JourneySessionEventsNotificationOutcomeAchievement
----
+# JourneySessionEventsNotificationOutcomeAchievement
+
 ## JourneySessionEventsNotificationOutcomeAchievement
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **outcome** | [**JourneySessionEventsNotificationOutcome**](JourneySessionEventsNotificationOutcome.html) |  | [optional] |
-| **achieved_date** | **datetime** |  | [optional] |
-{: class="table table-striped"}
+| **outcome** | [JourneySessionEventsNotificationOutcome](JourneySessionEventsNotificationOutcome) |  | [optional] |
+| **achieved_date** | datetime |  | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

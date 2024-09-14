@@ -1,6 +1,4 @@
----
-title: FlowsApi
----
+# FlowsApi
 
 ## PureCloudPlatformClientV2.FlowsApi
 
@@ -8,18 +6,18 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 |Method | Description|
 |------------- | -------------|
-|[**get_analytics_flows_aggregates_job**](FlowsApi.html#get_analytics_flows_aggregates_job) | Get status for async query for Flow aggregates|
-|[**get_analytics_flows_aggregates_job_results**](FlowsApi.html#get_analytics_flows_aggregates_job_results) | Fetch a page of results for an async aggregates query|
-|[**post_analytics_flows_activity_query**](FlowsApi.html#post_analytics_flows_activity_query) | Query for flow activity observations|
-|[**post_analytics_flows_aggregates_jobs**](FlowsApi.html#post_analytics_flows_aggregates_jobs) | Query for flow aggregates asynchronously|
-|[**post_analytics_flows_aggregates_query**](FlowsApi.html#post_analytics_flows_aggregates_query) | Query for flow aggregates|
-|[**post_analytics_flows_observations_query**](FlowsApi.html#post_analytics_flows_observations_query) | Query for flow observations|
-{: class="table table-striped"}
+|[**get_analytics_flows_aggregates_job**](#get_analytics_flows_aggregates_job) | Get status for async query for Flow aggregates|
+|[**get_analytics_flows_aggregates_job_results**](#get_analytics_flows_aggregates_job_results) | Fetch a page of results for an async aggregates query|
+|[**post_analytics_flows_activity_query**](#post_analytics_flows_activity_query) | Query for flow activity observations|
+|[**post_analytics_flows_aggregates_jobs**](#post_analytics_flows_aggregates_jobs) | Query for flow aggregates asynchronously|
+|[**post_analytics_flows_aggregates_query**](#post_analytics_flows_aggregates_query) | Query for flow aggregates|
+|[**post_analytics_flows_observations_query**](#post_analytics_flows_observations_query) | Query for flow observations|
 
-<a name="get_analytics_flows_aggregates_job"></a>
 
-## [**AsyncQueryStatus**](AsyncQueryStatus.html) get_analytics_flows_aggregates_job(job_id)
 
+## get_analytics_flows_aggregates_job
+
+> [**AsyncQueryStatus**](AsyncQueryStatus) get_analytics_flows_aggregates_job(job_id)
 
 
 Get status for async query for Flow aggregates
@@ -61,16 +59,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **job_id** | **str**| jobId |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**AsyncQueryStatus**](AsyncQueryStatus.html)
+[**AsyncQueryStatus**](AsyncQueryStatus)
 
-<a name="get_analytics_flows_aggregates_job_results"></a>
 
-## [**FlowAsyncAggregateQueryResponse**](FlowAsyncAggregateQueryResponse.html) get_analytics_flows_aggregates_job_results(job_id, cursor=cursor)
+## get_analytics_flows_aggregates_job_results
 
+> [**FlowAsyncAggregateQueryResponse**](FlowAsyncAggregateQueryResponse) get_analytics_flows_aggregates_job_results(job_id, cursor=cursor)
 
 
 Fetch a page of results for an async aggregates query
@@ -114,16 +111,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **job_id** | **str**| jobId |  |
 | **cursor** | **str**| Cursor token to retrieve next page | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**FlowAsyncAggregateQueryResponse**](FlowAsyncAggregateQueryResponse.html)
+[**FlowAsyncAggregateQueryResponse**](FlowAsyncAggregateQueryResponse)
 
-<a name="post_analytics_flows_activity_query"></a>
 
-## [**FlowActivityResponse**](FlowActivityResponse.html) post_analytics_flows_activity_query(body, page_size=page_size, page_number=page_number)
+## post_analytics_flows_activity_query
 
+> [**FlowActivityResponse**](FlowActivityResponse) post_analytics_flows_activity_query(body, page_size=page_size, page_number=page_number)
 
 
 Query for flow activity observations
@@ -164,19 +160,18 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**FlowActivityQuery**](FlowActivityQuery.html)| query |  |
+| **body** | [**FlowActivityQuery**](FlowActivityQuery)| query |  |
 | **page_size** | **int**| The desired page size | [optional]  |
 | **page_number** | **int**| The desired page number | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**FlowActivityResponse**](FlowActivityResponse.html)
+[**FlowActivityResponse**](FlowActivityResponse)
 
-<a name="post_analytics_flows_aggregates_jobs"></a>
 
-## [**AsyncQueryResponse**](AsyncQueryResponse.html) post_analytics_flows_aggregates_jobs(body)
+## post_analytics_flows_aggregates_jobs
 
+> [**AsyncQueryResponse**](AsyncQueryResponse) post_analytics_flows_aggregates_jobs(body)
 
 
 Query for flow aggregates asynchronously
@@ -217,17 +212,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**FlowAsyncAggregationQuery**](FlowAsyncAggregationQuery.html)| query |  |
-{: class="table table-striped"}
+| **body** | [**FlowAsyncAggregationQuery**](FlowAsyncAggregationQuery)| query |  |
 
 ### Return type
 
-[**AsyncQueryResponse**](AsyncQueryResponse.html)
+[**AsyncQueryResponse**](AsyncQueryResponse)
 
-<a name="post_analytics_flows_aggregates_query"></a>
 
-## [**FlowAggregateQueryResponse**](FlowAggregateQueryResponse.html) post_analytics_flows_aggregates_query(body)
+## post_analytics_flows_aggregates_query
 
+> [**FlowAggregateQueryResponse**](FlowAggregateQueryResponse) post_analytics_flows_aggregates_query(body)
 
 
 Query for flow aggregates
@@ -266,17 +260,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**FlowAggregationQuery**](FlowAggregationQuery.html)| query |  |
-{: class="table table-striped"}
+| **body** | [**FlowAggregationQuery**](FlowAggregationQuery)| query |  |
 
 ### Return type
 
-[**FlowAggregateQueryResponse**](FlowAggregateQueryResponse.html)
+[**FlowAggregateQueryResponse**](FlowAggregateQueryResponse)
 
-<a name="post_analytics_flows_observations_query"></a>
 
-## [**FlowObservationQueryResponse**](FlowObservationQueryResponse.html) post_analytics_flows_observations_query(body)
+## post_analytics_flows_observations_query
 
+> [**FlowObservationQueryResponse**](FlowObservationQueryResponse) post_analytics_flows_observations_query(body)
 
 
 Query for flow observations
@@ -315,10 +308,11 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**FlowObservationQuery**](FlowObservationQuery.html)| query |  |
-{: class="table table-striped"}
+| **body** | [**FlowObservationQuery**](FlowObservationQuery)| query |  |
 
 ### Return type
 
-[**FlowObservationQueryResponse**](FlowObservationQueryResponse.html)
+[**FlowObservationQueryResponse**](FlowObservationQueryResponse)
 
+
+_PureCloudPlatformClientV2 211.1.0_

@@ -1,13 +1,13 @@
----
-title: MaxParticipants
----
+# MaxParticipants
+
 ## MaxParticipants
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **max_participants** | **int** | The maximum number of participants that are allowed on a conversation. | [optional] |
-{: class="table table-striped"}
+| **max_participants** | int | The maximum number of participants that are allowed on a conversation. | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

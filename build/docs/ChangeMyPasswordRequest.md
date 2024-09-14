@@ -1,14 +1,14 @@
----
-title: ChangeMyPasswordRequest
----
+# ChangeMyPasswordRequest
+
 ## ChangeMyPasswordRequest
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **new_password** | **str** | The new password | |
-| **old_password** | **str** | Your current password | |
-{: class="table table-striped"}
+| **new_password** | str | The new password | |
+| **old_password** | str | Your current password | |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

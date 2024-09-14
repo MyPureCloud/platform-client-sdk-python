@@ -1,14 +1,14 @@
----
-title: OpenMessageContent
----
+# OpenMessageContent
+
 ## OpenMessageContent
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **content_type** | **str** | Type of this content element. If contentType &#x3D; \&quot;Attachment\&quot; only one item is allowed. | |
-| **attachment** | [**ConversationContentAttachment**](ConversationContentAttachment.html) | Attachment content. | [optional] |
-{: class="table table-striped"}
+| **content_type** | str | Type of this content element. If contentType &#x3D; \&quot;Attachment\&quot; only one item is allowed. | |
+| **attachment** | [ConversationContentAttachment](ConversationContentAttachment) | Attachment content. | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

@@ -1,17 +1,17 @@
----
-title: JourneyWebEventsNotificationEventAction
----
+# JourneyWebEventsNotificationEventAction
+
 ## JourneyWebEventsNotificationEventAction
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **id** | **str** |  | [optional] |
-| **created_date** | **datetime** |  | [optional] |
-| **state** | **str** |  | [optional] |
-| **media_type** | **str** |  | [optional] |
-| **prompt** | **str** |  | [optional] |
-{: class="table table-striped"}
+| **id** | str |  | [optional] |
+| **created_date** | datetime |  | [optional] |
+| **state** | str |  | [optional] |
+| **media_type** | str |  | [optional] |
+| **prompt** | str |  | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

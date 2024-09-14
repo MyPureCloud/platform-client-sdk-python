@@ -1,14 +1,14 @@
----
-title: SuggestionEngagement
----
+# SuggestionEngagement
+
 ## SuggestionEngagement
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **engagement_type** | **str** | The type of engagement with the suggestion. | |
-| **feedback** | [**SuggestionFeedback**](SuggestionFeedback.html) | The given feedback on the suggestion, if any. | [optional] |
-{: class="table table-striped"}
+| **engagement_type** | str | The type of engagement with the suggestion. | |
+| **feedback** | [SuggestionFeedback](SuggestionFeedback) | The given feedback on the suggestion, if any. | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

@@ -1,14 +1,14 @@
----
-title: LearningAssessmentScoringRequest
----
+# LearningAssessmentScoringRequest
+
 ## LearningAssessmentScoringRequest
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **assessment_form** | [**AssessmentForm**](AssessmentForm.html) | The assessment form to score against | |
-| **answers** | [**AssessmentScoringSet**](AssessmentScoringSet.html) | The answers to score | |
-{: class="table table-striped"}
+| **assessment_form** | [AssessmentForm](AssessmentForm) | The assessment form to score against | |
+| **answers** | [AssessmentScoringSet](AssessmentScoringSet) | The answers to score | |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

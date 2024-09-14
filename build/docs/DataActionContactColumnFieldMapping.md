@@ -1,14 +1,14 @@
----
-title: DataActionContactColumnFieldMapping
----
+# DataActionContactColumnFieldMapping
+
 ## DataActionContactColumnFieldMapping
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **contact_column_name** | **str** | The name of a contact column whose data will be passed to the data action | |
-| **data_action_field** | **str** | The name of an input field from the data action that the contact column data will be passed to | |
-{: class="table table-striped"}
+| **contact_column_name** | str | The name of a contact column whose data will be passed to the data action | |
+| **data_action_field** | str | The name of an input field from the data action that the contact column data will be passed to | |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

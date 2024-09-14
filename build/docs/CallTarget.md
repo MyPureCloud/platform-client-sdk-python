@@ -1,14 +1,14 @@
----
-title: CallTarget
----
+# CallTarget
+
 ## CallTarget
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **type** | **str** | The type of call | [optional] |
-| **value** | **str** | The id of the station or an E.164 formatted phone number | [optional] |
-{: class="table table-striped"}
+| **type** | str | The type of call | [optional] |
+| **value** | str | The id of the station or an E.164 formatted phone number | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

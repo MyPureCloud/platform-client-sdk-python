@@ -1,6 +1,4 @@
----
-title: OAuthApi
----
+# OAuthApi
 
 ## PureCloudPlatformClientV2.OAuthApi
 
@@ -8,25 +6,25 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 |Method | Description|
 |------------- | -------------|
-|[**delete_oauth_client**](OAuthApi.html#delete_oauth_client) | Delete OAuth Client|
-|[**get_oauth_authorization**](OAuthApi.html#get_oauth_authorization) | Get a client that is authorized by the resource owner|
-|[**get_oauth_authorizations**](OAuthApi.html#get_oauth_authorizations) | List clients that have been authorized, requested, or revoked by the resource owner|
-|[**get_oauth_client**](OAuthApi.html#get_oauth_client) | Get OAuth Client|
-|[**get_oauth_client_usage_query_result**](OAuthApi.html#get_oauth_client_usage_query_result) | Get the results of a usage query|
-|[**get_oauth_client_usage_summary**](OAuthApi.html#get_oauth_client_usage_summary) | Get a summary of OAuth client API usage|
-|[**get_oauth_clients**](OAuthApi.html#get_oauth_clients) | The list of OAuth clients|
-|[**get_oauth_scope**](OAuthApi.html#get_oauth_scope) | An OAuth scope|
-|[**get_oauth_scopes**](OAuthApi.html#get_oauth_scopes) | The list of OAuth scopes|
-|[**post_oauth_client_secret**](OAuthApi.html#post_oauth_client_secret) | Regenerate Client Secret|
-|[**post_oauth_client_usage_query**](OAuthApi.html#post_oauth_client_usage_query) | Query for OAuth client API usage|
-|[**post_oauth_clients**](OAuthApi.html#post_oauth_clients) | Create OAuth client|
-|[**put_oauth_client**](OAuthApi.html#put_oauth_client) | Update OAuth Client|
-{: class="table table-striped"}
+|[**delete_oauth_client**](#delete_oauth_client) | Delete OAuth Client|
+|[**get_oauth_authorization**](#get_oauth_authorization) | Get a client that is authorized by the resource owner|
+|[**get_oauth_authorizations**](#get_oauth_authorizations) | List clients that have been authorized, requested, or revoked by the resource owner|
+|[**get_oauth_client**](#get_oauth_client) | Get OAuth Client|
+|[**get_oauth_client_usage_query_result**](#get_oauth_client_usage_query_result) | Get the results of a usage query|
+|[**get_oauth_client_usage_summary**](#get_oauth_client_usage_summary) | Get a summary of OAuth client API usage|
+|[**get_oauth_clients**](#get_oauth_clients) | The list of OAuth clients|
+|[**get_oauth_scope**](#get_oauth_scope) | An OAuth scope|
+|[**get_oauth_scopes**](#get_oauth_scopes) | The list of OAuth scopes|
+|[**post_oauth_client_secret**](#post_oauth_client_secret) | Regenerate Client Secret|
+|[**post_oauth_client_usage_query**](#post_oauth_client_usage_query) | Query for OAuth client API usage|
+|[**post_oauth_clients**](#post_oauth_clients) | Create OAuth client|
+|[**put_oauth_client**](#put_oauth_client) | Update OAuth Client|
 
-<a name="delete_oauth_client"></a>
 
-##  delete_oauth_client(client_id)
 
+## delete_oauth_client
+
+>  delete_oauth_client(client_id)
 
 
 Delete OAuth Client
@@ -65,16 +63,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **client_id** | **str**| Client ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (empty response body)
 
-<a name="get_oauth_authorization"></a>
 
-## [**OAuthAuthorization**](OAuthAuthorization.html) get_oauth_authorization(client_id, accept_language=accept_language)
+## get_oauth_authorization
 
+> [**OAuthAuthorization**](OAuthAuthorization) get_oauth_authorization(client_id, accept_language=accept_language)
 
 
 Get a client that is authorized by the resource owner
@@ -116,16 +113,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **client_id** | **str**| The ID of client |  |
 | **accept_language** | **str**| The language in which to display the client descriptions. | [optional] [default to &#39;en-us&#39;] |
-{: class="table table-striped"}
 
 ### Return type
 
-[**OAuthAuthorization**](OAuthAuthorization.html)
+[**OAuthAuthorization**](OAuthAuthorization)
 
-<a name="get_oauth_authorizations"></a>
 
-## [**OAuthAuthorizationListing**](OAuthAuthorizationListing.html) get_oauth_authorizations(accept_language=accept_language)
+## get_oauth_authorizations
 
+> [**OAuthAuthorizationListing**](OAuthAuthorizationListing) get_oauth_authorizations(accept_language=accept_language)
 
 
 List clients that have been authorized, requested, or revoked by the resource owner
@@ -165,16 +161,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **accept_language** | **str**| The language in which to display the client descriptions. | [optional] [default to &#39;en-us&#39;] |
-{: class="table table-striped"}
 
 ### Return type
 
-[**OAuthAuthorizationListing**](OAuthAuthorizationListing.html)
+[**OAuthAuthorizationListing**](OAuthAuthorizationListing)
 
-<a name="get_oauth_client"></a>
 
-## [**OAuthClient**](OAuthClient.html) get_oauth_client(client_id)
+## get_oauth_client
 
+> [**OAuthClient**](OAuthClient) get_oauth_client(client_id)
 
 
 Get OAuth Client
@@ -214,16 +209,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **client_id** | **str**| Client ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**OAuthClient**](OAuthClient.html)
+[**OAuthClient**](OAuthClient)
 
-<a name="get_oauth_client_usage_query_result"></a>
 
-## [**ApiUsageQueryResult**](ApiUsageQueryResult.html) get_oauth_client_usage_query_result(execution_id, client_id)
+## get_oauth_client_usage_query_result
 
+> [**ApiUsageQueryResult**](ApiUsageQueryResult) get_oauth_client_usage_query_result(execution_id, client_id)
 
 
 Get the results of a usage query
@@ -266,16 +260,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **execution_id** | **str**| ID of the query execution |  |
 | **client_id** | **str**| Client ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**ApiUsageQueryResult**](ApiUsageQueryResult.html)
+[**ApiUsageQueryResult**](ApiUsageQueryResult)
 
-<a name="get_oauth_client_usage_summary"></a>
 
-## [**UsageExecutionResult**](UsageExecutionResult.html) get_oauth_client_usage_summary(client_id, days=days)
+## get_oauth_client_usage_summary
 
+> [**UsageExecutionResult**](UsageExecutionResult) get_oauth_client_usage_summary(client_id, days=days)
 
 
 Get a summary of OAuth client API usage
@@ -320,16 +313,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **client_id** | **str**| Client ID |  |
 | **days** | **str**| Previous number of days to query | [optional] [default to &#39;7&#39;] |
-{: class="table table-striped"}
 
 ### Return type
 
-[**UsageExecutionResult**](UsageExecutionResult.html)
+[**UsageExecutionResult**](UsageExecutionResult)
 
-<a name="get_oauth_clients"></a>
 
-## [**OAuthClientEntityListing**](OAuthClientEntityListing.html) get_oauth_clients()
+## get_oauth_clients
 
+> [**OAuthClientEntityListing**](OAuthClientEntityListing) get_oauth_clients()
 
 
 The list of OAuth clients
@@ -366,15 +358,14 @@ except ApiException as e:
 
 This endpoint does not need any parameters.
 
-
 ### Return type
 
-[**OAuthClientEntityListing**](OAuthClientEntityListing.html)
+[**OAuthClientEntityListing**](OAuthClientEntityListing)
 
-<a name="get_oauth_scope"></a>
 
-## [**OAuthScope**](OAuthScope.html) get_oauth_scope(scope_id, accept_language=accept_language)
+## get_oauth_scope
 
+> [**OAuthScope**](OAuthScope) get_oauth_scope(scope_id, accept_language=accept_language)
 
 
 An OAuth scope
@@ -415,16 +406,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **scope_id** | **str**| Scope ID |  |
 | **accept_language** | **str**| The language with which to display the scope description. | [optional] [default to &#39;en-us&#39;] |
-{: class="table table-striped"}
 
 ### Return type
 
-[**OAuthScope**](OAuthScope.html)
+[**OAuthScope**](OAuthScope)
 
-<a name="get_oauth_scopes"></a>
 
-## [**OAuthScopeListing**](OAuthScopeListing.html) get_oauth_scopes(accept_language=accept_language)
+## get_oauth_scopes
 
+> [**OAuthScopeListing**](OAuthScopeListing) get_oauth_scopes(accept_language=accept_language)
 
 
 The list of OAuth scopes
@@ -463,16 +453,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **accept_language** | **str**| The language with which to display the scope descriptions. | [optional] [default to &#39;en-us&#39;] |
-{: class="table table-striped"}
 
 ### Return type
 
-[**OAuthScopeListing**](OAuthScopeListing.html)
+[**OAuthScopeListing**](OAuthScopeListing)
 
-<a name="post_oauth_client_secret"></a>
 
-## [**OAuthClient**](OAuthClient.html) post_oauth_client_secret(client_id)
+## post_oauth_client_secret
 
+> [**OAuthClient**](OAuthClient) post_oauth_client_secret(client_id)
 
 
 Regenerate Client Secret
@@ -514,16 +503,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **client_id** | **str**| Client ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**OAuthClient**](OAuthClient.html)
+[**OAuthClient**](OAuthClient)
 
-<a name="post_oauth_client_usage_query"></a>
 
-## [**UsageExecutionResult**](UsageExecutionResult.html) post_oauth_client_usage_query(client_id, body)
+## post_oauth_client_usage_query
 
+> [**UsageExecutionResult**](UsageExecutionResult) post_oauth_client_usage_query(client_id, body)
 
 
 Query for OAuth client API usage
@@ -567,17 +555,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **client_id** | **str**| Client ID |  |
-| **body** | [**ApiUsageClientQuery**](ApiUsageClientQuery.html)| Query |  |
-{: class="table table-striped"}
+| **body** | [**ApiUsageClientQuery**](ApiUsageClientQuery)| Query |  |
 
 ### Return type
 
-[**UsageExecutionResult**](UsageExecutionResult.html)
+[**UsageExecutionResult**](UsageExecutionResult)
 
-<a name="post_oauth_clients"></a>
 
-## [**OAuthClient**](OAuthClient.html) post_oauth_clients(body)
+## post_oauth_clients
 
+> [**OAuthClient**](OAuthClient) post_oauth_clients(body)
 
 
 Create OAuth client
@@ -618,17 +605,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**OAuthClientRequest**](OAuthClientRequest.html)| Client |  |
-{: class="table table-striped"}
+| **body** | [**OAuthClientRequest**](OAuthClientRequest)| Client |  |
 
 ### Return type
 
-[**OAuthClient**](OAuthClient.html)
+[**OAuthClient**](OAuthClient)
 
-<a name="put_oauth_client"></a>
 
-## [**OAuthClient**](OAuthClient.html) put_oauth_client(client_id, body)
+## put_oauth_client
 
+> [**OAuthClient**](OAuthClient) put_oauth_client(client_id, body)
 
 
 Update OAuth Client
@@ -669,10 +655,11 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **client_id** | **str**| Client ID |  |
-| **body** | [**OAuthClientRequest**](OAuthClientRequest.html)| Client |  |
-{: class="table table-striped"}
+| **body** | [**OAuthClientRequest**](OAuthClientRequest)| Client |  |
 
 ### Return type
 
-[**OAuthClient**](OAuthClient.html)
+[**OAuthClient**](OAuthClient)
 
+
+_PureCloudPlatformClientV2 211.1.0_

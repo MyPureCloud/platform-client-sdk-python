@@ -1,14 +1,14 @@
----
-title: LearningAssignmentRuleRunTopicLearningAssignmentRuleRunNotification
----
+# LearningAssignmentRuleRunTopicLearningAssignmentRuleRunNotification
+
 ## LearningAssignmentRuleRunTopicLearningAssignmentRuleRunNotification
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **entities** | [**list[LearningAssignmentRuleRunTopicLearningAssignmentsCreated]**](LearningAssignmentRuleRunTopicLearningAssignmentsCreated.html) |  | [optional] |
-| **total** | **int** |  | [optional] |
-{: class="table table-striped"}
+| **entities** | [list[LearningAssignmentRuleRunTopicLearningAssignmentsCreated]](LearningAssignmentRuleRunTopicLearningAssignmentsCreated) |  | [optional] |
+| **total** | int |  | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

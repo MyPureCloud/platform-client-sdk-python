@@ -1,20 +1,20 @@
----
-title: UserConversationsEventUserConversationSummary
----
+# UserConversationsEventUserConversationSummary
+
 ## UserConversationsEventUserConversationSummary
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **user_id** | **str** |  | [optional] |
-| **call** | [**UserConversationsEventMediaSummary**](UserConversationsEventMediaSummary.html) |  | [optional] |
-| **callback** | [**UserConversationsEventMediaSummary**](UserConversationsEventMediaSummary.html) |  | [optional] |
-| **email** | [**UserConversationsEventMediaSummary**](UserConversationsEventMediaSummary.html) |  | [optional] |
-| **message** | [**UserConversationsEventMediaSummary**](UserConversationsEventMediaSummary.html) |  | [optional] |
-| **chat** | [**UserConversationsEventMediaSummary**](UserConversationsEventMediaSummary.html) |  | [optional] |
-| **social_expression** | [**UserConversationsEventMediaSummary**](UserConversationsEventMediaSummary.html) |  | [optional] |
-| **video** | [**UserConversationsEventMediaSummary**](UserConversationsEventMediaSummary.html) |  | [optional] |
-{: class="table table-striped"}
+| **user_id** | str |  | [optional] |
+| **call** | [UserConversationsEventMediaSummary](UserConversationsEventMediaSummary) |  | [optional] |
+| **callback** | [UserConversationsEventMediaSummary](UserConversationsEventMediaSummary) |  | [optional] |
+| **email** | [UserConversationsEventMediaSummary](UserConversationsEventMediaSummary) |  | [optional] |
+| **message** | [UserConversationsEventMediaSummary](UserConversationsEventMediaSummary) |  | [optional] |
+| **chat** | [UserConversationsEventMediaSummary](UserConversationsEventMediaSummary) |  | [optional] |
+| **social_expression** | [UserConversationsEventMediaSummary](UserConversationsEventMediaSummary) |  | [optional] |
+| **video** | [UserConversationsEventMediaSummary](UserConversationsEventMediaSummary) |  | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

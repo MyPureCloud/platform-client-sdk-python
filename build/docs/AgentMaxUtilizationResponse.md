@@ -1,15 +1,15 @@
----
-title: AgentMaxUtilizationResponse
----
+# AgentMaxUtilizationResponse
+
 ## AgentMaxUtilizationResponse
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **utilization** | [**dict(str, MediaUtilization)**](MediaUtilization.html) | Map of media type to utilization settings. | [optional] |
-| **label_utilizations** | [**dict(str, LabelUtilizationResponse)**](LabelUtilizationResponse.html) | Map of label ids to utilization settings. | [optional] |
-| **level** | **str** |  | [optional] |
-{: class="table table-striped"}
+| **utilization** | [dict(str, MediaUtilization)](MediaUtilization) | Map of media type to utilization settings. | [optional] |
+| **label_utilizations** | [dict(str, LabelUtilizationResponse)](LabelUtilizationResponse) | Map of label ids to utilization settings. | [optional] |
+| **level** | str |  | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

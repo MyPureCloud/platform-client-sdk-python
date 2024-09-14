@@ -1,13 +1,13 @@
----
-title: BatchUserRoutingStatusEventRequest
----
+# BatchUserRoutingStatusEventRequest
+
 ## BatchUserRoutingStatusEventRequest
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **user_routing_status_events** | [**list[UserRoutingStatusEvent]**](UserRoutingStatusEvent.html) | UserRoutingStatus events for this batch | [optional] |
-{: class="table table-striped"}
+| **user_routing_status_events** | [list[UserRoutingStatusEvent]](UserRoutingStatusEvent) | UserRoutingStatus events for this batch | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

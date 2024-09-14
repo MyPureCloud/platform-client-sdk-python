@@ -1,15 +1,15 @@
----
-title: WebMessagingEvent
----
+# WebMessagingEvent
+
 ## WebMessagingEvent
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **event_type** | **str** | Type of this event element | |
-| **co_browse** | [**WebMessagingEventCoBrowse**](WebMessagingEventCoBrowse.html) | Cobrowse event. | [optional] |
-| **presence** | [**WebMessagingEventPresence**](WebMessagingEventPresence.html) | Presence event. | [optional] |
-{: class="table table-striped"}
+| **event_type** | str | Type of this event element | |
+| **co_browse** | [WebMessagingEventCoBrowse](WebMessagingEventCoBrowse) | Cobrowse event. | [optional] |
+| **presence** | [WebMessagingEventPresence](WebMessagingEventPresence) | Presence event. | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

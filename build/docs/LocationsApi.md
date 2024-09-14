@@ -1,6 +1,4 @@
----
-title: LocationsApi
----
+# LocationsApi
 
 ## PureCloudPlatformClientV2.LocationsApi
 
@@ -8,20 +6,20 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 |Method | Description|
 |------------- | -------------|
-|[**delete_location**](LocationsApi.html#delete_location) | Delete a location|
-|[**get_location**](LocationsApi.html#get_location) | Get Location by ID.|
-|[**get_location_sublocations**](LocationsApi.html#get_location_sublocations) | Get sublocations for location ID.|
-|[**get_locations**](LocationsApi.html#get_locations) | Get a list of all locations.|
-|[**get_locations_search**](LocationsApi.html#get_locations_search) | Search locations using the q64 value returned from a previous search|
-|[**patch_location**](LocationsApi.html#patch_location) | Update a location|
-|[**post_locations**](LocationsApi.html#post_locations) | Create a location|
-|[**post_locations_search**](LocationsApi.html#post_locations_search) | Search locations|
-{: class="table table-striped"}
+|[**delete_location**](#delete_location) | Delete a location|
+|[**get_location**](#get_location) | Get Location by ID.|
+|[**get_location_sublocations**](#get_location_sublocations) | Get sublocations for location ID.|
+|[**get_locations**](#get_locations) | Get a list of all locations.|
+|[**get_locations_search**](#get_locations_search) | Search locations using the q64 value returned from a previous search|
+|[**patch_location**](#patch_location) | Update a location|
+|[**post_locations**](#post_locations) | Create a location|
+|[**post_locations_search**](#post_locations_search) | Search locations|
 
-<a name="delete_location"></a>
 
-##  delete_location(location_id)
 
+## delete_location
+
+>  delete_location(location_id)
 
 
 Delete a location
@@ -60,16 +58,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **location_id** | **str**| Location ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (empty response body)
 
-<a name="get_location"></a>
 
-## [**LocationDefinition**](LocationDefinition.html) get_location(location_id, expand=expand)
+## get_location
 
+> [**LocationDefinition**](LocationDefinition) get_location(location_id, expand=expand)
 
 
 Get Location by ID.
@@ -109,17 +106,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **location_id** | **str**| Location ID |  |
-| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] <br />**Values**: images, addressVerificationDetails |
-{: class="table table-striped"}
+| **expand** | [**list[str]**](str)| Which fields, if any, to expand | [optional] <br />**Values**: images, addressVerificationDetails |
 
 ### Return type
 
-[**LocationDefinition**](LocationDefinition.html)
+[**LocationDefinition**](LocationDefinition)
 
-<a name="get_location_sublocations"></a>
 
-## [**LocationEntityListing**](LocationEntityListing.html) get_location_sublocations(location_id)
+## get_location_sublocations
 
+> [**LocationEntityListing**](LocationEntityListing) get_location_sublocations(location_id)
 
 
 Get sublocations for location ID.
@@ -158,16 +154,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **location_id** | **str**| Location ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**LocationEntityListing**](LocationEntityListing.html)
+[**LocationEntityListing**](LocationEntityListing)
 
-<a name="get_locations"></a>
 
-## [**LocationEntityListing**](LocationEntityListing.html) get_locations(page_size=page_size, page_number=page_number, id=id, sort_order=sort_order)
+## get_locations
 
+> [**LocationEntityListing**](LocationEntityListing) get_locations(page_size=page_size, page_number=page_number, id=id, sort_order=sort_order)
 
 
 Get a list of all locations.
@@ -210,18 +205,17 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
-| **id** | [**list[str]**](str.html)| id | [optional]  |
+| **id** | [**list[str]**](str)| id | [optional]  |
 | **sort_order** | **str**| Sort order | [optional] <br />**Values**: asc, desc |
-{: class="table table-striped"}
 
 ### Return type
 
-[**LocationEntityListing**](LocationEntityListing.html)
+[**LocationEntityListing**](LocationEntityListing)
 
-<a name="get_locations_search"></a>
 
-## [**LocationsSearchResponse**](LocationsSearchResponse.html) get_locations_search(q64, expand=expand)
+## get_locations_search
 
+> [**LocationsSearchResponse**](LocationsSearchResponse) get_locations_search(q64, expand=expand)
 
 
 Search locations using the q64 value returned from a previous search
@@ -261,17 +255,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **q64** | **str**| q64 |  |
-| **expand** | [**list[str]**](str.html)| Provides more details about a specified resource | [optional] <br />**Values**: images, addressVerificationDetails |
-{: class="table table-striped"}
+| **expand** | [**list[str]**](str)| Provides more details about a specified resource | [optional] <br />**Values**: images, addressVerificationDetails |
 
 ### Return type
 
-[**LocationsSearchResponse**](LocationsSearchResponse.html)
+[**LocationsSearchResponse**](LocationsSearchResponse)
 
-<a name="patch_location"></a>
 
-## [**LocationDefinition**](LocationDefinition.html) patch_location(location_id, body)
+## patch_location
 
+> [**LocationDefinition**](LocationDefinition) patch_location(location_id, body)
 
 
 Update a location
@@ -312,17 +305,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **location_id** | **str**| Location ID |  |
-| **body** | [**LocationUpdateDefinition**](LocationUpdateDefinition.html)| Location |  |
-{: class="table table-striped"}
+| **body** | [**LocationUpdateDefinition**](LocationUpdateDefinition)| Location |  |
 
 ### Return type
 
-[**LocationDefinition**](LocationDefinition.html)
+[**LocationDefinition**](LocationDefinition)
 
-<a name="post_locations"></a>
 
-## [**LocationDefinition**](LocationDefinition.html) post_locations(body)
+## post_locations
 
+> [**LocationDefinition**](LocationDefinition) post_locations(body)
 
 
 Create a location
@@ -361,17 +353,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**LocationCreateDefinition**](LocationCreateDefinition.html)| Location |  |
-{: class="table table-striped"}
+| **body** | [**LocationCreateDefinition**](LocationCreateDefinition)| Location |  |
 
 ### Return type
 
-[**LocationDefinition**](LocationDefinition.html)
+[**LocationDefinition**](LocationDefinition)
 
-<a name="post_locations_search"></a>
 
-## [**LocationsSearchResponse**](LocationsSearchResponse.html) post_locations_search(body)
+## post_locations_search
 
+> [**LocationsSearchResponse**](LocationsSearchResponse) post_locations_search(body)
 
 
 Search locations
@@ -409,10 +400,11 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**LocationSearchRequest**](LocationSearchRequest.html)| Search request options |  |
-{: class="table table-striped"}
+| **body** | [**LocationSearchRequest**](LocationSearchRequest)| Search request options |  |
 
 ### Return type
 
-[**LocationsSearchResponse**](LocationsSearchResponse.html)
+[**LocationsSearchResponse**](LocationsSearchResponse)
 
+
+_PureCloudPlatformClientV2 211.1.0_

@@ -1,14 +1,14 @@
----
-title: TeamActivityResponse
----
+# TeamActivityResponse
+
 ## TeamActivityResponse
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **results** | [**list[TeamActivityData]**](TeamActivityData.html) | Query results | [optional] |
-| **entity_id_dimension** | **str** | Dimension that is used as an entityId | [optional] |
-{: class="table table-striped"}
+| **results** | [list[TeamActivityData]](TeamActivityData) | Query results | [optional] |
+| **entity_id_dimension** | str | Dimension that is used as an entityId | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

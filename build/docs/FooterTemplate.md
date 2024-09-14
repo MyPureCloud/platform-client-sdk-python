@@ -1,14 +1,14 @@
----
-title: FooterTemplate
----
+# FooterTemplate
+
 ## FooterTemplate
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **type** | **str** | Specifies the type represented by Footer. | [optional] |
-| **applicable_resources** | **list[str]** | Specifies the canned response template where the footer can be used. | [optional] |
-{: class="table table-striped"}
+| **type** | str | Specifies the type represented by Footer. | [optional] |
+| **applicable_resources** | list[str] | Specifies the canned response template where the footer can be used. | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

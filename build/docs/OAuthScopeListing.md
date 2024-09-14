@@ -1,15 +1,15 @@
----
-title: OAuthScopeListing
----
+# OAuthScopeListing
+
 ## OAuthScopeListing
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **total** | **int** |  | [optional] |
-| **entities** | [**list[OAuthScope]**](OAuthScope.html) |  | [optional] |
-| **self_uri** | **str** |  | [optional] |
-{: class="table table-striped"}
+| **total** | int |  | [optional] |
+| **entities** | [list[OAuthScope]](OAuthScope) |  | [optional] |
+| **self_uri** | str |  | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

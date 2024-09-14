@@ -1,14 +1,14 @@
----
-title: DocumentBodyTableRowBlock
----
+# DocumentBodyTableRowBlock
+
 ## DocumentBodyTableRowBlock
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **cells** | [**list[DocumentBodyTableCellBlock]**](DocumentBodyTableCellBlock.html) | The list of cells for the table. | |
-| **properties** | [**DocumentBodyTableRowBlockProperties**](DocumentBodyTableRowBlockProperties.html) | The properties for the table rows. | [optional] |
-{: class="table table-striped"}
+| **cells** | [list[DocumentBodyTableCellBlock]](DocumentBodyTableCellBlock) | The list of cells for the table. | |
+| **properties** | [DocumentBodyTableRowBlockProperties](DocumentBodyTableRowBlockProperties) | The properties for the table rows. | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

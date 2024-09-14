@@ -1,15 +1,15 @@
----
-title: FieldConfigs
----
+# FieldConfigs
+
 ## FieldConfigs
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **org** | [**FieldConfig**](FieldConfig.html) |  | [optional] |
-| **person** | [**FieldConfig**](FieldConfig.html) |  | [optional] |
-| **group** | [**FieldConfig**](FieldConfig.html) |  | [optional] |
-{: class="table table-striped"}
+| **org** | [FieldConfig](FieldConfig) |  | [optional] |
+| **person** | [FieldConfig](FieldConfig) |  | [optional] |
+| **group** | [FieldConfig](FieldConfig) |  | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

@@ -1,13 +1,13 @@
----
-title: Category
----
+# Category
+
 ## Category
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **name** | **str** | Category name | [optional] |
-{: class="table table-striped"}
+| **name** | str | Category name | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

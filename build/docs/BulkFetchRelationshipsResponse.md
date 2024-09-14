@@ -1,15 +1,15 @@
----
-title: BulkFetchRelationshipsResponse
----
+# BulkFetchRelationshipsResponse
+
 ## BulkFetchRelationshipsResponse
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **results** | [**list[BulkResponseResultRelationshipEntity]**](BulkResponseResultRelationshipEntity.html) |  | [optional] |
-| **error_count** | **int** |  | [optional] |
-| **error_indexes** | **list[int]** |  | [optional] |
-{: class="table table-striped"}
+| **results** | [list[BulkResponseResultRelationshipEntity]](BulkResponseResultRelationshipEntity) |  | [optional] |
+| **error_count** | int |  | [optional] |
+| **error_indexes** | list[int] |  | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

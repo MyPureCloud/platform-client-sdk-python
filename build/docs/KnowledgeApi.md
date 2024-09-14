@@ -1,6 +1,4 @@
----
-title: KnowledgeApi
----
+# KnowledgeApi
 
 ## PureCloudPlatformClientV2.KnowledgeApi
 
@@ -8,111 +6,111 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 |Method | Description|
 |------------- | -------------|
-|[**delete_knowledge_knowledgebase**](KnowledgeApi.html#delete_knowledge_knowledgebase) | Delete knowledge base|
-|[**delete_knowledge_knowledgebase_category**](KnowledgeApi.html#delete_knowledge_knowledgebase_category) | Delete category|
-|[**delete_knowledge_knowledgebase_document**](KnowledgeApi.html#delete_knowledge_knowledgebase_document) | Delete document.|
-|[**delete_knowledge_knowledgebase_document_variation**](KnowledgeApi.html#delete_knowledge_knowledgebase_document_variation) | Delete a variation for a document.|
-|[**delete_knowledge_knowledgebase_export_job**](KnowledgeApi.html#delete_knowledge_knowledgebase_export_job) | Delete export job|
-|[**delete_knowledge_knowledgebase_import_job**](KnowledgeApi.html#delete_knowledge_knowledgebase_import_job) | Delete import job|
-|[**delete_knowledge_knowledgebase_label**](KnowledgeApi.html#delete_knowledge_knowledgebase_label) | Delete label|
-|[**delete_knowledge_knowledgebase_language_category**](KnowledgeApi.html#delete_knowledge_knowledgebase_language_category) | Delete category|
-|[**delete_knowledge_knowledgebase_language_document**](KnowledgeApi.html#delete_knowledge_knowledgebase_language_document) | Delete document|
-|[**delete_knowledge_knowledgebase_language_documents_import**](KnowledgeApi.html#delete_knowledge_knowledgebase_language_documents_import) | Delete import operation|
-|[**get_knowledge_guest_session_categories**](KnowledgeApi.html#get_knowledge_guest_session_categories) | Get categories|
-|[**get_knowledge_guest_session_document**](KnowledgeApi.html#get_knowledge_guest_session_document) | Get a knowledge document by ID.|
-|[**get_knowledge_guest_session_documents**](KnowledgeApi.html#get_knowledge_guest_session_documents) | Get documents.|
-|[**get_knowledge_knowledgebase**](KnowledgeApi.html#get_knowledge_knowledgebase) | Get knowledge base|
-|[**get_knowledge_knowledgebase_categories**](KnowledgeApi.html#get_knowledge_knowledgebase_categories) | Get categories|
-|[**get_knowledge_knowledgebase_category**](KnowledgeApi.html#get_knowledge_knowledgebase_category) | Get category|
-|[**get_knowledge_knowledgebase_document**](KnowledgeApi.html#get_knowledge_knowledgebase_document) | Get document.|
-|[**get_knowledge_knowledgebase_document_feedback**](KnowledgeApi.html#get_knowledge_knowledgebase_document_feedback) | Get a list of feedback records given on a document|
-|[**get_knowledge_knowledgebase_document_feedback_feedback_id**](KnowledgeApi.html#get_knowledge_knowledgebase_document_feedback_feedback_id) | Get a single feedback record given on a document|
-|[**get_knowledge_knowledgebase_document_variation**](KnowledgeApi.html#get_knowledge_knowledgebase_document_variation) | Get a variation for a document.|
-|[**get_knowledge_knowledgebase_document_variations**](KnowledgeApi.html#get_knowledge_knowledgebase_document_variations) | Get variations for a document.|
-|[**get_knowledge_knowledgebase_document_version**](KnowledgeApi.html#get_knowledge_knowledgebase_document_version) | Get document version.|
-|[**get_knowledge_knowledgebase_document_version_variation**](KnowledgeApi.html#get_knowledge_knowledgebase_document_version_variation) | Get variation for the given document version.|
-|[**get_knowledge_knowledgebase_document_version_variations**](KnowledgeApi.html#get_knowledge_knowledgebase_document_version_variations) | Get variations for the given document version.|
-|[**get_knowledge_knowledgebase_document_versions**](KnowledgeApi.html#get_knowledge_knowledgebase_document_versions) | Get document versions.|
-|[**get_knowledge_knowledgebase_documents**](KnowledgeApi.html#get_knowledge_knowledgebase_documents) | Get documents.|
-|[**get_knowledge_knowledgebase_export_job**](KnowledgeApi.html#get_knowledge_knowledgebase_export_job) | Get export job report|
-|[**get_knowledge_knowledgebase_import_job**](KnowledgeApi.html#get_knowledge_knowledgebase_import_job) | Get import job report|
-|[**get_knowledge_knowledgebase_label**](KnowledgeApi.html#get_knowledge_knowledgebase_label) | Get label|
-|[**get_knowledge_knowledgebase_labels**](KnowledgeApi.html#get_knowledge_knowledgebase_labels) | Get labels|
-|[**get_knowledge_knowledgebase_language_categories**](KnowledgeApi.html#get_knowledge_knowledgebase_language_categories) | Get categories|
-|[**get_knowledge_knowledgebase_language_category**](KnowledgeApi.html#get_knowledge_knowledgebase_language_category) | Get category|
-|[**get_knowledge_knowledgebase_language_document**](KnowledgeApi.html#get_knowledge_knowledgebase_language_document) | Get document|
-|[**get_knowledge_knowledgebase_language_document_upload**](KnowledgeApi.html#get_knowledge_knowledgebase_language_document_upload) | Get document content upload status|
-|[**get_knowledge_knowledgebase_language_documents**](KnowledgeApi.html#get_knowledge_knowledgebase_language_documents) | Get documents|
-|[**get_knowledge_knowledgebase_language_documents_import**](KnowledgeApi.html#get_knowledge_knowledgebase_language_documents_import) | Get import operation report|
-|[**get_knowledge_knowledgebase_language_training**](KnowledgeApi.html#get_knowledge_knowledgebase_language_training) | Get training detail|
-|[**get_knowledge_knowledgebase_language_trainings**](KnowledgeApi.html#get_knowledge_knowledgebase_language_trainings) | Get all trainings information for a knowledgebase|
-|[**get_knowledge_knowledgebase_operations**](KnowledgeApi.html#get_knowledge_knowledgebase_operations) | Get operations|
-|[**get_knowledge_knowledgebase_operations_users_query**](KnowledgeApi.html#get_knowledge_knowledgebase_operations_users_query) | Get ids of operation creator users and oauth clients|
-|[**get_knowledge_knowledgebase_parse_job**](KnowledgeApi.html#get_knowledge_knowledgebase_parse_job) | Get parse job report|
-|[**get_knowledge_knowledgebase_unanswered_group**](KnowledgeApi.html#get_knowledge_knowledgebase_unanswered_group) | Get knowledge base unanswered group for a particular groupId|
-|[**get_knowledge_knowledgebase_unanswered_group_phrasegroup**](KnowledgeApi.html#get_knowledge_knowledgebase_unanswered_group_phrasegroup) | Get knowledge base unanswered phrase group for a particular phraseGroupId|
-|[**get_knowledge_knowledgebase_unanswered_groups**](KnowledgeApi.html#get_knowledge_knowledgebase_unanswered_groups) | Get knowledge base unanswered groups|
-|[**get_knowledge_knowledgebase_uploads_urls_job**](KnowledgeApi.html#get_knowledge_knowledgebase_uploads_urls_job) | Get content upload from URL job status|
-|[**get_knowledge_knowledgebases**](KnowledgeApi.html#get_knowledge_knowledgebases) | Get knowledge bases|
-|[**patch_knowledge_guest_session_documents_search_search_id**](KnowledgeApi.html#patch_knowledge_guest_session_documents_search_search_id) | Update search result.|
-|[**patch_knowledge_knowledgebase**](KnowledgeApi.html#patch_knowledge_knowledgebase) | Update knowledge base|
-|[**patch_knowledge_knowledgebase_category**](KnowledgeApi.html#patch_knowledge_knowledgebase_category) | Update category|
-|[**patch_knowledge_knowledgebase_document**](KnowledgeApi.html#patch_knowledge_knowledgebase_document) | Update document.|
-|[**patch_knowledge_knowledgebase_document_feedback_feedback_id**](KnowledgeApi.html#patch_knowledge_knowledgebase_document_feedback_feedback_id) | Update feedback on a document|
-|[**patch_knowledge_knowledgebase_document_variation**](KnowledgeApi.html#patch_knowledge_knowledgebase_document_variation) | Update a variation for a document.|
-|[**patch_knowledge_knowledgebase_documents_search_search_id**](KnowledgeApi.html#patch_knowledge_knowledgebase_documents_search_search_id) | Update search result.|
-|[**patch_knowledge_knowledgebase_import_job**](KnowledgeApi.html#patch_knowledge_knowledgebase_import_job) | Start import job|
-|[**patch_knowledge_knowledgebase_label**](KnowledgeApi.html#patch_knowledge_knowledgebase_label) | Update label|
-|[**patch_knowledge_knowledgebase_language_category**](KnowledgeApi.html#patch_knowledge_knowledgebase_language_category) | Update category|
-|[**patch_knowledge_knowledgebase_language_document**](KnowledgeApi.html#patch_knowledge_knowledgebase_language_document) | Update document|
-|[**patch_knowledge_knowledgebase_language_documents**](KnowledgeApi.html#patch_knowledge_knowledgebase_language_documents) | Update documents collection|
-|[**patch_knowledge_knowledgebase_language_documents_import**](KnowledgeApi.html#patch_knowledge_knowledgebase_language_documents_import) | Start import operation|
-|[**patch_knowledge_knowledgebase_parse_job**](KnowledgeApi.html#patch_knowledge_knowledgebase_parse_job) | Send update to the parse operation|
-|[**patch_knowledge_knowledgebase_unanswered_group_phrasegroup**](KnowledgeApi.html#patch_knowledge_knowledgebase_unanswered_group_phrasegroup) | Update a Knowledge base unanswered phrase group|
-|[**post_knowledge_documentuploads**](KnowledgeApi.html#post_knowledge_documentuploads) | Creates a presigned URL for uploading a knowledge import file with a set of documents|
-|[**post_knowledge_guest_session_document_copies**](KnowledgeApi.html#post_knowledge_guest_session_document_copies) | Indicate that the document was copied by the user.|
-|[**post_knowledge_guest_session_document_feedback**](KnowledgeApi.html#post_knowledge_guest_session_document_feedback) | Give feedback on a document|
-|[**post_knowledge_guest_session_document_views**](KnowledgeApi.html#post_knowledge_guest_session_document_views) | Create view event for a document.|
-|[**post_knowledge_guest_session_documents_answers**](KnowledgeApi.html#post_knowledge_guest_session_documents_answers) | Answer documents.|
-|[**post_knowledge_guest_session_documents_presentations**](KnowledgeApi.html#post_knowledge_guest_session_documents_presentations) | Indicate that documents were presented to the user.|
-|[**post_knowledge_guest_session_documents_search**](KnowledgeApi.html#post_knowledge_guest_session_documents_search) | Search the documents in a guest session.|
-|[**post_knowledge_guest_session_documents_search_suggestions**](KnowledgeApi.html#post_knowledge_guest_session_documents_search_suggestions) | Query the knowledge documents to provide suggestions for auto completion.|
-|[**post_knowledge_guest_sessions**](KnowledgeApi.html#post_knowledge_guest_sessions) | Create guest session|
-|[**post_knowledge_knowledgebase_categories**](KnowledgeApi.html#post_knowledge_knowledgebase_categories) | Create new category|
-|[**post_knowledge_knowledgebase_document_copies**](KnowledgeApi.html#post_knowledge_knowledgebase_document_copies) | Indicate that the document was copied by the user.|
-|[**post_knowledge_knowledgebase_document_feedback**](KnowledgeApi.html#post_knowledge_knowledgebase_document_feedback) | Give feedback on a document|
-|[**post_knowledge_knowledgebase_document_variations**](KnowledgeApi.html#post_knowledge_knowledgebase_document_variations) | Create a variation for a document.|
-|[**post_knowledge_knowledgebase_document_versions**](KnowledgeApi.html#post_knowledge_knowledgebase_document_versions) | Creates or restores a document version.|
-|[**post_knowledge_knowledgebase_document_views**](KnowledgeApi.html#post_knowledge_knowledgebase_document_views) | Create view for a document.|
-|[**post_knowledge_knowledgebase_documents**](KnowledgeApi.html#post_knowledge_knowledgebase_documents) | Create document.|
-|[**post_knowledge_knowledgebase_documents_answers**](KnowledgeApi.html#post_knowledge_knowledgebase_documents_answers) | Answer documents.|
-|[**post_knowledge_knowledgebase_documents_bulk_remove**](KnowledgeApi.html#post_knowledge_knowledgebase_documents_bulk_remove) | Bulk remove documents.|
-|[**post_knowledge_knowledgebase_documents_bulk_update**](KnowledgeApi.html#post_knowledge_knowledgebase_documents_bulk_update) | Bulk update documents.|
-|[**post_knowledge_knowledgebase_documents_presentations**](KnowledgeApi.html#post_knowledge_knowledgebase_documents_presentations) | Indicate that documents were presented to the user.|
-|[**post_knowledge_knowledgebase_documents_query**](KnowledgeApi.html#post_knowledge_knowledgebase_documents_query) | Query for knowledge documents.|
-|[**post_knowledge_knowledgebase_documents_search**](KnowledgeApi.html#post_knowledge_knowledgebase_documents_search) | Search the documents in a knowledge base.|
-|[**post_knowledge_knowledgebase_documents_search_suggestions**](KnowledgeApi.html#post_knowledge_knowledgebase_documents_search_suggestions) | Query the knowledge documents to provide suggestions for auto completion.|
-|[**post_knowledge_knowledgebase_documents_versions_bulk_add**](KnowledgeApi.html#post_knowledge_knowledgebase_documents_versions_bulk_add) | Bulk add document versions.|
-|[**post_knowledge_knowledgebase_export_jobs**](KnowledgeApi.html#post_knowledge_knowledgebase_export_jobs) | Create export job|
-|[**post_knowledge_knowledgebase_import_jobs**](KnowledgeApi.html#post_knowledge_knowledgebase_import_jobs) | Create import job|
-|[**post_knowledge_knowledgebase_labels**](KnowledgeApi.html#post_knowledge_knowledgebase_labels) | Create new label|
-|[**post_knowledge_knowledgebase_language_categories**](KnowledgeApi.html#post_knowledge_knowledgebase_language_categories) | Create new category|
-|[**post_knowledge_knowledgebase_language_document_uploads**](KnowledgeApi.html#post_knowledge_knowledgebase_language_document_uploads) | Upload Article Content|
-|[**post_knowledge_knowledgebase_language_documents**](KnowledgeApi.html#post_knowledge_knowledgebase_language_documents) | Create document|
-|[**post_knowledge_knowledgebase_language_documents_imports**](KnowledgeApi.html#post_knowledge_knowledgebase_language_documents_imports) | Create import operation|
-|[**post_knowledge_knowledgebase_language_training_promote**](KnowledgeApi.html#post_knowledge_knowledgebase_language_training_promote) | Promote trained documents from draft state to active.|
-|[**post_knowledge_knowledgebase_language_trainings**](KnowledgeApi.html#post_knowledge_knowledgebase_language_trainings) | Trigger training|
-|[**post_knowledge_knowledgebase_parse_job_import**](KnowledgeApi.html#post_knowledge_knowledgebase_parse_job_import) | Import the parsed articles|
-|[**post_knowledge_knowledgebase_parse_jobs**](KnowledgeApi.html#post_knowledge_knowledgebase_parse_jobs) | Create parse job|
-|[**post_knowledge_knowledgebase_search**](KnowledgeApi.html#post_knowledge_knowledgebase_search) | Search Documents|
-|[**post_knowledge_knowledgebase_uploads_urls_jobs**](KnowledgeApi.html#post_knowledge_knowledgebase_uploads_urls_jobs) | Create content upload from URL job|
-|[**post_knowledge_knowledgebases**](KnowledgeApi.html#post_knowledge_knowledgebases) | Create new knowledge base|
-{: class="table table-striped"}
+|[**delete_knowledge_knowledgebase**](#delete_knowledge_knowledgebase) | Delete knowledge base|
+|[**delete_knowledge_knowledgebase_category**](#delete_knowledge_knowledgebase_category) | Delete category|
+|[**delete_knowledge_knowledgebase_document**](#delete_knowledge_knowledgebase_document) | Delete document.|
+|[**delete_knowledge_knowledgebase_document_variation**](#delete_knowledge_knowledgebase_document_variation) | Delete a variation for a document.|
+|[**delete_knowledge_knowledgebase_export_job**](#delete_knowledge_knowledgebase_export_job) | Delete export job|
+|[**delete_knowledge_knowledgebase_import_job**](#delete_knowledge_knowledgebase_import_job) | Delete import job|
+|[**delete_knowledge_knowledgebase_label**](#delete_knowledge_knowledgebase_label) | Delete label|
+|[**delete_knowledge_knowledgebase_language_category**](#delete_knowledge_knowledgebase_language_category) | Delete category|
+|[**delete_knowledge_knowledgebase_language_document**](#delete_knowledge_knowledgebase_language_document) | Delete document|
+|[**delete_knowledge_knowledgebase_language_documents_import**](#delete_knowledge_knowledgebase_language_documents_import) | Delete import operation|
+|[**get_knowledge_guest_session_categories**](#get_knowledge_guest_session_categories) | Get categories|
+|[**get_knowledge_guest_session_document**](#get_knowledge_guest_session_document) | Get a knowledge document by ID.|
+|[**get_knowledge_guest_session_documents**](#get_knowledge_guest_session_documents) | Get documents.|
+|[**get_knowledge_knowledgebase**](#get_knowledge_knowledgebase) | Get knowledge base|
+|[**get_knowledge_knowledgebase_categories**](#get_knowledge_knowledgebase_categories) | Get categories|
+|[**get_knowledge_knowledgebase_category**](#get_knowledge_knowledgebase_category) | Get category|
+|[**get_knowledge_knowledgebase_document**](#get_knowledge_knowledgebase_document) | Get document.|
+|[**get_knowledge_knowledgebase_document_feedback**](#get_knowledge_knowledgebase_document_feedback) | Get a list of feedback records given on a document|
+|[**get_knowledge_knowledgebase_document_feedback_feedback_id**](#get_knowledge_knowledgebase_document_feedback_feedback_id) | Get a single feedback record given on a document|
+|[**get_knowledge_knowledgebase_document_variation**](#get_knowledge_knowledgebase_document_variation) | Get a variation for a document.|
+|[**get_knowledge_knowledgebase_document_variations**](#get_knowledge_knowledgebase_document_variations) | Get variations for a document.|
+|[**get_knowledge_knowledgebase_document_version**](#get_knowledge_knowledgebase_document_version) | Get document version.|
+|[**get_knowledge_knowledgebase_document_version_variation**](#get_knowledge_knowledgebase_document_version_variation) | Get variation for the given document version.|
+|[**get_knowledge_knowledgebase_document_version_variations**](#get_knowledge_knowledgebase_document_version_variations) | Get variations for the given document version.|
+|[**get_knowledge_knowledgebase_document_versions**](#get_knowledge_knowledgebase_document_versions) | Get document versions.|
+|[**get_knowledge_knowledgebase_documents**](#get_knowledge_knowledgebase_documents) | Get documents.|
+|[**get_knowledge_knowledgebase_export_job**](#get_knowledge_knowledgebase_export_job) | Get export job report|
+|[**get_knowledge_knowledgebase_import_job**](#get_knowledge_knowledgebase_import_job) | Get import job report|
+|[**get_knowledge_knowledgebase_label**](#get_knowledge_knowledgebase_label) | Get label|
+|[**get_knowledge_knowledgebase_labels**](#get_knowledge_knowledgebase_labels) | Get labels|
+|[**get_knowledge_knowledgebase_language_categories**](#get_knowledge_knowledgebase_language_categories) | Get categories|
+|[**get_knowledge_knowledgebase_language_category**](#get_knowledge_knowledgebase_language_category) | Get category|
+|[**get_knowledge_knowledgebase_language_document**](#get_knowledge_knowledgebase_language_document) | Get document|
+|[**get_knowledge_knowledgebase_language_document_upload**](#get_knowledge_knowledgebase_language_document_upload) | Get document content upload status|
+|[**get_knowledge_knowledgebase_language_documents**](#get_knowledge_knowledgebase_language_documents) | Get documents|
+|[**get_knowledge_knowledgebase_language_documents_import**](#get_knowledge_knowledgebase_language_documents_import) | Get import operation report|
+|[**get_knowledge_knowledgebase_language_training**](#get_knowledge_knowledgebase_language_training) | Get training detail|
+|[**get_knowledge_knowledgebase_language_trainings**](#get_knowledge_knowledgebase_language_trainings) | Get all trainings information for a knowledgebase|
+|[**get_knowledge_knowledgebase_operations**](#get_knowledge_knowledgebase_operations) | Get operations|
+|[**get_knowledge_knowledgebase_operations_users_query**](#get_knowledge_knowledgebase_operations_users_query) | Get ids of operation creator users and oauth clients|
+|[**get_knowledge_knowledgebase_parse_job**](#get_knowledge_knowledgebase_parse_job) | Get parse job report|
+|[**get_knowledge_knowledgebase_unanswered_group**](#get_knowledge_knowledgebase_unanswered_group) | Get knowledge base unanswered group for a particular groupId|
+|[**get_knowledge_knowledgebase_unanswered_group_phrasegroup**](#get_knowledge_knowledgebase_unanswered_group_phrasegroup) | Get knowledge base unanswered phrase group for a particular phraseGroupId|
+|[**get_knowledge_knowledgebase_unanswered_groups**](#get_knowledge_knowledgebase_unanswered_groups) | Get knowledge base unanswered groups|
+|[**get_knowledge_knowledgebase_uploads_urls_job**](#get_knowledge_knowledgebase_uploads_urls_job) | Get content upload from URL job status|
+|[**get_knowledge_knowledgebases**](#get_knowledge_knowledgebases) | Get knowledge bases|
+|[**patch_knowledge_guest_session_documents_search_search_id**](#patch_knowledge_guest_session_documents_search_search_id) | Update search result.|
+|[**patch_knowledge_knowledgebase**](#patch_knowledge_knowledgebase) | Update knowledge base|
+|[**patch_knowledge_knowledgebase_category**](#patch_knowledge_knowledgebase_category) | Update category|
+|[**patch_knowledge_knowledgebase_document**](#patch_knowledge_knowledgebase_document) | Update document.|
+|[**patch_knowledge_knowledgebase_document_feedback_feedback_id**](#patch_knowledge_knowledgebase_document_feedback_feedback_id) | Update feedback on a document|
+|[**patch_knowledge_knowledgebase_document_variation**](#patch_knowledge_knowledgebase_document_variation) | Update a variation for a document.|
+|[**patch_knowledge_knowledgebase_documents_search_search_id**](#patch_knowledge_knowledgebase_documents_search_search_id) | Update search result.|
+|[**patch_knowledge_knowledgebase_import_job**](#patch_knowledge_knowledgebase_import_job) | Start import job|
+|[**patch_knowledge_knowledgebase_label**](#patch_knowledge_knowledgebase_label) | Update label|
+|[**patch_knowledge_knowledgebase_language_category**](#patch_knowledge_knowledgebase_language_category) | Update category|
+|[**patch_knowledge_knowledgebase_language_document**](#patch_knowledge_knowledgebase_language_document) | Update document|
+|[**patch_knowledge_knowledgebase_language_documents**](#patch_knowledge_knowledgebase_language_documents) | Update documents collection|
+|[**patch_knowledge_knowledgebase_language_documents_import**](#patch_knowledge_knowledgebase_language_documents_import) | Start import operation|
+|[**patch_knowledge_knowledgebase_parse_job**](#patch_knowledge_knowledgebase_parse_job) | Send update to the parse operation|
+|[**patch_knowledge_knowledgebase_unanswered_group_phrasegroup**](#patch_knowledge_knowledgebase_unanswered_group_phrasegroup) | Update a Knowledge base unanswered phrase group|
+|[**post_knowledge_documentuploads**](#post_knowledge_documentuploads) | Creates a presigned URL for uploading a knowledge import file with a set of documents|
+|[**post_knowledge_guest_session_document_copies**](#post_knowledge_guest_session_document_copies) | Indicate that the document was copied by the user.|
+|[**post_knowledge_guest_session_document_feedback**](#post_knowledge_guest_session_document_feedback) | Give feedback on a document|
+|[**post_knowledge_guest_session_document_views**](#post_knowledge_guest_session_document_views) | Create view event for a document.|
+|[**post_knowledge_guest_session_documents_answers**](#post_knowledge_guest_session_documents_answers) | Answer documents.|
+|[**post_knowledge_guest_session_documents_presentations**](#post_knowledge_guest_session_documents_presentations) | Indicate that documents were presented to the user.|
+|[**post_knowledge_guest_session_documents_search**](#post_knowledge_guest_session_documents_search) | Search the documents in a guest session.|
+|[**post_knowledge_guest_session_documents_search_suggestions**](#post_knowledge_guest_session_documents_search_suggestions) | Query the knowledge documents to provide suggestions for auto completion.|
+|[**post_knowledge_guest_sessions**](#post_knowledge_guest_sessions) | Create guest session|
+|[**post_knowledge_knowledgebase_categories**](#post_knowledge_knowledgebase_categories) | Create new category|
+|[**post_knowledge_knowledgebase_document_copies**](#post_knowledge_knowledgebase_document_copies) | Indicate that the document was copied by the user.|
+|[**post_knowledge_knowledgebase_document_feedback**](#post_knowledge_knowledgebase_document_feedback) | Give feedback on a document|
+|[**post_knowledge_knowledgebase_document_variations**](#post_knowledge_knowledgebase_document_variations) | Create a variation for a document.|
+|[**post_knowledge_knowledgebase_document_versions**](#post_knowledge_knowledgebase_document_versions) | Creates or restores a document version.|
+|[**post_knowledge_knowledgebase_document_views**](#post_knowledge_knowledgebase_document_views) | Create view for a document.|
+|[**post_knowledge_knowledgebase_documents**](#post_knowledge_knowledgebase_documents) | Create document.|
+|[**post_knowledge_knowledgebase_documents_answers**](#post_knowledge_knowledgebase_documents_answers) | Answer documents.|
+|[**post_knowledge_knowledgebase_documents_bulk_remove**](#post_knowledge_knowledgebase_documents_bulk_remove) | Bulk remove documents.|
+|[**post_knowledge_knowledgebase_documents_bulk_update**](#post_knowledge_knowledgebase_documents_bulk_update) | Bulk update documents.|
+|[**post_knowledge_knowledgebase_documents_presentations**](#post_knowledge_knowledgebase_documents_presentations) | Indicate that documents were presented to the user.|
+|[**post_knowledge_knowledgebase_documents_query**](#post_knowledge_knowledgebase_documents_query) | Query for knowledge documents.|
+|[**post_knowledge_knowledgebase_documents_search**](#post_knowledge_knowledgebase_documents_search) | Search the documents in a knowledge base.|
+|[**post_knowledge_knowledgebase_documents_search_suggestions**](#post_knowledge_knowledgebase_documents_search_suggestions) | Query the knowledge documents to provide suggestions for auto completion.|
+|[**post_knowledge_knowledgebase_documents_versions_bulk_add**](#post_knowledge_knowledgebase_documents_versions_bulk_add) | Bulk add document versions.|
+|[**post_knowledge_knowledgebase_export_jobs**](#post_knowledge_knowledgebase_export_jobs) | Create export job|
+|[**post_knowledge_knowledgebase_import_jobs**](#post_knowledge_knowledgebase_import_jobs) | Create import job|
+|[**post_knowledge_knowledgebase_labels**](#post_knowledge_knowledgebase_labels) | Create new label|
+|[**post_knowledge_knowledgebase_language_categories**](#post_knowledge_knowledgebase_language_categories) | Create new category|
+|[**post_knowledge_knowledgebase_language_document_uploads**](#post_knowledge_knowledgebase_language_document_uploads) | Upload Article Content|
+|[**post_knowledge_knowledgebase_language_documents**](#post_knowledge_knowledgebase_language_documents) | Create document|
+|[**post_knowledge_knowledgebase_language_documents_imports**](#post_knowledge_knowledgebase_language_documents_imports) | Create import operation|
+|[**post_knowledge_knowledgebase_language_training_promote**](#post_knowledge_knowledgebase_language_training_promote) | Promote trained documents from draft state to active.|
+|[**post_knowledge_knowledgebase_language_trainings**](#post_knowledge_knowledgebase_language_trainings) | Trigger training|
+|[**post_knowledge_knowledgebase_parse_job_import**](#post_knowledge_knowledgebase_parse_job_import) | Import the parsed articles|
+|[**post_knowledge_knowledgebase_parse_jobs**](#post_knowledge_knowledgebase_parse_jobs) | Create parse job|
+|[**post_knowledge_knowledgebase_search**](#post_knowledge_knowledgebase_search) | Search Documents|
+|[**post_knowledge_knowledgebase_uploads_urls_jobs**](#post_knowledge_knowledgebase_uploads_urls_jobs) | Create content upload from URL job|
+|[**post_knowledge_knowledgebases**](#post_knowledge_knowledgebases) | Create new knowledge base|
 
-<a name="delete_knowledge_knowledgebase"></a>
 
-## [**KnowledgeBase**](KnowledgeBase.html) delete_knowledge_knowledgebase(knowledge_base_id)
 
+## delete_knowledge_knowledgebase
+
+> [**KnowledgeBase**](KnowledgeBase) delete_knowledge_knowledgebase(knowledge_base_id)
 
 
 Delete knowledge base
@@ -152,16 +150,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **knowledge_base_id** | **str**| Knowledge base ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**KnowledgeBase**](KnowledgeBase.html)
+[**KnowledgeBase**](KnowledgeBase)
 
-<a name="delete_knowledge_knowledgebase_category"></a>
 
-## [**CategoryResponse**](CategoryResponse.html) delete_knowledge_knowledgebase_category(knowledge_base_id, category_id)
+## delete_knowledge_knowledgebase_category
 
+> [**CategoryResponse**](CategoryResponse) delete_knowledge_knowledgebase_category(knowledge_base_id, category_id)
 
 
 Delete category
@@ -203,16 +200,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **knowledge_base_id** | **str**| Knowledge base ID |  |
 | **category_id** | **str**| Category ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**CategoryResponse**](CategoryResponse.html)
+[**CategoryResponse**](CategoryResponse)
 
-<a name="delete_knowledge_knowledgebase_document"></a>
 
-##  delete_knowledge_knowledgebase_document(knowledge_base_id, document_id)
+## delete_knowledge_knowledgebase_document
 
+>  delete_knowledge_knowledgebase_document(knowledge_base_id, document_id)
 
 
 Delete document.
@@ -253,16 +249,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **knowledge_base_id** | **str**| Knowledge base ID. |  |
 | **document_id** | **str**| Document ID. |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (empty response body)
 
-<a name="delete_knowledge_knowledgebase_document_variation"></a>
 
-##  delete_knowledge_knowledgebase_document_variation(document_variation_id, document_id, knowledge_base_id)
+## delete_knowledge_knowledgebase_document_variation
 
+>  delete_knowledge_knowledgebase_document_variation(document_variation_id, document_id, knowledge_base_id)
 
 
 Delete a variation for a document.
@@ -306,16 +301,15 @@ except ApiException as e:
 | **document_variation_id** | **str**| Globally unique identifier for a document variation. |  |
 | **document_id** | **str**| Globally unique identifier for a document. |  |
 | **knowledge_base_id** | **str**| Globally unique identifier for a knowledge base. |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (empty response body)
 
-<a name="delete_knowledge_knowledgebase_export_job"></a>
 
-##  delete_knowledge_knowledgebase_export_job(knowledge_base_id, export_job_id)
+## delete_knowledge_knowledgebase_export_job
 
+>  delete_knowledge_knowledgebase_export_job(knowledge_base_id, export_job_id)
 
 
 Delete export job
@@ -356,16 +350,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **knowledge_base_id** | **str**| Knowledge base ID |  |
 | **export_job_id** | **str**| Export job ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (empty response body)
 
-<a name="delete_knowledge_knowledgebase_import_job"></a>
 
-##  delete_knowledge_knowledgebase_import_job(knowledge_base_id, import_job_id)
+## delete_knowledge_knowledgebase_import_job
 
+>  delete_knowledge_knowledgebase_import_job(knowledge_base_id, import_job_id)
 
 
 Delete import job
@@ -406,16 +399,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **knowledge_base_id** | **str**| Knowledge base ID |  |
 | **import_job_id** | **str**| Import job ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (empty response body)
 
-<a name="delete_knowledge_knowledgebase_label"></a>
 
-## [**LabelResponse**](LabelResponse.html) delete_knowledge_knowledgebase_label(knowledge_base_id, label_id)
+## delete_knowledge_knowledgebase_label
 
+> [**LabelResponse**](LabelResponse) delete_knowledge_knowledgebase_label(knowledge_base_id, label_id)
 
 
 Delete label
@@ -457,17 +449,19 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **knowledge_base_id** | **str**| Knowledge base ID |  |
 | **label_id** | **str**| Label ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**LabelResponse**](LabelResponse.html)
+[**LabelResponse**](LabelResponse)
 
-<a name="delete_knowledge_knowledgebase_language_category"></a>
 
-## [**KnowledgeCategory**](KnowledgeCategory.html) delete_knowledge_knowledgebase_language_category(category_id, knowledge_base_id, language_code)
+## delete_knowledge_knowledgebase_language_category
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+> [**KnowledgeCategory**](KnowledgeCategory) delete_knowledge_knowledgebase_language_category(category_id, knowledge_base_id, language_code)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 Delete category
 
@@ -510,17 +504,19 @@ except ApiException as e:
 | **category_id** | **str**| Category ID |  |
 | **knowledge_base_id** | **str**| Knowledge base ID |  |
 | **language_code** | **str**| Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, en-CA, en-HK, en-IN, en-IE, en-NZ, en-PH, en-SG, en-ZA, de-DE, de-AT, de-CH, es-AR, es-CO, es-MX, es-US, es-ES, fr-FR, fr-BE, fr-CA, fr-CH, pt-BR, pt-PT, nl-NL, nl-BE, it-IT, ca-ES, tr-TR, sv-SE, fi-FI, nb-NO, da-DK, ja-JP, ar-AE, zh-CN, zh-TW, zh-HK, ko-KR, pl-PL, hi-IN, th-TH, hu-HU, vi-VN, uk-UA |
-{: class="table table-striped"}
 
 ### Return type
 
-[**KnowledgeCategory**](KnowledgeCategory.html)
+[**KnowledgeCategory**](KnowledgeCategory)
 
-<a name="delete_knowledge_knowledgebase_language_document"></a>
 
-## [**KnowledgeDocument**](KnowledgeDocument.html) delete_knowledge_knowledgebase_language_document(document_id, knowledge_base_id, language_code)
+## delete_knowledge_knowledgebase_language_document
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+> [**KnowledgeDocument**](KnowledgeDocument) delete_knowledge_knowledgebase_language_document(document_id, knowledge_base_id, language_code)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 Delete document
 
@@ -563,17 +559,19 @@ except ApiException as e:
 | **document_id** | **str**| Document ID |  |
 | **knowledge_base_id** | **str**| Knowledge base ID |  |
 | **language_code** | **str**| Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, en-CA, en-HK, en-IN, en-IE, en-NZ, en-PH, en-SG, en-ZA, de-DE, de-AT, de-CH, es-AR, es-CO, es-MX, es-US, es-ES, fr-FR, fr-BE, fr-CA, fr-CH, pt-BR, pt-PT, nl-NL, nl-BE, it-IT, ca-ES, tr-TR, sv-SE, fi-FI, nb-NO, da-DK, ja-JP, ar-AE, zh-CN, zh-TW, zh-HK, ko-KR, pl-PL, hi-IN, th-TH, hu-HU, vi-VN, uk-UA |
-{: class="table table-striped"}
 
 ### Return type
 
-[**KnowledgeDocument**](KnowledgeDocument.html)
+[**KnowledgeDocument**](KnowledgeDocument)
 
-<a name="delete_knowledge_knowledgebase_language_documents_import"></a>
 
-##  delete_knowledge_knowledgebase_language_documents_import(knowledge_base_id, language_code, import_id)
+## delete_knowledge_knowledgebase_language_documents_import
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+>  delete_knowledge_knowledgebase_language_documents_import(knowledge_base_id, language_code, import_id)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 Delete import operation
 
@@ -615,16 +613,15 @@ except ApiException as e:
 | **knowledge_base_id** | **str**| Knowledge base ID |  |
 | **language_code** | **str**| Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, en-CA, en-HK, en-IN, en-IE, en-NZ, en-PH, en-SG, en-ZA, de-DE, de-AT, de-CH, es-AR, es-CO, es-MX, es-US, es-ES, fr-FR, fr-BE, fr-CA, fr-CH, pt-BR, pt-PT, nl-NL, nl-BE, it-IT, ca-ES, tr-TR, sv-SE, fi-FI, nb-NO, da-DK, ja-JP, ar-AE, zh-CN, zh-TW, zh-HK, ko-KR, pl-PL, hi-IN, th-TH, hu-HU, vi-VN, uk-UA |
 | **import_id** | **str**| Import ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (empty response body)
 
-<a name="get_knowledge_guest_session_categories"></a>
 
-## [**GuestCategoryResponseListing**](GuestCategoryResponseListing.html) get_knowledge_guest_session_categories(session_id, before=before, after=after, page_size=page_size, parent_id=parent_id, is_root=is_root, name=name, sort_by=sort_by, expand=expand, include_document_count=include_document_count)
+## get_knowledge_guest_session_categories
 
+> [**GuestCategoryResponseListing**](GuestCategoryResponseListing) get_knowledge_guest_session_categories(session_id, before=before, after=after, page_size=page_size, parent_id=parent_id, is_root=is_root, name=name, sort_by=sort_by, expand=expand, include_document_count=include_document_count)
 
 
 Get categories
@@ -678,16 +675,15 @@ except ApiException as e:
 | **sort_by** | **str**| Name: sort by category names alphabetically; Hierarchy: sort by the full path of hierarchical category names alphabetically | [optional] [default to &#39;Name&#39;]<br />**Values**: Name, Hierarchy |
 | **expand** | **str**| The specified entity attribute will be filled. Supported value:\&quot;Ancestors\&quot;: every ancestors will be filled via the parent attribute recursively,but only the id, name, parentId will be present for the ancestors. | [optional]  |
 | **include_document_count** | **bool**| If specified, retrieves the number of documents related to category. | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**GuestCategoryResponseListing**](GuestCategoryResponseListing.html)
+[**GuestCategoryResponseListing**](GuestCategoryResponseListing)
 
-<a name="get_knowledge_guest_session_document"></a>
 
-## [**KnowledgeGuestDocumentResponse**](KnowledgeGuestDocumentResponse.html) get_knowledge_guest_session_document(session_id, document_id)
+## get_knowledge_guest_session_document
 
+> [**KnowledgeGuestDocumentResponse**](KnowledgeGuestDocumentResponse) get_knowledge_guest_session_document(session_id, document_id)
 
 
 Get a knowledge document by ID.
@@ -725,16 +721,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **session_id** | **str**| Knowledge guest session ID. |  |
 | **document_id** | **str**| Document ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**KnowledgeGuestDocumentResponse**](KnowledgeGuestDocumentResponse.html)
+[**KnowledgeGuestDocumentResponse**](KnowledgeGuestDocumentResponse)
 
-<a name="get_knowledge_guest_session_documents"></a>
 
-## [**KnowledgeGuestDocumentResponseListing**](KnowledgeGuestDocumentResponseListing.html) get_knowledge_guest_session_documents(session_id, category_id=category_id, page_size=page_size)
+## get_knowledge_guest_session_documents
 
+> [**KnowledgeGuestDocumentResponseListing**](KnowledgeGuestDocumentResponseListing) get_knowledge_guest_session_documents(session_id, category_id=category_id, page_size=page_size)
 
 
 Get documents.
@@ -772,18 +767,17 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **session_id** | **str**| Knowledge guest session ID. |  |
-| **category_id** | [**list[str]**](str.html)| If specified, retrieves documents associated with category ids, comma separated values expected. | [optional]  |
+| **category_id** | [**list[str]**](str)| If specified, retrieves documents associated with category ids, comma separated values expected. | [optional]  |
 | **page_size** | **int**| Number of entities to return. Maximum of 200. | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**KnowledgeGuestDocumentResponseListing**](KnowledgeGuestDocumentResponseListing.html)
+[**KnowledgeGuestDocumentResponseListing**](KnowledgeGuestDocumentResponseListing)
 
-<a name="get_knowledge_knowledgebase"></a>
 
-## [**KnowledgeBase**](KnowledgeBase.html) get_knowledge_knowledgebase(knowledge_base_id)
+## get_knowledge_knowledgebase
 
+> [**KnowledgeBase**](KnowledgeBase) get_knowledge_knowledgebase(knowledge_base_id)
 
 
 Get knowledge base
@@ -823,16 +817,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **knowledge_base_id** | **str**| Knowledge base ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**KnowledgeBase**](KnowledgeBase.html)
+[**KnowledgeBase**](KnowledgeBase)
 
-<a name="get_knowledge_knowledgebase_categories"></a>
 
-## [**CategoryResponseListing**](CategoryResponseListing.html) get_knowledge_knowledgebase_categories(knowledge_base_id, before=before, after=after, page_size=page_size, parent_id=parent_id, is_root=is_root, name=name, sort_by=sort_by, expand=expand, include_document_count=include_document_count)
+## get_knowledge_knowledgebase_categories
 
+> [**CategoryResponseListing**](CategoryResponseListing) get_knowledge_knowledgebase_categories(knowledge_base_id, before=before, after=after, page_size=page_size, parent_id=parent_id, is_root=is_root, name=name, sort_by=sort_by, expand=expand, include_document_count=include_document_count)
 
 
 Get categories
@@ -890,16 +883,15 @@ except ApiException as e:
 | **sort_by** | **str**| Name: sort by category names alphabetically; Hierarchy: sort by the full path of hierarchical category names alphabetically | [optional] [default to &#39;Name&#39;]<br />**Values**: Name, Hierarchy |
 | **expand** | **str**| The specified entity attribute will be filled. Supported value:\&quot;Ancestors\&quot;: every ancestors will be filled via the parent attribute recursively,but only the id, name, parentId will be present for the ancestors. | [optional]  |
 | **include_document_count** | **bool**| If specified, retrieves the number of documents related to category. | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**CategoryResponseListing**](CategoryResponseListing.html)
+[**CategoryResponseListing**](CategoryResponseListing)
 
-<a name="get_knowledge_knowledgebase_category"></a>
 
-## [**CategoryResponse**](CategoryResponse.html) get_knowledge_knowledgebase_category(knowledge_base_id, category_id)
+## get_knowledge_knowledgebase_category
 
+> [**CategoryResponse**](CategoryResponse) get_knowledge_knowledgebase_category(knowledge_base_id, category_id)
 
 
 Get category
@@ -941,16 +933,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **knowledge_base_id** | **str**| Knowledge base ID |  |
 | **category_id** | **str**| Category ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**CategoryResponse**](CategoryResponse.html)
+[**CategoryResponse**](CategoryResponse)
 
-<a name="get_knowledge_knowledgebase_document"></a>
 
-## [**KnowledgeDocumentResponse**](KnowledgeDocumentResponse.html) get_knowledge_knowledgebase_document(knowledge_base_id, document_id, expand=expand, state=state)
+## get_knowledge_knowledgebase_document
 
+> [**KnowledgeDocumentResponse**](KnowledgeDocumentResponse) get_knowledge_knowledgebase_document(knowledge_base_id, document_id, expand=expand, state=state)
 
 
 Get document.
@@ -994,18 +985,17 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **knowledge_base_id** | **str**| Knowledge base ID. |  |
 | **document_id** | **str**| Document ID. |  |
-| **expand** | [**list[str]**](str.html)| The specified entity attributes will be filled. Comma separated values expected. Max No. of variations that can be returned on expand is 20. | [optional] <br />**Values**: category, labels, variations |
+| **expand** | [**list[str]**](str)| The specified entity attributes will be filled. Comma separated values expected. Max No. of variations that can be returned on expand is 20. | [optional] <br />**Values**: category, labels, variations |
 | **state** | **str**| \&quot;when state is \&quot;Draft\&quot;, draft version of the document is returned,otherwise by default published version is returned in the response. | [optional] <br />**Values**: Draft, Published |
-{: class="table table-striped"}
 
 ### Return type
 
-[**KnowledgeDocumentResponse**](KnowledgeDocumentResponse.html)
+[**KnowledgeDocumentResponse**](KnowledgeDocumentResponse)
 
-<a name="get_knowledge_knowledgebase_document_feedback"></a>
 
-## [**KnowledgeDocumentFeedbackResponseListing**](KnowledgeDocumentFeedbackResponseListing.html) get_knowledge_knowledgebase_document_feedback(knowledge_base_id, document_id, before=before, after=after, page_size=page_size, only_commented=only_commented, document_version_id=document_version_id, document_variation_id=document_variation_id, app_type=app_type, query_type=query_type, user_id=user_id, queue_id=queue_id, state=state)
+## get_knowledge_knowledgebase_document_feedback
 
+> [**KnowledgeDocumentFeedbackResponseListing**](KnowledgeDocumentFeedbackResponseListing) get_knowledge_knowledgebase_document_feedback(knowledge_base_id, document_id, before=before, after=after, page_size=page_size, only_commented=only_commented, document_version_id=document_version_id, document_variation_id=document_variation_id, app_type=app_type, query_type=query_type, user_id=user_id, queue_id=queue_id, state=state)
 
 
 Get a list of feedback records given on a document
@@ -1069,16 +1059,15 @@ except ApiException as e:
 | **user_id** | **str**| The ID of the user, who created the feedback, to filter by. Supported only if onlyCommented&#x3D;true is set. | [optional]  |
 | **queue_id** | **str**| Queue ID to filter by. Supported only if onlyCommented&#x3D;true is set. | [optional]  |
 | **state** | **str**| State to filter by. Supported only if onlyCommented&#x3D;true is set. Default: Final | [optional] <br />**Values**: All, Draft, Final |
-{: class="table table-striped"}
 
 ### Return type
 
-[**KnowledgeDocumentFeedbackResponseListing**](KnowledgeDocumentFeedbackResponseListing.html)
+[**KnowledgeDocumentFeedbackResponseListing**](KnowledgeDocumentFeedbackResponseListing)
 
-<a name="get_knowledge_knowledgebase_document_feedback_feedback_id"></a>
 
-## [**KnowledgeDocumentFeedbackResponse**](KnowledgeDocumentFeedbackResponse.html) get_knowledge_knowledgebase_document_feedback_feedback_id(knowledge_base_id, document_id, feedback_id)
+## get_knowledge_knowledgebase_document_feedback_feedback_id
 
+> [**KnowledgeDocumentFeedbackResponse**](KnowledgeDocumentFeedbackResponse) get_knowledge_knowledgebase_document_feedback_feedback_id(knowledge_base_id, document_id, feedback_id)
 
 
 Get a single feedback record given on a document
@@ -1122,16 +1111,15 @@ except ApiException as e:
 | **knowledge_base_id** | **str**| Knowledge base ID. |  |
 | **document_id** | **str**| Document ID. |  |
 | **feedback_id** | **str**| Feedback ID. |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**KnowledgeDocumentFeedbackResponse**](KnowledgeDocumentFeedbackResponse.html)
+[**KnowledgeDocumentFeedbackResponse**](KnowledgeDocumentFeedbackResponse)
 
-<a name="get_knowledge_knowledgebase_document_variation"></a>
 
-## [**DocumentVariation**](DocumentVariation.html) get_knowledge_knowledgebase_document_variation(document_variation_id, document_id, knowledge_base_id, document_state=document_state)
+## get_knowledge_knowledgebase_document_variation
 
+> [**DocumentVariation**](DocumentVariation) get_knowledge_knowledgebase_document_variation(document_variation_id, document_id, knowledge_base_id, document_state=document_state)
 
 
 Get a variation for a document.
@@ -1177,16 +1165,15 @@ except ApiException as e:
 | **document_id** | **str**| Globally unique identifier for a document. |  |
 | **knowledge_base_id** | **str**| Globally unique identifier for a knowledge base. |  |
 | **document_state** | **str**| The state of the document. | [optional] <br />**Values**: Draft, Published |
-{: class="table table-striped"}
 
 ### Return type
 
-[**DocumentVariation**](DocumentVariation.html)
+[**DocumentVariation**](DocumentVariation)
 
-<a name="get_knowledge_knowledgebase_document_variations"></a>
 
-## [**DocumentVariationListing**](DocumentVariationListing.html) get_knowledge_knowledgebase_document_variations(knowledge_base_id, document_id, before=before, after=after, page_size=page_size, document_state=document_state)
+## get_knowledge_knowledgebase_document_variations
 
+> [**DocumentVariationListing**](DocumentVariationListing) get_knowledge_knowledgebase_document_variations(knowledge_base_id, document_id, before=before, after=after, page_size=page_size, document_state=document_state)
 
 
 Get variations for a document.
@@ -1236,16 +1223,15 @@ except ApiException as e:
 | **after** | **str**| The cursor that points to the end of the set of entities that has been returned. | [optional]  |
 | **page_size** | **str**| Number of entities to return. Maximum of 200. | [optional]  |
 | **document_state** | **str**| The state of the document. | [optional] <br />**Values**: Draft, Published |
-{: class="table table-striped"}
 
 ### Return type
 
-[**DocumentVariationListing**](DocumentVariationListing.html)
+[**DocumentVariationListing**](DocumentVariationListing)
 
-<a name="get_knowledge_knowledgebase_document_version"></a>
 
-## [**KnowledgeDocumentVersion**](KnowledgeDocumentVersion.html) get_knowledge_knowledgebase_document_version(knowledge_base_id, document_id, version_id, expand=expand)
+## get_knowledge_knowledgebase_document_version
 
+> [**KnowledgeDocumentVersion**](KnowledgeDocumentVersion) get_knowledge_knowledgebase_document_version(knowledge_base_id, document_id, version_id, expand=expand)
 
 
 Get document version.
@@ -1290,17 +1276,16 @@ except ApiException as e:
 | **knowledge_base_id** | **str**| Globally unique identifier for the knowledge base. |  |
 | **document_id** | **str**| Globally unique identifier for the document. |  |
 | **version_id** | **str**| Globally unique identifier for the document version. |  |
-| **expand** | [**list[str]**](str.html)| The specified entity attributes will be filled. Comma separated values expected. | [optional] <br />**Values**: category, labels |
-{: class="table table-striped"}
+| **expand** | [**list[str]**](str)| The specified entity attributes will be filled. Comma separated values expected. | [optional] <br />**Values**: category, labels |
 
 ### Return type
 
-[**KnowledgeDocumentVersion**](KnowledgeDocumentVersion.html)
+[**KnowledgeDocumentVersion**](KnowledgeDocumentVersion)
 
-<a name="get_knowledge_knowledgebase_document_version_variation"></a>
 
-## [**KnowledgeDocumentVersionVariation**](KnowledgeDocumentVersionVariation.html) get_knowledge_knowledgebase_document_version_variation(knowledge_base_id, document_id, version_id, variation_id)
+## get_knowledge_knowledgebase_document_version_variation
 
+> [**KnowledgeDocumentVersionVariation**](KnowledgeDocumentVersionVariation) get_knowledge_knowledgebase_document_version_variation(knowledge_base_id, document_id, version_id, variation_id)
 
 
 Get variation for the given document version.
@@ -1346,16 +1331,15 @@ except ApiException as e:
 | **document_id** | **str**| Globally unique identifier for the document. |  |
 | **version_id** | **str**| Globally unique identifier for the document version. |  |
 | **variation_id** | **str**| Globally unique identifier for the document version variation. |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**KnowledgeDocumentVersionVariation**](KnowledgeDocumentVersionVariation.html)
+[**KnowledgeDocumentVersionVariation**](KnowledgeDocumentVersionVariation)
 
-<a name="get_knowledge_knowledgebase_document_version_variations"></a>
 
-## [**KnowledgeDocumentVersionVariationListing**](KnowledgeDocumentVersionVariationListing.html) get_knowledge_knowledgebase_document_version_variations(knowledge_base_id, document_id, version_id, before=before, after=after, page_size=page_size)
+## get_knowledge_knowledgebase_document_version_variations
 
+> [**KnowledgeDocumentVersionVariationListing**](KnowledgeDocumentVersionVariationListing) get_knowledge_knowledgebase_document_version_variations(knowledge_base_id, document_id, version_id, before=before, after=after, page_size=page_size)
 
 
 Get variations for the given document version.
@@ -1405,16 +1389,15 @@ except ApiException as e:
 | **before** | **str**| The cursor that points to the start of the set of entities that has been returned. | [optional]  |
 | **after** | **str**| The cursor that points to the end of the set of entities that has been returned. | [optional]  |
 | **page_size** | **str**| Number of entities to return. Maximum of 200. | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**KnowledgeDocumentVersionVariationListing**](KnowledgeDocumentVersionVariationListing.html)
+[**KnowledgeDocumentVersionVariationListing**](KnowledgeDocumentVersionVariationListing)
 
-<a name="get_knowledge_knowledgebase_document_versions"></a>
 
-## [**KnowledgeDocumentVersionListing**](KnowledgeDocumentVersionListing.html) get_knowledge_knowledgebase_document_versions(knowledge_base_id, document_id, before=before, after=after, page_size=page_size, expand=expand)
+## get_knowledge_knowledgebase_document_versions
 
+> [**KnowledgeDocumentVersionListing**](KnowledgeDocumentVersionListing) get_knowledge_knowledgebase_document_versions(knowledge_base_id, document_id, before=before, after=after, page_size=page_size, expand=expand)
 
 
 Get document versions.
@@ -1463,17 +1446,16 @@ except ApiException as e:
 | **before** | **str**| The cursor that points to the start of the set of entities that has been returned. | [optional]  |
 | **after** | **str**| The cursor that points to the end of the set of entities that has been returned. | [optional]  |
 | **page_size** | **str**| Number of entities to return. Maximum of 200. | [optional]  |
-| **expand** | [**list[str]**](str.html)| The specified entity attributes will be filled. Comma separated values expected. | [optional] <br />**Values**: category, labels |
-{: class="table table-striped"}
+| **expand** | [**list[str]**](str)| The specified entity attributes will be filled. Comma separated values expected. | [optional] <br />**Values**: category, labels |
 
 ### Return type
 
-[**KnowledgeDocumentVersionListing**](KnowledgeDocumentVersionListing.html)
+[**KnowledgeDocumentVersionListing**](KnowledgeDocumentVersionListing)
 
-<a name="get_knowledge_knowledgebase_documents"></a>
 
-## [**KnowledgeDocumentResponseListing**](KnowledgeDocumentResponseListing.html) get_knowledge_knowledgebase_documents(knowledge_base_id, before=before, after=after, page_size=page_size, interval=interval, document_id=document_id, category_id=category_id, include_subcategories=include_subcategories, include_drafts=include_drafts, label_ids=label_ids, expand=expand, external_ids=external_ids)
+## get_knowledge_knowledgebase_documents
 
+> [**KnowledgeDocumentResponseListing**](KnowledgeDocumentResponseListing) get_knowledge_knowledgebase_documents(knowledge_base_id, before=before, after=after, page_size=page_size, interval=interval, document_id=document_id, category_id=category_id, include_subcategories=include_subcategories, include_drafts=include_drafts, label_ids=label_ids, expand=expand, external_ids=external_ids)
 
 
 Get documents.
@@ -1528,23 +1510,22 @@ except ApiException as e:
 | **after** | **str**| The cursor that points to the end of the set of entities that has been returned. | [optional]  |
 | **page_size** | **str**| Number of entities to return. Maximum of 200. | [optional]  |
 | **interval** | **str**| Retrieves the documents modified in specified date and time range. If the after and before cursor parameters are within this interval, it would return valid data, otherwise it throws an error.The dates in the interval are represented in ISO-8601 format: YYYY-MM-DDThh:mm:ssZ/YYYY-MM-DDThh:mm:ssZ | [optional]  |
-| **document_id** | [**list[str]**](str.html)| Retrieves the specified documents, comma separated values expected. | [optional]  |
-| **category_id** | [**list[str]**](str.html)| If specified, retrieves documents associated with category ids, comma separated values expected. | [optional]  |
+| **document_id** | [**list[str]**](str)| Retrieves the specified documents, comma separated values expected. | [optional]  |
+| **category_id** | [**list[str]**](str)| If specified, retrieves documents associated with category ids, comma separated values expected. | [optional]  |
 | **include_subcategories** | **bool**| Works along with &#39;categoryId&#39; query parameter. If specified, retrieves documents associated with category ids and its children categories. | [optional]  |
 | **include_drafts** | **bool**| If includeDrafts is true, Documents in the draft state are also returned in the response. | [optional]  |
-| **label_ids** | [**list[str]**](str.html)| If specified, retrieves documents associated with label ids, comma separated values expected. | [optional]  |
-| **expand** | [**list[str]**](str.html)| The specified entity attributes will be filled. Comma separated values expected. | [optional] <br />**Values**: category, labels, variations |
-| **external_ids** | [**list[str]**](str.html)| If specified, retrieves documents associated with external ids, comma separated values expected. | [optional]  |
-{: class="table table-striped"}
+| **label_ids** | [**list[str]**](str)| If specified, retrieves documents associated with label ids, comma separated values expected. | [optional]  |
+| **expand** | [**list[str]**](str)| The specified entity attributes will be filled. Comma separated values expected. | [optional] <br />**Values**: category, labels, variations |
+| **external_ids** | [**list[str]**](str)| If specified, retrieves documents associated with external ids, comma separated values expected. | [optional]  |
 
 ### Return type
 
-[**KnowledgeDocumentResponseListing**](KnowledgeDocumentResponseListing.html)
+[**KnowledgeDocumentResponseListing**](KnowledgeDocumentResponseListing)
 
-<a name="get_knowledge_knowledgebase_export_job"></a>
 
-## [**KnowledgeExportJobResponse**](KnowledgeExportJobResponse.html) get_knowledge_knowledgebase_export_job(knowledge_base_id, export_job_id)
+## get_knowledge_knowledgebase_export_job
 
+> [**KnowledgeExportJobResponse**](KnowledgeExportJobResponse) get_knowledge_knowledgebase_export_job(knowledge_base_id, export_job_id)
 
 
 Get export job report
@@ -1586,16 +1567,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **knowledge_base_id** | **str**| Knowledge base ID |  |
 | **export_job_id** | **str**| Export job ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**KnowledgeExportJobResponse**](KnowledgeExportJobResponse.html)
+[**KnowledgeExportJobResponse**](KnowledgeExportJobResponse)
 
-<a name="get_knowledge_knowledgebase_import_job"></a>
 
-## [**KnowledgeImportJobResponse**](KnowledgeImportJobResponse.html) get_knowledge_knowledgebase_import_job(knowledge_base_id, import_job_id, expand=expand)
+## get_knowledge_knowledgebase_import_job
 
+> [**KnowledgeImportJobResponse**](KnowledgeImportJobResponse) get_knowledge_knowledgebase_import_job(knowledge_base_id, import_job_id, expand=expand)
 
 
 Get import job report
@@ -1638,17 +1618,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **knowledge_base_id** | **str**| Knowledge base ID |  |
 | **import_job_id** | **str**| Import job ID |  |
-| **expand** | [**list[str]**](str.html)| If expand contains &#39;urls&#39; downloadURL and failedEntitiesURL will be filled. | [optional] <br />**Values**: urls |
-{: class="table table-striped"}
+| **expand** | [**list[str]**](str)| If expand contains &#39;urls&#39; downloadURL and failedEntitiesURL will be filled. | [optional] <br />**Values**: urls |
 
 ### Return type
 
-[**KnowledgeImportJobResponse**](KnowledgeImportJobResponse.html)
+[**KnowledgeImportJobResponse**](KnowledgeImportJobResponse)
 
-<a name="get_knowledge_knowledgebase_label"></a>
 
-## [**LabelResponse**](LabelResponse.html) get_knowledge_knowledgebase_label(knowledge_base_id, label_id)
+## get_knowledge_knowledgebase_label
 
+> [**LabelResponse**](LabelResponse) get_knowledge_knowledgebase_label(knowledge_base_id, label_id)
 
 
 Get label
@@ -1690,16 +1669,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **knowledge_base_id** | **str**| Knowledge base ID |  |
 | **label_id** | **str**| Label ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**LabelResponse**](LabelResponse.html)
+[**LabelResponse**](LabelResponse)
 
-<a name="get_knowledge_knowledgebase_labels"></a>
 
-## [**LabelListing**](LabelListing.html) get_knowledge_knowledgebase_labels(knowledge_base_id, before=before, after=after, page_size=page_size, name=name, include_document_count=include_document_count)
+## get_knowledge_knowledgebase_labels
 
+> [**LabelListing**](LabelListing) get_knowledge_knowledgebase_labels(knowledge_base_id, before=before, after=after, page_size=page_size, name=name, include_document_count=include_document_count)
 
 
 Get labels
@@ -1749,17 +1727,19 @@ except ApiException as e:
 | **page_size** | **str**| Number of entities to return. Maximum of 200. | [optional]  |
 | **name** | **str**| Filter to return the labels that contains the given phrase in the name. | [optional]  |
 | **include_document_count** | **bool**| If specified, retrieves the number of documents related to label. | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**LabelListing**](LabelListing.html)
+[**LabelListing**](LabelListing)
 
-<a name="get_knowledge_knowledgebase_language_categories"></a>
 
-## [**CategoryListing**](CategoryListing.html) get_knowledge_knowledgebase_language_categories(knowledge_base_id, language_code, before=before, after=after, limit=limit, page_size=page_size, name=name)
+## get_knowledge_knowledgebase_language_categories
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+> [**CategoryListing**](CategoryListing) get_knowledge_knowledgebase_language_categories(knowledge_base_id, language_code, before=before, after=after, limit=limit, page_size=page_size, name=name)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 Get categories
 
@@ -1810,17 +1790,19 @@ except ApiException as e:
 | **limit** | **str**| Number of entities to return. Maximum of 200. Deprecated in favour of pageSize | [optional]  |
 | **page_size** | **str**| Number of entities to return. Maximum of 200. | [optional]  |
 | **name** | **str**| Filter to return the categories that starts with the given category name. | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**CategoryListing**](CategoryListing.html)
+[**CategoryListing**](CategoryListing)
 
-<a name="get_knowledge_knowledgebase_language_category"></a>
 
-## [**KnowledgeExtendedCategory**](KnowledgeExtendedCategory.html) get_knowledge_knowledgebase_language_category(category_id, knowledge_base_id, language_code)
+## get_knowledge_knowledgebase_language_category
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+> [**KnowledgeExtendedCategory**](KnowledgeExtendedCategory) get_knowledge_knowledgebase_language_category(category_id, knowledge_base_id, language_code)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 Get category
 
@@ -1863,17 +1845,19 @@ except ApiException as e:
 | **category_id** | **str**| Category ID |  |
 | **knowledge_base_id** | **str**| Knowledge base ID |  |
 | **language_code** | **str**| Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, en-CA, en-HK, en-IN, en-IE, en-NZ, en-PH, en-SG, en-ZA, de-DE, de-AT, de-CH, es-AR, es-CO, es-MX, es-US, es-ES, fr-FR, fr-BE, fr-CA, fr-CH, pt-BR, pt-PT, nl-NL, nl-BE, it-IT, ca-ES, tr-TR, sv-SE, fi-FI, nb-NO, da-DK, ja-JP, ar-AE, zh-CN, zh-TW, zh-HK, ko-KR, pl-PL, hi-IN, th-TH, hu-HU, vi-VN, uk-UA |
-{: class="table table-striped"}
 
 ### Return type
 
-[**KnowledgeExtendedCategory**](KnowledgeExtendedCategory.html)
+[**KnowledgeExtendedCategory**](KnowledgeExtendedCategory)
 
-<a name="get_knowledge_knowledgebase_language_document"></a>
 
-## [**KnowledgeDocument**](KnowledgeDocument.html) get_knowledge_knowledgebase_language_document(document_id, knowledge_base_id, language_code)
+## get_knowledge_knowledgebase_language_document
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+> [**KnowledgeDocument**](KnowledgeDocument) get_knowledge_knowledgebase_language_document(document_id, knowledge_base_id, language_code)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 Get document
 
@@ -1916,17 +1900,19 @@ except ApiException as e:
 | **document_id** | **str**| Document ID |  |
 | **knowledge_base_id** | **str**| Knowledge base ID |  |
 | **language_code** | **str**| Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, en-CA, en-HK, en-IN, en-IE, en-NZ, en-PH, en-SG, en-ZA, de-DE, de-AT, de-CH, es-AR, es-CO, es-MX, es-US, es-ES, fr-FR, fr-BE, fr-CA, fr-CH, pt-BR, pt-PT, nl-NL, nl-BE, it-IT, ca-ES, tr-TR, sv-SE, fi-FI, nb-NO, da-DK, ja-JP, ar-AE, zh-CN, zh-TW, zh-HK, ko-KR, pl-PL, hi-IN, th-TH, hu-HU, vi-VN, uk-UA |
-{: class="table table-striped"}
 
 ### Return type
 
-[**KnowledgeDocument**](KnowledgeDocument.html)
+[**KnowledgeDocument**](KnowledgeDocument)
 
-<a name="get_knowledge_knowledgebase_language_document_upload"></a>
 
-## [**KnowledgeDocumentContentUpload**](KnowledgeDocumentContentUpload.html) get_knowledge_knowledgebase_language_document_upload(document_id, knowledge_base_id, language_code, upload_id)
+## get_knowledge_knowledgebase_language_document_upload
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+> [**KnowledgeDocumentContentUpload**](KnowledgeDocumentContentUpload) get_knowledge_knowledgebase_language_document_upload(document_id, knowledge_base_id, language_code, upload_id)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 Get document content upload status
 
@@ -1973,17 +1959,19 @@ except ApiException as e:
 | **knowledge_base_id** | **str**| Knowledge base ID |  |
 | **language_code** | **str**| Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, en-CA, en-HK, en-IN, en-IE, en-NZ, en-PH, en-SG, en-ZA, de-DE, de-AT, de-CH, es-AR, es-CO, es-MX, es-US, es-ES, fr-FR, fr-BE, fr-CA, fr-CH, pt-BR, pt-PT, nl-NL, nl-BE, it-IT, ca-ES, tr-TR, sv-SE, fi-FI, nb-NO, da-DK, ja-JP, ar-AE, zh-CN, zh-TW, zh-HK, ko-KR, pl-PL, hi-IN, th-TH, hu-HU, vi-VN, uk-UA |
 | **upload_id** | **str**| UploadId |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**KnowledgeDocumentContentUpload**](KnowledgeDocumentContentUpload.html)
+[**KnowledgeDocumentContentUpload**](KnowledgeDocumentContentUpload)
 
-<a name="get_knowledge_knowledgebase_language_documents"></a>
 
-## [**DocumentListing**](DocumentListing.html) get_knowledge_knowledgebase_language_documents(knowledge_base_id, language_code, before=before, after=after, limit=limit, page_size=page_size, categories=categories, title=title, sort_by=sort_by, sort_order=sort_order, document_ids=document_ids)
+## get_knowledge_knowledgebase_language_documents
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+> [**DocumentListing**](DocumentListing) get_knowledge_knowledgebase_language_documents(knowledge_base_id, language_code, before=before, after=after, limit=limit, page_size=page_size, categories=categories, title=title, sort_by=sort_by, sort_order=sort_order, document_ids=document_ids)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 Get documents
 
@@ -2041,18 +2029,20 @@ except ApiException as e:
 | **title** | **str**| Filter by document title. | [optional]  |
 | **sort_by** | **str**| Sort by. | [optional] <br />**Values**: Title, Date |
 | **sort_order** | **str**| Sort Order. | [optional] <br />**Values**: ASC, ascending, DESC, descending |
-| **document_ids** | [**list[str]**](str.html)| Comma-separated list of document identifiers to fetch by. | [optional]  |
-{: class="table table-striped"}
+| **document_ids** | [**list[str]**](str)| Comma-separated list of document identifiers to fetch by. | [optional]  |
 
 ### Return type
 
-[**DocumentListing**](DocumentListing.html)
+[**DocumentListing**](DocumentListing)
 
-<a name="get_knowledge_knowledgebase_language_documents_import"></a>
 
-## [**KnowledgeImport**](KnowledgeImport.html) get_knowledge_knowledgebase_language_documents_import(knowledge_base_id, language_code, import_id)
+## get_knowledge_knowledgebase_language_documents_import
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+> [**KnowledgeImport**](KnowledgeImport) get_knowledge_knowledgebase_language_documents_import(knowledge_base_id, language_code, import_id)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 Get import operation report
 
@@ -2095,17 +2085,19 @@ except ApiException as e:
 | **knowledge_base_id** | **str**| Knowledge base ID |  |
 | **language_code** | **str**| Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, en-CA, en-HK, en-IN, en-IE, en-NZ, en-PH, en-SG, en-ZA, de-DE, de-AT, de-CH, es-AR, es-CO, es-MX, es-US, es-ES, fr-FR, fr-BE, fr-CA, fr-CH, pt-BR, pt-PT, nl-NL, nl-BE, it-IT, ca-ES, tr-TR, sv-SE, fi-FI, nb-NO, da-DK, ja-JP, ar-AE, zh-CN, zh-TW, zh-HK, ko-KR, pl-PL, hi-IN, th-TH, hu-HU, vi-VN, uk-UA |
 | **import_id** | **str**| Import ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**KnowledgeImport**](KnowledgeImport.html)
+[**KnowledgeImport**](KnowledgeImport)
 
-<a name="get_knowledge_knowledgebase_language_training"></a>
 
-## [**KnowledgeTraining**](KnowledgeTraining.html) get_knowledge_knowledgebase_language_training(knowledge_base_id, language_code, training_id)
+## get_knowledge_knowledgebase_language_training
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+> [**KnowledgeTraining**](KnowledgeTraining) get_knowledge_knowledgebase_language_training(knowledge_base_id, language_code, training_id)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 Get training detail
 
@@ -2148,17 +2140,19 @@ except ApiException as e:
 | **knowledge_base_id** | **str**| Knowledge base ID |  |
 | **language_code** | **str**| Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, en-CA, en-HK, en-IN, en-IE, en-NZ, en-PH, en-SG, en-ZA, de-DE, de-AT, de-CH, es-AR, es-CO, es-MX, es-US, es-ES, fr-FR, fr-BE, fr-CA, fr-CH, pt-BR, pt-PT, nl-NL, nl-BE, it-IT, ca-ES, tr-TR, sv-SE, fi-FI, nb-NO, da-DK, ja-JP, ar-AE, zh-CN, zh-TW, zh-HK, ko-KR, pl-PL, hi-IN, th-TH, hu-HU, vi-VN, uk-UA |
 | **training_id** | **str**| Training ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**KnowledgeTraining**](KnowledgeTraining.html)
+[**KnowledgeTraining**](KnowledgeTraining)
 
-<a name="get_knowledge_knowledgebase_language_trainings"></a>
 
-## [**TrainingListing**](TrainingListing.html) get_knowledge_knowledgebase_language_trainings(knowledge_base_id, language_code, before=before, after=after, limit=limit, page_size=page_size, knowledge_documents_state=knowledge_documents_state)
+## get_knowledge_knowledgebase_language_trainings
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+> [**TrainingListing**](TrainingListing) get_knowledge_knowledgebase_language_trainings(knowledge_base_id, language_code, before=before, after=after, limit=limit, page_size=page_size, knowledge_documents_state=knowledge_documents_state)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 Get all trainings information for a knowledgebase
 
@@ -2209,16 +2203,15 @@ except ApiException as e:
 | **limit** | **str**| Number of entities to return. Maximum of 200. Deprecated in favour of pageSize | [optional]  |
 | **page_size** | **str**| Number of entities to return. Maximum of 200. | [optional]  |
 | **knowledge_documents_state** | **str**| Return the training with the specified state of the trained documents. | [optional] <br />**Values**: Draft, Active, Discarded, Archived |
-{: class="table table-striped"}
 
 ### Return type
 
-[**TrainingListing**](TrainingListing.html)
+[**TrainingListing**](TrainingListing)
 
-<a name="get_knowledge_knowledgebase_operations"></a>
 
-## [**OperationListing**](OperationListing.html) get_knowledge_knowledgebase_operations(knowledge_base_id, before=before, after=after, page_size=page_size, user_id=user_id, type=type, status=status, interval=interval, source_id=source_id)
+## get_knowledge_knowledgebase_operations
 
+> [**OperationListing**](OperationListing) get_knowledge_knowledgebase_operations(knowledge_base_id, before=before, after=after, page_size=page_size, user_id=user_id, type=type, status=status, interval=interval, source_id=source_id)
 
 
 Get operations
@@ -2271,21 +2264,20 @@ except ApiException as e:
 | **before** | **str**| The cursor that points to the start of the set of entities that has been returned. | [optional]  |
 | **after** | **str**| The cursor that points to the end of the set of entities that has been returned. | [optional]  |
 | **page_size** | **str**| Number of entities to return. Maximum of 200. | [optional]  |
-| **user_id** | [**list[str]**](str.html)| If specified, retrieves operations associated with user ids, comma separated values expected. | [optional]  |
-| **type** | [**list[str]**](str.html)| If specified, retrieves operations with specified operation type, comma separated values expected. | [optional] <br />**Values**: Export, Import, Parse, Sync |
-| **status** | [**list[str]**](str.html)| If specified, retrieves operations with specified operation status, comma separated values expected. | [optional]  |
+| **user_id** | [**list[str]**](str)| If specified, retrieves operations associated with user ids, comma separated values expected. | [optional]  |
+| **type** | [**list[str]**](str)| If specified, retrieves operations with specified operation type, comma separated values expected. | [optional] <br />**Values**: Export, Import, Parse, Sync |
+| **status** | [**list[str]**](str)| If specified, retrieves operations with specified operation status, comma separated values expected. | [optional]  |
 | **interval** | **str**| Retrieves the operations modified in specified date and time range. If the after and before cursor parameters are within this interval, it would return valid data, otherwise it throws an error.The dates in the interval are represented in ISO-8601 format: YYYY-MM-DDThh:mm:ssZ/YYYY-MM-DDThh:mm:ssZ | [optional]  |
-| **source_id** | [**list[str]**](str.html)| If specified, retrieves operations associated with source ids, comma separated values expected. | [optional]  |
-{: class="table table-striped"}
+| **source_id** | [**list[str]**](str)| If specified, retrieves operations associated with source ids, comma separated values expected. | [optional]  |
 
 ### Return type
 
-[**OperationListing**](OperationListing.html)
+[**OperationListing**](OperationListing)
 
-<a name="get_knowledge_knowledgebase_operations_users_query"></a>
 
-## [**OperationCreatorUserResponse**](OperationCreatorUserResponse.html) get_knowledge_knowledgebase_operations_users_query(knowledge_base_id)
+## get_knowledge_knowledgebase_operations_users_query
 
+> [**OperationCreatorUserResponse**](OperationCreatorUserResponse) get_knowledge_knowledgebase_operations_users_query(knowledge_base_id)
 
 
 Get ids of operation creator users and oauth clients
@@ -2327,16 +2319,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **knowledge_base_id** | **str**| Knowledge base ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**OperationCreatorUserResponse**](OperationCreatorUserResponse.html)
+[**OperationCreatorUserResponse**](OperationCreatorUserResponse)
 
-<a name="get_knowledge_knowledgebase_parse_job"></a>
 
-## [**KnowledgeParseJobResponse**](KnowledgeParseJobResponse.html) get_knowledge_knowledgebase_parse_job(knowledge_base_id, parse_job_id, expand=expand)
+## get_knowledge_knowledgebase_parse_job
 
+> [**KnowledgeParseJobResponse**](KnowledgeParseJobResponse) get_knowledge_knowledgebase_parse_job(knowledge_base_id, parse_job_id, expand=expand)
 
 
 Get parse job report
@@ -2381,17 +2372,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **knowledge_base_id** | **str**| Knowledge base ID |  |
 | **parse_job_id** | **str**| Parse job ID |  |
-| **expand** | [**list[str]**](str.html)| If expand contains &#39;urls&#39; downloadURL and failedEntitiesURL will be filled. | [optional] <br />**Values**: urls |
-{: class="table table-striped"}
+| **expand** | [**list[str]**](str)| If expand contains &#39;urls&#39; downloadURL and failedEntitiesURL will be filled. | [optional] <br />**Values**: urls |
 
 ### Return type
 
-[**KnowledgeParseJobResponse**](KnowledgeParseJobResponse.html)
+[**KnowledgeParseJobResponse**](KnowledgeParseJobResponse)
 
-<a name="get_knowledge_knowledgebase_unanswered_group"></a>
 
-## [**UnansweredGroup**](UnansweredGroup.html) get_knowledge_knowledgebase_unanswered_group(knowledge_base_id, group_id, app=app, date_start=date_start, date_end=date_end)
+## get_knowledge_knowledgebase_unanswered_group
 
+> [**UnansweredGroup**](UnansweredGroup) get_knowledge_knowledgebase_unanswered_group(knowledge_base_id, group_id, app=app, date_start=date_start, date_end=date_end)
 
 
 Get knowledge base unanswered group for a particular groupId
@@ -2439,16 +2429,15 @@ except ApiException as e:
 | **app** | **str**| The app value to be used for filtering phrases. | [optional] <br />**Values**: SupportCenter, MessengerKnowledgeApp, BotFlow, Assistant, SmartAdvisor |
 | **date_start** | **date**| The start date to be used for filtering phrases. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional]  |
 | **date_end** | **date**| The end date to be used for filtering phrases. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**UnansweredGroup**](UnansweredGroup.html)
+[**UnansweredGroup**](UnansweredGroup)
 
-<a name="get_knowledge_knowledgebase_unanswered_group_phrasegroup"></a>
 
-## [**UnansweredPhraseGroup**](UnansweredPhraseGroup.html) get_knowledge_knowledgebase_unanswered_group_phrasegroup(knowledge_base_id, group_id, phrase_group_id, app=app, date_start=date_start, date_end=date_end)
+## get_knowledge_knowledgebase_unanswered_group_phrasegroup
 
+> [**UnansweredPhraseGroup**](UnansweredPhraseGroup) get_knowledge_knowledgebase_unanswered_group_phrasegroup(knowledge_base_id, group_id, phrase_group_id, app=app, date_start=date_start, date_end=date_end)
 
 
 Get knowledge base unanswered phrase group for a particular phraseGroupId
@@ -2498,16 +2487,15 @@ except ApiException as e:
 | **app** | **str**| The app value to be used for filtering phrases. | [optional] <br />**Values**: SupportCenter, MessengerKnowledgeApp, BotFlow, Assistant, SmartAdvisor |
 | **date_start** | **date**| The start date to be used for filtering phrases. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional]  |
 | **date_end** | **date**| The end date to be used for filtering phrases. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**UnansweredPhraseGroup**](UnansweredPhraseGroup.html)
+[**UnansweredPhraseGroup**](UnansweredPhraseGroup)
 
-<a name="get_knowledge_knowledgebase_unanswered_groups"></a>
 
-## [**UnansweredGroups**](UnansweredGroups.html) get_knowledge_knowledgebase_unanswered_groups(knowledge_base_id, app=app, date_start=date_start, date_end=date_end)
+## get_knowledge_knowledgebase_unanswered_groups
 
+> [**UnansweredGroups**](UnansweredGroups) get_knowledge_knowledgebase_unanswered_groups(knowledge_base_id, app=app, date_start=date_start, date_end=date_end)
 
 
 Get knowledge base unanswered groups
@@ -2553,16 +2541,15 @@ except ApiException as e:
 | **app** | **str**| The app value to be used for filtering phrases. | [optional] <br />**Values**: SupportCenter, MessengerKnowledgeApp, BotFlow, Assistant, SmartAdvisor |
 | **date_start** | **date**| The start date to be used for filtering phrases. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional]  |
 | **date_end** | **date**| The end date to be used for filtering phrases. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**UnansweredGroups**](UnansweredGroups.html)
+[**UnansweredGroups**](UnansweredGroups)
 
-<a name="get_knowledge_knowledgebase_uploads_urls_job"></a>
 
-## [**GetUploadSourceUrlJobStatusResponse**](GetUploadSourceUrlJobStatusResponse.html) get_knowledge_knowledgebase_uploads_urls_job(knowledge_base_id, job_id)
+## get_knowledge_knowledgebase_uploads_urls_job
 
+> [**GetUploadSourceUrlJobStatusResponse**](GetUploadSourceUrlJobStatusResponse) get_knowledge_knowledgebase_uploads_urls_job(knowledge_base_id, job_id)
 
 
 Get content upload from URL job status
@@ -2606,16 +2593,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **knowledge_base_id** | **str**| Knowledge base ID |  |
 | **job_id** | **str**| Upload job ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**GetUploadSourceUrlJobStatusResponse**](GetUploadSourceUrlJobStatusResponse.html)
+[**GetUploadSourceUrlJobStatusResponse**](GetUploadSourceUrlJobStatusResponse)
 
-<a name="get_knowledge_knowledgebases"></a>
 
-## [**KnowledgeBaseListing**](KnowledgeBaseListing.html) get_knowledge_knowledgebases(before=before, after=after, limit=limit, page_size=page_size, name=name, core_language=core_language, published=published, sort_by=sort_by, sort_order=sort_order)
+## get_knowledge_knowledgebases
 
+> [**KnowledgeBaseListing**](KnowledgeBaseListing) get_knowledge_knowledgebases(before=before, after=after, limit=limit, page_size=page_size, name=name, core_language=core_language, published=published, sort_by=sort_by, sort_order=sort_order)
 
 
 Get knowledge bases
@@ -2671,16 +2657,15 @@ except ApiException as e:
 | **published** | **bool**| Filter by published status. | [optional]  |
 | **sort_by** | **str**| Sort by. | [optional] <br />**Values**: Name, Date |
 | **sort_order** | **str**| Sort Order. | [optional] <br />**Values**: ASC, ascending, DESC, descending |
-{: class="table table-striped"}
 
 ### Return type
 
-[**KnowledgeBaseListing**](KnowledgeBaseListing.html)
+[**KnowledgeBaseListing**](KnowledgeBaseListing)
 
-<a name="patch_knowledge_guest_session_documents_search_search_id"></a>
 
-##  patch_knowledge_guest_session_documents_search_search_id(session_id, search_id, body)
+## patch_knowledge_guest_session_documents_search_search_id
 
+>  patch_knowledge_guest_session_documents_search_search_id(session_id, search_id, body)
 
 
 Update search result.
@@ -2718,17 +2703,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **session_id** | **str**| Knowledge guest session ID. |  |
 | **search_id** | **str**| Search Result ID |  |
-| **body** | [**SearchUpdateRequest**](SearchUpdateRequest.html)|  |  |
-{: class="table table-striped"}
+| **body** | [**SearchUpdateRequest**](SearchUpdateRequest)|  |  |
 
 ### Return type
 
 void (empty response body)
 
-<a name="patch_knowledge_knowledgebase"></a>
 
-## [**KnowledgeBase**](KnowledgeBase.html) patch_knowledge_knowledgebase(knowledge_base_id, body)
+## patch_knowledge_knowledgebase
 
+> [**KnowledgeBase**](KnowledgeBase) patch_knowledge_knowledgebase(knowledge_base_id, body)
 
 
 Update knowledge base
@@ -2769,17 +2753,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **knowledge_base_id** | **str**| Knowledge base ID |  |
-| **body** | [**KnowledgeBaseUpdateRequest**](KnowledgeBaseUpdateRequest.html)|  |  |
-{: class="table table-striped"}
+| **body** | [**KnowledgeBaseUpdateRequest**](KnowledgeBaseUpdateRequest)|  |  |
 
 ### Return type
 
-[**KnowledgeBase**](KnowledgeBase.html)
+[**KnowledgeBase**](KnowledgeBase)
 
-<a name="patch_knowledge_knowledgebase_category"></a>
 
-## [**CategoryResponse**](CategoryResponse.html) patch_knowledge_knowledgebase_category(knowledge_base_id, category_id, body)
+## patch_knowledge_knowledgebase_category
 
+> [**CategoryResponse**](CategoryResponse) patch_knowledge_knowledgebase_category(knowledge_base_id, category_id, body)
 
 
 Update category
@@ -2822,17 +2805,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **knowledge_base_id** | **str**| Knowledge base ID |  |
 | **category_id** | **str**| Category ID |  |
-| **body** | [**CategoryUpdateRequest**](CategoryUpdateRequest.html)|  |  |
-{: class="table table-striped"}
+| **body** | [**CategoryUpdateRequest**](CategoryUpdateRequest)|  |  |
 
 ### Return type
 
-[**CategoryResponse**](CategoryResponse.html)
+[**CategoryResponse**](CategoryResponse)
 
-<a name="patch_knowledge_knowledgebase_document"></a>
 
-## [**KnowledgeDocumentResponse**](KnowledgeDocumentResponse.html) patch_knowledge_knowledgebase_document(knowledge_base_id, document_id, body)
+## patch_knowledge_knowledgebase_document
 
+> [**KnowledgeDocumentResponse**](KnowledgeDocumentResponse) patch_knowledge_knowledgebase_document(knowledge_base_id, document_id, body)
 
 
 Update document.
@@ -2875,17 +2857,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **knowledge_base_id** | **str**| Knowledge base ID. |  |
 | **document_id** | **str**| Document ID. |  |
-| **body** | [**KnowledgeDocumentReq**](KnowledgeDocumentReq.html)|  |  |
-{: class="table table-striped"}
+| **body** | [**KnowledgeDocumentReq**](KnowledgeDocumentReq)|  |  |
 
 ### Return type
 
-[**KnowledgeDocumentResponse**](KnowledgeDocumentResponse.html)
+[**KnowledgeDocumentResponse**](KnowledgeDocumentResponse)
 
-<a name="patch_knowledge_knowledgebase_document_feedback_feedback_id"></a>
 
-## [**KnowledgeDocumentFeedbackResponse**](KnowledgeDocumentFeedbackResponse.html) patch_knowledge_knowledgebase_document_feedback_feedback_id(knowledge_base_id, document_id, feedback_id, body=body)
+## patch_knowledge_knowledgebase_document_feedback_feedback_id
 
+> [**KnowledgeDocumentFeedbackResponse**](KnowledgeDocumentFeedbackResponse) patch_knowledge_knowledgebase_document_feedback_feedback_id(knowledge_base_id, document_id, feedback_id, body=body)
 
 
 Update feedback on a document
@@ -2930,17 +2911,16 @@ except ApiException as e:
 | **knowledge_base_id** | **str**| Knowledge base ID. |  |
 | **document_id** | **str**| Document ID. |  |
 | **feedback_id** | **str**| Feedback ID. |  |
-| **body** | [**KnowledgeDocumentFeedbackUpdateRequest**](KnowledgeDocumentFeedbackUpdateRequest.html)|  | [optional]  |
-{: class="table table-striped"}
+| **body** | [**KnowledgeDocumentFeedbackUpdateRequest**](KnowledgeDocumentFeedbackUpdateRequest)|  | [optional]  |
 
 ### Return type
 
-[**KnowledgeDocumentFeedbackResponse**](KnowledgeDocumentFeedbackResponse.html)
+[**KnowledgeDocumentFeedbackResponse**](KnowledgeDocumentFeedbackResponse)
 
-<a name="patch_knowledge_knowledgebase_document_variation"></a>
 
-## [**DocumentVariation**](DocumentVariation.html) patch_knowledge_knowledgebase_document_variation(document_variation_id, document_id, knowledge_base_id, body)
+## patch_knowledge_knowledgebase_document_variation
 
+> [**DocumentVariation**](DocumentVariation) patch_knowledge_knowledgebase_document_variation(document_variation_id, document_id, knowledge_base_id, body)
 
 
 Update a variation for a document.
@@ -2985,17 +2965,16 @@ except ApiException as e:
 | **document_variation_id** | **str**| Globally unique identifier for a document variation. |  |
 | **document_id** | **str**| Globally unique identifier for a document. |  |
 | **knowledge_base_id** | **str**| Globally unique identifier for a knowledge base. |  |
-| **body** | [**DocumentVariation**](DocumentVariation.html)|  |  |
-{: class="table table-striped"}
+| **body** | [**DocumentVariation**](DocumentVariation)|  |  |
 
 ### Return type
 
-[**DocumentVariation**](DocumentVariation.html)
+[**DocumentVariation**](DocumentVariation)
 
-<a name="patch_knowledge_knowledgebase_documents_search_search_id"></a>
 
-##  patch_knowledge_knowledgebase_documents_search_search_id(knowledge_base_id, search_id, body=body)
+## patch_knowledge_knowledgebase_documents_search_search_id
 
+>  patch_knowledge_knowledgebase_documents_search_search_id(knowledge_base_id, search_id, body=body)
 
 
 Update search result.
@@ -3037,17 +3016,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **knowledge_base_id** | **str**| The ID of knowledge base containing the documents to query. |  |
 | **search_id** | **str**| Search Result ID |  |
-| **body** | [**SearchUpdateRequest**](SearchUpdateRequest.html)|  | [optional]  |
-{: class="table table-striped"}
+| **body** | [**SearchUpdateRequest**](SearchUpdateRequest)|  | [optional]  |
 
 ### Return type
 
 void (empty response body)
 
-<a name="patch_knowledge_knowledgebase_import_job"></a>
 
-## [**KnowledgeImportJobResponse**](KnowledgeImportJobResponse.html) patch_knowledge_knowledgebase_import_job(knowledge_base_id, import_job_id, body)
+## patch_knowledge_knowledgebase_import_job
 
+> [**KnowledgeImportJobResponse**](KnowledgeImportJobResponse) patch_knowledge_knowledgebase_import_job(knowledge_base_id, import_job_id, body)
 
 
 Start import job
@@ -3090,17 +3068,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **knowledge_base_id** | **str**| Knowledge base ID |  |
 | **import_job_id** | **str**| Import job ID |  |
-| **body** | [**ImportStatusRequest**](ImportStatusRequest.html)|  |  |
-{: class="table table-striped"}
+| **body** | [**ImportStatusRequest**](ImportStatusRequest)|  |  |
 
 ### Return type
 
-[**KnowledgeImportJobResponse**](KnowledgeImportJobResponse.html)
+[**KnowledgeImportJobResponse**](KnowledgeImportJobResponse)
 
-<a name="patch_knowledge_knowledgebase_label"></a>
 
-## [**LabelResponse**](LabelResponse.html) patch_knowledge_knowledgebase_label(knowledge_base_id, label_id, body)
+## patch_knowledge_knowledgebase_label
 
+> [**LabelResponse**](LabelResponse) patch_knowledge_knowledgebase_label(knowledge_base_id, label_id, body)
 
 
 Update label
@@ -3143,18 +3120,20 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **knowledge_base_id** | **str**| Knowledge base ID |  |
 | **label_id** | **str**| Label ID |  |
-| **body** | [**LabelUpdateRequest**](LabelUpdateRequest.html)|  |  |
-{: class="table table-striped"}
+| **body** | [**LabelUpdateRequest**](LabelUpdateRequest)|  |  |
 
 ### Return type
 
-[**LabelResponse**](LabelResponse.html)
+[**LabelResponse**](LabelResponse)
 
-<a name="patch_knowledge_knowledgebase_language_category"></a>
 
-## [**KnowledgeExtendedCategory**](KnowledgeExtendedCategory.html) patch_knowledge_knowledgebase_language_category(category_id, knowledge_base_id, language_code, body)
+## patch_knowledge_knowledgebase_language_category
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+> [**KnowledgeExtendedCategory**](KnowledgeExtendedCategory) patch_knowledge_knowledgebase_language_category(category_id, knowledge_base_id, language_code, body)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 Update category
 
@@ -3198,18 +3177,20 @@ except ApiException as e:
 | **category_id** | **str**| Category ID |  |
 | **knowledge_base_id** | **str**| Knowledge base ID |  |
 | **language_code** | **str**| Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, en-CA, en-HK, en-IN, en-IE, en-NZ, en-PH, en-SG, en-ZA, de-DE, de-AT, de-CH, es-AR, es-CO, es-MX, es-US, es-ES, fr-FR, fr-BE, fr-CA, fr-CH, pt-BR, pt-PT, nl-NL, nl-BE, it-IT, ca-ES, tr-TR, sv-SE, fi-FI, nb-NO, da-DK, ja-JP, ar-AE, zh-CN, zh-TW, zh-HK, ko-KR, pl-PL, hi-IN, th-TH, hu-HU, vi-VN, uk-UA |
-| **body** | [**KnowledgeCategoryRequest**](KnowledgeCategoryRequest.html)|  |  |
-{: class="table table-striped"}
+| **body** | [**KnowledgeCategoryRequest**](KnowledgeCategoryRequest)|  |  |
 
 ### Return type
 
-[**KnowledgeExtendedCategory**](KnowledgeExtendedCategory.html)
+[**KnowledgeExtendedCategory**](KnowledgeExtendedCategory)
 
-<a name="patch_knowledge_knowledgebase_language_document"></a>
 
-## [**KnowledgeDocument**](KnowledgeDocument.html) patch_knowledge_knowledgebase_language_document(document_id, knowledge_base_id, language_code, body)
+## patch_knowledge_knowledgebase_language_document
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+> [**KnowledgeDocument**](KnowledgeDocument) patch_knowledge_knowledgebase_language_document(document_id, knowledge_base_id, language_code, body)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 Update document
 
@@ -3253,18 +3234,20 @@ except ApiException as e:
 | **document_id** | **str**| Document ID |  |
 | **knowledge_base_id** | **str**| Knowledge base ID |  |
 | **language_code** | **str**| Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, en-CA, en-HK, en-IN, en-IE, en-NZ, en-PH, en-SG, en-ZA, de-DE, de-AT, de-CH, es-AR, es-CO, es-MX, es-US, es-ES, fr-FR, fr-BE, fr-CA, fr-CH, pt-BR, pt-PT, nl-NL, nl-BE, it-IT, ca-ES, tr-TR, sv-SE, fi-FI, nb-NO, da-DK, ja-JP, ar-AE, zh-CN, zh-TW, zh-HK, ko-KR, pl-PL, hi-IN, th-TH, hu-HU, vi-VN, uk-UA |
-| **body** | [**KnowledgeDocumentRequest**](KnowledgeDocumentRequest.html)|  |  |
-{: class="table table-striped"}
+| **body** | [**KnowledgeDocumentRequest**](KnowledgeDocumentRequest)|  |  |
 
 ### Return type
 
-[**KnowledgeDocument**](KnowledgeDocument.html)
+[**KnowledgeDocument**](KnowledgeDocument)
 
-<a name="patch_knowledge_knowledgebase_language_documents"></a>
 
-## [**DocumentListing**](DocumentListing.html) patch_knowledge_knowledgebase_language_documents(knowledge_base_id, language_code, body)
+## patch_knowledge_knowledgebase_language_documents
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+> [**DocumentListing**](DocumentListing) patch_knowledge_knowledgebase_language_documents(knowledge_base_id, language_code, body)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 Update documents collection
 
@@ -3306,18 +3289,20 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **knowledge_base_id** | **str**| Knowledge base ID |  |
 | **language_code** | **str**| Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, en-CA, en-HK, en-IN, en-IE, en-NZ, en-PH, en-SG, en-ZA, de-DE, de-AT, de-CH, es-AR, es-CO, es-MX, es-US, es-ES, fr-FR, fr-BE, fr-CA, fr-CH, pt-BR, pt-PT, nl-NL, nl-BE, it-IT, ca-ES, tr-TR, sv-SE, fi-FI, nb-NO, da-DK, ja-JP, ar-AE, zh-CN, zh-TW, zh-HK, ko-KR, pl-PL, hi-IN, th-TH, hu-HU, vi-VN, uk-UA |
-| **body** | [**list[KnowledgeDocumentBulkRequest]**](KnowledgeDocumentBulkRequest.html)|  |  |
-{: class="table table-striped"}
+| **body** | [**list[KnowledgeDocumentBulkRequest]**](KnowledgeDocumentBulkRequest)|  |  |
 
 ### Return type
 
-[**DocumentListing**](DocumentListing.html)
+[**DocumentListing**](DocumentListing)
 
-<a name="patch_knowledge_knowledgebase_language_documents_import"></a>
 
-## [**KnowledgeImport**](KnowledgeImport.html) patch_knowledge_knowledgebase_language_documents_import(knowledge_base_id, language_code, import_id, body)
+## patch_knowledge_knowledgebase_language_documents_import
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+> [**KnowledgeImport**](KnowledgeImport) patch_knowledge_knowledgebase_language_documents_import(knowledge_base_id, language_code, import_id, body)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 Start import operation
 
@@ -3362,17 +3347,16 @@ except ApiException as e:
 | **knowledge_base_id** | **str**| Knowledge base ID |  |
 | **language_code** | **str**| Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, en-CA, en-HK, en-IN, en-IE, en-NZ, en-PH, en-SG, en-ZA, de-DE, de-AT, de-CH, es-AR, es-CO, es-MX, es-US, es-ES, fr-FR, fr-BE, fr-CA, fr-CH, pt-BR, pt-PT, nl-NL, nl-BE, it-IT, ca-ES, tr-TR, sv-SE, fi-FI, nb-NO, da-DK, ja-JP, ar-AE, zh-CN, zh-TW, zh-HK, ko-KR, pl-PL, hi-IN, th-TH, hu-HU, vi-VN, uk-UA |
 | **import_id** | **str**| Import ID |  |
-| **body** | [**ImportStatusRequest**](ImportStatusRequest.html)|  |  |
-{: class="table table-striped"}
+| **body** | [**ImportStatusRequest**](ImportStatusRequest)|  |  |
 
 ### Return type
 
-[**KnowledgeImport**](KnowledgeImport.html)
+[**KnowledgeImport**](KnowledgeImport)
 
-<a name="patch_knowledge_knowledgebase_parse_job"></a>
 
-##  patch_knowledge_knowledgebase_parse_job(knowledge_base_id, parse_job_id, body)
+## patch_knowledge_knowledgebase_parse_job
 
+>  patch_knowledge_knowledgebase_parse_job(knowledge_base_id, parse_job_id, body)
 
 
 Send update to the parse operation
@@ -3416,17 +3400,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **knowledge_base_id** | **str**| Knowledge base ID |  |
 | **parse_job_id** | **str**| Parse job ID |  |
-| **body** | [**KnowledgeParseJobRequestPatch**](KnowledgeParseJobRequestPatch.html)|  |  |
-{: class="table table-striped"}
+| **body** | [**KnowledgeParseJobRequestPatch**](KnowledgeParseJobRequestPatch)|  |  |
 
 ### Return type
 
 void (empty response body)
 
-<a name="patch_knowledge_knowledgebase_unanswered_group_phrasegroup"></a>
 
-## [**UnansweredPhraseGroupUpdateResponse**](UnansweredPhraseGroupUpdateResponse.html) patch_knowledge_knowledgebase_unanswered_group_phrasegroup(knowledge_base_id, group_id, phrase_group_id, body)
+## patch_knowledge_knowledgebase_unanswered_group_phrasegroup
 
+> [**UnansweredPhraseGroupUpdateResponse**](UnansweredPhraseGroupUpdateResponse) patch_knowledge_knowledgebase_unanswered_group_phrasegroup(knowledge_base_id, group_id, phrase_group_id, body)
 
 
 Update a Knowledge base unanswered phrase group
@@ -3472,17 +3455,16 @@ except ApiException as e:
 | **knowledge_base_id** | **str**| Knowledge base ID |  |
 | **group_id** | **str**| The ID of the group to be updated. |  |
 | **phrase_group_id** | **str**| The ID of the phraseGroup to be updated. |  |
-| **body** | [**UnansweredPhraseGroupPatchRequestBody**](UnansweredPhraseGroupPatchRequestBody.html)| Request body of the update unanswered group endpoint. |  |
-{: class="table table-striped"}
+| **body** | [**UnansweredPhraseGroupPatchRequestBody**](UnansweredPhraseGroupPatchRequestBody)| Request body of the update unanswered group endpoint. |  |
 
 ### Return type
 
-[**UnansweredPhraseGroupUpdateResponse**](UnansweredPhraseGroupUpdateResponse.html)
+[**UnansweredPhraseGroupUpdateResponse**](UnansweredPhraseGroupUpdateResponse)
 
-<a name="post_knowledge_documentuploads"></a>
 
-## [**UploadUrlResponse**](UploadUrlResponse.html) post_knowledge_documentuploads(body)
+## post_knowledge_documentuploads
 
+> [**UploadUrlResponse**](UploadUrlResponse) post_knowledge_documentuploads(body)
 
 
 Creates a presigned URL for uploading a knowledge import file with a set of documents
@@ -3521,17 +3503,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**UploadUrlRequest**](UploadUrlRequest.html)| query |  |
-{: class="table table-striped"}
+| **body** | [**UploadUrlRequest**](UploadUrlRequest)| query |  |
 
 ### Return type
 
-[**UploadUrlResponse**](UploadUrlResponse.html)
+[**UploadUrlResponse**](UploadUrlResponse)
 
-<a name="post_knowledge_guest_session_document_copies"></a>
 
-##  post_knowledge_guest_session_document_copies(session_id, document_id, body=body)
+## post_knowledge_guest_session_document_copies
 
+>  post_knowledge_guest_session_document_copies(session_id, document_id, body=body)
 
 
 Indicate that the document was copied by the user.
@@ -3569,17 +3550,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **session_id** | **str**| Knowledge guest session ID. |  |
 | **document_id** | **str**| Document ID |  |
-| **body** | [**KnowledgeGuestDocumentCopy**](KnowledgeGuestDocumentCopy.html)|  | [optional]  |
-{: class="table table-striped"}
+| **body** | [**KnowledgeGuestDocumentCopy**](KnowledgeGuestDocumentCopy)|  | [optional]  |
 
 ### Return type
 
 void (empty response body)
 
-<a name="post_knowledge_guest_session_document_feedback"></a>
 
-## [**KnowledgeGuestDocumentFeedback**](KnowledgeGuestDocumentFeedback.html) post_knowledge_guest_session_document_feedback(session_id, document_id, body=body)
+## post_knowledge_guest_session_document_feedback
 
+> [**KnowledgeGuestDocumentFeedback**](KnowledgeGuestDocumentFeedback) post_knowledge_guest_session_document_feedback(session_id, document_id, body=body)
 
 
 Give feedback on a document
@@ -3618,17 +3598,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **session_id** | **str**| Knowledge guest session ID. |  |
 | **document_id** | **str**| Document ID. |  |
-| **body** | [**KnowledgeGuestDocumentFeedback**](KnowledgeGuestDocumentFeedback.html)|  | [optional]  |
-{: class="table table-striped"}
+| **body** | [**KnowledgeGuestDocumentFeedback**](KnowledgeGuestDocumentFeedback)|  | [optional]  |
 
 ### Return type
 
-[**KnowledgeGuestDocumentFeedback**](KnowledgeGuestDocumentFeedback.html)
+[**KnowledgeGuestDocumentFeedback**](KnowledgeGuestDocumentFeedback)
 
-<a name="post_knowledge_guest_session_document_views"></a>
 
-##  post_knowledge_guest_session_document_views(session_id, document_id, body=body)
+## post_knowledge_guest_session_document_views
 
+>  post_knowledge_guest_session_document_views(session_id, document_id, body=body)
 
 
 Create view event for a document.
@@ -3666,17 +3645,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **session_id** | **str**| Knowledge guest session ID. |  |
 | **document_id** | **str**| Document ID |  |
-| **body** | [**KnowledgeGuestDocumentView**](KnowledgeGuestDocumentView.html)|  | [optional]  |
-{: class="table table-striped"}
+| **body** | [**KnowledgeGuestDocumentView**](KnowledgeGuestDocumentView)|  | [optional]  |
 
 ### Return type
 
 void (empty response body)
 
-<a name="post_knowledge_guest_session_documents_answers"></a>
 
-## [**KnowledgeGuestAnswerDocumentsResponse**](KnowledgeGuestAnswerDocumentsResponse.html) post_knowledge_guest_session_documents_answers(session_id, body)
+## post_knowledge_guest_session_documents_answers
 
+> [**KnowledgeGuestAnswerDocumentsResponse**](KnowledgeGuestAnswerDocumentsResponse) post_knowledge_guest_session_documents_answers(session_id, body)
 
 
 Answer documents.
@@ -3713,17 +3691,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **session_id** | **str**| Knowledge guest session ID. |  |
-| **body** | [**KnowledgeDocumentsAnswerFilter**](KnowledgeDocumentsAnswerFilter.html)|  |  |
-{: class="table table-striped"}
+| **body** | [**KnowledgeDocumentsAnswerFilter**](KnowledgeDocumentsAnswerFilter)|  |  |
 
 ### Return type
 
-[**KnowledgeGuestAnswerDocumentsResponse**](KnowledgeGuestAnswerDocumentsResponse.html)
+[**KnowledgeGuestAnswerDocumentsResponse**](KnowledgeGuestAnswerDocumentsResponse)
 
-<a name="post_knowledge_guest_session_documents_presentations"></a>
 
-##  post_knowledge_guest_session_documents_presentations(session_id, body=body)
+## post_knowledge_guest_session_documents_presentations
 
+>  post_knowledge_guest_session_documents_presentations(session_id, body=body)
 
 
 Indicate that documents were presented to the user.
@@ -3759,17 +3736,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **session_id** | **str**| Knowledge guest session ID. |  |
-| **body** | [**KnowledgeGuestDocumentPresentation**](KnowledgeGuestDocumentPresentation.html)|  | [optional]  |
-{: class="table table-striped"}
+| **body** | [**KnowledgeGuestDocumentPresentation**](KnowledgeGuestDocumentPresentation)|  | [optional]  |
 
 ### Return type
 
 void (empty response body)
 
-<a name="post_knowledge_guest_session_documents_search"></a>
 
-## [**KnowledgeDocumentGuestSearch**](KnowledgeDocumentGuestSearch.html) post_knowledge_guest_session_documents_search(session_id, expand=expand, body=body)
+## post_knowledge_guest_session_documents_search
 
+> [**KnowledgeDocumentGuestSearch**](KnowledgeDocumentGuestSearch) post_knowledge_guest_session_documents_search(session_id, expand=expand, body=body)
 
 
 Search the documents in a guest session.
@@ -3807,18 +3783,17 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **session_id** | **str**| Knowledge guest session ID. |  |
-| **expand** | [**list[str]**](str.html)| Fields, if any, to expand for each document in the search result matching the query. | [optional] <br />**Values**: documentVariations, documentAlternatives, knowledgeBaseLanguageCode |
-| **body** | [**KnowledgeDocumentGuestSearchRequest**](KnowledgeDocumentGuestSearchRequest.html)|  | [optional]  |
-{: class="table table-striped"}
+| **expand** | [**list[str]**](str)| Fields, if any, to expand for each document in the search result matching the query. | [optional] <br />**Values**: documentVariations, documentAlternatives, knowledgeBaseLanguageCode |
+| **body** | [**KnowledgeDocumentGuestSearchRequest**](KnowledgeDocumentGuestSearchRequest)|  | [optional]  |
 
 ### Return type
 
-[**KnowledgeDocumentGuestSearch**](KnowledgeDocumentGuestSearch.html)
+[**KnowledgeDocumentGuestSearch**](KnowledgeDocumentGuestSearch)
 
-<a name="post_knowledge_guest_session_documents_search_suggestions"></a>
 
-## [**KnowledgeGuestDocumentSuggestion**](KnowledgeGuestDocumentSuggestion.html) post_knowledge_guest_session_documents_search_suggestions(session_id, body=body)
+## post_knowledge_guest_session_documents_search_suggestions
 
+> [**KnowledgeGuestDocumentSuggestion**](KnowledgeGuestDocumentSuggestion) post_knowledge_guest_session_documents_search_suggestions(session_id, body=body)
 
 
 Query the knowledge documents to provide suggestions for auto completion.
@@ -3855,17 +3830,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **session_id** | **str**| Knowledge guest session ID. |  |
-| **body** | [**KnowledgeGuestDocumentSuggestionRequest**](KnowledgeGuestDocumentSuggestionRequest.html)|  | [optional]  |
-{: class="table table-striped"}
+| **body** | [**KnowledgeGuestDocumentSuggestionRequest**](KnowledgeGuestDocumentSuggestionRequest)|  | [optional]  |
 
 ### Return type
 
-[**KnowledgeGuestDocumentSuggestion**](KnowledgeGuestDocumentSuggestion.html)
+[**KnowledgeGuestDocumentSuggestion**](KnowledgeGuestDocumentSuggestion)
 
-<a name="post_knowledge_guest_sessions"></a>
 
-## [**KnowledgeGuestSession**](KnowledgeGuestSession.html) post_knowledge_guest_sessions(body)
+## post_knowledge_guest_sessions
 
+> [**KnowledgeGuestSession**](KnowledgeGuestSession) post_knowledge_guest_sessions(body)
 
 
 Create guest session
@@ -3900,17 +3874,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**KnowledgeGuestSession**](KnowledgeGuestSession.html)|  |  |
-{: class="table table-striped"}
+| **body** | [**KnowledgeGuestSession**](KnowledgeGuestSession)|  |  |
 
 ### Return type
 
-[**KnowledgeGuestSession**](KnowledgeGuestSession.html)
+[**KnowledgeGuestSession**](KnowledgeGuestSession)
 
-<a name="post_knowledge_knowledgebase_categories"></a>
 
-## [**CategoryResponse**](CategoryResponse.html) post_knowledge_knowledgebase_categories(knowledge_base_id, body)
+## post_knowledge_knowledgebase_categories
 
+> [**CategoryResponse**](CategoryResponse) post_knowledge_knowledgebase_categories(knowledge_base_id, body)
 
 
 Create new category
@@ -3951,17 +3924,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **knowledge_base_id** | **str**| Knowledge base ID |  |
-| **body** | [**CategoryCreateRequest**](CategoryCreateRequest.html)|  |  |
-{: class="table table-striped"}
+| **body** | [**CategoryCreateRequest**](CategoryCreateRequest)|  |  |
 
 ### Return type
 
-[**CategoryResponse**](CategoryResponse.html)
+[**CategoryResponse**](CategoryResponse)
 
-<a name="post_knowledge_knowledgebase_document_copies"></a>
 
-##  post_knowledge_knowledgebase_document_copies(knowledge_base_id, document_id, body=body)
+## post_knowledge_knowledgebase_document_copies
 
+>  post_knowledge_knowledgebase_document_copies(knowledge_base_id, document_id, body=body)
 
 
 Indicate that the document was copied by the user.
@@ -4003,17 +3975,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **knowledge_base_id** | **str**| Knowledge base ID. |  |
 | **document_id** | **str**| Document ID. |  |
-| **body** | [**KnowledgeDocumentCopy**](KnowledgeDocumentCopy.html)|  | [optional]  |
-{: class="table table-striped"}
+| **body** | [**KnowledgeDocumentCopy**](KnowledgeDocumentCopy)|  | [optional]  |
 
 ### Return type
 
 void (empty response body)
 
-<a name="post_knowledge_knowledgebase_document_feedback"></a>
 
-## [**KnowledgeDocumentFeedbackResponse**](KnowledgeDocumentFeedbackResponse.html) post_knowledge_knowledgebase_document_feedback(knowledge_base_id, document_id, body=body)
+## post_knowledge_knowledgebase_document_feedback
 
+> [**KnowledgeDocumentFeedbackResponse**](KnowledgeDocumentFeedbackResponse) post_knowledge_knowledgebase_document_feedback(knowledge_base_id, document_id, body=body)
 
 
 Give feedback on a document
@@ -4056,17 +4027,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **knowledge_base_id** | **str**| Knowledge base ID. |  |
 | **document_id** | **str**| Document ID. |  |
-| **body** | [**KnowledgeDocumentFeedback**](KnowledgeDocumentFeedback.html)|  | [optional]  |
-{: class="table table-striped"}
+| **body** | [**KnowledgeDocumentFeedback**](KnowledgeDocumentFeedback)|  | [optional]  |
 
 ### Return type
 
-[**KnowledgeDocumentFeedbackResponse**](KnowledgeDocumentFeedbackResponse.html)
+[**KnowledgeDocumentFeedbackResponse**](KnowledgeDocumentFeedbackResponse)
 
-<a name="post_knowledge_knowledgebase_document_variations"></a>
 
-## [**DocumentVariation**](DocumentVariation.html) post_knowledge_knowledgebase_document_variations(knowledge_base_id, document_id, body)
+## post_knowledge_knowledgebase_document_variations
 
+> [**DocumentVariation**](DocumentVariation) post_knowledge_knowledgebase_document_variations(knowledge_base_id, document_id, body)
 
 
 Create a variation for a document.
@@ -4110,17 +4080,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **knowledge_base_id** | **str**| Globally unique identifier for the knowledge base. |  |
 | **document_id** | **str**| Globally unique identifier for the document. |  |
-| **body** | [**DocumentVariation**](DocumentVariation.html)|  |  |
-{: class="table table-striped"}
+| **body** | [**DocumentVariation**](DocumentVariation)|  |  |
 
 ### Return type
 
-[**DocumentVariation**](DocumentVariation.html)
+[**DocumentVariation**](DocumentVariation)
 
-<a name="post_knowledge_knowledgebase_document_versions"></a>
 
-## [**KnowledgeDocumentVersion**](KnowledgeDocumentVersion.html) post_knowledge_knowledgebase_document_versions(knowledge_base_id, document_id, body)
+## post_knowledge_knowledgebase_document_versions
 
+> [**KnowledgeDocumentVersion**](KnowledgeDocumentVersion) post_knowledge_knowledgebase_document_versions(knowledge_base_id, document_id, body)
 
 
 Creates or restores a document version.
@@ -4163,17 +4132,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **knowledge_base_id** | **str**| Globally unique identifier for the knowledge base. |  |
 | **document_id** | **str**| Globally unique identifier for the document. |  |
-| **body** | [**KnowledgeDocumentVersion**](KnowledgeDocumentVersion.html)|  |  |
-{: class="table table-striped"}
+| **body** | [**KnowledgeDocumentVersion**](KnowledgeDocumentVersion)|  |  |
 
 ### Return type
 
-[**KnowledgeDocumentVersion**](KnowledgeDocumentVersion.html)
+[**KnowledgeDocumentVersion**](KnowledgeDocumentVersion)
 
-<a name="post_knowledge_knowledgebase_document_views"></a>
 
-##  post_knowledge_knowledgebase_document_views(knowledge_base_id, document_id, body=body)
+## post_knowledge_knowledgebase_document_views
 
+>  post_knowledge_knowledgebase_document_views(knowledge_base_id, document_id, body=body)
 
 
 Create view for a document.
@@ -4215,17 +4183,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **knowledge_base_id** | **str**| Knowledge base ID. |  |
 | **document_id** | **str**| Document ID. |  |
-| **body** | [**KnowledgeDocumentView**](KnowledgeDocumentView.html)|  | [optional]  |
-{: class="table table-striped"}
+| **body** | [**KnowledgeDocumentView**](KnowledgeDocumentView)|  | [optional]  |
 
 ### Return type
 
 void (empty response body)
 
-<a name="post_knowledge_knowledgebase_documents"></a>
 
-## [**KnowledgeDocumentResponse**](KnowledgeDocumentResponse.html) post_knowledge_knowledgebase_documents(knowledge_base_id, body)
+## post_knowledge_knowledgebase_documents
 
+> [**KnowledgeDocumentResponse**](KnowledgeDocumentResponse) post_knowledge_knowledgebase_documents(knowledge_base_id, body)
 
 
 Create document.
@@ -4266,17 +4233,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **knowledge_base_id** | **str**| Knowledge base ID |  |
-| **body** | [**KnowledgeDocumentReq**](KnowledgeDocumentReq.html)|  |  |
-{: class="table table-striped"}
+| **body** | [**KnowledgeDocumentReq**](KnowledgeDocumentReq)|  |  |
 
 ### Return type
 
-[**KnowledgeDocumentResponse**](KnowledgeDocumentResponse.html)
+[**KnowledgeDocumentResponse**](KnowledgeDocumentResponse)
 
-<a name="post_knowledge_knowledgebase_documents_answers"></a>
 
-## [**KnowledgeAnswerDocumentsResponse**](KnowledgeAnswerDocumentsResponse.html) post_knowledge_knowledgebase_documents_answers(knowledge_base_id, body)
+## post_knowledge_knowledgebase_documents_answers
 
+> [**KnowledgeAnswerDocumentsResponse**](KnowledgeAnswerDocumentsResponse) post_knowledge_knowledgebase_documents_answers(knowledge_base_id, body)
 
 
 Answer documents.
@@ -4318,17 +4284,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **knowledge_base_id** | **str**| Knowledge base ID |  |
-| **body** | [**KnowledgeDocumentsAnswerFilter**](KnowledgeDocumentsAnswerFilter.html)|  |  |
-{: class="table table-striped"}
+| **body** | [**KnowledgeDocumentsAnswerFilter**](KnowledgeDocumentsAnswerFilter)|  |  |
 
 ### Return type
 
-[**KnowledgeAnswerDocumentsResponse**](KnowledgeAnswerDocumentsResponse.html)
+[**KnowledgeAnswerDocumentsResponse**](KnowledgeAnswerDocumentsResponse)
 
-<a name="post_knowledge_knowledgebase_documents_bulk_remove"></a>
 
-## [**BulkResponse**](BulkResponse.html) post_knowledge_knowledgebase_documents_bulk_remove(knowledge_base_id, body)
+## post_knowledge_knowledgebase_documents_bulk_remove
 
+> [**BulkResponse**](BulkResponse) post_knowledge_knowledgebase_documents_bulk_remove(knowledge_base_id, body)
 
 
 Bulk remove documents.
@@ -4371,17 +4336,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **knowledge_base_id** | **str**| Knowledge base ID |  |
-| **body** | [**KnowledgeDocumentBulkRemoveRequest**](KnowledgeDocumentBulkRemoveRequest.html)|  |  |
-{: class="table table-striped"}
+| **body** | [**KnowledgeDocumentBulkRemoveRequest**](KnowledgeDocumentBulkRemoveRequest)|  |  |
 
 ### Return type
 
-[**BulkResponse**](BulkResponse.html)
+[**BulkResponse**](BulkResponse)
 
-<a name="post_knowledge_knowledgebase_documents_bulk_update"></a>
 
-## [**BulkResponse**](BulkResponse.html) post_knowledge_knowledgebase_documents_bulk_update(knowledge_base_id, body)
+## post_knowledge_knowledgebase_documents_bulk_update
 
+> [**BulkResponse**](BulkResponse) post_knowledge_knowledgebase_documents_bulk_update(knowledge_base_id, body)
 
 
 Bulk update documents.
@@ -4424,17 +4388,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **knowledge_base_id** | **str**| Knowledge base ID |  |
-| **body** | [**KnowledgeDocumentBulkUpdateRequest**](KnowledgeDocumentBulkUpdateRequest.html)|  |  |
-{: class="table table-striped"}
+| **body** | [**KnowledgeDocumentBulkUpdateRequest**](KnowledgeDocumentBulkUpdateRequest)|  |  |
 
 ### Return type
 
-[**BulkResponse**](BulkResponse.html)
+[**BulkResponse**](BulkResponse)
 
-<a name="post_knowledge_knowledgebase_documents_presentations"></a>
 
-##  post_knowledge_knowledgebase_documents_presentations(knowledge_base_id, body=body)
+## post_knowledge_knowledgebase_documents_presentations
 
+>  post_knowledge_knowledgebase_documents_presentations(knowledge_base_id, body=body)
 
 
 Indicate that documents were presented to the user.
@@ -4474,17 +4437,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **knowledge_base_id** | **str**| Knowledge base ID. |  |
-| **body** | [**KnowledgeDocumentPresentation**](KnowledgeDocumentPresentation.html)|  | [optional]  |
-{: class="table table-striped"}
+| **body** | [**KnowledgeDocumentPresentation**](KnowledgeDocumentPresentation)|  | [optional]  |
 
 ### Return type
 
 void (empty response body)
 
-<a name="post_knowledge_knowledgebase_documents_query"></a>
 
-## [**KnowledgeDocumentQueryResponse**](KnowledgeDocumentQueryResponse.html) post_knowledge_knowledgebase_documents_query(knowledge_base_id, expand=expand, body=body)
+## post_knowledge_knowledgebase_documents_query
 
+> [**KnowledgeDocumentQueryResponse**](KnowledgeDocumentQueryResponse) post_knowledge_knowledgebase_documents_query(knowledge_base_id, expand=expand, body=body)
 
 
 Query for knowledge documents.
@@ -4526,18 +4488,17 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **knowledge_base_id** | **str**| Knowledge Base ID |  |
-| **expand** | [**list[str]**](str.html)| Fields, if any, to expand for each document in the search result matching the query. | [optional] <br />**Values**: documentVariations, documentAlternatives, knowledgeBaseLanguageCode |
-| **body** | [**KnowledgeDocumentQuery**](KnowledgeDocumentQuery.html)|  | [optional]  |
-{: class="table table-striped"}
+| **expand** | [**list[str]**](str)| Fields, if any, to expand for each document in the search result matching the query. | [optional] <br />**Values**: documentVariations, documentAlternatives, knowledgeBaseLanguageCode |
+| **body** | [**KnowledgeDocumentQuery**](KnowledgeDocumentQuery)|  | [optional]  |
 
 ### Return type
 
-[**KnowledgeDocumentQueryResponse**](KnowledgeDocumentQueryResponse.html)
+[**KnowledgeDocumentQueryResponse**](KnowledgeDocumentQueryResponse)
 
-<a name="post_knowledge_knowledgebase_documents_search"></a>
 
-## [**KnowledgeDocumentSearch**](KnowledgeDocumentSearch.html) post_knowledge_knowledgebase_documents_search(knowledge_base_id, expand=expand, body=body)
+## post_knowledge_knowledgebase_documents_search
 
+> [**KnowledgeDocumentSearch**](KnowledgeDocumentSearch) post_knowledge_knowledgebase_documents_search(knowledge_base_id, expand=expand, body=body)
 
 
 Search the documents in a knowledge base.
@@ -4579,18 +4540,17 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **knowledge_base_id** | **str**| The ID of knowledge base containing the documents to query. |  |
-| **expand** | [**list[str]**](str.html)| Fields, if any, to expand for each document in the search result matching the query. | [optional] <br />**Values**: documentVariations, documentAlternatives, knowledgeBaseLanguageCode |
-| **body** | [**KnowledgeDocumentSearchRequest**](KnowledgeDocumentSearchRequest.html)|  | [optional]  |
-{: class="table table-striped"}
+| **expand** | [**list[str]**](str)| Fields, if any, to expand for each document in the search result matching the query. | [optional] <br />**Values**: documentVariations, documentAlternatives, knowledgeBaseLanguageCode |
+| **body** | [**KnowledgeDocumentSearchRequest**](KnowledgeDocumentSearchRequest)|  | [optional]  |
 
 ### Return type
 
-[**KnowledgeDocumentSearch**](KnowledgeDocumentSearch.html)
+[**KnowledgeDocumentSearch**](KnowledgeDocumentSearch)
 
-<a name="post_knowledge_knowledgebase_documents_search_suggestions"></a>
 
-## [**KnowledgeDocumentSuggestion**](KnowledgeDocumentSuggestion.html) post_knowledge_knowledgebase_documents_search_suggestions(knowledge_base_id, body=body)
+## post_knowledge_knowledgebase_documents_search_suggestions
 
+> [**KnowledgeDocumentSuggestion**](KnowledgeDocumentSuggestion) post_knowledge_knowledgebase_documents_search_suggestions(knowledge_base_id, body=body)
 
 
 Query the knowledge documents to provide suggestions for auto completion.
@@ -4631,17 +4591,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **knowledge_base_id** | **str**| The ID of knowledge base containing the documents to query. |  |
-| **body** | [**KnowledgeDocumentSuggestionRequest**](KnowledgeDocumentSuggestionRequest.html)|  | [optional]  |
-{: class="table table-striped"}
+| **body** | [**KnowledgeDocumentSuggestionRequest**](KnowledgeDocumentSuggestionRequest)|  | [optional]  |
 
 ### Return type
 
-[**KnowledgeDocumentSuggestion**](KnowledgeDocumentSuggestion.html)
+[**KnowledgeDocumentSuggestion**](KnowledgeDocumentSuggestion)
 
-<a name="post_knowledge_knowledgebase_documents_versions_bulk_add"></a>
 
-## [**BulkResponse**](BulkResponse.html) post_knowledge_knowledgebase_documents_versions_bulk_add(knowledge_base_id, body)
+## post_knowledge_knowledgebase_documents_versions_bulk_add
 
+> [**BulkResponse**](BulkResponse) post_knowledge_knowledgebase_documents_versions_bulk_add(knowledge_base_id, body)
 
 
 Bulk add document versions.
@@ -4684,17 +4643,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **knowledge_base_id** | **str**| Knowledge base ID |  |
-| **body** | [**KnowledgeDocumentBulkVersionAddRequest**](KnowledgeDocumentBulkVersionAddRequest.html)|  |  |
-{: class="table table-striped"}
+| **body** | [**KnowledgeDocumentBulkVersionAddRequest**](KnowledgeDocumentBulkVersionAddRequest)|  |  |
 
 ### Return type
 
-[**BulkResponse**](BulkResponse.html)
+[**BulkResponse**](BulkResponse)
 
-<a name="post_knowledge_knowledgebase_export_jobs"></a>
 
-## [**KnowledgeExportJobResponse**](KnowledgeExportJobResponse.html) post_knowledge_knowledgebase_export_jobs(knowledge_base_id, body)
+## post_knowledge_knowledgebase_export_jobs
 
+> [**KnowledgeExportJobResponse**](KnowledgeExportJobResponse) post_knowledge_knowledgebase_export_jobs(knowledge_base_id, body)
 
 
 Create export job
@@ -4735,17 +4693,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **knowledge_base_id** | **str**| Knowledge base ID |  |
-| **body** | [**KnowledgeExportJobRequest**](KnowledgeExportJobRequest.html)|  |  |
-{: class="table table-striped"}
+| **body** | [**KnowledgeExportJobRequest**](KnowledgeExportJobRequest)|  |  |
 
 ### Return type
 
-[**KnowledgeExportJobResponse**](KnowledgeExportJobResponse.html)
+[**KnowledgeExportJobResponse**](KnowledgeExportJobResponse)
 
-<a name="post_knowledge_knowledgebase_import_jobs"></a>
 
-## [**KnowledgeImportJobResponse**](KnowledgeImportJobResponse.html) post_knowledge_knowledgebase_import_jobs(knowledge_base_id, body)
+## post_knowledge_knowledgebase_import_jobs
 
+> [**KnowledgeImportJobResponse**](KnowledgeImportJobResponse) post_knowledge_knowledgebase_import_jobs(knowledge_base_id, body)
 
 
 Create import job
@@ -4786,17 +4743,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **knowledge_base_id** | **str**| Knowledge base ID |  |
-| **body** | [**KnowledgeImportJobRequest**](KnowledgeImportJobRequest.html)|  |  |
-{: class="table table-striped"}
+| **body** | [**KnowledgeImportJobRequest**](KnowledgeImportJobRequest)|  |  |
 
 ### Return type
 
-[**KnowledgeImportJobResponse**](KnowledgeImportJobResponse.html)
+[**KnowledgeImportJobResponse**](KnowledgeImportJobResponse)
 
-<a name="post_knowledge_knowledgebase_labels"></a>
 
-## [**LabelResponse**](LabelResponse.html) post_knowledge_knowledgebase_labels(knowledge_base_id, body)
+## post_knowledge_knowledgebase_labels
 
+> [**LabelResponse**](LabelResponse) post_knowledge_knowledgebase_labels(knowledge_base_id, body)
 
 
 Create new label
@@ -4837,18 +4793,20 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **knowledge_base_id** | **str**| Knowledge base ID |  |
-| **body** | [**LabelCreateRequest**](LabelCreateRequest.html)|  |  |
-{: class="table table-striped"}
+| **body** | [**LabelCreateRequest**](LabelCreateRequest)|  |  |
 
 ### Return type
 
-[**LabelResponse**](LabelResponse.html)
+[**LabelResponse**](LabelResponse)
 
-<a name="post_knowledge_knowledgebase_language_categories"></a>
 
-## [**KnowledgeExtendedCategory**](KnowledgeExtendedCategory.html) post_knowledge_knowledgebase_language_categories(knowledge_base_id, language_code, body)
+## post_knowledge_knowledgebase_language_categories
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+> [**KnowledgeExtendedCategory**](KnowledgeExtendedCategory) post_knowledge_knowledgebase_language_categories(knowledge_base_id, language_code, body)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 Create new category
 
@@ -4890,18 +4848,20 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **knowledge_base_id** | **str**| Knowledge base ID |  |
 | **language_code** | **str**| Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, en-CA, en-HK, en-IN, en-IE, en-NZ, en-PH, en-SG, en-ZA, de-DE, de-AT, de-CH, es-AR, es-CO, es-MX, es-US, es-ES, fr-FR, fr-BE, fr-CA, fr-CH, pt-BR, pt-PT, nl-NL, nl-BE, it-IT, ca-ES, tr-TR, sv-SE, fi-FI, nb-NO, da-DK, ja-JP, ar-AE, zh-CN, zh-TW, zh-HK, ko-KR, pl-PL, hi-IN, th-TH, hu-HU, vi-VN, uk-UA |
-| **body** | [**KnowledgeCategoryRequest**](KnowledgeCategoryRequest.html)|  |  |
-{: class="table table-striped"}
+| **body** | [**KnowledgeCategoryRequest**](KnowledgeCategoryRequest)|  |  |
 
 ### Return type
 
-[**KnowledgeExtendedCategory**](KnowledgeExtendedCategory.html)
+[**KnowledgeExtendedCategory**](KnowledgeExtendedCategory)
 
-<a name="post_knowledge_knowledgebase_language_document_uploads"></a>
 
-## [**KnowledgeDocumentContentUpload**](KnowledgeDocumentContentUpload.html) post_knowledge_knowledgebase_language_document_uploads(document_id, knowledge_base_id, language_code, body)
+## post_knowledge_knowledgebase_language_document_uploads
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+> [**KnowledgeDocumentContentUpload**](KnowledgeDocumentContentUpload) post_knowledge_knowledgebase_language_document_uploads(document_id, knowledge_base_id, language_code, body)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 Upload Article Content
 
@@ -4947,18 +4907,20 @@ except ApiException as e:
 | **document_id** | **str**| Document ID |  |
 | **knowledge_base_id** | **str**| Knowledge base ID |  |
 | **language_code** | **str**| Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, en-CA, en-HK, en-IN, en-IE, en-NZ, en-PH, en-SG, en-ZA, de-DE, de-AT, de-CH, es-AR, es-CO, es-MX, es-US, es-ES, fr-FR, fr-BE, fr-CA, fr-CH, pt-BR, pt-PT, nl-NL, nl-BE, it-IT, ca-ES, tr-TR, sv-SE, fi-FI, nb-NO, da-DK, ja-JP, ar-AE, zh-CN, zh-TW, zh-HK, ko-KR, pl-PL, hi-IN, th-TH, hu-HU, vi-VN, uk-UA |
-| **body** | [**KnowledgeDocumentContentUpload**](KnowledgeDocumentContentUpload.html)|  |  |
-{: class="table table-striped"}
+| **body** | [**KnowledgeDocumentContentUpload**](KnowledgeDocumentContentUpload)|  |  |
 
 ### Return type
 
-[**KnowledgeDocumentContentUpload**](KnowledgeDocumentContentUpload.html)
+[**KnowledgeDocumentContentUpload**](KnowledgeDocumentContentUpload)
 
-<a name="post_knowledge_knowledgebase_language_documents"></a>
 
-## [**KnowledgeDocument**](KnowledgeDocument.html) post_knowledge_knowledgebase_language_documents(knowledge_base_id, language_code, body)
+## post_knowledge_knowledgebase_language_documents
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+> [**KnowledgeDocument**](KnowledgeDocument) post_knowledge_knowledgebase_language_documents(knowledge_base_id, language_code, body)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 Create document
 
@@ -5000,18 +4962,20 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **knowledge_base_id** | **str**| Knowledge base ID |  |
 | **language_code** | **str**| Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, en-CA, en-HK, en-IN, en-IE, en-NZ, en-PH, en-SG, en-ZA, de-DE, de-AT, de-CH, es-AR, es-CO, es-MX, es-US, es-ES, fr-FR, fr-BE, fr-CA, fr-CH, pt-BR, pt-PT, nl-NL, nl-BE, it-IT, ca-ES, tr-TR, sv-SE, fi-FI, nb-NO, da-DK, ja-JP, ar-AE, zh-CN, zh-TW, zh-HK, ko-KR, pl-PL, hi-IN, th-TH, hu-HU, vi-VN, uk-UA |
-| **body** | [**KnowledgeDocumentRequest**](KnowledgeDocumentRequest.html)|  |  |
-{: class="table table-striped"}
+| **body** | [**KnowledgeDocumentRequest**](KnowledgeDocumentRequest)|  |  |
 
 ### Return type
 
-[**KnowledgeDocument**](KnowledgeDocument.html)
+[**KnowledgeDocument**](KnowledgeDocument)
 
-<a name="post_knowledge_knowledgebase_language_documents_imports"></a>
 
-## [**KnowledgeImport**](KnowledgeImport.html) post_knowledge_knowledgebase_language_documents_imports(knowledge_base_id, language_code, body)
+## post_knowledge_knowledgebase_language_documents_imports
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+> [**KnowledgeImport**](KnowledgeImport) post_knowledge_knowledgebase_language_documents_imports(knowledge_base_id, language_code, body)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 Create import operation
 
@@ -5053,18 +5017,20 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **knowledge_base_id** | **str**| Knowledge base ID |  |
 | **language_code** | **str**| Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, en-CA, en-HK, en-IN, en-IE, en-NZ, en-PH, en-SG, en-ZA, de-DE, de-AT, de-CH, es-AR, es-CO, es-MX, es-US, es-ES, fr-FR, fr-BE, fr-CA, fr-CH, pt-BR, pt-PT, nl-NL, nl-BE, it-IT, ca-ES, tr-TR, sv-SE, fi-FI, nb-NO, da-DK, ja-JP, ar-AE, zh-CN, zh-TW, zh-HK, ko-KR, pl-PL, hi-IN, th-TH, hu-HU, vi-VN, uk-UA |
-| **body** | [**KnowledgeImport**](KnowledgeImport.html)|  |  |
-{: class="table table-striped"}
+| **body** | [**KnowledgeImport**](KnowledgeImport)|  |  |
 
 ### Return type
 
-[**KnowledgeImport**](KnowledgeImport.html)
+[**KnowledgeImport**](KnowledgeImport)
 
-<a name="post_knowledge_knowledgebase_language_training_promote"></a>
 
-## [**KnowledgeTraining**](KnowledgeTraining.html) post_knowledge_knowledgebase_language_training_promote(knowledge_base_id, language_code, training_id)
+## post_knowledge_knowledgebase_language_training_promote
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+> [**KnowledgeTraining**](KnowledgeTraining) post_knowledge_knowledgebase_language_training_promote(knowledge_base_id, language_code, training_id)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 Promote trained documents from draft state to active.
 
@@ -5107,17 +5073,19 @@ except ApiException as e:
 | **knowledge_base_id** | **str**| Knowledge base ID |  |
 | **language_code** | **str**| Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, en-CA, en-HK, en-IN, en-IE, en-NZ, en-PH, en-SG, en-ZA, de-DE, de-AT, de-CH, es-AR, es-CO, es-MX, es-US, es-ES, fr-FR, fr-BE, fr-CA, fr-CH, pt-BR, pt-PT, nl-NL, nl-BE, it-IT, ca-ES, tr-TR, sv-SE, fi-FI, nb-NO, da-DK, ja-JP, ar-AE, zh-CN, zh-TW, zh-HK, ko-KR, pl-PL, hi-IN, th-TH, hu-HU, vi-VN, uk-UA |
 | **training_id** | **str**| Training ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**KnowledgeTraining**](KnowledgeTraining.html)
+[**KnowledgeTraining**](KnowledgeTraining)
 
-<a name="post_knowledge_knowledgebase_language_trainings"></a>
 
-## [**KnowledgeTraining**](KnowledgeTraining.html) post_knowledge_knowledgebase_language_trainings(knowledge_base_id, language_code)
+## post_knowledge_knowledgebase_language_trainings
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+> [**KnowledgeTraining**](KnowledgeTraining) post_knowledge_knowledgebase_language_trainings(knowledge_base_id, language_code)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 Trigger training
 
@@ -5158,16 +5126,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **knowledge_base_id** | **str**| Knowledge base ID |  |
 | **language_code** | **str**| Language code, format: iso2-LOCALE | <br />**Values**: en-US, en-UK, en-AU, en-CA, en-HK, en-IN, en-IE, en-NZ, en-PH, en-SG, en-ZA, de-DE, de-AT, de-CH, es-AR, es-CO, es-MX, es-US, es-ES, fr-FR, fr-BE, fr-CA, fr-CH, pt-BR, pt-PT, nl-NL, nl-BE, it-IT, ca-ES, tr-TR, sv-SE, fi-FI, nb-NO, da-DK, ja-JP, ar-AE, zh-CN, zh-TW, zh-HK, ko-KR, pl-PL, hi-IN, th-TH, hu-HU, vi-VN, uk-UA |
-{: class="table table-striped"}
 
 ### Return type
 
-[**KnowledgeTraining**](KnowledgeTraining.html)
+[**KnowledgeTraining**](KnowledgeTraining)
 
-<a name="post_knowledge_knowledgebase_parse_job_import"></a>
 
-##  post_knowledge_knowledgebase_parse_job_import(knowledge_base_id, parse_job_id, body)
+## post_knowledge_knowledgebase_parse_job_import
 
+>  post_knowledge_knowledgebase_parse_job_import(knowledge_base_id, parse_job_id, body)
 
 
 Import the parsed articles
@@ -5211,17 +5178,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **knowledge_base_id** | **str**| Knowledge base ID |  |
 | **parse_job_id** | **str**| Parse job ID |  |
-| **body** | [**KnowledgeParseJobRequestImport**](KnowledgeParseJobRequestImport.html)|  |  |
-{: class="table table-striped"}
+| **body** | [**KnowledgeParseJobRequestImport**](KnowledgeParseJobRequestImport)|  |  |
 
 ### Return type
 
 void (empty response body)
 
-<a name="post_knowledge_knowledgebase_parse_jobs"></a>
 
-## [**KnowledgeParseJobResponse**](KnowledgeParseJobResponse.html) post_knowledge_knowledgebase_parse_jobs(knowledge_base_id, body)
+## post_knowledge_knowledgebase_parse_jobs
 
+> [**KnowledgeParseJobResponse**](KnowledgeParseJobResponse) post_knowledge_knowledgebase_parse_jobs(knowledge_base_id, body)
 
 
 Create parse job
@@ -5264,18 +5230,20 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **knowledge_base_id** | **str**| Knowledge base ID |  |
-| **body** | [**KnowledgeParseJobRequest**](KnowledgeParseJobRequest.html)|  |  |
-{: class="table table-striped"}
+| **body** | [**KnowledgeParseJobRequest**](KnowledgeParseJobRequest)|  |  |
 
 ### Return type
 
-[**KnowledgeParseJobResponse**](KnowledgeParseJobResponse.html)
+[**KnowledgeParseJobResponse**](KnowledgeParseJobResponse)
 
-<a name="post_knowledge_knowledgebase_search"></a>
 
-## [**KnowledgeSearchResponse**](KnowledgeSearchResponse.html) post_knowledge_knowledgebase_search(knowledge_base_id, body=body)
+## post_knowledge_knowledgebase_search
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+> [**KnowledgeSearchResponse**](KnowledgeSearchResponse) post_knowledge_knowledgebase_search(knowledge_base_id, body=body)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 Search Documents
 
@@ -5315,17 +5283,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **knowledge_base_id** | **str**| Knowledge base ID |  |
-| **body** | [**KnowledgeSearchRequest**](KnowledgeSearchRequest.html)|  | [optional]  |
-{: class="table table-striped"}
+| **body** | [**KnowledgeSearchRequest**](KnowledgeSearchRequest)|  | [optional]  |
 
 ### Return type
 
-[**KnowledgeSearchResponse**](KnowledgeSearchResponse.html)
+[**KnowledgeSearchResponse**](KnowledgeSearchResponse)
 
-<a name="post_knowledge_knowledgebase_uploads_urls_jobs"></a>
 
-## [**CreateUploadSourceUrlJobResponse**](CreateUploadSourceUrlJobResponse.html) post_knowledge_knowledgebase_uploads_urls_jobs(knowledge_base_id, body)
+## post_knowledge_knowledgebase_uploads_urls_jobs
 
+> [**CreateUploadSourceUrlJobResponse**](CreateUploadSourceUrlJobResponse) post_knowledge_knowledgebase_uploads_urls_jobs(knowledge_base_id, body)
 
 
 Create content upload from URL job
@@ -5368,17 +5335,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **knowledge_base_id** | **str**| Knowledge base ID |  |
-| **body** | [**CreateUploadSourceUrlJobRequest**](CreateUploadSourceUrlJobRequest.html)| uploadRequest |  |
-{: class="table table-striped"}
+| **body** | [**CreateUploadSourceUrlJobRequest**](CreateUploadSourceUrlJobRequest)| uploadRequest |  |
 
 ### Return type
 
-[**CreateUploadSourceUrlJobResponse**](CreateUploadSourceUrlJobResponse.html)
+[**CreateUploadSourceUrlJobResponse**](CreateUploadSourceUrlJobResponse)
 
-<a name="post_knowledge_knowledgebases"></a>
 
-## [**KnowledgeBase**](KnowledgeBase.html) post_knowledge_knowledgebases(body)
+## post_knowledge_knowledgebases
 
+> [**KnowledgeBase**](KnowledgeBase) post_knowledge_knowledgebases(body)
 
 
 Create new knowledge base
@@ -5417,10 +5383,11 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**KnowledgeBaseCreateRequest**](KnowledgeBaseCreateRequest.html)|  |  |
-{: class="table table-striped"}
+| **body** | [**KnowledgeBaseCreateRequest**](KnowledgeBaseCreateRequest)|  |  |
 
 ### Return type
 
-[**KnowledgeBase**](KnowledgeBase.html)
+[**KnowledgeBase**](KnowledgeBase)
 
+
+_PureCloudPlatformClientV2 211.1.0_

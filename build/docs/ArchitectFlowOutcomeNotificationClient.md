@@ -1,14 +1,14 @@
----
-title: ArchitectFlowOutcomeNotificationClient
----
+# ArchitectFlowOutcomeNotificationClient
+
 ## ArchitectFlowOutcomeNotificationClient
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **id** | **str** | The ID of the client. | [optional] |
-| **name** | **str** | The name of the client, if available. | [optional] |
-{: class="table table-striped"}
+| **id** | str | The ID of the client. | [optional] |
+| **name** | str | The name of the client, if available. | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

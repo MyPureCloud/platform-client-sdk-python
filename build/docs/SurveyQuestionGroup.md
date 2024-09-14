@@ -1,18 +1,18 @@
----
-title: SurveyQuestionGroup
----
+# SurveyQuestionGroup
+
 ## SurveyQuestionGroup
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **id** | **str** |  | [optional] |
-| **name** | **str** |  | [optional] |
-| **type** | **str** |  | [optional] |
-| **na_enabled** | **bool** |  | [optional] |
-| **questions** | [**list[SurveyQuestion]**](SurveyQuestion.html) |  | [optional] |
-| **visibility_condition** | [**VisibilityCondition**](VisibilityCondition.html) |  | [optional] |
-{: class="table table-striped"}
+| **id** | str |  | [optional] |
+| **name** | str |  | [optional] |
+| **type** | str |  | [optional] |
+| **na_enabled** | bool |  | [optional] |
+| **questions** | [list[SurveyQuestion]](SurveyQuestion) |  | [optional] |
+| **visibility_condition** | [VisibilityCondition](VisibilityCondition) |  | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

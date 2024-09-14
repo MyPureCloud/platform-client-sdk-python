@@ -1,13 +1,13 @@
----
-title: BulkIdsRequest
----
+# BulkIdsRequest
+
 ## BulkIdsRequest
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **entities** | [**list[ExternalContactsEntity]**](ExternalContactsEntity.html) |  | [optional] |
-{: class="table table-striped"}
+| **entities** | [list[ExternalContactsEntity]](ExternalContactsEntity) |  | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

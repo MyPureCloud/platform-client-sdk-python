@@ -1,14 +1,14 @@
----
-title: DocumentAttribute
----
+# DocumentAttribute
+
 ## DocumentAttribute
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **attribute** | [**Attribute**](Attribute.html) |  | [optional] |
-| **values** | **list[str]** |  | [optional] |
-{: class="table table-striped"}
+| **attribute** | [Attribute](Attribute) |  | [optional] |
+| **values** | list[str] |  | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

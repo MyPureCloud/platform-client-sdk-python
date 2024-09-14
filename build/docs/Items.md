@@ -1,14 +1,14 @@
----
-title: Items
----
+# Items
+
 ## Items
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **type** | **str** |  | [optional] |
-| **pattern** | **str** |  | [optional] |
-{: class="table table-striped"}
+| **type** | str |  | [optional] |
+| **pattern** | str |  | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

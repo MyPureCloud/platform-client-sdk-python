@@ -1,13 +1,13 @@
----
-title: TextBotUserAgent
----
+# TextBotUserAgent
+
 ## TextBotUserAgent
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **name** | **str** | The name of the user agent. | |
-{: class="table table-striped"}
+| **name** | str | The name of the user agent. | |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

@@ -1,14 +1,14 @@
----
-title: QueueConversationCobrowseEventTopicScoredAgent
----
+# QueueConversationCobrowseEventTopicScoredAgent
+
 ## QueueConversationCobrowseEventTopicScoredAgent
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **agent** | [**QueueConversationCobrowseEventTopicUriReference**](QueueConversationCobrowseEventTopicUriReference.html) | A UriReference for a resource | [optional] |
-| **score** | **int** | Agent&#39;s score for the current conversation, from 0 - 100, higher being better | [optional] |
-{: class="table table-striped"}
+| **agent** | [QueueConversationCobrowseEventTopicUriReference](QueueConversationCobrowseEventTopicUriReference) | A UriReference for a resource | [optional] |
+| **score** | int | Agent&#39;s score for the current conversation, from 0 - 100, higher being better | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

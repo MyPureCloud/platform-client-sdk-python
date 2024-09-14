@@ -1,13 +1,13 @@
----
-title: AuditQueryServiceMapping
----
+# AuditQueryServiceMapping
+
 ## AuditQueryServiceMapping
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **services** | [**list[AuditQueryService]**](AuditQueryService.html) | List of Services | [optional] |
-{: class="table table-striped"}
+| **services** | [list[AuditQueryService]](AuditQueryService) | List of Services | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

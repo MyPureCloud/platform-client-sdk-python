@@ -1,14 +1,14 @@
----
-title: MediaResult
----
+# MediaResult
+
 ## MediaResult
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **media_uri** | **str** |  | [optional] |
-| **waveform_data** | **list[float]** |  | [optional] |
-{: class="table table-striped"}
+| **media_uri** | str |  | [optional] |
+| **waveform_data** | list[float] |  | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

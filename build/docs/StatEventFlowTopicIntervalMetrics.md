@@ -1,14 +1,14 @@
----
-title: StatEventFlowTopicIntervalMetrics
----
+# StatEventFlowTopicIntervalMetrics
+
 ## StatEventFlowTopicIntervalMetrics
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **interval** | **str** |  | [optional] |
-| **metrics** | [**list[StatEventFlowTopicMetricStats]**](StatEventFlowTopicMetricStats.html) |  | [optional] |
-{: class="table table-striped"}
+| **interval** | str |  | [optional] |
+| **metrics** | [list[StatEventFlowTopicMetricStats]](StatEventFlowTopicMetricStats) |  | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

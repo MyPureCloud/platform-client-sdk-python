@@ -1,15 +1,15 @@
----
-title: WorkitemsChangeWorkbinDelta
----
+# WorkitemsChangeWorkbinDelta
+
 ## WorkitemsChangeWorkbinDelta
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **version** | **int** | Version | [optional] |
-| **modified_by** | [**UserReference**](UserReference.html) | modifiedBy | [optional] |
-| **delta** | [**WorkbinDelta**](WorkbinDelta.html) | The changes that originated this version | [optional] |
-{: class="table table-striped"}
+| **version** | int | Version | [optional] |
+| **modified_by** | [UserReference](UserReference) | modifiedBy | [optional] |
+| **delta** | [WorkbinDelta](WorkbinDelta) | The changes that originated this version | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

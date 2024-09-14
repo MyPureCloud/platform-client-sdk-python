@@ -1,16 +1,16 @@
----
-title: ImportReport
----
+# ImportReport
+
 ## ImportReport
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **errors** | [**list[ImportError]**](ImportError.html) |  | [optional] |
-| **validated** | [**ResultCounters**](ResultCounters.html) |  | [optional] |
-| **imported** | [**ResultCounters**](ResultCounters.html) |  | [optional] |
-| **total_documents** | **int** |  | [optional] |
-{: class="table table-striped"}
+| **errors** | [list[ImportError]](ImportError) |  | [optional] |
+| **validated** | [ResultCounters](ResultCounters) |  | [optional] |
+| **imported** | [ResultCounters](ResultCounters) |  | [optional] |
+| **total_documents** | int |  | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

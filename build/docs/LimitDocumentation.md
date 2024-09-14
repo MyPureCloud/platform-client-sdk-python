@@ -1,14 +1,14 @@
----
-title: LimitDocumentation
----
+# LimitDocumentation
+
 ## LimitDocumentation
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **url** | **str** |  | [optional] |
-| **namespaces** | [**list[NamespaceDocs]**](NamespaceDocs.html) |  | [optional] |
-{: class="table table-striped"}
+| **url** | str |  | [optional] |
+| **namespaces** | [list[NamespaceDocs]](NamespaceDocs) |  | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

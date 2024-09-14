@@ -1,13 +1,13 @@
----
-title: MediaIceStatistics
----
+# MediaIceStatistics
+
 ## MediaIceStatistics
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **selected_pairs** | [**list[MediaIceSelectedPair]**](MediaIceSelectedPair.html) | The candidate pairs selected for the media stream | [optional] |
-{: class="table table-striped"}
+| **selected_pairs** | [list[MediaIceSelectedPair]](MediaIceSelectedPair) | The candidate pairs selected for the media stream | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

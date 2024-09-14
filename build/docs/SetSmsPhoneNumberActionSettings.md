@@ -1,13 +1,13 @@
----
-title: SetSmsPhoneNumberActionSettings
----
+# SetSmsPhoneNumberActionSettings
+
 ## SetSmsPhoneNumberActionSettings
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **sender_sms_phone_number** | **str** | The string address for the sms phone number. | |
-{: class="table table-striped"}
+| **sender_sms_phone_number** | str | The string address for the sms phone number. | |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

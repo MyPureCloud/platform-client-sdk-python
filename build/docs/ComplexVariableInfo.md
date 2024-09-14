@@ -1,14 +1,14 @@
----
-title: ComplexVariableInfo
----
+# ComplexVariableInfo
+
 ## ComplexVariableInfo
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **id** | **str** | The variable type ID | |
-| **name** | **str** | The variable type display name | |
-{: class="table table-striped"}
+| **id** | str | The variable type ID | |
+| **name** | str | The variable type display name | |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

@@ -1,14 +1,14 @@
----
-title: ExportScriptRequest
----
+# ExportScriptRequest
+
 ## ExportScriptRequest
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **file_name** | **str** | The final file name (no extension) of the script download: &lt;fileName&gt;.script | [optional] |
-| **version_id** | **str** | The UUID version of the script to be exported.  Defaults to the current editable version. | [optional] |
-{: class="table table-striped"}
+| **file_name** | str | The final file name (no extension) of the script download: &lt;fileName&gt;.script | [optional] |
+| **version_id** | str | The UUID version of the script to be exported.  Defaults to the current editable version. | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

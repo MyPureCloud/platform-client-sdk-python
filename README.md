@@ -1,15 +1,15 @@
----
-title: Platform API Client SDK - Python
----
+# Platform API Client SDK - Python
 
 [![PyPI version](https://badge.fury.io/py/PureCloudPlatformClientV2.svg)](https://badge.fury.io/py/PureCloudPlatformClientV2)
 [![Release Notes Badge](https://developer-content.genesys.cloud/images/sdk-release-notes.png)](https://github.com/MyPureCloud/platform-client-sdk-python/blob/master/releaseNotes.md)
 
-Documentation can be found at [https://developer.genesys.cloud/devapps/sdk/docexplorer/purecloudpython/](https://developer.genesys.cloud/devapps/sdk/docexplorer/purecloudpython/)
+Documentation can be found at https://mypurecloud.github.io/platform-client-sdk-python/
 
-## Preview API's
+Documentation version PureCloudPlatformClientV2 211.1.0
 
-**Warning:** Preview API's are included in this SDK. These resources are subject to both breaking and non-breaking changes at any time without notice. This includes, but is not limited to, changing resource names, paths, contracts, documentation, and removing resources entirely. For a full list of the preview API's see [here](https://developer.genesys.cloud/platform/preview-apis)
+## Preview APIs
+
+**Warning:** Preview APIs are included in this SDK. These resources are subject to both breaking and non-breaking changes at any time without notice. This includes, but is not limited to, changing resource names, paths, contracts, documentation, and removing resources entirely. For a full list of the preview APIs see [here](https://developer.genesys.cloud/platform/preview-apis)
 
 ## Install Using pip
 

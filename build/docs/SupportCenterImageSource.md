@@ -1,13 +1,13 @@
----
-title: SupportCenterImageSource
----
+# SupportCenterImageSource
+
 ## SupportCenterImageSource
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **default_url** | **str** | Default URL for image | |
-{: class="table table-striped"}
+| **default_url** | str | Default URL for image | |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

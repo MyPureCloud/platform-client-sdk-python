@@ -1,6 +1,4 @@
----
-title: OperationalEventsApi
----
+# OperationalEventsApi
 
 ## PureCloudPlatformClientV2.OperationalEventsApi
 
@@ -8,14 +6,14 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 |Method | Description|
 |------------- | -------------|
-|[**get_usage_events_definition**](OperationalEventsApi.html#get_usage_events_definition) | Get an operational event definition by its id|
-|[**get_usage_events_definitions**](OperationalEventsApi.html#get_usage_events_definitions) | Get all operational event definitions|
-{: class="table table-striped"}
+|[**get_usage_events_definition**](#get_usage_events_definition) | Get an operational event definition by its id|
+|[**get_usage_events_definitions**](#get_usage_events_definitions) | Get all operational event definitions|
 
-<a name="get_usage_events_definition"></a>
 
-## [**EventDefinition**](EventDefinition.html) get_usage_events_definition(event_definition_id)
 
+## get_usage_events_definition
+
+> [**EventDefinition**](EventDefinition) get_usage_events_definition(event_definition_id)
 
 
 Get an operational event definition by its id
@@ -55,16 +53,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **event_definition_id** | **str**| EventDefinition id |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**EventDefinition**](EventDefinition.html)
+[**EventDefinition**](EventDefinition)
 
-<a name="get_usage_events_definitions"></a>
 
-## [**EventDefinitionListing**](EventDefinitionListing.html) get_usage_events_definitions()
+## get_usage_events_definitions
 
+> [**EventDefinitionListing**](EventDefinitionListing) get_usage_events_definitions()
 
 
 Get all operational event definitions
@@ -101,8 +98,9 @@ except ApiException as e:
 
 This endpoint does not need any parameters.
 
-
 ### Return type
 
-[**EventDefinitionListing**](EventDefinitionListing.html)
+[**EventDefinitionListing**](EventDefinitionListing)
 
+
+_PureCloudPlatformClientV2 211.1.0_

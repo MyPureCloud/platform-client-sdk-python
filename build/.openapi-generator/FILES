@@ -393,6 +393,8 @@ PureCloudPlatformClientV2/models/attribute_detail_event_topic_communication.py
 PureCloudPlatformClientV2/models/attribute_filter_item.py
 PureCloudPlatformClientV2/models/atzm_time_slot.py
 PureCloudPlatformClientV2/models/atzm_time_slot_with_time_zone.py
+PureCloudPlatformClientV2/models/audio_connector_integration.py
+PureCloudPlatformClientV2/models/audio_connector_integration_entity_listing.py
 PureCloudPlatformClientV2/models/audio_state.py
 PureCloudPlatformClientV2/models/audio_updated_event.py
 PureCloudPlatformClientV2/models/audit_log_message.py
@@ -987,6 +989,7 @@ PureCloudPlatformClientV2/models/conversation_content_location.py
 PureCloudPlatformClientV2/models/conversation_content_notification_template.py
 PureCloudPlatformClientV2/models/conversation_content_quick_reply.py
 PureCloudPlatformClientV2/models/conversation_content_quick_reply_v2.py
+PureCloudPlatformClientV2/models/conversation_content_reaction.py
 PureCloudPlatformClientV2/models/conversation_content_story.py
 PureCloudPlatformClientV2/models/conversation_content_text.py
 PureCloudPlatformClientV2/models/conversation_deletion_protection_query.py
@@ -1013,6 +1016,9 @@ PureCloudPlatformClientV2/models/conversation_email_event_topic_uri_reference.py
 PureCloudPlatformClientV2/models/conversation_email_event_topic_wrapup.py
 PureCloudPlatformClientV2/models/conversation_encryption_configuration.py
 PureCloudPlatformClientV2/models/conversation_encryption_configuration_listing.py
+PureCloudPlatformClientV2/models/conversation_enrichment.py
+PureCloudPlatformClientV2/models/conversation_enrichment_language.py
+PureCloudPlatformClientV2/models/conversation_enrichment_sentiment_v2.py
 PureCloudPlatformClientV2/models/conversation_entity_listing.py
 PureCloudPlatformClientV2/models/conversation_event_co_browse.py
 PureCloudPlatformClientV2/models/conversation_event_presence.py
@@ -5051,6 +5057,8 @@ docs/AttributeDetailEventTopicCommunication.md
 docs/AttributeFilterItem.md
 docs/AtzmTimeSlot.md
 docs/AtzmTimeSlotWithTimeZone.md
+docs/AudioConnectorIntegration.md
+docs/AudioConnectorIntegrationEntityListing.md
 docs/AudioState.md
 docs/AudioUpdatedEvent.md
 docs/AuditApi.json
@@ -5659,6 +5667,7 @@ docs/ConversationContentLocation.md
 docs/ConversationContentNotificationTemplate.md
 docs/ConversationContentQuickReply.md
 docs/ConversationContentQuickReplyV2.md
+docs/ConversationContentReaction.md
 docs/ConversationContentStory.md
 docs/ConversationContentText.md
 docs/ConversationDeletionProtectionQuery.md
@@ -5685,6 +5694,9 @@ docs/ConversationEmailEventTopicUriReference.md
 docs/ConversationEmailEventTopicWrapup.md
 docs/ConversationEncryptionConfiguration.md
 docs/ConversationEncryptionConfigurationListing.md
+docs/ConversationEnrichment.md
+docs/ConversationEnrichmentLanguage.md
+docs/ConversationEnrichmentSentimentV2.md
 docs/ConversationEntityListing.md
 docs/ConversationEventCoBrowse.md
 docs/ConversationEventPresence.md
@@ -10281,6 +10293,8 @@ docs/get_integrations_clientapps_unifiedcommunications-example.txt
 docs/get_integrations_credential-example.txt
 docs/get_integrations_credentials-example.txt
 docs/get_integrations_credentials_types-example.txt
+docs/get_integrations_speech_audioconnector-example.txt
+docs/get_integrations_speech_audioconnector_integration_id-example.txt
 docs/get_integrations_speech_dialogflow_agent-example.txt
 docs/get_integrations_speech_dialogflow_agents-example.txt
 docs/get_integrations_speech_dialogflowcx_agent-example.txt

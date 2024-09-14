@@ -1,13 +1,13 @@
----
-title: JourneyAggregateQueryResponse
----
+# JourneyAggregateQueryResponse
+
 ## JourneyAggregateQueryResponse
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **results** | [**list[JourneyAggregateDataContainer]**](JourneyAggregateDataContainer.html) |  | [optional] |
-{: class="table table-striped"}
+| **results** | [list[JourneyAggregateDataContainer]](JourneyAggregateDataContainer) |  | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

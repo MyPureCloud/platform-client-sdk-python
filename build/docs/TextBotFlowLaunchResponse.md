@@ -1,13 +1,13 @@
----
-title: TextBotFlowLaunchResponse
----
+# TextBotFlowLaunchResponse
+
 ## TextBotFlowLaunchResponse
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **id** | **str** | The session ID of the bot flow, used to send to subsequent turn requests | |
-{: class="table table-striped"}
+| **id** | str | The session ID of the bot flow, used to send to subsequent turn requests | |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

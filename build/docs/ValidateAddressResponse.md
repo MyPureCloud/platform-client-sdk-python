@@ -1,14 +1,14 @@
----
-title: ValidateAddressResponse
----
+# ValidateAddressResponse
+
 ## ValidateAddressResponse
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **valid** | **bool** | Was the passed in address valid | |
-| **response** | [**SubscriberResponse**](SubscriberResponse.html) | Subscriber schema | [optional] |
-{: class="table table-striped"}
+| **valid** | bool | Was the passed in address valid | |
+| **response** | [SubscriberResponse](SubscriberResponse) | Subscriber schema | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

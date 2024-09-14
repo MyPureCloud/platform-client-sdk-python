@@ -1,6 +1,4 @@
----
-title: WebDeploymentsApi
----
+# WebDeploymentsApi
 
 ## PureCloudPlatformClientV2.WebDeploymentsApi
 
@@ -8,31 +6,31 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 |Method | Description|
 |------------- | -------------|
-|[**delete_webdeployments_configuration**](WebDeploymentsApi.html#delete_webdeployments_configuration) | Delete all versions of a configuration|
-|[**delete_webdeployments_deployment**](WebDeploymentsApi.html#delete_webdeployments_deployment) | Delete a deployment|
-|[**delete_webdeployments_deployment_cobrowse_session_id**](WebDeploymentsApi.html#delete_webdeployments_deployment_cobrowse_session_id) | Deletes a cobrowse session|
-|[**delete_webdeployments_token_revoke**](WebDeploymentsApi.html#delete_webdeployments_token_revoke) | Invalidate JWT|
-|[**get_webdeployments_configuration_version**](WebDeploymentsApi.html#get_webdeployments_configuration_version) | Get a configuration version|
-|[**get_webdeployments_configuration_versions**](WebDeploymentsApi.html#get_webdeployments_configuration_versions) | Get the versions of a configuration|
-|[**get_webdeployments_configuration_versions_draft**](WebDeploymentsApi.html#get_webdeployments_configuration_versions_draft) | Get the configuration draft|
-|[**get_webdeployments_configurations**](WebDeploymentsApi.html#get_webdeployments_configurations) | View configuration drafts|
-|[**get_webdeployments_deployment**](WebDeploymentsApi.html#get_webdeployments_deployment) | Get a deployment|
-|[**get_webdeployments_deployment_cobrowse_session_id**](WebDeploymentsApi.html#get_webdeployments_deployment_cobrowse_session_id) | Retrieves a cobrowse session|
-|[**get_webdeployments_deployment_configurations**](WebDeploymentsApi.html#get_webdeployments_deployment_configurations) | Get active configuration for a given deployment|
-|[**get_webdeployments_deployments**](WebDeploymentsApi.html#get_webdeployments_deployments) | Get deployments|
-|[**post_webdeployments_configuration_versions_draft_publish**](WebDeploymentsApi.html#post_webdeployments_configuration_versions_draft_publish) | Publish the configuration draft and create a new version|
-|[**post_webdeployments_configurations**](WebDeploymentsApi.html#post_webdeployments_configurations) | Create a configuration draft|
-|[**post_webdeployments_deployments**](WebDeploymentsApi.html#post_webdeployments_deployments) | Create a deployment|
-|[**post_webdeployments_token_oauthcodegrantjwtexchange**](WebDeploymentsApi.html#post_webdeployments_token_oauthcodegrantjwtexchange) | Exchange an oAuth code (obtained using the Authorization Code Flow) for a JWT that can be used by webdeployments.|
-|[**post_webdeployments_token_refresh**](WebDeploymentsApi.html#post_webdeployments_token_refresh) | Refresh a JWT.|
-|[**put_webdeployments_configuration_versions_draft**](WebDeploymentsApi.html#put_webdeployments_configuration_versions_draft) | Update the configuration draft|
-|[**put_webdeployments_deployment**](WebDeploymentsApi.html#put_webdeployments_deployment) | Update a deployment|
-{: class="table table-striped"}
+|[**delete_webdeployments_configuration**](#delete_webdeployments_configuration) | Delete all versions of a configuration|
+|[**delete_webdeployments_deployment**](#delete_webdeployments_deployment) | Delete a deployment|
+|[**delete_webdeployments_deployment_cobrowse_session_id**](#delete_webdeployments_deployment_cobrowse_session_id) | Deletes a cobrowse session|
+|[**delete_webdeployments_token_revoke**](#delete_webdeployments_token_revoke) | Invalidate JWT|
+|[**get_webdeployments_configuration_version**](#get_webdeployments_configuration_version) | Get a configuration version|
+|[**get_webdeployments_configuration_versions**](#get_webdeployments_configuration_versions) | Get the versions of a configuration|
+|[**get_webdeployments_configuration_versions_draft**](#get_webdeployments_configuration_versions_draft) | Get the configuration draft|
+|[**get_webdeployments_configurations**](#get_webdeployments_configurations) | View configuration drafts|
+|[**get_webdeployments_deployment**](#get_webdeployments_deployment) | Get a deployment|
+|[**get_webdeployments_deployment_cobrowse_session_id**](#get_webdeployments_deployment_cobrowse_session_id) | Retrieves a cobrowse session|
+|[**get_webdeployments_deployment_configurations**](#get_webdeployments_deployment_configurations) | Get active configuration for a given deployment|
+|[**get_webdeployments_deployments**](#get_webdeployments_deployments) | Get deployments|
+|[**post_webdeployments_configuration_versions_draft_publish**](#post_webdeployments_configuration_versions_draft_publish) | Publish the configuration draft and create a new version|
+|[**post_webdeployments_configurations**](#post_webdeployments_configurations) | Create a configuration draft|
+|[**post_webdeployments_deployments**](#post_webdeployments_deployments) | Create a deployment|
+|[**post_webdeployments_token_oauthcodegrantjwtexchange**](#post_webdeployments_token_oauthcodegrantjwtexchange) | Exchange an oAuth code (obtained using the Authorization Code Flow) for a JWT that can be used by webdeployments.|
+|[**post_webdeployments_token_refresh**](#post_webdeployments_token_refresh) | Refresh a JWT.|
+|[**put_webdeployments_configuration_versions_draft**](#put_webdeployments_configuration_versions_draft) | Update the configuration draft|
+|[**put_webdeployments_deployment**](#put_webdeployments_deployment) | Update a deployment|
 
-<a name="delete_webdeployments_configuration"></a>
 
-##  delete_webdeployments_configuration(configuration_id)
 
+## delete_webdeployments_configuration
+
+>  delete_webdeployments_configuration(configuration_id)
 
 
 Delete all versions of a configuration
@@ -71,16 +69,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **configuration_id** | **str**| The configuration version ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (empty response body)
 
-<a name="delete_webdeployments_deployment"></a>
 
-##  delete_webdeployments_deployment(deployment_id)
+## delete_webdeployments_deployment
 
+>  delete_webdeployments_deployment(deployment_id)
 
 
 Delete a deployment
@@ -119,16 +116,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **deployment_id** | **str**| The deployment ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (empty response body)
 
-<a name="delete_webdeployments_deployment_cobrowse_session_id"></a>
 
-## object** delete_webdeployments_deployment_cobrowse_session_id(deployment_id, session_id)
+## delete_webdeployments_deployment_cobrowse_session_id
 
+> object** delete_webdeployments_deployment_cobrowse_session_id(deployment_id, session_id)
 
 
 Deletes a cobrowse session
@@ -166,16 +162,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **deployment_id** | **str**| WebMessaging deployment ID |  |
 | **session_id** | **str**| Cobrowse session id or join code |  |
-{: class="table table-striped"}
 
 ### Return type
 
 **object**
 
-<a name="delete_webdeployments_token_revoke"></a>
 
-##  delete_webdeployments_token_revoke(x_journey_session_id=x_journey_session_id, x_journey_session_type=x_journey_session_type)
+## delete_webdeployments_token_revoke
 
+>  delete_webdeployments_token_revoke(x_journey_session_id=x_journey_session_id, x_journey_session_type=x_journey_session_type)
 
 
 Invalidate JWT
@@ -212,16 +207,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **x_journey_session_id** | **str**| The Customer&#39;s journey sessionId. | [optional]  |
 | **x_journey_session_type** | **str**| The Customer&#39;s journey session type. | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (empty response body)
 
-<a name="get_webdeployments_configuration_version"></a>
 
-## [**WebDeploymentConfigurationVersion**](WebDeploymentConfigurationVersion.html) get_webdeployments_configuration_version(configuration_id, version_id)
+## get_webdeployments_configuration_version
 
+> [**WebDeploymentConfigurationVersion**](WebDeploymentConfigurationVersion) get_webdeployments_configuration_version(configuration_id, version_id)
 
 
 Get a configuration version
@@ -263,16 +257,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **configuration_id** | **str**| The configuration version ID |  |
 | **version_id** | **str**| The version of the configuration to get |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**WebDeploymentConfigurationVersion**](WebDeploymentConfigurationVersion.html)
+[**WebDeploymentConfigurationVersion**](WebDeploymentConfigurationVersion)
 
-<a name="get_webdeployments_configuration_versions"></a>
 
-## [**WebDeploymentConfigurationVersionEntityListing**](WebDeploymentConfigurationVersionEntityListing.html) get_webdeployments_configuration_versions(configuration_id)
+## get_webdeployments_configuration_versions
 
+> [**WebDeploymentConfigurationVersionEntityListing**](WebDeploymentConfigurationVersionEntityListing) get_webdeployments_configuration_versions(configuration_id)
 
 
 Get the versions of a configuration
@@ -314,16 +307,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **configuration_id** | **str**| The configuration version ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**WebDeploymentConfigurationVersionEntityListing**](WebDeploymentConfigurationVersionEntityListing.html)
+[**WebDeploymentConfigurationVersionEntityListing**](WebDeploymentConfigurationVersionEntityListing)
 
-<a name="get_webdeployments_configuration_versions_draft"></a>
 
-## [**WebDeploymentConfigurationVersion**](WebDeploymentConfigurationVersion.html) get_webdeployments_configuration_versions_draft(configuration_id)
+## get_webdeployments_configuration_versions_draft
 
+> [**WebDeploymentConfigurationVersion**](WebDeploymentConfigurationVersion) get_webdeployments_configuration_versions_draft(configuration_id)
 
 
 Get the configuration draft
@@ -363,16 +355,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **configuration_id** | **str**| The configuration version ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**WebDeploymentConfigurationVersion**](WebDeploymentConfigurationVersion.html)
+[**WebDeploymentConfigurationVersion**](WebDeploymentConfigurationVersion)
 
-<a name="get_webdeployments_configurations"></a>
 
-## [**WebDeploymentConfigurationVersionEntityListing**](WebDeploymentConfigurationVersionEntityListing.html) get_webdeployments_configurations(show_only_published=show_only_published)
+## get_webdeployments_configurations
 
+> [**WebDeploymentConfigurationVersionEntityListing**](WebDeploymentConfigurationVersionEntityListing) get_webdeployments_configurations(show_only_published=show_only_published)
 
 
 View configuration drafts
@@ -412,16 +403,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **show_only_published** | **bool**| Get only configuration drafts with published versions | [optional] [default to False] |
-{: class="table table-striped"}
 
 ### Return type
 
-[**WebDeploymentConfigurationVersionEntityListing**](WebDeploymentConfigurationVersionEntityListing.html)
+[**WebDeploymentConfigurationVersionEntityListing**](WebDeploymentConfigurationVersionEntityListing)
 
-<a name="get_webdeployments_deployment"></a>
 
-## [**WebDeployment**](WebDeployment.html) get_webdeployments_deployment(deployment_id, expand=expand)
+## get_webdeployments_deployment
 
+> [**WebDeployment**](WebDeployment) get_webdeployments_deployment(deployment_id, expand=expand)
 
 
 Get a deployment
@@ -462,17 +452,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **deployment_id** | **str**| The deployment ID |  |
-| **expand** | [**list[str]**](str.html)| The specified entity attributes will be filled. Comma separated values expected.  | [optional] <br />**Values**: supportedContent |
-{: class="table table-striped"}
+| **expand** | [**list[str]**](str)| The specified entity attributes will be filled. Comma separated values expected.  | [optional] <br />**Values**: supportedContent |
 
 ### Return type
 
-[**WebDeployment**](WebDeployment.html)
+[**WebDeployment**](WebDeployment)
 
-<a name="get_webdeployments_deployment_cobrowse_session_id"></a>
 
-## [**CobrowseWebMessagingSession**](CobrowseWebMessagingSession.html) get_webdeployments_deployment_cobrowse_session_id(deployment_id, session_id)
+## get_webdeployments_deployment_cobrowse_session_id
 
+> [**CobrowseWebMessagingSession**](CobrowseWebMessagingSession) get_webdeployments_deployment_cobrowse_session_id(deployment_id, session_id)
 
 
 Retrieves a cobrowse session
@@ -510,16 +499,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **deployment_id** | **str**| WebMessaging deployment ID |  |
 | **session_id** | **str**| Cobrowse session id or join code |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**CobrowseWebMessagingSession**](CobrowseWebMessagingSession.html)
+[**CobrowseWebMessagingSession**](CobrowseWebMessagingSession)
 
-<a name="get_webdeployments_deployment_configurations"></a>
 
-## [**WebDeploymentActiveConfigurationOnDeployment**](WebDeploymentActiveConfigurationOnDeployment.html) get_webdeployments_deployment_configurations(deployment_id, type=type, expand=expand)
+## get_webdeployments_deployment_configurations
 
+> [**WebDeploymentActiveConfigurationOnDeployment**](WebDeploymentActiveConfigurationOnDeployment) get_webdeployments_deployment_configurations(deployment_id, type=type, expand=expand)
 
 
 Get active configuration for a given deployment
@@ -561,17 +549,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **deployment_id** | **str**| The deployment ID |  |
 | **type** | **str**| Get active configuration on a deployment | [optional]  |
-| **expand** | [**list[str]**](str.html)| Expand instructions for the return value | [optional] <br />**Values**: supportedContent |
-{: class="table table-striped"}
+| **expand** | [**list[str]**](str)| Expand instructions for the return value | [optional] <br />**Values**: supportedContent |
 
 ### Return type
 
-[**WebDeploymentActiveConfigurationOnDeployment**](WebDeploymentActiveConfigurationOnDeployment.html)
+[**WebDeploymentActiveConfigurationOnDeployment**](WebDeploymentActiveConfigurationOnDeployment)
 
-<a name="get_webdeployments_deployments"></a>
 
-## [**ExpandableWebDeploymentEntityListing**](ExpandableWebDeploymentEntityListing.html) get_webdeployments_deployments(expand=expand)
+## get_webdeployments_deployments
 
+> [**ExpandableWebDeploymentEntityListing**](ExpandableWebDeploymentEntityListing) get_webdeployments_deployments(expand=expand)
 
 
 Get deployments
@@ -610,17 +597,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **expand** | [**list[str]**](str.html)| The specified entity attributes will be filled. Comma separated values expected. | [optional] <br />**Values**: Configuration, SupportedContent |
-{: class="table table-striped"}
+| **expand** | [**list[str]**](str)| The specified entity attributes will be filled. Comma separated values expected. | [optional] <br />**Values**: Configuration, SupportedContent |
 
 ### Return type
 
-[**ExpandableWebDeploymentEntityListing**](ExpandableWebDeploymentEntityListing.html)
+[**ExpandableWebDeploymentEntityListing**](ExpandableWebDeploymentEntityListing)
 
-<a name="post_webdeployments_configuration_versions_draft_publish"></a>
 
-## [**WebDeploymentConfigurationVersion**](WebDeploymentConfigurationVersion.html) post_webdeployments_configuration_versions_draft_publish(configuration_id)
+## post_webdeployments_configuration_versions_draft_publish
 
+> [**WebDeploymentConfigurationVersion**](WebDeploymentConfigurationVersion) post_webdeployments_configuration_versions_draft_publish(configuration_id)
 
 
 Publish the configuration draft and create a new version
@@ -661,16 +647,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **configuration_id** | **str**| The configuration version ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**WebDeploymentConfigurationVersion**](WebDeploymentConfigurationVersion.html)
+[**WebDeploymentConfigurationVersion**](WebDeploymentConfigurationVersion)
 
-<a name="post_webdeployments_configurations"></a>
 
-## [**WebDeploymentConfigurationVersion**](WebDeploymentConfigurationVersion.html) post_webdeployments_configurations(configuration_version)
+## post_webdeployments_configurations
 
+> [**WebDeploymentConfigurationVersion**](WebDeploymentConfigurationVersion) post_webdeployments_configurations(configuration_version)
 
 
 Create a configuration draft
@@ -709,17 +694,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **configuration_version** | [**WebDeploymentConfigurationVersion**](WebDeploymentConfigurationVersion.html)|  |  |
-{: class="table table-striped"}
+| **configuration_version** | [**WebDeploymentConfigurationVersion**](WebDeploymentConfigurationVersion)|  |  |
 
 ### Return type
 
-[**WebDeploymentConfigurationVersion**](WebDeploymentConfigurationVersion.html)
+[**WebDeploymentConfigurationVersion**](WebDeploymentConfigurationVersion)
 
-<a name="post_webdeployments_deployments"></a>
 
-## [**WebDeployment**](WebDeployment.html) post_webdeployments_deployments(deployment)
+## post_webdeployments_deployments
 
+> [**WebDeployment**](WebDeployment) post_webdeployments_deployments(deployment)
 
 
 Create a deployment
@@ -758,17 +742,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **deployment** | [**WebDeployment**](WebDeployment.html)|  |  |
-{: class="table table-striped"}
+| **deployment** | [**WebDeployment**](WebDeployment)|  |  |
 
 ### Return type
 
-[**WebDeployment**](WebDeployment.html)
+[**WebDeployment**](WebDeployment)
 
-<a name="post_webdeployments_token_oauthcodegrantjwtexchange"></a>
 
-## [**WebDeploymentsAuthorizationResponse**](WebDeploymentsAuthorizationResponse.html) post_webdeployments_token_oauthcodegrantjwtexchange(body)
+## post_webdeployments_token_oauthcodegrantjwtexchange
 
+> [**WebDeploymentsAuthorizationResponse**](WebDeploymentsAuthorizationResponse) post_webdeployments_token_oauthcodegrantjwtexchange(body)
 
 
 Exchange an oAuth code (obtained using the Authorization Code Flow) for a JWT that can be used by webdeployments.
@@ -803,17 +786,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**WebDeploymentsOAuthExchangeRequest**](WebDeploymentsOAuthExchangeRequest.html)| webDeploymentsOAuthExchangeRequest |  |
-{: class="table table-striped"}
+| **body** | [**WebDeploymentsOAuthExchangeRequest**](WebDeploymentsOAuthExchangeRequest)| webDeploymentsOAuthExchangeRequest |  |
 
 ### Return type
 
-[**WebDeploymentsAuthorizationResponse**](WebDeploymentsAuthorizationResponse.html)
+[**WebDeploymentsAuthorizationResponse**](WebDeploymentsAuthorizationResponse)
 
-<a name="post_webdeployments_token_refresh"></a>
 
-## [**SignedData**](SignedData.html) post_webdeployments_token_refresh(body=body)
+## post_webdeployments_token_refresh
 
+> [**SignedData**](SignedData) post_webdeployments_token_refresh(body=body)
 
 
 Refresh a JWT.
@@ -848,17 +830,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**WebDeploymentsRefreshJWTRequest**](WebDeploymentsRefreshJWTRequest.html)|  | [optional]  |
-{: class="table table-striped"}
+| **body** | [**WebDeploymentsRefreshJWTRequest**](WebDeploymentsRefreshJWTRequest)|  | [optional]  |
 
 ### Return type
 
-[**SignedData**](SignedData.html)
+[**SignedData**](SignedData)
 
-<a name="put_webdeployments_configuration_versions_draft"></a>
 
-## [**WebDeploymentConfigurationVersion**](WebDeploymentConfigurationVersion.html) put_webdeployments_configuration_versions_draft(configuration_id, configuration_version)
+## put_webdeployments_configuration_versions_draft
 
+> [**WebDeploymentConfigurationVersion**](WebDeploymentConfigurationVersion) put_webdeployments_configuration_versions_draft(configuration_id, configuration_version)
 
 
 Update the configuration draft
@@ -899,17 +880,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **configuration_id** | **str**| The configuration version ID |  |
-| **configuration_version** | [**WebDeploymentConfigurationVersion**](WebDeploymentConfigurationVersion.html)|  |  |
-{: class="table table-striped"}
+| **configuration_version** | [**WebDeploymentConfigurationVersion**](WebDeploymentConfigurationVersion)|  |  |
 
 ### Return type
 
-[**WebDeploymentConfigurationVersion**](WebDeploymentConfigurationVersion.html)
+[**WebDeploymentConfigurationVersion**](WebDeploymentConfigurationVersion)
 
-<a name="put_webdeployments_deployment"></a>
 
-## [**WebDeployment**](WebDeployment.html) put_webdeployments_deployment(deployment_id, deployment)
+## put_webdeployments_deployment
 
+> [**WebDeployment**](WebDeployment) put_webdeployments_deployment(deployment_id, deployment)
 
 
 Update a deployment
@@ -950,10 +930,11 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **deployment_id** | **str**| The deployment ID |  |
-| **deployment** | [**WebDeployment**](WebDeployment.html)|  |  |
-{: class="table table-striped"}
+| **deployment** | [**WebDeployment**](WebDeployment)|  |  |
 
 ### Return type
 
-[**WebDeployment**](WebDeployment.html)
+[**WebDeployment**](WebDeployment)
 
+
+_PureCloudPlatformClientV2 211.1.0_

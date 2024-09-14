@@ -1,17 +1,17 @@
----
-title: ChatMessageUser
----
+# ChatMessageUser
+
 ## ChatMessageUser
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **id** | **str** |  | [optional] |
-| **name** | **str** |  | [optional] |
-| **display_name** | **str** |  | [optional] |
-| **username** | **str** |  | [optional] |
-| **images** | [**list[UserImage]**](UserImage.html) |  | [optional] |
-{: class="table table-striped"}
+| **id** | str |  | [optional] |
+| **name** | str |  | [optional] |
+| **display_name** | str |  | [optional] |
+| **username** | str |  | [optional] |
+| **images** | [list[UserImage]](UserImage) |  | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

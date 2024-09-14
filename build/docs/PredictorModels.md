@@ -1,14 +1,14 @@
----
-title: PredictorModels
----
+# PredictorModels
+
 ## PredictorModels
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **entities** | [**list[PredictorModel]**](PredictorModel.html) |  | [optional] |
-| **predictor_models** | [**list[PredictorModel]**](PredictorModel.html) |  | [optional] |
-{: class="table table-striped"}
+| **entities** | [list[PredictorModel]](PredictorModel) |  | [optional] |
+| **predictor_models** | [list[PredictorModel]](PredictorModel) |  | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

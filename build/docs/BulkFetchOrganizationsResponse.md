@@ -1,15 +1,15 @@
----
-title: BulkFetchOrganizationsResponse
----
+# BulkFetchOrganizationsResponse
+
 ## BulkFetchOrganizationsResponse
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **results** | [**list[BulkResponseResultExternalOrganizationEntity]**](BulkResponseResultExternalOrganizationEntity.html) |  | [optional] |
-| **error_count** | **int** |  | [optional] |
-| **error_indexes** | **list[int]** |  | [optional] |
-{: class="table table-striped"}
+| **results** | [list[BulkResponseResultExternalOrganizationEntity]](BulkResponseResultExternalOrganizationEntity) |  | [optional] |
+| **error_count** | int |  | [optional] |
+| **error_indexes** | list[int] |  | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

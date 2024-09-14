@@ -1,15 +1,15 @@
----
-title: JourneySessionEventsNotificationConversationChannel
----
+# JourneySessionEventsNotificationConversationChannel
+
 ## JourneySessionEventsNotificationConversationChannel
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **type** | **str** |  | [optional] |
-| **message_type** | **str** |  | [optional] |
-| **platform** | **str** |  | [optional] |
-{: class="table table-striped"}
+| **type** | str |  | [optional] |
+| **message_type** | str |  | [optional] |
+| **platform** | str |  | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

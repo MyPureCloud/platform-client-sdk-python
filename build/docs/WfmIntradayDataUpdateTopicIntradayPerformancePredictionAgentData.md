@@ -1,13 +1,13 @@
----
-title: WfmIntradayDataUpdateTopicIntradayPerformancePredictionAgentData
----
+# WfmIntradayDataUpdateTopicIntradayPerformancePredictionAgentData
+
 ## WfmIntradayDataUpdateTopicIntradayPerformancePredictionAgentData
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **interacting_time_seconds** | **float** |  | [optional] |
-{: class="table table-striped"}
+| **interacting_time_seconds** | float |  | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

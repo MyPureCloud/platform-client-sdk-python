@@ -1,16 +1,16 @@
----
-title: ContentFilterItem
----
+# ContentFilterItem
+
 ## ContentFilterItem
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **name** | **str** |  | [optional] |
-| **type** | **str** |  | [optional] |
-| **operator** | **str** |  | [optional] |
-| **values** | **list[str]** |  | [optional] |
-{: class="table table-striped"}
+| **name** | str |  | [optional] |
+| **type** | str |  | [optional] |
+| **operator** | str |  | [optional] |
+| **values** | list[str] |  | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

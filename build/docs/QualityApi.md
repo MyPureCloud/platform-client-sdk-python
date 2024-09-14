@@ -1,6 +1,4 @@
----
-title: QualityApi
----
+# QualityApi
 
 ## PureCloudPlatformClientV2.QualityApi
 
@@ -8,74 +6,74 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 |Method | Description|
 |------------- | -------------|
-|[**delete_quality_calibration**](QualityApi.html#delete_quality_calibration) | Delete a calibration by id.|
-|[**delete_quality_conversation_evaluation**](QualityApi.html#delete_quality_conversation_evaluation) | Delete an evaluation|
-|[**delete_quality_form**](QualityApi.html#delete_quality_form) | Delete an evaluation form.|
-|[**delete_quality_forms_evaluation**](QualityApi.html#delete_quality_forms_evaluation) | Delete an evaluation form.|
-|[**delete_quality_forms_survey**](QualityApi.html#delete_quality_forms_survey) | Delete a survey form.|
-|[**get_analytics_evaluations_aggregates_job**](QualityApi.html#get_analytics_evaluations_aggregates_job) | Get status for async query for evaluation aggregates|
-|[**get_analytics_evaluations_aggregates_job_results**](QualityApi.html#get_analytics_evaluations_aggregates_job_results) | Fetch a page of results for an async aggregates query|
-|[**get_analytics_surveys_aggregates_job**](QualityApi.html#get_analytics_surveys_aggregates_job) | Get status for async query for survey aggregates|
-|[**get_analytics_surveys_aggregates_job_results**](QualityApi.html#get_analytics_surveys_aggregates_job_results) | Fetch a page of results for an async aggregates query|
-|[**get_quality_agents_activity**](QualityApi.html#get_quality_agents_activity) | Gets a list of Agent Activities|
-|[**get_quality_calibration**](QualityApi.html#get_quality_calibration) | Get a calibration by id.  Requires either calibrator id or conversation id|
-|[**get_quality_calibrations**](QualityApi.html#get_quality_calibrations) | Get the list of calibrations|
-|[**get_quality_conversation_evaluation**](QualityApi.html#get_quality_conversation_evaluation) | Get an evaluation|
-|[**get_quality_conversation_surveys**](QualityApi.html#get_quality_conversation_surveys) | Get the surveys for a conversation|
-|[**get_quality_conversations_audits_query_transaction_id**](QualityApi.html#get_quality_conversations_audits_query_transaction_id) | Get status of audit query execution|
-|[**get_quality_conversations_audits_query_transaction_id_results**](QualityApi.html#get_quality_conversations_audits_query_transaction_id_results) | Get results of audit query|
-|[**get_quality_evaluations_query**](QualityApi.html#get_quality_evaluations_query) | Queries Evaluations and returns a paged list|
-|[**get_quality_evaluators_activity**](QualityApi.html#get_quality_evaluators_activity) | Get an evaluator activity|
-|[**get_quality_form**](QualityApi.html#get_quality_form) | Get an evaluation form|
-|[**get_quality_form_versions**](QualityApi.html#get_quality_form_versions) | Gets all the revisions for a specific evaluation.|
-|[**get_quality_forms**](QualityApi.html#get_quality_forms) | Get the list of evaluation forms. If you set \&quot;expand&#x3D;publishHistory\&quot;, then you will be able to get published versions for each corresponding evaluation form.|
-|[**get_quality_forms_evaluation**](QualityApi.html#get_quality_forms_evaluation) | Get an evaluation form|
-|[**get_quality_forms_evaluation_versions**](QualityApi.html#get_quality_forms_evaluation_versions) | Gets all the revisions for a specific evaluation.|
-|[**get_quality_forms_evaluations**](QualityApi.html#get_quality_forms_evaluations) | Get the list of evaluation forms|
-|[**get_quality_forms_evaluations_bulk_contexts**](QualityApi.html#get_quality_forms_evaluations_bulk_contexts) | Retrieve a list of the latest published evaluation form versions by context ids|
-|[**get_quality_forms_survey**](QualityApi.html#get_quality_forms_survey) | Get a survey form|
-|[**get_quality_forms_survey_versions**](QualityApi.html#get_quality_forms_survey_versions) | Gets all the revisions for a specific survey.|
-|[**get_quality_forms_surveys**](QualityApi.html#get_quality_forms_surveys) | Get the list of survey forms. If you set \&quot;expand&#x3D;publishHistory\&quot;, then you will be able to get published versions for each corresponding survey form.|
-|[**get_quality_forms_surveys_bulk**](QualityApi.html#get_quality_forms_surveys_bulk) | Retrieve a list of survey forms by their ids|
-|[**get_quality_forms_surveys_bulk_contexts**](QualityApi.html#get_quality_forms_surveys_bulk_contexts) | Retrieve a list of the latest form versions by context ids|
-|[**get_quality_publishedform**](QualityApi.html#get_quality_publishedform) | Get the published evaluation forms.|
-|[**get_quality_publishedforms**](QualityApi.html#get_quality_publishedforms) | Get the published evaluation forms.|
-|[**get_quality_publishedforms_evaluation**](QualityApi.html#get_quality_publishedforms_evaluation) | Get the most recent published version of an evaluation form.|
-|[**get_quality_publishedforms_evaluations**](QualityApi.html#get_quality_publishedforms_evaluations) | Get the published evaluation forms.|
-|[**get_quality_publishedforms_survey**](QualityApi.html#get_quality_publishedforms_survey) | Get the most recent published version of a survey form.|
-|[**get_quality_publishedforms_surveys**](QualityApi.html#get_quality_publishedforms_surveys) | Get the published survey forms.|
-|[**get_quality_survey**](QualityApi.html#get_quality_survey) | Get a survey for a conversation|
-|[**get_quality_surveys_scorable**](QualityApi.html#get_quality_surveys_scorable) | Get a survey as an end-customer, for the purposes of scoring it.|
-|[**patch_quality_forms_survey**](QualityApi.html#patch_quality_forms_survey) | Disable a particular version of a survey form and invalidates any invitations that have already been sent to customers using this version of the form.|
-|[**post_analytics_evaluations_aggregates_jobs**](QualityApi.html#post_analytics_evaluations_aggregates_jobs) | Query for evaluation aggregates asynchronously|
-|[**post_analytics_evaluations_aggregates_query**](QualityApi.html#post_analytics_evaluations_aggregates_query) | Query for evaluation aggregates|
-|[**post_analytics_surveys_aggregates_jobs**](QualityApi.html#post_analytics_surveys_aggregates_jobs) | Query for survey aggregates asynchronously|
-|[**post_analytics_surveys_aggregates_query**](QualityApi.html#post_analytics_surveys_aggregates_query) | Query for survey aggregates|
-|[**post_quality_calibrations**](QualityApi.html#post_quality_calibrations) | Create a calibration|
-|[**post_quality_conversation_evaluations**](QualityApi.html#post_quality_conversation_evaluations) | Create an evaluation|
-|[**post_quality_conversations_audits_query**](QualityApi.html#post_quality_conversations_audits_query) | Create audit query execution|
-|[**post_quality_evaluations_aggregates_query_me**](QualityApi.html#post_quality_evaluations_aggregates_query_me) | Query for evaluation aggregates for the current user|
-|[**post_quality_evaluations_scoring**](QualityApi.html#post_quality_evaluations_scoring) | Score evaluation|
-|[**post_quality_forms**](QualityApi.html#post_quality_forms) | Create an evaluation form.|
-|[**post_quality_forms_evaluations**](QualityApi.html#post_quality_forms_evaluations) | Create an evaluation form.|
-|[**post_quality_forms_surveys**](QualityApi.html#post_quality_forms_surveys) | Create a survey form.|
-|[**post_quality_publishedforms**](QualityApi.html#post_quality_publishedforms) | Publish an evaluation form.|
-|[**post_quality_publishedforms_evaluations**](QualityApi.html#post_quality_publishedforms_evaluations) | Publish an evaluation form.|
-|[**post_quality_publishedforms_surveys**](QualityApi.html#post_quality_publishedforms_surveys) | Publish a survey form.|
-|[**post_quality_surveys_scoring**](QualityApi.html#post_quality_surveys_scoring) | Score survey|
-|[**put_quality_calibration**](QualityApi.html#put_quality_calibration) | Update a calibration to the specified calibration via PUT.  Editable fields include: evaluators, expertEvaluator, and scoringIndex|
-|[**put_quality_conversation_evaluation**](QualityApi.html#put_quality_conversation_evaluation) | Update an evaluation|
-|[**put_quality_form**](QualityApi.html#put_quality_form) | Update an evaluation form.|
-|[**put_quality_forms_evaluation**](QualityApi.html#put_quality_forms_evaluation) | Update an evaluation form.|
-|[**put_quality_forms_evaluation_aiscoring_settings**](QualityApi.html#put_quality_forms_evaluation_aiscoring_settings) | Update the AI Scoring settings of an evaluation form.|
-|[**put_quality_forms_survey**](QualityApi.html#put_quality_forms_survey) | Update a survey form.|
-|[**put_quality_surveys_scorable**](QualityApi.html#put_quality_surveys_scorable) | Update a survey as an end-customer, for the purposes of scoring it.|
-{: class="table table-striped"}
+|[**delete_quality_calibration**](#delete_quality_calibration) | Delete a calibration by id.|
+|[**delete_quality_conversation_evaluation**](#delete_quality_conversation_evaluation) | Delete an evaluation|
+|[**delete_quality_form**](#delete_quality_form) | Delete an evaluation form.|
+|[**delete_quality_forms_evaluation**](#delete_quality_forms_evaluation) | Delete an evaluation form.|
+|[**delete_quality_forms_survey**](#delete_quality_forms_survey) | Delete a survey form.|
+|[**get_analytics_evaluations_aggregates_job**](#get_analytics_evaluations_aggregates_job) | Get status for async query for evaluation aggregates|
+|[**get_analytics_evaluations_aggregates_job_results**](#get_analytics_evaluations_aggregates_job_results) | Fetch a page of results for an async aggregates query|
+|[**get_analytics_surveys_aggregates_job**](#get_analytics_surveys_aggregates_job) | Get status for async query for survey aggregates|
+|[**get_analytics_surveys_aggregates_job_results**](#get_analytics_surveys_aggregates_job_results) | Fetch a page of results for an async aggregates query|
+|[**get_quality_agents_activity**](#get_quality_agents_activity) | Gets a list of Agent Activities|
+|[**get_quality_calibration**](#get_quality_calibration) | Get a calibration by id.  Requires either calibrator id or conversation id|
+|[**get_quality_calibrations**](#get_quality_calibrations) | Get the list of calibrations|
+|[**get_quality_conversation_evaluation**](#get_quality_conversation_evaluation) | Get an evaluation|
+|[**get_quality_conversation_surveys**](#get_quality_conversation_surveys) | Get the surveys for a conversation|
+|[**get_quality_conversations_audits_query_transaction_id**](#get_quality_conversations_audits_query_transaction_id) | Get status of audit query execution|
+|[**get_quality_conversations_audits_query_transaction_id_results**](#get_quality_conversations_audits_query_transaction_id_results) | Get results of audit query|
+|[**get_quality_evaluations_query**](#get_quality_evaluations_query) | Queries Evaluations and returns a paged list|
+|[**get_quality_evaluators_activity**](#get_quality_evaluators_activity) | Get an evaluator activity|
+|[**get_quality_form**](#get_quality_form) | Get an evaluation form|
+|[**get_quality_form_versions**](#get_quality_form_versions) | Gets all the revisions for a specific evaluation.|
+|[**get_quality_forms**](#get_quality_forms) | Get the list of evaluation forms. If you set \&quot;expand&#x3D;publishHistory\&quot;, then you will be able to get published versions for each corresponding evaluation form.|
+|[**get_quality_forms_evaluation**](#get_quality_forms_evaluation) | Get an evaluation form|
+|[**get_quality_forms_evaluation_versions**](#get_quality_forms_evaluation_versions) | Gets all the revisions for a specific evaluation.|
+|[**get_quality_forms_evaluations**](#get_quality_forms_evaluations) | Get the list of evaluation forms|
+|[**get_quality_forms_evaluations_bulk_contexts**](#get_quality_forms_evaluations_bulk_contexts) | Retrieve a list of the latest published evaluation form versions by context ids|
+|[**get_quality_forms_survey**](#get_quality_forms_survey) | Get a survey form|
+|[**get_quality_forms_survey_versions**](#get_quality_forms_survey_versions) | Gets all the revisions for a specific survey.|
+|[**get_quality_forms_surveys**](#get_quality_forms_surveys) | Get the list of survey forms. If you set \&quot;expand&#x3D;publishHistory\&quot;, then you will be able to get published versions for each corresponding survey form.|
+|[**get_quality_forms_surveys_bulk**](#get_quality_forms_surveys_bulk) | Retrieve a list of survey forms by their ids|
+|[**get_quality_forms_surveys_bulk_contexts**](#get_quality_forms_surveys_bulk_contexts) | Retrieve a list of the latest form versions by context ids|
+|[**get_quality_publishedform**](#get_quality_publishedform) | Get the published evaluation forms.|
+|[**get_quality_publishedforms**](#get_quality_publishedforms) | Get the published evaluation forms.|
+|[**get_quality_publishedforms_evaluation**](#get_quality_publishedforms_evaluation) | Get the most recent published version of an evaluation form.|
+|[**get_quality_publishedforms_evaluations**](#get_quality_publishedforms_evaluations) | Get the published evaluation forms.|
+|[**get_quality_publishedforms_survey**](#get_quality_publishedforms_survey) | Get the most recent published version of a survey form.|
+|[**get_quality_publishedforms_surveys**](#get_quality_publishedforms_surveys) | Get the published survey forms.|
+|[**get_quality_survey**](#get_quality_survey) | Get a survey for a conversation|
+|[**get_quality_surveys_scorable**](#get_quality_surveys_scorable) | Get a survey as an end-customer, for the purposes of scoring it.|
+|[**patch_quality_forms_survey**](#patch_quality_forms_survey) | Disable a particular version of a survey form and invalidates any invitations that have already been sent to customers using this version of the form.|
+|[**post_analytics_evaluations_aggregates_jobs**](#post_analytics_evaluations_aggregates_jobs) | Query for evaluation aggregates asynchronously|
+|[**post_analytics_evaluations_aggregates_query**](#post_analytics_evaluations_aggregates_query) | Query for evaluation aggregates|
+|[**post_analytics_surveys_aggregates_jobs**](#post_analytics_surveys_aggregates_jobs) | Query for survey aggregates asynchronously|
+|[**post_analytics_surveys_aggregates_query**](#post_analytics_surveys_aggregates_query) | Query for survey aggregates|
+|[**post_quality_calibrations**](#post_quality_calibrations) | Create a calibration|
+|[**post_quality_conversation_evaluations**](#post_quality_conversation_evaluations) | Create an evaluation|
+|[**post_quality_conversations_audits_query**](#post_quality_conversations_audits_query) | Create audit query execution|
+|[**post_quality_evaluations_aggregates_query_me**](#post_quality_evaluations_aggregates_query_me) | Query for evaluation aggregates for the current user|
+|[**post_quality_evaluations_scoring**](#post_quality_evaluations_scoring) | Score evaluation|
+|[**post_quality_forms**](#post_quality_forms) | Create an evaluation form.|
+|[**post_quality_forms_evaluations**](#post_quality_forms_evaluations) | Create an evaluation form.|
+|[**post_quality_forms_surveys**](#post_quality_forms_surveys) | Create a survey form.|
+|[**post_quality_publishedforms**](#post_quality_publishedforms) | Publish an evaluation form.|
+|[**post_quality_publishedforms_evaluations**](#post_quality_publishedforms_evaluations) | Publish an evaluation form.|
+|[**post_quality_publishedforms_surveys**](#post_quality_publishedforms_surveys) | Publish a survey form.|
+|[**post_quality_surveys_scoring**](#post_quality_surveys_scoring) | Score survey|
+|[**put_quality_calibration**](#put_quality_calibration) | Update a calibration to the specified calibration via PUT.  Editable fields include: evaluators, expertEvaluator, and scoringIndex|
+|[**put_quality_conversation_evaluation**](#put_quality_conversation_evaluation) | Update an evaluation|
+|[**put_quality_form**](#put_quality_form) | Update an evaluation form.|
+|[**put_quality_forms_evaluation**](#put_quality_forms_evaluation) | Update an evaluation form.|
+|[**put_quality_forms_evaluation_aiscoring_settings**](#put_quality_forms_evaluation_aiscoring_settings) | Update the AI Scoring settings of an evaluation form.|
+|[**put_quality_forms_survey**](#put_quality_forms_survey) | Update a survey form.|
+|[**put_quality_surveys_scorable**](#put_quality_surveys_scorable) | Update a survey as an end-customer, for the purposes of scoring it.|
 
-<a name="delete_quality_calibration"></a>
 
-## [**Calibration**](Calibration.html) delete_quality_calibration(calibration_id, calibrator_id)
 
+## delete_quality_calibration
+
+> [**Calibration**](Calibration) delete_quality_calibration(calibration_id, calibrator_id)
 
 
 Delete a calibration by id.
@@ -117,16 +115,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **calibration_id** | **str**| Calibration ID |  |
 | **calibrator_id** | **str**| calibratorId |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**Calibration**](Calibration.html)
+[**Calibration**](Calibration)
 
-<a name="delete_quality_conversation_evaluation"></a>
 
-## [**EvaluationResponse**](EvaluationResponse.html) delete_quality_conversation_evaluation(conversation_id, evaluation_id, expand=expand)
+## delete_quality_conversation_evaluation
 
+> [**EvaluationResponse**](EvaluationResponse) delete_quality_conversation_evaluation(conversation_id, evaluation_id, expand=expand)
 
 
 Delete an evaluation
@@ -170,17 +167,19 @@ except ApiException as e:
 | **conversation_id** | **str**| conversationId |  |
 | **evaluation_id** | **str**| evaluationId |  |
 | **expand** | **str**| evaluatorId, evaluationForm | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**EvaluationResponse**](EvaluationResponse.html)
+[**EvaluationResponse**](EvaluationResponse)
 
-<a name="delete_quality_form"></a>
 
-##  delete_quality_form(form_id)
+## delete_quality_form
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+>  delete_quality_form(form_id)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 Delete an evaluation form.
 
@@ -218,16 +217,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **form_id** | **str**| Form ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (empty response body)
 
-<a name="delete_quality_forms_evaluation"></a>
 
-##  delete_quality_forms_evaluation(form_id)
+## delete_quality_forms_evaluation
 
+>  delete_quality_forms_evaluation(form_id)
 
 
 Delete an evaluation form.
@@ -266,16 +264,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **form_id** | **str**| Form ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (empty response body)
 
-<a name="delete_quality_forms_survey"></a>
 
-##  delete_quality_forms_survey(form_id)
+## delete_quality_forms_survey
 
+>  delete_quality_forms_survey(form_id)
 
 
 Delete a survey form.
@@ -314,16 +311,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **form_id** | **str**| Form ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (empty response body)
 
-<a name="get_analytics_evaluations_aggregates_job"></a>
 
-## [**AsyncQueryStatus**](AsyncQueryStatus.html) get_analytics_evaluations_aggregates_job(job_id)
+## get_analytics_evaluations_aggregates_job
 
+> [**AsyncQueryStatus**](AsyncQueryStatus) get_analytics_evaluations_aggregates_job(job_id)
 
 
 Get status for async query for evaluation aggregates
@@ -365,16 +361,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **job_id** | **str**| jobId |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**AsyncQueryStatus**](AsyncQueryStatus.html)
+[**AsyncQueryStatus**](AsyncQueryStatus)
 
-<a name="get_analytics_evaluations_aggregates_job_results"></a>
 
-## [**EvaluationAsyncAggregateQueryResponse**](EvaluationAsyncAggregateQueryResponse.html) get_analytics_evaluations_aggregates_job_results(job_id, cursor=cursor)
+## get_analytics_evaluations_aggregates_job_results
 
+> [**EvaluationAsyncAggregateQueryResponse**](EvaluationAsyncAggregateQueryResponse) get_analytics_evaluations_aggregates_job_results(job_id, cursor=cursor)
 
 
 Fetch a page of results for an async aggregates query
@@ -418,16 +413,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **job_id** | **str**| jobId |  |
 | **cursor** | **str**| Cursor token to retrieve next page | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**EvaluationAsyncAggregateQueryResponse**](EvaluationAsyncAggregateQueryResponse.html)
+[**EvaluationAsyncAggregateQueryResponse**](EvaluationAsyncAggregateQueryResponse)
 
-<a name="get_analytics_surveys_aggregates_job"></a>
 
-## [**AsyncQueryStatus**](AsyncQueryStatus.html) get_analytics_surveys_aggregates_job(job_id)
+## get_analytics_surveys_aggregates_job
 
+> [**AsyncQueryStatus**](AsyncQueryStatus) get_analytics_surveys_aggregates_job(job_id)
 
 
 Get status for async query for survey aggregates
@@ -469,16 +463,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **job_id** | **str**| jobId |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**AsyncQueryStatus**](AsyncQueryStatus.html)
+[**AsyncQueryStatus**](AsyncQueryStatus)
 
-<a name="get_analytics_surveys_aggregates_job_results"></a>
 
-## [**SurveyAsyncAggregateQueryResponse**](SurveyAsyncAggregateQueryResponse.html) get_analytics_surveys_aggregates_job_results(job_id, cursor=cursor)
+## get_analytics_surveys_aggregates_job_results
 
+> [**SurveyAsyncAggregateQueryResponse**](SurveyAsyncAggregateQueryResponse) get_analytics_surveys_aggregates_job_results(job_id, cursor=cursor)
 
 
 Fetch a page of results for an async aggregates query
@@ -522,16 +515,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **job_id** | **str**| jobId |  |
 | **cursor** | **str**| Cursor token to retrieve next page | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**SurveyAsyncAggregateQueryResponse**](SurveyAsyncAggregateQueryResponse.html)
+[**SurveyAsyncAggregateQueryResponse**](SurveyAsyncAggregateQueryResponse)
 
-<a name="get_quality_agents_activity"></a>
 
-## [**AgentActivityEntityListing**](AgentActivityEntityListing.html) get_quality_agents_activity(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, start_time=start_time, end_time=end_time, agent_user_id=agent_user_id, evaluator_user_id=evaluator_user_id, name=name, group=group, agent_team_id=agent_team_id, form_context_id=form_context_id)
+## get_quality_agents_activity
 
+> [**AgentActivityEntityListing**](AgentActivityEntityListing) get_quality_agents_activity(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, start_time=start_time, end_time=end_time, agent_user_id=agent_user_id, evaluator_user_id=evaluator_user_id, name=name, group=group, agent_team_id=agent_team_id, form_context_id=form_context_id)
 
 
 Gets a list of Agent Activities
@@ -588,27 +580,26 @@ except ApiException as e:
 | **page_size** | **int**| The total page size requested | [optional] [default to 25] |
 | **page_number** | **int**| The page number requested | [optional] [default to 1] |
 | **sort_by** | **str**| variable name requested to sort by | [optional]  |
-| **expand** | [**list[str]**](str.html)| variable name requested by expand list | [optional]  |
+| **expand** | [**list[str]**](str)| variable name requested by expand list | [optional]  |
 | **next_page** | **str**| next page token | [optional]  |
 | **previous_page** | **str**| Previous page token | [optional]  |
 | **start_time** | **datetime**| Start time of agent activity based on assigned date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional]  |
 | **end_time** | **datetime**| End time of agent activity based on assigned date. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional]  |
-| **agent_user_id** | [**list[str]**](str.html)| user id of agent requested | [optional]  |
+| **agent_user_id** | [**list[str]**](str)| user id of agent requested | [optional]  |
 | **evaluator_user_id** | **str**| user id of the evaluator | [optional]  |
 | **name** | **str**| name | [optional]  |
 | **group** | **str**| group id | [optional]  |
 | **agent_team_id** | **str**| team id of agents requested | [optional]  |
 | **form_context_id** | **str**| shared id between form versions | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**AgentActivityEntityListing**](AgentActivityEntityListing.html)
+[**AgentActivityEntityListing**](AgentActivityEntityListing)
 
-<a name="get_quality_calibration"></a>
 
-## [**Calibration**](Calibration.html) get_quality_calibration(calibration_id, calibrator_id=calibrator_id, conversation_id=conversation_id)
+## get_quality_calibration
 
+> [**Calibration**](Calibration) get_quality_calibration(calibration_id, calibrator_id=calibrator_id, conversation_id=conversation_id)
 
 
 Get a calibration by id.  Requires either calibrator id or conversation id
@@ -652,16 +643,15 @@ except ApiException as e:
 | **calibration_id** | **str**| Calibration ID |  |
 | **calibrator_id** | **str**| calibratorId | [optional]  |
 | **conversation_id** | **str**| conversationId | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**Calibration**](Calibration.html)
+[**Calibration**](Calibration)
 
-<a name="get_quality_calibrations"></a>
 
-## [**CalibrationEntityListing**](CalibrationEntityListing.html) get_quality_calibrations(calibrator_id, page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, conversation_id=conversation_id, start_time=start_time, end_time=end_time)
+## get_quality_calibrations
 
+> [**CalibrationEntityListing**](CalibrationEntityListing) get_quality_calibrations(calibrator_id, page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, conversation_id=conversation_id, start_time=start_time, end_time=end_time)
 
 
 Get the list of calibrations
@@ -715,22 +705,21 @@ except ApiException as e:
 | **page_size** | **int**| The total page size requested | [optional] [default to 25] |
 | **page_number** | **int**| The page number requested | [optional] [default to 1] |
 | **sort_by** | **str**| variable name requested to sort by | [optional]  |
-| **expand** | [**list[str]**](str.html)| variable name requested by expand list | [optional]  |
+| **expand** | [**list[str]**](str)| variable name requested by expand list | [optional]  |
 | **next_page** | **str**| next page token | [optional]  |
 | **previous_page** | **str**| Previous page token | [optional]  |
 | **conversation_id** | **str**| conversation id | [optional]  |
 | **start_time** | **datetime**| Beginning of the calibration query. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional]  |
 | **end_time** | **datetime**| end of the calibration query. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**CalibrationEntityListing**](CalibrationEntityListing.html)
+[**CalibrationEntityListing**](CalibrationEntityListing)
 
-<a name="get_quality_conversation_evaluation"></a>
 
-## [**EvaluationResponse**](EvaluationResponse.html) get_quality_conversation_evaluation(conversation_id, evaluation_id, expand=expand)
+## get_quality_conversation_evaluation
 
+> [**EvaluationResponse**](EvaluationResponse) get_quality_conversation_evaluation(conversation_id, evaluation_id, expand=expand)
 
 
 Get an evaluation
@@ -776,16 +765,15 @@ except ApiException as e:
 | **conversation_id** | **str**| conversationId |  |
 | **evaluation_id** | **str**| evaluationId |  |
 | **expand** | **str**| agent, assignee, evaluator, evaluationForm | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**EvaluationResponse**](EvaluationResponse.html)
+[**EvaluationResponse**](EvaluationResponse)
 
-<a name="get_quality_conversation_surveys"></a>
 
-## [**list[Survey]**](Survey.html) get_quality_conversation_surveys(conversation_id)
+## get_quality_conversation_surveys
 
+> [**list[Survey]**](Survey) get_quality_conversation_surveys(conversation_id)
 
 
 Get the surveys for a conversation
@@ -825,16 +813,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**list[Survey]**](Survey.html)
+[**list[Survey]**](Survey)
 
-<a name="get_quality_conversations_audits_query_transaction_id"></a>
 
-## [**QualityAuditQueryExecutionStatusResponse**](QualityAuditQueryExecutionStatusResponse.html) get_quality_conversations_audits_query_transaction_id(transaction_id)
+## get_quality_conversations_audits_query_transaction_id
 
+> [**QualityAuditQueryExecutionStatusResponse**](QualityAuditQueryExecutionStatusResponse) get_quality_conversations_audits_query_transaction_id(transaction_id)
 
 
 Get status of audit query execution
@@ -874,16 +861,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **transaction_id** | **str**| Transaction ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**QualityAuditQueryExecutionStatusResponse**](QualityAuditQueryExecutionStatusResponse.html)
+[**QualityAuditQueryExecutionStatusResponse**](QualityAuditQueryExecutionStatusResponse)
 
-<a name="get_quality_conversations_audits_query_transaction_id_results"></a>
 
-## [**QualityAuditQueryExecutionResultsResponse**](QualityAuditQueryExecutionResultsResponse.html) get_quality_conversations_audits_query_transaction_id_results(transaction_id, cursor=cursor, page_size=page_size, expand=expand)
+## get_quality_conversations_audits_query_transaction_id_results
 
+> [**QualityAuditQueryExecutionResultsResponse**](QualityAuditQueryExecutionResultsResponse) get_quality_conversations_audits_query_transaction_id_results(transaction_id, cursor=cursor, page_size=page_size, expand=expand)
 
 
 Get results of audit query
@@ -928,17 +914,16 @@ except ApiException as e:
 | **transaction_id** | **str**| Transaction ID |  |
 | **cursor** | **str**| Indicates where to resume query results (not required for first page) | [optional]  |
 | **page_size** | **int**| Page size | [optional] [default to 25] |
-| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand | [optional] <br />**Values**: user |
-{: class="table table-striped"}
+| **expand** | [**list[str]**](str)| Which fields, if any, to expand | [optional] <br />**Values**: user |
 
 ### Return type
 
-[**QualityAuditQueryExecutionResultsResponse**](QualityAuditQueryExecutionResultsResponse.html)
+[**QualityAuditQueryExecutionResultsResponse**](QualityAuditQueryExecutionResultsResponse)
 
-<a name="get_quality_evaluations_query"></a>
 
-## [**EvaluationEntityListing**](EvaluationEntityListing.html) get_quality_evaluations_query(page_size=page_size, page_number=page_number, expand=expand, previous_page=previous_page, conversation_id=conversation_id, agent_user_id=agent_user_id, agent_team_id=agent_team_id, evaluator_user_id=evaluator_user_id, assignee_user_id=assignee_user_id, queue_id=queue_id, start_time=start_time, end_time=end_time, form_context_id=form_context_id, evaluation_state=evaluation_state, is_released=is_released, agent_has_read=agent_has_read, expand_answer_total_scores=expand_answer_total_scores, maximum=maximum, sort_order=sort_order)
+## get_quality_evaluations_query
 
+> [**EvaluationEntityListing**](EvaluationEntityListing) get_quality_evaluations_query(page_size=page_size, page_number=page_number, expand=expand, previous_page=previous_page, conversation_id=conversation_id, agent_user_id=agent_user_id, agent_team_id=agent_team_id, evaluator_user_id=evaluator_user_id, assignee_user_id=assignee_user_id, queue_id=queue_id, start_time=start_time, end_time=end_time, form_context_id=form_context_id, evaluation_state=evaluation_state, is_released=is_released, agent_has_read=agent_has_read, expand_answer_total_scores=expand_answer_total_scores, maximum=maximum, sort_order=sort_order)
 
 
 Queries Evaluations and returns a paged list
@@ -999,7 +984,7 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **page_size** | **int**| The total page size requested | [optional] [default to 25] |
 | **page_number** | **int**| The page number requested | [optional] [default to 1] |
-| **expand** | [**list[str]**](str.html)| variable name requested by expand list | [optional]  |
+| **expand** | [**list[str]**](str)| variable name requested by expand list | [optional]  |
 | **previous_page** | **str**| Previous page token | [optional]  |
 | **conversation_id** | **str**| conversationId specified | [optional]  |
 | **agent_user_id** | **str**| user id of the agent | [optional]  |
@@ -1010,22 +995,21 @@ except ApiException as e:
 | **start_time** | **str**| start time of the evaluation query | [optional]  |
 | **end_time** | **str**| end time of the evaluation query | [optional]  |
 | **form_context_id** | **str**| shared id between form versions | [optional]  |
-| **evaluation_state** | [**list[str]**](str.html)|  | [optional]  |
+| **evaluation_state** | [**list[str]**](str)|  | [optional]  |
 | **is_released** | **bool**| the evaluation has been released | [optional]  |
 | **agent_has_read** | **bool**| agent has the evaluation | [optional]  |
 | **expand_answer_total_scores** | **bool**| get the total scores for evaluations. NOTE: The answers will only be populated if this parameter is set to true in the request. | [optional]  |
 | **maximum** | **int**| the maximum number of results to return | [optional]  |
 | **sort_order** | **str**| NOTE: Does not work when conversationId is supplied. | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**EvaluationEntityListing**](EvaluationEntityListing.html)
+[**EvaluationEntityListing**](EvaluationEntityListing)
 
-<a name="get_quality_evaluators_activity"></a>
 
-## [**EvaluatorActivityEntityListing**](EvaluatorActivityEntityListing.html) get_quality_evaluators_activity(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, start_time=start_time, end_time=end_time, name=name, permission=permission, group=group, agent_team_id=agent_team_id)
+## get_quality_evaluators_activity
 
+> [**EvaluatorActivityEntityListing**](EvaluatorActivityEntityListing) get_quality_evaluators_activity(page_size=page_size, page_number=page_number, sort_by=sort_by, expand=expand, next_page=next_page, previous_page=previous_page, start_time=start_time, end_time=end_time, name=name, permission=permission, group=group, agent_team_id=agent_team_id)
 
 
 Get an evaluator activity
@@ -1078,26 +1062,28 @@ except ApiException as e:
 | **page_size** | **int**| The total page size requested | [optional] [default to 25] |
 | **page_number** | **int**| The page number requested | [optional] [default to 1] |
 | **sort_by** | **str**| variable name requested to sort by | [optional]  |
-| **expand** | [**list[str]**](str.html)| variable name requested by expand list | [optional]  |
+| **expand** | [**list[str]**](str)| variable name requested by expand list | [optional]  |
 | **next_page** | **str**| next page token | [optional]  |
 | **previous_page** | **str**| Previous page token | [optional]  |
 | **start_time** | **datetime**| The start time specified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional]  |
 | **end_time** | **datetime**| The end time specified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z | [optional]  |
 | **name** | **str**| Evaluator name | [optional]  |
-| **permission** | [**list[str]**](str.html)| permission strings | [optional]  |
+| **permission** | [**list[str]**](str)| permission strings | [optional]  |
 | **group** | **str**| group id | [optional]  |
 | **agent_team_id** | **str**| team id of agents to be considered | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**EvaluatorActivityEntityListing**](EvaluatorActivityEntityListing.html)
+[**EvaluatorActivityEntityListing**](EvaluatorActivityEntityListing)
 
-<a name="get_quality_form"></a>
 
-## [**EvaluationFormResponse**](EvaluationFormResponse.html) get_quality_form(form_id)
+## get_quality_form
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+> [**EvaluationFormResponse**](EvaluationFormResponse) get_quality_form(form_id)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 Get an evaluation form
 
@@ -1136,17 +1122,19 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **form_id** | **str**| Form ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**EvaluationFormResponse**](EvaluationFormResponse.html)
+[**EvaluationFormResponse**](EvaluationFormResponse)
 
-<a name="get_quality_form_versions"></a>
 
-## [**EvaluationFormResponseEntityListing**](EvaluationFormResponseEntityListing.html) get_quality_form_versions(form_id, page_size=page_size, page_number=page_number)
+## get_quality_form_versions
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+> [**EvaluationFormResponseEntityListing**](EvaluationFormResponseEntityListing) get_quality_form_versions(form_id, page_size=page_size, page_number=page_number)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 Gets all the revisions for a specific evaluation.
 
@@ -1189,17 +1177,19 @@ except ApiException as e:
 | **form_id** | **str**| Form ID |  |
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
-{: class="table table-striped"}
 
 ### Return type
 
-[**EvaluationFormResponseEntityListing**](EvaluationFormResponseEntityListing.html)
+[**EvaluationFormResponseEntityListing**](EvaluationFormResponseEntityListing)
 
-<a name="get_quality_forms"></a>
 
-## [**EvaluationFormResponseEntityListing**](EvaluationFormResponseEntityListing.html) get_quality_forms(page_size=page_size, page_number=page_number, sort_by=sort_by, next_page=next_page, previous_page=previous_page, expand=expand, name=name, sort_order=sort_order)
+## get_quality_forms
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+> [**EvaluationFormResponseEntityListing**](EvaluationFormResponseEntityListing) get_quality_forms(page_size=page_size, page_number=page_number, sort_by=sort_by, next_page=next_page, previous_page=previous_page, expand=expand, name=name, sort_order=sort_order)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 Get the list of evaluation forms. If you set \"expand=publishHistory\", then you will be able to get published versions for each corresponding evaluation form.
 
@@ -1252,16 +1242,15 @@ except ApiException as e:
 | **expand** | **str**| If &#39;expand&#x3D;publishHistory&#39;, then each unpublished evaluation form includes a listing of its published versions | [optional] <br />**Values**: publishHistory |
 | **name** | **str**| Name | [optional]  |
 | **sort_order** | **str**| Order to sort results, either asc or desc | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**EvaluationFormResponseEntityListing**](EvaluationFormResponseEntityListing.html)
+[**EvaluationFormResponseEntityListing**](EvaluationFormResponseEntityListing)
 
-<a name="get_quality_forms_evaluation"></a>
 
-## [**EvaluationFormResponse**](EvaluationFormResponse.html) get_quality_forms_evaluation(form_id)
+## get_quality_forms_evaluation
 
+> [**EvaluationFormResponse**](EvaluationFormResponse) get_quality_forms_evaluation(form_id)
 
 
 Get an evaluation form
@@ -1301,16 +1290,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **form_id** | **str**| Form ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**EvaluationFormResponse**](EvaluationFormResponse.html)
+[**EvaluationFormResponse**](EvaluationFormResponse)
 
-<a name="get_quality_forms_evaluation_versions"></a>
 
-## [**EvaluationFormResponseEntityListing**](EvaluationFormResponseEntityListing.html) get_quality_forms_evaluation_versions(form_id, page_size=page_size, page_number=page_number, sort_order=sort_order)
+## get_quality_forms_evaluation_versions
 
+> [**EvaluationFormResponseEntityListing**](EvaluationFormResponseEntityListing) get_quality_forms_evaluation_versions(form_id, page_size=page_size, page_number=page_number, sort_order=sort_order)
 
 
 Gets all the revisions for a specific evaluation.
@@ -1356,16 +1344,15 @@ except ApiException as e:
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **sort_order** | **str**| Sort order | [optional] [default to &#39;asc&#39;] |
-{: class="table table-striped"}
 
 ### Return type
 
-[**EvaluationFormResponseEntityListing**](EvaluationFormResponseEntityListing.html)
+[**EvaluationFormResponseEntityListing**](EvaluationFormResponseEntityListing)
 
-<a name="get_quality_forms_evaluations"></a>
 
-## [**EvaluationFormResponseEntityListing**](EvaluationFormResponseEntityListing.html) get_quality_forms_evaluations(page_size=page_size, page_number=page_number, sort_by=sort_by, next_page=next_page, previous_page=previous_page, expand=expand, name=name, sort_order=sort_order)
+## get_quality_forms_evaluations
 
+> [**EvaluationFormResponseEntityListing**](EvaluationFormResponseEntityListing) get_quality_forms_evaluations(page_size=page_size, page_number=page_number, sort_by=sort_by, next_page=next_page, previous_page=previous_page, expand=expand, name=name, sort_order=sort_order)
 
 
 Get the list of evaluation forms
@@ -1421,16 +1408,15 @@ except ApiException as e:
 | **expand** | **str**| If &#39;expand&#x3D;publishHistory&#39;, then each unpublished evaluation form includes a listing of its published versions | [optional] <br />**Values**: publishHistory |
 | **name** | **str**| Name | [optional]  |
 | **sort_order** | **str**| Order to sort results, either asc or desc | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**EvaluationFormResponseEntityListing**](EvaluationFormResponseEntityListing.html)
+[**EvaluationFormResponseEntityListing**](EvaluationFormResponseEntityListing)
 
-<a name="get_quality_forms_evaluations_bulk_contexts"></a>
 
-## [**list[EvaluationFormResponse]**](EvaluationFormResponse.html) get_quality_forms_evaluations_bulk_contexts(context_id)
+## get_quality_forms_evaluations_bulk_contexts
 
+> [**list[EvaluationFormResponse]**](EvaluationFormResponse) get_quality_forms_evaluations_bulk_contexts(context_id)
 
 
 Retrieve a list of the latest published evaluation form versions by context ids
@@ -1469,17 +1455,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **context_id** | [**list[str]**](str.html)| A comma-delimited list of valid evaluation form context ids |  |
-{: class="table table-striped"}
+| **context_id** | [**list[str]**](str)| A comma-delimited list of valid evaluation form context ids |  |
 
 ### Return type
 
-[**list[EvaluationFormResponse]**](EvaluationFormResponse.html)
+[**list[EvaluationFormResponse]**](EvaluationFormResponse)
 
-<a name="get_quality_forms_survey"></a>
 
-## [**SurveyForm**](SurveyForm.html) get_quality_forms_survey(form_id)
+## get_quality_forms_survey
 
+> [**SurveyForm**](SurveyForm) get_quality_forms_survey(form_id)
 
 
 Get a survey form
@@ -1519,16 +1504,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **form_id** | **str**| Form ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**SurveyForm**](SurveyForm.html)
+[**SurveyForm**](SurveyForm)
 
-<a name="get_quality_forms_survey_versions"></a>
 
-## [**SurveyFormEntityListing**](SurveyFormEntityListing.html) get_quality_forms_survey_versions(form_id, page_size=page_size, page_number=page_number)
+## get_quality_forms_survey_versions
 
+> [**SurveyFormEntityListing**](SurveyFormEntityListing) get_quality_forms_survey_versions(form_id, page_size=page_size, page_number=page_number)
 
 
 Gets all the revisions for a specific survey.
@@ -1572,16 +1556,15 @@ except ApiException as e:
 | **form_id** | **str**| Form ID |  |
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
-{: class="table table-striped"}
 
 ### Return type
 
-[**SurveyFormEntityListing**](SurveyFormEntityListing.html)
+[**SurveyFormEntityListing**](SurveyFormEntityListing)
 
-<a name="get_quality_forms_surveys"></a>
 
-## [**SurveyFormEntityListing**](SurveyFormEntityListing.html) get_quality_forms_surveys(page_size=page_size, page_number=page_number, sort_by=sort_by, next_page=next_page, previous_page=previous_page, expand=expand, name=name, sort_order=sort_order)
+## get_quality_forms_surveys
 
+> [**SurveyFormEntityListing**](SurveyFormEntityListing) get_quality_forms_surveys(page_size=page_size, page_number=page_number, sort_by=sort_by, next_page=next_page, previous_page=previous_page, expand=expand, name=name, sort_order=sort_order)
 
 
 Get the list of survey forms. If you set \"expand=publishHistory\", then you will be able to get published versions for each corresponding survey form.
@@ -1635,16 +1618,15 @@ except ApiException as e:
 | **expand** | **str**| If &#39;expand&#x3D;publishHistory&#39;, then each unpublished evaluation form includes a listing of its published versions | [optional] <br />**Values**: publishHistory |
 | **name** | **str**| Name | [optional]  |
 | **sort_order** | **str**| Order to sort results, either asc or desc | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**SurveyFormEntityListing**](SurveyFormEntityListing.html)
+[**SurveyFormEntityListing**](SurveyFormEntityListing)
 
-<a name="get_quality_forms_surveys_bulk"></a>
 
-## [**SurveyFormEntityListing**](SurveyFormEntityListing.html) get_quality_forms_surveys_bulk(id)
+## get_quality_forms_surveys_bulk
 
+> [**SurveyFormEntityListing**](SurveyFormEntityListing) get_quality_forms_surveys_bulk(id)
 
 
 Retrieve a list of survey forms by their ids
@@ -1683,17 +1665,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **id** | [**list[str]**](str.html)| A comma-delimited list of valid survey form ids |  |
-{: class="table table-striped"}
+| **id** | [**list[str]**](str)| A comma-delimited list of valid survey form ids |  |
 
 ### Return type
 
-[**SurveyFormEntityListing**](SurveyFormEntityListing.html)
+[**SurveyFormEntityListing**](SurveyFormEntityListing)
 
-<a name="get_quality_forms_surveys_bulk_contexts"></a>
 
-## [**list[SurveyForm]**](SurveyForm.html) get_quality_forms_surveys_bulk_contexts(context_id, published=published)
+## get_quality_forms_surveys_bulk_contexts
 
+> [**list[SurveyForm]**](SurveyForm) get_quality_forms_surveys_bulk_contexts(context_id, published=published)
 
 
 Retrieve a list of the latest form versions by context ids
@@ -1733,19 +1714,21 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **context_id** | [**list[str]**](str.html)| A comma-delimited list of valid survey form context ids. The maximum number of ids allowed in this list is 100. |  |
+| **context_id** | [**list[str]**](str)| A comma-delimited list of valid survey form context ids. The maximum number of ids allowed in this list is 100. |  |
 | **published** | **bool**| If true, the latest published version will be included. If false, only the unpublished version will be included. | [optional] [default to True] |
-{: class="table table-striped"}
 
 ### Return type
 
-[**list[SurveyForm]**](SurveyForm.html)
+[**list[SurveyForm]**](SurveyForm)
 
-<a name="get_quality_publishedform"></a>
 
-## [**EvaluationFormResponse**](EvaluationFormResponse.html) get_quality_publishedform(form_id)
+## get_quality_publishedform
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+> [**EvaluationFormResponse**](EvaluationFormResponse) get_quality_publishedform(form_id)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 Get the published evaluation forms.
 
@@ -1784,17 +1767,19 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **form_id** | **str**| Form ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**EvaluationFormResponse**](EvaluationFormResponse.html)
+[**EvaluationFormResponse**](EvaluationFormResponse)
 
-<a name="get_quality_publishedforms"></a>
 
-## [**EvaluationFormResponseEntityListing**](EvaluationFormResponseEntityListing.html) get_quality_publishedforms(page_size=page_size, page_number=page_number, name=name, only_latest_per_context=only_latest_per_context)
+## get_quality_publishedforms
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+> [**EvaluationFormResponseEntityListing**](EvaluationFormResponseEntityListing) get_quality_publishedforms(page_size=page_size, page_number=page_number, name=name, only_latest_per_context=only_latest_per_context)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 Get the published evaluation forms.
 
@@ -1839,16 +1824,15 @@ except ApiException as e:
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **name** | **str**| Name | [optional]  |
 | **only_latest_per_context** | **bool**| onlyLatestPerContext | [optional] [default to False] |
-{: class="table table-striped"}
 
 ### Return type
 
-[**EvaluationFormResponseEntityListing**](EvaluationFormResponseEntityListing.html)
+[**EvaluationFormResponseEntityListing**](EvaluationFormResponseEntityListing)
 
-<a name="get_quality_publishedforms_evaluation"></a>
 
-## [**EvaluationFormResponse**](EvaluationFormResponse.html) get_quality_publishedforms_evaluation(form_id)
+## get_quality_publishedforms_evaluation
 
+> [**EvaluationFormResponse**](EvaluationFormResponse) get_quality_publishedforms_evaluation(form_id)
 
 
 Get the most recent published version of an evaluation form.
@@ -1888,16 +1872,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **form_id** | **str**| Form ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**EvaluationFormResponse**](EvaluationFormResponse.html)
+[**EvaluationFormResponse**](EvaluationFormResponse)
 
-<a name="get_quality_publishedforms_evaluations"></a>
 
-## [**EvaluationFormResponseEntityListing**](EvaluationFormResponseEntityListing.html) get_quality_publishedforms_evaluations(page_size=page_size, page_number=page_number, name=name, only_latest_per_context=only_latest_per_context)
+## get_quality_publishedforms_evaluations
 
+> [**EvaluationFormResponseEntityListing**](EvaluationFormResponseEntityListing) get_quality_publishedforms_evaluations(page_size=page_size, page_number=page_number, name=name, only_latest_per_context=only_latest_per_context)
 
 
 Get the published evaluation forms.
@@ -1943,16 +1926,15 @@ except ApiException as e:
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **name** | **str**| Name | [optional]  |
 | **only_latest_per_context** | **bool**| onlyLatestPerContext | [optional] [default to False] |
-{: class="table table-striped"}
 
 ### Return type
 
-[**EvaluationFormResponseEntityListing**](EvaluationFormResponseEntityListing.html)
+[**EvaluationFormResponseEntityListing**](EvaluationFormResponseEntityListing)
 
-<a name="get_quality_publishedforms_survey"></a>
 
-## [**SurveyForm**](SurveyForm.html) get_quality_publishedforms_survey(form_id)
+## get_quality_publishedforms_survey
 
+> [**SurveyForm**](SurveyForm) get_quality_publishedforms_survey(form_id)
 
 
 Get the most recent published version of a survey form.
@@ -1992,16 +1974,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **form_id** | **str**| Form ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**SurveyForm**](SurveyForm.html)
+[**SurveyForm**](SurveyForm)
 
-<a name="get_quality_publishedforms_surveys"></a>
 
-## [**SurveyFormEntityListing**](SurveyFormEntityListing.html) get_quality_publishedforms_surveys(page_size=page_size, page_number=page_number, name=name, only_latest_enabled_per_context=only_latest_enabled_per_context)
+## get_quality_publishedforms_surveys
 
+> [**SurveyFormEntityListing**](SurveyFormEntityListing) get_quality_publishedforms_surveys(page_size=page_size, page_number=page_number, name=name, only_latest_enabled_per_context=only_latest_enabled_per_context)
 
 
 Get the published survey forms.
@@ -2047,16 +2028,15 @@ except ApiException as e:
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **name** | **str**| Name | [optional]  |
 | **only_latest_enabled_per_context** | **bool**| onlyLatestEnabledPerContext | [optional] [default to False] |
-{: class="table table-striped"}
 
 ### Return type
 
-[**SurveyFormEntityListing**](SurveyFormEntityListing.html)
+[**SurveyFormEntityListing**](SurveyFormEntityListing)
 
-<a name="get_quality_survey"></a>
 
-## [**Survey**](Survey.html) get_quality_survey(survey_id)
+## get_quality_survey
 
+> [**Survey**](Survey) get_quality_survey(survey_id)
 
 
 Get a survey for a conversation
@@ -2096,16 +2076,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **survey_id** | **str**| surveyId |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**Survey**](Survey.html)
+[**Survey**](Survey)
 
-<a name="get_quality_surveys_scorable"></a>
 
-## [**ScorableSurvey**](ScorableSurvey.html) get_quality_surveys_scorable(customer_survey_url)
+## get_quality_surveys_scorable
 
+> [**ScorableSurvey**](ScorableSurvey) get_quality_surveys_scorable(customer_survey_url)
 
 
 Get a survey as an end-customer, for the purposes of scoring it.
@@ -2141,16 +2120,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **customer_survey_url** | **str**| customerSurveyUrl |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**ScorableSurvey**](ScorableSurvey.html)
+[**ScorableSurvey**](ScorableSurvey)
 
-<a name="patch_quality_forms_survey"></a>
 
-## [**SurveyForm**](SurveyForm.html) patch_quality_forms_survey(form_id, body)
+## patch_quality_forms_survey
 
+> [**SurveyForm**](SurveyForm) patch_quality_forms_survey(form_id, body)
 
 
 Disable a particular version of a survey form and invalidates any invitations that have already been sent to customers using this version of the form.
@@ -2191,17 +2169,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **form_id** | **str**| Form ID |  |
-| **body** | [**SurveyForm**](SurveyForm.html)| Survey form |  |
-{: class="table table-striped"}
+| **body** | [**SurveyForm**](SurveyForm)| Survey form |  |
 
 ### Return type
 
-[**SurveyForm**](SurveyForm.html)
+[**SurveyForm**](SurveyForm)
 
-<a name="post_analytics_evaluations_aggregates_jobs"></a>
 
-## [**AsyncQueryResponse**](AsyncQueryResponse.html) post_analytics_evaluations_aggregates_jobs(body)
+## post_analytics_evaluations_aggregates_jobs
 
+> [**AsyncQueryResponse**](AsyncQueryResponse) post_analytics_evaluations_aggregates_jobs(body)
 
 
 Query for evaluation aggregates asynchronously
@@ -2242,17 +2219,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**EvaluationAsyncAggregationQuery**](EvaluationAsyncAggregationQuery.html)| query |  |
-{: class="table table-striped"}
+| **body** | [**EvaluationAsyncAggregationQuery**](EvaluationAsyncAggregationQuery)| query |  |
 
 ### Return type
 
-[**AsyncQueryResponse**](AsyncQueryResponse.html)
+[**AsyncQueryResponse**](AsyncQueryResponse)
 
-<a name="post_analytics_evaluations_aggregates_query"></a>
 
-## [**EvaluationAggregateQueryResponse**](EvaluationAggregateQueryResponse.html) post_analytics_evaluations_aggregates_query(body)
+## post_analytics_evaluations_aggregates_query
 
+> [**EvaluationAggregateQueryResponse**](EvaluationAggregateQueryResponse) post_analytics_evaluations_aggregates_query(body)
 
 
 Query for evaluation aggregates
@@ -2291,17 +2267,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**EvaluationAggregationQuery**](EvaluationAggregationQuery.html)| query |  |
-{: class="table table-striped"}
+| **body** | [**EvaluationAggregationQuery**](EvaluationAggregationQuery)| query |  |
 
 ### Return type
 
-[**EvaluationAggregateQueryResponse**](EvaluationAggregateQueryResponse.html)
+[**EvaluationAggregateQueryResponse**](EvaluationAggregateQueryResponse)
 
-<a name="post_analytics_surveys_aggregates_jobs"></a>
 
-## [**AsyncQueryResponse**](AsyncQueryResponse.html) post_analytics_surveys_aggregates_jobs(body)
+## post_analytics_surveys_aggregates_jobs
 
+> [**AsyncQueryResponse**](AsyncQueryResponse) post_analytics_surveys_aggregates_jobs(body)
 
 
 Query for survey aggregates asynchronously
@@ -2342,17 +2317,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**SurveyAsyncAggregationQuery**](SurveyAsyncAggregationQuery.html)| query |  |
-{: class="table table-striped"}
+| **body** | [**SurveyAsyncAggregationQuery**](SurveyAsyncAggregationQuery)| query |  |
 
 ### Return type
 
-[**AsyncQueryResponse**](AsyncQueryResponse.html)
+[**AsyncQueryResponse**](AsyncQueryResponse)
 
-<a name="post_analytics_surveys_aggregates_query"></a>
 
-## [**SurveyAggregateQueryResponse**](SurveyAggregateQueryResponse.html) post_analytics_surveys_aggregates_query(body)
+## post_analytics_surveys_aggregates_query
 
+> [**SurveyAggregateQueryResponse**](SurveyAggregateQueryResponse) post_analytics_surveys_aggregates_query(body)
 
 
 Query for survey aggregates
@@ -2391,17 +2365,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**SurveyAggregationQuery**](SurveyAggregationQuery.html)| query |  |
-{: class="table table-striped"}
+| **body** | [**SurveyAggregationQuery**](SurveyAggregationQuery)| query |  |
 
 ### Return type
 
-[**SurveyAggregateQueryResponse**](SurveyAggregateQueryResponse.html)
+[**SurveyAggregateQueryResponse**](SurveyAggregateQueryResponse)
 
-<a name="post_quality_calibrations"></a>
 
-## [**Calibration**](Calibration.html) post_quality_calibrations(body, expand=expand)
+## post_quality_calibrations
 
+> [**Calibration**](Calibration) post_quality_calibrations(body, expand=expand)
 
 
 Create a calibration
@@ -2441,18 +2414,17 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**CalibrationCreate**](CalibrationCreate.html)| calibration |  |
+| **body** | [**CalibrationCreate**](CalibrationCreate)| calibration |  |
 | **expand** | **str**| calibratorId | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**Calibration**](Calibration.html)
+[**Calibration**](Calibration)
 
-<a name="post_quality_conversation_evaluations"></a>
 
-## [**Evaluation**](Evaluation.html) post_quality_conversation_evaluations(conversation_id, body, expand=expand)
+## post_quality_conversation_evaluations
 
+> [**Evaluation**](Evaluation) post_quality_conversation_evaluations(conversation_id, body, expand=expand)
 
 
 Create an evaluation
@@ -2494,18 +2466,17 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
-| **body** | [**EvaluationCreateBody**](EvaluationCreateBody.html)| evaluation |  |
+| **body** | [**EvaluationCreateBody**](EvaluationCreateBody)| evaluation |  |
 | **expand** | **str**| evaluatorId | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**Evaluation**](Evaluation.html)
+[**Evaluation**](Evaluation)
 
-<a name="post_quality_conversations_audits_query"></a>
 
-## [**QualityAuditQueryExecutionStatusResponse**](QualityAuditQueryExecutionStatusResponse.html) post_quality_conversations_audits_query(body)
+## post_quality_conversations_audits_query
 
+> [**QualityAuditQueryExecutionStatusResponse**](QualityAuditQueryExecutionStatusResponse) post_quality_conversations_audits_query(body)
 
 
 Create audit query execution
@@ -2544,17 +2515,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**QMAuditQueryRequest**](QMAuditQueryRequest.html)| query |  |
-{: class="table table-striped"}
+| **body** | [**QMAuditQueryRequest**](QMAuditQueryRequest)| query |  |
 
 ### Return type
 
-[**QualityAuditQueryExecutionStatusResponse**](QualityAuditQueryExecutionStatusResponse.html)
+[**QualityAuditQueryExecutionStatusResponse**](QualityAuditQueryExecutionStatusResponse)
 
-<a name="post_quality_evaluations_aggregates_query_me"></a>
 
-## [**EvaluationAggregateQueryResponse**](EvaluationAggregateQueryResponse.html) post_quality_evaluations_aggregates_query_me(body)
+## post_quality_evaluations_aggregates_query_me
 
+> [**EvaluationAggregateQueryResponse**](EvaluationAggregateQueryResponse) post_quality_evaluations_aggregates_query_me(body)
 
 
 Query for evaluation aggregates for the current user
@@ -2592,17 +2562,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**EvaluationAggregationQueryMe**](EvaluationAggregationQueryMe.html)| query |  |
-{: class="table table-striped"}
+| **body** | [**EvaluationAggregationQueryMe**](EvaluationAggregationQueryMe)| query |  |
 
 ### Return type
 
-[**EvaluationAggregateQueryResponse**](EvaluationAggregateQueryResponse.html)
+[**EvaluationAggregateQueryResponse**](EvaluationAggregateQueryResponse)
 
-<a name="post_quality_evaluations_scoring"></a>
 
-## [**EvaluationScoringSet**](EvaluationScoringSet.html) post_quality_evaluations_scoring(body)
+## post_quality_evaluations_scoring
 
+> [**EvaluationScoringSet**](EvaluationScoringSet) post_quality_evaluations_scoring(body)
 
 
 Score evaluation
@@ -2640,18 +2609,20 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**EvaluationFormAndScoringSet**](EvaluationFormAndScoringSet.html)| evaluationAndScoringSet |  |
-{: class="table table-striped"}
+| **body** | [**EvaluationFormAndScoringSet**](EvaluationFormAndScoringSet)| evaluationAndScoringSet |  |
 
 ### Return type
 
-[**EvaluationScoringSet**](EvaluationScoringSet.html)
+[**EvaluationScoringSet**](EvaluationScoringSet)
 
-<a name="post_quality_forms"></a>
 
-## [**EvaluationFormResponse**](EvaluationFormResponse.html) post_quality_forms(body)
+## post_quality_forms
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+> [**EvaluationFormResponse**](EvaluationFormResponse) post_quality_forms(body)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 Create an evaluation form.
 
@@ -2689,17 +2660,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**EvaluationForm**](EvaluationForm.html)| Evaluation form |  |
-{: class="table table-striped"}
+| **body** | [**EvaluationForm**](EvaluationForm)| Evaluation form |  |
 
 ### Return type
 
-[**EvaluationFormResponse**](EvaluationFormResponse.html)
+[**EvaluationFormResponse**](EvaluationFormResponse)
 
-<a name="post_quality_forms_evaluations"></a>
 
-## [**EvaluationFormResponse**](EvaluationFormResponse.html) post_quality_forms_evaluations(body)
+## post_quality_forms_evaluations
 
+> [**EvaluationFormResponse**](EvaluationFormResponse) post_quality_forms_evaluations(body)
 
 
 Create an evaluation form.
@@ -2738,17 +2708,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**EvaluationForm**](EvaluationForm.html)| Evaluation form |  |
-{: class="table table-striped"}
+| **body** | [**EvaluationForm**](EvaluationForm)| Evaluation form |  |
 
 ### Return type
 
-[**EvaluationFormResponse**](EvaluationFormResponse.html)
+[**EvaluationFormResponse**](EvaluationFormResponse)
 
-<a name="post_quality_forms_surveys"></a>
 
-## [**SurveyForm**](SurveyForm.html) post_quality_forms_surveys(body)
+## post_quality_forms_surveys
 
+> [**SurveyForm**](SurveyForm) post_quality_forms_surveys(body)
 
 
 Create a survey form.
@@ -2787,18 +2756,20 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**SurveyForm**](SurveyForm.html)| Survey form |  |
-{: class="table table-striped"}
+| **body** | [**SurveyForm**](SurveyForm)| Survey form |  |
 
 ### Return type
 
-[**SurveyForm**](SurveyForm.html)
+[**SurveyForm**](SurveyForm)
 
-<a name="post_quality_publishedforms"></a>
 
-## [**EvaluationFormResponse**](EvaluationFormResponse.html) post_quality_publishedforms(body)
+## post_quality_publishedforms
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+> [**EvaluationFormResponse**](EvaluationFormResponse) post_quality_publishedforms(body)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 Publish an evaluation form.
 
@@ -2836,17 +2807,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**PublishForm**](PublishForm.html)| Publish request containing id of form to publish |  |
-{: class="table table-striped"}
+| **body** | [**PublishForm**](PublishForm)| Publish request containing id of form to publish |  |
 
 ### Return type
 
-[**EvaluationFormResponse**](EvaluationFormResponse.html)
+[**EvaluationFormResponse**](EvaluationFormResponse)
 
-<a name="post_quality_publishedforms_evaluations"></a>
 
-## [**EvaluationFormResponse**](EvaluationFormResponse.html) post_quality_publishedforms_evaluations(body)
+## post_quality_publishedforms_evaluations
 
+> [**EvaluationFormResponse**](EvaluationFormResponse) post_quality_publishedforms_evaluations(body)
 
 
 Publish an evaluation form.
@@ -2885,17 +2855,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**PublishForm**](PublishForm.html)| Publish request containing id of form to publish |  |
-{: class="table table-striped"}
+| **body** | [**PublishForm**](PublishForm)| Publish request containing id of form to publish |  |
 
 ### Return type
 
-[**EvaluationFormResponse**](EvaluationFormResponse.html)
+[**EvaluationFormResponse**](EvaluationFormResponse)
 
-<a name="post_quality_publishedforms_surveys"></a>
 
-## [**SurveyForm**](SurveyForm.html) post_quality_publishedforms_surveys(body)
+## post_quality_publishedforms_surveys
 
+> [**SurveyForm**](SurveyForm) post_quality_publishedforms_surveys(body)
 
 
 Publish a survey form.
@@ -2934,17 +2903,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**PublishForm**](PublishForm.html)| Survey form |  |
-{: class="table table-striped"}
+| **body** | [**PublishForm**](PublishForm)| Survey form |  |
 
 ### Return type
 
-[**SurveyForm**](SurveyForm.html)
+[**SurveyForm**](SurveyForm)
 
-<a name="post_quality_surveys_scoring"></a>
 
-## [**SurveyScoringSet**](SurveyScoringSet.html) post_quality_surveys_scoring(body)
+## post_quality_surveys_scoring
 
+> [**SurveyScoringSet**](SurveyScoringSet) post_quality_surveys_scoring(body)
 
 
 Score survey
@@ -2982,17 +2950,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**SurveyFormAndScoringSet**](SurveyFormAndScoringSet.html)| surveyAndScoringSet |  |
-{: class="table table-striped"}
+| **body** | [**SurveyFormAndScoringSet**](SurveyFormAndScoringSet)| surveyAndScoringSet |  |
 
 ### Return type
 
-[**SurveyScoringSet**](SurveyScoringSet.html)
+[**SurveyScoringSet**](SurveyScoringSet)
 
-<a name="put_quality_calibration"></a>
 
-## [**Calibration**](Calibration.html) put_quality_calibration(calibration_id, body)
+## put_quality_calibration
 
+> [**Calibration**](Calibration) put_quality_calibration(calibration_id, body)
 
 
 Update a calibration to the specified calibration via PUT.  Editable fields include: evaluators, expertEvaluator, and scoringIndex
@@ -3033,17 +3000,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **calibration_id** | **str**| Calibration ID |  |
-| **body** | [**Calibration**](Calibration.html)| Calibration |  |
-{: class="table table-striped"}
+| **body** | [**Calibration**](Calibration)| Calibration |  |
 
 ### Return type
 
-[**Calibration**](Calibration.html)
+[**Calibration**](Calibration)
 
-<a name="put_quality_conversation_evaluation"></a>
 
-## [**EvaluationResponse**](EvaluationResponse.html) put_quality_conversation_evaluation(conversation_id, evaluation_id, body, expand=expand)
+## put_quality_conversation_evaluation
 
+> [**EvaluationResponse**](EvaluationResponse) put_quality_conversation_evaluation(conversation_id, evaluation_id, body, expand=expand)
 
 
 Update an evaluation
@@ -3091,19 +3057,21 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **conversation_id** | **str**| conversationId |  |
 | **evaluation_id** | **str**| evaluationId |  |
-| **body** | [**Evaluation**](Evaluation.html)| evaluation |  |
+| **body** | [**Evaluation**](Evaluation)| evaluation |  |
 | **expand** | **str**| evaluatorId, evaluationForm, assignee, evaluator | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**EvaluationResponse**](EvaluationResponse.html)
+[**EvaluationResponse**](EvaluationResponse)
 
-<a name="put_quality_form"></a>
 
-## [**EvaluationFormResponse**](EvaluationFormResponse.html) put_quality_form(form_id, body)
+## put_quality_form
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+> [**EvaluationFormResponse**](EvaluationFormResponse) put_quality_form(form_id, body)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 Update an evaluation form.
 
@@ -3143,17 +3111,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **form_id** | **str**| Form ID |  |
-| **body** | [**EvaluationForm**](EvaluationForm.html)| Evaluation form |  |
-{: class="table table-striped"}
+| **body** | [**EvaluationForm**](EvaluationForm)| Evaluation form |  |
 
 ### Return type
 
-[**EvaluationFormResponse**](EvaluationFormResponse.html)
+[**EvaluationFormResponse**](EvaluationFormResponse)
 
-<a name="put_quality_forms_evaluation"></a>
 
-## [**EvaluationFormResponse**](EvaluationFormResponse.html) put_quality_forms_evaluation(form_id, body)
+## put_quality_forms_evaluation
 
+> [**EvaluationFormResponse**](EvaluationFormResponse) put_quality_forms_evaluation(form_id, body)
 
 
 Update an evaluation form.
@@ -3194,17 +3161,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **form_id** | **str**| Form ID |  |
-| **body** | [**EvaluationForm**](EvaluationForm.html)| Evaluation form |  |
-{: class="table table-striped"}
+| **body** | [**EvaluationForm**](EvaluationForm)| Evaluation form |  |
 
 ### Return type
 
-[**EvaluationFormResponse**](EvaluationFormResponse.html)
+[**EvaluationFormResponse**](EvaluationFormResponse)
 
-<a name="put_quality_forms_evaluation_aiscoring_settings"></a>
 
-## [**AiScoringSettings**](AiScoringSettings.html) put_quality_forms_evaluation_aiscoring_settings(form_id, body)
+## put_quality_forms_evaluation_aiscoring_settings
 
+> [**AiScoringSettings**](AiScoringSettings) put_quality_forms_evaluation_aiscoring_settings(form_id, body)
 
 
 Update the AI Scoring settings of an evaluation form.
@@ -3247,17 +3213,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **form_id** | **str**| Form ID |  |
-| **body** | [**AiScoringSettings**](AiScoringSettings.html)| AI Scoring Settings |  |
-{: class="table table-striped"}
+| **body** | [**AiScoringSettings**](AiScoringSettings)| AI Scoring Settings |  |
 
 ### Return type
 
-[**AiScoringSettings**](AiScoringSettings.html)
+[**AiScoringSettings**](AiScoringSettings)
 
-<a name="put_quality_forms_survey"></a>
 
-## [**SurveyForm**](SurveyForm.html) put_quality_forms_survey(form_id, body)
+## put_quality_forms_survey
 
+> [**SurveyForm**](SurveyForm) put_quality_forms_survey(form_id, body)
 
 
 Update a survey form.
@@ -3298,17 +3263,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **form_id** | **str**| Form ID |  |
-| **body** | [**SurveyForm**](SurveyForm.html)| Survey form |  |
-{: class="table table-striped"}
+| **body** | [**SurveyForm**](SurveyForm)| Survey form |  |
 
 ### Return type
 
-[**SurveyForm**](SurveyForm.html)
+[**SurveyForm**](SurveyForm)
 
-<a name="put_quality_surveys_scorable"></a>
 
-## [**ScorableSurvey**](ScorableSurvey.html) put_quality_surveys_scorable(customer_survey_url, body)
+## put_quality_surveys_scorable
 
+> [**ScorableSurvey**](ScorableSurvey) put_quality_surveys_scorable(customer_survey_url, body)
 
 
 Update a survey as an end-customer, for the purposes of scoring it.
@@ -3345,10 +3309,11 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **customer_survey_url** | **str**| customerSurveyUrl |  |
-| **body** | [**ScorableSurvey**](ScorableSurvey.html)| survey |  |
-{: class="table table-striped"}
+| **body** | [**ScorableSurvey**](ScorableSurvey)| survey |  |
 
 ### Return type
 
-[**ScorableSurvey**](ScorableSurvey.html)
+[**ScorableSurvey**](ScorableSurvey)
 
+
+_PureCloudPlatformClientV2 211.1.0_

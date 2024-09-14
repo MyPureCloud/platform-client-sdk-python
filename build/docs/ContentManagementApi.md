@@ -1,6 +1,4 @@
----
-title: ContentManagementApi
----
+# ContentManagementApi
 
 ## PureCloudPlatformClientV2.ContentManagementApi
 
@@ -8,56 +6,57 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 |Method | Description|
 |------------- | -------------|
-|[**delete_contentmanagement_document**](ContentManagementApi.html#delete_contentmanagement_document) | Delete a document.|
-|[**delete_contentmanagement_share**](ContentManagementApi.html#delete_contentmanagement_share) | Deletes an existing share.|
-|[**delete_contentmanagement_status_status_id**](ContentManagementApi.html#delete_contentmanagement_status_status_id) | Cancel the command for this status|
-|[**delete_contentmanagement_workspace**](ContentManagementApi.html#delete_contentmanagement_workspace) | Delete a workspace|
-|[**delete_contentmanagement_workspace_member**](ContentManagementApi.html#delete_contentmanagement_workspace_member) | Delete a member from a workspace|
-|[**delete_contentmanagement_workspace_tagvalue**](ContentManagementApi.html#delete_contentmanagement_workspace_tagvalue) | Delete workspace tag|
-|[**get_contentmanagement_document**](ContentManagementApi.html#get_contentmanagement_document) | Get a document.|
-|[**get_contentmanagement_document_content**](ContentManagementApi.html#get_contentmanagement_document_content) | Download a document.|
-|[**get_contentmanagement_documents**](ContentManagementApi.html#get_contentmanagement_documents) | Get a list of documents.|
-|[**get_contentmanagement_query**](ContentManagementApi.html#get_contentmanagement_query) | Query content|
-|[**get_contentmanagement_securityprofile**](ContentManagementApi.html#get_contentmanagement_securityprofile) | Get a Security Profile|
-|[**get_contentmanagement_securityprofiles**](ContentManagementApi.html#get_contentmanagement_securityprofiles) | Get a List of Security Profiles|
-|[**get_contentmanagement_share**](ContentManagementApi.html#get_contentmanagement_share) | Retrieve details about an existing share.|
-|[**get_contentmanagement_shared_shared_id**](ContentManagementApi.html#get_contentmanagement_shared_shared_id) | Get shared documents. Securely download a shared document.|
-|[**get_contentmanagement_shares**](ContentManagementApi.html#get_contentmanagement_shares) | Gets a list of shares.  You must specify at least one filter (e.g. entityId).|
-|[**get_contentmanagement_status**](ContentManagementApi.html#get_contentmanagement_status) | Get a list of statuses for pending operations|
-|[**get_contentmanagement_status_status_id**](ContentManagementApi.html#get_contentmanagement_status_status_id) | Get a status.|
-|[**get_contentmanagement_usage**](ContentManagementApi.html#get_contentmanagement_usage) | Get usage details.|
-|[**get_contentmanagement_workspace**](ContentManagementApi.html#get_contentmanagement_workspace) | Get a workspace.|
-|[**get_contentmanagement_workspace_documents**](ContentManagementApi.html#get_contentmanagement_workspace_documents) | Get a list of documents.|
-|[**get_contentmanagement_workspace_member**](ContentManagementApi.html#get_contentmanagement_workspace_member) | Get a workspace member|
-|[**get_contentmanagement_workspace_members**](ContentManagementApi.html#get_contentmanagement_workspace_members) | Get a list workspace members|
-|[**get_contentmanagement_workspace_tagvalue**](ContentManagementApi.html#get_contentmanagement_workspace_tagvalue) | Get a workspace tag|
-|[**get_contentmanagement_workspace_tagvalues**](ContentManagementApi.html#get_contentmanagement_workspace_tagvalues) | Get a list of workspace tags|
-|[**get_contentmanagement_workspaces**](ContentManagementApi.html#get_contentmanagement_workspaces) | Get a list of workspaces.|
-|[**post_contentmanagement_document**](ContentManagementApi.html#post_contentmanagement_document) | Update a document.|
-|[**post_contentmanagement_document_content**](ContentManagementApi.html#post_contentmanagement_document_content) | Replace the contents of a document.|
-|[**post_contentmanagement_documents**](ContentManagementApi.html#post_contentmanagement_documents) | Add a document.|
-|[**post_contentmanagement_query**](ContentManagementApi.html#post_contentmanagement_query) | Query content|
-|[**post_contentmanagement_shares**](ContentManagementApi.html#post_contentmanagement_shares) | Creates a new share or updates an existing share if the entity has already been shared|
-|[**post_contentmanagement_workspace_tagvalues**](ContentManagementApi.html#post_contentmanagement_workspace_tagvalues) | Create a workspace tag|
-|[**post_contentmanagement_workspace_tagvalues_query**](ContentManagementApi.html#post_contentmanagement_workspace_tagvalues_query) | Perform a prefix query on tags in the workspace|
-|[**post_contentmanagement_workspaces**](ContentManagementApi.html#post_contentmanagement_workspaces) | Create a group workspace|
-|[**put_contentmanagement_workspace**](ContentManagementApi.html#put_contentmanagement_workspace) | Update a workspace|
-|[**put_contentmanagement_workspace_member**](ContentManagementApi.html#put_contentmanagement_workspace_member) | Add a member to a workspace|
-|[**put_contentmanagement_workspace_tagvalue**](ContentManagementApi.html#put_contentmanagement_workspace_tagvalue) | Update a workspace tag. Will update all documents with the new tag value.|
-{: class="table table-striped"}
+|[**delete_contentmanagement_document**](#delete_contentmanagement_document) | Delete a document.|
+|[**delete_contentmanagement_share**](#delete_contentmanagement_share) | Deletes an existing share.|
+|[**delete_contentmanagement_status_status_id**](#delete_contentmanagement_status_status_id) | Cancel the command for this status|
+|[**delete_contentmanagement_workspace**](#delete_contentmanagement_workspace) | Delete a workspace|
+|[**delete_contentmanagement_workspace_member**](#delete_contentmanagement_workspace_member) | Delete a member from a workspace|
+|[**delete_contentmanagement_workspace_tagvalue**](#delete_contentmanagement_workspace_tagvalue) | Delete workspace tag|
+|[**get_contentmanagement_document**](#get_contentmanagement_document) | Get a document.|
+|[**get_contentmanagement_document_content**](#get_contentmanagement_document_content) | Download a document.|
+|[**get_contentmanagement_documents**](#get_contentmanagement_documents) | Get a list of documents.|
+|[**get_contentmanagement_query**](#get_contentmanagement_query) | Query content|
+|[**get_contentmanagement_securityprofile**](#get_contentmanagement_securityprofile) | Get a Security Profile|
+|[**get_contentmanagement_securityprofiles**](#get_contentmanagement_securityprofiles) | Get a List of Security Profiles|
+|[**get_contentmanagement_share**](#get_contentmanagement_share) | Retrieve details about an existing share.|
+|[**get_contentmanagement_shared_shared_id**](#get_contentmanagement_shared_shared_id) | Get shared documents. Securely download a shared document.|
+|[**get_contentmanagement_shares**](#get_contentmanagement_shares) | Gets a list of shares.  You must specify at least one filter (e.g. entityId).|
+|[**get_contentmanagement_status**](#get_contentmanagement_status) | Get a list of statuses for pending operations|
+|[**get_contentmanagement_status_status_id**](#get_contentmanagement_status_status_id) | Get a status.|
+|[**get_contentmanagement_usage**](#get_contentmanagement_usage) | Get usage details.|
+|[**get_contentmanagement_workspace**](#get_contentmanagement_workspace) | Get a workspace.|
+|[**get_contentmanagement_workspace_documents**](#get_contentmanagement_workspace_documents) | Get a list of documents.|
+|[**get_contentmanagement_workspace_member**](#get_contentmanagement_workspace_member) | Get a workspace member|
+|[**get_contentmanagement_workspace_members**](#get_contentmanagement_workspace_members) | Get a list workspace members|
+|[**get_contentmanagement_workspace_tagvalue**](#get_contentmanagement_workspace_tagvalue) | Get a workspace tag|
+|[**get_contentmanagement_workspace_tagvalues**](#get_contentmanagement_workspace_tagvalues) | Get a list of workspace tags|
+|[**get_contentmanagement_workspaces**](#get_contentmanagement_workspaces) | Get a list of workspaces.|
+|[**post_contentmanagement_document**](#post_contentmanagement_document) | Update a document.|
+|[**post_contentmanagement_document_content**](#post_contentmanagement_document_content) | Replace the contents of a document.|
+|[**post_contentmanagement_documents**](#post_contentmanagement_documents) | Add a document.|
+|[**post_contentmanagement_query**](#post_contentmanagement_query) | Query content|
+|[**post_contentmanagement_shares**](#post_contentmanagement_shares) | Creates a new share or updates an existing share if the entity has already been shared|
+|[**post_contentmanagement_workspace_tagvalues**](#post_contentmanagement_workspace_tagvalues) | Create a workspace tag|
+|[**post_contentmanagement_workspace_tagvalues_query**](#post_contentmanagement_workspace_tagvalues_query) | Perform a prefix query on tags in the workspace|
+|[**post_contentmanagement_workspaces**](#post_contentmanagement_workspaces) | Create a group workspace|
+|[**put_contentmanagement_workspace**](#put_contentmanagement_workspace) | Update a workspace|
+|[**put_contentmanagement_workspace_member**](#put_contentmanagement_workspace_member) | Add a member to a workspace|
+|[**put_contentmanagement_workspace_tagvalue**](#put_contentmanagement_workspace_tagvalue) | Update a workspace tag. Will update all documents with the new tag value.|
 
-<a name="delete_contentmanagement_document"></a>
 
-##  delete_contentmanagement_document(document_id, override=override)
 
+## delete_contentmanagement_document
+
+>  delete_contentmanagement_document(document_id, override=override)
 
 
 Delete a document.
 
 Wraps DELETE /api/v2/contentmanagement/documents/{documentId} 
 
-Requires no permissions
+Requires ANY permissions: 
 
+* content_management_user
 
 ### Example
 
@@ -89,16 +88,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **document_id** | **str**| Document ID |  |
 | **override** | **bool**| Override any lock on the document | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (empty response body)
 
-<a name="delete_contentmanagement_share"></a>
 
-##  delete_contentmanagement_share(share_id)
+## delete_contentmanagement_share
 
+>  delete_contentmanagement_share(share_id)
 
 
 Deletes an existing share.
@@ -138,16 +136,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **share_id** | **str**| Share ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (empty response body)
 
-<a name="delete_contentmanagement_status_status_id"></a>
 
-##  delete_contentmanagement_status_status_id(status_id)
+## delete_contentmanagement_status_status_id
 
+>  delete_contentmanagement_status_status_id(status_id)
 
 
 Cancel the command for this status
@@ -185,16 +182,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **status_id** | **str**| Status ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (empty response body)
 
-<a name="delete_contentmanagement_workspace"></a>
 
-##  delete_contentmanagement_workspace(workspace_id, move_children_to_workspace_id=move_children_to_workspace_id)
+## delete_contentmanagement_workspace
 
+>  delete_contentmanagement_workspace(workspace_id, move_children_to_workspace_id=move_children_to_workspace_id)
 
 
 Delete a workspace
@@ -234,16 +230,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **workspace_id** | **str**| Workspace ID |  |
 | **move_children_to_workspace_id** | **str**| New location for objects in deleted workspace. | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (empty response body)
 
-<a name="delete_contentmanagement_workspace_member"></a>
 
-##  delete_contentmanagement_workspace_member(workspace_id, member_id)
+## delete_contentmanagement_workspace_member
 
+>  delete_contentmanagement_workspace_member(workspace_id, member_id)
 
 
 Delete a member from a workspace
@@ -283,16 +278,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **workspace_id** | **str**| Workspace ID |  |
 | **member_id** | **str**| Member ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (empty response body)
 
-<a name="delete_contentmanagement_workspace_tagvalue"></a>
 
-##  delete_contentmanagement_workspace_tagvalue(workspace_id, tag_id)
+## delete_contentmanagement_workspace_tagvalue
 
+>  delete_contentmanagement_workspace_tagvalue(workspace_id, tag_id)
 
 
 Delete workspace tag
@@ -334,24 +328,24 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **workspace_id** | **str**| Workspace ID |  |
 | **tag_id** | **str**| Tag ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
 void (empty response body)
 
-<a name="get_contentmanagement_document"></a>
 
-## [**Document**](Document.html) get_contentmanagement_document(document_id, expand=expand)
+## get_contentmanagement_document
 
+> [**Document**](Document) get_contentmanagement_document(document_id, expand=expand)
 
 
 Get a document.
 
 Wraps GET /api/v2/contentmanagement/documents/{documentId} 
 
-Requires no permissions
+Requires ANY permissions: 
 
+* content_management_user
 
 ### Example
 
@@ -383,25 +377,25 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **document_id** | **str**| Document ID |  |
-| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand. | [optional] <br />**Values**: lockInfo, acl, workspace |
-{: class="table table-striped"}
+| **expand** | [**list[str]**](str)| Which fields, if any, to expand. | [optional] <br />**Values**: lockInfo, acl, workspace |
 
 ### Return type
 
-[**Document**](Document.html)
+[**Document**](Document)
 
-<a name="get_contentmanagement_document_content"></a>
 
-## [**DownloadResponse**](DownloadResponse.html) get_contentmanagement_document_content(document_id, disposition=disposition, content_type=content_type)
+## get_contentmanagement_document_content
 
+> [**DownloadResponse**](DownloadResponse) get_contentmanagement_document_content(document_id, disposition=disposition, content_type=content_type)
 
 
 Download a document.
 
 Wraps GET /api/v2/contentmanagement/documents/{documentId}/content 
 
-Requires no permissions
+Requires ANY permissions: 
 
+* content_management_user
 
 ### Example
 
@@ -436,17 +430,19 @@ except ApiException as e:
 | **document_id** | **str**| Document ID |  |
 | **disposition** | **str**| Request how the content will be downloaded: a file attachment or inline. Default is attachment. | [optional] <br />**Values**: attachment, inline |
 | **content_type** | **str**| The requested format for the specified document. If supported, the document will be returned in that format. Example contentType&#x3D;audio/wav | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**DownloadResponse**](DownloadResponse.html)
+[**DownloadResponse**](DownloadResponse)
 
-<a name="get_contentmanagement_documents"></a>
 
-## [**DocumentEntityListing**](DocumentEntityListing.html) get_contentmanagement_documents(workspace_id, name=name, expand=expand, page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order)
+## get_contentmanagement_documents
 
-<span style="background-color: #f0ad4e;display: inline-block;padding: 7px;font-weight: bold;line-height: 1;color: #ffffff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 10px 0;">DEPRECATED</span>
+> [**DocumentEntityListing**](DocumentEntityListing) get_contentmanagement_documents(workspace_id, name=name, expand=expand, page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order)
+
+:::{"alert":"warning","title":"Deprecated","collapsible":false,"autoCollapse":false}
+This resource has been deprecated
+:::
 
 Get a list of documents.
 
@@ -491,21 +487,20 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **workspace_id** | **str**| Workspace ID |  |
 | **name** | **str**| Name | [optional]  |
-| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand. | [optional] <br />**Values**: acl, workspace |
+| **expand** | [**list[str]**](str)| Which fields, if any, to expand. | [optional] <br />**Values**: acl, workspace |
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **sort_by** | **str**| name or dateCreated | [optional]  |
 | **sort_order** | **str**| ascending or descending | [optional] [default to &#39;ascending&#39;] |
-{: class="table table-striped"}
 
 ### Return type
 
-[**DocumentEntityListing**](DocumentEntityListing.html)
+[**DocumentEntityListing**](DocumentEntityListing)
 
-<a name="get_contentmanagement_query"></a>
 
-## [**QueryResults**](QueryResults.html) get_contentmanagement_query(query_phrase, page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order, expand=expand)
+## get_contentmanagement_query
 
+> [**QueryResults**](QueryResults) get_contentmanagement_query(query_phrase, page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order, expand=expand)
 
 
 Query content
@@ -553,17 +548,16 @@ except ApiException as e:
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **sort_by** | **str**| name or dateCreated | [optional] [default to &#39;name&#39;] |
 | **sort_order** | **str**| ascending or descending | [optional] [default to &#39;ascending&#39;] |
-| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand. | [optional] <br />**Values**: acl, workspace |
-{: class="table table-striped"}
+| **expand** | [**list[str]**](str)| Which fields, if any, to expand. | [optional] <br />**Values**: acl, workspace |
 
 ### Return type
 
-[**QueryResults**](QueryResults.html)
+[**QueryResults**](QueryResults)
 
-<a name="get_contentmanagement_securityprofile"></a>
 
-## [**SecurityProfile**](SecurityProfile.html) get_contentmanagement_securityprofile(security_profile_id)
+## get_contentmanagement_securityprofile
 
+> [**SecurityProfile**](SecurityProfile) get_contentmanagement_securityprofile(security_profile_id)
 
 
 Get a Security Profile
@@ -602,16 +596,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **security_profile_id** | **str**| Security Profile Id |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**SecurityProfile**](SecurityProfile.html)
+[**SecurityProfile**](SecurityProfile)
 
-<a name="get_contentmanagement_securityprofiles"></a>
 
-## [**SecurityProfileEntityListing**](SecurityProfileEntityListing.html) get_contentmanagement_securityprofiles()
+## get_contentmanagement_securityprofiles
 
+> [**SecurityProfileEntityListing**](SecurityProfileEntityListing) get_contentmanagement_securityprofiles()
 
 
 Get a List of Security Profiles
@@ -647,15 +640,14 @@ except ApiException as e:
 
 This endpoint does not need any parameters.
 
-
 ### Return type
 
-[**SecurityProfileEntityListing**](SecurityProfileEntityListing.html)
+[**SecurityProfileEntityListing**](SecurityProfileEntityListing)
 
-<a name="get_contentmanagement_share"></a>
 
-## [**Share**](Share.html) get_contentmanagement_share(share_id, expand=expand)
+## get_contentmanagement_share
 
+> [**Share**](Share) get_contentmanagement_share(share_id, expand=expand)
 
 
 Retrieve details about an existing share.
@@ -695,17 +687,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **share_id** | **str**| Share ID |  |
-| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand. | [optional] <br />**Values**: member |
-{: class="table table-striped"}
+| **expand** | [**list[str]**](str)| Which fields, if any, to expand. | [optional] <br />**Values**: member |
 
 ### Return type
 
-[**Share**](Share.html)
+[**Share**](Share)
 
-<a name="get_contentmanagement_shared_shared_id"></a>
 
-## [**SharedResponse**](SharedResponse.html) get_contentmanagement_shared_shared_id(shared_id, redirect=redirect, disposition=disposition, content_type=content_type, expand=expand)
+## get_contentmanagement_shared_shared_id
 
+> [**SharedResponse**](SharedResponse) get_contentmanagement_shared_shared_id(shared_id, redirect=redirect, disposition=disposition, content_type=content_type, expand=expand)
 
 
 Get shared documents. Securely download a shared document.
@@ -754,16 +745,15 @@ except ApiException as e:
 | **disposition** | **str**| Request how the share content will be downloaded: attached as a file or inline. Default is attachment. | [optional] [default to &#39;attachment&#39;]<br />**Values**: attachment, inline, none |
 | **content_type** | **str**| The requested format for the specified document. If supported, the document will be returned in that format. Example contentType&#x3D;audio/wav | [optional]  |
 | **expand** | **str**| Expand some document fields | [optional] <br />**Values**: document.acl |
-{: class="table table-striped"}
 
 ### Return type
 
-[**SharedResponse**](SharedResponse.html)
+[**SharedResponse**](SharedResponse)
 
-<a name="get_contentmanagement_shares"></a>
 
-## [**ShareEntityListing**](ShareEntityListing.html) get_contentmanagement_shares(entity_id=entity_id, expand=expand, page_size=page_size, page_number=page_number)
+## get_contentmanagement_shares
 
+> [**ShareEntityListing**](ShareEntityListing) get_contentmanagement_shares(entity_id=entity_id, expand=expand, page_size=page_size, page_number=page_number)
 
 
 Gets a list of shares.  You must specify at least one filter (e.g. entityId).
@@ -807,19 +797,18 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **entity_id** | **str**| Filters the shares returned to only the entity specified by the value of this parameter. | [optional]  |
-| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand. | [optional] <br />**Values**: member |
+| **expand** | [**list[str]**](str)| Which fields, if any, to expand. | [optional] <br />**Values**: member |
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
-{: class="table table-striped"}
 
 ### Return type
 
-[**ShareEntityListing**](ShareEntityListing.html)
+[**ShareEntityListing**](ShareEntityListing)
 
-<a name="get_contentmanagement_status"></a>
 
-## [**CommandStatusEntityListing**](CommandStatusEntityListing.html) get_contentmanagement_status(page_size=page_size, page_number=page_number)
+## get_contentmanagement_status
 
+> [**CommandStatusEntityListing**](CommandStatusEntityListing) get_contentmanagement_status(page_size=page_size, page_number=page_number)
 
 
 Get a list of statuses for pending operations
@@ -860,16 +849,15 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
-{: class="table table-striped"}
 
 ### Return type
 
-[**CommandStatusEntityListing**](CommandStatusEntityListing.html)
+[**CommandStatusEntityListing**](CommandStatusEntityListing)
 
-<a name="get_contentmanagement_status_status_id"></a>
 
-## [**CommandStatus**](CommandStatus.html) get_contentmanagement_status_status_id(status_id)
+## get_contentmanagement_status_status_id
 
+> [**CommandStatus**](CommandStatus) get_contentmanagement_status_status_id(status_id)
 
 
 Get a status.
@@ -908,16 +896,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **status_id** | **str**| Status ID |  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**CommandStatus**](CommandStatus.html)
+[**CommandStatus**](CommandStatus)
 
-<a name="get_contentmanagement_usage"></a>
 
-## [**Usage**](Usage.html) get_contentmanagement_usage()
+## get_contentmanagement_usage
 
+> [**Usage**](Usage) get_contentmanagement_usage()
 
 
 Get usage details.
@@ -953,15 +940,14 @@ except ApiException as e:
 
 This endpoint does not need any parameters.
 
-
 ### Return type
 
-[**Usage**](Usage.html)
+[**Usage**](Usage)
 
-<a name="get_contentmanagement_workspace"></a>
 
-## [**Workspace**](Workspace.html) get_contentmanagement_workspace(workspace_id, expand=expand)
+## get_contentmanagement_workspace
 
+> [**Workspace**](Workspace) get_contentmanagement_workspace(workspace_id, expand=expand)
 
 
 Get a workspace.
@@ -1001,17 +987,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **workspace_id** | **str**| Workspace ID |  |
-| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand. | [optional] <br />**Values**: summary, acl |
-{: class="table table-striped"}
+| **expand** | [**list[str]**](str)| Which fields, if any, to expand. | [optional] <br />**Values**: summary, acl |
 
 ### Return type
 
-[**Workspace**](Workspace.html)
+[**Workspace**](Workspace)
 
-<a name="get_contentmanagement_workspace_documents"></a>
 
-## [**DocumentEntityListing**](DocumentEntityListing.html) get_contentmanagement_workspace_documents(workspace_id, expand=expand, page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order)
+## get_contentmanagement_workspace_documents
 
+> [**DocumentEntityListing**](DocumentEntityListing) get_contentmanagement_workspace_documents(workspace_id, expand=expand, page_size=page_size, page_number=page_number, sort_by=sort_by, sort_order=sort_order)
 
 
 Get a list of documents.
@@ -1055,21 +1040,20 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **workspace_id** | **str**| Workspace ID |  |
-| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand. | [optional] <br />**Values**: acl, workspace |
+| **expand** | [**list[str]**](str)| Which fields, if any, to expand. | [optional] <br />**Values**: acl, workspace |
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
 | **sort_by** | **str**| name or dateCreated | [optional]  |
 | **sort_order** | **str**| ascending or descending | [optional] [default to &#39;ascending&#39;] |
-{: class="table table-striped"}
 
 ### Return type
 
-[**DocumentEntityListing**](DocumentEntityListing.html)
+[**DocumentEntityListing**](DocumentEntityListing)
 
-<a name="get_contentmanagement_workspace_member"></a>
 
-## [**WorkspaceMember**](WorkspaceMember.html) get_contentmanagement_workspace_member(workspace_id, member_id, expand=expand)
+## get_contentmanagement_workspace_member
 
+> [**WorkspaceMember**](WorkspaceMember) get_contentmanagement_workspace_member(workspace_id, member_id, expand=expand)
 
 
 Get a workspace member
@@ -1111,17 +1095,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **workspace_id** | **str**| Workspace ID |  |
 | **member_id** | **str**| Member ID |  |
-| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand. | [optional] <br />**Values**: member |
-{: class="table table-striped"}
+| **expand** | [**list[str]**](str)| Which fields, if any, to expand. | [optional] <br />**Values**: member |
 
 ### Return type
 
-[**WorkspaceMember**](WorkspaceMember.html)
+[**WorkspaceMember**](WorkspaceMember)
 
-<a name="get_contentmanagement_workspace_members"></a>
 
-## [**WorkspaceMemberEntityListing**](WorkspaceMemberEntityListing.html) get_contentmanagement_workspace_members(workspace_id, page_size=page_size, page_number=page_number, expand=expand)
+## get_contentmanagement_workspace_members
 
+> [**WorkspaceMemberEntityListing**](WorkspaceMemberEntityListing) get_contentmanagement_workspace_members(workspace_id, page_size=page_size, page_number=page_number, expand=expand)
 
 
 Get a list workspace members
@@ -1165,17 +1148,16 @@ except ApiException as e:
 | **workspace_id** | **str**| Workspace ID |  |
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
-| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand. | [optional] <br />**Values**: member |
-{: class="table table-striped"}
+| **expand** | [**list[str]**](str)| Which fields, if any, to expand. | [optional] <br />**Values**: member |
 
 ### Return type
 
-[**WorkspaceMemberEntityListing**](WorkspaceMemberEntityListing.html)
+[**WorkspaceMemberEntityListing**](WorkspaceMemberEntityListing)
 
-<a name="get_contentmanagement_workspace_tagvalue"></a>
 
-## [**TagValue**](TagValue.html) get_contentmanagement_workspace_tagvalue(workspace_id, tag_id, expand=expand)
+## get_contentmanagement_workspace_tagvalue
 
+> [**TagValue**](TagValue) get_contentmanagement_workspace_tagvalue(workspace_id, tag_id, expand=expand)
 
 
 Get a workspace tag
@@ -1217,17 +1199,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **workspace_id** | **str**| Workspace ID |  |
 | **tag_id** | **str**| Tag ID |  |
-| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand. | [optional] <br />**Values**: acl |
-{: class="table table-striped"}
+| **expand** | [**list[str]**](str)| Which fields, if any, to expand. | [optional] <br />**Values**: acl |
 
 ### Return type
 
-[**TagValue**](TagValue.html)
+[**TagValue**](TagValue)
 
-<a name="get_contentmanagement_workspace_tagvalues"></a>
 
-## [**TagValueEntityListing**](TagValueEntityListing.html) get_contentmanagement_workspace_tagvalues(workspace_id, value=value, page_size=page_size, page_number=page_number, expand=expand)
+## get_contentmanagement_workspace_tagvalues
 
+> [**TagValueEntityListing**](TagValueEntityListing) get_contentmanagement_workspace_tagvalues(workspace_id, value=value, page_size=page_size, page_number=page_number, expand=expand)
 
 
 Get a list of workspace tags
@@ -1273,17 +1254,16 @@ except ApiException as e:
 | **value** | **str**| filter the list of tags returned | [optional]  |
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
-| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand. | [optional] <br />**Values**: acl |
-{: class="table table-striped"}
+| **expand** | [**list[str]**](str)| Which fields, if any, to expand. | [optional] <br />**Values**: acl |
 
 ### Return type
 
-[**TagValueEntityListing**](TagValueEntityListing.html)
+[**TagValueEntityListing**](TagValueEntityListing)
 
-<a name="get_contentmanagement_workspaces"></a>
 
-## [**WorkspaceEntityListing**](WorkspaceEntityListing.html) get_contentmanagement_workspaces(page_size=page_size, page_number=page_number, access=access, expand=expand)
+## get_contentmanagement_workspaces
 
+> [**WorkspaceEntityListing**](WorkspaceEntityListing) get_contentmanagement_workspaces(page_size=page_size, page_number=page_number, access=access, expand=expand)
 
 
 Get a list of workspaces.
@@ -1328,26 +1308,26 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **page_size** | **int**| Page size | [optional] [default to 25] |
 | **page_number** | **int**| Page number | [optional] [default to 1] |
-| **access** | [**list[str]**](str.html)| Requested access level. | [optional] <br />**Values**: content, admin, document:create, document:viewContent, document:viewMetadata, document:download, document:delete, document:update, document:share, document:shareView, document:email, document:print, document:auditView, document:replace, document:tag, tag:create, tag:view, tag:update, tag:apply, tag:remove, tag:delete |
-| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand. | [optional] <br />**Values**: summary, acl |
-{: class="table table-striped"}
+| **access** | [**list[str]**](str)| Requested access level. | [optional] <br />**Values**: content, admin, document:create, document:viewContent, document:viewMetadata, document:download, document:delete, document:update, document:share, document:shareView, document:email, document:print, document:auditView, document:replace, document:tag, tag:create, tag:view, tag:update, tag:apply, tag:remove, tag:delete |
+| **expand** | [**list[str]**](str)| Which fields, if any, to expand. | [optional] <br />**Values**: summary, acl |
 
 ### Return type
 
-[**WorkspaceEntityListing**](WorkspaceEntityListing.html)
+[**WorkspaceEntityListing**](WorkspaceEntityListing)
 
-<a name="post_contentmanagement_document"></a>
 
-## [**Document**](Document.html) post_contentmanagement_document(document_id, body, expand=expand, override=override)
+## post_contentmanagement_document
 
+> [**Document**](Document) post_contentmanagement_document(document_id, body, expand=expand, override=override)
 
 
 Update a document.
 
 Wraps POST /api/v2/contentmanagement/documents/{documentId} 
 
-Requires no permissions
+Requires ANY permissions: 
 
+* content_management_user
 
 ### Example
 
@@ -1381,27 +1361,27 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **document_id** | **str**| Document ID |  |
-| **body** | [**DocumentUpdate**](DocumentUpdate.html)| Document |  |
+| **body** | [**DocumentUpdate**](DocumentUpdate)| Document |  |
 | **expand** | **str**| Expand some document fields | [optional] <br />**Values**: acl |
 | **override** | **bool**| Override any lock on the document | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**Document**](Document.html)
+[**Document**](Document)
 
-<a name="post_contentmanagement_document_content"></a>
 
-## [**ReplaceResponse**](ReplaceResponse.html) post_contentmanagement_document_content(document_id, body, override=override)
+## post_contentmanagement_document_content
 
+> [**ReplaceResponse**](ReplaceResponse) post_contentmanagement_document_content(document_id, body, override=override)
 
 
 Replace the contents of a document.
 
 Wraps POST /api/v2/contentmanagement/documents/{documentId}/content 
 
-Requires no permissions
+Requires ANY permissions: 
 
+* content_management_user
 
 ### Example
 
@@ -1434,18 +1414,17 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **document_id** | **str**| Document ID |  |
-| **body** | [**ReplaceRequest**](ReplaceRequest.html)| Replace Request |  |
+| **body** | [**ReplaceRequest**](ReplaceRequest)| Replace Request |  |
 | **override** | **bool**| Override any lock on the document | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**ReplaceResponse**](ReplaceResponse.html)
+[**ReplaceResponse**](ReplaceResponse)
 
-<a name="post_contentmanagement_documents"></a>
 
-## [**Document**](Document.html) post_contentmanagement_documents(body, copy_source=copy_source, move_source=move_source, override=override)
+## post_contentmanagement_documents
 
+> [**Document**](Document) post_contentmanagement_documents(body, copy_source=copy_source, move_source=move_source, override=override)
 
 
 Add a document.
@@ -1486,20 +1465,19 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**DocumentUpload**](DocumentUpload.html)| Document |  |
+| **body** | [**DocumentUpload**](DocumentUpload)| Document |  |
 | **copy_source** | **str**| Copy a document within a workspace or to a new workspace. Provide a document ID as the copy source. | [optional]  |
 | **move_source** | **str**| Move a document to a new workspace. Provide a document ID as the move source. | [optional]  |
 | **override** | **bool**| Override any lock on the source document | [optional]  |
-{: class="table table-striped"}
 
 ### Return type
 
-[**Document**](Document.html)
+[**Document**](Document)
 
-<a name="post_contentmanagement_query"></a>
 
-## [**QueryResults**](QueryResults.html) post_contentmanagement_query(body, expand=expand)
+## post_contentmanagement_query
 
+> [**QueryResults**](QueryResults) post_contentmanagement_query(body, expand=expand)
 
 
 Query content
@@ -1538,18 +1516,17 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**QueryRequest**](QueryRequest.html)| Allows for a filtered query returning facet information |  |
+| **body** | [**QueryRequest**](QueryRequest)| Allows for a filtered query returning facet information |  |
 | **expand** | **str**| Expand some document fields | [optional] <br />**Values**: acl, workspace |
-{: class="table table-striped"}
 
 ### Return type
 
-[**QueryResults**](QueryResults.html)
+[**QueryResults**](QueryResults)
 
-<a name="post_contentmanagement_shares"></a>
 
-## [**CreateShareResponse**](CreateShareResponse.html) post_contentmanagement_shares(body)
+## post_contentmanagement_shares
 
+> [**CreateShareResponse**](CreateShareResponse) post_contentmanagement_shares(body)
 
 
 Creates a new share or updates an existing share if the entity has already been shared
@@ -1587,17 +1564,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**CreateShareRequest**](CreateShareRequest.html)| CreateShareRequest - entity id and type and a single member or list of members are required |  |
-{: class="table table-striped"}
+| **body** | [**CreateShareRequest**](CreateShareRequest)| CreateShareRequest - entity id and type and a single member or list of members are required |  |
 
 ### Return type
 
-[**CreateShareResponse**](CreateShareResponse.html)
+[**CreateShareResponse**](CreateShareResponse)
 
-<a name="post_contentmanagement_workspace_tagvalues"></a>
 
-## [**TagValue**](TagValue.html) post_contentmanagement_workspace_tagvalues(workspace_id, body)
+## post_contentmanagement_workspace_tagvalues
 
+> [**TagValue**](TagValue) post_contentmanagement_workspace_tagvalues(workspace_id, body)
 
 
 Create a workspace tag
@@ -1637,17 +1613,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **workspace_id** | **str**| Workspace ID |  |
-| **body** | [**TagValue**](TagValue.html)| tag |  |
-{: class="table table-striped"}
+| **body** | [**TagValue**](TagValue)| tag |  |
 
 ### Return type
 
-[**TagValue**](TagValue.html)
+[**TagValue**](TagValue)
 
-<a name="post_contentmanagement_workspace_tagvalues_query"></a>
 
-## [**TagValueEntityListing**](TagValueEntityListing.html) post_contentmanagement_workspace_tagvalues_query(workspace_id, body, expand=expand)
+## post_contentmanagement_workspace_tagvalues_query
 
+> [**TagValueEntityListing**](TagValueEntityListing) post_contentmanagement_workspace_tagvalues_query(workspace_id, body, expand=expand)
 
 
 Perform a prefix query on tags in the workspace
@@ -1688,18 +1663,17 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **workspace_id** | **str**| Workspace ID |  |
-| **body** | [**TagQueryRequest**](TagQueryRequest.html)| query |  |
-| **expand** | [**list[str]**](str.html)| Which fields, if any, to expand. | [optional] <br />**Values**: acl |
-{: class="table table-striped"}
+| **body** | [**TagQueryRequest**](TagQueryRequest)| query |  |
+| **expand** | [**list[str]**](str)| Which fields, if any, to expand. | [optional] <br />**Values**: acl |
 
 ### Return type
 
-[**TagValueEntityListing**](TagValueEntityListing.html)
+[**TagValueEntityListing**](TagValueEntityListing)
 
-<a name="post_contentmanagement_workspaces"></a>
 
-## [**Workspace**](Workspace.html) post_contentmanagement_workspaces(body)
+## post_contentmanagement_workspaces
 
+> [**Workspace**](Workspace) post_contentmanagement_workspaces(body)
 
 
 Create a group workspace
@@ -1737,17 +1711,16 @@ except ApiException as e:
 
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**WorkspaceCreate**](WorkspaceCreate.html)| Workspace |  |
-{: class="table table-striped"}
+| **body** | [**WorkspaceCreate**](WorkspaceCreate)| Workspace |  |
 
 ### Return type
 
-[**Workspace**](Workspace.html)
+[**Workspace**](Workspace)
 
-<a name="put_contentmanagement_workspace"></a>
 
-## [**Workspace**](Workspace.html) put_contentmanagement_workspace(workspace_id, body)
+## put_contentmanagement_workspace
 
+> [**Workspace**](Workspace) put_contentmanagement_workspace(workspace_id, body)
 
 
 Update a workspace
@@ -1787,17 +1760,16 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **workspace_id** | **str**| Workspace ID |  |
-| **body** | [**Workspace**](Workspace.html)| Workspace |  |
-{: class="table table-striped"}
+| **body** | [**Workspace**](Workspace)| Workspace |  |
 
 ### Return type
 
-[**Workspace**](Workspace.html)
+[**Workspace**](Workspace)
 
-<a name="put_contentmanagement_workspace_member"></a>
 
-## [**WorkspaceMember**](WorkspaceMember.html) put_contentmanagement_workspace_member(workspace_id, member_id, body)
+## put_contentmanagement_workspace_member
 
+> [**WorkspaceMember**](WorkspaceMember) put_contentmanagement_workspace_member(workspace_id, member_id, body)
 
 
 Add a member to a workspace
@@ -1839,17 +1811,16 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **workspace_id** | **str**| Workspace ID |  |
 | **member_id** | **str**| Member ID |  |
-| **body** | [**WorkspaceMember**](WorkspaceMember.html)| Workspace Member |  |
-{: class="table table-striped"}
+| **body** | [**WorkspaceMember**](WorkspaceMember)| Workspace Member |  |
 
 ### Return type
 
-[**WorkspaceMember**](WorkspaceMember.html)
+[**WorkspaceMember**](WorkspaceMember)
 
-<a name="put_contentmanagement_workspace_tagvalue"></a>
 
-## [**TagValue**](TagValue.html) put_contentmanagement_workspace_tagvalue(workspace_id, tag_id, body)
+## put_contentmanagement_workspace_tagvalue
 
+> [**TagValue**](TagValue) put_contentmanagement_workspace_tagvalue(workspace_id, tag_id, body)
 
 
 Update a workspace tag. Will update all documents with the new tag value.
@@ -1891,10 +1862,11 @@ except ApiException as e:
 |------------- | ------------- | ------------- | -------------|
 | **workspace_id** | **str**| Workspace ID |  |
 | **tag_id** | **str**| Tag ID |  |
-| **body** | [**TagValue**](TagValue.html)| Workspace |  |
-{: class="table table-striped"}
+| **body** | [**TagValue**](TagValue)| Workspace |  |
 
 ### Return type
 
-[**TagValue**](TagValue.html)
+[**TagValue**](TagValue)
 
+
+_PureCloudPlatformClientV2 211.1.0_

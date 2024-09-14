@@ -1,13 +1,13 @@
----
-title: RecipientRequest
----
+# RecipientRequest
+
 ## RecipientRequest
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **flow** | [**RecipientFlow**](RecipientFlow.html) | An automate flow object which defines the set of actions to be taken, when a message is received by this recipient. | [optional] |
-{: class="table table-striped"}
+| **flow** | [RecipientFlow](RecipientFlow) | An automate flow object which defines the set of actions to be taken, when a message is received by this recipient. | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

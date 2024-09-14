@@ -1,14 +1,14 @@
----
-title: TokenInfoClonedUser
----
+# TokenInfoClonedUser
+
 ## TokenInfoClonedUser
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **id** | **str** | User id of the original native user | [optional] |
-| **organization** | [**Entity**](Entity.html) | Organization of the original native user | [optional] |
-{: class="table table-striped"}
+| **id** | str | User id of the original native user | [optional] |
+| **organization** | [Entity](Entity) | Organization of the original native user | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

@@ -1,14 +1,14 @@
----
-title: EvaluationAssignment
----
+# EvaluationAssignment
+
 ## EvaluationAssignment
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **evaluation_form** | [**EvaluationForm**](EvaluationForm.html) |  | [optional] |
-| **user** | [**User**](User.html) |  | [optional] |
-{: class="table table-striped"}
+| **evaluation_form** | [EvaluationForm](EvaluationForm) |  | [optional] |
+| **user** | [User](User) |  | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

@@ -1,13 +1,13 @@
----
-title: ValidateAddressRequest
----
+# ValidateAddressRequest
+
 ## ValidateAddressRequest
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **address** | [**StreetAddress**](StreetAddress.html) | Address schema | [optional] |
-{: class="table table-striped"}
+| **address** | [StreetAddress](StreetAddress) | Address schema | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

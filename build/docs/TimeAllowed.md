@@ -1,15 +1,15 @@
----
-title: TimeAllowed
----
+# TimeAllowed
+
 ## TimeAllowed
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **time_slots** | [**list[TimeSlot]**](TimeSlot.html) |  | [optional] |
-| **time_zone_id** | **str** |  | [optional] |
-| **empty** | **bool** |  | [optional] |
-{: class="table table-striped"}
+| **time_slots** | [list[TimeSlot]](TimeSlot) |  | [optional] |
+| **time_zone_id** | str |  | [optional] |
+| **empty** | bool |  | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

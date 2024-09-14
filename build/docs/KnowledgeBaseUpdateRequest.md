@@ -1,14 +1,14 @@
----
-title: KnowledgeBaseUpdateRequest
----
+# KnowledgeBaseUpdateRequest
+
 ## KnowledgeBaseUpdateRequest
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **name** | **str** | Knowledge base name | [optional] |
-| **description** | **str** | Knowledge base description | [optional] |
-{: class="table table-striped"}
+| **name** | str | Knowledge base name | [optional] |
+| **description** | str | Knowledge base description | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

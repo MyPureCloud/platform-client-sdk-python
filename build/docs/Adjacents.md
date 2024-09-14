@@ -1,15 +1,15 @@
----
-title: Adjacents
----
+# Adjacents
+
 ## Adjacents
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **superiors** | [**list[User]**](User.html) |  | [optional] |
-| **siblings** | [**list[User]**](User.html) |  | [optional] |
-| **direct_reports** | [**list[User]**](User.html) |  | [optional] |
-{: class="table table-striped"}
+| **superiors** | [list[User]](User) |  | [optional] |
+| **siblings** | [list[User]](User) |  | [optional] |
+| **direct_reports** | [list[User]](User) |  | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

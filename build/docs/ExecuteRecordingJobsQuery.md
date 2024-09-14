@@ -1,13 +1,13 @@
----
-title: ExecuteRecordingJobsQuery
----
+# ExecuteRecordingJobsQuery
+
 ## ExecuteRecordingJobsQuery
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **state** | **str** | The desired state for the job to be set to. | |
-{: class="table table-striped"}
+| **state** | str | The desired state for the job to be set to. | |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

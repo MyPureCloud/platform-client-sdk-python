@@ -1,14 +1,14 @@
----
-title: ReplyToEmailAddress
----
+# ReplyToEmailAddress
+
 ## ReplyToEmailAddress
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **domain** | [**DomainEntityRef**](DomainEntityRef.html) | The InboundDomain used for the email address. | |
-| **route** | [**DomainEntityRef**](DomainEntityRef.html) | The InboundRoute used for the email address. | |
-{: class="table table-striped"}
+| **domain** | [DomainEntityRef](DomainEntityRef) | The InboundDomain used for the email address. | |
+| **route** | [DomainEntityRef](DomainEntityRef) | The InboundRoute used for the email address. | |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

@@ -1,14 +1,14 @@
----
-title: UpdateContactColumnActionSettings
----
+# UpdateContactColumnActionSettings
+
 ## UpdateContactColumnActionSettings
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **properties** | **dict(str, str)** | A mapping of contact columns to their new values. | |
-| **update_option** | **str** | The type of update to make to the specified contact column(s). | |
-{: class="table table-striped"}
+| **properties** | dict(str, str) | A mapping of contact columns to their new values. | |
+| **update_option** | str | The type of update to make to the specified contact column(s). | |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

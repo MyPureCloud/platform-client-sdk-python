@@ -1,13 +1,13 @@
----
-title: OneOnOne
----
+# OneOnOne
+
 ## OneOnOne
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **pinned_messages** | [**list[AddressableEntityRef]**](AddressableEntityRef.html) | Room&#39;s pinned messages | [optional] |
-{: class="table table-striped"}
+| **pinned_messages** | [list[AddressableEntityRef]](AddressableEntityRef) | Room&#39;s pinned messages | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

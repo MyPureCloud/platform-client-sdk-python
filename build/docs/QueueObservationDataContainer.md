@@ -1,14 +1,14 @@
----
-title: QueueObservationDataContainer
----
+# QueueObservationDataContainer
+
 ## QueueObservationDataContainer
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **group** | **dict(str, str)** | A mapping from dimension to value | [optional] |
-| **data** | [**list[ObservationMetricData]**](ObservationMetricData.html) |  | [optional] |
-{: class="table table-striped"}
+| **group** | dict(str, str) | A mapping from dimension to value | [optional] |
+| **data** | [list[ObservationMetricData]](ObservationMetricData) |  | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

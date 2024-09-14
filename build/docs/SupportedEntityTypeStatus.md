@@ -1,13 +1,13 @@
----
-title: SupportedEntityTypeStatus
----
+# SupportedEntityTypeStatus
+
 ## SupportedEntityTypeStatus
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **list_slot_type** | **str** | The configuration status of restricted lists | [optional] |
-{: class="table table-striped"}
+| **list_slot_type** | str | The configuration status of restricted lists | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

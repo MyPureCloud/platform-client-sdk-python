@@ -1,13 +1,13 @@
----
-title: ChannelEntityListing
----
+# ChannelEntityListing
+
 ## ChannelEntityListing
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **entities** | [**list[Channel]**](Channel.html) |  | [optional] |
-{: class="table table-striped"}
+| **entities** | [list[Channel]](Channel) |  | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

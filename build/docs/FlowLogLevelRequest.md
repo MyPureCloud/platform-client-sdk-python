@@ -1,13 +1,13 @@
----
-title: FlowLogLevelRequest
----
+# FlowLogLevelRequest
+
 ## FlowLogLevelRequest
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **log_level_characteristics** | [**FlowLogLevel**](FlowLogLevel.html) | The log level characteristics currently set for this flow | |
-{: class="table table-striped"}
+| **log_level_characteristics** | [FlowLogLevel](FlowLogLevel) | The log level characteristics currently set for this flow | |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

@@ -50,18 +50,24 @@ class RecordingSettings(object):
         self.swagger_types = {
             'max_simultaneous_streams': 'int',
             'max_configurable_screen_recording_streams': 'int',
-            'regional_recording_storage_enabled': 'bool'
+            'regional_recording_storage_enabled': 'bool',
+            'recording_playback_url_ttl': 'int',
+            'recording_batch_download_url_ttl': 'int'
         }
 
         self.attribute_map = {
             'max_simultaneous_streams': 'maxSimultaneousStreams',
             'max_configurable_screen_recording_streams': 'maxConfigurableScreenRecordingStreams',
-            'regional_recording_storage_enabled': 'regionalRecordingStorageEnabled'
+            'regional_recording_storage_enabled': 'regionalRecordingStorageEnabled',
+            'recording_playback_url_ttl': 'recordingPlaybackUrlTtl',
+            'recording_batch_download_url_ttl': 'recordingBatchDownloadUrlTtl'
         }
 
         self._max_simultaneous_streams = None
         self._max_configurable_screen_recording_streams = None
         self._regional_recording_storage_enabled = None
+        self._recording_playback_url_ttl = None
+        self._recording_batch_download_url_ttl = None
 
     @property
     def max_simultaneous_streams(self) -> int:
@@ -134,6 +140,54 @@ class RecordingSettings(object):
         
 
         self._regional_recording_storage_enabled = regional_recording_storage_enabled
+
+    @property
+    def recording_playback_url_ttl(self) -> int:
+        """
+        Gets the recording_playback_url_ttl of this RecordingSettings.
+        The duration in minutes for which the generated URL for recording playback remains valid.The default duration is set to 60 minutes, with a minimum allowable duration of 2 minutes and a maximum of 60 minutes.
+
+        :return: The recording_playback_url_ttl of this RecordingSettings.
+        :rtype: int
+        """
+        return self._recording_playback_url_ttl
+
+    @recording_playback_url_ttl.setter
+    def recording_playback_url_ttl(self, recording_playback_url_ttl: int) -> None:
+        """
+        Sets the recording_playback_url_ttl of this RecordingSettings.
+        The duration in minutes for which the generated URL for recording playback remains valid.The default duration is set to 60 minutes, with a minimum allowable duration of 2 minutes and a maximum of 60 minutes.
+
+        :param recording_playback_url_ttl: The recording_playback_url_ttl of this RecordingSettings.
+        :type: int
+        """
+        
+
+        self._recording_playback_url_ttl = recording_playback_url_ttl
+
+    @property
+    def recording_batch_download_url_ttl(self) -> int:
+        """
+        Gets the recording_batch_download_url_ttl of this RecordingSettings.
+        TThe duration in minutes for which the generated URL for recording batch download remains valid.The default duration is set to 60 minutes, with a minimum allowable duration of 2 minutes and a maximum of 60 minutes.
+
+        :return: The recording_batch_download_url_ttl of this RecordingSettings.
+        :rtype: int
+        """
+        return self._recording_batch_download_url_ttl
+
+    @recording_batch_download_url_ttl.setter
+    def recording_batch_download_url_ttl(self, recording_batch_download_url_ttl: int) -> None:
+        """
+        Sets the recording_batch_download_url_ttl of this RecordingSettings.
+        TThe duration in minutes for which the generated URL for recording batch download remains valid.The default duration is set to 60 minutes, with a minimum allowable duration of 2 minutes and a maximum of 60 minutes.
+
+        :param recording_batch_download_url_ttl: The recording_batch_download_url_ttl of this RecordingSettings.
+        :type: int
+        """
+        
+
+        self._recording_batch_download_url_ttl = recording_batch_download_url_ttl
 
     def to_dict(self):
         """

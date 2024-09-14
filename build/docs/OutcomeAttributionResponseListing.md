@@ -1,13 +1,13 @@
----
-title: OutcomeAttributionResponseListing
----
+# OutcomeAttributionResponseListing
+
 ## OutcomeAttributionResponseListing
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **entities** | [**list[OutcomeAttributionResultsResponse]**](OutcomeAttributionResultsResponse.html) |  | [optional] |
-{: class="table table-striped"}
+| **entities** | [list[OutcomeAttributionResultsResponse]](OutcomeAttributionResultsResponse) |  | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

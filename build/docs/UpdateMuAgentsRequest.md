@@ -1,13 +1,13 @@
----
-title: UpdateMuAgentsRequest
----
+# UpdateMuAgentsRequest
+
 ## UpdateMuAgentsRequest
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **entities** | [**list[UpdateMuAgentRequest]**](UpdateMuAgentRequest.html) | List of agents to update | [optional] |
-{: class="table table-striped"}
+| **entities** | [list[UpdateMuAgentRequest]](UpdateMuAgentRequest) | List of agents to update | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

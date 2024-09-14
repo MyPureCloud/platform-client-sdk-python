@@ -1,14 +1,14 @@
----
-title: AgentCopilotAggregateDataContainer
----
+# AgentCopilotAggregateDataContainer
+
 ## AgentCopilotAggregateDataContainer
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **group** | **dict(str, str)** | A mapping from dimension to value | [optional] |
-| **data** | [**list[StatisticalResponse]**](StatisticalResponse.html) |  | [optional] |
-{: class="table table-striped"}
+| **group** | dict(str, str) | A mapping from dimension to value | [optional] |
+| **data** | [list[StatisticalResponse]](StatisticalResponse) |  | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

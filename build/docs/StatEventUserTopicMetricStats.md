@@ -1,15 +1,15 @@
----
-title: StatEventUserTopicMetricStats
----
+# StatEventUserTopicMetricStats
+
 ## StatEventUserTopicMetricStats
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **metric** | **str** |  | [optional] |
-| **qualifier** | **str** |  | [optional] |
-| **stats** | **dict(str, float)** |  | [optional] |
-{: class="table table-striped"}
+| **metric** | str |  | [optional] |
+| **qualifier** | str |  | [optional] |
+| **stats** | dict(str, float) |  | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

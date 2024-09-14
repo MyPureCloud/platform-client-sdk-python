@@ -1,14 +1,14 @@
----
-title: KnowledgeExportJobFilter
----
+# KnowledgeExportJobFilter
+
 ## KnowledgeExportJobFilter
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **documents_filter** | [**KnowledgeExportJobDocumentsFilter**](KnowledgeExportJobDocumentsFilter.html) | Filters for narrowing down which documents to export. | [optional] |
-| **version_filter** | **str** | Specifies what version should be exported. | |
-{: class="table table-striped"}
+| **documents_filter** | [KnowledgeExportJobDocumentsFilter](KnowledgeExportJobDocumentsFilter) | Filters for narrowing down which documents to export. | [optional] |
+| **version_filter** | str | Specifies what version should be exported. | |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

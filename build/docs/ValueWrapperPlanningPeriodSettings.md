@@ -1,13 +1,13 @@
----
-title: ValueWrapperPlanningPeriodSettings
----
+# ValueWrapperPlanningPeriodSettings
+
 ## ValueWrapperPlanningPeriodSettings
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **value** | [**PlanningPeriodSettings**](PlanningPeriodSettings.html) | The value for the associated field | [optional] |
-{: class="table table-striped"}
+| **value** | [PlanningPeriodSettings](PlanningPeriodSettings) | The value for the associated field | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

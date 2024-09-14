@@ -1,15 +1,15 @@
----
-title: QueueConversationCobrowseEventTopicJourneyContext
----
+# QueueConversationCobrowseEventTopicJourneyContext
+
 ## QueueConversationCobrowseEventTopicJourneyContext
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **customer** | [**QueueConversationCobrowseEventTopicJourneyCustomer**](QueueConversationCobrowseEventTopicJourneyCustomer.html) |  | [optional] |
-| **customer_session** | [**QueueConversationCobrowseEventTopicJourneyCustomerSession**](QueueConversationCobrowseEventTopicJourneyCustomerSession.html) |  | [optional] |
-| **triggering_action** | [**QueueConversationCobrowseEventTopicJourneyAction**](QueueConversationCobrowseEventTopicJourneyAction.html) |  | [optional] |
-{: class="table table-striped"}
+| **customer** | [QueueConversationCobrowseEventTopicJourneyCustomer](QueueConversationCobrowseEventTopicJourneyCustomer) |  | [optional] |
+| **customer_session** | [QueueConversationCobrowseEventTopicJourneyCustomerSession](QueueConversationCobrowseEventTopicJourneyCustomerSession) |  | [optional] |
+| **triggering_action** | [QueueConversationCobrowseEventTopicJourneyAction](QueueConversationCobrowseEventTopicJourneyAction) |  | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

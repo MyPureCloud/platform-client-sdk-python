@@ -1,16 +1,16 @@
----
-title: DocumentUpload
----
+# DocumentUpload
+
 ## DocumentUpload
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **name** | **str** | The name of the document | |
-| **workspace** | [**DomainEntityRef**](DomainEntityRef.html) | The workspace the document will be uploaded to | |
-| **tags** | **list[str]** |  | [optional] |
-| **tag_ids** | **list[str]** |  | [optional] |
-{: class="table table-striped"}
+| **name** | str | The name of the document | |
+| **workspace** | [DomainEntityRef](DomainEntityRef) | The workspace the document will be uploaded to | |
+| **tags** | list[str] |  | [optional] |
+| **tag_ids** | list[str] |  | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

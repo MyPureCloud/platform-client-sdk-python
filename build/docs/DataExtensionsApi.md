@@ -1,6 +1,4 @@
----
-title: DataExtensionsApi
----
+# DataExtensionsApi
 
 ## PureCloudPlatformClientV2.DataExtensionsApi
 
@@ -8,15 +6,15 @@ All URIs are relative to *https://api.mypurecloud.com*
 
 |Method | Description|
 |------------- | -------------|
-|[**get_dataextensions_coretype**](DataExtensionsApi.html#get_dataextensions_coretype) | Get a specific named core type.|
-|[**get_dataextensions_coretypes**](DataExtensionsApi.html#get_dataextensions_coretypes) | Get the core types from which all schemas are built.|
-|[**get_dataextensions_limits**](DataExtensionsApi.html#get_dataextensions_limits) | Get quantitative limits on schemas|
-{: class="table table-striped"}
+|[**get_dataextensions_coretype**](#get_dataextensions_coretype) | Get a specific named core type.|
+|[**get_dataextensions_coretypes**](#get_dataextensions_coretypes) | Get the core types from which all schemas are built.|
+|[**get_dataextensions_limits**](#get_dataextensions_limits) | Get quantitative limits on schemas|
 
-<a name="get_dataextensions_coretype"></a>
 
-## [**Coretype**](Coretype.html) get_dataextensions_coretype(coretype_name)
 
+## get_dataextensions_coretype
+
+> [**Coretype**](Coretype) get_dataextensions_coretype(coretype_name)
 
 
 Get a specific named core type.
@@ -56,16 +54,15 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **coretype_name** | **str**| The core type&#39;s name | <br />**Values**: text, longtext, url, identifier, enum, date, datetime, integer, number, checkbox, tag |
-{: class="table table-striped"}
 
 ### Return type
 
-[**Coretype**](Coretype.html)
+[**Coretype**](Coretype)
 
-<a name="get_dataextensions_coretypes"></a>
 
-## [**CoretypeListing**](CoretypeListing.html) get_dataextensions_coretypes()
+## get_dataextensions_coretypes
 
+> [**CoretypeListing**](CoretypeListing) get_dataextensions_coretypes()
 
 
 Get the core types from which all schemas are built.
@@ -102,15 +99,14 @@ except ApiException as e:
 
 This endpoint does not need any parameters.
 
-
 ### Return type
 
-[**CoretypeListing**](CoretypeListing.html)
+[**CoretypeListing**](CoretypeListing)
 
-<a name="get_dataextensions_limits"></a>
 
-## [**SchemaQuantityLimits**](SchemaQuantityLimits.html) get_dataextensions_limits()
+## get_dataextensions_limits
 
+> [**SchemaQuantityLimits**](SchemaQuantityLimits) get_dataextensions_limits()
 
 
 Get quantitative limits on schemas
@@ -147,8 +143,9 @@ except ApiException as e:
 
 This endpoint does not need any parameters.
 
-
 ### Return type
 
-[**SchemaQuantityLimits**](SchemaQuantityLimits.html)
+[**SchemaQuantityLimits**](SchemaQuantityLimits)
 
+
+_PureCloudPlatformClientV2 211.1.0_

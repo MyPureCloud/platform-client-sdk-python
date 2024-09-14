@@ -1,14 +1,14 @@
----
-title: EdgeMetricsTopicEdgeMetricSubsystemMedia
----
+# EdgeMetricsTopicEdgeMetricSubsystemMedia
+
 ## EdgeMetricsTopicEdgeMetricSubsystemMedia
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **process_name** | **str** |  | [optional] |
-| **delay_ms** | **int** |  | [optional] |
-{: class="table table-striped"}
+| **process_name** | str |  | [optional] |
+| **delay_ms** | int |  | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

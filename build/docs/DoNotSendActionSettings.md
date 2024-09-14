@@ -1,12 +1,12 @@
----
-title: DoNotSendActionSettings
----
+# DoNotSendActionSettings
+
 ## DoNotSendActionSettings
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-{: class="table table-striped"}
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

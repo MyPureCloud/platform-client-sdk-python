@@ -1,13 +1,13 @@
----
-title: Intent
----
+# Intent
+
 ## Intent
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **name** | **str** |  | [optional] |
-{: class="table table-striped"}
+| **name** | str |  | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_

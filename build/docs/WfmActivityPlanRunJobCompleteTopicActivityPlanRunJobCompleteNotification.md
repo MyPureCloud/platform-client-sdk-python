@@ -1,18 +1,18 @@
----
-title: WfmActivityPlanRunJobCompleteTopicActivityPlanRunJobCompleteNotification
----
+# WfmActivityPlanRunJobCompleteTopicActivityPlanRunJobCompleteNotification
+
 ## WfmActivityPlanRunJobCompleteTopicActivityPlanRunJobCompleteNotification
 
 ## Properties
 
 |Name | Type | Description | Notes|
 |------------ | ------------- | ------------- | -------------|
-| **id** | **str** |  | [optional] |
-| **type** | **str** |  | [optional] |
-| **activity_plan** | [**WfmActivityPlanRunJobCompleteTopicActivityPlanReference**](WfmActivityPlanRunJobCompleteTopicActivityPlanReference.html) |  | [optional] |
-| **status** | **str** |  | [optional] |
-| **exceptions** | [**list[WfmActivityPlanRunJobCompleteTopicActivityPlanJobException]**](WfmActivityPlanRunJobCompleteTopicActivityPlanJobException.html) |  | [optional] |
-| **error** | [**WfmActivityPlanRunJobCompleteTopicErrorBody**](WfmActivityPlanRunJobCompleteTopicErrorBody.html) |  | [optional] |
-{: class="table table-striped"}
+| **id** | str |  | [optional] |
+| **type** | str |  | [optional] |
+| **activity_plan** | [WfmActivityPlanRunJobCompleteTopicActivityPlanReference](WfmActivityPlanRunJobCompleteTopicActivityPlanReference) |  | [optional] |
+| **status** | str |  | [optional] |
+| **exceptions** | [list[WfmActivityPlanRunJobCompleteTopicActivityPlanJobException]](WfmActivityPlanRunJobCompleteTopicActivityPlanJobException) |  | [optional] |
+| **error** | [WfmActivityPlanRunJobCompleteTopicErrorBody](WfmActivityPlanRunJobCompleteTopicErrorBody) |  | [optional] |
 
 
+
+_PureCloudPlatformClientV2 211.1.0_
