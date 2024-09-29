@@ -9,6 +9,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**delete_telephony_providers_edge**](#delete_telephony_providers_edge) | Delete a edge.|
 |[**delete_telephony_providers_edge_logicalinterface**](#delete_telephony_providers_edge_logicalinterface) | Delete an edge logical interface|
 |[**delete_telephony_providers_edge_softwareupdate**](#delete_telephony_providers_edge_softwareupdate) | Cancels any in-progress update for this edge.|
+|[**delete_telephony_providers_edges_alertablepresences**](#delete_telephony_providers_edges_alertablepresences) | Deletes alertable presences overrides.|
 |[**delete_telephony_providers_edges_certificateauthority**](#delete_telephony_providers_edges_certificateauthority) | Delete a certificate authority.|
 |[**delete_telephony_providers_edges_didpool**](#delete_telephony_providers_edges_didpool) | Delete a DID Pool by ID.|
 |[**delete_telephony_providers_edges_edgegroup**](#delete_telephony_providers_edges_edgegroup) | Delete an edge group.|
@@ -34,6 +35,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_telephony_providers_edge_softwareversions**](#get_telephony_providers_edge_softwareversions) | Gets all the available software versions for this edge.|
 |[**get_telephony_providers_edge_trunks**](#get_telephony_providers_edge_trunks) | Get the list of available trunks for the given Edge.|
 |[**get_telephony_providers_edges**](#get_telephony_providers_edges) | Get the list of edges.|
+|[**get_telephony_providers_edges_alertablepresences**](#get_telephony_providers_edges_alertablepresences) | Get the list alertable presences. The &#39;type&#39; query parameter can be used to If there are any overrides, this is the list of overrides; if there are no overrides, it is the default list.|
 |[**get_telephony_providers_edges_certificateauthorities**](#get_telephony_providers_edges_certificateauthorities) | Get the list of certificate authorities.|
 |[**get_telephony_providers_edges_certificateauthority**](#get_telephony_providers_edges_certificateauthority) | Get a certificate authority.|
 |[**get_telephony_providers_edges_did**](#get_telephony_providers_edges_did) | Get a DID by ID.|
@@ -114,6 +116,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_telephony_providers_edges_trunkbasesettings**](#post_telephony_providers_edges_trunkbasesettings) | Create a Trunk Base Settings object|
 |[**put_telephony_providers_edge**](#put_telephony_providers_edge) | Update a edge.|
 |[**put_telephony_providers_edge_logicalinterface**](#put_telephony_providers_edge_logicalinterface) | Update an edge logical interface.|
+|[**put_telephony_providers_edges_alertablepresences**](#put_telephony_providers_edges_alertablepresences) | Creates or updates alertable presences overrides.|
 |[**put_telephony_providers_edges_certificateauthority**](#put_telephony_providers_edges_certificateauthority) | Update a certificate authority.|
 |[**put_telephony_providers_edges_didpool**](#put_telephony_providers_edges_didpool) | Update a DID Pool by ID.|
 |[**put_telephony_providers_edges_edgegroup**](#put_telephony_providers_edges_edgegroup) | Update an edge group.|
@@ -265,6 +268,49 @@ except ApiException as e:
 |Name | Type | Description  | Notes|
 |------------- | ------------- | ------------- | -------------|
 | **edge_id** | **str**| Edge ID |  |
+
+### Return type
+
+void (empty response body)
+
+
+## delete_telephony_providers_edges_alertablepresences
+
+>  delete_telephony_providers_edges_alertablepresences()
+
+
+Deletes alertable presences overrides.
+
+Wraps DELETE /api/v2/telephony/providers/edges/alertablepresences 
+
+Requires ANY permissions: 
+
+* telephony:alertablePresences:delete
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+
+try:
+    # Deletes alertable presences overrides.
+    api_instance.delete_telephony_providers_edges_alertablepresences()
+except ApiException as e:
+    print("Exception when calling TelephonyProvidersEdgeApi->delete_telephony_providers_edges_alertablepresences: %s\n" % e)
+```
+
+### Parameters
+
+This endpoint does not need any parameters.
 
 ### Return type
 
@@ -1504,6 +1550,54 @@ except ApiException as e:
 ### Return type
 
 [**EdgeEntityListing**](EdgeEntityListing)
+
+
+## get_telephony_providers_edges_alertablepresences
+
+> [**AlertablePresences**](AlertablePresences) get_telephony_providers_edges_alertablepresences(type=type)
+
+
+Get the list alertable presences. The 'type' query parameter can be used to If there are any overrides, this is the list of overrides; if there are no overrides, it is the default list.
+
+Wraps GET /api/v2/telephony/providers/edges/alertablepresences 
+
+Requires ANY permissions: 
+
+* telephony:alertablePresences:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+type = 'type_example' # str |  (optional)
+
+try:
+    # Get the list alertable presences. The 'type' query parameter can be used to If there are any overrides, this is the list of overrides; if there are no overrides, it is the default list.
+    api_response = api_instance.get_telephony_providers_edges_alertablepresences(type=type)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling TelephonyProvidersEdgeApi->get_telephony_providers_edges_alertablepresences: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **type** | **str**|  | [optional] <br />**Values**: defaults, overrides |
+
+### Return type
+
+[**AlertablePresences**](AlertablePresences)
 
 
 ## get_telephony_providers_edges_certificateauthorities
@@ -5590,6 +5684,53 @@ except ApiException as e:
 [**DomainLogicalInterface**](DomainLogicalInterface)
 
 
+## put_telephony_providers_edges_alertablepresences
+
+>  put_telephony_providers_edges_alertablepresences(body)
+
+
+Creates or updates alertable presences overrides.
+
+Wraps PUT /api/v2/telephony/providers/edges/alertablepresences 
+
+Requires ANY permissions: 
+
+* telephony:alertablePresences:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.TelephonyProvidersEdgeApi()
+body = PureCloudPlatformClientV2.AlertablePresences() # AlertablePresences | Alertable Presences Overrides
+
+try:
+    # Creates or updates alertable presences overrides.
+    api_instance.put_telephony_providers_edges_alertablepresences(body)
+except ApiException as e:
+    print("Exception when calling TelephonyProvidersEdgeApi->put_telephony_providers_edges_alertablepresences: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**AlertablePresences**](AlertablePresences)| Alertable Presences Overrides |  |
+
+### Return type
+
+void (empty response body)
+
+
 ## put_telephony_providers_edges_certificateauthority
 
 > [**DomainCertificateAuthority**](DomainCertificateAuthority) put_telephony_providers_edges_certificateauthority(certificate_id, body)
@@ -6194,4 +6335,4 @@ except ApiException as e:
 [**TrunkBase**](TrunkBase)
 
 
-_PureCloudPlatformClientV2 211.1.0_
+_PureCloudPlatformClientV2 212.0.0_

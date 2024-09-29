@@ -57,6 +57,7 @@
 | **media_type** | str | The session media type | [optional] |
 | **message_type** | str | Message type for messaging services. E.g.: sms, facebook, twitter, line | [optional] |
 | **originating_direction** | str | The original direction of the conversation | [optional] |
+| **originating_social_media_public** | bool | Indicates that the conversation originated from a public message on social media | [optional] |
 | **outbound_campaign_id** | str | (Dialer) Unique identifier of the outbound campaign | [optional] |
 | **outbound_contact_id** | str | (Dialer) Unique identifier of the contact | [optional] |
 | **outbound_contact_list_id** | str | (Dialer) Unique identifier of the contact list that this contact belongs to | [optional] |
@@ -92,4 +93,4 @@
 
 
 
-_PureCloudPlatformClientV2 211.1.0_
+_PureCloudPlatformClientV2 212.0.0_

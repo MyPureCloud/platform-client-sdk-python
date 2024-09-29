@@ -34,6 +34,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_conversation_secureattributes**](#get_conversation_secureattributes) | Get the secure attributes on a conversation.|
 |[**get_conversation_suggestion**](#get_conversation_suggestion) | Get Suggestion.|
 |[**get_conversation_suggestions**](#get_conversation_suggestions) | Get all suggestions for a conversation.|
+|[**get_conversation_summaries**](#get_conversation_summaries) | Get the summaries of the conversation.|
 |[**get_conversations**](#get_conversations) | Get active conversations for the logged in user|
 |[**get_conversations_call**](#get_conversations_call) | Get call conversation|
 |[**get_conversations_call_participant_communication_wrapup**](#get_conversations_call_participant_communication_wrapup) | Get the wrap-up for this conversation communication. |
@@ -1613,6 +1614,56 @@ except ApiException as e:
 ### Return type
 
 [**SuggestionListing**](SuggestionListing)
+
+
+## get_conversation_summaries
+
+> [**ConversationSummariesGetResponse**](ConversationSummariesGetResponse) get_conversation_summaries(conversation_id)
+
+
+Get the summaries of the conversation.
+
+get_conversation_summaries is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/conversations/{conversationId}/summaries 
+
+Requires ALL permissions: 
+
+* conversation:summary:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.ConversationsApi()
+conversation_id = 'conversation_id_example' # str | Conversation ID
+
+try:
+    # Get the summaries of the conversation.
+    api_response = api_instance.get_conversation_summaries(conversation_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ConversationsApi->get_conversation_summaries: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **conversation_id** | **str**| Conversation ID |  |
+
+### Return type
+
+[**ConversationSummariesGetResponse**](ConversationSummariesGetResponse)
 
 
 ## get_conversations
@@ -12176,4 +12227,4 @@ except ApiException as e:
 **str**
 
 
-_PureCloudPlatformClientV2 211.1.0_
+_PureCloudPlatformClientV2 212.0.0_

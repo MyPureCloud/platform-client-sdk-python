@@ -16,9 +16,13 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**delete_knowledge_knowledgebase_language_category**](#delete_knowledge_knowledgebase_language_category) | Delete category|
 |[**delete_knowledge_knowledgebase_language_document**](#delete_knowledge_knowledgebase_language_document) | Delete document|
 |[**delete_knowledge_knowledgebase_language_documents_import**](#delete_knowledge_knowledgebase_language_documents_import) | Delete import operation|
+|[**delete_knowledge_knowledgebase_sources_salesforce_source_id**](#delete_knowledge_knowledgebase_sources_salesforce_source_id) | Delete Salesforce Knowledge integration source|
+|[**delete_knowledge_knowledgebase_sources_servicenow_source_id**](#delete_knowledge_knowledgebase_sources_servicenow_source_id) | Delete ServiceNow Knowledge integration source|
+|[**delete_knowledge_knowledgebase_synchronize_job**](#delete_knowledge_knowledgebase_synchronize_job) | Delete synchronization job|
 |[**get_knowledge_guest_session_categories**](#get_knowledge_guest_session_categories) | Get categories|
 |[**get_knowledge_guest_session_document**](#get_knowledge_guest_session_document) | Get a knowledge document by ID.|
 |[**get_knowledge_guest_session_documents**](#get_knowledge_guest_session_documents) | Get documents.|
+|[**get_knowledge_integration_options**](#get_knowledge_integration_options) | Get sync options available for a knowledge-connect integration|
 |[**get_knowledge_knowledgebase**](#get_knowledge_knowledgebase) | Get knowledge base|
 |[**get_knowledge_knowledgebase_categories**](#get_knowledge_knowledgebase_categories) | Get categories|
 |[**get_knowledge_knowledgebase_category**](#get_knowledge_knowledgebase_category) | Get category|
@@ -47,6 +51,10 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**get_knowledge_knowledgebase_operations**](#get_knowledge_knowledgebase_operations) | Get operations|
 |[**get_knowledge_knowledgebase_operations_users_query**](#get_knowledge_knowledgebase_operations_users_query) | Get ids of operation creator users and oauth clients|
 |[**get_knowledge_knowledgebase_parse_job**](#get_knowledge_knowledgebase_parse_job) | Get parse job report|
+|[**get_knowledge_knowledgebase_sources**](#get_knowledge_knowledgebase_sources) | Get Knowledge integration sources|
+|[**get_knowledge_knowledgebase_sources_salesforce_source_id**](#get_knowledge_knowledgebase_sources_salesforce_source_id) | Get Salesforce Knowledge integration source|
+|[**get_knowledge_knowledgebase_sources_servicenow_source_id**](#get_knowledge_knowledgebase_sources_servicenow_source_id) | Get ServiceNow Knowledge integration source|
+|[**get_knowledge_knowledgebase_synchronize_job**](#get_knowledge_knowledgebase_synchronize_job) | Get synchronization job report|
 |[**get_knowledge_knowledgebase_unanswered_group**](#get_knowledge_knowledgebase_unanswered_group) | Get knowledge base unanswered group for a particular groupId|
 |[**get_knowledge_knowledgebase_unanswered_group_phrasegroup**](#get_knowledge_knowledgebase_unanswered_group_phrasegroup) | Get knowledge base unanswered phrase group for a particular phraseGroupId|
 |[**get_knowledge_knowledgebase_unanswered_groups**](#get_knowledge_knowledgebase_unanswered_groups) | Get knowledge base unanswered groups|
@@ -66,6 +74,7 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**patch_knowledge_knowledgebase_language_documents**](#patch_knowledge_knowledgebase_language_documents) | Update documents collection|
 |[**patch_knowledge_knowledgebase_language_documents_import**](#patch_knowledge_knowledgebase_language_documents_import) | Start import operation|
 |[**patch_knowledge_knowledgebase_parse_job**](#patch_knowledge_knowledgebase_parse_job) | Send update to the parse operation|
+|[**patch_knowledge_knowledgebase_synchronize_job**](#patch_knowledge_knowledgebase_synchronize_job) | Update synchronization job|
 |[**patch_knowledge_knowledgebase_unanswered_group_phrasegroup**](#patch_knowledge_knowledgebase_unanswered_group_phrasegroup) | Update a Knowledge base unanswered phrase group|
 |[**post_knowledge_documentuploads**](#post_knowledge_documentuploads) | Creates a presigned URL for uploading a knowledge import file with a set of documents|
 |[**post_knowledge_guest_session_document_copies**](#post_knowledge_guest_session_document_copies) | Indicate that the document was copied by the user.|
@@ -103,8 +112,15 @@ All URIs are relative to *https://api.mypurecloud.com*
 |[**post_knowledge_knowledgebase_parse_job_import**](#post_knowledge_knowledgebase_parse_job_import) | Import the parsed articles|
 |[**post_knowledge_knowledgebase_parse_jobs**](#post_knowledge_knowledgebase_parse_jobs) | Create parse job|
 |[**post_knowledge_knowledgebase_search**](#post_knowledge_knowledgebase_search) | Search Documents|
+|[**post_knowledge_knowledgebase_sources_salesforce**](#post_knowledge_knowledgebase_sources_salesforce) | Create Salesforce Knowledge integration source|
+|[**post_knowledge_knowledgebase_sources_salesforce_source_id_sync**](#post_knowledge_knowledgebase_sources_salesforce_source_id_sync) | Start sync on Salesforce Knowledge integration source|
+|[**post_knowledge_knowledgebase_sources_servicenow**](#post_knowledge_knowledgebase_sources_servicenow) | Create ServiceNow Knowledge integration source|
+|[**post_knowledge_knowledgebase_sources_servicenow_source_id_sync**](#post_knowledge_knowledgebase_sources_servicenow_source_id_sync) | Start synchronization on ServiceNow Knowledge integration source|
+|[**post_knowledge_knowledgebase_synchronize_jobs**](#post_knowledge_knowledgebase_synchronize_jobs) | Create synchronization job|
 |[**post_knowledge_knowledgebase_uploads_urls_jobs**](#post_knowledge_knowledgebase_uploads_urls_jobs) | Create content upload from URL job|
 |[**post_knowledge_knowledgebases**](#post_knowledge_knowledgebases) | Create new knowledge base|
+|[**put_knowledge_knowledgebase_sources_salesforce_source_id**](#put_knowledge_knowledgebase_sources_salesforce_source_id) | Update Salesforce Knowledge integration source|
+|[**put_knowledge_knowledgebase_sources_servicenow_source_id**](#put_knowledge_knowledgebase_sources_servicenow_source_id) | Update ServiceNow Knowledge integration source|
 
 
 
@@ -619,6 +635,159 @@ except ApiException as e:
 void (empty response body)
 
 
+## delete_knowledge_knowledgebase_sources_salesforce_source_id
+
+>  delete_knowledge_knowledgebase_sources_salesforce_source_id(knowledge_base_id, source_id)
+
+
+Delete Salesforce Knowledge integration source
+
+delete_knowledge_knowledgebase_sources_salesforce_source_id is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps DELETE /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/salesforce/{sourceId} 
+
+Requires ALL permissions: 
+
+* knowledge:integrationSource:delete
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.KnowledgeApi()
+knowledge_base_id = 'knowledge_base_id_example' # str | Knowledge base ID
+source_id = 'source_id_example' # str | Source ID
+
+try:
+    # Delete Salesforce Knowledge integration source
+    api_instance.delete_knowledge_knowledgebase_sources_salesforce_source_id(knowledge_base_id, source_id)
+except ApiException as e:
+    print("Exception when calling KnowledgeApi->delete_knowledge_knowledgebase_sources_salesforce_source_id: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **knowledge_base_id** | **str**| Knowledge base ID |  |
+| **source_id** | **str**| Source ID |  |
+
+### Return type
+
+void (empty response body)
+
+
+## delete_knowledge_knowledgebase_sources_servicenow_source_id
+
+>  delete_knowledge_knowledgebase_sources_servicenow_source_id(knowledge_base_id, source_id)
+
+
+Delete ServiceNow Knowledge integration source
+
+delete_knowledge_knowledgebase_sources_servicenow_source_id is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps DELETE /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/servicenow/{sourceId} 
+
+Requires ALL permissions: 
+
+* knowledge:integrationSource:delete
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.KnowledgeApi()
+knowledge_base_id = 'knowledge_base_id_example' # str | Knowledge base ID
+source_id = 'source_id_example' # str | Source ID
+
+try:
+    # Delete ServiceNow Knowledge integration source
+    api_instance.delete_knowledge_knowledgebase_sources_servicenow_source_id(knowledge_base_id, source_id)
+except ApiException as e:
+    print("Exception when calling KnowledgeApi->delete_knowledge_knowledgebase_sources_servicenow_source_id: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **knowledge_base_id** | **str**| Knowledge base ID |  |
+| **source_id** | **str**| Source ID |  |
+
+### Return type
+
+void (empty response body)
+
+
+## delete_knowledge_knowledgebase_synchronize_job
+
+>  delete_knowledge_knowledgebase_synchronize_job(knowledge_base_id, sync_job_id)
+
+
+Delete synchronization job
+
+delete_knowledge_knowledgebase_synchronize_job is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps DELETE /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/synchronize/jobs/{syncJobId} 
+
+Requires ALL permissions: 
+
+* knowledge:syncJob:delete
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.KnowledgeApi()
+knowledge_base_id = 'knowledge_base_id_example' # str | Knowledge base ID
+sync_job_id = 'sync_job_id_example' # str | Synchronization job ID
+
+try:
+    # Delete synchronization job
+    api_instance.delete_knowledge_knowledgebase_synchronize_job(knowledge_base_id, sync_job_id)
+except ApiException as e:
+    print("Exception when calling KnowledgeApi->delete_knowledge_knowledgebase_synchronize_job: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **knowledge_base_id** | **str**| Knowledge base ID |  |
+| **sync_job_id** | **str**| Synchronization job ID |  |
+
+### Return type
+
+void (empty response body)
+
+
 ## get_knowledge_guest_session_categories
 
 > [**GuestCategoryResponseListing**](GuestCategoryResponseListing) get_knowledge_guest_session_categories(session_id, before=before, after=after, page_size=page_size, parent_id=parent_id, is_root=is_root, name=name, sort_by=sort_by, expand=expand, include_document_count=include_document_count)
@@ -773,6 +942,56 @@ except ApiException as e:
 ### Return type
 
 [**KnowledgeGuestDocumentResponseListing**](KnowledgeGuestDocumentResponseListing)
+
+
+## get_knowledge_integration_options
+
+> [**KnowledgeIntegrationOptionsResponse**](KnowledgeIntegrationOptionsResponse) get_knowledge_integration_options(integration_id)
+
+
+Get sync options available for a knowledge-connect integration
+
+get_knowledge_integration_options is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/knowledge/integrations/{integrationId}/options 
+
+Requires ALL permissions: 
+
+* knowledge:integrationOptions:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.KnowledgeApi()
+integration_id = 'integration_id_example' # str | Integration ID
+
+try:
+    # Get sync options available for a knowledge-connect integration
+    api_response = api_instance.get_knowledge_integration_options(integration_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling KnowledgeApi->get_knowledge_integration_options: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **integration_id** | **str**| Integration ID |  |
+
+### Return type
+
+[**KnowledgeIntegrationOptionsResponse**](KnowledgeIntegrationOptionsResponse)
 
 
 ## get_knowledge_knowledgebase
@@ -2379,6 +2598,222 @@ except ApiException as e:
 [**KnowledgeParseJobResponse**](KnowledgeParseJobResponse)
 
 
+## get_knowledge_knowledgebase_sources
+
+> [**list[SourceBaseResponse]**](SourceBaseResponse) get_knowledge_knowledgebase_sources(knowledge_base_id, type=type, expand=expand, ids=ids)
+
+
+Get Knowledge integration sources
+
+get_knowledge_knowledgebase_sources is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources 
+
+Requires ALL permissions: 
+
+* knowledge:integrationSource:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.KnowledgeApi()
+knowledge_base_id = 'knowledge_base_id_example' # str | Knowledge base ID
+type = 'type_example' # str | If specified, retrieves integration sources with specified integration type. (optional)
+expand = ['expand_example'] # list[str] | The specified entity attributes will be filled. Comma separated values expected. (optional)
+ids = ['ids_example'] # list[str] | If specified, retrieves integration sources with specified IDs. (optional)
+
+try:
+    # Get Knowledge integration sources
+    api_response = api_instance.get_knowledge_knowledgebase_sources(knowledge_base_id, type=type, expand=expand, ids=ids)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling KnowledgeApi->get_knowledge_knowledgebase_sources: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **knowledge_base_id** | **str**| Knowledge base ID |  |
+| **type** | **str**| If specified, retrieves integration sources with specified integration type. | [optional] <br />**Values**: Salesforce, ServiceNow |
+| **expand** | [**list[str]**](str)| The specified entity attributes will be filled. Comma separated values expected. | [optional] <br />**Values**: lastsync |
+| **ids** | [**list[str]**](str)| If specified, retrieves integration sources with specified IDs. | [optional]  |
+
+### Return type
+
+[**list[SourceBaseResponse]**](SourceBaseResponse)
+
+
+## get_knowledge_knowledgebase_sources_salesforce_source_id
+
+> [**SalesforceSourceResponse**](SalesforceSourceResponse) get_knowledge_knowledgebase_sources_salesforce_source_id(knowledge_base_id, source_id, expand=expand)
+
+
+Get Salesforce Knowledge integration source
+
+get_knowledge_knowledgebase_sources_salesforce_source_id is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/salesforce/{sourceId} 
+
+Requires ALL permissions: 
+
+* knowledge:integrationSource:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.KnowledgeApi()
+knowledge_base_id = 'knowledge_base_id_example' # str | Knowledge base ID
+source_id = 'source_id_example' # str | Source ID
+expand = ['expand_example'] # list[str] | The specified entity attributes will be filled. Comma separated values expected. (optional)
+
+try:
+    # Get Salesforce Knowledge integration source
+    api_response = api_instance.get_knowledge_knowledgebase_sources_salesforce_source_id(knowledge_base_id, source_id, expand=expand)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling KnowledgeApi->get_knowledge_knowledgebase_sources_salesforce_source_id: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **knowledge_base_id** | **str**| Knowledge base ID |  |
+| **source_id** | **str**| Source ID |  |
+| **expand** | [**list[str]**](str)| The specified entity attributes will be filled. Comma separated values expected. | [optional] <br />**Values**: lastsync |
+
+### Return type
+
+[**SalesforceSourceResponse**](SalesforceSourceResponse)
+
+
+## get_knowledge_knowledgebase_sources_servicenow_source_id
+
+> [**ServiceNowSourceResponse**](ServiceNowSourceResponse) get_knowledge_knowledgebase_sources_servicenow_source_id(knowledge_base_id, source_id, expand=expand)
+
+
+Get ServiceNow Knowledge integration source
+
+get_knowledge_knowledgebase_sources_servicenow_source_id is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/servicenow/{sourceId} 
+
+Requires ALL permissions: 
+
+* knowledge:integrationSource:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.KnowledgeApi()
+knowledge_base_id = 'knowledge_base_id_example' # str | Knowledge base ID
+source_id = 'source_id_example' # str | Source ID
+expand = ['expand_example'] # list[str] | The specified entity attributes will be filled. Comma separated values expected. (optional)
+
+try:
+    # Get ServiceNow Knowledge integration source
+    api_response = api_instance.get_knowledge_knowledgebase_sources_servicenow_source_id(knowledge_base_id, source_id, expand=expand)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling KnowledgeApi->get_knowledge_knowledgebase_sources_servicenow_source_id: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **knowledge_base_id** | **str**| Knowledge base ID |  |
+| **source_id** | **str**| Source ID |  |
+| **expand** | [**list[str]**](str)| The specified entity attributes will be filled. Comma separated values expected. | [optional] <br />**Values**: lastsync |
+
+### Return type
+
+[**ServiceNowSourceResponse**](ServiceNowSourceResponse)
+
+
+## get_knowledge_knowledgebase_synchronize_job
+
+> [**KnowledgeSyncJobResponse**](KnowledgeSyncJobResponse) get_knowledge_knowledgebase_synchronize_job(knowledge_base_id, sync_job_id)
+
+
+Get synchronization job report
+
+get_knowledge_knowledgebase_synchronize_job is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps GET /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/synchronize/jobs/{syncJobId} 
+
+Requires ALL permissions: 
+
+* knowledge:syncJob:view
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.KnowledgeApi()
+knowledge_base_id = 'knowledge_base_id_example' # str | Knowledge base ID
+sync_job_id = 'sync_job_id_example' # str | Synchronization job ID
+
+try:
+    # Get synchronization job report
+    api_response = api_instance.get_knowledge_knowledgebase_synchronize_job(knowledge_base_id, sync_job_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling KnowledgeApi->get_knowledge_knowledgebase_synchronize_job: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **knowledge_base_id** | **str**| Knowledge base ID |  |
+| **sync_job_id** | **str**| Synchronization job ID |  |
+
+### Return type
+
+[**KnowledgeSyncJobResponse**](KnowledgeSyncJobResponse)
+
+
 ## get_knowledge_knowledgebase_unanswered_group
 
 > [**UnansweredGroup**](UnansweredGroup) get_knowledge_knowledgebase_unanswered_group(knowledge_base_id, group_id, app=app, date_start=date_start, date_end=date_end)
@@ -3405,6 +3840,60 @@ except ApiException as e:
 ### Return type
 
 void (empty response body)
+
+
+## patch_knowledge_knowledgebase_synchronize_job
+
+> [**KnowledgeSyncJobResponse**](KnowledgeSyncJobResponse) patch_knowledge_knowledgebase_synchronize_job(knowledge_base_id, sync_job_id, body)
+
+
+Update synchronization job
+
+patch_knowledge_knowledgebase_synchronize_job is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps PATCH /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/synchronize/jobs/{syncJobId} 
+
+Requires ALL permissions: 
+
+* knowledge:syncJob:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.KnowledgeApi()
+knowledge_base_id = 'knowledge_base_id_example' # str | Knowledge base ID
+sync_job_id = 'sync_job_id_example' # str | Synchronization job ID
+body = PureCloudPlatformClientV2.SyncStatusRequest() # SyncStatusRequest | 
+
+try:
+    # Update synchronization job
+    api_response = api_instance.patch_knowledge_knowledgebase_synchronize_job(knowledge_base_id, sync_job_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling KnowledgeApi->patch_knowledge_knowledgebase_synchronize_job: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **knowledge_base_id** | **str**| Knowledge base ID |  |
+| **sync_job_id** | **str**| Synchronization job ID |  |
+| **body** | [**SyncStatusRequest**](SyncStatusRequest)|  |  |
+
+### Return type
+
+[**KnowledgeSyncJobResponse**](KnowledgeSyncJobResponse)
 
 
 ## patch_knowledge_knowledgebase_unanswered_group_phrasegroup
@@ -5290,6 +5779,266 @@ except ApiException as e:
 [**KnowledgeSearchResponse**](KnowledgeSearchResponse)
 
 
+## post_knowledge_knowledgebase_sources_salesforce
+
+> [**KnowledgeSyncJobResponse**](KnowledgeSyncJobResponse) post_knowledge_knowledgebase_sources_salesforce(knowledge_base_id, body)
+
+
+Create Salesforce Knowledge integration source
+
+post_knowledge_knowledgebase_sources_salesforce is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/salesforce 
+
+Requires ALL permissions: 
+
+* knowledge:integrationSource:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.KnowledgeApi()
+knowledge_base_id = 'knowledge_base_id_example' # str | Knowledge base ID
+body = PureCloudPlatformClientV2.SalesforceSourceRequest() # SalesforceSourceRequest | 
+
+try:
+    # Create Salesforce Knowledge integration source
+    api_response = api_instance.post_knowledge_knowledgebase_sources_salesforce(knowledge_base_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling KnowledgeApi->post_knowledge_knowledgebase_sources_salesforce: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **knowledge_base_id** | **str**| Knowledge base ID |  |
+| **body** | [**SalesforceSourceRequest**](SalesforceSourceRequest)|  |  |
+
+### Return type
+
+[**KnowledgeSyncJobResponse**](KnowledgeSyncJobResponse)
+
+
+## post_knowledge_knowledgebase_sources_salesforce_source_id_sync
+
+> [**SourceSyncResponse**](SourceSyncResponse) post_knowledge_knowledgebase_sources_salesforce_source_id_sync(knowledge_base_id, source_id)
+
+
+Start sync on Salesforce Knowledge integration source
+
+post_knowledge_knowledgebase_sources_salesforce_source_id_sync is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/salesforce/{sourceId}/sync 
+
+Requires ALL permissions: 
+
+* knowledge:integrationSource:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.KnowledgeApi()
+knowledge_base_id = 'knowledge_base_id_example' # str | Knowledge base ID
+source_id = 'source_id_example' # str | Source ID
+
+try:
+    # Start sync on Salesforce Knowledge integration source
+    api_response = api_instance.post_knowledge_knowledgebase_sources_salesforce_source_id_sync(knowledge_base_id, source_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling KnowledgeApi->post_knowledge_knowledgebase_sources_salesforce_source_id_sync: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **knowledge_base_id** | **str**| Knowledge base ID |  |
+| **source_id** | **str**| Source ID |  |
+
+### Return type
+
+[**SourceSyncResponse**](SourceSyncResponse)
+
+
+## post_knowledge_knowledgebase_sources_servicenow
+
+> [**KnowledgeSyncJobResponse**](KnowledgeSyncJobResponse) post_knowledge_knowledgebase_sources_servicenow(knowledge_base_id, body)
+
+
+Create ServiceNow Knowledge integration source
+
+post_knowledge_knowledgebase_sources_servicenow is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/servicenow 
+
+Requires ALL permissions: 
+
+* knowledge:integrationSource:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.KnowledgeApi()
+knowledge_base_id = 'knowledge_base_id_example' # str | Knowledge base ID
+body = PureCloudPlatformClientV2.ServiceNowSourceRequest() # ServiceNowSourceRequest | 
+
+try:
+    # Create ServiceNow Knowledge integration source
+    api_response = api_instance.post_knowledge_knowledgebase_sources_servicenow(knowledge_base_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling KnowledgeApi->post_knowledge_knowledgebase_sources_servicenow: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **knowledge_base_id** | **str**| Knowledge base ID |  |
+| **body** | [**ServiceNowSourceRequest**](ServiceNowSourceRequest)|  |  |
+
+### Return type
+
+[**KnowledgeSyncJobResponse**](KnowledgeSyncJobResponse)
+
+
+## post_knowledge_knowledgebase_sources_servicenow_source_id_sync
+
+> [**SourceSyncResponse**](SourceSyncResponse) post_knowledge_knowledgebase_sources_servicenow_source_id_sync(knowledge_base_id, source_id)
+
+
+Start synchronization on ServiceNow Knowledge integration source
+
+post_knowledge_knowledgebase_sources_servicenow_source_id_sync is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/servicenow/{sourceId}/sync 
+
+Requires ALL permissions: 
+
+* knowledge:integrationSource:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.KnowledgeApi()
+knowledge_base_id = 'knowledge_base_id_example' # str | Knowledge base ID
+source_id = 'source_id_example' # str | Source ID
+
+try:
+    # Start synchronization on ServiceNow Knowledge integration source
+    api_response = api_instance.post_knowledge_knowledgebase_sources_servicenow_source_id_sync(knowledge_base_id, source_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling KnowledgeApi->post_knowledge_knowledgebase_sources_servicenow_source_id_sync: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **knowledge_base_id** | **str**| Knowledge base ID |  |
+| **source_id** | **str**| Source ID |  |
+
+### Return type
+
+[**SourceSyncResponse**](SourceSyncResponse)
+
+
+## post_knowledge_knowledgebase_synchronize_jobs
+
+> [**KnowledgeSyncJobResponse**](KnowledgeSyncJobResponse) post_knowledge_knowledgebase_synchronize_jobs(knowledge_base_id, body)
+
+
+Create synchronization job
+
+post_knowledge_knowledgebase_synchronize_jobs is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps POST /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/synchronize/jobs 
+
+Requires ALL permissions: 
+
+* knowledge:syncJob:add
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.KnowledgeApi()
+knowledge_base_id = 'knowledge_base_id_example' # str | Knowledge base ID
+body = PureCloudPlatformClientV2.KnowledgeSyncJobRequest() # KnowledgeSyncJobRequest | 
+
+try:
+    # Create synchronization job
+    api_response = api_instance.post_knowledge_knowledgebase_synchronize_jobs(knowledge_base_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling KnowledgeApi->post_knowledge_knowledgebase_synchronize_jobs: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **knowledge_base_id** | **str**| Knowledge base ID |  |
+| **body** | [**KnowledgeSyncJobRequest**](KnowledgeSyncJobRequest)|  |  |
+
+### Return type
+
+[**KnowledgeSyncJobResponse**](KnowledgeSyncJobResponse)
+
+
 ## post_knowledge_knowledgebase_uploads_urls_jobs
 
 > [**CreateUploadSourceUrlJobResponse**](CreateUploadSourceUrlJobResponse) post_knowledge_knowledgebase_uploads_urls_jobs(knowledge_base_id, body)
@@ -5390,4 +6139,112 @@ except ApiException as e:
 [**KnowledgeBase**](KnowledgeBase)
 
 
-_PureCloudPlatformClientV2 211.1.0_
+## put_knowledge_knowledgebase_sources_salesforce_source_id
+
+> [**SalesforceSourceResponse**](SalesforceSourceResponse) put_knowledge_knowledgebase_sources_salesforce_source_id(knowledge_base_id, source_id, body)
+
+
+Update Salesforce Knowledge integration source
+
+put_knowledge_knowledgebase_sources_salesforce_source_id is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps PUT /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/salesforce/{sourceId} 
+
+Requires ALL permissions: 
+
+* knowledge:integrationSource:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.KnowledgeApi()
+knowledge_base_id = 'knowledge_base_id_example' # str | Knowledge base ID
+source_id = 'source_id_example' # str | Source ID
+body = PureCloudPlatformClientV2.SalesforceSourceRequest() # SalesforceSourceRequest | 
+
+try:
+    # Update Salesforce Knowledge integration source
+    api_response = api_instance.put_knowledge_knowledgebase_sources_salesforce_source_id(knowledge_base_id, source_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling KnowledgeApi->put_knowledge_knowledgebase_sources_salesforce_source_id: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **knowledge_base_id** | **str**| Knowledge base ID |  |
+| **source_id** | **str**| Source ID |  |
+| **body** | [**SalesforceSourceRequest**](SalesforceSourceRequest)|  |  |
+
+### Return type
+
+[**SalesforceSourceResponse**](SalesforceSourceResponse)
+
+
+## put_knowledge_knowledgebase_sources_servicenow_source_id
+
+> [**ServiceNowSourceResponse**](ServiceNowSourceResponse) put_knowledge_knowledgebase_sources_servicenow_source_id(knowledge_base_id, source_id, body)
+
+
+Update ServiceNow Knowledge integration source
+
+put_knowledge_knowledgebase_sources_servicenow_source_id is a preview method and is subject to both breaking and non-breaking changes at any time without notice
+
+Wraps PUT /api/v2/knowledge/knowledgebases/{knowledgeBaseId}/sources/servicenow/{sourceId} 
+
+Requires ALL permissions: 
+
+* knowledge:integrationSource:edit
+
+### Example
+
+```{"language":"python"}
+import time
+import PureCloudPlatformClientV2
+from PureCloudPlatformClientV2.rest import ApiException
+from pprint import pprint
+
+# Configure OAuth2 access token for authorization: PureCloud OAuth
+PureCloudPlatformClientV2.configuration.access_token = 'YOUR_ACCESS_TOKEN'
+
+# create an instance of the API class
+api_instance = PureCloudPlatformClientV2.KnowledgeApi()
+knowledge_base_id = 'knowledge_base_id_example' # str | Knowledge base ID
+source_id = 'source_id_example' # str | Source ID
+body = PureCloudPlatformClientV2.ServiceNowSourceRequest() # ServiceNowSourceRequest | 
+
+try:
+    # Update ServiceNow Knowledge integration source
+    api_response = api_instance.put_knowledge_knowledgebase_sources_servicenow_source_id(knowledge_base_id, source_id, body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling KnowledgeApi->put_knowledge_knowledgebase_sources_servicenow_source_id: %s\n" % e)
+```
+
+### Parameters
+
+
+|Name | Type | Description  | Notes|
+|------------- | ------------- | ------------- | -------------|
+| **knowledge_base_id** | **str**| Knowledge base ID |  |
+| **source_id** | **str**| Source ID |  |
+| **body** | [**ServiceNowSourceRequest**](ServiceNowSourceRequest)|  |  |
+
+### Return type
+
+[**ServiceNowSourceResponse**](ServiceNowSourceResponse)
+
+
+_PureCloudPlatformClientV2 212.0.0_

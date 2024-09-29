@@ -14,8 +14,9 @@
 | **media** | [list[MessageMedia]](MessageMedia) | The media (images, files, etc) associated with this message, if any | [optional] |
 | **stickers** | [list[MessageSticker]](MessageSticker) | One or more stickers associated with this message, if any | [optional] |
 | **message_metadata** | [ConversationMessageMetadata](ConversationMessageMetadata) | Information that describes the content of the message, if any | [optional] |
+| **social_visibility** | str | For social media messages, the visibility of the message in the originating social platform | [optional] |
 | **error_info** | [ErrorBody](ErrorBody) | Provider specific error information for a communication. | [optional] |
 
 
 
-_PureCloudPlatformClientV2 211.1.0_
+_PureCloudPlatformClientV2 212.0.0_

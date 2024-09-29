@@ -160,9 +160,8 @@ Get the current Idle Token Timeout Value
 
 Wraps GET /api/v2/tokens/timeout 
 
-Requires ANY permissions: 
+Requires no permissions
 
-* directory:organization:admin
 
 ### Example
 
@@ -285,4 +284,4 @@ except ApiException as e:
 [**IdleTokenTimeout**](IdleTokenTimeout)
 
 
-_PureCloudPlatformClientV2 211.1.0_
+_PureCloudPlatformClientV2 212.0.0_

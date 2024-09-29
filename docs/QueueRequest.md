@@ -31,6 +31,7 @@
 | **whisper_prompt** | [DomainEntityRef](DomainEntityRef) | The prompt used for whisper on the queue, if configured. | [optional] |
 | **on_hold_prompt** | [DomainEntityRef](DomainEntityRef) | The audio to be played when calls on this queue are on hold. If not configured, the default on-hold music will play. | [optional] |
 | **auto_answer_only** | bool | Specifies whether the configured whisper should play for all ACD calls, or only for those which are auto-answered. | [optional] |
+| **canned_response_libraries** | [CannedResponseLibraries](CannedResponseLibraries) | Canned response library IDs and mode with which they are associated with the queue | [optional] |
 | **enable_transcription** | bool | Indicates whether voice transcription is enabled for this queue. | [optional] |
 | **enable_audio_monitoring** | bool | Indicates whether audio monitoring is enabled for this queue. | [optional] |
 | **enable_manual_assignment** | bool | Indicates whether manual assignment is enabled for this queue. | [optional] |
@@ -47,4 +48,4 @@
 
 
 
-_PureCloudPlatformClientV2 211.1.0_
+_PureCloudPlatformClientV2 212.0.0_
